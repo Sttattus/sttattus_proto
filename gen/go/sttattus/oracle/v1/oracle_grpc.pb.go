@@ -19,48 +19,103 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OracleService_Query_FullMethodName                  = "/sttattus.oracle.v1.OracleService/Query"
-	OracleService_GetYearInOracleRecap_FullMethodName   = "/sttattus.oracle.v1.OracleService/GetYearInOracleRecap"
-	OracleService_GenerateYearInOracle_FullMethodName   = "/sttattus.oracle.v1.OracleService/GenerateYearInOracle"
-	OracleService_StartConciergeThread_FullMethodName   = "/sttattus.oracle.v1.OracleService/StartConciergeThread"
-	OracleService_ListMyConciergeThreads_FullMethodName = "/sttattus.oracle.v1.OracleService/ListMyConciergeThreads"
-	OracleService_GetConciergeThread_FullMethodName     = "/sttattus.oracle.v1.OracleService/GetConciergeThread"
-	OracleService_PostConciergeMessage_FullMethodName   = "/sttattus.oracle.v1.OracleService/PostConciergeMessage"
-	OracleService_ListAnthologyArticles_FullMethodName  = "/sttattus.oracle.v1.OracleService/ListAnthologyArticles"
-	OracleService_GetAnthologyArticle_FullMethodName    = "/sttattus.oracle.v1.OracleService/GetAnthologyArticle"
-	OracleService_CreateBriefShare_FullMethodName       = "/sttattus.oracle.v1.OracleService/CreateBriefShare"
-	OracleService_ListMyBriefShares_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyBriefShares"
-	OracleService_RevokeBriefShare_FullMethodName       = "/sttattus.oracle.v1.OracleService/RevokeBriefShare"
-	OracleService_GetTodayBriefing_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetTodayBriefing"
-	OracleService_CreateTrigger_FullMethodName          = "/sttattus.oracle.v1.OracleService/CreateTrigger"
-	OracleService_ListMyTriggers_FullMethodName         = "/sttattus.oracle.v1.OracleService/ListMyTriggers"
-	OracleService_DeleteTrigger_FullMethodName          = "/sttattus.oracle.v1.OracleService/DeleteTrigger"
-	OracleService_GetInbox_FullMethodName               = "/sttattus.oracle.v1.OracleService/GetInbox"
-	OracleService_CreateDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/CreateDocument"
-	OracleService_ListMyDocuments_FullMethodName        = "/sttattus.oracle.v1.OracleService/ListMyDocuments"
-	OracleService_GetDocument_FullMethodName            = "/sttattus.oracle.v1.OracleService/GetDocument"
-	OracleService_UpdateDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/UpdateDocument"
-	OracleService_DeleteDocument_FullMethodName         = "/sttattus.oracle.v1.OracleService/DeleteDocument"
-	OracleService_DraftDocument_FullMethodName          = "/sttattus.oracle.v1.OracleService/DraftDocument"
-	OracleService_GetOracleStats_FullMethodName         = "/sttattus.oracle.v1.OracleService/GetOracleStats"
-	OracleService_ListMyThreads_FullMethodName          = "/sttattus.oracle.v1.OracleService/ListMyThreads"
-	OracleService_CreateThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/CreateThread"
-	OracleService_RenameThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/RenameThread"
-	OracleService_DeleteThread_FullMethodName           = "/sttattus.oracle.v1.OracleService/DeleteThread"
-	OracleService_ListThreadMessages_FullMethodName     = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
-	OracleService_StreamQuery_FullMethodName            = "/sttattus.oracle.v1.OracleService/StreamQuery"
-	OracleService_RecordEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/RecordEpisodicMemory"
-	OracleService_ListMyEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory"
-	OracleService_DeleteEpisodicMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory"
-	OracleService_UpsertSemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
-	OracleService_ListMySemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
-	OracleService_DeleteSemanticMemory_FullMethodName   = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
-	OracleService_ListMyScopeGrants_FullMethodName      = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
-	OracleService_GrantScope_FullMethodName             = "/sttattus.oracle.v1.OracleService/GrantScope"
-	OracleService_RevokeScope_FullMethodName            = "/sttattus.oracle.v1.OracleService/RevokeScope"
-	OracleService_ListAvailableTools_FullMethodName     = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
-	OracleService_RunOracleTool_FullMethodName          = "/sttattus.oracle.v1.OracleService/RunOracleTool"
-	OracleService_GetRankExplainer_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetRankExplainer"
+	OracleService_Query_FullMethodName                                         = "/sttattus.oracle.v1.OracleService/Query"
+	OracleService_GetYearInOracleRecap_FullMethodName                          = "/sttattus.oracle.v1.OracleService/GetYearInOracleRecap"
+	OracleService_GenerateYearInOracle_FullMethodName                          = "/sttattus.oracle.v1.OracleService/GenerateYearInOracle"
+	OracleService_StartConciergeThread_FullMethodName                          = "/sttattus.oracle.v1.OracleService/StartConciergeThread"
+	OracleService_ListMyConciergeThreads_FullMethodName                        = "/sttattus.oracle.v1.OracleService/ListMyConciergeThreads"
+	OracleService_GetConciergeThread_FullMethodName                            = "/sttattus.oracle.v1.OracleService/GetConciergeThread"
+	OracleService_PostConciergeMessage_FullMethodName                          = "/sttattus.oracle.v1.OracleService/PostConciergeMessage"
+	OracleService_ListAnthologyArticles_FullMethodName                         = "/sttattus.oracle.v1.OracleService/ListAnthologyArticles"
+	OracleService_GetAnthologyArticle_FullMethodName                           = "/sttattus.oracle.v1.OracleService/GetAnthologyArticle"
+	OracleService_CreateBriefShare_FullMethodName                              = "/sttattus.oracle.v1.OracleService/CreateBriefShare"
+	OracleService_ListMyBriefShares_FullMethodName                             = "/sttattus.oracle.v1.OracleService/ListMyBriefShares"
+	OracleService_RevokeBriefShare_FullMethodName                              = "/sttattus.oracle.v1.OracleService/RevokeBriefShare"
+	OracleService_GetTodayBriefing_FullMethodName                              = "/sttattus.oracle.v1.OracleService/GetTodayBriefing"
+	OracleService_CreateTrigger_FullMethodName                                 = "/sttattus.oracle.v1.OracleService/CreateTrigger"
+	OracleService_ListMyTriggers_FullMethodName                                = "/sttattus.oracle.v1.OracleService/ListMyTriggers"
+	OracleService_DeleteTrigger_FullMethodName                                 = "/sttattus.oracle.v1.OracleService/DeleteTrigger"
+	OracleService_GetInbox_FullMethodName                                      = "/sttattus.oracle.v1.OracleService/GetInbox"
+	OracleService_CreateDocument_FullMethodName                                = "/sttattus.oracle.v1.OracleService/CreateDocument"
+	OracleService_ListMyDocuments_FullMethodName                               = "/sttattus.oracle.v1.OracleService/ListMyDocuments"
+	OracleService_GetDocument_FullMethodName                                   = "/sttattus.oracle.v1.OracleService/GetDocument"
+	OracleService_UpdateDocument_FullMethodName                                = "/sttattus.oracle.v1.OracleService/UpdateDocument"
+	OracleService_DeleteDocument_FullMethodName                                = "/sttattus.oracle.v1.OracleService/DeleteDocument"
+	OracleService_DraftDocument_FullMethodName                                 = "/sttattus.oracle.v1.OracleService/DraftDocument"
+	OracleService_GetOracleStats_FullMethodName                                = "/sttattus.oracle.v1.OracleService/GetOracleStats"
+	OracleService_ListMyThreads_FullMethodName                                 = "/sttattus.oracle.v1.OracleService/ListMyThreads"
+	OracleService_CreateThread_FullMethodName                                  = "/sttattus.oracle.v1.OracleService/CreateThread"
+	OracleService_RenameThread_FullMethodName                                  = "/sttattus.oracle.v1.OracleService/RenameThread"
+	OracleService_DeleteThread_FullMethodName                                  = "/sttattus.oracle.v1.OracleService/DeleteThread"
+	OracleService_ListThreadMessages_FullMethodName                            = "/sttattus.oracle.v1.OracleService/ListThreadMessages"
+	OracleService_StreamQuery_FullMethodName                                   = "/sttattus.oracle.v1.OracleService/StreamQuery"
+	OracleService_RecordEpisodicMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/RecordEpisodicMemory"
+	OracleService_ListMyEpisodicMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/ListMyEpisodicMemory"
+	OracleService_DeleteEpisodicMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/DeleteEpisodicMemory"
+	OracleService_UpsertSemanticMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/UpsertSemanticMemory"
+	OracleService_ListMySemanticMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/ListMySemanticMemory"
+	OracleService_DeleteSemanticMemory_FullMethodName                          = "/sttattus.oracle.v1.OracleService/DeleteSemanticMemory"
+	OracleService_ListMyScopeGrants_FullMethodName                             = "/sttattus.oracle.v1.OracleService/ListMyScopeGrants"
+	OracleService_GrantScope_FullMethodName                                    = "/sttattus.oracle.v1.OracleService/GrantScope"
+	OracleService_RevokeScope_FullMethodName                                   = "/sttattus.oracle.v1.OracleService/RevokeScope"
+	OracleService_ListAvailableTools_FullMethodName                            = "/sttattus.oracle.v1.OracleService/ListAvailableTools"
+	OracleService_RunOracleTool_FullMethodName                                 = "/sttattus.oracle.v1.OracleService/RunOracleTool"
+	OracleService_GetRankExplainer_FullMethodName                              = "/sttattus.oracle.v1.OracleService/GetRankExplainer"
+	OracleService_GetEvidenceTruthWorkbench_FullMethodName                     = "/sttattus.oracle.v1.OracleService/GetEvidenceTruthWorkbench"
+	OracleService_RegisterOrRefreshEvidenceSource_FullMethodName               = "/sttattus.oracle.v1.OracleService/RegisterOrRefreshEvidenceSource"
+	OracleService_VerifyOrInvalidateCitedClaim_FullMethodName                  = "/sttattus.oracle.v1.OracleService/VerifyOrInvalidateCitedClaim"
+	OracleService_AdminListEvidenceTruthAudit_FullMethodName                   = "/sttattus.oracle.v1.OracleService/AdminListEvidenceTruthAudit"
+	OracleService_AdminManageSourceRightsOrCorrection_FullMethodName           = "/sttattus.oracle.v1.OracleService/AdminManageSourceRightsOrCorrection"
+	OracleService_GetDecisionLedgerWorkbench_FullMethodName                    = "/sttattus.oracle.v1.OracleService/GetDecisionLedgerWorkbench"
+	OracleService_CreateOrUpdateDecisionLedgerRecord_FullMethodName            = "/sttattus.oracle.v1.OracleService/CreateOrUpdateDecisionLedgerRecord"
+	OracleService_RecordDecisionAssumptionOrReview_FullMethodName              = "/sttattus.oracle.v1.OracleService/RecordDecisionAssumptionOrReview"
+	OracleService_AdminListDecisionLedgerAudit_FullMethodName                  = "/sttattus.oracle.v1.OracleService/AdminListDecisionLedgerAudit"
+	OracleService_AdminManageDecisionTemplateOrHold_FullMethodName             = "/sttattus.oracle.v1.OracleService/AdminManageDecisionTemplateOrHold"
+	OracleService_GetCommitmentsOutcomeWorkbench_FullMethodName                = "/sttattus.oracle.v1.OracleService/GetCommitmentsOutcomeWorkbench"
+	OracleService_CreateOrUpdateCommitmentItem_FullMethodName                  = "/sttattus.oracle.v1.OracleService/CreateOrUpdateCommitmentItem"
+	OracleService_PreviewOrExecuteExternalCommitmentSync_FullMethodName        = "/sttattus.oracle.v1.OracleService/PreviewOrExecuteExternalCommitmentSync"
+	OracleService_AdminListCommitmentsOutcomeAudit_FullMethodName              = "/sttattus.oracle.v1.OracleService/AdminListCommitmentsOutcomeAudit"
+	OracleService_AdminReconcileExternalSyncDelivery_FullMethodName            = "/sttattus.oracle.v1.OracleService/AdminReconcileExternalSyncDelivery"
+	OracleService_GetWatchlistsCommandBriefWorkbench_FullMethodName            = "/sttattus.oracle.v1.OracleService/GetWatchlistsCommandBriefWorkbench"
+	OracleService_UpsertWatchlistEntityMonitor_FullMethodName                  = "/sttattus.oracle.v1.OracleService/UpsertWatchlistEntityMonitor"
+	OracleService_ApproveOrSnoozeCommandBriefSignal_FullMethodName             = "/sttattus.oracle.v1.OracleService/ApproveOrSnoozeCommandBriefSignal"
+	OracleService_AdminListWatchlistsCommandBriefAudit_FullMethodName          = "/sttattus.oracle.v1.OracleService/AdminListWatchlistsCommandBriefAudit"
+	OracleService_AdminTuneWatchlistAlertBudgetOrFeed_FullMethodName           = "/sttattus.oracle.v1.OracleService/AdminTuneWatchlistAlertBudgetOrFeed"
+	OracleService_GetAssumptionDriftRadarWorkbench_FullMethodName              = "/sttattus.oracle.v1.OracleService/GetAssumptionDriftRadarWorkbench"
+	OracleService_RespondToAssumptionDriftAlert_FullMethodName                 = "/sttattus.oracle.v1.OracleService/RespondToAssumptionDriftAlert"
+	OracleService_UpdateDriftRadarPolicy_FullMethodName                        = "/sttattus.oracle.v1.OracleService/UpdateDriftRadarPolicy"
+	OracleService_AdminListAssumptionDriftRadarAudit_FullMethodName            = "/sttattus.oracle.v1.OracleService/AdminListAssumptionDriftRadarAudit"
+	OracleService_AdminCalibrateDriftThresholdOrDomain_FullMethodName          = "/sttattus.oracle.v1.OracleService/AdminCalibrateDriftThresholdOrDomain"
+	OracleService_GetForecastingCalibrationWorkbench_FullMethodName            = "/sttattus.oracle.v1.OracleService/GetForecastingCalibrationWorkbench"
+	OracleService_CreateOrResolveForecastQuestion_FullMethodName               = "/sttattus.oracle.v1.OracleService/CreateOrResolveForecastQuestion"
+	OracleService_RecordCalibrationLabExperiment_FullMethodName                = "/sttattus.oracle.v1.OracleService/RecordCalibrationLabExperiment"
+	OracleService_AdminListForecastingCalibrationAudit_FullMethodName          = "/sttattus.oracle.v1.OracleService/AdminListForecastingCalibrationAudit"
+	OracleService_AdminVerifyForecastResolutionOrSandbox_FullMethodName        = "/sttattus.oracle.v1.OracleService/AdminVerifyForecastResolutionOrSandbox"
+	OracleService_GetMeetingNegotiationStudioWorkbench_FullMethodName          = "/sttattus.oracle.v1.OracleService/GetMeetingNegotiationStudioWorkbench"
+	OracleService_SaveMeetingBriefOrRedteamRehearsal_FullMethodName            = "/sttattus.oracle.v1.OracleService/SaveMeetingBriefOrRedteamRehearsal"
+	OracleService_ConfirmOrRejectCapturedMeetingProposal_FullMethodName        = "/sttattus.oracle.v1.OracleService/ConfirmOrRejectCapturedMeetingProposal"
+	OracleService_AdminListMeetingNegotiationStudioAudit_FullMethodName        = "/sttattus.oracle.v1.OracleService/AdminListMeetingNegotiationStudioAudit"
+	OracleService_AdminManageRecordingConsentOrRedaction_FullMethodName        = "/sttattus.oracle.v1.OracleService/AdminManageRecordingConsentOrRedaction"
+	OracleService_GetSecureConnectorsToolWorkbench_FullMethodName              = "/sttattus.oracle.v1.OracleService/GetSecureConnectorsToolWorkbench"
+	OracleService_ConfigureOrRevokeConnectorGrant_FullMethodName               = "/sttattus.oracle.v1.OracleService/ConfigureOrRevokeConnectorGrant"
+	OracleService_ReportOrReviewPromptInjectionQuarantine_FullMethodName       = "/sttattus.oracle.v1.OracleService/ReportOrReviewPromptInjectionQuarantine"
+	OracleService_AdminListSecureConnectorsToolAudit_FullMethodName            = "/sttattus.oracle.v1.OracleService/AdminListSecureConnectorsToolAudit"
+	OracleService_AdminManageConnectorKillSwitchOrQuarantine_FullMethodName    = "/sttattus.oracle.v1.OracleService/AdminManageConnectorKillSwitchOrQuarantine"
+	OracleService_GetTrustedNetworkDecisionRoomsWorkbench_FullMethodName       = "/sttattus.oracle.v1.OracleService/GetTrustedNetworkDecisionRoomsWorkbench"
+	OracleService_CreateOrCloseTrustedDecisionRoom_FullMethodName              = "/sttattus.oracle.v1.OracleService/CreateOrCloseTrustedDecisionRoom"
+	OracleService_VerifySpecialistDisclosureOrOptIn_FullMethodName             = "/sttattus.oracle.v1.OracleService/VerifySpecialistDisclosureOrOptIn"
+	OracleService_AdminListTrustedDecisionRoomsAudit_FullMethodName            = "/sttattus.oracle.v1.OracleService/AdminListTrustedDecisionRoomsAudit"
+	OracleService_AdminManageDecisionRoomGrantOrBoundary_FullMethodName        = "/sttattus.oracle.v1.OracleService/AdminManageDecisionRoomGrantOrBoundary"
+	OracleService_GetWargamingExposureWorkbench_FullMethodName                 = "/sttattus.oracle.v1.OracleService/GetWargamingExposureWorkbench"
+	OracleService_RunOrExportWargameExposureSimulation_FullMethodName          = "/sttattus.oracle.v1.OracleService/RunOrExportWargameExposureSimulation"
+	OracleService_UpdateWargameSensitivityOrContingency_FullMethodName         = "/sttattus.oracle.v1.OracleService/UpdateWargameSensitivityOrContingency"
+	OracleService_AdminListWargamingExposureAudit_FullMethodName               = "/sttattus.oracle.v1.OracleService/AdminListWargamingExposureAudit"
+	OracleService_AdminCertifyMinimalPillarContractOrDisclaimer_FullMethodName = "/sttattus.oracle.v1.OracleService/AdminCertifyMinimalPillarContractOrDisclaimer"
+	OracleService_GetPrivateCaseLibraryWorkbench_FullMethodName                = "/sttattus.oracle.v1.OracleService/GetPrivateCaseLibraryWorkbench"
+	OracleService_SaveOrComparePrivateCaseEntry_FullMethodName                 = "/sttattus.oracle.v1.OracleService/SaveOrComparePrivateCaseEntry"
+	OracleService_SubmitOrWithdrawAnonymizedPlaybook_FullMethodName            = "/sttattus.oracle.v1.OracleService/SubmitOrWithdrawAnonymizedPlaybook"
+	OracleService_AdminListPrivateCaseLibraryAudit_FullMethodName              = "/sttattus.oracle.v1.OracleService/AdminListPrivateCaseLibraryAudit"
+	OracleService_AdminCertifyPlaybookAnonymizationOrErasure_FullMethodName    = "/sttattus.oracle.v1.OracleService/AdminCertifyPlaybookAnonymizationOrErasure"
 )
 
 // OracleServiceClient is the client API for OracleService service.
@@ -124,6 +179,94 @@ type OracleServiceClient interface {
 	RunOracleTool(ctx context.Context, in *RunOracleToolRequest, opts ...grpc.CallOption) (*RunOracleToolResponse, error)
 	// O13.7 — glass-box rank explainer.
 	GetRankExplainer(ctx context.Context, in *GetRankExplainerRequest, opts ...grpc.CallOption) (*GetRankExplainerResponse, error)
+	// =========================================================================
+	// CHOICE 1 (R1): EVIDENCE TRUTH LAYER
+	// =========================================================================
+	GetEvidenceTruthWorkbench(ctx context.Context, in *GetEvidenceTruthWorkbenchRequest, opts ...grpc.CallOption) (*GetEvidenceTruthWorkbenchResponse, error)
+	RegisterOrRefreshEvidenceSource(ctx context.Context, in *RegisterOrRefreshEvidenceSourceRequest, opts ...grpc.CallOption) (*RegisterOrRefreshEvidenceSourceResponse, error)
+	VerifyOrInvalidateCitedClaim(ctx context.Context, in *VerifyOrInvalidateCitedClaimRequest, opts ...grpc.CallOption) (*VerifyOrInvalidateCitedClaimResponse, error)
+	AdminListEvidenceTruthAudit(ctx context.Context, in *AdminListEvidenceTruthAuditRequest, opts ...grpc.CallOption) (*AdminListEvidenceTruthAuditResponse, error)
+	AdminManageSourceRightsOrCorrection(ctx context.Context, in *AdminManageSourceRightsOrCorrectionRequest, opts ...grpc.CallOption) (*AdminManageSourceRightsOrCorrectionResponse, error)
+	// =========================================================================
+	// CHOICE 2 (R2): DECISION LEDGER AND WORKBENCH
+	// =========================================================================
+	GetDecisionLedgerWorkbench(ctx context.Context, in *GetDecisionLedgerWorkbenchRequest, opts ...grpc.CallOption) (*GetDecisionLedgerWorkbenchResponse, error)
+	CreateOrUpdateDecisionLedgerRecord(ctx context.Context, in *CreateOrUpdateDecisionLedgerRecordRequest, opts ...grpc.CallOption) (*CreateOrUpdateDecisionLedgerRecordResponse, error)
+	RecordDecisionAssumptionOrReview(ctx context.Context, in *RecordDecisionAssumptionOrReviewRequest, opts ...grpc.CallOption) (*RecordDecisionAssumptionOrReviewResponse, error)
+	AdminListDecisionLedgerAudit(ctx context.Context, in *AdminListDecisionLedgerAuditRequest, opts ...grpc.CallOption) (*AdminListDecisionLedgerAuditResponse, error)
+	AdminManageDecisionTemplateOrHold(ctx context.Context, in *AdminManageDecisionTemplateOrHoldRequest, opts ...grpc.CallOption) (*AdminManageDecisionTemplateOrHoldResponse, error)
+	// =========================================================================
+	// CHOICE 3 (R9): COMMITMENTS AND OUTCOME LOOP
+	// =========================================================================
+	GetCommitmentsOutcomeWorkbench(ctx context.Context, in *GetCommitmentsOutcomeWorkbenchRequest, opts ...grpc.CallOption) (*GetCommitmentsOutcomeWorkbenchResponse, error)
+	CreateOrUpdateCommitmentItem(ctx context.Context, in *CreateOrUpdateCommitmentItemRequest, opts ...grpc.CallOption) (*CreateOrUpdateCommitmentItemResponse, error)
+	PreviewOrExecuteExternalCommitmentSync(ctx context.Context, in *PreviewOrExecuteExternalCommitmentSyncRequest, opts ...grpc.CallOption) (*PreviewOrExecuteExternalCommitmentSyncResponse, error)
+	AdminListCommitmentsOutcomeAudit(ctx context.Context, in *AdminListCommitmentsOutcomeAuditRequest, opts ...grpc.CallOption) (*AdminListCommitmentsOutcomeAuditResponse, error)
+	AdminReconcileExternalSyncDelivery(ctx context.Context, in *AdminReconcileExternalSyncDeliveryRequest, opts ...grpc.CallOption) (*AdminReconcileExternalSyncDeliveryResponse, error)
+	// =========================================================================
+	// CHOICE 4 (R3): WATCHLISTS AND COMMAND BRIEF
+	// =========================================================================
+	GetWatchlistsCommandBriefWorkbench(ctx context.Context, in *GetWatchlistsCommandBriefWorkbenchRequest, opts ...grpc.CallOption) (*GetWatchlistsCommandBriefWorkbenchResponse, error)
+	UpsertWatchlistEntityMonitor(ctx context.Context, in *UpsertWatchlistEntityMonitorRequest, opts ...grpc.CallOption) (*UpsertWatchlistEntityMonitorResponse, error)
+	ApproveOrSnoozeCommandBriefSignal(ctx context.Context, in *ApproveOrSnoozeCommandBriefSignalRequest, opts ...grpc.CallOption) (*ApproveOrSnoozeCommandBriefSignalResponse, error)
+	AdminListWatchlistsCommandBriefAudit(ctx context.Context, in *AdminListWatchlistsCommandBriefAuditRequest, opts ...grpc.CallOption) (*AdminListWatchlistsCommandBriefAuditResponse, error)
+	AdminTuneWatchlistAlertBudgetOrFeed(ctx context.Context, in *AdminManageWatchlistAlertBudgetOrFeedRequest, opts ...grpc.CallOption) (*AdminManageWatchlistAlertBudgetOrFeedResponse, error)
+	// =========================================================================
+	// CHOICE 5 (R10): ASSUMPTION DRIFT RADAR
+	// =========================================================================
+	GetAssumptionDriftRadarWorkbench(ctx context.Context, in *GetAssumptionDriftRadarWorkbenchRequest, opts ...grpc.CallOption) (*GetAssumptionDriftRadarWorkbenchResponse, error)
+	RespondToAssumptionDriftAlert(ctx context.Context, in *RespondToAssumptionDriftAlertRequest, opts ...grpc.CallOption) (*RespondToAssumptionDriftAlertResponse, error)
+	UpdateDriftRadarPolicy(ctx context.Context, in *UpdateDriftRadarPolicyRequest, opts ...grpc.CallOption) (*UpdateDriftRadarPolicyResponse, error)
+	AdminListAssumptionDriftRadarAudit(ctx context.Context, in *AdminListAssumptionDriftRadarAuditRequest, opts ...grpc.CallOption) (*AdminListAssumptionDriftRadarAuditResponse, error)
+	AdminCalibrateDriftThresholdOrDomain(ctx context.Context, in *AdminCalibrateDriftThresholdOrDomainRequest, opts ...grpc.CallOption) (*AdminCalibrateDriftThresholdOrDomainResponse, error)
+	// =========================================================================
+	// CHOICE 6 (R4/R14): FORECASTING AND CALIBRATION
+	// =========================================================================
+	GetForecastingCalibrationWorkbench(ctx context.Context, in *GetForecastingCalibrationWorkbenchRequest, opts ...grpc.CallOption) (*GetForecastingCalibrationWorkbenchResponse, error)
+	CreateOrResolveForecastQuestion(ctx context.Context, in *CreateOrResolveForecastQuestionRequest, opts ...grpc.CallOption) (*CreateOrResolveForecastQuestionResponse, error)
+	RecordCalibrationLabExperiment(ctx context.Context, in *RecordCalibrationLabExperimentRequest, opts ...grpc.CallOption) (*RecordCalibrationLabExperimentResponse, error)
+	AdminListForecastingCalibrationAudit(ctx context.Context, in *AdminListForecastingCalibrationAuditRequest, opts ...grpc.CallOption) (*AdminListForecastingCalibrationAuditResponse, error)
+	AdminVerifyForecastResolutionOrSandbox(ctx context.Context, in *AdminVerifyForecastResolutionOrSandboxRequest, opts ...grpc.CallOption) (*AdminVerifyForecastResolutionOrSandboxResponse, error)
+	// =========================================================================
+	// CHOICE 7 (R5/R11): MEETING AND NEGOTIATION STUDIO
+	// =========================================================================
+	GetMeetingNegotiationStudioWorkbench(ctx context.Context, in *GetMeetingNegotiationStudioWorkbenchRequest, opts ...grpc.CallOption) (*GetMeetingNegotiationStudioWorkbenchResponse, error)
+	SaveMeetingBriefOrRedteamRehearsal(ctx context.Context, in *SaveMeetingBriefOrRedteamRehearsalRequest, opts ...grpc.CallOption) (*SaveMeetingBriefOrRedteamRehearsalResponse, error)
+	ConfirmOrRejectCapturedMeetingProposal(ctx context.Context, in *ConfirmOrRejectCapturedMeetingProposalRequest, opts ...grpc.CallOption) (*ConfirmOrRejectCapturedMeetingProposalResponse, error)
+	AdminListMeetingNegotiationStudioAudit(ctx context.Context, in *AdminListMeetingNegotiationStudioAuditRequest, opts ...grpc.CallOption) (*AdminListMeetingNegotiationStudioAuditResponse, error)
+	AdminManageRecordingConsentOrRedaction(ctx context.Context, in *AdminManageRecordingConsentOrRedactionRequest, opts ...grpc.CallOption) (*AdminManageRecordingConsentOrRedactionResponse, error)
+	// =========================================================================
+	// CHOICE 8 (R6): SECURE CONNECTORS AND TOOL PLATFORM
+	// =========================================================================
+	GetSecureConnectorsToolWorkbench(ctx context.Context, in *GetSecureConnectorsToolWorkbenchRequest, opts ...grpc.CallOption) (*GetSecureConnectorsToolWorkbenchResponse, error)
+	ConfigureOrRevokeConnectorGrant(ctx context.Context, in *ConfigureOrRevokeConnectorGrantRequest, opts ...grpc.CallOption) (*ConfigureOrRevokeConnectorGrantResponse, error)
+	ReportOrReviewPromptInjectionQuarantine(ctx context.Context, in *ReportOrReviewPromptInjectionQuarantineRequest, opts ...grpc.CallOption) (*ReportOrReviewPromptInjectionQuarantineResponse, error)
+	AdminListSecureConnectorsToolAudit(ctx context.Context, in *AdminListSecureConnectorsToolAuditRequest, opts ...grpc.CallOption) (*AdminListSecureConnectorsToolAuditResponse, error)
+	AdminManageConnectorKillSwitchOrQuarantine(ctx context.Context, in *AdminManageConnectorKillSwitchOrQuarantineRequest, opts ...grpc.CallOption) (*AdminManageConnectorKillSwitchOrQuarantineResponse, error)
+	// =========================================================================
+	// CHOICE 9 (R7/R12): TRUSTED NETWORK AND DECISION ROOMS
+	// =========================================================================
+	GetTrustedNetworkDecisionRoomsWorkbench(ctx context.Context, in *GetTrustedNetworkDecisionRoomsWorkbenchRequest, opts ...grpc.CallOption) (*GetTrustedNetworkDecisionRoomsWorkbenchResponse, error)
+	CreateOrCloseTrustedDecisionRoom(ctx context.Context, in *CreateOrCloseTrustedDecisionRoomRequest, opts ...grpc.CallOption) (*CreateOrCloseTrustedDecisionRoomResponse, error)
+	VerifySpecialistDisclosureOrOptIn(ctx context.Context, in *VerifySpecialistDisclosureOrOptInRequest, opts ...grpc.CallOption) (*VerifySpecialistDisclosureOrOptInResponse, error)
+	AdminListTrustedDecisionRoomsAudit(ctx context.Context, in *AdminListTrustedDecisionRoomsAuditRequest, opts ...grpc.CallOption) (*AdminListTrustedDecisionRoomsAuditResponse, error)
+	AdminManageDecisionRoomGrantOrBoundary(ctx context.Context, in *AdminManageDecisionRoomGrantOrBoundaryRequest, opts ...grpc.CallOption) (*AdminManageDecisionRoomGrantOrBoundaryResponse, error)
+	// =========================================================================
+	// CHOICE 10 (R8/R12): WAR-GAMING AND CROSS-PILLAR EXPOSURE
+	// =========================================================================
+	GetWargamingExposureWorkbench(ctx context.Context, in *GetWargamingExposureWorkbenchRequest, opts ...grpc.CallOption) (*GetWargamingExposureWorkbenchResponse, error)
+	RunOrExportWargameExposureSimulation(ctx context.Context, in *RunOrExportWargameExposureSimulationRequest, opts ...grpc.CallOption) (*RunOrExportWargameExposureSimulationResponse, error)
+	UpdateWargameSensitivityOrContingency(ctx context.Context, in *UpdateWargameSensitivityOrContingencyRequest, opts ...grpc.CallOption) (*UpdateWargameSensitivityOrContingencyResponse, error)
+	AdminListWargamingExposureAudit(ctx context.Context, in *AdminListWargamingExposureAuditRequest, opts ...grpc.CallOption) (*AdminListWargamingExposureAuditResponse, error)
+	AdminCertifyMinimalPillarContractOrDisclaimer(ctx context.Context, in *AdminCertifyMinimalPillarContractOrDisclaimerRequest, opts ...grpc.CallOption) (*AdminCertifyMinimalPillarContractOrDisclaimerResponse, error)
+	// =========================================================================
+	// CHOICE 11 (R13): PRIVATE CASE LIBRARY
+	// =========================================================================
+	GetPrivateCaseLibraryWorkbench(ctx context.Context, in *GetPrivateCaseLibraryWorkbenchRequest, opts ...grpc.CallOption) (*GetPrivateCaseLibraryWorkbenchResponse, error)
+	SaveOrComparePrivateCaseEntry(ctx context.Context, in *SaveOrComparePrivateCaseEntryRequest, opts ...grpc.CallOption) (*SaveOrComparePrivateCaseEntryResponse, error)
+	SubmitOrWithdrawAnonymizedPlaybook(ctx context.Context, in *SubmitOrWithdrawAnonymizedPlaybookRequest, opts ...grpc.CallOption) (*SubmitOrWithdrawAnonymizedPlaybookResponse, error)
+	AdminListPrivateCaseLibraryAudit(ctx context.Context, in *AdminListPrivateCaseLibraryAuditRequest, opts ...grpc.CallOption) (*AdminListPrivateCaseLibraryAuditResponse, error)
+	AdminCertifyPlaybookAnonymizationOrErasure(ctx context.Context, in *AdminCertifyPlaybookAnonymizationOrErasureRequest, opts ...grpc.CallOption) (*AdminCertifyPlaybookAnonymizationOrErasureResponse, error)
 }
 
 type oracleServiceClient struct {
@@ -563,6 +706,556 @@ func (c *oracleServiceClient) GetRankExplainer(ctx context.Context, in *GetRankE
 	return out, nil
 }
 
+func (c *oracleServiceClient) GetEvidenceTruthWorkbench(ctx context.Context, in *GetEvidenceTruthWorkbenchRequest, opts ...grpc.CallOption) (*GetEvidenceTruthWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEvidenceTruthWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetEvidenceTruthWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RegisterOrRefreshEvidenceSource(ctx context.Context, in *RegisterOrRefreshEvidenceSourceRequest, opts ...grpc.CallOption) (*RegisterOrRefreshEvidenceSourceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterOrRefreshEvidenceSourceResponse)
+	err := c.cc.Invoke(ctx, OracleService_RegisterOrRefreshEvidenceSource_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) VerifyOrInvalidateCitedClaim(ctx context.Context, in *VerifyOrInvalidateCitedClaimRequest, opts ...grpc.CallOption) (*VerifyOrInvalidateCitedClaimResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyOrInvalidateCitedClaimResponse)
+	err := c.cc.Invoke(ctx, OracleService_VerifyOrInvalidateCitedClaim_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListEvidenceTruthAudit(ctx context.Context, in *AdminListEvidenceTruthAuditRequest, opts ...grpc.CallOption) (*AdminListEvidenceTruthAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListEvidenceTruthAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListEvidenceTruthAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminManageSourceRightsOrCorrection(ctx context.Context, in *AdminManageSourceRightsOrCorrectionRequest, opts ...grpc.CallOption) (*AdminManageSourceRightsOrCorrectionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageSourceRightsOrCorrectionResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminManageSourceRightsOrCorrection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetDecisionLedgerWorkbench(ctx context.Context, in *GetDecisionLedgerWorkbenchRequest, opts ...grpc.CallOption) (*GetDecisionLedgerWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDecisionLedgerWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetDecisionLedgerWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateOrUpdateDecisionLedgerRecord(ctx context.Context, in *CreateOrUpdateDecisionLedgerRecordRequest, opts ...grpc.CallOption) (*CreateOrUpdateDecisionLedgerRecordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrUpdateDecisionLedgerRecordResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateOrUpdateDecisionLedgerRecord_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RecordDecisionAssumptionOrReview(ctx context.Context, in *RecordDecisionAssumptionOrReviewRequest, opts ...grpc.CallOption) (*RecordDecisionAssumptionOrReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordDecisionAssumptionOrReviewResponse)
+	err := c.cc.Invoke(ctx, OracleService_RecordDecisionAssumptionOrReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListDecisionLedgerAudit(ctx context.Context, in *AdminListDecisionLedgerAuditRequest, opts ...grpc.CallOption) (*AdminListDecisionLedgerAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListDecisionLedgerAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListDecisionLedgerAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminManageDecisionTemplateOrHold(ctx context.Context, in *AdminManageDecisionTemplateOrHoldRequest, opts ...grpc.CallOption) (*AdminManageDecisionTemplateOrHoldResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageDecisionTemplateOrHoldResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminManageDecisionTemplateOrHold_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetCommitmentsOutcomeWorkbench(ctx context.Context, in *GetCommitmentsOutcomeWorkbenchRequest, opts ...grpc.CallOption) (*GetCommitmentsOutcomeWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCommitmentsOutcomeWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetCommitmentsOutcomeWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateOrUpdateCommitmentItem(ctx context.Context, in *CreateOrUpdateCommitmentItemRequest, opts ...grpc.CallOption) (*CreateOrUpdateCommitmentItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrUpdateCommitmentItemResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateOrUpdateCommitmentItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) PreviewOrExecuteExternalCommitmentSync(ctx context.Context, in *PreviewOrExecuteExternalCommitmentSyncRequest, opts ...grpc.CallOption) (*PreviewOrExecuteExternalCommitmentSyncResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewOrExecuteExternalCommitmentSyncResponse)
+	err := c.cc.Invoke(ctx, OracleService_PreviewOrExecuteExternalCommitmentSync_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListCommitmentsOutcomeAudit(ctx context.Context, in *AdminListCommitmentsOutcomeAuditRequest, opts ...grpc.CallOption) (*AdminListCommitmentsOutcomeAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListCommitmentsOutcomeAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListCommitmentsOutcomeAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminReconcileExternalSyncDelivery(ctx context.Context, in *AdminReconcileExternalSyncDeliveryRequest, opts ...grpc.CallOption) (*AdminReconcileExternalSyncDeliveryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminReconcileExternalSyncDeliveryResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminReconcileExternalSyncDelivery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetWatchlistsCommandBriefWorkbench(ctx context.Context, in *GetWatchlistsCommandBriefWorkbenchRequest, opts ...grpc.CallOption) (*GetWatchlistsCommandBriefWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWatchlistsCommandBriefWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetWatchlistsCommandBriefWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) UpsertWatchlistEntityMonitor(ctx context.Context, in *UpsertWatchlistEntityMonitorRequest, opts ...grpc.CallOption) (*UpsertWatchlistEntityMonitorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertWatchlistEntityMonitorResponse)
+	err := c.cc.Invoke(ctx, OracleService_UpsertWatchlistEntityMonitor_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ApproveOrSnoozeCommandBriefSignal(ctx context.Context, in *ApproveOrSnoozeCommandBriefSignalRequest, opts ...grpc.CallOption) (*ApproveOrSnoozeCommandBriefSignalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrSnoozeCommandBriefSignalResponse)
+	err := c.cc.Invoke(ctx, OracleService_ApproveOrSnoozeCommandBriefSignal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListWatchlistsCommandBriefAudit(ctx context.Context, in *AdminListWatchlistsCommandBriefAuditRequest, opts ...grpc.CallOption) (*AdminListWatchlistsCommandBriefAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListWatchlistsCommandBriefAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListWatchlistsCommandBriefAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminTuneWatchlistAlertBudgetOrFeed(ctx context.Context, in *AdminManageWatchlistAlertBudgetOrFeedRequest, opts ...grpc.CallOption) (*AdminManageWatchlistAlertBudgetOrFeedResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageWatchlistAlertBudgetOrFeedResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminTuneWatchlistAlertBudgetOrFeed_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetAssumptionDriftRadarWorkbench(ctx context.Context, in *GetAssumptionDriftRadarWorkbenchRequest, opts ...grpc.CallOption) (*GetAssumptionDriftRadarWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAssumptionDriftRadarWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetAssumptionDriftRadarWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RespondToAssumptionDriftAlert(ctx context.Context, in *RespondToAssumptionDriftAlertRequest, opts ...grpc.CallOption) (*RespondToAssumptionDriftAlertResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondToAssumptionDriftAlertResponse)
+	err := c.cc.Invoke(ctx, OracleService_RespondToAssumptionDriftAlert_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) UpdateDriftRadarPolicy(ctx context.Context, in *UpdateDriftRadarPolicyRequest, opts ...grpc.CallOption) (*UpdateDriftRadarPolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateDriftRadarPolicyResponse)
+	err := c.cc.Invoke(ctx, OracleService_UpdateDriftRadarPolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListAssumptionDriftRadarAudit(ctx context.Context, in *AdminListAssumptionDriftRadarAuditRequest, opts ...grpc.CallOption) (*AdminListAssumptionDriftRadarAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListAssumptionDriftRadarAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListAssumptionDriftRadarAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminCalibrateDriftThresholdOrDomain(ctx context.Context, in *AdminCalibrateDriftThresholdOrDomainRequest, opts ...grpc.CallOption) (*AdminCalibrateDriftThresholdOrDomainResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminCalibrateDriftThresholdOrDomainResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminCalibrateDriftThresholdOrDomain_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetForecastingCalibrationWorkbench(ctx context.Context, in *GetForecastingCalibrationWorkbenchRequest, opts ...grpc.CallOption) (*GetForecastingCalibrationWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetForecastingCalibrationWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetForecastingCalibrationWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateOrResolveForecastQuestion(ctx context.Context, in *CreateOrResolveForecastQuestionRequest, opts ...grpc.CallOption) (*CreateOrResolveForecastQuestionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrResolveForecastQuestionResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateOrResolveForecastQuestion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RecordCalibrationLabExperiment(ctx context.Context, in *RecordCalibrationLabExperimentRequest, opts ...grpc.CallOption) (*RecordCalibrationLabExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordCalibrationLabExperimentResponse)
+	err := c.cc.Invoke(ctx, OracleService_RecordCalibrationLabExperiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListForecastingCalibrationAudit(ctx context.Context, in *AdminListForecastingCalibrationAuditRequest, opts ...grpc.CallOption) (*AdminListForecastingCalibrationAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListForecastingCalibrationAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListForecastingCalibrationAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminVerifyForecastResolutionOrSandbox(ctx context.Context, in *AdminVerifyForecastResolutionOrSandboxRequest, opts ...grpc.CallOption) (*AdminVerifyForecastResolutionOrSandboxResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminVerifyForecastResolutionOrSandboxResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminVerifyForecastResolutionOrSandbox_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetMeetingNegotiationStudioWorkbench(ctx context.Context, in *GetMeetingNegotiationStudioWorkbenchRequest, opts ...grpc.CallOption) (*GetMeetingNegotiationStudioWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMeetingNegotiationStudioWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetMeetingNegotiationStudioWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) SaveMeetingBriefOrRedteamRehearsal(ctx context.Context, in *SaveMeetingBriefOrRedteamRehearsalRequest, opts ...grpc.CallOption) (*SaveMeetingBriefOrRedteamRehearsalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveMeetingBriefOrRedteamRehearsalResponse)
+	err := c.cc.Invoke(ctx, OracleService_SaveMeetingBriefOrRedteamRehearsal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ConfirmOrRejectCapturedMeetingProposal(ctx context.Context, in *ConfirmOrRejectCapturedMeetingProposalRequest, opts ...grpc.CallOption) (*ConfirmOrRejectCapturedMeetingProposalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmOrRejectCapturedMeetingProposalResponse)
+	err := c.cc.Invoke(ctx, OracleService_ConfirmOrRejectCapturedMeetingProposal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListMeetingNegotiationStudioAudit(ctx context.Context, in *AdminListMeetingNegotiationStudioAuditRequest, opts ...grpc.CallOption) (*AdminListMeetingNegotiationStudioAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListMeetingNegotiationStudioAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListMeetingNegotiationStudioAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminManageRecordingConsentOrRedaction(ctx context.Context, in *AdminManageRecordingConsentOrRedactionRequest, opts ...grpc.CallOption) (*AdminManageRecordingConsentOrRedactionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageRecordingConsentOrRedactionResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminManageRecordingConsentOrRedaction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetSecureConnectorsToolWorkbench(ctx context.Context, in *GetSecureConnectorsToolWorkbenchRequest, opts ...grpc.CallOption) (*GetSecureConnectorsToolWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSecureConnectorsToolWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetSecureConnectorsToolWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ConfigureOrRevokeConnectorGrant(ctx context.Context, in *ConfigureOrRevokeConnectorGrantRequest, opts ...grpc.CallOption) (*ConfigureOrRevokeConnectorGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfigureOrRevokeConnectorGrantResponse)
+	err := c.cc.Invoke(ctx, OracleService_ConfigureOrRevokeConnectorGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) ReportOrReviewPromptInjectionQuarantine(ctx context.Context, in *ReportOrReviewPromptInjectionQuarantineRequest, opts ...grpc.CallOption) (*ReportOrReviewPromptInjectionQuarantineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportOrReviewPromptInjectionQuarantineResponse)
+	err := c.cc.Invoke(ctx, OracleService_ReportOrReviewPromptInjectionQuarantine_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListSecureConnectorsToolAudit(ctx context.Context, in *AdminListSecureConnectorsToolAuditRequest, opts ...grpc.CallOption) (*AdminListSecureConnectorsToolAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListSecureConnectorsToolAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListSecureConnectorsToolAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminManageConnectorKillSwitchOrQuarantine(ctx context.Context, in *AdminManageConnectorKillSwitchOrQuarantineRequest, opts ...grpc.CallOption) (*AdminManageConnectorKillSwitchOrQuarantineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageConnectorKillSwitchOrQuarantineResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminManageConnectorKillSwitchOrQuarantine_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetTrustedNetworkDecisionRoomsWorkbench(ctx context.Context, in *GetTrustedNetworkDecisionRoomsWorkbenchRequest, opts ...grpc.CallOption) (*GetTrustedNetworkDecisionRoomsWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTrustedNetworkDecisionRoomsWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetTrustedNetworkDecisionRoomsWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) CreateOrCloseTrustedDecisionRoom(ctx context.Context, in *CreateOrCloseTrustedDecisionRoomRequest, opts ...grpc.CallOption) (*CreateOrCloseTrustedDecisionRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrCloseTrustedDecisionRoomResponse)
+	err := c.cc.Invoke(ctx, OracleService_CreateOrCloseTrustedDecisionRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) VerifySpecialistDisclosureOrOptIn(ctx context.Context, in *VerifySpecialistDisclosureOrOptInRequest, opts ...grpc.CallOption) (*VerifySpecialistDisclosureOrOptInResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifySpecialistDisclosureOrOptInResponse)
+	err := c.cc.Invoke(ctx, OracleService_VerifySpecialistDisclosureOrOptIn_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListTrustedDecisionRoomsAudit(ctx context.Context, in *AdminListTrustedDecisionRoomsAuditRequest, opts ...grpc.CallOption) (*AdminListTrustedDecisionRoomsAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListTrustedDecisionRoomsAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListTrustedDecisionRoomsAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminManageDecisionRoomGrantOrBoundary(ctx context.Context, in *AdminManageDecisionRoomGrantOrBoundaryRequest, opts ...grpc.CallOption) (*AdminManageDecisionRoomGrantOrBoundaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageDecisionRoomGrantOrBoundaryResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminManageDecisionRoomGrantOrBoundary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetWargamingExposureWorkbench(ctx context.Context, in *GetWargamingExposureWorkbenchRequest, opts ...grpc.CallOption) (*GetWargamingExposureWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWargamingExposureWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetWargamingExposureWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) RunOrExportWargameExposureSimulation(ctx context.Context, in *RunOrExportWargameExposureSimulationRequest, opts ...grpc.CallOption) (*RunOrExportWargameExposureSimulationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunOrExportWargameExposureSimulationResponse)
+	err := c.cc.Invoke(ctx, OracleService_RunOrExportWargameExposureSimulation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) UpdateWargameSensitivityOrContingency(ctx context.Context, in *UpdateWargameSensitivityOrContingencyRequest, opts ...grpc.CallOption) (*UpdateWargameSensitivityOrContingencyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateWargameSensitivityOrContingencyResponse)
+	err := c.cc.Invoke(ctx, OracleService_UpdateWargameSensitivityOrContingency_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListWargamingExposureAudit(ctx context.Context, in *AdminListWargamingExposureAuditRequest, opts ...grpc.CallOption) (*AdminListWargamingExposureAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListWargamingExposureAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListWargamingExposureAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminCertifyMinimalPillarContractOrDisclaimer(ctx context.Context, in *AdminCertifyMinimalPillarContractOrDisclaimerRequest, opts ...grpc.CallOption) (*AdminCertifyMinimalPillarContractOrDisclaimerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminCertifyMinimalPillarContractOrDisclaimerResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminCertifyMinimalPillarContractOrDisclaimer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) GetPrivateCaseLibraryWorkbench(ctx context.Context, in *GetPrivateCaseLibraryWorkbenchRequest, opts ...grpc.CallOption) (*GetPrivateCaseLibraryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPrivateCaseLibraryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, OracleService_GetPrivateCaseLibraryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) SaveOrComparePrivateCaseEntry(ctx context.Context, in *SaveOrComparePrivateCaseEntryRequest, opts ...grpc.CallOption) (*SaveOrComparePrivateCaseEntryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveOrComparePrivateCaseEntryResponse)
+	err := c.cc.Invoke(ctx, OracleService_SaveOrComparePrivateCaseEntry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) SubmitOrWithdrawAnonymizedPlaybook(ctx context.Context, in *SubmitOrWithdrawAnonymizedPlaybookRequest, opts ...grpc.CallOption) (*SubmitOrWithdrawAnonymizedPlaybookResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitOrWithdrawAnonymizedPlaybookResponse)
+	err := c.cc.Invoke(ctx, OracleService_SubmitOrWithdrawAnonymizedPlaybook_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminListPrivateCaseLibraryAudit(ctx context.Context, in *AdminListPrivateCaseLibraryAuditRequest, opts ...grpc.CallOption) (*AdminListPrivateCaseLibraryAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListPrivateCaseLibraryAuditResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminListPrivateCaseLibraryAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *oracleServiceClient) AdminCertifyPlaybookAnonymizationOrErasure(ctx context.Context, in *AdminCertifyPlaybookAnonymizationOrErasureRequest, opts ...grpc.CallOption) (*AdminCertifyPlaybookAnonymizationOrErasureResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminCertifyPlaybookAnonymizationOrErasureResponse)
+	err := c.cc.Invoke(ctx, OracleService_AdminCertifyPlaybookAnonymizationOrErasure_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OracleServiceServer is the server API for OracleService service.
 // All implementations must embed UnimplementedOracleServiceServer
 // for forward compatibility.
@@ -624,6 +1317,94 @@ type OracleServiceServer interface {
 	RunOracleTool(context.Context, *RunOracleToolRequest) (*RunOracleToolResponse, error)
 	// O13.7 — glass-box rank explainer.
 	GetRankExplainer(context.Context, *GetRankExplainerRequest) (*GetRankExplainerResponse, error)
+	// =========================================================================
+	// CHOICE 1 (R1): EVIDENCE TRUTH LAYER
+	// =========================================================================
+	GetEvidenceTruthWorkbench(context.Context, *GetEvidenceTruthWorkbenchRequest) (*GetEvidenceTruthWorkbenchResponse, error)
+	RegisterOrRefreshEvidenceSource(context.Context, *RegisterOrRefreshEvidenceSourceRequest) (*RegisterOrRefreshEvidenceSourceResponse, error)
+	VerifyOrInvalidateCitedClaim(context.Context, *VerifyOrInvalidateCitedClaimRequest) (*VerifyOrInvalidateCitedClaimResponse, error)
+	AdminListEvidenceTruthAudit(context.Context, *AdminListEvidenceTruthAuditRequest) (*AdminListEvidenceTruthAuditResponse, error)
+	AdminManageSourceRightsOrCorrection(context.Context, *AdminManageSourceRightsOrCorrectionRequest) (*AdminManageSourceRightsOrCorrectionResponse, error)
+	// =========================================================================
+	// CHOICE 2 (R2): DECISION LEDGER AND WORKBENCH
+	// =========================================================================
+	GetDecisionLedgerWorkbench(context.Context, *GetDecisionLedgerWorkbenchRequest) (*GetDecisionLedgerWorkbenchResponse, error)
+	CreateOrUpdateDecisionLedgerRecord(context.Context, *CreateOrUpdateDecisionLedgerRecordRequest) (*CreateOrUpdateDecisionLedgerRecordResponse, error)
+	RecordDecisionAssumptionOrReview(context.Context, *RecordDecisionAssumptionOrReviewRequest) (*RecordDecisionAssumptionOrReviewResponse, error)
+	AdminListDecisionLedgerAudit(context.Context, *AdminListDecisionLedgerAuditRequest) (*AdminListDecisionLedgerAuditResponse, error)
+	AdminManageDecisionTemplateOrHold(context.Context, *AdminManageDecisionTemplateOrHoldRequest) (*AdminManageDecisionTemplateOrHoldResponse, error)
+	// =========================================================================
+	// CHOICE 3 (R9): COMMITMENTS AND OUTCOME LOOP
+	// =========================================================================
+	GetCommitmentsOutcomeWorkbench(context.Context, *GetCommitmentsOutcomeWorkbenchRequest) (*GetCommitmentsOutcomeWorkbenchResponse, error)
+	CreateOrUpdateCommitmentItem(context.Context, *CreateOrUpdateCommitmentItemRequest) (*CreateOrUpdateCommitmentItemResponse, error)
+	PreviewOrExecuteExternalCommitmentSync(context.Context, *PreviewOrExecuteExternalCommitmentSyncRequest) (*PreviewOrExecuteExternalCommitmentSyncResponse, error)
+	AdminListCommitmentsOutcomeAudit(context.Context, *AdminListCommitmentsOutcomeAuditRequest) (*AdminListCommitmentsOutcomeAuditResponse, error)
+	AdminReconcileExternalSyncDelivery(context.Context, *AdminReconcileExternalSyncDeliveryRequest) (*AdminReconcileExternalSyncDeliveryResponse, error)
+	// =========================================================================
+	// CHOICE 4 (R3): WATCHLISTS AND COMMAND BRIEF
+	// =========================================================================
+	GetWatchlistsCommandBriefWorkbench(context.Context, *GetWatchlistsCommandBriefWorkbenchRequest) (*GetWatchlistsCommandBriefWorkbenchResponse, error)
+	UpsertWatchlistEntityMonitor(context.Context, *UpsertWatchlistEntityMonitorRequest) (*UpsertWatchlistEntityMonitorResponse, error)
+	ApproveOrSnoozeCommandBriefSignal(context.Context, *ApproveOrSnoozeCommandBriefSignalRequest) (*ApproveOrSnoozeCommandBriefSignalResponse, error)
+	AdminListWatchlistsCommandBriefAudit(context.Context, *AdminListWatchlistsCommandBriefAuditRequest) (*AdminListWatchlistsCommandBriefAuditResponse, error)
+	AdminTuneWatchlistAlertBudgetOrFeed(context.Context, *AdminManageWatchlistAlertBudgetOrFeedRequest) (*AdminManageWatchlistAlertBudgetOrFeedResponse, error)
+	// =========================================================================
+	// CHOICE 5 (R10): ASSUMPTION DRIFT RADAR
+	// =========================================================================
+	GetAssumptionDriftRadarWorkbench(context.Context, *GetAssumptionDriftRadarWorkbenchRequest) (*GetAssumptionDriftRadarWorkbenchResponse, error)
+	RespondToAssumptionDriftAlert(context.Context, *RespondToAssumptionDriftAlertRequest) (*RespondToAssumptionDriftAlertResponse, error)
+	UpdateDriftRadarPolicy(context.Context, *UpdateDriftRadarPolicyRequest) (*UpdateDriftRadarPolicyResponse, error)
+	AdminListAssumptionDriftRadarAudit(context.Context, *AdminListAssumptionDriftRadarAuditRequest) (*AdminListAssumptionDriftRadarAuditResponse, error)
+	AdminCalibrateDriftThresholdOrDomain(context.Context, *AdminCalibrateDriftThresholdOrDomainRequest) (*AdminCalibrateDriftThresholdOrDomainResponse, error)
+	// =========================================================================
+	// CHOICE 6 (R4/R14): FORECASTING AND CALIBRATION
+	// =========================================================================
+	GetForecastingCalibrationWorkbench(context.Context, *GetForecastingCalibrationWorkbenchRequest) (*GetForecastingCalibrationWorkbenchResponse, error)
+	CreateOrResolveForecastQuestion(context.Context, *CreateOrResolveForecastQuestionRequest) (*CreateOrResolveForecastQuestionResponse, error)
+	RecordCalibrationLabExperiment(context.Context, *RecordCalibrationLabExperimentRequest) (*RecordCalibrationLabExperimentResponse, error)
+	AdminListForecastingCalibrationAudit(context.Context, *AdminListForecastingCalibrationAuditRequest) (*AdminListForecastingCalibrationAuditResponse, error)
+	AdminVerifyForecastResolutionOrSandbox(context.Context, *AdminVerifyForecastResolutionOrSandboxRequest) (*AdminVerifyForecastResolutionOrSandboxResponse, error)
+	// =========================================================================
+	// CHOICE 7 (R5/R11): MEETING AND NEGOTIATION STUDIO
+	// =========================================================================
+	GetMeetingNegotiationStudioWorkbench(context.Context, *GetMeetingNegotiationStudioWorkbenchRequest) (*GetMeetingNegotiationStudioWorkbenchResponse, error)
+	SaveMeetingBriefOrRedteamRehearsal(context.Context, *SaveMeetingBriefOrRedteamRehearsalRequest) (*SaveMeetingBriefOrRedteamRehearsalResponse, error)
+	ConfirmOrRejectCapturedMeetingProposal(context.Context, *ConfirmOrRejectCapturedMeetingProposalRequest) (*ConfirmOrRejectCapturedMeetingProposalResponse, error)
+	AdminListMeetingNegotiationStudioAudit(context.Context, *AdminListMeetingNegotiationStudioAuditRequest) (*AdminListMeetingNegotiationStudioAuditResponse, error)
+	AdminManageRecordingConsentOrRedaction(context.Context, *AdminManageRecordingConsentOrRedactionRequest) (*AdminManageRecordingConsentOrRedactionResponse, error)
+	// =========================================================================
+	// CHOICE 8 (R6): SECURE CONNECTORS AND TOOL PLATFORM
+	// =========================================================================
+	GetSecureConnectorsToolWorkbench(context.Context, *GetSecureConnectorsToolWorkbenchRequest) (*GetSecureConnectorsToolWorkbenchResponse, error)
+	ConfigureOrRevokeConnectorGrant(context.Context, *ConfigureOrRevokeConnectorGrantRequest) (*ConfigureOrRevokeConnectorGrantResponse, error)
+	ReportOrReviewPromptInjectionQuarantine(context.Context, *ReportOrReviewPromptInjectionQuarantineRequest) (*ReportOrReviewPromptInjectionQuarantineResponse, error)
+	AdminListSecureConnectorsToolAudit(context.Context, *AdminListSecureConnectorsToolAuditRequest) (*AdminListSecureConnectorsToolAuditResponse, error)
+	AdminManageConnectorKillSwitchOrQuarantine(context.Context, *AdminManageConnectorKillSwitchOrQuarantineRequest) (*AdminManageConnectorKillSwitchOrQuarantineResponse, error)
+	// =========================================================================
+	// CHOICE 9 (R7/R12): TRUSTED NETWORK AND DECISION ROOMS
+	// =========================================================================
+	GetTrustedNetworkDecisionRoomsWorkbench(context.Context, *GetTrustedNetworkDecisionRoomsWorkbenchRequest) (*GetTrustedNetworkDecisionRoomsWorkbenchResponse, error)
+	CreateOrCloseTrustedDecisionRoom(context.Context, *CreateOrCloseTrustedDecisionRoomRequest) (*CreateOrCloseTrustedDecisionRoomResponse, error)
+	VerifySpecialistDisclosureOrOptIn(context.Context, *VerifySpecialistDisclosureOrOptInRequest) (*VerifySpecialistDisclosureOrOptInResponse, error)
+	AdminListTrustedDecisionRoomsAudit(context.Context, *AdminListTrustedDecisionRoomsAuditRequest) (*AdminListTrustedDecisionRoomsAuditResponse, error)
+	AdminManageDecisionRoomGrantOrBoundary(context.Context, *AdminManageDecisionRoomGrantOrBoundaryRequest) (*AdminManageDecisionRoomGrantOrBoundaryResponse, error)
+	// =========================================================================
+	// CHOICE 10 (R8/R12): WAR-GAMING AND CROSS-PILLAR EXPOSURE
+	// =========================================================================
+	GetWargamingExposureWorkbench(context.Context, *GetWargamingExposureWorkbenchRequest) (*GetWargamingExposureWorkbenchResponse, error)
+	RunOrExportWargameExposureSimulation(context.Context, *RunOrExportWargameExposureSimulationRequest) (*RunOrExportWargameExposureSimulationResponse, error)
+	UpdateWargameSensitivityOrContingency(context.Context, *UpdateWargameSensitivityOrContingencyRequest) (*UpdateWargameSensitivityOrContingencyResponse, error)
+	AdminListWargamingExposureAudit(context.Context, *AdminListWargamingExposureAuditRequest) (*AdminListWargamingExposureAuditResponse, error)
+	AdminCertifyMinimalPillarContractOrDisclaimer(context.Context, *AdminCertifyMinimalPillarContractOrDisclaimerRequest) (*AdminCertifyMinimalPillarContractOrDisclaimerResponse, error)
+	// =========================================================================
+	// CHOICE 11 (R13): PRIVATE CASE LIBRARY
+	// =========================================================================
+	GetPrivateCaseLibraryWorkbench(context.Context, *GetPrivateCaseLibraryWorkbenchRequest) (*GetPrivateCaseLibraryWorkbenchResponse, error)
+	SaveOrComparePrivateCaseEntry(context.Context, *SaveOrComparePrivateCaseEntryRequest) (*SaveOrComparePrivateCaseEntryResponse, error)
+	SubmitOrWithdrawAnonymizedPlaybook(context.Context, *SubmitOrWithdrawAnonymizedPlaybookRequest) (*SubmitOrWithdrawAnonymizedPlaybookResponse, error)
+	AdminListPrivateCaseLibraryAudit(context.Context, *AdminListPrivateCaseLibraryAuditRequest) (*AdminListPrivateCaseLibraryAuditResponse, error)
+	AdminCertifyPlaybookAnonymizationOrErasure(context.Context, *AdminCertifyPlaybookAnonymizationOrErasureRequest) (*AdminCertifyPlaybookAnonymizationOrErasureResponse, error)
 	mustEmbedUnimplementedOracleServiceServer()
 }
 
@@ -759,6 +1540,171 @@ func (UnimplementedOracleServiceServer) RunOracleTool(context.Context, *RunOracl
 }
 func (UnimplementedOracleServiceServer) GetRankExplainer(context.Context, *GetRankExplainerRequest) (*GetRankExplainerResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetRankExplainer not implemented")
+}
+func (UnimplementedOracleServiceServer) GetEvidenceTruthWorkbench(context.Context, *GetEvidenceTruthWorkbenchRequest) (*GetEvidenceTruthWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEvidenceTruthWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) RegisterOrRefreshEvidenceSource(context.Context, *RegisterOrRefreshEvidenceSourceRequest) (*RegisterOrRefreshEvidenceSourceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterOrRefreshEvidenceSource not implemented")
+}
+func (UnimplementedOracleServiceServer) VerifyOrInvalidateCitedClaim(context.Context, *VerifyOrInvalidateCitedClaimRequest) (*VerifyOrInvalidateCitedClaimResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyOrInvalidateCitedClaim not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListEvidenceTruthAudit(context.Context, *AdminListEvidenceTruthAuditRequest) (*AdminListEvidenceTruthAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListEvidenceTruthAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminManageSourceRightsOrCorrection(context.Context, *AdminManageSourceRightsOrCorrectionRequest) (*AdminManageSourceRightsOrCorrectionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageSourceRightsOrCorrection not implemented")
+}
+func (UnimplementedOracleServiceServer) GetDecisionLedgerWorkbench(context.Context, *GetDecisionLedgerWorkbenchRequest) (*GetDecisionLedgerWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDecisionLedgerWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateOrUpdateDecisionLedgerRecord(context.Context, *CreateOrUpdateDecisionLedgerRecordRequest) (*CreateOrUpdateDecisionLedgerRecordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrUpdateDecisionLedgerRecord not implemented")
+}
+func (UnimplementedOracleServiceServer) RecordDecisionAssumptionOrReview(context.Context, *RecordDecisionAssumptionOrReviewRequest) (*RecordDecisionAssumptionOrReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordDecisionAssumptionOrReview not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListDecisionLedgerAudit(context.Context, *AdminListDecisionLedgerAuditRequest) (*AdminListDecisionLedgerAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListDecisionLedgerAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminManageDecisionTemplateOrHold(context.Context, *AdminManageDecisionTemplateOrHoldRequest) (*AdminManageDecisionTemplateOrHoldResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageDecisionTemplateOrHold not implemented")
+}
+func (UnimplementedOracleServiceServer) GetCommitmentsOutcomeWorkbench(context.Context, *GetCommitmentsOutcomeWorkbenchRequest) (*GetCommitmentsOutcomeWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCommitmentsOutcomeWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateOrUpdateCommitmentItem(context.Context, *CreateOrUpdateCommitmentItemRequest) (*CreateOrUpdateCommitmentItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrUpdateCommitmentItem not implemented")
+}
+func (UnimplementedOracleServiceServer) PreviewOrExecuteExternalCommitmentSync(context.Context, *PreviewOrExecuteExternalCommitmentSyncRequest) (*PreviewOrExecuteExternalCommitmentSyncResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewOrExecuteExternalCommitmentSync not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListCommitmentsOutcomeAudit(context.Context, *AdminListCommitmentsOutcomeAuditRequest) (*AdminListCommitmentsOutcomeAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListCommitmentsOutcomeAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminReconcileExternalSyncDelivery(context.Context, *AdminReconcileExternalSyncDeliveryRequest) (*AdminReconcileExternalSyncDeliveryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminReconcileExternalSyncDelivery not implemented")
+}
+func (UnimplementedOracleServiceServer) GetWatchlistsCommandBriefWorkbench(context.Context, *GetWatchlistsCommandBriefWorkbenchRequest) (*GetWatchlistsCommandBriefWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWatchlistsCommandBriefWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) UpsertWatchlistEntityMonitor(context.Context, *UpsertWatchlistEntityMonitorRequest) (*UpsertWatchlistEntityMonitorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertWatchlistEntityMonitor not implemented")
+}
+func (UnimplementedOracleServiceServer) ApproveOrSnoozeCommandBriefSignal(context.Context, *ApproveOrSnoozeCommandBriefSignalRequest) (*ApproveOrSnoozeCommandBriefSignalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrSnoozeCommandBriefSignal not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListWatchlistsCommandBriefAudit(context.Context, *AdminListWatchlistsCommandBriefAuditRequest) (*AdminListWatchlistsCommandBriefAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListWatchlistsCommandBriefAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminTuneWatchlistAlertBudgetOrFeed(context.Context, *AdminManageWatchlistAlertBudgetOrFeedRequest) (*AdminManageWatchlistAlertBudgetOrFeedResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminTuneWatchlistAlertBudgetOrFeed not implemented")
+}
+func (UnimplementedOracleServiceServer) GetAssumptionDriftRadarWorkbench(context.Context, *GetAssumptionDriftRadarWorkbenchRequest) (*GetAssumptionDriftRadarWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAssumptionDriftRadarWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) RespondToAssumptionDriftAlert(context.Context, *RespondToAssumptionDriftAlertRequest) (*RespondToAssumptionDriftAlertResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondToAssumptionDriftAlert not implemented")
+}
+func (UnimplementedOracleServiceServer) UpdateDriftRadarPolicy(context.Context, *UpdateDriftRadarPolicyRequest) (*UpdateDriftRadarPolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateDriftRadarPolicy not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListAssumptionDriftRadarAudit(context.Context, *AdminListAssumptionDriftRadarAuditRequest) (*AdminListAssumptionDriftRadarAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListAssumptionDriftRadarAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminCalibrateDriftThresholdOrDomain(context.Context, *AdminCalibrateDriftThresholdOrDomainRequest) (*AdminCalibrateDriftThresholdOrDomainResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminCalibrateDriftThresholdOrDomain not implemented")
+}
+func (UnimplementedOracleServiceServer) GetForecastingCalibrationWorkbench(context.Context, *GetForecastingCalibrationWorkbenchRequest) (*GetForecastingCalibrationWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetForecastingCalibrationWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateOrResolveForecastQuestion(context.Context, *CreateOrResolveForecastQuestionRequest) (*CreateOrResolveForecastQuestionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrResolveForecastQuestion not implemented")
+}
+func (UnimplementedOracleServiceServer) RecordCalibrationLabExperiment(context.Context, *RecordCalibrationLabExperimentRequest) (*RecordCalibrationLabExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordCalibrationLabExperiment not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListForecastingCalibrationAudit(context.Context, *AdminListForecastingCalibrationAuditRequest) (*AdminListForecastingCalibrationAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListForecastingCalibrationAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminVerifyForecastResolutionOrSandbox(context.Context, *AdminVerifyForecastResolutionOrSandboxRequest) (*AdminVerifyForecastResolutionOrSandboxResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminVerifyForecastResolutionOrSandbox not implemented")
+}
+func (UnimplementedOracleServiceServer) GetMeetingNegotiationStudioWorkbench(context.Context, *GetMeetingNegotiationStudioWorkbenchRequest) (*GetMeetingNegotiationStudioWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMeetingNegotiationStudioWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) SaveMeetingBriefOrRedteamRehearsal(context.Context, *SaveMeetingBriefOrRedteamRehearsalRequest) (*SaveMeetingBriefOrRedteamRehearsalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveMeetingBriefOrRedteamRehearsal not implemented")
+}
+func (UnimplementedOracleServiceServer) ConfirmOrRejectCapturedMeetingProposal(context.Context, *ConfirmOrRejectCapturedMeetingProposalRequest) (*ConfirmOrRejectCapturedMeetingProposalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmOrRejectCapturedMeetingProposal not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListMeetingNegotiationStudioAudit(context.Context, *AdminListMeetingNegotiationStudioAuditRequest) (*AdminListMeetingNegotiationStudioAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListMeetingNegotiationStudioAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminManageRecordingConsentOrRedaction(context.Context, *AdminManageRecordingConsentOrRedactionRequest) (*AdminManageRecordingConsentOrRedactionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageRecordingConsentOrRedaction not implemented")
+}
+func (UnimplementedOracleServiceServer) GetSecureConnectorsToolWorkbench(context.Context, *GetSecureConnectorsToolWorkbenchRequest) (*GetSecureConnectorsToolWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSecureConnectorsToolWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) ConfigureOrRevokeConnectorGrant(context.Context, *ConfigureOrRevokeConnectorGrantRequest) (*ConfigureOrRevokeConnectorGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfigureOrRevokeConnectorGrant not implemented")
+}
+func (UnimplementedOracleServiceServer) ReportOrReviewPromptInjectionQuarantine(context.Context, *ReportOrReviewPromptInjectionQuarantineRequest) (*ReportOrReviewPromptInjectionQuarantineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportOrReviewPromptInjectionQuarantine not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListSecureConnectorsToolAudit(context.Context, *AdminListSecureConnectorsToolAuditRequest) (*AdminListSecureConnectorsToolAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListSecureConnectorsToolAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminManageConnectorKillSwitchOrQuarantine(context.Context, *AdminManageConnectorKillSwitchOrQuarantineRequest) (*AdminManageConnectorKillSwitchOrQuarantineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageConnectorKillSwitchOrQuarantine not implemented")
+}
+func (UnimplementedOracleServiceServer) GetTrustedNetworkDecisionRoomsWorkbench(context.Context, *GetTrustedNetworkDecisionRoomsWorkbenchRequest) (*GetTrustedNetworkDecisionRoomsWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTrustedNetworkDecisionRoomsWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) CreateOrCloseTrustedDecisionRoom(context.Context, *CreateOrCloseTrustedDecisionRoomRequest) (*CreateOrCloseTrustedDecisionRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrCloseTrustedDecisionRoom not implemented")
+}
+func (UnimplementedOracleServiceServer) VerifySpecialistDisclosureOrOptIn(context.Context, *VerifySpecialistDisclosureOrOptInRequest) (*VerifySpecialistDisclosureOrOptInResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifySpecialistDisclosureOrOptIn not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListTrustedDecisionRoomsAudit(context.Context, *AdminListTrustedDecisionRoomsAuditRequest) (*AdminListTrustedDecisionRoomsAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListTrustedDecisionRoomsAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminManageDecisionRoomGrantOrBoundary(context.Context, *AdminManageDecisionRoomGrantOrBoundaryRequest) (*AdminManageDecisionRoomGrantOrBoundaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageDecisionRoomGrantOrBoundary not implemented")
+}
+func (UnimplementedOracleServiceServer) GetWargamingExposureWorkbench(context.Context, *GetWargamingExposureWorkbenchRequest) (*GetWargamingExposureWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWargamingExposureWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) RunOrExportWargameExposureSimulation(context.Context, *RunOrExportWargameExposureSimulationRequest) (*RunOrExportWargameExposureSimulationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunOrExportWargameExposureSimulation not implemented")
+}
+func (UnimplementedOracleServiceServer) UpdateWargameSensitivityOrContingency(context.Context, *UpdateWargameSensitivityOrContingencyRequest) (*UpdateWargameSensitivityOrContingencyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateWargameSensitivityOrContingency not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListWargamingExposureAudit(context.Context, *AdminListWargamingExposureAuditRequest) (*AdminListWargamingExposureAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListWargamingExposureAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminCertifyMinimalPillarContractOrDisclaimer(context.Context, *AdminCertifyMinimalPillarContractOrDisclaimerRequest) (*AdminCertifyMinimalPillarContractOrDisclaimerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminCertifyMinimalPillarContractOrDisclaimer not implemented")
+}
+func (UnimplementedOracleServiceServer) GetPrivateCaseLibraryWorkbench(context.Context, *GetPrivateCaseLibraryWorkbenchRequest) (*GetPrivateCaseLibraryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPrivateCaseLibraryWorkbench not implemented")
+}
+func (UnimplementedOracleServiceServer) SaveOrComparePrivateCaseEntry(context.Context, *SaveOrComparePrivateCaseEntryRequest) (*SaveOrComparePrivateCaseEntryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveOrComparePrivateCaseEntry not implemented")
+}
+func (UnimplementedOracleServiceServer) SubmitOrWithdrawAnonymizedPlaybook(context.Context, *SubmitOrWithdrawAnonymizedPlaybookRequest) (*SubmitOrWithdrawAnonymizedPlaybookResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitOrWithdrawAnonymizedPlaybook not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminListPrivateCaseLibraryAudit(context.Context, *AdminListPrivateCaseLibraryAuditRequest) (*AdminListPrivateCaseLibraryAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListPrivateCaseLibraryAudit not implemented")
+}
+func (UnimplementedOracleServiceServer) AdminCertifyPlaybookAnonymizationOrErasure(context.Context, *AdminCertifyPlaybookAnonymizationOrErasureRequest) (*AdminCertifyPlaybookAnonymizationOrErasureResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminCertifyPlaybookAnonymizationOrErasure not implemented")
 }
 func (UnimplementedOracleServiceServer) mustEmbedUnimplementedOracleServiceServer() {}
 func (UnimplementedOracleServiceServer) testEmbeddedByValue()                       {}
@@ -1530,6 +2476,996 @@ func _OracleService_GetRankExplainer_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OracleService_GetEvidenceTruthWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEvidenceTruthWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetEvidenceTruthWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetEvidenceTruthWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetEvidenceTruthWorkbench(ctx, req.(*GetEvidenceTruthWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RegisterOrRefreshEvidenceSource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterOrRefreshEvidenceSourceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RegisterOrRefreshEvidenceSource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RegisterOrRefreshEvidenceSource_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RegisterOrRefreshEvidenceSource(ctx, req.(*RegisterOrRefreshEvidenceSourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_VerifyOrInvalidateCitedClaim_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyOrInvalidateCitedClaimRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).VerifyOrInvalidateCitedClaim(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_VerifyOrInvalidateCitedClaim_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).VerifyOrInvalidateCitedClaim(ctx, req.(*VerifyOrInvalidateCitedClaimRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListEvidenceTruthAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListEvidenceTruthAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListEvidenceTruthAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListEvidenceTruthAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListEvidenceTruthAudit(ctx, req.(*AdminListEvidenceTruthAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminManageSourceRightsOrCorrection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageSourceRightsOrCorrectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminManageSourceRightsOrCorrection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminManageSourceRightsOrCorrection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminManageSourceRightsOrCorrection(ctx, req.(*AdminManageSourceRightsOrCorrectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetDecisionLedgerWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDecisionLedgerWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetDecisionLedgerWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetDecisionLedgerWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetDecisionLedgerWorkbench(ctx, req.(*GetDecisionLedgerWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateOrUpdateDecisionLedgerRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrUpdateDecisionLedgerRecordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateOrUpdateDecisionLedgerRecord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateOrUpdateDecisionLedgerRecord_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateOrUpdateDecisionLedgerRecord(ctx, req.(*CreateOrUpdateDecisionLedgerRecordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RecordDecisionAssumptionOrReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordDecisionAssumptionOrReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RecordDecisionAssumptionOrReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RecordDecisionAssumptionOrReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RecordDecisionAssumptionOrReview(ctx, req.(*RecordDecisionAssumptionOrReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListDecisionLedgerAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListDecisionLedgerAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListDecisionLedgerAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListDecisionLedgerAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListDecisionLedgerAudit(ctx, req.(*AdminListDecisionLedgerAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminManageDecisionTemplateOrHold_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageDecisionTemplateOrHoldRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminManageDecisionTemplateOrHold(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminManageDecisionTemplateOrHold_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminManageDecisionTemplateOrHold(ctx, req.(*AdminManageDecisionTemplateOrHoldRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetCommitmentsOutcomeWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommitmentsOutcomeWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetCommitmentsOutcomeWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetCommitmentsOutcomeWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetCommitmentsOutcomeWorkbench(ctx, req.(*GetCommitmentsOutcomeWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateOrUpdateCommitmentItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrUpdateCommitmentItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateOrUpdateCommitmentItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateOrUpdateCommitmentItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateOrUpdateCommitmentItem(ctx, req.(*CreateOrUpdateCommitmentItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_PreviewOrExecuteExternalCommitmentSync_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewOrExecuteExternalCommitmentSyncRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).PreviewOrExecuteExternalCommitmentSync(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_PreviewOrExecuteExternalCommitmentSync_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).PreviewOrExecuteExternalCommitmentSync(ctx, req.(*PreviewOrExecuteExternalCommitmentSyncRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListCommitmentsOutcomeAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListCommitmentsOutcomeAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListCommitmentsOutcomeAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListCommitmentsOutcomeAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListCommitmentsOutcomeAudit(ctx, req.(*AdminListCommitmentsOutcomeAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminReconcileExternalSyncDelivery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminReconcileExternalSyncDeliveryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminReconcileExternalSyncDelivery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminReconcileExternalSyncDelivery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminReconcileExternalSyncDelivery(ctx, req.(*AdminReconcileExternalSyncDeliveryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetWatchlistsCommandBriefWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWatchlistsCommandBriefWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetWatchlistsCommandBriefWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetWatchlistsCommandBriefWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetWatchlistsCommandBriefWorkbench(ctx, req.(*GetWatchlistsCommandBriefWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_UpsertWatchlistEntityMonitor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertWatchlistEntityMonitorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).UpsertWatchlistEntityMonitor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_UpsertWatchlistEntityMonitor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).UpsertWatchlistEntityMonitor(ctx, req.(*UpsertWatchlistEntityMonitorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ApproveOrSnoozeCommandBriefSignal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrSnoozeCommandBriefSignalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ApproveOrSnoozeCommandBriefSignal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ApproveOrSnoozeCommandBriefSignal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ApproveOrSnoozeCommandBriefSignal(ctx, req.(*ApproveOrSnoozeCommandBriefSignalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListWatchlistsCommandBriefAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListWatchlistsCommandBriefAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListWatchlistsCommandBriefAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListWatchlistsCommandBriefAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListWatchlistsCommandBriefAudit(ctx, req.(*AdminListWatchlistsCommandBriefAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminTuneWatchlistAlertBudgetOrFeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageWatchlistAlertBudgetOrFeedRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminTuneWatchlistAlertBudgetOrFeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminTuneWatchlistAlertBudgetOrFeed_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminTuneWatchlistAlertBudgetOrFeed(ctx, req.(*AdminManageWatchlistAlertBudgetOrFeedRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetAssumptionDriftRadarWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAssumptionDriftRadarWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetAssumptionDriftRadarWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetAssumptionDriftRadarWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetAssumptionDriftRadarWorkbench(ctx, req.(*GetAssumptionDriftRadarWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RespondToAssumptionDriftAlert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondToAssumptionDriftAlertRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RespondToAssumptionDriftAlert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RespondToAssumptionDriftAlert_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RespondToAssumptionDriftAlert(ctx, req.(*RespondToAssumptionDriftAlertRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_UpdateDriftRadarPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateDriftRadarPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).UpdateDriftRadarPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_UpdateDriftRadarPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).UpdateDriftRadarPolicy(ctx, req.(*UpdateDriftRadarPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListAssumptionDriftRadarAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListAssumptionDriftRadarAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListAssumptionDriftRadarAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListAssumptionDriftRadarAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListAssumptionDriftRadarAudit(ctx, req.(*AdminListAssumptionDriftRadarAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminCalibrateDriftThresholdOrDomain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCalibrateDriftThresholdOrDomainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminCalibrateDriftThresholdOrDomain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminCalibrateDriftThresholdOrDomain_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminCalibrateDriftThresholdOrDomain(ctx, req.(*AdminCalibrateDriftThresholdOrDomainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetForecastingCalibrationWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetForecastingCalibrationWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetForecastingCalibrationWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetForecastingCalibrationWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetForecastingCalibrationWorkbench(ctx, req.(*GetForecastingCalibrationWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateOrResolveForecastQuestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrResolveForecastQuestionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateOrResolveForecastQuestion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateOrResolveForecastQuestion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateOrResolveForecastQuestion(ctx, req.(*CreateOrResolveForecastQuestionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RecordCalibrationLabExperiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordCalibrationLabExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RecordCalibrationLabExperiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RecordCalibrationLabExperiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RecordCalibrationLabExperiment(ctx, req.(*RecordCalibrationLabExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListForecastingCalibrationAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListForecastingCalibrationAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListForecastingCalibrationAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListForecastingCalibrationAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListForecastingCalibrationAudit(ctx, req.(*AdminListForecastingCalibrationAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminVerifyForecastResolutionOrSandbox_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminVerifyForecastResolutionOrSandboxRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminVerifyForecastResolutionOrSandbox(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminVerifyForecastResolutionOrSandbox_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminVerifyForecastResolutionOrSandbox(ctx, req.(*AdminVerifyForecastResolutionOrSandboxRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetMeetingNegotiationStudioWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMeetingNegotiationStudioWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetMeetingNegotiationStudioWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetMeetingNegotiationStudioWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetMeetingNegotiationStudioWorkbench(ctx, req.(*GetMeetingNegotiationStudioWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_SaveMeetingBriefOrRedteamRehearsal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveMeetingBriefOrRedteamRehearsalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).SaveMeetingBriefOrRedteamRehearsal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_SaveMeetingBriefOrRedteamRehearsal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).SaveMeetingBriefOrRedteamRehearsal(ctx, req.(*SaveMeetingBriefOrRedteamRehearsalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ConfirmOrRejectCapturedMeetingProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmOrRejectCapturedMeetingProposalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ConfirmOrRejectCapturedMeetingProposal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ConfirmOrRejectCapturedMeetingProposal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ConfirmOrRejectCapturedMeetingProposal(ctx, req.(*ConfirmOrRejectCapturedMeetingProposalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListMeetingNegotiationStudioAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListMeetingNegotiationStudioAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListMeetingNegotiationStudioAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListMeetingNegotiationStudioAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListMeetingNegotiationStudioAudit(ctx, req.(*AdminListMeetingNegotiationStudioAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminManageRecordingConsentOrRedaction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageRecordingConsentOrRedactionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminManageRecordingConsentOrRedaction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminManageRecordingConsentOrRedaction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminManageRecordingConsentOrRedaction(ctx, req.(*AdminManageRecordingConsentOrRedactionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetSecureConnectorsToolWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSecureConnectorsToolWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetSecureConnectorsToolWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetSecureConnectorsToolWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetSecureConnectorsToolWorkbench(ctx, req.(*GetSecureConnectorsToolWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ConfigureOrRevokeConnectorGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfigureOrRevokeConnectorGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ConfigureOrRevokeConnectorGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ConfigureOrRevokeConnectorGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ConfigureOrRevokeConnectorGrant(ctx, req.(*ConfigureOrRevokeConnectorGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_ReportOrReviewPromptInjectionQuarantine_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportOrReviewPromptInjectionQuarantineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).ReportOrReviewPromptInjectionQuarantine(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_ReportOrReviewPromptInjectionQuarantine_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).ReportOrReviewPromptInjectionQuarantine(ctx, req.(*ReportOrReviewPromptInjectionQuarantineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListSecureConnectorsToolAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListSecureConnectorsToolAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListSecureConnectorsToolAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListSecureConnectorsToolAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListSecureConnectorsToolAudit(ctx, req.(*AdminListSecureConnectorsToolAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminManageConnectorKillSwitchOrQuarantine_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageConnectorKillSwitchOrQuarantineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminManageConnectorKillSwitchOrQuarantine(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminManageConnectorKillSwitchOrQuarantine_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminManageConnectorKillSwitchOrQuarantine(ctx, req.(*AdminManageConnectorKillSwitchOrQuarantineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetTrustedNetworkDecisionRoomsWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTrustedNetworkDecisionRoomsWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetTrustedNetworkDecisionRoomsWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetTrustedNetworkDecisionRoomsWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetTrustedNetworkDecisionRoomsWorkbench(ctx, req.(*GetTrustedNetworkDecisionRoomsWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_CreateOrCloseTrustedDecisionRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrCloseTrustedDecisionRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).CreateOrCloseTrustedDecisionRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_CreateOrCloseTrustedDecisionRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).CreateOrCloseTrustedDecisionRoom(ctx, req.(*CreateOrCloseTrustedDecisionRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_VerifySpecialistDisclosureOrOptIn_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifySpecialistDisclosureOrOptInRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).VerifySpecialistDisclosureOrOptIn(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_VerifySpecialistDisclosureOrOptIn_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).VerifySpecialistDisclosureOrOptIn(ctx, req.(*VerifySpecialistDisclosureOrOptInRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListTrustedDecisionRoomsAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListTrustedDecisionRoomsAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListTrustedDecisionRoomsAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListTrustedDecisionRoomsAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListTrustedDecisionRoomsAudit(ctx, req.(*AdminListTrustedDecisionRoomsAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminManageDecisionRoomGrantOrBoundary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageDecisionRoomGrantOrBoundaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminManageDecisionRoomGrantOrBoundary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminManageDecisionRoomGrantOrBoundary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminManageDecisionRoomGrantOrBoundary(ctx, req.(*AdminManageDecisionRoomGrantOrBoundaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetWargamingExposureWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWargamingExposureWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetWargamingExposureWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetWargamingExposureWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetWargamingExposureWorkbench(ctx, req.(*GetWargamingExposureWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_RunOrExportWargameExposureSimulation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunOrExportWargameExposureSimulationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).RunOrExportWargameExposureSimulation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_RunOrExportWargameExposureSimulation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).RunOrExportWargameExposureSimulation(ctx, req.(*RunOrExportWargameExposureSimulationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_UpdateWargameSensitivityOrContingency_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateWargameSensitivityOrContingencyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).UpdateWargameSensitivityOrContingency(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_UpdateWargameSensitivityOrContingency_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).UpdateWargameSensitivityOrContingency(ctx, req.(*UpdateWargameSensitivityOrContingencyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListWargamingExposureAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListWargamingExposureAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListWargamingExposureAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListWargamingExposureAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListWargamingExposureAudit(ctx, req.(*AdminListWargamingExposureAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminCertifyMinimalPillarContractOrDisclaimer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCertifyMinimalPillarContractOrDisclaimerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminCertifyMinimalPillarContractOrDisclaimer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminCertifyMinimalPillarContractOrDisclaimer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminCertifyMinimalPillarContractOrDisclaimer(ctx, req.(*AdminCertifyMinimalPillarContractOrDisclaimerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_GetPrivateCaseLibraryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPrivateCaseLibraryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).GetPrivateCaseLibraryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_GetPrivateCaseLibraryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).GetPrivateCaseLibraryWorkbench(ctx, req.(*GetPrivateCaseLibraryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_SaveOrComparePrivateCaseEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveOrComparePrivateCaseEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).SaveOrComparePrivateCaseEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_SaveOrComparePrivateCaseEntry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).SaveOrComparePrivateCaseEntry(ctx, req.(*SaveOrComparePrivateCaseEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_SubmitOrWithdrawAnonymizedPlaybook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitOrWithdrawAnonymizedPlaybookRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).SubmitOrWithdrawAnonymizedPlaybook(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_SubmitOrWithdrawAnonymizedPlaybook_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).SubmitOrWithdrawAnonymizedPlaybook(ctx, req.(*SubmitOrWithdrawAnonymizedPlaybookRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminListPrivateCaseLibraryAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListPrivateCaseLibraryAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminListPrivateCaseLibraryAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminListPrivateCaseLibraryAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminListPrivateCaseLibraryAudit(ctx, req.(*AdminListPrivateCaseLibraryAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OracleService_AdminCertifyPlaybookAnonymizationOrErasure_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCertifyPlaybookAnonymizationOrErasureRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OracleServiceServer).AdminCertifyPlaybookAnonymizationOrErasure(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OracleService_AdminCertifyPlaybookAnonymizationOrErasure_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OracleServiceServer).AdminCertifyPlaybookAnonymizationOrErasure(ctx, req.(*AdminCertifyPlaybookAnonymizationOrErasureRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OracleService_ServiceDesc is the grpc.ServiceDesc for OracleService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1700,6 +3636,226 @@ var OracleService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetRankExplainer",
 			Handler:    _OracleService_GetRankExplainer_Handler,
+		},
+		{
+			MethodName: "GetEvidenceTruthWorkbench",
+			Handler:    _OracleService_GetEvidenceTruthWorkbench_Handler,
+		},
+		{
+			MethodName: "RegisterOrRefreshEvidenceSource",
+			Handler:    _OracleService_RegisterOrRefreshEvidenceSource_Handler,
+		},
+		{
+			MethodName: "VerifyOrInvalidateCitedClaim",
+			Handler:    _OracleService_VerifyOrInvalidateCitedClaim_Handler,
+		},
+		{
+			MethodName: "AdminListEvidenceTruthAudit",
+			Handler:    _OracleService_AdminListEvidenceTruthAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageSourceRightsOrCorrection",
+			Handler:    _OracleService_AdminManageSourceRightsOrCorrection_Handler,
+		},
+		{
+			MethodName: "GetDecisionLedgerWorkbench",
+			Handler:    _OracleService_GetDecisionLedgerWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateDecisionLedgerRecord",
+			Handler:    _OracleService_CreateOrUpdateDecisionLedgerRecord_Handler,
+		},
+		{
+			MethodName: "RecordDecisionAssumptionOrReview",
+			Handler:    _OracleService_RecordDecisionAssumptionOrReview_Handler,
+		},
+		{
+			MethodName: "AdminListDecisionLedgerAudit",
+			Handler:    _OracleService_AdminListDecisionLedgerAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageDecisionTemplateOrHold",
+			Handler:    _OracleService_AdminManageDecisionTemplateOrHold_Handler,
+		},
+		{
+			MethodName: "GetCommitmentsOutcomeWorkbench",
+			Handler:    _OracleService_GetCommitmentsOutcomeWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateCommitmentItem",
+			Handler:    _OracleService_CreateOrUpdateCommitmentItem_Handler,
+		},
+		{
+			MethodName: "PreviewOrExecuteExternalCommitmentSync",
+			Handler:    _OracleService_PreviewOrExecuteExternalCommitmentSync_Handler,
+		},
+		{
+			MethodName: "AdminListCommitmentsOutcomeAudit",
+			Handler:    _OracleService_AdminListCommitmentsOutcomeAudit_Handler,
+		},
+		{
+			MethodName: "AdminReconcileExternalSyncDelivery",
+			Handler:    _OracleService_AdminReconcileExternalSyncDelivery_Handler,
+		},
+		{
+			MethodName: "GetWatchlistsCommandBriefWorkbench",
+			Handler:    _OracleService_GetWatchlistsCommandBriefWorkbench_Handler,
+		},
+		{
+			MethodName: "UpsertWatchlistEntityMonitor",
+			Handler:    _OracleService_UpsertWatchlistEntityMonitor_Handler,
+		},
+		{
+			MethodName: "ApproveOrSnoozeCommandBriefSignal",
+			Handler:    _OracleService_ApproveOrSnoozeCommandBriefSignal_Handler,
+		},
+		{
+			MethodName: "AdminListWatchlistsCommandBriefAudit",
+			Handler:    _OracleService_AdminListWatchlistsCommandBriefAudit_Handler,
+		},
+		{
+			MethodName: "AdminTuneWatchlistAlertBudgetOrFeed",
+			Handler:    _OracleService_AdminTuneWatchlistAlertBudgetOrFeed_Handler,
+		},
+		{
+			MethodName: "GetAssumptionDriftRadarWorkbench",
+			Handler:    _OracleService_GetAssumptionDriftRadarWorkbench_Handler,
+		},
+		{
+			MethodName: "RespondToAssumptionDriftAlert",
+			Handler:    _OracleService_RespondToAssumptionDriftAlert_Handler,
+		},
+		{
+			MethodName: "UpdateDriftRadarPolicy",
+			Handler:    _OracleService_UpdateDriftRadarPolicy_Handler,
+		},
+		{
+			MethodName: "AdminListAssumptionDriftRadarAudit",
+			Handler:    _OracleService_AdminListAssumptionDriftRadarAudit_Handler,
+		},
+		{
+			MethodName: "AdminCalibrateDriftThresholdOrDomain",
+			Handler:    _OracleService_AdminCalibrateDriftThresholdOrDomain_Handler,
+		},
+		{
+			MethodName: "GetForecastingCalibrationWorkbench",
+			Handler:    _OracleService_GetForecastingCalibrationWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrResolveForecastQuestion",
+			Handler:    _OracleService_CreateOrResolveForecastQuestion_Handler,
+		},
+		{
+			MethodName: "RecordCalibrationLabExperiment",
+			Handler:    _OracleService_RecordCalibrationLabExperiment_Handler,
+		},
+		{
+			MethodName: "AdminListForecastingCalibrationAudit",
+			Handler:    _OracleService_AdminListForecastingCalibrationAudit_Handler,
+		},
+		{
+			MethodName: "AdminVerifyForecastResolutionOrSandbox",
+			Handler:    _OracleService_AdminVerifyForecastResolutionOrSandbox_Handler,
+		},
+		{
+			MethodName: "GetMeetingNegotiationStudioWorkbench",
+			Handler:    _OracleService_GetMeetingNegotiationStudioWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveMeetingBriefOrRedteamRehearsal",
+			Handler:    _OracleService_SaveMeetingBriefOrRedteamRehearsal_Handler,
+		},
+		{
+			MethodName: "ConfirmOrRejectCapturedMeetingProposal",
+			Handler:    _OracleService_ConfirmOrRejectCapturedMeetingProposal_Handler,
+		},
+		{
+			MethodName: "AdminListMeetingNegotiationStudioAudit",
+			Handler:    _OracleService_AdminListMeetingNegotiationStudioAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageRecordingConsentOrRedaction",
+			Handler:    _OracleService_AdminManageRecordingConsentOrRedaction_Handler,
+		},
+		{
+			MethodName: "GetSecureConnectorsToolWorkbench",
+			Handler:    _OracleService_GetSecureConnectorsToolWorkbench_Handler,
+		},
+		{
+			MethodName: "ConfigureOrRevokeConnectorGrant",
+			Handler:    _OracleService_ConfigureOrRevokeConnectorGrant_Handler,
+		},
+		{
+			MethodName: "ReportOrReviewPromptInjectionQuarantine",
+			Handler:    _OracleService_ReportOrReviewPromptInjectionQuarantine_Handler,
+		},
+		{
+			MethodName: "AdminListSecureConnectorsToolAudit",
+			Handler:    _OracleService_AdminListSecureConnectorsToolAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageConnectorKillSwitchOrQuarantine",
+			Handler:    _OracleService_AdminManageConnectorKillSwitchOrQuarantine_Handler,
+		},
+		{
+			MethodName: "GetTrustedNetworkDecisionRoomsWorkbench",
+			Handler:    _OracleService_GetTrustedNetworkDecisionRoomsWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrCloseTrustedDecisionRoom",
+			Handler:    _OracleService_CreateOrCloseTrustedDecisionRoom_Handler,
+		},
+		{
+			MethodName: "VerifySpecialistDisclosureOrOptIn",
+			Handler:    _OracleService_VerifySpecialistDisclosureOrOptIn_Handler,
+		},
+		{
+			MethodName: "AdminListTrustedDecisionRoomsAudit",
+			Handler:    _OracleService_AdminListTrustedDecisionRoomsAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageDecisionRoomGrantOrBoundary",
+			Handler:    _OracleService_AdminManageDecisionRoomGrantOrBoundary_Handler,
+		},
+		{
+			MethodName: "GetWargamingExposureWorkbench",
+			Handler:    _OracleService_GetWargamingExposureWorkbench_Handler,
+		},
+		{
+			MethodName: "RunOrExportWargameExposureSimulation",
+			Handler:    _OracleService_RunOrExportWargameExposureSimulation_Handler,
+		},
+		{
+			MethodName: "UpdateWargameSensitivityOrContingency",
+			Handler:    _OracleService_UpdateWargameSensitivityOrContingency_Handler,
+		},
+		{
+			MethodName: "AdminListWargamingExposureAudit",
+			Handler:    _OracleService_AdminListWargamingExposureAudit_Handler,
+		},
+		{
+			MethodName: "AdminCertifyMinimalPillarContractOrDisclaimer",
+			Handler:    _OracleService_AdminCertifyMinimalPillarContractOrDisclaimer_Handler,
+		},
+		{
+			MethodName: "GetPrivateCaseLibraryWorkbench",
+			Handler:    _OracleService_GetPrivateCaseLibraryWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveOrComparePrivateCaseEntry",
+			Handler:    _OracleService_SaveOrComparePrivateCaseEntry_Handler,
+		},
+		{
+			MethodName: "SubmitOrWithdrawAnonymizedPlaybook",
+			Handler:    _OracleService_SubmitOrWithdrawAnonymizedPlaybook_Handler,
+		},
+		{
+			MethodName: "AdminListPrivateCaseLibraryAudit",
+			Handler:    _OracleService_AdminListPrivateCaseLibraryAudit_Handler,
+		},
+		{
+			MethodName: "AdminCertifyPlaybookAnonymizationOrErasure",
+			Handler:    _OracleService_AdminCertifyPlaybookAnonymizationOrErasure_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

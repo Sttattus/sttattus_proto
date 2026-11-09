@@ -5845,6 +5845,8535 @@ class GetTripArchiveResponse extends $pb.GeneratedMessage {
   $2.PageResponse ensurePage() => $_ensure(1);
 }
 
+class TripGraphSegmentItem extends $pb.GeneratedMessage {
+  factory TripGraphSegmentItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? noDuplicateSegmentsEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (noDuplicateSegmentsEnforced != null)
+      result.noDuplicateSegmentsEnforced = noDuplicateSegmentsEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  TripGraphSegmentItem._();
+
+  factory TripGraphSegmentItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TripGraphSegmentItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TripGraphSegmentItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'noDuplicateSegmentsEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripGraphSegmentItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripGraphSegmentItem copyWith(void Function(TripGraphSegmentItem) updates) =>
+      super.copyWith((message) => updates(message as TripGraphSegmentItem))
+          as TripGraphSegmentItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TripGraphSegmentItem create() => TripGraphSegmentItem._();
+  @$core.override
+  TripGraphSegmentItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TripGraphSegmentItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TripGraphSegmentItem>(create);
+  static TripGraphSegmentItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noDuplicateSegmentsEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noDuplicateSegmentsEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoDuplicateSegmentsEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoDuplicateSegmentsEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetUniversalTripGraphOverviewRequest extends $pb.GeneratedMessage {
+  factory GetUniversalTripGraphOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetUniversalTripGraphOverviewRequest._();
+
+  factory GetUniversalTripGraphOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUniversalTripGraphOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUniversalTripGraphOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUniversalTripGraphOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUniversalTripGraphOverviewRequest copyWith(
+          void Function(GetUniversalTripGraphOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetUniversalTripGraphOverviewRequest))
+          as GetUniversalTripGraphOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUniversalTripGraphOverviewRequest create() =>
+      GetUniversalTripGraphOverviewRequest._();
+  @$core.override
+  GetUniversalTripGraphOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUniversalTripGraphOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetUniversalTripGraphOverviewRequest>(create);
+  static GetUniversalTripGraphOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetUniversalTripGraphOverviewResponse extends $pb.GeneratedMessage {
+  factory GetUniversalTripGraphOverviewResponse({
+    $core.Iterable<TripGraphSegmentItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? noDuplicateSegmentsEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (noDuplicateSegmentsEnforced != null)
+      result.noDuplicateSegmentsEnforced = noDuplicateSegmentsEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetUniversalTripGraphOverviewResponse._();
+
+  factory GetUniversalTripGraphOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUniversalTripGraphOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUniversalTripGraphOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<TripGraphSegmentItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: TripGraphSegmentItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'noDuplicateSegmentsEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUniversalTripGraphOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUniversalTripGraphOverviewResponse copyWith(
+          void Function(GetUniversalTripGraphOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetUniversalTripGraphOverviewResponse))
+          as GetUniversalTripGraphOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUniversalTripGraphOverviewResponse create() =>
+      GetUniversalTripGraphOverviewResponse._();
+  @$core.override
+  GetUniversalTripGraphOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUniversalTripGraphOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetUniversalTripGraphOverviewResponse>(create);
+  static GetUniversalTripGraphOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<TripGraphSegmentItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get noDuplicateSegmentsEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set noDuplicateSegmentsEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoDuplicateSegmentsEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoDuplicateSegmentsEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class UpsertTripGraphSegmentRequest extends $pb.GeneratedMessage {
+  factory UpsertTripGraphSegmentRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  UpsertTripGraphSegmentRequest._();
+
+  factory UpsertTripGraphSegmentRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertTripGraphSegmentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertTripGraphSegmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertTripGraphSegmentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertTripGraphSegmentRequest copyWith(
+          void Function(UpsertTripGraphSegmentRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertTripGraphSegmentRequest))
+          as UpsertTripGraphSegmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertTripGraphSegmentRequest create() =>
+      UpsertTripGraphSegmentRequest._();
+  @$core.override
+  UpsertTripGraphSegmentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertTripGraphSegmentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertTripGraphSegmentRequest>(create);
+  static UpsertTripGraphSegmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class UpsertTripGraphSegmentResponse extends $pb.GeneratedMessage {
+  factory UpsertTripGraphSegmentResponse({
+    TripGraphSegmentItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpsertTripGraphSegmentResponse._();
+
+  factory UpsertTripGraphSegmentResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertTripGraphSegmentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertTripGraphSegmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<TripGraphSegmentItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: TripGraphSegmentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertTripGraphSegmentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertTripGraphSegmentResponse copyWith(
+          void Function(UpsertTripGraphSegmentResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertTripGraphSegmentResponse))
+          as UpsertTripGraphSegmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertTripGraphSegmentResponse create() =>
+      UpsertTripGraphSegmentResponse._();
+  @$core.override
+  UpsertTripGraphSegmentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertTripGraphSegmentResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertTripGraphSegmentResponse>(create);
+  static UpsertTripGraphSegmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TripGraphSegmentItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(TripGraphSegmentItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TripGraphSegmentItem ensureItem() => $_ensure(0);
+}
+
+class ReconcileParserDiffEventRequest extends $pb.GeneratedMessage {
+  factory ReconcileParserDiffEventRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  ReconcileParserDiffEventRequest._();
+
+  factory ReconcileParserDiffEventRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReconcileParserDiffEventRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReconcileParserDiffEventRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileParserDiffEventRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileParserDiffEventRequest copyWith(
+          void Function(ReconcileParserDiffEventRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReconcileParserDiffEventRequest))
+          as ReconcileParserDiffEventRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReconcileParserDiffEventRequest create() =>
+      ReconcileParserDiffEventRequest._();
+  @$core.override
+  ReconcileParserDiffEventRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReconcileParserDiffEventRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReconcileParserDiffEventRequest>(
+          create);
+  static ReconcileParserDiffEventRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class ReconcileParserDiffEventResponse extends $pb.GeneratedMessage {
+  factory ReconcileParserDiffEventResponse({
+    TripGraphSegmentItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  ReconcileParserDiffEventResponse._();
+
+  factory ReconcileParserDiffEventResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReconcileParserDiffEventResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReconcileParserDiffEventResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<TripGraphSegmentItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: TripGraphSegmentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileParserDiffEventResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileParserDiffEventResponse copyWith(
+          void Function(ReconcileParserDiffEventResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ReconcileParserDiffEventResponse))
+          as ReconcileParserDiffEventResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReconcileParserDiffEventResponse create() =>
+      ReconcileParserDiffEventResponse._();
+  @$core.override
+  ReconcileParserDiffEventResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReconcileParserDiffEventResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ReconcileParserDiffEventResponse>(
+          create);
+  static ReconcileParserDiffEventResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TripGraphSegmentItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(TripGraphSegmentItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TripGraphSegmentItem ensureItem() => $_ensure(0);
+}
+
+class FlightObservationItem extends $pb.GeneratedMessage {
+  factory FlightObservationItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? carrierContractSupremacyEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (carrierContractSupremacyEnforced != null)
+      result.carrierContractSupremacyEnforced =
+          carrierContractSupremacyEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  FlightObservationItem._();
+
+  factory FlightObservationItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FlightObservationItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FlightObservationItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'carrierContractSupremacyEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlightObservationItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlightObservationItem copyWith(
+          void Function(FlightObservationItem) updates) =>
+      super.copyWith((message) => updates(message as FlightObservationItem))
+          as FlightObservationItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FlightObservationItem create() => FlightObservationItem._();
+  @$core.override
+  FlightObservationItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FlightObservationItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FlightObservationItem>(create);
+  static FlightObservationItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get carrierContractSupremacyEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set carrierContractSupremacyEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCarrierContractSupremacyEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCarrierContractSupremacyEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetLiveFlightCommandOverviewRequest extends $pb.GeneratedMessage {
+  factory GetLiveFlightCommandOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetLiveFlightCommandOverviewRequest._();
+
+  factory GetLiveFlightCommandOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveFlightCommandOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveFlightCommandOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveFlightCommandOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveFlightCommandOverviewRequest copyWith(
+          void Function(GetLiveFlightCommandOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLiveFlightCommandOverviewRequest))
+          as GetLiveFlightCommandOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveFlightCommandOverviewRequest create() =>
+      GetLiveFlightCommandOverviewRequest._();
+  @$core.override
+  GetLiveFlightCommandOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveFlightCommandOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLiveFlightCommandOverviewRequest>(create);
+  static GetLiveFlightCommandOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetLiveFlightCommandOverviewResponse extends $pb.GeneratedMessage {
+  factory GetLiveFlightCommandOverviewResponse({
+    $core.Iterable<FlightObservationItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? carrierContractSupremacyEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (carrierContractSupremacyEnforced != null)
+      result.carrierContractSupremacyEnforced =
+          carrierContractSupremacyEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetLiveFlightCommandOverviewResponse._();
+
+  factory GetLiveFlightCommandOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLiveFlightCommandOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLiveFlightCommandOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<FlightObservationItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: FlightObservationItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'carrierContractSupremacyEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveFlightCommandOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLiveFlightCommandOverviewResponse copyWith(
+          void Function(GetLiveFlightCommandOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLiveFlightCommandOverviewResponse))
+          as GetLiveFlightCommandOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLiveFlightCommandOverviewResponse create() =>
+      GetLiveFlightCommandOverviewResponse._();
+  @$core.override
+  GetLiveFlightCommandOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLiveFlightCommandOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLiveFlightCommandOverviewResponse>(create);
+  static GetLiveFlightCommandOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<FlightObservationItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get carrierContractSupremacyEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set carrierContractSupremacyEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCarrierContractSupremacyEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCarrierContractSupremacyEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class RecordFlightObservationRequest extends $pb.GeneratedMessage {
+  factory RecordFlightObservationRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  RecordFlightObservationRequest._();
+
+  factory RecordFlightObservationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordFlightObservationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordFlightObservationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordFlightObservationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordFlightObservationRequest copyWith(
+          void Function(RecordFlightObservationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordFlightObservationRequest))
+          as RecordFlightObservationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordFlightObservationRequest create() =>
+      RecordFlightObservationRequest._();
+  @$core.override
+  RecordFlightObservationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordFlightObservationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordFlightObservationRequest>(create);
+  static RecordFlightObservationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class RecordFlightObservationResponse extends $pb.GeneratedMessage {
+  factory RecordFlightObservationResponse({
+    FlightObservationItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  RecordFlightObservationResponse._();
+
+  factory RecordFlightObservationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordFlightObservationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordFlightObservationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<FlightObservationItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: FlightObservationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordFlightObservationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordFlightObservationResponse copyWith(
+          void Function(RecordFlightObservationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecordFlightObservationResponse))
+          as RecordFlightObservationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordFlightObservationResponse create() =>
+      RecordFlightObservationResponse._();
+  @$core.override
+  RecordFlightObservationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordFlightObservationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordFlightObservationResponse>(
+          create);
+  static RecordFlightObservationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FlightObservationItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(FlightObservationItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  FlightObservationItem ensureItem() => $_ensure(0);
+}
+
+class TriggerDisruptionRecoveryPlanRequest extends $pb.GeneratedMessage {
+  factory TriggerDisruptionRecoveryPlanRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  TriggerDisruptionRecoveryPlanRequest._();
+
+  factory TriggerDisruptionRecoveryPlanRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerDisruptionRecoveryPlanRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerDisruptionRecoveryPlanRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerDisruptionRecoveryPlanRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerDisruptionRecoveryPlanRequest copyWith(
+          void Function(TriggerDisruptionRecoveryPlanRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as TriggerDisruptionRecoveryPlanRequest))
+          as TriggerDisruptionRecoveryPlanRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerDisruptionRecoveryPlanRequest create() =>
+      TriggerDisruptionRecoveryPlanRequest._();
+  @$core.override
+  TriggerDisruptionRecoveryPlanRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerDisruptionRecoveryPlanRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerDisruptionRecoveryPlanRequest>(create);
+  static TriggerDisruptionRecoveryPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class TriggerDisruptionRecoveryPlanResponse extends $pb.GeneratedMessage {
+  factory TriggerDisruptionRecoveryPlanResponse({
+    FlightObservationItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  TriggerDisruptionRecoveryPlanResponse._();
+
+  factory TriggerDisruptionRecoveryPlanResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerDisruptionRecoveryPlanResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TriggerDisruptionRecoveryPlanResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<FlightObservationItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: FlightObservationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerDisruptionRecoveryPlanResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerDisruptionRecoveryPlanResponse copyWith(
+          void Function(TriggerDisruptionRecoveryPlanResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as TriggerDisruptionRecoveryPlanResponse))
+          as TriggerDisruptionRecoveryPlanResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerDisruptionRecoveryPlanResponse create() =>
+      TriggerDisruptionRecoveryPlanResponse._();
+  @$core.override
+  TriggerDisruptionRecoveryPlanResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerDisruptionRecoveryPlanResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerDisruptionRecoveryPlanResponse>(create);
+  static TriggerDisruptionRecoveryPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  FlightObservationItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(FlightObservationItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  FlightObservationItem ensureItem() => $_ensure(0);
+}
+
+class OfflineTripPackItem extends $pb.GeneratedMessage {
+  factory OfflineTripPackItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? hardwareKeyIsolationEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (hardwareKeyIsolationEnforced != null)
+      result.hardwareKeyIsolationEnforced = hardwareKeyIsolationEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  OfflineTripPackItem._();
+
+  factory OfflineTripPackItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OfflineTripPackItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OfflineTripPackItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'hardwareKeyIsolationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineTripPackItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OfflineTripPackItem copyWith(void Function(OfflineTripPackItem) updates) =>
+      super.copyWith((message) => updates(message as OfflineTripPackItem))
+          as OfflineTripPackItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OfflineTripPackItem create() => OfflineTripPackItem._();
+  @$core.override
+  OfflineTripPackItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OfflineTripPackItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OfflineTripPackItem>(create);
+  static OfflineTripPackItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get hardwareKeyIsolationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set hardwareKeyIsolationEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasHardwareKeyIsolationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHardwareKeyIsolationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetOfflineTripPackOverviewRequest extends $pb.GeneratedMessage {
+  factory GetOfflineTripPackOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetOfflineTripPackOverviewRequest._();
+
+  factory GetOfflineTripPackOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetOfflineTripPackOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetOfflineTripPackOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineTripPackOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineTripPackOverviewRequest copyWith(
+          void Function(GetOfflineTripPackOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetOfflineTripPackOverviewRequest))
+          as GetOfflineTripPackOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineTripPackOverviewRequest create() =>
+      GetOfflineTripPackOverviewRequest._();
+  @$core.override
+  GetOfflineTripPackOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineTripPackOverviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetOfflineTripPackOverviewRequest>(
+          create);
+  static GetOfflineTripPackOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetOfflineTripPackOverviewResponse extends $pb.GeneratedMessage {
+  factory GetOfflineTripPackOverviewResponse({
+    $core.Iterable<OfflineTripPackItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? hardwareKeyIsolationEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (hardwareKeyIsolationEnforced != null)
+      result.hardwareKeyIsolationEnforced = hardwareKeyIsolationEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetOfflineTripPackOverviewResponse._();
+
+  factory GetOfflineTripPackOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetOfflineTripPackOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetOfflineTripPackOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<OfflineTripPackItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: OfflineTripPackItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'hardwareKeyIsolationEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineTripPackOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetOfflineTripPackOverviewResponse copyWith(
+          void Function(GetOfflineTripPackOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetOfflineTripPackOverviewResponse))
+          as GetOfflineTripPackOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineTripPackOverviewResponse create() =>
+      GetOfflineTripPackOverviewResponse._();
+  @$core.override
+  GetOfflineTripPackOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetOfflineTripPackOverviewResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetOfflineTripPackOverviewResponse>(
+          create);
+  static GetOfflineTripPackOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OfflineTripPackItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get hardwareKeyIsolationEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set hardwareKeyIsolationEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHardwareKeyIsolationEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHardwareKeyIsolationEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class StageOfflineTripPackRequest extends $pb.GeneratedMessage {
+  factory StageOfflineTripPackRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  StageOfflineTripPackRequest._();
+
+  factory StageOfflineTripPackRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageOfflineTripPackRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageOfflineTripPackRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageOfflineTripPackRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageOfflineTripPackRequest copyWith(
+          void Function(StageOfflineTripPackRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as StageOfflineTripPackRequest))
+          as StageOfflineTripPackRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageOfflineTripPackRequest create() =>
+      StageOfflineTripPackRequest._();
+  @$core.override
+  StageOfflineTripPackRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StageOfflineTripPackRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StageOfflineTripPackRequest>(create);
+  static StageOfflineTripPackRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class StageOfflineTripPackResponse extends $pb.GeneratedMessage {
+  factory StageOfflineTripPackResponse({
+    OfflineTripPackItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  StageOfflineTripPackResponse._();
+
+  factory StageOfflineTripPackResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageOfflineTripPackResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageOfflineTripPackResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<OfflineTripPackItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: OfflineTripPackItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageOfflineTripPackResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageOfflineTripPackResponse copyWith(
+          void Function(StageOfflineTripPackResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as StageOfflineTripPackResponse))
+          as StageOfflineTripPackResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageOfflineTripPackResponse create() =>
+      StageOfflineTripPackResponse._();
+  @$core.override
+  StageOfflineTripPackResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StageOfflineTripPackResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StageOfflineTripPackResponse>(create);
+  static StageOfflineTripPackResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OfflineTripPackItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(OfflineTripPackItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OfflineTripPackItem ensureItem() => $_ensure(0);
+}
+
+class SyncOfflineMutationReceiptRequest extends $pb.GeneratedMessage {
+  factory SyncOfflineMutationReceiptRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  SyncOfflineMutationReceiptRequest._();
+
+  factory SyncOfflineMutationReceiptRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncOfflineMutationReceiptRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncOfflineMutationReceiptRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncOfflineMutationReceiptRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncOfflineMutationReceiptRequest copyWith(
+          void Function(SyncOfflineMutationReceiptRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SyncOfflineMutationReceiptRequest))
+          as SyncOfflineMutationReceiptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncOfflineMutationReceiptRequest create() =>
+      SyncOfflineMutationReceiptRequest._();
+  @$core.override
+  SyncOfflineMutationReceiptRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncOfflineMutationReceiptRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncOfflineMutationReceiptRequest>(
+          create);
+  static SyncOfflineMutationReceiptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class SyncOfflineMutationReceiptResponse extends $pb.GeneratedMessage {
+  factory SyncOfflineMutationReceiptResponse({
+    OfflineTripPackItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SyncOfflineMutationReceiptResponse._();
+
+  factory SyncOfflineMutationReceiptResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SyncOfflineMutationReceiptResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SyncOfflineMutationReceiptResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<OfflineTripPackItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: OfflineTripPackItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncOfflineMutationReceiptResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SyncOfflineMutationReceiptResponse copyWith(
+          void Function(SyncOfflineMutationReceiptResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SyncOfflineMutationReceiptResponse))
+          as SyncOfflineMutationReceiptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SyncOfflineMutationReceiptResponse create() =>
+      SyncOfflineMutationReceiptResponse._();
+  @$core.override
+  SyncOfflineMutationReceiptResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SyncOfflineMutationReceiptResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SyncOfflineMutationReceiptResponse>(
+          create);
+  static SyncOfflineMutationReceiptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OfflineTripPackItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(OfflineTripPackItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OfflineTripPackItem ensureItem() => $_ensure(0);
+}
+
+class EntryReadinessRuleItem extends $pb.GeneratedMessage {
+  factory EntryReadinessRuleItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? noMissingRulesAsClearEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (noMissingRulesAsClearEnforced != null)
+      result.noMissingRulesAsClearEnforced = noMissingRulesAsClearEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EntryReadinessRuleItem._();
+
+  factory EntryReadinessRuleItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EntryReadinessRuleItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EntryReadinessRuleItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'noMissingRulesAsClearEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EntryReadinessRuleItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EntryReadinessRuleItem copyWith(
+          void Function(EntryReadinessRuleItem) updates) =>
+      super.copyWith((message) => updates(message as EntryReadinessRuleItem))
+          as EntryReadinessRuleItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EntryReadinessRuleItem create() => EntryReadinessRuleItem._();
+  @$core.override
+  EntryReadinessRuleItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EntryReadinessRuleItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EntryReadinessRuleItem>(create);
+  static EntryReadinessRuleItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noMissingRulesAsClearEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noMissingRulesAsClearEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoMissingRulesAsClearEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoMissingRulesAsClearEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetEntryDocumentReadinessOverviewRequest extends $pb.GeneratedMessage {
+  factory GetEntryDocumentReadinessOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetEntryDocumentReadinessOverviewRequest._();
+
+  factory GetEntryDocumentReadinessOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEntryDocumentReadinessOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEntryDocumentReadinessOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEntryDocumentReadinessOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEntryDocumentReadinessOverviewRequest copyWith(
+          void Function(GetEntryDocumentReadinessOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetEntryDocumentReadinessOverviewRequest))
+          as GetEntryDocumentReadinessOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEntryDocumentReadinessOverviewRequest create() =>
+      GetEntryDocumentReadinessOverviewRequest._();
+  @$core.override
+  GetEntryDocumentReadinessOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEntryDocumentReadinessOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetEntryDocumentReadinessOverviewRequest>(create);
+  static GetEntryDocumentReadinessOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetEntryDocumentReadinessOverviewResponse extends $pb.GeneratedMessage {
+  factory GetEntryDocumentReadinessOverviewResponse({
+    $core.Iterable<EntryReadinessRuleItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? noMissingRulesAsClearEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (noMissingRulesAsClearEnforced != null)
+      result.noMissingRulesAsClearEnforced = noMissingRulesAsClearEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetEntryDocumentReadinessOverviewResponse._();
+
+  factory GetEntryDocumentReadinessOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEntryDocumentReadinessOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEntryDocumentReadinessOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<EntryReadinessRuleItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: EntryReadinessRuleItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'noMissingRulesAsClearEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEntryDocumentReadinessOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEntryDocumentReadinessOverviewResponse copyWith(
+          void Function(GetEntryDocumentReadinessOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetEntryDocumentReadinessOverviewResponse))
+          as GetEntryDocumentReadinessOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEntryDocumentReadinessOverviewResponse create() =>
+      GetEntryDocumentReadinessOverviewResponse._();
+  @$core.override
+  GetEntryDocumentReadinessOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEntryDocumentReadinessOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetEntryDocumentReadinessOverviewResponse>(create);
+  static GetEntryDocumentReadinessOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EntryReadinessRuleItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get noMissingRulesAsClearEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set noMissingRulesAsClearEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoMissingRulesAsClearEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoMissingRulesAsClearEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class EvaluateEntryReadinessRequest extends $pb.GeneratedMessage {
+  factory EvaluateEntryReadinessRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  EvaluateEntryReadinessRequest._();
+
+  factory EvaluateEntryReadinessRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateEntryReadinessRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateEntryReadinessRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateEntryReadinessRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateEntryReadinessRequest copyWith(
+          void Function(EvaluateEntryReadinessRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as EvaluateEntryReadinessRequest))
+          as EvaluateEntryReadinessRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateEntryReadinessRequest create() =>
+      EvaluateEntryReadinessRequest._();
+  @$core.override
+  EvaluateEntryReadinessRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateEntryReadinessRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvaluateEntryReadinessRequest>(create);
+  static EvaluateEntryReadinessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class EvaluateEntryReadinessResponse extends $pb.GeneratedMessage {
+  factory EvaluateEntryReadinessResponse({
+    EntryReadinessRuleItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  EvaluateEntryReadinessResponse._();
+
+  factory EvaluateEntryReadinessResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateEntryReadinessResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateEntryReadinessResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<EntryReadinessRuleItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: EntryReadinessRuleItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateEntryReadinessResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateEntryReadinessResponse copyWith(
+          void Function(EvaluateEntryReadinessResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as EvaluateEntryReadinessResponse))
+          as EvaluateEntryReadinessResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateEntryReadinessResponse create() =>
+      EvaluateEntryReadinessResponse._();
+  @$core.override
+  EvaluateEntryReadinessResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateEntryReadinessResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EvaluateEntryReadinessResponse>(create);
+  static EvaluateEntryReadinessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EntryReadinessRuleItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(EntryReadinessRuleItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EntryReadinessRuleItem ensureItem() => $_ensure(0);
+}
+
+class EscalateJurisdictionAmbiguityRequest extends $pb.GeneratedMessage {
+  factory EscalateJurisdictionAmbiguityRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  EscalateJurisdictionAmbiguityRequest._();
+
+  factory EscalateJurisdictionAmbiguityRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EscalateJurisdictionAmbiguityRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EscalateJurisdictionAmbiguityRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EscalateJurisdictionAmbiguityRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EscalateJurisdictionAmbiguityRequest copyWith(
+          void Function(EscalateJurisdictionAmbiguityRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as EscalateJurisdictionAmbiguityRequest))
+          as EscalateJurisdictionAmbiguityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EscalateJurisdictionAmbiguityRequest create() =>
+      EscalateJurisdictionAmbiguityRequest._();
+  @$core.override
+  EscalateJurisdictionAmbiguityRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EscalateJurisdictionAmbiguityRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EscalateJurisdictionAmbiguityRequest>(create);
+  static EscalateJurisdictionAmbiguityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class EscalateJurisdictionAmbiguityResponse extends $pb.GeneratedMessage {
+  factory EscalateJurisdictionAmbiguityResponse({
+    EntryReadinessRuleItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  EscalateJurisdictionAmbiguityResponse._();
+
+  factory EscalateJurisdictionAmbiguityResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EscalateJurisdictionAmbiguityResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EscalateJurisdictionAmbiguityResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<EntryReadinessRuleItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: EntryReadinessRuleItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EscalateJurisdictionAmbiguityResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EscalateJurisdictionAmbiguityResponse copyWith(
+          void Function(EscalateJurisdictionAmbiguityResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as EscalateJurisdictionAmbiguityResponse))
+          as EscalateJurisdictionAmbiguityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EscalateJurisdictionAmbiguityResponse create() =>
+      EscalateJurisdictionAmbiguityResponse._();
+  @$core.override
+  EscalateJurisdictionAmbiguityResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EscalateJurisdictionAmbiguityResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EscalateJurisdictionAmbiguityResponse>(create);
+  static EscalateJurisdictionAmbiguityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EntryReadinessRuleItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(EntryReadinessRuleItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EntryReadinessRuleItem ensureItem() => $_ensure(0);
+}
+
+class PreTripChecklistItem extends $pb.GeneratedMessage {
+  factory PreTripChecklistItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? suggestionProvenanceEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (suggestionProvenanceEnforced != null)
+      result.suggestionProvenanceEnforced = suggestionProvenanceEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  PreTripChecklistItem._();
+
+  factory PreTripChecklistItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreTripChecklistItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreTripChecklistItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'suggestionProvenanceEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreTripChecklistItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreTripChecklistItem copyWith(void Function(PreTripChecklistItem) updates) =>
+      super.copyWith((message) => updates(message as PreTripChecklistItem))
+          as PreTripChecklistItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreTripChecklistItem create() => PreTripChecklistItem._();
+  @$core.override
+  PreTripChecklistItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreTripChecklistItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PreTripChecklistItem>(create);
+  static PreTripChecklistItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get suggestionProvenanceEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set suggestionProvenanceEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSuggestionProvenanceEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSuggestionProvenanceEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetPreTripReadinessOverviewRequest extends $pb.GeneratedMessage {
+  factory GetPreTripReadinessOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetPreTripReadinessOverviewRequest._();
+
+  factory GetPreTripReadinessOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPreTripReadinessOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPreTripReadinessOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPreTripReadinessOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPreTripReadinessOverviewRequest copyWith(
+          void Function(GetPreTripReadinessOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPreTripReadinessOverviewRequest))
+          as GetPreTripReadinessOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPreTripReadinessOverviewRequest create() =>
+      GetPreTripReadinessOverviewRequest._();
+  @$core.override
+  GetPreTripReadinessOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPreTripReadinessOverviewRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetPreTripReadinessOverviewRequest>(
+          create);
+  static GetPreTripReadinessOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetPreTripReadinessOverviewResponse extends $pb.GeneratedMessage {
+  factory GetPreTripReadinessOverviewResponse({
+    $core.Iterable<PreTripChecklistItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? suggestionProvenanceEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (suggestionProvenanceEnforced != null)
+      result.suggestionProvenanceEnforced = suggestionProvenanceEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetPreTripReadinessOverviewResponse._();
+
+  factory GetPreTripReadinessOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPreTripReadinessOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPreTripReadinessOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<PreTripChecklistItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: PreTripChecklistItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'suggestionProvenanceEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPreTripReadinessOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPreTripReadinessOverviewResponse copyWith(
+          void Function(GetPreTripReadinessOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPreTripReadinessOverviewResponse))
+          as GetPreTripReadinessOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPreTripReadinessOverviewResponse create() =>
+      GetPreTripReadinessOverviewResponse._();
+  @$core.override
+  GetPreTripReadinessOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPreTripReadinessOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPreTripReadinessOverviewResponse>(create);
+  static GetPreTripReadinessOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PreTripChecklistItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get suggestionProvenanceEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set suggestionProvenanceEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSuggestionProvenanceEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSuggestionProvenanceEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class UpsertPreTripChecklistRequest extends $pb.GeneratedMessage {
+  factory UpsertPreTripChecklistRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  UpsertPreTripChecklistRequest._();
+
+  factory UpsertPreTripChecklistRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertPreTripChecklistRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertPreTripChecklistRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPreTripChecklistRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPreTripChecklistRequest copyWith(
+          void Function(UpsertPreTripChecklistRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertPreTripChecklistRequest))
+          as UpsertPreTripChecklistRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPreTripChecklistRequest create() =>
+      UpsertPreTripChecklistRequest._();
+  @$core.override
+  UpsertPreTripChecklistRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPreTripChecklistRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertPreTripChecklistRequest>(create);
+  static UpsertPreTripChecklistRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class UpsertPreTripChecklistResponse extends $pb.GeneratedMessage {
+  factory UpsertPreTripChecklistResponse({
+    PreTripChecklistItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpsertPreTripChecklistResponse._();
+
+  factory UpsertPreTripChecklistResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertPreTripChecklistResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertPreTripChecklistResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<PreTripChecklistItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: PreTripChecklistItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPreTripChecklistResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertPreTripChecklistResponse copyWith(
+          void Function(UpsertPreTripChecklistResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertPreTripChecklistResponse))
+          as UpsertPreTripChecklistResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertPreTripChecklistResponse create() =>
+      UpsertPreTripChecklistResponse._();
+  @$core.override
+  UpsertPreTripChecklistResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertPreTripChecklistResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertPreTripChecklistResponse>(create);
+  static UpsertPreTripChecklistResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PreTripChecklistItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(PreTripChecklistItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PreTripChecklistItem ensureItem() => $_ensure(0);
+}
+
+class CompletePackingOrHomeTaskRequest extends $pb.GeneratedMessage {
+  factory CompletePackingOrHomeTaskRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  CompletePackingOrHomeTaskRequest._();
+
+  factory CompletePackingOrHomeTaskRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompletePackingOrHomeTaskRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompletePackingOrHomeTaskRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompletePackingOrHomeTaskRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompletePackingOrHomeTaskRequest copyWith(
+          void Function(CompletePackingOrHomeTaskRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as CompletePackingOrHomeTaskRequest))
+          as CompletePackingOrHomeTaskRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompletePackingOrHomeTaskRequest create() =>
+      CompletePackingOrHomeTaskRequest._();
+  @$core.override
+  CompletePackingOrHomeTaskRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompletePackingOrHomeTaskRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CompletePackingOrHomeTaskRequest>(
+          create);
+  static CompletePackingOrHomeTaskRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class CompletePackingOrHomeTaskResponse extends $pb.GeneratedMessage {
+  factory CompletePackingOrHomeTaskResponse({
+    PreTripChecklistItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  CompletePackingOrHomeTaskResponse._();
+
+  factory CompletePackingOrHomeTaskResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompletePackingOrHomeTaskResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompletePackingOrHomeTaskResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<PreTripChecklistItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: PreTripChecklistItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompletePackingOrHomeTaskResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompletePackingOrHomeTaskResponse copyWith(
+          void Function(CompletePackingOrHomeTaskResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CompletePackingOrHomeTaskResponse))
+          as CompletePackingOrHomeTaskResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompletePackingOrHomeTaskResponse create() =>
+      CompletePackingOrHomeTaskResponse._();
+  @$core.override
+  CompletePackingOrHomeTaskResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompletePackingOrHomeTaskResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CompletePackingOrHomeTaskResponse>(
+          create);
+  static CompletePackingOrHomeTaskResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PreTripChecklistItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(PreTripChecklistItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PreTripChecklistItem ensureItem() => $_ensure(0);
+}
+
+class DoorToDoorTimelineItem extends $pb.GeneratedMessage {
+  factory DoorToDoorTimelineItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? editorialVsLiveCapacityEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (editorialVsLiveCapacityEnforced != null)
+      result.editorialVsLiveCapacityEnforced = editorialVsLiveCapacityEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  DoorToDoorTimelineItem._();
+
+  factory DoorToDoorTimelineItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DoorToDoorTimelineItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DoorToDoorTimelineItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'editorialVsLiveCapacityEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DoorToDoorTimelineItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DoorToDoorTimelineItem copyWith(
+          void Function(DoorToDoorTimelineItem) updates) =>
+      super.copyWith((message) => updates(message as DoorToDoorTimelineItem))
+          as DoorToDoorTimelineItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DoorToDoorTimelineItem create() => DoorToDoorTimelineItem._();
+  @$core.override
+  DoorToDoorTimelineItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DoorToDoorTimelineItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DoorToDoorTimelineItem>(create);
+  static DoorToDoorTimelineItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get editorialVsLiveCapacityEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set editorialVsLiveCapacityEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEditorialVsLiveCapacityEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEditorialVsLiveCapacityEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetDoorToDoorAirportOverviewRequest extends $pb.GeneratedMessage {
+  factory GetDoorToDoorAirportOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetDoorToDoorAirportOverviewRequest._();
+
+  factory GetDoorToDoorAirportOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDoorToDoorAirportOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDoorToDoorAirportOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDoorToDoorAirportOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDoorToDoorAirportOverviewRequest copyWith(
+          void Function(GetDoorToDoorAirportOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDoorToDoorAirportOverviewRequest))
+          as GetDoorToDoorAirportOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDoorToDoorAirportOverviewRequest create() =>
+      GetDoorToDoorAirportOverviewRequest._();
+  @$core.override
+  GetDoorToDoorAirportOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDoorToDoorAirportOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDoorToDoorAirportOverviewRequest>(create);
+  static GetDoorToDoorAirportOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetDoorToDoorAirportOverviewResponse extends $pb.GeneratedMessage {
+  factory GetDoorToDoorAirportOverviewResponse({
+    $core.Iterable<DoorToDoorTimelineItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? editorialVsLiveCapacityEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (editorialVsLiveCapacityEnforced != null)
+      result.editorialVsLiveCapacityEnforced = editorialVsLiveCapacityEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetDoorToDoorAirportOverviewResponse._();
+
+  factory GetDoorToDoorAirportOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDoorToDoorAirportOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDoorToDoorAirportOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<DoorToDoorTimelineItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: DoorToDoorTimelineItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'editorialVsLiveCapacityEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDoorToDoorAirportOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDoorToDoorAirportOverviewResponse copyWith(
+          void Function(GetDoorToDoorAirportOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDoorToDoorAirportOverviewResponse))
+          as GetDoorToDoorAirportOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDoorToDoorAirportOverviewResponse create() =>
+      GetDoorToDoorAirportOverviewResponse._();
+  @$core.override
+  GetDoorToDoorAirportOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDoorToDoorAirportOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDoorToDoorAirportOverviewResponse>(create);
+  static GetDoorToDoorAirportOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DoorToDoorTimelineItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get editorialVsLiveCapacityEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set editorialVsLiveCapacityEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditorialVsLiveCapacityEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditorialVsLiveCapacityEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class SaveDoorToDoorTimelineRequest extends $pb.GeneratedMessage {
+  factory SaveDoorToDoorTimelineRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  SaveDoorToDoorTimelineRequest._();
+
+  factory SaveDoorToDoorTimelineRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDoorToDoorTimelineRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDoorToDoorTimelineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDoorToDoorTimelineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDoorToDoorTimelineRequest copyWith(
+          void Function(SaveDoorToDoorTimelineRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SaveDoorToDoorTimelineRequest))
+          as SaveDoorToDoorTimelineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDoorToDoorTimelineRequest create() =>
+      SaveDoorToDoorTimelineRequest._();
+  @$core.override
+  SaveDoorToDoorTimelineRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDoorToDoorTimelineRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SaveDoorToDoorTimelineRequest>(create);
+  static SaveDoorToDoorTimelineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class SaveDoorToDoorTimelineResponse extends $pb.GeneratedMessage {
+  factory SaveDoorToDoorTimelineResponse({
+    DoorToDoorTimelineItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SaveDoorToDoorTimelineResponse._();
+
+  factory SaveDoorToDoorTimelineResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDoorToDoorTimelineResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDoorToDoorTimelineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<DoorToDoorTimelineItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: DoorToDoorTimelineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDoorToDoorTimelineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDoorToDoorTimelineResponse copyWith(
+          void Function(SaveDoorToDoorTimelineResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SaveDoorToDoorTimelineResponse))
+          as SaveDoorToDoorTimelineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDoorToDoorTimelineResponse create() =>
+      SaveDoorToDoorTimelineResponse._();
+  @$core.override
+  SaveDoorToDoorTimelineResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDoorToDoorTimelineResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SaveDoorToDoorTimelineResponse>(create);
+  static SaveDoorToDoorTimelineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DoorToDoorTimelineItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(DoorToDoorTimelineItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DoorToDoorTimelineItem ensureItem() => $_ensure(0);
+}
+
+class IssueOrRevokePartnerGroundPassRequest extends $pb.GeneratedMessage {
+  factory IssueOrRevokePartnerGroundPassRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  IssueOrRevokePartnerGroundPassRequest._();
+
+  factory IssueOrRevokePartnerGroundPassRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueOrRevokePartnerGroundPassRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueOrRevokePartnerGroundPassRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueOrRevokePartnerGroundPassRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueOrRevokePartnerGroundPassRequest copyWith(
+          void Function(IssueOrRevokePartnerGroundPassRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as IssueOrRevokePartnerGroundPassRequest))
+          as IssueOrRevokePartnerGroundPassRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueOrRevokePartnerGroundPassRequest create() =>
+      IssueOrRevokePartnerGroundPassRequest._();
+  @$core.override
+  IssueOrRevokePartnerGroundPassRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueOrRevokePartnerGroundPassRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          IssueOrRevokePartnerGroundPassRequest>(create);
+  static IssueOrRevokePartnerGroundPassRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class IssueOrRevokePartnerGroundPassResponse extends $pb.GeneratedMessage {
+  factory IssueOrRevokePartnerGroundPassResponse({
+    DoorToDoorTimelineItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  IssueOrRevokePartnerGroundPassResponse._();
+
+  factory IssueOrRevokePartnerGroundPassResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueOrRevokePartnerGroundPassResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueOrRevokePartnerGroundPassResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<DoorToDoorTimelineItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: DoorToDoorTimelineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueOrRevokePartnerGroundPassResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueOrRevokePartnerGroundPassResponse copyWith(
+          void Function(IssueOrRevokePartnerGroundPassResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as IssueOrRevokePartnerGroundPassResponse))
+          as IssueOrRevokePartnerGroundPassResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueOrRevokePartnerGroundPassResponse create() =>
+      IssueOrRevokePartnerGroundPassResponse._();
+  @$core.override
+  IssueOrRevokePartnerGroundPassResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueOrRevokePartnerGroundPassResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          IssueOrRevokePartnerGroundPassResponse>(create);
+  static IssueOrRevokePartnerGroundPassResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DoorToDoorTimelineItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(DoorToDoorTimelineItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DoorToDoorTimelineItem ensureItem() => $_ensure(0);
+}
+
+class PresencePacketItem extends $pb.GeneratedMessage {
+  factory PresencePacketItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? foregroundOnlyNoCovertTracking,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (foregroundOnlyNoCovertTracking != null)
+      result.foregroundOnlyNoCovertTracking = foregroundOnlyNoCovertTracking;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  PresencePacketItem._();
+
+  factory PresencePacketItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresencePacketItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresencePacketItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'foregroundOnlyNoCovertTracking')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PresencePacketItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PresencePacketItem copyWith(void Function(PresencePacketItem) updates) =>
+      super.copyWith((message) => updates(message as PresencePacketItem))
+          as PresencePacketItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PresencePacketItem create() => PresencePacketItem._();
+  @$core.override
+  PresencePacketItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PresencePacketItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresencePacketItem>(create);
+  static PresencePacketItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get foregroundOnlyNoCovertTracking => $_getBF(7);
+  @$pb.TagNumber(8)
+  set foregroundOnlyNoCovertTracking($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasForegroundOnlyNoCovertTracking() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearForegroundOnlyNoCovertTracking() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetPresenceEvidencePacketOverviewRequest extends $pb.GeneratedMessage {
+  factory GetPresenceEvidencePacketOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetPresenceEvidencePacketOverviewRequest._();
+
+  factory GetPresenceEvidencePacketOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPresenceEvidencePacketOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPresenceEvidencePacketOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPresenceEvidencePacketOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPresenceEvidencePacketOverviewRequest copyWith(
+          void Function(GetPresenceEvidencePacketOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPresenceEvidencePacketOverviewRequest))
+          as GetPresenceEvidencePacketOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPresenceEvidencePacketOverviewRequest create() =>
+      GetPresenceEvidencePacketOverviewRequest._();
+  @$core.override
+  GetPresenceEvidencePacketOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPresenceEvidencePacketOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPresenceEvidencePacketOverviewRequest>(create);
+  static GetPresenceEvidencePacketOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetPresenceEvidencePacketOverviewResponse extends $pb.GeneratedMessage {
+  factory GetPresenceEvidencePacketOverviewResponse({
+    $core.Iterable<PresencePacketItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? foregroundOnlyNoCovertTracking,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (foregroundOnlyNoCovertTracking != null)
+      result.foregroundOnlyNoCovertTracking = foregroundOnlyNoCovertTracking;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetPresenceEvidencePacketOverviewResponse._();
+
+  factory GetPresenceEvidencePacketOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPresenceEvidencePacketOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPresenceEvidencePacketOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<PresencePacketItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: PresencePacketItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'foregroundOnlyNoCovertTracking')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPresenceEvidencePacketOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPresenceEvidencePacketOverviewResponse copyWith(
+          void Function(GetPresenceEvidencePacketOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPresenceEvidencePacketOverviewResponse))
+          as GetPresenceEvidencePacketOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPresenceEvidencePacketOverviewResponse create() =>
+      GetPresenceEvidencePacketOverviewResponse._();
+  @$core.override
+  GetPresenceEvidencePacketOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPresenceEvidencePacketOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPresenceEvidencePacketOverviewResponse>(create);
+  static GetPresenceEvidencePacketOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<PresencePacketItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get foregroundOnlyNoCovertTracking => $_getBF(2);
+  @$pb.TagNumber(3)
+  set foregroundOnlyNoCovertTracking($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasForegroundOnlyNoCovertTracking() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearForegroundOnlyNoCovertTracking() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class SubmitPresenceEvidencePacketRequest extends $pb.GeneratedMessage {
+  factory SubmitPresenceEvidencePacketRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  SubmitPresenceEvidencePacketRequest._();
+
+  factory SubmitPresenceEvidencePacketRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitPresenceEvidencePacketRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitPresenceEvidencePacketRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPresenceEvidencePacketRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPresenceEvidencePacketRequest copyWith(
+          void Function(SubmitPresenceEvidencePacketRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitPresenceEvidencePacketRequest))
+          as SubmitPresenceEvidencePacketRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitPresenceEvidencePacketRequest create() =>
+      SubmitPresenceEvidencePacketRequest._();
+  @$core.override
+  SubmitPresenceEvidencePacketRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitPresenceEvidencePacketRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitPresenceEvidencePacketRequest>(create);
+  static SubmitPresenceEvidencePacketRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class SubmitPresenceEvidencePacketResponse extends $pb.GeneratedMessage {
+  factory SubmitPresenceEvidencePacketResponse({
+    PresencePacketItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SubmitPresenceEvidencePacketResponse._();
+
+  factory SubmitPresenceEvidencePacketResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitPresenceEvidencePacketResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitPresenceEvidencePacketResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<PresencePacketItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: PresencePacketItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPresenceEvidencePacketResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitPresenceEvidencePacketResponse copyWith(
+          void Function(SubmitPresenceEvidencePacketResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitPresenceEvidencePacketResponse))
+          as SubmitPresenceEvidencePacketResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitPresenceEvidencePacketResponse create() =>
+      SubmitPresenceEvidencePacketResponse._();
+  @$core.override
+  SubmitPresenceEvidencePacketResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitPresenceEvidencePacketResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitPresenceEvidencePacketResponse>(create);
+  static SubmitPresenceEvidencePacketResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PresencePacketItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(PresencePacketItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PresencePacketItem ensureItem() => $_ensure(0);
+}
+
+class FilePresenceVerificationAppealRequest extends $pb.GeneratedMessage {
+  factory FilePresenceVerificationAppealRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  FilePresenceVerificationAppealRequest._();
+
+  factory FilePresenceVerificationAppealRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FilePresenceVerificationAppealRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FilePresenceVerificationAppealRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilePresenceVerificationAppealRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilePresenceVerificationAppealRequest copyWith(
+          void Function(FilePresenceVerificationAppealRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as FilePresenceVerificationAppealRequest))
+          as FilePresenceVerificationAppealRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FilePresenceVerificationAppealRequest create() =>
+      FilePresenceVerificationAppealRequest._();
+  @$core.override
+  FilePresenceVerificationAppealRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FilePresenceVerificationAppealRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FilePresenceVerificationAppealRequest>(create);
+  static FilePresenceVerificationAppealRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class FilePresenceVerificationAppealResponse extends $pb.GeneratedMessage {
+  factory FilePresenceVerificationAppealResponse({
+    PresencePacketItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  FilePresenceVerificationAppealResponse._();
+
+  factory FilePresenceVerificationAppealResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FilePresenceVerificationAppealResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FilePresenceVerificationAppealResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<PresencePacketItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: PresencePacketItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilePresenceVerificationAppealResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilePresenceVerificationAppealResponse copyWith(
+          void Function(FilePresenceVerificationAppealResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as FilePresenceVerificationAppealResponse))
+          as FilePresenceVerificationAppealResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FilePresenceVerificationAppealResponse create() =>
+      FilePresenceVerificationAppealResponse._();
+  @$core.override
+  FilePresenceVerificationAppealResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FilePresenceVerificationAppealResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FilePresenceVerificationAppealResponse>(create);
+  static FilePresenceVerificationAppealResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  PresencePacketItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(PresencePacketItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PresencePacketItem ensureItem() => $_ensure(0);
+}
+
+class ResidencyLedgerItem extends $pb.GeneratedMessage {
+  factory ResidencyLedgerItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? nonLegalTaxResidencyBoundary,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (nonLegalTaxResidencyBoundary != null)
+      result.nonLegalTaxResidencyBoundary = nonLegalTaxResidencyBoundary;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  ResidencyLedgerItem._();
+
+  factory ResidencyLedgerItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResidencyLedgerItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResidencyLedgerItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'nonLegalTaxResidencyBoundary')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResidencyLedgerItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResidencyLedgerItem copyWith(void Function(ResidencyLedgerItem) updates) =>
+      super.copyWith((message) => updates(message as ResidencyLedgerItem))
+          as ResidencyLedgerItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResidencyLedgerItem create() => ResidencyLedgerItem._();
+  @$core.override
+  ResidencyLedgerItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResidencyLedgerItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResidencyLedgerItem>(create);
+  static ResidencyLedgerItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonLegalTaxResidencyBoundary => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonLegalTaxResidencyBoundary($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonLegalTaxResidencyBoundary() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonLegalTaxResidencyBoundary() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetResidencyTravelLedgerOverviewRequest extends $pb.GeneratedMessage {
+  factory GetResidencyTravelLedgerOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetResidencyTravelLedgerOverviewRequest._();
+
+  factory GetResidencyTravelLedgerOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetResidencyTravelLedgerOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetResidencyTravelLedgerOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResidencyTravelLedgerOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResidencyTravelLedgerOverviewRequest copyWith(
+          void Function(GetResidencyTravelLedgerOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetResidencyTravelLedgerOverviewRequest))
+          as GetResidencyTravelLedgerOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetResidencyTravelLedgerOverviewRequest create() =>
+      GetResidencyTravelLedgerOverviewRequest._();
+  @$core.override
+  GetResidencyTravelLedgerOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetResidencyTravelLedgerOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetResidencyTravelLedgerOverviewRequest>(create);
+  static GetResidencyTravelLedgerOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetResidencyTravelLedgerOverviewResponse extends $pb.GeneratedMessage {
+  factory GetResidencyTravelLedgerOverviewResponse({
+    $core.Iterable<ResidencyLedgerItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? nonLegalTaxResidencyBoundary,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (nonLegalTaxResidencyBoundary != null)
+      result.nonLegalTaxResidencyBoundary = nonLegalTaxResidencyBoundary;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetResidencyTravelLedgerOverviewResponse._();
+
+  factory GetResidencyTravelLedgerOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetResidencyTravelLedgerOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetResidencyTravelLedgerOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<ResidencyLedgerItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: ResidencyLedgerItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'nonLegalTaxResidencyBoundary')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResidencyTravelLedgerOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetResidencyTravelLedgerOverviewResponse copyWith(
+          void Function(GetResidencyTravelLedgerOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetResidencyTravelLedgerOverviewResponse))
+          as GetResidencyTravelLedgerOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetResidencyTravelLedgerOverviewResponse create() =>
+      GetResidencyTravelLedgerOverviewResponse._();
+  @$core.override
+  GetResidencyTravelLedgerOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetResidencyTravelLedgerOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetResidencyTravelLedgerOverviewResponse>(create);
+  static GetResidencyTravelLedgerOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ResidencyLedgerItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get nonLegalTaxResidencyBoundary => $_getBF(2);
+  @$pb.TagNumber(3)
+  set nonLegalTaxResidencyBoundary($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNonLegalTaxResidencyBoundary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNonLegalTaxResidencyBoundary() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class UpsertResidencyDayLedgerRequest extends $pb.GeneratedMessage {
+  factory UpsertResidencyDayLedgerRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  UpsertResidencyDayLedgerRequest._();
+
+  factory UpsertResidencyDayLedgerRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertResidencyDayLedgerRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertResidencyDayLedgerRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResidencyDayLedgerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResidencyDayLedgerRequest copyWith(
+          void Function(UpsertResidencyDayLedgerRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertResidencyDayLedgerRequest))
+          as UpsertResidencyDayLedgerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertResidencyDayLedgerRequest create() =>
+      UpsertResidencyDayLedgerRequest._();
+  @$core.override
+  UpsertResidencyDayLedgerRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertResidencyDayLedgerRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertResidencyDayLedgerRequest>(
+          create);
+  static UpsertResidencyDayLedgerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class UpsertResidencyDayLedgerResponse extends $pb.GeneratedMessage {
+  factory UpsertResidencyDayLedgerResponse({
+    ResidencyLedgerItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpsertResidencyDayLedgerResponse._();
+
+  factory UpsertResidencyDayLedgerResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertResidencyDayLedgerResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertResidencyDayLedgerResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResidencyLedgerItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: ResidencyLedgerItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResidencyDayLedgerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertResidencyDayLedgerResponse copyWith(
+          void Function(UpsertResidencyDayLedgerResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpsertResidencyDayLedgerResponse))
+          as UpsertResidencyDayLedgerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertResidencyDayLedgerResponse create() =>
+      UpsertResidencyDayLedgerResponse._();
+  @$core.override
+  UpsertResidencyDayLedgerResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertResidencyDayLedgerResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpsertResidencyDayLedgerResponse>(
+          create);
+  static UpsertResidencyDayLedgerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResidencyLedgerItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(ResidencyLedgerItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResidencyLedgerItem ensureItem() => $_ensure(0);
+}
+
+class RunRollingWindowForecastRequest extends $pb.GeneratedMessage {
+  factory RunRollingWindowForecastRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  RunRollingWindowForecastRequest._();
+
+  factory RunRollingWindowForecastRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunRollingWindowForecastRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunRollingWindowForecastRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunRollingWindowForecastRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunRollingWindowForecastRequest copyWith(
+          void Function(RunRollingWindowForecastRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RunRollingWindowForecastRequest))
+          as RunRollingWindowForecastRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunRollingWindowForecastRequest create() =>
+      RunRollingWindowForecastRequest._();
+  @$core.override
+  RunRollingWindowForecastRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunRollingWindowForecastRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunRollingWindowForecastRequest>(
+          create);
+  static RunRollingWindowForecastRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class RunRollingWindowForecastResponse extends $pb.GeneratedMessage {
+  factory RunRollingWindowForecastResponse({
+    ResidencyLedgerItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  RunRollingWindowForecastResponse._();
+
+  factory RunRollingWindowForecastResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunRollingWindowForecastResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunRollingWindowForecastResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<ResidencyLedgerItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: ResidencyLedgerItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunRollingWindowForecastResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunRollingWindowForecastResponse copyWith(
+          void Function(RunRollingWindowForecastResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RunRollingWindowForecastResponse))
+          as RunRollingWindowForecastResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunRollingWindowForecastResponse create() =>
+      RunRollingWindowForecastResponse._();
+  @$core.override
+  RunRollingWindowForecastResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunRollingWindowForecastResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RunRollingWindowForecastResponse>(
+          create);
+  static RunRollingWindowForecastResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ResidencyLedgerItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(ResidencyLedgerItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ResidencyLedgerItem ensureItem() => $_ensure(0);
+}
+
+class CollaborationGrantItem extends $pb.GeneratedMessage {
+  factory CollaborationGrantItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? documentsPrivateByDefaultEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (documentsPrivateByDefaultEnforced != null)
+      result.documentsPrivateByDefaultEnforced =
+          documentsPrivateByDefaultEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  CollaborationGrantItem._();
+
+  factory CollaborationGrantItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CollaborationGrantItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CollaborationGrantItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'documentsPrivateByDefaultEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CollaborationGrantItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CollaborationGrantItem copyWith(
+          void Function(CollaborationGrantItem) updates) =>
+      super.copyWith((message) => updates(message as CollaborationGrantItem))
+          as CollaborationGrantItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CollaborationGrantItem create() => CollaborationGrantItem._();
+  @$core.override
+  CollaborationGrantItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CollaborationGrantItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CollaborationGrantItem>(create);
+  static CollaborationGrantItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get documentsPrivateByDefaultEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set documentsPrivateByDefaultEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDocumentsPrivateByDefaultEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDocumentsPrivateByDefaultEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetTravelerCollaborationOverviewRequest extends $pb.GeneratedMessage {
+  factory GetTravelerCollaborationOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetTravelerCollaborationOverviewRequest._();
+
+  factory GetTravelerCollaborationOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTravelerCollaborationOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTravelerCollaborationOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTravelerCollaborationOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTravelerCollaborationOverviewRequest copyWith(
+          void Function(GetTravelerCollaborationOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTravelerCollaborationOverviewRequest))
+          as GetTravelerCollaborationOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTravelerCollaborationOverviewRequest create() =>
+      GetTravelerCollaborationOverviewRequest._();
+  @$core.override
+  GetTravelerCollaborationOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTravelerCollaborationOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTravelerCollaborationOverviewRequest>(create);
+  static GetTravelerCollaborationOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetTravelerCollaborationOverviewResponse extends $pb.GeneratedMessage {
+  factory GetTravelerCollaborationOverviewResponse({
+    $core.Iterable<CollaborationGrantItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? documentsPrivateByDefaultEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (documentsPrivateByDefaultEnforced != null)
+      result.documentsPrivateByDefaultEnforced =
+          documentsPrivateByDefaultEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetTravelerCollaborationOverviewResponse._();
+
+  factory GetTravelerCollaborationOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTravelerCollaborationOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTravelerCollaborationOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<CollaborationGrantItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: CollaborationGrantItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'documentsPrivateByDefaultEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTravelerCollaborationOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTravelerCollaborationOverviewResponse copyWith(
+          void Function(GetTravelerCollaborationOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTravelerCollaborationOverviewResponse))
+          as GetTravelerCollaborationOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTravelerCollaborationOverviewResponse create() =>
+      GetTravelerCollaborationOverviewResponse._();
+  @$core.override
+  GetTravelerCollaborationOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTravelerCollaborationOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTravelerCollaborationOverviewResponse>(create);
+  static GetTravelerCollaborationOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CollaborationGrantItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get documentsPrivateByDefaultEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set documentsPrivateByDefaultEnforced($core.bool value) =>
+      $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDocumentsPrivateByDefaultEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDocumentsPrivateByDefaultEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class GrantTripCollaborationRoleRequest extends $pb.GeneratedMessage {
+  factory GrantTripCollaborationRoleRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  GrantTripCollaborationRoleRequest._();
+
+  factory GrantTripCollaborationRoleRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GrantTripCollaborationRoleRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GrantTripCollaborationRoleRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantTripCollaborationRoleRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantTripCollaborationRoleRequest copyWith(
+          void Function(GrantTripCollaborationRoleRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GrantTripCollaborationRoleRequest))
+          as GrantTripCollaborationRoleRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GrantTripCollaborationRoleRequest create() =>
+      GrantTripCollaborationRoleRequest._();
+  @$core.override
+  GrantTripCollaborationRoleRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GrantTripCollaborationRoleRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GrantTripCollaborationRoleRequest>(
+          create);
+  static GrantTripCollaborationRoleRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class GrantTripCollaborationRoleResponse extends $pb.GeneratedMessage {
+  factory GrantTripCollaborationRoleResponse({
+    CollaborationGrantItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  GrantTripCollaborationRoleResponse._();
+
+  factory GrantTripCollaborationRoleResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GrantTripCollaborationRoleResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GrantTripCollaborationRoleResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<CollaborationGrantItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: CollaborationGrantItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantTripCollaborationRoleResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GrantTripCollaborationRoleResponse copyWith(
+          void Function(GrantTripCollaborationRoleResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GrantTripCollaborationRoleResponse))
+          as GrantTripCollaborationRoleResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GrantTripCollaborationRoleResponse create() =>
+      GrantTripCollaborationRoleResponse._();
+  @$core.override
+  GrantTripCollaborationRoleResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GrantTripCollaborationRoleResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GrantTripCollaborationRoleResponse>(
+          create);
+  static GrantTripCollaborationRoleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CollaborationGrantItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(CollaborationGrantItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CollaborationGrantItem ensureItem() => $_ensure(0);
+}
+
+class DispatchSafetyCheckinBroadcastRequest extends $pb.GeneratedMessage {
+  factory DispatchSafetyCheckinBroadcastRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  DispatchSafetyCheckinBroadcastRequest._();
+
+  factory DispatchSafetyCheckinBroadcastRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DispatchSafetyCheckinBroadcastRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DispatchSafetyCheckinBroadcastRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchSafetyCheckinBroadcastRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchSafetyCheckinBroadcastRequest copyWith(
+          void Function(DispatchSafetyCheckinBroadcastRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as DispatchSafetyCheckinBroadcastRequest))
+          as DispatchSafetyCheckinBroadcastRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DispatchSafetyCheckinBroadcastRequest create() =>
+      DispatchSafetyCheckinBroadcastRequest._();
+  @$core.override
+  DispatchSafetyCheckinBroadcastRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DispatchSafetyCheckinBroadcastRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DispatchSafetyCheckinBroadcastRequest>(create);
+  static DispatchSafetyCheckinBroadcastRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class DispatchSafetyCheckinBroadcastResponse extends $pb.GeneratedMessage {
+  factory DispatchSafetyCheckinBroadcastResponse({
+    CollaborationGrantItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  DispatchSafetyCheckinBroadcastResponse._();
+
+  factory DispatchSafetyCheckinBroadcastResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DispatchSafetyCheckinBroadcastResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DispatchSafetyCheckinBroadcastResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<CollaborationGrantItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: CollaborationGrantItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchSafetyCheckinBroadcastResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DispatchSafetyCheckinBroadcastResponse copyWith(
+          void Function(DispatchSafetyCheckinBroadcastResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as DispatchSafetyCheckinBroadcastResponse))
+          as DispatchSafetyCheckinBroadcastResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DispatchSafetyCheckinBroadcastResponse create() =>
+      DispatchSafetyCheckinBroadcastResponse._();
+  @$core.override
+  DispatchSafetyCheckinBroadcastResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DispatchSafetyCheckinBroadcastResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DispatchSafetyCheckinBroadcastResponse>(create);
+  static DispatchSafetyCheckinBroadcastResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  CollaborationGrantItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(CollaborationGrantItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  CollaborationGrantItem ensureItem() => $_ensure(0);
+}
+
+class LoyaltyClaimItem extends $pb.GeneratedMessage {
+  factory LoyaltyClaimItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? noGuaranteedPayoutBoundary,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (noGuaranteedPayoutBoundary != null)
+      result.noGuaranteedPayoutBoundary = noGuaranteedPayoutBoundary;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  LoyaltyClaimItem._();
+
+  factory LoyaltyClaimItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoyaltyClaimItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoyaltyClaimItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'noGuaranteedPayoutBoundary')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoyaltyClaimItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LoyaltyClaimItem copyWith(void Function(LoyaltyClaimItem) updates) =>
+      super.copyWith((message) => updates(message as LoyaltyClaimItem))
+          as LoyaltyClaimItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LoyaltyClaimItem create() => LoyaltyClaimItem._();
+  @$core.override
+  LoyaltyClaimItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LoyaltyClaimItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoyaltyClaimItem>(create);
+  static LoyaltyClaimItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noGuaranteedPayoutBoundary => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noGuaranteedPayoutBoundary($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoGuaranteedPayoutBoundary() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoGuaranteedPayoutBoundary() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetLoyaltyClaimsFinanceOverviewRequest extends $pb.GeneratedMessage {
+  factory GetLoyaltyClaimsFinanceOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetLoyaltyClaimsFinanceOverviewRequest._();
+
+  factory GetLoyaltyClaimsFinanceOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLoyaltyClaimsFinanceOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLoyaltyClaimsFinanceOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoyaltyClaimsFinanceOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoyaltyClaimsFinanceOverviewRequest copyWith(
+          void Function(GetLoyaltyClaimsFinanceOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLoyaltyClaimsFinanceOverviewRequest))
+          as GetLoyaltyClaimsFinanceOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLoyaltyClaimsFinanceOverviewRequest create() =>
+      GetLoyaltyClaimsFinanceOverviewRequest._();
+  @$core.override
+  GetLoyaltyClaimsFinanceOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLoyaltyClaimsFinanceOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLoyaltyClaimsFinanceOverviewRequest>(create);
+  static GetLoyaltyClaimsFinanceOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetLoyaltyClaimsFinanceOverviewResponse extends $pb.GeneratedMessage {
+  factory GetLoyaltyClaimsFinanceOverviewResponse({
+    $core.Iterable<LoyaltyClaimItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? noGuaranteedPayoutBoundary,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (noGuaranteedPayoutBoundary != null)
+      result.noGuaranteedPayoutBoundary = noGuaranteedPayoutBoundary;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetLoyaltyClaimsFinanceOverviewResponse._();
+
+  factory GetLoyaltyClaimsFinanceOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLoyaltyClaimsFinanceOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLoyaltyClaimsFinanceOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<LoyaltyClaimItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: LoyaltyClaimItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'noGuaranteedPayoutBoundary')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoyaltyClaimsFinanceOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLoyaltyClaimsFinanceOverviewResponse copyWith(
+          void Function(GetLoyaltyClaimsFinanceOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLoyaltyClaimsFinanceOverviewResponse))
+          as GetLoyaltyClaimsFinanceOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLoyaltyClaimsFinanceOverviewResponse create() =>
+      GetLoyaltyClaimsFinanceOverviewResponse._();
+  @$core.override
+  GetLoyaltyClaimsFinanceOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLoyaltyClaimsFinanceOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLoyaltyClaimsFinanceOverviewResponse>(create);
+  static GetLoyaltyClaimsFinanceOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LoyaltyClaimItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get noGuaranteedPayoutBoundary => $_getBF(2);
+  @$pb.TagNumber(3)
+  set noGuaranteedPayoutBoundary($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoGuaranteedPayoutBoundary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoGuaranteedPayoutBoundary() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class UpsertLoyaltyOrCompensationClaimRequest extends $pb.GeneratedMessage {
+  factory UpsertLoyaltyOrCompensationClaimRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  UpsertLoyaltyOrCompensationClaimRequest._();
+
+  factory UpsertLoyaltyOrCompensationClaimRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLoyaltyOrCompensationClaimRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLoyaltyOrCompensationClaimRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLoyaltyOrCompensationClaimRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLoyaltyOrCompensationClaimRequest copyWith(
+          void Function(UpsertLoyaltyOrCompensationClaimRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertLoyaltyOrCompensationClaimRequest))
+          as UpsertLoyaltyOrCompensationClaimRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLoyaltyOrCompensationClaimRequest create() =>
+      UpsertLoyaltyOrCompensationClaimRequest._();
+  @$core.override
+  UpsertLoyaltyOrCompensationClaimRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLoyaltyOrCompensationClaimRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertLoyaltyOrCompensationClaimRequest>(create);
+  static UpsertLoyaltyOrCompensationClaimRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class UpsertLoyaltyOrCompensationClaimResponse extends $pb.GeneratedMessage {
+  factory UpsertLoyaltyOrCompensationClaimResponse({
+    LoyaltyClaimItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpsertLoyaltyOrCompensationClaimResponse._();
+
+  factory UpsertLoyaltyOrCompensationClaimResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertLoyaltyOrCompensationClaimResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertLoyaltyOrCompensationClaimResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<LoyaltyClaimItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: LoyaltyClaimItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLoyaltyOrCompensationClaimResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertLoyaltyOrCompensationClaimResponse copyWith(
+          void Function(UpsertLoyaltyOrCompensationClaimResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertLoyaltyOrCompensationClaimResponse))
+          as UpsertLoyaltyOrCompensationClaimResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertLoyaltyOrCompensationClaimResponse create() =>
+      UpsertLoyaltyOrCompensationClaimResponse._();
+  @$core.override
+  UpsertLoyaltyOrCompensationClaimResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertLoyaltyOrCompensationClaimResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertLoyaltyOrCompensationClaimResponse>(create);
+  static UpsertLoyaltyOrCompensationClaimResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LoyaltyClaimItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(LoyaltyClaimItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LoyaltyClaimItem ensureItem() => $_ensure(0);
+}
+
+class HandoffTripExpenseToVaultRequest extends $pb.GeneratedMessage {
+  factory HandoffTripExpenseToVaultRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  HandoffTripExpenseToVaultRequest._();
+
+  factory HandoffTripExpenseToVaultRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HandoffTripExpenseToVaultRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HandoffTripExpenseToVaultRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HandoffTripExpenseToVaultRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HandoffTripExpenseToVaultRequest copyWith(
+          void Function(HandoffTripExpenseToVaultRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as HandoffTripExpenseToVaultRequest))
+          as HandoffTripExpenseToVaultRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static HandoffTripExpenseToVaultRequest create() =>
+      HandoffTripExpenseToVaultRequest._();
+  @$core.override
+  HandoffTripExpenseToVaultRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static HandoffTripExpenseToVaultRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HandoffTripExpenseToVaultRequest>(
+          create);
+  static HandoffTripExpenseToVaultRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class HandoffTripExpenseToVaultResponse extends $pb.GeneratedMessage {
+  factory HandoffTripExpenseToVaultResponse({
+    LoyaltyClaimItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  HandoffTripExpenseToVaultResponse._();
+
+  factory HandoffTripExpenseToVaultResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HandoffTripExpenseToVaultResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HandoffTripExpenseToVaultResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<LoyaltyClaimItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: LoyaltyClaimItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HandoffTripExpenseToVaultResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HandoffTripExpenseToVaultResponse copyWith(
+          void Function(HandoffTripExpenseToVaultResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as HandoffTripExpenseToVaultResponse))
+          as HandoffTripExpenseToVaultResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static HandoffTripExpenseToVaultResponse create() =>
+      HandoffTripExpenseToVaultResponse._();
+  @$core.override
+  HandoffTripExpenseToVaultResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static HandoffTripExpenseToVaultResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HandoffTripExpenseToVaultResponse>(
+          create);
+  static HandoffTripExpenseToVaultResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LoyaltyClaimItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(LoyaltyClaimItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LoyaltyClaimItem ensureItem() => $_ensure(0);
+}
+
+class AccessibleCrisisItem extends $pb.GeneratedMessage {
+  factory AccessibleCrisisItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? coercionEscapeAndConsentEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (coercionEscapeAndConsentEnforced != null)
+      result.coercionEscapeAndConsentEnforced =
+          coercionEscapeAndConsentEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  AccessibleCrisisItem._();
+
+  factory AccessibleCrisisItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AccessibleCrisisItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AccessibleCrisisItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'coercionEscapeAndConsentEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AccessibleCrisisItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AccessibleCrisisItem copyWith(void Function(AccessibleCrisisItem) updates) =>
+      super.copyWith((message) => updates(message as AccessibleCrisisItem))
+          as AccessibleCrisisItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AccessibleCrisisItem create() => AccessibleCrisisItem._();
+  @$core.override
+  AccessibleCrisisItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AccessibleCrisisItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AccessibleCrisisItem>(create);
+  static AccessibleCrisisItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get coercionEscapeAndConsentEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set coercionEscapeAndConsentEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCoercionEscapeAndConsentEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCoercionEscapeAndConsentEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetAccessibleCrisisCommandOverviewRequest extends $pb.GeneratedMessage {
+  factory GetAccessibleCrisisCommandOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetAccessibleCrisisCommandOverviewRequest._();
+
+  factory GetAccessibleCrisisCommandOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAccessibleCrisisCommandOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAccessibleCrisisCommandOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAccessibleCrisisCommandOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAccessibleCrisisCommandOverviewRequest copyWith(
+          void Function(GetAccessibleCrisisCommandOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAccessibleCrisisCommandOverviewRequest))
+          as GetAccessibleCrisisCommandOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAccessibleCrisisCommandOverviewRequest create() =>
+      GetAccessibleCrisisCommandOverviewRequest._();
+  @$core.override
+  GetAccessibleCrisisCommandOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAccessibleCrisisCommandOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAccessibleCrisisCommandOverviewRequest>(create);
+  static GetAccessibleCrisisCommandOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetAccessibleCrisisCommandOverviewResponse extends $pb.GeneratedMessage {
+  factory GetAccessibleCrisisCommandOverviewResponse({
+    $core.Iterable<AccessibleCrisisItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? coercionEscapeAndConsentEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (coercionEscapeAndConsentEnforced != null)
+      result.coercionEscapeAndConsentEnforced =
+          coercionEscapeAndConsentEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetAccessibleCrisisCommandOverviewResponse._();
+
+  factory GetAccessibleCrisisCommandOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAccessibleCrisisCommandOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAccessibleCrisisCommandOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<AccessibleCrisisItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: AccessibleCrisisItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'coercionEscapeAndConsentEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAccessibleCrisisCommandOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAccessibleCrisisCommandOverviewResponse copyWith(
+          void Function(GetAccessibleCrisisCommandOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAccessibleCrisisCommandOverviewResponse))
+          as GetAccessibleCrisisCommandOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAccessibleCrisisCommandOverviewResponse create() =>
+      GetAccessibleCrisisCommandOverviewResponse._();
+  @$core.override
+  GetAccessibleCrisisCommandOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAccessibleCrisisCommandOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAccessibleCrisisCommandOverviewResponse>(create);
+  static GetAccessibleCrisisCommandOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<AccessibleCrisisItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get coercionEscapeAndConsentEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set coercionEscapeAndConsentEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCoercionEscapeAndConsentEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCoercionEscapeAndConsentEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class SubmitProviderAssistanceRequestRequest extends $pb.GeneratedMessage {
+  factory SubmitProviderAssistanceRequestRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  SubmitProviderAssistanceRequestRequest._();
+
+  factory SubmitProviderAssistanceRequestRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitProviderAssistanceRequestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitProviderAssistanceRequestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProviderAssistanceRequestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProviderAssistanceRequestRequest copyWith(
+          void Function(SubmitProviderAssistanceRequestRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitProviderAssistanceRequestRequest))
+          as SubmitProviderAssistanceRequestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitProviderAssistanceRequestRequest create() =>
+      SubmitProviderAssistanceRequestRequest._();
+  @$core.override
+  SubmitProviderAssistanceRequestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitProviderAssistanceRequestRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitProviderAssistanceRequestRequest>(create);
+  static SubmitProviderAssistanceRequestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class SubmitProviderAssistanceRequestResponse extends $pb.GeneratedMessage {
+  factory SubmitProviderAssistanceRequestResponse({
+    AccessibleCrisisItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SubmitProviderAssistanceRequestResponse._();
+
+  factory SubmitProviderAssistanceRequestResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitProviderAssistanceRequestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitProviderAssistanceRequestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<AccessibleCrisisItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: AccessibleCrisisItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProviderAssistanceRequestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitProviderAssistanceRequestResponse copyWith(
+          void Function(SubmitProviderAssistanceRequestResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitProviderAssistanceRequestResponse))
+          as SubmitProviderAssistanceRequestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitProviderAssistanceRequestResponse create() =>
+      SubmitProviderAssistanceRequestResponse._();
+  @$core.override
+  SubmitProviderAssistanceRequestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitProviderAssistanceRequestResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitProviderAssistanceRequestResponse>(create);
+  static SubmitProviderAssistanceRequestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AccessibleCrisisItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(AccessibleCrisisItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AccessibleCrisisItem ensureItem() => $_ensure(0);
+}
+
+class RecordCrisisWelfareCheckinRequest extends $pb.GeneratedMessage {
+  factory RecordCrisisWelfareCheckinRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  RecordCrisisWelfareCheckinRequest._();
+
+  factory RecordCrisisWelfareCheckinRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCrisisWelfareCheckinRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCrisisWelfareCheckinRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCrisisWelfareCheckinRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCrisisWelfareCheckinRequest copyWith(
+          void Function(RecordCrisisWelfareCheckinRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCrisisWelfareCheckinRequest))
+          as RecordCrisisWelfareCheckinRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCrisisWelfareCheckinRequest create() =>
+      RecordCrisisWelfareCheckinRequest._();
+  @$core.override
+  RecordCrisisWelfareCheckinRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCrisisWelfareCheckinRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordCrisisWelfareCheckinRequest>(
+          create);
+  static RecordCrisisWelfareCheckinRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class RecordCrisisWelfareCheckinResponse extends $pb.GeneratedMessage {
+  factory RecordCrisisWelfareCheckinResponse({
+    AccessibleCrisisItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  RecordCrisisWelfareCheckinResponse._();
+
+  factory RecordCrisisWelfareCheckinResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCrisisWelfareCheckinResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCrisisWelfareCheckinResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<AccessibleCrisisItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: AccessibleCrisisItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCrisisWelfareCheckinResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCrisisWelfareCheckinResponse copyWith(
+          void Function(RecordCrisisWelfareCheckinResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCrisisWelfareCheckinResponse))
+          as RecordCrisisWelfareCheckinResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCrisisWelfareCheckinResponse create() =>
+      RecordCrisisWelfareCheckinResponse._();
+  @$core.override
+  RecordCrisisWelfareCheckinResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCrisisWelfareCheckinResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecordCrisisWelfareCheckinResponse>(
+          create);
+  static RecordCrisisWelfareCheckinResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AccessibleCrisisItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(AccessibleCrisisItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AccessibleCrisisItem ensureItem() => $_ensure(0);
+}
+
+class DestinationPlanItem extends $pb.GeneratedMessage {
+  factory DestinationPlanItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? paidPlacementDisclosedEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (paidPlacementDisclosedEnforced != null)
+      result.paidPlacementDisclosedEnforced = paidPlacementDisclosedEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  DestinationPlanItem._();
+
+  factory DestinationPlanItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DestinationPlanItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DestinationPlanItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'paidPlacementDisclosedEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DestinationPlanItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DestinationPlanItem copyWith(void Function(DestinationPlanItem) updates) =>
+      super.copyWith((message) => updates(message as DestinationPlanItem))
+          as DestinationPlanItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DestinationPlanItem create() => DestinationPlanItem._();
+  @$core.override
+  DestinationPlanItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DestinationPlanItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DestinationPlanItem>(create);
+  static DestinationPlanItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get paidPlacementDisclosedEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set paidPlacementDisclosedEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPaidPlacementDisclosedEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPaidPlacementDisclosedEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetDestinationCompanionOverviewRequest extends $pb.GeneratedMessage {
+  factory GetDestinationCompanionOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetDestinationCompanionOverviewRequest._();
+
+  factory GetDestinationCompanionOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDestinationCompanionOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDestinationCompanionOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDestinationCompanionOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDestinationCompanionOverviewRequest copyWith(
+          void Function(GetDestinationCompanionOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDestinationCompanionOverviewRequest))
+          as GetDestinationCompanionOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDestinationCompanionOverviewRequest create() =>
+      GetDestinationCompanionOverviewRequest._();
+  @$core.override
+  GetDestinationCompanionOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDestinationCompanionOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDestinationCompanionOverviewRequest>(create);
+  static GetDestinationCompanionOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetDestinationCompanionOverviewResponse extends $pb.GeneratedMessage {
+  factory GetDestinationCompanionOverviewResponse({
+    $core.Iterable<DestinationPlanItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? paidPlacementDisclosedEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (paidPlacementDisclosedEnforced != null)
+      result.paidPlacementDisclosedEnforced = paidPlacementDisclosedEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetDestinationCompanionOverviewResponse._();
+
+  factory GetDestinationCompanionOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDestinationCompanionOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDestinationCompanionOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<DestinationPlanItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: DestinationPlanItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'paidPlacementDisclosedEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDestinationCompanionOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDestinationCompanionOverviewResponse copyWith(
+          void Function(GetDestinationCompanionOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDestinationCompanionOverviewResponse))
+          as GetDestinationCompanionOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDestinationCompanionOverviewResponse create() =>
+      GetDestinationCompanionOverviewResponse._();
+  @$core.override
+  GetDestinationCompanionOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDestinationCompanionOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDestinationCompanionOverviewResponse>(create);
+  static GetDestinationCompanionOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DestinationPlanItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get paidPlacementDisclosedEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set paidPlacementDisclosedEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPaidPlacementDisclosedEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPaidPlacementDisclosedEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class SaveDestinationDayPlanRequest extends $pb.GeneratedMessage {
+  factory SaveDestinationDayPlanRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  SaveDestinationDayPlanRequest._();
+
+  factory SaveDestinationDayPlanRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDestinationDayPlanRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDestinationDayPlanRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDestinationDayPlanRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDestinationDayPlanRequest copyWith(
+          void Function(SaveDestinationDayPlanRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as SaveDestinationDayPlanRequest))
+          as SaveDestinationDayPlanRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDestinationDayPlanRequest create() =>
+      SaveDestinationDayPlanRequest._();
+  @$core.override
+  SaveDestinationDayPlanRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDestinationDayPlanRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SaveDestinationDayPlanRequest>(create);
+  static SaveDestinationDayPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class SaveDestinationDayPlanResponse extends $pb.GeneratedMessage {
+  factory SaveDestinationDayPlanResponse({
+    DestinationPlanItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  SaveDestinationDayPlanResponse._();
+
+  factory SaveDestinationDayPlanResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDestinationDayPlanResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDestinationDayPlanResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<DestinationPlanItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: DestinationPlanItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDestinationDayPlanResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDestinationDayPlanResponse copyWith(
+          void Function(SaveDestinationDayPlanResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SaveDestinationDayPlanResponse))
+          as SaveDestinationDayPlanResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDestinationDayPlanResponse create() =>
+      SaveDestinationDayPlanResponse._();
+  @$core.override
+  SaveDestinationDayPlanResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDestinationDayPlanResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SaveDestinationDayPlanResponse>(create);
+  static SaveDestinationDayPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DestinationPlanItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(DestinationPlanItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DestinationPlanItem ensureItem() => $_ensure(0);
+}
+
+class LogForegroundProximityQueryRequest extends $pb.GeneratedMessage {
+  factory LogForegroundProximityQueryRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  LogForegroundProximityQueryRequest._();
+
+  factory LogForegroundProximityQueryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogForegroundProximityQueryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogForegroundProximityQueryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogForegroundProximityQueryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogForegroundProximityQueryRequest copyWith(
+          void Function(LogForegroundProximityQueryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LogForegroundProximityQueryRequest))
+          as LogForegroundProximityQueryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogForegroundProximityQueryRequest create() =>
+      LogForegroundProximityQueryRequest._();
+  @$core.override
+  LogForegroundProximityQueryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LogForegroundProximityQueryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogForegroundProximityQueryRequest>(
+          create);
+  static LogForegroundProximityQueryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class LogForegroundProximityQueryResponse extends $pb.GeneratedMessage {
+  factory LogForegroundProximityQueryResponse({
+    DestinationPlanItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  LogForegroundProximityQueryResponse._();
+
+  factory LogForegroundProximityQueryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogForegroundProximityQueryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogForegroundProximityQueryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<DestinationPlanItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: DestinationPlanItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogForegroundProximityQueryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogForegroundProximityQueryResponse copyWith(
+          void Function(LogForegroundProximityQueryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LogForegroundProximityQueryResponse))
+          as LogForegroundProximityQueryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogForegroundProximityQueryResponse create() =>
+      LogForegroundProximityQueryResponse._();
+  @$core.override
+  LogForegroundProximityQueryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LogForegroundProximityQueryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LogForegroundProximityQueryResponse>(create);
+  static LogForegroundProximityQueryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DestinationPlanItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(DestinationPlanItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DestinationPlanItem ensureItem() => $_ensure(0);
+}
+
+class SignedMobilityDossierItem extends $pb.GeneratedMessage {
+  factory SignedMobilityDossierItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? verifiedVsUnverifiedDistinct,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (verifiedVsUnverifiedDistinct != null)
+      result.verifiedVsUnverifiedDistinct = verifiedVsUnverifiedDistinct;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  SignedMobilityDossierItem._();
+
+  factory SignedMobilityDossierItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SignedMobilityDossierItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SignedMobilityDossierItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'verifiedVsUnverifiedDistinct')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignedMobilityDossierItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignedMobilityDossierItem copyWith(
+          void Function(SignedMobilityDossierItem) updates) =>
+      super.copyWith((message) => updates(message as SignedMobilityDossierItem))
+          as SignedMobilityDossierItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignedMobilityDossierItem create() => SignedMobilityDossierItem._();
+  @$core.override
+  SignedMobilityDossierItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SignedMobilityDossierItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SignedMobilityDossierItem>(create);
+  static SignedMobilityDossierItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get verifiedVsUnverifiedDistinct => $_getBF(7);
+  @$pb.TagNumber(8)
+  set verifiedVsUnverifiedDistinct($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasVerifiedVsUnverifiedDistinct() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearVerifiedVsUnverifiedDistinct() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetPrivatePassportProofsOverviewRequest extends $pb.GeneratedMessage {
+  factory GetPrivatePassportProofsOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetPrivatePassportProofsOverviewRequest._();
+
+  factory GetPrivatePassportProofsOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPrivatePassportProofsOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPrivatePassportProofsOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivatePassportProofsOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivatePassportProofsOverviewRequest copyWith(
+          void Function(GetPrivatePassportProofsOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPrivatePassportProofsOverviewRequest))
+          as GetPrivatePassportProofsOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivatePassportProofsOverviewRequest create() =>
+      GetPrivatePassportProofsOverviewRequest._();
+  @$core.override
+  GetPrivatePassportProofsOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivatePassportProofsOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPrivatePassportProofsOverviewRequest>(create);
+  static GetPrivatePassportProofsOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetPrivatePassportProofsOverviewResponse extends $pb.GeneratedMessage {
+  factory GetPrivatePassportProofsOverviewResponse({
+    $core.Iterable<SignedMobilityDossierItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? verifiedVsUnverifiedDistinct,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (verifiedVsUnverifiedDistinct != null)
+      result.verifiedVsUnverifiedDistinct = verifiedVsUnverifiedDistinct;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetPrivatePassportProofsOverviewResponse._();
+
+  factory GetPrivatePassportProofsOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPrivatePassportProofsOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPrivatePassportProofsOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<SignedMobilityDossierItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: SignedMobilityDossierItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'verifiedVsUnverifiedDistinct')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivatePassportProofsOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivatePassportProofsOverviewResponse copyWith(
+          void Function(GetPrivatePassportProofsOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPrivatePassportProofsOverviewResponse))
+          as GetPrivatePassportProofsOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivatePassportProofsOverviewResponse create() =>
+      GetPrivatePassportProofsOverviewResponse._();
+  @$core.override
+  GetPrivatePassportProofsOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivatePassportProofsOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPrivatePassportProofsOverviewResponse>(create);
+  static GetPrivatePassportProofsOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SignedMobilityDossierItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get verifiedVsUnverifiedDistinct => $_getBF(2);
+  @$pb.TagNumber(3)
+  set verifiedVsUnverifiedDistinct($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVerifiedVsUnverifiedDistinct() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVerifiedVsUnverifiedDistinct() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class MintSignedMobilityDossierRequest extends $pb.GeneratedMessage {
+  factory MintSignedMobilityDossierRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  MintSignedMobilityDossierRequest._();
+
+  factory MintSignedMobilityDossierRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MintSignedMobilityDossierRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MintSignedMobilityDossierRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintSignedMobilityDossierRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintSignedMobilityDossierRequest copyWith(
+          void Function(MintSignedMobilityDossierRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as MintSignedMobilityDossierRequest))
+          as MintSignedMobilityDossierRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintSignedMobilityDossierRequest create() =>
+      MintSignedMobilityDossierRequest._();
+  @$core.override
+  MintSignedMobilityDossierRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MintSignedMobilityDossierRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MintSignedMobilityDossierRequest>(
+          create);
+  static MintSignedMobilityDossierRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class MintSignedMobilityDossierResponse extends $pb.GeneratedMessage {
+  factory MintSignedMobilityDossierResponse({
+    SignedMobilityDossierItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  MintSignedMobilityDossierResponse._();
+
+  factory MintSignedMobilityDossierResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MintSignedMobilityDossierResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MintSignedMobilityDossierResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<SignedMobilityDossierItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: SignedMobilityDossierItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintSignedMobilityDossierResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintSignedMobilityDossierResponse copyWith(
+          void Function(MintSignedMobilityDossierResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MintSignedMobilityDossierResponse))
+          as MintSignedMobilityDossierResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintSignedMobilityDossierResponse create() =>
+      MintSignedMobilityDossierResponse._();
+  @$core.override
+  MintSignedMobilityDossierResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MintSignedMobilityDossierResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<MintSignedMobilityDossierResponse>(
+          create);
+  static MintSignedMobilityDossierResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SignedMobilityDossierItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(SignedMobilityDossierItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SignedMobilityDossierItem ensureItem() => $_ensure(0);
+}
+
+class UpdateFieldPrivacyPolicyRequest extends $pb.GeneratedMessage {
+  factory UpdateFieldPrivacyPolicyRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  UpdateFieldPrivacyPolicyRequest._();
+
+  factory UpdateFieldPrivacyPolicyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateFieldPrivacyPolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateFieldPrivacyPolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFieldPrivacyPolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFieldPrivacyPolicyRequest copyWith(
+          void Function(UpdateFieldPrivacyPolicyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateFieldPrivacyPolicyRequest))
+          as UpdateFieldPrivacyPolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFieldPrivacyPolicyRequest create() =>
+      UpdateFieldPrivacyPolicyRequest._();
+  @$core.override
+  UpdateFieldPrivacyPolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFieldPrivacyPolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateFieldPrivacyPolicyRequest>(
+          create);
+  static UpdateFieldPrivacyPolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class UpdateFieldPrivacyPolicyResponse extends $pb.GeneratedMessage {
+  factory UpdateFieldPrivacyPolicyResponse({
+    SignedMobilityDossierItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  UpdateFieldPrivacyPolicyResponse._();
+
+  factory UpdateFieldPrivacyPolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateFieldPrivacyPolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateFieldPrivacyPolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<SignedMobilityDossierItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: SignedMobilityDossierItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFieldPrivacyPolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateFieldPrivacyPolicyResponse copyWith(
+          void Function(UpdateFieldPrivacyPolicyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateFieldPrivacyPolicyResponse))
+          as UpdateFieldPrivacyPolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateFieldPrivacyPolicyResponse create() =>
+      UpdateFieldPrivacyPolicyResponse._();
+  @$core.override
+  UpdateFieldPrivacyPolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateFieldPrivacyPolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateFieldPrivacyPolicyResponse>(
+          create);
+  static UpdateFieldPrivacyPolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SignedMobilityDossierItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(SignedMobilityDossierItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SignedMobilityDossierItem ensureItem() => $_ensure(0);
+}
+
+class TripClosureItem extends $pb.GeneratedMessage {
+  factory TripClosureItem({
+    $core.String? id,
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? status,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+    $core.String? governanceNotice,
+    $core.bool? postTripShareRevocationEnforced,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (status != null) result.status = status;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    if (governanceNotice != null) result.governanceNotice = governanceNotice;
+    if (postTripShareRevocationEnforced != null)
+      result.postTripShareRevocationEnforced = postTripShareRevocationEnforced;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  TripClosureItem._();
+
+  factory TripClosureItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TripClosureItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TripClosureItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'status')
+    ..aOS(5, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(6, _omitFieldNames ? '' : 'secondaryDetail')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'postTripShareRevocationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripClosureItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TripClosureItem copyWith(void Function(TripClosureItem) updates) =>
+      super.copyWith((message) => updates(message as TripClosureItem))
+          as TripClosureItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TripClosureItem create() => TripClosureItem._();
+  @$core.override
+  TripClosureItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static TripClosureItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TripClosureItem>(create);
+  static TripClosureItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get itemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set itemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasItemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearItemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get status => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set status($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get primaryDetail => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set primaryDetail($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimaryDetail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimaryDetail() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get secondaryDetail => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set secondaryDetail($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSecondaryDetail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSecondaryDetail() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get postTripShareRevocationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set postTripShareRevocationEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPostTripShareRevocationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPostTripShareRevocationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAt() => $_clearField(9);
+}
+
+class GetTripClosureMemoryOverviewRequest extends $pb.GeneratedMessage {
+  factory GetTripClosureMemoryOverviewRequest({
+    $core.String? filterStatus,
+  }) {
+    final result = create();
+    if (filterStatus != null) result.filterStatus = filterStatus;
+    return result;
+  }
+
+  GetTripClosureMemoryOverviewRequest._();
+
+  factory GetTripClosureMemoryOverviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTripClosureMemoryOverviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTripClosureMemoryOverviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'filterStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripClosureMemoryOverviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripClosureMemoryOverviewRequest copyWith(
+          void Function(GetTripClosureMemoryOverviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTripClosureMemoryOverviewRequest))
+          as GetTripClosureMemoryOverviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTripClosureMemoryOverviewRequest create() =>
+      GetTripClosureMemoryOverviewRequest._();
+  @$core.override
+  GetTripClosureMemoryOverviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTripClosureMemoryOverviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTripClosureMemoryOverviewRequest>(create);
+  static GetTripClosureMemoryOverviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get filterStatus => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set filterStatus($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFilterStatus() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFilterStatus() => $_clearField(1);
+}
+
+class GetTripClosureMemoryOverviewResponse extends $pb.GeneratedMessage {
+  factory GetTripClosureMemoryOverviewResponse({
+    $core.Iterable<TripClosureItem>? items,
+    $core.String? activePolicyVersion,
+    $core.bool? postTripShareRevocationEnforced,
+    $core.String? governanceSummary,
+  }) {
+    final result = create();
+    if (items != null) result.items.addAll(items);
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (postTripShareRevocationEnforced != null)
+      result.postTripShareRevocationEnforced = postTripShareRevocationEnforced;
+    if (governanceSummary != null) result.governanceSummary = governanceSummary;
+    return result;
+  }
+
+  GetTripClosureMemoryOverviewResponse._();
+
+  factory GetTripClosureMemoryOverviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTripClosureMemoryOverviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTripClosureMemoryOverviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..pPM<TripClosureItem>(1, _omitFieldNames ? '' : 'items',
+        subBuilder: TripClosureItem.create)
+    ..aOS(2, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'postTripShareRevocationEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripClosureMemoryOverviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTripClosureMemoryOverviewResponse copyWith(
+          void Function(GetTripClosureMemoryOverviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTripClosureMemoryOverviewResponse))
+          as GetTripClosureMemoryOverviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTripClosureMemoryOverviewResponse create() =>
+      GetTripClosureMemoryOverviewResponse._();
+  @$core.override
+  GetTripClosureMemoryOverviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTripClosureMemoryOverviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTripClosureMemoryOverviewResponse>(create);
+  static GetTripClosureMemoryOverviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<TripClosureItem> get items => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get activePolicyVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set activePolicyVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActivePolicyVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActivePolicyVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get postTripShareRevocationEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set postTripShareRevocationEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPostTripShareRevocationEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPostTripShareRevocationEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceSummary() => $_clearField(4);
+}
+
+class ExecuteTripClosureStepRequest extends $pb.GeneratedMessage {
+  factory ExecuteTripClosureStepRequest({
+    $core.String? itemCode,
+    $core.String? title,
+    $core.String? primaryDetail,
+    $core.String? secondaryDetail,
+  }) {
+    final result = create();
+    if (itemCode != null) result.itemCode = itemCode;
+    if (title != null) result.title = title;
+    if (primaryDetail != null) result.primaryDetail = primaryDetail;
+    if (secondaryDetail != null) result.secondaryDetail = secondaryDetail;
+    return result;
+  }
+
+  ExecuteTripClosureStepRequest._();
+
+  factory ExecuteTripClosureStepRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExecuteTripClosureStepRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecuteTripClosureStepRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryDetail')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryDetail')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteTripClosureStepRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteTripClosureStepRequest copyWith(
+          void Function(ExecuteTripClosureStepRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ExecuteTripClosureStepRequest))
+          as ExecuteTripClosureStepRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteTripClosureStepRequest create() =>
+      ExecuteTripClosureStepRequest._();
+  @$core.override
+  ExecuteTripClosureStepRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteTripClosureStepRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExecuteTripClosureStepRequest>(create);
+  static ExecuteTripClosureStepRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryDetail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryDetail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryDetail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryDetail() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryDetail => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryDetail($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryDetail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryDetail() => $_clearField(4);
+}
+
+class ExecuteTripClosureStepResponse extends $pb.GeneratedMessage {
+  factory ExecuteTripClosureStepResponse({
+    TripClosureItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  ExecuteTripClosureStepResponse._();
+
+  factory ExecuteTripClosureStepResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExecuteTripClosureStepResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecuteTripClosureStepResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<TripClosureItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: TripClosureItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteTripClosureStepResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteTripClosureStepResponse copyWith(
+          void Function(ExecuteTripClosureStepResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ExecuteTripClosureStepResponse))
+          as ExecuteTripClosureStepResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteTripClosureStepResponse create() =>
+      ExecuteTripClosureStepResponse._();
+  @$core.override
+  ExecuteTripClosureStepResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteTripClosureStepResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExecuteTripClosureStepResponse>(create);
+  static ExecuteTripClosureStepResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TripClosureItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(TripClosureItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TripClosureItem ensureItem() => $_ensure(0);
+}
+
+class ArchiveTripMemoryRecordRequest extends $pb.GeneratedMessage {
+  factory ArchiveTripMemoryRecordRequest({
+    $core.String? itemId,
+    $core.String? actionKind,
+    $core.String? operatorNote,
+  }) {
+    final result = create();
+    if (itemId != null) result.itemId = itemId;
+    if (actionKind != null) result.actionKind = actionKind;
+    if (operatorNote != null) result.operatorNote = operatorNote;
+    return result;
+  }
+
+  ArchiveTripMemoryRecordRequest._();
+
+  factory ArchiveTripMemoryRecordRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArchiveTripMemoryRecordRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArchiveTripMemoryRecordRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'itemId')
+    ..aOS(2, _omitFieldNames ? '' : 'actionKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operatorNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveTripMemoryRecordRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveTripMemoryRecordRequest copyWith(
+          void Function(ArchiveTripMemoryRecordRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ArchiveTripMemoryRecordRequest))
+          as ArchiveTripMemoryRecordRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArchiveTripMemoryRecordRequest create() =>
+      ArchiveTripMemoryRecordRequest._();
+  @$core.override
+  ArchiveTripMemoryRecordRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArchiveTripMemoryRecordRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ArchiveTripMemoryRecordRequest>(create);
+  static ArchiveTripMemoryRecordRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get itemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set itemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get actionKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set actionKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActionKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActionKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operatorNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatorNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatorNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatorNote() => $_clearField(3);
+}
+
+class ArchiveTripMemoryRecordResponse extends $pb.GeneratedMessage {
+  factory ArchiveTripMemoryRecordResponse({
+    TripClosureItem? item,
+  }) {
+    final result = create();
+    if (item != null) result.item = item;
+    return result;
+  }
+
+  ArchiveTripMemoryRecordResponse._();
+
+  factory ArchiveTripMemoryRecordResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArchiveTripMemoryRecordResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArchiveTripMemoryRecordResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.travel.v1'),
+      createEmptyInstance: create)
+    ..aOM<TripClosureItem>(1, _omitFieldNames ? '' : 'item',
+        subBuilder: TripClosureItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveTripMemoryRecordResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArchiveTripMemoryRecordResponse copyWith(
+          void Function(ArchiveTripMemoryRecordResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as ArchiveTripMemoryRecordResponse))
+          as ArchiveTripMemoryRecordResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArchiveTripMemoryRecordResponse create() =>
+      ArchiveTripMemoryRecordResponse._();
+  @$core.override
+  ArchiveTripMemoryRecordResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArchiveTripMemoryRecordResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ArchiveTripMemoryRecordResponse>(
+          create);
+  static ArchiveTripMemoryRecordResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  TripClosureItem get item => $_getN(0);
+  @$pb.TagNumber(1)
+  set item(TripClosureItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  TripClosureItem ensureItem() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

@@ -1198,6 +1198,118 @@ service WorkoutService {
   // can pick up.
   rpc ListCoaches(ListCoachesRequest) returns (ListCoachesResponse);
   rpc RequestCoachBooking(RequestCoachBookingRequest) returns (RequestCoachBookingResponse);
+
+  // ===== Choice 3 (FG3) — Explainable Adaptive Programming Engine =====
+  rpc GetAdaptiveProgrammingOverview(GetAdaptiveProgrammingOverviewRequest) returns (GetAdaptiveProgrammingOverviewResponse);
+  rpc GenerateOrUpdateProgrammeVersion(GenerateOrUpdateProgrammeVersionRequest) returns (GenerateOrUpdateProgrammeVersionResponse);
+  rpc DecideProgrammeDraftAcceptance(DecideProgrammeDraftAcceptanceRequest) returns (DecideProgrammeDraftAcceptanceResponse);
+  rpc TriggerSafeAdaptiveReplan(TriggerSafeAdaptiveReplanRequest) returns (TriggerSafeAdaptiveReplanResponse);
+  rpc UpsertAdaptiveProgressionRule(UpsertAdaptiveProgressionRuleRequest) returns (UpsertAdaptiveProgressionRuleResponse);
+  rpc RollbackProgrammeVersion(RollbackProgrammeVersionRequest) returns (RollbackProgrammeVersionResponse);
+
+  // ===== Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual =====
+  rpc GetMovementIntelligenceOverview(GetMovementIntelligenceOverviewRequest) returns (GetMovementIntelligenceOverviewResponse);
+  rpc RankIntentPreservingSubstitutions(RankIntentPreservingSubstitutionsRequest) returns (RankIntentPreservingSubstitutionsResponse);
+  rpc UpsertPersonalTechniqueManual(UpsertPersonalTechniqueManualRequest) returns (UpsertPersonalTechniqueManualResponse);
+  rpc SubmitCustomMovementForReview(SubmitCustomMovementForReviewRequest) returns (SubmitCustomMovementForReviewResponse);
+  rpc UpsertMovementGraphProfile(UpsertMovementGraphProfileRequest) returns (UpsertMovementGraphProfileResponse);
+  rpc RecordSubstitutionSelection(RecordSubstitutionSelectionRequest) returns (RecordSubstitutionSelectionResponse);
+
+  // ===== Choice 5 (FG5) — Technique and Form Intelligence Laboratory =====
+  rpc GetFormIntelligenceOverview(GetFormIntelligenceOverviewRequest) returns (GetFormIntelligenceOverviewResponse);
+  rpc SubmitFormClipObservation(SubmitFormClipObservationRequest) returns (SubmitFormClipObservationResponse);
+  rpc EscalateFormClipToCoach(EscalateFormClipToCoachRequest) returns (EscalateFormClipToCoachResponse);
+  rpc DecideCoachFormReview(DecideCoachFormReviewRequest) returns (DecideCoachFormReviewResponse);
+  rpc UpdateFormPrivacyAndRetention(UpdateFormPrivacyAndRetentionRequest) returns (UpdateFormPrivacyAndRetentionResponse);
+  rpc EraseFormClipAndKeypoints(EraseFormClipAndKeypointsRequest) returns (EraseFormClipAndKeypointsResponse);
+
+  // ===== Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion =====
+  rpc GetWearableRecoveryFusionOverview(GetWearableRecoveryFusionOverviewRequest) returns (GetWearableRecoveryFusionOverviewResponse);
+  rpc UpsertWearablePurposeGrant(UpsertWearablePurposeGrantRequest) returns (UpsertWearablePurposeGrantResponse);
+  rpc RevokeWearablePurposeGrant(RevokeWearablePurposeGrantRequest) returns (RevokeWearablePurposeGrantResponse);
+  rpc ConfigureRecoverySensorStream(ConfigureRecoverySensorStreamRequest) returns (ConfigureRecoverySensorStreamResponse);
+  rpc SubmitNoWearableSubjectiveReadiness(SubmitNoWearableSubjectiveReadinessRequest) returns (SubmitNoWearableSubjectiveReadinessResponse);
+  rpc ReconcileSensorConflictOrOutage(ReconcileSensorConflictOrOutageRequest) returns (ReconcileSensorConflictOrOutageResponse);
+
+  // ===== Choice 7 (FG7) — Training Load, Progression, and Performance Analytics =====
+  rpc GetPerformanceAnalyticsStudioOverview(GetPerformanceAnalyticsStudioOverviewRequest) returns (GetPerformanceAnalyticsStudioOverviewResponse);
+  rpc RecordPerformanceExposureLedger(RecordPerformanceExposureLedgerRequest) returns (RecordPerformanceExposureLedgerResponse);
+  rpc UpsertStrengthPerformanceModel(UpsertStrengthPerformanceModelRequest) returns (UpsertStrengthPerformanceModelResponse);
+  rpc CreateTrainingNOf1Experiment(CreateTrainingNOf1ExperimentRequest) returns (CreateTrainingNOf1ExperimentResponse);
+  rpc LogTrainingNOf1ExperimentSession(LogTrainingNOf1ExperimentSessionRequest) returns (LogTrainingNOf1ExperimentSessionResponse);
+  rpc EvaluateTrainingNOf1Experiment(EvaluateTrainingNOf1ExperimentRequest) returns (EvaluateTrainingNOf1ExperimentResponse);
+
+  // ===== Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway =====
+  rpc GetInjuryReturnPathwayOverview(GetInjuryReturnPathwayOverviewRequest) returns (GetInjuryReturnPathwayOverviewResponse);
+  rpc UpsertInjuryRestrictionLock(UpsertInjuryRestrictionLockRequest) returns (UpsertInjuryRestrictionLockResponse);
+  rpc LogInSessionPainTriageEvent(LogInSessionPainTriageEventRequest) returns (LogInSessionPainTriageEventResponse);
+  rpc AdvanceReturnToTrainingStage(AdvanceReturnToTrainingStageRequest) returns (AdvanceReturnToTrainingStageResponse);
+  rpc RecordReturnToTrainingSetback(RecordReturnToTrainingSetbackRequest) returns (RecordReturnToTrainingSetbackResponse);
+  rpc ClearInjuryRestrictionLock(ClearInjuryRestrictionLockRequest) returns (ClearInjuryRestrictionLockResponse);
+
+  // ===== Choice 9 (FG9) — Coach OS and Athlete Collaboration =====
+  rpc GetCoachOsCollaborationOverview(GetCoachOsCollaborationOverviewRequest) returns (GetCoachOsCollaborationOverviewResponse);
+  rpc UpsertCoachAthleteScopedGrant(UpsertCoachAthleteScopedGrantRequest) returns (UpsertCoachAthleteScopedGrantResponse);
+  rpc RevokeCoachAthleteScopedGrant(RevokeCoachAthleteScopedGrantRequest) returns (RevokeCoachAthleteScopedGrantResponse);
+  rpc ProposeCoachProgrammeChange(ProposeCoachProgrammeChangeRequest) returns (ProposeCoachProgrammeChangeResponse);
+  rpc RespondToCoachChangeProposal(RespondToCoachChangeProposalRequest) returns (RespondToCoachChangeProposalResponse);
+  rpc UpdateCoachMarketplaceEngagement(UpdateCoachMarketplaceEngagementRequest) returns (UpdateCoachMarketplaceEngagementResponse);
+
+  // ===== Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations =====
+  rpc GetTeamsClubsFacilitiesOverview(GetTeamsClubsFacilitiesOverviewRequest) returns (GetTeamsClubsFacilitiesOverviewResponse);
+  rpc UpsertTeamSquadRoster(UpsertTeamSquadRosterRequest) returns (UpsertTeamSquadRosterResponse);
+  rpc SubmitTeamTrafficLightCheckin(SubmitTeamTrafficLightCheckinRequest) returns (SubmitTeamTrafficLightCheckinResponse);
+  rpc ReserveOrUpdateFacilityRackStation(ReserveOrUpdateFacilityRackStationRequest) returns (ReserveOrUpdateFacilityRackStationResponse);
+  rpc FlagFacilityMaintenanceOrIncident(FlagFacilityMaintenanceOrIncidentRequest) returns (FlagFacilityMaintenanceOrIncidentResponse);
+  rpc VerifyYouthSquadSafeguarding(VerifyYouthSquadSafeguardingRequest) returns (VerifyYouthSquadSafeguardingResponse);
+
+  // ===== Choice 11 (FG11) — Competition, Test Day, and Verified Performance =====
+  rpc GetCompetitionVerifiedPerformanceOverview(GetCompetitionVerifiedPerformanceOverviewRequest) returns (GetCompetitionVerifiedPerformanceOverviewResponse);
+  rpc UpsertCompetitionEventPlan(UpsertCompetitionEventPlanRequest) returns (UpsertCompetitionEventPlanResponse);
+  rpc SubmitVerifiedPerformanceResult(SubmitVerifiedPerformanceResultRequest) returns (SubmitVerifiedPerformanceResultResponse);
+  rpc FilePerformanceResultAppeal(FilePerformanceResultAppealRequest) returns (FilePerformanceResultAppealResponse);
+  rpc RecordCompetitionRuleAndTueCheck(RecordCompetitionRuleAndTueCheckRequest) returns (RecordCompetitionRuleAndTueCheckResponse);
+  rpc ToggleOfflineVenueCompetitionMode(ToggleOfflineVenueCompetitionModeRequest) returns (ToggleOfflineVenueCompetitionModeResponse);
+
+  // ===== Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios =====
+  rpc GetSportHybridStudiosOverview(GetSportHybridStudiosOverviewRequest) returns (GetSportHybridStudiosOverviewResponse);
+  rpc UpsertSportHybridStudioModule(UpsertSportHybridStudioModuleRequest) returns (UpsertSportHybridStudioModuleResponse);
+  rpc ConfigureHybridInterferenceSchedule(ConfigureHybridInterferenceScheduleRequest) returns (ConfigureHybridInterferenceScheduleResponse);
+  rpc LogSportSkillOrManualActivitySession(LogSportSkillOrManualActivitySessionRequest) returns (LogSportSkillOrManualActivitySessionResponse);
+  rpc RegisterCustomManualUnvalidatedSport(RegisterCustomManualUnvalidatedSportRequest) returns (RegisterCustomManualUnvalidatedSportResponse);
+  rpc AuditHybridLoadDeDuplication(AuditHybridLoadDeDuplicationRequest) returns (AuditHybridLoadDeDuplicationResponse);
+
+  // ===== Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation =====
+  rpc GetEquipmentTravelAdaptationOverview(GetEquipmentTravelAdaptationOverviewRequest) returns (GetEquipmentTravelAdaptationOverviewResponse);
+  rpc UpsertEquipmentLocationProfile(UpsertEquipmentLocationProfileRequest) returns (UpsertEquipmentLocationProfileResponse);
+  rpc GenerateTravelWorkoutAdaptation(GenerateTravelWorkoutAdaptationRequest) returns (GenerateTravelWorkoutAdaptationResponse);
+  rpc UpsertVerifiedGymVenueListing(UpsertVerifiedGymVenueListingRequest) returns (UpsertVerifiedGymVenueListingResponse);
+  rpc FlagStaleGymVenueListing(FlagStaleGymVenueListingRequest) returns (FlagStaleGymVenueListingResponse);
+  rpc RevertTravelWorkoutToHomeGym(RevertTravelWorkoutToHomeGymRequest) returns (RevertTravelWorkoutToHomeGymResponse);
+
+  // ===== Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support =====
+  rpc GetFuelWeightSafetyOverview(GetFuelWeightSafetyOverviewRequest) returns (GetFuelWeightSafetyOverviewResponse);
+  rpc UpsertSessionFuelHydrationPlan(UpsertSessionFuelHydrationPlanRequest) returns (UpsertSessionFuelHydrationPlanResponse);
+  rpc RecordPrivateBodyCompositionTrend(RecordPrivateBodyCompositionTrendRequest) returns (RecordPrivateBodyCompositionTrendResponse);
+  rpc EvaluateWeightClassSafetyPlan(EvaluateWeightClassSafetyPlanRequest) returns (EvaluateWeightClassSafetyPlanResponse);
+  rpc EscalateWeightCutToProfessionalRoute(EscalateWeightCutToProfessionalRouteRequest) returns (EscalateWeightCutToProfessionalRouteResponse);
+  rpc VerifyBodyCompositionPrivacyIsolation(VerifyBodyCompositionPrivacyIsolationRequest) returns (VerifyBodyCompositionPrivacyIsolationResponse);
+
+  // ===== Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution =====
+  rpc GetHealthyCompetitionCrewsOverview(GetHealthyCompetitionCrewsOverviewRequest) returns (GetHealthyCompetitionCrewsOverviewResponse);
+  rpc UpsertHealthyCompetitionCohort(UpsertHealthyCompetitionCohortRequest) returns (UpsertHealthyCompetitionCohortResponse);
+  rpc ToggleCompetitionMutePreference(ToggleCompetitionMutePreferenceRequest) returns (ToggleCompetitionMutePreferenceResponse);
+  rpc SubmitCrewChallengeOrAppeal(SubmitCrewChallengeOrAppealRequest) returns (SubmitCrewChallengeOrAppealResponse);
+  rpc RecordEmpireRewardContribution(RecordEmpireRewardContributionRequest) returns (RecordEmpireRewardContributionResponse);
+  rpc AdjudicateCrewAntiCheatCase(AdjudicateCrewAntiCheatCaseRequest) returns (AdjudicateCrewAntiCheatCaseResponse);
+
+  // ===== Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge =====
+  rpc GetOfflineAccessibleReleaseCertOverview(GetOfflineAccessibleReleaseCertOverviewRequest) returns (GetOfflineAccessibleReleaseCertOverviewResponse);
+  rpc CertifyOfflineMultimodalSyncState(CertifyOfflineMultimodalSyncStateRequest) returns (CertifyOfflineMultimodalSyncStateResponse);
+  rpc UpsertAccessibilityAdaptiveProfile(UpsertAccessibilityAdaptiveProfileRequest) returns (UpsertAccessibilityAdaptiveProfileResponse);
+  rpc RunMigrationAndErasureCertification(RunMigrationAndErasureCertificationRequest) returns (RunMigrationAndErasureCertificationResponse);
+  rpc VerifyBatteryAwareSensorPolicy(VerifyBatteryAwareSensorPolicyRequest) returns (VerifyBatteryAwareSensorPolicyResponse);
+  rpc SignOffForge16Of16ReleaseGate(SignOffForge16Of16ReleaseGateRequest) returns (SignOffForge16Of16ReleaseGateResponse);
 }
 
 // ===== Rivalry creation (F7P5.1) =====
@@ -1499,3 +1611,1540 @@ message GetRecoveryScoreResponse {
   // True when the Apex readiness signal fed the score.
   bool apex_linked = 8;
 }
+
+// ============================================================================
+// Choice 3 (FG3) — Explainable Adaptive Programming Engine
+// ============================================================================
+
+message AdaptiveProgressionRuleItem {
+  string id = 1;
+  string rule_code = 2;
+  string title = 3;
+  // linear | double_progression | percentage_1rm | rpe_rir_autoreg |
+  // velocity_based | top_set_backoff | block_periodization | daily_undulating |
+  // conjugate | endurance_zones | custom_deterministic
+  string progression_model = 4;
+  string goal_focus = 5;
+  string dose_formula_summary = 6;
+  string deload_trigger_policy = 7;
+  double max_weekly_volume_jump_pct = 8;
+  string contraindication_guardrails = 9;
+  string status = 10; // active | draft | withdrawn
+  int64 updated_at_unix = 11;
+}
+
+message AdaptiveProgrammeVersionItem {
+  string id = 1;
+  string user_id = 2;
+  string programme_slug = 3;
+  string title = 4;
+  int32 version_number = 5;
+  // deterministic_rule_engine | ai_assisted_draft | coach_authored
+  string builder_source = 6;
+  // active_accepted | draft_pending_acceptance | superseded | rolled_back
+  string acceptance_status = 7;
+  string goal_and_sport = 8;
+  int32 sessions_per_week = 9;
+  int32 session_duration_minutes = 10;
+  string progression_model = 11;
+  string why_this_prescription = 12;
+  string athlete_evidence_summary = 13;
+  string coach_locked_slots = 14;
+  int64 created_at_unix = 15;
+}
+
+message AdaptiveReplanEventItem {
+  string id = 1;
+  string user_id = 2;
+  string version_id = 3;
+  // missed_days | travel_hotel | equipment_loss | fatigue_spike |
+  // pain_flag | illness_recovery | competition_taper | calendar_shift
+  string trigger_kind = 4;
+  int32 days_affected = 5;
+  string before_plan_summary = 6;
+  string after_plan_summary = 7;
+  string explanation_rationale = 8;
+  bool unsafe_volume_compression_blocked = 9;
+  bool coach_lock_preserved = 10;
+  string status = 11; // applied | draft_proposed | reverted
+  int64 created_at_unix = 12;
+}
+
+message AdaptiveProgrammingOverview {
+  string explainability_charter = 1;
+  string safe_replanning_charter = 2;
+  string draft_governance_charter = 3;
+  repeated AdaptiveProgressionRuleItem rules = 4;
+  repeated AdaptiveProgrammeVersionItem versions = 5;
+  repeated AdaptiveReplanEventItem replan_events = 6;
+}
+
+message GetAdaptiveProgrammingOverviewRequest {}
+message GetAdaptiveProgrammingOverviewResponse {
+  AdaptiveProgrammingOverview overview = 1;
+}
+
+message GenerateOrUpdateProgrammeVersionRequest {
+  string programme_slug = 1;
+  string title = 2;
+  string builder_source = 3;
+  string goal_and_sport = 4;
+  int32 sessions_per_week = 5;
+  int32 session_duration_minutes = 6;
+  string progression_model = 7;
+  string why_this_prescription = 8;
+  string athlete_evidence_summary = 9;
+  string coach_locked_slots = 10;
+}
+message GenerateOrUpdateProgrammeVersionResponse {
+  AdaptiveProgrammeVersionItem version = 1;
+}
+
+message DecideProgrammeDraftAcceptanceRequest {
+  string version_id = 1;
+  string decision = 2; // accept | reject
+  string decision_note = 3;
+}
+message DecideProgrammeDraftAcceptanceResponse {
+  AdaptiveProgrammeVersionItem version = 1;
+}
+
+message TriggerSafeAdaptiveReplanRequest {
+  string version_id = 1;
+  string trigger_kind = 2;
+  int32 days_affected = 3;
+  string constraint_note = 4;
+}
+message TriggerSafeAdaptiveReplanResponse {
+  AdaptiveReplanEventItem replan_event = 1;
+}
+
+message UpsertAdaptiveProgressionRuleRequest {
+  string rule_code = 1;
+  string title = 2;
+  string progression_model = 3;
+  string goal_focus = 4;
+  string dose_formula_summary = 5;
+  string deload_trigger_policy = 6;
+  double max_weekly_volume_jump_pct = 7;
+  string contraindication_guardrails = 8;
+}
+message UpsertAdaptiveProgressionRuleResponse {
+  AdaptiveProgressionRuleItem rule = 1;
+}
+
+message RollbackProgrammeVersionRequest {
+  string target_version_id = 1;
+  string reason = 2;
+}
+message RollbackProgrammeVersionResponse {
+  AdaptiveProgrammeVersionItem active_version = 1;
+}
+
+// ============================================================================
+// Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual
+// ============================================================================
+
+message MovementGraphProfileItem {
+  string id = 1;
+  string movement_slug = 2;
+  string movement_name = 3;
+  string movement_pattern = 4;
+  string primary_muscles = 5;
+  string joint_loading_profile = 6;
+  string equipment_required = 7;
+  string difficulty_tier = 8;
+  string skill_prerequisites = 9;
+  string regression_slug = 10;
+  string progression_slug = 11;
+  string contraindication_prompts = 12;
+  string multi_body_a11y_media_summary = 13;
+  string breathing_bracing_setup = 14;
+  string common_errors_and_captions = 15;
+  string review_status = 16; // reviewed_catalog | private_unreviewed | pending_catalog_review
+  int64 updated_at_unix = 17;
+}
+
+message MovementSubstitutionEdgeItem {
+  string id = 1;
+  string source_movement_slug = 2;
+  string substitute_movement_slug = 3;
+  string substitute_movement_name = 4;
+  string programme_intent = 5;
+  string required_equipment = 6;
+  string preserved_stimulus = 7;
+  string lost_attributes = 8;
+  double equivalent_dose_factor = 9;
+  bool pain_free_joint_friendly = 10;
+  int32 match_rank_score = 11;
+  int64 updated_at_unix = 12;
+}
+
+message PersonalTechniqueManualItem {
+  string id = 1;
+  string user_id = 2;
+  string movement_slug = 3;
+  string movement_name = 4;
+  string location_label = 5;
+  string rack_and_seat_settings = 6;
+  string stance_and_grip_notes = 7;
+  string personal_cues = 8;
+  string coach_instruction_lock = 9;
+  string visibility_scope = 10; // private_owner | shared_with_coach | submitted_for_review
+  int64 updated_at_unix = 11;
+}
+
+message MovementIntelligenceOverview {
+  string movement_graph_charter = 1;
+  string substitution_honesty_charter = 2;
+  string custom_privacy_charter = 3;
+  repeated MovementGraphProfileItem profiles = 4;
+  repeated MovementSubstitutionEdgeItem substitutions = 5;
+  repeated PersonalTechniqueManualItem personal_manuals = 6;
+}
+
+message GetMovementIntelligenceOverviewRequest {}
+message GetMovementIntelligenceOverviewResponse {
+  MovementIntelligenceOverview overview = 1;
+}
+
+message RankIntentPreservingSubstitutionsRequest {
+  string source_movement_slug = 1;
+  string programme_intent = 2;
+  string available_equipment = 3;
+  bool require_pain_free_joint_sparing = 4;
+}
+message RankIntentPreservingSubstitutionsResponse {
+  repeated MovementSubstitutionEdgeItem ranked_substitutions = 1;
+  string ranking_explanation = 2;
+}
+
+message UpsertPersonalTechniqueManualRequest {
+  string movement_slug = 1;
+  string movement_name = 2;
+  string location_label = 3;
+  string rack_and_seat_settings = 4;
+  string stance_and_grip_notes = 5;
+  string personal_cues = 6;
+  string coach_instruction_lock = 7;
+}
+message UpsertPersonalTechniqueManualResponse {
+  PersonalTechniqueManualItem manual = 1;
+}
+
+message SubmitCustomMovementForReviewRequest {
+  string movement_slug = 1;
+  string movement_name = 2;
+  string movement_pattern = 3;
+  string equipment_required = 4;
+  string breathing_bracing_setup = 5;
+}
+message SubmitCustomMovementForReviewResponse {
+  MovementGraphProfileItem profile = 1;
+}
+
+message UpsertMovementGraphProfileRequest {
+  string movement_slug = 1;
+  string movement_name = 2;
+  string movement_pattern = 3;
+  string primary_muscles = 4;
+  string joint_loading_profile = 5;
+  string equipment_required = 6;
+  string difficulty_tier = 7;
+  string regression_slug = 8;
+  string progression_slug = 9;
+  string contraindication_prompts = 10;
+  string multi_body_a11y_media_summary = 11;
+  string breathing_bracing_setup = 12;
+  string common_errors_and_captions = 13;
+}
+message UpsertMovementGraphProfileResponse {
+  MovementGraphProfileItem profile = 1;
+}
+
+message RecordSubstitutionSelectionRequest {
+  string source_movement_slug = 1;
+  string substitute_movement_slug = 2;
+  string programme_intent = 3;
+  string reason = 4;
+}
+message RecordSubstitutionSelectionResponse {
+  MovementSubstitutionEdgeItem selected_edge = 1;
+  string audit_receipt = 2;
+}
+
+// ============================================================================
+// Choice 5 (FG5) — Technique and Form Intelligence Laboratory
+// ============================================================================
+
+message FormCapabilityMatrixItem {
+  string id = 1;
+  string movement_slug = 2;
+  string movement_name = 3;
+  string required_camera_angle = 4; // sagittal_90_deg | anterior_45_deg | posterior_90_deg
+  double camera_distance_meters = 5;
+  int32 min_fps = 6;
+  double min_keypoint_confidence = 7;
+  string calibration_object_hint = 8;
+  string supported_observations = 9;
+  string unsupported_claim_refusal = 10;
+  string status = 11; // active | experimental | retired
+  int64 updated_at_unix = 12;
+}
+
+message FormAnalysisAttemptItem {
+  string id = 1;
+  string user_id = 2;
+  string movement_slug = 3;
+  string movement_name = 4;
+  string camera_angle = 5;
+  int32 captured_fps = 6;
+  double keypoint_confidence = 7;
+  bool pain_tagged = 8;
+  // Strictly: unsupported | observation | needs_human_review (never "pass")
+  string verdict = 9;
+  string phase_and_tempo_observation = 10;
+  string bar_path_and_depth_proxy = 11;
+  string personal_vs_coach_target = 12;
+  string uncertainty_and_limits_note = 13;
+  string coach_review_status = 14; // not_requested | queued_for_coach | reviewed_by_coach | erased_by_member
+  string coach_feedback_note = 15;
+  bool bystander_blur_applied = 16;
+  int64 created_at_unix = 17;
+}
+
+message FormPrivacyConsentItem {
+  string id = 1;
+  string user_id = 2;
+  bool bystander_blur_default = 3;
+  bool allow_model_training = 4; // false by default
+  int32 retention_days = 5; // 7 | 30 | 90
+  bool encrypted_storage_verified = 6;
+  string consent_version = 7;
+  int64 updated_at_unix = 8;
+}
+
+message FormIntelligenceOverview {
+  string honest_verdict_charter = 1;
+  string coach_escalation_charter = 2;
+  string privacy_and_blur_charter = 3;
+  repeated FormCapabilityMatrixItem capability_matrix = 4;
+  repeated FormAnalysisAttemptItem attempts = 5;
+  FormPrivacyConsentItem privacy_consent = 6;
+}
+
+message GetFormIntelligenceOverviewRequest {}
+message GetFormIntelligenceOverviewResponse {
+  FormIntelligenceOverview overview = 1;
+}
+
+message SubmitFormClipObservationRequest {
+  string movement_slug = 1;
+  string movement_name = 2;
+  string camera_angle = 3;
+  int32 captured_fps = 4;
+  double keypoint_confidence = 5;
+  bool pain_tagged = 6;
+  string athlete_note = 7;
+}
+message SubmitFormClipObservationResponse {
+  FormAnalysisAttemptItem attempt = 1;
+}
+
+message EscalateFormClipToCoachRequest {
+  string attempt_id = 1;
+  string escalation_reason = 2;
+  bool pain_flagged = 3;
+}
+message EscalateFormClipToCoachResponse {
+  FormAnalysisAttemptItem attempt = 1;
+}
+
+message DecideCoachFormReviewRequest {
+  string attempt_id = 1;
+  string coach_feedback_note = 2;
+  string updated_personal_target = 3;
+}
+message DecideCoachFormReviewResponse {
+  FormAnalysisAttemptItem attempt = 1;
+}
+
+message UpdateFormPrivacyAndRetentionRequest {
+  bool bystander_blur_default = 1;
+  bool allow_model_training = 2;
+  int32 retention_days = 3;
+}
+message UpdateFormPrivacyAndRetentionResponse {
+  FormPrivacyConsentItem privacy_consent = 1;
+}
+
+message EraseFormClipAndKeypointsRequest {
+  string attempt_id = 1;
+  string reason = 2;
+}
+message EraseFormClipAndKeypointsResponse {
+  string erased_attempt_id = 1;
+  string erasure_receipt = 2;
+}
+
+// ============================================================================
+// Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion
+// ============================================================================
+
+message WearablePurposeGrantItem {
+  string id = 1;
+  string user_id = 2;
+  string connector_source = 3; // apple_health | health_connect | whoop | oura | garmin | concept2_pm5 | gymaware_vbt | apex_readiness_bridge
+  string purpose_scope = 4; // training_load | recovery_hrv_sleep | velocity_bar_speed | machine_erg_split | apex_signed_readiness_predicate
+  string grant_status = 5; // active | revoked | expired
+  bool raw_clinical_access_blocked = 6;
+  string apex_signed_predicate_summary = 7;
+  int64 granted_at_unix = 8;
+  int64 updated_at_unix = 9;
+}
+
+message RecoverySensorStreamItem {
+  string id = 1;
+  string user_id = 2;
+  string metric_key = 3; // hrv_rmssd | resting_hr | sleep_duration | bar_velocity_ms | rower_split_500m | bike_power_watts
+  string primary_source = 4;
+  string fallback_source = 5;
+  int32 sync_age_minutes = 6;
+  string measurement_kind = 7; // measured_direct | estimated_proxy | missing_stale
+  bool conflict_detected = 8;
+  string conflict_resolution_rule = 9;
+  string vendor_outage_status = 10; // healthy | degraded_sync | vendor_outage
+  string latest_value_display = 11;
+  int64 updated_at_unix = 12;
+}
+
+message RecoveryReadinessAssessmentItem {
+  string id = 1;
+  string user_id = 2;
+  // Strictly: ready_high | ready_moderate | recovery_priority | unknown | no_wearable_subjective
+  string readiness_verdict = 3;
+  string input_mode = 4; // fused_wearable_and_subjective | no_wearable_subjective | stale_sensor_unknown
+  int32 sleep_hours_tenths = 5; // e.g., 78 = 7.8h
+  int32 subjective_energy_1_to_5 = 6;
+  int32 soreness_1_to_5 = 7;
+  bool pain_or_illness_flag = 8;
+  bool travel_or_time_zone_shift = 9;
+  string minimum_data_rule_status = 10;
+  string explanation_summary = 11;
+  string recommended_session_adjustment = 12;
+  bool zero_penalty_guaranteed = 13;
+  int64 assessed_at_unix = 14;
+}
+
+message WearableRecoveryFusionOverview {
+  string purpose_grant_charter = 1;
+  string unknown_readiness_charter = 2;
+  string apex_boundary_charter = 3;
+  repeated WearablePurposeGrantItem purpose_grants = 4;
+  repeated RecoverySensorStreamItem sensor_streams = 5;
+  repeated RecoveryReadinessAssessmentItem assessments = 6;
+}
+
+message GetWearableRecoveryFusionOverviewRequest {}
+message GetWearableRecoveryFusionOverviewResponse {
+  WearableRecoveryFusionOverview overview = 1;
+}
+
+message UpsertWearablePurposeGrantRequest {
+  string connector_source = 1;
+  string purpose_scope = 2;
+  string apex_signed_predicate_summary = 3;
+}
+message UpsertWearablePurposeGrantResponse {
+  WearablePurposeGrantItem grant = 1;
+}
+
+message RevokeWearablePurposeGrantRequest {
+  string grant_id = 1;
+  string reason = 2;
+}
+message RevokeWearablePurposeGrantResponse {
+  WearablePurposeGrantItem grant = 1;
+}
+
+message ConfigureRecoverySensorStreamRequest {
+  string metric_key = 1;
+  string primary_source = 2;
+  string fallback_source = 3;
+  string conflict_resolution_rule = 4;
+}
+message ConfigureRecoverySensorStreamResponse {
+  RecoverySensorStreamItem stream = 1;
+}
+
+message SubmitNoWearableSubjectiveReadinessRequest {
+  string input_mode = 1; // no_wearable_subjective | fused_wearable_and_subjective | stale_sensor_unknown
+  int32 sleep_hours_tenths = 2;
+  int32 subjective_energy_1_to_5 = 3;
+  int32 soreness_1_to_5 = 4;
+  bool pain_or_illness_flag = 5;
+  bool travel_or_time_zone_shift = 6;
+  string athlete_note = 7;
+}
+message SubmitNoWearableSubjectiveReadinessResponse {
+  RecoveryReadinessAssessmentItem assessment = 1;
+}
+
+message ReconcileSensorConflictOrOutageRequest {
+  string stream_id = 1;
+  string resolution_action = 2; // prefer_primary | prefer_fallback | mark_unknown_until_resync
+  string operator_note = 3;
+}
+message ReconcileSensorConflictOrOutageResponse {
+  RecoverySensorStreamItem stream = 1;
+}
+
+// ============================================================================
+// Choice 7 (FG7) — Training Load, Progression, and Performance Analytics
+// ============================================================================
+
+message PerformanceExposureLedgerItem {
+  string id = 1;
+  string user_id = 2;
+  string window_label = 3; // e.g., 2026-W45
+  string formula_version = 4; // FG7-LOAD-2026.1
+  string muscle_or_movement_group = 5;
+  int32 planned_hard_sets = 6;
+  int32 performed_hard_sets = 7;
+  double weekly_tonnage_kg = 8;
+  double acute_chronic_ratio = 9;
+  double monotony_index = 10;
+  double strain_score = 11;
+  double adherence_pct = 12;
+  string non_causal_plateau_hypotheses = 13;
+  string plan_vs_performed_diff_summary = 14;
+  int64 updated_at_unix = 15;
+}
+
+message StrengthPerformanceModelItem {
+  string id = 1;
+  string user_id = 2;
+  string movement_slug = 3;
+  string movement_name = 4;
+  // Strictly: tested_official_or_gym | estimated_submax | velocity_load_profile
+  string record_origin = 5;
+  double value_kg = 6;
+  double confidence_pct = 7;
+  string specificity_and_source_note = 8;
+  string formula_used = 9;
+  int64 captured_at_unix = 10;
+}
+
+message TrainingNOf1ExperimentItem {
+  string id = 1;
+  string user_id = 2;
+  string experiment_code = 3;
+  string title = 4;
+  string independent_variable = 5;
+  string predeclared_hypothesis = 6;
+  string baseline_protocol = 7;
+  string intervention_protocol = 8;
+  int32 min_sessions_required = 9;
+  int32 completed_sessions = 10;
+  bool cherry_pick_locked = 11;
+  string status = 12; // active_collecting | completed_evaluated | stopped_early_safety
+  string outcome_summary = 13;
+  int64 updated_at_unix = 14;
+}
+
+message PerformanceAnalyticsStudioOverview {
+  string transparent_formula_charter = 1;
+  string tested_vs_estimated_charter = 2;
+  string n_of_1_cherry_pick_charter = 3;
+  repeated PerformanceExposureLedgerItem exposure_ledgers = 4;
+  repeated StrengthPerformanceModelItem strength_models = 5;
+  repeated TrainingNOf1ExperimentItem experiments = 6;
+}
+
+message GetPerformanceAnalyticsStudioOverviewRequest {}
+message GetPerformanceAnalyticsStudioOverviewResponse {
+  PerformanceAnalyticsStudioOverview overview = 1;
+}
+
+message RecordPerformanceExposureLedgerRequest {
+  string window_label = 1;
+  string muscle_or_movement_group = 2;
+  int32 planned_hard_sets = 3;
+  int32 performed_hard_sets = 4;
+  double weekly_tonnage_kg = 5;
+  double acute_chronic_ratio = 6;
+  double monotony_index = 7;
+  string non_causal_plateau_hypotheses = 8;
+  string plan_vs_performed_diff_summary = 9;
+}
+message RecordPerformanceExposureLedgerResponse {
+  PerformanceExposureLedgerItem ledger = 1;
+}
+
+message UpsertStrengthPerformanceModelRequest {
+  string movement_slug = 1;
+  string movement_name = 2;
+  string record_origin = 3;
+  double value_kg = 4;
+  double confidence_pct = 5;
+  string specificity_and_source_note = 6;
+  string formula_used = 7;
+}
+message UpsertStrengthPerformanceModelResponse {
+  StrengthPerformanceModelItem model = 1;
+}
+
+message CreateTrainingNOf1ExperimentRequest {
+  string experiment_code = 1;
+  string title = 2;
+  string independent_variable = 3;
+  string predeclared_hypothesis = 4;
+  string baseline_protocol = 5;
+  string intervention_protocol = 6;
+  int32 min_sessions_required = 7;
+}
+message CreateTrainingNOf1ExperimentResponse {
+  TrainingNOf1ExperimentItem experiment = 1;
+}
+
+message LogTrainingNOf1ExperimentSessionRequest {
+  string experiment_id = 1;
+  string session_observation_note = 2;
+}
+message LogTrainingNOf1ExperimentSessionResponse {
+  TrainingNOf1ExperimentItem experiment = 1;
+}
+
+message EvaluateTrainingNOf1ExperimentRequest {
+  string experiment_id = 1;
+  string outcome_summary = 2;
+}
+message EvaluateTrainingNOf1ExperimentResponse {
+  TrainingNOf1ExperimentItem experiment = 1;
+}
+
+// ============================================================================
+// Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway
+// ============================================================================
+
+message InjuryRestrictionLockItem {
+  string id = 1;
+  string user_id = 2;
+  string body_region_and_side = 3;
+  string onset_and_mechanism = 4;
+  string aggravating_movements = 5;
+  string clinician_restriction_summary = 6;
+  string authorizing_professional = 7;
+  bool blocks_auto_progression = 8;
+  bool isolated_from_social_and_rankings = 9;
+  string review_date = 10;
+  string lock_status = 11; // active_locked | review_due | cleared_graduated
+  int64 updated_at_unix = 12;
+}
+
+message PainSessionTriageEventItem {
+  string id = 1;
+  string user_id = 2;
+  string movement_slug = 3;
+  string body_region_and_side = 4;
+  int32 pain_intensity_1_to_10 = 5;
+  bool red_flag_symptoms_reported = 6;
+  // stop_session | modify_load_or_rom | substitute_pain_free | contact_professional | urgent_care_resource
+  string chosen_triage_action = 7;
+  bool auto_diagnosis_refused = 8;
+  string triage_resolution_note = 9;
+  int64 created_at_unix = 10;
+}
+
+message ReturnToTrainingStageItem {
+  string id = 1;
+  string user_id = 2;
+  string restriction_lock_id = 3;
+  string pathway_title = 4;
+  // isometric_pain_control | eccentric_capacity | submax_pattern_reload | full_sport_velocity | graduated_unrestricted
+  string current_stage = 5;
+  int32 pain_tolerance_ceiling_1_to_10 = 6;
+  string functional_exit_criteria = 7;
+  string allowed_load_exposure_summary = 8;
+  string setback_rollback_rule = 9;
+  bool criteria_met = 10;
+  int64 updated_at_unix = 11;
+}
+
+message InjuryReturnPathwayOverview {
+  string clinician_lock_charter = 1;
+  string non_diagnostic_triage_charter = 2;
+  string privacy_isolation_charter = 3;
+  repeated InjuryRestrictionLockItem restriction_locks = 4;
+  repeated PainSessionTriageEventItem triage_events = 5;
+  repeated ReturnToTrainingStageItem return_stages = 6;
+}
+
+message GetInjuryReturnPathwayOverviewRequest {}
+message GetInjuryReturnPathwayOverviewResponse {
+  InjuryReturnPathwayOverview overview = 1;
+}
+
+message UpsertInjuryRestrictionLockRequest {
+  string body_region_and_side = 1;
+  string onset_and_mechanism = 2;
+  string aggravating_movements = 3;
+  string clinician_restriction_summary = 4;
+  string authorizing_professional = 5;
+  bool blocks_auto_progression = 6;
+  string review_date = 7;
+}
+message UpsertInjuryRestrictionLockResponse {
+  InjuryRestrictionLockItem restriction_lock = 1;
+}
+
+message LogInSessionPainTriageEventRequest {
+  string movement_slug = 1;
+  string body_region_and_side = 2;
+  int32 pain_intensity_1_to_10 = 3;
+  bool red_flag_symptoms_reported = 4;
+  string chosen_triage_action = 5;
+  string triage_resolution_note = 6;
+}
+message LogInSessionPainTriageEventResponse {
+  PainSessionTriageEventItem triage_event = 1;
+}
+
+message AdvanceReturnToTrainingStageRequest {
+  string stage_id = 1;
+  string target_stage = 2;
+  string functional_exit_criteria = 3;
+  string allowed_load_exposure_summary = 4;
+}
+message AdvanceReturnToTrainingStageResponse {
+  ReturnToTrainingStageItem return_stage = 1;
+}
+
+message RecordReturnToTrainingSetbackRequest {
+  string stage_id = 1;
+  string rollback_stage = 2;
+  string setback_reason = 3;
+}
+message RecordReturnToTrainingSetbackResponse {
+  ReturnToTrainingStageItem return_stage = 1;
+}
+
+message ClearInjuryRestrictionLockRequest {
+  string lock_id = 1;
+  string clearance_note = 2;
+}
+message ClearInjuryRestrictionLockResponse {
+  InjuryRestrictionLockItem restriction_lock = 1;
+}
+
+// ============================================================================
+// Choice 9 (FG9) — Coach OS and Athlete Collaboration
+// ============================================================================
+
+message CoachAthleteScopedGrantItem {
+  string id = 1;
+  string user_id = 2;
+  string coach_id = 3;
+  string coach_name = 4;
+  string coach_credentials = 5;
+  string granted_categories = 6;
+  string date_range_start = 7;
+  string date_range_end = 8;
+  bool apex_and_medical_auto_access_blocked = 9;
+  string grant_status = 10; // active_granted | revoked_by_athlete | expired_offboarded
+  int64 updated_at_unix = 11;
+}
+
+message CoachChangeProposalItem {
+  string id = 1;
+  string user_id = 2;
+  string coach_id = 3;
+  string coach_name = 4;
+  string programme_or_movement_target = 5;
+  string proposed_diff_summary = 6;
+  string coach_rationale = 7;
+  bool medical_lock_preserved = 8;
+  string proposal_status = 9; // pending_athlete_ack | accepted_by_athlete | declined_preserve_override
+  string athlete_response_note = 10;
+  int64 created_at_unix = 11;
+}
+
+message CoachMarketplaceListingItem {
+  string id = 1;
+  string coach_slug = 2;
+  string coach_name = 3;
+  string verified_credentials = 4;
+  string specialty_focus = 5;
+  string supported_languages = 6;
+  int32 monthly_rate_usd = 7;
+  string availability_status = 8; // accepting_athletes | waitlist_only | Paused
+  string booking_and_refund_policy = 9;
+  string active_athlete_engagement_state = 10; // browsing | active_coaching | substitution_requested | offboarded_clean
+  int64 updated_at_unix = 11;
+}
+
+message CoachOsCollaborationOverview {
+  string scoped_grant_charter = 1;
+  string proposal_diff_and_lock_charter = 2;
+  string marketplace_lifecycle_charter = 3;
+  repeated CoachAthleteScopedGrantItem scoped_grants = 4;
+  repeated CoachChangeProposalItem proposals = 5;
+  repeated CoachMarketplaceListingItem marketplace_listings = 6;
+}
+
+message GetCoachOsCollaborationOverviewRequest {}
+message GetCoachOsCollaborationOverviewResponse {
+  CoachOsCollaborationOverview overview = 1;
+}
+
+message UpsertCoachAthleteScopedGrantRequest {
+  string coach_id = 1;
+  string coach_name = 2;
+  string coach_credentials = 3;
+  string granted_categories = 4;
+  string date_range_start = 5;
+  string date_range_end = 6;
+}
+message UpsertCoachAthleteScopedGrantResponse {
+  CoachAthleteScopedGrantItem grant = 1;
+}
+
+message RevokeCoachAthleteScopedGrantRequest {
+  string grant_id = 1;
+  string reason = 2;
+}
+message RevokeCoachAthleteScopedGrantResponse {
+  CoachAthleteScopedGrantItem grant = 1;
+}
+
+message ProposeCoachProgrammeChangeRequest {
+  string coach_id = 1;
+  string coach_name = 2;
+  string programme_or_movement_target = 3;
+  string proposed_diff_summary = 4;
+  string coach_rationale = 5;
+}
+message ProposeCoachProgrammeChangeResponse {
+  CoachChangeProposalItem proposal = 1;
+}
+
+message RespondToCoachChangeProposalRequest {
+  string proposal_id = 1;
+  string decision = 2; // accept | decline
+  string athlete_response_note = 3;
+}
+message RespondToCoachChangeProposalResponse {
+  CoachChangeProposalItem proposal = 1;
+}
+
+message UpdateCoachMarketplaceEngagementRequest {
+  string listing_id = 1;
+  string target_engagement_state = 2; // active_coaching | substitution_requested | offboarded_clean
+  string note = 3;
+}
+message UpdateCoachMarketplaceEngagementResponse {
+  CoachMarketplaceListingItem listing = 1;
+}
+
+// ============================================================================
+// Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations
+// ============================================================================
+
+message TeamSquadRosterItem {
+  string id = 1;
+  string squad_slug = 2;
+  string organization_name = 3;
+  string squad_name = 4;
+  string season_label = 5;
+  int32 active_athlete_count = 6;
+  int32 min_cohort_size = 7;
+  bool private_health_data_blocked = 8;
+  bool is_youth_squad = 9;
+  bool youth_safeguarding_verified = 10;
+  string head_strength_coach = 11;
+  int64 updated_at_unix = 12;
+}
+
+message TeamTrafficLightCheckinItem {
+  string id = 1;
+  string user_id = 2;
+  string squad_slug = 3;
+  string checkin_date = 4;
+  string traffic_light_state = 5; // green_available | amber_modified | red_unavailable
+  string shared_coach_modification_note = 6;
+  bool underlying_medical_and_cycle_redacted = 7;
+  int64 created_at_unix = 8;
+}
+
+message FacilityRackOperationItem {
+  string id = 1;
+  string station_code = 2;
+  string facility_name = 3;
+  string station_type = 4;
+  string operational_status = 5; // operational_available | booked_squad_block | maintenance_lockout | inspection_due
+  string last_cleaning_and_inspection = 6;
+  string accessible_adaptive_alternative = 7;
+  string active_booking_summary = 8;
+  int64 updated_at_unix = 9;
+}
+
+message TeamsClubsFacilitiesOverview {
+  string cohort_privacy_charter = 1;
+  string traffic_light_readiness_charter = 2;
+  string facility_and_safeguarding_charter = 3;
+  repeated TeamSquadRosterItem squads = 4;
+  repeated TeamTrafficLightCheckinItem checkins = 5;
+  repeated FacilityRackOperationItem rack_operations = 6;
+}
+
+message GetTeamsClubsFacilitiesOverviewRequest {}
+message GetTeamsClubsFacilitiesOverviewResponse {
+  TeamsClubsFacilitiesOverview overview = 1;
+}
+
+message UpsertTeamSquadRosterRequest {
+  string squad_slug = 1;
+  string organization_name = 2;
+  string squad_name = 3;
+  string season_label = 4;
+  int32 active_athlete_count = 5;
+  bool is_youth_squad = 6;
+  string head_strength_coach = 7;
+}
+message UpsertTeamSquadRosterResponse {
+  TeamSquadRosterItem squad = 1;
+}
+
+message SubmitTeamTrafficLightCheckinRequest {
+  string squad_slug = 1;
+  string checkin_date = 2;
+  string traffic_light_state = 3; // green_available | amber_modified | red_unavailable
+  string shared_coach_modification_note = 4;
+}
+message SubmitTeamTrafficLightCheckinResponse {
+  TeamTrafficLightCheckinItem checkin = 1;
+}
+
+message ReserveOrUpdateFacilityRackStationRequest {
+  string station_code = 1;
+  string operational_status = 2; // operational_available | booked_squad_block | maintenance_lockout | inspection_due
+  string active_booking_summary = 3;
+}
+message ReserveOrUpdateFacilityRackStationResponse {
+  FacilityRackOperationItem rack_operation = 1;
+}
+
+message FlagFacilityMaintenanceOrIncidentRequest {
+  string station_code = 1;
+  string incident_and_inspection_note = 2;
+  string accessible_adaptive_alternative = 3;
+}
+message FlagFacilityMaintenanceOrIncidentResponse {
+  FacilityRackOperationItem rack_operation = 1;
+}
+
+message VerifyYouthSquadSafeguardingRequest {
+  string squad_slug = 1;
+  string safeguarding_verification_note = 2;
+}
+message VerifyYouthSquadSafeguardingResponse {
+  TeamSquadRosterItem squad = 1;
+}
+
+// ============================================================================
+// Choice 11 (FG11) — Competition, Test Day, and Verified Performance
+// ============================================================================
+
+message CompetitionEventPlanItem {
+  string id = 1;
+  string user_id = 2;
+  string event_slug = 3;
+  string event_title = 4;
+  string governing_body_and_class = 5;
+  string event_date = 6;
+  string taper_and_warmup_protocol = 7;
+  string attempt_or_pacing_plan = 8;
+  bool offline_venue_mode_enabled = 9;
+  string plan_status = 10; // active_peaking | draft_scenario | completed_archived
+  int64 updated_at_unix = 11;
+}
+
+message VerifiedPerformanceResultItem {
+  string id = 1;
+  string user_id = 2;
+  string event_or_lift_name = 3;
+  string result_display = 4;
+  // self_logged_gym | sensor_video_assisted | coach_attested | official_organizer_verified
+  string verification_tier = 5;
+  string evidence_and_witness_summary = 6;
+  string adjudication_status = 7; // verified_final | pending_adjudication | appeal_open | corrected_after_review
+  int64 created_at_unix = 8;
+}
+
+message CompetitionRuleTueCheckItem {
+  string id = 1;
+  string user_id = 2;
+  string governing_body = 3;
+  string equipment_and_rule_summary = 4;
+  string tue_and_antidoping_reference = 5;
+  bool medical_legal_clearance_claimed = 6;
+  string check_status = 7; // reviewed_reference_only | clinician_tue_consult_needed
+  int64 updated_at_unix = 8;
+}
+
+message CompetitionVerifiedPerformanceOverview {
+  string test_day_and_offline_venue_charter = 1;
+  string verification_tier_separation_charter = 2;
+  string antidoping_and_tue_reference_charter = 3;
+  repeated CompetitionEventPlanItem event_plans = 4;
+  repeated VerifiedPerformanceResultItem verified_results = 5;
+  repeated CompetitionRuleTueCheckItem rule_tue_checks = 6;
+}
+
+message GetCompetitionVerifiedPerformanceOverviewRequest {}
+message GetCompetitionVerifiedPerformanceOverviewResponse {
+  CompetitionVerifiedPerformanceOverview overview = 1;
+}
+
+message UpsertCompetitionEventPlanRequest {
+  string event_slug = 1;
+  string event_title = 2;
+  string governing_body_and_class = 3;
+  string event_date = 4;
+  string taper_and_warmup_protocol = 5;
+  string attempt_or_pacing_plan = 6;
+}
+message UpsertCompetitionEventPlanResponse {
+  CompetitionEventPlanItem event_plan = 1;
+}
+
+message SubmitVerifiedPerformanceResultRequest {
+  string event_or_lift_name = 1;
+  string result_display = 2;
+  string verification_tier = 3;
+  string evidence_and_witness_summary = 4;
+}
+message SubmitVerifiedPerformanceResultResponse {
+  VerifiedPerformanceResultItem verified_result = 1;
+}
+
+message FilePerformanceResultAppealRequest {
+  string result_id = 1;
+  string appeal_reason_and_evidence = 2;
+}
+message FilePerformanceResultAppealResponse {
+  VerifiedPerformanceResultItem verified_result = 1;
+}
+
+message RecordCompetitionRuleAndTueCheckRequest {
+  string governing_body = 1;
+  string equipment_and_rule_summary = 2;
+  string tue_and_antidoping_reference = 3;
+}
+message RecordCompetitionRuleAndTueCheckResponse {
+  CompetitionRuleTueCheckItem rule_tue_check = 1;
+}
+
+message ToggleOfflineVenueCompetitionModeRequest {
+  string plan_id = 1;
+  string plan_status = 2; // active_peaking | draft_scenario | completed_archived
+}
+message ToggleOfflineVenueCompetitionModeResponse {
+  CompetitionEventPlanItem event_plan = 1;
+}
+
+// ============================================================================
+// Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios
+// ============================================================================
+
+message SportHybridStudioModuleItem {
+  string id = 1;
+  string module_slug = 2;
+  string sport_or_hybrid_name = 3;
+  string module_governance_state = 4; // reviewed_qualified_module | custom_manual_unvalidated_sport
+  string qualified_editorial_owner = 5;
+  string domain_metrics_and_grammar = 6;
+  bool unvalidated_ai_expert_blocked = 7;
+  int64 updated_at_unix = 8;
+}
+
+message HybridInterferenceScheduleItem {
+  string id = 1;
+  string user_id = 2;
+  string primary_priority_goal = 3;
+  string weekly_pairing_summary = 4;
+  string interference_tradeoff_note = 5;
+  bool double_counting_prevented = 6;
+  bool high_intensity_conflict_blocked = 7;
+  string schedule_status = 8; // active_balanced | taper_adjusted | manual_override
+  int64 updated_at_unix = 9;
+}
+
+message SportSkillAndManualSessionItem {
+  string id = 1;
+  string user_id = 2;
+  string module_slug = 3;
+  string skill_or_activity_title = 4;
+  string attempts_and_quality_summary = 5;
+  string coach_or_athlete_reflection = 6;
+  bool fake_sensor_score_claimed = 7;
+  int64 created_at_unix = 8;
+}
+
+message SportHybridStudiosOverview {
+  string qualified_module_governance_charter = 1;
+  string hybrid_interference_and_dedupe_charter = 2;
+  string honest_skill_and_manual_sport_charter = 3;
+  repeated SportHybridStudioModuleItem modules = 4;
+  repeated HybridInterferenceScheduleItem interference_schedules = 5;
+  repeated SportSkillAndManualSessionItem skill_and_manual_sessions = 6;
+}
+
+message GetSportHybridStudiosOverviewRequest {}
+message GetSportHybridStudiosOverviewResponse {
+  SportHybridStudiosOverview overview = 1;
+}
+
+message UpsertSportHybridStudioModuleRequest {
+  string module_slug = 1;
+  string sport_or_hybrid_name = 2;
+  string qualified_editorial_owner = 3;
+  string domain_metrics_and_grammar = 4;
+}
+message UpsertSportHybridStudioModuleResponse {
+  SportHybridStudioModuleItem module = 1;
+}
+
+message ConfigureHybridInterferenceScheduleRequest {
+  string primary_priority_goal = 1;
+  string weekly_pairing_summary = 2;
+  string interference_tradeoff_note = 3;
+}
+message ConfigureHybridInterferenceScheduleResponse {
+  HybridInterferenceScheduleItem schedule = 1;
+}
+
+message LogSportSkillOrManualActivitySessionRequest {
+  string module_slug = 1;
+  string skill_or_activity_title = 2;
+  string attempts_and_quality_summary = 3;
+  string coach_or_athlete_reflection = 4;
+}
+message LogSportSkillOrManualActivitySessionResponse {
+  SportSkillAndManualSessionItem session = 1;
+}
+
+message RegisterCustomManualUnvalidatedSportRequest {
+  string module_slug = 1;
+  string sport_or_hybrid_name = 2;
+  string domain_metrics_and_grammar = 3;
+}
+message RegisterCustomManualUnvalidatedSportResponse {
+  SportHybridStudioModuleItem module = 1;
+}
+
+message AuditHybridLoadDeDuplicationRequest {
+  string schedule_id = 1;
+  string schedule_status = 2; // active_balanced | taper_adjusted | manual_override
+}
+message AuditHybridLoadDeDuplicationResponse {
+  HybridInterferenceScheduleItem schedule = 1;
+}
+
+// ============================================================================
+// Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation
+// ============================================================================
+
+message EquipmentLocationProfileItem {
+  string id = 1;
+  string user_id = 2;
+  string location_slug = 3;
+  string location_name = 4;
+  string implement_inventory_summary = 5;
+  double smallest_increment_kg = 6;
+  string rack_and_adaptive_notes = 7;
+  bool athlete_confirmed_usable_state = 8;
+  int64 updated_at_unix = 9;
+}
+
+message TravelWorkoutAdaptationItem {
+  string id = 1;
+  string user_id = 2;
+  string location_slug = 3;
+  string travel_context_summary = 4;
+  string adapted_session_prescription = 5;
+  string preserved_programme_intent = 6;
+  bool raw_nomad_documents_or_gps_history_blocked = 7;
+  string adaptation_status = 8; // applied_active | draft_proposed | reverted_home_gym
+  int64 created_at_unix = 9;
+}
+
+message VerifiedGymVenueDirectoryItem {
+  string id = 1;
+  string venue_slug = 2;
+  string venue_name = 3;
+  string city_and_region = 4;
+  string verified_equipment_summary = 5;
+  string accessibility_features = 6;
+  string listing_freshness_state = 7; // verified_fresh | stale_reverification_due | temporarily_closed
+  string day_pass_and_booking_policy = 8;
+  int64 updated_at_unix = 9;
+}
+
+message EquipmentTravelAdaptationOverview {
+  string confirmed_equipment_vault_charter = 1;
+  string travel_and_nomad_boundary_charter = 2;
+  string verified_venue_freshness_charter = 3;
+  repeated EquipmentLocationProfileItem equipment_profiles = 4;
+  repeated TravelWorkoutAdaptationItem travel_adaptations = 5;
+  repeated VerifiedGymVenueDirectoryItem gym_venues = 6;
+}
+
+message GetEquipmentTravelAdaptationOverviewRequest {}
+message GetEquipmentTravelAdaptationOverviewResponse {
+  EquipmentTravelAdaptationOverview overview = 1;
+}
+
+message UpsertEquipmentLocationProfileRequest {
+  string location_slug = 1;
+  string location_name = 2;
+  string implement_inventory_summary = 3;
+  double smallest_increment_kg = 4;
+  string rack_and_adaptive_notes = 5;
+}
+message UpsertEquipmentLocationProfileResponse {
+  EquipmentLocationProfileItem equipment_profile = 1;
+}
+
+message GenerateTravelWorkoutAdaptationRequest {
+  string location_slug = 1;
+  string travel_context_summary = 2;
+  string adapted_session_prescription = 3;
+  string preserved_programme_intent = 4;
+}
+message GenerateTravelWorkoutAdaptationResponse {
+  TravelWorkoutAdaptationItem travel_adaptation = 1;
+}
+
+message UpsertVerifiedGymVenueListingRequest {
+  string venue_slug = 1;
+  string venue_name = 2;
+  string city_and_region = 3;
+  string verified_equipment_summary = 4;
+  string accessibility_features = 5;
+  string day_pass_and_booking_policy = 6;
+}
+message UpsertVerifiedGymVenueListingResponse {
+  VerifiedGymVenueDirectoryItem gym_venue = 1;
+}
+
+message FlagStaleGymVenueListingRequest {
+  string venue_slug = 1;
+  string listing_freshness_state = 2; // verified_fresh | stale_reverification_due | temporarily_closed
+}
+message FlagStaleGymVenueListingResponse {
+  VerifiedGymVenueDirectoryItem gym_venue = 1;
+}
+
+message RevertTravelWorkoutToHomeGymRequest {
+  string adaptation_id = 1;
+  string reason = 2;
+}
+message RevertTravelWorkoutToHomeGymResponse {
+  TravelWorkoutAdaptationItem travel_adaptation = 1;
+}
+
+// ============================================================================
+// Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support
+// ============================================================================
+
+message SessionFuelHydrationPlanItem {
+  string id = 1;
+  string user_id = 2;
+  string session_type_and_duration = 3;
+  string pre_intra_post_fuel_timing = 4;
+  string hydration_and_electrolyte_target = 5;
+  string apex_allergy_instruction_summary = 6;
+  bool mandatory_calorie_logging_blocked = 7;
+  bool raw_apex_clinical_records_blocked = 8;
+  int64 updated_at_unix = 9;
+}
+
+message PrivateBodyCompositionTrendItem {
+  string id = 1;
+  string user_id = 2;
+  string measurement_method = 3;
+  string trend_and_uncertainty_summary = 4;
+  string athlete_functional_goal = 5;
+  bool public_body_score_or_rank_effect_blocked = 6;
+  bool private_owner_only = 7;
+  int64 updated_at_unix = 8;
+}
+
+message WeightClassSafetyMonitorItem {
+  string id = 1;
+  string user_id = 2;
+  string target_class_and_event_date = 3;
+  double weekly_rate_pct = 4;
+  bool dangerous_cut_or_dehydration_flagged = 5;
+  // safe_gradual_within_bounds | escalated_sports_dietitian_physician | blocked_youth_or_unsafe_cut
+  string professional_safety_route_status = 6;
+  string safety_guidance_note = 7;
+  int64 updated_at_unix = 8;
+}
+
+message FuelWeightSafetyOverview {
+  string optional_fueling_and_apex_boundary_charter = 1;
+  string private_body_composition_charter = 2;
+  string weight_class_safety_and_escalation_charter = 3;
+  repeated SessionFuelHydrationPlanItem fuel_hydration_plans = 4;
+  repeated PrivateBodyCompositionTrendItem body_composition_trends = 5;
+  repeated WeightClassSafetyMonitorItem weight_class_monitors = 6;
+}
+
+message GetFuelWeightSafetyOverviewRequest {}
+message GetFuelWeightSafetyOverviewResponse {
+  FuelWeightSafetyOverview overview = 1;
+}
+
+message UpsertSessionFuelHydrationPlanRequest {
+  string session_type_and_duration = 1;
+  string pre_intra_post_fuel_timing = 2;
+  string hydration_and_electrolyte_target = 3;
+  string apex_allergy_instruction_summary = 4;
+}
+message UpsertSessionFuelHydrationPlanResponse {
+  SessionFuelHydrationPlanItem fuel_hydration_plan = 1;
+}
+
+message RecordPrivateBodyCompositionTrendRequest {
+  string measurement_method = 1;
+  string trend_and_uncertainty_summary = 2;
+  string athlete_functional_goal = 3;
+}
+message RecordPrivateBodyCompositionTrendResponse {
+  PrivateBodyCompositionTrendItem body_composition_trend = 1;
+}
+
+message EvaluateWeightClassSafetyPlanRequest {
+  string target_class_and_event_date = 1;
+  double weekly_rate_pct = 2;
+  bool is_youth_athlete = 3;
+  string safety_guidance_note = 4;
+}
+message EvaluateWeightClassSafetyPlanResponse {
+  WeightClassSafetyMonitorItem weight_class_monitor = 1;
+}
+
+message EscalateWeightCutToProfessionalRouteRequest {
+  string monitor_id = 1;
+  string escalation_reason = 2;
+}
+message EscalateWeightCutToProfessionalRouteResponse {
+  WeightClassSafetyMonitorItem weight_class_monitor = 1;
+}
+
+message VerifyBodyCompositionPrivacyIsolationRequest {
+  string trend_id = 1;
+}
+message VerifyBodyCompositionPrivacyIsolationResponse {
+  PrivateBodyCompositionTrendItem body_composition_trend = 1;
+}
+
+// ============================================================================
+// Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution
+// ============================================================================
+
+message HealthyCompetitionCohortItem {
+  string id = 1;
+  string user_id = 2;
+  string cohort_slug = 3;
+  string cohort_title = 4;
+  string competition_mode = 5; // self_only | invited_crew | comparable_cohort | verified_event
+  string normalization_and_ability_rule = 6;
+  bool competition_mute_enabled = 7;
+  bool global_body_ranking_blocked = 8;
+  bool body_and_health_data_hidden = 9;
+  int64 updated_at_unix = 10;
+}
+
+message CrewChallengeAndModerationItem {
+  string id = 1;
+  string challenge_slug = 2;
+  string challenge_title = 3;
+  string challenge_category = 4; // safe_adherence_and_skill | anti_cheat_review | club_service_mission
+  string safety_and_anti_cheat_rule = 5;
+  string verification_and_appeal_state = 6; // verified_clean | appeal_window_open | disqualified_impossible_load
+  string evidence_summary = 7;
+  int64 updated_at_unix = 8;
+}
+
+message EmpireRewardContributionItem {
+  string id = 1;
+  string user_id = 2;
+  string contribution_kind = 3;
+  string reward_description = 4;
+  string empire_ledger_receipt_code = 5;
+  bool pay_to_rank_and_overtraining_incentive_blocked = 6;
+  string status = 7; // credited_auditable | pending_verification
+  int64 created_at_unix = 8;
+}
+
+message HealthyCompetitionCrewsOverview {
+  string comparable_cohort_and_mute_charter = 1;
+  string safe_adherence_and_anti_cheat_charter = 2;
+  string empire_contribution_and_reward_charter = 3;
+  repeated HealthyCompetitionCohortItem cohorts = 4;
+  repeated CrewChallengeAndModerationItem challenges_and_cases = 5;
+  repeated EmpireRewardContributionItem reward_contributions = 6;
+}
+
+message GetHealthyCompetitionCrewsOverviewRequest {}
+message GetHealthyCompetitionCrewsOverviewResponse {
+  HealthyCompetitionCrewsOverview overview = 1;
+}
+
+message UpsertHealthyCompetitionCohortRequest {
+  string cohort_slug = 1;
+  string cohort_title = 2;
+  string competition_mode = 3;
+  string normalization_and_ability_rule = 4;
+}
+message UpsertHealthyCompetitionCohortResponse {
+  HealthyCompetitionCohortItem cohort = 1;
+}
+
+message ToggleCompetitionMutePreferenceRequest {
+  string cohort_id = 1;
+  bool competition_mute_enabled = 2;
+}
+message ToggleCompetitionMutePreferenceResponse {
+  HealthyCompetitionCohortItem cohort = 1;
+}
+
+message SubmitCrewChallengeOrAppealRequest {
+  string challenge_slug = 1;
+  string challenge_title = 2;
+  string challenge_category = 3;
+  string safety_and_anti_cheat_rule = 4;
+  string evidence_summary = 5;
+}
+message SubmitCrewChallengeOrAppealResponse {
+  CrewChallengeAndModerationItem challenge_or_case = 1;
+}
+
+message RecordEmpireRewardContributionRequest {
+  string contribution_kind = 1;
+  string reward_description = 2;
+  string empire_ledger_receipt_code = 3;
+}
+message RecordEmpireRewardContributionResponse {
+  EmpireRewardContributionItem reward_contribution = 1;
+}
+
+message AdjudicateCrewAntiCheatCaseRequest {
+  string challenge_id = 1;
+  string verification_and_appeal_state = 2;
+  string evidence_summary = 3;
+}
+message AdjudicateCrewAntiCheatCaseResponse {
+  CrewChallengeAndModerationItem challenge_or_case = 1;
+}
+
+// ============================================================================
+// Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge
+// ============================================================================
+
+message OfflineMultimodalSyncCertificationItem {
+  string id = 1;
+  string user_id = 2;
+  string device_and_watch_pair = 3;
+  string offline_outbox_and_crash_recovery_state = 4;
+  string battery_aware_sensor_policy = 5;
+  string deterministic_merge_digest = 6;
+  string certification_status = 7; // certified_production_ready | syncing_reconciling
+  int64 updated_at_unix = 8;
+}
+
+message AccessibilityAdaptiveProfileItem {
+  string id = 1;
+  string user_id = 2;
+  string input_and_screen_reader_modes = 3;
+  string adaptive_equipment_and_seated_programming = 4;
+  bool color_independent_plates_and_zones = 5;
+  bool accessibility_is_easy_mode_blocked = 6;
+  int64 updated_at_unix = 7;
+}
+
+message MigrationDeletionCertificationItem {
+  string id = 1;
+  string user_id = 2;
+  string locale_and_unit_system = 3;
+  string export_import_roundtrip_summary = 4;
+  string account_erasure_readiness_summary = 5;
+  bool original_data_mutated_by_locale = 6;
+  string certification_status = 7; // certified_16_of_16 | pending_audit
+  int64 updated_at_unix = 8;
+}
+
+message OfflineAccessibleReleaseCertOverview {
+  string offline_multimodal_and_battery_charter = 1;
+  string accessibility_and_adaptive_athlete_charter = 2;
+  string migration_locale_and_erasure_charter = 3;
+  repeated OfflineMultimodalSyncCertificationItem offline_certifications = 4;
+  repeated AccessibilityAdaptiveProfileItem accessibility_profiles = 5;
+  repeated MigrationDeletionCertificationItem migration_certifications = 6;
+}
+
+message GetOfflineAccessibleReleaseCertOverviewRequest {}
+message GetOfflineAccessibleReleaseCertOverviewResponse {
+  OfflineAccessibleReleaseCertOverview overview = 1;
+}
+
+message CertifyOfflineMultimodalSyncStateRequest {
+  string device_and_watch_pair = 1;
+  string offline_outbox_and_crash_recovery_state = 2;
+  string battery_aware_sensor_policy = 3;
+}
+message CertifyOfflineMultimodalSyncStateResponse {
+  OfflineMultimodalSyncCertificationItem offline_certification = 1;
+}
+
+message UpsertAccessibilityAdaptiveProfileRequest {
+  string input_and_screen_reader_modes = 1;
+  string adaptive_equipment_and_seated_programming = 2;
+}
+message UpsertAccessibilityAdaptiveProfileResponse {
+  AccessibilityAdaptiveProfileItem accessibility_profile = 1;
+}
+
+message RunMigrationAndErasureCertificationRequest {
+  string locale_and_unit_system = 1;
+  string export_import_roundtrip_summary = 2;
+  string account_erasure_readiness_summary = 3;
+}
+message RunMigrationAndErasureCertificationResponse {
+  MigrationDeletionCertificationItem migration_certification = 1;
+}
+
+message VerifyBatteryAwareSensorPolicyRequest {
+  string certification_id = 1;
+  string battery_aware_sensor_policy = 2;
+}
+message VerifyBatteryAwareSensorPolicyResponse {
+  OfflineMultimodalSyncCertificationItem offline_certification = 1;
+}
+
+message SignOffForge16Of16ReleaseGateRequest {
+  string migration_cert_id = 1;
+  string certification_status = 2;
+}
+message SignOffForge16Of16ReleaseGateResponse {
+  MigrationDeletionCertificationItem migration_certification = 1;
+}
+
+
+
+
+
+

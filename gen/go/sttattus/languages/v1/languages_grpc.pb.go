@@ -19,54 +19,87 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LanguagesService_ListScenarios_FullMethodName            = "/sttattus.languages.v1.LanguagesService/ListScenarios"
-	LanguagesService_CompleteInteraction_FullMethodName      = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
-	LanguagesService_GetLinguistStats_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
-	LanguagesService_ListPlacementQuestions_FullMethodName   = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
-	LanguagesService_SubmitPlacementResult_FullMethodName    = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
-	LanguagesService_ListMyPlacementResults_FullMethodName   = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
-	LanguagesService_GetTodayPlan_FullMethodName             = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
-	LanguagesService_MarkPlanBlock_FullMethodName            = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
-	LanguagesService_ListTodayImmersion_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
-	LanguagesService_MarkImmersionCompleted_FullMethodName   = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
-	LanguagesService_ListSpeakingPrompts_FullMethodName      = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
-	LanguagesService_CreateSpeakingAttempt_FullMethodName    = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
-	LanguagesService_GetSpeakingAttempt_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
-	LanguagesService_ListMyLanguages_FullMethodName          = "/sttattus.languages.v1.LanguagesService/ListMyLanguages"
-	LanguagesService_AddMyLanguage_FullMethodName            = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
-	LanguagesService_RemoveMyLanguage_FullMethodName         = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
-	LanguagesService_SetMyPrimaryLanguage_FullMethodName     = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
-	LanguagesService_ListCulturalModules_FullMethodName      = "/sttattus.languages.v1.LanguagesService/ListCulturalModules"
-	LanguagesService_MarkCulturalCompleted_FullMethodName    = "/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted"
-	LanguagesService_ListWritingPrompts_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListWritingPrompts"
-	LanguagesService_SubmitWriting_FullMethodName            = "/sttattus.languages.v1.LanguagesService/SubmitWriting"
-	LanguagesService_ListMyWritingSubmissions_FullMethodName = "/sttattus.languages.v1.LanguagesService/ListMyWritingSubmissions"
-	LanguagesService_GetWritingSubmission_FullMethodName     = "/sttattus.languages.v1.LanguagesService/GetWritingSubmission"
-	LanguagesService_ListReadingTexts_FullMethodName         = "/sttattus.languages.v1.LanguagesService/ListReadingTexts"
-	LanguagesService_GetReadingText_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetReadingText"
-	LanguagesService_SubmitReadingAnswer_FullMethodName      = "/sttattus.languages.v1.LanguagesService/SubmitReadingAnswer"
-	LanguagesService_ListIdioms_FullMethodName               = "/sttattus.languages.v1.LanguagesService/ListIdioms"
-	LanguagesService_StartTutorThread_FullMethodName         = "/sttattus.languages.v1.LanguagesService/StartTutorThread"
-	LanguagesService_ListMyTutorThreads_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyTutorThreads"
-	LanguagesService_GetTutorThread_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetTutorThread"
-	LanguagesService_PostTutorMessage_FullMethodName         = "/sttattus.languages.v1.LanguagesService/PostTutorMessage"
-	LanguagesService_ListAnthologyArticles_FullMethodName    = "/sttattus.languages.v1.LanguagesService/ListAnthologyArticles"
-	LanguagesService_GetAnthologyArticle_FullMethodName      = "/sttattus.languages.v1.LanguagesService/GetAnthologyArticle"
-	LanguagesService_IssueCertificate_FullMethodName         = "/sttattus.languages.v1.LanguagesService/IssueCertificate"
-	LanguagesService_ListMyCertificates_FullMethodName       = "/sttattus.languages.v1.LanguagesService/ListMyCertificates"
-	LanguagesService_GenerateLinguistAlmanac_FullMethodName  = "/sttattus.languages.v1.LanguagesService/GenerateLinguistAlmanac"
-	LanguagesService_CreateLinguistShare_FullMethodName      = "/sttattus.languages.v1.LanguagesService/CreateLinguistShare"
-	LanguagesService_GetPracticeSession_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetPracticeSession"
-	LanguagesService_SubmitAnswer_FullMethodName             = "/sttattus.languages.v1.LanguagesService/SubmitAnswer"
-	LanguagesService_GetPracticeStats_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetPracticeStats"
-	LanguagesService_GetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/GetMemberPrefs"
-	LanguagesService_SetMemberPrefs_FullMethodName           = "/sttattus.languages.v1.LanguagesService/SetMemberPrefs"
-	LanguagesService_GetAdaptivePlan_FullMethodName          = "/sttattus.languages.v1.LanguagesService/GetAdaptivePlan"
-	LanguagesService_SkipPlanItem_FullMethodName             = "/sttattus.languages.v1.LanguagesService/SkipPlanItem"
-	LanguagesService_GetMasteryMap_FullMethodName            = "/sttattus.languages.v1.LanguagesService/GetMasteryMap"
-	LanguagesService_GetNodeEvidence_FullMethodName          = "/sttattus.languages.v1.LanguagesService/GetNodeEvidence"
-	LanguagesService_DismissWritingFlag_FullMethodName       = "/sttattus.languages.v1.LanguagesService/DismissWritingFlag"
-	LanguagesService_ListWords_FullMethodName                = "/sttattus.languages.v1.LanguagesService/ListWords"
+	LanguagesService_ListScenarios_FullMethodName                            = "/sttattus.languages.v1.LanguagesService/ListScenarios"
+	LanguagesService_CompleteInteraction_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/CompleteInteraction"
+	LanguagesService_GetLinguistStats_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/GetLinguistStats"
+	LanguagesService_ListPlacementQuestions_FullMethodName                   = "/sttattus.languages.v1.LanguagesService/ListPlacementQuestions"
+	LanguagesService_SubmitPlacementResult_FullMethodName                    = "/sttattus.languages.v1.LanguagesService/SubmitPlacementResult"
+	LanguagesService_ListMyPlacementResults_FullMethodName                   = "/sttattus.languages.v1.LanguagesService/ListMyPlacementResults"
+	LanguagesService_GetTodayPlan_FullMethodName                             = "/sttattus.languages.v1.LanguagesService/GetTodayPlan"
+	LanguagesService_MarkPlanBlock_FullMethodName                            = "/sttattus.languages.v1.LanguagesService/MarkPlanBlock"
+	LanguagesService_ListTodayImmersion_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/ListTodayImmersion"
+	LanguagesService_MarkImmersionCompleted_FullMethodName                   = "/sttattus.languages.v1.LanguagesService/MarkImmersionCompleted"
+	LanguagesService_ListSpeakingPrompts_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/ListSpeakingPrompts"
+	LanguagesService_CreateSpeakingAttempt_FullMethodName                    = "/sttattus.languages.v1.LanguagesService/CreateSpeakingAttempt"
+	LanguagesService_GetSpeakingAttempt_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/GetSpeakingAttempt"
+	LanguagesService_ListMyLanguages_FullMethodName                          = "/sttattus.languages.v1.LanguagesService/ListMyLanguages"
+	LanguagesService_AddMyLanguage_FullMethodName                            = "/sttattus.languages.v1.LanguagesService/AddMyLanguage"
+	LanguagesService_RemoveMyLanguage_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/RemoveMyLanguage"
+	LanguagesService_SetMyPrimaryLanguage_FullMethodName                     = "/sttattus.languages.v1.LanguagesService/SetMyPrimaryLanguage"
+	LanguagesService_ListCulturalModules_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/ListCulturalModules"
+	LanguagesService_MarkCulturalCompleted_FullMethodName                    = "/sttattus.languages.v1.LanguagesService/MarkCulturalCompleted"
+	LanguagesService_ListWritingPrompts_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/ListWritingPrompts"
+	LanguagesService_SubmitWriting_FullMethodName                            = "/sttattus.languages.v1.LanguagesService/SubmitWriting"
+	LanguagesService_ListMyWritingSubmissions_FullMethodName                 = "/sttattus.languages.v1.LanguagesService/ListMyWritingSubmissions"
+	LanguagesService_GetWritingSubmission_FullMethodName                     = "/sttattus.languages.v1.LanguagesService/GetWritingSubmission"
+	LanguagesService_ListReadingTexts_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/ListReadingTexts"
+	LanguagesService_GetReadingText_FullMethodName                           = "/sttattus.languages.v1.LanguagesService/GetReadingText"
+	LanguagesService_SubmitReadingAnswer_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/SubmitReadingAnswer"
+	LanguagesService_ListIdioms_FullMethodName                               = "/sttattus.languages.v1.LanguagesService/ListIdioms"
+	LanguagesService_StartTutorThread_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/StartTutorThread"
+	LanguagesService_ListMyTutorThreads_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/ListMyTutorThreads"
+	LanguagesService_GetTutorThread_FullMethodName                           = "/sttattus.languages.v1.LanguagesService/GetTutorThread"
+	LanguagesService_PostTutorMessage_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/PostTutorMessage"
+	LanguagesService_ListAnthologyArticles_FullMethodName                    = "/sttattus.languages.v1.LanguagesService/ListAnthologyArticles"
+	LanguagesService_GetAnthologyArticle_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/GetAnthologyArticle"
+	LanguagesService_IssueCertificate_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/IssueCertificate"
+	LanguagesService_ListMyCertificates_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/ListMyCertificates"
+	LanguagesService_GenerateLinguistAlmanac_FullMethodName                  = "/sttattus.languages.v1.LanguagesService/GenerateLinguistAlmanac"
+	LanguagesService_CreateLinguistShare_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/CreateLinguistShare"
+	LanguagesService_GetPracticeSession_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/GetPracticeSession"
+	LanguagesService_SubmitAnswer_FullMethodName                             = "/sttattus.languages.v1.LanguagesService/SubmitAnswer"
+	LanguagesService_GetPracticeStats_FullMethodName                         = "/sttattus.languages.v1.LanguagesService/GetPracticeStats"
+	LanguagesService_GetMemberPrefs_FullMethodName                           = "/sttattus.languages.v1.LanguagesService/GetMemberPrefs"
+	LanguagesService_SetMemberPrefs_FullMethodName                           = "/sttattus.languages.v1.LanguagesService/SetMemberPrefs"
+	LanguagesService_GetAdaptivePlan_FullMethodName                          = "/sttattus.languages.v1.LanguagesService/GetAdaptivePlan"
+	LanguagesService_SkipPlanItem_FullMethodName                             = "/sttattus.languages.v1.LanguagesService/SkipPlanItem"
+	LanguagesService_GetMasteryMap_FullMethodName                            = "/sttattus.languages.v1.LanguagesService/GetMasteryMap"
+	LanguagesService_GetNodeEvidence_FullMethodName                          = "/sttattus.languages.v1.LanguagesService/GetNodeEvidence"
+	LanguagesService_DismissWritingFlag_FullMethodName                       = "/sttattus.languages.v1.LanguagesService/DismissWritingFlag"
+	LanguagesService_ListWords_FullMethodName                                = "/sttattus.languages.v1.LanguagesService/ListWords"
+	LanguagesService_GetImmersionUniverseOverview_FullMethodName             = "/sttattus.languages.v1.LanguagesService/GetImmersionUniverseOverview"
+	LanguagesService_ImportPersonalImmersionMedia_FullMethodName             = "/sttattus.languages.v1.LanguagesService/ImportPersonalImmersionMedia"
+	LanguagesService_CaptureContextConceptSense_FullMethodName               = "/sttattus.languages.v1.LanguagesService/CaptureContextConceptSense"
+	LanguagesService_GetWritingRegisterStudioOverview_FullMethodName         = "/sttattus.languages.v1.LanguagesService/GetWritingRegisterStudioOverview"
+	LanguagesService_SubmitWritingRegisterDraft_FullMethodName               = "/sttattus.languages.v1.LanguagesService/SubmitWritingRegisterDraft"
+	LanguagesService_VerifyDelayedRegisterTransfer_FullMethodName            = "/sttattus.languages.v1.LanguagesService/VerifyDelayedRegisterTransfer"
+	LanguagesService_GetHumanTutoringCommunityOverview_FullMethodName        = "/sttattus.languages.v1.LanguagesService/GetHumanTutoringCommunityOverview"
+	LanguagesService_BookOrAskHumanTutor_FullMethodName                      = "/sttattus.languages.v1.LanguagesService/BookOrAskHumanTutor"
+	LanguagesService_SubmitDoubleBlindCommunityReview_FullMethodName         = "/sttattus.languages.v1.LanguagesService/SubmitDoubleBlindCommunityReview"
+	LanguagesService_GetAssessmentCertificationOverview_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetAssessmentCertificationOverview"
+	LanguagesService_RunAdaptiveDiagnosticSession_FullMethodName             = "/sttattus.languages.v1.LanguagesService/RunAdaptiveDiagnosticSession"
+	LanguagesService_IssueOrRevokeSignedCertificate_FullMethodName           = "/sttattus.languages.v1.LanguagesService/IssueOrRevokeSignedCertificate"
+	LanguagesService_GetCultureReferenceSupertoolsOverview_FullMethodName    = "/sttattus.languages.v1.LanguagesService/GetCultureReferenceSupertoolsOverview"
+	LanguagesService_RunSupertoolConcordanceLookup_FullMethodName            = "/sttattus.languages.v1.LanguagesService/RunSupertoolConcordanceLookup"
+	LanguagesService_CompleteCulturalPragmaticsBranch_FullMethodName         = "/sttattus.languages.v1.LanguagesService/CompleteCulturalPragmaticsBranch"
+	LanguagesService_GetRealWorldMissionsPortfolioOverview_FullMethodName    = "/sttattus.languages.v1.LanguagesService/GetRealWorldMissionsPortfolioOverview"
+	LanguagesService_AttestRealWorldMissionCompletion_FullMethodName         = "/sttattus.languages.v1.LanguagesService/AttestRealWorldMissionCompletion"
+	LanguagesService_PublishCommunicativePortfolioArtifact_FullMethodName    = "/sttattus.languages.v1.LanguagesService/PublishCommunicativePortfolioArtifact"
+	LanguagesService_GetUbiquitousLanguageLayerOverview_FullMethodName       = "/sttattus.languages.v1.LanguagesService/GetUbiquitousLanguageLayerOverview"
+	LanguagesService_CaptureExplicitLanguageLookup_FullMethodName            = "/sttattus.languages.v1.LanguagesService/CaptureExplicitLanguageLookup"
+	LanguagesService_ConfirmCapturedSenseToMastery_FullMethodName            = "/sttattus.languages.v1.LanguagesService/ConfirmCapturedSenseToMastery"
+	LanguagesService_GetProfessionalHeritagePathwaysOverview_FullMethodName  = "/sttattus.languages.v1.LanguagesService/GetProfessionalHeritagePathwaysOverview"
+	LanguagesService_EnrollProfessionalOrHeritageTrack_FullMethodName        = "/sttattus.languages.v1.LanguagesService/EnrollProfessionalOrHeritageTrack"
+	LanguagesService_RecordHeritageLiteracyMilestone_FullMethodName          = "/sttattus.languages.v1.LanguagesService/RecordHeritageLiteracyMilestone"
+	LanguagesService_GetTeacherClassroomOsOverview_FullMethodName            = "/sttattus.languages.v1.LanguagesService/GetTeacherClassroomOsOverview"
+	LanguagesService_CreateClassroomCohortAssignment_FullMethodName          = "/sttattus.languages.v1.LanguagesService/CreateClassroomCohortAssignment"
+	LanguagesService_ApproveOrDisputeTeacherProposal_FullMethodName          = "/sttattus.languages.v1.LanguagesService/ApproveOrDisputeTeacherProposal"
+	LanguagesService_GetSustainableMotivationLabOverview_FullMethodName      = "/sttattus.languages.v1.LanguagesService/GetSustainableMotivationLabOverview"
+	LanguagesService_UpdateSustainableHabitContract_FullMethodName           = "/sttattus.languages.v1.LanguagesService/UpdateSustainableHabitContract"
+	LanguagesService_RecordDelayedRetentionExperiment_FullMethodName         = "/sttattus.languages.v1.LanguagesService/RecordDelayedRetentionExperiment"
+	LanguagesService_GetOfflineAccessibilityMigrationOverview_FullMethodName = "/sttattus.languages.v1.LanguagesService/GetOfflineAccessibilityMigrationOverview"
+	LanguagesService_CertifyOfflineAccessibilityPack_FullMethodName          = "/sttattus.languages.v1.LanguagesService/CertifyOfflineAccessibilityPack"
+	LanguagesService_RunCompetitorMigrationImport_FullMethodName             = "/sttattus.languages.v1.LanguagesService/RunCompetitorMigrationImport"
 )
 
 // LanguagesServiceClient is the client API for LanguagesService service.
@@ -146,6 +179,50 @@ type LanguagesServiceClient interface {
 	DismissWritingFlag(ctx context.Context, in *DismissWritingFlagRequest, opts ...grpc.CallOption) (*DismissWritingFlagResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(ctx context.Context, in *ListWordsRequest, opts ...grpc.CallOption) (*ListWordsResponse, error)
+	// Choice 6 (L6): Immersion and Personal Import Universe
+	GetImmersionUniverseOverview(ctx context.Context, in *GetImmersionUniverseOverviewRequest, opts ...grpc.CallOption) (*GetImmersionUniverseOverviewResponse, error)
+	ImportPersonalImmersionMedia(ctx context.Context, in *ImportPersonalImmersionMediaRequest, opts ...grpc.CallOption) (*ImportPersonalImmersionMediaResponse, error)
+	CaptureContextConceptSense(ctx context.Context, in *CaptureContextConceptSenseRequest, opts ...grpc.CallOption) (*CaptureContextConceptSenseResponse, error)
+	// Choice 7 (L7): Writing and Register Studio
+	GetWritingRegisterStudioOverview(ctx context.Context, in *GetWritingRegisterStudioOverviewRequest, opts ...grpc.CallOption) (*GetWritingRegisterStudioOverviewResponse, error)
+	SubmitWritingRegisterDraft(ctx context.Context, in *SubmitWritingRegisterDraftRequest, opts ...grpc.CallOption) (*SubmitWritingRegisterDraftResponse, error)
+	VerifyDelayedRegisterTransfer(ctx context.Context, in *VerifyDelayedRegisterTransferRequest, opts ...grpc.CallOption) (*VerifyDelayedRegisterTransferResponse, error)
+	// Choice 8 (L8): Human Tutoring and Community
+	GetHumanTutoringCommunityOverview(ctx context.Context, in *GetHumanTutoringCommunityOverviewRequest, opts ...grpc.CallOption) (*GetHumanTutoringCommunityOverviewResponse, error)
+	BookOrAskHumanTutor(ctx context.Context, in *BookOrAskHumanTutorRequest, opts ...grpc.CallOption) (*BookOrAskHumanTutorResponse, error)
+	SubmitDoubleBlindCommunityReview(ctx context.Context, in *SubmitDoubleBlindCommunityReviewRequest, opts ...grpc.CallOption) (*SubmitDoubleBlindCommunityReviewResponse, error)
+	// Choice 9 (L9): Assessment and Credible Certification
+	GetAssessmentCertificationOverview(ctx context.Context, in *GetAssessmentCertificationOverviewRequest, opts ...grpc.CallOption) (*GetAssessmentCertificationOverviewResponse, error)
+	RunAdaptiveDiagnosticSession(ctx context.Context, in *RunAdaptiveDiagnosticSessionRequest, opts ...grpc.CallOption) (*RunAdaptiveDiagnosticSessionResponse, error)
+	IssueOrRevokeSignedCertificate(ctx context.Context, in *IssueOrRevokeSignedCertificateRequest, opts ...grpc.CallOption) (*IssueOrRevokeSignedCertificateResponse, error)
+	// Choice 10 (L10/L11): Culture and Reference Supertools
+	GetCultureReferenceSupertoolsOverview(ctx context.Context, in *GetCultureReferenceSupertoolsOverviewRequest, opts ...grpc.CallOption) (*GetCultureReferenceSupertoolsOverviewResponse, error)
+	RunSupertoolConcordanceLookup(ctx context.Context, in *RunSupertoolConcordanceLookupRequest, opts ...grpc.CallOption) (*RunSupertoolConcordanceLookupResponse, error)
+	CompleteCulturalPragmaticsBranch(ctx context.Context, in *CompleteCulturalPragmaticsBranchRequest, opts ...grpc.CallOption) (*CompleteCulturalPragmaticsBranchResponse, error)
+	// Choice 11 (L13): Real-World Missions and Portfolio
+	GetRealWorldMissionsPortfolioOverview(ctx context.Context, in *GetRealWorldMissionsPortfolioOverviewRequest, opts ...grpc.CallOption) (*GetRealWorldMissionsPortfolioOverviewResponse, error)
+	AttestRealWorldMissionCompletion(ctx context.Context, in *AttestRealWorldMissionCompletionRequest, opts ...grpc.CallOption) (*AttestRealWorldMissionCompletionResponse, error)
+	PublishCommunicativePortfolioArtifact(ctx context.Context, in *PublishCommunicativePortfolioArtifactRequest, opts ...grpc.CallOption) (*PublishCommunicativePortfolioArtifactResponse, error)
+	// Choice 12 (L14): Ubiquitous Language Layer
+	GetUbiquitousLanguageLayerOverview(ctx context.Context, in *GetUbiquitousLanguageLayerOverviewRequest, opts ...grpc.CallOption) (*GetUbiquitousLanguageLayerOverviewResponse, error)
+	CaptureExplicitLanguageLookup(ctx context.Context, in *CaptureExplicitLanguageLookupRequest, opts ...grpc.CallOption) (*CaptureExplicitLanguageLookupResponse, error)
+	ConfirmCapturedSenseToMastery(ctx context.Context, in *ConfirmCapturedSenseToMasteryRequest, opts ...grpc.CallOption) (*ConfirmCapturedSenseToMasteryResponse, error)
+	// Choice 13 (L15/L16): Professional and Heritage Pathways
+	GetProfessionalHeritagePathwaysOverview(ctx context.Context, in *GetProfessionalHeritagePathwaysOverviewRequest, opts ...grpc.CallOption) (*GetProfessionalHeritagePathwaysOverviewResponse, error)
+	EnrollProfessionalOrHeritageTrack(ctx context.Context, in *EnrollProfessionalOrHeritageTrackRequest, opts ...grpc.CallOption) (*EnrollProfessionalOrHeritageTrackResponse, error)
+	RecordHeritageLiteracyMilestone(ctx context.Context, in *RecordHeritageLiteracyMilestoneRequest, opts ...grpc.CallOption) (*RecordHeritageLiteracyMilestoneResponse, error)
+	// Choice 14 (L17): Teacher and Classroom OS
+	GetTeacherClassroomOsOverview(ctx context.Context, in *GetTeacherClassroomOsOverviewRequest, opts ...grpc.CallOption) (*GetTeacherClassroomOsOverviewResponse, error)
+	CreateClassroomCohortAssignment(ctx context.Context, in *CreateClassroomCohortAssignmentRequest, opts ...grpc.CallOption) (*CreateClassroomCohortAssignmentResponse, error)
+	ApproveOrDisputeTeacherProposal(ctx context.Context, in *ApproveOrDisputeTeacherProposalRequest, opts ...grpc.CallOption) (*ApproveOrDisputeTeacherProposalResponse, error)
+	// Choice 15 (L18/L19): Sustainable Motivation and Learning Lab
+	GetSustainableMotivationLabOverview(ctx context.Context, in *GetSustainableMotivationLabOverviewRequest, opts ...grpc.CallOption) (*GetSustainableMotivationLabOverviewResponse, error)
+	UpdateSustainableHabitContract(ctx context.Context, in *UpdateSustainableHabitContractRequest, opts ...grpc.CallOption) (*UpdateSustainableHabitContractResponse, error)
+	RecordDelayedRetentionExperiment(ctx context.Context, in *RecordDelayedRetentionExperimentRequest, opts ...grpc.CallOption) (*RecordDelayedRetentionExperimentResponse, error)
+	// Choice 16 (L12): Offline, Accessibility, and Migration Certification
+	GetOfflineAccessibilityMigrationOverview(ctx context.Context, in *GetOfflineAccessibilityMigrationOverviewRequest, opts ...grpc.CallOption) (*GetOfflineAccessibilityMigrationOverviewResponse, error)
+	CertifyOfflineAccessibilityPack(ctx context.Context, in *CertifyOfflineAccessibilityPackRequest, opts ...grpc.CallOption) (*CertifyOfflineAccessibilityPackResponse, error)
+	RunCompetitorMigrationImport(ctx context.Context, in *RunCompetitorMigrationImportRequest, opts ...grpc.CallOption) (*RunCompetitorMigrationImportResponse, error)
 }
 
 type languagesServiceClient struct {
@@ -636,6 +713,336 @@ func (c *languagesServiceClient) ListWords(ctx context.Context, in *ListWordsReq
 	return out, nil
 }
 
+func (c *languagesServiceClient) GetImmersionUniverseOverview(ctx context.Context, in *GetImmersionUniverseOverviewRequest, opts ...grpc.CallOption) (*GetImmersionUniverseOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetImmersionUniverseOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetImmersionUniverseOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ImportPersonalImmersionMedia(ctx context.Context, in *ImportPersonalImmersionMediaRequest, opts ...grpc.CallOption) (*ImportPersonalImmersionMediaResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ImportPersonalImmersionMediaResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ImportPersonalImmersionMedia_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CaptureContextConceptSense(ctx context.Context, in *CaptureContextConceptSenseRequest, opts ...grpc.CallOption) (*CaptureContextConceptSenseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CaptureContextConceptSenseResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CaptureContextConceptSense_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetWritingRegisterStudioOverview(ctx context.Context, in *GetWritingRegisterStudioOverviewRequest, opts ...grpc.CallOption) (*GetWritingRegisterStudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWritingRegisterStudioOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetWritingRegisterStudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SubmitWritingRegisterDraft(ctx context.Context, in *SubmitWritingRegisterDraftRequest, opts ...grpc.CallOption) (*SubmitWritingRegisterDraftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitWritingRegisterDraftResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitWritingRegisterDraft_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) VerifyDelayedRegisterTransfer(ctx context.Context, in *VerifyDelayedRegisterTransferRequest, opts ...grpc.CallOption) (*VerifyDelayedRegisterTransferResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyDelayedRegisterTransferResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_VerifyDelayedRegisterTransfer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetHumanTutoringCommunityOverview(ctx context.Context, in *GetHumanTutoringCommunityOverviewRequest, opts ...grpc.CallOption) (*GetHumanTutoringCommunityOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetHumanTutoringCommunityOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetHumanTutoringCommunityOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) BookOrAskHumanTutor(ctx context.Context, in *BookOrAskHumanTutorRequest, opts ...grpc.CallOption) (*BookOrAskHumanTutorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(BookOrAskHumanTutorResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_BookOrAskHumanTutor_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) SubmitDoubleBlindCommunityReview(ctx context.Context, in *SubmitDoubleBlindCommunityReviewRequest, opts ...grpc.CallOption) (*SubmitDoubleBlindCommunityReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitDoubleBlindCommunityReviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_SubmitDoubleBlindCommunityReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetAssessmentCertificationOverview(ctx context.Context, in *GetAssessmentCertificationOverviewRequest, opts ...grpc.CallOption) (*GetAssessmentCertificationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAssessmentCertificationOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetAssessmentCertificationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RunAdaptiveDiagnosticSession(ctx context.Context, in *RunAdaptiveDiagnosticSessionRequest, opts ...grpc.CallOption) (*RunAdaptiveDiagnosticSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunAdaptiveDiagnosticSessionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RunAdaptiveDiagnosticSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) IssueOrRevokeSignedCertificate(ctx context.Context, in *IssueOrRevokeSignedCertificateRequest, opts ...grpc.CallOption) (*IssueOrRevokeSignedCertificateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueOrRevokeSignedCertificateResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_IssueOrRevokeSignedCertificate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetCultureReferenceSupertoolsOverview(ctx context.Context, in *GetCultureReferenceSupertoolsOverviewRequest, opts ...grpc.CallOption) (*GetCultureReferenceSupertoolsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCultureReferenceSupertoolsOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetCultureReferenceSupertoolsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RunSupertoolConcordanceLookup(ctx context.Context, in *RunSupertoolConcordanceLookupRequest, opts ...grpc.CallOption) (*RunSupertoolConcordanceLookupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunSupertoolConcordanceLookupResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RunSupertoolConcordanceLookup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CompleteCulturalPragmaticsBranch(ctx context.Context, in *CompleteCulturalPragmaticsBranchRequest, opts ...grpc.CallOption) (*CompleteCulturalPragmaticsBranchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompleteCulturalPragmaticsBranchResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CompleteCulturalPragmaticsBranch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetRealWorldMissionsPortfolioOverview(ctx context.Context, in *GetRealWorldMissionsPortfolioOverviewRequest, opts ...grpc.CallOption) (*GetRealWorldMissionsPortfolioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRealWorldMissionsPortfolioOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetRealWorldMissionsPortfolioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) AttestRealWorldMissionCompletion(ctx context.Context, in *AttestRealWorldMissionCompletionRequest, opts ...grpc.CallOption) (*AttestRealWorldMissionCompletionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AttestRealWorldMissionCompletionResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_AttestRealWorldMissionCompletion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) PublishCommunicativePortfolioArtifact(ctx context.Context, in *PublishCommunicativePortfolioArtifactRequest, opts ...grpc.CallOption) (*PublishCommunicativePortfolioArtifactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PublishCommunicativePortfolioArtifactResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_PublishCommunicativePortfolioArtifact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetUbiquitousLanguageLayerOverview(ctx context.Context, in *GetUbiquitousLanguageLayerOverviewRequest, opts ...grpc.CallOption) (*GetUbiquitousLanguageLayerOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetUbiquitousLanguageLayerOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetUbiquitousLanguageLayerOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CaptureExplicitLanguageLookup(ctx context.Context, in *CaptureExplicitLanguageLookupRequest, opts ...grpc.CallOption) (*CaptureExplicitLanguageLookupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CaptureExplicitLanguageLookupResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CaptureExplicitLanguageLookup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ConfirmCapturedSenseToMastery(ctx context.Context, in *ConfirmCapturedSenseToMasteryRequest, opts ...grpc.CallOption) (*ConfirmCapturedSenseToMasteryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmCapturedSenseToMasteryResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ConfirmCapturedSenseToMastery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetProfessionalHeritagePathwaysOverview(ctx context.Context, in *GetProfessionalHeritagePathwaysOverviewRequest, opts ...grpc.CallOption) (*GetProfessionalHeritagePathwaysOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetProfessionalHeritagePathwaysOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetProfessionalHeritagePathwaysOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) EnrollProfessionalOrHeritageTrack(ctx context.Context, in *EnrollProfessionalOrHeritageTrackRequest, opts ...grpc.CallOption) (*EnrollProfessionalOrHeritageTrackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnrollProfessionalOrHeritageTrackResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_EnrollProfessionalOrHeritageTrack_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RecordHeritageLiteracyMilestone(ctx context.Context, in *RecordHeritageLiteracyMilestoneRequest, opts ...grpc.CallOption) (*RecordHeritageLiteracyMilestoneResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordHeritageLiteracyMilestoneResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RecordHeritageLiteracyMilestone_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetTeacherClassroomOsOverview(ctx context.Context, in *GetTeacherClassroomOsOverviewRequest, opts ...grpc.CallOption) (*GetTeacherClassroomOsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTeacherClassroomOsOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetTeacherClassroomOsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CreateClassroomCohortAssignment(ctx context.Context, in *CreateClassroomCohortAssignmentRequest, opts ...grpc.CallOption) (*CreateClassroomCohortAssignmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateClassroomCohortAssignmentResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CreateClassroomCohortAssignment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) ApproveOrDisputeTeacherProposal(ctx context.Context, in *ApproveOrDisputeTeacherProposalRequest, opts ...grpc.CallOption) (*ApproveOrDisputeTeacherProposalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrDisputeTeacherProposalResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_ApproveOrDisputeTeacherProposal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetSustainableMotivationLabOverview(ctx context.Context, in *GetSustainableMotivationLabOverviewRequest, opts ...grpc.CallOption) (*GetSustainableMotivationLabOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSustainableMotivationLabOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetSustainableMotivationLabOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) UpdateSustainableHabitContract(ctx context.Context, in *UpdateSustainableHabitContractRequest, opts ...grpc.CallOption) (*UpdateSustainableHabitContractResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateSustainableHabitContractResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_UpdateSustainableHabitContract_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RecordDelayedRetentionExperiment(ctx context.Context, in *RecordDelayedRetentionExperimentRequest, opts ...grpc.CallOption) (*RecordDelayedRetentionExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordDelayedRetentionExperimentResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RecordDelayedRetentionExperiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) GetOfflineAccessibilityMigrationOverview(ctx context.Context, in *GetOfflineAccessibilityMigrationOverviewRequest, opts ...grpc.CallOption) (*GetOfflineAccessibilityMigrationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOfflineAccessibilityMigrationOverviewResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_GetOfflineAccessibilityMigrationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) CertifyOfflineAccessibilityPack(ctx context.Context, in *CertifyOfflineAccessibilityPackRequest, opts ...grpc.CallOption) (*CertifyOfflineAccessibilityPackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CertifyOfflineAccessibilityPackResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_CertifyOfflineAccessibilityPack_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *languagesServiceClient) RunCompetitorMigrationImport(ctx context.Context, in *RunCompetitorMigrationImportRequest, opts ...grpc.CallOption) (*RunCompetitorMigrationImportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunCompetitorMigrationImportResponse)
+	err := c.cc.Invoke(ctx, LanguagesService_RunCompetitorMigrationImport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LanguagesServiceServer is the server API for LanguagesService service.
 // All implementations must embed UnimplementedLanguagesServiceServer
 // for forward compatibility.
@@ -713,6 +1120,50 @@ type LanguagesServiceServer interface {
 	DismissWritingFlag(context.Context, *DismissWritingFlagRequest) (*DismissWritingFlagResponse, error)
 	// Legacy (Deprecated but kept for bridge)
 	ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error)
+	// Choice 6 (L6): Immersion and Personal Import Universe
+	GetImmersionUniverseOverview(context.Context, *GetImmersionUniverseOverviewRequest) (*GetImmersionUniverseOverviewResponse, error)
+	ImportPersonalImmersionMedia(context.Context, *ImportPersonalImmersionMediaRequest) (*ImportPersonalImmersionMediaResponse, error)
+	CaptureContextConceptSense(context.Context, *CaptureContextConceptSenseRequest) (*CaptureContextConceptSenseResponse, error)
+	// Choice 7 (L7): Writing and Register Studio
+	GetWritingRegisterStudioOverview(context.Context, *GetWritingRegisterStudioOverviewRequest) (*GetWritingRegisterStudioOverviewResponse, error)
+	SubmitWritingRegisterDraft(context.Context, *SubmitWritingRegisterDraftRequest) (*SubmitWritingRegisterDraftResponse, error)
+	VerifyDelayedRegisterTransfer(context.Context, *VerifyDelayedRegisterTransferRequest) (*VerifyDelayedRegisterTransferResponse, error)
+	// Choice 8 (L8): Human Tutoring and Community
+	GetHumanTutoringCommunityOverview(context.Context, *GetHumanTutoringCommunityOverviewRequest) (*GetHumanTutoringCommunityOverviewResponse, error)
+	BookOrAskHumanTutor(context.Context, *BookOrAskHumanTutorRequest) (*BookOrAskHumanTutorResponse, error)
+	SubmitDoubleBlindCommunityReview(context.Context, *SubmitDoubleBlindCommunityReviewRequest) (*SubmitDoubleBlindCommunityReviewResponse, error)
+	// Choice 9 (L9): Assessment and Credible Certification
+	GetAssessmentCertificationOverview(context.Context, *GetAssessmentCertificationOverviewRequest) (*GetAssessmentCertificationOverviewResponse, error)
+	RunAdaptiveDiagnosticSession(context.Context, *RunAdaptiveDiagnosticSessionRequest) (*RunAdaptiveDiagnosticSessionResponse, error)
+	IssueOrRevokeSignedCertificate(context.Context, *IssueOrRevokeSignedCertificateRequest) (*IssueOrRevokeSignedCertificateResponse, error)
+	// Choice 10 (L10/L11): Culture and Reference Supertools
+	GetCultureReferenceSupertoolsOverview(context.Context, *GetCultureReferenceSupertoolsOverviewRequest) (*GetCultureReferenceSupertoolsOverviewResponse, error)
+	RunSupertoolConcordanceLookup(context.Context, *RunSupertoolConcordanceLookupRequest) (*RunSupertoolConcordanceLookupResponse, error)
+	CompleteCulturalPragmaticsBranch(context.Context, *CompleteCulturalPragmaticsBranchRequest) (*CompleteCulturalPragmaticsBranchResponse, error)
+	// Choice 11 (L13): Real-World Missions and Portfolio
+	GetRealWorldMissionsPortfolioOverview(context.Context, *GetRealWorldMissionsPortfolioOverviewRequest) (*GetRealWorldMissionsPortfolioOverviewResponse, error)
+	AttestRealWorldMissionCompletion(context.Context, *AttestRealWorldMissionCompletionRequest) (*AttestRealWorldMissionCompletionResponse, error)
+	PublishCommunicativePortfolioArtifact(context.Context, *PublishCommunicativePortfolioArtifactRequest) (*PublishCommunicativePortfolioArtifactResponse, error)
+	// Choice 12 (L14): Ubiquitous Language Layer
+	GetUbiquitousLanguageLayerOverview(context.Context, *GetUbiquitousLanguageLayerOverviewRequest) (*GetUbiquitousLanguageLayerOverviewResponse, error)
+	CaptureExplicitLanguageLookup(context.Context, *CaptureExplicitLanguageLookupRequest) (*CaptureExplicitLanguageLookupResponse, error)
+	ConfirmCapturedSenseToMastery(context.Context, *ConfirmCapturedSenseToMasteryRequest) (*ConfirmCapturedSenseToMasteryResponse, error)
+	// Choice 13 (L15/L16): Professional and Heritage Pathways
+	GetProfessionalHeritagePathwaysOverview(context.Context, *GetProfessionalHeritagePathwaysOverviewRequest) (*GetProfessionalHeritagePathwaysOverviewResponse, error)
+	EnrollProfessionalOrHeritageTrack(context.Context, *EnrollProfessionalOrHeritageTrackRequest) (*EnrollProfessionalOrHeritageTrackResponse, error)
+	RecordHeritageLiteracyMilestone(context.Context, *RecordHeritageLiteracyMilestoneRequest) (*RecordHeritageLiteracyMilestoneResponse, error)
+	// Choice 14 (L17): Teacher and Classroom OS
+	GetTeacherClassroomOsOverview(context.Context, *GetTeacherClassroomOsOverviewRequest) (*GetTeacherClassroomOsOverviewResponse, error)
+	CreateClassroomCohortAssignment(context.Context, *CreateClassroomCohortAssignmentRequest) (*CreateClassroomCohortAssignmentResponse, error)
+	ApproveOrDisputeTeacherProposal(context.Context, *ApproveOrDisputeTeacherProposalRequest) (*ApproveOrDisputeTeacherProposalResponse, error)
+	// Choice 15 (L18/L19): Sustainable Motivation and Learning Lab
+	GetSustainableMotivationLabOverview(context.Context, *GetSustainableMotivationLabOverviewRequest) (*GetSustainableMotivationLabOverviewResponse, error)
+	UpdateSustainableHabitContract(context.Context, *UpdateSustainableHabitContractRequest) (*UpdateSustainableHabitContractResponse, error)
+	RecordDelayedRetentionExperiment(context.Context, *RecordDelayedRetentionExperimentRequest) (*RecordDelayedRetentionExperimentResponse, error)
+	// Choice 16 (L12): Offline, Accessibility, and Migration Certification
+	GetOfflineAccessibilityMigrationOverview(context.Context, *GetOfflineAccessibilityMigrationOverviewRequest) (*GetOfflineAccessibilityMigrationOverviewResponse, error)
+	CertifyOfflineAccessibilityPack(context.Context, *CertifyOfflineAccessibilityPackRequest) (*CertifyOfflineAccessibilityPackResponse, error)
+	RunCompetitorMigrationImport(context.Context, *RunCompetitorMigrationImportRequest) (*RunCompetitorMigrationImportResponse, error)
 	mustEmbedUnimplementedLanguagesServiceServer()
 }
 
@@ -866,6 +1317,105 @@ func (UnimplementedLanguagesServiceServer) DismissWritingFlag(context.Context, *
 }
 func (UnimplementedLanguagesServiceServer) ListWords(context.Context, *ListWordsRequest) (*ListWordsResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListWords not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetImmersionUniverseOverview(context.Context, *GetImmersionUniverseOverviewRequest) (*GetImmersionUniverseOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetImmersionUniverseOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ImportPersonalImmersionMedia(context.Context, *ImportPersonalImmersionMediaRequest) (*ImportPersonalImmersionMediaResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ImportPersonalImmersionMedia not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CaptureContextConceptSense(context.Context, *CaptureContextConceptSenseRequest) (*CaptureContextConceptSenseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CaptureContextConceptSense not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetWritingRegisterStudioOverview(context.Context, *GetWritingRegisterStudioOverviewRequest) (*GetWritingRegisterStudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWritingRegisterStudioOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitWritingRegisterDraft(context.Context, *SubmitWritingRegisterDraftRequest) (*SubmitWritingRegisterDraftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitWritingRegisterDraft not implemented")
+}
+func (UnimplementedLanguagesServiceServer) VerifyDelayedRegisterTransfer(context.Context, *VerifyDelayedRegisterTransferRequest) (*VerifyDelayedRegisterTransferResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyDelayedRegisterTransfer not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetHumanTutoringCommunityOverview(context.Context, *GetHumanTutoringCommunityOverviewRequest) (*GetHumanTutoringCommunityOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetHumanTutoringCommunityOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) BookOrAskHumanTutor(context.Context, *BookOrAskHumanTutorRequest) (*BookOrAskHumanTutorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method BookOrAskHumanTutor not implemented")
+}
+func (UnimplementedLanguagesServiceServer) SubmitDoubleBlindCommunityReview(context.Context, *SubmitDoubleBlindCommunityReviewRequest) (*SubmitDoubleBlindCommunityReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitDoubleBlindCommunityReview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetAssessmentCertificationOverview(context.Context, *GetAssessmentCertificationOverviewRequest) (*GetAssessmentCertificationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAssessmentCertificationOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RunAdaptiveDiagnosticSession(context.Context, *RunAdaptiveDiagnosticSessionRequest) (*RunAdaptiveDiagnosticSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunAdaptiveDiagnosticSession not implemented")
+}
+func (UnimplementedLanguagesServiceServer) IssueOrRevokeSignedCertificate(context.Context, *IssueOrRevokeSignedCertificateRequest) (*IssueOrRevokeSignedCertificateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueOrRevokeSignedCertificate not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetCultureReferenceSupertoolsOverview(context.Context, *GetCultureReferenceSupertoolsOverviewRequest) (*GetCultureReferenceSupertoolsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCultureReferenceSupertoolsOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RunSupertoolConcordanceLookup(context.Context, *RunSupertoolConcordanceLookupRequest) (*RunSupertoolConcordanceLookupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunSupertoolConcordanceLookup not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CompleteCulturalPragmaticsBranch(context.Context, *CompleteCulturalPragmaticsBranchRequest) (*CompleteCulturalPragmaticsBranchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompleteCulturalPragmaticsBranch not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetRealWorldMissionsPortfolioOverview(context.Context, *GetRealWorldMissionsPortfolioOverviewRequest) (*GetRealWorldMissionsPortfolioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRealWorldMissionsPortfolioOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) AttestRealWorldMissionCompletion(context.Context, *AttestRealWorldMissionCompletionRequest) (*AttestRealWorldMissionCompletionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AttestRealWorldMissionCompletion not implemented")
+}
+func (UnimplementedLanguagesServiceServer) PublishCommunicativePortfolioArtifact(context.Context, *PublishCommunicativePortfolioArtifactRequest) (*PublishCommunicativePortfolioArtifactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PublishCommunicativePortfolioArtifact not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetUbiquitousLanguageLayerOverview(context.Context, *GetUbiquitousLanguageLayerOverviewRequest) (*GetUbiquitousLanguageLayerOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetUbiquitousLanguageLayerOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CaptureExplicitLanguageLookup(context.Context, *CaptureExplicitLanguageLookupRequest) (*CaptureExplicitLanguageLookupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CaptureExplicitLanguageLookup not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ConfirmCapturedSenseToMastery(context.Context, *ConfirmCapturedSenseToMasteryRequest) (*ConfirmCapturedSenseToMasteryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmCapturedSenseToMastery not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetProfessionalHeritagePathwaysOverview(context.Context, *GetProfessionalHeritagePathwaysOverviewRequest) (*GetProfessionalHeritagePathwaysOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetProfessionalHeritagePathwaysOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) EnrollProfessionalOrHeritageTrack(context.Context, *EnrollProfessionalOrHeritageTrackRequest) (*EnrollProfessionalOrHeritageTrackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EnrollProfessionalOrHeritageTrack not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RecordHeritageLiteracyMilestone(context.Context, *RecordHeritageLiteracyMilestoneRequest) (*RecordHeritageLiteracyMilestoneResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordHeritageLiteracyMilestone not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetTeacherClassroomOsOverview(context.Context, *GetTeacherClassroomOsOverviewRequest) (*GetTeacherClassroomOsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTeacherClassroomOsOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CreateClassroomCohortAssignment(context.Context, *CreateClassroomCohortAssignmentRequest) (*CreateClassroomCohortAssignmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateClassroomCohortAssignment not implemented")
+}
+func (UnimplementedLanguagesServiceServer) ApproveOrDisputeTeacherProposal(context.Context, *ApproveOrDisputeTeacherProposalRequest) (*ApproveOrDisputeTeacherProposalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrDisputeTeacherProposal not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetSustainableMotivationLabOverview(context.Context, *GetSustainableMotivationLabOverviewRequest) (*GetSustainableMotivationLabOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSustainableMotivationLabOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) UpdateSustainableHabitContract(context.Context, *UpdateSustainableHabitContractRequest) (*UpdateSustainableHabitContractResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateSustainableHabitContract not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RecordDelayedRetentionExperiment(context.Context, *RecordDelayedRetentionExperimentRequest) (*RecordDelayedRetentionExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordDelayedRetentionExperiment not implemented")
+}
+func (UnimplementedLanguagesServiceServer) GetOfflineAccessibilityMigrationOverview(context.Context, *GetOfflineAccessibilityMigrationOverviewRequest) (*GetOfflineAccessibilityMigrationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOfflineAccessibilityMigrationOverview not implemented")
+}
+func (UnimplementedLanguagesServiceServer) CertifyOfflineAccessibilityPack(context.Context, *CertifyOfflineAccessibilityPackRequest) (*CertifyOfflineAccessibilityPackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CertifyOfflineAccessibilityPack not implemented")
+}
+func (UnimplementedLanguagesServiceServer) RunCompetitorMigrationImport(context.Context, *RunCompetitorMigrationImportRequest) (*RunCompetitorMigrationImportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunCompetitorMigrationImport not implemented")
 }
 func (UnimplementedLanguagesServiceServer) mustEmbedUnimplementedLanguagesServiceServer() {}
 func (UnimplementedLanguagesServiceServer) testEmbeddedByValue()                          {}
@@ -1752,6 +2302,600 @@ func _LanguagesService_ListWords_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LanguagesService_GetImmersionUniverseOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetImmersionUniverseOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetImmersionUniverseOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetImmersionUniverseOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetImmersionUniverseOverview(ctx, req.(*GetImmersionUniverseOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ImportPersonalImmersionMedia_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ImportPersonalImmersionMediaRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ImportPersonalImmersionMedia(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ImportPersonalImmersionMedia_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ImportPersonalImmersionMedia(ctx, req.(*ImportPersonalImmersionMediaRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CaptureContextConceptSense_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CaptureContextConceptSenseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CaptureContextConceptSense(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CaptureContextConceptSense_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CaptureContextConceptSense(ctx, req.(*CaptureContextConceptSenseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetWritingRegisterStudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWritingRegisterStudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetWritingRegisterStudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetWritingRegisterStudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetWritingRegisterStudioOverview(ctx, req.(*GetWritingRegisterStudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SubmitWritingRegisterDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitWritingRegisterDraftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitWritingRegisterDraft(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitWritingRegisterDraft_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitWritingRegisterDraft(ctx, req.(*SubmitWritingRegisterDraftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_VerifyDelayedRegisterTransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyDelayedRegisterTransferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).VerifyDelayedRegisterTransfer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_VerifyDelayedRegisterTransfer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).VerifyDelayedRegisterTransfer(ctx, req.(*VerifyDelayedRegisterTransferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetHumanTutoringCommunityOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHumanTutoringCommunityOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetHumanTutoringCommunityOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetHumanTutoringCommunityOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetHumanTutoringCommunityOverview(ctx, req.(*GetHumanTutoringCommunityOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_BookOrAskHumanTutor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BookOrAskHumanTutorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).BookOrAskHumanTutor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_BookOrAskHumanTutor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).BookOrAskHumanTutor(ctx, req.(*BookOrAskHumanTutorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_SubmitDoubleBlindCommunityReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitDoubleBlindCommunityReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).SubmitDoubleBlindCommunityReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_SubmitDoubleBlindCommunityReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).SubmitDoubleBlindCommunityReview(ctx, req.(*SubmitDoubleBlindCommunityReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetAssessmentCertificationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAssessmentCertificationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetAssessmentCertificationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetAssessmentCertificationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetAssessmentCertificationOverview(ctx, req.(*GetAssessmentCertificationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RunAdaptiveDiagnosticSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunAdaptiveDiagnosticSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RunAdaptiveDiagnosticSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RunAdaptiveDiagnosticSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RunAdaptiveDiagnosticSession(ctx, req.(*RunAdaptiveDiagnosticSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_IssueOrRevokeSignedCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueOrRevokeSignedCertificateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).IssueOrRevokeSignedCertificate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_IssueOrRevokeSignedCertificate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).IssueOrRevokeSignedCertificate(ctx, req.(*IssueOrRevokeSignedCertificateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetCultureReferenceSupertoolsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCultureReferenceSupertoolsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetCultureReferenceSupertoolsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetCultureReferenceSupertoolsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetCultureReferenceSupertoolsOverview(ctx, req.(*GetCultureReferenceSupertoolsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RunSupertoolConcordanceLookup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunSupertoolConcordanceLookupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RunSupertoolConcordanceLookup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RunSupertoolConcordanceLookup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RunSupertoolConcordanceLookup(ctx, req.(*RunSupertoolConcordanceLookupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CompleteCulturalPragmaticsBranch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteCulturalPragmaticsBranchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CompleteCulturalPragmaticsBranch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CompleteCulturalPragmaticsBranch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CompleteCulturalPragmaticsBranch(ctx, req.(*CompleteCulturalPragmaticsBranchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetRealWorldMissionsPortfolioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRealWorldMissionsPortfolioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetRealWorldMissionsPortfolioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetRealWorldMissionsPortfolioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetRealWorldMissionsPortfolioOverview(ctx, req.(*GetRealWorldMissionsPortfolioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_AttestRealWorldMissionCompletion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AttestRealWorldMissionCompletionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).AttestRealWorldMissionCompletion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_AttestRealWorldMissionCompletion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).AttestRealWorldMissionCompletion(ctx, req.(*AttestRealWorldMissionCompletionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_PublishCommunicativePortfolioArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PublishCommunicativePortfolioArtifactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).PublishCommunicativePortfolioArtifact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_PublishCommunicativePortfolioArtifact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).PublishCommunicativePortfolioArtifact(ctx, req.(*PublishCommunicativePortfolioArtifactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetUbiquitousLanguageLayerOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUbiquitousLanguageLayerOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetUbiquitousLanguageLayerOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetUbiquitousLanguageLayerOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetUbiquitousLanguageLayerOverview(ctx, req.(*GetUbiquitousLanguageLayerOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CaptureExplicitLanguageLookup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CaptureExplicitLanguageLookupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CaptureExplicitLanguageLookup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CaptureExplicitLanguageLookup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CaptureExplicitLanguageLookup(ctx, req.(*CaptureExplicitLanguageLookupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ConfirmCapturedSenseToMastery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmCapturedSenseToMasteryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ConfirmCapturedSenseToMastery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ConfirmCapturedSenseToMastery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ConfirmCapturedSenseToMastery(ctx, req.(*ConfirmCapturedSenseToMasteryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetProfessionalHeritagePathwaysOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetProfessionalHeritagePathwaysOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetProfessionalHeritagePathwaysOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetProfessionalHeritagePathwaysOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetProfessionalHeritagePathwaysOverview(ctx, req.(*GetProfessionalHeritagePathwaysOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_EnrollProfessionalOrHeritageTrack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnrollProfessionalOrHeritageTrackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).EnrollProfessionalOrHeritageTrack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_EnrollProfessionalOrHeritageTrack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).EnrollProfessionalOrHeritageTrack(ctx, req.(*EnrollProfessionalOrHeritageTrackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RecordHeritageLiteracyMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordHeritageLiteracyMilestoneRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RecordHeritageLiteracyMilestone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RecordHeritageLiteracyMilestone_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RecordHeritageLiteracyMilestone(ctx, req.(*RecordHeritageLiteracyMilestoneRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetTeacherClassroomOsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTeacherClassroomOsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetTeacherClassroomOsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetTeacherClassroomOsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetTeacherClassroomOsOverview(ctx, req.(*GetTeacherClassroomOsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CreateClassroomCohortAssignment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateClassroomCohortAssignmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CreateClassroomCohortAssignment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CreateClassroomCohortAssignment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CreateClassroomCohortAssignment(ctx, req.(*CreateClassroomCohortAssignmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_ApproveOrDisputeTeacherProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrDisputeTeacherProposalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).ApproveOrDisputeTeacherProposal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_ApproveOrDisputeTeacherProposal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).ApproveOrDisputeTeacherProposal(ctx, req.(*ApproveOrDisputeTeacherProposalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetSustainableMotivationLabOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSustainableMotivationLabOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetSustainableMotivationLabOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetSustainableMotivationLabOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetSustainableMotivationLabOverview(ctx, req.(*GetSustainableMotivationLabOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_UpdateSustainableHabitContract_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateSustainableHabitContractRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).UpdateSustainableHabitContract(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_UpdateSustainableHabitContract_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).UpdateSustainableHabitContract(ctx, req.(*UpdateSustainableHabitContractRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RecordDelayedRetentionExperiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordDelayedRetentionExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RecordDelayedRetentionExperiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RecordDelayedRetentionExperiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RecordDelayedRetentionExperiment(ctx, req.(*RecordDelayedRetentionExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_GetOfflineAccessibilityMigrationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOfflineAccessibilityMigrationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).GetOfflineAccessibilityMigrationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_GetOfflineAccessibilityMigrationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).GetOfflineAccessibilityMigrationOverview(ctx, req.(*GetOfflineAccessibilityMigrationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_CertifyOfflineAccessibilityPack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CertifyOfflineAccessibilityPackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).CertifyOfflineAccessibilityPack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_CertifyOfflineAccessibilityPack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).CertifyOfflineAccessibilityPack(ctx, req.(*CertifyOfflineAccessibilityPackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LanguagesService_RunCompetitorMigrationImport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunCompetitorMigrationImportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LanguagesServiceServer).RunCompetitorMigrationImport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LanguagesService_RunCompetitorMigrationImport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LanguagesServiceServer).RunCompetitorMigrationImport(ctx, req.(*RunCompetitorMigrationImportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LanguagesService_ServiceDesc is the grpc.ServiceDesc for LanguagesService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1950,6 +3094,138 @@ var LanguagesService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListWords",
 			Handler:    _LanguagesService_ListWords_Handler,
+		},
+		{
+			MethodName: "GetImmersionUniverseOverview",
+			Handler:    _LanguagesService_GetImmersionUniverseOverview_Handler,
+		},
+		{
+			MethodName: "ImportPersonalImmersionMedia",
+			Handler:    _LanguagesService_ImportPersonalImmersionMedia_Handler,
+		},
+		{
+			MethodName: "CaptureContextConceptSense",
+			Handler:    _LanguagesService_CaptureContextConceptSense_Handler,
+		},
+		{
+			MethodName: "GetWritingRegisterStudioOverview",
+			Handler:    _LanguagesService_GetWritingRegisterStudioOverview_Handler,
+		},
+		{
+			MethodName: "SubmitWritingRegisterDraft",
+			Handler:    _LanguagesService_SubmitWritingRegisterDraft_Handler,
+		},
+		{
+			MethodName: "VerifyDelayedRegisterTransfer",
+			Handler:    _LanguagesService_VerifyDelayedRegisterTransfer_Handler,
+		},
+		{
+			MethodName: "GetHumanTutoringCommunityOverview",
+			Handler:    _LanguagesService_GetHumanTutoringCommunityOverview_Handler,
+		},
+		{
+			MethodName: "BookOrAskHumanTutor",
+			Handler:    _LanguagesService_BookOrAskHumanTutor_Handler,
+		},
+		{
+			MethodName: "SubmitDoubleBlindCommunityReview",
+			Handler:    _LanguagesService_SubmitDoubleBlindCommunityReview_Handler,
+		},
+		{
+			MethodName: "GetAssessmentCertificationOverview",
+			Handler:    _LanguagesService_GetAssessmentCertificationOverview_Handler,
+		},
+		{
+			MethodName: "RunAdaptiveDiagnosticSession",
+			Handler:    _LanguagesService_RunAdaptiveDiagnosticSession_Handler,
+		},
+		{
+			MethodName: "IssueOrRevokeSignedCertificate",
+			Handler:    _LanguagesService_IssueOrRevokeSignedCertificate_Handler,
+		},
+		{
+			MethodName: "GetCultureReferenceSupertoolsOverview",
+			Handler:    _LanguagesService_GetCultureReferenceSupertoolsOverview_Handler,
+		},
+		{
+			MethodName: "RunSupertoolConcordanceLookup",
+			Handler:    _LanguagesService_RunSupertoolConcordanceLookup_Handler,
+		},
+		{
+			MethodName: "CompleteCulturalPragmaticsBranch",
+			Handler:    _LanguagesService_CompleteCulturalPragmaticsBranch_Handler,
+		},
+		{
+			MethodName: "GetRealWorldMissionsPortfolioOverview",
+			Handler:    _LanguagesService_GetRealWorldMissionsPortfolioOverview_Handler,
+		},
+		{
+			MethodName: "AttestRealWorldMissionCompletion",
+			Handler:    _LanguagesService_AttestRealWorldMissionCompletion_Handler,
+		},
+		{
+			MethodName: "PublishCommunicativePortfolioArtifact",
+			Handler:    _LanguagesService_PublishCommunicativePortfolioArtifact_Handler,
+		},
+		{
+			MethodName: "GetUbiquitousLanguageLayerOverview",
+			Handler:    _LanguagesService_GetUbiquitousLanguageLayerOverview_Handler,
+		},
+		{
+			MethodName: "CaptureExplicitLanguageLookup",
+			Handler:    _LanguagesService_CaptureExplicitLanguageLookup_Handler,
+		},
+		{
+			MethodName: "ConfirmCapturedSenseToMastery",
+			Handler:    _LanguagesService_ConfirmCapturedSenseToMastery_Handler,
+		},
+		{
+			MethodName: "GetProfessionalHeritagePathwaysOverview",
+			Handler:    _LanguagesService_GetProfessionalHeritagePathwaysOverview_Handler,
+		},
+		{
+			MethodName: "EnrollProfessionalOrHeritageTrack",
+			Handler:    _LanguagesService_EnrollProfessionalOrHeritageTrack_Handler,
+		},
+		{
+			MethodName: "RecordHeritageLiteracyMilestone",
+			Handler:    _LanguagesService_RecordHeritageLiteracyMilestone_Handler,
+		},
+		{
+			MethodName: "GetTeacherClassroomOsOverview",
+			Handler:    _LanguagesService_GetTeacherClassroomOsOverview_Handler,
+		},
+		{
+			MethodName: "CreateClassroomCohortAssignment",
+			Handler:    _LanguagesService_CreateClassroomCohortAssignment_Handler,
+		},
+		{
+			MethodName: "ApproveOrDisputeTeacherProposal",
+			Handler:    _LanguagesService_ApproveOrDisputeTeacherProposal_Handler,
+		},
+		{
+			MethodName: "GetSustainableMotivationLabOverview",
+			Handler:    _LanguagesService_GetSustainableMotivationLabOverview_Handler,
+		},
+		{
+			MethodName: "UpdateSustainableHabitContract",
+			Handler:    _LanguagesService_UpdateSustainableHabitContract_Handler,
+		},
+		{
+			MethodName: "RecordDelayedRetentionExperiment",
+			Handler:    _LanguagesService_RecordDelayedRetentionExperiment_Handler,
+		},
+		{
+			MethodName: "GetOfflineAccessibilityMigrationOverview",
+			Handler:    _LanguagesService_GetOfflineAccessibilityMigrationOverview_Handler,
+		},
+		{
+			MethodName: "CertifyOfflineAccessibilityPack",
+			Handler:    _LanguagesService_CertifyOfflineAccessibilityPack_Handler,
+		},
+		{
+			MethodName: "RunCompetitorMigrationImport",
+			Handler:    _LanguagesService_RunCompetitorMigrationImport_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -8156,6 +8156,17809 @@ class GetYearInEmpireResponse extends $pb.GeneratedMessage {
   void clearPillarsActive() => $_clearField(11);
 }
 
+class EmpireStandingConstitutionProfile extends $pb.GeneratedMessage {
+  factory EmpireStandingConstitutionProfile({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? displayMode,
+    $core.String? activePolicyVersion,
+    $core.String? publicPredicatesJson,
+    $core.bool? highImpactUseProhibited,
+    $core.bool? crossLaneContaminationBlocked,
+    $core.String? recomputedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (displayMode != null) result.displayMode = displayMode;
+    if (activePolicyVersion != null)
+      result.activePolicyVersion = activePolicyVersion;
+    if (publicPredicatesJson != null)
+      result.publicPredicatesJson = publicPredicatesJson;
+    if (highImpactUseProhibited != null)
+      result.highImpactUseProhibited = highImpactUseProhibited;
+    if (crossLaneContaminationBlocked != null)
+      result.crossLaneContaminationBlocked = crossLaneContaminationBlocked;
+    if (recomputedAt != null) result.recomputedAt = recomputedAt;
+    return result;
+  }
+
+  EmpireStandingConstitutionProfile._();
+
+  factory EmpireStandingConstitutionProfile.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireStandingConstitutionProfile.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireStandingConstitutionProfile',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'displayMode')
+    ..aOS(4, _omitFieldNames ? '' : 'activePolicyVersion')
+    ..aOS(5, _omitFieldNames ? '' : 'publicPredicatesJson')
+    ..aOB(6, _omitFieldNames ? '' : 'highImpactUseProhibited')
+    ..aOB(7, _omitFieldNames ? '' : 'crossLaneContaminationBlocked')
+    ..aOS(8, _omitFieldNames ? '' : 'recomputedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireStandingConstitutionProfile clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireStandingConstitutionProfile copyWith(
+          void Function(EmpireStandingConstitutionProfile) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireStandingConstitutionProfile))
+          as EmpireStandingConstitutionProfile;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireStandingConstitutionProfile create() =>
+      EmpireStandingConstitutionProfile._();
+  @$core.override
+  EmpireStandingConstitutionProfile createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireStandingConstitutionProfile getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireStandingConstitutionProfile>(
+          create);
+  static EmpireStandingConstitutionProfile? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  /// full_transparent_dimensions | score_free_qualitative | private_predicates_only
+  @$pb.TagNumber(3)
+  $core.String get displayMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set displayMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisplayMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisplayMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get activePolicyVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set activePolicyVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasActivePolicyVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearActivePolicyVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get publicPredicatesJson => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set publicPredicatesJson($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPublicPredicatesJson() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPublicPredicatesJson() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get highImpactUseProhibited => $_getBF(5);
+  @$pb.TagNumber(6)
+  set highImpactUseProhibited($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasHighImpactUseProhibited() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHighImpactUseProhibited() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get crossLaneContaminationBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set crossLaneContaminationBlocked($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCrossLaneContaminationBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCrossLaneContaminationBlocked() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get recomputedAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set recomputedAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRecomputedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRecomputedAt() => $_clearField(8);
+}
+
+class EmpireSignedPillarClaim extends $pb.GeneratedMessage {
+  factory EmpireSignedPillarClaim({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourcePillar,
+    $core.String? dimensionLane,
+    $core.String? signedClaimDigest,
+    $core.String? policyVersion,
+    $core.int? weightBasisPoints,
+    $core.double? capScore,
+    $core.String? decayRule,
+    $core.String? missingnessState,
+    $core.String? counterfactualExplanation,
+    $core.bool? rawSensitiveDataRedacted,
+    $core.String? snapshotAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (dimensionLane != null) result.dimensionLane = dimensionLane;
+    if (signedClaimDigest != null) result.signedClaimDigest = signedClaimDigest;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (weightBasisPoints != null) result.weightBasisPoints = weightBasisPoints;
+    if (capScore != null) result.capScore = capScore;
+    if (decayRule != null) result.decayRule = decayRule;
+    if (missingnessState != null) result.missingnessState = missingnessState;
+    if (counterfactualExplanation != null)
+      result.counterfactualExplanation = counterfactualExplanation;
+    if (rawSensitiveDataRedacted != null)
+      result.rawSensitiveDataRedacted = rawSensitiveDataRedacted;
+    if (snapshotAt != null) result.snapshotAt = snapshotAt;
+    return result;
+  }
+
+  EmpireSignedPillarClaim._();
+
+  factory EmpireSignedPillarClaim.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireSignedPillarClaim.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireSignedPillarClaim',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(4, _omitFieldNames ? '' : 'dimensionLane')
+    ..aOS(5, _omitFieldNames ? '' : 'signedClaimDigest')
+    ..aOS(6, _omitFieldNames ? '' : 'policyVersion')
+    ..aI(7, _omitFieldNames ? '' : 'weightBasisPoints')
+    ..aD(8, _omitFieldNames ? '' : 'capScore')
+    ..aOS(9, _omitFieldNames ? '' : 'decayRule')
+    ..aOS(10, _omitFieldNames ? '' : 'missingnessState')
+    ..aOS(11, _omitFieldNames ? '' : 'counterfactualExplanation')
+    ..aOB(12, _omitFieldNames ? '' : 'rawSensitiveDataRedacted')
+    ..aOS(13, _omitFieldNames ? '' : 'snapshotAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireSignedPillarClaim clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireSignedPillarClaim copyWith(
+          void Function(EmpireSignedPillarClaim) updates) =>
+      super.copyWith((message) => updates(message as EmpireSignedPillarClaim))
+          as EmpireSignedPillarClaim;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireSignedPillarClaim create() => EmpireSignedPillarClaim._();
+  @$core.override
+  EmpireSignedPillarClaim createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireSignedPillarClaim getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireSignedPillarClaim>(create);
+  static EmpireSignedPillarClaim? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePillar() => $_clearField(3);
+
+  /// skill_achievement | community_contribution | conduct_trust | paid_entitlement
+  @$pb.TagNumber(4)
+  $core.String get dimensionLane => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set dimensionLane($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDimensionLane() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDimensionLane() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get signedClaimDigest => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set signedClaimDigest($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSignedClaimDigest() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignedClaimDigest() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get policyVersion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set policyVersion($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPolicyVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPolicyVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get weightBasisPoints => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set weightBasisPoints($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWeightBasisPoints() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWeightBasisPoints() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.double get capScore => $_getN(7);
+  @$pb.TagNumber(8)
+  set capScore($core.double value) => $_setDouble(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCapScore() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCapScore() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get decayRule => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set decayRule($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDecayRule() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDecayRule() => $_clearField(9);
+
+  /// complete_verified | partial_optional | omitted_no_penalty
+  @$pb.TagNumber(10)
+  $core.String get missingnessState => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set missingnessState($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMissingnessState() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMissingnessState() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get counterfactualExplanation => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set counterfactualExplanation($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCounterfactualExplanation() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCounterfactualExplanation() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get rawSensitiveDataRedacted => $_getBF(11);
+  @$pb.TagNumber(12)
+  set rawSensitiveDataRedacted($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRawSensitiveDataRedacted() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRawSensitiveDataRedacted() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get snapshotAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set snapshotAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasSnapshotAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearSnapshotAt() => $_clearField(13);
+}
+
+class EmpireStandingDisputeCase extends $pb.GeneratedMessage {
+  factory EmpireStandingDisputeCase({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? claimId,
+    $core.String? disputeKind,
+    $core.String? memberStatement,
+    $core.String? status,
+    $core.String? resolutionNote,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (claimId != null) result.claimId = claimId;
+    if (disputeKind != null) result.disputeKind = disputeKind;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    if (status != null) result.status = status;
+    if (resolutionNote != null) result.resolutionNote = resolutionNote;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireStandingDisputeCase._();
+
+  factory EmpireStandingDisputeCase.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireStandingDisputeCase.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireStandingDisputeCase',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'claimId')
+    ..aOS(4, _omitFieldNames ? '' : 'disputeKind')
+    ..aOS(5, _omitFieldNames ? '' : 'memberStatement')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'resolutionNote')
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireStandingDisputeCase clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireStandingDisputeCase copyWith(
+          void Function(EmpireStandingDisputeCase) updates) =>
+      super.copyWith((message) => updates(message as EmpireStandingDisputeCase))
+          as EmpireStandingDisputeCase;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireStandingDisputeCase create() => EmpireStandingDisputeCase._();
+  @$core.override
+  EmpireStandingDisputeCase createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireStandingDisputeCase getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireStandingDisputeCase>(create);
+  static EmpireStandingDisputeCase? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get claimId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set claimId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClaimId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClaimId() => $_clearField(3);
+
+  /// stale_source_claim | formula_recompute_request | privilege_loss_appeal | lane_isolation_check
+  @$pb.TagNumber(4)
+  $core.String get disputeKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set disputeKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDisputeKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDisputeKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get memberStatement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberStatement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberStatement() => $_clearField(5);
+
+  /// open_review | recomputed_resolved | upheld_with_explanation | temporary_hold
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get resolutionNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set resolutionNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasResolutionNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResolutionNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+}
+
+class GetStandingConstitutionWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetStandingConstitutionWorkbenchRequest() => create();
+
+  GetStandingConstitutionWorkbenchRequest._();
+
+  factory GetStandingConstitutionWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetStandingConstitutionWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetStandingConstitutionWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetStandingConstitutionWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetStandingConstitutionWorkbenchRequest copyWith(
+          void Function(GetStandingConstitutionWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetStandingConstitutionWorkbenchRequest))
+          as GetStandingConstitutionWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetStandingConstitutionWorkbenchRequest create() =>
+      GetStandingConstitutionWorkbenchRequest._();
+  @$core.override
+  GetStandingConstitutionWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetStandingConstitutionWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetStandingConstitutionWorkbenchRequest>(create);
+  static GetStandingConstitutionWorkbenchRequest? _defaultInstance;
+}
+
+class GetStandingConstitutionWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetStandingConstitutionWorkbenchResponse({
+    EmpireStandingConstitutionProfile? profile,
+    $core.Iterable<EmpireSignedPillarClaim>? signedClaims,
+    $core.Iterable<EmpireStandingDisputeCase>? disputeCases,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    if (signedClaims != null) result.signedClaims.addAll(signedClaims);
+    if (disputeCases != null) result.disputeCases.addAll(disputeCases);
+    return result;
+  }
+
+  GetStandingConstitutionWorkbenchResponse._();
+
+  factory GetStandingConstitutionWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetStandingConstitutionWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetStandingConstitutionWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireStandingConstitutionProfile>(
+        1, _omitFieldNames ? '' : 'profile',
+        subBuilder: EmpireStandingConstitutionProfile.create)
+    ..pPM<EmpireSignedPillarClaim>(2, _omitFieldNames ? '' : 'signedClaims',
+        subBuilder: EmpireSignedPillarClaim.create)
+    ..pPM<EmpireStandingDisputeCase>(3, _omitFieldNames ? '' : 'disputeCases',
+        subBuilder: EmpireStandingDisputeCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetStandingConstitutionWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetStandingConstitutionWorkbenchResponse copyWith(
+          void Function(GetStandingConstitutionWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetStandingConstitutionWorkbenchResponse))
+          as GetStandingConstitutionWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetStandingConstitutionWorkbenchResponse create() =>
+      GetStandingConstitutionWorkbenchResponse._();
+  @$core.override
+  GetStandingConstitutionWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetStandingConstitutionWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetStandingConstitutionWorkbenchResponse>(create);
+  static GetStandingConstitutionWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireStandingConstitutionProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(EmpireStandingConstitutionProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireStandingConstitutionProfile ensureProfile() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireSignedPillarClaim> get signedClaims => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireStandingDisputeCase> get disputeCases => $_getList(2);
+}
+
+class UpdateStandingConstitutionModeRequest extends $pb.GeneratedMessage {
+  factory UpdateStandingConstitutionModeRequest({
+    $core.String? displayMode,
+    $core.String? publicPredicatesJson,
+  }) {
+    final result = create();
+    if (displayMode != null) result.displayMode = displayMode;
+    if (publicPredicatesJson != null)
+      result.publicPredicatesJson = publicPredicatesJson;
+    return result;
+  }
+
+  UpdateStandingConstitutionModeRequest._();
+
+  factory UpdateStandingConstitutionModeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateStandingConstitutionModeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateStandingConstitutionModeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'displayMode')
+    ..aOS(2, _omitFieldNames ? '' : 'publicPredicatesJson')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateStandingConstitutionModeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateStandingConstitutionModeRequest copyWith(
+          void Function(UpdateStandingConstitutionModeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateStandingConstitutionModeRequest))
+          as UpdateStandingConstitutionModeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateStandingConstitutionModeRequest create() =>
+      UpdateStandingConstitutionModeRequest._();
+  @$core.override
+  UpdateStandingConstitutionModeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateStandingConstitutionModeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateStandingConstitutionModeRequest>(create);
+  static UpdateStandingConstitutionModeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get displayMode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set displayMode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDisplayMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDisplayMode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get publicPredicatesJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set publicPredicatesJson($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPublicPredicatesJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPublicPredicatesJson() => $_clearField(2);
+}
+
+class UpdateStandingConstitutionModeResponse extends $pb.GeneratedMessage {
+  factory UpdateStandingConstitutionModeResponse({
+    EmpireStandingConstitutionProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  UpdateStandingConstitutionModeResponse._();
+
+  factory UpdateStandingConstitutionModeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateStandingConstitutionModeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateStandingConstitutionModeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireStandingConstitutionProfile>(
+        1, _omitFieldNames ? '' : 'profile',
+        subBuilder: EmpireStandingConstitutionProfile.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateStandingConstitutionModeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateStandingConstitutionModeResponse copyWith(
+          void Function(UpdateStandingConstitutionModeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateStandingConstitutionModeResponse))
+          as UpdateStandingConstitutionModeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateStandingConstitutionModeResponse create() =>
+      UpdateStandingConstitutionModeResponse._();
+  @$core.override
+  UpdateStandingConstitutionModeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateStandingConstitutionModeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateStandingConstitutionModeResponse>(create);
+  static UpdateStandingConstitutionModeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireStandingConstitutionProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(EmpireStandingConstitutionProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireStandingConstitutionProfile ensureProfile() => $_ensure(0);
+}
+
+class FileStandingDisputeOrRecomputeRequest extends $pb.GeneratedMessage {
+  factory FileStandingDisputeOrRecomputeRequest({
+    $core.String? claimId,
+    $core.String? disputeKind,
+    $core.String? memberStatement,
+  }) {
+    final result = create();
+    if (claimId != null) result.claimId = claimId;
+    if (disputeKind != null) result.disputeKind = disputeKind;
+    if (memberStatement != null) result.memberStatement = memberStatement;
+    return result;
+  }
+
+  FileStandingDisputeOrRecomputeRequest._();
+
+  factory FileStandingDisputeOrRecomputeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileStandingDisputeOrRecomputeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileStandingDisputeOrRecomputeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'claimId')
+    ..aOS(2, _omitFieldNames ? '' : 'disputeKind')
+    ..aOS(3, _omitFieldNames ? '' : 'memberStatement')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileStandingDisputeOrRecomputeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileStandingDisputeOrRecomputeRequest copyWith(
+          void Function(FileStandingDisputeOrRecomputeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as FileStandingDisputeOrRecomputeRequest))
+          as FileStandingDisputeOrRecomputeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileStandingDisputeOrRecomputeRequest create() =>
+      FileStandingDisputeOrRecomputeRequest._();
+  @$core.override
+  FileStandingDisputeOrRecomputeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileStandingDisputeOrRecomputeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FileStandingDisputeOrRecomputeRequest>(create);
+  static FileStandingDisputeOrRecomputeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get claimId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set claimId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClaimId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClaimId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get disputeKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set disputeKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisputeKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisputeKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get memberStatement => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set memberStatement($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMemberStatement() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMemberStatement() => $_clearField(3);
+}
+
+class FileStandingDisputeOrRecomputeResponse extends $pb.GeneratedMessage {
+  factory FileStandingDisputeOrRecomputeResponse({
+    EmpireStandingDisputeCase? disputeCase,
+  }) {
+    final result = create();
+    if (disputeCase != null) result.disputeCase = disputeCase;
+    return result;
+  }
+
+  FileStandingDisputeOrRecomputeResponse._();
+
+  factory FileStandingDisputeOrRecomputeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileStandingDisputeOrRecomputeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileStandingDisputeOrRecomputeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireStandingDisputeCase>(1, _omitFieldNames ? '' : 'disputeCase',
+        subBuilder: EmpireStandingDisputeCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileStandingDisputeOrRecomputeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FileStandingDisputeOrRecomputeResponse copyWith(
+          void Function(FileStandingDisputeOrRecomputeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as FileStandingDisputeOrRecomputeResponse))
+          as FileStandingDisputeOrRecomputeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FileStandingDisputeOrRecomputeResponse create() =>
+      FileStandingDisputeOrRecomputeResponse._();
+  @$core.override
+  FileStandingDisputeOrRecomputeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FileStandingDisputeOrRecomputeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FileStandingDisputeOrRecomputeResponse>(create);
+  static FileStandingDisputeOrRecomputeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireStandingDisputeCase get disputeCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set disputeCase(EmpireStandingDisputeCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDisputeCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDisputeCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireStandingDisputeCase ensureDisputeCase() => $_ensure(0);
+}
+
+class AdminListStandingConstitutionAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListStandingConstitutionAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListStandingConstitutionAuditRequest._();
+
+  factory AdminListStandingConstitutionAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListStandingConstitutionAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListStandingConstitutionAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListStandingConstitutionAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListStandingConstitutionAuditRequest copyWith(
+          void Function(AdminListStandingConstitutionAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListStandingConstitutionAuditRequest))
+          as AdminListStandingConstitutionAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListStandingConstitutionAuditRequest create() =>
+      AdminListStandingConstitutionAuditRequest._();
+  @$core.override
+  AdminListStandingConstitutionAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListStandingConstitutionAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListStandingConstitutionAuditRequest>(create);
+  static AdminListStandingConstitutionAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListStandingConstitutionAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListStandingConstitutionAuditResponse({
+    $core.Iterable<EmpireStandingConstitutionProfile>? profiles,
+    $core.Iterable<EmpireSignedPillarClaim>? signedClaims,
+    $core.Iterable<EmpireStandingDisputeCase>? disputeCases,
+  }) {
+    final result = create();
+    if (profiles != null) result.profiles.addAll(profiles);
+    if (signedClaims != null) result.signedClaims.addAll(signedClaims);
+    if (disputeCases != null) result.disputeCases.addAll(disputeCases);
+    return result;
+  }
+
+  AdminListStandingConstitutionAuditResponse._();
+
+  factory AdminListStandingConstitutionAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListStandingConstitutionAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListStandingConstitutionAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireStandingConstitutionProfile>(
+        1, _omitFieldNames ? '' : 'profiles',
+        subBuilder: EmpireStandingConstitutionProfile.create)
+    ..pPM<EmpireSignedPillarClaim>(2, _omitFieldNames ? '' : 'signedClaims',
+        subBuilder: EmpireSignedPillarClaim.create)
+    ..pPM<EmpireStandingDisputeCase>(3, _omitFieldNames ? '' : 'disputeCases',
+        subBuilder: EmpireStandingDisputeCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListStandingConstitutionAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListStandingConstitutionAuditResponse copyWith(
+          void Function(AdminListStandingConstitutionAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListStandingConstitutionAuditResponse))
+          as AdminListStandingConstitutionAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListStandingConstitutionAuditResponse create() =>
+      AdminListStandingConstitutionAuditResponse._();
+  @$core.override
+  AdminListStandingConstitutionAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListStandingConstitutionAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListStandingConstitutionAuditResponse>(create);
+  static AdminListStandingConstitutionAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireStandingConstitutionProfile> get profiles => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireSignedPillarClaim> get signedClaims => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireStandingDisputeCase> get disputeCases => $_getList(2);
+}
+
+class AdminResolveStandingDisputeOrPolicyRequest extends $pb.GeneratedMessage {
+  factory AdminResolveStandingDisputeOrPolicyRequest({
+    $core.String? disputeId,
+    $core.String? status,
+    $core.String? resolutionNote,
+  }) {
+    final result = create();
+    if (disputeId != null) result.disputeId = disputeId;
+    if (status != null) result.status = status;
+    if (resolutionNote != null) result.resolutionNote = resolutionNote;
+    return result;
+  }
+
+  AdminResolveStandingDisputeOrPolicyRequest._();
+
+  factory AdminResolveStandingDisputeOrPolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveStandingDisputeOrPolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminResolveStandingDisputeOrPolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'disputeId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..aOS(3, _omitFieldNames ? '' : 'resolutionNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveStandingDisputeOrPolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveStandingDisputeOrPolicyRequest copyWith(
+          void Function(AdminResolveStandingDisputeOrPolicyRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminResolveStandingDisputeOrPolicyRequest))
+          as AdminResolveStandingDisputeOrPolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveStandingDisputeOrPolicyRequest create() =>
+      AdminResolveStandingDisputeOrPolicyRequest._();
+  @$core.override
+  AdminResolveStandingDisputeOrPolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveStandingDisputeOrPolicyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveStandingDisputeOrPolicyRequest>(create);
+  static AdminResolveStandingDisputeOrPolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get disputeId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set disputeId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDisputeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDisputeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resolutionNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resolutionNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResolutionNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResolutionNote() => $_clearField(3);
+}
+
+class AdminResolveStandingDisputeOrPolicyResponse extends $pb.GeneratedMessage {
+  factory AdminResolveStandingDisputeOrPolicyResponse({
+    EmpireStandingDisputeCase? disputeCase,
+  }) {
+    final result = create();
+    if (disputeCase != null) result.disputeCase = disputeCase;
+    return result;
+  }
+
+  AdminResolveStandingDisputeOrPolicyResponse._();
+
+  factory AdminResolveStandingDisputeOrPolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveStandingDisputeOrPolicyResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminResolveStandingDisputeOrPolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireStandingDisputeCase>(1, _omitFieldNames ? '' : 'disputeCase',
+        subBuilder: EmpireStandingDisputeCase.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveStandingDisputeOrPolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveStandingDisputeOrPolicyResponse copyWith(
+          void Function(AdminResolveStandingDisputeOrPolicyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminResolveStandingDisputeOrPolicyResponse))
+          as AdminResolveStandingDisputeOrPolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveStandingDisputeOrPolicyResponse create() =>
+      AdminResolveStandingDisputeOrPolicyResponse._();
+  @$core.override
+  AdminResolveStandingDisputeOrPolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveStandingDisputeOrPolicyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveStandingDisputeOrPolicyResponse>(create);
+  static AdminResolveStandingDisputeOrPolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireStandingDisputeCase get disputeCase => $_getN(0);
+  @$pb.TagNumber(1)
+  set disputeCase(EmpireStandingDisputeCase value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDisputeCase() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDisputeCase() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireStandingDisputeCase ensureDisputeCase() => $_ensure(0);
+}
+
+class EmpireTodayCommandCard extends $pb.GeneratedMessage {
+  factory EmpireTodayCommandCard({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourcePillar,
+    $core.String? cardCategory,
+    $core.String? title,
+    $core.String? purposeSummary,
+    $core.String? consequenceNote,
+    $core.String? effortEstimate,
+    $core.String? deepLinkRoute,
+    $core.String? disposition,
+    $core.bool? sourceOnline,
+    $core.int? retrievalAgeSeconds,
+    $core.bool? privateContentCopied,
+    $core.String? outcomeReceiptHash,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (cardCategory != null) result.cardCategory = cardCategory;
+    if (title != null) result.title = title;
+    if (purposeSummary != null) result.purposeSummary = purposeSummary;
+    if (consequenceNote != null) result.consequenceNote = consequenceNote;
+    if (effortEstimate != null) result.effortEstimate = effortEstimate;
+    if (deepLinkRoute != null) result.deepLinkRoute = deepLinkRoute;
+    if (disposition != null) result.disposition = disposition;
+    if (sourceOnline != null) result.sourceOnline = sourceOnline;
+    if (retrievalAgeSeconds != null)
+      result.retrievalAgeSeconds = retrievalAgeSeconds;
+    if (privateContentCopied != null)
+      result.privateContentCopied = privateContentCopied;
+    if (outcomeReceiptHash != null)
+      result.outcomeReceiptHash = outcomeReceiptHash;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireTodayCommandCard._();
+
+  factory EmpireTodayCommandCard.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireTodayCommandCard.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireTodayCommandCard',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(4, _omitFieldNames ? '' : 'cardCategory')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'purposeSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'consequenceNote')
+    ..aOS(8, _omitFieldNames ? '' : 'effortEstimate')
+    ..aOS(9, _omitFieldNames ? '' : 'deepLinkRoute')
+    ..aOS(10, _omitFieldNames ? '' : 'disposition')
+    ..aOB(11, _omitFieldNames ? '' : 'sourceOnline')
+    ..aI(12, _omitFieldNames ? '' : 'retrievalAgeSeconds')
+    ..aOB(13, _omitFieldNames ? '' : 'privateContentCopied')
+    ..aOS(14, _omitFieldNames ? '' : 'outcomeReceiptHash')
+    ..aOS(15, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireTodayCommandCard clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireTodayCommandCard copyWith(
+          void Function(EmpireTodayCommandCard) updates) =>
+      super.copyWith((message) => updates(message as EmpireTodayCommandCard))
+          as EmpireTodayCommandCard;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireTodayCommandCard create() => EmpireTodayCommandCard._();
+  @$core.override
+  EmpireTodayCommandCard createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireTodayCommandCard getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireTodayCommandCard>(create);
+  static EmpireTodayCommandCard? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePillar() => $_clearField(3);
+
+  /// urgent_safety | expiring_grant | commitment_due | staff_reply | cross_pillar_opportunity
+  @$pb.TagNumber(4)
+  $core.String get cardCategory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cardCategory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCardCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCardCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get purposeSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set purposeSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPurposeSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPurposeSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get consequenceNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set consequenceNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConsequenceNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConsequenceNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get effortEstimate => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set effortEstimate($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEffortEstimate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEffortEstimate() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get deepLinkRoute => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set deepLinkRoute($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDeepLinkRoute() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDeepLinkRoute() => $_clearField(9);
+
+  /// active_ready | snoozed | delegated | dismissed | do_not_suggest | completed_with_receipt
+  @$pb.TagNumber(10)
+  $core.String get disposition => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set disposition($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDisposition() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDisposition() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get sourceOnline => $_getBF(10);
+  @$pb.TagNumber(11)
+  set sourceOnline($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasSourceOnline() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearSourceOnline() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.int get retrievalAgeSeconds => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set retrievalAgeSeconds($core.int value) => $_setSignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRetrievalAgeSeconds() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRetrievalAgeSeconds() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get privateContentCopied => $_getBF(12);
+  @$pb.TagNumber(13)
+  set privateContentCopied($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPrivateContentCopied() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPrivateContentCopied() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get outcomeReceiptHash => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set outcomeReceiptHash($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasOutcomeReceiptHash() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearOutcomeReceiptHash() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get updatedAt => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set updatedAt($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasUpdatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdatedAt() => $_clearField(15);
+}
+
+class EmpireCrossPillarConflictItem extends $pb.GeneratedMessage {
+  factory EmpireCrossPillarConflictItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? primaryPillar,
+    $core.String? secondaryPillar,
+    $core.String? entityKind,
+    $core.String? conflictSummary,
+    $core.String? resolutionState,
+    $core.String? resolvedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (primaryPillar != null) result.primaryPillar = primaryPillar;
+    if (secondaryPillar != null) result.secondaryPillar = secondaryPillar;
+    if (entityKind != null) result.entityKind = entityKind;
+    if (conflictSummary != null) result.conflictSummary = conflictSummary;
+    if (resolutionState != null) result.resolutionState = resolutionState;
+    if (resolvedAt != null) result.resolvedAt = resolvedAt;
+    return result;
+  }
+
+  EmpireCrossPillarConflictItem._();
+
+  factory EmpireCrossPillarConflictItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCrossPillarConflictItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCrossPillarConflictItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'primaryPillar')
+    ..aOS(4, _omitFieldNames ? '' : 'secondaryPillar')
+    ..aOS(5, _omitFieldNames ? '' : 'entityKind')
+    ..aOS(6, _omitFieldNames ? '' : 'conflictSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'resolutionState')
+    ..aOS(8, _omitFieldNames ? '' : 'resolvedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCrossPillarConflictItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCrossPillarConflictItem copyWith(
+          void Function(EmpireCrossPillarConflictItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireCrossPillarConflictItem))
+          as EmpireCrossPillarConflictItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCrossPillarConflictItem create() =>
+      EmpireCrossPillarConflictItem._();
+  @$core.override
+  EmpireCrossPillarConflictItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCrossPillarConflictItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCrossPillarConflictItem>(create);
+  static EmpireCrossPillarConflictItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get primaryPillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set primaryPillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrimaryPillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrimaryPillar() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get secondaryPillar => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set secondaryPillar($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSecondaryPillar() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSecondaryPillar() => $_clearField(4);
+
+  /// trip_itinerary | property_obligation | training_health_plan | document_grant
+  @$pb.TagNumber(5)
+  $core.String get entityKind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set entityKind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEntityKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEntityKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get conflictSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set conflictSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasConflictSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConflictSummary() => $_clearField(6);
+
+  /// needs_confirmation | merged_canonical | kept_separate
+  @$pb.TagNumber(7)
+  $core.String get resolutionState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set resolutionState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasResolutionState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResolutionState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get resolvedAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set resolvedAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolvedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolvedAt() => $_clearField(8);
+}
+
+class EmpireTodayModePreference extends $pb.GeneratedMessage {
+  factory EmpireTodayModePreference({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? operatingMode,
+    $core.bool? emptyStateCelebrated,
+    $core.bool? staleActionsGuarded,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (operatingMode != null) result.operatingMode = operatingMode;
+    if (emptyStateCelebrated != null)
+      result.emptyStateCelebrated = emptyStateCelebrated;
+    if (staleActionsGuarded != null)
+      result.staleActionsGuarded = staleActionsGuarded;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireTodayModePreference._();
+
+  factory EmpireTodayModePreference.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireTodayModePreference.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireTodayModePreference',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'operatingMode')
+    ..aOB(4, _omitFieldNames ? '' : 'emptyStateCelebrated')
+    ..aOB(5, _omitFieldNames ? '' : 'staleActionsGuarded')
+    ..aOS(6, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireTodayModePreference clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireTodayModePreference copyWith(
+          void Function(EmpireTodayModePreference) updates) =>
+      super.copyWith((message) => updates(message as EmpireTodayModePreference))
+          as EmpireTodayModePreference;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireTodayModePreference create() => EmpireTodayModePreference._();
+  @$core.override
+  EmpireTodayModePreference createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireTodayModePreference getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireTodayModePreference>(create);
+  static EmpireTodayModePreference? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  /// morning_brief | weekly_review | travel_focus | family_stewardship | quiet_minimal
+  @$pb.TagNumber(3)
+  $core.String get operatingMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operatingMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperatingMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperatingMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get emptyStateCelebrated => $_getBF(3);
+  @$pb.TagNumber(4)
+  set emptyStateCelebrated($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEmptyStateCelebrated() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmptyStateCelebrated() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get staleActionsGuarded => $_getBF(4);
+  @$pb.TagNumber(5)
+  set staleActionsGuarded($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStaleActionsGuarded() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStaleActionsGuarded() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get updatedAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set updatedAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasUpdatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUpdatedAt() => $_clearField(6);
+}
+
+class GetTwelvePillarTodayWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetTwelvePillarTodayWorkbenchRequest() => create();
+
+  GetTwelvePillarTodayWorkbenchRequest._();
+
+  factory GetTwelvePillarTodayWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTwelvePillarTodayWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTwelvePillarTodayWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTwelvePillarTodayWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTwelvePillarTodayWorkbenchRequest copyWith(
+          void Function(GetTwelvePillarTodayWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTwelvePillarTodayWorkbenchRequest))
+          as GetTwelvePillarTodayWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTwelvePillarTodayWorkbenchRequest create() =>
+      GetTwelvePillarTodayWorkbenchRequest._();
+  @$core.override
+  GetTwelvePillarTodayWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTwelvePillarTodayWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTwelvePillarTodayWorkbenchRequest>(create);
+  static GetTwelvePillarTodayWorkbenchRequest? _defaultInstance;
+}
+
+class GetTwelvePillarTodayWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetTwelvePillarTodayWorkbenchResponse({
+    EmpireTodayModePreference? modePreference,
+    $core.Iterable<EmpireTodayCommandCard>? commandCards,
+    $core.Iterable<EmpireCrossPillarConflictItem>? conflictItems,
+  }) {
+    final result = create();
+    if (modePreference != null) result.modePreference = modePreference;
+    if (commandCards != null) result.commandCards.addAll(commandCards);
+    if (conflictItems != null) result.conflictItems.addAll(conflictItems);
+    return result;
+  }
+
+  GetTwelvePillarTodayWorkbenchResponse._();
+
+  factory GetTwelvePillarTodayWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTwelvePillarTodayWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTwelvePillarTodayWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireTodayModePreference>(1, _omitFieldNames ? '' : 'modePreference',
+        subBuilder: EmpireTodayModePreference.create)
+    ..pPM<EmpireTodayCommandCard>(2, _omitFieldNames ? '' : 'commandCards',
+        subBuilder: EmpireTodayCommandCard.create)
+    ..pPM<EmpireCrossPillarConflictItem>(
+        3, _omitFieldNames ? '' : 'conflictItems',
+        subBuilder: EmpireCrossPillarConflictItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTwelvePillarTodayWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTwelvePillarTodayWorkbenchResponse copyWith(
+          void Function(GetTwelvePillarTodayWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetTwelvePillarTodayWorkbenchResponse))
+          as GetTwelvePillarTodayWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTwelvePillarTodayWorkbenchResponse create() =>
+      GetTwelvePillarTodayWorkbenchResponse._();
+  @$core.override
+  GetTwelvePillarTodayWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetTwelvePillarTodayWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTwelvePillarTodayWorkbenchResponse>(create);
+  static GetTwelvePillarTodayWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireTodayModePreference get modePreference => $_getN(0);
+  @$pb.TagNumber(1)
+  set modePreference(EmpireTodayModePreference value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModePreference() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModePreference() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireTodayModePreference ensureModePreference() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireTodayCommandCard> get commandCards => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireCrossPillarConflictItem> get conflictItems => $_getList(2);
+}
+
+class UpdateTodayCardDispositionRequest extends $pb.GeneratedMessage {
+  factory UpdateTodayCardDispositionRequest({
+    $core.String? cardId,
+    $core.String? disposition,
+    $core.String? outcomeReceiptHash,
+  }) {
+    final result = create();
+    if (cardId != null) result.cardId = cardId;
+    if (disposition != null) result.disposition = disposition;
+    if (outcomeReceiptHash != null)
+      result.outcomeReceiptHash = outcomeReceiptHash;
+    return result;
+  }
+
+  UpdateTodayCardDispositionRequest._();
+
+  factory UpdateTodayCardDispositionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateTodayCardDispositionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateTodayCardDispositionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cardId')
+    ..aOS(2, _omitFieldNames ? '' : 'disposition')
+    ..aOS(3, _omitFieldNames ? '' : 'outcomeReceiptHash')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayCardDispositionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayCardDispositionRequest copyWith(
+          void Function(UpdateTodayCardDispositionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateTodayCardDispositionRequest))
+          as UpdateTodayCardDispositionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayCardDispositionRequest create() =>
+      UpdateTodayCardDispositionRequest._();
+  @$core.override
+  UpdateTodayCardDispositionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayCardDispositionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateTodayCardDispositionRequest>(
+          create);
+  static UpdateTodayCardDispositionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cardId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cardId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCardId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCardId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get disposition => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set disposition($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisposition() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisposition() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get outcomeReceiptHash => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set outcomeReceiptHash($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOutcomeReceiptHash() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOutcomeReceiptHash() => $_clearField(3);
+}
+
+class UpdateTodayCardDispositionResponse extends $pb.GeneratedMessage {
+  factory UpdateTodayCardDispositionResponse({
+    EmpireTodayCommandCard? card,
+  }) {
+    final result = create();
+    if (card != null) result.card = card;
+    return result;
+  }
+
+  UpdateTodayCardDispositionResponse._();
+
+  factory UpdateTodayCardDispositionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateTodayCardDispositionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateTodayCardDispositionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireTodayCommandCard>(1, _omitFieldNames ? '' : 'card',
+        subBuilder: EmpireTodayCommandCard.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayCardDispositionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayCardDispositionResponse copyWith(
+          void Function(UpdateTodayCardDispositionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateTodayCardDispositionResponse))
+          as UpdateTodayCardDispositionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayCardDispositionResponse create() =>
+      UpdateTodayCardDispositionResponse._();
+  @$core.override
+  UpdateTodayCardDispositionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayCardDispositionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateTodayCardDispositionResponse>(
+          create);
+  static UpdateTodayCardDispositionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireTodayCommandCard get card => $_getN(0);
+  @$pb.TagNumber(1)
+  set card(EmpireTodayCommandCard value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCard() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCard() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireTodayCommandCard ensureCard() => $_ensure(0);
+}
+
+class ResolveCrossPillarConflictRequest extends $pb.GeneratedMessage {
+  factory ResolveCrossPillarConflictRequest({
+    $core.String? conflictId,
+    $core.String? resolutionState,
+  }) {
+    final result = create();
+    if (conflictId != null) result.conflictId = conflictId;
+    if (resolutionState != null) result.resolutionState = resolutionState;
+    return result;
+  }
+
+  ResolveCrossPillarConflictRequest._();
+
+  factory ResolveCrossPillarConflictRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveCrossPillarConflictRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveCrossPillarConflictRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'conflictId')
+    ..aOS(2, _omitFieldNames ? '' : 'resolutionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveCrossPillarConflictRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveCrossPillarConflictRequest copyWith(
+          void Function(ResolveCrossPillarConflictRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveCrossPillarConflictRequest))
+          as ResolveCrossPillarConflictRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveCrossPillarConflictRequest create() =>
+      ResolveCrossPillarConflictRequest._();
+  @$core.override
+  ResolveCrossPillarConflictRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveCrossPillarConflictRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveCrossPillarConflictRequest>(
+          create);
+  static ResolveCrossPillarConflictRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get conflictId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set conflictId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflictId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflictId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resolutionState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resolutionState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasResolutionState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResolutionState() => $_clearField(2);
+}
+
+class ResolveCrossPillarConflictResponse extends $pb.GeneratedMessage {
+  factory ResolveCrossPillarConflictResponse({
+    EmpireCrossPillarConflictItem? conflictItem,
+  }) {
+    final result = create();
+    if (conflictItem != null) result.conflictItem = conflictItem;
+    return result;
+  }
+
+  ResolveCrossPillarConflictResponse._();
+
+  factory ResolveCrossPillarConflictResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResolveCrossPillarConflictResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResolveCrossPillarConflictResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCrossPillarConflictItem>(
+        1, _omitFieldNames ? '' : 'conflictItem',
+        subBuilder: EmpireCrossPillarConflictItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveCrossPillarConflictResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResolveCrossPillarConflictResponse copyWith(
+          void Function(ResolveCrossPillarConflictResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ResolveCrossPillarConflictResponse))
+          as ResolveCrossPillarConflictResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResolveCrossPillarConflictResponse create() =>
+      ResolveCrossPillarConflictResponse._();
+  @$core.override
+  ResolveCrossPillarConflictResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResolveCrossPillarConflictResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResolveCrossPillarConflictResponse>(
+          create);
+  static ResolveCrossPillarConflictResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCrossPillarConflictItem get conflictItem => $_getN(0);
+  @$pb.TagNumber(1)
+  set conflictItem(EmpireCrossPillarConflictItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConflictItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConflictItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCrossPillarConflictItem ensureConflictItem() => $_ensure(0);
+}
+
+class UpdateTodayOperatingModeRequest extends $pb.GeneratedMessage {
+  factory UpdateTodayOperatingModeRequest({
+    $core.String? operatingMode,
+  }) {
+    final result = create();
+    if (operatingMode != null) result.operatingMode = operatingMode;
+    return result;
+  }
+
+  UpdateTodayOperatingModeRequest._();
+
+  factory UpdateTodayOperatingModeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateTodayOperatingModeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateTodayOperatingModeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'operatingMode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayOperatingModeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayOperatingModeRequest copyWith(
+          void Function(UpdateTodayOperatingModeRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateTodayOperatingModeRequest))
+          as UpdateTodayOperatingModeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayOperatingModeRequest create() =>
+      UpdateTodayOperatingModeRequest._();
+  @$core.override
+  UpdateTodayOperatingModeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayOperatingModeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateTodayOperatingModeRequest>(
+          create);
+  static UpdateTodayOperatingModeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get operatingMode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set operatingMode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOperatingMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperatingMode() => $_clearField(1);
+}
+
+class UpdateTodayOperatingModeResponse extends $pb.GeneratedMessage {
+  factory UpdateTodayOperatingModeResponse({
+    EmpireTodayModePreference? modePreference,
+  }) {
+    final result = create();
+    if (modePreference != null) result.modePreference = modePreference;
+    return result;
+  }
+
+  UpdateTodayOperatingModeResponse._();
+
+  factory UpdateTodayOperatingModeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateTodayOperatingModeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateTodayOperatingModeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireTodayModePreference>(1, _omitFieldNames ? '' : 'modePreference',
+        subBuilder: EmpireTodayModePreference.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayOperatingModeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateTodayOperatingModeResponse copyWith(
+          void Function(UpdateTodayOperatingModeResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateTodayOperatingModeResponse))
+          as UpdateTodayOperatingModeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayOperatingModeResponse create() =>
+      UpdateTodayOperatingModeResponse._();
+  @$core.override
+  UpdateTodayOperatingModeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateTodayOperatingModeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateTodayOperatingModeResponse>(
+          create);
+  static UpdateTodayOperatingModeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireTodayModePreference get modePreference => $_getN(0);
+  @$pb.TagNumber(1)
+  set modePreference(EmpireTodayModePreference value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModePreference() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModePreference() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireTodayModePreference ensureModePreference() => $_ensure(0);
+}
+
+class AdminListTwelvePillarTodayAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListTwelvePillarTodayAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListTwelvePillarTodayAuditRequest._();
+
+  factory AdminListTwelvePillarTodayAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListTwelvePillarTodayAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListTwelvePillarTodayAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTwelvePillarTodayAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTwelvePillarTodayAuditRequest copyWith(
+          void Function(AdminListTwelvePillarTodayAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListTwelvePillarTodayAuditRequest))
+          as AdminListTwelvePillarTodayAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListTwelvePillarTodayAuditRequest create() =>
+      AdminListTwelvePillarTodayAuditRequest._();
+  @$core.override
+  AdminListTwelvePillarTodayAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListTwelvePillarTodayAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListTwelvePillarTodayAuditRequest>(create);
+  static AdminListTwelvePillarTodayAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListTwelvePillarTodayAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListTwelvePillarTodayAuditResponse({
+    $core.Iterable<EmpireTodayCommandCard>? commandCards,
+    $core.Iterable<EmpireCrossPillarConflictItem>? conflictItems,
+    $core.Iterable<EmpireTodayModePreference>? modePreferences,
+  }) {
+    final result = create();
+    if (commandCards != null) result.commandCards.addAll(commandCards);
+    if (conflictItems != null) result.conflictItems.addAll(conflictItems);
+    if (modePreferences != null) result.modePreferences.addAll(modePreferences);
+    return result;
+  }
+
+  AdminListTwelvePillarTodayAuditResponse._();
+
+  factory AdminListTwelvePillarTodayAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListTwelvePillarTodayAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListTwelvePillarTodayAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireTodayCommandCard>(1, _omitFieldNames ? '' : 'commandCards',
+        subBuilder: EmpireTodayCommandCard.create)
+    ..pPM<EmpireCrossPillarConflictItem>(
+        2, _omitFieldNames ? '' : 'conflictItems',
+        subBuilder: EmpireCrossPillarConflictItem.create)
+    ..pPM<EmpireTodayModePreference>(
+        3, _omitFieldNames ? '' : 'modePreferences',
+        subBuilder: EmpireTodayModePreference.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTwelvePillarTodayAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTwelvePillarTodayAuditResponse copyWith(
+          void Function(AdminListTwelvePillarTodayAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListTwelvePillarTodayAuditResponse))
+          as AdminListTwelvePillarTodayAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListTwelvePillarTodayAuditResponse create() =>
+      AdminListTwelvePillarTodayAuditResponse._();
+  @$core.override
+  AdminListTwelvePillarTodayAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListTwelvePillarTodayAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListTwelvePillarTodayAuditResponse>(create);
+  static AdminListTwelvePillarTodayAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireTodayCommandCard> get commandCards => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCrossPillarConflictItem> get conflictItems => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireTodayModePreference> get modePreferences => $_getList(2);
+}
+
+class AdminManageTodayContractOrOutageRequest extends $pb.GeneratedMessage {
+  factory AdminManageTodayContractOrOutageRequest({
+    $core.String? cardId,
+    $core.bool? sourceOnline,
+    $core.String? disposition,
+  }) {
+    final result = create();
+    if (cardId != null) result.cardId = cardId;
+    if (sourceOnline != null) result.sourceOnline = sourceOnline;
+    if (disposition != null) result.disposition = disposition;
+    return result;
+  }
+
+  AdminManageTodayContractOrOutageRequest._();
+
+  factory AdminManageTodayContractOrOutageRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageTodayContractOrOutageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageTodayContractOrOutageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cardId')
+    ..aOB(2, _omitFieldNames ? '' : 'sourceOnline')
+    ..aOS(3, _omitFieldNames ? '' : 'disposition')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageTodayContractOrOutageRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageTodayContractOrOutageRequest copyWith(
+          void Function(AdminManageTodayContractOrOutageRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageTodayContractOrOutageRequest))
+          as AdminManageTodayContractOrOutageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageTodayContractOrOutageRequest create() =>
+      AdminManageTodayContractOrOutageRequest._();
+  @$core.override
+  AdminManageTodayContractOrOutageRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageTodayContractOrOutageRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageTodayContractOrOutageRequest>(create);
+  static AdminManageTodayContractOrOutageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cardId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cardId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCardId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCardId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get sourceOnline => $_getBF(1);
+  @$pb.TagNumber(2)
+  set sourceOnline($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceOnline() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceOnline() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get disposition => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set disposition($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDisposition() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDisposition() => $_clearField(3);
+}
+
+class AdminManageTodayContractOrOutageResponse extends $pb.GeneratedMessage {
+  factory AdminManageTodayContractOrOutageResponse({
+    EmpireTodayCommandCard? card,
+  }) {
+    final result = create();
+    if (card != null) result.card = card;
+    return result;
+  }
+
+  AdminManageTodayContractOrOutageResponse._();
+
+  factory AdminManageTodayContractOrOutageResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageTodayContractOrOutageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageTodayContractOrOutageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireTodayCommandCard>(1, _omitFieldNames ? '' : 'card',
+        subBuilder: EmpireTodayCommandCard.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageTodayContractOrOutageResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageTodayContractOrOutageResponse copyWith(
+          void Function(AdminManageTodayContractOrOutageResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageTodayContractOrOutageResponse))
+          as AdminManageTodayContractOrOutageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageTodayContractOrOutageResponse create() =>
+      AdminManageTodayContractOrOutageResponse._();
+  @$core.override
+  AdminManageTodayContractOrOutageResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageTodayContractOrOutageResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageTodayContractOrOutageResponse>(create);
+  static AdminManageTodayContractOrOutageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireTodayCommandCard get card => $_getN(0);
+  @$pb.TagNumber(1)
+  set card(EmpireTodayCommandCard value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCard() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCard() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireTodayCommandCard ensureCard() => $_ensure(0);
+}
+
+class EmpireLifeSeasonCampaign extends $pb.GeneratedMessage {
+  factory EmpireLifeSeasonCampaign({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? campaignType,
+    $core.String? title,
+    $core.String? seasonHorizon,
+    $core.int? planVersion,
+    $core.String? replanReason,
+    $core.String? estimatedCostRange,
+    $core.bool? previousPlanPreserved,
+    $core.bool? autonomousExternalActionBlocked,
+    $core.String? status,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (campaignType != null) result.campaignType = campaignType;
+    if (title != null) result.title = title;
+    if (seasonHorizon != null) result.seasonHorizon = seasonHorizon;
+    if (planVersion != null) result.planVersion = planVersion;
+    if (replanReason != null) result.replanReason = replanReason;
+    if (estimatedCostRange != null)
+      result.estimatedCostRange = estimatedCostRange;
+    if (previousPlanPreserved != null)
+      result.previousPlanPreserved = previousPlanPreserved;
+    if (autonomousExternalActionBlocked != null)
+      result.autonomousExternalActionBlocked = autonomousExternalActionBlocked;
+    if (status != null) result.status = status;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireLifeSeasonCampaign._();
+
+  factory EmpireLifeSeasonCampaign.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireLifeSeasonCampaign.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireLifeSeasonCampaign',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'campaignType')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'seasonHorizon')
+    ..aI(6, _omitFieldNames ? '' : 'planVersion')
+    ..aOS(7, _omitFieldNames ? '' : 'replanReason')
+    ..aOS(8, _omitFieldNames ? '' : 'estimatedCostRange')
+    ..aOB(9, _omitFieldNames ? '' : 'previousPlanPreserved')
+    ..aOB(10, _omitFieldNames ? '' : 'autonomousExternalActionBlocked')
+    ..aOS(11, _omitFieldNames ? '' : 'status')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireLifeSeasonCampaign clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireLifeSeasonCampaign copyWith(
+          void Function(EmpireLifeSeasonCampaign) updates) =>
+      super.copyWith((message) => updates(message as EmpireLifeSeasonCampaign))
+          as EmpireLifeSeasonCampaign;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireLifeSeasonCampaign create() => EmpireLifeSeasonCampaign._();
+  @$core.override
+  EmpireLifeSeasonCampaign createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireLifeSeasonCampaign getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireLifeSeasonCampaign>(create);
+  static EmpireLifeSeasonCampaign? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  /// prepare_endurance_race | relocate_country | organize_family_estate | acquire_income_property | publish_research_dossier | achieve_language_fluency
+  @$pb.TagNumber(3)
+  $core.String get campaignType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set campaignType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCampaignType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCampaignType() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get seasonHorizon => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set seasonHorizon($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSeasonHorizon() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSeasonHorizon() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get planVersion => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set planVersion($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPlanVersion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPlanVersion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get replanReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set replanReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReplanReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReplanReason() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get estimatedCostRange => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set estimatedCostRange($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEstimatedCostRange() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEstimatedCostRange() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get previousPlanPreserved => $_getBF(8);
+  @$pb.TagNumber(9)
+  set previousPlanPreserved($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPreviousPlanPreserved() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPreviousPlanPreserved() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get autonomousExternalActionBlocked => $_getBF(9);
+  @$pb.TagNumber(10)
+  set autonomousExternalActionBlocked($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAutonomousExternalActionBlocked() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAutonomousExternalActionBlocked() => $_clearField(10);
+
+  /// active_campaign | replanned_active | paused | completed
+  @$pb.TagNumber(11)
+  $core.String get status => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set status($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+}
+
+class EmpireCampaignMilestone extends $pb.GeneratedMessage {
+  factory EmpireCampaignMilestone({
+    $core.String? id,
+    $core.String? campaignId,
+    $core.String? userId,
+    $core.String? pillarCode,
+    $core.String? milestoneTitle,
+    $core.String? dependencyNote,
+    $core.String? capabilityStatus,
+    $core.bool? requiresMemberApproval,
+    $core.bool? memberApproved,
+    $core.String? outcomeReceiptRef,
+    $core.String? state,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (campaignId != null) result.campaignId = campaignId;
+    if (userId != null) result.userId = userId;
+    if (pillarCode != null) result.pillarCode = pillarCode;
+    if (milestoneTitle != null) result.milestoneTitle = milestoneTitle;
+    if (dependencyNote != null) result.dependencyNote = dependencyNote;
+    if (capabilityStatus != null) result.capabilityStatus = capabilityStatus;
+    if (requiresMemberApproval != null)
+      result.requiresMemberApproval = requiresMemberApproval;
+    if (memberApproved != null) result.memberApproved = memberApproved;
+    if (outcomeReceiptRef != null) result.outcomeReceiptRef = outcomeReceiptRef;
+    if (state != null) result.state = state;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireCampaignMilestone._();
+
+  factory EmpireCampaignMilestone.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCampaignMilestone.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCampaignMilestone',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'campaignId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'pillarCode')
+    ..aOS(5, _omitFieldNames ? '' : 'milestoneTitle')
+    ..aOS(6, _omitFieldNames ? '' : 'dependencyNote')
+    ..aOS(7, _omitFieldNames ? '' : 'capabilityStatus')
+    ..aOB(8, _omitFieldNames ? '' : 'requiresMemberApproval')
+    ..aOB(9, _omitFieldNames ? '' : 'memberApproved')
+    ..aOS(10, _omitFieldNames ? '' : 'outcomeReceiptRef')
+    ..aOS(11, _omitFieldNames ? '' : 'state')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCampaignMilestone clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCampaignMilestone copyWith(
+          void Function(EmpireCampaignMilestone) updates) =>
+      super.copyWith((message) => updates(message as EmpireCampaignMilestone))
+          as EmpireCampaignMilestone;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCampaignMilestone create() => EmpireCampaignMilestone._();
+  @$core.override
+  EmpireCampaignMilestone createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCampaignMilestone getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCampaignMilestone>(create);
+  static EmpireCampaignMilestone? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get campaignId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set campaignId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCampaignId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCampaignId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get pillarCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set pillarCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPillarCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPillarCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get milestoneTitle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set milestoneTitle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMilestoneTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMilestoneTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get dependencyNote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set dependencyNote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDependencyNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDependencyNote() => $_clearField(6);
+
+  /// available_live | suggested_manual | professional_gate
+  @$pb.TagNumber(7)
+  $core.String get capabilityStatus => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set capabilityStatus($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCapabilityStatus() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCapabilityStatus() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get requiresMemberApproval => $_getBF(7);
+  @$pb.TagNumber(8)
+  set requiresMemberApproval($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRequiresMemberApproval() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRequiresMemberApproval() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get memberApproved => $_getBF(8);
+  @$pb.TagNumber(9)
+  set memberApproved($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemberApproved() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemberApproved() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get outcomeReceiptRef => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set outcomeReceiptRef($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasOutcomeReceiptRef() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOutcomeReceiptRef() => $_clearField(10);
+
+  /// pending | in_progress | completed | skipped
+  @$pb.TagNumber(11)
+  $core.String get state => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set state($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasState() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearState() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+}
+
+class EmpireCampaignReplanSnapshot extends $pb.GeneratedMessage {
+  factory EmpireCampaignReplanSnapshot({
+    $core.String? id,
+    $core.String? campaignId,
+    $core.String? userId,
+    $core.int? fromVersion,
+    $core.int? toVersion,
+    $core.String? assumptionsSummary,
+    $core.String? changeReason,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (campaignId != null) result.campaignId = campaignId;
+    if (userId != null) result.userId = userId;
+    if (fromVersion != null) result.fromVersion = fromVersion;
+    if (toVersion != null) result.toVersion = toVersion;
+    if (assumptionsSummary != null)
+      result.assumptionsSummary = assumptionsSummary;
+    if (changeReason != null) result.changeReason = changeReason;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireCampaignReplanSnapshot._();
+
+  factory EmpireCampaignReplanSnapshot.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCampaignReplanSnapshot.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCampaignReplanSnapshot',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'campaignId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aI(4, _omitFieldNames ? '' : 'fromVersion')
+    ..aI(5, _omitFieldNames ? '' : 'toVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'assumptionsSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'changeReason')
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCampaignReplanSnapshot clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCampaignReplanSnapshot copyWith(
+          void Function(EmpireCampaignReplanSnapshot) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireCampaignReplanSnapshot))
+          as EmpireCampaignReplanSnapshot;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCampaignReplanSnapshot create() =>
+      EmpireCampaignReplanSnapshot._();
+  @$core.override
+  EmpireCampaignReplanSnapshot createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCampaignReplanSnapshot getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCampaignReplanSnapshot>(create);
+  static EmpireCampaignReplanSnapshot? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get campaignId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set campaignId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCampaignId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCampaignId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get fromVersion => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set fromVersion($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFromVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFromVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get toVersion => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set toVersion($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasToVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearToVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get assumptionsSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set assumptionsSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAssumptionsSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAssumptionsSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get changeReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set changeReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasChangeReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearChangeReason() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+}
+
+class GetGoalOrchestratorWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetGoalOrchestratorWorkbenchRequest() => create();
+
+  GetGoalOrchestratorWorkbenchRequest._();
+
+  factory GetGoalOrchestratorWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetGoalOrchestratorWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetGoalOrchestratorWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetGoalOrchestratorWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetGoalOrchestratorWorkbenchRequest copyWith(
+          void Function(GetGoalOrchestratorWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetGoalOrchestratorWorkbenchRequest))
+          as GetGoalOrchestratorWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetGoalOrchestratorWorkbenchRequest create() =>
+      GetGoalOrchestratorWorkbenchRequest._();
+  @$core.override
+  GetGoalOrchestratorWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetGoalOrchestratorWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetGoalOrchestratorWorkbenchRequest>(create);
+  static GetGoalOrchestratorWorkbenchRequest? _defaultInstance;
+}
+
+class GetGoalOrchestratorWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetGoalOrchestratorWorkbenchResponse({
+    $core.Iterable<EmpireLifeSeasonCampaign>? campaigns,
+    $core.Iterable<EmpireCampaignMilestone>? milestones,
+    $core.Iterable<EmpireCampaignReplanSnapshot>? replanSnapshots,
+  }) {
+    final result = create();
+    if (campaigns != null) result.campaigns.addAll(campaigns);
+    if (milestones != null) result.milestones.addAll(milestones);
+    if (replanSnapshots != null) result.replanSnapshots.addAll(replanSnapshots);
+    return result;
+  }
+
+  GetGoalOrchestratorWorkbenchResponse._();
+
+  factory GetGoalOrchestratorWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetGoalOrchestratorWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetGoalOrchestratorWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireLifeSeasonCampaign>(1, _omitFieldNames ? '' : 'campaigns',
+        subBuilder: EmpireLifeSeasonCampaign.create)
+    ..pPM<EmpireCampaignMilestone>(2, _omitFieldNames ? '' : 'milestones',
+        subBuilder: EmpireCampaignMilestone.create)
+    ..pPM<EmpireCampaignReplanSnapshot>(
+        3, _omitFieldNames ? '' : 'replanSnapshots',
+        subBuilder: EmpireCampaignReplanSnapshot.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetGoalOrchestratorWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetGoalOrchestratorWorkbenchResponse copyWith(
+          void Function(GetGoalOrchestratorWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetGoalOrchestratorWorkbenchResponse))
+          as GetGoalOrchestratorWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetGoalOrchestratorWorkbenchResponse create() =>
+      GetGoalOrchestratorWorkbenchResponse._();
+  @$core.override
+  GetGoalOrchestratorWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetGoalOrchestratorWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetGoalOrchestratorWorkbenchResponse>(create);
+  static GetGoalOrchestratorWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireLifeSeasonCampaign> get campaigns => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCampaignMilestone> get milestones => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireCampaignReplanSnapshot> get replanSnapshots => $_getList(2);
+}
+
+class CreateOrReplanLifeSeasonCampaignRequest extends $pb.GeneratedMessage {
+  factory CreateOrReplanLifeSeasonCampaignRequest({
+    $core.String? campaignId,
+    $core.String? campaignType,
+    $core.String? title,
+    $core.String? seasonHorizon,
+    $core.String? replanReason,
+    $core.String? estimatedCostRange,
+  }) {
+    final result = create();
+    if (campaignId != null) result.campaignId = campaignId;
+    if (campaignType != null) result.campaignType = campaignType;
+    if (title != null) result.title = title;
+    if (seasonHorizon != null) result.seasonHorizon = seasonHorizon;
+    if (replanReason != null) result.replanReason = replanReason;
+    if (estimatedCostRange != null)
+      result.estimatedCostRange = estimatedCostRange;
+    return result;
+  }
+
+  CreateOrReplanLifeSeasonCampaignRequest._();
+
+  factory CreateOrReplanLifeSeasonCampaignRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrReplanLifeSeasonCampaignRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrReplanLifeSeasonCampaignRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'campaignId')
+    ..aOS(2, _omitFieldNames ? '' : 'campaignType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'seasonHorizon')
+    ..aOS(5, _omitFieldNames ? '' : 'replanReason')
+    ..aOS(6, _omitFieldNames ? '' : 'estimatedCostRange')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrReplanLifeSeasonCampaignRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrReplanLifeSeasonCampaignRequest copyWith(
+          void Function(CreateOrReplanLifeSeasonCampaignRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrReplanLifeSeasonCampaignRequest))
+          as CreateOrReplanLifeSeasonCampaignRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrReplanLifeSeasonCampaignRequest create() =>
+      CreateOrReplanLifeSeasonCampaignRequest._();
+  @$core.override
+  CreateOrReplanLifeSeasonCampaignRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrReplanLifeSeasonCampaignRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrReplanLifeSeasonCampaignRequest>(create);
+  static CreateOrReplanLifeSeasonCampaignRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get campaignId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set campaignId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCampaignId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCampaignId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get campaignType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set campaignType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCampaignType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCampaignType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get seasonHorizon => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set seasonHorizon($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSeasonHorizon() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSeasonHorizon() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get replanReason => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set replanReason($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReplanReason() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReplanReason() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get estimatedCostRange => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set estimatedCostRange($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEstimatedCostRange() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEstimatedCostRange() => $_clearField(6);
+}
+
+class CreateOrReplanLifeSeasonCampaignResponse extends $pb.GeneratedMessage {
+  factory CreateOrReplanLifeSeasonCampaignResponse({
+    EmpireLifeSeasonCampaign? campaign,
+    EmpireCampaignReplanSnapshot? replanSnapshot,
+  }) {
+    final result = create();
+    if (campaign != null) result.campaign = campaign;
+    if (replanSnapshot != null) result.replanSnapshot = replanSnapshot;
+    return result;
+  }
+
+  CreateOrReplanLifeSeasonCampaignResponse._();
+
+  factory CreateOrReplanLifeSeasonCampaignResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrReplanLifeSeasonCampaignResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrReplanLifeSeasonCampaignResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireLifeSeasonCampaign>(1, _omitFieldNames ? '' : 'campaign',
+        subBuilder: EmpireLifeSeasonCampaign.create)
+    ..aOM<EmpireCampaignReplanSnapshot>(
+        2, _omitFieldNames ? '' : 'replanSnapshot',
+        subBuilder: EmpireCampaignReplanSnapshot.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrReplanLifeSeasonCampaignResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrReplanLifeSeasonCampaignResponse copyWith(
+          void Function(CreateOrReplanLifeSeasonCampaignResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrReplanLifeSeasonCampaignResponse))
+          as CreateOrReplanLifeSeasonCampaignResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrReplanLifeSeasonCampaignResponse create() =>
+      CreateOrReplanLifeSeasonCampaignResponse._();
+  @$core.override
+  CreateOrReplanLifeSeasonCampaignResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrReplanLifeSeasonCampaignResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrReplanLifeSeasonCampaignResponse>(create);
+  static CreateOrReplanLifeSeasonCampaignResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireLifeSeasonCampaign get campaign => $_getN(0);
+  @$pb.TagNumber(1)
+  set campaign(EmpireLifeSeasonCampaign value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCampaign() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCampaign() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireLifeSeasonCampaign ensureCampaign() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireCampaignReplanSnapshot get replanSnapshot => $_getN(1);
+  @$pb.TagNumber(2)
+  set replanSnapshot(EmpireCampaignReplanSnapshot value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReplanSnapshot() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReplanSnapshot() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireCampaignReplanSnapshot ensureReplanSnapshot() => $_ensure(1);
+}
+
+class ApproveOrCompleteCampaignMilestoneRequest extends $pb.GeneratedMessage {
+  factory ApproveOrCompleteCampaignMilestoneRequest({
+    $core.String? milestoneId,
+    $core.bool? memberApproved,
+    $core.String? state,
+    $core.String? outcomeReceiptRef,
+  }) {
+    final result = create();
+    if (milestoneId != null) result.milestoneId = milestoneId;
+    if (memberApproved != null) result.memberApproved = memberApproved;
+    if (state != null) result.state = state;
+    if (outcomeReceiptRef != null) result.outcomeReceiptRef = outcomeReceiptRef;
+    return result;
+  }
+
+  ApproveOrCompleteCampaignMilestoneRequest._();
+
+  factory ApproveOrCompleteCampaignMilestoneRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrCompleteCampaignMilestoneRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrCompleteCampaignMilestoneRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'milestoneId')
+    ..aOB(2, _omitFieldNames ? '' : 'memberApproved')
+    ..aOS(3, _omitFieldNames ? '' : 'state')
+    ..aOS(4, _omitFieldNames ? '' : 'outcomeReceiptRef')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrCompleteCampaignMilestoneRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrCompleteCampaignMilestoneRequest copyWith(
+          void Function(ApproveOrCompleteCampaignMilestoneRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrCompleteCampaignMilestoneRequest))
+          as ApproveOrCompleteCampaignMilestoneRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrCompleteCampaignMilestoneRequest create() =>
+      ApproveOrCompleteCampaignMilestoneRequest._();
+  @$core.override
+  ApproveOrCompleteCampaignMilestoneRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrCompleteCampaignMilestoneRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrCompleteCampaignMilestoneRequest>(create);
+  static ApproveOrCompleteCampaignMilestoneRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get milestoneId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set milestoneId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestoneId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestoneId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get memberApproved => $_getBF(1);
+  @$pb.TagNumber(2)
+  set memberApproved($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMemberApproved() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMemberApproved() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get state => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set state($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get outcomeReceiptRef => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set outcomeReceiptRef($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOutcomeReceiptRef() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOutcomeReceiptRef() => $_clearField(4);
+}
+
+class ApproveOrCompleteCampaignMilestoneResponse extends $pb.GeneratedMessage {
+  factory ApproveOrCompleteCampaignMilestoneResponse({
+    EmpireCampaignMilestone? milestone,
+  }) {
+    final result = create();
+    if (milestone != null) result.milestone = milestone;
+    return result;
+  }
+
+  ApproveOrCompleteCampaignMilestoneResponse._();
+
+  factory ApproveOrCompleteCampaignMilestoneResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrCompleteCampaignMilestoneResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrCompleteCampaignMilestoneResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCampaignMilestone>(1, _omitFieldNames ? '' : 'milestone',
+        subBuilder: EmpireCampaignMilestone.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrCompleteCampaignMilestoneResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrCompleteCampaignMilestoneResponse copyWith(
+          void Function(ApproveOrCompleteCampaignMilestoneResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrCompleteCampaignMilestoneResponse))
+          as ApproveOrCompleteCampaignMilestoneResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrCompleteCampaignMilestoneResponse create() =>
+      ApproveOrCompleteCampaignMilestoneResponse._();
+  @$core.override
+  ApproveOrCompleteCampaignMilestoneResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrCompleteCampaignMilestoneResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrCompleteCampaignMilestoneResponse>(create);
+  static ApproveOrCompleteCampaignMilestoneResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCampaignMilestone get milestone => $_getN(0);
+  @$pb.TagNumber(1)
+  set milestone(EmpireCampaignMilestone value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestone() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestone() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCampaignMilestone ensureMilestone() => $_ensure(0);
+}
+
+class AdminListGoalOrchestratorAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListGoalOrchestratorAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListGoalOrchestratorAuditRequest._();
+
+  factory AdminListGoalOrchestratorAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListGoalOrchestratorAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListGoalOrchestratorAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListGoalOrchestratorAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListGoalOrchestratorAuditRequest copyWith(
+          void Function(AdminListGoalOrchestratorAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListGoalOrchestratorAuditRequest))
+          as AdminListGoalOrchestratorAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListGoalOrchestratorAuditRequest create() =>
+      AdminListGoalOrchestratorAuditRequest._();
+  @$core.override
+  AdminListGoalOrchestratorAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListGoalOrchestratorAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListGoalOrchestratorAuditRequest>(create);
+  static AdminListGoalOrchestratorAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListGoalOrchestratorAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListGoalOrchestratorAuditResponse({
+    $core.Iterable<EmpireLifeSeasonCampaign>? campaigns,
+    $core.Iterable<EmpireCampaignMilestone>? milestones,
+    $core.Iterable<EmpireCampaignReplanSnapshot>? replanSnapshots,
+  }) {
+    final result = create();
+    if (campaigns != null) result.campaigns.addAll(campaigns);
+    if (milestones != null) result.milestones.addAll(milestones);
+    if (replanSnapshots != null) result.replanSnapshots.addAll(replanSnapshots);
+    return result;
+  }
+
+  AdminListGoalOrchestratorAuditResponse._();
+
+  factory AdminListGoalOrchestratorAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListGoalOrchestratorAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListGoalOrchestratorAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireLifeSeasonCampaign>(1, _omitFieldNames ? '' : 'campaigns',
+        subBuilder: EmpireLifeSeasonCampaign.create)
+    ..pPM<EmpireCampaignMilestone>(2, _omitFieldNames ? '' : 'milestones',
+        subBuilder: EmpireCampaignMilestone.create)
+    ..pPM<EmpireCampaignReplanSnapshot>(
+        3, _omitFieldNames ? '' : 'replanSnapshots',
+        subBuilder: EmpireCampaignReplanSnapshot.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListGoalOrchestratorAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListGoalOrchestratorAuditResponse copyWith(
+          void Function(AdminListGoalOrchestratorAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListGoalOrchestratorAuditResponse))
+          as AdminListGoalOrchestratorAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListGoalOrchestratorAuditResponse create() =>
+      AdminListGoalOrchestratorAuditResponse._();
+  @$core.override
+  AdminListGoalOrchestratorAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListGoalOrchestratorAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListGoalOrchestratorAuditResponse>(create);
+  static AdminListGoalOrchestratorAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireLifeSeasonCampaign> get campaigns => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCampaignMilestone> get milestones => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireCampaignReplanSnapshot> get replanSnapshots => $_getList(2);
+}
+
+class AdminModerateCampaignCapabilityOrHandoffRequest
+    extends $pb.GeneratedMessage {
+  factory AdminModerateCampaignCapabilityOrHandoffRequest({
+    $core.String? milestoneId,
+    $core.String? capabilityStatus,
+    $core.String? state,
+  }) {
+    final result = create();
+    if (milestoneId != null) result.milestoneId = milestoneId;
+    if (capabilityStatus != null) result.capabilityStatus = capabilityStatus;
+    if (state != null) result.state = state;
+    return result;
+  }
+
+  AdminModerateCampaignCapabilityOrHandoffRequest._();
+
+  factory AdminModerateCampaignCapabilityOrHandoffRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCampaignCapabilityOrHandoffRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateCampaignCapabilityOrHandoffRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'milestoneId')
+    ..aOS(2, _omitFieldNames ? '' : 'capabilityStatus')
+    ..aOS(3, _omitFieldNames ? '' : 'state')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCampaignCapabilityOrHandoffRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCampaignCapabilityOrHandoffRequest copyWith(
+          void Function(AdminModerateCampaignCapabilityOrHandoffRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateCampaignCapabilityOrHandoffRequest))
+          as AdminModerateCampaignCapabilityOrHandoffRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCampaignCapabilityOrHandoffRequest create() =>
+      AdminModerateCampaignCapabilityOrHandoffRequest._();
+  @$core.override
+  AdminModerateCampaignCapabilityOrHandoffRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCampaignCapabilityOrHandoffRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCampaignCapabilityOrHandoffRequest>(create);
+  static AdminModerateCampaignCapabilityOrHandoffRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get milestoneId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set milestoneId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestoneId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestoneId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get capabilityStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set capabilityStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCapabilityStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCapabilityStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get state => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set state($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => $_clearField(3);
+}
+
+class AdminModerateCampaignCapabilityOrHandoffResponse
+    extends $pb.GeneratedMessage {
+  factory AdminModerateCampaignCapabilityOrHandoffResponse({
+    EmpireCampaignMilestone? milestone,
+  }) {
+    final result = create();
+    if (milestone != null) result.milestone = milestone;
+    return result;
+  }
+
+  AdminModerateCampaignCapabilityOrHandoffResponse._();
+
+  factory AdminModerateCampaignCapabilityOrHandoffResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCampaignCapabilityOrHandoffResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateCampaignCapabilityOrHandoffResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCampaignMilestone>(1, _omitFieldNames ? '' : 'milestone',
+        subBuilder: EmpireCampaignMilestone.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCampaignCapabilityOrHandoffResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCampaignCapabilityOrHandoffResponse copyWith(
+          void Function(AdminModerateCampaignCapabilityOrHandoffResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateCampaignCapabilityOrHandoffResponse))
+          as AdminModerateCampaignCapabilityOrHandoffResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCampaignCapabilityOrHandoffResponse create() =>
+      AdminModerateCampaignCapabilityOrHandoffResponse._();
+  @$core.override
+  AdminModerateCampaignCapabilityOrHandoffResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCampaignCapabilityOrHandoffResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCampaignCapabilityOrHandoffResponse>(create);
+  static AdminModerateCampaignCapabilityOrHandoffResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCampaignMilestone get milestone => $_getN(0);
+  @$pb.TagNumber(1)
+  set milestone(EmpireCampaignMilestone value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMilestone() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMilestone() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCampaignMilestone ensureMilestone() => $_ensure(0);
+}
+
+class EmpirePortableCredential extends $pb.GeneratedMessage {
+  factory EmpirePortableCredential({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourcePillar,
+    $core.String? credentialKind,
+    $core.String? title,
+    $core.String? evidenceClass,
+    $core.String? issuerKeyId,
+    $core.String? policyVersion,
+    $core.String? usageMode,
+    $core.bool? verifierRetentionPermitted,
+    $core.int? offlineFreshnessWindowHours,
+    $core.String? revocationState,
+    $core.String? w3cVcJson,
+    $core.String? issuedAt,
+    $core.String? expiresAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (credentialKind != null) result.credentialKind = credentialKind;
+    if (title != null) result.title = title;
+    if (evidenceClass != null) result.evidenceClass = evidenceClass;
+    if (issuerKeyId != null) result.issuerKeyId = issuerKeyId;
+    if (policyVersion != null) result.policyVersion = policyVersion;
+    if (usageMode != null) result.usageMode = usageMode;
+    if (verifierRetentionPermitted != null)
+      result.verifierRetentionPermitted = verifierRetentionPermitted;
+    if (offlineFreshnessWindowHours != null)
+      result.offlineFreshnessWindowHours = offlineFreshnessWindowHours;
+    if (revocationState != null) result.revocationState = revocationState;
+    if (w3cVcJson != null) result.w3cVcJson = w3cVcJson;
+    if (issuedAt != null) result.issuedAt = issuedAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  EmpirePortableCredential._();
+
+  factory EmpirePortableCredential.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpirePortableCredential.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpirePortableCredential',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(4, _omitFieldNames ? '' : 'credentialKind')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'evidenceClass')
+    ..aOS(7, _omitFieldNames ? '' : 'issuerKeyId')
+    ..aOS(8, _omitFieldNames ? '' : 'policyVersion')
+    ..aOS(9, _omitFieldNames ? '' : 'usageMode')
+    ..aOB(10, _omitFieldNames ? '' : 'verifierRetentionPermitted')
+    ..aI(11, _omitFieldNames ? '' : 'offlineFreshnessWindowHours')
+    ..aOS(12, _omitFieldNames ? '' : 'revocationState')
+    ..aOS(13, _omitFieldNames ? '' : 'w3cVcJson')
+    ..aOS(14, _omitFieldNames ? '' : 'issuedAt')
+    ..aOS(15, _omitFieldNames ? '' : 'expiresAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePortableCredential clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePortableCredential copyWith(
+          void Function(EmpirePortableCredential) updates) =>
+      super.copyWith((message) => updates(message as EmpirePortableCredential))
+          as EmpirePortableCredential;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpirePortableCredential create() => EmpirePortableCredential._();
+  @$core.override
+  EmpirePortableCredential createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpirePortableCredential getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpirePortableCredential>(create);
+  static EmpirePortableCredential? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePillar() => $_clearField(3);
+
+  /// lexicon_course_mastery | forge_verified_benchmark | onyx_published_synthesis | empire_contribution_steward | vault_predicate_attestation | nomad_presence_proof
+  @$pb.TagNumber(4)
+  $core.String get credentialKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set credentialKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCredentialKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCredentialKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get evidenceClass => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set evidenceClass($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEvidenceClass() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEvidenceClass() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get issuerKeyId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set issuerKeyId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIssuerKeyId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIssuerKeyId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get policyVersion => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set policyVersion($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPolicyVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPolicyVersion() => $_clearField(8);
+
+  /// one_time_view | bounded_multi_use
+  @$pb.TagNumber(9)
+  $core.String get usageMode => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set usageMode($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUsageMode() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUsageMode() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get verifierRetentionPermitted => $_getBF(9);
+  @$pb.TagNumber(10)
+  set verifierRetentionPermitted($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasVerifierRetentionPermitted() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearVerifierRetentionPermitted() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get offlineFreshnessWindowHours => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set offlineFreshnessWindowHours($core.int value) =>
+      $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasOfflineFreshnessWindowHours() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOfflineFreshnessWindowHours() => $_clearField(11);
+
+  /// active_valid | revoked_by_member | expired_unknown | held_issuer_review
+  @$pb.TagNumber(12)
+  $core.String get revocationState => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set revocationState($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRevocationState() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRevocationState() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get w3cVcJson => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set w3cVcJson($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasW3cVcJson() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearW3cVcJson() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get issuedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set issuedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasIssuedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearIssuedAt() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get expiresAt => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set expiresAt($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasExpiresAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearExpiresAt() => $_clearField(15);
+}
+
+class EmpireCredentialVerificationReceipt extends $pb.GeneratedMessage {
+  factory EmpireCredentialVerificationReceipt({
+    $core.String? id,
+    $core.String? credentialId,
+    $core.String? userId,
+    $core.String? verifierLabel,
+    $core.String? verificationMode,
+    $core.String? resultStatus,
+    $core.String? verifiedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (credentialId != null) result.credentialId = credentialId;
+    if (userId != null) result.userId = userId;
+    if (verifierLabel != null) result.verifierLabel = verifierLabel;
+    if (verificationMode != null) result.verificationMode = verificationMode;
+    if (resultStatus != null) result.resultStatus = resultStatus;
+    if (verifiedAt != null) result.verifiedAt = verifiedAt;
+    return result;
+  }
+
+  EmpireCredentialVerificationReceipt._();
+
+  factory EmpireCredentialVerificationReceipt.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCredentialVerificationReceipt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCredentialVerificationReceipt',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'credentialId')
+    ..aOS(3, _omitFieldNames ? '' : 'userId')
+    ..aOS(4, _omitFieldNames ? '' : 'verifierLabel')
+    ..aOS(5, _omitFieldNames ? '' : 'verificationMode')
+    ..aOS(6, _omitFieldNames ? '' : 'resultStatus')
+    ..aOS(7, _omitFieldNames ? '' : 'verifiedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCredentialVerificationReceipt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCredentialVerificationReceipt copyWith(
+          void Function(EmpireCredentialVerificationReceipt) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireCredentialVerificationReceipt))
+          as EmpireCredentialVerificationReceipt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCredentialVerificationReceipt create() =>
+      EmpireCredentialVerificationReceipt._();
+  @$core.override
+  EmpireCredentialVerificationReceipt createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCredentialVerificationReceipt getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EmpireCredentialVerificationReceipt>(create);
+  static EmpireCredentialVerificationReceipt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get credentialId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set credentialId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCredentialId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCredentialId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get userId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get verifierLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set verifierLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVerifierLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVerifierLabel() => $_clearField(4);
+
+  /// online_live | offline_cached_fresh | offline_expired_unknown
+  @$pb.TagNumber(5)
+  $core.String get verificationMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set verificationMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVerificationMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVerificationMode() => $_clearField(5);
+
+  /// verified_valid | unknown_expired | revoked_denied | blocked_verifier_abuse
+  @$pb.TagNumber(6)
+  $core.String get resultStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set resultStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasResultStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearResultStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get verifiedAt => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set verifiedAt($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVerifiedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVerifiedAt() => $_clearField(7);
+}
+
+class EmpireVerifierAbuseReport extends $pb.GeneratedMessage {
+  factory EmpireVerifierAbuseReport({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? verifierIdentifier,
+    $core.String? reason,
+    $core.String? status,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (verifierIdentifier != null)
+      result.verifierIdentifier = verifierIdentifier;
+    if (reason != null) result.reason = reason;
+    if (status != null) result.status = status;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireVerifierAbuseReport._();
+
+  factory EmpireVerifierAbuseReport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireVerifierAbuseReport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireVerifierAbuseReport',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'verifierIdentifier')
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..aOS(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireVerifierAbuseReport clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireVerifierAbuseReport copyWith(
+          void Function(EmpireVerifierAbuseReport) updates) =>
+      super.copyWith((message) => updates(message as EmpireVerifierAbuseReport))
+          as EmpireVerifierAbuseReport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireVerifierAbuseReport create() => EmpireVerifierAbuseReport._();
+  @$core.override
+  EmpireVerifierAbuseReport createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireVerifierAbuseReport getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireVerifierAbuseReport>(create);
+  static EmpireVerifierAbuseReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get verifierIdentifier => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set verifierIdentifier($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVerifierIdentifier() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVerifierIdentifier() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
+
+  /// flagged | rate_limited | blocked_permanently
+  @$pb.TagNumber(5)
+  $core.String get status => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set status($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => $_clearField(6);
+}
+
+class GetAchievementWalletWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetAchievementWalletWorkbenchRequest() => create();
+
+  GetAchievementWalletWorkbenchRequest._();
+
+  factory GetAchievementWalletWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAchievementWalletWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAchievementWalletWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAchievementWalletWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAchievementWalletWorkbenchRequest copyWith(
+          void Function(GetAchievementWalletWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAchievementWalletWorkbenchRequest))
+          as GetAchievementWalletWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAchievementWalletWorkbenchRequest create() =>
+      GetAchievementWalletWorkbenchRequest._();
+  @$core.override
+  GetAchievementWalletWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAchievementWalletWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAchievementWalletWorkbenchRequest>(create);
+  static GetAchievementWalletWorkbenchRequest? _defaultInstance;
+}
+
+class GetAchievementWalletWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetAchievementWalletWorkbenchResponse({
+    $core.Iterable<EmpirePortableCredential>? credentials,
+    $core.Iterable<EmpireCredentialVerificationReceipt>? verificationReceipts,
+    $core.Iterable<EmpireVerifierAbuseReport>? abuseReports,
+  }) {
+    final result = create();
+    if (credentials != null) result.credentials.addAll(credentials);
+    if (verificationReceipts != null)
+      result.verificationReceipts.addAll(verificationReceipts);
+    if (abuseReports != null) result.abuseReports.addAll(abuseReports);
+    return result;
+  }
+
+  GetAchievementWalletWorkbenchResponse._();
+
+  factory GetAchievementWalletWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAchievementWalletWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAchievementWalletWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpirePortableCredential>(1, _omitFieldNames ? '' : 'credentials',
+        subBuilder: EmpirePortableCredential.create)
+    ..pPM<EmpireCredentialVerificationReceipt>(
+        2, _omitFieldNames ? '' : 'verificationReceipts',
+        subBuilder: EmpireCredentialVerificationReceipt.create)
+    ..pPM<EmpireVerifierAbuseReport>(3, _omitFieldNames ? '' : 'abuseReports',
+        subBuilder: EmpireVerifierAbuseReport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAchievementWalletWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAchievementWalletWorkbenchResponse copyWith(
+          void Function(GetAchievementWalletWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAchievementWalletWorkbenchResponse))
+          as GetAchievementWalletWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAchievementWalletWorkbenchResponse create() =>
+      GetAchievementWalletWorkbenchResponse._();
+  @$core.override
+  GetAchievementWalletWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAchievementWalletWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAchievementWalletWorkbenchResponse>(create);
+  static GetAchievementWalletWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpirePortableCredential> get credentials => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCredentialVerificationReceipt> get verificationReceipts =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireVerifierAbuseReport> get abuseReports => $_getList(2);
+}
+
+class MintPortableAchievementCredentialRequest extends $pb.GeneratedMessage {
+  factory MintPortableAchievementCredentialRequest({
+    $core.String? sourcePillar,
+    $core.String? credentialKind,
+    $core.String? title,
+    $core.String? usageMode,
+    $core.bool? verifierRetentionPermitted,
+    $core.int? offlineFreshnessWindowHours,
+  }) {
+    final result = create();
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (credentialKind != null) result.credentialKind = credentialKind;
+    if (title != null) result.title = title;
+    if (usageMode != null) result.usageMode = usageMode;
+    if (verifierRetentionPermitted != null)
+      result.verifierRetentionPermitted = verifierRetentionPermitted;
+    if (offlineFreshnessWindowHours != null)
+      result.offlineFreshnessWindowHours = offlineFreshnessWindowHours;
+    return result;
+  }
+
+  MintPortableAchievementCredentialRequest._();
+
+  factory MintPortableAchievementCredentialRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MintPortableAchievementCredentialRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MintPortableAchievementCredentialRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(2, _omitFieldNames ? '' : 'credentialKind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'usageMode')
+    ..aOB(5, _omitFieldNames ? '' : 'verifierRetentionPermitted')
+    ..aI(6, _omitFieldNames ? '' : 'offlineFreshnessWindowHours')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintPortableAchievementCredentialRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintPortableAchievementCredentialRequest copyWith(
+          void Function(MintPortableAchievementCredentialRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as MintPortableAchievementCredentialRequest))
+          as MintPortableAchievementCredentialRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintPortableAchievementCredentialRequest create() =>
+      MintPortableAchievementCredentialRequest._();
+  @$core.override
+  MintPortableAchievementCredentialRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MintPortableAchievementCredentialRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MintPortableAchievementCredentialRequest>(create);
+  static MintPortableAchievementCredentialRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourcePillar => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourcePillar($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourcePillar() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourcePillar() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get credentialKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set credentialKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCredentialKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCredentialKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get usageMode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set usageMode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUsageMode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUsageMode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get verifierRetentionPermitted => $_getBF(4);
+  @$pb.TagNumber(5)
+  set verifierRetentionPermitted($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVerifierRetentionPermitted() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVerifierRetentionPermitted() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get offlineFreshnessWindowHours => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set offlineFreshnessWindowHours($core.int value) =>
+      $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOfflineFreshnessWindowHours() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOfflineFreshnessWindowHours() => $_clearField(6);
+}
+
+class MintPortableAchievementCredentialResponse extends $pb.GeneratedMessage {
+  factory MintPortableAchievementCredentialResponse({
+    EmpirePortableCredential? credential,
+  }) {
+    final result = create();
+    if (credential != null) result.credential = credential;
+    return result;
+  }
+
+  MintPortableAchievementCredentialResponse._();
+
+  factory MintPortableAchievementCredentialResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory MintPortableAchievementCredentialResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'MintPortableAchievementCredentialResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpirePortableCredential>(1, _omitFieldNames ? '' : 'credential',
+        subBuilder: EmpirePortableCredential.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintPortableAchievementCredentialResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  MintPortableAchievementCredentialResponse copyWith(
+          void Function(MintPortableAchievementCredentialResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as MintPortableAchievementCredentialResponse))
+          as MintPortableAchievementCredentialResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static MintPortableAchievementCredentialResponse create() =>
+      MintPortableAchievementCredentialResponse._();
+  @$core.override
+  MintPortableAchievementCredentialResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static MintPortableAchievementCredentialResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          MintPortableAchievementCredentialResponse>(create);
+  static MintPortableAchievementCredentialResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpirePortableCredential get credential => $_getN(0);
+  @$pb.TagNumber(1)
+  set credential(EmpirePortableCredential value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCredential() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCredential() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpirePortableCredential ensureCredential() => $_ensure(0);
+}
+
+class RevokeOrVerifyPortableCredentialRequest extends $pb.GeneratedMessage {
+  factory RevokeOrVerifyPortableCredentialRequest({
+    $core.String? credentialId,
+    $core.String? revocationState,
+    $core.String? verifierLabel,
+    $core.String? verificationMode,
+  }) {
+    final result = create();
+    if (credentialId != null) result.credentialId = credentialId;
+    if (revocationState != null) result.revocationState = revocationState;
+    if (verifierLabel != null) result.verifierLabel = verifierLabel;
+    if (verificationMode != null) result.verificationMode = verificationMode;
+    return result;
+  }
+
+  RevokeOrVerifyPortableCredentialRequest._();
+
+  factory RevokeOrVerifyPortableCredentialRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeOrVerifyPortableCredentialRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeOrVerifyPortableCredentialRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'credentialId')
+    ..aOS(2, _omitFieldNames ? '' : 'revocationState')
+    ..aOS(3, _omitFieldNames ? '' : 'verifierLabel')
+    ..aOS(4, _omitFieldNames ? '' : 'verificationMode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeOrVerifyPortableCredentialRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeOrVerifyPortableCredentialRequest copyWith(
+          void Function(RevokeOrVerifyPortableCredentialRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeOrVerifyPortableCredentialRequest))
+          as RevokeOrVerifyPortableCredentialRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeOrVerifyPortableCredentialRequest create() =>
+      RevokeOrVerifyPortableCredentialRequest._();
+  @$core.override
+  RevokeOrVerifyPortableCredentialRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeOrVerifyPortableCredentialRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RevokeOrVerifyPortableCredentialRequest>(create);
+  static RevokeOrVerifyPortableCredentialRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get credentialId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set credentialId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCredentialId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCredentialId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get revocationState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set revocationState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRevocationState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRevocationState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get verifierLabel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set verifierLabel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVerifierLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVerifierLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get verificationMode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set verificationMode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVerificationMode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVerificationMode() => $_clearField(4);
+}
+
+class RevokeOrVerifyPortableCredentialResponse extends $pb.GeneratedMessage {
+  factory RevokeOrVerifyPortableCredentialResponse({
+    EmpirePortableCredential? credential,
+    EmpireCredentialVerificationReceipt? receipt,
+  }) {
+    final result = create();
+    if (credential != null) result.credential = credential;
+    if (receipt != null) result.receipt = receipt;
+    return result;
+  }
+
+  RevokeOrVerifyPortableCredentialResponse._();
+
+  factory RevokeOrVerifyPortableCredentialResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RevokeOrVerifyPortableCredentialResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RevokeOrVerifyPortableCredentialResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpirePortableCredential>(1, _omitFieldNames ? '' : 'credential',
+        subBuilder: EmpirePortableCredential.create)
+    ..aOM<EmpireCredentialVerificationReceipt>(
+        2, _omitFieldNames ? '' : 'receipt',
+        subBuilder: EmpireCredentialVerificationReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeOrVerifyPortableCredentialResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RevokeOrVerifyPortableCredentialResponse copyWith(
+          void Function(RevokeOrVerifyPortableCredentialResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RevokeOrVerifyPortableCredentialResponse))
+          as RevokeOrVerifyPortableCredentialResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RevokeOrVerifyPortableCredentialResponse create() =>
+      RevokeOrVerifyPortableCredentialResponse._();
+  @$core.override
+  RevokeOrVerifyPortableCredentialResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RevokeOrVerifyPortableCredentialResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RevokeOrVerifyPortableCredentialResponse>(create);
+  static RevokeOrVerifyPortableCredentialResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpirePortableCredential get credential => $_getN(0);
+  @$pb.TagNumber(1)
+  set credential(EmpirePortableCredential value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCredential() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCredential() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpirePortableCredential ensureCredential() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireCredentialVerificationReceipt get receipt => $_getN(1);
+  @$pb.TagNumber(2)
+  set receipt(EmpireCredentialVerificationReceipt value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReceipt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReceipt() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireCredentialVerificationReceipt ensureReceipt() => $_ensure(1);
+}
+
+class AdminListAchievementWalletAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListAchievementWalletAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListAchievementWalletAuditRequest._();
+
+  factory AdminListAchievementWalletAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListAchievementWalletAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListAchievementWalletAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAchievementWalletAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAchievementWalletAuditRequest copyWith(
+          void Function(AdminListAchievementWalletAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListAchievementWalletAuditRequest))
+          as AdminListAchievementWalletAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListAchievementWalletAuditRequest create() =>
+      AdminListAchievementWalletAuditRequest._();
+  @$core.override
+  AdminListAchievementWalletAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListAchievementWalletAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListAchievementWalletAuditRequest>(create);
+  static AdminListAchievementWalletAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListAchievementWalletAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListAchievementWalletAuditResponse({
+    $core.Iterable<EmpirePortableCredential>? credentials,
+    $core.Iterable<EmpireCredentialVerificationReceipt>? verificationReceipts,
+    $core.Iterable<EmpireVerifierAbuseReport>? abuseReports,
+  }) {
+    final result = create();
+    if (credentials != null) result.credentials.addAll(credentials);
+    if (verificationReceipts != null)
+      result.verificationReceipts.addAll(verificationReceipts);
+    if (abuseReports != null) result.abuseReports.addAll(abuseReports);
+    return result;
+  }
+
+  AdminListAchievementWalletAuditResponse._();
+
+  factory AdminListAchievementWalletAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListAchievementWalletAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListAchievementWalletAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpirePortableCredential>(1, _omitFieldNames ? '' : 'credentials',
+        subBuilder: EmpirePortableCredential.create)
+    ..pPM<EmpireCredentialVerificationReceipt>(
+        2, _omitFieldNames ? '' : 'verificationReceipts',
+        subBuilder: EmpireCredentialVerificationReceipt.create)
+    ..pPM<EmpireVerifierAbuseReport>(3, _omitFieldNames ? '' : 'abuseReports',
+        subBuilder: EmpireVerifierAbuseReport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAchievementWalletAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAchievementWalletAuditResponse copyWith(
+          void Function(AdminListAchievementWalletAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListAchievementWalletAuditResponse))
+          as AdminListAchievementWalletAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListAchievementWalletAuditResponse create() =>
+      AdminListAchievementWalletAuditResponse._();
+  @$core.override
+  AdminListAchievementWalletAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListAchievementWalletAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListAchievementWalletAuditResponse>(create);
+  static AdminListAchievementWalletAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpirePortableCredential> get credentials => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCredentialVerificationReceipt> get verificationReceipts =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireVerifierAbuseReport> get abuseReports => $_getList(2);
+}
+
+class AdminModerateCredentialOrVerifierAbuseRequest
+    extends $pb.GeneratedMessage {
+  factory AdminModerateCredentialOrVerifierAbuseRequest({
+    $core.String? abuseReportId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (abuseReportId != null) result.abuseReportId = abuseReportId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  AdminModerateCredentialOrVerifierAbuseRequest._();
+
+  factory AdminModerateCredentialOrVerifierAbuseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCredentialOrVerifierAbuseRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminModerateCredentialOrVerifierAbuseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'abuseReportId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCredentialOrVerifierAbuseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCredentialOrVerifierAbuseRequest copyWith(
+          void Function(AdminModerateCredentialOrVerifierAbuseRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminModerateCredentialOrVerifierAbuseRequest))
+          as AdminModerateCredentialOrVerifierAbuseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCredentialOrVerifierAbuseRequest create() =>
+      AdminModerateCredentialOrVerifierAbuseRequest._();
+  @$core.override
+  AdminModerateCredentialOrVerifierAbuseRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCredentialOrVerifierAbuseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCredentialOrVerifierAbuseRequest>(create);
+  static AdminModerateCredentialOrVerifierAbuseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get abuseReportId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set abuseReportId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAbuseReportId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAbuseReportId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class AdminModerateCredentialOrVerifierAbuseResponse
+    extends $pb.GeneratedMessage {
+  factory AdminModerateCredentialOrVerifierAbuseResponse({
+    EmpireVerifierAbuseReport? abuseReport,
+  }) {
+    final result = create();
+    if (abuseReport != null) result.abuseReport = abuseReport;
+    return result;
+  }
+
+  AdminModerateCredentialOrVerifierAbuseResponse._();
+
+  factory AdminModerateCredentialOrVerifierAbuseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCredentialOrVerifierAbuseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminModerateCredentialOrVerifierAbuseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireVerifierAbuseReport>(1, _omitFieldNames ? '' : 'abuseReport',
+        subBuilder: EmpireVerifierAbuseReport.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCredentialOrVerifierAbuseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCredentialOrVerifierAbuseResponse copyWith(
+          void Function(AdminModerateCredentialOrVerifierAbuseResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateCredentialOrVerifierAbuseResponse))
+          as AdminModerateCredentialOrVerifierAbuseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCredentialOrVerifierAbuseResponse create() =>
+      AdminModerateCredentialOrVerifierAbuseResponse._();
+  @$core.override
+  AdminModerateCredentialOrVerifierAbuseResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCredentialOrVerifierAbuseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCredentialOrVerifierAbuseResponse>(create);
+  static AdminModerateCredentialOrVerifierAbuseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireVerifierAbuseReport get abuseReport => $_getN(0);
+  @$pb.TagNumber(1)
+  set abuseReport(EmpireVerifierAbuseReport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAbuseReport() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAbuseReport() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireVerifierAbuseReport ensureAbuseReport() => $_ensure(0);
+}
+
+class EmpireContextualDirectoryProfile extends $pb.GeneratedMessage {
+  factory EmpireContextualDirectoryProfile({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? directoryMode,
+    $core.String? headlineExpertise,
+    $core.String? city,
+    $core.String? languagesCsv,
+    $core.String? disclosedFieldsJson,
+    $core.int? weeklyIntroLimit,
+    $core.bool? quietPeriodActive,
+    $core.bool? mutualConnectionRequired,
+    $core.bool? rankedByPopularity,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (directoryMode != null) result.directoryMode = directoryMode;
+    if (headlineExpertise != null) result.headlineExpertise = headlineExpertise;
+    if (city != null) result.city = city;
+    if (languagesCsv != null) result.languagesCsv = languagesCsv;
+    if (disclosedFieldsJson != null)
+      result.disclosedFieldsJson = disclosedFieldsJson;
+    if (weeklyIntroLimit != null) result.weeklyIntroLimit = weeklyIntroLimit;
+    if (quietPeriodActive != null) result.quietPeriodActive = quietPeriodActive;
+    if (mutualConnectionRequired != null)
+      result.mutualConnectionRequired = mutualConnectionRequired;
+    if (rankedByPopularity != null)
+      result.rankedByPopularity = rankedByPopularity;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireContextualDirectoryProfile._();
+
+  factory EmpireContextualDirectoryProfile.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireContextualDirectoryProfile.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireContextualDirectoryProfile',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'directoryMode')
+    ..aOS(4, _omitFieldNames ? '' : 'headlineExpertise')
+    ..aOS(5, _omitFieldNames ? '' : 'city')
+    ..aOS(6, _omitFieldNames ? '' : 'languagesCsv')
+    ..aOS(7, _omitFieldNames ? '' : 'disclosedFieldsJson')
+    ..aI(8, _omitFieldNames ? '' : 'weeklyIntroLimit')
+    ..aOB(9, _omitFieldNames ? '' : 'quietPeriodActive')
+    ..aOB(10, _omitFieldNames ? '' : 'mutualConnectionRequired')
+    ..aOB(11, _omitFieldNames ? '' : 'rankedByPopularity')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContextualDirectoryProfile clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContextualDirectoryProfile copyWith(
+          void Function(EmpireContextualDirectoryProfile) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireContextualDirectoryProfile))
+          as EmpireContextualDirectoryProfile;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireContextualDirectoryProfile create() =>
+      EmpireContextualDirectoryProfile._();
+  @$core.override
+  EmpireContextualDirectoryProfile createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireContextualDirectoryProfile getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireContextualDirectoryProfile>(
+          create);
+  static EmpireContextualDirectoryProfile? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  /// expertise_advisory | city_presence | language_practice | project_collaboration | mentoring_office_hours | event_co_attendance
+  @$pb.TagNumber(3)
+  $core.String get directoryMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set directoryMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDirectoryMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDirectoryMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get headlineExpertise => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set headlineExpertise($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHeadlineExpertise() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHeadlineExpertise() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get city => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set city($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCity() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCity() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get languagesCsv => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set languagesCsv($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLanguagesCsv() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLanguagesCsv() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get disclosedFieldsJson => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set disclosedFieldsJson($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDisclosedFieldsJson() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDisclosedFieldsJson() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get weeklyIntroLimit => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set weeklyIntroLimit($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWeeklyIntroLimit() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWeeklyIntroLimit() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get quietPeriodActive => $_getBF(8);
+  @$pb.TagNumber(9)
+  set quietPeriodActive($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasQuietPeriodActive() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearQuietPeriodActive() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get mutualConnectionRequired => $_getBF(9);
+  @$pb.TagNumber(10)
+  set mutualConnectionRequired($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMutualConnectionRequired() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMutualConnectionRequired() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get rankedByPopularity => $_getBF(10);
+  @$pb.TagNumber(11)
+  set rankedByPopularity($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRankedByPopularity() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRankedByPopularity() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+}
+
+class EmpireContextualIntroductionRequest extends $pb.GeneratedMessage {
+  factory EmpireContextualIntroductionRequest({
+    $core.String? id,
+    $core.String? requesterUserId,
+    $core.String? recipientUserId,
+    $core.String? recipientHandle,
+    $core.String? purposeMode,
+    $core.String? sharedAuthoredContext,
+    $core.String? proposedAgenda,
+    $core.String? status,
+    $core.bool? sensitiveInferenceUsed,
+    $core.bool? declineScorePenaltyApplied,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (requesterUserId != null) result.requesterUserId = requesterUserId;
+    if (recipientUserId != null) result.recipientUserId = recipientUserId;
+    if (recipientHandle != null) result.recipientHandle = recipientHandle;
+    if (purposeMode != null) result.purposeMode = purposeMode;
+    if (sharedAuthoredContext != null)
+      result.sharedAuthoredContext = sharedAuthoredContext;
+    if (proposedAgenda != null) result.proposedAgenda = proposedAgenda;
+    if (status != null) result.status = status;
+    if (sensitiveInferenceUsed != null)
+      result.sensitiveInferenceUsed = sensitiveInferenceUsed;
+    if (declineScorePenaltyApplied != null)
+      result.declineScorePenaltyApplied = declineScorePenaltyApplied;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireContextualIntroductionRequest._();
+
+  factory EmpireContextualIntroductionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireContextualIntroductionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireContextualIntroductionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'requesterUserId')
+    ..aOS(3, _omitFieldNames ? '' : 'recipientUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'recipientHandle')
+    ..aOS(5, _omitFieldNames ? '' : 'purposeMode')
+    ..aOS(6, _omitFieldNames ? '' : 'sharedAuthoredContext')
+    ..aOS(7, _omitFieldNames ? '' : 'proposedAgenda')
+    ..aOS(8, _omitFieldNames ? '' : 'status')
+    ..aOB(9, _omitFieldNames ? '' : 'sensitiveInferenceUsed')
+    ..aOB(10, _omitFieldNames ? '' : 'declineScorePenaltyApplied')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContextualIntroductionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContextualIntroductionRequest copyWith(
+          void Function(EmpireContextualIntroductionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireContextualIntroductionRequest))
+          as EmpireContextualIntroductionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireContextualIntroductionRequest create() =>
+      EmpireContextualIntroductionRequest._();
+  @$core.override
+  EmpireContextualIntroductionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireContextualIntroductionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EmpireContextualIntroductionRequest>(create);
+  static EmpireContextualIntroductionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get requesterUserId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set requesterUserId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRequesterUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRequesterUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get recipientUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set recipientUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRecipientUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRecipientUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientHandle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientHandle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientHandle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientHandle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get purposeMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set purposeMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPurposeMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPurposeMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sharedAuthoredContext => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sharedAuthoredContext($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSharedAuthoredContext() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSharedAuthoredContext() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get proposedAgenda => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set proposedAgenda($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProposedAgenda() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProposedAgenda() => $_clearField(7);
+
+  /// pending_review | accepted_connected | declined_privately | expired_no_response | blocked_reported
+  @$pb.TagNumber(8)
+  $core.String get status => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set status($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get sensitiveInferenceUsed => $_getBF(8);
+  @$pb.TagNumber(9)
+  set sensitiveInferenceUsed($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSensitiveInferenceUsed() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSensitiveInferenceUsed() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get declineScorePenaltyApplied => $_getBF(9);
+  @$pb.TagNumber(10)
+  set declineScorePenaltyApplied($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDeclineScorePenaltyApplied() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDeclineScorePenaltyApplied() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set createdAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+}
+
+class GetContextualDirectoryWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetContextualDirectoryWorkbenchRequest() => create();
+
+  GetContextualDirectoryWorkbenchRequest._();
+
+  factory GetContextualDirectoryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetContextualDirectoryWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetContextualDirectoryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContextualDirectoryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContextualDirectoryWorkbenchRequest copyWith(
+          void Function(GetContextualDirectoryWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetContextualDirectoryWorkbenchRequest))
+          as GetContextualDirectoryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContextualDirectoryWorkbenchRequest create() =>
+      GetContextualDirectoryWorkbenchRequest._();
+  @$core.override
+  GetContextualDirectoryWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetContextualDirectoryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetContextualDirectoryWorkbenchRequest>(create);
+  static GetContextualDirectoryWorkbenchRequest? _defaultInstance;
+}
+
+class GetContextualDirectoryWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetContextualDirectoryWorkbenchResponse({
+    EmpireContextualDirectoryProfile? myProfile,
+    $core.Iterable<EmpireContextualDirectoryProfile>? peerProfiles,
+    $core.Iterable<EmpireContextualIntroductionRequest>? introductionRequests,
+  }) {
+    final result = create();
+    if (myProfile != null) result.myProfile = myProfile;
+    if (peerProfiles != null) result.peerProfiles.addAll(peerProfiles);
+    if (introductionRequests != null)
+      result.introductionRequests.addAll(introductionRequests);
+    return result;
+  }
+
+  GetContextualDirectoryWorkbenchResponse._();
+
+  factory GetContextualDirectoryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetContextualDirectoryWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetContextualDirectoryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContextualDirectoryProfile>(
+        1, _omitFieldNames ? '' : 'myProfile',
+        subBuilder: EmpireContextualDirectoryProfile.create)
+    ..pPM<EmpireContextualDirectoryProfile>(
+        2, _omitFieldNames ? '' : 'peerProfiles',
+        subBuilder: EmpireContextualDirectoryProfile.create)
+    ..pPM<EmpireContextualIntroductionRequest>(
+        3, _omitFieldNames ? '' : 'introductionRequests',
+        subBuilder: EmpireContextualIntroductionRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContextualDirectoryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContextualDirectoryWorkbenchResponse copyWith(
+          void Function(GetContextualDirectoryWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetContextualDirectoryWorkbenchResponse))
+          as GetContextualDirectoryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContextualDirectoryWorkbenchResponse create() =>
+      GetContextualDirectoryWorkbenchResponse._();
+  @$core.override
+  GetContextualDirectoryWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetContextualDirectoryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetContextualDirectoryWorkbenchResponse>(create);
+  static GetContextualDirectoryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContextualDirectoryProfile get myProfile => $_getN(0);
+  @$pb.TagNumber(1)
+  set myProfile(EmpireContextualDirectoryProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMyProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMyProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContextualDirectoryProfile ensureMyProfile() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireContextualDirectoryProfile> get peerProfiles => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<EmpireContextualIntroductionRequest> get introductionRequests =>
+      $_getList(2);
+}
+
+class UpdateContextualDirectoryProfileRequest extends $pb.GeneratedMessage {
+  factory UpdateContextualDirectoryProfileRequest({
+    $core.String? directoryMode,
+    $core.String? headlineExpertise,
+    $core.String? city,
+    $core.String? languagesCsv,
+    $core.String? disclosedFieldsJson,
+    $core.int? weeklyIntroLimit,
+    $core.bool? quietPeriodActive,
+    $core.bool? mutualConnectionRequired,
+  }) {
+    final result = create();
+    if (directoryMode != null) result.directoryMode = directoryMode;
+    if (headlineExpertise != null) result.headlineExpertise = headlineExpertise;
+    if (city != null) result.city = city;
+    if (languagesCsv != null) result.languagesCsv = languagesCsv;
+    if (disclosedFieldsJson != null)
+      result.disclosedFieldsJson = disclosedFieldsJson;
+    if (weeklyIntroLimit != null) result.weeklyIntroLimit = weeklyIntroLimit;
+    if (quietPeriodActive != null) result.quietPeriodActive = quietPeriodActive;
+    if (mutualConnectionRequired != null)
+      result.mutualConnectionRequired = mutualConnectionRequired;
+    return result;
+  }
+
+  UpdateContextualDirectoryProfileRequest._();
+
+  factory UpdateContextualDirectoryProfileRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateContextualDirectoryProfileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateContextualDirectoryProfileRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'directoryMode')
+    ..aOS(2, _omitFieldNames ? '' : 'headlineExpertise')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'languagesCsv')
+    ..aOS(5, _omitFieldNames ? '' : 'disclosedFieldsJson')
+    ..aI(6, _omitFieldNames ? '' : 'weeklyIntroLimit')
+    ..aOB(7, _omitFieldNames ? '' : 'quietPeriodActive')
+    ..aOB(8, _omitFieldNames ? '' : 'mutualConnectionRequired')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContextualDirectoryProfileRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContextualDirectoryProfileRequest copyWith(
+          void Function(UpdateContextualDirectoryProfileRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateContextualDirectoryProfileRequest))
+          as UpdateContextualDirectoryProfileRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateContextualDirectoryProfileRequest create() =>
+      UpdateContextualDirectoryProfileRequest._();
+  @$core.override
+  UpdateContextualDirectoryProfileRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateContextualDirectoryProfileRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateContextualDirectoryProfileRequest>(create);
+  static UpdateContextualDirectoryProfileRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get directoryMode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set directoryMode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDirectoryMode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDirectoryMode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get headlineExpertise => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set headlineExpertise($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHeadlineExpertise() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHeadlineExpertise() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get languagesCsv => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set languagesCsv($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLanguagesCsv() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLanguagesCsv() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get disclosedFieldsJson => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set disclosedFieldsJson($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDisclosedFieldsJson() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDisclosedFieldsJson() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get weeklyIntroLimit => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set weeklyIntroLimit($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWeeklyIntroLimit() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWeeklyIntroLimit() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get quietPeriodActive => $_getBF(6);
+  @$pb.TagNumber(7)
+  set quietPeriodActive($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuietPeriodActive() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuietPeriodActive() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get mutualConnectionRequired => $_getBF(7);
+  @$pb.TagNumber(8)
+  set mutualConnectionRequired($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMutualConnectionRequired() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMutualConnectionRequired() => $_clearField(8);
+}
+
+class UpdateContextualDirectoryProfileResponse extends $pb.GeneratedMessage {
+  factory UpdateContextualDirectoryProfileResponse({
+    EmpireContextualDirectoryProfile? profile,
+  }) {
+    final result = create();
+    if (profile != null) result.profile = profile;
+    return result;
+  }
+
+  UpdateContextualDirectoryProfileResponse._();
+
+  factory UpdateContextualDirectoryProfileResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateContextualDirectoryProfileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateContextualDirectoryProfileResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContextualDirectoryProfile>(1, _omitFieldNames ? '' : 'profile',
+        subBuilder: EmpireContextualDirectoryProfile.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContextualDirectoryProfileResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContextualDirectoryProfileResponse copyWith(
+          void Function(UpdateContextualDirectoryProfileResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateContextualDirectoryProfileResponse))
+          as UpdateContextualDirectoryProfileResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateContextualDirectoryProfileResponse create() =>
+      UpdateContextualDirectoryProfileResponse._();
+  @$core.override
+  UpdateContextualDirectoryProfileResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateContextualDirectoryProfileResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateContextualDirectoryProfileResponse>(create);
+  static UpdateContextualDirectoryProfileResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContextualDirectoryProfile get profile => $_getN(0);
+  @$pb.TagNumber(1)
+  set profile(EmpireContextualDirectoryProfile value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProfile() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProfile() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContextualDirectoryProfile ensureProfile() => $_ensure(0);
+}
+
+class RequestOrRespondContextualIntroductionRequest
+    extends $pb.GeneratedMessage {
+  factory RequestOrRespondContextualIntroductionRequest({
+    $core.String? requestId,
+    $core.String? recipientHandle,
+    $core.String? purposeMode,
+    $core.String? sharedAuthoredContext,
+    $core.String? proposedAgenda,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (requestId != null) result.requestId = requestId;
+    if (recipientHandle != null) result.recipientHandle = recipientHandle;
+    if (purposeMode != null) result.purposeMode = purposeMode;
+    if (sharedAuthoredContext != null)
+      result.sharedAuthoredContext = sharedAuthoredContext;
+    if (proposedAgenda != null) result.proposedAgenda = proposedAgenda;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  RequestOrRespondContextualIntroductionRequest._();
+
+  factory RequestOrRespondContextualIntroductionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestOrRespondContextualIntroductionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestOrRespondContextualIntroductionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'requestId')
+    ..aOS(2, _omitFieldNames ? '' : 'recipientHandle')
+    ..aOS(3, _omitFieldNames ? '' : 'purposeMode')
+    ..aOS(4, _omitFieldNames ? '' : 'sharedAuthoredContext')
+    ..aOS(5, _omitFieldNames ? '' : 'proposedAgenda')
+    ..aOS(6, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestOrRespondContextualIntroductionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestOrRespondContextualIntroductionRequest copyWith(
+          void Function(RequestOrRespondContextualIntroductionRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as RequestOrRespondContextualIntroductionRequest))
+          as RequestOrRespondContextualIntroductionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestOrRespondContextualIntroductionRequest create() =>
+      RequestOrRespondContextualIntroductionRequest._();
+  @$core.override
+  RequestOrRespondContextualIntroductionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RequestOrRespondContextualIntroductionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestOrRespondContextualIntroductionRequest>(create);
+  static RequestOrRespondContextualIntroductionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get requestId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set requestId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequestId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequestId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get recipientHandle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set recipientHandle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRecipientHandle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRecipientHandle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get purposeMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set purposeMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPurposeMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPurposeMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sharedAuthoredContext => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sharedAuthoredContext($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSharedAuthoredContext() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSharedAuthoredContext() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get proposedAgenda => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set proposedAgenda($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProposedAgenda() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposedAgenda() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get status => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set status($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStatus() => $_clearField(6);
+}
+
+class RequestOrRespondContextualIntroductionResponse
+    extends $pb.GeneratedMessage {
+  factory RequestOrRespondContextualIntroductionResponse({
+    EmpireContextualIntroductionRequest? introductionRequest,
+  }) {
+    final result = create();
+    if (introductionRequest != null)
+      result.introductionRequest = introductionRequest;
+    return result;
+  }
+
+  RequestOrRespondContextualIntroductionResponse._();
+
+  factory RequestOrRespondContextualIntroductionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestOrRespondContextualIntroductionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestOrRespondContextualIntroductionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContextualIntroductionRequest>(
+        1, _omitFieldNames ? '' : 'introductionRequest',
+        subBuilder: EmpireContextualIntroductionRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestOrRespondContextualIntroductionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestOrRespondContextualIntroductionResponse copyWith(
+          void Function(RequestOrRespondContextualIntroductionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RequestOrRespondContextualIntroductionResponse))
+          as RequestOrRespondContextualIntroductionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestOrRespondContextualIntroductionResponse create() =>
+      RequestOrRespondContextualIntroductionResponse._();
+  @$core.override
+  RequestOrRespondContextualIntroductionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RequestOrRespondContextualIntroductionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestOrRespondContextualIntroductionResponse>(create);
+  static RequestOrRespondContextualIntroductionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContextualIntroductionRequest get introductionRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set introductionRequest(EmpireContextualIntroductionRequest value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIntroductionRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIntroductionRequest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContextualIntroductionRequest ensureIntroductionRequest() =>
+      $_ensure(0);
+}
+
+class AdminListContextualDirectoryAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListContextualDirectoryAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListContextualDirectoryAuditRequest._();
+
+  factory AdminListContextualDirectoryAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListContextualDirectoryAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListContextualDirectoryAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContextualDirectoryAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContextualDirectoryAuditRequest copyWith(
+          void Function(AdminListContextualDirectoryAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListContextualDirectoryAuditRequest))
+          as AdminListContextualDirectoryAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListContextualDirectoryAuditRequest create() =>
+      AdminListContextualDirectoryAuditRequest._();
+  @$core.override
+  AdminListContextualDirectoryAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListContextualDirectoryAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListContextualDirectoryAuditRequest>(create);
+  static AdminListContextualDirectoryAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListContextualDirectoryAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListContextualDirectoryAuditResponse({
+    $core.Iterable<EmpireContextualDirectoryProfile>? profiles,
+    $core.Iterable<EmpireContextualIntroductionRequest>? introductionRequests,
+  }) {
+    final result = create();
+    if (profiles != null) result.profiles.addAll(profiles);
+    if (introductionRequests != null)
+      result.introductionRequests.addAll(introductionRequests);
+    return result;
+  }
+
+  AdminListContextualDirectoryAuditResponse._();
+
+  factory AdminListContextualDirectoryAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListContextualDirectoryAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListContextualDirectoryAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireContextualDirectoryProfile>(
+        1, _omitFieldNames ? '' : 'profiles',
+        subBuilder: EmpireContextualDirectoryProfile.create)
+    ..pPM<EmpireContextualIntroductionRequest>(
+        2, _omitFieldNames ? '' : 'introductionRequests',
+        subBuilder: EmpireContextualIntroductionRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContextualDirectoryAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContextualDirectoryAuditResponse copyWith(
+          void Function(AdminListContextualDirectoryAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListContextualDirectoryAuditResponse))
+          as AdminListContextualDirectoryAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListContextualDirectoryAuditResponse create() =>
+      AdminListContextualDirectoryAuditResponse._();
+  @$core.override
+  AdminListContextualDirectoryAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListContextualDirectoryAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListContextualDirectoryAuditResponse>(create);
+  static AdminListContextualDirectoryAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireContextualDirectoryProfile> get profiles => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireContextualIntroductionRequest> get introductionRequests =>
+      $_getList(1);
+}
+
+class AdminModerateDirectoryIntroductionAbuseRequest
+    extends $pb.GeneratedMessage {
+  factory AdminModerateDirectoryIntroductionAbuseRequest({
+    $core.String? requestId,
+    $core.String? status,
+  }) {
+    final result = create();
+    if (requestId != null) result.requestId = requestId;
+    if (status != null) result.status = status;
+    return result;
+  }
+
+  AdminModerateDirectoryIntroductionAbuseRequest._();
+
+  factory AdminModerateDirectoryIntroductionAbuseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateDirectoryIntroductionAbuseRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminModerateDirectoryIntroductionAbuseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'requestId')
+    ..aOS(2, _omitFieldNames ? '' : 'status')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateDirectoryIntroductionAbuseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateDirectoryIntroductionAbuseRequest copyWith(
+          void Function(AdminModerateDirectoryIntroductionAbuseRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateDirectoryIntroductionAbuseRequest))
+          as AdminModerateDirectoryIntroductionAbuseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateDirectoryIntroductionAbuseRequest create() =>
+      AdminModerateDirectoryIntroductionAbuseRequest._();
+  @$core.override
+  AdminModerateDirectoryIntroductionAbuseRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateDirectoryIntroductionAbuseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateDirectoryIntroductionAbuseRequest>(create);
+  static AdminModerateDirectoryIntroductionAbuseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get requestId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set requestId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequestId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequestId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get status => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set status($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStatus() => $_clearField(2);
+}
+
+class AdminModerateDirectoryIntroductionAbuseResponse
+    extends $pb.GeneratedMessage {
+  factory AdminModerateDirectoryIntroductionAbuseResponse({
+    EmpireContextualIntroductionRequest? introductionRequest,
+  }) {
+    final result = create();
+    if (introductionRequest != null)
+      result.introductionRequest = introductionRequest;
+    return result;
+  }
+
+  AdminModerateDirectoryIntroductionAbuseResponse._();
+
+  factory AdminModerateDirectoryIntroductionAbuseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateDirectoryIntroductionAbuseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateDirectoryIntroductionAbuseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContextualIntroductionRequest>(
+        1, _omitFieldNames ? '' : 'introductionRequest',
+        subBuilder: EmpireContextualIntroductionRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateDirectoryIntroductionAbuseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateDirectoryIntroductionAbuseResponse copyWith(
+          void Function(AdminModerateDirectoryIntroductionAbuseResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateDirectoryIntroductionAbuseResponse))
+          as AdminModerateDirectoryIntroductionAbuseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateDirectoryIntroductionAbuseResponse create() =>
+      AdminModerateDirectoryIntroductionAbuseResponse._();
+  @$core.override
+  AdminModerateDirectoryIntroductionAbuseResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateDirectoryIntroductionAbuseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateDirectoryIntroductionAbuseResponse>(create);
+  static AdminModerateDirectoryIntroductionAbuseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContextualIntroductionRequest get introductionRequest => $_getN(0);
+  @$pb.TagNumber(1)
+  set introductionRequest(EmpireContextualIntroductionRequest value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIntroductionRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIntroductionRequest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContextualIntroductionRequest ensureIntroductionRequest() =>
+      $_ensure(0);
+}
+
+class EmpireCircleCouncilSpace extends $pb.GeneratedMessage {
+  factory EmpireCircleCouncilSpace({
+    $core.String? id,
+    $core.String? creatorUserId,
+    $core.String? spaceKind,
+    $core.String? title,
+    $core.String? purposeCharter,
+    $core.String? memberRole,
+    $core.int? memberCount,
+    $core.int? unansweredQuestionsCount,
+    $core.String? voiceBalanceStatus,
+    $core.String? aiGrantScope,
+    $core.bool? aiInventedConsensusBlocked,
+    $core.bool? postVolumeGamificationDisabled,
+    $core.String? lifecycleState,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (creatorUserId != null) result.creatorUserId = creatorUserId;
+    if (spaceKind != null) result.spaceKind = spaceKind;
+    if (title != null) result.title = title;
+    if (purposeCharter != null) result.purposeCharter = purposeCharter;
+    if (memberRole != null) result.memberRole = memberRole;
+    if (memberCount != null) result.memberCount = memberCount;
+    if (unansweredQuestionsCount != null)
+      result.unansweredQuestionsCount = unansweredQuestionsCount;
+    if (voiceBalanceStatus != null)
+      result.voiceBalanceStatus = voiceBalanceStatus;
+    if (aiGrantScope != null) result.aiGrantScope = aiGrantScope;
+    if (aiInventedConsensusBlocked != null)
+      result.aiInventedConsensusBlocked = aiInventedConsensusBlocked;
+    if (postVolumeGamificationDisabled != null)
+      result.postVolumeGamificationDisabled = postVolumeGamificationDisabled;
+    if (lifecycleState != null) result.lifecycleState = lifecycleState;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireCircleCouncilSpace._();
+
+  factory EmpireCircleCouncilSpace.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCircleCouncilSpace.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCircleCouncilSpace',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'creatorUserId')
+    ..aOS(3, _omitFieldNames ? '' : 'spaceKind')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'purposeCharter')
+    ..aOS(6, _omitFieldNames ? '' : 'memberRole')
+    ..aI(7, _omitFieldNames ? '' : 'memberCount')
+    ..aI(8, _omitFieldNames ? '' : 'unansweredQuestionsCount')
+    ..aOS(9, _omitFieldNames ? '' : 'voiceBalanceStatus')
+    ..aOS(10, _omitFieldNames ? '' : 'aiGrantScope')
+    ..aOB(11, _omitFieldNames ? '' : 'aiInventedConsensusBlocked')
+    ..aOB(12, _omitFieldNames ? '' : 'postVolumeGamificationDisabled')
+    ..aOS(13, _omitFieldNames ? '' : 'lifecycleState')
+    ..aOS(14, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCircleCouncilSpace clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCircleCouncilSpace copyWith(
+          void Function(EmpireCircleCouncilSpace) updates) =>
+      super.copyWith((message) => updates(message as EmpireCircleCouncilSpace))
+          as EmpireCircleCouncilSpace;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCircleCouncilSpace create() => EmpireCircleCouncilSpace._();
+  @$core.override
+  EmpireCircleCouncilSpace createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCircleCouncilSpace getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCircleCouncilSpace>(create);
+  static EmpireCircleCouncilSpace? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get creatorUserId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set creatorUserId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCreatorUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCreatorUserId() => $_clearField(2);
+
+  /// public_circle | private_council | invite_only_cohort | temporary_project
+  @$pb.TagNumber(3)
+  $core.String get spaceKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set spaceKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSpaceKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSpaceKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get purposeCharter => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set purposeCharter($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPurposeCharter() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPurposeCharter() => $_clearField(5);
+
+  /// steward_host | council_chair | contributor | observer
+  @$pb.TagNumber(6)
+  $core.String get memberRole => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set memberRole($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMemberRole() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMemberRole() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get memberCount => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set memberCount($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMemberCount() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemberCount() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get unansweredQuestionsCount => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set unansweredQuestionsCount($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUnansweredQuestionsCount() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUnansweredQuestionsCount() => $_clearField(8);
+
+  /// balanced_participation | newcomer_prompts_needed | steward_attention
+  @$pb.TagNumber(9)
+  $core.String get voiceBalanceStatus => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set voiceBalanceStatus($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasVoiceBalanceStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVoiceBalanceStatus() => $_clearField(9);
+
+  /// approved_space_sources_only | disabled_no_ai
+  @$pb.TagNumber(10)
+  $core.String get aiGrantScope => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set aiGrantScope($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAiGrantScope() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAiGrantScope() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get aiInventedConsensusBlocked => $_getBF(10);
+  @$pb.TagNumber(11)
+  set aiInventedConsensusBlocked($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasAiInventedConsensusBlocked() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAiInventedConsensusBlocked() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get postVolumeGamificationDisabled => $_getBF(11);
+  @$pb.TagNumber(12)
+  set postVolumeGamificationDisabled($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPostVolumeGamificationDisabled() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPostVolumeGamificationDisabled() => $_clearField(12);
+
+  /// active_space | archiving_work | closed_settled
+  @$pb.TagNumber(13)
+  $core.String get lifecycleState => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set lifecycleState($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasLifecycleState() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearLifecycleState() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get createdAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set createdAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedAt() => $_clearField(14);
+}
+
+class EmpireCircleProjectArtifact extends $pb.GeneratedMessage {
+  factory EmpireCircleProjectArtifact({
+    $core.String? id,
+    $core.String? spaceId,
+    $core.String? authorUserId,
+    $core.String? artifactType,
+    $core.String? title,
+    $core.String? sourceCitationLink,
+    $core.String? settlementOrExportState,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (spaceId != null) result.spaceId = spaceId;
+    if (authorUserId != null) result.authorUserId = authorUserId;
+    if (artifactType != null) result.artifactType = artifactType;
+    if (title != null) result.title = title;
+    if (sourceCitationLink != null)
+      result.sourceCitationLink = sourceCitationLink;
+    if (settlementOrExportState != null)
+      result.settlementOrExportState = settlementOrExportState;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireCircleProjectArtifact._();
+
+  factory EmpireCircleProjectArtifact.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCircleProjectArtifact.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCircleProjectArtifact',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'spaceId')
+    ..aOS(3, _omitFieldNames ? '' : 'authorUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'artifactType')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'sourceCitationLink')
+    ..aOS(7, _omitFieldNames ? '' : 'settlementOrExportState')
+    ..aOS(8, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCircleProjectArtifact clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCircleProjectArtifact copyWith(
+          void Function(EmpireCircleProjectArtifact) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireCircleProjectArtifact))
+          as EmpireCircleProjectArtifact;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCircleProjectArtifact create() =>
+      EmpireCircleProjectArtifact._();
+  @$core.override
+  EmpireCircleProjectArtifact createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCircleProjectArtifact getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCircleProjectArtifact>(create);
+  static EmpireCircleProjectArtifact? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get spaceId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set spaceId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSpaceId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSpaceId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get authorUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set authorUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAuthorUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAuthorUserId() => $_clearField(3);
+
+  /// decision_record | project_milestone | office_hours_brief | closure_export_bundle
+  @$pb.TagNumber(4)
+  $core.String get artifactType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set artifactType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasArtifactType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearArtifactType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sourceCitationLink => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sourceCitationLink($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSourceCitationLink() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSourceCitationLink() => $_clearField(6);
+
+  /// live_in_space | exported_member_archive | settled_closed
+  @$pb.TagNumber(7)
+  $core.String get settlementOrExportState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set settlementOrExportState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSettlementOrExportState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSettlementOrExportState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdAt($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+}
+
+class GetCirclesCouncilsWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetCirclesCouncilsWorkbenchRequest() => create();
+
+  GetCirclesCouncilsWorkbenchRequest._();
+
+  factory GetCirclesCouncilsWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCirclesCouncilsWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCirclesCouncilsWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCirclesCouncilsWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCirclesCouncilsWorkbenchRequest copyWith(
+          void Function(GetCirclesCouncilsWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetCirclesCouncilsWorkbenchRequest))
+          as GetCirclesCouncilsWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCirclesCouncilsWorkbenchRequest create() =>
+      GetCirclesCouncilsWorkbenchRequest._();
+  @$core.override
+  GetCirclesCouncilsWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCirclesCouncilsWorkbenchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetCirclesCouncilsWorkbenchRequest>(
+          create);
+  static GetCirclesCouncilsWorkbenchRequest? _defaultInstance;
+}
+
+class GetCirclesCouncilsWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetCirclesCouncilsWorkbenchResponse({
+    $core.Iterable<EmpireCircleCouncilSpace>? spaces,
+    $core.Iterable<EmpireCircleProjectArtifact>? artifacts,
+  }) {
+    final result = create();
+    if (spaces != null) result.spaces.addAll(spaces);
+    if (artifacts != null) result.artifacts.addAll(artifacts);
+    return result;
+  }
+
+  GetCirclesCouncilsWorkbenchResponse._();
+
+  factory GetCirclesCouncilsWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCirclesCouncilsWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCirclesCouncilsWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireCircleCouncilSpace>(1, _omitFieldNames ? '' : 'spaces',
+        subBuilder: EmpireCircleCouncilSpace.create)
+    ..pPM<EmpireCircleProjectArtifact>(2, _omitFieldNames ? '' : 'artifacts',
+        subBuilder: EmpireCircleProjectArtifact.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCirclesCouncilsWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCirclesCouncilsWorkbenchResponse copyWith(
+          void Function(GetCirclesCouncilsWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetCirclesCouncilsWorkbenchResponse))
+          as GetCirclesCouncilsWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCirclesCouncilsWorkbenchResponse create() =>
+      GetCirclesCouncilsWorkbenchResponse._();
+  @$core.override
+  GetCirclesCouncilsWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCirclesCouncilsWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetCirclesCouncilsWorkbenchResponse>(create);
+  static GetCirclesCouncilsWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireCircleCouncilSpace> get spaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCircleProjectArtifact> get artifacts => $_getList(1);
+}
+
+class CreateOrUpdateCircleCouncilSpaceRequest extends $pb.GeneratedMessage {
+  factory CreateOrUpdateCircleCouncilSpaceRequest({
+    $core.String? spaceId,
+    $core.String? spaceKind,
+    $core.String? title,
+    $core.String? purposeCharter,
+    $core.String? memberRole,
+    $core.String? aiGrantScope,
+    $core.String? lifecycleState,
+  }) {
+    final result = create();
+    if (spaceId != null) result.spaceId = spaceId;
+    if (spaceKind != null) result.spaceKind = spaceKind;
+    if (title != null) result.title = title;
+    if (purposeCharter != null) result.purposeCharter = purposeCharter;
+    if (memberRole != null) result.memberRole = memberRole;
+    if (aiGrantScope != null) result.aiGrantScope = aiGrantScope;
+    if (lifecycleState != null) result.lifecycleState = lifecycleState;
+    return result;
+  }
+
+  CreateOrUpdateCircleCouncilSpaceRequest._();
+
+  factory CreateOrUpdateCircleCouncilSpaceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateCircleCouncilSpaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateCircleCouncilSpaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'spaceId')
+    ..aOS(2, _omitFieldNames ? '' : 'spaceKind')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'purposeCharter')
+    ..aOS(5, _omitFieldNames ? '' : 'memberRole')
+    ..aOS(6, _omitFieldNames ? '' : 'aiGrantScope')
+    ..aOS(7, _omitFieldNames ? '' : 'lifecycleState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCircleCouncilSpaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCircleCouncilSpaceRequest copyWith(
+          void Function(CreateOrUpdateCircleCouncilSpaceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateCircleCouncilSpaceRequest))
+          as CreateOrUpdateCircleCouncilSpaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCircleCouncilSpaceRequest create() =>
+      CreateOrUpdateCircleCouncilSpaceRequest._();
+  @$core.override
+  CreateOrUpdateCircleCouncilSpaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCircleCouncilSpaceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateCircleCouncilSpaceRequest>(create);
+  static CreateOrUpdateCircleCouncilSpaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get spaceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set spaceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSpaceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSpaceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get spaceKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set spaceKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSpaceKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSpaceKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get purposeCharter => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set purposeCharter($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPurposeCharter() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPurposeCharter() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get memberRole => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberRole($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberRole() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberRole() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get aiGrantScope => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set aiGrantScope($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAiGrantScope() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAiGrantScope() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get lifecycleState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set lifecycleState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLifecycleState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLifecycleState() => $_clearField(7);
+}
+
+class CreateOrUpdateCircleCouncilSpaceResponse extends $pb.GeneratedMessage {
+  factory CreateOrUpdateCircleCouncilSpaceResponse({
+    EmpireCircleCouncilSpace? space,
+  }) {
+    final result = create();
+    if (space != null) result.space = space;
+    return result;
+  }
+
+  CreateOrUpdateCircleCouncilSpaceResponse._();
+
+  factory CreateOrUpdateCircleCouncilSpaceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateCircleCouncilSpaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateCircleCouncilSpaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCircleCouncilSpace>(1, _omitFieldNames ? '' : 'space',
+        subBuilder: EmpireCircleCouncilSpace.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCircleCouncilSpaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCircleCouncilSpaceResponse copyWith(
+          void Function(CreateOrUpdateCircleCouncilSpaceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateCircleCouncilSpaceResponse))
+          as CreateOrUpdateCircleCouncilSpaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCircleCouncilSpaceResponse create() =>
+      CreateOrUpdateCircleCouncilSpaceResponse._();
+  @$core.override
+  CreateOrUpdateCircleCouncilSpaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCircleCouncilSpaceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateCircleCouncilSpaceResponse>(create);
+  static CreateOrUpdateCircleCouncilSpaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCircleCouncilSpace get space => $_getN(0);
+  @$pb.TagNumber(1)
+  set space(EmpireCircleCouncilSpace value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSpace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSpace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCircleCouncilSpace ensureSpace() => $_ensure(0);
+}
+
+class RecordCircleArtifactOrCloseSpaceRequest extends $pb.GeneratedMessage {
+  factory RecordCircleArtifactOrCloseSpaceRequest({
+    $core.String? spaceId,
+    $core.String? artifactType,
+    $core.String? title,
+    $core.String? sourceCitationLink,
+    $core.String? settlementOrExportState,
+    $core.bool? closeAndSettleSpace,
+  }) {
+    final result = create();
+    if (spaceId != null) result.spaceId = spaceId;
+    if (artifactType != null) result.artifactType = artifactType;
+    if (title != null) result.title = title;
+    if (sourceCitationLink != null)
+      result.sourceCitationLink = sourceCitationLink;
+    if (settlementOrExportState != null)
+      result.settlementOrExportState = settlementOrExportState;
+    if (closeAndSettleSpace != null)
+      result.closeAndSettleSpace = closeAndSettleSpace;
+    return result;
+  }
+
+  RecordCircleArtifactOrCloseSpaceRequest._();
+
+  factory RecordCircleArtifactOrCloseSpaceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCircleArtifactOrCloseSpaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCircleArtifactOrCloseSpaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'spaceId')
+    ..aOS(2, _omitFieldNames ? '' : 'artifactType')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceCitationLink')
+    ..aOS(5, _omitFieldNames ? '' : 'settlementOrExportState')
+    ..aOB(6, _omitFieldNames ? '' : 'closeAndSettleSpace')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCircleArtifactOrCloseSpaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCircleArtifactOrCloseSpaceRequest copyWith(
+          void Function(RecordCircleArtifactOrCloseSpaceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCircleArtifactOrCloseSpaceRequest))
+          as RecordCircleArtifactOrCloseSpaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCircleArtifactOrCloseSpaceRequest create() =>
+      RecordCircleArtifactOrCloseSpaceRequest._();
+  @$core.override
+  RecordCircleArtifactOrCloseSpaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCircleArtifactOrCloseSpaceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordCircleArtifactOrCloseSpaceRequest>(create);
+  static RecordCircleArtifactOrCloseSpaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get spaceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set spaceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSpaceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSpaceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get artifactType => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set artifactType($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasArtifactType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearArtifactType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceCitationLink => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceCitationLink($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceCitationLink() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceCitationLink() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get settlementOrExportState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set settlementOrExportState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSettlementOrExportState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSettlementOrExportState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get closeAndSettleSpace => $_getBF(5);
+  @$pb.TagNumber(6)
+  set closeAndSettleSpace($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCloseAndSettleSpace() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCloseAndSettleSpace() => $_clearField(6);
+}
+
+class RecordCircleArtifactOrCloseSpaceResponse extends $pb.GeneratedMessage {
+  factory RecordCircleArtifactOrCloseSpaceResponse({
+    EmpireCircleProjectArtifact? artifact,
+    EmpireCircleCouncilSpace? space,
+  }) {
+    final result = create();
+    if (artifact != null) result.artifact = artifact;
+    if (space != null) result.space = space;
+    return result;
+  }
+
+  RecordCircleArtifactOrCloseSpaceResponse._();
+
+  factory RecordCircleArtifactOrCloseSpaceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCircleArtifactOrCloseSpaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCircleArtifactOrCloseSpaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCircleProjectArtifact>(1, _omitFieldNames ? '' : 'artifact',
+        subBuilder: EmpireCircleProjectArtifact.create)
+    ..aOM<EmpireCircleCouncilSpace>(2, _omitFieldNames ? '' : 'space',
+        subBuilder: EmpireCircleCouncilSpace.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCircleArtifactOrCloseSpaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCircleArtifactOrCloseSpaceResponse copyWith(
+          void Function(RecordCircleArtifactOrCloseSpaceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCircleArtifactOrCloseSpaceResponse))
+          as RecordCircleArtifactOrCloseSpaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCircleArtifactOrCloseSpaceResponse create() =>
+      RecordCircleArtifactOrCloseSpaceResponse._();
+  @$core.override
+  RecordCircleArtifactOrCloseSpaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCircleArtifactOrCloseSpaceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordCircleArtifactOrCloseSpaceResponse>(create);
+  static RecordCircleArtifactOrCloseSpaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCircleProjectArtifact get artifact => $_getN(0);
+  @$pb.TagNumber(1)
+  set artifact(EmpireCircleProjectArtifact value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArtifact() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArtifact() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCircleProjectArtifact ensureArtifact() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireCircleCouncilSpace get space => $_getN(1);
+  @$pb.TagNumber(2)
+  set space(EmpireCircleCouncilSpace value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSpace() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSpace() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireCircleCouncilSpace ensureSpace() => $_ensure(1);
+}
+
+class AdminListCirclesCouncilsAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListCirclesCouncilsAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListCirclesCouncilsAuditRequest._();
+
+  factory AdminListCirclesCouncilsAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListCirclesCouncilsAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListCirclesCouncilsAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCirclesCouncilsAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCirclesCouncilsAuditRequest copyWith(
+          void Function(AdminListCirclesCouncilsAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListCirclesCouncilsAuditRequest))
+          as AdminListCirclesCouncilsAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListCirclesCouncilsAuditRequest create() =>
+      AdminListCirclesCouncilsAuditRequest._();
+  @$core.override
+  AdminListCirclesCouncilsAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListCirclesCouncilsAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListCirclesCouncilsAuditRequest>(create);
+  static AdminListCirclesCouncilsAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListCirclesCouncilsAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListCirclesCouncilsAuditResponse({
+    $core.Iterable<EmpireCircleCouncilSpace>? spaces,
+    $core.Iterable<EmpireCircleProjectArtifact>? artifacts,
+  }) {
+    final result = create();
+    if (spaces != null) result.spaces.addAll(spaces);
+    if (artifacts != null) result.artifacts.addAll(artifacts);
+    return result;
+  }
+
+  AdminListCirclesCouncilsAuditResponse._();
+
+  factory AdminListCirclesCouncilsAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListCirclesCouncilsAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListCirclesCouncilsAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireCircleCouncilSpace>(1, _omitFieldNames ? '' : 'spaces',
+        subBuilder: EmpireCircleCouncilSpace.create)
+    ..pPM<EmpireCircleProjectArtifact>(2, _omitFieldNames ? '' : 'artifacts',
+        subBuilder: EmpireCircleProjectArtifact.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCirclesCouncilsAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCirclesCouncilsAuditResponse copyWith(
+          void Function(AdminListCirclesCouncilsAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListCirclesCouncilsAuditResponse))
+          as AdminListCirclesCouncilsAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListCirclesCouncilsAuditResponse create() =>
+      AdminListCirclesCouncilsAuditResponse._();
+  @$core.override
+  AdminListCirclesCouncilsAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListCirclesCouncilsAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListCirclesCouncilsAuditResponse>(create);
+  static AdminListCirclesCouncilsAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireCircleCouncilSpace> get spaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCircleProjectArtifact> get artifacts => $_getList(1);
+}
+
+class AdminModerateCircleSpaceOrDisputeRequest extends $pb.GeneratedMessage {
+  factory AdminModerateCircleSpaceOrDisputeRequest({
+    $core.String? spaceId,
+    $core.String? lifecycleState,
+    $core.String? aiGrantScope,
+  }) {
+    final result = create();
+    if (spaceId != null) result.spaceId = spaceId;
+    if (lifecycleState != null) result.lifecycleState = lifecycleState;
+    if (aiGrantScope != null) result.aiGrantScope = aiGrantScope;
+    return result;
+  }
+
+  AdminModerateCircleSpaceOrDisputeRequest._();
+
+  factory AdminModerateCircleSpaceOrDisputeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCircleSpaceOrDisputeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminModerateCircleSpaceOrDisputeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'spaceId')
+    ..aOS(2, _omitFieldNames ? '' : 'lifecycleState')
+    ..aOS(3, _omitFieldNames ? '' : 'aiGrantScope')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCircleSpaceOrDisputeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCircleSpaceOrDisputeRequest copyWith(
+          void Function(AdminModerateCircleSpaceOrDisputeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminModerateCircleSpaceOrDisputeRequest))
+          as AdminModerateCircleSpaceOrDisputeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCircleSpaceOrDisputeRequest create() =>
+      AdminModerateCircleSpaceOrDisputeRequest._();
+  @$core.override
+  AdminModerateCircleSpaceOrDisputeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCircleSpaceOrDisputeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCircleSpaceOrDisputeRequest>(create);
+  static AdminModerateCircleSpaceOrDisputeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get spaceId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set spaceId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSpaceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSpaceId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get lifecycleState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set lifecycleState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLifecycleState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLifecycleState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get aiGrantScope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set aiGrantScope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAiGrantScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAiGrantScope() => $_clearField(3);
+}
+
+class AdminModerateCircleSpaceOrDisputeResponse extends $pb.GeneratedMessage {
+  factory AdminModerateCircleSpaceOrDisputeResponse({
+    EmpireCircleCouncilSpace? space,
+  }) {
+    final result = create();
+    if (space != null) result.space = space;
+    return result;
+  }
+
+  AdminModerateCircleSpaceOrDisputeResponse._();
+
+  factory AdminModerateCircleSpaceOrDisputeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateCircleSpaceOrDisputeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminModerateCircleSpaceOrDisputeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCircleCouncilSpace>(1, _omitFieldNames ? '' : 'space',
+        subBuilder: EmpireCircleCouncilSpace.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCircleSpaceOrDisputeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateCircleSpaceOrDisputeResponse copyWith(
+          void Function(AdminModerateCircleSpaceOrDisputeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminModerateCircleSpaceOrDisputeResponse))
+          as AdminModerateCircleSpaceOrDisputeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCircleSpaceOrDisputeResponse create() =>
+      AdminModerateCircleSpaceOrDisputeResponse._();
+  @$core.override
+  AdminModerateCircleSpaceOrDisputeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateCircleSpaceOrDisputeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateCircleSpaceOrDisputeResponse>(create);
+  static AdminModerateCircleSpaceOrDisputeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCircleCouncilSpace get space => $_getN(0);
+  @$pb.TagNumber(1)
+  set space(EmpireCircleCouncilSpace value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSpace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSpace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCircleCouncilSpace ensureSpace() => $_ensure(0);
+}
+
+class EmpireExperienceAccessPassportItem extends $pb.GeneratedMessage {
+  factory EmpireExperienceAccessPassportItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? experienceTitle,
+    $core.String? city,
+    $core.String? venue,
+    $core.String? eligibilityRuleSummary,
+    $core.String? alternativeAccessPath,
+    $core.bool? hiddenScoreCutoffUsed,
+    $core.String? reservationState,
+    $core.String? accessibilityAccommodation,
+    $core.String? attendanceVisibilityMode,
+    $core.String? passTokenDigest,
+    $core.String? startsAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (experienceTitle != null) result.experienceTitle = experienceTitle;
+    if (city != null) result.city = city;
+    if (venue != null) result.venue = venue;
+    if (eligibilityRuleSummary != null)
+      result.eligibilityRuleSummary = eligibilityRuleSummary;
+    if (alternativeAccessPath != null)
+      result.alternativeAccessPath = alternativeAccessPath;
+    if (hiddenScoreCutoffUsed != null)
+      result.hiddenScoreCutoffUsed = hiddenScoreCutoffUsed;
+    if (reservationState != null) result.reservationState = reservationState;
+    if (accessibilityAccommodation != null)
+      result.accessibilityAccommodation = accessibilityAccommodation;
+    if (attendanceVisibilityMode != null)
+      result.attendanceVisibilityMode = attendanceVisibilityMode;
+    if (passTokenDigest != null) result.passTokenDigest = passTokenDigest;
+    if (startsAt != null) result.startsAt = startsAt;
+    return result;
+  }
+
+  EmpireExperienceAccessPassportItem._();
+
+  factory EmpireExperienceAccessPassportItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireExperienceAccessPassportItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireExperienceAccessPassportItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'experienceTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'city')
+    ..aOS(5, _omitFieldNames ? '' : 'venue')
+    ..aOS(6, _omitFieldNames ? '' : 'eligibilityRuleSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'alternativeAccessPath')
+    ..aOB(8, _omitFieldNames ? '' : 'hiddenScoreCutoffUsed')
+    ..aOS(9, _omitFieldNames ? '' : 'reservationState')
+    ..aOS(10, _omitFieldNames ? '' : 'accessibilityAccommodation')
+    ..aOS(11, _omitFieldNames ? '' : 'attendanceVisibilityMode')
+    ..aOS(12, _omitFieldNames ? '' : 'passTokenDigest')
+    ..aOS(13, _omitFieldNames ? '' : 'startsAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireExperienceAccessPassportItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireExperienceAccessPassportItem copyWith(
+          void Function(EmpireExperienceAccessPassportItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireExperienceAccessPassportItem))
+          as EmpireExperienceAccessPassportItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireExperienceAccessPassportItem create() =>
+      EmpireExperienceAccessPassportItem._();
+  @$core.override
+  EmpireExperienceAccessPassportItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireExperienceAccessPassportItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireExperienceAccessPassportItem>(
+          create);
+  static EmpireExperienceAccessPassportItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get experienceTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set experienceTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExperienceTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExperienceTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get city => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set city($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get venue => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set venue($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVenue() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVenue() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get eligibilityRuleSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set eligibilityRuleSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEligibilityRuleSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEligibilityRuleSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get alternativeAccessPath => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set alternativeAccessPath($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAlternativeAccessPath() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAlternativeAccessPath() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get hiddenScoreCutoffUsed => $_getBF(7);
+  @$pb.TagNumber(8)
+  set hiddenScoreCutoffUsed($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasHiddenScoreCutoffUsed() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHiddenScoreCutoffUsed() => $_clearField(8);
+
+  /// confirmed_locked | waitlisted_atomic | provider_pending | provider_unknown_reconciling | cancelled_refunded
+  @$pb.TagNumber(9)
+  $core.String get reservationState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set reservationState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReservationState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReservationState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get accessibilityAccommodation => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set accessibilityAccommodation($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAccessibilityAccommodation() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAccessibilityAccommodation() => $_clearField(10);
+
+  /// private_pass_only | salon_guests_only | public_profile_yearbook
+  @$pb.TagNumber(11)
+  $core.String get attendanceVisibilityMode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set attendanceVisibilityMode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasAttendanceVisibilityMode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAttendanceVisibilityMode() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get passTokenDigest => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set passTokenDigest($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPassTokenDigest() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPassTokenDigest() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get startsAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set startsAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasStartsAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearStartsAt() => $_clearField(13);
+}
+
+class EmpireHostExperienceOperationLog extends $pb.GeneratedMessage {
+  factory EmpireHostExperienceOperationLog({
+    $core.String? id,
+    $core.String? passportItemId,
+    $core.String? hostUserId,
+    $core.String? operationKind,
+    $core.String? operationNote,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (passportItemId != null) result.passportItemId = passportItemId;
+    if (hostUserId != null) result.hostUserId = hostUserId;
+    if (operationKind != null) result.operationKind = operationKind;
+    if (operationNote != null) result.operationNote = operationNote;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireHostExperienceOperationLog._();
+
+  factory EmpireHostExperienceOperationLog.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireHostExperienceOperationLog.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireHostExperienceOperationLog',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'passportItemId')
+    ..aOS(3, _omitFieldNames ? '' : 'hostUserId')
+    ..aOS(4, _omitFieldNames ? '' : 'operationKind')
+    ..aOS(5, _omitFieldNames ? '' : 'operationNote')
+    ..aOS(6, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireHostExperienceOperationLog clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireHostExperienceOperationLog copyWith(
+          void Function(EmpireHostExperienceOperationLog) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireHostExperienceOperationLog))
+          as EmpireHostExperienceOperationLog;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireHostExperienceOperationLog create() =>
+      EmpireHostExperienceOperationLog._();
+  @$core.override
+  EmpireHostExperienceOperationLog createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireHostExperienceOperationLog getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireHostExperienceOperationLog>(
+          create);
+  static EmpireHostExperienceOperationLog? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get passportItemId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set passportItemId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPassportItemId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPassportItemId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get hostUserId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set hostUserId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHostUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHostUserId() => $_clearField(3);
+
+  /// announcement_sent | waitlist_promoted_once | accessibility_confirmed | provider_reconciled | refund_issued
+  @$pb.TagNumber(4)
+  $core.String get operationKind => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set operationKind($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOperationKind() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOperationKind() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get operationNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set operationNote($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOperationNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOperationNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get createdAt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set createdAt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => $_clearField(6);
+}
+
+class GetExperienceAccessPassportWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetExperienceAccessPassportWorkbenchRequest() => create();
+
+  GetExperienceAccessPassportWorkbenchRequest._();
+
+  factory GetExperienceAccessPassportWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetExperienceAccessPassportWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetExperienceAccessPassportWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetExperienceAccessPassportWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetExperienceAccessPassportWorkbenchRequest copyWith(
+          void Function(GetExperienceAccessPassportWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetExperienceAccessPassportWorkbenchRequest))
+          as GetExperienceAccessPassportWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetExperienceAccessPassportWorkbenchRequest create() =>
+      GetExperienceAccessPassportWorkbenchRequest._();
+  @$core.override
+  GetExperienceAccessPassportWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetExperienceAccessPassportWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetExperienceAccessPassportWorkbenchRequest>(create);
+  static GetExperienceAccessPassportWorkbenchRequest? _defaultInstance;
+}
+
+class GetExperienceAccessPassportWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetExperienceAccessPassportWorkbenchResponse({
+    $core.Iterable<EmpireExperienceAccessPassportItem>? passportItems,
+    $core.Iterable<EmpireHostExperienceOperationLog>? operationLogs,
+  }) {
+    final result = create();
+    if (passportItems != null) result.passportItems.addAll(passportItems);
+    if (operationLogs != null) result.operationLogs.addAll(operationLogs);
+    return result;
+  }
+
+  GetExperienceAccessPassportWorkbenchResponse._();
+
+  factory GetExperienceAccessPassportWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetExperienceAccessPassportWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetExperienceAccessPassportWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireExperienceAccessPassportItem>(
+        1, _omitFieldNames ? '' : 'passportItems',
+        subBuilder: EmpireExperienceAccessPassportItem.create)
+    ..pPM<EmpireHostExperienceOperationLog>(
+        2, _omitFieldNames ? '' : 'operationLogs',
+        subBuilder: EmpireHostExperienceOperationLog.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetExperienceAccessPassportWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetExperienceAccessPassportWorkbenchResponse copyWith(
+          void Function(GetExperienceAccessPassportWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetExperienceAccessPassportWorkbenchResponse))
+          as GetExperienceAccessPassportWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetExperienceAccessPassportWorkbenchResponse create() =>
+      GetExperienceAccessPassportWorkbenchResponse._();
+  @$core.override
+  GetExperienceAccessPassportWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetExperienceAccessPassportWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetExperienceAccessPassportWorkbenchResponse>(create);
+  static GetExperienceAccessPassportWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireExperienceAccessPassportItem> get passportItems =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireHostExperienceOperationLog> get operationLogs =>
+      $_getList(1);
+}
+
+class ReserveOrUpdateExperiencePassportItemRequest
+    extends $pb.GeneratedMessage {
+  factory ReserveOrUpdateExperiencePassportItemRequest({
+    $core.String? passportItemId,
+    $core.String? experienceTitle,
+    $core.String? city,
+    $core.String? venue,
+    $core.String? reservationState,
+    $core.String? accessibilityAccommodation,
+    $core.String? attendanceVisibilityMode,
+  }) {
+    final result = create();
+    if (passportItemId != null) result.passportItemId = passportItemId;
+    if (experienceTitle != null) result.experienceTitle = experienceTitle;
+    if (city != null) result.city = city;
+    if (venue != null) result.venue = venue;
+    if (reservationState != null) result.reservationState = reservationState;
+    if (accessibilityAccommodation != null)
+      result.accessibilityAccommodation = accessibilityAccommodation;
+    if (attendanceVisibilityMode != null)
+      result.attendanceVisibilityMode = attendanceVisibilityMode;
+    return result;
+  }
+
+  ReserveOrUpdateExperiencePassportItemRequest._();
+
+  factory ReserveOrUpdateExperiencePassportItemRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReserveOrUpdateExperiencePassportItemRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReserveOrUpdateExperiencePassportItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'passportItemId')
+    ..aOS(2, _omitFieldNames ? '' : 'experienceTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'city')
+    ..aOS(4, _omitFieldNames ? '' : 'venue')
+    ..aOS(5, _omitFieldNames ? '' : 'reservationState')
+    ..aOS(6, _omitFieldNames ? '' : 'accessibilityAccommodation')
+    ..aOS(7, _omitFieldNames ? '' : 'attendanceVisibilityMode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReserveOrUpdateExperiencePassportItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReserveOrUpdateExperiencePassportItemRequest copyWith(
+          void Function(ReserveOrUpdateExperiencePassportItemRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ReserveOrUpdateExperiencePassportItemRequest))
+          as ReserveOrUpdateExperiencePassportItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReserveOrUpdateExperiencePassportItemRequest create() =>
+      ReserveOrUpdateExperiencePassportItemRequest._();
+  @$core.override
+  ReserveOrUpdateExperiencePassportItemRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ReserveOrUpdateExperiencePassportItemRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReserveOrUpdateExperiencePassportItemRequest>(create);
+  static ReserveOrUpdateExperiencePassportItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get passportItemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set passportItemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPassportItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassportItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get experienceTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set experienceTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExperienceTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExperienceTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get city => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set city($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCity() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCity() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get venue => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set venue($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVenue() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVenue() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reservationState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reservationState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReservationState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReservationState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get accessibilityAccommodation => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set accessibilityAccommodation($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAccessibilityAccommodation() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAccessibilityAccommodation() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get attendanceVisibilityMode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set attendanceVisibilityMode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAttendanceVisibilityMode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAttendanceVisibilityMode() => $_clearField(7);
+}
+
+class ReserveOrUpdateExperiencePassportItemResponse
+    extends $pb.GeneratedMessage {
+  factory ReserveOrUpdateExperiencePassportItemResponse({
+    EmpireExperienceAccessPassportItem? passportItem,
+  }) {
+    final result = create();
+    if (passportItem != null) result.passportItem = passportItem;
+    return result;
+  }
+
+  ReserveOrUpdateExperiencePassportItemResponse._();
+
+  factory ReserveOrUpdateExperiencePassportItemResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReserveOrUpdateExperiencePassportItemResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReserveOrUpdateExperiencePassportItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireExperienceAccessPassportItem>(
+        1, _omitFieldNames ? '' : 'passportItem',
+        subBuilder: EmpireExperienceAccessPassportItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReserveOrUpdateExperiencePassportItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReserveOrUpdateExperiencePassportItemResponse copyWith(
+          void Function(ReserveOrUpdateExperiencePassportItemResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ReserveOrUpdateExperiencePassportItemResponse))
+          as ReserveOrUpdateExperiencePassportItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReserveOrUpdateExperiencePassportItemResponse create() =>
+      ReserveOrUpdateExperiencePassportItemResponse._();
+  @$core.override
+  ReserveOrUpdateExperiencePassportItemResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ReserveOrUpdateExperiencePassportItemResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReserveOrUpdateExperiencePassportItemResponse>(create);
+  static ReserveOrUpdateExperiencePassportItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireExperienceAccessPassportItem get passportItem => $_getN(0);
+  @$pb.TagNumber(1)
+  set passportItem(EmpireExperienceAccessPassportItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPassportItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassportItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireExperienceAccessPassportItem ensurePassportItem() => $_ensure(0);
+}
+
+class RecordHostExperienceOperationRequest extends $pb.GeneratedMessage {
+  factory RecordHostExperienceOperationRequest({
+    $core.String? passportItemId,
+    $core.String? operationKind,
+    $core.String? operationNote,
+    $core.String? updatedReservationState,
+  }) {
+    final result = create();
+    if (passportItemId != null) result.passportItemId = passportItemId;
+    if (operationKind != null) result.operationKind = operationKind;
+    if (operationNote != null) result.operationNote = operationNote;
+    if (updatedReservationState != null)
+      result.updatedReservationState = updatedReservationState;
+    return result;
+  }
+
+  RecordHostExperienceOperationRequest._();
+
+  factory RecordHostExperienceOperationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordHostExperienceOperationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordHostExperienceOperationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'passportItemId')
+    ..aOS(2, _omitFieldNames ? '' : 'operationKind')
+    ..aOS(3, _omitFieldNames ? '' : 'operationNote')
+    ..aOS(4, _omitFieldNames ? '' : 'updatedReservationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordHostExperienceOperationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordHostExperienceOperationRequest copyWith(
+          void Function(RecordHostExperienceOperationRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordHostExperienceOperationRequest))
+          as RecordHostExperienceOperationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordHostExperienceOperationRequest create() =>
+      RecordHostExperienceOperationRequest._();
+  @$core.override
+  RecordHostExperienceOperationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordHostExperienceOperationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordHostExperienceOperationRequest>(create);
+  static RecordHostExperienceOperationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get passportItemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set passportItemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPassportItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassportItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get operationKind => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set operationKind($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOperationKind() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOperationKind() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operationNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operationNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperationNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperationNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get updatedReservationState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set updatedReservationState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUpdatedReservationState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUpdatedReservationState() => $_clearField(4);
+}
+
+class RecordHostExperienceOperationResponse extends $pb.GeneratedMessage {
+  factory RecordHostExperienceOperationResponse({
+    EmpireHostExperienceOperationLog? operationLog,
+    EmpireExperienceAccessPassportItem? passportItem,
+  }) {
+    final result = create();
+    if (operationLog != null) result.operationLog = operationLog;
+    if (passportItem != null) result.passportItem = passportItem;
+    return result;
+  }
+
+  RecordHostExperienceOperationResponse._();
+
+  factory RecordHostExperienceOperationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordHostExperienceOperationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordHostExperienceOperationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireHostExperienceOperationLog>(
+        1, _omitFieldNames ? '' : 'operationLog',
+        subBuilder: EmpireHostExperienceOperationLog.create)
+    ..aOM<EmpireExperienceAccessPassportItem>(
+        2, _omitFieldNames ? '' : 'passportItem',
+        subBuilder: EmpireExperienceAccessPassportItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordHostExperienceOperationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordHostExperienceOperationResponse copyWith(
+          void Function(RecordHostExperienceOperationResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordHostExperienceOperationResponse))
+          as RecordHostExperienceOperationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordHostExperienceOperationResponse create() =>
+      RecordHostExperienceOperationResponse._();
+  @$core.override
+  RecordHostExperienceOperationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordHostExperienceOperationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordHostExperienceOperationResponse>(create);
+  static RecordHostExperienceOperationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireHostExperienceOperationLog get operationLog => $_getN(0);
+  @$pb.TagNumber(1)
+  set operationLog(EmpireHostExperienceOperationLog value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOperationLog() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOperationLog() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireHostExperienceOperationLog ensureOperationLog() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireExperienceAccessPassportItem get passportItem => $_getN(1);
+  @$pb.TagNumber(2)
+  set passportItem(EmpireExperienceAccessPassportItem value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPassportItem() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPassportItem() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireExperienceAccessPassportItem ensurePassportItem() => $_ensure(1);
+}
+
+class AdminListExperienceAccessPassportAuditRequest
+    extends $pb.GeneratedMessage {
+  factory AdminListExperienceAccessPassportAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListExperienceAccessPassportAuditRequest._();
+
+  factory AdminListExperienceAccessPassportAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListExperienceAccessPassportAuditRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListExperienceAccessPassportAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListExperienceAccessPassportAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListExperienceAccessPassportAuditRequest copyWith(
+          void Function(AdminListExperienceAccessPassportAuditRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListExperienceAccessPassportAuditRequest))
+          as AdminListExperienceAccessPassportAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListExperienceAccessPassportAuditRequest create() =>
+      AdminListExperienceAccessPassportAuditRequest._();
+  @$core.override
+  AdminListExperienceAccessPassportAuditRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListExperienceAccessPassportAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListExperienceAccessPassportAuditRequest>(create);
+  static AdminListExperienceAccessPassportAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListExperienceAccessPassportAuditResponse
+    extends $pb.GeneratedMessage {
+  factory AdminListExperienceAccessPassportAuditResponse({
+    $core.Iterable<EmpireExperienceAccessPassportItem>? passportItems,
+    $core.Iterable<EmpireHostExperienceOperationLog>? operationLogs,
+  }) {
+    final result = create();
+    if (passportItems != null) result.passportItems.addAll(passportItems);
+    if (operationLogs != null) result.operationLogs.addAll(operationLogs);
+    return result;
+  }
+
+  AdminListExperienceAccessPassportAuditResponse._();
+
+  factory AdminListExperienceAccessPassportAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListExperienceAccessPassportAuditResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListExperienceAccessPassportAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireExperienceAccessPassportItem>(
+        1, _omitFieldNames ? '' : 'passportItems',
+        subBuilder: EmpireExperienceAccessPassportItem.create)
+    ..pPM<EmpireHostExperienceOperationLog>(
+        2, _omitFieldNames ? '' : 'operationLogs',
+        subBuilder: EmpireHostExperienceOperationLog.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListExperienceAccessPassportAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListExperienceAccessPassportAuditResponse copyWith(
+          void Function(AdminListExperienceAccessPassportAuditResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminListExperienceAccessPassportAuditResponse))
+          as AdminListExperienceAccessPassportAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListExperienceAccessPassportAuditResponse create() =>
+      AdminListExperienceAccessPassportAuditResponse._();
+  @$core.override
+  AdminListExperienceAccessPassportAuditResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListExperienceAccessPassportAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListExperienceAccessPassportAuditResponse>(create);
+  static AdminListExperienceAccessPassportAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireExperienceAccessPassportItem> get passportItems =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireHostExperienceOperationLog> get operationLogs =>
+      $_getList(1);
+}
+
+class AdminReconcileExperienceReservationOrAppealRequest
+    extends $pb.GeneratedMessage {
+  factory AdminReconcileExperienceReservationOrAppealRequest({
+    $core.String? passportItemId,
+    $core.String? reservationState,
+    $core.String? operationNote,
+  }) {
+    final result = create();
+    if (passportItemId != null) result.passportItemId = passportItemId;
+    if (reservationState != null) result.reservationState = reservationState;
+    if (operationNote != null) result.operationNote = operationNote;
+    return result;
+  }
+
+  AdminReconcileExperienceReservationOrAppealRequest._();
+
+  factory AdminReconcileExperienceReservationOrAppealRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileExperienceReservationOrAppealRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminReconcileExperienceReservationOrAppealRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'passportItemId')
+    ..aOS(2, _omitFieldNames ? '' : 'reservationState')
+    ..aOS(3, _omitFieldNames ? '' : 'operationNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExperienceReservationOrAppealRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExperienceReservationOrAppealRequest copyWith(
+          void Function(AdminReconcileExperienceReservationOrAppealRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminReconcileExperienceReservationOrAppealRequest))
+          as AdminReconcileExperienceReservationOrAppealRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExperienceReservationOrAppealRequest create() =>
+      AdminReconcileExperienceReservationOrAppealRequest._();
+  @$core.override
+  AdminReconcileExperienceReservationOrAppealRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExperienceReservationOrAppealRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileExperienceReservationOrAppealRequest>(create);
+  static AdminReconcileExperienceReservationOrAppealRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get passportItemId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set passportItemId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPassportItemId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassportItemId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reservationState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reservationState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReservationState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReservationState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get operationNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set operationNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOperationNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOperationNote() => $_clearField(3);
+}
+
+class AdminReconcileExperienceReservationOrAppealResponse
+    extends $pb.GeneratedMessage {
+  factory AdminReconcileExperienceReservationOrAppealResponse({
+    EmpireExperienceAccessPassportItem? passportItem,
+  }) {
+    final result = create();
+    if (passportItem != null) result.passportItem = passportItem;
+    return result;
+  }
+
+  AdminReconcileExperienceReservationOrAppealResponse._();
+
+  factory AdminReconcileExperienceReservationOrAppealResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileExperienceReservationOrAppealResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminReconcileExperienceReservationOrAppealResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireExperienceAccessPassportItem>(
+        1, _omitFieldNames ? '' : 'passportItem',
+        subBuilder: EmpireExperienceAccessPassportItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExperienceReservationOrAppealResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExperienceReservationOrAppealResponse copyWith(
+          void Function(AdminReconcileExperienceReservationOrAppealResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminReconcileExperienceReservationOrAppealResponse))
+          as AdminReconcileExperienceReservationOrAppealResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExperienceReservationOrAppealResponse create() =>
+      AdminReconcileExperienceReservationOrAppealResponse._();
+  @$core.override
+  AdminReconcileExperienceReservationOrAppealResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExperienceReservationOrAppealResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileExperienceReservationOrAppealResponse>(create);
+  static AdminReconcileExperienceReservationOrAppealResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireExperienceAccessPassportItem get passportItem => $_getN(0);
+  @$pb.TagNumber(1)
+  set passportItem(EmpireExperienceAccessPassportItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPassportItem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPassportItem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireExperienceAccessPassportItem ensurePassportItem() => $_ensure(0);
+}
+
+class EmpireAuthoredFeedShareItem extends $pb.GeneratedMessage {
+  factory EmpireAuthoredFeedShareItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourcePillar,
+    $core.String? shareCategory,
+    $core.String? title,
+    $core.String? redactedBodyPreview,
+    $core.String? audienceScope,
+    $core.String? feedModeOrigin,
+    $core.String? displayState,
+    $core.String? expiresAt,
+    $core.String? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (shareCategory != null) result.shareCategory = shareCategory;
+    if (title != null) result.title = title;
+    if (redactedBodyPreview != null)
+      result.redactedBodyPreview = redactedBodyPreview;
+    if (audienceScope != null) result.audienceScope = audienceScope;
+    if (feedModeOrigin != null) result.feedModeOrigin = feedModeOrigin;
+    if (displayState != null) result.displayState = displayState;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  EmpireAuthoredFeedShareItem._();
+
+  factory EmpireAuthoredFeedShareItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireAuthoredFeedShareItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireAuthoredFeedShareItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(4, _omitFieldNames ? '' : 'shareCategory')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'redactedBodyPreview')
+    ..aOS(7, _omitFieldNames ? '' : 'audienceScope')
+    ..aOS(8, _omitFieldNames ? '' : 'feedModeOrigin')
+    ..aOS(9, _omitFieldNames ? '' : 'displayState')
+    ..aOS(10, _omitFieldNames ? '' : 'expiresAt')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireAuthoredFeedShareItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireAuthoredFeedShareItem copyWith(
+          void Function(EmpireAuthoredFeedShareItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireAuthoredFeedShareItem))
+          as EmpireAuthoredFeedShareItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireAuthoredFeedShareItem create() =>
+      EmpireAuthoredFeedShareItem._();
+  @$core.override
+  EmpireAuthoredFeedShareItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireAuthoredFeedShareItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireAuthoredFeedShareItem>(create);
+  static EmpireAuthoredFeedShareItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePillar() => $_clearField(3);
+
+  /// pillar_achievement | help_request | circle_dispatch | editorial_reflection
+  @$pb.TagNumber(4)
+  $core.String get shareCategory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set shareCategory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShareCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShareCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get redactedBodyPreview => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set redactedBodyPreview($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRedactedBodyPreview() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRedactedBodyPreview() => $_clearField(6);
+
+  /// opted_in_friends | circle_members | city_local | public_empire
+  @$pb.TagNumber(7)
+  $core.String get audienceScope => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set audienceScope($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAudienceScope() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAudienceScope() => $_clearField(7);
+
+  /// chronological_pure | topic_curated | circle_relationships | local_city | quiet_essential
+  @$pb.TagNumber(8)
+  $core.String get feedModeOrigin => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set feedModeOrigin($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFeedModeOrigin() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFeedModeOrigin() => $_clearField(8);
+
+  /// active_published | preview_draft | revoked_by_author | moderated_repaired
+  @$pb.TagNumber(9)
+  $core.String get displayState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set displayState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDisplayState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDisplayState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get expiresAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set expiresAt($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExpiresAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExpiresAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set createdAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+}
+
+class EmpireEditorialProvenanceCard extends $pb.GeneratedMessage {
+  factory EmpireEditorialProvenanceCard({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourcePillar,
+    $core.String? articleTitle,
+    $core.String? authorAndVersion,
+    $core.String? rightsAndLicense,
+    $core.String? correctionNotice,
+    $core.bool? generatedPersonalizationAlteredFacts,
+    $core.String? publishedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (articleTitle != null) result.articleTitle = articleTitle;
+    if (authorAndVersion != null) result.authorAndVersion = authorAndVersion;
+    if (rightsAndLicense != null) result.rightsAndLicense = rightsAndLicense;
+    if (correctionNotice != null) result.correctionNotice = correctionNotice;
+    if (generatedPersonalizationAlteredFacts != null)
+      result.generatedPersonalizationAlteredFacts =
+          generatedPersonalizationAlteredFacts;
+    if (publishedAt != null) result.publishedAt = publishedAt;
+    return result;
+  }
+
+  EmpireEditorialProvenanceCard._();
+
+  factory EmpireEditorialProvenanceCard.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireEditorialProvenanceCard.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireEditorialProvenanceCard',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(4, _omitFieldNames ? '' : 'articleTitle')
+    ..aOS(5, _omitFieldNames ? '' : 'authorAndVersion')
+    ..aOS(6, _omitFieldNames ? '' : 'rightsAndLicense')
+    ..aOS(7, _omitFieldNames ? '' : 'correctionNotice')
+    ..aOB(8, _omitFieldNames ? '' : 'generatedPersonalizationAlteredFacts')
+    ..aOS(9, _omitFieldNames ? '' : 'publishedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireEditorialProvenanceCard clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireEditorialProvenanceCard copyWith(
+          void Function(EmpireEditorialProvenanceCard) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireEditorialProvenanceCard))
+          as EmpireEditorialProvenanceCard;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireEditorialProvenanceCard create() =>
+      EmpireEditorialProvenanceCard._();
+  @$core.override
+  EmpireEditorialProvenanceCard createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireEditorialProvenanceCard getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireEditorialProvenanceCard>(create);
+  static EmpireEditorialProvenanceCard? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourcePillar => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourcePillar($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourcePillar() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourcePillar() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get articleTitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set articleTitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasArticleTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearArticleTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get authorAndVersion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set authorAndVersion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthorAndVersion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthorAndVersion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get rightsAndLicense => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set rightsAndLicense($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRightsAndLicense() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRightsAndLicense() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get correctionNotice => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set correctionNotice($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCorrectionNotice() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCorrectionNotice() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get generatedPersonalizationAlteredFacts => $_getBF(7);
+  @$pb.TagNumber(8)
+  set generatedPersonalizationAlteredFacts($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasGeneratedPersonalizationAlteredFacts() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGeneratedPersonalizationAlteredFacts() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get publishedAt => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set publishedAt($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPublishedAt() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPublishedAt() => $_clearField(9);
+}
+
+class GetMemberFeedEditorialWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetMemberFeedEditorialWorkbenchRequest() => create();
+
+  GetMemberFeedEditorialWorkbenchRequest._();
+
+  factory GetMemberFeedEditorialWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberFeedEditorialWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberFeedEditorialWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberFeedEditorialWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberFeedEditorialWorkbenchRequest copyWith(
+          void Function(GetMemberFeedEditorialWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMemberFeedEditorialWorkbenchRequest))
+          as GetMemberFeedEditorialWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberFeedEditorialWorkbenchRequest create() =>
+      GetMemberFeedEditorialWorkbenchRequest._();
+  @$core.override
+  GetMemberFeedEditorialWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberFeedEditorialWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMemberFeedEditorialWorkbenchRequest>(create);
+  static GetMemberFeedEditorialWorkbenchRequest? _defaultInstance;
+}
+
+class GetMemberFeedEditorialWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetMemberFeedEditorialWorkbenchResponse({
+    $core.Iterable<EmpireAuthoredFeedShareItem>? feedShares,
+    $core.Iterable<EmpireEditorialProvenanceCard>? editorialCards,
+  }) {
+    final result = create();
+    if (feedShares != null) result.feedShares.addAll(feedShares);
+    if (editorialCards != null) result.editorialCards.addAll(editorialCards);
+    return result;
+  }
+
+  GetMemberFeedEditorialWorkbenchResponse._();
+
+  factory GetMemberFeedEditorialWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberFeedEditorialWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberFeedEditorialWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireAuthoredFeedShareItem>(1, _omitFieldNames ? '' : 'feedShares',
+        subBuilder: EmpireAuthoredFeedShareItem.create)
+    ..pPM<EmpireEditorialProvenanceCard>(
+        2, _omitFieldNames ? '' : 'editorialCards',
+        subBuilder: EmpireEditorialProvenanceCard.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberFeedEditorialWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberFeedEditorialWorkbenchResponse copyWith(
+          void Function(GetMemberFeedEditorialWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMemberFeedEditorialWorkbenchResponse))
+          as GetMemberFeedEditorialWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberFeedEditorialWorkbenchResponse create() =>
+      GetMemberFeedEditorialWorkbenchResponse._();
+  @$core.override
+  GetMemberFeedEditorialWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberFeedEditorialWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMemberFeedEditorialWorkbenchResponse>(create);
+  static GetMemberFeedEditorialWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireAuthoredFeedShareItem> get feedShares => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireEditorialProvenanceCard> get editorialCards => $_getList(1);
+}
+
+class PreviewPublishOrRevokeFeedShareRequest extends $pb.GeneratedMessage {
+  factory PreviewPublishOrRevokeFeedShareRequest({
+    $core.String? shareId,
+    $core.String? sourcePillar,
+    $core.String? shareCategory,
+    $core.String? title,
+    $core.String? redactedBodyPreview,
+    $core.String? audienceScope,
+    $core.String? feedModeOrigin,
+    $core.String? displayState,
+  }) {
+    final result = create();
+    if (shareId != null) result.shareId = shareId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (shareCategory != null) result.shareCategory = shareCategory;
+    if (title != null) result.title = title;
+    if (redactedBodyPreview != null)
+      result.redactedBodyPreview = redactedBodyPreview;
+    if (audienceScope != null) result.audienceScope = audienceScope;
+    if (feedModeOrigin != null) result.feedModeOrigin = feedModeOrigin;
+    if (displayState != null) result.displayState = displayState;
+    return result;
+  }
+
+  PreviewPublishOrRevokeFeedShareRequest._();
+
+  factory PreviewPublishOrRevokeFeedShareRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewPublishOrRevokeFeedShareRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewPublishOrRevokeFeedShareRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shareId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(3, _omitFieldNames ? '' : 'shareCategory')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'redactedBodyPreview')
+    ..aOS(6, _omitFieldNames ? '' : 'audienceScope')
+    ..aOS(7, _omitFieldNames ? '' : 'feedModeOrigin')
+    ..aOS(8, _omitFieldNames ? '' : 'displayState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewPublishOrRevokeFeedShareRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewPublishOrRevokeFeedShareRequest copyWith(
+          void Function(PreviewPublishOrRevokeFeedShareRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as PreviewPublishOrRevokeFeedShareRequest))
+          as PreviewPublishOrRevokeFeedShareRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewPublishOrRevokeFeedShareRequest create() =>
+      PreviewPublishOrRevokeFeedShareRequest._();
+  @$core.override
+  PreviewPublishOrRevokeFeedShareRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewPublishOrRevokeFeedShareRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewPublishOrRevokeFeedShareRequest>(create);
+  static PreviewPublishOrRevokeFeedShareRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get shareId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shareId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShareId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShareId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourcePillar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourcePillar($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourcePillar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourcePillar() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get shareCategory => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set shareCategory($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasShareCategory() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearShareCategory() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get redactedBodyPreview => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set redactedBodyPreview($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRedactedBodyPreview() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRedactedBodyPreview() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get audienceScope => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set audienceScope($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAudienceScope() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAudienceScope() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get feedModeOrigin => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set feedModeOrigin($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFeedModeOrigin() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFeedModeOrigin() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get displayState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set displayState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDisplayState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDisplayState() => $_clearField(8);
+}
+
+class PreviewPublishOrRevokeFeedShareResponse extends $pb.GeneratedMessage {
+  factory PreviewPublishOrRevokeFeedShareResponse({
+    EmpireAuthoredFeedShareItem? feedShare,
+  }) {
+    final result = create();
+    if (feedShare != null) result.feedShare = feedShare;
+    return result;
+  }
+
+  PreviewPublishOrRevokeFeedShareResponse._();
+
+  factory PreviewPublishOrRevokeFeedShareResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewPublishOrRevokeFeedShareResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewPublishOrRevokeFeedShareResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireAuthoredFeedShareItem>(1, _omitFieldNames ? '' : 'feedShare',
+        subBuilder: EmpireAuthoredFeedShareItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewPublishOrRevokeFeedShareResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewPublishOrRevokeFeedShareResponse copyWith(
+          void Function(PreviewPublishOrRevokeFeedShareResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as PreviewPublishOrRevokeFeedShareResponse))
+          as PreviewPublishOrRevokeFeedShareResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewPublishOrRevokeFeedShareResponse create() =>
+      PreviewPublishOrRevokeFeedShareResponse._();
+  @$core.override
+  PreviewPublishOrRevokeFeedShareResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewPublishOrRevokeFeedShareResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewPublishOrRevokeFeedShareResponse>(create);
+  static PreviewPublishOrRevokeFeedShareResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireAuthoredFeedShareItem get feedShare => $_getN(0);
+  @$pb.TagNumber(1)
+  set feedShare(EmpireAuthoredFeedShareItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFeedShare() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFeedShare() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireAuthoredFeedShareItem ensureFeedShare() => $_ensure(0);
+}
+
+class RecordEditorialCorrectionOrResetModeRequest extends $pb.GeneratedMessage {
+  factory RecordEditorialCorrectionOrResetModeRequest({
+    $core.String? cardId,
+    $core.String? sourcePillar,
+    $core.String? articleTitle,
+    $core.String? correctionNotice,
+  }) {
+    final result = create();
+    if (cardId != null) result.cardId = cardId;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (articleTitle != null) result.articleTitle = articleTitle;
+    if (correctionNotice != null) result.correctionNotice = correctionNotice;
+    return result;
+  }
+
+  RecordEditorialCorrectionOrResetModeRequest._();
+
+  factory RecordEditorialCorrectionOrResetModeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordEditorialCorrectionOrResetModeRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordEditorialCorrectionOrResetModeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'cardId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(3, _omitFieldNames ? '' : 'articleTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'correctionNotice')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEditorialCorrectionOrResetModeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEditorialCorrectionOrResetModeRequest copyWith(
+          void Function(RecordEditorialCorrectionOrResetModeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordEditorialCorrectionOrResetModeRequest))
+          as RecordEditorialCorrectionOrResetModeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordEditorialCorrectionOrResetModeRequest create() =>
+      RecordEditorialCorrectionOrResetModeRequest._();
+  @$core.override
+  RecordEditorialCorrectionOrResetModeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordEditorialCorrectionOrResetModeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordEditorialCorrectionOrResetModeRequest>(create);
+  static RecordEditorialCorrectionOrResetModeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cardId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cardId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCardId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCardId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourcePillar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourcePillar($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourcePillar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourcePillar() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get articleTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set articleTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasArticleTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearArticleTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get correctionNotice => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set correctionNotice($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCorrectionNotice() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCorrectionNotice() => $_clearField(4);
+}
+
+class RecordEditorialCorrectionOrResetModeResponse
+    extends $pb.GeneratedMessage {
+  factory RecordEditorialCorrectionOrResetModeResponse({
+    EmpireEditorialProvenanceCard? editorialCard,
+  }) {
+    final result = create();
+    if (editorialCard != null) result.editorialCard = editorialCard;
+    return result;
+  }
+
+  RecordEditorialCorrectionOrResetModeResponse._();
+
+  factory RecordEditorialCorrectionOrResetModeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordEditorialCorrectionOrResetModeResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordEditorialCorrectionOrResetModeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireEditorialProvenanceCard>(
+        1, _omitFieldNames ? '' : 'editorialCard',
+        subBuilder: EmpireEditorialProvenanceCard.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEditorialCorrectionOrResetModeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordEditorialCorrectionOrResetModeResponse copyWith(
+          void Function(RecordEditorialCorrectionOrResetModeResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordEditorialCorrectionOrResetModeResponse))
+          as RecordEditorialCorrectionOrResetModeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordEditorialCorrectionOrResetModeResponse create() =>
+      RecordEditorialCorrectionOrResetModeResponse._();
+  @$core.override
+  RecordEditorialCorrectionOrResetModeResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RecordEditorialCorrectionOrResetModeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordEditorialCorrectionOrResetModeResponse>(create);
+  static RecordEditorialCorrectionOrResetModeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireEditorialProvenanceCard get editorialCard => $_getN(0);
+  @$pb.TagNumber(1)
+  set editorialCard(EmpireEditorialProvenanceCard value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEditorialCard() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEditorialCard() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireEditorialProvenanceCard ensureEditorialCard() => $_ensure(0);
+}
+
+class AdminListMemberFeedEditorialAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListMemberFeedEditorialAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListMemberFeedEditorialAuditRequest._();
+
+  factory AdminListMemberFeedEditorialAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMemberFeedEditorialAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMemberFeedEditorialAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberFeedEditorialAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberFeedEditorialAuditRequest copyWith(
+          void Function(AdminListMemberFeedEditorialAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMemberFeedEditorialAuditRequest))
+          as AdminListMemberFeedEditorialAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberFeedEditorialAuditRequest create() =>
+      AdminListMemberFeedEditorialAuditRequest._();
+  @$core.override
+  AdminListMemberFeedEditorialAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberFeedEditorialAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMemberFeedEditorialAuditRequest>(create);
+  static AdminListMemberFeedEditorialAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListMemberFeedEditorialAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListMemberFeedEditorialAuditResponse({
+    $core.Iterable<EmpireAuthoredFeedShareItem>? feedShares,
+    $core.Iterable<EmpireEditorialProvenanceCard>? editorialCards,
+  }) {
+    final result = create();
+    if (feedShares != null) result.feedShares.addAll(feedShares);
+    if (editorialCards != null) result.editorialCards.addAll(editorialCards);
+    return result;
+  }
+
+  AdminListMemberFeedEditorialAuditResponse._();
+
+  factory AdminListMemberFeedEditorialAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMemberFeedEditorialAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMemberFeedEditorialAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireAuthoredFeedShareItem>(1, _omitFieldNames ? '' : 'feedShares',
+        subBuilder: EmpireAuthoredFeedShareItem.create)
+    ..pPM<EmpireEditorialProvenanceCard>(
+        2, _omitFieldNames ? '' : 'editorialCards',
+        subBuilder: EmpireEditorialProvenanceCard.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberFeedEditorialAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberFeedEditorialAuditResponse copyWith(
+          void Function(AdminListMemberFeedEditorialAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMemberFeedEditorialAuditResponse))
+          as AdminListMemberFeedEditorialAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberFeedEditorialAuditResponse create() =>
+      AdminListMemberFeedEditorialAuditResponse._();
+  @$core.override
+  AdminListMemberFeedEditorialAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberFeedEditorialAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMemberFeedEditorialAuditResponse>(create);
+  static AdminListMemberFeedEditorialAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireAuthoredFeedShareItem> get feedShares => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireEditorialProvenanceCard> get editorialCards => $_getList(1);
+}
+
+class AdminModerateFeedShareOrEditorialCorrectionRequest
+    extends $pb.GeneratedMessage {
+  factory AdminModerateFeedShareOrEditorialCorrectionRequest({
+    $core.String? shareId,
+    $core.String? displayState,
+  }) {
+    final result = create();
+    if (shareId != null) result.shareId = shareId;
+    if (displayState != null) result.displayState = displayState;
+    return result;
+  }
+
+  AdminModerateFeedShareOrEditorialCorrectionRequest._();
+
+  factory AdminModerateFeedShareOrEditorialCorrectionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateFeedShareOrEditorialCorrectionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateFeedShareOrEditorialCorrectionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shareId')
+    ..aOS(2, _omitFieldNames ? '' : 'displayState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateFeedShareOrEditorialCorrectionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateFeedShareOrEditorialCorrectionRequest copyWith(
+          void Function(AdminModerateFeedShareOrEditorialCorrectionRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateFeedShareOrEditorialCorrectionRequest))
+          as AdminModerateFeedShareOrEditorialCorrectionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateFeedShareOrEditorialCorrectionRequest create() =>
+      AdminModerateFeedShareOrEditorialCorrectionRequest._();
+  @$core.override
+  AdminModerateFeedShareOrEditorialCorrectionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateFeedShareOrEditorialCorrectionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateFeedShareOrEditorialCorrectionRequest>(create);
+  static AdminModerateFeedShareOrEditorialCorrectionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get shareId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shareId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShareId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShareId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get displayState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set displayState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisplayState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplayState() => $_clearField(2);
+}
+
+class AdminModerateFeedShareOrEditorialCorrectionResponse
+    extends $pb.GeneratedMessage {
+  factory AdminModerateFeedShareOrEditorialCorrectionResponse({
+    EmpireAuthoredFeedShareItem? feedShare,
+  }) {
+    final result = create();
+    if (feedShare != null) result.feedShare = feedShare;
+    return result;
+  }
+
+  AdminModerateFeedShareOrEditorialCorrectionResponse._();
+
+  factory AdminModerateFeedShareOrEditorialCorrectionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateFeedShareOrEditorialCorrectionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateFeedShareOrEditorialCorrectionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireAuthoredFeedShareItem>(1, _omitFieldNames ? '' : 'feedShare',
+        subBuilder: EmpireAuthoredFeedShareItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateFeedShareOrEditorialCorrectionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateFeedShareOrEditorialCorrectionResponse copyWith(
+          void Function(AdminModerateFeedShareOrEditorialCorrectionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateFeedShareOrEditorialCorrectionResponse))
+          as AdminModerateFeedShareOrEditorialCorrectionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateFeedShareOrEditorialCorrectionResponse create() =>
+      AdminModerateFeedShareOrEditorialCorrectionResponse._();
+  @$core.override
+  AdminModerateFeedShareOrEditorialCorrectionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateFeedShareOrEditorialCorrectionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateFeedShareOrEditorialCorrectionResponse>(create);
+  static AdminModerateFeedShareOrEditorialCorrectionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireAuthoredFeedShareItem get feedShare => $_getN(0);
+  @$pb.TagNumber(1)
+  set feedShare(EmpireAuthoredFeedShareItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFeedShare() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFeedShare() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireAuthoredFeedShareItem ensureFeedShare() => $_ensure(0);
+}
+
+class EmpireContributionLedgerEntry extends $pb.GeneratedMessage {
+  factory EmpireContributionLedgerEntry({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? contributionCode,
+    $core.String? contributionCategory,
+    $core.String? title,
+    $core.String? deliveredOutcomeSummary,
+    $core.String? evidenceArtifactRef,
+    $core.String? recipientPrivacyMode,
+    $core.String? sponsorDisclosureNote,
+    $core.String? antiCollusionStatus,
+    $core.bool? optInIntroductionsAndBenefits,
+    $core.bool? popularityDecoupledBadge,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (contributionCode != null) result.contributionCode = contributionCode;
+    if (contributionCategory != null)
+      result.contributionCategory = contributionCategory;
+    if (title != null) result.title = title;
+    if (deliveredOutcomeSummary != null)
+      result.deliveredOutcomeSummary = deliveredOutcomeSummary;
+    if (evidenceArtifactRef != null)
+      result.evidenceArtifactRef = evidenceArtifactRef;
+    if (recipientPrivacyMode != null)
+      result.recipientPrivacyMode = recipientPrivacyMode;
+    if (sponsorDisclosureNote != null)
+      result.sponsorDisclosureNote = sponsorDisclosureNote;
+    if (antiCollusionStatus != null)
+      result.antiCollusionStatus = antiCollusionStatus;
+    if (optInIntroductionsAndBenefits != null)
+      result.optInIntroductionsAndBenefits = optInIntroductionsAndBenefits;
+    if (popularityDecoupledBadge != null)
+      result.popularityDecoupledBadge = popularityDecoupledBadge;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireContributionLedgerEntry._();
+
+  factory EmpireContributionLedgerEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireContributionLedgerEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireContributionLedgerEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'contributionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'contributionCategory')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'deliveredOutcomeSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'evidenceArtifactRef')
+    ..aOS(8, _omitFieldNames ? '' : 'recipientPrivacyMode')
+    ..aOS(9, _omitFieldNames ? '' : 'sponsorDisclosureNote')
+    ..aOS(10, _omitFieldNames ? '' : 'antiCollusionStatus')
+    ..aOB(11, _omitFieldNames ? '' : 'optInIntroductionsAndBenefits')
+    ..aOB(12, _omitFieldNames ? '' : 'popularityDecoupledBadge')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContributionLedgerEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireContributionLedgerEntry copyWith(
+          void Function(EmpireContributionLedgerEntry) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireContributionLedgerEntry))
+          as EmpireContributionLedgerEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireContributionLedgerEntry create() =>
+      EmpireContributionLedgerEntry._();
+  @$core.override
+  EmpireContributionLedgerEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireContributionLedgerEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireContributionLedgerEntry>(create);
+  static EmpireContributionLedgerEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contributionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contributionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContributionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContributionCode() => $_clearField(3);
+
+  /// mentoring | hosting | reviewing | teaching | volunteering | creating | troubleshooting | member_service
+  @$pb.TagNumber(4)
+  $core.String get contributionCategory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set contributionCategory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContributionCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContributionCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get deliveredOutcomeSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set deliveredOutcomeSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDeliveredOutcomeSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDeliveredOutcomeSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get evidenceArtifactRef => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set evidenceArtifactRef($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEvidenceArtifactRef() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEvidenceArtifactRef() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get recipientPrivacyMode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set recipientPrivacyMode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRecipientPrivacyMode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRecipientPrivacyMode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get sponsorDisclosureNote => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set sponsorDisclosureNote($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSponsorDisclosureNote() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSponsorDisclosureNote() => $_clearField(9);
+
+  /// verified_independent | reciprocal_ring_review | sponsor_conflict_flagged | cleared_by_governance
+  @$pb.TagNumber(10)
+  $core.String get antiCollusionStatus => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set antiCollusionStatus($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAntiCollusionStatus() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAntiCollusionStatus() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get optInIntroductionsAndBenefits => $_getBF(10);
+  @$pb.TagNumber(11)
+  set optInIntroductionsAndBenefits($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasOptInIntroductionsAndBenefits() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearOptInIntroductionsAndBenefits() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get popularityDecoupledBadge => $_getBF(11);
+  @$pb.TagNumber(12)
+  set popularityDecoupledBadge($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPopularityDecoupledBadge() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPopularityDecoupledBadge() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get createdAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set createdAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get updatedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set updatedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+}
+
+class EmpireGratitudeEndorsementReceipt extends $pb.GeneratedMessage {
+  factory EmpireGratitudeEndorsementReceipt({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? endorsementCode,
+    $core.String? contributionCode,
+    $core.String? peerHandle,
+    $core.String? endorsementMode,
+    $core.String? specificOutcomeNote,
+    $core.String? correctionStatus,
+    $core.int? reciprocalFarmingScoreBps,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (endorsementCode != null) result.endorsementCode = endorsementCode;
+    if (contributionCode != null) result.contributionCode = contributionCode;
+    if (peerHandle != null) result.peerHandle = peerHandle;
+    if (endorsementMode != null) result.endorsementMode = endorsementMode;
+    if (specificOutcomeNote != null)
+      result.specificOutcomeNote = specificOutcomeNote;
+    if (correctionStatus != null) result.correctionStatus = correctionStatus;
+    if (reciprocalFarmingScoreBps != null)
+      result.reciprocalFarmingScoreBps = reciprocalFarmingScoreBps;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireGratitudeEndorsementReceipt._();
+
+  factory EmpireGratitudeEndorsementReceipt.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireGratitudeEndorsementReceipt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireGratitudeEndorsementReceipt',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'endorsementCode')
+    ..aOS(4, _omitFieldNames ? '' : 'contributionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'peerHandle')
+    ..aOS(6, _omitFieldNames ? '' : 'endorsementMode')
+    ..aOS(7, _omitFieldNames ? '' : 'specificOutcomeNote')
+    ..aOS(8, _omitFieldNames ? '' : 'correctionStatus')
+    ..aI(9, _omitFieldNames ? '' : 'reciprocalFarmingScoreBps')
+    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireGratitudeEndorsementReceipt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireGratitudeEndorsementReceipt copyWith(
+          void Function(EmpireGratitudeEndorsementReceipt) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireGratitudeEndorsementReceipt))
+          as EmpireGratitudeEndorsementReceipt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireGratitudeEndorsementReceipt create() =>
+      EmpireGratitudeEndorsementReceipt._();
+  @$core.override
+  EmpireGratitudeEndorsementReceipt createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireGratitudeEndorsementReceipt getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireGratitudeEndorsementReceipt>(
+          create);
+  static EmpireGratitudeEndorsementReceipt? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get endorsementCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set endorsementCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEndorsementCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEndorsementCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get contributionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set contributionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasContributionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearContributionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get peerHandle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set peerHandle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPeerHandle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPeerHandle() => $_clearField(5);
+
+  /// private_thank_you | verified_outcome_endorsement | correction_requested | sponsor_acknowledged
+  @$pb.TagNumber(6)
+  $core.String get endorsementMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set endorsementMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEndorsementMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEndorsementMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get specificOutcomeNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set specificOutcomeNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSpecificOutcomeNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSpecificOutcomeNote() => $_clearField(7);
+
+  /// none | pending_author_review | corrected | admin_adjudicated
+  @$pb.TagNumber(8)
+  $core.String get correctionStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set correctionStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCorrectionStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCorrectionStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get reciprocalFarmingScoreBps => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set reciprocalFarmingScoreBps($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasReciprocalFarmingScoreBps() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearReciprocalFarmingScoreBps() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get createdAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set createdAt($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+}
+
+class GetContributionLedgerWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetContributionLedgerWorkbenchRequest() => create();
+
+  GetContributionLedgerWorkbenchRequest._();
+
+  factory GetContributionLedgerWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetContributionLedgerWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetContributionLedgerWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContributionLedgerWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContributionLedgerWorkbenchRequest copyWith(
+          void Function(GetContributionLedgerWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetContributionLedgerWorkbenchRequest))
+          as GetContributionLedgerWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContributionLedgerWorkbenchRequest create() =>
+      GetContributionLedgerWorkbenchRequest._();
+  @$core.override
+  GetContributionLedgerWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetContributionLedgerWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetContributionLedgerWorkbenchRequest>(create);
+  static GetContributionLedgerWorkbenchRequest? _defaultInstance;
+}
+
+class GetContributionLedgerWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetContributionLedgerWorkbenchResponse({
+    $core.Iterable<EmpireContributionLedgerEntry>? contributions,
+    $core.Iterable<EmpireGratitudeEndorsementReceipt>? endorsements,
+  }) {
+    final result = create();
+    if (contributions != null) result.contributions.addAll(contributions);
+    if (endorsements != null) result.endorsements.addAll(endorsements);
+    return result;
+  }
+
+  GetContributionLedgerWorkbenchResponse._();
+
+  factory GetContributionLedgerWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetContributionLedgerWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetContributionLedgerWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireContributionLedgerEntry>(
+        1, _omitFieldNames ? '' : 'contributions',
+        subBuilder: EmpireContributionLedgerEntry.create)
+    ..pPM<EmpireGratitudeEndorsementReceipt>(
+        2, _omitFieldNames ? '' : 'endorsements',
+        subBuilder: EmpireGratitudeEndorsementReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContributionLedgerWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetContributionLedgerWorkbenchResponse copyWith(
+          void Function(GetContributionLedgerWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetContributionLedgerWorkbenchResponse))
+          as GetContributionLedgerWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetContributionLedgerWorkbenchResponse create() =>
+      GetContributionLedgerWorkbenchResponse._();
+  @$core.override
+  GetContributionLedgerWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetContributionLedgerWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetContributionLedgerWorkbenchResponse>(create);
+  static GetContributionLedgerWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireContributionLedgerEntry> get contributions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireGratitudeEndorsementReceipt> get endorsements =>
+      $_getList(1);
+}
+
+class RecordContributionOrGratitudeEndorsementRequest
+    extends $pb.GeneratedMessage {
+  factory RecordContributionOrGratitudeEndorsementRequest({
+    $core.String? contributionCode,
+    $core.String? contributionCategory,
+    $core.String? title,
+    $core.String? deliveredOutcomeSummary,
+    $core.String? evidenceArtifactRef,
+    $core.String? recipientPrivacyMode,
+    $core.String? sponsorDisclosureNote,
+    $core.bool? optInIntroductionsAndBenefits,
+    $core.String? endorsementCode,
+    $core.String? peerHandle,
+    $core.String? endorsementMode,
+    $core.String? specificOutcomeNote,
+  }) {
+    final result = create();
+    if (contributionCode != null) result.contributionCode = contributionCode;
+    if (contributionCategory != null)
+      result.contributionCategory = contributionCategory;
+    if (title != null) result.title = title;
+    if (deliveredOutcomeSummary != null)
+      result.deliveredOutcomeSummary = deliveredOutcomeSummary;
+    if (evidenceArtifactRef != null)
+      result.evidenceArtifactRef = evidenceArtifactRef;
+    if (recipientPrivacyMode != null)
+      result.recipientPrivacyMode = recipientPrivacyMode;
+    if (sponsorDisclosureNote != null)
+      result.sponsorDisclosureNote = sponsorDisclosureNote;
+    if (optInIntroductionsAndBenefits != null)
+      result.optInIntroductionsAndBenefits = optInIntroductionsAndBenefits;
+    if (endorsementCode != null) result.endorsementCode = endorsementCode;
+    if (peerHandle != null) result.peerHandle = peerHandle;
+    if (endorsementMode != null) result.endorsementMode = endorsementMode;
+    if (specificOutcomeNote != null)
+      result.specificOutcomeNote = specificOutcomeNote;
+    return result;
+  }
+
+  RecordContributionOrGratitudeEndorsementRequest._();
+
+  factory RecordContributionOrGratitudeEndorsementRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordContributionOrGratitudeEndorsementRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RecordContributionOrGratitudeEndorsementRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contributionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'contributionCategory')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'deliveredOutcomeSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'evidenceArtifactRef')
+    ..aOS(6, _omitFieldNames ? '' : 'recipientPrivacyMode')
+    ..aOS(7, _omitFieldNames ? '' : 'sponsorDisclosureNote')
+    ..aOB(8, _omitFieldNames ? '' : 'optInIntroductionsAndBenefits')
+    ..aOS(9, _omitFieldNames ? '' : 'endorsementCode')
+    ..aOS(10, _omitFieldNames ? '' : 'peerHandle')
+    ..aOS(11, _omitFieldNames ? '' : 'endorsementMode')
+    ..aOS(12, _omitFieldNames ? '' : 'specificOutcomeNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordContributionOrGratitudeEndorsementRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordContributionOrGratitudeEndorsementRequest copyWith(
+          void Function(RecordContributionOrGratitudeEndorsementRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RecordContributionOrGratitudeEndorsementRequest))
+          as RecordContributionOrGratitudeEndorsementRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordContributionOrGratitudeEndorsementRequest create() =>
+      RecordContributionOrGratitudeEndorsementRequest._();
+  @$core.override
+  RecordContributionOrGratitudeEndorsementRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RecordContributionOrGratitudeEndorsementRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordContributionOrGratitudeEndorsementRequest>(create);
+  static RecordContributionOrGratitudeEndorsementRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contributionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contributionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContributionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContributionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contributionCategory => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contributionCategory($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContributionCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContributionCategory() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deliveredOutcomeSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deliveredOutcomeSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeliveredOutcomeSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeliveredOutcomeSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get evidenceArtifactRef => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set evidenceArtifactRef($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEvidenceArtifactRef() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvidenceArtifactRef() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get recipientPrivacyMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set recipientPrivacyMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRecipientPrivacyMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRecipientPrivacyMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sponsorDisclosureNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sponsorDisclosureNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSponsorDisclosureNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSponsorDisclosureNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get optInIntroductionsAndBenefits => $_getBF(7);
+  @$pb.TagNumber(8)
+  set optInIntroductionsAndBenefits($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOptInIntroductionsAndBenefits() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOptInIntroductionsAndBenefits() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get endorsementCode => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set endorsementCode($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEndorsementCode() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEndorsementCode() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get peerHandle => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set peerHandle($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPeerHandle() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPeerHandle() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get endorsementMode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set endorsementMode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasEndorsementMode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearEndorsementMode() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get specificOutcomeNote => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set specificOutcomeNote($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasSpecificOutcomeNote() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearSpecificOutcomeNote() => $_clearField(12);
+}
+
+class RecordContributionOrGratitudeEndorsementResponse
+    extends $pb.GeneratedMessage {
+  factory RecordContributionOrGratitudeEndorsementResponse({
+    EmpireContributionLedgerEntry? contribution,
+    EmpireGratitudeEndorsementReceipt? endorsement,
+  }) {
+    final result = create();
+    if (contribution != null) result.contribution = contribution;
+    if (endorsement != null) result.endorsement = endorsement;
+    return result;
+  }
+
+  RecordContributionOrGratitudeEndorsementResponse._();
+
+  factory RecordContributionOrGratitudeEndorsementResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordContributionOrGratitudeEndorsementResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RecordContributionOrGratitudeEndorsementResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContributionLedgerEntry>(
+        1, _omitFieldNames ? '' : 'contribution',
+        subBuilder: EmpireContributionLedgerEntry.create)
+    ..aOM<EmpireGratitudeEndorsementReceipt>(
+        2, _omitFieldNames ? '' : 'endorsement',
+        subBuilder: EmpireGratitudeEndorsementReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordContributionOrGratitudeEndorsementResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordContributionOrGratitudeEndorsementResponse copyWith(
+          void Function(RecordContributionOrGratitudeEndorsementResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RecordContributionOrGratitudeEndorsementResponse))
+          as RecordContributionOrGratitudeEndorsementResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordContributionOrGratitudeEndorsementResponse create() =>
+      RecordContributionOrGratitudeEndorsementResponse._();
+  @$core.override
+  RecordContributionOrGratitudeEndorsementResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RecordContributionOrGratitudeEndorsementResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordContributionOrGratitudeEndorsementResponse>(create);
+  static RecordContributionOrGratitudeEndorsementResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry get contribution => $_getN(0);
+  @$pb.TagNumber(1)
+  set contribution(EmpireContributionLedgerEntry value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContribution() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContribution() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry ensureContribution() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireGratitudeEndorsementReceipt get endorsement => $_getN(1);
+  @$pb.TagNumber(2)
+  set endorsement(EmpireGratitudeEndorsementReceipt value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEndorsement() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEndorsement() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireGratitudeEndorsementReceipt ensureEndorsement() => $_ensure(1);
+}
+
+class UpdateContributionVisibilityOrCorrectionRequest
+    extends $pb.GeneratedMessage {
+  factory UpdateContributionVisibilityOrCorrectionRequest({
+    $core.String? contributionCode,
+    $core.bool? optInIntroductionsAndBenefits,
+    $core.String? endorsementCode,
+    $core.String? correctionStatus,
+  }) {
+    final result = create();
+    if (contributionCode != null) result.contributionCode = contributionCode;
+    if (optInIntroductionsAndBenefits != null)
+      result.optInIntroductionsAndBenefits = optInIntroductionsAndBenefits;
+    if (endorsementCode != null) result.endorsementCode = endorsementCode;
+    if (correctionStatus != null) result.correctionStatus = correctionStatus;
+    return result;
+  }
+
+  UpdateContributionVisibilityOrCorrectionRequest._();
+
+  factory UpdateContributionVisibilityOrCorrectionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateContributionVisibilityOrCorrectionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'UpdateContributionVisibilityOrCorrectionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contributionCode')
+    ..aOB(2, _omitFieldNames ? '' : 'optInIntroductionsAndBenefits')
+    ..aOS(3, _omitFieldNames ? '' : 'endorsementCode')
+    ..aOS(4, _omitFieldNames ? '' : 'correctionStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContributionVisibilityOrCorrectionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContributionVisibilityOrCorrectionRequest copyWith(
+          void Function(UpdateContributionVisibilityOrCorrectionRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as UpdateContributionVisibilityOrCorrectionRequest))
+          as UpdateContributionVisibilityOrCorrectionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateContributionVisibilityOrCorrectionRequest create() =>
+      UpdateContributionVisibilityOrCorrectionRequest._();
+  @$core.override
+  UpdateContributionVisibilityOrCorrectionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateContributionVisibilityOrCorrectionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateContributionVisibilityOrCorrectionRequest>(create);
+  static UpdateContributionVisibilityOrCorrectionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contributionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contributionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContributionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContributionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get optInIntroductionsAndBenefits => $_getBF(1);
+  @$pb.TagNumber(2)
+  set optInIntroductionsAndBenefits($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOptInIntroductionsAndBenefits() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOptInIntroductionsAndBenefits() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get endorsementCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set endorsementCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEndorsementCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEndorsementCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get correctionStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set correctionStatus($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCorrectionStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCorrectionStatus() => $_clearField(4);
+}
+
+class UpdateContributionVisibilityOrCorrectionResponse
+    extends $pb.GeneratedMessage {
+  factory UpdateContributionVisibilityOrCorrectionResponse({
+    EmpireContributionLedgerEntry? contribution,
+    EmpireGratitudeEndorsementReceipt? endorsement,
+  }) {
+    final result = create();
+    if (contribution != null) result.contribution = contribution;
+    if (endorsement != null) result.endorsement = endorsement;
+    return result;
+  }
+
+  UpdateContributionVisibilityOrCorrectionResponse._();
+
+  factory UpdateContributionVisibilityOrCorrectionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateContributionVisibilityOrCorrectionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'UpdateContributionVisibilityOrCorrectionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContributionLedgerEntry>(
+        1, _omitFieldNames ? '' : 'contribution',
+        subBuilder: EmpireContributionLedgerEntry.create)
+    ..aOM<EmpireGratitudeEndorsementReceipt>(
+        2, _omitFieldNames ? '' : 'endorsement',
+        subBuilder: EmpireGratitudeEndorsementReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContributionVisibilityOrCorrectionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateContributionVisibilityOrCorrectionResponse copyWith(
+          void Function(UpdateContributionVisibilityOrCorrectionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as UpdateContributionVisibilityOrCorrectionResponse))
+          as UpdateContributionVisibilityOrCorrectionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateContributionVisibilityOrCorrectionResponse create() =>
+      UpdateContributionVisibilityOrCorrectionResponse._();
+  @$core.override
+  UpdateContributionVisibilityOrCorrectionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateContributionVisibilityOrCorrectionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateContributionVisibilityOrCorrectionResponse>(create);
+  static UpdateContributionVisibilityOrCorrectionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry get contribution => $_getN(0);
+  @$pb.TagNumber(1)
+  set contribution(EmpireContributionLedgerEntry value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContribution() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContribution() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry ensureContribution() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireGratitudeEndorsementReceipt get endorsement => $_getN(1);
+  @$pb.TagNumber(2)
+  set endorsement(EmpireGratitudeEndorsementReceipt value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEndorsement() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEndorsement() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireGratitudeEndorsementReceipt ensureEndorsement() => $_ensure(1);
+}
+
+class AdminListContributionLedgerAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListContributionLedgerAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListContributionLedgerAuditRequest._();
+
+  factory AdminListContributionLedgerAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListContributionLedgerAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListContributionLedgerAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContributionLedgerAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContributionLedgerAuditRequest copyWith(
+          void Function(AdminListContributionLedgerAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListContributionLedgerAuditRequest))
+          as AdminListContributionLedgerAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListContributionLedgerAuditRequest create() =>
+      AdminListContributionLedgerAuditRequest._();
+  @$core.override
+  AdminListContributionLedgerAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListContributionLedgerAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListContributionLedgerAuditRequest>(create);
+  static AdminListContributionLedgerAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListContributionLedgerAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListContributionLedgerAuditResponse({
+    $core.Iterable<EmpireContributionLedgerEntry>? contributions,
+    $core.Iterable<EmpireGratitudeEndorsementReceipt>? endorsements,
+  }) {
+    final result = create();
+    if (contributions != null) result.contributions.addAll(contributions);
+    if (endorsements != null) result.endorsements.addAll(endorsements);
+    return result;
+  }
+
+  AdminListContributionLedgerAuditResponse._();
+
+  factory AdminListContributionLedgerAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListContributionLedgerAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListContributionLedgerAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireContributionLedgerEntry>(
+        1, _omitFieldNames ? '' : 'contributions',
+        subBuilder: EmpireContributionLedgerEntry.create)
+    ..pPM<EmpireGratitudeEndorsementReceipt>(
+        2, _omitFieldNames ? '' : 'endorsements',
+        subBuilder: EmpireGratitudeEndorsementReceipt.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContributionLedgerAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListContributionLedgerAuditResponse copyWith(
+          void Function(AdminListContributionLedgerAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListContributionLedgerAuditResponse))
+          as AdminListContributionLedgerAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListContributionLedgerAuditResponse create() =>
+      AdminListContributionLedgerAuditResponse._();
+  @$core.override
+  AdminListContributionLedgerAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListContributionLedgerAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListContributionLedgerAuditResponse>(create);
+  static AdminListContributionLedgerAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireContributionLedgerEntry> get contributions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireGratitudeEndorsementReceipt> get endorsements =>
+      $_getList(1);
+}
+
+class AdminModerateContributionCollusionOrSponsorRequest
+    extends $pb.GeneratedMessage {
+  factory AdminModerateContributionCollusionOrSponsorRequest({
+    $core.String? contributionCode,
+    $core.String? antiCollusionStatus,
+    $core.String? sponsorDisclosureNote,
+  }) {
+    final result = create();
+    if (contributionCode != null) result.contributionCode = contributionCode;
+    if (antiCollusionStatus != null)
+      result.antiCollusionStatus = antiCollusionStatus;
+    if (sponsorDisclosureNote != null)
+      result.sponsorDisclosureNote = sponsorDisclosureNote;
+    return result;
+  }
+
+  AdminModerateContributionCollusionOrSponsorRequest._();
+
+  factory AdminModerateContributionCollusionOrSponsorRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateContributionCollusionOrSponsorRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateContributionCollusionOrSponsorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'contributionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'antiCollusionStatus')
+    ..aOS(3, _omitFieldNames ? '' : 'sponsorDisclosureNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateContributionCollusionOrSponsorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateContributionCollusionOrSponsorRequest copyWith(
+          void Function(AdminModerateContributionCollusionOrSponsorRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateContributionCollusionOrSponsorRequest))
+          as AdminModerateContributionCollusionOrSponsorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateContributionCollusionOrSponsorRequest create() =>
+      AdminModerateContributionCollusionOrSponsorRequest._();
+  @$core.override
+  AdminModerateContributionCollusionOrSponsorRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateContributionCollusionOrSponsorRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateContributionCollusionOrSponsorRequest>(create);
+  static AdminModerateContributionCollusionOrSponsorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get contributionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set contributionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContributionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContributionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get antiCollusionStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set antiCollusionStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAntiCollusionStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAntiCollusionStatus() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sponsorDisclosureNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sponsorDisclosureNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSponsorDisclosureNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSponsorDisclosureNote() => $_clearField(3);
+}
+
+class AdminModerateContributionCollusionOrSponsorResponse
+    extends $pb.GeneratedMessage {
+  factory AdminModerateContributionCollusionOrSponsorResponse({
+    EmpireContributionLedgerEntry? contribution,
+  }) {
+    final result = create();
+    if (contribution != null) result.contribution = contribution;
+    return result;
+  }
+
+  AdminModerateContributionCollusionOrSponsorResponse._();
+
+  factory AdminModerateContributionCollusionOrSponsorResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminModerateContributionCollusionOrSponsorResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminModerateContributionCollusionOrSponsorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireContributionLedgerEntry>(
+        1, _omitFieldNames ? '' : 'contribution',
+        subBuilder: EmpireContributionLedgerEntry.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateContributionCollusionOrSponsorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminModerateContributionCollusionOrSponsorResponse copyWith(
+          void Function(AdminModerateContributionCollusionOrSponsorResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminModerateContributionCollusionOrSponsorResponse))
+          as AdminModerateContributionCollusionOrSponsorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateContributionCollusionOrSponsorResponse create() =>
+      AdminModerateContributionCollusionOrSponsorResponse._();
+  @$core.override
+  AdminModerateContributionCollusionOrSponsorResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminModerateContributionCollusionOrSponsorResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminModerateContributionCollusionOrSponsorResponse>(create);
+  static AdminModerateContributionCollusionOrSponsorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry get contribution => $_getN(0);
+  @$pb.TagNumber(1)
+  set contribution(EmpireContributionLedgerEntry value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContribution() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContribution() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireContributionLedgerEntry ensureContribution() => $_ensure(0);
+}
+
+class EmpireLoyaltyPointsLedgerEntry extends $pb.GeneratedMessage {
+  factory EmpireLoyaltyPointsLedgerEntry({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? ledgerEntryCode,
+    $core.String? earnRuleCode,
+    $core.String? sourceEventSummary,
+    $core.int? pointsDelta,
+    $core.String? vestingState,
+    $core.int? balanceVersion,
+    $core.bool? nonCashDisclosureAccepted,
+    $core.String? expirationDate,
+    $core.String? correctionNote,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (ledgerEntryCode != null) result.ledgerEntryCode = ledgerEntryCode;
+    if (earnRuleCode != null) result.earnRuleCode = earnRuleCode;
+    if (sourceEventSummary != null)
+      result.sourceEventSummary = sourceEventSummary;
+    if (pointsDelta != null) result.pointsDelta = pointsDelta;
+    if (vestingState != null) result.vestingState = vestingState;
+    if (balanceVersion != null) result.balanceVersion = balanceVersion;
+    if (nonCashDisclosureAccepted != null)
+      result.nonCashDisclosureAccepted = nonCashDisclosureAccepted;
+    if (expirationDate != null) result.expirationDate = expirationDate;
+    if (correctionNote != null) result.correctionNote = correctionNote;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireLoyaltyPointsLedgerEntry._();
+
+  factory EmpireLoyaltyPointsLedgerEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireLoyaltyPointsLedgerEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireLoyaltyPointsLedgerEntry',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'ledgerEntryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'earnRuleCode')
+    ..aOS(5, _omitFieldNames ? '' : 'sourceEventSummary')
+    ..aI(6, _omitFieldNames ? '' : 'pointsDelta')
+    ..aOS(7, _omitFieldNames ? '' : 'vestingState')
+    ..aI(8, _omitFieldNames ? '' : 'balanceVersion')
+    ..aOB(9, _omitFieldNames ? '' : 'nonCashDisclosureAccepted')
+    ..aOS(10, _omitFieldNames ? '' : 'expirationDate')
+    ..aOS(11, _omitFieldNames ? '' : 'correctionNote')
+    ..aOS(12, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(13, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireLoyaltyPointsLedgerEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireLoyaltyPointsLedgerEntry copyWith(
+          void Function(EmpireLoyaltyPointsLedgerEntry) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireLoyaltyPointsLedgerEntry))
+          as EmpireLoyaltyPointsLedgerEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireLoyaltyPointsLedgerEntry create() =>
+      EmpireLoyaltyPointsLedgerEntry._();
+  @$core.override
+  EmpireLoyaltyPointsLedgerEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireLoyaltyPointsLedgerEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireLoyaltyPointsLedgerEntry>(create);
+  static EmpireLoyaltyPointsLedgerEntry? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ledgerEntryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ledgerEntryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLedgerEntryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLedgerEntryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get earnRuleCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set earnRuleCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEarnRuleCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEarnRuleCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourceEventSummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourceEventSummary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourceEventSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourceEventSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get pointsDelta => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set pointsDelta($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPointsDelta() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPointsDelta() => $_clearField(6);
+
+  /// pending | vested | expired | reversed | corrected
+  @$pb.TagNumber(7)
+  $core.String get vestingState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set vestingState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVestingState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVestingState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get balanceVersion => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set balanceVersion($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBalanceVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBalanceVersion() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get nonCashDisclosureAccepted => $_getBF(8);
+  @$pb.TagNumber(9)
+  set nonCashDisclosureAccepted($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNonCashDisclosureAccepted() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNonCashDisclosureAccepted() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get expirationDate => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set expirationDate($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExpirationDate() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExpirationDate() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get correctionNote => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set correctionNote($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCorrectionNote() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCorrectionNote() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get createdAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set createdAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedAt() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get updatedAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set updatedAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAt() => $_clearField(13);
+}
+
+class EmpireBenefitMarketplaceRedemption extends $pb.GeneratedMessage {
+  factory EmpireBenefitMarketplaceRedemption({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? redemptionCode,
+    $core.String? benefitCategory,
+    $core.String? offerTitle,
+    $core.String? providerName,
+    $core.int? quotedPointsCost,
+    $core.int? quotedMoneyCents,
+    $core.int? quotedTaxesFeesCents,
+    $core.String? refundabilityPolicy,
+    $core.String? privacyDisclosureSummary,
+    $core.String? redemptionState,
+    $core.String? idempotencyKey,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (redemptionCode != null) result.redemptionCode = redemptionCode;
+    if (benefitCategory != null) result.benefitCategory = benefitCategory;
+    if (offerTitle != null) result.offerTitle = offerTitle;
+    if (providerName != null) result.providerName = providerName;
+    if (quotedPointsCost != null) result.quotedPointsCost = quotedPointsCost;
+    if (quotedMoneyCents != null) result.quotedMoneyCents = quotedMoneyCents;
+    if (quotedTaxesFeesCents != null)
+      result.quotedTaxesFeesCents = quotedTaxesFeesCents;
+    if (refundabilityPolicy != null)
+      result.refundabilityPolicy = refundabilityPolicy;
+    if (privacyDisclosureSummary != null)
+      result.privacyDisclosureSummary = privacyDisclosureSummary;
+    if (redemptionState != null) result.redemptionState = redemptionState;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireBenefitMarketplaceRedemption._();
+
+  factory EmpireBenefitMarketplaceRedemption.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireBenefitMarketplaceRedemption.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireBenefitMarketplaceRedemption',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'redemptionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'benefitCategory')
+    ..aOS(5, _omitFieldNames ? '' : 'offerTitle')
+    ..aOS(6, _omitFieldNames ? '' : 'providerName')
+    ..aI(7, _omitFieldNames ? '' : 'quotedPointsCost')
+    ..aI(8, _omitFieldNames ? '' : 'quotedMoneyCents')
+    ..aI(9, _omitFieldNames ? '' : 'quotedTaxesFeesCents')
+    ..aOS(10, _omitFieldNames ? '' : 'refundabilityPolicy')
+    ..aOS(11, _omitFieldNames ? '' : 'privacyDisclosureSummary')
+    ..aOS(12, _omitFieldNames ? '' : 'redemptionState')
+    ..aOS(13, _omitFieldNames ? '' : 'idempotencyKey')
+    ..aOS(14, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(15, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireBenefitMarketplaceRedemption clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireBenefitMarketplaceRedemption copyWith(
+          void Function(EmpireBenefitMarketplaceRedemption) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireBenefitMarketplaceRedemption))
+          as EmpireBenefitMarketplaceRedemption;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireBenefitMarketplaceRedemption create() =>
+      EmpireBenefitMarketplaceRedemption._();
+  @$core.override
+  EmpireBenefitMarketplaceRedemption createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireBenefitMarketplaceRedemption getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireBenefitMarketplaceRedemption>(
+          create);
+  static EmpireBenefitMarketplaceRedemption? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get redemptionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set redemptionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRedemptionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRedemptionCode() => $_clearField(3);
+
+  /// partner_discount | partner_experience | learning_credit | service_voucher | charitable_donation | guest_access_upgrade | member_created_offer
+  @$pb.TagNumber(4)
+  $core.String get benefitCategory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set benefitCategory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBenefitCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBenefitCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get offerTitle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set offerTitle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOfferTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOfferTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get providerName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set providerName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProviderName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProviderName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get quotedPointsCost => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set quotedPointsCost($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuotedPointsCost() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuotedPointsCost() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get quotedMoneyCents => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set quotedMoneyCents($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasQuotedMoneyCents() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearQuotedMoneyCents() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get quotedTaxesFeesCents => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set quotedTaxesFeesCents($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasQuotedTaxesFeesCents() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearQuotedTaxesFeesCents() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get refundabilityPolicy => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set refundabilityPolicy($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRefundabilityPolicy() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRefundabilityPolicy() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get privacyDisclosureSummary => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set privacyDisclosureSummary($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPrivacyDisclosureSummary() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPrivacyDisclosureSummary() => $_clearField(11);
+
+  /// quoted | reserved | fulfilled | partial | canceled | refunded | disputed | provider_unknown
+  @$pb.TagNumber(12)
+  $core.String get redemptionState => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set redemptionState($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRedemptionState() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRedemptionState() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get idempotencyKey => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set idempotencyKey($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasIdempotencyKey() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIdempotencyKey() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get createdAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set createdAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedAt() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get updatedAt => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set updatedAt($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasUpdatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdatedAt() => $_clearField(15);
+}
+
+class GetBenefitsMarketplaceWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetBenefitsMarketplaceWorkbenchRequest() => create();
+
+  GetBenefitsMarketplaceWorkbenchRequest._();
+
+  factory GetBenefitsMarketplaceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetBenefitsMarketplaceWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetBenefitsMarketplaceWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetBenefitsMarketplaceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetBenefitsMarketplaceWorkbenchRequest copyWith(
+          void Function(GetBenefitsMarketplaceWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetBenefitsMarketplaceWorkbenchRequest))
+          as GetBenefitsMarketplaceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetBenefitsMarketplaceWorkbenchRequest create() =>
+      GetBenefitsMarketplaceWorkbenchRequest._();
+  @$core.override
+  GetBenefitsMarketplaceWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetBenefitsMarketplaceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetBenefitsMarketplaceWorkbenchRequest>(create);
+  static GetBenefitsMarketplaceWorkbenchRequest? _defaultInstance;
+}
+
+class GetBenefitsMarketplaceWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetBenefitsMarketplaceWorkbenchResponse({
+    $core.Iterable<EmpireLoyaltyPointsLedgerEntry>? pointsLedger,
+    $core.Iterable<EmpireBenefitMarketplaceRedemption>? redemptions,
+  }) {
+    final result = create();
+    if (pointsLedger != null) result.pointsLedger.addAll(pointsLedger);
+    if (redemptions != null) result.redemptions.addAll(redemptions);
+    return result;
+  }
+
+  GetBenefitsMarketplaceWorkbenchResponse._();
+
+  factory GetBenefitsMarketplaceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetBenefitsMarketplaceWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetBenefitsMarketplaceWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireLoyaltyPointsLedgerEntry>(
+        1, _omitFieldNames ? '' : 'pointsLedger',
+        subBuilder: EmpireLoyaltyPointsLedgerEntry.create)
+    ..pPM<EmpireBenefitMarketplaceRedemption>(
+        2, _omitFieldNames ? '' : 'redemptions',
+        subBuilder: EmpireBenefitMarketplaceRedemption.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetBenefitsMarketplaceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetBenefitsMarketplaceWorkbenchResponse copyWith(
+          void Function(GetBenefitsMarketplaceWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetBenefitsMarketplaceWorkbenchResponse))
+          as GetBenefitsMarketplaceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetBenefitsMarketplaceWorkbenchResponse create() =>
+      GetBenefitsMarketplaceWorkbenchResponse._();
+  @$core.override
+  GetBenefitsMarketplaceWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetBenefitsMarketplaceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetBenefitsMarketplaceWorkbenchResponse>(create);
+  static GetBenefitsMarketplaceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireLoyaltyPointsLedgerEntry> get pointsLedger => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireBenefitMarketplaceRedemption> get redemptions =>
+      $_getList(1);
+}
+
+class QuoteOrRedeemBenefitOfferRequest extends $pb.GeneratedMessage {
+  factory QuoteOrRedeemBenefitOfferRequest({
+    $core.String? redemptionCode,
+    $core.String? benefitCategory,
+    $core.String? offerTitle,
+    $core.String? providerName,
+    $core.int? quotedPointsCost,
+    $core.int? quotedMoneyCents,
+    $core.int? quotedTaxesFeesCents,
+    $core.String? redemptionState,
+    $core.String? idempotencyKey,
+  }) {
+    final result = create();
+    if (redemptionCode != null) result.redemptionCode = redemptionCode;
+    if (benefitCategory != null) result.benefitCategory = benefitCategory;
+    if (offerTitle != null) result.offerTitle = offerTitle;
+    if (providerName != null) result.providerName = providerName;
+    if (quotedPointsCost != null) result.quotedPointsCost = quotedPointsCost;
+    if (quotedMoneyCents != null) result.quotedMoneyCents = quotedMoneyCents;
+    if (quotedTaxesFeesCents != null)
+      result.quotedTaxesFeesCents = quotedTaxesFeesCents;
+    if (redemptionState != null) result.redemptionState = redemptionState;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    return result;
+  }
+
+  QuoteOrRedeemBenefitOfferRequest._();
+
+  factory QuoteOrRedeemBenefitOfferRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory QuoteOrRedeemBenefitOfferRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuoteOrRedeemBenefitOfferRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'redemptionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'benefitCategory')
+    ..aOS(3, _omitFieldNames ? '' : 'offerTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'providerName')
+    ..aI(5, _omitFieldNames ? '' : 'quotedPointsCost')
+    ..aI(6, _omitFieldNames ? '' : 'quotedMoneyCents')
+    ..aI(7, _omitFieldNames ? '' : 'quotedTaxesFeesCents')
+    ..aOS(8, _omitFieldNames ? '' : 'redemptionState')
+    ..aOS(9, _omitFieldNames ? '' : 'idempotencyKey')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteOrRedeemBenefitOfferRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteOrRedeemBenefitOfferRequest copyWith(
+          void Function(QuoteOrRedeemBenefitOfferRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as QuoteOrRedeemBenefitOfferRequest))
+          as QuoteOrRedeemBenefitOfferRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuoteOrRedeemBenefitOfferRequest create() =>
+      QuoteOrRedeemBenefitOfferRequest._();
+  @$core.override
+  QuoteOrRedeemBenefitOfferRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static QuoteOrRedeemBenefitOfferRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QuoteOrRedeemBenefitOfferRequest>(
+          create);
+  static QuoteOrRedeemBenefitOfferRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get redemptionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set redemptionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRedemptionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRedemptionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get benefitCategory => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set benefitCategory($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBenefitCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBenefitCategory() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get offerTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set offerTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOfferTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOfferTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get providerName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set providerName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProviderName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProviderName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get quotedPointsCost => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set quotedPointsCost($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasQuotedPointsCost() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuotedPointsCost() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get quotedMoneyCents => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set quotedMoneyCents($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasQuotedMoneyCents() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearQuotedMoneyCents() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get quotedTaxesFeesCents => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set quotedTaxesFeesCents($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuotedTaxesFeesCents() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuotedTaxesFeesCents() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get redemptionState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set redemptionState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRedemptionState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRedemptionState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get idempotencyKey => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set idempotencyKey($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIdempotencyKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIdempotencyKey() => $_clearField(9);
+}
+
+class QuoteOrRedeemBenefitOfferResponse extends $pb.GeneratedMessage {
+  factory QuoteOrRedeemBenefitOfferResponse({
+    EmpireBenefitMarketplaceRedemption? redemption,
+  }) {
+    final result = create();
+    if (redemption != null) result.redemption = redemption;
+    return result;
+  }
+
+  QuoteOrRedeemBenefitOfferResponse._();
+
+  factory QuoteOrRedeemBenefitOfferResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory QuoteOrRedeemBenefitOfferResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'QuoteOrRedeemBenefitOfferResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireBenefitMarketplaceRedemption>(
+        1, _omitFieldNames ? '' : 'redemption',
+        subBuilder: EmpireBenefitMarketplaceRedemption.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteOrRedeemBenefitOfferResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  QuoteOrRedeemBenefitOfferResponse copyWith(
+          void Function(QuoteOrRedeemBenefitOfferResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as QuoteOrRedeemBenefitOfferResponse))
+          as QuoteOrRedeemBenefitOfferResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static QuoteOrRedeemBenefitOfferResponse create() =>
+      QuoteOrRedeemBenefitOfferResponse._();
+  @$core.override
+  QuoteOrRedeemBenefitOfferResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static QuoteOrRedeemBenefitOfferResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QuoteOrRedeemBenefitOfferResponse>(
+          create);
+  static QuoteOrRedeemBenefitOfferResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireBenefitMarketplaceRedemption get redemption => $_getN(0);
+  @$pb.TagNumber(1)
+  set redemption(EmpireBenefitMarketplaceRedemption value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRedemption() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRedemption() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireBenefitMarketplaceRedemption ensureRedemption() => $_ensure(0);
+}
+
+class UpdateRedemptionDisputeOrCancelRequest extends $pb.GeneratedMessage {
+  factory UpdateRedemptionDisputeOrCancelRequest({
+    $core.String? redemptionCode,
+    $core.String? redemptionState,
+  }) {
+    final result = create();
+    if (redemptionCode != null) result.redemptionCode = redemptionCode;
+    if (redemptionState != null) result.redemptionState = redemptionState;
+    return result;
+  }
+
+  UpdateRedemptionDisputeOrCancelRequest._();
+
+  factory UpdateRedemptionDisputeOrCancelRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateRedemptionDisputeOrCancelRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateRedemptionDisputeOrCancelRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'redemptionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'redemptionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRedemptionDisputeOrCancelRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRedemptionDisputeOrCancelRequest copyWith(
+          void Function(UpdateRedemptionDisputeOrCancelRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateRedemptionDisputeOrCancelRequest))
+          as UpdateRedemptionDisputeOrCancelRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRedemptionDisputeOrCancelRequest create() =>
+      UpdateRedemptionDisputeOrCancelRequest._();
+  @$core.override
+  UpdateRedemptionDisputeOrCancelRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRedemptionDisputeOrCancelRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateRedemptionDisputeOrCancelRequest>(create);
+  static UpdateRedemptionDisputeOrCancelRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get redemptionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set redemptionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRedemptionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRedemptionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get redemptionState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set redemptionState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRedemptionState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRedemptionState() => $_clearField(2);
+}
+
+class UpdateRedemptionDisputeOrCancelResponse extends $pb.GeneratedMessage {
+  factory UpdateRedemptionDisputeOrCancelResponse({
+    EmpireBenefitMarketplaceRedemption? redemption,
+  }) {
+    final result = create();
+    if (redemption != null) result.redemption = redemption;
+    return result;
+  }
+
+  UpdateRedemptionDisputeOrCancelResponse._();
+
+  factory UpdateRedemptionDisputeOrCancelResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateRedemptionDisputeOrCancelResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateRedemptionDisputeOrCancelResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireBenefitMarketplaceRedemption>(
+        1, _omitFieldNames ? '' : 'redemption',
+        subBuilder: EmpireBenefitMarketplaceRedemption.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRedemptionDisputeOrCancelResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateRedemptionDisputeOrCancelResponse copyWith(
+          void Function(UpdateRedemptionDisputeOrCancelResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateRedemptionDisputeOrCancelResponse))
+          as UpdateRedemptionDisputeOrCancelResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateRedemptionDisputeOrCancelResponse create() =>
+      UpdateRedemptionDisputeOrCancelResponse._();
+  @$core.override
+  UpdateRedemptionDisputeOrCancelResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateRedemptionDisputeOrCancelResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateRedemptionDisputeOrCancelResponse>(create);
+  static UpdateRedemptionDisputeOrCancelResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireBenefitMarketplaceRedemption get redemption => $_getN(0);
+  @$pb.TagNumber(1)
+  set redemption(EmpireBenefitMarketplaceRedemption value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRedemption() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRedemption() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireBenefitMarketplaceRedemption ensureRedemption() => $_ensure(0);
+}
+
+class AdminListBenefitsMarketplaceAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListBenefitsMarketplaceAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListBenefitsMarketplaceAuditRequest._();
+
+  factory AdminListBenefitsMarketplaceAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListBenefitsMarketplaceAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListBenefitsMarketplaceAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListBenefitsMarketplaceAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListBenefitsMarketplaceAuditRequest copyWith(
+          void Function(AdminListBenefitsMarketplaceAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListBenefitsMarketplaceAuditRequest))
+          as AdminListBenefitsMarketplaceAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListBenefitsMarketplaceAuditRequest create() =>
+      AdminListBenefitsMarketplaceAuditRequest._();
+  @$core.override
+  AdminListBenefitsMarketplaceAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListBenefitsMarketplaceAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListBenefitsMarketplaceAuditRequest>(create);
+  static AdminListBenefitsMarketplaceAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListBenefitsMarketplaceAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListBenefitsMarketplaceAuditResponse({
+    $core.Iterable<EmpireLoyaltyPointsLedgerEntry>? pointsLedger,
+    $core.Iterable<EmpireBenefitMarketplaceRedemption>? redemptions,
+  }) {
+    final result = create();
+    if (pointsLedger != null) result.pointsLedger.addAll(pointsLedger);
+    if (redemptions != null) result.redemptions.addAll(redemptions);
+    return result;
+  }
+
+  AdminListBenefitsMarketplaceAuditResponse._();
+
+  factory AdminListBenefitsMarketplaceAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListBenefitsMarketplaceAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListBenefitsMarketplaceAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireLoyaltyPointsLedgerEntry>(
+        1, _omitFieldNames ? '' : 'pointsLedger',
+        subBuilder: EmpireLoyaltyPointsLedgerEntry.create)
+    ..pPM<EmpireBenefitMarketplaceRedemption>(
+        2, _omitFieldNames ? '' : 'redemptions',
+        subBuilder: EmpireBenefitMarketplaceRedemption.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListBenefitsMarketplaceAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListBenefitsMarketplaceAuditResponse copyWith(
+          void Function(AdminListBenefitsMarketplaceAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListBenefitsMarketplaceAuditResponse))
+          as AdminListBenefitsMarketplaceAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListBenefitsMarketplaceAuditResponse create() =>
+      AdminListBenefitsMarketplaceAuditResponse._();
+  @$core.override
+  AdminListBenefitsMarketplaceAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListBenefitsMarketplaceAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListBenefitsMarketplaceAuditResponse>(create);
+  static AdminListBenefitsMarketplaceAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireLoyaltyPointsLedgerEntry> get pointsLedger => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireBenefitMarketplaceRedemption> get redemptions =>
+      $_getList(1);
+}
+
+class AdminReconcileBenefitPointsOrRedemptionRequest
+    extends $pb.GeneratedMessage {
+  factory AdminReconcileBenefitPointsOrRedemptionRequest({
+    $core.String? ledgerEntryCode,
+    $core.String? vestingState,
+    $core.String? correctionNote,
+    $core.String? redemptionCode,
+    $core.String? redemptionState,
+  }) {
+    final result = create();
+    if (ledgerEntryCode != null) result.ledgerEntryCode = ledgerEntryCode;
+    if (vestingState != null) result.vestingState = vestingState;
+    if (correctionNote != null) result.correctionNote = correctionNote;
+    if (redemptionCode != null) result.redemptionCode = redemptionCode;
+    if (redemptionState != null) result.redemptionState = redemptionState;
+    return result;
+  }
+
+  AdminReconcileBenefitPointsOrRedemptionRequest._();
+
+  factory AdminReconcileBenefitPointsOrRedemptionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileBenefitPointsOrRedemptionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminReconcileBenefitPointsOrRedemptionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ledgerEntryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'vestingState')
+    ..aOS(3, _omitFieldNames ? '' : 'correctionNote')
+    ..aOS(4, _omitFieldNames ? '' : 'redemptionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'redemptionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileBenefitPointsOrRedemptionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileBenefitPointsOrRedemptionRequest copyWith(
+          void Function(AdminReconcileBenefitPointsOrRedemptionRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminReconcileBenefitPointsOrRedemptionRequest))
+          as AdminReconcileBenefitPointsOrRedemptionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileBenefitPointsOrRedemptionRequest create() =>
+      AdminReconcileBenefitPointsOrRedemptionRequest._();
+  @$core.override
+  AdminReconcileBenefitPointsOrRedemptionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileBenefitPointsOrRedemptionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileBenefitPointsOrRedemptionRequest>(create);
+  static AdminReconcileBenefitPointsOrRedemptionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ledgerEntryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ledgerEntryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLedgerEntryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLedgerEntryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get vestingState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set vestingState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVestingState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVestingState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get correctionNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set correctionNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCorrectionNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCorrectionNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get redemptionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set redemptionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRedemptionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRedemptionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get redemptionState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set redemptionState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRedemptionState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRedemptionState() => $_clearField(5);
+}
+
+class AdminReconcileBenefitPointsOrRedemptionResponse
+    extends $pb.GeneratedMessage {
+  factory AdminReconcileBenefitPointsOrRedemptionResponse({
+    EmpireLoyaltyPointsLedgerEntry? pointsEntry,
+    EmpireBenefitMarketplaceRedemption? redemption,
+  }) {
+    final result = create();
+    if (pointsEntry != null) result.pointsEntry = pointsEntry;
+    if (redemption != null) result.redemption = redemption;
+    return result;
+  }
+
+  AdminReconcileBenefitPointsOrRedemptionResponse._();
+
+  factory AdminReconcileBenefitPointsOrRedemptionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileBenefitPointsOrRedemptionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminReconcileBenefitPointsOrRedemptionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireLoyaltyPointsLedgerEntry>(
+        1, _omitFieldNames ? '' : 'pointsEntry',
+        subBuilder: EmpireLoyaltyPointsLedgerEntry.create)
+    ..aOM<EmpireBenefitMarketplaceRedemption>(
+        2, _omitFieldNames ? '' : 'redemption',
+        subBuilder: EmpireBenefitMarketplaceRedemption.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileBenefitPointsOrRedemptionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileBenefitPointsOrRedemptionResponse copyWith(
+          void Function(AdminReconcileBenefitPointsOrRedemptionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminReconcileBenefitPointsOrRedemptionResponse))
+          as AdminReconcileBenefitPointsOrRedemptionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileBenefitPointsOrRedemptionResponse create() =>
+      AdminReconcileBenefitPointsOrRedemptionResponse._();
+  @$core.override
+  AdminReconcileBenefitPointsOrRedemptionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileBenefitPointsOrRedemptionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileBenefitPointsOrRedemptionResponse>(create);
+  static AdminReconcileBenefitPointsOrRedemptionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireLoyaltyPointsLedgerEntry get pointsEntry => $_getN(0);
+  @$pb.TagNumber(1)
+  set pointsEntry(EmpireLoyaltyPointsLedgerEntry value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPointsEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPointsEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireLoyaltyPointsLedgerEntry ensurePointsEntry() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireBenefitMarketplaceRedemption get redemption => $_getN(1);
+  @$pb.TagNumber(2)
+  set redemption(EmpireBenefitMarketplaceRedemption value) =>
+      $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRedemption() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRedemption() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireBenefitMarketplaceRedemption ensureRedemption() => $_ensure(1);
+}
+
+class EmpireMembershipEntitlementLedger extends $pb.GeneratedMessage {
+  factory EmpireMembershipEntitlementLedger({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? ledgerCode,
+    $core.String? membershipTier,
+    $core.String? planModality,
+    $core.String? billingState,
+    $core.int? monthlyPriceCents,
+    $core.int? taxesCents,
+    $core.String? billingRegion,
+    $core.String? renewalDate,
+    $core.bool? paidVsEarnedSeparationVerified,
+    $core.String? downgradeLossPreview,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (ledgerCode != null) result.ledgerCode = ledgerCode;
+    if (membershipTier != null) result.membershipTier = membershipTier;
+    if (planModality != null) result.planModality = planModality;
+    if (billingState != null) result.billingState = billingState;
+    if (monthlyPriceCents != null) result.monthlyPriceCents = monthlyPriceCents;
+    if (taxesCents != null) result.taxesCents = taxesCents;
+    if (billingRegion != null) result.billingRegion = billingRegion;
+    if (renewalDate != null) result.renewalDate = renewalDate;
+    if (paidVsEarnedSeparationVerified != null)
+      result.paidVsEarnedSeparationVerified = paidVsEarnedSeparationVerified;
+    if (downgradeLossPreview != null)
+      result.downgradeLossPreview = downgradeLossPreview;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireMembershipEntitlementLedger._();
+
+  factory EmpireMembershipEntitlementLedger.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireMembershipEntitlementLedger.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireMembershipEntitlementLedger',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'ledgerCode')
+    ..aOS(4, _omitFieldNames ? '' : 'membershipTier')
+    ..aOS(5, _omitFieldNames ? '' : 'planModality')
+    ..aOS(6, _omitFieldNames ? '' : 'billingState')
+    ..aI(7, _omitFieldNames ? '' : 'monthlyPriceCents')
+    ..aI(8, _omitFieldNames ? '' : 'taxesCents')
+    ..aOS(9, _omitFieldNames ? '' : 'billingRegion')
+    ..aOS(10, _omitFieldNames ? '' : 'renewalDate')
+    ..aOB(11, _omitFieldNames ? '' : 'paidVsEarnedSeparationVerified')
+    ..aOS(12, _omitFieldNames ? '' : 'downgradeLossPreview')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireMembershipEntitlementLedger clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireMembershipEntitlementLedger copyWith(
+          void Function(EmpireMembershipEntitlementLedger) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireMembershipEntitlementLedger))
+          as EmpireMembershipEntitlementLedger;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireMembershipEntitlementLedger create() =>
+      EmpireMembershipEntitlementLedger._();
+  @$core.override
+  EmpireMembershipEntitlementLedger createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireMembershipEntitlementLedger getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireMembershipEntitlementLedger>(
+          create);
+  static EmpireMembershipEntitlementLedger? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ledgerCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ledgerCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLedgerCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLedgerCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get membershipTier => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set membershipTier($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMembershipTier() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMembershipTier() => $_clearField(4);
+
+  /// individual | household | gifted | sponsored | enterprise | trial
+  @$pb.TagNumber(5)
+  $core.String get planModality => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set planModality($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPlanModality() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPlanModality() => $_clearField(5);
+
+  /// active | paused | hardship_relief | downgrade_scheduled | canceled_export_preserved | payment_retry | refunded
+  @$pb.TagNumber(6)
+  $core.String get billingState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set billingState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBillingState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBillingState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get monthlyPriceCents => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set monthlyPriceCents($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMonthlyPriceCents() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMonthlyPriceCents() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get taxesCents => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set taxesCents($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTaxesCents() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTaxesCents() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get billingRegion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set billingRegion($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasBillingRegion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBillingRegion() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get renewalDate => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set renewalDate($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRenewalDate() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRenewalDate() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get paidVsEarnedSeparationVerified => $_getBF(10);
+  @$pb.TagNumber(11)
+  set paidVsEarnedSeparationVerified($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPaidVsEarnedSeparationVerified() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPaidVsEarnedSeparationVerified() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get downgradeLossPreview => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set downgradeLossPreview($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasDowngradeLossPreview() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearDowngradeLossPreview() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get createdAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set createdAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get updatedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set updatedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+}
+
+class EmpireHouseholdIdentitySeat extends $pb.GeneratedMessage {
+  factory EmpireHouseholdIdentitySeat({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? seatCode,
+    $core.String? memberDisplayName,
+    $core.String? independentIdentityDid,
+    $core.String? billingRole,
+    $core.String? privacyIsolationMode,
+    $core.String? consentState,
+    $core.bool? independentExitReady,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (seatCode != null) result.seatCode = seatCode;
+    if (memberDisplayName != null) result.memberDisplayName = memberDisplayName;
+    if (independentIdentityDid != null)
+      result.independentIdentityDid = independentIdentityDid;
+    if (billingRole != null) result.billingRole = billingRole;
+    if (privacyIsolationMode != null)
+      result.privacyIsolationMode = privacyIsolationMode;
+    if (consentState != null) result.consentState = consentState;
+    if (independentExitReady != null)
+      result.independentExitReady = independentExitReady;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireHouseholdIdentitySeat._();
+
+  factory EmpireHouseholdIdentitySeat.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireHouseholdIdentitySeat.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireHouseholdIdentitySeat',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'seatCode')
+    ..aOS(4, _omitFieldNames ? '' : 'memberDisplayName')
+    ..aOS(5, _omitFieldNames ? '' : 'independentIdentityDid')
+    ..aOS(6, _omitFieldNames ? '' : 'billingRole')
+    ..aOS(7, _omitFieldNames ? '' : 'privacyIsolationMode')
+    ..aOS(8, _omitFieldNames ? '' : 'consentState')
+    ..aOB(9, _omitFieldNames ? '' : 'independentExitReady')
+    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireHouseholdIdentitySeat clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireHouseholdIdentitySeat copyWith(
+          void Function(EmpireHouseholdIdentitySeat) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireHouseholdIdentitySeat))
+          as EmpireHouseholdIdentitySeat;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireHouseholdIdentitySeat create() =>
+      EmpireHouseholdIdentitySeat._();
+  @$core.override
+  EmpireHouseholdIdentitySeat createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireHouseholdIdentitySeat getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireHouseholdIdentitySeat>(create);
+  static EmpireHouseholdIdentitySeat? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get seatCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set seatCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSeatCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSeatCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get memberDisplayName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set memberDisplayName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMemberDisplayName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMemberDisplayName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get independentIdentityDid => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set independentIdentityDid($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIndependentIdentityDid() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIndependentIdentityDid() => $_clearField(5);
+
+  /// primary_sponsor | household_adult | household_youth | delegated_payer
+  @$pb.TagNumber(6)
+  $core.String get billingRole => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set billingRole($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBillingRole() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBillingRole() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get privacyIsolationMode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set privacyIsolationMode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPrivacyIsolationMode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPrivacyIsolationMode() => $_clearField(7);
+
+  /// active_consented | invited_pending | exited_independent | suspended_by_admin
+  @$pb.TagNumber(8)
+  $core.String get consentState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set consentState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasConsentState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearConsentState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get independentExitReady => $_getBF(8);
+  @$pb.TagNumber(9)
+  set independentExitReady($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIndependentExitReady() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIndependentExitReady() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get createdAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set createdAt($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+}
+
+class GetMembershipHouseholdWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetMembershipHouseholdWorkbenchRequest() => create();
+
+  GetMembershipHouseholdWorkbenchRequest._();
+
+  factory GetMembershipHouseholdWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMembershipHouseholdWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMembershipHouseholdWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMembershipHouseholdWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMembershipHouseholdWorkbenchRequest copyWith(
+          void Function(GetMembershipHouseholdWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMembershipHouseholdWorkbenchRequest))
+          as GetMembershipHouseholdWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMembershipHouseholdWorkbenchRequest create() =>
+      GetMembershipHouseholdWorkbenchRequest._();
+  @$core.override
+  GetMembershipHouseholdWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMembershipHouseholdWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMembershipHouseholdWorkbenchRequest>(create);
+  static GetMembershipHouseholdWorkbenchRequest? _defaultInstance;
+}
+
+class GetMembershipHouseholdWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetMembershipHouseholdWorkbenchResponse({
+    $core.Iterable<EmpireMembershipEntitlementLedger>? ledgers,
+    $core.Iterable<EmpireHouseholdIdentitySeat>? householdSeats,
+  }) {
+    final result = create();
+    if (ledgers != null) result.ledgers.addAll(ledgers);
+    if (householdSeats != null) result.householdSeats.addAll(householdSeats);
+    return result;
+  }
+
+  GetMembershipHouseholdWorkbenchResponse._();
+
+  factory GetMembershipHouseholdWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMembershipHouseholdWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMembershipHouseholdWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireMembershipEntitlementLedger>(
+        1, _omitFieldNames ? '' : 'ledgers',
+        subBuilder: EmpireMembershipEntitlementLedger.create)
+    ..pPM<EmpireHouseholdIdentitySeat>(
+        2, _omitFieldNames ? '' : 'householdSeats',
+        subBuilder: EmpireHouseholdIdentitySeat.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMembershipHouseholdWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMembershipHouseholdWorkbenchResponse copyWith(
+          void Function(GetMembershipHouseholdWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMembershipHouseholdWorkbenchResponse))
+          as GetMembershipHouseholdWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMembershipHouseholdWorkbenchResponse create() =>
+      GetMembershipHouseholdWorkbenchResponse._();
+  @$core.override
+  GetMembershipHouseholdWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMembershipHouseholdWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMembershipHouseholdWorkbenchResponse>(create);
+  static GetMembershipHouseholdWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireMembershipEntitlementLedger> get ledgers => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireHouseholdIdentitySeat> get householdSeats => $_getList(1);
+}
+
+class PreviewOrExecuteMembershipLifecycleActionRequest
+    extends $pb.GeneratedMessage {
+  factory PreviewOrExecuteMembershipLifecycleActionRequest({
+    $core.String? ledgerCode,
+    $core.String? membershipTier,
+    $core.String? planModality,
+    $core.String? billingState,
+    $core.String? downgradeLossPreview,
+  }) {
+    final result = create();
+    if (ledgerCode != null) result.ledgerCode = ledgerCode;
+    if (membershipTier != null) result.membershipTier = membershipTier;
+    if (planModality != null) result.planModality = planModality;
+    if (billingState != null) result.billingState = billingState;
+    if (downgradeLossPreview != null)
+      result.downgradeLossPreview = downgradeLossPreview;
+    return result;
+  }
+
+  PreviewOrExecuteMembershipLifecycleActionRequest._();
+
+  factory PreviewOrExecuteMembershipLifecycleActionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewOrExecuteMembershipLifecycleActionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'PreviewOrExecuteMembershipLifecycleActionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ledgerCode')
+    ..aOS(2, _omitFieldNames ? '' : 'membershipTier')
+    ..aOS(3, _omitFieldNames ? '' : 'planModality')
+    ..aOS(4, _omitFieldNames ? '' : 'billingState')
+    ..aOS(5, _omitFieldNames ? '' : 'downgradeLossPreview')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteMembershipLifecycleActionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteMembershipLifecycleActionRequest copyWith(
+          void Function(PreviewOrExecuteMembershipLifecycleActionRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as PreviewOrExecuteMembershipLifecycleActionRequest))
+          as PreviewOrExecuteMembershipLifecycleActionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteMembershipLifecycleActionRequest create() =>
+      PreviewOrExecuteMembershipLifecycleActionRequest._();
+  @$core.override
+  PreviewOrExecuteMembershipLifecycleActionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteMembershipLifecycleActionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewOrExecuteMembershipLifecycleActionRequest>(create);
+  static PreviewOrExecuteMembershipLifecycleActionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ledgerCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ledgerCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLedgerCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLedgerCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get membershipTier => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set membershipTier($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMembershipTier() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMembershipTier() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get planModality => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set planModality($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlanModality() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlanModality() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get billingState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set billingState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBillingState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBillingState() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get downgradeLossPreview => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set downgradeLossPreview($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDowngradeLossPreview() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDowngradeLossPreview() => $_clearField(5);
+}
+
+class PreviewOrExecuteMembershipLifecycleActionResponse
+    extends $pb.GeneratedMessage {
+  factory PreviewOrExecuteMembershipLifecycleActionResponse({
+    EmpireMembershipEntitlementLedger? ledger,
+  }) {
+    final result = create();
+    if (ledger != null) result.ledger = ledger;
+    return result;
+  }
+
+  PreviewOrExecuteMembershipLifecycleActionResponse._();
+
+  factory PreviewOrExecuteMembershipLifecycleActionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewOrExecuteMembershipLifecycleActionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'PreviewOrExecuteMembershipLifecycleActionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireMembershipEntitlementLedger>(1, _omitFieldNames ? '' : 'ledger',
+        subBuilder: EmpireMembershipEntitlementLedger.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteMembershipLifecycleActionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteMembershipLifecycleActionResponse copyWith(
+          void Function(PreviewOrExecuteMembershipLifecycleActionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as PreviewOrExecuteMembershipLifecycleActionResponse))
+          as PreviewOrExecuteMembershipLifecycleActionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteMembershipLifecycleActionResponse create() =>
+      PreviewOrExecuteMembershipLifecycleActionResponse._();
+  @$core.override
+  PreviewOrExecuteMembershipLifecycleActionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteMembershipLifecycleActionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewOrExecuteMembershipLifecycleActionResponse>(create);
+  static PreviewOrExecuteMembershipLifecycleActionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireMembershipEntitlementLedger get ledger => $_getN(0);
+  @$pb.TagNumber(1)
+  set ledger(EmpireMembershipEntitlementLedger value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLedger() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLedger() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireMembershipEntitlementLedger ensureLedger() => $_ensure(0);
+}
+
+class ManageHouseholdMemberSeatRequest extends $pb.GeneratedMessage {
+  factory ManageHouseholdMemberSeatRequest({
+    $core.String? seatCode,
+    $core.String? memberDisplayName,
+    $core.String? billingRole,
+    $core.String? consentState,
+  }) {
+    final result = create();
+    if (seatCode != null) result.seatCode = seatCode;
+    if (memberDisplayName != null) result.memberDisplayName = memberDisplayName;
+    if (billingRole != null) result.billingRole = billingRole;
+    if (consentState != null) result.consentState = consentState;
+    return result;
+  }
+
+  ManageHouseholdMemberSeatRequest._();
+
+  factory ManageHouseholdMemberSeatRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ManageHouseholdMemberSeatRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ManageHouseholdMemberSeatRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'seatCode')
+    ..aOS(2, _omitFieldNames ? '' : 'memberDisplayName')
+    ..aOS(3, _omitFieldNames ? '' : 'billingRole')
+    ..aOS(4, _omitFieldNames ? '' : 'consentState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ManageHouseholdMemberSeatRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ManageHouseholdMemberSeatRequest copyWith(
+          void Function(ManageHouseholdMemberSeatRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as ManageHouseholdMemberSeatRequest))
+          as ManageHouseholdMemberSeatRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ManageHouseholdMemberSeatRequest create() =>
+      ManageHouseholdMemberSeatRequest._();
+  @$core.override
+  ManageHouseholdMemberSeatRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ManageHouseholdMemberSeatRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ManageHouseholdMemberSeatRequest>(
+          create);
+  static ManageHouseholdMemberSeatRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get seatCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set seatCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeatCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeatCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get memberDisplayName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set memberDisplayName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMemberDisplayName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMemberDisplayName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get billingRole => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set billingRole($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBillingRole() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBillingRole() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get consentState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set consentState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConsentState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConsentState() => $_clearField(4);
+}
+
+class ManageHouseholdMemberSeatResponse extends $pb.GeneratedMessage {
+  factory ManageHouseholdMemberSeatResponse({
+    EmpireHouseholdIdentitySeat? seat,
+  }) {
+    final result = create();
+    if (seat != null) result.seat = seat;
+    return result;
+  }
+
+  ManageHouseholdMemberSeatResponse._();
+
+  factory ManageHouseholdMemberSeatResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ManageHouseholdMemberSeatResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ManageHouseholdMemberSeatResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireHouseholdIdentitySeat>(1, _omitFieldNames ? '' : 'seat',
+        subBuilder: EmpireHouseholdIdentitySeat.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ManageHouseholdMemberSeatResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ManageHouseholdMemberSeatResponse copyWith(
+          void Function(ManageHouseholdMemberSeatResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ManageHouseholdMemberSeatResponse))
+          as ManageHouseholdMemberSeatResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ManageHouseholdMemberSeatResponse create() =>
+      ManageHouseholdMemberSeatResponse._();
+  @$core.override
+  ManageHouseholdMemberSeatResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ManageHouseholdMemberSeatResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ManageHouseholdMemberSeatResponse>(
+          create);
+  static ManageHouseholdMemberSeatResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireHouseholdIdentitySeat get seat => $_getN(0);
+  @$pb.TagNumber(1)
+  set seat(EmpireHouseholdIdentitySeat value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSeat() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeat() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireHouseholdIdentitySeat ensureSeat() => $_ensure(0);
+}
+
+class AdminListMembershipHouseholdAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListMembershipHouseholdAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListMembershipHouseholdAuditRequest._();
+
+  factory AdminListMembershipHouseholdAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMembershipHouseholdAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMembershipHouseholdAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMembershipHouseholdAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMembershipHouseholdAuditRequest copyWith(
+          void Function(AdminListMembershipHouseholdAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMembershipHouseholdAuditRequest))
+          as AdminListMembershipHouseholdAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMembershipHouseholdAuditRequest create() =>
+      AdminListMembershipHouseholdAuditRequest._();
+  @$core.override
+  AdminListMembershipHouseholdAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMembershipHouseholdAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMembershipHouseholdAuditRequest>(create);
+  static AdminListMembershipHouseholdAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListMembershipHouseholdAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListMembershipHouseholdAuditResponse({
+    $core.Iterable<EmpireMembershipEntitlementLedger>? ledgers,
+    $core.Iterable<EmpireHouseholdIdentitySeat>? householdSeats,
+  }) {
+    final result = create();
+    if (ledgers != null) result.ledgers.addAll(ledgers);
+    if (householdSeats != null) result.householdSeats.addAll(householdSeats);
+    return result;
+  }
+
+  AdminListMembershipHouseholdAuditResponse._();
+
+  factory AdminListMembershipHouseholdAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMembershipHouseholdAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMembershipHouseholdAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireMembershipEntitlementLedger>(
+        1, _omitFieldNames ? '' : 'ledgers',
+        subBuilder: EmpireMembershipEntitlementLedger.create)
+    ..pPM<EmpireHouseholdIdentitySeat>(
+        2, _omitFieldNames ? '' : 'householdSeats',
+        subBuilder: EmpireHouseholdIdentitySeat.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMembershipHouseholdAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMembershipHouseholdAuditResponse copyWith(
+          void Function(AdminListMembershipHouseholdAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMembershipHouseholdAuditResponse))
+          as AdminListMembershipHouseholdAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMembershipHouseholdAuditResponse create() =>
+      AdminListMembershipHouseholdAuditResponse._();
+  @$core.override
+  AdminListMembershipHouseholdAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMembershipHouseholdAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMembershipHouseholdAuditResponse>(create);
+  static AdminListMembershipHouseholdAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireMembershipEntitlementLedger> get ledgers => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireHouseholdIdentitySeat> get householdSeats => $_getList(1);
+}
+
+class AdminResolveHardshipOrHouseholdDisputeRequest
+    extends $pb.GeneratedMessage {
+  factory AdminResolveHardshipOrHouseholdDisputeRequest({
+    $core.String? ledgerCode,
+    $core.String? billingState,
+    $core.String? seatCode,
+    $core.String? consentState,
+  }) {
+    final result = create();
+    if (ledgerCode != null) result.ledgerCode = ledgerCode;
+    if (billingState != null) result.billingState = billingState;
+    if (seatCode != null) result.seatCode = seatCode;
+    if (consentState != null) result.consentState = consentState;
+    return result;
+  }
+
+  AdminResolveHardshipOrHouseholdDisputeRequest._();
+
+  factory AdminResolveHardshipOrHouseholdDisputeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveHardshipOrHouseholdDisputeRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminResolveHardshipOrHouseholdDisputeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ledgerCode')
+    ..aOS(2, _omitFieldNames ? '' : 'billingState')
+    ..aOS(3, _omitFieldNames ? '' : 'seatCode')
+    ..aOS(4, _omitFieldNames ? '' : 'consentState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveHardshipOrHouseholdDisputeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveHardshipOrHouseholdDisputeRequest copyWith(
+          void Function(AdminResolveHardshipOrHouseholdDisputeRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminResolveHardshipOrHouseholdDisputeRequest))
+          as AdminResolveHardshipOrHouseholdDisputeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveHardshipOrHouseholdDisputeRequest create() =>
+      AdminResolveHardshipOrHouseholdDisputeRequest._();
+  @$core.override
+  AdminResolveHardshipOrHouseholdDisputeRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveHardshipOrHouseholdDisputeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveHardshipOrHouseholdDisputeRequest>(create);
+  static AdminResolveHardshipOrHouseholdDisputeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ledgerCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ledgerCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLedgerCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLedgerCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get billingState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set billingState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBillingState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBillingState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get seatCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set seatCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSeatCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSeatCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get consentState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set consentState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConsentState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConsentState() => $_clearField(4);
+}
+
+class AdminResolveHardshipOrHouseholdDisputeResponse
+    extends $pb.GeneratedMessage {
+  factory AdminResolveHardshipOrHouseholdDisputeResponse({
+    EmpireMembershipEntitlementLedger? ledger,
+    EmpireHouseholdIdentitySeat? seat,
+  }) {
+    final result = create();
+    if (ledger != null) result.ledger = ledger;
+    if (seat != null) result.seat = seat;
+    return result;
+  }
+
+  AdminResolveHardshipOrHouseholdDisputeResponse._();
+
+  factory AdminResolveHardshipOrHouseholdDisputeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveHardshipOrHouseholdDisputeResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminResolveHardshipOrHouseholdDisputeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireMembershipEntitlementLedger>(1, _omitFieldNames ? '' : 'ledger',
+        subBuilder: EmpireMembershipEntitlementLedger.create)
+    ..aOM<EmpireHouseholdIdentitySeat>(2, _omitFieldNames ? '' : 'seat',
+        subBuilder: EmpireHouseholdIdentitySeat.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveHardshipOrHouseholdDisputeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveHardshipOrHouseholdDisputeResponse copyWith(
+          void Function(AdminResolveHardshipOrHouseholdDisputeResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminResolveHardshipOrHouseholdDisputeResponse))
+          as AdminResolveHardshipOrHouseholdDisputeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveHardshipOrHouseholdDisputeResponse create() =>
+      AdminResolveHardshipOrHouseholdDisputeResponse._();
+  @$core.override
+  AdminResolveHardshipOrHouseholdDisputeResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveHardshipOrHouseholdDisputeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveHardshipOrHouseholdDisputeResponse>(create);
+  static AdminResolveHardshipOrHouseholdDisputeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireMembershipEntitlementLedger get ledger => $_getN(0);
+  @$pb.TagNumber(1)
+  set ledger(EmpireMembershipEntitlementLedger value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLedger() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLedger() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireMembershipEntitlementLedger ensureLedger() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireHouseholdIdentitySeat get seat => $_getN(1);
+  @$pb.TagNumber(2)
+  set seat(EmpireHouseholdIdentitySeat value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSeat() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSeat() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireHouseholdIdentitySeat ensureSeat() => $_ensure(1);
+}
+
+class EmpireUnifiedInboxDispatch extends $pb.GeneratedMessage {
+  factory EmpireUnifiedInboxDispatch({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? dispatchCode,
+    $core.String? noticeCategory,
+    $core.String? sourcePillar,
+    $core.String? subjectLine,
+    $core.String? explainableReason,
+    $core.bool? legallyOrOperationallyRequired,
+    $core.String? dedupBurstGroupKey,
+    $core.bool? lockScreenRedactionActive,
+    $core.String? deliveryReconciliationState,
+    $core.String? memberDisposition,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (dispatchCode != null) result.dispatchCode = dispatchCode;
+    if (noticeCategory != null) result.noticeCategory = noticeCategory;
+    if (sourcePillar != null) result.sourcePillar = sourcePillar;
+    if (subjectLine != null) result.subjectLine = subjectLine;
+    if (explainableReason != null) result.explainableReason = explainableReason;
+    if (legallyOrOperationallyRequired != null)
+      result.legallyOrOperationallyRequired = legallyOrOperationallyRequired;
+    if (dedupBurstGroupKey != null)
+      result.dedupBurstGroupKey = dedupBurstGroupKey;
+    if (lockScreenRedactionActive != null)
+      result.lockScreenRedactionActive = lockScreenRedactionActive;
+    if (deliveryReconciliationState != null)
+      result.deliveryReconciliationState = deliveryReconciliationState;
+    if (memberDisposition != null) result.memberDisposition = memberDisposition;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireUnifiedInboxDispatch._();
+
+  factory EmpireUnifiedInboxDispatch.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireUnifiedInboxDispatch.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireUnifiedInboxDispatch',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'dispatchCode')
+    ..aOS(4, _omitFieldNames ? '' : 'noticeCategory')
+    ..aOS(5, _omitFieldNames ? '' : 'sourcePillar')
+    ..aOS(6, _omitFieldNames ? '' : 'subjectLine')
+    ..aOS(7, _omitFieldNames ? '' : 'explainableReason')
+    ..aOB(8, _omitFieldNames ? '' : 'legallyOrOperationallyRequired')
+    ..aOS(9, _omitFieldNames ? '' : 'dedupBurstGroupKey')
+    ..aOB(10, _omitFieldNames ? '' : 'lockScreenRedactionActive')
+    ..aOS(11, _omitFieldNames ? '' : 'deliveryReconciliationState')
+    ..aOS(12, _omitFieldNames ? '' : 'memberDisposition')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireUnifiedInboxDispatch clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireUnifiedInboxDispatch copyWith(
+          void Function(EmpireUnifiedInboxDispatch) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireUnifiedInboxDispatch))
+          as EmpireUnifiedInboxDispatch;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireUnifiedInboxDispatch create() => EmpireUnifiedInboxDispatch._();
+  @$core.override
+  EmpireUnifiedInboxDispatch createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireUnifiedInboxDispatch getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireUnifiedInboxDispatch>(create);
+  static EmpireUnifiedInboxDispatch? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get dispatchCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set dispatchCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDispatchCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDispatchCode() => $_clearField(3);
+
+  /// transactional_notice | invitation | staff_reply | consequential_approval | reminder | editorial_digest | safety_alert | partner_update | social_message
+  @$pb.TagNumber(4)
+  $core.String get noticeCategory => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set noticeCategory($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNoticeCategory() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNoticeCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sourcePillar => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sourcePillar($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSourcePillar() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSourcePillar() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get subjectLine => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set subjectLine($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSubjectLine() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSubjectLine() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get explainableReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set explainableReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExplainableReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExplainableReason() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get legallyOrOperationallyRequired => $_getBF(7);
+  @$pb.TagNumber(8)
+  set legallyOrOperationallyRequired($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLegallyOrOperationallyRequired() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLegallyOrOperationallyRequired() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get dedupBurstGroupKey => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set dedupBurstGroupKey($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDedupBurstGroupKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDedupBurstGroupKey() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get lockScreenRedactionActive => $_getBF(9);
+  @$pb.TagNumber(10)
+  set lockScreenRedactionActive($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLockScreenRedactionActive() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLockScreenRedactionActive() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get deliveryReconciliationState => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set deliveryReconciliationState($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDeliveryReconciliationState() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDeliveryReconciliationState() => $_clearField(11);
+
+  /// unread | acknowledged | action_completed | archived | deleted_ordinary
+  @$pb.TagNumber(12)
+  $core.String get memberDisposition => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set memberDisposition($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasMemberDisposition() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearMemberDisposition() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get createdAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set createdAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get updatedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set updatedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+}
+
+class EmpireCommunicationChannelControl extends $pb.GeneratedMessage {
+  factory EmpireCommunicationChannelControl({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? controlCode,
+    $core.String? categoryScope,
+    $core.String? preferredChannels,
+    $core.String? timezoneName,
+    $core.String? quietHoursWindow,
+    $core.bool? sensitiveLockScreenMasking,
+    $core.bool? marketingSocialOptedOut,
+    $core.bool? requiredNoticeImmutableAck,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (controlCode != null) result.controlCode = controlCode;
+    if (categoryScope != null) result.categoryScope = categoryScope;
+    if (preferredChannels != null) result.preferredChannels = preferredChannels;
+    if (timezoneName != null) result.timezoneName = timezoneName;
+    if (quietHoursWindow != null) result.quietHoursWindow = quietHoursWindow;
+    if (sensitiveLockScreenMasking != null)
+      result.sensitiveLockScreenMasking = sensitiveLockScreenMasking;
+    if (marketingSocialOptedOut != null)
+      result.marketingSocialOptedOut = marketingSocialOptedOut;
+    if (requiredNoticeImmutableAck != null)
+      result.requiredNoticeImmutableAck = requiredNoticeImmutableAck;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireCommunicationChannelControl._();
+
+  factory EmpireCommunicationChannelControl.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireCommunicationChannelControl.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireCommunicationChannelControl',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'controlCode')
+    ..aOS(4, _omitFieldNames ? '' : 'categoryScope')
+    ..aOS(5, _omitFieldNames ? '' : 'preferredChannels')
+    ..aOS(6, _omitFieldNames ? '' : 'timezoneName')
+    ..aOS(7, _omitFieldNames ? '' : 'quietHoursWindow')
+    ..aOB(8, _omitFieldNames ? '' : 'sensitiveLockScreenMasking')
+    ..aOB(9, _omitFieldNames ? '' : 'marketingSocialOptedOut')
+    ..aOB(10, _omitFieldNames ? '' : 'requiredNoticeImmutableAck')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCommunicationChannelControl clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireCommunicationChannelControl copyWith(
+          void Function(EmpireCommunicationChannelControl) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireCommunicationChannelControl))
+          as EmpireCommunicationChannelControl;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireCommunicationChannelControl create() =>
+      EmpireCommunicationChannelControl._();
+  @$core.override
+  EmpireCommunicationChannelControl createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireCommunicationChannelControl getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireCommunicationChannelControl>(
+          create);
+  static EmpireCommunicationChannelControl? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get controlCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set controlCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasControlCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearControlCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get categoryScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set categoryScope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCategoryScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCategoryScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get preferredChannels => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set preferredChannels($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPreferredChannels() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPreferredChannels() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get timezoneName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set timezoneName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTimezoneName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTimezoneName() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get quietHoursWindow => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set quietHoursWindow($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuietHoursWindow() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuietHoursWindow() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get sensitiveLockScreenMasking => $_getBF(7);
+  @$pb.TagNumber(8)
+  set sensitiveLockScreenMasking($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSensitiveLockScreenMasking() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSensitiveLockScreenMasking() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get marketingSocialOptedOut => $_getBF(8);
+  @$pb.TagNumber(9)
+  set marketingSocialOptedOut($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMarketingSocialOptedOut() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMarketingSocialOptedOut() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get requiredNoticeImmutableAck => $_getBF(9);
+  @$pb.TagNumber(10)
+  set requiredNoticeImmutableAck($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRequiredNoticeImmutableAck() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRequiredNoticeImmutableAck() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set createdAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+}
+
+class GetUnifiedInboxWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetUnifiedInboxWorkbenchRequest() => create();
+
+  GetUnifiedInboxWorkbenchRequest._();
+
+  factory GetUnifiedInboxWorkbenchRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUnifiedInboxWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUnifiedInboxWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUnifiedInboxWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUnifiedInboxWorkbenchRequest copyWith(
+          void Function(GetUnifiedInboxWorkbenchRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetUnifiedInboxWorkbenchRequest))
+          as GetUnifiedInboxWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUnifiedInboxWorkbenchRequest create() =>
+      GetUnifiedInboxWorkbenchRequest._();
+  @$core.override
+  GetUnifiedInboxWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUnifiedInboxWorkbenchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetUnifiedInboxWorkbenchRequest>(
+          create);
+  static GetUnifiedInboxWorkbenchRequest? _defaultInstance;
+}
+
+class GetUnifiedInboxWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetUnifiedInboxWorkbenchResponse({
+    $core.Iterable<EmpireUnifiedInboxDispatch>? dispatches,
+    $core.Iterable<EmpireCommunicationChannelControl>? controls,
+  }) {
+    final result = create();
+    if (dispatches != null) result.dispatches.addAll(dispatches);
+    if (controls != null) result.controls.addAll(controls);
+    return result;
+  }
+
+  GetUnifiedInboxWorkbenchResponse._();
+
+  factory GetUnifiedInboxWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUnifiedInboxWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUnifiedInboxWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireUnifiedInboxDispatch>(1, _omitFieldNames ? '' : 'dispatches',
+        subBuilder: EmpireUnifiedInboxDispatch.create)
+    ..pPM<EmpireCommunicationChannelControl>(
+        2, _omitFieldNames ? '' : 'controls',
+        subBuilder: EmpireCommunicationChannelControl.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUnifiedInboxWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUnifiedInboxWorkbenchResponse copyWith(
+          void Function(GetUnifiedInboxWorkbenchResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetUnifiedInboxWorkbenchResponse))
+          as GetUnifiedInboxWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUnifiedInboxWorkbenchResponse create() =>
+      GetUnifiedInboxWorkbenchResponse._();
+  @$core.override
+  GetUnifiedInboxWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUnifiedInboxWorkbenchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetUnifiedInboxWorkbenchResponse>(
+          create);
+  static GetUnifiedInboxWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireUnifiedInboxDispatch> get dispatches => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCommunicationChannelControl> get controls => $_getList(1);
+}
+
+class UpdateCommunicationChannelControlRequest extends $pb.GeneratedMessage {
+  factory UpdateCommunicationChannelControlRequest({
+    $core.String? controlCode,
+    $core.String? categoryScope,
+    $core.String? preferredChannels,
+    $core.String? timezoneName,
+    $core.String? quietHoursWindow,
+    $core.bool? sensitiveLockScreenMasking,
+    $core.bool? marketingSocialOptedOut,
+  }) {
+    final result = create();
+    if (controlCode != null) result.controlCode = controlCode;
+    if (categoryScope != null) result.categoryScope = categoryScope;
+    if (preferredChannels != null) result.preferredChannels = preferredChannels;
+    if (timezoneName != null) result.timezoneName = timezoneName;
+    if (quietHoursWindow != null) result.quietHoursWindow = quietHoursWindow;
+    if (sensitiveLockScreenMasking != null)
+      result.sensitiveLockScreenMasking = sensitiveLockScreenMasking;
+    if (marketingSocialOptedOut != null)
+      result.marketingSocialOptedOut = marketingSocialOptedOut;
+    return result;
+  }
+
+  UpdateCommunicationChannelControlRequest._();
+
+  factory UpdateCommunicationChannelControlRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateCommunicationChannelControlRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateCommunicationChannelControlRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'controlCode')
+    ..aOS(2, _omitFieldNames ? '' : 'categoryScope')
+    ..aOS(3, _omitFieldNames ? '' : 'preferredChannels')
+    ..aOS(4, _omitFieldNames ? '' : 'timezoneName')
+    ..aOS(5, _omitFieldNames ? '' : 'quietHoursWindow')
+    ..aOB(6, _omitFieldNames ? '' : 'sensitiveLockScreenMasking')
+    ..aOB(7, _omitFieldNames ? '' : 'marketingSocialOptedOut')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCommunicationChannelControlRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCommunicationChannelControlRequest copyWith(
+          void Function(UpdateCommunicationChannelControlRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateCommunicationChannelControlRequest))
+          as UpdateCommunicationChannelControlRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCommunicationChannelControlRequest create() =>
+      UpdateCommunicationChannelControlRequest._();
+  @$core.override
+  UpdateCommunicationChannelControlRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCommunicationChannelControlRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateCommunicationChannelControlRequest>(create);
+  static UpdateCommunicationChannelControlRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get controlCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set controlCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasControlCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearControlCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get categoryScope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set categoryScope($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCategoryScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategoryScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get preferredChannels => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set preferredChannels($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPreferredChannels() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPreferredChannels() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get timezoneName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set timezoneName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTimezoneName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTimezoneName() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get quietHoursWindow => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set quietHoursWindow($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasQuietHoursWindow() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuietHoursWindow() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get sensitiveLockScreenMasking => $_getBF(5);
+  @$pb.TagNumber(6)
+  set sensitiveLockScreenMasking($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSensitiveLockScreenMasking() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSensitiveLockScreenMasking() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get marketingSocialOptedOut => $_getBF(6);
+  @$pb.TagNumber(7)
+  set marketingSocialOptedOut($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMarketingSocialOptedOut() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMarketingSocialOptedOut() => $_clearField(7);
+}
+
+class UpdateCommunicationChannelControlResponse extends $pb.GeneratedMessage {
+  factory UpdateCommunicationChannelControlResponse({
+    EmpireCommunicationChannelControl? control,
+  }) {
+    final result = create();
+    if (control != null) result.control = control;
+    return result;
+  }
+
+  UpdateCommunicationChannelControlResponse._();
+
+  factory UpdateCommunicationChannelControlResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateCommunicationChannelControlResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateCommunicationChannelControlResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireCommunicationChannelControl>(
+        1, _omitFieldNames ? '' : 'control',
+        subBuilder: EmpireCommunicationChannelControl.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCommunicationChannelControlResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateCommunicationChannelControlResponse copyWith(
+          void Function(UpdateCommunicationChannelControlResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateCommunicationChannelControlResponse))
+          as UpdateCommunicationChannelControlResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateCommunicationChannelControlResponse create() =>
+      UpdateCommunicationChannelControlResponse._();
+  @$core.override
+  UpdateCommunicationChannelControlResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateCommunicationChannelControlResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateCommunicationChannelControlResponse>(create);
+  static UpdateCommunicationChannelControlResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireCommunicationChannelControl get control => $_getN(0);
+  @$pb.TagNumber(1)
+  set control(EmpireCommunicationChannelControl value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasControl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearControl() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireCommunicationChannelControl ensureControl() => $_ensure(0);
+}
+
+class AcknowledgeOrDeleteInboxDispatchRequest extends $pb.GeneratedMessage {
+  factory AcknowledgeOrDeleteInboxDispatchRequest({
+    $core.String? dispatchCode,
+    $core.String? memberDisposition,
+  }) {
+    final result = create();
+    if (dispatchCode != null) result.dispatchCode = dispatchCode;
+    if (memberDisposition != null) result.memberDisposition = memberDisposition;
+    return result;
+  }
+
+  AcknowledgeOrDeleteInboxDispatchRequest._();
+
+  factory AcknowledgeOrDeleteInboxDispatchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeOrDeleteInboxDispatchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeOrDeleteInboxDispatchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'dispatchCode')
+    ..aOS(2, _omitFieldNames ? '' : 'memberDisposition')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrDeleteInboxDispatchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrDeleteInboxDispatchRequest copyWith(
+          void Function(AcknowledgeOrDeleteInboxDispatchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcknowledgeOrDeleteInboxDispatchRequest))
+          as AcknowledgeOrDeleteInboxDispatchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrDeleteInboxDispatchRequest create() =>
+      AcknowledgeOrDeleteInboxDispatchRequest._();
+  @$core.override
+  AcknowledgeOrDeleteInboxDispatchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrDeleteInboxDispatchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeOrDeleteInboxDispatchRequest>(create);
+  static AcknowledgeOrDeleteInboxDispatchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dispatchCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dispatchCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDispatchCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDispatchCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get memberDisposition => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set memberDisposition($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMemberDisposition() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMemberDisposition() => $_clearField(2);
+}
+
+class AcknowledgeOrDeleteInboxDispatchResponse extends $pb.GeneratedMessage {
+  factory AcknowledgeOrDeleteInboxDispatchResponse({
+    EmpireUnifiedInboxDispatch? dispatch,
+  }) {
+    final result = create();
+    if (dispatch != null) result.dispatch = dispatch;
+    return result;
+  }
+
+  AcknowledgeOrDeleteInboxDispatchResponse._();
+
+  factory AcknowledgeOrDeleteInboxDispatchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeOrDeleteInboxDispatchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeOrDeleteInboxDispatchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireUnifiedInboxDispatch>(1, _omitFieldNames ? '' : 'dispatch',
+        subBuilder: EmpireUnifiedInboxDispatch.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrDeleteInboxDispatchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrDeleteInboxDispatchResponse copyWith(
+          void Function(AcknowledgeOrDeleteInboxDispatchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcknowledgeOrDeleteInboxDispatchResponse))
+          as AcknowledgeOrDeleteInboxDispatchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrDeleteInboxDispatchResponse create() =>
+      AcknowledgeOrDeleteInboxDispatchResponse._();
+  @$core.override
+  AcknowledgeOrDeleteInboxDispatchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrDeleteInboxDispatchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeOrDeleteInboxDispatchResponse>(create);
+  static AcknowledgeOrDeleteInboxDispatchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireUnifiedInboxDispatch get dispatch => $_getN(0);
+  @$pb.TagNumber(1)
+  set dispatch(EmpireUnifiedInboxDispatch value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDispatch() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDispatch() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireUnifiedInboxDispatch ensureDispatch() => $_ensure(0);
+}
+
+class AdminListUnifiedInboxAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListUnifiedInboxAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListUnifiedInboxAuditRequest._();
+
+  factory AdminListUnifiedInboxAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListUnifiedInboxAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListUnifiedInboxAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListUnifiedInboxAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListUnifiedInboxAuditRequest copyWith(
+          void Function(AdminListUnifiedInboxAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListUnifiedInboxAuditRequest))
+          as AdminListUnifiedInboxAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListUnifiedInboxAuditRequest create() =>
+      AdminListUnifiedInboxAuditRequest._();
+  @$core.override
+  AdminListUnifiedInboxAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListUnifiedInboxAuditRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdminListUnifiedInboxAuditRequest>(
+          create);
+  static AdminListUnifiedInboxAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListUnifiedInboxAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListUnifiedInboxAuditResponse({
+    $core.Iterable<EmpireUnifiedInboxDispatch>? dispatches,
+    $core.Iterable<EmpireCommunicationChannelControl>? controls,
+  }) {
+    final result = create();
+    if (dispatches != null) result.dispatches.addAll(dispatches);
+    if (controls != null) result.controls.addAll(controls);
+    return result;
+  }
+
+  AdminListUnifiedInboxAuditResponse._();
+
+  factory AdminListUnifiedInboxAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListUnifiedInboxAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListUnifiedInboxAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireUnifiedInboxDispatch>(1, _omitFieldNames ? '' : 'dispatches',
+        subBuilder: EmpireUnifiedInboxDispatch.create)
+    ..pPM<EmpireCommunicationChannelControl>(
+        2, _omitFieldNames ? '' : 'controls',
+        subBuilder: EmpireCommunicationChannelControl.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListUnifiedInboxAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListUnifiedInboxAuditResponse copyWith(
+          void Function(AdminListUnifiedInboxAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListUnifiedInboxAuditResponse))
+          as AdminListUnifiedInboxAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListUnifiedInboxAuditResponse create() =>
+      AdminListUnifiedInboxAuditResponse._();
+  @$core.override
+  AdminListUnifiedInboxAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListUnifiedInboxAuditResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdminListUnifiedInboxAuditResponse>(
+          create);
+  static AdminListUnifiedInboxAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireUnifiedInboxDispatch> get dispatches => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireCommunicationChannelControl> get controls => $_getList(1);
+}
+
+class AdminManageRequiredNoticeOrBurstPolicyRequest
+    extends $pb.GeneratedMessage {
+  factory AdminManageRequiredNoticeOrBurstPolicyRequest({
+    $core.String? dispatchCode,
+    $core.String? deliveryReconciliationState,
+    $core.bool? lockScreenRedactionActive,
+  }) {
+    final result = create();
+    if (dispatchCode != null) result.dispatchCode = dispatchCode;
+    if (deliveryReconciliationState != null)
+      result.deliveryReconciliationState = deliveryReconciliationState;
+    if (lockScreenRedactionActive != null)
+      result.lockScreenRedactionActive = lockScreenRedactionActive;
+    return result;
+  }
+
+  AdminManageRequiredNoticeOrBurstPolicyRequest._();
+
+  factory AdminManageRequiredNoticeOrBurstPolicyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageRequiredNoticeOrBurstPolicyRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageRequiredNoticeOrBurstPolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'dispatchCode')
+    ..aOS(2, _omitFieldNames ? '' : 'deliveryReconciliationState')
+    ..aOB(3, _omitFieldNames ? '' : 'lockScreenRedactionActive')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRequiredNoticeOrBurstPolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRequiredNoticeOrBurstPolicyRequest copyWith(
+          void Function(AdminManageRequiredNoticeOrBurstPolicyRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageRequiredNoticeOrBurstPolicyRequest))
+          as AdminManageRequiredNoticeOrBurstPolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRequiredNoticeOrBurstPolicyRequest create() =>
+      AdminManageRequiredNoticeOrBurstPolicyRequest._();
+  @$core.override
+  AdminManageRequiredNoticeOrBurstPolicyRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRequiredNoticeOrBurstPolicyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageRequiredNoticeOrBurstPolicyRequest>(create);
+  static AdminManageRequiredNoticeOrBurstPolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get dispatchCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dispatchCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDispatchCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDispatchCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get deliveryReconciliationState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deliveryReconciliationState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDeliveryReconciliationState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeliveryReconciliationState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get lockScreenRedactionActive => $_getBF(2);
+  @$pb.TagNumber(3)
+  set lockScreenRedactionActive($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLockScreenRedactionActive() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLockScreenRedactionActive() => $_clearField(3);
+}
+
+class AdminManageRequiredNoticeOrBurstPolicyResponse
+    extends $pb.GeneratedMessage {
+  factory AdminManageRequiredNoticeOrBurstPolicyResponse({
+    EmpireUnifiedInboxDispatch? dispatch,
+  }) {
+    final result = create();
+    if (dispatch != null) result.dispatch = dispatch;
+    return result;
+  }
+
+  AdminManageRequiredNoticeOrBurstPolicyResponse._();
+
+  factory AdminManageRequiredNoticeOrBurstPolicyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageRequiredNoticeOrBurstPolicyResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageRequiredNoticeOrBurstPolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireUnifiedInboxDispatch>(1, _omitFieldNames ? '' : 'dispatch',
+        subBuilder: EmpireUnifiedInboxDispatch.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRequiredNoticeOrBurstPolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRequiredNoticeOrBurstPolicyResponse copyWith(
+          void Function(AdminManageRequiredNoticeOrBurstPolicyResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminManageRequiredNoticeOrBurstPolicyResponse))
+          as AdminManageRequiredNoticeOrBurstPolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRequiredNoticeOrBurstPolicyResponse create() =>
+      AdminManageRequiredNoticeOrBurstPolicyResponse._();
+  @$core.override
+  AdminManageRequiredNoticeOrBurstPolicyResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRequiredNoticeOrBurstPolicyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageRequiredNoticeOrBurstPolicyResponse>(create);
+  static AdminManageRequiredNoticeOrBurstPolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireUnifiedInboxDispatch get dispatch => $_getN(0);
+  @$pb.TagNumber(1)
+  set dispatch(EmpireUnifiedInboxDispatch value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDispatch() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDispatch() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireUnifiedInboxDispatch ensureDispatch() => $_ensure(0);
+}
+
+class EmpireConciergeServiceRequest extends $pb.GeneratedMessage {
+  factory EmpireConciergeServiceRequest({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? requestCode,
+    $core.String? routedPillar,
+    $core.String? skillAndRegion,
+    $core.String? assigneeRole,
+    $core.String? requestSummary,
+    $core.int? slaTargetHours,
+    $core.String? minimumPacketFields,
+    $core.String? humanCommitmentOwner,
+    $core.int? quotedCostCents,
+    $core.String? requestState,
+    $core.String? nextActionSummary,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (requestCode != null) result.requestCode = requestCode;
+    if (routedPillar != null) result.routedPillar = routedPillar;
+    if (skillAndRegion != null) result.skillAndRegion = skillAndRegion;
+    if (assigneeRole != null) result.assigneeRole = assigneeRole;
+    if (requestSummary != null) result.requestSummary = requestSummary;
+    if (slaTargetHours != null) result.slaTargetHours = slaTargetHours;
+    if (minimumPacketFields != null)
+      result.minimumPacketFields = minimumPacketFields;
+    if (humanCommitmentOwner != null)
+      result.humanCommitmentOwner = humanCommitmentOwner;
+    if (quotedCostCents != null) result.quotedCostCents = quotedCostCents;
+    if (requestState != null) result.requestState = requestState;
+    if (nextActionSummary != null) result.nextActionSummary = nextActionSummary;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireConciergeServiceRequest._();
+
+  factory EmpireConciergeServiceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireConciergeServiceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireConciergeServiceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'requestCode')
+    ..aOS(4, _omitFieldNames ? '' : 'routedPillar')
+    ..aOS(5, _omitFieldNames ? '' : 'skillAndRegion')
+    ..aOS(6, _omitFieldNames ? '' : 'assigneeRole')
+    ..aOS(7, _omitFieldNames ? '' : 'requestSummary')
+    ..aI(8, _omitFieldNames ? '' : 'slaTargetHours')
+    ..aOS(9, _omitFieldNames ? '' : 'minimumPacketFields')
+    ..aOS(10, _omitFieldNames ? '' : 'humanCommitmentOwner')
+    ..aI(11, _omitFieldNames ? '' : 'quotedCostCents')
+    ..aOS(12, _omitFieldNames ? '' : 'requestState')
+    ..aOS(13, _omitFieldNames ? '' : 'nextActionSummary')
+    ..aOS(14, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(15, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConciergeServiceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConciergeServiceRequest copyWith(
+          void Function(EmpireConciergeServiceRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireConciergeServiceRequest))
+          as EmpireConciergeServiceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireConciergeServiceRequest create() =>
+      EmpireConciergeServiceRequest._();
+  @$core.override
+  EmpireConciergeServiceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireConciergeServiceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireConciergeServiceRequest>(create);
+  static EmpireConciergeServiceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get requestCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set requestCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRequestCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRequestCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get routedPillar => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set routedPillar($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRoutedPillar() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRoutedPillar() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get skillAndRegion => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set skillAndRegion($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSkillAndRegion() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSkillAndRegion() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get assigneeRole => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set assigneeRole($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAssigneeRole() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAssigneeRole() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get requestSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set requestSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRequestSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRequestSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get slaTargetHours => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set slaTargetHours($core.int value) => $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSlaTargetHours() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSlaTargetHours() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get minimumPacketFields => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set minimumPacketFields($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMinimumPacketFields() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMinimumPacketFields() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get humanCommitmentOwner => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set humanCommitmentOwner($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasHumanCommitmentOwner() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearHumanCommitmentOwner() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get quotedCostCents => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set quotedCostCents($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasQuotedCostCents() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearQuotedCostCents() => $_clearField(11);
+
+  /// triaged_ai_drafted | in_progress_human_owned | awaiting_member_approval | transferred_specialist | completed_satisfied | escalated_complaint | refunded_closed
+  @$pb.TagNumber(12)
+  $core.String get requestState => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set requestState($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRequestState() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRequestState() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get nextActionSummary => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set nextActionSummary($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasNextActionSummary() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearNextActionSummary() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get createdAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set createdAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedAt() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get updatedAt => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set updatedAt($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasUpdatedAt() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearUpdatedAt() => $_clearField(15);
+}
+
+class EmpireConciergePacketAccessLog extends $pb.GeneratedMessage {
+  factory EmpireConciergePacketAccessLog({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? accessLogCode,
+    $core.String? requestCode,
+    $core.String? staffActorHandle,
+    $core.String? grantedPillarScope,
+    $core.String? purposeStatement,
+    $core.String? attachmentSafetyStatus,
+    $core.String? memberGrantStatus,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (accessLogCode != null) result.accessLogCode = accessLogCode;
+    if (requestCode != null) result.requestCode = requestCode;
+    if (staffActorHandle != null) result.staffActorHandle = staffActorHandle;
+    if (grantedPillarScope != null)
+      result.grantedPillarScope = grantedPillarScope;
+    if (purposeStatement != null) result.purposeStatement = purposeStatement;
+    if (attachmentSafetyStatus != null)
+      result.attachmentSafetyStatus = attachmentSafetyStatus;
+    if (memberGrantStatus != null) result.memberGrantStatus = memberGrantStatus;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireConciergePacketAccessLog._();
+
+  factory EmpireConciergePacketAccessLog.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireConciergePacketAccessLog.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireConciergePacketAccessLog',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'accessLogCode')
+    ..aOS(4, _omitFieldNames ? '' : 'requestCode')
+    ..aOS(5, _omitFieldNames ? '' : 'staffActorHandle')
+    ..aOS(6, _omitFieldNames ? '' : 'grantedPillarScope')
+    ..aOS(7, _omitFieldNames ? '' : 'purposeStatement')
+    ..aOS(8, _omitFieldNames ? '' : 'attachmentSafetyStatus')
+    ..aOS(9, _omitFieldNames ? '' : 'memberGrantStatus')
+    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConciergePacketAccessLog clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConciergePacketAccessLog copyWith(
+          void Function(EmpireConciergePacketAccessLog) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireConciergePacketAccessLog))
+          as EmpireConciergePacketAccessLog;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireConciergePacketAccessLog create() =>
+      EmpireConciergePacketAccessLog._();
+  @$core.override
+  EmpireConciergePacketAccessLog createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireConciergePacketAccessLog getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireConciergePacketAccessLog>(create);
+  static EmpireConciergePacketAccessLog? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get accessLogCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set accessLogCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAccessLogCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAccessLogCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get requestCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set requestCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRequestCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequestCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get staffActorHandle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set staffActorHandle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStaffActorHandle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStaffActorHandle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get grantedPillarScope => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set grantedPillarScope($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrantedPillarScope() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrantedPillarScope() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get purposeStatement => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set purposeStatement($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPurposeStatement() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPurposeStatement() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get attachmentSafetyStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set attachmentSafetyStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAttachmentSafetyStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAttachmentSafetyStatus() => $_clearField(8);
+
+  /// active_scoped_grant | revoked_by_member | expired_after_closure | admin_audited
+  @$pb.TagNumber(9)
+  $core.String get memberGrantStatus => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set memberGrantStatus($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemberGrantStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemberGrantStatus() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get createdAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set createdAt($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+}
+
+class GetEcosystemConciergeWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetEcosystemConciergeWorkbenchRequest() => create();
+
+  GetEcosystemConciergeWorkbenchRequest._();
+
+  factory GetEcosystemConciergeWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEcosystemConciergeWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEcosystemConciergeWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEcosystemConciergeWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEcosystemConciergeWorkbenchRequest copyWith(
+          void Function(GetEcosystemConciergeWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetEcosystemConciergeWorkbenchRequest))
+          as GetEcosystemConciergeWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEcosystemConciergeWorkbenchRequest create() =>
+      GetEcosystemConciergeWorkbenchRequest._();
+  @$core.override
+  GetEcosystemConciergeWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEcosystemConciergeWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetEcosystemConciergeWorkbenchRequest>(create);
+  static GetEcosystemConciergeWorkbenchRequest? _defaultInstance;
+}
+
+class GetEcosystemConciergeWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetEcosystemConciergeWorkbenchResponse({
+    $core.Iterable<EmpireConciergeServiceRequest>? requests,
+    $core.Iterable<EmpireConciergePacketAccessLog>? accessLogs,
+  }) {
+    final result = create();
+    if (requests != null) result.requests.addAll(requests);
+    if (accessLogs != null) result.accessLogs.addAll(accessLogs);
+    return result;
+  }
+
+  GetEcosystemConciergeWorkbenchResponse._();
+
+  factory GetEcosystemConciergeWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEcosystemConciergeWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEcosystemConciergeWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireConciergeServiceRequest>(1, _omitFieldNames ? '' : 'requests',
+        subBuilder: EmpireConciergeServiceRequest.create)
+    ..pPM<EmpireConciergePacketAccessLog>(
+        2, _omitFieldNames ? '' : 'accessLogs',
+        subBuilder: EmpireConciergePacketAccessLog.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEcosystemConciergeWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEcosystemConciergeWorkbenchResponse copyWith(
+          void Function(GetEcosystemConciergeWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetEcosystemConciergeWorkbenchResponse))
+          as GetEcosystemConciergeWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEcosystemConciergeWorkbenchResponse create() =>
+      GetEcosystemConciergeWorkbenchResponse._();
+  @$core.override
+  GetEcosystemConciergeWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEcosystemConciergeWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetEcosystemConciergeWorkbenchResponse>(create);
+  static GetEcosystemConciergeWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireConciergeServiceRequest> get requests => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireConciergePacketAccessLog> get accessLogs => $_getList(1);
+}
+
+class CreateOrUpdateConciergeRequestRequest extends $pb.GeneratedMessage {
+  factory CreateOrUpdateConciergeRequestRequest({
+    $core.String? requestCode,
+    $core.String? routedPillar,
+    $core.String? skillAndRegion,
+    $core.String? requestSummary,
+    $core.String? requestState,
+    $core.String? nextActionSummary,
+  }) {
+    final result = create();
+    if (requestCode != null) result.requestCode = requestCode;
+    if (routedPillar != null) result.routedPillar = routedPillar;
+    if (skillAndRegion != null) result.skillAndRegion = skillAndRegion;
+    if (requestSummary != null) result.requestSummary = requestSummary;
+    if (requestState != null) result.requestState = requestState;
+    if (nextActionSummary != null) result.nextActionSummary = nextActionSummary;
+    return result;
+  }
+
+  CreateOrUpdateConciergeRequestRequest._();
+
+  factory CreateOrUpdateConciergeRequestRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateConciergeRequestRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateConciergeRequestRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'requestCode')
+    ..aOS(2, _omitFieldNames ? '' : 'routedPillar')
+    ..aOS(3, _omitFieldNames ? '' : 'skillAndRegion')
+    ..aOS(4, _omitFieldNames ? '' : 'requestSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'requestState')
+    ..aOS(6, _omitFieldNames ? '' : 'nextActionSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateConciergeRequestRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateConciergeRequestRequest copyWith(
+          void Function(CreateOrUpdateConciergeRequestRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateConciergeRequestRequest))
+          as CreateOrUpdateConciergeRequestRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateConciergeRequestRequest create() =>
+      CreateOrUpdateConciergeRequestRequest._();
+  @$core.override
+  CreateOrUpdateConciergeRequestRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateConciergeRequestRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateConciergeRequestRequest>(create);
+  static CreateOrUpdateConciergeRequestRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get requestCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set requestCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequestCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequestCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get routedPillar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set routedPillar($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoutedPillar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoutedPillar() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get skillAndRegion => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set skillAndRegion($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSkillAndRegion() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSkillAndRegion() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get requestSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set requestSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRequestSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRequestSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get requestState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set requestState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRequestState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRequestState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get nextActionSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nextActionSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNextActionSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNextActionSummary() => $_clearField(6);
+}
+
+class CreateOrUpdateConciergeRequestResponse extends $pb.GeneratedMessage {
+  factory CreateOrUpdateConciergeRequestResponse({
+    EmpireConciergeServiceRequest? request,
+  }) {
+    final result = create();
+    if (request != null) result.request = request;
+    return result;
+  }
+
+  CreateOrUpdateConciergeRequestResponse._();
+
+  factory CreateOrUpdateConciergeRequestResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateConciergeRequestResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateConciergeRequestResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireConciergeServiceRequest>(1, _omitFieldNames ? '' : 'request',
+        subBuilder: EmpireConciergeServiceRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateConciergeRequestResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateConciergeRequestResponse copyWith(
+          void Function(CreateOrUpdateConciergeRequestResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateConciergeRequestResponse))
+          as CreateOrUpdateConciergeRequestResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateConciergeRequestResponse create() =>
+      CreateOrUpdateConciergeRequestResponse._();
+  @$core.override
+  CreateOrUpdateConciergeRequestResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateConciergeRequestResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateConciergeRequestResponse>(create);
+  static CreateOrUpdateConciergeRequestResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireConciergeServiceRequest get request => $_getN(0);
+  @$pb.TagNumber(1)
+  set request(EmpireConciergeServiceRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireConciergeServiceRequest ensureRequest() => $_ensure(0);
+}
+
+class ApproveOrEscalateConciergePacketRequest extends $pb.GeneratedMessage {
+  factory ApproveOrEscalateConciergePacketRequest({
+    $core.String? accessLogCode,
+    $core.String? requestCode,
+    $core.String? grantedPillarScope,
+    $core.String? purposeStatement,
+    $core.String? memberGrantStatus,
+  }) {
+    final result = create();
+    if (accessLogCode != null) result.accessLogCode = accessLogCode;
+    if (requestCode != null) result.requestCode = requestCode;
+    if (grantedPillarScope != null)
+      result.grantedPillarScope = grantedPillarScope;
+    if (purposeStatement != null) result.purposeStatement = purposeStatement;
+    if (memberGrantStatus != null) result.memberGrantStatus = memberGrantStatus;
+    return result;
+  }
+
+  ApproveOrEscalateConciergePacketRequest._();
+
+  factory ApproveOrEscalateConciergePacketRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrEscalateConciergePacketRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrEscalateConciergePacketRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'accessLogCode')
+    ..aOS(2, _omitFieldNames ? '' : 'requestCode')
+    ..aOS(3, _omitFieldNames ? '' : 'grantedPillarScope')
+    ..aOS(4, _omitFieldNames ? '' : 'purposeStatement')
+    ..aOS(5, _omitFieldNames ? '' : 'memberGrantStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrEscalateConciergePacketRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrEscalateConciergePacketRequest copyWith(
+          void Function(ApproveOrEscalateConciergePacketRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrEscalateConciergePacketRequest))
+          as ApproveOrEscalateConciergePacketRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrEscalateConciergePacketRequest create() =>
+      ApproveOrEscalateConciergePacketRequest._();
+  @$core.override
+  ApproveOrEscalateConciergePacketRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrEscalateConciergePacketRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrEscalateConciergePacketRequest>(create);
+  static ApproveOrEscalateConciergePacketRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get accessLogCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set accessLogCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccessLogCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccessLogCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get requestCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set requestCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRequestCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRequestCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get grantedPillarScope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set grantedPillarScope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGrantedPillarScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGrantedPillarScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get purposeStatement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set purposeStatement($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPurposeStatement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPurposeStatement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get memberGrantStatus => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set memberGrantStatus($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMemberGrantStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMemberGrantStatus() => $_clearField(5);
+}
+
+class ApproveOrEscalateConciergePacketResponse extends $pb.GeneratedMessage {
+  factory ApproveOrEscalateConciergePacketResponse({
+    EmpireConciergePacketAccessLog? accessLog,
+  }) {
+    final result = create();
+    if (accessLog != null) result.accessLog = accessLog;
+    return result;
+  }
+
+  ApproveOrEscalateConciergePacketResponse._();
+
+  factory ApproveOrEscalateConciergePacketResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrEscalateConciergePacketResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrEscalateConciergePacketResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireConciergePacketAccessLog>(1, _omitFieldNames ? '' : 'accessLog',
+        subBuilder: EmpireConciergePacketAccessLog.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrEscalateConciergePacketResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrEscalateConciergePacketResponse copyWith(
+          void Function(ApproveOrEscalateConciergePacketResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrEscalateConciergePacketResponse))
+          as ApproveOrEscalateConciergePacketResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrEscalateConciergePacketResponse create() =>
+      ApproveOrEscalateConciergePacketResponse._();
+  @$core.override
+  ApproveOrEscalateConciergePacketResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrEscalateConciergePacketResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrEscalateConciergePacketResponse>(create);
+  static ApproveOrEscalateConciergePacketResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireConciergePacketAccessLog get accessLog => $_getN(0);
+  @$pb.TagNumber(1)
+  set accessLog(EmpireConciergePacketAccessLog value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccessLog() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccessLog() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireConciergePacketAccessLog ensureAccessLog() => $_ensure(0);
+}
+
+class AdminListEcosystemConciergeAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListEcosystemConciergeAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListEcosystemConciergeAuditRequest._();
+
+  factory AdminListEcosystemConciergeAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListEcosystemConciergeAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListEcosystemConciergeAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEcosystemConciergeAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEcosystemConciergeAuditRequest copyWith(
+          void Function(AdminListEcosystemConciergeAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListEcosystemConciergeAuditRequest))
+          as AdminListEcosystemConciergeAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListEcosystemConciergeAuditRequest create() =>
+      AdminListEcosystemConciergeAuditRequest._();
+  @$core.override
+  AdminListEcosystemConciergeAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListEcosystemConciergeAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListEcosystemConciergeAuditRequest>(create);
+  static AdminListEcosystemConciergeAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListEcosystemConciergeAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListEcosystemConciergeAuditResponse({
+    $core.Iterable<EmpireConciergeServiceRequest>? requests,
+    $core.Iterable<EmpireConciergePacketAccessLog>? accessLogs,
+  }) {
+    final result = create();
+    if (requests != null) result.requests.addAll(requests);
+    if (accessLogs != null) result.accessLogs.addAll(accessLogs);
+    return result;
+  }
+
+  AdminListEcosystemConciergeAuditResponse._();
+
+  factory AdminListEcosystemConciergeAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListEcosystemConciergeAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListEcosystemConciergeAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireConciergeServiceRequest>(1, _omitFieldNames ? '' : 'requests',
+        subBuilder: EmpireConciergeServiceRequest.create)
+    ..pPM<EmpireConciergePacketAccessLog>(
+        2, _omitFieldNames ? '' : 'accessLogs',
+        subBuilder: EmpireConciergePacketAccessLog.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEcosystemConciergeAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEcosystemConciergeAuditResponse copyWith(
+          void Function(AdminListEcosystemConciergeAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListEcosystemConciergeAuditResponse))
+          as AdminListEcosystemConciergeAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListEcosystemConciergeAuditResponse create() =>
+      AdminListEcosystemConciergeAuditResponse._();
+  @$core.override
+  AdminListEcosystemConciergeAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListEcosystemConciergeAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListEcosystemConciergeAuditResponse>(create);
+  static AdminListEcosystemConciergeAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireConciergeServiceRequest> get requests => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireConciergePacketAccessLog> get accessLogs => $_getList(1);
+}
+
+class AdminResolveConciergeCommitmentOrEscalationRequest
+    extends $pb.GeneratedMessage {
+  factory AdminResolveConciergeCommitmentOrEscalationRequest({
+    $core.String? requestCode,
+    $core.String? requestState,
+    $core.String? humanCommitmentOwner,
+  }) {
+    final result = create();
+    if (requestCode != null) result.requestCode = requestCode;
+    if (requestState != null) result.requestState = requestState;
+    if (humanCommitmentOwner != null)
+      result.humanCommitmentOwner = humanCommitmentOwner;
+    return result;
+  }
+
+  AdminResolveConciergeCommitmentOrEscalationRequest._();
+
+  factory AdminResolveConciergeCommitmentOrEscalationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveConciergeCommitmentOrEscalationRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminResolveConciergeCommitmentOrEscalationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'requestCode')
+    ..aOS(2, _omitFieldNames ? '' : 'requestState')
+    ..aOS(3, _omitFieldNames ? '' : 'humanCommitmentOwner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveConciergeCommitmentOrEscalationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveConciergeCommitmentOrEscalationRequest copyWith(
+          void Function(AdminResolveConciergeCommitmentOrEscalationRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminResolveConciergeCommitmentOrEscalationRequest))
+          as AdminResolveConciergeCommitmentOrEscalationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveConciergeCommitmentOrEscalationRequest create() =>
+      AdminResolveConciergeCommitmentOrEscalationRequest._();
+  @$core.override
+  AdminResolveConciergeCommitmentOrEscalationRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveConciergeCommitmentOrEscalationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveConciergeCommitmentOrEscalationRequest>(create);
+  static AdminResolveConciergeCommitmentOrEscalationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get requestCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set requestCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequestCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequestCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get requestState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set requestState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRequestState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRequestState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get humanCommitmentOwner => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set humanCommitmentOwner($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHumanCommitmentOwner() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHumanCommitmentOwner() => $_clearField(3);
+}
+
+class AdminResolveConciergeCommitmentOrEscalationResponse
+    extends $pb.GeneratedMessage {
+  factory AdminResolveConciergeCommitmentOrEscalationResponse({
+    EmpireConciergeServiceRequest? request,
+  }) {
+    final result = create();
+    if (request != null) result.request = request;
+    return result;
+  }
+
+  AdminResolveConciergeCommitmentOrEscalationResponse._();
+
+  factory AdminResolveConciergeCommitmentOrEscalationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminResolveConciergeCommitmentOrEscalationResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminResolveConciergeCommitmentOrEscalationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireConciergeServiceRequest>(1, _omitFieldNames ? '' : 'request',
+        subBuilder: EmpireConciergeServiceRequest.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveConciergeCommitmentOrEscalationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminResolveConciergeCommitmentOrEscalationResponse copyWith(
+          void Function(AdminResolveConciergeCommitmentOrEscalationResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminResolveConciergeCommitmentOrEscalationResponse))
+          as AdminResolveConciergeCommitmentOrEscalationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveConciergeCommitmentOrEscalationResponse create() =>
+      AdminResolveConciergeCommitmentOrEscalationResponse._();
+  @$core.override
+  AdminResolveConciergeCommitmentOrEscalationResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminResolveConciergeCommitmentOrEscalationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminResolveConciergeCommitmentOrEscalationResponse>(create);
+  static AdminResolveConciergeCommitmentOrEscalationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireConciergeServiceRequest get request => $_getN(0);
+  @$pb.TagNumber(1)
+  set request(EmpireConciergeServiceRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequest() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequest() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireConciergeServiceRequest ensureRequest() => $_ensure(0);
+}
+
+class EmpirePersonalReviewNarrative extends $pb.GeneratedMessage {
+  factory EmpirePersonalReviewNarrative({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? narrativeCode,
+    $core.String? reviewCadence,
+    $core.String? title,
+    $core.String? measuredFactsSummary,
+    $core.String? memberReflectionNotes,
+    $core.String? editorialAndAiNarrative,
+    $core.String? factualCitationsCsv,
+    $core.String? redactedScopesCsv,
+    $core.String? previewVariantMode,
+    $core.String? wellbeingTradeoffNote,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (narrativeCode != null) result.narrativeCode = narrativeCode;
+    if (reviewCadence != null) result.reviewCadence = reviewCadence;
+    if (title != null) result.title = title;
+    if (measuredFactsSummary != null)
+      result.measuredFactsSummary = measuredFactsSummary;
+    if (memberReflectionNotes != null)
+      result.memberReflectionNotes = memberReflectionNotes;
+    if (editorialAndAiNarrative != null)
+      result.editorialAndAiNarrative = editorialAndAiNarrative;
+    if (factualCitationsCsv != null)
+      result.factualCitationsCsv = factualCitationsCsv;
+    if (redactedScopesCsv != null) result.redactedScopesCsv = redactedScopesCsv;
+    if (previewVariantMode != null)
+      result.previewVariantMode = previewVariantMode;
+    if (wellbeingTradeoffNote != null)
+      result.wellbeingTradeoffNote = wellbeingTradeoffNote;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpirePersonalReviewNarrative._();
+
+  factory EmpirePersonalReviewNarrative.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpirePersonalReviewNarrative.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpirePersonalReviewNarrative',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'narrativeCode')
+    ..aOS(4, _omitFieldNames ? '' : 'reviewCadence')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'measuredFactsSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'memberReflectionNotes')
+    ..aOS(8, _omitFieldNames ? '' : 'editorialAndAiNarrative')
+    ..aOS(9, _omitFieldNames ? '' : 'factualCitationsCsv')
+    ..aOS(10, _omitFieldNames ? '' : 'redactedScopesCsv')
+    ..aOS(11, _omitFieldNames ? '' : 'previewVariantMode')
+    ..aOS(12, _omitFieldNames ? '' : 'wellbeingTradeoffNote')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePersonalReviewNarrative clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePersonalReviewNarrative copyWith(
+          void Function(EmpirePersonalReviewNarrative) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpirePersonalReviewNarrative))
+          as EmpirePersonalReviewNarrative;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpirePersonalReviewNarrative create() =>
+      EmpirePersonalReviewNarrative._();
+  @$core.override
+  EmpirePersonalReviewNarrative createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpirePersonalReviewNarrative getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpirePersonalReviewNarrative>(create);
+  static EmpirePersonalReviewNarrative? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get narrativeCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set narrativeCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNarrativeCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNarrativeCode() => $_clearField(3);
+
+  /// weekly | quarterly | annual | goal_completion | family_edition | member_defined
+  @$pb.TagNumber(4)
+  $core.String get reviewCadence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reviewCadence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReviewCadence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReviewCadence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get measuredFactsSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set measuredFactsSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMeasuredFactsSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMeasuredFactsSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get memberReflectionNotes => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set memberReflectionNotes($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMemberReflectionNotes() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemberReflectionNotes() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get editorialAndAiNarrative => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set editorialAndAiNarrative($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEditorialAndAiNarrative() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEditorialAndAiNarrative() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get factualCitationsCsv => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set factualCitationsCsv($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasFactualCitationsCsv() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFactualCitationsCsv() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get redactedScopesCsv => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set redactedScopesCsv($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRedactedScopesCsv() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRedactedScopesCsv() => $_clearField(10);
+
+  /// digital_private | shared_circle | public_excerpt | immutable_print_proof
+  @$pb.TagNumber(11)
+  $core.String get previewVariantMode => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set previewVariantMode($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPreviewVariantMode() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPreviewVariantMode() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get wellbeingTradeoffNote => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set wellbeingTradeoffNote($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasWellbeingTradeoffNote() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearWellbeingTradeoffNote() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get createdAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set createdAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get updatedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set updatedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+}
+
+class EmpirePrintedYearbookOrder extends $pb.GeneratedMessage {
+  factory EmpirePrintedYearbookOrder({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? printOrderCode,
+    $core.String? narrativeCode,
+    $core.String? immutableProofHash,
+    $core.String? shippingAddressMinimizationState,
+    $core.String? vendorJobState,
+    $core.String? addressDeletionSchedule,
+    $core.String? incidentOrReprintNote,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (printOrderCode != null) result.printOrderCode = printOrderCode;
+    if (narrativeCode != null) result.narrativeCode = narrativeCode;
+    if (immutableProofHash != null)
+      result.immutableProofHash = immutableProofHash;
+    if (shippingAddressMinimizationState != null)
+      result.shippingAddressMinimizationState =
+          shippingAddressMinimizationState;
+    if (vendorJobState != null) result.vendorJobState = vendorJobState;
+    if (addressDeletionSchedule != null)
+      result.addressDeletionSchedule = addressDeletionSchedule;
+    if (incidentOrReprintNote != null)
+      result.incidentOrReprintNote = incidentOrReprintNote;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpirePrintedYearbookOrder._();
+
+  factory EmpirePrintedYearbookOrder.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpirePrintedYearbookOrder.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpirePrintedYearbookOrder',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'printOrderCode')
+    ..aOS(4, _omitFieldNames ? '' : 'narrativeCode')
+    ..aOS(5, _omitFieldNames ? '' : 'immutableProofHash')
+    ..aOS(6, _omitFieldNames ? '' : 'shippingAddressMinimizationState')
+    ..aOS(7, _omitFieldNames ? '' : 'vendorJobState')
+    ..aOS(8, _omitFieldNames ? '' : 'addressDeletionSchedule')
+    ..aOS(9, _omitFieldNames ? '' : 'incidentOrReprintNote')
+    ..aOS(10, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePrintedYearbookOrder clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpirePrintedYearbookOrder copyWith(
+          void Function(EmpirePrintedYearbookOrder) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpirePrintedYearbookOrder))
+          as EmpirePrintedYearbookOrder;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpirePrintedYearbookOrder create() => EmpirePrintedYearbookOrder._();
+  @$core.override
+  EmpirePrintedYearbookOrder createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpirePrintedYearbookOrder getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpirePrintedYearbookOrder>(create);
+  static EmpirePrintedYearbookOrder? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get printOrderCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set printOrderCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrintOrderCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrintOrderCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get narrativeCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set narrativeCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNarrativeCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNarrativeCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get immutableProofHash => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set immutableProofHash($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasImmutableProofHash() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearImmutableProofHash() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get shippingAddressMinimizationState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set shippingAddressMinimizationState($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasShippingAddressMinimizationState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearShippingAddressMinimizationState() => $_clearField(6);
+
+  /// proof_locked | printing_in_press | bound_and_dispatched | delivered_address_purged | reprint_issued | refunded_incident
+  @$pb.TagNumber(7)
+  $core.String get vendorJobState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set vendorJobState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVendorJobState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVendorJobState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get addressDeletionSchedule => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set addressDeletionSchedule($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAddressDeletionSchedule() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAddressDeletionSchedule() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get incidentOrReprintNote => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set incidentOrReprintNote($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIncidentOrReprintNote() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIncidentOrReprintNote() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get createdAt => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set createdAt($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCreatedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCreatedAt() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => $_clearField(11);
+}
+
+class GetPersonalReviewNarrativeWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetPersonalReviewNarrativeWorkbenchRequest() => create();
+
+  GetPersonalReviewNarrativeWorkbenchRequest._();
+
+  factory GetPersonalReviewNarrativeWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPersonalReviewNarrativeWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPersonalReviewNarrativeWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalReviewNarrativeWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalReviewNarrativeWorkbenchRequest copyWith(
+          void Function(GetPersonalReviewNarrativeWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPersonalReviewNarrativeWorkbenchRequest))
+          as GetPersonalReviewNarrativeWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalReviewNarrativeWorkbenchRequest create() =>
+      GetPersonalReviewNarrativeWorkbenchRequest._();
+  @$core.override
+  GetPersonalReviewNarrativeWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalReviewNarrativeWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPersonalReviewNarrativeWorkbenchRequest>(create);
+  static GetPersonalReviewNarrativeWorkbenchRequest? _defaultInstance;
+}
+
+class GetPersonalReviewNarrativeWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetPersonalReviewNarrativeWorkbenchResponse({
+    $core.Iterable<EmpirePersonalReviewNarrative>? narratives,
+    $core.Iterable<EmpirePrintedYearbookOrder>? printOrders,
+  }) {
+    final result = create();
+    if (narratives != null) result.narratives.addAll(narratives);
+    if (printOrders != null) result.printOrders.addAll(printOrders);
+    return result;
+  }
+
+  GetPersonalReviewNarrativeWorkbenchResponse._();
+
+  factory GetPersonalReviewNarrativeWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPersonalReviewNarrativeWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPersonalReviewNarrativeWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpirePersonalReviewNarrative>(1, _omitFieldNames ? '' : 'narratives',
+        subBuilder: EmpirePersonalReviewNarrative.create)
+    ..pPM<EmpirePrintedYearbookOrder>(2, _omitFieldNames ? '' : 'printOrders',
+        subBuilder: EmpirePrintedYearbookOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalReviewNarrativeWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPersonalReviewNarrativeWorkbenchResponse copyWith(
+          void Function(GetPersonalReviewNarrativeWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPersonalReviewNarrativeWorkbenchResponse))
+          as GetPersonalReviewNarrativeWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalReviewNarrativeWorkbenchResponse create() =>
+      GetPersonalReviewNarrativeWorkbenchResponse._();
+  @$core.override
+  GetPersonalReviewNarrativeWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPersonalReviewNarrativeWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPersonalReviewNarrativeWorkbenchResponse>(create);
+  static GetPersonalReviewNarrativeWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpirePersonalReviewNarrative> get narratives => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpirePrintedYearbookOrder> get printOrders => $_getList(1);
+}
+
+class GenerateOrRedactLifeNarrativeReviewRequest extends $pb.GeneratedMessage {
+  factory GenerateOrRedactLifeNarrativeReviewRequest({
+    $core.String? narrativeCode,
+    $core.String? reviewCadence,
+    $core.String? title,
+    $core.String? memberReflectionNotes,
+    $core.String? redactedScopesCsv,
+    $core.String? previewVariantMode,
+    $core.String? wellbeingTradeoffNote,
+  }) {
+    final result = create();
+    if (narrativeCode != null) result.narrativeCode = narrativeCode;
+    if (reviewCadence != null) result.reviewCadence = reviewCadence;
+    if (title != null) result.title = title;
+    if (memberReflectionNotes != null)
+      result.memberReflectionNotes = memberReflectionNotes;
+    if (redactedScopesCsv != null) result.redactedScopesCsv = redactedScopesCsv;
+    if (previewVariantMode != null)
+      result.previewVariantMode = previewVariantMode;
+    if (wellbeingTradeoffNote != null)
+      result.wellbeingTradeoffNote = wellbeingTradeoffNote;
+    return result;
+  }
+
+  GenerateOrRedactLifeNarrativeReviewRequest._();
+
+  factory GenerateOrRedactLifeNarrativeReviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateOrRedactLifeNarrativeReviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateOrRedactLifeNarrativeReviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'narrativeCode')
+    ..aOS(2, _omitFieldNames ? '' : 'reviewCadence')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'memberReflectionNotes')
+    ..aOS(5, _omitFieldNames ? '' : 'redactedScopesCsv')
+    ..aOS(6, _omitFieldNames ? '' : 'previewVariantMode')
+    ..aOS(7, _omitFieldNames ? '' : 'wellbeingTradeoffNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateOrRedactLifeNarrativeReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateOrRedactLifeNarrativeReviewRequest copyWith(
+          void Function(GenerateOrRedactLifeNarrativeReviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateOrRedactLifeNarrativeReviewRequest))
+          as GenerateOrRedactLifeNarrativeReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateOrRedactLifeNarrativeReviewRequest create() =>
+      GenerateOrRedactLifeNarrativeReviewRequest._();
+  @$core.override
+  GenerateOrRedactLifeNarrativeReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateOrRedactLifeNarrativeReviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateOrRedactLifeNarrativeReviewRequest>(create);
+  static GenerateOrRedactLifeNarrativeReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get narrativeCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set narrativeCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNarrativeCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNarrativeCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get reviewCadence => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reviewCadence($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReviewCadence() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReviewCadence() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get memberReflectionNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set memberReflectionNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMemberReflectionNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMemberReflectionNotes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get redactedScopesCsv => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set redactedScopesCsv($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRedactedScopesCsv() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRedactedScopesCsv() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get previewVariantMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set previewVariantMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPreviewVariantMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreviewVariantMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get wellbeingTradeoffNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set wellbeingTradeoffNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWellbeingTradeoffNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWellbeingTradeoffNote() => $_clearField(7);
+}
+
+class GenerateOrRedactLifeNarrativeReviewResponse extends $pb.GeneratedMessage {
+  factory GenerateOrRedactLifeNarrativeReviewResponse({
+    EmpirePersonalReviewNarrative? narrative,
+  }) {
+    final result = create();
+    if (narrative != null) result.narrative = narrative;
+    return result;
+  }
+
+  GenerateOrRedactLifeNarrativeReviewResponse._();
+
+  factory GenerateOrRedactLifeNarrativeReviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GenerateOrRedactLifeNarrativeReviewResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GenerateOrRedactLifeNarrativeReviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpirePersonalReviewNarrative>(1, _omitFieldNames ? '' : 'narrative',
+        subBuilder: EmpirePersonalReviewNarrative.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateOrRedactLifeNarrativeReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GenerateOrRedactLifeNarrativeReviewResponse copyWith(
+          void Function(GenerateOrRedactLifeNarrativeReviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GenerateOrRedactLifeNarrativeReviewResponse))
+          as GenerateOrRedactLifeNarrativeReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateOrRedactLifeNarrativeReviewResponse create() =>
+      GenerateOrRedactLifeNarrativeReviewResponse._();
+  @$core.override
+  GenerateOrRedactLifeNarrativeReviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GenerateOrRedactLifeNarrativeReviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GenerateOrRedactLifeNarrativeReviewResponse>(create);
+  static GenerateOrRedactLifeNarrativeReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpirePersonalReviewNarrative get narrative => $_getN(0);
+  @$pb.TagNumber(1)
+  set narrative(EmpirePersonalReviewNarrative value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNarrative() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNarrative() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpirePersonalReviewNarrative ensureNarrative() => $_ensure(0);
+}
+
+class OrderOrManagePrintedYearbookArtifactRequest extends $pb.GeneratedMessage {
+  factory OrderOrManagePrintedYearbookArtifactRequest({
+    $core.String? printOrderCode,
+    $core.String? narrativeCode,
+    $core.String? vendorJobState,
+    $core.String? incidentOrReprintNote,
+  }) {
+    final result = create();
+    if (printOrderCode != null) result.printOrderCode = printOrderCode;
+    if (narrativeCode != null) result.narrativeCode = narrativeCode;
+    if (vendorJobState != null) result.vendorJobState = vendorJobState;
+    if (incidentOrReprintNote != null)
+      result.incidentOrReprintNote = incidentOrReprintNote;
+    return result;
+  }
+
+  OrderOrManagePrintedYearbookArtifactRequest._();
+
+  factory OrderOrManagePrintedYearbookArtifactRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OrderOrManagePrintedYearbookArtifactRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OrderOrManagePrintedYearbookArtifactRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'printOrderCode')
+    ..aOS(2, _omitFieldNames ? '' : 'narrativeCode')
+    ..aOS(3, _omitFieldNames ? '' : 'vendorJobState')
+    ..aOS(4, _omitFieldNames ? '' : 'incidentOrReprintNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OrderOrManagePrintedYearbookArtifactRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OrderOrManagePrintedYearbookArtifactRequest copyWith(
+          void Function(OrderOrManagePrintedYearbookArtifactRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as OrderOrManagePrintedYearbookArtifactRequest))
+          as OrderOrManagePrintedYearbookArtifactRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrderOrManagePrintedYearbookArtifactRequest create() =>
+      OrderOrManagePrintedYearbookArtifactRequest._();
+  @$core.override
+  OrderOrManagePrintedYearbookArtifactRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OrderOrManagePrintedYearbookArtifactRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OrderOrManagePrintedYearbookArtifactRequest>(create);
+  static OrderOrManagePrintedYearbookArtifactRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get printOrderCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set printOrderCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrintOrderCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrintOrderCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get narrativeCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set narrativeCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNarrativeCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNarrativeCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vendorJobState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vendorJobState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVendorJobState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVendorJobState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get incidentOrReprintNote => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set incidentOrReprintNote($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIncidentOrReprintNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIncidentOrReprintNote() => $_clearField(4);
+}
+
+class OrderOrManagePrintedYearbookArtifactResponse
+    extends $pb.GeneratedMessage {
+  factory OrderOrManagePrintedYearbookArtifactResponse({
+    EmpirePrintedYearbookOrder? printOrder,
+  }) {
+    final result = create();
+    if (printOrder != null) result.printOrder = printOrder;
+    return result;
+  }
+
+  OrderOrManagePrintedYearbookArtifactResponse._();
+
+  factory OrderOrManagePrintedYearbookArtifactResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OrderOrManagePrintedYearbookArtifactResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OrderOrManagePrintedYearbookArtifactResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpirePrintedYearbookOrder>(1, _omitFieldNames ? '' : 'printOrder',
+        subBuilder: EmpirePrintedYearbookOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OrderOrManagePrintedYearbookArtifactResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OrderOrManagePrintedYearbookArtifactResponse copyWith(
+          void Function(OrderOrManagePrintedYearbookArtifactResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as OrderOrManagePrintedYearbookArtifactResponse))
+          as OrderOrManagePrintedYearbookArtifactResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OrderOrManagePrintedYearbookArtifactResponse create() =>
+      OrderOrManagePrintedYearbookArtifactResponse._();
+  @$core.override
+  OrderOrManagePrintedYearbookArtifactResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static OrderOrManagePrintedYearbookArtifactResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OrderOrManagePrintedYearbookArtifactResponse>(create);
+  static OrderOrManagePrintedYearbookArtifactResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpirePrintedYearbookOrder get printOrder => $_getN(0);
+  @$pb.TagNumber(1)
+  set printOrder(EmpirePrintedYearbookOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrintOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrintOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpirePrintedYearbookOrder ensurePrintOrder() => $_ensure(0);
+}
+
+class AdminListPersonalReviewNarrativeAuditRequest
+    extends $pb.GeneratedMessage {
+  factory AdminListPersonalReviewNarrativeAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListPersonalReviewNarrativeAuditRequest._();
+
+  factory AdminListPersonalReviewNarrativeAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListPersonalReviewNarrativeAuditRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListPersonalReviewNarrativeAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPersonalReviewNarrativeAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPersonalReviewNarrativeAuditRequest copyWith(
+          void Function(AdminListPersonalReviewNarrativeAuditRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListPersonalReviewNarrativeAuditRequest))
+          as AdminListPersonalReviewNarrativeAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListPersonalReviewNarrativeAuditRequest create() =>
+      AdminListPersonalReviewNarrativeAuditRequest._();
+  @$core.override
+  AdminListPersonalReviewNarrativeAuditRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListPersonalReviewNarrativeAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListPersonalReviewNarrativeAuditRequest>(create);
+  static AdminListPersonalReviewNarrativeAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListPersonalReviewNarrativeAuditResponse
+    extends $pb.GeneratedMessage {
+  factory AdminListPersonalReviewNarrativeAuditResponse({
+    $core.Iterable<EmpirePersonalReviewNarrative>? narratives,
+    $core.Iterable<EmpirePrintedYearbookOrder>? printOrders,
+  }) {
+    final result = create();
+    if (narratives != null) result.narratives.addAll(narratives);
+    if (printOrders != null) result.printOrders.addAll(printOrders);
+    return result;
+  }
+
+  AdminListPersonalReviewNarrativeAuditResponse._();
+
+  factory AdminListPersonalReviewNarrativeAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListPersonalReviewNarrativeAuditResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListPersonalReviewNarrativeAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpirePersonalReviewNarrative>(1, _omitFieldNames ? '' : 'narratives',
+        subBuilder: EmpirePersonalReviewNarrative.create)
+    ..pPM<EmpirePrintedYearbookOrder>(2, _omitFieldNames ? '' : 'printOrders',
+        subBuilder: EmpirePrintedYearbookOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPersonalReviewNarrativeAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPersonalReviewNarrativeAuditResponse copyWith(
+          void Function(AdminListPersonalReviewNarrativeAuditResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListPersonalReviewNarrativeAuditResponse))
+          as AdminListPersonalReviewNarrativeAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListPersonalReviewNarrativeAuditResponse create() =>
+      AdminListPersonalReviewNarrativeAuditResponse._();
+  @$core.override
+  AdminListPersonalReviewNarrativeAuditResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListPersonalReviewNarrativeAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListPersonalReviewNarrativeAuditResponse>(create);
+  static AdminListPersonalReviewNarrativeAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpirePersonalReviewNarrative> get narratives => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpirePrintedYearbookOrder> get printOrders => $_getList(1);
+}
+
+class AdminManagePrintJobOrAddressPurgeRequest extends $pb.GeneratedMessage {
+  factory AdminManagePrintJobOrAddressPurgeRequest({
+    $core.String? printOrderCode,
+    $core.String? vendorJobState,
+    $core.String? shippingAddressMinimizationState,
+  }) {
+    final result = create();
+    if (printOrderCode != null) result.printOrderCode = printOrderCode;
+    if (vendorJobState != null) result.vendorJobState = vendorJobState;
+    if (shippingAddressMinimizationState != null)
+      result.shippingAddressMinimizationState =
+          shippingAddressMinimizationState;
+    return result;
+  }
+
+  AdminManagePrintJobOrAddressPurgeRequest._();
+
+  factory AdminManagePrintJobOrAddressPurgeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManagePrintJobOrAddressPurgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManagePrintJobOrAddressPurgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'printOrderCode')
+    ..aOS(2, _omitFieldNames ? '' : 'vendorJobState')
+    ..aOS(3, _omitFieldNames ? '' : 'shippingAddressMinimizationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManagePrintJobOrAddressPurgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManagePrintJobOrAddressPurgeRequest copyWith(
+          void Function(AdminManagePrintJobOrAddressPurgeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManagePrintJobOrAddressPurgeRequest))
+          as AdminManagePrintJobOrAddressPurgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManagePrintJobOrAddressPurgeRequest create() =>
+      AdminManagePrintJobOrAddressPurgeRequest._();
+  @$core.override
+  AdminManagePrintJobOrAddressPurgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManagePrintJobOrAddressPurgeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManagePrintJobOrAddressPurgeRequest>(create);
+  static AdminManagePrintJobOrAddressPurgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get printOrderCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set printOrderCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrintOrderCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrintOrderCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get vendorJobState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set vendorJobState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVendorJobState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVendorJobState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get shippingAddressMinimizationState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set shippingAddressMinimizationState($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasShippingAddressMinimizationState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearShippingAddressMinimizationState() => $_clearField(3);
+}
+
+class AdminManagePrintJobOrAddressPurgeResponse extends $pb.GeneratedMessage {
+  factory AdminManagePrintJobOrAddressPurgeResponse({
+    EmpirePrintedYearbookOrder? printOrder,
+  }) {
+    final result = create();
+    if (printOrder != null) result.printOrder = printOrder;
+    return result;
+  }
+
+  AdminManagePrintJobOrAddressPurgeResponse._();
+
+  factory AdminManagePrintJobOrAddressPurgeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManagePrintJobOrAddressPurgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManagePrintJobOrAddressPurgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpirePrintedYearbookOrder>(1, _omitFieldNames ? '' : 'printOrder',
+        subBuilder: EmpirePrintedYearbookOrder.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManagePrintJobOrAddressPurgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManagePrintJobOrAddressPurgeResponse copyWith(
+          void Function(AdminManagePrintJobOrAddressPurgeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManagePrintJobOrAddressPurgeResponse))
+          as AdminManagePrintJobOrAddressPurgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManagePrintJobOrAddressPurgeResponse create() =>
+      AdminManagePrintJobOrAddressPurgeResponse._();
+  @$core.override
+  AdminManagePrintJobOrAddressPurgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManagePrintJobOrAddressPurgeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManagePrintJobOrAddressPurgeResponse>(create);
+  static AdminManagePrintJobOrAddressPurgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpirePrintedYearbookOrder get printOrder => $_getN(0);
+  @$pb.TagNumber(1)
+  set printOrder(EmpirePrintedYearbookOrder value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrintOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrintOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpirePrintedYearbookOrder ensurePrintOrder() => $_ensure(0);
+}
+
+class EmpireGovernancePolicyBallot extends $pb.GeneratedMessage {
+  factory EmpireGovernancePolicyBallot({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? ballotCode,
+    $core.String? constitutionDomain,
+    $core.String? policyVersionDiff,
+    $core.String? plainLanguageSummary,
+    $core.String? advisoryQuestion,
+    $core.String? memberVoteChoice,
+    $core.String? memberCommentary,
+    $core.String? observerSandboxScope,
+    $core.String? coiDeclarationStatus,
+    $core.String? ballotState,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (ballotCode != null) result.ballotCode = ballotCode;
+    if (constitutionDomain != null)
+      result.constitutionDomain = constitutionDomain;
+    if (policyVersionDiff != null) result.policyVersionDiff = policyVersionDiff;
+    if (plainLanguageSummary != null)
+      result.plainLanguageSummary = plainLanguageSummary;
+    if (advisoryQuestion != null) result.advisoryQuestion = advisoryQuestion;
+    if (memberVoteChoice != null) result.memberVoteChoice = memberVoteChoice;
+    if (memberCommentary != null) result.memberCommentary = memberCommentary;
+    if (observerSandboxScope != null)
+      result.observerSandboxScope = observerSandboxScope;
+    if (coiDeclarationStatus != null)
+      result.coiDeclarationStatus = coiDeclarationStatus;
+    if (ballotState != null) result.ballotState = ballotState;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireGovernancePolicyBallot._();
+
+  factory EmpireGovernancePolicyBallot.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireGovernancePolicyBallot.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireGovernancePolicyBallot',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'ballotCode')
+    ..aOS(4, _omitFieldNames ? '' : 'constitutionDomain')
+    ..aOS(5, _omitFieldNames ? '' : 'policyVersionDiff')
+    ..aOS(6, _omitFieldNames ? '' : 'plainLanguageSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'advisoryQuestion')
+    ..aOS(8, _omitFieldNames ? '' : 'memberVoteChoice')
+    ..aOS(9, _omitFieldNames ? '' : 'memberCommentary')
+    ..aOS(10, _omitFieldNames ? '' : 'observerSandboxScope')
+    ..aOS(11, _omitFieldNames ? '' : 'coiDeclarationStatus')
+    ..aOS(12, _omitFieldNames ? '' : 'ballotState')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireGovernancePolicyBallot clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireGovernancePolicyBallot copyWith(
+          void Function(EmpireGovernancePolicyBallot) updates) =>
+      super.copyWith(
+              (message) => updates(message as EmpireGovernancePolicyBallot))
+          as EmpireGovernancePolicyBallot;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireGovernancePolicyBallot create() =>
+      EmpireGovernancePolicyBallot._();
+  @$core.override
+  EmpireGovernancePolicyBallot createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireGovernancePolicyBallot getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireGovernancePolicyBallot>(create);
+  static EmpireGovernancePolicyBallot? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ballotCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ballotCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBallotCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBallotCode() => $_clearField(3);
+
+  /// standing | moderation | recommendations | membership | benefits | data_use | ai_governance | cross_pillar_access
+  @$pb.TagNumber(4)
+  $core.String get constitutionDomain => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set constitutionDomain($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConstitutionDomain() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConstitutionDomain() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get policyVersionDiff => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set policyVersionDiff($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPolicyVersionDiff() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPolicyVersionDiff() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get plainLanguageSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set plainLanguageSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPlainLanguageSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPlainLanguageSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get advisoryQuestion => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set advisoryQuestion($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAdvisoryQuestion() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAdvisoryQuestion() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get memberVoteChoice => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set memberVoteChoice($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberVoteChoice() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberVoteChoice() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get memberCommentary => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set memberCommentary($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemberCommentary() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemberCommentary() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get observerSandboxScope => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set observerSandboxScope($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasObserverSandboxScope() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearObserverSandboxScope() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get coiDeclarationStatus => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set coiDeclarationStatus($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCoiDeclarationStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCoiDeclarationStatus() => $_clearField(11);
+
+  /// open_advisory_vote | vote_recorded | precedent_published | archived_diff
+  @$pb.TagNumber(12)
+  $core.String get ballotState => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set ballotState($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasBallotState() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearBallotState() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get createdAt => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set createdAt($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get updatedAt => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set updatedAt($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasUpdatedAt() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearUpdatedAt() => $_clearField(14);
+}
+
+class EmpireConsequentialDecisionLedger extends $pb.GeneratedMessage {
+  factory EmpireConsequentialDecisionLedger({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? decisionCode,
+    $core.String? decisionOrigin,
+    $core.String? evidenceClass,
+    $core.String? policyVersionRef,
+    $core.String? decisionSummary,
+    $core.String? availableRemedy,
+    $core.String? remedyState,
+    $core.bool? observerRawRecordBlocked,
+    $core.String? createdAt,
+    $core.String? updatedAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (decisionOrigin != null) result.decisionOrigin = decisionOrigin;
+    if (evidenceClass != null) result.evidenceClass = evidenceClass;
+    if (policyVersionRef != null) result.policyVersionRef = policyVersionRef;
+    if (decisionSummary != null) result.decisionSummary = decisionSummary;
+    if (availableRemedy != null) result.availableRemedy = availableRemedy;
+    if (remedyState != null) result.remedyState = remedyState;
+    if (observerRawRecordBlocked != null)
+      result.observerRawRecordBlocked = observerRawRecordBlocked;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  EmpireConsequentialDecisionLedger._();
+
+  factory EmpireConsequentialDecisionLedger.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EmpireConsequentialDecisionLedger.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EmpireConsequentialDecisionLedger',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'decisionOrigin')
+    ..aOS(5, _omitFieldNames ? '' : 'evidenceClass')
+    ..aOS(6, _omitFieldNames ? '' : 'policyVersionRef')
+    ..aOS(7, _omitFieldNames ? '' : 'decisionSummary')
+    ..aOS(8, _omitFieldNames ? '' : 'availableRemedy')
+    ..aOS(9, _omitFieldNames ? '' : 'remedyState')
+    ..aOB(10, _omitFieldNames ? '' : 'observerRawRecordBlocked')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConsequentialDecisionLedger clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EmpireConsequentialDecisionLedger copyWith(
+          void Function(EmpireConsequentialDecisionLedger) updates) =>
+      super.copyWith((message) =>
+              updates(message as EmpireConsequentialDecisionLedger))
+          as EmpireConsequentialDecisionLedger;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EmpireConsequentialDecisionLedger create() =>
+      EmpireConsequentialDecisionLedger._();
+  @$core.override
+  EmpireConsequentialDecisionLedger createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EmpireConsequentialDecisionLedger getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<EmpireConsequentialDecisionLedger>(
+          create);
+  static EmpireConsequentialDecisionLedger? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get decisionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set decisionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDecisionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDecisionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get decisionOrigin => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set decisionOrigin($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDecisionOrigin() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDecisionOrigin() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get evidenceClass => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set evidenceClass($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEvidenceClass() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEvidenceClass() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get policyVersionRef => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set policyVersionRef($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPolicyVersionRef() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPolicyVersionRef() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get decisionSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set decisionSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDecisionSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDecisionSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get availableRemedy => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set availableRemedy($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAvailableRemedy() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAvailableRemedy() => $_clearField(8);
+
+  /// no_appeal_filed | remedy_requested | under_independent_review | remedy_granted | upheld_with_precedent
+  @$pb.TagNumber(9)
+  $core.String get remedyState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set remedyState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRemedyState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRemedyState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get observerRawRecordBlocked => $_getBF(9);
+  @$pb.TagNumber(10)
+  set observerRawRecordBlocked($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasObserverRawRecordBlocked() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearObserverRawRecordBlocked() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set createdAt($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAt => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAt($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => $_clearField(12);
+}
+
+class GetMemberGovernanceAuditWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetMemberGovernanceAuditWorkbenchRequest() => create();
+
+  GetMemberGovernanceAuditWorkbenchRequest._();
+
+  factory GetMemberGovernanceAuditWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberGovernanceAuditWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberGovernanceAuditWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberGovernanceAuditWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberGovernanceAuditWorkbenchRequest copyWith(
+          void Function(GetMemberGovernanceAuditWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMemberGovernanceAuditWorkbenchRequest))
+          as GetMemberGovernanceAuditWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberGovernanceAuditWorkbenchRequest create() =>
+      GetMemberGovernanceAuditWorkbenchRequest._();
+  @$core.override
+  GetMemberGovernanceAuditWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberGovernanceAuditWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMemberGovernanceAuditWorkbenchRequest>(create);
+  static GetMemberGovernanceAuditWorkbenchRequest? _defaultInstance;
+}
+
+class GetMemberGovernanceAuditWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetMemberGovernanceAuditWorkbenchResponse({
+    $core.Iterable<EmpireGovernancePolicyBallot>? ballots,
+    $core.Iterable<EmpireConsequentialDecisionLedger>? decisions,
+  }) {
+    final result = create();
+    if (ballots != null) result.ballots.addAll(ballots);
+    if (decisions != null) result.decisions.addAll(decisions);
+    return result;
+  }
+
+  GetMemberGovernanceAuditWorkbenchResponse._();
+
+  factory GetMemberGovernanceAuditWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMemberGovernanceAuditWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMemberGovernanceAuditWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireGovernancePolicyBallot>(1, _omitFieldNames ? '' : 'ballots',
+        subBuilder: EmpireGovernancePolicyBallot.create)
+    ..pPM<EmpireConsequentialDecisionLedger>(
+        2, _omitFieldNames ? '' : 'decisions',
+        subBuilder: EmpireConsequentialDecisionLedger.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberGovernanceAuditWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMemberGovernanceAuditWorkbenchResponse copyWith(
+          void Function(GetMemberGovernanceAuditWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMemberGovernanceAuditWorkbenchResponse))
+          as GetMemberGovernanceAuditWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMemberGovernanceAuditWorkbenchResponse create() =>
+      GetMemberGovernanceAuditWorkbenchResponse._();
+  @$core.override
+  GetMemberGovernanceAuditWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMemberGovernanceAuditWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMemberGovernanceAuditWorkbenchResponse>(create);
+  static GetMemberGovernanceAuditWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireGovernancePolicyBallot> get ballots => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireConsequentialDecisionLedger> get decisions => $_getList(1);
+}
+
+class SubmitAdvisoryPolicyProposalOrVoteRequest extends $pb.GeneratedMessage {
+  factory SubmitAdvisoryPolicyProposalOrVoteRequest({
+    $core.String? ballotCode,
+    $core.String? constitutionDomain,
+    $core.String? memberVoteChoice,
+    $core.String? memberCommentary,
+  }) {
+    final result = create();
+    if (ballotCode != null) result.ballotCode = ballotCode;
+    if (constitutionDomain != null)
+      result.constitutionDomain = constitutionDomain;
+    if (memberVoteChoice != null) result.memberVoteChoice = memberVoteChoice;
+    if (memberCommentary != null) result.memberCommentary = memberCommentary;
+    return result;
+  }
+
+  SubmitAdvisoryPolicyProposalOrVoteRequest._();
+
+  factory SubmitAdvisoryPolicyProposalOrVoteRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAdvisoryPolicyProposalOrVoteRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAdvisoryPolicyProposalOrVoteRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ballotCode')
+    ..aOS(2, _omitFieldNames ? '' : 'constitutionDomain')
+    ..aOS(3, _omitFieldNames ? '' : 'memberVoteChoice')
+    ..aOS(4, _omitFieldNames ? '' : 'memberCommentary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAdvisoryPolicyProposalOrVoteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAdvisoryPolicyProposalOrVoteRequest copyWith(
+          void Function(SubmitAdvisoryPolicyProposalOrVoteRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitAdvisoryPolicyProposalOrVoteRequest))
+          as SubmitAdvisoryPolicyProposalOrVoteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAdvisoryPolicyProposalOrVoteRequest create() =>
+      SubmitAdvisoryPolicyProposalOrVoteRequest._();
+  @$core.override
+  SubmitAdvisoryPolicyProposalOrVoteRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAdvisoryPolicyProposalOrVoteRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitAdvisoryPolicyProposalOrVoteRequest>(create);
+  static SubmitAdvisoryPolicyProposalOrVoteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ballotCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ballotCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBallotCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBallotCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get constitutionDomain => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set constitutionDomain($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConstitutionDomain() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConstitutionDomain() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get memberVoteChoice => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set memberVoteChoice($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMemberVoteChoice() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMemberVoteChoice() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get memberCommentary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set memberCommentary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMemberCommentary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMemberCommentary() => $_clearField(4);
+}
+
+class SubmitAdvisoryPolicyProposalOrVoteResponse extends $pb.GeneratedMessage {
+  factory SubmitAdvisoryPolicyProposalOrVoteResponse({
+    EmpireGovernancePolicyBallot? ballot,
+  }) {
+    final result = create();
+    if (ballot != null) result.ballot = ballot;
+    return result;
+  }
+
+  SubmitAdvisoryPolicyProposalOrVoteResponse._();
+
+  factory SubmitAdvisoryPolicyProposalOrVoteResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitAdvisoryPolicyProposalOrVoteResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitAdvisoryPolicyProposalOrVoteResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireGovernancePolicyBallot>(1, _omitFieldNames ? '' : 'ballot',
+        subBuilder: EmpireGovernancePolicyBallot.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAdvisoryPolicyProposalOrVoteResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitAdvisoryPolicyProposalOrVoteResponse copyWith(
+          void Function(SubmitAdvisoryPolicyProposalOrVoteResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitAdvisoryPolicyProposalOrVoteResponse))
+          as SubmitAdvisoryPolicyProposalOrVoteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitAdvisoryPolicyProposalOrVoteResponse create() =>
+      SubmitAdvisoryPolicyProposalOrVoteResponse._();
+  @$core.override
+  SubmitAdvisoryPolicyProposalOrVoteResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitAdvisoryPolicyProposalOrVoteResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitAdvisoryPolicyProposalOrVoteResponse>(create);
+  static SubmitAdvisoryPolicyProposalOrVoteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireGovernancePolicyBallot get ballot => $_getN(0);
+  @$pb.TagNumber(1)
+  set ballot(EmpireGovernancePolicyBallot value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBallot() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBallot() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireGovernancePolicyBallot ensureBallot() => $_ensure(0);
+}
+
+class RequestDecisionRemedyOrInspectPrecedentRequest
+    extends $pb.GeneratedMessage {
+  factory RequestDecisionRemedyOrInspectPrecedentRequest({
+    $core.String? decisionCode,
+    $core.String? remedyState,
+  }) {
+    final result = create();
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (remedyState != null) result.remedyState = remedyState;
+    return result;
+  }
+
+  RequestDecisionRemedyOrInspectPrecedentRequest._();
+
+  factory RequestDecisionRemedyOrInspectPrecedentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestDecisionRemedyOrInspectPrecedentRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RequestDecisionRemedyOrInspectPrecedentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'remedyState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestDecisionRemedyOrInspectPrecedentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestDecisionRemedyOrInspectPrecedentRequest copyWith(
+          void Function(RequestDecisionRemedyOrInspectPrecedentRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RequestDecisionRemedyOrInspectPrecedentRequest))
+          as RequestDecisionRemedyOrInspectPrecedentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestDecisionRemedyOrInspectPrecedentRequest create() =>
+      RequestDecisionRemedyOrInspectPrecedentRequest._();
+  @$core.override
+  RequestDecisionRemedyOrInspectPrecedentRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RequestDecisionRemedyOrInspectPrecedentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestDecisionRemedyOrInspectPrecedentRequest>(create);
+  static RequestDecisionRemedyOrInspectPrecedentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get decisionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set decisionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDecisionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDecisionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get remedyState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set remedyState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRemedyState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRemedyState() => $_clearField(2);
+}
+
+class RequestDecisionRemedyOrInspectPrecedentResponse
+    extends $pb.GeneratedMessage {
+  factory RequestDecisionRemedyOrInspectPrecedentResponse({
+    EmpireConsequentialDecisionLedger? decision,
+  }) {
+    final result = create();
+    if (decision != null) result.decision = decision;
+    return result;
+  }
+
+  RequestDecisionRemedyOrInspectPrecedentResponse._();
+
+  factory RequestDecisionRemedyOrInspectPrecedentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RequestDecisionRemedyOrInspectPrecedentResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RequestDecisionRemedyOrInspectPrecedentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireConsequentialDecisionLedger>(
+        1, _omitFieldNames ? '' : 'decision',
+        subBuilder: EmpireConsequentialDecisionLedger.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestDecisionRemedyOrInspectPrecedentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RequestDecisionRemedyOrInspectPrecedentResponse copyWith(
+          void Function(RequestDecisionRemedyOrInspectPrecedentResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RequestDecisionRemedyOrInspectPrecedentResponse))
+          as RequestDecisionRemedyOrInspectPrecedentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RequestDecisionRemedyOrInspectPrecedentResponse create() =>
+      RequestDecisionRemedyOrInspectPrecedentResponse._();
+  @$core.override
+  RequestDecisionRemedyOrInspectPrecedentResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RequestDecisionRemedyOrInspectPrecedentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RequestDecisionRemedyOrInspectPrecedentResponse>(create);
+  static RequestDecisionRemedyOrInspectPrecedentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireConsequentialDecisionLedger get decision => $_getN(0);
+  @$pb.TagNumber(1)
+  set decision(EmpireConsequentialDecisionLedger value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDecision() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDecision() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireConsequentialDecisionLedger ensureDecision() => $_ensure(0);
+}
+
+class AdminListMemberGovernanceAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListMemberGovernanceAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListMemberGovernanceAuditRequest._();
+
+  factory AdminListMemberGovernanceAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMemberGovernanceAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMemberGovernanceAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberGovernanceAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberGovernanceAuditRequest copyWith(
+          void Function(AdminListMemberGovernanceAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMemberGovernanceAuditRequest))
+          as AdminListMemberGovernanceAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberGovernanceAuditRequest create() =>
+      AdminListMemberGovernanceAuditRequest._();
+  @$core.override
+  AdminListMemberGovernanceAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberGovernanceAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMemberGovernanceAuditRequest>(create);
+  static AdminListMemberGovernanceAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListMemberGovernanceAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListMemberGovernanceAuditResponse({
+    $core.Iterable<EmpireGovernancePolicyBallot>? ballots,
+    $core.Iterable<EmpireConsequentialDecisionLedger>? decisions,
+  }) {
+    final result = create();
+    if (ballots != null) result.ballots.addAll(ballots);
+    if (decisions != null) result.decisions.addAll(decisions);
+    return result;
+  }
+
+  AdminListMemberGovernanceAuditResponse._();
+
+  factory AdminListMemberGovernanceAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMemberGovernanceAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMemberGovernanceAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..pPM<EmpireGovernancePolicyBallot>(1, _omitFieldNames ? '' : 'ballots',
+        subBuilder: EmpireGovernancePolicyBallot.create)
+    ..pPM<EmpireConsequentialDecisionLedger>(
+        2, _omitFieldNames ? '' : 'decisions',
+        subBuilder: EmpireConsequentialDecisionLedger.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberGovernanceAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMemberGovernanceAuditResponse copyWith(
+          void Function(AdminListMemberGovernanceAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMemberGovernanceAuditResponse))
+          as AdminListMemberGovernanceAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberGovernanceAuditResponse create() =>
+      AdminListMemberGovernanceAuditResponse._();
+  @$core.override
+  AdminListMemberGovernanceAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMemberGovernanceAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMemberGovernanceAuditResponse>(create);
+  static AdminListMemberGovernanceAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<EmpireGovernancePolicyBallot> get ballots => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<EmpireConsequentialDecisionLedger> get decisions => $_getList(1);
+}
+
+class AdminCertifyPolicyDiffOrObserverBoundaryRequest
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyPolicyDiffOrObserverBoundaryRequest({
+    $core.String? ballotCode,
+    $core.String? ballotState,
+    $core.String? decisionCode,
+    $core.String? remedyState,
+  }) {
+    final result = create();
+    if (ballotCode != null) result.ballotCode = ballotCode;
+    if (ballotState != null) result.ballotState = ballotState;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (remedyState != null) result.remedyState = remedyState;
+    return result;
+  }
+
+  AdminCertifyPolicyDiffOrObserverBoundaryRequest._();
+
+  factory AdminCertifyPolicyDiffOrObserverBoundaryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyPolicyDiffOrObserverBoundaryRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyPolicyDiffOrObserverBoundaryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ballotCode')
+    ..aOS(2, _omitFieldNames ? '' : 'ballotState')
+    ..aOS(3, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'remedyState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPolicyDiffOrObserverBoundaryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPolicyDiffOrObserverBoundaryRequest copyWith(
+          void Function(AdminCertifyPolicyDiffOrObserverBoundaryRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyPolicyDiffOrObserverBoundaryRequest))
+          as AdminCertifyPolicyDiffOrObserverBoundaryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPolicyDiffOrObserverBoundaryRequest create() =>
+      AdminCertifyPolicyDiffOrObserverBoundaryRequest._();
+  @$core.override
+  AdminCertifyPolicyDiffOrObserverBoundaryRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPolicyDiffOrObserverBoundaryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyPolicyDiffOrObserverBoundaryRequest>(create);
+  static AdminCertifyPolicyDiffOrObserverBoundaryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ballotCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ballotCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBallotCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBallotCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get ballotState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ballotState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBallotState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBallotState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get decisionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set decisionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDecisionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDecisionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get remedyState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set remedyState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRemedyState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRemedyState() => $_clearField(4);
+}
+
+class AdminCertifyPolicyDiffOrObserverBoundaryResponse
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyPolicyDiffOrObserverBoundaryResponse({
+    EmpireGovernancePolicyBallot? ballot,
+    EmpireConsequentialDecisionLedger? decision,
+  }) {
+    final result = create();
+    if (ballot != null) result.ballot = ballot;
+    if (decision != null) result.decision = decision;
+    return result;
+  }
+
+  AdminCertifyPolicyDiffOrObserverBoundaryResponse._();
+
+  factory AdminCertifyPolicyDiffOrObserverBoundaryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyPolicyDiffOrObserverBoundaryResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyPolicyDiffOrObserverBoundaryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.empire.v1'),
+      createEmptyInstance: create)
+    ..aOM<EmpireGovernancePolicyBallot>(1, _omitFieldNames ? '' : 'ballot',
+        subBuilder: EmpireGovernancePolicyBallot.create)
+    ..aOM<EmpireConsequentialDecisionLedger>(
+        2, _omitFieldNames ? '' : 'decision',
+        subBuilder: EmpireConsequentialDecisionLedger.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPolicyDiffOrObserverBoundaryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPolicyDiffOrObserverBoundaryResponse copyWith(
+          void Function(AdminCertifyPolicyDiffOrObserverBoundaryResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyPolicyDiffOrObserverBoundaryResponse))
+          as AdminCertifyPolicyDiffOrObserverBoundaryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPolicyDiffOrObserverBoundaryResponse create() =>
+      AdminCertifyPolicyDiffOrObserverBoundaryResponse._();
+  @$core.override
+  AdminCertifyPolicyDiffOrObserverBoundaryResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPolicyDiffOrObserverBoundaryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyPolicyDiffOrObserverBoundaryResponse>(create);
+  static AdminCertifyPolicyDiffOrObserverBoundaryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  EmpireGovernancePolicyBallot get ballot => $_getN(0);
+  @$pb.TagNumber(1)
+  set ballot(EmpireGovernancePolicyBallot value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBallot() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBallot() => $_clearField(1);
+  @$pb.TagNumber(1)
+  EmpireGovernancePolicyBallot ensureBallot() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  EmpireConsequentialDecisionLedger get decision => $_getN(1);
+  @$pb.TagNumber(2)
+  set decision(EmpireConsequentialDecisionLedger value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDecision() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecision() => $_clearField(2);
+  @$pb.TagNumber(2)
+  EmpireConsequentialDecisionLedger ensureDecision() => $_ensure(1);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

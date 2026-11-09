@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddDatingPhotoRequest, AddDatingPhotoResponse, AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CloseAtlasGroupRequest, CloseAtlasGroupResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateAtlasGroupRequest, CreateAtlasGroupResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetDiscoveryPreferencesRequest, GetDiscoveryPreferencesResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, JoinAtlasGroupRequest, JoinAtlasGroupResponse, LeaveAtlasGroupRequest, LeaveAtlasGroupResponse, ListAtlasGroupsRequest, ListAtlasGroupsResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListDatingPhotosRequest, ListDatingPhotosResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyPanicAlertsRequest, ListMyPanicAlertsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, RemoveDatingPhotoRequest, RemoveDatingPhotoResponse, RemoveVoiceBaselineRequest, RemoveVoiceBaselineResponse, ReorderDatingPhotosRequest, ReorderDatingPhotosResponse, ReportAkashicChapterRequest, ReportAkashicChapterResponse, ReportAtlasGroupRequest, ReportAtlasGroupResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMessageRequest, SendMessageResponse, SetPrimaryDatingPhotoRequest, SetPrimaryDatingPhotoResponse, SetVoiceBaselineRequest, SetVoiceBaselineResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SwipeRequest, SwipeResponse, TriggerPanicAlertRequest, TriggerPanicAlertResponse, UnblockUserRequest, UnblockUserResponse, UnmatchRequest, UnmatchResponse, UpdateDiscoveryPreferencesRequest, UpdateDiscoveryPreferencesResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse } from "./dating_pb.js";
+import { AddDatingPhotoRequest, AddDatingPhotoResponse, AdminCertifyJurisdictionReleaseGateRequest, AdminCertifyJurisdictionReleaseGateResponse, AdminListConnectionArchiveAuditRequest, AdminListConnectionArchiveAuditResponse, AdminListFriendshipCrewsAuditRequest, AdminListFriendshipCrewsAuditResponse, AdminListGlobalReleaseCertificationAuditRequest, AdminListGlobalReleaseCertificationAuditResponse, AdminListRelationshipProgressionAuditRequest, AdminListRelationshipProgressionAuditResponse, AdminModerateCrewSafetyAndMissionRequest, AdminModerateCrewSafetyAndMissionResponse, AdminModerateRelationshipPromptSafetyRequest, AdminModerateRelationshipPromptSafetyResponse, AdminResolveGiftOrArchiveDisputeRequest, AdminResolveGiftOrArchiveDisputeResponse, ApproveYearbookPreviewManifestRequest, ApproveYearbookPreviewManifestResponse, AttachMediaToMessageRequest, AttachMediaToMessageResponse, BlockUserRequest, BlockUserResponse, CancelReservationRequest, CancelReservationResponse, CheckInEventRequest, CheckInEventResponse, CloseAtlasGroupRequest, CloseAtlasGroupResponse, CompleteMissionRequest, CompleteMissionResponse, CreateAgoraRoomRequest, CreateAgoraRoomResponse, CreateAtlasGroupRequest, CreateAtlasGroupResponse, CreateProfileShareRequest, CreateProfileShareResponse, CreateReservationRequest, CreateReservationResponse, CreateTemporaryCrewRequest, CreateTemporaryCrewResponse, DeleteAkashicChapterRequest, DeleteAkashicChapterResponse, DissolveOrCompleteCrewRequest, DissolveOrCompleteCrewResponse, EndAgoraRoomRequest, EndAgoraRoomResponse, GenerateAtlasYearbookRequest, GenerateAtlasYearbookResponse, GeneratePortableConnectionBundleRequest, GeneratePortableConnectionBundleResponse, GetAtlasLetterRequest, GetAtlasLetterResponse, GetCompatibilityMatrixRequest, GetCompatibilityMatrixResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetConnectionArchiveWorkbenchRequest, GetConnectionArchiveWorkbenchResponse, GetCrossPillarGateRequest, GetCrossPillarGateResponse, GetDiscoveryPreferencesRequest, GetDiscoveryPreferencesResponse, GetFriendshipCrewsWorkbenchRequest, GetFriendshipCrewsWorkbenchResponse, GetInclusiveGlobalReleaseWorkbenchRequest, GetInclusiveGlobalReleaseWorkbenchResponse, GetLatestVerificationRequest, GetLatestVerificationResponse, GetPanicContactRequest, GetPanicContactResponse, GetPrivacyAxesRequest, GetPrivacyAxesResponse, GetProfileRequest, GetProfileResponse, GetRelationshipProgressionWorkbenchRequest, GetRelationshipProgressionWorkbenchResponse, InitiateSafeUncouplingPlanRequest, InitiateSafeUncouplingPlanResponse, JoinAtlasGroupRequest, JoinAtlasGroupResponse, LeaveAtlasGroupRequest, LeaveAtlasGroupResponse, ListAtlasGroupsRequest, ListAtlasGroupsResponse, ListAtlasLettersRequest, ListAtlasLettersResponse, ListAtlasMapPointsRequest, ListAtlasMapPointsResponse, ListAuthorAkashicRequest, ListAuthorAkashicResponse, ListDatingPhotosRequest, ListDatingPhotosResponse, ListEventsRequest, ListEventsResponse, ListGiftLedgerRequest, ListGiftLedgerResponse, ListLiveRoomsRequest, ListLiveRoomsResponse, ListMatchesRequest, ListMatchesResponse, ListMatchmakerProposalsRequest, ListMatchmakerProposalsResponse, ListMessageAttachmentsRequest, ListMessageAttachmentsResponse, ListMissionsRequest, ListMissionsResponse, ListMyBlocksRequest, ListMyBlocksResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEventRsvpsRequest, ListMyEventRsvpsResponse, ListMyPanicAlertsRequest, ListMyPanicAlertsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyReportsRequest, ListMyReportsResponse, ListMyReservationsRequest, ListMyReservationsResponse, ListRestaurantsRequest, ListRestaurantsResponse, ListTensionSeatsRequest, ListTensionSeatsResponse, ListVisibleAkashicRequest, ListVisibleAkashicResponse, MintLiveKitTokenRequest, MintLiveKitTokenResponse, PlaceTensionBidRequest, PlaceTensionBidResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordRelationshipCheckinReflectionRequest, RecordRelationshipCheckinReflectionResponse, ReleaseTensionSeatRequest, ReleaseTensionSeatResponse, RemoveDatingPhotoRequest, RemoveDatingPhotoResponse, RemoveVoiceBaselineRequest, RemoveVoiceBaselineResponse, ReorderDatingPhotosRequest, ReorderDatingPhotosResponse, ReportAkashicChapterRequest, ReportAkashicChapterResponse, ReportAtlasGroupRequest, ReportAtlasGroupResponse, ReportUserRequest, ReportUserResponse, RespondMatchmakerProposalRequest, RespondMatchmakerProposalResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, RsvpEventRequest, RsvpEventResponse, SendGiftRequest, SendGiftResponse, SendMeaningfulGuardedGiftRequest, SendMeaningfulGuardedGiftResponse, SendMessageRequest, SendMessageResponse, SetPrimaryDatingPhotoRequest, SetPrimaryDatingPhotoResponse, SetVoiceBaselineRequest, SetVoiceBaselineResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StartVerificationRequest, StartVerificationResponse, StreamDiscoveryRequest, StreamDiscoveryResponse, StreamMessagesRequest, StreamMessagesResponse, SubmitCrewMissionEvidenceRequest, SubmitCrewMissionEvidenceResponse, SwipeRequest, SwipeResponse, TriggerPanicAlertRequest, TriggerPanicAlertResponse, UnblockUserRequest, UnblockUserResponse, UnmatchRequest, UnmatchResponse, UpdateAccessibleInclusionProfileRequest, UpdateAccessibleInclusionProfileResponse, UpdateDiscoveryPreferencesRequest, UpdateDiscoveryPreferencesResponse, UpdateProfileRequest, UpdateProfileResponse, UpsertAkashicChapterRequest, UpsertAkashicChapterResponse, UpsertConnectionArchiveEntryRequest, UpsertConnectionArchiveEntryResponse, UpsertPanicContactRequest, UpsertPanicContactResponse, UpsertPrivacyAxesRequest, UpsertPrivacyAxesResponse, UpsertRelationshipStageAgreementRequest, UpsertRelationshipStageAgreementResponse, VerifyJurisdictionOfflineSafetyPackRequest, VerifyJurisdictionOfflineSafetyPackResponse } from "./dating_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -748,6 +748,230 @@ export const DatingService = {
       name: "RemoveVoiceBaseline",
       I: RemoveVoiceBaselineRequest,
       O: RemoveVoiceBaselineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * --- Atlas Choice 12 (AT11): Relationship Progression and Separation ---
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetRelationshipProgressionWorkbench
+     */
+    getRelationshipProgressionWorkbench: {
+      name: "GetRelationshipProgressionWorkbench",
+      I: GetRelationshipProgressionWorkbenchRequest,
+      O: GetRelationshipProgressionWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpsertRelationshipStageAgreement
+     */
+    upsertRelationshipStageAgreement: {
+      name: "UpsertRelationshipStageAgreement",
+      I: UpsertRelationshipStageAgreementRequest,
+      O: UpsertRelationshipStageAgreementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.RecordRelationshipCheckinReflection
+     */
+    recordRelationshipCheckinReflection: {
+      name: "RecordRelationshipCheckinReflection",
+      I: RecordRelationshipCheckinReflectionRequest,
+      O: RecordRelationshipCheckinReflectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.InitiateSafeUncouplingPlan
+     */
+    initiateSafeUncouplingPlan: {
+      name: "InitiateSafeUncouplingPlan",
+      I: InitiateSafeUncouplingPlanRequest,
+      O: InitiateSafeUncouplingPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminListRelationshipProgressionAudit
+     */
+    adminListRelationshipProgressionAudit: {
+      name: "AdminListRelationshipProgressionAudit",
+      I: AdminListRelationshipProgressionAuditRequest,
+      O: AdminListRelationshipProgressionAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminModerateRelationshipPromptSafety
+     */
+    adminModerateRelationshipPromptSafety: {
+      name: "AdminModerateRelationshipPromptSafety",
+      I: AdminModerateRelationshipPromptSafetyRequest,
+      O: AdminModerateRelationshipPromptSafetyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * --- Atlas Choice 13 (AT12): Friendship, Crews, and Missions ---
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetFriendshipCrewsWorkbench
+     */
+    getFriendshipCrewsWorkbench: {
+      name: "GetFriendshipCrewsWorkbench",
+      I: GetFriendshipCrewsWorkbenchRequest,
+      O: GetFriendshipCrewsWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.CreateTemporaryCrew
+     */
+    createTemporaryCrew: {
+      name: "CreateTemporaryCrew",
+      I: CreateTemporaryCrewRequest,
+      O: CreateTemporaryCrewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.SubmitCrewMissionEvidence
+     */
+    submitCrewMissionEvidence: {
+      name: "SubmitCrewMissionEvidence",
+      I: SubmitCrewMissionEvidenceRequest,
+      O: SubmitCrewMissionEvidenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.DissolveOrCompleteCrew
+     */
+    dissolveOrCompleteCrew: {
+      name: "DissolveOrCompleteCrew",
+      I: DissolveOrCompleteCrewRequest,
+      O: DissolveOrCompleteCrewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminListFriendshipCrewsAudit
+     */
+    adminListFriendshipCrewsAudit: {
+      name: "AdminListFriendshipCrewsAudit",
+      I: AdminListFriendshipCrewsAuditRequest,
+      O: AdminListFriendshipCrewsAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminModerateCrewSafetyAndMission
+     */
+    adminModerateCrewSafetyAndMission: {
+      name: "AdminModerateCrewSafetyAndMission",
+      I: AdminModerateCrewSafetyAndMissionRequest,
+      O: AdminModerateCrewSafetyAndMissionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * --- Atlas Choice 14 (AT13): Connection Archive and Meaningful Gifting ---
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetConnectionArchiveWorkbench
+     */
+    getConnectionArchiveWorkbench: {
+      name: "GetConnectionArchiveWorkbench",
+      I: GetConnectionArchiveWorkbenchRequest,
+      O: GetConnectionArchiveWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpsertConnectionArchiveEntry
+     */
+    upsertConnectionArchiveEntry: {
+      name: "UpsertConnectionArchiveEntry",
+      I: UpsertConnectionArchiveEntryRequest,
+      O: UpsertConnectionArchiveEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.SendMeaningfulGuardedGift
+     */
+    sendMeaningfulGuardedGift: {
+      name: "SendMeaningfulGuardedGift",
+      I: SendMeaningfulGuardedGiftRequest,
+      O: SendMeaningfulGuardedGiftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.ApproveYearbookPreviewManifest
+     */
+    approveYearbookPreviewManifest: {
+      name: "ApproveYearbookPreviewManifest",
+      I: ApproveYearbookPreviewManifestRequest,
+      O: ApproveYearbookPreviewManifestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminListConnectionArchiveAudit
+     */
+    adminListConnectionArchiveAudit: {
+      name: "AdminListConnectionArchiveAudit",
+      I: AdminListConnectionArchiveAuditRequest,
+      O: AdminListConnectionArchiveAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminResolveGiftOrArchiveDispute
+     */
+    adminResolveGiftOrArchiveDispute: {
+      name: "AdminResolveGiftOrArchiveDispute",
+      I: AdminResolveGiftOrArchiveDisputeRequest,
+      O: AdminResolveGiftOrArchiveDisputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * --- Atlas Choice 15 (AT15): Inclusive and Global Release Certification ---
+     *
+     * @generated from rpc sttattus.dating.v1.DatingService.GetInclusiveGlobalReleaseWorkbench
+     */
+    getInclusiveGlobalReleaseWorkbench: {
+      name: "GetInclusiveGlobalReleaseWorkbench",
+      I: GetInclusiveGlobalReleaseWorkbenchRequest,
+      O: GetInclusiveGlobalReleaseWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.UpdateAccessibleInclusionProfile
+     */
+    updateAccessibleInclusionProfile: {
+      name: "UpdateAccessibleInclusionProfile",
+      I: UpdateAccessibleInclusionProfileRequest,
+      O: UpdateAccessibleInclusionProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.GeneratePortableConnectionBundle
+     */
+    generatePortableConnectionBundle: {
+      name: "GeneratePortableConnectionBundle",
+      I: GeneratePortableConnectionBundleRequest,
+      O: GeneratePortableConnectionBundleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.VerifyJurisdictionOfflineSafetyPack
+     */
+    verifyJurisdictionOfflineSafetyPack: {
+      name: "VerifyJurisdictionOfflineSafetyPack",
+      I: VerifyJurisdictionOfflineSafetyPackRequest,
+      O: VerifyJurisdictionOfflineSafetyPackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminListGlobalReleaseCertificationAudit
+     */
+    adminListGlobalReleaseCertificationAudit: {
+      name: "AdminListGlobalReleaseCertificationAudit",
+      I: AdminListGlobalReleaseCertificationAuditRequest,
+      O: AdminListGlobalReleaseCertificationAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dating.v1.DatingService.AdminCertifyJurisdictionReleaseGate
+     */
+    adminCertifyJurisdictionReleaseGate: {
+      name: "AdminCertifyJurisdictionReleaseGate",
+      I: AdminCertifyJurisdictionReleaseGateRequest,
+      O: AdminCertifyJurisdictionReleaseGateResponse,
       kind: MethodKind.Unary,
     },
   }

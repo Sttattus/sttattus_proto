@@ -403,6 +403,312 @@ class LanguagesServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listWords, request, options: options);
   }
 
+  /// Choice 6 (L6): Immersion and Personal Import Universe
+  $grpc.ResponseFuture<$0.GetImmersionUniverseOverviewResponse>
+      getImmersionUniverseOverview(
+    $0.GetImmersionUniverseOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getImmersionUniverseOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ImportPersonalImmersionMediaResponse>
+      importPersonalImmersionMedia(
+    $0.ImportPersonalImmersionMediaRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$importPersonalImmersionMedia, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CaptureContextConceptSenseResponse>
+      captureContextConceptSense(
+    $0.CaptureContextConceptSenseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$captureContextConceptSense, request,
+        options: options);
+  }
+
+  /// Choice 7 (L7): Writing and Register Studio
+  $grpc.ResponseFuture<$0.GetWritingRegisterStudioOverviewResponse>
+      getWritingRegisterStudioOverview(
+    $0.GetWritingRegisterStudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getWritingRegisterStudioOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitWritingRegisterDraftResponse>
+      submitWritingRegisterDraft(
+    $0.SubmitWritingRegisterDraftRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitWritingRegisterDraft, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyDelayedRegisterTransferResponse>
+      verifyDelayedRegisterTransfer(
+    $0.VerifyDelayedRegisterTransferRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyDelayedRegisterTransfer, request,
+        options: options);
+  }
+
+  /// Choice 8 (L8): Human Tutoring and Community
+  $grpc.ResponseFuture<$0.GetHumanTutoringCommunityOverviewResponse>
+      getHumanTutoringCommunityOverview(
+    $0.GetHumanTutoringCommunityOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getHumanTutoringCommunityOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.BookOrAskHumanTutorResponse> bookOrAskHumanTutor(
+    $0.BookOrAskHumanTutorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$bookOrAskHumanTutor, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitDoubleBlindCommunityReviewResponse>
+      submitDoubleBlindCommunityReview(
+    $0.SubmitDoubleBlindCommunityReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitDoubleBlindCommunityReview, request,
+        options: options);
+  }
+
+  /// Choice 9 (L9): Assessment and Credible Certification
+  $grpc.ResponseFuture<$0.GetAssessmentCertificationOverviewResponse>
+      getAssessmentCertificationOverview(
+    $0.GetAssessmentCertificationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAssessmentCertificationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunAdaptiveDiagnosticSessionResponse>
+      runAdaptiveDiagnosticSession(
+    $0.RunAdaptiveDiagnosticSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runAdaptiveDiagnosticSession, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.IssueOrRevokeSignedCertificateResponse>
+      issueOrRevokeSignedCertificate(
+    $0.IssueOrRevokeSignedCertificateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$issueOrRevokeSignedCertificate, request,
+        options: options);
+  }
+
+  /// Choice 10 (L10/L11): Culture and Reference Supertools
+  $grpc.ResponseFuture<$0.GetCultureReferenceSupertoolsOverviewResponse>
+      getCultureReferenceSupertoolsOverview(
+    $0.GetCultureReferenceSupertoolsOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCultureReferenceSupertoolsOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunSupertoolConcordanceLookupResponse>
+      runSupertoolConcordanceLookup(
+    $0.RunSupertoolConcordanceLookupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runSupertoolConcordanceLookup, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompleteCulturalPragmaticsBranchResponse>
+      completeCulturalPragmaticsBranch(
+    $0.CompleteCulturalPragmaticsBranchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$completeCulturalPragmaticsBranch, request,
+        options: options);
+  }
+
+  /// Choice 11 (L13): Real-World Missions and Portfolio
+  $grpc.ResponseFuture<$0.GetRealWorldMissionsPortfolioOverviewResponse>
+      getRealWorldMissionsPortfolioOverview(
+    $0.GetRealWorldMissionsPortfolioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getRealWorldMissionsPortfolioOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AttestRealWorldMissionCompletionResponse>
+      attestRealWorldMissionCompletion(
+    $0.AttestRealWorldMissionCompletionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$attestRealWorldMissionCompletion, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PublishCommunicativePortfolioArtifactResponse>
+      publishCommunicativePortfolioArtifact(
+    $0.PublishCommunicativePortfolioArtifactRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$publishCommunicativePortfolioArtifact, request,
+        options: options);
+  }
+
+  /// Choice 12 (L14): Ubiquitous Language Layer
+  $grpc.ResponseFuture<$0.GetUbiquitousLanguageLayerOverviewResponse>
+      getUbiquitousLanguageLayerOverview(
+    $0.GetUbiquitousLanguageLayerOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getUbiquitousLanguageLayerOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CaptureExplicitLanguageLookupResponse>
+      captureExplicitLanguageLookup(
+    $0.CaptureExplicitLanguageLookupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$captureExplicitLanguageLookup, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmCapturedSenseToMasteryResponse>
+      confirmCapturedSenseToMastery(
+    $0.ConfirmCapturedSenseToMasteryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmCapturedSenseToMastery, request,
+        options: options);
+  }
+
+  /// Choice 13 (L15/L16): Professional and Heritage Pathways
+  $grpc.ResponseFuture<$0.GetProfessionalHeritagePathwaysOverviewResponse>
+      getProfessionalHeritagePathwaysOverview(
+    $0.GetProfessionalHeritagePathwaysOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getProfessionalHeritagePathwaysOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EnrollProfessionalOrHeritageTrackResponse>
+      enrollProfessionalOrHeritageTrack(
+    $0.EnrollProfessionalOrHeritageTrackRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$enrollProfessionalOrHeritageTrack, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordHeritageLiteracyMilestoneResponse>
+      recordHeritageLiteracyMilestone(
+    $0.RecordHeritageLiteracyMilestoneRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordHeritageLiteracyMilestone, request,
+        options: options);
+  }
+
+  /// Choice 14 (L17): Teacher and Classroom OS
+  $grpc.ResponseFuture<$0.GetTeacherClassroomOsOverviewResponse>
+      getTeacherClassroomOsOverview(
+    $0.GetTeacherClassroomOsOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getTeacherClassroomOsOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateClassroomCohortAssignmentResponse>
+      createClassroomCohortAssignment(
+    $0.CreateClassroomCohortAssignmentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createClassroomCohortAssignment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveOrDisputeTeacherProposalResponse>
+      approveOrDisputeTeacherProposal(
+    $0.ApproveOrDisputeTeacherProposalRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveOrDisputeTeacherProposal, request,
+        options: options);
+  }
+
+  /// Choice 15 (L18/L19): Sustainable Motivation and Learning Lab
+  $grpc.ResponseFuture<$0.GetSustainableMotivationLabOverviewResponse>
+      getSustainableMotivationLabOverview(
+    $0.GetSustainableMotivationLabOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSustainableMotivationLabOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateSustainableHabitContractResponse>
+      updateSustainableHabitContract(
+    $0.UpdateSustainableHabitContractRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateSustainableHabitContract, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordDelayedRetentionExperimentResponse>
+      recordDelayedRetentionExperiment(
+    $0.RecordDelayedRetentionExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordDelayedRetentionExperiment, request,
+        options: options);
+  }
+
+  /// Choice 16 (L12): Offline, Accessibility, and Migration Certification
+  $grpc.ResponseFuture<$0.GetOfflineAccessibilityMigrationOverviewResponse>
+      getOfflineAccessibilityMigrationOverview(
+    $0.GetOfflineAccessibilityMigrationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getOfflineAccessibilityMigrationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CertifyOfflineAccessibilityPackResponse>
+      certifyOfflineAccessibilityPack(
+    $0.CertifyOfflineAccessibilityPackRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$certifyOfflineAccessibilityPack, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunCompetitorMigrationImportResponse>
+      runCompetitorMigrationImport(
+    $0.RunCompetitorMigrationImportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runCompetitorMigrationImport, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$listScenarios =
@@ -647,6 +953,222 @@ class LanguagesServiceClient extends $grpc.Client {
           '/sttattus.languages.v1.LanguagesService/ListWords',
           ($0.ListWordsRequest value) => value.writeToBuffer(),
           $0.ListWordsResponse.fromBuffer);
+  static final _$getImmersionUniverseOverview = $grpc.ClientMethod<
+          $0.GetImmersionUniverseOverviewRequest,
+          $0.GetImmersionUniverseOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetImmersionUniverseOverview',
+      ($0.GetImmersionUniverseOverviewRequest value) => value.writeToBuffer(),
+      $0.GetImmersionUniverseOverviewResponse.fromBuffer);
+  static final _$importPersonalImmersionMedia = $grpc.ClientMethod<
+          $0.ImportPersonalImmersionMediaRequest,
+          $0.ImportPersonalImmersionMediaResponse>(
+      '/sttattus.languages.v1.LanguagesService/ImportPersonalImmersionMedia',
+      ($0.ImportPersonalImmersionMediaRequest value) => value.writeToBuffer(),
+      $0.ImportPersonalImmersionMediaResponse.fromBuffer);
+  static final _$captureContextConceptSense = $grpc.ClientMethod<
+          $0.CaptureContextConceptSenseRequest,
+          $0.CaptureContextConceptSenseResponse>(
+      '/sttattus.languages.v1.LanguagesService/CaptureContextConceptSense',
+      ($0.CaptureContextConceptSenseRequest value) => value.writeToBuffer(),
+      $0.CaptureContextConceptSenseResponse.fromBuffer);
+  static final _$getWritingRegisterStudioOverview = $grpc.ClientMethod<
+          $0.GetWritingRegisterStudioOverviewRequest,
+          $0.GetWritingRegisterStudioOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetWritingRegisterStudioOverview',
+      ($0.GetWritingRegisterStudioOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetWritingRegisterStudioOverviewResponse.fromBuffer);
+  static final _$submitWritingRegisterDraft = $grpc.ClientMethod<
+          $0.SubmitWritingRegisterDraftRequest,
+          $0.SubmitWritingRegisterDraftResponse>(
+      '/sttattus.languages.v1.LanguagesService/SubmitWritingRegisterDraft',
+      ($0.SubmitWritingRegisterDraftRequest value) => value.writeToBuffer(),
+      $0.SubmitWritingRegisterDraftResponse.fromBuffer);
+  static final _$verifyDelayedRegisterTransfer = $grpc.ClientMethod<
+          $0.VerifyDelayedRegisterTransferRequest,
+          $0.VerifyDelayedRegisterTransferResponse>(
+      '/sttattus.languages.v1.LanguagesService/VerifyDelayedRegisterTransfer',
+      ($0.VerifyDelayedRegisterTransferRequest value) => value.writeToBuffer(),
+      $0.VerifyDelayedRegisterTransferResponse.fromBuffer);
+  static final _$getHumanTutoringCommunityOverview = $grpc.ClientMethod<
+          $0.GetHumanTutoringCommunityOverviewRequest,
+          $0.GetHumanTutoringCommunityOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetHumanTutoringCommunityOverview',
+      ($0.GetHumanTutoringCommunityOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetHumanTutoringCommunityOverviewResponse.fromBuffer);
+  static final _$bookOrAskHumanTutor = $grpc.ClientMethod<
+          $0.BookOrAskHumanTutorRequest, $0.BookOrAskHumanTutorResponse>(
+      '/sttattus.languages.v1.LanguagesService/BookOrAskHumanTutor',
+      ($0.BookOrAskHumanTutorRequest value) => value.writeToBuffer(),
+      $0.BookOrAskHumanTutorResponse.fromBuffer);
+  static final _$submitDoubleBlindCommunityReview = $grpc.ClientMethod<
+          $0.SubmitDoubleBlindCommunityReviewRequest,
+          $0.SubmitDoubleBlindCommunityReviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/SubmitDoubleBlindCommunityReview',
+      ($0.SubmitDoubleBlindCommunityReviewRequest value) =>
+          value.writeToBuffer(),
+      $0.SubmitDoubleBlindCommunityReviewResponse.fromBuffer);
+  static final _$getAssessmentCertificationOverview = $grpc.ClientMethod<
+          $0.GetAssessmentCertificationOverviewRequest,
+          $0.GetAssessmentCertificationOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetAssessmentCertificationOverview',
+      ($0.GetAssessmentCertificationOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetAssessmentCertificationOverviewResponse.fromBuffer);
+  static final _$runAdaptiveDiagnosticSession = $grpc.ClientMethod<
+          $0.RunAdaptiveDiagnosticSessionRequest,
+          $0.RunAdaptiveDiagnosticSessionResponse>(
+      '/sttattus.languages.v1.LanguagesService/RunAdaptiveDiagnosticSession',
+      ($0.RunAdaptiveDiagnosticSessionRequest value) => value.writeToBuffer(),
+      $0.RunAdaptiveDiagnosticSessionResponse.fromBuffer);
+  static final _$issueOrRevokeSignedCertificate = $grpc.ClientMethod<
+          $0.IssueOrRevokeSignedCertificateRequest,
+          $0.IssueOrRevokeSignedCertificateResponse>(
+      '/sttattus.languages.v1.LanguagesService/IssueOrRevokeSignedCertificate',
+      ($0.IssueOrRevokeSignedCertificateRequest value) => value.writeToBuffer(),
+      $0.IssueOrRevokeSignedCertificateResponse.fromBuffer);
+  static final _$getCultureReferenceSupertoolsOverview = $grpc.ClientMethod<
+          $0.GetCultureReferenceSupertoolsOverviewRequest,
+          $0.GetCultureReferenceSupertoolsOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetCultureReferenceSupertoolsOverview',
+      ($0.GetCultureReferenceSupertoolsOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetCultureReferenceSupertoolsOverviewResponse.fromBuffer);
+  static final _$runSupertoolConcordanceLookup = $grpc.ClientMethod<
+          $0.RunSupertoolConcordanceLookupRequest,
+          $0.RunSupertoolConcordanceLookupResponse>(
+      '/sttattus.languages.v1.LanguagesService/RunSupertoolConcordanceLookup',
+      ($0.RunSupertoolConcordanceLookupRequest value) => value.writeToBuffer(),
+      $0.RunSupertoolConcordanceLookupResponse.fromBuffer);
+  static final _$completeCulturalPragmaticsBranch = $grpc.ClientMethod<
+          $0.CompleteCulturalPragmaticsBranchRequest,
+          $0.CompleteCulturalPragmaticsBranchResponse>(
+      '/sttattus.languages.v1.LanguagesService/CompleteCulturalPragmaticsBranch',
+      ($0.CompleteCulturalPragmaticsBranchRequest value) =>
+          value.writeToBuffer(),
+      $0.CompleteCulturalPragmaticsBranchResponse.fromBuffer);
+  static final _$getRealWorldMissionsPortfolioOverview = $grpc.ClientMethod<
+          $0.GetRealWorldMissionsPortfolioOverviewRequest,
+          $0.GetRealWorldMissionsPortfolioOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetRealWorldMissionsPortfolioOverview',
+      ($0.GetRealWorldMissionsPortfolioOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetRealWorldMissionsPortfolioOverviewResponse.fromBuffer);
+  static final _$attestRealWorldMissionCompletion = $grpc.ClientMethod<
+          $0.AttestRealWorldMissionCompletionRequest,
+          $0.AttestRealWorldMissionCompletionResponse>(
+      '/sttattus.languages.v1.LanguagesService/AttestRealWorldMissionCompletion',
+      ($0.AttestRealWorldMissionCompletionRequest value) =>
+          value.writeToBuffer(),
+      $0.AttestRealWorldMissionCompletionResponse.fromBuffer);
+  static final _$publishCommunicativePortfolioArtifact = $grpc.ClientMethod<
+          $0.PublishCommunicativePortfolioArtifactRequest,
+          $0.PublishCommunicativePortfolioArtifactResponse>(
+      '/sttattus.languages.v1.LanguagesService/PublishCommunicativePortfolioArtifact',
+      ($0.PublishCommunicativePortfolioArtifactRequest value) =>
+          value.writeToBuffer(),
+      $0.PublishCommunicativePortfolioArtifactResponse.fromBuffer);
+  static final _$getUbiquitousLanguageLayerOverview = $grpc.ClientMethod<
+          $0.GetUbiquitousLanguageLayerOverviewRequest,
+          $0.GetUbiquitousLanguageLayerOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetUbiquitousLanguageLayerOverview',
+      ($0.GetUbiquitousLanguageLayerOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetUbiquitousLanguageLayerOverviewResponse.fromBuffer);
+  static final _$captureExplicitLanguageLookup = $grpc.ClientMethod<
+          $0.CaptureExplicitLanguageLookupRequest,
+          $0.CaptureExplicitLanguageLookupResponse>(
+      '/sttattus.languages.v1.LanguagesService/CaptureExplicitLanguageLookup',
+      ($0.CaptureExplicitLanguageLookupRequest value) => value.writeToBuffer(),
+      $0.CaptureExplicitLanguageLookupResponse.fromBuffer);
+  static final _$confirmCapturedSenseToMastery = $grpc.ClientMethod<
+          $0.ConfirmCapturedSenseToMasteryRequest,
+          $0.ConfirmCapturedSenseToMasteryResponse>(
+      '/sttattus.languages.v1.LanguagesService/ConfirmCapturedSenseToMastery',
+      ($0.ConfirmCapturedSenseToMasteryRequest value) => value.writeToBuffer(),
+      $0.ConfirmCapturedSenseToMasteryResponse.fromBuffer);
+  static final _$getProfessionalHeritagePathwaysOverview = $grpc.ClientMethod<
+          $0.GetProfessionalHeritagePathwaysOverviewRequest,
+          $0.GetProfessionalHeritagePathwaysOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetProfessionalHeritagePathwaysOverview',
+      ($0.GetProfessionalHeritagePathwaysOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetProfessionalHeritagePathwaysOverviewResponse.fromBuffer);
+  static final _$enrollProfessionalOrHeritageTrack = $grpc.ClientMethod<
+          $0.EnrollProfessionalOrHeritageTrackRequest,
+          $0.EnrollProfessionalOrHeritageTrackResponse>(
+      '/sttattus.languages.v1.LanguagesService/EnrollProfessionalOrHeritageTrack',
+      ($0.EnrollProfessionalOrHeritageTrackRequest value) =>
+          value.writeToBuffer(),
+      $0.EnrollProfessionalOrHeritageTrackResponse.fromBuffer);
+  static final _$recordHeritageLiteracyMilestone = $grpc.ClientMethod<
+          $0.RecordHeritageLiteracyMilestoneRequest,
+          $0.RecordHeritageLiteracyMilestoneResponse>(
+      '/sttattus.languages.v1.LanguagesService/RecordHeritageLiteracyMilestone',
+      ($0.RecordHeritageLiteracyMilestoneRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordHeritageLiteracyMilestoneResponse.fromBuffer);
+  static final _$getTeacherClassroomOsOverview = $grpc.ClientMethod<
+          $0.GetTeacherClassroomOsOverviewRequest,
+          $0.GetTeacherClassroomOsOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetTeacherClassroomOsOverview',
+      ($0.GetTeacherClassroomOsOverviewRequest value) => value.writeToBuffer(),
+      $0.GetTeacherClassroomOsOverviewResponse.fromBuffer);
+  static final _$createClassroomCohortAssignment = $grpc.ClientMethod<
+          $0.CreateClassroomCohortAssignmentRequest,
+          $0.CreateClassroomCohortAssignmentResponse>(
+      '/sttattus.languages.v1.LanguagesService/CreateClassroomCohortAssignment',
+      ($0.CreateClassroomCohortAssignmentRequest value) =>
+          value.writeToBuffer(),
+      $0.CreateClassroomCohortAssignmentResponse.fromBuffer);
+  static final _$approveOrDisputeTeacherProposal = $grpc.ClientMethod<
+          $0.ApproveOrDisputeTeacherProposalRequest,
+          $0.ApproveOrDisputeTeacherProposalResponse>(
+      '/sttattus.languages.v1.LanguagesService/ApproveOrDisputeTeacherProposal',
+      ($0.ApproveOrDisputeTeacherProposalRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveOrDisputeTeacherProposalResponse.fromBuffer);
+  static final _$getSustainableMotivationLabOverview = $grpc.ClientMethod<
+          $0.GetSustainableMotivationLabOverviewRequest,
+          $0.GetSustainableMotivationLabOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetSustainableMotivationLabOverview',
+      ($0.GetSustainableMotivationLabOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetSustainableMotivationLabOverviewResponse.fromBuffer);
+  static final _$updateSustainableHabitContract = $grpc.ClientMethod<
+          $0.UpdateSustainableHabitContractRequest,
+          $0.UpdateSustainableHabitContractResponse>(
+      '/sttattus.languages.v1.LanguagesService/UpdateSustainableHabitContract',
+      ($0.UpdateSustainableHabitContractRequest value) => value.writeToBuffer(),
+      $0.UpdateSustainableHabitContractResponse.fromBuffer);
+  static final _$recordDelayedRetentionExperiment = $grpc.ClientMethod<
+          $0.RecordDelayedRetentionExperimentRequest,
+          $0.RecordDelayedRetentionExperimentResponse>(
+      '/sttattus.languages.v1.LanguagesService/RecordDelayedRetentionExperiment',
+      ($0.RecordDelayedRetentionExperimentRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordDelayedRetentionExperimentResponse.fromBuffer);
+  static final _$getOfflineAccessibilityMigrationOverview = $grpc.ClientMethod<
+          $0.GetOfflineAccessibilityMigrationOverviewRequest,
+          $0.GetOfflineAccessibilityMigrationOverviewResponse>(
+      '/sttattus.languages.v1.LanguagesService/GetOfflineAccessibilityMigrationOverview',
+      ($0.GetOfflineAccessibilityMigrationOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetOfflineAccessibilityMigrationOverviewResponse.fromBuffer);
+  static final _$certifyOfflineAccessibilityPack = $grpc.ClientMethod<
+          $0.CertifyOfflineAccessibilityPackRequest,
+          $0.CertifyOfflineAccessibilityPackResponse>(
+      '/sttattus.languages.v1.LanguagesService/CertifyOfflineAccessibilityPack',
+      ($0.CertifyOfflineAccessibilityPackRequest value) =>
+          value.writeToBuffer(),
+      $0.CertifyOfflineAccessibilityPackResponse.fromBuffer);
+  static final _$runCompetitorMigrationImport = $grpc.ClientMethod<
+          $0.RunCompetitorMigrationImportRequest,
+          $0.RunCompetitorMigrationImportResponse>(
+      '/sttattus.languages.v1.LanguagesService/RunCompetitorMigrationImport',
+      ($0.RunCompetitorMigrationImportRequest value) => value.writeToBuffer(),
+      $0.RunCompetitorMigrationImportResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.languages.v1.LanguagesService')
@@ -1082,6 +1604,342 @@ abstract class LanguagesServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.ListWordsRequest.fromBuffer(value),
         ($0.ListWordsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetImmersionUniverseOverviewRequest,
+            $0.GetImmersionUniverseOverviewResponse>(
+        'GetImmersionUniverseOverview',
+        getImmersionUniverseOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetImmersionUniverseOverviewRequest.fromBuffer(value),
+        ($0.GetImmersionUniverseOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ImportPersonalImmersionMediaRequest,
+            $0.ImportPersonalImmersionMediaResponse>(
+        'ImportPersonalImmersionMedia',
+        importPersonalImmersionMedia_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ImportPersonalImmersionMediaRequest.fromBuffer(value),
+        ($0.ImportPersonalImmersionMediaResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CaptureContextConceptSenseRequest,
+            $0.CaptureContextConceptSenseResponse>(
+        'CaptureContextConceptSense',
+        captureContextConceptSense_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CaptureContextConceptSenseRequest.fromBuffer(value),
+        ($0.CaptureContextConceptSenseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetWritingRegisterStudioOverviewRequest,
+            $0.GetWritingRegisterStudioOverviewResponse>(
+        'GetWritingRegisterStudioOverview',
+        getWritingRegisterStudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetWritingRegisterStudioOverviewRequest.fromBuffer(value),
+        ($0.GetWritingRegisterStudioOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitWritingRegisterDraftRequest,
+            $0.SubmitWritingRegisterDraftResponse>(
+        'SubmitWritingRegisterDraft',
+        submitWritingRegisterDraft_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitWritingRegisterDraftRequest.fromBuffer(value),
+        ($0.SubmitWritingRegisterDraftResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyDelayedRegisterTransferRequest,
+            $0.VerifyDelayedRegisterTransferResponse>(
+        'VerifyDelayedRegisterTransfer',
+        verifyDelayedRegisterTransfer_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyDelayedRegisterTransferRequest.fromBuffer(value),
+        ($0.VerifyDelayedRegisterTransferResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetHumanTutoringCommunityOverviewRequest,
+            $0.GetHumanTutoringCommunityOverviewResponse>(
+        'GetHumanTutoringCommunityOverview',
+        getHumanTutoringCommunityOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetHumanTutoringCommunityOverviewRequest.fromBuffer(value),
+        ($0.GetHumanTutoringCommunityOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.BookOrAskHumanTutorRequest,
+            $0.BookOrAskHumanTutorResponse>(
+        'BookOrAskHumanTutor',
+        bookOrAskHumanTutor_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.BookOrAskHumanTutorRequest.fromBuffer(value),
+        ($0.BookOrAskHumanTutorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitDoubleBlindCommunityReviewRequest,
+            $0.SubmitDoubleBlindCommunityReviewResponse>(
+        'SubmitDoubleBlindCommunityReview',
+        submitDoubleBlindCommunityReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitDoubleBlindCommunityReviewRequest.fromBuffer(value),
+        ($0.SubmitDoubleBlindCommunityReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAssessmentCertificationOverviewRequest,
+            $0.GetAssessmentCertificationOverviewResponse>(
+        'GetAssessmentCertificationOverview',
+        getAssessmentCertificationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAssessmentCertificationOverviewRequest.fromBuffer(value),
+        ($0.GetAssessmentCertificationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunAdaptiveDiagnosticSessionRequest,
+            $0.RunAdaptiveDiagnosticSessionResponse>(
+        'RunAdaptiveDiagnosticSession',
+        runAdaptiveDiagnosticSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunAdaptiveDiagnosticSessionRequest.fromBuffer(value),
+        ($0.RunAdaptiveDiagnosticSessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IssueOrRevokeSignedCertificateRequest,
+            $0.IssueOrRevokeSignedCertificateResponse>(
+        'IssueOrRevokeSignedCertificate',
+        issueOrRevokeSignedCertificate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.IssueOrRevokeSignedCertificateRequest.fromBuffer(value),
+        ($0.IssueOrRevokeSignedCertificateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetCultureReferenceSupertoolsOverviewRequest,
+            $0.GetCultureReferenceSupertoolsOverviewResponse>(
+        'GetCultureReferenceSupertoolsOverview',
+        getCultureReferenceSupertoolsOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCultureReferenceSupertoolsOverviewRequest.fromBuffer(value),
+        ($0.GetCultureReferenceSupertoolsOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunSupertoolConcordanceLookupRequest,
+            $0.RunSupertoolConcordanceLookupResponse>(
+        'RunSupertoolConcordanceLookup',
+        runSupertoolConcordanceLookup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunSupertoolConcordanceLookupRequest.fromBuffer(value),
+        ($0.RunSupertoolConcordanceLookupResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompleteCulturalPragmaticsBranchRequest,
+            $0.CompleteCulturalPragmaticsBranchResponse>(
+        'CompleteCulturalPragmaticsBranch',
+        completeCulturalPragmaticsBranch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompleteCulturalPragmaticsBranchRequest.fromBuffer(value),
+        ($0.CompleteCulturalPragmaticsBranchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetRealWorldMissionsPortfolioOverviewRequest,
+            $0.GetRealWorldMissionsPortfolioOverviewResponse>(
+        'GetRealWorldMissionsPortfolioOverview',
+        getRealWorldMissionsPortfolioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetRealWorldMissionsPortfolioOverviewRequest.fromBuffer(value),
+        ($0.GetRealWorldMissionsPortfolioOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AttestRealWorldMissionCompletionRequest,
+            $0.AttestRealWorldMissionCompletionResponse>(
+        'AttestRealWorldMissionCompletion',
+        attestRealWorldMissionCompletion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AttestRealWorldMissionCompletionRequest.fromBuffer(value),
+        ($0.AttestRealWorldMissionCompletionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.PublishCommunicativePortfolioArtifactRequest,
+            $0.PublishCommunicativePortfolioArtifactResponse>(
+        'PublishCommunicativePortfolioArtifact',
+        publishCommunicativePortfolioArtifact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PublishCommunicativePortfolioArtifactRequest.fromBuffer(value),
+        ($0.PublishCommunicativePortfolioArtifactResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUbiquitousLanguageLayerOverviewRequest,
+            $0.GetUbiquitousLanguageLayerOverviewResponse>(
+        'GetUbiquitousLanguageLayerOverview',
+        getUbiquitousLanguageLayerOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetUbiquitousLanguageLayerOverviewRequest.fromBuffer(value),
+        ($0.GetUbiquitousLanguageLayerOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CaptureExplicitLanguageLookupRequest,
+            $0.CaptureExplicitLanguageLookupResponse>(
+        'CaptureExplicitLanguageLookup',
+        captureExplicitLanguageLookup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CaptureExplicitLanguageLookupRequest.fromBuffer(value),
+        ($0.CaptureExplicitLanguageLookupResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmCapturedSenseToMasteryRequest,
+            $0.ConfirmCapturedSenseToMasteryResponse>(
+        'ConfirmCapturedSenseToMastery',
+        confirmCapturedSenseToMastery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmCapturedSenseToMasteryRequest.fromBuffer(value),
+        ($0.ConfirmCapturedSenseToMasteryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetProfessionalHeritagePathwaysOverviewRequest,
+            $0.GetProfessionalHeritagePathwaysOverviewResponse>(
+        'GetProfessionalHeritagePathwaysOverview',
+        getProfessionalHeritagePathwaysOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetProfessionalHeritagePathwaysOverviewRequest.fromBuffer(value),
+        ($0.GetProfessionalHeritagePathwaysOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EnrollProfessionalOrHeritageTrackRequest,
+            $0.EnrollProfessionalOrHeritageTrackResponse>(
+        'EnrollProfessionalOrHeritageTrack',
+        enrollProfessionalOrHeritageTrack_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EnrollProfessionalOrHeritageTrackRequest.fromBuffer(value),
+        ($0.EnrollProfessionalOrHeritageTrackResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordHeritageLiteracyMilestoneRequest,
+            $0.RecordHeritageLiteracyMilestoneResponse>(
+        'RecordHeritageLiteracyMilestone',
+        recordHeritageLiteracyMilestone_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordHeritageLiteracyMilestoneRequest.fromBuffer(value),
+        ($0.RecordHeritageLiteracyMilestoneResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTeacherClassroomOsOverviewRequest,
+            $0.GetTeacherClassroomOsOverviewResponse>(
+        'GetTeacherClassroomOsOverview',
+        getTeacherClassroomOsOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetTeacherClassroomOsOverviewRequest.fromBuffer(value),
+        ($0.GetTeacherClassroomOsOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateClassroomCohortAssignmentRequest,
+            $0.CreateClassroomCohortAssignmentResponse>(
+        'CreateClassroomCohortAssignment',
+        createClassroomCohortAssignment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateClassroomCohortAssignmentRequest.fromBuffer(value),
+        ($0.CreateClassroomCohortAssignmentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApproveOrDisputeTeacherProposalRequest,
+            $0.ApproveOrDisputeTeacherProposalResponse>(
+        'ApproveOrDisputeTeacherProposal',
+        approveOrDisputeTeacherProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveOrDisputeTeacherProposalRequest.fromBuffer(value),
+        ($0.ApproveOrDisputeTeacherProposalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetSustainableMotivationLabOverviewRequest,
+            $0.GetSustainableMotivationLabOverviewResponse>(
+        'GetSustainableMotivationLabOverview',
+        getSustainableMotivationLabOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSustainableMotivationLabOverviewRequest.fromBuffer(value),
+        ($0.GetSustainableMotivationLabOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateSustainableHabitContractRequest,
+            $0.UpdateSustainableHabitContractResponse>(
+        'UpdateSustainableHabitContract',
+        updateSustainableHabitContract_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateSustainableHabitContractRequest.fromBuffer(value),
+        ($0.UpdateSustainableHabitContractResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordDelayedRetentionExperimentRequest,
+            $0.RecordDelayedRetentionExperimentResponse>(
+        'RecordDelayedRetentionExperiment',
+        recordDelayedRetentionExperiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordDelayedRetentionExperimentRequest.fromBuffer(value),
+        ($0.RecordDelayedRetentionExperimentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetOfflineAccessibilityMigrationOverviewRequest,
+            $0.GetOfflineAccessibilityMigrationOverviewResponse>(
+        'GetOfflineAccessibilityMigrationOverview',
+        getOfflineAccessibilityMigrationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetOfflineAccessibilityMigrationOverviewRequest.fromBuffer(
+                value),
+        ($0.GetOfflineAccessibilityMigrationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CertifyOfflineAccessibilityPackRequest,
+            $0.CertifyOfflineAccessibilityPackResponse>(
+        'CertifyOfflineAccessibilityPack',
+        certifyOfflineAccessibilityPack_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CertifyOfflineAccessibilityPackRequest.fromBuffer(value),
+        ($0.CertifyOfflineAccessibilityPackResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunCompetitorMigrationImportRequest,
+            $0.RunCompetitorMigrationImportResponse>(
+        'RunCompetitorMigrationImport',
+        runCompetitorMigrationImport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunCompetitorMigrationImportRequest.fromBuffer(value),
+        ($0.RunCompetitorMigrationImportResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.ListScenariosResponse> listScenarios_Pre(
@@ -1513,4 +2371,393 @@ abstract class LanguagesServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListWordsResponse> listWords(
       $grpc.ServiceCall call, $0.ListWordsRequest request);
+
+  $async.Future<$0.GetImmersionUniverseOverviewResponse>
+      getImmersionUniverseOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetImmersionUniverseOverviewRequest>
+              $request) async {
+    return getImmersionUniverseOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetImmersionUniverseOverviewResponse>
+      getImmersionUniverseOverview($grpc.ServiceCall call,
+          $0.GetImmersionUniverseOverviewRequest request);
+
+  $async.Future<$0.ImportPersonalImmersionMediaResponse>
+      importPersonalImmersionMedia_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ImportPersonalImmersionMediaRequest>
+              $request) async {
+    return importPersonalImmersionMedia($call, await $request);
+  }
+
+  $async.Future<$0.ImportPersonalImmersionMediaResponse>
+      importPersonalImmersionMedia($grpc.ServiceCall call,
+          $0.ImportPersonalImmersionMediaRequest request);
+
+  $async.Future<$0.CaptureContextConceptSenseResponse>
+      captureContextConceptSense_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CaptureContextConceptSenseRequest> $request) async {
+    return captureContextConceptSense($call, await $request);
+  }
+
+  $async.Future<$0.CaptureContextConceptSenseResponse>
+      captureContextConceptSense(
+          $grpc.ServiceCall call, $0.CaptureContextConceptSenseRequest request);
+
+  $async.Future<$0.GetWritingRegisterStudioOverviewResponse>
+      getWritingRegisterStudioOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetWritingRegisterStudioOverviewRequest>
+              $request) async {
+    return getWritingRegisterStudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetWritingRegisterStudioOverviewResponse>
+      getWritingRegisterStudioOverview($grpc.ServiceCall call,
+          $0.GetWritingRegisterStudioOverviewRequest request);
+
+  $async.Future<$0.SubmitWritingRegisterDraftResponse>
+      submitWritingRegisterDraft_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SubmitWritingRegisterDraftRequest> $request) async {
+    return submitWritingRegisterDraft($call, await $request);
+  }
+
+  $async.Future<$0.SubmitWritingRegisterDraftResponse>
+      submitWritingRegisterDraft(
+          $grpc.ServiceCall call, $0.SubmitWritingRegisterDraftRequest request);
+
+  $async.Future<$0.VerifyDelayedRegisterTransferResponse>
+      verifyDelayedRegisterTransfer_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyDelayedRegisterTransferRequest>
+              $request) async {
+    return verifyDelayedRegisterTransfer($call, await $request);
+  }
+
+  $async.Future<$0.VerifyDelayedRegisterTransferResponse>
+      verifyDelayedRegisterTransfer($grpc.ServiceCall call,
+          $0.VerifyDelayedRegisterTransferRequest request);
+
+  $async.Future<$0.GetHumanTutoringCommunityOverviewResponse>
+      getHumanTutoringCommunityOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetHumanTutoringCommunityOverviewRequest>
+              $request) async {
+    return getHumanTutoringCommunityOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetHumanTutoringCommunityOverviewResponse>
+      getHumanTutoringCommunityOverview($grpc.ServiceCall call,
+          $0.GetHumanTutoringCommunityOverviewRequest request);
+
+  $async.Future<$0.BookOrAskHumanTutorResponse> bookOrAskHumanTutor_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.BookOrAskHumanTutorRequest> $request) async {
+    return bookOrAskHumanTutor($call, await $request);
+  }
+
+  $async.Future<$0.BookOrAskHumanTutorResponse> bookOrAskHumanTutor(
+      $grpc.ServiceCall call, $0.BookOrAskHumanTutorRequest request);
+
+  $async.Future<$0.SubmitDoubleBlindCommunityReviewResponse>
+      submitDoubleBlindCommunityReview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitDoubleBlindCommunityReviewRequest>
+              $request) async {
+    return submitDoubleBlindCommunityReview($call, await $request);
+  }
+
+  $async.Future<$0.SubmitDoubleBlindCommunityReviewResponse>
+      submitDoubleBlindCommunityReview($grpc.ServiceCall call,
+          $0.SubmitDoubleBlindCommunityReviewRequest request);
+
+  $async.Future<$0.GetAssessmentCertificationOverviewResponse>
+      getAssessmentCertificationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetAssessmentCertificationOverviewRequest>
+              $request) async {
+    return getAssessmentCertificationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetAssessmentCertificationOverviewResponse>
+      getAssessmentCertificationOverview($grpc.ServiceCall call,
+          $0.GetAssessmentCertificationOverviewRequest request);
+
+  $async.Future<$0.RunAdaptiveDiagnosticSessionResponse>
+      runAdaptiveDiagnosticSession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunAdaptiveDiagnosticSessionRequest>
+              $request) async {
+    return runAdaptiveDiagnosticSession($call, await $request);
+  }
+
+  $async.Future<$0.RunAdaptiveDiagnosticSessionResponse>
+      runAdaptiveDiagnosticSession($grpc.ServiceCall call,
+          $0.RunAdaptiveDiagnosticSessionRequest request);
+
+  $async.Future<$0.IssueOrRevokeSignedCertificateResponse>
+      issueOrRevokeSignedCertificate_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.IssueOrRevokeSignedCertificateRequest>
+              $request) async {
+    return issueOrRevokeSignedCertificate($call, await $request);
+  }
+
+  $async.Future<$0.IssueOrRevokeSignedCertificateResponse>
+      issueOrRevokeSignedCertificate($grpc.ServiceCall call,
+          $0.IssueOrRevokeSignedCertificateRequest request);
+
+  $async.Future<$0.GetCultureReferenceSupertoolsOverviewResponse>
+      getCultureReferenceSupertoolsOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetCultureReferenceSupertoolsOverviewRequest>
+              $request) async {
+    return getCultureReferenceSupertoolsOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetCultureReferenceSupertoolsOverviewResponse>
+      getCultureReferenceSupertoolsOverview($grpc.ServiceCall call,
+          $0.GetCultureReferenceSupertoolsOverviewRequest request);
+
+  $async.Future<$0.RunSupertoolConcordanceLookupResponse>
+      runSupertoolConcordanceLookup_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunSupertoolConcordanceLookupRequest>
+              $request) async {
+    return runSupertoolConcordanceLookup($call, await $request);
+  }
+
+  $async.Future<$0.RunSupertoolConcordanceLookupResponse>
+      runSupertoolConcordanceLookup($grpc.ServiceCall call,
+          $0.RunSupertoolConcordanceLookupRequest request);
+
+  $async.Future<$0.CompleteCulturalPragmaticsBranchResponse>
+      completeCulturalPragmaticsBranch_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CompleteCulturalPragmaticsBranchRequest>
+              $request) async {
+    return completeCulturalPragmaticsBranch($call, await $request);
+  }
+
+  $async.Future<$0.CompleteCulturalPragmaticsBranchResponse>
+      completeCulturalPragmaticsBranch($grpc.ServiceCall call,
+          $0.CompleteCulturalPragmaticsBranchRequest request);
+
+  $async.Future<$0.GetRealWorldMissionsPortfolioOverviewResponse>
+      getRealWorldMissionsPortfolioOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetRealWorldMissionsPortfolioOverviewRequest>
+              $request) async {
+    return getRealWorldMissionsPortfolioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetRealWorldMissionsPortfolioOverviewResponse>
+      getRealWorldMissionsPortfolioOverview($grpc.ServiceCall call,
+          $0.GetRealWorldMissionsPortfolioOverviewRequest request);
+
+  $async.Future<$0.AttestRealWorldMissionCompletionResponse>
+      attestRealWorldMissionCompletion_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AttestRealWorldMissionCompletionRequest>
+              $request) async {
+    return attestRealWorldMissionCompletion($call, await $request);
+  }
+
+  $async.Future<$0.AttestRealWorldMissionCompletionResponse>
+      attestRealWorldMissionCompletion($grpc.ServiceCall call,
+          $0.AttestRealWorldMissionCompletionRequest request);
+
+  $async.Future<$0.PublishCommunicativePortfolioArtifactResponse>
+      publishCommunicativePortfolioArtifact_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PublishCommunicativePortfolioArtifactRequest>
+              $request) async {
+    return publishCommunicativePortfolioArtifact($call, await $request);
+  }
+
+  $async.Future<$0.PublishCommunicativePortfolioArtifactResponse>
+      publishCommunicativePortfolioArtifact($grpc.ServiceCall call,
+          $0.PublishCommunicativePortfolioArtifactRequest request);
+
+  $async.Future<$0.GetUbiquitousLanguageLayerOverviewResponse>
+      getUbiquitousLanguageLayerOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetUbiquitousLanguageLayerOverviewRequest>
+              $request) async {
+    return getUbiquitousLanguageLayerOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetUbiquitousLanguageLayerOverviewResponse>
+      getUbiquitousLanguageLayerOverview($grpc.ServiceCall call,
+          $0.GetUbiquitousLanguageLayerOverviewRequest request);
+
+  $async.Future<$0.CaptureExplicitLanguageLookupResponse>
+      captureExplicitLanguageLookup_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CaptureExplicitLanguageLookupRequest>
+              $request) async {
+    return captureExplicitLanguageLookup($call, await $request);
+  }
+
+  $async.Future<$0.CaptureExplicitLanguageLookupResponse>
+      captureExplicitLanguageLookup($grpc.ServiceCall call,
+          $0.CaptureExplicitLanguageLookupRequest request);
+
+  $async.Future<$0.ConfirmCapturedSenseToMasteryResponse>
+      confirmCapturedSenseToMastery_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmCapturedSenseToMasteryRequest>
+              $request) async {
+    return confirmCapturedSenseToMastery($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmCapturedSenseToMasteryResponse>
+      confirmCapturedSenseToMastery($grpc.ServiceCall call,
+          $0.ConfirmCapturedSenseToMasteryRequest request);
+
+  $async.Future<$0.GetProfessionalHeritagePathwaysOverviewResponse>
+      getProfessionalHeritagePathwaysOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetProfessionalHeritagePathwaysOverviewRequest>
+              $request) async {
+    return getProfessionalHeritagePathwaysOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetProfessionalHeritagePathwaysOverviewResponse>
+      getProfessionalHeritagePathwaysOverview($grpc.ServiceCall call,
+          $0.GetProfessionalHeritagePathwaysOverviewRequest request);
+
+  $async.Future<$0.EnrollProfessionalOrHeritageTrackResponse>
+      enrollProfessionalOrHeritageTrack_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EnrollProfessionalOrHeritageTrackRequest>
+              $request) async {
+    return enrollProfessionalOrHeritageTrack($call, await $request);
+  }
+
+  $async.Future<$0.EnrollProfessionalOrHeritageTrackResponse>
+      enrollProfessionalOrHeritageTrack($grpc.ServiceCall call,
+          $0.EnrollProfessionalOrHeritageTrackRequest request);
+
+  $async.Future<$0.RecordHeritageLiteracyMilestoneResponse>
+      recordHeritageLiteracyMilestone_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordHeritageLiteracyMilestoneRequest>
+              $request) async {
+    return recordHeritageLiteracyMilestone($call, await $request);
+  }
+
+  $async.Future<$0.RecordHeritageLiteracyMilestoneResponse>
+      recordHeritageLiteracyMilestone($grpc.ServiceCall call,
+          $0.RecordHeritageLiteracyMilestoneRequest request);
+
+  $async.Future<$0.GetTeacherClassroomOsOverviewResponse>
+      getTeacherClassroomOsOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetTeacherClassroomOsOverviewRequest>
+              $request) async {
+    return getTeacherClassroomOsOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetTeacherClassroomOsOverviewResponse>
+      getTeacherClassroomOsOverview($grpc.ServiceCall call,
+          $0.GetTeacherClassroomOsOverviewRequest request);
+
+  $async.Future<$0.CreateClassroomCohortAssignmentResponse>
+      createClassroomCohortAssignment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateClassroomCohortAssignmentRequest>
+              $request) async {
+    return createClassroomCohortAssignment($call, await $request);
+  }
+
+  $async.Future<$0.CreateClassroomCohortAssignmentResponse>
+      createClassroomCohortAssignment($grpc.ServiceCall call,
+          $0.CreateClassroomCohortAssignmentRequest request);
+
+  $async.Future<$0.ApproveOrDisputeTeacherProposalResponse>
+      approveOrDisputeTeacherProposal_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveOrDisputeTeacherProposalRequest>
+              $request) async {
+    return approveOrDisputeTeacherProposal($call, await $request);
+  }
+
+  $async.Future<$0.ApproveOrDisputeTeacherProposalResponse>
+      approveOrDisputeTeacherProposal($grpc.ServiceCall call,
+          $0.ApproveOrDisputeTeacherProposalRequest request);
+
+  $async.Future<$0.GetSustainableMotivationLabOverviewResponse>
+      getSustainableMotivationLabOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetSustainableMotivationLabOverviewRequest>
+              $request) async {
+    return getSustainableMotivationLabOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetSustainableMotivationLabOverviewResponse>
+      getSustainableMotivationLabOverview($grpc.ServiceCall call,
+          $0.GetSustainableMotivationLabOverviewRequest request);
+
+  $async.Future<$0.UpdateSustainableHabitContractResponse>
+      updateSustainableHabitContract_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateSustainableHabitContractRequest>
+              $request) async {
+    return updateSustainableHabitContract($call, await $request);
+  }
+
+  $async.Future<$0.UpdateSustainableHabitContractResponse>
+      updateSustainableHabitContract($grpc.ServiceCall call,
+          $0.UpdateSustainableHabitContractRequest request);
+
+  $async.Future<$0.RecordDelayedRetentionExperimentResponse>
+      recordDelayedRetentionExperiment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordDelayedRetentionExperimentRequest>
+              $request) async {
+    return recordDelayedRetentionExperiment($call, await $request);
+  }
+
+  $async.Future<$0.RecordDelayedRetentionExperimentResponse>
+      recordDelayedRetentionExperiment($grpc.ServiceCall call,
+          $0.RecordDelayedRetentionExperimentRequest request);
+
+  $async.Future<$0.GetOfflineAccessibilityMigrationOverviewResponse>
+      getOfflineAccessibilityMigrationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetOfflineAccessibilityMigrationOverviewRequest>
+              $request) async {
+    return getOfflineAccessibilityMigrationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetOfflineAccessibilityMigrationOverviewResponse>
+      getOfflineAccessibilityMigrationOverview($grpc.ServiceCall call,
+          $0.GetOfflineAccessibilityMigrationOverviewRequest request);
+
+  $async.Future<$0.CertifyOfflineAccessibilityPackResponse>
+      certifyOfflineAccessibilityPack_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CertifyOfflineAccessibilityPackRequest>
+              $request) async {
+    return certifyOfflineAccessibilityPack($call, await $request);
+  }
+
+  $async.Future<$0.CertifyOfflineAccessibilityPackResponse>
+      certifyOfflineAccessibilityPack($grpc.ServiceCall call,
+          $0.CertifyOfflineAccessibilityPackRequest request);
+
+  $async.Future<$0.RunCompetitorMigrationImportResponse>
+      runCompetitorMigrationImport_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunCompetitorMigrationImportRequest>
+              $request) async {
+    return runCompetitorMigrationImport($call, await $request);
+  }
+
+  $async.Future<$0.RunCompetitorMigrationImportResponse>
+      runCompetitorMigrationImport($grpc.ServiceCall call,
+          $0.RunCompetitorMigrationImportRequest request);
 }

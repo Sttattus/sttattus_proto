@@ -8928,6 +8928,7226 @@ class CancelLoungeBookingResponse extends $pb.GeneratedMessage {
   void clearOk() => $_clearField(1);
 }
 
+/// Choice 1 (Z1): Native Focus Firewall
+class ZenithFocusFirewallSessionItem extends $pb.GeneratedMessage {
+  factory ZenithFocusFirewallSessionItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? firewallCode,
+    $core.String? sessionTitle,
+    $core.String? enforcementMode,
+    $core.String? platformCapabilityMatrix,
+    $core.String? whitelistedEmergencyPaths,
+    $core.String? overrideFrictionAndLog,
+    $core.String? firewallState,
+    $core.bool? emergencyExitAlwaysPermitted,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (firewallCode != null) result.firewallCode = firewallCode;
+    if (sessionTitle != null) result.sessionTitle = sessionTitle;
+    if (enforcementMode != null) result.enforcementMode = enforcementMode;
+    if (platformCapabilityMatrix != null)
+      result.platformCapabilityMatrix = platformCapabilityMatrix;
+    if (whitelistedEmergencyPaths != null)
+      result.whitelistedEmergencyPaths = whitelistedEmergencyPaths;
+    if (overrideFrictionAndLog != null)
+      result.overrideFrictionAndLog = overrideFrictionAndLog;
+    if (firewallState != null) result.firewallState = firewallState;
+    if (emergencyExitAlwaysPermitted != null)
+      result.emergencyExitAlwaysPermitted = emergencyExitAlwaysPermitted;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithFocusFirewallSessionItem._();
+
+  factory ZenithFocusFirewallSessionItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithFocusFirewallSessionItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithFocusFirewallSessionItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'firewallCode')
+    ..aOS(4, _omitFieldNames ? '' : 'sessionTitle')
+    ..aOS(5, _omitFieldNames ? '' : 'enforcementMode')
+    ..aOS(6, _omitFieldNames ? '' : 'platformCapabilityMatrix')
+    ..aOS(7, _omitFieldNames ? '' : 'whitelistedEmergencyPaths')
+    ..aOS(8, _omitFieldNames ? '' : 'overrideFrictionAndLog')
+    ..aOS(9, _omitFieldNames ? '' : 'firewallState')
+    ..aOB(10, _omitFieldNames ? '' : 'emergencyExitAlwaysPermitted')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithFocusFirewallSessionItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithFocusFirewallSessionItem copyWith(
+          void Function(ZenithFocusFirewallSessionItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as ZenithFocusFirewallSessionItem))
+          as ZenithFocusFirewallSessionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithFocusFirewallSessionItem create() =>
+      ZenithFocusFirewallSessionItem._();
+  @$core.override
+  ZenithFocusFirewallSessionItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithFocusFirewallSessionItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithFocusFirewallSessionItem>(create);
+  static ZenithFocusFirewallSessionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get firewallCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set firewallCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFirewallCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFirewallCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sessionTitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sessionTitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSessionTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSessionTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get enforcementMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set enforcementMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEnforcementMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnforcementMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get platformCapabilityMatrix => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set platformCapabilityMatrix($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPlatformCapabilityMatrix() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPlatformCapabilityMatrix() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get whitelistedEmergencyPaths => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set whitelistedEmergencyPaths($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWhitelistedEmergencyPaths() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWhitelistedEmergencyPaths() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get overrideFrictionAndLog => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set overrideFrictionAndLog($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOverrideFrictionAndLog() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOverrideFrictionAndLog() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get firewallState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set firewallState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasFirewallState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFirewallState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get emergencyExitAlwaysPermitted => $_getBF(9);
+  @$pb.TagNumber(10)
+  set emergencyExitAlwaysPermitted($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasEmergencyExitAlwaysPermitted() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearEmergencyExitAlwaysPermitted() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetZenithFocusFirewallWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithFocusFirewallWorkbenchRequest() => create();
+
+  GetZenithFocusFirewallWorkbenchRequest._();
+
+  factory GetZenithFocusFirewallWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithFocusFirewallWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithFocusFirewallWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithFocusFirewallWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithFocusFirewallWorkbenchRequest copyWith(
+          void Function(GetZenithFocusFirewallWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithFocusFirewallWorkbenchRequest))
+          as GetZenithFocusFirewallWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithFocusFirewallWorkbenchRequest create() =>
+      GetZenithFocusFirewallWorkbenchRequest._();
+  @$core.override
+  GetZenithFocusFirewallWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithFocusFirewallWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithFocusFirewallWorkbenchRequest>(create);
+  static GetZenithFocusFirewallWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithFocusFirewallWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetZenithFocusFirewallWorkbenchResponse({
+    $core.Iterable<ZenithFocusFirewallSessionItem>? sessions,
+    $core.bool? emergencyExitAlwaysPermittedEnforced,
+    $core.String? honestPlatformCapabilitySummary,
+  }) {
+    final result = create();
+    if (sessions != null) result.sessions.addAll(sessions);
+    if (emergencyExitAlwaysPermittedEnforced != null)
+      result.emergencyExitAlwaysPermittedEnforced =
+          emergencyExitAlwaysPermittedEnforced;
+    if (honestPlatformCapabilitySummary != null)
+      result.honestPlatformCapabilitySummary = honestPlatformCapabilitySummary;
+    return result;
+  }
+
+  GetZenithFocusFirewallWorkbenchResponse._();
+
+  factory GetZenithFocusFirewallWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithFocusFirewallWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithFocusFirewallWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithFocusFirewallSessionItem>(1, _omitFieldNames ? '' : 'sessions',
+        subBuilder: ZenithFocusFirewallSessionItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'emergencyExitAlwaysPermittedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'honestPlatformCapabilitySummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithFocusFirewallWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithFocusFirewallWorkbenchResponse copyWith(
+          void Function(GetZenithFocusFirewallWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithFocusFirewallWorkbenchResponse))
+          as GetZenithFocusFirewallWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithFocusFirewallWorkbenchResponse create() =>
+      GetZenithFocusFirewallWorkbenchResponse._();
+  @$core.override
+  GetZenithFocusFirewallWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithFocusFirewallWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithFocusFirewallWorkbenchResponse>(create);
+  static GetZenithFocusFirewallWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithFocusFirewallSessionItem> get sessions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get emergencyExitAlwaysPermittedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set emergencyExitAlwaysPermittedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEmergencyExitAlwaysPermittedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmergencyExitAlwaysPermittedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get honestPlatformCapabilitySummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set honestPlatformCapabilitySummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHonestPlatformCapabilitySummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHonestPlatformCapabilitySummary() => $_clearField(3);
+}
+
+class SaveZenithFocusFirewallSessionRequest extends $pb.GeneratedMessage {
+  factory SaveZenithFocusFirewallSessionRequest({
+    $core.String? firewallCode,
+    $core.String? sessionTitle,
+    $core.String? enforcementMode,
+    $core.String? platformCapabilityMatrix,
+    $core.String? whitelistedEmergencyPaths,
+    $core.String? overrideFrictionAndLog,
+    $core.String? firewallState,
+  }) {
+    final result = create();
+    if (firewallCode != null) result.firewallCode = firewallCode;
+    if (sessionTitle != null) result.sessionTitle = sessionTitle;
+    if (enforcementMode != null) result.enforcementMode = enforcementMode;
+    if (platformCapabilityMatrix != null)
+      result.platformCapabilityMatrix = platformCapabilityMatrix;
+    if (whitelistedEmergencyPaths != null)
+      result.whitelistedEmergencyPaths = whitelistedEmergencyPaths;
+    if (overrideFrictionAndLog != null)
+      result.overrideFrictionAndLog = overrideFrictionAndLog;
+    if (firewallState != null) result.firewallState = firewallState;
+    return result;
+  }
+
+  SaveZenithFocusFirewallSessionRequest._();
+
+  factory SaveZenithFocusFirewallSessionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithFocusFirewallSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithFocusFirewallSessionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'firewallCode')
+    ..aOS(2, _omitFieldNames ? '' : 'sessionTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'enforcementMode')
+    ..aOS(4, _omitFieldNames ? '' : 'platformCapabilityMatrix')
+    ..aOS(5, _omitFieldNames ? '' : 'whitelistedEmergencyPaths')
+    ..aOS(6, _omitFieldNames ? '' : 'overrideFrictionAndLog')
+    ..aOS(7, _omitFieldNames ? '' : 'firewallState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithFocusFirewallSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithFocusFirewallSessionRequest copyWith(
+          void Function(SaveZenithFocusFirewallSessionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithFocusFirewallSessionRequest))
+          as SaveZenithFocusFirewallSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithFocusFirewallSessionRequest create() =>
+      SaveZenithFocusFirewallSessionRequest._();
+  @$core.override
+  SaveZenithFocusFirewallSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithFocusFirewallSessionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithFocusFirewallSessionRequest>(create);
+  static SaveZenithFocusFirewallSessionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get firewallCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set firewallCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFirewallCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFirewallCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sessionTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sessionTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSessionTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSessionTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get enforcementMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set enforcementMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEnforcementMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEnforcementMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get platformCapabilityMatrix => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set platformCapabilityMatrix($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlatformCapabilityMatrix() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlatformCapabilityMatrix() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get whitelistedEmergencyPaths => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set whitelistedEmergencyPaths($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWhitelistedEmergencyPaths() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWhitelistedEmergencyPaths() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get overrideFrictionAndLog => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set overrideFrictionAndLog($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOverrideFrictionAndLog() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOverrideFrictionAndLog() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get firewallState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set firewallState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFirewallState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFirewallState() => $_clearField(7);
+}
+
+class SaveZenithFocusFirewallSessionResponse extends $pb.GeneratedMessage {
+  factory SaveZenithFocusFirewallSessionResponse({
+    ZenithFocusFirewallSessionItem? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  SaveZenithFocusFirewallSessionResponse._();
+
+  factory SaveZenithFocusFirewallSessionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithFocusFirewallSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithFocusFirewallSessionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithFocusFirewallSessionItem>(1, _omitFieldNames ? '' : 'session',
+        subBuilder: ZenithFocusFirewallSessionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithFocusFirewallSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithFocusFirewallSessionResponse copyWith(
+          void Function(SaveZenithFocusFirewallSessionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithFocusFirewallSessionResponse))
+          as SaveZenithFocusFirewallSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithFocusFirewallSessionResponse create() =>
+      SaveZenithFocusFirewallSessionResponse._();
+  @$core.override
+  SaveZenithFocusFirewallSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithFocusFirewallSessionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithFocusFirewallSessionResponse>(create);
+  static SaveZenithFocusFirewallSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithFocusFirewallSessionItem get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ZenithFocusFirewallSessionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithFocusFirewallSessionItem ensureSession() => $_ensure(0);
+}
+
+class TriggerZenithFocusFirewallBypassOrCompleteRequest
+    extends $pb.GeneratedMessage {
+  factory TriggerZenithFocusFirewallBypassOrCompleteRequest({
+    $core.String? firewallCode,
+    $core.String? targetState,
+    $core.String? overrideReasonNote,
+  }) {
+    final result = create();
+    if (firewallCode != null) result.firewallCode = firewallCode;
+    if (targetState != null) result.targetState = targetState;
+    if (overrideReasonNote != null)
+      result.overrideReasonNote = overrideReasonNote;
+    return result;
+  }
+
+  TriggerZenithFocusFirewallBypassOrCompleteRequest._();
+
+  factory TriggerZenithFocusFirewallBypassOrCompleteRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerZenithFocusFirewallBypassOrCompleteRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'TriggerZenithFocusFirewallBypassOrCompleteRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'firewallCode')
+    ..aOS(2, _omitFieldNames ? '' : 'targetState')
+    ..aOS(3, _omitFieldNames ? '' : 'overrideReasonNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerZenithFocusFirewallBypassOrCompleteRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerZenithFocusFirewallBypassOrCompleteRequest copyWith(
+          void Function(TriggerZenithFocusFirewallBypassOrCompleteRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as TriggerZenithFocusFirewallBypassOrCompleteRequest))
+          as TriggerZenithFocusFirewallBypassOrCompleteRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerZenithFocusFirewallBypassOrCompleteRequest create() =>
+      TriggerZenithFocusFirewallBypassOrCompleteRequest._();
+  @$core.override
+  TriggerZenithFocusFirewallBypassOrCompleteRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerZenithFocusFirewallBypassOrCompleteRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerZenithFocusFirewallBypassOrCompleteRequest>(create);
+  static TriggerZenithFocusFirewallBypassOrCompleteRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get firewallCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set firewallCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFirewallCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFirewallCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get overrideReasonNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set overrideReasonNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOverrideReasonNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOverrideReasonNote() => $_clearField(3);
+}
+
+class TriggerZenithFocusFirewallBypassOrCompleteResponse
+    extends $pb.GeneratedMessage {
+  factory TriggerZenithFocusFirewallBypassOrCompleteResponse({
+    ZenithFocusFirewallSessionItem? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  TriggerZenithFocusFirewallBypassOrCompleteResponse._();
+
+  factory TriggerZenithFocusFirewallBypassOrCompleteResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerZenithFocusFirewallBypassOrCompleteResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'TriggerZenithFocusFirewallBypassOrCompleteResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithFocusFirewallSessionItem>(1, _omitFieldNames ? '' : 'session',
+        subBuilder: ZenithFocusFirewallSessionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerZenithFocusFirewallBypassOrCompleteResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerZenithFocusFirewallBypassOrCompleteResponse copyWith(
+          void Function(TriggerZenithFocusFirewallBypassOrCompleteResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as TriggerZenithFocusFirewallBypassOrCompleteResponse))
+          as TriggerZenithFocusFirewallBypassOrCompleteResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerZenithFocusFirewallBypassOrCompleteResponse create() =>
+      TriggerZenithFocusFirewallBypassOrCompleteResponse._();
+  @$core.override
+  TriggerZenithFocusFirewallBypassOrCompleteResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerZenithFocusFirewallBypassOrCompleteResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerZenithFocusFirewallBypassOrCompleteResponse>(create);
+  static TriggerZenithFocusFirewallBypassOrCompleteResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithFocusFirewallSessionItem get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ZenithFocusFirewallSessionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithFocusFirewallSessionItem ensureSession() => $_ensure(0);
+}
+
+/// Choice 2 (Z2): Adaptive Day Architect
+class ZenithAdaptiveDayArchitectPlanItem extends $pb.GeneratedMessage {
+  factory ZenithAdaptiveDayArchitectPlanItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? planCode,
+    $core.String? planDateLabel,
+    $core.String? calendarSnapshotLagAndCoverage,
+    $core.String? proposedFocusAndBufferWindows,
+    $core.String? whatChangedReplanDiff,
+    $core.String? readinessFallbackMode,
+    $core.String? planState,
+    $core.bool? silentCalendarMoveBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (planCode != null) result.planCode = planCode;
+    if (planDateLabel != null) result.planDateLabel = planDateLabel;
+    if (calendarSnapshotLagAndCoverage != null)
+      result.calendarSnapshotLagAndCoverage = calendarSnapshotLagAndCoverage;
+    if (proposedFocusAndBufferWindows != null)
+      result.proposedFocusAndBufferWindows = proposedFocusAndBufferWindows;
+    if (whatChangedReplanDiff != null)
+      result.whatChangedReplanDiff = whatChangedReplanDiff;
+    if (readinessFallbackMode != null)
+      result.readinessFallbackMode = readinessFallbackMode;
+    if (planState != null) result.planState = planState;
+    if (silentCalendarMoveBlocked != null)
+      result.silentCalendarMoveBlocked = silentCalendarMoveBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithAdaptiveDayArchitectPlanItem._();
+
+  factory ZenithAdaptiveDayArchitectPlanItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithAdaptiveDayArchitectPlanItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithAdaptiveDayArchitectPlanItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'planCode')
+    ..aOS(4, _omitFieldNames ? '' : 'planDateLabel')
+    ..aOS(5, _omitFieldNames ? '' : 'calendarSnapshotLagAndCoverage')
+    ..aOS(6, _omitFieldNames ? '' : 'proposedFocusAndBufferWindows')
+    ..aOS(7, _omitFieldNames ? '' : 'whatChangedReplanDiff')
+    ..aOS(8, _omitFieldNames ? '' : 'readinessFallbackMode')
+    ..aOS(9, _omitFieldNames ? '' : 'planState')
+    ..aOB(10, _omitFieldNames ? '' : 'silentCalendarMoveBlocked')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithAdaptiveDayArchitectPlanItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithAdaptiveDayArchitectPlanItem copyWith(
+          void Function(ZenithAdaptiveDayArchitectPlanItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithAdaptiveDayArchitectPlanItem))
+          as ZenithAdaptiveDayArchitectPlanItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithAdaptiveDayArchitectPlanItem create() =>
+      ZenithAdaptiveDayArchitectPlanItem._();
+  @$core.override
+  ZenithAdaptiveDayArchitectPlanItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithAdaptiveDayArchitectPlanItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithAdaptiveDayArchitectPlanItem>(
+          create);
+  static ZenithAdaptiveDayArchitectPlanItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get planCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set planCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlanCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlanCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get planDateLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set planDateLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlanDateLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlanDateLabel() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get calendarSnapshotLagAndCoverage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set calendarSnapshotLagAndCoverage($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCalendarSnapshotLagAndCoverage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCalendarSnapshotLagAndCoverage() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get proposedFocusAndBufferWindows => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set proposedFocusAndBufferWindows($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProposedFocusAndBufferWindows() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProposedFocusAndBufferWindows() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get whatChangedReplanDiff => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set whatChangedReplanDiff($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWhatChangedReplanDiff() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWhatChangedReplanDiff() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get readinessFallbackMode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set readinessFallbackMode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReadinessFallbackMode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReadinessFallbackMode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get planState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set planState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasPlanState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPlanState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get silentCalendarMoveBlocked => $_getBF(9);
+  @$pb.TagNumber(10)
+  set silentCalendarMoveBlocked($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSilentCalendarMoveBlocked() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSilentCalendarMoveBlocked() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetZenithAdaptiveDayArchitectWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetZenithAdaptiveDayArchitectWorkbenchRequest() => create();
+
+  GetZenithAdaptiveDayArchitectWorkbenchRequest._();
+
+  factory GetZenithAdaptiveDayArchitectWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithAdaptiveDayArchitectWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithAdaptiveDayArchitectWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAdaptiveDayArchitectWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAdaptiveDayArchitectWorkbenchRequest copyWith(
+          void Function(GetZenithAdaptiveDayArchitectWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithAdaptiveDayArchitectWorkbenchRequest))
+          as GetZenithAdaptiveDayArchitectWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAdaptiveDayArchitectWorkbenchRequest create() =>
+      GetZenithAdaptiveDayArchitectWorkbenchRequest._();
+  @$core.override
+  GetZenithAdaptiveDayArchitectWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAdaptiveDayArchitectWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithAdaptiveDayArchitectWorkbenchRequest>(create);
+  static GetZenithAdaptiveDayArchitectWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithAdaptiveDayArchitectWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithAdaptiveDayArchitectWorkbenchResponse({
+    $core.Iterable<ZenithAdaptiveDayArchitectPlanItem>? plans,
+    $core.bool? silentCalendarMoveBlockedEnforced,
+    $core.String? noSensorFallbackSummary,
+  }) {
+    final result = create();
+    if (plans != null) result.plans.addAll(plans);
+    if (silentCalendarMoveBlockedEnforced != null)
+      result.silentCalendarMoveBlockedEnforced =
+          silentCalendarMoveBlockedEnforced;
+    if (noSensorFallbackSummary != null)
+      result.noSensorFallbackSummary = noSensorFallbackSummary;
+    return result;
+  }
+
+  GetZenithAdaptiveDayArchitectWorkbenchResponse._();
+
+  factory GetZenithAdaptiveDayArchitectWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithAdaptiveDayArchitectWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithAdaptiveDayArchitectWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithAdaptiveDayArchitectPlanItem>(1, _omitFieldNames ? '' : 'plans',
+        subBuilder: ZenithAdaptiveDayArchitectPlanItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'silentCalendarMoveBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'noSensorFallbackSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAdaptiveDayArchitectWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAdaptiveDayArchitectWorkbenchResponse copyWith(
+          void Function(GetZenithAdaptiveDayArchitectWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithAdaptiveDayArchitectWorkbenchResponse))
+          as GetZenithAdaptiveDayArchitectWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAdaptiveDayArchitectWorkbenchResponse create() =>
+      GetZenithAdaptiveDayArchitectWorkbenchResponse._();
+  @$core.override
+  GetZenithAdaptiveDayArchitectWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAdaptiveDayArchitectWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithAdaptiveDayArchitectWorkbenchResponse>(create);
+  static GetZenithAdaptiveDayArchitectWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithAdaptiveDayArchitectPlanItem> get plans => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get silentCalendarMoveBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set silentCalendarMoveBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSilentCalendarMoveBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSilentCalendarMoveBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get noSensorFallbackSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set noSensorFallbackSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoSensorFallbackSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoSensorFallbackSummary() => $_clearField(3);
+}
+
+class SaveZenithAdaptiveDayArchitectPlanRequest extends $pb.GeneratedMessage {
+  factory SaveZenithAdaptiveDayArchitectPlanRequest({
+    $core.String? planCode,
+    $core.String? planDateLabel,
+    $core.String? calendarSnapshotLagAndCoverage,
+    $core.String? proposedFocusAndBufferWindows,
+    $core.String? whatChangedReplanDiff,
+    $core.String? readinessFallbackMode,
+    $core.String? planState,
+  }) {
+    final result = create();
+    if (planCode != null) result.planCode = planCode;
+    if (planDateLabel != null) result.planDateLabel = planDateLabel;
+    if (calendarSnapshotLagAndCoverage != null)
+      result.calendarSnapshotLagAndCoverage = calendarSnapshotLagAndCoverage;
+    if (proposedFocusAndBufferWindows != null)
+      result.proposedFocusAndBufferWindows = proposedFocusAndBufferWindows;
+    if (whatChangedReplanDiff != null)
+      result.whatChangedReplanDiff = whatChangedReplanDiff;
+    if (readinessFallbackMode != null)
+      result.readinessFallbackMode = readinessFallbackMode;
+    if (planState != null) result.planState = planState;
+    return result;
+  }
+
+  SaveZenithAdaptiveDayArchitectPlanRequest._();
+
+  factory SaveZenithAdaptiveDayArchitectPlanRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithAdaptiveDayArchitectPlanRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithAdaptiveDayArchitectPlanRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'planCode')
+    ..aOS(2, _omitFieldNames ? '' : 'planDateLabel')
+    ..aOS(3, _omitFieldNames ? '' : 'calendarSnapshotLagAndCoverage')
+    ..aOS(4, _omitFieldNames ? '' : 'proposedFocusAndBufferWindows')
+    ..aOS(5, _omitFieldNames ? '' : 'whatChangedReplanDiff')
+    ..aOS(6, _omitFieldNames ? '' : 'readinessFallbackMode')
+    ..aOS(7, _omitFieldNames ? '' : 'planState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAdaptiveDayArchitectPlanRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAdaptiveDayArchitectPlanRequest copyWith(
+          void Function(SaveZenithAdaptiveDayArchitectPlanRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithAdaptiveDayArchitectPlanRequest))
+          as SaveZenithAdaptiveDayArchitectPlanRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAdaptiveDayArchitectPlanRequest create() =>
+      SaveZenithAdaptiveDayArchitectPlanRequest._();
+  @$core.override
+  SaveZenithAdaptiveDayArchitectPlanRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAdaptiveDayArchitectPlanRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithAdaptiveDayArchitectPlanRequest>(create);
+  static SaveZenithAdaptiveDayArchitectPlanRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get planCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set planCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlanCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlanCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get planDateLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set planDateLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPlanDateLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlanDateLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get calendarSnapshotLagAndCoverage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set calendarSnapshotLagAndCoverage($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCalendarSnapshotLagAndCoverage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCalendarSnapshotLagAndCoverage() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get proposedFocusAndBufferWindows => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set proposedFocusAndBufferWindows($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProposedFocusAndBufferWindows() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProposedFocusAndBufferWindows() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get whatChangedReplanDiff => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set whatChangedReplanDiff($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWhatChangedReplanDiff() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWhatChangedReplanDiff() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get readinessFallbackMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set readinessFallbackMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReadinessFallbackMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReadinessFallbackMode() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get planState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set planState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPlanState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPlanState() => $_clearField(7);
+}
+
+class SaveZenithAdaptiveDayArchitectPlanResponse extends $pb.GeneratedMessage {
+  factory SaveZenithAdaptiveDayArchitectPlanResponse({
+    ZenithAdaptiveDayArchitectPlanItem? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  SaveZenithAdaptiveDayArchitectPlanResponse._();
+
+  factory SaveZenithAdaptiveDayArchitectPlanResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithAdaptiveDayArchitectPlanResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithAdaptiveDayArchitectPlanResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithAdaptiveDayArchitectPlanItem>(1, _omitFieldNames ? '' : 'plan',
+        subBuilder: ZenithAdaptiveDayArchitectPlanItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAdaptiveDayArchitectPlanResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAdaptiveDayArchitectPlanResponse copyWith(
+          void Function(SaveZenithAdaptiveDayArchitectPlanResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithAdaptiveDayArchitectPlanResponse))
+          as SaveZenithAdaptiveDayArchitectPlanResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAdaptiveDayArchitectPlanResponse create() =>
+      SaveZenithAdaptiveDayArchitectPlanResponse._();
+  @$core.override
+  SaveZenithAdaptiveDayArchitectPlanResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAdaptiveDayArchitectPlanResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithAdaptiveDayArchitectPlanResponse>(create);
+  static SaveZenithAdaptiveDayArchitectPlanResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithAdaptiveDayArchitectPlanItem get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(ZenithAdaptiveDayArchitectPlanItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithAdaptiveDayArchitectPlanItem ensurePlan() => $_ensure(0);
+}
+
+class AcceptOrReplanZenithDayArchitectRequest extends $pb.GeneratedMessage {
+  factory AcceptOrReplanZenithDayArchitectRequest({
+    $core.String? planCode,
+    $core.String? targetState,
+    $core.String? whatChangedReplanDiff,
+  }) {
+    final result = create();
+    if (planCode != null) result.planCode = planCode;
+    if (targetState != null) result.targetState = targetState;
+    if (whatChangedReplanDiff != null)
+      result.whatChangedReplanDiff = whatChangedReplanDiff;
+    return result;
+  }
+
+  AcceptOrReplanZenithDayArchitectRequest._();
+
+  factory AcceptOrReplanZenithDayArchitectRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcceptOrReplanZenithDayArchitectRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcceptOrReplanZenithDayArchitectRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'planCode')
+    ..aOS(2, _omitFieldNames ? '' : 'targetState')
+    ..aOS(3, _omitFieldNames ? '' : 'whatChangedReplanDiff')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcceptOrReplanZenithDayArchitectRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcceptOrReplanZenithDayArchitectRequest copyWith(
+          void Function(AcceptOrReplanZenithDayArchitectRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcceptOrReplanZenithDayArchitectRequest))
+          as AcceptOrReplanZenithDayArchitectRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcceptOrReplanZenithDayArchitectRequest create() =>
+      AcceptOrReplanZenithDayArchitectRequest._();
+  @$core.override
+  AcceptOrReplanZenithDayArchitectRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcceptOrReplanZenithDayArchitectRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcceptOrReplanZenithDayArchitectRequest>(create);
+  static AcceptOrReplanZenithDayArchitectRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get planCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set planCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlanCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlanCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get whatChangedReplanDiff => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set whatChangedReplanDiff($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWhatChangedReplanDiff() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWhatChangedReplanDiff() => $_clearField(3);
+}
+
+class AcceptOrReplanZenithDayArchitectResponse extends $pb.GeneratedMessage {
+  factory AcceptOrReplanZenithDayArchitectResponse({
+    ZenithAdaptiveDayArchitectPlanItem? plan,
+  }) {
+    final result = create();
+    if (plan != null) result.plan = plan;
+    return result;
+  }
+
+  AcceptOrReplanZenithDayArchitectResponse._();
+
+  factory AcceptOrReplanZenithDayArchitectResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcceptOrReplanZenithDayArchitectResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcceptOrReplanZenithDayArchitectResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithAdaptiveDayArchitectPlanItem>(1, _omitFieldNames ? '' : 'plan',
+        subBuilder: ZenithAdaptiveDayArchitectPlanItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcceptOrReplanZenithDayArchitectResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcceptOrReplanZenithDayArchitectResponse copyWith(
+          void Function(AcceptOrReplanZenithDayArchitectResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AcceptOrReplanZenithDayArchitectResponse))
+          as AcceptOrReplanZenithDayArchitectResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcceptOrReplanZenithDayArchitectResponse create() =>
+      AcceptOrReplanZenithDayArchitectResponse._();
+  @$core.override
+  AcceptOrReplanZenithDayArchitectResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AcceptOrReplanZenithDayArchitectResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcceptOrReplanZenithDayArchitectResponse>(create);
+  static AcceptOrReplanZenithDayArchitectResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithAdaptiveDayArchitectPlanItem get plan => $_getN(0);
+  @$pb.TagNumber(1)
+  set plan(ZenithAdaptiveDayArchitectPlanItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithAdaptiveDayArchitectPlanItem ensurePlan() => $_ensure(0);
+}
+
+/// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+class ZenithIntentionOutcomeContractItem extends $pb.GeneratedMessage {
+  factory ZenithIntentionOutcomeContractItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? intentionCode,
+    $core.String? projectAndDeliverable,
+    $core.String? doneForNowCriteria,
+    $core.String? capturedOutputAndObstacle,
+    $core.String? nextActionStep,
+    $core.String? loopState,
+    $core.bool? surveillanceScoringDisabled,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (intentionCode != null) result.intentionCode = intentionCode;
+    if (projectAndDeliverable != null)
+      result.projectAndDeliverable = projectAndDeliverable;
+    if (doneForNowCriteria != null)
+      result.doneForNowCriteria = doneForNowCriteria;
+    if (capturedOutputAndObstacle != null)
+      result.capturedOutputAndObstacle = capturedOutputAndObstacle;
+    if (nextActionStep != null) result.nextActionStep = nextActionStep;
+    if (loopState != null) result.loopState = loopState;
+    if (surveillanceScoringDisabled != null)
+      result.surveillanceScoringDisabled = surveillanceScoringDisabled;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithIntentionOutcomeContractItem._();
+
+  factory ZenithIntentionOutcomeContractItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithIntentionOutcomeContractItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithIntentionOutcomeContractItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'intentionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'projectAndDeliverable')
+    ..aOS(5, _omitFieldNames ? '' : 'doneForNowCriteria')
+    ..aOS(6, _omitFieldNames ? '' : 'capturedOutputAndObstacle')
+    ..aOS(7, _omitFieldNames ? '' : 'nextActionStep')
+    ..aOS(8, _omitFieldNames ? '' : 'loopState')
+    ..aOB(9, _omitFieldNames ? '' : 'surveillanceScoringDisabled')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithIntentionOutcomeContractItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithIntentionOutcomeContractItem copyWith(
+          void Function(ZenithIntentionOutcomeContractItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithIntentionOutcomeContractItem))
+          as ZenithIntentionOutcomeContractItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithIntentionOutcomeContractItem create() =>
+      ZenithIntentionOutcomeContractItem._();
+  @$core.override
+  ZenithIntentionOutcomeContractItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithIntentionOutcomeContractItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithIntentionOutcomeContractItem>(
+          create);
+  static ZenithIntentionOutcomeContractItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get intentionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set intentionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIntentionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIntentionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get projectAndDeliverable => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set projectAndDeliverable($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProjectAndDeliverable() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProjectAndDeliverable() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get doneForNowCriteria => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set doneForNowCriteria($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDoneForNowCriteria() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDoneForNowCriteria() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get capturedOutputAndObstacle => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set capturedOutputAndObstacle($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCapturedOutputAndObstacle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCapturedOutputAndObstacle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get nextActionStep => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set nextActionStep($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNextActionStep() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNextActionStep() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get loopState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set loopState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLoopState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLoopState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get surveillanceScoringDisabled => $_getBF(8);
+  @$pb.TagNumber(9)
+  set surveillanceScoringDisabled($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSurveillanceScoringDisabled() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSurveillanceScoringDisabled() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithIntentionOutcomeWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithIntentionOutcomeWorkbenchRequest() => create();
+
+  GetZenithIntentionOutcomeWorkbenchRequest._();
+
+  factory GetZenithIntentionOutcomeWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithIntentionOutcomeWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithIntentionOutcomeWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithIntentionOutcomeWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithIntentionOutcomeWorkbenchRequest copyWith(
+          void Function(GetZenithIntentionOutcomeWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithIntentionOutcomeWorkbenchRequest))
+          as GetZenithIntentionOutcomeWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithIntentionOutcomeWorkbenchRequest create() =>
+      GetZenithIntentionOutcomeWorkbenchRequest._();
+  @$core.override
+  GetZenithIntentionOutcomeWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithIntentionOutcomeWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithIntentionOutcomeWorkbenchRequest>(create);
+  static GetZenithIntentionOutcomeWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithIntentionOutcomeWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetZenithIntentionOutcomeWorkbenchResponse({
+    $core.Iterable<ZenithIntentionOutcomeContractItem>? contracts,
+    $core.bool? surveillanceScoringDisabledEnforced,
+    $core.String? quietSessionShellSummary,
+  }) {
+    final result = create();
+    if (contracts != null) result.contracts.addAll(contracts);
+    if (surveillanceScoringDisabledEnforced != null)
+      result.surveillanceScoringDisabledEnforced =
+          surveillanceScoringDisabledEnforced;
+    if (quietSessionShellSummary != null)
+      result.quietSessionShellSummary = quietSessionShellSummary;
+    return result;
+  }
+
+  GetZenithIntentionOutcomeWorkbenchResponse._();
+
+  factory GetZenithIntentionOutcomeWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithIntentionOutcomeWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithIntentionOutcomeWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithIntentionOutcomeContractItem>(
+        1, _omitFieldNames ? '' : 'contracts',
+        subBuilder: ZenithIntentionOutcomeContractItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'surveillanceScoringDisabledEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'quietSessionShellSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithIntentionOutcomeWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithIntentionOutcomeWorkbenchResponse copyWith(
+          void Function(GetZenithIntentionOutcomeWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithIntentionOutcomeWorkbenchResponse))
+          as GetZenithIntentionOutcomeWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithIntentionOutcomeWorkbenchResponse create() =>
+      GetZenithIntentionOutcomeWorkbenchResponse._();
+  @$core.override
+  GetZenithIntentionOutcomeWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithIntentionOutcomeWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithIntentionOutcomeWorkbenchResponse>(create);
+  static GetZenithIntentionOutcomeWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithIntentionOutcomeContractItem> get contracts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get surveillanceScoringDisabledEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set surveillanceScoringDisabledEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSurveillanceScoringDisabledEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSurveillanceScoringDisabledEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get quietSessionShellSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set quietSessionShellSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasQuietSessionShellSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearQuietSessionShellSummary() => $_clearField(3);
+}
+
+class SaveZenithIntentionOutcomeContractRequest extends $pb.GeneratedMessage {
+  factory SaveZenithIntentionOutcomeContractRequest({
+    $core.String? intentionCode,
+    $core.String? projectAndDeliverable,
+    $core.String? doneForNowCriteria,
+    $core.String? capturedOutputAndObstacle,
+    $core.String? nextActionStep,
+    $core.String? loopState,
+  }) {
+    final result = create();
+    if (intentionCode != null) result.intentionCode = intentionCode;
+    if (projectAndDeliverable != null)
+      result.projectAndDeliverable = projectAndDeliverable;
+    if (doneForNowCriteria != null)
+      result.doneForNowCriteria = doneForNowCriteria;
+    if (capturedOutputAndObstacle != null)
+      result.capturedOutputAndObstacle = capturedOutputAndObstacle;
+    if (nextActionStep != null) result.nextActionStep = nextActionStep;
+    if (loopState != null) result.loopState = loopState;
+    return result;
+  }
+
+  SaveZenithIntentionOutcomeContractRequest._();
+
+  factory SaveZenithIntentionOutcomeContractRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithIntentionOutcomeContractRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithIntentionOutcomeContractRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'intentionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'projectAndDeliverable')
+    ..aOS(3, _omitFieldNames ? '' : 'doneForNowCriteria')
+    ..aOS(4, _omitFieldNames ? '' : 'capturedOutputAndObstacle')
+    ..aOS(5, _omitFieldNames ? '' : 'nextActionStep')
+    ..aOS(6, _omitFieldNames ? '' : 'loopState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithIntentionOutcomeContractRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithIntentionOutcomeContractRequest copyWith(
+          void Function(SaveZenithIntentionOutcomeContractRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithIntentionOutcomeContractRequest))
+          as SaveZenithIntentionOutcomeContractRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithIntentionOutcomeContractRequest create() =>
+      SaveZenithIntentionOutcomeContractRequest._();
+  @$core.override
+  SaveZenithIntentionOutcomeContractRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithIntentionOutcomeContractRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithIntentionOutcomeContractRequest>(create);
+  static SaveZenithIntentionOutcomeContractRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get intentionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set intentionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIntentionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIntentionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get projectAndDeliverable => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set projectAndDeliverable($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProjectAndDeliverable() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProjectAndDeliverable() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get doneForNowCriteria => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set doneForNowCriteria($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDoneForNowCriteria() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDoneForNowCriteria() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get capturedOutputAndObstacle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set capturedOutputAndObstacle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCapturedOutputAndObstacle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCapturedOutputAndObstacle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get nextActionStep => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set nextActionStep($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNextActionStep() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNextActionStep() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get loopState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set loopState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLoopState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLoopState() => $_clearField(6);
+}
+
+class SaveZenithIntentionOutcomeContractResponse extends $pb.GeneratedMessage {
+  factory SaveZenithIntentionOutcomeContractResponse({
+    ZenithIntentionOutcomeContractItem? contract,
+  }) {
+    final result = create();
+    if (contract != null) result.contract = contract;
+    return result;
+  }
+
+  SaveZenithIntentionOutcomeContractResponse._();
+
+  factory SaveZenithIntentionOutcomeContractResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithIntentionOutcomeContractResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithIntentionOutcomeContractResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithIntentionOutcomeContractItem>(
+        1, _omitFieldNames ? '' : 'contract',
+        subBuilder: ZenithIntentionOutcomeContractItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithIntentionOutcomeContractResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithIntentionOutcomeContractResponse copyWith(
+          void Function(SaveZenithIntentionOutcomeContractResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithIntentionOutcomeContractResponse))
+          as SaveZenithIntentionOutcomeContractResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithIntentionOutcomeContractResponse create() =>
+      SaveZenithIntentionOutcomeContractResponse._();
+  @$core.override
+  SaveZenithIntentionOutcomeContractResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithIntentionOutcomeContractResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithIntentionOutcomeContractResponse>(create);
+  static SaveZenithIntentionOutcomeContractResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithIntentionOutcomeContractItem get contract => $_getN(0);
+  @$pb.TagNumber(1)
+  set contract(ZenithIntentionOutcomeContractItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContract() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContract() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithIntentionOutcomeContractItem ensureContract() => $_ensure(0);
+}
+
+class CompleteZenithIntentionOutcomeLoopRequest extends $pb.GeneratedMessage {
+  factory CompleteZenithIntentionOutcomeLoopRequest({
+    $core.String? intentionCode,
+    $core.String? capturedOutputAndObstacle,
+    $core.String? nextActionStep,
+    $core.String? loopState,
+  }) {
+    final result = create();
+    if (intentionCode != null) result.intentionCode = intentionCode;
+    if (capturedOutputAndObstacle != null)
+      result.capturedOutputAndObstacle = capturedOutputAndObstacle;
+    if (nextActionStep != null) result.nextActionStep = nextActionStep;
+    if (loopState != null) result.loopState = loopState;
+    return result;
+  }
+
+  CompleteZenithIntentionOutcomeLoopRequest._();
+
+  factory CompleteZenithIntentionOutcomeLoopRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompleteZenithIntentionOutcomeLoopRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompleteZenithIntentionOutcomeLoopRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'intentionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'capturedOutputAndObstacle')
+    ..aOS(3, _omitFieldNames ? '' : 'nextActionStep')
+    ..aOS(4, _omitFieldNames ? '' : 'loopState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteZenithIntentionOutcomeLoopRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteZenithIntentionOutcomeLoopRequest copyWith(
+          void Function(CompleteZenithIntentionOutcomeLoopRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CompleteZenithIntentionOutcomeLoopRequest))
+          as CompleteZenithIntentionOutcomeLoopRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompleteZenithIntentionOutcomeLoopRequest create() =>
+      CompleteZenithIntentionOutcomeLoopRequest._();
+  @$core.override
+  CompleteZenithIntentionOutcomeLoopRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompleteZenithIntentionOutcomeLoopRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CompleteZenithIntentionOutcomeLoopRequest>(create);
+  static CompleteZenithIntentionOutcomeLoopRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get intentionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set intentionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIntentionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIntentionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get capturedOutputAndObstacle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set capturedOutputAndObstacle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCapturedOutputAndObstacle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCapturedOutputAndObstacle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nextActionStep => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nextActionStep($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNextActionStep() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNextActionStep() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get loopState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set loopState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLoopState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoopState() => $_clearField(4);
+}
+
+class CompleteZenithIntentionOutcomeLoopResponse extends $pb.GeneratedMessage {
+  factory CompleteZenithIntentionOutcomeLoopResponse({
+    ZenithIntentionOutcomeContractItem? contract,
+  }) {
+    final result = create();
+    if (contract != null) result.contract = contract;
+    return result;
+  }
+
+  CompleteZenithIntentionOutcomeLoopResponse._();
+
+  factory CompleteZenithIntentionOutcomeLoopResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompleteZenithIntentionOutcomeLoopResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompleteZenithIntentionOutcomeLoopResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithIntentionOutcomeContractItem>(
+        1, _omitFieldNames ? '' : 'contract',
+        subBuilder: ZenithIntentionOutcomeContractItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteZenithIntentionOutcomeLoopResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompleteZenithIntentionOutcomeLoopResponse copyWith(
+          void Function(CompleteZenithIntentionOutcomeLoopResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CompleteZenithIntentionOutcomeLoopResponse))
+          as CompleteZenithIntentionOutcomeLoopResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompleteZenithIntentionOutcomeLoopResponse create() =>
+      CompleteZenithIntentionOutcomeLoopResponse._();
+  @$core.override
+  CompleteZenithIntentionOutcomeLoopResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompleteZenithIntentionOutcomeLoopResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CompleteZenithIntentionOutcomeLoopResponse>(create);
+  static CompleteZenithIntentionOutcomeLoopResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithIntentionOutcomeContractItem get contract => $_getN(0);
+  @$pb.TagNumber(1)
+  set contract(ZenithIntentionOutcomeContractItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasContract() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearContract() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithIntentionOutcomeContractItem ensureContract() => $_ensure(0);
+}
+
+/// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+class ZenithAttentionNOf1ExperimentItem extends $pb.GeneratedMessage {
+  factory ZenithAttentionNOf1ExperimentItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? experimentCode,
+    $core.String? hypothesisAndProtocol,
+    $core.String? predeclaredMeasureAndMinSamples,
+    $core.String? interruptionRecoverySummary,
+    $core.String? correlationVsCausationNote,
+    $core.String? experimentState,
+    $core.bool? contentKeystrokeCaptureBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (experimentCode != null) result.experimentCode = experimentCode;
+    if (hypothesisAndProtocol != null)
+      result.hypothesisAndProtocol = hypothesisAndProtocol;
+    if (predeclaredMeasureAndMinSamples != null)
+      result.predeclaredMeasureAndMinSamples = predeclaredMeasureAndMinSamples;
+    if (interruptionRecoverySummary != null)
+      result.interruptionRecoverySummary = interruptionRecoverySummary;
+    if (correlationVsCausationNote != null)
+      result.correlationVsCausationNote = correlationVsCausationNote;
+    if (experimentState != null) result.experimentState = experimentState;
+    if (contentKeystrokeCaptureBlocked != null)
+      result.contentKeystrokeCaptureBlocked = contentKeystrokeCaptureBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithAttentionNOf1ExperimentItem._();
+
+  factory ZenithAttentionNOf1ExperimentItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithAttentionNOf1ExperimentItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithAttentionNOf1ExperimentItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'experimentCode')
+    ..aOS(4, _omitFieldNames ? '' : 'hypothesisAndProtocol')
+    ..aOS(5, _omitFieldNames ? '' : 'predeclaredMeasureAndMinSamples')
+    ..aOS(6, _omitFieldNames ? '' : 'interruptionRecoverySummary')
+    ..aOS(7, _omitFieldNames ? '' : 'correlationVsCausationNote')
+    ..aOS(8, _omitFieldNames ? '' : 'experimentState')
+    ..aOB(9, _omitFieldNames ? '' : 'contentKeystrokeCaptureBlocked')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithAttentionNOf1ExperimentItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithAttentionNOf1ExperimentItem copyWith(
+          void Function(ZenithAttentionNOf1ExperimentItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithAttentionNOf1ExperimentItem))
+          as ZenithAttentionNOf1ExperimentItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithAttentionNOf1ExperimentItem create() =>
+      ZenithAttentionNOf1ExperimentItem._();
+  @$core.override
+  ZenithAttentionNOf1ExperimentItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithAttentionNOf1ExperimentItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithAttentionNOf1ExperimentItem>(
+          create);
+  static ZenithAttentionNOf1ExperimentItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get experimentCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set experimentCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExperimentCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExperimentCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get hypothesisAndProtocol => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set hypothesisAndProtocol($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasHypothesisAndProtocol() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHypothesisAndProtocol() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get predeclaredMeasureAndMinSamples => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set predeclaredMeasureAndMinSamples($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPredeclaredMeasureAndMinSamples() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPredeclaredMeasureAndMinSamples() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get interruptionRecoverySummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set interruptionRecoverySummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasInterruptionRecoverySummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearInterruptionRecoverySummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get correlationVsCausationNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set correlationVsCausationNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCorrelationVsCausationNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCorrelationVsCausationNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get experimentState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set experimentState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExperimentState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExperimentState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get contentKeystrokeCaptureBlocked => $_getBF(8);
+  @$pb.TagNumber(9)
+  set contentKeystrokeCaptureBlocked($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasContentKeystrokeCaptureBlocked() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearContentKeystrokeCaptureBlocked() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithAttentionNOf1LabWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithAttentionNOf1LabWorkbenchRequest() => create();
+
+  GetZenithAttentionNOf1LabWorkbenchRequest._();
+
+  factory GetZenithAttentionNOf1LabWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithAttentionNOf1LabWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithAttentionNOf1LabWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAttentionNOf1LabWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAttentionNOf1LabWorkbenchRequest copyWith(
+          void Function(GetZenithAttentionNOf1LabWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithAttentionNOf1LabWorkbenchRequest))
+          as GetZenithAttentionNOf1LabWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAttentionNOf1LabWorkbenchRequest create() =>
+      GetZenithAttentionNOf1LabWorkbenchRequest._();
+  @$core.override
+  GetZenithAttentionNOf1LabWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAttentionNOf1LabWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithAttentionNOf1LabWorkbenchRequest>(create);
+  static GetZenithAttentionNOf1LabWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithAttentionNOf1LabWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetZenithAttentionNOf1LabWorkbenchResponse({
+    $core.Iterable<ZenithAttentionNOf1ExperimentItem>? experiments,
+    $core.bool? contentKeystrokeCaptureBlockedEnforced,
+    $core.String? correlationBoundarySummary,
+  }) {
+    final result = create();
+    if (experiments != null) result.experiments.addAll(experiments);
+    if (contentKeystrokeCaptureBlockedEnforced != null)
+      result.contentKeystrokeCaptureBlockedEnforced =
+          contentKeystrokeCaptureBlockedEnforced;
+    if (correlationBoundarySummary != null)
+      result.correlationBoundarySummary = correlationBoundarySummary;
+    return result;
+  }
+
+  GetZenithAttentionNOf1LabWorkbenchResponse._();
+
+  factory GetZenithAttentionNOf1LabWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithAttentionNOf1LabWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithAttentionNOf1LabWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithAttentionNOf1ExperimentItem>(
+        1, _omitFieldNames ? '' : 'experiments',
+        subBuilder: ZenithAttentionNOf1ExperimentItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'contentKeystrokeCaptureBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'correlationBoundarySummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAttentionNOf1LabWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithAttentionNOf1LabWorkbenchResponse copyWith(
+          void Function(GetZenithAttentionNOf1LabWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithAttentionNOf1LabWorkbenchResponse))
+          as GetZenithAttentionNOf1LabWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAttentionNOf1LabWorkbenchResponse create() =>
+      GetZenithAttentionNOf1LabWorkbenchResponse._();
+  @$core.override
+  GetZenithAttentionNOf1LabWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithAttentionNOf1LabWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithAttentionNOf1LabWorkbenchResponse>(create);
+  static GetZenithAttentionNOf1LabWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithAttentionNOf1ExperimentItem> get experiments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get contentKeystrokeCaptureBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set contentKeystrokeCaptureBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContentKeystrokeCaptureBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContentKeystrokeCaptureBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get correlationBoundarySummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set correlationBoundarySummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCorrelationBoundarySummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCorrelationBoundarySummary() => $_clearField(3);
+}
+
+class SaveZenithAttentionNOf1ExperimentRequest extends $pb.GeneratedMessage {
+  factory SaveZenithAttentionNOf1ExperimentRequest({
+    $core.String? experimentCode,
+    $core.String? hypothesisAndProtocol,
+    $core.String? predeclaredMeasureAndMinSamples,
+    $core.String? interruptionRecoverySummary,
+    $core.String? correlationVsCausationNote,
+    $core.String? experimentState,
+  }) {
+    final result = create();
+    if (experimentCode != null) result.experimentCode = experimentCode;
+    if (hypothesisAndProtocol != null)
+      result.hypothesisAndProtocol = hypothesisAndProtocol;
+    if (predeclaredMeasureAndMinSamples != null)
+      result.predeclaredMeasureAndMinSamples = predeclaredMeasureAndMinSamples;
+    if (interruptionRecoverySummary != null)
+      result.interruptionRecoverySummary = interruptionRecoverySummary;
+    if (correlationVsCausationNote != null)
+      result.correlationVsCausationNote = correlationVsCausationNote;
+    if (experimentState != null) result.experimentState = experimentState;
+    return result;
+  }
+
+  SaveZenithAttentionNOf1ExperimentRequest._();
+
+  factory SaveZenithAttentionNOf1ExperimentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithAttentionNOf1ExperimentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithAttentionNOf1ExperimentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'experimentCode')
+    ..aOS(2, _omitFieldNames ? '' : 'hypothesisAndProtocol')
+    ..aOS(3, _omitFieldNames ? '' : 'predeclaredMeasureAndMinSamples')
+    ..aOS(4, _omitFieldNames ? '' : 'interruptionRecoverySummary')
+    ..aOS(5, _omitFieldNames ? '' : 'correlationVsCausationNote')
+    ..aOS(6, _omitFieldNames ? '' : 'experimentState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAttentionNOf1ExperimentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAttentionNOf1ExperimentRequest copyWith(
+          void Function(SaveZenithAttentionNOf1ExperimentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithAttentionNOf1ExperimentRequest))
+          as SaveZenithAttentionNOf1ExperimentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAttentionNOf1ExperimentRequest create() =>
+      SaveZenithAttentionNOf1ExperimentRequest._();
+  @$core.override
+  SaveZenithAttentionNOf1ExperimentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAttentionNOf1ExperimentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithAttentionNOf1ExperimentRequest>(create);
+  static SaveZenithAttentionNOf1ExperimentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get experimentCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set experimentCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperimentCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperimentCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get hypothesisAndProtocol => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hypothesisAndProtocol($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHypothesisAndProtocol() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHypothesisAndProtocol() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get predeclaredMeasureAndMinSamples => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set predeclaredMeasureAndMinSamples($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPredeclaredMeasureAndMinSamples() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPredeclaredMeasureAndMinSamples() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get interruptionRecoverySummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set interruptionRecoverySummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInterruptionRecoverySummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInterruptionRecoverySummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get correlationVsCausationNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set correlationVsCausationNote($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCorrelationVsCausationNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCorrelationVsCausationNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get experimentState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set experimentState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExperimentState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExperimentState() => $_clearField(6);
+}
+
+class SaveZenithAttentionNOf1ExperimentResponse extends $pb.GeneratedMessage {
+  factory SaveZenithAttentionNOf1ExperimentResponse({
+    ZenithAttentionNOf1ExperimentItem? experiment,
+  }) {
+    final result = create();
+    if (experiment != null) result.experiment = experiment;
+    return result;
+  }
+
+  SaveZenithAttentionNOf1ExperimentResponse._();
+
+  factory SaveZenithAttentionNOf1ExperimentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithAttentionNOf1ExperimentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithAttentionNOf1ExperimentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithAttentionNOf1ExperimentItem>(
+        1, _omitFieldNames ? '' : 'experiment',
+        subBuilder: ZenithAttentionNOf1ExperimentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAttentionNOf1ExperimentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithAttentionNOf1ExperimentResponse copyWith(
+          void Function(SaveZenithAttentionNOf1ExperimentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithAttentionNOf1ExperimentResponse))
+          as SaveZenithAttentionNOf1ExperimentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAttentionNOf1ExperimentResponse create() =>
+      SaveZenithAttentionNOf1ExperimentResponse._();
+  @$core.override
+  SaveZenithAttentionNOf1ExperimentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithAttentionNOf1ExperimentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithAttentionNOf1ExperimentResponse>(create);
+  static SaveZenithAttentionNOf1ExperimentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithAttentionNOf1ExperimentItem get experiment => $_getN(0);
+  @$pb.TagNumber(1)
+  set experiment(ZenithAttentionNOf1ExperimentItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperiment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperiment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithAttentionNOf1ExperimentItem ensureExperiment() => $_ensure(0);
+}
+
+class EvaluateZenithAttentionNOf1ExperimentRequest
+    extends $pb.GeneratedMessage {
+  factory EvaluateZenithAttentionNOf1ExperimentRequest({
+    $core.String? experimentCode,
+    $core.String? experimentState,
+    $core.String? correlationVsCausationNote,
+  }) {
+    final result = create();
+    if (experimentCode != null) result.experimentCode = experimentCode;
+    if (experimentState != null) result.experimentState = experimentState;
+    if (correlationVsCausationNote != null)
+      result.correlationVsCausationNote = correlationVsCausationNote;
+    return result;
+  }
+
+  EvaluateZenithAttentionNOf1ExperimentRequest._();
+
+  factory EvaluateZenithAttentionNOf1ExperimentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateZenithAttentionNOf1ExperimentRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateZenithAttentionNOf1ExperimentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'experimentCode')
+    ..aOS(2, _omitFieldNames ? '' : 'experimentState')
+    ..aOS(3, _omitFieldNames ? '' : 'correlationVsCausationNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateZenithAttentionNOf1ExperimentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateZenithAttentionNOf1ExperimentRequest copyWith(
+          void Function(EvaluateZenithAttentionNOf1ExperimentRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as EvaluateZenithAttentionNOf1ExperimentRequest))
+          as EvaluateZenithAttentionNOf1ExperimentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateZenithAttentionNOf1ExperimentRequest create() =>
+      EvaluateZenithAttentionNOf1ExperimentRequest._();
+  @$core.override
+  EvaluateZenithAttentionNOf1ExperimentRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateZenithAttentionNOf1ExperimentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EvaluateZenithAttentionNOf1ExperimentRequest>(create);
+  static EvaluateZenithAttentionNOf1ExperimentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get experimentCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set experimentCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperimentCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperimentCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get experimentState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set experimentState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExperimentState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExperimentState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get correlationVsCausationNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set correlationVsCausationNote($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCorrelationVsCausationNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCorrelationVsCausationNote() => $_clearField(3);
+}
+
+class EvaluateZenithAttentionNOf1ExperimentResponse
+    extends $pb.GeneratedMessage {
+  factory EvaluateZenithAttentionNOf1ExperimentResponse({
+    ZenithAttentionNOf1ExperimentItem? experiment,
+  }) {
+    final result = create();
+    if (experiment != null) result.experiment = experiment;
+    return result;
+  }
+
+  EvaluateZenithAttentionNOf1ExperimentResponse._();
+
+  factory EvaluateZenithAttentionNOf1ExperimentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateZenithAttentionNOf1ExperimentResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateZenithAttentionNOf1ExperimentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithAttentionNOf1ExperimentItem>(
+        1, _omitFieldNames ? '' : 'experiment',
+        subBuilder: ZenithAttentionNOf1ExperimentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateZenithAttentionNOf1ExperimentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateZenithAttentionNOf1ExperimentResponse copyWith(
+          void Function(EvaluateZenithAttentionNOf1ExperimentResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as EvaluateZenithAttentionNOf1ExperimentResponse))
+          as EvaluateZenithAttentionNOf1ExperimentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateZenithAttentionNOf1ExperimentResponse create() =>
+      EvaluateZenithAttentionNOf1ExperimentResponse._();
+  @$core.override
+  EvaluateZenithAttentionNOf1ExperimentResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateZenithAttentionNOf1ExperimentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EvaluateZenithAttentionNOf1ExperimentResponse>(create);
+  static EvaluateZenithAttentionNOf1ExperimentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithAttentionNOf1ExperimentItem get experiment => $_getN(0);
+  @$pb.TagNumber(1)
+  set experiment(ZenithAttentionNOf1ExperimentItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperiment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperiment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithAttentionNOf1ExperimentItem ensureExperiment() => $_ensure(0);
+}
+
+/// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+class ZenithRecoveryProtocolRunItem extends $pb.GeneratedMessage {
+  factory ZenithRecoveryProtocolRunItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? protocolCode,
+    $core.String? titleAndModality,
+    $core.String? contraindicationAndSafetyNote,
+    $core.String? sensorOrNosensorPath,
+    $core.String? subjectiveBeforeAfterDelta,
+    $core.String? protocolState,
+    $core.bool? nonMedicalWellnessEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (titleAndModality != null) result.titleAndModality = titleAndModality;
+    if (contraindicationAndSafetyNote != null)
+      result.contraindicationAndSafetyNote = contraindicationAndSafetyNote;
+    if (sensorOrNosensorPath != null)
+      result.sensorOrNosensorPath = sensorOrNosensorPath;
+    if (subjectiveBeforeAfterDelta != null)
+      result.subjectiveBeforeAfterDelta = subjectiveBeforeAfterDelta;
+    if (protocolState != null) result.protocolState = protocolState;
+    if (nonMedicalWellnessEnforced != null)
+      result.nonMedicalWellnessEnforced = nonMedicalWellnessEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithRecoveryProtocolRunItem._();
+
+  factory ZenithRecoveryProtocolRunItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithRecoveryProtocolRunItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithRecoveryProtocolRunItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(4, _omitFieldNames ? '' : 'titleAndModality')
+    ..aOS(5, _omitFieldNames ? '' : 'contraindicationAndSafetyNote')
+    ..aOS(6, _omitFieldNames ? '' : 'sensorOrNosensorPath')
+    ..aOS(7, _omitFieldNames ? '' : 'subjectiveBeforeAfterDelta')
+    ..aOS(8, _omitFieldNames ? '' : 'protocolState')
+    ..aOB(9, _omitFieldNames ? '' : 'nonMedicalWellnessEnforced')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithRecoveryProtocolRunItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithRecoveryProtocolRunItem copyWith(
+          void Function(ZenithRecoveryProtocolRunItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as ZenithRecoveryProtocolRunItem))
+          as ZenithRecoveryProtocolRunItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithRecoveryProtocolRunItem create() =>
+      ZenithRecoveryProtocolRunItem._();
+  @$core.override
+  ZenithRecoveryProtocolRunItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithRecoveryProtocolRunItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithRecoveryProtocolRunItem>(create);
+  static ZenithRecoveryProtocolRunItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get protocolCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set protocolCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProtocolCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProtocolCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get titleAndModality => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set titleAndModality($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitleAndModality() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitleAndModality() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get contraindicationAndSafetyNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set contraindicationAndSafetyNote($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContraindicationAndSafetyNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContraindicationAndSafetyNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sensorOrNosensorPath => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sensorOrNosensorPath($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSensorOrNosensorPath() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSensorOrNosensorPath() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get subjectiveBeforeAfterDelta => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set subjectiveBeforeAfterDelta($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSubjectiveBeforeAfterDelta() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSubjectiveBeforeAfterDelta() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get protocolState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set protocolState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasProtocolState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearProtocolState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get nonMedicalWellnessEnforced => $_getBF(8);
+  @$pb.TagNumber(9)
+  set nonMedicalWellnessEnforced($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNonMedicalWellnessEnforced() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNonMedicalWellnessEnforced() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithRecoveryProtocolStudioWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetZenithRecoveryProtocolStudioWorkbenchRequest() => create();
+
+  GetZenithRecoveryProtocolStudioWorkbenchRequest._();
+
+  factory GetZenithRecoveryProtocolStudioWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithRecoveryProtocolStudioWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetZenithRecoveryProtocolStudioWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithRecoveryProtocolStudioWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithRecoveryProtocolStudioWorkbenchRequest copyWith(
+          void Function(GetZenithRecoveryProtocolStudioWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithRecoveryProtocolStudioWorkbenchRequest))
+          as GetZenithRecoveryProtocolStudioWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithRecoveryProtocolStudioWorkbenchRequest create() =>
+      GetZenithRecoveryProtocolStudioWorkbenchRequest._();
+  @$core.override
+  GetZenithRecoveryProtocolStudioWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithRecoveryProtocolStudioWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithRecoveryProtocolStudioWorkbenchRequest>(create);
+  static GetZenithRecoveryProtocolStudioWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithRecoveryProtocolStudioWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithRecoveryProtocolStudioWorkbenchResponse({
+    $core.Iterable<ZenithRecoveryProtocolRunItem>? runs,
+    $core.bool? nonMedicalWellnessEnforced,
+    $core.String? noSensorOfflineGuarantee,
+  }) {
+    final result = create();
+    if (runs != null) result.runs.addAll(runs);
+    if (nonMedicalWellnessEnforced != null)
+      result.nonMedicalWellnessEnforced = nonMedicalWellnessEnforced;
+    if (noSensorOfflineGuarantee != null)
+      result.noSensorOfflineGuarantee = noSensorOfflineGuarantee;
+    return result;
+  }
+
+  GetZenithRecoveryProtocolStudioWorkbenchResponse._();
+
+  factory GetZenithRecoveryProtocolStudioWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithRecoveryProtocolStudioWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetZenithRecoveryProtocolStudioWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithRecoveryProtocolRunItem>(1, _omitFieldNames ? '' : 'runs',
+        subBuilder: ZenithRecoveryProtocolRunItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonMedicalWellnessEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'noSensorOfflineGuarantee')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithRecoveryProtocolStudioWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithRecoveryProtocolStudioWorkbenchResponse copyWith(
+          void Function(GetZenithRecoveryProtocolStudioWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithRecoveryProtocolStudioWorkbenchResponse))
+          as GetZenithRecoveryProtocolStudioWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithRecoveryProtocolStudioWorkbenchResponse create() =>
+      GetZenithRecoveryProtocolStudioWorkbenchResponse._();
+  @$core.override
+  GetZenithRecoveryProtocolStudioWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithRecoveryProtocolStudioWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithRecoveryProtocolStudioWorkbenchResponse>(create);
+  static GetZenithRecoveryProtocolStudioWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithRecoveryProtocolRunItem> get runs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonMedicalWellnessEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonMedicalWellnessEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonMedicalWellnessEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonMedicalWellnessEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get noSensorOfflineGuarantee => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set noSensorOfflineGuarantee($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoSensorOfflineGuarantee() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoSensorOfflineGuarantee() => $_clearField(3);
+}
+
+class SaveZenithRecoveryProtocolRunRequest extends $pb.GeneratedMessage {
+  factory SaveZenithRecoveryProtocolRunRequest({
+    $core.String? protocolCode,
+    $core.String? titleAndModality,
+    $core.String? contraindicationAndSafetyNote,
+    $core.String? sensorOrNosensorPath,
+    $core.String? subjectiveBeforeAfterDelta,
+    $core.String? protocolState,
+  }) {
+    final result = create();
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (titleAndModality != null) result.titleAndModality = titleAndModality;
+    if (contraindicationAndSafetyNote != null)
+      result.contraindicationAndSafetyNote = contraindicationAndSafetyNote;
+    if (sensorOrNosensorPath != null)
+      result.sensorOrNosensorPath = sensorOrNosensorPath;
+    if (subjectiveBeforeAfterDelta != null)
+      result.subjectiveBeforeAfterDelta = subjectiveBeforeAfterDelta;
+    if (protocolState != null) result.protocolState = protocolState;
+    return result;
+  }
+
+  SaveZenithRecoveryProtocolRunRequest._();
+
+  factory SaveZenithRecoveryProtocolRunRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithRecoveryProtocolRunRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithRecoveryProtocolRunRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(2, _omitFieldNames ? '' : 'titleAndModality')
+    ..aOS(3, _omitFieldNames ? '' : 'contraindicationAndSafetyNote')
+    ..aOS(4, _omitFieldNames ? '' : 'sensorOrNosensorPath')
+    ..aOS(5, _omitFieldNames ? '' : 'subjectiveBeforeAfterDelta')
+    ..aOS(6, _omitFieldNames ? '' : 'protocolState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithRecoveryProtocolRunRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithRecoveryProtocolRunRequest copyWith(
+          void Function(SaveZenithRecoveryProtocolRunRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithRecoveryProtocolRunRequest))
+          as SaveZenithRecoveryProtocolRunRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithRecoveryProtocolRunRequest create() =>
+      SaveZenithRecoveryProtocolRunRequest._();
+  @$core.override
+  SaveZenithRecoveryProtocolRunRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithRecoveryProtocolRunRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithRecoveryProtocolRunRequest>(create);
+  static SaveZenithRecoveryProtocolRunRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get protocolCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set protocolCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocolCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocolCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get titleAndModality => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set titleAndModality($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitleAndModality() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitleAndModality() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get contraindicationAndSafetyNote => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set contraindicationAndSafetyNote($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContraindicationAndSafetyNote() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContraindicationAndSafetyNote() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sensorOrNosensorPath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sensorOrNosensorPath($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSensorOrNosensorPath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSensorOrNosensorPath() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get subjectiveBeforeAfterDelta => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set subjectiveBeforeAfterDelta($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSubjectiveBeforeAfterDelta() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSubjectiveBeforeAfterDelta() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get protocolState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set protocolState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProtocolState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProtocolState() => $_clearField(6);
+}
+
+class SaveZenithRecoveryProtocolRunResponse extends $pb.GeneratedMessage {
+  factory SaveZenithRecoveryProtocolRunResponse({
+    ZenithRecoveryProtocolRunItem? run,
+  }) {
+    final result = create();
+    if (run != null) result.run = run;
+    return result;
+  }
+
+  SaveZenithRecoveryProtocolRunResponse._();
+
+  factory SaveZenithRecoveryProtocolRunResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithRecoveryProtocolRunResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithRecoveryProtocolRunResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithRecoveryProtocolRunItem>(1, _omitFieldNames ? '' : 'run',
+        subBuilder: ZenithRecoveryProtocolRunItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithRecoveryProtocolRunResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithRecoveryProtocolRunResponse copyWith(
+          void Function(SaveZenithRecoveryProtocolRunResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithRecoveryProtocolRunResponse))
+          as SaveZenithRecoveryProtocolRunResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithRecoveryProtocolRunResponse create() =>
+      SaveZenithRecoveryProtocolRunResponse._();
+  @$core.override
+  SaveZenithRecoveryProtocolRunResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithRecoveryProtocolRunResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithRecoveryProtocolRunResponse>(create);
+  static SaveZenithRecoveryProtocolRunResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithRecoveryProtocolRunItem get run => $_getN(0);
+  @$pb.TagNumber(1)
+  set run(ZenithRecoveryProtocolRunItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRun() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRun() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithRecoveryProtocolRunItem ensureRun() => $_ensure(0);
+}
+
+class RecordZenithRecoveryCheckOrAdverseFlagRequest
+    extends $pb.GeneratedMessage {
+  factory RecordZenithRecoveryCheckOrAdverseFlagRequest({
+    $core.String? protocolCode,
+    $core.String? subjectiveBeforeAfterDelta,
+    $core.String? protocolState,
+  }) {
+    final result = create();
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (subjectiveBeforeAfterDelta != null)
+      result.subjectiveBeforeAfterDelta = subjectiveBeforeAfterDelta;
+    if (protocolState != null) result.protocolState = protocolState;
+    return result;
+  }
+
+  RecordZenithRecoveryCheckOrAdverseFlagRequest._();
+
+  factory RecordZenithRecoveryCheckOrAdverseFlagRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordZenithRecoveryCheckOrAdverseFlagRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordZenithRecoveryCheckOrAdverseFlagRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(2, _omitFieldNames ? '' : 'subjectiveBeforeAfterDelta')
+    ..aOS(3, _omitFieldNames ? '' : 'protocolState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordZenithRecoveryCheckOrAdverseFlagRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordZenithRecoveryCheckOrAdverseFlagRequest copyWith(
+          void Function(RecordZenithRecoveryCheckOrAdverseFlagRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordZenithRecoveryCheckOrAdverseFlagRequest))
+          as RecordZenithRecoveryCheckOrAdverseFlagRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordZenithRecoveryCheckOrAdverseFlagRequest create() =>
+      RecordZenithRecoveryCheckOrAdverseFlagRequest._();
+  @$core.override
+  RecordZenithRecoveryCheckOrAdverseFlagRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RecordZenithRecoveryCheckOrAdverseFlagRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordZenithRecoveryCheckOrAdverseFlagRequest>(create);
+  static RecordZenithRecoveryCheckOrAdverseFlagRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get protocolCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set protocolCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocolCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocolCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get subjectiveBeforeAfterDelta => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set subjectiveBeforeAfterDelta($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSubjectiveBeforeAfterDelta() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSubjectiveBeforeAfterDelta() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get protocolState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set protocolState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProtocolState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProtocolState() => $_clearField(3);
+}
+
+class RecordZenithRecoveryCheckOrAdverseFlagResponse
+    extends $pb.GeneratedMessage {
+  factory RecordZenithRecoveryCheckOrAdverseFlagResponse({
+    ZenithRecoveryProtocolRunItem? run,
+  }) {
+    final result = create();
+    if (run != null) result.run = run;
+    return result;
+  }
+
+  RecordZenithRecoveryCheckOrAdverseFlagResponse._();
+
+  factory RecordZenithRecoveryCheckOrAdverseFlagResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordZenithRecoveryCheckOrAdverseFlagResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordZenithRecoveryCheckOrAdverseFlagResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithRecoveryProtocolRunItem>(1, _omitFieldNames ? '' : 'run',
+        subBuilder: ZenithRecoveryProtocolRunItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordZenithRecoveryCheckOrAdverseFlagResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordZenithRecoveryCheckOrAdverseFlagResponse copyWith(
+          void Function(RecordZenithRecoveryCheckOrAdverseFlagResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RecordZenithRecoveryCheckOrAdverseFlagResponse))
+          as RecordZenithRecoveryCheckOrAdverseFlagResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordZenithRecoveryCheckOrAdverseFlagResponse create() =>
+      RecordZenithRecoveryCheckOrAdverseFlagResponse._();
+  @$core.override
+  RecordZenithRecoveryCheckOrAdverseFlagResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RecordZenithRecoveryCheckOrAdverseFlagResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordZenithRecoveryCheckOrAdverseFlagResponse>(create);
+  static RecordZenithRecoveryCheckOrAdverseFlagResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithRecoveryProtocolRunItem get run => $_getN(0);
+  @$pb.TagNumber(1)
+  set run(ZenithRecoveryProtocolRunItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRun() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRun() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithRecoveryProtocolRunItem ensureRun() => $_ensure(0);
+}
+
+/// Choice 6 (Z10): Communication Boundaries
+class ZenithCommunicationBoundaryRuleItem extends $pb.GeneratedMessage {
+  factory ZenithCommunicationBoundaryRuleItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? boundaryCode,
+    $core.String? templateAndWindow,
+    $core.String? vipAndEmergencyExceptions,
+    $core.String? previewedExternalStatusCopy,
+    $core.String? postFocusCatchupSummary,
+    $core.String? boundaryState,
+    $core.bool? messageBodyCollectionBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (boundaryCode != null) result.boundaryCode = boundaryCode;
+    if (templateAndWindow != null) result.templateAndWindow = templateAndWindow;
+    if (vipAndEmergencyExceptions != null)
+      result.vipAndEmergencyExceptions = vipAndEmergencyExceptions;
+    if (previewedExternalStatusCopy != null)
+      result.previewedExternalStatusCopy = previewedExternalStatusCopy;
+    if (postFocusCatchupSummary != null)
+      result.postFocusCatchupSummary = postFocusCatchupSummary;
+    if (boundaryState != null) result.boundaryState = boundaryState;
+    if (messageBodyCollectionBlocked != null)
+      result.messageBodyCollectionBlocked = messageBodyCollectionBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithCommunicationBoundaryRuleItem._();
+
+  factory ZenithCommunicationBoundaryRuleItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithCommunicationBoundaryRuleItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithCommunicationBoundaryRuleItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'boundaryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'templateAndWindow')
+    ..aOS(5, _omitFieldNames ? '' : 'vipAndEmergencyExceptions')
+    ..aOS(6, _omitFieldNames ? '' : 'previewedExternalStatusCopy')
+    ..aOS(7, _omitFieldNames ? '' : 'postFocusCatchupSummary')
+    ..aOS(8, _omitFieldNames ? '' : 'boundaryState')
+    ..aOB(9, _omitFieldNames ? '' : 'messageBodyCollectionBlocked')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCommunicationBoundaryRuleItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCommunicationBoundaryRuleItem copyWith(
+          void Function(ZenithCommunicationBoundaryRuleItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithCommunicationBoundaryRuleItem))
+          as ZenithCommunicationBoundaryRuleItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithCommunicationBoundaryRuleItem create() =>
+      ZenithCommunicationBoundaryRuleItem._();
+  @$core.override
+  ZenithCommunicationBoundaryRuleItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithCommunicationBoundaryRuleItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ZenithCommunicationBoundaryRuleItem>(create);
+  static ZenithCommunicationBoundaryRuleItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get boundaryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set boundaryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBoundaryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBoundaryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get templateAndWindow => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set templateAndWindow($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTemplateAndWindow() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTemplateAndWindow() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get vipAndEmergencyExceptions => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set vipAndEmergencyExceptions($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVipAndEmergencyExceptions() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVipAndEmergencyExceptions() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get previewedExternalStatusCopy => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set previewedExternalStatusCopy($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPreviewedExternalStatusCopy() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreviewedExternalStatusCopy() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get postFocusCatchupSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set postFocusCatchupSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPostFocusCatchupSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPostFocusCatchupSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get boundaryState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set boundaryState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBoundaryState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBoundaryState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get messageBodyCollectionBlocked => $_getBF(8);
+  @$pb.TagNumber(9)
+  set messageBodyCollectionBlocked($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMessageBodyCollectionBlocked() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMessageBodyCollectionBlocked() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithCommunicationBoundaryWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetZenithCommunicationBoundaryWorkbenchRequest() => create();
+
+  GetZenithCommunicationBoundaryWorkbenchRequest._();
+
+  factory GetZenithCommunicationBoundaryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCommunicationBoundaryWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithCommunicationBoundaryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCommunicationBoundaryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCommunicationBoundaryWorkbenchRequest copyWith(
+          void Function(GetZenithCommunicationBoundaryWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithCommunicationBoundaryWorkbenchRequest))
+          as GetZenithCommunicationBoundaryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCommunicationBoundaryWorkbenchRequest create() =>
+      GetZenithCommunicationBoundaryWorkbenchRequest._();
+  @$core.override
+  GetZenithCommunicationBoundaryWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCommunicationBoundaryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCommunicationBoundaryWorkbenchRequest>(create);
+  static GetZenithCommunicationBoundaryWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithCommunicationBoundaryWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithCommunicationBoundaryWorkbenchResponse({
+    $core.Iterable<ZenithCommunicationBoundaryRuleItem>? rules,
+    $core.bool? messageBodyCollectionBlockedEnforced,
+    $core.String? previewBeforeStatusWriteSummary,
+  }) {
+    final result = create();
+    if (rules != null) result.rules.addAll(rules);
+    if (messageBodyCollectionBlockedEnforced != null)
+      result.messageBodyCollectionBlockedEnforced =
+          messageBodyCollectionBlockedEnforced;
+    if (previewBeforeStatusWriteSummary != null)
+      result.previewBeforeStatusWriteSummary = previewBeforeStatusWriteSummary;
+    return result;
+  }
+
+  GetZenithCommunicationBoundaryWorkbenchResponse._();
+
+  factory GetZenithCommunicationBoundaryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCommunicationBoundaryWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetZenithCommunicationBoundaryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithCommunicationBoundaryRuleItem>(
+        1, _omitFieldNames ? '' : 'rules',
+        subBuilder: ZenithCommunicationBoundaryRuleItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'messageBodyCollectionBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'previewBeforeStatusWriteSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCommunicationBoundaryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCommunicationBoundaryWorkbenchResponse copyWith(
+          void Function(GetZenithCommunicationBoundaryWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithCommunicationBoundaryWorkbenchResponse))
+          as GetZenithCommunicationBoundaryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCommunicationBoundaryWorkbenchResponse create() =>
+      GetZenithCommunicationBoundaryWorkbenchResponse._();
+  @$core.override
+  GetZenithCommunicationBoundaryWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCommunicationBoundaryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCommunicationBoundaryWorkbenchResponse>(create);
+  static GetZenithCommunicationBoundaryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithCommunicationBoundaryRuleItem> get rules => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get messageBodyCollectionBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set messageBodyCollectionBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMessageBodyCollectionBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMessageBodyCollectionBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get previewBeforeStatusWriteSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set previewBeforeStatusWriteSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPreviewBeforeStatusWriteSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPreviewBeforeStatusWriteSummary() => $_clearField(3);
+}
+
+class SaveZenithCommunicationBoundaryRuleRequest extends $pb.GeneratedMessage {
+  factory SaveZenithCommunicationBoundaryRuleRequest({
+    $core.String? boundaryCode,
+    $core.String? templateAndWindow,
+    $core.String? vipAndEmergencyExceptions,
+    $core.String? previewedExternalStatusCopy,
+    $core.String? postFocusCatchupSummary,
+    $core.String? boundaryState,
+  }) {
+    final result = create();
+    if (boundaryCode != null) result.boundaryCode = boundaryCode;
+    if (templateAndWindow != null) result.templateAndWindow = templateAndWindow;
+    if (vipAndEmergencyExceptions != null)
+      result.vipAndEmergencyExceptions = vipAndEmergencyExceptions;
+    if (previewedExternalStatusCopy != null)
+      result.previewedExternalStatusCopy = previewedExternalStatusCopy;
+    if (postFocusCatchupSummary != null)
+      result.postFocusCatchupSummary = postFocusCatchupSummary;
+    if (boundaryState != null) result.boundaryState = boundaryState;
+    return result;
+  }
+
+  SaveZenithCommunicationBoundaryRuleRequest._();
+
+  factory SaveZenithCommunicationBoundaryRuleRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCommunicationBoundaryRuleRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCommunicationBoundaryRuleRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'boundaryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'templateAndWindow')
+    ..aOS(3, _omitFieldNames ? '' : 'vipAndEmergencyExceptions')
+    ..aOS(4, _omitFieldNames ? '' : 'previewedExternalStatusCopy')
+    ..aOS(5, _omitFieldNames ? '' : 'postFocusCatchupSummary')
+    ..aOS(6, _omitFieldNames ? '' : 'boundaryState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCommunicationBoundaryRuleRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCommunicationBoundaryRuleRequest copyWith(
+          void Function(SaveZenithCommunicationBoundaryRuleRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCommunicationBoundaryRuleRequest))
+          as SaveZenithCommunicationBoundaryRuleRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCommunicationBoundaryRuleRequest create() =>
+      SaveZenithCommunicationBoundaryRuleRequest._();
+  @$core.override
+  SaveZenithCommunicationBoundaryRuleRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCommunicationBoundaryRuleRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCommunicationBoundaryRuleRequest>(create);
+  static SaveZenithCommunicationBoundaryRuleRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get boundaryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set boundaryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBoundaryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBoundaryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get templateAndWindow => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set templateAndWindow($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTemplateAndWindow() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTemplateAndWindow() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vipAndEmergencyExceptions => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vipAndEmergencyExceptions($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVipAndEmergencyExceptions() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVipAndEmergencyExceptions() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get previewedExternalStatusCopy => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set previewedExternalStatusCopy($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPreviewedExternalStatusCopy() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPreviewedExternalStatusCopy() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get postFocusCatchupSummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set postFocusCatchupSummary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPostFocusCatchupSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPostFocusCatchupSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get boundaryState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set boundaryState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBoundaryState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBoundaryState() => $_clearField(6);
+}
+
+class SaveZenithCommunicationBoundaryRuleResponse extends $pb.GeneratedMessage {
+  factory SaveZenithCommunicationBoundaryRuleResponse({
+    ZenithCommunicationBoundaryRuleItem? rule,
+  }) {
+    final result = create();
+    if (rule != null) result.rule = rule;
+    return result;
+  }
+
+  SaveZenithCommunicationBoundaryRuleResponse._();
+
+  factory SaveZenithCommunicationBoundaryRuleResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCommunicationBoundaryRuleResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCommunicationBoundaryRuleResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCommunicationBoundaryRuleItem>(1, _omitFieldNames ? '' : 'rule',
+        subBuilder: ZenithCommunicationBoundaryRuleItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCommunicationBoundaryRuleResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCommunicationBoundaryRuleResponse copyWith(
+          void Function(SaveZenithCommunicationBoundaryRuleResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCommunicationBoundaryRuleResponse))
+          as SaveZenithCommunicationBoundaryRuleResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCommunicationBoundaryRuleResponse create() =>
+      SaveZenithCommunicationBoundaryRuleResponse._();
+  @$core.override
+  SaveZenithCommunicationBoundaryRuleResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCommunicationBoundaryRuleResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCommunicationBoundaryRuleResponse>(create);
+  static SaveZenithCommunicationBoundaryRuleResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCommunicationBoundaryRuleItem get rule => $_getN(0);
+  @$pb.TagNumber(1)
+  set rule(ZenithCommunicationBoundaryRuleItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRule() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRule() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCommunicationBoundaryRuleItem ensureRule() => $_ensure(0);
+}
+
+class ApproveOrReleaseZenithBoundaryCatchupRequest
+    extends $pb.GeneratedMessage {
+  factory ApproveOrReleaseZenithBoundaryCatchupRequest({
+    $core.String? boundaryCode,
+    $core.String? boundaryState,
+    $core.String? postFocusCatchupSummary,
+  }) {
+    final result = create();
+    if (boundaryCode != null) result.boundaryCode = boundaryCode;
+    if (boundaryState != null) result.boundaryState = boundaryState;
+    if (postFocusCatchupSummary != null)
+      result.postFocusCatchupSummary = postFocusCatchupSummary;
+    return result;
+  }
+
+  ApproveOrReleaseZenithBoundaryCatchupRequest._();
+
+  factory ApproveOrReleaseZenithBoundaryCatchupRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrReleaseZenithBoundaryCatchupRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrReleaseZenithBoundaryCatchupRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'boundaryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'boundaryState')
+    ..aOS(3, _omitFieldNames ? '' : 'postFocusCatchupSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrReleaseZenithBoundaryCatchupRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrReleaseZenithBoundaryCatchupRequest copyWith(
+          void Function(ApproveOrReleaseZenithBoundaryCatchupRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrReleaseZenithBoundaryCatchupRequest))
+          as ApproveOrReleaseZenithBoundaryCatchupRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrReleaseZenithBoundaryCatchupRequest create() =>
+      ApproveOrReleaseZenithBoundaryCatchupRequest._();
+  @$core.override
+  ApproveOrReleaseZenithBoundaryCatchupRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrReleaseZenithBoundaryCatchupRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrReleaseZenithBoundaryCatchupRequest>(create);
+  static ApproveOrReleaseZenithBoundaryCatchupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get boundaryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set boundaryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBoundaryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBoundaryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get boundaryState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set boundaryState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasBoundaryState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearBoundaryState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get postFocusCatchupSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set postFocusCatchupSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPostFocusCatchupSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPostFocusCatchupSummary() => $_clearField(3);
+}
+
+class ApproveOrReleaseZenithBoundaryCatchupResponse
+    extends $pb.GeneratedMessage {
+  factory ApproveOrReleaseZenithBoundaryCatchupResponse({
+    ZenithCommunicationBoundaryRuleItem? rule,
+  }) {
+    final result = create();
+    if (rule != null) result.rule = rule;
+    return result;
+  }
+
+  ApproveOrReleaseZenithBoundaryCatchupResponse._();
+
+  factory ApproveOrReleaseZenithBoundaryCatchupResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrReleaseZenithBoundaryCatchupResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrReleaseZenithBoundaryCatchupResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCommunicationBoundaryRuleItem>(1, _omitFieldNames ? '' : 'rule',
+        subBuilder: ZenithCommunicationBoundaryRuleItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrReleaseZenithBoundaryCatchupResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrReleaseZenithBoundaryCatchupResponse copyWith(
+          void Function(ApproveOrReleaseZenithBoundaryCatchupResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrReleaseZenithBoundaryCatchupResponse))
+          as ApproveOrReleaseZenithBoundaryCatchupResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrReleaseZenithBoundaryCatchupResponse create() =>
+      ApproveOrReleaseZenithBoundaryCatchupResponse._();
+  @$core.override
+  ApproveOrReleaseZenithBoundaryCatchupResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrReleaseZenithBoundaryCatchupResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrReleaseZenithBoundaryCatchupResponse>(create);
+  static ApproveOrReleaseZenithBoundaryCatchupResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCommunicationBoundaryRuleItem get rule => $_getN(0);
+  @$pb.TagNumber(1)
+  set rule(ZenithCommunicationBoundaryRuleItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRule() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRule() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCommunicationBoundaryRuleItem ensureRule() => $_ensure(0);
+}
+
+/// Choice 7 (Z5): Cognitive Readiness Battery
+class ZenithCognitiveReadinessSessionItem extends $pb.GeneratedMessage {
+  factory ZenithCognitiveReadinessSessionItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? batteryCode,
+    $core.String? alternateFormAndTasks,
+    $core.String? practiceEffectAndDeviceCalibration,
+    $core.String? readinessBandAndConfidence,
+    $core.String? exclusionFlagReason,
+    $core.String? sessionMode,
+    $core.bool? nonDiagnosticClaimEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (batteryCode != null) result.batteryCode = batteryCode;
+    if (alternateFormAndTasks != null)
+      result.alternateFormAndTasks = alternateFormAndTasks;
+    if (practiceEffectAndDeviceCalibration != null)
+      result.practiceEffectAndDeviceCalibration =
+          practiceEffectAndDeviceCalibration;
+    if (readinessBandAndConfidence != null)
+      result.readinessBandAndConfidence = readinessBandAndConfidence;
+    if (exclusionFlagReason != null)
+      result.exclusionFlagReason = exclusionFlagReason;
+    if (sessionMode != null) result.sessionMode = sessionMode;
+    if (nonDiagnosticClaimEnforced != null)
+      result.nonDiagnosticClaimEnforced = nonDiagnosticClaimEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithCognitiveReadinessSessionItem._();
+
+  factory ZenithCognitiveReadinessSessionItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithCognitiveReadinessSessionItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithCognitiveReadinessSessionItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'batteryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'alternateFormAndTasks')
+    ..aOS(5, _omitFieldNames ? '' : 'practiceEffectAndDeviceCalibration')
+    ..aOS(6, _omitFieldNames ? '' : 'readinessBandAndConfidence')
+    ..aOS(7, _omitFieldNames ? '' : 'exclusionFlagReason')
+    ..aOS(8, _omitFieldNames ? '' : 'sessionMode')
+    ..aOB(9, _omitFieldNames ? '' : 'nonDiagnosticClaimEnforced')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCognitiveReadinessSessionItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCognitiveReadinessSessionItem copyWith(
+          void Function(ZenithCognitiveReadinessSessionItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithCognitiveReadinessSessionItem))
+          as ZenithCognitiveReadinessSessionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithCognitiveReadinessSessionItem create() =>
+      ZenithCognitiveReadinessSessionItem._();
+  @$core.override
+  ZenithCognitiveReadinessSessionItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithCognitiveReadinessSessionItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ZenithCognitiveReadinessSessionItem>(create);
+  static ZenithCognitiveReadinessSessionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get batteryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set batteryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBatteryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBatteryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get alternateFormAndTasks => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set alternateFormAndTasks($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAlternateFormAndTasks() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAlternateFormAndTasks() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get practiceEffectAndDeviceCalibration => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set practiceEffectAndDeviceCalibration($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPracticeEffectAndDeviceCalibration() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPracticeEffectAndDeviceCalibration() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get readinessBandAndConfidence => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set readinessBandAndConfidence($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReadinessBandAndConfidence() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReadinessBandAndConfidence() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get exclusionFlagReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set exclusionFlagReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExclusionFlagReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExclusionFlagReason() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get sessionMode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set sessionMode($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSessionMode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSessionMode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get nonDiagnosticClaimEnforced => $_getBF(8);
+  @$pb.TagNumber(9)
+  set nonDiagnosticClaimEnforced($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasNonDiagnosticClaimEnforced() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearNonDiagnosticClaimEnforced() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithCognitiveReadinessWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithCognitiveReadinessWorkbenchRequest() => create();
+
+  GetZenithCognitiveReadinessWorkbenchRequest._();
+
+  factory GetZenithCognitiveReadinessWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCognitiveReadinessWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithCognitiveReadinessWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCognitiveReadinessWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCognitiveReadinessWorkbenchRequest copyWith(
+          void Function(GetZenithCognitiveReadinessWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithCognitiveReadinessWorkbenchRequest))
+          as GetZenithCognitiveReadinessWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCognitiveReadinessWorkbenchRequest create() =>
+      GetZenithCognitiveReadinessWorkbenchRequest._();
+  @$core.override
+  GetZenithCognitiveReadinessWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCognitiveReadinessWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCognitiveReadinessWorkbenchRequest>(create);
+  static GetZenithCognitiveReadinessWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithCognitiveReadinessWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithCognitiveReadinessWorkbenchResponse({
+    $core.Iterable<ZenithCognitiveReadinessSessionItem>? sessions,
+    $core.bool? nonDiagnosticClaimEnforced,
+    $core.String? trainingVsAssessmentSeparationSummary,
+  }) {
+    final result = create();
+    if (sessions != null) result.sessions.addAll(sessions);
+    if (nonDiagnosticClaimEnforced != null)
+      result.nonDiagnosticClaimEnforced = nonDiagnosticClaimEnforced;
+    if (trainingVsAssessmentSeparationSummary != null)
+      result.trainingVsAssessmentSeparationSummary =
+          trainingVsAssessmentSeparationSummary;
+    return result;
+  }
+
+  GetZenithCognitiveReadinessWorkbenchResponse._();
+
+  factory GetZenithCognitiveReadinessWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCognitiveReadinessWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithCognitiveReadinessWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithCognitiveReadinessSessionItem>(
+        1, _omitFieldNames ? '' : 'sessions',
+        subBuilder: ZenithCognitiveReadinessSessionItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonDiagnosticClaimEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'trainingVsAssessmentSeparationSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCognitiveReadinessWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCognitiveReadinessWorkbenchResponse copyWith(
+          void Function(GetZenithCognitiveReadinessWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithCognitiveReadinessWorkbenchResponse))
+          as GetZenithCognitiveReadinessWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCognitiveReadinessWorkbenchResponse create() =>
+      GetZenithCognitiveReadinessWorkbenchResponse._();
+  @$core.override
+  GetZenithCognitiveReadinessWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCognitiveReadinessWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCognitiveReadinessWorkbenchResponse>(create);
+  static GetZenithCognitiveReadinessWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithCognitiveReadinessSessionItem> get sessions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonDiagnosticClaimEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonDiagnosticClaimEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonDiagnosticClaimEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonDiagnosticClaimEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get trainingVsAssessmentSeparationSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set trainingVsAssessmentSeparationSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTrainingVsAssessmentSeparationSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTrainingVsAssessmentSeparationSummary() => $_clearField(3);
+}
+
+class SaveZenithCognitiveReadinessSessionRequest extends $pb.GeneratedMessage {
+  factory SaveZenithCognitiveReadinessSessionRequest({
+    $core.String? batteryCode,
+    $core.String? alternateFormAndTasks,
+    $core.String? practiceEffectAndDeviceCalibration,
+    $core.String? readinessBandAndConfidence,
+    $core.String? exclusionFlagReason,
+    $core.String? sessionMode,
+  }) {
+    final result = create();
+    if (batteryCode != null) result.batteryCode = batteryCode;
+    if (alternateFormAndTasks != null)
+      result.alternateFormAndTasks = alternateFormAndTasks;
+    if (practiceEffectAndDeviceCalibration != null)
+      result.practiceEffectAndDeviceCalibration =
+          practiceEffectAndDeviceCalibration;
+    if (readinessBandAndConfidence != null)
+      result.readinessBandAndConfidence = readinessBandAndConfidence;
+    if (exclusionFlagReason != null)
+      result.exclusionFlagReason = exclusionFlagReason;
+    if (sessionMode != null) result.sessionMode = sessionMode;
+    return result;
+  }
+
+  SaveZenithCognitiveReadinessSessionRequest._();
+
+  factory SaveZenithCognitiveReadinessSessionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCognitiveReadinessSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCognitiveReadinessSessionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'batteryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'alternateFormAndTasks')
+    ..aOS(3, _omitFieldNames ? '' : 'practiceEffectAndDeviceCalibration')
+    ..aOS(4, _omitFieldNames ? '' : 'readinessBandAndConfidence')
+    ..aOS(5, _omitFieldNames ? '' : 'exclusionFlagReason')
+    ..aOS(6, _omitFieldNames ? '' : 'sessionMode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCognitiveReadinessSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCognitiveReadinessSessionRequest copyWith(
+          void Function(SaveZenithCognitiveReadinessSessionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCognitiveReadinessSessionRequest))
+          as SaveZenithCognitiveReadinessSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCognitiveReadinessSessionRequest create() =>
+      SaveZenithCognitiveReadinessSessionRequest._();
+  @$core.override
+  SaveZenithCognitiveReadinessSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCognitiveReadinessSessionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCognitiveReadinessSessionRequest>(create);
+  static SaveZenithCognitiveReadinessSessionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get batteryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set batteryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBatteryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBatteryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get alternateFormAndTasks => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set alternateFormAndTasks($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAlternateFormAndTasks() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAlternateFormAndTasks() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get practiceEffectAndDeviceCalibration => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set practiceEffectAndDeviceCalibration($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPracticeEffectAndDeviceCalibration() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPracticeEffectAndDeviceCalibration() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get readinessBandAndConfidence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set readinessBandAndConfidence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReadinessBandAndConfidence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReadinessBandAndConfidence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get exclusionFlagReason => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set exclusionFlagReason($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExclusionFlagReason() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExclusionFlagReason() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sessionMode => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sessionMode($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSessionMode() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSessionMode() => $_clearField(6);
+}
+
+class SaveZenithCognitiveReadinessSessionResponse extends $pb.GeneratedMessage {
+  factory SaveZenithCognitiveReadinessSessionResponse({
+    ZenithCognitiveReadinessSessionItem? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  SaveZenithCognitiveReadinessSessionResponse._();
+
+  factory SaveZenithCognitiveReadinessSessionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCognitiveReadinessSessionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCognitiveReadinessSessionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCognitiveReadinessSessionItem>(
+        1, _omitFieldNames ? '' : 'session',
+        subBuilder: ZenithCognitiveReadinessSessionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCognitiveReadinessSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCognitiveReadinessSessionResponse copyWith(
+          void Function(SaveZenithCognitiveReadinessSessionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCognitiveReadinessSessionResponse))
+          as SaveZenithCognitiveReadinessSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCognitiveReadinessSessionResponse create() =>
+      SaveZenithCognitiveReadinessSessionResponse._();
+  @$core.override
+  SaveZenithCognitiveReadinessSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCognitiveReadinessSessionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCognitiveReadinessSessionResponse>(create);
+  static SaveZenithCognitiveReadinessSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCognitiveReadinessSessionItem get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ZenithCognitiveReadinessSessionItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCognitiveReadinessSessionItem ensureSession() => $_ensure(0);
+}
+
+class FlagOrValidateZenithCognitiveSessionRequest extends $pb.GeneratedMessage {
+  factory FlagOrValidateZenithCognitiveSessionRequest({
+    $core.String? batteryCode,
+    $core.String? exclusionFlagReason,
+    $core.String? sessionMode,
+  }) {
+    final result = create();
+    if (batteryCode != null) result.batteryCode = batteryCode;
+    if (exclusionFlagReason != null)
+      result.exclusionFlagReason = exclusionFlagReason;
+    if (sessionMode != null) result.sessionMode = sessionMode;
+    return result;
+  }
+
+  FlagOrValidateZenithCognitiveSessionRequest._();
+
+  factory FlagOrValidateZenithCognitiveSessionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FlagOrValidateZenithCognitiveSessionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FlagOrValidateZenithCognitiveSessionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'batteryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'exclusionFlagReason')
+    ..aOS(3, _omitFieldNames ? '' : 'sessionMode')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlagOrValidateZenithCognitiveSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlagOrValidateZenithCognitiveSessionRequest copyWith(
+          void Function(FlagOrValidateZenithCognitiveSessionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as FlagOrValidateZenithCognitiveSessionRequest))
+          as FlagOrValidateZenithCognitiveSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FlagOrValidateZenithCognitiveSessionRequest create() =>
+      FlagOrValidateZenithCognitiveSessionRequest._();
+  @$core.override
+  FlagOrValidateZenithCognitiveSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FlagOrValidateZenithCognitiveSessionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FlagOrValidateZenithCognitiveSessionRequest>(create);
+  static FlagOrValidateZenithCognitiveSessionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get batteryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set batteryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBatteryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBatteryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get exclusionFlagReason => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exclusionFlagReason($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExclusionFlagReason() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExclusionFlagReason() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sessionMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sessionMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSessionMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSessionMode() => $_clearField(3);
+}
+
+class FlagOrValidateZenithCognitiveSessionResponse
+    extends $pb.GeneratedMessage {
+  factory FlagOrValidateZenithCognitiveSessionResponse({
+    ZenithCognitiveReadinessSessionItem? session,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    return result;
+  }
+
+  FlagOrValidateZenithCognitiveSessionResponse._();
+
+  factory FlagOrValidateZenithCognitiveSessionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FlagOrValidateZenithCognitiveSessionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FlagOrValidateZenithCognitiveSessionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCognitiveReadinessSessionItem>(
+        1, _omitFieldNames ? '' : 'session',
+        subBuilder: ZenithCognitiveReadinessSessionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlagOrValidateZenithCognitiveSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlagOrValidateZenithCognitiveSessionResponse copyWith(
+          void Function(FlagOrValidateZenithCognitiveSessionResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as FlagOrValidateZenithCognitiveSessionResponse))
+          as FlagOrValidateZenithCognitiveSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FlagOrValidateZenithCognitiveSessionResponse create() =>
+      FlagOrValidateZenithCognitiveSessionResponse._();
+  @$core.override
+  FlagOrValidateZenithCognitiveSessionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static FlagOrValidateZenithCognitiveSessionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          FlagOrValidateZenithCognitiveSessionResponse>(create);
+  static FlagOrValidateZenithCognitiveSessionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCognitiveReadinessSessionItem get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(ZenithCognitiveReadinessSessionItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCognitiveReadinessSessionItem ensureSession() => $_ensure(0);
+}
+
+/// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+class ZenithPrivatePatternMemoryItem extends $pb.GeneratedMessage {
+  factory ZenithPrivatePatternMemoryItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? patternCode,
+    $core.String? storageAndEncryptionMode,
+    $core.String? editableDerivedThemeLabel,
+    $core.String? onDeviceRescuePromptRule,
+    $core.String? crisisResourceGovernanceNote,
+    $core.String? patternState,
+    $core.bool? staffRawProseAccessBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (patternCode != null) result.patternCode = patternCode;
+    if (storageAndEncryptionMode != null)
+      result.storageAndEncryptionMode = storageAndEncryptionMode;
+    if (editableDerivedThemeLabel != null)
+      result.editableDerivedThemeLabel = editableDerivedThemeLabel;
+    if (onDeviceRescuePromptRule != null)
+      result.onDeviceRescuePromptRule = onDeviceRescuePromptRule;
+    if (crisisResourceGovernanceNote != null)
+      result.crisisResourceGovernanceNote = crisisResourceGovernanceNote;
+    if (patternState != null) result.patternState = patternState;
+    if (staffRawProseAccessBlocked != null)
+      result.staffRawProseAccessBlocked = staffRawProseAccessBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithPrivatePatternMemoryItem._();
+
+  factory ZenithPrivatePatternMemoryItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithPrivatePatternMemoryItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithPrivatePatternMemoryItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'patternCode')
+    ..aOS(4, _omitFieldNames ? '' : 'storageAndEncryptionMode')
+    ..aOS(5, _omitFieldNames ? '' : 'editableDerivedThemeLabel')
+    ..aOS(6, _omitFieldNames ? '' : 'onDeviceRescuePromptRule')
+    ..aOS(7, _omitFieldNames ? '' : 'crisisResourceGovernanceNote')
+    ..aOS(8, _omitFieldNames ? '' : 'patternState')
+    ..aOB(9, _omitFieldNames ? '' : 'staffRawProseAccessBlocked')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithPrivatePatternMemoryItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithPrivatePatternMemoryItem copyWith(
+          void Function(ZenithPrivatePatternMemoryItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as ZenithPrivatePatternMemoryItem))
+          as ZenithPrivatePatternMemoryItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithPrivatePatternMemoryItem create() =>
+      ZenithPrivatePatternMemoryItem._();
+  @$core.override
+  ZenithPrivatePatternMemoryItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithPrivatePatternMemoryItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithPrivatePatternMemoryItem>(create);
+  static ZenithPrivatePatternMemoryItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get patternCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set patternCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPatternCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPatternCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get storageAndEncryptionMode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set storageAndEncryptionMode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStorageAndEncryptionMode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStorageAndEncryptionMode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get editableDerivedThemeLabel => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set editableDerivedThemeLabel($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEditableDerivedThemeLabel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEditableDerivedThemeLabel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get onDeviceRescuePromptRule => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set onDeviceRescuePromptRule($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOnDeviceRescuePromptRule() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOnDeviceRescuePromptRule() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get crisisResourceGovernanceNote => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set crisisResourceGovernanceNote($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCrisisResourceGovernanceNote() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCrisisResourceGovernanceNote() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get patternState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set patternState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPatternState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPatternState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get staffRawProseAccessBlocked => $_getBF(8);
+  @$pb.TagNumber(9)
+  set staffRawProseAccessBlocked($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasStaffRawProseAccessBlocked() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStaffRawProseAccessBlocked() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithPrivatePatternMemoryWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetZenithPrivatePatternMemoryWorkbenchRequest() => create();
+
+  GetZenithPrivatePatternMemoryWorkbenchRequest._();
+
+  factory GetZenithPrivatePatternMemoryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithPrivatePatternMemoryWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithPrivatePatternMemoryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithPrivatePatternMemoryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithPrivatePatternMemoryWorkbenchRequest copyWith(
+          void Function(GetZenithPrivatePatternMemoryWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithPrivatePatternMemoryWorkbenchRequest))
+          as GetZenithPrivatePatternMemoryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithPrivatePatternMemoryWorkbenchRequest create() =>
+      GetZenithPrivatePatternMemoryWorkbenchRequest._();
+  @$core.override
+  GetZenithPrivatePatternMemoryWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithPrivatePatternMemoryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithPrivatePatternMemoryWorkbenchRequest>(create);
+  static GetZenithPrivatePatternMemoryWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithPrivatePatternMemoryWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithPrivatePatternMemoryWorkbenchResponse({
+    $core.Iterable<ZenithPrivatePatternMemoryItem>? memories,
+    $core.bool? staffRawProseAccessBlockedEnforced,
+    $core.String? e2eeAndEditableDerivationSummary,
+  }) {
+    final result = create();
+    if (memories != null) result.memories.addAll(memories);
+    if (staffRawProseAccessBlockedEnforced != null)
+      result.staffRawProseAccessBlockedEnforced =
+          staffRawProseAccessBlockedEnforced;
+    if (e2eeAndEditableDerivationSummary != null)
+      result.e2eeAndEditableDerivationSummary =
+          e2eeAndEditableDerivationSummary;
+    return result;
+  }
+
+  GetZenithPrivatePatternMemoryWorkbenchResponse._();
+
+  factory GetZenithPrivatePatternMemoryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithPrivatePatternMemoryWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithPrivatePatternMemoryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithPrivatePatternMemoryItem>(1, _omitFieldNames ? '' : 'memories',
+        subBuilder: ZenithPrivatePatternMemoryItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'staffRawProseAccessBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'e2eeAndEditableDerivationSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithPrivatePatternMemoryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithPrivatePatternMemoryWorkbenchResponse copyWith(
+          void Function(GetZenithPrivatePatternMemoryWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetZenithPrivatePatternMemoryWorkbenchResponse))
+          as GetZenithPrivatePatternMemoryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithPrivatePatternMemoryWorkbenchResponse create() =>
+      GetZenithPrivatePatternMemoryWorkbenchResponse._();
+  @$core.override
+  GetZenithPrivatePatternMemoryWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithPrivatePatternMemoryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithPrivatePatternMemoryWorkbenchResponse>(create);
+  static GetZenithPrivatePatternMemoryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithPrivatePatternMemoryItem> get memories => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get staffRawProseAccessBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set staffRawProseAccessBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStaffRawProseAccessBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStaffRawProseAccessBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get e2eeAndEditableDerivationSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set e2eeAndEditableDerivationSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasE2eeAndEditableDerivationSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearE2eeAndEditableDerivationSummary() => $_clearField(3);
+}
+
+class SaveZenithPrivatePatternMemoryRequest extends $pb.GeneratedMessage {
+  factory SaveZenithPrivatePatternMemoryRequest({
+    $core.String? patternCode,
+    $core.String? storageAndEncryptionMode,
+    $core.String? editableDerivedThemeLabel,
+    $core.String? onDeviceRescuePromptRule,
+    $core.String? crisisResourceGovernanceNote,
+    $core.String? patternState,
+  }) {
+    final result = create();
+    if (patternCode != null) result.patternCode = patternCode;
+    if (storageAndEncryptionMode != null)
+      result.storageAndEncryptionMode = storageAndEncryptionMode;
+    if (editableDerivedThemeLabel != null)
+      result.editableDerivedThemeLabel = editableDerivedThemeLabel;
+    if (onDeviceRescuePromptRule != null)
+      result.onDeviceRescuePromptRule = onDeviceRescuePromptRule;
+    if (crisisResourceGovernanceNote != null)
+      result.crisisResourceGovernanceNote = crisisResourceGovernanceNote;
+    if (patternState != null) result.patternState = patternState;
+    return result;
+  }
+
+  SaveZenithPrivatePatternMemoryRequest._();
+
+  factory SaveZenithPrivatePatternMemoryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithPrivatePatternMemoryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithPrivatePatternMemoryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'patternCode')
+    ..aOS(2, _omitFieldNames ? '' : 'storageAndEncryptionMode')
+    ..aOS(3, _omitFieldNames ? '' : 'editableDerivedThemeLabel')
+    ..aOS(4, _omitFieldNames ? '' : 'onDeviceRescuePromptRule')
+    ..aOS(5, _omitFieldNames ? '' : 'crisisResourceGovernanceNote')
+    ..aOS(6, _omitFieldNames ? '' : 'patternState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithPrivatePatternMemoryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithPrivatePatternMemoryRequest copyWith(
+          void Function(SaveZenithPrivatePatternMemoryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithPrivatePatternMemoryRequest))
+          as SaveZenithPrivatePatternMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithPrivatePatternMemoryRequest create() =>
+      SaveZenithPrivatePatternMemoryRequest._();
+  @$core.override
+  SaveZenithPrivatePatternMemoryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithPrivatePatternMemoryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithPrivatePatternMemoryRequest>(create);
+  static SaveZenithPrivatePatternMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get patternCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set patternCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPatternCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPatternCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get storageAndEncryptionMode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set storageAndEncryptionMode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasStorageAndEncryptionMode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearStorageAndEncryptionMode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get editableDerivedThemeLabel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set editableDerivedThemeLabel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEditableDerivedThemeLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEditableDerivedThemeLabel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get onDeviceRescuePromptRule => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set onDeviceRescuePromptRule($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOnDeviceRescuePromptRule() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOnDeviceRescuePromptRule() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get crisisResourceGovernanceNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set crisisResourceGovernanceNote($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCrisisResourceGovernanceNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCrisisResourceGovernanceNote() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get patternState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set patternState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPatternState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPatternState() => $_clearField(6);
+}
+
+class SaveZenithPrivatePatternMemoryResponse extends $pb.GeneratedMessage {
+  factory SaveZenithPrivatePatternMemoryResponse({
+    ZenithPrivatePatternMemoryItem? memory,
+  }) {
+    final result = create();
+    if (memory != null) result.memory = memory;
+    return result;
+  }
+
+  SaveZenithPrivatePatternMemoryResponse._();
+
+  factory SaveZenithPrivatePatternMemoryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithPrivatePatternMemoryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithPrivatePatternMemoryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithPrivatePatternMemoryItem>(1, _omitFieldNames ? '' : 'memory',
+        subBuilder: ZenithPrivatePatternMemoryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithPrivatePatternMemoryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithPrivatePatternMemoryResponse copyWith(
+          void Function(SaveZenithPrivatePatternMemoryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithPrivatePatternMemoryResponse))
+          as SaveZenithPrivatePatternMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithPrivatePatternMemoryResponse create() =>
+      SaveZenithPrivatePatternMemoryResponse._();
+  @$core.override
+  SaveZenithPrivatePatternMemoryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithPrivatePatternMemoryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithPrivatePatternMemoryResponse>(create);
+  static SaveZenithPrivatePatternMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithPrivatePatternMemoryItem get memory => $_getN(0);
+  @$pb.TagNumber(1)
+  set memory(ZenithPrivatePatternMemoryItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithPrivatePatternMemoryItem ensureMemory() => $_ensure(0);
+}
+
+class EditOrDeleteZenithPrivatePatternMemoryRequest
+    extends $pb.GeneratedMessage {
+  factory EditOrDeleteZenithPrivatePatternMemoryRequest({
+    $core.String? patternCode,
+    $core.String? editableDerivedThemeLabel,
+    $core.String? patternState,
+  }) {
+    final result = create();
+    if (patternCode != null) result.patternCode = patternCode;
+    if (editableDerivedThemeLabel != null)
+      result.editableDerivedThemeLabel = editableDerivedThemeLabel;
+    if (patternState != null) result.patternState = patternState;
+    return result;
+  }
+
+  EditOrDeleteZenithPrivatePatternMemoryRequest._();
+
+  factory EditOrDeleteZenithPrivatePatternMemoryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EditOrDeleteZenithPrivatePatternMemoryRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EditOrDeleteZenithPrivatePatternMemoryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'patternCode')
+    ..aOS(2, _omitFieldNames ? '' : 'editableDerivedThemeLabel')
+    ..aOS(3, _omitFieldNames ? '' : 'patternState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditOrDeleteZenithPrivatePatternMemoryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditOrDeleteZenithPrivatePatternMemoryRequest copyWith(
+          void Function(EditOrDeleteZenithPrivatePatternMemoryRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as EditOrDeleteZenithPrivatePatternMemoryRequest))
+          as EditOrDeleteZenithPrivatePatternMemoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditOrDeleteZenithPrivatePatternMemoryRequest create() =>
+      EditOrDeleteZenithPrivatePatternMemoryRequest._();
+  @$core.override
+  EditOrDeleteZenithPrivatePatternMemoryRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static EditOrDeleteZenithPrivatePatternMemoryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EditOrDeleteZenithPrivatePatternMemoryRequest>(create);
+  static EditOrDeleteZenithPrivatePatternMemoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get patternCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set patternCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPatternCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPatternCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editableDerivedThemeLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editableDerivedThemeLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditableDerivedThemeLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditableDerivedThemeLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get patternState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set patternState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPatternState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPatternState() => $_clearField(3);
+}
+
+class EditOrDeleteZenithPrivatePatternMemoryResponse
+    extends $pb.GeneratedMessage {
+  factory EditOrDeleteZenithPrivatePatternMemoryResponse({
+    ZenithPrivatePatternMemoryItem? memory,
+  }) {
+    final result = create();
+    if (memory != null) result.memory = memory;
+    return result;
+  }
+
+  EditOrDeleteZenithPrivatePatternMemoryResponse._();
+
+  factory EditOrDeleteZenithPrivatePatternMemoryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EditOrDeleteZenithPrivatePatternMemoryResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EditOrDeleteZenithPrivatePatternMemoryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithPrivatePatternMemoryItem>(1, _omitFieldNames ? '' : 'memory',
+        subBuilder: ZenithPrivatePatternMemoryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditOrDeleteZenithPrivatePatternMemoryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EditOrDeleteZenithPrivatePatternMemoryResponse copyWith(
+          void Function(EditOrDeleteZenithPrivatePatternMemoryResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as EditOrDeleteZenithPrivatePatternMemoryResponse))
+          as EditOrDeleteZenithPrivatePatternMemoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EditOrDeleteZenithPrivatePatternMemoryResponse create() =>
+      EditOrDeleteZenithPrivatePatternMemoryResponse._();
+  @$core.override
+  EditOrDeleteZenithPrivatePatternMemoryResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static EditOrDeleteZenithPrivatePatternMemoryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EditOrDeleteZenithPrivatePatternMemoryResponse>(create);
+  static EditOrDeleteZenithPrivatePatternMemoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithPrivatePatternMemoryItem get memory => $_getN(0);
+  @$pb.TagNumber(1)
+  set memory(ZenithPrivatePatternMemoryItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMemory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMemory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithPrivatePatternMemoryItem ensureMemory() => $_ensure(0);
+}
+
+/// Choice 9 (Z7): Travel Performance
+class ZenithTravelPerformanceProtocolItem extends $pb.GeneratedMessage {
+  factory ZenithTravelPerformanceProtocolItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? travelCode,
+    $core.String? corridorAndShiftHours,
+    $core.String? lightMealSleepSchedule,
+    $core.String? missedStepReplanRule,
+    $core.String? supplementDefaultMode,
+    $core.String? adaptationState,
+    $core.bool? medicationAdviceProhibited,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (travelCode != null) result.travelCode = travelCode;
+    if (corridorAndShiftHours != null)
+      result.corridorAndShiftHours = corridorAndShiftHours;
+    if (lightMealSleepSchedule != null)
+      result.lightMealSleepSchedule = lightMealSleepSchedule;
+    if (missedStepReplanRule != null)
+      result.missedStepReplanRule = missedStepReplanRule;
+    if (supplementDefaultMode != null)
+      result.supplementDefaultMode = supplementDefaultMode;
+    if (adaptationState != null) result.adaptationState = adaptationState;
+    if (medicationAdviceProhibited != null)
+      result.medicationAdviceProhibited = medicationAdviceProhibited;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithTravelPerformanceProtocolItem._();
+
+  factory ZenithTravelPerformanceProtocolItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithTravelPerformanceProtocolItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithTravelPerformanceProtocolItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'travelCode')
+    ..aOS(4, _omitFieldNames ? '' : 'corridorAndShiftHours')
+    ..aOS(5, _omitFieldNames ? '' : 'lightMealSleepSchedule')
+    ..aOS(6, _omitFieldNames ? '' : 'missedStepReplanRule')
+    ..aOS(7, _omitFieldNames ? '' : 'supplementDefaultMode')
+    ..aOS(8, _omitFieldNames ? '' : 'adaptationState')
+    ..aOB(9, _omitFieldNames ? '' : 'medicationAdviceProhibited')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithTravelPerformanceProtocolItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithTravelPerformanceProtocolItem copyWith(
+          void Function(ZenithTravelPerformanceProtocolItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithTravelPerformanceProtocolItem))
+          as ZenithTravelPerformanceProtocolItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithTravelPerformanceProtocolItem create() =>
+      ZenithTravelPerformanceProtocolItem._();
+  @$core.override
+  ZenithTravelPerformanceProtocolItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithTravelPerformanceProtocolItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ZenithTravelPerformanceProtocolItem>(create);
+  static ZenithTravelPerformanceProtocolItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get travelCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set travelCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTravelCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTravelCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get corridorAndShiftHours => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set corridorAndShiftHours($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCorridorAndShiftHours() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCorridorAndShiftHours() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lightMealSleepSchedule => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lightMealSleepSchedule($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLightMealSleepSchedule() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLightMealSleepSchedule() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get missedStepReplanRule => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set missedStepReplanRule($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMissedStepReplanRule() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMissedStepReplanRule() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get supplementDefaultMode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set supplementDefaultMode($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSupplementDefaultMode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSupplementDefaultMode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get adaptationState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set adaptationState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAdaptationState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAdaptationState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get medicationAdviceProhibited => $_getBF(8);
+  @$pb.TagNumber(9)
+  set medicationAdviceProhibited($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMedicationAdviceProhibited() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMedicationAdviceProhibited() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithTravelPerformanceWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithTravelPerformanceWorkbenchRequest() => create();
+
+  GetZenithTravelPerformanceWorkbenchRequest._();
+
+  factory GetZenithTravelPerformanceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithTravelPerformanceWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithTravelPerformanceWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithTravelPerformanceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithTravelPerformanceWorkbenchRequest copyWith(
+          void Function(GetZenithTravelPerformanceWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithTravelPerformanceWorkbenchRequest))
+          as GetZenithTravelPerformanceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithTravelPerformanceWorkbenchRequest create() =>
+      GetZenithTravelPerformanceWorkbenchRequest._();
+  @$core.override
+  GetZenithTravelPerformanceWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithTravelPerformanceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithTravelPerformanceWorkbenchRequest>(create);
+  static GetZenithTravelPerformanceWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithTravelPerformanceWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetZenithTravelPerformanceWorkbenchResponse({
+    $core.Iterable<ZenithTravelPerformanceProtocolItem>? protocols,
+    $core.bool? medicationAdviceProhibitedEnforced,
+    $core.String? noSupplementDefaultSummary,
+  }) {
+    final result = create();
+    if (protocols != null) result.protocols.addAll(protocols);
+    if (medicationAdviceProhibitedEnforced != null)
+      result.medicationAdviceProhibitedEnforced =
+          medicationAdviceProhibitedEnforced;
+    if (noSupplementDefaultSummary != null)
+      result.noSupplementDefaultSummary = noSupplementDefaultSummary;
+    return result;
+  }
+
+  GetZenithTravelPerformanceWorkbenchResponse._();
+
+  factory GetZenithTravelPerformanceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithTravelPerformanceWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithTravelPerformanceWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithTravelPerformanceProtocolItem>(
+        1, _omitFieldNames ? '' : 'protocols',
+        subBuilder: ZenithTravelPerformanceProtocolItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'medicationAdviceProhibitedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'noSupplementDefaultSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithTravelPerformanceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithTravelPerformanceWorkbenchResponse copyWith(
+          void Function(GetZenithTravelPerformanceWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithTravelPerformanceWorkbenchResponse))
+          as GetZenithTravelPerformanceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithTravelPerformanceWorkbenchResponse create() =>
+      GetZenithTravelPerformanceWorkbenchResponse._();
+  @$core.override
+  GetZenithTravelPerformanceWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithTravelPerformanceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithTravelPerformanceWorkbenchResponse>(create);
+  static GetZenithTravelPerformanceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithTravelPerformanceProtocolItem> get protocols => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get medicationAdviceProhibitedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set medicationAdviceProhibitedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMedicationAdviceProhibitedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMedicationAdviceProhibitedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get noSupplementDefaultSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set noSupplementDefaultSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNoSupplementDefaultSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNoSupplementDefaultSummary() => $_clearField(3);
+}
+
+class SaveZenithTravelPerformanceProtocolRequest extends $pb.GeneratedMessage {
+  factory SaveZenithTravelPerformanceProtocolRequest({
+    $core.String? travelCode,
+    $core.String? corridorAndShiftHours,
+    $core.String? lightMealSleepSchedule,
+    $core.String? missedStepReplanRule,
+    $core.String? supplementDefaultMode,
+    $core.String? adaptationState,
+  }) {
+    final result = create();
+    if (travelCode != null) result.travelCode = travelCode;
+    if (corridorAndShiftHours != null)
+      result.corridorAndShiftHours = corridorAndShiftHours;
+    if (lightMealSleepSchedule != null)
+      result.lightMealSleepSchedule = lightMealSleepSchedule;
+    if (missedStepReplanRule != null)
+      result.missedStepReplanRule = missedStepReplanRule;
+    if (supplementDefaultMode != null)
+      result.supplementDefaultMode = supplementDefaultMode;
+    if (adaptationState != null) result.adaptationState = adaptationState;
+    return result;
+  }
+
+  SaveZenithTravelPerformanceProtocolRequest._();
+
+  factory SaveZenithTravelPerformanceProtocolRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithTravelPerformanceProtocolRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithTravelPerformanceProtocolRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'travelCode')
+    ..aOS(2, _omitFieldNames ? '' : 'corridorAndShiftHours')
+    ..aOS(3, _omitFieldNames ? '' : 'lightMealSleepSchedule')
+    ..aOS(4, _omitFieldNames ? '' : 'missedStepReplanRule')
+    ..aOS(5, _omitFieldNames ? '' : 'supplementDefaultMode')
+    ..aOS(6, _omitFieldNames ? '' : 'adaptationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithTravelPerformanceProtocolRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithTravelPerformanceProtocolRequest copyWith(
+          void Function(SaveZenithTravelPerformanceProtocolRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithTravelPerformanceProtocolRequest))
+          as SaveZenithTravelPerformanceProtocolRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithTravelPerformanceProtocolRequest create() =>
+      SaveZenithTravelPerformanceProtocolRequest._();
+  @$core.override
+  SaveZenithTravelPerformanceProtocolRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithTravelPerformanceProtocolRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithTravelPerformanceProtocolRequest>(create);
+  static SaveZenithTravelPerformanceProtocolRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get travelCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set travelCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTravelCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTravelCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get corridorAndShiftHours => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set corridorAndShiftHours($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCorridorAndShiftHours() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCorridorAndShiftHours() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get lightMealSleepSchedule => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set lightMealSleepSchedule($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLightMealSleepSchedule() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLightMealSleepSchedule() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get missedStepReplanRule => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set missedStepReplanRule($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMissedStepReplanRule() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMissedStepReplanRule() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get supplementDefaultMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set supplementDefaultMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSupplementDefaultMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSupplementDefaultMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get adaptationState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set adaptationState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAdaptationState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAdaptationState() => $_clearField(6);
+}
+
+class SaveZenithTravelPerformanceProtocolResponse extends $pb.GeneratedMessage {
+  factory SaveZenithTravelPerformanceProtocolResponse({
+    ZenithTravelPerformanceProtocolItem? protocol,
+  }) {
+    final result = create();
+    if (protocol != null) result.protocol = protocol;
+    return result;
+  }
+
+  SaveZenithTravelPerformanceProtocolResponse._();
+
+  factory SaveZenithTravelPerformanceProtocolResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithTravelPerformanceProtocolResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithTravelPerformanceProtocolResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithTravelPerformanceProtocolItem>(
+        1, _omitFieldNames ? '' : 'protocol',
+        subBuilder: ZenithTravelPerformanceProtocolItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithTravelPerformanceProtocolResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithTravelPerformanceProtocolResponse copyWith(
+          void Function(SaveZenithTravelPerformanceProtocolResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithTravelPerformanceProtocolResponse))
+          as SaveZenithTravelPerformanceProtocolResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithTravelPerformanceProtocolResponse create() =>
+      SaveZenithTravelPerformanceProtocolResponse._();
+  @$core.override
+  SaveZenithTravelPerformanceProtocolResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithTravelPerformanceProtocolResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithTravelPerformanceProtocolResponse>(create);
+  static SaveZenithTravelPerformanceProtocolResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithTravelPerformanceProtocolItem get protocol => $_getN(0);
+  @$pb.TagNumber(1)
+  set protocol(ZenithTravelPerformanceProtocolItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocol() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithTravelPerformanceProtocolItem ensureProtocol() => $_ensure(0);
+}
+
+class ReplanZenithTravelMissedStepRequest extends $pb.GeneratedMessage {
+  factory ReplanZenithTravelMissedStepRequest({
+    $core.String? travelCode,
+    $core.String? missedStepReplanRule,
+    $core.String? adaptationState,
+  }) {
+    final result = create();
+    if (travelCode != null) result.travelCode = travelCode;
+    if (missedStepReplanRule != null)
+      result.missedStepReplanRule = missedStepReplanRule;
+    if (adaptationState != null) result.adaptationState = adaptationState;
+    return result;
+  }
+
+  ReplanZenithTravelMissedStepRequest._();
+
+  factory ReplanZenithTravelMissedStepRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReplanZenithTravelMissedStepRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReplanZenithTravelMissedStepRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'travelCode')
+    ..aOS(2, _omitFieldNames ? '' : 'missedStepReplanRule')
+    ..aOS(3, _omitFieldNames ? '' : 'adaptationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReplanZenithTravelMissedStepRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReplanZenithTravelMissedStepRequest copyWith(
+          void Function(ReplanZenithTravelMissedStepRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ReplanZenithTravelMissedStepRequest))
+          as ReplanZenithTravelMissedStepRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReplanZenithTravelMissedStepRequest create() =>
+      ReplanZenithTravelMissedStepRequest._();
+  @$core.override
+  ReplanZenithTravelMissedStepRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReplanZenithTravelMissedStepRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReplanZenithTravelMissedStepRequest>(create);
+  static ReplanZenithTravelMissedStepRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get travelCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set travelCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTravelCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTravelCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get missedStepReplanRule => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set missedStepReplanRule($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMissedStepReplanRule() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMissedStepReplanRule() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get adaptationState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set adaptationState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAdaptationState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdaptationState() => $_clearField(3);
+}
+
+class ReplanZenithTravelMissedStepResponse extends $pb.GeneratedMessage {
+  factory ReplanZenithTravelMissedStepResponse({
+    ZenithTravelPerformanceProtocolItem? protocol,
+  }) {
+    final result = create();
+    if (protocol != null) result.protocol = protocol;
+    return result;
+  }
+
+  ReplanZenithTravelMissedStepResponse._();
+
+  factory ReplanZenithTravelMissedStepResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReplanZenithTravelMissedStepResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReplanZenithTravelMissedStepResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithTravelPerformanceProtocolItem>(
+        1, _omitFieldNames ? '' : 'protocol',
+        subBuilder: ZenithTravelPerformanceProtocolItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReplanZenithTravelMissedStepResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReplanZenithTravelMissedStepResponse copyWith(
+          void Function(ReplanZenithTravelMissedStepResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ReplanZenithTravelMissedStepResponse))
+          as ReplanZenithTravelMissedStepResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReplanZenithTravelMissedStepResponse create() =>
+      ReplanZenithTravelMissedStepResponse._();
+  @$core.override
+  ReplanZenithTravelMissedStepResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReplanZenithTravelMissedStepResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReplanZenithTravelMissedStepResponse>(create);
+  static ReplanZenithTravelMissedStepResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithTravelPerformanceProtocolItem get protocol => $_getN(0);
+  @$pb.TagNumber(1)
+  set protocol(ZenithTravelPerformanceProtocolItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocol() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithTravelPerformanceProtocolItem ensureProtocol() => $_ensure(0);
+}
+
+/// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+class ZenithCoachingTeamMeetingHealthItem extends $pb.GeneratedMessage {
+  factory ZenithCoachingTeamMeetingHealthItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? workspaceCode,
+    $core.String? coachCredentialAndScope,
+    $core.String? meetingLoadFragmentationInsight,
+    $core.String? teamCohortPrivacySummary,
+    $core.String? asyncOrMeetingFreeProposal,
+    $core.String? governanceState,
+    $core.bool? individualSurveillanceBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (coachCredentialAndScope != null)
+      result.coachCredentialAndScope = coachCredentialAndScope;
+    if (meetingLoadFragmentationInsight != null)
+      result.meetingLoadFragmentationInsight = meetingLoadFragmentationInsight;
+    if (teamCohortPrivacySummary != null)
+      result.teamCohortPrivacySummary = teamCohortPrivacySummary;
+    if (asyncOrMeetingFreeProposal != null)
+      result.asyncOrMeetingFreeProposal = asyncOrMeetingFreeProposal;
+    if (governanceState != null) result.governanceState = governanceState;
+    if (individualSurveillanceBlocked != null)
+      result.individualSurveillanceBlocked = individualSurveillanceBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithCoachingTeamMeetingHealthItem._();
+
+  factory ZenithCoachingTeamMeetingHealthItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithCoachingTeamMeetingHealthItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithCoachingTeamMeetingHealthItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'coachCredentialAndScope')
+    ..aOS(5, _omitFieldNames ? '' : 'meetingLoadFragmentationInsight')
+    ..aOS(6, _omitFieldNames ? '' : 'teamCohortPrivacySummary')
+    ..aOS(7, _omitFieldNames ? '' : 'asyncOrMeetingFreeProposal')
+    ..aOS(8, _omitFieldNames ? '' : 'governanceState')
+    ..aOB(9, _omitFieldNames ? '' : 'individualSurveillanceBlocked')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCoachingTeamMeetingHealthItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithCoachingTeamMeetingHealthItem copyWith(
+          void Function(ZenithCoachingTeamMeetingHealthItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithCoachingTeamMeetingHealthItem))
+          as ZenithCoachingTeamMeetingHealthItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithCoachingTeamMeetingHealthItem create() =>
+      ZenithCoachingTeamMeetingHealthItem._();
+  @$core.override
+  ZenithCoachingTeamMeetingHealthItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithCoachingTeamMeetingHealthItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ZenithCoachingTeamMeetingHealthItem>(create);
+  static ZenithCoachingTeamMeetingHealthItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workspaceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workspaceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkspaceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkspaceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get coachCredentialAndScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set coachCredentialAndScope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCoachCredentialAndScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCoachCredentialAndScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get meetingLoadFragmentationInsight => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set meetingLoadFragmentationInsight($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMeetingLoadFragmentationInsight() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMeetingLoadFragmentationInsight() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get teamCohortPrivacySummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set teamCohortPrivacySummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTeamCohortPrivacySummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTeamCohortPrivacySummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get asyncOrMeetingFreeProposal => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set asyncOrMeetingFreeProposal($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAsyncOrMeetingFreeProposal() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAsyncOrMeetingFreeProposal() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get governanceState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set governanceState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasGovernanceState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGovernanceState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get individualSurveillanceBlocked => $_getBF(8);
+  @$pb.TagNumber(9)
+  set individualSurveillanceBlocked($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIndividualSurveillanceBlocked() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIndividualSurveillanceBlocked() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithCoachingTeamMeetingWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetZenithCoachingTeamMeetingWorkbenchRequest() => create();
+
+  GetZenithCoachingTeamMeetingWorkbenchRequest._();
+
+  factory GetZenithCoachingTeamMeetingWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCoachingTeamMeetingWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithCoachingTeamMeetingWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCoachingTeamMeetingWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCoachingTeamMeetingWorkbenchRequest copyWith(
+          void Function(GetZenithCoachingTeamMeetingWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithCoachingTeamMeetingWorkbenchRequest))
+          as GetZenithCoachingTeamMeetingWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCoachingTeamMeetingWorkbenchRequest create() =>
+      GetZenithCoachingTeamMeetingWorkbenchRequest._();
+  @$core.override
+  GetZenithCoachingTeamMeetingWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCoachingTeamMeetingWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCoachingTeamMeetingWorkbenchRequest>(create);
+  static GetZenithCoachingTeamMeetingWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithCoachingTeamMeetingWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetZenithCoachingTeamMeetingWorkbenchResponse({
+    $core.Iterable<ZenithCoachingTeamMeetingHealthItem>? workspaces,
+    $core.bool? individualSurveillanceBlockedEnforced,
+    $core.String? minimumCohortAndCredentialSummary,
+  }) {
+    final result = create();
+    if (workspaces != null) result.workspaces.addAll(workspaces);
+    if (individualSurveillanceBlockedEnforced != null)
+      result.individualSurveillanceBlockedEnforced =
+          individualSurveillanceBlockedEnforced;
+    if (minimumCohortAndCredentialSummary != null)
+      result.minimumCohortAndCredentialSummary =
+          minimumCohortAndCredentialSummary;
+    return result;
+  }
+
+  GetZenithCoachingTeamMeetingWorkbenchResponse._();
+
+  factory GetZenithCoachingTeamMeetingWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithCoachingTeamMeetingWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithCoachingTeamMeetingWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithCoachingTeamMeetingHealthItem>(
+        1, _omitFieldNames ? '' : 'workspaces',
+        subBuilder: ZenithCoachingTeamMeetingHealthItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'individualSurveillanceBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'minimumCohortAndCredentialSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCoachingTeamMeetingWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithCoachingTeamMeetingWorkbenchResponse copyWith(
+          void Function(GetZenithCoachingTeamMeetingWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithCoachingTeamMeetingWorkbenchResponse))
+          as GetZenithCoachingTeamMeetingWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCoachingTeamMeetingWorkbenchResponse create() =>
+      GetZenithCoachingTeamMeetingWorkbenchResponse._();
+  @$core.override
+  GetZenithCoachingTeamMeetingWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithCoachingTeamMeetingWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithCoachingTeamMeetingWorkbenchResponse>(create);
+  static GetZenithCoachingTeamMeetingWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithCoachingTeamMeetingHealthItem> get workspaces =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get individualSurveillanceBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set individualSurveillanceBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIndividualSurveillanceBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIndividualSurveillanceBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get minimumCohortAndCredentialSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set minimumCohortAndCredentialSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMinimumCohortAndCredentialSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMinimumCohortAndCredentialSummary() => $_clearField(3);
+}
+
+class SaveZenithCoachingTeamMeetingHealthRequest extends $pb.GeneratedMessage {
+  factory SaveZenithCoachingTeamMeetingHealthRequest({
+    $core.String? workspaceCode,
+    $core.String? coachCredentialAndScope,
+    $core.String? meetingLoadFragmentationInsight,
+    $core.String? teamCohortPrivacySummary,
+    $core.String? asyncOrMeetingFreeProposal,
+    $core.String? governanceState,
+  }) {
+    final result = create();
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (coachCredentialAndScope != null)
+      result.coachCredentialAndScope = coachCredentialAndScope;
+    if (meetingLoadFragmentationInsight != null)
+      result.meetingLoadFragmentationInsight = meetingLoadFragmentationInsight;
+    if (teamCohortPrivacySummary != null)
+      result.teamCohortPrivacySummary = teamCohortPrivacySummary;
+    if (asyncOrMeetingFreeProposal != null)
+      result.asyncOrMeetingFreeProposal = asyncOrMeetingFreeProposal;
+    if (governanceState != null) result.governanceState = governanceState;
+    return result;
+  }
+
+  SaveZenithCoachingTeamMeetingHealthRequest._();
+
+  factory SaveZenithCoachingTeamMeetingHealthRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCoachingTeamMeetingHealthRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCoachingTeamMeetingHealthRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'coachCredentialAndScope')
+    ..aOS(3, _omitFieldNames ? '' : 'meetingLoadFragmentationInsight')
+    ..aOS(4, _omitFieldNames ? '' : 'teamCohortPrivacySummary')
+    ..aOS(5, _omitFieldNames ? '' : 'asyncOrMeetingFreeProposal')
+    ..aOS(6, _omitFieldNames ? '' : 'governanceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCoachingTeamMeetingHealthRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCoachingTeamMeetingHealthRequest copyWith(
+          void Function(SaveZenithCoachingTeamMeetingHealthRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCoachingTeamMeetingHealthRequest))
+          as SaveZenithCoachingTeamMeetingHealthRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCoachingTeamMeetingHealthRequest create() =>
+      SaveZenithCoachingTeamMeetingHealthRequest._();
+  @$core.override
+  SaveZenithCoachingTeamMeetingHealthRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCoachingTeamMeetingHealthRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCoachingTeamMeetingHealthRequest>(create);
+  static SaveZenithCoachingTeamMeetingHealthRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workspaceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workspaceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspaceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspaceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get coachCredentialAndScope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set coachCredentialAndScope($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCoachCredentialAndScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCoachCredentialAndScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get meetingLoadFragmentationInsight => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set meetingLoadFragmentationInsight($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMeetingLoadFragmentationInsight() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMeetingLoadFragmentationInsight() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get teamCohortPrivacySummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set teamCohortPrivacySummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTeamCohortPrivacySummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTeamCohortPrivacySummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get asyncOrMeetingFreeProposal => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set asyncOrMeetingFreeProposal($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAsyncOrMeetingFreeProposal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAsyncOrMeetingFreeProposal() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get governanceState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set governanceState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGovernanceState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGovernanceState() => $_clearField(6);
+}
+
+class SaveZenithCoachingTeamMeetingHealthResponse extends $pb.GeneratedMessage {
+  factory SaveZenithCoachingTeamMeetingHealthResponse({
+    ZenithCoachingTeamMeetingHealthItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  SaveZenithCoachingTeamMeetingHealthResponse._();
+
+  factory SaveZenithCoachingTeamMeetingHealthResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithCoachingTeamMeetingHealthResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithCoachingTeamMeetingHealthResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCoachingTeamMeetingHealthItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: ZenithCoachingTeamMeetingHealthItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCoachingTeamMeetingHealthResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithCoachingTeamMeetingHealthResponse copyWith(
+          void Function(SaveZenithCoachingTeamMeetingHealthResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithCoachingTeamMeetingHealthResponse))
+          as SaveZenithCoachingTeamMeetingHealthResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCoachingTeamMeetingHealthResponse create() =>
+      SaveZenithCoachingTeamMeetingHealthResponse._();
+  @$core.override
+  SaveZenithCoachingTeamMeetingHealthResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithCoachingTeamMeetingHealthResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithCoachingTeamMeetingHealthResponse>(create);
+  static SaveZenithCoachingTeamMeetingHealthResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCoachingTeamMeetingHealthItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(ZenithCoachingTeamMeetingHealthItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCoachingTeamMeetingHealthItem ensureWorkspace() => $_ensure(0);
+}
+
+class ProposeZenithMeetingFreeOrOracleHandoffRequest
+    extends $pb.GeneratedMessage {
+  factory ProposeZenithMeetingFreeOrOracleHandoffRequest({
+    $core.String? workspaceCode,
+    $core.String? asyncOrMeetingFreeProposal,
+    $core.String? governanceState,
+  }) {
+    final result = create();
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (asyncOrMeetingFreeProposal != null)
+      result.asyncOrMeetingFreeProposal = asyncOrMeetingFreeProposal;
+    if (governanceState != null) result.governanceState = governanceState;
+    return result;
+  }
+
+  ProposeZenithMeetingFreeOrOracleHandoffRequest._();
+
+  factory ProposeZenithMeetingFreeOrOracleHandoffRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ProposeZenithMeetingFreeOrOracleHandoffRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ProposeZenithMeetingFreeOrOracleHandoffRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'asyncOrMeetingFreeProposal')
+    ..aOS(3, _omitFieldNames ? '' : 'governanceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProposeZenithMeetingFreeOrOracleHandoffRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProposeZenithMeetingFreeOrOracleHandoffRequest copyWith(
+          void Function(ProposeZenithMeetingFreeOrOracleHandoffRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ProposeZenithMeetingFreeOrOracleHandoffRequest))
+          as ProposeZenithMeetingFreeOrOracleHandoffRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProposeZenithMeetingFreeOrOracleHandoffRequest create() =>
+      ProposeZenithMeetingFreeOrOracleHandoffRequest._();
+  @$core.override
+  ProposeZenithMeetingFreeOrOracleHandoffRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ProposeZenithMeetingFreeOrOracleHandoffRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ProposeZenithMeetingFreeOrOracleHandoffRequest>(create);
+  static ProposeZenithMeetingFreeOrOracleHandoffRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workspaceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workspaceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspaceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspaceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get asyncOrMeetingFreeProposal => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set asyncOrMeetingFreeProposal($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAsyncOrMeetingFreeProposal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAsyncOrMeetingFreeProposal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get governanceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set governanceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGovernanceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGovernanceState() => $_clearField(3);
+}
+
+class ProposeZenithMeetingFreeOrOracleHandoffResponse
+    extends $pb.GeneratedMessage {
+  factory ProposeZenithMeetingFreeOrOracleHandoffResponse({
+    ZenithCoachingTeamMeetingHealthItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  ProposeZenithMeetingFreeOrOracleHandoffResponse._();
+
+  factory ProposeZenithMeetingFreeOrOracleHandoffResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ProposeZenithMeetingFreeOrOracleHandoffResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'ProposeZenithMeetingFreeOrOracleHandoffResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithCoachingTeamMeetingHealthItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: ZenithCoachingTeamMeetingHealthItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProposeZenithMeetingFreeOrOracleHandoffResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProposeZenithMeetingFreeOrOracleHandoffResponse copyWith(
+          void Function(ProposeZenithMeetingFreeOrOracleHandoffResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ProposeZenithMeetingFreeOrOracleHandoffResponse))
+          as ProposeZenithMeetingFreeOrOracleHandoffResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProposeZenithMeetingFreeOrOracleHandoffResponse create() =>
+      ProposeZenithMeetingFreeOrOracleHandoffResponse._();
+  @$core.override
+  ProposeZenithMeetingFreeOrOracleHandoffResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ProposeZenithMeetingFreeOrOracleHandoffResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ProposeZenithMeetingFreeOrOracleHandoffResponse>(create);
+  static ProposeZenithMeetingFreeOrOracleHandoffResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithCoachingTeamMeetingHealthItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(ZenithCoachingTeamMeetingHealthItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithCoachingTeamMeetingHealthItem ensureWorkspace() => $_ensure(0);
+}
+
+/// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+class ZenithSensoryDesktopWorkspaceItem extends $pb.GeneratedMessage {
+  factory ZenithSensoryDesktopWorkspaceItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sensoryCode,
+    $core.String? profileNameAndNeeds,
+    $core.String? vendorCapabilityAndManualFallback,
+    $core.String? protectedSafetyExclusions,
+    $core.String? desktopCompanionTelemetryMode,
+    $core.String? workspaceState,
+    $core.bool? keystrokeScreenshotCaptureBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sensoryCode != null) result.sensoryCode = sensoryCode;
+    if (profileNameAndNeeds != null)
+      result.profileNameAndNeeds = profileNameAndNeeds;
+    if (vendorCapabilityAndManualFallback != null)
+      result.vendorCapabilityAndManualFallback =
+          vendorCapabilityAndManualFallback;
+    if (protectedSafetyExclusions != null)
+      result.protectedSafetyExclusions = protectedSafetyExclusions;
+    if (desktopCompanionTelemetryMode != null)
+      result.desktopCompanionTelemetryMode = desktopCompanionTelemetryMode;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (keystrokeScreenshotCaptureBlocked != null)
+      result.keystrokeScreenshotCaptureBlocked =
+          keystrokeScreenshotCaptureBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  ZenithSensoryDesktopWorkspaceItem._();
+
+  factory ZenithSensoryDesktopWorkspaceItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ZenithSensoryDesktopWorkspaceItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ZenithSensoryDesktopWorkspaceItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sensoryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'profileNameAndNeeds')
+    ..aOS(5, _omitFieldNames ? '' : 'vendorCapabilityAndManualFallback')
+    ..aOS(6, _omitFieldNames ? '' : 'protectedSafetyExclusions')
+    ..aOS(7, _omitFieldNames ? '' : 'desktopCompanionTelemetryMode')
+    ..aOS(8, _omitFieldNames ? '' : 'workspaceState')
+    ..aOB(9, _omitFieldNames ? '' : 'keystrokeScreenshotCaptureBlocked')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithSensoryDesktopWorkspaceItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ZenithSensoryDesktopWorkspaceItem copyWith(
+          void Function(ZenithSensoryDesktopWorkspaceItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as ZenithSensoryDesktopWorkspaceItem))
+          as ZenithSensoryDesktopWorkspaceItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ZenithSensoryDesktopWorkspaceItem create() =>
+      ZenithSensoryDesktopWorkspaceItem._();
+  @$core.override
+  ZenithSensoryDesktopWorkspaceItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ZenithSensoryDesktopWorkspaceItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ZenithSensoryDesktopWorkspaceItem>(
+          create);
+  static ZenithSensoryDesktopWorkspaceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sensoryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sensoryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSensoryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSensoryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get profileNameAndNeeds => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set profileNameAndNeeds($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProfileNameAndNeeds() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProfileNameAndNeeds() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get vendorCapabilityAndManualFallback => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set vendorCapabilityAndManualFallback($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVendorCapabilityAndManualFallback() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVendorCapabilityAndManualFallback() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get protectedSafetyExclusions => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set protectedSafetyExclusions($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProtectedSafetyExclusions() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProtectedSafetyExclusions() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get desktopCompanionTelemetryMode => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set desktopCompanionTelemetryMode($core.String value) =>
+      $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDesktopCompanionTelemetryMode() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDesktopCompanionTelemetryMode() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get workspaceState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set workspaceState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasWorkspaceState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWorkspaceState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get keystrokeScreenshotCaptureBlocked => $_getBF(8);
+  @$pb.TagNumber(9)
+  set keystrokeScreenshotCaptureBlocked($core.bool value) =>
+      $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasKeystrokeScreenshotCaptureBlocked() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearKeystrokeScreenshotCaptureBlocked() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetZenithSensoryDesktopWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetZenithSensoryDesktopWorkbenchRequest() => create();
+
+  GetZenithSensoryDesktopWorkbenchRequest._();
+
+  factory GetZenithSensoryDesktopWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithSensoryDesktopWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithSensoryDesktopWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithSensoryDesktopWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithSensoryDesktopWorkbenchRequest copyWith(
+          void Function(GetZenithSensoryDesktopWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithSensoryDesktopWorkbenchRequest))
+          as GetZenithSensoryDesktopWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithSensoryDesktopWorkbenchRequest create() =>
+      GetZenithSensoryDesktopWorkbenchRequest._();
+  @$core.override
+  GetZenithSensoryDesktopWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithSensoryDesktopWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithSensoryDesktopWorkbenchRequest>(create);
+  static GetZenithSensoryDesktopWorkbenchRequest? _defaultInstance;
+}
+
+class GetZenithSensoryDesktopWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetZenithSensoryDesktopWorkbenchResponse({
+    $core.Iterable<ZenithSensoryDesktopWorkspaceItem>? workspaces,
+    $core.bool? keystrokeScreenshotCaptureBlockedEnforced,
+    $core.String? safetyExclusionAndManualFallbackSummary,
+  }) {
+    final result = create();
+    if (workspaces != null) result.workspaces.addAll(workspaces);
+    if (keystrokeScreenshotCaptureBlockedEnforced != null)
+      result.keystrokeScreenshotCaptureBlockedEnforced =
+          keystrokeScreenshotCaptureBlockedEnforced;
+    if (safetyExclusionAndManualFallbackSummary != null)
+      result.safetyExclusionAndManualFallbackSummary =
+          safetyExclusionAndManualFallbackSummary;
+    return result;
+  }
+
+  GetZenithSensoryDesktopWorkbenchResponse._();
+
+  factory GetZenithSensoryDesktopWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetZenithSensoryDesktopWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetZenithSensoryDesktopWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..pPM<ZenithSensoryDesktopWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspaces',
+        subBuilder: ZenithSensoryDesktopWorkspaceItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'keystrokeScreenshotCaptureBlockedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'safetyExclusionAndManualFallbackSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithSensoryDesktopWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetZenithSensoryDesktopWorkbenchResponse copyWith(
+          void Function(GetZenithSensoryDesktopWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetZenithSensoryDesktopWorkbenchResponse))
+          as GetZenithSensoryDesktopWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetZenithSensoryDesktopWorkbenchResponse create() =>
+      GetZenithSensoryDesktopWorkbenchResponse._();
+  @$core.override
+  GetZenithSensoryDesktopWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetZenithSensoryDesktopWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetZenithSensoryDesktopWorkbenchResponse>(create);
+  static GetZenithSensoryDesktopWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<ZenithSensoryDesktopWorkspaceItem> get workspaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get keystrokeScreenshotCaptureBlockedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set keystrokeScreenshotCaptureBlockedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasKeystrokeScreenshotCaptureBlockedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearKeystrokeScreenshotCaptureBlockedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get safetyExclusionAndManualFallbackSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set safetyExclusionAndManualFallbackSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSafetyExclusionAndManualFallbackSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSafetyExclusionAndManualFallbackSummary() => $_clearField(3);
+}
+
+class SaveZenithSensoryDesktopWorkspaceRequest extends $pb.GeneratedMessage {
+  factory SaveZenithSensoryDesktopWorkspaceRequest({
+    $core.String? sensoryCode,
+    $core.String? profileNameAndNeeds,
+    $core.String? vendorCapabilityAndManualFallback,
+    $core.String? protectedSafetyExclusions,
+    $core.String? desktopCompanionTelemetryMode,
+    $core.String? workspaceState,
+  }) {
+    final result = create();
+    if (sensoryCode != null) result.sensoryCode = sensoryCode;
+    if (profileNameAndNeeds != null)
+      result.profileNameAndNeeds = profileNameAndNeeds;
+    if (vendorCapabilityAndManualFallback != null)
+      result.vendorCapabilityAndManualFallback =
+          vendorCapabilityAndManualFallback;
+    if (protectedSafetyExclusions != null)
+      result.protectedSafetyExclusions = protectedSafetyExclusions;
+    if (desktopCompanionTelemetryMode != null)
+      result.desktopCompanionTelemetryMode = desktopCompanionTelemetryMode;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    return result;
+  }
+
+  SaveZenithSensoryDesktopWorkspaceRequest._();
+
+  factory SaveZenithSensoryDesktopWorkspaceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithSensoryDesktopWorkspaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithSensoryDesktopWorkspaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sensoryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'profileNameAndNeeds')
+    ..aOS(3, _omitFieldNames ? '' : 'vendorCapabilityAndManualFallback')
+    ..aOS(4, _omitFieldNames ? '' : 'protectedSafetyExclusions')
+    ..aOS(5, _omitFieldNames ? '' : 'desktopCompanionTelemetryMode')
+    ..aOS(6, _omitFieldNames ? '' : 'workspaceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithSensoryDesktopWorkspaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithSensoryDesktopWorkspaceRequest copyWith(
+          void Function(SaveZenithSensoryDesktopWorkspaceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithSensoryDesktopWorkspaceRequest))
+          as SaveZenithSensoryDesktopWorkspaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithSensoryDesktopWorkspaceRequest create() =>
+      SaveZenithSensoryDesktopWorkspaceRequest._();
+  @$core.override
+  SaveZenithSensoryDesktopWorkspaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithSensoryDesktopWorkspaceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithSensoryDesktopWorkspaceRequest>(create);
+  static SaveZenithSensoryDesktopWorkspaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sensoryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sensoryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSensoryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSensoryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get profileNameAndNeeds => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set profileNameAndNeeds($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProfileNameAndNeeds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProfileNameAndNeeds() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vendorCapabilityAndManualFallback => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vendorCapabilityAndManualFallback($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVendorCapabilityAndManualFallback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVendorCapabilityAndManualFallback() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get protectedSafetyExclusions => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set protectedSafetyExclusions($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProtectedSafetyExclusions() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProtectedSafetyExclusions() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get desktopCompanionTelemetryMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set desktopCompanionTelemetryMode($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDesktopCompanionTelemetryMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDesktopCompanionTelemetryMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get workspaceState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set workspaceState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWorkspaceState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWorkspaceState() => $_clearField(6);
+}
+
+class SaveZenithSensoryDesktopWorkspaceResponse extends $pb.GeneratedMessage {
+  factory SaveZenithSensoryDesktopWorkspaceResponse({
+    ZenithSensoryDesktopWorkspaceItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  SaveZenithSensoryDesktopWorkspaceResponse._();
+
+  factory SaveZenithSensoryDesktopWorkspaceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveZenithSensoryDesktopWorkspaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveZenithSensoryDesktopWorkspaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithSensoryDesktopWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: ZenithSensoryDesktopWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithSensoryDesktopWorkspaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveZenithSensoryDesktopWorkspaceResponse copyWith(
+          void Function(SaveZenithSensoryDesktopWorkspaceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveZenithSensoryDesktopWorkspaceResponse))
+          as SaveZenithSensoryDesktopWorkspaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithSensoryDesktopWorkspaceResponse create() =>
+      SaveZenithSensoryDesktopWorkspaceResponse._();
+  @$core.override
+  SaveZenithSensoryDesktopWorkspaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveZenithSensoryDesktopWorkspaceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveZenithSensoryDesktopWorkspaceResponse>(create);
+  static SaveZenithSensoryDesktopWorkspaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithSensoryDesktopWorkspaceItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(ZenithSensoryDesktopWorkspaceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithSensoryDesktopWorkspaceItem ensureWorkspace() => $_ensure(0);
+}
+
+class ArmOrFallbackZenithSensoryWorkspaceRequest extends $pb.GeneratedMessage {
+  factory ArmOrFallbackZenithSensoryWorkspaceRequest({
+    $core.String? sensoryCode,
+    $core.String? workspaceState,
+    $core.String? vendorCapabilityAndManualFallback,
+  }) {
+    final result = create();
+    if (sensoryCode != null) result.sensoryCode = sensoryCode;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (vendorCapabilityAndManualFallback != null)
+      result.vendorCapabilityAndManualFallback =
+          vendorCapabilityAndManualFallback;
+    return result;
+  }
+
+  ArmOrFallbackZenithSensoryWorkspaceRequest._();
+
+  factory ArmOrFallbackZenithSensoryWorkspaceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArmOrFallbackZenithSensoryWorkspaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArmOrFallbackZenithSensoryWorkspaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sensoryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceState')
+    ..aOS(3, _omitFieldNames ? '' : 'vendorCapabilityAndManualFallback')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArmOrFallbackZenithSensoryWorkspaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArmOrFallbackZenithSensoryWorkspaceRequest copyWith(
+          void Function(ArmOrFallbackZenithSensoryWorkspaceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ArmOrFallbackZenithSensoryWorkspaceRequest))
+          as ArmOrFallbackZenithSensoryWorkspaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArmOrFallbackZenithSensoryWorkspaceRequest create() =>
+      ArmOrFallbackZenithSensoryWorkspaceRequest._();
+  @$core.override
+  ArmOrFallbackZenithSensoryWorkspaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArmOrFallbackZenithSensoryWorkspaceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ArmOrFallbackZenithSensoryWorkspaceRequest>(create);
+  static ArmOrFallbackZenithSensoryWorkspaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sensoryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sensoryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSensoryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSensoryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceState => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceState($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceState() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vendorCapabilityAndManualFallback => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vendorCapabilityAndManualFallback($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVendorCapabilityAndManualFallback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVendorCapabilityAndManualFallback() => $_clearField(3);
+}
+
+class ArmOrFallbackZenithSensoryWorkspaceResponse extends $pb.GeneratedMessage {
+  factory ArmOrFallbackZenithSensoryWorkspaceResponse({
+    ZenithSensoryDesktopWorkspaceItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  ArmOrFallbackZenithSensoryWorkspaceResponse._();
+
+  factory ArmOrFallbackZenithSensoryWorkspaceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ArmOrFallbackZenithSensoryWorkspaceResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ArmOrFallbackZenithSensoryWorkspaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.zenith.v1'),
+      createEmptyInstance: create)
+    ..aOM<ZenithSensoryDesktopWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: ZenithSensoryDesktopWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArmOrFallbackZenithSensoryWorkspaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ArmOrFallbackZenithSensoryWorkspaceResponse copyWith(
+          void Function(ArmOrFallbackZenithSensoryWorkspaceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ArmOrFallbackZenithSensoryWorkspaceResponse))
+          as ArmOrFallbackZenithSensoryWorkspaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ArmOrFallbackZenithSensoryWorkspaceResponse create() =>
+      ArmOrFallbackZenithSensoryWorkspaceResponse._();
+  @$core.override
+  ArmOrFallbackZenithSensoryWorkspaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ArmOrFallbackZenithSensoryWorkspaceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ArmOrFallbackZenithSensoryWorkspaceResponse>(create);
+  static ArmOrFallbackZenithSensoryWorkspaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  ZenithSensoryDesktopWorkspaceItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(ZenithSensoryDesktopWorkspaceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  ZenithSensoryDesktopWorkspaceItem ensureWorkspace() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

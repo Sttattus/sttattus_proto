@@ -629,6 +629,444 @@ message CancelLoungeBookingResponse {
   bool ok = 1;
 }
 
+// ============================================================================
+// ZENITH OPPORTUNITY CHOICES 1–11 (Z1..Z14)
+// ============================================================================
+
+// Choice 1 (Z1): Native Focus Firewall
+message ZenithFocusFirewallSessionItem {
+  string id = 1;
+  string user_id = 2;
+  string firewall_code = 3;
+  string session_title = 4;
+  string enforcement_mode = 5;
+  string platform_capability_matrix = 6;
+  string whitelisted_emergency_paths = 7;
+  string override_friction_and_log = 8;
+  string firewall_state = 9;
+  bool emergency_exit_always_permitted = 10;
+  string updated_at_iso = 11;
+}
+message GetZenithFocusFirewallWorkbenchRequest {}
+message GetZenithFocusFirewallWorkbenchResponse {
+  repeated ZenithFocusFirewallSessionItem sessions = 1;
+  bool emergency_exit_always_permitted_enforced = 2;
+  string honest_platform_capability_summary = 3;
+}
+message SaveZenithFocusFirewallSessionRequest {
+  string firewall_code = 1;
+  string session_title = 2;
+  string enforcement_mode = 3;
+  string platform_capability_matrix = 4;
+  string whitelisted_emergency_paths = 5;
+  string override_friction_and_log = 6;
+  string firewall_state = 7;
+}
+message SaveZenithFocusFirewallSessionResponse {
+  ZenithFocusFirewallSessionItem session = 1;
+}
+message TriggerZenithFocusFirewallBypassOrCompleteRequest {
+  string firewall_code = 1;
+  string target_state = 2;
+  string override_reason_note = 3;
+}
+message TriggerZenithFocusFirewallBypassOrCompleteResponse {
+  ZenithFocusFirewallSessionItem session = 1;
+}
+
+// Choice 2 (Z2): Adaptive Day Architect
+message ZenithAdaptiveDayArchitectPlanItem {
+  string id = 1;
+  string user_id = 2;
+  string plan_code = 3;
+  string plan_date_label = 4;
+  string calendar_snapshot_lag_and_coverage = 5;
+  string proposed_focus_and_buffer_windows = 6;
+  string what_changed_replan_diff = 7;
+  string readiness_fallback_mode = 8;
+  string plan_state = 9;
+  bool silent_calendar_move_blocked = 10;
+  string updated_at_iso = 11;
+}
+message GetZenithAdaptiveDayArchitectWorkbenchRequest {}
+message GetZenithAdaptiveDayArchitectWorkbenchResponse {
+  repeated ZenithAdaptiveDayArchitectPlanItem plans = 1;
+  bool silent_calendar_move_blocked_enforced = 2;
+  string no_sensor_fallback_summary = 3;
+}
+message SaveZenithAdaptiveDayArchitectPlanRequest {
+  string plan_code = 1;
+  string plan_date_label = 2;
+  string calendar_snapshot_lag_and_coverage = 3;
+  string proposed_focus_and_buffer_windows = 4;
+  string what_changed_replan_diff = 5;
+  string readiness_fallback_mode = 6;
+  string plan_state = 7;
+}
+message SaveZenithAdaptiveDayArchitectPlanResponse {
+  ZenithAdaptiveDayArchitectPlanItem plan = 1;
+}
+message AcceptOrReplanZenithDayArchitectRequest {
+  string plan_code = 1;
+  string target_state = 2;
+  string what_changed_replan_diff = 3;
+}
+message AcceptOrReplanZenithDayArchitectResponse {
+  ZenithAdaptiveDayArchitectPlanItem plan = 1;
+}
+
+// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+message ZenithIntentionOutcomeContractItem {
+  string id = 1;
+  string user_id = 2;
+  string intention_code = 3;
+  string project_and_deliverable = 4;
+  string done_for_now_criteria = 5;
+  string captured_output_and_obstacle = 6;
+  string next_action_step = 7;
+  string loop_state = 8;
+  bool surveillance_scoring_disabled = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithIntentionOutcomeWorkbenchRequest {}
+message GetZenithIntentionOutcomeWorkbenchResponse {
+  repeated ZenithIntentionOutcomeContractItem contracts = 1;
+  bool surveillance_scoring_disabled_enforced = 2;
+  string quiet_session_shell_summary = 3;
+}
+message SaveZenithIntentionOutcomeContractRequest {
+  string intention_code = 1;
+  string project_and_deliverable = 2;
+  string done_for_now_criteria = 3;
+  string captured_output_and_obstacle = 4;
+  string next_action_step = 5;
+  string loop_state = 6;
+}
+message SaveZenithIntentionOutcomeContractResponse {
+  ZenithIntentionOutcomeContractItem contract = 1;
+}
+message CompleteZenithIntentionOutcomeLoopRequest {
+  string intention_code = 1;
+  string captured_output_and_obstacle = 2;
+  string next_action_step = 3;
+  string loop_state = 4;
+}
+message CompleteZenithIntentionOutcomeLoopResponse {
+  ZenithIntentionOutcomeContractItem contract = 1;
+}
+
+// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+message ZenithAttentionNOf1ExperimentItem {
+  string id = 1;
+  string user_id = 2;
+  string experiment_code = 3;
+  string hypothesis_and_protocol = 4;
+  string predeclared_measure_and_min_samples = 5;
+  string interruption_recovery_summary = 6;
+  string correlation_vs_causation_note = 7;
+  string experiment_state = 8;
+  bool content_keystroke_capture_blocked = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithAttentionNOf1LabWorkbenchRequest {}
+message GetZenithAttentionNOf1LabWorkbenchResponse {
+  repeated ZenithAttentionNOf1ExperimentItem experiments = 1;
+  bool content_keystroke_capture_blocked_enforced = 2;
+  string correlation_boundary_summary = 3;
+}
+message SaveZenithAttentionNOf1ExperimentRequest {
+  string experiment_code = 1;
+  string hypothesis_and_protocol = 2;
+  string predeclared_measure_and_min_samples = 3;
+  string interruption_recovery_summary = 4;
+  string correlation_vs_causation_note = 5;
+  string experiment_state = 6;
+}
+message SaveZenithAttentionNOf1ExperimentResponse {
+  ZenithAttentionNOf1ExperimentItem experiment = 1;
+}
+message EvaluateZenithAttentionNOf1ExperimentRequest {
+  string experiment_code = 1;
+  string experiment_state = 2;
+  string correlation_vs_causation_note = 3;
+}
+message EvaluateZenithAttentionNOf1ExperimentResponse {
+  ZenithAttentionNOf1ExperimentItem experiment = 1;
+}
+
+// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+message ZenithRecoveryProtocolRunItem {
+  string id = 1;
+  string user_id = 2;
+  string protocol_code = 3;
+  string title_and_modality = 4;
+  string contraindication_and_safety_note = 5;
+  string sensor_or_nosensor_path = 6;
+  string subjective_before_after_delta = 7;
+  string protocol_state = 8;
+  bool non_medical_wellness_enforced = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithRecoveryProtocolStudioWorkbenchRequest {}
+message GetZenithRecoveryProtocolStudioWorkbenchResponse {
+  repeated ZenithRecoveryProtocolRunItem runs = 1;
+  bool non_medical_wellness_enforced = 2;
+  string no_sensor_offline_guarantee = 3;
+}
+message SaveZenithRecoveryProtocolRunRequest {
+  string protocol_code = 1;
+  string title_and_modality = 2;
+  string contraindication_and_safety_note = 3;
+  string sensor_or_nosensor_path = 4;
+  string subjective_before_after_delta = 5;
+  string protocol_state = 6;
+}
+message SaveZenithRecoveryProtocolRunResponse {
+  ZenithRecoveryProtocolRunItem run = 1;
+}
+message RecordZenithRecoveryCheckOrAdverseFlagRequest {
+  string protocol_code = 1;
+  string subjective_before_after_delta = 2;
+  string protocol_state = 3;
+}
+message RecordZenithRecoveryCheckOrAdverseFlagResponse {
+  ZenithRecoveryProtocolRunItem run = 1;
+}
+
+// Choice 6 (Z10): Communication Boundaries
+message ZenithCommunicationBoundaryRuleItem {
+  string id = 1;
+  string user_id = 2;
+  string boundary_code = 3;
+  string template_and_window = 4;
+  string vip_and_emergency_exceptions = 5;
+  string previewed_external_status_copy = 6;
+  string post_focus_catchup_summary = 7;
+  string boundary_state = 8;
+  bool message_body_collection_blocked = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithCommunicationBoundaryWorkbenchRequest {}
+message GetZenithCommunicationBoundaryWorkbenchResponse {
+  repeated ZenithCommunicationBoundaryRuleItem rules = 1;
+  bool message_body_collection_blocked_enforced = 2;
+  string preview_before_status_write_summary = 3;
+}
+message SaveZenithCommunicationBoundaryRuleRequest {
+  string boundary_code = 1;
+  string template_and_window = 2;
+  string vip_and_emergency_exceptions = 3;
+  string previewed_external_status_copy = 4;
+  string post_focus_catchup_summary = 5;
+  string boundary_state = 6;
+}
+message SaveZenithCommunicationBoundaryRuleResponse {
+  ZenithCommunicationBoundaryRuleItem rule = 1;
+}
+message ApproveOrReleaseZenithBoundaryCatchupRequest {
+  string boundary_code = 1;
+  string boundary_state = 2;
+  string post_focus_catchup_summary = 3;
+}
+message ApproveOrReleaseZenithBoundaryCatchupResponse {
+  ZenithCommunicationBoundaryRuleItem rule = 1;
+}
+
+// Choice 7 (Z5): Cognitive Readiness Battery
+message ZenithCognitiveReadinessSessionItem {
+  string id = 1;
+  string user_id = 2;
+  string battery_code = 3;
+  string alternate_form_and_tasks = 4;
+  string practice_effect_and_device_calibration = 5;
+  string readiness_band_and_confidence = 6;
+  string exclusion_flag_reason = 7;
+  string session_mode = 8;
+  bool non_diagnostic_claim_enforced = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithCognitiveReadinessWorkbenchRequest {}
+message GetZenithCognitiveReadinessWorkbenchResponse {
+  repeated ZenithCognitiveReadinessSessionItem sessions = 1;
+  bool non_diagnostic_claim_enforced = 2;
+  string training_vs_assessment_separation_summary = 3;
+}
+message SaveZenithCognitiveReadinessSessionRequest {
+  string battery_code = 1;
+  string alternate_form_and_tasks = 2;
+  string practice_effect_and_device_calibration = 3;
+  string readiness_band_and_confidence = 4;
+  string exclusion_flag_reason = 5;
+  string session_mode = 6;
+}
+message SaveZenithCognitiveReadinessSessionResponse {
+  ZenithCognitiveReadinessSessionItem session = 1;
+}
+message FlagOrValidateZenithCognitiveSessionRequest {
+  string battery_code = 1;
+  string exclusion_flag_reason = 2;
+  string session_mode = 3;
+}
+message FlagOrValidateZenithCognitiveSessionResponse {
+  ZenithCognitiveReadinessSessionItem session = 1;
+}
+
+// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+message ZenithPrivatePatternMemoryItem {
+  string id = 1;
+  string user_id = 2;
+  string pattern_code = 3;
+  string storage_and_encryption_mode = 4;
+  string editable_derived_theme_label = 5;
+  string on_device_rescue_prompt_rule = 6;
+  string crisis_resource_governance_note = 7;
+  string pattern_state = 8;
+  bool staff_raw_prose_access_blocked = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithPrivatePatternMemoryWorkbenchRequest {}
+message GetZenithPrivatePatternMemoryWorkbenchResponse {
+  repeated ZenithPrivatePatternMemoryItem memories = 1;
+  bool staff_raw_prose_access_blocked_enforced = 2;
+  string e2ee_and_editable_derivation_summary = 3;
+}
+message SaveZenithPrivatePatternMemoryRequest {
+  string pattern_code = 1;
+  string storage_and_encryption_mode = 2;
+  string editable_derived_theme_label = 3;
+  string on_device_rescue_prompt_rule = 4;
+  string crisis_resource_governance_note = 5;
+  string pattern_state = 6;
+}
+message SaveZenithPrivatePatternMemoryResponse {
+  ZenithPrivatePatternMemoryItem memory = 1;
+}
+message EditOrDeleteZenithPrivatePatternMemoryRequest {
+  string pattern_code = 1;
+  string editable_derived_theme_label = 2;
+  string pattern_state = 3;
+}
+message EditOrDeleteZenithPrivatePatternMemoryResponse {
+  ZenithPrivatePatternMemoryItem memory = 1;
+}
+
+// Choice 9 (Z7): Travel Performance
+message ZenithTravelPerformanceProtocolItem {
+  string id = 1;
+  string user_id = 2;
+  string travel_code = 3;
+  string corridor_and_shift_hours = 4;
+  string light_meal_sleep_schedule = 5;
+  string missed_step_replan_rule = 6;
+  string supplement_default_mode = 7;
+  string adaptation_state = 8;
+  bool medication_advice_prohibited = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithTravelPerformanceWorkbenchRequest {}
+message GetZenithTravelPerformanceWorkbenchResponse {
+  repeated ZenithTravelPerformanceProtocolItem protocols = 1;
+  bool medication_advice_prohibited_enforced = 2;
+  string no_supplement_default_summary = 3;
+}
+message SaveZenithTravelPerformanceProtocolRequest {
+  string travel_code = 1;
+  string corridor_and_shift_hours = 2;
+  string light_meal_sleep_schedule = 3;
+  string missed_step_replan_rule = 4;
+  string supplement_default_mode = 5;
+  string adaptation_state = 6;
+}
+message SaveZenithTravelPerformanceProtocolResponse {
+  ZenithTravelPerformanceProtocolItem protocol = 1;
+}
+message ReplanZenithTravelMissedStepRequest {
+  string travel_code = 1;
+  string missed_step_replan_rule = 2;
+  string adaptation_state = 3;
+}
+message ReplanZenithTravelMissedStepResponse {
+  ZenithTravelPerformanceProtocolItem protocol = 1;
+}
+
+// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+message ZenithCoachingTeamMeetingHealthItem {
+  string id = 1;
+  string user_id = 2;
+  string workspace_code = 3;
+  string coach_credential_and_scope = 4;
+  string meeting_load_fragmentation_insight = 5;
+  string team_cohort_privacy_summary = 6;
+  string async_or_meeting_free_proposal = 7;
+  string governance_state = 8;
+  bool individual_surveillance_blocked = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithCoachingTeamMeetingWorkbenchRequest {}
+message GetZenithCoachingTeamMeetingWorkbenchResponse {
+  repeated ZenithCoachingTeamMeetingHealthItem workspaces = 1;
+  bool individual_surveillance_blocked_enforced = 2;
+  string minimum_cohort_and_credential_summary = 3;
+}
+message SaveZenithCoachingTeamMeetingHealthRequest {
+  string workspace_code = 1;
+  string coach_credential_and_scope = 2;
+  string meeting_load_fragmentation_insight = 3;
+  string team_cohort_privacy_summary = 4;
+  string async_or_meeting_free_proposal = 5;
+  string governance_state = 6;
+}
+message SaveZenithCoachingTeamMeetingHealthResponse {
+  ZenithCoachingTeamMeetingHealthItem workspace = 1;
+}
+message ProposeZenithMeetingFreeOrOracleHandoffRequest {
+  string workspace_code = 1;
+  string async_or_meeting_free_proposal = 2;
+  string governance_state = 3;
+}
+message ProposeZenithMeetingFreeOrOracleHandoffResponse {
+  ZenithCoachingTeamMeetingHealthItem workspace = 1;
+}
+
+// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+message ZenithSensoryDesktopWorkspaceItem {
+  string id = 1;
+  string user_id = 2;
+  string sensory_code = 3;
+  string profile_name_and_needs = 4;
+  string vendor_capability_and_manual_fallback = 5;
+  string protected_safety_exclusions = 6;
+  string desktop_companion_telemetry_mode = 7;
+  string workspace_state = 8;
+  bool keystroke_screenshot_capture_blocked = 9;
+  string updated_at_iso = 10;
+}
+message GetZenithSensoryDesktopWorkbenchRequest {}
+message GetZenithSensoryDesktopWorkbenchResponse {
+  repeated ZenithSensoryDesktopWorkspaceItem workspaces = 1;
+  bool keystroke_screenshot_capture_blocked_enforced = 2;
+  string safety_exclusion_and_manual_fallback_summary = 3;
+}
+message SaveZenithSensoryDesktopWorkspaceRequest {
+  string sensory_code = 1;
+  string profile_name_and_needs = 2;
+  string vendor_capability_and_manual_fallback = 3;
+  string protected_safety_exclusions = 4;
+  string desktop_companion_telemetry_mode = 5;
+  string workspace_state = 6;
+}
+message SaveZenithSensoryDesktopWorkspaceResponse {
+  ZenithSensoryDesktopWorkspaceItem workspace = 1;
+}
+message ArmOrFallbackZenithSensoryWorkspaceRequest {
+  string sensory_code = 1;
+  string workspace_state = 2;
+  string vendor_capability_and_manual_fallback = 3;
+}
+message ArmOrFallbackZenithSensoryWorkspaceResponse {
+  ZenithSensoryDesktopWorkspaceItem workspace = 1;
+}
+
 service ZenithService {
   rpc LogFocusSession(LogFocusSessionRequest) returns (LogFocusSessionResponse);
   rpc GetZenithStats(GetZenithStatsRequest) returns (GetZenithStatsResponse);
@@ -711,4 +1149,60 @@ service ZenithService {
   rpc CreateLoungeBooking(CreateLoungeBookingRequest) returns (CreateLoungeBookingResponse);
   rpc ListMyLoungeBookings(ListMyLoungeBookingsRequest) returns (ListMyLoungeBookingsResponse);
   rpc CancelLoungeBooking(CancelLoungeBookingRequest) returns (CancelLoungeBookingResponse);
+
+  // ===== Zenith Opportunity Choices 1–11 (Z1..Z14) =====
+  // Choice 1 (Z1): Native Focus Firewall
+  rpc GetZenithFocusFirewallWorkbench(GetZenithFocusFirewallWorkbenchRequest) returns (GetZenithFocusFirewallWorkbenchResponse);
+  rpc SaveZenithFocusFirewallSession(SaveZenithFocusFirewallSessionRequest) returns (SaveZenithFocusFirewallSessionResponse);
+  rpc TriggerZenithFocusFirewallBypassOrComplete(TriggerZenithFocusFirewallBypassOrCompleteRequest) returns (TriggerZenithFocusFirewallBypassOrCompleteResponse);
+
+  // Choice 2 (Z2): Adaptive Day Architect
+  rpc GetZenithAdaptiveDayArchitectWorkbench(GetZenithAdaptiveDayArchitectWorkbenchRequest) returns (GetZenithAdaptiveDayArchitectWorkbenchResponse);
+  rpc SaveZenithAdaptiveDayArchitectPlan(SaveZenithAdaptiveDayArchitectPlanRequest) returns (SaveZenithAdaptiveDayArchitectPlanResponse);
+  rpc AcceptOrReplanZenithDayArchitect(AcceptOrReplanZenithDayArchitectRequest) returns (AcceptOrReplanZenithDayArchitectResponse);
+
+  // Choice 3 (Z9): Intention-to-Outcome Focus Loop
+  rpc GetZenithIntentionOutcomeWorkbench(GetZenithIntentionOutcomeWorkbenchRequest) returns (GetZenithIntentionOutcomeWorkbenchResponse);
+  rpc SaveZenithIntentionOutcomeContract(SaveZenithIntentionOutcomeContractRequest) returns (SaveZenithIntentionOutcomeContractResponse);
+  rpc CompleteZenithIntentionOutcomeLoop(CompleteZenithIntentionOutcomeLoopRequest) returns (CompleteZenithIntentionOutcomeLoopResponse);
+
+  // Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+  rpc GetZenithAttentionNOf1LabWorkbench(GetZenithAttentionNOf1LabWorkbenchRequest) returns (GetZenithAttentionNOf1LabWorkbenchResponse);
+  rpc SaveZenithAttentionNOf1Experiment(SaveZenithAttentionNOf1ExperimentRequest) returns (SaveZenithAttentionNOf1ExperimentResponse);
+  rpc EvaluateZenithAttentionNOf1Experiment(EvaluateZenithAttentionNOf1ExperimentRequest) returns (EvaluateZenithAttentionNOf1ExperimentResponse);
+
+  // Choice 5 (Z4, Z13): Recovery and Protocol Studio
+  rpc GetZenithRecoveryProtocolStudioWorkbench(GetZenithRecoveryProtocolStudioWorkbenchRequest) returns (GetZenithRecoveryProtocolStudioWorkbenchResponse);
+  rpc SaveZenithRecoveryProtocolRun(SaveZenithRecoveryProtocolRunRequest) returns (SaveZenithRecoveryProtocolRunResponse);
+  rpc RecordZenithRecoveryCheckOrAdverseFlag(RecordZenithRecoveryCheckOrAdverseFlagRequest) returns (RecordZenithRecoveryCheckOrAdverseFlagResponse);
+
+  // Choice 6 (Z10): Communication Boundaries
+  rpc GetZenithCommunicationBoundaryWorkbench(GetZenithCommunicationBoundaryWorkbenchRequest) returns (GetZenithCommunicationBoundaryWorkbenchResponse);
+  rpc SaveZenithCommunicationBoundaryRule(SaveZenithCommunicationBoundaryRuleRequest) returns (SaveZenithCommunicationBoundaryRuleResponse);
+  rpc ApproveOrReleaseZenithBoundaryCatchup(ApproveOrReleaseZenithBoundaryCatchupRequest) returns (ApproveOrReleaseZenithBoundaryCatchupResponse);
+
+  // Choice 7 (Z5): Cognitive Readiness Battery
+  rpc GetZenithCognitiveReadinessWorkbench(GetZenithCognitiveReadinessWorkbenchRequest) returns (GetZenithCognitiveReadinessWorkbenchResponse);
+  rpc SaveZenithCognitiveReadinessSession(SaveZenithCognitiveReadinessSessionRequest) returns (SaveZenithCognitiveReadinessSessionResponse);
+  rpc FlagOrValidateZenithCognitiveSession(FlagOrValidateZenithCognitiveSessionRequest) returns (FlagOrValidateZenithCognitiveSessionResponse);
+
+  // Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+  rpc GetZenithPrivatePatternMemoryWorkbench(GetZenithPrivatePatternMemoryWorkbenchRequest) returns (GetZenithPrivatePatternMemoryWorkbenchResponse);
+  rpc SaveZenithPrivatePatternMemory(SaveZenithPrivatePatternMemoryRequest) returns (SaveZenithPrivatePatternMemoryResponse);
+  rpc EditOrDeleteZenithPrivatePatternMemory(EditOrDeleteZenithPrivatePatternMemoryRequest) returns (EditOrDeleteZenithPrivatePatternMemoryResponse);
+
+  // Choice 9 (Z7): Travel Performance
+  rpc GetZenithTravelPerformanceWorkbench(GetZenithTravelPerformanceWorkbenchRequest) returns (GetZenithTravelPerformanceWorkbenchResponse);
+  rpc SaveZenithTravelPerformanceProtocol(SaveZenithTravelPerformanceProtocolRequest) returns (SaveZenithTravelPerformanceProtocolResponse);
+  rpc ReplanZenithTravelMissedStep(ReplanZenithTravelMissedStepRequest) returns (ReplanZenithTravelMissedStepResponse);
+
+  // Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+  rpc GetZenithCoachingTeamMeetingWorkbench(GetZenithCoachingTeamMeetingWorkbenchRequest) returns (GetZenithCoachingTeamMeetingWorkbenchResponse);
+  rpc SaveZenithCoachingTeamMeetingHealth(SaveZenithCoachingTeamMeetingHealthRequest) returns (SaveZenithCoachingTeamMeetingHealthResponse);
+  rpc ProposeZenithMeetingFreeOrOracleHandoff(ProposeZenithMeetingFreeOrOracleHandoffRequest) returns (ProposeZenithMeetingFreeOrOracleHandoffResponse);
+
+  // Choice 11 (Z11): Sensory Workspace and Desktop Companion
+  rpc GetZenithSensoryDesktopWorkbench(GetZenithSensoryDesktopWorkbenchRequest) returns (GetZenithSensoryDesktopWorkbenchResponse);
+  rpc SaveZenithSensoryDesktopWorkspace(SaveZenithSensoryDesktopWorkspaceRequest) returns (SaveZenithSensoryDesktopWorkspaceResponse);
+  rpc ArmOrFallbackZenithSensoryWorkspace(ArmOrFallbackZenithSensoryWorkspaceRequest) returns (ArmOrFallbackZenithSensoryWorkspaceResponse);
 }

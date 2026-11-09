@@ -6986,6 +6986,5583 @@ func (x *ExportUsCgtCsvResponse) GetCsv() []byte {
 	return nil
 }
 
+// Choice 1 (V1): Financial Data Reliability Center
+type VaultFinancialDataReliabilityItem struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SourceCode                     string                 `protobuf:"bytes,3,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	InstitutionAndCoverageWindow   string                 `protobuf:"bytes,4,opt,name=institution_and_coverage_window,json=institutionAndCoverageWindow,proto3" json:"institution_and_coverage_window,omitempty"`
+	SyncFreshnessAndReconciliation string                 `protobuf:"bytes,5,opt,name=sync_freshness_and_reconciliation,json=syncFreshnessAndReconciliation,proto3" json:"sync_freshness_and_reconciliation,omitempty"`
+	ConfidenceAndLineageLayer      string                 `protobuf:"bytes,6,opt,name=confidence_and_lineage_layer,json=confidenceAndLineageLayer,proto3" json:"confidence_and_lineage_layer,omitempty"`
+	ReliabilityState               string                 `protobuf:"bytes,7,opt,name=reliability_state,json=reliabilityState,proto3" json:"reliability_state,omitempty"`
+	IdempotentReplayDedupEnforced  bool                   `protobuf:"varint,8,opt,name=idempotent_replay_dedup_enforced,json=idempotentReplayDedupEnforced,proto3" json:"idempotent_replay_dedup_enforced,omitempty"`
+	UpdatedAtIso                   string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *VaultFinancialDataReliabilityItem) Reset() {
+	*x = VaultFinancialDataReliabilityItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultFinancialDataReliabilityItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultFinancialDataReliabilityItem) ProtoMessage() {}
+
+func (x *VaultFinancialDataReliabilityItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultFinancialDataReliabilityItem.ProtoReflect.Descriptor instead.
+func (*VaultFinancialDataReliabilityItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetInstitutionAndCoverageWindow() string {
+	if x != nil {
+		return x.InstitutionAndCoverageWindow
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetSyncFreshnessAndReconciliation() string {
+	if x != nil {
+		return x.SyncFreshnessAndReconciliation
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetConfidenceAndLineageLayer() string {
+	if x != nil {
+		return x.ConfidenceAndLineageLayer
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetReliabilityState() string {
+	if x != nil {
+		return x.ReliabilityState
+	}
+	return ""
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetIdempotentReplayDedupEnforced() bool {
+	if x != nil {
+		return x.IdempotentReplayDedupEnforced
+	}
+	return false
+}
+
+func (x *VaultFinancialDataReliabilityItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultFinancialReliabilityWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchRequest) Reset() {
+	*x = GetVaultFinancialReliabilityWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialReliabilityWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultFinancialReliabilityWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialReliabilityWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialReliabilityWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{126}
+}
+
+type GetVaultFinancialReliabilityWorkbenchResponse struct {
+	state                              protoimpl.MessageState               `protogen:"open.v1"`
+	Sources                            []*VaultFinancialDataReliabilityItem `protobuf:"bytes,1,rep,name=sources,proto3" json:"sources,omitempty"`
+	IdempotentReplayDedupEnforced      bool                                 `protobuf:"varint,2,opt,name=idempotent_replay_dedup_enforced,json=idempotentReplayDedupEnforced,proto3" json:"idempotent_replay_dedup_enforced,omitempty"`
+	SnapshotLineageAndFreshnessSummary string                               `protobuf:"bytes,3,opt,name=snapshot_lineage_and_freshness_summary,json=snapshotLineageAndFreshnessSummary,proto3" json:"snapshot_lineage_and_freshness_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) Reset() {
+	*x = GetVaultFinancialReliabilityWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialReliabilityWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialReliabilityWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialReliabilityWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) GetSources() []*VaultFinancialDataReliabilityItem {
+	if x != nil {
+		return x.Sources
+	}
+	return nil
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) GetIdempotentReplayDedupEnforced() bool {
+	if x != nil {
+		return x.IdempotentReplayDedupEnforced
+	}
+	return false
+}
+
+func (x *GetVaultFinancialReliabilityWorkbenchResponse) GetSnapshotLineageAndFreshnessSummary() string {
+	if x != nil {
+		return x.SnapshotLineageAndFreshnessSummary
+	}
+	return ""
+}
+
+type SaveVaultFinancialReliabilitySourceRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	SourceCode                     string                 `protobuf:"bytes,1,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	InstitutionAndCoverageWindow   string                 `protobuf:"bytes,2,opt,name=institution_and_coverage_window,json=institutionAndCoverageWindow,proto3" json:"institution_and_coverage_window,omitempty"`
+	SyncFreshnessAndReconciliation string                 `protobuf:"bytes,3,opt,name=sync_freshness_and_reconciliation,json=syncFreshnessAndReconciliation,proto3" json:"sync_freshness_and_reconciliation,omitempty"`
+	ConfidenceAndLineageLayer      string                 `protobuf:"bytes,4,opt,name=confidence_and_lineage_layer,json=confidenceAndLineageLayer,proto3" json:"confidence_and_lineage_layer,omitempty"`
+	ReliabilityState               string                 `protobuf:"bytes,5,opt,name=reliability_state,json=reliabilityState,proto3" json:"reliability_state,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) Reset() {
+	*x = SaveVaultFinancialReliabilitySourceRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialReliabilitySourceRequest) ProtoMessage() {}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialReliabilitySourceRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialReliabilitySourceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) GetInstitutionAndCoverageWindow() string {
+	if x != nil {
+		return x.InstitutionAndCoverageWindow
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) GetSyncFreshnessAndReconciliation() string {
+	if x != nil {
+		return x.SyncFreshnessAndReconciliation
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) GetConfidenceAndLineageLayer() string {
+	if x != nil {
+		return x.ConfidenceAndLineageLayer
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialReliabilitySourceRequest) GetReliabilityState() string {
+	if x != nil {
+		return x.ReliabilityState
+	}
+	return ""
+}
+
+type SaveVaultFinancialReliabilitySourceResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Source        *VaultFinancialDataReliabilityItem `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialReliabilitySourceResponse) Reset() {
+	*x = SaveVaultFinancialReliabilitySourceResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialReliabilitySourceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialReliabilitySourceResponse) ProtoMessage() {}
+
+func (x *SaveVaultFinancialReliabilitySourceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialReliabilitySourceResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialReliabilitySourceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *SaveVaultFinancialReliabilitySourceResponse) GetSource() *VaultFinancialDataReliabilityItem {
+	if x != nil {
+		return x.Source
+	}
+	return nil
+}
+
+type ReconcileOrReplayVaultReliabilityRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	SourceCode                     string                 `protobuf:"bytes,1,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	SyncFreshnessAndReconciliation string                 `protobuf:"bytes,2,opt,name=sync_freshness_and_reconciliation,json=syncFreshnessAndReconciliation,proto3" json:"sync_freshness_and_reconciliation,omitempty"`
+	ReliabilityState               string                 `protobuf:"bytes,3,opt,name=reliability_state,json=reliabilityState,proto3" json:"reliability_state,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) Reset() {
+	*x = ReconcileOrReplayVaultReliabilityRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileOrReplayVaultReliabilityRequest) ProtoMessage() {}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileOrReplayVaultReliabilityRequest.ProtoReflect.Descriptor instead.
+func (*ReconcileOrReplayVaultReliabilityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{130}
+}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) GetSyncFreshnessAndReconciliation() string {
+	if x != nil {
+		return x.SyncFreshnessAndReconciliation
+	}
+	return ""
+}
+
+func (x *ReconcileOrReplayVaultReliabilityRequest) GetReliabilityState() string {
+	if x != nil {
+		return x.ReliabilityState
+	}
+	return ""
+}
+
+type ReconcileOrReplayVaultReliabilityResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Source        *VaultFinancialDataReliabilityItem `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReconcileOrReplayVaultReliabilityResponse) Reset() {
+	*x = ReconcileOrReplayVaultReliabilityResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileOrReplayVaultReliabilityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileOrReplayVaultReliabilityResponse) ProtoMessage() {}
+
+func (x *ReconcileOrReplayVaultReliabilityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileOrReplayVaultReliabilityResponse.ProtoReflect.Descriptor instead.
+func (*ReconcileOrReplayVaultReliabilityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *ReconcileOrReplayVaultReliabilityResponse) GetSource() *VaultFinancialDataReliabilityItem {
+	if x != nil {
+		return x.Source
+	}
+	return nil
+}
+
+// Choice 2 (V10): Financial Inbox and Monthly Close
+type VaultFinancialInboxCloseItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	InboxCode                         string                 `protobuf:"bytes,3,opt,name=inbox_code,json=inboxCode,proto3" json:"inbox_code,omitempty"`
+	ExceptionAndClassificationSummary string                 `protobuf:"bytes,4,opt,name=exception_and_classification_summary,json=exceptionAndClassificationSummary,proto3" json:"exception_and_classification_summary,omitempty"`
+	CloseChecklistAndSnapshotRef      string                 `protobuf:"bytes,5,opt,name=close_checklist_and_snapshot_ref,json=closeChecklistAndSnapshotRef,proto3" json:"close_checklist_and_snapshot_ref,omitempty"`
+	WhatChangedStatementBridge        string                 `protobuf:"bytes,6,opt,name=what_changed_statement_bridge,json=whatChangedStatementBridge,proto3" json:"what_changed_statement_bridge,omitempty"`
+	InboxState                        string                 `protobuf:"bytes,7,opt,name=inbox_state,json=inboxState,proto3" json:"inbox_state,omitempty"`
+	ReversibleLedgerEditsEnforced     bool                   `protobuf:"varint,8,opt,name=reversible_ledger_edits_enforced,json=reversibleLedgerEditsEnforced,proto3" json:"reversible_ledger_edits_enforced,omitempty"`
+	UpdatedAtIso                      string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *VaultFinancialInboxCloseItem) Reset() {
+	*x = VaultFinancialInboxCloseItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultFinancialInboxCloseItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultFinancialInboxCloseItem) ProtoMessage() {}
+
+func (x *VaultFinancialInboxCloseItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultFinancialInboxCloseItem.ProtoReflect.Descriptor instead.
+func (*VaultFinancialInboxCloseItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *VaultFinancialInboxCloseItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetInboxCode() string {
+	if x != nil {
+		return x.InboxCode
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetExceptionAndClassificationSummary() string {
+	if x != nil {
+		return x.ExceptionAndClassificationSummary
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetCloseChecklistAndSnapshotRef() string {
+	if x != nil {
+		return x.CloseChecklistAndSnapshotRef
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetWhatChangedStatementBridge() string {
+	if x != nil {
+		return x.WhatChangedStatementBridge
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetInboxState() string {
+	if x != nil {
+		return x.InboxState
+	}
+	return ""
+}
+
+func (x *VaultFinancialInboxCloseItem) GetReversibleLedgerEditsEnforced() bool {
+	if x != nil {
+		return x.ReversibleLedgerEditsEnforced
+	}
+	return false
+}
+
+func (x *VaultFinancialInboxCloseItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultFinancialInboxCloseWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchRequest) Reset() {
+	*x = GetVaultFinancialInboxCloseWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialInboxCloseWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialInboxCloseWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialInboxCloseWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{133}
+}
+
+type GetVaultFinancialInboxCloseWorkbenchResponse struct {
+	state                          protoimpl.MessageState          `protogen:"open.v1"`
+	Closes                         []*VaultFinancialInboxCloseItem `protobuf:"bytes,1,rep,name=closes,proto3" json:"closes,omitempty"`
+	ReversibleLedgerEditsEnforced  bool                            `protobuf:"varint,2,opt,name=reversible_ledger_edits_enforced,json=reversibleLedgerEditsEnforced,proto3" json:"reversible_ledger_edits_enforced,omitempty"`
+	CloseLockAndWhatChangedSummary string                          `protobuf:"bytes,3,opt,name=close_lock_and_what_changed_summary,json=closeLockAndWhatChangedSummary,proto3" json:"close_lock_and_what_changed_summary,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) Reset() {
+	*x = GetVaultFinancialInboxCloseWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialInboxCloseWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialInboxCloseWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialInboxCloseWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) GetCloses() []*VaultFinancialInboxCloseItem {
+	if x != nil {
+		return x.Closes
+	}
+	return nil
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) GetReversibleLedgerEditsEnforced() bool {
+	if x != nil {
+		return x.ReversibleLedgerEditsEnforced
+	}
+	return false
+}
+
+func (x *GetVaultFinancialInboxCloseWorkbenchResponse) GetCloseLockAndWhatChangedSummary() string {
+	if x != nil {
+		return x.CloseLockAndWhatChangedSummary
+	}
+	return ""
+}
+
+type SaveVaultFinancialInboxCloseItemRequest struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	InboxCode                         string                 `protobuf:"bytes,1,opt,name=inbox_code,json=inboxCode,proto3" json:"inbox_code,omitempty"`
+	ExceptionAndClassificationSummary string                 `protobuf:"bytes,2,opt,name=exception_and_classification_summary,json=exceptionAndClassificationSummary,proto3" json:"exception_and_classification_summary,omitempty"`
+	CloseChecklistAndSnapshotRef      string                 `protobuf:"bytes,3,opt,name=close_checklist_and_snapshot_ref,json=closeChecklistAndSnapshotRef,proto3" json:"close_checklist_and_snapshot_ref,omitempty"`
+	WhatChangedStatementBridge        string                 `protobuf:"bytes,4,opt,name=what_changed_statement_bridge,json=whatChangedStatementBridge,proto3" json:"what_changed_statement_bridge,omitempty"`
+	InboxState                        string                 `protobuf:"bytes,5,opt,name=inbox_state,json=inboxState,proto3" json:"inbox_state,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) Reset() {
+	*x = SaveVaultFinancialInboxCloseItemRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialInboxCloseItemRequest) ProtoMessage() {}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialInboxCloseItemRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialInboxCloseItemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) GetInboxCode() string {
+	if x != nil {
+		return x.InboxCode
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) GetExceptionAndClassificationSummary() string {
+	if x != nil {
+		return x.ExceptionAndClassificationSummary
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) GetCloseChecklistAndSnapshotRef() string {
+	if x != nil {
+		return x.CloseChecklistAndSnapshotRef
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) GetWhatChangedStatementBridge() string {
+	if x != nil {
+		return x.WhatChangedStatementBridge
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialInboxCloseItemRequest) GetInboxState() string {
+	if x != nil {
+		return x.InboxState
+	}
+	return ""
+}
+
+type SaveVaultFinancialInboxCloseItemResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Close         *VaultFinancialInboxCloseItem `protobuf:"bytes,1,opt,name=close,proto3" json:"close,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialInboxCloseItemResponse) Reset() {
+	*x = SaveVaultFinancialInboxCloseItemResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialInboxCloseItemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialInboxCloseItemResponse) ProtoMessage() {}
+
+func (x *SaveVaultFinancialInboxCloseItemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialInboxCloseItemResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialInboxCloseItemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *SaveVaultFinancialInboxCloseItemResponse) GetClose() *VaultFinancialInboxCloseItem {
+	if x != nil {
+		return x.Close
+	}
+	return nil
+}
+
+type LockOrReopenVaultMonthlyCloseRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	InboxCode                  string                 `protobuf:"bytes,1,opt,name=inbox_code,json=inboxCode,proto3" json:"inbox_code,omitempty"`
+	WhatChangedStatementBridge string                 `protobuf:"bytes,2,opt,name=what_changed_statement_bridge,json=whatChangedStatementBridge,proto3" json:"what_changed_statement_bridge,omitempty"`
+	InboxState                 string                 `protobuf:"bytes,3,opt,name=inbox_state,json=inboxState,proto3" json:"inbox_state,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) Reset() {
+	*x = LockOrReopenVaultMonthlyCloseRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReopenVaultMonthlyCloseRequest) ProtoMessage() {}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReopenVaultMonthlyCloseRequest.ProtoReflect.Descriptor instead.
+func (*LockOrReopenVaultMonthlyCloseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) GetInboxCode() string {
+	if x != nil {
+		return x.InboxCode
+	}
+	return ""
+}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) GetWhatChangedStatementBridge() string {
+	if x != nil {
+		return x.WhatChangedStatementBridge
+	}
+	return ""
+}
+
+func (x *LockOrReopenVaultMonthlyCloseRequest) GetInboxState() string {
+	if x != nil {
+		return x.InboxState
+	}
+	return ""
+}
+
+type LockOrReopenVaultMonthlyCloseResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Close         *VaultFinancialInboxCloseItem `protobuf:"bytes,1,opt,name=close,proto3" json:"close,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LockOrReopenVaultMonthlyCloseResponse) Reset() {
+	*x = LockOrReopenVaultMonthlyCloseResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReopenVaultMonthlyCloseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReopenVaultMonthlyCloseResponse) ProtoMessage() {}
+
+func (x *LockOrReopenVaultMonthlyCloseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReopenVaultMonthlyCloseResponse.ProtoReflect.Descriptor instead.
+func (*LockOrReopenVaultMonthlyCloseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *LockOrReopenVaultMonthlyCloseResponse) GetClose() *VaultFinancialInboxCloseItem {
+	if x != nil {
+		return x.Close
+	}
+	return nil
+}
+
+// Choice 3 (V2, V11): Personal CFO and Cash Command
+type VaultPersonalCfoCashCommandItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CommandCode                        string                 `protobuf:"bytes,3,opt,name=command_code,json=commandCode,proto3" json:"command_code,omitempty"`
+	LiquidityLadderAndRatios           string                 `protobuf:"bytes,4,opt,name=liquidity_ladder_and_ratios,json=liquidityLadderAndRatios,proto3" json:"liquidity_ladder_and_ratios,omitempty"`
+	ThirteenWeekForecastAndCommitments string                 `protobuf:"bytes,5,opt,name=thirteen_week_forecast_and_commitments,json=thirteenWeekForecastAndCommitments,proto3" json:"thirteen_week_forecast_and_commitments,omitempty"`
+	ExplainableVarianceAndPolicyAlert  string                 `protobuf:"bytes,6,opt,name=explainable_variance_and_policy_alert,json=explainableVarianceAndPolicyAlert,proto3" json:"explainable_variance_and_policy_alert,omitempty"`
+	CommandState                       string                 `protobuf:"bytes,7,opt,name=command_state,json=commandState,proto3" json:"command_state,omitempty"`
+	NonAutoTransferBoundaryEnforced    bool                   `protobuf:"varint,8,opt,name=non_auto_transfer_boundary_enforced,json=nonAutoTransferBoundaryEnforced,proto3" json:"non_auto_transfer_boundary_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *VaultPersonalCfoCashCommandItem) Reset() {
+	*x = VaultPersonalCfoCashCommandItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultPersonalCfoCashCommandItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultPersonalCfoCashCommandItem) ProtoMessage() {}
+
+func (x *VaultPersonalCfoCashCommandItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultPersonalCfoCashCommandItem.ProtoReflect.Descriptor instead.
+func (*VaultPersonalCfoCashCommandItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetCommandCode() string {
+	if x != nil {
+		return x.CommandCode
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetLiquidityLadderAndRatios() string {
+	if x != nil {
+		return x.LiquidityLadderAndRatios
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetThirteenWeekForecastAndCommitments() string {
+	if x != nil {
+		return x.ThirteenWeekForecastAndCommitments
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetExplainableVarianceAndPolicyAlert() string {
+	if x != nil {
+		return x.ExplainableVarianceAndPolicyAlert
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetCommandState() string {
+	if x != nil {
+		return x.CommandState
+	}
+	return ""
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetNonAutoTransferBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonAutoTransferBoundaryEnforced
+	}
+	return false
+}
+
+func (x *VaultPersonalCfoCashCommandItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultPersonalCfoCashWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchRequest) Reset() {
+	*x = GetVaultPersonalCfoCashWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPersonalCfoCashWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultPersonalCfoCashWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPersonalCfoCashWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultPersonalCfoCashWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{140}
+}
+
+type GetVaultPersonalCfoCashWorkbenchResponse struct {
+	state                             protoimpl.MessageState             `protogen:"open.v1"`
+	Commands                          []*VaultPersonalCfoCashCommandItem `protobuf:"bytes,1,rep,name=commands,proto3" json:"commands,omitempty"`
+	NonAutoTransferBoundaryEnforced   bool                               `protobuf:"varint,2,opt,name=non_auto_transfer_boundary_enforced,json=nonAutoTransferBoundaryEnforced,proto3" json:"non_auto_transfer_boundary_enforced,omitempty"`
+	LiquidityLadderAndForecastSummary string                             `protobuf:"bytes,3,opt,name=liquidity_ladder_and_forecast_summary,json=liquidityLadderAndForecastSummary,proto3" json:"liquidity_ladder_and_forecast_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) Reset() {
+	*x = GetVaultPersonalCfoCashWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPersonalCfoCashWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPersonalCfoCashWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultPersonalCfoCashWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) GetCommands() []*VaultPersonalCfoCashCommandItem {
+	if x != nil {
+		return x.Commands
+	}
+	return nil
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) GetNonAutoTransferBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonAutoTransferBoundaryEnforced
+	}
+	return false
+}
+
+func (x *GetVaultPersonalCfoCashWorkbenchResponse) GetLiquidityLadderAndForecastSummary() string {
+	if x != nil {
+		return x.LiquidityLadderAndForecastSummary
+	}
+	return ""
+}
+
+type SaveVaultPersonalCfoCashForecastRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	CommandCode                        string                 `protobuf:"bytes,1,opt,name=command_code,json=commandCode,proto3" json:"command_code,omitempty"`
+	LiquidityLadderAndRatios           string                 `protobuf:"bytes,2,opt,name=liquidity_ladder_and_ratios,json=liquidityLadderAndRatios,proto3" json:"liquidity_ladder_and_ratios,omitempty"`
+	ThirteenWeekForecastAndCommitments string                 `protobuf:"bytes,3,opt,name=thirteen_week_forecast_and_commitments,json=thirteenWeekForecastAndCommitments,proto3" json:"thirteen_week_forecast_and_commitments,omitempty"`
+	ExplainableVarianceAndPolicyAlert  string                 `protobuf:"bytes,4,opt,name=explainable_variance_and_policy_alert,json=explainableVarianceAndPolicyAlert,proto3" json:"explainable_variance_and_policy_alert,omitempty"`
+	CommandState                       string                 `protobuf:"bytes,5,opt,name=command_state,json=commandState,proto3" json:"command_state,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) Reset() {
+	*x = SaveVaultPersonalCfoCashForecastRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPersonalCfoCashForecastRequest) ProtoMessage() {}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPersonalCfoCashForecastRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultPersonalCfoCashForecastRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) GetCommandCode() string {
+	if x != nil {
+		return x.CommandCode
+	}
+	return ""
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) GetLiquidityLadderAndRatios() string {
+	if x != nil {
+		return x.LiquidityLadderAndRatios
+	}
+	return ""
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) GetThirteenWeekForecastAndCommitments() string {
+	if x != nil {
+		return x.ThirteenWeekForecastAndCommitments
+	}
+	return ""
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) GetExplainableVarianceAndPolicyAlert() string {
+	if x != nil {
+		return x.ExplainableVarianceAndPolicyAlert
+	}
+	return ""
+}
+
+func (x *SaveVaultPersonalCfoCashForecastRequest) GetCommandState() string {
+	if x != nil {
+		return x.CommandState
+	}
+	return ""
+}
+
+type SaveVaultPersonalCfoCashForecastResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Command       *VaultPersonalCfoCashCommandItem `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultPersonalCfoCashForecastResponse) Reset() {
+	*x = SaveVaultPersonalCfoCashForecastResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPersonalCfoCashForecastResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPersonalCfoCashForecastResponse) ProtoMessage() {}
+
+func (x *SaveVaultPersonalCfoCashForecastResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPersonalCfoCashForecastResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultPersonalCfoCashForecastResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *SaveVaultPersonalCfoCashForecastResponse) GetCommand() *VaultPersonalCfoCashCommandItem {
+	if x != nil {
+		return x.Command
+	}
+	return nil
+}
+
+type AcknowledgeOrReviewVaultCashCommitmentRequest struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	CommandCode                       string                 `protobuf:"bytes,1,opt,name=command_code,json=commandCode,proto3" json:"command_code,omitempty"`
+	ExplainableVarianceAndPolicyAlert string                 `protobuf:"bytes,2,opt,name=explainable_variance_and_policy_alert,json=explainableVarianceAndPolicyAlert,proto3" json:"explainable_variance_and_policy_alert,omitempty"`
+	CommandState                      string                 `protobuf:"bytes,3,opt,name=command_state,json=commandState,proto3" json:"command_state,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) Reset() {
+	*x = AcknowledgeOrReviewVaultCashCommitmentRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcknowledgeOrReviewVaultCashCommitmentRequest) ProtoMessage() {}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcknowledgeOrReviewVaultCashCommitmentRequest.ProtoReflect.Descriptor instead.
+func (*AcknowledgeOrReviewVaultCashCommitmentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) GetCommandCode() string {
+	if x != nil {
+		return x.CommandCode
+	}
+	return ""
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) GetExplainableVarianceAndPolicyAlert() string {
+	if x != nil {
+		return x.ExplainableVarianceAndPolicyAlert
+	}
+	return ""
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentRequest) GetCommandState() string {
+	if x != nil {
+		return x.CommandState
+	}
+	return ""
+}
+
+type AcknowledgeOrReviewVaultCashCommitmentResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Command       *VaultPersonalCfoCashCommandItem `protobuf:"bytes,1,opt,name=command,proto3" json:"command,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentResponse) Reset() {
+	*x = AcknowledgeOrReviewVaultCashCommitmentResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcknowledgeOrReviewVaultCashCommitmentResponse) ProtoMessage() {}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcknowledgeOrReviewVaultCashCommitmentResponse.ProtoReflect.Descriptor instead.
+func (*AcknowledgeOrReviewVaultCashCommitmentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *AcknowledgeOrReviewVaultCashCommitmentResponse) GetCommand() *VaultPersonalCfoCashCommandItem {
+	if x != nil {
+		return x.Command
+	}
+	return nil
+}
+
+// Choice 4 (V3): Performance and Allocation Laboratory
+type VaultPerformanceAllocationLabItem struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	Id                                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                              string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AllocationCode                      string                 `protobuf:"bytes,3,opt,name=allocation_code,json=allocationCode,proto3" json:"allocation_code,omitempty"`
+	TwrMwrIrrAndBenchmarkSummary        string                 `protobuf:"bytes,4,opt,name=twr_mwr_irr_and_benchmark_summary,json=twrMwrIrrAndBenchmarkSummary,proto3" json:"twr_mwr_irr_and_benchmark_summary,omitempty"`
+	LookthroughExposureAndConcentration string                 `protobuf:"bytes,5,opt,name=lookthrough_exposure_and_concentration,json=lookthroughExposureAndConcentration,proto3" json:"lookthrough_exposure_and_concentration,omitempty"`
+	RebalanceTaxAndCostScenario         string                 `protobuf:"bytes,6,opt,name=rebalance_tax_and_cost_scenario,json=rebalanceTaxAndCostScenario,proto3" json:"rebalance_tax_and_cost_scenario,omitempty"`
+	LabState                            string                 `protobuf:"bytes,7,opt,name=lab_state,json=labState,proto3" json:"lab_state,omitempty"`
+	NoFabricatedSmoothCurveEnforced     bool                   `protobuf:"varint,8,opt,name=no_fabricated_smooth_curve_enforced,json=noFabricatedSmoothCurveEnforced,proto3" json:"no_fabricated_smooth_curve_enforced,omitempty"`
+	UpdatedAtIso                        string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *VaultPerformanceAllocationLabItem) Reset() {
+	*x = VaultPerformanceAllocationLabItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultPerformanceAllocationLabItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultPerformanceAllocationLabItem) ProtoMessage() {}
+
+func (x *VaultPerformanceAllocationLabItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultPerformanceAllocationLabItem.ProtoReflect.Descriptor instead.
+func (*VaultPerformanceAllocationLabItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetAllocationCode() string {
+	if x != nil {
+		return x.AllocationCode
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetTwrMwrIrrAndBenchmarkSummary() string {
+	if x != nil {
+		return x.TwrMwrIrrAndBenchmarkSummary
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetLookthroughExposureAndConcentration() string {
+	if x != nil {
+		return x.LookthroughExposureAndConcentration
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetRebalanceTaxAndCostScenario() string {
+	if x != nil {
+		return x.RebalanceTaxAndCostScenario
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetLabState() string {
+	if x != nil {
+		return x.LabState
+	}
+	return ""
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetNoFabricatedSmoothCurveEnforced() bool {
+	if x != nil {
+		return x.NoFabricatedSmoothCurveEnforced
+	}
+	return false
+}
+
+func (x *VaultPerformanceAllocationLabItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultPerformanceAllocationWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchRequest) Reset() {
+	*x = GetVaultPerformanceAllocationWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPerformanceAllocationWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultPerformanceAllocationWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPerformanceAllocationWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultPerformanceAllocationWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{147}
+}
+
+type GetVaultPerformanceAllocationWorkbenchResponse struct {
+	state                                  protoimpl.MessageState               `protogen:"open.v1"`
+	Models                                 []*VaultPerformanceAllocationLabItem `protobuf:"bytes,1,rep,name=models,proto3" json:"models,omitempty"`
+	NoFabricatedSmoothCurveEnforced        bool                                 `protobuf:"varint,2,opt,name=no_fabricated_smooth_curve_enforced,json=noFabricatedSmoothCurveEnforced,proto3" json:"no_fabricated_smooth_curve_enforced,omitempty"`
+	SnapshotReproduciblePerformanceSummary string                               `protobuf:"bytes,3,opt,name=snapshot_reproducible_performance_summary,json=snapshotReproduciblePerformanceSummary,proto3" json:"snapshot_reproducible_performance_summary,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) Reset() {
+	*x = GetVaultPerformanceAllocationWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPerformanceAllocationWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPerformanceAllocationWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultPerformanceAllocationWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) GetModels() []*VaultPerformanceAllocationLabItem {
+	if x != nil {
+		return x.Models
+	}
+	return nil
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) GetNoFabricatedSmoothCurveEnforced() bool {
+	if x != nil {
+		return x.NoFabricatedSmoothCurveEnforced
+	}
+	return false
+}
+
+func (x *GetVaultPerformanceAllocationWorkbenchResponse) GetSnapshotReproduciblePerformanceSummary() string {
+	if x != nil {
+		return x.SnapshotReproduciblePerformanceSummary
+	}
+	return ""
+}
+
+type SaveVaultPerformanceAllocationModelRequest struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	AllocationCode                      string                 `protobuf:"bytes,1,opt,name=allocation_code,json=allocationCode,proto3" json:"allocation_code,omitempty"`
+	TwrMwrIrrAndBenchmarkSummary        string                 `protobuf:"bytes,2,opt,name=twr_mwr_irr_and_benchmark_summary,json=twrMwrIrrAndBenchmarkSummary,proto3" json:"twr_mwr_irr_and_benchmark_summary,omitempty"`
+	LookthroughExposureAndConcentration string                 `protobuf:"bytes,3,opt,name=lookthrough_exposure_and_concentration,json=lookthroughExposureAndConcentration,proto3" json:"lookthrough_exposure_and_concentration,omitempty"`
+	RebalanceTaxAndCostScenario         string                 `protobuf:"bytes,4,opt,name=rebalance_tax_and_cost_scenario,json=rebalanceTaxAndCostScenario,proto3" json:"rebalance_tax_and_cost_scenario,omitempty"`
+	LabState                            string                 `protobuf:"bytes,5,opt,name=lab_state,json=labState,proto3" json:"lab_state,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) Reset() {
+	*x = SaveVaultPerformanceAllocationModelRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPerformanceAllocationModelRequest) ProtoMessage() {}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPerformanceAllocationModelRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultPerformanceAllocationModelRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) GetAllocationCode() string {
+	if x != nil {
+		return x.AllocationCode
+	}
+	return ""
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) GetTwrMwrIrrAndBenchmarkSummary() string {
+	if x != nil {
+		return x.TwrMwrIrrAndBenchmarkSummary
+	}
+	return ""
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) GetLookthroughExposureAndConcentration() string {
+	if x != nil {
+		return x.LookthroughExposureAndConcentration
+	}
+	return ""
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) GetRebalanceTaxAndCostScenario() string {
+	if x != nil {
+		return x.RebalanceTaxAndCostScenario
+	}
+	return ""
+}
+
+func (x *SaveVaultPerformanceAllocationModelRequest) GetLabState() string {
+	if x != nil {
+		return x.LabState
+	}
+	return ""
+}
+
+type SaveVaultPerformanceAllocationModelResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Model         *VaultPerformanceAllocationLabItem `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultPerformanceAllocationModelResponse) Reset() {
+	*x = SaveVaultPerformanceAllocationModelResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPerformanceAllocationModelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPerformanceAllocationModelResponse) ProtoMessage() {}
+
+func (x *SaveVaultPerformanceAllocationModelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPerformanceAllocationModelResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultPerformanceAllocationModelResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *SaveVaultPerformanceAllocationModelResponse) GetModel() *VaultPerformanceAllocationLabItem {
+	if x != nil {
+		return x.Model
+	}
+	return nil
+}
+
+type SimulateOrRefreshVaultAllocationRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	AllocationCode              string                 `protobuf:"bytes,1,opt,name=allocation_code,json=allocationCode,proto3" json:"allocation_code,omitempty"`
+	RebalanceTaxAndCostScenario string                 `protobuf:"bytes,2,opt,name=rebalance_tax_and_cost_scenario,json=rebalanceTaxAndCostScenario,proto3" json:"rebalance_tax_and_cost_scenario,omitempty"`
+	LabState                    string                 `protobuf:"bytes,3,opt,name=lab_state,json=labState,proto3" json:"lab_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) Reset() {
+	*x = SimulateOrRefreshVaultAllocationRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateOrRefreshVaultAllocationRequest) ProtoMessage() {}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateOrRefreshVaultAllocationRequest.ProtoReflect.Descriptor instead.
+func (*SimulateOrRefreshVaultAllocationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) GetAllocationCode() string {
+	if x != nil {
+		return x.AllocationCode
+	}
+	return ""
+}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) GetRebalanceTaxAndCostScenario() string {
+	if x != nil {
+		return x.RebalanceTaxAndCostScenario
+	}
+	return ""
+}
+
+func (x *SimulateOrRefreshVaultAllocationRequest) GetLabState() string {
+	if x != nil {
+		return x.LabState
+	}
+	return ""
+}
+
+type SimulateOrRefreshVaultAllocationResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Model         *VaultPerformanceAllocationLabItem `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SimulateOrRefreshVaultAllocationResponse) Reset() {
+	*x = SimulateOrRefreshVaultAllocationResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateOrRefreshVaultAllocationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateOrRefreshVaultAllocationResponse) ProtoMessage() {}
+
+func (x *SimulateOrRefreshVaultAllocationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateOrRefreshVaultAllocationResponse.ProtoReflect.Descriptor instead.
+func (*SimulateOrRefreshVaultAllocationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *SimulateOrRefreshVaultAllocationResponse) GetModel() *VaultPerformanceAllocationLabItem {
+	if x != nil {
+		return x.Model
+	}
+	return nil
+}
+
+// Choice 5 (V4, V16): Tax and Accountant Workspace
+type VaultTaxAccountantWorkspaceItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TaxCode                           string                 `protobuf:"bytes,3,opt,name=tax_code,json=taxCode,proto3" json:"tax_code,omitempty"`
+	JurisdictionLotsAndWashSaleScope  string                 `protobuf:"bytes,4,opt,name=jurisdiction_lots_and_wash_sale_scope,json=jurisdictionLotsAndWashSaleScope,proto3" json:"jurisdiction_lots_and_wash_sale_scope,omitempty"`
+	HarvestOrPaymentScenarioEstimate  string                 `protobuf:"bytes,5,opt,name=harvest_or_payment_scenario_estimate,json=harvestOrPaymentScenarioEstimate,proto3" json:"harvest_or_payment_scenario_estimate,omitempty"`
+	AccountantDataroomAndPeriodLock   string                 `protobuf:"bytes,6,opt,name=accountant_dataroom_and_period_lock,json=accountantDataroomAndPeriodLock,proto3" json:"accountant_dataroom_and_period_lock,omitempty"`
+	WorkspaceState                    string                 `protobuf:"bytes,7,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	NonTaxAdviceNoOnetapTradeEnforced bool                   `protobuf:"varint,8,opt,name=non_tax_advice_no_onetap_trade_enforced,json=nonTaxAdviceNoOnetapTradeEnforced,proto3" json:"non_tax_advice_no_onetap_trade_enforced,omitempty"`
+	UpdatedAtIso                      string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) Reset() {
+	*x = VaultTaxAccountantWorkspaceItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultTaxAccountantWorkspaceItem) ProtoMessage() {}
+
+func (x *VaultTaxAccountantWorkspaceItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultTaxAccountantWorkspaceItem.ProtoReflect.Descriptor instead.
+func (*VaultTaxAccountantWorkspaceItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{153}
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetTaxCode() string {
+	if x != nil {
+		return x.TaxCode
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetJurisdictionLotsAndWashSaleScope() string {
+	if x != nil {
+		return x.JurisdictionLotsAndWashSaleScope
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetHarvestOrPaymentScenarioEstimate() string {
+	if x != nil {
+		return x.HarvestOrPaymentScenarioEstimate
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetAccountantDataroomAndPeriodLock() string {
+	if x != nil {
+		return x.AccountantDataroomAndPeriodLock
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetNonTaxAdviceNoOnetapTradeEnforced() bool {
+	if x != nil {
+		return x.NonTaxAdviceNoOnetapTradeEnforced
+	}
+	return false
+}
+
+func (x *VaultTaxAccountantWorkspaceItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultTaxAccountantWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultTaxAccountantWorkbenchRequest) Reset() {
+	*x = GetVaultTaxAccountantWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultTaxAccountantWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultTaxAccountantWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultTaxAccountantWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultTaxAccountantWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultTaxAccountantWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{154}
+}
+
+type GetVaultTaxAccountantWorkbenchResponse struct {
+	state                             protoimpl.MessageState             `protogen:"open.v1"`
+	Workspaces                        []*VaultTaxAccountantWorkspaceItem `protobuf:"bytes,1,rep,name=workspaces,proto3" json:"workspaces,omitempty"`
+	NonTaxAdviceNoOnetapTradeEnforced bool                               `protobuf:"varint,2,opt,name=non_tax_advice_no_onetap_trade_enforced,json=nonTaxAdviceNoOnetapTradeEnforced,proto3" json:"non_tax_advice_no_onetap_trade_enforced,omitempty"`
+	WashSaleAndAccountantScopeSummary string                             `protobuf:"bytes,3,opt,name=wash_sale_and_accountant_scope_summary,json=washSaleAndAccountantScopeSummary,proto3" json:"wash_sale_and_accountant_scope_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) Reset() {
+	*x = GetVaultTaxAccountantWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultTaxAccountantWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultTaxAccountantWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultTaxAccountantWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) GetWorkspaces() []*VaultTaxAccountantWorkspaceItem {
+	if x != nil {
+		return x.Workspaces
+	}
+	return nil
+}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) GetNonTaxAdviceNoOnetapTradeEnforced() bool {
+	if x != nil {
+		return x.NonTaxAdviceNoOnetapTradeEnforced
+	}
+	return false
+}
+
+func (x *GetVaultTaxAccountantWorkbenchResponse) GetWashSaleAndAccountantScopeSummary() string {
+	if x != nil {
+		return x.WashSaleAndAccountantScopeSummary
+	}
+	return ""
+}
+
+type SaveVaultTaxAccountantScenarioRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	TaxCode                          string                 `protobuf:"bytes,1,opt,name=tax_code,json=taxCode,proto3" json:"tax_code,omitempty"`
+	JurisdictionLotsAndWashSaleScope string                 `protobuf:"bytes,2,opt,name=jurisdiction_lots_and_wash_sale_scope,json=jurisdictionLotsAndWashSaleScope,proto3" json:"jurisdiction_lots_and_wash_sale_scope,omitempty"`
+	HarvestOrPaymentScenarioEstimate string                 `protobuf:"bytes,3,opt,name=harvest_or_payment_scenario_estimate,json=harvestOrPaymentScenarioEstimate,proto3" json:"harvest_or_payment_scenario_estimate,omitempty"`
+	AccountantDataroomAndPeriodLock  string                 `protobuf:"bytes,4,opt,name=accountant_dataroom_and_period_lock,json=accountantDataroomAndPeriodLock,proto3" json:"accountant_dataroom_and_period_lock,omitempty"`
+	WorkspaceState                   string                 `protobuf:"bytes,5,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) Reset() {
+	*x = SaveVaultTaxAccountantScenarioRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultTaxAccountantScenarioRequest) ProtoMessage() {}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultTaxAccountantScenarioRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultTaxAccountantScenarioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) GetTaxCode() string {
+	if x != nil {
+		return x.TaxCode
+	}
+	return ""
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) GetJurisdictionLotsAndWashSaleScope() string {
+	if x != nil {
+		return x.JurisdictionLotsAndWashSaleScope
+	}
+	return ""
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) GetHarvestOrPaymentScenarioEstimate() string {
+	if x != nil {
+		return x.HarvestOrPaymentScenarioEstimate
+	}
+	return ""
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) GetAccountantDataroomAndPeriodLock() string {
+	if x != nil {
+		return x.AccountantDataroomAndPeriodLock
+	}
+	return ""
+}
+
+func (x *SaveVaultTaxAccountantScenarioRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+type SaveVaultTaxAccountantScenarioResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Workspace     *VaultTaxAccountantWorkspaceItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultTaxAccountantScenarioResponse) Reset() {
+	*x = SaveVaultTaxAccountantScenarioResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultTaxAccountantScenarioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultTaxAccountantScenarioResponse) ProtoMessage() {}
+
+func (x *SaveVaultTaxAccountantScenarioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultTaxAccountantScenarioResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultTaxAccountantScenarioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *SaveVaultTaxAccountantScenarioResponse) GetWorkspace() *VaultTaxAccountantWorkspaceItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+type LockOrExportVaultTaxPackageRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	TaxCode                         string                 `protobuf:"bytes,1,opt,name=tax_code,json=taxCode,proto3" json:"tax_code,omitempty"`
+	AccountantDataroomAndPeriodLock string                 `protobuf:"bytes,2,opt,name=accountant_dataroom_and_period_lock,json=accountantDataroomAndPeriodLock,proto3" json:"accountant_dataroom_and_period_lock,omitempty"`
+	WorkspaceState                  string                 `protobuf:"bytes,3,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *LockOrExportVaultTaxPackageRequest) Reset() {
+	*x = LockOrExportVaultTaxPackageRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrExportVaultTaxPackageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrExportVaultTaxPackageRequest) ProtoMessage() {}
+
+func (x *LockOrExportVaultTaxPackageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrExportVaultTaxPackageRequest.ProtoReflect.Descriptor instead.
+func (*LockOrExportVaultTaxPackageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{158}
+}
+
+func (x *LockOrExportVaultTaxPackageRequest) GetTaxCode() string {
+	if x != nil {
+		return x.TaxCode
+	}
+	return ""
+}
+
+func (x *LockOrExportVaultTaxPackageRequest) GetAccountantDataroomAndPeriodLock() string {
+	if x != nil {
+		return x.AccountantDataroomAndPeriodLock
+	}
+	return ""
+}
+
+func (x *LockOrExportVaultTaxPackageRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+type LockOrExportVaultTaxPackageResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Workspace     *VaultTaxAccountantWorkspaceItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LockOrExportVaultTaxPackageResponse) Reset() {
+	*x = LockOrExportVaultTaxPackageResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrExportVaultTaxPackageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrExportVaultTaxPackageResponse) ProtoMessage() {}
+
+func (x *LockOrExportVaultTaxPackageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrExportVaultTaxPackageResponse.ProtoReflect.Descriptor instead.
+func (*LockOrExportVaultTaxPackageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *LockOrExportVaultTaxPackageResponse) GetWorkspace() *VaultTaxAccountantWorkspaceItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+// Choice 6 (V5): Entity, Household, and Ownership Graph
+type VaultEntityOwnershipGraphItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GraphCode                       string                 `protobuf:"bytes,3,opt,name=graph_code,json=graphCode,proto3" json:"graph_code,omitempty"`
+	EntityAndLookthroughInterest    string                 `protobuf:"bytes,4,opt,name=entity_and_lookthrough_interest,json=entityAndLookthroughInterest,proto3" json:"entity_and_lookthrough_interest,omitempty"`
+	CollaborationVisibilityAndScope string                 `protobuf:"bytes,5,opt,name=collaboration_visibility_and_scope,json=collaborationVisibilityAndScope,proto3" json:"collaboration_visibility_and_scope,omitempty"`
+	DominionAndLegacyBridgeSummary  string                 `protobuf:"bytes,6,opt,name=dominion_and_legacy_bridge_summary,json=dominionAndLegacyBridgeSummary,proto3" json:"dominion_and_legacy_bridge_summary,omitempty"`
+	GraphState                      string                 `protobuf:"bytes,7,opt,name=graph_state,json=graphState,proto3" json:"graph_state,omitempty"`
+	ZeroDoubleCountingEnforced      bool                   `protobuf:"varint,8,opt,name=zero_double_counting_enforced,json=zeroDoubleCountingEnforced,proto3" json:"zero_double_counting_enforced,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VaultEntityOwnershipGraphItem) Reset() {
+	*x = VaultEntityOwnershipGraphItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultEntityOwnershipGraphItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultEntityOwnershipGraphItem) ProtoMessage() {}
+
+func (x *VaultEntityOwnershipGraphItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultEntityOwnershipGraphItem.ProtoReflect.Descriptor instead.
+func (*VaultEntityOwnershipGraphItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetGraphCode() string {
+	if x != nil {
+		return x.GraphCode
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetEntityAndLookthroughInterest() string {
+	if x != nil {
+		return x.EntityAndLookthroughInterest
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetCollaborationVisibilityAndScope() string {
+	if x != nil {
+		return x.CollaborationVisibilityAndScope
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetDominionAndLegacyBridgeSummary() string {
+	if x != nil {
+		return x.DominionAndLegacyBridgeSummary
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetGraphState() string {
+	if x != nil {
+		return x.GraphState
+	}
+	return ""
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetZeroDoubleCountingEnforced() bool {
+	if x != nil {
+		return x.ZeroDoubleCountingEnforced
+	}
+	return false
+}
+
+func (x *VaultEntityOwnershipGraphItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultEntityOwnershipWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchRequest) Reset() {
+	*x = GetVaultEntityOwnershipWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultEntityOwnershipWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultEntityOwnershipWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultEntityOwnershipWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultEntityOwnershipWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{161}
+}
+
+type GetVaultEntityOwnershipWorkbenchResponse struct {
+	state                              protoimpl.MessageState           `protogen:"open.v1"`
+	Graphs                             []*VaultEntityOwnershipGraphItem `protobuf:"bytes,1,rep,name=graphs,proto3" json:"graphs,omitempty"`
+	ZeroDoubleCountingEnforced         bool                             `protobuf:"varint,2,opt,name=zero_double_counting_enforced,json=zeroDoubleCountingEnforced,proto3" json:"zero_double_counting_enforced,omitempty"`
+	LookthroughAndCollaborationSummary string                           `protobuf:"bytes,3,opt,name=lookthrough_and_collaboration_summary,json=lookthroughAndCollaborationSummary,proto3" json:"lookthrough_and_collaboration_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) Reset() {
+	*x = GetVaultEntityOwnershipWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultEntityOwnershipWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultEntityOwnershipWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultEntityOwnershipWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) GetGraphs() []*VaultEntityOwnershipGraphItem {
+	if x != nil {
+		return x.Graphs
+	}
+	return nil
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) GetZeroDoubleCountingEnforced() bool {
+	if x != nil {
+		return x.ZeroDoubleCountingEnforced
+	}
+	return false
+}
+
+func (x *GetVaultEntityOwnershipWorkbenchResponse) GetLookthroughAndCollaborationSummary() string {
+	if x != nil {
+		return x.LookthroughAndCollaborationSummary
+	}
+	return ""
+}
+
+type SaveVaultEntityOwnershipNodeRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	GraphCode                       string                 `protobuf:"bytes,1,opt,name=graph_code,json=graphCode,proto3" json:"graph_code,omitempty"`
+	EntityAndLookthroughInterest    string                 `protobuf:"bytes,2,opt,name=entity_and_lookthrough_interest,json=entityAndLookthroughInterest,proto3" json:"entity_and_lookthrough_interest,omitempty"`
+	CollaborationVisibilityAndScope string                 `protobuf:"bytes,3,opt,name=collaboration_visibility_and_scope,json=collaborationVisibilityAndScope,proto3" json:"collaboration_visibility_and_scope,omitempty"`
+	DominionAndLegacyBridgeSummary  string                 `protobuf:"bytes,4,opt,name=dominion_and_legacy_bridge_summary,json=dominionAndLegacyBridgeSummary,proto3" json:"dominion_and_legacy_bridge_summary,omitempty"`
+	GraphState                      string                 `protobuf:"bytes,5,opt,name=graph_state,json=graphState,proto3" json:"graph_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) Reset() {
+	*x = SaveVaultEntityOwnershipNodeRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultEntityOwnershipNodeRequest) ProtoMessage() {}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultEntityOwnershipNodeRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultEntityOwnershipNodeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) GetGraphCode() string {
+	if x != nil {
+		return x.GraphCode
+	}
+	return ""
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) GetEntityAndLookthroughInterest() string {
+	if x != nil {
+		return x.EntityAndLookthroughInterest
+	}
+	return ""
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) GetCollaborationVisibilityAndScope() string {
+	if x != nil {
+		return x.CollaborationVisibilityAndScope
+	}
+	return ""
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) GetDominionAndLegacyBridgeSummary() string {
+	if x != nil {
+		return x.DominionAndLegacyBridgeSummary
+	}
+	return ""
+}
+
+func (x *SaveVaultEntityOwnershipNodeRequest) GetGraphState() string {
+	if x != nil {
+		return x.GraphState
+	}
+	return ""
+}
+
+type SaveVaultEntityOwnershipNodeResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Graph         *VaultEntityOwnershipGraphItem `protobuf:"bytes,1,opt,name=graph,proto3" json:"graph,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultEntityOwnershipNodeResponse) Reset() {
+	*x = SaveVaultEntityOwnershipNodeResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultEntityOwnershipNodeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultEntityOwnershipNodeResponse) ProtoMessage() {}
+
+func (x *SaveVaultEntityOwnershipNodeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultEntityOwnershipNodeResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultEntityOwnershipNodeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *SaveVaultEntityOwnershipNodeResponse) GetGraph() *VaultEntityOwnershipGraphItem {
+	if x != nil {
+		return x.Graph
+	}
+	return nil
+}
+
+type VerifyOrRevokeVaultOwnershipAccessRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	GraphCode                       string                 `protobuf:"bytes,1,opt,name=graph_code,json=graphCode,proto3" json:"graph_code,omitempty"`
+	CollaborationVisibilityAndScope string                 `protobuf:"bytes,2,opt,name=collaboration_visibility_and_scope,json=collaborationVisibilityAndScope,proto3" json:"collaboration_visibility_and_scope,omitempty"`
+	GraphState                      string                 `protobuf:"bytes,3,opt,name=graph_state,json=graphState,proto3" json:"graph_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) Reset() {
+	*x = VerifyOrRevokeVaultOwnershipAccessRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrRevokeVaultOwnershipAccessRequest) ProtoMessage() {}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrRevokeVaultOwnershipAccessRequest.ProtoReflect.Descriptor instead.
+func (*VerifyOrRevokeVaultOwnershipAccessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{165}
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) GetGraphCode() string {
+	if x != nil {
+		return x.GraphCode
+	}
+	return ""
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) GetCollaborationVisibilityAndScope() string {
+	if x != nil {
+		return x.CollaborationVisibilityAndScope
+	}
+	return ""
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessRequest) GetGraphState() string {
+	if x != nil {
+		return x.GraphState
+	}
+	return ""
+}
+
+type VerifyOrRevokeVaultOwnershipAccessResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Graph         *VaultEntityOwnershipGraphItem `protobuf:"bytes,1,opt,name=graph,proto3" json:"graph,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessResponse) Reset() {
+	*x = VerifyOrRevokeVaultOwnershipAccessResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrRevokeVaultOwnershipAccessResponse) ProtoMessage() {}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrRevokeVaultOwnershipAccessResponse.ProtoReflect.Descriptor instead.
+func (*VerifyOrRevokeVaultOwnershipAccessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *VerifyOrRevokeVaultOwnershipAccessResponse) GetGraph() *VaultEntityOwnershipGraphItem {
+	if x != nil {
+		return x.Graph
+	}
+	return nil
+}
+
+// Choice 7 (V6, V16): Private Markets and Document Room
+type VaultPrivateMarketDocRoomItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PrivateCode                      string                 `protobuf:"bytes,3,opt,name=private_code,json=privateCode,proto3" json:"private_code,omitempty"`
+	FundOrDirectAssetAndValuation    string                 `protobuf:"bytes,4,opt,name=fund_or_direct_asset_and_valuation,json=fundOrDirectAssetAndValuation,proto3" json:"fund_or_direct_asset_and_valuation,omitempty"`
+	UnfundedCommitmentAndCallLadder  string                 `protobuf:"bytes,5,opt,name=unfunded_commitment_and_call_ladder,json=unfundedCommitmentAndCallLadder,proto3" json:"unfunded_commitment_and_call_ladder,omitempty"`
+	ExtractedNoticeAndCitationRegion string                 `protobuf:"bytes,6,opt,name=extracted_notice_and_citation_region,json=extractedNoticeAndCitationRegion,proto3" json:"extracted_notice_and_citation_region,omitempty"`
+	RoomState                        string                 `protobuf:"bytes,7,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	UnverifiedAiLedgerPostBlocked    bool                   `protobuf:"varint,8,opt,name=unverified_ai_ledger_post_blocked,json=unverifiedAiLedgerPostBlocked,proto3" json:"unverified_ai_ledger_post_blocked,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *VaultPrivateMarketDocRoomItem) Reset() {
+	*x = VaultPrivateMarketDocRoomItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultPrivateMarketDocRoomItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultPrivateMarketDocRoomItem) ProtoMessage() {}
+
+func (x *VaultPrivateMarketDocRoomItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultPrivateMarketDocRoomItem.ProtoReflect.Descriptor instead.
+func (*VaultPrivateMarketDocRoomItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetPrivateCode() string {
+	if x != nil {
+		return x.PrivateCode
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetFundOrDirectAssetAndValuation() string {
+	if x != nil {
+		return x.FundOrDirectAssetAndValuation
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetUnfundedCommitmentAndCallLadder() string {
+	if x != nil {
+		return x.UnfundedCommitmentAndCallLadder
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetExtractedNoticeAndCitationRegion() string {
+	if x != nil {
+		return x.ExtractedNoticeAndCitationRegion
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetUnverifiedAiLedgerPostBlocked() bool {
+	if x != nil {
+		return x.UnverifiedAiLedgerPostBlocked
+	}
+	return false
+}
+
+func (x *VaultPrivateMarketDocRoomItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultPrivateMarketDocWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchRequest) Reset() {
+	*x = GetVaultPrivateMarketDocWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPrivateMarketDocWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultPrivateMarketDocWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPrivateMarketDocWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultPrivateMarketDocWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{168}
+}
+
+type GetVaultPrivateMarketDocWorkbenchResponse struct {
+	state                              protoimpl.MessageState           `protogen:"open.v1"`
+	Rooms                              []*VaultPrivateMarketDocRoomItem `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	UnverifiedAiLedgerPostBlocked      bool                             `protobuf:"varint,2,opt,name=unverified_ai_ledger_post_blocked,json=unverifiedAiLedgerPostBlocked,proto3" json:"unverified_ai_ledger_post_blocked,omitempty"`
+	CommitmentLadderAndCitationSummary string                           `protobuf:"bytes,3,opt,name=commitment_ladder_and_citation_summary,json=commitmentLadderAndCitationSummary,proto3" json:"commitment_ladder_and_citation_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) Reset() {
+	*x = GetVaultPrivateMarketDocWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPrivateMarketDocWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPrivateMarketDocWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultPrivateMarketDocWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) GetRooms() []*VaultPrivateMarketDocRoomItem {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) GetUnverifiedAiLedgerPostBlocked() bool {
+	if x != nil {
+		return x.UnverifiedAiLedgerPostBlocked
+	}
+	return false
+}
+
+func (x *GetVaultPrivateMarketDocWorkbenchResponse) GetCommitmentLadderAndCitationSummary() string {
+	if x != nil {
+		return x.CommitmentLadderAndCitationSummary
+	}
+	return ""
+}
+
+type SaveVaultPrivateMarketCommitmentRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	PrivateCode                      string                 `protobuf:"bytes,1,opt,name=private_code,json=privateCode,proto3" json:"private_code,omitempty"`
+	FundOrDirectAssetAndValuation    string                 `protobuf:"bytes,2,opt,name=fund_or_direct_asset_and_valuation,json=fundOrDirectAssetAndValuation,proto3" json:"fund_or_direct_asset_and_valuation,omitempty"`
+	UnfundedCommitmentAndCallLadder  string                 `protobuf:"bytes,3,opt,name=unfunded_commitment_and_call_ladder,json=unfundedCommitmentAndCallLadder,proto3" json:"unfunded_commitment_and_call_ladder,omitempty"`
+	ExtractedNoticeAndCitationRegion string                 `protobuf:"bytes,4,opt,name=extracted_notice_and_citation_region,json=extractedNoticeAndCitationRegion,proto3" json:"extracted_notice_and_citation_region,omitempty"`
+	RoomState                        string                 `protobuf:"bytes,5,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) Reset() {
+	*x = SaveVaultPrivateMarketCommitmentRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPrivateMarketCommitmentRequest) ProtoMessage() {}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPrivateMarketCommitmentRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultPrivateMarketCommitmentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) GetPrivateCode() string {
+	if x != nil {
+		return x.PrivateCode
+	}
+	return ""
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) GetFundOrDirectAssetAndValuation() string {
+	if x != nil {
+		return x.FundOrDirectAssetAndValuation
+	}
+	return ""
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) GetUnfundedCommitmentAndCallLadder() string {
+	if x != nil {
+		return x.UnfundedCommitmentAndCallLadder
+	}
+	return ""
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) GetExtractedNoticeAndCitationRegion() string {
+	if x != nil {
+		return x.ExtractedNoticeAndCitationRegion
+	}
+	return ""
+}
+
+func (x *SaveVaultPrivateMarketCommitmentRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type SaveVaultPrivateMarketCommitmentResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Room          *VaultPrivateMarketDocRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultPrivateMarketCommitmentResponse) Reset() {
+	*x = SaveVaultPrivateMarketCommitmentResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultPrivateMarketCommitmentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultPrivateMarketCommitmentResponse) ProtoMessage() {}
+
+func (x *SaveVaultPrivateMarketCommitmentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultPrivateMarketCommitmentResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultPrivateMarketCommitmentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *SaveVaultPrivateMarketCommitmentResponse) GetRoom() *VaultPrivateMarketDocRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type ConfirmOrReconcileVaultCapitalNoticeRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	PrivateCode                      string                 `protobuf:"bytes,1,opt,name=private_code,json=privateCode,proto3" json:"private_code,omitempty"`
+	ExtractedNoticeAndCitationRegion string                 `protobuf:"bytes,2,opt,name=extracted_notice_and_citation_region,json=extractedNoticeAndCitationRegion,proto3" json:"extracted_notice_and_citation_region,omitempty"`
+	RoomState                        string                 `protobuf:"bytes,3,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) Reset() {
+	*x = ConfirmOrReconcileVaultCapitalNoticeRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmOrReconcileVaultCapitalNoticeRequest) ProtoMessage() {}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmOrReconcileVaultCapitalNoticeRequest.ProtoReflect.Descriptor instead.
+func (*ConfirmOrReconcileVaultCapitalNoticeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{172}
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) GetPrivateCode() string {
+	if x != nil {
+		return x.PrivateCode
+	}
+	return ""
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) GetExtractedNoticeAndCitationRegion() string {
+	if x != nil {
+		return x.ExtractedNoticeAndCitationRegion
+	}
+	return ""
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type ConfirmOrReconcileVaultCapitalNoticeResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Room          *VaultPrivateMarketDocRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeResponse) Reset() {
+	*x = ConfirmOrReconcileVaultCapitalNoticeResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmOrReconcileVaultCapitalNoticeResponse) ProtoMessage() {}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmOrReconcileVaultCapitalNoticeResponse.ProtoReflect.Descriptor instead.
+func (*ConfirmOrReconcileVaultCapitalNoticeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *ConfirmOrReconcileVaultCapitalNoticeResponse) GetRoom() *VaultPrivateMarketDocRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+type VaultTreasuryDebtRiskCoverageItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TreasuryCode                     string                 `protobuf:"bytes,3,opt,name=treasury_code,json=treasuryCode,proto3" json:"treasury_code,omitempty"`
+	CashCounterpartyAndDebtCovenants string                 `protobuf:"bytes,4,opt,name=cash_counterparty_and_debt_covenants,json=cashCounterpartyAndDebtCovenants,proto3" json:"cash_counterparty_and_debt_covenants,omitempty"`
+	PolicyCoverageAndDeductibleGraph string                 `protobuf:"bytes,5,opt,name=policy_coverage_and_deductible_graph,json=policyCoverageAndDeductibleGraph,proto3" json:"policy_coverage_and_deductible_graph,omitempty"`
+	SweepRefinanceOrClaimScenario    string                 `protobuf:"bytes,6,opt,name=sweep_refinance_or_claim_scenario,json=sweepRefinanceOrClaimScenario,proto3" json:"sweep_refinance_or_claim_scenario,omitempty"`
+	CoverageState                    string                 `protobuf:"bytes,7,opt,name=coverage_state,json=coverageState,proto3" json:"coverage_state,omitempty"`
+	NoCoverageGuaranteeClaimEnforced bool                   `protobuf:"varint,8,opt,name=no_coverage_guarantee_claim_enforced,json=noCoverageGuaranteeClaimEnforced,proto3" json:"no_coverage_guarantee_claim_enforced,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) Reset() {
+	*x = VaultTreasuryDebtRiskCoverageItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[174]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultTreasuryDebtRiskCoverageItem) ProtoMessage() {}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[174]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultTreasuryDebtRiskCoverageItem.ProtoReflect.Descriptor instead.
+func (*VaultTreasuryDebtRiskCoverageItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{174}
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetTreasuryCode() string {
+	if x != nil {
+		return x.TreasuryCode
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetCashCounterpartyAndDebtCovenants() string {
+	if x != nil {
+		return x.CashCounterpartyAndDebtCovenants
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetPolicyCoverageAndDeductibleGraph() string {
+	if x != nil {
+		return x.PolicyCoverageAndDeductibleGraph
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetSweepRefinanceOrClaimScenario() string {
+	if x != nil {
+		return x.SweepRefinanceOrClaimScenario
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetCoverageState() string {
+	if x != nil {
+		return x.CoverageState
+	}
+	return ""
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetNoCoverageGuaranteeClaimEnforced() bool {
+	if x != nil {
+		return x.NoCoverageGuaranteeClaimEnforced
+	}
+	return false
+}
+
+func (x *VaultTreasuryDebtRiskCoverageItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultTreasuryDebtRiskWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchRequest) Reset() {
+	*x = GetVaultTreasuryDebtRiskWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[175]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultTreasuryDebtRiskWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[175]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultTreasuryDebtRiskWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultTreasuryDebtRiskWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{175}
+}
+
+type GetVaultTreasuryDebtRiskWorkbenchResponse struct {
+	state                            protoimpl.MessageState               `protogen:"open.v1"`
+	Positions                        []*VaultTreasuryDebtRiskCoverageItem `protobuf:"bytes,1,rep,name=positions,proto3" json:"positions,omitempty"`
+	NoCoverageGuaranteeClaimEnforced bool                                 `protobuf:"varint,2,opt,name=no_coverage_guarantee_claim_enforced,json=noCoverageGuaranteeClaimEnforced,proto3" json:"no_coverage_guarantee_claim_enforced,omitempty"`
+	TreasuryCovenantAndPolicySummary string                               `protobuf:"bytes,3,opt,name=treasury_covenant_and_policy_summary,json=treasuryCovenantAndPolicySummary,proto3" json:"treasury_covenant_and_policy_summary,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) Reset() {
+	*x = GetVaultTreasuryDebtRiskWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[176]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultTreasuryDebtRiskWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[176]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultTreasuryDebtRiskWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultTreasuryDebtRiskWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{176}
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) GetPositions() []*VaultTreasuryDebtRiskCoverageItem {
+	if x != nil {
+		return x.Positions
+	}
+	return nil
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) GetNoCoverageGuaranteeClaimEnforced() bool {
+	if x != nil {
+		return x.NoCoverageGuaranteeClaimEnforced
+	}
+	return false
+}
+
+func (x *GetVaultTreasuryDebtRiskWorkbenchResponse) GetTreasuryCovenantAndPolicySummary() string {
+	if x != nil {
+		return x.TreasuryCovenantAndPolicySummary
+	}
+	return ""
+}
+
+type SaveVaultTreasuryDebtRiskPositionRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	TreasuryCode                     string                 `protobuf:"bytes,1,opt,name=treasury_code,json=treasuryCode,proto3" json:"treasury_code,omitempty"`
+	CashCounterpartyAndDebtCovenants string                 `protobuf:"bytes,2,opt,name=cash_counterparty_and_debt_covenants,json=cashCounterpartyAndDebtCovenants,proto3" json:"cash_counterparty_and_debt_covenants,omitempty"`
+	PolicyCoverageAndDeductibleGraph string                 `protobuf:"bytes,3,opt,name=policy_coverage_and_deductible_graph,json=policyCoverageAndDeductibleGraph,proto3" json:"policy_coverage_and_deductible_graph,omitempty"`
+	SweepRefinanceOrClaimScenario    string                 `protobuf:"bytes,4,opt,name=sweep_refinance_or_claim_scenario,json=sweepRefinanceOrClaimScenario,proto3" json:"sweep_refinance_or_claim_scenario,omitempty"`
+	CoverageState                    string                 `protobuf:"bytes,5,opt,name=coverage_state,json=coverageState,proto3" json:"coverage_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) Reset() {
+	*x = SaveVaultTreasuryDebtRiskPositionRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[177]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultTreasuryDebtRiskPositionRequest) ProtoMessage() {}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[177]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultTreasuryDebtRiskPositionRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultTreasuryDebtRiskPositionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{177}
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) GetTreasuryCode() string {
+	if x != nil {
+		return x.TreasuryCode
+	}
+	return ""
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) GetCashCounterpartyAndDebtCovenants() string {
+	if x != nil {
+		return x.CashCounterpartyAndDebtCovenants
+	}
+	return ""
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) GetPolicyCoverageAndDeductibleGraph() string {
+	if x != nil {
+		return x.PolicyCoverageAndDeductibleGraph
+	}
+	return ""
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) GetSweepRefinanceOrClaimScenario() string {
+	if x != nil {
+		return x.SweepRefinanceOrClaimScenario
+	}
+	return ""
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionRequest) GetCoverageState() string {
+	if x != nil {
+		return x.CoverageState
+	}
+	return ""
+}
+
+type SaveVaultTreasuryDebtRiskPositionResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Position      *VaultTreasuryDebtRiskCoverageItem `protobuf:"bytes,1,opt,name=position,proto3" json:"position,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionResponse) Reset() {
+	*x = SaveVaultTreasuryDebtRiskPositionResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[178]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultTreasuryDebtRiskPositionResponse) ProtoMessage() {}
+
+func (x *SaveVaultTreasuryDebtRiskPositionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[178]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultTreasuryDebtRiskPositionResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultTreasuryDebtRiskPositionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{178}
+}
+
+func (x *SaveVaultTreasuryDebtRiskPositionResponse) GetPosition() *VaultTreasuryDebtRiskCoverageItem {
+	if x != nil {
+		return x.Position
+	}
+	return nil
+}
+
+type EvaluateOrRouteVaultCoverageGapRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	TreasuryCode                  string                 `protobuf:"bytes,1,opt,name=treasury_code,json=treasuryCode,proto3" json:"treasury_code,omitempty"`
+	SweepRefinanceOrClaimScenario string                 `protobuf:"bytes,2,opt,name=sweep_refinance_or_claim_scenario,json=sweepRefinanceOrClaimScenario,proto3" json:"sweep_refinance_or_claim_scenario,omitempty"`
+	CoverageState                 string                 `protobuf:"bytes,3,opt,name=coverage_state,json=coverageState,proto3" json:"coverage_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) Reset() {
+	*x = EvaluateOrRouteVaultCoverageGapRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[179]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateOrRouteVaultCoverageGapRequest) ProtoMessage() {}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[179]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateOrRouteVaultCoverageGapRequest.ProtoReflect.Descriptor instead.
+func (*EvaluateOrRouteVaultCoverageGapRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{179}
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) GetTreasuryCode() string {
+	if x != nil {
+		return x.TreasuryCode
+	}
+	return ""
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) GetSweepRefinanceOrClaimScenario() string {
+	if x != nil {
+		return x.SweepRefinanceOrClaimScenario
+	}
+	return ""
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapRequest) GetCoverageState() string {
+	if x != nil {
+		return x.CoverageState
+	}
+	return ""
+}
+
+type EvaluateOrRouteVaultCoverageGapResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Position      *VaultTreasuryDebtRiskCoverageItem `protobuf:"bytes,1,opt,name=position,proto3" json:"position,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapResponse) Reset() {
+	*x = EvaluateOrRouteVaultCoverageGapResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[180]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateOrRouteVaultCoverageGapResponse) ProtoMessage() {}
+
+func (x *EvaluateOrRouteVaultCoverageGapResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[180]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateOrRouteVaultCoverageGapResponse.ProtoReflect.Descriptor instead.
+func (*EvaluateOrRouteVaultCoverageGapResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{180}
+}
+
+func (x *EvaluateOrRouteVaultCoverageGapResponse) GetPosition() *VaultTreasuryDebtRiskCoverageItem {
+	if x != nil {
+		return x.Position
+	}
+	return nil
+}
+
+// Choice 9 (V8): Goals and Scenario Engine
+type VaultGoalsScenarioEngineItem struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	Id                                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                              string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ScenarioCode                        string                 `protobuf:"bytes,3,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	GoalTargetAndAssumptionRanges       string                 `protobuf:"bytes,4,opt,name=goal_target_and_assumption_ranges,json=goalTargetAndAssumptionRanges,proto3" json:"goal_target_and_assumption_ranges,omitempty"`
+	DeterministicAndMonteCarloBand      string                 `protobuf:"bytes,5,opt,name=deterministic_and_monte_carlo_band,json=deterministicAndMonteCarloBand,proto3" json:"deterministic_and_monte_carlo_band,omitempty"`
+	WhatChangedAndOracleHandoff         string                 `protobuf:"bytes,6,opt,name=what_changed_and_oracle_handoff,json=whatChangedAndOracleHandoff,proto3" json:"what_changed_and_oracle_handoff,omitempty"`
+	EngineState                         string                 `protobuf:"bytes,7,opt,name=engine_state,json=engineState,proto3" json:"engine_state,omitempty"`
+	SilentFullLedgerOracleAccessBlocked bool                   `protobuf:"varint,8,opt,name=silent_full_ledger_oracle_access_blocked,json=silentFullLedgerOracleAccessBlocked,proto3" json:"silent_full_ledger_oracle_access_blocked,omitempty"`
+	UpdatedAtIso                        string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *VaultGoalsScenarioEngineItem) Reset() {
+	*x = VaultGoalsScenarioEngineItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[181]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultGoalsScenarioEngineItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultGoalsScenarioEngineItem) ProtoMessage() {}
+
+func (x *VaultGoalsScenarioEngineItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[181]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultGoalsScenarioEngineItem.ProtoReflect.Descriptor instead.
+func (*VaultGoalsScenarioEngineItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{181}
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetGoalTargetAndAssumptionRanges() string {
+	if x != nil {
+		return x.GoalTargetAndAssumptionRanges
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetDeterministicAndMonteCarloBand() string {
+	if x != nil {
+		return x.DeterministicAndMonteCarloBand
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetWhatChangedAndOracleHandoff() string {
+	if x != nil {
+		return x.WhatChangedAndOracleHandoff
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetEngineState() string {
+	if x != nil {
+		return x.EngineState
+	}
+	return ""
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetSilentFullLedgerOracleAccessBlocked() bool {
+	if x != nil {
+		return x.SilentFullLedgerOracleAccessBlocked
+	}
+	return false
+}
+
+func (x *VaultGoalsScenarioEngineItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultGoalsScenarioWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchRequest) Reset() {
+	*x = GetVaultGoalsScenarioWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[182]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultGoalsScenarioWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultGoalsScenarioWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[182]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultGoalsScenarioWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultGoalsScenarioWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{182}
+}
+
+type GetVaultGoalsScenarioWorkbenchResponse struct {
+	state                               protoimpl.MessageState          `protogen:"open.v1"`
+	Scenarios                           []*VaultGoalsScenarioEngineItem `protobuf:"bytes,1,rep,name=scenarios,proto3" json:"scenarios,omitempty"`
+	SilentFullLedgerOracleAccessBlocked bool                            `protobuf:"varint,2,opt,name=silent_full_ledger_oracle_access_blocked,json=silentFullLedgerOracleAccessBlocked,proto3" json:"silent_full_ledger_oracle_access_blocked,omitempty"`
+	PlanVsPredictionAndHandoffSummary   string                          `protobuf:"bytes,3,opt,name=plan_vs_prediction_and_handoff_summary,json=planVsPredictionAndHandoffSummary,proto3" json:"plan_vs_prediction_and_handoff_summary,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) Reset() {
+	*x = GetVaultGoalsScenarioWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[183]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultGoalsScenarioWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[183]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultGoalsScenarioWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultGoalsScenarioWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{183}
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) GetScenarios() []*VaultGoalsScenarioEngineItem {
+	if x != nil {
+		return x.Scenarios
+	}
+	return nil
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) GetSilentFullLedgerOracleAccessBlocked() bool {
+	if x != nil {
+		return x.SilentFullLedgerOracleAccessBlocked
+	}
+	return false
+}
+
+func (x *GetVaultGoalsScenarioWorkbenchResponse) GetPlanVsPredictionAndHandoffSummary() string {
+	if x != nil {
+		return x.PlanVsPredictionAndHandoffSummary
+	}
+	return ""
+}
+
+type SaveVaultGoalScenarioSnapshotRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	ScenarioCode                   string                 `protobuf:"bytes,1,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	GoalTargetAndAssumptionRanges  string                 `protobuf:"bytes,2,opt,name=goal_target_and_assumption_ranges,json=goalTargetAndAssumptionRanges,proto3" json:"goal_target_and_assumption_ranges,omitempty"`
+	DeterministicAndMonteCarloBand string                 `protobuf:"bytes,3,opt,name=deterministic_and_monte_carlo_band,json=deterministicAndMonteCarloBand,proto3" json:"deterministic_and_monte_carlo_band,omitempty"`
+	WhatChangedAndOracleHandoff    string                 `protobuf:"bytes,4,opt,name=what_changed_and_oracle_handoff,json=whatChangedAndOracleHandoff,proto3" json:"what_changed_and_oracle_handoff,omitempty"`
+	EngineState                    string                 `protobuf:"bytes,5,opt,name=engine_state,json=engineState,proto3" json:"engine_state,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) Reset() {
+	*x = SaveVaultGoalScenarioSnapshotRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[184]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultGoalScenarioSnapshotRequest) ProtoMessage() {}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[184]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultGoalScenarioSnapshotRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultGoalScenarioSnapshotRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{184}
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) GetGoalTargetAndAssumptionRanges() string {
+	if x != nil {
+		return x.GoalTargetAndAssumptionRanges
+	}
+	return ""
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) GetDeterministicAndMonteCarloBand() string {
+	if x != nil {
+		return x.DeterministicAndMonteCarloBand
+	}
+	return ""
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) GetWhatChangedAndOracleHandoff() string {
+	if x != nil {
+		return x.WhatChangedAndOracleHandoff
+	}
+	return ""
+}
+
+func (x *SaveVaultGoalScenarioSnapshotRequest) GetEngineState() string {
+	if x != nil {
+		return x.EngineState
+	}
+	return ""
+}
+
+type SaveVaultGoalScenarioSnapshotResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Scenario      *VaultGoalsScenarioEngineItem `protobuf:"bytes,1,opt,name=scenario,proto3" json:"scenario,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultGoalScenarioSnapshotResponse) Reset() {
+	*x = SaveVaultGoalScenarioSnapshotResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[185]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultGoalScenarioSnapshotResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultGoalScenarioSnapshotResponse) ProtoMessage() {}
+
+func (x *SaveVaultGoalScenarioSnapshotResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[185]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultGoalScenarioSnapshotResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultGoalScenarioSnapshotResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{185}
+}
+
+func (x *SaveVaultGoalScenarioSnapshotResponse) GetScenario() *VaultGoalsScenarioEngineItem {
+	if x != nil {
+		return x.Scenario
+	}
+	return nil
+}
+
+type CompareOrHandoffVaultScenarioRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	ScenarioCode                string                 `protobuf:"bytes,1,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	WhatChangedAndOracleHandoff string                 `protobuf:"bytes,2,opt,name=what_changed_and_oracle_handoff,json=whatChangedAndOracleHandoff,proto3" json:"what_changed_and_oracle_handoff,omitempty"`
+	EngineState                 string                 `protobuf:"bytes,3,opt,name=engine_state,json=engineState,proto3" json:"engine_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *CompareOrHandoffVaultScenarioRequest) Reset() {
+	*x = CompareOrHandoffVaultScenarioRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[186]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompareOrHandoffVaultScenarioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompareOrHandoffVaultScenarioRequest) ProtoMessage() {}
+
+func (x *CompareOrHandoffVaultScenarioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[186]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompareOrHandoffVaultScenarioRequest.ProtoReflect.Descriptor instead.
+func (*CompareOrHandoffVaultScenarioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{186}
+}
+
+func (x *CompareOrHandoffVaultScenarioRequest) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *CompareOrHandoffVaultScenarioRequest) GetWhatChangedAndOracleHandoff() string {
+	if x != nil {
+		return x.WhatChangedAndOracleHandoff
+	}
+	return ""
+}
+
+func (x *CompareOrHandoffVaultScenarioRequest) GetEngineState() string {
+	if x != nil {
+		return x.EngineState
+	}
+	return ""
+}
+
+type CompareOrHandoffVaultScenarioResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Scenario      *VaultGoalsScenarioEngineItem `protobuf:"bytes,1,opt,name=scenario,proto3" json:"scenario,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompareOrHandoffVaultScenarioResponse) Reset() {
+	*x = CompareOrHandoffVaultScenarioResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[187]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompareOrHandoffVaultScenarioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompareOrHandoffVaultScenarioResponse) ProtoMessage() {}
+
+func (x *CompareOrHandoffVaultScenarioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[187]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompareOrHandoffVaultScenarioResponse.ProtoReflect.Descriptor instead.
+func (*CompareOrHandoffVaultScenarioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{187}
+}
+
+func (x *CompareOrHandoffVaultScenarioResponse) GetScenario() *VaultGoalsScenarioEngineItem {
+	if x != nil {
+		return x.Scenario
+	}
+	return nil
+}
+
+// Choice 10 (V7): Privacy-Preserving Standing Proofs
+type VaultPrivacyStandingProofItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProofCode                        string                 `protobuf:"bytes,3,opt,name=proof_code,json=proofCode,proto3" json:"proof_code,omitempty"`
+	PredicateClaimAndVerifierPurpose string                 `protobuf:"bytes,4,opt,name=predicate_claim_and_verifier_purpose,json=predicateClaimAndVerifierPurpose,proto3" json:"predicate_claim_and_verifier_purpose,omitempty"`
+	IssuerSignatureExpiryAndNonce    string                 `protobuf:"bytes,5,opt,name=issuer_signature_expiry_and_nonce,json=issuerSignatureExpiryAndNonce,proto3" json:"issuer_signature_expiry_and_nonce,omitempty"`
+	OfflineRevocationSnapshotWindow  string                 `protobuf:"bytes,6,opt,name=offline_revocation_snapshot_window,json=offlineRevocationSnapshotWindow,proto3" json:"offline_revocation_snapshot_window,omitempty"`
+	ProofState                       string                 `protobuf:"bytes,7,opt,name=proof_state,json=proofState,proto3" json:"proof_state,omitempty"`
+	RawBalanceDisclosureBlocked      bool                   `protobuf:"varint,8,opt,name=raw_balance_disclosure_blocked,json=rawBalanceDisclosureBlocked,proto3" json:"raw_balance_disclosure_blocked,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *VaultPrivacyStandingProofItem) Reset() {
+	*x = VaultPrivacyStandingProofItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultPrivacyStandingProofItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultPrivacyStandingProofItem) ProtoMessage() {}
+
+func (x *VaultPrivacyStandingProofItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultPrivacyStandingProofItem.ProtoReflect.Descriptor instead.
+func (*VaultPrivacyStandingProofItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *VaultPrivacyStandingProofItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetProofCode() string {
+	if x != nil {
+		return x.ProofCode
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetPredicateClaimAndVerifierPurpose() string {
+	if x != nil {
+		return x.PredicateClaimAndVerifierPurpose
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetIssuerSignatureExpiryAndNonce() string {
+	if x != nil {
+		return x.IssuerSignatureExpiryAndNonce
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetOfflineRevocationSnapshotWindow() string {
+	if x != nil {
+		return x.OfflineRevocationSnapshotWindow
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetProofState() string {
+	if x != nil {
+		return x.ProofState
+	}
+	return ""
+}
+
+func (x *VaultPrivacyStandingProofItem) GetRawBalanceDisclosureBlocked() bool {
+	if x != nil {
+		return x.RawBalanceDisclosureBlocked
+	}
+	return false
+}
+
+func (x *VaultPrivacyStandingProofItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultPrivacyStandingProofWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchRequest) Reset() {
+	*x = GetVaultPrivacyStandingProofWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPrivacyStandingProofWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPrivacyStandingProofWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultPrivacyStandingProofWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{189}
+}
+
+type GetVaultPrivacyStandingProofWorkbenchResponse struct {
+	state                                        protoimpl.MessageState           `protogen:"open.v1"`
+	Proofs                                       []*VaultPrivacyStandingProofItem `protobuf:"bytes,1,rep,name=proofs,proto3" json:"proofs,omitempty"`
+	RawBalanceDisclosureBlocked                  bool                             `protobuf:"varint,2,opt,name=raw_balance_disclosure_blocked,json=rawBalanceDisclosureBlocked,proto3" json:"raw_balance_disclosure_blocked,omitempty"`
+	ServerSignedPredicateAndOfflineWindowSummary string                           `protobuf:"bytes,3,opt,name=server_signed_predicate_and_offline_window_summary,json=serverSignedPredicateAndOfflineWindowSummary,proto3" json:"server_signed_predicate_and_offline_window_summary,omitempty"`
+	unknownFields                                protoimpl.UnknownFields
+	sizeCache                                    protoimpl.SizeCache
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) Reset() {
+	*x = GetVaultPrivacyStandingProofWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultPrivacyStandingProofWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultPrivacyStandingProofWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultPrivacyStandingProofWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) GetProofs() []*VaultPrivacyStandingProofItem {
+	if x != nil {
+		return x.Proofs
+	}
+	return nil
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) GetRawBalanceDisclosureBlocked() bool {
+	if x != nil {
+		return x.RawBalanceDisclosureBlocked
+	}
+	return false
+}
+
+func (x *GetVaultPrivacyStandingProofWorkbenchResponse) GetServerSignedPredicateAndOfflineWindowSummary() string {
+	if x != nil {
+		return x.ServerSignedPredicateAndOfflineWindowSummary
+	}
+	return ""
+}
+
+type IssueVaultPrivacyStandingProofRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	ProofCode                        string                 `protobuf:"bytes,1,opt,name=proof_code,json=proofCode,proto3" json:"proof_code,omitempty"`
+	PredicateClaimAndVerifierPurpose string                 `protobuf:"bytes,2,opt,name=predicate_claim_and_verifier_purpose,json=predicateClaimAndVerifierPurpose,proto3" json:"predicate_claim_and_verifier_purpose,omitempty"`
+	IssuerSignatureExpiryAndNonce    string                 `protobuf:"bytes,3,opt,name=issuer_signature_expiry_and_nonce,json=issuerSignatureExpiryAndNonce,proto3" json:"issuer_signature_expiry_and_nonce,omitempty"`
+	OfflineRevocationSnapshotWindow  string                 `protobuf:"bytes,4,opt,name=offline_revocation_snapshot_window,json=offlineRevocationSnapshotWindow,proto3" json:"offline_revocation_snapshot_window,omitempty"`
+	ProofState                       string                 `protobuf:"bytes,5,opt,name=proof_state,json=proofState,proto3" json:"proof_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) Reset() {
+	*x = IssueVaultPrivacyStandingProofRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueVaultPrivacyStandingProofRequest) ProtoMessage() {}
+
+func (x *IssueVaultPrivacyStandingProofRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueVaultPrivacyStandingProofRequest.ProtoReflect.Descriptor instead.
+func (*IssueVaultPrivacyStandingProofRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) GetProofCode() string {
+	if x != nil {
+		return x.ProofCode
+	}
+	return ""
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) GetPredicateClaimAndVerifierPurpose() string {
+	if x != nil {
+		return x.PredicateClaimAndVerifierPurpose
+	}
+	return ""
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) GetIssuerSignatureExpiryAndNonce() string {
+	if x != nil {
+		return x.IssuerSignatureExpiryAndNonce
+	}
+	return ""
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) GetOfflineRevocationSnapshotWindow() string {
+	if x != nil {
+		return x.OfflineRevocationSnapshotWindow
+	}
+	return ""
+}
+
+func (x *IssueVaultPrivacyStandingProofRequest) GetProofState() string {
+	if x != nil {
+		return x.ProofState
+	}
+	return ""
+}
+
+type IssueVaultPrivacyStandingProofResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Proof         *VaultPrivacyStandingProofItem `protobuf:"bytes,1,opt,name=proof,proto3" json:"proof,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IssueVaultPrivacyStandingProofResponse) Reset() {
+	*x = IssueVaultPrivacyStandingProofResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueVaultPrivacyStandingProofResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueVaultPrivacyStandingProofResponse) ProtoMessage() {}
+
+func (x *IssueVaultPrivacyStandingProofResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueVaultPrivacyStandingProofResponse.ProtoReflect.Descriptor instead.
+func (*IssueVaultPrivacyStandingProofResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *IssueVaultPrivacyStandingProofResponse) GetProof() *VaultPrivacyStandingProofItem {
+	if x != nil {
+		return x.Proof
+	}
+	return nil
+}
+
+type VerifyOrRevokeVaultStandingProofRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ProofCode                       string                 `protobuf:"bytes,1,opt,name=proof_code,json=proofCode,proto3" json:"proof_code,omitempty"`
+	OfflineRevocationSnapshotWindow string                 `protobuf:"bytes,2,opt,name=offline_revocation_snapshot_window,json=offlineRevocationSnapshotWindow,proto3" json:"offline_revocation_snapshot_window,omitempty"`
+	ProofState                      string                 `protobuf:"bytes,3,opt,name=proof_state,json=proofState,proto3" json:"proof_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) Reset() {
+	*x = VerifyOrRevokeVaultStandingProofRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrRevokeVaultStandingProofRequest) ProtoMessage() {}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrRevokeVaultStandingProofRequest.ProtoReflect.Descriptor instead.
+func (*VerifyOrRevokeVaultStandingProofRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) GetProofCode() string {
+	if x != nil {
+		return x.ProofCode
+	}
+	return ""
+}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) GetOfflineRevocationSnapshotWindow() string {
+	if x != nil {
+		return x.OfflineRevocationSnapshotWindow
+	}
+	return ""
+}
+
+func (x *VerifyOrRevokeVaultStandingProofRequest) GetProofState() string {
+	if x != nil {
+		return x.ProofState
+	}
+	return ""
+}
+
+type VerifyOrRevokeVaultStandingProofResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Proof         *VaultPrivacyStandingProofItem `protobuf:"bytes,1,opt,name=proof,proto3" json:"proof,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyOrRevokeVaultStandingProofResponse) Reset() {
+	*x = VerifyOrRevokeVaultStandingProofResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrRevokeVaultStandingProofResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrRevokeVaultStandingProofResponse) ProtoMessage() {}
+
+func (x *VerifyOrRevokeVaultStandingProofResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrRevokeVaultStandingProofResponse.ProtoReflect.Descriptor instead.
+func (*VerifyOrRevokeVaultStandingProofResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *VerifyOrRevokeVaultStandingProofResponse) GetProof() *VaultPrivacyStandingProofItem {
+	if x != nil {
+		return x.Proof
+	}
+	return nil
+}
+
+// Choice 11 (V9): Advisor and Family-Office Workspace
+type VaultAdvisorFamilyWorkspaceItem struct {
+	state                                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EngagementCode                          string                 `protobuf:"bytes,3,opt,name=engagement_code,json=engagementCode,proto3" json:"engagement_code,omitempty"`
+	AdvisorCredentialAndScopeGrant          string                 `protobuf:"bytes,4,opt,name=advisor_credential_and_scope_grant,json=advisorCredentialAndScopeGrant,proto3" json:"advisor_credential_and_scope_grant,omitempty"`
+	WatermarkedExchangeAndDecisions         string                 `protobuf:"bytes,5,opt,name=watermarked_exchange_and_decisions,json=watermarkedExchangeAndDecisions,proto3" json:"watermarked_exchange_and_decisions,omitempty"`
+	DisclosuresConflictAndFeeRecord         string                 `protobuf:"bytes,6,opt,name=disclosures_conflict_and_fee_record,json=disclosuresConflictAndFeeRecord,proto3" json:"disclosures_conflict_and_fee_record,omitempty"`
+	WorkspaceState                          string                 `protobuf:"bytes,7,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	HouseholdProfessionalSeparationEnforced bool                   `protobuf:"varint,8,opt,name=household_professional_separation_enforced,json=householdProfessionalSeparationEnforced,proto3" json:"household_professional_separation_enforced,omitempty"`
+	UpdatedAtIso                            string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                           protoimpl.UnknownFields
+	sizeCache                               protoimpl.SizeCache
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) Reset() {
+	*x = VaultAdvisorFamilyWorkspaceItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultAdvisorFamilyWorkspaceItem) ProtoMessage() {}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultAdvisorFamilyWorkspaceItem.ProtoReflect.Descriptor instead.
+func (*VaultAdvisorFamilyWorkspaceItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetEngagementCode() string {
+	if x != nil {
+		return x.EngagementCode
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetAdvisorCredentialAndScopeGrant() string {
+	if x != nil {
+		return x.AdvisorCredentialAndScopeGrant
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetWatermarkedExchangeAndDecisions() string {
+	if x != nil {
+		return x.WatermarkedExchangeAndDecisions
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetDisclosuresConflictAndFeeRecord() string {
+	if x != nil {
+		return x.DisclosuresConflictAndFeeRecord
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetHouseholdProfessionalSeparationEnforced() bool {
+	if x != nil {
+		return x.HouseholdProfessionalSeparationEnforced
+	}
+	return false
+}
+
+func (x *VaultAdvisorFamilyWorkspaceItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultAdvisorFamilyWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchRequest) Reset() {
+	*x = GetVaultAdvisorFamilyWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultAdvisorFamilyWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultAdvisorFamilyWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultAdvisorFamilyWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultAdvisorFamilyWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{196}
+}
+
+type GetVaultAdvisorFamilyWorkbenchResponse struct {
+	state                                   protoimpl.MessageState             `protogen:"open.v1"`
+	Engagements                             []*VaultAdvisorFamilyWorkspaceItem `protobuf:"bytes,1,rep,name=engagements,proto3" json:"engagements,omitempty"`
+	HouseholdProfessionalSeparationEnforced bool                               `protobuf:"varint,2,opt,name=household_professional_separation_enforced,json=householdProfessionalSeparationEnforced,proto3" json:"household_professional_separation_enforced,omitempty"`
+	LeastPrivilegeAndWatermarkSummary       string                             `protobuf:"bytes,3,opt,name=least_privilege_and_watermark_summary,json=leastPrivilegeAndWatermarkSummary,proto3" json:"least_privilege_and_watermark_summary,omitempty"`
+	unknownFields                           protoimpl.UnknownFields
+	sizeCache                               protoimpl.SizeCache
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) Reset() {
+	*x = GetVaultAdvisorFamilyWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultAdvisorFamilyWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultAdvisorFamilyWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultAdvisorFamilyWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) GetEngagements() []*VaultAdvisorFamilyWorkspaceItem {
+	if x != nil {
+		return x.Engagements
+	}
+	return nil
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) GetHouseholdProfessionalSeparationEnforced() bool {
+	if x != nil {
+		return x.HouseholdProfessionalSeparationEnforced
+	}
+	return false
+}
+
+func (x *GetVaultAdvisorFamilyWorkbenchResponse) GetLeastPrivilegeAndWatermarkSummary() string {
+	if x != nil {
+		return x.LeastPrivilegeAndWatermarkSummary
+	}
+	return ""
+}
+
+type SaveVaultAdvisorEngagementScopeRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	EngagementCode                  string                 `protobuf:"bytes,1,opt,name=engagement_code,json=engagementCode,proto3" json:"engagement_code,omitempty"`
+	AdvisorCredentialAndScopeGrant  string                 `protobuf:"bytes,2,opt,name=advisor_credential_and_scope_grant,json=advisorCredentialAndScopeGrant,proto3" json:"advisor_credential_and_scope_grant,omitempty"`
+	WatermarkedExchangeAndDecisions string                 `protobuf:"bytes,3,opt,name=watermarked_exchange_and_decisions,json=watermarkedExchangeAndDecisions,proto3" json:"watermarked_exchange_and_decisions,omitempty"`
+	DisclosuresConflictAndFeeRecord string                 `protobuf:"bytes,4,opt,name=disclosures_conflict_and_fee_record,json=disclosuresConflictAndFeeRecord,proto3" json:"disclosures_conflict_and_fee_record,omitempty"`
+	WorkspaceState                  string                 `protobuf:"bytes,5,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) Reset() {
+	*x = SaveVaultAdvisorEngagementScopeRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultAdvisorEngagementScopeRequest) ProtoMessage() {}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultAdvisorEngagementScopeRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultAdvisorEngagementScopeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) GetEngagementCode() string {
+	if x != nil {
+		return x.EngagementCode
+	}
+	return ""
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) GetAdvisorCredentialAndScopeGrant() string {
+	if x != nil {
+		return x.AdvisorCredentialAndScopeGrant
+	}
+	return ""
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) GetWatermarkedExchangeAndDecisions() string {
+	if x != nil {
+		return x.WatermarkedExchangeAndDecisions
+	}
+	return ""
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) GetDisclosuresConflictAndFeeRecord() string {
+	if x != nil {
+		return x.DisclosuresConflictAndFeeRecord
+	}
+	return ""
+}
+
+func (x *SaveVaultAdvisorEngagementScopeRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+type SaveVaultAdvisorEngagementScopeResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Engagement    *VaultAdvisorFamilyWorkspaceItem `protobuf:"bytes,1,opt,name=engagement,proto3" json:"engagement,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultAdvisorEngagementScopeResponse) Reset() {
+	*x = SaveVaultAdvisorEngagementScopeResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultAdvisorEngagementScopeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultAdvisorEngagementScopeResponse) ProtoMessage() {}
+
+func (x *SaveVaultAdvisorEngagementScopeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultAdvisorEngagementScopeResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultAdvisorEngagementScopeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *SaveVaultAdvisorEngagementScopeResponse) GetEngagement() *VaultAdvisorFamilyWorkspaceItem {
+	if x != nil {
+		return x.Engagement
+	}
+	return nil
+}
+
+type ApproveOrRevokeVaultAdvisorAccessRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	EngagementCode                  string                 `protobuf:"bytes,1,opt,name=engagement_code,json=engagementCode,proto3" json:"engagement_code,omitempty"`
+	DisclosuresConflictAndFeeRecord string                 `protobuf:"bytes,2,opt,name=disclosures_conflict_and_fee_record,json=disclosuresConflictAndFeeRecord,proto3" json:"disclosures_conflict_and_fee_record,omitempty"`
+	WorkspaceState                  string                 `protobuf:"bytes,3,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) Reset() {
+	*x = ApproveOrRevokeVaultAdvisorAccessRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrRevokeVaultAdvisorAccessRequest) ProtoMessage() {}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrRevokeVaultAdvisorAccessRequest.ProtoReflect.Descriptor instead.
+func (*ApproveOrRevokeVaultAdvisorAccessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{200}
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) GetEngagementCode() string {
+	if x != nil {
+		return x.EngagementCode
+	}
+	return ""
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) GetDisclosuresConflictAndFeeRecord() string {
+	if x != nil {
+		return x.DisclosuresConflictAndFeeRecord
+	}
+	return ""
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+type ApproveOrRevokeVaultAdvisorAccessResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Engagement    *VaultAdvisorFamilyWorkspaceItem `protobuf:"bytes,1,opt,name=engagement,proto3" json:"engagement,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessResponse) Reset() {
+	*x = ApproveOrRevokeVaultAdvisorAccessResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrRevokeVaultAdvisorAccessResponse) ProtoMessage() {}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrRevokeVaultAdvisorAccessResponse.ProtoReflect.Descriptor instead.
+func (*ApproveOrRevokeVaultAdvisorAccessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *ApproveOrRevokeVaultAdvisorAccessResponse) GetEngagement() *VaultAdvisorFamilyWorkspaceItem {
+	if x != nil {
+		return x.Engagement
+	}
+	return nil
+}
+
+// Choice 12 (V13): Financial Safety and Fraud Response
+type VaultFinancialSafetyResponseItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SafetyCode                      string                 `protobuf:"bytes,3,opt,name=safety_code,json=safetyCode,proto3" json:"safety_code,omitempty"`
+	SignalObservationAndAltCauses   string                 `protobuf:"bytes,4,opt,name=signal_observation_and_alt_causes,json=signalObservationAndAltCauses,proto3" json:"signal_observation_and_alt_causes,omitempty"`
+	GuidedInstitutionAndFreezeSteps string                 `protobuf:"bytes,5,opt,name=guided_institution_and_freeze_steps,json=guidedInstitutionAndFreezeSteps,proto3" json:"guided_institution_and_freeze_steps,omitempty"`
+	EvidencePreservationAndAppeal   string                 `protobuf:"bytes,6,opt,name=evidence_preservation_and_appeal,json=evidencePreservationAndAppeal,proto3" json:"evidence_preservation_and_appeal,omitempty"`
+	SafetyState                     string                 `protobuf:"bytes,7,opt,name=safety_state,json=safetyState,proto3" json:"safety_state,omitempty"`
+	NoSingleScoreAutoLockEnforced   bool                   `protobuf:"varint,8,opt,name=no_single_score_auto_lock_enforced,json=noSingleScoreAutoLockEnforced,proto3" json:"no_single_score_auto_lock_enforced,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VaultFinancialSafetyResponseItem) Reset() {
+	*x = VaultFinancialSafetyResponseItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultFinancialSafetyResponseItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultFinancialSafetyResponseItem) ProtoMessage() {}
+
+func (x *VaultFinancialSafetyResponseItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultFinancialSafetyResponseItem.ProtoReflect.Descriptor instead.
+func (*VaultFinancialSafetyResponseItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetSafetyCode() string {
+	if x != nil {
+		return x.SafetyCode
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetSignalObservationAndAltCauses() string {
+	if x != nil {
+		return x.SignalObservationAndAltCauses
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetGuidedInstitutionAndFreezeSteps() string {
+	if x != nil {
+		return x.GuidedInstitutionAndFreezeSteps
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetEvidencePreservationAndAppeal() string {
+	if x != nil {
+		return x.EvidencePreservationAndAppeal
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetSafetyState() string {
+	if x != nil {
+		return x.SafetyState
+	}
+	return ""
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetNoSingleScoreAutoLockEnforced() bool {
+	if x != nil {
+		return x.NoSingleScoreAutoLockEnforced
+	}
+	return false
+}
+
+func (x *VaultFinancialSafetyResponseItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultFinancialSafetyWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchRequest) Reset() {
+	*x = GetVaultFinancialSafetyWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialSafetyWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultFinancialSafetyWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialSafetyWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialSafetyWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{203}
+}
+
+type GetVaultFinancialSafetyWorkbenchResponse struct {
+	state                                     protoimpl.MessageState              `protogen:"open.v1"`
+	Incidents                                 []*VaultFinancialSafetyResponseItem `protobuf:"bytes,1,rep,name=incidents,proto3" json:"incidents,omitempty"`
+	NoSingleScoreAutoLockEnforced             bool                                `protobuf:"varint,2,opt,name=no_single_score_auto_lock_enforced,json=noSingleScoreAutoLockEnforced,proto3" json:"no_single_score_auto_lock_enforced,omitempty"`
+	ExplainableSignalAndOfficialFreezeSummary string                              `protobuf:"bytes,3,opt,name=explainable_signal_and_official_freeze_summary,json=explainableSignalAndOfficialFreezeSummary,proto3" json:"explainable_signal_and_official_freeze_summary,omitempty"`
+	unknownFields                             protoimpl.UnknownFields
+	sizeCache                                 protoimpl.SizeCache
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) Reset() {
+	*x = GetVaultFinancialSafetyWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultFinancialSafetyWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultFinancialSafetyWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultFinancialSafetyWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) GetIncidents() []*VaultFinancialSafetyResponseItem {
+	if x != nil {
+		return x.Incidents
+	}
+	return nil
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) GetNoSingleScoreAutoLockEnforced() bool {
+	if x != nil {
+		return x.NoSingleScoreAutoLockEnforced
+	}
+	return false
+}
+
+func (x *GetVaultFinancialSafetyWorkbenchResponse) GetExplainableSignalAndOfficialFreezeSummary() string {
+	if x != nil {
+		return x.ExplainableSignalAndOfficialFreezeSummary
+	}
+	return ""
+}
+
+type SaveVaultFinancialSafetyIncidentRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	SafetyCode                      string                 `protobuf:"bytes,1,opt,name=safety_code,json=safetyCode,proto3" json:"safety_code,omitempty"`
+	SignalObservationAndAltCauses   string                 `protobuf:"bytes,2,opt,name=signal_observation_and_alt_causes,json=signalObservationAndAltCauses,proto3" json:"signal_observation_and_alt_causes,omitempty"`
+	GuidedInstitutionAndFreezeSteps string                 `protobuf:"bytes,3,opt,name=guided_institution_and_freeze_steps,json=guidedInstitutionAndFreezeSteps,proto3" json:"guided_institution_and_freeze_steps,omitempty"`
+	EvidencePreservationAndAppeal   string                 `protobuf:"bytes,4,opt,name=evidence_preservation_and_appeal,json=evidencePreservationAndAppeal,proto3" json:"evidence_preservation_and_appeal,omitempty"`
+	SafetyState                     string                 `protobuf:"bytes,5,opt,name=safety_state,json=safetyState,proto3" json:"safety_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) Reset() {
+	*x = SaveVaultFinancialSafetyIncidentRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialSafetyIncidentRequest) ProtoMessage() {}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialSafetyIncidentRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialSafetyIncidentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) GetSafetyCode() string {
+	if x != nil {
+		return x.SafetyCode
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) GetSignalObservationAndAltCauses() string {
+	if x != nil {
+		return x.SignalObservationAndAltCauses
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) GetGuidedInstitutionAndFreezeSteps() string {
+	if x != nil {
+		return x.GuidedInstitutionAndFreezeSteps
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) GetEvidencePreservationAndAppeal() string {
+	if x != nil {
+		return x.EvidencePreservationAndAppeal
+	}
+	return ""
+}
+
+func (x *SaveVaultFinancialSafetyIncidentRequest) GetSafetyState() string {
+	if x != nil {
+		return x.SafetyState
+	}
+	return ""
+}
+
+type SaveVaultFinancialSafetyIncidentResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Incident      *VaultFinancialSafetyResponseItem `protobuf:"bytes,1,opt,name=incident,proto3" json:"incident,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultFinancialSafetyIncidentResponse) Reset() {
+	*x = SaveVaultFinancialSafetyIncidentResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultFinancialSafetyIncidentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultFinancialSafetyIncidentResponse) ProtoMessage() {}
+
+func (x *SaveVaultFinancialSafetyIncidentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultFinancialSafetyIncidentResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultFinancialSafetyIncidentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *SaveVaultFinancialSafetyIncidentResponse) GetIncident() *VaultFinancialSafetyResponseItem {
+	if x != nil {
+		return x.Incident
+	}
+	return nil
+}
+
+type ExecuteOrAppealVaultSafetyActionRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	SafetyCode                    string                 `protobuf:"bytes,1,opt,name=safety_code,json=safetyCode,proto3" json:"safety_code,omitempty"`
+	EvidencePreservationAndAppeal string                 `protobuf:"bytes,2,opt,name=evidence_preservation_and_appeal,json=evidencePreservationAndAppeal,proto3" json:"evidence_preservation_and_appeal,omitempty"`
+	SafetyState                   string                 `protobuf:"bytes,3,opt,name=safety_state,json=safetyState,proto3" json:"safety_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) Reset() {
+	*x = ExecuteOrAppealVaultSafetyActionRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[207]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecuteOrAppealVaultSafetyActionRequest) ProtoMessage() {}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[207]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecuteOrAppealVaultSafetyActionRequest.ProtoReflect.Descriptor instead.
+func (*ExecuteOrAppealVaultSafetyActionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{207}
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) GetSafetyCode() string {
+	if x != nil {
+		return x.SafetyCode
+	}
+	return ""
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) GetEvidencePreservationAndAppeal() string {
+	if x != nil {
+		return x.EvidencePreservationAndAppeal
+	}
+	return ""
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionRequest) GetSafetyState() string {
+	if x != nil {
+		return x.SafetyState
+	}
+	return ""
+}
+
+type ExecuteOrAppealVaultSafetyActionResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Incident      *VaultFinancialSafetyResponseItem `protobuf:"bytes,1,opt,name=incident,proto3" json:"incident,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionResponse) Reset() {
+	*x = ExecuteOrAppealVaultSafetyActionResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[208]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecuteOrAppealVaultSafetyActionResponse) ProtoMessage() {}
+
+func (x *ExecuteOrAppealVaultSafetyActionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[208]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecuteOrAppealVaultSafetyActionResponse.ProtoReflect.Descriptor instead.
+func (*ExecuteOrAppealVaultSafetyActionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{208}
+}
+
+func (x *ExecuteOrAppealVaultSafetyActionResponse) GetIncident() *VaultFinancialSafetyResponseItem {
+	if x != nil {
+		return x.Incident
+	}
+	return nil
+}
+
+// Choice 13 (V15): Giving and Impact Ledger
+type VaultGivingImpactLedgerItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GivingCode                        string                 `protobuf:"bytes,3,opt,name=giving_code,json=givingCode,proto3" json:"giving_code,omitempty"`
+	CharityDiligenceAndPledgeTerms    string                 `protobuf:"bytes,4,opt,name=charity_diligence_and_pledge_terms,json=charityDiligenceAndPledgeTerms,proto3" json:"charity_diligence_and_pledge_terms,omitempty"`
+	DonationLiquidityAndTaxScenario   string                 `protobuf:"bytes,5,opt,name=donation_liquidity_and_tax_scenario,json=donationLiquidityAndTaxScenario,proto3" json:"donation_liquidity_and_tax_scenario,omitempty"`
+	ReceiptRestrictionAndOutcomeLog   string                 `protobuf:"bytes,6,opt,name=receipt_restriction_and_outcome_log,json=receiptRestrictionAndOutcomeLog,proto3" json:"receipt_restriction_and_outcome_log,omitempty"`
+	LedgerState                       string                 `protobuf:"bytes,7,opt,name=ledger_state,json=ledgerState,proto3" json:"ledger_state,omitempty"`
+	NoPerformativeLeaderboardEnforced bool                   `protobuf:"varint,8,opt,name=no_performative_leaderboard_enforced,json=noPerformativeLeaderboardEnforced,proto3" json:"no_performative_leaderboard_enforced,omitempty"`
+	UpdatedAtIso                      string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *VaultGivingImpactLedgerItem) Reset() {
+	*x = VaultGivingImpactLedgerItem{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[209]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VaultGivingImpactLedgerItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VaultGivingImpactLedgerItem) ProtoMessage() {}
+
+func (x *VaultGivingImpactLedgerItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[209]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VaultGivingImpactLedgerItem.ProtoReflect.Descriptor instead.
+func (*VaultGivingImpactLedgerItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{209}
+}
+
+func (x *VaultGivingImpactLedgerItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetGivingCode() string {
+	if x != nil {
+		return x.GivingCode
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetCharityDiligenceAndPledgeTerms() string {
+	if x != nil {
+		return x.CharityDiligenceAndPledgeTerms
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetDonationLiquidityAndTaxScenario() string {
+	if x != nil {
+		return x.DonationLiquidityAndTaxScenario
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetReceiptRestrictionAndOutcomeLog() string {
+	if x != nil {
+		return x.ReceiptRestrictionAndOutcomeLog
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetLedgerState() string {
+	if x != nil {
+		return x.LedgerState
+	}
+	return ""
+}
+
+func (x *VaultGivingImpactLedgerItem) GetNoPerformativeLeaderboardEnforced() bool {
+	if x != nil {
+		return x.NoPerformativeLeaderboardEnforced
+	}
+	return false
+}
+
+func (x *VaultGivingImpactLedgerItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetVaultGivingImpactWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVaultGivingImpactWorkbenchRequest) Reset() {
+	*x = GetVaultGivingImpactWorkbenchRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[210]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultGivingImpactWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultGivingImpactWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetVaultGivingImpactWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[210]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultGivingImpactWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetVaultGivingImpactWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{210}
+}
+
+type GetVaultGivingImpactWorkbenchResponse struct {
+	state                             protoimpl.MessageState         `protogen:"open.v1"`
+	Pledges                           []*VaultGivingImpactLedgerItem `protobuf:"bytes,1,rep,name=pledges,proto3" json:"pledges,omitempty"`
+	NoPerformativeLeaderboardEnforced bool                           `protobuf:"varint,2,opt,name=no_performative_leaderboard_enforced,json=noPerformativeLeaderboardEnforced,proto3" json:"no_performative_leaderboard_enforced,omitempty"`
+	DiligenceReceiptAndPrivacySummary string                         `protobuf:"bytes,3,opt,name=diligence_receipt_and_privacy_summary,json=diligenceReceiptAndPrivacySummary,proto3" json:"diligence_receipt_and_privacy_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) Reset() {
+	*x = GetVaultGivingImpactWorkbenchResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[211]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVaultGivingImpactWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[211]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVaultGivingImpactWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetVaultGivingImpactWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{211}
+}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) GetPledges() []*VaultGivingImpactLedgerItem {
+	if x != nil {
+		return x.Pledges
+	}
+	return nil
+}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) GetNoPerformativeLeaderboardEnforced() bool {
+	if x != nil {
+		return x.NoPerformativeLeaderboardEnforced
+	}
+	return false
+}
+
+func (x *GetVaultGivingImpactWorkbenchResponse) GetDiligenceReceiptAndPrivacySummary() string {
+	if x != nil {
+		return x.DiligenceReceiptAndPrivacySummary
+	}
+	return ""
+}
+
+type SaveVaultGivingImpactPledgeRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	GivingCode                      string                 `protobuf:"bytes,1,opt,name=giving_code,json=givingCode,proto3" json:"giving_code,omitempty"`
+	CharityDiligenceAndPledgeTerms  string                 `protobuf:"bytes,2,opt,name=charity_diligence_and_pledge_terms,json=charityDiligenceAndPledgeTerms,proto3" json:"charity_diligence_and_pledge_terms,omitempty"`
+	DonationLiquidityAndTaxScenario string                 `protobuf:"bytes,3,opt,name=donation_liquidity_and_tax_scenario,json=donationLiquidityAndTaxScenario,proto3" json:"donation_liquidity_and_tax_scenario,omitempty"`
+	ReceiptRestrictionAndOutcomeLog string                 `protobuf:"bytes,4,opt,name=receipt_restriction_and_outcome_log,json=receiptRestrictionAndOutcomeLog,proto3" json:"receipt_restriction_and_outcome_log,omitempty"`
+	LedgerState                     string                 `protobuf:"bytes,5,opt,name=ledger_state,json=ledgerState,proto3" json:"ledger_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) Reset() {
+	*x = SaveVaultGivingImpactPledgeRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[212]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultGivingImpactPledgeRequest) ProtoMessage() {}
+
+func (x *SaveVaultGivingImpactPledgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[212]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultGivingImpactPledgeRequest.ProtoReflect.Descriptor instead.
+func (*SaveVaultGivingImpactPledgeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{212}
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) GetGivingCode() string {
+	if x != nil {
+		return x.GivingCode
+	}
+	return ""
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) GetCharityDiligenceAndPledgeTerms() string {
+	if x != nil {
+		return x.CharityDiligenceAndPledgeTerms
+	}
+	return ""
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) GetDonationLiquidityAndTaxScenario() string {
+	if x != nil {
+		return x.DonationLiquidityAndTaxScenario
+	}
+	return ""
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) GetReceiptRestrictionAndOutcomeLog() string {
+	if x != nil {
+		return x.ReceiptRestrictionAndOutcomeLog
+	}
+	return ""
+}
+
+func (x *SaveVaultGivingImpactPledgeRequest) GetLedgerState() string {
+	if x != nil {
+		return x.LedgerState
+	}
+	return ""
+}
+
+type SaveVaultGivingImpactPledgeResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Pledge        *VaultGivingImpactLedgerItem `protobuf:"bytes,1,opt,name=pledge,proto3" json:"pledge,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveVaultGivingImpactPledgeResponse) Reset() {
+	*x = SaveVaultGivingImpactPledgeResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[213]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveVaultGivingImpactPledgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveVaultGivingImpactPledgeResponse) ProtoMessage() {}
+
+func (x *SaveVaultGivingImpactPledgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[213]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveVaultGivingImpactPledgeResponse.ProtoReflect.Descriptor instead.
+func (*SaveVaultGivingImpactPledgeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{213}
+}
+
+func (x *SaveVaultGivingImpactPledgeResponse) GetPledge() *VaultGivingImpactLedgerItem {
+	if x != nil {
+		return x.Pledge
+	}
+	return nil
+}
+
+type VerifyOrAcknowledgeVaultGiftReceiptRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	GivingCode                      string                 `protobuf:"bytes,1,opt,name=giving_code,json=givingCode,proto3" json:"giving_code,omitempty"`
+	ReceiptRestrictionAndOutcomeLog string                 `protobuf:"bytes,2,opt,name=receipt_restriction_and_outcome_log,json=receiptRestrictionAndOutcomeLog,proto3" json:"receipt_restriction_and_outcome_log,omitempty"`
+	LedgerState                     string                 `protobuf:"bytes,3,opt,name=ledger_state,json=ledgerState,proto3" json:"ledger_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) Reset() {
+	*x = VerifyOrAcknowledgeVaultGiftReceiptRequest{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[214]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrAcknowledgeVaultGiftReceiptRequest) ProtoMessage() {}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[214]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrAcknowledgeVaultGiftReceiptRequest.ProtoReflect.Descriptor instead.
+func (*VerifyOrAcknowledgeVaultGiftReceiptRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{214}
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) GetGivingCode() string {
+	if x != nil {
+		return x.GivingCode
+	}
+	return ""
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) GetReceiptRestrictionAndOutcomeLog() string {
+	if x != nil {
+		return x.ReceiptRestrictionAndOutcomeLog
+	}
+	return ""
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptRequest) GetLedgerState() string {
+	if x != nil {
+		return x.LedgerState
+	}
+	return ""
+}
+
+type VerifyOrAcknowledgeVaultGiftReceiptResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Pledge        *VaultGivingImpactLedgerItem `protobuf:"bytes,1,opt,name=pledge,proto3" json:"pledge,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptResponse) Reset() {
+	*x = VerifyOrAcknowledgeVaultGiftReceiptResponse{}
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[215]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrAcknowledgeVaultGiftReceiptResponse) ProtoMessage() {}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_vault_v1_vault_proto_msgTypes[215]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrAcknowledgeVaultGiftReceiptResponse.ProtoReflect.Descriptor instead.
+func (*VerifyOrAcknowledgeVaultGiftReceiptResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_vault_v1_vault_proto_rawDescGZIP(), []int{215}
+}
+
+func (x *VerifyOrAcknowledgeVaultGiftReceiptResponse) GetPledge() *VaultGivingImpactLedgerItem {
+	if x != nil {
+		return x.Pledge
+	}
+	return nil
+}
+
 var File_sttattus_vault_v1_vault_proto protoreflect.FileDescriptor
 
 const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
@@ -7447,7 +13024,420 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x04lots\x18\x04 \x03(\v2\x19.sttattus.vault.v1.TaxLotR\x04lots\"\x17\n" +
 	"\x15ExportUsCgtCsvRequest\"*\n" +
 	"\x16ExportUsCgtCsvResponse\x12\x10\n" +
-	"\x03csv\x18\x01 \x01(\fR\x03csv*\x86\x02\n" +
+	"\x03csv\x18\x01 \x01(\fR\x03csv\"\xdc\x03\n" +
+	"!VaultFinancialDataReliabilityItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsource_code\x18\x03 \x01(\tR\n" +
+	"sourceCode\x12E\n" +
+	"\x1finstitution_and_coverage_window\x18\x04 \x01(\tR\x1cinstitutionAndCoverageWindow\x12I\n" +
+	"!sync_freshness_and_reconciliation\x18\x05 \x01(\tR\x1esyncFreshnessAndReconciliation\x12?\n" +
+	"\x1cconfidence_and_lineage_layer\x18\x06 \x01(\tR\x19confidenceAndLineageLayer\x12+\n" +
+	"\x11reliability_state\x18\a \x01(\tR\x10reliabilityState\x12G\n" +
+	" idempotent_replay_dedup_enforced\x18\b \x01(\bR\x1didempotentReplayDedupEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\".\n" +
+	",GetVaultFinancialReliabilityWorkbenchRequest\"\x9c\x02\n" +
+	"-GetVaultFinancialReliabilityWorkbenchResponse\x12N\n" +
+	"\asources\x18\x01 \x03(\v24.sttattus.vault.v1.VaultFinancialDataReliabilityItemR\asources\x12G\n" +
+	" idempotent_replay_dedup_enforced\x18\x02 \x01(\bR\x1didempotentReplayDedupEnforced\x12R\n" +
+	"&snapshot_lineage_and_freshness_summary\x18\x03 \x01(\tR\"snapshotLineageAndFreshnessSummary\"\xcd\x02\n" +
+	"*SaveVaultFinancialReliabilitySourceRequest\x12\x1f\n" +
+	"\vsource_code\x18\x01 \x01(\tR\n" +
+	"sourceCode\x12E\n" +
+	"\x1finstitution_and_coverage_window\x18\x02 \x01(\tR\x1cinstitutionAndCoverageWindow\x12I\n" +
+	"!sync_freshness_and_reconciliation\x18\x03 \x01(\tR\x1esyncFreshnessAndReconciliation\x12?\n" +
+	"\x1cconfidence_and_lineage_layer\x18\x04 \x01(\tR\x19confidenceAndLineageLayer\x12+\n" +
+	"\x11reliability_state\x18\x05 \x01(\tR\x10reliabilityState\"{\n" +
+	"+SaveVaultFinancialReliabilitySourceResponse\x12L\n" +
+	"\x06source\x18\x01 \x01(\v24.sttattus.vault.v1.VaultFinancialDataReliabilityItemR\x06source\"\xc3\x01\n" +
+	"(ReconcileOrReplayVaultReliabilityRequest\x12\x1f\n" +
+	"\vsource_code\x18\x01 \x01(\tR\n" +
+	"sourceCode\x12I\n" +
+	"!sync_freshness_and_reconciliation\x18\x02 \x01(\tR\x1esyncFreshnessAndReconciliation\x12+\n" +
+	"\x11reliability_state\x18\x03 \x01(\tR\x10reliabilityState\"y\n" +
+	")ReconcileOrReplayVaultReliabilityResponse\x12L\n" +
+	"\x06source\x18\x01 \x01(\v24.sttattus.vault.v1.VaultFinancialDataReliabilityItemR\x06source\"\xd2\x03\n" +
+	"\x1cVaultFinancialInboxCloseItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"inbox_code\x18\x03 \x01(\tR\tinboxCode\x12O\n" +
+	"$exception_and_classification_summary\x18\x04 \x01(\tR!exceptionAndClassificationSummary\x12F\n" +
+	" close_checklist_and_snapshot_ref\x18\x05 \x01(\tR\x1ccloseChecklistAndSnapshotRef\x12A\n" +
+	"\x1dwhat_changed_statement_bridge\x18\x06 \x01(\tR\x1awhatChangedStatementBridge\x12\x1f\n" +
+	"\vinbox_state\x18\a \x01(\tR\n" +
+	"inboxState\x12G\n" +
+	" reversible_ledger_edits_enforced\x18\b \x01(\bR\x1dreversibleLedgerEditsEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"-\n" +
+	"+GetVaultFinancialInboxCloseWorkbenchRequest\"\x8d\x02\n" +
+	",GetVaultFinancialInboxCloseWorkbenchResponse\x12G\n" +
+	"\x06closes\x18\x01 \x03(\v2/.sttattus.vault.v1.VaultFinancialInboxCloseItemR\x06closes\x12G\n" +
+	" reversible_ledger_edits_enforced\x18\x02 \x01(\bR\x1dreversibleLedgerEditsEnforced\x12K\n" +
+	"#close_lock_and_what_changed_summary\x18\x03 \x01(\tR\x1ecloseLockAndWhatChangedSummary\"\xc5\x02\n" +
+	"'SaveVaultFinancialInboxCloseItemRequest\x12\x1d\n" +
+	"\n" +
+	"inbox_code\x18\x01 \x01(\tR\tinboxCode\x12O\n" +
+	"$exception_and_classification_summary\x18\x02 \x01(\tR!exceptionAndClassificationSummary\x12F\n" +
+	" close_checklist_and_snapshot_ref\x18\x03 \x01(\tR\x1ccloseChecklistAndSnapshotRef\x12A\n" +
+	"\x1dwhat_changed_statement_bridge\x18\x04 \x01(\tR\x1awhatChangedStatementBridge\x12\x1f\n" +
+	"\vinbox_state\x18\x05 \x01(\tR\n" +
+	"inboxState\"q\n" +
+	"(SaveVaultFinancialInboxCloseItemResponse\x12E\n" +
+	"\x05close\x18\x01 \x01(\v2/.sttattus.vault.v1.VaultFinancialInboxCloseItemR\x05close\"\xa9\x01\n" +
+	"$LockOrReopenVaultMonthlyCloseRequest\x12\x1d\n" +
+	"\n" +
+	"inbox_code\x18\x01 \x01(\tR\tinboxCode\x12A\n" +
+	"\x1dwhat_changed_statement_bridge\x18\x02 \x01(\tR\x1awhatChangedStatementBridge\x12\x1f\n" +
+	"\vinbox_state\x18\x03 \x01(\tR\n" +
+	"inboxState\"n\n" +
+	"%LockOrReopenVaultMonthlyCloseResponse\x12E\n" +
+	"\x05close\x18\x01 \x01(\v2/.sttattus.vault.v1.VaultFinancialInboxCloseItemR\x05close\"\xeb\x03\n" +
+	"\x1fVaultPersonalCfoCashCommandItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fcommand_code\x18\x03 \x01(\tR\vcommandCode\x12=\n" +
+	"\x1bliquidity_ladder_and_ratios\x18\x04 \x01(\tR\x18liquidityLadderAndRatios\x12R\n" +
+	"&thirteen_week_forecast_and_commitments\x18\x05 \x01(\tR\"thirteenWeekForecastAndCommitments\x12P\n" +
+	"%explainable_variance_and_policy_alert\x18\x06 \x01(\tR!explainableVarianceAndPolicyAlert\x12#\n" +
+	"\rcommand_state\x18\a \x01(\tR\fcommandState\x12L\n" +
+	"#non_auto_transfer_boundary_enforced\x18\b \x01(\bR\x1fnonAutoTransferBoundaryEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetVaultPersonalCfoCashWorkbenchRequest\"\x9a\x02\n" +
+	"(GetVaultPersonalCfoCashWorkbenchResponse\x12N\n" +
+	"\bcommands\x18\x01 \x03(\v22.sttattus.vault.v1.VaultPersonalCfoCashCommandItemR\bcommands\x12L\n" +
+	"#non_auto_transfer_boundary_enforced\x18\x02 \x01(\bR\x1fnonAutoTransferBoundaryEnforced\x12P\n" +
+	"%liquidity_ladder_and_forecast_summary\x18\x03 \x01(\tR!liquidityLadderAndForecastSummary\"\xd6\x02\n" +
+	"'SaveVaultPersonalCfoCashForecastRequest\x12!\n" +
+	"\fcommand_code\x18\x01 \x01(\tR\vcommandCode\x12=\n" +
+	"\x1bliquidity_ladder_and_ratios\x18\x02 \x01(\tR\x18liquidityLadderAndRatios\x12R\n" +
+	"&thirteen_week_forecast_and_commitments\x18\x03 \x01(\tR\"thirteenWeekForecastAndCommitments\x12P\n" +
+	"%explainable_variance_and_policy_alert\x18\x04 \x01(\tR!explainableVarianceAndPolicyAlert\x12#\n" +
+	"\rcommand_state\x18\x05 \x01(\tR\fcommandState\"x\n" +
+	"(SaveVaultPersonalCfoCashForecastResponse\x12L\n" +
+	"\acommand\x18\x01 \x01(\v22.sttattus.vault.v1.VaultPersonalCfoCashCommandItemR\acommand\"\xc9\x01\n" +
+	"-AcknowledgeOrReviewVaultCashCommitmentRequest\x12!\n" +
+	"\fcommand_code\x18\x01 \x01(\tR\vcommandCode\x12P\n" +
+	"%explainable_variance_and_policy_alert\x18\x02 \x01(\tR!explainableVarianceAndPolicyAlert\x12#\n" +
+	"\rcommand_state\x18\x03 \x01(\tR\fcommandState\"~\n" +
+	".AcknowledgeOrReviewVaultCashCommitmentResponse\x12L\n" +
+	"\acommand\x18\x01 \x01(\v22.sttattus.vault.v1.VaultPersonalCfoCashCommandItemR\acommand\"\xea\x03\n" +
+	"!VaultPerformanceAllocationLabItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fallocation_code\x18\x03 \x01(\tR\x0eallocationCode\x12G\n" +
+	"!twr_mwr_irr_and_benchmark_summary\x18\x04 \x01(\tR\x1ctwrMwrIrrAndBenchmarkSummary\x12S\n" +
+	"&lookthrough_exposure_and_concentration\x18\x05 \x01(\tR#lookthroughExposureAndConcentration\x12D\n" +
+	"\x1frebalance_tax_and_cost_scenario\x18\x06 \x01(\tR\x1brebalanceTaxAndCostScenario\x12\x1b\n" +
+	"\tlab_state\x18\a \x01(\tR\blabState\x12L\n" +
+	"#no_fabricated_smooth_curve_enforced\x18\b \x01(\bR\x1fnoFabricatedSmoothCurveEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetVaultPerformanceAllocationWorkbenchRequest\"\xa7\x02\n" +
+	".GetVaultPerformanceAllocationWorkbenchResponse\x12L\n" +
+	"\x06models\x18\x01 \x03(\v24.sttattus.vault.v1.VaultPerformanceAllocationLabItemR\x06models\x12L\n" +
+	"#no_fabricated_smooth_curve_enforced\x18\x02 \x01(\bR\x1fnoFabricatedSmoothCurveEnforced\x12Y\n" +
+	")snapshot_reproducible_performance_summary\x18\x03 \x01(\tR&snapshotReproduciblePerformanceSummary\"\xd6\x02\n" +
+	"*SaveVaultPerformanceAllocationModelRequest\x12'\n" +
+	"\x0fallocation_code\x18\x01 \x01(\tR\x0eallocationCode\x12G\n" +
+	"!twr_mwr_irr_and_benchmark_summary\x18\x02 \x01(\tR\x1ctwrMwrIrrAndBenchmarkSummary\x12S\n" +
+	"&lookthrough_exposure_and_concentration\x18\x03 \x01(\tR#lookthroughExposureAndConcentration\x12D\n" +
+	"\x1frebalance_tax_and_cost_scenario\x18\x04 \x01(\tR\x1brebalanceTaxAndCostScenario\x12\x1b\n" +
+	"\tlab_state\x18\x05 \x01(\tR\blabState\"y\n" +
+	"+SaveVaultPerformanceAllocationModelResponse\x12J\n" +
+	"\x05model\x18\x01 \x01(\v24.sttattus.vault.v1.VaultPerformanceAllocationLabItemR\x05model\"\xb5\x01\n" +
+	"'SimulateOrRefreshVaultAllocationRequest\x12'\n" +
+	"\x0fallocation_code\x18\x01 \x01(\tR\x0eallocationCode\x12D\n" +
+	"\x1frebalance_tax_and_cost_scenario\x18\x02 \x01(\tR\x1brebalanceTaxAndCostScenario\x12\x1b\n" +
+	"\tlab_state\x18\x03 \x01(\tR\blabState\"v\n" +
+	"(SimulateOrRefreshVaultAllocationResponse\x12J\n" +
+	"\x05model\x18\x01 \x01(\v24.sttattus.vault.v1.VaultPerformanceAllocationLabItemR\x05model\"\xf7\x03\n" +
+	"\x1fVaultTaxAccountantWorkspaceItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x19\n" +
+	"\btax_code\x18\x03 \x01(\tR\ataxCode\x12O\n" +
+	"%jurisdiction_lots_and_wash_sale_scope\x18\x04 \x01(\tR jurisdictionLotsAndWashSaleScope\x12N\n" +
+	"$harvest_or_payment_scenario_estimate\x18\x05 \x01(\tR harvestOrPaymentScenarioEstimate\x12L\n" +
+	"#accountant_dataroom_and_period_lock\x18\x06 \x01(\tR\x1faccountantDataroomAndPeriodLock\x12'\n" +
+	"\x0fworkspace_state\x18\a \x01(\tR\x0eworkspaceState\x12R\n" +
+	"'non_tax_advice_no_onetap_trade_enforced\x18\b \x01(\bR!nonTaxAdviceNoOnetapTradeEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"'\n" +
+	"%GetVaultTaxAccountantWorkbenchRequest\"\xa3\x02\n" +
+	"&GetVaultTaxAccountantWorkbenchResponse\x12R\n" +
+	"\n" +
+	"workspaces\x18\x01 \x03(\v22.sttattus.vault.v1.VaultTaxAccountantWorkspaceItemR\n" +
+	"workspaces\x12R\n" +
+	"'non_tax_advice_no_onetap_trade_enforced\x18\x02 \x01(\bR!nonTaxAdviceNoOnetapTradeEnforced\x12Q\n" +
+	"&wash_sale_and_accountant_scope_summary\x18\x03 \x01(\tR!washSaleAndAccountantScopeSummary\"\xda\x02\n" +
+	"%SaveVaultTaxAccountantScenarioRequest\x12\x19\n" +
+	"\btax_code\x18\x01 \x01(\tR\ataxCode\x12O\n" +
+	"%jurisdiction_lots_and_wash_sale_scope\x18\x02 \x01(\tR jurisdictionLotsAndWashSaleScope\x12N\n" +
+	"$harvest_or_payment_scenario_estimate\x18\x03 \x01(\tR harvestOrPaymentScenarioEstimate\x12L\n" +
+	"#accountant_dataroom_and_period_lock\x18\x04 \x01(\tR\x1faccountantDataroomAndPeriodLock\x12'\n" +
+	"\x0fworkspace_state\x18\x05 \x01(\tR\x0eworkspaceState\"z\n" +
+	"&SaveVaultTaxAccountantScenarioResponse\x12P\n" +
+	"\tworkspace\x18\x01 \x01(\v22.sttattus.vault.v1.VaultTaxAccountantWorkspaceItemR\tworkspace\"\xb6\x01\n" +
+	"\"LockOrExportVaultTaxPackageRequest\x12\x19\n" +
+	"\btax_code\x18\x01 \x01(\tR\ataxCode\x12L\n" +
+	"#accountant_dataroom_and_period_lock\x18\x02 \x01(\tR\x1faccountantDataroomAndPeriodLock\x12'\n" +
+	"\x0fworkspace_state\x18\x03 \x01(\tR\x0eworkspaceState\"w\n" +
+	"#LockOrExportVaultTaxPackageResponse\x12P\n" +
+	"\tworkspace\x18\x01 \x01(\v22.sttattus.vault.v1.VaultTaxAccountantWorkspaceItemR\tworkspace\"\xd1\x03\n" +
+	"\x1dVaultEntityOwnershipGraphItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"graph_code\x18\x03 \x01(\tR\tgraphCode\x12E\n" +
+	"\x1fentity_and_lookthrough_interest\x18\x04 \x01(\tR\x1centityAndLookthroughInterest\x12K\n" +
+	"\"collaboration_visibility_and_scope\x18\x05 \x01(\tR\x1fcollaborationVisibilityAndScope\x12J\n" +
+	"\"dominion_and_legacy_bridge_summary\x18\x06 \x01(\tR\x1edominionAndLegacyBridgeSummary\x12\x1f\n" +
+	"\vgraph_state\x18\a \x01(\tR\n" +
+	"graphState\x12A\n" +
+	"\x1dzero_double_counting_enforced\x18\b \x01(\bR\x1azeroDoubleCountingEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetVaultEntityOwnershipWorkbenchRequest\"\x8a\x02\n" +
+	"(GetVaultEntityOwnershipWorkbenchResponse\x12H\n" +
+	"\x06graphs\x18\x01 \x03(\v20.sttattus.vault.v1.VaultEntityOwnershipGraphItemR\x06graphs\x12A\n" +
+	"\x1dzero_double_counting_enforced\x18\x02 \x01(\bR\x1azeroDoubleCountingEnforced\x12Q\n" +
+	"%lookthrough_and_collaboration_summary\x18\x03 \x01(\tR\"lookthroughAndCollaborationSummary\"\xc5\x02\n" +
+	"#SaveVaultEntityOwnershipNodeRequest\x12\x1d\n" +
+	"\n" +
+	"graph_code\x18\x01 \x01(\tR\tgraphCode\x12E\n" +
+	"\x1fentity_and_lookthrough_interest\x18\x02 \x01(\tR\x1centityAndLookthroughInterest\x12K\n" +
+	"\"collaboration_visibility_and_scope\x18\x03 \x01(\tR\x1fcollaborationVisibilityAndScope\x12J\n" +
+	"\"dominion_and_legacy_bridge_summary\x18\x04 \x01(\tR\x1edominionAndLegacyBridgeSummary\x12\x1f\n" +
+	"\vgraph_state\x18\x05 \x01(\tR\n" +
+	"graphState\"n\n" +
+	"$SaveVaultEntityOwnershipNodeResponse\x12F\n" +
+	"\x05graph\x18\x01 \x01(\v20.sttattus.vault.v1.VaultEntityOwnershipGraphItemR\x05graph\"\xb8\x01\n" +
+	")VerifyOrRevokeVaultOwnershipAccessRequest\x12\x1d\n" +
+	"\n" +
+	"graph_code\x18\x01 \x01(\tR\tgraphCode\x12K\n" +
+	"\"collaboration_visibility_and_scope\x18\x02 \x01(\tR\x1fcollaborationVisibilityAndScope\x12\x1f\n" +
+	"\vgraph_state\x18\x03 \x01(\tR\n" +
+	"graphState\"t\n" +
+	"*VerifyOrRevokeVaultOwnershipAccessResponse\x12F\n" +
+	"\x05graph\x18\x01 \x01(\v20.sttattus.vault.v1.VaultEntityOwnershipGraphItemR\x05graph\"\xe3\x03\n" +
+	"\x1dVaultPrivateMarketDocRoomItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fprivate_code\x18\x03 \x01(\tR\vprivateCode\x12I\n" +
+	"\"fund_or_direct_asset_and_valuation\x18\x04 \x01(\tR\x1dfundOrDirectAssetAndValuation\x12L\n" +
+	"#unfunded_commitment_and_call_ladder\x18\x05 \x01(\tR\x1funfundedCommitmentAndCallLadder\x12N\n" +
+	"$extracted_notice_and_citation_region\x18\x06 \x01(\tR extractedNoticeAndCitationRegion\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\a \x01(\tR\troomState\x12H\n" +
+	"!unverified_ai_ledger_post_blocked\x18\b \x01(\bR\x1dunverifiedAiLedgerPostBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"*\n" +
+	"(GetVaultPrivateMarketDocWorkbenchRequest\"\x91\x02\n" +
+	")GetVaultPrivateMarketDocWorkbenchResponse\x12F\n" +
+	"\x05rooms\x18\x01 \x03(\v20.sttattus.vault.v1.VaultPrivateMarketDocRoomItemR\x05rooms\x12H\n" +
+	"!unverified_ai_ledger_post_blocked\x18\x02 \x01(\bR\x1dunverifiedAiLedgerPostBlocked\x12R\n" +
+	"&commitment_ladder_and_citation_summary\x18\x03 \x01(\tR\"commitmentLadderAndCitationSummary\"\xd4\x02\n" +
+	"'SaveVaultPrivateMarketCommitmentRequest\x12!\n" +
+	"\fprivate_code\x18\x01 \x01(\tR\vprivateCode\x12I\n" +
+	"\"fund_or_direct_asset_and_valuation\x18\x02 \x01(\tR\x1dfundOrDirectAssetAndValuation\x12L\n" +
+	"#unfunded_commitment_and_call_ladder\x18\x03 \x01(\tR\x1funfundedCommitmentAndCallLadder\x12N\n" +
+	"$extracted_notice_and_citation_region\x18\x04 \x01(\tR extractedNoticeAndCitationRegion\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x05 \x01(\tR\troomState\"p\n" +
+	"(SaveVaultPrivateMarketCommitmentResponse\x12D\n" +
+	"\x04room\x18\x01 \x01(\v20.sttattus.vault.v1.VaultPrivateMarketDocRoomItemR\x04room\"\xbf\x01\n" +
+	"+ConfirmOrReconcileVaultCapitalNoticeRequest\x12!\n" +
+	"\fprivate_code\x18\x01 \x01(\tR\vprivateCode\x12N\n" +
+	"$extracted_notice_and_citation_region\x18\x02 \x01(\tR extractedNoticeAndCitationRegion\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x03 \x01(\tR\troomState\"t\n" +
+	",ConfirmOrReconcileVaultCapitalNoticeResponse\x12D\n" +
+	"\x04room\x18\x01 \x01(\v20.sttattus.vault.v1.VaultPrivateMarketDocRoomItemR\x04room\"\xf8\x03\n" +
+	"!VaultTreasuryDebtRiskCoverageItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rtreasury_code\x18\x03 \x01(\tR\ftreasuryCode\x12N\n" +
+	"$cash_counterparty_and_debt_covenants\x18\x04 \x01(\tR cashCounterpartyAndDebtCovenants\x12N\n" +
+	"$policy_coverage_and_deductible_graph\x18\x05 \x01(\tR policyCoverageAndDeductibleGraph\x12H\n" +
+	"!sweep_refinance_or_claim_scenario\x18\x06 \x01(\tR\x1dsweepRefinanceOrClaimScenario\x12%\n" +
+	"\x0ecoverage_state\x18\a \x01(\tR\rcoverageState\x12N\n" +
+	"$no_coverage_guarantee_claim_enforced\x18\b \x01(\bR noCoverageGuaranteeClaimEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"*\n" +
+	"(GetVaultTreasuryDebtRiskWorkbenchRequest\"\x9f\x02\n" +
+	")GetVaultTreasuryDebtRiskWorkbenchResponse\x12R\n" +
+	"\tpositions\x18\x01 \x03(\v24.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItemR\tpositions\x12N\n" +
+	"$no_coverage_guarantee_claim_enforced\x18\x02 \x01(\bR noCoverageGuaranteeClaimEnforced\x12N\n" +
+	"$treasury_covenant_and_policy_summary\x18\x03 \x01(\tR treasuryCovenantAndPolicySummary\"\xe0\x02\n" +
+	"(SaveVaultTreasuryDebtRiskPositionRequest\x12#\n" +
+	"\rtreasury_code\x18\x01 \x01(\tR\ftreasuryCode\x12N\n" +
+	"$cash_counterparty_and_debt_covenants\x18\x02 \x01(\tR cashCounterpartyAndDebtCovenants\x12N\n" +
+	"$policy_coverage_and_deductible_graph\x18\x03 \x01(\tR policyCoverageAndDeductibleGraph\x12H\n" +
+	"!sweep_refinance_or_claim_scenario\x18\x04 \x01(\tR\x1dsweepRefinanceOrClaimScenario\x12%\n" +
+	"\x0ecoverage_state\x18\x05 \x01(\tR\rcoverageState\"}\n" +
+	")SaveVaultTreasuryDebtRiskPositionResponse\x12P\n" +
+	"\bposition\x18\x01 \x01(\v24.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItemR\bposition\"\xbe\x01\n" +
+	"&EvaluateOrRouteVaultCoverageGapRequest\x12#\n" +
+	"\rtreasury_code\x18\x01 \x01(\tR\ftreasuryCode\x12H\n" +
+	"!sweep_refinance_or_claim_scenario\x18\x02 \x01(\tR\x1dsweepRefinanceOrClaimScenario\x12%\n" +
+	"\x0ecoverage_state\x18\x03 \x01(\tR\rcoverageState\"{\n" +
+	"'EvaluateOrRouteVaultCoverageGapResponse\x12P\n" +
+	"\bposition\x18\x01 \x01(\v24.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItemR\bposition\"\xe8\x03\n" +
+	"\x1cVaultGoalsScenarioEngineItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rscenario_code\x18\x03 \x01(\tR\fscenarioCode\x12H\n" +
+	"!goal_target_and_assumption_ranges\x18\x04 \x01(\tR\x1dgoalTargetAndAssumptionRanges\x12J\n" +
+	"\"deterministic_and_monte_carlo_band\x18\x05 \x01(\tR\x1edeterministicAndMonteCarloBand\x12D\n" +
+	"\x1fwhat_changed_and_oracle_handoff\x18\x06 \x01(\tR\x1bwhatChangedAndOracleHandoff\x12!\n" +
+	"\fengine_state\x18\a \x01(\tR\vengineState\x12U\n" +
+	"(silent_full_ledger_oracle_access_blocked\x18\b \x01(\bR#silentFullLedgerOracleAccessBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"'\n" +
+	"%GetVaultGoalsScenarioWorkbenchRequest\"\xa1\x02\n" +
+	"&GetVaultGoalsScenarioWorkbenchResponse\x12M\n" +
+	"\tscenarios\x18\x01 \x03(\v2/.sttattus.vault.v1.VaultGoalsScenarioEngineItemR\tscenarios\x12U\n" +
+	"(silent_full_ledger_oracle_access_blocked\x18\x02 \x01(\bR#silentFullLedgerOracleAccessBlocked\x12Q\n" +
+	"&plan_vs_prediction_and_handoff_summary\x18\x03 \x01(\tR!planVsPredictionAndHandoffSummary\"\xca\x02\n" +
+	"$SaveVaultGoalScenarioSnapshotRequest\x12#\n" +
+	"\rscenario_code\x18\x01 \x01(\tR\fscenarioCode\x12H\n" +
+	"!goal_target_and_assumption_ranges\x18\x02 \x01(\tR\x1dgoalTargetAndAssumptionRanges\x12J\n" +
+	"\"deterministic_and_monte_carlo_band\x18\x03 \x01(\tR\x1edeterministicAndMonteCarloBand\x12D\n" +
+	"\x1fwhat_changed_and_oracle_handoff\x18\x04 \x01(\tR\x1bwhatChangedAndOracleHandoff\x12!\n" +
+	"\fengine_state\x18\x05 \x01(\tR\vengineState\"t\n" +
+	"%SaveVaultGoalScenarioSnapshotResponse\x12K\n" +
+	"\bscenario\x18\x01 \x01(\v2/.sttattus.vault.v1.VaultGoalsScenarioEngineItemR\bscenario\"\xb4\x01\n" +
+	"$CompareOrHandoffVaultScenarioRequest\x12#\n" +
+	"\rscenario_code\x18\x01 \x01(\tR\fscenarioCode\x12D\n" +
+	"\x1fwhat_changed_and_oracle_handoff\x18\x02 \x01(\tR\x1bwhatChangedAndOracleHandoff\x12!\n" +
+	"\fengine_state\x18\x03 \x01(\tR\vengineState\"t\n" +
+	"%CompareOrHandoffVaultScenarioResponse\x12K\n" +
+	"\bscenario\x18\x01 \x01(\v2/.sttattus.vault.v1.VaultGoalsScenarioEngineItemR\bscenario\"\xda\x03\n" +
+	"\x1dVaultPrivacyStandingProofItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"proof_code\x18\x03 \x01(\tR\tproofCode\x12N\n" +
+	"$predicate_claim_and_verifier_purpose\x18\x04 \x01(\tR predicateClaimAndVerifierPurpose\x12H\n" +
+	"!issuer_signature_expiry_and_nonce\x18\x05 \x01(\tR\x1dissuerSignatureExpiryAndNonce\x12K\n" +
+	"\"offline_revocation_snapshot_window\x18\x06 \x01(\tR\x1fofflineRevocationSnapshotWindow\x12\x1f\n" +
+	"\vproof_state\x18\a \x01(\tR\n" +
+	"proofState\x12C\n" +
+	"\x1eraw_balance_disclosure_blocked\x18\b \x01(\bR\x1brawBalanceDisclosureBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\".\n" +
+	",GetVaultPrivacyStandingProofWorkbenchRequest\"\xa8\x02\n" +
+	"-GetVaultPrivacyStandingProofWorkbenchResponse\x12H\n" +
+	"\x06proofs\x18\x01 \x03(\v20.sttattus.vault.v1.VaultPrivacyStandingProofItemR\x06proofs\x12C\n" +
+	"\x1eraw_balance_disclosure_blocked\x18\x02 \x01(\bR\x1brawBalanceDisclosureBlocked\x12h\n" +
+	"2server_signed_predicate_and_offline_window_summary\x18\x03 \x01(\tR,serverSignedPredicateAndOfflineWindowSummary\"\xce\x02\n" +
+	"%IssueVaultPrivacyStandingProofRequest\x12\x1d\n" +
+	"\n" +
+	"proof_code\x18\x01 \x01(\tR\tproofCode\x12N\n" +
+	"$predicate_claim_and_verifier_purpose\x18\x02 \x01(\tR predicateClaimAndVerifierPurpose\x12H\n" +
+	"!issuer_signature_expiry_and_nonce\x18\x03 \x01(\tR\x1dissuerSignatureExpiryAndNonce\x12K\n" +
+	"\"offline_revocation_snapshot_window\x18\x04 \x01(\tR\x1fofflineRevocationSnapshotWindow\x12\x1f\n" +
+	"\vproof_state\x18\x05 \x01(\tR\n" +
+	"proofState\"p\n" +
+	"&IssueVaultPrivacyStandingProofResponse\x12F\n" +
+	"\x05proof\x18\x01 \x01(\v20.sttattus.vault.v1.VaultPrivacyStandingProofItemR\x05proof\"\xb6\x01\n" +
+	"'VerifyOrRevokeVaultStandingProofRequest\x12\x1d\n" +
+	"\n" +
+	"proof_code\x18\x01 \x01(\tR\tproofCode\x12K\n" +
+	"\"offline_revocation_snapshot_window\x18\x02 \x01(\tR\x1fofflineRevocationSnapshotWindow\x12\x1f\n" +
+	"\vproof_state\x18\x03 \x01(\tR\n" +
+	"proofState\"r\n" +
+	"(VerifyOrRevokeVaultStandingProofResponse\x12F\n" +
+	"\x05proof\x18\x01 \x01(\v20.sttattus.vault.v1.VaultPrivacyStandingProofItemR\x05proof\"\x86\x04\n" +
+	"\x1fVaultAdvisorFamilyWorkspaceItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fengagement_code\x18\x03 \x01(\tR\x0eengagementCode\x12J\n" +
+	"\"advisor_credential_and_scope_grant\x18\x04 \x01(\tR\x1eadvisorCredentialAndScopeGrant\x12K\n" +
+	"\"watermarked_exchange_and_decisions\x18\x05 \x01(\tR\x1fwatermarkedExchangeAndDecisions\x12L\n" +
+	"#disclosures_conflict_and_fee_record\x18\x06 \x01(\tR\x1fdisclosuresConflictAndFeeRecord\x12'\n" +
+	"\x0fworkspace_state\x18\a \x01(\tR\x0eworkspaceState\x12[\n" +
+	"*household_professional_separation_enforced\x18\b \x01(\bR'householdProfessionalSeparationEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"'\n" +
+	"%GetVaultAdvisorFamilyWorkbenchRequest\"\xad\x02\n" +
+	"&GetVaultAdvisorFamilyWorkbenchResponse\x12T\n" +
+	"\vengagements\x18\x01 \x03(\v22.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItemR\vengagements\x12[\n" +
+	"*household_professional_separation_enforced\x18\x02 \x01(\bR'householdProfessionalSeparationEnforced\x12P\n" +
+	"%least_privilege_and_watermark_summary\x18\x03 \x01(\tR!leastPrivilegeAndWatermarkSummary\"\xe1\x02\n" +
+	"&SaveVaultAdvisorEngagementScopeRequest\x12'\n" +
+	"\x0fengagement_code\x18\x01 \x01(\tR\x0eengagementCode\x12J\n" +
+	"\"advisor_credential_and_scope_grant\x18\x02 \x01(\tR\x1eadvisorCredentialAndScopeGrant\x12K\n" +
+	"\"watermarked_exchange_and_decisions\x18\x03 \x01(\tR\x1fwatermarkedExchangeAndDecisions\x12L\n" +
+	"#disclosures_conflict_and_fee_record\x18\x04 \x01(\tR\x1fdisclosuresConflictAndFeeRecord\x12'\n" +
+	"\x0fworkspace_state\x18\x05 \x01(\tR\x0eworkspaceState\"}\n" +
+	"'SaveVaultAdvisorEngagementScopeResponse\x12R\n" +
+	"\n" +
+	"engagement\x18\x01 \x01(\v22.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItemR\n" +
+	"engagement\"\xca\x01\n" +
+	"(ApproveOrRevokeVaultAdvisorAccessRequest\x12'\n" +
+	"\x0fengagement_code\x18\x01 \x01(\tR\x0eengagementCode\x12L\n" +
+	"#disclosures_conflict_and_fee_record\x18\x02 \x01(\tR\x1fdisclosuresConflictAndFeeRecord\x12'\n" +
+	"\x0fworkspace_state\x18\x03 \x01(\tR\x0eworkspaceState\"\x7f\n" +
+	")ApproveOrRevokeVaultAdvisorAccessResponse\x12R\n" +
+	"\n" +
+	"engagement\x18\x01 \x01(\v22.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItemR\n" +
+	"engagement\"\xe1\x03\n" +
+	" VaultFinancialSafetyResponseItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsafety_code\x18\x03 \x01(\tR\n" +
+	"safetyCode\x12H\n" +
+	"!signal_observation_and_alt_causes\x18\x04 \x01(\tR\x1dsignalObservationAndAltCauses\x12L\n" +
+	"#guided_institution_and_freeze_steps\x18\x05 \x01(\tR\x1fguidedInstitutionAndFreezeSteps\x12G\n" +
+	" evidence_preservation_and_appeal\x18\x06 \x01(\tR\x1devidencePreservationAndAppeal\x12!\n" +
+	"\fsafety_state\x18\a \x01(\tR\vsafetyState\x12I\n" +
+	"\"no_single_score_auto_lock_enforced\x18\b \x01(\bR\x1dnoSingleScoreAutoLockEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetVaultFinancialSafetyWorkbenchRequest\"\xab\x02\n" +
+	"(GetVaultFinancialSafetyWorkbenchResponse\x12Q\n" +
+	"\tincidents\x18\x01 \x03(\v23.sttattus.vault.v1.VaultFinancialSafetyResponseItemR\tincidents\x12I\n" +
+	"\"no_single_score_auto_lock_enforced\x18\x02 \x01(\bR\x1dnoSingleScoreAutoLockEnforced\x12a\n" +
+	".explainable_signal_and_official_freeze_summary\x18\x03 \x01(\tR)explainableSignalAndOfficialFreezeSummary\"\xce\x02\n" +
+	"'SaveVaultFinancialSafetyIncidentRequest\x12\x1f\n" +
+	"\vsafety_code\x18\x01 \x01(\tR\n" +
+	"safetyCode\x12H\n" +
+	"!signal_observation_and_alt_causes\x18\x02 \x01(\tR\x1dsignalObservationAndAltCauses\x12L\n" +
+	"#guided_institution_and_freeze_steps\x18\x03 \x01(\tR\x1fguidedInstitutionAndFreezeSteps\x12G\n" +
+	" evidence_preservation_and_appeal\x18\x04 \x01(\tR\x1devidencePreservationAndAppeal\x12!\n" +
+	"\fsafety_state\x18\x05 \x01(\tR\vsafetyState\"{\n" +
+	"(SaveVaultFinancialSafetyIncidentResponse\x12O\n" +
+	"\bincident\x18\x01 \x01(\v23.sttattus.vault.v1.VaultFinancialSafetyResponseItemR\bincident\"\xb6\x01\n" +
+	"'ExecuteOrAppealVaultSafetyActionRequest\x12\x1f\n" +
+	"\vsafety_code\x18\x01 \x01(\tR\n" +
+	"safetyCode\x12G\n" +
+	" evidence_preservation_and_appeal\x18\x02 \x01(\tR\x1devidencePreservationAndAppeal\x12!\n" +
+	"\fsafety_state\x18\x03 \x01(\tR\vsafetyState\"{\n" +
+	"(ExecuteOrAppealVaultSafetyActionResponse\x12O\n" +
+	"\bincident\x18\x01 \x01(\v23.sttattus.vault.v1.VaultFinancialSafetyResponseItemR\bincident\"\xe9\x03\n" +
+	"\x1bVaultGivingImpactLedgerItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vgiving_code\x18\x03 \x01(\tR\n" +
+	"givingCode\x12J\n" +
+	"\"charity_diligence_and_pledge_terms\x18\x04 \x01(\tR\x1echarityDiligenceAndPledgeTerms\x12L\n" +
+	"#donation_liquidity_and_tax_scenario\x18\x05 \x01(\tR\x1fdonationLiquidityAndTaxScenario\x12L\n" +
+	"#receipt_restriction_and_outcome_log\x18\x06 \x01(\tR\x1freceiptRestrictionAndOutcomeLog\x12!\n" +
+	"\fledger_state\x18\a \x01(\tR\vledgerState\x12O\n" +
+	"$no_performative_leaderboard_enforced\x18\b \x01(\bR!noPerformativeLeaderboardEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"&\n" +
+	"$GetVaultGivingImpactWorkbenchRequest\"\x94\x02\n" +
+	"%GetVaultGivingImpactWorkbenchResponse\x12H\n" +
+	"\apledges\x18\x01 \x03(\v2..sttattus.vault.v1.VaultGivingImpactLedgerItemR\apledges\x12O\n" +
+	"$no_performative_leaderboard_enforced\x18\x02 \x01(\bR!noPerformativeLeaderboardEnforced\x12P\n" +
+	"%diligence_receipt_and_privacy_summary\x18\x03 \x01(\tR!diligenceReceiptAndPrivacySummary\"\xd0\x02\n" +
+	"\"SaveVaultGivingImpactPledgeRequest\x12\x1f\n" +
+	"\vgiving_code\x18\x01 \x01(\tR\n" +
+	"givingCode\x12J\n" +
+	"\"charity_diligence_and_pledge_terms\x18\x02 \x01(\tR\x1echarityDiligenceAndPledgeTerms\x12L\n" +
+	"#donation_liquidity_and_tax_scenario\x18\x03 \x01(\tR\x1fdonationLiquidityAndTaxScenario\x12L\n" +
+	"#receipt_restriction_and_outcome_log\x18\x04 \x01(\tR\x1freceiptRestrictionAndOutcomeLog\x12!\n" +
+	"\fledger_state\x18\x05 \x01(\tR\vledgerState\"m\n" +
+	"#SaveVaultGivingImpactPledgeResponse\x12F\n" +
+	"\x06pledge\x18\x01 \x01(\v2..sttattus.vault.v1.VaultGivingImpactLedgerItemR\x06pledge\"\xbe\x01\n" +
+	"*VerifyOrAcknowledgeVaultGiftReceiptRequest\x12\x1f\n" +
+	"\vgiving_code\x18\x01 \x01(\tR\n" +
+	"givingCode\x12L\n" +
+	"#receipt_restriction_and_outcome_log\x18\x02 \x01(\tR\x1freceiptRestrictionAndOutcomeLog\x12!\n" +
+	"\fledger_state\x18\x03 \x01(\tR\vledgerState\"u\n" +
+	"+VerifyOrAcknowledgeVaultGiftReceiptResponse\x12F\n" +
+	"\x06pledge\x18\x01 \x01(\v2..sttattus.vault.v1.VaultGivingImpactLedgerItemR\x06pledge*\x86\x02\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12\x17\n" +
 	"\x13ASSET_CATEGORY_FIAT\x10\x01\x12\x19\n" +
@@ -7461,7 +13451,7 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xf1-\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x9b^\n" +
 	"\fVaultService\x12\\\n" +
 	"\vSubmitAsset\x12%.sttattus.vault.v1.SubmitAssetRequest\x1a&.sttattus.vault.v1.SubmitAssetResponse\x12_\n" +
 	"\fGetPortfolio\x12&.sttattus.vault.v1.GetPortfolioRequest\x1a'.sttattus.vault.v1.GetPortfolioResponse\x12q\n" +
@@ -7515,7 +13505,46 @@ const file_sttattus_vault_v1_vault_proto_rawDesc = "" +
 	"\x10RevokeVaultShare\x12*.sttattus.vault.v1.RevokeVaultShareRequest\x1a+.sttattus.vault.v1.RevokeVaultShareResponse\x12z\n" +
 	"\x15GenerateWealthAlmanac\x12/.sttattus.vault.v1.GenerateWealthAlmanacRequest\x1a0.sttattus.vault.v1.GenerateWealthAlmanacResponse\x12e\n" +
 	"\x0eGetYearInVault\x12(.sttattus.vault.v1.GetYearInVaultRequest\x1a).sttattus.vault.v1.GetYearInVaultResponse\x12}\n" +
-	"\x16GetLiquidityStressTest\x120.sttattus.vault.v1.GetLiquidityStressTestRequest\x1a1.sttattus.vault.v1.GetLiquidityStressTestResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
+	"\x16GetLiquidityStressTest\x120.sttattus.vault.v1.GetLiquidityStressTestRequest\x1a1.sttattus.vault.v1.GetLiquidityStressTestResponse\x12\xaa\x01\n" +
+	"%GetVaultFinancialReliabilityWorkbench\x12?.sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchRequest\x1a@.sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse\x12\xa4\x01\n" +
+	"#SaveVaultFinancialReliabilitySource\x12=.sttattus.vault.v1.SaveVaultFinancialReliabilitySourceRequest\x1a>.sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse\x12\x9e\x01\n" +
+	"!ReconcileOrReplayVaultReliability\x12;.sttattus.vault.v1.ReconcileOrReplayVaultReliabilityRequest\x1a<.sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse\x12\xa7\x01\n" +
+	"$GetVaultFinancialInboxCloseWorkbench\x12>.sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchRequest\x1a?.sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse\x12\x9b\x01\n" +
+	" SaveVaultFinancialInboxCloseItem\x12:.sttattus.vault.v1.SaveVaultFinancialInboxCloseItemRequest\x1a;.sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse\x12\x92\x01\n" +
+	"\x1dLockOrReopenVaultMonthlyClose\x127.sttattus.vault.v1.LockOrReopenVaultMonthlyCloseRequest\x1a8.sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse\x12\x9b\x01\n" +
+	" GetVaultPersonalCfoCashWorkbench\x12:.sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchRequest\x1a;.sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse\x12\x9b\x01\n" +
+	" SaveVaultPersonalCfoCashForecast\x12:.sttattus.vault.v1.SaveVaultPersonalCfoCashForecastRequest\x1a;.sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse\x12\xad\x01\n" +
+	"&AcknowledgeOrReviewVaultCashCommitment\x12@.sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentRequest\x1aA.sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse\x12\xad\x01\n" +
+	"&GetVaultPerformanceAllocationWorkbench\x12@.sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchRequest\x1aA.sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse\x12\xa4\x01\n" +
+	"#SaveVaultPerformanceAllocationModel\x12=.sttattus.vault.v1.SaveVaultPerformanceAllocationModelRequest\x1a>.sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse\x12\x9b\x01\n" +
+	" SimulateOrRefreshVaultAllocation\x12:.sttattus.vault.v1.SimulateOrRefreshVaultAllocationRequest\x1a;.sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse\x12\x95\x01\n" +
+	"\x1eGetVaultTaxAccountantWorkbench\x128.sttattus.vault.v1.GetVaultTaxAccountantWorkbenchRequest\x1a9.sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse\x12\x95\x01\n" +
+	"\x1eSaveVaultTaxAccountantScenario\x128.sttattus.vault.v1.SaveVaultTaxAccountantScenarioRequest\x1a9.sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse\x12\x8c\x01\n" +
+	"\x1bLockOrExportVaultTaxPackage\x125.sttattus.vault.v1.LockOrExportVaultTaxPackageRequest\x1a6.sttattus.vault.v1.LockOrExportVaultTaxPackageResponse\x12\x9b\x01\n" +
+	" GetVaultEntityOwnershipWorkbench\x12:.sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchRequest\x1a;.sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse\x12\x8f\x01\n" +
+	"\x1cSaveVaultEntityOwnershipNode\x126.sttattus.vault.v1.SaveVaultEntityOwnershipNodeRequest\x1a7.sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse\x12\xa1\x01\n" +
+	"\"VerifyOrRevokeVaultOwnershipAccess\x12<.sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessRequest\x1a=.sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse\x12\x9e\x01\n" +
+	"!GetVaultPrivateMarketDocWorkbench\x12;.sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchRequest\x1a<.sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse\x12\x9b\x01\n" +
+	" SaveVaultPrivateMarketCommitment\x12:.sttattus.vault.v1.SaveVaultPrivateMarketCommitmentRequest\x1a;.sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse\x12\xa7\x01\n" +
+	"$ConfirmOrReconcileVaultCapitalNotice\x12>.sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeRequest\x1a?.sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse\x12\x9e\x01\n" +
+	"!GetVaultTreasuryDebtRiskWorkbench\x12;.sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchRequest\x1a<.sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse\x12\x9e\x01\n" +
+	"!SaveVaultTreasuryDebtRiskPosition\x12;.sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionRequest\x1a<.sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse\x12\x98\x01\n" +
+	"\x1fEvaluateOrRouteVaultCoverageGap\x129.sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapRequest\x1a:.sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse\x12\x95\x01\n" +
+	"\x1eGetVaultGoalsScenarioWorkbench\x128.sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchRequest\x1a9.sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse\x12\x92\x01\n" +
+	"\x1dSaveVaultGoalScenarioSnapshot\x127.sttattus.vault.v1.SaveVaultGoalScenarioSnapshotRequest\x1a8.sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse\x12\x92\x01\n" +
+	"\x1dCompareOrHandoffVaultScenario\x127.sttattus.vault.v1.CompareOrHandoffVaultScenarioRequest\x1a8.sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse\x12\xaa\x01\n" +
+	"%GetVaultPrivacyStandingProofWorkbench\x12?.sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchRequest\x1a@.sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse\x12\x95\x01\n" +
+	"\x1eIssueVaultPrivacyStandingProof\x128.sttattus.vault.v1.IssueVaultPrivacyStandingProofRequest\x1a9.sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse\x12\x9b\x01\n" +
+	" VerifyOrRevokeVaultStandingProof\x12:.sttattus.vault.v1.VerifyOrRevokeVaultStandingProofRequest\x1a;.sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse\x12\x95\x01\n" +
+	"\x1eGetVaultAdvisorFamilyWorkbench\x128.sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchRequest\x1a9.sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse\x12\x98\x01\n" +
+	"\x1fSaveVaultAdvisorEngagementScope\x129.sttattus.vault.v1.SaveVaultAdvisorEngagementScopeRequest\x1a:.sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse\x12\x9e\x01\n" +
+	"!ApproveOrRevokeVaultAdvisorAccess\x12;.sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessRequest\x1a<.sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse\x12\x9b\x01\n" +
+	" GetVaultFinancialSafetyWorkbench\x12:.sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchRequest\x1a;.sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse\x12\x9b\x01\n" +
+	" SaveVaultFinancialSafetyIncident\x12:.sttattus.vault.v1.SaveVaultFinancialSafetyIncidentRequest\x1a;.sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse\x12\x9b\x01\n" +
+	" ExecuteOrAppealVaultSafetyAction\x12:.sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionRequest\x1a;.sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse\x12\x92\x01\n" +
+	"\x1dGetVaultGivingImpactWorkbench\x127.sttattus.vault.v1.GetVaultGivingImpactWorkbenchRequest\x1a8.sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse\x12\x8c\x01\n" +
+	"\x1bSaveVaultGivingImpactPledge\x125.sttattus.vault.v1.SaveVaultGivingImpactPledgeRequest\x1a6.sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse\x12\xa4\x01\n" +
+	"#VerifyOrAcknowledgeVaultGiftReceipt\x12=.sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptRequest\x1a>.sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/vault/v1;vaultv1b\x06proto3"
 
 var (
 	file_sttattus_vault_v1_vault_proto_rawDescOnce sync.Once
@@ -7530,172 +13559,263 @@ func file_sttattus_vault_v1_vault_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_vault_v1_vault_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 128)
+var file_sttattus_vault_v1_vault_proto_msgTypes = make([]protoimpl.MessageInfo, 219)
 var file_sttattus_vault_v1_vault_proto_goTypes = []any{
-	(AssetCategory)(0),                          // 0: sttattus.vault.v1.AssetCategory
-	(VerificationStatus)(0),                     // 1: sttattus.vault.v1.VerificationStatus
-	(*Asset)(nil),                               // 2: sttattus.vault.v1.Asset
-	(*Portfolio)(nil),                           // 3: sttattus.vault.v1.Portfolio
-	(*SubmitAssetRequest)(nil),                  // 4: sttattus.vault.v1.SubmitAssetRequest
-	(*SubmitAssetResponse)(nil),                 // 5: sttattus.vault.v1.SubmitAssetResponse
-	(*GetPortfolioRequest)(nil),                 // 6: sttattus.vault.v1.GetPortfolioRequest
-	(*GetPortfolioResponse)(nil),                // 7: sttattus.vault.v1.GetPortfolioResponse
-	(*AdminVerifyAssetRequest)(nil),             // 8: sttattus.vault.v1.AdminVerifyAssetRequest
-	(*AdminVerifyAssetResponse)(nil),            // 9: sttattus.vault.v1.AdminVerifyAssetResponse
-	(*GenerateWealthAlmanacRequest)(nil),        // 10: sttattus.vault.v1.GenerateWealthAlmanacRequest
-	(*GenerateWealthAlmanacResponse)(nil),       // 11: sttattus.vault.v1.GenerateWealthAlmanacResponse
-	(*YearMover)(nil),                           // 12: sttattus.vault.v1.YearMover
-	(*GetYearInVaultRequest)(nil),               // 13: sttattus.vault.v1.GetYearInVaultRequest
-	(*GetYearInVaultResponse)(nil),              // 14: sttattus.vault.v1.GetYearInVaultResponse
-	(*LiquiditySource)(nil),                     // 15: sttattus.vault.v1.LiquiditySource
-	(*GetLiquidityStressTestRequest)(nil),       // 16: sttattus.vault.v1.GetLiquidityStressTestRequest
-	(*GetLiquidityStressTestResponse)(nil),      // 17: sttattus.vault.v1.GetLiquidityStressTestResponse
-	(*InvestmentCircle)(nil),                    // 18: sttattus.vault.v1.InvestmentCircle
-	(*ListInvestmentCirclesRequest)(nil),        // 19: sttattus.vault.v1.ListInvestmentCirclesRequest
-	(*ListInvestmentCirclesResponse)(nil),       // 20: sttattus.vault.v1.ListInvestmentCirclesResponse
-	(*GetInvestmentCircleRequest)(nil),          // 21: sttattus.vault.v1.GetInvestmentCircleRequest
-	(*GetInvestmentCircleResponse)(nil),         // 22: sttattus.vault.v1.GetInvestmentCircleResponse
-	(*ExpressCircleInterestRequest)(nil),        // 23: sttattus.vault.v1.ExpressCircleInterestRequest
-	(*ExpressCircleInterestResponse)(nil),       // 24: sttattus.vault.v1.ExpressCircleInterestResponse
-	(*AdvisorMessage)(nil),                      // 25: sttattus.vault.v1.AdvisorMessage
-	(*AdvisorThread)(nil),                       // 26: sttattus.vault.v1.AdvisorThread
-	(*StartAdvisorThreadRequest)(nil),           // 27: sttattus.vault.v1.StartAdvisorThreadRequest
-	(*StartAdvisorThreadResponse)(nil),          // 28: sttattus.vault.v1.StartAdvisorThreadResponse
-	(*ListAdvisorThreadsRequest)(nil),           // 29: sttattus.vault.v1.ListAdvisorThreadsRequest
-	(*ListAdvisorThreadsResponse)(nil),          // 30: sttattus.vault.v1.ListAdvisorThreadsResponse
-	(*GetAdvisorThreadRequest)(nil),             // 31: sttattus.vault.v1.GetAdvisorThreadRequest
-	(*GetAdvisorThreadResponse)(nil),            // 32: sttattus.vault.v1.GetAdvisorThreadResponse
-	(*PostAdvisorMessageRequest)(nil),           // 33: sttattus.vault.v1.PostAdvisorMessageRequest
-	(*PostAdvisorMessageResponse)(nil),          // 34: sttattus.vault.v1.PostAdvisorMessageResponse
-	(*WealthArticle)(nil),                       // 35: sttattus.vault.v1.WealthArticle
-	(*ListWealthAnthologyRequest)(nil),          // 36: sttattus.vault.v1.ListWealthAnthologyRequest
-	(*ListWealthAnthologyResponse)(nil),         // 37: sttattus.vault.v1.ListWealthAnthologyResponse
-	(*GetWealthArticleRequest)(nil),             // 38: sttattus.vault.v1.GetWealthArticleRequest
-	(*GetWealthArticleResponse)(nil),            // 39: sttattus.vault.v1.GetWealthArticleResponse
-	(*PartnerBank)(nil),                         // 40: sttattus.vault.v1.PartnerBank
-	(*ListPartnerBanksRequest)(nil),             // 41: sttattus.vault.v1.ListPartnerBanksRequest
-	(*ListPartnerBanksResponse)(nil),            // 42: sttattus.vault.v1.ListPartnerBanksResponse
-	(*VaultShare)(nil),                          // 43: sttattus.vault.v1.VaultShare
-	(*CreateVaultShareRequest)(nil),             // 44: sttattus.vault.v1.CreateVaultShareRequest
-	(*CreateVaultShareResponse)(nil),            // 45: sttattus.vault.v1.CreateVaultShareResponse
-	(*ListMyVaultSharesRequest)(nil),            // 46: sttattus.vault.v1.ListMyVaultSharesRequest
-	(*ListMyVaultSharesResponse)(nil),           // 47: sttattus.vault.v1.ListMyVaultSharesResponse
-	(*RevokeVaultShareRequest)(nil),             // 48: sttattus.vault.v1.RevokeVaultShareRequest
-	(*RevokeVaultShareResponse)(nil),            // 49: sttattus.vault.v1.RevokeVaultShareResponse
-	(*SyncWealthRequest)(nil),                   // 50: sttattus.vault.v1.SyncWealthRequest
-	(*SyncWealthResponse)(nil),                  // 51: sttattus.vault.v1.SyncWealthResponse
-	(*GetWalletChallengeRequest)(nil),           // 52: sttattus.vault.v1.GetWalletChallengeRequest
-	(*GetWalletChallengeResponse)(nil),          // 53: sttattus.vault.v1.GetWalletChallengeResponse
-	(*LinkWalletRequest)(nil),                   // 54: sttattus.vault.v1.LinkWalletRequest
-	(*LinkWalletResponse)(nil),                  // 55: sttattus.vault.v1.LinkWalletResponse
-	(*CreatePlaidLinkTokenRequest)(nil),         // 56: sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	(*CreatePlaidLinkTokenResponse)(nil),        // 57: sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	(*ExchangePlaidPublicTokenRequest)(nil),     // 58: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	(*ExchangePlaidPublicTokenResponse)(nil),    // 59: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	(*NetWorthPoint)(nil),                       // 60: sttattus.vault.v1.NetWorthPoint
-	(*ListNetWorthHistoryRequest)(nil),          // 61: sttattus.vault.v1.ListNetWorthHistoryRequest
-	(*ListNetWorthHistoryResponse)(nil),         // 62: sttattus.vault.v1.ListNetWorthHistoryResponse
-	(*PlaidTransaction)(nil),                    // 63: sttattus.vault.v1.PlaidTransaction
-	(*ListPlaidTransactionsRequest)(nil),        // 64: sttattus.vault.v1.ListPlaidTransactionsRequest
-	(*ListPlaidTransactionsResponse)(nil),       // 65: sttattus.vault.v1.ListPlaidTransactionsResponse
-	(*PlaidHolding)(nil),                        // 66: sttattus.vault.v1.PlaidHolding
-	(*ListPlaidHoldingsRequest)(nil),            // 67: sttattus.vault.v1.ListPlaidHoldingsRequest
-	(*ListPlaidHoldingsResponse)(nil),           // 68: sttattus.vault.v1.ListPlaidHoldingsResponse
-	(*AllocationSlice)(nil),                     // 69: sttattus.vault.v1.AllocationSlice
-	(*GetCurrentAllocationRequest)(nil),         // 70: sttattus.vault.v1.GetCurrentAllocationRequest
-	(*GetCurrentAllocationResponse)(nil),        // 71: sttattus.vault.v1.GetCurrentAllocationResponse
-	(*AllocationHistoryPoint)(nil),              // 72: sttattus.vault.v1.AllocationHistoryPoint
-	(*ListAllocationHistoryRequest)(nil),        // 73: sttattus.vault.v1.ListAllocationHistoryRequest
-	(*ListAllocationHistoryResponse)(nil),       // 74: sttattus.vault.v1.ListAllocationHistoryResponse
-	(*RealEstateProperty)(nil),                  // 75: sttattus.vault.v1.RealEstateProperty
-	(*ListRealEstatePropertiesRequest)(nil),     // 76: sttattus.vault.v1.ListRealEstatePropertiesRequest
-	(*ListRealEstatePropertiesResponse)(nil),    // 77: sttattus.vault.v1.ListRealEstatePropertiesResponse
-	(*CreateRealEstatePropertyRequest)(nil),     // 78: sttattus.vault.v1.CreateRealEstatePropertyRequest
-	(*CreateRealEstatePropertyResponse)(nil),    // 79: sttattus.vault.v1.CreateRealEstatePropertyResponse
-	(*RecordManualValuationRequest)(nil),        // 80: sttattus.vault.v1.RecordManualValuationRequest
-	(*RecordManualValuationResponse)(nil),       // 81: sttattus.vault.v1.RecordManualValuationResponse
-	(*RefreshAvmValuationRequest)(nil),          // 82: sttattus.vault.v1.RefreshAvmValuationRequest
-	(*RefreshAvmValuationResponse)(nil),         // 83: sttattus.vault.v1.RefreshAvmValuationResponse
-	(*DeleteRealEstatePropertyRequest)(nil),     // 84: sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	(*DeleteRealEstatePropertyResponse)(nil),    // 85: sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	(*Entity)(nil),                              // 86: sttattus.vault.v1.Entity
-	(*ListEntitiesRequest)(nil),                 // 87: sttattus.vault.v1.ListEntitiesRequest
-	(*ListEntitiesResponse)(nil),                // 88: sttattus.vault.v1.ListEntitiesResponse
-	(*CreateEntityRequest)(nil),                 // 89: sttattus.vault.v1.CreateEntityRequest
-	(*CreateEntityResponse)(nil),                // 90: sttattus.vault.v1.CreateEntityResponse
-	(*RenameEntityRequest)(nil),                 // 91: sttattus.vault.v1.RenameEntityRequest
-	(*RenameEntityResponse)(nil),                // 92: sttattus.vault.v1.RenameEntityResponse
-	(*DeleteEntityRequest)(nil),                 // 93: sttattus.vault.v1.DeleteEntityRequest
-	(*DeleteEntityResponse)(nil),                // 94: sttattus.vault.v1.DeleteEntityResponse
-	(*AssignAssetToEntityRequest)(nil),          // 95: sttattus.vault.v1.AssignAssetToEntityRequest
-	(*AssignAssetToEntityResponse)(nil),         // 96: sttattus.vault.v1.AssignAssetToEntityResponse
-	(*FxRate)(nil),                              // 97: sttattus.vault.v1.FxRate
-	(*ListLatestFxRatesRequest)(nil),            // 98: sttattus.vault.v1.ListLatestFxRatesRequest
-	(*ListLatestFxRatesResponse)(nil),           // 99: sttattus.vault.v1.ListLatestFxRatesResponse
-	(*CapTableHolding)(nil),                     // 100: sttattus.vault.v1.CapTableHolding
-	(*ListCapTableHoldingsRequest)(nil),         // 101: sttattus.vault.v1.ListCapTableHoldingsRequest
-	(*ListCapTableHoldingsResponse)(nil),        // 102: sttattus.vault.v1.ListCapTableHoldingsResponse
-	(*CapTableHoldingInput)(nil),                // 103: sttattus.vault.v1.CapTableHoldingInput
-	(*CreateCapTableHoldingRequest)(nil),        // 104: sttattus.vault.v1.CreateCapTableHoldingRequest
-	(*CreateCapTableHoldingResponse)(nil),       // 105: sttattus.vault.v1.CreateCapTableHoldingResponse
-	(*UpdateCapTableHoldingRequest)(nil),        // 106: sttattus.vault.v1.UpdateCapTableHoldingRequest
-	(*UpdateCapTableHoldingResponse)(nil),       // 107: sttattus.vault.v1.UpdateCapTableHoldingResponse
-	(*DeleteCapTableHoldingRequest)(nil),        // 108: sttattus.vault.v1.DeleteCapTableHoldingRequest
-	(*DeleteCapTableHoldingResponse)(nil),       // 109: sttattus.vault.v1.DeleteCapTableHoldingResponse
-	(*CapTableConnection)(nil),                  // 110: sttattus.vault.v1.CapTableConnection
-	(*ListCapTableConnectionsRequest)(nil),      // 111: sttattus.vault.v1.ListCapTableConnectionsRequest
-	(*ListCapTableConnectionsResponse)(nil),     // 112: sttattus.vault.v1.ListCapTableConnectionsResponse
-	(*SetCapTableConnectionStatusRequest)(nil),  // 113: sttattus.vault.v1.SetCapTableConnectionStatusRequest
-	(*SetCapTableConnectionStatusResponse)(nil), // 114: sttattus.vault.v1.SetCapTableConnectionStatusResponse
-	(*WalletChain)(nil),                         // 115: sttattus.vault.v1.WalletChain
-	(*ListWalletChainsRequest)(nil),             // 116: sttattus.vault.v1.ListWalletChainsRequest
-	(*ListWalletChainsResponse)(nil),            // 117: sttattus.vault.v1.ListWalletChainsResponse
-	(*UpsertWalletChainRequest)(nil),            // 118: sttattus.vault.v1.UpsertWalletChainRequest
-	(*UpsertWalletChainResponse)(nil),           // 119: sttattus.vault.v1.UpsertWalletChainResponse
-	(*DeleteWalletChainRequest)(nil),            // 120: sttattus.vault.v1.DeleteWalletChainRequest
-	(*DeleteWalletChainResponse)(nil),           // 121: sttattus.vault.v1.DeleteWalletChainResponse
-	(*TaxLot)(nil),                              // 122: sttattus.vault.v1.TaxLot
-	(*GetTaxSnapshotRequest)(nil),               // 123: sttattus.vault.v1.GetTaxSnapshotRequest
-	(*GetTaxSnapshotResponse)(nil),              // 124: sttattus.vault.v1.GetTaxSnapshotResponse
-	(*ExportUsCgtCsvRequest)(nil),               // 125: sttattus.vault.v1.ExportUsCgtCsvRequest
-	(*ExportUsCgtCsvResponse)(nil),              // 126: sttattus.vault.v1.ExportUsCgtCsvResponse
-	nil,                                         // 127: sttattus.vault.v1.Asset.MetadataEntry
-	nil,                                         // 128: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
-	nil,                                         // 129: sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
-	(*timestamppb.Timestamp)(nil),               // 130: google.protobuf.Timestamp
+	(AssetCategory)(0),                                     // 0: sttattus.vault.v1.AssetCategory
+	(VerificationStatus)(0),                                // 1: sttattus.vault.v1.VerificationStatus
+	(*Asset)(nil),                                          // 2: sttattus.vault.v1.Asset
+	(*Portfolio)(nil),                                      // 3: sttattus.vault.v1.Portfolio
+	(*SubmitAssetRequest)(nil),                             // 4: sttattus.vault.v1.SubmitAssetRequest
+	(*SubmitAssetResponse)(nil),                            // 5: sttattus.vault.v1.SubmitAssetResponse
+	(*GetPortfolioRequest)(nil),                            // 6: sttattus.vault.v1.GetPortfolioRequest
+	(*GetPortfolioResponse)(nil),                           // 7: sttattus.vault.v1.GetPortfolioResponse
+	(*AdminVerifyAssetRequest)(nil),                        // 8: sttattus.vault.v1.AdminVerifyAssetRequest
+	(*AdminVerifyAssetResponse)(nil),                       // 9: sttattus.vault.v1.AdminVerifyAssetResponse
+	(*GenerateWealthAlmanacRequest)(nil),                   // 10: sttattus.vault.v1.GenerateWealthAlmanacRequest
+	(*GenerateWealthAlmanacResponse)(nil),                  // 11: sttattus.vault.v1.GenerateWealthAlmanacResponse
+	(*YearMover)(nil),                                      // 12: sttattus.vault.v1.YearMover
+	(*GetYearInVaultRequest)(nil),                          // 13: sttattus.vault.v1.GetYearInVaultRequest
+	(*GetYearInVaultResponse)(nil),                         // 14: sttattus.vault.v1.GetYearInVaultResponse
+	(*LiquiditySource)(nil),                                // 15: sttattus.vault.v1.LiquiditySource
+	(*GetLiquidityStressTestRequest)(nil),                  // 16: sttattus.vault.v1.GetLiquidityStressTestRequest
+	(*GetLiquidityStressTestResponse)(nil),                 // 17: sttattus.vault.v1.GetLiquidityStressTestResponse
+	(*InvestmentCircle)(nil),                               // 18: sttattus.vault.v1.InvestmentCircle
+	(*ListInvestmentCirclesRequest)(nil),                   // 19: sttattus.vault.v1.ListInvestmentCirclesRequest
+	(*ListInvestmentCirclesResponse)(nil),                  // 20: sttattus.vault.v1.ListInvestmentCirclesResponse
+	(*GetInvestmentCircleRequest)(nil),                     // 21: sttattus.vault.v1.GetInvestmentCircleRequest
+	(*GetInvestmentCircleResponse)(nil),                    // 22: sttattus.vault.v1.GetInvestmentCircleResponse
+	(*ExpressCircleInterestRequest)(nil),                   // 23: sttattus.vault.v1.ExpressCircleInterestRequest
+	(*ExpressCircleInterestResponse)(nil),                  // 24: sttattus.vault.v1.ExpressCircleInterestResponse
+	(*AdvisorMessage)(nil),                                 // 25: sttattus.vault.v1.AdvisorMessage
+	(*AdvisorThread)(nil),                                  // 26: sttattus.vault.v1.AdvisorThread
+	(*StartAdvisorThreadRequest)(nil),                      // 27: sttattus.vault.v1.StartAdvisorThreadRequest
+	(*StartAdvisorThreadResponse)(nil),                     // 28: sttattus.vault.v1.StartAdvisorThreadResponse
+	(*ListAdvisorThreadsRequest)(nil),                      // 29: sttattus.vault.v1.ListAdvisorThreadsRequest
+	(*ListAdvisorThreadsResponse)(nil),                     // 30: sttattus.vault.v1.ListAdvisorThreadsResponse
+	(*GetAdvisorThreadRequest)(nil),                        // 31: sttattus.vault.v1.GetAdvisorThreadRequest
+	(*GetAdvisorThreadResponse)(nil),                       // 32: sttattus.vault.v1.GetAdvisorThreadResponse
+	(*PostAdvisorMessageRequest)(nil),                      // 33: sttattus.vault.v1.PostAdvisorMessageRequest
+	(*PostAdvisorMessageResponse)(nil),                     // 34: sttattus.vault.v1.PostAdvisorMessageResponse
+	(*WealthArticle)(nil),                                  // 35: sttattus.vault.v1.WealthArticle
+	(*ListWealthAnthologyRequest)(nil),                     // 36: sttattus.vault.v1.ListWealthAnthologyRequest
+	(*ListWealthAnthologyResponse)(nil),                    // 37: sttattus.vault.v1.ListWealthAnthologyResponse
+	(*GetWealthArticleRequest)(nil),                        // 38: sttattus.vault.v1.GetWealthArticleRequest
+	(*GetWealthArticleResponse)(nil),                       // 39: sttattus.vault.v1.GetWealthArticleResponse
+	(*PartnerBank)(nil),                                    // 40: sttattus.vault.v1.PartnerBank
+	(*ListPartnerBanksRequest)(nil),                        // 41: sttattus.vault.v1.ListPartnerBanksRequest
+	(*ListPartnerBanksResponse)(nil),                       // 42: sttattus.vault.v1.ListPartnerBanksResponse
+	(*VaultShare)(nil),                                     // 43: sttattus.vault.v1.VaultShare
+	(*CreateVaultShareRequest)(nil),                        // 44: sttattus.vault.v1.CreateVaultShareRequest
+	(*CreateVaultShareResponse)(nil),                       // 45: sttattus.vault.v1.CreateVaultShareResponse
+	(*ListMyVaultSharesRequest)(nil),                       // 46: sttattus.vault.v1.ListMyVaultSharesRequest
+	(*ListMyVaultSharesResponse)(nil),                      // 47: sttattus.vault.v1.ListMyVaultSharesResponse
+	(*RevokeVaultShareRequest)(nil),                        // 48: sttattus.vault.v1.RevokeVaultShareRequest
+	(*RevokeVaultShareResponse)(nil),                       // 49: sttattus.vault.v1.RevokeVaultShareResponse
+	(*SyncWealthRequest)(nil),                              // 50: sttattus.vault.v1.SyncWealthRequest
+	(*SyncWealthResponse)(nil),                             // 51: sttattus.vault.v1.SyncWealthResponse
+	(*GetWalletChallengeRequest)(nil),                      // 52: sttattus.vault.v1.GetWalletChallengeRequest
+	(*GetWalletChallengeResponse)(nil),                     // 53: sttattus.vault.v1.GetWalletChallengeResponse
+	(*LinkWalletRequest)(nil),                              // 54: sttattus.vault.v1.LinkWalletRequest
+	(*LinkWalletResponse)(nil),                             // 55: sttattus.vault.v1.LinkWalletResponse
+	(*CreatePlaidLinkTokenRequest)(nil),                    // 56: sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	(*CreatePlaidLinkTokenResponse)(nil),                   // 57: sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	(*ExchangePlaidPublicTokenRequest)(nil),                // 58: sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	(*ExchangePlaidPublicTokenResponse)(nil),               // 59: sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	(*NetWorthPoint)(nil),                                  // 60: sttattus.vault.v1.NetWorthPoint
+	(*ListNetWorthHistoryRequest)(nil),                     // 61: sttattus.vault.v1.ListNetWorthHistoryRequest
+	(*ListNetWorthHistoryResponse)(nil),                    // 62: sttattus.vault.v1.ListNetWorthHistoryResponse
+	(*PlaidTransaction)(nil),                               // 63: sttattus.vault.v1.PlaidTransaction
+	(*ListPlaidTransactionsRequest)(nil),                   // 64: sttattus.vault.v1.ListPlaidTransactionsRequest
+	(*ListPlaidTransactionsResponse)(nil),                  // 65: sttattus.vault.v1.ListPlaidTransactionsResponse
+	(*PlaidHolding)(nil),                                   // 66: sttattus.vault.v1.PlaidHolding
+	(*ListPlaidHoldingsRequest)(nil),                       // 67: sttattus.vault.v1.ListPlaidHoldingsRequest
+	(*ListPlaidHoldingsResponse)(nil),                      // 68: sttattus.vault.v1.ListPlaidHoldingsResponse
+	(*AllocationSlice)(nil),                                // 69: sttattus.vault.v1.AllocationSlice
+	(*GetCurrentAllocationRequest)(nil),                    // 70: sttattus.vault.v1.GetCurrentAllocationRequest
+	(*GetCurrentAllocationResponse)(nil),                   // 71: sttattus.vault.v1.GetCurrentAllocationResponse
+	(*AllocationHistoryPoint)(nil),                         // 72: sttattus.vault.v1.AllocationHistoryPoint
+	(*ListAllocationHistoryRequest)(nil),                   // 73: sttattus.vault.v1.ListAllocationHistoryRequest
+	(*ListAllocationHistoryResponse)(nil),                  // 74: sttattus.vault.v1.ListAllocationHistoryResponse
+	(*RealEstateProperty)(nil),                             // 75: sttattus.vault.v1.RealEstateProperty
+	(*ListRealEstatePropertiesRequest)(nil),                // 76: sttattus.vault.v1.ListRealEstatePropertiesRequest
+	(*ListRealEstatePropertiesResponse)(nil),               // 77: sttattus.vault.v1.ListRealEstatePropertiesResponse
+	(*CreateRealEstatePropertyRequest)(nil),                // 78: sttattus.vault.v1.CreateRealEstatePropertyRequest
+	(*CreateRealEstatePropertyResponse)(nil),               // 79: sttattus.vault.v1.CreateRealEstatePropertyResponse
+	(*RecordManualValuationRequest)(nil),                   // 80: sttattus.vault.v1.RecordManualValuationRequest
+	(*RecordManualValuationResponse)(nil),                  // 81: sttattus.vault.v1.RecordManualValuationResponse
+	(*RefreshAvmValuationRequest)(nil),                     // 82: sttattus.vault.v1.RefreshAvmValuationRequest
+	(*RefreshAvmValuationResponse)(nil),                    // 83: sttattus.vault.v1.RefreshAvmValuationResponse
+	(*DeleteRealEstatePropertyRequest)(nil),                // 84: sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	(*DeleteRealEstatePropertyResponse)(nil),               // 85: sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	(*Entity)(nil),                                         // 86: sttattus.vault.v1.Entity
+	(*ListEntitiesRequest)(nil),                            // 87: sttattus.vault.v1.ListEntitiesRequest
+	(*ListEntitiesResponse)(nil),                           // 88: sttattus.vault.v1.ListEntitiesResponse
+	(*CreateEntityRequest)(nil),                            // 89: sttattus.vault.v1.CreateEntityRequest
+	(*CreateEntityResponse)(nil),                           // 90: sttattus.vault.v1.CreateEntityResponse
+	(*RenameEntityRequest)(nil),                            // 91: sttattus.vault.v1.RenameEntityRequest
+	(*RenameEntityResponse)(nil),                           // 92: sttattus.vault.v1.RenameEntityResponse
+	(*DeleteEntityRequest)(nil),                            // 93: sttattus.vault.v1.DeleteEntityRequest
+	(*DeleteEntityResponse)(nil),                           // 94: sttattus.vault.v1.DeleteEntityResponse
+	(*AssignAssetToEntityRequest)(nil),                     // 95: sttattus.vault.v1.AssignAssetToEntityRequest
+	(*AssignAssetToEntityResponse)(nil),                    // 96: sttattus.vault.v1.AssignAssetToEntityResponse
+	(*FxRate)(nil),                                         // 97: sttattus.vault.v1.FxRate
+	(*ListLatestFxRatesRequest)(nil),                       // 98: sttattus.vault.v1.ListLatestFxRatesRequest
+	(*ListLatestFxRatesResponse)(nil),                      // 99: sttattus.vault.v1.ListLatestFxRatesResponse
+	(*CapTableHolding)(nil),                                // 100: sttattus.vault.v1.CapTableHolding
+	(*ListCapTableHoldingsRequest)(nil),                    // 101: sttattus.vault.v1.ListCapTableHoldingsRequest
+	(*ListCapTableHoldingsResponse)(nil),                   // 102: sttattus.vault.v1.ListCapTableHoldingsResponse
+	(*CapTableHoldingInput)(nil),                           // 103: sttattus.vault.v1.CapTableHoldingInput
+	(*CreateCapTableHoldingRequest)(nil),                   // 104: sttattus.vault.v1.CreateCapTableHoldingRequest
+	(*CreateCapTableHoldingResponse)(nil),                  // 105: sttattus.vault.v1.CreateCapTableHoldingResponse
+	(*UpdateCapTableHoldingRequest)(nil),                   // 106: sttattus.vault.v1.UpdateCapTableHoldingRequest
+	(*UpdateCapTableHoldingResponse)(nil),                  // 107: sttattus.vault.v1.UpdateCapTableHoldingResponse
+	(*DeleteCapTableHoldingRequest)(nil),                   // 108: sttattus.vault.v1.DeleteCapTableHoldingRequest
+	(*DeleteCapTableHoldingResponse)(nil),                  // 109: sttattus.vault.v1.DeleteCapTableHoldingResponse
+	(*CapTableConnection)(nil),                             // 110: sttattus.vault.v1.CapTableConnection
+	(*ListCapTableConnectionsRequest)(nil),                 // 111: sttattus.vault.v1.ListCapTableConnectionsRequest
+	(*ListCapTableConnectionsResponse)(nil),                // 112: sttattus.vault.v1.ListCapTableConnectionsResponse
+	(*SetCapTableConnectionStatusRequest)(nil),             // 113: sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	(*SetCapTableConnectionStatusResponse)(nil),            // 114: sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	(*WalletChain)(nil),                                    // 115: sttattus.vault.v1.WalletChain
+	(*ListWalletChainsRequest)(nil),                        // 116: sttattus.vault.v1.ListWalletChainsRequest
+	(*ListWalletChainsResponse)(nil),                       // 117: sttattus.vault.v1.ListWalletChainsResponse
+	(*UpsertWalletChainRequest)(nil),                       // 118: sttattus.vault.v1.UpsertWalletChainRequest
+	(*UpsertWalletChainResponse)(nil),                      // 119: sttattus.vault.v1.UpsertWalletChainResponse
+	(*DeleteWalletChainRequest)(nil),                       // 120: sttattus.vault.v1.DeleteWalletChainRequest
+	(*DeleteWalletChainResponse)(nil),                      // 121: sttattus.vault.v1.DeleteWalletChainResponse
+	(*TaxLot)(nil),                                         // 122: sttattus.vault.v1.TaxLot
+	(*GetTaxSnapshotRequest)(nil),                          // 123: sttattus.vault.v1.GetTaxSnapshotRequest
+	(*GetTaxSnapshotResponse)(nil),                         // 124: sttattus.vault.v1.GetTaxSnapshotResponse
+	(*ExportUsCgtCsvRequest)(nil),                          // 125: sttattus.vault.v1.ExportUsCgtCsvRequest
+	(*ExportUsCgtCsvResponse)(nil),                         // 126: sttattus.vault.v1.ExportUsCgtCsvResponse
+	(*VaultFinancialDataReliabilityItem)(nil),              // 127: sttattus.vault.v1.VaultFinancialDataReliabilityItem
+	(*GetVaultFinancialReliabilityWorkbenchRequest)(nil),   // 128: sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchRequest
+	(*GetVaultFinancialReliabilityWorkbenchResponse)(nil),  // 129: sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse
+	(*SaveVaultFinancialReliabilitySourceRequest)(nil),     // 130: sttattus.vault.v1.SaveVaultFinancialReliabilitySourceRequest
+	(*SaveVaultFinancialReliabilitySourceResponse)(nil),    // 131: sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse
+	(*ReconcileOrReplayVaultReliabilityRequest)(nil),       // 132: sttattus.vault.v1.ReconcileOrReplayVaultReliabilityRequest
+	(*ReconcileOrReplayVaultReliabilityResponse)(nil),      // 133: sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse
+	(*VaultFinancialInboxCloseItem)(nil),                   // 134: sttattus.vault.v1.VaultFinancialInboxCloseItem
+	(*GetVaultFinancialInboxCloseWorkbenchRequest)(nil),    // 135: sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchRequest
+	(*GetVaultFinancialInboxCloseWorkbenchResponse)(nil),   // 136: sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse
+	(*SaveVaultFinancialInboxCloseItemRequest)(nil),        // 137: sttattus.vault.v1.SaveVaultFinancialInboxCloseItemRequest
+	(*SaveVaultFinancialInboxCloseItemResponse)(nil),       // 138: sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse
+	(*LockOrReopenVaultMonthlyCloseRequest)(nil),           // 139: sttattus.vault.v1.LockOrReopenVaultMonthlyCloseRequest
+	(*LockOrReopenVaultMonthlyCloseResponse)(nil),          // 140: sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse
+	(*VaultPersonalCfoCashCommandItem)(nil),                // 141: sttattus.vault.v1.VaultPersonalCfoCashCommandItem
+	(*GetVaultPersonalCfoCashWorkbenchRequest)(nil),        // 142: sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchRequest
+	(*GetVaultPersonalCfoCashWorkbenchResponse)(nil),       // 143: sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse
+	(*SaveVaultPersonalCfoCashForecastRequest)(nil),        // 144: sttattus.vault.v1.SaveVaultPersonalCfoCashForecastRequest
+	(*SaveVaultPersonalCfoCashForecastResponse)(nil),       // 145: sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse
+	(*AcknowledgeOrReviewVaultCashCommitmentRequest)(nil),  // 146: sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentRequest
+	(*AcknowledgeOrReviewVaultCashCommitmentResponse)(nil), // 147: sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse
+	(*VaultPerformanceAllocationLabItem)(nil),              // 148: sttattus.vault.v1.VaultPerformanceAllocationLabItem
+	(*GetVaultPerformanceAllocationWorkbenchRequest)(nil),  // 149: sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchRequest
+	(*GetVaultPerformanceAllocationWorkbenchResponse)(nil), // 150: sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse
+	(*SaveVaultPerformanceAllocationModelRequest)(nil),     // 151: sttattus.vault.v1.SaveVaultPerformanceAllocationModelRequest
+	(*SaveVaultPerformanceAllocationModelResponse)(nil),    // 152: sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse
+	(*SimulateOrRefreshVaultAllocationRequest)(nil),        // 153: sttattus.vault.v1.SimulateOrRefreshVaultAllocationRequest
+	(*SimulateOrRefreshVaultAllocationResponse)(nil),       // 154: sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse
+	(*VaultTaxAccountantWorkspaceItem)(nil),                // 155: sttattus.vault.v1.VaultTaxAccountantWorkspaceItem
+	(*GetVaultTaxAccountantWorkbenchRequest)(nil),          // 156: sttattus.vault.v1.GetVaultTaxAccountantWorkbenchRequest
+	(*GetVaultTaxAccountantWorkbenchResponse)(nil),         // 157: sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse
+	(*SaveVaultTaxAccountantScenarioRequest)(nil),          // 158: sttattus.vault.v1.SaveVaultTaxAccountantScenarioRequest
+	(*SaveVaultTaxAccountantScenarioResponse)(nil),         // 159: sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse
+	(*LockOrExportVaultTaxPackageRequest)(nil),             // 160: sttattus.vault.v1.LockOrExportVaultTaxPackageRequest
+	(*LockOrExportVaultTaxPackageResponse)(nil),            // 161: sttattus.vault.v1.LockOrExportVaultTaxPackageResponse
+	(*VaultEntityOwnershipGraphItem)(nil),                  // 162: sttattus.vault.v1.VaultEntityOwnershipGraphItem
+	(*GetVaultEntityOwnershipWorkbenchRequest)(nil),        // 163: sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchRequest
+	(*GetVaultEntityOwnershipWorkbenchResponse)(nil),       // 164: sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse
+	(*SaveVaultEntityOwnershipNodeRequest)(nil),            // 165: sttattus.vault.v1.SaveVaultEntityOwnershipNodeRequest
+	(*SaveVaultEntityOwnershipNodeResponse)(nil),           // 166: sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse
+	(*VerifyOrRevokeVaultOwnershipAccessRequest)(nil),      // 167: sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessRequest
+	(*VerifyOrRevokeVaultOwnershipAccessResponse)(nil),     // 168: sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse
+	(*VaultPrivateMarketDocRoomItem)(nil),                  // 169: sttattus.vault.v1.VaultPrivateMarketDocRoomItem
+	(*GetVaultPrivateMarketDocWorkbenchRequest)(nil),       // 170: sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchRequest
+	(*GetVaultPrivateMarketDocWorkbenchResponse)(nil),      // 171: sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse
+	(*SaveVaultPrivateMarketCommitmentRequest)(nil),        // 172: sttattus.vault.v1.SaveVaultPrivateMarketCommitmentRequest
+	(*SaveVaultPrivateMarketCommitmentResponse)(nil),       // 173: sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse
+	(*ConfirmOrReconcileVaultCapitalNoticeRequest)(nil),    // 174: sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeRequest
+	(*ConfirmOrReconcileVaultCapitalNoticeResponse)(nil),   // 175: sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse
+	(*VaultTreasuryDebtRiskCoverageItem)(nil),              // 176: sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem
+	(*GetVaultTreasuryDebtRiskWorkbenchRequest)(nil),       // 177: sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchRequest
+	(*GetVaultTreasuryDebtRiskWorkbenchResponse)(nil),      // 178: sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse
+	(*SaveVaultTreasuryDebtRiskPositionRequest)(nil),       // 179: sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionRequest
+	(*SaveVaultTreasuryDebtRiskPositionResponse)(nil),      // 180: sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse
+	(*EvaluateOrRouteVaultCoverageGapRequest)(nil),         // 181: sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapRequest
+	(*EvaluateOrRouteVaultCoverageGapResponse)(nil),        // 182: sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse
+	(*VaultGoalsScenarioEngineItem)(nil),                   // 183: sttattus.vault.v1.VaultGoalsScenarioEngineItem
+	(*GetVaultGoalsScenarioWorkbenchRequest)(nil),          // 184: sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchRequest
+	(*GetVaultGoalsScenarioWorkbenchResponse)(nil),         // 185: sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse
+	(*SaveVaultGoalScenarioSnapshotRequest)(nil),           // 186: sttattus.vault.v1.SaveVaultGoalScenarioSnapshotRequest
+	(*SaveVaultGoalScenarioSnapshotResponse)(nil),          // 187: sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse
+	(*CompareOrHandoffVaultScenarioRequest)(nil),           // 188: sttattus.vault.v1.CompareOrHandoffVaultScenarioRequest
+	(*CompareOrHandoffVaultScenarioResponse)(nil),          // 189: sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse
+	(*VaultPrivacyStandingProofItem)(nil),                  // 190: sttattus.vault.v1.VaultPrivacyStandingProofItem
+	(*GetVaultPrivacyStandingProofWorkbenchRequest)(nil),   // 191: sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchRequest
+	(*GetVaultPrivacyStandingProofWorkbenchResponse)(nil),  // 192: sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse
+	(*IssueVaultPrivacyStandingProofRequest)(nil),          // 193: sttattus.vault.v1.IssueVaultPrivacyStandingProofRequest
+	(*IssueVaultPrivacyStandingProofResponse)(nil),         // 194: sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse
+	(*VerifyOrRevokeVaultStandingProofRequest)(nil),        // 195: sttattus.vault.v1.VerifyOrRevokeVaultStandingProofRequest
+	(*VerifyOrRevokeVaultStandingProofResponse)(nil),       // 196: sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse
+	(*VaultAdvisorFamilyWorkspaceItem)(nil),                // 197: sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem
+	(*GetVaultAdvisorFamilyWorkbenchRequest)(nil),          // 198: sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchRequest
+	(*GetVaultAdvisorFamilyWorkbenchResponse)(nil),         // 199: sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse
+	(*SaveVaultAdvisorEngagementScopeRequest)(nil),         // 200: sttattus.vault.v1.SaveVaultAdvisorEngagementScopeRequest
+	(*SaveVaultAdvisorEngagementScopeResponse)(nil),        // 201: sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse
+	(*ApproveOrRevokeVaultAdvisorAccessRequest)(nil),       // 202: sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessRequest
+	(*ApproveOrRevokeVaultAdvisorAccessResponse)(nil),      // 203: sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse
+	(*VaultFinancialSafetyResponseItem)(nil),               // 204: sttattus.vault.v1.VaultFinancialSafetyResponseItem
+	(*GetVaultFinancialSafetyWorkbenchRequest)(nil),        // 205: sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchRequest
+	(*GetVaultFinancialSafetyWorkbenchResponse)(nil),       // 206: sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse
+	(*SaveVaultFinancialSafetyIncidentRequest)(nil),        // 207: sttattus.vault.v1.SaveVaultFinancialSafetyIncidentRequest
+	(*SaveVaultFinancialSafetyIncidentResponse)(nil),       // 208: sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse
+	(*ExecuteOrAppealVaultSafetyActionRequest)(nil),        // 209: sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionRequest
+	(*ExecuteOrAppealVaultSafetyActionResponse)(nil),       // 210: sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse
+	(*VaultGivingImpactLedgerItem)(nil),                    // 211: sttattus.vault.v1.VaultGivingImpactLedgerItem
+	(*GetVaultGivingImpactWorkbenchRequest)(nil),           // 212: sttattus.vault.v1.GetVaultGivingImpactWorkbenchRequest
+	(*GetVaultGivingImpactWorkbenchResponse)(nil),          // 213: sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse
+	(*SaveVaultGivingImpactPledgeRequest)(nil),             // 214: sttattus.vault.v1.SaveVaultGivingImpactPledgeRequest
+	(*SaveVaultGivingImpactPledgeResponse)(nil),            // 215: sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse
+	(*VerifyOrAcknowledgeVaultGiftReceiptRequest)(nil),     // 216: sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptRequest
+	(*VerifyOrAcknowledgeVaultGiftReceiptResponse)(nil),    // 217: sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponse
+	nil,                           // 218: sttattus.vault.v1.Asset.MetadataEntry
+	nil,                           // 219: sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	nil,                           // 220: sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
+	(*timestamppb.Timestamp)(nil), // 221: google.protobuf.Timestamp
 }
 var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	0,   // 0: sttattus.vault.v1.Asset.category:type_name -> sttattus.vault.v1.AssetCategory
 	1,   // 1: sttattus.vault.v1.Asset.status:type_name -> sttattus.vault.v1.VerificationStatus
-	130, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
-	127, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
+	221, // 2: sttattus.vault.v1.Asset.last_updated:type_name -> google.protobuf.Timestamp
+	218, // 3: sttattus.vault.v1.Asset.metadata:type_name -> sttattus.vault.v1.Asset.MetadataEntry
 	2,   // 4: sttattus.vault.v1.Portfolio.assets:type_name -> sttattus.vault.v1.Asset
-	130, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
+	221, // 5: sttattus.vault.v1.Portfolio.calculated_at:type_name -> google.protobuf.Timestamp
 	0,   // 6: sttattus.vault.v1.SubmitAssetRequest.category:type_name -> sttattus.vault.v1.AssetCategory
-	128, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
+	219, // 7: sttattus.vault.v1.SubmitAssetRequest.metadata:type_name -> sttattus.vault.v1.SubmitAssetRequest.MetadataEntry
 	2,   // 8: sttattus.vault.v1.SubmitAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	3,   // 9: sttattus.vault.v1.GetPortfolioResponse.portfolio:type_name -> sttattus.vault.v1.Portfolio
 	1,   // 10: sttattus.vault.v1.AdminVerifyAssetRequest.status:type_name -> sttattus.vault.v1.VerificationStatus
 	2,   // 11: sttattus.vault.v1.AdminVerifyAssetResponse.asset:type_name -> sttattus.vault.v1.Asset
 	12,  // 12: sttattus.vault.v1.GetYearInVaultResponse.top_movers:type_name -> sttattus.vault.v1.YearMover
-	129, // 13: sttattus.vault.v1.GetYearInVaultResponse.allocation_shift:type_name -> sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
+	220, // 13: sttattus.vault.v1.GetYearInVaultResponse.allocation_shift:type_name -> sttattus.vault.v1.GetYearInVaultResponse.AllocationShiftEntry
 	15,  // 14: sttattus.vault.v1.GetLiquidityStressTestResponse.sources:type_name -> sttattus.vault.v1.LiquiditySource
 	18,  // 15: sttattus.vault.v1.ListInvestmentCirclesResponse.circles:type_name -> sttattus.vault.v1.InvestmentCircle
 	18,  // 16: sttattus.vault.v1.GetInvestmentCircleResponse.circle:type_name -> sttattus.vault.v1.InvestmentCircle
-	130, // 17: sttattus.vault.v1.AdvisorMessage.created_at:type_name -> google.protobuf.Timestamp
-	130, // 18: sttattus.vault.v1.AdvisorThread.created_at:type_name -> google.protobuf.Timestamp
-	130, // 19: sttattus.vault.v1.AdvisorThread.sla_due_at:type_name -> google.protobuf.Timestamp
+	221, // 17: sttattus.vault.v1.AdvisorMessage.created_at:type_name -> google.protobuf.Timestamp
+	221, // 18: sttattus.vault.v1.AdvisorThread.created_at:type_name -> google.protobuf.Timestamp
+	221, // 19: sttattus.vault.v1.AdvisorThread.sla_due_at:type_name -> google.protobuf.Timestamp
 	25,  // 20: sttattus.vault.v1.AdvisorThread.messages:type_name -> sttattus.vault.v1.AdvisorMessage
 	26,  // 21: sttattus.vault.v1.StartAdvisorThreadResponse.thread:type_name -> sttattus.vault.v1.AdvisorThread
 	26,  // 22: sttattus.vault.v1.ListAdvisorThreadsResponse.threads:type_name -> sttattus.vault.v1.AdvisorThread
 	26,  // 23: sttattus.vault.v1.GetAdvisorThreadResponse.thread:type_name -> sttattus.vault.v1.AdvisorThread
 	25,  // 24: sttattus.vault.v1.PostAdvisorMessageResponse.message:type_name -> sttattus.vault.v1.AdvisorMessage
-	130, // 25: sttattus.vault.v1.WealthArticle.published_at:type_name -> google.protobuf.Timestamp
+	221, // 25: sttattus.vault.v1.WealthArticle.published_at:type_name -> google.protobuf.Timestamp
 	35,  // 26: sttattus.vault.v1.ListWealthAnthologyResponse.articles:type_name -> sttattus.vault.v1.WealthArticle
 	35,  // 27: sttattus.vault.v1.GetWealthArticleResponse.article:type_name -> sttattus.vault.v1.WealthArticle
 	40,  // 28: sttattus.vault.v1.ListPartnerBanksResponse.banks:type_name -> sttattus.vault.v1.PartnerBank
-	130, // 29: sttattus.vault.v1.VaultShare.created_at:type_name -> google.protobuf.Timestamp
-	130, // 30: sttattus.vault.v1.VaultShare.expires_at:type_name -> google.protobuf.Timestamp
+	221, // 29: sttattus.vault.v1.VaultShare.created_at:type_name -> google.protobuf.Timestamp
+	221, // 30: sttattus.vault.v1.VaultShare.expires_at:type_name -> google.protobuf.Timestamp
 	43,  // 31: sttattus.vault.v1.CreateVaultShareResponse.share:type_name -> sttattus.vault.v1.VaultShare
 	43,  // 32: sttattus.vault.v1.ListMyVaultSharesResponse.shares:type_name -> sttattus.vault.v1.VaultShare
 	2,   // 33: sttattus.vault.v1.SyncWealthRequest.assets:type_name -> sttattus.vault.v1.Asset
@@ -7723,113 +13843,230 @@ var file_sttattus_vault_v1_vault_proto_depIdxs = []int32{
 	115, // 55: sttattus.vault.v1.ListWalletChainsResponse.wallets:type_name -> sttattus.vault.v1.WalletChain
 	115, // 56: sttattus.vault.v1.UpsertWalletChainResponse.wallet:type_name -> sttattus.vault.v1.WalletChain
 	122, // 57: sttattus.vault.v1.GetTaxSnapshotResponse.lots:type_name -> sttattus.vault.v1.TaxLot
-	4,   // 58: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
-	6,   // 59: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
-	52,  // 60: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
-	54,  // 61: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
-	56,  // 62: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
-	58,  // 63: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
-	50,  // 64: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
-	8,   // 65: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
-	61,  // 66: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
-	64,  // 67: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
-	67,  // 68: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
-	70,  // 69: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
-	73,  // 70: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
-	76,  // 71: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
-	78,  // 72: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
-	80,  // 73: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
-	82,  // 74: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
-	84,  // 75: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
-	87,  // 76: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
-	89,  // 77: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
-	91,  // 78: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
-	93,  // 79: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
-	95,  // 80: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
-	98,  // 81: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
-	101, // 82: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
-	104, // 83: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
-	106, // 84: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
-	108, // 85: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
-	111, // 86: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
-	113, // 87: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
-	116, // 88: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
-	118, // 89: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
-	120, // 90: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
-	123, // 91: sttattus.vault.v1.VaultService.GetTaxSnapshot:input_type -> sttattus.vault.v1.GetTaxSnapshotRequest
-	125, // 92: sttattus.vault.v1.VaultService.ExportUsCgtCsv:input_type -> sttattus.vault.v1.ExportUsCgtCsvRequest
-	19,  // 93: sttattus.vault.v1.VaultService.ListInvestmentCircles:input_type -> sttattus.vault.v1.ListInvestmentCirclesRequest
-	21,  // 94: sttattus.vault.v1.VaultService.GetInvestmentCircle:input_type -> sttattus.vault.v1.GetInvestmentCircleRequest
-	23,  // 95: sttattus.vault.v1.VaultService.ExpressCircleInterest:input_type -> sttattus.vault.v1.ExpressCircleInterestRequest
-	27,  // 96: sttattus.vault.v1.VaultService.StartAdvisorThread:input_type -> sttattus.vault.v1.StartAdvisorThreadRequest
-	29,  // 97: sttattus.vault.v1.VaultService.ListAdvisorThreads:input_type -> sttattus.vault.v1.ListAdvisorThreadsRequest
-	31,  // 98: sttattus.vault.v1.VaultService.GetAdvisorThread:input_type -> sttattus.vault.v1.GetAdvisorThreadRequest
-	33,  // 99: sttattus.vault.v1.VaultService.PostAdvisorMessage:input_type -> sttattus.vault.v1.PostAdvisorMessageRequest
-	36,  // 100: sttattus.vault.v1.VaultService.ListWealthAnthology:input_type -> sttattus.vault.v1.ListWealthAnthologyRequest
-	38,  // 101: sttattus.vault.v1.VaultService.GetWealthArticle:input_type -> sttattus.vault.v1.GetWealthArticleRequest
-	41,  // 102: sttattus.vault.v1.VaultService.ListPartnerBanks:input_type -> sttattus.vault.v1.ListPartnerBanksRequest
-	44,  // 103: sttattus.vault.v1.VaultService.CreateVaultShare:input_type -> sttattus.vault.v1.CreateVaultShareRequest
-	46,  // 104: sttattus.vault.v1.VaultService.ListMyVaultShares:input_type -> sttattus.vault.v1.ListMyVaultSharesRequest
-	48,  // 105: sttattus.vault.v1.VaultService.RevokeVaultShare:input_type -> sttattus.vault.v1.RevokeVaultShareRequest
-	10,  // 106: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:input_type -> sttattus.vault.v1.GenerateWealthAlmanacRequest
-	13,  // 107: sttattus.vault.v1.VaultService.GetYearInVault:input_type -> sttattus.vault.v1.GetYearInVaultRequest
-	16,  // 108: sttattus.vault.v1.VaultService.GetLiquidityStressTest:input_type -> sttattus.vault.v1.GetLiquidityStressTestRequest
-	5,   // 109: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
-	7,   // 110: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
-	53,  // 111: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
-	55,  // 112: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
-	57,  // 113: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
-	59,  // 114: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
-	51,  // 115: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
-	9,   // 116: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
-	62,  // 117: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
-	65,  // 118: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
-	68,  // 119: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
-	71,  // 120: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
-	74,  // 121: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
-	77,  // 122: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
-	79,  // 123: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
-	81,  // 124: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
-	83,  // 125: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
-	85,  // 126: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
-	88,  // 127: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
-	90,  // 128: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
-	92,  // 129: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
-	94,  // 130: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
-	96,  // 131: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
-	99,  // 132: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
-	102, // 133: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
-	105, // 134: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
-	107, // 135: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
-	109, // 136: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
-	112, // 137: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
-	114, // 138: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
-	117, // 139: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
-	119, // 140: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
-	121, // 141: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
-	124, // 142: sttattus.vault.v1.VaultService.GetTaxSnapshot:output_type -> sttattus.vault.v1.GetTaxSnapshotResponse
-	126, // 143: sttattus.vault.v1.VaultService.ExportUsCgtCsv:output_type -> sttattus.vault.v1.ExportUsCgtCsvResponse
-	20,  // 144: sttattus.vault.v1.VaultService.ListInvestmentCircles:output_type -> sttattus.vault.v1.ListInvestmentCirclesResponse
-	22,  // 145: sttattus.vault.v1.VaultService.GetInvestmentCircle:output_type -> sttattus.vault.v1.GetInvestmentCircleResponse
-	24,  // 146: sttattus.vault.v1.VaultService.ExpressCircleInterest:output_type -> sttattus.vault.v1.ExpressCircleInterestResponse
-	28,  // 147: sttattus.vault.v1.VaultService.StartAdvisorThread:output_type -> sttattus.vault.v1.StartAdvisorThreadResponse
-	30,  // 148: sttattus.vault.v1.VaultService.ListAdvisorThreads:output_type -> sttattus.vault.v1.ListAdvisorThreadsResponse
-	32,  // 149: sttattus.vault.v1.VaultService.GetAdvisorThread:output_type -> sttattus.vault.v1.GetAdvisorThreadResponse
-	34,  // 150: sttattus.vault.v1.VaultService.PostAdvisorMessage:output_type -> sttattus.vault.v1.PostAdvisorMessageResponse
-	37,  // 151: sttattus.vault.v1.VaultService.ListWealthAnthology:output_type -> sttattus.vault.v1.ListWealthAnthologyResponse
-	39,  // 152: sttattus.vault.v1.VaultService.GetWealthArticle:output_type -> sttattus.vault.v1.GetWealthArticleResponse
-	42,  // 153: sttattus.vault.v1.VaultService.ListPartnerBanks:output_type -> sttattus.vault.v1.ListPartnerBanksResponse
-	45,  // 154: sttattus.vault.v1.VaultService.CreateVaultShare:output_type -> sttattus.vault.v1.CreateVaultShareResponse
-	47,  // 155: sttattus.vault.v1.VaultService.ListMyVaultShares:output_type -> sttattus.vault.v1.ListMyVaultSharesResponse
-	49,  // 156: sttattus.vault.v1.VaultService.RevokeVaultShare:output_type -> sttattus.vault.v1.RevokeVaultShareResponse
-	11,  // 157: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:output_type -> sttattus.vault.v1.GenerateWealthAlmanacResponse
-	14,  // 158: sttattus.vault.v1.VaultService.GetYearInVault:output_type -> sttattus.vault.v1.GetYearInVaultResponse
-	17,  // 159: sttattus.vault.v1.VaultService.GetLiquidityStressTest:output_type -> sttattus.vault.v1.GetLiquidityStressTestResponse
-	109, // [109:160] is the sub-list for method output_type
-	58,  // [58:109] is the sub-list for method input_type
-	58,  // [58:58] is the sub-list for extension type_name
-	58,  // [58:58] is the sub-list for extension extendee
-	0,   // [0:58] is the sub-list for field type_name
+	127, // 58: sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse.sources:type_name -> sttattus.vault.v1.VaultFinancialDataReliabilityItem
+	127, // 59: sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse.source:type_name -> sttattus.vault.v1.VaultFinancialDataReliabilityItem
+	127, // 60: sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse.source:type_name -> sttattus.vault.v1.VaultFinancialDataReliabilityItem
+	134, // 61: sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse.closes:type_name -> sttattus.vault.v1.VaultFinancialInboxCloseItem
+	134, // 62: sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse.close:type_name -> sttattus.vault.v1.VaultFinancialInboxCloseItem
+	134, // 63: sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse.close:type_name -> sttattus.vault.v1.VaultFinancialInboxCloseItem
+	141, // 64: sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse.commands:type_name -> sttattus.vault.v1.VaultPersonalCfoCashCommandItem
+	141, // 65: sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse.command:type_name -> sttattus.vault.v1.VaultPersonalCfoCashCommandItem
+	141, // 66: sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse.command:type_name -> sttattus.vault.v1.VaultPersonalCfoCashCommandItem
+	148, // 67: sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse.models:type_name -> sttattus.vault.v1.VaultPerformanceAllocationLabItem
+	148, // 68: sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse.model:type_name -> sttattus.vault.v1.VaultPerformanceAllocationLabItem
+	148, // 69: sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse.model:type_name -> sttattus.vault.v1.VaultPerformanceAllocationLabItem
+	155, // 70: sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse.workspaces:type_name -> sttattus.vault.v1.VaultTaxAccountantWorkspaceItem
+	155, // 71: sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse.workspace:type_name -> sttattus.vault.v1.VaultTaxAccountantWorkspaceItem
+	155, // 72: sttattus.vault.v1.LockOrExportVaultTaxPackageResponse.workspace:type_name -> sttattus.vault.v1.VaultTaxAccountantWorkspaceItem
+	162, // 73: sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse.graphs:type_name -> sttattus.vault.v1.VaultEntityOwnershipGraphItem
+	162, // 74: sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse.graph:type_name -> sttattus.vault.v1.VaultEntityOwnershipGraphItem
+	162, // 75: sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse.graph:type_name -> sttattus.vault.v1.VaultEntityOwnershipGraphItem
+	169, // 76: sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse.rooms:type_name -> sttattus.vault.v1.VaultPrivateMarketDocRoomItem
+	169, // 77: sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse.room:type_name -> sttattus.vault.v1.VaultPrivateMarketDocRoomItem
+	169, // 78: sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse.room:type_name -> sttattus.vault.v1.VaultPrivateMarketDocRoomItem
+	176, // 79: sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse.positions:type_name -> sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem
+	176, // 80: sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse.position:type_name -> sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem
+	176, // 81: sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse.position:type_name -> sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem
+	183, // 82: sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse.scenarios:type_name -> sttattus.vault.v1.VaultGoalsScenarioEngineItem
+	183, // 83: sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse.scenario:type_name -> sttattus.vault.v1.VaultGoalsScenarioEngineItem
+	183, // 84: sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse.scenario:type_name -> sttattus.vault.v1.VaultGoalsScenarioEngineItem
+	190, // 85: sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse.proofs:type_name -> sttattus.vault.v1.VaultPrivacyStandingProofItem
+	190, // 86: sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse.proof:type_name -> sttattus.vault.v1.VaultPrivacyStandingProofItem
+	190, // 87: sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse.proof:type_name -> sttattus.vault.v1.VaultPrivacyStandingProofItem
+	197, // 88: sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse.engagements:type_name -> sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem
+	197, // 89: sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse.engagement:type_name -> sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem
+	197, // 90: sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse.engagement:type_name -> sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem
+	204, // 91: sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse.incidents:type_name -> sttattus.vault.v1.VaultFinancialSafetyResponseItem
+	204, // 92: sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse.incident:type_name -> sttattus.vault.v1.VaultFinancialSafetyResponseItem
+	204, // 93: sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse.incident:type_name -> sttattus.vault.v1.VaultFinancialSafetyResponseItem
+	211, // 94: sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse.pledges:type_name -> sttattus.vault.v1.VaultGivingImpactLedgerItem
+	211, // 95: sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse.pledge:type_name -> sttattus.vault.v1.VaultGivingImpactLedgerItem
+	211, // 96: sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponse.pledge:type_name -> sttattus.vault.v1.VaultGivingImpactLedgerItem
+	4,   // 97: sttattus.vault.v1.VaultService.SubmitAsset:input_type -> sttattus.vault.v1.SubmitAssetRequest
+	6,   // 98: sttattus.vault.v1.VaultService.GetPortfolio:input_type -> sttattus.vault.v1.GetPortfolioRequest
+	52,  // 99: sttattus.vault.v1.VaultService.GetWalletChallenge:input_type -> sttattus.vault.v1.GetWalletChallengeRequest
+	54,  // 100: sttattus.vault.v1.VaultService.LinkWallet:input_type -> sttattus.vault.v1.LinkWalletRequest
+	56,  // 101: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:input_type -> sttattus.vault.v1.CreatePlaidLinkTokenRequest
+	58,  // 102: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:input_type -> sttattus.vault.v1.ExchangePlaidPublicTokenRequest
+	50,  // 103: sttattus.vault.v1.VaultService.SyncWealth:input_type -> sttattus.vault.v1.SyncWealthRequest
+	8,   // 104: sttattus.vault.v1.VaultService.AdminVerifyAsset:input_type -> sttattus.vault.v1.AdminVerifyAssetRequest
+	61,  // 105: sttattus.vault.v1.VaultService.ListNetWorthHistory:input_type -> sttattus.vault.v1.ListNetWorthHistoryRequest
+	64,  // 106: sttattus.vault.v1.VaultService.ListPlaidTransactions:input_type -> sttattus.vault.v1.ListPlaidTransactionsRequest
+	67,  // 107: sttattus.vault.v1.VaultService.ListPlaidHoldings:input_type -> sttattus.vault.v1.ListPlaidHoldingsRequest
+	70,  // 108: sttattus.vault.v1.VaultService.GetCurrentAllocation:input_type -> sttattus.vault.v1.GetCurrentAllocationRequest
+	73,  // 109: sttattus.vault.v1.VaultService.ListAllocationHistory:input_type -> sttattus.vault.v1.ListAllocationHistoryRequest
+	76,  // 110: sttattus.vault.v1.VaultService.ListRealEstateProperties:input_type -> sttattus.vault.v1.ListRealEstatePropertiesRequest
+	78,  // 111: sttattus.vault.v1.VaultService.CreateRealEstateProperty:input_type -> sttattus.vault.v1.CreateRealEstatePropertyRequest
+	80,  // 112: sttattus.vault.v1.VaultService.RecordManualValuation:input_type -> sttattus.vault.v1.RecordManualValuationRequest
+	82,  // 113: sttattus.vault.v1.VaultService.RefreshAvmValuation:input_type -> sttattus.vault.v1.RefreshAvmValuationRequest
+	84,  // 114: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:input_type -> sttattus.vault.v1.DeleteRealEstatePropertyRequest
+	87,  // 115: sttattus.vault.v1.VaultService.ListEntities:input_type -> sttattus.vault.v1.ListEntitiesRequest
+	89,  // 116: sttattus.vault.v1.VaultService.CreateEntity:input_type -> sttattus.vault.v1.CreateEntityRequest
+	91,  // 117: sttattus.vault.v1.VaultService.RenameEntity:input_type -> sttattus.vault.v1.RenameEntityRequest
+	93,  // 118: sttattus.vault.v1.VaultService.DeleteEntity:input_type -> sttattus.vault.v1.DeleteEntityRequest
+	95,  // 119: sttattus.vault.v1.VaultService.AssignAssetToEntity:input_type -> sttattus.vault.v1.AssignAssetToEntityRequest
+	98,  // 120: sttattus.vault.v1.VaultService.ListLatestFxRates:input_type -> sttattus.vault.v1.ListLatestFxRatesRequest
+	101, // 121: sttattus.vault.v1.VaultService.ListCapTableHoldings:input_type -> sttattus.vault.v1.ListCapTableHoldingsRequest
+	104, // 122: sttattus.vault.v1.VaultService.CreateCapTableHolding:input_type -> sttattus.vault.v1.CreateCapTableHoldingRequest
+	106, // 123: sttattus.vault.v1.VaultService.UpdateCapTableHolding:input_type -> sttattus.vault.v1.UpdateCapTableHoldingRequest
+	108, // 124: sttattus.vault.v1.VaultService.DeleteCapTableHolding:input_type -> sttattus.vault.v1.DeleteCapTableHoldingRequest
+	111, // 125: sttattus.vault.v1.VaultService.ListCapTableConnections:input_type -> sttattus.vault.v1.ListCapTableConnectionsRequest
+	113, // 126: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:input_type -> sttattus.vault.v1.SetCapTableConnectionStatusRequest
+	116, // 127: sttattus.vault.v1.VaultService.ListWalletChains:input_type -> sttattus.vault.v1.ListWalletChainsRequest
+	118, // 128: sttattus.vault.v1.VaultService.UpsertWalletChain:input_type -> sttattus.vault.v1.UpsertWalletChainRequest
+	120, // 129: sttattus.vault.v1.VaultService.DeleteWalletChain:input_type -> sttattus.vault.v1.DeleteWalletChainRequest
+	123, // 130: sttattus.vault.v1.VaultService.GetTaxSnapshot:input_type -> sttattus.vault.v1.GetTaxSnapshotRequest
+	125, // 131: sttattus.vault.v1.VaultService.ExportUsCgtCsv:input_type -> sttattus.vault.v1.ExportUsCgtCsvRequest
+	19,  // 132: sttattus.vault.v1.VaultService.ListInvestmentCircles:input_type -> sttattus.vault.v1.ListInvestmentCirclesRequest
+	21,  // 133: sttattus.vault.v1.VaultService.GetInvestmentCircle:input_type -> sttattus.vault.v1.GetInvestmentCircleRequest
+	23,  // 134: sttattus.vault.v1.VaultService.ExpressCircleInterest:input_type -> sttattus.vault.v1.ExpressCircleInterestRequest
+	27,  // 135: sttattus.vault.v1.VaultService.StartAdvisorThread:input_type -> sttattus.vault.v1.StartAdvisorThreadRequest
+	29,  // 136: sttattus.vault.v1.VaultService.ListAdvisorThreads:input_type -> sttattus.vault.v1.ListAdvisorThreadsRequest
+	31,  // 137: sttattus.vault.v1.VaultService.GetAdvisorThread:input_type -> sttattus.vault.v1.GetAdvisorThreadRequest
+	33,  // 138: sttattus.vault.v1.VaultService.PostAdvisorMessage:input_type -> sttattus.vault.v1.PostAdvisorMessageRequest
+	36,  // 139: sttattus.vault.v1.VaultService.ListWealthAnthology:input_type -> sttattus.vault.v1.ListWealthAnthologyRequest
+	38,  // 140: sttattus.vault.v1.VaultService.GetWealthArticle:input_type -> sttattus.vault.v1.GetWealthArticleRequest
+	41,  // 141: sttattus.vault.v1.VaultService.ListPartnerBanks:input_type -> sttattus.vault.v1.ListPartnerBanksRequest
+	44,  // 142: sttattus.vault.v1.VaultService.CreateVaultShare:input_type -> sttattus.vault.v1.CreateVaultShareRequest
+	46,  // 143: sttattus.vault.v1.VaultService.ListMyVaultShares:input_type -> sttattus.vault.v1.ListMyVaultSharesRequest
+	48,  // 144: sttattus.vault.v1.VaultService.RevokeVaultShare:input_type -> sttattus.vault.v1.RevokeVaultShareRequest
+	10,  // 145: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:input_type -> sttattus.vault.v1.GenerateWealthAlmanacRequest
+	13,  // 146: sttattus.vault.v1.VaultService.GetYearInVault:input_type -> sttattus.vault.v1.GetYearInVaultRequest
+	16,  // 147: sttattus.vault.v1.VaultService.GetLiquidityStressTest:input_type -> sttattus.vault.v1.GetLiquidityStressTestRequest
+	128, // 148: sttattus.vault.v1.VaultService.GetVaultFinancialReliabilityWorkbench:input_type -> sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchRequest
+	130, // 149: sttattus.vault.v1.VaultService.SaveVaultFinancialReliabilitySource:input_type -> sttattus.vault.v1.SaveVaultFinancialReliabilitySourceRequest
+	132, // 150: sttattus.vault.v1.VaultService.ReconcileOrReplayVaultReliability:input_type -> sttattus.vault.v1.ReconcileOrReplayVaultReliabilityRequest
+	135, // 151: sttattus.vault.v1.VaultService.GetVaultFinancialInboxCloseWorkbench:input_type -> sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchRequest
+	137, // 152: sttattus.vault.v1.VaultService.SaveVaultFinancialInboxCloseItem:input_type -> sttattus.vault.v1.SaveVaultFinancialInboxCloseItemRequest
+	139, // 153: sttattus.vault.v1.VaultService.LockOrReopenVaultMonthlyClose:input_type -> sttattus.vault.v1.LockOrReopenVaultMonthlyCloseRequest
+	142, // 154: sttattus.vault.v1.VaultService.GetVaultPersonalCfoCashWorkbench:input_type -> sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchRequest
+	144, // 155: sttattus.vault.v1.VaultService.SaveVaultPersonalCfoCashForecast:input_type -> sttattus.vault.v1.SaveVaultPersonalCfoCashForecastRequest
+	146, // 156: sttattus.vault.v1.VaultService.AcknowledgeOrReviewVaultCashCommitment:input_type -> sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentRequest
+	149, // 157: sttattus.vault.v1.VaultService.GetVaultPerformanceAllocationWorkbench:input_type -> sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchRequest
+	151, // 158: sttattus.vault.v1.VaultService.SaveVaultPerformanceAllocationModel:input_type -> sttattus.vault.v1.SaveVaultPerformanceAllocationModelRequest
+	153, // 159: sttattus.vault.v1.VaultService.SimulateOrRefreshVaultAllocation:input_type -> sttattus.vault.v1.SimulateOrRefreshVaultAllocationRequest
+	156, // 160: sttattus.vault.v1.VaultService.GetVaultTaxAccountantWorkbench:input_type -> sttattus.vault.v1.GetVaultTaxAccountantWorkbenchRequest
+	158, // 161: sttattus.vault.v1.VaultService.SaveVaultTaxAccountantScenario:input_type -> sttattus.vault.v1.SaveVaultTaxAccountantScenarioRequest
+	160, // 162: sttattus.vault.v1.VaultService.LockOrExportVaultTaxPackage:input_type -> sttattus.vault.v1.LockOrExportVaultTaxPackageRequest
+	163, // 163: sttattus.vault.v1.VaultService.GetVaultEntityOwnershipWorkbench:input_type -> sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchRequest
+	165, // 164: sttattus.vault.v1.VaultService.SaveVaultEntityOwnershipNode:input_type -> sttattus.vault.v1.SaveVaultEntityOwnershipNodeRequest
+	167, // 165: sttattus.vault.v1.VaultService.VerifyOrRevokeVaultOwnershipAccess:input_type -> sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessRequest
+	170, // 166: sttattus.vault.v1.VaultService.GetVaultPrivateMarketDocWorkbench:input_type -> sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchRequest
+	172, // 167: sttattus.vault.v1.VaultService.SaveVaultPrivateMarketCommitment:input_type -> sttattus.vault.v1.SaveVaultPrivateMarketCommitmentRequest
+	174, // 168: sttattus.vault.v1.VaultService.ConfirmOrReconcileVaultCapitalNotice:input_type -> sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeRequest
+	177, // 169: sttattus.vault.v1.VaultService.GetVaultTreasuryDebtRiskWorkbench:input_type -> sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchRequest
+	179, // 170: sttattus.vault.v1.VaultService.SaveVaultTreasuryDebtRiskPosition:input_type -> sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionRequest
+	181, // 171: sttattus.vault.v1.VaultService.EvaluateOrRouteVaultCoverageGap:input_type -> sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapRequest
+	184, // 172: sttattus.vault.v1.VaultService.GetVaultGoalsScenarioWorkbench:input_type -> sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchRequest
+	186, // 173: sttattus.vault.v1.VaultService.SaveVaultGoalScenarioSnapshot:input_type -> sttattus.vault.v1.SaveVaultGoalScenarioSnapshotRequest
+	188, // 174: sttattus.vault.v1.VaultService.CompareOrHandoffVaultScenario:input_type -> sttattus.vault.v1.CompareOrHandoffVaultScenarioRequest
+	191, // 175: sttattus.vault.v1.VaultService.GetVaultPrivacyStandingProofWorkbench:input_type -> sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchRequest
+	193, // 176: sttattus.vault.v1.VaultService.IssueVaultPrivacyStandingProof:input_type -> sttattus.vault.v1.IssueVaultPrivacyStandingProofRequest
+	195, // 177: sttattus.vault.v1.VaultService.VerifyOrRevokeVaultStandingProof:input_type -> sttattus.vault.v1.VerifyOrRevokeVaultStandingProofRequest
+	198, // 178: sttattus.vault.v1.VaultService.GetVaultAdvisorFamilyWorkbench:input_type -> sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchRequest
+	200, // 179: sttattus.vault.v1.VaultService.SaveVaultAdvisorEngagementScope:input_type -> sttattus.vault.v1.SaveVaultAdvisorEngagementScopeRequest
+	202, // 180: sttattus.vault.v1.VaultService.ApproveOrRevokeVaultAdvisorAccess:input_type -> sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessRequest
+	205, // 181: sttattus.vault.v1.VaultService.GetVaultFinancialSafetyWorkbench:input_type -> sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchRequest
+	207, // 182: sttattus.vault.v1.VaultService.SaveVaultFinancialSafetyIncident:input_type -> sttattus.vault.v1.SaveVaultFinancialSafetyIncidentRequest
+	209, // 183: sttattus.vault.v1.VaultService.ExecuteOrAppealVaultSafetyAction:input_type -> sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionRequest
+	212, // 184: sttattus.vault.v1.VaultService.GetVaultGivingImpactWorkbench:input_type -> sttattus.vault.v1.GetVaultGivingImpactWorkbenchRequest
+	214, // 185: sttattus.vault.v1.VaultService.SaveVaultGivingImpactPledge:input_type -> sttattus.vault.v1.SaveVaultGivingImpactPledgeRequest
+	216, // 186: sttattus.vault.v1.VaultService.VerifyOrAcknowledgeVaultGiftReceipt:input_type -> sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptRequest
+	5,   // 187: sttattus.vault.v1.VaultService.SubmitAsset:output_type -> sttattus.vault.v1.SubmitAssetResponse
+	7,   // 188: sttattus.vault.v1.VaultService.GetPortfolio:output_type -> sttattus.vault.v1.GetPortfolioResponse
+	53,  // 189: sttattus.vault.v1.VaultService.GetWalletChallenge:output_type -> sttattus.vault.v1.GetWalletChallengeResponse
+	55,  // 190: sttattus.vault.v1.VaultService.LinkWallet:output_type -> sttattus.vault.v1.LinkWalletResponse
+	57,  // 191: sttattus.vault.v1.VaultService.CreatePlaidLinkToken:output_type -> sttattus.vault.v1.CreatePlaidLinkTokenResponse
+	59,  // 192: sttattus.vault.v1.VaultService.ExchangePlaidPublicToken:output_type -> sttattus.vault.v1.ExchangePlaidPublicTokenResponse
+	51,  // 193: sttattus.vault.v1.VaultService.SyncWealth:output_type -> sttattus.vault.v1.SyncWealthResponse
+	9,   // 194: sttattus.vault.v1.VaultService.AdminVerifyAsset:output_type -> sttattus.vault.v1.AdminVerifyAssetResponse
+	62,  // 195: sttattus.vault.v1.VaultService.ListNetWorthHistory:output_type -> sttattus.vault.v1.ListNetWorthHistoryResponse
+	65,  // 196: sttattus.vault.v1.VaultService.ListPlaidTransactions:output_type -> sttattus.vault.v1.ListPlaidTransactionsResponse
+	68,  // 197: sttattus.vault.v1.VaultService.ListPlaidHoldings:output_type -> sttattus.vault.v1.ListPlaidHoldingsResponse
+	71,  // 198: sttattus.vault.v1.VaultService.GetCurrentAllocation:output_type -> sttattus.vault.v1.GetCurrentAllocationResponse
+	74,  // 199: sttattus.vault.v1.VaultService.ListAllocationHistory:output_type -> sttattus.vault.v1.ListAllocationHistoryResponse
+	77,  // 200: sttattus.vault.v1.VaultService.ListRealEstateProperties:output_type -> sttattus.vault.v1.ListRealEstatePropertiesResponse
+	79,  // 201: sttattus.vault.v1.VaultService.CreateRealEstateProperty:output_type -> sttattus.vault.v1.CreateRealEstatePropertyResponse
+	81,  // 202: sttattus.vault.v1.VaultService.RecordManualValuation:output_type -> sttattus.vault.v1.RecordManualValuationResponse
+	83,  // 203: sttattus.vault.v1.VaultService.RefreshAvmValuation:output_type -> sttattus.vault.v1.RefreshAvmValuationResponse
+	85,  // 204: sttattus.vault.v1.VaultService.DeleteRealEstateProperty:output_type -> sttattus.vault.v1.DeleteRealEstatePropertyResponse
+	88,  // 205: sttattus.vault.v1.VaultService.ListEntities:output_type -> sttattus.vault.v1.ListEntitiesResponse
+	90,  // 206: sttattus.vault.v1.VaultService.CreateEntity:output_type -> sttattus.vault.v1.CreateEntityResponse
+	92,  // 207: sttattus.vault.v1.VaultService.RenameEntity:output_type -> sttattus.vault.v1.RenameEntityResponse
+	94,  // 208: sttattus.vault.v1.VaultService.DeleteEntity:output_type -> sttattus.vault.v1.DeleteEntityResponse
+	96,  // 209: sttattus.vault.v1.VaultService.AssignAssetToEntity:output_type -> sttattus.vault.v1.AssignAssetToEntityResponse
+	99,  // 210: sttattus.vault.v1.VaultService.ListLatestFxRates:output_type -> sttattus.vault.v1.ListLatestFxRatesResponse
+	102, // 211: sttattus.vault.v1.VaultService.ListCapTableHoldings:output_type -> sttattus.vault.v1.ListCapTableHoldingsResponse
+	105, // 212: sttattus.vault.v1.VaultService.CreateCapTableHolding:output_type -> sttattus.vault.v1.CreateCapTableHoldingResponse
+	107, // 213: sttattus.vault.v1.VaultService.UpdateCapTableHolding:output_type -> sttattus.vault.v1.UpdateCapTableHoldingResponse
+	109, // 214: sttattus.vault.v1.VaultService.DeleteCapTableHolding:output_type -> sttattus.vault.v1.DeleteCapTableHoldingResponse
+	112, // 215: sttattus.vault.v1.VaultService.ListCapTableConnections:output_type -> sttattus.vault.v1.ListCapTableConnectionsResponse
+	114, // 216: sttattus.vault.v1.VaultService.SetCapTableConnectionStatus:output_type -> sttattus.vault.v1.SetCapTableConnectionStatusResponse
+	117, // 217: sttattus.vault.v1.VaultService.ListWalletChains:output_type -> sttattus.vault.v1.ListWalletChainsResponse
+	119, // 218: sttattus.vault.v1.VaultService.UpsertWalletChain:output_type -> sttattus.vault.v1.UpsertWalletChainResponse
+	121, // 219: sttattus.vault.v1.VaultService.DeleteWalletChain:output_type -> sttattus.vault.v1.DeleteWalletChainResponse
+	124, // 220: sttattus.vault.v1.VaultService.GetTaxSnapshot:output_type -> sttattus.vault.v1.GetTaxSnapshotResponse
+	126, // 221: sttattus.vault.v1.VaultService.ExportUsCgtCsv:output_type -> sttattus.vault.v1.ExportUsCgtCsvResponse
+	20,  // 222: sttattus.vault.v1.VaultService.ListInvestmentCircles:output_type -> sttattus.vault.v1.ListInvestmentCirclesResponse
+	22,  // 223: sttattus.vault.v1.VaultService.GetInvestmentCircle:output_type -> sttattus.vault.v1.GetInvestmentCircleResponse
+	24,  // 224: sttattus.vault.v1.VaultService.ExpressCircleInterest:output_type -> sttattus.vault.v1.ExpressCircleInterestResponse
+	28,  // 225: sttattus.vault.v1.VaultService.StartAdvisorThread:output_type -> sttattus.vault.v1.StartAdvisorThreadResponse
+	30,  // 226: sttattus.vault.v1.VaultService.ListAdvisorThreads:output_type -> sttattus.vault.v1.ListAdvisorThreadsResponse
+	32,  // 227: sttattus.vault.v1.VaultService.GetAdvisorThread:output_type -> sttattus.vault.v1.GetAdvisorThreadResponse
+	34,  // 228: sttattus.vault.v1.VaultService.PostAdvisorMessage:output_type -> sttattus.vault.v1.PostAdvisorMessageResponse
+	37,  // 229: sttattus.vault.v1.VaultService.ListWealthAnthology:output_type -> sttattus.vault.v1.ListWealthAnthologyResponse
+	39,  // 230: sttattus.vault.v1.VaultService.GetWealthArticle:output_type -> sttattus.vault.v1.GetWealthArticleResponse
+	42,  // 231: sttattus.vault.v1.VaultService.ListPartnerBanks:output_type -> sttattus.vault.v1.ListPartnerBanksResponse
+	45,  // 232: sttattus.vault.v1.VaultService.CreateVaultShare:output_type -> sttattus.vault.v1.CreateVaultShareResponse
+	47,  // 233: sttattus.vault.v1.VaultService.ListMyVaultShares:output_type -> sttattus.vault.v1.ListMyVaultSharesResponse
+	49,  // 234: sttattus.vault.v1.VaultService.RevokeVaultShare:output_type -> sttattus.vault.v1.RevokeVaultShareResponse
+	11,  // 235: sttattus.vault.v1.VaultService.GenerateWealthAlmanac:output_type -> sttattus.vault.v1.GenerateWealthAlmanacResponse
+	14,  // 236: sttattus.vault.v1.VaultService.GetYearInVault:output_type -> sttattus.vault.v1.GetYearInVaultResponse
+	17,  // 237: sttattus.vault.v1.VaultService.GetLiquidityStressTest:output_type -> sttattus.vault.v1.GetLiquidityStressTestResponse
+	129, // 238: sttattus.vault.v1.VaultService.GetVaultFinancialReliabilityWorkbench:output_type -> sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse
+	131, // 239: sttattus.vault.v1.VaultService.SaveVaultFinancialReliabilitySource:output_type -> sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse
+	133, // 240: sttattus.vault.v1.VaultService.ReconcileOrReplayVaultReliability:output_type -> sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse
+	136, // 241: sttattus.vault.v1.VaultService.GetVaultFinancialInboxCloseWorkbench:output_type -> sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse
+	138, // 242: sttattus.vault.v1.VaultService.SaveVaultFinancialInboxCloseItem:output_type -> sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse
+	140, // 243: sttattus.vault.v1.VaultService.LockOrReopenVaultMonthlyClose:output_type -> sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse
+	143, // 244: sttattus.vault.v1.VaultService.GetVaultPersonalCfoCashWorkbench:output_type -> sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse
+	145, // 245: sttattus.vault.v1.VaultService.SaveVaultPersonalCfoCashForecast:output_type -> sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse
+	147, // 246: sttattus.vault.v1.VaultService.AcknowledgeOrReviewVaultCashCommitment:output_type -> sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse
+	150, // 247: sttattus.vault.v1.VaultService.GetVaultPerformanceAllocationWorkbench:output_type -> sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse
+	152, // 248: sttattus.vault.v1.VaultService.SaveVaultPerformanceAllocationModel:output_type -> sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse
+	154, // 249: sttattus.vault.v1.VaultService.SimulateOrRefreshVaultAllocation:output_type -> sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse
+	157, // 250: sttattus.vault.v1.VaultService.GetVaultTaxAccountantWorkbench:output_type -> sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse
+	159, // 251: sttattus.vault.v1.VaultService.SaveVaultTaxAccountantScenario:output_type -> sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse
+	161, // 252: sttattus.vault.v1.VaultService.LockOrExportVaultTaxPackage:output_type -> sttattus.vault.v1.LockOrExportVaultTaxPackageResponse
+	164, // 253: sttattus.vault.v1.VaultService.GetVaultEntityOwnershipWorkbench:output_type -> sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse
+	166, // 254: sttattus.vault.v1.VaultService.SaveVaultEntityOwnershipNode:output_type -> sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse
+	168, // 255: sttattus.vault.v1.VaultService.VerifyOrRevokeVaultOwnershipAccess:output_type -> sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse
+	171, // 256: sttattus.vault.v1.VaultService.GetVaultPrivateMarketDocWorkbench:output_type -> sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse
+	173, // 257: sttattus.vault.v1.VaultService.SaveVaultPrivateMarketCommitment:output_type -> sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse
+	175, // 258: sttattus.vault.v1.VaultService.ConfirmOrReconcileVaultCapitalNotice:output_type -> sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse
+	178, // 259: sttattus.vault.v1.VaultService.GetVaultTreasuryDebtRiskWorkbench:output_type -> sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse
+	180, // 260: sttattus.vault.v1.VaultService.SaveVaultTreasuryDebtRiskPosition:output_type -> sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse
+	182, // 261: sttattus.vault.v1.VaultService.EvaluateOrRouteVaultCoverageGap:output_type -> sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse
+	185, // 262: sttattus.vault.v1.VaultService.GetVaultGoalsScenarioWorkbench:output_type -> sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse
+	187, // 263: sttattus.vault.v1.VaultService.SaveVaultGoalScenarioSnapshot:output_type -> sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse
+	189, // 264: sttattus.vault.v1.VaultService.CompareOrHandoffVaultScenario:output_type -> sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse
+	192, // 265: sttattus.vault.v1.VaultService.GetVaultPrivacyStandingProofWorkbench:output_type -> sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse
+	194, // 266: sttattus.vault.v1.VaultService.IssueVaultPrivacyStandingProof:output_type -> sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse
+	196, // 267: sttattus.vault.v1.VaultService.VerifyOrRevokeVaultStandingProof:output_type -> sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse
+	199, // 268: sttattus.vault.v1.VaultService.GetVaultAdvisorFamilyWorkbench:output_type -> sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse
+	201, // 269: sttattus.vault.v1.VaultService.SaveVaultAdvisorEngagementScope:output_type -> sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse
+	203, // 270: sttattus.vault.v1.VaultService.ApproveOrRevokeVaultAdvisorAccess:output_type -> sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse
+	206, // 271: sttattus.vault.v1.VaultService.GetVaultFinancialSafetyWorkbench:output_type -> sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse
+	208, // 272: sttattus.vault.v1.VaultService.SaveVaultFinancialSafetyIncident:output_type -> sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse
+	210, // 273: sttattus.vault.v1.VaultService.ExecuteOrAppealVaultSafetyAction:output_type -> sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse
+	213, // 274: sttattus.vault.v1.VaultService.GetVaultGivingImpactWorkbench:output_type -> sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse
+	215, // 275: sttattus.vault.v1.VaultService.SaveVaultGivingImpactPledge:output_type -> sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse
+	217, // 276: sttattus.vault.v1.VaultService.VerifyOrAcknowledgeVaultGiftReceipt:output_type -> sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponse
+	187, // [187:277] is the sub-list for method output_type
+	97,  // [97:187] is the sub-list for method input_type
+	97,  // [97:97] is the sub-list for extension type_name
+	97,  // [97:97] is the sub-list for extension extendee
+	0,   // [0:97] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_vault_v1_vault_proto_init() }
@@ -7843,7 +14080,7 @@ func file_sttattus_vault_v1_vault_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_vault_v1_vault_proto_rawDesc), len(file_sttattus_vault_v1_vault_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   128,
+			NumMessages:   219,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

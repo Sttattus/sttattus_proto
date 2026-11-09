@@ -10341,6 +10341,4802 @@ func (x *DismissWritingFlagResponse) GetSubmission() *WritingSubmission {
 	return nil
 }
 
+type ImmersionUniverseItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	RightsAndAccountFenceEnforced bool                   `protobuf:"varint,8,opt,name=rights_and_account_fence_enforced,json=rightsAndAccountFenceEnforced,proto3" json:"rights_and_account_fence_enforced,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *ImmersionUniverseItem) Reset() {
+	*x = ImmersionUniverseItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImmersionUniverseItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImmersionUniverseItem) ProtoMessage() {}
+
+func (x *ImmersionUniverseItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImmersionUniverseItem.ProtoReflect.Descriptor instead.
+func (*ImmersionUniverseItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *ImmersionUniverseItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *ImmersionUniverseItem) GetRightsAndAccountFenceEnforced() bool {
+	if x != nil {
+		return x.RightsAndAccountFenceEnforced
+	}
+	return false
+}
+
+func (x *ImmersionUniverseItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetImmersionUniverseOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetImmersionUniverseOverviewRequest) Reset() {
+	*x = GetImmersionUniverseOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetImmersionUniverseOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetImmersionUniverseOverviewRequest) ProtoMessage() {}
+
+func (x *GetImmersionUniverseOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetImmersionUniverseOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetImmersionUniverseOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *GetImmersionUniverseOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetImmersionUniverseOverviewResponse struct {
+	state                         protoimpl.MessageState   `protogen:"open.v1"`
+	Items                         []*ImmersionUniverseItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                   `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	RightsAndAccountFenceEnforced bool                     `protobuf:"varint,3,opt,name=rights_and_account_fence_enforced,json=rightsAndAccountFenceEnforced,proto3" json:"rights_and_account_fence_enforced,omitempty"`
+	GovernanceSummary             string                   `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetImmersionUniverseOverviewResponse) Reset() {
+	*x = GetImmersionUniverseOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetImmersionUniverseOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetImmersionUniverseOverviewResponse) ProtoMessage() {}
+
+func (x *GetImmersionUniverseOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetImmersionUniverseOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetImmersionUniverseOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *GetImmersionUniverseOverviewResponse) GetItems() []*ImmersionUniverseItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetImmersionUniverseOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetImmersionUniverseOverviewResponse) GetRightsAndAccountFenceEnforced() bool {
+	if x != nil {
+		return x.RightsAndAccountFenceEnforced
+	}
+	return false
+}
+
+func (x *GetImmersionUniverseOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type ImportPersonalImmersionMediaRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ImportPersonalImmersionMediaRequest) Reset() {
+	*x = ImportPersonalImmersionMediaRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImportPersonalImmersionMediaRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImportPersonalImmersionMediaRequest) ProtoMessage() {}
+
+func (x *ImportPersonalImmersionMediaRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImportPersonalImmersionMediaRequest.ProtoReflect.Descriptor instead.
+func (*ImportPersonalImmersionMediaRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{140}
+}
+
+func (x *ImportPersonalImmersionMediaRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *ImportPersonalImmersionMediaRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ImportPersonalImmersionMediaRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *ImportPersonalImmersionMediaRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type ImportPersonalImmersionMediaResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ImmersionUniverseItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ImportPersonalImmersionMediaResponse) Reset() {
+	*x = ImportPersonalImmersionMediaResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ImportPersonalImmersionMediaResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ImportPersonalImmersionMediaResponse) ProtoMessage() {}
+
+func (x *ImportPersonalImmersionMediaResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ImportPersonalImmersionMediaResponse.ProtoReflect.Descriptor instead.
+func (*ImportPersonalImmersionMediaResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *ImportPersonalImmersionMediaResponse) GetItem() *ImmersionUniverseItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CaptureContextConceptSenseRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CaptureContextConceptSenseRequest) Reset() {
+	*x = CaptureContextConceptSenseRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureContextConceptSenseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureContextConceptSenseRequest) ProtoMessage() {}
+
+func (x *CaptureContextConceptSenseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureContextConceptSenseRequest.ProtoReflect.Descriptor instead.
+func (*CaptureContextConceptSenseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *CaptureContextConceptSenseRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *CaptureContextConceptSenseRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *CaptureContextConceptSenseRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type CaptureContextConceptSenseResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ImmersionUniverseItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CaptureContextConceptSenseResponse) Reset() {
+	*x = CaptureContextConceptSenseResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureContextConceptSenseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureContextConceptSenseResponse) ProtoMessage() {}
+
+func (x *CaptureContextConceptSenseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureContextConceptSenseResponse.ProtoReflect.Descriptor instead.
+func (*CaptureContextConceptSenseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *CaptureContextConceptSenseResponse) GetItem() *ImmersionUniverseItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type WritingRegisterItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                    string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                       string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                      string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail               string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail             string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice            string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoInvisibleDraftReplacement bool                   `protobuf:"varint,8,opt,name=no_invisible_draft_replacement,json=noInvisibleDraftReplacement,proto3" json:"no_invisible_draft_replacement,omitempty"`
+	UpdatedAt                   string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *WritingRegisterItem) Reset() {
+	*x = WritingRegisterItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WritingRegisterItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WritingRegisterItem) ProtoMessage() {}
+
+func (x *WritingRegisterItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WritingRegisterItem.ProtoReflect.Descriptor instead.
+func (*WritingRegisterItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *WritingRegisterItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *WritingRegisterItem) GetNoInvisibleDraftReplacement() bool {
+	if x != nil {
+		return x.NoInvisibleDraftReplacement
+	}
+	return false
+}
+
+func (x *WritingRegisterItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetWritingRegisterStudioOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWritingRegisterStudioOverviewRequest) Reset() {
+	*x = GetWritingRegisterStudioOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWritingRegisterStudioOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWritingRegisterStudioOverviewRequest) ProtoMessage() {}
+
+func (x *GetWritingRegisterStudioOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWritingRegisterStudioOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetWritingRegisterStudioOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *GetWritingRegisterStudioOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetWritingRegisterStudioOverviewResponse struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Items                       []*WritingRegisterItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion         string                 `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoInvisibleDraftReplacement bool                   `protobuf:"varint,3,opt,name=no_invisible_draft_replacement,json=noInvisibleDraftReplacement,proto3" json:"no_invisible_draft_replacement,omitempty"`
+	GovernanceSummary           string                 `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) Reset() {
+	*x = GetWritingRegisterStudioOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWritingRegisterStudioOverviewResponse) ProtoMessage() {}
+
+func (x *GetWritingRegisterStudioOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWritingRegisterStudioOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetWritingRegisterStudioOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) GetItems() []*WritingRegisterItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) GetNoInvisibleDraftReplacement() bool {
+	if x != nil {
+		return x.NoInvisibleDraftReplacement
+	}
+	return false
+}
+
+func (x *GetWritingRegisterStudioOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type SubmitWritingRegisterDraftRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SubmitWritingRegisterDraftRequest) Reset() {
+	*x = SubmitWritingRegisterDraftRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitWritingRegisterDraftRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitWritingRegisterDraftRequest) ProtoMessage() {}
+
+func (x *SubmitWritingRegisterDraftRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitWritingRegisterDraftRequest.ProtoReflect.Descriptor instead.
+func (*SubmitWritingRegisterDraftRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{147}
+}
+
+func (x *SubmitWritingRegisterDraftRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *SubmitWritingRegisterDraftRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SubmitWritingRegisterDraftRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *SubmitWritingRegisterDraftRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type SubmitWritingRegisterDraftResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *WritingRegisterItem   `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitWritingRegisterDraftResponse) Reset() {
+	*x = SubmitWritingRegisterDraftResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitWritingRegisterDraftResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitWritingRegisterDraftResponse) ProtoMessage() {}
+
+func (x *SubmitWritingRegisterDraftResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitWritingRegisterDraftResponse.ProtoReflect.Descriptor instead.
+func (*SubmitWritingRegisterDraftResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *SubmitWritingRegisterDraftResponse) GetItem() *WritingRegisterItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type VerifyDelayedRegisterTransferRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyDelayedRegisterTransferRequest) Reset() {
+	*x = VerifyDelayedRegisterTransferRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDelayedRegisterTransferRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDelayedRegisterTransferRequest) ProtoMessage() {}
+
+func (x *VerifyDelayedRegisterTransferRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDelayedRegisterTransferRequest.ProtoReflect.Descriptor instead.
+func (*VerifyDelayedRegisterTransferRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *VerifyDelayedRegisterTransferRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *VerifyDelayedRegisterTransferRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *VerifyDelayedRegisterTransferRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type VerifyDelayedRegisterTransferResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *WritingRegisterItem   `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyDelayedRegisterTransferResponse) Reset() {
+	*x = VerifyDelayedRegisterTransferResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDelayedRegisterTransferResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDelayedRegisterTransferResponse) ProtoMessage() {}
+
+func (x *VerifyDelayedRegisterTransferResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDelayedRegisterTransferResponse.ProtoReflect.Descriptor instead.
+func (*VerifyDelayedRegisterTransferResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *VerifyDelayedRegisterTransferResponse) GetItem() *WritingRegisterItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type TutoringCommunityItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                           string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                              string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                             string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                      string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                    string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                   string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	DoubleBlindAndMinorsSafetyEnforced bool                   `protobuf:"varint,8,opt,name=double_blind_and_minors_safety_enforced,json=doubleBlindAndMinorsSafetyEnforced,proto3" json:"double_blind_and_minors_safety_enforced,omitempty"`
+	UpdatedAt                          string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *TutoringCommunityItem) Reset() {
+	*x = TutoringCommunityItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TutoringCommunityItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TutoringCommunityItem) ProtoMessage() {}
+
+func (x *TutoringCommunityItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TutoringCommunityItem.ProtoReflect.Descriptor instead.
+func (*TutoringCommunityItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *TutoringCommunityItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *TutoringCommunityItem) GetDoubleBlindAndMinorsSafetyEnforced() bool {
+	if x != nil {
+		return x.DoubleBlindAndMinorsSafetyEnforced
+	}
+	return false
+}
+
+func (x *TutoringCommunityItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetHumanTutoringCommunityOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetHumanTutoringCommunityOverviewRequest) Reset() {
+	*x = GetHumanTutoringCommunityOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHumanTutoringCommunityOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHumanTutoringCommunityOverviewRequest) ProtoMessage() {}
+
+func (x *GetHumanTutoringCommunityOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHumanTutoringCommunityOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetHumanTutoringCommunityOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *GetHumanTutoringCommunityOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetHumanTutoringCommunityOverviewResponse struct {
+	state                              protoimpl.MessageState   `protogen:"open.v1"`
+	Items                              []*TutoringCommunityItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion                string                   `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	DoubleBlindAndMinorsSafetyEnforced bool                     `protobuf:"varint,3,opt,name=double_blind_and_minors_safety_enforced,json=doubleBlindAndMinorsSafetyEnforced,proto3" json:"double_blind_and_minors_safety_enforced,omitempty"`
+	GovernanceSummary                  string                   `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) Reset() {
+	*x = GetHumanTutoringCommunityOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHumanTutoringCommunityOverviewResponse) ProtoMessage() {}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHumanTutoringCommunityOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetHumanTutoringCommunityOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{153}
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) GetItems() []*TutoringCommunityItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) GetDoubleBlindAndMinorsSafetyEnforced() bool {
+	if x != nil {
+		return x.DoubleBlindAndMinorsSafetyEnforced
+	}
+	return false
+}
+
+func (x *GetHumanTutoringCommunityOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type BookOrAskHumanTutorRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *BookOrAskHumanTutorRequest) Reset() {
+	*x = BookOrAskHumanTutorRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BookOrAskHumanTutorRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BookOrAskHumanTutorRequest) ProtoMessage() {}
+
+func (x *BookOrAskHumanTutorRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BookOrAskHumanTutorRequest.ProtoReflect.Descriptor instead.
+func (*BookOrAskHumanTutorRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{154}
+}
+
+func (x *BookOrAskHumanTutorRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *BookOrAskHumanTutorRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *BookOrAskHumanTutorRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *BookOrAskHumanTutorRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type BookOrAskHumanTutorResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *TutoringCommunityItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BookOrAskHumanTutorResponse) Reset() {
+	*x = BookOrAskHumanTutorResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BookOrAskHumanTutorResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BookOrAskHumanTutorResponse) ProtoMessage() {}
+
+func (x *BookOrAskHumanTutorResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BookOrAskHumanTutorResponse.ProtoReflect.Descriptor instead.
+func (*BookOrAskHumanTutorResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *BookOrAskHumanTutorResponse) GetItem() *TutoringCommunityItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type SubmitDoubleBlindCommunityReviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) Reset() {
+	*x = SubmitDoubleBlindCommunityReviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitDoubleBlindCommunityReviewRequest) ProtoMessage() {}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitDoubleBlindCommunityReviewRequest.ProtoReflect.Descriptor instead.
+func (*SubmitDoubleBlindCommunityReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *SubmitDoubleBlindCommunityReviewRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type SubmitDoubleBlindCommunityReviewResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *TutoringCommunityItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitDoubleBlindCommunityReviewResponse) Reset() {
+	*x = SubmitDoubleBlindCommunityReviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitDoubleBlindCommunityReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitDoubleBlindCommunityReviewResponse) ProtoMessage() {}
+
+func (x *SubmitDoubleBlindCommunityReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitDoubleBlindCommunityReviewResponse.ProtoReflect.Descriptor instead.
+func (*SubmitDoubleBlindCommunityReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *SubmitDoubleBlindCommunityReviewResponse) GetItem() *TutoringCommunityItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type AssessmentCertItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                          string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                             string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                            string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                     string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                   string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                  string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	RevocableSignedCredentialEnforced bool                   `protobuf:"varint,8,opt,name=revocable_signed_credential_enforced,json=revocableSignedCredentialEnforced,proto3" json:"revocable_signed_credential_enforced,omitempty"`
+	UpdatedAt                         string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *AssessmentCertItem) Reset() {
+	*x = AssessmentCertItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AssessmentCertItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AssessmentCertItem) ProtoMessage() {}
+
+func (x *AssessmentCertItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AssessmentCertItem.ProtoReflect.Descriptor instead.
+func (*AssessmentCertItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{158}
+}
+
+func (x *AssessmentCertItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *AssessmentCertItem) GetRevocableSignedCredentialEnforced() bool {
+	if x != nil {
+		return x.RevocableSignedCredentialEnforced
+	}
+	return false
+}
+
+func (x *AssessmentCertItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetAssessmentCertificationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAssessmentCertificationOverviewRequest) Reset() {
+	*x = GetAssessmentCertificationOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAssessmentCertificationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAssessmentCertificationOverviewRequest) ProtoMessage() {}
+
+func (x *GetAssessmentCertificationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAssessmentCertificationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetAssessmentCertificationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *GetAssessmentCertificationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetAssessmentCertificationOverviewResponse struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Items                             []*AssessmentCertItem  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion               string                 `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	RevocableSignedCredentialEnforced bool                   `protobuf:"varint,3,opt,name=revocable_signed_credential_enforced,json=revocableSignedCredentialEnforced,proto3" json:"revocable_signed_credential_enforced,omitempty"`
+	GovernanceSummary                 string                 `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) Reset() {
+	*x = GetAssessmentCertificationOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAssessmentCertificationOverviewResponse) ProtoMessage() {}
+
+func (x *GetAssessmentCertificationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAssessmentCertificationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetAssessmentCertificationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) GetItems() []*AssessmentCertItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) GetRevocableSignedCredentialEnforced() bool {
+	if x != nil {
+		return x.RevocableSignedCredentialEnforced
+	}
+	return false
+}
+
+func (x *GetAssessmentCertificationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RunAdaptiveDiagnosticSessionRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) Reset() {
+	*x = RunAdaptiveDiagnosticSessionRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunAdaptiveDiagnosticSessionRequest) ProtoMessage() {}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunAdaptiveDiagnosticSessionRequest.ProtoReflect.Descriptor instead.
+func (*RunAdaptiveDiagnosticSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{161}
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RunAdaptiveDiagnosticSessionRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RunAdaptiveDiagnosticSessionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *AssessmentCertItem    `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunAdaptiveDiagnosticSessionResponse) Reset() {
+	*x = RunAdaptiveDiagnosticSessionResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunAdaptiveDiagnosticSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunAdaptiveDiagnosticSessionResponse) ProtoMessage() {}
+
+func (x *RunAdaptiveDiagnosticSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunAdaptiveDiagnosticSessionResponse.ProtoReflect.Descriptor instead.
+func (*RunAdaptiveDiagnosticSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *RunAdaptiveDiagnosticSessionResponse) GetItem() *AssessmentCertItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type IssueOrRevokeSignedCertificateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IssueOrRevokeSignedCertificateRequest) Reset() {
+	*x = IssueOrRevokeSignedCertificateRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueOrRevokeSignedCertificateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueOrRevokeSignedCertificateRequest) ProtoMessage() {}
+
+func (x *IssueOrRevokeSignedCertificateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueOrRevokeSignedCertificateRequest.ProtoReflect.Descriptor instead.
+func (*IssueOrRevokeSignedCertificateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *IssueOrRevokeSignedCertificateRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *IssueOrRevokeSignedCertificateRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *IssueOrRevokeSignedCertificateRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type IssueOrRevokeSignedCertificateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *AssessmentCertItem    `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IssueOrRevokeSignedCertificateResponse) Reset() {
+	*x = IssueOrRevokeSignedCertificateResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueOrRevokeSignedCertificateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueOrRevokeSignedCertificateResponse) ProtoMessage() {}
+
+func (x *IssueOrRevokeSignedCertificateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueOrRevokeSignedCertificateResponse.ProtoReflect.Descriptor instead.
+func (*IssueOrRevokeSignedCertificateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *IssueOrRevokeSignedCertificateResponse) GetItem() *AssessmentCertItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CultureSupertoolItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoNationalStereotypesEnforced bool                   `protobuf:"varint,8,opt,name=no_national_stereotypes_enforced,json=noNationalStereotypesEnforced,proto3" json:"no_national_stereotypes_enforced,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *CultureSupertoolItem) Reset() {
+	*x = CultureSupertoolItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CultureSupertoolItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CultureSupertoolItem) ProtoMessage() {}
+
+func (x *CultureSupertoolItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CultureSupertoolItem.ProtoReflect.Descriptor instead.
+func (*CultureSupertoolItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{165}
+}
+
+func (x *CultureSupertoolItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *CultureSupertoolItem) GetNoNationalStereotypesEnforced() bool {
+	if x != nil {
+		return x.NoNationalStereotypesEnforced
+	}
+	return false
+}
+
+func (x *CultureSupertoolItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetCultureReferenceSupertoolsOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewRequest) Reset() {
+	*x = GetCultureReferenceSupertoolsOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCultureReferenceSupertoolsOverviewRequest) ProtoMessage() {}
+
+func (x *GetCultureReferenceSupertoolsOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCultureReferenceSupertoolsOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCultureReferenceSupertoolsOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetCultureReferenceSupertoolsOverviewResponse struct {
+	state                         protoimpl.MessageState  `protogen:"open.v1"`
+	Items                         []*CultureSupertoolItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                  `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoNationalStereotypesEnforced bool                    `protobuf:"varint,3,opt,name=no_national_stereotypes_enforced,json=noNationalStereotypesEnforced,proto3" json:"no_national_stereotypes_enforced,omitempty"`
+	GovernanceSummary             string                  `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) Reset() {
+	*x = GetCultureReferenceSupertoolsOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCultureReferenceSupertoolsOverviewResponse) ProtoMessage() {}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCultureReferenceSupertoolsOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCultureReferenceSupertoolsOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) GetItems() []*CultureSupertoolItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) GetNoNationalStereotypesEnforced() bool {
+	if x != nil {
+		return x.NoNationalStereotypesEnforced
+	}
+	return false
+}
+
+func (x *GetCultureReferenceSupertoolsOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RunSupertoolConcordanceLookupRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) Reset() {
+	*x = RunSupertoolConcordanceLookupRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunSupertoolConcordanceLookupRequest) ProtoMessage() {}
+
+func (x *RunSupertoolConcordanceLookupRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunSupertoolConcordanceLookupRequest.ProtoReflect.Descriptor instead.
+func (*RunSupertoolConcordanceLookupRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{168}
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RunSupertoolConcordanceLookupRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RunSupertoolConcordanceLookupResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *CultureSupertoolItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunSupertoolConcordanceLookupResponse) Reset() {
+	*x = RunSupertoolConcordanceLookupResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunSupertoolConcordanceLookupResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunSupertoolConcordanceLookupResponse) ProtoMessage() {}
+
+func (x *RunSupertoolConcordanceLookupResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunSupertoolConcordanceLookupResponse.ProtoReflect.Descriptor instead.
+func (*RunSupertoolConcordanceLookupResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *RunSupertoolConcordanceLookupResponse) GetItem() *CultureSupertoolItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CompleteCulturalPragmaticsBranchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) Reset() {
+	*x = CompleteCulturalPragmaticsBranchRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteCulturalPragmaticsBranchRequest) ProtoMessage() {}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteCulturalPragmaticsBranchRequest.ProtoReflect.Descriptor instead.
+func (*CompleteCulturalPragmaticsBranchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *CompleteCulturalPragmaticsBranchRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type CompleteCulturalPragmaticsBranchResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *CultureSupertoolItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteCulturalPragmaticsBranchResponse) Reset() {
+	*x = CompleteCulturalPragmaticsBranchResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteCulturalPragmaticsBranchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteCulturalPragmaticsBranchResponse) ProtoMessage() {}
+
+func (x *CompleteCulturalPragmaticsBranchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteCulturalPragmaticsBranchResponse.ProtoReflect.Descriptor instead.
+func (*CompleteCulturalPragmaticsBranchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *CompleteCulturalPragmaticsBranchResponse) GetItem() *CultureSupertoolItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RealWorldMissionItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                     string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                        string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                       string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail              string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice             string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NeverInferredFromGpsEnforced bool                   `protobuf:"varint,8,opt,name=never_inferred_from_gps_enforced,json=neverInferredFromGpsEnforced,proto3" json:"never_inferred_from_gps_enforced,omitempty"`
+	UpdatedAt                    string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *RealWorldMissionItem) Reset() {
+	*x = RealWorldMissionItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RealWorldMissionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RealWorldMissionItem) ProtoMessage() {}
+
+func (x *RealWorldMissionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RealWorldMissionItem.ProtoReflect.Descriptor instead.
+func (*RealWorldMissionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{172}
+}
+
+func (x *RealWorldMissionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *RealWorldMissionItem) GetNeverInferredFromGpsEnforced() bool {
+	if x != nil {
+		return x.NeverInferredFromGpsEnforced
+	}
+	return false
+}
+
+func (x *RealWorldMissionItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetRealWorldMissionsPortfolioOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewRequest) Reset() {
+	*x = GetRealWorldMissionsPortfolioOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRealWorldMissionsPortfolioOverviewRequest) ProtoMessage() {}
+
+func (x *GetRealWorldMissionsPortfolioOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRealWorldMissionsPortfolioOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetRealWorldMissionsPortfolioOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetRealWorldMissionsPortfolioOverviewResponse struct {
+	state                        protoimpl.MessageState  `protogen:"open.v1"`
+	Items                        []*RealWorldMissionItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion          string                  `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NeverInferredFromGpsEnforced bool                    `protobuf:"varint,3,opt,name=never_inferred_from_gps_enforced,json=neverInferredFromGpsEnforced,proto3" json:"never_inferred_from_gps_enforced,omitempty"`
+	GovernanceSummary            string                  `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) Reset() {
+	*x = GetRealWorldMissionsPortfolioOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[174]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRealWorldMissionsPortfolioOverviewResponse) ProtoMessage() {}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[174]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRealWorldMissionsPortfolioOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetRealWorldMissionsPortfolioOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{174}
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) GetItems() []*RealWorldMissionItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) GetNeverInferredFromGpsEnforced() bool {
+	if x != nil {
+		return x.NeverInferredFromGpsEnforced
+	}
+	return false
+}
+
+func (x *GetRealWorldMissionsPortfolioOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type AttestRealWorldMissionCompletionRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) Reset() {
+	*x = AttestRealWorldMissionCompletionRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[175]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AttestRealWorldMissionCompletionRequest) ProtoMessage() {}
+
+func (x *AttestRealWorldMissionCompletionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[175]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AttestRealWorldMissionCompletionRequest.ProtoReflect.Descriptor instead.
+func (*AttestRealWorldMissionCompletionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{175}
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *AttestRealWorldMissionCompletionRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type AttestRealWorldMissionCompletionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *RealWorldMissionItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AttestRealWorldMissionCompletionResponse) Reset() {
+	*x = AttestRealWorldMissionCompletionResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[176]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AttestRealWorldMissionCompletionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AttestRealWorldMissionCompletionResponse) ProtoMessage() {}
+
+func (x *AttestRealWorldMissionCompletionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[176]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AttestRealWorldMissionCompletionResponse.ProtoReflect.Descriptor instead.
+func (*AttestRealWorldMissionCompletionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{176}
+}
+
+func (x *AttestRealWorldMissionCompletionResponse) GetItem() *RealWorldMissionItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type PublishCommunicativePortfolioArtifactRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) Reset() {
+	*x = PublishCommunicativePortfolioArtifactRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[177]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishCommunicativePortfolioArtifactRequest) ProtoMessage() {}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[177]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishCommunicativePortfolioArtifactRequest.ProtoReflect.Descriptor instead.
+func (*PublishCommunicativePortfolioArtifactRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{177}
+}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *PublishCommunicativePortfolioArtifactRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type PublishCommunicativePortfolioArtifactResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *RealWorldMissionItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishCommunicativePortfolioArtifactResponse) Reset() {
+	*x = PublishCommunicativePortfolioArtifactResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[178]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishCommunicativePortfolioArtifactResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishCommunicativePortfolioArtifactResponse) ProtoMessage() {}
+
+func (x *PublishCommunicativePortfolioArtifactResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[178]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishCommunicativePortfolioArtifactResponse.ProtoReflect.Descriptor instead.
+func (*PublishCommunicativePortfolioArtifactResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{178}
+}
+
+func (x *PublishCommunicativePortfolioArtifactResponse) GetItem() *RealWorldMissionItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type UbiquitousCaptureItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                           string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                              string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                             string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                      string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                    string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                   string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	ExplicitActionNoBackgroundSniffing bool                   `protobuf:"varint,8,opt,name=explicit_action_no_background_sniffing,json=explicitActionNoBackgroundSniffing,proto3" json:"explicit_action_no_background_sniffing,omitempty"`
+	UpdatedAt                          string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *UbiquitousCaptureItem) Reset() {
+	*x = UbiquitousCaptureItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[179]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UbiquitousCaptureItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UbiquitousCaptureItem) ProtoMessage() {}
+
+func (x *UbiquitousCaptureItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[179]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UbiquitousCaptureItem.ProtoReflect.Descriptor instead.
+func (*UbiquitousCaptureItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{179}
+}
+
+func (x *UbiquitousCaptureItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *UbiquitousCaptureItem) GetExplicitActionNoBackgroundSniffing() bool {
+	if x != nil {
+		return x.ExplicitActionNoBackgroundSniffing
+	}
+	return false
+}
+
+func (x *UbiquitousCaptureItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetUbiquitousLanguageLayerOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewRequest) Reset() {
+	*x = GetUbiquitousLanguageLayerOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[180]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUbiquitousLanguageLayerOverviewRequest) ProtoMessage() {}
+
+func (x *GetUbiquitousLanguageLayerOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[180]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUbiquitousLanguageLayerOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetUbiquitousLanguageLayerOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{180}
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetUbiquitousLanguageLayerOverviewResponse struct {
+	state                              protoimpl.MessageState   `protogen:"open.v1"`
+	Items                              []*UbiquitousCaptureItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion                string                   `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	ExplicitActionNoBackgroundSniffing bool                     `protobuf:"varint,3,opt,name=explicit_action_no_background_sniffing,json=explicitActionNoBackgroundSniffing,proto3" json:"explicit_action_no_background_sniffing,omitempty"`
+	GovernanceSummary                  string                   `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) Reset() {
+	*x = GetUbiquitousLanguageLayerOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[181]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUbiquitousLanguageLayerOverviewResponse) ProtoMessage() {}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[181]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUbiquitousLanguageLayerOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetUbiquitousLanguageLayerOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{181}
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) GetItems() []*UbiquitousCaptureItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) GetExplicitActionNoBackgroundSniffing() bool {
+	if x != nil {
+		return x.ExplicitActionNoBackgroundSniffing
+	}
+	return false
+}
+
+func (x *GetUbiquitousLanguageLayerOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type CaptureExplicitLanguageLookupRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) Reset() {
+	*x = CaptureExplicitLanguageLookupRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[182]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureExplicitLanguageLookupRequest) ProtoMessage() {}
+
+func (x *CaptureExplicitLanguageLookupRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[182]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureExplicitLanguageLookupRequest.ProtoReflect.Descriptor instead.
+func (*CaptureExplicitLanguageLookupRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{182}
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CaptureExplicitLanguageLookupRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type CaptureExplicitLanguageLookupResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *UbiquitousCaptureItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CaptureExplicitLanguageLookupResponse) Reset() {
+	*x = CaptureExplicitLanguageLookupResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[183]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CaptureExplicitLanguageLookupResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CaptureExplicitLanguageLookupResponse) ProtoMessage() {}
+
+func (x *CaptureExplicitLanguageLookupResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[183]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CaptureExplicitLanguageLookupResponse.ProtoReflect.Descriptor instead.
+func (*CaptureExplicitLanguageLookupResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{183}
+}
+
+func (x *CaptureExplicitLanguageLookupResponse) GetItem() *UbiquitousCaptureItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ConfirmCapturedSenseToMasteryRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) Reset() {
+	*x = ConfirmCapturedSenseToMasteryRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[184]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmCapturedSenseToMasteryRequest) ProtoMessage() {}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[184]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmCapturedSenseToMasteryRequest.ProtoReflect.Descriptor instead.
+func (*ConfirmCapturedSenseToMasteryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{184}
+}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ConfirmCapturedSenseToMasteryRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ConfirmCapturedSenseToMasteryResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *UbiquitousCaptureItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfirmCapturedSenseToMasteryResponse) Reset() {
+	*x = ConfirmCapturedSenseToMasteryResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[185]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmCapturedSenseToMasteryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmCapturedSenseToMasteryResponse) ProtoMessage() {}
+
+func (x *ConfirmCapturedSenseToMasteryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[185]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmCapturedSenseToMasteryResponse.ProtoReflect.Descriptor instead.
+func (*ConfirmCapturedSenseToMasteryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{185}
+}
+
+func (x *ConfirmCapturedSenseToMasteryResponse) GetItem() *UbiquitousCaptureItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ProfessionalHeritageItem struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                       string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                          string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                         string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                  string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice               string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NonLicensedInterpreterBoundary bool                   `protobuf:"varint,8,opt,name=non_licensed_interpreter_boundary,json=nonLicensedInterpreterBoundary,proto3" json:"non_licensed_interpreter_boundary,omitempty"`
+	UpdatedAt                      string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *ProfessionalHeritageItem) Reset() {
+	*x = ProfessionalHeritageItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[186]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProfessionalHeritageItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProfessionalHeritageItem) ProtoMessage() {}
+
+func (x *ProfessionalHeritageItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[186]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProfessionalHeritageItem.ProtoReflect.Descriptor instead.
+func (*ProfessionalHeritageItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{186}
+}
+
+func (x *ProfessionalHeritageItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *ProfessionalHeritageItem) GetNonLicensedInterpreterBoundary() bool {
+	if x != nil {
+		return x.NonLicensedInterpreterBoundary
+	}
+	return false
+}
+
+func (x *ProfessionalHeritageItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetProfessionalHeritagePathwaysOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewRequest) Reset() {
+	*x = GetProfessionalHeritagePathwaysOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[187]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetProfessionalHeritagePathwaysOverviewRequest) ProtoMessage() {}
+
+func (x *GetProfessionalHeritagePathwaysOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[187]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetProfessionalHeritagePathwaysOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetProfessionalHeritagePathwaysOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{187}
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetProfessionalHeritagePathwaysOverviewResponse struct {
+	state                          protoimpl.MessageState      `protogen:"open.v1"`
+	Items                          []*ProfessionalHeritageItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion            string                      `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NonLicensedInterpreterBoundary bool                        `protobuf:"varint,3,opt,name=non_licensed_interpreter_boundary,json=nonLicensedInterpreterBoundary,proto3" json:"non_licensed_interpreter_boundary,omitempty"`
+	GovernanceSummary              string                      `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) Reset() {
+	*x = GetProfessionalHeritagePathwaysOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetProfessionalHeritagePathwaysOverviewResponse) ProtoMessage() {}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetProfessionalHeritagePathwaysOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetProfessionalHeritagePathwaysOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) GetItems() []*ProfessionalHeritageItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) GetNonLicensedInterpreterBoundary() bool {
+	if x != nil {
+		return x.NonLicensedInterpreterBoundary
+	}
+	return false
+}
+
+func (x *GetProfessionalHeritagePathwaysOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type EnrollProfessionalOrHeritageTrackRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) Reset() {
+	*x = EnrollProfessionalOrHeritageTrackRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrollProfessionalOrHeritageTrackRequest) ProtoMessage() {}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrollProfessionalOrHeritageTrackRequest.ProtoReflect.Descriptor instead.
+func (*EnrollProfessionalOrHeritageTrackRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{189}
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *EnrollProfessionalOrHeritageTrackRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type EnrollProfessionalOrHeritageTrackResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Item          *ProfessionalHeritageItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EnrollProfessionalOrHeritageTrackResponse) Reset() {
+	*x = EnrollProfessionalOrHeritageTrackResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EnrollProfessionalOrHeritageTrackResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EnrollProfessionalOrHeritageTrackResponse) ProtoMessage() {}
+
+func (x *EnrollProfessionalOrHeritageTrackResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EnrollProfessionalOrHeritageTrackResponse.ProtoReflect.Descriptor instead.
+func (*EnrollProfessionalOrHeritageTrackResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *EnrollProfessionalOrHeritageTrackResponse) GetItem() *ProfessionalHeritageItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RecordHeritageLiteracyMilestoneRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) Reset() {
+	*x = RecordHeritageLiteracyMilestoneRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordHeritageLiteracyMilestoneRequest) ProtoMessage() {}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordHeritageLiteracyMilestoneRequest.ProtoReflect.Descriptor instead.
+func (*RecordHeritageLiteracyMilestoneRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *RecordHeritageLiteracyMilestoneRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type RecordHeritageLiteracyMilestoneResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Item          *ProfessionalHeritageItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordHeritageLiteracyMilestoneResponse) Reset() {
+	*x = RecordHeritageLiteracyMilestoneResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordHeritageLiteracyMilestoneResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordHeritageLiteracyMilestoneResponse) ProtoMessage() {}
+
+func (x *RecordHeritageLiteracyMilestoneResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordHeritageLiteracyMilestoneResponse.ProtoReflect.Descriptor instead.
+func (*RecordHeritageLiteracyMilestoneResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *RecordHeritageLiteracyMilestoneResponse) GetItem() *ProfessionalHeritageItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ClassroomCohortItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                         string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                           string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                    string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                  string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                 string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	PrivateSelfStudyIsolatedEnforced bool                   `protobuf:"varint,8,opt,name=private_self_study_isolated_enforced,json=privateSelfStudyIsolatedEnforced,proto3" json:"private_self_study_isolated_enforced,omitempty"`
+	UpdatedAt                        string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *ClassroomCohortItem) Reset() {
+	*x = ClassroomCohortItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClassroomCohortItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClassroomCohortItem) ProtoMessage() {}
+
+func (x *ClassroomCohortItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClassroomCohortItem.ProtoReflect.Descriptor instead.
+func (*ClassroomCohortItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *ClassroomCohortItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *ClassroomCohortItem) GetPrivateSelfStudyIsolatedEnforced() bool {
+	if x != nil {
+		return x.PrivateSelfStudyIsolatedEnforced
+	}
+	return false
+}
+
+func (x *ClassroomCohortItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetTeacherClassroomOsOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTeacherClassroomOsOverviewRequest) Reset() {
+	*x = GetTeacherClassroomOsOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTeacherClassroomOsOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTeacherClassroomOsOverviewRequest) ProtoMessage() {}
+
+func (x *GetTeacherClassroomOsOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTeacherClassroomOsOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetTeacherClassroomOsOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *GetTeacherClassroomOsOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetTeacherClassroomOsOverviewResponse struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Items                            []*ClassroomCohortItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion              string                 `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	PrivateSelfStudyIsolatedEnforced bool                   `protobuf:"varint,3,opt,name=private_self_study_isolated_enforced,json=privateSelfStudyIsolatedEnforced,proto3" json:"private_self_study_isolated_enforced,omitempty"`
+	GovernanceSummary                string                 `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) Reset() {
+	*x = GetTeacherClassroomOsOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTeacherClassroomOsOverviewResponse) ProtoMessage() {}
+
+func (x *GetTeacherClassroomOsOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTeacherClassroomOsOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetTeacherClassroomOsOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) GetItems() []*ClassroomCohortItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) GetPrivateSelfStudyIsolatedEnforced() bool {
+	if x != nil {
+		return x.PrivateSelfStudyIsolatedEnforced
+	}
+	return false
+}
+
+func (x *GetTeacherClassroomOsOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type CreateClassroomCohortAssignmentRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) Reset() {
+	*x = CreateClassroomCohortAssignmentRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateClassroomCohortAssignmentRequest) ProtoMessage() {}
+
+func (x *CreateClassroomCohortAssignmentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateClassroomCohortAssignmentRequest.ProtoReflect.Descriptor instead.
+func (*CreateClassroomCohortAssignmentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CreateClassroomCohortAssignmentRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type CreateClassroomCohortAssignmentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ClassroomCohortItem   `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateClassroomCohortAssignmentResponse) Reset() {
+	*x = CreateClassroomCohortAssignmentResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateClassroomCohortAssignmentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateClassroomCohortAssignmentResponse) ProtoMessage() {}
+
+func (x *CreateClassroomCohortAssignmentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateClassroomCohortAssignmentResponse.ProtoReflect.Descriptor instead.
+func (*CreateClassroomCohortAssignmentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *CreateClassroomCohortAssignmentResponse) GetItem() *ClassroomCohortItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ApproveOrDisputeTeacherProposalRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) Reset() {
+	*x = ApproveOrDisputeTeacherProposalRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrDisputeTeacherProposalRequest) ProtoMessage() {}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrDisputeTeacherProposalRequest.ProtoReflect.Descriptor instead.
+func (*ApproveOrDisputeTeacherProposalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ApproveOrDisputeTeacherProposalRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ApproveOrDisputeTeacherProposalResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *ClassroomCohortItem   `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveOrDisputeTeacherProposalResponse) Reset() {
+	*x = ApproveOrDisputeTeacherProposalResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrDisputeTeacherProposalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrDisputeTeacherProposalResponse) ProtoMessage() {}
+
+func (x *ApproveOrDisputeTeacherProposalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrDisputeTeacherProposalResponse.ProtoReflect.Descriptor instead.
+func (*ApproveOrDisputeTeacherProposalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *ApproveOrDisputeTeacherProposalResponse) GetItem() *ClassroomCohortItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type SustainableHabitItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                        string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                          string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                   string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                 string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoClinicalDiagnosisOrPunishment bool                   `protobuf:"varint,8,opt,name=no_clinical_diagnosis_or_punishment,json=noClinicalDiagnosisOrPunishment,proto3" json:"no_clinical_diagnosis_or_punishment,omitempty"`
+	UpdatedAt                       string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SustainableHabitItem) Reset() {
+	*x = SustainableHabitItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SustainableHabitItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SustainableHabitItem) ProtoMessage() {}
+
+func (x *SustainableHabitItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SustainableHabitItem.ProtoReflect.Descriptor instead.
+func (*SustainableHabitItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{200}
+}
+
+func (x *SustainableHabitItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *SustainableHabitItem) GetNoClinicalDiagnosisOrPunishment() bool {
+	if x != nil {
+		return x.NoClinicalDiagnosisOrPunishment
+	}
+	return false
+}
+
+func (x *SustainableHabitItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetSustainableMotivationLabOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSustainableMotivationLabOverviewRequest) Reset() {
+	*x = GetSustainableMotivationLabOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSustainableMotivationLabOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSustainableMotivationLabOverviewRequest) ProtoMessage() {}
+
+func (x *GetSustainableMotivationLabOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSustainableMotivationLabOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetSustainableMotivationLabOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *GetSustainableMotivationLabOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetSustainableMotivationLabOverviewResponse struct {
+	state                           protoimpl.MessageState  `protogen:"open.v1"`
+	Items                           []*SustainableHabitItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion             string                  `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoClinicalDiagnosisOrPunishment bool                    `protobuf:"varint,3,opt,name=no_clinical_diagnosis_or_punishment,json=noClinicalDiagnosisOrPunishment,proto3" json:"no_clinical_diagnosis_or_punishment,omitempty"`
+	GovernanceSummary               string                  `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) Reset() {
+	*x = GetSustainableMotivationLabOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSustainableMotivationLabOverviewResponse) ProtoMessage() {}
+
+func (x *GetSustainableMotivationLabOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSustainableMotivationLabOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetSustainableMotivationLabOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) GetItems() []*SustainableHabitItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) GetNoClinicalDiagnosisOrPunishment() bool {
+	if x != nil {
+		return x.NoClinicalDiagnosisOrPunishment
+	}
+	return false
+}
+
+func (x *GetSustainableMotivationLabOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type UpdateSustainableHabitContractRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpdateSustainableHabitContractRequest) Reset() {
+	*x = UpdateSustainableHabitContractRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSustainableHabitContractRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSustainableHabitContractRequest) ProtoMessage() {}
+
+func (x *UpdateSustainableHabitContractRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSustainableHabitContractRequest.ProtoReflect.Descriptor instead.
+func (*UpdateSustainableHabitContractRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{203}
+}
+
+func (x *UpdateSustainableHabitContractRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UpdateSustainableHabitContractRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpdateSustainableHabitContractRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UpdateSustainableHabitContractRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type UpdateSustainableHabitContractResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *SustainableHabitItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateSustainableHabitContractResponse) Reset() {
+	*x = UpdateSustainableHabitContractResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateSustainableHabitContractResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateSustainableHabitContractResponse) ProtoMessage() {}
+
+func (x *UpdateSustainableHabitContractResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateSustainableHabitContractResponse.ProtoReflect.Descriptor instead.
+func (*UpdateSustainableHabitContractResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *UpdateSustainableHabitContractResponse) GetItem() *SustainableHabitItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RecordDelayedRetentionExperimentRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordDelayedRetentionExperimentRequest) Reset() {
+	*x = RecordDelayedRetentionExperimentRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordDelayedRetentionExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordDelayedRetentionExperimentRequest) ProtoMessage() {}
+
+func (x *RecordDelayedRetentionExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordDelayedRetentionExperimentRequest.ProtoReflect.Descriptor instead.
+func (*RecordDelayedRetentionExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *RecordDelayedRetentionExperimentRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RecordDelayedRetentionExperimentRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *RecordDelayedRetentionExperimentRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type RecordDelayedRetentionExperimentResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *SustainableHabitItem  `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordDelayedRetentionExperimentResponse) Reset() {
+	*x = RecordDelayedRetentionExperimentResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordDelayedRetentionExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordDelayedRetentionExperimentResponse) ProtoMessage() {}
+
+func (x *RecordDelayedRetentionExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordDelayedRetentionExperimentResponse.ProtoReflect.Descriptor instead.
+func (*RecordDelayedRetentionExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *RecordDelayedRetentionExperimentResponse) GetItem() *SustainableHabitItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type OfflineAccessibilityCertItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	FullModalityFallbackCertified bool                   `protobuf:"varint,8,opt,name=full_modality_fallback_certified,json=fullModalityFallbackCertified,proto3" json:"full_modality_fallback_certified,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *OfflineAccessibilityCertItem) Reset() {
+	*x = OfflineAccessibilityCertItem{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[207]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OfflineAccessibilityCertItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OfflineAccessibilityCertItem) ProtoMessage() {}
+
+func (x *OfflineAccessibilityCertItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[207]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OfflineAccessibilityCertItem.ProtoReflect.Descriptor instead.
+func (*OfflineAccessibilityCertItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{207}
+}
+
+func (x *OfflineAccessibilityCertItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *OfflineAccessibilityCertItem) GetFullModalityFallbackCertified() bool {
+	if x != nil {
+		return x.FullModalityFallbackCertified
+	}
+	return false
+}
+
+func (x *OfflineAccessibilityCertItem) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetOfflineAccessibilityMigrationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewRequest) Reset() {
+	*x = GetOfflineAccessibilityMigrationOverviewRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[208]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOfflineAccessibilityMigrationOverviewRequest) ProtoMessage() {}
+
+func (x *GetOfflineAccessibilityMigrationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[208]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOfflineAccessibilityMigrationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetOfflineAccessibilityMigrationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{208}
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetOfflineAccessibilityMigrationOverviewResponse struct {
+	state                         protoimpl.MessageState          `protogen:"open.v1"`
+	Items                         []*OfflineAccessibilityCertItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                          `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	FullModalityFallbackCertified bool                            `protobuf:"varint,3,opt,name=full_modality_fallback_certified,json=fullModalityFallbackCertified,proto3" json:"full_modality_fallback_certified,omitempty"`
+	GovernanceSummary             string                          `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) Reset() {
+	*x = GetOfflineAccessibilityMigrationOverviewResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[209]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOfflineAccessibilityMigrationOverviewResponse) ProtoMessage() {}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[209]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOfflineAccessibilityMigrationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetOfflineAccessibilityMigrationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{209}
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) GetItems() []*OfflineAccessibilityCertItem {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) GetFullModalityFallbackCertified() bool {
+	if x != nil {
+		return x.FullModalityFallbackCertified
+	}
+	return false
+}
+
+func (x *GetOfflineAccessibilityMigrationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type CertifyOfflineAccessibilityPackRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) Reset() {
+	*x = CertifyOfflineAccessibilityPackRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[210]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CertifyOfflineAccessibilityPackRequest) ProtoMessage() {}
+
+func (x *CertifyOfflineAccessibilityPackRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[210]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CertifyOfflineAccessibilityPackRequest.ProtoReflect.Descriptor instead.
+func (*CertifyOfflineAccessibilityPackRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{210}
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CertifyOfflineAccessibilityPackRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type CertifyOfflineAccessibilityPackResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *OfflineAccessibilityCertItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CertifyOfflineAccessibilityPackResponse) Reset() {
+	*x = CertifyOfflineAccessibilityPackResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[211]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CertifyOfflineAccessibilityPackResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CertifyOfflineAccessibilityPackResponse) ProtoMessage() {}
+
+func (x *CertifyOfflineAccessibilityPackResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[211]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CertifyOfflineAccessibilityPackResponse.ProtoReflect.Descriptor instead.
+func (*CertifyOfflineAccessibilityPackResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{211}
+}
+
+func (x *CertifyOfflineAccessibilityPackResponse) GetItem() *OfflineAccessibilityCertItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RunCompetitorMigrationImportRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunCompetitorMigrationImportRequest) Reset() {
+	*x = RunCompetitorMigrationImportRequest{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[212]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunCompetitorMigrationImportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunCompetitorMigrationImportRequest) ProtoMessage() {}
+
+func (x *RunCompetitorMigrationImportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[212]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunCompetitorMigrationImportRequest.ProtoReflect.Descriptor instead.
+func (*RunCompetitorMigrationImportRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{212}
+}
+
+func (x *RunCompetitorMigrationImportRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RunCompetitorMigrationImportRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *RunCompetitorMigrationImportRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type RunCompetitorMigrationImportResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *OfflineAccessibilityCertItem `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunCompetitorMigrationImportResponse) Reset() {
+	*x = RunCompetitorMigrationImportResponse{}
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[213]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunCompetitorMigrationImportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunCompetitorMigrationImportResponse) ProtoMessage() {}
+
+func (x *RunCompetitorMigrationImportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_languages_v1_languages_proto_msgTypes[213]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunCompetitorMigrationImportResponse.ProtoReflect.Descriptor instead.
+func (*RunCompetitorMigrationImportResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_languages_v1_languages_proto_rawDescGZIP(), []int{213}
+}
+
+func (x *RunCompetitorMigrationImportResponse) GetItem() *OfflineAccessibilityCertItem {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
 var File_sttattus_languages_v1_languages_proto protoreflect.FileDescriptor
 
 const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
@@ -11121,7 +15917,359 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x1aDismissWritingFlagResponse\x12H\n" +
 	"\n" +
 	"submission\x18\x01 \x01(\v2(.sttattus.languages.v1.WritingSubmissionR\n" +
-	"submission*\xc1\x01\n" +
+	"submission\"\xda\x02\n" +
+	"\x15ImmersionUniverseItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12H\n" +
+	"!rights_and_account_fence_enforced\x18\b \x01(\bR\x1drightsAndAccountFenceEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"J\n" +
+	"#GetImmersionUniverseOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x97\x02\n" +
+	"$GetImmersionUniverseOverviewResponse\x12B\n" +
+	"\x05items\x18\x01 \x03(\v2,.sttattus.languages.v1.ImmersionUniverseItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12H\n" +
+	"!rights_and_account_fence_enforced\x18\x03 \x01(\bR\x1drightsAndAccountFenceEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaa\x01\n" +
+	"#ImportPersonalImmersionMediaRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"h\n" +
+	"$ImportPersonalImmersionMediaResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.ImmersionUniverseItemR\x04item\"\x82\x01\n" +
+	"!CaptureContextConceptSenseRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"f\n" +
+	"\"CaptureContextConceptSenseResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.ImmersionUniverseItemR\x04item\"\xd3\x02\n" +
+	"\x13WritingRegisterItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12C\n" +
+	"\x1eno_invisible_draft_replacement\x18\b \x01(\bR\x1bnoInvisibleDraftReplacement\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"N\n" +
+	"'GetWritingRegisterStudioOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x94\x02\n" +
+	"(GetWritingRegisterStudioOverviewResponse\x12@\n" +
+	"\x05items\x18\x01 \x03(\v2*.sttattus.languages.v1.WritingRegisterItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12C\n" +
+	"\x1eno_invisible_draft_replacement\x18\x03 \x01(\bR\x1bnoInvisibleDraftReplacement\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xa8\x01\n" +
+	"!SubmitWritingRegisterDraftRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"d\n" +
+	"\"SubmitWritingRegisterDraftResponse\x12>\n" +
+	"\x04item\x18\x01 \x01(\v2*.sttattus.languages.v1.WritingRegisterItemR\x04item\"\x85\x01\n" +
+	"$VerifyDelayedRegisterTransferRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"g\n" +
+	"%VerifyDelayedRegisterTransferResponse\x12>\n" +
+	"\x04item\x18\x01 \x01(\v2*.sttattus.languages.v1.WritingRegisterItemR\x04item\"\xe5\x02\n" +
+	"\x15TutoringCommunityItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12S\n" +
+	"'double_blind_and_minors_safety_enforced\x18\b \x01(\bR\"doubleBlindAndMinorsSafetyEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"O\n" +
+	"(GetHumanTutoringCommunityOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa7\x02\n" +
+	")GetHumanTutoringCommunityOverviewResponse\x12B\n" +
+	"\x05items\x18\x01 \x03(\v2,.sttattus.languages.v1.TutoringCommunityItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12S\n" +
+	"'double_blind_and_minors_safety_enforced\x18\x03 \x01(\bR\"doubleBlindAndMinorsSafetyEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xa1\x01\n" +
+	"\x1aBookOrAskHumanTutorRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"_\n" +
+	"\x1bBookOrAskHumanTutorResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.TutoringCommunityItemR\x04item\"\x88\x01\n" +
+	"'SubmitDoubleBlindCommunityReviewRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"l\n" +
+	"(SubmitDoubleBlindCommunityReviewResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.TutoringCommunityItemR\x04item\"\xde\x02\n" +
+	"\x12AssessmentCertItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12O\n" +
+	"$revocable_signed_credential_enforced\x18\b \x01(\bR!revocableSignedCredentialEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"P\n" +
+	")GetAssessmentCertificationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa1\x02\n" +
+	"*GetAssessmentCertificationOverviewResponse\x12?\n" +
+	"\x05items\x18\x01 \x03(\v2).sttattus.languages.v1.AssessmentCertItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12O\n" +
+	"$revocable_signed_credential_enforced\x18\x03 \x01(\bR!revocableSignedCredentialEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaa\x01\n" +
+	"#RunAdaptiveDiagnosticSessionRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"e\n" +
+	"$RunAdaptiveDiagnosticSessionResponse\x12=\n" +
+	"\x04item\x18\x01 \x01(\v2).sttattus.languages.v1.AssessmentCertItemR\x04item\"\x86\x01\n" +
+	"%IssueOrRevokeSignedCertificateRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"g\n" +
+	"&IssueOrRevokeSignedCertificateResponse\x12=\n" +
+	"\x04item\x18\x01 \x01(\v2).sttattus.languages.v1.AssessmentCertItemR\x04item\"\xd8\x02\n" +
+	"\x14CultureSupertoolItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12G\n" +
+	" no_national_stereotypes_enforced\x18\b \x01(\bR\x1dnoNationalStereotypesEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"S\n" +
+	",GetCultureReferenceSupertoolsOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x9e\x02\n" +
+	"-GetCultureReferenceSupertoolsOverviewResponse\x12A\n" +
+	"\x05items\x18\x01 \x03(\v2+.sttattus.languages.v1.CultureSupertoolItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12G\n" +
+	" no_national_stereotypes_enforced\x18\x03 \x01(\bR\x1dnoNationalStereotypesEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xab\x01\n" +
+	"$RunSupertoolConcordanceLookupRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"h\n" +
+	"%RunSupertoolConcordanceLookupResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.CultureSupertoolItemR\x04item\"\x88\x01\n" +
+	"'CompleteCulturalPragmaticsBranchRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"k\n" +
+	"(CompleteCulturalPragmaticsBranchResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.CultureSupertoolItemR\x04item\"\xd7\x02\n" +
+	"\x14RealWorldMissionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12F\n" +
+	" never_inferred_from_gps_enforced\x18\b \x01(\bR\x1cneverInferredFromGpsEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"S\n" +
+	",GetRealWorldMissionsPortfolioOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x9d\x02\n" +
+	"-GetRealWorldMissionsPortfolioOverviewResponse\x12A\n" +
+	"\x05items\x18\x01 \x03(\v2+.sttattus.languages.v1.RealWorldMissionItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12F\n" +
+	" never_inferred_from_gps_enforced\x18\x03 \x01(\bR\x1cneverInferredFromGpsEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xae\x01\n" +
+	"'AttestRealWorldMissionCompletionRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"k\n" +
+	"(AttestRealWorldMissionCompletionResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.RealWorldMissionItemR\x04item\"\x8d\x01\n" +
+	",PublishCommunicativePortfolioArtifactRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"p\n" +
+	"-PublishCommunicativePortfolioArtifactResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.RealWorldMissionItemR\x04item\"\xe4\x02\n" +
+	"\x15UbiquitousCaptureItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12R\n" +
+	"&explicit_action_no_background_sniffing\x18\b \x01(\bR\"explicitActionNoBackgroundSniffing\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"P\n" +
+	")GetUbiquitousLanguageLayerOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa7\x02\n" +
+	"*GetUbiquitousLanguageLayerOverviewResponse\x12B\n" +
+	"\x05items\x18\x01 \x03(\v2,.sttattus.languages.v1.UbiquitousCaptureItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12R\n" +
+	"&explicit_action_no_background_sniffing\x18\x03 \x01(\bR\"explicitActionNoBackgroundSniffing\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xab\x01\n" +
+	"$CaptureExplicitLanguageLookupRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"i\n" +
+	"%CaptureExplicitLanguageLookupResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.UbiquitousCaptureItemR\x04item\"\x85\x01\n" +
+	"$ConfirmCapturedSenseToMasteryRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"i\n" +
+	"%ConfirmCapturedSenseToMasteryResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.languages.v1.UbiquitousCaptureItemR\x04item\"\xde\x02\n" +
+	"\x18ProfessionalHeritageItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12I\n" +
+	"!non_licensed_interpreter_boundary\x18\b \x01(\bR\x1enonLicensedInterpreterBoundary\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"U\n" +
+	".GetProfessionalHeritagePathwaysOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa6\x02\n" +
+	"/GetProfessionalHeritagePathwaysOverviewResponse\x12E\n" +
+	"\x05items\x18\x01 \x03(\v2/.sttattus.languages.v1.ProfessionalHeritageItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12I\n" +
+	"!non_licensed_interpreter_boundary\x18\x03 \x01(\bR\x1enonLicensedInterpreterBoundary\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaf\x01\n" +
+	"(EnrollProfessionalOrHeritageTrackRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"p\n" +
+	")EnrollProfessionalOrHeritageTrackResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.languages.v1.ProfessionalHeritageItemR\x04item\"\x87\x01\n" +
+	"&RecordHeritageLiteracyMilestoneRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"n\n" +
+	"'RecordHeritageLiteracyMilestoneResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.languages.v1.ProfessionalHeritageItemR\x04item\"\xde\x02\n" +
+	"\x13ClassroomCohortItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12N\n" +
+	"$private_self_study_isolated_enforced\x18\b \x01(\bR privateSelfStudyIsolatedEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"K\n" +
+	"$GetTeacherClassroomOsOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x9c\x02\n" +
+	"%GetTeacherClassroomOsOverviewResponse\x12@\n" +
+	"\x05items\x18\x01 \x03(\v2*.sttattus.languages.v1.ClassroomCohortItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12N\n" +
+	"$private_self_study_isolated_enforced\x18\x03 \x01(\bR privateSelfStudyIsolatedEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xad\x01\n" +
+	"&CreateClassroomCohortAssignmentRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"i\n" +
+	"'CreateClassroomCohortAssignmentResponse\x12>\n" +
+	"\x04item\x18\x01 \x01(\v2*.sttattus.languages.v1.ClassroomCohortItemR\x04item\"\x87\x01\n" +
+	"&ApproveOrDisputeTeacherProposalRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"i\n" +
+	"'ApproveOrDisputeTeacherProposalResponse\x12>\n" +
+	"\x04item\x18\x01 \x01(\v2*.sttattus.languages.v1.ClassroomCohortItemR\x04item\"\xdd\x02\n" +
+	"\x14SustainableHabitItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12L\n" +
+	"#no_clinical_diagnosis_or_punishment\x18\b \x01(\bR\x1fnoClinicalDiagnosisOrPunishment\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"Q\n" +
+	"*GetSustainableMotivationLabOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa1\x02\n" +
+	"+GetSustainableMotivationLabOverviewResponse\x12A\n" +
+	"\x05items\x18\x01 \x03(\v2+.sttattus.languages.v1.SustainableHabitItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12L\n" +
+	"#no_clinical_diagnosis_or_punishment\x18\x03 \x01(\bR\x1fnoClinicalDiagnosisOrPunishment\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xac\x01\n" +
+	"%UpdateSustainableHabitContractRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"i\n" +
+	"&UpdateSustainableHabitContractResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.SustainableHabitItemR\x04item\"\x88\x01\n" +
+	"'RecordDelayedRetentionExperimentRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"k\n" +
+	"(RecordDelayedRetentionExperimentResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.languages.v1.SustainableHabitItemR\x04item\"\xe0\x02\n" +
+	"\x1cOfflineAccessibilityCertItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12G\n" +
+	" full_modality_fallback_certified\x18\b \x01(\bR\x1dfullModalityFallbackCertified\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"V\n" +
+	"/GetOfflineAccessibilityMigrationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa9\x02\n" +
+	"0GetOfflineAccessibilityMigrationOverviewResponse\x12I\n" +
+	"\x05items\x18\x01 \x03(\v23.sttattus.languages.v1.OfflineAccessibilityCertItemR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12G\n" +
+	" full_modality_fallback_certified\x18\x03 \x01(\bR\x1dfullModalityFallbackCertified\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xad\x01\n" +
+	"&CertifyOfflineAccessibilityPackRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"r\n" +
+	"'CertifyOfflineAccessibilityPackResponse\x12G\n" +
+	"\x04item\x18\x01 \x01(\v23.sttattus.languages.v1.OfflineAccessibilityCertItemR\x04item\"\x84\x01\n" +
+	"#RunCompetitorMigrationImportRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"o\n" +
+	"$RunCompetitorMigrationImportResponse\x12G\n" +
+	"\x04item\x18\x01 \x01(\v23.sttattus.languages.v1.OfflineAccessibilityCertItemR\x04item*\xc1\x01\n" +
 	"\x10CulturalCategory\x12!\n" +
 	"\x1dCULTURAL_CATEGORY_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bCULTURAL_CATEGORY_DIPLOMACY\x10\x01\x12#\n" +
@@ -11243,7 +16391,7 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\x17PLAN_REASON_CODE_RETEST\x10\n" +
 	"\x12!\n" +
 	"\x1dPLAN_REASON_CODE_CONVERSATION\x10\v\x12\x1a\n" +
-	"\x16PLAN_REASON_CODE_SOUND\x10\f2\x89-\n" +
+	"\x16PLAN_REASON_CODE_SOUND\x10\f2\xa3W\n" +
 	"\x10LanguagesService\x12j\n" +
 	"\rListScenarios\x12+.sttattus.languages.v1.ListScenariosRequest\x1a,.sttattus.languages.v1.ListScenariosResponse\x12|\n" +
 	"\x13CompleteInteraction\x121.sttattus.languages.v1.CompleteInteractionRequest\x1a2.sttattus.languages.v1.CompleteInteractionResponse\x12s\n" +
@@ -11293,7 +16441,40 @@ const file_sttattus_languages_v1_languages_proto_rawDesc = "" +
 	"\rGetMasteryMap\x12+.sttattus.languages.v1.GetMasteryMapRequest\x1a,.sttattus.languages.v1.GetMasteryMapResponse\x12p\n" +
 	"\x0fGetNodeEvidence\x12-.sttattus.languages.v1.GetNodeEvidenceRequest\x1a..sttattus.languages.v1.GetNodeEvidenceResponse\x12y\n" +
 	"\x12DismissWritingFlag\x120.sttattus.languages.v1.DismissWritingFlagRequest\x1a1.sttattus.languages.v1.DismissWritingFlagResponse\x12^\n" +
-	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
+	"\tListWords\x12'.sttattus.languages.v1.ListWordsRequest\x1a(.sttattus.languages.v1.ListWordsResponse\x12\x97\x01\n" +
+	"\x1cGetImmersionUniverseOverview\x12:.sttattus.languages.v1.GetImmersionUniverseOverviewRequest\x1a;.sttattus.languages.v1.GetImmersionUniverseOverviewResponse\x12\x97\x01\n" +
+	"\x1cImportPersonalImmersionMedia\x12:.sttattus.languages.v1.ImportPersonalImmersionMediaRequest\x1a;.sttattus.languages.v1.ImportPersonalImmersionMediaResponse\x12\x91\x01\n" +
+	"\x1aCaptureContextConceptSense\x128.sttattus.languages.v1.CaptureContextConceptSenseRequest\x1a9.sttattus.languages.v1.CaptureContextConceptSenseResponse\x12\xa3\x01\n" +
+	" GetWritingRegisterStudioOverview\x12>.sttattus.languages.v1.GetWritingRegisterStudioOverviewRequest\x1a?.sttattus.languages.v1.GetWritingRegisterStudioOverviewResponse\x12\x91\x01\n" +
+	"\x1aSubmitWritingRegisterDraft\x128.sttattus.languages.v1.SubmitWritingRegisterDraftRequest\x1a9.sttattus.languages.v1.SubmitWritingRegisterDraftResponse\x12\x9a\x01\n" +
+	"\x1dVerifyDelayedRegisterTransfer\x12;.sttattus.languages.v1.VerifyDelayedRegisterTransferRequest\x1a<.sttattus.languages.v1.VerifyDelayedRegisterTransferResponse\x12\xa6\x01\n" +
+	"!GetHumanTutoringCommunityOverview\x12?.sttattus.languages.v1.GetHumanTutoringCommunityOverviewRequest\x1a@.sttattus.languages.v1.GetHumanTutoringCommunityOverviewResponse\x12|\n" +
+	"\x13BookOrAskHumanTutor\x121.sttattus.languages.v1.BookOrAskHumanTutorRequest\x1a2.sttattus.languages.v1.BookOrAskHumanTutorResponse\x12\xa3\x01\n" +
+	" SubmitDoubleBlindCommunityReview\x12>.sttattus.languages.v1.SubmitDoubleBlindCommunityReviewRequest\x1a?.sttattus.languages.v1.SubmitDoubleBlindCommunityReviewResponse\x12\xa9\x01\n" +
+	"\"GetAssessmentCertificationOverview\x12@.sttattus.languages.v1.GetAssessmentCertificationOverviewRequest\x1aA.sttattus.languages.v1.GetAssessmentCertificationOverviewResponse\x12\x97\x01\n" +
+	"\x1cRunAdaptiveDiagnosticSession\x12:.sttattus.languages.v1.RunAdaptiveDiagnosticSessionRequest\x1a;.sttattus.languages.v1.RunAdaptiveDiagnosticSessionResponse\x12\x9d\x01\n" +
+	"\x1eIssueOrRevokeSignedCertificate\x12<.sttattus.languages.v1.IssueOrRevokeSignedCertificateRequest\x1a=.sttattus.languages.v1.IssueOrRevokeSignedCertificateResponse\x12\xb2\x01\n" +
+	"%GetCultureReferenceSupertoolsOverview\x12C.sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewRequest\x1aD.sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewResponse\x12\x9a\x01\n" +
+	"\x1dRunSupertoolConcordanceLookup\x12;.sttattus.languages.v1.RunSupertoolConcordanceLookupRequest\x1a<.sttattus.languages.v1.RunSupertoolConcordanceLookupResponse\x12\xa3\x01\n" +
+	" CompleteCulturalPragmaticsBranch\x12>.sttattus.languages.v1.CompleteCulturalPragmaticsBranchRequest\x1a?.sttattus.languages.v1.CompleteCulturalPragmaticsBranchResponse\x12\xb2\x01\n" +
+	"%GetRealWorldMissionsPortfolioOverview\x12C.sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewRequest\x1aD.sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewResponse\x12\xa3\x01\n" +
+	" AttestRealWorldMissionCompletion\x12>.sttattus.languages.v1.AttestRealWorldMissionCompletionRequest\x1a?.sttattus.languages.v1.AttestRealWorldMissionCompletionResponse\x12\xb2\x01\n" +
+	"%PublishCommunicativePortfolioArtifact\x12C.sttattus.languages.v1.PublishCommunicativePortfolioArtifactRequest\x1aD.sttattus.languages.v1.PublishCommunicativePortfolioArtifactResponse\x12\xa9\x01\n" +
+	"\"GetUbiquitousLanguageLayerOverview\x12@.sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewRequest\x1aA.sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewResponse\x12\x9a\x01\n" +
+	"\x1dCaptureExplicitLanguageLookup\x12;.sttattus.languages.v1.CaptureExplicitLanguageLookupRequest\x1a<.sttattus.languages.v1.CaptureExplicitLanguageLookupResponse\x12\x9a\x01\n" +
+	"\x1dConfirmCapturedSenseToMastery\x12;.sttattus.languages.v1.ConfirmCapturedSenseToMasteryRequest\x1a<.sttattus.languages.v1.ConfirmCapturedSenseToMasteryResponse\x12\xb8\x01\n" +
+	"'GetProfessionalHeritagePathwaysOverview\x12E.sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewRequest\x1aF.sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewResponse\x12\xa6\x01\n" +
+	"!EnrollProfessionalOrHeritageTrack\x12?.sttattus.languages.v1.EnrollProfessionalOrHeritageTrackRequest\x1a@.sttattus.languages.v1.EnrollProfessionalOrHeritageTrackResponse\x12\xa0\x01\n" +
+	"\x1fRecordHeritageLiteracyMilestone\x12=.sttattus.languages.v1.RecordHeritageLiteracyMilestoneRequest\x1a>.sttattus.languages.v1.RecordHeritageLiteracyMilestoneResponse\x12\x9a\x01\n" +
+	"\x1dGetTeacherClassroomOsOverview\x12;.sttattus.languages.v1.GetTeacherClassroomOsOverviewRequest\x1a<.sttattus.languages.v1.GetTeacherClassroomOsOverviewResponse\x12\xa0\x01\n" +
+	"\x1fCreateClassroomCohortAssignment\x12=.sttattus.languages.v1.CreateClassroomCohortAssignmentRequest\x1a>.sttattus.languages.v1.CreateClassroomCohortAssignmentResponse\x12\xa0\x01\n" +
+	"\x1fApproveOrDisputeTeacherProposal\x12=.sttattus.languages.v1.ApproveOrDisputeTeacherProposalRequest\x1a>.sttattus.languages.v1.ApproveOrDisputeTeacherProposalResponse\x12\xac\x01\n" +
+	"#GetSustainableMotivationLabOverview\x12A.sttattus.languages.v1.GetSustainableMotivationLabOverviewRequest\x1aB.sttattus.languages.v1.GetSustainableMotivationLabOverviewResponse\x12\x9d\x01\n" +
+	"\x1eUpdateSustainableHabitContract\x12<.sttattus.languages.v1.UpdateSustainableHabitContractRequest\x1a=.sttattus.languages.v1.UpdateSustainableHabitContractResponse\x12\xa3\x01\n" +
+	" RecordDelayedRetentionExperiment\x12>.sttattus.languages.v1.RecordDelayedRetentionExperimentRequest\x1a?.sttattus.languages.v1.RecordDelayedRetentionExperimentResponse\x12\xbb\x01\n" +
+	"(GetOfflineAccessibilityMigrationOverview\x12F.sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewRequest\x1aG.sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewResponse\x12\xa0\x01\n" +
+	"\x1fCertifyOfflineAccessibilityPack\x12=.sttattus.languages.v1.CertifyOfflineAccessibilityPackRequest\x1a>.sttattus.languages.v1.CertifyOfflineAccessibilityPackResponse\x12\x97\x01\n" +
+	"\x1cRunCompetitorMigrationImport\x12:.sttattus.languages.v1.RunCompetitorMigrationImportRequest\x1a;.sttattus.languages.v1.RunCompetitorMigrationImportResponseBDZBgithub.com/sttattus/proto/gen/go/sttattus/languages/v1;languagesv1b\x06proto3"
 
 var (
 	file_sttattus_languages_v1_languages_proto_rawDescOnce sync.Once
@@ -11308,171 +16489,248 @@ func file_sttattus_languages_v1_languages_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_languages_v1_languages_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
-var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 138)
+var file_sttattus_languages_v1_languages_proto_msgTypes = make([]protoimpl.MessageInfo, 215)
 var file_sttattus_languages_v1_languages_proto_goTypes = []any{
-	(CulturalCategory)(0),                    // 0: sttattus.languages.v1.CulturalCategory
-	(ExerciseKind)(0),                        // 1: sttattus.languages.v1.ExerciseKind
-	(StudyItemKind)(0),                       // 2: sttattus.languages.v1.StudyItemKind
-	(NewMaterialStatus)(0),                   // 3: sttattus.languages.v1.NewMaterialStatus
-	(AnswerModality)(0),                      // 4: sttattus.languages.v1.AnswerModality
-	(AnswerErrorKind)(0),                     // 5: sttattus.languages.v1.AnswerErrorKind
-	(AnswerDiffOp)(0),                        // 6: sttattus.languages.v1.AnswerDiffOp
-	(MasterySkill)(0),                        // 7: sttattus.languages.v1.MasterySkill
-	(GoalMode)(0),                            // 8: sttattus.languages.v1.GoalMode
-	(PlanItemKind)(0),                        // 9: sttattus.languages.v1.PlanItemKind
-	(PlanItemState)(0),                       // 10: sttattus.languages.v1.PlanItemState
-	(PlanReasonCode)(0),                      // 11: sttattus.languages.v1.PlanReasonCode
-	(*CulturalNuance)(nil),                   // 12: sttattus.languages.v1.CulturalNuance
-	(*Scenario)(nil),                         // 13: sttattus.languages.v1.Scenario
-	(*DialogueNode)(nil),                     // 14: sttattus.languages.v1.DialogueNode
-	(*DialogueOption)(nil),                   // 15: sttattus.languages.v1.DialogueOption
-	(*Progress)(nil),                         // 16: sttattus.languages.v1.Progress
-	(*LinguistStats)(nil),                    // 17: sttattus.languages.v1.LinguistStats
-	(*ListScenariosRequest)(nil),             // 18: sttattus.languages.v1.ListScenariosRequest
-	(*ListScenariosResponse)(nil),            // 19: sttattus.languages.v1.ListScenariosResponse
-	(*CompleteInteractionRequest)(nil),       // 20: sttattus.languages.v1.CompleteInteractionRequest
-	(*CompleteInteractionResponse)(nil),      // 21: sttattus.languages.v1.CompleteInteractionResponse
-	(*GetLinguistStatsRequest)(nil),          // 22: sttattus.languages.v1.GetLinguistStatsRequest
-	(*GetLinguistStatsResponse)(nil),         // 23: sttattus.languages.v1.GetLinguistStatsResponse
-	(*CulturalModule)(nil),                   // 24: sttattus.languages.v1.CulturalModule
-	(*ListCulturalModulesRequest)(nil),       // 25: sttattus.languages.v1.ListCulturalModulesRequest
-	(*ListCulturalModulesResponse)(nil),      // 26: sttattus.languages.v1.ListCulturalModulesResponse
-	(*MarkCulturalCompletedRequest)(nil),     // 27: sttattus.languages.v1.MarkCulturalCompletedRequest
-	(*MarkCulturalCompletedResponse)(nil),    // 28: sttattus.languages.v1.MarkCulturalCompletedResponse
-	(*UserLanguage)(nil),                     // 29: sttattus.languages.v1.UserLanguage
-	(*ListMyLanguagesRequest)(nil),           // 30: sttattus.languages.v1.ListMyLanguagesRequest
-	(*ListMyLanguagesResponse)(nil),          // 31: sttattus.languages.v1.ListMyLanguagesResponse
-	(*AddMyLanguageRequest)(nil),             // 32: sttattus.languages.v1.AddMyLanguageRequest
-	(*AddMyLanguageResponse)(nil),            // 33: sttattus.languages.v1.AddMyLanguageResponse
-	(*RemoveMyLanguageRequest)(nil),          // 34: sttattus.languages.v1.RemoveMyLanguageRequest
-	(*RemoveMyLanguageResponse)(nil),         // 35: sttattus.languages.v1.RemoveMyLanguageResponse
-	(*SetMyPrimaryLanguageRequest)(nil),      // 36: sttattus.languages.v1.SetMyPrimaryLanguageRequest
-	(*SetMyPrimaryLanguageResponse)(nil),     // 37: sttattus.languages.v1.SetMyPrimaryLanguageResponse
-	(*SpeakingPrompt)(nil),                   // 38: sttattus.languages.v1.SpeakingPrompt
-	(*PhonemeScore)(nil),                     // 39: sttattus.languages.v1.PhonemeScore
-	(*SpeakingAttempt)(nil),                  // 40: sttattus.languages.v1.SpeakingAttempt
-	(*ListSpeakingPromptsRequest)(nil),       // 41: sttattus.languages.v1.ListSpeakingPromptsRequest
-	(*ListSpeakingPromptsResponse)(nil),      // 42: sttattus.languages.v1.ListSpeakingPromptsResponse
-	(*CreateSpeakingAttemptRequest)(nil),     // 43: sttattus.languages.v1.CreateSpeakingAttemptRequest
-	(*CreateSpeakingAttemptResponse)(nil),    // 44: sttattus.languages.v1.CreateSpeakingAttemptResponse
-	(*GetSpeakingAttemptRequest)(nil),        // 45: sttattus.languages.v1.GetSpeakingAttemptRequest
-	(*GetSpeakingAttemptResponse)(nil),       // 46: sttattus.languages.v1.GetSpeakingAttemptResponse
-	(*ImmersionClip)(nil),                    // 47: sttattus.languages.v1.ImmersionClip
-	(*ListTodayImmersionRequest)(nil),        // 48: sttattus.languages.v1.ListTodayImmersionRequest
-	(*ListTodayImmersionResponse)(nil),       // 49: sttattus.languages.v1.ListTodayImmersionResponse
-	(*MarkImmersionCompletedRequest)(nil),    // 50: sttattus.languages.v1.MarkImmersionCompletedRequest
-	(*MarkImmersionCompletedResponse)(nil),   // 51: sttattus.languages.v1.MarkImmersionCompletedResponse
-	(*DailyPlan)(nil),                        // 52: sttattus.languages.v1.DailyPlan
-	(*GetTodayPlanRequest)(nil),              // 53: sttattus.languages.v1.GetTodayPlanRequest
-	(*GetTodayPlanResponse)(nil),             // 54: sttattus.languages.v1.GetTodayPlanResponse
-	(*MarkPlanBlockRequest)(nil),             // 55: sttattus.languages.v1.MarkPlanBlockRequest
-	(*MarkPlanBlockResponse)(nil),            // 56: sttattus.languages.v1.MarkPlanBlockResponse
-	(*PlacementQuestion)(nil),                // 57: sttattus.languages.v1.PlacementQuestion
-	(*PlacementAnswer)(nil),                  // 58: sttattus.languages.v1.PlacementAnswer
-	(*ListPlacementQuestionsRequest)(nil),    // 59: sttattus.languages.v1.ListPlacementQuestionsRequest
-	(*ListPlacementQuestionsResponse)(nil),   // 60: sttattus.languages.v1.ListPlacementQuestionsResponse
-	(*SubmitPlacementResultRequest)(nil),     // 61: sttattus.languages.v1.SubmitPlacementResultRequest
-	(*PlacementResult)(nil),                  // 62: sttattus.languages.v1.PlacementResult
-	(*SubmitPlacementResultResponse)(nil),    // 63: sttattus.languages.v1.SubmitPlacementResultResponse
-	(*ListMyPlacementResultsRequest)(nil),    // 64: sttattus.languages.v1.ListMyPlacementResultsRequest
-	(*ListMyPlacementResultsResponse)(nil),   // 65: sttattus.languages.v1.ListMyPlacementResultsResponse
-	(*WritingPrompt)(nil),                    // 66: sttattus.languages.v1.WritingPrompt
-	(*RubricScore)(nil),                      // 67: sttattus.languages.v1.RubricScore
-	(*WritingError)(nil),                     // 68: sttattus.languages.v1.WritingError
-	(*WritingSubmission)(nil),                // 69: sttattus.languages.v1.WritingSubmission
-	(*ListWritingPromptsRequest)(nil),        // 70: sttattus.languages.v1.ListWritingPromptsRequest
-	(*ListWritingPromptsResponse)(nil),       // 71: sttattus.languages.v1.ListWritingPromptsResponse
-	(*SubmitWritingRequest)(nil),             // 72: sttattus.languages.v1.SubmitWritingRequest
-	(*SubmitWritingResponse)(nil),            // 73: sttattus.languages.v1.SubmitWritingResponse
-	(*ListMyWritingSubmissionsRequest)(nil),  // 74: sttattus.languages.v1.ListMyWritingSubmissionsRequest
-	(*ListMyWritingSubmissionsResponse)(nil), // 75: sttattus.languages.v1.ListMyWritingSubmissionsResponse
-	(*GetWritingSubmissionRequest)(nil),      // 76: sttattus.languages.v1.GetWritingSubmissionRequest
-	(*GetWritingSubmissionResponse)(nil),     // 77: sttattus.languages.v1.GetWritingSubmissionResponse
-	(*ReadingText)(nil),                      // 78: sttattus.languages.v1.ReadingText
-	(*ReadingQuestion)(nil),                  // 79: sttattus.languages.v1.ReadingQuestion
-	(*SubmitReadingAnswerRequest)(nil),       // 80: sttattus.languages.v1.SubmitReadingAnswerRequest
-	(*SubmitReadingAnswerResponse)(nil),      // 81: sttattus.languages.v1.SubmitReadingAnswerResponse
-	(*ListReadingTextsRequest)(nil),          // 82: sttattus.languages.v1.ListReadingTextsRequest
-	(*ListReadingTextsResponse)(nil),         // 83: sttattus.languages.v1.ListReadingTextsResponse
-	(*GetReadingTextRequest)(nil),            // 84: sttattus.languages.v1.GetReadingTextRequest
-	(*GetReadingTextResponse)(nil),           // 85: sttattus.languages.v1.GetReadingTextResponse
-	(*Idiom)(nil),                            // 86: sttattus.languages.v1.Idiom
-	(*ListIdiomsRequest)(nil),                // 87: sttattus.languages.v1.ListIdiomsRequest
-	(*ListIdiomsResponse)(nil),               // 88: sttattus.languages.v1.ListIdiomsResponse
-	(*TutorThread)(nil),                      // 89: sttattus.languages.v1.TutorThread
-	(*TutorMessage)(nil),                     // 90: sttattus.languages.v1.TutorMessage
-	(*StartTutorThreadRequest)(nil),          // 91: sttattus.languages.v1.StartTutorThreadRequest
-	(*StartTutorThreadResponse)(nil),         // 92: sttattus.languages.v1.StartTutorThreadResponse
-	(*ListMyTutorThreadsRequest)(nil),        // 93: sttattus.languages.v1.ListMyTutorThreadsRequest
-	(*ListMyTutorThreadsResponse)(nil),       // 94: sttattus.languages.v1.ListMyTutorThreadsResponse
-	(*GetTutorThreadRequest)(nil),            // 95: sttattus.languages.v1.GetTutorThreadRequest
-	(*GetTutorThreadResponse)(nil),           // 96: sttattus.languages.v1.GetTutorThreadResponse
-	(*PostTutorMessageRequest)(nil),          // 97: sttattus.languages.v1.PostTutorMessageRequest
-	(*PostTutorMessageResponse)(nil),         // 98: sttattus.languages.v1.PostTutorMessageResponse
-	(*AnthologyArticle)(nil),                 // 99: sttattus.languages.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),     // 100: sttattus.languages.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),    // 101: sttattus.languages.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),       // 102: sttattus.languages.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),      // 103: sttattus.languages.v1.GetAnthologyArticleResponse
-	(*Certificate)(nil),                      // 104: sttattus.languages.v1.Certificate
-	(*IssueCertificateRequest)(nil),          // 105: sttattus.languages.v1.IssueCertificateRequest
-	(*IssueCertificateResponse)(nil),         // 106: sttattus.languages.v1.IssueCertificateResponse
-	(*ListMyCertificatesRequest)(nil),        // 107: sttattus.languages.v1.ListMyCertificatesRequest
-	(*ListMyCertificatesResponse)(nil),       // 108: sttattus.languages.v1.ListMyCertificatesResponse
-	(*GenerateLinguistAlmanacRequest)(nil),   // 109: sttattus.languages.v1.GenerateLinguistAlmanacRequest
-	(*GenerateLinguistAlmanacResponse)(nil),  // 110: sttattus.languages.v1.GenerateLinguistAlmanacResponse
-	(*CreateLinguistShareRequest)(nil),       // 111: sttattus.languages.v1.CreateLinguistShareRequest
-	(*CreateLinguistShareResponse)(nil),      // 112: sttattus.languages.v1.CreateLinguistShareResponse
-	(*PracticeCard)(nil),                     // 113: sttattus.languages.v1.PracticeCard
-	(*GetPracticeSessionRequest)(nil),        // 114: sttattus.languages.v1.GetPracticeSessionRequest
-	(*GetPracticeSessionResponse)(nil),       // 115: sttattus.languages.v1.GetPracticeSessionResponse
-	(*SubmitAnswerRequest)(nil),              // 116: sttattus.languages.v1.SubmitAnswerRequest
-	(*SubmitAnswerResponse)(nil),             // 117: sttattus.languages.v1.SubmitAnswerResponse
-	(*AnswerDiffSegment)(nil),                // 118: sttattus.languages.v1.AnswerDiffSegment
-	(*ExampleSentence)(nil),                  // 119: sttattus.languages.v1.ExampleSentence
-	(*MicroLesson)(nil),                      // 120: sttattus.languages.v1.MicroLesson
-	(*GetPracticeStatsRequest)(nil),          // 121: sttattus.languages.v1.GetPracticeStatsRequest
-	(*GetPracticeStatsResponse)(nil),         // 122: sttattus.languages.v1.GetPracticeStatsResponse
-	(*MemberPrefs)(nil),                      // 123: sttattus.languages.v1.MemberPrefs
-	(*GetMemberPrefsRequest)(nil),            // 124: sttattus.languages.v1.GetMemberPrefsRequest
-	(*GetMemberPrefsResponse)(nil),           // 125: sttattus.languages.v1.GetMemberPrefsResponse
-	(*SetMemberPrefsRequest)(nil),            // 126: sttattus.languages.v1.SetMemberPrefsRequest
-	(*SetMemberPrefsResponse)(nil),           // 127: sttattus.languages.v1.SetMemberPrefsResponse
-	(*Word)(nil),                             // 128: sttattus.languages.v1.Word
-	(*ListWordsRequest)(nil),                 // 129: sttattus.languages.v1.ListWordsRequest
-	(*ListWordsResponse)(nil),                // 130: sttattus.languages.v1.ListWordsResponse
-	(*PlanReason)(nil),                       // 131: sttattus.languages.v1.PlanReason
-	(*PlanItem)(nil),                         // 132: sttattus.languages.v1.PlanItem
-	(*AdaptivePlan)(nil),                     // 133: sttattus.languages.v1.AdaptivePlan
-	(*GetAdaptivePlanRequest)(nil),           // 134: sttattus.languages.v1.GetAdaptivePlanRequest
-	(*GetAdaptivePlanResponse)(nil),          // 135: sttattus.languages.v1.GetAdaptivePlanResponse
-	(*SkipPlanItemRequest)(nil),              // 136: sttattus.languages.v1.SkipPlanItemRequest
-	(*SkipPlanItemResponse)(nil),             // 137: sttattus.languages.v1.SkipPlanItemResponse
-	(*SkillEstimate)(nil),                    // 138: sttattus.languages.v1.SkillEstimate
-	(*LevelProgress)(nil),                    // 139: sttattus.languages.v1.LevelProgress
-	(*NodeEstimate)(nil),                     // 140: sttattus.languages.v1.NodeEstimate
-	(*ConfusionPair)(nil),                    // 141: sttattus.languages.v1.ConfusionPair
-	(*GetMasteryMapRequest)(nil),             // 142: sttattus.languages.v1.GetMasteryMapRequest
-	(*GetMasteryMapResponse)(nil),            // 143: sttattus.languages.v1.GetMasteryMapResponse
-	(*EvidenceEntry)(nil),                    // 144: sttattus.languages.v1.EvidenceEntry
-	(*GetNodeEvidenceRequest)(nil),           // 145: sttattus.languages.v1.GetNodeEvidenceRequest
-	(*GetNodeEvidenceResponse)(nil),          // 146: sttattus.languages.v1.GetNodeEvidenceResponse
-	(*DismissWritingFlagRequest)(nil),        // 147: sttattus.languages.v1.DismissWritingFlagRequest
-	(*DismissWritingFlagResponse)(nil),       // 148: sttattus.languages.v1.DismissWritingFlagResponse
-	nil,                                      // 149: sttattus.languages.v1.PlanReason.ParamsEntry
-	(*timestamppb.Timestamp)(nil),            // 150: google.protobuf.Timestamp
-	(*v1.PageRequest)(nil),                   // 151: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                  // 152: sttattus.common.v1.PageResponse
+	(CulturalCategory)(0),                                    // 0: sttattus.languages.v1.CulturalCategory
+	(ExerciseKind)(0),                                        // 1: sttattus.languages.v1.ExerciseKind
+	(StudyItemKind)(0),                                       // 2: sttattus.languages.v1.StudyItemKind
+	(NewMaterialStatus)(0),                                   // 3: sttattus.languages.v1.NewMaterialStatus
+	(AnswerModality)(0),                                      // 4: sttattus.languages.v1.AnswerModality
+	(AnswerErrorKind)(0),                                     // 5: sttattus.languages.v1.AnswerErrorKind
+	(AnswerDiffOp)(0),                                        // 6: sttattus.languages.v1.AnswerDiffOp
+	(MasterySkill)(0),                                        // 7: sttattus.languages.v1.MasterySkill
+	(GoalMode)(0),                                            // 8: sttattus.languages.v1.GoalMode
+	(PlanItemKind)(0),                                        // 9: sttattus.languages.v1.PlanItemKind
+	(PlanItemState)(0),                                       // 10: sttattus.languages.v1.PlanItemState
+	(PlanReasonCode)(0),                                      // 11: sttattus.languages.v1.PlanReasonCode
+	(*CulturalNuance)(nil),                                   // 12: sttattus.languages.v1.CulturalNuance
+	(*Scenario)(nil),                                         // 13: sttattus.languages.v1.Scenario
+	(*DialogueNode)(nil),                                     // 14: sttattus.languages.v1.DialogueNode
+	(*DialogueOption)(nil),                                   // 15: sttattus.languages.v1.DialogueOption
+	(*Progress)(nil),                                         // 16: sttattus.languages.v1.Progress
+	(*LinguistStats)(nil),                                    // 17: sttattus.languages.v1.LinguistStats
+	(*ListScenariosRequest)(nil),                             // 18: sttattus.languages.v1.ListScenariosRequest
+	(*ListScenariosResponse)(nil),                            // 19: sttattus.languages.v1.ListScenariosResponse
+	(*CompleteInteractionRequest)(nil),                       // 20: sttattus.languages.v1.CompleteInteractionRequest
+	(*CompleteInteractionResponse)(nil),                      // 21: sttattus.languages.v1.CompleteInteractionResponse
+	(*GetLinguistStatsRequest)(nil),                          // 22: sttattus.languages.v1.GetLinguistStatsRequest
+	(*GetLinguistStatsResponse)(nil),                         // 23: sttattus.languages.v1.GetLinguistStatsResponse
+	(*CulturalModule)(nil),                                   // 24: sttattus.languages.v1.CulturalModule
+	(*ListCulturalModulesRequest)(nil),                       // 25: sttattus.languages.v1.ListCulturalModulesRequest
+	(*ListCulturalModulesResponse)(nil),                      // 26: sttattus.languages.v1.ListCulturalModulesResponse
+	(*MarkCulturalCompletedRequest)(nil),                     // 27: sttattus.languages.v1.MarkCulturalCompletedRequest
+	(*MarkCulturalCompletedResponse)(nil),                    // 28: sttattus.languages.v1.MarkCulturalCompletedResponse
+	(*UserLanguage)(nil),                                     // 29: sttattus.languages.v1.UserLanguage
+	(*ListMyLanguagesRequest)(nil),                           // 30: sttattus.languages.v1.ListMyLanguagesRequest
+	(*ListMyLanguagesResponse)(nil),                          // 31: sttattus.languages.v1.ListMyLanguagesResponse
+	(*AddMyLanguageRequest)(nil),                             // 32: sttattus.languages.v1.AddMyLanguageRequest
+	(*AddMyLanguageResponse)(nil),                            // 33: sttattus.languages.v1.AddMyLanguageResponse
+	(*RemoveMyLanguageRequest)(nil),                          // 34: sttattus.languages.v1.RemoveMyLanguageRequest
+	(*RemoveMyLanguageResponse)(nil),                         // 35: sttattus.languages.v1.RemoveMyLanguageResponse
+	(*SetMyPrimaryLanguageRequest)(nil),                      // 36: sttattus.languages.v1.SetMyPrimaryLanguageRequest
+	(*SetMyPrimaryLanguageResponse)(nil),                     // 37: sttattus.languages.v1.SetMyPrimaryLanguageResponse
+	(*SpeakingPrompt)(nil),                                   // 38: sttattus.languages.v1.SpeakingPrompt
+	(*PhonemeScore)(nil),                                     // 39: sttattus.languages.v1.PhonemeScore
+	(*SpeakingAttempt)(nil),                                  // 40: sttattus.languages.v1.SpeakingAttempt
+	(*ListSpeakingPromptsRequest)(nil),                       // 41: sttattus.languages.v1.ListSpeakingPromptsRequest
+	(*ListSpeakingPromptsResponse)(nil),                      // 42: sttattus.languages.v1.ListSpeakingPromptsResponse
+	(*CreateSpeakingAttemptRequest)(nil),                     // 43: sttattus.languages.v1.CreateSpeakingAttemptRequest
+	(*CreateSpeakingAttemptResponse)(nil),                    // 44: sttattus.languages.v1.CreateSpeakingAttemptResponse
+	(*GetSpeakingAttemptRequest)(nil),                        // 45: sttattus.languages.v1.GetSpeakingAttemptRequest
+	(*GetSpeakingAttemptResponse)(nil),                       // 46: sttattus.languages.v1.GetSpeakingAttemptResponse
+	(*ImmersionClip)(nil),                                    // 47: sttattus.languages.v1.ImmersionClip
+	(*ListTodayImmersionRequest)(nil),                        // 48: sttattus.languages.v1.ListTodayImmersionRequest
+	(*ListTodayImmersionResponse)(nil),                       // 49: sttattus.languages.v1.ListTodayImmersionResponse
+	(*MarkImmersionCompletedRequest)(nil),                    // 50: sttattus.languages.v1.MarkImmersionCompletedRequest
+	(*MarkImmersionCompletedResponse)(nil),                   // 51: sttattus.languages.v1.MarkImmersionCompletedResponse
+	(*DailyPlan)(nil),                                        // 52: sttattus.languages.v1.DailyPlan
+	(*GetTodayPlanRequest)(nil),                              // 53: sttattus.languages.v1.GetTodayPlanRequest
+	(*GetTodayPlanResponse)(nil),                             // 54: sttattus.languages.v1.GetTodayPlanResponse
+	(*MarkPlanBlockRequest)(nil),                             // 55: sttattus.languages.v1.MarkPlanBlockRequest
+	(*MarkPlanBlockResponse)(nil),                            // 56: sttattus.languages.v1.MarkPlanBlockResponse
+	(*PlacementQuestion)(nil),                                // 57: sttattus.languages.v1.PlacementQuestion
+	(*PlacementAnswer)(nil),                                  // 58: sttattus.languages.v1.PlacementAnswer
+	(*ListPlacementQuestionsRequest)(nil),                    // 59: sttattus.languages.v1.ListPlacementQuestionsRequest
+	(*ListPlacementQuestionsResponse)(nil),                   // 60: sttattus.languages.v1.ListPlacementQuestionsResponse
+	(*SubmitPlacementResultRequest)(nil),                     // 61: sttattus.languages.v1.SubmitPlacementResultRequest
+	(*PlacementResult)(nil),                                  // 62: sttattus.languages.v1.PlacementResult
+	(*SubmitPlacementResultResponse)(nil),                    // 63: sttattus.languages.v1.SubmitPlacementResultResponse
+	(*ListMyPlacementResultsRequest)(nil),                    // 64: sttattus.languages.v1.ListMyPlacementResultsRequest
+	(*ListMyPlacementResultsResponse)(nil),                   // 65: sttattus.languages.v1.ListMyPlacementResultsResponse
+	(*WritingPrompt)(nil),                                    // 66: sttattus.languages.v1.WritingPrompt
+	(*RubricScore)(nil),                                      // 67: sttattus.languages.v1.RubricScore
+	(*WritingError)(nil),                                     // 68: sttattus.languages.v1.WritingError
+	(*WritingSubmission)(nil),                                // 69: sttattus.languages.v1.WritingSubmission
+	(*ListWritingPromptsRequest)(nil),                        // 70: sttattus.languages.v1.ListWritingPromptsRequest
+	(*ListWritingPromptsResponse)(nil),                       // 71: sttattus.languages.v1.ListWritingPromptsResponse
+	(*SubmitWritingRequest)(nil),                             // 72: sttattus.languages.v1.SubmitWritingRequest
+	(*SubmitWritingResponse)(nil),                            // 73: sttattus.languages.v1.SubmitWritingResponse
+	(*ListMyWritingSubmissionsRequest)(nil),                  // 74: sttattus.languages.v1.ListMyWritingSubmissionsRequest
+	(*ListMyWritingSubmissionsResponse)(nil),                 // 75: sttattus.languages.v1.ListMyWritingSubmissionsResponse
+	(*GetWritingSubmissionRequest)(nil),                      // 76: sttattus.languages.v1.GetWritingSubmissionRequest
+	(*GetWritingSubmissionResponse)(nil),                     // 77: sttattus.languages.v1.GetWritingSubmissionResponse
+	(*ReadingText)(nil),                                      // 78: sttattus.languages.v1.ReadingText
+	(*ReadingQuestion)(nil),                                  // 79: sttattus.languages.v1.ReadingQuestion
+	(*SubmitReadingAnswerRequest)(nil),                       // 80: sttattus.languages.v1.SubmitReadingAnswerRequest
+	(*SubmitReadingAnswerResponse)(nil),                      // 81: sttattus.languages.v1.SubmitReadingAnswerResponse
+	(*ListReadingTextsRequest)(nil),                          // 82: sttattus.languages.v1.ListReadingTextsRequest
+	(*ListReadingTextsResponse)(nil),                         // 83: sttattus.languages.v1.ListReadingTextsResponse
+	(*GetReadingTextRequest)(nil),                            // 84: sttattus.languages.v1.GetReadingTextRequest
+	(*GetReadingTextResponse)(nil),                           // 85: sttattus.languages.v1.GetReadingTextResponse
+	(*Idiom)(nil),                                            // 86: sttattus.languages.v1.Idiom
+	(*ListIdiomsRequest)(nil),                                // 87: sttattus.languages.v1.ListIdiomsRequest
+	(*ListIdiomsResponse)(nil),                               // 88: sttattus.languages.v1.ListIdiomsResponse
+	(*TutorThread)(nil),                                      // 89: sttattus.languages.v1.TutorThread
+	(*TutorMessage)(nil),                                     // 90: sttattus.languages.v1.TutorMessage
+	(*StartTutorThreadRequest)(nil),                          // 91: sttattus.languages.v1.StartTutorThreadRequest
+	(*StartTutorThreadResponse)(nil),                         // 92: sttattus.languages.v1.StartTutorThreadResponse
+	(*ListMyTutorThreadsRequest)(nil),                        // 93: sttattus.languages.v1.ListMyTutorThreadsRequest
+	(*ListMyTutorThreadsResponse)(nil),                       // 94: sttattus.languages.v1.ListMyTutorThreadsResponse
+	(*GetTutorThreadRequest)(nil),                            // 95: sttattus.languages.v1.GetTutorThreadRequest
+	(*GetTutorThreadResponse)(nil),                           // 96: sttattus.languages.v1.GetTutorThreadResponse
+	(*PostTutorMessageRequest)(nil),                          // 97: sttattus.languages.v1.PostTutorMessageRequest
+	(*PostTutorMessageResponse)(nil),                         // 98: sttattus.languages.v1.PostTutorMessageResponse
+	(*AnthologyArticle)(nil),                                 // 99: sttattus.languages.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                     // 100: sttattus.languages.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                    // 101: sttattus.languages.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                       // 102: sttattus.languages.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                      // 103: sttattus.languages.v1.GetAnthologyArticleResponse
+	(*Certificate)(nil),                                      // 104: sttattus.languages.v1.Certificate
+	(*IssueCertificateRequest)(nil),                          // 105: sttattus.languages.v1.IssueCertificateRequest
+	(*IssueCertificateResponse)(nil),                         // 106: sttattus.languages.v1.IssueCertificateResponse
+	(*ListMyCertificatesRequest)(nil),                        // 107: sttattus.languages.v1.ListMyCertificatesRequest
+	(*ListMyCertificatesResponse)(nil),                       // 108: sttattus.languages.v1.ListMyCertificatesResponse
+	(*GenerateLinguistAlmanacRequest)(nil),                   // 109: sttattus.languages.v1.GenerateLinguistAlmanacRequest
+	(*GenerateLinguistAlmanacResponse)(nil),                  // 110: sttattus.languages.v1.GenerateLinguistAlmanacResponse
+	(*CreateLinguistShareRequest)(nil),                       // 111: sttattus.languages.v1.CreateLinguistShareRequest
+	(*CreateLinguistShareResponse)(nil),                      // 112: sttattus.languages.v1.CreateLinguistShareResponse
+	(*PracticeCard)(nil),                                     // 113: sttattus.languages.v1.PracticeCard
+	(*GetPracticeSessionRequest)(nil),                        // 114: sttattus.languages.v1.GetPracticeSessionRequest
+	(*GetPracticeSessionResponse)(nil),                       // 115: sttattus.languages.v1.GetPracticeSessionResponse
+	(*SubmitAnswerRequest)(nil),                              // 116: sttattus.languages.v1.SubmitAnswerRequest
+	(*SubmitAnswerResponse)(nil),                             // 117: sttattus.languages.v1.SubmitAnswerResponse
+	(*AnswerDiffSegment)(nil),                                // 118: sttattus.languages.v1.AnswerDiffSegment
+	(*ExampleSentence)(nil),                                  // 119: sttattus.languages.v1.ExampleSentence
+	(*MicroLesson)(nil),                                      // 120: sttattus.languages.v1.MicroLesson
+	(*GetPracticeStatsRequest)(nil),                          // 121: sttattus.languages.v1.GetPracticeStatsRequest
+	(*GetPracticeStatsResponse)(nil),                         // 122: sttattus.languages.v1.GetPracticeStatsResponse
+	(*MemberPrefs)(nil),                                      // 123: sttattus.languages.v1.MemberPrefs
+	(*GetMemberPrefsRequest)(nil),                            // 124: sttattus.languages.v1.GetMemberPrefsRequest
+	(*GetMemberPrefsResponse)(nil),                           // 125: sttattus.languages.v1.GetMemberPrefsResponse
+	(*SetMemberPrefsRequest)(nil),                            // 126: sttattus.languages.v1.SetMemberPrefsRequest
+	(*SetMemberPrefsResponse)(nil),                           // 127: sttattus.languages.v1.SetMemberPrefsResponse
+	(*Word)(nil),                                             // 128: sttattus.languages.v1.Word
+	(*ListWordsRequest)(nil),                                 // 129: sttattus.languages.v1.ListWordsRequest
+	(*ListWordsResponse)(nil),                                // 130: sttattus.languages.v1.ListWordsResponse
+	(*PlanReason)(nil),                                       // 131: sttattus.languages.v1.PlanReason
+	(*PlanItem)(nil),                                         // 132: sttattus.languages.v1.PlanItem
+	(*AdaptivePlan)(nil),                                     // 133: sttattus.languages.v1.AdaptivePlan
+	(*GetAdaptivePlanRequest)(nil),                           // 134: sttattus.languages.v1.GetAdaptivePlanRequest
+	(*GetAdaptivePlanResponse)(nil),                          // 135: sttattus.languages.v1.GetAdaptivePlanResponse
+	(*SkipPlanItemRequest)(nil),                              // 136: sttattus.languages.v1.SkipPlanItemRequest
+	(*SkipPlanItemResponse)(nil),                             // 137: sttattus.languages.v1.SkipPlanItemResponse
+	(*SkillEstimate)(nil),                                    // 138: sttattus.languages.v1.SkillEstimate
+	(*LevelProgress)(nil),                                    // 139: sttattus.languages.v1.LevelProgress
+	(*NodeEstimate)(nil),                                     // 140: sttattus.languages.v1.NodeEstimate
+	(*ConfusionPair)(nil),                                    // 141: sttattus.languages.v1.ConfusionPair
+	(*GetMasteryMapRequest)(nil),                             // 142: sttattus.languages.v1.GetMasteryMapRequest
+	(*GetMasteryMapResponse)(nil),                            // 143: sttattus.languages.v1.GetMasteryMapResponse
+	(*EvidenceEntry)(nil),                                    // 144: sttattus.languages.v1.EvidenceEntry
+	(*GetNodeEvidenceRequest)(nil),                           // 145: sttattus.languages.v1.GetNodeEvidenceRequest
+	(*GetNodeEvidenceResponse)(nil),                          // 146: sttattus.languages.v1.GetNodeEvidenceResponse
+	(*DismissWritingFlagRequest)(nil),                        // 147: sttattus.languages.v1.DismissWritingFlagRequest
+	(*DismissWritingFlagResponse)(nil),                       // 148: sttattus.languages.v1.DismissWritingFlagResponse
+	(*ImmersionUniverseItem)(nil),                            // 149: sttattus.languages.v1.ImmersionUniverseItem
+	(*GetImmersionUniverseOverviewRequest)(nil),              // 150: sttattus.languages.v1.GetImmersionUniverseOverviewRequest
+	(*GetImmersionUniverseOverviewResponse)(nil),             // 151: sttattus.languages.v1.GetImmersionUniverseOverviewResponse
+	(*ImportPersonalImmersionMediaRequest)(nil),              // 152: sttattus.languages.v1.ImportPersonalImmersionMediaRequest
+	(*ImportPersonalImmersionMediaResponse)(nil),             // 153: sttattus.languages.v1.ImportPersonalImmersionMediaResponse
+	(*CaptureContextConceptSenseRequest)(nil),                // 154: sttattus.languages.v1.CaptureContextConceptSenseRequest
+	(*CaptureContextConceptSenseResponse)(nil),               // 155: sttattus.languages.v1.CaptureContextConceptSenseResponse
+	(*WritingRegisterItem)(nil),                              // 156: sttattus.languages.v1.WritingRegisterItem
+	(*GetWritingRegisterStudioOverviewRequest)(nil),          // 157: sttattus.languages.v1.GetWritingRegisterStudioOverviewRequest
+	(*GetWritingRegisterStudioOverviewResponse)(nil),         // 158: sttattus.languages.v1.GetWritingRegisterStudioOverviewResponse
+	(*SubmitWritingRegisterDraftRequest)(nil),                // 159: sttattus.languages.v1.SubmitWritingRegisterDraftRequest
+	(*SubmitWritingRegisterDraftResponse)(nil),               // 160: sttattus.languages.v1.SubmitWritingRegisterDraftResponse
+	(*VerifyDelayedRegisterTransferRequest)(nil),             // 161: sttattus.languages.v1.VerifyDelayedRegisterTransferRequest
+	(*VerifyDelayedRegisterTransferResponse)(nil),            // 162: sttattus.languages.v1.VerifyDelayedRegisterTransferResponse
+	(*TutoringCommunityItem)(nil),                            // 163: sttattus.languages.v1.TutoringCommunityItem
+	(*GetHumanTutoringCommunityOverviewRequest)(nil),         // 164: sttattus.languages.v1.GetHumanTutoringCommunityOverviewRequest
+	(*GetHumanTutoringCommunityOverviewResponse)(nil),        // 165: sttattus.languages.v1.GetHumanTutoringCommunityOverviewResponse
+	(*BookOrAskHumanTutorRequest)(nil),                       // 166: sttattus.languages.v1.BookOrAskHumanTutorRequest
+	(*BookOrAskHumanTutorResponse)(nil),                      // 167: sttattus.languages.v1.BookOrAskHumanTutorResponse
+	(*SubmitDoubleBlindCommunityReviewRequest)(nil),          // 168: sttattus.languages.v1.SubmitDoubleBlindCommunityReviewRequest
+	(*SubmitDoubleBlindCommunityReviewResponse)(nil),         // 169: sttattus.languages.v1.SubmitDoubleBlindCommunityReviewResponse
+	(*AssessmentCertItem)(nil),                               // 170: sttattus.languages.v1.AssessmentCertItem
+	(*GetAssessmentCertificationOverviewRequest)(nil),        // 171: sttattus.languages.v1.GetAssessmentCertificationOverviewRequest
+	(*GetAssessmentCertificationOverviewResponse)(nil),       // 172: sttattus.languages.v1.GetAssessmentCertificationOverviewResponse
+	(*RunAdaptiveDiagnosticSessionRequest)(nil),              // 173: sttattus.languages.v1.RunAdaptiveDiagnosticSessionRequest
+	(*RunAdaptiveDiagnosticSessionResponse)(nil),             // 174: sttattus.languages.v1.RunAdaptiveDiagnosticSessionResponse
+	(*IssueOrRevokeSignedCertificateRequest)(nil),            // 175: sttattus.languages.v1.IssueOrRevokeSignedCertificateRequest
+	(*IssueOrRevokeSignedCertificateResponse)(nil),           // 176: sttattus.languages.v1.IssueOrRevokeSignedCertificateResponse
+	(*CultureSupertoolItem)(nil),                             // 177: sttattus.languages.v1.CultureSupertoolItem
+	(*GetCultureReferenceSupertoolsOverviewRequest)(nil),     // 178: sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewRequest
+	(*GetCultureReferenceSupertoolsOverviewResponse)(nil),    // 179: sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewResponse
+	(*RunSupertoolConcordanceLookupRequest)(nil),             // 180: sttattus.languages.v1.RunSupertoolConcordanceLookupRequest
+	(*RunSupertoolConcordanceLookupResponse)(nil),            // 181: sttattus.languages.v1.RunSupertoolConcordanceLookupResponse
+	(*CompleteCulturalPragmaticsBranchRequest)(nil),          // 182: sttattus.languages.v1.CompleteCulturalPragmaticsBranchRequest
+	(*CompleteCulturalPragmaticsBranchResponse)(nil),         // 183: sttattus.languages.v1.CompleteCulturalPragmaticsBranchResponse
+	(*RealWorldMissionItem)(nil),                             // 184: sttattus.languages.v1.RealWorldMissionItem
+	(*GetRealWorldMissionsPortfolioOverviewRequest)(nil),     // 185: sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewRequest
+	(*GetRealWorldMissionsPortfolioOverviewResponse)(nil),    // 186: sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewResponse
+	(*AttestRealWorldMissionCompletionRequest)(nil),          // 187: sttattus.languages.v1.AttestRealWorldMissionCompletionRequest
+	(*AttestRealWorldMissionCompletionResponse)(nil),         // 188: sttattus.languages.v1.AttestRealWorldMissionCompletionResponse
+	(*PublishCommunicativePortfolioArtifactRequest)(nil),     // 189: sttattus.languages.v1.PublishCommunicativePortfolioArtifactRequest
+	(*PublishCommunicativePortfolioArtifactResponse)(nil),    // 190: sttattus.languages.v1.PublishCommunicativePortfolioArtifactResponse
+	(*UbiquitousCaptureItem)(nil),                            // 191: sttattus.languages.v1.UbiquitousCaptureItem
+	(*GetUbiquitousLanguageLayerOverviewRequest)(nil),        // 192: sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewRequest
+	(*GetUbiquitousLanguageLayerOverviewResponse)(nil),       // 193: sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewResponse
+	(*CaptureExplicitLanguageLookupRequest)(nil),             // 194: sttattus.languages.v1.CaptureExplicitLanguageLookupRequest
+	(*CaptureExplicitLanguageLookupResponse)(nil),            // 195: sttattus.languages.v1.CaptureExplicitLanguageLookupResponse
+	(*ConfirmCapturedSenseToMasteryRequest)(nil),             // 196: sttattus.languages.v1.ConfirmCapturedSenseToMasteryRequest
+	(*ConfirmCapturedSenseToMasteryResponse)(nil),            // 197: sttattus.languages.v1.ConfirmCapturedSenseToMasteryResponse
+	(*ProfessionalHeritageItem)(nil),                         // 198: sttattus.languages.v1.ProfessionalHeritageItem
+	(*GetProfessionalHeritagePathwaysOverviewRequest)(nil),   // 199: sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewRequest
+	(*GetProfessionalHeritagePathwaysOverviewResponse)(nil),  // 200: sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewResponse
+	(*EnrollProfessionalOrHeritageTrackRequest)(nil),         // 201: sttattus.languages.v1.EnrollProfessionalOrHeritageTrackRequest
+	(*EnrollProfessionalOrHeritageTrackResponse)(nil),        // 202: sttattus.languages.v1.EnrollProfessionalOrHeritageTrackResponse
+	(*RecordHeritageLiteracyMilestoneRequest)(nil),           // 203: sttattus.languages.v1.RecordHeritageLiteracyMilestoneRequest
+	(*RecordHeritageLiteracyMilestoneResponse)(nil),          // 204: sttattus.languages.v1.RecordHeritageLiteracyMilestoneResponse
+	(*ClassroomCohortItem)(nil),                              // 205: sttattus.languages.v1.ClassroomCohortItem
+	(*GetTeacherClassroomOsOverviewRequest)(nil),             // 206: sttattus.languages.v1.GetTeacherClassroomOsOverviewRequest
+	(*GetTeacherClassroomOsOverviewResponse)(nil),            // 207: sttattus.languages.v1.GetTeacherClassroomOsOverviewResponse
+	(*CreateClassroomCohortAssignmentRequest)(nil),           // 208: sttattus.languages.v1.CreateClassroomCohortAssignmentRequest
+	(*CreateClassroomCohortAssignmentResponse)(nil),          // 209: sttattus.languages.v1.CreateClassroomCohortAssignmentResponse
+	(*ApproveOrDisputeTeacherProposalRequest)(nil),           // 210: sttattus.languages.v1.ApproveOrDisputeTeacherProposalRequest
+	(*ApproveOrDisputeTeacherProposalResponse)(nil),          // 211: sttattus.languages.v1.ApproveOrDisputeTeacherProposalResponse
+	(*SustainableHabitItem)(nil),                             // 212: sttattus.languages.v1.SustainableHabitItem
+	(*GetSustainableMotivationLabOverviewRequest)(nil),       // 213: sttattus.languages.v1.GetSustainableMotivationLabOverviewRequest
+	(*GetSustainableMotivationLabOverviewResponse)(nil),      // 214: sttattus.languages.v1.GetSustainableMotivationLabOverviewResponse
+	(*UpdateSustainableHabitContractRequest)(nil),            // 215: sttattus.languages.v1.UpdateSustainableHabitContractRequest
+	(*UpdateSustainableHabitContractResponse)(nil),           // 216: sttattus.languages.v1.UpdateSustainableHabitContractResponse
+	(*RecordDelayedRetentionExperimentRequest)(nil),          // 217: sttattus.languages.v1.RecordDelayedRetentionExperimentRequest
+	(*RecordDelayedRetentionExperimentResponse)(nil),         // 218: sttattus.languages.v1.RecordDelayedRetentionExperimentResponse
+	(*OfflineAccessibilityCertItem)(nil),                     // 219: sttattus.languages.v1.OfflineAccessibilityCertItem
+	(*GetOfflineAccessibilityMigrationOverviewRequest)(nil),  // 220: sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewRequest
+	(*GetOfflineAccessibilityMigrationOverviewResponse)(nil), // 221: sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewResponse
+	(*CertifyOfflineAccessibilityPackRequest)(nil),           // 222: sttattus.languages.v1.CertifyOfflineAccessibilityPackRequest
+	(*CertifyOfflineAccessibilityPackResponse)(nil),          // 223: sttattus.languages.v1.CertifyOfflineAccessibilityPackResponse
+	(*RunCompetitorMigrationImportRequest)(nil),              // 224: sttattus.languages.v1.RunCompetitorMigrationImportRequest
+	(*RunCompetitorMigrationImportResponse)(nil),             // 225: sttattus.languages.v1.RunCompetitorMigrationImportResponse
+	nil,                           // 226: sttattus.languages.v1.PlanReason.ParamsEntry
+	(*timestamppb.Timestamp)(nil), // 227: google.protobuf.Timestamp
+	(*v1.PageRequest)(nil),        // 228: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),       // 229: sttattus.common.v1.PageResponse
 }
 var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	0,   // 0: sttattus.languages.v1.Scenario.category:type_name -> sttattus.languages.v1.CulturalCategory
 	14,  // 1: sttattus.languages.v1.Scenario.nodes:type_name -> sttattus.languages.v1.DialogueNode
 	15,  // 2: sttattus.languages.v1.DialogueNode.options:type_name -> sttattus.languages.v1.DialogueOption
-	150, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
+	227, // 3: sttattus.languages.v1.Progress.last_refined_at:type_name -> google.protobuf.Timestamp
 	0,   // 4: sttattus.languages.v1.ListScenariosRequest.category:type_name -> sttattus.languages.v1.CulturalCategory
-	151, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	228, // 5: sttattus.languages.v1.ListScenariosRequest.page:type_name -> sttattus.common.v1.PageRequest
 	13,  // 6: sttattus.languages.v1.ListScenariosResponse.scenarios:type_name -> sttattus.languages.v1.Scenario
-	152, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
+	229, // 7: sttattus.languages.v1.ListScenariosResponse.page:type_name -> sttattus.common.v1.PageResponse
 	16,  // 8: sttattus.languages.v1.CompleteInteractionResponse.progress:type_name -> sttattus.languages.v1.Progress
 	17,  // 9: sttattus.languages.v1.CompleteInteractionResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
 	17,  // 10: sttattus.languages.v1.GetLinguistStatsResponse.stats:type_name -> sttattus.languages.v1.LinguistStats
@@ -11524,8 +16782,8 @@ var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	1,   // 56: sttattus.languages.v1.SubmitAnswerRequest.exercise:type_name -> sttattus.languages.v1.ExerciseKind
 	2,   // 57: sttattus.languages.v1.SubmitAnswerRequest.item_kind:type_name -> sttattus.languages.v1.StudyItemKind
 	4,   // 58: sttattus.languages.v1.SubmitAnswerRequest.modality:type_name -> sttattus.languages.v1.AnswerModality
-	150, // 59: sttattus.languages.v1.SubmitAnswerRequest.observed_at:type_name -> google.protobuf.Timestamp
-	150, // 60: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
+	227, // 59: sttattus.languages.v1.SubmitAnswerRequest.observed_at:type_name -> google.protobuf.Timestamp
+	227, // 60: sttattus.languages.v1.SubmitAnswerResponse.due_at:type_name -> google.protobuf.Timestamp
 	5,   // 61: sttattus.languages.v1.SubmitAnswerResponse.error_kind:type_name -> sttattus.languages.v1.AnswerErrorKind
 	118, // 62: sttattus.languages.v1.SubmitAnswerResponse.diff:type_name -> sttattus.languages.v1.AnswerDiffSegment
 	119, // 63: sttattus.languages.v1.SubmitAnswerResponse.examples:type_name -> sttattus.languages.v1.ExampleSentence
@@ -11537,10 +16795,10 @@ var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	123, // 69: sttattus.languages.v1.GetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
 	123, // 70: sttattus.languages.v1.SetMemberPrefsRequest.prefs:type_name -> sttattus.languages.v1.MemberPrefs
 	123, // 71: sttattus.languages.v1.SetMemberPrefsResponse.prefs:type_name -> sttattus.languages.v1.MemberPrefs
-	151, // 72: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	228, // 72: sttattus.languages.v1.ListWordsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	128, // 73: sttattus.languages.v1.ListWordsResponse.words:type_name -> sttattus.languages.v1.Word
 	11,  // 74: sttattus.languages.v1.PlanReason.code:type_name -> sttattus.languages.v1.PlanReasonCode
-	149, // 75: sttattus.languages.v1.PlanReason.params:type_name -> sttattus.languages.v1.PlanReason.ParamsEntry
+	226, // 75: sttattus.languages.v1.PlanReason.params:type_name -> sttattus.languages.v1.PlanReason.ParamsEntry
 	9,   // 76: sttattus.languages.v1.PlanItem.kind:type_name -> sttattus.languages.v1.PlanItemKind
 	7,   // 77: sttattus.languages.v1.PlanItem.skill:type_name -> sttattus.languages.v1.MasterySkill
 	10,  // 78: sttattus.languages.v1.PlanItem.state:type_name -> sttattus.languages.v1.PlanItemState
@@ -11561,107 +16819,206 @@ var file_sttattus_languages_v1_languages_proto_depIdxs = []int32{
 	140, // 93: sttattus.languages.v1.GetNodeEvidenceResponse.estimates:type_name -> sttattus.languages.v1.NodeEstimate
 	144, // 94: sttattus.languages.v1.GetNodeEvidenceResponse.evidence:type_name -> sttattus.languages.v1.EvidenceEntry
 	69,  // 95: sttattus.languages.v1.DismissWritingFlagResponse.submission:type_name -> sttattus.languages.v1.WritingSubmission
-	18,  // 96: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
-	20,  // 97: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
-	22,  // 98: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
-	59,  // 99: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
-	61,  // 100: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
-	64,  // 101: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
-	53,  // 102: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
-	55,  // 103: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
-	48,  // 104: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
-	50,  // 105: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
-	41,  // 106: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
-	43,  // 107: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
-	45,  // 108: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
-	30,  // 109: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
-	32,  // 110: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
-	34,  // 111: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
-	36,  // 112: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
-	25,  // 113: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
-	27,  // 114: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
-	70,  // 115: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
-	72,  // 116: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
-	74,  // 117: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
-	76,  // 118: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
-	82,  // 119: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
-	84,  // 120: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
-	80,  // 121: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:input_type -> sttattus.languages.v1.SubmitReadingAnswerRequest
-	87,  // 122: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
-	91,  // 123: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
-	93,  // 124: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
-	95,  // 125: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
-	97,  // 126: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
-	100, // 127: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
-	102, // 128: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
-	105, // 129: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
-	107, // 130: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
-	109, // 131: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
-	111, // 132: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
-	114, // 133: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
-	116, // 134: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
-	121, // 135: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
-	124, // 136: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
-	126, // 137: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
-	134, // 138: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:input_type -> sttattus.languages.v1.GetAdaptivePlanRequest
-	136, // 139: sttattus.languages.v1.LanguagesService.SkipPlanItem:input_type -> sttattus.languages.v1.SkipPlanItemRequest
-	142, // 140: sttattus.languages.v1.LanguagesService.GetMasteryMap:input_type -> sttattus.languages.v1.GetMasteryMapRequest
-	145, // 141: sttattus.languages.v1.LanguagesService.GetNodeEvidence:input_type -> sttattus.languages.v1.GetNodeEvidenceRequest
-	147, // 142: sttattus.languages.v1.LanguagesService.DismissWritingFlag:input_type -> sttattus.languages.v1.DismissWritingFlagRequest
-	129, // 143: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
-	19,  // 144: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
-	21,  // 145: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
-	23,  // 146: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
-	60,  // 147: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
-	63,  // 148: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
-	65,  // 149: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
-	54,  // 150: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
-	56,  // 151: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
-	49,  // 152: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
-	51,  // 153: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
-	42,  // 154: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
-	44,  // 155: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
-	46,  // 156: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
-	31,  // 157: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
-	33,  // 158: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
-	35,  // 159: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
-	37,  // 160: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
-	26,  // 161: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
-	28,  // 162: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
-	71,  // 163: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
-	73,  // 164: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
-	75,  // 165: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
-	77,  // 166: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
-	83,  // 167: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
-	85,  // 168: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
-	81,  // 169: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:output_type -> sttattus.languages.v1.SubmitReadingAnswerResponse
-	88,  // 170: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
-	92,  // 171: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
-	94,  // 172: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
-	96,  // 173: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
-	98,  // 174: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
-	101, // 175: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
-	103, // 176: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
-	106, // 177: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
-	108, // 178: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
-	110, // 179: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
-	112, // 180: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
-	115, // 181: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
-	117, // 182: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
-	122, // 183: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
-	125, // 184: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
-	127, // 185: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
-	135, // 186: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:output_type -> sttattus.languages.v1.GetAdaptivePlanResponse
-	137, // 187: sttattus.languages.v1.LanguagesService.SkipPlanItem:output_type -> sttattus.languages.v1.SkipPlanItemResponse
-	143, // 188: sttattus.languages.v1.LanguagesService.GetMasteryMap:output_type -> sttattus.languages.v1.GetMasteryMapResponse
-	146, // 189: sttattus.languages.v1.LanguagesService.GetNodeEvidence:output_type -> sttattus.languages.v1.GetNodeEvidenceResponse
-	148, // 190: sttattus.languages.v1.LanguagesService.DismissWritingFlag:output_type -> sttattus.languages.v1.DismissWritingFlagResponse
-	130, // 191: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
-	144, // [144:192] is the sub-list for method output_type
-	96,  // [96:144] is the sub-list for method input_type
-	96,  // [96:96] is the sub-list for extension type_name
-	96,  // [96:96] is the sub-list for extension extendee
-	0,   // [0:96] is the sub-list for field type_name
+	149, // 96: sttattus.languages.v1.GetImmersionUniverseOverviewResponse.items:type_name -> sttattus.languages.v1.ImmersionUniverseItem
+	149, // 97: sttattus.languages.v1.ImportPersonalImmersionMediaResponse.item:type_name -> sttattus.languages.v1.ImmersionUniverseItem
+	149, // 98: sttattus.languages.v1.CaptureContextConceptSenseResponse.item:type_name -> sttattus.languages.v1.ImmersionUniverseItem
+	156, // 99: sttattus.languages.v1.GetWritingRegisterStudioOverviewResponse.items:type_name -> sttattus.languages.v1.WritingRegisterItem
+	156, // 100: sttattus.languages.v1.SubmitWritingRegisterDraftResponse.item:type_name -> sttattus.languages.v1.WritingRegisterItem
+	156, // 101: sttattus.languages.v1.VerifyDelayedRegisterTransferResponse.item:type_name -> sttattus.languages.v1.WritingRegisterItem
+	163, // 102: sttattus.languages.v1.GetHumanTutoringCommunityOverviewResponse.items:type_name -> sttattus.languages.v1.TutoringCommunityItem
+	163, // 103: sttattus.languages.v1.BookOrAskHumanTutorResponse.item:type_name -> sttattus.languages.v1.TutoringCommunityItem
+	163, // 104: sttattus.languages.v1.SubmitDoubleBlindCommunityReviewResponse.item:type_name -> sttattus.languages.v1.TutoringCommunityItem
+	170, // 105: sttattus.languages.v1.GetAssessmentCertificationOverviewResponse.items:type_name -> sttattus.languages.v1.AssessmentCertItem
+	170, // 106: sttattus.languages.v1.RunAdaptiveDiagnosticSessionResponse.item:type_name -> sttattus.languages.v1.AssessmentCertItem
+	170, // 107: sttattus.languages.v1.IssueOrRevokeSignedCertificateResponse.item:type_name -> sttattus.languages.v1.AssessmentCertItem
+	177, // 108: sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewResponse.items:type_name -> sttattus.languages.v1.CultureSupertoolItem
+	177, // 109: sttattus.languages.v1.RunSupertoolConcordanceLookupResponse.item:type_name -> sttattus.languages.v1.CultureSupertoolItem
+	177, // 110: sttattus.languages.v1.CompleteCulturalPragmaticsBranchResponse.item:type_name -> sttattus.languages.v1.CultureSupertoolItem
+	184, // 111: sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewResponse.items:type_name -> sttattus.languages.v1.RealWorldMissionItem
+	184, // 112: sttattus.languages.v1.AttestRealWorldMissionCompletionResponse.item:type_name -> sttattus.languages.v1.RealWorldMissionItem
+	184, // 113: sttattus.languages.v1.PublishCommunicativePortfolioArtifactResponse.item:type_name -> sttattus.languages.v1.RealWorldMissionItem
+	191, // 114: sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewResponse.items:type_name -> sttattus.languages.v1.UbiquitousCaptureItem
+	191, // 115: sttattus.languages.v1.CaptureExplicitLanguageLookupResponse.item:type_name -> sttattus.languages.v1.UbiquitousCaptureItem
+	191, // 116: sttattus.languages.v1.ConfirmCapturedSenseToMasteryResponse.item:type_name -> sttattus.languages.v1.UbiquitousCaptureItem
+	198, // 117: sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewResponse.items:type_name -> sttattus.languages.v1.ProfessionalHeritageItem
+	198, // 118: sttattus.languages.v1.EnrollProfessionalOrHeritageTrackResponse.item:type_name -> sttattus.languages.v1.ProfessionalHeritageItem
+	198, // 119: sttattus.languages.v1.RecordHeritageLiteracyMilestoneResponse.item:type_name -> sttattus.languages.v1.ProfessionalHeritageItem
+	205, // 120: sttattus.languages.v1.GetTeacherClassroomOsOverviewResponse.items:type_name -> sttattus.languages.v1.ClassroomCohortItem
+	205, // 121: sttattus.languages.v1.CreateClassroomCohortAssignmentResponse.item:type_name -> sttattus.languages.v1.ClassroomCohortItem
+	205, // 122: sttattus.languages.v1.ApproveOrDisputeTeacherProposalResponse.item:type_name -> sttattus.languages.v1.ClassroomCohortItem
+	212, // 123: sttattus.languages.v1.GetSustainableMotivationLabOverviewResponse.items:type_name -> sttattus.languages.v1.SustainableHabitItem
+	212, // 124: sttattus.languages.v1.UpdateSustainableHabitContractResponse.item:type_name -> sttattus.languages.v1.SustainableHabitItem
+	212, // 125: sttattus.languages.v1.RecordDelayedRetentionExperimentResponse.item:type_name -> sttattus.languages.v1.SustainableHabitItem
+	219, // 126: sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewResponse.items:type_name -> sttattus.languages.v1.OfflineAccessibilityCertItem
+	219, // 127: sttattus.languages.v1.CertifyOfflineAccessibilityPackResponse.item:type_name -> sttattus.languages.v1.OfflineAccessibilityCertItem
+	219, // 128: sttattus.languages.v1.RunCompetitorMigrationImportResponse.item:type_name -> sttattus.languages.v1.OfflineAccessibilityCertItem
+	18,  // 129: sttattus.languages.v1.LanguagesService.ListScenarios:input_type -> sttattus.languages.v1.ListScenariosRequest
+	20,  // 130: sttattus.languages.v1.LanguagesService.CompleteInteraction:input_type -> sttattus.languages.v1.CompleteInteractionRequest
+	22,  // 131: sttattus.languages.v1.LanguagesService.GetLinguistStats:input_type -> sttattus.languages.v1.GetLinguistStatsRequest
+	59,  // 132: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:input_type -> sttattus.languages.v1.ListPlacementQuestionsRequest
+	61,  // 133: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:input_type -> sttattus.languages.v1.SubmitPlacementResultRequest
+	64,  // 134: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:input_type -> sttattus.languages.v1.ListMyPlacementResultsRequest
+	53,  // 135: sttattus.languages.v1.LanguagesService.GetTodayPlan:input_type -> sttattus.languages.v1.GetTodayPlanRequest
+	55,  // 136: sttattus.languages.v1.LanguagesService.MarkPlanBlock:input_type -> sttattus.languages.v1.MarkPlanBlockRequest
+	48,  // 137: sttattus.languages.v1.LanguagesService.ListTodayImmersion:input_type -> sttattus.languages.v1.ListTodayImmersionRequest
+	50,  // 138: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:input_type -> sttattus.languages.v1.MarkImmersionCompletedRequest
+	41,  // 139: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:input_type -> sttattus.languages.v1.ListSpeakingPromptsRequest
+	43,  // 140: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:input_type -> sttattus.languages.v1.CreateSpeakingAttemptRequest
+	45,  // 141: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:input_type -> sttattus.languages.v1.GetSpeakingAttemptRequest
+	30,  // 142: sttattus.languages.v1.LanguagesService.ListMyLanguages:input_type -> sttattus.languages.v1.ListMyLanguagesRequest
+	32,  // 143: sttattus.languages.v1.LanguagesService.AddMyLanguage:input_type -> sttattus.languages.v1.AddMyLanguageRequest
+	34,  // 144: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:input_type -> sttattus.languages.v1.RemoveMyLanguageRequest
+	36,  // 145: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:input_type -> sttattus.languages.v1.SetMyPrimaryLanguageRequest
+	25,  // 146: sttattus.languages.v1.LanguagesService.ListCulturalModules:input_type -> sttattus.languages.v1.ListCulturalModulesRequest
+	27,  // 147: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:input_type -> sttattus.languages.v1.MarkCulturalCompletedRequest
+	70,  // 148: sttattus.languages.v1.LanguagesService.ListWritingPrompts:input_type -> sttattus.languages.v1.ListWritingPromptsRequest
+	72,  // 149: sttattus.languages.v1.LanguagesService.SubmitWriting:input_type -> sttattus.languages.v1.SubmitWritingRequest
+	74,  // 150: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:input_type -> sttattus.languages.v1.ListMyWritingSubmissionsRequest
+	76,  // 151: sttattus.languages.v1.LanguagesService.GetWritingSubmission:input_type -> sttattus.languages.v1.GetWritingSubmissionRequest
+	82,  // 152: sttattus.languages.v1.LanguagesService.ListReadingTexts:input_type -> sttattus.languages.v1.ListReadingTextsRequest
+	84,  // 153: sttattus.languages.v1.LanguagesService.GetReadingText:input_type -> sttattus.languages.v1.GetReadingTextRequest
+	80,  // 154: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:input_type -> sttattus.languages.v1.SubmitReadingAnswerRequest
+	87,  // 155: sttattus.languages.v1.LanguagesService.ListIdioms:input_type -> sttattus.languages.v1.ListIdiomsRequest
+	91,  // 156: sttattus.languages.v1.LanguagesService.StartTutorThread:input_type -> sttattus.languages.v1.StartTutorThreadRequest
+	93,  // 157: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:input_type -> sttattus.languages.v1.ListMyTutorThreadsRequest
+	95,  // 158: sttattus.languages.v1.LanguagesService.GetTutorThread:input_type -> sttattus.languages.v1.GetTutorThreadRequest
+	97,  // 159: sttattus.languages.v1.LanguagesService.PostTutorMessage:input_type -> sttattus.languages.v1.PostTutorMessageRequest
+	100, // 160: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:input_type -> sttattus.languages.v1.ListAnthologyArticlesRequest
+	102, // 161: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:input_type -> sttattus.languages.v1.GetAnthologyArticleRequest
+	105, // 162: sttattus.languages.v1.LanguagesService.IssueCertificate:input_type -> sttattus.languages.v1.IssueCertificateRequest
+	107, // 163: sttattus.languages.v1.LanguagesService.ListMyCertificates:input_type -> sttattus.languages.v1.ListMyCertificatesRequest
+	109, // 164: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:input_type -> sttattus.languages.v1.GenerateLinguistAlmanacRequest
+	111, // 165: sttattus.languages.v1.LanguagesService.CreateLinguistShare:input_type -> sttattus.languages.v1.CreateLinguistShareRequest
+	114, // 166: sttattus.languages.v1.LanguagesService.GetPracticeSession:input_type -> sttattus.languages.v1.GetPracticeSessionRequest
+	116, // 167: sttattus.languages.v1.LanguagesService.SubmitAnswer:input_type -> sttattus.languages.v1.SubmitAnswerRequest
+	121, // 168: sttattus.languages.v1.LanguagesService.GetPracticeStats:input_type -> sttattus.languages.v1.GetPracticeStatsRequest
+	124, // 169: sttattus.languages.v1.LanguagesService.GetMemberPrefs:input_type -> sttattus.languages.v1.GetMemberPrefsRequest
+	126, // 170: sttattus.languages.v1.LanguagesService.SetMemberPrefs:input_type -> sttattus.languages.v1.SetMemberPrefsRequest
+	134, // 171: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:input_type -> sttattus.languages.v1.GetAdaptivePlanRequest
+	136, // 172: sttattus.languages.v1.LanguagesService.SkipPlanItem:input_type -> sttattus.languages.v1.SkipPlanItemRequest
+	142, // 173: sttattus.languages.v1.LanguagesService.GetMasteryMap:input_type -> sttattus.languages.v1.GetMasteryMapRequest
+	145, // 174: sttattus.languages.v1.LanguagesService.GetNodeEvidence:input_type -> sttattus.languages.v1.GetNodeEvidenceRequest
+	147, // 175: sttattus.languages.v1.LanguagesService.DismissWritingFlag:input_type -> sttattus.languages.v1.DismissWritingFlagRequest
+	129, // 176: sttattus.languages.v1.LanguagesService.ListWords:input_type -> sttattus.languages.v1.ListWordsRequest
+	150, // 177: sttattus.languages.v1.LanguagesService.GetImmersionUniverseOverview:input_type -> sttattus.languages.v1.GetImmersionUniverseOverviewRequest
+	152, // 178: sttattus.languages.v1.LanguagesService.ImportPersonalImmersionMedia:input_type -> sttattus.languages.v1.ImportPersonalImmersionMediaRequest
+	154, // 179: sttattus.languages.v1.LanguagesService.CaptureContextConceptSense:input_type -> sttattus.languages.v1.CaptureContextConceptSenseRequest
+	157, // 180: sttattus.languages.v1.LanguagesService.GetWritingRegisterStudioOverview:input_type -> sttattus.languages.v1.GetWritingRegisterStudioOverviewRequest
+	159, // 181: sttattus.languages.v1.LanguagesService.SubmitWritingRegisterDraft:input_type -> sttattus.languages.v1.SubmitWritingRegisterDraftRequest
+	161, // 182: sttattus.languages.v1.LanguagesService.VerifyDelayedRegisterTransfer:input_type -> sttattus.languages.v1.VerifyDelayedRegisterTransferRequest
+	164, // 183: sttattus.languages.v1.LanguagesService.GetHumanTutoringCommunityOverview:input_type -> sttattus.languages.v1.GetHumanTutoringCommunityOverviewRequest
+	166, // 184: sttattus.languages.v1.LanguagesService.BookOrAskHumanTutor:input_type -> sttattus.languages.v1.BookOrAskHumanTutorRequest
+	168, // 185: sttattus.languages.v1.LanguagesService.SubmitDoubleBlindCommunityReview:input_type -> sttattus.languages.v1.SubmitDoubleBlindCommunityReviewRequest
+	171, // 186: sttattus.languages.v1.LanguagesService.GetAssessmentCertificationOverview:input_type -> sttattus.languages.v1.GetAssessmentCertificationOverviewRequest
+	173, // 187: sttattus.languages.v1.LanguagesService.RunAdaptiveDiagnosticSession:input_type -> sttattus.languages.v1.RunAdaptiveDiagnosticSessionRequest
+	175, // 188: sttattus.languages.v1.LanguagesService.IssueOrRevokeSignedCertificate:input_type -> sttattus.languages.v1.IssueOrRevokeSignedCertificateRequest
+	178, // 189: sttattus.languages.v1.LanguagesService.GetCultureReferenceSupertoolsOverview:input_type -> sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewRequest
+	180, // 190: sttattus.languages.v1.LanguagesService.RunSupertoolConcordanceLookup:input_type -> sttattus.languages.v1.RunSupertoolConcordanceLookupRequest
+	182, // 191: sttattus.languages.v1.LanguagesService.CompleteCulturalPragmaticsBranch:input_type -> sttattus.languages.v1.CompleteCulturalPragmaticsBranchRequest
+	185, // 192: sttattus.languages.v1.LanguagesService.GetRealWorldMissionsPortfolioOverview:input_type -> sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewRequest
+	187, // 193: sttattus.languages.v1.LanguagesService.AttestRealWorldMissionCompletion:input_type -> sttattus.languages.v1.AttestRealWorldMissionCompletionRequest
+	189, // 194: sttattus.languages.v1.LanguagesService.PublishCommunicativePortfolioArtifact:input_type -> sttattus.languages.v1.PublishCommunicativePortfolioArtifactRequest
+	192, // 195: sttattus.languages.v1.LanguagesService.GetUbiquitousLanguageLayerOverview:input_type -> sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewRequest
+	194, // 196: sttattus.languages.v1.LanguagesService.CaptureExplicitLanguageLookup:input_type -> sttattus.languages.v1.CaptureExplicitLanguageLookupRequest
+	196, // 197: sttattus.languages.v1.LanguagesService.ConfirmCapturedSenseToMastery:input_type -> sttattus.languages.v1.ConfirmCapturedSenseToMasteryRequest
+	199, // 198: sttattus.languages.v1.LanguagesService.GetProfessionalHeritagePathwaysOverview:input_type -> sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewRequest
+	201, // 199: sttattus.languages.v1.LanguagesService.EnrollProfessionalOrHeritageTrack:input_type -> sttattus.languages.v1.EnrollProfessionalOrHeritageTrackRequest
+	203, // 200: sttattus.languages.v1.LanguagesService.RecordHeritageLiteracyMilestone:input_type -> sttattus.languages.v1.RecordHeritageLiteracyMilestoneRequest
+	206, // 201: sttattus.languages.v1.LanguagesService.GetTeacherClassroomOsOverview:input_type -> sttattus.languages.v1.GetTeacherClassroomOsOverviewRequest
+	208, // 202: sttattus.languages.v1.LanguagesService.CreateClassroomCohortAssignment:input_type -> sttattus.languages.v1.CreateClassroomCohortAssignmentRequest
+	210, // 203: sttattus.languages.v1.LanguagesService.ApproveOrDisputeTeacherProposal:input_type -> sttattus.languages.v1.ApproveOrDisputeTeacherProposalRequest
+	213, // 204: sttattus.languages.v1.LanguagesService.GetSustainableMotivationLabOverview:input_type -> sttattus.languages.v1.GetSustainableMotivationLabOverviewRequest
+	215, // 205: sttattus.languages.v1.LanguagesService.UpdateSustainableHabitContract:input_type -> sttattus.languages.v1.UpdateSustainableHabitContractRequest
+	217, // 206: sttattus.languages.v1.LanguagesService.RecordDelayedRetentionExperiment:input_type -> sttattus.languages.v1.RecordDelayedRetentionExperimentRequest
+	220, // 207: sttattus.languages.v1.LanguagesService.GetOfflineAccessibilityMigrationOverview:input_type -> sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewRequest
+	222, // 208: sttattus.languages.v1.LanguagesService.CertifyOfflineAccessibilityPack:input_type -> sttattus.languages.v1.CertifyOfflineAccessibilityPackRequest
+	224, // 209: sttattus.languages.v1.LanguagesService.RunCompetitorMigrationImport:input_type -> sttattus.languages.v1.RunCompetitorMigrationImportRequest
+	19,  // 210: sttattus.languages.v1.LanguagesService.ListScenarios:output_type -> sttattus.languages.v1.ListScenariosResponse
+	21,  // 211: sttattus.languages.v1.LanguagesService.CompleteInteraction:output_type -> sttattus.languages.v1.CompleteInteractionResponse
+	23,  // 212: sttattus.languages.v1.LanguagesService.GetLinguistStats:output_type -> sttattus.languages.v1.GetLinguistStatsResponse
+	60,  // 213: sttattus.languages.v1.LanguagesService.ListPlacementQuestions:output_type -> sttattus.languages.v1.ListPlacementQuestionsResponse
+	63,  // 214: sttattus.languages.v1.LanguagesService.SubmitPlacementResult:output_type -> sttattus.languages.v1.SubmitPlacementResultResponse
+	65,  // 215: sttattus.languages.v1.LanguagesService.ListMyPlacementResults:output_type -> sttattus.languages.v1.ListMyPlacementResultsResponse
+	54,  // 216: sttattus.languages.v1.LanguagesService.GetTodayPlan:output_type -> sttattus.languages.v1.GetTodayPlanResponse
+	56,  // 217: sttattus.languages.v1.LanguagesService.MarkPlanBlock:output_type -> sttattus.languages.v1.MarkPlanBlockResponse
+	49,  // 218: sttattus.languages.v1.LanguagesService.ListTodayImmersion:output_type -> sttattus.languages.v1.ListTodayImmersionResponse
+	51,  // 219: sttattus.languages.v1.LanguagesService.MarkImmersionCompleted:output_type -> sttattus.languages.v1.MarkImmersionCompletedResponse
+	42,  // 220: sttattus.languages.v1.LanguagesService.ListSpeakingPrompts:output_type -> sttattus.languages.v1.ListSpeakingPromptsResponse
+	44,  // 221: sttattus.languages.v1.LanguagesService.CreateSpeakingAttempt:output_type -> sttattus.languages.v1.CreateSpeakingAttemptResponse
+	46,  // 222: sttattus.languages.v1.LanguagesService.GetSpeakingAttempt:output_type -> sttattus.languages.v1.GetSpeakingAttemptResponse
+	31,  // 223: sttattus.languages.v1.LanguagesService.ListMyLanguages:output_type -> sttattus.languages.v1.ListMyLanguagesResponse
+	33,  // 224: sttattus.languages.v1.LanguagesService.AddMyLanguage:output_type -> sttattus.languages.v1.AddMyLanguageResponse
+	35,  // 225: sttattus.languages.v1.LanguagesService.RemoveMyLanguage:output_type -> sttattus.languages.v1.RemoveMyLanguageResponse
+	37,  // 226: sttattus.languages.v1.LanguagesService.SetMyPrimaryLanguage:output_type -> sttattus.languages.v1.SetMyPrimaryLanguageResponse
+	26,  // 227: sttattus.languages.v1.LanguagesService.ListCulturalModules:output_type -> sttattus.languages.v1.ListCulturalModulesResponse
+	28,  // 228: sttattus.languages.v1.LanguagesService.MarkCulturalCompleted:output_type -> sttattus.languages.v1.MarkCulturalCompletedResponse
+	71,  // 229: sttattus.languages.v1.LanguagesService.ListWritingPrompts:output_type -> sttattus.languages.v1.ListWritingPromptsResponse
+	73,  // 230: sttattus.languages.v1.LanguagesService.SubmitWriting:output_type -> sttattus.languages.v1.SubmitWritingResponse
+	75,  // 231: sttattus.languages.v1.LanguagesService.ListMyWritingSubmissions:output_type -> sttattus.languages.v1.ListMyWritingSubmissionsResponse
+	77,  // 232: sttattus.languages.v1.LanguagesService.GetWritingSubmission:output_type -> sttattus.languages.v1.GetWritingSubmissionResponse
+	83,  // 233: sttattus.languages.v1.LanguagesService.ListReadingTexts:output_type -> sttattus.languages.v1.ListReadingTextsResponse
+	85,  // 234: sttattus.languages.v1.LanguagesService.GetReadingText:output_type -> sttattus.languages.v1.GetReadingTextResponse
+	81,  // 235: sttattus.languages.v1.LanguagesService.SubmitReadingAnswer:output_type -> sttattus.languages.v1.SubmitReadingAnswerResponse
+	88,  // 236: sttattus.languages.v1.LanguagesService.ListIdioms:output_type -> sttattus.languages.v1.ListIdiomsResponse
+	92,  // 237: sttattus.languages.v1.LanguagesService.StartTutorThread:output_type -> sttattus.languages.v1.StartTutorThreadResponse
+	94,  // 238: sttattus.languages.v1.LanguagesService.ListMyTutorThreads:output_type -> sttattus.languages.v1.ListMyTutorThreadsResponse
+	96,  // 239: sttattus.languages.v1.LanguagesService.GetTutorThread:output_type -> sttattus.languages.v1.GetTutorThreadResponse
+	98,  // 240: sttattus.languages.v1.LanguagesService.PostTutorMessage:output_type -> sttattus.languages.v1.PostTutorMessageResponse
+	101, // 241: sttattus.languages.v1.LanguagesService.ListAnthologyArticles:output_type -> sttattus.languages.v1.ListAnthologyArticlesResponse
+	103, // 242: sttattus.languages.v1.LanguagesService.GetAnthologyArticle:output_type -> sttattus.languages.v1.GetAnthologyArticleResponse
+	106, // 243: sttattus.languages.v1.LanguagesService.IssueCertificate:output_type -> sttattus.languages.v1.IssueCertificateResponse
+	108, // 244: sttattus.languages.v1.LanguagesService.ListMyCertificates:output_type -> sttattus.languages.v1.ListMyCertificatesResponse
+	110, // 245: sttattus.languages.v1.LanguagesService.GenerateLinguistAlmanac:output_type -> sttattus.languages.v1.GenerateLinguistAlmanacResponse
+	112, // 246: sttattus.languages.v1.LanguagesService.CreateLinguistShare:output_type -> sttattus.languages.v1.CreateLinguistShareResponse
+	115, // 247: sttattus.languages.v1.LanguagesService.GetPracticeSession:output_type -> sttattus.languages.v1.GetPracticeSessionResponse
+	117, // 248: sttattus.languages.v1.LanguagesService.SubmitAnswer:output_type -> sttattus.languages.v1.SubmitAnswerResponse
+	122, // 249: sttattus.languages.v1.LanguagesService.GetPracticeStats:output_type -> sttattus.languages.v1.GetPracticeStatsResponse
+	125, // 250: sttattus.languages.v1.LanguagesService.GetMemberPrefs:output_type -> sttattus.languages.v1.GetMemberPrefsResponse
+	127, // 251: sttattus.languages.v1.LanguagesService.SetMemberPrefs:output_type -> sttattus.languages.v1.SetMemberPrefsResponse
+	135, // 252: sttattus.languages.v1.LanguagesService.GetAdaptivePlan:output_type -> sttattus.languages.v1.GetAdaptivePlanResponse
+	137, // 253: sttattus.languages.v1.LanguagesService.SkipPlanItem:output_type -> sttattus.languages.v1.SkipPlanItemResponse
+	143, // 254: sttattus.languages.v1.LanguagesService.GetMasteryMap:output_type -> sttattus.languages.v1.GetMasteryMapResponse
+	146, // 255: sttattus.languages.v1.LanguagesService.GetNodeEvidence:output_type -> sttattus.languages.v1.GetNodeEvidenceResponse
+	148, // 256: sttattus.languages.v1.LanguagesService.DismissWritingFlag:output_type -> sttattus.languages.v1.DismissWritingFlagResponse
+	130, // 257: sttattus.languages.v1.LanguagesService.ListWords:output_type -> sttattus.languages.v1.ListWordsResponse
+	151, // 258: sttattus.languages.v1.LanguagesService.GetImmersionUniverseOverview:output_type -> sttattus.languages.v1.GetImmersionUniverseOverviewResponse
+	153, // 259: sttattus.languages.v1.LanguagesService.ImportPersonalImmersionMedia:output_type -> sttattus.languages.v1.ImportPersonalImmersionMediaResponse
+	155, // 260: sttattus.languages.v1.LanguagesService.CaptureContextConceptSense:output_type -> sttattus.languages.v1.CaptureContextConceptSenseResponse
+	158, // 261: sttattus.languages.v1.LanguagesService.GetWritingRegisterStudioOverview:output_type -> sttattus.languages.v1.GetWritingRegisterStudioOverviewResponse
+	160, // 262: sttattus.languages.v1.LanguagesService.SubmitWritingRegisterDraft:output_type -> sttattus.languages.v1.SubmitWritingRegisterDraftResponse
+	162, // 263: sttattus.languages.v1.LanguagesService.VerifyDelayedRegisterTransfer:output_type -> sttattus.languages.v1.VerifyDelayedRegisterTransferResponse
+	165, // 264: sttattus.languages.v1.LanguagesService.GetHumanTutoringCommunityOverview:output_type -> sttattus.languages.v1.GetHumanTutoringCommunityOverviewResponse
+	167, // 265: sttattus.languages.v1.LanguagesService.BookOrAskHumanTutor:output_type -> sttattus.languages.v1.BookOrAskHumanTutorResponse
+	169, // 266: sttattus.languages.v1.LanguagesService.SubmitDoubleBlindCommunityReview:output_type -> sttattus.languages.v1.SubmitDoubleBlindCommunityReviewResponse
+	172, // 267: sttattus.languages.v1.LanguagesService.GetAssessmentCertificationOverview:output_type -> sttattus.languages.v1.GetAssessmentCertificationOverviewResponse
+	174, // 268: sttattus.languages.v1.LanguagesService.RunAdaptiveDiagnosticSession:output_type -> sttattus.languages.v1.RunAdaptiveDiagnosticSessionResponse
+	176, // 269: sttattus.languages.v1.LanguagesService.IssueOrRevokeSignedCertificate:output_type -> sttattus.languages.v1.IssueOrRevokeSignedCertificateResponse
+	179, // 270: sttattus.languages.v1.LanguagesService.GetCultureReferenceSupertoolsOverview:output_type -> sttattus.languages.v1.GetCultureReferenceSupertoolsOverviewResponse
+	181, // 271: sttattus.languages.v1.LanguagesService.RunSupertoolConcordanceLookup:output_type -> sttattus.languages.v1.RunSupertoolConcordanceLookupResponse
+	183, // 272: sttattus.languages.v1.LanguagesService.CompleteCulturalPragmaticsBranch:output_type -> sttattus.languages.v1.CompleteCulturalPragmaticsBranchResponse
+	186, // 273: sttattus.languages.v1.LanguagesService.GetRealWorldMissionsPortfolioOverview:output_type -> sttattus.languages.v1.GetRealWorldMissionsPortfolioOverviewResponse
+	188, // 274: sttattus.languages.v1.LanguagesService.AttestRealWorldMissionCompletion:output_type -> sttattus.languages.v1.AttestRealWorldMissionCompletionResponse
+	190, // 275: sttattus.languages.v1.LanguagesService.PublishCommunicativePortfolioArtifact:output_type -> sttattus.languages.v1.PublishCommunicativePortfolioArtifactResponse
+	193, // 276: sttattus.languages.v1.LanguagesService.GetUbiquitousLanguageLayerOverview:output_type -> sttattus.languages.v1.GetUbiquitousLanguageLayerOverviewResponse
+	195, // 277: sttattus.languages.v1.LanguagesService.CaptureExplicitLanguageLookup:output_type -> sttattus.languages.v1.CaptureExplicitLanguageLookupResponse
+	197, // 278: sttattus.languages.v1.LanguagesService.ConfirmCapturedSenseToMastery:output_type -> sttattus.languages.v1.ConfirmCapturedSenseToMasteryResponse
+	200, // 279: sttattus.languages.v1.LanguagesService.GetProfessionalHeritagePathwaysOverview:output_type -> sttattus.languages.v1.GetProfessionalHeritagePathwaysOverviewResponse
+	202, // 280: sttattus.languages.v1.LanguagesService.EnrollProfessionalOrHeritageTrack:output_type -> sttattus.languages.v1.EnrollProfessionalOrHeritageTrackResponse
+	204, // 281: sttattus.languages.v1.LanguagesService.RecordHeritageLiteracyMilestone:output_type -> sttattus.languages.v1.RecordHeritageLiteracyMilestoneResponse
+	207, // 282: sttattus.languages.v1.LanguagesService.GetTeacherClassroomOsOverview:output_type -> sttattus.languages.v1.GetTeacherClassroomOsOverviewResponse
+	209, // 283: sttattus.languages.v1.LanguagesService.CreateClassroomCohortAssignment:output_type -> sttattus.languages.v1.CreateClassroomCohortAssignmentResponse
+	211, // 284: sttattus.languages.v1.LanguagesService.ApproveOrDisputeTeacherProposal:output_type -> sttattus.languages.v1.ApproveOrDisputeTeacherProposalResponse
+	214, // 285: sttattus.languages.v1.LanguagesService.GetSustainableMotivationLabOverview:output_type -> sttattus.languages.v1.GetSustainableMotivationLabOverviewResponse
+	216, // 286: sttattus.languages.v1.LanguagesService.UpdateSustainableHabitContract:output_type -> sttattus.languages.v1.UpdateSustainableHabitContractResponse
+	218, // 287: sttattus.languages.v1.LanguagesService.RecordDelayedRetentionExperiment:output_type -> sttattus.languages.v1.RecordDelayedRetentionExperimentResponse
+	221, // 288: sttattus.languages.v1.LanguagesService.GetOfflineAccessibilityMigrationOverview:output_type -> sttattus.languages.v1.GetOfflineAccessibilityMigrationOverviewResponse
+	223, // 289: sttattus.languages.v1.LanguagesService.CertifyOfflineAccessibilityPack:output_type -> sttattus.languages.v1.CertifyOfflineAccessibilityPackResponse
+	225, // 290: sttattus.languages.v1.LanguagesService.RunCompetitorMigrationImport:output_type -> sttattus.languages.v1.RunCompetitorMigrationImportResponse
+	210, // [210:291] is the sub-list for method output_type
+	129, // [129:210] is the sub-list for method input_type
+	129, // [129:129] is the sub-list for extension type_name
+	129, // [129:129] is the sub-list for extension extendee
+	0,   // [0:129] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_languages_v1_languages_proto_init() }
@@ -11676,7 +17033,7 @@ func file_sttattus_languages_v1_languages_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_languages_v1_languages_proto_rawDesc), len(file_sttattus_languages_v1_languages_proto_rawDesc)),
 			NumEnums:      12,
-			NumMessages:   138,
+			NumMessages:   215,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

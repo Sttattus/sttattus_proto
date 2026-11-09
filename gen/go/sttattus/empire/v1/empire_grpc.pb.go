@@ -19,48 +19,124 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	EmpireService_GetScoreBreakdown_FullMethodName            = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
-	EmpireService_GetTierLadder_FullMethodName                = "/sttattus.empire.v1.EmpireService/GetTierLadder"
-	EmpireService_GetWallet_FullMethodName                    = "/sttattus.empire.v1.EmpireService/GetWallet"
-	EmpireService_ListLedgerEntries_FullMethodName            = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
-	EmpireService_GetTaxStatement_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
-	EmpireService_GetPublicProfile_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
-	EmpireService_ClaimHandle_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ClaimHandle"
-	EmpireService_UpdatePublicProfile_FullMethodName          = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
-	EmpireService_ListFriends_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ListFriends"
-	EmpireService_SendInvite_FullMethodName                   = "/sttattus.empire.v1.EmpireService/SendInvite"
-	EmpireService_RespondInvite_FullMethodName                = "/sttattus.empire.v1.EmpireService/RespondInvite"
-	EmpireService_RemoveFriend_FullMethodName                 = "/sttattus.empire.v1.EmpireService/RemoveFriend"
-	EmpireService_ListMyAuditLog_FullMethodName               = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
-	EmpireService_GetLatestCloutDrop_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
-	EmpireService_GetLatestEditorialDigest_FullMethodName     = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
-	EmpireService_ListEditorialDigests_FullMethodName         = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
-	EmpireService_ListLounges_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ListLounges"
-	EmpireService_ListUpcomingLoungeEvents_FullMethodName     = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
-	EmpireService_ListUpcomingSalons_FullMethodName           = "/sttattus.empire.v1.EmpireService/ListUpcomingSalons"
-	EmpireService_UpdateSalonRsvp_FullMethodName              = "/sttattus.empire.v1.EmpireService/UpdateSalonRsvp"
-	EmpireService_RegisterDeviceToken_FullMethodName          = "/sttattus.empire.v1.EmpireService/RegisterDeviceToken"
-	EmpireService_UnregisterDeviceToken_FullMethodName        = "/sttattus.empire.v1.EmpireService/UnregisterDeviceToken"
-	EmpireService_ListNotificationPreferences_FullMethodName  = "/sttattus.empire.v1.EmpireService/ListNotificationPreferences"
-	EmpireService_UpdateNotificationPreference_FullMethodName = "/sttattus.empire.v1.EmpireService/UpdateNotificationPreference"
-	EmpireService_ListRedemptionItems_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListRedemptionItems"
-	EmpireService_RedeemItem_FullMethodName                   = "/sttattus.empire.v1.EmpireService/RedeemItem"
-	EmpireService_ListMyRedemptions_FullMethodName            = "/sttattus.empire.v1.EmpireService/ListMyRedemptions"
-	EmpireService_StartConciergeThread_FullMethodName         = "/sttattus.empire.v1.EmpireService/StartConciergeThread"
-	EmpireService_ListMyConciergeThreads_FullMethodName       = "/sttattus.empire.v1.EmpireService/ListMyConciergeThreads"
-	EmpireService_GetConciergeThread_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetConciergeThread"
-	EmpireService_PostConciergeMessage_FullMethodName         = "/sttattus.empire.v1.EmpireService/PostConciergeMessage"
-	EmpireService_ListAnthologyArticles_FullMethodName        = "/sttattus.empire.v1.EmpireService/ListAnthologyArticles"
-	EmpireService_GetAnthologyArticle_FullMethodName          = "/sttattus.empire.v1.EmpireService/GetAnthologyArticle"
-	EmpireService_ListMemberDirectory_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListMemberDirectory"
-	EmpireService_SetDirectoryVisibility_FullMethodName       = "/sttattus.empire.v1.EmpireService/SetDirectoryVisibility"
-	EmpireService_GenerateEmpireAlmanac_FullMethodName        = "/sttattus.empire.v1.EmpireService/GenerateEmpireAlmanac"
-	EmpireService_CreateScoreBadge_FullMethodName             = "/sttattus.empire.v1.EmpireService/CreateScoreBadge"
-	EmpireService_GetTierCard_FullMethodName                  = "/sttattus.empire.v1.EmpireService/GetTierCard"
-	EmpireService_CreateLoungePass_FullMethodName             = "/sttattus.empire.v1.EmpireService/CreateLoungePass"
-	EmpireService_OrderAlmanacPrint_FullMethodName            = "/sttattus.empire.v1.EmpireService/OrderAlmanacPrint"
-	EmpireService_ListMyAlmanacOrders_FullMethodName          = "/sttattus.empire.v1.EmpireService/ListMyAlmanacOrders"
-	EmpireService_GetYearInEmpire_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetYearInEmpire"
+	EmpireService_GetScoreBreakdown_FullMethodName                           = "/sttattus.empire.v1.EmpireService/GetScoreBreakdown"
+	EmpireService_GetTierLadder_FullMethodName                               = "/sttattus.empire.v1.EmpireService/GetTierLadder"
+	EmpireService_GetWallet_FullMethodName                                   = "/sttattus.empire.v1.EmpireService/GetWallet"
+	EmpireService_ListLedgerEntries_FullMethodName                           = "/sttattus.empire.v1.EmpireService/ListLedgerEntries"
+	EmpireService_GetTaxStatement_FullMethodName                             = "/sttattus.empire.v1.EmpireService/GetTaxStatement"
+	EmpireService_GetPublicProfile_FullMethodName                            = "/sttattus.empire.v1.EmpireService/GetPublicProfile"
+	EmpireService_ClaimHandle_FullMethodName                                 = "/sttattus.empire.v1.EmpireService/ClaimHandle"
+	EmpireService_UpdatePublicProfile_FullMethodName                         = "/sttattus.empire.v1.EmpireService/UpdatePublicProfile"
+	EmpireService_ListFriends_FullMethodName                                 = "/sttattus.empire.v1.EmpireService/ListFriends"
+	EmpireService_SendInvite_FullMethodName                                  = "/sttattus.empire.v1.EmpireService/SendInvite"
+	EmpireService_RespondInvite_FullMethodName                               = "/sttattus.empire.v1.EmpireService/RespondInvite"
+	EmpireService_RemoveFriend_FullMethodName                                = "/sttattus.empire.v1.EmpireService/RemoveFriend"
+	EmpireService_ListMyAuditLog_FullMethodName                              = "/sttattus.empire.v1.EmpireService/ListMyAuditLog"
+	EmpireService_GetLatestCloutDrop_FullMethodName                          = "/sttattus.empire.v1.EmpireService/GetLatestCloutDrop"
+	EmpireService_GetLatestEditorialDigest_FullMethodName                    = "/sttattus.empire.v1.EmpireService/GetLatestEditorialDigest"
+	EmpireService_ListEditorialDigests_FullMethodName                        = "/sttattus.empire.v1.EmpireService/ListEditorialDigests"
+	EmpireService_ListLounges_FullMethodName                                 = "/sttattus.empire.v1.EmpireService/ListLounges"
+	EmpireService_ListUpcomingLoungeEvents_FullMethodName                    = "/sttattus.empire.v1.EmpireService/ListUpcomingLoungeEvents"
+	EmpireService_ListUpcomingSalons_FullMethodName                          = "/sttattus.empire.v1.EmpireService/ListUpcomingSalons"
+	EmpireService_UpdateSalonRsvp_FullMethodName                             = "/sttattus.empire.v1.EmpireService/UpdateSalonRsvp"
+	EmpireService_RegisterDeviceToken_FullMethodName                         = "/sttattus.empire.v1.EmpireService/RegisterDeviceToken"
+	EmpireService_UnregisterDeviceToken_FullMethodName                       = "/sttattus.empire.v1.EmpireService/UnregisterDeviceToken"
+	EmpireService_ListNotificationPreferences_FullMethodName                 = "/sttattus.empire.v1.EmpireService/ListNotificationPreferences"
+	EmpireService_UpdateNotificationPreference_FullMethodName                = "/sttattus.empire.v1.EmpireService/UpdateNotificationPreference"
+	EmpireService_ListRedemptionItems_FullMethodName                         = "/sttattus.empire.v1.EmpireService/ListRedemptionItems"
+	EmpireService_RedeemItem_FullMethodName                                  = "/sttattus.empire.v1.EmpireService/RedeemItem"
+	EmpireService_ListMyRedemptions_FullMethodName                           = "/sttattus.empire.v1.EmpireService/ListMyRedemptions"
+	EmpireService_StartConciergeThread_FullMethodName                        = "/sttattus.empire.v1.EmpireService/StartConciergeThread"
+	EmpireService_ListMyConciergeThreads_FullMethodName                      = "/sttattus.empire.v1.EmpireService/ListMyConciergeThreads"
+	EmpireService_GetConciergeThread_FullMethodName                          = "/sttattus.empire.v1.EmpireService/GetConciergeThread"
+	EmpireService_PostConciergeMessage_FullMethodName                        = "/sttattus.empire.v1.EmpireService/PostConciergeMessage"
+	EmpireService_ListAnthologyArticles_FullMethodName                       = "/sttattus.empire.v1.EmpireService/ListAnthologyArticles"
+	EmpireService_GetAnthologyArticle_FullMethodName                         = "/sttattus.empire.v1.EmpireService/GetAnthologyArticle"
+	EmpireService_ListMemberDirectory_FullMethodName                         = "/sttattus.empire.v1.EmpireService/ListMemberDirectory"
+	EmpireService_SetDirectoryVisibility_FullMethodName                      = "/sttattus.empire.v1.EmpireService/SetDirectoryVisibility"
+	EmpireService_GenerateEmpireAlmanac_FullMethodName                       = "/sttattus.empire.v1.EmpireService/GenerateEmpireAlmanac"
+	EmpireService_CreateScoreBadge_FullMethodName                            = "/sttattus.empire.v1.EmpireService/CreateScoreBadge"
+	EmpireService_GetTierCard_FullMethodName                                 = "/sttattus.empire.v1.EmpireService/GetTierCard"
+	EmpireService_CreateLoungePass_FullMethodName                            = "/sttattus.empire.v1.EmpireService/CreateLoungePass"
+	EmpireService_OrderAlmanacPrint_FullMethodName                           = "/sttattus.empire.v1.EmpireService/OrderAlmanacPrint"
+	EmpireService_ListMyAlmanacOrders_FullMethodName                         = "/sttattus.empire.v1.EmpireService/ListMyAlmanacOrders"
+	EmpireService_GetYearInEmpire_FullMethodName                             = "/sttattus.empire.v1.EmpireService/GetYearInEmpire"
+	EmpireService_GetStandingConstitutionWorkbench_FullMethodName            = "/sttattus.empire.v1.EmpireService/GetStandingConstitutionWorkbench"
+	EmpireService_UpdateStandingConstitutionMode_FullMethodName              = "/sttattus.empire.v1.EmpireService/UpdateStandingConstitutionMode"
+	EmpireService_FileStandingDisputeOrRecompute_FullMethodName              = "/sttattus.empire.v1.EmpireService/FileStandingDisputeOrRecompute"
+	EmpireService_AdminListStandingConstitutionAudit_FullMethodName          = "/sttattus.empire.v1.EmpireService/AdminListStandingConstitutionAudit"
+	EmpireService_AdminResolveStandingDisputeOrPolicy_FullMethodName         = "/sttattus.empire.v1.EmpireService/AdminResolveStandingDisputeOrPolicy"
+	EmpireService_GetTwelvePillarTodayWorkbench_FullMethodName               = "/sttattus.empire.v1.EmpireService/GetTwelvePillarTodayWorkbench"
+	EmpireService_UpdateTodayCardDisposition_FullMethodName                  = "/sttattus.empire.v1.EmpireService/UpdateTodayCardDisposition"
+	EmpireService_ResolveCrossPillarConflict_FullMethodName                  = "/sttattus.empire.v1.EmpireService/ResolveCrossPillarConflict"
+	EmpireService_UpdateTodayOperatingMode_FullMethodName                    = "/sttattus.empire.v1.EmpireService/UpdateTodayOperatingMode"
+	EmpireService_AdminListTwelvePillarTodayAudit_FullMethodName             = "/sttattus.empire.v1.EmpireService/AdminListTwelvePillarTodayAudit"
+	EmpireService_AdminManageTodayContractOrOutage_FullMethodName            = "/sttattus.empire.v1.EmpireService/AdminManageTodayContractOrOutage"
+	EmpireService_GetGoalOrchestratorWorkbench_FullMethodName                = "/sttattus.empire.v1.EmpireService/GetGoalOrchestratorWorkbench"
+	EmpireService_CreateOrReplanLifeSeasonCampaign_FullMethodName            = "/sttattus.empire.v1.EmpireService/CreateOrReplanLifeSeasonCampaign"
+	EmpireService_ApproveOrCompleteCampaignMilestone_FullMethodName          = "/sttattus.empire.v1.EmpireService/ApproveOrCompleteCampaignMilestone"
+	EmpireService_AdminListGoalOrchestratorAudit_FullMethodName              = "/sttattus.empire.v1.EmpireService/AdminListGoalOrchestratorAudit"
+	EmpireService_AdminModerateCampaignCapabilityOrHandoff_FullMethodName    = "/sttattus.empire.v1.EmpireService/AdminModerateCampaignCapabilityOrHandoff"
+	EmpireService_GetAchievementWalletWorkbench_FullMethodName               = "/sttattus.empire.v1.EmpireService/GetAchievementWalletWorkbench"
+	EmpireService_MintPortableAchievementCredential_FullMethodName           = "/sttattus.empire.v1.EmpireService/MintPortableAchievementCredential"
+	EmpireService_RevokeOrVerifyPortableCredential_FullMethodName            = "/sttattus.empire.v1.EmpireService/RevokeOrVerifyPortableCredential"
+	EmpireService_AdminListAchievementWalletAudit_FullMethodName             = "/sttattus.empire.v1.EmpireService/AdminListAchievementWalletAudit"
+	EmpireService_AdminModerateCredentialOrVerifierAbuse_FullMethodName      = "/sttattus.empire.v1.EmpireService/AdminModerateCredentialOrVerifierAbuse"
+	EmpireService_GetContextualDirectoryWorkbench_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetContextualDirectoryWorkbench"
+	EmpireService_UpdateContextualDirectoryProfile_FullMethodName            = "/sttattus.empire.v1.EmpireService/UpdateContextualDirectoryProfile"
+	EmpireService_RequestOrRespondContextualIntroduction_FullMethodName      = "/sttattus.empire.v1.EmpireService/RequestOrRespondContextualIntroduction"
+	EmpireService_AdminListContextualDirectoryAudit_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminListContextualDirectoryAudit"
+	EmpireService_AdminModerateDirectoryIntroductionAbuse_FullMethodName     = "/sttattus.empire.v1.EmpireService/AdminModerateDirectoryIntroductionAbuse"
+	EmpireService_GetCirclesCouncilsWorkbench_FullMethodName                 = "/sttattus.empire.v1.EmpireService/GetCirclesCouncilsWorkbench"
+	EmpireService_CreateOrUpdateCircleCouncilSpace_FullMethodName            = "/sttattus.empire.v1.EmpireService/CreateOrUpdateCircleCouncilSpace"
+	EmpireService_RecordCircleArtifactOrCloseSpace_FullMethodName            = "/sttattus.empire.v1.EmpireService/RecordCircleArtifactOrCloseSpace"
+	EmpireService_AdminListCirclesCouncilsAudit_FullMethodName               = "/sttattus.empire.v1.EmpireService/AdminListCirclesCouncilsAudit"
+	EmpireService_AdminModerateCircleSpaceOrDispute_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminModerateCircleSpaceOrDispute"
+	EmpireService_GetExperienceAccessPassportWorkbench_FullMethodName        = "/sttattus.empire.v1.EmpireService/GetExperienceAccessPassportWorkbench"
+	EmpireService_ReserveOrUpdateExperiencePassportItem_FullMethodName       = "/sttattus.empire.v1.EmpireService/ReserveOrUpdateExperiencePassportItem"
+	EmpireService_RecordHostExperienceOperation_FullMethodName               = "/sttattus.empire.v1.EmpireService/RecordHostExperienceOperation"
+	EmpireService_AdminListExperienceAccessPassportAudit_FullMethodName      = "/sttattus.empire.v1.EmpireService/AdminListExperienceAccessPassportAudit"
+	EmpireService_AdminReconcileExperienceReservationOrAppeal_FullMethodName = "/sttattus.empire.v1.EmpireService/AdminReconcileExperienceReservationOrAppeal"
+	EmpireService_GetMemberFeedEditorialWorkbench_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetMemberFeedEditorialWorkbench"
+	EmpireService_PreviewPublishOrRevokeFeedShare_FullMethodName             = "/sttattus.empire.v1.EmpireService/PreviewPublishOrRevokeFeedShare"
+	EmpireService_RecordEditorialCorrectionOrResetMode_FullMethodName        = "/sttattus.empire.v1.EmpireService/RecordEditorialCorrectionOrResetMode"
+	EmpireService_AdminListMemberFeedEditorialAudit_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminListMemberFeedEditorialAudit"
+	EmpireService_AdminModerateFeedShareOrEditorialCorrection_FullMethodName = "/sttattus.empire.v1.EmpireService/AdminModerateFeedShareOrEditorialCorrection"
+	EmpireService_GetContributionLedgerWorkbench_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetContributionLedgerWorkbench"
+	EmpireService_RecordContributionOrGratitudeEndorsement_FullMethodName    = "/sttattus.empire.v1.EmpireService/RecordContributionOrGratitudeEndorsement"
+	EmpireService_UpdateContributionVisibilityOrCorrection_FullMethodName    = "/sttattus.empire.v1.EmpireService/UpdateContributionVisibilityOrCorrection"
+	EmpireService_AdminListContributionLedgerAudit_FullMethodName            = "/sttattus.empire.v1.EmpireService/AdminListContributionLedgerAudit"
+	EmpireService_AdminModerateContributionCollusionOrSponsor_FullMethodName = "/sttattus.empire.v1.EmpireService/AdminModerateContributionCollusionOrSponsor"
+	EmpireService_GetBenefitsMarketplaceWorkbench_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetBenefitsMarketplaceWorkbench"
+	EmpireService_QuoteOrRedeemBenefitOffer_FullMethodName                   = "/sttattus.empire.v1.EmpireService/QuoteOrRedeemBenefitOffer"
+	EmpireService_UpdateRedemptionDisputeOrCancel_FullMethodName             = "/sttattus.empire.v1.EmpireService/UpdateRedemptionDisputeOrCancel"
+	EmpireService_AdminListBenefitsMarketplaceAudit_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminListBenefitsMarketplaceAudit"
+	EmpireService_AdminReconcileBenefitPointsOrRedemption_FullMethodName     = "/sttattus.empire.v1.EmpireService/AdminReconcileBenefitPointsOrRedemption"
+	EmpireService_GetMembershipHouseholdWorkbench_FullMethodName             = "/sttattus.empire.v1.EmpireService/GetMembershipHouseholdWorkbench"
+	EmpireService_PreviewOrExecuteMembershipLifecycleAction_FullMethodName   = "/sttattus.empire.v1.EmpireService/PreviewOrExecuteMembershipLifecycleAction"
+	EmpireService_ManageHouseholdMemberSeat_FullMethodName                   = "/sttattus.empire.v1.EmpireService/ManageHouseholdMemberSeat"
+	EmpireService_AdminListMembershipHouseholdAudit_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminListMembershipHouseholdAudit"
+	EmpireService_AdminResolveHardshipOrHouseholdDispute_FullMethodName      = "/sttattus.empire.v1.EmpireService/AdminResolveHardshipOrHouseholdDispute"
+	EmpireService_GetUnifiedInboxWorkbench_FullMethodName                    = "/sttattus.empire.v1.EmpireService/GetUnifiedInboxWorkbench"
+	EmpireService_UpdateCommunicationChannelControl_FullMethodName           = "/sttattus.empire.v1.EmpireService/UpdateCommunicationChannelControl"
+	EmpireService_AcknowledgeOrDeleteInboxDispatch_FullMethodName            = "/sttattus.empire.v1.EmpireService/AcknowledgeOrDeleteInboxDispatch"
+	EmpireService_AdminListUnifiedInboxAudit_FullMethodName                  = "/sttattus.empire.v1.EmpireService/AdminListUnifiedInboxAudit"
+	EmpireService_AdminManageRequiredNoticeOrBurstPolicy_FullMethodName      = "/sttattus.empire.v1.EmpireService/AdminManageRequiredNoticeOrBurstPolicy"
+	EmpireService_GetEcosystemConciergeWorkbench_FullMethodName              = "/sttattus.empire.v1.EmpireService/GetEcosystemConciergeWorkbench"
+	EmpireService_CreateOrUpdateConciergeRequest_FullMethodName              = "/sttattus.empire.v1.EmpireService/CreateOrUpdateConciergeRequest"
+	EmpireService_ApproveOrEscalateConciergePacket_FullMethodName            = "/sttattus.empire.v1.EmpireService/ApproveOrEscalateConciergePacket"
+	EmpireService_AdminListEcosystemConciergeAudit_FullMethodName            = "/sttattus.empire.v1.EmpireService/AdminListEcosystemConciergeAudit"
+	EmpireService_AdminResolveConciergeCommitmentOrEscalation_FullMethodName = "/sttattus.empire.v1.EmpireService/AdminResolveConciergeCommitmentOrEscalation"
+	EmpireService_GetPersonalReviewNarrativeWorkbench_FullMethodName         = "/sttattus.empire.v1.EmpireService/GetPersonalReviewNarrativeWorkbench"
+	EmpireService_GenerateOrRedactLifeNarrativeReview_FullMethodName         = "/sttattus.empire.v1.EmpireService/GenerateOrRedactLifeNarrativeReview"
+	EmpireService_OrderOrManagePrintedYearbookArtifact_FullMethodName        = "/sttattus.empire.v1.EmpireService/OrderOrManagePrintedYearbookArtifact"
+	EmpireService_AdminListPersonalReviewNarrativeAudit_FullMethodName       = "/sttattus.empire.v1.EmpireService/AdminListPersonalReviewNarrativeAudit"
+	EmpireService_AdminManagePrintJobOrAddressPurge_FullMethodName           = "/sttattus.empire.v1.EmpireService/AdminManagePrintJobOrAddressPurge"
+	EmpireService_GetMemberGovernanceAuditWorkbench_FullMethodName           = "/sttattus.empire.v1.EmpireService/GetMemberGovernanceAuditWorkbench"
+	EmpireService_SubmitAdvisoryPolicyProposalOrVote_FullMethodName          = "/sttattus.empire.v1.EmpireService/SubmitAdvisoryPolicyProposalOrVote"
+	EmpireService_RequestDecisionRemedyOrInspectPrecedent_FullMethodName     = "/sttattus.empire.v1.EmpireService/RequestDecisionRemedyOrInspectPrecedent"
+	EmpireService_AdminListMemberGovernanceAudit_FullMethodName              = "/sttattus.empire.v1.EmpireService/AdminListMemberGovernanceAudit"
+	EmpireService_AdminCertifyPolicyDiffOrObserverBoundary_FullMethodName    = "/sttattus.empire.v1.EmpireService/AdminCertifyPolicyDiffOrObserverBoundary"
 )
 
 // EmpireServiceClient is the client API for EmpireService service.
@@ -194,6 +270,97 @@ type EmpireServiceClient interface {
 	// GetYearInEmpire returns the caller's annual recap — score, tier, points,
 	// salons, top pillar — computed across the requested year.
 	GetYearInEmpire(ctx context.Context, in *GetYearInEmpireRequest, opts ...grpc.CallOption) (*GetYearInEmpireResponse, error)
+	// Choice 1 (EM1): Transparent Standing Constitution
+	GetStandingConstitutionWorkbench(ctx context.Context, in *GetStandingConstitutionWorkbenchRequest, opts ...grpc.CallOption) (*GetStandingConstitutionWorkbenchResponse, error)
+	UpdateStandingConstitutionMode(ctx context.Context, in *UpdateStandingConstitutionModeRequest, opts ...grpc.CallOption) (*UpdateStandingConstitutionModeResponse, error)
+	FileStandingDisputeOrRecompute(ctx context.Context, in *FileStandingDisputeOrRecomputeRequest, opts ...grpc.CallOption) (*FileStandingDisputeOrRecomputeResponse, error)
+	AdminListStandingConstitutionAudit(ctx context.Context, in *AdminListStandingConstitutionAuditRequest, opts ...grpc.CallOption) (*AdminListStandingConstitutionAuditResponse, error)
+	AdminResolveStandingDisputeOrPolicy(ctx context.Context, in *AdminResolveStandingDisputeOrPolicyRequest, opts ...grpc.CallOption) (*AdminResolveStandingDisputeOrPolicyResponse, error)
+	// Choice 2 (EM2): Twelve-Pillar Today & Action Command Center
+	GetTwelvePillarTodayWorkbench(ctx context.Context, in *GetTwelvePillarTodayWorkbenchRequest, opts ...grpc.CallOption) (*GetTwelvePillarTodayWorkbenchResponse, error)
+	UpdateTodayCardDisposition(ctx context.Context, in *UpdateTodayCardDispositionRequest, opts ...grpc.CallOption) (*UpdateTodayCardDispositionResponse, error)
+	ResolveCrossPillarConflict(ctx context.Context, in *ResolveCrossPillarConflictRequest, opts ...grpc.CallOption) (*ResolveCrossPillarConflictResponse, error)
+	UpdateTodayOperatingMode(ctx context.Context, in *UpdateTodayOperatingModeRequest, opts ...grpc.CallOption) (*UpdateTodayOperatingModeResponse, error)
+	AdminListTwelvePillarTodayAudit(ctx context.Context, in *AdminListTwelvePillarTodayAuditRequest, opts ...grpc.CallOption) (*AdminListTwelvePillarTodayAuditResponse, error)
+	AdminManageTodayContractOrOutage(ctx context.Context, in *AdminManageTodayContractOrOutageRequest, opts ...grpc.CallOption) (*AdminManageTodayContractOrOutageResponse, error)
+	// Choice 3 (EM3): Goal & Life-Season Orchestrator
+	GetGoalOrchestratorWorkbench(ctx context.Context, in *GetGoalOrchestratorWorkbenchRequest, opts ...grpc.CallOption) (*GetGoalOrchestratorWorkbenchResponse, error)
+	CreateOrReplanLifeSeasonCampaign(ctx context.Context, in *CreateOrReplanLifeSeasonCampaignRequest, opts ...grpc.CallOption) (*CreateOrReplanLifeSeasonCampaignResponse, error)
+	ApproveOrCompleteCampaignMilestone(ctx context.Context, in *ApproveOrCompleteCampaignMilestoneRequest, opts ...grpc.CallOption) (*ApproveOrCompleteCampaignMilestoneResponse, error)
+	AdminListGoalOrchestratorAudit(ctx context.Context, in *AdminListGoalOrchestratorAuditRequest, opts ...grpc.CallOption) (*AdminListGoalOrchestratorAuditResponse, error)
+	AdminModerateCampaignCapabilityOrHandoff(ctx context.Context, in *AdminModerateCampaignCapabilityOrHandoffRequest, opts ...grpc.CallOption) (*AdminModerateCampaignCapabilityOrHandoffResponse, error)
+	// Choice 4 (EM4): Portable Achievement Wallet
+	GetAchievementWalletWorkbench(ctx context.Context, in *GetAchievementWalletWorkbenchRequest, opts ...grpc.CallOption) (*GetAchievementWalletWorkbenchResponse, error)
+	MintPortableAchievementCredential(ctx context.Context, in *MintPortableAchievementCredentialRequest, opts ...grpc.CallOption) (*MintPortableAchievementCredentialResponse, error)
+	RevokeOrVerifyPortableCredential(ctx context.Context, in *RevokeOrVerifyPortableCredentialRequest, opts ...grpc.CallOption) (*RevokeOrVerifyPortableCredentialResponse, error)
+	AdminListAchievementWalletAudit(ctx context.Context, in *AdminListAchievementWalletAuditRequest, opts ...grpc.CallOption) (*AdminListAchievementWalletAuditResponse, error)
+	AdminModerateCredentialOrVerifierAbuse(ctx context.Context, in *AdminModerateCredentialOrVerifierAbuseRequest, opts ...grpc.CallOption) (*AdminModerateCredentialOrVerifierAbuseResponse, error)
+	// Choice 5 (EM5): Contextual Directory & Introductions
+	GetContextualDirectoryWorkbench(ctx context.Context, in *GetContextualDirectoryWorkbenchRequest, opts ...grpc.CallOption) (*GetContextualDirectoryWorkbenchResponse, error)
+	UpdateContextualDirectoryProfile(ctx context.Context, in *UpdateContextualDirectoryProfileRequest, opts ...grpc.CallOption) (*UpdateContextualDirectoryProfileResponse, error)
+	RequestOrRespondContextualIntroduction(ctx context.Context, in *RequestOrRespondContextualIntroductionRequest, opts ...grpc.CallOption) (*RequestOrRespondContextualIntroductionResponse, error)
+	AdminListContextualDirectoryAudit(ctx context.Context, in *AdminListContextualDirectoryAuditRequest, opts ...grpc.CallOption) (*AdminListContextualDirectoryAuditResponse, error)
+	AdminModerateDirectoryIntroductionAbuse(ctx context.Context, in *AdminModerateDirectoryIntroductionAbuseRequest, opts ...grpc.CallOption) (*AdminModerateDirectoryIntroductionAbuseResponse, error)
+	// Choice 6 (EM6): Circles, Councils, and Projects
+	GetCirclesCouncilsWorkbench(ctx context.Context, in *GetCirclesCouncilsWorkbenchRequest, opts ...grpc.CallOption) (*GetCirclesCouncilsWorkbenchResponse, error)
+	CreateOrUpdateCircleCouncilSpace(ctx context.Context, in *CreateOrUpdateCircleCouncilSpaceRequest, opts ...grpc.CallOption) (*CreateOrUpdateCircleCouncilSpaceResponse, error)
+	RecordCircleArtifactOrCloseSpace(ctx context.Context, in *RecordCircleArtifactOrCloseSpaceRequest, opts ...grpc.CallOption) (*RecordCircleArtifactOrCloseSpaceResponse, error)
+	AdminListCirclesCouncilsAudit(ctx context.Context, in *AdminListCirclesCouncilsAuditRequest, opts ...grpc.CallOption) (*AdminListCirclesCouncilsAuditResponse, error)
+	AdminModerateCircleSpaceOrDispute(ctx context.Context, in *AdminModerateCircleSpaceOrDisputeRequest, opts ...grpc.CallOption) (*AdminModerateCircleSpaceOrDisputeResponse, error)
+	// Choice 7 (EM7): Experiences & Access Passport
+	GetExperienceAccessPassportWorkbench(ctx context.Context, in *GetExperienceAccessPassportWorkbenchRequest, opts ...grpc.CallOption) (*GetExperienceAccessPassportWorkbenchResponse, error)
+	ReserveOrUpdateExperiencePassportItem(ctx context.Context, in *ReserveOrUpdateExperiencePassportItemRequest, opts ...grpc.CallOption) (*ReserveOrUpdateExperiencePassportItemResponse, error)
+	RecordHostExperienceOperation(ctx context.Context, in *RecordHostExperienceOperationRequest, opts ...grpc.CallOption) (*RecordHostExperienceOperationResponse, error)
+	AdminListExperienceAccessPassportAudit(ctx context.Context, in *AdminListExperienceAccessPassportAuditRequest, opts ...grpc.CallOption) (*AdminListExperienceAccessPassportAuditResponse, error)
+	AdminReconcileExperienceReservationOrAppeal(ctx context.Context, in *AdminReconcileExperienceReservationOrAppealRequest, opts ...grpc.CallOption) (*AdminReconcileExperienceReservationOrAppealResponse, error)
+	// Choice 8 (EM8): Member Feed & Editorial Intelligence
+	GetMemberFeedEditorialWorkbench(ctx context.Context, in *GetMemberFeedEditorialWorkbenchRequest, opts ...grpc.CallOption) (*GetMemberFeedEditorialWorkbenchResponse, error)
+	PreviewPublishOrRevokeFeedShare(ctx context.Context, in *PreviewPublishOrRevokeFeedShareRequest, opts ...grpc.CallOption) (*PreviewPublishOrRevokeFeedShareResponse, error)
+	RecordEditorialCorrectionOrResetMode(ctx context.Context, in *RecordEditorialCorrectionOrResetModeRequest, opts ...grpc.CallOption) (*RecordEditorialCorrectionOrResetModeResponse, error)
+	AdminListMemberFeedEditorialAudit(ctx context.Context, in *AdminListMemberFeedEditorialAuditRequest, opts ...grpc.CallOption) (*AdminListMemberFeedEditorialAuditResponse, error)
+	AdminModerateFeedShareOrEditorialCorrection(ctx context.Context, in *AdminModerateFeedShareOrEditorialCorrectionRequest, opts ...grpc.CallOption) (*AdminModerateFeedShareOrEditorialCorrectionResponse, error)
+	// Choice 9 (EM9): Contribution & Gratitude Ledger
+	GetContributionLedgerWorkbench(ctx context.Context, in *GetContributionLedgerWorkbenchRequest, opts ...grpc.CallOption) (*GetContributionLedgerWorkbenchResponse, error)
+	RecordContributionOrGratitudeEndorsement(ctx context.Context, in *RecordContributionOrGratitudeEndorsementRequest, opts ...grpc.CallOption) (*RecordContributionOrGratitudeEndorsementResponse, error)
+	UpdateContributionVisibilityOrCorrection(ctx context.Context, in *UpdateContributionVisibilityOrCorrectionRequest, opts ...grpc.CallOption) (*UpdateContributionVisibilityOrCorrectionResponse, error)
+	AdminListContributionLedgerAudit(ctx context.Context, in *AdminListContributionLedgerAuditRequest, opts ...grpc.CallOption) (*AdminListContributionLedgerAuditResponse, error)
+	AdminModerateContributionCollusionOrSponsor(ctx context.Context, in *AdminModerateContributionCollusionOrSponsorRequest, opts ...grpc.CallOption) (*AdminModerateContributionCollusionOrSponsorResponse, error)
+	// Choice 10 (EM10): Benefits & Redemption Marketplace
+	GetBenefitsMarketplaceWorkbench(ctx context.Context, in *GetBenefitsMarketplaceWorkbenchRequest, opts ...grpc.CallOption) (*GetBenefitsMarketplaceWorkbenchResponse, error)
+	QuoteOrRedeemBenefitOffer(ctx context.Context, in *QuoteOrRedeemBenefitOfferRequest, opts ...grpc.CallOption) (*QuoteOrRedeemBenefitOfferResponse, error)
+	UpdateRedemptionDisputeOrCancel(ctx context.Context, in *UpdateRedemptionDisputeOrCancelRequest, opts ...grpc.CallOption) (*UpdateRedemptionDisputeOrCancelResponse, error)
+	AdminListBenefitsMarketplaceAudit(ctx context.Context, in *AdminListBenefitsMarketplaceAuditRequest, opts ...grpc.CallOption) (*AdminListBenefitsMarketplaceAuditResponse, error)
+	AdminReconcileBenefitPointsOrRedemption(ctx context.Context, in *AdminReconcileBenefitPointsOrRedemptionRequest, opts ...grpc.CallOption) (*AdminReconcileBenefitPointsOrRedemptionResponse, error)
+	// Choice 11 (EM11): Membership & Household Center
+	GetMembershipHouseholdWorkbench(ctx context.Context, in *GetMembershipHouseholdWorkbenchRequest, opts ...grpc.CallOption) (*GetMembershipHouseholdWorkbenchResponse, error)
+	PreviewOrExecuteMembershipLifecycleAction(ctx context.Context, in *PreviewOrExecuteMembershipLifecycleActionRequest, opts ...grpc.CallOption) (*PreviewOrExecuteMembershipLifecycleActionResponse, error)
+	ManageHouseholdMemberSeat(ctx context.Context, in *ManageHouseholdMemberSeatRequest, opts ...grpc.CallOption) (*ManageHouseholdMemberSeatResponse, error)
+	AdminListMembershipHouseholdAudit(ctx context.Context, in *AdminListMembershipHouseholdAuditRequest, opts ...grpc.CallOption) (*AdminListMembershipHouseholdAuditResponse, error)
+	AdminResolveHardshipOrHouseholdDispute(ctx context.Context, in *AdminResolveHardshipOrHouseholdDisputeRequest, opts ...grpc.CallOption) (*AdminResolveHardshipOrHouseholdDisputeResponse, error)
+	// Choice 12 (EM12): Unified Inbox & Communication Control
+	GetUnifiedInboxWorkbench(ctx context.Context, in *GetUnifiedInboxWorkbenchRequest, opts ...grpc.CallOption) (*GetUnifiedInboxWorkbenchResponse, error)
+	UpdateCommunicationChannelControl(ctx context.Context, in *UpdateCommunicationChannelControlRequest, opts ...grpc.CallOption) (*UpdateCommunicationChannelControlResponse, error)
+	AcknowledgeOrDeleteInboxDispatch(ctx context.Context, in *AcknowledgeOrDeleteInboxDispatchRequest, opts ...grpc.CallOption) (*AcknowledgeOrDeleteInboxDispatchResponse, error)
+	AdminListUnifiedInboxAudit(ctx context.Context, in *AdminListUnifiedInboxAuditRequest, opts ...grpc.CallOption) (*AdminListUnifiedInboxAuditResponse, error)
+	AdminManageRequiredNoticeOrBurstPolicy(ctx context.Context, in *AdminManageRequiredNoticeOrBurstPolicyRequest, opts ...grpc.CallOption) (*AdminManageRequiredNoticeOrBurstPolicyResponse, error)
+	// Choice 13 (EM13): Ecosystem Concierge
+	GetEcosystemConciergeWorkbench(ctx context.Context, in *GetEcosystemConciergeWorkbenchRequest, opts ...grpc.CallOption) (*GetEcosystemConciergeWorkbenchResponse, error)
+	CreateOrUpdateConciergeRequest(ctx context.Context, in *CreateOrUpdateConciergeRequestRequest, opts ...grpc.CallOption) (*CreateOrUpdateConciergeRequestResponse, error)
+	ApproveOrEscalateConciergePacket(ctx context.Context, in *ApproveOrEscalateConciergePacketRequest, opts ...grpc.CallOption) (*ApproveOrEscalateConciergePacketResponse, error)
+	AdminListEcosystemConciergeAudit(ctx context.Context, in *AdminListEcosystemConciergeAuditRequest, opts ...grpc.CallOption) (*AdminListEcosystemConciergeAuditResponse, error)
+	AdminResolveConciergeCommitmentOrEscalation(ctx context.Context, in *AdminResolveConciergeCommitmentOrEscalationRequest, opts ...grpc.CallOption) (*AdminResolveConciergeCommitmentOrEscalationResponse, error)
+	// Choice 14 (EM14): Personal Review & Life Narrative
+	GetPersonalReviewNarrativeWorkbench(ctx context.Context, in *GetPersonalReviewNarrativeWorkbenchRequest, opts ...grpc.CallOption) (*GetPersonalReviewNarrativeWorkbenchResponse, error)
+	GenerateOrRedactLifeNarrativeReview(ctx context.Context, in *GenerateOrRedactLifeNarrativeReviewRequest, opts ...grpc.CallOption) (*GenerateOrRedactLifeNarrativeReviewResponse, error)
+	OrderOrManagePrintedYearbookArtifact(ctx context.Context, in *OrderOrManagePrintedYearbookArtifactRequest, opts ...grpc.CallOption) (*OrderOrManagePrintedYearbookArtifactResponse, error)
+	AdminListPersonalReviewNarrativeAudit(ctx context.Context, in *AdminListPersonalReviewNarrativeAuditRequest, opts ...grpc.CallOption) (*AdminListPersonalReviewNarrativeAuditResponse, error)
+	AdminManagePrintJobOrAddressPurge(ctx context.Context, in *AdminManagePrintJobOrAddressPurgeRequest, opts ...grpc.CallOption) (*AdminManagePrintJobOrAddressPurgeResponse, error)
+	// Choice 15 (EM15): Member Governance & Independent Audit
+	GetMemberGovernanceAuditWorkbench(ctx context.Context, in *GetMemberGovernanceAuditWorkbenchRequest, opts ...grpc.CallOption) (*GetMemberGovernanceAuditWorkbenchResponse, error)
+	SubmitAdvisoryPolicyProposalOrVote(ctx context.Context, in *SubmitAdvisoryPolicyProposalOrVoteRequest, opts ...grpc.CallOption) (*SubmitAdvisoryPolicyProposalOrVoteResponse, error)
+	RequestDecisionRemedyOrInspectPrecedent(ctx context.Context, in *RequestDecisionRemedyOrInspectPrecedentRequest, opts ...grpc.CallOption) (*RequestDecisionRemedyOrInspectPrecedentResponse, error)
+	AdminListMemberGovernanceAudit(ctx context.Context, in *AdminListMemberGovernanceAuditRequest, opts ...grpc.CallOption) (*AdminListMemberGovernanceAuditResponse, error)
+	AdminCertifyPolicyDiffOrObserverBoundary(ctx context.Context, in *AdminCertifyPolicyDiffOrObserverBoundaryRequest, opts ...grpc.CallOption) (*AdminCertifyPolicyDiffOrObserverBoundaryResponse, error)
 }
 
 type empireServiceClient struct {
@@ -624,6 +791,766 @@ func (c *empireServiceClient) GetYearInEmpire(ctx context.Context, in *GetYearIn
 	return out, nil
 }
 
+func (c *empireServiceClient) GetStandingConstitutionWorkbench(ctx context.Context, in *GetStandingConstitutionWorkbenchRequest, opts ...grpc.CallOption) (*GetStandingConstitutionWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetStandingConstitutionWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetStandingConstitutionWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateStandingConstitutionMode(ctx context.Context, in *UpdateStandingConstitutionModeRequest, opts ...grpc.CallOption) (*UpdateStandingConstitutionModeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateStandingConstitutionModeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateStandingConstitutionMode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) FileStandingDisputeOrRecompute(ctx context.Context, in *FileStandingDisputeOrRecomputeRequest, opts ...grpc.CallOption) (*FileStandingDisputeOrRecomputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FileStandingDisputeOrRecomputeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_FileStandingDisputeOrRecompute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListStandingConstitutionAudit(ctx context.Context, in *AdminListStandingConstitutionAuditRequest, opts ...grpc.CallOption) (*AdminListStandingConstitutionAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListStandingConstitutionAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListStandingConstitutionAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminResolveStandingDisputeOrPolicy(ctx context.Context, in *AdminResolveStandingDisputeOrPolicyRequest, opts ...grpc.CallOption) (*AdminResolveStandingDisputeOrPolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminResolveStandingDisputeOrPolicyResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminResolveStandingDisputeOrPolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetTwelvePillarTodayWorkbench(ctx context.Context, in *GetTwelvePillarTodayWorkbenchRequest, opts ...grpc.CallOption) (*GetTwelvePillarTodayWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTwelvePillarTodayWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetTwelvePillarTodayWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateTodayCardDisposition(ctx context.Context, in *UpdateTodayCardDispositionRequest, opts ...grpc.CallOption) (*UpdateTodayCardDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateTodayCardDispositionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateTodayCardDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ResolveCrossPillarConflict(ctx context.Context, in *ResolveCrossPillarConflictRequest, opts ...grpc.CallOption) (*ResolveCrossPillarConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveCrossPillarConflictResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ResolveCrossPillarConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateTodayOperatingMode(ctx context.Context, in *UpdateTodayOperatingModeRequest, opts ...grpc.CallOption) (*UpdateTodayOperatingModeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateTodayOperatingModeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateTodayOperatingMode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListTwelvePillarTodayAudit(ctx context.Context, in *AdminListTwelvePillarTodayAuditRequest, opts ...grpc.CallOption) (*AdminListTwelvePillarTodayAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListTwelvePillarTodayAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListTwelvePillarTodayAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminManageTodayContractOrOutage(ctx context.Context, in *AdminManageTodayContractOrOutageRequest, opts ...grpc.CallOption) (*AdminManageTodayContractOrOutageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageTodayContractOrOutageResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminManageTodayContractOrOutage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetGoalOrchestratorWorkbench(ctx context.Context, in *GetGoalOrchestratorWorkbenchRequest, opts ...grpc.CallOption) (*GetGoalOrchestratorWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetGoalOrchestratorWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetGoalOrchestratorWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) CreateOrReplanLifeSeasonCampaign(ctx context.Context, in *CreateOrReplanLifeSeasonCampaignRequest, opts ...grpc.CallOption) (*CreateOrReplanLifeSeasonCampaignResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrReplanLifeSeasonCampaignResponse)
+	err := c.cc.Invoke(ctx, EmpireService_CreateOrReplanLifeSeasonCampaign_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ApproveOrCompleteCampaignMilestone(ctx context.Context, in *ApproveOrCompleteCampaignMilestoneRequest, opts ...grpc.CallOption) (*ApproveOrCompleteCampaignMilestoneResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrCompleteCampaignMilestoneResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ApproveOrCompleteCampaignMilestone_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListGoalOrchestratorAudit(ctx context.Context, in *AdminListGoalOrchestratorAuditRequest, opts ...grpc.CallOption) (*AdminListGoalOrchestratorAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListGoalOrchestratorAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListGoalOrchestratorAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateCampaignCapabilityOrHandoff(ctx context.Context, in *AdminModerateCampaignCapabilityOrHandoffRequest, opts ...grpc.CallOption) (*AdminModerateCampaignCapabilityOrHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateCampaignCapabilityOrHandoffResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateCampaignCapabilityOrHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetAchievementWalletWorkbench(ctx context.Context, in *GetAchievementWalletWorkbenchRequest, opts ...grpc.CallOption) (*GetAchievementWalletWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAchievementWalletWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetAchievementWalletWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) MintPortableAchievementCredential(ctx context.Context, in *MintPortableAchievementCredentialRequest, opts ...grpc.CallOption) (*MintPortableAchievementCredentialResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MintPortableAchievementCredentialResponse)
+	err := c.cc.Invoke(ctx, EmpireService_MintPortableAchievementCredential_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RevokeOrVerifyPortableCredential(ctx context.Context, in *RevokeOrVerifyPortableCredentialRequest, opts ...grpc.CallOption) (*RevokeOrVerifyPortableCredentialResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeOrVerifyPortableCredentialResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RevokeOrVerifyPortableCredential_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListAchievementWalletAudit(ctx context.Context, in *AdminListAchievementWalletAuditRequest, opts ...grpc.CallOption) (*AdminListAchievementWalletAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListAchievementWalletAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListAchievementWalletAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateCredentialOrVerifierAbuse(ctx context.Context, in *AdminModerateCredentialOrVerifierAbuseRequest, opts ...grpc.CallOption) (*AdminModerateCredentialOrVerifierAbuseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateCredentialOrVerifierAbuseResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateCredentialOrVerifierAbuse_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetContextualDirectoryWorkbench(ctx context.Context, in *GetContextualDirectoryWorkbenchRequest, opts ...grpc.CallOption) (*GetContextualDirectoryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetContextualDirectoryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetContextualDirectoryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateContextualDirectoryProfile(ctx context.Context, in *UpdateContextualDirectoryProfileRequest, opts ...grpc.CallOption) (*UpdateContextualDirectoryProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateContextualDirectoryProfileResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateContextualDirectoryProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RequestOrRespondContextualIntroduction(ctx context.Context, in *RequestOrRespondContextualIntroductionRequest, opts ...grpc.CallOption) (*RequestOrRespondContextualIntroductionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestOrRespondContextualIntroductionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RequestOrRespondContextualIntroduction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListContextualDirectoryAudit(ctx context.Context, in *AdminListContextualDirectoryAuditRequest, opts ...grpc.CallOption) (*AdminListContextualDirectoryAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListContextualDirectoryAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListContextualDirectoryAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateDirectoryIntroductionAbuse(ctx context.Context, in *AdminModerateDirectoryIntroductionAbuseRequest, opts ...grpc.CallOption) (*AdminModerateDirectoryIntroductionAbuseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateDirectoryIntroductionAbuseResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateDirectoryIntroductionAbuse_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetCirclesCouncilsWorkbench(ctx context.Context, in *GetCirclesCouncilsWorkbenchRequest, opts ...grpc.CallOption) (*GetCirclesCouncilsWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCirclesCouncilsWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetCirclesCouncilsWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) CreateOrUpdateCircleCouncilSpace(ctx context.Context, in *CreateOrUpdateCircleCouncilSpaceRequest, opts ...grpc.CallOption) (*CreateOrUpdateCircleCouncilSpaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrUpdateCircleCouncilSpaceResponse)
+	err := c.cc.Invoke(ctx, EmpireService_CreateOrUpdateCircleCouncilSpace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RecordCircleArtifactOrCloseSpace(ctx context.Context, in *RecordCircleArtifactOrCloseSpaceRequest, opts ...grpc.CallOption) (*RecordCircleArtifactOrCloseSpaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordCircleArtifactOrCloseSpaceResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RecordCircleArtifactOrCloseSpace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListCirclesCouncilsAudit(ctx context.Context, in *AdminListCirclesCouncilsAuditRequest, opts ...grpc.CallOption) (*AdminListCirclesCouncilsAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListCirclesCouncilsAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListCirclesCouncilsAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateCircleSpaceOrDispute(ctx context.Context, in *AdminModerateCircleSpaceOrDisputeRequest, opts ...grpc.CallOption) (*AdminModerateCircleSpaceOrDisputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateCircleSpaceOrDisputeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateCircleSpaceOrDispute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetExperienceAccessPassportWorkbench(ctx context.Context, in *GetExperienceAccessPassportWorkbenchRequest, opts ...grpc.CallOption) (*GetExperienceAccessPassportWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetExperienceAccessPassportWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetExperienceAccessPassportWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ReserveOrUpdateExperiencePassportItem(ctx context.Context, in *ReserveOrUpdateExperiencePassportItemRequest, opts ...grpc.CallOption) (*ReserveOrUpdateExperiencePassportItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReserveOrUpdateExperiencePassportItemResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ReserveOrUpdateExperiencePassportItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RecordHostExperienceOperation(ctx context.Context, in *RecordHostExperienceOperationRequest, opts ...grpc.CallOption) (*RecordHostExperienceOperationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordHostExperienceOperationResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RecordHostExperienceOperation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListExperienceAccessPassportAudit(ctx context.Context, in *AdminListExperienceAccessPassportAuditRequest, opts ...grpc.CallOption) (*AdminListExperienceAccessPassportAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListExperienceAccessPassportAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListExperienceAccessPassportAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminReconcileExperienceReservationOrAppeal(ctx context.Context, in *AdminReconcileExperienceReservationOrAppealRequest, opts ...grpc.CallOption) (*AdminReconcileExperienceReservationOrAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminReconcileExperienceReservationOrAppealResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminReconcileExperienceReservationOrAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetMemberFeedEditorialWorkbench(ctx context.Context, in *GetMemberFeedEditorialWorkbenchRequest, opts ...grpc.CallOption) (*GetMemberFeedEditorialWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMemberFeedEditorialWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetMemberFeedEditorialWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) PreviewPublishOrRevokeFeedShare(ctx context.Context, in *PreviewPublishOrRevokeFeedShareRequest, opts ...grpc.CallOption) (*PreviewPublishOrRevokeFeedShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewPublishOrRevokeFeedShareResponse)
+	err := c.cc.Invoke(ctx, EmpireService_PreviewPublishOrRevokeFeedShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RecordEditorialCorrectionOrResetMode(ctx context.Context, in *RecordEditorialCorrectionOrResetModeRequest, opts ...grpc.CallOption) (*RecordEditorialCorrectionOrResetModeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordEditorialCorrectionOrResetModeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RecordEditorialCorrectionOrResetMode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListMemberFeedEditorialAudit(ctx context.Context, in *AdminListMemberFeedEditorialAuditRequest, opts ...grpc.CallOption) (*AdminListMemberFeedEditorialAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListMemberFeedEditorialAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListMemberFeedEditorialAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateFeedShareOrEditorialCorrection(ctx context.Context, in *AdminModerateFeedShareOrEditorialCorrectionRequest, opts ...grpc.CallOption) (*AdminModerateFeedShareOrEditorialCorrectionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateFeedShareOrEditorialCorrectionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateFeedShareOrEditorialCorrection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetContributionLedgerWorkbench(ctx context.Context, in *GetContributionLedgerWorkbenchRequest, opts ...grpc.CallOption) (*GetContributionLedgerWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetContributionLedgerWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetContributionLedgerWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RecordContributionOrGratitudeEndorsement(ctx context.Context, in *RecordContributionOrGratitudeEndorsementRequest, opts ...grpc.CallOption) (*RecordContributionOrGratitudeEndorsementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordContributionOrGratitudeEndorsementResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RecordContributionOrGratitudeEndorsement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateContributionVisibilityOrCorrection(ctx context.Context, in *UpdateContributionVisibilityOrCorrectionRequest, opts ...grpc.CallOption) (*UpdateContributionVisibilityOrCorrectionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateContributionVisibilityOrCorrectionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateContributionVisibilityOrCorrection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListContributionLedgerAudit(ctx context.Context, in *AdminListContributionLedgerAuditRequest, opts ...grpc.CallOption) (*AdminListContributionLedgerAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListContributionLedgerAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListContributionLedgerAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminModerateContributionCollusionOrSponsor(ctx context.Context, in *AdminModerateContributionCollusionOrSponsorRequest, opts ...grpc.CallOption) (*AdminModerateContributionCollusionOrSponsorResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateContributionCollusionOrSponsorResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminModerateContributionCollusionOrSponsor_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetBenefitsMarketplaceWorkbench(ctx context.Context, in *GetBenefitsMarketplaceWorkbenchRequest, opts ...grpc.CallOption) (*GetBenefitsMarketplaceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetBenefitsMarketplaceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetBenefitsMarketplaceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) QuoteOrRedeemBenefitOffer(ctx context.Context, in *QuoteOrRedeemBenefitOfferRequest, opts ...grpc.CallOption) (*QuoteOrRedeemBenefitOfferResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(QuoteOrRedeemBenefitOfferResponse)
+	err := c.cc.Invoke(ctx, EmpireService_QuoteOrRedeemBenefitOffer_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateRedemptionDisputeOrCancel(ctx context.Context, in *UpdateRedemptionDisputeOrCancelRequest, opts ...grpc.CallOption) (*UpdateRedemptionDisputeOrCancelResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateRedemptionDisputeOrCancelResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateRedemptionDisputeOrCancel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListBenefitsMarketplaceAudit(ctx context.Context, in *AdminListBenefitsMarketplaceAuditRequest, opts ...grpc.CallOption) (*AdminListBenefitsMarketplaceAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListBenefitsMarketplaceAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListBenefitsMarketplaceAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminReconcileBenefitPointsOrRedemption(ctx context.Context, in *AdminReconcileBenefitPointsOrRedemptionRequest, opts ...grpc.CallOption) (*AdminReconcileBenefitPointsOrRedemptionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminReconcileBenefitPointsOrRedemptionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminReconcileBenefitPointsOrRedemption_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetMembershipHouseholdWorkbench(ctx context.Context, in *GetMembershipHouseholdWorkbenchRequest, opts ...grpc.CallOption) (*GetMembershipHouseholdWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMembershipHouseholdWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetMembershipHouseholdWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) PreviewOrExecuteMembershipLifecycleAction(ctx context.Context, in *PreviewOrExecuteMembershipLifecycleActionRequest, opts ...grpc.CallOption) (*PreviewOrExecuteMembershipLifecycleActionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PreviewOrExecuteMembershipLifecycleActionResponse)
+	err := c.cc.Invoke(ctx, EmpireService_PreviewOrExecuteMembershipLifecycleAction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ManageHouseholdMemberSeat(ctx context.Context, in *ManageHouseholdMemberSeatRequest, opts ...grpc.CallOption) (*ManageHouseholdMemberSeatResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ManageHouseholdMemberSeatResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ManageHouseholdMemberSeat_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListMembershipHouseholdAudit(ctx context.Context, in *AdminListMembershipHouseholdAuditRequest, opts ...grpc.CallOption) (*AdminListMembershipHouseholdAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListMembershipHouseholdAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListMembershipHouseholdAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminResolveHardshipOrHouseholdDispute(ctx context.Context, in *AdminResolveHardshipOrHouseholdDisputeRequest, opts ...grpc.CallOption) (*AdminResolveHardshipOrHouseholdDisputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminResolveHardshipOrHouseholdDisputeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminResolveHardshipOrHouseholdDispute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetUnifiedInboxWorkbench(ctx context.Context, in *GetUnifiedInboxWorkbenchRequest, opts ...grpc.CallOption) (*GetUnifiedInboxWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetUnifiedInboxWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetUnifiedInboxWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) UpdateCommunicationChannelControl(ctx context.Context, in *UpdateCommunicationChannelControlRequest, opts ...grpc.CallOption) (*UpdateCommunicationChannelControlResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCommunicationChannelControlResponse)
+	err := c.cc.Invoke(ctx, EmpireService_UpdateCommunicationChannelControl_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AcknowledgeOrDeleteInboxDispatch(ctx context.Context, in *AcknowledgeOrDeleteInboxDispatchRequest, opts ...grpc.CallOption) (*AcknowledgeOrDeleteInboxDispatchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcknowledgeOrDeleteInboxDispatchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AcknowledgeOrDeleteInboxDispatch_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListUnifiedInboxAudit(ctx context.Context, in *AdminListUnifiedInboxAuditRequest, opts ...grpc.CallOption) (*AdminListUnifiedInboxAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListUnifiedInboxAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListUnifiedInboxAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminManageRequiredNoticeOrBurstPolicy(ctx context.Context, in *AdminManageRequiredNoticeOrBurstPolicyRequest, opts ...grpc.CallOption) (*AdminManageRequiredNoticeOrBurstPolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManageRequiredNoticeOrBurstPolicyResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminManageRequiredNoticeOrBurstPolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetEcosystemConciergeWorkbench(ctx context.Context, in *GetEcosystemConciergeWorkbenchRequest, opts ...grpc.CallOption) (*GetEcosystemConciergeWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEcosystemConciergeWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetEcosystemConciergeWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) CreateOrUpdateConciergeRequest(ctx context.Context, in *CreateOrUpdateConciergeRequestRequest, opts ...grpc.CallOption) (*CreateOrUpdateConciergeRequestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateOrUpdateConciergeRequestResponse)
+	err := c.cc.Invoke(ctx, EmpireService_CreateOrUpdateConciergeRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) ApproveOrEscalateConciergePacket(ctx context.Context, in *ApproveOrEscalateConciergePacketRequest, opts ...grpc.CallOption) (*ApproveOrEscalateConciergePacketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrEscalateConciergePacketResponse)
+	err := c.cc.Invoke(ctx, EmpireService_ApproveOrEscalateConciergePacket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListEcosystemConciergeAudit(ctx context.Context, in *AdminListEcosystemConciergeAuditRequest, opts ...grpc.CallOption) (*AdminListEcosystemConciergeAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListEcosystemConciergeAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListEcosystemConciergeAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminResolveConciergeCommitmentOrEscalation(ctx context.Context, in *AdminResolveConciergeCommitmentOrEscalationRequest, opts ...grpc.CallOption) (*AdminResolveConciergeCommitmentOrEscalationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminResolveConciergeCommitmentOrEscalationResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminResolveConciergeCommitmentOrEscalation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetPersonalReviewNarrativeWorkbench(ctx context.Context, in *GetPersonalReviewNarrativeWorkbenchRequest, opts ...grpc.CallOption) (*GetPersonalReviewNarrativeWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPersonalReviewNarrativeWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetPersonalReviewNarrativeWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GenerateOrRedactLifeNarrativeReview(ctx context.Context, in *GenerateOrRedactLifeNarrativeReviewRequest, opts ...grpc.CallOption) (*GenerateOrRedactLifeNarrativeReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateOrRedactLifeNarrativeReviewResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GenerateOrRedactLifeNarrativeReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) OrderOrManagePrintedYearbookArtifact(ctx context.Context, in *OrderOrManagePrintedYearbookArtifactRequest, opts ...grpc.CallOption) (*OrderOrManagePrintedYearbookArtifactResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(OrderOrManagePrintedYearbookArtifactResponse)
+	err := c.cc.Invoke(ctx, EmpireService_OrderOrManagePrintedYearbookArtifact_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListPersonalReviewNarrativeAudit(ctx context.Context, in *AdminListPersonalReviewNarrativeAuditRequest, opts ...grpc.CallOption) (*AdminListPersonalReviewNarrativeAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListPersonalReviewNarrativeAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListPersonalReviewNarrativeAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminManagePrintJobOrAddressPurge(ctx context.Context, in *AdminManagePrintJobOrAddressPurgeRequest, opts ...grpc.CallOption) (*AdminManagePrintJobOrAddressPurgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminManagePrintJobOrAddressPurgeResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminManagePrintJobOrAddressPurge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) GetMemberGovernanceAuditWorkbench(ctx context.Context, in *GetMemberGovernanceAuditWorkbenchRequest, opts ...grpc.CallOption) (*GetMemberGovernanceAuditWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMemberGovernanceAuditWorkbenchResponse)
+	err := c.cc.Invoke(ctx, EmpireService_GetMemberGovernanceAuditWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) SubmitAdvisoryPolicyProposalOrVote(ctx context.Context, in *SubmitAdvisoryPolicyProposalOrVoteRequest, opts ...grpc.CallOption) (*SubmitAdvisoryPolicyProposalOrVoteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitAdvisoryPolicyProposalOrVoteResponse)
+	err := c.cc.Invoke(ctx, EmpireService_SubmitAdvisoryPolicyProposalOrVote_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) RequestDecisionRemedyOrInspectPrecedent(ctx context.Context, in *RequestDecisionRemedyOrInspectPrecedentRequest, opts ...grpc.CallOption) (*RequestDecisionRemedyOrInspectPrecedentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestDecisionRemedyOrInspectPrecedentResponse)
+	err := c.cc.Invoke(ctx, EmpireService_RequestDecisionRemedyOrInspectPrecedent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminListMemberGovernanceAudit(ctx context.Context, in *AdminListMemberGovernanceAuditRequest, opts ...grpc.CallOption) (*AdminListMemberGovernanceAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListMemberGovernanceAuditResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminListMemberGovernanceAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *empireServiceClient) AdminCertifyPolicyDiffOrObserverBoundary(ctx context.Context, in *AdminCertifyPolicyDiffOrObserverBoundaryRequest, opts ...grpc.CallOption) (*AdminCertifyPolicyDiffOrObserverBoundaryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminCertifyPolicyDiffOrObserverBoundaryResponse)
+	err := c.cc.Invoke(ctx, EmpireService_AdminCertifyPolicyDiffOrObserverBoundary_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmpireServiceServer is the server API for EmpireService service.
 // All implementations must embed UnimplementedEmpireServiceServer
 // for forward compatibility.
@@ -755,6 +1682,97 @@ type EmpireServiceServer interface {
 	// GetYearInEmpire returns the caller's annual recap — score, tier, points,
 	// salons, top pillar — computed across the requested year.
 	GetYearInEmpire(context.Context, *GetYearInEmpireRequest) (*GetYearInEmpireResponse, error)
+	// Choice 1 (EM1): Transparent Standing Constitution
+	GetStandingConstitutionWorkbench(context.Context, *GetStandingConstitutionWorkbenchRequest) (*GetStandingConstitutionWorkbenchResponse, error)
+	UpdateStandingConstitutionMode(context.Context, *UpdateStandingConstitutionModeRequest) (*UpdateStandingConstitutionModeResponse, error)
+	FileStandingDisputeOrRecompute(context.Context, *FileStandingDisputeOrRecomputeRequest) (*FileStandingDisputeOrRecomputeResponse, error)
+	AdminListStandingConstitutionAudit(context.Context, *AdminListStandingConstitutionAuditRequest) (*AdminListStandingConstitutionAuditResponse, error)
+	AdminResolveStandingDisputeOrPolicy(context.Context, *AdminResolveStandingDisputeOrPolicyRequest) (*AdminResolveStandingDisputeOrPolicyResponse, error)
+	// Choice 2 (EM2): Twelve-Pillar Today & Action Command Center
+	GetTwelvePillarTodayWorkbench(context.Context, *GetTwelvePillarTodayWorkbenchRequest) (*GetTwelvePillarTodayWorkbenchResponse, error)
+	UpdateTodayCardDisposition(context.Context, *UpdateTodayCardDispositionRequest) (*UpdateTodayCardDispositionResponse, error)
+	ResolveCrossPillarConflict(context.Context, *ResolveCrossPillarConflictRequest) (*ResolveCrossPillarConflictResponse, error)
+	UpdateTodayOperatingMode(context.Context, *UpdateTodayOperatingModeRequest) (*UpdateTodayOperatingModeResponse, error)
+	AdminListTwelvePillarTodayAudit(context.Context, *AdminListTwelvePillarTodayAuditRequest) (*AdminListTwelvePillarTodayAuditResponse, error)
+	AdminManageTodayContractOrOutage(context.Context, *AdminManageTodayContractOrOutageRequest) (*AdminManageTodayContractOrOutageResponse, error)
+	// Choice 3 (EM3): Goal & Life-Season Orchestrator
+	GetGoalOrchestratorWorkbench(context.Context, *GetGoalOrchestratorWorkbenchRequest) (*GetGoalOrchestratorWorkbenchResponse, error)
+	CreateOrReplanLifeSeasonCampaign(context.Context, *CreateOrReplanLifeSeasonCampaignRequest) (*CreateOrReplanLifeSeasonCampaignResponse, error)
+	ApproveOrCompleteCampaignMilestone(context.Context, *ApproveOrCompleteCampaignMilestoneRequest) (*ApproveOrCompleteCampaignMilestoneResponse, error)
+	AdminListGoalOrchestratorAudit(context.Context, *AdminListGoalOrchestratorAuditRequest) (*AdminListGoalOrchestratorAuditResponse, error)
+	AdminModerateCampaignCapabilityOrHandoff(context.Context, *AdminModerateCampaignCapabilityOrHandoffRequest) (*AdminModerateCampaignCapabilityOrHandoffResponse, error)
+	// Choice 4 (EM4): Portable Achievement Wallet
+	GetAchievementWalletWorkbench(context.Context, *GetAchievementWalletWorkbenchRequest) (*GetAchievementWalletWorkbenchResponse, error)
+	MintPortableAchievementCredential(context.Context, *MintPortableAchievementCredentialRequest) (*MintPortableAchievementCredentialResponse, error)
+	RevokeOrVerifyPortableCredential(context.Context, *RevokeOrVerifyPortableCredentialRequest) (*RevokeOrVerifyPortableCredentialResponse, error)
+	AdminListAchievementWalletAudit(context.Context, *AdminListAchievementWalletAuditRequest) (*AdminListAchievementWalletAuditResponse, error)
+	AdminModerateCredentialOrVerifierAbuse(context.Context, *AdminModerateCredentialOrVerifierAbuseRequest) (*AdminModerateCredentialOrVerifierAbuseResponse, error)
+	// Choice 5 (EM5): Contextual Directory & Introductions
+	GetContextualDirectoryWorkbench(context.Context, *GetContextualDirectoryWorkbenchRequest) (*GetContextualDirectoryWorkbenchResponse, error)
+	UpdateContextualDirectoryProfile(context.Context, *UpdateContextualDirectoryProfileRequest) (*UpdateContextualDirectoryProfileResponse, error)
+	RequestOrRespondContextualIntroduction(context.Context, *RequestOrRespondContextualIntroductionRequest) (*RequestOrRespondContextualIntroductionResponse, error)
+	AdminListContextualDirectoryAudit(context.Context, *AdminListContextualDirectoryAuditRequest) (*AdminListContextualDirectoryAuditResponse, error)
+	AdminModerateDirectoryIntroductionAbuse(context.Context, *AdminModerateDirectoryIntroductionAbuseRequest) (*AdminModerateDirectoryIntroductionAbuseResponse, error)
+	// Choice 6 (EM6): Circles, Councils, and Projects
+	GetCirclesCouncilsWorkbench(context.Context, *GetCirclesCouncilsWorkbenchRequest) (*GetCirclesCouncilsWorkbenchResponse, error)
+	CreateOrUpdateCircleCouncilSpace(context.Context, *CreateOrUpdateCircleCouncilSpaceRequest) (*CreateOrUpdateCircleCouncilSpaceResponse, error)
+	RecordCircleArtifactOrCloseSpace(context.Context, *RecordCircleArtifactOrCloseSpaceRequest) (*RecordCircleArtifactOrCloseSpaceResponse, error)
+	AdminListCirclesCouncilsAudit(context.Context, *AdminListCirclesCouncilsAuditRequest) (*AdminListCirclesCouncilsAuditResponse, error)
+	AdminModerateCircleSpaceOrDispute(context.Context, *AdminModerateCircleSpaceOrDisputeRequest) (*AdminModerateCircleSpaceOrDisputeResponse, error)
+	// Choice 7 (EM7): Experiences & Access Passport
+	GetExperienceAccessPassportWorkbench(context.Context, *GetExperienceAccessPassportWorkbenchRequest) (*GetExperienceAccessPassportWorkbenchResponse, error)
+	ReserveOrUpdateExperiencePassportItem(context.Context, *ReserveOrUpdateExperiencePassportItemRequest) (*ReserveOrUpdateExperiencePassportItemResponse, error)
+	RecordHostExperienceOperation(context.Context, *RecordHostExperienceOperationRequest) (*RecordHostExperienceOperationResponse, error)
+	AdminListExperienceAccessPassportAudit(context.Context, *AdminListExperienceAccessPassportAuditRequest) (*AdminListExperienceAccessPassportAuditResponse, error)
+	AdminReconcileExperienceReservationOrAppeal(context.Context, *AdminReconcileExperienceReservationOrAppealRequest) (*AdminReconcileExperienceReservationOrAppealResponse, error)
+	// Choice 8 (EM8): Member Feed & Editorial Intelligence
+	GetMemberFeedEditorialWorkbench(context.Context, *GetMemberFeedEditorialWorkbenchRequest) (*GetMemberFeedEditorialWorkbenchResponse, error)
+	PreviewPublishOrRevokeFeedShare(context.Context, *PreviewPublishOrRevokeFeedShareRequest) (*PreviewPublishOrRevokeFeedShareResponse, error)
+	RecordEditorialCorrectionOrResetMode(context.Context, *RecordEditorialCorrectionOrResetModeRequest) (*RecordEditorialCorrectionOrResetModeResponse, error)
+	AdminListMemberFeedEditorialAudit(context.Context, *AdminListMemberFeedEditorialAuditRequest) (*AdminListMemberFeedEditorialAuditResponse, error)
+	AdminModerateFeedShareOrEditorialCorrection(context.Context, *AdminModerateFeedShareOrEditorialCorrectionRequest) (*AdminModerateFeedShareOrEditorialCorrectionResponse, error)
+	// Choice 9 (EM9): Contribution & Gratitude Ledger
+	GetContributionLedgerWorkbench(context.Context, *GetContributionLedgerWorkbenchRequest) (*GetContributionLedgerWorkbenchResponse, error)
+	RecordContributionOrGratitudeEndorsement(context.Context, *RecordContributionOrGratitudeEndorsementRequest) (*RecordContributionOrGratitudeEndorsementResponse, error)
+	UpdateContributionVisibilityOrCorrection(context.Context, *UpdateContributionVisibilityOrCorrectionRequest) (*UpdateContributionVisibilityOrCorrectionResponse, error)
+	AdminListContributionLedgerAudit(context.Context, *AdminListContributionLedgerAuditRequest) (*AdminListContributionLedgerAuditResponse, error)
+	AdminModerateContributionCollusionOrSponsor(context.Context, *AdminModerateContributionCollusionOrSponsorRequest) (*AdminModerateContributionCollusionOrSponsorResponse, error)
+	// Choice 10 (EM10): Benefits & Redemption Marketplace
+	GetBenefitsMarketplaceWorkbench(context.Context, *GetBenefitsMarketplaceWorkbenchRequest) (*GetBenefitsMarketplaceWorkbenchResponse, error)
+	QuoteOrRedeemBenefitOffer(context.Context, *QuoteOrRedeemBenefitOfferRequest) (*QuoteOrRedeemBenefitOfferResponse, error)
+	UpdateRedemptionDisputeOrCancel(context.Context, *UpdateRedemptionDisputeOrCancelRequest) (*UpdateRedemptionDisputeOrCancelResponse, error)
+	AdminListBenefitsMarketplaceAudit(context.Context, *AdminListBenefitsMarketplaceAuditRequest) (*AdminListBenefitsMarketplaceAuditResponse, error)
+	AdminReconcileBenefitPointsOrRedemption(context.Context, *AdminReconcileBenefitPointsOrRedemptionRequest) (*AdminReconcileBenefitPointsOrRedemptionResponse, error)
+	// Choice 11 (EM11): Membership & Household Center
+	GetMembershipHouseholdWorkbench(context.Context, *GetMembershipHouseholdWorkbenchRequest) (*GetMembershipHouseholdWorkbenchResponse, error)
+	PreviewOrExecuteMembershipLifecycleAction(context.Context, *PreviewOrExecuteMembershipLifecycleActionRequest) (*PreviewOrExecuteMembershipLifecycleActionResponse, error)
+	ManageHouseholdMemberSeat(context.Context, *ManageHouseholdMemberSeatRequest) (*ManageHouseholdMemberSeatResponse, error)
+	AdminListMembershipHouseholdAudit(context.Context, *AdminListMembershipHouseholdAuditRequest) (*AdminListMembershipHouseholdAuditResponse, error)
+	AdminResolveHardshipOrHouseholdDispute(context.Context, *AdminResolveHardshipOrHouseholdDisputeRequest) (*AdminResolveHardshipOrHouseholdDisputeResponse, error)
+	// Choice 12 (EM12): Unified Inbox & Communication Control
+	GetUnifiedInboxWorkbench(context.Context, *GetUnifiedInboxWorkbenchRequest) (*GetUnifiedInboxWorkbenchResponse, error)
+	UpdateCommunicationChannelControl(context.Context, *UpdateCommunicationChannelControlRequest) (*UpdateCommunicationChannelControlResponse, error)
+	AcknowledgeOrDeleteInboxDispatch(context.Context, *AcknowledgeOrDeleteInboxDispatchRequest) (*AcknowledgeOrDeleteInboxDispatchResponse, error)
+	AdminListUnifiedInboxAudit(context.Context, *AdminListUnifiedInboxAuditRequest) (*AdminListUnifiedInboxAuditResponse, error)
+	AdminManageRequiredNoticeOrBurstPolicy(context.Context, *AdminManageRequiredNoticeOrBurstPolicyRequest) (*AdminManageRequiredNoticeOrBurstPolicyResponse, error)
+	// Choice 13 (EM13): Ecosystem Concierge
+	GetEcosystemConciergeWorkbench(context.Context, *GetEcosystemConciergeWorkbenchRequest) (*GetEcosystemConciergeWorkbenchResponse, error)
+	CreateOrUpdateConciergeRequest(context.Context, *CreateOrUpdateConciergeRequestRequest) (*CreateOrUpdateConciergeRequestResponse, error)
+	ApproveOrEscalateConciergePacket(context.Context, *ApproveOrEscalateConciergePacketRequest) (*ApproveOrEscalateConciergePacketResponse, error)
+	AdminListEcosystemConciergeAudit(context.Context, *AdminListEcosystemConciergeAuditRequest) (*AdminListEcosystemConciergeAuditResponse, error)
+	AdminResolveConciergeCommitmentOrEscalation(context.Context, *AdminResolveConciergeCommitmentOrEscalationRequest) (*AdminResolveConciergeCommitmentOrEscalationResponse, error)
+	// Choice 14 (EM14): Personal Review & Life Narrative
+	GetPersonalReviewNarrativeWorkbench(context.Context, *GetPersonalReviewNarrativeWorkbenchRequest) (*GetPersonalReviewNarrativeWorkbenchResponse, error)
+	GenerateOrRedactLifeNarrativeReview(context.Context, *GenerateOrRedactLifeNarrativeReviewRequest) (*GenerateOrRedactLifeNarrativeReviewResponse, error)
+	OrderOrManagePrintedYearbookArtifact(context.Context, *OrderOrManagePrintedYearbookArtifactRequest) (*OrderOrManagePrintedYearbookArtifactResponse, error)
+	AdminListPersonalReviewNarrativeAudit(context.Context, *AdminListPersonalReviewNarrativeAuditRequest) (*AdminListPersonalReviewNarrativeAuditResponse, error)
+	AdminManagePrintJobOrAddressPurge(context.Context, *AdminManagePrintJobOrAddressPurgeRequest) (*AdminManagePrintJobOrAddressPurgeResponse, error)
+	// Choice 15 (EM15): Member Governance & Independent Audit
+	GetMemberGovernanceAuditWorkbench(context.Context, *GetMemberGovernanceAuditWorkbenchRequest) (*GetMemberGovernanceAuditWorkbenchResponse, error)
+	SubmitAdvisoryPolicyProposalOrVote(context.Context, *SubmitAdvisoryPolicyProposalOrVoteRequest) (*SubmitAdvisoryPolicyProposalOrVoteResponse, error)
+	RequestDecisionRemedyOrInspectPrecedent(context.Context, *RequestDecisionRemedyOrInspectPrecedentRequest) (*RequestDecisionRemedyOrInspectPrecedentResponse, error)
+	AdminListMemberGovernanceAudit(context.Context, *AdminListMemberGovernanceAuditRequest) (*AdminListMemberGovernanceAuditResponse, error)
+	AdminCertifyPolicyDiffOrObserverBoundary(context.Context, *AdminCertifyPolicyDiffOrObserverBoundaryRequest) (*AdminCertifyPolicyDiffOrObserverBoundaryResponse, error)
 	mustEmbedUnimplementedEmpireServiceServer()
 }
 
@@ -890,6 +1908,234 @@ func (UnimplementedEmpireServiceServer) ListMyAlmanacOrders(context.Context, *Li
 }
 func (UnimplementedEmpireServiceServer) GetYearInEmpire(context.Context, *GetYearInEmpireRequest) (*GetYearInEmpireResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetYearInEmpire not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetStandingConstitutionWorkbench(context.Context, *GetStandingConstitutionWorkbenchRequest) (*GetStandingConstitutionWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetStandingConstitutionWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateStandingConstitutionMode(context.Context, *UpdateStandingConstitutionModeRequest) (*UpdateStandingConstitutionModeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateStandingConstitutionMode not implemented")
+}
+func (UnimplementedEmpireServiceServer) FileStandingDisputeOrRecompute(context.Context, *FileStandingDisputeOrRecomputeRequest) (*FileStandingDisputeOrRecomputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FileStandingDisputeOrRecompute not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListStandingConstitutionAudit(context.Context, *AdminListStandingConstitutionAuditRequest) (*AdminListStandingConstitutionAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListStandingConstitutionAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminResolveStandingDisputeOrPolicy(context.Context, *AdminResolveStandingDisputeOrPolicyRequest) (*AdminResolveStandingDisputeOrPolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminResolveStandingDisputeOrPolicy not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetTwelvePillarTodayWorkbench(context.Context, *GetTwelvePillarTodayWorkbenchRequest) (*GetTwelvePillarTodayWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTwelvePillarTodayWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateTodayCardDisposition(context.Context, *UpdateTodayCardDispositionRequest) (*UpdateTodayCardDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateTodayCardDisposition not implemented")
+}
+func (UnimplementedEmpireServiceServer) ResolveCrossPillarConflict(context.Context, *ResolveCrossPillarConflictRequest) (*ResolveCrossPillarConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveCrossPillarConflict not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateTodayOperatingMode(context.Context, *UpdateTodayOperatingModeRequest) (*UpdateTodayOperatingModeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateTodayOperatingMode not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListTwelvePillarTodayAudit(context.Context, *AdminListTwelvePillarTodayAuditRequest) (*AdminListTwelvePillarTodayAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListTwelvePillarTodayAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminManageTodayContractOrOutage(context.Context, *AdminManageTodayContractOrOutageRequest) (*AdminManageTodayContractOrOutageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageTodayContractOrOutage not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetGoalOrchestratorWorkbench(context.Context, *GetGoalOrchestratorWorkbenchRequest) (*GetGoalOrchestratorWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetGoalOrchestratorWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) CreateOrReplanLifeSeasonCampaign(context.Context, *CreateOrReplanLifeSeasonCampaignRequest) (*CreateOrReplanLifeSeasonCampaignResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrReplanLifeSeasonCampaign not implemented")
+}
+func (UnimplementedEmpireServiceServer) ApproveOrCompleteCampaignMilestone(context.Context, *ApproveOrCompleteCampaignMilestoneRequest) (*ApproveOrCompleteCampaignMilestoneResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrCompleteCampaignMilestone not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListGoalOrchestratorAudit(context.Context, *AdminListGoalOrchestratorAuditRequest) (*AdminListGoalOrchestratorAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListGoalOrchestratorAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateCampaignCapabilityOrHandoff(context.Context, *AdminModerateCampaignCapabilityOrHandoffRequest) (*AdminModerateCampaignCapabilityOrHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateCampaignCapabilityOrHandoff not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetAchievementWalletWorkbench(context.Context, *GetAchievementWalletWorkbenchRequest) (*GetAchievementWalletWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAchievementWalletWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) MintPortableAchievementCredential(context.Context, *MintPortableAchievementCredentialRequest) (*MintPortableAchievementCredentialResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MintPortableAchievementCredential not implemented")
+}
+func (UnimplementedEmpireServiceServer) RevokeOrVerifyPortableCredential(context.Context, *RevokeOrVerifyPortableCredentialRequest) (*RevokeOrVerifyPortableCredentialResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeOrVerifyPortableCredential not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListAchievementWalletAudit(context.Context, *AdminListAchievementWalletAuditRequest) (*AdminListAchievementWalletAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListAchievementWalletAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateCredentialOrVerifierAbuse(context.Context, *AdminModerateCredentialOrVerifierAbuseRequest) (*AdminModerateCredentialOrVerifierAbuseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateCredentialOrVerifierAbuse not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetContextualDirectoryWorkbench(context.Context, *GetContextualDirectoryWorkbenchRequest) (*GetContextualDirectoryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetContextualDirectoryWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateContextualDirectoryProfile(context.Context, *UpdateContextualDirectoryProfileRequest) (*UpdateContextualDirectoryProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateContextualDirectoryProfile not implemented")
+}
+func (UnimplementedEmpireServiceServer) RequestOrRespondContextualIntroduction(context.Context, *RequestOrRespondContextualIntroductionRequest) (*RequestOrRespondContextualIntroductionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestOrRespondContextualIntroduction not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListContextualDirectoryAudit(context.Context, *AdminListContextualDirectoryAuditRequest) (*AdminListContextualDirectoryAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListContextualDirectoryAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateDirectoryIntroductionAbuse(context.Context, *AdminModerateDirectoryIntroductionAbuseRequest) (*AdminModerateDirectoryIntroductionAbuseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateDirectoryIntroductionAbuse not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetCirclesCouncilsWorkbench(context.Context, *GetCirclesCouncilsWorkbenchRequest) (*GetCirclesCouncilsWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCirclesCouncilsWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) CreateOrUpdateCircleCouncilSpace(context.Context, *CreateOrUpdateCircleCouncilSpaceRequest) (*CreateOrUpdateCircleCouncilSpaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrUpdateCircleCouncilSpace not implemented")
+}
+func (UnimplementedEmpireServiceServer) RecordCircleArtifactOrCloseSpace(context.Context, *RecordCircleArtifactOrCloseSpaceRequest) (*RecordCircleArtifactOrCloseSpaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordCircleArtifactOrCloseSpace not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListCirclesCouncilsAudit(context.Context, *AdminListCirclesCouncilsAuditRequest) (*AdminListCirclesCouncilsAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListCirclesCouncilsAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateCircleSpaceOrDispute(context.Context, *AdminModerateCircleSpaceOrDisputeRequest) (*AdminModerateCircleSpaceOrDisputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateCircleSpaceOrDispute not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetExperienceAccessPassportWorkbench(context.Context, *GetExperienceAccessPassportWorkbenchRequest) (*GetExperienceAccessPassportWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetExperienceAccessPassportWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) ReserveOrUpdateExperiencePassportItem(context.Context, *ReserveOrUpdateExperiencePassportItemRequest) (*ReserveOrUpdateExperiencePassportItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReserveOrUpdateExperiencePassportItem not implemented")
+}
+func (UnimplementedEmpireServiceServer) RecordHostExperienceOperation(context.Context, *RecordHostExperienceOperationRequest) (*RecordHostExperienceOperationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordHostExperienceOperation not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListExperienceAccessPassportAudit(context.Context, *AdminListExperienceAccessPassportAuditRequest) (*AdminListExperienceAccessPassportAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListExperienceAccessPassportAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminReconcileExperienceReservationOrAppeal(context.Context, *AdminReconcileExperienceReservationOrAppealRequest) (*AdminReconcileExperienceReservationOrAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminReconcileExperienceReservationOrAppeal not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetMemberFeedEditorialWorkbench(context.Context, *GetMemberFeedEditorialWorkbenchRequest) (*GetMemberFeedEditorialWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMemberFeedEditorialWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) PreviewPublishOrRevokeFeedShare(context.Context, *PreviewPublishOrRevokeFeedShareRequest) (*PreviewPublishOrRevokeFeedShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewPublishOrRevokeFeedShare not implemented")
+}
+func (UnimplementedEmpireServiceServer) RecordEditorialCorrectionOrResetMode(context.Context, *RecordEditorialCorrectionOrResetModeRequest) (*RecordEditorialCorrectionOrResetModeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordEditorialCorrectionOrResetMode not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListMemberFeedEditorialAudit(context.Context, *AdminListMemberFeedEditorialAuditRequest) (*AdminListMemberFeedEditorialAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListMemberFeedEditorialAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateFeedShareOrEditorialCorrection(context.Context, *AdminModerateFeedShareOrEditorialCorrectionRequest) (*AdminModerateFeedShareOrEditorialCorrectionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateFeedShareOrEditorialCorrection not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetContributionLedgerWorkbench(context.Context, *GetContributionLedgerWorkbenchRequest) (*GetContributionLedgerWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetContributionLedgerWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) RecordContributionOrGratitudeEndorsement(context.Context, *RecordContributionOrGratitudeEndorsementRequest) (*RecordContributionOrGratitudeEndorsementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordContributionOrGratitudeEndorsement not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateContributionVisibilityOrCorrection(context.Context, *UpdateContributionVisibilityOrCorrectionRequest) (*UpdateContributionVisibilityOrCorrectionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateContributionVisibilityOrCorrection not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListContributionLedgerAudit(context.Context, *AdminListContributionLedgerAuditRequest) (*AdminListContributionLedgerAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListContributionLedgerAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminModerateContributionCollusionOrSponsor(context.Context, *AdminModerateContributionCollusionOrSponsorRequest) (*AdminModerateContributionCollusionOrSponsorResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateContributionCollusionOrSponsor not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetBenefitsMarketplaceWorkbench(context.Context, *GetBenefitsMarketplaceWorkbenchRequest) (*GetBenefitsMarketplaceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetBenefitsMarketplaceWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) QuoteOrRedeemBenefitOffer(context.Context, *QuoteOrRedeemBenefitOfferRequest) (*QuoteOrRedeemBenefitOfferResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method QuoteOrRedeemBenefitOffer not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateRedemptionDisputeOrCancel(context.Context, *UpdateRedemptionDisputeOrCancelRequest) (*UpdateRedemptionDisputeOrCancelResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateRedemptionDisputeOrCancel not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListBenefitsMarketplaceAudit(context.Context, *AdminListBenefitsMarketplaceAuditRequest) (*AdminListBenefitsMarketplaceAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListBenefitsMarketplaceAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminReconcileBenefitPointsOrRedemption(context.Context, *AdminReconcileBenefitPointsOrRedemptionRequest) (*AdminReconcileBenefitPointsOrRedemptionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminReconcileBenefitPointsOrRedemption not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetMembershipHouseholdWorkbench(context.Context, *GetMembershipHouseholdWorkbenchRequest) (*GetMembershipHouseholdWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMembershipHouseholdWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) PreviewOrExecuteMembershipLifecycleAction(context.Context, *PreviewOrExecuteMembershipLifecycleActionRequest) (*PreviewOrExecuteMembershipLifecycleActionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PreviewOrExecuteMembershipLifecycleAction not implemented")
+}
+func (UnimplementedEmpireServiceServer) ManageHouseholdMemberSeat(context.Context, *ManageHouseholdMemberSeatRequest) (*ManageHouseholdMemberSeatResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ManageHouseholdMemberSeat not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListMembershipHouseholdAudit(context.Context, *AdminListMembershipHouseholdAuditRequest) (*AdminListMembershipHouseholdAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListMembershipHouseholdAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminResolveHardshipOrHouseholdDispute(context.Context, *AdminResolveHardshipOrHouseholdDisputeRequest) (*AdminResolveHardshipOrHouseholdDisputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminResolveHardshipOrHouseholdDispute not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetUnifiedInboxWorkbench(context.Context, *GetUnifiedInboxWorkbenchRequest) (*GetUnifiedInboxWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetUnifiedInboxWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) UpdateCommunicationChannelControl(context.Context, *UpdateCommunicationChannelControlRequest) (*UpdateCommunicationChannelControlResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCommunicationChannelControl not implemented")
+}
+func (UnimplementedEmpireServiceServer) AcknowledgeOrDeleteInboxDispatch(context.Context, *AcknowledgeOrDeleteInboxDispatchRequest) (*AcknowledgeOrDeleteInboxDispatchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcknowledgeOrDeleteInboxDispatch not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListUnifiedInboxAudit(context.Context, *AdminListUnifiedInboxAuditRequest) (*AdminListUnifiedInboxAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListUnifiedInboxAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminManageRequiredNoticeOrBurstPolicy(context.Context, *AdminManageRequiredNoticeOrBurstPolicyRequest) (*AdminManageRequiredNoticeOrBurstPolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManageRequiredNoticeOrBurstPolicy not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetEcosystemConciergeWorkbench(context.Context, *GetEcosystemConciergeWorkbenchRequest) (*GetEcosystemConciergeWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEcosystemConciergeWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) CreateOrUpdateConciergeRequest(context.Context, *CreateOrUpdateConciergeRequestRequest) (*CreateOrUpdateConciergeRequestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateOrUpdateConciergeRequest not implemented")
+}
+func (UnimplementedEmpireServiceServer) ApproveOrEscalateConciergePacket(context.Context, *ApproveOrEscalateConciergePacketRequest) (*ApproveOrEscalateConciergePacketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrEscalateConciergePacket not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListEcosystemConciergeAudit(context.Context, *AdminListEcosystemConciergeAuditRequest) (*AdminListEcosystemConciergeAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListEcosystemConciergeAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminResolveConciergeCommitmentOrEscalation(context.Context, *AdminResolveConciergeCommitmentOrEscalationRequest) (*AdminResolveConciergeCommitmentOrEscalationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminResolveConciergeCommitmentOrEscalation not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetPersonalReviewNarrativeWorkbench(context.Context, *GetPersonalReviewNarrativeWorkbenchRequest) (*GetPersonalReviewNarrativeWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPersonalReviewNarrativeWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) GenerateOrRedactLifeNarrativeReview(context.Context, *GenerateOrRedactLifeNarrativeReviewRequest) (*GenerateOrRedactLifeNarrativeReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateOrRedactLifeNarrativeReview not implemented")
+}
+func (UnimplementedEmpireServiceServer) OrderOrManagePrintedYearbookArtifact(context.Context, *OrderOrManagePrintedYearbookArtifactRequest) (*OrderOrManagePrintedYearbookArtifactResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method OrderOrManagePrintedYearbookArtifact not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListPersonalReviewNarrativeAudit(context.Context, *AdminListPersonalReviewNarrativeAuditRequest) (*AdminListPersonalReviewNarrativeAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListPersonalReviewNarrativeAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminManagePrintJobOrAddressPurge(context.Context, *AdminManagePrintJobOrAddressPurgeRequest) (*AdminManagePrintJobOrAddressPurgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminManagePrintJobOrAddressPurge not implemented")
+}
+func (UnimplementedEmpireServiceServer) GetMemberGovernanceAuditWorkbench(context.Context, *GetMemberGovernanceAuditWorkbenchRequest) (*GetMemberGovernanceAuditWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMemberGovernanceAuditWorkbench not implemented")
+}
+func (UnimplementedEmpireServiceServer) SubmitAdvisoryPolicyProposalOrVote(context.Context, *SubmitAdvisoryPolicyProposalOrVoteRequest) (*SubmitAdvisoryPolicyProposalOrVoteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitAdvisoryPolicyProposalOrVote not implemented")
+}
+func (UnimplementedEmpireServiceServer) RequestDecisionRemedyOrInspectPrecedent(context.Context, *RequestDecisionRemedyOrInspectPrecedentRequest) (*RequestDecisionRemedyOrInspectPrecedentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestDecisionRemedyOrInspectPrecedent not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminListMemberGovernanceAudit(context.Context, *AdminListMemberGovernanceAuditRequest) (*AdminListMemberGovernanceAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListMemberGovernanceAudit not implemented")
+}
+func (UnimplementedEmpireServiceServer) AdminCertifyPolicyDiffOrObserverBoundary(context.Context, *AdminCertifyPolicyDiffOrObserverBoundaryRequest) (*AdminCertifyPolicyDiffOrObserverBoundaryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminCertifyPolicyDiffOrObserverBoundary not implemented")
 }
 func (UnimplementedEmpireServiceServer) mustEmbedUnimplementedEmpireServiceServer() {}
 func (UnimplementedEmpireServiceServer) testEmbeddedByValue()                       {}
@@ -1668,6 +2914,1374 @@ func _EmpireService_GetYearInEmpire_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmpireService_GetStandingConstitutionWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetStandingConstitutionWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetStandingConstitutionWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetStandingConstitutionWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetStandingConstitutionWorkbench(ctx, req.(*GetStandingConstitutionWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateStandingConstitutionMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateStandingConstitutionModeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateStandingConstitutionMode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateStandingConstitutionMode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateStandingConstitutionMode(ctx, req.(*UpdateStandingConstitutionModeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_FileStandingDisputeOrRecompute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FileStandingDisputeOrRecomputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).FileStandingDisputeOrRecompute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_FileStandingDisputeOrRecompute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).FileStandingDisputeOrRecompute(ctx, req.(*FileStandingDisputeOrRecomputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListStandingConstitutionAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListStandingConstitutionAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListStandingConstitutionAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListStandingConstitutionAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListStandingConstitutionAudit(ctx, req.(*AdminListStandingConstitutionAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminResolveStandingDisputeOrPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminResolveStandingDisputeOrPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminResolveStandingDisputeOrPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminResolveStandingDisputeOrPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminResolveStandingDisputeOrPolicy(ctx, req.(*AdminResolveStandingDisputeOrPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetTwelvePillarTodayWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTwelvePillarTodayWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetTwelvePillarTodayWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetTwelvePillarTodayWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetTwelvePillarTodayWorkbench(ctx, req.(*GetTwelvePillarTodayWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateTodayCardDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTodayCardDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateTodayCardDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateTodayCardDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateTodayCardDisposition(ctx, req.(*UpdateTodayCardDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ResolveCrossPillarConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveCrossPillarConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ResolveCrossPillarConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ResolveCrossPillarConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ResolveCrossPillarConflict(ctx, req.(*ResolveCrossPillarConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateTodayOperatingMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateTodayOperatingModeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateTodayOperatingMode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateTodayOperatingMode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateTodayOperatingMode(ctx, req.(*UpdateTodayOperatingModeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListTwelvePillarTodayAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListTwelvePillarTodayAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListTwelvePillarTodayAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListTwelvePillarTodayAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListTwelvePillarTodayAudit(ctx, req.(*AdminListTwelvePillarTodayAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminManageTodayContractOrOutage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageTodayContractOrOutageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminManageTodayContractOrOutage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminManageTodayContractOrOutage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminManageTodayContractOrOutage(ctx, req.(*AdminManageTodayContractOrOutageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetGoalOrchestratorWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGoalOrchestratorWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetGoalOrchestratorWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetGoalOrchestratorWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetGoalOrchestratorWorkbench(ctx, req.(*GetGoalOrchestratorWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_CreateOrReplanLifeSeasonCampaign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrReplanLifeSeasonCampaignRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).CreateOrReplanLifeSeasonCampaign(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_CreateOrReplanLifeSeasonCampaign_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).CreateOrReplanLifeSeasonCampaign(ctx, req.(*CreateOrReplanLifeSeasonCampaignRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ApproveOrCompleteCampaignMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrCompleteCampaignMilestoneRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ApproveOrCompleteCampaignMilestone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ApproveOrCompleteCampaignMilestone_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ApproveOrCompleteCampaignMilestone(ctx, req.(*ApproveOrCompleteCampaignMilestoneRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListGoalOrchestratorAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListGoalOrchestratorAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListGoalOrchestratorAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListGoalOrchestratorAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListGoalOrchestratorAudit(ctx, req.(*AdminListGoalOrchestratorAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateCampaignCapabilityOrHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateCampaignCapabilityOrHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateCampaignCapabilityOrHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateCampaignCapabilityOrHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateCampaignCapabilityOrHandoff(ctx, req.(*AdminModerateCampaignCapabilityOrHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetAchievementWalletWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAchievementWalletWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetAchievementWalletWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetAchievementWalletWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetAchievementWalletWorkbench(ctx, req.(*GetAchievementWalletWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_MintPortableAchievementCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MintPortableAchievementCredentialRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).MintPortableAchievementCredential(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_MintPortableAchievementCredential_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).MintPortableAchievementCredential(ctx, req.(*MintPortableAchievementCredentialRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RevokeOrVerifyPortableCredential_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeOrVerifyPortableCredentialRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RevokeOrVerifyPortableCredential(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RevokeOrVerifyPortableCredential_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RevokeOrVerifyPortableCredential(ctx, req.(*RevokeOrVerifyPortableCredentialRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListAchievementWalletAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListAchievementWalletAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListAchievementWalletAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListAchievementWalletAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListAchievementWalletAudit(ctx, req.(*AdminListAchievementWalletAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateCredentialOrVerifierAbuse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateCredentialOrVerifierAbuseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateCredentialOrVerifierAbuse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateCredentialOrVerifierAbuse_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateCredentialOrVerifierAbuse(ctx, req.(*AdminModerateCredentialOrVerifierAbuseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetContextualDirectoryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContextualDirectoryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetContextualDirectoryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetContextualDirectoryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetContextualDirectoryWorkbench(ctx, req.(*GetContextualDirectoryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateContextualDirectoryProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateContextualDirectoryProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateContextualDirectoryProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateContextualDirectoryProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateContextualDirectoryProfile(ctx, req.(*UpdateContextualDirectoryProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RequestOrRespondContextualIntroduction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestOrRespondContextualIntroductionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RequestOrRespondContextualIntroduction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RequestOrRespondContextualIntroduction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RequestOrRespondContextualIntroduction(ctx, req.(*RequestOrRespondContextualIntroductionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListContextualDirectoryAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListContextualDirectoryAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListContextualDirectoryAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListContextualDirectoryAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListContextualDirectoryAudit(ctx, req.(*AdminListContextualDirectoryAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateDirectoryIntroductionAbuse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateDirectoryIntroductionAbuseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateDirectoryIntroductionAbuse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateDirectoryIntroductionAbuse_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateDirectoryIntroductionAbuse(ctx, req.(*AdminModerateDirectoryIntroductionAbuseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetCirclesCouncilsWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCirclesCouncilsWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetCirclesCouncilsWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetCirclesCouncilsWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetCirclesCouncilsWorkbench(ctx, req.(*GetCirclesCouncilsWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_CreateOrUpdateCircleCouncilSpace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrUpdateCircleCouncilSpaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).CreateOrUpdateCircleCouncilSpace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_CreateOrUpdateCircleCouncilSpace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).CreateOrUpdateCircleCouncilSpace(ctx, req.(*CreateOrUpdateCircleCouncilSpaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RecordCircleArtifactOrCloseSpace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordCircleArtifactOrCloseSpaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RecordCircleArtifactOrCloseSpace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RecordCircleArtifactOrCloseSpace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RecordCircleArtifactOrCloseSpace(ctx, req.(*RecordCircleArtifactOrCloseSpaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListCirclesCouncilsAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListCirclesCouncilsAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListCirclesCouncilsAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListCirclesCouncilsAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListCirclesCouncilsAudit(ctx, req.(*AdminListCirclesCouncilsAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateCircleSpaceOrDispute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateCircleSpaceOrDisputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateCircleSpaceOrDispute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateCircleSpaceOrDispute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateCircleSpaceOrDispute(ctx, req.(*AdminModerateCircleSpaceOrDisputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetExperienceAccessPassportWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetExperienceAccessPassportWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetExperienceAccessPassportWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetExperienceAccessPassportWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetExperienceAccessPassportWorkbench(ctx, req.(*GetExperienceAccessPassportWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ReserveOrUpdateExperiencePassportItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReserveOrUpdateExperiencePassportItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ReserveOrUpdateExperiencePassportItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ReserveOrUpdateExperiencePassportItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ReserveOrUpdateExperiencePassportItem(ctx, req.(*ReserveOrUpdateExperiencePassportItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RecordHostExperienceOperation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordHostExperienceOperationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RecordHostExperienceOperation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RecordHostExperienceOperation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RecordHostExperienceOperation(ctx, req.(*RecordHostExperienceOperationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListExperienceAccessPassportAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListExperienceAccessPassportAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListExperienceAccessPassportAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListExperienceAccessPassportAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListExperienceAccessPassportAudit(ctx, req.(*AdminListExperienceAccessPassportAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminReconcileExperienceReservationOrAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminReconcileExperienceReservationOrAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminReconcileExperienceReservationOrAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminReconcileExperienceReservationOrAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminReconcileExperienceReservationOrAppeal(ctx, req.(*AdminReconcileExperienceReservationOrAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetMemberFeedEditorialWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMemberFeedEditorialWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetMemberFeedEditorialWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetMemberFeedEditorialWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetMemberFeedEditorialWorkbench(ctx, req.(*GetMemberFeedEditorialWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_PreviewPublishOrRevokeFeedShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewPublishOrRevokeFeedShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).PreviewPublishOrRevokeFeedShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_PreviewPublishOrRevokeFeedShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).PreviewPublishOrRevokeFeedShare(ctx, req.(*PreviewPublishOrRevokeFeedShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RecordEditorialCorrectionOrResetMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordEditorialCorrectionOrResetModeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RecordEditorialCorrectionOrResetMode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RecordEditorialCorrectionOrResetMode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RecordEditorialCorrectionOrResetMode(ctx, req.(*RecordEditorialCorrectionOrResetModeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListMemberFeedEditorialAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListMemberFeedEditorialAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListMemberFeedEditorialAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListMemberFeedEditorialAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListMemberFeedEditorialAudit(ctx, req.(*AdminListMemberFeedEditorialAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateFeedShareOrEditorialCorrection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateFeedShareOrEditorialCorrectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateFeedShareOrEditorialCorrection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateFeedShareOrEditorialCorrection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateFeedShareOrEditorialCorrection(ctx, req.(*AdminModerateFeedShareOrEditorialCorrectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetContributionLedgerWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetContributionLedgerWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetContributionLedgerWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetContributionLedgerWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetContributionLedgerWorkbench(ctx, req.(*GetContributionLedgerWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RecordContributionOrGratitudeEndorsement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordContributionOrGratitudeEndorsementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RecordContributionOrGratitudeEndorsement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RecordContributionOrGratitudeEndorsement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RecordContributionOrGratitudeEndorsement(ctx, req.(*RecordContributionOrGratitudeEndorsementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateContributionVisibilityOrCorrection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateContributionVisibilityOrCorrectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateContributionVisibilityOrCorrection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateContributionVisibilityOrCorrection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateContributionVisibilityOrCorrection(ctx, req.(*UpdateContributionVisibilityOrCorrectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListContributionLedgerAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListContributionLedgerAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListContributionLedgerAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListContributionLedgerAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListContributionLedgerAudit(ctx, req.(*AdminListContributionLedgerAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminModerateContributionCollusionOrSponsor_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateContributionCollusionOrSponsorRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminModerateContributionCollusionOrSponsor(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminModerateContributionCollusionOrSponsor_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminModerateContributionCollusionOrSponsor(ctx, req.(*AdminModerateContributionCollusionOrSponsorRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetBenefitsMarketplaceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBenefitsMarketplaceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetBenefitsMarketplaceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetBenefitsMarketplaceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetBenefitsMarketplaceWorkbench(ctx, req.(*GetBenefitsMarketplaceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_QuoteOrRedeemBenefitOffer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QuoteOrRedeemBenefitOfferRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).QuoteOrRedeemBenefitOffer(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_QuoteOrRedeemBenefitOffer_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).QuoteOrRedeemBenefitOffer(ctx, req.(*QuoteOrRedeemBenefitOfferRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateRedemptionDisputeOrCancel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateRedemptionDisputeOrCancelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateRedemptionDisputeOrCancel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateRedemptionDisputeOrCancel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateRedemptionDisputeOrCancel(ctx, req.(*UpdateRedemptionDisputeOrCancelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListBenefitsMarketplaceAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListBenefitsMarketplaceAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListBenefitsMarketplaceAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListBenefitsMarketplaceAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListBenefitsMarketplaceAudit(ctx, req.(*AdminListBenefitsMarketplaceAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminReconcileBenefitPointsOrRedemption_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminReconcileBenefitPointsOrRedemptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminReconcileBenefitPointsOrRedemption(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminReconcileBenefitPointsOrRedemption_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminReconcileBenefitPointsOrRedemption(ctx, req.(*AdminReconcileBenefitPointsOrRedemptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetMembershipHouseholdWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMembershipHouseholdWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetMembershipHouseholdWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetMembershipHouseholdWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetMembershipHouseholdWorkbench(ctx, req.(*GetMembershipHouseholdWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_PreviewOrExecuteMembershipLifecycleAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PreviewOrExecuteMembershipLifecycleActionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).PreviewOrExecuteMembershipLifecycleAction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_PreviewOrExecuteMembershipLifecycleAction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).PreviewOrExecuteMembershipLifecycleAction(ctx, req.(*PreviewOrExecuteMembershipLifecycleActionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ManageHouseholdMemberSeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ManageHouseholdMemberSeatRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ManageHouseholdMemberSeat(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ManageHouseholdMemberSeat_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ManageHouseholdMemberSeat(ctx, req.(*ManageHouseholdMemberSeatRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListMembershipHouseholdAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListMembershipHouseholdAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListMembershipHouseholdAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListMembershipHouseholdAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListMembershipHouseholdAudit(ctx, req.(*AdminListMembershipHouseholdAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminResolveHardshipOrHouseholdDispute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminResolveHardshipOrHouseholdDisputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminResolveHardshipOrHouseholdDispute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminResolveHardshipOrHouseholdDispute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminResolveHardshipOrHouseholdDispute(ctx, req.(*AdminResolveHardshipOrHouseholdDisputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetUnifiedInboxWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUnifiedInboxWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetUnifiedInboxWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetUnifiedInboxWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetUnifiedInboxWorkbench(ctx, req.(*GetUnifiedInboxWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_UpdateCommunicationChannelControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCommunicationChannelControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).UpdateCommunicationChannelControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_UpdateCommunicationChannelControl_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).UpdateCommunicationChannelControl(ctx, req.(*UpdateCommunicationChannelControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AcknowledgeOrDeleteInboxDispatch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcknowledgeOrDeleteInboxDispatchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AcknowledgeOrDeleteInboxDispatch(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AcknowledgeOrDeleteInboxDispatch_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AcknowledgeOrDeleteInboxDispatch(ctx, req.(*AcknowledgeOrDeleteInboxDispatchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListUnifiedInboxAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListUnifiedInboxAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListUnifiedInboxAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListUnifiedInboxAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListUnifiedInboxAudit(ctx, req.(*AdminListUnifiedInboxAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminManageRequiredNoticeOrBurstPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManageRequiredNoticeOrBurstPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminManageRequiredNoticeOrBurstPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminManageRequiredNoticeOrBurstPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminManageRequiredNoticeOrBurstPolicy(ctx, req.(*AdminManageRequiredNoticeOrBurstPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetEcosystemConciergeWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEcosystemConciergeWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetEcosystemConciergeWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetEcosystemConciergeWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetEcosystemConciergeWorkbench(ctx, req.(*GetEcosystemConciergeWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_CreateOrUpdateConciergeRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateOrUpdateConciergeRequestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).CreateOrUpdateConciergeRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_CreateOrUpdateConciergeRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).CreateOrUpdateConciergeRequest(ctx, req.(*CreateOrUpdateConciergeRequestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_ApproveOrEscalateConciergePacket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrEscalateConciergePacketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).ApproveOrEscalateConciergePacket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_ApproveOrEscalateConciergePacket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).ApproveOrEscalateConciergePacket(ctx, req.(*ApproveOrEscalateConciergePacketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListEcosystemConciergeAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListEcosystemConciergeAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListEcosystemConciergeAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListEcosystemConciergeAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListEcosystemConciergeAudit(ctx, req.(*AdminListEcosystemConciergeAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminResolveConciergeCommitmentOrEscalation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminResolveConciergeCommitmentOrEscalationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminResolveConciergeCommitmentOrEscalation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminResolveConciergeCommitmentOrEscalation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminResolveConciergeCommitmentOrEscalation(ctx, req.(*AdminResolveConciergeCommitmentOrEscalationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetPersonalReviewNarrativeWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPersonalReviewNarrativeWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetPersonalReviewNarrativeWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetPersonalReviewNarrativeWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetPersonalReviewNarrativeWorkbench(ctx, req.(*GetPersonalReviewNarrativeWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GenerateOrRedactLifeNarrativeReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateOrRedactLifeNarrativeReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GenerateOrRedactLifeNarrativeReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GenerateOrRedactLifeNarrativeReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GenerateOrRedactLifeNarrativeReview(ctx, req.(*GenerateOrRedactLifeNarrativeReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_OrderOrManagePrintedYearbookArtifact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OrderOrManagePrintedYearbookArtifactRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).OrderOrManagePrintedYearbookArtifact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_OrderOrManagePrintedYearbookArtifact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).OrderOrManagePrintedYearbookArtifact(ctx, req.(*OrderOrManagePrintedYearbookArtifactRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListPersonalReviewNarrativeAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListPersonalReviewNarrativeAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListPersonalReviewNarrativeAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListPersonalReviewNarrativeAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListPersonalReviewNarrativeAudit(ctx, req.(*AdminListPersonalReviewNarrativeAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminManagePrintJobOrAddressPurge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminManagePrintJobOrAddressPurgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminManagePrintJobOrAddressPurge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminManagePrintJobOrAddressPurge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminManagePrintJobOrAddressPurge(ctx, req.(*AdminManagePrintJobOrAddressPurgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_GetMemberGovernanceAuditWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMemberGovernanceAuditWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).GetMemberGovernanceAuditWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_GetMemberGovernanceAuditWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).GetMemberGovernanceAuditWorkbench(ctx, req.(*GetMemberGovernanceAuditWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_SubmitAdvisoryPolicyProposalOrVote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitAdvisoryPolicyProposalOrVoteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).SubmitAdvisoryPolicyProposalOrVote(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_SubmitAdvisoryPolicyProposalOrVote_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).SubmitAdvisoryPolicyProposalOrVote(ctx, req.(*SubmitAdvisoryPolicyProposalOrVoteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_RequestDecisionRemedyOrInspectPrecedent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestDecisionRemedyOrInspectPrecedentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).RequestDecisionRemedyOrInspectPrecedent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_RequestDecisionRemedyOrInspectPrecedent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).RequestDecisionRemedyOrInspectPrecedent(ctx, req.(*RequestDecisionRemedyOrInspectPrecedentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminListMemberGovernanceAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListMemberGovernanceAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminListMemberGovernanceAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminListMemberGovernanceAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminListMemberGovernanceAudit(ctx, req.(*AdminListMemberGovernanceAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmpireService_AdminCertifyPolicyDiffOrObserverBoundary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCertifyPolicyDiffOrObserverBoundaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmpireServiceServer).AdminCertifyPolicyDiffOrObserverBoundary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: EmpireService_AdminCertifyPolicyDiffOrObserverBoundary_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmpireServiceServer).AdminCertifyPolicyDiffOrObserverBoundary(ctx, req.(*AdminCertifyPolicyDiffOrObserverBoundaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmpireService_ServiceDesc is the grpc.ServiceDesc for EmpireService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1842,6 +4456,310 @@ var EmpireService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetYearInEmpire",
 			Handler:    _EmpireService_GetYearInEmpire_Handler,
+		},
+		{
+			MethodName: "GetStandingConstitutionWorkbench",
+			Handler:    _EmpireService_GetStandingConstitutionWorkbench_Handler,
+		},
+		{
+			MethodName: "UpdateStandingConstitutionMode",
+			Handler:    _EmpireService_UpdateStandingConstitutionMode_Handler,
+		},
+		{
+			MethodName: "FileStandingDisputeOrRecompute",
+			Handler:    _EmpireService_FileStandingDisputeOrRecompute_Handler,
+		},
+		{
+			MethodName: "AdminListStandingConstitutionAudit",
+			Handler:    _EmpireService_AdminListStandingConstitutionAudit_Handler,
+		},
+		{
+			MethodName: "AdminResolveStandingDisputeOrPolicy",
+			Handler:    _EmpireService_AdminResolveStandingDisputeOrPolicy_Handler,
+		},
+		{
+			MethodName: "GetTwelvePillarTodayWorkbench",
+			Handler:    _EmpireService_GetTwelvePillarTodayWorkbench_Handler,
+		},
+		{
+			MethodName: "UpdateTodayCardDisposition",
+			Handler:    _EmpireService_UpdateTodayCardDisposition_Handler,
+		},
+		{
+			MethodName: "ResolveCrossPillarConflict",
+			Handler:    _EmpireService_ResolveCrossPillarConflict_Handler,
+		},
+		{
+			MethodName: "UpdateTodayOperatingMode",
+			Handler:    _EmpireService_UpdateTodayOperatingMode_Handler,
+		},
+		{
+			MethodName: "AdminListTwelvePillarTodayAudit",
+			Handler:    _EmpireService_AdminListTwelvePillarTodayAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageTodayContractOrOutage",
+			Handler:    _EmpireService_AdminManageTodayContractOrOutage_Handler,
+		},
+		{
+			MethodName: "GetGoalOrchestratorWorkbench",
+			Handler:    _EmpireService_GetGoalOrchestratorWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrReplanLifeSeasonCampaign",
+			Handler:    _EmpireService_CreateOrReplanLifeSeasonCampaign_Handler,
+		},
+		{
+			MethodName: "ApproveOrCompleteCampaignMilestone",
+			Handler:    _EmpireService_ApproveOrCompleteCampaignMilestone_Handler,
+		},
+		{
+			MethodName: "AdminListGoalOrchestratorAudit",
+			Handler:    _EmpireService_AdminListGoalOrchestratorAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateCampaignCapabilityOrHandoff",
+			Handler:    _EmpireService_AdminModerateCampaignCapabilityOrHandoff_Handler,
+		},
+		{
+			MethodName: "GetAchievementWalletWorkbench",
+			Handler:    _EmpireService_GetAchievementWalletWorkbench_Handler,
+		},
+		{
+			MethodName: "MintPortableAchievementCredential",
+			Handler:    _EmpireService_MintPortableAchievementCredential_Handler,
+		},
+		{
+			MethodName: "RevokeOrVerifyPortableCredential",
+			Handler:    _EmpireService_RevokeOrVerifyPortableCredential_Handler,
+		},
+		{
+			MethodName: "AdminListAchievementWalletAudit",
+			Handler:    _EmpireService_AdminListAchievementWalletAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateCredentialOrVerifierAbuse",
+			Handler:    _EmpireService_AdminModerateCredentialOrVerifierAbuse_Handler,
+		},
+		{
+			MethodName: "GetContextualDirectoryWorkbench",
+			Handler:    _EmpireService_GetContextualDirectoryWorkbench_Handler,
+		},
+		{
+			MethodName: "UpdateContextualDirectoryProfile",
+			Handler:    _EmpireService_UpdateContextualDirectoryProfile_Handler,
+		},
+		{
+			MethodName: "RequestOrRespondContextualIntroduction",
+			Handler:    _EmpireService_RequestOrRespondContextualIntroduction_Handler,
+		},
+		{
+			MethodName: "AdminListContextualDirectoryAudit",
+			Handler:    _EmpireService_AdminListContextualDirectoryAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateDirectoryIntroductionAbuse",
+			Handler:    _EmpireService_AdminModerateDirectoryIntroductionAbuse_Handler,
+		},
+		{
+			MethodName: "GetCirclesCouncilsWorkbench",
+			Handler:    _EmpireService_GetCirclesCouncilsWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateCircleCouncilSpace",
+			Handler:    _EmpireService_CreateOrUpdateCircleCouncilSpace_Handler,
+		},
+		{
+			MethodName: "RecordCircleArtifactOrCloseSpace",
+			Handler:    _EmpireService_RecordCircleArtifactOrCloseSpace_Handler,
+		},
+		{
+			MethodName: "AdminListCirclesCouncilsAudit",
+			Handler:    _EmpireService_AdminListCirclesCouncilsAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateCircleSpaceOrDispute",
+			Handler:    _EmpireService_AdminModerateCircleSpaceOrDispute_Handler,
+		},
+		{
+			MethodName: "GetExperienceAccessPassportWorkbench",
+			Handler:    _EmpireService_GetExperienceAccessPassportWorkbench_Handler,
+		},
+		{
+			MethodName: "ReserveOrUpdateExperiencePassportItem",
+			Handler:    _EmpireService_ReserveOrUpdateExperiencePassportItem_Handler,
+		},
+		{
+			MethodName: "RecordHostExperienceOperation",
+			Handler:    _EmpireService_RecordHostExperienceOperation_Handler,
+		},
+		{
+			MethodName: "AdminListExperienceAccessPassportAudit",
+			Handler:    _EmpireService_AdminListExperienceAccessPassportAudit_Handler,
+		},
+		{
+			MethodName: "AdminReconcileExperienceReservationOrAppeal",
+			Handler:    _EmpireService_AdminReconcileExperienceReservationOrAppeal_Handler,
+		},
+		{
+			MethodName: "GetMemberFeedEditorialWorkbench",
+			Handler:    _EmpireService_GetMemberFeedEditorialWorkbench_Handler,
+		},
+		{
+			MethodName: "PreviewPublishOrRevokeFeedShare",
+			Handler:    _EmpireService_PreviewPublishOrRevokeFeedShare_Handler,
+		},
+		{
+			MethodName: "RecordEditorialCorrectionOrResetMode",
+			Handler:    _EmpireService_RecordEditorialCorrectionOrResetMode_Handler,
+		},
+		{
+			MethodName: "AdminListMemberFeedEditorialAudit",
+			Handler:    _EmpireService_AdminListMemberFeedEditorialAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateFeedShareOrEditorialCorrection",
+			Handler:    _EmpireService_AdminModerateFeedShareOrEditorialCorrection_Handler,
+		},
+		{
+			MethodName: "GetContributionLedgerWorkbench",
+			Handler:    _EmpireService_GetContributionLedgerWorkbench_Handler,
+		},
+		{
+			MethodName: "RecordContributionOrGratitudeEndorsement",
+			Handler:    _EmpireService_RecordContributionOrGratitudeEndorsement_Handler,
+		},
+		{
+			MethodName: "UpdateContributionVisibilityOrCorrection",
+			Handler:    _EmpireService_UpdateContributionVisibilityOrCorrection_Handler,
+		},
+		{
+			MethodName: "AdminListContributionLedgerAudit",
+			Handler:    _EmpireService_AdminListContributionLedgerAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateContributionCollusionOrSponsor",
+			Handler:    _EmpireService_AdminModerateContributionCollusionOrSponsor_Handler,
+		},
+		{
+			MethodName: "GetBenefitsMarketplaceWorkbench",
+			Handler:    _EmpireService_GetBenefitsMarketplaceWorkbench_Handler,
+		},
+		{
+			MethodName: "QuoteOrRedeemBenefitOffer",
+			Handler:    _EmpireService_QuoteOrRedeemBenefitOffer_Handler,
+		},
+		{
+			MethodName: "UpdateRedemptionDisputeOrCancel",
+			Handler:    _EmpireService_UpdateRedemptionDisputeOrCancel_Handler,
+		},
+		{
+			MethodName: "AdminListBenefitsMarketplaceAudit",
+			Handler:    _EmpireService_AdminListBenefitsMarketplaceAudit_Handler,
+		},
+		{
+			MethodName: "AdminReconcileBenefitPointsOrRedemption",
+			Handler:    _EmpireService_AdminReconcileBenefitPointsOrRedemption_Handler,
+		},
+		{
+			MethodName: "GetMembershipHouseholdWorkbench",
+			Handler:    _EmpireService_GetMembershipHouseholdWorkbench_Handler,
+		},
+		{
+			MethodName: "PreviewOrExecuteMembershipLifecycleAction",
+			Handler:    _EmpireService_PreviewOrExecuteMembershipLifecycleAction_Handler,
+		},
+		{
+			MethodName: "ManageHouseholdMemberSeat",
+			Handler:    _EmpireService_ManageHouseholdMemberSeat_Handler,
+		},
+		{
+			MethodName: "AdminListMembershipHouseholdAudit",
+			Handler:    _EmpireService_AdminListMembershipHouseholdAudit_Handler,
+		},
+		{
+			MethodName: "AdminResolveHardshipOrHouseholdDispute",
+			Handler:    _EmpireService_AdminResolveHardshipOrHouseholdDispute_Handler,
+		},
+		{
+			MethodName: "GetUnifiedInboxWorkbench",
+			Handler:    _EmpireService_GetUnifiedInboxWorkbench_Handler,
+		},
+		{
+			MethodName: "UpdateCommunicationChannelControl",
+			Handler:    _EmpireService_UpdateCommunicationChannelControl_Handler,
+		},
+		{
+			MethodName: "AcknowledgeOrDeleteInboxDispatch",
+			Handler:    _EmpireService_AcknowledgeOrDeleteInboxDispatch_Handler,
+		},
+		{
+			MethodName: "AdminListUnifiedInboxAudit",
+			Handler:    _EmpireService_AdminListUnifiedInboxAudit_Handler,
+		},
+		{
+			MethodName: "AdminManageRequiredNoticeOrBurstPolicy",
+			Handler:    _EmpireService_AdminManageRequiredNoticeOrBurstPolicy_Handler,
+		},
+		{
+			MethodName: "GetEcosystemConciergeWorkbench",
+			Handler:    _EmpireService_GetEcosystemConciergeWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateOrUpdateConciergeRequest",
+			Handler:    _EmpireService_CreateOrUpdateConciergeRequest_Handler,
+		},
+		{
+			MethodName: "ApproveOrEscalateConciergePacket",
+			Handler:    _EmpireService_ApproveOrEscalateConciergePacket_Handler,
+		},
+		{
+			MethodName: "AdminListEcosystemConciergeAudit",
+			Handler:    _EmpireService_AdminListEcosystemConciergeAudit_Handler,
+		},
+		{
+			MethodName: "AdminResolveConciergeCommitmentOrEscalation",
+			Handler:    _EmpireService_AdminResolveConciergeCommitmentOrEscalation_Handler,
+		},
+		{
+			MethodName: "GetPersonalReviewNarrativeWorkbench",
+			Handler:    _EmpireService_GetPersonalReviewNarrativeWorkbench_Handler,
+		},
+		{
+			MethodName: "GenerateOrRedactLifeNarrativeReview",
+			Handler:    _EmpireService_GenerateOrRedactLifeNarrativeReview_Handler,
+		},
+		{
+			MethodName: "OrderOrManagePrintedYearbookArtifact",
+			Handler:    _EmpireService_OrderOrManagePrintedYearbookArtifact_Handler,
+		},
+		{
+			MethodName: "AdminListPersonalReviewNarrativeAudit",
+			Handler:    _EmpireService_AdminListPersonalReviewNarrativeAudit_Handler,
+		},
+		{
+			MethodName: "AdminManagePrintJobOrAddressPurge",
+			Handler:    _EmpireService_AdminManagePrintJobOrAddressPurge_Handler,
+		},
+		{
+			MethodName: "GetMemberGovernanceAuditWorkbench",
+			Handler:    _EmpireService_GetMemberGovernanceAuditWorkbench_Handler,
+		},
+		{
+			MethodName: "SubmitAdvisoryPolicyProposalOrVote",
+			Handler:    _EmpireService_SubmitAdvisoryPolicyProposalOrVote_Handler,
+		},
+		{
+			MethodName: "RequestDecisionRemedyOrInspectPrecedent",
+			Handler:    _EmpireService_RequestDecisionRemedyOrInspectPrecedent_Handler,
+		},
+		{
+			MethodName: "AdminListMemberGovernanceAudit",
+			Handler:    _EmpireService_AdminListMemberGovernanceAudit_Handler,
+		},
+		{
+			MethodName: "AdminCertifyPolicyDiffOrObserverBoundary",
+			Handler:    _EmpireService_AdminCertifyPolicyDiffOrObserverBoundary_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

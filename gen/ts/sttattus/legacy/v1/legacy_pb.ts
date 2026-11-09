@@ -5805,3 +5805,4551 @@ export class ParseDocumentExpiryResponse extends Message<ParseDocumentExpiryResp
   }
 }
 
+/**
+ * @generated from message sttattus.legacy.v1.LegacyLivingEstateInventoryView
+ */
+export class LegacyLivingEstateInventoryView extends Message<LegacyLivingEstateInventoryView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string inventory_code = 3;
+   */
+  inventoryCode = "";
+
+  /**
+   * @generated from field: string asset_fiduciary_and_owner_scope = 4;
+   */
+  assetFiduciaryAndOwnerScope = "";
+
+  /**
+   * @generated from field: string plan_health_gaps_and_evidence = 5;
+   */
+  planHealthGapsAndEvidence = "";
+
+  /**
+   * @generated from field: string ten_minute_quarterly_review_log = 6;
+   */
+  tenMinuteQuarterlyReviewLog = "";
+
+  /**
+   * @generated from field: string inventory_state = 7;
+   */
+  inventoryState = "";
+
+  /**
+   * @generated from field: bool no_silent_signed_doc_rewrite_enforced = 8;
+   */
+  noSilentSignedDocRewriteEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyLivingEstateInventoryView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyLivingEstateInventoryView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "inventory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "asset_fiduciary_and_owner_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "plan_health_gaps_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "ten_minute_quarterly_review_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "inventory_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_silent_signed_doc_rewrite_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyLivingEstateInventoryView {
+    return new LegacyLivingEstateInventoryView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyLivingEstateInventoryView {
+    return new LegacyLivingEstateInventoryView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyLivingEstateInventoryView {
+    return new LegacyLivingEstateInventoryView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyLivingEstateInventoryView | PlainMessage<LegacyLivingEstateInventoryView> | undefined, b: LegacyLivingEstateInventoryView | PlainMessage<LegacyLivingEstateInventoryView> | undefined): boolean {
+    return proto3.util.equals(LegacyLivingEstateInventoryView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchRequest
+ */
+export class GetLegacyLivingInventoryWorkbenchRequest extends Message<GetLegacyLivingInventoryWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyLivingInventoryWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLivingInventoryWorkbenchRequest {
+    return new GetLegacyLivingInventoryWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLivingInventoryWorkbenchRequest {
+    return new GetLegacyLivingInventoryWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLivingInventoryWorkbenchRequest {
+    return new GetLegacyLivingInventoryWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLivingInventoryWorkbenchRequest | PlainMessage<GetLegacyLivingInventoryWorkbenchRequest> | undefined, b: GetLegacyLivingInventoryWorkbenchRequest | PlainMessage<GetLegacyLivingInventoryWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLivingInventoryWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse
+ */
+export class GetLegacyLivingInventoryWorkbenchResponse extends Message<GetLegacyLivingInventoryWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyLivingEstateInventoryView inventories = 1;
+   */
+  inventories: LegacyLivingEstateInventoryView[] = [];
+
+  /**
+   * @generated from field: int32 open_gap_count = 2;
+   */
+  openGapCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyLivingInventoryWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inventories", kind: "message", T: LegacyLivingEstateInventoryView, repeated: true },
+    { no: 2, name: "open_gap_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLivingInventoryWorkbenchResponse {
+    return new GetLegacyLivingInventoryWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLivingInventoryWorkbenchResponse {
+    return new GetLegacyLivingInventoryWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLivingInventoryWorkbenchResponse {
+    return new GetLegacyLivingInventoryWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLivingInventoryWorkbenchResponse | PlainMessage<GetLegacyLivingInventoryWorkbenchResponse> | undefined, b: GetLegacyLivingInventoryWorkbenchResponse | PlainMessage<GetLegacyLivingInventoryWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLivingInventoryWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLivingEstateInventoryRequest
+ */
+export class SaveLegacyLivingEstateInventoryRequest extends Message<SaveLegacyLivingEstateInventoryRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string inventory_code = 2;
+   */
+  inventoryCode = "";
+
+  /**
+   * @generated from field: string asset_fiduciary_and_owner_scope = 3;
+   */
+  assetFiduciaryAndOwnerScope = "";
+
+  /**
+   * @generated from field: string plan_health_gaps_and_evidence = 4;
+   */
+  planHealthGapsAndEvidence = "";
+
+  /**
+   * @generated from field: string ten_minute_quarterly_review_log = 5;
+   */
+  tenMinuteQuarterlyReviewLog = "";
+
+  /**
+   * @generated from field: string inventory_state = 6;
+   */
+  inventoryState = "";
+
+  /**
+   * @generated from field: bool no_silent_signed_doc_rewrite_enforced = 7;
+   */
+  noSilentSignedDocRewriteEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyLivingEstateInventoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLivingEstateInventoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "inventory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "asset_fiduciary_and_owner_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "plan_health_gaps_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "ten_minute_quarterly_review_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "inventory_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "no_silent_signed_doc_rewrite_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLivingEstateInventoryRequest {
+    return new SaveLegacyLivingEstateInventoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLivingEstateInventoryRequest {
+    return new SaveLegacyLivingEstateInventoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLivingEstateInventoryRequest {
+    return new SaveLegacyLivingEstateInventoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLivingEstateInventoryRequest | PlainMessage<SaveLegacyLivingEstateInventoryRequest> | undefined, b: SaveLegacyLivingEstateInventoryRequest | PlainMessage<SaveLegacyLivingEstateInventoryRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLivingEstateInventoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse
+ */
+export class SaveLegacyLivingEstateInventoryResponse extends Message<SaveLegacyLivingEstateInventoryResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLivingEstateInventoryView inventory = 1;
+   */
+  inventory?: LegacyLivingEstateInventoryView;
+
+  constructor(data?: PartialMessage<SaveLegacyLivingEstateInventoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inventory", kind: "message", T: LegacyLivingEstateInventoryView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLivingEstateInventoryResponse {
+    return new SaveLegacyLivingEstateInventoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLivingEstateInventoryResponse {
+    return new SaveLegacyLivingEstateInventoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLivingEstateInventoryResponse {
+    return new SaveLegacyLivingEstateInventoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLivingEstateInventoryResponse | PlainMessage<SaveLegacyLivingEstateInventoryResponse> | undefined, b: SaveLegacyLivingEstateInventoryResponse | PlainMessage<SaveLegacyLivingEstateInventoryResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLivingEstateInventoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewRequest
+ */
+export class SignOffLegacyQuarterlyPlanReviewRequest extends Message<SignOffLegacyQuarterlyPlanReviewRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string inventory_code = 2;
+   */
+  inventoryCode = "";
+
+  /**
+   * @generated from field: string target_inventory_state = 3;
+   */
+  targetInventoryState = "";
+
+  /**
+   * @generated from field: string review_notes = 4;
+   */
+  reviewNotes = "";
+
+  constructor(data?: PartialMessage<SignOffLegacyQuarterlyPlanReviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "inventory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_inventory_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "review_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SignOffLegacyQuarterlyPlanReviewRequest {
+    return new SignOffLegacyQuarterlyPlanReviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SignOffLegacyQuarterlyPlanReviewRequest {
+    return new SignOffLegacyQuarterlyPlanReviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SignOffLegacyQuarterlyPlanReviewRequest {
+    return new SignOffLegacyQuarterlyPlanReviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SignOffLegacyQuarterlyPlanReviewRequest | PlainMessage<SignOffLegacyQuarterlyPlanReviewRequest> | undefined, b: SignOffLegacyQuarterlyPlanReviewRequest | PlainMessage<SignOffLegacyQuarterlyPlanReviewRequest> | undefined): boolean {
+    return proto3.util.equals(SignOffLegacyQuarterlyPlanReviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse
+ */
+export class SignOffLegacyQuarterlyPlanReviewResponse extends Message<SignOffLegacyQuarterlyPlanReviewResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLivingEstateInventoryView inventory = 1;
+   */
+  inventory?: LegacyLivingEstateInventoryView;
+
+  /**
+   * @generated from field: string review_status = 2;
+   */
+  reviewStatus = "";
+
+  constructor(data?: PartialMessage<SignOffLegacyQuarterlyPlanReviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inventory", kind: "message", T: LegacyLivingEstateInventoryView },
+    { no: 2, name: "review_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SignOffLegacyQuarterlyPlanReviewResponse {
+    return new SignOffLegacyQuarterlyPlanReviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SignOffLegacyQuarterlyPlanReviewResponse {
+    return new SignOffLegacyQuarterlyPlanReviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SignOffLegacyQuarterlyPlanReviewResponse {
+    return new SignOffLegacyQuarterlyPlanReviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SignOffLegacyQuarterlyPlanReviewResponse | PlainMessage<SignOffLegacyQuarterlyPlanReviewResponse> | undefined, b: SignOffLegacyQuarterlyPlanReviewResponse | PlainMessage<SignOffLegacyQuarterlyPlanReviewResponse> | undefined): boolean {
+    return proto3.util.equals(SignOffLegacyQuarterlyPlanReviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyLifeEventAlignmentView
+ */
+export class LegacyLifeEventAlignmentView extends Message<LegacyLifeEventAlignmentView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string alignment_code = 3;
+   */
+  alignmentCode = "";
+
+  /**
+   * @generated from field: string confirmed_life_event_and_impact_map = 4;
+   */
+  confirmedLifeEventAndImpactMap = "";
+
+  /**
+   * @generated from field: string beneficiary_and_trust_funding_diff = 5;
+   */
+  beneficiaryAndTrustFundingDiff = "";
+
+  /**
+   * @generated from field: string institution_checklist_and_evidence = 6;
+   */
+  institutionChecklistAndEvidence = "";
+
+  /**
+   * @generated from field: string alignment_state = 7;
+   */
+  alignmentState = "";
+
+  /**
+   * @generated from field: bool evidence_required_before_complete_enforced = 8;
+   */
+  evidenceRequiredBeforeCompleteEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyLifeEventAlignmentView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyLifeEventAlignmentView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "alignment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "confirmed_life_event_and_impact_map", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "beneficiary_and_trust_funding_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "institution_checklist_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "alignment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "evidence_required_before_complete_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyLifeEventAlignmentView {
+    return new LegacyLifeEventAlignmentView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyLifeEventAlignmentView {
+    return new LegacyLifeEventAlignmentView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyLifeEventAlignmentView {
+    return new LegacyLifeEventAlignmentView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyLifeEventAlignmentView | PlainMessage<LegacyLifeEventAlignmentView> | undefined, b: LegacyLifeEventAlignmentView | PlainMessage<LegacyLifeEventAlignmentView> | undefined): boolean {
+    return proto3.util.equals(LegacyLifeEventAlignmentView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchRequest
+ */
+export class GetLegacyLifeEventAlignmentWorkbenchRequest extends Message<GetLegacyLifeEventAlignmentWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyLifeEventAlignmentWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLifeEventAlignmentWorkbenchRequest {
+    return new GetLegacyLifeEventAlignmentWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLifeEventAlignmentWorkbenchRequest {
+    return new GetLegacyLifeEventAlignmentWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLifeEventAlignmentWorkbenchRequest {
+    return new GetLegacyLifeEventAlignmentWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLifeEventAlignmentWorkbenchRequest | PlainMessage<GetLegacyLifeEventAlignmentWorkbenchRequest> | undefined, b: GetLegacyLifeEventAlignmentWorkbenchRequest | PlainMessage<GetLegacyLifeEventAlignmentWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLifeEventAlignmentWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse
+ */
+export class GetLegacyLifeEventAlignmentWorkbenchResponse extends Message<GetLegacyLifeEventAlignmentWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyLifeEventAlignmentView alignments = 1;
+   */
+  alignments: LegacyLifeEventAlignmentView[] = [];
+
+  /**
+   * @generated from field: int32 unaligned_designation_count = 2;
+   */
+  unalignedDesignationCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyLifeEventAlignmentWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alignments", kind: "message", T: LegacyLifeEventAlignmentView, repeated: true },
+    { no: 2, name: "unaligned_designation_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLifeEventAlignmentWorkbenchResponse {
+    return new GetLegacyLifeEventAlignmentWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLifeEventAlignmentWorkbenchResponse {
+    return new GetLegacyLifeEventAlignmentWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLifeEventAlignmentWorkbenchResponse {
+    return new GetLegacyLifeEventAlignmentWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLifeEventAlignmentWorkbenchResponse | PlainMessage<GetLegacyLifeEventAlignmentWorkbenchResponse> | undefined, b: GetLegacyLifeEventAlignmentWorkbenchResponse | PlainMessage<GetLegacyLifeEventAlignmentWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLifeEventAlignmentWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLifeEventAlignmentRequest
+ */
+export class SaveLegacyLifeEventAlignmentRequest extends Message<SaveLegacyLifeEventAlignmentRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string alignment_code = 2;
+   */
+  alignmentCode = "";
+
+  /**
+   * @generated from field: string confirmed_life_event_and_impact_map = 3;
+   */
+  confirmedLifeEventAndImpactMap = "";
+
+  /**
+   * @generated from field: string beneficiary_and_trust_funding_diff = 4;
+   */
+  beneficiaryAndTrustFundingDiff = "";
+
+  /**
+   * @generated from field: string institution_checklist_and_evidence = 5;
+   */
+  institutionChecklistAndEvidence = "";
+
+  /**
+   * @generated from field: string alignment_state = 6;
+   */
+  alignmentState = "";
+
+  /**
+   * @generated from field: bool evidence_required_before_complete_enforced = 7;
+   */
+  evidenceRequiredBeforeCompleteEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyLifeEventAlignmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLifeEventAlignmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "alignment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "confirmed_life_event_and_impact_map", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "beneficiary_and_trust_funding_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "institution_checklist_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "alignment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "evidence_required_before_complete_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLifeEventAlignmentRequest {
+    return new SaveLegacyLifeEventAlignmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLifeEventAlignmentRequest {
+    return new SaveLegacyLifeEventAlignmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLifeEventAlignmentRequest {
+    return new SaveLegacyLifeEventAlignmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLifeEventAlignmentRequest | PlainMessage<SaveLegacyLifeEventAlignmentRequest> | undefined, b: SaveLegacyLifeEventAlignmentRequest | PlainMessage<SaveLegacyLifeEventAlignmentRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLifeEventAlignmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse
+ */
+export class SaveLegacyLifeEventAlignmentResponse extends Message<SaveLegacyLifeEventAlignmentResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLifeEventAlignmentView alignment = 1;
+   */
+  alignment?: LegacyLifeEventAlignmentView;
+
+  constructor(data?: PartialMessage<SaveLegacyLifeEventAlignmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alignment", kind: "message", T: LegacyLifeEventAlignmentView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLifeEventAlignmentResponse {
+    return new SaveLegacyLifeEventAlignmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLifeEventAlignmentResponse {
+    return new SaveLegacyLifeEventAlignmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLifeEventAlignmentResponse {
+    return new SaveLegacyLifeEventAlignmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLifeEventAlignmentResponse | PlainMessage<SaveLegacyLifeEventAlignmentResponse> | undefined, b: SaveLegacyLifeEventAlignmentResponse | PlainMessage<SaveLegacyLifeEventAlignmentResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLifeEventAlignmentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceRequest
+ */
+export class VerifyLegacyAlignmentInstitutionEvidenceRequest extends Message<VerifyLegacyAlignmentInstitutionEvidenceRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string alignment_code = 2;
+   */
+  alignmentCode = "";
+
+  /**
+   * @generated from field: string target_alignment_state = 3;
+   */
+  targetAlignmentState = "";
+
+  /**
+   * @generated from field: string evidence_notes = 4;
+   */
+  evidenceNotes = "";
+
+  constructor(data?: PartialMessage<VerifyLegacyAlignmentInstitutionEvidenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "alignment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_alignment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceRequest {
+    return new VerifyLegacyAlignmentInstitutionEvidenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceRequest {
+    return new VerifyLegacyAlignmentInstitutionEvidenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceRequest {
+    return new VerifyLegacyAlignmentInstitutionEvidenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyLegacyAlignmentInstitutionEvidenceRequest | PlainMessage<VerifyLegacyAlignmentInstitutionEvidenceRequest> | undefined, b: VerifyLegacyAlignmentInstitutionEvidenceRequest | PlainMessage<VerifyLegacyAlignmentInstitutionEvidenceRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyLegacyAlignmentInstitutionEvidenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse
+ */
+export class VerifyLegacyAlignmentInstitutionEvidenceResponse extends Message<VerifyLegacyAlignmentInstitutionEvidenceResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLifeEventAlignmentView alignment = 1;
+   */
+  alignment?: LegacyLifeEventAlignmentView;
+
+  /**
+   * @generated from field: string verification_status = 2;
+   */
+  verificationStatus = "";
+
+  constructor(data?: PartialMessage<VerifyLegacyAlignmentInstitutionEvidenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "alignment", kind: "message", T: LegacyLifeEventAlignmentView },
+    { no: 2, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceResponse {
+    return new VerifyLegacyAlignmentInstitutionEvidenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceResponse {
+    return new VerifyLegacyAlignmentInstitutionEvidenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyLegacyAlignmentInstitutionEvidenceResponse {
+    return new VerifyLegacyAlignmentInstitutionEvidenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyLegacyAlignmentInstitutionEvidenceResponse | PlainMessage<VerifyLegacyAlignmentInstitutionEvidenceResponse> | undefined, b: VerifyLegacyAlignmentInstitutionEvidenceResponse | PlainMessage<VerifyLegacyAlignmentInstitutionEvidenceResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyLegacyAlignmentInstitutionEvidenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacySecureDocumentVaultView
+ */
+export class LegacySecureDocumentVaultView extends Message<LegacySecureDocumentVaultView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string document_code = 3;
+   */
+  documentCode = "";
+
+  /**
+   * @generated from field: string version_family_and_execution_status = 4;
+   */
+  versionFamilyAndExecutionStatus = "";
+
+  /**
+   * @generated from field: string cited_clause_and_ocr_confidence = 5;
+   */
+  citedClauseAndOcrConfidence = "";
+
+  /**
+   * @generated from field: string custody_retention_and_offline_cache = 6;
+   */
+  custodyRetentionAndOfflineCache = "";
+
+  /**
+   * @generated from field: string vault_state = 7;
+   */
+  vaultState = "";
+
+  /**
+   * @generated from field: bool public_gallery_leak_blocked = 8;
+   */
+  publicGalleryLeakBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacySecureDocumentVaultView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacySecureDocumentVaultView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "document_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "version_family_and_execution_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "cited_clause_and_ocr_confidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "custody_retention_and_offline_cache", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "vault_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "public_gallery_leak_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacySecureDocumentVaultView {
+    return new LegacySecureDocumentVaultView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacySecureDocumentVaultView {
+    return new LegacySecureDocumentVaultView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacySecureDocumentVaultView {
+    return new LegacySecureDocumentVaultView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacySecureDocumentVaultView | PlainMessage<LegacySecureDocumentVaultView> | undefined, b: LegacySecureDocumentVaultView | PlainMessage<LegacySecureDocumentVaultView> | undefined): boolean {
+    return proto3.util.equals(LegacySecureDocumentVaultView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchRequest
+ */
+export class GetLegacySecureDocumentVaultWorkbenchRequest extends Message<GetLegacySecureDocumentVaultWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacySecureDocumentVaultWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacySecureDocumentVaultWorkbenchRequest {
+    return new GetLegacySecureDocumentVaultWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacySecureDocumentVaultWorkbenchRequest {
+    return new GetLegacySecureDocumentVaultWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacySecureDocumentVaultWorkbenchRequest {
+    return new GetLegacySecureDocumentVaultWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacySecureDocumentVaultWorkbenchRequest | PlainMessage<GetLegacySecureDocumentVaultWorkbenchRequest> | undefined, b: GetLegacySecureDocumentVaultWorkbenchRequest | PlainMessage<GetLegacySecureDocumentVaultWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacySecureDocumentVaultWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse
+ */
+export class GetLegacySecureDocumentVaultWorkbenchResponse extends Message<GetLegacySecureDocumentVaultWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacySecureDocumentVaultView documents = 1;
+   */
+  documents: LegacySecureDocumentVaultView[] = [];
+
+  /**
+   * @generated from field: int32 provisional_review_count = 2;
+   */
+  provisionalReviewCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacySecureDocumentVaultWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "documents", kind: "message", T: LegacySecureDocumentVaultView, repeated: true },
+    { no: 2, name: "provisional_review_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacySecureDocumentVaultWorkbenchResponse {
+    return new GetLegacySecureDocumentVaultWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacySecureDocumentVaultWorkbenchResponse {
+    return new GetLegacySecureDocumentVaultWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacySecureDocumentVaultWorkbenchResponse {
+    return new GetLegacySecureDocumentVaultWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacySecureDocumentVaultWorkbenchResponse | PlainMessage<GetLegacySecureDocumentVaultWorkbenchResponse> | undefined, b: GetLegacySecureDocumentVaultWorkbenchResponse | PlainMessage<GetLegacySecureDocumentVaultWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacySecureDocumentVaultWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacySecureDocumentVaultRequest
+ */
+export class SaveLegacySecureDocumentVaultRequest extends Message<SaveLegacySecureDocumentVaultRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string document_code = 2;
+   */
+  documentCode = "";
+
+  /**
+   * @generated from field: string version_family_and_execution_status = 3;
+   */
+  versionFamilyAndExecutionStatus = "";
+
+  /**
+   * @generated from field: string cited_clause_and_ocr_confidence = 4;
+   */
+  citedClauseAndOcrConfidence = "";
+
+  /**
+   * @generated from field: string custody_retention_and_offline_cache = 5;
+   */
+  custodyRetentionAndOfflineCache = "";
+
+  /**
+   * @generated from field: string vault_state = 6;
+   */
+  vaultState = "";
+
+  /**
+   * @generated from field: bool public_gallery_leak_blocked = 7;
+   */
+  publicGalleryLeakBlocked = false;
+
+  constructor(data?: PartialMessage<SaveLegacySecureDocumentVaultRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacySecureDocumentVaultRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "document_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version_family_and_execution_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cited_clause_and_ocr_confidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "custody_retention_and_offline_cache", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "vault_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "public_gallery_leak_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacySecureDocumentVaultRequest {
+    return new SaveLegacySecureDocumentVaultRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacySecureDocumentVaultRequest {
+    return new SaveLegacySecureDocumentVaultRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacySecureDocumentVaultRequest {
+    return new SaveLegacySecureDocumentVaultRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacySecureDocumentVaultRequest | PlainMessage<SaveLegacySecureDocumentVaultRequest> | undefined, b: SaveLegacySecureDocumentVaultRequest | PlainMessage<SaveLegacySecureDocumentVaultRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacySecureDocumentVaultRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse
+ */
+export class SaveLegacySecureDocumentVaultResponse extends Message<SaveLegacySecureDocumentVaultResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacySecureDocumentVaultView document = 1;
+   */
+  document?: LegacySecureDocumentVaultView;
+
+  constructor(data?: PartialMessage<SaveLegacySecureDocumentVaultResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "document", kind: "message", T: LegacySecureDocumentVaultView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacySecureDocumentVaultResponse {
+    return new SaveLegacySecureDocumentVaultResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacySecureDocumentVaultResponse {
+    return new SaveLegacySecureDocumentVaultResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacySecureDocumentVaultResponse {
+    return new SaveLegacySecureDocumentVaultResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacySecureDocumentVaultResponse | PlainMessage<SaveLegacySecureDocumentVaultResponse> | undefined, b: SaveLegacySecureDocumentVaultResponse | PlainMessage<SaveLegacySecureDocumentVaultResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacySecureDocumentVaultResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyRequest
+ */
+export class LockOrExportLegacyDocumentCustodyRequest extends Message<LockOrExportLegacyDocumentCustodyRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string document_code = 2;
+   */
+  documentCode = "";
+
+  /**
+   * @generated from field: string target_vault_state = 3;
+   */
+  targetVaultState = "";
+
+  /**
+   * @generated from field: string custody_notes = 4;
+   */
+  custodyNotes = "";
+
+  constructor(data?: PartialMessage<LockOrExportLegacyDocumentCustodyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "document_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_vault_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "custody_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrExportLegacyDocumentCustodyRequest {
+    return new LockOrExportLegacyDocumentCustodyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrExportLegacyDocumentCustodyRequest {
+    return new LockOrExportLegacyDocumentCustodyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrExportLegacyDocumentCustodyRequest {
+    return new LockOrExportLegacyDocumentCustodyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrExportLegacyDocumentCustodyRequest | PlainMessage<LockOrExportLegacyDocumentCustodyRequest> | undefined, b: LockOrExportLegacyDocumentCustodyRequest | PlainMessage<LockOrExportLegacyDocumentCustodyRequest> | undefined): boolean {
+    return proto3.util.equals(LockOrExportLegacyDocumentCustodyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse
+ */
+export class LockOrExportLegacyDocumentCustodyResponse extends Message<LockOrExportLegacyDocumentCustodyResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacySecureDocumentVaultView document = 1;
+   */
+  document?: LegacySecureDocumentVaultView;
+
+  /**
+   * @generated from field: string custody_status = 2;
+   */
+  custodyStatus = "";
+
+  constructor(data?: PartialMessage<LockOrExportLegacyDocumentCustodyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "document", kind: "message", T: LegacySecureDocumentVaultView },
+    { no: 2, name: "custody_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrExportLegacyDocumentCustodyResponse {
+    return new LockOrExportLegacyDocumentCustodyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrExportLegacyDocumentCustodyResponse {
+    return new LockOrExportLegacyDocumentCustodyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrExportLegacyDocumentCustodyResponse {
+    return new LockOrExportLegacyDocumentCustodyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrExportLegacyDocumentCustodyResponse | PlainMessage<LockOrExportLegacyDocumentCustodyResponse> | undefined, b: LockOrExportLegacyDocumentCustodyResponse | PlainMessage<LockOrExportLegacyDocumentCustodyResponse> | undefined): boolean {
+    return proto3.util.equals(LockOrExportLegacyDocumentCustodyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView
+ */
+export class LegacyJurisdictionDocumentSystemView extends Message<LegacyJurisdictionDocumentSystemView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string system_code = 3;
+   */
+  systemCode = "";
+
+  /**
+   * @generated from field: string jurisdiction_rule_pack_and_scope = 4;
+   */
+  jurisdictionRulePackAndScope = "";
+
+  /**
+   * @generated from field: string clause_version_and_attorney_trigger = 5;
+   */
+  clauseVersionAndAttorneyTrigger = "";
+
+  /**
+   * @generated from field: string execution_witness_and_notary_checklist = 6;
+   */
+  executionWitnessAndNotaryChecklist = "";
+
+  /**
+   * @generated from field: string document_state = 7;
+   */
+  documentState = "";
+
+  /**
+   * @generated from field: bool non_attorney_impersonation_enforced = 8;
+   */
+  nonAttorneyImpersonationEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyJurisdictionDocumentSystemView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "system_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "jurisdiction_rule_pack_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "clause_version_and_attorney_trigger", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "execution_witness_and_notary_checklist", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "document_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "non_attorney_impersonation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyJurisdictionDocumentSystemView {
+    return new LegacyJurisdictionDocumentSystemView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyJurisdictionDocumentSystemView {
+    return new LegacyJurisdictionDocumentSystemView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyJurisdictionDocumentSystemView {
+    return new LegacyJurisdictionDocumentSystemView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyJurisdictionDocumentSystemView | PlainMessage<LegacyJurisdictionDocumentSystemView> | undefined, b: LegacyJurisdictionDocumentSystemView | PlainMessage<LegacyJurisdictionDocumentSystemView> | undefined): boolean {
+    return proto3.util.equals(LegacyJurisdictionDocumentSystemView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchRequest
+ */
+export class GetLegacyJurisdictionDocumentWorkbenchRequest extends Message<GetLegacyJurisdictionDocumentWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyJurisdictionDocumentWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyJurisdictionDocumentWorkbenchRequest {
+    return new GetLegacyJurisdictionDocumentWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyJurisdictionDocumentWorkbenchRequest {
+    return new GetLegacyJurisdictionDocumentWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyJurisdictionDocumentWorkbenchRequest {
+    return new GetLegacyJurisdictionDocumentWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyJurisdictionDocumentWorkbenchRequest | PlainMessage<GetLegacyJurisdictionDocumentWorkbenchRequest> | undefined, b: GetLegacyJurisdictionDocumentWorkbenchRequest | PlainMessage<GetLegacyJurisdictionDocumentWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyJurisdictionDocumentWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse
+ */
+export class GetLegacyJurisdictionDocumentWorkbenchResponse extends Message<GetLegacyJurisdictionDocumentWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView systems = 1;
+   */
+  systems: LegacyJurisdictionDocumentSystemView[] = [];
+
+  /**
+   * @generated from field: int32 attorney_trigger_count = 2;
+   */
+  attorneyTriggerCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyJurisdictionDocumentWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "systems", kind: "message", T: LegacyJurisdictionDocumentSystemView, repeated: true },
+    { no: 2, name: "attorney_trigger_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyJurisdictionDocumentWorkbenchResponse {
+    return new GetLegacyJurisdictionDocumentWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyJurisdictionDocumentWorkbenchResponse {
+    return new GetLegacyJurisdictionDocumentWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyJurisdictionDocumentWorkbenchResponse {
+    return new GetLegacyJurisdictionDocumentWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyJurisdictionDocumentWorkbenchResponse | PlainMessage<GetLegacyJurisdictionDocumentWorkbenchResponse> | undefined, b: GetLegacyJurisdictionDocumentWorkbenchResponse | PlainMessage<GetLegacyJurisdictionDocumentWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyJurisdictionDocumentWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemRequest
+ */
+export class SaveLegacyJurisdictionDocumentSystemRequest extends Message<SaveLegacyJurisdictionDocumentSystemRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string system_code = 2;
+   */
+  systemCode = "";
+
+  /**
+   * @generated from field: string jurisdiction_rule_pack_and_scope = 3;
+   */
+  jurisdictionRulePackAndScope = "";
+
+  /**
+   * @generated from field: string clause_version_and_attorney_trigger = 4;
+   */
+  clauseVersionAndAttorneyTrigger = "";
+
+  /**
+   * @generated from field: string execution_witness_and_notary_checklist = 5;
+   */
+  executionWitnessAndNotaryChecklist = "";
+
+  /**
+   * @generated from field: string document_state = 6;
+   */
+  documentState = "";
+
+  /**
+   * @generated from field: bool non_attorney_impersonation_enforced = 7;
+   */
+  nonAttorneyImpersonationEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyJurisdictionDocumentSystemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "system_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "jurisdiction_rule_pack_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "clause_version_and_attorney_trigger", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "execution_witness_and_notary_checklist", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "document_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "non_attorney_impersonation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyJurisdictionDocumentSystemRequest {
+    return new SaveLegacyJurisdictionDocumentSystemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyJurisdictionDocumentSystemRequest {
+    return new SaveLegacyJurisdictionDocumentSystemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyJurisdictionDocumentSystemRequest {
+    return new SaveLegacyJurisdictionDocumentSystemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyJurisdictionDocumentSystemRequest | PlainMessage<SaveLegacyJurisdictionDocumentSystemRequest> | undefined, b: SaveLegacyJurisdictionDocumentSystemRequest | PlainMessage<SaveLegacyJurisdictionDocumentSystemRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyJurisdictionDocumentSystemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse
+ */
+export class SaveLegacyJurisdictionDocumentSystemResponse extends Message<SaveLegacyJurisdictionDocumentSystemResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView system = 1;
+   */
+  system?: LegacyJurisdictionDocumentSystemView;
+
+  constructor(data?: PartialMessage<SaveLegacyJurisdictionDocumentSystemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "system", kind: "message", T: LegacyJurisdictionDocumentSystemView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyJurisdictionDocumentSystemResponse {
+    return new SaveLegacyJurisdictionDocumentSystemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyJurisdictionDocumentSystemResponse {
+    return new SaveLegacyJurisdictionDocumentSystemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyJurisdictionDocumentSystemResponse {
+    return new SaveLegacyJurisdictionDocumentSystemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyJurisdictionDocumentSystemResponse | PlainMessage<SaveLegacyJurisdictionDocumentSystemResponse> | undefined, b: SaveLegacyJurisdictionDocumentSystemResponse | PlainMessage<SaveLegacyJurisdictionDocumentSystemResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyJurisdictionDocumentSystemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionRequest
+ */
+export class TriggerLegacyCounselReviewOrLockExecutionRequest extends Message<TriggerLegacyCounselReviewOrLockExecutionRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string system_code = 2;
+   */
+  systemCode = "";
+
+  /**
+   * @generated from field: string target_document_state = 3;
+   */
+  targetDocumentState = "";
+
+  /**
+   * @generated from field: string execution_notes = 4;
+   */
+  executionNotes = "";
+
+  constructor(data?: PartialMessage<TriggerLegacyCounselReviewOrLockExecutionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "system_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_document_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "execution_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerLegacyCounselReviewOrLockExecutionRequest {
+    return new TriggerLegacyCounselReviewOrLockExecutionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerLegacyCounselReviewOrLockExecutionRequest {
+    return new TriggerLegacyCounselReviewOrLockExecutionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerLegacyCounselReviewOrLockExecutionRequest {
+    return new TriggerLegacyCounselReviewOrLockExecutionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerLegacyCounselReviewOrLockExecutionRequest | PlainMessage<TriggerLegacyCounselReviewOrLockExecutionRequest> | undefined, b: TriggerLegacyCounselReviewOrLockExecutionRequest | PlainMessage<TriggerLegacyCounselReviewOrLockExecutionRequest> | undefined): boolean {
+    return proto3.util.equals(TriggerLegacyCounselReviewOrLockExecutionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse
+ */
+export class TriggerLegacyCounselReviewOrLockExecutionResponse extends Message<TriggerLegacyCounselReviewOrLockExecutionResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView system = 1;
+   */
+  system?: LegacyJurisdictionDocumentSystemView;
+
+  /**
+   * @generated from field: string execution_status = 2;
+   */
+  executionStatus = "";
+
+  constructor(data?: PartialMessage<TriggerLegacyCounselReviewOrLockExecutionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "system", kind: "message", T: LegacyJurisdictionDocumentSystemView },
+    { no: 2, name: "execution_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerLegacyCounselReviewOrLockExecutionResponse {
+    return new TriggerLegacyCounselReviewOrLockExecutionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerLegacyCounselReviewOrLockExecutionResponse {
+    return new TriggerLegacyCounselReviewOrLockExecutionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerLegacyCounselReviewOrLockExecutionResponse {
+    return new TriggerLegacyCounselReviewOrLockExecutionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerLegacyCounselReviewOrLockExecutionResponse | PlainMessage<TriggerLegacyCounselReviewOrLockExecutionResponse> | undefined, b: TriggerLegacyCounselReviewOrLockExecutionResponse | PlainMessage<TriggerLegacyCounselReviewOrLockExecutionResponse> | undefined): boolean {
+    return proto3.util.equals(TriggerLegacyCounselReviewOrLockExecutionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView
+ */
+export class LegacyHouseholdBusinessContinuityView extends Message<LegacyHouseholdBusinessContinuityView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string continuity_code = 3;
+   */
+  continuityCode = "";
+
+  /**
+   * @generated from field: string role_playbook_and_first_week_guide = 4;
+   */
+  rolePlaybookAndFirstWeekGuide = "";
+
+  /**
+   * @generated from field: string authority_matrix_and_signatory_limits = 5;
+   */
+  authorityMatrixAndSignatoryLimits = "";
+
+  /**
+   * @generated from field: string offline_emergency_card_and_drill_log = 6;
+   */
+  offlineEmergencyCardAndDrillLog = "";
+
+  /**
+   * @generated from field: string continuity_state = 7;
+   */
+  continuityState = "";
+
+  /**
+   * @generated from field: bool full_vault_unscoped_leak_blocked = 8;
+   */
+  fullVaultUnscopedLeakBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyHouseholdBusinessContinuityView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "continuity_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "role_playbook_and_first_week_guide", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "authority_matrix_and_signatory_limits", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "offline_emergency_card_and_drill_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "continuity_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "full_vault_unscoped_leak_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyHouseholdBusinessContinuityView {
+    return new LegacyHouseholdBusinessContinuityView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyHouseholdBusinessContinuityView {
+    return new LegacyHouseholdBusinessContinuityView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyHouseholdBusinessContinuityView {
+    return new LegacyHouseholdBusinessContinuityView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyHouseholdBusinessContinuityView | PlainMessage<LegacyHouseholdBusinessContinuityView> | undefined, b: LegacyHouseholdBusinessContinuityView | PlainMessage<LegacyHouseholdBusinessContinuityView> | undefined): boolean {
+    return proto3.util.equals(LegacyHouseholdBusinessContinuityView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchRequest
+ */
+export class GetLegacyContinuityPlaybookWorkbenchRequest extends Message<GetLegacyContinuityPlaybookWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyContinuityPlaybookWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyContinuityPlaybookWorkbenchRequest {
+    return new GetLegacyContinuityPlaybookWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyContinuityPlaybookWorkbenchRequest {
+    return new GetLegacyContinuityPlaybookWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyContinuityPlaybookWorkbenchRequest {
+    return new GetLegacyContinuityPlaybookWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyContinuityPlaybookWorkbenchRequest | PlainMessage<GetLegacyContinuityPlaybookWorkbenchRequest> | undefined, b: GetLegacyContinuityPlaybookWorkbenchRequest | PlainMessage<GetLegacyContinuityPlaybookWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyContinuityPlaybookWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse
+ */
+export class GetLegacyContinuityPlaybookWorkbenchResponse extends Message<GetLegacyContinuityPlaybookWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView playbooks = 1;
+   */
+  playbooks: LegacyHouseholdBusinessContinuityView[] = [];
+
+  /**
+   * @generated from field: int32 refresh_due_count = 2;
+   */
+  refreshDueCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyContinuityPlaybookWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "playbooks", kind: "message", T: LegacyHouseholdBusinessContinuityView, repeated: true },
+    { no: 2, name: "refresh_due_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyContinuityPlaybookWorkbenchResponse {
+    return new GetLegacyContinuityPlaybookWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyContinuityPlaybookWorkbenchResponse {
+    return new GetLegacyContinuityPlaybookWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyContinuityPlaybookWorkbenchResponse {
+    return new GetLegacyContinuityPlaybookWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyContinuityPlaybookWorkbenchResponse | PlainMessage<GetLegacyContinuityPlaybookWorkbenchResponse> | undefined, b: GetLegacyContinuityPlaybookWorkbenchResponse | PlainMessage<GetLegacyContinuityPlaybookWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyContinuityPlaybookWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityRequest
+ */
+export class SaveLegacyHouseholdBusinessContinuityRequest extends Message<SaveLegacyHouseholdBusinessContinuityRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string continuity_code = 2;
+   */
+  continuityCode = "";
+
+  /**
+   * @generated from field: string role_playbook_and_first_week_guide = 3;
+   */
+  rolePlaybookAndFirstWeekGuide = "";
+
+  /**
+   * @generated from field: string authority_matrix_and_signatory_limits = 4;
+   */
+  authorityMatrixAndSignatoryLimits = "";
+
+  /**
+   * @generated from field: string offline_emergency_card_and_drill_log = 5;
+   */
+  offlineEmergencyCardAndDrillLog = "";
+
+  /**
+   * @generated from field: string continuity_state = 6;
+   */
+  continuityState = "";
+
+  /**
+   * @generated from field: bool full_vault_unscoped_leak_blocked = 7;
+   */
+  fullVaultUnscopedLeakBlocked = false;
+
+  constructor(data?: PartialMessage<SaveLegacyHouseholdBusinessContinuityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "continuity_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "role_playbook_and_first_week_guide", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "authority_matrix_and_signatory_limits", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "offline_emergency_card_and_drill_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "continuity_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "full_vault_unscoped_leak_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyHouseholdBusinessContinuityRequest {
+    return new SaveLegacyHouseholdBusinessContinuityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyHouseholdBusinessContinuityRequest {
+    return new SaveLegacyHouseholdBusinessContinuityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyHouseholdBusinessContinuityRequest {
+    return new SaveLegacyHouseholdBusinessContinuityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyHouseholdBusinessContinuityRequest | PlainMessage<SaveLegacyHouseholdBusinessContinuityRequest> | undefined, b: SaveLegacyHouseholdBusinessContinuityRequest | PlainMessage<SaveLegacyHouseholdBusinessContinuityRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyHouseholdBusinessContinuityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse
+ */
+export class SaveLegacyHouseholdBusinessContinuityResponse extends Message<SaveLegacyHouseholdBusinessContinuityResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView playbook = 1;
+   */
+  playbook?: LegacyHouseholdBusinessContinuityView;
+
+  constructor(data?: PartialMessage<SaveLegacyHouseholdBusinessContinuityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "playbook", kind: "message", T: LegacyHouseholdBusinessContinuityView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyHouseholdBusinessContinuityResponse {
+    return new SaveLegacyHouseholdBusinessContinuityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyHouseholdBusinessContinuityResponse {
+    return new SaveLegacyHouseholdBusinessContinuityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyHouseholdBusinessContinuityResponse {
+    return new SaveLegacyHouseholdBusinessContinuityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyHouseholdBusinessContinuityResponse | PlainMessage<SaveLegacyHouseholdBusinessContinuityResponse> | undefined, b: SaveLegacyHouseholdBusinessContinuityResponse | PlainMessage<SaveLegacyHouseholdBusinessContinuityResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyHouseholdBusinessContinuityResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationRequest
+ */
+export class RunLegacyContinuityDrillOrStageDelegationRequest extends Message<RunLegacyContinuityDrillOrStageDelegationRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string continuity_code = 2;
+   */
+  continuityCode = "";
+
+  /**
+   * @generated from field: string target_continuity_state = 3;
+   */
+  targetContinuityState = "";
+
+  /**
+   * @generated from field: string drill_notes = 4;
+   */
+  drillNotes = "";
+
+  constructor(data?: PartialMessage<RunLegacyContinuityDrillOrStageDelegationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "continuity_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_continuity_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "drill_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunLegacyContinuityDrillOrStageDelegationRequest {
+    return new RunLegacyContinuityDrillOrStageDelegationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunLegacyContinuityDrillOrStageDelegationRequest {
+    return new RunLegacyContinuityDrillOrStageDelegationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunLegacyContinuityDrillOrStageDelegationRequest {
+    return new RunLegacyContinuityDrillOrStageDelegationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunLegacyContinuityDrillOrStageDelegationRequest | PlainMessage<RunLegacyContinuityDrillOrStageDelegationRequest> | undefined, b: RunLegacyContinuityDrillOrStageDelegationRequest | PlainMessage<RunLegacyContinuityDrillOrStageDelegationRequest> | undefined): boolean {
+    return proto3.util.equals(RunLegacyContinuityDrillOrStageDelegationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse
+ */
+export class RunLegacyContinuityDrillOrStageDelegationResponse extends Message<RunLegacyContinuityDrillOrStageDelegationResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView playbook = 1;
+   */
+  playbook?: LegacyHouseholdBusinessContinuityView;
+
+  /**
+   * @generated from field: string drill_status = 2;
+   */
+  drillStatus = "";
+
+  constructor(data?: PartialMessage<RunLegacyContinuityDrillOrStageDelegationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "playbook", kind: "message", T: LegacyHouseholdBusinessContinuityView },
+    { no: 2, name: "drill_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunLegacyContinuityDrillOrStageDelegationResponse {
+    return new RunLegacyContinuityDrillOrStageDelegationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunLegacyContinuityDrillOrStageDelegationResponse {
+    return new RunLegacyContinuityDrillOrStageDelegationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunLegacyContinuityDrillOrStageDelegationResponse {
+    return new RunLegacyContinuityDrillOrStageDelegationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunLegacyContinuityDrillOrStageDelegationResponse | PlainMessage<RunLegacyContinuityDrillOrStageDelegationResponse> | undefined, b: RunLegacyContinuityDrillOrStageDelegationResponse | PlainMessage<RunLegacyContinuityDrillOrStageDelegationResponse> | undefined): boolean {
+    return proto3.util.equals(RunLegacyContinuityDrillOrStageDelegationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView
+ */
+export class LegacyIncapacityDeadmanProtocolView extends Message<LegacyIncapacityDeadmanProtocolView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string protocol_code = 3;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string workflow_branch_and_waiting_clocks = 4;
+   */
+  workflowBranchAndWaitingClocks = "";
+
+  /**
+   * @generated from field: string multi_party_threshold_and_evidence = 5;
+   */
+  multiPartyThresholdAndEvidence = "";
+
+  /**
+   * @generated from field: string staged_watermarked_release_bundle = 6;
+   */
+  stagedWatermarkedReleaseBundle = "";
+
+  /**
+   * @generated from field: string protocol_state = 7;
+   */
+  protocolState = "";
+
+  /**
+   * @generated from field: bool single_actor_release_blocked = 8;
+   */
+  singleActorReleaseBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyIncapacityDeadmanProtocolView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "workflow_branch_and_waiting_clocks", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "multi_party_threshold_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "staged_watermarked_release_bundle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "single_actor_release_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyIncapacityDeadmanProtocolView {
+    return new LegacyIncapacityDeadmanProtocolView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyIncapacityDeadmanProtocolView {
+    return new LegacyIncapacityDeadmanProtocolView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyIncapacityDeadmanProtocolView {
+    return new LegacyIncapacityDeadmanProtocolView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyIncapacityDeadmanProtocolView | PlainMessage<LegacyIncapacityDeadmanProtocolView> | undefined, b: LegacyIncapacityDeadmanProtocolView | PlainMessage<LegacyIncapacityDeadmanProtocolView> | undefined): boolean {
+    return proto3.util.equals(LegacyIncapacityDeadmanProtocolView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchRequest
+ */
+export class GetLegacyIncapacityDeadmanWorkbenchRequest extends Message<GetLegacyIncapacityDeadmanWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyIncapacityDeadmanWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyIncapacityDeadmanWorkbenchRequest {
+    return new GetLegacyIncapacityDeadmanWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyIncapacityDeadmanWorkbenchRequest {
+    return new GetLegacyIncapacityDeadmanWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyIncapacityDeadmanWorkbenchRequest {
+    return new GetLegacyIncapacityDeadmanWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyIncapacityDeadmanWorkbenchRequest | PlainMessage<GetLegacyIncapacityDeadmanWorkbenchRequest> | undefined, b: GetLegacyIncapacityDeadmanWorkbenchRequest | PlainMessage<GetLegacyIncapacityDeadmanWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyIncapacityDeadmanWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse
+ */
+export class GetLegacyIncapacityDeadmanWorkbenchResponse extends Message<GetLegacyIncapacityDeadmanWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView protocols = 1;
+   */
+  protocols: LegacyIncapacityDeadmanProtocolView[] = [];
+
+  /**
+   * @generated from field: int32 active_grace_window_count = 2;
+   */
+  activeGraceWindowCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyIncapacityDeadmanWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocols", kind: "message", T: LegacyIncapacityDeadmanProtocolView, repeated: true },
+    { no: 2, name: "active_grace_window_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyIncapacityDeadmanWorkbenchResponse {
+    return new GetLegacyIncapacityDeadmanWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyIncapacityDeadmanWorkbenchResponse {
+    return new GetLegacyIncapacityDeadmanWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyIncapacityDeadmanWorkbenchResponse {
+    return new GetLegacyIncapacityDeadmanWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyIncapacityDeadmanWorkbenchResponse | PlainMessage<GetLegacyIncapacityDeadmanWorkbenchResponse> | undefined, b: GetLegacyIncapacityDeadmanWorkbenchResponse | PlainMessage<GetLegacyIncapacityDeadmanWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyIncapacityDeadmanWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolRequest
+ */
+export class SaveLegacyIncapacityDeadmanProtocolRequest extends Message<SaveLegacyIncapacityDeadmanProtocolRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string protocol_code = 2;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string workflow_branch_and_waiting_clocks = 3;
+   */
+  workflowBranchAndWaitingClocks = "";
+
+  /**
+   * @generated from field: string multi_party_threshold_and_evidence = 4;
+   */
+  multiPartyThresholdAndEvidence = "";
+
+  /**
+   * @generated from field: string staged_watermarked_release_bundle = 5;
+   */
+  stagedWatermarkedReleaseBundle = "";
+
+  /**
+   * @generated from field: string protocol_state = 6;
+   */
+  protocolState = "";
+
+  /**
+   * @generated from field: bool single_actor_release_blocked = 7;
+   */
+  singleActorReleaseBlocked = false;
+
+  constructor(data?: PartialMessage<SaveLegacyIncapacityDeadmanProtocolRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workflow_branch_and_waiting_clocks", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "multi_party_threshold_and_evidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "staged_watermarked_release_bundle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "single_actor_release_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyIncapacityDeadmanProtocolRequest {
+    return new SaveLegacyIncapacityDeadmanProtocolRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyIncapacityDeadmanProtocolRequest {
+    return new SaveLegacyIncapacityDeadmanProtocolRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyIncapacityDeadmanProtocolRequest {
+    return new SaveLegacyIncapacityDeadmanProtocolRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyIncapacityDeadmanProtocolRequest | PlainMessage<SaveLegacyIncapacityDeadmanProtocolRequest> | undefined, b: SaveLegacyIncapacityDeadmanProtocolRequest | PlainMessage<SaveLegacyIncapacityDeadmanProtocolRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyIncapacityDeadmanProtocolRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse
+ */
+export class SaveLegacyIncapacityDeadmanProtocolResponse extends Message<SaveLegacyIncapacityDeadmanProtocolResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView protocol = 1;
+   */
+  protocol?: LegacyIncapacityDeadmanProtocolView;
+
+  constructor(data?: PartialMessage<SaveLegacyIncapacityDeadmanProtocolResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol", kind: "message", T: LegacyIncapacityDeadmanProtocolView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyIncapacityDeadmanProtocolResponse {
+    return new SaveLegacyIncapacityDeadmanProtocolResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyIncapacityDeadmanProtocolResponse {
+    return new SaveLegacyIncapacityDeadmanProtocolResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyIncapacityDeadmanProtocolResponse {
+    return new SaveLegacyIncapacityDeadmanProtocolResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyIncapacityDeadmanProtocolResponse | PlainMessage<SaveLegacyIncapacityDeadmanProtocolResponse> | undefined, b: SaveLegacyIncapacityDeadmanProtocolResponse | PlainMessage<SaveLegacyIncapacityDeadmanProtocolResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyIncapacityDeadmanProtocolResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseRequest
+ */
+export class SimulateOrCancelLegacyDeadmanReleaseRequest extends Message<SimulateOrCancelLegacyDeadmanReleaseRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string protocol_code = 2;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string target_protocol_state = 3;
+   */
+  targetProtocolState = "";
+
+  /**
+   * @generated from field: string protocol_notes = 4;
+   */
+  protocolNotes = "";
+
+  constructor(data?: PartialMessage<SimulateOrCancelLegacyDeadmanReleaseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "protocol_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SimulateOrCancelLegacyDeadmanReleaseRequest {
+    return new SimulateOrCancelLegacyDeadmanReleaseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SimulateOrCancelLegacyDeadmanReleaseRequest {
+    return new SimulateOrCancelLegacyDeadmanReleaseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SimulateOrCancelLegacyDeadmanReleaseRequest {
+    return new SimulateOrCancelLegacyDeadmanReleaseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SimulateOrCancelLegacyDeadmanReleaseRequest | PlainMessage<SimulateOrCancelLegacyDeadmanReleaseRequest> | undefined, b: SimulateOrCancelLegacyDeadmanReleaseRequest | PlainMessage<SimulateOrCancelLegacyDeadmanReleaseRequest> | undefined): boolean {
+    return proto3.util.equals(SimulateOrCancelLegacyDeadmanReleaseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse
+ */
+export class SimulateOrCancelLegacyDeadmanReleaseResponse extends Message<SimulateOrCancelLegacyDeadmanReleaseResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView protocol = 1;
+   */
+  protocol?: LegacyIncapacityDeadmanProtocolView;
+
+  /**
+   * @generated from field: string protocol_status = 2;
+   */
+  protocolStatus = "";
+
+  constructor(data?: PartialMessage<SimulateOrCancelLegacyDeadmanReleaseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol", kind: "message", T: LegacyIncapacityDeadmanProtocolView },
+    { no: 2, name: "protocol_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SimulateOrCancelLegacyDeadmanReleaseResponse {
+    return new SimulateOrCancelLegacyDeadmanReleaseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SimulateOrCancelLegacyDeadmanReleaseResponse {
+    return new SimulateOrCancelLegacyDeadmanReleaseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SimulateOrCancelLegacyDeadmanReleaseResponse {
+    return new SimulateOrCancelLegacyDeadmanReleaseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SimulateOrCancelLegacyDeadmanReleaseResponse | PlainMessage<SimulateOrCancelLegacyDeadmanReleaseResponse> | undefined, b: SimulateOrCancelLegacyDeadmanReleaseResponse | PlainMessage<SimulateOrCancelLegacyDeadmanReleaseResponse> | undefined): boolean {
+    return proto3.util.equals(SimulateOrCancelLegacyDeadmanReleaseResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView
+ */
+export class LegacyExecutorTrusteeWorkspaceView extends Message<LegacyExecutorTrusteeWorkspaceView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string workspace_code = 3;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string executor_authority_and_jurisdiction = 4;
+   */
+  executorAuthorityAndJurisdiction = "";
+
+  /**
+   * @generated from field: string settlement_task_and_claim_timeline = 5;
+   */
+  settlementTaskAndClaimTimeline = "";
+
+  /**
+   * @generated from field: string partitioned_beneficiary_portal_summary = 6;
+   */
+  partitionedBeneficiaryPortalSummary = "";
+
+  /**
+   * @generated from field: string workspace_state = 7;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: bool unrelated_beneficiary_isolation_enforced = 8;
+   */
+  unrelatedBeneficiaryIsolationEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyExecutorTrusteeWorkspaceView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "executor_authority_and_jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "settlement_task_and_claim_timeline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "partitioned_beneficiary_portal_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "unrelated_beneficiary_isolation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyExecutorTrusteeWorkspaceView {
+    return new LegacyExecutorTrusteeWorkspaceView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyExecutorTrusteeWorkspaceView {
+    return new LegacyExecutorTrusteeWorkspaceView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyExecutorTrusteeWorkspaceView {
+    return new LegacyExecutorTrusteeWorkspaceView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyExecutorTrusteeWorkspaceView | PlainMessage<LegacyExecutorTrusteeWorkspaceView> | undefined, b: LegacyExecutorTrusteeWorkspaceView | PlainMessage<LegacyExecutorTrusteeWorkspaceView> | undefined): boolean {
+    return proto3.util.equals(LegacyExecutorTrusteeWorkspaceView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchRequest
+ */
+export class GetLegacyExecutorWorkspaceWorkbenchRequest extends Message<GetLegacyExecutorWorkspaceWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyExecutorWorkspaceWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyExecutorWorkspaceWorkbenchRequest {
+    return new GetLegacyExecutorWorkspaceWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyExecutorWorkspaceWorkbenchRequest {
+    return new GetLegacyExecutorWorkspaceWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyExecutorWorkspaceWorkbenchRequest {
+    return new GetLegacyExecutorWorkspaceWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyExecutorWorkspaceWorkbenchRequest | PlainMessage<GetLegacyExecutorWorkspaceWorkbenchRequest> | undefined, b: GetLegacyExecutorWorkspaceWorkbenchRequest | PlainMessage<GetLegacyExecutorWorkspaceWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyExecutorWorkspaceWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse
+ */
+export class GetLegacyExecutorWorkspaceWorkbenchResponse extends Message<GetLegacyExecutorWorkspaceWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView workspaces = 1;
+   */
+  workspaces: LegacyExecutorTrusteeWorkspaceView[] = [];
+
+  /**
+   * @generated from field: int32 open_dispute_count = 2;
+   */
+  openDisputeCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyExecutorWorkspaceWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspaces", kind: "message", T: LegacyExecutorTrusteeWorkspaceView, repeated: true },
+    { no: 2, name: "open_dispute_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyExecutorWorkspaceWorkbenchResponse {
+    return new GetLegacyExecutorWorkspaceWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyExecutorWorkspaceWorkbenchResponse {
+    return new GetLegacyExecutorWorkspaceWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyExecutorWorkspaceWorkbenchResponse {
+    return new GetLegacyExecutorWorkspaceWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyExecutorWorkspaceWorkbenchResponse | PlainMessage<GetLegacyExecutorWorkspaceWorkbenchResponse> | undefined, b: GetLegacyExecutorWorkspaceWorkbenchResponse | PlainMessage<GetLegacyExecutorWorkspaceWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyExecutorWorkspaceWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceRequest
+ */
+export class SaveLegacyExecutorTrusteeWorkspaceRequest extends Message<SaveLegacyExecutorTrusteeWorkspaceRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string workspace_code = 2;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string executor_authority_and_jurisdiction = 3;
+   */
+  executorAuthorityAndJurisdiction = "";
+
+  /**
+   * @generated from field: string settlement_task_and_claim_timeline = 4;
+   */
+  settlementTaskAndClaimTimeline = "";
+
+  /**
+   * @generated from field: string partitioned_beneficiary_portal_summary = 5;
+   */
+  partitionedBeneficiaryPortalSummary = "";
+
+  /**
+   * @generated from field: string workspace_state = 6;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: bool unrelated_beneficiary_isolation_enforced = 7;
+   */
+  unrelatedBeneficiaryIsolationEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyExecutorTrusteeWorkspaceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "executor_authority_and_jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "settlement_task_and_claim_timeline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "partitioned_beneficiary_portal_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "unrelated_beneficiary_isolation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyExecutorTrusteeWorkspaceRequest {
+    return new SaveLegacyExecutorTrusteeWorkspaceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyExecutorTrusteeWorkspaceRequest {
+    return new SaveLegacyExecutorTrusteeWorkspaceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyExecutorTrusteeWorkspaceRequest {
+    return new SaveLegacyExecutorTrusteeWorkspaceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyExecutorTrusteeWorkspaceRequest | PlainMessage<SaveLegacyExecutorTrusteeWorkspaceRequest> | undefined, b: SaveLegacyExecutorTrusteeWorkspaceRequest | PlainMessage<SaveLegacyExecutorTrusteeWorkspaceRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyExecutorTrusteeWorkspaceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse
+ */
+export class SaveLegacyExecutorTrusteeWorkspaceResponse extends Message<SaveLegacyExecutorTrusteeWorkspaceResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView workspace = 1;
+   */
+  workspace?: LegacyExecutorTrusteeWorkspaceView;
+
+  constructor(data?: PartialMessage<SaveLegacyExecutorTrusteeWorkspaceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: LegacyExecutorTrusteeWorkspaceView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyExecutorTrusteeWorkspaceResponse {
+    return new SaveLegacyExecutorTrusteeWorkspaceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyExecutorTrusteeWorkspaceResponse {
+    return new SaveLegacyExecutorTrusteeWorkspaceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyExecutorTrusteeWorkspaceResponse {
+    return new SaveLegacyExecutorTrusteeWorkspaceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyExecutorTrusteeWorkspaceResponse | PlainMessage<SaveLegacyExecutorTrusteeWorkspaceResponse> | undefined, b: SaveLegacyExecutorTrusteeWorkspaceResponse | PlainMessage<SaveLegacyExecutorTrusteeWorkspaceResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyExecutorTrusteeWorkspaceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeRequest
+ */
+export class AdvanceLegacySettlementTaskOrResolveDisputeRequest extends Message<AdvanceLegacySettlementTaskOrResolveDisputeRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string workspace_code = 2;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string target_workspace_state = 3;
+   */
+  targetWorkspaceState = "";
+
+  /**
+   * @generated from field: string resolution_notes = 4;
+   */
+  resolutionNotes = "";
+
+  constructor(data?: PartialMessage<AdvanceLegacySettlementTaskOrResolveDisputeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "resolution_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeRequest {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeRequest {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeRequest {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdvanceLegacySettlementTaskOrResolveDisputeRequest | PlainMessage<AdvanceLegacySettlementTaskOrResolveDisputeRequest> | undefined, b: AdvanceLegacySettlementTaskOrResolveDisputeRequest | PlainMessage<AdvanceLegacySettlementTaskOrResolveDisputeRequest> | undefined): boolean {
+    return proto3.util.equals(AdvanceLegacySettlementTaskOrResolveDisputeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse
+ */
+export class AdvanceLegacySettlementTaskOrResolveDisputeResponse extends Message<AdvanceLegacySettlementTaskOrResolveDisputeResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView workspace = 1;
+   */
+  workspace?: LegacyExecutorTrusteeWorkspaceView;
+
+  /**
+   * @generated from field: string workspace_status = 2;
+   */
+  workspaceStatus = "";
+
+  constructor(data?: PartialMessage<AdvanceLegacySettlementTaskOrResolveDisputeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: LegacyExecutorTrusteeWorkspaceView },
+    { no: 2, name: "workspace_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeResponse {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeResponse {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdvanceLegacySettlementTaskOrResolveDisputeResponse {
+    return new AdvanceLegacySettlementTaskOrResolveDisputeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdvanceLegacySettlementTaskOrResolveDisputeResponse | PlainMessage<AdvanceLegacySettlementTaskOrResolveDisputeResponse> | undefined, b: AdvanceLegacySettlementTaskOrResolveDisputeResponse | PlainMessage<AdvanceLegacySettlementTaskOrResolveDisputeResponse> | undefined): boolean {
+    return proto3.util.equals(AdvanceLegacySettlementTaskOrResolveDisputeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacySettlementAccountingView
+ */
+export class LegacySettlementAccountingView extends Message<LegacySettlementAccountingView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string accounting_code = 3;
+   */
+  accountingCode = "";
+
+  /**
+   * @generated from field: string opening_inventory_and_dod_valuations = 4;
+   */
+  openingInventoryAndDodValuations = "";
+
+  /**
+   * @generated from field: string reversible_ledger_and_period_lock = 5;
+   */
+  reversibleLedgerAndPeriodLock = "";
+
+  /**
+   * @generated from field: string proposed_distribution_and_receipt_pack = 6;
+   */
+  proposedDistributionAndReceiptPack = "";
+
+  /**
+   * @generated from field: string accounting_state = 7;
+   */
+  accountingState = "";
+
+  /**
+   * @generated from field: bool non_custodial_execution_boundary_enforced = 8;
+   */
+  nonCustodialExecutionBoundaryEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacySettlementAccountingView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacySettlementAccountingView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "accounting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "opening_inventory_and_dod_valuations", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "reversible_ledger_and_period_lock", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "proposed_distribution_and_receipt_pack", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "accounting_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "non_custodial_execution_boundary_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacySettlementAccountingView {
+    return new LegacySettlementAccountingView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacySettlementAccountingView {
+    return new LegacySettlementAccountingView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacySettlementAccountingView {
+    return new LegacySettlementAccountingView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacySettlementAccountingView | PlainMessage<LegacySettlementAccountingView> | undefined, b: LegacySettlementAccountingView | PlainMessage<LegacySettlementAccountingView> | undefined): boolean {
+    return proto3.util.equals(LegacySettlementAccountingView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchRequest
+ */
+export class GetLegacySettlementAccountingWorkbenchRequest extends Message<GetLegacySettlementAccountingWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacySettlementAccountingWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacySettlementAccountingWorkbenchRequest {
+    return new GetLegacySettlementAccountingWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacySettlementAccountingWorkbenchRequest {
+    return new GetLegacySettlementAccountingWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacySettlementAccountingWorkbenchRequest {
+    return new GetLegacySettlementAccountingWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacySettlementAccountingWorkbenchRequest | PlainMessage<GetLegacySettlementAccountingWorkbenchRequest> | undefined, b: GetLegacySettlementAccountingWorkbenchRequest | PlainMessage<GetLegacySettlementAccountingWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacySettlementAccountingWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse
+ */
+export class GetLegacySettlementAccountingWorkbenchResponse extends Message<GetLegacySettlementAccountingWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacySettlementAccountingView accountings = 1;
+   */
+  accountings: LegacySettlementAccountingView[] = [];
+
+  /**
+   * @generated from field: int32 open_reconciling_count = 2;
+   */
+  openReconcilingCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacySettlementAccountingWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "accountings", kind: "message", T: LegacySettlementAccountingView, repeated: true },
+    { no: 2, name: "open_reconciling_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacySettlementAccountingWorkbenchResponse {
+    return new GetLegacySettlementAccountingWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacySettlementAccountingWorkbenchResponse {
+    return new GetLegacySettlementAccountingWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacySettlementAccountingWorkbenchResponse {
+    return new GetLegacySettlementAccountingWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacySettlementAccountingWorkbenchResponse | PlainMessage<GetLegacySettlementAccountingWorkbenchResponse> | undefined, b: GetLegacySettlementAccountingWorkbenchResponse | PlainMessage<GetLegacySettlementAccountingWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacySettlementAccountingWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacySettlementAccountingRequest
+ */
+export class SaveLegacySettlementAccountingRequest extends Message<SaveLegacySettlementAccountingRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string accounting_code = 2;
+   */
+  accountingCode = "";
+
+  /**
+   * @generated from field: string opening_inventory_and_dod_valuations = 3;
+   */
+  openingInventoryAndDodValuations = "";
+
+  /**
+   * @generated from field: string reversible_ledger_and_period_lock = 4;
+   */
+  reversibleLedgerAndPeriodLock = "";
+
+  /**
+   * @generated from field: string proposed_distribution_and_receipt_pack = 5;
+   */
+  proposedDistributionAndReceiptPack = "";
+
+  /**
+   * @generated from field: string accounting_state = 6;
+   */
+  accountingState = "";
+
+  /**
+   * @generated from field: bool non_custodial_execution_boundary_enforced = 7;
+   */
+  nonCustodialExecutionBoundaryEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacySettlementAccountingRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacySettlementAccountingRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "accounting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "opening_inventory_and_dod_valuations", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "reversible_ledger_and_period_lock", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "proposed_distribution_and_receipt_pack", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "accounting_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "non_custodial_execution_boundary_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacySettlementAccountingRequest {
+    return new SaveLegacySettlementAccountingRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacySettlementAccountingRequest {
+    return new SaveLegacySettlementAccountingRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacySettlementAccountingRequest {
+    return new SaveLegacySettlementAccountingRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacySettlementAccountingRequest | PlainMessage<SaveLegacySettlementAccountingRequest> | undefined, b: SaveLegacySettlementAccountingRequest | PlainMessage<SaveLegacySettlementAccountingRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacySettlementAccountingRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacySettlementAccountingResponse
+ */
+export class SaveLegacySettlementAccountingResponse extends Message<SaveLegacySettlementAccountingResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacySettlementAccountingView accounting = 1;
+   */
+  accounting?: LegacySettlementAccountingView;
+
+  constructor(data?: PartialMessage<SaveLegacySettlementAccountingResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacySettlementAccountingResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "accounting", kind: "message", T: LegacySettlementAccountingView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacySettlementAccountingResponse {
+    return new SaveLegacySettlementAccountingResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacySettlementAccountingResponse {
+    return new SaveLegacySettlementAccountingResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacySettlementAccountingResponse {
+    return new SaveLegacySettlementAccountingResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacySettlementAccountingResponse | PlainMessage<SaveLegacySettlementAccountingResponse> | undefined, b: SaveLegacySettlementAccountingResponse | PlainMessage<SaveLegacySettlementAccountingResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacySettlementAccountingResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodRequest
+ */
+export class LockOrReverseLegacyAccountingPeriodRequest extends Message<LockOrReverseLegacyAccountingPeriodRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string accounting_code = 2;
+   */
+  accountingCode = "";
+
+  /**
+   * @generated from field: string target_accounting_state = 3;
+   */
+  targetAccountingState = "";
+
+  /**
+   * @generated from field: string accounting_notes = 4;
+   */
+  accountingNotes = "";
+
+  constructor(data?: PartialMessage<LockOrReverseLegacyAccountingPeriodRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "accounting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_accounting_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "accounting_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrReverseLegacyAccountingPeriodRequest {
+    return new LockOrReverseLegacyAccountingPeriodRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrReverseLegacyAccountingPeriodRequest {
+    return new LockOrReverseLegacyAccountingPeriodRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrReverseLegacyAccountingPeriodRequest {
+    return new LockOrReverseLegacyAccountingPeriodRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrReverseLegacyAccountingPeriodRequest | PlainMessage<LockOrReverseLegacyAccountingPeriodRequest> | undefined, b: LockOrReverseLegacyAccountingPeriodRequest | PlainMessage<LockOrReverseLegacyAccountingPeriodRequest> | undefined): boolean {
+    return proto3.util.equals(LockOrReverseLegacyAccountingPeriodRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse
+ */
+export class LockOrReverseLegacyAccountingPeriodResponse extends Message<LockOrReverseLegacyAccountingPeriodResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacySettlementAccountingView accounting = 1;
+   */
+  accounting?: LegacySettlementAccountingView;
+
+  /**
+   * @generated from field: string accounting_status = 2;
+   */
+  accountingStatus = "";
+
+  constructor(data?: PartialMessage<LockOrReverseLegacyAccountingPeriodResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "accounting", kind: "message", T: LegacySettlementAccountingView },
+    { no: 2, name: "accounting_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrReverseLegacyAccountingPeriodResponse {
+    return new LockOrReverseLegacyAccountingPeriodResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrReverseLegacyAccountingPeriodResponse {
+    return new LockOrReverseLegacyAccountingPeriodResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrReverseLegacyAccountingPeriodResponse {
+    return new LockOrReverseLegacyAccountingPeriodResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrReverseLegacyAccountingPeriodResponse | PlainMessage<LockOrReverseLegacyAccountingPeriodResponse> | undefined, b: LockOrReverseLegacyAccountingPeriodResponse | PlainMessage<LockOrReverseLegacyAccountingPeriodResponse> | undefined): boolean {
+    return proto3.util.equals(LockOrReverseLegacyAccountingPeriodResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView
+ */
+export class LegacyDigitalThresholdRecoveryView extends Message<LegacyDigitalThresholdRecoveryView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string recovery_code = 3;
+   */
+  recoveryCode = "";
+
+  /**
+   * @generated from field: string digital_asset_inventory_and_wishes = 4;
+   */
+  digitalAssetInventoryAndWishes = "";
+
+  /**
+   * @generated from field: string shamir_threshold_and_custodian_domains = 5;
+   */
+  shamirThresholdAndCustodianDomains = "";
+
+  /**
+   * @generated from field: string ceremony_dry_run_and_rotation_log = 6;
+   */
+  ceremonyDryRunAndRotationLog = "";
+
+  /**
+   * @generated from field: string recovery_state = 7;
+   */
+  recoveryState = "";
+
+  /**
+   * @generated from field: bool staff_subthreshold_reconstruction_blocked = 8;
+   */
+  staffSubthresholdReconstructionBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyDigitalThresholdRecoveryView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "recovery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "digital_asset_inventory_and_wishes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "shamir_threshold_and_custodian_domains", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "ceremony_dry_run_and_rotation_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "recovery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "staff_subthreshold_reconstruction_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyDigitalThresholdRecoveryView {
+    return new LegacyDigitalThresholdRecoveryView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyDigitalThresholdRecoveryView {
+    return new LegacyDigitalThresholdRecoveryView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyDigitalThresholdRecoveryView {
+    return new LegacyDigitalThresholdRecoveryView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyDigitalThresholdRecoveryView | PlainMessage<LegacyDigitalThresholdRecoveryView> | undefined, b: LegacyDigitalThresholdRecoveryView | PlainMessage<LegacyDigitalThresholdRecoveryView> | undefined): boolean {
+    return proto3.util.equals(LegacyDigitalThresholdRecoveryView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchRequest
+ */
+export class GetLegacyDigitalRecoveryWorkbenchRequest extends Message<GetLegacyDigitalRecoveryWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyDigitalRecoveryWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyDigitalRecoveryWorkbenchRequest {
+    return new GetLegacyDigitalRecoveryWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyDigitalRecoveryWorkbenchRequest {
+    return new GetLegacyDigitalRecoveryWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyDigitalRecoveryWorkbenchRequest {
+    return new GetLegacyDigitalRecoveryWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyDigitalRecoveryWorkbenchRequest | PlainMessage<GetLegacyDigitalRecoveryWorkbenchRequest> | undefined, b: GetLegacyDigitalRecoveryWorkbenchRequest | PlainMessage<GetLegacyDigitalRecoveryWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyDigitalRecoveryWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse
+ */
+export class GetLegacyDigitalRecoveryWorkbenchResponse extends Message<GetLegacyDigitalRecoveryWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView recoveries = 1;
+   */
+  recoveries: LegacyDigitalThresholdRecoveryView[] = [];
+
+  /**
+   * @generated from field: int32 quarantined_share_count = 2;
+   */
+  quarantinedShareCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyDigitalRecoveryWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "recoveries", kind: "message", T: LegacyDigitalThresholdRecoveryView, repeated: true },
+    { no: 2, name: "quarantined_share_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyDigitalRecoveryWorkbenchResponse {
+    return new GetLegacyDigitalRecoveryWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyDigitalRecoveryWorkbenchResponse {
+    return new GetLegacyDigitalRecoveryWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyDigitalRecoveryWorkbenchResponse {
+    return new GetLegacyDigitalRecoveryWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyDigitalRecoveryWorkbenchResponse | PlainMessage<GetLegacyDigitalRecoveryWorkbenchResponse> | undefined, b: GetLegacyDigitalRecoveryWorkbenchResponse | PlainMessage<GetLegacyDigitalRecoveryWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyDigitalRecoveryWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryRequest
+ */
+export class SaveLegacyDigitalThresholdRecoveryRequest extends Message<SaveLegacyDigitalThresholdRecoveryRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string recovery_code = 2;
+   */
+  recoveryCode = "";
+
+  /**
+   * @generated from field: string digital_asset_inventory_and_wishes = 3;
+   */
+  digitalAssetInventoryAndWishes = "";
+
+  /**
+   * @generated from field: string shamir_threshold_and_custodian_domains = 4;
+   */
+  shamirThresholdAndCustodianDomains = "";
+
+  /**
+   * @generated from field: string ceremony_dry_run_and_rotation_log = 5;
+   */
+  ceremonyDryRunAndRotationLog = "";
+
+  /**
+   * @generated from field: string recovery_state = 6;
+   */
+  recoveryState = "";
+
+  /**
+   * @generated from field: bool staff_subthreshold_reconstruction_blocked = 7;
+   */
+  staffSubthresholdReconstructionBlocked = false;
+
+  constructor(data?: PartialMessage<SaveLegacyDigitalThresholdRecoveryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "recovery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "digital_asset_inventory_and_wishes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "shamir_threshold_and_custodian_domains", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "ceremony_dry_run_and_rotation_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "recovery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "staff_subthreshold_reconstruction_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyDigitalThresholdRecoveryRequest {
+    return new SaveLegacyDigitalThresholdRecoveryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyDigitalThresholdRecoveryRequest {
+    return new SaveLegacyDigitalThresholdRecoveryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyDigitalThresholdRecoveryRequest {
+    return new SaveLegacyDigitalThresholdRecoveryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyDigitalThresholdRecoveryRequest | PlainMessage<SaveLegacyDigitalThresholdRecoveryRequest> | undefined, b: SaveLegacyDigitalThresholdRecoveryRequest | PlainMessage<SaveLegacyDigitalThresholdRecoveryRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyDigitalThresholdRecoveryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse
+ */
+export class SaveLegacyDigitalThresholdRecoveryResponse extends Message<SaveLegacyDigitalThresholdRecoveryResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView recovery = 1;
+   */
+  recovery?: LegacyDigitalThresholdRecoveryView;
+
+  constructor(data?: PartialMessage<SaveLegacyDigitalThresholdRecoveryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "recovery", kind: "message", T: LegacyDigitalThresholdRecoveryView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyDigitalThresholdRecoveryResponse {
+    return new SaveLegacyDigitalThresholdRecoveryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyDigitalThresholdRecoveryResponse {
+    return new SaveLegacyDigitalThresholdRecoveryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyDigitalThresholdRecoveryResponse {
+    return new SaveLegacyDigitalThresholdRecoveryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyDigitalThresholdRecoveryResponse | PlainMessage<SaveLegacyDigitalThresholdRecoveryResponse> | undefined, b: SaveLegacyDigitalThresholdRecoveryResponse | PlainMessage<SaveLegacyDigitalThresholdRecoveryResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyDigitalThresholdRecoveryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest
+ */
+export class RunLegacyThresholdCeremonyDryRunOrRotateShareRequest extends Message<RunLegacyThresholdCeremonyDryRunOrRotateShareRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string recovery_code = 2;
+   */
+  recoveryCode = "";
+
+  /**
+   * @generated from field: string target_recovery_state = 3;
+   */
+  targetRecoveryState = "";
+
+  /**
+   * @generated from field: string ceremony_notes = 4;
+   */
+  ceremonyNotes = "";
+
+  constructor(data?: PartialMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "recovery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_recovery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ceremony_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareRequest {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareRequest {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareRequest {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunLegacyThresholdCeremonyDryRunOrRotateShareRequest | PlainMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareRequest> | undefined, b: RunLegacyThresholdCeremonyDryRunOrRotateShareRequest | PlainMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareRequest> | undefined): boolean {
+    return proto3.util.equals(RunLegacyThresholdCeremonyDryRunOrRotateShareRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse
+ */
+export class RunLegacyThresholdCeremonyDryRunOrRotateShareResponse extends Message<RunLegacyThresholdCeremonyDryRunOrRotateShareResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView recovery = 1;
+   */
+  recovery?: LegacyDigitalThresholdRecoveryView;
+
+  /**
+   * @generated from field: string ceremony_status = 2;
+   */
+  ceremonyStatus = "";
+
+  constructor(data?: PartialMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "recovery", kind: "message", T: LegacyDigitalThresholdRecoveryView },
+    { no: 2, name: "ceremony_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareResponse {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareResponse {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunLegacyThresholdCeremonyDryRunOrRotateShareResponse {
+    return new RunLegacyThresholdCeremonyDryRunOrRotateShareResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunLegacyThresholdCeremonyDryRunOrRotateShareResponse | PlainMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareResponse> | undefined, b: RunLegacyThresholdCeremonyDryRunOrRotateShareResponse | PlainMessage<RunLegacyThresholdCeremonyDryRunOrRotateShareResponse> | undefined): boolean {
+    return proto3.util.equals(RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyHeritagePreservationArchiveView
+ */
+export class LegacyHeritagePreservationArchiveView extends Message<LegacyHeritagePreservationArchiveView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string archive_code = 3;
+   */
+  archiveCode = "";
+
+  /**
+   * @generated from field: string media_manifest_and_fixity_signature = 4;
+   */
+  mediaManifestAndFixitySignature = "";
+
+  /**
+   * @generated from field: string delivery_trigger_and_recipient_consent = 5;
+   */
+  deliveryTriggerAndRecipientConsent = "";
+
+  /**
+   * @generated from field: string format_migration_and_restoration_test = 6;
+   */
+  formatMigrationAndRestorationTest = "";
+
+  /**
+   * @generated from field: string archive_state = 7;
+   */
+  archiveState = "";
+
+  /**
+   * @generated from field: bool original_artifact_mutation_blocked = 8;
+   */
+  originalArtifactMutationBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyHeritagePreservationArchiveView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyHeritagePreservationArchiveView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "archive_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "media_manifest_and_fixity_signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "delivery_trigger_and_recipient_consent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "format_migration_and_restoration_test", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "archive_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "original_artifact_mutation_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyHeritagePreservationArchiveView {
+    return new LegacyHeritagePreservationArchiveView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyHeritagePreservationArchiveView {
+    return new LegacyHeritagePreservationArchiveView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyHeritagePreservationArchiveView {
+    return new LegacyHeritagePreservationArchiveView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyHeritagePreservationArchiveView | PlainMessage<LegacyHeritagePreservationArchiveView> | undefined, b: LegacyHeritagePreservationArchiveView | PlainMessage<LegacyHeritagePreservationArchiveView> | undefined): boolean {
+    return proto3.util.equals(LegacyHeritagePreservationArchiveView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchRequest
+ */
+export class GetLegacyHeritageArchiveWorkbenchRequest extends Message<GetLegacyHeritageArchiveWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyHeritageArchiveWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyHeritageArchiveWorkbenchRequest {
+    return new GetLegacyHeritageArchiveWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyHeritageArchiveWorkbenchRequest {
+    return new GetLegacyHeritageArchiveWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyHeritageArchiveWorkbenchRequest {
+    return new GetLegacyHeritageArchiveWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyHeritageArchiveWorkbenchRequest | PlainMessage<GetLegacyHeritageArchiveWorkbenchRequest> | undefined, b: GetLegacyHeritageArchiveWorkbenchRequest | PlainMessage<GetLegacyHeritageArchiveWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyHeritageArchiveWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse
+ */
+export class GetLegacyHeritageArchiveWorkbenchResponse extends Message<GetLegacyHeritageArchiveWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyHeritagePreservationArchiveView archives = 1;
+   */
+  archives: LegacyHeritagePreservationArchiveView[] = [];
+
+  /**
+   * @generated from field: int32 contact_repair_count = 2;
+   */
+  contactRepairCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyHeritageArchiveWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "archives", kind: "message", T: LegacyHeritagePreservationArchiveView, repeated: true },
+    { no: 2, name: "contact_repair_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyHeritageArchiveWorkbenchResponse {
+    return new GetLegacyHeritageArchiveWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyHeritageArchiveWorkbenchResponse {
+    return new GetLegacyHeritageArchiveWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyHeritageArchiveWorkbenchResponse {
+    return new GetLegacyHeritageArchiveWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyHeritageArchiveWorkbenchResponse | PlainMessage<GetLegacyHeritageArchiveWorkbenchResponse> | undefined, b: GetLegacyHeritageArchiveWorkbenchResponse | PlainMessage<GetLegacyHeritageArchiveWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyHeritageArchiveWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveRequest
+ */
+export class SaveLegacyHeritagePreservationArchiveRequest extends Message<SaveLegacyHeritagePreservationArchiveRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string archive_code = 2;
+   */
+  archiveCode = "";
+
+  /**
+   * @generated from field: string media_manifest_and_fixity_signature = 3;
+   */
+  mediaManifestAndFixitySignature = "";
+
+  /**
+   * @generated from field: string delivery_trigger_and_recipient_consent = 4;
+   */
+  deliveryTriggerAndRecipientConsent = "";
+
+  /**
+   * @generated from field: string format_migration_and_restoration_test = 5;
+   */
+  formatMigrationAndRestorationTest = "";
+
+  /**
+   * @generated from field: string archive_state = 6;
+   */
+  archiveState = "";
+
+  /**
+   * @generated from field: bool original_artifact_mutation_blocked = 7;
+   */
+  originalArtifactMutationBlocked = false;
+
+  constructor(data?: PartialMessage<SaveLegacyHeritagePreservationArchiveRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "archive_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "media_manifest_and_fixity_signature", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "delivery_trigger_and_recipient_consent", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "format_migration_and_restoration_test", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "archive_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "original_artifact_mutation_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyHeritagePreservationArchiveRequest {
+    return new SaveLegacyHeritagePreservationArchiveRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyHeritagePreservationArchiveRequest {
+    return new SaveLegacyHeritagePreservationArchiveRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyHeritagePreservationArchiveRequest {
+    return new SaveLegacyHeritagePreservationArchiveRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyHeritagePreservationArchiveRequest | PlainMessage<SaveLegacyHeritagePreservationArchiveRequest> | undefined, b: SaveLegacyHeritagePreservationArchiveRequest | PlainMessage<SaveLegacyHeritagePreservationArchiveRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyHeritagePreservationArchiveRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse
+ */
+export class SaveLegacyHeritagePreservationArchiveResponse extends Message<SaveLegacyHeritagePreservationArchiveResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyHeritagePreservationArchiveView archive = 1;
+   */
+  archive?: LegacyHeritagePreservationArchiveView;
+
+  constructor(data?: PartialMessage<SaveLegacyHeritagePreservationArchiveResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "archive", kind: "message", T: LegacyHeritagePreservationArchiveView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyHeritagePreservationArchiveResponse {
+    return new SaveLegacyHeritagePreservationArchiveResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyHeritagePreservationArchiveResponse {
+    return new SaveLegacyHeritagePreservationArchiveResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyHeritagePreservationArchiveResponse {
+    return new SaveLegacyHeritagePreservationArchiveResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyHeritagePreservationArchiveResponse | PlainMessage<SaveLegacyHeritagePreservationArchiveResponse> | undefined, b: SaveLegacyHeritagePreservationArchiveResponse | PlainMessage<SaveLegacyHeritagePreservationArchiveResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyHeritagePreservationArchiveResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerRequest
+ */
+export class VerifyLegacyArchiveFixityOrPreviewTriggerRequest extends Message<VerifyLegacyArchiveFixityOrPreviewTriggerRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string archive_code = 2;
+   */
+  archiveCode = "";
+
+  /**
+   * @generated from field: string target_archive_state = 3;
+   */
+  targetArchiveState = "";
+
+  /**
+   * @generated from field: string archive_notes = 4;
+   */
+  archiveNotes = "";
+
+  constructor(data?: PartialMessage<VerifyLegacyArchiveFixityOrPreviewTriggerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "archive_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_archive_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "archive_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerRequest {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerRequest {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerRequest {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyLegacyArchiveFixityOrPreviewTriggerRequest | PlainMessage<VerifyLegacyArchiveFixityOrPreviewTriggerRequest> | undefined, b: VerifyLegacyArchiveFixityOrPreviewTriggerRequest | PlainMessage<VerifyLegacyArchiveFixityOrPreviewTriggerRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyLegacyArchiveFixityOrPreviewTriggerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse
+ */
+export class VerifyLegacyArchiveFixityOrPreviewTriggerResponse extends Message<VerifyLegacyArchiveFixityOrPreviewTriggerResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyHeritagePreservationArchiveView archive = 1;
+   */
+  archive?: LegacyHeritagePreservationArchiveView;
+
+  /**
+   * @generated from field: string archive_status = 2;
+   */
+  archiveStatus = "";
+
+  constructor(data?: PartialMessage<VerifyLegacyArchiveFixityOrPreviewTriggerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "archive", kind: "message", T: LegacyHeritagePreservationArchiveView },
+    { no: 2, name: "archive_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerResponse {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerResponse {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyLegacyArchiveFixityOrPreviewTriggerResponse {
+    return new VerifyLegacyArchiveFixityOrPreviewTriggerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyLegacyArchiveFixityOrPreviewTriggerResponse | PlainMessage<VerifyLegacyArchiveFixityOrPreviewTriggerResponse> | undefined, b: VerifyLegacyArchiveFixityOrPreviewTriggerResponse | PlainMessage<VerifyLegacyArchiveFixityOrPreviewTriggerResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyLegacyArchiveFixityOrPreviewTriggerResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView
+ */
+export class LegacyLiquidityInsuranceReadinessView extends Message<LegacyLiquidityInsuranceReadinessView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string readiness_code = 3;
+   */
+  readinessCode = "";
+
+  /**
+   * @generated from field: string obligations_taxes_and_funding_map = 4;
+   */
+  obligationsTaxesAndFundingMap = "";
+
+  /**
+   * @generated from field: string policy_claim_pack_and_source_refs = 5;
+   */
+  policyClaimPackAndSourceRefs = "";
+
+  /**
+   * @generated from field: string shortfall_stress_and_counsel_trigger = 6;
+   */
+  shortfallStressAndCounselTrigger = "";
+
+  /**
+   * @generated from field: string readiness_state = 7;
+   */
+  readinessState = "";
+
+  /**
+   * @generated from field: bool no_guaranteed_tax_probate_claim_enforced = 8;
+   */
+  noGuaranteedTaxProbateClaimEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyLiquidityInsuranceReadinessView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "readiness_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "obligations_taxes_and_funding_map", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "policy_claim_pack_and_source_refs", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "shortfall_stress_and_counsel_trigger", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "readiness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_guaranteed_tax_probate_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyLiquidityInsuranceReadinessView {
+    return new LegacyLiquidityInsuranceReadinessView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyLiquidityInsuranceReadinessView {
+    return new LegacyLiquidityInsuranceReadinessView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyLiquidityInsuranceReadinessView {
+    return new LegacyLiquidityInsuranceReadinessView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyLiquidityInsuranceReadinessView | PlainMessage<LegacyLiquidityInsuranceReadinessView> | undefined, b: LegacyLiquidityInsuranceReadinessView | PlainMessage<LegacyLiquidityInsuranceReadinessView> | undefined): boolean {
+    return proto3.util.equals(LegacyLiquidityInsuranceReadinessView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchRequest
+ */
+export class GetLegacyLiquidityReadinessWorkbenchRequest extends Message<GetLegacyLiquidityReadinessWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyLiquidityReadinessWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLiquidityReadinessWorkbenchRequest {
+    return new GetLegacyLiquidityReadinessWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLiquidityReadinessWorkbenchRequest {
+    return new GetLegacyLiquidityReadinessWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLiquidityReadinessWorkbenchRequest {
+    return new GetLegacyLiquidityReadinessWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLiquidityReadinessWorkbenchRequest | PlainMessage<GetLegacyLiquidityReadinessWorkbenchRequest> | undefined, b: GetLegacyLiquidityReadinessWorkbenchRequest | PlainMessage<GetLegacyLiquidityReadinessWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLiquidityReadinessWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse
+ */
+export class GetLegacyLiquidityReadinessWorkbenchResponse extends Message<GetLegacyLiquidityReadinessWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView readiness_plans = 1;
+   */
+  readinessPlans: LegacyLiquidityInsuranceReadinessView[] = [];
+
+  /**
+   * @generated from field: int32 shortfall_flag_count = 2;
+   */
+  shortfallFlagCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyLiquidityReadinessWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "readiness_plans", kind: "message", T: LegacyLiquidityInsuranceReadinessView, repeated: true },
+    { no: 2, name: "shortfall_flag_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyLiquidityReadinessWorkbenchResponse {
+    return new GetLegacyLiquidityReadinessWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyLiquidityReadinessWorkbenchResponse {
+    return new GetLegacyLiquidityReadinessWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyLiquidityReadinessWorkbenchResponse {
+    return new GetLegacyLiquidityReadinessWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyLiquidityReadinessWorkbenchResponse | PlainMessage<GetLegacyLiquidityReadinessWorkbenchResponse> | undefined, b: GetLegacyLiquidityReadinessWorkbenchResponse | PlainMessage<GetLegacyLiquidityReadinessWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyLiquidityReadinessWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessRequest
+ */
+export class SaveLegacyLiquidityInsuranceReadinessRequest extends Message<SaveLegacyLiquidityInsuranceReadinessRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string readiness_code = 2;
+   */
+  readinessCode = "";
+
+  /**
+   * @generated from field: string obligations_taxes_and_funding_map = 3;
+   */
+  obligationsTaxesAndFundingMap = "";
+
+  /**
+   * @generated from field: string policy_claim_pack_and_source_refs = 4;
+   */
+  policyClaimPackAndSourceRefs = "";
+
+  /**
+   * @generated from field: string shortfall_stress_and_counsel_trigger = 5;
+   */
+  shortfallStressAndCounselTrigger = "";
+
+  /**
+   * @generated from field: string readiness_state = 6;
+   */
+  readinessState = "";
+
+  /**
+   * @generated from field: bool no_guaranteed_tax_probate_claim_enforced = 7;
+   */
+  noGuaranteedTaxProbateClaimEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyLiquidityInsuranceReadinessRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "readiness_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "obligations_taxes_and_funding_map", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "policy_claim_pack_and_source_refs", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "shortfall_stress_and_counsel_trigger", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "readiness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "no_guaranteed_tax_probate_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLiquidityInsuranceReadinessRequest {
+    return new SaveLegacyLiquidityInsuranceReadinessRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLiquidityInsuranceReadinessRequest {
+    return new SaveLegacyLiquidityInsuranceReadinessRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLiquidityInsuranceReadinessRequest {
+    return new SaveLegacyLiquidityInsuranceReadinessRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLiquidityInsuranceReadinessRequest | PlainMessage<SaveLegacyLiquidityInsuranceReadinessRequest> | undefined, b: SaveLegacyLiquidityInsuranceReadinessRequest | PlainMessage<SaveLegacyLiquidityInsuranceReadinessRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLiquidityInsuranceReadinessRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse
+ */
+export class SaveLegacyLiquidityInsuranceReadinessResponse extends Message<SaveLegacyLiquidityInsuranceReadinessResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView readiness_plan = 1;
+   */
+  readinessPlan?: LegacyLiquidityInsuranceReadinessView;
+
+  constructor(data?: PartialMessage<SaveLegacyLiquidityInsuranceReadinessResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "readiness_plan", kind: "message", T: LegacyLiquidityInsuranceReadinessView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyLiquidityInsuranceReadinessResponse {
+    return new SaveLegacyLiquidityInsuranceReadinessResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyLiquidityInsuranceReadinessResponse {
+    return new SaveLegacyLiquidityInsuranceReadinessResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyLiquidityInsuranceReadinessResponse {
+    return new SaveLegacyLiquidityInsuranceReadinessResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyLiquidityInsuranceReadinessResponse | PlainMessage<SaveLegacyLiquidityInsuranceReadinessResponse> | undefined, b: SaveLegacyLiquidityInsuranceReadinessResponse | PlainMessage<SaveLegacyLiquidityInsuranceReadinessResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyLiquidityInsuranceReadinessResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselRequest
+ */
+export class StressTestLegacyLiquidityOrRouteCounselRequest extends Message<StressTestLegacyLiquidityOrRouteCounselRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string readiness_code = 2;
+   */
+  readinessCode = "";
+
+  /**
+   * @generated from field: string target_readiness_state = 3;
+   */
+  targetReadinessState = "";
+
+  /**
+   * @generated from field: string stress_notes = 4;
+   */
+  stressNotes = "";
+
+  constructor(data?: PartialMessage<StressTestLegacyLiquidityOrRouteCounselRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "readiness_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_readiness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "stress_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StressTestLegacyLiquidityOrRouteCounselRequest {
+    return new StressTestLegacyLiquidityOrRouteCounselRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StressTestLegacyLiquidityOrRouteCounselRequest {
+    return new StressTestLegacyLiquidityOrRouteCounselRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StressTestLegacyLiquidityOrRouteCounselRequest {
+    return new StressTestLegacyLiquidityOrRouteCounselRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StressTestLegacyLiquidityOrRouteCounselRequest | PlainMessage<StressTestLegacyLiquidityOrRouteCounselRequest> | undefined, b: StressTestLegacyLiquidityOrRouteCounselRequest | PlainMessage<StressTestLegacyLiquidityOrRouteCounselRequest> | undefined): boolean {
+    return proto3.util.equals(StressTestLegacyLiquidityOrRouteCounselRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse
+ */
+export class StressTestLegacyLiquidityOrRouteCounselResponse extends Message<StressTestLegacyLiquidityOrRouteCounselResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView readiness_plan = 1;
+   */
+  readinessPlan?: LegacyLiquidityInsuranceReadinessView;
+
+  /**
+   * @generated from field: string readiness_status = 2;
+   */
+  readinessStatus = "";
+
+  constructor(data?: PartialMessage<StressTestLegacyLiquidityOrRouteCounselResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "readiness_plan", kind: "message", T: LegacyLiquidityInsuranceReadinessView },
+    { no: 2, name: "readiness_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StressTestLegacyLiquidityOrRouteCounselResponse {
+    return new StressTestLegacyLiquidityOrRouteCounselResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StressTestLegacyLiquidityOrRouteCounselResponse {
+    return new StressTestLegacyLiquidityOrRouteCounselResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StressTestLegacyLiquidityOrRouteCounselResponse {
+    return new StressTestLegacyLiquidityOrRouteCounselResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StressTestLegacyLiquidityOrRouteCounselResponse | PlainMessage<StressTestLegacyLiquidityOrRouteCounselResponse> | undefined, b: StressTestLegacyLiquidityOrRouteCounselResponse | PlainMessage<StressTestLegacyLiquidityOrRouteCounselResponse> | undefined): boolean {
+    return proto3.util.equals(StressTestLegacyLiquidityOrRouteCounselResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.LegacyCounselFamilyGovernanceView
+ */
+export class LegacyCounselFamilyGovernanceView extends Message<LegacyCounselFamilyGovernanceView> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string governance_code = 3;
+   */
+  governanceCode = "";
+
+  /**
+   * @generated from field: string counsel_credentials_and_scoped_dataroom = 4;
+   */
+  counselCredentialsAndScopedDataroom = "";
+
+  /**
+   * @generated from field: string family_charter_and_decision_records = 5;
+   */
+  familyCharterAndDecisionRecords = "";
+
+  /**
+   * @generated from field: string next_gen_education_and_privacy_gate = 6;
+   */
+  nextGenEducationAndPrivacyGate = "";
+
+  /**
+   * @generated from field: string governance_state = 7;
+   */
+  governanceState = "";
+
+  /**
+   * @generated from field: bool no_ai_values_or_family_ranking_enforced = 8;
+   */
+  noAiValuesOrFamilyRankingEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<LegacyCounselFamilyGovernanceView>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.LegacyCounselFamilyGovernanceView";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "governance_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "counsel_credentials_and_scoped_dataroom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "family_charter_and_decision_records", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "next_gen_education_and_privacy_gate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_ai_values_or_family_ranking_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LegacyCounselFamilyGovernanceView {
+    return new LegacyCounselFamilyGovernanceView().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LegacyCounselFamilyGovernanceView {
+    return new LegacyCounselFamilyGovernanceView().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LegacyCounselFamilyGovernanceView {
+    return new LegacyCounselFamilyGovernanceView().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LegacyCounselFamilyGovernanceView | PlainMessage<LegacyCounselFamilyGovernanceView> | undefined, b: LegacyCounselFamilyGovernanceView | PlainMessage<LegacyCounselFamilyGovernanceView> | undefined): boolean {
+    return proto3.util.equals(LegacyCounselFamilyGovernanceView, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchRequest
+ */
+export class GetLegacyCounselGovernanceWorkbenchRequest extends Message<GetLegacyCounselGovernanceWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetLegacyCounselGovernanceWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyCounselGovernanceWorkbenchRequest {
+    return new GetLegacyCounselGovernanceWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyCounselGovernanceWorkbenchRequest {
+    return new GetLegacyCounselGovernanceWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyCounselGovernanceWorkbenchRequest {
+    return new GetLegacyCounselGovernanceWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyCounselGovernanceWorkbenchRequest | PlainMessage<GetLegacyCounselGovernanceWorkbenchRequest> | undefined, b: GetLegacyCounselGovernanceWorkbenchRequest | PlainMessage<GetLegacyCounselGovernanceWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetLegacyCounselGovernanceWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse
+ */
+export class GetLegacyCounselGovernanceWorkbenchResponse extends Message<GetLegacyCounselGovernanceWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.legacy.v1.LegacyCounselFamilyGovernanceView governances = 1;
+   */
+  governances: LegacyCounselFamilyGovernanceView[] = [];
+
+  /**
+   * @generated from field: int32 open_proposal_count = 2;
+   */
+  openProposalCount = 0;
+
+  /**
+   * @generated from field: string workbench_summary = 3;
+   */
+  workbenchSummary = "";
+
+  constructor(data?: PartialMessage<GetLegacyCounselGovernanceWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "governances", kind: "message", T: LegacyCounselFamilyGovernanceView, repeated: true },
+    { no: 2, name: "open_proposal_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "workbench_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLegacyCounselGovernanceWorkbenchResponse {
+    return new GetLegacyCounselGovernanceWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLegacyCounselGovernanceWorkbenchResponse {
+    return new GetLegacyCounselGovernanceWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLegacyCounselGovernanceWorkbenchResponse {
+    return new GetLegacyCounselGovernanceWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetLegacyCounselGovernanceWorkbenchResponse | PlainMessage<GetLegacyCounselGovernanceWorkbenchResponse> | undefined, b: GetLegacyCounselGovernanceWorkbenchResponse | PlainMessage<GetLegacyCounselGovernanceWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetLegacyCounselGovernanceWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceRequest
+ */
+export class SaveLegacyCounselFamilyGovernanceRequest extends Message<SaveLegacyCounselFamilyGovernanceRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string governance_code = 2;
+   */
+  governanceCode = "";
+
+  /**
+   * @generated from field: string counsel_credentials_and_scoped_dataroom = 3;
+   */
+  counselCredentialsAndScopedDataroom = "";
+
+  /**
+   * @generated from field: string family_charter_and_decision_records = 4;
+   */
+  familyCharterAndDecisionRecords = "";
+
+  /**
+   * @generated from field: string next_gen_education_and_privacy_gate = 5;
+   */
+  nextGenEducationAndPrivacyGate = "";
+
+  /**
+   * @generated from field: string governance_state = 6;
+   */
+  governanceState = "";
+
+  /**
+   * @generated from field: bool no_ai_values_or_family_ranking_enforced = 7;
+   */
+  noAiValuesOrFamilyRankingEnforced = false;
+
+  constructor(data?: PartialMessage<SaveLegacyCounselFamilyGovernanceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "governance_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "counsel_credentials_and_scoped_dataroom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "family_charter_and_decision_records", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "next_gen_education_and_privacy_gate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "no_ai_values_or_family_ranking_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyCounselFamilyGovernanceRequest {
+    return new SaveLegacyCounselFamilyGovernanceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyCounselFamilyGovernanceRequest {
+    return new SaveLegacyCounselFamilyGovernanceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyCounselFamilyGovernanceRequest {
+    return new SaveLegacyCounselFamilyGovernanceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyCounselFamilyGovernanceRequest | PlainMessage<SaveLegacyCounselFamilyGovernanceRequest> | undefined, b: SaveLegacyCounselFamilyGovernanceRequest | PlainMessage<SaveLegacyCounselFamilyGovernanceRequest> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyCounselFamilyGovernanceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse
+ */
+export class SaveLegacyCounselFamilyGovernanceResponse extends Message<SaveLegacyCounselFamilyGovernanceResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyCounselFamilyGovernanceView governance = 1;
+   */
+  governance?: LegacyCounselFamilyGovernanceView;
+
+  constructor(data?: PartialMessage<SaveLegacyCounselFamilyGovernanceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "governance", kind: "message", T: LegacyCounselFamilyGovernanceView },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveLegacyCounselFamilyGovernanceResponse {
+    return new SaveLegacyCounselFamilyGovernanceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveLegacyCounselFamilyGovernanceResponse {
+    return new SaveLegacyCounselFamilyGovernanceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveLegacyCounselFamilyGovernanceResponse {
+    return new SaveLegacyCounselFamilyGovernanceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveLegacyCounselFamilyGovernanceResponse | PlainMessage<SaveLegacyCounselFamilyGovernanceResponse> | undefined, b: SaveLegacyCounselFamilyGovernanceResponse | PlainMessage<SaveLegacyCounselFamilyGovernanceResponse> | undefined): boolean {
+    return proto3.util.equals(SaveLegacyCounselFamilyGovernanceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselRequest
+ */
+export class UnlockLegacyStewardshipModuleOrRevokeCounselRequest extends Message<UnlockLegacyStewardshipModuleOrRevokeCounselRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string governance_code = 2;
+   */
+  governanceCode = "";
+
+  /**
+   * @generated from field: string target_governance_state = 3;
+   */
+  targetGovernanceState = "";
+
+  /**
+   * @generated from field: string governance_notes = 4;
+   */
+  governanceNotes = "";
+
+  constructor(data?: PartialMessage<UnlockLegacyStewardshipModuleOrRevokeCounselRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "governance_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "governance_notes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselRequest {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselRequest {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselRequest {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnlockLegacyStewardshipModuleOrRevokeCounselRequest | PlainMessage<UnlockLegacyStewardshipModuleOrRevokeCounselRequest> | undefined, b: UnlockLegacyStewardshipModuleOrRevokeCounselRequest | PlainMessage<UnlockLegacyStewardshipModuleOrRevokeCounselRequest> | undefined): boolean {
+    return proto3.util.equals(UnlockLegacyStewardshipModuleOrRevokeCounselRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponse
+ */
+export class UnlockLegacyStewardshipModuleOrRevokeCounselResponse extends Message<UnlockLegacyStewardshipModuleOrRevokeCounselResponse> {
+  /**
+   * @generated from field: sttattus.legacy.v1.LegacyCounselFamilyGovernanceView governance = 1;
+   */
+  governance?: LegacyCounselFamilyGovernanceView;
+
+  /**
+   * @generated from field: string governance_status = 2;
+   */
+  governanceStatus = "";
+
+  constructor(data?: PartialMessage<UnlockLegacyStewardshipModuleOrRevokeCounselResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "governance", kind: "message", T: LegacyCounselFamilyGovernanceView },
+    { no: 2, name: "governance_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselResponse {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselResponse {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnlockLegacyStewardshipModuleOrRevokeCounselResponse {
+    return new UnlockLegacyStewardshipModuleOrRevokeCounselResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UnlockLegacyStewardshipModuleOrRevokeCounselResponse | PlainMessage<UnlockLegacyStewardshipModuleOrRevokeCounselResponse> | undefined, b: UnlockLegacyStewardshipModuleOrRevokeCounselResponse | PlainMessage<UnlockLegacyStewardshipModuleOrRevokeCounselResponse> | undefined): boolean {
+    return proto3.util.equals(UnlockLegacyStewardshipModuleOrRevokeCounselResponse, a, b);
+  }
+}
+

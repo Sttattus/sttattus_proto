@@ -7346,6 +7346,7072 @@ class ListMyLoungePassesResponse extends $pb.GeneratedMessage {
   $pb.PbList<LoungePass> get passes => $_getList(0);
 }
 
+/// Choice 1 (D1): Property Digital Twin and Registry Integrity
+class DominionPropertyDigitalTwinItem extends $pb.GeneratedMessage {
+  factory DominionPropertyDigitalTwinItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? twinCode,
+    $core.String? propertyAndParcelIdentity,
+    $core.String? jurisdictionAndAreaModel,
+    $core.String? ownershipAndDeedProvenance,
+    $core.String? versionAndConflictResolution,
+    $core.String? twinState,
+    $core.bool? duplicateAssetPreventionEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (twinCode != null) result.twinCode = twinCode;
+    if (propertyAndParcelIdentity != null)
+      result.propertyAndParcelIdentity = propertyAndParcelIdentity;
+    if (jurisdictionAndAreaModel != null)
+      result.jurisdictionAndAreaModel = jurisdictionAndAreaModel;
+    if (ownershipAndDeedProvenance != null)
+      result.ownershipAndDeedProvenance = ownershipAndDeedProvenance;
+    if (versionAndConflictResolution != null)
+      result.versionAndConflictResolution = versionAndConflictResolution;
+    if (twinState != null) result.twinState = twinState;
+    if (duplicateAssetPreventionEnforced != null)
+      result.duplicateAssetPreventionEnforced =
+          duplicateAssetPreventionEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionPropertyDigitalTwinItem._();
+
+  factory DominionPropertyDigitalTwinItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionPropertyDigitalTwinItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionPropertyDigitalTwinItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'twinCode')
+    ..aOS(4, _omitFieldNames ? '' : 'propertyAndParcelIdentity')
+    ..aOS(5, _omitFieldNames ? '' : 'jurisdictionAndAreaModel')
+    ..aOS(6, _omitFieldNames ? '' : 'ownershipAndDeedProvenance')
+    ..aOS(7, _omitFieldNames ? '' : 'versionAndConflictResolution')
+    ..aOS(8, _omitFieldNames ? '' : 'twinState')
+    ..aOB(9, _omitFieldNames ? '' : 'duplicateAssetPreventionEnforced')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionPropertyDigitalTwinItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionPropertyDigitalTwinItem copyWith(
+          void Function(DominionPropertyDigitalTwinItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as DominionPropertyDigitalTwinItem))
+          as DominionPropertyDigitalTwinItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionPropertyDigitalTwinItem create() =>
+      DominionPropertyDigitalTwinItem._();
+  @$core.override
+  DominionPropertyDigitalTwinItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionPropertyDigitalTwinItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DominionPropertyDigitalTwinItem>(
+          create);
+  static DominionPropertyDigitalTwinItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get twinCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set twinCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTwinCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTwinCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get propertyAndParcelIdentity => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set propertyAndParcelIdentity($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPropertyAndParcelIdentity() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPropertyAndParcelIdentity() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get jurisdictionAndAreaModel => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jurisdictionAndAreaModel($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJurisdictionAndAreaModel() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJurisdictionAndAreaModel() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get ownershipAndDeedProvenance => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set ownershipAndDeedProvenance($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOwnershipAndDeedProvenance() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOwnershipAndDeedProvenance() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get versionAndConflictResolution => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set versionAndConflictResolution($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVersionAndConflictResolution() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVersionAndConflictResolution() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get twinState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set twinState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTwinState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTwinState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get duplicateAssetPreventionEnforced => $_getBF(8);
+  @$pb.TagNumber(9)
+  set duplicateAssetPreventionEnforced($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDuplicateAssetPreventionEnforced() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDuplicateAssetPreventionEnforced() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetDominionPropertyDigitalTwinWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionPropertyDigitalTwinWorkbenchRequest() => create();
+
+  GetDominionPropertyDigitalTwinWorkbenchRequest._();
+
+  factory GetDominionPropertyDigitalTwinWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionPropertyDigitalTwinWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionPropertyDigitalTwinWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyDigitalTwinWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyDigitalTwinWorkbenchRequest copyWith(
+          void Function(GetDominionPropertyDigitalTwinWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionPropertyDigitalTwinWorkbenchRequest))
+          as GetDominionPropertyDigitalTwinWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyDigitalTwinWorkbenchRequest create() =>
+      GetDominionPropertyDigitalTwinWorkbenchRequest._();
+  @$core.override
+  GetDominionPropertyDigitalTwinWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyDigitalTwinWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionPropertyDigitalTwinWorkbenchRequest>(create);
+  static GetDominionPropertyDigitalTwinWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionPropertyDigitalTwinWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionPropertyDigitalTwinWorkbenchResponse({
+    $core.Iterable<DominionPropertyDigitalTwinItem>? twins,
+    $core.bool? duplicateAssetPreventionEnforced,
+    $core.String? canonicalRegistryLineageSummary,
+  }) {
+    final result = create();
+    if (twins != null) result.twins.addAll(twins);
+    if (duplicateAssetPreventionEnforced != null)
+      result.duplicateAssetPreventionEnforced =
+          duplicateAssetPreventionEnforced;
+    if (canonicalRegistryLineageSummary != null)
+      result.canonicalRegistryLineageSummary = canonicalRegistryLineageSummary;
+    return result;
+  }
+
+  GetDominionPropertyDigitalTwinWorkbenchResponse._();
+
+  factory GetDominionPropertyDigitalTwinWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionPropertyDigitalTwinWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetDominionPropertyDigitalTwinWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionPropertyDigitalTwinItem>(1, _omitFieldNames ? '' : 'twins',
+        subBuilder: DominionPropertyDigitalTwinItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'duplicateAssetPreventionEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'canonicalRegistryLineageSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyDigitalTwinWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyDigitalTwinWorkbenchResponse copyWith(
+          void Function(GetDominionPropertyDigitalTwinWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionPropertyDigitalTwinWorkbenchResponse))
+          as GetDominionPropertyDigitalTwinWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyDigitalTwinWorkbenchResponse create() =>
+      GetDominionPropertyDigitalTwinWorkbenchResponse._();
+  @$core.override
+  GetDominionPropertyDigitalTwinWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyDigitalTwinWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionPropertyDigitalTwinWorkbenchResponse>(create);
+  static GetDominionPropertyDigitalTwinWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionPropertyDigitalTwinItem> get twins => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get duplicateAssetPreventionEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set duplicateAssetPreventionEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDuplicateAssetPreventionEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDuplicateAssetPreventionEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get canonicalRegistryLineageSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set canonicalRegistryLineageSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCanonicalRegistryLineageSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCanonicalRegistryLineageSummary() => $_clearField(3);
+}
+
+class SaveDominionPropertyDigitalTwinRequest extends $pb.GeneratedMessage {
+  factory SaveDominionPropertyDigitalTwinRequest({
+    $core.String? twinCode,
+    $core.String? propertyAndParcelIdentity,
+    $core.String? jurisdictionAndAreaModel,
+    $core.String? ownershipAndDeedProvenance,
+    $core.String? versionAndConflictResolution,
+    $core.String? twinState,
+  }) {
+    final result = create();
+    if (twinCode != null) result.twinCode = twinCode;
+    if (propertyAndParcelIdentity != null)
+      result.propertyAndParcelIdentity = propertyAndParcelIdentity;
+    if (jurisdictionAndAreaModel != null)
+      result.jurisdictionAndAreaModel = jurisdictionAndAreaModel;
+    if (ownershipAndDeedProvenance != null)
+      result.ownershipAndDeedProvenance = ownershipAndDeedProvenance;
+    if (versionAndConflictResolution != null)
+      result.versionAndConflictResolution = versionAndConflictResolution;
+    if (twinState != null) result.twinState = twinState;
+    return result;
+  }
+
+  SaveDominionPropertyDigitalTwinRequest._();
+
+  factory SaveDominionPropertyDigitalTwinRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionPropertyDigitalTwinRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionPropertyDigitalTwinRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'twinCode')
+    ..aOS(2, _omitFieldNames ? '' : 'propertyAndParcelIdentity')
+    ..aOS(3, _omitFieldNames ? '' : 'jurisdictionAndAreaModel')
+    ..aOS(4, _omitFieldNames ? '' : 'ownershipAndDeedProvenance')
+    ..aOS(5, _omitFieldNames ? '' : 'versionAndConflictResolution')
+    ..aOS(6, _omitFieldNames ? '' : 'twinState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyDigitalTwinRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyDigitalTwinRequest copyWith(
+          void Function(SaveDominionPropertyDigitalTwinRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionPropertyDigitalTwinRequest))
+          as SaveDominionPropertyDigitalTwinRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyDigitalTwinRequest create() =>
+      SaveDominionPropertyDigitalTwinRequest._();
+  @$core.override
+  SaveDominionPropertyDigitalTwinRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyDigitalTwinRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionPropertyDigitalTwinRequest>(create);
+  static SaveDominionPropertyDigitalTwinRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get twinCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set twinCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTwinCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTwinCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get propertyAndParcelIdentity => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set propertyAndParcelIdentity($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPropertyAndParcelIdentity() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPropertyAndParcelIdentity() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get jurisdictionAndAreaModel => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set jurisdictionAndAreaModel($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionAndAreaModel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionAndAreaModel() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ownershipAndDeedProvenance => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ownershipAndDeedProvenance($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOwnershipAndDeedProvenance() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOwnershipAndDeedProvenance() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get versionAndConflictResolution => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set versionAndConflictResolution($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVersionAndConflictResolution() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVersionAndConflictResolution() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get twinState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set twinState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTwinState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTwinState() => $_clearField(6);
+}
+
+class SaveDominionPropertyDigitalTwinResponse extends $pb.GeneratedMessage {
+  factory SaveDominionPropertyDigitalTwinResponse({
+    DominionPropertyDigitalTwinItem? twin,
+  }) {
+    final result = create();
+    if (twin != null) result.twin = twin;
+    return result;
+  }
+
+  SaveDominionPropertyDigitalTwinResponse._();
+
+  factory SaveDominionPropertyDigitalTwinResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionPropertyDigitalTwinResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionPropertyDigitalTwinResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionPropertyDigitalTwinItem>(1, _omitFieldNames ? '' : 'twin',
+        subBuilder: DominionPropertyDigitalTwinItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyDigitalTwinResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyDigitalTwinResponse copyWith(
+          void Function(SaveDominionPropertyDigitalTwinResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionPropertyDigitalTwinResponse))
+          as SaveDominionPropertyDigitalTwinResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyDigitalTwinResponse create() =>
+      SaveDominionPropertyDigitalTwinResponse._();
+  @$core.override
+  SaveDominionPropertyDigitalTwinResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyDigitalTwinResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionPropertyDigitalTwinResponse>(create);
+  static SaveDominionPropertyDigitalTwinResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionPropertyDigitalTwinItem get twin => $_getN(0);
+  @$pb.TagNumber(1)
+  set twin(DominionPropertyDigitalTwinItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTwin() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTwin() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionPropertyDigitalTwinItem ensureTwin() => $_ensure(0);
+}
+
+class PropagateOrResolveDominionTwinConflictRequest
+    extends $pb.GeneratedMessage {
+  factory PropagateOrResolveDominionTwinConflictRequest({
+    $core.String? twinCode,
+    $core.String? versionAndConflictResolution,
+    $core.String? twinState,
+  }) {
+    final result = create();
+    if (twinCode != null) result.twinCode = twinCode;
+    if (versionAndConflictResolution != null)
+      result.versionAndConflictResolution = versionAndConflictResolution;
+    if (twinState != null) result.twinState = twinState;
+    return result;
+  }
+
+  PropagateOrResolveDominionTwinConflictRequest._();
+
+  factory PropagateOrResolveDominionTwinConflictRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PropagateOrResolveDominionTwinConflictRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PropagateOrResolveDominionTwinConflictRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'twinCode')
+    ..aOS(2, _omitFieldNames ? '' : 'versionAndConflictResolution')
+    ..aOS(3, _omitFieldNames ? '' : 'twinState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PropagateOrResolveDominionTwinConflictRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PropagateOrResolveDominionTwinConflictRequest copyWith(
+          void Function(PropagateOrResolveDominionTwinConflictRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as PropagateOrResolveDominionTwinConflictRequest))
+          as PropagateOrResolveDominionTwinConflictRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PropagateOrResolveDominionTwinConflictRequest create() =>
+      PropagateOrResolveDominionTwinConflictRequest._();
+  @$core.override
+  PropagateOrResolveDominionTwinConflictRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PropagateOrResolveDominionTwinConflictRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PropagateOrResolveDominionTwinConflictRequest>(create);
+  static PropagateOrResolveDominionTwinConflictRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get twinCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set twinCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTwinCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTwinCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get versionAndConflictResolution => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set versionAndConflictResolution($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVersionAndConflictResolution() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersionAndConflictResolution() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get twinState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set twinState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTwinState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTwinState() => $_clearField(3);
+}
+
+class PropagateOrResolveDominionTwinConflictResponse
+    extends $pb.GeneratedMessage {
+  factory PropagateOrResolveDominionTwinConflictResponse({
+    DominionPropertyDigitalTwinItem? twin,
+  }) {
+    final result = create();
+    if (twin != null) result.twin = twin;
+    return result;
+  }
+
+  PropagateOrResolveDominionTwinConflictResponse._();
+
+  factory PropagateOrResolveDominionTwinConflictResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PropagateOrResolveDominionTwinConflictResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PropagateOrResolveDominionTwinConflictResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionPropertyDigitalTwinItem>(1, _omitFieldNames ? '' : 'twin',
+        subBuilder: DominionPropertyDigitalTwinItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PropagateOrResolveDominionTwinConflictResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PropagateOrResolveDominionTwinConflictResponse copyWith(
+          void Function(PropagateOrResolveDominionTwinConflictResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as PropagateOrResolveDominionTwinConflictResponse))
+          as PropagateOrResolveDominionTwinConflictResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PropagateOrResolveDominionTwinConflictResponse create() =>
+      PropagateOrResolveDominionTwinConflictResponse._();
+  @$core.override
+  PropagateOrResolveDominionTwinConflictResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PropagateOrResolveDominionTwinConflictResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PropagateOrResolveDominionTwinConflictResponse>(create);
+  static PropagateOrResolveDominionTwinConflictResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionPropertyDigitalTwinItem get twin => $_getN(0);
+  @$pb.TagNumber(1)
+  set twin(DominionPropertyDigitalTwinItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTwin() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTwin() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionPropertyDigitalTwinItem ensureTwin() => $_ensure(0);
+}
+
+/// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+class DominionUnderwritingScenarioItem extends $pb.GeneratedMessage {
+  factory DominionUnderwritingScenarioItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? scenarioCode,
+    $core.String? dealTitleAndStrategy,
+    $core.String? visibleAssumptionsAndFreshness,
+    $core.String? returnMetricsAndSensitivityBand,
+    $core.String? inputVerificationDisclosure,
+    $core.String? scenarioState,
+    $core.bool? exportScreenParityVerified,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (dealTitleAndStrategy != null)
+      result.dealTitleAndStrategy = dealTitleAndStrategy;
+    if (visibleAssumptionsAndFreshness != null)
+      result.visibleAssumptionsAndFreshness = visibleAssumptionsAndFreshness;
+    if (returnMetricsAndSensitivityBand != null)
+      result.returnMetricsAndSensitivityBand = returnMetricsAndSensitivityBand;
+    if (inputVerificationDisclosure != null)
+      result.inputVerificationDisclosure = inputVerificationDisclosure;
+    if (scenarioState != null) result.scenarioState = scenarioState;
+    if (exportScreenParityVerified != null)
+      result.exportScreenParityVerified = exportScreenParityVerified;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionUnderwritingScenarioItem._();
+
+  factory DominionUnderwritingScenarioItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionUnderwritingScenarioItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionUnderwritingScenarioItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(4, _omitFieldNames ? '' : 'dealTitleAndStrategy')
+    ..aOS(5, _omitFieldNames ? '' : 'visibleAssumptionsAndFreshness')
+    ..aOS(6, _omitFieldNames ? '' : 'returnMetricsAndSensitivityBand')
+    ..aOS(7, _omitFieldNames ? '' : 'inputVerificationDisclosure')
+    ..aOS(8, _omitFieldNames ? '' : 'scenarioState')
+    ..aOB(9, _omitFieldNames ? '' : 'exportScreenParityVerified')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionUnderwritingScenarioItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionUnderwritingScenarioItem copyWith(
+          void Function(DominionUnderwritingScenarioItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as DominionUnderwritingScenarioItem))
+          as DominionUnderwritingScenarioItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionUnderwritingScenarioItem create() =>
+      DominionUnderwritingScenarioItem._();
+  @$core.override
+  DominionUnderwritingScenarioItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionUnderwritingScenarioItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DominionUnderwritingScenarioItem>(
+          create);
+  static DominionUnderwritingScenarioItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scenarioCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scenarioCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScenarioCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScenarioCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get dealTitleAndStrategy => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set dealTitleAndStrategy($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDealTitleAndStrategy() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDealTitleAndStrategy() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get visibleAssumptionsAndFreshness => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set visibleAssumptionsAndFreshness($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVisibleAssumptionsAndFreshness() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVisibleAssumptionsAndFreshness() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get returnMetricsAndSensitivityBand => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set returnMetricsAndSensitivityBand($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReturnMetricsAndSensitivityBand() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReturnMetricsAndSensitivityBand() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get inputVerificationDisclosure => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set inputVerificationDisclosure($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasInputVerificationDisclosure() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearInputVerificationDisclosure() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get scenarioState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set scenarioState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasScenarioState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearScenarioState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get exportScreenParityVerified => $_getBF(8);
+  @$pb.TagNumber(9)
+  set exportScreenParityVerified($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasExportScreenParityVerified() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearExportScreenParityVerified() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetDominionUnderwritingLabWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetDominionUnderwritingLabWorkbenchRequest() => create();
+
+  GetDominionUnderwritingLabWorkbenchRequest._();
+
+  factory GetDominionUnderwritingLabWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionUnderwritingLabWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionUnderwritingLabWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUnderwritingLabWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUnderwritingLabWorkbenchRequest copyWith(
+          void Function(GetDominionUnderwritingLabWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionUnderwritingLabWorkbenchRequest))
+          as GetDominionUnderwritingLabWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUnderwritingLabWorkbenchRequest create() =>
+      GetDominionUnderwritingLabWorkbenchRequest._();
+  @$core.override
+  GetDominionUnderwritingLabWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUnderwritingLabWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionUnderwritingLabWorkbenchRequest>(create);
+  static GetDominionUnderwritingLabWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionUnderwritingLabWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetDominionUnderwritingLabWorkbenchResponse({
+    $core.Iterable<DominionUnderwritingScenarioItem>? scenarios,
+    $core.bool? exportScreenParityVerifiedEnforced,
+    $core.String? assumptionProvenanceSummary,
+  }) {
+    final result = create();
+    if (scenarios != null) result.scenarios.addAll(scenarios);
+    if (exportScreenParityVerifiedEnforced != null)
+      result.exportScreenParityVerifiedEnforced =
+          exportScreenParityVerifiedEnforced;
+    if (assumptionProvenanceSummary != null)
+      result.assumptionProvenanceSummary = assumptionProvenanceSummary;
+    return result;
+  }
+
+  GetDominionUnderwritingLabWorkbenchResponse._();
+
+  factory GetDominionUnderwritingLabWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionUnderwritingLabWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionUnderwritingLabWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionUnderwritingScenarioItem>(
+        1, _omitFieldNames ? '' : 'scenarios',
+        subBuilder: DominionUnderwritingScenarioItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'exportScreenParityVerifiedEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'assumptionProvenanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUnderwritingLabWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUnderwritingLabWorkbenchResponse copyWith(
+          void Function(GetDominionUnderwritingLabWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionUnderwritingLabWorkbenchResponse))
+          as GetDominionUnderwritingLabWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUnderwritingLabWorkbenchResponse create() =>
+      GetDominionUnderwritingLabWorkbenchResponse._();
+  @$core.override
+  GetDominionUnderwritingLabWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUnderwritingLabWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionUnderwritingLabWorkbenchResponse>(create);
+  static GetDominionUnderwritingLabWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionUnderwritingScenarioItem> get scenarios => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get exportScreenParityVerifiedEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set exportScreenParityVerifiedEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExportScreenParityVerifiedEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExportScreenParityVerifiedEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get assumptionProvenanceSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set assumptionProvenanceSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAssumptionProvenanceSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAssumptionProvenanceSummary() => $_clearField(3);
+}
+
+class SaveDominionUnderwritingScenarioRequest extends $pb.GeneratedMessage {
+  factory SaveDominionUnderwritingScenarioRequest({
+    $core.String? scenarioCode,
+    $core.String? dealTitleAndStrategy,
+    $core.String? visibleAssumptionsAndFreshness,
+    $core.String? returnMetricsAndSensitivityBand,
+    $core.String? inputVerificationDisclosure,
+    $core.String? scenarioState,
+  }) {
+    final result = create();
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (dealTitleAndStrategy != null)
+      result.dealTitleAndStrategy = dealTitleAndStrategy;
+    if (visibleAssumptionsAndFreshness != null)
+      result.visibleAssumptionsAndFreshness = visibleAssumptionsAndFreshness;
+    if (returnMetricsAndSensitivityBand != null)
+      result.returnMetricsAndSensitivityBand = returnMetricsAndSensitivityBand;
+    if (inputVerificationDisclosure != null)
+      result.inputVerificationDisclosure = inputVerificationDisclosure;
+    if (scenarioState != null) result.scenarioState = scenarioState;
+    return result;
+  }
+
+  SaveDominionUnderwritingScenarioRequest._();
+
+  factory SaveDominionUnderwritingScenarioRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionUnderwritingScenarioRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionUnderwritingScenarioRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(2, _omitFieldNames ? '' : 'dealTitleAndStrategy')
+    ..aOS(3, _omitFieldNames ? '' : 'visibleAssumptionsAndFreshness')
+    ..aOS(4, _omitFieldNames ? '' : 'returnMetricsAndSensitivityBand')
+    ..aOS(5, _omitFieldNames ? '' : 'inputVerificationDisclosure')
+    ..aOS(6, _omitFieldNames ? '' : 'scenarioState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUnderwritingScenarioRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUnderwritingScenarioRequest copyWith(
+          void Function(SaveDominionUnderwritingScenarioRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionUnderwritingScenarioRequest))
+          as SaveDominionUnderwritingScenarioRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUnderwritingScenarioRequest create() =>
+      SaveDominionUnderwritingScenarioRequest._();
+  @$core.override
+  SaveDominionUnderwritingScenarioRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUnderwritingScenarioRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionUnderwritingScenarioRequest>(create);
+  static SaveDominionUnderwritingScenarioRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scenarioCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scenarioCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenarioCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenarioCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get dealTitleAndStrategy => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set dealTitleAndStrategy($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDealTitleAndStrategy() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDealTitleAndStrategy() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get visibleAssumptionsAndFreshness => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set visibleAssumptionsAndFreshness($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVisibleAssumptionsAndFreshness() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVisibleAssumptionsAndFreshness() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get returnMetricsAndSensitivityBand => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set returnMetricsAndSensitivityBand($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReturnMetricsAndSensitivityBand() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReturnMetricsAndSensitivityBand() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get inputVerificationDisclosure => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set inputVerificationDisclosure($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasInputVerificationDisclosure() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearInputVerificationDisclosure() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get scenarioState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set scenarioState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScenarioState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScenarioState() => $_clearField(6);
+}
+
+class SaveDominionUnderwritingScenarioResponse extends $pb.GeneratedMessage {
+  factory SaveDominionUnderwritingScenarioResponse({
+    DominionUnderwritingScenarioItem? scenario,
+  }) {
+    final result = create();
+    if (scenario != null) result.scenario = scenario;
+    return result;
+  }
+
+  SaveDominionUnderwritingScenarioResponse._();
+
+  factory SaveDominionUnderwritingScenarioResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionUnderwritingScenarioResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionUnderwritingScenarioResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionUnderwritingScenarioItem>(
+        1, _omitFieldNames ? '' : 'scenario',
+        subBuilder: DominionUnderwritingScenarioItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUnderwritingScenarioResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUnderwritingScenarioResponse copyWith(
+          void Function(SaveDominionUnderwritingScenarioResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionUnderwritingScenarioResponse))
+          as SaveDominionUnderwritingScenarioResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUnderwritingScenarioResponse create() =>
+      SaveDominionUnderwritingScenarioResponse._();
+  @$core.override
+  SaveDominionUnderwritingScenarioResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUnderwritingScenarioResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionUnderwritingScenarioResponse>(create);
+  static SaveDominionUnderwritingScenarioResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionUnderwritingScenarioItem get scenario => $_getN(0);
+  @$pb.TagNumber(1)
+  set scenario(DominionUnderwritingScenarioItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenario() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenario() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionUnderwritingScenarioItem ensureScenario() => $_ensure(0);
+}
+
+class StressTestOrFreezeDominionScenarioRequest extends $pb.GeneratedMessage {
+  factory StressTestOrFreezeDominionScenarioRequest({
+    $core.String? scenarioCode,
+    $core.String? returnMetricsAndSensitivityBand,
+    $core.String? scenarioState,
+  }) {
+    final result = create();
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (returnMetricsAndSensitivityBand != null)
+      result.returnMetricsAndSensitivityBand = returnMetricsAndSensitivityBand;
+    if (scenarioState != null) result.scenarioState = scenarioState;
+    return result;
+  }
+
+  StressTestOrFreezeDominionScenarioRequest._();
+
+  factory StressTestOrFreezeDominionScenarioRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StressTestOrFreezeDominionScenarioRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StressTestOrFreezeDominionScenarioRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(2, _omitFieldNames ? '' : 'returnMetricsAndSensitivityBand')
+    ..aOS(3, _omitFieldNames ? '' : 'scenarioState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestOrFreezeDominionScenarioRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestOrFreezeDominionScenarioRequest copyWith(
+          void Function(StressTestOrFreezeDominionScenarioRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as StressTestOrFreezeDominionScenarioRequest))
+          as StressTestOrFreezeDominionScenarioRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StressTestOrFreezeDominionScenarioRequest create() =>
+      StressTestOrFreezeDominionScenarioRequest._();
+  @$core.override
+  StressTestOrFreezeDominionScenarioRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StressTestOrFreezeDominionScenarioRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StressTestOrFreezeDominionScenarioRequest>(create);
+  static StressTestOrFreezeDominionScenarioRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scenarioCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scenarioCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenarioCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenarioCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get returnMetricsAndSensitivityBand => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set returnMetricsAndSensitivityBand($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReturnMetricsAndSensitivityBand() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReturnMetricsAndSensitivityBand() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scenarioState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scenarioState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScenarioState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScenarioState() => $_clearField(3);
+}
+
+class StressTestOrFreezeDominionScenarioResponse extends $pb.GeneratedMessage {
+  factory StressTestOrFreezeDominionScenarioResponse({
+    DominionUnderwritingScenarioItem? scenario,
+  }) {
+    final result = create();
+    if (scenario != null) result.scenario = scenario;
+    return result;
+  }
+
+  StressTestOrFreezeDominionScenarioResponse._();
+
+  factory StressTestOrFreezeDominionScenarioResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StressTestOrFreezeDominionScenarioResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StressTestOrFreezeDominionScenarioResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionUnderwritingScenarioItem>(
+        1, _omitFieldNames ? '' : 'scenario',
+        subBuilder: DominionUnderwritingScenarioItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestOrFreezeDominionScenarioResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestOrFreezeDominionScenarioResponse copyWith(
+          void Function(StressTestOrFreezeDominionScenarioResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as StressTestOrFreezeDominionScenarioResponse))
+          as StressTestOrFreezeDominionScenarioResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StressTestOrFreezeDominionScenarioResponse create() =>
+      StressTestOrFreezeDominionScenarioResponse._();
+  @$core.override
+  StressTestOrFreezeDominionScenarioResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StressTestOrFreezeDominionScenarioResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StressTestOrFreezeDominionScenarioResponse>(create);
+  static StressTestOrFreezeDominionScenarioResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionUnderwritingScenarioItem get scenario => $_getN(0);
+  @$pb.TagNumber(1)
+  set scenario(DominionUnderwritingScenarioItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenario() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenario() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionUnderwritingScenarioItem ensureScenario() => $_ensure(0);
+}
+
+/// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+class DominionPropertyAccountingCloseItem extends $pb.GeneratedMessage {
+  factory DominionPropertyAccountingCloseItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? closeCode,
+    $core.String? propertyAndPeriodLabel,
+    $core.String? bankReconciliationAndDataQuality,
+    $core.String? pnlCashflowAndReserveSummary,
+    $core.String? accountantAndTaxExportDigest,
+    $core.String? closeState,
+    $core.bool? doubleEntryReversibleEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (closeCode != null) result.closeCode = closeCode;
+    if (propertyAndPeriodLabel != null)
+      result.propertyAndPeriodLabel = propertyAndPeriodLabel;
+    if (bankReconciliationAndDataQuality != null)
+      result.bankReconciliationAndDataQuality =
+          bankReconciliationAndDataQuality;
+    if (pnlCashflowAndReserveSummary != null)
+      result.pnlCashflowAndReserveSummary = pnlCashflowAndReserveSummary;
+    if (accountantAndTaxExportDigest != null)
+      result.accountantAndTaxExportDigest = accountantAndTaxExportDigest;
+    if (closeState != null) result.closeState = closeState;
+    if (doubleEntryReversibleEnforced != null)
+      result.doubleEntryReversibleEnforced = doubleEntryReversibleEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionPropertyAccountingCloseItem._();
+
+  factory DominionPropertyAccountingCloseItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionPropertyAccountingCloseItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionPropertyAccountingCloseItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'closeCode')
+    ..aOS(4, _omitFieldNames ? '' : 'propertyAndPeriodLabel')
+    ..aOS(5, _omitFieldNames ? '' : 'bankReconciliationAndDataQuality')
+    ..aOS(6, _omitFieldNames ? '' : 'pnlCashflowAndReserveSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'accountantAndTaxExportDigest')
+    ..aOS(8, _omitFieldNames ? '' : 'closeState')
+    ..aOB(9, _omitFieldNames ? '' : 'doubleEntryReversibleEnforced')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionPropertyAccountingCloseItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionPropertyAccountingCloseItem copyWith(
+          void Function(DominionPropertyAccountingCloseItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionPropertyAccountingCloseItem))
+          as DominionPropertyAccountingCloseItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionPropertyAccountingCloseItem create() =>
+      DominionPropertyAccountingCloseItem._();
+  @$core.override
+  DominionPropertyAccountingCloseItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionPropertyAccountingCloseItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionPropertyAccountingCloseItem>(create);
+  static DominionPropertyAccountingCloseItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get closeCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set closeCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCloseCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCloseCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get propertyAndPeriodLabel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set propertyAndPeriodLabel($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPropertyAndPeriodLabel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPropertyAndPeriodLabel() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get bankReconciliationAndDataQuality => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set bankReconciliationAndDataQuality($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBankReconciliationAndDataQuality() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBankReconciliationAndDataQuality() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get pnlCashflowAndReserveSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set pnlCashflowAndReserveSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPnlCashflowAndReserveSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPnlCashflowAndReserveSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get accountantAndTaxExportDigest => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set accountantAndTaxExportDigest($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAccountantAndTaxExportDigest() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAccountantAndTaxExportDigest() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get closeState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set closeState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCloseState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCloseState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get doubleEntryReversibleEnforced => $_getBF(8);
+  @$pb.TagNumber(9)
+  set doubleEntryReversibleEnforced($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDoubleEntryReversibleEnforced() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDoubleEntryReversibleEnforced() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetDominionPropertyAccountingWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionPropertyAccountingWorkbenchRequest() => create();
+
+  GetDominionPropertyAccountingWorkbenchRequest._();
+
+  factory GetDominionPropertyAccountingWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionPropertyAccountingWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionPropertyAccountingWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyAccountingWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyAccountingWorkbenchRequest copyWith(
+          void Function(GetDominionPropertyAccountingWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionPropertyAccountingWorkbenchRequest))
+          as GetDominionPropertyAccountingWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyAccountingWorkbenchRequest create() =>
+      GetDominionPropertyAccountingWorkbenchRequest._();
+  @$core.override
+  GetDominionPropertyAccountingWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyAccountingWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionPropertyAccountingWorkbenchRequest>(create);
+  static GetDominionPropertyAccountingWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionPropertyAccountingWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionPropertyAccountingWorkbenchResponse({
+    $core.Iterable<DominionPropertyAccountingCloseItem>? closes,
+    $core.bool? doubleEntryReversibleEnforced,
+    $core.String? immutableCloseAndReversalSummary,
+  }) {
+    final result = create();
+    if (closes != null) result.closes.addAll(closes);
+    if (doubleEntryReversibleEnforced != null)
+      result.doubleEntryReversibleEnforced = doubleEntryReversibleEnforced;
+    if (immutableCloseAndReversalSummary != null)
+      result.immutableCloseAndReversalSummary =
+          immutableCloseAndReversalSummary;
+    return result;
+  }
+
+  GetDominionPropertyAccountingWorkbenchResponse._();
+
+  factory GetDominionPropertyAccountingWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionPropertyAccountingWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionPropertyAccountingWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionPropertyAccountingCloseItem>(
+        1, _omitFieldNames ? '' : 'closes',
+        subBuilder: DominionPropertyAccountingCloseItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'doubleEntryReversibleEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'immutableCloseAndReversalSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyAccountingWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionPropertyAccountingWorkbenchResponse copyWith(
+          void Function(GetDominionPropertyAccountingWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionPropertyAccountingWorkbenchResponse))
+          as GetDominionPropertyAccountingWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyAccountingWorkbenchResponse create() =>
+      GetDominionPropertyAccountingWorkbenchResponse._();
+  @$core.override
+  GetDominionPropertyAccountingWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionPropertyAccountingWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionPropertyAccountingWorkbenchResponse>(create);
+  static GetDominionPropertyAccountingWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionPropertyAccountingCloseItem> get closes => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get doubleEntryReversibleEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set doubleEntryReversibleEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDoubleEntryReversibleEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDoubleEntryReversibleEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get immutableCloseAndReversalSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set immutableCloseAndReversalSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasImmutableCloseAndReversalSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImmutableCloseAndReversalSummary() => $_clearField(3);
+}
+
+class SaveDominionPropertyAccountingCloseRequest extends $pb.GeneratedMessage {
+  factory SaveDominionPropertyAccountingCloseRequest({
+    $core.String? closeCode,
+    $core.String? propertyAndPeriodLabel,
+    $core.String? bankReconciliationAndDataQuality,
+    $core.String? pnlCashflowAndReserveSummary,
+    $core.String? accountantAndTaxExportDigest,
+    $core.String? closeState,
+  }) {
+    final result = create();
+    if (closeCode != null) result.closeCode = closeCode;
+    if (propertyAndPeriodLabel != null)
+      result.propertyAndPeriodLabel = propertyAndPeriodLabel;
+    if (bankReconciliationAndDataQuality != null)
+      result.bankReconciliationAndDataQuality =
+          bankReconciliationAndDataQuality;
+    if (pnlCashflowAndReserveSummary != null)
+      result.pnlCashflowAndReserveSummary = pnlCashflowAndReserveSummary;
+    if (accountantAndTaxExportDigest != null)
+      result.accountantAndTaxExportDigest = accountantAndTaxExportDigest;
+    if (closeState != null) result.closeState = closeState;
+    return result;
+  }
+
+  SaveDominionPropertyAccountingCloseRequest._();
+
+  factory SaveDominionPropertyAccountingCloseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionPropertyAccountingCloseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionPropertyAccountingCloseRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'closeCode')
+    ..aOS(2, _omitFieldNames ? '' : 'propertyAndPeriodLabel')
+    ..aOS(3, _omitFieldNames ? '' : 'bankReconciliationAndDataQuality')
+    ..aOS(4, _omitFieldNames ? '' : 'pnlCashflowAndReserveSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'accountantAndTaxExportDigest')
+    ..aOS(6, _omitFieldNames ? '' : 'closeState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyAccountingCloseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyAccountingCloseRequest copyWith(
+          void Function(SaveDominionPropertyAccountingCloseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionPropertyAccountingCloseRequest))
+          as SaveDominionPropertyAccountingCloseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyAccountingCloseRequest create() =>
+      SaveDominionPropertyAccountingCloseRequest._();
+  @$core.override
+  SaveDominionPropertyAccountingCloseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyAccountingCloseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionPropertyAccountingCloseRequest>(create);
+  static SaveDominionPropertyAccountingCloseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get closeCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set closeCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCloseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCloseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get propertyAndPeriodLabel => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set propertyAndPeriodLabel($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPropertyAndPeriodLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPropertyAndPeriodLabel() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get bankReconciliationAndDataQuality => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set bankReconciliationAndDataQuality($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBankReconciliationAndDataQuality() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBankReconciliationAndDataQuality() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get pnlCashflowAndReserveSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set pnlCashflowAndReserveSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPnlCashflowAndReserveSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPnlCashflowAndReserveSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get accountantAndTaxExportDigest => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set accountantAndTaxExportDigest($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAccountantAndTaxExportDigest() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAccountantAndTaxExportDigest() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get closeState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set closeState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCloseState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCloseState() => $_clearField(6);
+}
+
+class SaveDominionPropertyAccountingCloseResponse extends $pb.GeneratedMessage {
+  factory SaveDominionPropertyAccountingCloseResponse({
+    DominionPropertyAccountingCloseItem? close,
+  }) {
+    final result = create();
+    if (close != null) result.close = close;
+    return result;
+  }
+
+  SaveDominionPropertyAccountingCloseResponse._();
+
+  factory SaveDominionPropertyAccountingCloseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionPropertyAccountingCloseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionPropertyAccountingCloseResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionPropertyAccountingCloseItem>(
+        1, _omitFieldNames ? '' : 'close',
+        subBuilder: DominionPropertyAccountingCloseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyAccountingCloseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionPropertyAccountingCloseResponse copyWith(
+          void Function(SaveDominionPropertyAccountingCloseResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionPropertyAccountingCloseResponse))
+          as SaveDominionPropertyAccountingCloseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyAccountingCloseResponse create() =>
+      SaveDominionPropertyAccountingCloseResponse._();
+  @$core.override
+  SaveDominionPropertyAccountingCloseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionPropertyAccountingCloseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionPropertyAccountingCloseResponse>(create);
+  static SaveDominionPropertyAccountingCloseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionPropertyAccountingCloseItem get close => $_getN(0);
+  @$pb.TagNumber(1)
+  set close(DominionPropertyAccountingCloseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClose() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionPropertyAccountingCloseItem ensureClose() => $_ensure(0);
+}
+
+class LockOrReverseDominionAccountingCloseRequest extends $pb.GeneratedMessage {
+  factory LockOrReverseDominionAccountingCloseRequest({
+    $core.String? closeCode,
+    $core.String? accountantAndTaxExportDigest,
+    $core.String? closeState,
+  }) {
+    final result = create();
+    if (closeCode != null) result.closeCode = closeCode;
+    if (accountantAndTaxExportDigest != null)
+      result.accountantAndTaxExportDigest = accountantAndTaxExportDigest;
+    if (closeState != null) result.closeState = closeState;
+    return result;
+  }
+
+  LockOrReverseDominionAccountingCloseRequest._();
+
+  factory LockOrReverseDominionAccountingCloseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReverseDominionAccountingCloseRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReverseDominionAccountingCloseRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'closeCode')
+    ..aOS(2, _omitFieldNames ? '' : 'accountantAndTaxExportDigest')
+    ..aOS(3, _omitFieldNames ? '' : 'closeState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseDominionAccountingCloseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseDominionAccountingCloseRequest copyWith(
+          void Function(LockOrReverseDominionAccountingCloseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReverseDominionAccountingCloseRequest))
+          as LockOrReverseDominionAccountingCloseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseDominionAccountingCloseRequest create() =>
+      LockOrReverseDominionAccountingCloseRequest._();
+  @$core.override
+  LockOrReverseDominionAccountingCloseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseDominionAccountingCloseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReverseDominionAccountingCloseRequest>(create);
+  static LockOrReverseDominionAccountingCloseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get closeCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set closeCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCloseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCloseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountantAndTaxExportDigest => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountantAndTaxExportDigest($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountantAndTaxExportDigest() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountantAndTaxExportDigest() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get closeState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set closeState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCloseState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCloseState() => $_clearField(3);
+}
+
+class LockOrReverseDominionAccountingCloseResponse
+    extends $pb.GeneratedMessage {
+  factory LockOrReverseDominionAccountingCloseResponse({
+    DominionPropertyAccountingCloseItem? close,
+  }) {
+    final result = create();
+    if (close != null) result.close = close;
+    return result;
+  }
+
+  LockOrReverseDominionAccountingCloseResponse._();
+
+  factory LockOrReverseDominionAccountingCloseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReverseDominionAccountingCloseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReverseDominionAccountingCloseResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionPropertyAccountingCloseItem>(
+        1, _omitFieldNames ? '' : 'close',
+        subBuilder: DominionPropertyAccountingCloseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseDominionAccountingCloseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseDominionAccountingCloseResponse copyWith(
+          void Function(LockOrReverseDominionAccountingCloseResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReverseDominionAccountingCloseResponse))
+          as LockOrReverseDominionAccountingCloseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseDominionAccountingCloseResponse create() =>
+      LockOrReverseDominionAccountingCloseResponse._();
+  @$core.override
+  LockOrReverseDominionAccountingCloseResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseDominionAccountingCloseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReverseDominionAccountingCloseResponse>(create);
+  static LockOrReverseDominionAccountingCloseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionPropertyAccountingCloseItem get close => $_getN(0);
+  @$pb.TagNumber(1)
+  set close(DominionPropertyAccountingCloseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClose() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionPropertyAccountingCloseItem ensureClose() => $_ensure(0);
+}
+
+/// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+class DominionDocumentObligationVaultItem extends $pb.GeneratedMessage {
+  factory DominionDocumentObligationVaultItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? obligationCode,
+    $core.String? documentAndCitedPassage,
+    $core.String? jurisdictionTaxOrPermitDeadline,
+    $core.String? completionReceiptOrAppealPack,
+    $core.String? extractionConfidenceState,
+    $core.bool? nonLegalOpinionBoundaryEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (obligationCode != null) result.obligationCode = obligationCode;
+    if (documentAndCitedPassage != null)
+      result.documentAndCitedPassage = documentAndCitedPassage;
+    if (jurisdictionTaxOrPermitDeadline != null)
+      result.jurisdictionTaxOrPermitDeadline = jurisdictionTaxOrPermitDeadline;
+    if (completionReceiptOrAppealPack != null)
+      result.completionReceiptOrAppealPack = completionReceiptOrAppealPack;
+    if (extractionConfidenceState != null)
+      result.extractionConfidenceState = extractionConfidenceState;
+    if (nonLegalOpinionBoundaryEnforced != null)
+      result.nonLegalOpinionBoundaryEnforced = nonLegalOpinionBoundaryEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionDocumentObligationVaultItem._();
+
+  factory DominionDocumentObligationVaultItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionDocumentObligationVaultItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionDocumentObligationVaultItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'obligationCode')
+    ..aOS(4, _omitFieldNames ? '' : 'documentAndCitedPassage')
+    ..aOS(5, _omitFieldNames ? '' : 'jurisdictionTaxOrPermitDeadline')
+    ..aOS(6, _omitFieldNames ? '' : 'completionReceiptOrAppealPack')
+    ..aOS(7, _omitFieldNames ? '' : 'extractionConfidenceState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonLegalOpinionBoundaryEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionDocumentObligationVaultItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionDocumentObligationVaultItem copyWith(
+          void Function(DominionDocumentObligationVaultItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionDocumentObligationVaultItem))
+          as DominionDocumentObligationVaultItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionDocumentObligationVaultItem create() =>
+      DominionDocumentObligationVaultItem._();
+  @$core.override
+  DominionDocumentObligationVaultItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionDocumentObligationVaultItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionDocumentObligationVaultItem>(create);
+  static DominionDocumentObligationVaultItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get obligationCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set obligationCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasObligationCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearObligationCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get documentAndCitedPassage => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set documentAndCitedPassage($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDocumentAndCitedPassage() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDocumentAndCitedPassage() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get jurisdictionTaxOrPermitDeadline => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jurisdictionTaxOrPermitDeadline($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJurisdictionTaxOrPermitDeadline() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJurisdictionTaxOrPermitDeadline() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get completionReceiptOrAppealPack => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set completionReceiptOrAppealPack($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCompletionReceiptOrAppealPack() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCompletionReceiptOrAppealPack() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get extractionConfidenceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set extractionConfidenceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExtractionConfidenceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExtractionConfidenceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonLegalOpinionBoundaryEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonLegalOpinionBoundaryEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonLegalOpinionBoundaryEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonLegalOpinionBoundaryEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionDocumentObligationWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionDocumentObligationWorkbenchRequest() => create();
+
+  GetDominionDocumentObligationWorkbenchRequest._();
+
+  factory GetDominionDocumentObligationWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionDocumentObligationWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionDocumentObligationWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionDocumentObligationWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionDocumentObligationWorkbenchRequest copyWith(
+          void Function(GetDominionDocumentObligationWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionDocumentObligationWorkbenchRequest))
+          as GetDominionDocumentObligationWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionDocumentObligationWorkbenchRequest create() =>
+      GetDominionDocumentObligationWorkbenchRequest._();
+  @$core.override
+  GetDominionDocumentObligationWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionDocumentObligationWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionDocumentObligationWorkbenchRequest>(create);
+  static GetDominionDocumentObligationWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionDocumentObligationWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionDocumentObligationWorkbenchResponse({
+    $core.Iterable<DominionDocumentObligationVaultItem>? obligations,
+    $core.bool? nonLegalOpinionBoundaryEnforced,
+    $core.String? receiptBeforeCompletionSummary,
+  }) {
+    final result = create();
+    if (obligations != null) result.obligations.addAll(obligations);
+    if (nonLegalOpinionBoundaryEnforced != null)
+      result.nonLegalOpinionBoundaryEnforced = nonLegalOpinionBoundaryEnforced;
+    if (receiptBeforeCompletionSummary != null)
+      result.receiptBeforeCompletionSummary = receiptBeforeCompletionSummary;
+    return result;
+  }
+
+  GetDominionDocumentObligationWorkbenchResponse._();
+
+  factory GetDominionDocumentObligationWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionDocumentObligationWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionDocumentObligationWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionDocumentObligationVaultItem>(
+        1, _omitFieldNames ? '' : 'obligations',
+        subBuilder: DominionDocumentObligationVaultItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonLegalOpinionBoundaryEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'receiptBeforeCompletionSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionDocumentObligationWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionDocumentObligationWorkbenchResponse copyWith(
+          void Function(GetDominionDocumentObligationWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionDocumentObligationWorkbenchResponse))
+          as GetDominionDocumentObligationWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionDocumentObligationWorkbenchResponse create() =>
+      GetDominionDocumentObligationWorkbenchResponse._();
+  @$core.override
+  GetDominionDocumentObligationWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionDocumentObligationWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionDocumentObligationWorkbenchResponse>(create);
+  static GetDominionDocumentObligationWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionDocumentObligationVaultItem> get obligations =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonLegalOpinionBoundaryEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonLegalOpinionBoundaryEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonLegalOpinionBoundaryEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonLegalOpinionBoundaryEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get receiptBeforeCompletionSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set receiptBeforeCompletionSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReceiptBeforeCompletionSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReceiptBeforeCompletionSummary() => $_clearField(3);
+}
+
+class SaveDominionDocumentObligationRequest extends $pb.GeneratedMessage {
+  factory SaveDominionDocumentObligationRequest({
+    $core.String? obligationCode,
+    $core.String? documentAndCitedPassage,
+    $core.String? jurisdictionTaxOrPermitDeadline,
+    $core.String? completionReceiptOrAppealPack,
+    $core.String? extractionConfidenceState,
+  }) {
+    final result = create();
+    if (obligationCode != null) result.obligationCode = obligationCode;
+    if (documentAndCitedPassage != null)
+      result.documentAndCitedPassage = documentAndCitedPassage;
+    if (jurisdictionTaxOrPermitDeadline != null)
+      result.jurisdictionTaxOrPermitDeadline = jurisdictionTaxOrPermitDeadline;
+    if (completionReceiptOrAppealPack != null)
+      result.completionReceiptOrAppealPack = completionReceiptOrAppealPack;
+    if (extractionConfidenceState != null)
+      result.extractionConfidenceState = extractionConfidenceState;
+    return result;
+  }
+
+  SaveDominionDocumentObligationRequest._();
+
+  factory SaveDominionDocumentObligationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionDocumentObligationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionDocumentObligationRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'obligationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'documentAndCitedPassage')
+    ..aOS(3, _omitFieldNames ? '' : 'jurisdictionTaxOrPermitDeadline')
+    ..aOS(4, _omitFieldNames ? '' : 'completionReceiptOrAppealPack')
+    ..aOS(5, _omitFieldNames ? '' : 'extractionConfidenceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionDocumentObligationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionDocumentObligationRequest copyWith(
+          void Function(SaveDominionDocumentObligationRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionDocumentObligationRequest))
+          as SaveDominionDocumentObligationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionDocumentObligationRequest create() =>
+      SaveDominionDocumentObligationRequest._();
+  @$core.override
+  SaveDominionDocumentObligationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionDocumentObligationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionDocumentObligationRequest>(create);
+  static SaveDominionDocumentObligationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get obligationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set obligationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasObligationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearObligationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get documentAndCitedPassage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set documentAndCitedPassage($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDocumentAndCitedPassage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocumentAndCitedPassage() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get jurisdictionTaxOrPermitDeadline => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set jurisdictionTaxOrPermitDeadline($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionTaxOrPermitDeadline() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionTaxOrPermitDeadline() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get completionReceiptOrAppealPack => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set completionReceiptOrAppealPack($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCompletionReceiptOrAppealPack() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCompletionReceiptOrAppealPack() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get extractionConfidenceState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set extractionConfidenceState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExtractionConfidenceState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExtractionConfidenceState() => $_clearField(5);
+}
+
+class SaveDominionDocumentObligationResponse extends $pb.GeneratedMessage {
+  factory SaveDominionDocumentObligationResponse({
+    DominionDocumentObligationVaultItem? obligation,
+  }) {
+    final result = create();
+    if (obligation != null) result.obligation = obligation;
+    return result;
+  }
+
+  SaveDominionDocumentObligationResponse._();
+
+  factory SaveDominionDocumentObligationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionDocumentObligationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionDocumentObligationResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionDocumentObligationVaultItem>(
+        1, _omitFieldNames ? '' : 'obligation',
+        subBuilder: DominionDocumentObligationVaultItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionDocumentObligationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionDocumentObligationResponse copyWith(
+          void Function(SaveDominionDocumentObligationResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionDocumentObligationResponse))
+          as SaveDominionDocumentObligationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionDocumentObligationResponse create() =>
+      SaveDominionDocumentObligationResponse._();
+  @$core.override
+  SaveDominionDocumentObligationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionDocumentObligationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionDocumentObligationResponse>(create);
+  static SaveDominionDocumentObligationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionDocumentObligationVaultItem get obligation => $_getN(0);
+  @$pb.TagNumber(1)
+  set obligation(DominionDocumentObligationVaultItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasObligation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearObligation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionDocumentObligationVaultItem ensureObligation() => $_ensure(0);
+}
+
+class ConfirmDominionObligationReceiptOrAppealRequest
+    extends $pb.GeneratedMessage {
+  factory ConfirmDominionObligationReceiptOrAppealRequest({
+    $core.String? obligationCode,
+    $core.String? completionReceiptOrAppealPack,
+    $core.String? extractionConfidenceState,
+  }) {
+    final result = create();
+    if (obligationCode != null) result.obligationCode = obligationCode;
+    if (completionReceiptOrAppealPack != null)
+      result.completionReceiptOrAppealPack = completionReceiptOrAppealPack;
+    if (extractionConfidenceState != null)
+      result.extractionConfidenceState = extractionConfidenceState;
+    return result;
+  }
+
+  ConfirmDominionObligationReceiptOrAppealRequest._();
+
+  factory ConfirmDominionObligationReceiptOrAppealRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmDominionObligationReceiptOrAppealRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'ConfirmDominionObligationReceiptOrAppealRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'obligationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'completionReceiptOrAppealPack')
+    ..aOS(3, _omitFieldNames ? '' : 'extractionConfidenceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmDominionObligationReceiptOrAppealRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmDominionObligationReceiptOrAppealRequest copyWith(
+          void Function(ConfirmDominionObligationReceiptOrAppealRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ConfirmDominionObligationReceiptOrAppealRequest))
+          as ConfirmDominionObligationReceiptOrAppealRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmDominionObligationReceiptOrAppealRequest create() =>
+      ConfirmDominionObligationReceiptOrAppealRequest._();
+  @$core.override
+  ConfirmDominionObligationReceiptOrAppealRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmDominionObligationReceiptOrAppealRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmDominionObligationReceiptOrAppealRequest>(create);
+  static ConfirmDominionObligationReceiptOrAppealRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get obligationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set obligationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasObligationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearObligationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get completionReceiptOrAppealPack => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set completionReceiptOrAppealPack($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCompletionReceiptOrAppealPack() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCompletionReceiptOrAppealPack() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get extractionConfidenceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set extractionConfidenceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExtractionConfidenceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExtractionConfidenceState() => $_clearField(3);
+}
+
+class ConfirmDominionObligationReceiptOrAppealResponse
+    extends $pb.GeneratedMessage {
+  factory ConfirmDominionObligationReceiptOrAppealResponse({
+    DominionDocumentObligationVaultItem? obligation,
+  }) {
+    final result = create();
+    if (obligation != null) result.obligation = obligation;
+    return result;
+  }
+
+  ConfirmDominionObligationReceiptOrAppealResponse._();
+
+  factory ConfirmDominionObligationReceiptOrAppealResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmDominionObligationReceiptOrAppealResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'ConfirmDominionObligationReceiptOrAppealResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionDocumentObligationVaultItem>(
+        1, _omitFieldNames ? '' : 'obligation',
+        subBuilder: DominionDocumentObligationVaultItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmDominionObligationReceiptOrAppealResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmDominionObligationReceiptOrAppealResponse copyWith(
+          void Function(ConfirmDominionObligationReceiptOrAppealResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ConfirmDominionObligationReceiptOrAppealResponse))
+          as ConfirmDominionObligationReceiptOrAppealResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmDominionObligationReceiptOrAppealResponse create() =>
+      ConfirmDominionObligationReceiptOrAppealResponse._();
+  @$core.override
+  ConfirmDominionObligationReceiptOrAppealResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmDominionObligationReceiptOrAppealResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmDominionObligationReceiptOrAppealResponse>(create);
+  static ConfirmDominionObligationReceiptOrAppealResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionDocumentObligationVaultItem get obligation => $_getN(0);
+  @$pb.TagNumber(1)
+  set obligation(DominionDocumentObligationVaultItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasObligation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearObligation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionDocumentObligationVaultItem ensureObligation() => $_ensure(0);
+}
+
+/// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+class DominionLeasingResidentPortalItem extends $pb.GeneratedMessage {
+  factory DominionLeasingResidentPortalItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? leaseCode,
+    $core.String? propertyUnitAndTenancyScope,
+    $core.String? leaseTermsDepositAndRenewal,
+    $core.String? partitionedCommunicationSummary,
+    $core.String? portalState,
+    $core.bool? crossTenantIsolationEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (leaseCode != null) result.leaseCode = leaseCode;
+    if (propertyUnitAndTenancyScope != null)
+      result.propertyUnitAndTenancyScope = propertyUnitAndTenancyScope;
+    if (leaseTermsDepositAndRenewal != null)
+      result.leaseTermsDepositAndRenewal = leaseTermsDepositAndRenewal;
+    if (partitionedCommunicationSummary != null)
+      result.partitionedCommunicationSummary = partitionedCommunicationSummary;
+    if (portalState != null) result.portalState = portalState;
+    if (crossTenantIsolationEnforced != null)
+      result.crossTenantIsolationEnforced = crossTenantIsolationEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionLeasingResidentPortalItem._();
+
+  factory DominionLeasingResidentPortalItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionLeasingResidentPortalItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionLeasingResidentPortalItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'leaseCode')
+    ..aOS(4, _omitFieldNames ? '' : 'propertyUnitAndTenancyScope')
+    ..aOS(5, _omitFieldNames ? '' : 'leaseTermsDepositAndRenewal')
+    ..aOS(6, _omitFieldNames ? '' : 'partitionedCommunicationSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'portalState')
+    ..aOB(8, _omitFieldNames ? '' : 'crossTenantIsolationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionLeasingResidentPortalItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionLeasingResidentPortalItem copyWith(
+          void Function(DominionLeasingResidentPortalItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionLeasingResidentPortalItem))
+          as DominionLeasingResidentPortalItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionLeasingResidentPortalItem create() =>
+      DominionLeasingResidentPortalItem._();
+  @$core.override
+  DominionLeasingResidentPortalItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionLeasingResidentPortalItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DominionLeasingResidentPortalItem>(
+          create);
+  static DominionLeasingResidentPortalItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get leaseCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set leaseCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLeaseCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLeaseCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get propertyUnitAndTenancyScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set propertyUnitAndTenancyScope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPropertyUnitAndTenancyScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPropertyUnitAndTenancyScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get leaseTermsDepositAndRenewal => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set leaseTermsDepositAndRenewal($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLeaseTermsDepositAndRenewal() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLeaseTermsDepositAndRenewal() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get partitionedCommunicationSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set partitionedCommunicationSummary($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPartitionedCommunicationSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPartitionedCommunicationSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get portalState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set portalState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPortalState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPortalState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get crossTenantIsolationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set crossTenantIsolationEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCrossTenantIsolationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCrossTenantIsolationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionLeasingResidentWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetDominionLeasingResidentWorkbenchRequest() => create();
+
+  GetDominionLeasingResidentWorkbenchRequest._();
+
+  factory GetDominionLeasingResidentWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionLeasingResidentWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionLeasingResidentWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionLeasingResidentWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionLeasingResidentWorkbenchRequest copyWith(
+          void Function(GetDominionLeasingResidentWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionLeasingResidentWorkbenchRequest))
+          as GetDominionLeasingResidentWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionLeasingResidentWorkbenchRequest create() =>
+      GetDominionLeasingResidentWorkbenchRequest._();
+  @$core.override
+  GetDominionLeasingResidentWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionLeasingResidentWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionLeasingResidentWorkbenchRequest>(create);
+  static GetDominionLeasingResidentWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionLeasingResidentWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetDominionLeasingResidentWorkbenchResponse({
+    $core.Iterable<DominionLeasingResidentPortalItem>? leases,
+    $core.bool? crossTenantIsolationEnforced,
+    $core.String? unitScopedPartitionSummary,
+  }) {
+    final result = create();
+    if (leases != null) result.leases.addAll(leases);
+    if (crossTenantIsolationEnforced != null)
+      result.crossTenantIsolationEnforced = crossTenantIsolationEnforced;
+    if (unitScopedPartitionSummary != null)
+      result.unitScopedPartitionSummary = unitScopedPartitionSummary;
+    return result;
+  }
+
+  GetDominionLeasingResidentWorkbenchResponse._();
+
+  factory GetDominionLeasingResidentWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionLeasingResidentWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionLeasingResidentWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionLeasingResidentPortalItem>(1, _omitFieldNames ? '' : 'leases',
+        subBuilder: DominionLeasingResidentPortalItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'crossTenantIsolationEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'unitScopedPartitionSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionLeasingResidentWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionLeasingResidentWorkbenchResponse copyWith(
+          void Function(GetDominionLeasingResidentWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionLeasingResidentWorkbenchResponse))
+          as GetDominionLeasingResidentWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionLeasingResidentWorkbenchResponse create() =>
+      GetDominionLeasingResidentWorkbenchResponse._();
+  @$core.override
+  GetDominionLeasingResidentWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionLeasingResidentWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionLeasingResidentWorkbenchResponse>(create);
+  static GetDominionLeasingResidentWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionLeasingResidentPortalItem> get leases => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get crossTenantIsolationEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set crossTenantIsolationEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCrossTenantIsolationEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCrossTenantIsolationEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get unitScopedPartitionSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set unitScopedPartitionSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUnitScopedPartitionSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUnitScopedPartitionSummary() => $_clearField(3);
+}
+
+class SaveDominionLeasingResidentPortalRequest extends $pb.GeneratedMessage {
+  factory SaveDominionLeasingResidentPortalRequest({
+    $core.String? leaseCode,
+    $core.String? propertyUnitAndTenancyScope,
+    $core.String? leaseTermsDepositAndRenewal,
+    $core.String? partitionedCommunicationSummary,
+    $core.String? portalState,
+  }) {
+    final result = create();
+    if (leaseCode != null) result.leaseCode = leaseCode;
+    if (propertyUnitAndTenancyScope != null)
+      result.propertyUnitAndTenancyScope = propertyUnitAndTenancyScope;
+    if (leaseTermsDepositAndRenewal != null)
+      result.leaseTermsDepositAndRenewal = leaseTermsDepositAndRenewal;
+    if (partitionedCommunicationSummary != null)
+      result.partitionedCommunicationSummary = partitionedCommunicationSummary;
+    if (portalState != null) result.portalState = portalState;
+    return result;
+  }
+
+  SaveDominionLeasingResidentPortalRequest._();
+
+  factory SaveDominionLeasingResidentPortalRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionLeasingResidentPortalRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionLeasingResidentPortalRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'leaseCode')
+    ..aOS(2, _omitFieldNames ? '' : 'propertyUnitAndTenancyScope')
+    ..aOS(3, _omitFieldNames ? '' : 'leaseTermsDepositAndRenewal')
+    ..aOS(4, _omitFieldNames ? '' : 'partitionedCommunicationSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'portalState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionLeasingResidentPortalRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionLeasingResidentPortalRequest copyWith(
+          void Function(SaveDominionLeasingResidentPortalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionLeasingResidentPortalRequest))
+          as SaveDominionLeasingResidentPortalRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionLeasingResidentPortalRequest create() =>
+      SaveDominionLeasingResidentPortalRequest._();
+  @$core.override
+  SaveDominionLeasingResidentPortalRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionLeasingResidentPortalRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionLeasingResidentPortalRequest>(create);
+  static SaveDominionLeasingResidentPortalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get leaseCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set leaseCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLeaseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLeaseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get propertyUnitAndTenancyScope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set propertyUnitAndTenancyScope($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPropertyUnitAndTenancyScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPropertyUnitAndTenancyScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get leaseTermsDepositAndRenewal => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set leaseTermsDepositAndRenewal($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLeaseTermsDepositAndRenewal() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLeaseTermsDepositAndRenewal() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get partitionedCommunicationSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set partitionedCommunicationSummary($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPartitionedCommunicationSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPartitionedCommunicationSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get portalState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set portalState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPortalState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPortalState() => $_clearField(5);
+}
+
+class SaveDominionLeasingResidentPortalResponse extends $pb.GeneratedMessage {
+  factory SaveDominionLeasingResidentPortalResponse({
+    DominionLeasingResidentPortalItem? lease,
+  }) {
+    final result = create();
+    if (lease != null) result.lease = lease;
+    return result;
+  }
+
+  SaveDominionLeasingResidentPortalResponse._();
+
+  factory SaveDominionLeasingResidentPortalResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionLeasingResidentPortalResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionLeasingResidentPortalResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionLeasingResidentPortalItem>(1, _omitFieldNames ? '' : 'lease',
+        subBuilder: DominionLeasingResidentPortalItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionLeasingResidentPortalResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionLeasingResidentPortalResponse copyWith(
+          void Function(SaveDominionLeasingResidentPortalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionLeasingResidentPortalResponse))
+          as SaveDominionLeasingResidentPortalResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionLeasingResidentPortalResponse create() =>
+      SaveDominionLeasingResidentPortalResponse._();
+  @$core.override
+  SaveDominionLeasingResidentPortalResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionLeasingResidentPortalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionLeasingResidentPortalResponse>(create);
+  static SaveDominionLeasingResidentPortalResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionLeasingResidentPortalItem get lease => $_getN(0);
+  @$pb.TagNumber(1)
+  set lease(DominionLeasingResidentPortalItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLease() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLease() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionLeasingResidentPortalItem ensureLease() => $_ensure(0);
+}
+
+class ScheduleDominionRenewalOrDepositCloseRequest
+    extends $pb.GeneratedMessage {
+  factory ScheduleDominionRenewalOrDepositCloseRequest({
+    $core.String? leaseCode,
+    $core.String? leaseTermsDepositAndRenewal,
+    $core.String? portalState,
+  }) {
+    final result = create();
+    if (leaseCode != null) result.leaseCode = leaseCode;
+    if (leaseTermsDepositAndRenewal != null)
+      result.leaseTermsDepositAndRenewal = leaseTermsDepositAndRenewal;
+    if (portalState != null) result.portalState = portalState;
+    return result;
+  }
+
+  ScheduleDominionRenewalOrDepositCloseRequest._();
+
+  factory ScheduleDominionRenewalOrDepositCloseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScheduleDominionRenewalOrDepositCloseRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScheduleDominionRenewalOrDepositCloseRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'leaseCode')
+    ..aOS(2, _omitFieldNames ? '' : 'leaseTermsDepositAndRenewal')
+    ..aOS(3, _omitFieldNames ? '' : 'portalState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScheduleDominionRenewalOrDepositCloseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScheduleDominionRenewalOrDepositCloseRequest copyWith(
+          void Function(ScheduleDominionRenewalOrDepositCloseRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ScheduleDominionRenewalOrDepositCloseRequest))
+          as ScheduleDominionRenewalOrDepositCloseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScheduleDominionRenewalOrDepositCloseRequest create() =>
+      ScheduleDominionRenewalOrDepositCloseRequest._();
+  @$core.override
+  ScheduleDominionRenewalOrDepositCloseRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ScheduleDominionRenewalOrDepositCloseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ScheduleDominionRenewalOrDepositCloseRequest>(create);
+  static ScheduleDominionRenewalOrDepositCloseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get leaseCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set leaseCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLeaseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLeaseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get leaseTermsDepositAndRenewal => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set leaseTermsDepositAndRenewal($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLeaseTermsDepositAndRenewal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLeaseTermsDepositAndRenewal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get portalState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set portalState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPortalState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPortalState() => $_clearField(3);
+}
+
+class ScheduleDominionRenewalOrDepositCloseResponse
+    extends $pb.GeneratedMessage {
+  factory ScheduleDominionRenewalOrDepositCloseResponse({
+    DominionLeasingResidentPortalItem? lease,
+  }) {
+    final result = create();
+    if (lease != null) result.lease = lease;
+    return result;
+  }
+
+  ScheduleDominionRenewalOrDepositCloseResponse._();
+
+  factory ScheduleDominionRenewalOrDepositCloseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScheduleDominionRenewalOrDepositCloseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScheduleDominionRenewalOrDepositCloseResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionLeasingResidentPortalItem>(1, _omitFieldNames ? '' : 'lease',
+        subBuilder: DominionLeasingResidentPortalItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScheduleDominionRenewalOrDepositCloseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScheduleDominionRenewalOrDepositCloseResponse copyWith(
+          void Function(ScheduleDominionRenewalOrDepositCloseResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ScheduleDominionRenewalOrDepositCloseResponse))
+          as ScheduleDominionRenewalOrDepositCloseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScheduleDominionRenewalOrDepositCloseResponse create() =>
+      ScheduleDominionRenewalOrDepositCloseResponse._();
+  @$core.override
+  ScheduleDominionRenewalOrDepositCloseResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ScheduleDominionRenewalOrDepositCloseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ScheduleDominionRenewalOrDepositCloseResponse>(create);
+  static ScheduleDominionRenewalOrDepositCloseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionLeasingResidentPortalItem get lease => $_getN(0);
+  @$pb.TagNumber(1)
+  set lease(DominionLeasingResidentPortalItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLease() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLease() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionLeasingResidentPortalItem ensureLease() => $_ensure(0);
+}
+
+/// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+class DominionMaintenanceVendorNetworkItem extends $pb.GeneratedMessage {
+  factory DominionMaintenanceVendorNetworkItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? workOrderCode,
+    $core.String? issueTriageAndSlaWindow,
+    $core.String? vendorCredentialsAndNormalizedBids,
+    $core.String? threeWayInvoiceAndWarrantyMatch,
+    $core.String? workOrderState,
+    $core.bool? zeroPayToRankEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (workOrderCode != null) result.workOrderCode = workOrderCode;
+    if (issueTriageAndSlaWindow != null)
+      result.issueTriageAndSlaWindow = issueTriageAndSlaWindow;
+    if (vendorCredentialsAndNormalizedBids != null)
+      result.vendorCredentialsAndNormalizedBids =
+          vendorCredentialsAndNormalizedBids;
+    if (threeWayInvoiceAndWarrantyMatch != null)
+      result.threeWayInvoiceAndWarrantyMatch = threeWayInvoiceAndWarrantyMatch;
+    if (workOrderState != null) result.workOrderState = workOrderState;
+    if (zeroPayToRankEnforced != null)
+      result.zeroPayToRankEnforced = zeroPayToRankEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionMaintenanceVendorNetworkItem._();
+
+  factory DominionMaintenanceVendorNetworkItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionMaintenanceVendorNetworkItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionMaintenanceVendorNetworkItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'workOrderCode')
+    ..aOS(4, _omitFieldNames ? '' : 'issueTriageAndSlaWindow')
+    ..aOS(5, _omitFieldNames ? '' : 'vendorCredentialsAndNormalizedBids')
+    ..aOS(6, _omitFieldNames ? '' : 'threeWayInvoiceAndWarrantyMatch')
+    ..aOS(7, _omitFieldNames ? '' : 'workOrderState')
+    ..aOB(8, _omitFieldNames ? '' : 'zeroPayToRankEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionMaintenanceVendorNetworkItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionMaintenanceVendorNetworkItem copyWith(
+          void Function(DominionMaintenanceVendorNetworkItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionMaintenanceVendorNetworkItem))
+          as DominionMaintenanceVendorNetworkItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionMaintenanceVendorNetworkItem create() =>
+      DominionMaintenanceVendorNetworkItem._();
+  @$core.override
+  DominionMaintenanceVendorNetworkItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionMaintenanceVendorNetworkItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionMaintenanceVendorNetworkItem>(create);
+  static DominionMaintenanceVendorNetworkItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workOrderCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workOrderCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkOrderCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkOrderCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get issueTriageAndSlaWindow => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set issueTriageAndSlaWindow($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIssueTriageAndSlaWindow() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIssueTriageAndSlaWindow() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get vendorCredentialsAndNormalizedBids => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set vendorCredentialsAndNormalizedBids($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasVendorCredentialsAndNormalizedBids() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearVendorCredentialsAndNormalizedBids() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get threeWayInvoiceAndWarrantyMatch => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set threeWayInvoiceAndWarrantyMatch($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasThreeWayInvoiceAndWarrantyMatch() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearThreeWayInvoiceAndWarrantyMatch() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get workOrderState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workOrderState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWorkOrderState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkOrderState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get zeroPayToRankEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set zeroPayToRankEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasZeroPayToRankEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearZeroPayToRankEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionMaintenanceVendorWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionMaintenanceVendorWorkbenchRequest() => create();
+
+  GetDominionMaintenanceVendorWorkbenchRequest._();
+
+  factory GetDominionMaintenanceVendorWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionMaintenanceVendorWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionMaintenanceVendorWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMaintenanceVendorWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMaintenanceVendorWorkbenchRequest copyWith(
+          void Function(GetDominionMaintenanceVendorWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionMaintenanceVendorWorkbenchRequest))
+          as GetDominionMaintenanceVendorWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMaintenanceVendorWorkbenchRequest create() =>
+      GetDominionMaintenanceVendorWorkbenchRequest._();
+  @$core.override
+  GetDominionMaintenanceVendorWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMaintenanceVendorWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionMaintenanceVendorWorkbenchRequest>(create);
+  static GetDominionMaintenanceVendorWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionMaintenanceVendorWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionMaintenanceVendorWorkbenchResponse({
+    $core.Iterable<DominionMaintenanceVendorNetworkItem>? workOrders,
+    $core.bool? zeroPayToRankEnforced,
+    $core.String? threeWayInvoiceMatchSummary,
+  }) {
+    final result = create();
+    if (workOrders != null) result.workOrders.addAll(workOrders);
+    if (zeroPayToRankEnforced != null)
+      result.zeroPayToRankEnforced = zeroPayToRankEnforced;
+    if (threeWayInvoiceMatchSummary != null)
+      result.threeWayInvoiceMatchSummary = threeWayInvoiceMatchSummary;
+    return result;
+  }
+
+  GetDominionMaintenanceVendorWorkbenchResponse._();
+
+  factory GetDominionMaintenanceVendorWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionMaintenanceVendorWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionMaintenanceVendorWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionMaintenanceVendorNetworkItem>(
+        1, _omitFieldNames ? '' : 'workOrders',
+        subBuilder: DominionMaintenanceVendorNetworkItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'zeroPayToRankEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'threeWayInvoiceMatchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMaintenanceVendorWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMaintenanceVendorWorkbenchResponse copyWith(
+          void Function(GetDominionMaintenanceVendorWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionMaintenanceVendorWorkbenchResponse))
+          as GetDominionMaintenanceVendorWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMaintenanceVendorWorkbenchResponse create() =>
+      GetDominionMaintenanceVendorWorkbenchResponse._();
+  @$core.override
+  GetDominionMaintenanceVendorWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMaintenanceVendorWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionMaintenanceVendorWorkbenchResponse>(create);
+  static GetDominionMaintenanceVendorWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionMaintenanceVendorNetworkItem> get workOrders =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get zeroPayToRankEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set zeroPayToRankEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasZeroPayToRankEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearZeroPayToRankEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get threeWayInvoiceMatchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set threeWayInvoiceMatchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasThreeWayInvoiceMatchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearThreeWayInvoiceMatchSummary() => $_clearField(3);
+}
+
+class SaveDominionMaintenanceWorkOrderRequest extends $pb.GeneratedMessage {
+  factory SaveDominionMaintenanceWorkOrderRequest({
+    $core.String? workOrderCode,
+    $core.String? issueTriageAndSlaWindow,
+    $core.String? vendorCredentialsAndNormalizedBids,
+    $core.String? threeWayInvoiceAndWarrantyMatch,
+    $core.String? workOrderState,
+  }) {
+    final result = create();
+    if (workOrderCode != null) result.workOrderCode = workOrderCode;
+    if (issueTriageAndSlaWindow != null)
+      result.issueTriageAndSlaWindow = issueTriageAndSlaWindow;
+    if (vendorCredentialsAndNormalizedBids != null)
+      result.vendorCredentialsAndNormalizedBids =
+          vendorCredentialsAndNormalizedBids;
+    if (threeWayInvoiceAndWarrantyMatch != null)
+      result.threeWayInvoiceAndWarrantyMatch = threeWayInvoiceAndWarrantyMatch;
+    if (workOrderState != null) result.workOrderState = workOrderState;
+    return result;
+  }
+
+  SaveDominionMaintenanceWorkOrderRequest._();
+
+  factory SaveDominionMaintenanceWorkOrderRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionMaintenanceWorkOrderRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionMaintenanceWorkOrderRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workOrderCode')
+    ..aOS(2, _omitFieldNames ? '' : 'issueTriageAndSlaWindow')
+    ..aOS(3, _omitFieldNames ? '' : 'vendorCredentialsAndNormalizedBids')
+    ..aOS(4, _omitFieldNames ? '' : 'threeWayInvoiceAndWarrantyMatch')
+    ..aOS(5, _omitFieldNames ? '' : 'workOrderState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMaintenanceWorkOrderRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMaintenanceWorkOrderRequest copyWith(
+          void Function(SaveDominionMaintenanceWorkOrderRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionMaintenanceWorkOrderRequest))
+          as SaveDominionMaintenanceWorkOrderRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMaintenanceWorkOrderRequest create() =>
+      SaveDominionMaintenanceWorkOrderRequest._();
+  @$core.override
+  SaveDominionMaintenanceWorkOrderRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMaintenanceWorkOrderRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionMaintenanceWorkOrderRequest>(create);
+  static SaveDominionMaintenanceWorkOrderRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workOrderCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workOrderCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkOrderCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkOrderCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get issueTriageAndSlaWindow => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set issueTriageAndSlaWindow($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIssueTriageAndSlaWindow() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIssueTriageAndSlaWindow() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vendorCredentialsAndNormalizedBids => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vendorCredentialsAndNormalizedBids($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVendorCredentialsAndNormalizedBids() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVendorCredentialsAndNormalizedBids() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get threeWayInvoiceAndWarrantyMatch => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set threeWayInvoiceAndWarrantyMatch($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasThreeWayInvoiceAndWarrantyMatch() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearThreeWayInvoiceAndWarrantyMatch() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get workOrderState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set workOrderState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWorkOrderState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWorkOrderState() => $_clearField(5);
+}
+
+class SaveDominionMaintenanceWorkOrderResponse extends $pb.GeneratedMessage {
+  factory SaveDominionMaintenanceWorkOrderResponse({
+    DominionMaintenanceVendorNetworkItem? workOrder,
+  }) {
+    final result = create();
+    if (workOrder != null) result.workOrder = workOrder;
+    return result;
+  }
+
+  SaveDominionMaintenanceWorkOrderResponse._();
+
+  factory SaveDominionMaintenanceWorkOrderResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionMaintenanceWorkOrderResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionMaintenanceWorkOrderResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionMaintenanceVendorNetworkItem>(
+        1, _omitFieldNames ? '' : 'workOrder',
+        subBuilder: DominionMaintenanceVendorNetworkItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMaintenanceWorkOrderResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMaintenanceWorkOrderResponse copyWith(
+          void Function(SaveDominionMaintenanceWorkOrderResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionMaintenanceWorkOrderResponse))
+          as SaveDominionMaintenanceWorkOrderResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMaintenanceWorkOrderResponse create() =>
+      SaveDominionMaintenanceWorkOrderResponse._();
+  @$core.override
+  SaveDominionMaintenanceWorkOrderResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMaintenanceWorkOrderResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionMaintenanceWorkOrderResponse>(create);
+  static SaveDominionMaintenanceWorkOrderResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionMaintenanceVendorNetworkItem get workOrder => $_getN(0);
+  @$pb.TagNumber(1)
+  set workOrder(DominionMaintenanceVendorNetworkItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionMaintenanceVendorNetworkItem ensureWorkOrder() => $_ensure(0);
+}
+
+class VerifyDominionThreeWayMatchOrWarrantyRequest
+    extends $pb.GeneratedMessage {
+  factory VerifyDominionThreeWayMatchOrWarrantyRequest({
+    $core.String? workOrderCode,
+    $core.String? threeWayInvoiceAndWarrantyMatch,
+    $core.String? workOrderState,
+  }) {
+    final result = create();
+    if (workOrderCode != null) result.workOrderCode = workOrderCode;
+    if (threeWayInvoiceAndWarrantyMatch != null)
+      result.threeWayInvoiceAndWarrantyMatch = threeWayInvoiceAndWarrantyMatch;
+    if (workOrderState != null) result.workOrderState = workOrderState;
+    return result;
+  }
+
+  VerifyDominionThreeWayMatchOrWarrantyRequest._();
+
+  factory VerifyDominionThreeWayMatchOrWarrantyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyDominionThreeWayMatchOrWarrantyRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyDominionThreeWayMatchOrWarrantyRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'workOrderCode')
+    ..aOS(2, _omitFieldNames ? '' : 'threeWayInvoiceAndWarrantyMatch')
+    ..aOS(3, _omitFieldNames ? '' : 'workOrderState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionThreeWayMatchOrWarrantyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionThreeWayMatchOrWarrantyRequest copyWith(
+          void Function(VerifyDominionThreeWayMatchOrWarrantyRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyDominionThreeWayMatchOrWarrantyRequest))
+          as VerifyDominionThreeWayMatchOrWarrantyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionThreeWayMatchOrWarrantyRequest create() =>
+      VerifyDominionThreeWayMatchOrWarrantyRequest._();
+  @$core.override
+  VerifyDominionThreeWayMatchOrWarrantyRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionThreeWayMatchOrWarrantyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyDominionThreeWayMatchOrWarrantyRequest>(create);
+  static VerifyDominionThreeWayMatchOrWarrantyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get workOrderCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set workOrderCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkOrderCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkOrderCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get threeWayInvoiceAndWarrantyMatch => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set threeWayInvoiceAndWarrantyMatch($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasThreeWayInvoiceAndWarrantyMatch() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearThreeWayInvoiceAndWarrantyMatch() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workOrderState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workOrderState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkOrderState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkOrderState() => $_clearField(3);
+}
+
+class VerifyDominionThreeWayMatchOrWarrantyResponse
+    extends $pb.GeneratedMessage {
+  factory VerifyDominionThreeWayMatchOrWarrantyResponse({
+    DominionMaintenanceVendorNetworkItem? workOrder,
+  }) {
+    final result = create();
+    if (workOrder != null) result.workOrder = workOrder;
+    return result;
+  }
+
+  VerifyDominionThreeWayMatchOrWarrantyResponse._();
+
+  factory VerifyDominionThreeWayMatchOrWarrantyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyDominionThreeWayMatchOrWarrantyResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyDominionThreeWayMatchOrWarrantyResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionMaintenanceVendorNetworkItem>(
+        1, _omitFieldNames ? '' : 'workOrder',
+        subBuilder: DominionMaintenanceVendorNetworkItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionThreeWayMatchOrWarrantyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionThreeWayMatchOrWarrantyResponse copyWith(
+          void Function(VerifyDominionThreeWayMatchOrWarrantyResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyDominionThreeWayMatchOrWarrantyResponse))
+          as VerifyDominionThreeWayMatchOrWarrantyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionThreeWayMatchOrWarrantyResponse create() =>
+      VerifyDominionThreeWayMatchOrWarrantyResponse._();
+  @$core.override
+  VerifyDominionThreeWayMatchOrWarrantyResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionThreeWayMatchOrWarrantyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyDominionThreeWayMatchOrWarrantyResponse>(create);
+  static VerifyDominionThreeWayMatchOrWarrantyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionMaintenanceVendorNetworkItem get workOrder => $_getN(0);
+  @$pb.TagNumber(1)
+  set workOrder(DominionMaintenanceVendorNetworkItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkOrder() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkOrder() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionMaintenanceVendorNetworkItem ensureWorkOrder() => $_ensure(0);
+}
+
+/// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+class DominionCapitalProjectControlItem extends $pb.GeneratedMessage {
+  factory DominionCapitalProjectControlItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? projectCode,
+    $core.String? scopePermitsAndBaselineBudget,
+    $core.String? changeOrderDrawAndLienWaiver,
+    $core.String? offlineFieldInspectionAndPunchlist,
+    $core.String? projectState,
+    $core.bool? humanVerifiedChangeOrdersEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (projectCode != null) result.projectCode = projectCode;
+    if (scopePermitsAndBaselineBudget != null)
+      result.scopePermitsAndBaselineBudget = scopePermitsAndBaselineBudget;
+    if (changeOrderDrawAndLienWaiver != null)
+      result.changeOrderDrawAndLienWaiver = changeOrderDrawAndLienWaiver;
+    if (offlineFieldInspectionAndPunchlist != null)
+      result.offlineFieldInspectionAndPunchlist =
+          offlineFieldInspectionAndPunchlist;
+    if (projectState != null) result.projectState = projectState;
+    if (humanVerifiedChangeOrdersEnforced != null)
+      result.humanVerifiedChangeOrdersEnforced =
+          humanVerifiedChangeOrdersEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionCapitalProjectControlItem._();
+
+  factory DominionCapitalProjectControlItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionCapitalProjectControlItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionCapitalProjectControlItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'projectCode')
+    ..aOS(4, _omitFieldNames ? '' : 'scopePermitsAndBaselineBudget')
+    ..aOS(5, _omitFieldNames ? '' : 'changeOrderDrawAndLienWaiver')
+    ..aOS(6, _omitFieldNames ? '' : 'offlineFieldInspectionAndPunchlist')
+    ..aOS(7, _omitFieldNames ? '' : 'projectState')
+    ..aOB(8, _omitFieldNames ? '' : 'humanVerifiedChangeOrdersEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionCapitalProjectControlItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionCapitalProjectControlItem copyWith(
+          void Function(DominionCapitalProjectControlItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionCapitalProjectControlItem))
+          as DominionCapitalProjectControlItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionCapitalProjectControlItem create() =>
+      DominionCapitalProjectControlItem._();
+  @$core.override
+  DominionCapitalProjectControlItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionCapitalProjectControlItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DominionCapitalProjectControlItem>(
+          create);
+  static DominionCapitalProjectControlItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get projectCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set projectCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProjectCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProjectCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get scopePermitsAndBaselineBudget => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scopePermitsAndBaselineBudget($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScopePermitsAndBaselineBudget() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScopePermitsAndBaselineBudget() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get changeOrderDrawAndLienWaiver => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set changeOrderDrawAndLienWaiver($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasChangeOrderDrawAndLienWaiver() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearChangeOrderDrawAndLienWaiver() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get offlineFieldInspectionAndPunchlist => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set offlineFieldInspectionAndPunchlist($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOfflineFieldInspectionAndPunchlist() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOfflineFieldInspectionAndPunchlist() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get projectState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set projectState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProjectState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProjectState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get humanVerifiedChangeOrdersEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set humanVerifiedChangeOrdersEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasHumanVerifiedChangeOrdersEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHumanVerifiedChangeOrdersEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionCapitalProjectWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetDominionCapitalProjectWorkbenchRequest() => create();
+
+  GetDominionCapitalProjectWorkbenchRequest._();
+
+  factory GetDominionCapitalProjectWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionCapitalProjectWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionCapitalProjectWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionCapitalProjectWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionCapitalProjectWorkbenchRequest copyWith(
+          void Function(GetDominionCapitalProjectWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionCapitalProjectWorkbenchRequest))
+          as GetDominionCapitalProjectWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionCapitalProjectWorkbenchRequest create() =>
+      GetDominionCapitalProjectWorkbenchRequest._();
+  @$core.override
+  GetDominionCapitalProjectWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionCapitalProjectWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionCapitalProjectWorkbenchRequest>(create);
+  static GetDominionCapitalProjectWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionCapitalProjectWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetDominionCapitalProjectWorkbenchResponse({
+    $core.Iterable<DominionCapitalProjectControlItem>? projects,
+    $core.bool? humanVerifiedChangeOrdersEnforced,
+    $core.String? retainageAndLienWaiverSummary,
+  }) {
+    final result = create();
+    if (projects != null) result.projects.addAll(projects);
+    if (humanVerifiedChangeOrdersEnforced != null)
+      result.humanVerifiedChangeOrdersEnforced =
+          humanVerifiedChangeOrdersEnforced;
+    if (retainageAndLienWaiverSummary != null)
+      result.retainageAndLienWaiverSummary = retainageAndLienWaiverSummary;
+    return result;
+  }
+
+  GetDominionCapitalProjectWorkbenchResponse._();
+
+  factory GetDominionCapitalProjectWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionCapitalProjectWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionCapitalProjectWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionCapitalProjectControlItem>(
+        1, _omitFieldNames ? '' : 'projects',
+        subBuilder: DominionCapitalProjectControlItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'humanVerifiedChangeOrdersEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'retainageAndLienWaiverSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionCapitalProjectWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionCapitalProjectWorkbenchResponse copyWith(
+          void Function(GetDominionCapitalProjectWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionCapitalProjectWorkbenchResponse))
+          as GetDominionCapitalProjectWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionCapitalProjectWorkbenchResponse create() =>
+      GetDominionCapitalProjectWorkbenchResponse._();
+  @$core.override
+  GetDominionCapitalProjectWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionCapitalProjectWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionCapitalProjectWorkbenchResponse>(create);
+  static GetDominionCapitalProjectWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionCapitalProjectControlItem> get projects => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get humanVerifiedChangeOrdersEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set humanVerifiedChangeOrdersEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHumanVerifiedChangeOrdersEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHumanVerifiedChangeOrdersEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get retainageAndLienWaiverSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set retainageAndLienWaiverSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRetainageAndLienWaiverSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRetainageAndLienWaiverSummary() => $_clearField(3);
+}
+
+class SaveDominionCapitalProjectControlRequest extends $pb.GeneratedMessage {
+  factory SaveDominionCapitalProjectControlRequest({
+    $core.String? projectCode,
+    $core.String? scopePermitsAndBaselineBudget,
+    $core.String? changeOrderDrawAndLienWaiver,
+    $core.String? offlineFieldInspectionAndPunchlist,
+    $core.String? projectState,
+  }) {
+    final result = create();
+    if (projectCode != null) result.projectCode = projectCode;
+    if (scopePermitsAndBaselineBudget != null)
+      result.scopePermitsAndBaselineBudget = scopePermitsAndBaselineBudget;
+    if (changeOrderDrawAndLienWaiver != null)
+      result.changeOrderDrawAndLienWaiver = changeOrderDrawAndLienWaiver;
+    if (offlineFieldInspectionAndPunchlist != null)
+      result.offlineFieldInspectionAndPunchlist =
+          offlineFieldInspectionAndPunchlist;
+    if (projectState != null) result.projectState = projectState;
+    return result;
+  }
+
+  SaveDominionCapitalProjectControlRequest._();
+
+  factory SaveDominionCapitalProjectControlRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionCapitalProjectControlRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionCapitalProjectControlRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'projectCode')
+    ..aOS(2, _omitFieldNames ? '' : 'scopePermitsAndBaselineBudget')
+    ..aOS(3, _omitFieldNames ? '' : 'changeOrderDrawAndLienWaiver')
+    ..aOS(4, _omitFieldNames ? '' : 'offlineFieldInspectionAndPunchlist')
+    ..aOS(5, _omitFieldNames ? '' : 'projectState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionCapitalProjectControlRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionCapitalProjectControlRequest copyWith(
+          void Function(SaveDominionCapitalProjectControlRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionCapitalProjectControlRequest))
+          as SaveDominionCapitalProjectControlRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionCapitalProjectControlRequest create() =>
+      SaveDominionCapitalProjectControlRequest._();
+  @$core.override
+  SaveDominionCapitalProjectControlRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionCapitalProjectControlRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionCapitalProjectControlRequest>(create);
+  static SaveDominionCapitalProjectControlRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get projectCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set projectCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProjectCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProjectCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get scopePermitsAndBaselineBudget => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set scopePermitsAndBaselineBudget($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScopePermitsAndBaselineBudget() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScopePermitsAndBaselineBudget() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get changeOrderDrawAndLienWaiver => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set changeOrderDrawAndLienWaiver($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasChangeOrderDrawAndLienWaiver() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearChangeOrderDrawAndLienWaiver() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get offlineFieldInspectionAndPunchlist => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set offlineFieldInspectionAndPunchlist($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOfflineFieldInspectionAndPunchlist() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOfflineFieldInspectionAndPunchlist() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get projectState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set projectState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProjectState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProjectState() => $_clearField(5);
+}
+
+class SaveDominionCapitalProjectControlResponse extends $pb.GeneratedMessage {
+  factory SaveDominionCapitalProjectControlResponse({
+    DominionCapitalProjectControlItem? project,
+  }) {
+    final result = create();
+    if (project != null) result.project = project;
+    return result;
+  }
+
+  SaveDominionCapitalProjectControlResponse._();
+
+  factory SaveDominionCapitalProjectControlResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionCapitalProjectControlResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionCapitalProjectControlResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionCapitalProjectControlItem>(
+        1, _omitFieldNames ? '' : 'project',
+        subBuilder: DominionCapitalProjectControlItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionCapitalProjectControlResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionCapitalProjectControlResponse copyWith(
+          void Function(SaveDominionCapitalProjectControlResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionCapitalProjectControlResponse))
+          as SaveDominionCapitalProjectControlResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionCapitalProjectControlResponse create() =>
+      SaveDominionCapitalProjectControlResponse._();
+  @$core.override
+  SaveDominionCapitalProjectControlResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionCapitalProjectControlResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionCapitalProjectControlResponse>(create);
+  static SaveDominionCapitalProjectControlResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionCapitalProjectControlItem get project => $_getN(0);
+  @$pb.TagNumber(1)
+  set project(DominionCapitalProjectControlItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProject() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProject() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionCapitalProjectControlItem ensureProject() => $_ensure(0);
+}
+
+class ApproveDominionDrawOrPunchlistCloseoutRequest
+    extends $pb.GeneratedMessage {
+  factory ApproveDominionDrawOrPunchlistCloseoutRequest({
+    $core.String? projectCode,
+    $core.String? changeOrderDrawAndLienWaiver,
+    $core.String? projectState,
+  }) {
+    final result = create();
+    if (projectCode != null) result.projectCode = projectCode;
+    if (changeOrderDrawAndLienWaiver != null)
+      result.changeOrderDrawAndLienWaiver = changeOrderDrawAndLienWaiver;
+    if (projectState != null) result.projectState = projectState;
+    return result;
+  }
+
+  ApproveDominionDrawOrPunchlistCloseoutRequest._();
+
+  factory ApproveDominionDrawOrPunchlistCloseoutRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveDominionDrawOrPunchlistCloseoutRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveDominionDrawOrPunchlistCloseoutRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'projectCode')
+    ..aOS(2, _omitFieldNames ? '' : 'changeOrderDrawAndLienWaiver')
+    ..aOS(3, _omitFieldNames ? '' : 'projectState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveDominionDrawOrPunchlistCloseoutRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveDominionDrawOrPunchlistCloseoutRequest copyWith(
+          void Function(ApproveDominionDrawOrPunchlistCloseoutRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveDominionDrawOrPunchlistCloseoutRequest))
+          as ApproveDominionDrawOrPunchlistCloseoutRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveDominionDrawOrPunchlistCloseoutRequest create() =>
+      ApproveDominionDrawOrPunchlistCloseoutRequest._();
+  @$core.override
+  ApproveDominionDrawOrPunchlistCloseoutRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveDominionDrawOrPunchlistCloseoutRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveDominionDrawOrPunchlistCloseoutRequest>(create);
+  static ApproveDominionDrawOrPunchlistCloseoutRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get projectCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set projectCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProjectCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProjectCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get changeOrderDrawAndLienWaiver => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set changeOrderDrawAndLienWaiver($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasChangeOrderDrawAndLienWaiver() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearChangeOrderDrawAndLienWaiver() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get projectState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set projectState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProjectState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProjectState() => $_clearField(3);
+}
+
+class ApproveDominionDrawOrPunchlistCloseoutResponse
+    extends $pb.GeneratedMessage {
+  factory ApproveDominionDrawOrPunchlistCloseoutResponse({
+    DominionCapitalProjectControlItem? project,
+  }) {
+    final result = create();
+    if (project != null) result.project = project;
+    return result;
+  }
+
+  ApproveDominionDrawOrPunchlistCloseoutResponse._();
+
+  factory ApproveDominionDrawOrPunchlistCloseoutResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveDominionDrawOrPunchlistCloseoutResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveDominionDrawOrPunchlistCloseoutResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionCapitalProjectControlItem>(
+        1, _omitFieldNames ? '' : 'project',
+        subBuilder: DominionCapitalProjectControlItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveDominionDrawOrPunchlistCloseoutResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveDominionDrawOrPunchlistCloseoutResponse copyWith(
+          void Function(ApproveDominionDrawOrPunchlistCloseoutResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ApproveDominionDrawOrPunchlistCloseoutResponse))
+          as ApproveDominionDrawOrPunchlistCloseoutResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveDominionDrawOrPunchlistCloseoutResponse create() =>
+      ApproveDominionDrawOrPunchlistCloseoutResponse._();
+  @$core.override
+  ApproveDominionDrawOrPunchlistCloseoutResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveDominionDrawOrPunchlistCloseoutResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveDominionDrawOrPunchlistCloseoutResponse>(create);
+  static ApproveDominionDrawOrPunchlistCloseoutResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionCapitalProjectControlItem get project => $_getN(0);
+  @$pb.TagNumber(1)
+  set project(DominionCapitalProjectControlItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProject() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProject() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionCapitalProjectControlItem ensureProject() => $_ensure(0);
+}
+
+/// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+class DominionMarketValuationGovernanceItem extends $pb.GeneratedMessage {
+  factory DominionMarketValuationGovernanceItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? valuationCode,
+    $core.String? editableCompSetAndAdjustments,
+    $core.String? avmRangeVsAppraisalEvidence,
+    $core.String? providerFreshnessAndDisagreement,
+    $core.String? valuationState,
+    $core.bool? avmDistinctFromAppraisalEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (valuationCode != null) result.valuationCode = valuationCode;
+    if (editableCompSetAndAdjustments != null)
+      result.editableCompSetAndAdjustments = editableCompSetAndAdjustments;
+    if (avmRangeVsAppraisalEvidence != null)
+      result.avmRangeVsAppraisalEvidence = avmRangeVsAppraisalEvidence;
+    if (providerFreshnessAndDisagreement != null)
+      result.providerFreshnessAndDisagreement =
+          providerFreshnessAndDisagreement;
+    if (valuationState != null) result.valuationState = valuationState;
+    if (avmDistinctFromAppraisalEnforced != null)
+      result.avmDistinctFromAppraisalEnforced =
+          avmDistinctFromAppraisalEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionMarketValuationGovernanceItem._();
+
+  factory DominionMarketValuationGovernanceItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionMarketValuationGovernanceItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionMarketValuationGovernanceItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'valuationCode')
+    ..aOS(4, _omitFieldNames ? '' : 'editableCompSetAndAdjustments')
+    ..aOS(5, _omitFieldNames ? '' : 'avmRangeVsAppraisalEvidence')
+    ..aOS(6, _omitFieldNames ? '' : 'providerFreshnessAndDisagreement')
+    ..aOS(7, _omitFieldNames ? '' : 'valuationState')
+    ..aOB(8, _omitFieldNames ? '' : 'avmDistinctFromAppraisalEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionMarketValuationGovernanceItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionMarketValuationGovernanceItem copyWith(
+          void Function(DominionMarketValuationGovernanceItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionMarketValuationGovernanceItem))
+          as DominionMarketValuationGovernanceItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionMarketValuationGovernanceItem create() =>
+      DominionMarketValuationGovernanceItem._();
+  @$core.override
+  DominionMarketValuationGovernanceItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionMarketValuationGovernanceItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionMarketValuationGovernanceItem>(create);
+  static DominionMarketValuationGovernanceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get valuationCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set valuationCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasValuationCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValuationCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get editableCompSetAndAdjustments => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set editableCompSetAndAdjustments($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEditableCompSetAndAdjustments() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEditableCompSetAndAdjustments() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get avmRangeVsAppraisalEvidence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set avmRangeVsAppraisalEvidence($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAvmRangeVsAppraisalEvidence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAvmRangeVsAppraisalEvidence() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get providerFreshnessAndDisagreement => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set providerFreshnessAndDisagreement($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProviderFreshnessAndDisagreement() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProviderFreshnessAndDisagreement() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get valuationState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set valuationState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasValuationState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearValuationState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get avmDistinctFromAppraisalEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set avmDistinctFromAppraisalEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAvmDistinctFromAppraisalEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAvmDistinctFromAppraisalEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionMarketValuationWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetDominionMarketValuationWorkbenchRequest() => create();
+
+  GetDominionMarketValuationWorkbenchRequest._();
+
+  factory GetDominionMarketValuationWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionMarketValuationWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionMarketValuationWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMarketValuationWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMarketValuationWorkbenchRequest copyWith(
+          void Function(GetDominionMarketValuationWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionMarketValuationWorkbenchRequest))
+          as GetDominionMarketValuationWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMarketValuationWorkbenchRequest create() =>
+      GetDominionMarketValuationWorkbenchRequest._();
+  @$core.override
+  GetDominionMarketValuationWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMarketValuationWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionMarketValuationWorkbenchRequest>(create);
+  static GetDominionMarketValuationWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionMarketValuationWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetDominionMarketValuationWorkbenchResponse({
+    $core.Iterable<DominionMarketValuationGovernanceItem>? valuations,
+    $core.bool? avmDistinctFromAppraisalEnforced,
+    $core.String? rangeAndFreshnessGovernanceSummary,
+  }) {
+    final result = create();
+    if (valuations != null) result.valuations.addAll(valuations);
+    if (avmDistinctFromAppraisalEnforced != null)
+      result.avmDistinctFromAppraisalEnforced =
+          avmDistinctFromAppraisalEnforced;
+    if (rangeAndFreshnessGovernanceSummary != null)
+      result.rangeAndFreshnessGovernanceSummary =
+          rangeAndFreshnessGovernanceSummary;
+    return result;
+  }
+
+  GetDominionMarketValuationWorkbenchResponse._();
+
+  factory GetDominionMarketValuationWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionMarketValuationWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionMarketValuationWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionMarketValuationGovernanceItem>(
+        1, _omitFieldNames ? '' : 'valuations',
+        subBuilder: DominionMarketValuationGovernanceItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'avmDistinctFromAppraisalEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'rangeAndFreshnessGovernanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMarketValuationWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionMarketValuationWorkbenchResponse copyWith(
+          void Function(GetDominionMarketValuationWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionMarketValuationWorkbenchResponse))
+          as GetDominionMarketValuationWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMarketValuationWorkbenchResponse create() =>
+      GetDominionMarketValuationWorkbenchResponse._();
+  @$core.override
+  GetDominionMarketValuationWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionMarketValuationWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionMarketValuationWorkbenchResponse>(create);
+  static GetDominionMarketValuationWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionMarketValuationGovernanceItem> get valuations =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get avmDistinctFromAppraisalEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set avmDistinctFromAppraisalEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAvmDistinctFromAppraisalEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAvmDistinctFromAppraisalEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rangeAndFreshnessGovernanceSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rangeAndFreshnessGovernanceSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRangeAndFreshnessGovernanceSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRangeAndFreshnessGovernanceSummary() => $_clearField(3);
+}
+
+class SaveDominionMarketValuationGovernanceRequest
+    extends $pb.GeneratedMessage {
+  factory SaveDominionMarketValuationGovernanceRequest({
+    $core.String? valuationCode,
+    $core.String? editableCompSetAndAdjustments,
+    $core.String? avmRangeVsAppraisalEvidence,
+    $core.String? providerFreshnessAndDisagreement,
+    $core.String? valuationState,
+  }) {
+    final result = create();
+    if (valuationCode != null) result.valuationCode = valuationCode;
+    if (editableCompSetAndAdjustments != null)
+      result.editableCompSetAndAdjustments = editableCompSetAndAdjustments;
+    if (avmRangeVsAppraisalEvidence != null)
+      result.avmRangeVsAppraisalEvidence = avmRangeVsAppraisalEvidence;
+    if (providerFreshnessAndDisagreement != null)
+      result.providerFreshnessAndDisagreement =
+          providerFreshnessAndDisagreement;
+    if (valuationState != null) result.valuationState = valuationState;
+    return result;
+  }
+
+  SaveDominionMarketValuationGovernanceRequest._();
+
+  factory SaveDominionMarketValuationGovernanceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionMarketValuationGovernanceRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionMarketValuationGovernanceRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'valuationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'editableCompSetAndAdjustments')
+    ..aOS(3, _omitFieldNames ? '' : 'avmRangeVsAppraisalEvidence')
+    ..aOS(4, _omitFieldNames ? '' : 'providerFreshnessAndDisagreement')
+    ..aOS(5, _omitFieldNames ? '' : 'valuationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMarketValuationGovernanceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMarketValuationGovernanceRequest copyWith(
+          void Function(SaveDominionMarketValuationGovernanceRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionMarketValuationGovernanceRequest))
+          as SaveDominionMarketValuationGovernanceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMarketValuationGovernanceRequest create() =>
+      SaveDominionMarketValuationGovernanceRequest._();
+  @$core.override
+  SaveDominionMarketValuationGovernanceRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMarketValuationGovernanceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionMarketValuationGovernanceRequest>(create);
+  static SaveDominionMarketValuationGovernanceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get valuationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set valuationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasValuationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValuationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editableCompSetAndAdjustments => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editableCompSetAndAdjustments($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditableCompSetAndAdjustments() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditableCompSetAndAdjustments() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get avmRangeVsAppraisalEvidence => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set avmRangeVsAppraisalEvidence($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAvmRangeVsAppraisalEvidence() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAvmRangeVsAppraisalEvidence() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get providerFreshnessAndDisagreement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set providerFreshnessAndDisagreement($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProviderFreshnessAndDisagreement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProviderFreshnessAndDisagreement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get valuationState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set valuationState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasValuationState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearValuationState() => $_clearField(5);
+}
+
+class SaveDominionMarketValuationGovernanceResponse
+    extends $pb.GeneratedMessage {
+  factory SaveDominionMarketValuationGovernanceResponse({
+    DominionMarketValuationGovernanceItem? valuation,
+  }) {
+    final result = create();
+    if (valuation != null) result.valuation = valuation;
+    return result;
+  }
+
+  SaveDominionMarketValuationGovernanceResponse._();
+
+  factory SaveDominionMarketValuationGovernanceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionMarketValuationGovernanceResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionMarketValuationGovernanceResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionMarketValuationGovernanceItem>(
+        1, _omitFieldNames ? '' : 'valuation',
+        subBuilder: DominionMarketValuationGovernanceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMarketValuationGovernanceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionMarketValuationGovernanceResponse copyWith(
+          void Function(SaveDominionMarketValuationGovernanceResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionMarketValuationGovernanceResponse))
+          as SaveDominionMarketValuationGovernanceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMarketValuationGovernanceResponse create() =>
+      SaveDominionMarketValuationGovernanceResponse._();
+  @$core.override
+  SaveDominionMarketValuationGovernanceResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionMarketValuationGovernanceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionMarketValuationGovernanceResponse>(create);
+  static SaveDominionMarketValuationGovernanceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionMarketValuationGovernanceItem get valuation => $_getN(0);
+  @$pb.TagNumber(1)
+  set valuation(DominionMarketValuationGovernanceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasValuation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValuation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionMarketValuationGovernanceItem ensureValuation() => $_ensure(0);
+}
+
+class AdjustDominionCompSetOrDisputeValuationRequest
+    extends $pb.GeneratedMessage {
+  factory AdjustDominionCompSetOrDisputeValuationRequest({
+    $core.String? valuationCode,
+    $core.String? editableCompSetAndAdjustments,
+    $core.String? valuationState,
+  }) {
+    final result = create();
+    if (valuationCode != null) result.valuationCode = valuationCode;
+    if (editableCompSetAndAdjustments != null)
+      result.editableCompSetAndAdjustments = editableCompSetAndAdjustments;
+    if (valuationState != null) result.valuationState = valuationState;
+    return result;
+  }
+
+  AdjustDominionCompSetOrDisputeValuationRequest._();
+
+  factory AdjustDominionCompSetOrDisputeValuationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdjustDominionCompSetOrDisputeValuationRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdjustDominionCompSetOrDisputeValuationRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'valuationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'editableCompSetAndAdjustments')
+    ..aOS(3, _omitFieldNames ? '' : 'valuationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdjustDominionCompSetOrDisputeValuationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdjustDominionCompSetOrDisputeValuationRequest copyWith(
+          void Function(AdjustDominionCompSetOrDisputeValuationRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdjustDominionCompSetOrDisputeValuationRequest))
+          as AdjustDominionCompSetOrDisputeValuationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdjustDominionCompSetOrDisputeValuationRequest create() =>
+      AdjustDominionCompSetOrDisputeValuationRequest._();
+  @$core.override
+  AdjustDominionCompSetOrDisputeValuationRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdjustDominionCompSetOrDisputeValuationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdjustDominionCompSetOrDisputeValuationRequest>(create);
+  static AdjustDominionCompSetOrDisputeValuationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get valuationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set valuationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasValuationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValuationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get editableCompSetAndAdjustments => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set editableCompSetAndAdjustments($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEditableCompSetAndAdjustments() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEditableCompSetAndAdjustments() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get valuationState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set valuationState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasValuationState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearValuationState() => $_clearField(3);
+}
+
+class AdjustDominionCompSetOrDisputeValuationResponse
+    extends $pb.GeneratedMessage {
+  factory AdjustDominionCompSetOrDisputeValuationResponse({
+    DominionMarketValuationGovernanceItem? valuation,
+  }) {
+    final result = create();
+    if (valuation != null) result.valuation = valuation;
+    return result;
+  }
+
+  AdjustDominionCompSetOrDisputeValuationResponse._();
+
+  factory AdjustDominionCompSetOrDisputeValuationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdjustDominionCompSetOrDisputeValuationResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdjustDominionCompSetOrDisputeValuationResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionMarketValuationGovernanceItem>(
+        1, _omitFieldNames ? '' : 'valuation',
+        subBuilder: DominionMarketValuationGovernanceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdjustDominionCompSetOrDisputeValuationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdjustDominionCompSetOrDisputeValuationResponse copyWith(
+          void Function(AdjustDominionCompSetOrDisputeValuationResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdjustDominionCompSetOrDisputeValuationResponse))
+          as AdjustDominionCompSetOrDisputeValuationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdjustDominionCompSetOrDisputeValuationResponse create() =>
+      AdjustDominionCompSetOrDisputeValuationResponse._();
+  @$core.override
+  AdjustDominionCompSetOrDisputeValuationResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdjustDominionCompSetOrDisputeValuationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdjustDominionCompSetOrDisputeValuationResponse>(create);
+  static AdjustDominionCompSetOrDisputeValuationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionMarketValuationGovernanceItem get valuation => $_getN(0);
+  @$pb.TagNumber(1)
+  set valuation(DominionMarketValuationGovernanceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasValuation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearValuation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionMarketValuationGovernanceItem ensureValuation() => $_ensure(0);
+}
+
+/// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+class DominionOwnershipTransactionRoomItem extends $pb.GeneratedMessage {
+  factory DominionOwnershipTransactionRoomItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? transactionCode,
+    $core.String? entityCapitalStackAndCovenants,
+    $core.String? waterfallAndNetProceedsRange,
+    $core.String? scopedDataroomAndBridgeRefs,
+    $core.String? roomState,
+    $core.bool? nonBrokerEscrowBoundaryEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (transactionCode != null) result.transactionCode = transactionCode;
+    if (entityCapitalStackAndCovenants != null)
+      result.entityCapitalStackAndCovenants = entityCapitalStackAndCovenants;
+    if (waterfallAndNetProceedsRange != null)
+      result.waterfallAndNetProceedsRange = waterfallAndNetProceedsRange;
+    if (scopedDataroomAndBridgeRefs != null)
+      result.scopedDataroomAndBridgeRefs = scopedDataroomAndBridgeRefs;
+    if (roomState != null) result.roomState = roomState;
+    if (nonBrokerEscrowBoundaryEnforced != null)
+      result.nonBrokerEscrowBoundaryEnforced = nonBrokerEscrowBoundaryEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionOwnershipTransactionRoomItem._();
+
+  factory DominionOwnershipTransactionRoomItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionOwnershipTransactionRoomItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionOwnershipTransactionRoomItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'transactionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'entityCapitalStackAndCovenants')
+    ..aOS(5, _omitFieldNames ? '' : 'waterfallAndNetProceedsRange')
+    ..aOS(6, _omitFieldNames ? '' : 'scopedDataroomAndBridgeRefs')
+    ..aOS(7, _omitFieldNames ? '' : 'roomState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonBrokerEscrowBoundaryEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionOwnershipTransactionRoomItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionOwnershipTransactionRoomItem copyWith(
+          void Function(DominionOwnershipTransactionRoomItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionOwnershipTransactionRoomItem))
+          as DominionOwnershipTransactionRoomItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionOwnershipTransactionRoomItem create() =>
+      DominionOwnershipTransactionRoomItem._();
+  @$core.override
+  DominionOwnershipTransactionRoomItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionOwnershipTransactionRoomItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionOwnershipTransactionRoomItem>(create);
+  static DominionOwnershipTransactionRoomItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get transactionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set transactionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTransactionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTransactionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityCapitalStackAndCovenants => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityCapitalStackAndCovenants($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityCapitalStackAndCovenants() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityCapitalStackAndCovenants() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get waterfallAndNetProceedsRange => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set waterfallAndNetProceedsRange($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWaterfallAndNetProceedsRange() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWaterfallAndNetProceedsRange() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get scopedDataroomAndBridgeRefs => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set scopedDataroomAndBridgeRefs($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasScopedDataroomAndBridgeRefs() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearScopedDataroomAndBridgeRefs() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get roomState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonBrokerEscrowBoundaryEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonBrokerEscrowBoundaryEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonBrokerEscrowBoundaryEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonBrokerEscrowBoundaryEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionOwnershipTransactionWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionOwnershipTransactionWorkbenchRequest() => create();
+
+  GetDominionOwnershipTransactionWorkbenchRequest._();
+
+  factory GetDominionOwnershipTransactionWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionOwnershipTransactionWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetDominionOwnershipTransactionWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionOwnershipTransactionWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionOwnershipTransactionWorkbenchRequest copyWith(
+          void Function(GetDominionOwnershipTransactionWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionOwnershipTransactionWorkbenchRequest))
+          as GetDominionOwnershipTransactionWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionOwnershipTransactionWorkbenchRequest create() =>
+      GetDominionOwnershipTransactionWorkbenchRequest._();
+  @$core.override
+  GetDominionOwnershipTransactionWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionOwnershipTransactionWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionOwnershipTransactionWorkbenchRequest>(create);
+  static GetDominionOwnershipTransactionWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionOwnershipTransactionWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionOwnershipTransactionWorkbenchResponse({
+    $core.Iterable<DominionOwnershipTransactionRoomItem>? rooms,
+    $core.bool? nonBrokerEscrowBoundaryEnforced,
+    $core.String? covenantAndWatermarkedDataroomSummary,
+  }) {
+    final result = create();
+    if (rooms != null) result.rooms.addAll(rooms);
+    if (nonBrokerEscrowBoundaryEnforced != null)
+      result.nonBrokerEscrowBoundaryEnforced = nonBrokerEscrowBoundaryEnforced;
+    if (covenantAndWatermarkedDataroomSummary != null)
+      result.covenantAndWatermarkedDataroomSummary =
+          covenantAndWatermarkedDataroomSummary;
+    return result;
+  }
+
+  GetDominionOwnershipTransactionWorkbenchResponse._();
+
+  factory GetDominionOwnershipTransactionWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionOwnershipTransactionWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetDominionOwnershipTransactionWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionOwnershipTransactionRoomItem>(
+        1, _omitFieldNames ? '' : 'rooms',
+        subBuilder: DominionOwnershipTransactionRoomItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonBrokerEscrowBoundaryEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'covenantAndWatermarkedDataroomSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionOwnershipTransactionWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionOwnershipTransactionWorkbenchResponse copyWith(
+          void Function(GetDominionOwnershipTransactionWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionOwnershipTransactionWorkbenchResponse))
+          as GetDominionOwnershipTransactionWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionOwnershipTransactionWorkbenchResponse create() =>
+      GetDominionOwnershipTransactionWorkbenchResponse._();
+  @$core.override
+  GetDominionOwnershipTransactionWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionOwnershipTransactionWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionOwnershipTransactionWorkbenchResponse>(create);
+  static GetDominionOwnershipTransactionWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionOwnershipTransactionRoomItem> get rooms => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonBrokerEscrowBoundaryEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonBrokerEscrowBoundaryEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonBrokerEscrowBoundaryEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonBrokerEscrowBoundaryEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get covenantAndWatermarkedDataroomSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set covenantAndWatermarkedDataroomSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCovenantAndWatermarkedDataroomSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCovenantAndWatermarkedDataroomSummary() => $_clearField(3);
+}
+
+class SaveDominionOwnershipTransactionRoomRequest extends $pb.GeneratedMessage {
+  factory SaveDominionOwnershipTransactionRoomRequest({
+    $core.String? transactionCode,
+    $core.String? entityCapitalStackAndCovenants,
+    $core.String? waterfallAndNetProceedsRange,
+    $core.String? scopedDataroomAndBridgeRefs,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (transactionCode != null) result.transactionCode = transactionCode;
+    if (entityCapitalStackAndCovenants != null)
+      result.entityCapitalStackAndCovenants = entityCapitalStackAndCovenants;
+    if (waterfallAndNetProceedsRange != null)
+      result.waterfallAndNetProceedsRange = waterfallAndNetProceedsRange;
+    if (scopedDataroomAndBridgeRefs != null)
+      result.scopedDataroomAndBridgeRefs = scopedDataroomAndBridgeRefs;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  SaveDominionOwnershipTransactionRoomRequest._();
+
+  factory SaveDominionOwnershipTransactionRoomRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionOwnershipTransactionRoomRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionOwnershipTransactionRoomRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'transactionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'entityCapitalStackAndCovenants')
+    ..aOS(3, _omitFieldNames ? '' : 'waterfallAndNetProceedsRange')
+    ..aOS(4, _omitFieldNames ? '' : 'scopedDataroomAndBridgeRefs')
+    ..aOS(5, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionOwnershipTransactionRoomRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionOwnershipTransactionRoomRequest copyWith(
+          void Function(SaveDominionOwnershipTransactionRoomRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionOwnershipTransactionRoomRequest))
+          as SaveDominionOwnershipTransactionRoomRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionOwnershipTransactionRoomRequest create() =>
+      SaveDominionOwnershipTransactionRoomRequest._();
+  @$core.override
+  SaveDominionOwnershipTransactionRoomRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionOwnershipTransactionRoomRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionOwnershipTransactionRoomRequest>(create);
+  static SaveDominionOwnershipTransactionRoomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get transactionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set transactionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTransactionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTransactionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityCapitalStackAndCovenants => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityCapitalStackAndCovenants($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityCapitalStackAndCovenants() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityCapitalStackAndCovenants() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get waterfallAndNetProceedsRange => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set waterfallAndNetProceedsRange($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWaterfallAndNetProceedsRange() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWaterfallAndNetProceedsRange() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get scopedDataroomAndBridgeRefs => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scopedDataroomAndBridgeRefs($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScopedDataroomAndBridgeRefs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScopedDataroomAndBridgeRefs() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get roomState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set roomState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRoomState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRoomState() => $_clearField(5);
+}
+
+class SaveDominionOwnershipTransactionRoomResponse
+    extends $pb.GeneratedMessage {
+  factory SaveDominionOwnershipTransactionRoomResponse({
+    DominionOwnershipTransactionRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  SaveDominionOwnershipTransactionRoomResponse._();
+
+  factory SaveDominionOwnershipTransactionRoomResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionOwnershipTransactionRoomResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionOwnershipTransactionRoomResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionOwnershipTransactionRoomItem>(
+        1, _omitFieldNames ? '' : 'room',
+        subBuilder: DominionOwnershipTransactionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionOwnershipTransactionRoomResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionOwnershipTransactionRoomResponse copyWith(
+          void Function(SaveDominionOwnershipTransactionRoomResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionOwnershipTransactionRoomResponse))
+          as SaveDominionOwnershipTransactionRoomResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionOwnershipTransactionRoomResponse create() =>
+      SaveDominionOwnershipTransactionRoomResponse._();
+  @$core.override
+  SaveDominionOwnershipTransactionRoomResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionOwnershipTransactionRoomResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionOwnershipTransactionRoomResponse>(create);
+  static SaveDominionOwnershipTransactionRoomResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionOwnershipTransactionRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(DominionOwnershipTransactionRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionOwnershipTransactionRoomItem ensureRoom() => $_ensure(0);
+}
+
+class StageDominionRefinanceOrDataroomAccessRequest
+    extends $pb.GeneratedMessage {
+  factory StageDominionRefinanceOrDataroomAccessRequest({
+    $core.String? transactionCode,
+    $core.String? waterfallAndNetProceedsRange,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (transactionCode != null) result.transactionCode = transactionCode;
+    if (waterfallAndNetProceedsRange != null)
+      result.waterfallAndNetProceedsRange = waterfallAndNetProceedsRange;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  StageDominionRefinanceOrDataroomAccessRequest._();
+
+  factory StageDominionRefinanceOrDataroomAccessRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageDominionRefinanceOrDataroomAccessRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageDominionRefinanceOrDataroomAccessRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'transactionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'waterfallAndNetProceedsRange')
+    ..aOS(3, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionRefinanceOrDataroomAccessRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionRefinanceOrDataroomAccessRequest copyWith(
+          void Function(StageDominionRefinanceOrDataroomAccessRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as StageDominionRefinanceOrDataroomAccessRequest))
+          as StageDominionRefinanceOrDataroomAccessRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageDominionRefinanceOrDataroomAccessRequest create() =>
+      StageDominionRefinanceOrDataroomAccessRequest._();
+  @$core.override
+  StageDominionRefinanceOrDataroomAccessRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static StageDominionRefinanceOrDataroomAccessRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StageDominionRefinanceOrDataroomAccessRequest>(create);
+  static StageDominionRefinanceOrDataroomAccessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get transactionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set transactionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTransactionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTransactionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get waterfallAndNetProceedsRange => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set waterfallAndNetProceedsRange($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWaterfallAndNetProceedsRange() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWaterfallAndNetProceedsRange() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRoomState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomState() => $_clearField(3);
+}
+
+class StageDominionRefinanceOrDataroomAccessResponse
+    extends $pb.GeneratedMessage {
+  factory StageDominionRefinanceOrDataroomAccessResponse({
+    DominionOwnershipTransactionRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  StageDominionRefinanceOrDataroomAccessResponse._();
+
+  factory StageDominionRefinanceOrDataroomAccessResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageDominionRefinanceOrDataroomAccessResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageDominionRefinanceOrDataroomAccessResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionOwnershipTransactionRoomItem>(
+        1, _omitFieldNames ? '' : 'room',
+        subBuilder: DominionOwnershipTransactionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionRefinanceOrDataroomAccessResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionRefinanceOrDataroomAccessResponse copyWith(
+          void Function(StageDominionRefinanceOrDataroomAccessResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as StageDominionRefinanceOrDataroomAccessResponse))
+          as StageDominionRefinanceOrDataroomAccessResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageDominionRefinanceOrDataroomAccessResponse create() =>
+      StageDominionRefinanceOrDataroomAccessResponse._();
+  @$core.override
+  StageDominionRefinanceOrDataroomAccessResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static StageDominionRefinanceOrDataroomAccessResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StageDominionRefinanceOrDataroomAccessResponse>(create);
+  static StageDominionRefinanceOrDataroomAccessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionOwnershipTransactionRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(DominionOwnershipTransactionRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionOwnershipTransactionRoomItem ensureRoom() => $_ensure(0);
+}
+
+/// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+class DominionInsuranceResilienceCenterItem extends $pb.GeneratedMessage {
+  factory DominionInsuranceResilienceCenterItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? resilienceCode,
+    $core.String? policyLimitsDeductiblesAndGaps,
+    $core.String? perilRateAndVacancyStressBundle,
+    $core.String? incidentCustodyAndClaimRecovery,
+    $core.String? resilienceState,
+    $core.bool? nonLegalCoverageDisclaimerEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (resilienceCode != null) result.resilienceCode = resilienceCode;
+    if (policyLimitsDeductiblesAndGaps != null)
+      result.policyLimitsDeductiblesAndGaps = policyLimitsDeductiblesAndGaps;
+    if (perilRateAndVacancyStressBundle != null)
+      result.perilRateAndVacancyStressBundle = perilRateAndVacancyStressBundle;
+    if (incidentCustodyAndClaimRecovery != null)
+      result.incidentCustodyAndClaimRecovery = incidentCustodyAndClaimRecovery;
+    if (resilienceState != null) result.resilienceState = resilienceState;
+    if (nonLegalCoverageDisclaimerEnforced != null)
+      result.nonLegalCoverageDisclaimerEnforced =
+          nonLegalCoverageDisclaimerEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionInsuranceResilienceCenterItem._();
+
+  factory DominionInsuranceResilienceCenterItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionInsuranceResilienceCenterItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionInsuranceResilienceCenterItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'resilienceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'policyLimitsDeductiblesAndGaps')
+    ..aOS(5, _omitFieldNames ? '' : 'perilRateAndVacancyStressBundle')
+    ..aOS(6, _omitFieldNames ? '' : 'incidentCustodyAndClaimRecovery')
+    ..aOS(7, _omitFieldNames ? '' : 'resilienceState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonLegalCoverageDisclaimerEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionInsuranceResilienceCenterItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionInsuranceResilienceCenterItem copyWith(
+          void Function(DominionInsuranceResilienceCenterItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionInsuranceResilienceCenterItem))
+          as DominionInsuranceResilienceCenterItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionInsuranceResilienceCenterItem create() =>
+      DominionInsuranceResilienceCenterItem._();
+  @$core.override
+  DominionInsuranceResilienceCenterItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionInsuranceResilienceCenterItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionInsuranceResilienceCenterItem>(create);
+  static DominionInsuranceResilienceCenterItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resilienceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resilienceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResilienceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResilienceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get policyLimitsDeductiblesAndGaps => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set policyLimitsDeductiblesAndGaps($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPolicyLimitsDeductiblesAndGaps() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPolicyLimitsDeductiblesAndGaps() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get perilRateAndVacancyStressBundle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set perilRateAndVacancyStressBundle($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPerilRateAndVacancyStressBundle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPerilRateAndVacancyStressBundle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get incidentCustodyAndClaimRecovery => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set incidentCustodyAndClaimRecovery($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIncidentCustodyAndClaimRecovery() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIncidentCustodyAndClaimRecovery() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get resilienceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set resilienceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasResilienceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearResilienceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonLegalCoverageDisclaimerEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonLegalCoverageDisclaimerEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonLegalCoverageDisclaimerEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonLegalCoverageDisclaimerEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionInsuranceResilienceWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionInsuranceResilienceWorkbenchRequest() => create();
+
+  GetDominionInsuranceResilienceWorkbenchRequest._();
+
+  factory GetDominionInsuranceResilienceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionInsuranceResilienceWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionInsuranceResilienceWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionInsuranceResilienceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionInsuranceResilienceWorkbenchRequest copyWith(
+          void Function(GetDominionInsuranceResilienceWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionInsuranceResilienceWorkbenchRequest))
+          as GetDominionInsuranceResilienceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionInsuranceResilienceWorkbenchRequest create() =>
+      GetDominionInsuranceResilienceWorkbenchRequest._();
+  @$core.override
+  GetDominionInsuranceResilienceWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionInsuranceResilienceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionInsuranceResilienceWorkbenchRequest>(create);
+  static GetDominionInsuranceResilienceWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionInsuranceResilienceWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionInsuranceResilienceWorkbenchResponse({
+    $core.Iterable<DominionInsuranceResilienceCenterItem>? centers,
+    $core.bool? nonLegalCoverageDisclaimerEnforced,
+    $core.String? stressBundleAndCustodySummary,
+  }) {
+    final result = create();
+    if (centers != null) result.centers.addAll(centers);
+    if (nonLegalCoverageDisclaimerEnforced != null)
+      result.nonLegalCoverageDisclaimerEnforced =
+          nonLegalCoverageDisclaimerEnforced;
+    if (stressBundleAndCustodySummary != null)
+      result.stressBundleAndCustodySummary = stressBundleAndCustodySummary;
+    return result;
+  }
+
+  GetDominionInsuranceResilienceWorkbenchResponse._();
+
+  factory GetDominionInsuranceResilienceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionInsuranceResilienceWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetDominionInsuranceResilienceWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionInsuranceResilienceCenterItem>(
+        1, _omitFieldNames ? '' : 'centers',
+        subBuilder: DominionInsuranceResilienceCenterItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonLegalCoverageDisclaimerEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'stressBundleAndCustodySummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionInsuranceResilienceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionInsuranceResilienceWorkbenchResponse copyWith(
+          void Function(GetDominionInsuranceResilienceWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionInsuranceResilienceWorkbenchResponse))
+          as GetDominionInsuranceResilienceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionInsuranceResilienceWorkbenchResponse create() =>
+      GetDominionInsuranceResilienceWorkbenchResponse._();
+  @$core.override
+  GetDominionInsuranceResilienceWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionInsuranceResilienceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionInsuranceResilienceWorkbenchResponse>(create);
+  static GetDominionInsuranceResilienceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionInsuranceResilienceCenterItem> get centers => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonLegalCoverageDisclaimerEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonLegalCoverageDisclaimerEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonLegalCoverageDisclaimerEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonLegalCoverageDisclaimerEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get stressBundleAndCustodySummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set stressBundleAndCustodySummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStressBundleAndCustodySummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStressBundleAndCustodySummary() => $_clearField(3);
+}
+
+class SaveDominionInsuranceResilienceCenterRequest
+    extends $pb.GeneratedMessage {
+  factory SaveDominionInsuranceResilienceCenterRequest({
+    $core.String? resilienceCode,
+    $core.String? policyLimitsDeductiblesAndGaps,
+    $core.String? perilRateAndVacancyStressBundle,
+    $core.String? incidentCustodyAndClaimRecovery,
+    $core.String? resilienceState,
+  }) {
+    final result = create();
+    if (resilienceCode != null) result.resilienceCode = resilienceCode;
+    if (policyLimitsDeductiblesAndGaps != null)
+      result.policyLimitsDeductiblesAndGaps = policyLimitsDeductiblesAndGaps;
+    if (perilRateAndVacancyStressBundle != null)
+      result.perilRateAndVacancyStressBundle = perilRateAndVacancyStressBundle;
+    if (incidentCustodyAndClaimRecovery != null)
+      result.incidentCustodyAndClaimRecovery = incidentCustodyAndClaimRecovery;
+    if (resilienceState != null) result.resilienceState = resilienceState;
+    return result;
+  }
+
+  SaveDominionInsuranceResilienceCenterRequest._();
+
+  factory SaveDominionInsuranceResilienceCenterRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionInsuranceResilienceCenterRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionInsuranceResilienceCenterRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resilienceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'policyLimitsDeductiblesAndGaps')
+    ..aOS(3, _omitFieldNames ? '' : 'perilRateAndVacancyStressBundle')
+    ..aOS(4, _omitFieldNames ? '' : 'incidentCustodyAndClaimRecovery')
+    ..aOS(5, _omitFieldNames ? '' : 'resilienceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionInsuranceResilienceCenterRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionInsuranceResilienceCenterRequest copyWith(
+          void Function(SaveDominionInsuranceResilienceCenterRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionInsuranceResilienceCenterRequest))
+          as SaveDominionInsuranceResilienceCenterRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionInsuranceResilienceCenterRequest create() =>
+      SaveDominionInsuranceResilienceCenterRequest._();
+  @$core.override
+  SaveDominionInsuranceResilienceCenterRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionInsuranceResilienceCenterRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionInsuranceResilienceCenterRequest>(create);
+  static SaveDominionInsuranceResilienceCenterRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get resilienceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set resilienceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasResilienceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResilienceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get policyLimitsDeductiblesAndGaps => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set policyLimitsDeductiblesAndGaps($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPolicyLimitsDeductiblesAndGaps() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPolicyLimitsDeductiblesAndGaps() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get perilRateAndVacancyStressBundle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set perilRateAndVacancyStressBundle($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPerilRateAndVacancyStressBundle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPerilRateAndVacancyStressBundle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get incidentCustodyAndClaimRecovery => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set incidentCustodyAndClaimRecovery($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIncidentCustodyAndClaimRecovery() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIncidentCustodyAndClaimRecovery() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get resilienceState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set resilienceState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasResilienceState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearResilienceState() => $_clearField(5);
+}
+
+class SaveDominionInsuranceResilienceCenterResponse
+    extends $pb.GeneratedMessage {
+  factory SaveDominionInsuranceResilienceCenterResponse({
+    DominionInsuranceResilienceCenterItem? center,
+  }) {
+    final result = create();
+    if (center != null) result.center = center;
+    return result;
+  }
+
+  SaveDominionInsuranceResilienceCenterResponse._();
+
+  factory SaveDominionInsuranceResilienceCenterResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionInsuranceResilienceCenterResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionInsuranceResilienceCenterResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionInsuranceResilienceCenterItem>(
+        1, _omitFieldNames ? '' : 'center',
+        subBuilder: DominionInsuranceResilienceCenterItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionInsuranceResilienceCenterResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionInsuranceResilienceCenterResponse copyWith(
+          void Function(SaveDominionInsuranceResilienceCenterResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionInsuranceResilienceCenterResponse))
+          as SaveDominionInsuranceResilienceCenterResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionInsuranceResilienceCenterResponse create() =>
+      SaveDominionInsuranceResilienceCenterResponse._();
+  @$core.override
+  SaveDominionInsuranceResilienceCenterResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionInsuranceResilienceCenterResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionInsuranceResilienceCenterResponse>(create);
+  static SaveDominionInsuranceResilienceCenterResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionInsuranceResilienceCenterItem get center => $_getN(0);
+  @$pb.TagNumber(1)
+  set center(DominionInsuranceResilienceCenterItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCenter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCenter() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionInsuranceResilienceCenterItem ensureCenter() => $_ensure(0);
+}
+
+class StageDominionClaimPackOrStressReviewRequest extends $pb.GeneratedMessage {
+  factory StageDominionClaimPackOrStressReviewRequest({
+    $core.String? resilienceCode,
+    $core.String? incidentCustodyAndClaimRecovery,
+    $core.String? resilienceState,
+  }) {
+    final result = create();
+    if (resilienceCode != null) result.resilienceCode = resilienceCode;
+    if (incidentCustodyAndClaimRecovery != null)
+      result.incidentCustodyAndClaimRecovery = incidentCustodyAndClaimRecovery;
+    if (resilienceState != null) result.resilienceState = resilienceState;
+    return result;
+  }
+
+  StageDominionClaimPackOrStressReviewRequest._();
+
+  factory StageDominionClaimPackOrStressReviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageDominionClaimPackOrStressReviewRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageDominionClaimPackOrStressReviewRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'resilienceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'incidentCustodyAndClaimRecovery')
+    ..aOS(3, _omitFieldNames ? '' : 'resilienceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionClaimPackOrStressReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionClaimPackOrStressReviewRequest copyWith(
+          void Function(StageDominionClaimPackOrStressReviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as StageDominionClaimPackOrStressReviewRequest))
+          as StageDominionClaimPackOrStressReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageDominionClaimPackOrStressReviewRequest create() =>
+      StageDominionClaimPackOrStressReviewRequest._();
+  @$core.override
+  StageDominionClaimPackOrStressReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StageDominionClaimPackOrStressReviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StageDominionClaimPackOrStressReviewRequest>(create);
+  static StageDominionClaimPackOrStressReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get resilienceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set resilienceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasResilienceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearResilienceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get incidentCustodyAndClaimRecovery => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set incidentCustodyAndClaimRecovery($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncidentCustodyAndClaimRecovery() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncidentCustodyAndClaimRecovery() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resilienceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resilienceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResilienceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResilienceState() => $_clearField(3);
+}
+
+class StageDominionClaimPackOrStressReviewResponse
+    extends $pb.GeneratedMessage {
+  factory StageDominionClaimPackOrStressReviewResponse({
+    DominionInsuranceResilienceCenterItem? center,
+  }) {
+    final result = create();
+    if (center != null) result.center = center;
+    return result;
+  }
+
+  StageDominionClaimPackOrStressReviewResponse._();
+
+  factory StageDominionClaimPackOrStressReviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StageDominionClaimPackOrStressReviewResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StageDominionClaimPackOrStressReviewResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionInsuranceResilienceCenterItem>(
+        1, _omitFieldNames ? '' : 'center',
+        subBuilder: DominionInsuranceResilienceCenterItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionClaimPackOrStressReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StageDominionClaimPackOrStressReviewResponse copyWith(
+          void Function(StageDominionClaimPackOrStressReviewResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as StageDominionClaimPackOrStressReviewResponse))
+          as StageDominionClaimPackOrStressReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StageDominionClaimPackOrStressReviewResponse create() =>
+      StageDominionClaimPackOrStressReviewResponse._();
+  @$core.override
+  StageDominionClaimPackOrStressReviewResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static StageDominionClaimPackOrStressReviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StageDominionClaimPackOrStressReviewResponse>(create);
+  static StageDominionClaimPackOrStressReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionInsuranceResilienceCenterItem get center => $_getN(0);
+  @$pb.TagNumber(1)
+  set center(DominionInsuranceResilienceCenterItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCenter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCenter() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionInsuranceResilienceCenterItem ensureCenter() => $_ensure(0);
+}
+
+/// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+class DominionUtilityBuildingPerformanceItem extends $pb.GeneratedMessage {
+  factory DominionUtilityBuildingPerformanceItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? utilityCode,
+    $core.String? meterTariffAndWeatherNormalizedUse,
+    $core.String? leakOrBaseloadAnomalyDetection,
+    $core.String? retrofitRoiAndMeasuredSavings,
+    $core.String? performanceState,
+    $core.bool? tenantUtilityPrivacyEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (utilityCode != null) result.utilityCode = utilityCode;
+    if (meterTariffAndWeatherNormalizedUse != null)
+      result.meterTariffAndWeatherNormalizedUse =
+          meterTariffAndWeatherNormalizedUse;
+    if (leakOrBaseloadAnomalyDetection != null)
+      result.leakOrBaseloadAnomalyDetection = leakOrBaseloadAnomalyDetection;
+    if (retrofitRoiAndMeasuredSavings != null)
+      result.retrofitRoiAndMeasuredSavings = retrofitRoiAndMeasuredSavings;
+    if (performanceState != null) result.performanceState = performanceState;
+    if (tenantUtilityPrivacyEnforced != null)
+      result.tenantUtilityPrivacyEnforced = tenantUtilityPrivacyEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  DominionUtilityBuildingPerformanceItem._();
+
+  factory DominionUtilityBuildingPerformanceItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DominionUtilityBuildingPerformanceItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DominionUtilityBuildingPerformanceItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'utilityCode')
+    ..aOS(4, _omitFieldNames ? '' : 'meterTariffAndWeatherNormalizedUse')
+    ..aOS(5, _omitFieldNames ? '' : 'leakOrBaseloadAnomalyDetection')
+    ..aOS(6, _omitFieldNames ? '' : 'retrofitRoiAndMeasuredSavings')
+    ..aOS(7, _omitFieldNames ? '' : 'performanceState')
+    ..aOB(8, _omitFieldNames ? '' : 'tenantUtilityPrivacyEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionUtilityBuildingPerformanceItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DominionUtilityBuildingPerformanceItem copyWith(
+          void Function(DominionUtilityBuildingPerformanceItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as DominionUtilityBuildingPerformanceItem))
+          as DominionUtilityBuildingPerformanceItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DominionUtilityBuildingPerformanceItem create() =>
+      DominionUtilityBuildingPerformanceItem._();
+  @$core.override
+  DominionUtilityBuildingPerformanceItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DominionUtilityBuildingPerformanceItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          DominionUtilityBuildingPerformanceItem>(create);
+  static DominionUtilityBuildingPerformanceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get utilityCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set utilityCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUtilityCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUtilityCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get meterTariffAndWeatherNormalizedUse => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set meterTariffAndWeatherNormalizedUse($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMeterTariffAndWeatherNormalizedUse() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMeterTariffAndWeatherNormalizedUse() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get leakOrBaseloadAnomalyDetection => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set leakOrBaseloadAnomalyDetection($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLeakOrBaseloadAnomalyDetection() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLeakOrBaseloadAnomalyDetection() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get retrofitRoiAndMeasuredSavings => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set retrofitRoiAndMeasuredSavings($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRetrofitRoiAndMeasuredSavings() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRetrofitRoiAndMeasuredSavings() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get performanceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set performanceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPerformanceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPerformanceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get tenantUtilityPrivacyEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set tenantUtilityPrivacyEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTenantUtilityPrivacyEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTenantUtilityPrivacyEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetDominionUtilityPerformanceWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetDominionUtilityPerformanceWorkbenchRequest() => create();
+
+  GetDominionUtilityPerformanceWorkbenchRequest._();
+
+  factory GetDominionUtilityPerformanceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionUtilityPerformanceWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionUtilityPerformanceWorkbenchRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUtilityPerformanceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUtilityPerformanceWorkbenchRequest copyWith(
+          void Function(GetDominionUtilityPerformanceWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDominionUtilityPerformanceWorkbenchRequest))
+          as GetDominionUtilityPerformanceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUtilityPerformanceWorkbenchRequest create() =>
+      GetDominionUtilityPerformanceWorkbenchRequest._();
+  @$core.override
+  GetDominionUtilityPerformanceWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUtilityPerformanceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionUtilityPerformanceWorkbenchRequest>(create);
+  static GetDominionUtilityPerformanceWorkbenchRequest? _defaultInstance;
+}
+
+class GetDominionUtilityPerformanceWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetDominionUtilityPerformanceWorkbenchResponse({
+    $core.Iterable<DominionUtilityBuildingPerformanceItem>? utilities,
+    $core.bool? tenantUtilityPrivacyEnforced,
+    $core.String? weatherNormalizedAndRetrofitSummary,
+  }) {
+    final result = create();
+    if (utilities != null) result.utilities.addAll(utilities);
+    if (tenantUtilityPrivacyEnforced != null)
+      result.tenantUtilityPrivacyEnforced = tenantUtilityPrivacyEnforced;
+    if (weatherNormalizedAndRetrofitSummary != null)
+      result.weatherNormalizedAndRetrofitSummary =
+          weatherNormalizedAndRetrofitSummary;
+    return result;
+  }
+
+  GetDominionUtilityPerformanceWorkbenchResponse._();
+
+  factory GetDominionUtilityPerformanceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDominionUtilityPerformanceWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDominionUtilityPerformanceWorkbenchResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..pPM<DominionUtilityBuildingPerformanceItem>(
+        1, _omitFieldNames ? '' : 'utilities',
+        subBuilder: DominionUtilityBuildingPerformanceItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'tenantUtilityPrivacyEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'weatherNormalizedAndRetrofitSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUtilityPerformanceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDominionUtilityPerformanceWorkbenchResponse copyWith(
+          void Function(GetDominionUtilityPerformanceWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetDominionUtilityPerformanceWorkbenchResponse))
+          as GetDominionUtilityPerformanceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUtilityPerformanceWorkbenchResponse create() =>
+      GetDominionUtilityPerformanceWorkbenchResponse._();
+  @$core.override
+  GetDominionUtilityPerformanceWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetDominionUtilityPerformanceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetDominionUtilityPerformanceWorkbenchResponse>(create);
+  static GetDominionUtilityPerformanceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DominionUtilityBuildingPerformanceItem> get utilities =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get tenantUtilityPrivacyEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set tenantUtilityPrivacyEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTenantUtilityPrivacyEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantUtilityPrivacyEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get weatherNormalizedAndRetrofitSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set weatherNormalizedAndRetrofitSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWeatherNormalizedAndRetrofitSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWeatherNormalizedAndRetrofitSummary() => $_clearField(3);
+}
+
+class SaveDominionUtilityBuildingPerformanceRequest
+    extends $pb.GeneratedMessage {
+  factory SaveDominionUtilityBuildingPerformanceRequest({
+    $core.String? utilityCode,
+    $core.String? meterTariffAndWeatherNormalizedUse,
+    $core.String? leakOrBaseloadAnomalyDetection,
+    $core.String? retrofitRoiAndMeasuredSavings,
+    $core.String? performanceState,
+  }) {
+    final result = create();
+    if (utilityCode != null) result.utilityCode = utilityCode;
+    if (meterTariffAndWeatherNormalizedUse != null)
+      result.meterTariffAndWeatherNormalizedUse =
+          meterTariffAndWeatherNormalizedUse;
+    if (leakOrBaseloadAnomalyDetection != null)
+      result.leakOrBaseloadAnomalyDetection = leakOrBaseloadAnomalyDetection;
+    if (retrofitRoiAndMeasuredSavings != null)
+      result.retrofitRoiAndMeasuredSavings = retrofitRoiAndMeasuredSavings;
+    if (performanceState != null) result.performanceState = performanceState;
+    return result;
+  }
+
+  SaveDominionUtilityBuildingPerformanceRequest._();
+
+  factory SaveDominionUtilityBuildingPerformanceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionUtilityBuildingPerformanceRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionUtilityBuildingPerformanceRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'utilityCode')
+    ..aOS(2, _omitFieldNames ? '' : 'meterTariffAndWeatherNormalizedUse')
+    ..aOS(3, _omitFieldNames ? '' : 'leakOrBaseloadAnomalyDetection')
+    ..aOS(4, _omitFieldNames ? '' : 'retrofitRoiAndMeasuredSavings')
+    ..aOS(5, _omitFieldNames ? '' : 'performanceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUtilityBuildingPerformanceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUtilityBuildingPerformanceRequest copyWith(
+          void Function(SaveDominionUtilityBuildingPerformanceRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveDominionUtilityBuildingPerformanceRequest))
+          as SaveDominionUtilityBuildingPerformanceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUtilityBuildingPerformanceRequest create() =>
+      SaveDominionUtilityBuildingPerformanceRequest._();
+  @$core.override
+  SaveDominionUtilityBuildingPerformanceRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUtilityBuildingPerformanceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionUtilityBuildingPerformanceRequest>(create);
+  static SaveDominionUtilityBuildingPerformanceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get utilityCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set utilityCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUtilityCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUtilityCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get meterTariffAndWeatherNormalizedUse => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set meterTariffAndWeatherNormalizedUse($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMeterTariffAndWeatherNormalizedUse() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMeterTariffAndWeatherNormalizedUse() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get leakOrBaseloadAnomalyDetection => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set leakOrBaseloadAnomalyDetection($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLeakOrBaseloadAnomalyDetection() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLeakOrBaseloadAnomalyDetection() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get retrofitRoiAndMeasuredSavings => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set retrofitRoiAndMeasuredSavings($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRetrofitRoiAndMeasuredSavings() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRetrofitRoiAndMeasuredSavings() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get performanceState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set performanceState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPerformanceState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPerformanceState() => $_clearField(5);
+}
+
+class SaveDominionUtilityBuildingPerformanceResponse
+    extends $pb.GeneratedMessage {
+  factory SaveDominionUtilityBuildingPerformanceResponse({
+    DominionUtilityBuildingPerformanceItem? utility,
+  }) {
+    final result = create();
+    if (utility != null) result.utility = utility;
+    return result;
+  }
+
+  SaveDominionUtilityBuildingPerformanceResponse._();
+
+  factory SaveDominionUtilityBuildingPerformanceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveDominionUtilityBuildingPerformanceResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveDominionUtilityBuildingPerformanceResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionUtilityBuildingPerformanceItem>(
+        1, _omitFieldNames ? '' : 'utility',
+        subBuilder: DominionUtilityBuildingPerformanceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUtilityBuildingPerformanceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveDominionUtilityBuildingPerformanceResponse copyWith(
+          void Function(SaveDominionUtilityBuildingPerformanceResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as SaveDominionUtilityBuildingPerformanceResponse))
+          as SaveDominionUtilityBuildingPerformanceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUtilityBuildingPerformanceResponse create() =>
+      SaveDominionUtilityBuildingPerformanceResponse._();
+  @$core.override
+  SaveDominionUtilityBuildingPerformanceResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveDominionUtilityBuildingPerformanceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveDominionUtilityBuildingPerformanceResponse>(create);
+  static SaveDominionUtilityBuildingPerformanceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionUtilityBuildingPerformanceItem get utility => $_getN(0);
+  @$pb.TagNumber(1)
+  set utility(DominionUtilityBuildingPerformanceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUtility() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUtility() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionUtilityBuildingPerformanceItem ensureUtility() => $_ensure(0);
+}
+
+class VerifyDominionRetrofitSavingsOrAnomalyRequest
+    extends $pb.GeneratedMessage {
+  factory VerifyDominionRetrofitSavingsOrAnomalyRequest({
+    $core.String? utilityCode,
+    $core.String? retrofitRoiAndMeasuredSavings,
+    $core.String? performanceState,
+  }) {
+    final result = create();
+    if (utilityCode != null) result.utilityCode = utilityCode;
+    if (retrofitRoiAndMeasuredSavings != null)
+      result.retrofitRoiAndMeasuredSavings = retrofitRoiAndMeasuredSavings;
+    if (performanceState != null) result.performanceState = performanceState;
+    return result;
+  }
+
+  VerifyDominionRetrofitSavingsOrAnomalyRequest._();
+
+  factory VerifyDominionRetrofitSavingsOrAnomalyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyDominionRetrofitSavingsOrAnomalyRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyDominionRetrofitSavingsOrAnomalyRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'utilityCode')
+    ..aOS(2, _omitFieldNames ? '' : 'retrofitRoiAndMeasuredSavings')
+    ..aOS(3, _omitFieldNames ? '' : 'performanceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionRetrofitSavingsOrAnomalyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionRetrofitSavingsOrAnomalyRequest copyWith(
+          void Function(VerifyDominionRetrofitSavingsOrAnomalyRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyDominionRetrofitSavingsOrAnomalyRequest))
+          as VerifyDominionRetrofitSavingsOrAnomalyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionRetrofitSavingsOrAnomalyRequest create() =>
+      VerifyDominionRetrofitSavingsOrAnomalyRequest._();
+  @$core.override
+  VerifyDominionRetrofitSavingsOrAnomalyRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionRetrofitSavingsOrAnomalyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyDominionRetrofitSavingsOrAnomalyRequest>(create);
+  static VerifyDominionRetrofitSavingsOrAnomalyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get utilityCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set utilityCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUtilityCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUtilityCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get retrofitRoiAndMeasuredSavings => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set retrofitRoiAndMeasuredSavings($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRetrofitRoiAndMeasuredSavings() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRetrofitRoiAndMeasuredSavings() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get performanceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set performanceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPerformanceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPerformanceState() => $_clearField(3);
+}
+
+class VerifyDominionRetrofitSavingsOrAnomalyResponse
+    extends $pb.GeneratedMessage {
+  factory VerifyDominionRetrofitSavingsOrAnomalyResponse({
+    DominionUtilityBuildingPerformanceItem? utility,
+  }) {
+    final result = create();
+    if (utility != null) result.utility = utility;
+    return result;
+  }
+
+  VerifyDominionRetrofitSavingsOrAnomalyResponse._();
+
+  factory VerifyDominionRetrofitSavingsOrAnomalyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyDominionRetrofitSavingsOrAnomalyResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyDominionRetrofitSavingsOrAnomalyResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'sttattus.dominion.v1'),
+      createEmptyInstance: create)
+    ..aOM<DominionUtilityBuildingPerformanceItem>(
+        1, _omitFieldNames ? '' : 'utility',
+        subBuilder: DominionUtilityBuildingPerformanceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionRetrofitSavingsOrAnomalyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyDominionRetrofitSavingsOrAnomalyResponse copyWith(
+          void Function(VerifyDominionRetrofitSavingsOrAnomalyResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as VerifyDominionRetrofitSavingsOrAnomalyResponse))
+          as VerifyDominionRetrofitSavingsOrAnomalyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionRetrofitSavingsOrAnomalyResponse create() =>
+      VerifyDominionRetrofitSavingsOrAnomalyResponse._();
+  @$core.override
+  VerifyDominionRetrofitSavingsOrAnomalyResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyDominionRetrofitSavingsOrAnomalyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyDominionRetrofitSavingsOrAnomalyResponse>(create);
+  static VerifyDominionRetrofitSavingsOrAnomalyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  DominionUtilityBuildingPerformanceItem get utility => $_getN(0);
+  @$pb.TagNumber(1)
+  set utility(DominionUtilityBuildingPerformanceItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUtility() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUtility() => $_clearField(1);
+  @$pb.TagNumber(1)
+  DominionUtilityBuildingPerformanceItem ensureUtility() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

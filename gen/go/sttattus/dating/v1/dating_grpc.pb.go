@@ -19,83 +19,107 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DatingService_GetProfile_FullMethodName                 = "/sttattus.dating.v1.DatingService/GetProfile"
-	DatingService_UpdateProfile_FullMethodName              = "/sttattus.dating.v1.DatingService/UpdateProfile"
-	DatingService_StreamDiscovery_FullMethodName            = "/sttattus.dating.v1.DatingService/StreamDiscovery"
-	DatingService_Swipe_FullMethodName                      = "/sttattus.dating.v1.DatingService/Swipe"
-	DatingService_ListMatches_FullMethodName                = "/sttattus.dating.v1.DatingService/ListMatches"
-	DatingService_Unmatch_FullMethodName                    = "/sttattus.dating.v1.DatingService/Unmatch"
-	DatingService_StreamMessages_FullMethodName             = "/sttattus.dating.v1.DatingService/StreamMessages"
-	DatingService_SendMessage_FullMethodName                = "/sttattus.dating.v1.DatingService/SendMessage"
-	DatingService_StartVerification_FullMethodName          = "/sttattus.dating.v1.DatingService/StartVerification"
-	DatingService_GetLatestVerification_FullMethodName      = "/sttattus.dating.v1.DatingService/GetLatestVerification"
-	DatingService_ListTensionSeats_FullMethodName           = "/sttattus.dating.v1.DatingService/ListTensionSeats"
-	DatingService_PlaceTensionBid_FullMethodName            = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
-	DatingService_ReleaseTensionSeat_FullMethodName         = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
-	DatingService_ListAuthorAkashic_FullMethodName          = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
-	DatingService_ListVisibleAkashic_FullMethodName         = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
-	DatingService_UpsertAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
-	DatingService_DeleteAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
-	DatingService_ReportAkashicChapter_FullMethodName       = "/sttattus.dating.v1.DatingService/ReportAkashicChapter"
-	DatingService_ListMyBlocks_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMyBlocks"
-	DatingService_BlockUser_FullMethodName                  = "/sttattus.dating.v1.DatingService/BlockUser"
-	DatingService_UnblockUser_FullMethodName                = "/sttattus.dating.v1.DatingService/UnblockUser"
-	DatingService_ListMyReports_FullMethodName              = "/sttattus.dating.v1.DatingService/ListMyReports"
-	DatingService_ReportUser_FullMethodName                 = "/sttattus.dating.v1.DatingService/ReportUser"
-	DatingService_GetPanicContact_FullMethodName            = "/sttattus.dating.v1.DatingService/GetPanicContact"
-	DatingService_UpsertPanicContact_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
-	DatingService_TriggerPanicAlert_FullMethodName          = "/sttattus.dating.v1.DatingService/TriggerPanicAlert"
-	DatingService_ListMyPanicAlerts_FullMethodName          = "/sttattus.dating.v1.DatingService/ListMyPanicAlerts"
-	DatingService_GetPrivacyAxes_FullMethodName             = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
-	DatingService_UpsertPrivacyAxes_FullMethodName          = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
-	DatingService_ListAtlasMapPoints_FullMethodName         = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
-	DatingService_ListAtlasGroups_FullMethodName            = "/sttattus.dating.v1.DatingService/ListAtlasGroups"
-	DatingService_CreateAtlasGroup_FullMethodName           = "/sttattus.dating.v1.DatingService/CreateAtlasGroup"
-	DatingService_JoinAtlasGroup_FullMethodName             = "/sttattus.dating.v1.DatingService/JoinAtlasGroup"
-	DatingService_LeaveAtlasGroup_FullMethodName            = "/sttattus.dating.v1.DatingService/LeaveAtlasGroup"
-	DatingService_CloseAtlasGroup_FullMethodName            = "/sttattus.dating.v1.DatingService/CloseAtlasGroup"
-	DatingService_ReportAtlasGroup_FullMethodName           = "/sttattus.dating.v1.DatingService/ReportAtlasGroup"
-	DatingService_ListLiveRooms_FullMethodName              = "/sttattus.dating.v1.DatingService/ListLiveRooms"
-	DatingService_CreateAgoraRoom_FullMethodName            = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
-	DatingService_EndAgoraRoom_FullMethodName               = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
-	DatingService_MintLiveKitToken_FullMethodName           = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
-	DatingService_AttachMediaToMessage_FullMethodName       = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
-	DatingService_ListMessageAttachments_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
-	DatingService_ListRestaurants_FullMethodName            = "/sttattus.dating.v1.DatingService/ListRestaurants"
-	DatingService_CreateReservation_FullMethodName          = "/sttattus.dating.v1.DatingService/CreateReservation"
-	DatingService_ListMyReservations_FullMethodName         = "/sttattus.dating.v1.DatingService/ListMyReservations"
-	DatingService_CancelReservation_FullMethodName          = "/sttattus.dating.v1.DatingService/CancelReservation"
-	DatingService_GetCompatibilityMatrix_FullMethodName     = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
-	DatingService_SendGift_FullMethodName                   = "/sttattus.dating.v1.DatingService/SendGift"
-	DatingService_ListGiftLedger_FullMethodName             = "/sttattus.dating.v1.DatingService/ListGiftLedger"
-	DatingService_GetDiscoveryPreferences_FullMethodName    = "/sttattus.dating.v1.DatingService/GetDiscoveryPreferences"
-	DatingService_UpdateDiscoveryPreferences_FullMethodName = "/sttattus.dating.v1.DatingService/UpdateDiscoveryPreferences"
-	DatingService_ListMissions_FullMethodName               = "/sttattus.dating.v1.DatingService/ListMissions"
-	DatingService_CompleteMission_FullMethodName            = "/sttattus.dating.v1.DatingService/CompleteMission"
-	DatingService_StartConciergeThread_FullMethodName       = "/sttattus.dating.v1.DatingService/StartConciergeThread"
-	DatingService_ListMyConciergeThreads_FullMethodName     = "/sttattus.dating.v1.DatingService/ListMyConciergeThreads"
-	DatingService_GetConciergeThread_FullMethodName         = "/sttattus.dating.v1.DatingService/GetConciergeThread"
-	DatingService_PostConciergeMessage_FullMethodName       = "/sttattus.dating.v1.DatingService/PostConciergeMessage"
-	DatingService_ListMatchmakerProposals_FullMethodName    = "/sttattus.dating.v1.DatingService/ListMatchmakerProposals"
-	DatingService_RespondMatchmakerProposal_FullMethodName  = "/sttattus.dating.v1.DatingService/RespondMatchmakerProposal"
-	DatingService_ListAtlasLetters_FullMethodName           = "/sttattus.dating.v1.DatingService/ListAtlasLetters"
-	DatingService_GetAtlasLetter_FullMethodName             = "/sttattus.dating.v1.DatingService/GetAtlasLetter"
-	DatingService_ListEvents_FullMethodName                 = "/sttattus.dating.v1.DatingService/ListEvents"
-	DatingService_RsvpEvent_FullMethodName                  = "/sttattus.dating.v1.DatingService/RsvpEvent"
-	DatingService_ListMyEventRsvps_FullMethodName           = "/sttattus.dating.v1.DatingService/ListMyEventRsvps"
-	DatingService_GetCrossPillarGate_FullMethodName         = "/sttattus.dating.v1.DatingService/GetCrossPillarGate"
-	DatingService_CreateProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/CreateProfileShare"
-	DatingService_ListMyProfileShares_FullMethodName        = "/sttattus.dating.v1.DatingService/ListMyProfileShares"
-	DatingService_RevokeProfileShare_FullMethodName         = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
-	DatingService_GenerateAtlasYearbook_FullMethodName      = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
-	DatingService_CheckInEvent_FullMethodName               = "/sttattus.dating.v1.DatingService/CheckInEvent"
-	DatingService_ListDatingPhotos_FullMethodName           = "/sttattus.dating.v1.DatingService/ListDatingPhotos"
-	DatingService_AddDatingPhoto_FullMethodName             = "/sttattus.dating.v1.DatingService/AddDatingPhoto"
-	DatingService_RemoveDatingPhoto_FullMethodName          = "/sttattus.dating.v1.DatingService/RemoveDatingPhoto"
-	DatingService_ReorderDatingPhotos_FullMethodName        = "/sttattus.dating.v1.DatingService/ReorderDatingPhotos"
-	DatingService_SetPrimaryDatingPhoto_FullMethodName      = "/sttattus.dating.v1.DatingService/SetPrimaryDatingPhoto"
-	DatingService_SetVoiceBaseline_FullMethodName           = "/sttattus.dating.v1.DatingService/SetVoiceBaseline"
-	DatingService_RemoveVoiceBaseline_FullMethodName        = "/sttattus.dating.v1.DatingService/RemoveVoiceBaseline"
+	DatingService_GetProfile_FullMethodName                               = "/sttattus.dating.v1.DatingService/GetProfile"
+	DatingService_UpdateProfile_FullMethodName                            = "/sttattus.dating.v1.DatingService/UpdateProfile"
+	DatingService_StreamDiscovery_FullMethodName                          = "/sttattus.dating.v1.DatingService/StreamDiscovery"
+	DatingService_Swipe_FullMethodName                                    = "/sttattus.dating.v1.DatingService/Swipe"
+	DatingService_ListMatches_FullMethodName                              = "/sttattus.dating.v1.DatingService/ListMatches"
+	DatingService_Unmatch_FullMethodName                                  = "/sttattus.dating.v1.DatingService/Unmatch"
+	DatingService_StreamMessages_FullMethodName                           = "/sttattus.dating.v1.DatingService/StreamMessages"
+	DatingService_SendMessage_FullMethodName                              = "/sttattus.dating.v1.DatingService/SendMessage"
+	DatingService_StartVerification_FullMethodName                        = "/sttattus.dating.v1.DatingService/StartVerification"
+	DatingService_GetLatestVerification_FullMethodName                    = "/sttattus.dating.v1.DatingService/GetLatestVerification"
+	DatingService_ListTensionSeats_FullMethodName                         = "/sttattus.dating.v1.DatingService/ListTensionSeats"
+	DatingService_PlaceTensionBid_FullMethodName                          = "/sttattus.dating.v1.DatingService/PlaceTensionBid"
+	DatingService_ReleaseTensionSeat_FullMethodName                       = "/sttattus.dating.v1.DatingService/ReleaseTensionSeat"
+	DatingService_ListAuthorAkashic_FullMethodName                        = "/sttattus.dating.v1.DatingService/ListAuthorAkashic"
+	DatingService_ListVisibleAkashic_FullMethodName                       = "/sttattus.dating.v1.DatingService/ListVisibleAkashic"
+	DatingService_UpsertAkashicChapter_FullMethodName                     = "/sttattus.dating.v1.DatingService/UpsertAkashicChapter"
+	DatingService_DeleteAkashicChapter_FullMethodName                     = "/sttattus.dating.v1.DatingService/DeleteAkashicChapter"
+	DatingService_ReportAkashicChapter_FullMethodName                     = "/sttattus.dating.v1.DatingService/ReportAkashicChapter"
+	DatingService_ListMyBlocks_FullMethodName                             = "/sttattus.dating.v1.DatingService/ListMyBlocks"
+	DatingService_BlockUser_FullMethodName                                = "/sttattus.dating.v1.DatingService/BlockUser"
+	DatingService_UnblockUser_FullMethodName                              = "/sttattus.dating.v1.DatingService/UnblockUser"
+	DatingService_ListMyReports_FullMethodName                            = "/sttattus.dating.v1.DatingService/ListMyReports"
+	DatingService_ReportUser_FullMethodName                               = "/sttattus.dating.v1.DatingService/ReportUser"
+	DatingService_GetPanicContact_FullMethodName                          = "/sttattus.dating.v1.DatingService/GetPanicContact"
+	DatingService_UpsertPanicContact_FullMethodName                       = "/sttattus.dating.v1.DatingService/UpsertPanicContact"
+	DatingService_TriggerPanicAlert_FullMethodName                        = "/sttattus.dating.v1.DatingService/TriggerPanicAlert"
+	DatingService_ListMyPanicAlerts_FullMethodName                        = "/sttattus.dating.v1.DatingService/ListMyPanicAlerts"
+	DatingService_GetPrivacyAxes_FullMethodName                           = "/sttattus.dating.v1.DatingService/GetPrivacyAxes"
+	DatingService_UpsertPrivacyAxes_FullMethodName                        = "/sttattus.dating.v1.DatingService/UpsertPrivacyAxes"
+	DatingService_ListAtlasMapPoints_FullMethodName                       = "/sttattus.dating.v1.DatingService/ListAtlasMapPoints"
+	DatingService_ListAtlasGroups_FullMethodName                          = "/sttattus.dating.v1.DatingService/ListAtlasGroups"
+	DatingService_CreateAtlasGroup_FullMethodName                         = "/sttattus.dating.v1.DatingService/CreateAtlasGroup"
+	DatingService_JoinAtlasGroup_FullMethodName                           = "/sttattus.dating.v1.DatingService/JoinAtlasGroup"
+	DatingService_LeaveAtlasGroup_FullMethodName                          = "/sttattus.dating.v1.DatingService/LeaveAtlasGroup"
+	DatingService_CloseAtlasGroup_FullMethodName                          = "/sttattus.dating.v1.DatingService/CloseAtlasGroup"
+	DatingService_ReportAtlasGroup_FullMethodName                         = "/sttattus.dating.v1.DatingService/ReportAtlasGroup"
+	DatingService_ListLiveRooms_FullMethodName                            = "/sttattus.dating.v1.DatingService/ListLiveRooms"
+	DatingService_CreateAgoraRoom_FullMethodName                          = "/sttattus.dating.v1.DatingService/CreateAgoraRoom"
+	DatingService_EndAgoraRoom_FullMethodName                             = "/sttattus.dating.v1.DatingService/EndAgoraRoom"
+	DatingService_MintLiveKitToken_FullMethodName                         = "/sttattus.dating.v1.DatingService/MintLiveKitToken"
+	DatingService_AttachMediaToMessage_FullMethodName                     = "/sttattus.dating.v1.DatingService/AttachMediaToMessage"
+	DatingService_ListMessageAttachments_FullMethodName                   = "/sttattus.dating.v1.DatingService/ListMessageAttachments"
+	DatingService_ListRestaurants_FullMethodName                          = "/sttattus.dating.v1.DatingService/ListRestaurants"
+	DatingService_CreateReservation_FullMethodName                        = "/sttattus.dating.v1.DatingService/CreateReservation"
+	DatingService_ListMyReservations_FullMethodName                       = "/sttattus.dating.v1.DatingService/ListMyReservations"
+	DatingService_CancelReservation_FullMethodName                        = "/sttattus.dating.v1.DatingService/CancelReservation"
+	DatingService_GetCompatibilityMatrix_FullMethodName                   = "/sttattus.dating.v1.DatingService/GetCompatibilityMatrix"
+	DatingService_SendGift_FullMethodName                                 = "/sttattus.dating.v1.DatingService/SendGift"
+	DatingService_ListGiftLedger_FullMethodName                           = "/sttattus.dating.v1.DatingService/ListGiftLedger"
+	DatingService_GetDiscoveryPreferences_FullMethodName                  = "/sttattus.dating.v1.DatingService/GetDiscoveryPreferences"
+	DatingService_UpdateDiscoveryPreferences_FullMethodName               = "/sttattus.dating.v1.DatingService/UpdateDiscoveryPreferences"
+	DatingService_ListMissions_FullMethodName                             = "/sttattus.dating.v1.DatingService/ListMissions"
+	DatingService_CompleteMission_FullMethodName                          = "/sttattus.dating.v1.DatingService/CompleteMission"
+	DatingService_StartConciergeThread_FullMethodName                     = "/sttattus.dating.v1.DatingService/StartConciergeThread"
+	DatingService_ListMyConciergeThreads_FullMethodName                   = "/sttattus.dating.v1.DatingService/ListMyConciergeThreads"
+	DatingService_GetConciergeThread_FullMethodName                       = "/sttattus.dating.v1.DatingService/GetConciergeThread"
+	DatingService_PostConciergeMessage_FullMethodName                     = "/sttattus.dating.v1.DatingService/PostConciergeMessage"
+	DatingService_ListMatchmakerProposals_FullMethodName                  = "/sttattus.dating.v1.DatingService/ListMatchmakerProposals"
+	DatingService_RespondMatchmakerProposal_FullMethodName                = "/sttattus.dating.v1.DatingService/RespondMatchmakerProposal"
+	DatingService_ListAtlasLetters_FullMethodName                         = "/sttattus.dating.v1.DatingService/ListAtlasLetters"
+	DatingService_GetAtlasLetter_FullMethodName                           = "/sttattus.dating.v1.DatingService/GetAtlasLetter"
+	DatingService_ListEvents_FullMethodName                               = "/sttattus.dating.v1.DatingService/ListEvents"
+	DatingService_RsvpEvent_FullMethodName                                = "/sttattus.dating.v1.DatingService/RsvpEvent"
+	DatingService_ListMyEventRsvps_FullMethodName                         = "/sttattus.dating.v1.DatingService/ListMyEventRsvps"
+	DatingService_GetCrossPillarGate_FullMethodName                       = "/sttattus.dating.v1.DatingService/GetCrossPillarGate"
+	DatingService_CreateProfileShare_FullMethodName                       = "/sttattus.dating.v1.DatingService/CreateProfileShare"
+	DatingService_ListMyProfileShares_FullMethodName                      = "/sttattus.dating.v1.DatingService/ListMyProfileShares"
+	DatingService_RevokeProfileShare_FullMethodName                       = "/sttattus.dating.v1.DatingService/RevokeProfileShare"
+	DatingService_GenerateAtlasYearbook_FullMethodName                    = "/sttattus.dating.v1.DatingService/GenerateAtlasYearbook"
+	DatingService_CheckInEvent_FullMethodName                             = "/sttattus.dating.v1.DatingService/CheckInEvent"
+	DatingService_ListDatingPhotos_FullMethodName                         = "/sttattus.dating.v1.DatingService/ListDatingPhotos"
+	DatingService_AddDatingPhoto_FullMethodName                           = "/sttattus.dating.v1.DatingService/AddDatingPhoto"
+	DatingService_RemoveDatingPhoto_FullMethodName                        = "/sttattus.dating.v1.DatingService/RemoveDatingPhoto"
+	DatingService_ReorderDatingPhotos_FullMethodName                      = "/sttattus.dating.v1.DatingService/ReorderDatingPhotos"
+	DatingService_SetPrimaryDatingPhoto_FullMethodName                    = "/sttattus.dating.v1.DatingService/SetPrimaryDatingPhoto"
+	DatingService_SetVoiceBaseline_FullMethodName                         = "/sttattus.dating.v1.DatingService/SetVoiceBaseline"
+	DatingService_RemoveVoiceBaseline_FullMethodName                      = "/sttattus.dating.v1.DatingService/RemoveVoiceBaseline"
+	DatingService_GetRelationshipProgressionWorkbench_FullMethodName      = "/sttattus.dating.v1.DatingService/GetRelationshipProgressionWorkbench"
+	DatingService_UpsertRelationshipStageAgreement_FullMethodName         = "/sttattus.dating.v1.DatingService/UpsertRelationshipStageAgreement"
+	DatingService_RecordRelationshipCheckinReflection_FullMethodName      = "/sttattus.dating.v1.DatingService/RecordRelationshipCheckinReflection"
+	DatingService_InitiateSafeUncouplingPlan_FullMethodName               = "/sttattus.dating.v1.DatingService/InitiateSafeUncouplingPlan"
+	DatingService_AdminListRelationshipProgressionAudit_FullMethodName    = "/sttattus.dating.v1.DatingService/AdminListRelationshipProgressionAudit"
+	DatingService_AdminModerateRelationshipPromptSafety_FullMethodName    = "/sttattus.dating.v1.DatingService/AdminModerateRelationshipPromptSafety"
+	DatingService_GetFriendshipCrewsWorkbench_FullMethodName              = "/sttattus.dating.v1.DatingService/GetFriendshipCrewsWorkbench"
+	DatingService_CreateTemporaryCrew_FullMethodName                      = "/sttattus.dating.v1.DatingService/CreateTemporaryCrew"
+	DatingService_SubmitCrewMissionEvidence_FullMethodName                = "/sttattus.dating.v1.DatingService/SubmitCrewMissionEvidence"
+	DatingService_DissolveOrCompleteCrew_FullMethodName                   = "/sttattus.dating.v1.DatingService/DissolveOrCompleteCrew"
+	DatingService_AdminListFriendshipCrewsAudit_FullMethodName            = "/sttattus.dating.v1.DatingService/AdminListFriendshipCrewsAudit"
+	DatingService_AdminModerateCrewSafetyAndMission_FullMethodName        = "/sttattus.dating.v1.DatingService/AdminModerateCrewSafetyAndMission"
+	DatingService_GetConnectionArchiveWorkbench_FullMethodName            = "/sttattus.dating.v1.DatingService/GetConnectionArchiveWorkbench"
+	DatingService_UpsertConnectionArchiveEntry_FullMethodName             = "/sttattus.dating.v1.DatingService/UpsertConnectionArchiveEntry"
+	DatingService_SendMeaningfulGuardedGift_FullMethodName                = "/sttattus.dating.v1.DatingService/SendMeaningfulGuardedGift"
+	DatingService_ApproveYearbookPreviewManifest_FullMethodName           = "/sttattus.dating.v1.DatingService/ApproveYearbookPreviewManifest"
+	DatingService_AdminListConnectionArchiveAudit_FullMethodName          = "/sttattus.dating.v1.DatingService/AdminListConnectionArchiveAudit"
+	DatingService_AdminResolveGiftOrArchiveDispute_FullMethodName         = "/sttattus.dating.v1.DatingService/AdminResolveGiftOrArchiveDispute"
+	DatingService_GetInclusiveGlobalReleaseWorkbench_FullMethodName       = "/sttattus.dating.v1.DatingService/GetInclusiveGlobalReleaseWorkbench"
+	DatingService_UpdateAccessibleInclusionProfile_FullMethodName         = "/sttattus.dating.v1.DatingService/UpdateAccessibleInclusionProfile"
+	DatingService_GeneratePortableConnectionBundle_FullMethodName         = "/sttattus.dating.v1.DatingService/GeneratePortableConnectionBundle"
+	DatingService_VerifyJurisdictionOfflineSafetyPack_FullMethodName      = "/sttattus.dating.v1.DatingService/VerifyJurisdictionOfflineSafetyPack"
+	DatingService_AdminListGlobalReleaseCertificationAudit_FullMethodName = "/sttattus.dating.v1.DatingService/AdminListGlobalReleaseCertificationAudit"
+	DatingService_AdminCertifyJurisdictionReleaseGate_FullMethodName      = "/sttattus.dating.v1.DatingService/AdminCertifyJurisdictionReleaseGate"
 )
 
 // DatingServiceClient is the client API for DatingService service.
@@ -209,6 +233,34 @@ type DatingServiceClient interface {
 	// client-supplied URL, exactly as AddDatingPhoto does.
 	SetVoiceBaseline(ctx context.Context, in *SetVoiceBaselineRequest, opts ...grpc.CallOption) (*SetVoiceBaselineResponse, error)
 	RemoveVoiceBaseline(ctx context.Context, in *RemoveVoiceBaselineRequest, opts ...grpc.CallOption) (*RemoveVoiceBaselineResponse, error)
+	// --- Atlas Choice 12 (AT11): Relationship Progression and Separation ---
+	GetRelationshipProgressionWorkbench(ctx context.Context, in *GetRelationshipProgressionWorkbenchRequest, opts ...grpc.CallOption) (*GetRelationshipProgressionWorkbenchResponse, error)
+	UpsertRelationshipStageAgreement(ctx context.Context, in *UpsertRelationshipStageAgreementRequest, opts ...grpc.CallOption) (*UpsertRelationshipStageAgreementResponse, error)
+	RecordRelationshipCheckinReflection(ctx context.Context, in *RecordRelationshipCheckinReflectionRequest, opts ...grpc.CallOption) (*RecordRelationshipCheckinReflectionResponse, error)
+	InitiateSafeUncouplingPlan(ctx context.Context, in *InitiateSafeUncouplingPlanRequest, opts ...grpc.CallOption) (*InitiateSafeUncouplingPlanResponse, error)
+	AdminListRelationshipProgressionAudit(ctx context.Context, in *AdminListRelationshipProgressionAuditRequest, opts ...grpc.CallOption) (*AdminListRelationshipProgressionAuditResponse, error)
+	AdminModerateRelationshipPromptSafety(ctx context.Context, in *AdminModerateRelationshipPromptSafetyRequest, opts ...grpc.CallOption) (*AdminModerateRelationshipPromptSafetyResponse, error)
+	// --- Atlas Choice 13 (AT12): Friendship, Crews, and Missions ---
+	GetFriendshipCrewsWorkbench(ctx context.Context, in *GetFriendshipCrewsWorkbenchRequest, opts ...grpc.CallOption) (*GetFriendshipCrewsWorkbenchResponse, error)
+	CreateTemporaryCrew(ctx context.Context, in *CreateTemporaryCrewRequest, opts ...grpc.CallOption) (*CreateTemporaryCrewResponse, error)
+	SubmitCrewMissionEvidence(ctx context.Context, in *SubmitCrewMissionEvidenceRequest, opts ...grpc.CallOption) (*SubmitCrewMissionEvidenceResponse, error)
+	DissolveOrCompleteCrew(ctx context.Context, in *DissolveOrCompleteCrewRequest, opts ...grpc.CallOption) (*DissolveOrCompleteCrewResponse, error)
+	AdminListFriendshipCrewsAudit(ctx context.Context, in *AdminListFriendshipCrewsAuditRequest, opts ...grpc.CallOption) (*AdminListFriendshipCrewsAuditResponse, error)
+	AdminModerateCrewSafetyAndMission(ctx context.Context, in *AdminModerateCrewSafetyAndMissionRequest, opts ...grpc.CallOption) (*AdminModerateCrewSafetyAndMissionResponse, error)
+	// --- Atlas Choice 14 (AT13): Connection Archive and Meaningful Gifting ---
+	GetConnectionArchiveWorkbench(ctx context.Context, in *GetConnectionArchiveWorkbenchRequest, opts ...grpc.CallOption) (*GetConnectionArchiveWorkbenchResponse, error)
+	UpsertConnectionArchiveEntry(ctx context.Context, in *UpsertConnectionArchiveEntryRequest, opts ...grpc.CallOption) (*UpsertConnectionArchiveEntryResponse, error)
+	SendMeaningfulGuardedGift(ctx context.Context, in *SendMeaningfulGuardedGiftRequest, opts ...grpc.CallOption) (*SendMeaningfulGuardedGiftResponse, error)
+	ApproveYearbookPreviewManifest(ctx context.Context, in *ApproveYearbookPreviewManifestRequest, opts ...grpc.CallOption) (*ApproveYearbookPreviewManifestResponse, error)
+	AdminListConnectionArchiveAudit(ctx context.Context, in *AdminListConnectionArchiveAuditRequest, opts ...grpc.CallOption) (*AdminListConnectionArchiveAuditResponse, error)
+	AdminResolveGiftOrArchiveDispute(ctx context.Context, in *AdminResolveGiftOrArchiveDisputeRequest, opts ...grpc.CallOption) (*AdminResolveGiftOrArchiveDisputeResponse, error)
+	// --- Atlas Choice 15 (AT15): Inclusive and Global Release Certification ---
+	GetInclusiveGlobalReleaseWorkbench(ctx context.Context, in *GetInclusiveGlobalReleaseWorkbenchRequest, opts ...grpc.CallOption) (*GetInclusiveGlobalReleaseWorkbenchResponse, error)
+	UpdateAccessibleInclusionProfile(ctx context.Context, in *UpdateAccessibleInclusionProfileRequest, opts ...grpc.CallOption) (*UpdateAccessibleInclusionProfileResponse, error)
+	GeneratePortableConnectionBundle(ctx context.Context, in *GeneratePortableConnectionBundleRequest, opts ...grpc.CallOption) (*GeneratePortableConnectionBundleResponse, error)
+	VerifyJurisdictionOfflineSafetyPack(ctx context.Context, in *VerifyJurisdictionOfflineSafetyPackRequest, opts ...grpc.CallOption) (*VerifyJurisdictionOfflineSafetyPackResponse, error)
+	AdminListGlobalReleaseCertificationAudit(ctx context.Context, in *AdminListGlobalReleaseCertificationAuditRequest, opts ...grpc.CallOption) (*AdminListGlobalReleaseCertificationAuditResponse, error)
+	AdminCertifyJurisdictionReleaseGate(ctx context.Context, in *AdminCertifyJurisdictionReleaseGateRequest, opts ...grpc.CallOption) (*AdminCertifyJurisdictionReleaseGateResponse, error)
 }
 
 type datingServiceClient struct {
@@ -1007,6 +1059,246 @@ func (c *datingServiceClient) RemoveVoiceBaseline(ctx context.Context, in *Remov
 	return out, nil
 }
 
+func (c *datingServiceClient) GetRelationshipProgressionWorkbench(ctx context.Context, in *GetRelationshipProgressionWorkbenchRequest, opts ...grpc.CallOption) (*GetRelationshipProgressionWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRelationshipProgressionWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetRelationshipProgressionWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpsertRelationshipStageAgreement(ctx context.Context, in *UpsertRelationshipStageAgreementRequest, opts ...grpc.CallOption) (*UpsertRelationshipStageAgreementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertRelationshipStageAgreementResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpsertRelationshipStageAgreement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) RecordRelationshipCheckinReflection(ctx context.Context, in *RecordRelationshipCheckinReflectionRequest, opts ...grpc.CallOption) (*RecordRelationshipCheckinReflectionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordRelationshipCheckinReflectionResponse)
+	err := c.cc.Invoke(ctx, DatingService_RecordRelationshipCheckinReflection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) InitiateSafeUncouplingPlan(ctx context.Context, in *InitiateSafeUncouplingPlanRequest, opts ...grpc.CallOption) (*InitiateSafeUncouplingPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InitiateSafeUncouplingPlanResponse)
+	err := c.cc.Invoke(ctx, DatingService_InitiateSafeUncouplingPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminListRelationshipProgressionAudit(ctx context.Context, in *AdminListRelationshipProgressionAuditRequest, opts ...grpc.CallOption) (*AdminListRelationshipProgressionAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListRelationshipProgressionAuditResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminListRelationshipProgressionAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminModerateRelationshipPromptSafety(ctx context.Context, in *AdminModerateRelationshipPromptSafetyRequest, opts ...grpc.CallOption) (*AdminModerateRelationshipPromptSafetyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateRelationshipPromptSafetyResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminModerateRelationshipPromptSafety_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetFriendshipCrewsWorkbench(ctx context.Context, in *GetFriendshipCrewsWorkbenchRequest, opts ...grpc.CallOption) (*GetFriendshipCrewsWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetFriendshipCrewsWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetFriendshipCrewsWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) CreateTemporaryCrew(ctx context.Context, in *CreateTemporaryCrewRequest, opts ...grpc.CallOption) (*CreateTemporaryCrewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateTemporaryCrewResponse)
+	err := c.cc.Invoke(ctx, DatingService_CreateTemporaryCrew_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) SubmitCrewMissionEvidence(ctx context.Context, in *SubmitCrewMissionEvidenceRequest, opts ...grpc.CallOption) (*SubmitCrewMissionEvidenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCrewMissionEvidenceResponse)
+	err := c.cc.Invoke(ctx, DatingService_SubmitCrewMissionEvidence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) DissolveOrCompleteCrew(ctx context.Context, in *DissolveOrCompleteCrewRequest, opts ...grpc.CallOption) (*DissolveOrCompleteCrewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DissolveOrCompleteCrewResponse)
+	err := c.cc.Invoke(ctx, DatingService_DissolveOrCompleteCrew_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminListFriendshipCrewsAudit(ctx context.Context, in *AdminListFriendshipCrewsAuditRequest, opts ...grpc.CallOption) (*AdminListFriendshipCrewsAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListFriendshipCrewsAuditResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminListFriendshipCrewsAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminModerateCrewSafetyAndMission(ctx context.Context, in *AdminModerateCrewSafetyAndMissionRequest, opts ...grpc.CallOption) (*AdminModerateCrewSafetyAndMissionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminModerateCrewSafetyAndMissionResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminModerateCrewSafetyAndMission_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetConnectionArchiveWorkbench(ctx context.Context, in *GetConnectionArchiveWorkbenchRequest, opts ...grpc.CallOption) (*GetConnectionArchiveWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetConnectionArchiveWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetConnectionArchiveWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpsertConnectionArchiveEntry(ctx context.Context, in *UpsertConnectionArchiveEntryRequest, opts ...grpc.CallOption) (*UpsertConnectionArchiveEntryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertConnectionArchiveEntryResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpsertConnectionArchiveEntry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) SendMeaningfulGuardedGift(ctx context.Context, in *SendMeaningfulGuardedGiftRequest, opts ...grpc.CallOption) (*SendMeaningfulGuardedGiftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SendMeaningfulGuardedGiftResponse)
+	err := c.cc.Invoke(ctx, DatingService_SendMeaningfulGuardedGift_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) ApproveYearbookPreviewManifest(ctx context.Context, in *ApproveYearbookPreviewManifestRequest, opts ...grpc.CallOption) (*ApproveYearbookPreviewManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveYearbookPreviewManifestResponse)
+	err := c.cc.Invoke(ctx, DatingService_ApproveYearbookPreviewManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminListConnectionArchiveAudit(ctx context.Context, in *AdminListConnectionArchiveAuditRequest, opts ...grpc.CallOption) (*AdminListConnectionArchiveAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListConnectionArchiveAuditResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminListConnectionArchiveAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminResolveGiftOrArchiveDispute(ctx context.Context, in *AdminResolveGiftOrArchiveDisputeRequest, opts ...grpc.CallOption) (*AdminResolveGiftOrArchiveDisputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminResolveGiftOrArchiveDisputeResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminResolveGiftOrArchiveDispute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GetInclusiveGlobalReleaseWorkbench(ctx context.Context, in *GetInclusiveGlobalReleaseWorkbenchRequest, opts ...grpc.CallOption) (*GetInclusiveGlobalReleaseWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetInclusiveGlobalReleaseWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DatingService_GetInclusiveGlobalReleaseWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) UpdateAccessibleInclusionProfile(ctx context.Context, in *UpdateAccessibleInclusionProfileRequest, opts ...grpc.CallOption) (*UpdateAccessibleInclusionProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateAccessibleInclusionProfileResponse)
+	err := c.cc.Invoke(ctx, DatingService_UpdateAccessibleInclusionProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) GeneratePortableConnectionBundle(ctx context.Context, in *GeneratePortableConnectionBundleRequest, opts ...grpc.CallOption) (*GeneratePortableConnectionBundleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GeneratePortableConnectionBundleResponse)
+	err := c.cc.Invoke(ctx, DatingService_GeneratePortableConnectionBundle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) VerifyJurisdictionOfflineSafetyPack(ctx context.Context, in *VerifyJurisdictionOfflineSafetyPackRequest, opts ...grpc.CallOption) (*VerifyJurisdictionOfflineSafetyPackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyJurisdictionOfflineSafetyPackResponse)
+	err := c.cc.Invoke(ctx, DatingService_VerifyJurisdictionOfflineSafetyPack_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminListGlobalReleaseCertificationAudit(ctx context.Context, in *AdminListGlobalReleaseCertificationAuditRequest, opts ...grpc.CallOption) (*AdminListGlobalReleaseCertificationAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminListGlobalReleaseCertificationAuditResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminListGlobalReleaseCertificationAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *datingServiceClient) AdminCertifyJurisdictionReleaseGate(ctx context.Context, in *AdminCertifyJurisdictionReleaseGateRequest, opts ...grpc.CallOption) (*AdminCertifyJurisdictionReleaseGateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminCertifyJurisdictionReleaseGateResponse)
+	err := c.cc.Invoke(ctx, DatingService_AdminCertifyJurisdictionReleaseGate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DatingServiceServer is the server API for DatingService service.
 // All implementations must embed UnimplementedDatingServiceServer
 // for forward compatibility.
@@ -1118,6 +1410,34 @@ type DatingServiceServer interface {
 	// client-supplied URL, exactly as AddDatingPhoto does.
 	SetVoiceBaseline(context.Context, *SetVoiceBaselineRequest) (*SetVoiceBaselineResponse, error)
 	RemoveVoiceBaseline(context.Context, *RemoveVoiceBaselineRequest) (*RemoveVoiceBaselineResponse, error)
+	// --- Atlas Choice 12 (AT11): Relationship Progression and Separation ---
+	GetRelationshipProgressionWorkbench(context.Context, *GetRelationshipProgressionWorkbenchRequest) (*GetRelationshipProgressionWorkbenchResponse, error)
+	UpsertRelationshipStageAgreement(context.Context, *UpsertRelationshipStageAgreementRequest) (*UpsertRelationshipStageAgreementResponse, error)
+	RecordRelationshipCheckinReflection(context.Context, *RecordRelationshipCheckinReflectionRequest) (*RecordRelationshipCheckinReflectionResponse, error)
+	InitiateSafeUncouplingPlan(context.Context, *InitiateSafeUncouplingPlanRequest) (*InitiateSafeUncouplingPlanResponse, error)
+	AdminListRelationshipProgressionAudit(context.Context, *AdminListRelationshipProgressionAuditRequest) (*AdminListRelationshipProgressionAuditResponse, error)
+	AdminModerateRelationshipPromptSafety(context.Context, *AdminModerateRelationshipPromptSafetyRequest) (*AdminModerateRelationshipPromptSafetyResponse, error)
+	// --- Atlas Choice 13 (AT12): Friendship, Crews, and Missions ---
+	GetFriendshipCrewsWorkbench(context.Context, *GetFriendshipCrewsWorkbenchRequest) (*GetFriendshipCrewsWorkbenchResponse, error)
+	CreateTemporaryCrew(context.Context, *CreateTemporaryCrewRequest) (*CreateTemporaryCrewResponse, error)
+	SubmitCrewMissionEvidence(context.Context, *SubmitCrewMissionEvidenceRequest) (*SubmitCrewMissionEvidenceResponse, error)
+	DissolveOrCompleteCrew(context.Context, *DissolveOrCompleteCrewRequest) (*DissolveOrCompleteCrewResponse, error)
+	AdminListFriendshipCrewsAudit(context.Context, *AdminListFriendshipCrewsAuditRequest) (*AdminListFriendshipCrewsAuditResponse, error)
+	AdminModerateCrewSafetyAndMission(context.Context, *AdminModerateCrewSafetyAndMissionRequest) (*AdminModerateCrewSafetyAndMissionResponse, error)
+	// --- Atlas Choice 14 (AT13): Connection Archive and Meaningful Gifting ---
+	GetConnectionArchiveWorkbench(context.Context, *GetConnectionArchiveWorkbenchRequest) (*GetConnectionArchiveWorkbenchResponse, error)
+	UpsertConnectionArchiveEntry(context.Context, *UpsertConnectionArchiveEntryRequest) (*UpsertConnectionArchiveEntryResponse, error)
+	SendMeaningfulGuardedGift(context.Context, *SendMeaningfulGuardedGiftRequest) (*SendMeaningfulGuardedGiftResponse, error)
+	ApproveYearbookPreviewManifest(context.Context, *ApproveYearbookPreviewManifestRequest) (*ApproveYearbookPreviewManifestResponse, error)
+	AdminListConnectionArchiveAudit(context.Context, *AdminListConnectionArchiveAuditRequest) (*AdminListConnectionArchiveAuditResponse, error)
+	AdminResolveGiftOrArchiveDispute(context.Context, *AdminResolveGiftOrArchiveDisputeRequest) (*AdminResolveGiftOrArchiveDisputeResponse, error)
+	// --- Atlas Choice 15 (AT15): Inclusive and Global Release Certification ---
+	GetInclusiveGlobalReleaseWorkbench(context.Context, *GetInclusiveGlobalReleaseWorkbenchRequest) (*GetInclusiveGlobalReleaseWorkbenchResponse, error)
+	UpdateAccessibleInclusionProfile(context.Context, *UpdateAccessibleInclusionProfileRequest) (*UpdateAccessibleInclusionProfileResponse, error)
+	GeneratePortableConnectionBundle(context.Context, *GeneratePortableConnectionBundleRequest) (*GeneratePortableConnectionBundleResponse, error)
+	VerifyJurisdictionOfflineSafetyPack(context.Context, *VerifyJurisdictionOfflineSafetyPackRequest) (*VerifyJurisdictionOfflineSafetyPackResponse, error)
+	AdminListGlobalReleaseCertificationAudit(context.Context, *AdminListGlobalReleaseCertificationAuditRequest) (*AdminListGlobalReleaseCertificationAuditResponse, error)
+	AdminCertifyJurisdictionReleaseGate(context.Context, *AdminCertifyJurisdictionReleaseGateRequest) (*AdminCertifyJurisdictionReleaseGateResponse, error)
 	mustEmbedUnimplementedDatingServiceServer()
 }
 
@@ -1358,6 +1678,78 @@ func (UnimplementedDatingServiceServer) SetVoiceBaseline(context.Context, *SetVo
 }
 func (UnimplementedDatingServiceServer) RemoveVoiceBaseline(context.Context, *RemoveVoiceBaselineRequest) (*RemoveVoiceBaselineResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RemoveVoiceBaseline not implemented")
+}
+func (UnimplementedDatingServiceServer) GetRelationshipProgressionWorkbench(context.Context, *GetRelationshipProgressionWorkbenchRequest) (*GetRelationshipProgressionWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRelationshipProgressionWorkbench not implemented")
+}
+func (UnimplementedDatingServiceServer) UpsertRelationshipStageAgreement(context.Context, *UpsertRelationshipStageAgreementRequest) (*UpsertRelationshipStageAgreementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertRelationshipStageAgreement not implemented")
+}
+func (UnimplementedDatingServiceServer) RecordRelationshipCheckinReflection(context.Context, *RecordRelationshipCheckinReflectionRequest) (*RecordRelationshipCheckinReflectionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordRelationshipCheckinReflection not implemented")
+}
+func (UnimplementedDatingServiceServer) InitiateSafeUncouplingPlan(context.Context, *InitiateSafeUncouplingPlanRequest) (*InitiateSafeUncouplingPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method InitiateSafeUncouplingPlan not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminListRelationshipProgressionAudit(context.Context, *AdminListRelationshipProgressionAuditRequest) (*AdminListRelationshipProgressionAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListRelationshipProgressionAudit not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminModerateRelationshipPromptSafety(context.Context, *AdminModerateRelationshipPromptSafetyRequest) (*AdminModerateRelationshipPromptSafetyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateRelationshipPromptSafety not implemented")
+}
+func (UnimplementedDatingServiceServer) GetFriendshipCrewsWorkbench(context.Context, *GetFriendshipCrewsWorkbenchRequest) (*GetFriendshipCrewsWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetFriendshipCrewsWorkbench not implemented")
+}
+func (UnimplementedDatingServiceServer) CreateTemporaryCrew(context.Context, *CreateTemporaryCrewRequest) (*CreateTemporaryCrewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateTemporaryCrew not implemented")
+}
+func (UnimplementedDatingServiceServer) SubmitCrewMissionEvidence(context.Context, *SubmitCrewMissionEvidenceRequest) (*SubmitCrewMissionEvidenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCrewMissionEvidence not implemented")
+}
+func (UnimplementedDatingServiceServer) DissolveOrCompleteCrew(context.Context, *DissolveOrCompleteCrewRequest) (*DissolveOrCompleteCrewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DissolveOrCompleteCrew not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminListFriendshipCrewsAudit(context.Context, *AdminListFriendshipCrewsAuditRequest) (*AdminListFriendshipCrewsAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListFriendshipCrewsAudit not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminModerateCrewSafetyAndMission(context.Context, *AdminModerateCrewSafetyAndMissionRequest) (*AdminModerateCrewSafetyAndMissionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminModerateCrewSafetyAndMission not implemented")
+}
+func (UnimplementedDatingServiceServer) GetConnectionArchiveWorkbench(context.Context, *GetConnectionArchiveWorkbenchRequest) (*GetConnectionArchiveWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetConnectionArchiveWorkbench not implemented")
+}
+func (UnimplementedDatingServiceServer) UpsertConnectionArchiveEntry(context.Context, *UpsertConnectionArchiveEntryRequest) (*UpsertConnectionArchiveEntryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertConnectionArchiveEntry not implemented")
+}
+func (UnimplementedDatingServiceServer) SendMeaningfulGuardedGift(context.Context, *SendMeaningfulGuardedGiftRequest) (*SendMeaningfulGuardedGiftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SendMeaningfulGuardedGift not implemented")
+}
+func (UnimplementedDatingServiceServer) ApproveYearbookPreviewManifest(context.Context, *ApproveYearbookPreviewManifestRequest) (*ApproveYearbookPreviewManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveYearbookPreviewManifest not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminListConnectionArchiveAudit(context.Context, *AdminListConnectionArchiveAuditRequest) (*AdminListConnectionArchiveAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListConnectionArchiveAudit not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminResolveGiftOrArchiveDispute(context.Context, *AdminResolveGiftOrArchiveDisputeRequest) (*AdminResolveGiftOrArchiveDisputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminResolveGiftOrArchiveDispute not implemented")
+}
+func (UnimplementedDatingServiceServer) GetInclusiveGlobalReleaseWorkbench(context.Context, *GetInclusiveGlobalReleaseWorkbenchRequest) (*GetInclusiveGlobalReleaseWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetInclusiveGlobalReleaseWorkbench not implemented")
+}
+func (UnimplementedDatingServiceServer) UpdateAccessibleInclusionProfile(context.Context, *UpdateAccessibleInclusionProfileRequest) (*UpdateAccessibleInclusionProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateAccessibleInclusionProfile not implemented")
+}
+func (UnimplementedDatingServiceServer) GeneratePortableConnectionBundle(context.Context, *GeneratePortableConnectionBundleRequest) (*GeneratePortableConnectionBundleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GeneratePortableConnectionBundle not implemented")
+}
+func (UnimplementedDatingServiceServer) VerifyJurisdictionOfflineSafetyPack(context.Context, *VerifyJurisdictionOfflineSafetyPackRequest) (*VerifyJurisdictionOfflineSafetyPackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyJurisdictionOfflineSafetyPack not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminListGlobalReleaseCertificationAudit(context.Context, *AdminListGlobalReleaseCertificationAuditRequest) (*AdminListGlobalReleaseCertificationAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminListGlobalReleaseCertificationAudit not implemented")
+}
+func (UnimplementedDatingServiceServer) AdminCertifyJurisdictionReleaseGate(context.Context, *AdminCertifyJurisdictionReleaseGateRequest) (*AdminCertifyJurisdictionReleaseGateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdminCertifyJurisdictionReleaseGate not implemented")
 }
 func (UnimplementedDatingServiceServer) mustEmbedUnimplementedDatingServiceServer() {}
 func (UnimplementedDatingServiceServer) testEmbeddedByValue()                       {}
@@ -2752,6 +3144,438 @@ func _DatingService_RemoveVoiceBaseline_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DatingService_GetRelationshipProgressionWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRelationshipProgressionWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetRelationshipProgressionWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetRelationshipProgressionWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetRelationshipProgressionWorkbench(ctx, req.(*GetRelationshipProgressionWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpsertRelationshipStageAgreement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertRelationshipStageAgreementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpsertRelationshipStageAgreement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpsertRelationshipStageAgreement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpsertRelationshipStageAgreement(ctx, req.(*UpsertRelationshipStageAgreementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_RecordRelationshipCheckinReflection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordRelationshipCheckinReflectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).RecordRelationshipCheckinReflection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_RecordRelationshipCheckinReflection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).RecordRelationshipCheckinReflection(ctx, req.(*RecordRelationshipCheckinReflectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_InitiateSafeUncouplingPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InitiateSafeUncouplingPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).InitiateSafeUncouplingPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_InitiateSafeUncouplingPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).InitiateSafeUncouplingPlan(ctx, req.(*InitiateSafeUncouplingPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminListRelationshipProgressionAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListRelationshipProgressionAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminListRelationshipProgressionAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminListRelationshipProgressionAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminListRelationshipProgressionAudit(ctx, req.(*AdminListRelationshipProgressionAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminModerateRelationshipPromptSafety_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateRelationshipPromptSafetyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminModerateRelationshipPromptSafety(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminModerateRelationshipPromptSafety_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminModerateRelationshipPromptSafety(ctx, req.(*AdminModerateRelationshipPromptSafetyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetFriendshipCrewsWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFriendshipCrewsWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetFriendshipCrewsWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetFriendshipCrewsWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetFriendshipCrewsWorkbench(ctx, req.(*GetFriendshipCrewsWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_CreateTemporaryCrew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTemporaryCrewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).CreateTemporaryCrew(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_CreateTemporaryCrew_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).CreateTemporaryCrew(ctx, req.(*CreateTemporaryCrewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_SubmitCrewMissionEvidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCrewMissionEvidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).SubmitCrewMissionEvidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_SubmitCrewMissionEvidence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).SubmitCrewMissionEvidence(ctx, req.(*SubmitCrewMissionEvidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_DissolveOrCompleteCrew_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DissolveOrCompleteCrewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).DissolveOrCompleteCrew(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_DissolveOrCompleteCrew_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).DissolveOrCompleteCrew(ctx, req.(*DissolveOrCompleteCrewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminListFriendshipCrewsAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListFriendshipCrewsAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminListFriendshipCrewsAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminListFriendshipCrewsAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminListFriendshipCrewsAudit(ctx, req.(*AdminListFriendshipCrewsAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminModerateCrewSafetyAndMission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminModerateCrewSafetyAndMissionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminModerateCrewSafetyAndMission(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminModerateCrewSafetyAndMission_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminModerateCrewSafetyAndMission(ctx, req.(*AdminModerateCrewSafetyAndMissionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetConnectionArchiveWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetConnectionArchiveWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetConnectionArchiveWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetConnectionArchiveWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetConnectionArchiveWorkbench(ctx, req.(*GetConnectionArchiveWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpsertConnectionArchiveEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertConnectionArchiveEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpsertConnectionArchiveEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpsertConnectionArchiveEntry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpsertConnectionArchiveEntry(ctx, req.(*UpsertConnectionArchiveEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_SendMeaningfulGuardedGift_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendMeaningfulGuardedGiftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).SendMeaningfulGuardedGift(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_SendMeaningfulGuardedGift_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).SendMeaningfulGuardedGift(ctx, req.(*SendMeaningfulGuardedGiftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_ApproveYearbookPreviewManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveYearbookPreviewManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).ApproveYearbookPreviewManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_ApproveYearbookPreviewManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).ApproveYearbookPreviewManifest(ctx, req.(*ApproveYearbookPreviewManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminListConnectionArchiveAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListConnectionArchiveAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminListConnectionArchiveAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminListConnectionArchiveAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminListConnectionArchiveAudit(ctx, req.(*AdminListConnectionArchiveAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminResolveGiftOrArchiveDispute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminResolveGiftOrArchiveDisputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminResolveGiftOrArchiveDispute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminResolveGiftOrArchiveDispute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminResolveGiftOrArchiveDispute(ctx, req.(*AdminResolveGiftOrArchiveDisputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GetInclusiveGlobalReleaseWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInclusiveGlobalReleaseWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GetInclusiveGlobalReleaseWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GetInclusiveGlobalReleaseWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GetInclusiveGlobalReleaseWorkbench(ctx, req.(*GetInclusiveGlobalReleaseWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_UpdateAccessibleInclusionProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAccessibleInclusionProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).UpdateAccessibleInclusionProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_UpdateAccessibleInclusionProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).UpdateAccessibleInclusionProfile(ctx, req.(*UpdateAccessibleInclusionProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_GeneratePortableConnectionBundle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GeneratePortableConnectionBundleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).GeneratePortableConnectionBundle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_GeneratePortableConnectionBundle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).GeneratePortableConnectionBundle(ctx, req.(*GeneratePortableConnectionBundleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_VerifyJurisdictionOfflineSafetyPack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyJurisdictionOfflineSafetyPackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).VerifyJurisdictionOfflineSafetyPack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_VerifyJurisdictionOfflineSafetyPack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).VerifyJurisdictionOfflineSafetyPack(ctx, req.(*VerifyJurisdictionOfflineSafetyPackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminListGlobalReleaseCertificationAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminListGlobalReleaseCertificationAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminListGlobalReleaseCertificationAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminListGlobalReleaseCertificationAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminListGlobalReleaseCertificationAudit(ctx, req.(*AdminListGlobalReleaseCertificationAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DatingService_AdminCertifyJurisdictionReleaseGate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCertifyJurisdictionReleaseGateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DatingServiceServer).AdminCertifyJurisdictionReleaseGate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DatingService_AdminCertifyJurisdictionReleaseGate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DatingServiceServer).AdminCertifyJurisdictionReleaseGate(ctx, req.(*AdminCertifyJurisdictionReleaseGateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DatingService_ServiceDesc is the grpc.ServiceDesc for DatingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -3058,6 +3882,102 @@ var DatingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RemoveVoiceBaseline",
 			Handler:    _DatingService_RemoveVoiceBaseline_Handler,
+		},
+		{
+			MethodName: "GetRelationshipProgressionWorkbench",
+			Handler:    _DatingService_GetRelationshipProgressionWorkbench_Handler,
+		},
+		{
+			MethodName: "UpsertRelationshipStageAgreement",
+			Handler:    _DatingService_UpsertRelationshipStageAgreement_Handler,
+		},
+		{
+			MethodName: "RecordRelationshipCheckinReflection",
+			Handler:    _DatingService_RecordRelationshipCheckinReflection_Handler,
+		},
+		{
+			MethodName: "InitiateSafeUncouplingPlan",
+			Handler:    _DatingService_InitiateSafeUncouplingPlan_Handler,
+		},
+		{
+			MethodName: "AdminListRelationshipProgressionAudit",
+			Handler:    _DatingService_AdminListRelationshipProgressionAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateRelationshipPromptSafety",
+			Handler:    _DatingService_AdminModerateRelationshipPromptSafety_Handler,
+		},
+		{
+			MethodName: "GetFriendshipCrewsWorkbench",
+			Handler:    _DatingService_GetFriendshipCrewsWorkbench_Handler,
+		},
+		{
+			MethodName: "CreateTemporaryCrew",
+			Handler:    _DatingService_CreateTemporaryCrew_Handler,
+		},
+		{
+			MethodName: "SubmitCrewMissionEvidence",
+			Handler:    _DatingService_SubmitCrewMissionEvidence_Handler,
+		},
+		{
+			MethodName: "DissolveOrCompleteCrew",
+			Handler:    _DatingService_DissolveOrCompleteCrew_Handler,
+		},
+		{
+			MethodName: "AdminListFriendshipCrewsAudit",
+			Handler:    _DatingService_AdminListFriendshipCrewsAudit_Handler,
+		},
+		{
+			MethodName: "AdminModerateCrewSafetyAndMission",
+			Handler:    _DatingService_AdminModerateCrewSafetyAndMission_Handler,
+		},
+		{
+			MethodName: "GetConnectionArchiveWorkbench",
+			Handler:    _DatingService_GetConnectionArchiveWorkbench_Handler,
+		},
+		{
+			MethodName: "UpsertConnectionArchiveEntry",
+			Handler:    _DatingService_UpsertConnectionArchiveEntry_Handler,
+		},
+		{
+			MethodName: "SendMeaningfulGuardedGift",
+			Handler:    _DatingService_SendMeaningfulGuardedGift_Handler,
+		},
+		{
+			MethodName: "ApproveYearbookPreviewManifest",
+			Handler:    _DatingService_ApproveYearbookPreviewManifest_Handler,
+		},
+		{
+			MethodName: "AdminListConnectionArchiveAudit",
+			Handler:    _DatingService_AdminListConnectionArchiveAudit_Handler,
+		},
+		{
+			MethodName: "AdminResolveGiftOrArchiveDispute",
+			Handler:    _DatingService_AdminResolveGiftOrArchiveDispute_Handler,
+		},
+		{
+			MethodName: "GetInclusiveGlobalReleaseWorkbench",
+			Handler:    _DatingService_GetInclusiveGlobalReleaseWorkbench_Handler,
+		},
+		{
+			MethodName: "UpdateAccessibleInclusionProfile",
+			Handler:    _DatingService_UpdateAccessibleInclusionProfile_Handler,
+		},
+		{
+			MethodName: "GeneratePortableConnectionBundle",
+			Handler:    _DatingService_GeneratePortableConnectionBundle_Handler,
+		},
+		{
+			MethodName: "VerifyJurisdictionOfflineSafetyPack",
+			Handler:    _DatingService_VerifyJurisdictionOfflineSafetyPack_Handler,
+		},
+		{
+			MethodName: "AdminListGlobalReleaseCertificationAudit",
+			Handler:    _DatingService_AdminListGlobalReleaseCertificationAudit_Handler,
+		},
+		{
+			MethodName: "AdminCertifyJurisdictionReleaseGate",
+			Handler:    _DatingService_AdminCertifyJurisdictionReleaseGate_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -8981,3 +8981,3375 @@ export class SetPrimaryDatingPhotoResponse extends Message$1<SetPrimaryDatingPho
   }
 }
 
+/**
+ * @generated from message sttattus.dating.v1.AtlasRelationshipAgreement
+ */
+export class AtlasRelationshipAgreement extends Message$1<AtlasRelationshipAgreement> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string partner_user_id = 3;
+   */
+  partnerUserId = "";
+
+  /**
+   * @generated from field: string partner_name = 4;
+   */
+  partnerName = "";
+
+  /**
+   * exploring | dating_intentionally | committed_partnership | anchor_nesting | paused_breathing_room | companionate
+   *
+   * @generated from field: string current_stage = 5;
+   */
+  currentStage = "";
+
+  /**
+   * non_linear_inclusive | monogamous | consensual_non_monogamous | queerplatonic
+   *
+   * @generated from field: string stage_structure = 6;
+   */
+  stageStructure = "";
+
+  /**
+   * @generated from field: bool discovery_paused = 7;
+   */
+  discoveryPaused = false;
+
+  /**
+   * @generated from field: string pacing_cadence = 8;
+   */
+  pacingCadence = "";
+
+  /**
+   * @generated from field: string shared_boundaries_json = 9;
+   */
+  sharedBoundariesJson = "";
+
+  /**
+   * @generated from field: string previous_stage = 10;
+   */
+  previousStage = "";
+
+  /**
+   * @generated from field: int64 updated_at = 11;
+   */
+  updatedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasRelationshipAgreement>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasRelationshipAgreement";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "partner_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "partner_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "current_stage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "stage_structure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "discovery_paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "pacing_cadence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "shared_boundaries_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "previous_stage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasRelationshipAgreement {
+    return new AtlasRelationshipAgreement().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasRelationshipAgreement {
+    return new AtlasRelationshipAgreement().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasRelationshipAgreement {
+    return new AtlasRelationshipAgreement().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasRelationshipAgreement | PlainMessage<AtlasRelationshipAgreement> | undefined, b: AtlasRelationshipAgreement | PlainMessage<AtlasRelationshipAgreement> | undefined): boolean {
+    return proto3.util.equals(AtlasRelationshipAgreement, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasRelationshipCheckin
+ */
+export class AtlasRelationshipCheckin extends Message$1<AtlasRelationshipCheckin> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string agreement_id = 2;
+   */
+  agreementId = "";
+
+  /**
+   * @generated from field: string user_id = 3;
+   */
+  userId = "";
+
+  /**
+   * pacing | boundaries | communication | future_alignment | support_needs
+   *
+   * @generated from field: string topic_category = 4;
+   */
+  topicCategory = "";
+
+  /**
+   * @generated from field: string my_reflection = 5;
+   */
+  myReflection = "";
+
+  /**
+   * private_by_default | shared_on_consent
+   *
+   * @generated from field: string visibility_mode = 6;
+   */
+  visibilityMode = "";
+
+  /**
+   * aligned | needs_conversation | revisiting
+   *
+   * @generated from field: string alignment_state = 7;
+   */
+  alignmentState = "";
+
+  /**
+   * @generated from field: bool licensed_boundary_verified = 8;
+   */
+  licensedBoundaryVerified = false;
+
+  /**
+   * @generated from field: string moderation_status = 9;
+   */
+  moderationStatus = "";
+
+  /**
+   * @generated from field: int64 created_at = 10;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasRelationshipCheckin>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasRelationshipCheckin";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agreement_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "topic_category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "my_reflection", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "visibility_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "alignment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "licensed_boundary_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "moderation_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasRelationshipCheckin {
+    return new AtlasRelationshipCheckin().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasRelationshipCheckin {
+    return new AtlasRelationshipCheckin().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasRelationshipCheckin {
+    return new AtlasRelationshipCheckin().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasRelationshipCheckin | PlainMessage<AtlasRelationshipCheckin> | undefined, b: AtlasRelationshipCheckin | PlainMessage<AtlasRelationshipCheckin> | undefined): boolean {
+    return proto3.util.equals(AtlasRelationshipCheckin, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasUncouplingPlan
+ */
+export class AtlasUncouplingPlan extends Message$1<AtlasUncouplingPlan> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string agreement_id = 2;
+   */
+  agreementId = "";
+
+  /**
+   * @generated from field: string user_id = 3;
+   */
+  userId = "";
+
+  /**
+   * active_cooling_off | amicable_separation | no_contact_shield | completed_closure
+   *
+   * @generated from field: string separation_state = 4;
+   */
+  separationState = "";
+
+  /**
+   * mutual_archive_freeze | keep_own_contributions | full_mutual_hidden
+   *
+   * @generated from field: string shared_media_policy = 5;
+   */
+  sharedMediaPolicy = "";
+
+  /**
+   * cancel_upcoming_bookings | split_reservations
+   *
+   * @generated from field: string shared_plans_policy = 6;
+   */
+  sharedPlansPolicy = "";
+
+  /**
+   * @generated from field: bool mutual_discovery_block = 7;
+   */
+  mutualDiscoveryBlock = false;
+
+  /**
+   * @generated from field: string closure_note = 8;
+   */
+  closureNote = "";
+
+  /**
+   * @generated from field: int64 resolved_at = 9;
+   */
+  resolvedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasUncouplingPlan>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasUncouplingPlan";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agreement_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "separation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "shared_media_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "shared_plans_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "mutual_discovery_block", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "closure_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "resolved_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasUncouplingPlan {
+    return new AtlasUncouplingPlan().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasUncouplingPlan {
+    return new AtlasUncouplingPlan().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasUncouplingPlan {
+    return new AtlasUncouplingPlan().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasUncouplingPlan | PlainMessage<AtlasUncouplingPlan> | undefined, b: AtlasUncouplingPlan | PlainMessage<AtlasUncouplingPlan> | undefined): boolean {
+    return proto3.util.equals(AtlasUncouplingPlan, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetRelationshipProgressionWorkbenchRequest
+ */
+export class GetRelationshipProgressionWorkbenchRequest extends Message$1<GetRelationshipProgressionWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetRelationshipProgressionWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetRelationshipProgressionWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationshipProgressionWorkbenchRequest {
+    return new GetRelationshipProgressionWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationshipProgressionWorkbenchRequest {
+    return new GetRelationshipProgressionWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationshipProgressionWorkbenchRequest {
+    return new GetRelationshipProgressionWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRelationshipProgressionWorkbenchRequest | PlainMessage<GetRelationshipProgressionWorkbenchRequest> | undefined, b: GetRelationshipProgressionWorkbenchRequest | PlainMessage<GetRelationshipProgressionWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetRelationshipProgressionWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse
+ */
+export class GetRelationshipProgressionWorkbenchResponse extends Message$1<GetRelationshipProgressionWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasRelationshipAgreement agreements = 1;
+   */
+  agreements: AtlasRelationshipAgreement[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasRelationshipCheckin checkins = 2;
+   */
+  checkins: AtlasRelationshipCheckin[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasUncouplingPlan uncoupling_plans = 3;
+   */
+  uncouplingPlans: AtlasUncouplingPlan[] = [];
+
+  /**
+   * @generated from field: string licensed_provider_boundary_notice = 4;
+   */
+  licensedProviderBoundaryNotice = "";
+
+  constructor(data?: PartialMessage<GetRelationshipProgressionWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "agreements", kind: "message", T: AtlasRelationshipAgreement, repeated: true },
+    { no: 2, name: "checkins", kind: "message", T: AtlasRelationshipCheckin, repeated: true },
+    { no: 3, name: "uncoupling_plans", kind: "message", T: AtlasUncouplingPlan, repeated: true },
+    { no: 4, name: "licensed_provider_boundary_notice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRelationshipProgressionWorkbenchResponse {
+    return new GetRelationshipProgressionWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRelationshipProgressionWorkbenchResponse {
+    return new GetRelationshipProgressionWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRelationshipProgressionWorkbenchResponse {
+    return new GetRelationshipProgressionWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetRelationshipProgressionWorkbenchResponse | PlainMessage<GetRelationshipProgressionWorkbenchResponse> | undefined, b: GetRelationshipProgressionWorkbenchResponse | PlainMessage<GetRelationshipProgressionWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetRelationshipProgressionWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertRelationshipStageAgreementRequest
+ */
+export class UpsertRelationshipStageAgreementRequest extends Message$1<UpsertRelationshipStageAgreementRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string partner_user_id = 2;
+   */
+  partnerUserId = "";
+
+  /**
+   * @generated from field: string partner_name = 3;
+   */
+  partnerName = "";
+
+  /**
+   * @generated from field: string current_stage = 4;
+   */
+  currentStage = "";
+
+  /**
+   * @generated from field: string stage_structure = 5;
+   */
+  stageStructure = "";
+
+  /**
+   * @generated from field: bool discovery_paused = 6;
+   */
+  discoveryPaused = false;
+
+  /**
+   * @generated from field: string pacing_cadence = 7;
+   */
+  pacingCadence = "";
+
+  /**
+   * @generated from field: string shared_boundaries_json = 8;
+   */
+  sharedBoundariesJson = "";
+
+  constructor(data?: PartialMessage<UpsertRelationshipStageAgreementRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertRelationshipStageAgreementRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "partner_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "partner_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "current_stage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "stage_structure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "discovery_paused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "pacing_cadence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "shared_boundaries_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertRelationshipStageAgreementRequest {
+    return new UpsertRelationshipStageAgreementRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertRelationshipStageAgreementRequest {
+    return new UpsertRelationshipStageAgreementRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertRelationshipStageAgreementRequest {
+    return new UpsertRelationshipStageAgreementRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertRelationshipStageAgreementRequest | PlainMessage<UpsertRelationshipStageAgreementRequest> | undefined, b: UpsertRelationshipStageAgreementRequest | PlainMessage<UpsertRelationshipStageAgreementRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertRelationshipStageAgreementRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertRelationshipStageAgreementResponse
+ */
+export class UpsertRelationshipStageAgreementResponse extends Message$1<UpsertRelationshipStageAgreementResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasRelationshipAgreement agreement = 1;
+   */
+  agreement?: AtlasRelationshipAgreement;
+
+  constructor(data?: PartialMessage<UpsertRelationshipStageAgreementResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertRelationshipStageAgreementResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "agreement", kind: "message", T: AtlasRelationshipAgreement },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertRelationshipStageAgreementResponse {
+    return new UpsertRelationshipStageAgreementResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertRelationshipStageAgreementResponse {
+    return new UpsertRelationshipStageAgreementResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertRelationshipStageAgreementResponse {
+    return new UpsertRelationshipStageAgreementResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertRelationshipStageAgreementResponse | PlainMessage<UpsertRelationshipStageAgreementResponse> | undefined, b: UpsertRelationshipStageAgreementResponse | PlainMessage<UpsertRelationshipStageAgreementResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertRelationshipStageAgreementResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RecordRelationshipCheckinReflectionRequest
+ */
+export class RecordRelationshipCheckinReflectionRequest extends Message$1<RecordRelationshipCheckinReflectionRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string agreement_id = 2;
+   */
+  agreementId = "";
+
+  /**
+   * @generated from field: string topic_category = 3;
+   */
+  topicCategory = "";
+
+  /**
+   * @generated from field: string my_reflection = 4;
+   */
+  myReflection = "";
+
+  /**
+   * @generated from field: string visibility_mode = 5;
+   */
+  visibilityMode = "";
+
+  /**
+   * @generated from field: string alignment_state = 6;
+   */
+  alignmentState = "";
+
+  constructor(data?: PartialMessage<RecordRelationshipCheckinReflectionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RecordRelationshipCheckinReflectionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agreement_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "topic_category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "my_reflection", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "visibility_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "alignment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRelationshipCheckinReflectionRequest {
+    return new RecordRelationshipCheckinReflectionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRelationshipCheckinReflectionRequest {
+    return new RecordRelationshipCheckinReflectionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRelationshipCheckinReflectionRequest {
+    return new RecordRelationshipCheckinReflectionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRelationshipCheckinReflectionRequest | PlainMessage<RecordRelationshipCheckinReflectionRequest> | undefined, b: RecordRelationshipCheckinReflectionRequest | PlainMessage<RecordRelationshipCheckinReflectionRequest> | undefined): boolean {
+    return proto3.util.equals(RecordRelationshipCheckinReflectionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse
+ */
+export class RecordRelationshipCheckinReflectionResponse extends Message$1<RecordRelationshipCheckinReflectionResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasRelationshipCheckin checkin = 1;
+   */
+  checkin?: AtlasRelationshipCheckin;
+
+  constructor(data?: PartialMessage<RecordRelationshipCheckinReflectionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "checkin", kind: "message", T: AtlasRelationshipCheckin },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordRelationshipCheckinReflectionResponse {
+    return new RecordRelationshipCheckinReflectionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordRelationshipCheckinReflectionResponse {
+    return new RecordRelationshipCheckinReflectionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordRelationshipCheckinReflectionResponse {
+    return new RecordRelationshipCheckinReflectionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordRelationshipCheckinReflectionResponse | PlainMessage<RecordRelationshipCheckinReflectionResponse> | undefined, b: RecordRelationshipCheckinReflectionResponse | PlainMessage<RecordRelationshipCheckinReflectionResponse> | undefined): boolean {
+    return proto3.util.equals(RecordRelationshipCheckinReflectionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.InitiateSafeUncouplingPlanRequest
+ */
+export class InitiateSafeUncouplingPlanRequest extends Message$1<InitiateSafeUncouplingPlanRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string agreement_id = 2;
+   */
+  agreementId = "";
+
+  /**
+   * @generated from field: string separation_state = 3;
+   */
+  separationState = "";
+
+  /**
+   * @generated from field: string shared_media_policy = 4;
+   */
+  sharedMediaPolicy = "";
+
+  /**
+   * @generated from field: string shared_plans_policy = 5;
+   */
+  sharedPlansPolicy = "";
+
+  /**
+   * @generated from field: bool mutual_discovery_block = 6;
+   */
+  mutualDiscoveryBlock = false;
+
+  /**
+   * @generated from field: string closure_note = 7;
+   */
+  closureNote = "";
+
+  constructor(data?: PartialMessage<InitiateSafeUncouplingPlanRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.InitiateSafeUncouplingPlanRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agreement_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "separation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "shared_media_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "shared_plans_policy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "mutual_discovery_block", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "closure_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateSafeUncouplingPlanRequest {
+    return new InitiateSafeUncouplingPlanRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateSafeUncouplingPlanRequest {
+    return new InitiateSafeUncouplingPlanRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateSafeUncouplingPlanRequest {
+    return new InitiateSafeUncouplingPlanRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: InitiateSafeUncouplingPlanRequest | PlainMessage<InitiateSafeUncouplingPlanRequest> | undefined, b: InitiateSafeUncouplingPlanRequest | PlainMessage<InitiateSafeUncouplingPlanRequest> | undefined): boolean {
+    return proto3.util.equals(InitiateSafeUncouplingPlanRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.InitiateSafeUncouplingPlanResponse
+ */
+export class InitiateSafeUncouplingPlanResponse extends Message$1<InitiateSafeUncouplingPlanResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasUncouplingPlan plan = 1;
+   */
+  plan?: AtlasUncouplingPlan;
+
+  constructor(data?: PartialMessage<InitiateSafeUncouplingPlanResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.InitiateSafeUncouplingPlanResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: AtlasUncouplingPlan },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitiateSafeUncouplingPlanResponse {
+    return new InitiateSafeUncouplingPlanResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitiateSafeUncouplingPlanResponse {
+    return new InitiateSafeUncouplingPlanResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitiateSafeUncouplingPlanResponse {
+    return new InitiateSafeUncouplingPlanResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: InitiateSafeUncouplingPlanResponse | PlainMessage<InitiateSafeUncouplingPlanResponse> | undefined, b: InitiateSafeUncouplingPlanResponse | PlainMessage<InitiateSafeUncouplingPlanResponse> | undefined): boolean {
+    return proto3.util.equals(InitiateSafeUncouplingPlanResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListRelationshipProgressionAuditRequest
+ */
+export class AdminListRelationshipProgressionAuditRequest extends Message$1<AdminListRelationshipProgressionAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListRelationshipProgressionAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListRelationshipProgressionAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListRelationshipProgressionAuditRequest {
+    return new AdminListRelationshipProgressionAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListRelationshipProgressionAuditRequest {
+    return new AdminListRelationshipProgressionAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListRelationshipProgressionAuditRequest {
+    return new AdminListRelationshipProgressionAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListRelationshipProgressionAuditRequest | PlainMessage<AdminListRelationshipProgressionAuditRequest> | undefined, b: AdminListRelationshipProgressionAuditRequest | PlainMessage<AdminListRelationshipProgressionAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListRelationshipProgressionAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse
+ */
+export class AdminListRelationshipProgressionAuditResponse extends Message$1<AdminListRelationshipProgressionAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasRelationshipAgreement agreements = 1;
+   */
+  agreements: AtlasRelationshipAgreement[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasRelationshipCheckin checkins = 2;
+   */
+  checkins: AtlasRelationshipCheckin[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasUncouplingPlan uncoupling_plans = 3;
+   */
+  uncouplingPlans: AtlasUncouplingPlan[] = [];
+
+  constructor(data?: PartialMessage<AdminListRelationshipProgressionAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "agreements", kind: "message", T: AtlasRelationshipAgreement, repeated: true },
+    { no: 2, name: "checkins", kind: "message", T: AtlasRelationshipCheckin, repeated: true },
+    { no: 3, name: "uncoupling_plans", kind: "message", T: AtlasUncouplingPlan, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListRelationshipProgressionAuditResponse {
+    return new AdminListRelationshipProgressionAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListRelationshipProgressionAuditResponse {
+    return new AdminListRelationshipProgressionAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListRelationshipProgressionAuditResponse {
+    return new AdminListRelationshipProgressionAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListRelationshipProgressionAuditResponse | PlainMessage<AdminListRelationshipProgressionAuditResponse> | undefined, b: AdminListRelationshipProgressionAuditResponse | PlainMessage<AdminListRelationshipProgressionAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListRelationshipProgressionAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminModerateRelationshipPromptSafetyRequest
+ */
+export class AdminModerateRelationshipPromptSafetyRequest extends Message$1<AdminModerateRelationshipPromptSafetyRequest> {
+  /**
+   * @generated from field: string checkin_id = 1;
+   */
+  checkinId = "";
+
+  /**
+   * @generated from field: string moderation_status = 2;
+   */
+  moderationStatus = "";
+
+  /**
+   * @generated from field: bool licensed_boundary_verified = 3;
+   */
+  licensedBoundaryVerified = false;
+
+  /**
+   * @generated from field: string audit_reason = 4;
+   */
+  auditReason = "";
+
+  constructor(data?: PartialMessage<AdminModerateRelationshipPromptSafetyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminModerateRelationshipPromptSafetyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "checkin_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "moderation_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "licensed_boundary_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "audit_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminModerateRelationshipPromptSafetyRequest {
+    return new AdminModerateRelationshipPromptSafetyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminModerateRelationshipPromptSafetyRequest {
+    return new AdminModerateRelationshipPromptSafetyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminModerateRelationshipPromptSafetyRequest {
+    return new AdminModerateRelationshipPromptSafetyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminModerateRelationshipPromptSafetyRequest | PlainMessage<AdminModerateRelationshipPromptSafetyRequest> | undefined, b: AdminModerateRelationshipPromptSafetyRequest | PlainMessage<AdminModerateRelationshipPromptSafetyRequest> | undefined): boolean {
+    return proto3.util.equals(AdminModerateRelationshipPromptSafetyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse
+ */
+export class AdminModerateRelationshipPromptSafetyResponse extends Message$1<AdminModerateRelationshipPromptSafetyResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasRelationshipCheckin checkin = 1;
+   */
+  checkin?: AtlasRelationshipCheckin;
+
+  constructor(data?: PartialMessage<AdminModerateRelationshipPromptSafetyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "checkin", kind: "message", T: AtlasRelationshipCheckin },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminModerateRelationshipPromptSafetyResponse {
+    return new AdminModerateRelationshipPromptSafetyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminModerateRelationshipPromptSafetyResponse {
+    return new AdminModerateRelationshipPromptSafetyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminModerateRelationshipPromptSafetyResponse {
+    return new AdminModerateRelationshipPromptSafetyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminModerateRelationshipPromptSafetyResponse | PlainMessage<AdminModerateRelationshipPromptSafetyResponse> | undefined, b: AdminModerateRelationshipPromptSafetyResponse | PlainMessage<AdminModerateRelationshipPromptSafetyResponse> | undefined): boolean {
+    return proto3.util.equals(AdminModerateRelationshipPromptSafetyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasTemporaryCrew
+ */
+export class AtlasTemporaryCrew extends Message$1<AtlasTemporaryCrew> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string creator_user_id = 2;
+   */
+  creatorUserId = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * platonic_friendship | activity_partner | creative_collaborator | city_newcomer_host
+   *
+   * @generated from field: string intent_lane = 4;
+   */
+  intentLane = "";
+
+  /**
+   * @generated from field: string city = 5;
+   */
+  city = "";
+
+  /**
+   * organizer | logistics_lead | treasurer | member
+   *
+   * @generated from field: string member_role = 6;
+   */
+  memberRole = "";
+
+  /**
+   * @generated from field: int32 member_count = 7;
+   */
+  memberCount = 0;
+
+  /**
+   * @generated from field: int32 max_members = 8;
+   */
+  maxMembers = 0;
+
+  /**
+   * no_cost_public | even_split | each_pays_own | organizer_covered
+   *
+   * @generated from field: string expense_mode = 9;
+   */
+  expenseMode = "";
+
+  /**
+   * @generated from field: int32 estimated_share_cents = 10;
+   */
+  estimatedShareCents = 0;
+
+  /**
+   * forming | active_outing | completed_gracefully | dissolved
+   *
+   * @generated from field: string lifecycle_state = 11;
+   */
+  lifecycleState = "";
+
+  /**
+   * @generated from field: bool romantic_lane_isolated = 12;
+   */
+  romanticLaneIsolated = false;
+
+  /**
+   * @generated from field: int64 dissolves_at = 13;
+   */
+  dissolvesAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasTemporaryCrew>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasTemporaryCrew";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "creator_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "intent_lane", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "member_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "member_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "max_members", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "expense_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "estimated_share_cents", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "lifecycle_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "romantic_lane_isolated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "dissolves_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasTemporaryCrew {
+    return new AtlasTemporaryCrew().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasTemporaryCrew {
+    return new AtlasTemporaryCrew().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasTemporaryCrew {
+    return new AtlasTemporaryCrew().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasTemporaryCrew | PlainMessage<AtlasTemporaryCrew> | undefined, b: AtlasTemporaryCrew | PlainMessage<AtlasTemporaryCrew> | undefined): boolean {
+    return proto3.util.equals(AtlasTemporaryCrew, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasCrewSocialMission
+ */
+export class AtlasCrewSocialMission extends Message$1<AtlasCrewSocialMission> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string crew_id = 2;
+   */
+  crewId = "";
+
+  /**
+   * @generated from field: string user_id = 3;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string mission_title = 4;
+   */
+  missionTitle = "";
+
+  /**
+   * third_place_salon | outdoor_expedition | volunteer_sprint | cultural_table
+   *
+   * @generated from field: string category = 5;
+   */
+  category = "";
+
+  /**
+   * venue_checkin_qr | dual_presence_ping | host_attestation | shared_photo_opt_in
+   *
+   * @generated from field: string evidence_kind = 6;
+   */
+  evidenceKind = "";
+
+  /**
+   * @generated from field: string evidence_reference = 7;
+   */
+  evidenceReference = "";
+
+  /**
+   * pending | verified | flagged
+   *
+   * @generated from field: string verification_status = 8;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: int64 completed_at = 9;
+   */
+  completedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasCrewSocialMission>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasCrewSocialMission";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "crew_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "mission_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "evidence_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "evidence_reference", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "completed_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasCrewSocialMission {
+    return new AtlasCrewSocialMission().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasCrewSocialMission {
+    return new AtlasCrewSocialMission().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasCrewSocialMission {
+    return new AtlasCrewSocialMission().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasCrewSocialMission | PlainMessage<AtlasCrewSocialMission> | undefined, b: AtlasCrewSocialMission | PlainMessage<AtlasCrewSocialMission> | undefined): boolean {
+    return proto3.util.equals(AtlasCrewSocialMission, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasContextualCrewEndorsement
+ */
+export class AtlasContextualCrewEndorsement extends Message$1<AtlasContextualCrewEndorsement> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string crew_id = 2;
+   */
+  crewId = "";
+
+  /**
+   * @generated from field: string recipient_user_id = 3;
+   */
+  recipientUserId = "";
+
+  /**
+   * punctual_organizer | welcoming_guide | clear_communicator | fair_expense_settler
+   *
+   * @generated from field: string context_badge = 4;
+   */
+  contextBadge = "";
+
+  /**
+   * @generated from field: bool universal_ranking_prohibited = 5;
+   */
+  universalRankingProhibited = false;
+
+  /**
+   * @generated from field: string endorsement_note = 6;
+   */
+  endorsementNote = "";
+
+  /**
+   * @generated from field: int64 created_at = 7;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasContextualCrewEndorsement>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasContextualCrewEndorsement";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "crew_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "recipient_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "context_badge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "universal_ranking_prohibited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "endorsement_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasContextualCrewEndorsement {
+    return new AtlasContextualCrewEndorsement().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasContextualCrewEndorsement {
+    return new AtlasContextualCrewEndorsement().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasContextualCrewEndorsement {
+    return new AtlasContextualCrewEndorsement().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasContextualCrewEndorsement | PlainMessage<AtlasContextualCrewEndorsement> | undefined, b: AtlasContextualCrewEndorsement | PlainMessage<AtlasContextualCrewEndorsement> | undefined): boolean {
+    return proto3.util.equals(AtlasContextualCrewEndorsement, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetFriendshipCrewsWorkbenchRequest
+ */
+export class GetFriendshipCrewsWorkbenchRequest extends Message$1<GetFriendshipCrewsWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetFriendshipCrewsWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetFriendshipCrewsWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetFriendshipCrewsWorkbenchRequest {
+    return new GetFriendshipCrewsWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetFriendshipCrewsWorkbenchRequest {
+    return new GetFriendshipCrewsWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetFriendshipCrewsWorkbenchRequest {
+    return new GetFriendshipCrewsWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetFriendshipCrewsWorkbenchRequest | PlainMessage<GetFriendshipCrewsWorkbenchRequest> | undefined, b: GetFriendshipCrewsWorkbenchRequest | PlainMessage<GetFriendshipCrewsWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetFriendshipCrewsWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse
+ */
+export class GetFriendshipCrewsWorkbenchResponse extends Message$1<GetFriendshipCrewsWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasTemporaryCrew crews = 1;
+   */
+  crews: AtlasTemporaryCrew[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasCrewSocialMission missions = 2;
+   */
+  missions: AtlasCrewSocialMission[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasContextualCrewEndorsement endorsements = 3;
+   */
+  endorsements: AtlasContextualCrewEndorsement[] = [];
+
+  constructor(data?: PartialMessage<GetFriendshipCrewsWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "crews", kind: "message", T: AtlasTemporaryCrew, repeated: true },
+    { no: 2, name: "missions", kind: "message", T: AtlasCrewSocialMission, repeated: true },
+    { no: 3, name: "endorsements", kind: "message", T: AtlasContextualCrewEndorsement, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetFriendshipCrewsWorkbenchResponse {
+    return new GetFriendshipCrewsWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetFriendshipCrewsWorkbenchResponse {
+    return new GetFriendshipCrewsWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetFriendshipCrewsWorkbenchResponse {
+    return new GetFriendshipCrewsWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetFriendshipCrewsWorkbenchResponse | PlainMessage<GetFriendshipCrewsWorkbenchResponse> | undefined, b: GetFriendshipCrewsWorkbenchResponse | PlainMessage<GetFriendshipCrewsWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetFriendshipCrewsWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateTemporaryCrewRequest
+ */
+export class CreateTemporaryCrewRequest extends Message$1<CreateTemporaryCrewRequest> {
+  /**
+   * @generated from field: string creator_user_id = 1;
+   */
+  creatorUserId = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string intent_lane = 3;
+   */
+  intentLane = "";
+
+  /**
+   * @generated from field: string city = 4;
+   */
+  city = "";
+
+  /**
+   * @generated from field: string member_role = 5;
+   */
+  memberRole = "";
+
+  /**
+   * @generated from field: int32 max_members = 6;
+   */
+  maxMembers = 0;
+
+  /**
+   * @generated from field: string expense_mode = 7;
+   */
+  expenseMode = "";
+
+  /**
+   * @generated from field: int32 estimated_share_cents = 8;
+   */
+  estimatedShareCents = 0;
+
+  constructor(data?: PartialMessage<CreateTemporaryCrewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateTemporaryCrewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "creator_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "intent_lane", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "member_role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "max_members", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "expense_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "estimated_share_cents", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTemporaryCrewRequest {
+    return new CreateTemporaryCrewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTemporaryCrewRequest {
+    return new CreateTemporaryCrewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTemporaryCrewRequest {
+    return new CreateTemporaryCrewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateTemporaryCrewRequest | PlainMessage<CreateTemporaryCrewRequest> | undefined, b: CreateTemporaryCrewRequest | PlainMessage<CreateTemporaryCrewRequest> | undefined): boolean {
+    return proto3.util.equals(CreateTemporaryCrewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.CreateTemporaryCrewResponse
+ */
+export class CreateTemporaryCrewResponse extends Message$1<CreateTemporaryCrewResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasTemporaryCrew crew = 1;
+   */
+  crew?: AtlasTemporaryCrew;
+
+  constructor(data?: PartialMessage<CreateTemporaryCrewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.CreateTemporaryCrewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "crew", kind: "message", T: AtlasTemporaryCrew },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTemporaryCrewResponse {
+    return new CreateTemporaryCrewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTemporaryCrewResponse {
+    return new CreateTemporaryCrewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTemporaryCrewResponse {
+    return new CreateTemporaryCrewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateTemporaryCrewResponse | PlainMessage<CreateTemporaryCrewResponse> | undefined, b: CreateTemporaryCrewResponse | PlainMessage<CreateTemporaryCrewResponse> | undefined): boolean {
+    return proto3.util.equals(CreateTemporaryCrewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SubmitCrewMissionEvidenceRequest
+ */
+export class SubmitCrewMissionEvidenceRequest extends Message$1<SubmitCrewMissionEvidenceRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string crew_id = 2;
+   */
+  crewId = "";
+
+  /**
+   * @generated from field: string mission_title = 3;
+   */
+  missionTitle = "";
+
+  /**
+   * @generated from field: string category = 4;
+   */
+  category = "";
+
+  /**
+   * @generated from field: string evidence_kind = 5;
+   */
+  evidenceKind = "";
+
+  /**
+   * @generated from field: string evidence_reference = 6;
+   */
+  evidenceReference = "";
+
+  constructor(data?: PartialMessage<SubmitCrewMissionEvidenceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SubmitCrewMissionEvidenceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "crew_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "mission_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "evidence_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "evidence_reference", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitCrewMissionEvidenceRequest {
+    return new SubmitCrewMissionEvidenceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitCrewMissionEvidenceRequest {
+    return new SubmitCrewMissionEvidenceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitCrewMissionEvidenceRequest {
+    return new SubmitCrewMissionEvidenceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitCrewMissionEvidenceRequest | PlainMessage<SubmitCrewMissionEvidenceRequest> | undefined, b: SubmitCrewMissionEvidenceRequest | PlainMessage<SubmitCrewMissionEvidenceRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitCrewMissionEvidenceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SubmitCrewMissionEvidenceResponse
+ */
+export class SubmitCrewMissionEvidenceResponse extends Message$1<SubmitCrewMissionEvidenceResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasCrewSocialMission mission = 1;
+   */
+  mission?: AtlasCrewSocialMission;
+
+  constructor(data?: PartialMessage<SubmitCrewMissionEvidenceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SubmitCrewMissionEvidenceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "mission", kind: "message", T: AtlasCrewSocialMission },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitCrewMissionEvidenceResponse {
+    return new SubmitCrewMissionEvidenceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitCrewMissionEvidenceResponse {
+    return new SubmitCrewMissionEvidenceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitCrewMissionEvidenceResponse {
+    return new SubmitCrewMissionEvidenceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitCrewMissionEvidenceResponse | PlainMessage<SubmitCrewMissionEvidenceResponse> | undefined, b: SubmitCrewMissionEvidenceResponse | PlainMessage<SubmitCrewMissionEvidenceResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitCrewMissionEvidenceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.DissolveOrCompleteCrewRequest
+ */
+export class DissolveOrCompleteCrewRequest extends Message$1<DissolveOrCompleteCrewRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string crew_id = 2;
+   */
+  crewId = "";
+
+  /**
+   * @generated from field: string lifecycle_state = 3;
+   */
+  lifecycleState = "";
+
+  /**
+   * @generated from field: string context_badge = 4;
+   */
+  contextBadge = "";
+
+  /**
+   * @generated from field: string endorsement_note = 5;
+   */
+  endorsementNote = "";
+
+  constructor(data?: PartialMessage<DissolveOrCompleteCrewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DissolveOrCompleteCrewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "crew_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "lifecycle_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "context_badge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "endorsement_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DissolveOrCompleteCrewRequest {
+    return new DissolveOrCompleteCrewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DissolveOrCompleteCrewRequest {
+    return new DissolveOrCompleteCrewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DissolveOrCompleteCrewRequest {
+    return new DissolveOrCompleteCrewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DissolveOrCompleteCrewRequest | PlainMessage<DissolveOrCompleteCrewRequest> | undefined, b: DissolveOrCompleteCrewRequest | PlainMessage<DissolveOrCompleteCrewRequest> | undefined): boolean {
+    return proto3.util.equals(DissolveOrCompleteCrewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.DissolveOrCompleteCrewResponse
+ */
+export class DissolveOrCompleteCrewResponse extends Message$1<DissolveOrCompleteCrewResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasTemporaryCrew crew = 1;
+   */
+  crew?: AtlasTemporaryCrew;
+
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasContextualCrewEndorsement endorsement = 2;
+   */
+  endorsement?: AtlasContextualCrewEndorsement;
+
+  constructor(data?: PartialMessage<DissolveOrCompleteCrewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.DissolveOrCompleteCrewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "crew", kind: "message", T: AtlasTemporaryCrew },
+    { no: 2, name: "endorsement", kind: "message", T: AtlasContextualCrewEndorsement },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DissolveOrCompleteCrewResponse {
+    return new DissolveOrCompleteCrewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DissolveOrCompleteCrewResponse {
+    return new DissolveOrCompleteCrewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DissolveOrCompleteCrewResponse {
+    return new DissolveOrCompleteCrewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: DissolveOrCompleteCrewResponse | PlainMessage<DissolveOrCompleteCrewResponse> | undefined, b: DissolveOrCompleteCrewResponse | PlainMessage<DissolveOrCompleteCrewResponse> | undefined): boolean {
+    return proto3.util.equals(DissolveOrCompleteCrewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListFriendshipCrewsAuditRequest
+ */
+export class AdminListFriendshipCrewsAuditRequest extends Message$1<AdminListFriendshipCrewsAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListFriendshipCrewsAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListFriendshipCrewsAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListFriendshipCrewsAuditRequest {
+    return new AdminListFriendshipCrewsAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListFriendshipCrewsAuditRequest {
+    return new AdminListFriendshipCrewsAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListFriendshipCrewsAuditRequest {
+    return new AdminListFriendshipCrewsAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListFriendshipCrewsAuditRequest | PlainMessage<AdminListFriendshipCrewsAuditRequest> | undefined, b: AdminListFriendshipCrewsAuditRequest | PlainMessage<AdminListFriendshipCrewsAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListFriendshipCrewsAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse
+ */
+export class AdminListFriendshipCrewsAuditResponse extends Message$1<AdminListFriendshipCrewsAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasTemporaryCrew crews = 1;
+   */
+  crews: AtlasTemporaryCrew[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasCrewSocialMission missions = 2;
+   */
+  missions: AtlasCrewSocialMission[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasContextualCrewEndorsement endorsements = 3;
+   */
+  endorsements: AtlasContextualCrewEndorsement[] = [];
+
+  constructor(data?: PartialMessage<AdminListFriendshipCrewsAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "crews", kind: "message", T: AtlasTemporaryCrew, repeated: true },
+    { no: 2, name: "missions", kind: "message", T: AtlasCrewSocialMission, repeated: true },
+    { no: 3, name: "endorsements", kind: "message", T: AtlasContextualCrewEndorsement, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListFriendshipCrewsAuditResponse {
+    return new AdminListFriendshipCrewsAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListFriendshipCrewsAuditResponse {
+    return new AdminListFriendshipCrewsAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListFriendshipCrewsAuditResponse {
+    return new AdminListFriendshipCrewsAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListFriendshipCrewsAuditResponse | PlainMessage<AdminListFriendshipCrewsAuditResponse> | undefined, b: AdminListFriendshipCrewsAuditResponse | PlainMessage<AdminListFriendshipCrewsAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListFriendshipCrewsAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminModerateCrewSafetyAndMissionRequest
+ */
+export class AdminModerateCrewSafetyAndMissionRequest extends Message$1<AdminModerateCrewSafetyAndMissionRequest> {
+  /**
+   * @generated from field: string mission_id = 1;
+   */
+  missionId = "";
+
+  /**
+   * @generated from field: string verification_status = 2;
+   */
+  verificationStatus = "";
+
+  /**
+   * @generated from field: string audit_reason = 3;
+   */
+  auditReason = "";
+
+  constructor(data?: PartialMessage<AdminModerateCrewSafetyAndMissionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminModerateCrewSafetyAndMissionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "mission_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "verification_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "audit_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminModerateCrewSafetyAndMissionRequest {
+    return new AdminModerateCrewSafetyAndMissionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminModerateCrewSafetyAndMissionRequest {
+    return new AdminModerateCrewSafetyAndMissionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminModerateCrewSafetyAndMissionRequest {
+    return new AdminModerateCrewSafetyAndMissionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminModerateCrewSafetyAndMissionRequest | PlainMessage<AdminModerateCrewSafetyAndMissionRequest> | undefined, b: AdminModerateCrewSafetyAndMissionRequest | PlainMessage<AdminModerateCrewSafetyAndMissionRequest> | undefined): boolean {
+    return proto3.util.equals(AdminModerateCrewSafetyAndMissionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse
+ */
+export class AdminModerateCrewSafetyAndMissionResponse extends Message$1<AdminModerateCrewSafetyAndMissionResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasCrewSocialMission mission = 1;
+   */
+  mission?: AtlasCrewSocialMission;
+
+  constructor(data?: PartialMessage<AdminModerateCrewSafetyAndMissionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "mission", kind: "message", T: AtlasCrewSocialMission },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminModerateCrewSafetyAndMissionResponse {
+    return new AdminModerateCrewSafetyAndMissionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminModerateCrewSafetyAndMissionResponse {
+    return new AdminModerateCrewSafetyAndMissionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminModerateCrewSafetyAndMissionResponse {
+    return new AdminModerateCrewSafetyAndMissionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminModerateCrewSafetyAndMissionResponse | PlainMessage<AdminModerateCrewSafetyAndMissionResponse> | undefined, b: AdminModerateCrewSafetyAndMissionResponse | PlainMessage<AdminModerateCrewSafetyAndMissionResponse> | undefined): boolean {
+    return proto3.util.equals(AdminModerateCrewSafetyAndMissionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasConnectionArchiveEntry
+ */
+export class AtlasConnectionArchiveEntry extends Message$1<AtlasConnectionArchiveEntry> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * akashic_chapter | member_letter | appreciation_gift | salon_keepsake | yearbook_moment
+   *
+   * @generated from field: string artifact_kind = 3;
+   */
+  artifactKind = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 5;
+   */
+  summary = "";
+
+  /**
+   * private_vault | mutual_connection_only | yearbook_selected
+   *
+   * @generated from field: string audience_scope = 6;
+   */
+  audienceScope = "";
+
+  /**
+   * retain_private | return_to_sender | mutual_hide | delete_permanently | disputed_hold
+   *
+   * @generated from field: string post_match_disposition = 7;
+   */
+  postMatchDisposition = "";
+
+  /**
+   * @generated from field: int32 authorship_version = 8;
+   */
+  authorshipVersion = 0;
+
+  /**
+   * @generated from field: int64 created_at = 9;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasConnectionArchiveEntry>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasConnectionArchiveEntry";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "artifact_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "audience_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "post_match_disposition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "authorship_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasConnectionArchiveEntry {
+    return new AtlasConnectionArchiveEntry().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasConnectionArchiveEntry {
+    return new AtlasConnectionArchiveEntry().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasConnectionArchiveEntry {
+    return new AtlasConnectionArchiveEntry().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasConnectionArchiveEntry | PlainMessage<AtlasConnectionArchiveEntry> | undefined, b: AtlasConnectionArchiveEntry | PlainMessage<AtlasConnectionArchiveEntry> | undefined): boolean {
+    return proto3.util.equals(AtlasConnectionArchiveEntry, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+ */
+export class AtlasMeaningfulGiftGuardrail extends Message$1<AtlasMeaningfulGiftGuardrail> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string sender_user_id = 2;
+   */
+  senderUserId = "";
+
+  /**
+   * @generated from field: string recipient_user_id = 3;
+   */
+  recipientUserId = "";
+
+  /**
+   * @generated from field: string gift_title = 4;
+   */
+  giftTitle = "";
+
+  /**
+   * non_monetary_note | artisan_token | book_edition | salon_invitation
+   *
+   * @generated from field: string gift_kind = 5;
+   */
+  giftKind = "";
+
+  /**
+   * @generated from field: int32 spend_cents = 6;
+   */
+  spendCents = 0;
+
+  /**
+   * @generated from field: int32 monthly_cap_cents = 7;
+   */
+  monthlyCapCents = 0;
+
+  /**
+   * welcome_appreciation | ask_first | no_gifts
+   *
+   * @generated from field: string recipient_preference = 8;
+   */
+  recipientPreference = "";
+
+  /**
+   * @generated from field: bool ranking_or_match_advantage_granted = 9;
+   */
+  rankingOrMatchAdvantageGranted = false;
+
+  /**
+   * clear | refunded | held_coercion_review
+   *
+   * @generated from field: string dispute_status = 10;
+   */
+  disputeStatus = "";
+
+  /**
+   * @generated from field: int64 created_at = 11;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasMeaningfulGiftGuardrail>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasMeaningfulGiftGuardrail";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "sender_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "recipient_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "gift_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "gift_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "spend_cents", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "monthly_cap_cents", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "recipient_preference", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "ranking_or_match_advantage_granted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "dispute_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasMeaningfulGiftGuardrail {
+    return new AtlasMeaningfulGiftGuardrail().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasMeaningfulGiftGuardrail {
+    return new AtlasMeaningfulGiftGuardrail().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasMeaningfulGiftGuardrail {
+    return new AtlasMeaningfulGiftGuardrail().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasMeaningfulGiftGuardrail | PlainMessage<AtlasMeaningfulGiftGuardrail> | undefined, b: AtlasMeaningfulGiftGuardrail | PlainMessage<AtlasMeaningfulGiftGuardrail> | undefined): boolean {
+    return proto3.util.equals(AtlasMeaningfulGiftGuardrail, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasYearbookPreviewManifest
+ */
+export class AtlasYearbookPreviewManifest extends Message$1<AtlasYearbookPreviewManifest> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string year_label = 3;
+   */
+  yearLabel = "";
+
+  /**
+   * @generated from field: int32 selected_entry_count = 4;
+   */
+  selectedEntryCount = 0;
+
+  /**
+   * @generated from field: bool preview_quotes_verified = 5;
+   */
+  previewQuotesVerified = false;
+
+  /**
+   * @generated from field: bool no_inferred_moments_verified = 6;
+   */
+  noInferredMomentsVerified = false;
+
+  /**
+   * draft_preview | member_approved | fulfilled
+   *
+   * @generated from field: string print_status = 7;
+   */
+  printStatus = "";
+
+  /**
+   * @generated from field: int64 updated_at = 8;
+   */
+  updatedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasYearbookPreviewManifest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasYearbookPreviewManifest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "year_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "selected_entry_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "preview_quotes_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "no_inferred_moments_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "print_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasYearbookPreviewManifest {
+    return new AtlasYearbookPreviewManifest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasYearbookPreviewManifest {
+    return new AtlasYearbookPreviewManifest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasYearbookPreviewManifest {
+    return new AtlasYearbookPreviewManifest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasYearbookPreviewManifest | PlainMessage<AtlasYearbookPreviewManifest> | undefined, b: AtlasYearbookPreviewManifest | PlainMessage<AtlasYearbookPreviewManifest> | undefined): boolean {
+    return proto3.util.equals(AtlasYearbookPreviewManifest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetConnectionArchiveWorkbenchRequest
+ */
+export class GetConnectionArchiveWorkbenchRequest extends Message$1<GetConnectionArchiveWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetConnectionArchiveWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetConnectionArchiveWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectionArchiveWorkbenchRequest {
+    return new GetConnectionArchiveWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectionArchiveWorkbenchRequest {
+    return new GetConnectionArchiveWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectionArchiveWorkbenchRequest {
+    return new GetConnectionArchiveWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetConnectionArchiveWorkbenchRequest | PlainMessage<GetConnectionArchiveWorkbenchRequest> | undefined, b: GetConnectionArchiveWorkbenchRequest | PlainMessage<GetConnectionArchiveWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetConnectionArchiveWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse
+ */
+export class GetConnectionArchiveWorkbenchResponse extends Message$1<GetConnectionArchiveWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasConnectionArchiveEntry entries = 1;
+   */
+  entries: AtlasConnectionArchiveEntry[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasMeaningfulGiftGuardrail gifts = 2;
+   */
+  gifts: AtlasMeaningfulGiftGuardrail[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasYearbookPreviewManifest yearbook_manifests = 3;
+   */
+  yearbookManifests: AtlasYearbookPreviewManifest[] = [];
+
+  constructor(data?: PartialMessage<GetConnectionArchiveWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: AtlasConnectionArchiveEntry, repeated: true },
+    { no: 2, name: "gifts", kind: "message", T: AtlasMeaningfulGiftGuardrail, repeated: true },
+    { no: 3, name: "yearbook_manifests", kind: "message", T: AtlasYearbookPreviewManifest, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectionArchiveWorkbenchResponse {
+    return new GetConnectionArchiveWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectionArchiveWorkbenchResponse {
+    return new GetConnectionArchiveWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectionArchiveWorkbenchResponse {
+    return new GetConnectionArchiveWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetConnectionArchiveWorkbenchResponse | PlainMessage<GetConnectionArchiveWorkbenchResponse> | undefined, b: GetConnectionArchiveWorkbenchResponse | PlainMessage<GetConnectionArchiveWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetConnectionArchiveWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertConnectionArchiveEntryRequest
+ */
+export class UpsertConnectionArchiveEntryRequest extends Message$1<UpsertConnectionArchiveEntryRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string artifact_kind = 2;
+   */
+  artifactKind = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string summary = 4;
+   */
+  summary = "";
+
+  /**
+   * @generated from field: string audience_scope = 5;
+   */
+  audienceScope = "";
+
+  /**
+   * @generated from field: string post_match_disposition = 6;
+   */
+  postMatchDisposition = "";
+
+  constructor(data?: PartialMessage<UpsertConnectionArchiveEntryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertConnectionArchiveEntryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "artifact_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "audience_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "post_match_disposition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertConnectionArchiveEntryRequest {
+    return new UpsertConnectionArchiveEntryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertConnectionArchiveEntryRequest {
+    return new UpsertConnectionArchiveEntryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertConnectionArchiveEntryRequest {
+    return new UpsertConnectionArchiveEntryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertConnectionArchiveEntryRequest | PlainMessage<UpsertConnectionArchiveEntryRequest> | undefined, b: UpsertConnectionArchiveEntryRequest | PlainMessage<UpsertConnectionArchiveEntryRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertConnectionArchiveEntryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpsertConnectionArchiveEntryResponse
+ */
+export class UpsertConnectionArchiveEntryResponse extends Message$1<UpsertConnectionArchiveEntryResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasConnectionArchiveEntry entry = 1;
+   */
+  entry?: AtlasConnectionArchiveEntry;
+
+  constructor(data?: PartialMessage<UpsertConnectionArchiveEntryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpsertConnectionArchiveEntryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entry", kind: "message", T: AtlasConnectionArchiveEntry },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertConnectionArchiveEntryResponse {
+    return new UpsertConnectionArchiveEntryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertConnectionArchiveEntryResponse {
+    return new UpsertConnectionArchiveEntryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertConnectionArchiveEntryResponse {
+    return new UpsertConnectionArchiveEntryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertConnectionArchiveEntryResponse | PlainMessage<UpsertConnectionArchiveEntryResponse> | undefined, b: UpsertConnectionArchiveEntryResponse | PlainMessage<UpsertConnectionArchiveEntryResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertConnectionArchiveEntryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SendMeaningfulGuardedGiftRequest
+ */
+export class SendMeaningfulGuardedGiftRequest extends Message$1<SendMeaningfulGuardedGiftRequest> {
+  /**
+   * @generated from field: string sender_user_id = 1;
+   */
+  senderUserId = "";
+
+  /**
+   * @generated from field: string recipient_user_id = 2;
+   */
+  recipientUserId = "";
+
+  /**
+   * @generated from field: string gift_title = 3;
+   */
+  giftTitle = "";
+
+  /**
+   * @generated from field: string gift_kind = 4;
+   */
+  giftKind = "";
+
+  /**
+   * @generated from field: int32 spend_cents = 5;
+   */
+  spendCents = 0;
+
+  /**
+   * @generated from field: string recipient_preference = 6;
+   */
+  recipientPreference = "";
+
+  constructor(data?: PartialMessage<SendMeaningfulGuardedGiftRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SendMeaningfulGuardedGiftRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sender_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "recipient_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "gift_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "gift_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "spend_cents", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "recipient_preference", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMeaningfulGuardedGiftRequest {
+    return new SendMeaningfulGuardedGiftRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMeaningfulGuardedGiftRequest {
+    return new SendMeaningfulGuardedGiftRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendMeaningfulGuardedGiftRequest {
+    return new SendMeaningfulGuardedGiftRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendMeaningfulGuardedGiftRequest | PlainMessage<SendMeaningfulGuardedGiftRequest> | undefined, b: SendMeaningfulGuardedGiftRequest | PlainMessage<SendMeaningfulGuardedGiftRequest> | undefined): boolean {
+    return proto3.util.equals(SendMeaningfulGuardedGiftRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.SendMeaningfulGuardedGiftResponse
+ */
+export class SendMeaningfulGuardedGiftResponse extends Message$1<SendMeaningfulGuardedGiftResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasMeaningfulGiftGuardrail gift = 1;
+   */
+  gift?: AtlasMeaningfulGiftGuardrail;
+
+  constructor(data?: PartialMessage<SendMeaningfulGuardedGiftResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.SendMeaningfulGuardedGiftResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gift", kind: "message", T: AtlasMeaningfulGiftGuardrail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendMeaningfulGuardedGiftResponse {
+    return new SendMeaningfulGuardedGiftResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendMeaningfulGuardedGiftResponse {
+    return new SendMeaningfulGuardedGiftResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendMeaningfulGuardedGiftResponse {
+    return new SendMeaningfulGuardedGiftResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SendMeaningfulGuardedGiftResponse | PlainMessage<SendMeaningfulGuardedGiftResponse> | undefined, b: SendMeaningfulGuardedGiftResponse | PlainMessage<SendMeaningfulGuardedGiftResponse> | undefined): boolean {
+    return proto3.util.equals(SendMeaningfulGuardedGiftResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ApproveYearbookPreviewManifestRequest
+ */
+export class ApproveYearbookPreviewManifestRequest extends Message$1<ApproveYearbookPreviewManifestRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string year_label = 2;
+   */
+  yearLabel = "";
+
+  /**
+   * @generated from field: int32 selected_entry_count = 3;
+   */
+  selectedEntryCount = 0;
+
+  /**
+   * @generated from field: string print_status = 4;
+   */
+  printStatus = "";
+
+  constructor(data?: PartialMessage<ApproveYearbookPreviewManifestRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ApproveYearbookPreviewManifestRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "year_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "selected_entry_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "print_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveYearbookPreviewManifestRequest {
+    return new ApproveYearbookPreviewManifestRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveYearbookPreviewManifestRequest {
+    return new ApproveYearbookPreviewManifestRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveYearbookPreviewManifestRequest {
+    return new ApproveYearbookPreviewManifestRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveYearbookPreviewManifestRequest | PlainMessage<ApproveYearbookPreviewManifestRequest> | undefined, b: ApproveYearbookPreviewManifestRequest | PlainMessage<ApproveYearbookPreviewManifestRequest> | undefined): boolean {
+    return proto3.util.equals(ApproveYearbookPreviewManifestRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.ApproveYearbookPreviewManifestResponse
+ */
+export class ApproveYearbookPreviewManifestResponse extends Message$1<ApproveYearbookPreviewManifestResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasYearbookPreviewManifest manifest = 1;
+   */
+  manifest?: AtlasYearbookPreviewManifest;
+
+  constructor(data?: PartialMessage<ApproveYearbookPreviewManifestResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.ApproveYearbookPreviewManifestResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "manifest", kind: "message", T: AtlasYearbookPreviewManifest },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveYearbookPreviewManifestResponse {
+    return new ApproveYearbookPreviewManifestResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveYearbookPreviewManifestResponse {
+    return new ApproveYearbookPreviewManifestResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveYearbookPreviewManifestResponse {
+    return new ApproveYearbookPreviewManifestResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveYearbookPreviewManifestResponse | PlainMessage<ApproveYearbookPreviewManifestResponse> | undefined, b: ApproveYearbookPreviewManifestResponse | PlainMessage<ApproveYearbookPreviewManifestResponse> | undefined): boolean {
+    return proto3.util.equals(ApproveYearbookPreviewManifestResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListConnectionArchiveAuditRequest
+ */
+export class AdminListConnectionArchiveAuditRequest extends Message$1<AdminListConnectionArchiveAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListConnectionArchiveAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListConnectionArchiveAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListConnectionArchiveAuditRequest {
+    return new AdminListConnectionArchiveAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListConnectionArchiveAuditRequest {
+    return new AdminListConnectionArchiveAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListConnectionArchiveAuditRequest {
+    return new AdminListConnectionArchiveAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListConnectionArchiveAuditRequest | PlainMessage<AdminListConnectionArchiveAuditRequest> | undefined, b: AdminListConnectionArchiveAuditRequest | PlainMessage<AdminListConnectionArchiveAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListConnectionArchiveAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListConnectionArchiveAuditResponse
+ */
+export class AdminListConnectionArchiveAuditResponse extends Message$1<AdminListConnectionArchiveAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasConnectionArchiveEntry entries = 1;
+   */
+  entries: AtlasConnectionArchiveEntry[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasMeaningfulGiftGuardrail gifts = 2;
+   */
+  gifts: AtlasMeaningfulGiftGuardrail[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasYearbookPreviewManifest yearbook_manifests = 3;
+   */
+  yearbookManifests: AtlasYearbookPreviewManifest[] = [];
+
+  constructor(data?: PartialMessage<AdminListConnectionArchiveAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListConnectionArchiveAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entries", kind: "message", T: AtlasConnectionArchiveEntry, repeated: true },
+    { no: 2, name: "gifts", kind: "message", T: AtlasMeaningfulGiftGuardrail, repeated: true },
+    { no: 3, name: "yearbook_manifests", kind: "message", T: AtlasYearbookPreviewManifest, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListConnectionArchiveAuditResponse {
+    return new AdminListConnectionArchiveAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListConnectionArchiveAuditResponse {
+    return new AdminListConnectionArchiveAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListConnectionArchiveAuditResponse {
+    return new AdminListConnectionArchiveAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListConnectionArchiveAuditResponse | PlainMessage<AdminListConnectionArchiveAuditResponse> | undefined, b: AdminListConnectionArchiveAuditResponse | PlainMessage<AdminListConnectionArchiveAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListConnectionArchiveAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeRequest
+ */
+export class AdminResolveGiftOrArchiveDisputeRequest extends Message$1<AdminResolveGiftOrArchiveDisputeRequest> {
+  /**
+   * @generated from field: string gift_id = 1;
+   */
+  giftId = "";
+
+  /**
+   * @generated from field: string dispute_status = 2;
+   */
+  disputeStatus = "";
+
+  /**
+   * @generated from field: string audit_reason = 3;
+   */
+  auditReason = "";
+
+  constructor(data?: PartialMessage<AdminResolveGiftOrArchiveDisputeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gift_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "dispute_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "audit_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminResolveGiftOrArchiveDisputeRequest {
+    return new AdminResolveGiftOrArchiveDisputeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminResolveGiftOrArchiveDisputeRequest {
+    return new AdminResolveGiftOrArchiveDisputeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminResolveGiftOrArchiveDisputeRequest {
+    return new AdminResolveGiftOrArchiveDisputeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminResolveGiftOrArchiveDisputeRequest | PlainMessage<AdminResolveGiftOrArchiveDisputeRequest> | undefined, b: AdminResolveGiftOrArchiveDisputeRequest | PlainMessage<AdminResolveGiftOrArchiveDisputeRequest> | undefined): boolean {
+    return proto3.util.equals(AdminResolveGiftOrArchiveDisputeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse
+ */
+export class AdminResolveGiftOrArchiveDisputeResponse extends Message$1<AdminResolveGiftOrArchiveDisputeResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasMeaningfulGiftGuardrail gift = 1;
+   */
+  gift?: AtlasMeaningfulGiftGuardrail;
+
+  constructor(data?: PartialMessage<AdminResolveGiftOrArchiveDisputeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gift", kind: "message", T: AtlasMeaningfulGiftGuardrail },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminResolveGiftOrArchiveDisputeResponse {
+    return new AdminResolveGiftOrArchiveDisputeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminResolveGiftOrArchiveDisputeResponse {
+    return new AdminResolveGiftOrArchiveDisputeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminResolveGiftOrArchiveDisputeResponse {
+    return new AdminResolveGiftOrArchiveDisputeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminResolveGiftOrArchiveDisputeResponse | PlainMessage<AdminResolveGiftOrArchiveDisputeResponse> | undefined, b: AdminResolveGiftOrArchiveDisputeResponse | PlainMessage<AdminResolveGiftOrArchiveDisputeResponse> | undefined): boolean {
+    return proto3.util.equals(AdminResolveGiftOrArchiveDisputeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasAccessibleInclusionProfile
+ */
+export class AtlasAccessibleInclusionProfile extends Message$1<AtlasAccessibleInclusionProfile> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * non_spatial_structured_list | reduced_motion_cards | screen_reader_linear | spatial_cosmos
+   *
+   * @generated from field: string discovery_surface_mode = 3;
+   */
+  discoverySurfaceMode = "";
+
+  /**
+   * @generated from field: int32 large_type_scale_percent = 4;
+   */
+  largeTypeScalePercent = 0;
+
+  /**
+   * @generated from field: bool captions_and_transcripts_enforced = 5;
+   */
+  captionsAndTranscriptsEnforced = false;
+
+  /**
+   * @generated from field: bool cognitive_simplification_enabled = 6;
+   */
+  cognitiveSimplificationEnabled = false;
+
+  /**
+   * @generated from field: bool identity_never_inferred_target = 7;
+   */
+  identityNeverInferredTarget = false;
+
+  /**
+   * @generated from field: bool wcag_aa_verified = 8;
+   */
+  wcagAaVerified = false;
+
+  /**
+   * @generated from field: int64 updated_at = 9;
+   */
+  updatedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasAccessibleInclusionProfile>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasAccessibleInclusionProfile";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "discovery_surface_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "large_type_scale_percent", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "captions_and_transcripts_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "cognitive_simplification_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "identity_never_inferred_target", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "wcag_aa_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasAccessibleInclusionProfile {
+    return new AtlasAccessibleInclusionProfile().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasAccessibleInclusionProfile {
+    return new AtlasAccessibleInclusionProfile().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasAccessibleInclusionProfile {
+    return new AtlasAccessibleInclusionProfile().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasAccessibleInclusionProfile | PlainMessage<AtlasAccessibleInclusionProfile> | undefined, b: AtlasAccessibleInclusionProfile | PlainMessage<AtlasAccessibleInclusionProfile> | undefined): boolean {
+    return proto3.util.equals(AtlasAccessibleInclusionProfile, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasJurisdictionReleaseGate
+ */
+export class AtlasJurisdictionReleaseGate extends Message$1<AtlasJurisdictionReleaseGate> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string country_code = 2;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string region_name = 3;
+   */
+  regionName = "";
+
+  /**
+   * @generated from field: int32 age_floor_years = 4;
+   */
+  ageFloorYears = 0;
+
+  /**
+   * @generated from field: string emergency_resource_pack = 5;
+   */
+  emergencyResourcePack = "";
+
+  /**
+   * @generated from field: string low_bandwidth_offline_date_pack = 6;
+   */
+  lowBandwidthOfflineDatePack = "";
+
+  /**
+   * @generated from field: bool jurisdiction_certified = 7;
+   */
+  jurisdictionCertified = false;
+
+  /**
+   * certified_live | pilot_review | held_compliance
+   *
+   * @generated from field: string release_state = 8;
+   */
+  releaseState = "";
+
+  /**
+   * @generated from field: int64 updated_at = 9;
+   */
+  updatedAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasJurisdictionReleaseGate>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasJurisdictionReleaseGate";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "region_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "age_floor_years", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "emergency_resource_pack", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "low_bandwidth_offline_date_pack", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "jurisdiction_certified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "release_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "updated_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasJurisdictionReleaseGate {
+    return new AtlasJurisdictionReleaseGate().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasJurisdictionReleaseGate {
+    return new AtlasJurisdictionReleaseGate().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasJurisdictionReleaseGate {
+    return new AtlasJurisdictionReleaseGate().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasJurisdictionReleaseGate | PlainMessage<AtlasJurisdictionReleaseGate> | undefined, b: AtlasJurisdictionReleaseGate | PlainMessage<AtlasJurisdictionReleaseGate> | undefined): boolean {
+    return proto3.util.equals(AtlasJurisdictionReleaseGate, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AtlasPortableConnectionBundle
+ */
+export class AtlasPortableConnectionBundle extends Message$1<AtlasPortableConnectionBundle> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * export_authored_bundle | import_authored_bundle
+   *
+   * @generated from field: string direction = 3;
+   */
+  direction = "";
+
+  /**
+   * @generated from field: string included_artifacts_summary = 4;
+   */
+  includedArtifactsSummary = "";
+
+  /**
+   * @generated from field: string mapping_report_json = 5;
+   */
+  mappingReportJson = "";
+
+  /**
+   * @generated from field: bool fabricated_match_or_message_history_blocked = 6;
+   */
+  fabricatedMatchOrMessageHistoryBlocked = false;
+
+  /**
+   * verified_ready | completed | quarantined
+   *
+   * @generated from field: string bundle_status = 7;
+   */
+  bundleStatus = "";
+
+  /**
+   * @generated from field: int64 created_at = 8;
+   */
+  createdAt = protoInt64.zero;
+
+  constructor(data?: PartialMessage<AtlasPortableConnectionBundle>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AtlasPortableConnectionBundle";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "included_artifacts_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "mapping_report_json", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "fabricated_match_or_message_history_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "bundle_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "created_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AtlasPortableConnectionBundle {
+    return new AtlasPortableConnectionBundle().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AtlasPortableConnectionBundle {
+    return new AtlasPortableConnectionBundle().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AtlasPortableConnectionBundle {
+    return new AtlasPortableConnectionBundle().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AtlasPortableConnectionBundle | PlainMessage<AtlasPortableConnectionBundle> | undefined, b: AtlasPortableConnectionBundle | PlainMessage<AtlasPortableConnectionBundle> | undefined): boolean {
+    return proto3.util.equals(AtlasPortableConnectionBundle, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchRequest
+ */
+export class GetInclusiveGlobalReleaseWorkbenchRequest extends Message$1<GetInclusiveGlobalReleaseWorkbenchRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  constructor(data?: PartialMessage<GetInclusiveGlobalReleaseWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInclusiveGlobalReleaseWorkbenchRequest {
+    return new GetInclusiveGlobalReleaseWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInclusiveGlobalReleaseWorkbenchRequest {
+    return new GetInclusiveGlobalReleaseWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInclusiveGlobalReleaseWorkbenchRequest {
+    return new GetInclusiveGlobalReleaseWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetInclusiveGlobalReleaseWorkbenchRequest | PlainMessage<GetInclusiveGlobalReleaseWorkbenchRequest> | undefined, b: GetInclusiveGlobalReleaseWorkbenchRequest | PlainMessage<GetInclusiveGlobalReleaseWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetInclusiveGlobalReleaseWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse
+ */
+export class GetInclusiveGlobalReleaseWorkbenchResponse extends Message$1<GetInclusiveGlobalReleaseWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasAccessibleInclusionProfile inclusion_profiles = 1;
+   */
+  inclusionProfiles: AtlasAccessibleInclusionProfile[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasJurisdictionReleaseGate jurisdiction_gates = 2;
+   */
+  jurisdictionGates: AtlasJurisdictionReleaseGate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasPortableConnectionBundle portable_bundles = 3;
+   */
+  portableBundles: AtlasPortableConnectionBundle[] = [];
+
+  constructor(data?: PartialMessage<GetInclusiveGlobalReleaseWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inclusion_profiles", kind: "message", T: AtlasAccessibleInclusionProfile, repeated: true },
+    { no: 2, name: "jurisdiction_gates", kind: "message", T: AtlasJurisdictionReleaseGate, repeated: true },
+    { no: 3, name: "portable_bundles", kind: "message", T: AtlasPortableConnectionBundle, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInclusiveGlobalReleaseWorkbenchResponse {
+    return new GetInclusiveGlobalReleaseWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInclusiveGlobalReleaseWorkbenchResponse {
+    return new GetInclusiveGlobalReleaseWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInclusiveGlobalReleaseWorkbenchResponse {
+    return new GetInclusiveGlobalReleaseWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetInclusiveGlobalReleaseWorkbenchResponse | PlainMessage<GetInclusiveGlobalReleaseWorkbenchResponse> | undefined, b: GetInclusiveGlobalReleaseWorkbenchResponse | PlainMessage<GetInclusiveGlobalReleaseWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetInclusiveGlobalReleaseWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpdateAccessibleInclusionProfileRequest
+ */
+export class UpdateAccessibleInclusionProfileRequest extends Message$1<UpdateAccessibleInclusionProfileRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string discovery_surface_mode = 2;
+   */
+  discoverySurfaceMode = "";
+
+  /**
+   * @generated from field: int32 large_type_scale_percent = 3;
+   */
+  largeTypeScalePercent = 0;
+
+  /**
+   * @generated from field: bool captions_and_transcripts_enforced = 4;
+   */
+  captionsAndTranscriptsEnforced = false;
+
+  /**
+   * @generated from field: bool cognitive_simplification_enabled = 5;
+   */
+  cognitiveSimplificationEnabled = false;
+
+  constructor(data?: PartialMessage<UpdateAccessibleInclusionProfileRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpdateAccessibleInclusionProfileRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "discovery_surface_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "large_type_scale_percent", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "captions_and_transcripts_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "cognitive_simplification_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAccessibleInclusionProfileRequest {
+    return new UpdateAccessibleInclusionProfileRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAccessibleInclusionProfileRequest {
+    return new UpdateAccessibleInclusionProfileRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAccessibleInclusionProfileRequest {
+    return new UpdateAccessibleInclusionProfileRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateAccessibleInclusionProfileRequest | PlainMessage<UpdateAccessibleInclusionProfileRequest> | undefined, b: UpdateAccessibleInclusionProfileRequest | PlainMessage<UpdateAccessibleInclusionProfileRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateAccessibleInclusionProfileRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse
+ */
+export class UpdateAccessibleInclusionProfileResponse extends Message$1<UpdateAccessibleInclusionProfileResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasAccessibleInclusionProfile profile = 1;
+   */
+  profile?: AtlasAccessibleInclusionProfile;
+
+  constructor(data?: PartialMessage<UpdateAccessibleInclusionProfileResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "profile", kind: "message", T: AtlasAccessibleInclusionProfile },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAccessibleInclusionProfileResponse {
+    return new UpdateAccessibleInclusionProfileResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAccessibleInclusionProfileResponse {
+    return new UpdateAccessibleInclusionProfileResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAccessibleInclusionProfileResponse {
+    return new UpdateAccessibleInclusionProfileResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateAccessibleInclusionProfileResponse | PlainMessage<UpdateAccessibleInclusionProfileResponse> | undefined, b: UpdateAccessibleInclusionProfileResponse | PlainMessage<UpdateAccessibleInclusionProfileResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateAccessibleInclusionProfileResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GeneratePortableConnectionBundleRequest
+ */
+export class GeneratePortableConnectionBundleRequest extends Message$1<GeneratePortableConnectionBundleRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string direction = 2;
+   */
+  direction = "";
+
+  /**
+   * @generated from field: string included_artifacts_summary = 3;
+   */
+  includedArtifactsSummary = "";
+
+  constructor(data?: PartialMessage<GeneratePortableConnectionBundleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GeneratePortableConnectionBundleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "direction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "included_artifacts_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeneratePortableConnectionBundleRequest {
+    return new GeneratePortableConnectionBundleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeneratePortableConnectionBundleRequest {
+    return new GeneratePortableConnectionBundleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeneratePortableConnectionBundleRequest {
+    return new GeneratePortableConnectionBundleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GeneratePortableConnectionBundleRequest | PlainMessage<GeneratePortableConnectionBundleRequest> | undefined, b: GeneratePortableConnectionBundleRequest | PlainMessage<GeneratePortableConnectionBundleRequest> | undefined): boolean {
+    return proto3.util.equals(GeneratePortableConnectionBundleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.GeneratePortableConnectionBundleResponse
+ */
+export class GeneratePortableConnectionBundleResponse extends Message$1<GeneratePortableConnectionBundleResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasPortableConnectionBundle bundle = 1;
+   */
+  bundle?: AtlasPortableConnectionBundle;
+
+  constructor(data?: PartialMessage<GeneratePortableConnectionBundleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.GeneratePortableConnectionBundleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "bundle", kind: "message", T: AtlasPortableConnectionBundle },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeneratePortableConnectionBundleResponse {
+    return new GeneratePortableConnectionBundleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeneratePortableConnectionBundleResponse {
+    return new GeneratePortableConnectionBundleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeneratePortableConnectionBundleResponse {
+    return new GeneratePortableConnectionBundleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GeneratePortableConnectionBundleResponse | PlainMessage<GeneratePortableConnectionBundleResponse> | undefined, b: GeneratePortableConnectionBundleResponse | PlainMessage<GeneratePortableConnectionBundleResponse> | undefined): boolean {
+    return proto3.util.equals(GeneratePortableConnectionBundleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackRequest
+ */
+export class VerifyJurisdictionOfflineSafetyPackRequest extends Message$1<VerifyJurisdictionOfflineSafetyPackRequest> {
+  /**
+   * @generated from field: string country_code = 1;
+   */
+  countryCode = "";
+
+  /**
+   * @generated from field: string region_name = 2;
+   */
+  regionName = "";
+
+  constructor(data?: PartialMessage<VerifyJurisdictionOfflineSafetyPackRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "region_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyJurisdictionOfflineSafetyPackRequest {
+    return new VerifyJurisdictionOfflineSafetyPackRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyJurisdictionOfflineSafetyPackRequest {
+    return new VerifyJurisdictionOfflineSafetyPackRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyJurisdictionOfflineSafetyPackRequest {
+    return new VerifyJurisdictionOfflineSafetyPackRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyJurisdictionOfflineSafetyPackRequest | PlainMessage<VerifyJurisdictionOfflineSafetyPackRequest> | undefined, b: VerifyJurisdictionOfflineSafetyPackRequest | PlainMessage<VerifyJurisdictionOfflineSafetyPackRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyJurisdictionOfflineSafetyPackRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse
+ */
+export class VerifyJurisdictionOfflineSafetyPackResponse extends Message$1<VerifyJurisdictionOfflineSafetyPackResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasJurisdictionReleaseGate gate = 1;
+   */
+  gate?: AtlasJurisdictionReleaseGate;
+
+  constructor(data?: PartialMessage<VerifyJurisdictionOfflineSafetyPackResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gate", kind: "message", T: AtlasJurisdictionReleaseGate },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyJurisdictionOfflineSafetyPackResponse {
+    return new VerifyJurisdictionOfflineSafetyPackResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyJurisdictionOfflineSafetyPackResponse {
+    return new VerifyJurisdictionOfflineSafetyPackResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyJurisdictionOfflineSafetyPackResponse {
+    return new VerifyJurisdictionOfflineSafetyPackResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyJurisdictionOfflineSafetyPackResponse | PlainMessage<VerifyJurisdictionOfflineSafetyPackResponse> | undefined, b: VerifyJurisdictionOfflineSafetyPackResponse | PlainMessage<VerifyJurisdictionOfflineSafetyPackResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyJurisdictionOfflineSafetyPackResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditRequest
+ */
+export class AdminListGlobalReleaseCertificationAuditRequest extends Message$1<AdminListGlobalReleaseCertificationAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListGlobalReleaseCertificationAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListGlobalReleaseCertificationAuditRequest {
+    return new AdminListGlobalReleaseCertificationAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListGlobalReleaseCertificationAuditRequest {
+    return new AdminListGlobalReleaseCertificationAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListGlobalReleaseCertificationAuditRequest {
+    return new AdminListGlobalReleaseCertificationAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListGlobalReleaseCertificationAuditRequest | PlainMessage<AdminListGlobalReleaseCertificationAuditRequest> | undefined, b: AdminListGlobalReleaseCertificationAuditRequest | PlainMessage<AdminListGlobalReleaseCertificationAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListGlobalReleaseCertificationAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse
+ */
+export class AdminListGlobalReleaseCertificationAuditResponse extends Message$1<AdminListGlobalReleaseCertificationAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasAccessibleInclusionProfile inclusion_profiles = 1;
+   */
+  inclusionProfiles: AtlasAccessibleInclusionProfile[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasJurisdictionReleaseGate jurisdiction_gates = 2;
+   */
+  jurisdictionGates: AtlasJurisdictionReleaseGate[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.dating.v1.AtlasPortableConnectionBundle portable_bundles = 3;
+   */
+  portableBundles: AtlasPortableConnectionBundle[] = [];
+
+  constructor(data?: PartialMessage<AdminListGlobalReleaseCertificationAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inclusion_profiles", kind: "message", T: AtlasAccessibleInclusionProfile, repeated: true },
+    { no: 2, name: "jurisdiction_gates", kind: "message", T: AtlasJurisdictionReleaseGate, repeated: true },
+    { no: 3, name: "portable_bundles", kind: "message", T: AtlasPortableConnectionBundle, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListGlobalReleaseCertificationAuditResponse {
+    return new AdminListGlobalReleaseCertificationAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListGlobalReleaseCertificationAuditResponse {
+    return new AdminListGlobalReleaseCertificationAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListGlobalReleaseCertificationAuditResponse {
+    return new AdminListGlobalReleaseCertificationAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListGlobalReleaseCertificationAuditResponse | PlainMessage<AdminListGlobalReleaseCertificationAuditResponse> | undefined, b: AdminListGlobalReleaseCertificationAuditResponse | PlainMessage<AdminListGlobalReleaseCertificationAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListGlobalReleaseCertificationAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateRequest
+ */
+export class AdminCertifyJurisdictionReleaseGateRequest extends Message$1<AdminCertifyJurisdictionReleaseGateRequest> {
+  /**
+   * @generated from field: string gate_id = 1;
+   */
+  gateId = "";
+
+  /**
+   * @generated from field: string release_state = 2;
+   */
+  releaseState = "";
+
+  /**
+   * @generated from field: bool jurisdiction_certified = 3;
+   */
+  jurisdictionCertified = false;
+
+  /**
+   * @generated from field: string audit_reason = 4;
+   */
+  auditReason = "";
+
+  constructor(data?: PartialMessage<AdminCertifyJurisdictionReleaseGateRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gate_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "release_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "jurisdiction_certified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "audit_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyJurisdictionReleaseGateRequest {
+    return new AdminCertifyJurisdictionReleaseGateRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyJurisdictionReleaseGateRequest {
+    return new AdminCertifyJurisdictionReleaseGateRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyJurisdictionReleaseGateRequest {
+    return new AdminCertifyJurisdictionReleaseGateRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyJurisdictionReleaseGateRequest | PlainMessage<AdminCertifyJurisdictionReleaseGateRequest> | undefined, b: AdminCertifyJurisdictionReleaseGateRequest | PlainMessage<AdminCertifyJurisdictionReleaseGateRequest> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyJurisdictionReleaseGateRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponse
+ */
+export class AdminCertifyJurisdictionReleaseGateResponse extends Message$1<AdminCertifyJurisdictionReleaseGateResponse> {
+  /**
+   * @generated from field: sttattus.dating.v1.AtlasJurisdictionReleaseGate gate = 1;
+   */
+  gate?: AtlasJurisdictionReleaseGate;
+
+  constructor(data?: PartialMessage<AdminCertifyJurisdictionReleaseGateResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "gate", kind: "message", T: AtlasJurisdictionReleaseGate },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyJurisdictionReleaseGateResponse {
+    return new AdminCertifyJurisdictionReleaseGateResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyJurisdictionReleaseGateResponse {
+    return new AdminCertifyJurisdictionReleaseGateResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyJurisdictionReleaseGateResponse {
+    return new AdminCertifyJurisdictionReleaseGateResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyJurisdictionReleaseGateResponse | PlainMessage<AdminCertifyJurisdictionReleaseGateResponse> | undefined, b: AdminCertifyJurisdictionReleaseGateResponse | PlainMessage<AdminCertifyJurisdictionReleaseGateResponse> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyJurisdictionReleaseGateResponse, a, b);
+  }
+}
+

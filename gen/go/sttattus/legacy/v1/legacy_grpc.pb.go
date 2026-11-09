@@ -19,55 +19,91 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LegacyService_StoreDocument_FullMethodName            = "/sttattus.legacy.v1.LegacyService/StoreDocument"
-	LegacyService_ListAssets_FullMethodName               = "/sttattus.legacy.v1.LegacyService/ListAssets"
-	LegacyService_GetHeritageStats_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
-	LegacyService_StoreEncryptedBlob_FullMethodName       = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
-	LegacyService_GetEncryptedBlob_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
-	LegacyService_ListMyEncryptedBlobs_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
-	LegacyService_StoreRecoveryShare_FullMethodName       = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
-	LegacyService_ListMyRecoveryShares_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
-	LegacyService_DeleteRecoveryShare_FullMethodName      = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
-	LegacyService_ListLegacyCategories_FullMethodName     = "/sttattus.legacy.v1.LegacyService/ListLegacyCategories"
-	LegacyService_AssignAssetCategory_FullMethodName      = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
-	LegacyService_UnassignAssetCategory_FullMethodName    = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
-	LegacyService_ListAssetCategories_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
-	LegacyService_RecordAssetVersion_FullMethodName       = "/sttattus.legacy.v1.LegacyService/RecordAssetVersion"
-	LegacyService_ListAssetVersions_FullMethodName        = "/sttattus.legacy.v1.LegacyService/ListAssetVersions"
-	LegacyService_GetEstateReadiness_FullMethodName       = "/sttattus.legacy.v1.LegacyService/GetEstateReadiness"
-	LegacyService_ListMyBeneficiaries_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ListMyBeneficiaries"
-	LegacyService_AddBeneficiary_FullMethodName           = "/sttattus.legacy.v1.LegacyService/AddBeneficiary"
-	LegacyService_RemoveBeneficiary_FullMethodName        = "/sttattus.legacy.v1.LegacyService/RemoveBeneficiary"
-	LegacyService_GetDeadManSwitch_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetDeadManSwitch"
-	LegacyService_ConfigureDeadManSwitch_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ConfigureDeadManSwitch"
-	LegacyService_CheckInDeadManSwitch_FullMethodName     = "/sttattus.legacy.v1.LegacyService/CheckInDeadManSwitch"
-	LegacyService_CreateAnchor_FullMethodName             = "/sttattus.legacy.v1.LegacyService/CreateAnchor"
-	LegacyService_ListMyAnchors_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListMyAnchors"
-	LegacyService_ListLawyers_FullMethodName              = "/sttattus.legacy.v1.LegacyService/ListLawyers"
-	LegacyService_ListNotaries_FullMethodName             = "/sttattus.legacy.v1.LegacyService/ListNotaries"
-	LegacyService_ListTemplates_FullMethodName            = "/sttattus.legacy.v1.LegacyService/ListTemplates"
-	LegacyService_GetTemplate_FullMethodName              = "/sttattus.legacy.v1.LegacyService/GetTemplate"
-	LegacyService_GenerateDocument_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GenerateDocument"
-	LegacyService_ListMyGeneratedDocuments_FullMethodName = "/sttattus.legacy.v1.LegacyService/ListMyGeneratedDocuments"
-	LegacyService_ListMyHandoffs_FullMethodName           = "/sttattus.legacy.v1.LegacyService/ListMyHandoffs"
-	LegacyService_AcceptHandoff_FullMethodName            = "/sttattus.legacy.v1.LegacyService/AcceptHandoff"
-	LegacyService_DismissHandoff_FullMethodName           = "/sttattus.legacy.v1.LegacyService/DismissHandoff"
-	LegacyService_GetEstateSummary_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetEstateSummary"
-	LegacyService_StartConciergeThread_FullMethodName     = "/sttattus.legacy.v1.LegacyService/StartConciergeThread"
-	LegacyService_ListMyConciergeThreads_FullMethodName   = "/sttattus.legacy.v1.LegacyService/ListMyConciergeThreads"
-	LegacyService_GetConciergeThread_FullMethodName       = "/sttattus.legacy.v1.LegacyService/GetConciergeThread"
-	LegacyService_PostConciergeMessage_FullMethodName     = "/sttattus.legacy.v1.LegacyService/PostConciergeMessage"
-	LegacyService_ListAnthologyArticles_FullMethodName    = "/sttattus.legacy.v1.LegacyService/ListAnthologyArticles"
-	LegacyService_GetAnthologyArticle_FullMethodName      = "/sttattus.legacy.v1.LegacyService/GetAnthologyArticle"
-	LegacyService_AddLetterOfWishes_FullMethodName        = "/sttattus.legacy.v1.LegacyService/AddLetterOfWishes"
-	LegacyService_ListMyLettersOfWishes_FullMethodName    = "/sttattus.legacy.v1.LegacyService/ListMyLettersOfWishes"
-	LegacyService_RemoveLetterOfWishes_FullMethodName     = "/sttattus.legacy.v1.LegacyService/RemoveLetterOfWishes"
-	LegacyService_GenerateLegacyAlmanac_FullMethodName    = "/sttattus.legacy.v1.LegacyService/GenerateLegacyAlmanac"
-	LegacyService_ListIpPortfolio_FullMethodName          = "/sttattus.legacy.v1.LegacyService/ListIpPortfolio"
-	LegacyService_CreateLegacyShare_FullMethodName        = "/sttattus.legacy.v1.LegacyService/CreateLegacyShare"
-	LegacyService_ListMyLegacyShares_FullMethodName       = "/sttattus.legacy.v1.LegacyService/ListMyLegacyShares"
-	LegacyService_RevokeLegacyShare_FullMethodName        = "/sttattus.legacy.v1.LegacyService/RevokeLegacyShare"
-	LegacyService_ParseDocumentExpiry_FullMethodName      = "/sttattus.legacy.v1.LegacyService/ParseDocumentExpiry"
+	LegacyService_StoreDocument_FullMethodName                                 = "/sttattus.legacy.v1.LegacyService/StoreDocument"
+	LegacyService_ListAssets_FullMethodName                                    = "/sttattus.legacy.v1.LegacyService/ListAssets"
+	LegacyService_GetHeritageStats_FullMethodName                              = "/sttattus.legacy.v1.LegacyService/GetHeritageStats"
+	LegacyService_StoreEncryptedBlob_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/StoreEncryptedBlob"
+	LegacyService_GetEncryptedBlob_FullMethodName                              = "/sttattus.legacy.v1.LegacyService/GetEncryptedBlob"
+	LegacyService_ListMyEncryptedBlobs_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/ListMyEncryptedBlobs"
+	LegacyService_StoreRecoveryShare_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/StoreRecoveryShare"
+	LegacyService_ListMyRecoveryShares_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/ListMyRecoveryShares"
+	LegacyService_DeleteRecoveryShare_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/DeleteRecoveryShare"
+	LegacyService_ListLegacyCategories_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/ListLegacyCategories"
+	LegacyService_AssignAssetCategory_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/AssignAssetCategory"
+	LegacyService_UnassignAssetCategory_FullMethodName                         = "/sttattus.legacy.v1.LegacyService/UnassignAssetCategory"
+	LegacyService_ListAssetCategories_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/ListAssetCategories"
+	LegacyService_RecordAssetVersion_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/RecordAssetVersion"
+	LegacyService_ListAssetVersions_FullMethodName                             = "/sttattus.legacy.v1.LegacyService/ListAssetVersions"
+	LegacyService_GetEstateReadiness_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/GetEstateReadiness"
+	LegacyService_ListMyBeneficiaries_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/ListMyBeneficiaries"
+	LegacyService_AddBeneficiary_FullMethodName                                = "/sttattus.legacy.v1.LegacyService/AddBeneficiary"
+	LegacyService_RemoveBeneficiary_FullMethodName                             = "/sttattus.legacy.v1.LegacyService/RemoveBeneficiary"
+	LegacyService_GetDeadManSwitch_FullMethodName                              = "/sttattus.legacy.v1.LegacyService/GetDeadManSwitch"
+	LegacyService_ConfigureDeadManSwitch_FullMethodName                        = "/sttattus.legacy.v1.LegacyService/ConfigureDeadManSwitch"
+	LegacyService_CheckInDeadManSwitch_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/CheckInDeadManSwitch"
+	LegacyService_CreateAnchor_FullMethodName                                  = "/sttattus.legacy.v1.LegacyService/CreateAnchor"
+	LegacyService_ListMyAnchors_FullMethodName                                 = "/sttattus.legacy.v1.LegacyService/ListMyAnchors"
+	LegacyService_ListLawyers_FullMethodName                                   = "/sttattus.legacy.v1.LegacyService/ListLawyers"
+	LegacyService_ListNotaries_FullMethodName                                  = "/sttattus.legacy.v1.LegacyService/ListNotaries"
+	LegacyService_ListTemplates_FullMethodName                                 = "/sttattus.legacy.v1.LegacyService/ListTemplates"
+	LegacyService_GetTemplate_FullMethodName                                   = "/sttattus.legacy.v1.LegacyService/GetTemplate"
+	LegacyService_GenerateDocument_FullMethodName                              = "/sttattus.legacy.v1.LegacyService/GenerateDocument"
+	LegacyService_ListMyGeneratedDocuments_FullMethodName                      = "/sttattus.legacy.v1.LegacyService/ListMyGeneratedDocuments"
+	LegacyService_ListMyHandoffs_FullMethodName                                = "/sttattus.legacy.v1.LegacyService/ListMyHandoffs"
+	LegacyService_AcceptHandoff_FullMethodName                                 = "/sttattus.legacy.v1.LegacyService/AcceptHandoff"
+	LegacyService_DismissHandoff_FullMethodName                                = "/sttattus.legacy.v1.LegacyService/DismissHandoff"
+	LegacyService_GetEstateSummary_FullMethodName                              = "/sttattus.legacy.v1.LegacyService/GetEstateSummary"
+	LegacyService_StartConciergeThread_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/StartConciergeThread"
+	LegacyService_ListMyConciergeThreads_FullMethodName                        = "/sttattus.legacy.v1.LegacyService/ListMyConciergeThreads"
+	LegacyService_GetConciergeThread_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/GetConciergeThread"
+	LegacyService_PostConciergeMessage_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/PostConciergeMessage"
+	LegacyService_ListAnthologyArticles_FullMethodName                         = "/sttattus.legacy.v1.LegacyService/ListAnthologyArticles"
+	LegacyService_GetAnthologyArticle_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/GetAnthologyArticle"
+	LegacyService_AddLetterOfWishes_FullMethodName                             = "/sttattus.legacy.v1.LegacyService/AddLetterOfWishes"
+	LegacyService_ListMyLettersOfWishes_FullMethodName                         = "/sttattus.legacy.v1.LegacyService/ListMyLettersOfWishes"
+	LegacyService_RemoveLetterOfWishes_FullMethodName                          = "/sttattus.legacy.v1.LegacyService/RemoveLetterOfWishes"
+	LegacyService_GenerateLegacyAlmanac_FullMethodName                         = "/sttattus.legacy.v1.LegacyService/GenerateLegacyAlmanac"
+	LegacyService_ListIpPortfolio_FullMethodName                               = "/sttattus.legacy.v1.LegacyService/ListIpPortfolio"
+	LegacyService_CreateLegacyShare_FullMethodName                             = "/sttattus.legacy.v1.LegacyService/CreateLegacyShare"
+	LegacyService_ListMyLegacyShares_FullMethodName                            = "/sttattus.legacy.v1.LegacyService/ListMyLegacyShares"
+	LegacyService_RevokeLegacyShare_FullMethodName                             = "/sttattus.legacy.v1.LegacyService/RevokeLegacyShare"
+	LegacyService_ParseDocumentExpiry_FullMethodName                           = "/sttattus.legacy.v1.LegacyService/ParseDocumentExpiry"
+	LegacyService_GetLegacyLivingInventoryWorkbench_FullMethodName             = "/sttattus.legacy.v1.LegacyService/GetLegacyLivingInventoryWorkbench"
+	LegacyService_SaveLegacyLivingEstateInventory_FullMethodName               = "/sttattus.legacy.v1.LegacyService/SaveLegacyLivingEstateInventory"
+	LegacyService_SignOffLegacyQuarterlyPlanReview_FullMethodName              = "/sttattus.legacy.v1.LegacyService/SignOffLegacyQuarterlyPlanReview"
+	LegacyService_GetLegacyLifeEventAlignmentWorkbench_FullMethodName          = "/sttattus.legacy.v1.LegacyService/GetLegacyLifeEventAlignmentWorkbench"
+	LegacyService_SaveLegacyLifeEventAlignment_FullMethodName                  = "/sttattus.legacy.v1.LegacyService/SaveLegacyLifeEventAlignment"
+	LegacyService_VerifyLegacyAlignmentInstitutionEvidence_FullMethodName      = "/sttattus.legacy.v1.LegacyService/VerifyLegacyAlignmentInstitutionEvidence"
+	LegacyService_GetLegacySecureDocumentVaultWorkbench_FullMethodName         = "/sttattus.legacy.v1.LegacyService/GetLegacySecureDocumentVaultWorkbench"
+	LegacyService_SaveLegacySecureDocumentVault_FullMethodName                 = "/sttattus.legacy.v1.LegacyService/SaveLegacySecureDocumentVault"
+	LegacyService_LockOrExportLegacyDocumentCustody_FullMethodName             = "/sttattus.legacy.v1.LegacyService/LockOrExportLegacyDocumentCustody"
+	LegacyService_GetLegacyJurisdictionDocumentWorkbench_FullMethodName        = "/sttattus.legacy.v1.LegacyService/GetLegacyJurisdictionDocumentWorkbench"
+	LegacyService_SaveLegacyJurisdictionDocumentSystem_FullMethodName          = "/sttattus.legacy.v1.LegacyService/SaveLegacyJurisdictionDocumentSystem"
+	LegacyService_TriggerLegacyCounselReviewOrLockExecution_FullMethodName     = "/sttattus.legacy.v1.LegacyService/TriggerLegacyCounselReviewOrLockExecution"
+	LegacyService_GetLegacyContinuityPlaybookWorkbench_FullMethodName          = "/sttattus.legacy.v1.LegacyService/GetLegacyContinuityPlaybookWorkbench"
+	LegacyService_SaveLegacyHouseholdBusinessContinuity_FullMethodName         = "/sttattus.legacy.v1.LegacyService/SaveLegacyHouseholdBusinessContinuity"
+	LegacyService_RunLegacyContinuityDrillOrStageDelegation_FullMethodName     = "/sttattus.legacy.v1.LegacyService/RunLegacyContinuityDrillOrStageDelegation"
+	LegacyService_GetLegacyIncapacityDeadmanWorkbench_FullMethodName           = "/sttattus.legacy.v1.LegacyService/GetLegacyIncapacityDeadmanWorkbench"
+	LegacyService_SaveLegacyIncapacityDeadmanProtocol_FullMethodName           = "/sttattus.legacy.v1.LegacyService/SaveLegacyIncapacityDeadmanProtocol"
+	LegacyService_SimulateOrCancelLegacyDeadmanRelease_FullMethodName          = "/sttattus.legacy.v1.LegacyService/SimulateOrCancelLegacyDeadmanRelease"
+	LegacyService_GetLegacyExecutorWorkspaceWorkbench_FullMethodName           = "/sttattus.legacy.v1.LegacyService/GetLegacyExecutorWorkspaceWorkbench"
+	LegacyService_SaveLegacyExecutorTrusteeWorkspace_FullMethodName            = "/sttattus.legacy.v1.LegacyService/SaveLegacyExecutorTrusteeWorkspace"
+	LegacyService_AdvanceLegacySettlementTaskOrResolveDispute_FullMethodName   = "/sttattus.legacy.v1.LegacyService/AdvanceLegacySettlementTaskOrResolveDispute"
+	LegacyService_GetLegacySettlementAccountingWorkbench_FullMethodName        = "/sttattus.legacy.v1.LegacyService/GetLegacySettlementAccountingWorkbench"
+	LegacyService_SaveLegacySettlementAccounting_FullMethodName                = "/sttattus.legacy.v1.LegacyService/SaveLegacySettlementAccounting"
+	LegacyService_LockOrReverseLegacyAccountingPeriod_FullMethodName           = "/sttattus.legacy.v1.LegacyService/LockOrReverseLegacyAccountingPeriod"
+	LegacyService_GetLegacyDigitalRecoveryWorkbench_FullMethodName             = "/sttattus.legacy.v1.LegacyService/GetLegacyDigitalRecoveryWorkbench"
+	LegacyService_SaveLegacyDigitalThresholdRecovery_FullMethodName            = "/sttattus.legacy.v1.LegacyService/SaveLegacyDigitalThresholdRecovery"
+	LegacyService_RunLegacyThresholdCeremonyDryRunOrRotateShare_FullMethodName = "/sttattus.legacy.v1.LegacyService/RunLegacyThresholdCeremonyDryRunOrRotateShare"
+	LegacyService_GetLegacyHeritageArchiveWorkbench_FullMethodName             = "/sttattus.legacy.v1.LegacyService/GetLegacyHeritageArchiveWorkbench"
+	LegacyService_SaveLegacyHeritagePreservationArchive_FullMethodName         = "/sttattus.legacy.v1.LegacyService/SaveLegacyHeritagePreservationArchive"
+	LegacyService_VerifyLegacyArchiveFixityOrPreviewTrigger_FullMethodName     = "/sttattus.legacy.v1.LegacyService/VerifyLegacyArchiveFixityOrPreviewTrigger"
+	LegacyService_GetLegacyLiquidityReadinessWorkbench_FullMethodName          = "/sttattus.legacy.v1.LegacyService/GetLegacyLiquidityReadinessWorkbench"
+	LegacyService_SaveLegacyLiquidityInsuranceReadiness_FullMethodName         = "/sttattus.legacy.v1.LegacyService/SaveLegacyLiquidityInsuranceReadiness"
+	LegacyService_StressTestLegacyLiquidityOrRouteCounsel_FullMethodName       = "/sttattus.legacy.v1.LegacyService/StressTestLegacyLiquidityOrRouteCounsel"
+	LegacyService_GetLegacyCounselGovernanceWorkbench_FullMethodName           = "/sttattus.legacy.v1.LegacyService/GetLegacyCounselGovernanceWorkbench"
+	LegacyService_SaveLegacyCounselFamilyGovernance_FullMethodName             = "/sttattus.legacy.v1.LegacyService/SaveLegacyCounselFamilyGovernance"
+	LegacyService_UnlockLegacyStewardshipModuleOrRevokeCounsel_FullMethodName  = "/sttattus.legacy.v1.LegacyService/UnlockLegacyStewardshipModuleOrRevokeCounsel"
 )
 
 // LegacyServiceClient is the client API for LegacyService service.
@@ -141,6 +177,54 @@ type LegacyServiceClient interface {
 	ListMyLegacyShares(ctx context.Context, in *ListMyLegacySharesRequest, opts ...grpc.CallOption) (*ListMyLegacySharesResponse, error)
 	RevokeLegacyShare(ctx context.Context, in *RevokeLegacyShareRequest, opts ...grpc.CallOption) (*RevokeLegacyShareResponse, error)
 	ParseDocumentExpiry(ctx context.Context, in *ParseDocumentExpiryRequest, opts ...grpc.CallOption) (*ParseDocumentExpiryResponse, error)
+	// Choice 1 (G1): Living Estate Inventory & Plan Health
+	GetLegacyLivingInventoryWorkbench(ctx context.Context, in *GetLegacyLivingInventoryWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLivingInventoryWorkbenchResponse, error)
+	SaveLegacyLivingEstateInventory(ctx context.Context, in *SaveLegacyLivingEstateInventoryRequest, opts ...grpc.CallOption) (*SaveLegacyLivingEstateInventoryResponse, error)
+	SignOffLegacyQuarterlyPlanReview(ctx context.Context, in *SignOffLegacyQuarterlyPlanReviewRequest, opts ...grpc.CallOption) (*SignOffLegacyQuarterlyPlanReviewResponse, error)
+	// Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment Engine
+	GetLegacyLifeEventAlignmentWorkbench(ctx context.Context, in *GetLegacyLifeEventAlignmentWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLifeEventAlignmentWorkbenchResponse, error)
+	SaveLegacyLifeEventAlignment(ctx context.Context, in *SaveLegacyLifeEventAlignmentRequest, opts ...grpc.CallOption) (*SaveLegacyLifeEventAlignmentResponse, error)
+	VerifyLegacyAlignmentInstitutionEvidence(ctx context.Context, in *VerifyLegacyAlignmentInstitutionEvidenceRequest, opts ...grpc.CallOption) (*VerifyLegacyAlignmentInstitutionEvidenceResponse, error)
+	// Choice 3 (G5): Secure Document & Evidence Vault
+	GetLegacySecureDocumentVaultWorkbench(ctx context.Context, in *GetLegacySecureDocumentVaultWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacySecureDocumentVaultWorkbenchResponse, error)
+	SaveLegacySecureDocumentVault(ctx context.Context, in *SaveLegacySecureDocumentVaultRequest, opts ...grpc.CallOption) (*SaveLegacySecureDocumentVaultResponse, error)
+	LockOrExportLegacyDocumentCustody(ctx context.Context, in *LockOrExportLegacyDocumentCustodyRequest, opts ...grpc.CallOption) (*LockOrExportLegacyDocumentCustodyResponse, error)
+	// Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+	GetLegacyJurisdictionDocumentWorkbench(ctx context.Context, in *GetLegacyJurisdictionDocumentWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyJurisdictionDocumentWorkbenchResponse, error)
+	SaveLegacyJurisdictionDocumentSystem(ctx context.Context, in *SaveLegacyJurisdictionDocumentSystemRequest, opts ...grpc.CallOption) (*SaveLegacyJurisdictionDocumentSystemResponse, error)
+	TriggerLegacyCounselReviewOrLockExecution(ctx context.Context, in *TriggerLegacyCounselReviewOrLockExecutionRequest, opts ...grpc.CallOption) (*TriggerLegacyCounselReviewOrLockExecutionResponse, error)
+	// Choice 5 (G11/G13): Household & Business Continuity Playbooks
+	GetLegacyContinuityPlaybookWorkbench(ctx context.Context, in *GetLegacyContinuityPlaybookWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyContinuityPlaybookWorkbenchResponse, error)
+	SaveLegacyHouseholdBusinessContinuity(ctx context.Context, in *SaveLegacyHouseholdBusinessContinuityRequest, opts ...grpc.CallOption) (*SaveLegacyHouseholdBusinessContinuityResponse, error)
+	RunLegacyContinuityDrillOrStageDelegation(ctx context.Context, in *RunLegacyContinuityDrillOrStageDelegationRequest, opts ...grpc.CallOption) (*RunLegacyContinuityDrillOrStageDelegationResponse, error)
+	// Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+	GetLegacyIncapacityDeadmanWorkbench(ctx context.Context, in *GetLegacyIncapacityDeadmanWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyIncapacityDeadmanWorkbenchResponse, error)
+	SaveLegacyIncapacityDeadmanProtocol(ctx context.Context, in *SaveLegacyIncapacityDeadmanProtocolRequest, opts ...grpc.CallOption) (*SaveLegacyIncapacityDeadmanProtocolResponse, error)
+	SimulateOrCancelLegacyDeadmanRelease(ctx context.Context, in *SimulateOrCancelLegacyDeadmanReleaseRequest, opts ...grpc.CallOption) (*SimulateOrCancelLegacyDeadmanReleaseResponse, error)
+	// Choice 7 (G7): Executor & Trustee Command Center
+	GetLegacyExecutorWorkspaceWorkbench(ctx context.Context, in *GetLegacyExecutorWorkspaceWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyExecutorWorkspaceWorkbenchResponse, error)
+	SaveLegacyExecutorTrusteeWorkspace(ctx context.Context, in *SaveLegacyExecutorTrusteeWorkspaceRequest, opts ...grpc.CallOption) (*SaveLegacyExecutorTrusteeWorkspaceResponse, error)
+	AdvanceLegacySettlementTaskOrResolveDispute(ctx context.Context, in *AdvanceLegacySettlementTaskOrResolveDisputeRequest, opts ...grpc.CallOption) (*AdvanceLegacySettlementTaskOrResolveDisputeResponse, error)
+	// Choice 8 (G16): Estate & Trust Settlement Accounting
+	GetLegacySettlementAccountingWorkbench(ctx context.Context, in *GetLegacySettlementAccountingWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacySettlementAccountingWorkbenchResponse, error)
+	SaveLegacySettlementAccounting(ctx context.Context, in *SaveLegacySettlementAccountingRequest, opts ...grpc.CallOption) (*SaveLegacySettlementAccountingResponse, error)
+	LockOrReverseLegacyAccountingPeriod(ctx context.Context, in *LockOrReverseLegacyAccountingPeriodRequest, opts ...grpc.CallOption) (*LockOrReverseLegacyAccountingPeriodResponse, error)
+	// Choice 9 (G8): Digital Asset & Threshold Recovery System
+	GetLegacyDigitalRecoveryWorkbench(ctx context.Context, in *GetLegacyDigitalRecoveryWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyDigitalRecoveryWorkbenchResponse, error)
+	SaveLegacyDigitalThresholdRecovery(ctx context.Context, in *SaveLegacyDigitalThresholdRecoveryRequest, opts ...grpc.CallOption) (*SaveLegacyDigitalThresholdRecoveryResponse, error)
+	RunLegacyThresholdCeremonyDryRunOrRotateShare(ctx context.Context, in *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest, opts ...grpc.CallOption) (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, error)
+	// Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+	GetLegacyHeritageArchiveWorkbench(ctx context.Context, in *GetLegacyHeritageArchiveWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyHeritageArchiveWorkbenchResponse, error)
+	SaveLegacyHeritagePreservationArchive(ctx context.Context, in *SaveLegacyHeritagePreservationArchiveRequest, opts ...grpc.CallOption) (*SaveLegacyHeritagePreservationArchiveResponse, error)
+	VerifyLegacyArchiveFixityOrPreviewTrigger(ctx context.Context, in *VerifyLegacyArchiveFixityOrPreviewTriggerRequest, opts ...grpc.CallOption) (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse, error)
+	// Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+	GetLegacyLiquidityReadinessWorkbench(ctx context.Context, in *GetLegacyLiquidityReadinessWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLiquidityReadinessWorkbenchResponse, error)
+	SaveLegacyLiquidityInsuranceReadiness(ctx context.Context, in *SaveLegacyLiquidityInsuranceReadinessRequest, opts ...grpc.CallOption) (*SaveLegacyLiquidityInsuranceReadinessResponse, error)
+	StressTestLegacyLiquidityOrRouteCounsel(ctx context.Context, in *StressTestLegacyLiquidityOrRouteCounselRequest, opts ...grpc.CallOption) (*StressTestLegacyLiquidityOrRouteCounselResponse, error)
+	// Choice 12 (G10/G14): Counsel Collaboration, Family Governance & Next-Gen Stewardship
+	GetLegacyCounselGovernanceWorkbench(ctx context.Context, in *GetLegacyCounselGovernanceWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyCounselGovernanceWorkbenchResponse, error)
+	SaveLegacyCounselFamilyGovernance(ctx context.Context, in *SaveLegacyCounselFamilyGovernanceRequest, opts ...grpc.CallOption) (*SaveLegacyCounselFamilyGovernanceResponse, error)
+	UnlockLegacyStewardshipModuleOrRevokeCounsel(ctx context.Context, in *UnlockLegacyStewardshipModuleOrRevokeCounselRequest, opts ...grpc.CallOption) (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse, error)
 }
 
 type legacyServiceClient struct {
@@ -641,6 +725,366 @@ func (c *legacyServiceClient) ParseDocumentExpiry(ctx context.Context, in *Parse
 	return out, nil
 }
 
+func (c *legacyServiceClient) GetLegacyLivingInventoryWorkbench(ctx context.Context, in *GetLegacyLivingInventoryWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLivingInventoryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyLivingInventoryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyLivingInventoryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyLivingEstateInventory(ctx context.Context, in *SaveLegacyLivingEstateInventoryRequest, opts ...grpc.CallOption) (*SaveLegacyLivingEstateInventoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyLivingEstateInventoryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyLivingEstateInventory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SignOffLegacyQuarterlyPlanReview(ctx context.Context, in *SignOffLegacyQuarterlyPlanReviewRequest, opts ...grpc.CallOption) (*SignOffLegacyQuarterlyPlanReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SignOffLegacyQuarterlyPlanReviewResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SignOffLegacyQuarterlyPlanReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyLifeEventAlignmentWorkbench(ctx context.Context, in *GetLegacyLifeEventAlignmentWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLifeEventAlignmentWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyLifeEventAlignmentWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyLifeEventAlignmentWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyLifeEventAlignment(ctx context.Context, in *SaveLegacyLifeEventAlignmentRequest, opts ...grpc.CallOption) (*SaveLegacyLifeEventAlignmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyLifeEventAlignmentResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyLifeEventAlignment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) VerifyLegacyAlignmentInstitutionEvidence(ctx context.Context, in *VerifyLegacyAlignmentInstitutionEvidenceRequest, opts ...grpc.CallOption) (*VerifyLegacyAlignmentInstitutionEvidenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyLegacyAlignmentInstitutionEvidenceResponse)
+	err := c.cc.Invoke(ctx, LegacyService_VerifyLegacyAlignmentInstitutionEvidence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacySecureDocumentVaultWorkbench(ctx context.Context, in *GetLegacySecureDocumentVaultWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacySecureDocumentVaultWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacySecureDocumentVaultWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacySecureDocumentVaultWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacySecureDocumentVault(ctx context.Context, in *SaveLegacySecureDocumentVaultRequest, opts ...grpc.CallOption) (*SaveLegacySecureDocumentVaultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacySecureDocumentVaultResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacySecureDocumentVault_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) LockOrExportLegacyDocumentCustody(ctx context.Context, in *LockOrExportLegacyDocumentCustodyRequest, opts ...grpc.CallOption) (*LockOrExportLegacyDocumentCustodyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LockOrExportLegacyDocumentCustodyResponse)
+	err := c.cc.Invoke(ctx, LegacyService_LockOrExportLegacyDocumentCustody_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyJurisdictionDocumentWorkbench(ctx context.Context, in *GetLegacyJurisdictionDocumentWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyJurisdictionDocumentWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyJurisdictionDocumentWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyJurisdictionDocumentWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyJurisdictionDocumentSystem(ctx context.Context, in *SaveLegacyJurisdictionDocumentSystemRequest, opts ...grpc.CallOption) (*SaveLegacyJurisdictionDocumentSystemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyJurisdictionDocumentSystemResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyJurisdictionDocumentSystem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) TriggerLegacyCounselReviewOrLockExecution(ctx context.Context, in *TriggerLegacyCounselReviewOrLockExecutionRequest, opts ...grpc.CallOption) (*TriggerLegacyCounselReviewOrLockExecutionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerLegacyCounselReviewOrLockExecutionResponse)
+	err := c.cc.Invoke(ctx, LegacyService_TriggerLegacyCounselReviewOrLockExecution_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyContinuityPlaybookWorkbench(ctx context.Context, in *GetLegacyContinuityPlaybookWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyContinuityPlaybookWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyContinuityPlaybookWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyContinuityPlaybookWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyHouseholdBusinessContinuity(ctx context.Context, in *SaveLegacyHouseholdBusinessContinuityRequest, opts ...grpc.CallOption) (*SaveLegacyHouseholdBusinessContinuityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyHouseholdBusinessContinuityResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyHouseholdBusinessContinuity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) RunLegacyContinuityDrillOrStageDelegation(ctx context.Context, in *RunLegacyContinuityDrillOrStageDelegationRequest, opts ...grpc.CallOption) (*RunLegacyContinuityDrillOrStageDelegationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunLegacyContinuityDrillOrStageDelegationResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RunLegacyContinuityDrillOrStageDelegation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyIncapacityDeadmanWorkbench(ctx context.Context, in *GetLegacyIncapacityDeadmanWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyIncapacityDeadmanWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyIncapacityDeadmanWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyIncapacityDeadmanWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyIncapacityDeadmanProtocol(ctx context.Context, in *SaveLegacyIncapacityDeadmanProtocolRequest, opts ...grpc.CallOption) (*SaveLegacyIncapacityDeadmanProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyIncapacityDeadmanProtocolResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyIncapacityDeadmanProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SimulateOrCancelLegacyDeadmanRelease(ctx context.Context, in *SimulateOrCancelLegacyDeadmanReleaseRequest, opts ...grpc.CallOption) (*SimulateOrCancelLegacyDeadmanReleaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SimulateOrCancelLegacyDeadmanReleaseResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SimulateOrCancelLegacyDeadmanRelease_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyExecutorWorkspaceWorkbench(ctx context.Context, in *GetLegacyExecutorWorkspaceWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyExecutorWorkspaceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyExecutorWorkspaceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyExecutorWorkspaceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyExecutorTrusteeWorkspace(ctx context.Context, in *SaveLegacyExecutorTrusteeWorkspaceRequest, opts ...grpc.CallOption) (*SaveLegacyExecutorTrusteeWorkspaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyExecutorTrusteeWorkspaceResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyExecutorTrusteeWorkspace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) AdvanceLegacySettlementTaskOrResolveDispute(ctx context.Context, in *AdvanceLegacySettlementTaskOrResolveDisputeRequest, opts ...grpc.CallOption) (*AdvanceLegacySettlementTaskOrResolveDisputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdvanceLegacySettlementTaskOrResolveDisputeResponse)
+	err := c.cc.Invoke(ctx, LegacyService_AdvanceLegacySettlementTaskOrResolveDispute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacySettlementAccountingWorkbench(ctx context.Context, in *GetLegacySettlementAccountingWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacySettlementAccountingWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacySettlementAccountingWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacySettlementAccountingWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacySettlementAccounting(ctx context.Context, in *SaveLegacySettlementAccountingRequest, opts ...grpc.CallOption) (*SaveLegacySettlementAccountingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacySettlementAccountingResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacySettlementAccounting_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) LockOrReverseLegacyAccountingPeriod(ctx context.Context, in *LockOrReverseLegacyAccountingPeriodRequest, opts ...grpc.CallOption) (*LockOrReverseLegacyAccountingPeriodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LockOrReverseLegacyAccountingPeriodResponse)
+	err := c.cc.Invoke(ctx, LegacyService_LockOrReverseLegacyAccountingPeriod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyDigitalRecoveryWorkbench(ctx context.Context, in *GetLegacyDigitalRecoveryWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyDigitalRecoveryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyDigitalRecoveryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyDigitalRecoveryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyDigitalThresholdRecovery(ctx context.Context, in *SaveLegacyDigitalThresholdRecoveryRequest, opts ...grpc.CallOption) (*SaveLegacyDigitalThresholdRecoveryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyDigitalThresholdRecoveryResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyDigitalThresholdRecovery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) RunLegacyThresholdCeremonyDryRunOrRotateShare(ctx context.Context, in *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest, opts ...grpc.CallOption) (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunLegacyThresholdCeremonyDryRunOrRotateShareResponse)
+	err := c.cc.Invoke(ctx, LegacyService_RunLegacyThresholdCeremonyDryRunOrRotateShare_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyHeritageArchiveWorkbench(ctx context.Context, in *GetLegacyHeritageArchiveWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyHeritageArchiveWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyHeritageArchiveWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyHeritageArchiveWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyHeritagePreservationArchive(ctx context.Context, in *SaveLegacyHeritagePreservationArchiveRequest, opts ...grpc.CallOption) (*SaveLegacyHeritagePreservationArchiveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyHeritagePreservationArchiveResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyHeritagePreservationArchive_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) VerifyLegacyArchiveFixityOrPreviewTrigger(ctx context.Context, in *VerifyLegacyArchiveFixityOrPreviewTriggerRequest, opts ...grpc.CallOption) (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyLegacyArchiveFixityOrPreviewTriggerResponse)
+	err := c.cc.Invoke(ctx, LegacyService_VerifyLegacyArchiveFixityOrPreviewTrigger_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyLiquidityReadinessWorkbench(ctx context.Context, in *GetLegacyLiquidityReadinessWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyLiquidityReadinessWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyLiquidityReadinessWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyLiquidityReadinessWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyLiquidityInsuranceReadiness(ctx context.Context, in *SaveLegacyLiquidityInsuranceReadinessRequest, opts ...grpc.CallOption) (*SaveLegacyLiquidityInsuranceReadinessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyLiquidityInsuranceReadinessResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyLiquidityInsuranceReadiness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) StressTestLegacyLiquidityOrRouteCounsel(ctx context.Context, in *StressTestLegacyLiquidityOrRouteCounselRequest, opts ...grpc.CallOption) (*StressTestLegacyLiquidityOrRouteCounselResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StressTestLegacyLiquidityOrRouteCounselResponse)
+	err := c.cc.Invoke(ctx, LegacyService_StressTestLegacyLiquidityOrRouteCounsel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) GetLegacyCounselGovernanceWorkbench(ctx context.Context, in *GetLegacyCounselGovernanceWorkbenchRequest, opts ...grpc.CallOption) (*GetLegacyCounselGovernanceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLegacyCounselGovernanceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, LegacyService_GetLegacyCounselGovernanceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) SaveLegacyCounselFamilyGovernance(ctx context.Context, in *SaveLegacyCounselFamilyGovernanceRequest, opts ...grpc.CallOption) (*SaveLegacyCounselFamilyGovernanceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveLegacyCounselFamilyGovernanceResponse)
+	err := c.cc.Invoke(ctx, LegacyService_SaveLegacyCounselFamilyGovernance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *legacyServiceClient) UnlockLegacyStewardshipModuleOrRevokeCounsel(ctx context.Context, in *UnlockLegacyStewardshipModuleOrRevokeCounselRequest, opts ...grpc.CallOption) (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UnlockLegacyStewardshipModuleOrRevokeCounselResponse)
+	err := c.cc.Invoke(ctx, LegacyService_UnlockLegacyStewardshipModuleOrRevokeCounsel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LegacyServiceServer is the server API for LegacyService service.
 // All implementations must embed UnimplementedLegacyServiceServer
 // for forward compatibility.
@@ -712,6 +1156,54 @@ type LegacyServiceServer interface {
 	ListMyLegacyShares(context.Context, *ListMyLegacySharesRequest) (*ListMyLegacySharesResponse, error)
 	RevokeLegacyShare(context.Context, *RevokeLegacyShareRequest) (*RevokeLegacyShareResponse, error)
 	ParseDocumentExpiry(context.Context, *ParseDocumentExpiryRequest) (*ParseDocumentExpiryResponse, error)
+	// Choice 1 (G1): Living Estate Inventory & Plan Health
+	GetLegacyLivingInventoryWorkbench(context.Context, *GetLegacyLivingInventoryWorkbenchRequest) (*GetLegacyLivingInventoryWorkbenchResponse, error)
+	SaveLegacyLivingEstateInventory(context.Context, *SaveLegacyLivingEstateInventoryRequest) (*SaveLegacyLivingEstateInventoryResponse, error)
+	SignOffLegacyQuarterlyPlanReview(context.Context, *SignOffLegacyQuarterlyPlanReviewRequest) (*SignOffLegacyQuarterlyPlanReviewResponse, error)
+	// Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment Engine
+	GetLegacyLifeEventAlignmentWorkbench(context.Context, *GetLegacyLifeEventAlignmentWorkbenchRequest) (*GetLegacyLifeEventAlignmentWorkbenchResponse, error)
+	SaveLegacyLifeEventAlignment(context.Context, *SaveLegacyLifeEventAlignmentRequest) (*SaveLegacyLifeEventAlignmentResponse, error)
+	VerifyLegacyAlignmentInstitutionEvidence(context.Context, *VerifyLegacyAlignmentInstitutionEvidenceRequest) (*VerifyLegacyAlignmentInstitutionEvidenceResponse, error)
+	// Choice 3 (G5): Secure Document & Evidence Vault
+	GetLegacySecureDocumentVaultWorkbench(context.Context, *GetLegacySecureDocumentVaultWorkbenchRequest) (*GetLegacySecureDocumentVaultWorkbenchResponse, error)
+	SaveLegacySecureDocumentVault(context.Context, *SaveLegacySecureDocumentVaultRequest) (*SaveLegacySecureDocumentVaultResponse, error)
+	LockOrExportLegacyDocumentCustody(context.Context, *LockOrExportLegacyDocumentCustodyRequest) (*LockOrExportLegacyDocumentCustodyResponse, error)
+	// Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+	GetLegacyJurisdictionDocumentWorkbench(context.Context, *GetLegacyJurisdictionDocumentWorkbenchRequest) (*GetLegacyJurisdictionDocumentWorkbenchResponse, error)
+	SaveLegacyJurisdictionDocumentSystem(context.Context, *SaveLegacyJurisdictionDocumentSystemRequest) (*SaveLegacyJurisdictionDocumentSystemResponse, error)
+	TriggerLegacyCounselReviewOrLockExecution(context.Context, *TriggerLegacyCounselReviewOrLockExecutionRequest) (*TriggerLegacyCounselReviewOrLockExecutionResponse, error)
+	// Choice 5 (G11/G13): Household & Business Continuity Playbooks
+	GetLegacyContinuityPlaybookWorkbench(context.Context, *GetLegacyContinuityPlaybookWorkbenchRequest) (*GetLegacyContinuityPlaybookWorkbenchResponse, error)
+	SaveLegacyHouseholdBusinessContinuity(context.Context, *SaveLegacyHouseholdBusinessContinuityRequest) (*SaveLegacyHouseholdBusinessContinuityResponse, error)
+	RunLegacyContinuityDrillOrStageDelegation(context.Context, *RunLegacyContinuityDrillOrStageDelegationRequest) (*RunLegacyContinuityDrillOrStageDelegationResponse, error)
+	// Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+	GetLegacyIncapacityDeadmanWorkbench(context.Context, *GetLegacyIncapacityDeadmanWorkbenchRequest) (*GetLegacyIncapacityDeadmanWorkbenchResponse, error)
+	SaveLegacyIncapacityDeadmanProtocol(context.Context, *SaveLegacyIncapacityDeadmanProtocolRequest) (*SaveLegacyIncapacityDeadmanProtocolResponse, error)
+	SimulateOrCancelLegacyDeadmanRelease(context.Context, *SimulateOrCancelLegacyDeadmanReleaseRequest) (*SimulateOrCancelLegacyDeadmanReleaseResponse, error)
+	// Choice 7 (G7): Executor & Trustee Command Center
+	GetLegacyExecutorWorkspaceWorkbench(context.Context, *GetLegacyExecutorWorkspaceWorkbenchRequest) (*GetLegacyExecutorWorkspaceWorkbenchResponse, error)
+	SaveLegacyExecutorTrusteeWorkspace(context.Context, *SaveLegacyExecutorTrusteeWorkspaceRequest) (*SaveLegacyExecutorTrusteeWorkspaceResponse, error)
+	AdvanceLegacySettlementTaskOrResolveDispute(context.Context, *AdvanceLegacySettlementTaskOrResolveDisputeRequest) (*AdvanceLegacySettlementTaskOrResolveDisputeResponse, error)
+	// Choice 8 (G16): Estate & Trust Settlement Accounting
+	GetLegacySettlementAccountingWorkbench(context.Context, *GetLegacySettlementAccountingWorkbenchRequest) (*GetLegacySettlementAccountingWorkbenchResponse, error)
+	SaveLegacySettlementAccounting(context.Context, *SaveLegacySettlementAccountingRequest) (*SaveLegacySettlementAccountingResponse, error)
+	LockOrReverseLegacyAccountingPeriod(context.Context, *LockOrReverseLegacyAccountingPeriodRequest) (*LockOrReverseLegacyAccountingPeriodResponse, error)
+	// Choice 9 (G8): Digital Asset & Threshold Recovery System
+	GetLegacyDigitalRecoveryWorkbench(context.Context, *GetLegacyDigitalRecoveryWorkbenchRequest) (*GetLegacyDigitalRecoveryWorkbenchResponse, error)
+	SaveLegacyDigitalThresholdRecovery(context.Context, *SaveLegacyDigitalThresholdRecoveryRequest) (*SaveLegacyDigitalThresholdRecoveryResponse, error)
+	RunLegacyThresholdCeremonyDryRunOrRotateShare(context.Context, *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, error)
+	// Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+	GetLegacyHeritageArchiveWorkbench(context.Context, *GetLegacyHeritageArchiveWorkbenchRequest) (*GetLegacyHeritageArchiveWorkbenchResponse, error)
+	SaveLegacyHeritagePreservationArchive(context.Context, *SaveLegacyHeritagePreservationArchiveRequest) (*SaveLegacyHeritagePreservationArchiveResponse, error)
+	VerifyLegacyArchiveFixityOrPreviewTrigger(context.Context, *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse, error)
+	// Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+	GetLegacyLiquidityReadinessWorkbench(context.Context, *GetLegacyLiquidityReadinessWorkbenchRequest) (*GetLegacyLiquidityReadinessWorkbenchResponse, error)
+	SaveLegacyLiquidityInsuranceReadiness(context.Context, *SaveLegacyLiquidityInsuranceReadinessRequest) (*SaveLegacyLiquidityInsuranceReadinessResponse, error)
+	StressTestLegacyLiquidityOrRouteCounsel(context.Context, *StressTestLegacyLiquidityOrRouteCounselRequest) (*StressTestLegacyLiquidityOrRouteCounselResponse, error)
+	// Choice 12 (G10/G14): Counsel Collaboration, Family Governance & Next-Gen Stewardship
+	GetLegacyCounselGovernanceWorkbench(context.Context, *GetLegacyCounselGovernanceWorkbenchRequest) (*GetLegacyCounselGovernanceWorkbenchResponse, error)
+	SaveLegacyCounselFamilyGovernance(context.Context, *SaveLegacyCounselFamilyGovernanceRequest) (*SaveLegacyCounselFamilyGovernanceResponse, error)
+	UnlockLegacyStewardshipModuleOrRevokeCounsel(context.Context, *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse, error)
 	mustEmbedUnimplementedLegacyServiceServer()
 }
 
@@ -868,6 +1360,114 @@ func (UnimplementedLegacyServiceServer) RevokeLegacyShare(context.Context, *Revo
 }
 func (UnimplementedLegacyServiceServer) ParseDocumentExpiry(context.Context, *ParseDocumentExpiryRequest) (*ParseDocumentExpiryResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ParseDocumentExpiry not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyLivingInventoryWorkbench(context.Context, *GetLegacyLivingInventoryWorkbenchRequest) (*GetLegacyLivingInventoryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyLivingInventoryWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyLivingEstateInventory(context.Context, *SaveLegacyLivingEstateInventoryRequest) (*SaveLegacyLivingEstateInventoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyLivingEstateInventory not implemented")
+}
+func (UnimplementedLegacyServiceServer) SignOffLegacyQuarterlyPlanReview(context.Context, *SignOffLegacyQuarterlyPlanReviewRequest) (*SignOffLegacyQuarterlyPlanReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SignOffLegacyQuarterlyPlanReview not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyLifeEventAlignmentWorkbench(context.Context, *GetLegacyLifeEventAlignmentWorkbenchRequest) (*GetLegacyLifeEventAlignmentWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyLifeEventAlignmentWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyLifeEventAlignment(context.Context, *SaveLegacyLifeEventAlignmentRequest) (*SaveLegacyLifeEventAlignmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyLifeEventAlignment not implemented")
+}
+func (UnimplementedLegacyServiceServer) VerifyLegacyAlignmentInstitutionEvidence(context.Context, *VerifyLegacyAlignmentInstitutionEvidenceRequest) (*VerifyLegacyAlignmentInstitutionEvidenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyLegacyAlignmentInstitutionEvidence not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacySecureDocumentVaultWorkbench(context.Context, *GetLegacySecureDocumentVaultWorkbenchRequest) (*GetLegacySecureDocumentVaultWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacySecureDocumentVaultWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacySecureDocumentVault(context.Context, *SaveLegacySecureDocumentVaultRequest) (*SaveLegacySecureDocumentVaultResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacySecureDocumentVault not implemented")
+}
+func (UnimplementedLegacyServiceServer) LockOrExportLegacyDocumentCustody(context.Context, *LockOrExportLegacyDocumentCustodyRequest) (*LockOrExportLegacyDocumentCustodyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LockOrExportLegacyDocumentCustody not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyJurisdictionDocumentWorkbench(context.Context, *GetLegacyJurisdictionDocumentWorkbenchRequest) (*GetLegacyJurisdictionDocumentWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyJurisdictionDocumentWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyJurisdictionDocumentSystem(context.Context, *SaveLegacyJurisdictionDocumentSystemRequest) (*SaveLegacyJurisdictionDocumentSystemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyJurisdictionDocumentSystem not implemented")
+}
+func (UnimplementedLegacyServiceServer) TriggerLegacyCounselReviewOrLockExecution(context.Context, *TriggerLegacyCounselReviewOrLockExecutionRequest) (*TriggerLegacyCounselReviewOrLockExecutionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerLegacyCounselReviewOrLockExecution not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyContinuityPlaybookWorkbench(context.Context, *GetLegacyContinuityPlaybookWorkbenchRequest) (*GetLegacyContinuityPlaybookWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyContinuityPlaybookWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyHouseholdBusinessContinuity(context.Context, *SaveLegacyHouseholdBusinessContinuityRequest) (*SaveLegacyHouseholdBusinessContinuityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyHouseholdBusinessContinuity not implemented")
+}
+func (UnimplementedLegacyServiceServer) RunLegacyContinuityDrillOrStageDelegation(context.Context, *RunLegacyContinuityDrillOrStageDelegationRequest) (*RunLegacyContinuityDrillOrStageDelegationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunLegacyContinuityDrillOrStageDelegation not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyIncapacityDeadmanWorkbench(context.Context, *GetLegacyIncapacityDeadmanWorkbenchRequest) (*GetLegacyIncapacityDeadmanWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyIncapacityDeadmanWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyIncapacityDeadmanProtocol(context.Context, *SaveLegacyIncapacityDeadmanProtocolRequest) (*SaveLegacyIncapacityDeadmanProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyIncapacityDeadmanProtocol not implemented")
+}
+func (UnimplementedLegacyServiceServer) SimulateOrCancelLegacyDeadmanRelease(context.Context, *SimulateOrCancelLegacyDeadmanReleaseRequest) (*SimulateOrCancelLegacyDeadmanReleaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SimulateOrCancelLegacyDeadmanRelease not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyExecutorWorkspaceWorkbench(context.Context, *GetLegacyExecutorWorkspaceWorkbenchRequest) (*GetLegacyExecutorWorkspaceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyExecutorWorkspaceWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyExecutorTrusteeWorkspace(context.Context, *SaveLegacyExecutorTrusteeWorkspaceRequest) (*SaveLegacyExecutorTrusteeWorkspaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyExecutorTrusteeWorkspace not implemented")
+}
+func (UnimplementedLegacyServiceServer) AdvanceLegacySettlementTaskOrResolveDispute(context.Context, *AdvanceLegacySettlementTaskOrResolveDisputeRequest) (*AdvanceLegacySettlementTaskOrResolveDisputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdvanceLegacySettlementTaskOrResolveDispute not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacySettlementAccountingWorkbench(context.Context, *GetLegacySettlementAccountingWorkbenchRequest) (*GetLegacySettlementAccountingWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacySettlementAccountingWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacySettlementAccounting(context.Context, *SaveLegacySettlementAccountingRequest) (*SaveLegacySettlementAccountingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacySettlementAccounting not implemented")
+}
+func (UnimplementedLegacyServiceServer) LockOrReverseLegacyAccountingPeriod(context.Context, *LockOrReverseLegacyAccountingPeriodRequest) (*LockOrReverseLegacyAccountingPeriodResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LockOrReverseLegacyAccountingPeriod not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyDigitalRecoveryWorkbench(context.Context, *GetLegacyDigitalRecoveryWorkbenchRequest) (*GetLegacyDigitalRecoveryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyDigitalRecoveryWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyDigitalThresholdRecovery(context.Context, *SaveLegacyDigitalThresholdRecoveryRequest) (*SaveLegacyDigitalThresholdRecoveryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyDigitalThresholdRecovery not implemented")
+}
+func (UnimplementedLegacyServiceServer) RunLegacyThresholdCeremonyDryRunOrRotateShare(context.Context, *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunLegacyThresholdCeremonyDryRunOrRotateShare not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyHeritageArchiveWorkbench(context.Context, *GetLegacyHeritageArchiveWorkbenchRequest) (*GetLegacyHeritageArchiveWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyHeritageArchiveWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyHeritagePreservationArchive(context.Context, *SaveLegacyHeritagePreservationArchiveRequest) (*SaveLegacyHeritagePreservationArchiveResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyHeritagePreservationArchive not implemented")
+}
+func (UnimplementedLegacyServiceServer) VerifyLegacyArchiveFixityOrPreviewTrigger(context.Context, *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyLegacyArchiveFixityOrPreviewTrigger not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyLiquidityReadinessWorkbench(context.Context, *GetLegacyLiquidityReadinessWorkbenchRequest) (*GetLegacyLiquidityReadinessWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyLiquidityReadinessWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyLiquidityInsuranceReadiness(context.Context, *SaveLegacyLiquidityInsuranceReadinessRequest) (*SaveLegacyLiquidityInsuranceReadinessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyLiquidityInsuranceReadiness not implemented")
+}
+func (UnimplementedLegacyServiceServer) StressTestLegacyLiquidityOrRouteCounsel(context.Context, *StressTestLegacyLiquidityOrRouteCounselRequest) (*StressTestLegacyLiquidityOrRouteCounselResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StressTestLegacyLiquidityOrRouteCounsel not implemented")
+}
+func (UnimplementedLegacyServiceServer) GetLegacyCounselGovernanceWorkbench(context.Context, *GetLegacyCounselGovernanceWorkbenchRequest) (*GetLegacyCounselGovernanceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLegacyCounselGovernanceWorkbench not implemented")
+}
+func (UnimplementedLegacyServiceServer) SaveLegacyCounselFamilyGovernance(context.Context, *SaveLegacyCounselFamilyGovernanceRequest) (*SaveLegacyCounselFamilyGovernanceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveLegacyCounselFamilyGovernance not implemented")
+}
+func (UnimplementedLegacyServiceServer) UnlockLegacyStewardshipModuleOrRevokeCounsel(context.Context, *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UnlockLegacyStewardshipModuleOrRevokeCounsel not implemented")
 }
 func (UnimplementedLegacyServiceServer) mustEmbedUnimplementedLegacyServiceServer() {}
 func (UnimplementedLegacyServiceServer) testEmbeddedByValue()                       {}
@@ -1772,6 +2372,654 @@ func _LegacyService_ParseDocumentExpiry_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LegacyService_GetLegacyLivingInventoryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyLivingInventoryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyLivingInventoryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyLivingInventoryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyLivingInventoryWorkbench(ctx, req.(*GetLegacyLivingInventoryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyLivingEstateInventory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyLivingEstateInventoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyLivingEstateInventory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyLivingEstateInventory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyLivingEstateInventory(ctx, req.(*SaveLegacyLivingEstateInventoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SignOffLegacyQuarterlyPlanReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SignOffLegacyQuarterlyPlanReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SignOffLegacyQuarterlyPlanReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SignOffLegacyQuarterlyPlanReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SignOffLegacyQuarterlyPlanReview(ctx, req.(*SignOffLegacyQuarterlyPlanReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyLifeEventAlignmentWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyLifeEventAlignmentWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyLifeEventAlignmentWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyLifeEventAlignmentWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyLifeEventAlignmentWorkbench(ctx, req.(*GetLegacyLifeEventAlignmentWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyLifeEventAlignment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyLifeEventAlignmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyLifeEventAlignment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyLifeEventAlignment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyLifeEventAlignment(ctx, req.(*SaveLegacyLifeEventAlignmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_VerifyLegacyAlignmentInstitutionEvidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyLegacyAlignmentInstitutionEvidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).VerifyLegacyAlignmentInstitutionEvidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_VerifyLegacyAlignmentInstitutionEvidence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).VerifyLegacyAlignmentInstitutionEvidence(ctx, req.(*VerifyLegacyAlignmentInstitutionEvidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacySecureDocumentVaultWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacySecureDocumentVaultWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacySecureDocumentVaultWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacySecureDocumentVaultWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacySecureDocumentVaultWorkbench(ctx, req.(*GetLegacySecureDocumentVaultWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacySecureDocumentVault_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacySecureDocumentVaultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacySecureDocumentVault(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacySecureDocumentVault_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacySecureDocumentVault(ctx, req.(*SaveLegacySecureDocumentVaultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_LockOrExportLegacyDocumentCustody_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockOrExportLegacyDocumentCustodyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).LockOrExportLegacyDocumentCustody(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_LockOrExportLegacyDocumentCustody_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).LockOrExportLegacyDocumentCustody(ctx, req.(*LockOrExportLegacyDocumentCustodyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyJurisdictionDocumentWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyJurisdictionDocumentWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyJurisdictionDocumentWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyJurisdictionDocumentWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyJurisdictionDocumentWorkbench(ctx, req.(*GetLegacyJurisdictionDocumentWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyJurisdictionDocumentSystem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyJurisdictionDocumentSystemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyJurisdictionDocumentSystem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyJurisdictionDocumentSystem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyJurisdictionDocumentSystem(ctx, req.(*SaveLegacyJurisdictionDocumentSystemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_TriggerLegacyCounselReviewOrLockExecution_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerLegacyCounselReviewOrLockExecutionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).TriggerLegacyCounselReviewOrLockExecution(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_TriggerLegacyCounselReviewOrLockExecution_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).TriggerLegacyCounselReviewOrLockExecution(ctx, req.(*TriggerLegacyCounselReviewOrLockExecutionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyContinuityPlaybookWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyContinuityPlaybookWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyContinuityPlaybookWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyContinuityPlaybookWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyContinuityPlaybookWorkbench(ctx, req.(*GetLegacyContinuityPlaybookWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyHouseholdBusinessContinuity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyHouseholdBusinessContinuityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyHouseholdBusinessContinuity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyHouseholdBusinessContinuity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyHouseholdBusinessContinuity(ctx, req.(*SaveLegacyHouseholdBusinessContinuityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_RunLegacyContinuityDrillOrStageDelegation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunLegacyContinuityDrillOrStageDelegationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RunLegacyContinuityDrillOrStageDelegation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RunLegacyContinuityDrillOrStageDelegation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RunLegacyContinuityDrillOrStageDelegation(ctx, req.(*RunLegacyContinuityDrillOrStageDelegationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyIncapacityDeadmanWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyIncapacityDeadmanWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyIncapacityDeadmanWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyIncapacityDeadmanWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyIncapacityDeadmanWorkbench(ctx, req.(*GetLegacyIncapacityDeadmanWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyIncapacityDeadmanProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyIncapacityDeadmanProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyIncapacityDeadmanProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyIncapacityDeadmanProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyIncapacityDeadmanProtocol(ctx, req.(*SaveLegacyIncapacityDeadmanProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SimulateOrCancelLegacyDeadmanRelease_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulateOrCancelLegacyDeadmanReleaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SimulateOrCancelLegacyDeadmanRelease(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SimulateOrCancelLegacyDeadmanRelease_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SimulateOrCancelLegacyDeadmanRelease(ctx, req.(*SimulateOrCancelLegacyDeadmanReleaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyExecutorWorkspaceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyExecutorWorkspaceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyExecutorWorkspaceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyExecutorWorkspaceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyExecutorWorkspaceWorkbench(ctx, req.(*GetLegacyExecutorWorkspaceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyExecutorTrusteeWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyExecutorTrusteeWorkspaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyExecutorTrusteeWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyExecutorTrusteeWorkspace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyExecutorTrusteeWorkspace(ctx, req.(*SaveLegacyExecutorTrusteeWorkspaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_AdvanceLegacySettlementTaskOrResolveDispute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdvanceLegacySettlementTaskOrResolveDisputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).AdvanceLegacySettlementTaskOrResolveDispute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_AdvanceLegacySettlementTaskOrResolveDispute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).AdvanceLegacySettlementTaskOrResolveDispute(ctx, req.(*AdvanceLegacySettlementTaskOrResolveDisputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacySettlementAccountingWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacySettlementAccountingWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacySettlementAccountingWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacySettlementAccountingWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacySettlementAccountingWorkbench(ctx, req.(*GetLegacySettlementAccountingWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacySettlementAccounting_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacySettlementAccountingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacySettlementAccounting(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacySettlementAccounting_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacySettlementAccounting(ctx, req.(*SaveLegacySettlementAccountingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_LockOrReverseLegacyAccountingPeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockOrReverseLegacyAccountingPeriodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).LockOrReverseLegacyAccountingPeriod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_LockOrReverseLegacyAccountingPeriod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).LockOrReverseLegacyAccountingPeriod(ctx, req.(*LockOrReverseLegacyAccountingPeriodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyDigitalRecoveryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyDigitalRecoveryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyDigitalRecoveryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyDigitalRecoveryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyDigitalRecoveryWorkbench(ctx, req.(*GetLegacyDigitalRecoveryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyDigitalThresholdRecovery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyDigitalThresholdRecoveryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyDigitalThresholdRecovery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyDigitalThresholdRecovery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyDigitalThresholdRecovery(ctx, req.(*SaveLegacyDigitalThresholdRecoveryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_RunLegacyThresholdCeremonyDryRunOrRotateShare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunLegacyThresholdCeremonyDryRunOrRotateShareRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).RunLegacyThresholdCeremonyDryRunOrRotateShare(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_RunLegacyThresholdCeremonyDryRunOrRotateShare_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).RunLegacyThresholdCeremonyDryRunOrRotateShare(ctx, req.(*RunLegacyThresholdCeremonyDryRunOrRotateShareRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyHeritageArchiveWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyHeritageArchiveWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyHeritageArchiveWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyHeritageArchiveWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyHeritageArchiveWorkbench(ctx, req.(*GetLegacyHeritageArchiveWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyHeritagePreservationArchive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyHeritagePreservationArchiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyHeritagePreservationArchive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyHeritagePreservationArchive_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyHeritagePreservationArchive(ctx, req.(*SaveLegacyHeritagePreservationArchiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_VerifyLegacyArchiveFixityOrPreviewTrigger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyLegacyArchiveFixityOrPreviewTriggerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).VerifyLegacyArchiveFixityOrPreviewTrigger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_VerifyLegacyArchiveFixityOrPreviewTrigger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).VerifyLegacyArchiveFixityOrPreviewTrigger(ctx, req.(*VerifyLegacyArchiveFixityOrPreviewTriggerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyLiquidityReadinessWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyLiquidityReadinessWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyLiquidityReadinessWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyLiquidityReadinessWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyLiquidityReadinessWorkbench(ctx, req.(*GetLegacyLiquidityReadinessWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyLiquidityInsuranceReadiness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyLiquidityInsuranceReadinessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyLiquidityInsuranceReadiness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyLiquidityInsuranceReadiness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyLiquidityInsuranceReadiness(ctx, req.(*SaveLegacyLiquidityInsuranceReadinessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_StressTestLegacyLiquidityOrRouteCounsel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StressTestLegacyLiquidityOrRouteCounselRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).StressTestLegacyLiquidityOrRouteCounsel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_StressTestLegacyLiquidityOrRouteCounsel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).StressTestLegacyLiquidityOrRouteCounsel(ctx, req.(*StressTestLegacyLiquidityOrRouteCounselRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_GetLegacyCounselGovernanceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLegacyCounselGovernanceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).GetLegacyCounselGovernanceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_GetLegacyCounselGovernanceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).GetLegacyCounselGovernanceWorkbench(ctx, req.(*GetLegacyCounselGovernanceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_SaveLegacyCounselFamilyGovernance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveLegacyCounselFamilyGovernanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).SaveLegacyCounselFamilyGovernance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_SaveLegacyCounselFamilyGovernance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).SaveLegacyCounselFamilyGovernance(ctx, req.(*SaveLegacyCounselFamilyGovernanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LegacyService_UnlockLegacyStewardshipModuleOrRevokeCounsel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UnlockLegacyStewardshipModuleOrRevokeCounselRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LegacyServiceServer).UnlockLegacyStewardshipModuleOrRevokeCounsel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LegacyService_UnlockLegacyStewardshipModuleOrRevokeCounsel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LegacyServiceServer).UnlockLegacyStewardshipModuleOrRevokeCounsel(ctx, req.(*UnlockLegacyStewardshipModuleOrRevokeCounselRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LegacyService_ServiceDesc is the grpc.ServiceDesc for LegacyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1974,6 +3222,150 @@ var LegacyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ParseDocumentExpiry",
 			Handler:    _LegacyService_ParseDocumentExpiry_Handler,
+		},
+		{
+			MethodName: "GetLegacyLivingInventoryWorkbench",
+			Handler:    _LegacyService_GetLegacyLivingInventoryWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyLivingEstateInventory",
+			Handler:    _LegacyService_SaveLegacyLivingEstateInventory_Handler,
+		},
+		{
+			MethodName: "SignOffLegacyQuarterlyPlanReview",
+			Handler:    _LegacyService_SignOffLegacyQuarterlyPlanReview_Handler,
+		},
+		{
+			MethodName: "GetLegacyLifeEventAlignmentWorkbench",
+			Handler:    _LegacyService_GetLegacyLifeEventAlignmentWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyLifeEventAlignment",
+			Handler:    _LegacyService_SaveLegacyLifeEventAlignment_Handler,
+		},
+		{
+			MethodName: "VerifyLegacyAlignmentInstitutionEvidence",
+			Handler:    _LegacyService_VerifyLegacyAlignmentInstitutionEvidence_Handler,
+		},
+		{
+			MethodName: "GetLegacySecureDocumentVaultWorkbench",
+			Handler:    _LegacyService_GetLegacySecureDocumentVaultWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacySecureDocumentVault",
+			Handler:    _LegacyService_SaveLegacySecureDocumentVault_Handler,
+		},
+		{
+			MethodName: "LockOrExportLegacyDocumentCustody",
+			Handler:    _LegacyService_LockOrExportLegacyDocumentCustody_Handler,
+		},
+		{
+			MethodName: "GetLegacyJurisdictionDocumentWorkbench",
+			Handler:    _LegacyService_GetLegacyJurisdictionDocumentWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyJurisdictionDocumentSystem",
+			Handler:    _LegacyService_SaveLegacyJurisdictionDocumentSystem_Handler,
+		},
+		{
+			MethodName: "TriggerLegacyCounselReviewOrLockExecution",
+			Handler:    _LegacyService_TriggerLegacyCounselReviewOrLockExecution_Handler,
+		},
+		{
+			MethodName: "GetLegacyContinuityPlaybookWorkbench",
+			Handler:    _LegacyService_GetLegacyContinuityPlaybookWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyHouseholdBusinessContinuity",
+			Handler:    _LegacyService_SaveLegacyHouseholdBusinessContinuity_Handler,
+		},
+		{
+			MethodName: "RunLegacyContinuityDrillOrStageDelegation",
+			Handler:    _LegacyService_RunLegacyContinuityDrillOrStageDelegation_Handler,
+		},
+		{
+			MethodName: "GetLegacyIncapacityDeadmanWorkbench",
+			Handler:    _LegacyService_GetLegacyIncapacityDeadmanWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyIncapacityDeadmanProtocol",
+			Handler:    _LegacyService_SaveLegacyIncapacityDeadmanProtocol_Handler,
+		},
+		{
+			MethodName: "SimulateOrCancelLegacyDeadmanRelease",
+			Handler:    _LegacyService_SimulateOrCancelLegacyDeadmanRelease_Handler,
+		},
+		{
+			MethodName: "GetLegacyExecutorWorkspaceWorkbench",
+			Handler:    _LegacyService_GetLegacyExecutorWorkspaceWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyExecutorTrusteeWorkspace",
+			Handler:    _LegacyService_SaveLegacyExecutorTrusteeWorkspace_Handler,
+		},
+		{
+			MethodName: "AdvanceLegacySettlementTaskOrResolveDispute",
+			Handler:    _LegacyService_AdvanceLegacySettlementTaskOrResolveDispute_Handler,
+		},
+		{
+			MethodName: "GetLegacySettlementAccountingWorkbench",
+			Handler:    _LegacyService_GetLegacySettlementAccountingWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacySettlementAccounting",
+			Handler:    _LegacyService_SaveLegacySettlementAccounting_Handler,
+		},
+		{
+			MethodName: "LockOrReverseLegacyAccountingPeriod",
+			Handler:    _LegacyService_LockOrReverseLegacyAccountingPeriod_Handler,
+		},
+		{
+			MethodName: "GetLegacyDigitalRecoveryWorkbench",
+			Handler:    _LegacyService_GetLegacyDigitalRecoveryWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyDigitalThresholdRecovery",
+			Handler:    _LegacyService_SaveLegacyDigitalThresholdRecovery_Handler,
+		},
+		{
+			MethodName: "RunLegacyThresholdCeremonyDryRunOrRotateShare",
+			Handler:    _LegacyService_RunLegacyThresholdCeremonyDryRunOrRotateShare_Handler,
+		},
+		{
+			MethodName: "GetLegacyHeritageArchiveWorkbench",
+			Handler:    _LegacyService_GetLegacyHeritageArchiveWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyHeritagePreservationArchive",
+			Handler:    _LegacyService_SaveLegacyHeritagePreservationArchive_Handler,
+		},
+		{
+			MethodName: "VerifyLegacyArchiveFixityOrPreviewTrigger",
+			Handler:    _LegacyService_VerifyLegacyArchiveFixityOrPreviewTrigger_Handler,
+		},
+		{
+			MethodName: "GetLegacyLiquidityReadinessWorkbench",
+			Handler:    _LegacyService_GetLegacyLiquidityReadinessWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyLiquidityInsuranceReadiness",
+			Handler:    _LegacyService_SaveLegacyLiquidityInsuranceReadiness_Handler,
+		},
+		{
+			MethodName: "StressTestLegacyLiquidityOrRouteCounsel",
+			Handler:    _LegacyService_StressTestLegacyLiquidityOrRouteCounsel_Handler,
+		},
+		{
+			MethodName: "GetLegacyCounselGovernanceWorkbench",
+			Handler:    _LegacyService_GetLegacyCounselGovernanceWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveLegacyCounselFamilyGovernance",
+			Handler:    _LegacyService_SaveLegacyCounselFamilyGovernance_Handler,
+		},
+		{
+			MethodName: "UnlockLegacyStewardshipModuleOrRevokeCounsel",
+			Handler:    _LegacyService_UnlockLegacyStewardshipModuleOrRevokeCounsel_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -2508,3 +2508,2810 @@ const ExportUsCgtCsvResponse$json = {
 /// Descriptor for `ExportUsCgtCsvResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List exportUsCgtCsvResponseDescriptor = $convert
     .base64Decode('ChZFeHBvcnRVc0NndENzdlJlc3BvbnNlEhAKA2NzdhgBIAEoDFIDY3N2');
+
+@$core.Deprecated('Use vaultFinancialDataReliabilityItemDescriptor instead')
+const VaultFinancialDataReliabilityItem$json = {
+  '1': 'VaultFinancialDataReliabilityItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'source_code', '3': 3, '4': 1, '5': 9, '10': 'sourceCode'},
+    {
+      '1': 'institution_and_coverage_window',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'institutionAndCoverageWindow'
+    },
+    {
+      '1': 'sync_freshness_and_reconciliation',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'syncFreshnessAndReconciliation'
+    },
+    {
+      '1': 'confidence_and_lineage_layer',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'confidenceAndLineageLayer'
+    },
+    {
+      '1': 'reliability_state',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'reliabilityState'
+    },
+    {
+      '1': 'idempotent_replay_dedup_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'idempotentReplayDedupEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultFinancialDataReliabilityItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultFinancialDataReliabilityItemDescriptor = $convert.base64Decode(
+    'CiFWYXVsdEZpbmFuY2lhbERhdGFSZWxpYWJpbGl0eUl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBIfCgtzb3VyY2VfY29kZRgDIAEoCVIKc291cmNlQ29kZRJF'
+    'Ch9pbnN0aXR1dGlvbl9hbmRfY292ZXJhZ2Vfd2luZG93GAQgASgJUhxpbnN0aXR1dGlvbkFuZE'
+    'NvdmVyYWdlV2luZG93EkkKIXN5bmNfZnJlc2huZXNzX2FuZF9yZWNvbmNpbGlhdGlvbhgFIAEo'
+    'CVIec3luY0ZyZXNobmVzc0FuZFJlY29uY2lsaWF0aW9uEj8KHGNvbmZpZGVuY2VfYW5kX2xpbm'
+    'VhZ2VfbGF5ZXIYBiABKAlSGWNvbmZpZGVuY2VBbmRMaW5lYWdlTGF5ZXISKwoRcmVsaWFiaWxp'
+    'dHlfc3RhdGUYByABKAlSEHJlbGlhYmlsaXR5U3RhdGUSRwogaWRlbXBvdGVudF9yZXBsYXlfZG'
+    'VkdXBfZW5mb3JjZWQYCCABKAhSHWlkZW1wb3RlbnRSZXBsYXlEZWR1cEVuZm9yY2VkEiQKDnVw'
+    'ZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getVaultFinancialReliabilityWorkbenchRequestDescriptor instead')
+const GetVaultFinancialReliabilityWorkbenchRequest$json = {
+  '1': 'GetVaultFinancialReliabilityWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultFinancialReliabilityWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultFinancialReliabilityWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CixHZXRWYXVsdEZpbmFuY2lhbFJlbGlhYmlsaXR5V29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getVaultFinancialReliabilityWorkbenchResponseDescriptor instead')
+const GetVaultFinancialReliabilityWorkbenchResponse$json = {
+  '1': 'GetVaultFinancialReliabilityWorkbenchResponse',
+  '2': [
+    {
+      '1': 'sources',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialDataReliabilityItem',
+      '10': 'sources'
+    },
+    {
+      '1': 'idempotent_replay_dedup_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'idempotentReplayDedupEnforced'
+    },
+    {
+      '1': 'snapshot_lineage_and_freshness_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'snapshotLineageAndFreshnessSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultFinancialReliabilityWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultFinancialReliabilityWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRWYXVsdEZpbmFuY2lhbFJlbGlhYmlsaXR5V29ya2JlbmNoUmVzcG9uc2USTgoHc291cm'
+        'NlcxgBIAMoCzI0LnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0RmluYW5jaWFsRGF0YVJlbGlhYmls'
+        'aXR5SXRlbVIHc291cmNlcxJHCiBpZGVtcG90ZW50X3JlcGxheV9kZWR1cF9lbmZvcmNlZBgCIA'
+        'EoCFIdaWRlbXBvdGVudFJlcGxheURlZHVwRW5mb3JjZWQSUgomc25hcHNob3RfbGluZWFnZV9h'
+        'bmRfZnJlc2huZXNzX3N1bW1hcnkYAyABKAlSInNuYXBzaG90TGluZWFnZUFuZEZyZXNobmVzc1'
+        'N1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveVaultFinancialReliabilitySourceRequestDescriptor instead')
+const SaveVaultFinancialReliabilitySourceRequest$json = {
+  '1': 'SaveVaultFinancialReliabilitySourceRequest',
+  '2': [
+    {'1': 'source_code', '3': 1, '4': 1, '5': 9, '10': 'sourceCode'},
+    {
+      '1': 'institution_and_coverage_window',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'institutionAndCoverageWindow'
+    },
+    {
+      '1': 'sync_freshness_and_reconciliation',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'syncFreshnessAndReconciliation'
+    },
+    {
+      '1': 'confidence_and_lineage_layer',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'confidenceAndLineageLayer'
+    },
+    {
+      '1': 'reliability_state',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'reliabilityState'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialReliabilitySourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveVaultFinancialReliabilitySourceRequestDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlVmF1bHRGaW5hbmNpYWxSZWxpYWJpbGl0eVNvdXJjZVJlcXVlc3QSHwoLc291cmNlX2'
+        'NvZGUYASABKAlSCnNvdXJjZUNvZGUSRQofaW5zdGl0dXRpb25fYW5kX2NvdmVyYWdlX3dpbmRv'
+        'dxgCIAEoCVIcaW5zdGl0dXRpb25BbmRDb3ZlcmFnZVdpbmRvdxJJCiFzeW5jX2ZyZXNobmVzc1'
+        '9hbmRfcmVjb25jaWxpYXRpb24YAyABKAlSHnN5bmNGcmVzaG5lc3NBbmRSZWNvbmNpbGlhdGlv'
+        'bhI/Chxjb25maWRlbmNlX2FuZF9saW5lYWdlX2xheWVyGAQgASgJUhljb25maWRlbmNlQW5kTG'
+        'luZWFnZUxheWVyEisKEXJlbGlhYmlsaXR5X3N0YXRlGAUgASgJUhByZWxpYWJpbGl0eVN0YXRl');
+
+@$core.Deprecated(
+    'Use saveVaultFinancialReliabilitySourceResponseDescriptor instead')
+const SaveVaultFinancialReliabilitySourceResponse$json = {
+  '1': 'SaveVaultFinancialReliabilitySourceResponse',
+  '2': [
+    {
+      '1': 'source',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialDataReliabilityItem',
+      '10': 'source'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialReliabilitySourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveVaultFinancialReliabilitySourceResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlVmF1bHRGaW5hbmNpYWxSZWxpYWJpbGl0eVNvdXJjZVJlc3BvbnNlEkwKBnNvdXJjZR'
+        'gBIAEoCzI0LnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0RmluYW5jaWFsRGF0YVJlbGlhYmlsaXR5'
+        'SXRlbVIGc291cmNl');
+
+@$core.Deprecated(
+    'Use reconcileOrReplayVaultReliabilityRequestDescriptor instead')
+const ReconcileOrReplayVaultReliabilityRequest$json = {
+  '1': 'ReconcileOrReplayVaultReliabilityRequest',
+  '2': [
+    {'1': 'source_code', '3': 1, '4': 1, '5': 9, '10': 'sourceCode'},
+    {
+      '1': 'sync_freshness_and_reconciliation',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'syncFreshnessAndReconciliation'
+    },
+    {
+      '1': 'reliability_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'reliabilityState'
+    },
+  ],
+};
+
+/// Descriptor for `ReconcileOrReplayVaultReliabilityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List reconcileOrReplayVaultReliabilityRequestDescriptor =
+    $convert.base64Decode(
+        'CihSZWNvbmNpbGVPclJlcGxheVZhdWx0UmVsaWFiaWxpdHlSZXF1ZXN0Eh8KC3NvdXJjZV9jb2'
+        'RlGAEgASgJUgpzb3VyY2VDb2RlEkkKIXN5bmNfZnJlc2huZXNzX2FuZF9yZWNvbmNpbGlhdGlv'
+        'bhgCIAEoCVIec3luY0ZyZXNobmVzc0FuZFJlY29uY2lsaWF0aW9uEisKEXJlbGlhYmlsaXR5X3'
+        'N0YXRlGAMgASgJUhByZWxpYWJpbGl0eVN0YXRl');
+
+@$core.Deprecated(
+    'Use reconcileOrReplayVaultReliabilityResponseDescriptor instead')
+const ReconcileOrReplayVaultReliabilityResponse$json = {
+  '1': 'ReconcileOrReplayVaultReliabilityResponse',
+  '2': [
+    {
+      '1': 'source',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialDataReliabilityItem',
+      '10': 'source'
+    },
+  ],
+};
+
+/// Descriptor for `ReconcileOrReplayVaultReliabilityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    reconcileOrReplayVaultReliabilityResponseDescriptor = $convert.base64Decode(
+        'CilSZWNvbmNpbGVPclJlcGxheVZhdWx0UmVsaWFiaWxpdHlSZXNwb25zZRJMCgZzb3VyY2UYAS'
+        'ABKAsyNC5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEZpbmFuY2lhbERhdGFSZWxpYWJpbGl0eUl0'
+        'ZW1SBnNvdXJjZQ==');
+
+@$core.Deprecated('Use vaultFinancialInboxCloseItemDescriptor instead')
+const VaultFinancialInboxCloseItem$json = {
+  '1': 'VaultFinancialInboxCloseItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'inbox_code', '3': 3, '4': 1, '5': 9, '10': 'inboxCode'},
+    {
+      '1': 'exception_and_classification_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'exceptionAndClassificationSummary'
+    },
+    {
+      '1': 'close_checklist_and_snapshot_ref',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'closeChecklistAndSnapshotRef'
+    },
+    {
+      '1': 'what_changed_statement_bridge',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedStatementBridge'
+    },
+    {'1': 'inbox_state', '3': 7, '4': 1, '5': 9, '10': 'inboxState'},
+    {
+      '1': 'reversible_ledger_edits_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'reversibleLedgerEditsEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultFinancialInboxCloseItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultFinancialInboxCloseItemDescriptor = $convert.base64Decode(
+    'ChxWYXVsdEZpbmFuY2lhbEluYm94Q2xvc2VJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2'
+    'lkGAIgASgJUgZ1c2VySWQSHQoKaW5ib3hfY29kZRgDIAEoCVIJaW5ib3hDb2RlEk8KJGV4Y2Vw'
+    'dGlvbl9hbmRfY2xhc3NpZmljYXRpb25fc3VtbWFyeRgEIAEoCVIhZXhjZXB0aW9uQW5kQ2xhc3'
+    'NpZmljYXRpb25TdW1tYXJ5EkYKIGNsb3NlX2NoZWNrbGlzdF9hbmRfc25hcHNob3RfcmVmGAUg'
+    'ASgJUhxjbG9zZUNoZWNrbGlzdEFuZFNuYXBzaG90UmVmEkEKHXdoYXRfY2hhbmdlZF9zdGF0ZW'
+    '1lbnRfYnJpZGdlGAYgASgJUhp3aGF0Q2hhbmdlZFN0YXRlbWVudEJyaWRnZRIfCgtpbmJveF9z'
+    'dGF0ZRgHIAEoCVIKaW5ib3hTdGF0ZRJHCiByZXZlcnNpYmxlX2xlZGdlcl9lZGl0c19lbmZvcm'
+    'NlZBgIIAEoCFIdcmV2ZXJzaWJsZUxlZGdlckVkaXRzRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9p'
+    'c28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getVaultFinancialInboxCloseWorkbenchRequestDescriptor instead')
+const GetVaultFinancialInboxCloseWorkbenchRequest$json = {
+  '1': 'GetVaultFinancialInboxCloseWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultFinancialInboxCloseWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultFinancialInboxCloseWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZXRWYXVsdEZpbmFuY2lhbEluYm94Q2xvc2VXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getVaultFinancialInboxCloseWorkbenchResponseDescriptor instead')
+const GetVaultFinancialInboxCloseWorkbenchResponse$json = {
+  '1': 'GetVaultFinancialInboxCloseWorkbenchResponse',
+  '2': [
+    {
+      '1': 'closes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialInboxCloseItem',
+      '10': 'closes'
+    },
+    {
+      '1': 'reversible_ledger_edits_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'reversibleLedgerEditsEnforced'
+    },
+    {
+      '1': 'close_lock_and_what_changed_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'closeLockAndWhatChangedSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultFinancialInboxCloseWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultFinancialInboxCloseWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZXRWYXVsdEZpbmFuY2lhbEluYm94Q2xvc2VXb3JrYmVuY2hSZXNwb25zZRJHCgZjbG9zZX'
+        'MYASADKAsyLy5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEZpbmFuY2lhbEluYm94Q2xvc2VJdGVt'
+        'UgZjbG9zZXMSRwogcmV2ZXJzaWJsZV9sZWRnZXJfZWRpdHNfZW5mb3JjZWQYAiABKAhSHXJldm'
+        'Vyc2libGVMZWRnZXJFZGl0c0VuZm9yY2VkEksKI2Nsb3NlX2xvY2tfYW5kX3doYXRfY2hhbmdl'
+        'ZF9zdW1tYXJ5GAMgASgJUh5jbG9zZUxvY2tBbmRXaGF0Q2hhbmdlZFN1bW1hcnk=');
+
+@$core
+    .Deprecated('Use saveVaultFinancialInboxCloseItemRequestDescriptor instead')
+const SaveVaultFinancialInboxCloseItemRequest$json = {
+  '1': 'SaveVaultFinancialInboxCloseItemRequest',
+  '2': [
+    {'1': 'inbox_code', '3': 1, '4': 1, '5': 9, '10': 'inboxCode'},
+    {
+      '1': 'exception_and_classification_summary',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'exceptionAndClassificationSummary'
+    },
+    {
+      '1': 'close_checklist_and_snapshot_ref',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'closeChecklistAndSnapshotRef'
+    },
+    {
+      '1': 'what_changed_statement_bridge',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedStatementBridge'
+    },
+    {'1': 'inbox_state', '3': 5, '4': 1, '5': 9, '10': 'inboxState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialInboxCloseItemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultFinancialInboxCloseItemRequestDescriptor =
+    $convert.base64Decode(
+        'CidTYXZlVmF1bHRGaW5hbmNpYWxJbmJveENsb3NlSXRlbVJlcXVlc3QSHQoKaW5ib3hfY29kZR'
+        'gBIAEoCVIJaW5ib3hDb2RlEk8KJGV4Y2VwdGlvbl9hbmRfY2xhc3NpZmljYXRpb25fc3VtbWFy'
+        'eRgCIAEoCVIhZXhjZXB0aW9uQW5kQ2xhc3NpZmljYXRpb25TdW1tYXJ5EkYKIGNsb3NlX2NoZW'
+        'NrbGlzdF9hbmRfc25hcHNob3RfcmVmGAMgASgJUhxjbG9zZUNoZWNrbGlzdEFuZFNuYXBzaG90'
+        'UmVmEkEKHXdoYXRfY2hhbmdlZF9zdGF0ZW1lbnRfYnJpZGdlGAQgASgJUhp3aGF0Q2hhbmdlZF'
+        'N0YXRlbWVudEJyaWRnZRIfCgtpbmJveF9zdGF0ZRgFIAEoCVIKaW5ib3hTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveVaultFinancialInboxCloseItemResponseDescriptor instead')
+const SaveVaultFinancialInboxCloseItemResponse$json = {
+  '1': 'SaveVaultFinancialInboxCloseItemResponse',
+  '2': [
+    {
+      '1': 'close',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialInboxCloseItem',
+      '10': 'close'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialInboxCloseItemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultFinancialInboxCloseItemResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlVmF1bHRGaW5hbmNpYWxJbmJveENsb3NlSXRlbVJlc3BvbnNlEkUKBWNsb3NlGAEgAS'
+        'gLMi8uc3R0YXR0dXMudmF1bHQudjEuVmF1bHRGaW5hbmNpYWxJbmJveENsb3NlSXRlbVIFY2xv'
+        'c2U=');
+
+@$core.Deprecated('Use lockOrReopenVaultMonthlyCloseRequestDescriptor instead')
+const LockOrReopenVaultMonthlyCloseRequest$json = {
+  '1': 'LockOrReopenVaultMonthlyCloseRequest',
+  '2': [
+    {'1': 'inbox_code', '3': 1, '4': 1, '5': 9, '10': 'inboxCode'},
+    {
+      '1': 'what_changed_statement_bridge',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedStatementBridge'
+    },
+    {'1': 'inbox_state', '3': 3, '4': 1, '5': 9, '10': 'inboxState'},
+  ],
+};
+
+/// Descriptor for `LockOrReopenVaultMonthlyCloseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List lockOrReopenVaultMonthlyCloseRequestDescriptor =
+    $convert.base64Decode(
+        'CiRMb2NrT3JSZW9wZW5WYXVsdE1vbnRobHlDbG9zZVJlcXVlc3QSHQoKaW5ib3hfY29kZRgBIA'
+        'EoCVIJaW5ib3hDb2RlEkEKHXdoYXRfY2hhbmdlZF9zdGF0ZW1lbnRfYnJpZGdlGAIgASgJUhp3'
+        'aGF0Q2hhbmdlZFN0YXRlbWVudEJyaWRnZRIfCgtpbmJveF9zdGF0ZRgDIAEoCVIKaW5ib3hTdG'
+        'F0ZQ==');
+
+@$core.Deprecated('Use lockOrReopenVaultMonthlyCloseResponseDescriptor instead')
+const LockOrReopenVaultMonthlyCloseResponse$json = {
+  '1': 'LockOrReopenVaultMonthlyCloseResponse',
+  '2': [
+    {
+      '1': 'close',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialInboxCloseItem',
+      '10': 'close'
+    },
+  ],
+};
+
+/// Descriptor for `LockOrReopenVaultMonthlyCloseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List lockOrReopenVaultMonthlyCloseResponseDescriptor =
+    $convert.base64Decode(
+        'CiVMb2NrT3JSZW9wZW5WYXVsdE1vbnRobHlDbG9zZVJlc3BvbnNlEkUKBWNsb3NlGAEgASgLMi'
+        '8uc3R0YXR0dXMudmF1bHQudjEuVmF1bHRGaW5hbmNpYWxJbmJveENsb3NlSXRlbVIFY2xvc2U=');
+
+@$core.Deprecated('Use vaultPersonalCfoCashCommandItemDescriptor instead')
+const VaultPersonalCfoCashCommandItem$json = {
+  '1': 'VaultPersonalCfoCashCommandItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'command_code', '3': 3, '4': 1, '5': 9, '10': 'commandCode'},
+    {
+      '1': 'liquidity_ladder_and_ratios',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'liquidityLadderAndRatios'
+    },
+    {
+      '1': 'thirteen_week_forecast_and_commitments',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'thirteenWeekForecastAndCommitments'
+    },
+    {
+      '1': 'explainable_variance_and_policy_alert',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'explainableVarianceAndPolicyAlert'
+    },
+    {'1': 'command_state', '3': 7, '4': 1, '5': 9, '10': 'commandState'},
+    {
+      '1': 'non_auto_transfer_boundary_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonAutoTransferBoundaryEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultPersonalCfoCashCommandItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultPersonalCfoCashCommandItemDescriptor = $convert.base64Decode(
+    'Ch9WYXVsdFBlcnNvbmFsQ2ZvQ2FzaENvbW1hbmRJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSIQoMY29tbWFuZF9jb2RlGAMgASgJUgtjb21tYW5kQ29kZRI9'
+    'ChtsaXF1aWRpdHlfbGFkZGVyX2FuZF9yYXRpb3MYBCABKAlSGGxpcXVpZGl0eUxhZGRlckFuZF'
+    'JhdGlvcxJSCiZ0aGlydGVlbl93ZWVrX2ZvcmVjYXN0X2FuZF9jb21taXRtZW50cxgFIAEoCVIi'
+    'dGhpcnRlZW5XZWVrRm9yZWNhc3RBbmRDb21taXRtZW50cxJQCiVleHBsYWluYWJsZV92YXJpYW'
+    '5jZV9hbmRfcG9saWN5X2FsZXJ0GAYgASgJUiFleHBsYWluYWJsZVZhcmlhbmNlQW5kUG9saWN5'
+    'QWxlcnQSIwoNY29tbWFuZF9zdGF0ZRgHIAEoCVIMY29tbWFuZFN0YXRlEkwKI25vbl9hdXRvX3'
+    'RyYW5zZmVyX2JvdW5kYXJ5X2VuZm9yY2VkGAggASgIUh9ub25BdXRvVHJhbnNmZXJCb3VuZGFy'
+    'eUVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core
+    .Deprecated('Use getVaultPersonalCfoCashWorkbenchRequestDescriptor instead')
+const GetVaultPersonalCfoCashWorkbenchRequest$json = {
+  '1': 'GetVaultPersonalCfoCashWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultPersonalCfoCashWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultPersonalCfoCashWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZXRWYXVsdFBlcnNvbmFsQ2ZvQ2FzaFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getVaultPersonalCfoCashWorkbenchResponseDescriptor instead')
+const GetVaultPersonalCfoCashWorkbenchResponse$json = {
+  '1': 'GetVaultPersonalCfoCashWorkbenchResponse',
+  '2': [
+    {
+      '1': 'commands',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPersonalCfoCashCommandItem',
+      '10': 'commands'
+    },
+    {
+      '1': 'non_auto_transfer_boundary_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonAutoTransferBoundaryEnforced'
+    },
+    {
+      '1': 'liquidity_ladder_and_forecast_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'liquidityLadderAndForecastSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultPersonalCfoCashWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultPersonalCfoCashWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZXRWYXVsdFBlcnNvbmFsQ2ZvQ2FzaFdvcmtiZW5jaFJlc3BvbnNlEk4KCGNvbW1hbmRzGA'
+        'EgAygLMjIuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQZXJzb25hbENmb0Nhc2hDb21tYW5kSXRl'
+        'bVIIY29tbWFuZHMSTAojbm9uX2F1dG9fdHJhbnNmZXJfYm91bmRhcnlfZW5mb3JjZWQYAiABKA'
+        'hSH25vbkF1dG9UcmFuc2ZlckJvdW5kYXJ5RW5mb3JjZWQSUAolbGlxdWlkaXR5X2xhZGRlcl9h'
+        'bmRfZm9yZWNhc3Rfc3VtbWFyeRgDIAEoCVIhbGlxdWlkaXR5TGFkZGVyQW5kRm9yZWNhc3RTdW'
+        '1tYXJ5');
+
+@$core
+    .Deprecated('Use saveVaultPersonalCfoCashForecastRequestDescriptor instead')
+const SaveVaultPersonalCfoCashForecastRequest$json = {
+  '1': 'SaveVaultPersonalCfoCashForecastRequest',
+  '2': [
+    {'1': 'command_code', '3': 1, '4': 1, '5': 9, '10': 'commandCode'},
+    {
+      '1': 'liquidity_ladder_and_ratios',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'liquidityLadderAndRatios'
+    },
+    {
+      '1': 'thirteen_week_forecast_and_commitments',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'thirteenWeekForecastAndCommitments'
+    },
+    {
+      '1': 'explainable_variance_and_policy_alert',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'explainableVarianceAndPolicyAlert'
+    },
+    {'1': 'command_state', '3': 5, '4': 1, '5': 9, '10': 'commandState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultPersonalCfoCashForecastRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultPersonalCfoCashForecastRequestDescriptor = $convert.base64Decode(
+    'CidTYXZlVmF1bHRQZXJzb25hbENmb0Nhc2hGb3JlY2FzdFJlcXVlc3QSIQoMY29tbWFuZF9jb2'
+    'RlGAEgASgJUgtjb21tYW5kQ29kZRI9ChtsaXF1aWRpdHlfbGFkZGVyX2FuZF9yYXRpb3MYAiAB'
+    'KAlSGGxpcXVpZGl0eUxhZGRlckFuZFJhdGlvcxJSCiZ0aGlydGVlbl93ZWVrX2ZvcmVjYXN0X2'
+    'FuZF9jb21taXRtZW50cxgDIAEoCVIidGhpcnRlZW5XZWVrRm9yZWNhc3RBbmRDb21taXRtZW50'
+    'cxJQCiVleHBsYWluYWJsZV92YXJpYW5jZV9hbmRfcG9saWN5X2FsZXJ0GAQgASgJUiFleHBsYW'
+    'luYWJsZVZhcmlhbmNlQW5kUG9saWN5QWxlcnQSIwoNY29tbWFuZF9zdGF0ZRgFIAEoCVIMY29t'
+    'bWFuZFN0YXRl');
+
+@$core.Deprecated(
+    'Use saveVaultPersonalCfoCashForecastResponseDescriptor instead')
+const SaveVaultPersonalCfoCashForecastResponse$json = {
+  '1': 'SaveVaultPersonalCfoCashForecastResponse',
+  '2': [
+    {
+      '1': 'command',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPersonalCfoCashCommandItem',
+      '10': 'command'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultPersonalCfoCashForecastResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultPersonalCfoCashForecastResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlVmF1bHRQZXJzb25hbENmb0Nhc2hGb3JlY2FzdFJlc3BvbnNlEkwKB2NvbW1hbmQYAS'
+        'ABKAsyMi5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFBlcnNvbmFsQ2ZvQ2FzaENvbW1hbmRJdGVt'
+        'Ugdjb21tYW5k');
+
+@$core.Deprecated(
+    'Use acknowledgeOrReviewVaultCashCommitmentRequestDescriptor instead')
+const AcknowledgeOrReviewVaultCashCommitmentRequest$json = {
+  '1': 'AcknowledgeOrReviewVaultCashCommitmentRequest',
+  '2': [
+    {'1': 'command_code', '3': 1, '4': 1, '5': 9, '10': 'commandCode'},
+    {
+      '1': 'explainable_variance_and_policy_alert',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'explainableVarianceAndPolicyAlert'
+    },
+    {'1': 'command_state', '3': 3, '4': 1, '5': 9, '10': 'commandState'},
+  ],
+};
+
+/// Descriptor for `AcknowledgeOrReviewVaultCashCommitmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    acknowledgeOrReviewVaultCashCommitmentRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1BY2tub3dsZWRnZU9yUmV2aWV3VmF1bHRDYXNoQ29tbWl0bWVudFJlcXVlc3QSIQoMY29tbW'
+        'FuZF9jb2RlGAEgASgJUgtjb21tYW5kQ29kZRJQCiVleHBsYWluYWJsZV92YXJpYW5jZV9hbmRf'
+        'cG9saWN5X2FsZXJ0GAIgASgJUiFleHBsYWluYWJsZVZhcmlhbmNlQW5kUG9saWN5QWxlcnQSIw'
+        'oNY29tbWFuZF9zdGF0ZRgDIAEoCVIMY29tbWFuZFN0YXRl');
+
+@$core.Deprecated(
+    'Use acknowledgeOrReviewVaultCashCommitmentResponseDescriptor instead')
+const AcknowledgeOrReviewVaultCashCommitmentResponse$json = {
+  '1': 'AcknowledgeOrReviewVaultCashCommitmentResponse',
+  '2': [
+    {
+      '1': 'command',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPersonalCfoCashCommandItem',
+      '10': 'command'
+    },
+  ],
+};
+
+/// Descriptor for `AcknowledgeOrReviewVaultCashCommitmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    acknowledgeOrReviewVaultCashCommitmentResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5BY2tub3dsZWRnZU9yUmV2aWV3VmF1bHRDYXNoQ29tbWl0bWVudFJlc3BvbnNlEkwKB2NvbW'
+        '1hbmQYASABKAsyMi5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFBlcnNvbmFsQ2ZvQ2FzaENvbW1h'
+        'bmRJdGVtUgdjb21tYW5k');
+
+@$core.Deprecated('Use vaultPerformanceAllocationLabItemDescriptor instead')
+const VaultPerformanceAllocationLabItem$json = {
+  '1': 'VaultPerformanceAllocationLabItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'allocation_code', '3': 3, '4': 1, '5': 9, '10': 'allocationCode'},
+    {
+      '1': 'twr_mwr_irr_and_benchmark_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'twrMwrIrrAndBenchmarkSummary'
+    },
+    {
+      '1': 'lookthrough_exposure_and_concentration',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'lookthroughExposureAndConcentration'
+    },
+    {
+      '1': 'rebalance_tax_and_cost_scenario',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'rebalanceTaxAndCostScenario'
+    },
+    {'1': 'lab_state', '3': 7, '4': 1, '5': 9, '10': 'labState'},
+    {
+      '1': 'no_fabricated_smooth_curve_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noFabricatedSmoothCurveEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultPerformanceAllocationLabItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultPerformanceAllocationLabItemDescriptor = $convert.base64Decode(
+    'CiFWYXVsdFBlcmZvcm1hbmNlQWxsb2NhdGlvbkxhYkl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBInCg9hbGxvY2F0aW9uX2NvZGUYAyABKAlSDmFsbG9jYXRp'
+    'b25Db2RlEkcKIXR3cl9td3JfaXJyX2FuZF9iZW5jaG1hcmtfc3VtbWFyeRgEIAEoCVIcdHdyTX'
+    'dySXJyQW5kQmVuY2htYXJrU3VtbWFyeRJTCiZsb29rdGhyb3VnaF9leHBvc3VyZV9hbmRfY29u'
+    'Y2VudHJhdGlvbhgFIAEoCVIjbG9va3Rocm91Z2hFeHBvc3VyZUFuZENvbmNlbnRyYXRpb24SRA'
+    'ofcmViYWxhbmNlX3RheF9hbmRfY29zdF9zY2VuYXJpbxgGIAEoCVIbcmViYWxhbmNlVGF4QW5k'
+    'Q29zdFNjZW5hcmlvEhsKCWxhYl9zdGF0ZRgHIAEoCVIIbGFiU3RhdGUSTAojbm9fZmFicmljYX'
+    'RlZF9zbW9vdGhfY3VydmVfZW5mb3JjZWQYCCABKAhSH25vRmFicmljYXRlZFNtb290aEN1cnZl'
+    'RW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getVaultPerformanceAllocationWorkbenchRequestDescriptor instead')
+const GetVaultPerformanceAllocationWorkbenchRequest$json = {
+  '1': 'GetVaultPerformanceAllocationWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultPerformanceAllocationWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultPerformanceAllocationWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRWYXVsdFBlcmZvcm1hbmNlQWxsb2NhdGlvbldvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getVaultPerformanceAllocationWorkbenchResponseDescriptor instead')
+const GetVaultPerformanceAllocationWorkbenchResponse$json = {
+  '1': 'GetVaultPerformanceAllocationWorkbenchResponse',
+  '2': [
+    {
+      '1': 'models',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPerformanceAllocationLabItem',
+      '10': 'models'
+    },
+    {
+      '1': 'no_fabricated_smooth_curve_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'noFabricatedSmoothCurveEnforced'
+    },
+    {
+      '1': 'snapshot_reproducible_performance_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'snapshotReproduciblePerformanceSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultPerformanceAllocationWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultPerformanceAllocationWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRWYXVsdFBlcmZvcm1hbmNlQWxsb2NhdGlvbldvcmtiZW5jaFJlc3BvbnNlEkwKBm1vZG'
+        'VscxgBIAMoCzI0LnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0UGVyZm9ybWFuY2VBbGxvY2F0aW9u'
+        'TGFiSXRlbVIGbW9kZWxzEkwKI25vX2ZhYnJpY2F0ZWRfc21vb3RoX2N1cnZlX2VuZm9yY2VkGA'
+        'IgASgIUh9ub0ZhYnJpY2F0ZWRTbW9vdGhDdXJ2ZUVuZm9yY2VkElkKKXNuYXBzaG90X3JlcHJv'
+        'ZHVjaWJsZV9wZXJmb3JtYW5jZV9zdW1tYXJ5GAMgASgJUiZzbmFwc2hvdFJlcHJvZHVjaWJsZV'
+        'BlcmZvcm1hbmNlU3VtbWFyeQ==');
+
+@$core.Deprecated(
+    'Use saveVaultPerformanceAllocationModelRequestDescriptor instead')
+const SaveVaultPerformanceAllocationModelRequest$json = {
+  '1': 'SaveVaultPerformanceAllocationModelRequest',
+  '2': [
+    {'1': 'allocation_code', '3': 1, '4': 1, '5': 9, '10': 'allocationCode'},
+    {
+      '1': 'twr_mwr_irr_and_benchmark_summary',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'twrMwrIrrAndBenchmarkSummary'
+    },
+    {
+      '1': 'lookthrough_exposure_and_concentration',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'lookthroughExposureAndConcentration'
+    },
+    {
+      '1': 'rebalance_tax_and_cost_scenario',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'rebalanceTaxAndCostScenario'
+    },
+    {'1': 'lab_state', '3': 5, '4': 1, '5': 9, '10': 'labState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultPerformanceAllocationModelRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveVaultPerformanceAllocationModelRequestDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlVmF1bHRQZXJmb3JtYW5jZUFsbG9jYXRpb25Nb2RlbFJlcXVlc3QSJwoPYWxsb2NhdG'
+        'lvbl9jb2RlGAEgASgJUg5hbGxvY2F0aW9uQ29kZRJHCiF0d3JfbXdyX2lycl9hbmRfYmVuY2ht'
+        'YXJrX3N1bW1hcnkYAiABKAlSHHR3ck13cklyckFuZEJlbmNobWFya1N1bW1hcnkSUwombG9va3'
+        'Rocm91Z2hfZXhwb3N1cmVfYW5kX2NvbmNlbnRyYXRpb24YAyABKAlSI2xvb2t0aHJvdWdoRXhw'
+        'b3N1cmVBbmRDb25jZW50cmF0aW9uEkQKH3JlYmFsYW5jZV90YXhfYW5kX2Nvc3Rfc2NlbmFyaW'
+        '8YBCABKAlSG3JlYmFsYW5jZVRheEFuZENvc3RTY2VuYXJpbxIbCglsYWJfc3RhdGUYBSABKAlS'
+        'CGxhYlN0YXRl');
+
+@$core.Deprecated(
+    'Use saveVaultPerformanceAllocationModelResponseDescriptor instead')
+const SaveVaultPerformanceAllocationModelResponse$json = {
+  '1': 'SaveVaultPerformanceAllocationModelResponse',
+  '2': [
+    {
+      '1': 'model',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPerformanceAllocationLabItem',
+      '10': 'model'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultPerformanceAllocationModelResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveVaultPerformanceAllocationModelResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlVmF1bHRQZXJmb3JtYW5jZUFsbG9jYXRpb25Nb2RlbFJlc3BvbnNlEkoKBW1vZGVsGA'
+        'EgASgLMjQuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQZXJmb3JtYW5jZUFsbG9jYXRpb25MYWJJ'
+        'dGVtUgVtb2RlbA==');
+
+@$core
+    .Deprecated('Use simulateOrRefreshVaultAllocationRequestDescriptor instead')
+const SimulateOrRefreshVaultAllocationRequest$json = {
+  '1': 'SimulateOrRefreshVaultAllocationRequest',
+  '2': [
+    {'1': 'allocation_code', '3': 1, '4': 1, '5': 9, '10': 'allocationCode'},
+    {
+      '1': 'rebalance_tax_and_cost_scenario',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'rebalanceTaxAndCostScenario'
+    },
+    {'1': 'lab_state', '3': 3, '4': 1, '5': 9, '10': 'labState'},
+  ],
+};
+
+/// Descriptor for `SimulateOrRefreshVaultAllocationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateOrRefreshVaultAllocationRequestDescriptor =
+    $convert.base64Decode(
+        'CidTaW11bGF0ZU9yUmVmcmVzaFZhdWx0QWxsb2NhdGlvblJlcXVlc3QSJwoPYWxsb2NhdGlvbl'
+        '9jb2RlGAEgASgJUg5hbGxvY2F0aW9uQ29kZRJECh9yZWJhbGFuY2VfdGF4X2FuZF9jb3N0X3Nj'
+        'ZW5hcmlvGAIgASgJUhtyZWJhbGFuY2VUYXhBbmRDb3N0U2NlbmFyaW8SGwoJbGFiX3N0YXRlGA'
+        'MgASgJUghsYWJTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use simulateOrRefreshVaultAllocationResponseDescriptor instead')
+const SimulateOrRefreshVaultAllocationResponse$json = {
+  '1': 'SimulateOrRefreshVaultAllocationResponse',
+  '2': [
+    {
+      '1': 'model',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPerformanceAllocationLabItem',
+      '10': 'model'
+    },
+  ],
+};
+
+/// Descriptor for `SimulateOrRefreshVaultAllocationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateOrRefreshVaultAllocationResponseDescriptor =
+    $convert.base64Decode(
+        'CihTaW11bGF0ZU9yUmVmcmVzaFZhdWx0QWxsb2NhdGlvblJlc3BvbnNlEkoKBW1vZGVsGAEgAS'
+        'gLMjQuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQZXJmb3JtYW5jZUFsbG9jYXRpb25MYWJJdGVt'
+        'UgVtb2RlbA==');
+
+@$core.Deprecated('Use vaultTaxAccountantWorkspaceItemDescriptor instead')
+const VaultTaxAccountantWorkspaceItem$json = {
+  '1': 'VaultTaxAccountantWorkspaceItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'tax_code', '3': 3, '4': 1, '5': 9, '10': 'taxCode'},
+    {
+      '1': 'jurisdiction_lots_and_wash_sale_scope',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionLotsAndWashSaleScope'
+    },
+    {
+      '1': 'harvest_or_payment_scenario_estimate',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'harvestOrPaymentScenarioEstimate'
+    },
+    {
+      '1': 'accountant_dataroom_and_period_lock',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantDataroomAndPeriodLock'
+    },
+    {'1': 'workspace_state', '3': 7, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'non_tax_advice_no_onetap_trade_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonTaxAdviceNoOnetapTradeEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultTaxAccountantWorkspaceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultTaxAccountantWorkspaceItemDescriptor = $convert.base64Decode(
+    'Ch9WYXVsdFRheEFjY291bnRhbnRXb3Jrc3BhY2VJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSGQoIdGF4X2NvZGUYAyABKAlSB3RheENvZGUSTwolanVyaXNk'
+    'aWN0aW9uX2xvdHNfYW5kX3dhc2hfc2FsZV9zY29wZRgEIAEoCVIganVyaXNkaWN0aW9uTG90c0'
+    'FuZFdhc2hTYWxlU2NvcGUSTgokaGFydmVzdF9vcl9wYXltZW50X3NjZW5hcmlvX2VzdGltYXRl'
+    'GAUgASgJUiBoYXJ2ZXN0T3JQYXltZW50U2NlbmFyaW9Fc3RpbWF0ZRJMCiNhY2NvdW50YW50X2'
+    'RhdGFyb29tX2FuZF9wZXJpb2RfbG9jaxgGIAEoCVIfYWNjb3VudGFudERhdGFyb29tQW5kUGVy'
+    'aW9kTG9jaxInCg93b3Jrc3BhY2Vfc3RhdGUYByABKAlSDndvcmtzcGFjZVN0YXRlElIKJ25vbl'
+    '90YXhfYWR2aWNlX25vX29uZXRhcF90cmFkZV9lbmZvcmNlZBgIIAEoCFIhbm9uVGF4QWR2aWNl'
+    'Tm9PbmV0YXBUcmFkZUVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQX'
+    'RJc28=');
+
+@$core.Deprecated('Use getVaultTaxAccountantWorkbenchRequestDescriptor instead')
+const GetVaultTaxAccountantWorkbenchRequest$json = {
+  '1': 'GetVaultTaxAccountantWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultTaxAccountantWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultTaxAccountantWorkbenchRequestDescriptor =
+    $convert
+        .base64Decode('CiVHZXRWYXVsdFRheEFjY291bnRhbnRXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core
+    .Deprecated('Use getVaultTaxAccountantWorkbenchResponseDescriptor instead')
+const GetVaultTaxAccountantWorkbenchResponse$json = {
+  '1': 'GetVaultTaxAccountantWorkbenchResponse',
+  '2': [
+    {
+      '1': 'workspaces',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTaxAccountantWorkspaceItem',
+      '10': 'workspaces'
+    },
+    {
+      '1': 'non_tax_advice_no_onetap_trade_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonTaxAdviceNoOnetapTradeEnforced'
+    },
+    {
+      '1': 'wash_sale_and_accountant_scope_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'washSaleAndAccountantScopeSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultTaxAccountantWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultTaxAccountantWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRWYXVsdFRheEFjY291bnRhbnRXb3JrYmVuY2hSZXNwb25zZRJSCgp3b3Jrc3BhY2VzGA'
+        'EgAygLMjIuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRUYXhBY2NvdW50YW50V29ya3NwYWNlSXRl'
+        'bVIKd29ya3NwYWNlcxJSCidub25fdGF4X2FkdmljZV9ub19vbmV0YXBfdHJhZGVfZW5mb3JjZW'
+        'QYAiABKAhSIW5vblRheEFkdmljZU5vT25ldGFwVHJhZGVFbmZvcmNlZBJRCiZ3YXNoX3NhbGVf'
+        'YW5kX2FjY291bnRhbnRfc2NvcGVfc3VtbWFyeRgDIAEoCVIhd2FzaFNhbGVBbmRBY2NvdW50YW'
+        '50U2NvcGVTdW1tYXJ5');
+
+@$core.Deprecated('Use saveVaultTaxAccountantScenarioRequestDescriptor instead')
+const SaveVaultTaxAccountantScenarioRequest$json = {
+  '1': 'SaveVaultTaxAccountantScenarioRequest',
+  '2': [
+    {'1': 'tax_code', '3': 1, '4': 1, '5': 9, '10': 'taxCode'},
+    {
+      '1': 'jurisdiction_lots_and_wash_sale_scope',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionLotsAndWashSaleScope'
+    },
+    {
+      '1': 'harvest_or_payment_scenario_estimate',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'harvestOrPaymentScenarioEstimate'
+    },
+    {
+      '1': 'accountant_dataroom_and_period_lock',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantDataroomAndPeriodLock'
+    },
+    {'1': 'workspace_state', '3': 5, '4': 1, '5': 9, '10': 'workspaceState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultTaxAccountantScenarioRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultTaxAccountantScenarioRequestDescriptor = $convert.base64Decode(
+    'CiVTYXZlVmF1bHRUYXhBY2NvdW50YW50U2NlbmFyaW9SZXF1ZXN0EhkKCHRheF9jb2RlGAEgAS'
+    'gJUgd0YXhDb2RlEk8KJWp1cmlzZGljdGlvbl9sb3RzX2FuZF93YXNoX3NhbGVfc2NvcGUYAiAB'
+    'KAlSIGp1cmlzZGljdGlvbkxvdHNBbmRXYXNoU2FsZVNjb3BlEk4KJGhhcnZlc3Rfb3JfcGF5bW'
+    'VudF9zY2VuYXJpb19lc3RpbWF0ZRgDIAEoCVIgaGFydmVzdE9yUGF5bWVudFNjZW5hcmlvRXN0'
+    'aW1hdGUSTAojYWNjb3VudGFudF9kYXRhcm9vbV9hbmRfcGVyaW9kX2xvY2sYBCABKAlSH2FjY2'
+    '91bnRhbnREYXRhcm9vbUFuZFBlcmlvZExvY2sSJwoPd29ya3NwYWNlX3N0YXRlGAUgASgJUg53'
+    'b3Jrc3BhY2VTdGF0ZQ==');
+
+@$core
+    .Deprecated('Use saveVaultTaxAccountantScenarioResponseDescriptor instead')
+const SaveVaultTaxAccountantScenarioResponse$json = {
+  '1': 'SaveVaultTaxAccountantScenarioResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTaxAccountantWorkspaceItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultTaxAccountantScenarioResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultTaxAccountantScenarioResponseDescriptor =
+    $convert.base64Decode(
+        'CiZTYXZlVmF1bHRUYXhBY2NvdW50YW50U2NlbmFyaW9SZXNwb25zZRJQCgl3b3Jrc3BhY2UYAS'
+        'ABKAsyMi5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFRheEFjY291bnRhbnRXb3Jrc3BhY2VJdGVt'
+        'Ugl3b3Jrc3BhY2U=');
+
+@$core.Deprecated('Use lockOrExportVaultTaxPackageRequestDescriptor instead')
+const LockOrExportVaultTaxPackageRequest$json = {
+  '1': 'LockOrExportVaultTaxPackageRequest',
+  '2': [
+    {'1': 'tax_code', '3': 1, '4': 1, '5': 9, '10': 'taxCode'},
+    {
+      '1': 'accountant_dataroom_and_period_lock',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantDataroomAndPeriodLock'
+    },
+    {'1': 'workspace_state', '3': 3, '4': 1, '5': 9, '10': 'workspaceState'},
+  ],
+};
+
+/// Descriptor for `LockOrExportVaultTaxPackageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List lockOrExportVaultTaxPackageRequestDescriptor =
+    $convert.base64Decode(
+        'CiJMb2NrT3JFeHBvcnRWYXVsdFRheFBhY2thZ2VSZXF1ZXN0EhkKCHRheF9jb2RlGAEgASgJUg'
+        'd0YXhDb2RlEkwKI2FjY291bnRhbnRfZGF0YXJvb21fYW5kX3BlcmlvZF9sb2NrGAIgASgJUh9h'
+        'Y2NvdW50YW50RGF0YXJvb21BbmRQZXJpb2RMb2NrEicKD3dvcmtzcGFjZV9zdGF0ZRgDIAEoCV'
+        'IOd29ya3NwYWNlU3RhdGU=');
+
+@$core.Deprecated('Use lockOrExportVaultTaxPackageResponseDescriptor instead')
+const LockOrExportVaultTaxPackageResponse$json = {
+  '1': 'LockOrExportVaultTaxPackageResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTaxAccountantWorkspaceItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `LockOrExportVaultTaxPackageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List lockOrExportVaultTaxPackageResponseDescriptor =
+    $convert.base64Decode(
+        'CiNMb2NrT3JFeHBvcnRWYXVsdFRheFBhY2thZ2VSZXNwb25zZRJQCgl3b3Jrc3BhY2UYASABKA'
+        'syMi5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFRheEFjY291bnRhbnRXb3Jrc3BhY2VJdGVtUgl3'
+        'b3Jrc3BhY2U=');
+
+@$core.Deprecated('Use vaultEntityOwnershipGraphItemDescriptor instead')
+const VaultEntityOwnershipGraphItem$json = {
+  '1': 'VaultEntityOwnershipGraphItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'graph_code', '3': 3, '4': 1, '5': 9, '10': 'graphCode'},
+    {
+      '1': 'entity_and_lookthrough_interest',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'entityAndLookthroughInterest'
+    },
+    {
+      '1': 'collaboration_visibility_and_scope',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'collaborationVisibilityAndScope'
+    },
+    {
+      '1': 'dominion_and_legacy_bridge_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'dominionAndLegacyBridgeSummary'
+    },
+    {'1': 'graph_state', '3': 7, '4': 1, '5': 9, '10': 'graphState'},
+    {
+      '1': 'zero_double_counting_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'zeroDoubleCountingEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultEntityOwnershipGraphItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultEntityOwnershipGraphItemDescriptor = $convert.base64Decode(
+    'Ch1WYXVsdEVudGl0eU93bmVyc2hpcEdyYXBoSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEh0KCmdyYXBoX2NvZGUYAyABKAlSCWdyYXBoQ29kZRJFCh9lbnRp'
+    'dHlfYW5kX2xvb2t0aHJvdWdoX2ludGVyZXN0GAQgASgJUhxlbnRpdHlBbmRMb29rdGhyb3VnaE'
+    'ludGVyZXN0EksKImNvbGxhYm9yYXRpb25fdmlzaWJpbGl0eV9hbmRfc2NvcGUYBSABKAlSH2Nv'
+    'bGxhYm9yYXRpb25WaXNpYmlsaXR5QW5kU2NvcGUSSgoiZG9taW5pb25fYW5kX2xlZ2FjeV9icm'
+    'lkZ2Vfc3VtbWFyeRgGIAEoCVIeZG9taW5pb25BbmRMZWdhY3lCcmlkZ2VTdW1tYXJ5Eh8KC2dy'
+    'YXBoX3N0YXRlGAcgASgJUgpncmFwaFN0YXRlEkEKHXplcm9fZG91YmxlX2NvdW50aW5nX2VuZm'
+    '9yY2VkGAggASgIUhp6ZXJvRG91YmxlQ291bnRpbmdFbmZvcmNlZBIkCg51cGRhdGVkX2F0X2lz'
+    'bxgJIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core
+    .Deprecated('Use getVaultEntityOwnershipWorkbenchRequestDescriptor instead')
+const GetVaultEntityOwnershipWorkbenchRequest$json = {
+  '1': 'GetVaultEntityOwnershipWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultEntityOwnershipWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultEntityOwnershipWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZXRWYXVsdEVudGl0eU93bmVyc2hpcFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getVaultEntityOwnershipWorkbenchResponseDescriptor instead')
+const GetVaultEntityOwnershipWorkbenchResponse$json = {
+  '1': 'GetVaultEntityOwnershipWorkbenchResponse',
+  '2': [
+    {
+      '1': 'graphs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultEntityOwnershipGraphItem',
+      '10': 'graphs'
+    },
+    {
+      '1': 'zero_double_counting_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'zeroDoubleCountingEnforced'
+    },
+    {
+      '1': 'lookthrough_and_collaboration_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'lookthroughAndCollaborationSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultEntityOwnershipWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultEntityOwnershipWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZXRWYXVsdEVudGl0eU93bmVyc2hpcFdvcmtiZW5jaFJlc3BvbnNlEkgKBmdyYXBocxgBIA'
+        'MoCzIwLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0RW50aXR5T3duZXJzaGlwR3JhcGhJdGVtUgZn'
+        'cmFwaHMSQQodemVyb19kb3VibGVfY291bnRpbmdfZW5mb3JjZWQYAiABKAhSGnplcm9Eb3VibG'
+        'VDb3VudGluZ0VuZm9yY2VkElEKJWxvb2t0aHJvdWdoX2FuZF9jb2xsYWJvcmF0aW9uX3N1bW1h'
+        'cnkYAyABKAlSImxvb2t0aHJvdWdoQW5kQ29sbGFib3JhdGlvblN1bW1hcnk=');
+
+@$core.Deprecated('Use saveVaultEntityOwnershipNodeRequestDescriptor instead')
+const SaveVaultEntityOwnershipNodeRequest$json = {
+  '1': 'SaveVaultEntityOwnershipNodeRequest',
+  '2': [
+    {'1': 'graph_code', '3': 1, '4': 1, '5': 9, '10': 'graphCode'},
+    {
+      '1': 'entity_and_lookthrough_interest',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'entityAndLookthroughInterest'
+    },
+    {
+      '1': 'collaboration_visibility_and_scope',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'collaborationVisibilityAndScope'
+    },
+    {
+      '1': 'dominion_and_legacy_bridge_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'dominionAndLegacyBridgeSummary'
+    },
+    {'1': 'graph_state', '3': 5, '4': 1, '5': 9, '10': 'graphState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultEntityOwnershipNodeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultEntityOwnershipNodeRequestDescriptor = $convert.base64Decode(
+    'CiNTYXZlVmF1bHRFbnRpdHlPd25lcnNoaXBOb2RlUmVxdWVzdBIdCgpncmFwaF9jb2RlGAEgAS'
+    'gJUglncmFwaENvZGUSRQofZW50aXR5X2FuZF9sb29rdGhyb3VnaF9pbnRlcmVzdBgCIAEoCVIc'
+    'ZW50aXR5QW5kTG9va3Rocm91Z2hJbnRlcmVzdBJLCiJjb2xsYWJvcmF0aW9uX3Zpc2liaWxpdH'
+    'lfYW5kX3Njb3BlGAMgASgJUh9jb2xsYWJvcmF0aW9uVmlzaWJpbGl0eUFuZFNjb3BlEkoKImRv'
+    'bWluaW9uX2FuZF9sZWdhY3lfYnJpZGdlX3N1bW1hcnkYBCABKAlSHmRvbWluaW9uQW5kTGVnYW'
+    'N5QnJpZGdlU3VtbWFyeRIfCgtncmFwaF9zdGF0ZRgFIAEoCVIKZ3JhcGhTdGF0ZQ==');
+
+@$core.Deprecated('Use saveVaultEntityOwnershipNodeResponseDescriptor instead')
+const SaveVaultEntityOwnershipNodeResponse$json = {
+  '1': 'SaveVaultEntityOwnershipNodeResponse',
+  '2': [
+    {
+      '1': 'graph',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultEntityOwnershipGraphItem',
+      '10': 'graph'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultEntityOwnershipNodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultEntityOwnershipNodeResponseDescriptor =
+    $convert.base64Decode(
+        'CiRTYXZlVmF1bHRFbnRpdHlPd25lcnNoaXBOb2RlUmVzcG9uc2USRgoFZ3JhcGgYASABKAsyMC'
+        '5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEVudGl0eU93bmVyc2hpcEdyYXBoSXRlbVIFZ3JhcGg=');
+
+@$core.Deprecated(
+    'Use verifyOrRevokeVaultOwnershipAccessRequestDescriptor instead')
+const VerifyOrRevokeVaultOwnershipAccessRequest$json = {
+  '1': 'VerifyOrRevokeVaultOwnershipAccessRequest',
+  '2': [
+    {'1': 'graph_code', '3': 1, '4': 1, '5': 9, '10': 'graphCode'},
+    {
+      '1': 'collaboration_visibility_and_scope',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'collaborationVisibilityAndScope'
+    },
+    {'1': 'graph_state', '3': 3, '4': 1, '5': 9, '10': 'graphState'},
+  ],
+};
+
+/// Descriptor for `VerifyOrRevokeVaultOwnershipAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyOrRevokeVaultOwnershipAccessRequestDescriptor = $convert.base64Decode(
+        'CilWZXJpZnlPclJldm9rZVZhdWx0T3duZXJzaGlwQWNjZXNzUmVxdWVzdBIdCgpncmFwaF9jb2'
+        'RlGAEgASgJUglncmFwaENvZGUSSwoiY29sbGFib3JhdGlvbl92aXNpYmlsaXR5X2FuZF9zY29w'
+        'ZRgCIAEoCVIfY29sbGFib3JhdGlvblZpc2liaWxpdHlBbmRTY29wZRIfCgtncmFwaF9zdGF0ZR'
+        'gDIAEoCVIKZ3JhcGhTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use verifyOrRevokeVaultOwnershipAccessResponseDescriptor instead')
+const VerifyOrRevokeVaultOwnershipAccessResponse$json = {
+  '1': 'VerifyOrRevokeVaultOwnershipAccessResponse',
+  '2': [
+    {
+      '1': 'graph',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultEntityOwnershipGraphItem',
+      '10': 'graph'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyOrRevokeVaultOwnershipAccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyOrRevokeVaultOwnershipAccessResponseDescriptor =
+    $convert.base64Decode(
+        'CipWZXJpZnlPclJldm9rZVZhdWx0T3duZXJzaGlwQWNjZXNzUmVzcG9uc2USRgoFZ3JhcGgYAS'
+        'ABKAsyMC5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEVudGl0eU93bmVyc2hpcEdyYXBoSXRlbVIF'
+        'Z3JhcGg=');
+
+@$core.Deprecated('Use vaultPrivateMarketDocRoomItemDescriptor instead')
+const VaultPrivateMarketDocRoomItem$json = {
+  '1': 'VaultPrivateMarketDocRoomItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'private_code', '3': 3, '4': 1, '5': 9, '10': 'privateCode'},
+    {
+      '1': 'fund_or_direct_asset_and_valuation',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'fundOrDirectAssetAndValuation'
+    },
+    {
+      '1': 'unfunded_commitment_and_call_ladder',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'unfundedCommitmentAndCallLadder'
+    },
+    {
+      '1': 'extracted_notice_and_citation_region',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'extractedNoticeAndCitationRegion'
+    },
+    {'1': 'room_state', '3': 7, '4': 1, '5': 9, '10': 'roomState'},
+    {
+      '1': 'unverified_ai_ledger_post_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'unverifiedAiLedgerPostBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultPrivateMarketDocRoomItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultPrivateMarketDocRoomItemDescriptor = $convert.base64Decode(
+    'Ch1WYXVsdFByaXZhdGVNYXJrZXREb2NSb29tSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEiEKDHByaXZhdGVfY29kZRgDIAEoCVILcHJpdmF0ZUNvZGUSSQoi'
+    'ZnVuZF9vcl9kaXJlY3RfYXNzZXRfYW5kX3ZhbHVhdGlvbhgEIAEoCVIdZnVuZE9yRGlyZWN0QX'
+    'NzZXRBbmRWYWx1YXRpb24STAojdW5mdW5kZWRfY29tbWl0bWVudF9hbmRfY2FsbF9sYWRkZXIY'
+    'BSABKAlSH3VuZnVuZGVkQ29tbWl0bWVudEFuZENhbGxMYWRkZXISTgokZXh0cmFjdGVkX25vdG'
+    'ljZV9hbmRfY2l0YXRpb25fcmVnaW9uGAYgASgJUiBleHRyYWN0ZWROb3RpY2VBbmRDaXRhdGlv'
+    'blJlZ2lvbhIdCgpyb29tX3N0YXRlGAcgASgJUglyb29tU3RhdGUSSAohdW52ZXJpZmllZF9haV'
+    '9sZWRnZXJfcG9zdF9ibG9ja2VkGAggASgIUh11bnZlcmlmaWVkQWlMZWRnZXJQb3N0QmxvY2tl'
+    'ZBIkCg51cGRhdGVkX2F0X2lzbxgJIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getVaultPrivateMarketDocWorkbenchRequestDescriptor instead')
+const GetVaultPrivateMarketDocWorkbenchRequest$json = {
+  '1': 'GetVaultPrivateMarketDocWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultPrivateMarketDocWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultPrivateMarketDocWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CihHZXRWYXVsdFByaXZhdGVNYXJrZXREb2NXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getVaultPrivateMarketDocWorkbenchResponseDescriptor instead')
+const GetVaultPrivateMarketDocWorkbenchResponse$json = {
+  '1': 'GetVaultPrivateMarketDocWorkbenchResponse',
+  '2': [
+    {
+      '1': 'rooms',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivateMarketDocRoomItem',
+      '10': 'rooms'
+    },
+    {
+      '1': 'unverified_ai_ledger_post_blocked',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'unverifiedAiLedgerPostBlocked'
+    },
+    {
+      '1': 'commitment_ladder_and_citation_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'commitmentLadderAndCitationSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultPrivateMarketDocWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultPrivateMarketDocWorkbenchResponseDescriptor = $convert.base64Decode(
+        'CilHZXRWYXVsdFByaXZhdGVNYXJrZXREb2NXb3JrYmVuY2hSZXNwb25zZRJGCgVyb29tcxgBIA'
+        'MoCzIwLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0UHJpdmF0ZU1hcmtldERvY1Jvb21JdGVtUgVy'
+        'b29tcxJICiF1bnZlcmlmaWVkX2FpX2xlZGdlcl9wb3N0X2Jsb2NrZWQYAiABKAhSHXVudmVyaW'
+        'ZpZWRBaUxlZGdlclBvc3RCbG9ja2VkElIKJmNvbW1pdG1lbnRfbGFkZGVyX2FuZF9jaXRhdGlv'
+        'bl9zdW1tYXJ5GAMgASgJUiJjb21taXRtZW50TGFkZGVyQW5kQ2l0YXRpb25TdW1tYXJ5');
+
+@$core
+    .Deprecated('Use saveVaultPrivateMarketCommitmentRequestDescriptor instead')
+const SaveVaultPrivateMarketCommitmentRequest$json = {
+  '1': 'SaveVaultPrivateMarketCommitmentRequest',
+  '2': [
+    {'1': 'private_code', '3': 1, '4': 1, '5': 9, '10': 'privateCode'},
+    {
+      '1': 'fund_or_direct_asset_and_valuation',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'fundOrDirectAssetAndValuation'
+    },
+    {
+      '1': 'unfunded_commitment_and_call_ladder',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'unfundedCommitmentAndCallLadder'
+    },
+    {
+      '1': 'extracted_notice_and_citation_region',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'extractedNoticeAndCitationRegion'
+    },
+    {'1': 'room_state', '3': 5, '4': 1, '5': 9, '10': 'roomState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultPrivateMarketCommitmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultPrivateMarketCommitmentRequestDescriptor = $convert.base64Decode(
+    'CidTYXZlVmF1bHRQcml2YXRlTWFya2V0Q29tbWl0bWVudFJlcXVlc3QSIQoMcHJpdmF0ZV9jb2'
+    'RlGAEgASgJUgtwcml2YXRlQ29kZRJJCiJmdW5kX29yX2RpcmVjdF9hc3NldF9hbmRfdmFsdWF0'
+    'aW9uGAIgASgJUh1mdW5kT3JEaXJlY3RBc3NldEFuZFZhbHVhdGlvbhJMCiN1bmZ1bmRlZF9jb2'
+    '1taXRtZW50X2FuZF9jYWxsX2xhZGRlchgDIAEoCVIfdW5mdW5kZWRDb21taXRtZW50QW5kQ2Fs'
+    'bExhZGRlchJOCiRleHRyYWN0ZWRfbm90aWNlX2FuZF9jaXRhdGlvbl9yZWdpb24YBCABKAlSIG'
+    'V4dHJhY3RlZE5vdGljZUFuZENpdGF0aW9uUmVnaW9uEh0KCnJvb21fc3RhdGUYBSABKAlSCXJv'
+    'b21TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveVaultPrivateMarketCommitmentResponseDescriptor instead')
+const SaveVaultPrivateMarketCommitmentResponse$json = {
+  '1': 'SaveVaultPrivateMarketCommitmentResponse',
+  '2': [
+    {
+      '1': 'room',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivateMarketDocRoomItem',
+      '10': 'room'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultPrivateMarketCommitmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultPrivateMarketCommitmentResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlVmF1bHRQcml2YXRlTWFya2V0Q29tbWl0bWVudFJlc3BvbnNlEkQKBHJvb20YASABKA'
+        'syMC5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFByaXZhdGVNYXJrZXREb2NSb29tSXRlbVIEcm9v'
+        'bQ==');
+
+@$core.Deprecated(
+    'Use confirmOrReconcileVaultCapitalNoticeRequestDescriptor instead')
+const ConfirmOrReconcileVaultCapitalNoticeRequest$json = {
+  '1': 'ConfirmOrReconcileVaultCapitalNoticeRequest',
+  '2': [
+    {'1': 'private_code', '3': 1, '4': 1, '5': 9, '10': 'privateCode'},
+    {
+      '1': 'extracted_notice_and_citation_region',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'extractedNoticeAndCitationRegion'
+    },
+    {'1': 'room_state', '3': 3, '4': 1, '5': 9, '10': 'roomState'},
+  ],
+};
+
+/// Descriptor for `ConfirmOrReconcileVaultCapitalNoticeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    confirmOrReconcileVaultCapitalNoticeRequestDescriptor =
+    $convert.base64Decode(
+        'CitDb25maXJtT3JSZWNvbmNpbGVWYXVsdENhcGl0YWxOb3RpY2VSZXF1ZXN0EiEKDHByaXZhdG'
+        'VfY29kZRgBIAEoCVILcHJpdmF0ZUNvZGUSTgokZXh0cmFjdGVkX25vdGljZV9hbmRfY2l0YXRp'
+        'b25fcmVnaW9uGAIgASgJUiBleHRyYWN0ZWROb3RpY2VBbmRDaXRhdGlvblJlZ2lvbhIdCgpyb2'
+        '9tX3N0YXRlGAMgASgJUglyb29tU3RhdGU=');
+
+@$core.Deprecated(
+    'Use confirmOrReconcileVaultCapitalNoticeResponseDescriptor instead')
+const ConfirmOrReconcileVaultCapitalNoticeResponse$json = {
+  '1': 'ConfirmOrReconcileVaultCapitalNoticeResponse',
+  '2': [
+    {
+      '1': 'room',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivateMarketDocRoomItem',
+      '10': 'room'
+    },
+  ],
+};
+
+/// Descriptor for `ConfirmOrReconcileVaultCapitalNoticeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    confirmOrReconcileVaultCapitalNoticeResponseDescriptor =
+    $convert.base64Decode(
+        'CixDb25maXJtT3JSZWNvbmNpbGVWYXVsdENhcGl0YWxOb3RpY2VSZXNwb25zZRJECgRyb29tGA'
+        'EgASgLMjAuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQcml2YXRlTWFya2V0RG9jUm9vbUl0ZW1S'
+        'BHJvb20=');
+
+@$core.Deprecated('Use vaultTreasuryDebtRiskCoverageItemDescriptor instead')
+const VaultTreasuryDebtRiskCoverageItem$json = {
+  '1': 'VaultTreasuryDebtRiskCoverageItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'treasury_code', '3': 3, '4': 1, '5': 9, '10': 'treasuryCode'},
+    {
+      '1': 'cash_counterparty_and_debt_covenants',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'cashCounterpartyAndDebtCovenants'
+    },
+    {
+      '1': 'policy_coverage_and_deductible_graph',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'policyCoverageAndDeductibleGraph'
+    },
+    {
+      '1': 'sweep_refinance_or_claim_scenario',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sweepRefinanceOrClaimScenario'
+    },
+    {'1': 'coverage_state', '3': 7, '4': 1, '5': 9, '10': 'coverageState'},
+    {
+      '1': 'no_coverage_guarantee_claim_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noCoverageGuaranteeClaimEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultTreasuryDebtRiskCoverageItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultTreasuryDebtRiskCoverageItemDescriptor = $convert.base64Decode(
+    'CiFWYXVsdFRyZWFzdXJ5RGVidFJpc2tDb3ZlcmFnZUl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBIjCg10cmVhc3VyeV9jb2RlGAMgASgJUgx0cmVhc3VyeUNv'
+    'ZGUSTgokY2FzaF9jb3VudGVycGFydHlfYW5kX2RlYnRfY292ZW5hbnRzGAQgASgJUiBjYXNoQ2'
+    '91bnRlcnBhcnR5QW5kRGVidENvdmVuYW50cxJOCiRwb2xpY3lfY292ZXJhZ2VfYW5kX2RlZHVj'
+    'dGlibGVfZ3JhcGgYBSABKAlSIHBvbGljeUNvdmVyYWdlQW5kRGVkdWN0aWJsZUdyYXBoEkgKIX'
+    'N3ZWVwX3JlZmluYW5jZV9vcl9jbGFpbV9zY2VuYXJpbxgGIAEoCVIdc3dlZXBSZWZpbmFuY2VP'
+    'ckNsYWltU2NlbmFyaW8SJQoOY292ZXJhZ2Vfc3RhdGUYByABKAlSDWNvdmVyYWdlU3RhdGUSTg'
+    'okbm9fY292ZXJhZ2VfZ3VhcmFudGVlX2NsYWltX2VuZm9yY2VkGAggASgIUiBub0NvdmVyYWdl'
+    'R3VhcmFudGVlQ2xhaW1FbmZvcmNlZBIkCg51cGRhdGVkX2F0X2lzbxgJIAEoCVIMdXBkYXRlZE'
+    'F0SXNv');
+
+@$core.Deprecated(
+    'Use getVaultTreasuryDebtRiskWorkbenchRequestDescriptor instead')
+const GetVaultTreasuryDebtRiskWorkbenchRequest$json = {
+  '1': 'GetVaultTreasuryDebtRiskWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultTreasuryDebtRiskWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultTreasuryDebtRiskWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CihHZXRWYXVsdFRyZWFzdXJ5RGVidFJpc2tXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getVaultTreasuryDebtRiskWorkbenchResponseDescriptor instead')
+const GetVaultTreasuryDebtRiskWorkbenchResponse$json = {
+  '1': 'GetVaultTreasuryDebtRiskWorkbenchResponse',
+  '2': [
+    {
+      '1': 'positions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem',
+      '10': 'positions'
+    },
+    {
+      '1': 'no_coverage_guarantee_claim_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'noCoverageGuaranteeClaimEnforced'
+    },
+    {
+      '1': 'treasury_covenant_and_policy_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'treasuryCovenantAndPolicySummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultTreasuryDebtRiskWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultTreasuryDebtRiskWorkbenchResponseDescriptor = $convert.base64Decode(
+        'CilHZXRWYXVsdFRyZWFzdXJ5RGVidFJpc2tXb3JrYmVuY2hSZXNwb25zZRJSCglwb3NpdGlvbn'
+        'MYASADKAsyNC5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFRyZWFzdXJ5RGVidFJpc2tDb3ZlcmFn'
+        'ZUl0ZW1SCXBvc2l0aW9ucxJOCiRub19jb3ZlcmFnZV9ndWFyYW50ZWVfY2xhaW1fZW5mb3JjZW'
+        'QYAiABKAhSIG5vQ292ZXJhZ2VHdWFyYW50ZWVDbGFpbUVuZm9yY2VkEk4KJHRyZWFzdXJ5X2Nv'
+        'dmVuYW50X2FuZF9wb2xpY3lfc3VtbWFyeRgDIAEoCVIgdHJlYXN1cnlDb3ZlbmFudEFuZFBvbG'
+        'ljeVN1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveVaultTreasuryDebtRiskPositionRequestDescriptor instead')
+const SaveVaultTreasuryDebtRiskPositionRequest$json = {
+  '1': 'SaveVaultTreasuryDebtRiskPositionRequest',
+  '2': [
+    {'1': 'treasury_code', '3': 1, '4': 1, '5': 9, '10': 'treasuryCode'},
+    {
+      '1': 'cash_counterparty_and_debt_covenants',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'cashCounterpartyAndDebtCovenants'
+    },
+    {
+      '1': 'policy_coverage_and_deductible_graph',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'policyCoverageAndDeductibleGraph'
+    },
+    {
+      '1': 'sweep_refinance_or_claim_scenario',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'sweepRefinanceOrClaimScenario'
+    },
+    {'1': 'coverage_state', '3': 5, '4': 1, '5': 9, '10': 'coverageState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultTreasuryDebtRiskPositionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultTreasuryDebtRiskPositionRequestDescriptor = $convert.base64Decode(
+    'CihTYXZlVmF1bHRUcmVhc3VyeURlYnRSaXNrUG9zaXRpb25SZXF1ZXN0EiMKDXRyZWFzdXJ5X2'
+    'NvZGUYASABKAlSDHRyZWFzdXJ5Q29kZRJOCiRjYXNoX2NvdW50ZXJwYXJ0eV9hbmRfZGVidF9j'
+    'b3ZlbmFudHMYAiABKAlSIGNhc2hDb3VudGVycGFydHlBbmREZWJ0Q292ZW5hbnRzEk4KJHBvbG'
+    'ljeV9jb3ZlcmFnZV9hbmRfZGVkdWN0aWJsZV9ncmFwaBgDIAEoCVIgcG9saWN5Q292ZXJhZ2VB'
+    'bmREZWR1Y3RpYmxlR3JhcGgSSAohc3dlZXBfcmVmaW5hbmNlX29yX2NsYWltX3NjZW5hcmlvGA'
+    'QgASgJUh1zd2VlcFJlZmluYW5jZU9yQ2xhaW1TY2VuYXJpbxIlCg5jb3ZlcmFnZV9zdGF0ZRgF'
+    'IAEoCVINY292ZXJhZ2VTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveVaultTreasuryDebtRiskPositionResponseDescriptor instead')
+const SaveVaultTreasuryDebtRiskPositionResponse$json = {
+  '1': 'SaveVaultTreasuryDebtRiskPositionResponse',
+  '2': [
+    {
+      '1': 'position',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem',
+      '10': 'position'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultTreasuryDebtRiskPositionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveVaultTreasuryDebtRiskPositionResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlVmF1bHRUcmVhc3VyeURlYnRSaXNrUG9zaXRpb25SZXNwb25zZRJQCghwb3NpdGlvbh'
+        'gBIAEoCzI0LnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0VHJlYXN1cnlEZWJ0Umlza0NvdmVyYWdl'
+        'SXRlbVIIcG9zaXRpb24=');
+
+@$core
+    .Deprecated('Use evaluateOrRouteVaultCoverageGapRequestDescriptor instead')
+const EvaluateOrRouteVaultCoverageGapRequest$json = {
+  '1': 'EvaluateOrRouteVaultCoverageGapRequest',
+  '2': [
+    {'1': 'treasury_code', '3': 1, '4': 1, '5': 9, '10': 'treasuryCode'},
+    {
+      '1': 'sweep_refinance_or_claim_scenario',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'sweepRefinanceOrClaimScenario'
+    },
+    {'1': 'coverage_state', '3': 3, '4': 1, '5': 9, '10': 'coverageState'},
+  ],
+};
+
+/// Descriptor for `EvaluateOrRouteVaultCoverageGapRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evaluateOrRouteVaultCoverageGapRequestDescriptor =
+    $convert.base64Decode(
+        'CiZFdmFsdWF0ZU9yUm91dGVWYXVsdENvdmVyYWdlR2FwUmVxdWVzdBIjCg10cmVhc3VyeV9jb2'
+        'RlGAEgASgJUgx0cmVhc3VyeUNvZGUSSAohc3dlZXBfcmVmaW5hbmNlX29yX2NsYWltX3NjZW5h'
+        'cmlvGAIgASgJUh1zd2VlcFJlZmluYW5jZU9yQ2xhaW1TY2VuYXJpbxIlCg5jb3ZlcmFnZV9zdG'
+        'F0ZRgDIAEoCVINY292ZXJhZ2VTdGF0ZQ==');
+
+@$core
+    .Deprecated('Use evaluateOrRouteVaultCoverageGapResponseDescriptor instead')
+const EvaluateOrRouteVaultCoverageGapResponse$json = {
+  '1': 'EvaluateOrRouteVaultCoverageGapResponse',
+  '2': [
+    {
+      '1': 'position',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem',
+      '10': 'position'
+    },
+  ],
+};
+
+/// Descriptor for `EvaluateOrRouteVaultCoverageGapResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evaluateOrRouteVaultCoverageGapResponseDescriptor =
+    $convert.base64Decode(
+        'CidFdmFsdWF0ZU9yUm91dGVWYXVsdENvdmVyYWdlR2FwUmVzcG9uc2USUAoIcG9zaXRpb24YAS'
+        'ABKAsyNC5zdHRhdHR1cy52YXVsdC52MS5WYXVsdFRyZWFzdXJ5RGVidFJpc2tDb3ZlcmFnZUl0'
+        'ZW1SCHBvc2l0aW9u');
+
+@$core.Deprecated('Use vaultGoalsScenarioEngineItemDescriptor instead')
+const VaultGoalsScenarioEngineItem$json = {
+  '1': 'VaultGoalsScenarioEngineItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'scenario_code', '3': 3, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'goal_target_and_assumption_ranges',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'goalTargetAndAssumptionRanges'
+    },
+    {
+      '1': 'deterministic_and_monte_carlo_band',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'deterministicAndMonteCarloBand'
+    },
+    {
+      '1': 'what_changed_and_oracle_handoff',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedAndOracleHandoff'
+    },
+    {'1': 'engine_state', '3': 7, '4': 1, '5': 9, '10': 'engineState'},
+    {
+      '1': 'silent_full_ledger_oracle_access_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'silentFullLedgerOracleAccessBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultGoalsScenarioEngineItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultGoalsScenarioEngineItemDescriptor = $convert.base64Decode(
+    'ChxWYXVsdEdvYWxzU2NlbmFyaW9FbmdpbmVJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2'
+    'lkGAIgASgJUgZ1c2VySWQSIwoNc2NlbmFyaW9fY29kZRgDIAEoCVIMc2NlbmFyaW9Db2RlEkgK'
+    'IWdvYWxfdGFyZ2V0X2FuZF9hc3N1bXB0aW9uX3JhbmdlcxgEIAEoCVIdZ29hbFRhcmdldEFuZE'
+    'Fzc3VtcHRpb25SYW5nZXMSSgoiZGV0ZXJtaW5pc3RpY19hbmRfbW9udGVfY2FybG9fYmFuZBgF'
+    'IAEoCVIeZGV0ZXJtaW5pc3RpY0FuZE1vbnRlQ2FybG9CYW5kEkQKH3doYXRfY2hhbmdlZF9hbm'
+    'Rfb3JhY2xlX2hhbmRvZmYYBiABKAlSG3doYXRDaGFuZ2VkQW5kT3JhY2xlSGFuZG9mZhIhCgxl'
+    'bmdpbmVfc3RhdGUYByABKAlSC2VuZ2luZVN0YXRlElUKKHNpbGVudF9mdWxsX2xlZGdlcl9vcm'
+    'FjbGVfYWNjZXNzX2Jsb2NrZWQYCCABKAhSI3NpbGVudEZ1bGxMZWRnZXJPcmFjbGVBY2Nlc3NC'
+    'bG9ja2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated('Use getVaultGoalsScenarioWorkbenchRequestDescriptor instead')
+const GetVaultGoalsScenarioWorkbenchRequest$json = {
+  '1': 'GetVaultGoalsScenarioWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultGoalsScenarioWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultGoalsScenarioWorkbenchRequestDescriptor =
+    $convert
+        .base64Decode('CiVHZXRWYXVsdEdvYWxzU2NlbmFyaW9Xb3JrYmVuY2hSZXF1ZXN0');
+
+@$core
+    .Deprecated('Use getVaultGoalsScenarioWorkbenchResponseDescriptor instead')
+const GetVaultGoalsScenarioWorkbenchResponse$json = {
+  '1': 'GetVaultGoalsScenarioWorkbenchResponse',
+  '2': [
+    {
+      '1': 'scenarios',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGoalsScenarioEngineItem',
+      '10': 'scenarios'
+    },
+    {
+      '1': 'silent_full_ledger_oracle_access_blocked',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'silentFullLedgerOracleAccessBlocked'
+    },
+    {
+      '1': 'plan_vs_prediction_and_handoff_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'planVsPredictionAndHandoffSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultGoalsScenarioWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultGoalsScenarioWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRWYXVsdEdvYWxzU2NlbmFyaW9Xb3JrYmVuY2hSZXNwb25zZRJNCglzY2VuYXJpb3MYAS'
+        'ADKAsyLy5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEdvYWxzU2NlbmFyaW9FbmdpbmVJdGVtUglz'
+        'Y2VuYXJpb3MSVQooc2lsZW50X2Z1bGxfbGVkZ2VyX29yYWNsZV9hY2Nlc3NfYmxvY2tlZBgCIA'
+        'EoCFIjc2lsZW50RnVsbExlZGdlck9yYWNsZUFjY2Vzc0Jsb2NrZWQSUQomcGxhbl92c19wcmVk'
+        'aWN0aW9uX2FuZF9oYW5kb2ZmX3N1bW1hcnkYAyABKAlSIXBsYW5Wc1ByZWRpY3Rpb25BbmRIYW'
+        '5kb2ZmU3VtbWFyeQ==');
+
+@$core.Deprecated('Use saveVaultGoalScenarioSnapshotRequestDescriptor instead')
+const SaveVaultGoalScenarioSnapshotRequest$json = {
+  '1': 'SaveVaultGoalScenarioSnapshotRequest',
+  '2': [
+    {'1': 'scenario_code', '3': 1, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'goal_target_and_assumption_ranges',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'goalTargetAndAssumptionRanges'
+    },
+    {
+      '1': 'deterministic_and_monte_carlo_band',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'deterministicAndMonteCarloBand'
+    },
+    {
+      '1': 'what_changed_and_oracle_handoff',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedAndOracleHandoff'
+    },
+    {'1': 'engine_state', '3': 5, '4': 1, '5': 9, '10': 'engineState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultGoalScenarioSnapshotRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultGoalScenarioSnapshotRequestDescriptor = $convert.base64Decode(
+    'CiRTYXZlVmF1bHRHb2FsU2NlbmFyaW9TbmFwc2hvdFJlcXVlc3QSIwoNc2NlbmFyaW9fY29kZR'
+    'gBIAEoCVIMc2NlbmFyaW9Db2RlEkgKIWdvYWxfdGFyZ2V0X2FuZF9hc3N1bXB0aW9uX3Jhbmdl'
+    'cxgCIAEoCVIdZ29hbFRhcmdldEFuZEFzc3VtcHRpb25SYW5nZXMSSgoiZGV0ZXJtaW5pc3RpY1'
+    '9hbmRfbW9udGVfY2FybG9fYmFuZBgDIAEoCVIeZGV0ZXJtaW5pc3RpY0FuZE1vbnRlQ2FybG9C'
+    'YW5kEkQKH3doYXRfY2hhbmdlZF9hbmRfb3JhY2xlX2hhbmRvZmYYBCABKAlSG3doYXRDaGFuZ2'
+    'VkQW5kT3JhY2xlSGFuZG9mZhIhCgxlbmdpbmVfc3RhdGUYBSABKAlSC2VuZ2luZVN0YXRl');
+
+@$core.Deprecated('Use saveVaultGoalScenarioSnapshotResponseDescriptor instead')
+const SaveVaultGoalScenarioSnapshotResponse$json = {
+  '1': 'SaveVaultGoalScenarioSnapshotResponse',
+  '2': [
+    {
+      '1': 'scenario',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGoalsScenarioEngineItem',
+      '10': 'scenario'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultGoalScenarioSnapshotResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultGoalScenarioSnapshotResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTYXZlVmF1bHRHb2FsU2NlbmFyaW9TbmFwc2hvdFJlc3BvbnNlEksKCHNjZW5hcmlvGAEgAS'
+        'gLMi8uc3R0YXR0dXMudmF1bHQudjEuVmF1bHRHb2Fsc1NjZW5hcmlvRW5naW5lSXRlbVIIc2Nl'
+        'bmFyaW8=');
+
+@$core.Deprecated('Use compareOrHandoffVaultScenarioRequestDescriptor instead')
+const CompareOrHandoffVaultScenarioRequest$json = {
+  '1': 'CompareOrHandoffVaultScenarioRequest',
+  '2': [
+    {'1': 'scenario_code', '3': 1, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'what_changed_and_oracle_handoff',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedAndOracleHandoff'
+    },
+    {'1': 'engine_state', '3': 3, '4': 1, '5': 9, '10': 'engineState'},
+  ],
+};
+
+/// Descriptor for `CompareOrHandoffVaultScenarioRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compareOrHandoffVaultScenarioRequestDescriptor =
+    $convert.base64Decode(
+        'CiRDb21wYXJlT3JIYW5kb2ZmVmF1bHRTY2VuYXJpb1JlcXVlc3QSIwoNc2NlbmFyaW9fY29kZR'
+        'gBIAEoCVIMc2NlbmFyaW9Db2RlEkQKH3doYXRfY2hhbmdlZF9hbmRfb3JhY2xlX2hhbmRvZmYY'
+        'AiABKAlSG3doYXRDaGFuZ2VkQW5kT3JhY2xlSGFuZG9mZhIhCgxlbmdpbmVfc3RhdGUYAyABKA'
+        'lSC2VuZ2luZVN0YXRl');
+
+@$core.Deprecated('Use compareOrHandoffVaultScenarioResponseDescriptor instead')
+const CompareOrHandoffVaultScenarioResponse$json = {
+  '1': 'CompareOrHandoffVaultScenarioResponse',
+  '2': [
+    {
+      '1': 'scenario',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGoalsScenarioEngineItem',
+      '10': 'scenario'
+    },
+  ],
+};
+
+/// Descriptor for `CompareOrHandoffVaultScenarioResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List compareOrHandoffVaultScenarioResponseDescriptor =
+    $convert.base64Decode(
+        'CiVDb21wYXJlT3JIYW5kb2ZmVmF1bHRTY2VuYXJpb1Jlc3BvbnNlEksKCHNjZW5hcmlvGAEgAS'
+        'gLMi8uc3R0YXR0dXMudmF1bHQudjEuVmF1bHRHb2Fsc1NjZW5hcmlvRW5naW5lSXRlbVIIc2Nl'
+        'bmFyaW8=');
+
+@$core.Deprecated('Use vaultPrivacyStandingProofItemDescriptor instead')
+const VaultPrivacyStandingProofItem$json = {
+  '1': 'VaultPrivacyStandingProofItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'proof_code', '3': 3, '4': 1, '5': 9, '10': 'proofCode'},
+    {
+      '1': 'predicate_claim_and_verifier_purpose',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'predicateClaimAndVerifierPurpose'
+    },
+    {
+      '1': 'issuer_signature_expiry_and_nonce',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'issuerSignatureExpiryAndNonce'
+    },
+    {
+      '1': 'offline_revocation_snapshot_window',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineRevocationSnapshotWindow'
+    },
+    {'1': 'proof_state', '3': 7, '4': 1, '5': 9, '10': 'proofState'},
+    {
+      '1': 'raw_balance_disclosure_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'rawBalanceDisclosureBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultPrivacyStandingProofItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultPrivacyStandingProofItemDescriptor = $convert.base64Decode(
+    'Ch1WYXVsdFByaXZhY3lTdGFuZGluZ1Byb29mSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEh0KCnByb29mX2NvZGUYAyABKAlSCXByb29mQ29kZRJOCiRwcmVk'
+    'aWNhdGVfY2xhaW1fYW5kX3ZlcmlmaWVyX3B1cnBvc2UYBCABKAlSIHByZWRpY2F0ZUNsYWltQW'
+    '5kVmVyaWZpZXJQdXJwb3NlEkgKIWlzc3Vlcl9zaWduYXR1cmVfZXhwaXJ5X2FuZF9ub25jZRgF'
+    'IAEoCVIdaXNzdWVyU2lnbmF0dXJlRXhwaXJ5QW5kTm9uY2USSwoib2ZmbGluZV9yZXZvY2F0aW'
+    '9uX3NuYXBzaG90X3dpbmRvdxgGIAEoCVIfb2ZmbGluZVJldm9jYXRpb25TbmFwc2hvdFdpbmRv'
+    'dxIfCgtwcm9vZl9zdGF0ZRgHIAEoCVIKcHJvb2ZTdGF0ZRJDCh5yYXdfYmFsYW5jZV9kaXNjbG'
+    '9zdXJlX2Jsb2NrZWQYCCABKAhSG3Jhd0JhbGFuY2VEaXNjbG9zdXJlQmxvY2tlZBIkCg51cGRh'
+    'dGVkX2F0X2lzbxgJIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getVaultPrivacyStandingProofWorkbenchRequestDescriptor instead')
+const GetVaultPrivacyStandingProofWorkbenchRequest$json = {
+  '1': 'GetVaultPrivacyStandingProofWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultPrivacyStandingProofWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultPrivacyStandingProofWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CixHZXRWYXVsdFByaXZhY3lTdGFuZGluZ1Byb29mV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getVaultPrivacyStandingProofWorkbenchResponseDescriptor instead')
+const GetVaultPrivacyStandingProofWorkbenchResponse$json = {
+  '1': 'GetVaultPrivacyStandingProofWorkbenchResponse',
+  '2': [
+    {
+      '1': 'proofs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivacyStandingProofItem',
+      '10': 'proofs'
+    },
+    {
+      '1': 'raw_balance_disclosure_blocked',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'rawBalanceDisclosureBlocked'
+    },
+    {
+      '1': 'server_signed_predicate_and_offline_window_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'serverSignedPredicateAndOfflineWindowSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultPrivacyStandingProofWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getVaultPrivacyStandingProofWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRWYXVsdFByaXZhY3lTdGFuZGluZ1Byb29mV29ya2JlbmNoUmVzcG9uc2USSAoGcHJvb2'
+        'ZzGAEgAygLMjAuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQcml2YWN5U3RhbmRpbmdQcm9vZkl0'
+        'ZW1SBnByb29mcxJDCh5yYXdfYmFsYW5jZV9kaXNjbG9zdXJlX2Jsb2NrZWQYAiABKAhSG3Jhd0'
+        'JhbGFuY2VEaXNjbG9zdXJlQmxvY2tlZBJoCjJzZXJ2ZXJfc2lnbmVkX3ByZWRpY2F0ZV9hbmRf'
+        'b2ZmbGluZV93aW5kb3dfc3VtbWFyeRgDIAEoCVIsc2VydmVyU2lnbmVkUHJlZGljYXRlQW5kT2'
+        'ZmbGluZVdpbmRvd1N1bW1hcnk=');
+
+@$core.Deprecated('Use issueVaultPrivacyStandingProofRequestDescriptor instead')
+const IssueVaultPrivacyStandingProofRequest$json = {
+  '1': 'IssueVaultPrivacyStandingProofRequest',
+  '2': [
+    {'1': 'proof_code', '3': 1, '4': 1, '5': 9, '10': 'proofCode'},
+    {
+      '1': 'predicate_claim_and_verifier_purpose',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'predicateClaimAndVerifierPurpose'
+    },
+    {
+      '1': 'issuer_signature_expiry_and_nonce',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'issuerSignatureExpiryAndNonce'
+    },
+    {
+      '1': 'offline_revocation_snapshot_window',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineRevocationSnapshotWindow'
+    },
+    {'1': 'proof_state', '3': 5, '4': 1, '5': 9, '10': 'proofState'},
+  ],
+};
+
+/// Descriptor for `IssueVaultPrivacyStandingProofRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueVaultPrivacyStandingProofRequestDescriptor = $convert.base64Decode(
+    'CiVJc3N1ZVZhdWx0UHJpdmFjeVN0YW5kaW5nUHJvb2ZSZXF1ZXN0Eh0KCnByb29mX2NvZGUYAS'
+    'ABKAlSCXByb29mQ29kZRJOCiRwcmVkaWNhdGVfY2xhaW1fYW5kX3ZlcmlmaWVyX3B1cnBvc2UY'
+    'AiABKAlSIHByZWRpY2F0ZUNsYWltQW5kVmVyaWZpZXJQdXJwb3NlEkgKIWlzc3Vlcl9zaWduYX'
+    'R1cmVfZXhwaXJ5X2FuZF9ub25jZRgDIAEoCVIdaXNzdWVyU2lnbmF0dXJlRXhwaXJ5QW5kTm9u'
+    'Y2USSwoib2ZmbGluZV9yZXZvY2F0aW9uX3NuYXBzaG90X3dpbmRvdxgEIAEoCVIfb2ZmbGluZV'
+    'Jldm9jYXRpb25TbmFwc2hvdFdpbmRvdxIfCgtwcm9vZl9zdGF0ZRgFIAEoCVIKcHJvb2ZTdGF0'
+    'ZQ==');
+
+@$core
+    .Deprecated('Use issueVaultPrivacyStandingProofResponseDescriptor instead')
+const IssueVaultPrivacyStandingProofResponse$json = {
+  '1': 'IssueVaultPrivacyStandingProofResponse',
+  '2': [
+    {
+      '1': 'proof',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivacyStandingProofItem',
+      '10': 'proof'
+    },
+  ],
+};
+
+/// Descriptor for `IssueVaultPrivacyStandingProofResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List issueVaultPrivacyStandingProofResponseDescriptor =
+    $convert.base64Decode(
+        'CiZJc3N1ZVZhdWx0UHJpdmFjeVN0YW5kaW5nUHJvb2ZSZXNwb25zZRJGCgVwcm9vZhgBIAEoCz'
+        'IwLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0UHJpdmFjeVN0YW5kaW5nUHJvb2ZJdGVtUgVwcm9v'
+        'Zg==');
+
+@$core
+    .Deprecated('Use verifyOrRevokeVaultStandingProofRequestDescriptor instead')
+const VerifyOrRevokeVaultStandingProofRequest$json = {
+  '1': 'VerifyOrRevokeVaultStandingProofRequest',
+  '2': [
+    {'1': 'proof_code', '3': 1, '4': 1, '5': 9, '10': 'proofCode'},
+    {
+      '1': 'offline_revocation_snapshot_window',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineRevocationSnapshotWindow'
+    },
+    {'1': 'proof_state', '3': 3, '4': 1, '5': 9, '10': 'proofState'},
+  ],
+};
+
+/// Descriptor for `VerifyOrRevokeVaultStandingProofRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyOrRevokeVaultStandingProofRequestDescriptor =
+    $convert.base64Decode(
+        'CidWZXJpZnlPclJldm9rZVZhdWx0U3RhbmRpbmdQcm9vZlJlcXVlc3QSHQoKcHJvb2ZfY29kZR'
+        'gBIAEoCVIJcHJvb2ZDb2RlEksKIm9mZmxpbmVfcmV2b2NhdGlvbl9zbmFwc2hvdF93aW5kb3cY'
+        'AiABKAlSH29mZmxpbmVSZXZvY2F0aW9uU25hcHNob3RXaW5kb3cSHwoLcHJvb2Zfc3RhdGUYAy'
+        'ABKAlSCnByb29mU3RhdGU=');
+
+@$core.Deprecated(
+    'Use verifyOrRevokeVaultStandingProofResponseDescriptor instead')
+const VerifyOrRevokeVaultStandingProofResponse$json = {
+  '1': 'VerifyOrRevokeVaultStandingProofResponse',
+  '2': [
+    {
+      '1': 'proof',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultPrivacyStandingProofItem',
+      '10': 'proof'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyOrRevokeVaultStandingProofResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyOrRevokeVaultStandingProofResponseDescriptor =
+    $convert.base64Decode(
+        'CihWZXJpZnlPclJldm9rZVZhdWx0U3RhbmRpbmdQcm9vZlJlc3BvbnNlEkYKBXByb29mGAEgAS'
+        'gLMjAuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRQcml2YWN5U3RhbmRpbmdQcm9vZkl0ZW1SBXBy'
+        'b29m');
+
+@$core.Deprecated('Use vaultAdvisorFamilyWorkspaceItemDescriptor instead')
+const VaultAdvisorFamilyWorkspaceItem$json = {
+  '1': 'VaultAdvisorFamilyWorkspaceItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'engagement_code', '3': 3, '4': 1, '5': 9, '10': 'engagementCode'},
+    {
+      '1': 'advisor_credential_and_scope_grant',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'advisorCredentialAndScopeGrant'
+    },
+    {
+      '1': 'watermarked_exchange_and_decisions',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'watermarkedExchangeAndDecisions'
+    },
+    {
+      '1': 'disclosures_conflict_and_fee_record',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'disclosuresConflictAndFeeRecord'
+    },
+    {'1': 'workspace_state', '3': 7, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'household_professional_separation_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'householdProfessionalSeparationEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultAdvisorFamilyWorkspaceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultAdvisorFamilyWorkspaceItemDescriptor = $convert.base64Decode(
+    'Ch9WYXVsdEFkdmlzb3JGYW1pbHlXb3Jrc3BhY2VJdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSJwoPZW5nYWdlbWVudF9jb2RlGAMgASgJUg5lbmdhZ2VtZW50'
+    'Q29kZRJKCiJhZHZpc29yX2NyZWRlbnRpYWxfYW5kX3Njb3BlX2dyYW50GAQgASgJUh5hZHZpc2'
+    '9yQ3JlZGVudGlhbEFuZFNjb3BlR3JhbnQSSwoid2F0ZXJtYXJrZWRfZXhjaGFuZ2VfYW5kX2Rl'
+    'Y2lzaW9ucxgFIAEoCVIfd2F0ZXJtYXJrZWRFeGNoYW5nZUFuZERlY2lzaW9ucxJMCiNkaXNjbG'
+    '9zdXJlc19jb25mbGljdF9hbmRfZmVlX3JlY29yZBgGIAEoCVIfZGlzY2xvc3VyZXNDb25mbGlj'
+    'dEFuZEZlZVJlY29yZBInCg93b3Jrc3BhY2Vfc3RhdGUYByABKAlSDndvcmtzcGFjZVN0YXRlEl'
+    'sKKmhvdXNlaG9sZF9wcm9mZXNzaW9uYWxfc2VwYXJhdGlvbl9lbmZvcmNlZBgIIAEoCFInaG91'
+    'c2Vob2xkUHJvZmVzc2lvbmFsU2VwYXJhdGlvbkVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGA'
+    'kgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated('Use getVaultAdvisorFamilyWorkbenchRequestDescriptor instead')
+const GetVaultAdvisorFamilyWorkbenchRequest$json = {
+  '1': 'GetVaultAdvisorFamilyWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultAdvisorFamilyWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultAdvisorFamilyWorkbenchRequestDescriptor =
+    $convert
+        .base64Decode('CiVHZXRWYXVsdEFkdmlzb3JGYW1pbHlXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core
+    .Deprecated('Use getVaultAdvisorFamilyWorkbenchResponseDescriptor instead')
+const GetVaultAdvisorFamilyWorkbenchResponse$json = {
+  '1': 'GetVaultAdvisorFamilyWorkbenchResponse',
+  '2': [
+    {
+      '1': 'engagements',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem',
+      '10': 'engagements'
+    },
+    {
+      '1': 'household_professional_separation_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'householdProfessionalSeparationEnforced'
+    },
+    {
+      '1': 'least_privilege_and_watermark_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'leastPrivilegeAndWatermarkSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultAdvisorFamilyWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultAdvisorFamilyWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRWYXVsdEFkdmlzb3JGYW1pbHlXb3JrYmVuY2hSZXNwb25zZRJUCgtlbmdhZ2VtZW50cx'
+        'gBIAMoCzIyLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0QWR2aXNvckZhbWlseVdvcmtzcGFjZUl0'
+        'ZW1SC2VuZ2FnZW1lbnRzElsKKmhvdXNlaG9sZF9wcm9mZXNzaW9uYWxfc2VwYXJhdGlvbl9lbm'
+        'ZvcmNlZBgCIAEoCFInaG91c2Vob2xkUHJvZmVzc2lvbmFsU2VwYXJhdGlvbkVuZm9yY2VkElAK'
+        'JWxlYXN0X3ByaXZpbGVnZV9hbmRfd2F0ZXJtYXJrX3N1bW1hcnkYAyABKAlSIWxlYXN0UHJpdm'
+        'lsZWdlQW5kV2F0ZXJtYXJrU3VtbWFyeQ==');
+
+@$core
+    .Deprecated('Use saveVaultAdvisorEngagementScopeRequestDescriptor instead')
+const SaveVaultAdvisorEngagementScopeRequest$json = {
+  '1': 'SaveVaultAdvisorEngagementScopeRequest',
+  '2': [
+    {'1': 'engagement_code', '3': 1, '4': 1, '5': 9, '10': 'engagementCode'},
+    {
+      '1': 'advisor_credential_and_scope_grant',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'advisorCredentialAndScopeGrant'
+    },
+    {
+      '1': 'watermarked_exchange_and_decisions',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'watermarkedExchangeAndDecisions'
+    },
+    {
+      '1': 'disclosures_conflict_and_fee_record',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'disclosuresConflictAndFeeRecord'
+    },
+    {'1': 'workspace_state', '3': 5, '4': 1, '5': 9, '10': 'workspaceState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultAdvisorEngagementScopeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultAdvisorEngagementScopeRequestDescriptor = $convert.base64Decode(
+    'CiZTYXZlVmF1bHRBZHZpc29yRW5nYWdlbWVudFNjb3BlUmVxdWVzdBInCg9lbmdhZ2VtZW50X2'
+    'NvZGUYASABKAlSDmVuZ2FnZW1lbnRDb2RlEkoKImFkdmlzb3JfY3JlZGVudGlhbF9hbmRfc2Nv'
+    'cGVfZ3JhbnQYAiABKAlSHmFkdmlzb3JDcmVkZW50aWFsQW5kU2NvcGVHcmFudBJLCiJ3YXRlcm'
+    '1hcmtlZF9leGNoYW5nZV9hbmRfZGVjaXNpb25zGAMgASgJUh93YXRlcm1hcmtlZEV4Y2hhbmdl'
+    'QW5kRGVjaXNpb25zEkwKI2Rpc2Nsb3N1cmVzX2NvbmZsaWN0X2FuZF9mZWVfcmVjb3JkGAQgAS'
+    'gJUh9kaXNjbG9zdXJlc0NvbmZsaWN0QW5kRmVlUmVjb3JkEicKD3dvcmtzcGFjZV9zdGF0ZRgF'
+    'IAEoCVIOd29ya3NwYWNlU3RhdGU=');
+
+@$core
+    .Deprecated('Use saveVaultAdvisorEngagementScopeResponseDescriptor instead')
+const SaveVaultAdvisorEngagementScopeResponse$json = {
+  '1': 'SaveVaultAdvisorEngagementScopeResponse',
+  '2': [
+    {
+      '1': 'engagement',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem',
+      '10': 'engagement'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultAdvisorEngagementScopeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultAdvisorEngagementScopeResponseDescriptor =
+    $convert.base64Decode(
+        'CidTYXZlVmF1bHRBZHZpc29yRW5nYWdlbWVudFNjb3BlUmVzcG9uc2USUgoKZW5nYWdlbWVudB'
+        'gBIAEoCzIyLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0QWR2aXNvckZhbWlseVdvcmtzcGFjZUl0'
+        'ZW1SCmVuZ2FnZW1lbnQ=');
+
+@$core.Deprecated(
+    'Use approveOrRevokeVaultAdvisorAccessRequestDescriptor instead')
+const ApproveOrRevokeVaultAdvisorAccessRequest$json = {
+  '1': 'ApproveOrRevokeVaultAdvisorAccessRequest',
+  '2': [
+    {'1': 'engagement_code', '3': 1, '4': 1, '5': 9, '10': 'engagementCode'},
+    {
+      '1': 'disclosures_conflict_and_fee_record',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'disclosuresConflictAndFeeRecord'
+    },
+    {'1': 'workspace_state', '3': 3, '4': 1, '5': 9, '10': 'workspaceState'},
+  ],
+};
+
+/// Descriptor for `ApproveOrRevokeVaultAdvisorAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List approveOrRevokeVaultAdvisorAccessRequestDescriptor =
+    $convert.base64Decode(
+        'CihBcHByb3ZlT3JSZXZva2VWYXVsdEFkdmlzb3JBY2Nlc3NSZXF1ZXN0EicKD2VuZ2FnZW1lbn'
+        'RfY29kZRgBIAEoCVIOZW5nYWdlbWVudENvZGUSTAojZGlzY2xvc3VyZXNfY29uZmxpY3RfYW5k'
+        'X2ZlZV9yZWNvcmQYAiABKAlSH2Rpc2Nsb3N1cmVzQ29uZmxpY3RBbmRGZWVSZWNvcmQSJwoPd2'
+        '9ya3NwYWNlX3N0YXRlGAMgASgJUg53b3Jrc3BhY2VTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use approveOrRevokeVaultAdvisorAccessResponseDescriptor instead')
+const ApproveOrRevokeVaultAdvisorAccessResponse$json = {
+  '1': 'ApproveOrRevokeVaultAdvisorAccessResponse',
+  '2': [
+    {
+      '1': 'engagement',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem',
+      '10': 'engagement'
+    },
+  ],
+};
+
+/// Descriptor for `ApproveOrRevokeVaultAdvisorAccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    approveOrRevokeVaultAdvisorAccessResponseDescriptor = $convert.base64Decode(
+        'CilBcHByb3ZlT3JSZXZva2VWYXVsdEFkdmlzb3JBY2Nlc3NSZXNwb25zZRJSCgplbmdhZ2VtZW'
+        '50GAEgASgLMjIuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRBZHZpc29yRmFtaWx5V29ya3NwYWNl'
+        'SXRlbVIKZW5nYWdlbWVudA==');
+
+@$core.Deprecated('Use vaultFinancialSafetyResponseItemDescriptor instead')
+const VaultFinancialSafetyResponseItem$json = {
+  '1': 'VaultFinancialSafetyResponseItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'safety_code', '3': 3, '4': 1, '5': 9, '10': 'safetyCode'},
+    {
+      '1': 'signal_observation_and_alt_causes',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'signalObservationAndAltCauses'
+    },
+    {
+      '1': 'guided_institution_and_freeze_steps',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'guidedInstitutionAndFreezeSteps'
+    },
+    {
+      '1': 'evidence_preservation_and_appeal',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'evidencePreservationAndAppeal'
+    },
+    {'1': 'safety_state', '3': 7, '4': 1, '5': 9, '10': 'safetyState'},
+    {
+      '1': 'no_single_score_auto_lock_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noSingleScoreAutoLockEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultFinancialSafetyResponseItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultFinancialSafetyResponseItemDescriptor = $convert.base64Decode(
+    'CiBWYXVsdEZpbmFuY2lhbFNhZmV0eVJlc3BvbnNlSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdX'
+    'Nlcl9pZBgCIAEoCVIGdXNlcklkEh8KC3NhZmV0eV9jb2RlGAMgASgJUgpzYWZldHlDb2RlEkgK'
+    'IXNpZ25hbF9vYnNlcnZhdGlvbl9hbmRfYWx0X2NhdXNlcxgEIAEoCVIdc2lnbmFsT2JzZXJ2YX'
+    'Rpb25BbmRBbHRDYXVzZXMSTAojZ3VpZGVkX2luc3RpdHV0aW9uX2FuZF9mcmVlemVfc3RlcHMY'
+    'BSABKAlSH2d1aWRlZEluc3RpdHV0aW9uQW5kRnJlZXplU3RlcHMSRwogZXZpZGVuY2VfcHJlc2'
+    'VydmF0aW9uX2FuZF9hcHBlYWwYBiABKAlSHWV2aWRlbmNlUHJlc2VydmF0aW9uQW5kQXBwZWFs'
+    'EiEKDHNhZmV0eV9zdGF0ZRgHIAEoCVILc2FmZXR5U3RhdGUSSQoibm9fc2luZ2xlX3Njb3JlX2'
+    'F1dG9fbG9ja19lbmZvcmNlZBgIIAEoCFIdbm9TaW5nbGVTY29yZUF1dG9Mb2NrRW5mb3JjZWQS'
+    'JAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core
+    .Deprecated('Use getVaultFinancialSafetyWorkbenchRequestDescriptor instead')
+const GetVaultFinancialSafetyWorkbenchRequest$json = {
+  '1': 'GetVaultFinancialSafetyWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultFinancialSafetyWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultFinancialSafetyWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZXRWYXVsdEZpbmFuY2lhbFNhZmV0eVdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getVaultFinancialSafetyWorkbenchResponseDescriptor instead')
+const GetVaultFinancialSafetyWorkbenchResponse$json = {
+  '1': 'GetVaultFinancialSafetyWorkbenchResponse',
+  '2': [
+    {
+      '1': 'incidents',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialSafetyResponseItem',
+      '10': 'incidents'
+    },
+    {
+      '1': 'no_single_score_auto_lock_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'noSingleScoreAutoLockEnforced'
+    },
+    {
+      '1': 'explainable_signal_and_official_freeze_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'explainableSignalAndOfficialFreezeSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultFinancialSafetyWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultFinancialSafetyWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZXRWYXVsdEZpbmFuY2lhbFNhZmV0eVdvcmtiZW5jaFJlc3BvbnNlElEKCWluY2lkZW50cx'
+        'gBIAMoCzIzLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0RmluYW5jaWFsU2FmZXR5UmVzcG9uc2VJ'
+        'dGVtUglpbmNpZGVudHMSSQoibm9fc2luZ2xlX3Njb3JlX2F1dG9fbG9ja19lbmZvcmNlZBgCIA'
+        'EoCFIdbm9TaW5nbGVTY29yZUF1dG9Mb2NrRW5mb3JjZWQSYQouZXhwbGFpbmFibGVfc2lnbmFs'
+        'X2FuZF9vZmZpY2lhbF9mcmVlemVfc3VtbWFyeRgDIAEoCVIpZXhwbGFpbmFibGVTaWduYWxBbm'
+        'RPZmZpY2lhbEZyZWV6ZVN1bW1hcnk=');
+
+@$core
+    .Deprecated('Use saveVaultFinancialSafetyIncidentRequestDescriptor instead')
+const SaveVaultFinancialSafetyIncidentRequest$json = {
+  '1': 'SaveVaultFinancialSafetyIncidentRequest',
+  '2': [
+    {'1': 'safety_code', '3': 1, '4': 1, '5': 9, '10': 'safetyCode'},
+    {
+      '1': 'signal_observation_and_alt_causes',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'signalObservationAndAltCauses'
+    },
+    {
+      '1': 'guided_institution_and_freeze_steps',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'guidedInstitutionAndFreezeSteps'
+    },
+    {
+      '1': 'evidence_preservation_and_appeal',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'evidencePreservationAndAppeal'
+    },
+    {'1': 'safety_state', '3': 5, '4': 1, '5': 9, '10': 'safetyState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialSafetyIncidentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultFinancialSafetyIncidentRequestDescriptor = $convert.base64Decode(
+    'CidTYXZlVmF1bHRGaW5hbmNpYWxTYWZldHlJbmNpZGVudFJlcXVlc3QSHwoLc2FmZXR5X2NvZG'
+    'UYASABKAlSCnNhZmV0eUNvZGUSSAohc2lnbmFsX29ic2VydmF0aW9uX2FuZF9hbHRfY2F1c2Vz'
+    'GAIgASgJUh1zaWduYWxPYnNlcnZhdGlvbkFuZEFsdENhdXNlcxJMCiNndWlkZWRfaW5zdGl0dX'
+    'Rpb25fYW5kX2ZyZWV6ZV9zdGVwcxgDIAEoCVIfZ3VpZGVkSW5zdGl0dXRpb25BbmRGcmVlemVT'
+    'dGVwcxJHCiBldmlkZW5jZV9wcmVzZXJ2YXRpb25fYW5kX2FwcGVhbBgEIAEoCVIdZXZpZGVuY2'
+    'VQcmVzZXJ2YXRpb25BbmRBcHBlYWwSIQoMc2FmZXR5X3N0YXRlGAUgASgJUgtzYWZldHlTdGF0'
+    'ZQ==');
+
+@$core.Deprecated(
+    'Use saveVaultFinancialSafetyIncidentResponseDescriptor instead')
+const SaveVaultFinancialSafetyIncidentResponse$json = {
+  '1': 'SaveVaultFinancialSafetyIncidentResponse',
+  '2': [
+    {
+      '1': 'incident',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialSafetyResponseItem',
+      '10': 'incident'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultFinancialSafetyIncidentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultFinancialSafetyIncidentResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlVmF1bHRGaW5hbmNpYWxTYWZldHlJbmNpZGVudFJlc3BvbnNlEk8KCGluY2lkZW50GA'
+        'EgASgLMjMuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRGaW5hbmNpYWxTYWZldHlSZXNwb25zZUl0'
+        'ZW1SCGluY2lkZW50');
+
+@$core
+    .Deprecated('Use executeOrAppealVaultSafetyActionRequestDescriptor instead')
+const ExecuteOrAppealVaultSafetyActionRequest$json = {
+  '1': 'ExecuteOrAppealVaultSafetyActionRequest',
+  '2': [
+    {'1': 'safety_code', '3': 1, '4': 1, '5': 9, '10': 'safetyCode'},
+    {
+      '1': 'evidence_preservation_and_appeal',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'evidencePreservationAndAppeal'
+    },
+    {'1': 'safety_state', '3': 3, '4': 1, '5': 9, '10': 'safetyState'},
+  ],
+};
+
+/// Descriptor for `ExecuteOrAppealVaultSafetyActionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List executeOrAppealVaultSafetyActionRequestDescriptor =
+    $convert.base64Decode(
+        'CidFeGVjdXRlT3JBcHBlYWxWYXVsdFNhZmV0eUFjdGlvblJlcXVlc3QSHwoLc2FmZXR5X2NvZG'
+        'UYASABKAlSCnNhZmV0eUNvZGUSRwogZXZpZGVuY2VfcHJlc2VydmF0aW9uX2FuZF9hcHBlYWwY'
+        'AiABKAlSHWV2aWRlbmNlUHJlc2VydmF0aW9uQW5kQXBwZWFsEiEKDHNhZmV0eV9zdGF0ZRgDIA'
+        'EoCVILc2FmZXR5U3RhdGU=');
+
+@$core.Deprecated(
+    'Use executeOrAppealVaultSafetyActionResponseDescriptor instead')
+const ExecuteOrAppealVaultSafetyActionResponse$json = {
+  '1': 'ExecuteOrAppealVaultSafetyActionResponse',
+  '2': [
+    {
+      '1': 'incident',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultFinancialSafetyResponseItem',
+      '10': 'incident'
+    },
+  ],
+};
+
+/// Descriptor for `ExecuteOrAppealVaultSafetyActionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List executeOrAppealVaultSafetyActionResponseDescriptor =
+    $convert.base64Decode(
+        'CihFeGVjdXRlT3JBcHBlYWxWYXVsdFNhZmV0eUFjdGlvblJlc3BvbnNlEk8KCGluY2lkZW50GA'
+        'EgASgLMjMuc3R0YXR0dXMudmF1bHQudjEuVmF1bHRGaW5hbmNpYWxTYWZldHlSZXNwb25zZUl0'
+        'ZW1SCGluY2lkZW50');
+
+@$core.Deprecated('Use vaultGivingImpactLedgerItemDescriptor instead')
+const VaultGivingImpactLedgerItem$json = {
+  '1': 'VaultGivingImpactLedgerItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'giving_code', '3': 3, '4': 1, '5': 9, '10': 'givingCode'},
+    {
+      '1': 'charity_diligence_and_pledge_terms',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'charityDiligenceAndPledgeTerms'
+    },
+    {
+      '1': 'donation_liquidity_and_tax_scenario',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'donationLiquidityAndTaxScenario'
+    },
+    {
+      '1': 'receipt_restriction_and_outcome_log',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'receiptRestrictionAndOutcomeLog'
+    },
+    {'1': 'ledger_state', '3': 7, '4': 1, '5': 9, '10': 'ledgerState'},
+    {
+      '1': 'no_performative_leaderboard_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noPerformativeLeaderboardEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `VaultGivingImpactLedgerItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List vaultGivingImpactLedgerItemDescriptor = $convert.base64Decode(
+    'ChtWYXVsdEdpdmluZ0ltcGFjdExlZGdlckl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3VzZXJfaW'
+    'QYAiABKAlSBnVzZXJJZBIfCgtnaXZpbmdfY29kZRgDIAEoCVIKZ2l2aW5nQ29kZRJKCiJjaGFy'
+    'aXR5X2RpbGlnZW5jZV9hbmRfcGxlZGdlX3Rlcm1zGAQgASgJUh5jaGFyaXR5RGlsaWdlbmNlQW'
+    '5kUGxlZGdlVGVybXMSTAojZG9uYXRpb25fbGlxdWlkaXR5X2FuZF90YXhfc2NlbmFyaW8YBSAB'
+    'KAlSH2RvbmF0aW9uTGlxdWlkaXR5QW5kVGF4U2NlbmFyaW8STAojcmVjZWlwdF9yZXN0cmljdG'
+    'lvbl9hbmRfb3V0Y29tZV9sb2cYBiABKAlSH3JlY2VpcHRSZXN0cmljdGlvbkFuZE91dGNvbWVM'
+    'b2cSIQoMbGVkZ2VyX3N0YXRlGAcgASgJUgtsZWRnZXJTdGF0ZRJPCiRub19wZXJmb3JtYXRpdm'
+    'VfbGVhZGVyYm9hcmRfZW5mb3JjZWQYCCABKAhSIW5vUGVyZm9ybWF0aXZlTGVhZGVyYm9hcmRF'
+    'bmZvcmNlZBIkCg51cGRhdGVkX2F0X2lzbxgJIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated('Use getVaultGivingImpactWorkbenchRequestDescriptor instead')
+const GetVaultGivingImpactWorkbenchRequest$json = {
+  '1': 'GetVaultGivingImpactWorkbenchRequest',
+};
+
+/// Descriptor for `GetVaultGivingImpactWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultGivingImpactWorkbenchRequestDescriptor =
+    $convert
+        .base64Decode('CiRHZXRWYXVsdEdpdmluZ0ltcGFjdFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated('Use getVaultGivingImpactWorkbenchResponseDescriptor instead')
+const GetVaultGivingImpactWorkbenchResponse$json = {
+  '1': 'GetVaultGivingImpactWorkbenchResponse',
+  '2': [
+    {
+      '1': 'pledges',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGivingImpactLedgerItem',
+      '10': 'pledges'
+    },
+    {
+      '1': 'no_performative_leaderboard_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'noPerformativeLeaderboardEnforced'
+    },
+    {
+      '1': 'diligence_receipt_and_privacy_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'diligenceReceiptAndPrivacySummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetVaultGivingImpactWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getVaultGivingImpactWorkbenchResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRWYXVsdEdpdmluZ0ltcGFjdFdvcmtiZW5jaFJlc3BvbnNlEkgKB3BsZWRnZXMYASADKA'
+    'syLi5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEdpdmluZ0ltcGFjdExlZGdlckl0ZW1SB3BsZWRn'
+    'ZXMSTwokbm9fcGVyZm9ybWF0aXZlX2xlYWRlcmJvYXJkX2VuZm9yY2VkGAIgASgIUiFub1Blcm'
+    'Zvcm1hdGl2ZUxlYWRlcmJvYXJkRW5mb3JjZWQSUAolZGlsaWdlbmNlX3JlY2VpcHRfYW5kX3By'
+    'aXZhY3lfc3VtbWFyeRgDIAEoCVIhZGlsaWdlbmNlUmVjZWlwdEFuZFByaXZhY3lTdW1tYXJ5');
+
+@$core.Deprecated('Use saveVaultGivingImpactPledgeRequestDescriptor instead')
+const SaveVaultGivingImpactPledgeRequest$json = {
+  '1': 'SaveVaultGivingImpactPledgeRequest',
+  '2': [
+    {'1': 'giving_code', '3': 1, '4': 1, '5': 9, '10': 'givingCode'},
+    {
+      '1': 'charity_diligence_and_pledge_terms',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'charityDiligenceAndPledgeTerms'
+    },
+    {
+      '1': 'donation_liquidity_and_tax_scenario',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'donationLiquidityAndTaxScenario'
+    },
+    {
+      '1': 'receipt_restriction_and_outcome_log',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'receiptRestrictionAndOutcomeLog'
+    },
+    {'1': 'ledger_state', '3': 5, '4': 1, '5': 9, '10': 'ledgerState'},
+  ],
+};
+
+/// Descriptor for `SaveVaultGivingImpactPledgeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultGivingImpactPledgeRequestDescriptor = $convert.base64Decode(
+    'CiJTYXZlVmF1bHRHaXZpbmdJbXBhY3RQbGVkZ2VSZXF1ZXN0Eh8KC2dpdmluZ19jb2RlGAEgAS'
+    'gJUgpnaXZpbmdDb2RlEkoKImNoYXJpdHlfZGlsaWdlbmNlX2FuZF9wbGVkZ2VfdGVybXMYAiAB'
+    'KAlSHmNoYXJpdHlEaWxpZ2VuY2VBbmRQbGVkZ2VUZXJtcxJMCiNkb25hdGlvbl9saXF1aWRpdH'
+    'lfYW5kX3RheF9zY2VuYXJpbxgDIAEoCVIfZG9uYXRpb25MaXF1aWRpdHlBbmRUYXhTY2VuYXJp'
+    'bxJMCiNyZWNlaXB0X3Jlc3RyaWN0aW9uX2FuZF9vdXRjb21lX2xvZxgEIAEoCVIfcmVjZWlwdF'
+    'Jlc3RyaWN0aW9uQW5kT3V0Y29tZUxvZxIhCgxsZWRnZXJfc3RhdGUYBSABKAlSC2xlZGdlclN0'
+    'YXRl');
+
+@$core.Deprecated('Use saveVaultGivingImpactPledgeResponseDescriptor instead')
+const SaveVaultGivingImpactPledgeResponse$json = {
+  '1': 'SaveVaultGivingImpactPledgeResponse',
+  '2': [
+    {
+      '1': 'pledge',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGivingImpactLedgerItem',
+      '10': 'pledge'
+    },
+  ],
+};
+
+/// Descriptor for `SaveVaultGivingImpactPledgeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveVaultGivingImpactPledgeResponseDescriptor =
+    $convert.base64Decode(
+        'CiNTYXZlVmF1bHRHaXZpbmdJbXBhY3RQbGVkZ2VSZXNwb25zZRJGCgZwbGVkZ2UYASABKAsyLi'
+        '5zdHRhdHR1cy52YXVsdC52MS5WYXVsdEdpdmluZ0ltcGFjdExlZGdlckl0ZW1SBnBsZWRnZQ==');
+
+@$core.Deprecated(
+    'Use verifyOrAcknowledgeVaultGiftReceiptRequestDescriptor instead')
+const VerifyOrAcknowledgeVaultGiftReceiptRequest$json = {
+  '1': 'VerifyOrAcknowledgeVaultGiftReceiptRequest',
+  '2': [
+    {'1': 'giving_code', '3': 1, '4': 1, '5': 9, '10': 'givingCode'},
+    {
+      '1': 'receipt_restriction_and_outcome_log',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'receiptRestrictionAndOutcomeLog'
+    },
+    {'1': 'ledger_state', '3': 3, '4': 1, '5': 9, '10': 'ledgerState'},
+  ],
+};
+
+/// Descriptor for `VerifyOrAcknowledgeVaultGiftReceiptRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyOrAcknowledgeVaultGiftReceiptRequestDescriptor =
+    $convert.base64Decode(
+        'CipWZXJpZnlPckFja25vd2xlZGdlVmF1bHRHaWZ0UmVjZWlwdFJlcXVlc3QSHwoLZ2l2aW5nX2'
+        'NvZGUYASABKAlSCmdpdmluZ0NvZGUSTAojcmVjZWlwdF9yZXN0cmljdGlvbl9hbmRfb3V0Y29t'
+        'ZV9sb2cYAiABKAlSH3JlY2VpcHRSZXN0cmljdGlvbkFuZE91dGNvbWVMb2cSIQoMbGVkZ2VyX3'
+        'N0YXRlGAMgASgJUgtsZWRnZXJTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use verifyOrAcknowledgeVaultGiftReceiptResponseDescriptor instead')
+const VerifyOrAcknowledgeVaultGiftReceiptResponse$json = {
+  '1': 'VerifyOrAcknowledgeVaultGiftReceiptResponse',
+  '2': [
+    {
+      '1': 'pledge',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.vault.v1.VaultGivingImpactLedgerItem',
+      '10': 'pledge'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyOrAcknowledgeVaultGiftReceiptResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyOrAcknowledgeVaultGiftReceiptResponseDescriptor =
+    $convert.base64Decode(
+        'CitWZXJpZnlPckFja25vd2xlZGdlVmF1bHRHaWZ0UmVjZWlwdFJlc3BvbnNlEkYKBnBsZWRnZR'
+        'gBIAEoCzIuLnN0dGF0dHVzLnZhdWx0LnYxLlZhdWx0R2l2aW5nSW1wYWN0TGVkZ2VySXRlbVIG'
+        'cGxlZGdl');

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBriefShareRequest, CreateBriefShareResponse, CreateDocumentRequest, CreateDocumentResponse, CreateThreadRequest, CreateThreadResponse, CreateTriggerRequest, CreateTriggerResponse, DeleteDocumentRequest, DeleteDocumentResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, DeleteTriggerRequest, DeleteTriggerResponse, DraftDocumentRequest, DraftDocumentResponse, GenerateYearInOracleRequest, GenerateYearInOracleResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDocumentRequest, GetDocumentResponse, GetInboxRequest, GetInboxResponse, GetOracleStatsRequest, GetOracleStatsResponse, GetRankExplainerRequest, GetRankExplainerResponse, GetTodayBriefingRequest, GetTodayBriefingResponse, GetYearInOracleRecapRequest, GetYearInOracleRecapResponse, GrantScopeRequest, GrantScopeResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyBriefSharesRequest, ListMyBriefSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDocumentsRequest, ListMyDocumentsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListMyTriggersRequest, ListMyTriggersResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, QueryRequest, QueryResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RenameThreadRequest, RenameThreadResponse, RevokeBriefShareRequest, RevokeBriefShareResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StreamQueryRequest, StreamQueryResponse, UpdateDocumentRequest, UpdateDocumentResponse, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse } from "./oracle_pb.js";
+import { AdminCalibrateDriftThresholdOrDomainRequest, AdminCalibrateDriftThresholdOrDomainResponse, AdminCertifyMinimalPillarContractOrDisclaimerRequest, AdminCertifyMinimalPillarContractOrDisclaimerResponse, AdminCertifyPlaybookAnonymizationOrErasureRequest, AdminCertifyPlaybookAnonymizationOrErasureResponse, AdminListAssumptionDriftRadarAuditRequest, AdminListAssumptionDriftRadarAuditResponse, AdminListCommitmentsOutcomeAuditRequest, AdminListCommitmentsOutcomeAuditResponse, AdminListDecisionLedgerAuditRequest, AdminListDecisionLedgerAuditResponse, AdminListEvidenceTruthAuditRequest, AdminListEvidenceTruthAuditResponse, AdminListForecastingCalibrationAuditRequest, AdminListForecastingCalibrationAuditResponse, AdminListMeetingNegotiationStudioAuditRequest, AdminListMeetingNegotiationStudioAuditResponse, AdminListPrivateCaseLibraryAuditRequest, AdminListPrivateCaseLibraryAuditResponse, AdminListSecureConnectorsToolAuditRequest, AdminListSecureConnectorsToolAuditResponse, AdminListTrustedDecisionRoomsAuditRequest, AdminListTrustedDecisionRoomsAuditResponse, AdminListWargamingExposureAuditRequest, AdminListWargamingExposureAuditResponse, AdminListWatchlistsCommandBriefAuditRequest, AdminListWatchlistsCommandBriefAuditResponse, AdminManageConnectorKillSwitchOrQuarantineRequest, AdminManageConnectorKillSwitchOrQuarantineResponse, AdminManageDecisionRoomGrantOrBoundaryRequest, AdminManageDecisionRoomGrantOrBoundaryResponse, AdminManageDecisionTemplateOrHoldRequest, AdminManageDecisionTemplateOrHoldResponse, AdminManageRecordingConsentOrRedactionRequest, AdminManageRecordingConsentOrRedactionResponse, AdminManageSourceRightsOrCorrectionRequest, AdminManageSourceRightsOrCorrectionResponse, AdminManageWatchlistAlertBudgetOrFeedRequest, AdminManageWatchlistAlertBudgetOrFeedResponse, AdminReconcileExternalSyncDeliveryRequest, AdminReconcileExternalSyncDeliveryResponse, AdminVerifyForecastResolutionOrSandboxRequest, AdminVerifyForecastResolutionOrSandboxResponse, ApproveOrSnoozeCommandBriefSignalRequest, ApproveOrSnoozeCommandBriefSignalResponse, ConfigureOrRevokeConnectorGrantRequest, ConfigureOrRevokeConnectorGrantResponse, ConfirmOrRejectCapturedMeetingProposalRequest, ConfirmOrRejectCapturedMeetingProposalResponse, CreateBriefShareRequest, CreateBriefShareResponse, CreateDocumentRequest, CreateDocumentResponse, CreateOrCloseTrustedDecisionRoomRequest, CreateOrCloseTrustedDecisionRoomResponse, CreateOrResolveForecastQuestionRequest, CreateOrResolveForecastQuestionResponse, CreateOrUpdateCommitmentItemRequest, CreateOrUpdateCommitmentItemResponse, CreateOrUpdateDecisionLedgerRecordRequest, CreateOrUpdateDecisionLedgerRecordResponse, CreateThreadRequest, CreateThreadResponse, CreateTriggerRequest, CreateTriggerResponse, DeleteDocumentRequest, DeleteDocumentResponse, DeleteEpisodicMemoryRequest, DeleteEpisodicMemoryResponse, DeleteSemanticMemoryRequest, DeleteSemanticMemoryResponse, DeleteThreadRequest, DeleteThreadResponse, DeleteTriggerRequest, DeleteTriggerResponse, DraftDocumentRequest, DraftDocumentResponse, GenerateYearInOracleRequest, GenerateYearInOracleResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetAssumptionDriftRadarWorkbenchRequest, GetAssumptionDriftRadarWorkbenchResponse, GetCommitmentsOutcomeWorkbenchRequest, GetCommitmentsOutcomeWorkbenchResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDecisionLedgerWorkbenchRequest, GetDecisionLedgerWorkbenchResponse, GetDocumentRequest, GetDocumentResponse, GetEvidenceTruthWorkbenchRequest, GetEvidenceTruthWorkbenchResponse, GetForecastingCalibrationWorkbenchRequest, GetForecastingCalibrationWorkbenchResponse, GetInboxRequest, GetInboxResponse, GetMeetingNegotiationStudioWorkbenchRequest, GetMeetingNegotiationStudioWorkbenchResponse, GetOracleStatsRequest, GetOracleStatsResponse, GetPrivateCaseLibraryWorkbenchRequest, GetPrivateCaseLibraryWorkbenchResponse, GetRankExplainerRequest, GetRankExplainerResponse, GetSecureConnectorsToolWorkbenchRequest, GetSecureConnectorsToolWorkbenchResponse, GetTodayBriefingRequest, GetTodayBriefingResponse, GetTrustedNetworkDecisionRoomsWorkbenchRequest, GetTrustedNetworkDecisionRoomsWorkbenchResponse, GetWargamingExposureWorkbenchRequest, GetWargamingExposureWorkbenchResponse, GetWatchlistsCommandBriefWorkbenchRequest, GetWatchlistsCommandBriefWorkbenchResponse, GetYearInOracleRecapRequest, GetYearInOracleRecapResponse, GrantScopeRequest, GrantScopeResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAvailableToolsRequest, ListAvailableToolsResponse, ListMyBriefSharesRequest, ListMyBriefSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDocumentsRequest, ListMyDocumentsResponse, ListMyEpisodicMemoryRequest, ListMyEpisodicMemoryResponse, ListMyScopeGrantsRequest, ListMyScopeGrantsResponse, ListMySemanticMemoryRequest, ListMySemanticMemoryResponse, ListMyThreadsRequest, ListMyThreadsResponse, ListMyTriggersRequest, ListMyTriggersResponse, ListThreadMessagesRequest, ListThreadMessagesResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PreviewOrExecuteExternalCommitmentSyncRequest, PreviewOrExecuteExternalCommitmentSyncResponse, QueryRequest, QueryResponse, RecordCalibrationLabExperimentRequest, RecordCalibrationLabExperimentResponse, RecordDecisionAssumptionOrReviewRequest, RecordDecisionAssumptionOrReviewResponse, RecordEpisodicMemoryRequest, RecordEpisodicMemoryResponse, RegisterOrRefreshEvidenceSourceRequest, RegisterOrRefreshEvidenceSourceResponse, RenameThreadRequest, RenameThreadResponse, ReportOrReviewPromptInjectionQuarantineRequest, ReportOrReviewPromptInjectionQuarantineResponse, RespondToAssumptionDriftAlertRequest, RespondToAssumptionDriftAlertResponse, RevokeBriefShareRequest, RevokeBriefShareResponse, RevokeScopeRequest, RevokeScopeResponse, RunOracleToolRequest, RunOracleToolResponse, RunOrExportWargameExposureSimulationRequest, RunOrExportWargameExposureSimulationResponse, SaveMeetingBriefOrRedteamRehearsalRequest, SaveMeetingBriefOrRedteamRehearsalResponse, SaveOrComparePrivateCaseEntryRequest, SaveOrComparePrivateCaseEntryResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StreamQueryRequest, StreamQueryResponse, SubmitOrWithdrawAnonymizedPlaybookRequest, SubmitOrWithdrawAnonymizedPlaybookResponse, UpdateDocumentRequest, UpdateDocumentResponse, UpdateDriftRadarPolicyRequest, UpdateDriftRadarPolicyResponse, UpdateWargameSensitivityOrContingencyRequest, UpdateWargameSensitivityOrContingencyResponse, UpsertSemanticMemoryRequest, UpsertSemanticMemoryResponse, UpsertWatchlistEntityMonitorRequest, UpsertWatchlistEntityMonitorResponse, VerifyOrInvalidateCitedClaimRequest, VerifyOrInvalidateCitedClaimResponse, VerifySpecialistDisclosureOrOptInRequest, VerifySpecialistDisclosureOrOptInResponse } from "./oracle_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -418,6 +418,545 @@ export const OracleService = {
       name: "GetRankExplainer",
       I: GetRankExplainerRequest,
       O: GetRankExplainerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 1 (R1): EVIDENCE TRUTH LAYER
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetEvidenceTruthWorkbench
+     */
+    getEvidenceTruthWorkbench: {
+      name: "GetEvidenceTruthWorkbench",
+      I: GetEvidenceTruthWorkbenchRequest,
+      O: GetEvidenceTruthWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RegisterOrRefreshEvidenceSource
+     */
+    registerOrRefreshEvidenceSource: {
+      name: "RegisterOrRefreshEvidenceSource",
+      I: RegisterOrRefreshEvidenceSourceRequest,
+      O: RegisterOrRefreshEvidenceSourceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.VerifyOrInvalidateCitedClaim
+     */
+    verifyOrInvalidateCitedClaim: {
+      name: "VerifyOrInvalidateCitedClaim",
+      I: VerifyOrInvalidateCitedClaimRequest,
+      O: VerifyOrInvalidateCitedClaimResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListEvidenceTruthAudit
+     */
+    adminListEvidenceTruthAudit: {
+      name: "AdminListEvidenceTruthAudit",
+      I: AdminListEvidenceTruthAuditRequest,
+      O: AdminListEvidenceTruthAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminManageSourceRightsOrCorrection
+     */
+    adminManageSourceRightsOrCorrection: {
+      name: "AdminManageSourceRightsOrCorrection",
+      I: AdminManageSourceRightsOrCorrectionRequest,
+      O: AdminManageSourceRightsOrCorrectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 2 (R2): DECISION LEDGER AND WORKBENCH
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetDecisionLedgerWorkbench
+     */
+    getDecisionLedgerWorkbench: {
+      name: "GetDecisionLedgerWorkbench",
+      I: GetDecisionLedgerWorkbenchRequest,
+      O: GetDecisionLedgerWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateOrUpdateDecisionLedgerRecord
+     */
+    createOrUpdateDecisionLedgerRecord: {
+      name: "CreateOrUpdateDecisionLedgerRecord",
+      I: CreateOrUpdateDecisionLedgerRecordRequest,
+      O: CreateOrUpdateDecisionLedgerRecordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RecordDecisionAssumptionOrReview
+     */
+    recordDecisionAssumptionOrReview: {
+      name: "RecordDecisionAssumptionOrReview",
+      I: RecordDecisionAssumptionOrReviewRequest,
+      O: RecordDecisionAssumptionOrReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListDecisionLedgerAudit
+     */
+    adminListDecisionLedgerAudit: {
+      name: "AdminListDecisionLedgerAudit",
+      I: AdminListDecisionLedgerAuditRequest,
+      O: AdminListDecisionLedgerAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminManageDecisionTemplateOrHold
+     */
+    adminManageDecisionTemplateOrHold: {
+      name: "AdminManageDecisionTemplateOrHold",
+      I: AdminManageDecisionTemplateOrHoldRequest,
+      O: AdminManageDecisionTemplateOrHoldResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 3 (R9): COMMITMENTS AND OUTCOME LOOP
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetCommitmentsOutcomeWorkbench
+     */
+    getCommitmentsOutcomeWorkbench: {
+      name: "GetCommitmentsOutcomeWorkbench",
+      I: GetCommitmentsOutcomeWorkbenchRequest,
+      O: GetCommitmentsOutcomeWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateOrUpdateCommitmentItem
+     */
+    createOrUpdateCommitmentItem: {
+      name: "CreateOrUpdateCommitmentItem",
+      I: CreateOrUpdateCommitmentItemRequest,
+      O: CreateOrUpdateCommitmentItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.PreviewOrExecuteExternalCommitmentSync
+     */
+    previewOrExecuteExternalCommitmentSync: {
+      name: "PreviewOrExecuteExternalCommitmentSync",
+      I: PreviewOrExecuteExternalCommitmentSyncRequest,
+      O: PreviewOrExecuteExternalCommitmentSyncResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListCommitmentsOutcomeAudit
+     */
+    adminListCommitmentsOutcomeAudit: {
+      name: "AdminListCommitmentsOutcomeAudit",
+      I: AdminListCommitmentsOutcomeAuditRequest,
+      O: AdminListCommitmentsOutcomeAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminReconcileExternalSyncDelivery
+     */
+    adminReconcileExternalSyncDelivery: {
+      name: "AdminReconcileExternalSyncDelivery",
+      I: AdminReconcileExternalSyncDeliveryRequest,
+      O: AdminReconcileExternalSyncDeliveryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 4 (R3): WATCHLISTS AND COMMAND BRIEF
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetWatchlistsCommandBriefWorkbench
+     */
+    getWatchlistsCommandBriefWorkbench: {
+      name: "GetWatchlistsCommandBriefWorkbench",
+      I: GetWatchlistsCommandBriefWorkbenchRequest,
+      O: GetWatchlistsCommandBriefWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.UpsertWatchlistEntityMonitor
+     */
+    upsertWatchlistEntityMonitor: {
+      name: "UpsertWatchlistEntityMonitor",
+      I: UpsertWatchlistEntityMonitorRequest,
+      O: UpsertWatchlistEntityMonitorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ApproveOrSnoozeCommandBriefSignal
+     */
+    approveOrSnoozeCommandBriefSignal: {
+      name: "ApproveOrSnoozeCommandBriefSignal",
+      I: ApproveOrSnoozeCommandBriefSignalRequest,
+      O: ApproveOrSnoozeCommandBriefSignalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListWatchlistsCommandBriefAudit
+     */
+    adminListWatchlistsCommandBriefAudit: {
+      name: "AdminListWatchlistsCommandBriefAudit",
+      I: AdminListWatchlistsCommandBriefAuditRequest,
+      O: AdminListWatchlistsCommandBriefAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminTuneWatchlistAlertBudgetOrFeed
+     */
+    adminTuneWatchlistAlertBudgetOrFeed: {
+      name: "AdminTuneWatchlistAlertBudgetOrFeed",
+      I: AdminManageWatchlistAlertBudgetOrFeedRequest,
+      O: AdminManageWatchlistAlertBudgetOrFeedResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 5 (R10): ASSUMPTION DRIFT RADAR
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetAssumptionDriftRadarWorkbench
+     */
+    getAssumptionDriftRadarWorkbench: {
+      name: "GetAssumptionDriftRadarWorkbench",
+      I: GetAssumptionDriftRadarWorkbenchRequest,
+      O: GetAssumptionDriftRadarWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RespondToAssumptionDriftAlert
+     */
+    respondToAssumptionDriftAlert: {
+      name: "RespondToAssumptionDriftAlert",
+      I: RespondToAssumptionDriftAlertRequest,
+      O: RespondToAssumptionDriftAlertResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.UpdateDriftRadarPolicy
+     */
+    updateDriftRadarPolicy: {
+      name: "UpdateDriftRadarPolicy",
+      I: UpdateDriftRadarPolicyRequest,
+      O: UpdateDriftRadarPolicyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListAssumptionDriftRadarAudit
+     */
+    adminListAssumptionDriftRadarAudit: {
+      name: "AdminListAssumptionDriftRadarAudit",
+      I: AdminListAssumptionDriftRadarAuditRequest,
+      O: AdminListAssumptionDriftRadarAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminCalibrateDriftThresholdOrDomain
+     */
+    adminCalibrateDriftThresholdOrDomain: {
+      name: "AdminCalibrateDriftThresholdOrDomain",
+      I: AdminCalibrateDriftThresholdOrDomainRequest,
+      O: AdminCalibrateDriftThresholdOrDomainResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 6 (R4/R14): FORECASTING AND CALIBRATION
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetForecastingCalibrationWorkbench
+     */
+    getForecastingCalibrationWorkbench: {
+      name: "GetForecastingCalibrationWorkbench",
+      I: GetForecastingCalibrationWorkbenchRequest,
+      O: GetForecastingCalibrationWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateOrResolveForecastQuestion
+     */
+    createOrResolveForecastQuestion: {
+      name: "CreateOrResolveForecastQuestion",
+      I: CreateOrResolveForecastQuestionRequest,
+      O: CreateOrResolveForecastQuestionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RecordCalibrationLabExperiment
+     */
+    recordCalibrationLabExperiment: {
+      name: "RecordCalibrationLabExperiment",
+      I: RecordCalibrationLabExperimentRequest,
+      O: RecordCalibrationLabExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListForecastingCalibrationAudit
+     */
+    adminListForecastingCalibrationAudit: {
+      name: "AdminListForecastingCalibrationAudit",
+      I: AdminListForecastingCalibrationAuditRequest,
+      O: AdminListForecastingCalibrationAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminVerifyForecastResolutionOrSandbox
+     */
+    adminVerifyForecastResolutionOrSandbox: {
+      name: "AdminVerifyForecastResolutionOrSandbox",
+      I: AdminVerifyForecastResolutionOrSandboxRequest,
+      O: AdminVerifyForecastResolutionOrSandboxResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 7 (R5/R11): MEETING AND NEGOTIATION STUDIO
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetMeetingNegotiationStudioWorkbench
+     */
+    getMeetingNegotiationStudioWorkbench: {
+      name: "GetMeetingNegotiationStudioWorkbench",
+      I: GetMeetingNegotiationStudioWorkbenchRequest,
+      O: GetMeetingNegotiationStudioWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.SaveMeetingBriefOrRedteamRehearsal
+     */
+    saveMeetingBriefOrRedteamRehearsal: {
+      name: "SaveMeetingBriefOrRedteamRehearsal",
+      I: SaveMeetingBriefOrRedteamRehearsalRequest,
+      O: SaveMeetingBriefOrRedteamRehearsalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ConfirmOrRejectCapturedMeetingProposal
+     */
+    confirmOrRejectCapturedMeetingProposal: {
+      name: "ConfirmOrRejectCapturedMeetingProposal",
+      I: ConfirmOrRejectCapturedMeetingProposalRequest,
+      O: ConfirmOrRejectCapturedMeetingProposalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListMeetingNegotiationStudioAudit
+     */
+    adminListMeetingNegotiationStudioAudit: {
+      name: "AdminListMeetingNegotiationStudioAudit",
+      I: AdminListMeetingNegotiationStudioAuditRequest,
+      O: AdminListMeetingNegotiationStudioAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminManageRecordingConsentOrRedaction
+     */
+    adminManageRecordingConsentOrRedaction: {
+      name: "AdminManageRecordingConsentOrRedaction",
+      I: AdminManageRecordingConsentOrRedactionRequest,
+      O: AdminManageRecordingConsentOrRedactionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 8 (R6): SECURE CONNECTORS AND TOOL PLATFORM
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetSecureConnectorsToolWorkbench
+     */
+    getSecureConnectorsToolWorkbench: {
+      name: "GetSecureConnectorsToolWorkbench",
+      I: GetSecureConnectorsToolWorkbenchRequest,
+      O: GetSecureConnectorsToolWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ConfigureOrRevokeConnectorGrant
+     */
+    configureOrRevokeConnectorGrant: {
+      name: "ConfigureOrRevokeConnectorGrant",
+      I: ConfigureOrRevokeConnectorGrantRequest,
+      O: ConfigureOrRevokeConnectorGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.ReportOrReviewPromptInjectionQuarantine
+     */
+    reportOrReviewPromptInjectionQuarantine: {
+      name: "ReportOrReviewPromptInjectionQuarantine",
+      I: ReportOrReviewPromptInjectionQuarantineRequest,
+      O: ReportOrReviewPromptInjectionQuarantineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListSecureConnectorsToolAudit
+     */
+    adminListSecureConnectorsToolAudit: {
+      name: "AdminListSecureConnectorsToolAudit",
+      I: AdminListSecureConnectorsToolAuditRequest,
+      O: AdminListSecureConnectorsToolAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminManageConnectorKillSwitchOrQuarantine
+     */
+    adminManageConnectorKillSwitchOrQuarantine: {
+      name: "AdminManageConnectorKillSwitchOrQuarantine",
+      I: AdminManageConnectorKillSwitchOrQuarantineRequest,
+      O: AdminManageConnectorKillSwitchOrQuarantineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 9 (R7/R12): TRUSTED NETWORK AND DECISION ROOMS
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetTrustedNetworkDecisionRoomsWorkbench
+     */
+    getTrustedNetworkDecisionRoomsWorkbench: {
+      name: "GetTrustedNetworkDecisionRoomsWorkbench",
+      I: GetTrustedNetworkDecisionRoomsWorkbenchRequest,
+      O: GetTrustedNetworkDecisionRoomsWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.CreateOrCloseTrustedDecisionRoom
+     */
+    createOrCloseTrustedDecisionRoom: {
+      name: "CreateOrCloseTrustedDecisionRoom",
+      I: CreateOrCloseTrustedDecisionRoomRequest,
+      O: CreateOrCloseTrustedDecisionRoomResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.VerifySpecialistDisclosureOrOptIn
+     */
+    verifySpecialistDisclosureOrOptIn: {
+      name: "VerifySpecialistDisclosureOrOptIn",
+      I: VerifySpecialistDisclosureOrOptInRequest,
+      O: VerifySpecialistDisclosureOrOptInResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListTrustedDecisionRoomsAudit
+     */
+    adminListTrustedDecisionRoomsAudit: {
+      name: "AdminListTrustedDecisionRoomsAudit",
+      I: AdminListTrustedDecisionRoomsAuditRequest,
+      O: AdminListTrustedDecisionRoomsAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminManageDecisionRoomGrantOrBoundary
+     */
+    adminManageDecisionRoomGrantOrBoundary: {
+      name: "AdminManageDecisionRoomGrantOrBoundary",
+      I: AdminManageDecisionRoomGrantOrBoundaryRequest,
+      O: AdminManageDecisionRoomGrantOrBoundaryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 10 (R8/R12): WAR-GAMING AND CROSS-PILLAR EXPOSURE
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetWargamingExposureWorkbench
+     */
+    getWargamingExposureWorkbench: {
+      name: "GetWargamingExposureWorkbench",
+      I: GetWargamingExposureWorkbenchRequest,
+      O: GetWargamingExposureWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.RunOrExportWargameExposureSimulation
+     */
+    runOrExportWargameExposureSimulation: {
+      name: "RunOrExportWargameExposureSimulation",
+      I: RunOrExportWargameExposureSimulationRequest,
+      O: RunOrExportWargameExposureSimulationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.UpdateWargameSensitivityOrContingency
+     */
+    updateWargameSensitivityOrContingency: {
+      name: "UpdateWargameSensitivityOrContingency",
+      I: UpdateWargameSensitivityOrContingencyRequest,
+      O: UpdateWargameSensitivityOrContingencyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListWargamingExposureAudit
+     */
+    adminListWargamingExposureAudit: {
+      name: "AdminListWargamingExposureAudit",
+      I: AdminListWargamingExposureAuditRequest,
+      O: AdminListWargamingExposureAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminCertifyMinimalPillarContractOrDisclaimer
+     */
+    adminCertifyMinimalPillarContractOrDisclaimer: {
+      name: "AdminCertifyMinimalPillarContractOrDisclaimer",
+      I: AdminCertifyMinimalPillarContractOrDisclaimerRequest,
+      O: AdminCertifyMinimalPillarContractOrDisclaimerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * =========================================================================
+     * CHOICE 11 (R13): PRIVATE CASE LIBRARY
+     * =========================================================================
+     *
+     * @generated from rpc sttattus.oracle.v1.OracleService.GetPrivateCaseLibraryWorkbench
+     */
+    getPrivateCaseLibraryWorkbench: {
+      name: "GetPrivateCaseLibraryWorkbench",
+      I: GetPrivateCaseLibraryWorkbenchRequest,
+      O: GetPrivateCaseLibraryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.SaveOrComparePrivateCaseEntry
+     */
+    saveOrComparePrivateCaseEntry: {
+      name: "SaveOrComparePrivateCaseEntry",
+      I: SaveOrComparePrivateCaseEntryRequest,
+      O: SaveOrComparePrivateCaseEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.SubmitOrWithdrawAnonymizedPlaybook
+     */
+    submitOrWithdrawAnonymizedPlaybook: {
+      name: "SubmitOrWithdrawAnonymizedPlaybook",
+      I: SubmitOrWithdrawAnonymizedPlaybookRequest,
+      O: SubmitOrWithdrawAnonymizedPlaybookResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminListPrivateCaseLibraryAudit
+     */
+    adminListPrivateCaseLibraryAudit: {
+      name: "AdminListPrivateCaseLibraryAudit",
+      I: AdminListPrivateCaseLibraryAuditRequest,
+      O: AdminListPrivateCaseLibraryAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.oracle.v1.OracleService.AdminCertifyPlaybookAnonymizationOrErasure
+     */
+    adminCertifyPlaybookAnonymizationOrErasure: {
+      name: "AdminCertifyPlaybookAnonymizationOrErasure",
+      I: AdminCertifyPlaybookAnonymizationOrErasureRequest,
+      O: AdminCertifyPlaybookAnonymizationOrErasureResponse,
       kind: MethodKind.Unary,
     },
   }

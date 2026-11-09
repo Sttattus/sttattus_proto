@@ -333,7 +333,78 @@ service TravelService {
 
   // N4 — Annual Atlas (generated hardcover-grade PDF).
   rpc GenerateNomadAtlas(GenerateNomadAtlasRequest) returns (GenerateNomadAtlasResponse);
+
+  // Choice 1 (N1): Universal Ingestion and Trip Graph
+  rpc GetUniversalTripGraphOverview(GetUniversalTripGraphOverviewRequest) returns (GetUniversalTripGraphOverviewResponse);
+  rpc UpsertTripGraphSegment(UpsertTripGraphSegmentRequest) returns (UpsertTripGraphSegmentResponse);
+  rpc ReconcileParserDiffEvent(ReconcileParserDiffEventRequest) returns (ReconcileParserDiffEventResponse);
+
+  // Choice 2 (N2/N12): Multi-Source Truth and Live Flight Command
+  rpc GetLiveFlightCommandOverview(GetLiveFlightCommandOverviewRequest) returns (GetLiveFlightCommandOverviewResponse);
+  rpc RecordFlightObservation(RecordFlightObservationRequest) returns (RecordFlightObservationResponse);
+  rpc TriggerDisruptionRecoveryPlan(TriggerDisruptionRecoveryPlanRequest) returns (TriggerDisruptionRecoveryPlanResponse);
+
+  // Choice 3 (N4): Encrypted Offline Trip Pack
+  rpc GetOfflineTripPackOverview(GetOfflineTripPackOverviewRequest) returns (GetOfflineTripPackOverviewResponse);
+  rpc StageOfflineTripPack(StageOfflineTripPackRequest) returns (StageOfflineTripPackResponse);
+  rpc SyncOfflineMutationReceipt(SyncOfflineMutationReceiptRequest) returns (SyncOfflineMutationReceiptResponse);
+
+  // Choice 4 (N3): Entry and Document Readiness
+  rpc GetEntryDocumentReadinessOverview(GetEntryDocumentReadinessOverviewRequest) returns (GetEntryDocumentReadinessOverviewResponse);
+  rpc EvaluateEntryReadiness(EvaluateEntryReadinessRequest) returns (EvaluateEntryReadinessResponse);
+  rpc EscalateJurisdictionAmbiguity(EscalateJurisdictionAmbiguityRequest) returns (EscalateJurisdictionAmbiguityResponse);
+
+  // Choice 5 (N11): Pre-Trip Readiness and Packing
+  rpc GetPreTripReadinessOverview(GetPreTripReadinessOverviewRequest) returns (GetPreTripReadinessOverviewResponse);
+  rpc UpsertPreTripChecklist(UpsertPreTripChecklistRequest) returns (UpsertPreTripChecklistResponse);
+  rpc CompletePackingOrHomeTask(CompletePackingOrHomeTaskRequest) returns (CompletePackingOrHomeTaskResponse);
+
+  // Choice 6 (N7/N13): Door-to-Door and Airport Operations
+  rpc GetDoorToDoorAirportOverview(GetDoorToDoorAirportOverviewRequest) returns (GetDoorToDoorAirportOverviewResponse);
+  rpc SaveDoorToDoorTimeline(SaveDoorToDoorTimelineRequest) returns (SaveDoorToDoorTimelineResponse);
+  rpc IssueOrRevokePartnerGroundPass(IssueOrRevokePartnerGroundPassRequest) returns (IssueOrRevokePartnerGroundPassResponse);
+
+  // Choice 7 (N5): Presence Evidence Packet
+  rpc GetPresenceEvidencePacketOverview(GetPresenceEvidencePacketOverviewRequest) returns (GetPresenceEvidencePacketOverviewResponse);
+  rpc SubmitPresenceEvidencePacket(SubmitPresenceEvidencePacketRequest) returns (SubmitPresenceEvidencePacketResponse);
+  rpc FilePresenceVerificationAppeal(FilePresenceVerificationAppealRequest) returns (FilePresenceVerificationAppealResponse);
+
+  // Choice 8 (N6): Residency and Corporate Travel Ledger
+  rpc GetResidencyTravelLedgerOverview(GetResidencyTravelLedgerOverviewRequest) returns (GetResidencyTravelLedgerOverviewResponse);
+  rpc UpsertResidencyDayLedger(UpsertResidencyDayLedgerRequest) returns (UpsertResidencyDayLedgerResponse);
+  rpc RunRollingWindowForecast(RunRollingWindowForecastRequest) returns (RunRollingWindowForecastResponse);
+
+  // Choice 9 (N8): Traveler, Family, and Assistant Collaboration
+  rpc GetTravelerCollaborationOverview(GetTravelerCollaborationOverviewRequest) returns (GetTravelerCollaborationOverviewResponse);
+  rpc GrantTripCollaborationRole(GrantTripCollaborationRoleRequest) returns (GrantTripCollaborationRoleResponse);
+  rpc DispatchSafetyCheckinBroadcast(DispatchSafetyCheckinBroadcastRequest) returns (DispatchSafetyCheckinBroadcastResponse);
+
+  // Choice 10 (N9): Loyalty, Fare, Claims, and Travel Finance
+  rpc GetLoyaltyClaimsFinanceOverview(GetLoyaltyClaimsFinanceOverviewRequest) returns (GetLoyaltyClaimsFinanceOverviewResponse);
+  rpc UpsertLoyaltyOrCompensationClaim(UpsertLoyaltyOrCompensationClaimRequest) returns (UpsertLoyaltyOrCompensationClaimResponse);
+  rpc HandoffTripExpenseToVault(HandoffTripExpenseToVaultRequest) returns (HandoffTripExpenseToVaultResponse);
+
+  // Choice 11 (N14/N15): Accessible Travel and Crisis Command
+  rpc GetAccessibleCrisisCommandOverview(GetAccessibleCrisisCommandOverviewRequest) returns (GetAccessibleCrisisCommandOverviewResponse);
+  rpc SubmitProviderAssistanceRequest(SubmitProviderAssistanceRequestRequest) returns (SubmitProviderAssistanceRequestResponse);
+  rpc RecordCrisisWelfareCheckin(RecordCrisisWelfareCheckinRequest) returns (RecordCrisisWelfareCheckinResponse);
+
+  // Choice 12 (N16): Destination Companion
+  rpc GetDestinationCompanionOverview(GetDestinationCompanionOverviewRequest) returns (GetDestinationCompanionOverviewResponse);
+  rpc SaveDestinationDayPlan(SaveDestinationDayPlanRequest) returns (SaveDestinationDayPlanResponse);
+  rpc LogForegroundProximityQuery(LogForegroundProximityQueryRequest) returns (LogForegroundProximityQueryResponse);
+
+  // Choice 13 (N10): Private Passport and Mobility Proofs
+  rpc GetPrivatePassportProofsOverview(GetPrivatePassportProofsOverviewRequest) returns (GetPrivatePassportProofsOverviewResponse);
+  rpc MintSignedMobilityDossier(MintSignedMobilityDossierRequest) returns (MintSignedMobilityDossierResponse);
+  rpc UpdateFieldPrivacyPolicy(UpdateFieldPrivacyPolicyRequest) returns (UpdateFieldPrivacyPolicyResponse);
+
+  // Choice 14 (N17): Trip Closure and Long-Term Memory
+  rpc GetTripClosureMemoryOverview(GetTripClosureMemoryOverviewRequest) returns (GetTripClosureMemoryOverviewResponse);
+  rpc ExecuteTripClosureStep(ExecuteTripClosureStepRequest) returns (ExecuteTripClosureStepResponse);
+  rpc ArchiveTripMemoryRecord(ArchiveTripMemoryRecordRequest) returns (ArchiveTripMemoryRecordResponse);
 }
+
 
 // === Nomad Anthology (N3) ===
 
@@ -527,4 +598,622 @@ message GetTripArchiveRequest {
 message GetTripArchiveResponse {
   repeated TripArchiveEntry entries = 1;
   sttattus.common.v1.PageResponse page = 2;
+}
+
+// === Nomad Opportunity Choices 1-14 Messages ===
+
+message TripGraphSegmentItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_duplicate_segments_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetUniversalTripGraphOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetUniversalTripGraphOverviewResponse {
+  repeated TripGraphSegmentItem items = 1;
+  string active_policy_version = 2;
+  bool no_duplicate_segments_enforced = 3;
+  string governance_summary = 4;
+}
+
+message UpsertTripGraphSegmentRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertTripGraphSegmentResponse {
+  TripGraphSegmentItem item = 1;
+}
+
+message ReconcileParserDiffEventRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ReconcileParserDiffEventResponse {
+  TripGraphSegmentItem item = 1;
+}
+
+message FlightObservationItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool carrier_contract_supremacy_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetLiveFlightCommandOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetLiveFlightCommandOverviewResponse {
+  repeated FlightObservationItem items = 1;
+  string active_policy_version = 2;
+  bool carrier_contract_supremacy_enforced = 3;
+  string governance_summary = 4;
+}
+
+message RecordFlightObservationRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RecordFlightObservationResponse {
+  FlightObservationItem item = 1;
+}
+
+message TriggerDisruptionRecoveryPlanRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message TriggerDisruptionRecoveryPlanResponse {
+  FlightObservationItem item = 1;
+}
+
+message OfflineTripPackItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool hardware_key_isolation_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetOfflineTripPackOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetOfflineTripPackOverviewResponse {
+  repeated OfflineTripPackItem items = 1;
+  string active_policy_version = 2;
+  bool hardware_key_isolation_enforced = 3;
+  string governance_summary = 4;
+}
+
+message StageOfflineTripPackRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message StageOfflineTripPackResponse {
+  OfflineTripPackItem item = 1;
+}
+
+message SyncOfflineMutationReceiptRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message SyncOfflineMutationReceiptResponse {
+  OfflineTripPackItem item = 1;
+}
+
+message EntryReadinessRuleItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_missing_rules_as_clear_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetEntryDocumentReadinessOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetEntryDocumentReadinessOverviewResponse {
+  repeated EntryReadinessRuleItem items = 1;
+  string active_policy_version = 2;
+  bool no_missing_rules_as_clear_enforced = 3;
+  string governance_summary = 4;
+}
+
+message EvaluateEntryReadinessRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message EvaluateEntryReadinessResponse {
+  EntryReadinessRuleItem item = 1;
+}
+
+message EscalateJurisdictionAmbiguityRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message EscalateJurisdictionAmbiguityResponse {
+  EntryReadinessRuleItem item = 1;
+}
+
+message PreTripChecklistItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool suggestion_provenance_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetPreTripReadinessOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetPreTripReadinessOverviewResponse {
+  repeated PreTripChecklistItem items = 1;
+  string active_policy_version = 2;
+  bool suggestion_provenance_enforced = 3;
+  string governance_summary = 4;
+}
+
+message UpsertPreTripChecklistRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertPreTripChecklistResponse {
+  PreTripChecklistItem item = 1;
+}
+
+message CompletePackingOrHomeTaskRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message CompletePackingOrHomeTaskResponse {
+  PreTripChecklistItem item = 1;
+}
+
+message DoorToDoorTimelineItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool editorial_vs_live_capacity_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetDoorToDoorAirportOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetDoorToDoorAirportOverviewResponse {
+  repeated DoorToDoorTimelineItem items = 1;
+  string active_policy_version = 2;
+  bool editorial_vs_live_capacity_enforced = 3;
+  string governance_summary = 4;
+}
+
+message SaveDoorToDoorTimelineRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SaveDoorToDoorTimelineResponse {
+  DoorToDoorTimelineItem item = 1;
+}
+
+message IssueOrRevokePartnerGroundPassRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message IssueOrRevokePartnerGroundPassResponse {
+  DoorToDoorTimelineItem item = 1;
+}
+
+message PresencePacketItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool foreground_only_no_covert_tracking = 8;
+  string updated_at = 9;
+}
+
+message GetPresenceEvidencePacketOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetPresenceEvidencePacketOverviewResponse {
+  repeated PresencePacketItem items = 1;
+  string active_policy_version = 2;
+  bool foreground_only_no_covert_tracking = 3;
+  string governance_summary = 4;
+}
+
+message SubmitPresenceEvidencePacketRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SubmitPresenceEvidencePacketResponse {
+  PresencePacketItem item = 1;
+}
+
+message FilePresenceVerificationAppealRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message FilePresenceVerificationAppealResponse {
+  PresencePacketItem item = 1;
+}
+
+message ResidencyLedgerItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool non_legal_tax_residency_boundary = 8;
+  string updated_at = 9;
+}
+
+message GetResidencyTravelLedgerOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetResidencyTravelLedgerOverviewResponse {
+  repeated ResidencyLedgerItem items = 1;
+  string active_policy_version = 2;
+  bool non_legal_tax_residency_boundary = 3;
+  string governance_summary = 4;
+}
+
+message UpsertResidencyDayLedgerRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertResidencyDayLedgerResponse {
+  ResidencyLedgerItem item = 1;
+}
+
+message RunRollingWindowForecastRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RunRollingWindowForecastResponse {
+  ResidencyLedgerItem item = 1;
+}
+
+message CollaborationGrantItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool documents_private_by_default_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetTravelerCollaborationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetTravelerCollaborationOverviewResponse {
+  repeated CollaborationGrantItem items = 1;
+  string active_policy_version = 2;
+  bool documents_private_by_default_enforced = 3;
+  string governance_summary = 4;
+}
+
+message GrantTripCollaborationRoleRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message GrantTripCollaborationRoleResponse {
+  CollaborationGrantItem item = 1;
+}
+
+message DispatchSafetyCheckinBroadcastRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message DispatchSafetyCheckinBroadcastResponse {
+  CollaborationGrantItem item = 1;
+}
+
+message LoyaltyClaimItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_guaranteed_payout_boundary = 8;
+  string updated_at = 9;
+}
+
+message GetLoyaltyClaimsFinanceOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetLoyaltyClaimsFinanceOverviewResponse {
+  repeated LoyaltyClaimItem items = 1;
+  string active_policy_version = 2;
+  bool no_guaranteed_payout_boundary = 3;
+  string governance_summary = 4;
+}
+
+message UpsertLoyaltyOrCompensationClaimRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertLoyaltyOrCompensationClaimResponse {
+  LoyaltyClaimItem item = 1;
+}
+
+message HandoffTripExpenseToVaultRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message HandoffTripExpenseToVaultResponse {
+  LoyaltyClaimItem item = 1;
+}
+
+message AccessibleCrisisItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool coercion_escape_and_consent_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetAccessibleCrisisCommandOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetAccessibleCrisisCommandOverviewResponse {
+  repeated AccessibleCrisisItem items = 1;
+  string active_policy_version = 2;
+  bool coercion_escape_and_consent_enforced = 3;
+  string governance_summary = 4;
+}
+
+message SubmitProviderAssistanceRequestRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SubmitProviderAssistanceRequestResponse {
+  AccessibleCrisisItem item = 1;
+}
+
+message RecordCrisisWelfareCheckinRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RecordCrisisWelfareCheckinResponse {
+  AccessibleCrisisItem item = 1;
+}
+
+message DestinationPlanItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool paid_placement_disclosed_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetDestinationCompanionOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetDestinationCompanionOverviewResponse {
+  repeated DestinationPlanItem items = 1;
+  string active_policy_version = 2;
+  bool paid_placement_disclosed_enforced = 3;
+  string governance_summary = 4;
+}
+
+message SaveDestinationDayPlanRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SaveDestinationDayPlanResponse {
+  DestinationPlanItem item = 1;
+}
+
+message LogForegroundProximityQueryRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message LogForegroundProximityQueryResponse {
+  DestinationPlanItem item = 1;
+}
+
+message SignedMobilityDossierItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool verified_vs_unverified_distinct = 8;
+  string updated_at = 9;
+}
+
+message GetPrivatePassportProofsOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetPrivatePassportProofsOverviewResponse {
+  repeated SignedMobilityDossierItem items = 1;
+  string active_policy_version = 2;
+  bool verified_vs_unverified_distinct = 3;
+  string governance_summary = 4;
+}
+
+message MintSignedMobilityDossierRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message MintSignedMobilityDossierResponse {
+  SignedMobilityDossierItem item = 1;
+}
+
+message UpdateFieldPrivacyPolicyRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message UpdateFieldPrivacyPolicyResponse {
+  SignedMobilityDossierItem item = 1;
+}
+
+message TripClosureItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool post_trip_share_revocation_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetTripClosureMemoryOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetTripClosureMemoryOverviewResponse {
+  repeated TripClosureItem items = 1;
+  string active_policy_version = 2;
+  bool post_trip_share_revocation_enforced = 3;
+  string governance_summary = 4;
+}
+
+message ExecuteTripClosureStepRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message ExecuteTripClosureStepResponse {
+  TripClosureItem item = 1;
+}
+
+message ArchiveTripMemoryRecordRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ArchiveTripMemoryRecordResponse {
+  TripClosureItem item = 1;
 }

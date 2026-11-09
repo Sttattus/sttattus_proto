@@ -387,6 +387,316 @@ class ZenithServiceClient extends $grpc.Client {
     return $createUnaryCall(_$cancelLoungeBooking, request, options: options);
   }
 
+  /// ===== Zenith Opportunity Choices 1–11 (Z1..Z14) =====
+  /// Choice 1 (Z1): Native Focus Firewall
+  $grpc.ResponseFuture<$0.GetZenithFocusFirewallWorkbenchResponse>
+      getZenithFocusFirewallWorkbench(
+    $0.GetZenithFocusFirewallWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithFocusFirewallWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithFocusFirewallSessionResponse>
+      saveZenithFocusFirewallSession(
+    $0.SaveZenithFocusFirewallSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithFocusFirewallSession, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.TriggerZenithFocusFirewallBypassOrCompleteResponse>
+      triggerZenithFocusFirewallBypassOrComplete(
+    $0.TriggerZenithFocusFirewallBypassOrCompleteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$triggerZenithFocusFirewallBypassOrComplete, request,
+        options: options);
+  }
+
+  /// Choice 2 (Z2): Adaptive Day Architect
+  $grpc.ResponseFuture<$0.GetZenithAdaptiveDayArchitectWorkbenchResponse>
+      getZenithAdaptiveDayArchitectWorkbench(
+    $0.GetZenithAdaptiveDayArchitectWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithAdaptiveDayArchitectWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithAdaptiveDayArchitectPlanResponse>
+      saveZenithAdaptiveDayArchitectPlan(
+    $0.SaveZenithAdaptiveDayArchitectPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithAdaptiveDayArchitectPlan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AcceptOrReplanZenithDayArchitectResponse>
+      acceptOrReplanZenithDayArchitect(
+    $0.AcceptOrReplanZenithDayArchitectRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$acceptOrReplanZenithDayArchitect, request,
+        options: options);
+  }
+
+  /// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+  $grpc.ResponseFuture<$0.GetZenithIntentionOutcomeWorkbenchResponse>
+      getZenithIntentionOutcomeWorkbench(
+    $0.GetZenithIntentionOutcomeWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithIntentionOutcomeWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithIntentionOutcomeContractResponse>
+      saveZenithIntentionOutcomeContract(
+    $0.SaveZenithIntentionOutcomeContractRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithIntentionOutcomeContract, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompleteZenithIntentionOutcomeLoopResponse>
+      completeZenithIntentionOutcomeLoop(
+    $0.CompleteZenithIntentionOutcomeLoopRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$completeZenithIntentionOutcomeLoop, request,
+        options: options);
+  }
+
+  /// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+  $grpc.ResponseFuture<$0.GetZenithAttentionNOf1LabWorkbenchResponse>
+      getZenithAttentionNOf1LabWorkbench(
+    $0.GetZenithAttentionNOf1LabWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithAttentionNOf1LabWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithAttentionNOf1ExperimentResponse>
+      saveZenithAttentionNOf1Experiment(
+    $0.SaveZenithAttentionNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithAttentionNOf1Experiment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EvaluateZenithAttentionNOf1ExperimentResponse>
+      evaluateZenithAttentionNOf1Experiment(
+    $0.EvaluateZenithAttentionNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$evaluateZenithAttentionNOf1Experiment, request,
+        options: options);
+  }
+
+  /// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+  $grpc.ResponseFuture<$0.GetZenithRecoveryProtocolStudioWorkbenchResponse>
+      getZenithRecoveryProtocolStudioWorkbench(
+    $0.GetZenithRecoveryProtocolStudioWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithRecoveryProtocolStudioWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithRecoveryProtocolRunResponse>
+      saveZenithRecoveryProtocolRun(
+    $0.SaveZenithRecoveryProtocolRunRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithRecoveryProtocolRun, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordZenithRecoveryCheckOrAdverseFlagResponse>
+      recordZenithRecoveryCheckOrAdverseFlag(
+    $0.RecordZenithRecoveryCheckOrAdverseFlagRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordZenithRecoveryCheckOrAdverseFlag, request,
+        options: options);
+  }
+
+  /// Choice 6 (Z10): Communication Boundaries
+  $grpc.ResponseFuture<$0.GetZenithCommunicationBoundaryWorkbenchResponse>
+      getZenithCommunicationBoundaryWorkbench(
+    $0.GetZenithCommunicationBoundaryWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithCommunicationBoundaryWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithCommunicationBoundaryRuleResponse>
+      saveZenithCommunicationBoundaryRule(
+    $0.SaveZenithCommunicationBoundaryRuleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithCommunicationBoundaryRule, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveOrReleaseZenithBoundaryCatchupResponse>
+      approveOrReleaseZenithBoundaryCatchup(
+    $0.ApproveOrReleaseZenithBoundaryCatchupRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveOrReleaseZenithBoundaryCatchup, request,
+        options: options);
+  }
+
+  /// Choice 7 (Z5): Cognitive Readiness Battery
+  $grpc.ResponseFuture<$0.GetZenithCognitiveReadinessWorkbenchResponse>
+      getZenithCognitiveReadinessWorkbench(
+    $0.GetZenithCognitiveReadinessWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithCognitiveReadinessWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithCognitiveReadinessSessionResponse>
+      saveZenithCognitiveReadinessSession(
+    $0.SaveZenithCognitiveReadinessSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithCognitiveReadinessSession, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FlagOrValidateZenithCognitiveSessionResponse>
+      flagOrValidateZenithCognitiveSession(
+    $0.FlagOrValidateZenithCognitiveSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$flagOrValidateZenithCognitiveSession, request,
+        options: options);
+  }
+
+  /// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+  $grpc.ResponseFuture<$0.GetZenithPrivatePatternMemoryWorkbenchResponse>
+      getZenithPrivatePatternMemoryWorkbench(
+    $0.GetZenithPrivatePatternMemoryWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithPrivatePatternMemoryWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithPrivatePatternMemoryResponse>
+      saveZenithPrivatePatternMemory(
+    $0.SaveZenithPrivatePatternMemoryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithPrivatePatternMemory, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EditOrDeleteZenithPrivatePatternMemoryResponse>
+      editOrDeleteZenithPrivatePatternMemory(
+    $0.EditOrDeleteZenithPrivatePatternMemoryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$editOrDeleteZenithPrivatePatternMemory, request,
+        options: options);
+  }
+
+  /// Choice 9 (Z7): Travel Performance
+  $grpc.ResponseFuture<$0.GetZenithTravelPerformanceWorkbenchResponse>
+      getZenithTravelPerformanceWorkbench(
+    $0.GetZenithTravelPerformanceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithTravelPerformanceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithTravelPerformanceProtocolResponse>
+      saveZenithTravelPerformanceProtocol(
+    $0.SaveZenithTravelPerformanceProtocolRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithTravelPerformanceProtocol, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReplanZenithTravelMissedStepResponse>
+      replanZenithTravelMissedStep(
+    $0.ReplanZenithTravelMissedStepRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$replanZenithTravelMissedStep, request,
+        options: options);
+  }
+
+  /// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+  $grpc.ResponseFuture<$0.GetZenithCoachingTeamMeetingWorkbenchResponse>
+      getZenithCoachingTeamMeetingWorkbench(
+    $0.GetZenithCoachingTeamMeetingWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithCoachingTeamMeetingWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithCoachingTeamMeetingHealthResponse>
+      saveZenithCoachingTeamMeetingHealth(
+    $0.SaveZenithCoachingTeamMeetingHealthRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithCoachingTeamMeetingHealth, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ProposeZenithMeetingFreeOrOracleHandoffResponse>
+      proposeZenithMeetingFreeOrOracleHandoff(
+    $0.ProposeZenithMeetingFreeOrOracleHandoffRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$proposeZenithMeetingFreeOrOracleHandoff, request,
+        options: options);
+  }
+
+  /// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+  $grpc.ResponseFuture<$0.GetZenithSensoryDesktopWorkbenchResponse>
+      getZenithSensoryDesktopWorkbench(
+    $0.GetZenithSensoryDesktopWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getZenithSensoryDesktopWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveZenithSensoryDesktopWorkspaceResponse>
+      saveZenithSensoryDesktopWorkspace(
+    $0.SaveZenithSensoryDesktopWorkspaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveZenithSensoryDesktopWorkspace, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ArmOrFallbackZenithSensoryWorkspaceResponse>
+      armOrFallbackZenithSensoryWorkspace(
+    $0.ArmOrFallbackZenithSensoryWorkspaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$armOrFallbackZenithSensoryWorkspace, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$logFocusSession =
@@ -621,6 +931,233 @@ class ZenithServiceClient extends $grpc.Client {
       '/sttattus.zenith.v1.ZenithService/CancelLoungeBooking',
       ($0.CancelLoungeBookingRequest value) => value.writeToBuffer(),
       $0.CancelLoungeBookingResponse.fromBuffer);
+  static final _$getZenithFocusFirewallWorkbench = $grpc.ClientMethod<
+          $0.GetZenithFocusFirewallWorkbenchRequest,
+          $0.GetZenithFocusFirewallWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithFocusFirewallWorkbench',
+      ($0.GetZenithFocusFirewallWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithFocusFirewallWorkbenchResponse.fromBuffer);
+  static final _$saveZenithFocusFirewallSession = $grpc.ClientMethod<
+          $0.SaveZenithFocusFirewallSessionRequest,
+          $0.SaveZenithFocusFirewallSessionResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithFocusFirewallSession',
+      ($0.SaveZenithFocusFirewallSessionRequest value) => value.writeToBuffer(),
+      $0.SaveZenithFocusFirewallSessionResponse.fromBuffer);
+  static final _$triggerZenithFocusFirewallBypassOrComplete = $grpc.ClientMethod<
+          $0.TriggerZenithFocusFirewallBypassOrCompleteRequest,
+          $0.TriggerZenithFocusFirewallBypassOrCompleteResponse>(
+      '/sttattus.zenith.v1.ZenithService/TriggerZenithFocusFirewallBypassOrComplete',
+      ($0.TriggerZenithFocusFirewallBypassOrCompleteRequest value) =>
+          value.writeToBuffer(),
+      $0.TriggerZenithFocusFirewallBypassOrCompleteResponse.fromBuffer);
+  static final _$getZenithAdaptiveDayArchitectWorkbench = $grpc.ClientMethod<
+          $0.GetZenithAdaptiveDayArchitectWorkbenchRequest,
+          $0.GetZenithAdaptiveDayArchitectWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithAdaptiveDayArchitectWorkbench',
+      ($0.GetZenithAdaptiveDayArchitectWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithAdaptiveDayArchitectWorkbenchResponse.fromBuffer);
+  static final _$saveZenithAdaptiveDayArchitectPlan = $grpc.ClientMethod<
+          $0.SaveZenithAdaptiveDayArchitectPlanRequest,
+          $0.SaveZenithAdaptiveDayArchitectPlanResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithAdaptiveDayArchitectPlan',
+      ($0.SaveZenithAdaptiveDayArchitectPlanRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithAdaptiveDayArchitectPlanResponse.fromBuffer);
+  static final _$acceptOrReplanZenithDayArchitect = $grpc.ClientMethod<
+          $0.AcceptOrReplanZenithDayArchitectRequest,
+          $0.AcceptOrReplanZenithDayArchitectResponse>(
+      '/sttattus.zenith.v1.ZenithService/AcceptOrReplanZenithDayArchitect',
+      ($0.AcceptOrReplanZenithDayArchitectRequest value) =>
+          value.writeToBuffer(),
+      $0.AcceptOrReplanZenithDayArchitectResponse.fromBuffer);
+  static final _$getZenithIntentionOutcomeWorkbench = $grpc.ClientMethod<
+          $0.GetZenithIntentionOutcomeWorkbenchRequest,
+          $0.GetZenithIntentionOutcomeWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithIntentionOutcomeWorkbench',
+      ($0.GetZenithIntentionOutcomeWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithIntentionOutcomeWorkbenchResponse.fromBuffer);
+  static final _$saveZenithIntentionOutcomeContract = $grpc.ClientMethod<
+          $0.SaveZenithIntentionOutcomeContractRequest,
+          $0.SaveZenithIntentionOutcomeContractResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithIntentionOutcomeContract',
+      ($0.SaveZenithIntentionOutcomeContractRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithIntentionOutcomeContractResponse.fromBuffer);
+  static final _$completeZenithIntentionOutcomeLoop = $grpc.ClientMethod<
+          $0.CompleteZenithIntentionOutcomeLoopRequest,
+          $0.CompleteZenithIntentionOutcomeLoopResponse>(
+      '/sttattus.zenith.v1.ZenithService/CompleteZenithIntentionOutcomeLoop',
+      ($0.CompleteZenithIntentionOutcomeLoopRequest value) =>
+          value.writeToBuffer(),
+      $0.CompleteZenithIntentionOutcomeLoopResponse.fromBuffer);
+  static final _$getZenithAttentionNOf1LabWorkbench = $grpc.ClientMethod<
+          $0.GetZenithAttentionNOf1LabWorkbenchRequest,
+          $0.GetZenithAttentionNOf1LabWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithAttentionNOf1LabWorkbench',
+      ($0.GetZenithAttentionNOf1LabWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithAttentionNOf1LabWorkbenchResponse.fromBuffer);
+  static final _$saveZenithAttentionNOf1Experiment = $grpc.ClientMethod<
+          $0.SaveZenithAttentionNOf1ExperimentRequest,
+          $0.SaveZenithAttentionNOf1ExperimentResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithAttentionNOf1Experiment',
+      ($0.SaveZenithAttentionNOf1ExperimentRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithAttentionNOf1ExperimentResponse.fromBuffer);
+  static final _$evaluateZenithAttentionNOf1Experiment = $grpc.ClientMethod<
+          $0.EvaluateZenithAttentionNOf1ExperimentRequest,
+          $0.EvaluateZenithAttentionNOf1ExperimentResponse>(
+      '/sttattus.zenith.v1.ZenithService/EvaluateZenithAttentionNOf1Experiment',
+      ($0.EvaluateZenithAttentionNOf1ExperimentRequest value) =>
+          value.writeToBuffer(),
+      $0.EvaluateZenithAttentionNOf1ExperimentResponse.fromBuffer);
+  static final _$getZenithRecoveryProtocolStudioWorkbench = $grpc.ClientMethod<
+          $0.GetZenithRecoveryProtocolStudioWorkbenchRequest,
+          $0.GetZenithRecoveryProtocolStudioWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithRecoveryProtocolStudioWorkbench',
+      ($0.GetZenithRecoveryProtocolStudioWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithRecoveryProtocolStudioWorkbenchResponse.fromBuffer);
+  static final _$saveZenithRecoveryProtocolRun = $grpc.ClientMethod<
+          $0.SaveZenithRecoveryProtocolRunRequest,
+          $0.SaveZenithRecoveryProtocolRunResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithRecoveryProtocolRun',
+      ($0.SaveZenithRecoveryProtocolRunRequest value) => value.writeToBuffer(),
+      $0.SaveZenithRecoveryProtocolRunResponse.fromBuffer);
+  static final _$recordZenithRecoveryCheckOrAdverseFlag = $grpc.ClientMethod<
+          $0.RecordZenithRecoveryCheckOrAdverseFlagRequest,
+          $0.RecordZenithRecoveryCheckOrAdverseFlagResponse>(
+      '/sttattus.zenith.v1.ZenithService/RecordZenithRecoveryCheckOrAdverseFlag',
+      ($0.RecordZenithRecoveryCheckOrAdverseFlagRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordZenithRecoveryCheckOrAdverseFlagResponse.fromBuffer);
+  static final _$getZenithCommunicationBoundaryWorkbench = $grpc.ClientMethod<
+          $0.GetZenithCommunicationBoundaryWorkbenchRequest,
+          $0.GetZenithCommunicationBoundaryWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithCommunicationBoundaryWorkbench',
+      ($0.GetZenithCommunicationBoundaryWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithCommunicationBoundaryWorkbenchResponse.fromBuffer);
+  static final _$saveZenithCommunicationBoundaryRule = $grpc.ClientMethod<
+          $0.SaveZenithCommunicationBoundaryRuleRequest,
+          $0.SaveZenithCommunicationBoundaryRuleResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithCommunicationBoundaryRule',
+      ($0.SaveZenithCommunicationBoundaryRuleRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithCommunicationBoundaryRuleResponse.fromBuffer);
+  static final _$approveOrReleaseZenithBoundaryCatchup = $grpc.ClientMethod<
+          $0.ApproveOrReleaseZenithBoundaryCatchupRequest,
+          $0.ApproveOrReleaseZenithBoundaryCatchupResponse>(
+      '/sttattus.zenith.v1.ZenithService/ApproveOrReleaseZenithBoundaryCatchup',
+      ($0.ApproveOrReleaseZenithBoundaryCatchupRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveOrReleaseZenithBoundaryCatchupResponse.fromBuffer);
+  static final _$getZenithCognitiveReadinessWorkbench = $grpc.ClientMethod<
+          $0.GetZenithCognitiveReadinessWorkbenchRequest,
+          $0.GetZenithCognitiveReadinessWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithCognitiveReadinessWorkbench',
+      ($0.GetZenithCognitiveReadinessWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithCognitiveReadinessWorkbenchResponse.fromBuffer);
+  static final _$saveZenithCognitiveReadinessSession = $grpc.ClientMethod<
+          $0.SaveZenithCognitiveReadinessSessionRequest,
+          $0.SaveZenithCognitiveReadinessSessionResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithCognitiveReadinessSession',
+      ($0.SaveZenithCognitiveReadinessSessionRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithCognitiveReadinessSessionResponse.fromBuffer);
+  static final _$flagOrValidateZenithCognitiveSession = $grpc.ClientMethod<
+          $0.FlagOrValidateZenithCognitiveSessionRequest,
+          $0.FlagOrValidateZenithCognitiveSessionResponse>(
+      '/sttattus.zenith.v1.ZenithService/FlagOrValidateZenithCognitiveSession',
+      ($0.FlagOrValidateZenithCognitiveSessionRequest value) =>
+          value.writeToBuffer(),
+      $0.FlagOrValidateZenithCognitiveSessionResponse.fromBuffer);
+  static final _$getZenithPrivatePatternMemoryWorkbench = $grpc.ClientMethod<
+          $0.GetZenithPrivatePatternMemoryWorkbenchRequest,
+          $0.GetZenithPrivatePatternMemoryWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithPrivatePatternMemoryWorkbench',
+      ($0.GetZenithPrivatePatternMemoryWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithPrivatePatternMemoryWorkbenchResponse.fromBuffer);
+  static final _$saveZenithPrivatePatternMemory = $grpc.ClientMethod<
+          $0.SaveZenithPrivatePatternMemoryRequest,
+          $0.SaveZenithPrivatePatternMemoryResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithPrivatePatternMemory',
+      ($0.SaveZenithPrivatePatternMemoryRequest value) => value.writeToBuffer(),
+      $0.SaveZenithPrivatePatternMemoryResponse.fromBuffer);
+  static final _$editOrDeleteZenithPrivatePatternMemory = $grpc.ClientMethod<
+          $0.EditOrDeleteZenithPrivatePatternMemoryRequest,
+          $0.EditOrDeleteZenithPrivatePatternMemoryResponse>(
+      '/sttattus.zenith.v1.ZenithService/EditOrDeleteZenithPrivatePatternMemory',
+      ($0.EditOrDeleteZenithPrivatePatternMemoryRequest value) =>
+          value.writeToBuffer(),
+      $0.EditOrDeleteZenithPrivatePatternMemoryResponse.fromBuffer);
+  static final _$getZenithTravelPerformanceWorkbench = $grpc.ClientMethod<
+          $0.GetZenithTravelPerformanceWorkbenchRequest,
+          $0.GetZenithTravelPerformanceWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithTravelPerformanceWorkbench',
+      ($0.GetZenithTravelPerformanceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithTravelPerformanceWorkbenchResponse.fromBuffer);
+  static final _$saveZenithTravelPerformanceProtocol = $grpc.ClientMethod<
+          $0.SaveZenithTravelPerformanceProtocolRequest,
+          $0.SaveZenithTravelPerformanceProtocolResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithTravelPerformanceProtocol',
+      ($0.SaveZenithTravelPerformanceProtocolRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithTravelPerformanceProtocolResponse.fromBuffer);
+  static final _$replanZenithTravelMissedStep = $grpc.ClientMethod<
+          $0.ReplanZenithTravelMissedStepRequest,
+          $0.ReplanZenithTravelMissedStepResponse>(
+      '/sttattus.zenith.v1.ZenithService/ReplanZenithTravelMissedStep',
+      ($0.ReplanZenithTravelMissedStepRequest value) => value.writeToBuffer(),
+      $0.ReplanZenithTravelMissedStepResponse.fromBuffer);
+  static final _$getZenithCoachingTeamMeetingWorkbench = $grpc.ClientMethod<
+          $0.GetZenithCoachingTeamMeetingWorkbenchRequest,
+          $0.GetZenithCoachingTeamMeetingWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithCoachingTeamMeetingWorkbench',
+      ($0.GetZenithCoachingTeamMeetingWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithCoachingTeamMeetingWorkbenchResponse.fromBuffer);
+  static final _$saveZenithCoachingTeamMeetingHealth = $grpc.ClientMethod<
+          $0.SaveZenithCoachingTeamMeetingHealthRequest,
+          $0.SaveZenithCoachingTeamMeetingHealthResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithCoachingTeamMeetingHealth',
+      ($0.SaveZenithCoachingTeamMeetingHealthRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithCoachingTeamMeetingHealthResponse.fromBuffer);
+  static final _$proposeZenithMeetingFreeOrOracleHandoff = $grpc.ClientMethod<
+          $0.ProposeZenithMeetingFreeOrOracleHandoffRequest,
+          $0.ProposeZenithMeetingFreeOrOracleHandoffResponse>(
+      '/sttattus.zenith.v1.ZenithService/ProposeZenithMeetingFreeOrOracleHandoff',
+      ($0.ProposeZenithMeetingFreeOrOracleHandoffRequest value) =>
+          value.writeToBuffer(),
+      $0.ProposeZenithMeetingFreeOrOracleHandoffResponse.fromBuffer);
+  static final _$getZenithSensoryDesktopWorkbench = $grpc.ClientMethod<
+          $0.GetZenithSensoryDesktopWorkbenchRequest,
+          $0.GetZenithSensoryDesktopWorkbenchResponse>(
+      '/sttattus.zenith.v1.ZenithService/GetZenithSensoryDesktopWorkbench',
+      ($0.GetZenithSensoryDesktopWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetZenithSensoryDesktopWorkbenchResponse.fromBuffer);
+  static final _$saveZenithSensoryDesktopWorkspace = $grpc.ClientMethod<
+          $0.SaveZenithSensoryDesktopWorkspaceRequest,
+          $0.SaveZenithSensoryDesktopWorkspaceResponse>(
+      '/sttattus.zenith.v1.ZenithService/SaveZenithSensoryDesktopWorkspace',
+      ($0.SaveZenithSensoryDesktopWorkspaceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveZenithSensoryDesktopWorkspaceResponse.fromBuffer);
+  static final _$armOrFallbackZenithSensoryWorkspace = $grpc.ClientMethod<
+          $0.ArmOrFallbackZenithSensoryWorkspaceRequest,
+          $0.ArmOrFallbackZenithSensoryWorkspaceResponse>(
+      '/sttattus.zenith.v1.ZenithService/ArmOrFallbackZenithSensoryWorkspace',
+      ($0.ArmOrFallbackZenithSensoryWorkspaceRequest value) =>
+          value.writeToBuffer(),
+      $0.ArmOrFallbackZenithSensoryWorkspaceResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.zenith.v1.ZenithService')
@@ -1042,6 +1579,357 @@ abstract class ZenithServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.CancelLoungeBookingRequest.fromBuffer(value),
         ($0.CancelLoungeBookingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetZenithFocusFirewallWorkbenchRequest,
+            $0.GetZenithFocusFirewallWorkbenchResponse>(
+        'GetZenithFocusFirewallWorkbench',
+        getZenithFocusFirewallWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithFocusFirewallWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithFocusFirewallWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithFocusFirewallSessionRequest,
+            $0.SaveZenithFocusFirewallSessionResponse>(
+        'SaveZenithFocusFirewallSession',
+        saveZenithFocusFirewallSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithFocusFirewallSessionRequest.fromBuffer(value),
+        ($0.SaveZenithFocusFirewallSessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.TriggerZenithFocusFirewallBypassOrCompleteRequest,
+            $0.TriggerZenithFocusFirewallBypassOrCompleteResponse>(
+        'TriggerZenithFocusFirewallBypassOrComplete',
+        triggerZenithFocusFirewallBypassOrComplete_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TriggerZenithFocusFirewallBypassOrCompleteRequest.fromBuffer(
+                value),
+        ($0.TriggerZenithFocusFirewallBypassOrCompleteResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithAdaptiveDayArchitectWorkbenchRequest,
+            $0.GetZenithAdaptiveDayArchitectWorkbenchResponse>(
+        'GetZenithAdaptiveDayArchitectWorkbench',
+        getZenithAdaptiveDayArchitectWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithAdaptiveDayArchitectWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithAdaptiveDayArchitectWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithAdaptiveDayArchitectPlanRequest,
+            $0.SaveZenithAdaptiveDayArchitectPlanResponse>(
+        'SaveZenithAdaptiveDayArchitectPlan',
+        saveZenithAdaptiveDayArchitectPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithAdaptiveDayArchitectPlanRequest.fromBuffer(value),
+        ($0.SaveZenithAdaptiveDayArchitectPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AcceptOrReplanZenithDayArchitectRequest,
+            $0.AcceptOrReplanZenithDayArchitectResponse>(
+        'AcceptOrReplanZenithDayArchitect',
+        acceptOrReplanZenithDayArchitect_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AcceptOrReplanZenithDayArchitectRequest.fromBuffer(value),
+        ($0.AcceptOrReplanZenithDayArchitectResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetZenithIntentionOutcomeWorkbenchRequest,
+            $0.GetZenithIntentionOutcomeWorkbenchResponse>(
+        'GetZenithIntentionOutcomeWorkbench',
+        getZenithIntentionOutcomeWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithIntentionOutcomeWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithIntentionOutcomeWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithIntentionOutcomeContractRequest,
+            $0.SaveZenithIntentionOutcomeContractResponse>(
+        'SaveZenithIntentionOutcomeContract',
+        saveZenithIntentionOutcomeContract_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithIntentionOutcomeContractRequest.fromBuffer(value),
+        ($0.SaveZenithIntentionOutcomeContractResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompleteZenithIntentionOutcomeLoopRequest,
+            $0.CompleteZenithIntentionOutcomeLoopResponse>(
+        'CompleteZenithIntentionOutcomeLoop',
+        completeZenithIntentionOutcomeLoop_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompleteZenithIntentionOutcomeLoopRequest.fromBuffer(value),
+        ($0.CompleteZenithIntentionOutcomeLoopResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetZenithAttentionNOf1LabWorkbenchRequest,
+            $0.GetZenithAttentionNOf1LabWorkbenchResponse>(
+        'GetZenithAttentionNOf1LabWorkbench',
+        getZenithAttentionNOf1LabWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithAttentionNOf1LabWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithAttentionNOf1LabWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithAttentionNOf1ExperimentRequest,
+            $0.SaveZenithAttentionNOf1ExperimentResponse>(
+        'SaveZenithAttentionNOf1Experiment',
+        saveZenithAttentionNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithAttentionNOf1ExperimentRequest.fromBuffer(value),
+        ($0.SaveZenithAttentionNOf1ExperimentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.EvaluateZenithAttentionNOf1ExperimentRequest,
+            $0.EvaluateZenithAttentionNOf1ExperimentResponse>(
+        'EvaluateZenithAttentionNOf1Experiment',
+        evaluateZenithAttentionNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EvaluateZenithAttentionNOf1ExperimentRequest.fromBuffer(value),
+        ($0.EvaluateZenithAttentionNOf1ExperimentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithRecoveryProtocolStudioWorkbenchRequest,
+            $0.GetZenithRecoveryProtocolStudioWorkbenchResponse>(
+        'GetZenithRecoveryProtocolStudioWorkbench',
+        getZenithRecoveryProtocolStudioWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithRecoveryProtocolStudioWorkbenchRequest.fromBuffer(
+                value),
+        ($0.GetZenithRecoveryProtocolStudioWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithRecoveryProtocolRunRequest,
+            $0.SaveZenithRecoveryProtocolRunResponse>(
+        'SaveZenithRecoveryProtocolRun',
+        saveZenithRecoveryProtocolRun_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithRecoveryProtocolRunRequest.fromBuffer(value),
+        ($0.SaveZenithRecoveryProtocolRunResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecordZenithRecoveryCheckOrAdverseFlagRequest,
+            $0.RecordZenithRecoveryCheckOrAdverseFlagResponse>(
+        'RecordZenithRecoveryCheckOrAdverseFlag',
+        recordZenithRecoveryCheckOrAdverseFlag_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordZenithRecoveryCheckOrAdverseFlagRequest.fromBuffer(value),
+        ($0.RecordZenithRecoveryCheckOrAdverseFlagResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithCommunicationBoundaryWorkbenchRequest,
+            $0.GetZenithCommunicationBoundaryWorkbenchResponse>(
+        'GetZenithCommunicationBoundaryWorkbench',
+        getZenithCommunicationBoundaryWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithCommunicationBoundaryWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithCommunicationBoundaryWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveZenithCommunicationBoundaryRuleRequest,
+            $0.SaveZenithCommunicationBoundaryRuleResponse>(
+        'SaveZenithCommunicationBoundaryRule',
+        saveZenithCommunicationBoundaryRule_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithCommunicationBoundaryRuleRequest.fromBuffer(value),
+        ($0.SaveZenithCommunicationBoundaryRuleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ApproveOrReleaseZenithBoundaryCatchupRequest,
+            $0.ApproveOrReleaseZenithBoundaryCatchupResponse>(
+        'ApproveOrReleaseZenithBoundaryCatchup',
+        approveOrReleaseZenithBoundaryCatchup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveOrReleaseZenithBoundaryCatchupRequest.fromBuffer(value),
+        ($0.ApproveOrReleaseZenithBoundaryCatchupResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithCognitiveReadinessWorkbenchRequest,
+            $0.GetZenithCognitiveReadinessWorkbenchResponse>(
+        'GetZenithCognitiveReadinessWorkbench',
+        getZenithCognitiveReadinessWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithCognitiveReadinessWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithCognitiveReadinessWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveZenithCognitiveReadinessSessionRequest,
+            $0.SaveZenithCognitiveReadinessSessionResponse>(
+        'SaveZenithCognitiveReadinessSession',
+        saveZenithCognitiveReadinessSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithCognitiveReadinessSessionRequest.fromBuffer(value),
+        ($0.SaveZenithCognitiveReadinessSessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.FlagOrValidateZenithCognitiveSessionRequest,
+            $0.FlagOrValidateZenithCognitiveSessionResponse>(
+        'FlagOrValidateZenithCognitiveSession',
+        flagOrValidateZenithCognitiveSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FlagOrValidateZenithCognitiveSessionRequest.fromBuffer(value),
+        ($0.FlagOrValidateZenithCognitiveSessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithPrivatePatternMemoryWorkbenchRequest,
+            $0.GetZenithPrivatePatternMemoryWorkbenchResponse>(
+        'GetZenithPrivatePatternMemoryWorkbench',
+        getZenithPrivatePatternMemoryWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithPrivatePatternMemoryWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithPrivatePatternMemoryWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithPrivatePatternMemoryRequest,
+            $0.SaveZenithPrivatePatternMemoryResponse>(
+        'SaveZenithPrivatePatternMemory',
+        saveZenithPrivatePatternMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithPrivatePatternMemoryRequest.fromBuffer(value),
+        ($0.SaveZenithPrivatePatternMemoryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.EditOrDeleteZenithPrivatePatternMemoryRequest,
+            $0.EditOrDeleteZenithPrivatePatternMemoryResponse>(
+        'EditOrDeleteZenithPrivatePatternMemory',
+        editOrDeleteZenithPrivatePatternMemory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EditOrDeleteZenithPrivatePatternMemoryRequest.fromBuffer(value),
+        ($0.EditOrDeleteZenithPrivatePatternMemoryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithTravelPerformanceWorkbenchRequest,
+            $0.GetZenithTravelPerformanceWorkbenchResponse>(
+        'GetZenithTravelPerformanceWorkbench',
+        getZenithTravelPerformanceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithTravelPerformanceWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithTravelPerformanceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveZenithTravelPerformanceProtocolRequest,
+            $0.SaveZenithTravelPerformanceProtocolResponse>(
+        'SaveZenithTravelPerformanceProtocol',
+        saveZenithTravelPerformanceProtocol_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithTravelPerformanceProtocolRequest.fromBuffer(value),
+        ($0.SaveZenithTravelPerformanceProtocolResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReplanZenithTravelMissedStepRequest,
+            $0.ReplanZenithTravelMissedStepResponse>(
+        'ReplanZenithTravelMissedStep',
+        replanZenithTravelMissedStep_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReplanZenithTravelMissedStepRequest.fromBuffer(value),
+        ($0.ReplanZenithTravelMissedStepResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetZenithCoachingTeamMeetingWorkbenchRequest,
+            $0.GetZenithCoachingTeamMeetingWorkbenchResponse>(
+        'GetZenithCoachingTeamMeetingWorkbench',
+        getZenithCoachingTeamMeetingWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithCoachingTeamMeetingWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithCoachingTeamMeetingWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveZenithCoachingTeamMeetingHealthRequest,
+            $0.SaveZenithCoachingTeamMeetingHealthResponse>(
+        'SaveZenithCoachingTeamMeetingHealth',
+        saveZenithCoachingTeamMeetingHealth_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithCoachingTeamMeetingHealthRequest.fromBuffer(value),
+        ($0.SaveZenithCoachingTeamMeetingHealthResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ProposeZenithMeetingFreeOrOracleHandoffRequest,
+            $0.ProposeZenithMeetingFreeOrOracleHandoffResponse>(
+        'ProposeZenithMeetingFreeOrOracleHandoff',
+        proposeZenithMeetingFreeOrOracleHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ProposeZenithMeetingFreeOrOracleHandoffRequest.fromBuffer(value),
+        ($0.ProposeZenithMeetingFreeOrOracleHandoffResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetZenithSensoryDesktopWorkbenchRequest,
+            $0.GetZenithSensoryDesktopWorkbenchResponse>(
+        'GetZenithSensoryDesktopWorkbench',
+        getZenithSensoryDesktopWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetZenithSensoryDesktopWorkbenchRequest.fromBuffer(value),
+        ($0.GetZenithSensoryDesktopWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveZenithSensoryDesktopWorkspaceRequest,
+            $0.SaveZenithSensoryDesktopWorkspaceResponse>(
+        'SaveZenithSensoryDesktopWorkspace',
+        saveZenithSensoryDesktopWorkspace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveZenithSensoryDesktopWorkspaceRequest.fromBuffer(value),
+        ($0.SaveZenithSensoryDesktopWorkspaceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ArmOrFallbackZenithSensoryWorkspaceRequest,
+            $0.ArmOrFallbackZenithSensoryWorkspaceResponse>(
+        'ArmOrFallbackZenithSensoryWorkspace',
+        armOrFallbackZenithSensoryWorkspace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ArmOrFallbackZenithSensoryWorkspaceRequest.fromBuffer(value),
+        ($0.ArmOrFallbackZenithSensoryWorkspaceResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.LogFocusSessionResponse> logFocusSession_Pre(
@@ -1455,4 +2343,400 @@ abstract class ZenithServiceBase extends $grpc.Service {
 
   $async.Future<$0.CancelLoungeBookingResponse> cancelLoungeBooking(
       $grpc.ServiceCall call, $0.CancelLoungeBookingRequest request);
+
+  $async.Future<$0.GetZenithFocusFirewallWorkbenchResponse>
+      getZenithFocusFirewallWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithFocusFirewallWorkbenchRequest>
+              $request) async {
+    return getZenithFocusFirewallWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithFocusFirewallWorkbenchResponse>
+      getZenithFocusFirewallWorkbench($grpc.ServiceCall call,
+          $0.GetZenithFocusFirewallWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithFocusFirewallSessionResponse>
+      saveZenithFocusFirewallSession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithFocusFirewallSessionRequest>
+              $request) async {
+    return saveZenithFocusFirewallSession($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithFocusFirewallSessionResponse>
+      saveZenithFocusFirewallSession($grpc.ServiceCall call,
+          $0.SaveZenithFocusFirewallSessionRequest request);
+
+  $async.Future<$0.TriggerZenithFocusFirewallBypassOrCompleteResponse>
+      triggerZenithFocusFirewallBypassOrComplete_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.TriggerZenithFocusFirewallBypassOrCompleteRequest>
+              $request) async {
+    return triggerZenithFocusFirewallBypassOrComplete($call, await $request);
+  }
+
+  $async.Future<$0.TriggerZenithFocusFirewallBypassOrCompleteResponse>
+      triggerZenithFocusFirewallBypassOrComplete($grpc.ServiceCall call,
+          $0.TriggerZenithFocusFirewallBypassOrCompleteRequest request);
+
+  $async.Future<$0.GetZenithAdaptiveDayArchitectWorkbenchResponse>
+      getZenithAdaptiveDayArchitectWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithAdaptiveDayArchitectWorkbenchRequest>
+              $request) async {
+    return getZenithAdaptiveDayArchitectWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithAdaptiveDayArchitectWorkbenchResponse>
+      getZenithAdaptiveDayArchitectWorkbench($grpc.ServiceCall call,
+          $0.GetZenithAdaptiveDayArchitectWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithAdaptiveDayArchitectPlanResponse>
+      saveZenithAdaptiveDayArchitectPlan_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithAdaptiveDayArchitectPlanRequest>
+              $request) async {
+    return saveZenithAdaptiveDayArchitectPlan($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithAdaptiveDayArchitectPlanResponse>
+      saveZenithAdaptiveDayArchitectPlan($grpc.ServiceCall call,
+          $0.SaveZenithAdaptiveDayArchitectPlanRequest request);
+
+  $async.Future<$0.AcceptOrReplanZenithDayArchitectResponse>
+      acceptOrReplanZenithDayArchitect_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AcceptOrReplanZenithDayArchitectRequest>
+              $request) async {
+    return acceptOrReplanZenithDayArchitect($call, await $request);
+  }
+
+  $async.Future<$0.AcceptOrReplanZenithDayArchitectResponse>
+      acceptOrReplanZenithDayArchitect($grpc.ServiceCall call,
+          $0.AcceptOrReplanZenithDayArchitectRequest request);
+
+  $async.Future<$0.GetZenithIntentionOutcomeWorkbenchResponse>
+      getZenithIntentionOutcomeWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithIntentionOutcomeWorkbenchRequest>
+              $request) async {
+    return getZenithIntentionOutcomeWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithIntentionOutcomeWorkbenchResponse>
+      getZenithIntentionOutcomeWorkbench($grpc.ServiceCall call,
+          $0.GetZenithIntentionOutcomeWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithIntentionOutcomeContractResponse>
+      saveZenithIntentionOutcomeContract_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithIntentionOutcomeContractRequest>
+              $request) async {
+    return saveZenithIntentionOutcomeContract($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithIntentionOutcomeContractResponse>
+      saveZenithIntentionOutcomeContract($grpc.ServiceCall call,
+          $0.SaveZenithIntentionOutcomeContractRequest request);
+
+  $async.Future<$0.CompleteZenithIntentionOutcomeLoopResponse>
+      completeZenithIntentionOutcomeLoop_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CompleteZenithIntentionOutcomeLoopRequest>
+              $request) async {
+    return completeZenithIntentionOutcomeLoop($call, await $request);
+  }
+
+  $async.Future<$0.CompleteZenithIntentionOutcomeLoopResponse>
+      completeZenithIntentionOutcomeLoop($grpc.ServiceCall call,
+          $0.CompleteZenithIntentionOutcomeLoopRequest request);
+
+  $async.Future<$0.GetZenithAttentionNOf1LabWorkbenchResponse>
+      getZenithAttentionNOf1LabWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithAttentionNOf1LabWorkbenchRequest>
+              $request) async {
+    return getZenithAttentionNOf1LabWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithAttentionNOf1LabWorkbenchResponse>
+      getZenithAttentionNOf1LabWorkbench($grpc.ServiceCall call,
+          $0.GetZenithAttentionNOf1LabWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithAttentionNOf1ExperimentResponse>
+      saveZenithAttentionNOf1Experiment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithAttentionNOf1ExperimentRequest>
+              $request) async {
+    return saveZenithAttentionNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithAttentionNOf1ExperimentResponse>
+      saveZenithAttentionNOf1Experiment($grpc.ServiceCall call,
+          $0.SaveZenithAttentionNOf1ExperimentRequest request);
+
+  $async.Future<$0.EvaluateZenithAttentionNOf1ExperimentResponse>
+      evaluateZenithAttentionNOf1Experiment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EvaluateZenithAttentionNOf1ExperimentRequest>
+              $request) async {
+    return evaluateZenithAttentionNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.EvaluateZenithAttentionNOf1ExperimentResponse>
+      evaluateZenithAttentionNOf1Experiment($grpc.ServiceCall call,
+          $0.EvaluateZenithAttentionNOf1ExperimentRequest request);
+
+  $async.Future<$0.GetZenithRecoveryProtocolStudioWorkbenchResponse>
+      getZenithRecoveryProtocolStudioWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithRecoveryProtocolStudioWorkbenchRequest>
+              $request) async {
+    return getZenithRecoveryProtocolStudioWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithRecoveryProtocolStudioWorkbenchResponse>
+      getZenithRecoveryProtocolStudioWorkbench($grpc.ServiceCall call,
+          $0.GetZenithRecoveryProtocolStudioWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithRecoveryProtocolRunResponse>
+      saveZenithRecoveryProtocolRun_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithRecoveryProtocolRunRequest>
+              $request) async {
+    return saveZenithRecoveryProtocolRun($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithRecoveryProtocolRunResponse>
+      saveZenithRecoveryProtocolRun($grpc.ServiceCall call,
+          $0.SaveZenithRecoveryProtocolRunRequest request);
+
+  $async.Future<$0.RecordZenithRecoveryCheckOrAdverseFlagResponse>
+      recordZenithRecoveryCheckOrAdverseFlag_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordZenithRecoveryCheckOrAdverseFlagRequest>
+              $request) async {
+    return recordZenithRecoveryCheckOrAdverseFlag($call, await $request);
+  }
+
+  $async.Future<$0.RecordZenithRecoveryCheckOrAdverseFlagResponse>
+      recordZenithRecoveryCheckOrAdverseFlag($grpc.ServiceCall call,
+          $0.RecordZenithRecoveryCheckOrAdverseFlagRequest request);
+
+  $async.Future<$0.GetZenithCommunicationBoundaryWorkbenchResponse>
+      getZenithCommunicationBoundaryWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithCommunicationBoundaryWorkbenchRequest>
+              $request) async {
+    return getZenithCommunicationBoundaryWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithCommunicationBoundaryWorkbenchResponse>
+      getZenithCommunicationBoundaryWorkbench($grpc.ServiceCall call,
+          $0.GetZenithCommunicationBoundaryWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithCommunicationBoundaryRuleResponse>
+      saveZenithCommunicationBoundaryRule_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithCommunicationBoundaryRuleRequest>
+              $request) async {
+    return saveZenithCommunicationBoundaryRule($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithCommunicationBoundaryRuleResponse>
+      saveZenithCommunicationBoundaryRule($grpc.ServiceCall call,
+          $0.SaveZenithCommunicationBoundaryRuleRequest request);
+
+  $async.Future<$0.ApproveOrReleaseZenithBoundaryCatchupResponse>
+      approveOrReleaseZenithBoundaryCatchup_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveOrReleaseZenithBoundaryCatchupRequest>
+              $request) async {
+    return approveOrReleaseZenithBoundaryCatchup($call, await $request);
+  }
+
+  $async.Future<$0.ApproveOrReleaseZenithBoundaryCatchupResponse>
+      approveOrReleaseZenithBoundaryCatchup($grpc.ServiceCall call,
+          $0.ApproveOrReleaseZenithBoundaryCatchupRequest request);
+
+  $async.Future<$0.GetZenithCognitiveReadinessWorkbenchResponse>
+      getZenithCognitiveReadinessWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithCognitiveReadinessWorkbenchRequest>
+              $request) async {
+    return getZenithCognitiveReadinessWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithCognitiveReadinessWorkbenchResponse>
+      getZenithCognitiveReadinessWorkbench($grpc.ServiceCall call,
+          $0.GetZenithCognitiveReadinessWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithCognitiveReadinessSessionResponse>
+      saveZenithCognitiveReadinessSession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithCognitiveReadinessSessionRequest>
+              $request) async {
+    return saveZenithCognitiveReadinessSession($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithCognitiveReadinessSessionResponse>
+      saveZenithCognitiveReadinessSession($grpc.ServiceCall call,
+          $0.SaveZenithCognitiveReadinessSessionRequest request);
+
+  $async.Future<$0.FlagOrValidateZenithCognitiveSessionResponse>
+      flagOrValidateZenithCognitiveSession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.FlagOrValidateZenithCognitiveSessionRequest>
+              $request) async {
+    return flagOrValidateZenithCognitiveSession($call, await $request);
+  }
+
+  $async.Future<$0.FlagOrValidateZenithCognitiveSessionResponse>
+      flagOrValidateZenithCognitiveSession($grpc.ServiceCall call,
+          $0.FlagOrValidateZenithCognitiveSessionRequest request);
+
+  $async.Future<$0.GetZenithPrivatePatternMemoryWorkbenchResponse>
+      getZenithPrivatePatternMemoryWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithPrivatePatternMemoryWorkbenchRequest>
+              $request) async {
+    return getZenithPrivatePatternMemoryWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithPrivatePatternMemoryWorkbenchResponse>
+      getZenithPrivatePatternMemoryWorkbench($grpc.ServiceCall call,
+          $0.GetZenithPrivatePatternMemoryWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithPrivatePatternMemoryResponse>
+      saveZenithPrivatePatternMemory_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithPrivatePatternMemoryRequest>
+              $request) async {
+    return saveZenithPrivatePatternMemory($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithPrivatePatternMemoryResponse>
+      saveZenithPrivatePatternMemory($grpc.ServiceCall call,
+          $0.SaveZenithPrivatePatternMemoryRequest request);
+
+  $async.Future<$0.EditOrDeleteZenithPrivatePatternMemoryResponse>
+      editOrDeleteZenithPrivatePatternMemory_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EditOrDeleteZenithPrivatePatternMemoryRequest>
+              $request) async {
+    return editOrDeleteZenithPrivatePatternMemory($call, await $request);
+  }
+
+  $async.Future<$0.EditOrDeleteZenithPrivatePatternMemoryResponse>
+      editOrDeleteZenithPrivatePatternMemory($grpc.ServiceCall call,
+          $0.EditOrDeleteZenithPrivatePatternMemoryRequest request);
+
+  $async.Future<$0.GetZenithTravelPerformanceWorkbenchResponse>
+      getZenithTravelPerformanceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithTravelPerformanceWorkbenchRequest>
+              $request) async {
+    return getZenithTravelPerformanceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithTravelPerformanceWorkbenchResponse>
+      getZenithTravelPerformanceWorkbench($grpc.ServiceCall call,
+          $0.GetZenithTravelPerformanceWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithTravelPerformanceProtocolResponse>
+      saveZenithTravelPerformanceProtocol_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithTravelPerformanceProtocolRequest>
+              $request) async {
+    return saveZenithTravelPerformanceProtocol($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithTravelPerformanceProtocolResponse>
+      saveZenithTravelPerformanceProtocol($grpc.ServiceCall call,
+          $0.SaveZenithTravelPerformanceProtocolRequest request);
+
+  $async.Future<$0.ReplanZenithTravelMissedStepResponse>
+      replanZenithTravelMissedStep_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReplanZenithTravelMissedStepRequest>
+              $request) async {
+    return replanZenithTravelMissedStep($call, await $request);
+  }
+
+  $async.Future<$0.ReplanZenithTravelMissedStepResponse>
+      replanZenithTravelMissedStep($grpc.ServiceCall call,
+          $0.ReplanZenithTravelMissedStepRequest request);
+
+  $async.Future<$0.GetZenithCoachingTeamMeetingWorkbenchResponse>
+      getZenithCoachingTeamMeetingWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithCoachingTeamMeetingWorkbenchRequest>
+              $request) async {
+    return getZenithCoachingTeamMeetingWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithCoachingTeamMeetingWorkbenchResponse>
+      getZenithCoachingTeamMeetingWorkbench($grpc.ServiceCall call,
+          $0.GetZenithCoachingTeamMeetingWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithCoachingTeamMeetingHealthResponse>
+      saveZenithCoachingTeamMeetingHealth_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithCoachingTeamMeetingHealthRequest>
+              $request) async {
+    return saveZenithCoachingTeamMeetingHealth($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithCoachingTeamMeetingHealthResponse>
+      saveZenithCoachingTeamMeetingHealth($grpc.ServiceCall call,
+          $0.SaveZenithCoachingTeamMeetingHealthRequest request);
+
+  $async.Future<$0.ProposeZenithMeetingFreeOrOracleHandoffResponse>
+      proposeZenithMeetingFreeOrOracleHandoff_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ProposeZenithMeetingFreeOrOracleHandoffRequest>
+              $request) async {
+    return proposeZenithMeetingFreeOrOracleHandoff($call, await $request);
+  }
+
+  $async.Future<$0.ProposeZenithMeetingFreeOrOracleHandoffResponse>
+      proposeZenithMeetingFreeOrOracleHandoff($grpc.ServiceCall call,
+          $0.ProposeZenithMeetingFreeOrOracleHandoffRequest request);
+
+  $async.Future<$0.GetZenithSensoryDesktopWorkbenchResponse>
+      getZenithSensoryDesktopWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetZenithSensoryDesktopWorkbenchRequest>
+              $request) async {
+    return getZenithSensoryDesktopWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetZenithSensoryDesktopWorkbenchResponse>
+      getZenithSensoryDesktopWorkbench($grpc.ServiceCall call,
+          $0.GetZenithSensoryDesktopWorkbenchRequest request);
+
+  $async.Future<$0.SaveZenithSensoryDesktopWorkspaceResponse>
+      saveZenithSensoryDesktopWorkspace_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveZenithSensoryDesktopWorkspaceRequest>
+              $request) async {
+    return saveZenithSensoryDesktopWorkspace($call, await $request);
+  }
+
+  $async.Future<$0.SaveZenithSensoryDesktopWorkspaceResponse>
+      saveZenithSensoryDesktopWorkspace($grpc.ServiceCall call,
+          $0.SaveZenithSensoryDesktopWorkspaceRequest request);
+
+  $async.Future<$0.ArmOrFallbackZenithSensoryWorkspaceResponse>
+      armOrFallbackZenithSensoryWorkspace_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ArmOrFallbackZenithSensoryWorkspaceRequest>
+              $request) async {
+    return armOrFallbackZenithSensoryWorkspace($call, await $request);
+  }
+
+  $async.Future<$0.ArmOrFallbackZenithSensoryWorkspaceResponse>
+      armOrFallbackZenithSensoryWorkspace($grpc.ServiceCall call,
+          $0.ArmOrFallbackZenithSensoryWorkspaceRequest request);
 }

@@ -619,6 +619,224 @@ class DatingServiceClient extends $grpc.Client {
     return $createUnaryCall(_$removeVoiceBaseline, request, options: options);
   }
 
+  /// --- Atlas Choice 12 (AT11): Relationship Progression and Separation ---
+  $grpc.ResponseFuture<$0.GetRelationshipProgressionWorkbenchResponse>
+      getRelationshipProgressionWorkbench(
+    $0.GetRelationshipProgressionWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getRelationshipProgressionWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertRelationshipStageAgreementResponse>
+      upsertRelationshipStageAgreement(
+    $0.UpsertRelationshipStageAgreementRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertRelationshipStageAgreement, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordRelationshipCheckinReflectionResponse>
+      recordRelationshipCheckinReflection(
+    $0.RecordRelationshipCheckinReflectionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordRelationshipCheckinReflection, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InitiateSafeUncouplingPlanResponse>
+      initiateSafeUncouplingPlan(
+    $0.InitiateSafeUncouplingPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$initiateSafeUncouplingPlan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListRelationshipProgressionAuditResponse>
+      adminListRelationshipProgressionAudit(
+    $0.AdminListRelationshipProgressionAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListRelationshipProgressionAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateRelationshipPromptSafetyResponse>
+      adminModerateRelationshipPromptSafety(
+    $0.AdminModerateRelationshipPromptSafetyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateRelationshipPromptSafety, request,
+        options: options);
+  }
+
+  /// --- Atlas Choice 13 (AT12): Friendship, Crews, and Missions ---
+  $grpc.ResponseFuture<$0.GetFriendshipCrewsWorkbenchResponse>
+      getFriendshipCrewsWorkbench(
+    $0.GetFriendshipCrewsWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getFriendshipCrewsWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateTemporaryCrewResponse> createTemporaryCrew(
+    $0.CreateTemporaryCrewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createTemporaryCrew, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCrewMissionEvidenceResponse>
+      submitCrewMissionEvidence(
+    $0.SubmitCrewMissionEvidenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitCrewMissionEvidence, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DissolveOrCompleteCrewResponse>
+      dissolveOrCompleteCrew(
+    $0.DissolveOrCompleteCrewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$dissolveOrCompleteCrew, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListFriendshipCrewsAuditResponse>
+      adminListFriendshipCrewsAudit(
+    $0.AdminListFriendshipCrewsAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListFriendshipCrewsAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateCrewSafetyAndMissionResponse>
+      adminModerateCrewSafetyAndMission(
+    $0.AdminModerateCrewSafetyAndMissionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateCrewSafetyAndMission, request,
+        options: options);
+  }
+
+  /// --- Atlas Choice 14 (AT13): Connection Archive and Meaningful Gifting ---
+  $grpc.ResponseFuture<$0.GetConnectionArchiveWorkbenchResponse>
+      getConnectionArchiveWorkbench(
+    $0.GetConnectionArchiveWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getConnectionArchiveWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertConnectionArchiveEntryResponse>
+      upsertConnectionArchiveEntry(
+    $0.UpsertConnectionArchiveEntryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertConnectionArchiveEntry, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SendMeaningfulGuardedGiftResponse>
+      sendMeaningfulGuardedGift(
+    $0.SendMeaningfulGuardedGiftRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$sendMeaningfulGuardedGift, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveYearbookPreviewManifestResponse>
+      approveYearbookPreviewManifest(
+    $0.ApproveYearbookPreviewManifestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveYearbookPreviewManifest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListConnectionArchiveAuditResponse>
+      adminListConnectionArchiveAudit(
+    $0.AdminListConnectionArchiveAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListConnectionArchiveAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminResolveGiftOrArchiveDisputeResponse>
+      adminResolveGiftOrArchiveDispute(
+    $0.AdminResolveGiftOrArchiveDisputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminResolveGiftOrArchiveDispute, request,
+        options: options);
+  }
+
+  /// --- Atlas Choice 15 (AT15): Inclusive and Global Release Certification ---
+  $grpc.ResponseFuture<$0.GetInclusiveGlobalReleaseWorkbenchResponse>
+      getInclusiveGlobalReleaseWorkbench(
+    $0.GetInclusiveGlobalReleaseWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getInclusiveGlobalReleaseWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateAccessibleInclusionProfileResponse>
+      updateAccessibleInclusionProfile(
+    $0.UpdateAccessibleInclusionProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateAccessibleInclusionProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GeneratePortableConnectionBundleResponse>
+      generatePortableConnectionBundle(
+    $0.GeneratePortableConnectionBundleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generatePortableConnectionBundle, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyJurisdictionOfflineSafetyPackResponse>
+      verifyJurisdictionOfflineSafetyPack(
+    $0.VerifyJurisdictionOfflineSafetyPackRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyJurisdictionOfflineSafetyPack, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListGlobalReleaseCertificationAuditResponse>
+      adminListGlobalReleaseCertificationAudit(
+    $0.AdminListGlobalReleaseCertificationAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListGlobalReleaseCertificationAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminCertifyJurisdictionReleaseGateResponse>
+      adminCertifyJurisdictionReleaseGate(
+    $0.AdminCertifyJurisdictionReleaseGateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminCertifyJurisdictionReleaseGate, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$getProfile =
@@ -1009,6 +1227,162 @@ class DatingServiceClient extends $grpc.Client {
       '/sttattus.dating.v1.DatingService/RemoveVoiceBaseline',
       ($0.RemoveVoiceBaselineRequest value) => value.writeToBuffer(),
       $0.RemoveVoiceBaselineResponse.fromBuffer);
+  static final _$getRelationshipProgressionWorkbench = $grpc.ClientMethod<
+          $0.GetRelationshipProgressionWorkbenchRequest,
+          $0.GetRelationshipProgressionWorkbenchResponse>(
+      '/sttattus.dating.v1.DatingService/GetRelationshipProgressionWorkbench',
+      ($0.GetRelationshipProgressionWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetRelationshipProgressionWorkbenchResponse.fromBuffer);
+  static final _$upsertRelationshipStageAgreement = $grpc.ClientMethod<
+          $0.UpsertRelationshipStageAgreementRequest,
+          $0.UpsertRelationshipStageAgreementResponse>(
+      '/sttattus.dating.v1.DatingService/UpsertRelationshipStageAgreement',
+      ($0.UpsertRelationshipStageAgreementRequest value) =>
+          value.writeToBuffer(),
+      $0.UpsertRelationshipStageAgreementResponse.fromBuffer);
+  static final _$recordRelationshipCheckinReflection = $grpc.ClientMethod<
+          $0.RecordRelationshipCheckinReflectionRequest,
+          $0.RecordRelationshipCheckinReflectionResponse>(
+      '/sttattus.dating.v1.DatingService/RecordRelationshipCheckinReflection',
+      ($0.RecordRelationshipCheckinReflectionRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordRelationshipCheckinReflectionResponse.fromBuffer);
+  static final _$initiateSafeUncouplingPlan = $grpc.ClientMethod<
+          $0.InitiateSafeUncouplingPlanRequest,
+          $0.InitiateSafeUncouplingPlanResponse>(
+      '/sttattus.dating.v1.DatingService/InitiateSafeUncouplingPlan',
+      ($0.InitiateSafeUncouplingPlanRequest value) => value.writeToBuffer(),
+      $0.InitiateSafeUncouplingPlanResponse.fromBuffer);
+  static final _$adminListRelationshipProgressionAudit = $grpc.ClientMethod<
+          $0.AdminListRelationshipProgressionAuditRequest,
+          $0.AdminListRelationshipProgressionAuditResponse>(
+      '/sttattus.dating.v1.DatingService/AdminListRelationshipProgressionAudit',
+      ($0.AdminListRelationshipProgressionAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListRelationshipProgressionAuditResponse.fromBuffer);
+  static final _$adminModerateRelationshipPromptSafety = $grpc.ClientMethod<
+          $0.AdminModerateRelationshipPromptSafetyRequest,
+          $0.AdminModerateRelationshipPromptSafetyResponse>(
+      '/sttattus.dating.v1.DatingService/AdminModerateRelationshipPromptSafety',
+      ($0.AdminModerateRelationshipPromptSafetyRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateRelationshipPromptSafetyResponse.fromBuffer);
+  static final _$getFriendshipCrewsWorkbench = $grpc.ClientMethod<
+          $0.GetFriendshipCrewsWorkbenchRequest,
+          $0.GetFriendshipCrewsWorkbenchResponse>(
+      '/sttattus.dating.v1.DatingService/GetFriendshipCrewsWorkbench',
+      ($0.GetFriendshipCrewsWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetFriendshipCrewsWorkbenchResponse.fromBuffer);
+  static final _$createTemporaryCrew = $grpc.ClientMethod<
+          $0.CreateTemporaryCrewRequest, $0.CreateTemporaryCrewResponse>(
+      '/sttattus.dating.v1.DatingService/CreateTemporaryCrew',
+      ($0.CreateTemporaryCrewRequest value) => value.writeToBuffer(),
+      $0.CreateTemporaryCrewResponse.fromBuffer);
+  static final _$submitCrewMissionEvidence = $grpc.ClientMethod<
+          $0.SubmitCrewMissionEvidenceRequest,
+          $0.SubmitCrewMissionEvidenceResponse>(
+      '/sttattus.dating.v1.DatingService/SubmitCrewMissionEvidence',
+      ($0.SubmitCrewMissionEvidenceRequest value) => value.writeToBuffer(),
+      $0.SubmitCrewMissionEvidenceResponse.fromBuffer);
+  static final _$dissolveOrCompleteCrew = $grpc.ClientMethod<
+          $0.DissolveOrCompleteCrewRequest, $0.DissolveOrCompleteCrewResponse>(
+      '/sttattus.dating.v1.DatingService/DissolveOrCompleteCrew',
+      ($0.DissolveOrCompleteCrewRequest value) => value.writeToBuffer(),
+      $0.DissolveOrCompleteCrewResponse.fromBuffer);
+  static final _$adminListFriendshipCrewsAudit = $grpc.ClientMethod<
+          $0.AdminListFriendshipCrewsAuditRequest,
+          $0.AdminListFriendshipCrewsAuditResponse>(
+      '/sttattus.dating.v1.DatingService/AdminListFriendshipCrewsAudit',
+      ($0.AdminListFriendshipCrewsAuditRequest value) => value.writeToBuffer(),
+      $0.AdminListFriendshipCrewsAuditResponse.fromBuffer);
+  static final _$adminModerateCrewSafetyAndMission = $grpc.ClientMethod<
+          $0.AdminModerateCrewSafetyAndMissionRequest,
+          $0.AdminModerateCrewSafetyAndMissionResponse>(
+      '/sttattus.dating.v1.DatingService/AdminModerateCrewSafetyAndMission',
+      ($0.AdminModerateCrewSafetyAndMissionRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateCrewSafetyAndMissionResponse.fromBuffer);
+  static final _$getConnectionArchiveWorkbench = $grpc.ClientMethod<
+          $0.GetConnectionArchiveWorkbenchRequest,
+          $0.GetConnectionArchiveWorkbenchResponse>(
+      '/sttattus.dating.v1.DatingService/GetConnectionArchiveWorkbench',
+      ($0.GetConnectionArchiveWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetConnectionArchiveWorkbenchResponse.fromBuffer);
+  static final _$upsertConnectionArchiveEntry = $grpc.ClientMethod<
+          $0.UpsertConnectionArchiveEntryRequest,
+          $0.UpsertConnectionArchiveEntryResponse>(
+      '/sttattus.dating.v1.DatingService/UpsertConnectionArchiveEntry',
+      ($0.UpsertConnectionArchiveEntryRequest value) => value.writeToBuffer(),
+      $0.UpsertConnectionArchiveEntryResponse.fromBuffer);
+  static final _$sendMeaningfulGuardedGift = $grpc.ClientMethod<
+          $0.SendMeaningfulGuardedGiftRequest,
+          $0.SendMeaningfulGuardedGiftResponse>(
+      '/sttattus.dating.v1.DatingService/SendMeaningfulGuardedGift',
+      ($0.SendMeaningfulGuardedGiftRequest value) => value.writeToBuffer(),
+      $0.SendMeaningfulGuardedGiftResponse.fromBuffer);
+  static final _$approveYearbookPreviewManifest = $grpc.ClientMethod<
+          $0.ApproveYearbookPreviewManifestRequest,
+          $0.ApproveYearbookPreviewManifestResponse>(
+      '/sttattus.dating.v1.DatingService/ApproveYearbookPreviewManifest',
+      ($0.ApproveYearbookPreviewManifestRequest value) => value.writeToBuffer(),
+      $0.ApproveYearbookPreviewManifestResponse.fromBuffer);
+  static final _$adminListConnectionArchiveAudit = $grpc.ClientMethod<
+          $0.AdminListConnectionArchiveAuditRequest,
+          $0.AdminListConnectionArchiveAuditResponse>(
+      '/sttattus.dating.v1.DatingService/AdminListConnectionArchiveAudit',
+      ($0.AdminListConnectionArchiveAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListConnectionArchiveAuditResponse.fromBuffer);
+  static final _$adminResolveGiftOrArchiveDispute = $grpc.ClientMethod<
+          $0.AdminResolveGiftOrArchiveDisputeRequest,
+          $0.AdminResolveGiftOrArchiveDisputeResponse>(
+      '/sttattus.dating.v1.DatingService/AdminResolveGiftOrArchiveDispute',
+      ($0.AdminResolveGiftOrArchiveDisputeRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminResolveGiftOrArchiveDisputeResponse.fromBuffer);
+  static final _$getInclusiveGlobalReleaseWorkbench = $grpc.ClientMethod<
+          $0.GetInclusiveGlobalReleaseWorkbenchRequest,
+          $0.GetInclusiveGlobalReleaseWorkbenchResponse>(
+      '/sttattus.dating.v1.DatingService/GetInclusiveGlobalReleaseWorkbench',
+      ($0.GetInclusiveGlobalReleaseWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetInclusiveGlobalReleaseWorkbenchResponse.fromBuffer);
+  static final _$updateAccessibleInclusionProfile = $grpc.ClientMethod<
+          $0.UpdateAccessibleInclusionProfileRequest,
+          $0.UpdateAccessibleInclusionProfileResponse>(
+      '/sttattus.dating.v1.DatingService/UpdateAccessibleInclusionProfile',
+      ($0.UpdateAccessibleInclusionProfileRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateAccessibleInclusionProfileResponse.fromBuffer);
+  static final _$generatePortableConnectionBundle = $grpc.ClientMethod<
+          $0.GeneratePortableConnectionBundleRequest,
+          $0.GeneratePortableConnectionBundleResponse>(
+      '/sttattus.dating.v1.DatingService/GeneratePortableConnectionBundle',
+      ($0.GeneratePortableConnectionBundleRequest value) =>
+          value.writeToBuffer(),
+      $0.GeneratePortableConnectionBundleResponse.fromBuffer);
+  static final _$verifyJurisdictionOfflineSafetyPack = $grpc.ClientMethod<
+          $0.VerifyJurisdictionOfflineSafetyPackRequest,
+          $0.VerifyJurisdictionOfflineSafetyPackResponse>(
+      '/sttattus.dating.v1.DatingService/VerifyJurisdictionOfflineSafetyPack',
+      ($0.VerifyJurisdictionOfflineSafetyPackRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyJurisdictionOfflineSafetyPackResponse.fromBuffer);
+  static final _$adminListGlobalReleaseCertificationAudit = $grpc.ClientMethod<
+          $0.AdminListGlobalReleaseCertificationAuditRequest,
+          $0.AdminListGlobalReleaseCertificationAuditResponse>(
+      '/sttattus.dating.v1.DatingService/AdminListGlobalReleaseCertificationAudit',
+      ($0.AdminListGlobalReleaseCertificationAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListGlobalReleaseCertificationAuditResponse.fromBuffer);
+  static final _$adminCertifyJurisdictionReleaseGate = $grpc.ClientMethod<
+          $0.AdminCertifyJurisdictionReleaseGateRequest,
+          $0.AdminCertifyJurisdictionReleaseGateResponse>(
+      '/sttattus.dating.v1.DatingService/AdminCertifyJurisdictionReleaseGate',
+      ($0.AdminCertifyJurisdictionReleaseGateRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminCertifyJurisdictionReleaseGateResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dating.v1.DatingService')
@@ -1694,6 +2068,250 @@ abstract class DatingServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RemoveVoiceBaselineRequest.fromBuffer(value),
         ($0.RemoveVoiceBaselineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetRelationshipProgressionWorkbenchRequest,
+            $0.GetRelationshipProgressionWorkbenchResponse>(
+        'GetRelationshipProgressionWorkbench',
+        getRelationshipProgressionWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetRelationshipProgressionWorkbenchRequest.fromBuffer(value),
+        ($0.GetRelationshipProgressionWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertRelationshipStageAgreementRequest,
+            $0.UpsertRelationshipStageAgreementResponse>(
+        'UpsertRelationshipStageAgreement',
+        upsertRelationshipStageAgreement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertRelationshipStageAgreementRequest.fromBuffer(value),
+        ($0.UpsertRelationshipStageAgreementResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecordRelationshipCheckinReflectionRequest,
+            $0.RecordRelationshipCheckinReflectionResponse>(
+        'RecordRelationshipCheckinReflection',
+        recordRelationshipCheckinReflection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordRelationshipCheckinReflectionRequest.fromBuffer(value),
+        ($0.RecordRelationshipCheckinReflectionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InitiateSafeUncouplingPlanRequest,
+            $0.InitiateSafeUncouplingPlanResponse>(
+        'InitiateSafeUncouplingPlan',
+        initiateSafeUncouplingPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InitiateSafeUncouplingPlanRequest.fromBuffer(value),
+        ($0.InitiateSafeUncouplingPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminListRelationshipProgressionAuditRequest,
+            $0.AdminListRelationshipProgressionAuditResponse>(
+        'AdminListRelationshipProgressionAudit',
+        adminListRelationshipProgressionAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListRelationshipProgressionAuditRequest.fromBuffer(value),
+        ($0.AdminListRelationshipProgressionAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateRelationshipPromptSafetyRequest,
+            $0.AdminModerateRelationshipPromptSafetyResponse>(
+        'AdminModerateRelationshipPromptSafety',
+        adminModerateRelationshipPromptSafety_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateRelationshipPromptSafetyRequest.fromBuffer(value),
+        ($0.AdminModerateRelationshipPromptSafetyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetFriendshipCrewsWorkbenchRequest,
+            $0.GetFriendshipCrewsWorkbenchResponse>(
+        'GetFriendshipCrewsWorkbench',
+        getFriendshipCrewsWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetFriendshipCrewsWorkbenchRequest.fromBuffer(value),
+        ($0.GetFriendshipCrewsWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateTemporaryCrewRequest,
+            $0.CreateTemporaryCrewResponse>(
+        'CreateTemporaryCrew',
+        createTemporaryCrew_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateTemporaryCrewRequest.fromBuffer(value),
+        ($0.CreateTemporaryCrewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCrewMissionEvidenceRequest,
+            $0.SubmitCrewMissionEvidenceResponse>(
+        'SubmitCrewMissionEvidence',
+        submitCrewMissionEvidence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitCrewMissionEvidenceRequest.fromBuffer(value),
+        ($0.SubmitCrewMissionEvidenceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DissolveOrCompleteCrewRequest,
+            $0.DissolveOrCompleteCrewResponse>(
+        'DissolveOrCompleteCrew',
+        dissolveOrCompleteCrew_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DissolveOrCompleteCrewRequest.fromBuffer(value),
+        ($0.DissolveOrCompleteCrewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListFriendshipCrewsAuditRequest,
+            $0.AdminListFriendshipCrewsAuditResponse>(
+        'AdminListFriendshipCrewsAudit',
+        adminListFriendshipCrewsAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListFriendshipCrewsAuditRequest.fromBuffer(value),
+        ($0.AdminListFriendshipCrewsAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminModerateCrewSafetyAndMissionRequest,
+            $0.AdminModerateCrewSafetyAndMissionResponse>(
+        'AdminModerateCrewSafetyAndMission',
+        adminModerateCrewSafetyAndMission_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateCrewSafetyAndMissionRequest.fromBuffer(value),
+        ($0.AdminModerateCrewSafetyAndMissionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetConnectionArchiveWorkbenchRequest,
+            $0.GetConnectionArchiveWorkbenchResponse>(
+        'GetConnectionArchiveWorkbench',
+        getConnectionArchiveWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetConnectionArchiveWorkbenchRequest.fromBuffer(value),
+        ($0.GetConnectionArchiveWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertConnectionArchiveEntryRequest,
+            $0.UpsertConnectionArchiveEntryResponse>(
+        'UpsertConnectionArchiveEntry',
+        upsertConnectionArchiveEntry_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertConnectionArchiveEntryRequest.fromBuffer(value),
+        ($0.UpsertConnectionArchiveEntryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SendMeaningfulGuardedGiftRequest,
+            $0.SendMeaningfulGuardedGiftResponse>(
+        'SendMeaningfulGuardedGift',
+        sendMeaningfulGuardedGift_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SendMeaningfulGuardedGiftRequest.fromBuffer(value),
+        ($0.SendMeaningfulGuardedGiftResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApproveYearbookPreviewManifestRequest,
+            $0.ApproveYearbookPreviewManifestResponse>(
+        'ApproveYearbookPreviewManifest',
+        approveYearbookPreviewManifest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveYearbookPreviewManifestRequest.fromBuffer(value),
+        ($0.ApproveYearbookPreviewManifestResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListConnectionArchiveAuditRequest,
+            $0.AdminListConnectionArchiveAuditResponse>(
+        'AdminListConnectionArchiveAudit',
+        adminListConnectionArchiveAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListConnectionArchiveAuditRequest.fromBuffer(value),
+        ($0.AdminListConnectionArchiveAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminResolveGiftOrArchiveDisputeRequest,
+            $0.AdminResolveGiftOrArchiveDisputeResponse>(
+        'AdminResolveGiftOrArchiveDispute',
+        adminResolveGiftOrArchiveDispute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminResolveGiftOrArchiveDisputeRequest.fromBuffer(value),
+        ($0.AdminResolveGiftOrArchiveDisputeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetInclusiveGlobalReleaseWorkbenchRequest,
+            $0.GetInclusiveGlobalReleaseWorkbenchResponse>(
+        'GetInclusiveGlobalReleaseWorkbench',
+        getInclusiveGlobalReleaseWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetInclusiveGlobalReleaseWorkbenchRequest.fromBuffer(value),
+        ($0.GetInclusiveGlobalReleaseWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateAccessibleInclusionProfileRequest,
+            $0.UpdateAccessibleInclusionProfileResponse>(
+        'UpdateAccessibleInclusionProfile',
+        updateAccessibleInclusionProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateAccessibleInclusionProfileRequest.fromBuffer(value),
+        ($0.UpdateAccessibleInclusionProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GeneratePortableConnectionBundleRequest,
+            $0.GeneratePortableConnectionBundleResponse>(
+        'GeneratePortableConnectionBundle',
+        generatePortableConnectionBundle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GeneratePortableConnectionBundleRequest.fromBuffer(value),
+        ($0.GeneratePortableConnectionBundleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyJurisdictionOfflineSafetyPackRequest,
+            $0.VerifyJurisdictionOfflineSafetyPackResponse>(
+        'VerifyJurisdictionOfflineSafetyPack',
+        verifyJurisdictionOfflineSafetyPack_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyJurisdictionOfflineSafetyPackRequest.fromBuffer(value),
+        ($0.VerifyJurisdictionOfflineSafetyPackResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminListGlobalReleaseCertificationAuditRequest,
+            $0.AdminListGlobalReleaseCertificationAuditResponse>(
+        'AdminListGlobalReleaseCertificationAudit',
+        adminListGlobalReleaseCertificationAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListGlobalReleaseCertificationAuditRequest.fromBuffer(
+                value),
+        ($0.AdminListGlobalReleaseCertificationAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminCertifyJurisdictionReleaseGateRequest,
+            $0.AdminCertifyJurisdictionReleaseGateResponse>(
+        'AdminCertifyJurisdictionReleaseGate',
+        adminCertifyJurisdictionReleaseGate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminCertifyJurisdictionReleaseGateRequest.fromBuffer(value),
+        ($0.AdminCertifyJurisdictionReleaseGateResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.GetProfileResponse> getProfile_Pre($grpc.ServiceCall $call,
@@ -2378,4 +2996,276 @@ abstract class DatingServiceBase extends $grpc.Service {
 
   $async.Future<$0.RemoveVoiceBaselineResponse> removeVoiceBaseline(
       $grpc.ServiceCall call, $0.RemoveVoiceBaselineRequest request);
+
+  $async.Future<$0.GetRelationshipProgressionWorkbenchResponse>
+      getRelationshipProgressionWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetRelationshipProgressionWorkbenchRequest>
+              $request) async {
+    return getRelationshipProgressionWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetRelationshipProgressionWorkbenchResponse>
+      getRelationshipProgressionWorkbench($grpc.ServiceCall call,
+          $0.GetRelationshipProgressionWorkbenchRequest request);
+
+  $async.Future<$0.UpsertRelationshipStageAgreementResponse>
+      upsertRelationshipStageAgreement_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertRelationshipStageAgreementRequest>
+              $request) async {
+    return upsertRelationshipStageAgreement($call, await $request);
+  }
+
+  $async.Future<$0.UpsertRelationshipStageAgreementResponse>
+      upsertRelationshipStageAgreement($grpc.ServiceCall call,
+          $0.UpsertRelationshipStageAgreementRequest request);
+
+  $async.Future<$0.RecordRelationshipCheckinReflectionResponse>
+      recordRelationshipCheckinReflection_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordRelationshipCheckinReflectionRequest>
+              $request) async {
+    return recordRelationshipCheckinReflection($call, await $request);
+  }
+
+  $async.Future<$0.RecordRelationshipCheckinReflectionResponse>
+      recordRelationshipCheckinReflection($grpc.ServiceCall call,
+          $0.RecordRelationshipCheckinReflectionRequest request);
+
+  $async.Future<$0.InitiateSafeUncouplingPlanResponse>
+      initiateSafeUncouplingPlan_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.InitiateSafeUncouplingPlanRequest> $request) async {
+    return initiateSafeUncouplingPlan($call, await $request);
+  }
+
+  $async.Future<$0.InitiateSafeUncouplingPlanResponse>
+      initiateSafeUncouplingPlan(
+          $grpc.ServiceCall call, $0.InitiateSafeUncouplingPlanRequest request);
+
+  $async.Future<$0.AdminListRelationshipProgressionAuditResponse>
+      adminListRelationshipProgressionAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListRelationshipProgressionAuditRequest>
+              $request) async {
+    return adminListRelationshipProgressionAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListRelationshipProgressionAuditResponse>
+      adminListRelationshipProgressionAudit($grpc.ServiceCall call,
+          $0.AdminListRelationshipProgressionAuditRequest request);
+
+  $async.Future<$0.AdminModerateRelationshipPromptSafetyResponse>
+      adminModerateRelationshipPromptSafety_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateRelationshipPromptSafetyRequest>
+              $request) async {
+    return adminModerateRelationshipPromptSafety($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateRelationshipPromptSafetyResponse>
+      adminModerateRelationshipPromptSafety($grpc.ServiceCall call,
+          $0.AdminModerateRelationshipPromptSafetyRequest request);
+
+  $async.Future<$0.GetFriendshipCrewsWorkbenchResponse>
+      getFriendshipCrewsWorkbench_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetFriendshipCrewsWorkbenchRequest> $request) async {
+    return getFriendshipCrewsWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetFriendshipCrewsWorkbenchResponse>
+      getFriendshipCrewsWorkbench($grpc.ServiceCall call,
+          $0.GetFriendshipCrewsWorkbenchRequest request);
+
+  $async.Future<$0.CreateTemporaryCrewResponse> createTemporaryCrew_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.CreateTemporaryCrewRequest> $request) async {
+    return createTemporaryCrew($call, await $request);
+  }
+
+  $async.Future<$0.CreateTemporaryCrewResponse> createTemporaryCrew(
+      $grpc.ServiceCall call, $0.CreateTemporaryCrewRequest request);
+
+  $async.Future<$0.SubmitCrewMissionEvidenceResponse>
+      submitCrewMissionEvidence_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SubmitCrewMissionEvidenceRequest> $request) async {
+    return submitCrewMissionEvidence($call, await $request);
+  }
+
+  $async.Future<$0.SubmitCrewMissionEvidenceResponse> submitCrewMissionEvidence(
+      $grpc.ServiceCall call, $0.SubmitCrewMissionEvidenceRequest request);
+
+  $async.Future<$0.DissolveOrCompleteCrewResponse> dissolveOrCompleteCrew_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DissolveOrCompleteCrewRequest> $request) async {
+    return dissolveOrCompleteCrew($call, await $request);
+  }
+
+  $async.Future<$0.DissolveOrCompleteCrewResponse> dissolveOrCompleteCrew(
+      $grpc.ServiceCall call, $0.DissolveOrCompleteCrewRequest request);
+
+  $async.Future<$0.AdminListFriendshipCrewsAuditResponse>
+      adminListFriendshipCrewsAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListFriendshipCrewsAuditRequest>
+              $request) async {
+    return adminListFriendshipCrewsAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListFriendshipCrewsAuditResponse>
+      adminListFriendshipCrewsAudit($grpc.ServiceCall call,
+          $0.AdminListFriendshipCrewsAuditRequest request);
+
+  $async.Future<$0.AdminModerateCrewSafetyAndMissionResponse>
+      adminModerateCrewSafetyAndMission_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateCrewSafetyAndMissionRequest>
+              $request) async {
+    return adminModerateCrewSafetyAndMission($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateCrewSafetyAndMissionResponse>
+      adminModerateCrewSafetyAndMission($grpc.ServiceCall call,
+          $0.AdminModerateCrewSafetyAndMissionRequest request);
+
+  $async.Future<$0.GetConnectionArchiveWorkbenchResponse>
+      getConnectionArchiveWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetConnectionArchiveWorkbenchRequest>
+              $request) async {
+    return getConnectionArchiveWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetConnectionArchiveWorkbenchResponse>
+      getConnectionArchiveWorkbench($grpc.ServiceCall call,
+          $0.GetConnectionArchiveWorkbenchRequest request);
+
+  $async.Future<$0.UpsertConnectionArchiveEntryResponse>
+      upsertConnectionArchiveEntry_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertConnectionArchiveEntryRequest>
+              $request) async {
+    return upsertConnectionArchiveEntry($call, await $request);
+  }
+
+  $async.Future<$0.UpsertConnectionArchiveEntryResponse>
+      upsertConnectionArchiveEntry($grpc.ServiceCall call,
+          $0.UpsertConnectionArchiveEntryRequest request);
+
+  $async.Future<$0.SendMeaningfulGuardedGiftResponse>
+      sendMeaningfulGuardedGift_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SendMeaningfulGuardedGiftRequest> $request) async {
+    return sendMeaningfulGuardedGift($call, await $request);
+  }
+
+  $async.Future<$0.SendMeaningfulGuardedGiftResponse> sendMeaningfulGuardedGift(
+      $grpc.ServiceCall call, $0.SendMeaningfulGuardedGiftRequest request);
+
+  $async.Future<$0.ApproveYearbookPreviewManifestResponse>
+      approveYearbookPreviewManifest_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveYearbookPreviewManifestRequest>
+              $request) async {
+    return approveYearbookPreviewManifest($call, await $request);
+  }
+
+  $async.Future<$0.ApproveYearbookPreviewManifestResponse>
+      approveYearbookPreviewManifest($grpc.ServiceCall call,
+          $0.ApproveYearbookPreviewManifestRequest request);
+
+  $async.Future<$0.AdminListConnectionArchiveAuditResponse>
+      adminListConnectionArchiveAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListConnectionArchiveAuditRequest>
+              $request) async {
+    return adminListConnectionArchiveAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListConnectionArchiveAuditResponse>
+      adminListConnectionArchiveAudit($grpc.ServiceCall call,
+          $0.AdminListConnectionArchiveAuditRequest request);
+
+  $async.Future<$0.AdminResolveGiftOrArchiveDisputeResponse>
+      adminResolveGiftOrArchiveDispute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminResolveGiftOrArchiveDisputeRequest>
+              $request) async {
+    return adminResolveGiftOrArchiveDispute($call, await $request);
+  }
+
+  $async.Future<$0.AdminResolveGiftOrArchiveDisputeResponse>
+      adminResolveGiftOrArchiveDispute($grpc.ServiceCall call,
+          $0.AdminResolveGiftOrArchiveDisputeRequest request);
+
+  $async.Future<$0.GetInclusiveGlobalReleaseWorkbenchResponse>
+      getInclusiveGlobalReleaseWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetInclusiveGlobalReleaseWorkbenchRequest>
+              $request) async {
+    return getInclusiveGlobalReleaseWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetInclusiveGlobalReleaseWorkbenchResponse>
+      getInclusiveGlobalReleaseWorkbench($grpc.ServiceCall call,
+          $0.GetInclusiveGlobalReleaseWorkbenchRequest request);
+
+  $async.Future<$0.UpdateAccessibleInclusionProfileResponse>
+      updateAccessibleInclusionProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateAccessibleInclusionProfileRequest>
+              $request) async {
+    return updateAccessibleInclusionProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdateAccessibleInclusionProfileResponse>
+      updateAccessibleInclusionProfile($grpc.ServiceCall call,
+          $0.UpdateAccessibleInclusionProfileRequest request);
+
+  $async.Future<$0.GeneratePortableConnectionBundleResponse>
+      generatePortableConnectionBundle_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GeneratePortableConnectionBundleRequest>
+              $request) async {
+    return generatePortableConnectionBundle($call, await $request);
+  }
+
+  $async.Future<$0.GeneratePortableConnectionBundleResponse>
+      generatePortableConnectionBundle($grpc.ServiceCall call,
+          $0.GeneratePortableConnectionBundleRequest request);
+
+  $async.Future<$0.VerifyJurisdictionOfflineSafetyPackResponse>
+      verifyJurisdictionOfflineSafetyPack_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyJurisdictionOfflineSafetyPackRequest>
+              $request) async {
+    return verifyJurisdictionOfflineSafetyPack($call, await $request);
+  }
+
+  $async.Future<$0.VerifyJurisdictionOfflineSafetyPackResponse>
+      verifyJurisdictionOfflineSafetyPack($grpc.ServiceCall call,
+          $0.VerifyJurisdictionOfflineSafetyPackRequest request);
+
+  $async.Future<$0.AdminListGlobalReleaseCertificationAuditResponse>
+      adminListGlobalReleaseCertificationAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListGlobalReleaseCertificationAuditRequest>
+              $request) async {
+    return adminListGlobalReleaseCertificationAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListGlobalReleaseCertificationAuditResponse>
+      adminListGlobalReleaseCertificationAudit($grpc.ServiceCall call,
+          $0.AdminListGlobalReleaseCertificationAuditRequest request);
+
+  $async.Future<$0.AdminCertifyJurisdictionReleaseGateResponse>
+      adminCertifyJurisdictionReleaseGate_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminCertifyJurisdictionReleaseGateRequest>
+              $request) async {
+    return adminCertifyJurisdictionReleaseGate($call, await $request);
+  }
+
+  $async.Future<$0.AdminCertifyJurisdictionReleaseGateResponse>
+      adminCertifyJurisdictionReleaseGate($grpc.ServiceCall call,
+          $0.AdminCertifyJurisdictionReleaseGateRequest request);
 }

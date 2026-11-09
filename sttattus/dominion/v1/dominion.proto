@@ -560,6 +560,423 @@ message ListMyLoungePassesResponse {
   repeated LoungePass passes = 1;
 }
 
+// ============================================================================
+// Dominion Opportunity Choices 1–11 (D1..D15)
+// ============================================================================
+
+// Choice 1 (D1): Property Digital Twin and Registry Integrity
+message DominionPropertyDigitalTwinItem {
+  string id = 1;
+  string user_id = 2;
+  string twin_code = 3;
+  string property_and_parcel_identity = 4;
+  string jurisdiction_and_area_model = 5;
+  string ownership_and_deed_provenance = 6;
+  string version_and_conflict_resolution = 7;
+  string twin_state = 8;
+  bool duplicate_asset_prevention_enforced = 9;
+  string updated_at_iso = 10;
+}
+message GetDominionPropertyDigitalTwinWorkbenchRequest {}
+message GetDominionPropertyDigitalTwinWorkbenchResponse {
+  repeated DominionPropertyDigitalTwinItem twins = 1;
+  bool duplicate_asset_prevention_enforced = 2;
+  string canonical_registry_lineage_summary = 3;
+}
+message SaveDominionPropertyDigitalTwinRequest {
+  string twin_code = 1;
+  string property_and_parcel_identity = 2;
+  string jurisdiction_and_area_model = 3;
+  string ownership_and_deed_provenance = 4;
+  string version_and_conflict_resolution = 5;
+  string twin_state = 6;
+}
+message SaveDominionPropertyDigitalTwinResponse {
+  DominionPropertyDigitalTwinItem twin = 1;
+}
+message PropagateOrResolveDominionTwinConflictRequest {
+  string twin_code = 1;
+  string version_and_conflict_resolution = 2;
+  string twin_state = 3;
+}
+message PropagateOrResolveDominionTwinConflictResponse {
+  DominionPropertyDigitalTwinItem twin = 1;
+}
+
+// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+message DominionUnderwritingScenarioItem {
+  string id = 1;
+  string user_id = 2;
+  string scenario_code = 3;
+  string deal_title_and_strategy = 4;
+  string visible_assumptions_and_freshness = 5;
+  string return_metrics_and_sensitivity_band = 6;
+  string input_verification_disclosure = 7;
+  string scenario_state = 8;
+  bool export_screen_parity_verified = 9;
+  string updated_at_iso = 10;
+}
+message GetDominionUnderwritingLabWorkbenchRequest {}
+message GetDominionUnderwritingLabWorkbenchResponse {
+  repeated DominionUnderwritingScenarioItem scenarios = 1;
+  bool export_screen_parity_verified_enforced = 2;
+  string assumption_provenance_summary = 3;
+}
+message SaveDominionUnderwritingScenarioRequest {
+  string scenario_code = 1;
+  string deal_title_and_strategy = 2;
+  string visible_assumptions_and_freshness = 3;
+  string return_metrics_and_sensitivity_band = 4;
+  string input_verification_disclosure = 5;
+  string scenario_state = 6;
+}
+message SaveDominionUnderwritingScenarioResponse {
+  DominionUnderwritingScenarioItem scenario = 1;
+}
+message StressTestOrFreezeDominionScenarioRequest {
+  string scenario_code = 1;
+  string return_metrics_and_sensitivity_band = 2;
+  string scenario_state = 3;
+}
+message StressTestOrFreezeDominionScenarioResponse {
+  DominionUnderwritingScenarioItem scenario = 1;
+}
+
+// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+message DominionPropertyAccountingCloseItem {
+  string id = 1;
+  string user_id = 2;
+  string close_code = 3;
+  string property_and_period_label = 4;
+  string bank_reconciliation_and_data_quality = 5;
+  string pnl_cashflow_and_reserve_summary = 6;
+  string accountant_and_tax_export_digest = 7;
+  string close_state = 8;
+  bool double_entry_reversible_enforced = 9;
+  string updated_at_iso = 10;
+}
+message GetDominionPropertyAccountingWorkbenchRequest {}
+message GetDominionPropertyAccountingWorkbenchResponse {
+  repeated DominionPropertyAccountingCloseItem closes = 1;
+  bool double_entry_reversible_enforced = 2;
+  string immutable_close_and_reversal_summary = 3;
+}
+message SaveDominionPropertyAccountingCloseRequest {
+  string close_code = 1;
+  string property_and_period_label = 2;
+  string bank_reconciliation_and_data_quality = 3;
+  string pnl_cashflow_and_reserve_summary = 4;
+  string accountant_and_tax_export_digest = 5;
+  string close_state = 6;
+}
+message SaveDominionPropertyAccountingCloseResponse {
+  DominionPropertyAccountingCloseItem close = 1;
+}
+message LockOrReverseDominionAccountingCloseRequest {
+  string close_code = 1;
+  string accountant_and_tax_export_digest = 2;
+  string close_state = 3;
+}
+message LockOrReverseDominionAccountingCloseResponse {
+  DominionPropertyAccountingCloseItem close = 1;
+}
+
+// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+message DominionDocumentObligationVaultItem {
+  string id = 1;
+  string user_id = 2;
+  string obligation_code = 3;
+  string document_and_cited_passage = 4;
+  string jurisdiction_tax_or_permit_deadline = 5;
+  string completion_receipt_or_appeal_pack = 6;
+  string extraction_confidence_state = 7;
+  bool non_legal_opinion_boundary_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionDocumentObligationWorkbenchRequest {}
+message GetDominionDocumentObligationWorkbenchResponse {
+  repeated DominionDocumentObligationVaultItem obligations = 1;
+  bool non_legal_opinion_boundary_enforced = 2;
+  string receipt_before_completion_summary = 3;
+}
+message SaveDominionDocumentObligationRequest {
+  string obligation_code = 1;
+  string document_and_cited_passage = 2;
+  string jurisdiction_tax_or_permit_deadline = 3;
+  string completion_receipt_or_appeal_pack = 4;
+  string extraction_confidence_state = 5;
+}
+message SaveDominionDocumentObligationResponse {
+  DominionDocumentObligationVaultItem obligation = 1;
+}
+message ConfirmDominionObligationReceiptOrAppealRequest {
+  string obligation_code = 1;
+  string completion_receipt_or_appeal_pack = 2;
+  string extraction_confidence_state = 3;
+}
+message ConfirmDominionObligationReceiptOrAppealResponse {
+  DominionDocumentObligationVaultItem obligation = 1;
+}
+
+// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+message DominionLeasingResidentPortalItem {
+  string id = 1;
+  string user_id = 2;
+  string lease_code = 3;
+  string property_unit_and_tenancy_scope = 4;
+  string lease_terms_deposit_and_renewal = 5;
+  string partitioned_communication_summary = 6;
+  string portal_state = 7;
+  bool cross_tenant_isolation_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionLeasingResidentWorkbenchRequest {}
+message GetDominionLeasingResidentWorkbenchResponse {
+  repeated DominionLeasingResidentPortalItem leases = 1;
+  bool cross_tenant_isolation_enforced = 2;
+  string unit_scoped_partition_summary = 3;
+}
+message SaveDominionLeasingResidentPortalRequest {
+  string lease_code = 1;
+  string property_unit_and_tenancy_scope = 2;
+  string lease_terms_deposit_and_renewal = 3;
+  string partitioned_communication_summary = 4;
+  string portal_state = 5;
+}
+message SaveDominionLeasingResidentPortalResponse {
+  DominionLeasingResidentPortalItem lease = 1;
+}
+message ScheduleDominionRenewalOrDepositCloseRequest {
+  string lease_code = 1;
+  string lease_terms_deposit_and_renewal = 2;
+  string portal_state = 3;
+}
+message ScheduleDominionRenewalOrDepositCloseResponse {
+  DominionLeasingResidentPortalItem lease = 1;
+}
+
+// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+message DominionMaintenanceVendorNetworkItem {
+  string id = 1;
+  string user_id = 2;
+  string work_order_code = 3;
+  string issue_triage_and_sla_window = 4;
+  string vendor_credentials_and_normalized_bids = 5;
+  string three_way_invoice_and_warranty_match = 6;
+  string work_order_state = 7;
+  bool zero_pay_to_rank_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionMaintenanceVendorWorkbenchRequest {}
+message GetDominionMaintenanceVendorWorkbenchResponse {
+  repeated DominionMaintenanceVendorNetworkItem work_orders = 1;
+  bool zero_pay_to_rank_enforced = 2;
+  string three_way_invoice_match_summary = 3;
+}
+message SaveDominionMaintenanceWorkOrderRequest {
+  string work_order_code = 1;
+  string issue_triage_and_sla_window = 2;
+  string vendor_credentials_and_normalized_bids = 3;
+  string three_way_invoice_and_warranty_match = 4;
+  string work_order_state = 5;
+}
+message SaveDominionMaintenanceWorkOrderResponse {
+  DominionMaintenanceVendorNetworkItem work_order = 1;
+}
+message VerifyDominionThreeWayMatchOrWarrantyRequest {
+  string work_order_code = 1;
+  string three_way_invoice_and_warranty_match = 2;
+  string work_order_state = 3;
+}
+message VerifyDominionThreeWayMatchOrWarrantyResponse {
+  DominionMaintenanceVendorNetworkItem work_order = 1;
+}
+
+// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+message DominionCapitalProjectControlItem {
+  string id = 1;
+  string user_id = 2;
+  string project_code = 3;
+  string scope_permits_and_baseline_budget = 4;
+  string change_order_draw_and_lien_waiver = 5;
+  string offline_field_inspection_and_punchlist = 6;
+  string project_state = 7;
+  bool human_verified_change_orders_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionCapitalProjectWorkbenchRequest {}
+message GetDominionCapitalProjectWorkbenchResponse {
+  repeated DominionCapitalProjectControlItem projects = 1;
+  bool human_verified_change_orders_enforced = 2;
+  string retainage_and_lien_waiver_summary = 3;
+}
+message SaveDominionCapitalProjectControlRequest {
+  string project_code = 1;
+  string scope_permits_and_baseline_budget = 2;
+  string change_order_draw_and_lien_waiver = 3;
+  string offline_field_inspection_and_punchlist = 4;
+  string project_state = 5;
+}
+message SaveDominionCapitalProjectControlResponse {
+  DominionCapitalProjectControlItem project = 1;
+}
+message ApproveDominionDrawOrPunchlistCloseoutRequest {
+  string project_code = 1;
+  string change_order_draw_and_lien_waiver = 2;
+  string project_state = 3;
+}
+message ApproveDominionDrawOrPunchlistCloseoutResponse {
+  DominionCapitalProjectControlItem project = 1;
+}
+
+// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+message DominionMarketValuationGovernanceItem {
+  string id = 1;
+  string user_id = 2;
+  string valuation_code = 3;
+  string editable_comp_set_and_adjustments = 4;
+  string avm_range_vs_appraisal_evidence = 5;
+  string provider_freshness_and_disagreement = 6;
+  string valuation_state = 7;
+  bool avm_distinct_from_appraisal_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionMarketValuationWorkbenchRequest {}
+message GetDominionMarketValuationWorkbenchResponse {
+  repeated DominionMarketValuationGovernanceItem valuations = 1;
+  bool avm_distinct_from_appraisal_enforced = 2;
+  string range_and_freshness_governance_summary = 3;
+}
+message SaveDominionMarketValuationGovernanceRequest {
+  string valuation_code = 1;
+  string editable_comp_set_and_adjustments = 2;
+  string avm_range_vs_appraisal_evidence = 3;
+  string provider_freshness_and_disagreement = 4;
+  string valuation_state = 5;
+}
+message SaveDominionMarketValuationGovernanceResponse {
+  DominionMarketValuationGovernanceItem valuation = 1;
+}
+message AdjustDominionCompSetOrDisputeValuationRequest {
+  string valuation_code = 1;
+  string editable_comp_set_and_adjustments = 2;
+  string valuation_state = 3;
+}
+message AdjustDominionCompSetOrDisputeValuationResponse {
+  DominionMarketValuationGovernanceItem valuation = 1;
+}
+
+// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+message DominionOwnershipTransactionRoomItem {
+  string id = 1;
+  string user_id = 2;
+  string transaction_code = 3;
+  string entity_capital_stack_and_covenants = 4;
+  string waterfall_and_net_proceeds_range = 5;
+  string scoped_dataroom_and_bridge_refs = 6;
+  string room_state = 7;
+  bool non_broker_escrow_boundary_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionOwnershipTransactionWorkbenchRequest {}
+message GetDominionOwnershipTransactionWorkbenchResponse {
+  repeated DominionOwnershipTransactionRoomItem rooms = 1;
+  bool non_broker_escrow_boundary_enforced = 2;
+  string covenant_and_watermarked_dataroom_summary = 3;
+}
+message SaveDominionOwnershipTransactionRoomRequest {
+  string transaction_code = 1;
+  string entity_capital_stack_and_covenants = 2;
+  string waterfall_and_net_proceeds_range = 3;
+  string scoped_dataroom_and_bridge_refs = 4;
+  string room_state = 5;
+}
+message SaveDominionOwnershipTransactionRoomResponse {
+  DominionOwnershipTransactionRoomItem room = 1;
+}
+message StageDominionRefinanceOrDataroomAccessRequest {
+  string transaction_code = 1;
+  string waterfall_and_net_proceeds_range = 2;
+  string room_state = 3;
+}
+message StageDominionRefinanceOrDataroomAccessResponse {
+  DominionOwnershipTransactionRoomItem room = 1;
+}
+
+// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+message DominionInsuranceResilienceCenterItem {
+  string id = 1;
+  string user_id = 2;
+  string resilience_code = 3;
+  string policy_limits_deductibles_and_gaps = 4;
+  string peril_rate_and_vacancy_stress_bundle = 5;
+  string incident_custody_and_claim_recovery = 6;
+  string resilience_state = 7;
+  bool non_legal_coverage_disclaimer_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionInsuranceResilienceWorkbenchRequest {}
+message GetDominionInsuranceResilienceWorkbenchResponse {
+  repeated DominionInsuranceResilienceCenterItem centers = 1;
+  bool non_legal_coverage_disclaimer_enforced = 2;
+  string stress_bundle_and_custody_summary = 3;
+}
+message SaveDominionInsuranceResilienceCenterRequest {
+  string resilience_code = 1;
+  string policy_limits_deductibles_and_gaps = 2;
+  string peril_rate_and_vacancy_stress_bundle = 3;
+  string incident_custody_and_claim_recovery = 4;
+  string resilience_state = 5;
+}
+message SaveDominionInsuranceResilienceCenterResponse {
+  DominionInsuranceResilienceCenterItem center = 1;
+}
+message StageDominionClaimPackOrStressReviewRequest {
+  string resilience_code = 1;
+  string incident_custody_and_claim_recovery = 2;
+  string resilience_state = 3;
+}
+message StageDominionClaimPackOrStressReviewResponse {
+  DominionInsuranceResilienceCenterItem center = 1;
+}
+
+// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+message DominionUtilityBuildingPerformanceItem {
+  string id = 1;
+  string user_id = 2;
+  string utility_code = 3;
+  string meter_tariff_and_weather_normalized_use = 4;
+  string leak_or_baseload_anomaly_detection = 5;
+  string retrofit_roi_and_measured_savings = 6;
+  string performance_state = 7;
+  bool tenant_utility_privacy_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetDominionUtilityPerformanceWorkbenchRequest {}
+message GetDominionUtilityPerformanceWorkbenchResponse {
+  repeated DominionUtilityBuildingPerformanceItem utilities = 1;
+  bool tenant_utility_privacy_enforced = 2;
+  string weather_normalized_and_retrofit_summary = 3;
+}
+message SaveDominionUtilityBuildingPerformanceRequest {
+  string utility_code = 1;
+  string meter_tariff_and_weather_normalized_use = 2;
+  string leak_or_baseload_anomaly_detection = 3;
+  string retrofit_roi_and_measured_savings = 4;
+  string performance_state = 5;
+}
+message SaveDominionUtilityBuildingPerformanceResponse {
+  DominionUtilityBuildingPerformanceItem utility = 1;
+}
+message VerifyDominionRetrofitSavingsOrAnomalyRequest {
+  string utility_code = 1;
+  string retrofit_roi_and_measured_savings = 2;
+  string performance_state = 3;
+}
+message VerifyDominionRetrofitSavingsOrAnomalyResponse {
+  DominionUtilityBuildingPerformanceItem utility = 1;
+}
+
 service DominionService {
   // Sovereignty Protocol: Verified Territorial Control
   rpc SyncProperties(SyncPropertiesRequest) returns (SyncPropertiesResponse);
@@ -642,4 +1059,60 @@ service DominionService {
   // D14.22 — lounge access pass.
   rpc CreateLoungePass(CreateLoungePassRequest) returns (CreateLoungePassResponse);
   rpc ListMyLoungePasses(ListMyLoungePassesRequest) returns (ListMyLoungePassesResponse);
+
+  // ===== Dominion Opportunity Choices 1–11 (D1..D15) =====
+  // Choice 1 (D1): Property Digital Twin and Registry Integrity
+  rpc GetDominionPropertyDigitalTwinWorkbench(GetDominionPropertyDigitalTwinWorkbenchRequest) returns (GetDominionPropertyDigitalTwinWorkbenchResponse);
+  rpc SaveDominionPropertyDigitalTwin(SaveDominionPropertyDigitalTwinRequest) returns (SaveDominionPropertyDigitalTwinResponse);
+  rpc PropagateOrResolveDominionTwinConflict(PropagateOrResolveDominionTwinConflictRequest) returns (PropagateOrResolveDominionTwinConflictResponse);
+
+  // Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+  rpc GetDominionUnderwritingLabWorkbench(GetDominionUnderwritingLabWorkbenchRequest) returns (GetDominionUnderwritingLabWorkbenchResponse);
+  rpc SaveDominionUnderwritingScenario(SaveDominionUnderwritingScenarioRequest) returns (SaveDominionUnderwritingScenarioResponse);
+  rpc StressTestOrFreezeDominionScenario(StressTestOrFreezeDominionScenarioRequest) returns (StressTestOrFreezeDominionScenarioResponse);
+
+  // Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+  rpc GetDominionPropertyAccountingWorkbench(GetDominionPropertyAccountingWorkbenchRequest) returns (GetDominionPropertyAccountingWorkbenchResponse);
+  rpc SaveDominionPropertyAccountingClose(SaveDominionPropertyAccountingCloseRequest) returns (SaveDominionPropertyAccountingCloseResponse);
+  rpc LockOrReverseDominionAccountingClose(LockOrReverseDominionAccountingCloseRequest) returns (LockOrReverseDominionAccountingCloseResponse);
+
+  // Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+  rpc GetDominionDocumentObligationWorkbench(GetDominionDocumentObligationWorkbenchRequest) returns (GetDominionDocumentObligationWorkbenchResponse);
+  rpc SaveDominionDocumentObligation(SaveDominionDocumentObligationRequest) returns (SaveDominionDocumentObligationResponse);
+  rpc ConfirmDominionObligationReceiptOrAppeal(ConfirmDominionObligationReceiptOrAppealRequest) returns (ConfirmDominionObligationReceiptOrAppealResponse);
+
+  // Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+  rpc GetDominionLeasingResidentWorkbench(GetDominionLeasingResidentWorkbenchRequest) returns (GetDominionLeasingResidentWorkbenchResponse);
+  rpc SaveDominionLeasingResidentPortal(SaveDominionLeasingResidentPortalRequest) returns (SaveDominionLeasingResidentPortalResponse);
+  rpc ScheduleDominionRenewalOrDepositClose(ScheduleDominionRenewalOrDepositCloseRequest) returns (ScheduleDominionRenewalOrDepositCloseResponse);
+
+  // Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+  rpc GetDominionMaintenanceVendorWorkbench(GetDominionMaintenanceVendorWorkbenchRequest) returns (GetDominionMaintenanceVendorWorkbenchResponse);
+  rpc SaveDominionMaintenanceWorkOrder(SaveDominionMaintenanceWorkOrderRequest) returns (SaveDominionMaintenanceWorkOrderResponse);
+  rpc VerifyDominionThreeWayMatchOrWarranty(VerifyDominionThreeWayMatchOrWarrantyRequest) returns (VerifyDominionThreeWayMatchOrWarrantyResponse);
+
+  // Choice 7 (D9): Capital Projects, Renovations, and Development Control
+  rpc GetDominionCapitalProjectWorkbench(GetDominionCapitalProjectWorkbenchRequest) returns (GetDominionCapitalProjectWorkbenchResponse);
+  rpc SaveDominionCapitalProjectControl(SaveDominionCapitalProjectControlRequest) returns (SaveDominionCapitalProjectControlResponse);
+  rpc ApproveDominionDrawOrPunchlistCloseout(ApproveDominionDrawOrPunchlistCloseoutRequest) returns (ApproveDominionDrawOrPunchlistCloseoutResponse);
+
+  // Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+  rpc GetDominionMarketValuationWorkbench(GetDominionMarketValuationWorkbenchRequest) returns (GetDominionMarketValuationWorkbenchResponse);
+  rpc SaveDominionMarketValuationGovernance(SaveDominionMarketValuationGovernanceRequest) returns (SaveDominionMarketValuationGovernanceResponse);
+  rpc AdjustDominionCompSetOrDisputeValuation(AdjustDominionCompSetOrDisputeValuationRequest) returns (AdjustDominionCompSetOrDisputeValuationResponse);
+
+  // Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+  rpc GetDominionOwnershipTransactionWorkbench(GetDominionOwnershipTransactionWorkbenchRequest) returns (GetDominionOwnershipTransactionWorkbenchResponse);
+  rpc SaveDominionOwnershipTransactionRoom(SaveDominionOwnershipTransactionRoomRequest) returns (SaveDominionOwnershipTransactionRoomResponse);
+  rpc StageDominionRefinanceOrDataroomAccess(StageDominionRefinanceOrDataroomAccessRequest) returns (StageDominionRefinanceOrDataroomAccessResponse);
+
+  // Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+  rpc GetDominionInsuranceResilienceWorkbench(GetDominionInsuranceResilienceWorkbenchRequest) returns (GetDominionInsuranceResilienceWorkbenchResponse);
+  rpc SaveDominionInsuranceResilienceCenter(SaveDominionInsuranceResilienceCenterRequest) returns (SaveDominionInsuranceResilienceCenterResponse);
+  rpc StageDominionClaimPackOrStressReview(StageDominionClaimPackOrStressReviewRequest) returns (StageDominionClaimPackOrStressReviewResponse);
+
+  // Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+  rpc GetDominionUtilityPerformanceWorkbench(GetDominionUtilityPerformanceWorkbenchRequest) returns (GetDominionUtilityPerformanceWorkbenchResponse);
+  rpc SaveDominionUtilityBuildingPerformance(SaveDominionUtilityBuildingPerformanceRequest) returns (SaveDominionUtilityBuildingPerformanceResponse);
+  rpc VerifyDominionRetrofitSavingsOrAnomaly(VerifyDominionRetrofitSavingsOrAnomalyRequest) returns (VerifyDominionRetrofitSavingsOrAnomalyResponse);
 }

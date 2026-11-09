@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminReviewDeedRequest, AdminReviewDeedResponse, CreateDominionShareRequest, CreateDominionShareResponse, CreateLoungePassRequest, CreateLoungePassResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GenerateDominionAlmanacRequest, GenerateDominionAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, GetOffMarketRequest, GetOffMarketResponse, GetPortfolioYieldRequest, GetPortfolioYieldResponse, GetPropertyFinancialsRequest, GetPropertyFinancialsResponse, GetRegionIntelRequest, GetRegionIntelResponse, GetTerritoryAllocationRequest, GetTerritoryAllocationResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListDirectoryRequest, ListDirectoryResponse, ListLoungeEventsRequest, ListLoungeEventsResponse, ListLoungesRequest, ListLoungesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListMyDominionSharesRequest, ListMyDominionSharesResponse, ListMyLoungePassesRequest, ListMyLoungePassesResponse, ListMyLoungeRsvpsRequest, ListMyLoungeRsvpsResponse, ListMySalonRsvpsRequest, ListMySalonRsvpsResponse, ListOffMarketRequest, ListOffMarketResponse, ListRegionIntelRequest, ListRegionIntelResponse, ListSalonsRequest, ListSalonsResponse, ListTerritoriesRequest, ListTerritoriesResponse, ParseDeedRequest, ParseDeedResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RevokeDominionShareRequest, RevokeDominionShareResponse, RsvpLoungeEventRequest, RsvpLoungeEventResponse, RsvpSalonRequest, RsvpSalonResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse, UpsertPropertyFinancialsRequest, UpsertPropertyFinancialsResponse } from "./dominion_pb.js";
+import { AdjustDominionCompSetOrDisputeValuationRequest, AdjustDominionCompSetOrDisputeValuationResponse, AdminReviewDeedRequest, AdminReviewDeedResponse, ApproveDominionDrawOrPunchlistCloseoutRequest, ApproveDominionDrawOrPunchlistCloseoutResponse, ConfirmDominionObligationReceiptOrAppealRequest, ConfirmDominionObligationReceiptOrAppealResponse, CreateDominionShareRequest, CreateDominionShareResponse, CreateLoungePassRequest, CreateLoungePassResponse, EstimatePropertyValueRequest, EstimatePropertyValueResponse, GenerateDominionAlmanacRequest, GenerateDominionAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDominionCapitalProjectWorkbenchRequest, GetDominionCapitalProjectWorkbenchResponse, GetDominionDocumentObligationWorkbenchRequest, GetDominionDocumentObligationWorkbenchResponse, GetDominionInsuranceResilienceWorkbenchRequest, GetDominionInsuranceResilienceWorkbenchResponse, GetDominionLeasingResidentWorkbenchRequest, GetDominionLeasingResidentWorkbenchResponse, GetDominionMaintenanceVendorWorkbenchRequest, GetDominionMaintenanceVendorWorkbenchResponse, GetDominionMarketValuationWorkbenchRequest, GetDominionMarketValuationWorkbenchResponse, GetDominionOwnershipTransactionWorkbenchRequest, GetDominionOwnershipTransactionWorkbenchResponse, GetDominionPropertyAccountingWorkbenchRequest, GetDominionPropertyAccountingWorkbenchResponse, GetDominionPropertyDigitalTwinWorkbenchRequest, GetDominionPropertyDigitalTwinWorkbenchResponse, GetDominionStatsRequest, GetDominionStatsResponse, GetDominionUnderwritingLabWorkbenchRequest, GetDominionUnderwritingLabWorkbenchResponse, GetDominionUtilityPerformanceWorkbenchRequest, GetDominionUtilityPerformanceWorkbenchResponse, GetLoungeKeyRequest, GetLoungeKeyResponse, GetOffMarketRequest, GetOffMarketResponse, GetPortfolioYieldRequest, GetPortfolioYieldResponse, GetPropertyFinancialsRequest, GetPropertyFinancialsResponse, GetRegionIntelRequest, GetRegionIntelResponse, GetTerritoryAllocationRequest, GetTerritoryAllocationResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListDeedsForPropertyRequest, ListDeedsForPropertyResponse, ListDirectoryRequest, ListDirectoryResponse, ListLoungeEventsRequest, ListLoungeEventsResponse, ListLoungesRequest, ListLoungesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyDeedsRequest, ListMyDeedsResponse, ListMyDominionSharesRequest, ListMyDominionSharesResponse, ListMyLoungePassesRequest, ListMyLoungePassesResponse, ListMyLoungeRsvpsRequest, ListMyLoungeRsvpsResponse, ListMySalonRsvpsRequest, ListMySalonRsvpsResponse, ListOffMarketRequest, ListOffMarketResponse, ListRegionIntelRequest, ListRegionIntelResponse, ListSalonsRequest, ListSalonsResponse, ListTerritoriesRequest, ListTerritoriesResponse, LockOrReverseDominionAccountingCloseRequest, LockOrReverseDominionAccountingCloseResponse, ParseDeedRequest, ParseDeedResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PropagateOrResolveDominionTwinConflictRequest, PropagateOrResolveDominionTwinConflictResponse, RevokeDominionShareRequest, RevokeDominionShareResponse, RsvpLoungeEventRequest, RsvpLoungeEventResponse, RsvpSalonRequest, RsvpSalonResponse, SaveDominionCapitalProjectControlRequest, SaveDominionCapitalProjectControlResponse, SaveDominionDocumentObligationRequest, SaveDominionDocumentObligationResponse, SaveDominionInsuranceResilienceCenterRequest, SaveDominionInsuranceResilienceCenterResponse, SaveDominionLeasingResidentPortalRequest, SaveDominionLeasingResidentPortalResponse, SaveDominionMaintenanceWorkOrderRequest, SaveDominionMaintenanceWorkOrderResponse, SaveDominionMarketValuationGovernanceRequest, SaveDominionMarketValuationGovernanceResponse, SaveDominionOwnershipTransactionRoomRequest, SaveDominionOwnershipTransactionRoomResponse, SaveDominionPropertyAccountingCloseRequest, SaveDominionPropertyAccountingCloseResponse, SaveDominionPropertyDigitalTwinRequest, SaveDominionPropertyDigitalTwinResponse, SaveDominionUnderwritingScenarioRequest, SaveDominionUnderwritingScenarioResponse, SaveDominionUtilityBuildingPerformanceRequest, SaveDominionUtilityBuildingPerformanceResponse, ScheduleDominionRenewalOrDepositCloseRequest, ScheduleDominionRenewalOrDepositCloseResponse, StageDominionClaimPackOrStressReviewRequest, StageDominionClaimPackOrStressReviewResponse, StageDominionRefinanceOrDataroomAccessRequest, StageDominionRefinanceOrDataroomAccessResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StressTestOrFreezeDominionScenarioRequest, StressTestOrFreezeDominionScenarioResponse, SubmitDeedRequest, SubmitDeedResponse, SyncPropertiesRequest, SyncPropertiesResponse, UpsertPropertyFinancialsRequest, UpsertPropertyFinancialsResponse, VerifyDominionRetrofitSavingsOrAnomalyRequest, VerifyDominionRetrofitSavingsOrAnomalyResponse, VerifyDominionThreeWayMatchOrWarrantyRequest, VerifyDominionThreeWayMatchOrWarrantyResponse } from "./dominion_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -403,6 +403,326 @@ export const DominionService = {
       name: "ListMyLoungePasses",
       I: ListMyLoungePassesRequest,
       O: ListMyLoungePassesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Dominion Opportunity Choices 1–11 (D1..D15) =====
+     * Choice 1 (D1): Property Digital Twin and Registry Integrity
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionPropertyDigitalTwinWorkbench
+     */
+    getDominionPropertyDigitalTwinWorkbench: {
+      name: "GetDominionPropertyDigitalTwinWorkbench",
+      I: GetDominionPropertyDigitalTwinWorkbenchRequest,
+      O: GetDominionPropertyDigitalTwinWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionPropertyDigitalTwin
+     */
+    saveDominionPropertyDigitalTwin: {
+      name: "SaveDominionPropertyDigitalTwin",
+      I: SaveDominionPropertyDigitalTwinRequest,
+      O: SaveDominionPropertyDigitalTwinResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.PropagateOrResolveDominionTwinConflict
+     */
+    propagateOrResolveDominionTwinConflict: {
+      name: "PropagateOrResolveDominionTwinConflict",
+      I: PropagateOrResolveDominionTwinConflictRequest,
+      O: PropagateOrResolveDominionTwinConflictResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionUnderwritingLabWorkbench
+     */
+    getDominionUnderwritingLabWorkbench: {
+      name: "GetDominionUnderwritingLabWorkbench",
+      I: GetDominionUnderwritingLabWorkbenchRequest,
+      O: GetDominionUnderwritingLabWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionUnderwritingScenario
+     */
+    saveDominionUnderwritingScenario: {
+      name: "SaveDominionUnderwritingScenario",
+      I: SaveDominionUnderwritingScenarioRequest,
+      O: SaveDominionUnderwritingScenarioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.StressTestOrFreezeDominionScenario
+     */
+    stressTestOrFreezeDominionScenario: {
+      name: "StressTestOrFreezeDominionScenario",
+      I: StressTestOrFreezeDominionScenarioRequest,
+      O: StressTestOrFreezeDominionScenarioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionPropertyAccountingWorkbench
+     */
+    getDominionPropertyAccountingWorkbench: {
+      name: "GetDominionPropertyAccountingWorkbench",
+      I: GetDominionPropertyAccountingWorkbenchRequest,
+      O: GetDominionPropertyAccountingWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionPropertyAccountingClose
+     */
+    saveDominionPropertyAccountingClose: {
+      name: "SaveDominionPropertyAccountingClose",
+      I: SaveDominionPropertyAccountingCloseRequest,
+      O: SaveDominionPropertyAccountingCloseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.LockOrReverseDominionAccountingClose
+     */
+    lockOrReverseDominionAccountingClose: {
+      name: "LockOrReverseDominionAccountingClose",
+      I: LockOrReverseDominionAccountingCloseRequest,
+      O: LockOrReverseDominionAccountingCloseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionDocumentObligationWorkbench
+     */
+    getDominionDocumentObligationWorkbench: {
+      name: "GetDominionDocumentObligationWorkbench",
+      I: GetDominionDocumentObligationWorkbenchRequest,
+      O: GetDominionDocumentObligationWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionDocumentObligation
+     */
+    saveDominionDocumentObligation: {
+      name: "SaveDominionDocumentObligation",
+      I: SaveDominionDocumentObligationRequest,
+      O: SaveDominionDocumentObligationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ConfirmDominionObligationReceiptOrAppeal
+     */
+    confirmDominionObligationReceiptOrAppeal: {
+      name: "ConfirmDominionObligationReceiptOrAppeal",
+      I: ConfirmDominionObligationReceiptOrAppealRequest,
+      O: ConfirmDominionObligationReceiptOrAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionLeasingResidentWorkbench
+     */
+    getDominionLeasingResidentWorkbench: {
+      name: "GetDominionLeasingResidentWorkbench",
+      I: GetDominionLeasingResidentWorkbenchRequest,
+      O: GetDominionLeasingResidentWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionLeasingResidentPortal
+     */
+    saveDominionLeasingResidentPortal: {
+      name: "SaveDominionLeasingResidentPortal",
+      I: SaveDominionLeasingResidentPortalRequest,
+      O: SaveDominionLeasingResidentPortalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ScheduleDominionRenewalOrDepositClose
+     */
+    scheduleDominionRenewalOrDepositClose: {
+      name: "ScheduleDominionRenewalOrDepositClose",
+      I: ScheduleDominionRenewalOrDepositCloseRequest,
+      O: ScheduleDominionRenewalOrDepositCloseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionMaintenanceVendorWorkbench
+     */
+    getDominionMaintenanceVendorWorkbench: {
+      name: "GetDominionMaintenanceVendorWorkbench",
+      I: GetDominionMaintenanceVendorWorkbenchRequest,
+      O: GetDominionMaintenanceVendorWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionMaintenanceWorkOrder
+     */
+    saveDominionMaintenanceWorkOrder: {
+      name: "SaveDominionMaintenanceWorkOrder",
+      I: SaveDominionMaintenanceWorkOrderRequest,
+      O: SaveDominionMaintenanceWorkOrderResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.VerifyDominionThreeWayMatchOrWarranty
+     */
+    verifyDominionThreeWayMatchOrWarranty: {
+      name: "VerifyDominionThreeWayMatchOrWarranty",
+      I: VerifyDominionThreeWayMatchOrWarrantyRequest,
+      O: VerifyDominionThreeWayMatchOrWarrantyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (D9): Capital Projects, Renovations, and Development Control
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionCapitalProjectWorkbench
+     */
+    getDominionCapitalProjectWorkbench: {
+      name: "GetDominionCapitalProjectWorkbench",
+      I: GetDominionCapitalProjectWorkbenchRequest,
+      O: GetDominionCapitalProjectWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionCapitalProjectControl
+     */
+    saveDominionCapitalProjectControl: {
+      name: "SaveDominionCapitalProjectControl",
+      I: SaveDominionCapitalProjectControlRequest,
+      O: SaveDominionCapitalProjectControlResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.ApproveDominionDrawOrPunchlistCloseout
+     */
+    approveDominionDrawOrPunchlistCloseout: {
+      name: "ApproveDominionDrawOrPunchlistCloseout",
+      I: ApproveDominionDrawOrPunchlistCloseoutRequest,
+      O: ApproveDominionDrawOrPunchlistCloseoutResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionMarketValuationWorkbench
+     */
+    getDominionMarketValuationWorkbench: {
+      name: "GetDominionMarketValuationWorkbench",
+      I: GetDominionMarketValuationWorkbenchRequest,
+      O: GetDominionMarketValuationWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionMarketValuationGovernance
+     */
+    saveDominionMarketValuationGovernance: {
+      name: "SaveDominionMarketValuationGovernance",
+      I: SaveDominionMarketValuationGovernanceRequest,
+      O: SaveDominionMarketValuationGovernanceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.AdjustDominionCompSetOrDisputeValuation
+     */
+    adjustDominionCompSetOrDisputeValuation: {
+      name: "AdjustDominionCompSetOrDisputeValuation",
+      I: AdjustDominionCompSetOrDisputeValuationRequest,
+      O: AdjustDominionCompSetOrDisputeValuationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionOwnershipTransactionWorkbench
+     */
+    getDominionOwnershipTransactionWorkbench: {
+      name: "GetDominionOwnershipTransactionWorkbench",
+      I: GetDominionOwnershipTransactionWorkbenchRequest,
+      O: GetDominionOwnershipTransactionWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionOwnershipTransactionRoom
+     */
+    saveDominionOwnershipTransactionRoom: {
+      name: "SaveDominionOwnershipTransactionRoom",
+      I: SaveDominionOwnershipTransactionRoomRequest,
+      O: SaveDominionOwnershipTransactionRoomResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.StageDominionRefinanceOrDataroomAccess
+     */
+    stageDominionRefinanceOrDataroomAccess: {
+      name: "StageDominionRefinanceOrDataroomAccess",
+      I: StageDominionRefinanceOrDataroomAccessRequest,
+      O: StageDominionRefinanceOrDataroomAccessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionInsuranceResilienceWorkbench
+     */
+    getDominionInsuranceResilienceWorkbench: {
+      name: "GetDominionInsuranceResilienceWorkbench",
+      I: GetDominionInsuranceResilienceWorkbenchRequest,
+      O: GetDominionInsuranceResilienceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionInsuranceResilienceCenter
+     */
+    saveDominionInsuranceResilienceCenter: {
+      name: "SaveDominionInsuranceResilienceCenter",
+      I: SaveDominionInsuranceResilienceCenterRequest,
+      O: SaveDominionInsuranceResilienceCenterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.StageDominionClaimPackOrStressReview
+     */
+    stageDominionClaimPackOrStressReview: {
+      name: "StageDominionClaimPackOrStressReview",
+      I: StageDominionClaimPackOrStressReviewRequest,
+      O: StageDominionClaimPackOrStressReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+     *
+     * @generated from rpc sttattus.dominion.v1.DominionService.GetDominionUtilityPerformanceWorkbench
+     */
+    getDominionUtilityPerformanceWorkbench: {
+      name: "GetDominionUtilityPerformanceWorkbench",
+      I: GetDominionUtilityPerformanceWorkbenchRequest,
+      O: GetDominionUtilityPerformanceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.SaveDominionUtilityBuildingPerformance
+     */
+    saveDominionUtilityBuildingPerformance: {
+      name: "SaveDominionUtilityBuildingPerformance",
+      I: SaveDominionUtilityBuildingPerformanceRequest,
+      O: SaveDominionUtilityBuildingPerformanceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.dominion.v1.DominionService.VerifyDominionRetrofitSavingsOrAnomaly
+     */
+    verifyDominionRetrofitSavingsOrAnomaly: {
+      name: "VerifyDominionRetrofitSavingsOrAnomaly",
+      I: VerifyDominionRetrofitSavingsOrAnomalyRequest,
+      O: VerifyDominionRetrofitSavingsOrAnomalyResponse,
       kind: MethodKind.Unary,
     },
   }

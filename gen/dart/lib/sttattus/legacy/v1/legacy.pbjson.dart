@@ -2306,3 +2306,2824 @@ final $typed_data.Uint8List parseDocumentExpiryResponseDescriptor =
         'ChtQYXJzZURvY3VtZW50RXhwaXJ5UmVzcG9uc2USFAoFZm91bmQYASABKAhSBWZvdW5kEiYKD2'
         'V4cGlyZXNfYXRfdW5peBgCIAEoA1INZXhwaXJlc0F0VW5peBIjCg1kZXRlY3RlZF90ZXh0GAMg'
         'ASgJUgxkZXRlY3RlZFRleHQ=');
+
+@$core.Deprecated('Use legacyLivingEstateInventoryViewDescriptor instead')
+const LegacyLivingEstateInventoryView$json = {
+  '1': 'LegacyLivingEstateInventoryView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'inventory_code', '3': 3, '4': 1, '5': 9, '10': 'inventoryCode'},
+    {
+      '1': 'asset_fiduciary_and_owner_scope',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'assetFiduciaryAndOwnerScope'
+    },
+    {
+      '1': 'plan_health_gaps_and_evidence',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'planHealthGapsAndEvidence'
+    },
+    {
+      '1': 'ten_minute_quarterly_review_log',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'tenMinuteQuarterlyReviewLog'
+    },
+    {'1': 'inventory_state', '3': 7, '4': 1, '5': 9, '10': 'inventoryState'},
+    {
+      '1': 'no_silent_signed_doc_rewrite_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noSilentSignedDocRewriteEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyLivingEstateInventoryView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyLivingEstateInventoryViewDescriptor = $convert.base64Decode(
+    'Ch9MZWdhY3lMaXZpbmdFc3RhdGVJbnZlbnRvcnlWaWV3Eg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSJQoOaW52ZW50b3J5X2NvZGUYAyABKAlSDWludmVudG9yeUNv'
+    'ZGUSRAofYXNzZXRfZmlkdWNpYXJ5X2FuZF9vd25lcl9zY29wZRgEIAEoCVIbYXNzZXRGaWR1Y2'
+    'lhcnlBbmRPd25lclNjb3BlEkAKHXBsYW5faGVhbHRoX2dhcHNfYW5kX2V2aWRlbmNlGAUgASgJ'
+    'UhlwbGFuSGVhbHRoR2Fwc0FuZEV2aWRlbmNlEkQKH3Rlbl9taW51dGVfcXVhcnRlcmx5X3Jldm'
+    'lld19sb2cYBiABKAlSG3Rlbk1pbnV0ZVF1YXJ0ZXJseVJldmlld0xvZxInCg9pbnZlbnRvcnlf'
+    'c3RhdGUYByABKAlSDmludmVudG9yeVN0YXRlEk8KJW5vX3NpbGVudF9zaWduZWRfZG9jX3Jld3'
+    'JpdGVfZW5mb3JjZWQYCCABKAhSIG5vU2lsZW50U2lnbmVkRG9jUmV3cml0ZUVuZm9yY2VkEiQK'
+    'DnVwZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getLegacyLivingInventoryWorkbenchRequestDescriptor instead')
+const GetLegacyLivingInventoryWorkbenchRequest$json = {
+  '1': 'GetLegacyLivingInventoryWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyLivingInventoryWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLegacyLivingInventoryWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CihHZXRMZWdhY3lMaXZpbmdJbnZlbnRvcnlXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaWQYAS'
+        'ABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyLivingInventoryWorkbenchResponseDescriptor instead')
+const GetLegacyLivingInventoryWorkbenchResponse$json = {
+  '1': 'GetLegacyLivingInventoryWorkbenchResponse',
+  '2': [
+    {
+      '1': 'inventories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLivingEstateInventoryView',
+      '10': 'inventories'
+    },
+    {'1': 'open_gap_count', '3': 2, '4': 1, '5': 5, '10': 'openGapCount'},
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyLivingInventoryWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyLivingInventoryWorkbenchResponseDescriptor = $convert.base64Decode(
+        'CilHZXRMZWdhY3lMaXZpbmdJbnZlbnRvcnlXb3JrYmVuY2hSZXNwb25zZRJVCgtpbnZlbnRvcm'
+        'llcxgBIAMoCzIzLnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lMaXZpbmdFc3RhdGVJbnZlbnRv'
+        'cnlWaWV3UgtpbnZlbnRvcmllcxIkCg5vcGVuX2dhcF9jb3VudBgCIAEoBVIMb3BlbkdhcENvdW'
+        '50EisKEXdvcmtiZW5jaF9zdW1tYXJ5GAMgASgJUhB3b3JrYmVuY2hTdW1tYXJ5');
+
+@$core
+    .Deprecated('Use saveLegacyLivingEstateInventoryRequestDescriptor instead')
+const SaveLegacyLivingEstateInventoryRequest$json = {
+  '1': 'SaveLegacyLivingEstateInventoryRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'inventory_code', '3': 2, '4': 1, '5': 9, '10': 'inventoryCode'},
+    {
+      '1': 'asset_fiduciary_and_owner_scope',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'assetFiduciaryAndOwnerScope'
+    },
+    {
+      '1': 'plan_health_gaps_and_evidence',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'planHealthGapsAndEvidence'
+    },
+    {
+      '1': 'ten_minute_quarterly_review_log',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'tenMinuteQuarterlyReviewLog'
+    },
+    {'1': 'inventory_state', '3': 6, '4': 1, '5': 9, '10': 'inventoryState'},
+    {
+      '1': 'no_silent_signed_doc_rewrite_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'noSilentSignedDocRewriteEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLivingEstateInventoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyLivingEstateInventoryRequestDescriptor = $convert.base64Decode(
+    'CiZTYXZlTGVnYWN5TGl2aW5nRXN0YXRlSW52ZW50b3J5UmVxdWVzdBIXCgd1c2VyX2lkGAEgAS'
+    'gJUgZ1c2VySWQSJQoOaW52ZW50b3J5X2NvZGUYAiABKAlSDWludmVudG9yeUNvZGUSRAofYXNz'
+    'ZXRfZmlkdWNpYXJ5X2FuZF9vd25lcl9zY29wZRgDIAEoCVIbYXNzZXRGaWR1Y2lhcnlBbmRPd2'
+    '5lclNjb3BlEkAKHXBsYW5faGVhbHRoX2dhcHNfYW5kX2V2aWRlbmNlGAQgASgJUhlwbGFuSGVh'
+    'bHRoR2Fwc0FuZEV2aWRlbmNlEkQKH3Rlbl9taW51dGVfcXVhcnRlcmx5X3Jldmlld19sb2cYBS'
+    'ABKAlSG3Rlbk1pbnV0ZVF1YXJ0ZXJseVJldmlld0xvZxInCg9pbnZlbnRvcnlfc3RhdGUYBiAB'
+    'KAlSDmludmVudG9yeVN0YXRlEk8KJW5vX3NpbGVudF9zaWduZWRfZG9jX3Jld3JpdGVfZW5mb3'
+    'JjZWQYByABKAhSIG5vU2lsZW50U2lnbmVkRG9jUmV3cml0ZUVuZm9yY2Vk');
+
+@$core
+    .Deprecated('Use saveLegacyLivingEstateInventoryResponseDescriptor instead')
+const SaveLegacyLivingEstateInventoryResponse$json = {
+  '1': 'SaveLegacyLivingEstateInventoryResponse',
+  '2': [
+    {
+      '1': 'inventory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLivingEstateInventoryView',
+      '10': 'inventory'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLivingEstateInventoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyLivingEstateInventoryResponseDescriptor =
+    $convert.base64Decode(
+        'CidTYXZlTGVnYWN5TGl2aW5nRXN0YXRlSW52ZW50b3J5UmVzcG9uc2USUQoJaW52ZW50b3J5GA'
+        'EgASgLMjMuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUxpdmluZ0VzdGF0ZUludmVudG9yeVZp'
+        'ZXdSCWludmVudG9yeQ==');
+
+@$core
+    .Deprecated('Use signOffLegacyQuarterlyPlanReviewRequestDescriptor instead')
+const SignOffLegacyQuarterlyPlanReviewRequest$json = {
+  '1': 'SignOffLegacyQuarterlyPlanReviewRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'inventory_code', '3': 2, '4': 1, '5': 9, '10': 'inventoryCode'},
+    {
+      '1': 'target_inventory_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetInventoryState'
+    },
+    {'1': 'review_notes', '3': 4, '4': 1, '5': 9, '10': 'reviewNotes'},
+  ],
+};
+
+/// Descriptor for `SignOffLegacyQuarterlyPlanReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signOffLegacyQuarterlyPlanReviewRequestDescriptor =
+    $convert.base64Decode(
+        'CidTaWduT2ZmTGVnYWN5UXVhcnRlcmx5UGxhblJldmlld1JlcXVlc3QSFwoHdXNlcl9pZBgBIA'
+        'EoCVIGdXNlcklkEiUKDmludmVudG9yeV9jb2RlGAIgASgJUg1pbnZlbnRvcnlDb2RlEjQKFnRh'
+        'cmdldF9pbnZlbnRvcnlfc3RhdGUYAyABKAlSFHRhcmdldEludmVudG9yeVN0YXRlEiEKDHJldm'
+        'lld19ub3RlcxgEIAEoCVILcmV2aWV3Tm90ZXM=');
+
+@$core.Deprecated(
+    'Use signOffLegacyQuarterlyPlanReviewResponseDescriptor instead')
+const SignOffLegacyQuarterlyPlanReviewResponse$json = {
+  '1': 'SignOffLegacyQuarterlyPlanReviewResponse',
+  '2': [
+    {
+      '1': 'inventory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLivingEstateInventoryView',
+      '10': 'inventory'
+    },
+    {'1': 'review_status', '3': 2, '4': 1, '5': 9, '10': 'reviewStatus'},
+  ],
+};
+
+/// Descriptor for `SignOffLegacyQuarterlyPlanReviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signOffLegacyQuarterlyPlanReviewResponseDescriptor =
+    $convert.base64Decode(
+        'CihTaWduT2ZmTGVnYWN5UXVhcnRlcmx5UGxhblJldmlld1Jlc3BvbnNlElEKCWludmVudG9yeR'
+        'gBIAEoCzIzLnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lMaXZpbmdFc3RhdGVJbnZlbnRvcnlW'
+        'aWV3UglpbnZlbnRvcnkSIwoNcmV2aWV3X3N0YXR1cxgCIAEoCVIMcmV2aWV3U3RhdHVz');
+
+@$core.Deprecated('Use legacyLifeEventAlignmentViewDescriptor instead')
+const LegacyLifeEventAlignmentView$json = {
+  '1': 'LegacyLifeEventAlignmentView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'alignment_code', '3': 3, '4': 1, '5': 9, '10': 'alignmentCode'},
+    {
+      '1': 'confirmed_life_event_and_impact_map',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'confirmedLifeEventAndImpactMap'
+    },
+    {
+      '1': 'beneficiary_and_trust_funding_diff',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'beneficiaryAndTrustFundingDiff'
+    },
+    {
+      '1': 'institution_checklist_and_evidence',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'institutionChecklistAndEvidence'
+    },
+    {'1': 'alignment_state', '3': 7, '4': 1, '5': 9, '10': 'alignmentState'},
+    {
+      '1': 'evidence_required_before_complete_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'evidenceRequiredBeforeCompleteEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyLifeEventAlignmentView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyLifeEventAlignmentViewDescriptor = $convert.base64Decode(
+    'ChxMZWdhY3lMaWZlRXZlbnRBbGlnbm1lbnRWaWV3Eg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2'
+    'lkGAIgASgJUgZ1c2VySWQSJQoOYWxpZ25tZW50X2NvZGUYAyABKAlSDWFsaWdubWVudENvZGUS'
+    'SwojY29uZmlybWVkX2xpZmVfZXZlbnRfYW5kX2ltcGFjdF9tYXAYBCABKAlSHmNvbmZpcm1lZE'
+    'xpZmVFdmVudEFuZEltcGFjdE1hcBJKCiJiZW5lZmljaWFyeV9hbmRfdHJ1c3RfZnVuZGluZ19k'
+    'aWZmGAUgASgJUh5iZW5lZmljaWFyeUFuZFRydXN0RnVuZGluZ0RpZmYSSwoiaW5zdGl0dXRpb2'
+    '5fY2hlY2tsaXN0X2FuZF9ldmlkZW5jZRgGIAEoCVIfaW5zdGl0dXRpb25DaGVja2xpc3RBbmRF'
+    'dmlkZW5jZRInCg9hbGlnbm1lbnRfc3RhdGUYByABKAlSDmFsaWdubWVudFN0YXRlEloKKmV2aW'
+    'RlbmNlX3JlcXVpcmVkX2JlZm9yZV9jb21wbGV0ZV9lbmZvcmNlZBgIIAEoCFImZXZpZGVuY2VS'
+    'ZXF1aXJlZEJlZm9yZUNvbXBsZXRlRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDH'
+    'VwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacyLifeEventAlignmentWorkbenchRequestDescriptor instead')
+const GetLegacyLifeEventAlignmentWorkbenchRequest$json = {
+  '1': 'GetLegacyLifeEventAlignmentWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyLifeEventAlignmentWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyLifeEventAlignmentWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lMaWZlRXZlbnRBbGlnbm1lbnRXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaW'
+        'QYASABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyLifeEventAlignmentWorkbenchResponseDescriptor instead')
+const GetLegacyLifeEventAlignmentWorkbenchResponse$json = {
+  '1': 'GetLegacyLifeEventAlignmentWorkbenchResponse',
+  '2': [
+    {
+      '1': 'alignments',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLifeEventAlignmentView',
+      '10': 'alignments'
+    },
+    {
+      '1': 'unaligned_designation_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'unalignedDesignationCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyLifeEventAlignmentWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyLifeEventAlignmentWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZXRMZWdhY3lMaWZlRXZlbnRBbGlnbm1lbnRXb3JrYmVuY2hSZXNwb25zZRJQCgphbGlnbm'
+        '1lbnRzGAEgAygLMjAuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUxpZmVFdmVudEFsaWdubWVu'
+        'dFZpZXdSCmFsaWdubWVudHMSPgobdW5hbGlnbmVkX2Rlc2lnbmF0aW9uX2NvdW50GAIgASgFUh'
+        'l1bmFsaWduZWREZXNpZ25hdGlvbkNvdW50EisKEXdvcmtiZW5jaF9zdW1tYXJ5GAMgASgJUhB3'
+        'b3JrYmVuY2hTdW1tYXJ5');
+
+@$core.Deprecated('Use saveLegacyLifeEventAlignmentRequestDescriptor instead')
+const SaveLegacyLifeEventAlignmentRequest$json = {
+  '1': 'SaveLegacyLifeEventAlignmentRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'alignment_code', '3': 2, '4': 1, '5': 9, '10': 'alignmentCode'},
+    {
+      '1': 'confirmed_life_event_and_impact_map',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'confirmedLifeEventAndImpactMap'
+    },
+    {
+      '1': 'beneficiary_and_trust_funding_diff',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'beneficiaryAndTrustFundingDiff'
+    },
+    {
+      '1': 'institution_checklist_and_evidence',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'institutionChecklistAndEvidence'
+    },
+    {'1': 'alignment_state', '3': 6, '4': 1, '5': 9, '10': 'alignmentState'},
+    {
+      '1': 'evidence_required_before_complete_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'evidenceRequiredBeforeCompleteEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLifeEventAlignmentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyLifeEventAlignmentRequestDescriptor = $convert.base64Decode(
+    'CiNTYXZlTGVnYWN5TGlmZUV2ZW50QWxpZ25tZW50UmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUg'
+    'Z1c2VySWQSJQoOYWxpZ25tZW50X2NvZGUYAiABKAlSDWFsaWdubWVudENvZGUSSwojY29uZmly'
+    'bWVkX2xpZmVfZXZlbnRfYW5kX2ltcGFjdF9tYXAYAyABKAlSHmNvbmZpcm1lZExpZmVFdmVudE'
+    'FuZEltcGFjdE1hcBJKCiJiZW5lZmljaWFyeV9hbmRfdHJ1c3RfZnVuZGluZ19kaWZmGAQgASgJ'
+    'Uh5iZW5lZmljaWFyeUFuZFRydXN0RnVuZGluZ0RpZmYSSwoiaW5zdGl0dXRpb25fY2hlY2tsaX'
+    'N0X2FuZF9ldmlkZW5jZRgFIAEoCVIfaW5zdGl0dXRpb25DaGVja2xpc3RBbmRFdmlkZW5jZRIn'
+    'Cg9hbGlnbm1lbnRfc3RhdGUYBiABKAlSDmFsaWdubWVudFN0YXRlEloKKmV2aWRlbmNlX3JlcX'
+    'VpcmVkX2JlZm9yZV9jb21wbGV0ZV9lbmZvcmNlZBgHIAEoCFImZXZpZGVuY2VSZXF1aXJlZEJl'
+    'Zm9yZUNvbXBsZXRlRW5mb3JjZWQ=');
+
+@$core.Deprecated('Use saveLegacyLifeEventAlignmentResponseDescriptor instead')
+const SaveLegacyLifeEventAlignmentResponse$json = {
+  '1': 'SaveLegacyLifeEventAlignmentResponse',
+  '2': [
+    {
+      '1': 'alignment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLifeEventAlignmentView',
+      '10': 'alignment'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLifeEventAlignmentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyLifeEventAlignmentResponseDescriptor =
+    $convert.base64Decode(
+        'CiRTYXZlTGVnYWN5TGlmZUV2ZW50QWxpZ25tZW50UmVzcG9uc2USTgoJYWxpZ25tZW50GAEgAS'
+        'gLMjAuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUxpZmVFdmVudEFsaWdubWVudFZpZXdSCWFs'
+        'aWdubWVudA==');
+
+@$core.Deprecated(
+    'Use verifyLegacyAlignmentInstitutionEvidenceRequestDescriptor instead')
+const VerifyLegacyAlignmentInstitutionEvidenceRequest$json = {
+  '1': 'VerifyLegacyAlignmentInstitutionEvidenceRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'alignment_code', '3': 2, '4': 1, '5': 9, '10': 'alignmentCode'},
+    {
+      '1': 'target_alignment_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetAlignmentState'
+    },
+    {'1': 'evidence_notes', '3': 4, '4': 1, '5': 9, '10': 'evidenceNotes'},
+  ],
+};
+
+/// Descriptor for `VerifyLegacyAlignmentInstitutionEvidenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyLegacyAlignmentInstitutionEvidenceRequestDescriptor =
+    $convert.base64Decode(
+        'Ci9WZXJpZnlMZWdhY3lBbGlnbm1lbnRJbnN0aXR1dGlvbkV2aWRlbmNlUmVxdWVzdBIXCgd1c2'
+        'VyX2lkGAEgASgJUgZ1c2VySWQSJQoOYWxpZ25tZW50X2NvZGUYAiABKAlSDWFsaWdubWVudENv'
+        'ZGUSNAoWdGFyZ2V0X2FsaWdubWVudF9zdGF0ZRgDIAEoCVIUdGFyZ2V0QWxpZ25tZW50U3RhdG'
+        'USJQoOZXZpZGVuY2Vfbm90ZXMYBCABKAlSDWV2aWRlbmNlTm90ZXM=');
+
+@$core.Deprecated(
+    'Use verifyLegacyAlignmentInstitutionEvidenceResponseDescriptor instead')
+const VerifyLegacyAlignmentInstitutionEvidenceResponse$json = {
+  '1': 'VerifyLegacyAlignmentInstitutionEvidenceResponse',
+  '2': [
+    {
+      '1': 'alignment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLifeEventAlignmentView',
+      '10': 'alignment'
+    },
+    {
+      '1': 'verification_status',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyLegacyAlignmentInstitutionEvidenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyLegacyAlignmentInstitutionEvidenceResponseDescriptor =
+    $convert.base64Decode(
+        'CjBWZXJpZnlMZWdhY3lBbGlnbm1lbnRJbnN0aXR1dGlvbkV2aWRlbmNlUmVzcG9uc2USTgoJYW'
+        'xpZ25tZW50GAEgASgLMjAuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUxpZmVFdmVudEFsaWdu'
+        'bWVudFZpZXdSCWFsaWdubWVudBIvChN2ZXJpZmljYXRpb25fc3RhdHVzGAIgASgJUhJ2ZXJpZm'
+        'ljYXRpb25TdGF0dXM=');
+
+@$core.Deprecated('Use legacySecureDocumentVaultViewDescriptor instead')
+const LegacySecureDocumentVaultView$json = {
+  '1': 'LegacySecureDocumentVaultView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'document_code', '3': 3, '4': 1, '5': 9, '10': 'documentCode'},
+    {
+      '1': 'version_family_and_execution_status',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'versionFamilyAndExecutionStatus'
+    },
+    {
+      '1': 'cited_clause_and_ocr_confidence',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'citedClauseAndOcrConfidence'
+    },
+    {
+      '1': 'custody_retention_and_offline_cache',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'custodyRetentionAndOfflineCache'
+    },
+    {'1': 'vault_state', '3': 7, '4': 1, '5': 9, '10': 'vaultState'},
+    {
+      '1': 'public_gallery_leak_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'publicGalleryLeakBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacySecureDocumentVaultView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacySecureDocumentVaultViewDescriptor = $convert.base64Decode(
+    'Ch1MZWdhY3lTZWN1cmVEb2N1bWVudFZhdWx0VmlldxIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEiMKDWRvY3VtZW50X2NvZGUYAyABKAlSDGRvY3VtZW50Q29kZRJM'
+    'CiN2ZXJzaW9uX2ZhbWlseV9hbmRfZXhlY3V0aW9uX3N0YXR1cxgEIAEoCVIfdmVyc2lvbkZhbW'
+    'lseUFuZEV4ZWN1dGlvblN0YXR1cxJECh9jaXRlZF9jbGF1c2VfYW5kX29jcl9jb25maWRlbmNl'
+    'GAUgASgJUhtjaXRlZENsYXVzZUFuZE9jckNvbmZpZGVuY2USTAojY3VzdG9keV9yZXRlbnRpb2'
+    '5fYW5kX29mZmxpbmVfY2FjaGUYBiABKAlSH2N1c3RvZHlSZXRlbnRpb25BbmRPZmZsaW5lQ2Fj'
+    'aGUSHwoLdmF1bHRfc3RhdGUYByABKAlSCnZhdWx0U3RhdGUSPQobcHVibGljX2dhbGxlcnlfbG'
+    'Vha19ibG9ja2VkGAggASgIUhhwdWJsaWNHYWxsZXJ5TGVha0Jsb2NrZWQSJAoOdXBkYXRlZF9h'
+    'dF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacySecureDocumentVaultWorkbenchRequestDescriptor instead')
+const GetLegacySecureDocumentVaultWorkbenchRequest$json = {
+  '1': 'GetLegacySecureDocumentVaultWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacySecureDocumentVaultWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacySecureDocumentVaultWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CixHZXRMZWdhY3lTZWN1cmVEb2N1bWVudFZhdWx0V29ya2JlbmNoUmVxdWVzdBIXCgd1c2VyX2'
+        'lkGAEgASgJUgZ1c2VySWQ=');
+
+@$core.Deprecated(
+    'Use getLegacySecureDocumentVaultWorkbenchResponseDescriptor instead')
+const GetLegacySecureDocumentVaultWorkbenchResponse$json = {
+  '1': 'GetLegacySecureDocumentVaultWorkbenchResponse',
+  '2': [
+    {
+      '1': 'documents',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySecureDocumentVaultView',
+      '10': 'documents'
+    },
+    {
+      '1': 'provisional_review_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'provisionalReviewCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacySecureDocumentVaultWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacySecureDocumentVaultWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRMZWdhY3lTZWN1cmVEb2N1bWVudFZhdWx0V29ya2JlbmNoUmVzcG9uc2USTwoJZG9jdW'
+        '1lbnRzGAEgAygLMjEuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeVNlY3VyZURvY3VtZW50VmF1'
+        'bHRWaWV3Uglkb2N1bWVudHMSOAoYcHJvdmlzaW9uYWxfcmV2aWV3X2NvdW50GAIgASgFUhZwcm'
+        '92aXNpb25hbFJldmlld0NvdW50EisKEXdvcmtiZW5jaF9zdW1tYXJ5GAMgASgJUhB3b3JrYmVu'
+        'Y2hTdW1tYXJ5');
+
+@$core.Deprecated('Use saveLegacySecureDocumentVaultRequestDescriptor instead')
+const SaveLegacySecureDocumentVaultRequest$json = {
+  '1': 'SaveLegacySecureDocumentVaultRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'document_code', '3': 2, '4': 1, '5': 9, '10': 'documentCode'},
+    {
+      '1': 'version_family_and_execution_status',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'versionFamilyAndExecutionStatus'
+    },
+    {
+      '1': 'cited_clause_and_ocr_confidence',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'citedClauseAndOcrConfidence'
+    },
+    {
+      '1': 'custody_retention_and_offline_cache',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'custodyRetentionAndOfflineCache'
+    },
+    {'1': 'vault_state', '3': 6, '4': 1, '5': 9, '10': 'vaultState'},
+    {
+      '1': 'public_gallery_leak_blocked',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'publicGalleryLeakBlocked'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacySecureDocumentVaultRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacySecureDocumentVaultRequestDescriptor = $convert.base64Decode(
+    'CiRTYXZlTGVnYWN5U2VjdXJlRG9jdW1lbnRWYXVsdFJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCV'
+    'IGdXNlcklkEiMKDWRvY3VtZW50X2NvZGUYAiABKAlSDGRvY3VtZW50Q29kZRJMCiN2ZXJzaW9u'
+    'X2ZhbWlseV9hbmRfZXhlY3V0aW9uX3N0YXR1cxgDIAEoCVIfdmVyc2lvbkZhbWlseUFuZEV4ZW'
+    'N1dGlvblN0YXR1cxJECh9jaXRlZF9jbGF1c2VfYW5kX29jcl9jb25maWRlbmNlGAQgASgJUhtj'
+    'aXRlZENsYXVzZUFuZE9jckNvbmZpZGVuY2USTAojY3VzdG9keV9yZXRlbnRpb25fYW5kX29mZm'
+    'xpbmVfY2FjaGUYBSABKAlSH2N1c3RvZHlSZXRlbnRpb25BbmRPZmZsaW5lQ2FjaGUSHwoLdmF1'
+    'bHRfc3RhdGUYBiABKAlSCnZhdWx0U3RhdGUSPQobcHVibGljX2dhbGxlcnlfbGVha19ibG9ja2'
+    'VkGAcgASgIUhhwdWJsaWNHYWxsZXJ5TGVha0Jsb2NrZWQ=');
+
+@$core.Deprecated('Use saveLegacySecureDocumentVaultResponseDescriptor instead')
+const SaveLegacySecureDocumentVaultResponse$json = {
+  '1': 'SaveLegacySecureDocumentVaultResponse',
+  '2': [
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySecureDocumentVaultView',
+      '10': 'document'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacySecureDocumentVaultResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacySecureDocumentVaultResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTYXZlTGVnYWN5U2VjdXJlRG9jdW1lbnRWYXVsdFJlc3BvbnNlEk0KCGRvY3VtZW50GAEgAS'
+        'gLMjEuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeVNlY3VyZURvY3VtZW50VmF1bHRWaWV3Ughk'
+        'b2N1bWVudA==');
+
+@$core.Deprecated(
+    'Use lockOrExportLegacyDocumentCustodyRequestDescriptor instead')
+const LockOrExportLegacyDocumentCustodyRequest$json = {
+  '1': 'LockOrExportLegacyDocumentCustodyRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'document_code', '3': 2, '4': 1, '5': 9, '10': 'documentCode'},
+    {
+      '1': 'target_vault_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetVaultState'
+    },
+    {'1': 'custody_notes', '3': 4, '4': 1, '5': 9, '10': 'custodyNotes'},
+  ],
+};
+
+/// Descriptor for `LockOrExportLegacyDocumentCustodyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List lockOrExportLegacyDocumentCustodyRequestDescriptor =
+    $convert.base64Decode(
+        'CihMb2NrT3JFeHBvcnRMZWdhY3lEb2N1bWVudEN1c3RvZHlSZXF1ZXN0EhcKB3VzZXJfaWQYAS'
+        'ABKAlSBnVzZXJJZBIjCg1kb2N1bWVudF9jb2RlGAIgASgJUgxkb2N1bWVudENvZGUSLAoSdGFy'
+        'Z2V0X3ZhdWx0X3N0YXRlGAMgASgJUhB0YXJnZXRWYXVsdFN0YXRlEiMKDWN1c3RvZHlfbm90ZX'
+        'MYBCABKAlSDGN1c3RvZHlOb3Rlcw==');
+
+@$core.Deprecated(
+    'Use lockOrExportLegacyDocumentCustodyResponseDescriptor instead')
+const LockOrExportLegacyDocumentCustodyResponse$json = {
+  '1': 'LockOrExportLegacyDocumentCustodyResponse',
+  '2': [
+    {
+      '1': 'document',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySecureDocumentVaultView',
+      '10': 'document'
+    },
+    {'1': 'custody_status', '3': 2, '4': 1, '5': 9, '10': 'custodyStatus'},
+  ],
+};
+
+/// Descriptor for `LockOrExportLegacyDocumentCustodyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    lockOrExportLegacyDocumentCustodyResponseDescriptor = $convert.base64Decode(
+        'CilMb2NrT3JFeHBvcnRMZWdhY3lEb2N1bWVudEN1c3RvZHlSZXNwb25zZRJNCghkb2N1bWVudB'
+        'gBIAEoCzIxLnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lTZWN1cmVEb2N1bWVudFZhdWx0Vmll'
+        'd1IIZG9jdW1lbnQSJQoOY3VzdG9keV9zdGF0dXMYAiABKAlSDWN1c3RvZHlTdGF0dXM=');
+
+@$core.Deprecated('Use legacyJurisdictionDocumentSystemViewDescriptor instead')
+const LegacyJurisdictionDocumentSystemView$json = {
+  '1': 'LegacyJurisdictionDocumentSystemView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'system_code', '3': 3, '4': 1, '5': 9, '10': 'systemCode'},
+    {
+      '1': 'jurisdiction_rule_pack_and_scope',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionRulePackAndScope'
+    },
+    {
+      '1': 'clause_version_and_attorney_trigger',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'clauseVersionAndAttorneyTrigger'
+    },
+    {
+      '1': 'execution_witness_and_notary_checklist',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'executionWitnessAndNotaryChecklist'
+    },
+    {'1': 'document_state', '3': 7, '4': 1, '5': 9, '10': 'documentState'},
+    {
+      '1': 'non_attorney_impersonation_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonAttorneyImpersonationEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyJurisdictionDocumentSystemView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyJurisdictionDocumentSystemViewDescriptor = $convert.base64Decode(
+    'CiRMZWdhY3lKdXJpc2RpY3Rpb25Eb2N1bWVudFN5c3RlbVZpZXcSDgoCaWQYASABKAlSAmlkEh'
+    'cKB3VzZXJfaWQYAiABKAlSBnVzZXJJZBIfCgtzeXN0ZW1fY29kZRgDIAEoCVIKc3lzdGVtQ29k'
+    'ZRJGCiBqdXJpc2RpY3Rpb25fcnVsZV9wYWNrX2FuZF9zY29wZRgEIAEoCVIcanVyaXNkaWN0aW'
+    '9uUnVsZVBhY2tBbmRTY29wZRJMCiNjbGF1c2VfdmVyc2lvbl9hbmRfYXR0b3JuZXlfdHJpZ2dl'
+    'chgFIAEoCVIfY2xhdXNlVmVyc2lvbkFuZEF0dG9ybmV5VHJpZ2dlchJSCiZleGVjdXRpb25fd2'
+    'l0bmVzc19hbmRfbm90YXJ5X2NoZWNrbGlzdBgGIAEoCVIiZXhlY3V0aW9uV2l0bmVzc0FuZE5v'
+    'dGFyeUNoZWNrbGlzdBIlCg5kb2N1bWVudF9zdGF0ZRgHIAEoCVINZG9jdW1lbnRTdGF0ZRJNCi'
+    'Nub25fYXR0b3JuZXlfaW1wZXJzb25hdGlvbl9lbmZvcmNlZBgIIAEoCFIgbm9uQXR0b3JuZXlJ'
+    'bXBlcnNvbmF0aW9uRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdE'
+    'lzbw==');
+
+@$core.Deprecated(
+    'Use getLegacyJurisdictionDocumentWorkbenchRequestDescriptor instead')
+const GetLegacyJurisdictionDocumentWorkbenchRequest$json = {
+  '1': 'GetLegacyJurisdictionDocumentWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyJurisdictionDocumentWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyJurisdictionDocumentWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRMZWdhY3lKdXJpc2RpY3Rpb25Eb2N1bWVudFdvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl'
+        '9pZBgBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getLegacyJurisdictionDocumentWorkbenchResponseDescriptor instead')
+const GetLegacyJurisdictionDocumentWorkbenchResponse$json = {
+  '1': 'GetLegacyJurisdictionDocumentWorkbenchResponse',
+  '2': [
+    {
+      '1': 'systems',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView',
+      '10': 'systems'
+    },
+    {
+      '1': 'attorney_trigger_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'attorneyTriggerCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyJurisdictionDocumentWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyJurisdictionDocumentWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRMZWdhY3lKdXJpc2RpY3Rpb25Eb2N1bWVudFdvcmtiZW5jaFJlc3BvbnNlElIKB3N5c3'
+        'RlbXMYASADKAsyOC5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5SnVyaXNkaWN0aW9uRG9jdW1l'
+        'bnRTeXN0ZW1WaWV3UgdzeXN0ZW1zEjQKFmF0dG9ybmV5X3RyaWdnZXJfY291bnQYAiABKAVSFG'
+        'F0dG9ybmV5VHJpZ2dlckNvdW50EisKEXdvcmtiZW5jaF9zdW1tYXJ5GAMgASgJUhB3b3JrYmVu'
+        'Y2hTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveLegacyJurisdictionDocumentSystemRequestDescriptor instead')
+const SaveLegacyJurisdictionDocumentSystemRequest$json = {
+  '1': 'SaveLegacyJurisdictionDocumentSystemRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'system_code', '3': 2, '4': 1, '5': 9, '10': 'systemCode'},
+    {
+      '1': 'jurisdiction_rule_pack_and_scope',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionRulePackAndScope'
+    },
+    {
+      '1': 'clause_version_and_attorney_trigger',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'clauseVersionAndAttorneyTrigger'
+    },
+    {
+      '1': 'execution_witness_and_notary_checklist',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'executionWitnessAndNotaryChecklist'
+    },
+    {'1': 'document_state', '3': 6, '4': 1, '5': 9, '10': 'documentState'},
+    {
+      '1': 'non_attorney_impersonation_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'nonAttorneyImpersonationEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyJurisdictionDocumentSystemRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyJurisdictionDocumentSystemRequestDescriptor = $convert.base64Decode(
+    'CitTYXZlTGVnYWN5SnVyaXNkaWN0aW9uRG9jdW1lbnRTeXN0ZW1SZXF1ZXN0EhcKB3VzZXJfaW'
+    'QYASABKAlSBnVzZXJJZBIfCgtzeXN0ZW1fY29kZRgCIAEoCVIKc3lzdGVtQ29kZRJGCiBqdXJp'
+    'c2RpY3Rpb25fcnVsZV9wYWNrX2FuZF9zY29wZRgDIAEoCVIcanVyaXNkaWN0aW9uUnVsZVBhY2'
+    'tBbmRTY29wZRJMCiNjbGF1c2VfdmVyc2lvbl9hbmRfYXR0b3JuZXlfdHJpZ2dlchgEIAEoCVIf'
+    'Y2xhdXNlVmVyc2lvbkFuZEF0dG9ybmV5VHJpZ2dlchJSCiZleGVjdXRpb25fd2l0bmVzc19hbm'
+    'Rfbm90YXJ5X2NoZWNrbGlzdBgFIAEoCVIiZXhlY3V0aW9uV2l0bmVzc0FuZE5vdGFyeUNoZWNr'
+    'bGlzdBIlCg5kb2N1bWVudF9zdGF0ZRgGIAEoCVINZG9jdW1lbnRTdGF0ZRJNCiNub25fYXR0b3'
+    'JuZXlfaW1wZXJzb25hdGlvbl9lbmZvcmNlZBgHIAEoCFIgbm9uQXR0b3JuZXlJbXBlcnNvbmF0'
+    'aW9uRW5mb3JjZWQ=');
+
+@$core.Deprecated(
+    'Use saveLegacyJurisdictionDocumentSystemResponseDescriptor instead')
+const SaveLegacyJurisdictionDocumentSystemResponse$json = {
+  '1': 'SaveLegacyJurisdictionDocumentSystemResponse',
+  '2': [
+    {
+      '1': 'system',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView',
+      '10': 'system'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyJurisdictionDocumentSystemResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyJurisdictionDocumentSystemResponseDescriptor =
+    $convert.base64Decode(
+        'CixTYXZlTGVnYWN5SnVyaXNkaWN0aW9uRG9jdW1lbnRTeXN0ZW1SZXNwb25zZRJQCgZzeXN0ZW'
+        '0YASABKAsyOC5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5SnVyaXNkaWN0aW9uRG9jdW1lbnRT'
+        'eXN0ZW1WaWV3UgZzeXN0ZW0=');
+
+@$core.Deprecated(
+    'Use triggerLegacyCounselReviewOrLockExecutionRequestDescriptor instead')
+const TriggerLegacyCounselReviewOrLockExecutionRequest$json = {
+  '1': 'TriggerLegacyCounselReviewOrLockExecutionRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'system_code', '3': 2, '4': 1, '5': 9, '10': 'systemCode'},
+    {
+      '1': 'target_document_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetDocumentState'
+    },
+    {'1': 'execution_notes', '3': 4, '4': 1, '5': 9, '10': 'executionNotes'},
+  ],
+};
+
+/// Descriptor for `TriggerLegacyCounselReviewOrLockExecutionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    triggerLegacyCounselReviewOrLockExecutionRequestDescriptor =
+    $convert.base64Decode(
+        'CjBUcmlnZ2VyTGVnYWN5Q291bnNlbFJldmlld09yTG9ja0V4ZWN1dGlvblJlcXVlc3QSFwoHdX'
+        'Nlcl9pZBgBIAEoCVIGdXNlcklkEh8KC3N5c3RlbV9jb2RlGAIgASgJUgpzeXN0ZW1Db2RlEjIK'
+        'FXRhcmdldF9kb2N1bWVudF9zdGF0ZRgDIAEoCVITdGFyZ2V0RG9jdW1lbnRTdGF0ZRInCg9leG'
+        'VjdXRpb25fbm90ZXMYBCABKAlSDmV4ZWN1dGlvbk5vdGVz');
+
+@$core.Deprecated(
+    'Use triggerLegacyCounselReviewOrLockExecutionResponseDescriptor instead')
+const TriggerLegacyCounselReviewOrLockExecutionResponse$json = {
+  '1': 'TriggerLegacyCounselReviewOrLockExecutionResponse',
+  '2': [
+    {
+      '1': 'system',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView',
+      '10': 'system'
+    },
+    {'1': 'execution_status', '3': 2, '4': 1, '5': 9, '10': 'executionStatus'},
+  ],
+};
+
+/// Descriptor for `TriggerLegacyCounselReviewOrLockExecutionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    triggerLegacyCounselReviewOrLockExecutionResponseDescriptor =
+    $convert.base64Decode(
+        'CjFUcmlnZ2VyTGVnYWN5Q291bnNlbFJldmlld09yTG9ja0V4ZWN1dGlvblJlc3BvbnNlElAKBn'
+        'N5c3RlbRgBIAEoCzI4LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lKdXJpc2RpY3Rpb25Eb2N1'
+        'bWVudFN5c3RlbVZpZXdSBnN5c3RlbRIpChBleGVjdXRpb25fc3RhdHVzGAIgASgJUg9leGVjdX'
+        'Rpb25TdGF0dXM=');
+
+@$core.Deprecated('Use legacyHouseholdBusinessContinuityViewDescriptor instead')
+const LegacyHouseholdBusinessContinuityView$json = {
+  '1': 'LegacyHouseholdBusinessContinuityView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'continuity_code', '3': 3, '4': 1, '5': 9, '10': 'continuityCode'},
+    {
+      '1': 'role_playbook_and_first_week_guide',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'rolePlaybookAndFirstWeekGuide'
+    },
+    {
+      '1': 'authority_matrix_and_signatory_limits',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'authorityMatrixAndSignatoryLimits'
+    },
+    {
+      '1': 'offline_emergency_card_and_drill_log',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineEmergencyCardAndDrillLog'
+    },
+    {'1': 'continuity_state', '3': 7, '4': 1, '5': 9, '10': 'continuityState'},
+    {
+      '1': 'full_vault_unscoped_leak_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'fullVaultUnscopedLeakBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyHouseholdBusinessContinuityView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyHouseholdBusinessContinuityViewDescriptor = $convert.base64Decode(
+    'CiVMZWdhY3lIb3VzZWhvbGRCdXNpbmVzc0NvbnRpbnVpdHlWaWV3Eg4KAmlkGAEgASgJUgJpZB'
+    'IXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJwoPY29udGludWl0eV9jb2RlGAMgASgJUg5jb250'
+    'aW51aXR5Q29kZRJJCiJyb2xlX3BsYXlib29rX2FuZF9maXJzdF93ZWVrX2d1aWRlGAQgASgJUh'
+    '1yb2xlUGxheWJvb2tBbmRGaXJzdFdlZWtHdWlkZRJQCiVhdXRob3JpdHlfbWF0cml4X2FuZF9z'
+    'aWduYXRvcnlfbGltaXRzGAUgASgJUiFhdXRob3JpdHlNYXRyaXhBbmRTaWduYXRvcnlMaW1pdH'
+    'MSTQokb2ZmbGluZV9lbWVyZ2VuY3lfY2FyZF9hbmRfZHJpbGxfbG9nGAYgASgJUh9vZmZsaW5l'
+    'RW1lcmdlbmN5Q2FyZEFuZERyaWxsTG9nEikKEGNvbnRpbnVpdHlfc3RhdGUYByABKAlSD2Nvbn'
+    'RpbnVpdHlTdGF0ZRJGCiBmdWxsX3ZhdWx0X3Vuc2NvcGVkX2xlYWtfYmxvY2tlZBgIIAEoCFIc'
+    'ZnVsbFZhdWx0VW5zY29wZWRMZWFrQmxvY2tlZBIkCg51cGRhdGVkX2F0X2lzbxgJIAEoCVIMdX'
+    'BkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getLegacyContinuityPlaybookWorkbenchRequestDescriptor instead')
+const GetLegacyContinuityPlaybookWorkbenchRequest$json = {
+  '1': 'GetLegacyContinuityPlaybookWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyContinuityPlaybookWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyContinuityPlaybookWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lDb250aW51aXR5UGxheWJvb2tXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaW'
+        'QYASABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyContinuityPlaybookWorkbenchResponseDescriptor instead')
+const GetLegacyContinuityPlaybookWorkbenchResponse$json = {
+  '1': 'GetLegacyContinuityPlaybookWorkbenchResponse',
+  '2': [
+    {
+      '1': 'playbooks',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView',
+      '10': 'playbooks'
+    },
+    {'1': 'refresh_due_count', '3': 2, '4': 1, '5': 5, '10': 'refreshDueCount'},
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyContinuityPlaybookWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyContinuityPlaybookWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZXRMZWdhY3lDb250aW51aXR5UGxheWJvb2tXb3JrYmVuY2hSZXNwb25zZRJXCglwbGF5Ym'
+        '9va3MYASADKAsyOS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5SG91c2Vob2xkQnVzaW5lc3ND'
+        'b250aW51aXR5Vmlld1IJcGxheWJvb2tzEioKEXJlZnJlc2hfZHVlX2NvdW50GAIgASgFUg9yZW'
+        'ZyZXNoRHVlQ291bnQSKwoRd29ya2JlbmNoX3N1bW1hcnkYAyABKAlSEHdvcmtiZW5jaFN1bW1h'
+        'cnk=');
+
+@$core.Deprecated(
+    'Use saveLegacyHouseholdBusinessContinuityRequestDescriptor instead')
+const SaveLegacyHouseholdBusinessContinuityRequest$json = {
+  '1': 'SaveLegacyHouseholdBusinessContinuityRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'continuity_code', '3': 2, '4': 1, '5': 9, '10': 'continuityCode'},
+    {
+      '1': 'role_playbook_and_first_week_guide',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'rolePlaybookAndFirstWeekGuide'
+    },
+    {
+      '1': 'authority_matrix_and_signatory_limits',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'authorityMatrixAndSignatoryLimits'
+    },
+    {
+      '1': 'offline_emergency_card_and_drill_log',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineEmergencyCardAndDrillLog'
+    },
+    {'1': 'continuity_state', '3': 6, '4': 1, '5': 9, '10': 'continuityState'},
+    {
+      '1': 'full_vault_unscoped_leak_blocked',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'fullVaultUnscopedLeakBlocked'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyHouseholdBusinessContinuityRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyHouseholdBusinessContinuityRequestDescriptor = $convert.base64Decode(
+    'CixTYXZlTGVnYWN5SG91c2Vob2xkQnVzaW5lc3NDb250aW51aXR5UmVxdWVzdBIXCgd1c2VyX2'
+    'lkGAEgASgJUgZ1c2VySWQSJwoPY29udGludWl0eV9jb2RlGAIgASgJUg5jb250aW51aXR5Q29k'
+    'ZRJJCiJyb2xlX3BsYXlib29rX2FuZF9maXJzdF93ZWVrX2d1aWRlGAMgASgJUh1yb2xlUGxheW'
+    'Jvb2tBbmRGaXJzdFdlZWtHdWlkZRJQCiVhdXRob3JpdHlfbWF0cml4X2FuZF9zaWduYXRvcnlf'
+    'bGltaXRzGAQgASgJUiFhdXRob3JpdHlNYXRyaXhBbmRTaWduYXRvcnlMaW1pdHMSTQokb2ZmbG'
+    'luZV9lbWVyZ2VuY3lfY2FyZF9hbmRfZHJpbGxfbG9nGAUgASgJUh9vZmZsaW5lRW1lcmdlbmN5'
+    'Q2FyZEFuZERyaWxsTG9nEikKEGNvbnRpbnVpdHlfc3RhdGUYBiABKAlSD2NvbnRpbnVpdHlTdG'
+    'F0ZRJGCiBmdWxsX3ZhdWx0X3Vuc2NvcGVkX2xlYWtfYmxvY2tlZBgHIAEoCFIcZnVsbFZhdWx0'
+    'VW5zY29wZWRMZWFrQmxvY2tlZA==');
+
+@$core.Deprecated(
+    'Use saveLegacyHouseholdBusinessContinuityResponseDescriptor instead')
+const SaveLegacyHouseholdBusinessContinuityResponse$json = {
+  '1': 'SaveLegacyHouseholdBusinessContinuityResponse',
+  '2': [
+    {
+      '1': 'playbook',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView',
+      '10': 'playbook'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyHouseholdBusinessContinuityResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyHouseholdBusinessContinuityResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlTGVnYWN5SG91c2Vob2xkQnVzaW5lc3NDb250aW51aXR5UmVzcG9uc2USVQoIcGxheW'
+        'Jvb2sYASABKAsyOS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5SG91c2Vob2xkQnVzaW5lc3ND'
+        'b250aW51aXR5Vmlld1IIcGxheWJvb2s=');
+
+@$core.Deprecated(
+    'Use runLegacyContinuityDrillOrStageDelegationRequestDescriptor instead')
+const RunLegacyContinuityDrillOrStageDelegationRequest$json = {
+  '1': 'RunLegacyContinuityDrillOrStageDelegationRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'continuity_code', '3': 2, '4': 1, '5': 9, '10': 'continuityCode'},
+    {
+      '1': 'target_continuity_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetContinuityState'
+    },
+    {'1': 'drill_notes', '3': 4, '4': 1, '5': 9, '10': 'drillNotes'},
+  ],
+};
+
+/// Descriptor for `RunLegacyContinuityDrillOrStageDelegationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    runLegacyContinuityDrillOrStageDelegationRequestDescriptor =
+    $convert.base64Decode(
+        'CjBSdW5MZWdhY3lDb250aW51aXR5RHJpbGxPclN0YWdlRGVsZWdhdGlvblJlcXVlc3QSFwoHdX'
+        'Nlcl9pZBgBIAEoCVIGdXNlcklkEicKD2NvbnRpbnVpdHlfY29kZRgCIAEoCVIOY29udGludWl0'
+        'eUNvZGUSNgoXdGFyZ2V0X2NvbnRpbnVpdHlfc3RhdGUYAyABKAlSFXRhcmdldENvbnRpbnVpdH'
+        'lTdGF0ZRIfCgtkcmlsbF9ub3RlcxgEIAEoCVIKZHJpbGxOb3Rlcw==');
+
+@$core.Deprecated(
+    'Use runLegacyContinuityDrillOrStageDelegationResponseDescriptor instead')
+const RunLegacyContinuityDrillOrStageDelegationResponse$json = {
+  '1': 'RunLegacyContinuityDrillOrStageDelegationResponse',
+  '2': [
+    {
+      '1': 'playbook',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView',
+      '10': 'playbook'
+    },
+    {'1': 'drill_status', '3': 2, '4': 1, '5': 9, '10': 'drillStatus'},
+  ],
+};
+
+/// Descriptor for `RunLegacyContinuityDrillOrStageDelegationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    runLegacyContinuityDrillOrStageDelegationResponseDescriptor =
+    $convert.base64Decode(
+        'CjFSdW5MZWdhY3lDb250aW51aXR5RHJpbGxPclN0YWdlRGVsZWdhdGlvblJlc3BvbnNlElUKCH'
+        'BsYXlib29rGAEgASgLMjkuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUhvdXNlaG9sZEJ1c2lu'
+        'ZXNzQ29udGludWl0eVZpZXdSCHBsYXlib29rEiEKDGRyaWxsX3N0YXR1cxgCIAEoCVILZHJpbG'
+        'xTdGF0dXM=');
+
+@$core.Deprecated('Use legacyIncapacityDeadmanProtocolViewDescriptor instead')
+const LegacyIncapacityDeadmanProtocolView$json = {
+  '1': 'LegacyIncapacityDeadmanProtocolView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'protocol_code', '3': 3, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'workflow_branch_and_waiting_clocks',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'workflowBranchAndWaitingClocks'
+    },
+    {
+      '1': 'multi_party_threshold_and_evidence',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'multiPartyThresholdAndEvidence'
+    },
+    {
+      '1': 'staged_watermarked_release_bundle',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'stagedWatermarkedReleaseBundle'
+    },
+    {'1': 'protocol_state', '3': 7, '4': 1, '5': 9, '10': 'protocolState'},
+    {
+      '1': 'single_actor_release_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'singleActorReleaseBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyIncapacityDeadmanProtocolView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyIncapacityDeadmanProtocolViewDescriptor = $convert.base64Decode(
+    'CiNMZWdhY3lJbmNhcGFjaXR5RGVhZG1hblByb3RvY29sVmlldxIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiMKDXByb3RvY29sX2NvZGUYAyABKAlSDHByb3RvY29s'
+    'Q29kZRJKCiJ3b3JrZmxvd19icmFuY2hfYW5kX3dhaXRpbmdfY2xvY2tzGAQgASgJUh53b3JrZm'
+    'xvd0JyYW5jaEFuZFdhaXRpbmdDbG9ja3MSSgoibXVsdGlfcGFydHlfdGhyZXNob2xkX2FuZF9l'
+    'dmlkZW5jZRgFIAEoCVIebXVsdGlQYXJ0eVRocmVzaG9sZEFuZEV2aWRlbmNlEkkKIXN0YWdlZF'
+    '93YXRlcm1hcmtlZF9yZWxlYXNlX2J1bmRsZRgGIAEoCVIec3RhZ2VkV2F0ZXJtYXJrZWRSZWxl'
+    'YXNlQnVuZGxlEiUKDnByb3RvY29sX3N0YXRlGAcgASgJUg1wcm90b2NvbFN0YXRlEj8KHHNpbm'
+    'dsZV9hY3Rvcl9yZWxlYXNlX2Jsb2NrZWQYCCABKAhSGXNpbmdsZUFjdG9yUmVsZWFzZUJsb2Nr'
+    'ZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacyIncapacityDeadmanWorkbenchRequestDescriptor instead')
+const GetLegacyIncapacityDeadmanWorkbenchRequest$json = {
+  '1': 'GetLegacyIncapacityDeadmanWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyIncapacityDeadmanWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyIncapacityDeadmanWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXRMZWdhY3lJbmNhcGFjaXR5RGVhZG1hbldvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getLegacyIncapacityDeadmanWorkbenchResponseDescriptor instead')
+const GetLegacyIncapacityDeadmanWorkbenchResponse$json = {
+  '1': 'GetLegacyIncapacityDeadmanWorkbenchResponse',
+  '2': [
+    {
+      '1': 'protocols',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView',
+      '10': 'protocols'
+    },
+    {
+      '1': 'active_grace_window_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'activeGraceWindowCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyIncapacityDeadmanWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyIncapacityDeadmanWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lJbmNhcGFjaXR5RGVhZG1hbldvcmtiZW5jaFJlc3BvbnNlElUKCXByb3RvY2'
+        '9scxgBIAMoCzI3LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lJbmNhcGFjaXR5RGVhZG1hblBy'
+        'b3RvY29sVmlld1IJcHJvdG9jb2xzEjkKGWFjdGl2ZV9ncmFjZV93aW5kb3dfY291bnQYAiABKA'
+        'VSFmFjdGl2ZUdyYWNlV2luZG93Q291bnQSKwoRd29ya2JlbmNoX3N1bW1hcnkYAyABKAlSEHdv'
+        'cmtiZW5jaFN1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveLegacyIncapacityDeadmanProtocolRequestDescriptor instead')
+const SaveLegacyIncapacityDeadmanProtocolRequest$json = {
+  '1': 'SaveLegacyIncapacityDeadmanProtocolRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'protocol_code', '3': 2, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'workflow_branch_and_waiting_clocks',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workflowBranchAndWaitingClocks'
+    },
+    {
+      '1': 'multi_party_threshold_and_evidence',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'multiPartyThresholdAndEvidence'
+    },
+    {
+      '1': 'staged_watermarked_release_bundle',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'stagedWatermarkedReleaseBundle'
+    },
+    {'1': 'protocol_state', '3': 6, '4': 1, '5': 9, '10': 'protocolState'},
+    {
+      '1': 'single_actor_release_blocked',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'singleActorReleaseBlocked'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyIncapacityDeadmanProtocolRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyIncapacityDeadmanProtocolRequestDescriptor = $convert.base64Decode(
+    'CipTYXZlTGVnYWN5SW5jYXBhY2l0eURlYWRtYW5Qcm90b2NvbFJlcXVlc3QSFwoHdXNlcl9pZB'
+    'gBIAEoCVIGdXNlcklkEiMKDXByb3RvY29sX2NvZGUYAiABKAlSDHByb3RvY29sQ29kZRJKCiJ3'
+    'b3JrZmxvd19icmFuY2hfYW5kX3dhaXRpbmdfY2xvY2tzGAMgASgJUh53b3JrZmxvd0JyYW5jaE'
+    'FuZFdhaXRpbmdDbG9ja3MSSgoibXVsdGlfcGFydHlfdGhyZXNob2xkX2FuZF9ldmlkZW5jZRgE'
+    'IAEoCVIebXVsdGlQYXJ0eVRocmVzaG9sZEFuZEV2aWRlbmNlEkkKIXN0YWdlZF93YXRlcm1hcm'
+    'tlZF9yZWxlYXNlX2J1bmRsZRgFIAEoCVIec3RhZ2VkV2F0ZXJtYXJrZWRSZWxlYXNlQnVuZGxl'
+    'EiUKDnByb3RvY29sX3N0YXRlGAYgASgJUg1wcm90b2NvbFN0YXRlEj8KHHNpbmdsZV9hY3Rvcl'
+    '9yZWxlYXNlX2Jsb2NrZWQYByABKAhSGXNpbmdsZUFjdG9yUmVsZWFzZUJsb2NrZWQ=');
+
+@$core.Deprecated(
+    'Use saveLegacyIncapacityDeadmanProtocolResponseDescriptor instead')
+const SaveLegacyIncapacityDeadmanProtocolResponse$json = {
+  '1': 'SaveLegacyIncapacityDeadmanProtocolResponse',
+  '2': [
+    {
+      '1': 'protocol',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView',
+      '10': 'protocol'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyIncapacityDeadmanProtocolResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyIncapacityDeadmanProtocolResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlTGVnYWN5SW5jYXBhY2l0eURlYWRtYW5Qcm90b2NvbFJlc3BvbnNlElMKCHByb3RvY2'
+        '9sGAEgASgLMjcuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUluY2FwYWNpdHlEZWFkbWFuUHJv'
+        'dG9jb2xWaWV3Ughwcm90b2NvbA==');
+
+@$core.Deprecated(
+    'Use simulateOrCancelLegacyDeadmanReleaseRequestDescriptor instead')
+const SimulateOrCancelLegacyDeadmanReleaseRequest$json = {
+  '1': 'SimulateOrCancelLegacyDeadmanReleaseRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'protocol_code', '3': 2, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'target_protocol_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetProtocolState'
+    },
+    {'1': 'protocol_notes', '3': 4, '4': 1, '5': 9, '10': 'protocolNotes'},
+  ],
+};
+
+/// Descriptor for `SimulateOrCancelLegacyDeadmanReleaseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    simulateOrCancelLegacyDeadmanReleaseRequestDescriptor =
+    $convert.base64Decode(
+        'CitTaW11bGF0ZU9yQ2FuY2VsTGVnYWN5RGVhZG1hblJlbGVhc2VSZXF1ZXN0EhcKB3VzZXJfaW'
+        'QYASABKAlSBnVzZXJJZBIjCg1wcm90b2NvbF9jb2RlGAIgASgJUgxwcm90b2NvbENvZGUSMgoV'
+        'dGFyZ2V0X3Byb3RvY29sX3N0YXRlGAMgASgJUhN0YXJnZXRQcm90b2NvbFN0YXRlEiUKDnByb3'
+        'RvY29sX25vdGVzGAQgASgJUg1wcm90b2NvbE5vdGVz');
+
+@$core.Deprecated(
+    'Use simulateOrCancelLegacyDeadmanReleaseResponseDescriptor instead')
+const SimulateOrCancelLegacyDeadmanReleaseResponse$json = {
+  '1': 'SimulateOrCancelLegacyDeadmanReleaseResponse',
+  '2': [
+    {
+      '1': 'protocol',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView',
+      '10': 'protocol'
+    },
+    {'1': 'protocol_status', '3': 2, '4': 1, '5': 9, '10': 'protocolStatus'},
+  ],
+};
+
+/// Descriptor for `SimulateOrCancelLegacyDeadmanReleaseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    simulateOrCancelLegacyDeadmanReleaseResponseDescriptor =
+    $convert.base64Decode(
+        'CixTaW11bGF0ZU9yQ2FuY2VsTGVnYWN5RGVhZG1hblJlbGVhc2VSZXNwb25zZRJTCghwcm90b2'
+        'NvbBgBIAEoCzI3LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lJbmNhcGFjaXR5RGVhZG1hblBy'
+        'b3RvY29sVmlld1IIcHJvdG9jb2wSJwoPcHJvdG9jb2xfc3RhdHVzGAIgASgJUg5wcm90b2NvbF'
+        'N0YXR1cw==');
+
+@$core.Deprecated('Use legacyExecutorTrusteeWorkspaceViewDescriptor instead')
+const LegacyExecutorTrusteeWorkspaceView$json = {
+  '1': 'LegacyExecutorTrusteeWorkspaceView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'workspace_code', '3': 3, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'executor_authority_and_jurisdiction',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'executorAuthorityAndJurisdiction'
+    },
+    {
+      '1': 'settlement_task_and_claim_timeline',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'settlementTaskAndClaimTimeline'
+    },
+    {
+      '1': 'partitioned_beneficiary_portal_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'partitionedBeneficiaryPortalSummary'
+    },
+    {'1': 'workspace_state', '3': 7, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'unrelated_beneficiary_isolation_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'unrelatedBeneficiaryIsolationEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyExecutorTrusteeWorkspaceView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyExecutorTrusteeWorkspaceViewDescriptor = $convert.base64Decode(
+    'CiJMZWdhY3lFeGVjdXRvclRydXN0ZWVXb3Jrc3BhY2VWaWV3Eg4KAmlkGAEgASgJUgJpZBIXCg'
+    'd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJQoOd29ya3NwYWNlX2NvZGUYAyABKAlSDXdvcmtzcGFj'
+    'ZUNvZGUSTQojZXhlY3V0b3JfYXV0aG9yaXR5X2FuZF9qdXJpc2RpY3Rpb24YBCABKAlSIGV4ZW'
+    'N1dG9yQXV0aG9yaXR5QW5kSnVyaXNkaWN0aW9uEkoKInNldHRsZW1lbnRfdGFza19hbmRfY2xh'
+    'aW1fdGltZWxpbmUYBSABKAlSHnNldHRsZW1lbnRUYXNrQW5kQ2xhaW1UaW1lbGluZRJTCiZwYX'
+    'J0aXRpb25lZF9iZW5lZmljaWFyeV9wb3J0YWxfc3VtbWFyeRgGIAEoCVIjcGFydGl0aW9uZWRC'
+    'ZW5lZmljaWFyeVBvcnRhbFN1bW1hcnkSJwoPd29ya3NwYWNlX3N0YXRlGAcgASgJUg53b3Jrc3'
+    'BhY2VTdGF0ZRJXCih1bnJlbGF0ZWRfYmVuZWZpY2lhcnlfaXNvbGF0aW9uX2VuZm9yY2VkGAgg'
+    'ASgIUiV1bnJlbGF0ZWRCZW5lZmljaWFyeUlzb2xhdGlvbkVuZm9yY2VkEiQKDnVwZGF0ZWRfYX'
+    'RfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getLegacyExecutorWorkspaceWorkbenchRequestDescriptor instead')
+const GetLegacyExecutorWorkspaceWorkbenchRequest$json = {
+  '1': 'GetLegacyExecutorWorkspaceWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyExecutorWorkspaceWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyExecutorWorkspaceWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXRMZWdhY3lFeGVjdXRvcldvcmtzcGFjZVdvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getLegacyExecutorWorkspaceWorkbenchResponseDescriptor instead')
+const GetLegacyExecutorWorkspaceWorkbenchResponse$json = {
+  '1': 'GetLegacyExecutorWorkspaceWorkbenchResponse',
+  '2': [
+    {
+      '1': 'workspaces',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView',
+      '10': 'workspaces'
+    },
+    {
+      '1': 'open_dispute_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'openDisputeCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyExecutorWorkspaceWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyExecutorWorkspaceWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lFeGVjdXRvcldvcmtzcGFjZVdvcmtiZW5jaFJlc3BvbnNlElYKCndvcmtzcG'
+        'FjZXMYASADKAsyNi5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5RXhlY3V0b3JUcnVzdGVlV29y'
+        'a3NwYWNlVmlld1IKd29ya3NwYWNlcxIsChJvcGVuX2Rpc3B1dGVfY291bnQYAiABKAVSEG9wZW'
+        '5EaXNwdXRlQ291bnQSKwoRd29ya2JlbmNoX3N1bW1hcnkYAyABKAlSEHdvcmtiZW5jaFN1bW1h'
+        'cnk=');
+
+@$core.Deprecated(
+    'Use saveLegacyExecutorTrusteeWorkspaceRequestDescriptor instead')
+const SaveLegacyExecutorTrusteeWorkspaceRequest$json = {
+  '1': 'SaveLegacyExecutorTrusteeWorkspaceRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'workspace_code', '3': 2, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'executor_authority_and_jurisdiction',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'executorAuthorityAndJurisdiction'
+    },
+    {
+      '1': 'settlement_task_and_claim_timeline',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'settlementTaskAndClaimTimeline'
+    },
+    {
+      '1': 'partitioned_beneficiary_portal_summary',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'partitionedBeneficiaryPortalSummary'
+    },
+    {'1': 'workspace_state', '3': 6, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'unrelated_beneficiary_isolation_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'unrelatedBeneficiaryIsolationEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyExecutorTrusteeWorkspaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyExecutorTrusteeWorkspaceRequestDescriptor = $convert.base64Decode(
+    'CilTYXZlTGVnYWN5RXhlY3V0b3JUcnVzdGVlV29ya3NwYWNlUmVxdWVzdBIXCgd1c2VyX2lkGA'
+    'EgASgJUgZ1c2VySWQSJQoOd29ya3NwYWNlX2NvZGUYAiABKAlSDXdvcmtzcGFjZUNvZGUSTQoj'
+    'ZXhlY3V0b3JfYXV0aG9yaXR5X2FuZF9qdXJpc2RpY3Rpb24YAyABKAlSIGV4ZWN1dG9yQXV0aG'
+    '9yaXR5QW5kSnVyaXNkaWN0aW9uEkoKInNldHRsZW1lbnRfdGFza19hbmRfY2xhaW1fdGltZWxp'
+    'bmUYBCABKAlSHnNldHRsZW1lbnRUYXNrQW5kQ2xhaW1UaW1lbGluZRJTCiZwYXJ0aXRpb25lZF'
+    '9iZW5lZmljaWFyeV9wb3J0YWxfc3VtbWFyeRgFIAEoCVIjcGFydGl0aW9uZWRCZW5lZmljaWFy'
+    'eVBvcnRhbFN1bW1hcnkSJwoPd29ya3NwYWNlX3N0YXRlGAYgASgJUg53b3Jrc3BhY2VTdGF0ZR'
+    'JXCih1bnJlbGF0ZWRfYmVuZWZpY2lhcnlfaXNvbGF0aW9uX2VuZm9yY2VkGAcgASgIUiV1bnJl'
+    'bGF0ZWRCZW5lZmljaWFyeUlzb2xhdGlvbkVuZm9yY2Vk');
+
+@$core.Deprecated(
+    'Use saveLegacyExecutorTrusteeWorkspaceResponseDescriptor instead')
+const SaveLegacyExecutorTrusteeWorkspaceResponse$json = {
+  '1': 'SaveLegacyExecutorTrusteeWorkspaceResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyExecutorTrusteeWorkspaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyExecutorTrusteeWorkspaceResponseDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlTGVnYWN5RXhlY3V0b3JUcnVzdGVlV29ya3NwYWNlUmVzcG9uc2USVAoJd29ya3NwYW'
+        'NlGAEgASgLMjYuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUV4ZWN1dG9yVHJ1c3RlZVdvcmtz'
+        'cGFjZVZpZXdSCXdvcmtzcGFjZQ==');
+
+@$core.Deprecated(
+    'Use advanceLegacySettlementTaskOrResolveDisputeRequestDescriptor instead')
+const AdvanceLegacySettlementTaskOrResolveDisputeRequest$json = {
+  '1': 'AdvanceLegacySettlementTaskOrResolveDisputeRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'workspace_code', '3': 2, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'target_workspace_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetWorkspaceState'
+    },
+    {'1': 'resolution_notes', '3': 4, '4': 1, '5': 9, '10': 'resolutionNotes'},
+  ],
+};
+
+/// Descriptor for `AdvanceLegacySettlementTaskOrResolveDisputeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    advanceLegacySettlementTaskOrResolveDisputeRequestDescriptor =
+    $convert.base64Decode(
+        'CjJBZHZhbmNlTGVnYWN5U2V0dGxlbWVudFRhc2tPclJlc29sdmVEaXNwdXRlUmVxdWVzdBIXCg'
+        'd1c2VyX2lkGAEgASgJUgZ1c2VySWQSJQoOd29ya3NwYWNlX2NvZGUYAiABKAlSDXdvcmtzcGFj'
+        'ZUNvZGUSNAoWdGFyZ2V0X3dvcmtzcGFjZV9zdGF0ZRgDIAEoCVIUdGFyZ2V0V29ya3NwYWNlU3'
+        'RhdGUSKQoQcmVzb2x1dGlvbl9ub3RlcxgEIAEoCVIPcmVzb2x1dGlvbk5vdGVz');
+
+@$core.Deprecated(
+    'Use advanceLegacySettlementTaskOrResolveDisputeResponseDescriptor instead')
+const AdvanceLegacySettlementTaskOrResolveDisputeResponse$json = {
+  '1': 'AdvanceLegacySettlementTaskOrResolveDisputeResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView',
+      '10': 'workspace'
+    },
+    {'1': 'workspace_status', '3': 2, '4': 1, '5': 9, '10': 'workspaceStatus'},
+  ],
+};
+
+/// Descriptor for `AdvanceLegacySettlementTaskOrResolveDisputeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    advanceLegacySettlementTaskOrResolveDisputeResponseDescriptor =
+    $convert.base64Decode(
+        'CjNBZHZhbmNlTGVnYWN5U2V0dGxlbWVudFRhc2tPclJlc29sdmVEaXNwdXRlUmVzcG9uc2USVA'
+        'oJd29ya3NwYWNlGAEgASgLMjYuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUV4ZWN1dG9yVHJ1'
+        'c3RlZVdvcmtzcGFjZVZpZXdSCXdvcmtzcGFjZRIpChB3b3Jrc3BhY2Vfc3RhdHVzGAIgASgJUg'
+        '93b3Jrc3BhY2VTdGF0dXM=');
+
+@$core.Deprecated('Use legacySettlementAccountingViewDescriptor instead')
+const LegacySettlementAccountingView$json = {
+  '1': 'LegacySettlementAccountingView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'accounting_code', '3': 3, '4': 1, '5': 9, '10': 'accountingCode'},
+    {
+      '1': 'opening_inventory_and_dod_valuations',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'openingInventoryAndDodValuations'
+    },
+    {
+      '1': 'reversible_ledger_and_period_lock',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'reversibleLedgerAndPeriodLock'
+    },
+    {
+      '1': 'proposed_distribution_and_receipt_pack',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'proposedDistributionAndReceiptPack'
+    },
+    {'1': 'accounting_state', '3': 7, '4': 1, '5': 9, '10': 'accountingState'},
+    {
+      '1': 'non_custodial_execution_boundary_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonCustodialExecutionBoundaryEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacySettlementAccountingView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacySettlementAccountingViewDescriptor = $convert.base64Decode(
+    'Ch5MZWdhY3lTZXR0bGVtZW50QWNjb3VudGluZ1ZpZXcSDgoCaWQYASABKAlSAmlkEhcKB3VzZX'
+    'JfaWQYAiABKAlSBnVzZXJJZBInCg9hY2NvdW50aW5nX2NvZGUYAyABKAlSDmFjY291bnRpbmdD'
+    'b2RlEk4KJG9wZW5pbmdfaW52ZW50b3J5X2FuZF9kb2RfdmFsdWF0aW9ucxgEIAEoCVIgb3Blbm'
+    'luZ0ludmVudG9yeUFuZERvZFZhbHVhdGlvbnMSSAohcmV2ZXJzaWJsZV9sZWRnZXJfYW5kX3Bl'
+    'cmlvZF9sb2NrGAUgASgJUh1yZXZlcnNpYmxlTGVkZ2VyQW5kUGVyaW9kTG9jaxJSCiZwcm9wb3'
+    'NlZF9kaXN0cmlidXRpb25fYW5kX3JlY2VpcHRfcGFjaxgGIAEoCVIicHJvcG9zZWREaXN0cmli'
+    'dXRpb25BbmRSZWNlaXB0UGFjaxIpChBhY2NvdW50aW5nX3N0YXRlGAcgASgJUg9hY2NvdW50aW'
+    '5nU3RhdGUSWAopbm9uX2N1c3RvZGlhbF9leGVjdXRpb25fYm91bmRhcnlfZW5mb3JjZWQYCCAB'
+    'KAhSJW5vbkN1c3RvZGlhbEV4ZWN1dGlvbkJvdW5kYXJ5RW5mb3JjZWQSJAoOdXBkYXRlZF9hdF'
+    '9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacySettlementAccountingWorkbenchRequestDescriptor instead')
+const GetLegacySettlementAccountingWorkbenchRequest$json = {
+  '1': 'GetLegacySettlementAccountingWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacySettlementAccountingWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacySettlementAccountingWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRMZWdhY3lTZXR0bGVtZW50QWNjb3VudGluZ1dvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl'
+        '9pZBgBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getLegacySettlementAccountingWorkbenchResponseDescriptor instead')
+const GetLegacySettlementAccountingWorkbenchResponse$json = {
+  '1': 'GetLegacySettlementAccountingWorkbenchResponse',
+  '2': [
+    {
+      '1': 'accountings',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySettlementAccountingView',
+      '10': 'accountings'
+    },
+    {
+      '1': 'open_reconciling_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'openReconcilingCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacySettlementAccountingWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacySettlementAccountingWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRMZWdhY3lTZXR0bGVtZW50QWNjb3VudGluZ1dvcmtiZW5jaFJlc3BvbnNlElQKC2FjY2'
+        '91bnRpbmdzGAEgAygLMjIuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeVNldHRsZW1lbnRBY2Nv'
+        'dW50aW5nVmlld1ILYWNjb3VudGluZ3MSNAoWb3Blbl9yZWNvbmNpbGluZ19jb3VudBgCIAEoBV'
+        'IUb3BlblJlY29uY2lsaW5nQ291bnQSKwoRd29ya2JlbmNoX3N1bW1hcnkYAyABKAlSEHdvcmti'
+        'ZW5jaFN1bW1hcnk=');
+
+@$core.Deprecated('Use saveLegacySettlementAccountingRequestDescriptor instead')
+const SaveLegacySettlementAccountingRequest$json = {
+  '1': 'SaveLegacySettlementAccountingRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'accounting_code', '3': 2, '4': 1, '5': 9, '10': 'accountingCode'},
+    {
+      '1': 'opening_inventory_and_dod_valuations',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'openingInventoryAndDodValuations'
+    },
+    {
+      '1': 'reversible_ledger_and_period_lock',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'reversibleLedgerAndPeriodLock'
+    },
+    {
+      '1': 'proposed_distribution_and_receipt_pack',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'proposedDistributionAndReceiptPack'
+    },
+    {'1': 'accounting_state', '3': 6, '4': 1, '5': 9, '10': 'accountingState'},
+    {
+      '1': 'non_custodial_execution_boundary_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'nonCustodialExecutionBoundaryEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacySettlementAccountingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacySettlementAccountingRequestDescriptor = $convert.base64Decode(
+    'CiVTYXZlTGVnYWN5U2V0dGxlbWVudEFjY291bnRpbmdSZXF1ZXN0EhcKB3VzZXJfaWQYASABKA'
+    'lSBnVzZXJJZBInCg9hY2NvdW50aW5nX2NvZGUYAiABKAlSDmFjY291bnRpbmdDb2RlEk4KJG9w'
+    'ZW5pbmdfaW52ZW50b3J5X2FuZF9kb2RfdmFsdWF0aW9ucxgDIAEoCVIgb3BlbmluZ0ludmVudG'
+    '9yeUFuZERvZFZhbHVhdGlvbnMSSAohcmV2ZXJzaWJsZV9sZWRnZXJfYW5kX3BlcmlvZF9sb2Nr'
+    'GAQgASgJUh1yZXZlcnNpYmxlTGVkZ2VyQW5kUGVyaW9kTG9jaxJSCiZwcm9wb3NlZF9kaXN0cm'
+    'lidXRpb25fYW5kX3JlY2VpcHRfcGFjaxgFIAEoCVIicHJvcG9zZWREaXN0cmlidXRpb25BbmRS'
+    'ZWNlaXB0UGFjaxIpChBhY2NvdW50aW5nX3N0YXRlGAYgASgJUg9hY2NvdW50aW5nU3RhdGUSWA'
+    'opbm9uX2N1c3RvZGlhbF9leGVjdXRpb25fYm91bmRhcnlfZW5mb3JjZWQYByABKAhSJW5vbkN1'
+    'c3RvZGlhbEV4ZWN1dGlvbkJvdW5kYXJ5RW5mb3JjZWQ=');
+
+@$core
+    .Deprecated('Use saveLegacySettlementAccountingResponseDescriptor instead')
+const SaveLegacySettlementAccountingResponse$json = {
+  '1': 'SaveLegacySettlementAccountingResponse',
+  '2': [
+    {
+      '1': 'accounting',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySettlementAccountingView',
+      '10': 'accounting'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacySettlementAccountingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacySettlementAccountingResponseDescriptor =
+    $convert.base64Decode(
+        'CiZTYXZlTGVnYWN5U2V0dGxlbWVudEFjY291bnRpbmdSZXNwb25zZRJSCgphY2NvdW50aW5nGA'
+        'EgASgLMjIuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeVNldHRsZW1lbnRBY2NvdW50aW5nVmll'
+        'd1IKYWNjb3VudGluZw==');
+
+@$core.Deprecated(
+    'Use lockOrReverseLegacyAccountingPeriodRequestDescriptor instead')
+const LockOrReverseLegacyAccountingPeriodRequest$json = {
+  '1': 'LockOrReverseLegacyAccountingPeriodRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'accounting_code', '3': 2, '4': 1, '5': 9, '10': 'accountingCode'},
+    {
+      '1': 'target_accounting_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetAccountingState'
+    },
+    {'1': 'accounting_notes', '3': 4, '4': 1, '5': 9, '10': 'accountingNotes'},
+  ],
+};
+
+/// Descriptor for `LockOrReverseLegacyAccountingPeriodRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    lockOrReverseLegacyAccountingPeriodRequestDescriptor =
+    $convert.base64Decode(
+        'CipMb2NrT3JSZXZlcnNlTGVnYWN5QWNjb3VudGluZ1BlcmlvZFJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklkEicKD2FjY291bnRpbmdfY29kZRgCIAEoCVIOYWNjb3VudGluZ0NvZGUS'
+        'NgoXdGFyZ2V0X2FjY291bnRpbmdfc3RhdGUYAyABKAlSFXRhcmdldEFjY291bnRpbmdTdGF0ZR'
+        'IpChBhY2NvdW50aW5nX25vdGVzGAQgASgJUg9hY2NvdW50aW5nTm90ZXM=');
+
+@$core.Deprecated(
+    'Use lockOrReverseLegacyAccountingPeriodResponseDescriptor instead')
+const LockOrReverseLegacyAccountingPeriodResponse$json = {
+  '1': 'LockOrReverseLegacyAccountingPeriodResponse',
+  '2': [
+    {
+      '1': 'accounting',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacySettlementAccountingView',
+      '10': 'accounting'
+    },
+    {
+      '1': 'accounting_status',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'accountingStatus'
+    },
+  ],
+};
+
+/// Descriptor for `LockOrReverseLegacyAccountingPeriodResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    lockOrReverseLegacyAccountingPeriodResponseDescriptor =
+    $convert.base64Decode(
+        'CitMb2NrT3JSZXZlcnNlTGVnYWN5QWNjb3VudGluZ1BlcmlvZFJlc3BvbnNlElIKCmFjY291bn'
+        'RpbmcYASABKAsyMi5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5U2V0dGxlbWVudEFjY291bnRp'
+        'bmdWaWV3UgphY2NvdW50aW5nEisKEWFjY291bnRpbmdfc3RhdHVzGAIgASgJUhBhY2NvdW50aW'
+        '5nU3RhdHVz');
+
+@$core.Deprecated('Use legacyDigitalThresholdRecoveryViewDescriptor instead')
+const LegacyDigitalThresholdRecoveryView$json = {
+  '1': 'LegacyDigitalThresholdRecoveryView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'recovery_code', '3': 3, '4': 1, '5': 9, '10': 'recoveryCode'},
+    {
+      '1': 'digital_asset_inventory_and_wishes',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'digitalAssetInventoryAndWishes'
+    },
+    {
+      '1': 'shamir_threshold_and_custodian_domains',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'shamirThresholdAndCustodianDomains'
+    },
+    {
+      '1': 'ceremony_dry_run_and_rotation_log',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'ceremonyDryRunAndRotationLog'
+    },
+    {'1': 'recovery_state', '3': 7, '4': 1, '5': 9, '10': 'recoveryState'},
+    {
+      '1': 'staff_subthreshold_reconstruction_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'staffSubthresholdReconstructionBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyDigitalThresholdRecoveryView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyDigitalThresholdRecoveryViewDescriptor = $convert.base64Decode(
+    'CiJMZWdhY3lEaWdpdGFsVGhyZXNob2xkUmVjb3ZlcnlWaWV3Eg4KAmlkGAEgASgJUgJpZBIXCg'
+    'd1c2VyX2lkGAIgASgJUgZ1c2VySWQSIwoNcmVjb3ZlcnlfY29kZRgDIAEoCVIMcmVjb3ZlcnlD'
+    'b2RlEkoKImRpZ2l0YWxfYXNzZXRfaW52ZW50b3J5X2FuZF93aXNoZXMYBCABKAlSHmRpZ2l0YW'
+    'xBc3NldEludmVudG9yeUFuZFdpc2hlcxJSCiZzaGFtaXJfdGhyZXNob2xkX2FuZF9jdXN0b2Rp'
+    'YW5fZG9tYWlucxgFIAEoCVIic2hhbWlyVGhyZXNob2xkQW5kQ3VzdG9kaWFuRG9tYWlucxJHCi'
+    'FjZXJlbW9ueV9kcnlfcnVuX2FuZF9yb3RhdGlvbl9sb2cYBiABKAlSHGNlcmVtb255RHJ5UnVu'
+    'QW5kUm90YXRpb25Mb2cSJQoOcmVjb3Zlcnlfc3RhdGUYByABKAlSDXJlY292ZXJ5U3RhdGUSWQ'
+    'opc3RhZmZfc3VidGhyZXNob2xkX3JlY29uc3RydWN0aW9uX2Jsb2NrZWQYCCABKAhSJnN0YWZm'
+    'U3VidGhyZXNob2xkUmVjb25zdHJ1Y3Rpb25CbG9ja2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgAS'
+    'gJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getLegacyDigitalRecoveryWorkbenchRequestDescriptor instead')
+const GetLegacyDigitalRecoveryWorkbenchRequest$json = {
+  '1': 'GetLegacyDigitalRecoveryWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyDigitalRecoveryWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLegacyDigitalRecoveryWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CihHZXRMZWdhY3lEaWdpdGFsUmVjb3ZlcnlXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaWQYAS'
+        'ABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyDigitalRecoveryWorkbenchResponseDescriptor instead')
+const GetLegacyDigitalRecoveryWorkbenchResponse$json = {
+  '1': 'GetLegacyDigitalRecoveryWorkbenchResponse',
+  '2': [
+    {
+      '1': 'recoveries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView',
+      '10': 'recoveries'
+    },
+    {
+      '1': 'quarantined_share_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'quarantinedShareCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyDigitalRecoveryWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyDigitalRecoveryWorkbenchResponseDescriptor = $convert.base64Decode(
+        'CilHZXRMZWdhY3lEaWdpdGFsUmVjb3ZlcnlXb3JrYmVuY2hSZXNwb25zZRJWCgpyZWNvdmVyaW'
+        'VzGAEgAygLMjYuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeURpZ2l0YWxUaHJlc2hvbGRSZWNv'
+        'dmVyeVZpZXdSCnJlY292ZXJpZXMSNgoXcXVhcmFudGluZWRfc2hhcmVfY291bnQYAiABKAVSFX'
+        'F1YXJhbnRpbmVkU2hhcmVDb3VudBIrChF3b3JrYmVuY2hfc3VtbWFyeRgDIAEoCVIQd29ya2Jl'
+        'bmNoU3VtbWFyeQ==');
+
+@$core.Deprecated(
+    'Use saveLegacyDigitalThresholdRecoveryRequestDescriptor instead')
+const SaveLegacyDigitalThresholdRecoveryRequest$json = {
+  '1': 'SaveLegacyDigitalThresholdRecoveryRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'recovery_code', '3': 2, '4': 1, '5': 9, '10': 'recoveryCode'},
+    {
+      '1': 'digital_asset_inventory_and_wishes',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'digitalAssetInventoryAndWishes'
+    },
+    {
+      '1': 'shamir_threshold_and_custodian_domains',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'shamirThresholdAndCustodianDomains'
+    },
+    {
+      '1': 'ceremony_dry_run_and_rotation_log',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'ceremonyDryRunAndRotationLog'
+    },
+    {'1': 'recovery_state', '3': 6, '4': 1, '5': 9, '10': 'recoveryState'},
+    {
+      '1': 'staff_subthreshold_reconstruction_blocked',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'staffSubthresholdReconstructionBlocked'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyDigitalThresholdRecoveryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyDigitalThresholdRecoveryRequestDescriptor = $convert.base64Decode(
+    'CilTYXZlTGVnYWN5RGlnaXRhbFRocmVzaG9sZFJlY292ZXJ5UmVxdWVzdBIXCgd1c2VyX2lkGA'
+    'EgASgJUgZ1c2VySWQSIwoNcmVjb3ZlcnlfY29kZRgCIAEoCVIMcmVjb3ZlcnlDb2RlEkoKImRp'
+    'Z2l0YWxfYXNzZXRfaW52ZW50b3J5X2FuZF93aXNoZXMYAyABKAlSHmRpZ2l0YWxBc3NldEludm'
+    'VudG9yeUFuZFdpc2hlcxJSCiZzaGFtaXJfdGhyZXNob2xkX2FuZF9jdXN0b2RpYW5fZG9tYWlu'
+    'cxgEIAEoCVIic2hhbWlyVGhyZXNob2xkQW5kQ3VzdG9kaWFuRG9tYWlucxJHCiFjZXJlbW9ueV'
+    '9kcnlfcnVuX2FuZF9yb3RhdGlvbl9sb2cYBSABKAlSHGNlcmVtb255RHJ5UnVuQW5kUm90YXRp'
+    'b25Mb2cSJQoOcmVjb3Zlcnlfc3RhdGUYBiABKAlSDXJlY292ZXJ5U3RhdGUSWQopc3RhZmZfc3'
+    'VidGhyZXNob2xkX3JlY29uc3RydWN0aW9uX2Jsb2NrZWQYByABKAhSJnN0YWZmU3VidGhyZXNo'
+    'b2xkUmVjb25zdHJ1Y3Rpb25CbG9ja2Vk');
+
+@$core.Deprecated(
+    'Use saveLegacyDigitalThresholdRecoveryResponseDescriptor instead')
+const SaveLegacyDigitalThresholdRecoveryResponse$json = {
+  '1': 'SaveLegacyDigitalThresholdRecoveryResponse',
+  '2': [
+    {
+      '1': 'recovery',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView',
+      '10': 'recovery'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyDigitalThresholdRecoveryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyDigitalThresholdRecoveryResponseDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlTGVnYWN5RGlnaXRhbFRocmVzaG9sZFJlY292ZXJ5UmVzcG9uc2USUgoIcmVjb3Zlcn'
+        'kYASABKAsyNi5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5RGlnaXRhbFRocmVzaG9sZFJlY292'
+        'ZXJ5Vmlld1IIcmVjb3Zlcnk=');
+
+@$core.Deprecated(
+    'Use runLegacyThresholdCeremonyDryRunOrRotateShareRequestDescriptor instead')
+const RunLegacyThresholdCeremonyDryRunOrRotateShareRequest$json = {
+  '1': 'RunLegacyThresholdCeremonyDryRunOrRotateShareRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'recovery_code', '3': 2, '4': 1, '5': 9, '10': 'recoveryCode'},
+    {
+      '1': 'target_recovery_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetRecoveryState'
+    },
+    {'1': 'ceremony_notes', '3': 4, '4': 1, '5': 9, '10': 'ceremonyNotes'},
+  ],
+};
+
+/// Descriptor for `RunLegacyThresholdCeremonyDryRunOrRotateShareRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    runLegacyThresholdCeremonyDryRunOrRotateShareRequestDescriptor =
+    $convert.base64Decode(
+        'CjRSdW5MZWdhY3lUaHJlc2hvbGRDZXJlbW9ueURyeVJ1bk9yUm90YXRlU2hhcmVSZXF1ZXN0Eh'
+        'cKB3VzZXJfaWQYASABKAlSBnVzZXJJZBIjCg1yZWNvdmVyeV9jb2RlGAIgASgJUgxyZWNvdmVy'
+        'eUNvZGUSMgoVdGFyZ2V0X3JlY292ZXJ5X3N0YXRlGAMgASgJUhN0YXJnZXRSZWNvdmVyeVN0YX'
+        'RlEiUKDmNlcmVtb255X25vdGVzGAQgASgJUg1jZXJlbW9ueU5vdGVz');
+
+@$core.Deprecated(
+    'Use runLegacyThresholdCeremonyDryRunOrRotateShareResponseDescriptor instead')
+const RunLegacyThresholdCeremonyDryRunOrRotateShareResponse$json = {
+  '1': 'RunLegacyThresholdCeremonyDryRunOrRotateShareResponse',
+  '2': [
+    {
+      '1': 'recovery',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView',
+      '10': 'recovery'
+    },
+    {'1': 'ceremony_status', '3': 2, '4': 1, '5': 9, '10': 'ceremonyStatus'},
+  ],
+};
+
+/// Descriptor for `RunLegacyThresholdCeremonyDryRunOrRotateShareResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    runLegacyThresholdCeremonyDryRunOrRotateShareResponseDescriptor =
+    $convert.base64Decode(
+        'CjVSdW5MZWdhY3lUaHJlc2hvbGRDZXJlbW9ueURyeVJ1bk9yUm90YXRlU2hhcmVSZXNwb25zZR'
+        'JSCghyZWNvdmVyeRgBIAEoCzI2LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lEaWdpdGFsVGhy'
+        'ZXNob2xkUmVjb3ZlcnlWaWV3UghyZWNvdmVyeRInCg9jZXJlbW9ueV9zdGF0dXMYAiABKAlSDm'
+        'NlcmVtb255U3RhdHVz');
+
+@$core.Deprecated('Use legacyHeritagePreservationArchiveViewDescriptor instead')
+const LegacyHeritagePreservationArchiveView$json = {
+  '1': 'LegacyHeritagePreservationArchiveView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'archive_code', '3': 3, '4': 1, '5': 9, '10': 'archiveCode'},
+    {
+      '1': 'media_manifest_and_fixity_signature',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'mediaManifestAndFixitySignature'
+    },
+    {
+      '1': 'delivery_trigger_and_recipient_consent',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'deliveryTriggerAndRecipientConsent'
+    },
+    {
+      '1': 'format_migration_and_restoration_test',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'formatMigrationAndRestorationTest'
+    },
+    {'1': 'archive_state', '3': 7, '4': 1, '5': 9, '10': 'archiveState'},
+    {
+      '1': 'original_artifact_mutation_blocked',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'originalArtifactMutationBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyHeritagePreservationArchiveView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyHeritagePreservationArchiveViewDescriptor = $convert.base64Decode(
+    'CiVMZWdhY3lIZXJpdGFnZVByZXNlcnZhdGlvbkFyY2hpdmVWaWV3Eg4KAmlkGAEgASgJUgJpZB'
+    'IXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSIQoMYXJjaGl2ZV9jb2RlGAMgASgJUgthcmNoaXZl'
+    'Q29kZRJMCiNtZWRpYV9tYW5pZmVzdF9hbmRfZml4aXR5X3NpZ25hdHVyZRgEIAEoCVIfbWVkaW'
+    'FNYW5pZmVzdEFuZEZpeGl0eVNpZ25hdHVyZRJSCiZkZWxpdmVyeV90cmlnZ2VyX2FuZF9yZWNp'
+    'cGllbnRfY29uc2VudBgFIAEoCVIiZGVsaXZlcnlUcmlnZ2VyQW5kUmVjaXBpZW50Q29uc2VudB'
+    'JQCiVmb3JtYXRfbWlncmF0aW9uX2FuZF9yZXN0b3JhdGlvbl90ZXN0GAYgASgJUiFmb3JtYXRN'
+    'aWdyYXRpb25BbmRSZXN0b3JhdGlvblRlc3QSIwoNYXJjaGl2ZV9zdGF0ZRgHIAEoCVIMYXJjaG'
+    'l2ZVN0YXRlEksKIm9yaWdpbmFsX2FydGlmYWN0X211dGF0aW9uX2Jsb2NrZWQYCCABKAhSH29y'
+    'aWdpbmFsQXJ0aWZhY3RNdXRhdGlvbkJsb2NrZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDH'
+    'VwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacyHeritageArchiveWorkbenchRequestDescriptor instead')
+const GetLegacyHeritageArchiveWorkbenchRequest$json = {
+  '1': 'GetLegacyHeritageArchiveWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyHeritageArchiveWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLegacyHeritageArchiveWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CihHZXRMZWdhY3lIZXJpdGFnZUFyY2hpdmVXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaWQYAS'
+        'ABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyHeritageArchiveWorkbenchResponseDescriptor instead')
+const GetLegacyHeritageArchiveWorkbenchResponse$json = {
+  '1': 'GetLegacyHeritageArchiveWorkbenchResponse',
+  '2': [
+    {
+      '1': 'archives',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHeritagePreservationArchiveView',
+      '10': 'archives'
+    },
+    {
+      '1': 'contact_repair_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'contactRepairCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyHeritageArchiveWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyHeritageArchiveWorkbenchResponseDescriptor = $convert.base64Decode(
+        'CilHZXRMZWdhY3lIZXJpdGFnZUFyY2hpdmVXb3JrYmVuY2hSZXNwb25zZRJVCghhcmNoaXZlcx'
+        'gBIAMoCzI5LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lIZXJpdGFnZVByZXNlcnZhdGlvbkFy'
+        'Y2hpdmVWaWV3UghhcmNoaXZlcxIwChRjb250YWN0X3JlcGFpcl9jb3VudBgCIAEoBVISY29udG'
+        'FjdFJlcGFpckNvdW50EisKEXdvcmtiZW5jaF9zdW1tYXJ5GAMgASgJUhB3b3JrYmVuY2hTdW1t'
+        'YXJ5');
+
+@$core.Deprecated(
+    'Use saveLegacyHeritagePreservationArchiveRequestDescriptor instead')
+const SaveLegacyHeritagePreservationArchiveRequest$json = {
+  '1': 'SaveLegacyHeritagePreservationArchiveRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'archive_code', '3': 2, '4': 1, '5': 9, '10': 'archiveCode'},
+    {
+      '1': 'media_manifest_and_fixity_signature',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'mediaManifestAndFixitySignature'
+    },
+    {
+      '1': 'delivery_trigger_and_recipient_consent',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'deliveryTriggerAndRecipientConsent'
+    },
+    {
+      '1': 'format_migration_and_restoration_test',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'formatMigrationAndRestorationTest'
+    },
+    {'1': 'archive_state', '3': 6, '4': 1, '5': 9, '10': 'archiveState'},
+    {
+      '1': 'original_artifact_mutation_blocked',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'originalArtifactMutationBlocked'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyHeritagePreservationArchiveRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyHeritagePreservationArchiveRequestDescriptor = $convert.base64Decode(
+    'CixTYXZlTGVnYWN5SGVyaXRhZ2VQcmVzZXJ2YXRpb25BcmNoaXZlUmVxdWVzdBIXCgd1c2VyX2'
+    'lkGAEgASgJUgZ1c2VySWQSIQoMYXJjaGl2ZV9jb2RlGAIgASgJUgthcmNoaXZlQ29kZRJMCiNt'
+    'ZWRpYV9tYW5pZmVzdF9hbmRfZml4aXR5X3NpZ25hdHVyZRgDIAEoCVIfbWVkaWFNYW5pZmVzdE'
+    'FuZEZpeGl0eVNpZ25hdHVyZRJSCiZkZWxpdmVyeV90cmlnZ2VyX2FuZF9yZWNpcGllbnRfY29u'
+    'c2VudBgEIAEoCVIiZGVsaXZlcnlUcmlnZ2VyQW5kUmVjaXBpZW50Q29uc2VudBJQCiVmb3JtYX'
+    'RfbWlncmF0aW9uX2FuZF9yZXN0b3JhdGlvbl90ZXN0GAUgASgJUiFmb3JtYXRNaWdyYXRpb25B'
+    'bmRSZXN0b3JhdGlvblRlc3QSIwoNYXJjaGl2ZV9zdGF0ZRgGIAEoCVIMYXJjaGl2ZVN0YXRlEk'
+    'sKIm9yaWdpbmFsX2FydGlmYWN0X211dGF0aW9uX2Jsb2NrZWQYByABKAhSH29yaWdpbmFsQXJ0'
+    'aWZhY3RNdXRhdGlvbkJsb2NrZWQ=');
+
+@$core.Deprecated(
+    'Use saveLegacyHeritagePreservationArchiveResponseDescriptor instead')
+const SaveLegacyHeritagePreservationArchiveResponse$json = {
+  '1': 'SaveLegacyHeritagePreservationArchiveResponse',
+  '2': [
+    {
+      '1': 'archive',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHeritagePreservationArchiveView',
+      '10': 'archive'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyHeritagePreservationArchiveResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyHeritagePreservationArchiveResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlTGVnYWN5SGVyaXRhZ2VQcmVzZXJ2YXRpb25BcmNoaXZlUmVzcG9uc2USUwoHYXJjaG'
+        'l2ZRgBIAEoCzI5LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lIZXJpdGFnZVByZXNlcnZhdGlv'
+        'bkFyY2hpdmVWaWV3UgdhcmNoaXZl');
+
+@$core.Deprecated(
+    'Use verifyLegacyArchiveFixityOrPreviewTriggerRequestDescriptor instead')
+const VerifyLegacyArchiveFixityOrPreviewTriggerRequest$json = {
+  '1': 'VerifyLegacyArchiveFixityOrPreviewTriggerRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'archive_code', '3': 2, '4': 1, '5': 9, '10': 'archiveCode'},
+    {
+      '1': 'target_archive_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetArchiveState'
+    },
+    {'1': 'archive_notes', '3': 4, '4': 1, '5': 9, '10': 'archiveNotes'},
+  ],
+};
+
+/// Descriptor for `VerifyLegacyArchiveFixityOrPreviewTriggerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyLegacyArchiveFixityOrPreviewTriggerRequestDescriptor =
+    $convert.base64Decode(
+        'CjBWZXJpZnlMZWdhY3lBcmNoaXZlRml4aXR5T3JQcmV2aWV3VHJpZ2dlclJlcXVlc3QSFwoHdX'
+        'Nlcl9pZBgBIAEoCVIGdXNlcklkEiEKDGFyY2hpdmVfY29kZRgCIAEoCVILYXJjaGl2ZUNvZGUS'
+        'MAoUdGFyZ2V0X2FyY2hpdmVfc3RhdGUYAyABKAlSEnRhcmdldEFyY2hpdmVTdGF0ZRIjCg1hcm'
+        'NoaXZlX25vdGVzGAQgASgJUgxhcmNoaXZlTm90ZXM=');
+
+@$core.Deprecated(
+    'Use verifyLegacyArchiveFixityOrPreviewTriggerResponseDescriptor instead')
+const VerifyLegacyArchiveFixityOrPreviewTriggerResponse$json = {
+  '1': 'VerifyLegacyArchiveFixityOrPreviewTriggerResponse',
+  '2': [
+    {
+      '1': 'archive',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyHeritagePreservationArchiveView',
+      '10': 'archive'
+    },
+    {'1': 'archive_status', '3': 2, '4': 1, '5': 9, '10': 'archiveStatus'},
+  ],
+};
+
+/// Descriptor for `VerifyLegacyArchiveFixityOrPreviewTriggerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyLegacyArchiveFixityOrPreviewTriggerResponseDescriptor =
+    $convert.base64Decode(
+        'CjFWZXJpZnlMZWdhY3lBcmNoaXZlRml4aXR5T3JQcmV2aWV3VHJpZ2dlclJlc3BvbnNlElMKB2'
+        'FyY2hpdmUYASABKAsyOS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5SGVyaXRhZ2VQcmVzZXJ2'
+        'YXRpb25BcmNoaXZlVmlld1IHYXJjaGl2ZRIlCg5hcmNoaXZlX3N0YXR1cxgCIAEoCVINYXJjaG'
+        'l2ZVN0YXR1cw==');
+
+@$core.Deprecated('Use legacyLiquidityInsuranceReadinessViewDescriptor instead')
+const LegacyLiquidityInsuranceReadinessView$json = {
+  '1': 'LegacyLiquidityInsuranceReadinessView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'readiness_code', '3': 3, '4': 1, '5': 9, '10': 'readinessCode'},
+    {
+      '1': 'obligations_taxes_and_funding_map',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'obligationsTaxesAndFundingMap'
+    },
+    {
+      '1': 'policy_claim_pack_and_source_refs',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'policyClaimPackAndSourceRefs'
+    },
+    {
+      '1': 'shortfall_stress_and_counsel_trigger',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'shortfallStressAndCounselTrigger'
+    },
+    {'1': 'readiness_state', '3': 7, '4': 1, '5': 9, '10': 'readinessState'},
+    {
+      '1': 'no_guaranteed_tax_probate_claim_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noGuaranteedTaxProbateClaimEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyLiquidityInsuranceReadinessView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyLiquidityInsuranceReadinessViewDescriptor = $convert.base64Decode(
+    'CiVMZWdhY3lMaXF1aWRpdHlJbnN1cmFuY2VSZWFkaW5lc3NWaWV3Eg4KAmlkGAEgASgJUgJpZB'
+    'IXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJQoOcmVhZGluZXNzX2NvZGUYAyABKAlSDXJlYWRp'
+    'bmVzc0NvZGUSSAohb2JsaWdhdGlvbnNfdGF4ZXNfYW5kX2Z1bmRpbmdfbWFwGAQgASgJUh1vYm'
+    'xpZ2F0aW9uc1RheGVzQW5kRnVuZGluZ01hcBJHCiFwb2xpY3lfY2xhaW1fcGFja19hbmRfc291'
+    'cmNlX3JlZnMYBSABKAlSHHBvbGljeUNsYWltUGFja0FuZFNvdXJjZVJlZnMSTgokc2hvcnRmYW'
+    'xsX3N0cmVzc19hbmRfY291bnNlbF90cmlnZ2VyGAYgASgJUiBzaG9ydGZhbGxTdHJlc3NBbmRD'
+    'b3Vuc2VsVHJpZ2dlchInCg9yZWFkaW5lc3Nfc3RhdGUYByABKAlSDnJlYWRpbmVzc1N0YXRlEl'
+    'UKKG5vX2d1YXJhbnRlZWRfdGF4X3Byb2JhdGVfY2xhaW1fZW5mb3JjZWQYCCABKAhSI25vR3Vh'
+    'cmFudGVlZFRheFByb2JhdGVDbGFpbUVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUg'
+    'x1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getLegacyLiquidityReadinessWorkbenchRequestDescriptor instead')
+const GetLegacyLiquidityReadinessWorkbenchRequest$json = {
+  '1': 'GetLegacyLiquidityReadinessWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyLiquidityReadinessWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyLiquidityReadinessWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lMaXF1aWRpdHlSZWFkaW5lc3NXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaW'
+        'QYASABKAlSBnVzZXJJZA==');
+
+@$core.Deprecated(
+    'Use getLegacyLiquidityReadinessWorkbenchResponseDescriptor instead')
+const GetLegacyLiquidityReadinessWorkbenchResponse$json = {
+  '1': 'GetLegacyLiquidityReadinessWorkbenchResponse',
+  '2': [
+    {
+      '1': 'readiness_plans',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView',
+      '10': 'readinessPlans'
+    },
+    {
+      '1': 'shortfall_flag_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'shortfallFlagCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyLiquidityReadinessWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyLiquidityReadinessWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZXRMZWdhY3lMaXF1aWRpdHlSZWFkaW5lc3NXb3JrYmVuY2hSZXNwb25zZRJiCg9yZWFkaW'
+        '5lc3NfcGxhbnMYASADKAsyOS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5TGlxdWlkaXR5SW5z'
+        'dXJhbmNlUmVhZGluZXNzVmlld1IOcmVhZGluZXNzUGxhbnMSMAoUc2hvcnRmYWxsX2ZsYWdfY2'
+        '91bnQYAiABKAVSEnNob3J0ZmFsbEZsYWdDb3VudBIrChF3b3JrYmVuY2hfc3VtbWFyeRgDIAEo'
+        'CVIQd29ya2JlbmNoU3VtbWFyeQ==');
+
+@$core.Deprecated(
+    'Use saveLegacyLiquidityInsuranceReadinessRequestDescriptor instead')
+const SaveLegacyLiquidityInsuranceReadinessRequest$json = {
+  '1': 'SaveLegacyLiquidityInsuranceReadinessRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'readiness_code', '3': 2, '4': 1, '5': 9, '10': 'readinessCode'},
+    {
+      '1': 'obligations_taxes_and_funding_map',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'obligationsTaxesAndFundingMap'
+    },
+    {
+      '1': 'policy_claim_pack_and_source_refs',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'policyClaimPackAndSourceRefs'
+    },
+    {
+      '1': 'shortfall_stress_and_counsel_trigger',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'shortfallStressAndCounselTrigger'
+    },
+    {'1': 'readiness_state', '3': 6, '4': 1, '5': 9, '10': 'readinessState'},
+    {
+      '1': 'no_guaranteed_tax_probate_claim_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'noGuaranteedTaxProbateClaimEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLiquidityInsuranceReadinessRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyLiquidityInsuranceReadinessRequestDescriptor = $convert.base64Decode(
+    'CixTYXZlTGVnYWN5TGlxdWlkaXR5SW5zdXJhbmNlUmVhZGluZXNzUmVxdWVzdBIXCgd1c2VyX2'
+    'lkGAEgASgJUgZ1c2VySWQSJQoOcmVhZGluZXNzX2NvZGUYAiABKAlSDXJlYWRpbmVzc0NvZGUS'
+    'SAohb2JsaWdhdGlvbnNfdGF4ZXNfYW5kX2Z1bmRpbmdfbWFwGAMgASgJUh1vYmxpZ2F0aW9uc1'
+    'RheGVzQW5kRnVuZGluZ01hcBJHCiFwb2xpY3lfY2xhaW1fcGFja19hbmRfc291cmNlX3JlZnMY'
+    'BCABKAlSHHBvbGljeUNsYWltUGFja0FuZFNvdXJjZVJlZnMSTgokc2hvcnRmYWxsX3N0cmVzc1'
+    '9hbmRfY291bnNlbF90cmlnZ2VyGAUgASgJUiBzaG9ydGZhbGxTdHJlc3NBbmRDb3Vuc2VsVHJp'
+    'Z2dlchInCg9yZWFkaW5lc3Nfc3RhdGUYBiABKAlSDnJlYWRpbmVzc1N0YXRlElUKKG5vX2d1YX'
+    'JhbnRlZWRfdGF4X3Byb2JhdGVfY2xhaW1fZW5mb3JjZWQYByABKAhSI25vR3VhcmFudGVlZFRh'
+    'eFByb2JhdGVDbGFpbUVuZm9yY2Vk');
+
+@$core.Deprecated(
+    'Use saveLegacyLiquidityInsuranceReadinessResponseDescriptor instead')
+const SaveLegacyLiquidityInsuranceReadinessResponse$json = {
+  '1': 'SaveLegacyLiquidityInsuranceReadinessResponse',
+  '2': [
+    {
+      '1': 'readiness_plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView',
+      '10': 'readinessPlan'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyLiquidityInsuranceReadinessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyLiquidityInsuranceReadinessResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlTGVnYWN5TGlxdWlkaXR5SW5zdXJhbmNlUmVhZGluZXNzUmVzcG9uc2USYAoOcmVhZG'
+        'luZXNzX3BsYW4YASABKAsyOS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5TGlxdWlkaXR5SW5z'
+        'dXJhbmNlUmVhZGluZXNzVmlld1INcmVhZGluZXNzUGxhbg==');
+
+@$core.Deprecated(
+    'Use stressTestLegacyLiquidityOrRouteCounselRequestDescriptor instead')
+const StressTestLegacyLiquidityOrRouteCounselRequest$json = {
+  '1': 'StressTestLegacyLiquidityOrRouteCounselRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'readiness_code', '3': 2, '4': 1, '5': 9, '10': 'readinessCode'},
+    {
+      '1': 'target_readiness_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetReadinessState'
+    },
+    {'1': 'stress_notes', '3': 4, '4': 1, '5': 9, '10': 'stressNotes'},
+  ],
+};
+
+/// Descriptor for `StressTestLegacyLiquidityOrRouteCounselRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stressTestLegacyLiquidityOrRouteCounselRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5TdHJlc3NUZXN0TGVnYWN5TGlxdWlkaXR5T3JSb3V0ZUNvdW5zZWxSZXF1ZXN0EhcKB3VzZX'
+        'JfaWQYASABKAlSBnVzZXJJZBIlCg5yZWFkaW5lc3NfY29kZRgCIAEoCVINcmVhZGluZXNzQ29k'
+        'ZRI0ChZ0YXJnZXRfcmVhZGluZXNzX3N0YXRlGAMgASgJUhR0YXJnZXRSZWFkaW5lc3NTdGF0ZR'
+        'IhCgxzdHJlc3Nfbm90ZXMYBCABKAlSC3N0cmVzc05vdGVz');
+
+@$core.Deprecated(
+    'Use stressTestLegacyLiquidityOrRouteCounselResponseDescriptor instead')
+const StressTestLegacyLiquidityOrRouteCounselResponse$json = {
+  '1': 'StressTestLegacyLiquidityOrRouteCounselResponse',
+  '2': [
+    {
+      '1': 'readiness_plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView',
+      '10': 'readinessPlan'
+    },
+    {'1': 'readiness_status', '3': 2, '4': 1, '5': 9, '10': 'readinessStatus'},
+  ],
+};
+
+/// Descriptor for `StressTestLegacyLiquidityOrRouteCounselResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stressTestLegacyLiquidityOrRouteCounselResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9TdHJlc3NUZXN0TGVnYWN5TGlxdWlkaXR5T3JSb3V0ZUNvdW5zZWxSZXNwb25zZRJgCg5yZW'
+        'FkaW5lc3NfcGxhbhgBIAEoCzI5LnN0dGF0dHVzLmxlZ2FjeS52MS5MZWdhY3lMaXF1aWRpdHlJ'
+        'bnN1cmFuY2VSZWFkaW5lc3NWaWV3Ug1yZWFkaW5lc3NQbGFuEikKEHJlYWRpbmVzc19zdGF0dX'
+        'MYAiABKAlSD3JlYWRpbmVzc1N0YXR1cw==');
+
+@$core.Deprecated('Use legacyCounselFamilyGovernanceViewDescriptor instead')
+const LegacyCounselFamilyGovernanceView$json = {
+  '1': 'LegacyCounselFamilyGovernanceView',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'governance_code', '3': 3, '4': 1, '5': 9, '10': 'governanceCode'},
+    {
+      '1': 'counsel_credentials_and_scoped_dataroom',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'counselCredentialsAndScopedDataroom'
+    },
+    {
+      '1': 'family_charter_and_decision_records',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'familyCharterAndDecisionRecords'
+    },
+    {
+      '1': 'next_gen_education_and_privacy_gate',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'nextGenEducationAndPrivacyGate'
+    },
+    {'1': 'governance_state', '3': 7, '4': 1, '5': 9, '10': 'governanceState'},
+    {
+      '1': 'no_ai_values_or_family_ranking_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'noAiValuesOrFamilyRankingEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `LegacyCounselFamilyGovernanceView`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List legacyCounselFamilyGovernanceViewDescriptor = $convert.base64Decode(
+    'CiFMZWdhY3lDb3Vuc2VsRmFtaWx5R292ZXJuYW5jZVZpZXcSDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBInCg9nb3Zlcm5hbmNlX2NvZGUYAyABKAlSDmdvdmVybmFu'
+    'Y2VDb2RlElQKJ2NvdW5zZWxfY3JlZGVudGlhbHNfYW5kX3Njb3BlZF9kYXRhcm9vbRgEIAEoCV'
+    'IjY291bnNlbENyZWRlbnRpYWxzQW5kU2NvcGVkRGF0YXJvb20STAojZmFtaWx5X2NoYXJ0ZXJf'
+    'YW5kX2RlY2lzaW9uX3JlY29yZHMYBSABKAlSH2ZhbWlseUNoYXJ0ZXJBbmREZWNpc2lvblJlY2'
+    '9yZHMSSwojbmV4dF9nZW5fZWR1Y2F0aW9uX2FuZF9wcml2YWN5X2dhdGUYBiABKAlSHm5leHRH'
+    'ZW5FZHVjYXRpb25BbmRQcml2YWN5R2F0ZRIpChBnb3Zlcm5hbmNlX3N0YXRlGAcgASgJUg9nb3'
+    'Zlcm5hbmNlU3RhdGUSUgonbm9fYWlfdmFsdWVzX29yX2ZhbWlseV9yYW5raW5nX2VuZm9yY2Vk'
+    'GAggASgIUiFub0FpVmFsdWVzT3JGYW1pbHlSYW5raW5nRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF'
+    '9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getLegacyCounselGovernanceWorkbenchRequestDescriptor instead')
+const GetLegacyCounselGovernanceWorkbenchRequest$json = {
+  '1': 'GetLegacyCounselGovernanceWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetLegacyCounselGovernanceWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyCounselGovernanceWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXRMZWdhY3lDb3Vuc2VsR292ZXJuYW5jZVdvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getLegacyCounselGovernanceWorkbenchResponseDescriptor instead')
+const GetLegacyCounselGovernanceWorkbenchResponse$json = {
+  '1': 'GetLegacyCounselGovernanceWorkbenchResponse',
+  '2': [
+    {
+      '1': 'governances',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyCounselFamilyGovernanceView',
+      '10': 'governances'
+    },
+    {
+      '1': 'open_proposal_count',
+      '3': 2,
+      '4': 1,
+      '5': 5,
+      '10': 'openProposalCount'
+    },
+    {
+      '1': 'workbench_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'workbenchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetLegacyCounselGovernanceWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getLegacyCounselGovernanceWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXRMZWdhY3lDb3Vuc2VsR292ZXJuYW5jZVdvcmtiZW5jaFJlc3BvbnNlElcKC2dvdmVybm'
+        'FuY2VzGAEgAygLMjUuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUNvdW5zZWxGYW1pbHlHb3Zl'
+        'cm5hbmNlVmlld1ILZ292ZXJuYW5jZXMSLgoTb3Blbl9wcm9wb3NhbF9jb3VudBgCIAEoBVIRb3'
+        'BlblByb3Bvc2FsQ291bnQSKwoRd29ya2JlbmNoX3N1bW1hcnkYAyABKAlSEHdvcmtiZW5jaFN1'
+        'bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveLegacyCounselFamilyGovernanceRequestDescriptor instead')
+const SaveLegacyCounselFamilyGovernanceRequest$json = {
+  '1': 'SaveLegacyCounselFamilyGovernanceRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'governance_code', '3': 2, '4': 1, '5': 9, '10': 'governanceCode'},
+    {
+      '1': 'counsel_credentials_and_scoped_dataroom',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'counselCredentialsAndScopedDataroom'
+    },
+    {
+      '1': 'family_charter_and_decision_records',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'familyCharterAndDecisionRecords'
+    },
+    {
+      '1': 'next_gen_education_and_privacy_gate',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'nextGenEducationAndPrivacyGate'
+    },
+    {'1': 'governance_state', '3': 6, '4': 1, '5': 9, '10': 'governanceState'},
+    {
+      '1': 'no_ai_values_or_family_ranking_enforced',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'noAiValuesOrFamilyRankingEnforced'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyCounselFamilyGovernanceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveLegacyCounselFamilyGovernanceRequestDescriptor = $convert.base64Decode(
+    'CihTYXZlTGVnYWN5Q291bnNlbEZhbWlseUdvdmVybmFuY2VSZXF1ZXN0EhcKB3VzZXJfaWQYAS'
+    'ABKAlSBnVzZXJJZBInCg9nb3Zlcm5hbmNlX2NvZGUYAiABKAlSDmdvdmVybmFuY2VDb2RlElQK'
+    'J2NvdW5zZWxfY3JlZGVudGlhbHNfYW5kX3Njb3BlZF9kYXRhcm9vbRgDIAEoCVIjY291bnNlbE'
+    'NyZWRlbnRpYWxzQW5kU2NvcGVkRGF0YXJvb20STAojZmFtaWx5X2NoYXJ0ZXJfYW5kX2RlY2lz'
+    'aW9uX3JlY29yZHMYBCABKAlSH2ZhbWlseUNoYXJ0ZXJBbmREZWNpc2lvblJlY29yZHMSSwojbm'
+    'V4dF9nZW5fZWR1Y2F0aW9uX2FuZF9wcml2YWN5X2dhdGUYBSABKAlSHm5leHRHZW5FZHVjYXRp'
+    'b25BbmRQcml2YWN5R2F0ZRIpChBnb3Zlcm5hbmNlX3N0YXRlGAYgASgJUg9nb3Zlcm5hbmNlU3'
+    'RhdGUSUgonbm9fYWlfdmFsdWVzX29yX2ZhbWlseV9yYW5raW5nX2VuZm9yY2VkGAcgASgIUiFu'
+    'b0FpVmFsdWVzT3JGYW1pbHlSYW5raW5nRW5mb3JjZWQ=');
+
+@$core.Deprecated(
+    'Use saveLegacyCounselFamilyGovernanceResponseDescriptor instead')
+const SaveLegacyCounselFamilyGovernanceResponse$json = {
+  '1': 'SaveLegacyCounselFamilyGovernanceResponse',
+  '2': [
+    {
+      '1': 'governance',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyCounselFamilyGovernanceView',
+      '10': 'governance'
+    },
+  ],
+};
+
+/// Descriptor for `SaveLegacyCounselFamilyGovernanceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveLegacyCounselFamilyGovernanceResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlTGVnYWN5Q291bnNlbEZhbWlseUdvdmVybmFuY2VSZXNwb25zZRJVCgpnb3Zlcm5hbm'
+        'NlGAEgASgLMjUuc3R0YXR0dXMubGVnYWN5LnYxLkxlZ2FjeUNvdW5zZWxGYW1pbHlHb3Zlcm5h'
+        'bmNlVmlld1IKZ292ZXJuYW5jZQ==');
+
+@$core.Deprecated(
+    'Use unlockLegacyStewardshipModuleOrRevokeCounselRequestDescriptor instead')
+const UnlockLegacyStewardshipModuleOrRevokeCounselRequest$json = {
+  '1': 'UnlockLegacyStewardshipModuleOrRevokeCounselRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'governance_code', '3': 2, '4': 1, '5': 9, '10': 'governanceCode'},
+    {
+      '1': 'target_governance_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'targetGovernanceState'
+    },
+    {'1': 'governance_notes', '3': 4, '4': 1, '5': 9, '10': 'governanceNotes'},
+  ],
+};
+
+/// Descriptor for `UnlockLegacyStewardshipModuleOrRevokeCounselRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    unlockLegacyStewardshipModuleOrRevokeCounselRequestDescriptor =
+    $convert.base64Decode(
+        'CjNVbmxvY2tMZWdhY3lTdGV3YXJkc2hpcE1vZHVsZU9yUmV2b2tlQ291bnNlbFJlcXVlc3QSFw'
+        'oHdXNlcl9pZBgBIAEoCVIGdXNlcklkEicKD2dvdmVybmFuY2VfY29kZRgCIAEoCVIOZ292ZXJu'
+        'YW5jZUNvZGUSNgoXdGFyZ2V0X2dvdmVybmFuY2Vfc3RhdGUYAyABKAlSFXRhcmdldEdvdmVybm'
+        'FuY2VTdGF0ZRIpChBnb3Zlcm5hbmNlX25vdGVzGAQgASgJUg9nb3Zlcm5hbmNlTm90ZXM=');
+
+@$core.Deprecated(
+    'Use unlockLegacyStewardshipModuleOrRevokeCounselResponseDescriptor instead')
+const UnlockLegacyStewardshipModuleOrRevokeCounselResponse$json = {
+  '1': 'UnlockLegacyStewardshipModuleOrRevokeCounselResponse',
+  '2': [
+    {
+      '1': 'governance',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.legacy.v1.LegacyCounselFamilyGovernanceView',
+      '10': 'governance'
+    },
+    {
+      '1': 'governance_status',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'governanceStatus'
+    },
+  ],
+};
+
+/// Descriptor for `UnlockLegacyStewardshipModuleOrRevokeCounselResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    unlockLegacyStewardshipModuleOrRevokeCounselResponseDescriptor =
+    $convert.base64Decode(
+        'CjRVbmxvY2tMZWdhY3lTdGV3YXJkc2hpcE1vZHVsZU9yUmV2b2tlQ291bnNlbFJlc3BvbnNlEl'
+        'UKCmdvdmVybmFuY2UYASABKAsyNS5zdHRhdHR1cy5sZWdhY3kudjEuTGVnYWN5Q291bnNlbEZh'
+        'bWlseUdvdmVybmFuY2VWaWV3Ugpnb3Zlcm5hbmNlEisKEWdvdmVybmFuY2Vfc3RhdHVzGAIgAS'
+        'gJUhBnb3Zlcm5hbmNlU3RhdHVz');

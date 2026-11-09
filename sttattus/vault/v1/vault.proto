@@ -229,6 +229,72 @@ service VaultService {
   // V8P4.3 — liquidity stress test: given a cash need, source it across the
   // liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
   rpc GetLiquidityStressTest(GetLiquidityStressTestRequest) returns (GetLiquidityStressTestResponse);
+
+  // ===== Vault Opportunity Choices 1–13 (V1..V16) =====
+  // Choice 1 (V1): Financial Data Reliability Center
+  rpc GetVaultFinancialReliabilityWorkbench(GetVaultFinancialReliabilityWorkbenchRequest) returns (GetVaultFinancialReliabilityWorkbenchResponse);
+  rpc SaveVaultFinancialReliabilitySource(SaveVaultFinancialReliabilitySourceRequest) returns (SaveVaultFinancialReliabilitySourceResponse);
+  rpc ReconcileOrReplayVaultReliability(ReconcileOrReplayVaultReliabilityRequest) returns (ReconcileOrReplayVaultReliabilityResponse);
+
+  // Choice 2 (V10): Financial Inbox and Monthly Close
+  rpc GetVaultFinancialInboxCloseWorkbench(GetVaultFinancialInboxCloseWorkbenchRequest) returns (GetVaultFinancialInboxCloseWorkbenchResponse);
+  rpc SaveVaultFinancialInboxCloseItem(SaveVaultFinancialInboxCloseItemRequest) returns (SaveVaultFinancialInboxCloseItemResponse);
+  rpc LockOrReopenVaultMonthlyClose(LockOrReopenVaultMonthlyCloseRequest) returns (LockOrReopenVaultMonthlyCloseResponse);
+
+  // Choice 3 (V2, V11): Personal CFO and Cash Command
+  rpc GetVaultPersonalCfoCashWorkbench(GetVaultPersonalCfoCashWorkbenchRequest) returns (GetVaultPersonalCfoCashWorkbenchResponse);
+  rpc SaveVaultPersonalCfoCashForecast(SaveVaultPersonalCfoCashForecastRequest) returns (SaveVaultPersonalCfoCashForecastResponse);
+  rpc AcknowledgeOrReviewVaultCashCommitment(AcknowledgeOrReviewVaultCashCommitmentRequest) returns (AcknowledgeOrReviewVaultCashCommitmentResponse);
+
+  // Choice 4 (V3): Performance and Allocation Laboratory
+  rpc GetVaultPerformanceAllocationWorkbench(GetVaultPerformanceAllocationWorkbenchRequest) returns (GetVaultPerformanceAllocationWorkbenchResponse);
+  rpc SaveVaultPerformanceAllocationModel(SaveVaultPerformanceAllocationModelRequest) returns (SaveVaultPerformanceAllocationModelResponse);
+  rpc SimulateOrRefreshVaultAllocation(SimulateOrRefreshVaultAllocationRequest) returns (SimulateOrRefreshVaultAllocationResponse);
+
+  // Choice 5 (V4, V16): Tax and Accountant Workspace
+  rpc GetVaultTaxAccountantWorkbench(GetVaultTaxAccountantWorkbenchRequest) returns (GetVaultTaxAccountantWorkbenchResponse);
+  rpc SaveVaultTaxAccountantScenario(SaveVaultTaxAccountantScenarioRequest) returns (SaveVaultTaxAccountantScenarioResponse);
+  rpc LockOrExportVaultTaxPackage(LockOrExportVaultTaxPackageRequest) returns (LockOrExportVaultTaxPackageResponse);
+
+  // Choice 6 (V5): Entity, Household, and Ownership Graph
+  rpc GetVaultEntityOwnershipWorkbench(GetVaultEntityOwnershipWorkbenchRequest) returns (GetVaultEntityOwnershipWorkbenchResponse);
+  rpc SaveVaultEntityOwnershipNode(SaveVaultEntityOwnershipNodeRequest) returns (SaveVaultEntityOwnershipNodeResponse);
+  rpc VerifyOrRevokeVaultOwnershipAccess(VerifyOrRevokeVaultOwnershipAccessRequest) returns (VerifyOrRevokeVaultOwnershipAccessResponse);
+
+  // Choice 7 (V6, V16): Private Markets and Document Room
+  rpc GetVaultPrivateMarketDocWorkbench(GetVaultPrivateMarketDocWorkbenchRequest) returns (GetVaultPrivateMarketDocWorkbenchResponse);
+  rpc SaveVaultPrivateMarketCommitment(SaveVaultPrivateMarketCommitmentRequest) returns (SaveVaultPrivateMarketCommitmentResponse);
+  rpc ConfirmOrReconcileVaultCapitalNotice(ConfirmOrReconcileVaultCapitalNoticeRequest) returns (ConfirmOrReconcileVaultCapitalNoticeResponse);
+
+  // Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+  rpc GetVaultTreasuryDebtRiskWorkbench(GetVaultTreasuryDebtRiskWorkbenchRequest) returns (GetVaultTreasuryDebtRiskWorkbenchResponse);
+  rpc SaveVaultTreasuryDebtRiskPosition(SaveVaultTreasuryDebtRiskPositionRequest) returns (SaveVaultTreasuryDebtRiskPositionResponse);
+  rpc EvaluateOrRouteVaultCoverageGap(EvaluateOrRouteVaultCoverageGapRequest) returns (EvaluateOrRouteVaultCoverageGapResponse);
+
+  // Choice 9 (V8): Goals and Scenario Engine
+  rpc GetVaultGoalsScenarioWorkbench(GetVaultGoalsScenarioWorkbenchRequest) returns (GetVaultGoalsScenarioWorkbenchResponse);
+  rpc SaveVaultGoalScenarioSnapshot(SaveVaultGoalScenarioSnapshotRequest) returns (SaveVaultGoalScenarioSnapshotResponse);
+  rpc CompareOrHandoffVaultScenario(CompareOrHandoffVaultScenarioRequest) returns (CompareOrHandoffVaultScenarioResponse);
+
+  // Choice 10 (V7): Privacy-Preserving Standing Proofs
+  rpc GetVaultPrivacyStandingProofWorkbench(GetVaultPrivacyStandingProofWorkbenchRequest) returns (GetVaultPrivacyStandingProofWorkbenchResponse);
+  rpc IssueVaultPrivacyStandingProof(IssueVaultPrivacyStandingProofRequest) returns (IssueVaultPrivacyStandingProofResponse);
+  rpc VerifyOrRevokeVaultStandingProof(VerifyOrRevokeVaultStandingProofRequest) returns (VerifyOrRevokeVaultStandingProofResponse);
+
+  // Choice 11 (V9): Advisor and Family-Office Workspace
+  rpc GetVaultAdvisorFamilyWorkbench(GetVaultAdvisorFamilyWorkbenchRequest) returns (GetVaultAdvisorFamilyWorkbenchResponse);
+  rpc SaveVaultAdvisorEngagementScope(SaveVaultAdvisorEngagementScopeRequest) returns (SaveVaultAdvisorEngagementScopeResponse);
+  rpc ApproveOrRevokeVaultAdvisorAccess(ApproveOrRevokeVaultAdvisorAccessRequest) returns (ApproveOrRevokeVaultAdvisorAccessResponse);
+
+  // Choice 12 (V13): Financial Safety and Fraud Response
+  rpc GetVaultFinancialSafetyWorkbench(GetVaultFinancialSafetyWorkbenchRequest) returns (GetVaultFinancialSafetyWorkbenchResponse);
+  rpc SaveVaultFinancialSafetyIncident(SaveVaultFinancialSafetyIncidentRequest) returns (SaveVaultFinancialSafetyIncidentResponse);
+  rpc ExecuteOrAppealVaultSafetyAction(ExecuteOrAppealVaultSafetyActionRequest) returns (ExecuteOrAppealVaultSafetyActionResponse);
+
+  // Choice 13 (V15): Giving and Impact Ledger
+  rpc GetVaultGivingImpactWorkbench(GetVaultGivingImpactWorkbenchRequest) returns (GetVaultGivingImpactWorkbenchResponse);
+  rpc SaveVaultGivingImpactPledge(SaveVaultGivingImpactPledgeRequest) returns (SaveVaultGivingImpactPledgeResponse);
+  rpc VerifyOrAcknowledgeVaultGiftReceipt(VerifyOrAcknowledgeVaultGiftReceiptRequest) returns (VerifyOrAcknowledgeVaultGiftReceiptResponse);
 }
 
 // === Annual Wealth Almanac (V8P4.1) ===
@@ -877,4 +943,489 @@ message ExportUsCgtCsvRequest {}
 message ExportUsCgtCsvResponse {
   // Raw CSV bytes — the client writes / shares the file directly.
   bytes csv = 1;
+}
+
+// ============================================================================
+// Vault Opportunity Choices 1–13 (V1..V16)
+// ============================================================================
+
+// Choice 1 (V1): Financial Data Reliability Center
+message VaultFinancialDataReliabilityItem {
+  string id = 1;
+  string user_id = 2;
+  string source_code = 3;
+  string institution_and_coverage_window = 4;
+  string sync_freshness_and_reconciliation = 5;
+  string confidence_and_lineage_layer = 6;
+  string reliability_state = 7;
+  bool idempotent_replay_dedup_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultFinancialReliabilityWorkbenchRequest {}
+message GetVaultFinancialReliabilityWorkbenchResponse {
+  repeated VaultFinancialDataReliabilityItem sources = 1;
+  bool idempotent_replay_dedup_enforced = 2;
+  string snapshot_lineage_and_freshness_summary = 3;
+}
+message SaveVaultFinancialReliabilitySourceRequest {
+  string source_code = 1;
+  string institution_and_coverage_window = 2;
+  string sync_freshness_and_reconciliation = 3;
+  string confidence_and_lineage_layer = 4;
+  string reliability_state = 5;
+}
+message SaveVaultFinancialReliabilitySourceResponse {
+  VaultFinancialDataReliabilityItem source = 1;
+}
+message ReconcileOrReplayVaultReliabilityRequest {
+  string source_code = 1;
+  string sync_freshness_and_reconciliation = 2;
+  string reliability_state = 3;
+}
+message ReconcileOrReplayVaultReliabilityResponse {
+  VaultFinancialDataReliabilityItem source = 1;
+}
+
+// Choice 2 (V10): Financial Inbox and Monthly Close
+message VaultFinancialInboxCloseItem {
+  string id = 1;
+  string user_id = 2;
+  string inbox_code = 3;
+  string exception_and_classification_summary = 4;
+  string close_checklist_and_snapshot_ref = 5;
+  string what_changed_statement_bridge = 6;
+  string inbox_state = 7;
+  bool reversible_ledger_edits_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultFinancialInboxCloseWorkbenchRequest {}
+message GetVaultFinancialInboxCloseWorkbenchResponse {
+  repeated VaultFinancialInboxCloseItem closes = 1;
+  bool reversible_ledger_edits_enforced = 2;
+  string close_lock_and_what_changed_summary = 3;
+}
+message SaveVaultFinancialInboxCloseItemRequest {
+  string inbox_code = 1;
+  string exception_and_classification_summary = 2;
+  string close_checklist_and_snapshot_ref = 3;
+  string what_changed_statement_bridge = 4;
+  string inbox_state = 5;
+}
+message SaveVaultFinancialInboxCloseItemResponse {
+  VaultFinancialInboxCloseItem close = 1;
+}
+message LockOrReopenVaultMonthlyCloseRequest {
+  string inbox_code = 1;
+  string what_changed_statement_bridge = 2;
+  string inbox_state = 3;
+}
+message LockOrReopenVaultMonthlyCloseResponse {
+  VaultFinancialInboxCloseItem close = 1;
+}
+
+// Choice 3 (V2, V11): Personal CFO and Cash Command
+message VaultPersonalCfoCashCommandItem {
+  string id = 1;
+  string user_id = 2;
+  string command_code = 3;
+  string liquidity_ladder_and_ratios = 4;
+  string thirteen_week_forecast_and_commitments = 5;
+  string explainable_variance_and_policy_alert = 6;
+  string command_state = 7;
+  bool non_auto_transfer_boundary_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultPersonalCfoCashWorkbenchRequest {}
+message GetVaultPersonalCfoCashWorkbenchResponse {
+  repeated VaultPersonalCfoCashCommandItem commands = 1;
+  bool non_auto_transfer_boundary_enforced = 2;
+  string liquidity_ladder_and_forecast_summary = 3;
+}
+message SaveVaultPersonalCfoCashForecastRequest {
+  string command_code = 1;
+  string liquidity_ladder_and_ratios = 2;
+  string thirteen_week_forecast_and_commitments = 3;
+  string explainable_variance_and_policy_alert = 4;
+  string command_state = 5;
+}
+message SaveVaultPersonalCfoCashForecastResponse {
+  VaultPersonalCfoCashCommandItem command = 1;
+}
+message AcknowledgeOrReviewVaultCashCommitmentRequest {
+  string command_code = 1;
+  string explainable_variance_and_policy_alert = 2;
+  string command_state = 3;
+}
+message AcknowledgeOrReviewVaultCashCommitmentResponse {
+  VaultPersonalCfoCashCommandItem command = 1;
+}
+
+// Choice 4 (V3): Performance and Allocation Laboratory
+message VaultPerformanceAllocationLabItem {
+  string id = 1;
+  string user_id = 2;
+  string allocation_code = 3;
+  string twr_mwr_irr_and_benchmark_summary = 4;
+  string lookthrough_exposure_and_concentration = 5;
+  string rebalance_tax_and_cost_scenario = 6;
+  string lab_state = 7;
+  bool no_fabricated_smooth_curve_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultPerformanceAllocationWorkbenchRequest {}
+message GetVaultPerformanceAllocationWorkbenchResponse {
+  repeated VaultPerformanceAllocationLabItem models = 1;
+  bool no_fabricated_smooth_curve_enforced = 2;
+  string snapshot_reproducible_performance_summary = 3;
+}
+message SaveVaultPerformanceAllocationModelRequest {
+  string allocation_code = 1;
+  string twr_mwr_irr_and_benchmark_summary = 2;
+  string lookthrough_exposure_and_concentration = 3;
+  string rebalance_tax_and_cost_scenario = 4;
+  string lab_state = 5;
+}
+message SaveVaultPerformanceAllocationModelResponse {
+  VaultPerformanceAllocationLabItem model = 1;
+}
+message SimulateOrRefreshVaultAllocationRequest {
+  string allocation_code = 1;
+  string rebalance_tax_and_cost_scenario = 2;
+  string lab_state = 3;
+}
+message SimulateOrRefreshVaultAllocationResponse {
+  VaultPerformanceAllocationLabItem model = 1;
+}
+
+// Choice 5 (V4, V16): Tax and Accountant Workspace
+message VaultTaxAccountantWorkspaceItem {
+  string id = 1;
+  string user_id = 2;
+  string tax_code = 3;
+  string jurisdiction_lots_and_wash_sale_scope = 4;
+  string harvest_or_payment_scenario_estimate = 5;
+  string accountant_dataroom_and_period_lock = 6;
+  string workspace_state = 7;
+  bool non_tax_advice_no_onetap_trade_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultTaxAccountantWorkbenchRequest {}
+message GetVaultTaxAccountantWorkbenchResponse {
+  repeated VaultTaxAccountantWorkspaceItem workspaces = 1;
+  bool non_tax_advice_no_onetap_trade_enforced = 2;
+  string wash_sale_and_accountant_scope_summary = 3;
+}
+message SaveVaultTaxAccountantScenarioRequest {
+  string tax_code = 1;
+  string jurisdiction_lots_and_wash_sale_scope = 2;
+  string harvest_or_payment_scenario_estimate = 3;
+  string accountant_dataroom_and_period_lock = 4;
+  string workspace_state = 5;
+}
+message SaveVaultTaxAccountantScenarioResponse {
+  VaultTaxAccountantWorkspaceItem workspace = 1;
+}
+message LockOrExportVaultTaxPackageRequest {
+  string tax_code = 1;
+  string accountant_dataroom_and_period_lock = 2;
+  string workspace_state = 3;
+}
+message LockOrExportVaultTaxPackageResponse {
+  VaultTaxAccountantWorkspaceItem workspace = 1;
+}
+
+// Choice 6 (V5): Entity, Household, and Ownership Graph
+message VaultEntityOwnershipGraphItem {
+  string id = 1;
+  string user_id = 2;
+  string graph_code = 3;
+  string entity_and_lookthrough_interest = 4;
+  string collaboration_visibility_and_scope = 5;
+  string dominion_and_legacy_bridge_summary = 6;
+  string graph_state = 7;
+  bool zero_double_counting_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultEntityOwnershipWorkbenchRequest {}
+message GetVaultEntityOwnershipWorkbenchResponse {
+  repeated VaultEntityOwnershipGraphItem graphs = 1;
+  bool zero_double_counting_enforced = 2;
+  string lookthrough_and_collaboration_summary = 3;
+}
+message SaveVaultEntityOwnershipNodeRequest {
+  string graph_code = 1;
+  string entity_and_lookthrough_interest = 2;
+  string collaboration_visibility_and_scope = 3;
+  string dominion_and_legacy_bridge_summary = 4;
+  string graph_state = 5;
+}
+message SaveVaultEntityOwnershipNodeResponse {
+  VaultEntityOwnershipGraphItem graph = 1;
+}
+message VerifyOrRevokeVaultOwnershipAccessRequest {
+  string graph_code = 1;
+  string collaboration_visibility_and_scope = 2;
+  string graph_state = 3;
+}
+message VerifyOrRevokeVaultOwnershipAccessResponse {
+  VaultEntityOwnershipGraphItem graph = 1;
+}
+
+// Choice 7 (V6, V16): Private Markets and Document Room
+message VaultPrivateMarketDocRoomItem {
+  string id = 1;
+  string user_id = 2;
+  string private_code = 3;
+  string fund_or_direct_asset_and_valuation = 4;
+  string unfunded_commitment_and_call_ladder = 5;
+  string extracted_notice_and_citation_region = 6;
+  string room_state = 7;
+  bool unverified_ai_ledger_post_blocked = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultPrivateMarketDocWorkbenchRequest {}
+message GetVaultPrivateMarketDocWorkbenchResponse {
+  repeated VaultPrivateMarketDocRoomItem rooms = 1;
+  bool unverified_ai_ledger_post_blocked = 2;
+  string commitment_ladder_and_citation_summary = 3;
+}
+message SaveVaultPrivateMarketCommitmentRequest {
+  string private_code = 1;
+  string fund_or_direct_asset_and_valuation = 2;
+  string unfunded_commitment_and_call_ladder = 3;
+  string extracted_notice_and_citation_region = 4;
+  string room_state = 5;
+}
+message SaveVaultPrivateMarketCommitmentResponse {
+  VaultPrivateMarketDocRoomItem room = 1;
+}
+message ConfirmOrReconcileVaultCapitalNoticeRequest {
+  string private_code = 1;
+  string extracted_notice_and_citation_region = 2;
+  string room_state = 3;
+}
+message ConfirmOrReconcileVaultCapitalNoticeResponse {
+  VaultPrivateMarketDocRoomItem room = 1;
+}
+
+// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+message VaultTreasuryDebtRiskCoverageItem {
+  string id = 1;
+  string user_id = 2;
+  string treasury_code = 3;
+  string cash_counterparty_and_debt_covenants = 4;
+  string policy_coverage_and_deductible_graph = 5;
+  string sweep_refinance_or_claim_scenario = 6;
+  string coverage_state = 7;
+  bool no_coverage_guarantee_claim_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultTreasuryDebtRiskWorkbenchRequest {}
+message GetVaultTreasuryDebtRiskWorkbenchResponse {
+  repeated VaultTreasuryDebtRiskCoverageItem positions = 1;
+  bool no_coverage_guarantee_claim_enforced = 2;
+  string treasury_covenant_and_policy_summary = 3;
+}
+message SaveVaultTreasuryDebtRiskPositionRequest {
+  string treasury_code = 1;
+  string cash_counterparty_and_debt_covenants = 2;
+  string policy_coverage_and_deductible_graph = 3;
+  string sweep_refinance_or_claim_scenario = 4;
+  string coverage_state = 5;
+}
+message SaveVaultTreasuryDebtRiskPositionResponse {
+  VaultTreasuryDebtRiskCoverageItem position = 1;
+}
+message EvaluateOrRouteVaultCoverageGapRequest {
+  string treasury_code = 1;
+  string sweep_refinance_or_claim_scenario = 2;
+  string coverage_state = 3;
+}
+message EvaluateOrRouteVaultCoverageGapResponse {
+  VaultTreasuryDebtRiskCoverageItem position = 1;
+}
+
+// Choice 9 (V8): Goals and Scenario Engine
+message VaultGoalsScenarioEngineItem {
+  string id = 1;
+  string user_id = 2;
+  string scenario_code = 3;
+  string goal_target_and_assumption_ranges = 4;
+  string deterministic_and_monte_carlo_band = 5;
+  string what_changed_and_oracle_handoff = 6;
+  string engine_state = 7;
+  bool silent_full_ledger_oracle_access_blocked = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultGoalsScenarioWorkbenchRequest {}
+message GetVaultGoalsScenarioWorkbenchResponse {
+  repeated VaultGoalsScenarioEngineItem scenarios = 1;
+  bool silent_full_ledger_oracle_access_blocked = 2;
+  string plan_vs_prediction_and_handoff_summary = 3;
+}
+message SaveVaultGoalScenarioSnapshotRequest {
+  string scenario_code = 1;
+  string goal_target_and_assumption_ranges = 2;
+  string deterministic_and_monte_carlo_band = 3;
+  string what_changed_and_oracle_handoff = 4;
+  string engine_state = 5;
+}
+message SaveVaultGoalScenarioSnapshotResponse {
+  VaultGoalsScenarioEngineItem scenario = 1;
+}
+message CompareOrHandoffVaultScenarioRequest {
+  string scenario_code = 1;
+  string what_changed_and_oracle_handoff = 2;
+  string engine_state = 3;
+}
+message CompareOrHandoffVaultScenarioResponse {
+  VaultGoalsScenarioEngineItem scenario = 1;
+}
+
+// Choice 10 (V7): Privacy-Preserving Standing Proofs
+message VaultPrivacyStandingProofItem {
+  string id = 1;
+  string user_id = 2;
+  string proof_code = 3;
+  string predicate_claim_and_verifier_purpose = 4;
+  string issuer_signature_expiry_and_nonce = 5;
+  string offline_revocation_snapshot_window = 6;
+  string proof_state = 7;
+  bool raw_balance_disclosure_blocked = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultPrivacyStandingProofWorkbenchRequest {}
+message GetVaultPrivacyStandingProofWorkbenchResponse {
+  repeated VaultPrivacyStandingProofItem proofs = 1;
+  bool raw_balance_disclosure_blocked = 2;
+  string server_signed_predicate_and_offline_window_summary = 3;
+}
+message IssueVaultPrivacyStandingProofRequest {
+  string proof_code = 1;
+  string predicate_claim_and_verifier_purpose = 2;
+  string issuer_signature_expiry_and_nonce = 3;
+  string offline_revocation_snapshot_window = 4;
+  string proof_state = 5;
+}
+message IssueVaultPrivacyStandingProofResponse {
+  VaultPrivacyStandingProofItem proof = 1;
+}
+message VerifyOrRevokeVaultStandingProofRequest {
+  string proof_code = 1;
+  string offline_revocation_snapshot_window = 2;
+  string proof_state = 3;
+}
+message VerifyOrRevokeVaultStandingProofResponse {
+  VaultPrivacyStandingProofItem proof = 1;
+}
+
+// Choice 11 (V9): Advisor and Family-Office Workspace
+message VaultAdvisorFamilyWorkspaceItem {
+  string id = 1;
+  string user_id = 2;
+  string engagement_code = 3;
+  string advisor_credential_and_scope_grant = 4;
+  string watermarked_exchange_and_decisions = 5;
+  string disclosures_conflict_and_fee_record = 6;
+  string workspace_state = 7;
+  bool household_professional_separation_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultAdvisorFamilyWorkbenchRequest {}
+message GetVaultAdvisorFamilyWorkbenchResponse {
+  repeated VaultAdvisorFamilyWorkspaceItem engagements = 1;
+  bool household_professional_separation_enforced = 2;
+  string least_privilege_and_watermark_summary = 3;
+}
+message SaveVaultAdvisorEngagementScopeRequest {
+  string engagement_code = 1;
+  string advisor_credential_and_scope_grant = 2;
+  string watermarked_exchange_and_decisions = 3;
+  string disclosures_conflict_and_fee_record = 4;
+  string workspace_state = 5;
+}
+message SaveVaultAdvisorEngagementScopeResponse {
+  VaultAdvisorFamilyWorkspaceItem engagement = 1;
+}
+message ApproveOrRevokeVaultAdvisorAccessRequest {
+  string engagement_code = 1;
+  string disclosures_conflict_and_fee_record = 2;
+  string workspace_state = 3;
+}
+message ApproveOrRevokeVaultAdvisorAccessResponse {
+  VaultAdvisorFamilyWorkspaceItem engagement = 1;
+}
+
+// Choice 12 (V13): Financial Safety and Fraud Response
+message VaultFinancialSafetyResponseItem {
+  string id = 1;
+  string user_id = 2;
+  string safety_code = 3;
+  string signal_observation_and_alt_causes = 4;
+  string guided_institution_and_freeze_steps = 5;
+  string evidence_preservation_and_appeal = 6;
+  string safety_state = 7;
+  bool no_single_score_auto_lock_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultFinancialSafetyWorkbenchRequest {}
+message GetVaultFinancialSafetyWorkbenchResponse {
+  repeated VaultFinancialSafetyResponseItem incidents = 1;
+  bool no_single_score_auto_lock_enforced = 2;
+  string explainable_signal_and_official_freeze_summary = 3;
+}
+message SaveVaultFinancialSafetyIncidentRequest {
+  string safety_code = 1;
+  string signal_observation_and_alt_causes = 2;
+  string guided_institution_and_freeze_steps = 3;
+  string evidence_preservation_and_appeal = 4;
+  string safety_state = 5;
+}
+message SaveVaultFinancialSafetyIncidentResponse {
+  VaultFinancialSafetyResponseItem incident = 1;
+}
+message ExecuteOrAppealVaultSafetyActionRequest {
+  string safety_code = 1;
+  string evidence_preservation_and_appeal = 2;
+  string safety_state = 3;
+}
+message ExecuteOrAppealVaultSafetyActionResponse {
+  VaultFinancialSafetyResponseItem incident = 1;
+}
+
+// Choice 13 (V15): Giving and Impact Ledger
+message VaultGivingImpactLedgerItem {
+  string id = 1;
+  string user_id = 2;
+  string giving_code = 3;
+  string charity_diligence_and_pledge_terms = 4;
+  string donation_liquidity_and_tax_scenario = 5;
+  string receipt_restriction_and_outcome_log = 6;
+  string ledger_state = 7;
+  bool no_performative_leaderboard_enforced = 8;
+  string updated_at_iso = 9;
+}
+message GetVaultGivingImpactWorkbenchRequest {}
+message GetVaultGivingImpactWorkbenchResponse {
+  repeated VaultGivingImpactLedgerItem pledges = 1;
+  bool no_performative_leaderboard_enforced = 2;
+  string diligence_receipt_and_privacy_summary = 3;
+}
+message SaveVaultGivingImpactPledgeRequest {
+  string giving_code = 1;
+  string charity_diligence_and_pledge_terms = 2;
+  string donation_liquidity_and_tax_scenario = 3;
+  string receipt_restriction_and_outcome_log = 4;
+  string ledger_state = 5;
+}
+message SaveVaultGivingImpactPledgeResponse {
+  VaultGivingImpactLedgerItem pledge = 1;
+}
+message VerifyOrAcknowledgeVaultGiftReceiptRequest {
+  string giving_code = 1;
+  string receipt_restriction_and_outcome_log = 2;
+  string ledger_state = 3;
+}
+message VerifyOrAcknowledgeVaultGiftReceiptResponse {
+  VaultGivingImpactLedgerItem pledge = 1;
 }

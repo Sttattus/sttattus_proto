@@ -19,67 +19,177 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ApexService_SyncVitals_FullMethodName                    = "/sttattus.apex.v1.ApexService/SyncVitals"
-	ApexService_SubmitLabReport_FullMethodName               = "/sttattus.apex.v1.ApexService/SubmitLabReport"
-	ApexService_ListLabReports_FullMethodName                = "/sttattus.apex.v1.ApexService/ListLabReports"
-	ApexService_ListMyVitals_FullMethodName                  = "/sttattus.apex.v1.ApexService/ListMyVitals"
-	ApexService_ListMyBiomarkerHistory_FullMethodName        = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
-	ApexService_GetHrvWindow_FullMethodName                  = "/sttattus.apex.v1.ApexService/GetHrvWindow"
-	ApexService_ListBiomarkerRefs_FullMethodName             = "/sttattus.apex.v1.ApexService/ListBiomarkerRefs"
-	ApexService_GetApexAge_FullMethodName                    = "/sttattus.apex.v1.ApexService/GetApexAge"
-	ApexService_GetMyApexProfile_FullMethodName              = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
-	ApexService_UpdateMyApexProfile_FullMethodName           = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
-	ApexService_ListApexClinics_FullMethodName               = "/sttattus.apex.v1.ApexService/ListApexClinics"
-	ApexService_GetApexClinic_FullMethodName                 = "/sttattus.apex.v1.ApexService/GetApexClinic"
-	ApexService_RequestApexClinicIntro_FullMethodName        = "/sttattus.apex.v1.ApexService/RequestApexClinicIntro"
-	ApexService_ListMyApexClinicIntroRequests_FullMethodName = "/sttattus.apex.v1.ApexService/ListMyApexClinicIntroRequests"
-	ApexService_ListApexProtocols_FullMethodName             = "/sttattus.apex.v1.ApexService/ListApexProtocols"
-	ApexService_GetApexProtocol_FullMethodName               = "/sttattus.apex.v1.ApexService/GetApexProtocol"
-	ApexService_EnrolInApexProtocol_FullMethodName           = "/sttattus.apex.v1.ApexService/EnrolInApexProtocol"
-	ApexService_ListMyApexProtocolEnrolments_FullMethodName  = "/sttattus.apex.v1.ApexService/ListMyApexProtocolEnrolments"
-	ApexService_UpdateApexProtocolEnrolment_FullMethodName   = "/sttattus.apex.v1.ApexService/UpdateApexProtocolEnrolment"
-	ApexService_RecordApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/RecordApexProtocolAdherence"
-	ApexService_ListMyApexProtocolAdherence_FullMethodName   = "/sttattus.apex.v1.ApexService/ListMyApexProtocolAdherence"
-	ApexService_ListSupplements_FullMethodName               = "/sttattus.apex.v1.ApexService/ListSupplements"
-	ApexService_ListMySupplements_FullMethodName             = "/sttattus.apex.v1.ApexService/ListMySupplements"
-	ApexService_AddSupplement_FullMethodName                 = "/sttattus.apex.v1.ApexService/AddSupplement"
-	ApexService_RemoveSupplement_FullMethodName              = "/sttattus.apex.v1.ApexService/RemoveSupplement"
-	ApexService_ListSupplementInteractions_FullMethodName    = "/sttattus.apex.v1.ApexService/ListSupplementInteractions"
-	ApexService_ListMyGlucose_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListMyGlucose"
-	ApexService_IngestGlucoseReading_FullMethodName          = "/sttattus.apex.v1.ApexService/IngestGlucoseReading"
-	ApexService_GetCycleStatus_FullMethodName                = "/sttattus.apex.v1.ApexService/GetCycleStatus"
-	ApexService_LogPeriod_FullMethodName                     = "/sttattus.apex.v1.ApexService/LogPeriod"
-	ApexService_LogCycleSymptom_FullMethodName               = "/sttattus.apex.v1.ApexService/LogCycleSymptom"
-	ApexService_ListMyCycleSymptoms_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyCycleSymptoms"
-	ApexService_SimulateApexAge_FullMethodName               = "/sttattus.apex.v1.ApexService/SimulateApexAge"
-	ApexService_GetReadiness_FullMethodName                  = "/sttattus.apex.v1.ApexService/GetReadiness"
-	ApexService_StartConciergeThread_FullMethodName          = "/sttattus.apex.v1.ApexService/StartConciergeThread"
-	ApexService_ListMyConciergeThreads_FullMethodName        = "/sttattus.apex.v1.ApexService/ListMyConciergeThreads"
-	ApexService_GetConciergeThread_FullMethodName            = "/sttattus.apex.v1.ApexService/GetConciergeThread"
-	ApexService_PostConciergeMessage_FullMethodName          = "/sttattus.apex.v1.ApexService/PostConciergeMessage"
-	ApexService_ListAnthologyArticles_FullMethodName         = "/sttattus.apex.v1.ApexService/ListAnthologyArticles"
-	ApexService_GetAnthologyArticle_FullMethodName           = "/sttattus.apex.v1.ApexService/GetAnthologyArticle"
-	ApexService_ListMyPharmacology_FullMethodName            = "/sttattus.apex.v1.ApexService/ListMyPharmacology"
-	ApexService_AddPharmacology_FullMethodName               = "/sttattus.apex.v1.ApexService/AddPharmacology"
-	ApexService_RemovePharmacology_FullMethodName            = "/sttattus.apex.v1.ApexService/RemovePharmacology"
-	ApexService_RegisterDnaUpload_FullMethodName             = "/sttattus.apex.v1.ApexService/RegisterDnaUpload"
-	ApexService_ListMyDnaUploads_FullMethodName              = "/sttattus.apex.v1.ApexService/ListMyDnaUploads"
-	ApexService_ListMyDnaSnps_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListMyDnaSnps"
-	ApexService_ListLabPartners_FullMethodName               = "/sttattus.apex.v1.ApexService/ListLabPartners"
-	ApexService_ExtractLabMarkers_FullMethodName             = "/sttattus.apex.v1.ApexService/ExtractLabMarkers"
-	ApexService_CreateClinicianShare_FullMethodName          = "/sttattus.apex.v1.ApexService/CreateClinicianShare"
-	ApexService_ListMyClinicianShares_FullMethodName         = "/sttattus.apex.v1.ApexService/ListMyClinicianShares"
-	ApexService_RevokeClinicianShare_FullMethodName          = "/sttattus.apex.v1.ApexService/RevokeClinicianShare"
-	ApexService_GetJetLagProtocol_FullMethodName             = "/sttattus.apex.v1.ApexService/GetJetLagProtocol"
-	ApexService_GenerateHealthAlmanac_FullMethodName         = "/sttattus.apex.v1.ApexService/GenerateHealthAlmanac"
-	ApexService_SubmitImagingStudy_FullMethodName            = "/sttattus.apex.v1.ApexService/SubmitImagingStudy"
-	ApexService_ListMyImagingStudies_FullMethodName          = "/sttattus.apex.v1.ApexService/ListMyImagingStudies"
-	ApexService_ListLounges_FullMethodName                   = "/sttattus.apex.v1.ApexService/ListLounges"
-	ApexService_ListMyLoungeBookings_FullMethodName          = "/sttattus.apex.v1.ApexService/ListMyLoungeBookings"
-	ApexService_CreateLoungeBooking_FullMethodName           = "/sttattus.apex.v1.ApexService/CreateLoungeBooking"
-	ApexService_CancelLoungeBooking_FullMethodName           = "/sttattus.apex.v1.ApexService/CancelLoungeBooking"
-	ApexService_ParseLabReportText_FullMethodName            = "/sttattus.apex.v1.ApexService/ParseLabReportText"
-	ApexService_AdminVerifyLab_FullMethodName                = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
+	ApexService_SyncVitals_FullMethodName                              = "/sttattus.apex.v1.ApexService/SyncVitals"
+	ApexService_SubmitLabReport_FullMethodName                         = "/sttattus.apex.v1.ApexService/SubmitLabReport"
+	ApexService_ListLabReports_FullMethodName                          = "/sttattus.apex.v1.ApexService/ListLabReports"
+	ApexService_ListMyVitals_FullMethodName                            = "/sttattus.apex.v1.ApexService/ListMyVitals"
+	ApexService_ListMyBiomarkerHistory_FullMethodName                  = "/sttattus.apex.v1.ApexService/ListMyBiomarkerHistory"
+	ApexService_GetHrvWindow_FullMethodName                            = "/sttattus.apex.v1.ApexService/GetHrvWindow"
+	ApexService_ListBiomarkerRefs_FullMethodName                       = "/sttattus.apex.v1.ApexService/ListBiomarkerRefs"
+	ApexService_GetApexAge_FullMethodName                              = "/sttattus.apex.v1.ApexService/GetApexAge"
+	ApexService_GetMyApexProfile_FullMethodName                        = "/sttattus.apex.v1.ApexService/GetMyApexProfile"
+	ApexService_UpdateMyApexProfile_FullMethodName                     = "/sttattus.apex.v1.ApexService/UpdateMyApexProfile"
+	ApexService_ListApexClinics_FullMethodName                         = "/sttattus.apex.v1.ApexService/ListApexClinics"
+	ApexService_GetApexClinic_FullMethodName                           = "/sttattus.apex.v1.ApexService/GetApexClinic"
+	ApexService_RequestApexClinicIntro_FullMethodName                  = "/sttattus.apex.v1.ApexService/RequestApexClinicIntro"
+	ApexService_ListMyApexClinicIntroRequests_FullMethodName           = "/sttattus.apex.v1.ApexService/ListMyApexClinicIntroRequests"
+	ApexService_ListApexProtocols_FullMethodName                       = "/sttattus.apex.v1.ApexService/ListApexProtocols"
+	ApexService_GetApexProtocol_FullMethodName                         = "/sttattus.apex.v1.ApexService/GetApexProtocol"
+	ApexService_EnrolInApexProtocol_FullMethodName                     = "/sttattus.apex.v1.ApexService/EnrolInApexProtocol"
+	ApexService_ListMyApexProtocolEnrolments_FullMethodName            = "/sttattus.apex.v1.ApexService/ListMyApexProtocolEnrolments"
+	ApexService_UpdateApexProtocolEnrolment_FullMethodName             = "/sttattus.apex.v1.ApexService/UpdateApexProtocolEnrolment"
+	ApexService_RecordApexProtocolAdherence_FullMethodName             = "/sttattus.apex.v1.ApexService/RecordApexProtocolAdherence"
+	ApexService_ListMyApexProtocolAdherence_FullMethodName             = "/sttattus.apex.v1.ApexService/ListMyApexProtocolAdherence"
+	ApexService_ListSupplements_FullMethodName                         = "/sttattus.apex.v1.ApexService/ListSupplements"
+	ApexService_ListMySupplements_FullMethodName                       = "/sttattus.apex.v1.ApexService/ListMySupplements"
+	ApexService_AddSupplement_FullMethodName                           = "/sttattus.apex.v1.ApexService/AddSupplement"
+	ApexService_RemoveSupplement_FullMethodName                        = "/sttattus.apex.v1.ApexService/RemoveSupplement"
+	ApexService_ListSupplementInteractions_FullMethodName              = "/sttattus.apex.v1.ApexService/ListSupplementInteractions"
+	ApexService_ListMyGlucose_FullMethodName                           = "/sttattus.apex.v1.ApexService/ListMyGlucose"
+	ApexService_IngestGlucoseReading_FullMethodName                    = "/sttattus.apex.v1.ApexService/IngestGlucoseReading"
+	ApexService_GetCycleStatus_FullMethodName                          = "/sttattus.apex.v1.ApexService/GetCycleStatus"
+	ApexService_LogPeriod_FullMethodName                               = "/sttattus.apex.v1.ApexService/LogPeriod"
+	ApexService_LogCycleSymptom_FullMethodName                         = "/sttattus.apex.v1.ApexService/LogCycleSymptom"
+	ApexService_ListMyCycleSymptoms_FullMethodName                     = "/sttattus.apex.v1.ApexService/ListMyCycleSymptoms"
+	ApexService_SimulateApexAge_FullMethodName                         = "/sttattus.apex.v1.ApexService/SimulateApexAge"
+	ApexService_GetReadiness_FullMethodName                            = "/sttattus.apex.v1.ApexService/GetReadiness"
+	ApexService_StartConciergeThread_FullMethodName                    = "/sttattus.apex.v1.ApexService/StartConciergeThread"
+	ApexService_ListMyConciergeThreads_FullMethodName                  = "/sttattus.apex.v1.ApexService/ListMyConciergeThreads"
+	ApexService_GetConciergeThread_FullMethodName                      = "/sttattus.apex.v1.ApexService/GetConciergeThread"
+	ApexService_PostConciergeMessage_FullMethodName                    = "/sttattus.apex.v1.ApexService/PostConciergeMessage"
+	ApexService_ListAnthologyArticles_FullMethodName                   = "/sttattus.apex.v1.ApexService/ListAnthologyArticles"
+	ApexService_GetAnthologyArticle_FullMethodName                     = "/sttattus.apex.v1.ApexService/GetAnthologyArticle"
+	ApexService_ListMyPharmacology_FullMethodName                      = "/sttattus.apex.v1.ApexService/ListMyPharmacology"
+	ApexService_AddPharmacology_FullMethodName                         = "/sttattus.apex.v1.ApexService/AddPharmacology"
+	ApexService_RemovePharmacology_FullMethodName                      = "/sttattus.apex.v1.ApexService/RemovePharmacology"
+	ApexService_RegisterDnaUpload_FullMethodName                       = "/sttattus.apex.v1.ApexService/RegisterDnaUpload"
+	ApexService_ListMyDnaUploads_FullMethodName                        = "/sttattus.apex.v1.ApexService/ListMyDnaUploads"
+	ApexService_ListMyDnaSnps_FullMethodName                           = "/sttattus.apex.v1.ApexService/ListMyDnaSnps"
+	ApexService_ListLabPartners_FullMethodName                         = "/sttattus.apex.v1.ApexService/ListLabPartners"
+	ApexService_ExtractLabMarkers_FullMethodName                       = "/sttattus.apex.v1.ApexService/ExtractLabMarkers"
+	ApexService_CreateClinicianShare_FullMethodName                    = "/sttattus.apex.v1.ApexService/CreateClinicianShare"
+	ApexService_ListMyClinicianShares_FullMethodName                   = "/sttattus.apex.v1.ApexService/ListMyClinicianShares"
+	ApexService_RevokeClinicianShare_FullMethodName                    = "/sttattus.apex.v1.ApexService/RevokeClinicianShare"
+	ApexService_GetJetLagProtocol_FullMethodName                       = "/sttattus.apex.v1.ApexService/GetJetLagProtocol"
+	ApexService_GenerateHealthAlmanac_FullMethodName                   = "/sttattus.apex.v1.ApexService/GenerateHealthAlmanac"
+	ApexService_SubmitImagingStudy_FullMethodName                      = "/sttattus.apex.v1.ApexService/SubmitImagingStudy"
+	ApexService_ListMyImagingStudies_FullMethodName                    = "/sttattus.apex.v1.ApexService/ListMyImagingStudies"
+	ApexService_ListLounges_FullMethodName                             = "/sttattus.apex.v1.ApexService/ListLounges"
+	ApexService_ListMyLoungeBookings_FullMethodName                    = "/sttattus.apex.v1.ApexService/ListMyLoungeBookings"
+	ApexService_CreateLoungeBooking_FullMethodName                     = "/sttattus.apex.v1.ApexService/CreateLoungeBooking"
+	ApexService_CancelLoungeBooking_FullMethodName                     = "/sttattus.apex.v1.ApexService/CancelLoungeBooking"
+	ApexService_ParseLabReportText_FullMethodName                      = "/sttattus.apex.v1.ApexService/ParseLabReportText"
+	ApexService_AdminVerifyLab_FullMethodName                          = "/sttattus.apex.v1.ApexService/AdminVerifyLab"
+	ApexService_GetHealthDataReliabilityOverview_FullMethodName        = "/sttattus.apex.v1.ApexService/GetHealthDataReliabilityOverview"
+	ApexService_ListHealthSources_FullMethodName                       = "/sttattus.apex.v1.ApexService/ListHealthSources"
+	ApexService_UpsertHealthSourceGrant_FullMethodName                 = "/sttattus.apex.v1.ApexService/UpsertHealthSourceGrant"
+	ApexService_RevokeHealthSourceGrant_FullMethodName                 = "/sttattus.apex.v1.ApexService/RevokeHealthSourceGrant"
+	ApexService_CorrectHealthObservation_FullMethodName                = "/sttattus.apex.v1.ApexService/CorrectHealthObservation"
+	ApexService_DeleteHealthObservation_FullMethodName                 = "/sttattus.apex.v1.ApexService/DeleteHealthObservation"
+	ApexService_RestoreHealthObservation_FullMethodName                = "/sttattus.apex.v1.ApexService/RestoreHealthObservation"
+	ApexService_ListObservationRevisions_FullMethodName                = "/sttattus.apex.v1.ApexService/ListObservationRevisions"
+	ApexService_ListHealthDataConflicts_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListHealthDataConflicts"
+	ApexService_ResolveHealthDataConflict_FullMethodName               = "/sttattus.apex.v1.ApexService/ResolveHealthDataConflict"
+	ApexService_CreateHealthCorrectionCase_FullMethodName              = "/sttattus.apex.v1.ApexService/CreateHealthCorrectionCase"
+	ApexService_ListMyHealthCorrectionCases_FullMethodName             = "/sttattus.apex.v1.ApexService/ListMyHealthCorrectionCases"
+	ApexService_ListCrossPillarHealthGrants_FullMethodName             = "/sttattus.apex.v1.ApexService/ListCrossPillarHealthGrants"
+	ApexService_UpdateCrossPillarHealthGrant_FullMethodName            = "/sttattus.apex.v1.ApexService/UpdateCrossPillarHealthGrant"
+	ApexService_RebuildHealthRecord_FullMethodName                     = "/sttattus.apex.v1.ApexService/RebuildHealthRecord"
+	ApexService_ExportHealthObservations_FullMethodName                = "/sttattus.apex.v1.ApexService/ExportHealthObservations"
+	ApexService_GetClinicalDocumentIntelligenceOverview_FullMethodName = "/sttattus.apex.v1.ApexService/GetClinicalDocumentIntelligenceOverview"
+	ApexService_InspectClinicalDocument_FullMethodName                 = "/sttattus.apex.v1.ApexService/InspectClinicalDocument"
+	ApexService_RunDocumentExtraction_FullMethodName                   = "/sttattus.apex.v1.ApexService/RunDocumentExtraction"
+	ApexService_ConfirmExtractedDocumentItems_FullMethodName           = "/sttattus.apex.v1.ApexService/ConfirmExtractedDocumentItems"
+	ApexService_CompareClinicalDocumentRevisions_FullMethodName        = "/sttattus.apex.v1.ApexService/CompareClinicalDocumentRevisions"
+	ApexService_GenerateAppointmentBrief_FullMethodName                = "/sttattus.apex.v1.ApexService/GenerateAppointmentBrief"
+	ApexService_ListMyAppointmentBriefs_FullMethodName                 = "/sttattus.apex.v1.ApexService/ListMyAppointmentBriefs"
+	ApexService_UpdateAppointmentBrief_FullMethodName                  = "/sttattus.apex.v1.ApexService/UpdateAppointmentBrief"
+	ApexService_GetPersonalBaselineAndApexAgeOverview_FullMethodName   = "/sttattus.apex.v1.ApexService/GetPersonalBaselineAndApexAgeOverview"
+	ApexService_RecomputePersonalBaselinesAndApexAge_FullMethodName    = "/sttattus.apex.v1.ApexService/RecomputePersonalBaselinesAndApexAge"
+	ApexService_UpsertBaselineExcludedPeriod_FullMethodName            = "/sttattus.apex.v1.ApexService/UpsertBaselineExcludedPeriod"
+	ApexService_DeleteBaselineExcludedPeriod_FullMethodName            = "/sttattus.apex.v1.ApexService/DeleteBaselineExcludedPeriod"
+	ApexService_UpdateChangeSignalDisposition_FullMethodName           = "/sttattus.apex.v1.ApexService/UpdateChangeSignalDisposition"
+	ApexService_UpdateScoreDisplayPreferences_FullMethodName           = "/sttattus.apex.v1.ApexService/UpdateScoreDisplayPreferences"
+	ApexService_SubmitApexScoreDispute_FullMethodName                  = "/sttattus.apex.v1.ApexService/SubmitApexScoreDispute"
+	ApexService_ListMyApexScoreSnapshots_FullMethodName                = "/sttattus.apex.v1.ApexService/ListMyApexScoreSnapshots"
+	ApexService_GetPreventiveCareCalendarOverview_FullMethodName       = "/sttattus.apex.v1.ApexService/GetPreventiveCareCalendarOverview"
+	ApexService_UpdatePreventiveCareProfile_FullMethodName             = "/sttattus.apex.v1.ApexService/UpdatePreventiveCareProfile"
+	ApexService_UpdatePreventiveCareItemStatus_FullMethodName          = "/sttattus.apex.v1.ApexService/UpdatePreventiveCareItemStatus"
+	ApexService_ConfirmPreventiveCareEvidence_FullMethodName           = "/sttattus.apex.v1.ApexService/ConfirmPreventiveCareEvidence"
+	ApexService_UpsertCustomPreventiveCareCheck_FullMethodName         = "/sttattus.apex.v1.ApexService/UpsertCustomPreventiveCareCheck"
+	ApexService_SyncPreventiveCarePlanFromGuidelines_FullMethodName    = "/sttattus.apex.v1.ApexService/SyncPreventiveCarePlanFromGuidelines"
+	ApexService_GetExperimentLabOverview_FullMethodName                = "/sttattus.apex.v1.ApexService/GetExperimentLabOverview"
+	ApexService_PredeclareNOf1Experiment_FullMethodName                = "/sttattus.apex.v1.ApexService/PredeclareNOf1Experiment"
+	ApexService_RecordNOf1DailyLog_FullMethodName                      = "/sttattus.apex.v1.ApexService/RecordNOf1DailyLog"
+	ApexService_AnalyzeNOf1Experiment_FullMethodName                   = "/sttattus.apex.v1.ApexService/AnalyzeNOf1Experiment"
+	ApexService_UpdateNOf1ExperimentStatus_FullMethodName              = "/sttattus.apex.v1.ApexService/UpdateNOf1ExperimentStatus"
+	ApexService_ReportExperimentAdverseEvent_FullMethodName            = "/sttattus.apex.v1.ApexService/ReportExperimentAdverseEvent"
+	ApexService_GetAdaptiveDailyPlanOverview_FullMethodName            = "/sttattus.apex.v1.ApexService/GetAdaptiveDailyPlanOverview"
+	ApexService_ReplanAdaptiveDailyProtocol_FullMethodName             = "/sttattus.apex.v1.ApexService/ReplanAdaptiveDailyProtocol"
+	ApexService_RecordDailyPlanStepDisposition_FullMethodName          = "/sttattus.apex.v1.ApexService/RecordDailyPlanStepDisposition"
+	ApexService_UpsertDailyPlanStep_FullMethodName                     = "/sttattus.apex.v1.ApexService/UpsertDailyPlanStep"
+	ApexService_UpdateCompassionateAdherencePause_FullMethodName       = "/sttattus.apex.v1.ApexService/UpdateCompassionateAdherencePause"
+	ApexService_UpdateCrossPillarTimingHandoff_FullMethodName          = "/sttattus.apex.v1.ApexService/UpdateCrossPillarTimingHandoff"
+	ApexService_GetMedicationSafetyOverview_FullMethodName             = "/sttattus.apex.v1.ApexService/GetMedicationSafetyOverview"
+	ApexService_UpsertReconciledMedicationItem_FullMethodName          = "/sttattus.apex.v1.ApexService/UpsertReconciledMedicationItem"
+	ApexService_UpsertAllergyOrIntolerance_FullMethodName              = "/sttattus.apex.v1.ApexService/UpsertAllergyOrIntolerance"
+	ApexService_RunSafetyInteractionCheck_FullMethodName               = "/sttattus.apex.v1.ApexService/RunSafetyInteractionCheck"
+	ApexService_UpdateInteractionAlertDisposition_FullMethodName       = "/sttattus.apex.v1.ApexService/UpdateInteractionAlertDisposition"
+	ApexService_GenerateMedicationReconciliationPacket_FullMethodName  = "/sttattus.apex.v1.ApexService/GenerateMedicationReconciliationPacket"
+	ApexService_GetMetabolicStudioOverview_FullMethodName              = "/sttattus.apex.v1.ApexService/GetMetabolicStudioOverview"
+	ApexService_RecordMetabolicMealEvent_FullMethodName                = "/sttattus.apex.v1.ApexService/RecordMetabolicMealEvent"
+	ApexService_ConfirmMealIngredientsAndPortions_FullMethodName       = "/sttattus.apex.v1.ApexService/ConfirmMealIngredientsAndPortions"
+	ApexService_CompareRepeatMealResponses_FullMethodName              = "/sttattus.apex.v1.ApexService/CompareRepeatMealResponses"
+	ApexService_UpsertMetabolicTargetRange_FullMethodName              = "/sttattus.apex.v1.ApexService/UpsertMetabolicTargetRange"
+	ApexService_UpsertMetabolicSensorProfile_FullMethodName            = "/sttattus.apex.v1.ApexService/UpsertMetabolicSensorProfile"
+	ApexService_GetCycleLifeStageOverview_FullMethodName               = "/sttattus.apex.v1.ApexService/GetCycleLifeStageOverview"
+	ApexService_UpdateLifeStageProfileAndPrivacy_FullMethodName        = "/sttattus.apex.v1.ApexService/UpdateLifeStageProfileAndPrivacy"
+	ApexService_RecordLifeStageEvent_FullMethodName                    = "/sttattus.apex.v1.ApexService/RecordLifeStageEvent"
+	ApexService_GenerateLifeStageAppointmentBrief_FullMethodName       = "/sttattus.apex.v1.ApexService/GenerateLifeStageAppointmentBrief"
+	ApexService_PurgeReproductiveAndLifeStageData_FullMethodName       = "/sttattus.apex.v1.ApexService/PurgeReproductiveAndLifeStageData"
+	ApexService_ExportReproductiveAndLifeStageData_FullMethodName      = "/sttattus.apex.v1.ApexService/ExportReproductiveAndLifeStageData"
+	ApexService_GetGenomicsAndFamilyHistoryOverview_FullMethodName     = "/sttattus.apex.v1.ApexService/GetGenomicsAndFamilyHistoryOverview"
+	ApexService_RegisterEncryptedGenomicUpload_FullMethodName          = "/sttattus.apex.v1.ApexService/RegisterEncryptedGenomicUpload"
+	ApexService_UpdateGenomicVariantVisibility_FullMethodName          = "/sttattus.apex.v1.ApexService/UpdateGenomicVariantVisibility"
+	ApexService_UpsertFamilyHistoryEntry_FullMethodName                = "/sttattus.apex.v1.ApexService/UpsertFamilyHistoryEntry"
+	ApexService_SubmitGeneticCounsellorRequest_FullMethodName          = "/sttattus.apex.v1.ApexService/SubmitGeneticCounsellorRequest"
+	ApexService_RotateGenomicEncryptionKeyOrPurge_FullMethodName       = "/sttattus.apex.v1.ApexService/RotateGenomicEncryptionKeyOrPurge"
+	ApexService_GetClinicianCareTeamOverview_FullMethodName            = "/sttattus.apex.v1.ApexService/GetClinicianCareTeamOverview"
+	ApexService_CreateScopedCareTeamGrant_FullMethodName               = "/sttattus.apex.v1.ApexService/CreateScopedCareTeamGrant"
+	ApexService_RevokeScopedCareTeamGrant_FullMethodName               = "/sttattus.apex.v1.ApexService/RevokeScopedCareTeamGrant"
+	ApexService_RecordClinicianDisposition_FullMethodName              = "/sttattus.apex.v1.ApexService/RecordClinicianDisposition"
+	ApexService_ExportScopedCareTeamBundle_FullMethodName              = "/sttattus.apex.v1.ApexService/ExportScopedCareTeamBundle"
+	ApexService_SubmitClinicianQuestionPacket_FullMethodName           = "/sttattus.apex.v1.ApexService/SubmitClinicianQuestionPacket"
+	ApexService_GetChangeEscalationOverview_FullMethodName             = "/sttattus.apex.v1.ApexService/GetChangeEscalationOverview"
+	ApexService_EvaluateMultiSignalChangeEscalation_FullMethodName     = "/sttattus.apex.v1.ApexService/EvaluateMultiSignalChangeEscalation"
+	ApexService_UpdateChangeEscalationDisposition_FullMethodName       = "/sttattus.apex.v1.ApexService/UpdateChangeEscalationDisposition"
+	ApexService_CreateCareNavigationHandoff_FullMethodName             = "/sttattus.apex.v1.ApexService/CreateCareNavigationHandoff"
+	ApexService_UpdateCareNavigationHandoffState_FullMethodName        = "/sttattus.apex.v1.ApexService/UpdateCareNavigationHandoffState"
+	ApexService_UpsertCareNavigationOption_FullMethodName              = "/sttattus.apex.v1.ApexService/UpsertCareNavigationOption"
+	ApexService_GetSleepCircadianStudioOverview_FullMethodName         = "/sttattus.apex.v1.ApexService/GetSleepCircadianStudioOverview"
+	ApexService_RecordSleepAndExposureLog_FullMethodName               = "/sttattus.apex.v1.ApexService/RecordSleepAndExposureLog"
+	ApexService_UpsertCircadianRoutine_FullMethodName                  = "/sttattus.apex.v1.ApexService/UpsertCircadianRoutine"
+	ApexService_UpdateCircadianCrossPillarGrant_FullMethodName         = "/sttattus.apex.v1.ApexService/UpdateCircadianCrossPillarGrant"
+	ApexService_UpsertSleepSensorCapability_FullMethodName             = "/sttattus.apex.v1.ApexService/UpsertSleepSensorCapability"
+	ApexService_GenerateCircadianTravelOrShiftPlan_FullMethodName      = "/sttattus.apex.v1.ApexService/GenerateCircadianTravelOrShiftPlan"
+	ApexService_GetResearchParticipationOverview_FullMethodName        = "/sttattus.apex.v1.ApexService/GetResearchParticipationOverview"
+	ApexService_RunLocalStudyPreScreen_FullMethodName                  = "/sttattus.apex.v1.ApexService/RunLocalStudyPreScreen"
+	ApexService_EnrollOrUpdateResearchStudyConsent_FullMethodName      = "/sttattus.apex.v1.ApexService/EnrollOrUpdateResearchStudyConsent"
+	ApexService_WithdrawResearchStudyConsent_FullMethodName            = "/sttattus.apex.v1.ApexService/WithdrawResearchStudyConsent"
+	ApexService_RecordResearchContributionMilestone_FullMethodName     = "/sttattus.apex.v1.ApexService/RecordResearchContributionMilestone"
+	ApexService_UpsertResearchStudy_FullMethodName                     = "/sttattus.apex.v1.ApexService/UpsertResearchStudy"
+	ApexService_GetPortableHealthDossierOverview_FullMethodName        = "/sttattus.apex.v1.ApexService/GetPortableHealthDossierOverview"
+	ApexService_UpsertPortableHealthDossier_FullMethodName             = "/sttattus.apex.v1.ApexService/UpsertPortableHealthDossier"
+	ApexService_ConfirmPortableDossierFreshness_FullMethodName         = "/sttattus.apex.v1.ApexService/ConfirmPortableDossierFreshness"
+	ApexService_IssueDossierAccessGrant_FullMethodName                 = "/sttattus.apex.v1.ApexService/IssueDossierAccessGrant"
+	ApexService_RevokeDossierAccessGrant_FullMethodName                = "/sttattus.apex.v1.ApexService/RevokeDossierAccessGrant"
+	ApexService_UpdateLegacyDirectiveReference_FullMethodName          = "/sttattus.apex.v1.ApexService/UpdateLegacyDirectiveReference"
+	ApexService_GetGlobalCertificationOverview_FullMethodName          = "/sttattus.apex.v1.ApexService/GetGlobalCertificationOverview"
+	ApexService_UpdateGlobalAccessibilityProfile_FullMethodName        = "/sttattus.apex.v1.ApexService/UpdateGlobalAccessibilityProfile"
+	ApexService_RunHealthMigrationImportOrExportJob_FullMethodName     = "/sttattus.apex.v1.ApexService/RunHealthMigrationImportOrExportJob"
+	ApexService_UpsertHorizontalCertificationCheck_FullMethodName      = "/sttattus.apex.v1.ApexService/UpsertHorizontalCertificationCheck"
+	ApexService_VerifyUnitLocalizationLosslessness_FullMethodName      = "/sttattus.apex.v1.ApexService/VerifyUnitLocalizationLosslessness"
+	ApexService_RunOfflineAndManualParityAudit_FullMethodName          = "/sttattus.apex.v1.ApexService/RunOfflineAndManualParityAudit"
 )
 
 // ApexServiceClient is the client API for ApexService service.
@@ -181,6 +291,132 @@ type ApexServiceClient interface {
 	ParseLabReportText(ctx context.Context, in *ParseLabReportTextRequest, opts ...grpc.CallOption) (*ParseLabReportTextResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(ctx context.Context, in *AdminVerifyLabRequest, opts ...grpc.CallOption) (*AdminVerifyLabResponse, error)
+	// === Opportunity Choice 1 (AP1): Health Data Reliability Center ===
+	GetHealthDataReliabilityOverview(ctx context.Context, in *GetHealthDataReliabilityOverviewRequest, opts ...grpc.CallOption) (*GetHealthDataReliabilityOverviewResponse, error)
+	ListHealthSources(ctx context.Context, in *ListHealthSourcesRequest, opts ...grpc.CallOption) (*ListHealthSourcesResponse, error)
+	UpsertHealthSourceGrant(ctx context.Context, in *UpsertHealthSourceGrantRequest, opts ...grpc.CallOption) (*UpsertHealthSourceGrantResponse, error)
+	RevokeHealthSourceGrant(ctx context.Context, in *RevokeHealthSourceGrantRequest, opts ...grpc.CallOption) (*RevokeHealthSourceGrantResponse, error)
+	CorrectHealthObservation(ctx context.Context, in *CorrectHealthObservationRequest, opts ...grpc.CallOption) (*CorrectHealthObservationResponse, error)
+	DeleteHealthObservation(ctx context.Context, in *DeleteHealthObservationRequest, opts ...grpc.CallOption) (*DeleteHealthObservationResponse, error)
+	RestoreHealthObservation(ctx context.Context, in *RestoreHealthObservationRequest, opts ...grpc.CallOption) (*RestoreHealthObservationResponse, error)
+	ListObservationRevisions(ctx context.Context, in *ListObservationRevisionsRequest, opts ...grpc.CallOption) (*ListObservationRevisionsResponse, error)
+	ListHealthDataConflicts(ctx context.Context, in *ListHealthDataConflictsRequest, opts ...grpc.CallOption) (*ListHealthDataConflictsResponse, error)
+	ResolveHealthDataConflict(ctx context.Context, in *ResolveHealthDataConflictRequest, opts ...grpc.CallOption) (*ResolveHealthDataConflictResponse, error)
+	CreateHealthCorrectionCase(ctx context.Context, in *CreateHealthCorrectionCaseRequest, opts ...grpc.CallOption) (*CreateHealthCorrectionCaseResponse, error)
+	ListMyHealthCorrectionCases(ctx context.Context, in *ListMyHealthCorrectionCasesRequest, opts ...grpc.CallOption) (*ListMyHealthCorrectionCasesResponse, error)
+	ListCrossPillarHealthGrants(ctx context.Context, in *ListCrossPillarHealthGrantsRequest, opts ...grpc.CallOption) (*ListCrossPillarHealthGrantsResponse, error)
+	UpdateCrossPillarHealthGrant(ctx context.Context, in *UpdateCrossPillarHealthGrantRequest, opts ...grpc.CallOption) (*UpdateCrossPillarHealthGrantResponse, error)
+	RebuildHealthRecord(ctx context.Context, in *RebuildHealthRecordRequest, opts ...grpc.CallOption) (*RebuildHealthRecordResponse, error)
+	ExportHealthObservations(ctx context.Context, in *ExportHealthObservationsRequest, opts ...grpc.CallOption) (*ExportHealthObservationsResponse, error)
+	// === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence ===
+	GetClinicalDocumentIntelligenceOverview(ctx context.Context, in *GetClinicalDocumentIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetClinicalDocumentIntelligenceOverviewResponse, error)
+	InspectClinicalDocument(ctx context.Context, in *InspectClinicalDocumentRequest, opts ...grpc.CallOption) (*InspectClinicalDocumentResponse, error)
+	RunDocumentExtraction(ctx context.Context, in *RunDocumentExtractionRequest, opts ...grpc.CallOption) (*RunDocumentExtractionResponse, error)
+	ConfirmExtractedDocumentItems(ctx context.Context, in *ConfirmExtractedDocumentItemsRequest, opts ...grpc.CallOption) (*ConfirmExtractedDocumentItemsResponse, error)
+	CompareClinicalDocumentRevisions(ctx context.Context, in *CompareClinicalDocumentRevisionsRequest, opts ...grpc.CallOption) (*CompareClinicalDocumentRevisionsResponse, error)
+	GenerateAppointmentBrief(ctx context.Context, in *GenerateAppointmentBriefRequest, opts ...grpc.CallOption) (*GenerateAppointmentBriefResponse, error)
+	ListMyAppointmentBriefs(ctx context.Context, in *ListMyAppointmentBriefsRequest, opts ...grpc.CallOption) (*ListMyAppointmentBriefsResponse, error)
+	UpdateAppointmentBrief(ctx context.Context, in *UpdateAppointmentBriefRequest, opts ...grpc.CallOption) (*UpdateAppointmentBriefResponse, error)
+	// === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age ===
+	GetPersonalBaselineAndApexAgeOverview(ctx context.Context, in *GetPersonalBaselineAndApexAgeOverviewRequest, opts ...grpc.CallOption) (*GetPersonalBaselineAndApexAgeOverviewResponse, error)
+	RecomputePersonalBaselinesAndApexAge(ctx context.Context, in *RecomputePersonalBaselinesAndApexAgeRequest, opts ...grpc.CallOption) (*RecomputePersonalBaselinesAndApexAgeResponse, error)
+	UpsertBaselineExcludedPeriod(ctx context.Context, in *UpsertBaselineExcludedPeriodRequest, opts ...grpc.CallOption) (*UpsertBaselineExcludedPeriodResponse, error)
+	DeleteBaselineExcludedPeriod(ctx context.Context, in *DeleteBaselineExcludedPeriodRequest, opts ...grpc.CallOption) (*DeleteBaselineExcludedPeriodResponse, error)
+	UpdateChangeSignalDisposition(ctx context.Context, in *UpdateChangeSignalDispositionRequest, opts ...grpc.CallOption) (*UpdateChangeSignalDispositionResponse, error)
+	UpdateScoreDisplayPreferences(ctx context.Context, in *UpdateScoreDisplayPreferencesRequest, opts ...grpc.CallOption) (*UpdateScoreDisplayPreferencesResponse, error)
+	SubmitApexScoreDispute(ctx context.Context, in *SubmitApexScoreDisputeRequest, opts ...grpc.CallOption) (*SubmitApexScoreDisputeResponse, error)
+	ListMyApexScoreSnapshots(ctx context.Context, in *ListMyApexScoreSnapshotsRequest, opts ...grpc.CallOption) (*ListMyApexScoreSnapshotsResponse, error)
+	// === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar ===
+	GetPreventiveCareCalendarOverview(ctx context.Context, in *GetPreventiveCareCalendarOverviewRequest, opts ...grpc.CallOption) (*GetPreventiveCareCalendarOverviewResponse, error)
+	UpdatePreventiveCareProfile(ctx context.Context, in *UpdatePreventiveCareProfileRequest, opts ...grpc.CallOption) (*UpdatePreventiveCareProfileResponse, error)
+	UpdatePreventiveCareItemStatus(ctx context.Context, in *UpdatePreventiveCareItemStatusRequest, opts ...grpc.CallOption) (*UpdatePreventiveCareItemStatusResponse, error)
+	ConfirmPreventiveCareEvidence(ctx context.Context, in *ConfirmPreventiveCareEvidenceRequest, opts ...grpc.CallOption) (*ConfirmPreventiveCareEvidenceResponse, error)
+	UpsertCustomPreventiveCareCheck(ctx context.Context, in *UpsertCustomPreventiveCareCheckRequest, opts ...grpc.CallOption) (*UpsertCustomPreventiveCareCheckResponse, error)
+	SyncPreventiveCarePlanFromGuidelines(ctx context.Context, in *SyncPreventiveCarePlanFromGuidelinesRequest, opts ...grpc.CallOption) (*SyncPreventiveCarePlanFromGuidelinesResponse, error)
+	// === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory ===
+	GetExperimentLabOverview(ctx context.Context, in *GetExperimentLabOverviewRequest, opts ...grpc.CallOption) (*GetExperimentLabOverviewResponse, error)
+	PredeclareNOf1Experiment(ctx context.Context, in *PredeclareNOf1ExperimentRequest, opts ...grpc.CallOption) (*PredeclareNOf1ExperimentResponse, error)
+	RecordNOf1DailyLog(ctx context.Context, in *RecordNOf1DailyLogRequest, opts ...grpc.CallOption) (*RecordNOf1DailyLogResponse, error)
+	AnalyzeNOf1Experiment(ctx context.Context, in *AnalyzeNOf1ExperimentRequest, opts ...grpc.CallOption) (*AnalyzeNOf1ExperimentResponse, error)
+	UpdateNOf1ExperimentStatus(ctx context.Context, in *UpdateNOf1ExperimentStatusRequest, opts ...grpc.CallOption) (*UpdateNOf1ExperimentStatusResponse, error)
+	ReportExperimentAdverseEvent(ctx context.Context, in *ReportExperimentAdverseEventRequest, opts ...grpc.CallOption) (*ReportExperimentAdverseEventResponse, error)
+	// === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan ===
+	GetAdaptiveDailyPlanOverview(ctx context.Context, in *GetAdaptiveDailyPlanOverviewRequest, opts ...grpc.CallOption) (*GetAdaptiveDailyPlanOverviewResponse, error)
+	ReplanAdaptiveDailyProtocol(ctx context.Context, in *ReplanAdaptiveDailyProtocolRequest, opts ...grpc.CallOption) (*ReplanAdaptiveDailyProtocolResponse, error)
+	RecordDailyPlanStepDisposition(ctx context.Context, in *RecordDailyPlanStepDispositionRequest, opts ...grpc.CallOption) (*RecordDailyPlanStepDispositionResponse, error)
+	UpsertDailyPlanStep(ctx context.Context, in *UpsertDailyPlanStepRequest, opts ...grpc.CallOption) (*UpsertDailyPlanStepResponse, error)
+	UpdateCompassionateAdherencePause(ctx context.Context, in *UpdateCompassionateAdherencePauseRequest, opts ...grpc.CallOption) (*UpdateCompassionateAdherencePauseResponse, error)
+	UpdateCrossPillarTimingHandoff(ctx context.Context, in *UpdateCrossPillarTimingHandoffRequest, opts ...grpc.CallOption) (*UpdateCrossPillarTimingHandoffResponse, error)
+	// === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety ===
+	GetMedicationSafetyOverview(ctx context.Context, in *GetMedicationSafetyOverviewRequest, opts ...grpc.CallOption) (*GetMedicationSafetyOverviewResponse, error)
+	UpsertReconciledMedicationItem(ctx context.Context, in *UpsertReconciledMedicationItemRequest, opts ...grpc.CallOption) (*UpsertReconciledMedicationItemResponse, error)
+	UpsertAllergyOrIntolerance(ctx context.Context, in *UpsertAllergyOrIntoleranceRequest, opts ...grpc.CallOption) (*UpsertAllergyOrIntoleranceResponse, error)
+	RunSafetyInteractionCheck(ctx context.Context, in *RunSafetyInteractionCheckRequest, opts ...grpc.CallOption) (*RunSafetyInteractionCheckResponse, error)
+	UpdateInteractionAlertDisposition(ctx context.Context, in *UpdateInteractionAlertDispositionRequest, opts ...grpc.CallOption) (*UpdateInteractionAlertDispositionResponse, error)
+	GenerateMedicationReconciliationPacket(ctx context.Context, in *GenerateMedicationReconciliationPacketRequest, opts ...grpc.CallOption) (*GenerateMedicationReconciliationPacketResponse, error)
+	// === Opportunity Choice 8 (AP8): Metabolic Response Studio ===
+	GetMetabolicStudioOverview(ctx context.Context, in *GetMetabolicStudioOverviewRequest, opts ...grpc.CallOption) (*GetMetabolicStudioOverviewResponse, error)
+	RecordMetabolicMealEvent(ctx context.Context, in *RecordMetabolicMealEventRequest, opts ...grpc.CallOption) (*RecordMetabolicMealEventResponse, error)
+	ConfirmMealIngredientsAndPortions(ctx context.Context, in *ConfirmMealIngredientsAndPortionsRequest, opts ...grpc.CallOption) (*ConfirmMealIngredientsAndPortionsResponse, error)
+	CompareRepeatMealResponses(ctx context.Context, in *CompareRepeatMealResponsesRequest, opts ...grpc.CallOption) (*CompareRepeatMealResponsesResponse, error)
+	UpsertMetabolicTargetRange(ctx context.Context, in *UpsertMetabolicTargetRangeRequest, opts ...grpc.CallOption) (*UpsertMetabolicTargetRangeResponse, error)
+	UpsertMetabolicSensorProfile(ctx context.Context, in *UpsertMetabolicSensorProfileRequest, opts ...grpc.CallOption) (*UpsertMetabolicSensorProfileResponse, error)
+	// === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace ===
+	GetCycleLifeStageOverview(ctx context.Context, in *GetCycleLifeStageOverviewRequest, opts ...grpc.CallOption) (*GetCycleLifeStageOverviewResponse, error)
+	UpdateLifeStageProfileAndPrivacy(ctx context.Context, in *UpdateLifeStageProfileAndPrivacyRequest, opts ...grpc.CallOption) (*UpdateLifeStageProfileAndPrivacyResponse, error)
+	RecordLifeStageEvent(ctx context.Context, in *RecordLifeStageEventRequest, opts ...grpc.CallOption) (*RecordLifeStageEventResponse, error)
+	GenerateLifeStageAppointmentBrief(ctx context.Context, in *GenerateLifeStageAppointmentBriefRequest, opts ...grpc.CallOption) (*GenerateLifeStageAppointmentBriefResponse, error)
+	PurgeReproductiveAndLifeStageData(ctx context.Context, in *PurgeReproductiveAndLifeStageDataRequest, opts ...grpc.CallOption) (*PurgeReproductiveAndLifeStageDataResponse, error)
+	ExportReproductiveAndLifeStageData(ctx context.Context, in *ExportReproductiveAndLifeStageDataRequest, opts ...grpc.CallOption) (*ExportReproductiveAndLifeStageDataResponse, error)
+	// === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+	GetGenomicsAndFamilyHistoryOverview(ctx context.Context, in *GetGenomicsAndFamilyHistoryOverviewRequest, opts ...grpc.CallOption) (*GetGenomicsAndFamilyHistoryOverviewResponse, error)
+	RegisterEncryptedGenomicUpload(ctx context.Context, in *RegisterEncryptedGenomicUploadRequest, opts ...grpc.CallOption) (*RegisterEncryptedGenomicUploadResponse, error)
+	UpdateGenomicVariantVisibility(ctx context.Context, in *UpdateGenomicVariantVisibilityRequest, opts ...grpc.CallOption) (*UpdateGenomicVariantVisibilityResponse, error)
+	UpsertFamilyHistoryEntry(ctx context.Context, in *UpsertFamilyHistoryEntryRequest, opts ...grpc.CallOption) (*UpsertFamilyHistoryEntryResponse, error)
+	SubmitGeneticCounsellorRequest(ctx context.Context, in *SubmitGeneticCounsellorRequestRequest, opts ...grpc.CallOption) (*SubmitGeneticCounsellorRequestResponse, error)
+	RotateGenomicEncryptionKeyOrPurge(ctx context.Context, in *RotateGenomicEncryptionKeyOrPurgeRequest, opts ...grpc.CallOption) (*RotateGenomicEncryptionKeyOrPurgeResponse, error)
+	// === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+	GetClinicianCareTeamOverview(ctx context.Context, in *GetClinicianCareTeamOverviewRequest, opts ...grpc.CallOption) (*GetClinicianCareTeamOverviewResponse, error)
+	CreateScopedCareTeamGrant(ctx context.Context, in *CreateScopedCareTeamGrantRequest, opts ...grpc.CallOption) (*CreateScopedCareTeamGrantResponse, error)
+	RevokeScopedCareTeamGrant(ctx context.Context, in *RevokeScopedCareTeamGrantRequest, opts ...grpc.CallOption) (*RevokeScopedCareTeamGrantResponse, error)
+	RecordClinicianDisposition(ctx context.Context, in *RecordClinicianDispositionRequest, opts ...grpc.CallOption) (*RecordClinicianDispositionResponse, error)
+	ExportScopedCareTeamBundle(ctx context.Context, in *ExportScopedCareTeamBundleRequest, opts ...grpc.CallOption) (*ExportScopedCareTeamBundleResponse, error)
+	SubmitClinicianQuestionPacket(ctx context.Context, in *SubmitClinicianQuestionPacketRequest, opts ...grpc.CallOption) (*SubmitClinicianQuestionPacketResponse, error)
+	// === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+	GetChangeEscalationOverview(ctx context.Context, in *GetChangeEscalationOverviewRequest, opts ...grpc.CallOption) (*GetChangeEscalationOverviewResponse, error)
+	EvaluateMultiSignalChangeEscalation(ctx context.Context, in *EvaluateMultiSignalChangeEscalationRequest, opts ...grpc.CallOption) (*EvaluateMultiSignalChangeEscalationResponse, error)
+	UpdateChangeEscalationDisposition(ctx context.Context, in *UpdateChangeEscalationDispositionRequest, opts ...grpc.CallOption) (*UpdateChangeEscalationDispositionResponse, error)
+	CreateCareNavigationHandoff(ctx context.Context, in *CreateCareNavigationHandoffRequest, opts ...grpc.CallOption) (*CreateCareNavigationHandoffResponse, error)
+	UpdateCareNavigationHandoffState(ctx context.Context, in *UpdateCareNavigationHandoffStateRequest, opts ...grpc.CallOption) (*UpdateCareNavigationHandoffStateResponse, error)
+	UpsertCareNavigationOption(ctx context.Context, in *UpsertCareNavigationOptionRequest, opts ...grpc.CallOption) (*UpsertCareNavigationOptionResponse, error)
+	// === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+	GetSleepCircadianStudioOverview(ctx context.Context, in *GetSleepCircadianStudioOverviewRequest, opts ...grpc.CallOption) (*GetSleepCircadianStudioOverviewResponse, error)
+	RecordSleepAndExposureLog(ctx context.Context, in *RecordSleepAndExposureLogRequest, opts ...grpc.CallOption) (*RecordSleepAndExposureLogResponse, error)
+	UpsertCircadianRoutine(ctx context.Context, in *UpsertCircadianRoutineRequest, opts ...grpc.CallOption) (*UpsertCircadianRoutineResponse, error)
+	UpdateCircadianCrossPillarGrant(ctx context.Context, in *UpdateCircadianCrossPillarGrantRequest, opts ...grpc.CallOption) (*UpdateCircadianCrossPillarGrantResponse, error)
+	UpsertSleepSensorCapability(ctx context.Context, in *UpsertSleepSensorCapabilityRequest, opts ...grpc.CallOption) (*UpsertSleepSensorCapabilityResponse, error)
+	GenerateCircadianTravelOrShiftPlan(ctx context.Context, in *GenerateCircadianTravelOrShiftPlanRequest, opts ...grpc.CallOption) (*GenerateCircadianTravelOrShiftPlanResponse, error)
+	// === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+	GetResearchParticipationOverview(ctx context.Context, in *GetResearchParticipationOverviewRequest, opts ...grpc.CallOption) (*GetResearchParticipationOverviewResponse, error)
+	RunLocalStudyPreScreen(ctx context.Context, in *RunLocalStudyPreScreenRequest, opts ...grpc.CallOption) (*RunLocalStudyPreScreenResponse, error)
+	EnrollOrUpdateResearchStudyConsent(ctx context.Context, in *EnrollOrUpdateResearchStudyConsentRequest, opts ...grpc.CallOption) (*EnrollOrUpdateResearchStudyConsentResponse, error)
+	WithdrawResearchStudyConsent(ctx context.Context, in *WithdrawResearchStudyConsentRequest, opts ...grpc.CallOption) (*WithdrawResearchStudyConsentResponse, error)
+	RecordResearchContributionMilestone(ctx context.Context, in *RecordResearchContributionMilestoneRequest, opts ...grpc.CallOption) (*RecordResearchContributionMilestoneResponse, error)
+	UpsertResearchStudy(ctx context.Context, in *UpsertResearchStudyRequest, opts ...grpc.CallOption) (*UpsertResearchStudyResponse, error)
+	// === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+	GetPortableHealthDossierOverview(ctx context.Context, in *GetPortableHealthDossierOverviewRequest, opts ...grpc.CallOption) (*GetPortableHealthDossierOverviewResponse, error)
+	UpsertPortableHealthDossier(ctx context.Context, in *UpsertPortableHealthDossierRequest, opts ...grpc.CallOption) (*UpsertPortableHealthDossierResponse, error)
+	ConfirmPortableDossierFreshness(ctx context.Context, in *ConfirmPortableDossierFreshnessRequest, opts ...grpc.CallOption) (*ConfirmPortableDossierFreshnessResponse, error)
+	IssueDossierAccessGrant(ctx context.Context, in *IssueDossierAccessGrantRequest, opts ...grpc.CallOption) (*IssueDossierAccessGrantResponse, error)
+	RevokeDossierAccessGrant(ctx context.Context, in *RevokeDossierAccessGrantRequest, opts ...grpc.CallOption) (*RevokeDossierAccessGrantResponse, error)
+	UpdateLegacyDirectiveReference(ctx context.Context, in *UpdateLegacyDirectiveReferenceRequest, opts ...grpc.CallOption) (*UpdateLegacyDirectiveReferenceResponse, error)
+	// === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+	GetGlobalCertificationOverview(ctx context.Context, in *GetGlobalCertificationOverviewRequest, opts ...grpc.CallOption) (*GetGlobalCertificationOverviewResponse, error)
+	UpdateGlobalAccessibilityProfile(ctx context.Context, in *UpdateGlobalAccessibilityProfileRequest, opts ...grpc.CallOption) (*UpdateGlobalAccessibilityProfileResponse, error)
+	RunHealthMigrationImportOrExportJob(ctx context.Context, in *RunHealthMigrationImportOrExportJobRequest, opts ...grpc.CallOption) (*RunHealthMigrationImportOrExportJobResponse, error)
+	UpsertHorizontalCertificationCheck(ctx context.Context, in *UpsertHorizontalCertificationCheckRequest, opts ...grpc.CallOption) (*UpsertHorizontalCertificationCheckResponse, error)
+	VerifyUnitLocalizationLosslessness(ctx context.Context, in *VerifyUnitLocalizationLosslessnessRequest, opts ...grpc.CallOption) (*VerifyUnitLocalizationLosslessnessResponse, error)
+	RunOfflineAndManualParityAudit(ctx context.Context, in *RunOfflineAndManualParityAuditRequest, opts ...grpc.CallOption) (*RunOfflineAndManualParityAuditResponse, error)
 }
 
 type apexServiceClient struct {
@@ -801,6 +1037,1106 @@ func (c *apexServiceClient) AdminVerifyLab(ctx context.Context, in *AdminVerifyL
 	return out, nil
 }
 
+func (c *apexServiceClient) GetHealthDataReliabilityOverview(ctx context.Context, in *GetHealthDataReliabilityOverviewRequest, opts ...grpc.CallOption) (*GetHealthDataReliabilityOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetHealthDataReliabilityOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetHealthDataReliabilityOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListHealthSources(ctx context.Context, in *ListHealthSourcesRequest, opts ...grpc.CallOption) (*ListHealthSourcesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListHealthSourcesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListHealthSources_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertHealthSourceGrant(ctx context.Context, in *UpsertHealthSourceGrantRequest, opts ...grpc.CallOption) (*UpsertHealthSourceGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertHealthSourceGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertHealthSourceGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RevokeHealthSourceGrant(ctx context.Context, in *RevokeHealthSourceGrantRequest, opts ...grpc.CallOption) (*RevokeHealthSourceGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeHealthSourceGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_RevokeHealthSourceGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CorrectHealthObservation(ctx context.Context, in *CorrectHealthObservationRequest, opts ...grpc.CallOption) (*CorrectHealthObservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CorrectHealthObservationResponse)
+	err := c.cc.Invoke(ctx, ApexService_CorrectHealthObservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) DeleteHealthObservation(ctx context.Context, in *DeleteHealthObservationRequest, opts ...grpc.CallOption) (*DeleteHealthObservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteHealthObservationResponse)
+	err := c.cc.Invoke(ctx, ApexService_DeleteHealthObservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RestoreHealthObservation(ctx context.Context, in *RestoreHealthObservationRequest, opts ...grpc.CallOption) (*RestoreHealthObservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RestoreHealthObservationResponse)
+	err := c.cc.Invoke(ctx, ApexService_RestoreHealthObservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListObservationRevisions(ctx context.Context, in *ListObservationRevisionsRequest, opts ...grpc.CallOption) (*ListObservationRevisionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListObservationRevisionsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListObservationRevisions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListHealthDataConflicts(ctx context.Context, in *ListHealthDataConflictsRequest, opts ...grpc.CallOption) (*ListHealthDataConflictsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListHealthDataConflictsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListHealthDataConflicts_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ResolveHealthDataConflict(ctx context.Context, in *ResolveHealthDataConflictRequest, opts ...grpc.CallOption) (*ResolveHealthDataConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveHealthDataConflictResponse)
+	err := c.cc.Invoke(ctx, ApexService_ResolveHealthDataConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CreateHealthCorrectionCase(ctx context.Context, in *CreateHealthCorrectionCaseRequest, opts ...grpc.CallOption) (*CreateHealthCorrectionCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateHealthCorrectionCaseResponse)
+	err := c.cc.Invoke(ctx, ApexService_CreateHealthCorrectionCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyHealthCorrectionCases(ctx context.Context, in *ListMyHealthCorrectionCasesRequest, opts ...grpc.CallOption) (*ListMyHealthCorrectionCasesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyHealthCorrectionCasesResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyHealthCorrectionCases_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListCrossPillarHealthGrants(ctx context.Context, in *ListCrossPillarHealthGrantsRequest, opts ...grpc.CallOption) (*ListCrossPillarHealthGrantsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCrossPillarHealthGrantsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListCrossPillarHealthGrants_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateCrossPillarHealthGrant(ctx context.Context, in *UpdateCrossPillarHealthGrantRequest, opts ...grpc.CallOption) (*UpdateCrossPillarHealthGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCrossPillarHealthGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateCrossPillarHealthGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RebuildHealthRecord(ctx context.Context, in *RebuildHealthRecordRequest, opts ...grpc.CallOption) (*RebuildHealthRecordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RebuildHealthRecordResponse)
+	err := c.cc.Invoke(ctx, ApexService_RebuildHealthRecord_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ExportHealthObservations(ctx context.Context, in *ExportHealthObservationsRequest, opts ...grpc.CallOption) (*ExportHealthObservationsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportHealthObservationsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ExportHealthObservations_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetClinicalDocumentIntelligenceOverview(ctx context.Context, in *GetClinicalDocumentIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetClinicalDocumentIntelligenceOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetClinicalDocumentIntelligenceOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetClinicalDocumentIntelligenceOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) InspectClinicalDocument(ctx context.Context, in *InspectClinicalDocumentRequest, opts ...grpc.CallOption) (*InspectClinicalDocumentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(InspectClinicalDocumentResponse)
+	err := c.cc.Invoke(ctx, ApexService_InspectClinicalDocument_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RunDocumentExtraction(ctx context.Context, in *RunDocumentExtractionRequest, opts ...grpc.CallOption) (*RunDocumentExtractionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunDocumentExtractionResponse)
+	err := c.cc.Invoke(ctx, ApexService_RunDocumentExtraction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ConfirmExtractedDocumentItems(ctx context.Context, in *ConfirmExtractedDocumentItemsRequest, opts ...grpc.CallOption) (*ConfirmExtractedDocumentItemsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmExtractedDocumentItemsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ConfirmExtractedDocumentItems_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CompareClinicalDocumentRevisions(ctx context.Context, in *CompareClinicalDocumentRevisionsRequest, opts ...grpc.CallOption) (*CompareClinicalDocumentRevisionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompareClinicalDocumentRevisionsResponse)
+	err := c.cc.Invoke(ctx, ApexService_CompareClinicalDocumentRevisions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GenerateAppointmentBrief(ctx context.Context, in *GenerateAppointmentBriefRequest, opts ...grpc.CallOption) (*GenerateAppointmentBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateAppointmentBriefResponse)
+	err := c.cc.Invoke(ctx, ApexService_GenerateAppointmentBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyAppointmentBriefs(ctx context.Context, in *ListMyAppointmentBriefsRequest, opts ...grpc.CallOption) (*ListMyAppointmentBriefsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyAppointmentBriefsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyAppointmentBriefs_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateAppointmentBrief(ctx context.Context, in *UpdateAppointmentBriefRequest, opts ...grpc.CallOption) (*UpdateAppointmentBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateAppointmentBriefResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateAppointmentBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetPersonalBaselineAndApexAgeOverview(ctx context.Context, in *GetPersonalBaselineAndApexAgeOverviewRequest, opts ...grpc.CallOption) (*GetPersonalBaselineAndApexAgeOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPersonalBaselineAndApexAgeOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetPersonalBaselineAndApexAgeOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecomputePersonalBaselinesAndApexAge(ctx context.Context, in *RecomputePersonalBaselinesAndApexAgeRequest, opts ...grpc.CallOption) (*RecomputePersonalBaselinesAndApexAgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecomputePersonalBaselinesAndApexAgeResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecomputePersonalBaselinesAndApexAge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertBaselineExcludedPeriod(ctx context.Context, in *UpsertBaselineExcludedPeriodRequest, opts ...grpc.CallOption) (*UpsertBaselineExcludedPeriodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertBaselineExcludedPeriodResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertBaselineExcludedPeriod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) DeleteBaselineExcludedPeriod(ctx context.Context, in *DeleteBaselineExcludedPeriodRequest, opts ...grpc.CallOption) (*DeleteBaselineExcludedPeriodResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteBaselineExcludedPeriodResponse)
+	err := c.cc.Invoke(ctx, ApexService_DeleteBaselineExcludedPeriod_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateChangeSignalDisposition(ctx context.Context, in *UpdateChangeSignalDispositionRequest, opts ...grpc.CallOption) (*UpdateChangeSignalDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateChangeSignalDispositionResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateChangeSignalDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateScoreDisplayPreferences(ctx context.Context, in *UpdateScoreDisplayPreferencesRequest, opts ...grpc.CallOption) (*UpdateScoreDisplayPreferencesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateScoreDisplayPreferencesResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateScoreDisplayPreferences_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SubmitApexScoreDispute(ctx context.Context, in *SubmitApexScoreDisputeRequest, opts ...grpc.CallOption) (*SubmitApexScoreDisputeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitApexScoreDisputeResponse)
+	err := c.cc.Invoke(ctx, ApexService_SubmitApexScoreDispute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ListMyApexScoreSnapshots(ctx context.Context, in *ListMyApexScoreSnapshotsRequest, opts ...grpc.CallOption) (*ListMyApexScoreSnapshotsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListMyApexScoreSnapshotsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ListMyApexScoreSnapshots_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetPreventiveCareCalendarOverview(ctx context.Context, in *GetPreventiveCareCalendarOverviewRequest, opts ...grpc.CallOption) (*GetPreventiveCareCalendarOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPreventiveCareCalendarOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetPreventiveCareCalendarOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdatePreventiveCareProfile(ctx context.Context, in *UpdatePreventiveCareProfileRequest, opts ...grpc.CallOption) (*UpdatePreventiveCareProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdatePreventiveCareProfileResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdatePreventiveCareProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdatePreventiveCareItemStatus(ctx context.Context, in *UpdatePreventiveCareItemStatusRequest, opts ...grpc.CallOption) (*UpdatePreventiveCareItemStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdatePreventiveCareItemStatusResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdatePreventiveCareItemStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ConfirmPreventiveCareEvidence(ctx context.Context, in *ConfirmPreventiveCareEvidenceRequest, opts ...grpc.CallOption) (*ConfirmPreventiveCareEvidenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmPreventiveCareEvidenceResponse)
+	err := c.cc.Invoke(ctx, ApexService_ConfirmPreventiveCareEvidence_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertCustomPreventiveCareCheck(ctx context.Context, in *UpsertCustomPreventiveCareCheckRequest, opts ...grpc.CallOption) (*UpsertCustomPreventiveCareCheckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCustomPreventiveCareCheckResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertCustomPreventiveCareCheck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SyncPreventiveCarePlanFromGuidelines(ctx context.Context, in *SyncPreventiveCarePlanFromGuidelinesRequest, opts ...grpc.CallOption) (*SyncPreventiveCarePlanFromGuidelinesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SyncPreventiveCarePlanFromGuidelinesResponse)
+	err := c.cc.Invoke(ctx, ApexService_SyncPreventiveCarePlanFromGuidelines_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetExperimentLabOverview(ctx context.Context, in *GetExperimentLabOverviewRequest, opts ...grpc.CallOption) (*GetExperimentLabOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetExperimentLabOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetExperimentLabOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) PredeclareNOf1Experiment(ctx context.Context, in *PredeclareNOf1ExperimentRequest, opts ...grpc.CallOption) (*PredeclareNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PredeclareNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, ApexService_PredeclareNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordNOf1DailyLog(ctx context.Context, in *RecordNOf1DailyLogRequest, opts ...grpc.CallOption) (*RecordNOf1DailyLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordNOf1DailyLogResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordNOf1DailyLog_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) AnalyzeNOf1Experiment(ctx context.Context, in *AnalyzeNOf1ExperimentRequest, opts ...grpc.CallOption) (*AnalyzeNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AnalyzeNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, ApexService_AnalyzeNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateNOf1ExperimentStatus(ctx context.Context, in *UpdateNOf1ExperimentStatusRequest, opts ...grpc.CallOption) (*UpdateNOf1ExperimentStatusResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateNOf1ExperimentStatusResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateNOf1ExperimentStatus_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ReportExperimentAdverseEvent(ctx context.Context, in *ReportExperimentAdverseEventRequest, opts ...grpc.CallOption) (*ReportExperimentAdverseEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReportExperimentAdverseEventResponse)
+	err := c.cc.Invoke(ctx, ApexService_ReportExperimentAdverseEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetAdaptiveDailyPlanOverview(ctx context.Context, in *GetAdaptiveDailyPlanOverviewRequest, opts ...grpc.CallOption) (*GetAdaptiveDailyPlanOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAdaptiveDailyPlanOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetAdaptiveDailyPlanOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ReplanAdaptiveDailyProtocol(ctx context.Context, in *ReplanAdaptiveDailyProtocolRequest, opts ...grpc.CallOption) (*ReplanAdaptiveDailyProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReplanAdaptiveDailyProtocolResponse)
+	err := c.cc.Invoke(ctx, ApexService_ReplanAdaptiveDailyProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordDailyPlanStepDisposition(ctx context.Context, in *RecordDailyPlanStepDispositionRequest, opts ...grpc.CallOption) (*RecordDailyPlanStepDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordDailyPlanStepDispositionResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordDailyPlanStepDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertDailyPlanStep(ctx context.Context, in *UpsertDailyPlanStepRequest, opts ...grpc.CallOption) (*UpsertDailyPlanStepResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertDailyPlanStepResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertDailyPlanStep_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateCompassionateAdherencePause(ctx context.Context, in *UpdateCompassionateAdherencePauseRequest, opts ...grpc.CallOption) (*UpdateCompassionateAdherencePauseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCompassionateAdherencePauseResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateCompassionateAdherencePause_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateCrossPillarTimingHandoff(ctx context.Context, in *UpdateCrossPillarTimingHandoffRequest, opts ...grpc.CallOption) (*UpdateCrossPillarTimingHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCrossPillarTimingHandoffResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateCrossPillarTimingHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetMedicationSafetyOverview(ctx context.Context, in *GetMedicationSafetyOverviewRequest, opts ...grpc.CallOption) (*GetMedicationSafetyOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMedicationSafetyOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetMedicationSafetyOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertReconciledMedicationItem(ctx context.Context, in *UpsertReconciledMedicationItemRequest, opts ...grpc.CallOption) (*UpsertReconciledMedicationItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertReconciledMedicationItemResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertReconciledMedicationItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertAllergyOrIntolerance(ctx context.Context, in *UpsertAllergyOrIntoleranceRequest, opts ...grpc.CallOption) (*UpsertAllergyOrIntoleranceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertAllergyOrIntoleranceResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertAllergyOrIntolerance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RunSafetyInteractionCheck(ctx context.Context, in *RunSafetyInteractionCheckRequest, opts ...grpc.CallOption) (*RunSafetyInteractionCheckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunSafetyInteractionCheckResponse)
+	err := c.cc.Invoke(ctx, ApexService_RunSafetyInteractionCheck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateInteractionAlertDisposition(ctx context.Context, in *UpdateInteractionAlertDispositionRequest, opts ...grpc.CallOption) (*UpdateInteractionAlertDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateInteractionAlertDispositionResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateInteractionAlertDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GenerateMedicationReconciliationPacket(ctx context.Context, in *GenerateMedicationReconciliationPacketRequest, opts ...grpc.CallOption) (*GenerateMedicationReconciliationPacketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateMedicationReconciliationPacketResponse)
+	err := c.cc.Invoke(ctx, ApexService_GenerateMedicationReconciliationPacket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetMetabolicStudioOverview(ctx context.Context, in *GetMetabolicStudioOverviewRequest, opts ...grpc.CallOption) (*GetMetabolicStudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMetabolicStudioOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetMetabolicStudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordMetabolicMealEvent(ctx context.Context, in *RecordMetabolicMealEventRequest, opts ...grpc.CallOption) (*RecordMetabolicMealEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordMetabolicMealEventResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordMetabolicMealEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ConfirmMealIngredientsAndPortions(ctx context.Context, in *ConfirmMealIngredientsAndPortionsRequest, opts ...grpc.CallOption) (*ConfirmMealIngredientsAndPortionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmMealIngredientsAndPortionsResponse)
+	err := c.cc.Invoke(ctx, ApexService_ConfirmMealIngredientsAndPortions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CompareRepeatMealResponses(ctx context.Context, in *CompareRepeatMealResponsesRequest, opts ...grpc.CallOption) (*CompareRepeatMealResponsesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompareRepeatMealResponsesResponse)
+	err := c.cc.Invoke(ctx, ApexService_CompareRepeatMealResponses_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertMetabolicTargetRange(ctx context.Context, in *UpsertMetabolicTargetRangeRequest, opts ...grpc.CallOption) (*UpsertMetabolicTargetRangeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertMetabolicTargetRangeResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertMetabolicTargetRange_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertMetabolicSensorProfile(ctx context.Context, in *UpsertMetabolicSensorProfileRequest, opts ...grpc.CallOption) (*UpsertMetabolicSensorProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertMetabolicSensorProfileResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertMetabolicSensorProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetCycleLifeStageOverview(ctx context.Context, in *GetCycleLifeStageOverviewRequest, opts ...grpc.CallOption) (*GetCycleLifeStageOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCycleLifeStageOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetCycleLifeStageOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateLifeStageProfileAndPrivacy(ctx context.Context, in *UpdateLifeStageProfileAndPrivacyRequest, opts ...grpc.CallOption) (*UpdateLifeStageProfileAndPrivacyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateLifeStageProfileAndPrivacyResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateLifeStageProfileAndPrivacy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordLifeStageEvent(ctx context.Context, in *RecordLifeStageEventRequest, opts ...grpc.CallOption) (*RecordLifeStageEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordLifeStageEventResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordLifeStageEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GenerateLifeStageAppointmentBrief(ctx context.Context, in *GenerateLifeStageAppointmentBriefRequest, opts ...grpc.CallOption) (*GenerateLifeStageAppointmentBriefResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateLifeStageAppointmentBriefResponse)
+	err := c.cc.Invoke(ctx, ApexService_GenerateLifeStageAppointmentBrief_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) PurgeReproductiveAndLifeStageData(ctx context.Context, in *PurgeReproductiveAndLifeStageDataRequest, opts ...grpc.CallOption) (*PurgeReproductiveAndLifeStageDataResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PurgeReproductiveAndLifeStageDataResponse)
+	err := c.cc.Invoke(ctx, ApexService_PurgeReproductiveAndLifeStageData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ExportReproductiveAndLifeStageData(ctx context.Context, in *ExportReproductiveAndLifeStageDataRequest, opts ...grpc.CallOption) (*ExportReproductiveAndLifeStageDataResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportReproductiveAndLifeStageDataResponse)
+	err := c.cc.Invoke(ctx, ApexService_ExportReproductiveAndLifeStageData_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetGenomicsAndFamilyHistoryOverview(ctx context.Context, in *GetGenomicsAndFamilyHistoryOverviewRequest, opts ...grpc.CallOption) (*GetGenomicsAndFamilyHistoryOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetGenomicsAndFamilyHistoryOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetGenomicsAndFamilyHistoryOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RegisterEncryptedGenomicUpload(ctx context.Context, in *RegisterEncryptedGenomicUploadRequest, opts ...grpc.CallOption) (*RegisterEncryptedGenomicUploadResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterEncryptedGenomicUploadResponse)
+	err := c.cc.Invoke(ctx, ApexService_RegisterEncryptedGenomicUpload_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateGenomicVariantVisibility(ctx context.Context, in *UpdateGenomicVariantVisibilityRequest, opts ...grpc.CallOption) (*UpdateGenomicVariantVisibilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateGenomicVariantVisibilityResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateGenomicVariantVisibility_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertFamilyHistoryEntry(ctx context.Context, in *UpsertFamilyHistoryEntryRequest, opts ...grpc.CallOption) (*UpsertFamilyHistoryEntryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertFamilyHistoryEntryResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertFamilyHistoryEntry_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SubmitGeneticCounsellorRequest(ctx context.Context, in *SubmitGeneticCounsellorRequestRequest, opts ...grpc.CallOption) (*SubmitGeneticCounsellorRequestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitGeneticCounsellorRequestResponse)
+	err := c.cc.Invoke(ctx, ApexService_SubmitGeneticCounsellorRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RotateGenomicEncryptionKeyOrPurge(ctx context.Context, in *RotateGenomicEncryptionKeyOrPurgeRequest, opts ...grpc.CallOption) (*RotateGenomicEncryptionKeyOrPurgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RotateGenomicEncryptionKeyOrPurgeResponse)
+	err := c.cc.Invoke(ctx, ApexService_RotateGenomicEncryptionKeyOrPurge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetClinicianCareTeamOverview(ctx context.Context, in *GetClinicianCareTeamOverviewRequest, opts ...grpc.CallOption) (*GetClinicianCareTeamOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetClinicianCareTeamOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetClinicianCareTeamOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CreateScopedCareTeamGrant(ctx context.Context, in *CreateScopedCareTeamGrantRequest, opts ...grpc.CallOption) (*CreateScopedCareTeamGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateScopedCareTeamGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_CreateScopedCareTeamGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RevokeScopedCareTeamGrant(ctx context.Context, in *RevokeScopedCareTeamGrantRequest, opts ...grpc.CallOption) (*RevokeScopedCareTeamGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeScopedCareTeamGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_RevokeScopedCareTeamGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordClinicianDisposition(ctx context.Context, in *RecordClinicianDispositionRequest, opts ...grpc.CallOption) (*RecordClinicianDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordClinicianDispositionResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordClinicianDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ExportScopedCareTeamBundle(ctx context.Context, in *ExportScopedCareTeamBundleRequest, opts ...grpc.CallOption) (*ExportScopedCareTeamBundleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExportScopedCareTeamBundleResponse)
+	err := c.cc.Invoke(ctx, ApexService_ExportScopedCareTeamBundle_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) SubmitClinicianQuestionPacket(ctx context.Context, in *SubmitClinicianQuestionPacketRequest, opts ...grpc.CallOption) (*SubmitClinicianQuestionPacketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitClinicianQuestionPacketResponse)
+	err := c.cc.Invoke(ctx, ApexService_SubmitClinicianQuestionPacket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetChangeEscalationOverview(ctx context.Context, in *GetChangeEscalationOverviewRequest, opts ...grpc.CallOption) (*GetChangeEscalationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetChangeEscalationOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetChangeEscalationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) EvaluateMultiSignalChangeEscalation(ctx context.Context, in *EvaluateMultiSignalChangeEscalationRequest, opts ...grpc.CallOption) (*EvaluateMultiSignalChangeEscalationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateMultiSignalChangeEscalationResponse)
+	err := c.cc.Invoke(ctx, ApexService_EvaluateMultiSignalChangeEscalation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateChangeEscalationDisposition(ctx context.Context, in *UpdateChangeEscalationDispositionRequest, opts ...grpc.CallOption) (*UpdateChangeEscalationDispositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateChangeEscalationDispositionResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateChangeEscalationDisposition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) CreateCareNavigationHandoff(ctx context.Context, in *CreateCareNavigationHandoffRequest, opts ...grpc.CallOption) (*CreateCareNavigationHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateCareNavigationHandoffResponse)
+	err := c.cc.Invoke(ctx, ApexService_CreateCareNavigationHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateCareNavigationHandoffState(ctx context.Context, in *UpdateCareNavigationHandoffStateRequest, opts ...grpc.CallOption) (*UpdateCareNavigationHandoffStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCareNavigationHandoffStateResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateCareNavigationHandoffState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertCareNavigationOption(ctx context.Context, in *UpsertCareNavigationOptionRequest, opts ...grpc.CallOption) (*UpsertCareNavigationOptionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCareNavigationOptionResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertCareNavigationOption_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetSleepCircadianStudioOverview(ctx context.Context, in *GetSleepCircadianStudioOverviewRequest, opts ...grpc.CallOption) (*GetSleepCircadianStudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSleepCircadianStudioOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetSleepCircadianStudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordSleepAndExposureLog(ctx context.Context, in *RecordSleepAndExposureLogRequest, opts ...grpc.CallOption) (*RecordSleepAndExposureLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordSleepAndExposureLogResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordSleepAndExposureLog_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertCircadianRoutine(ctx context.Context, in *UpsertCircadianRoutineRequest, opts ...grpc.CallOption) (*UpsertCircadianRoutineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCircadianRoutineResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertCircadianRoutine_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateCircadianCrossPillarGrant(ctx context.Context, in *UpdateCircadianCrossPillarGrantRequest, opts ...grpc.CallOption) (*UpdateCircadianCrossPillarGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCircadianCrossPillarGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateCircadianCrossPillarGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertSleepSensorCapability(ctx context.Context, in *UpsertSleepSensorCapabilityRequest, opts ...grpc.CallOption) (*UpsertSleepSensorCapabilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSleepSensorCapabilityResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertSleepSensorCapability_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GenerateCircadianTravelOrShiftPlan(ctx context.Context, in *GenerateCircadianTravelOrShiftPlanRequest, opts ...grpc.CallOption) (*GenerateCircadianTravelOrShiftPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateCircadianTravelOrShiftPlanResponse)
+	err := c.cc.Invoke(ctx, ApexService_GenerateCircadianTravelOrShiftPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetResearchParticipationOverview(ctx context.Context, in *GetResearchParticipationOverviewRequest, opts ...grpc.CallOption) (*GetResearchParticipationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetResearchParticipationOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetResearchParticipationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RunLocalStudyPreScreen(ctx context.Context, in *RunLocalStudyPreScreenRequest, opts ...grpc.CallOption) (*RunLocalStudyPreScreenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunLocalStudyPreScreenResponse)
+	err := c.cc.Invoke(ctx, ApexService_RunLocalStudyPreScreen_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) EnrollOrUpdateResearchStudyConsent(ctx context.Context, in *EnrollOrUpdateResearchStudyConsentRequest, opts ...grpc.CallOption) (*EnrollOrUpdateResearchStudyConsentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EnrollOrUpdateResearchStudyConsentResponse)
+	err := c.cc.Invoke(ctx, ApexService_EnrollOrUpdateResearchStudyConsent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) WithdrawResearchStudyConsent(ctx context.Context, in *WithdrawResearchStudyConsentRequest, opts ...grpc.CallOption) (*WithdrawResearchStudyConsentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(WithdrawResearchStudyConsentResponse)
+	err := c.cc.Invoke(ctx, ApexService_WithdrawResearchStudyConsent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RecordResearchContributionMilestone(ctx context.Context, in *RecordResearchContributionMilestoneRequest, opts ...grpc.CallOption) (*RecordResearchContributionMilestoneResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordResearchContributionMilestoneResponse)
+	err := c.cc.Invoke(ctx, ApexService_RecordResearchContributionMilestone_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertResearchStudy(ctx context.Context, in *UpsertResearchStudyRequest, opts ...grpc.CallOption) (*UpsertResearchStudyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertResearchStudyResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertResearchStudy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetPortableHealthDossierOverview(ctx context.Context, in *GetPortableHealthDossierOverviewRequest, opts ...grpc.CallOption) (*GetPortableHealthDossierOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPortableHealthDossierOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetPortableHealthDossierOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertPortableHealthDossier(ctx context.Context, in *UpsertPortableHealthDossierRequest, opts ...grpc.CallOption) (*UpsertPortableHealthDossierResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPortableHealthDossierResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertPortableHealthDossier_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) ConfirmPortableDossierFreshness(ctx context.Context, in *ConfirmPortableDossierFreshnessRequest, opts ...grpc.CallOption) (*ConfirmPortableDossierFreshnessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmPortableDossierFreshnessResponse)
+	err := c.cc.Invoke(ctx, ApexService_ConfirmPortableDossierFreshness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) IssueDossierAccessGrant(ctx context.Context, in *IssueDossierAccessGrantRequest, opts ...grpc.CallOption) (*IssueDossierAccessGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueDossierAccessGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_IssueDossierAccessGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RevokeDossierAccessGrant(ctx context.Context, in *RevokeDossierAccessGrantRequest, opts ...grpc.CallOption) (*RevokeDossierAccessGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeDossierAccessGrantResponse)
+	err := c.cc.Invoke(ctx, ApexService_RevokeDossierAccessGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateLegacyDirectiveReference(ctx context.Context, in *UpdateLegacyDirectiveReferenceRequest, opts ...grpc.CallOption) (*UpdateLegacyDirectiveReferenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateLegacyDirectiveReferenceResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateLegacyDirectiveReference_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) GetGlobalCertificationOverview(ctx context.Context, in *GetGlobalCertificationOverviewRequest, opts ...grpc.CallOption) (*GetGlobalCertificationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetGlobalCertificationOverviewResponse)
+	err := c.cc.Invoke(ctx, ApexService_GetGlobalCertificationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpdateGlobalAccessibilityProfile(ctx context.Context, in *UpdateGlobalAccessibilityProfileRequest, opts ...grpc.CallOption) (*UpdateGlobalAccessibilityProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateGlobalAccessibilityProfileResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpdateGlobalAccessibilityProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RunHealthMigrationImportOrExportJob(ctx context.Context, in *RunHealthMigrationImportOrExportJobRequest, opts ...grpc.CallOption) (*RunHealthMigrationImportOrExportJobResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunHealthMigrationImportOrExportJobResponse)
+	err := c.cc.Invoke(ctx, ApexService_RunHealthMigrationImportOrExportJob_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) UpsertHorizontalCertificationCheck(ctx context.Context, in *UpsertHorizontalCertificationCheckRequest, opts ...grpc.CallOption) (*UpsertHorizontalCertificationCheckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertHorizontalCertificationCheckResponse)
+	err := c.cc.Invoke(ctx, ApexService_UpsertHorizontalCertificationCheck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) VerifyUnitLocalizationLosslessness(ctx context.Context, in *VerifyUnitLocalizationLosslessnessRequest, opts ...grpc.CallOption) (*VerifyUnitLocalizationLosslessnessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyUnitLocalizationLosslessnessResponse)
+	err := c.cc.Invoke(ctx, ApexService_VerifyUnitLocalizationLosslessness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apexServiceClient) RunOfflineAndManualParityAudit(ctx context.Context, in *RunOfflineAndManualParityAuditRequest, opts ...grpc.CallOption) (*RunOfflineAndManualParityAuditResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunOfflineAndManualParityAuditResponse)
+	err := c.cc.Invoke(ctx, ApexService_RunOfflineAndManualParityAudit_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApexServiceServer is the server API for ApexService service.
 // All implementations must embed UnimplementedApexServiceServer
 // for forward compatibility.
@@ -900,6 +2236,132 @@ type ApexServiceServer interface {
 	ParseLabReportText(context.Context, *ParseLabReportTextRequest) (*ParseLabReportTextResponse, error)
 	// Admin Methods (Gated by Admin Middleware)
 	AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error)
+	// === Opportunity Choice 1 (AP1): Health Data Reliability Center ===
+	GetHealthDataReliabilityOverview(context.Context, *GetHealthDataReliabilityOverviewRequest) (*GetHealthDataReliabilityOverviewResponse, error)
+	ListHealthSources(context.Context, *ListHealthSourcesRequest) (*ListHealthSourcesResponse, error)
+	UpsertHealthSourceGrant(context.Context, *UpsertHealthSourceGrantRequest) (*UpsertHealthSourceGrantResponse, error)
+	RevokeHealthSourceGrant(context.Context, *RevokeHealthSourceGrantRequest) (*RevokeHealthSourceGrantResponse, error)
+	CorrectHealthObservation(context.Context, *CorrectHealthObservationRequest) (*CorrectHealthObservationResponse, error)
+	DeleteHealthObservation(context.Context, *DeleteHealthObservationRequest) (*DeleteHealthObservationResponse, error)
+	RestoreHealthObservation(context.Context, *RestoreHealthObservationRequest) (*RestoreHealthObservationResponse, error)
+	ListObservationRevisions(context.Context, *ListObservationRevisionsRequest) (*ListObservationRevisionsResponse, error)
+	ListHealthDataConflicts(context.Context, *ListHealthDataConflictsRequest) (*ListHealthDataConflictsResponse, error)
+	ResolveHealthDataConflict(context.Context, *ResolveHealthDataConflictRequest) (*ResolveHealthDataConflictResponse, error)
+	CreateHealthCorrectionCase(context.Context, *CreateHealthCorrectionCaseRequest) (*CreateHealthCorrectionCaseResponse, error)
+	ListMyHealthCorrectionCases(context.Context, *ListMyHealthCorrectionCasesRequest) (*ListMyHealthCorrectionCasesResponse, error)
+	ListCrossPillarHealthGrants(context.Context, *ListCrossPillarHealthGrantsRequest) (*ListCrossPillarHealthGrantsResponse, error)
+	UpdateCrossPillarHealthGrant(context.Context, *UpdateCrossPillarHealthGrantRequest) (*UpdateCrossPillarHealthGrantResponse, error)
+	RebuildHealthRecord(context.Context, *RebuildHealthRecordRequest) (*RebuildHealthRecordResponse, error)
+	ExportHealthObservations(context.Context, *ExportHealthObservationsRequest) (*ExportHealthObservationsResponse, error)
+	// === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence ===
+	GetClinicalDocumentIntelligenceOverview(context.Context, *GetClinicalDocumentIntelligenceOverviewRequest) (*GetClinicalDocumentIntelligenceOverviewResponse, error)
+	InspectClinicalDocument(context.Context, *InspectClinicalDocumentRequest) (*InspectClinicalDocumentResponse, error)
+	RunDocumentExtraction(context.Context, *RunDocumentExtractionRequest) (*RunDocumentExtractionResponse, error)
+	ConfirmExtractedDocumentItems(context.Context, *ConfirmExtractedDocumentItemsRequest) (*ConfirmExtractedDocumentItemsResponse, error)
+	CompareClinicalDocumentRevisions(context.Context, *CompareClinicalDocumentRevisionsRequest) (*CompareClinicalDocumentRevisionsResponse, error)
+	GenerateAppointmentBrief(context.Context, *GenerateAppointmentBriefRequest) (*GenerateAppointmentBriefResponse, error)
+	ListMyAppointmentBriefs(context.Context, *ListMyAppointmentBriefsRequest) (*ListMyAppointmentBriefsResponse, error)
+	UpdateAppointmentBrief(context.Context, *UpdateAppointmentBriefRequest) (*UpdateAppointmentBriefResponse, error)
+	// === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age ===
+	GetPersonalBaselineAndApexAgeOverview(context.Context, *GetPersonalBaselineAndApexAgeOverviewRequest) (*GetPersonalBaselineAndApexAgeOverviewResponse, error)
+	RecomputePersonalBaselinesAndApexAge(context.Context, *RecomputePersonalBaselinesAndApexAgeRequest) (*RecomputePersonalBaselinesAndApexAgeResponse, error)
+	UpsertBaselineExcludedPeriod(context.Context, *UpsertBaselineExcludedPeriodRequest) (*UpsertBaselineExcludedPeriodResponse, error)
+	DeleteBaselineExcludedPeriod(context.Context, *DeleteBaselineExcludedPeriodRequest) (*DeleteBaselineExcludedPeriodResponse, error)
+	UpdateChangeSignalDisposition(context.Context, *UpdateChangeSignalDispositionRequest) (*UpdateChangeSignalDispositionResponse, error)
+	UpdateScoreDisplayPreferences(context.Context, *UpdateScoreDisplayPreferencesRequest) (*UpdateScoreDisplayPreferencesResponse, error)
+	SubmitApexScoreDispute(context.Context, *SubmitApexScoreDisputeRequest) (*SubmitApexScoreDisputeResponse, error)
+	ListMyApexScoreSnapshots(context.Context, *ListMyApexScoreSnapshotsRequest) (*ListMyApexScoreSnapshotsResponse, error)
+	// === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar ===
+	GetPreventiveCareCalendarOverview(context.Context, *GetPreventiveCareCalendarOverviewRequest) (*GetPreventiveCareCalendarOverviewResponse, error)
+	UpdatePreventiveCareProfile(context.Context, *UpdatePreventiveCareProfileRequest) (*UpdatePreventiveCareProfileResponse, error)
+	UpdatePreventiveCareItemStatus(context.Context, *UpdatePreventiveCareItemStatusRequest) (*UpdatePreventiveCareItemStatusResponse, error)
+	ConfirmPreventiveCareEvidence(context.Context, *ConfirmPreventiveCareEvidenceRequest) (*ConfirmPreventiveCareEvidenceResponse, error)
+	UpsertCustomPreventiveCareCheck(context.Context, *UpsertCustomPreventiveCareCheckRequest) (*UpsertCustomPreventiveCareCheckResponse, error)
+	SyncPreventiveCarePlanFromGuidelines(context.Context, *SyncPreventiveCarePlanFromGuidelinesRequest) (*SyncPreventiveCarePlanFromGuidelinesResponse, error)
+	// === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory ===
+	GetExperimentLabOverview(context.Context, *GetExperimentLabOverviewRequest) (*GetExperimentLabOverviewResponse, error)
+	PredeclareNOf1Experiment(context.Context, *PredeclareNOf1ExperimentRequest) (*PredeclareNOf1ExperimentResponse, error)
+	RecordNOf1DailyLog(context.Context, *RecordNOf1DailyLogRequest) (*RecordNOf1DailyLogResponse, error)
+	AnalyzeNOf1Experiment(context.Context, *AnalyzeNOf1ExperimentRequest) (*AnalyzeNOf1ExperimentResponse, error)
+	UpdateNOf1ExperimentStatus(context.Context, *UpdateNOf1ExperimentStatusRequest) (*UpdateNOf1ExperimentStatusResponse, error)
+	ReportExperimentAdverseEvent(context.Context, *ReportExperimentAdverseEventRequest) (*ReportExperimentAdverseEventResponse, error)
+	// === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan ===
+	GetAdaptiveDailyPlanOverview(context.Context, *GetAdaptiveDailyPlanOverviewRequest) (*GetAdaptiveDailyPlanOverviewResponse, error)
+	ReplanAdaptiveDailyProtocol(context.Context, *ReplanAdaptiveDailyProtocolRequest) (*ReplanAdaptiveDailyProtocolResponse, error)
+	RecordDailyPlanStepDisposition(context.Context, *RecordDailyPlanStepDispositionRequest) (*RecordDailyPlanStepDispositionResponse, error)
+	UpsertDailyPlanStep(context.Context, *UpsertDailyPlanStepRequest) (*UpsertDailyPlanStepResponse, error)
+	UpdateCompassionateAdherencePause(context.Context, *UpdateCompassionateAdherencePauseRequest) (*UpdateCompassionateAdherencePauseResponse, error)
+	UpdateCrossPillarTimingHandoff(context.Context, *UpdateCrossPillarTimingHandoffRequest) (*UpdateCrossPillarTimingHandoffResponse, error)
+	// === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety ===
+	GetMedicationSafetyOverview(context.Context, *GetMedicationSafetyOverviewRequest) (*GetMedicationSafetyOverviewResponse, error)
+	UpsertReconciledMedicationItem(context.Context, *UpsertReconciledMedicationItemRequest) (*UpsertReconciledMedicationItemResponse, error)
+	UpsertAllergyOrIntolerance(context.Context, *UpsertAllergyOrIntoleranceRequest) (*UpsertAllergyOrIntoleranceResponse, error)
+	RunSafetyInteractionCheck(context.Context, *RunSafetyInteractionCheckRequest) (*RunSafetyInteractionCheckResponse, error)
+	UpdateInteractionAlertDisposition(context.Context, *UpdateInteractionAlertDispositionRequest) (*UpdateInteractionAlertDispositionResponse, error)
+	GenerateMedicationReconciliationPacket(context.Context, *GenerateMedicationReconciliationPacketRequest) (*GenerateMedicationReconciliationPacketResponse, error)
+	// === Opportunity Choice 8 (AP8): Metabolic Response Studio ===
+	GetMetabolicStudioOverview(context.Context, *GetMetabolicStudioOverviewRequest) (*GetMetabolicStudioOverviewResponse, error)
+	RecordMetabolicMealEvent(context.Context, *RecordMetabolicMealEventRequest) (*RecordMetabolicMealEventResponse, error)
+	ConfirmMealIngredientsAndPortions(context.Context, *ConfirmMealIngredientsAndPortionsRequest) (*ConfirmMealIngredientsAndPortionsResponse, error)
+	CompareRepeatMealResponses(context.Context, *CompareRepeatMealResponsesRequest) (*CompareRepeatMealResponsesResponse, error)
+	UpsertMetabolicTargetRange(context.Context, *UpsertMetabolicTargetRangeRequest) (*UpsertMetabolicTargetRangeResponse, error)
+	UpsertMetabolicSensorProfile(context.Context, *UpsertMetabolicSensorProfileRequest) (*UpsertMetabolicSensorProfileResponse, error)
+	// === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace ===
+	GetCycleLifeStageOverview(context.Context, *GetCycleLifeStageOverviewRequest) (*GetCycleLifeStageOverviewResponse, error)
+	UpdateLifeStageProfileAndPrivacy(context.Context, *UpdateLifeStageProfileAndPrivacyRequest) (*UpdateLifeStageProfileAndPrivacyResponse, error)
+	RecordLifeStageEvent(context.Context, *RecordLifeStageEventRequest) (*RecordLifeStageEventResponse, error)
+	GenerateLifeStageAppointmentBrief(context.Context, *GenerateLifeStageAppointmentBriefRequest) (*GenerateLifeStageAppointmentBriefResponse, error)
+	PurgeReproductiveAndLifeStageData(context.Context, *PurgeReproductiveAndLifeStageDataRequest) (*PurgeReproductiveAndLifeStageDataResponse, error)
+	ExportReproductiveAndLifeStageData(context.Context, *ExportReproductiveAndLifeStageDataRequest) (*ExportReproductiveAndLifeStageDataResponse, error)
+	// === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+	GetGenomicsAndFamilyHistoryOverview(context.Context, *GetGenomicsAndFamilyHistoryOverviewRequest) (*GetGenomicsAndFamilyHistoryOverviewResponse, error)
+	RegisterEncryptedGenomicUpload(context.Context, *RegisterEncryptedGenomicUploadRequest) (*RegisterEncryptedGenomicUploadResponse, error)
+	UpdateGenomicVariantVisibility(context.Context, *UpdateGenomicVariantVisibilityRequest) (*UpdateGenomicVariantVisibilityResponse, error)
+	UpsertFamilyHistoryEntry(context.Context, *UpsertFamilyHistoryEntryRequest) (*UpsertFamilyHistoryEntryResponse, error)
+	SubmitGeneticCounsellorRequest(context.Context, *SubmitGeneticCounsellorRequestRequest) (*SubmitGeneticCounsellorRequestResponse, error)
+	RotateGenomicEncryptionKeyOrPurge(context.Context, *RotateGenomicEncryptionKeyOrPurgeRequest) (*RotateGenomicEncryptionKeyOrPurgeResponse, error)
+	// === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+	GetClinicianCareTeamOverview(context.Context, *GetClinicianCareTeamOverviewRequest) (*GetClinicianCareTeamOverviewResponse, error)
+	CreateScopedCareTeamGrant(context.Context, *CreateScopedCareTeamGrantRequest) (*CreateScopedCareTeamGrantResponse, error)
+	RevokeScopedCareTeamGrant(context.Context, *RevokeScopedCareTeamGrantRequest) (*RevokeScopedCareTeamGrantResponse, error)
+	RecordClinicianDisposition(context.Context, *RecordClinicianDispositionRequest) (*RecordClinicianDispositionResponse, error)
+	ExportScopedCareTeamBundle(context.Context, *ExportScopedCareTeamBundleRequest) (*ExportScopedCareTeamBundleResponse, error)
+	SubmitClinicianQuestionPacket(context.Context, *SubmitClinicianQuestionPacketRequest) (*SubmitClinicianQuestionPacketResponse, error)
+	// === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+	GetChangeEscalationOverview(context.Context, *GetChangeEscalationOverviewRequest) (*GetChangeEscalationOverviewResponse, error)
+	EvaluateMultiSignalChangeEscalation(context.Context, *EvaluateMultiSignalChangeEscalationRequest) (*EvaluateMultiSignalChangeEscalationResponse, error)
+	UpdateChangeEscalationDisposition(context.Context, *UpdateChangeEscalationDispositionRequest) (*UpdateChangeEscalationDispositionResponse, error)
+	CreateCareNavigationHandoff(context.Context, *CreateCareNavigationHandoffRequest) (*CreateCareNavigationHandoffResponse, error)
+	UpdateCareNavigationHandoffState(context.Context, *UpdateCareNavigationHandoffStateRequest) (*UpdateCareNavigationHandoffStateResponse, error)
+	UpsertCareNavigationOption(context.Context, *UpsertCareNavigationOptionRequest) (*UpsertCareNavigationOptionResponse, error)
+	// === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+	GetSleepCircadianStudioOverview(context.Context, *GetSleepCircadianStudioOverviewRequest) (*GetSleepCircadianStudioOverviewResponse, error)
+	RecordSleepAndExposureLog(context.Context, *RecordSleepAndExposureLogRequest) (*RecordSleepAndExposureLogResponse, error)
+	UpsertCircadianRoutine(context.Context, *UpsertCircadianRoutineRequest) (*UpsertCircadianRoutineResponse, error)
+	UpdateCircadianCrossPillarGrant(context.Context, *UpdateCircadianCrossPillarGrantRequest) (*UpdateCircadianCrossPillarGrantResponse, error)
+	UpsertSleepSensorCapability(context.Context, *UpsertSleepSensorCapabilityRequest) (*UpsertSleepSensorCapabilityResponse, error)
+	GenerateCircadianTravelOrShiftPlan(context.Context, *GenerateCircadianTravelOrShiftPlanRequest) (*GenerateCircadianTravelOrShiftPlanResponse, error)
+	// === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+	GetResearchParticipationOverview(context.Context, *GetResearchParticipationOverviewRequest) (*GetResearchParticipationOverviewResponse, error)
+	RunLocalStudyPreScreen(context.Context, *RunLocalStudyPreScreenRequest) (*RunLocalStudyPreScreenResponse, error)
+	EnrollOrUpdateResearchStudyConsent(context.Context, *EnrollOrUpdateResearchStudyConsentRequest) (*EnrollOrUpdateResearchStudyConsentResponse, error)
+	WithdrawResearchStudyConsent(context.Context, *WithdrawResearchStudyConsentRequest) (*WithdrawResearchStudyConsentResponse, error)
+	RecordResearchContributionMilestone(context.Context, *RecordResearchContributionMilestoneRequest) (*RecordResearchContributionMilestoneResponse, error)
+	UpsertResearchStudy(context.Context, *UpsertResearchStudyRequest) (*UpsertResearchStudyResponse, error)
+	// === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+	GetPortableHealthDossierOverview(context.Context, *GetPortableHealthDossierOverviewRequest) (*GetPortableHealthDossierOverviewResponse, error)
+	UpsertPortableHealthDossier(context.Context, *UpsertPortableHealthDossierRequest) (*UpsertPortableHealthDossierResponse, error)
+	ConfirmPortableDossierFreshness(context.Context, *ConfirmPortableDossierFreshnessRequest) (*ConfirmPortableDossierFreshnessResponse, error)
+	IssueDossierAccessGrant(context.Context, *IssueDossierAccessGrantRequest) (*IssueDossierAccessGrantResponse, error)
+	RevokeDossierAccessGrant(context.Context, *RevokeDossierAccessGrantRequest) (*RevokeDossierAccessGrantResponse, error)
+	UpdateLegacyDirectiveReference(context.Context, *UpdateLegacyDirectiveReferenceRequest) (*UpdateLegacyDirectiveReferenceResponse, error)
+	// === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+	GetGlobalCertificationOverview(context.Context, *GetGlobalCertificationOverviewRequest) (*GetGlobalCertificationOverviewResponse, error)
+	UpdateGlobalAccessibilityProfile(context.Context, *UpdateGlobalAccessibilityProfileRequest) (*UpdateGlobalAccessibilityProfileResponse, error)
+	RunHealthMigrationImportOrExportJob(context.Context, *RunHealthMigrationImportOrExportJobRequest) (*RunHealthMigrationImportOrExportJobResponse, error)
+	UpsertHorizontalCertificationCheck(context.Context, *UpsertHorizontalCertificationCheckRequest) (*UpsertHorizontalCertificationCheckResponse, error)
+	VerifyUnitLocalizationLosslessness(context.Context, *VerifyUnitLocalizationLosslessnessRequest) (*VerifyUnitLocalizationLosslessnessResponse, error)
+	RunOfflineAndManualParityAudit(context.Context, *RunOfflineAndManualParityAuditRequest) (*RunOfflineAndManualParityAuditResponse, error)
 	mustEmbedUnimplementedApexServiceServer()
 }
 
@@ -1092,6 +2554,336 @@ func (UnimplementedApexServiceServer) ParseLabReportText(context.Context, *Parse
 }
 func (UnimplementedApexServiceServer) AdminVerifyLab(context.Context, *AdminVerifyLabRequest) (*AdminVerifyLabResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method AdminVerifyLab not implemented")
+}
+func (UnimplementedApexServiceServer) GetHealthDataReliabilityOverview(context.Context, *GetHealthDataReliabilityOverviewRequest) (*GetHealthDataReliabilityOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetHealthDataReliabilityOverview not implemented")
+}
+func (UnimplementedApexServiceServer) ListHealthSources(context.Context, *ListHealthSourcesRequest) (*ListHealthSourcesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListHealthSources not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertHealthSourceGrant(context.Context, *UpsertHealthSourceGrantRequest) (*UpsertHealthSourceGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertHealthSourceGrant not implemented")
+}
+func (UnimplementedApexServiceServer) RevokeHealthSourceGrant(context.Context, *RevokeHealthSourceGrantRequest) (*RevokeHealthSourceGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeHealthSourceGrant not implemented")
+}
+func (UnimplementedApexServiceServer) CorrectHealthObservation(context.Context, *CorrectHealthObservationRequest) (*CorrectHealthObservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CorrectHealthObservation not implemented")
+}
+func (UnimplementedApexServiceServer) DeleteHealthObservation(context.Context, *DeleteHealthObservationRequest) (*DeleteHealthObservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteHealthObservation not implemented")
+}
+func (UnimplementedApexServiceServer) RestoreHealthObservation(context.Context, *RestoreHealthObservationRequest) (*RestoreHealthObservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RestoreHealthObservation not implemented")
+}
+func (UnimplementedApexServiceServer) ListObservationRevisions(context.Context, *ListObservationRevisionsRequest) (*ListObservationRevisionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListObservationRevisions not implemented")
+}
+func (UnimplementedApexServiceServer) ListHealthDataConflicts(context.Context, *ListHealthDataConflictsRequest) (*ListHealthDataConflictsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListHealthDataConflicts not implemented")
+}
+func (UnimplementedApexServiceServer) ResolveHealthDataConflict(context.Context, *ResolveHealthDataConflictRequest) (*ResolveHealthDataConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveHealthDataConflict not implemented")
+}
+func (UnimplementedApexServiceServer) CreateHealthCorrectionCase(context.Context, *CreateHealthCorrectionCaseRequest) (*CreateHealthCorrectionCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateHealthCorrectionCase not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyHealthCorrectionCases(context.Context, *ListMyHealthCorrectionCasesRequest) (*ListMyHealthCorrectionCasesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyHealthCorrectionCases not implemented")
+}
+func (UnimplementedApexServiceServer) ListCrossPillarHealthGrants(context.Context, *ListCrossPillarHealthGrantsRequest) (*ListCrossPillarHealthGrantsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListCrossPillarHealthGrants not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateCrossPillarHealthGrant(context.Context, *UpdateCrossPillarHealthGrantRequest) (*UpdateCrossPillarHealthGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCrossPillarHealthGrant not implemented")
+}
+func (UnimplementedApexServiceServer) RebuildHealthRecord(context.Context, *RebuildHealthRecordRequest) (*RebuildHealthRecordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RebuildHealthRecord not implemented")
+}
+func (UnimplementedApexServiceServer) ExportHealthObservations(context.Context, *ExportHealthObservationsRequest) (*ExportHealthObservationsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportHealthObservations not implemented")
+}
+func (UnimplementedApexServiceServer) GetClinicalDocumentIntelligenceOverview(context.Context, *GetClinicalDocumentIntelligenceOverviewRequest) (*GetClinicalDocumentIntelligenceOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetClinicalDocumentIntelligenceOverview not implemented")
+}
+func (UnimplementedApexServiceServer) InspectClinicalDocument(context.Context, *InspectClinicalDocumentRequest) (*InspectClinicalDocumentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method InspectClinicalDocument not implemented")
+}
+func (UnimplementedApexServiceServer) RunDocumentExtraction(context.Context, *RunDocumentExtractionRequest) (*RunDocumentExtractionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunDocumentExtraction not implemented")
+}
+func (UnimplementedApexServiceServer) ConfirmExtractedDocumentItems(context.Context, *ConfirmExtractedDocumentItemsRequest) (*ConfirmExtractedDocumentItemsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmExtractedDocumentItems not implemented")
+}
+func (UnimplementedApexServiceServer) CompareClinicalDocumentRevisions(context.Context, *CompareClinicalDocumentRevisionsRequest) (*CompareClinicalDocumentRevisionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompareClinicalDocumentRevisions not implemented")
+}
+func (UnimplementedApexServiceServer) GenerateAppointmentBrief(context.Context, *GenerateAppointmentBriefRequest) (*GenerateAppointmentBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateAppointmentBrief not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyAppointmentBriefs(context.Context, *ListMyAppointmentBriefsRequest) (*ListMyAppointmentBriefsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyAppointmentBriefs not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateAppointmentBrief(context.Context, *UpdateAppointmentBriefRequest) (*UpdateAppointmentBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateAppointmentBrief not implemented")
+}
+func (UnimplementedApexServiceServer) GetPersonalBaselineAndApexAgeOverview(context.Context, *GetPersonalBaselineAndApexAgeOverviewRequest) (*GetPersonalBaselineAndApexAgeOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPersonalBaselineAndApexAgeOverview not implemented")
+}
+func (UnimplementedApexServiceServer) RecomputePersonalBaselinesAndApexAge(context.Context, *RecomputePersonalBaselinesAndApexAgeRequest) (*RecomputePersonalBaselinesAndApexAgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecomputePersonalBaselinesAndApexAge not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertBaselineExcludedPeriod(context.Context, *UpsertBaselineExcludedPeriodRequest) (*UpsertBaselineExcludedPeriodResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertBaselineExcludedPeriod not implemented")
+}
+func (UnimplementedApexServiceServer) DeleteBaselineExcludedPeriod(context.Context, *DeleteBaselineExcludedPeriodRequest) (*DeleteBaselineExcludedPeriodResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DeleteBaselineExcludedPeriod not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateChangeSignalDisposition(context.Context, *UpdateChangeSignalDispositionRequest) (*UpdateChangeSignalDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateChangeSignalDisposition not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateScoreDisplayPreferences(context.Context, *UpdateScoreDisplayPreferencesRequest) (*UpdateScoreDisplayPreferencesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateScoreDisplayPreferences not implemented")
+}
+func (UnimplementedApexServiceServer) SubmitApexScoreDispute(context.Context, *SubmitApexScoreDisputeRequest) (*SubmitApexScoreDisputeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitApexScoreDispute not implemented")
+}
+func (UnimplementedApexServiceServer) ListMyApexScoreSnapshots(context.Context, *ListMyApexScoreSnapshotsRequest) (*ListMyApexScoreSnapshotsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ListMyApexScoreSnapshots not implemented")
+}
+func (UnimplementedApexServiceServer) GetPreventiveCareCalendarOverview(context.Context, *GetPreventiveCareCalendarOverviewRequest) (*GetPreventiveCareCalendarOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPreventiveCareCalendarOverview not implemented")
+}
+func (UnimplementedApexServiceServer) UpdatePreventiveCareProfile(context.Context, *UpdatePreventiveCareProfileRequest) (*UpdatePreventiveCareProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdatePreventiveCareProfile not implemented")
+}
+func (UnimplementedApexServiceServer) UpdatePreventiveCareItemStatus(context.Context, *UpdatePreventiveCareItemStatusRequest) (*UpdatePreventiveCareItemStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdatePreventiveCareItemStatus not implemented")
+}
+func (UnimplementedApexServiceServer) ConfirmPreventiveCareEvidence(context.Context, *ConfirmPreventiveCareEvidenceRequest) (*ConfirmPreventiveCareEvidenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmPreventiveCareEvidence not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertCustomPreventiveCareCheck(context.Context, *UpsertCustomPreventiveCareCheckRequest) (*UpsertCustomPreventiveCareCheckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCustomPreventiveCareCheck not implemented")
+}
+func (UnimplementedApexServiceServer) SyncPreventiveCarePlanFromGuidelines(context.Context, *SyncPreventiveCarePlanFromGuidelinesRequest) (*SyncPreventiveCarePlanFromGuidelinesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SyncPreventiveCarePlanFromGuidelines not implemented")
+}
+func (UnimplementedApexServiceServer) GetExperimentLabOverview(context.Context, *GetExperimentLabOverviewRequest) (*GetExperimentLabOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetExperimentLabOverview not implemented")
+}
+func (UnimplementedApexServiceServer) PredeclareNOf1Experiment(context.Context, *PredeclareNOf1ExperimentRequest) (*PredeclareNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PredeclareNOf1Experiment not implemented")
+}
+func (UnimplementedApexServiceServer) RecordNOf1DailyLog(context.Context, *RecordNOf1DailyLogRequest) (*RecordNOf1DailyLogResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordNOf1DailyLog not implemented")
+}
+func (UnimplementedApexServiceServer) AnalyzeNOf1Experiment(context.Context, *AnalyzeNOf1ExperimentRequest) (*AnalyzeNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AnalyzeNOf1Experiment not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateNOf1ExperimentStatus(context.Context, *UpdateNOf1ExperimentStatusRequest) (*UpdateNOf1ExperimentStatusResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateNOf1ExperimentStatus not implemented")
+}
+func (UnimplementedApexServiceServer) ReportExperimentAdverseEvent(context.Context, *ReportExperimentAdverseEventRequest) (*ReportExperimentAdverseEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReportExperimentAdverseEvent not implemented")
+}
+func (UnimplementedApexServiceServer) GetAdaptiveDailyPlanOverview(context.Context, *GetAdaptiveDailyPlanOverviewRequest) (*GetAdaptiveDailyPlanOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAdaptiveDailyPlanOverview not implemented")
+}
+func (UnimplementedApexServiceServer) ReplanAdaptiveDailyProtocol(context.Context, *ReplanAdaptiveDailyProtocolRequest) (*ReplanAdaptiveDailyProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReplanAdaptiveDailyProtocol not implemented")
+}
+func (UnimplementedApexServiceServer) RecordDailyPlanStepDisposition(context.Context, *RecordDailyPlanStepDispositionRequest) (*RecordDailyPlanStepDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordDailyPlanStepDisposition not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertDailyPlanStep(context.Context, *UpsertDailyPlanStepRequest) (*UpsertDailyPlanStepResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertDailyPlanStep not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateCompassionateAdherencePause(context.Context, *UpdateCompassionateAdherencePauseRequest) (*UpdateCompassionateAdherencePauseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCompassionateAdherencePause not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateCrossPillarTimingHandoff(context.Context, *UpdateCrossPillarTimingHandoffRequest) (*UpdateCrossPillarTimingHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCrossPillarTimingHandoff not implemented")
+}
+func (UnimplementedApexServiceServer) GetMedicationSafetyOverview(context.Context, *GetMedicationSafetyOverviewRequest) (*GetMedicationSafetyOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMedicationSafetyOverview not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertReconciledMedicationItem(context.Context, *UpsertReconciledMedicationItemRequest) (*UpsertReconciledMedicationItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertReconciledMedicationItem not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertAllergyOrIntolerance(context.Context, *UpsertAllergyOrIntoleranceRequest) (*UpsertAllergyOrIntoleranceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertAllergyOrIntolerance not implemented")
+}
+func (UnimplementedApexServiceServer) RunSafetyInteractionCheck(context.Context, *RunSafetyInteractionCheckRequest) (*RunSafetyInteractionCheckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunSafetyInteractionCheck not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateInteractionAlertDisposition(context.Context, *UpdateInteractionAlertDispositionRequest) (*UpdateInteractionAlertDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateInteractionAlertDisposition not implemented")
+}
+func (UnimplementedApexServiceServer) GenerateMedicationReconciliationPacket(context.Context, *GenerateMedicationReconciliationPacketRequest) (*GenerateMedicationReconciliationPacketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateMedicationReconciliationPacket not implemented")
+}
+func (UnimplementedApexServiceServer) GetMetabolicStudioOverview(context.Context, *GetMetabolicStudioOverviewRequest) (*GetMetabolicStudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMetabolicStudioOverview not implemented")
+}
+func (UnimplementedApexServiceServer) RecordMetabolicMealEvent(context.Context, *RecordMetabolicMealEventRequest) (*RecordMetabolicMealEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordMetabolicMealEvent not implemented")
+}
+func (UnimplementedApexServiceServer) ConfirmMealIngredientsAndPortions(context.Context, *ConfirmMealIngredientsAndPortionsRequest) (*ConfirmMealIngredientsAndPortionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmMealIngredientsAndPortions not implemented")
+}
+func (UnimplementedApexServiceServer) CompareRepeatMealResponses(context.Context, *CompareRepeatMealResponsesRequest) (*CompareRepeatMealResponsesResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompareRepeatMealResponses not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertMetabolicTargetRange(context.Context, *UpsertMetabolicTargetRangeRequest) (*UpsertMetabolicTargetRangeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertMetabolicTargetRange not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertMetabolicSensorProfile(context.Context, *UpsertMetabolicSensorProfileRequest) (*UpsertMetabolicSensorProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertMetabolicSensorProfile not implemented")
+}
+func (UnimplementedApexServiceServer) GetCycleLifeStageOverview(context.Context, *GetCycleLifeStageOverviewRequest) (*GetCycleLifeStageOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCycleLifeStageOverview not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateLifeStageProfileAndPrivacy(context.Context, *UpdateLifeStageProfileAndPrivacyRequest) (*UpdateLifeStageProfileAndPrivacyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateLifeStageProfileAndPrivacy not implemented")
+}
+func (UnimplementedApexServiceServer) RecordLifeStageEvent(context.Context, *RecordLifeStageEventRequest) (*RecordLifeStageEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordLifeStageEvent not implemented")
+}
+func (UnimplementedApexServiceServer) GenerateLifeStageAppointmentBrief(context.Context, *GenerateLifeStageAppointmentBriefRequest) (*GenerateLifeStageAppointmentBriefResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateLifeStageAppointmentBrief not implemented")
+}
+func (UnimplementedApexServiceServer) PurgeReproductiveAndLifeStageData(context.Context, *PurgeReproductiveAndLifeStageDataRequest) (*PurgeReproductiveAndLifeStageDataResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PurgeReproductiveAndLifeStageData not implemented")
+}
+func (UnimplementedApexServiceServer) ExportReproductiveAndLifeStageData(context.Context, *ExportReproductiveAndLifeStageDataRequest) (*ExportReproductiveAndLifeStageDataResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportReproductiveAndLifeStageData not implemented")
+}
+func (UnimplementedApexServiceServer) GetGenomicsAndFamilyHistoryOverview(context.Context, *GetGenomicsAndFamilyHistoryOverviewRequest) (*GetGenomicsAndFamilyHistoryOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetGenomicsAndFamilyHistoryOverview not implemented")
+}
+func (UnimplementedApexServiceServer) RegisterEncryptedGenomicUpload(context.Context, *RegisterEncryptedGenomicUploadRequest) (*RegisterEncryptedGenomicUploadResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterEncryptedGenomicUpload not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateGenomicVariantVisibility(context.Context, *UpdateGenomicVariantVisibilityRequest) (*UpdateGenomicVariantVisibilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateGenomicVariantVisibility not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertFamilyHistoryEntry(context.Context, *UpsertFamilyHistoryEntryRequest) (*UpsertFamilyHistoryEntryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertFamilyHistoryEntry not implemented")
+}
+func (UnimplementedApexServiceServer) SubmitGeneticCounsellorRequest(context.Context, *SubmitGeneticCounsellorRequestRequest) (*SubmitGeneticCounsellorRequestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitGeneticCounsellorRequest not implemented")
+}
+func (UnimplementedApexServiceServer) RotateGenomicEncryptionKeyOrPurge(context.Context, *RotateGenomicEncryptionKeyOrPurgeRequest) (*RotateGenomicEncryptionKeyOrPurgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RotateGenomicEncryptionKeyOrPurge not implemented")
+}
+func (UnimplementedApexServiceServer) GetClinicianCareTeamOverview(context.Context, *GetClinicianCareTeamOverviewRequest) (*GetClinicianCareTeamOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetClinicianCareTeamOverview not implemented")
+}
+func (UnimplementedApexServiceServer) CreateScopedCareTeamGrant(context.Context, *CreateScopedCareTeamGrantRequest) (*CreateScopedCareTeamGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateScopedCareTeamGrant not implemented")
+}
+func (UnimplementedApexServiceServer) RevokeScopedCareTeamGrant(context.Context, *RevokeScopedCareTeamGrantRequest) (*RevokeScopedCareTeamGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeScopedCareTeamGrant not implemented")
+}
+func (UnimplementedApexServiceServer) RecordClinicianDisposition(context.Context, *RecordClinicianDispositionRequest) (*RecordClinicianDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordClinicianDisposition not implemented")
+}
+func (UnimplementedApexServiceServer) ExportScopedCareTeamBundle(context.Context, *ExportScopedCareTeamBundleRequest) (*ExportScopedCareTeamBundleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExportScopedCareTeamBundle not implemented")
+}
+func (UnimplementedApexServiceServer) SubmitClinicianQuestionPacket(context.Context, *SubmitClinicianQuestionPacketRequest) (*SubmitClinicianQuestionPacketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitClinicianQuestionPacket not implemented")
+}
+func (UnimplementedApexServiceServer) GetChangeEscalationOverview(context.Context, *GetChangeEscalationOverviewRequest) (*GetChangeEscalationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetChangeEscalationOverview not implemented")
+}
+func (UnimplementedApexServiceServer) EvaluateMultiSignalChangeEscalation(context.Context, *EvaluateMultiSignalChangeEscalationRequest) (*EvaluateMultiSignalChangeEscalationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateMultiSignalChangeEscalation not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateChangeEscalationDisposition(context.Context, *UpdateChangeEscalationDispositionRequest) (*UpdateChangeEscalationDispositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateChangeEscalationDisposition not implemented")
+}
+func (UnimplementedApexServiceServer) CreateCareNavigationHandoff(context.Context, *CreateCareNavigationHandoffRequest) (*CreateCareNavigationHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateCareNavigationHandoff not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateCareNavigationHandoffState(context.Context, *UpdateCareNavigationHandoffStateRequest) (*UpdateCareNavigationHandoffStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCareNavigationHandoffState not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertCareNavigationOption(context.Context, *UpsertCareNavigationOptionRequest) (*UpsertCareNavigationOptionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCareNavigationOption not implemented")
+}
+func (UnimplementedApexServiceServer) GetSleepCircadianStudioOverview(context.Context, *GetSleepCircadianStudioOverviewRequest) (*GetSleepCircadianStudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSleepCircadianStudioOverview not implemented")
+}
+func (UnimplementedApexServiceServer) RecordSleepAndExposureLog(context.Context, *RecordSleepAndExposureLogRequest) (*RecordSleepAndExposureLogResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordSleepAndExposureLog not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertCircadianRoutine(context.Context, *UpsertCircadianRoutineRequest) (*UpsertCircadianRoutineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCircadianRoutine not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateCircadianCrossPillarGrant(context.Context, *UpdateCircadianCrossPillarGrantRequest) (*UpdateCircadianCrossPillarGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCircadianCrossPillarGrant not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertSleepSensorCapability(context.Context, *UpsertSleepSensorCapabilityRequest) (*UpsertSleepSensorCapabilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSleepSensorCapability not implemented")
+}
+func (UnimplementedApexServiceServer) GenerateCircadianTravelOrShiftPlan(context.Context, *GenerateCircadianTravelOrShiftPlanRequest) (*GenerateCircadianTravelOrShiftPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateCircadianTravelOrShiftPlan not implemented")
+}
+func (UnimplementedApexServiceServer) GetResearchParticipationOverview(context.Context, *GetResearchParticipationOverviewRequest) (*GetResearchParticipationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetResearchParticipationOverview not implemented")
+}
+func (UnimplementedApexServiceServer) RunLocalStudyPreScreen(context.Context, *RunLocalStudyPreScreenRequest) (*RunLocalStudyPreScreenResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunLocalStudyPreScreen not implemented")
+}
+func (UnimplementedApexServiceServer) EnrollOrUpdateResearchStudyConsent(context.Context, *EnrollOrUpdateResearchStudyConsentRequest) (*EnrollOrUpdateResearchStudyConsentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EnrollOrUpdateResearchStudyConsent not implemented")
+}
+func (UnimplementedApexServiceServer) WithdrawResearchStudyConsent(context.Context, *WithdrawResearchStudyConsentRequest) (*WithdrawResearchStudyConsentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method WithdrawResearchStudyConsent not implemented")
+}
+func (UnimplementedApexServiceServer) RecordResearchContributionMilestone(context.Context, *RecordResearchContributionMilestoneRequest) (*RecordResearchContributionMilestoneResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordResearchContributionMilestone not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertResearchStudy(context.Context, *UpsertResearchStudyRequest) (*UpsertResearchStudyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertResearchStudy not implemented")
+}
+func (UnimplementedApexServiceServer) GetPortableHealthDossierOverview(context.Context, *GetPortableHealthDossierOverviewRequest) (*GetPortableHealthDossierOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPortableHealthDossierOverview not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertPortableHealthDossier(context.Context, *UpsertPortableHealthDossierRequest) (*UpsertPortableHealthDossierResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPortableHealthDossier not implemented")
+}
+func (UnimplementedApexServiceServer) ConfirmPortableDossierFreshness(context.Context, *ConfirmPortableDossierFreshnessRequest) (*ConfirmPortableDossierFreshnessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmPortableDossierFreshness not implemented")
+}
+func (UnimplementedApexServiceServer) IssueDossierAccessGrant(context.Context, *IssueDossierAccessGrantRequest) (*IssueDossierAccessGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueDossierAccessGrant not implemented")
+}
+func (UnimplementedApexServiceServer) RevokeDossierAccessGrant(context.Context, *RevokeDossierAccessGrantRequest) (*RevokeDossierAccessGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeDossierAccessGrant not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateLegacyDirectiveReference(context.Context, *UpdateLegacyDirectiveReferenceRequest) (*UpdateLegacyDirectiveReferenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateLegacyDirectiveReference not implemented")
+}
+func (UnimplementedApexServiceServer) GetGlobalCertificationOverview(context.Context, *GetGlobalCertificationOverviewRequest) (*GetGlobalCertificationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetGlobalCertificationOverview not implemented")
+}
+func (UnimplementedApexServiceServer) UpdateGlobalAccessibilityProfile(context.Context, *UpdateGlobalAccessibilityProfileRequest) (*UpdateGlobalAccessibilityProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateGlobalAccessibilityProfile not implemented")
+}
+func (UnimplementedApexServiceServer) RunHealthMigrationImportOrExportJob(context.Context, *RunHealthMigrationImportOrExportJobRequest) (*RunHealthMigrationImportOrExportJobResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunHealthMigrationImportOrExportJob not implemented")
+}
+func (UnimplementedApexServiceServer) UpsertHorizontalCertificationCheck(context.Context, *UpsertHorizontalCertificationCheckRequest) (*UpsertHorizontalCertificationCheckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertHorizontalCertificationCheck not implemented")
+}
+func (UnimplementedApexServiceServer) VerifyUnitLocalizationLosslessness(context.Context, *VerifyUnitLocalizationLosslessnessRequest) (*VerifyUnitLocalizationLosslessnessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyUnitLocalizationLosslessness not implemented")
+}
+func (UnimplementedApexServiceServer) RunOfflineAndManualParityAudit(context.Context, *RunOfflineAndManualParityAuditRequest) (*RunOfflineAndManualParityAuditResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunOfflineAndManualParityAudit not implemented")
 }
 func (UnimplementedApexServiceServer) mustEmbedUnimplementedApexServiceServer() {}
 func (UnimplementedApexServiceServer) testEmbeddedByValue()                     {}
@@ -2212,6 +4004,1986 @@ func _ApexService_AdminVerifyLab_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApexService_GetHealthDataReliabilityOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHealthDataReliabilityOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetHealthDataReliabilityOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetHealthDataReliabilityOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetHealthDataReliabilityOverview(ctx, req.(*GetHealthDataReliabilityOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListHealthSources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListHealthSourcesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListHealthSources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListHealthSources_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListHealthSources(ctx, req.(*ListHealthSourcesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertHealthSourceGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertHealthSourceGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertHealthSourceGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertHealthSourceGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertHealthSourceGrant(ctx, req.(*UpsertHealthSourceGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RevokeHealthSourceGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeHealthSourceGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RevokeHealthSourceGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RevokeHealthSourceGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RevokeHealthSourceGrant(ctx, req.(*RevokeHealthSourceGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CorrectHealthObservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CorrectHealthObservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CorrectHealthObservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CorrectHealthObservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CorrectHealthObservation(ctx, req.(*CorrectHealthObservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_DeleteHealthObservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteHealthObservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).DeleteHealthObservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_DeleteHealthObservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).DeleteHealthObservation(ctx, req.(*DeleteHealthObservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RestoreHealthObservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RestoreHealthObservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RestoreHealthObservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RestoreHealthObservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RestoreHealthObservation(ctx, req.(*RestoreHealthObservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListObservationRevisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListObservationRevisionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListObservationRevisions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListObservationRevisions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListObservationRevisions(ctx, req.(*ListObservationRevisionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListHealthDataConflicts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListHealthDataConflictsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListHealthDataConflicts(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListHealthDataConflicts_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListHealthDataConflicts(ctx, req.(*ListHealthDataConflictsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ResolveHealthDataConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveHealthDataConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ResolveHealthDataConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ResolveHealthDataConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ResolveHealthDataConflict(ctx, req.(*ResolveHealthDataConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CreateHealthCorrectionCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateHealthCorrectionCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CreateHealthCorrectionCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CreateHealthCorrectionCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CreateHealthCorrectionCase(ctx, req.(*CreateHealthCorrectionCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyHealthCorrectionCases_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyHealthCorrectionCasesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyHealthCorrectionCases(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyHealthCorrectionCases_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyHealthCorrectionCases(ctx, req.(*ListMyHealthCorrectionCasesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListCrossPillarHealthGrants_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCrossPillarHealthGrantsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListCrossPillarHealthGrants(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListCrossPillarHealthGrants_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListCrossPillarHealthGrants(ctx, req.(*ListCrossPillarHealthGrantsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateCrossPillarHealthGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCrossPillarHealthGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateCrossPillarHealthGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateCrossPillarHealthGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateCrossPillarHealthGrant(ctx, req.(*UpdateCrossPillarHealthGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RebuildHealthRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RebuildHealthRecordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RebuildHealthRecord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RebuildHealthRecord_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RebuildHealthRecord(ctx, req.(*RebuildHealthRecordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ExportHealthObservations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportHealthObservationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ExportHealthObservations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ExportHealthObservations_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ExportHealthObservations(ctx, req.(*ExportHealthObservationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetClinicalDocumentIntelligenceOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetClinicalDocumentIntelligenceOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetClinicalDocumentIntelligenceOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetClinicalDocumentIntelligenceOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetClinicalDocumentIntelligenceOverview(ctx, req.(*GetClinicalDocumentIntelligenceOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_InspectClinicalDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(InspectClinicalDocumentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).InspectClinicalDocument(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_InspectClinicalDocument_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).InspectClinicalDocument(ctx, req.(*InspectClinicalDocumentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RunDocumentExtraction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunDocumentExtractionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RunDocumentExtraction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RunDocumentExtraction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RunDocumentExtraction(ctx, req.(*RunDocumentExtractionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ConfirmExtractedDocumentItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmExtractedDocumentItemsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ConfirmExtractedDocumentItems(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ConfirmExtractedDocumentItems_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ConfirmExtractedDocumentItems(ctx, req.(*ConfirmExtractedDocumentItemsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CompareClinicalDocumentRevisions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareClinicalDocumentRevisionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CompareClinicalDocumentRevisions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CompareClinicalDocumentRevisions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CompareClinicalDocumentRevisions(ctx, req.(*CompareClinicalDocumentRevisionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GenerateAppointmentBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateAppointmentBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GenerateAppointmentBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GenerateAppointmentBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GenerateAppointmentBrief(ctx, req.(*GenerateAppointmentBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyAppointmentBriefs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyAppointmentBriefsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyAppointmentBriefs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyAppointmentBriefs_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyAppointmentBriefs(ctx, req.(*ListMyAppointmentBriefsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateAppointmentBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAppointmentBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateAppointmentBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateAppointmentBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateAppointmentBrief(ctx, req.(*UpdateAppointmentBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetPersonalBaselineAndApexAgeOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPersonalBaselineAndApexAgeOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetPersonalBaselineAndApexAgeOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetPersonalBaselineAndApexAgeOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetPersonalBaselineAndApexAgeOverview(ctx, req.(*GetPersonalBaselineAndApexAgeOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecomputePersonalBaselinesAndApexAge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecomputePersonalBaselinesAndApexAgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecomputePersonalBaselinesAndApexAge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecomputePersonalBaselinesAndApexAge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecomputePersonalBaselinesAndApexAge(ctx, req.(*RecomputePersonalBaselinesAndApexAgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertBaselineExcludedPeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertBaselineExcludedPeriodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertBaselineExcludedPeriod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertBaselineExcludedPeriod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertBaselineExcludedPeriod(ctx, req.(*UpsertBaselineExcludedPeriodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_DeleteBaselineExcludedPeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBaselineExcludedPeriodRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).DeleteBaselineExcludedPeriod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_DeleteBaselineExcludedPeriod_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).DeleteBaselineExcludedPeriod(ctx, req.(*DeleteBaselineExcludedPeriodRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateChangeSignalDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateChangeSignalDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateChangeSignalDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateChangeSignalDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateChangeSignalDisposition(ctx, req.(*UpdateChangeSignalDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateScoreDisplayPreferences_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateScoreDisplayPreferencesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateScoreDisplayPreferences(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateScoreDisplayPreferences_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateScoreDisplayPreferences(ctx, req.(*UpdateScoreDisplayPreferencesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SubmitApexScoreDispute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitApexScoreDisputeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SubmitApexScoreDispute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SubmitApexScoreDispute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SubmitApexScoreDispute(ctx, req.(*SubmitApexScoreDisputeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ListMyApexScoreSnapshots_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMyApexScoreSnapshotsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ListMyApexScoreSnapshots(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ListMyApexScoreSnapshots_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ListMyApexScoreSnapshots(ctx, req.(*ListMyApexScoreSnapshotsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetPreventiveCareCalendarOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPreventiveCareCalendarOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetPreventiveCareCalendarOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetPreventiveCareCalendarOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetPreventiveCareCalendarOverview(ctx, req.(*GetPreventiveCareCalendarOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdatePreventiveCareProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePreventiveCareProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdatePreventiveCareProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdatePreventiveCareProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdatePreventiveCareProfile(ctx, req.(*UpdatePreventiveCareProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdatePreventiveCareItemStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePreventiveCareItemStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdatePreventiveCareItemStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdatePreventiveCareItemStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdatePreventiveCareItemStatus(ctx, req.(*UpdatePreventiveCareItemStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ConfirmPreventiveCareEvidence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmPreventiveCareEvidenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ConfirmPreventiveCareEvidence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ConfirmPreventiveCareEvidence_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ConfirmPreventiveCareEvidence(ctx, req.(*ConfirmPreventiveCareEvidenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertCustomPreventiveCareCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCustomPreventiveCareCheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertCustomPreventiveCareCheck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertCustomPreventiveCareCheck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertCustomPreventiveCareCheck(ctx, req.(*UpsertCustomPreventiveCareCheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SyncPreventiveCarePlanFromGuidelines_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncPreventiveCarePlanFromGuidelinesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SyncPreventiveCarePlanFromGuidelines(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SyncPreventiveCarePlanFromGuidelines_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SyncPreventiveCarePlanFromGuidelines(ctx, req.(*SyncPreventiveCarePlanFromGuidelinesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetExperimentLabOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetExperimentLabOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetExperimentLabOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetExperimentLabOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetExperimentLabOverview(ctx, req.(*GetExperimentLabOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_PredeclareNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PredeclareNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).PredeclareNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_PredeclareNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).PredeclareNOf1Experiment(ctx, req.(*PredeclareNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordNOf1DailyLog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordNOf1DailyLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordNOf1DailyLog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordNOf1DailyLog_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordNOf1DailyLog(ctx, req.(*RecordNOf1DailyLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_AnalyzeNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AnalyzeNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).AnalyzeNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_AnalyzeNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).AnalyzeNOf1Experiment(ctx, req.(*AnalyzeNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateNOf1ExperimentStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNOf1ExperimentStatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateNOf1ExperimentStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateNOf1ExperimentStatus_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateNOf1ExperimentStatus(ctx, req.(*UpdateNOf1ExperimentStatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ReportExperimentAdverseEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportExperimentAdverseEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ReportExperimentAdverseEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ReportExperimentAdverseEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ReportExperimentAdverseEvent(ctx, req.(*ReportExperimentAdverseEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetAdaptiveDailyPlanOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAdaptiveDailyPlanOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetAdaptiveDailyPlanOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetAdaptiveDailyPlanOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetAdaptiveDailyPlanOverview(ctx, req.(*GetAdaptiveDailyPlanOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ReplanAdaptiveDailyProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReplanAdaptiveDailyProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ReplanAdaptiveDailyProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ReplanAdaptiveDailyProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ReplanAdaptiveDailyProtocol(ctx, req.(*ReplanAdaptiveDailyProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordDailyPlanStepDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordDailyPlanStepDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordDailyPlanStepDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordDailyPlanStepDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordDailyPlanStepDisposition(ctx, req.(*RecordDailyPlanStepDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertDailyPlanStep_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertDailyPlanStepRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertDailyPlanStep(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertDailyPlanStep_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertDailyPlanStep(ctx, req.(*UpsertDailyPlanStepRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateCompassionateAdherencePause_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCompassionateAdherencePauseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateCompassionateAdherencePause(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateCompassionateAdherencePause_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateCompassionateAdherencePause(ctx, req.(*UpdateCompassionateAdherencePauseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateCrossPillarTimingHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCrossPillarTimingHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateCrossPillarTimingHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateCrossPillarTimingHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateCrossPillarTimingHandoff(ctx, req.(*UpdateCrossPillarTimingHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetMedicationSafetyOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMedicationSafetyOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetMedicationSafetyOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetMedicationSafetyOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetMedicationSafetyOverview(ctx, req.(*GetMedicationSafetyOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertReconciledMedicationItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertReconciledMedicationItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertReconciledMedicationItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertReconciledMedicationItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertReconciledMedicationItem(ctx, req.(*UpsertReconciledMedicationItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertAllergyOrIntolerance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertAllergyOrIntoleranceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertAllergyOrIntolerance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertAllergyOrIntolerance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertAllergyOrIntolerance(ctx, req.(*UpsertAllergyOrIntoleranceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RunSafetyInteractionCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunSafetyInteractionCheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RunSafetyInteractionCheck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RunSafetyInteractionCheck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RunSafetyInteractionCheck(ctx, req.(*RunSafetyInteractionCheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateInteractionAlertDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateInteractionAlertDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateInteractionAlertDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateInteractionAlertDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateInteractionAlertDisposition(ctx, req.(*UpdateInteractionAlertDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GenerateMedicationReconciliationPacket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateMedicationReconciliationPacketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GenerateMedicationReconciliationPacket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GenerateMedicationReconciliationPacket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GenerateMedicationReconciliationPacket(ctx, req.(*GenerateMedicationReconciliationPacketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetMetabolicStudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMetabolicStudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetMetabolicStudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetMetabolicStudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetMetabolicStudioOverview(ctx, req.(*GetMetabolicStudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordMetabolicMealEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordMetabolicMealEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordMetabolicMealEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordMetabolicMealEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordMetabolicMealEvent(ctx, req.(*RecordMetabolicMealEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ConfirmMealIngredientsAndPortions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmMealIngredientsAndPortionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ConfirmMealIngredientsAndPortions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ConfirmMealIngredientsAndPortions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ConfirmMealIngredientsAndPortions(ctx, req.(*ConfirmMealIngredientsAndPortionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CompareRepeatMealResponses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareRepeatMealResponsesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CompareRepeatMealResponses(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CompareRepeatMealResponses_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CompareRepeatMealResponses(ctx, req.(*CompareRepeatMealResponsesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertMetabolicTargetRange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertMetabolicTargetRangeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertMetabolicTargetRange(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertMetabolicTargetRange_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertMetabolicTargetRange(ctx, req.(*UpsertMetabolicTargetRangeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertMetabolicSensorProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertMetabolicSensorProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertMetabolicSensorProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertMetabolicSensorProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertMetabolicSensorProfile(ctx, req.(*UpsertMetabolicSensorProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetCycleLifeStageOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCycleLifeStageOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetCycleLifeStageOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetCycleLifeStageOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetCycleLifeStageOverview(ctx, req.(*GetCycleLifeStageOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateLifeStageProfileAndPrivacy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateLifeStageProfileAndPrivacyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateLifeStageProfileAndPrivacy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateLifeStageProfileAndPrivacy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateLifeStageProfileAndPrivacy(ctx, req.(*UpdateLifeStageProfileAndPrivacyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordLifeStageEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordLifeStageEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordLifeStageEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordLifeStageEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordLifeStageEvent(ctx, req.(*RecordLifeStageEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GenerateLifeStageAppointmentBrief_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateLifeStageAppointmentBriefRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GenerateLifeStageAppointmentBrief(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GenerateLifeStageAppointmentBrief_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GenerateLifeStageAppointmentBrief(ctx, req.(*GenerateLifeStageAppointmentBriefRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_PurgeReproductiveAndLifeStageData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PurgeReproductiveAndLifeStageDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).PurgeReproductiveAndLifeStageData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_PurgeReproductiveAndLifeStageData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).PurgeReproductiveAndLifeStageData(ctx, req.(*PurgeReproductiveAndLifeStageDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ExportReproductiveAndLifeStageData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportReproductiveAndLifeStageDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ExportReproductiveAndLifeStageData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ExportReproductiveAndLifeStageData_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ExportReproductiveAndLifeStageData(ctx, req.(*ExportReproductiveAndLifeStageDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetGenomicsAndFamilyHistoryOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGenomicsAndFamilyHistoryOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetGenomicsAndFamilyHistoryOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetGenomicsAndFamilyHistoryOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetGenomicsAndFamilyHistoryOverview(ctx, req.(*GetGenomicsAndFamilyHistoryOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RegisterEncryptedGenomicUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterEncryptedGenomicUploadRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RegisterEncryptedGenomicUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RegisterEncryptedGenomicUpload_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RegisterEncryptedGenomicUpload(ctx, req.(*RegisterEncryptedGenomicUploadRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateGenomicVariantVisibility_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGenomicVariantVisibilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateGenomicVariantVisibility(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateGenomicVariantVisibility_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateGenomicVariantVisibility(ctx, req.(*UpdateGenomicVariantVisibilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertFamilyHistoryEntry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertFamilyHistoryEntryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertFamilyHistoryEntry(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertFamilyHistoryEntry_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertFamilyHistoryEntry(ctx, req.(*UpsertFamilyHistoryEntryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SubmitGeneticCounsellorRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitGeneticCounsellorRequestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SubmitGeneticCounsellorRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SubmitGeneticCounsellorRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SubmitGeneticCounsellorRequest(ctx, req.(*SubmitGeneticCounsellorRequestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RotateGenomicEncryptionKeyOrPurge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RotateGenomicEncryptionKeyOrPurgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RotateGenomicEncryptionKeyOrPurge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RotateGenomicEncryptionKeyOrPurge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RotateGenomicEncryptionKeyOrPurge(ctx, req.(*RotateGenomicEncryptionKeyOrPurgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetClinicianCareTeamOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetClinicianCareTeamOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetClinicianCareTeamOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetClinicianCareTeamOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetClinicianCareTeamOverview(ctx, req.(*GetClinicianCareTeamOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CreateScopedCareTeamGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateScopedCareTeamGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CreateScopedCareTeamGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CreateScopedCareTeamGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CreateScopedCareTeamGrant(ctx, req.(*CreateScopedCareTeamGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RevokeScopedCareTeamGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeScopedCareTeamGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RevokeScopedCareTeamGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RevokeScopedCareTeamGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RevokeScopedCareTeamGrant(ctx, req.(*RevokeScopedCareTeamGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordClinicianDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordClinicianDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordClinicianDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordClinicianDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordClinicianDisposition(ctx, req.(*RecordClinicianDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ExportScopedCareTeamBundle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExportScopedCareTeamBundleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ExportScopedCareTeamBundle(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ExportScopedCareTeamBundle_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ExportScopedCareTeamBundle(ctx, req.(*ExportScopedCareTeamBundleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_SubmitClinicianQuestionPacket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitClinicianQuestionPacketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).SubmitClinicianQuestionPacket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_SubmitClinicianQuestionPacket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).SubmitClinicianQuestionPacket(ctx, req.(*SubmitClinicianQuestionPacketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetChangeEscalationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChangeEscalationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetChangeEscalationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetChangeEscalationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetChangeEscalationOverview(ctx, req.(*GetChangeEscalationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_EvaluateMultiSignalChangeEscalation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateMultiSignalChangeEscalationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).EvaluateMultiSignalChangeEscalation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_EvaluateMultiSignalChangeEscalation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).EvaluateMultiSignalChangeEscalation(ctx, req.(*EvaluateMultiSignalChangeEscalationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateChangeEscalationDisposition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateChangeEscalationDispositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateChangeEscalationDisposition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateChangeEscalationDisposition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateChangeEscalationDisposition(ctx, req.(*UpdateChangeEscalationDispositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_CreateCareNavigationHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateCareNavigationHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).CreateCareNavigationHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_CreateCareNavigationHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).CreateCareNavigationHandoff(ctx, req.(*CreateCareNavigationHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateCareNavigationHandoffState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCareNavigationHandoffStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateCareNavigationHandoffState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateCareNavigationHandoffState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateCareNavigationHandoffState(ctx, req.(*UpdateCareNavigationHandoffStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertCareNavigationOption_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCareNavigationOptionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertCareNavigationOption(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertCareNavigationOption_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertCareNavigationOption(ctx, req.(*UpsertCareNavigationOptionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetSleepCircadianStudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSleepCircadianStudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetSleepCircadianStudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetSleepCircadianStudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetSleepCircadianStudioOverview(ctx, req.(*GetSleepCircadianStudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordSleepAndExposureLog_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordSleepAndExposureLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordSleepAndExposureLog(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordSleepAndExposureLog_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordSleepAndExposureLog(ctx, req.(*RecordSleepAndExposureLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertCircadianRoutine_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCircadianRoutineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertCircadianRoutine(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertCircadianRoutine_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertCircadianRoutine(ctx, req.(*UpsertCircadianRoutineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateCircadianCrossPillarGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCircadianCrossPillarGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateCircadianCrossPillarGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateCircadianCrossPillarGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateCircadianCrossPillarGrant(ctx, req.(*UpdateCircadianCrossPillarGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertSleepSensorCapability_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSleepSensorCapabilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertSleepSensorCapability(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertSleepSensorCapability_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertSleepSensorCapability(ctx, req.(*UpsertSleepSensorCapabilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GenerateCircadianTravelOrShiftPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateCircadianTravelOrShiftPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GenerateCircadianTravelOrShiftPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GenerateCircadianTravelOrShiftPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GenerateCircadianTravelOrShiftPlan(ctx, req.(*GenerateCircadianTravelOrShiftPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetResearchParticipationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetResearchParticipationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetResearchParticipationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetResearchParticipationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetResearchParticipationOverview(ctx, req.(*GetResearchParticipationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RunLocalStudyPreScreen_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunLocalStudyPreScreenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RunLocalStudyPreScreen(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RunLocalStudyPreScreen_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RunLocalStudyPreScreen(ctx, req.(*RunLocalStudyPreScreenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_EnrollOrUpdateResearchStudyConsent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EnrollOrUpdateResearchStudyConsentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).EnrollOrUpdateResearchStudyConsent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_EnrollOrUpdateResearchStudyConsent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).EnrollOrUpdateResearchStudyConsent(ctx, req.(*EnrollOrUpdateResearchStudyConsentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_WithdrawResearchStudyConsent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WithdrawResearchStudyConsentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).WithdrawResearchStudyConsent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_WithdrawResearchStudyConsent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).WithdrawResearchStudyConsent(ctx, req.(*WithdrawResearchStudyConsentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RecordResearchContributionMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordResearchContributionMilestoneRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RecordResearchContributionMilestone(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RecordResearchContributionMilestone_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RecordResearchContributionMilestone(ctx, req.(*RecordResearchContributionMilestoneRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertResearchStudy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertResearchStudyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertResearchStudy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertResearchStudy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertResearchStudy(ctx, req.(*UpsertResearchStudyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetPortableHealthDossierOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPortableHealthDossierOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetPortableHealthDossierOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetPortableHealthDossierOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetPortableHealthDossierOverview(ctx, req.(*GetPortableHealthDossierOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertPortableHealthDossier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPortableHealthDossierRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertPortableHealthDossier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertPortableHealthDossier_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertPortableHealthDossier(ctx, req.(*UpsertPortableHealthDossierRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_ConfirmPortableDossierFreshness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmPortableDossierFreshnessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).ConfirmPortableDossierFreshness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_ConfirmPortableDossierFreshness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).ConfirmPortableDossierFreshness(ctx, req.(*ConfirmPortableDossierFreshnessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_IssueDossierAccessGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueDossierAccessGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).IssueDossierAccessGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_IssueDossierAccessGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).IssueDossierAccessGrant(ctx, req.(*IssueDossierAccessGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RevokeDossierAccessGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeDossierAccessGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RevokeDossierAccessGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RevokeDossierAccessGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RevokeDossierAccessGrant(ctx, req.(*RevokeDossierAccessGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateLegacyDirectiveReference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateLegacyDirectiveReferenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateLegacyDirectiveReference(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateLegacyDirectiveReference_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateLegacyDirectiveReference(ctx, req.(*UpdateLegacyDirectiveReferenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_GetGlobalCertificationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGlobalCertificationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).GetGlobalCertificationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_GetGlobalCertificationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).GetGlobalCertificationOverview(ctx, req.(*GetGlobalCertificationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpdateGlobalAccessibilityProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGlobalAccessibilityProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpdateGlobalAccessibilityProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpdateGlobalAccessibilityProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpdateGlobalAccessibilityProfile(ctx, req.(*UpdateGlobalAccessibilityProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RunHealthMigrationImportOrExportJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunHealthMigrationImportOrExportJobRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RunHealthMigrationImportOrExportJob(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RunHealthMigrationImportOrExportJob_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RunHealthMigrationImportOrExportJob(ctx, req.(*RunHealthMigrationImportOrExportJobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_UpsertHorizontalCertificationCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertHorizontalCertificationCheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).UpsertHorizontalCertificationCheck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_UpsertHorizontalCertificationCheck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).UpsertHorizontalCertificationCheck(ctx, req.(*UpsertHorizontalCertificationCheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_VerifyUnitLocalizationLosslessness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyUnitLocalizationLosslessnessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).VerifyUnitLocalizationLosslessness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_VerifyUnitLocalizationLosslessness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).VerifyUnitLocalizationLosslessness(ctx, req.(*VerifyUnitLocalizationLosslessnessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApexService_RunOfflineAndManualParityAudit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunOfflineAndManualParityAuditRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApexServiceServer).RunOfflineAndManualParityAudit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ApexService_RunOfflineAndManualParityAudit_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApexServiceServer).RunOfflineAndManualParityAudit(ctx, req.(*RunOfflineAndManualParityAuditRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ApexService_ServiceDesc is the grpc.ServiceDesc for ApexService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2462,6 +6234,446 @@ var ApexService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AdminVerifyLab",
 			Handler:    _ApexService_AdminVerifyLab_Handler,
+		},
+		{
+			MethodName: "GetHealthDataReliabilityOverview",
+			Handler:    _ApexService_GetHealthDataReliabilityOverview_Handler,
+		},
+		{
+			MethodName: "ListHealthSources",
+			Handler:    _ApexService_ListHealthSources_Handler,
+		},
+		{
+			MethodName: "UpsertHealthSourceGrant",
+			Handler:    _ApexService_UpsertHealthSourceGrant_Handler,
+		},
+		{
+			MethodName: "RevokeHealthSourceGrant",
+			Handler:    _ApexService_RevokeHealthSourceGrant_Handler,
+		},
+		{
+			MethodName: "CorrectHealthObservation",
+			Handler:    _ApexService_CorrectHealthObservation_Handler,
+		},
+		{
+			MethodName: "DeleteHealthObservation",
+			Handler:    _ApexService_DeleteHealthObservation_Handler,
+		},
+		{
+			MethodName: "RestoreHealthObservation",
+			Handler:    _ApexService_RestoreHealthObservation_Handler,
+		},
+		{
+			MethodName: "ListObservationRevisions",
+			Handler:    _ApexService_ListObservationRevisions_Handler,
+		},
+		{
+			MethodName: "ListHealthDataConflicts",
+			Handler:    _ApexService_ListHealthDataConflicts_Handler,
+		},
+		{
+			MethodName: "ResolveHealthDataConflict",
+			Handler:    _ApexService_ResolveHealthDataConflict_Handler,
+		},
+		{
+			MethodName: "CreateHealthCorrectionCase",
+			Handler:    _ApexService_CreateHealthCorrectionCase_Handler,
+		},
+		{
+			MethodName: "ListMyHealthCorrectionCases",
+			Handler:    _ApexService_ListMyHealthCorrectionCases_Handler,
+		},
+		{
+			MethodName: "ListCrossPillarHealthGrants",
+			Handler:    _ApexService_ListCrossPillarHealthGrants_Handler,
+		},
+		{
+			MethodName: "UpdateCrossPillarHealthGrant",
+			Handler:    _ApexService_UpdateCrossPillarHealthGrant_Handler,
+		},
+		{
+			MethodName: "RebuildHealthRecord",
+			Handler:    _ApexService_RebuildHealthRecord_Handler,
+		},
+		{
+			MethodName: "ExportHealthObservations",
+			Handler:    _ApexService_ExportHealthObservations_Handler,
+		},
+		{
+			MethodName: "GetClinicalDocumentIntelligenceOverview",
+			Handler:    _ApexService_GetClinicalDocumentIntelligenceOverview_Handler,
+		},
+		{
+			MethodName: "InspectClinicalDocument",
+			Handler:    _ApexService_InspectClinicalDocument_Handler,
+		},
+		{
+			MethodName: "RunDocumentExtraction",
+			Handler:    _ApexService_RunDocumentExtraction_Handler,
+		},
+		{
+			MethodName: "ConfirmExtractedDocumentItems",
+			Handler:    _ApexService_ConfirmExtractedDocumentItems_Handler,
+		},
+		{
+			MethodName: "CompareClinicalDocumentRevisions",
+			Handler:    _ApexService_CompareClinicalDocumentRevisions_Handler,
+		},
+		{
+			MethodName: "GenerateAppointmentBrief",
+			Handler:    _ApexService_GenerateAppointmentBrief_Handler,
+		},
+		{
+			MethodName: "ListMyAppointmentBriefs",
+			Handler:    _ApexService_ListMyAppointmentBriefs_Handler,
+		},
+		{
+			MethodName: "UpdateAppointmentBrief",
+			Handler:    _ApexService_UpdateAppointmentBrief_Handler,
+		},
+		{
+			MethodName: "GetPersonalBaselineAndApexAgeOverview",
+			Handler:    _ApexService_GetPersonalBaselineAndApexAgeOverview_Handler,
+		},
+		{
+			MethodName: "RecomputePersonalBaselinesAndApexAge",
+			Handler:    _ApexService_RecomputePersonalBaselinesAndApexAge_Handler,
+		},
+		{
+			MethodName: "UpsertBaselineExcludedPeriod",
+			Handler:    _ApexService_UpsertBaselineExcludedPeriod_Handler,
+		},
+		{
+			MethodName: "DeleteBaselineExcludedPeriod",
+			Handler:    _ApexService_DeleteBaselineExcludedPeriod_Handler,
+		},
+		{
+			MethodName: "UpdateChangeSignalDisposition",
+			Handler:    _ApexService_UpdateChangeSignalDisposition_Handler,
+		},
+		{
+			MethodName: "UpdateScoreDisplayPreferences",
+			Handler:    _ApexService_UpdateScoreDisplayPreferences_Handler,
+		},
+		{
+			MethodName: "SubmitApexScoreDispute",
+			Handler:    _ApexService_SubmitApexScoreDispute_Handler,
+		},
+		{
+			MethodName: "ListMyApexScoreSnapshots",
+			Handler:    _ApexService_ListMyApexScoreSnapshots_Handler,
+		},
+		{
+			MethodName: "GetPreventiveCareCalendarOverview",
+			Handler:    _ApexService_GetPreventiveCareCalendarOverview_Handler,
+		},
+		{
+			MethodName: "UpdatePreventiveCareProfile",
+			Handler:    _ApexService_UpdatePreventiveCareProfile_Handler,
+		},
+		{
+			MethodName: "UpdatePreventiveCareItemStatus",
+			Handler:    _ApexService_UpdatePreventiveCareItemStatus_Handler,
+		},
+		{
+			MethodName: "ConfirmPreventiveCareEvidence",
+			Handler:    _ApexService_ConfirmPreventiveCareEvidence_Handler,
+		},
+		{
+			MethodName: "UpsertCustomPreventiveCareCheck",
+			Handler:    _ApexService_UpsertCustomPreventiveCareCheck_Handler,
+		},
+		{
+			MethodName: "SyncPreventiveCarePlanFromGuidelines",
+			Handler:    _ApexService_SyncPreventiveCarePlanFromGuidelines_Handler,
+		},
+		{
+			MethodName: "GetExperimentLabOverview",
+			Handler:    _ApexService_GetExperimentLabOverview_Handler,
+		},
+		{
+			MethodName: "PredeclareNOf1Experiment",
+			Handler:    _ApexService_PredeclareNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "RecordNOf1DailyLog",
+			Handler:    _ApexService_RecordNOf1DailyLog_Handler,
+		},
+		{
+			MethodName: "AnalyzeNOf1Experiment",
+			Handler:    _ApexService_AnalyzeNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "UpdateNOf1ExperimentStatus",
+			Handler:    _ApexService_UpdateNOf1ExperimentStatus_Handler,
+		},
+		{
+			MethodName: "ReportExperimentAdverseEvent",
+			Handler:    _ApexService_ReportExperimentAdverseEvent_Handler,
+		},
+		{
+			MethodName: "GetAdaptiveDailyPlanOverview",
+			Handler:    _ApexService_GetAdaptiveDailyPlanOverview_Handler,
+		},
+		{
+			MethodName: "ReplanAdaptiveDailyProtocol",
+			Handler:    _ApexService_ReplanAdaptiveDailyProtocol_Handler,
+		},
+		{
+			MethodName: "RecordDailyPlanStepDisposition",
+			Handler:    _ApexService_RecordDailyPlanStepDisposition_Handler,
+		},
+		{
+			MethodName: "UpsertDailyPlanStep",
+			Handler:    _ApexService_UpsertDailyPlanStep_Handler,
+		},
+		{
+			MethodName: "UpdateCompassionateAdherencePause",
+			Handler:    _ApexService_UpdateCompassionateAdherencePause_Handler,
+		},
+		{
+			MethodName: "UpdateCrossPillarTimingHandoff",
+			Handler:    _ApexService_UpdateCrossPillarTimingHandoff_Handler,
+		},
+		{
+			MethodName: "GetMedicationSafetyOverview",
+			Handler:    _ApexService_GetMedicationSafetyOverview_Handler,
+		},
+		{
+			MethodName: "UpsertReconciledMedicationItem",
+			Handler:    _ApexService_UpsertReconciledMedicationItem_Handler,
+		},
+		{
+			MethodName: "UpsertAllergyOrIntolerance",
+			Handler:    _ApexService_UpsertAllergyOrIntolerance_Handler,
+		},
+		{
+			MethodName: "RunSafetyInteractionCheck",
+			Handler:    _ApexService_RunSafetyInteractionCheck_Handler,
+		},
+		{
+			MethodName: "UpdateInteractionAlertDisposition",
+			Handler:    _ApexService_UpdateInteractionAlertDisposition_Handler,
+		},
+		{
+			MethodName: "GenerateMedicationReconciliationPacket",
+			Handler:    _ApexService_GenerateMedicationReconciliationPacket_Handler,
+		},
+		{
+			MethodName: "GetMetabolicStudioOverview",
+			Handler:    _ApexService_GetMetabolicStudioOverview_Handler,
+		},
+		{
+			MethodName: "RecordMetabolicMealEvent",
+			Handler:    _ApexService_RecordMetabolicMealEvent_Handler,
+		},
+		{
+			MethodName: "ConfirmMealIngredientsAndPortions",
+			Handler:    _ApexService_ConfirmMealIngredientsAndPortions_Handler,
+		},
+		{
+			MethodName: "CompareRepeatMealResponses",
+			Handler:    _ApexService_CompareRepeatMealResponses_Handler,
+		},
+		{
+			MethodName: "UpsertMetabolicTargetRange",
+			Handler:    _ApexService_UpsertMetabolicTargetRange_Handler,
+		},
+		{
+			MethodName: "UpsertMetabolicSensorProfile",
+			Handler:    _ApexService_UpsertMetabolicSensorProfile_Handler,
+		},
+		{
+			MethodName: "GetCycleLifeStageOverview",
+			Handler:    _ApexService_GetCycleLifeStageOverview_Handler,
+		},
+		{
+			MethodName: "UpdateLifeStageProfileAndPrivacy",
+			Handler:    _ApexService_UpdateLifeStageProfileAndPrivacy_Handler,
+		},
+		{
+			MethodName: "RecordLifeStageEvent",
+			Handler:    _ApexService_RecordLifeStageEvent_Handler,
+		},
+		{
+			MethodName: "GenerateLifeStageAppointmentBrief",
+			Handler:    _ApexService_GenerateLifeStageAppointmentBrief_Handler,
+		},
+		{
+			MethodName: "PurgeReproductiveAndLifeStageData",
+			Handler:    _ApexService_PurgeReproductiveAndLifeStageData_Handler,
+		},
+		{
+			MethodName: "ExportReproductiveAndLifeStageData",
+			Handler:    _ApexService_ExportReproductiveAndLifeStageData_Handler,
+		},
+		{
+			MethodName: "GetGenomicsAndFamilyHistoryOverview",
+			Handler:    _ApexService_GetGenomicsAndFamilyHistoryOverview_Handler,
+		},
+		{
+			MethodName: "RegisterEncryptedGenomicUpload",
+			Handler:    _ApexService_RegisterEncryptedGenomicUpload_Handler,
+		},
+		{
+			MethodName: "UpdateGenomicVariantVisibility",
+			Handler:    _ApexService_UpdateGenomicVariantVisibility_Handler,
+		},
+		{
+			MethodName: "UpsertFamilyHistoryEntry",
+			Handler:    _ApexService_UpsertFamilyHistoryEntry_Handler,
+		},
+		{
+			MethodName: "SubmitGeneticCounsellorRequest",
+			Handler:    _ApexService_SubmitGeneticCounsellorRequest_Handler,
+		},
+		{
+			MethodName: "RotateGenomicEncryptionKeyOrPurge",
+			Handler:    _ApexService_RotateGenomicEncryptionKeyOrPurge_Handler,
+		},
+		{
+			MethodName: "GetClinicianCareTeamOverview",
+			Handler:    _ApexService_GetClinicianCareTeamOverview_Handler,
+		},
+		{
+			MethodName: "CreateScopedCareTeamGrant",
+			Handler:    _ApexService_CreateScopedCareTeamGrant_Handler,
+		},
+		{
+			MethodName: "RevokeScopedCareTeamGrant",
+			Handler:    _ApexService_RevokeScopedCareTeamGrant_Handler,
+		},
+		{
+			MethodName: "RecordClinicianDisposition",
+			Handler:    _ApexService_RecordClinicianDisposition_Handler,
+		},
+		{
+			MethodName: "ExportScopedCareTeamBundle",
+			Handler:    _ApexService_ExportScopedCareTeamBundle_Handler,
+		},
+		{
+			MethodName: "SubmitClinicianQuestionPacket",
+			Handler:    _ApexService_SubmitClinicianQuestionPacket_Handler,
+		},
+		{
+			MethodName: "GetChangeEscalationOverview",
+			Handler:    _ApexService_GetChangeEscalationOverview_Handler,
+		},
+		{
+			MethodName: "EvaluateMultiSignalChangeEscalation",
+			Handler:    _ApexService_EvaluateMultiSignalChangeEscalation_Handler,
+		},
+		{
+			MethodName: "UpdateChangeEscalationDisposition",
+			Handler:    _ApexService_UpdateChangeEscalationDisposition_Handler,
+		},
+		{
+			MethodName: "CreateCareNavigationHandoff",
+			Handler:    _ApexService_CreateCareNavigationHandoff_Handler,
+		},
+		{
+			MethodName: "UpdateCareNavigationHandoffState",
+			Handler:    _ApexService_UpdateCareNavigationHandoffState_Handler,
+		},
+		{
+			MethodName: "UpsertCareNavigationOption",
+			Handler:    _ApexService_UpsertCareNavigationOption_Handler,
+		},
+		{
+			MethodName: "GetSleepCircadianStudioOverview",
+			Handler:    _ApexService_GetSleepCircadianStudioOverview_Handler,
+		},
+		{
+			MethodName: "RecordSleepAndExposureLog",
+			Handler:    _ApexService_RecordSleepAndExposureLog_Handler,
+		},
+		{
+			MethodName: "UpsertCircadianRoutine",
+			Handler:    _ApexService_UpsertCircadianRoutine_Handler,
+		},
+		{
+			MethodName: "UpdateCircadianCrossPillarGrant",
+			Handler:    _ApexService_UpdateCircadianCrossPillarGrant_Handler,
+		},
+		{
+			MethodName: "UpsertSleepSensorCapability",
+			Handler:    _ApexService_UpsertSleepSensorCapability_Handler,
+		},
+		{
+			MethodName: "GenerateCircadianTravelOrShiftPlan",
+			Handler:    _ApexService_GenerateCircadianTravelOrShiftPlan_Handler,
+		},
+		{
+			MethodName: "GetResearchParticipationOverview",
+			Handler:    _ApexService_GetResearchParticipationOverview_Handler,
+		},
+		{
+			MethodName: "RunLocalStudyPreScreen",
+			Handler:    _ApexService_RunLocalStudyPreScreen_Handler,
+		},
+		{
+			MethodName: "EnrollOrUpdateResearchStudyConsent",
+			Handler:    _ApexService_EnrollOrUpdateResearchStudyConsent_Handler,
+		},
+		{
+			MethodName: "WithdrawResearchStudyConsent",
+			Handler:    _ApexService_WithdrawResearchStudyConsent_Handler,
+		},
+		{
+			MethodName: "RecordResearchContributionMilestone",
+			Handler:    _ApexService_RecordResearchContributionMilestone_Handler,
+		},
+		{
+			MethodName: "UpsertResearchStudy",
+			Handler:    _ApexService_UpsertResearchStudy_Handler,
+		},
+		{
+			MethodName: "GetPortableHealthDossierOverview",
+			Handler:    _ApexService_GetPortableHealthDossierOverview_Handler,
+		},
+		{
+			MethodName: "UpsertPortableHealthDossier",
+			Handler:    _ApexService_UpsertPortableHealthDossier_Handler,
+		},
+		{
+			MethodName: "ConfirmPortableDossierFreshness",
+			Handler:    _ApexService_ConfirmPortableDossierFreshness_Handler,
+		},
+		{
+			MethodName: "IssueDossierAccessGrant",
+			Handler:    _ApexService_IssueDossierAccessGrant_Handler,
+		},
+		{
+			MethodName: "RevokeDossierAccessGrant",
+			Handler:    _ApexService_RevokeDossierAccessGrant_Handler,
+		},
+		{
+			MethodName: "UpdateLegacyDirectiveReference",
+			Handler:    _ApexService_UpdateLegacyDirectiveReference_Handler,
+		},
+		{
+			MethodName: "GetGlobalCertificationOverview",
+			Handler:    _ApexService_GetGlobalCertificationOverview_Handler,
+		},
+		{
+			MethodName: "UpdateGlobalAccessibilityProfile",
+			Handler:    _ApexService_UpdateGlobalAccessibilityProfile_Handler,
+		},
+		{
+			MethodName: "RunHealthMigrationImportOrExportJob",
+			Handler:    _ApexService_RunHealthMigrationImportOrExportJob_Handler,
+		},
+		{
+			MethodName: "UpsertHorizontalCertificationCheck",
+			Handler:    _ApexService_UpsertHorizontalCertificationCheck_Handler,
+		},
+		{
+			MethodName: "VerifyUnitLocalizationLosslessness",
+			Handler:    _ApexService_VerifyUnitLocalizationLosslessness_Handler,
+		},
+		{
+			MethodName: "RunOfflineAndManualParityAudit",
+			Handler:    _ApexService_RunOfflineAndManualParityAudit_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

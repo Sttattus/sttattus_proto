@@ -19,37 +19,79 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	TravelService_ListMilestones_FullMethodName            = "/sttattus.travel.v1.TravelService/ListMilestones"
-	TravelService_CreateMilestone_FullMethodName           = "/sttattus.travel.v1.TravelService/CreateMilestone"
-	TravelService_GetNomadStats_FullMethodName             = "/sttattus.travel.v1.TravelService/GetNomadStats"
-	TravelService_ListFeed_FullMethodName                  = "/sttattus.travel.v1.TravelService/ListFeed"
-	TravelService_CreateTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/CreateTrip"
-	TravelService_UpdateTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/UpdateTrip"
-	TravelService_ListMyTrips_FullMethodName               = "/sttattus.travel.v1.TravelService/ListMyTrips"
-	TravelService_GetTrip_FullMethodName                   = "/sttattus.travel.v1.TravelService/GetTrip"
-	TravelService_AttachVisitToTrip_FullMethodName         = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
-	TravelService_DeleteTrip_FullMethodName                = "/sttattus.travel.v1.TravelService/DeleteTrip"
-	TravelService_ListVisitedCountries_FullMethodName      = "/sttattus.travel.v1.TravelService/ListVisitedCountries"
-	TravelService_ListConciergeMessages_FullMethodName     = "/sttattus.travel.v1.TravelService/ListConciergeMessages"
-	TravelService_PostConciergeMessage_FullMethodName      = "/sttattus.travel.v1.TravelService/PostConciergeMessage"
-	TravelService_ListMyVerificationSignals_FullMethodName = "/sttattus.travel.v1.TravelService/ListMyVerificationSignals"
-	TravelService_ListCountryVisibility_FullMethodName     = "/sttattus.travel.v1.TravelService/ListCountryVisibility"
-	TravelService_UpsertCountryVisibility_FullMethodName   = "/sttattus.travel.v1.TravelService/UpsertCountryVisibility"
-	TravelService_SetMilestoneVisibility_FullMethodName    = "/sttattus.travel.v1.TravelService/SetMilestoneVisibility"
-	TravelService_GetPassportSurface_FullMethodName        = "/sttattus.travel.v1.TravelService/GetPassportSurface"
-	TravelService_GetLoungeConcierge_FullMethodName        = "/sttattus.travel.v1.TravelService/GetLoungeConcierge"
-	TravelService_GetTripArchive_FullMethodName            = "/sttattus.travel.v1.TravelService/GetTripArchive"
-	TravelService_ParseItineraryText_FullMethodName        = "/sttattus.travel.v1.TravelService/ParseItineraryText"
-	TravelService_ListMyItineraries_FullMethodName         = "/sttattus.travel.v1.TravelService/ListMyItineraries"
-	TravelService_ConfirmItinerary_FullMethodName          = "/sttattus.travel.v1.TravelService/ConfirmItinerary"
-	TravelService_ListTravelPartners_FullMethodName        = "/sttattus.travel.v1.TravelService/ListTravelPartners"
-	TravelService_GetTravelPartner_FullMethodName          = "/sttattus.travel.v1.TravelService/GetTravelPartner"
-	TravelService_ListAnthologyArticles_FullMethodName     = "/sttattus.travel.v1.TravelService/ListAnthologyArticles"
-	TravelService_GetAnthologyArticle_FullMethodName       = "/sttattus.travel.v1.TravelService/GetAnthologyArticle"
-	TravelService_CreatePassportShare_FullMethodName       = "/sttattus.travel.v1.TravelService/CreatePassportShare"
-	TravelService_ListMyPassportShares_FullMethodName      = "/sttattus.travel.v1.TravelService/ListMyPassportShares"
-	TravelService_RevokePassportShare_FullMethodName       = "/sttattus.travel.v1.TravelService/RevokePassportShare"
-	TravelService_GenerateNomadAtlas_FullMethodName        = "/sttattus.travel.v1.TravelService/GenerateNomadAtlas"
+	TravelService_ListMilestones_FullMethodName                     = "/sttattus.travel.v1.TravelService/ListMilestones"
+	TravelService_CreateMilestone_FullMethodName                    = "/sttattus.travel.v1.TravelService/CreateMilestone"
+	TravelService_GetNomadStats_FullMethodName                      = "/sttattus.travel.v1.TravelService/GetNomadStats"
+	TravelService_ListFeed_FullMethodName                           = "/sttattus.travel.v1.TravelService/ListFeed"
+	TravelService_CreateTrip_FullMethodName                         = "/sttattus.travel.v1.TravelService/CreateTrip"
+	TravelService_UpdateTrip_FullMethodName                         = "/sttattus.travel.v1.TravelService/UpdateTrip"
+	TravelService_ListMyTrips_FullMethodName                        = "/sttattus.travel.v1.TravelService/ListMyTrips"
+	TravelService_GetTrip_FullMethodName                            = "/sttattus.travel.v1.TravelService/GetTrip"
+	TravelService_AttachVisitToTrip_FullMethodName                  = "/sttattus.travel.v1.TravelService/AttachVisitToTrip"
+	TravelService_DeleteTrip_FullMethodName                         = "/sttattus.travel.v1.TravelService/DeleteTrip"
+	TravelService_ListVisitedCountries_FullMethodName               = "/sttattus.travel.v1.TravelService/ListVisitedCountries"
+	TravelService_ListConciergeMessages_FullMethodName              = "/sttattus.travel.v1.TravelService/ListConciergeMessages"
+	TravelService_PostConciergeMessage_FullMethodName               = "/sttattus.travel.v1.TravelService/PostConciergeMessage"
+	TravelService_ListMyVerificationSignals_FullMethodName          = "/sttattus.travel.v1.TravelService/ListMyVerificationSignals"
+	TravelService_ListCountryVisibility_FullMethodName              = "/sttattus.travel.v1.TravelService/ListCountryVisibility"
+	TravelService_UpsertCountryVisibility_FullMethodName            = "/sttattus.travel.v1.TravelService/UpsertCountryVisibility"
+	TravelService_SetMilestoneVisibility_FullMethodName             = "/sttattus.travel.v1.TravelService/SetMilestoneVisibility"
+	TravelService_GetPassportSurface_FullMethodName                 = "/sttattus.travel.v1.TravelService/GetPassportSurface"
+	TravelService_GetLoungeConcierge_FullMethodName                 = "/sttattus.travel.v1.TravelService/GetLoungeConcierge"
+	TravelService_GetTripArchive_FullMethodName                     = "/sttattus.travel.v1.TravelService/GetTripArchive"
+	TravelService_ParseItineraryText_FullMethodName                 = "/sttattus.travel.v1.TravelService/ParseItineraryText"
+	TravelService_ListMyItineraries_FullMethodName                  = "/sttattus.travel.v1.TravelService/ListMyItineraries"
+	TravelService_ConfirmItinerary_FullMethodName                   = "/sttattus.travel.v1.TravelService/ConfirmItinerary"
+	TravelService_ListTravelPartners_FullMethodName                 = "/sttattus.travel.v1.TravelService/ListTravelPartners"
+	TravelService_GetTravelPartner_FullMethodName                   = "/sttattus.travel.v1.TravelService/GetTravelPartner"
+	TravelService_ListAnthologyArticles_FullMethodName              = "/sttattus.travel.v1.TravelService/ListAnthologyArticles"
+	TravelService_GetAnthologyArticle_FullMethodName                = "/sttattus.travel.v1.TravelService/GetAnthologyArticle"
+	TravelService_CreatePassportShare_FullMethodName                = "/sttattus.travel.v1.TravelService/CreatePassportShare"
+	TravelService_ListMyPassportShares_FullMethodName               = "/sttattus.travel.v1.TravelService/ListMyPassportShares"
+	TravelService_RevokePassportShare_FullMethodName                = "/sttattus.travel.v1.TravelService/RevokePassportShare"
+	TravelService_GenerateNomadAtlas_FullMethodName                 = "/sttattus.travel.v1.TravelService/GenerateNomadAtlas"
+	TravelService_GetUniversalTripGraphOverview_FullMethodName      = "/sttattus.travel.v1.TravelService/GetUniversalTripGraphOverview"
+	TravelService_UpsertTripGraphSegment_FullMethodName             = "/sttattus.travel.v1.TravelService/UpsertTripGraphSegment"
+	TravelService_ReconcileParserDiffEvent_FullMethodName           = "/sttattus.travel.v1.TravelService/ReconcileParserDiffEvent"
+	TravelService_GetLiveFlightCommandOverview_FullMethodName       = "/sttattus.travel.v1.TravelService/GetLiveFlightCommandOverview"
+	TravelService_RecordFlightObservation_FullMethodName            = "/sttattus.travel.v1.TravelService/RecordFlightObservation"
+	TravelService_TriggerDisruptionRecoveryPlan_FullMethodName      = "/sttattus.travel.v1.TravelService/TriggerDisruptionRecoveryPlan"
+	TravelService_GetOfflineTripPackOverview_FullMethodName         = "/sttattus.travel.v1.TravelService/GetOfflineTripPackOverview"
+	TravelService_StageOfflineTripPack_FullMethodName               = "/sttattus.travel.v1.TravelService/StageOfflineTripPack"
+	TravelService_SyncOfflineMutationReceipt_FullMethodName         = "/sttattus.travel.v1.TravelService/SyncOfflineMutationReceipt"
+	TravelService_GetEntryDocumentReadinessOverview_FullMethodName  = "/sttattus.travel.v1.TravelService/GetEntryDocumentReadinessOverview"
+	TravelService_EvaluateEntryReadiness_FullMethodName             = "/sttattus.travel.v1.TravelService/EvaluateEntryReadiness"
+	TravelService_EscalateJurisdictionAmbiguity_FullMethodName      = "/sttattus.travel.v1.TravelService/EscalateJurisdictionAmbiguity"
+	TravelService_GetPreTripReadinessOverview_FullMethodName        = "/sttattus.travel.v1.TravelService/GetPreTripReadinessOverview"
+	TravelService_UpsertPreTripChecklist_FullMethodName             = "/sttattus.travel.v1.TravelService/UpsertPreTripChecklist"
+	TravelService_CompletePackingOrHomeTask_FullMethodName          = "/sttattus.travel.v1.TravelService/CompletePackingOrHomeTask"
+	TravelService_GetDoorToDoorAirportOverview_FullMethodName       = "/sttattus.travel.v1.TravelService/GetDoorToDoorAirportOverview"
+	TravelService_SaveDoorToDoorTimeline_FullMethodName             = "/sttattus.travel.v1.TravelService/SaveDoorToDoorTimeline"
+	TravelService_IssueOrRevokePartnerGroundPass_FullMethodName     = "/sttattus.travel.v1.TravelService/IssueOrRevokePartnerGroundPass"
+	TravelService_GetPresenceEvidencePacketOverview_FullMethodName  = "/sttattus.travel.v1.TravelService/GetPresenceEvidencePacketOverview"
+	TravelService_SubmitPresenceEvidencePacket_FullMethodName       = "/sttattus.travel.v1.TravelService/SubmitPresenceEvidencePacket"
+	TravelService_FilePresenceVerificationAppeal_FullMethodName     = "/sttattus.travel.v1.TravelService/FilePresenceVerificationAppeal"
+	TravelService_GetResidencyTravelLedgerOverview_FullMethodName   = "/sttattus.travel.v1.TravelService/GetResidencyTravelLedgerOverview"
+	TravelService_UpsertResidencyDayLedger_FullMethodName           = "/sttattus.travel.v1.TravelService/UpsertResidencyDayLedger"
+	TravelService_RunRollingWindowForecast_FullMethodName           = "/sttattus.travel.v1.TravelService/RunRollingWindowForecast"
+	TravelService_GetTravelerCollaborationOverview_FullMethodName   = "/sttattus.travel.v1.TravelService/GetTravelerCollaborationOverview"
+	TravelService_GrantTripCollaborationRole_FullMethodName         = "/sttattus.travel.v1.TravelService/GrantTripCollaborationRole"
+	TravelService_DispatchSafetyCheckinBroadcast_FullMethodName     = "/sttattus.travel.v1.TravelService/DispatchSafetyCheckinBroadcast"
+	TravelService_GetLoyaltyClaimsFinanceOverview_FullMethodName    = "/sttattus.travel.v1.TravelService/GetLoyaltyClaimsFinanceOverview"
+	TravelService_UpsertLoyaltyOrCompensationClaim_FullMethodName   = "/sttattus.travel.v1.TravelService/UpsertLoyaltyOrCompensationClaim"
+	TravelService_HandoffTripExpenseToVault_FullMethodName          = "/sttattus.travel.v1.TravelService/HandoffTripExpenseToVault"
+	TravelService_GetAccessibleCrisisCommandOverview_FullMethodName = "/sttattus.travel.v1.TravelService/GetAccessibleCrisisCommandOverview"
+	TravelService_SubmitProviderAssistanceRequest_FullMethodName    = "/sttattus.travel.v1.TravelService/SubmitProviderAssistanceRequest"
+	TravelService_RecordCrisisWelfareCheckin_FullMethodName         = "/sttattus.travel.v1.TravelService/RecordCrisisWelfareCheckin"
+	TravelService_GetDestinationCompanionOverview_FullMethodName    = "/sttattus.travel.v1.TravelService/GetDestinationCompanionOverview"
+	TravelService_SaveDestinationDayPlan_FullMethodName             = "/sttattus.travel.v1.TravelService/SaveDestinationDayPlan"
+	TravelService_LogForegroundProximityQuery_FullMethodName        = "/sttattus.travel.v1.TravelService/LogForegroundProximityQuery"
+	TravelService_GetPrivatePassportProofsOverview_FullMethodName   = "/sttattus.travel.v1.TravelService/GetPrivatePassportProofsOverview"
+	TravelService_MintSignedMobilityDossier_FullMethodName          = "/sttattus.travel.v1.TravelService/MintSignedMobilityDossier"
+	TravelService_UpdateFieldPrivacyPolicy_FullMethodName           = "/sttattus.travel.v1.TravelService/UpdateFieldPrivacyPolicy"
+	TravelService_GetTripClosureMemoryOverview_FullMethodName       = "/sttattus.travel.v1.TravelService/GetTripClosureMemoryOverview"
+	TravelService_ExecuteTripClosureStep_FullMethodName             = "/sttattus.travel.v1.TravelService/ExecuteTripClosureStep"
+	TravelService_ArchiveTripMemoryRecord_FullMethodName            = "/sttattus.travel.v1.TravelService/ArchiveTripMemoryRecord"
 )
 
 // TravelServiceClient is the client API for TravelService service.
@@ -98,6 +140,62 @@ type TravelServiceClient interface {
 	RevokePassportShare(ctx context.Context, in *RevokePassportShareRequest, opts ...grpc.CallOption) (*RevokePassportShareResponse, error)
 	// N4 — Annual Atlas (generated hardcover-grade PDF).
 	GenerateNomadAtlas(ctx context.Context, in *GenerateNomadAtlasRequest, opts ...grpc.CallOption) (*GenerateNomadAtlasResponse, error)
+	// Choice 1 (N1): Universal Ingestion and Trip Graph
+	GetUniversalTripGraphOverview(ctx context.Context, in *GetUniversalTripGraphOverviewRequest, opts ...grpc.CallOption) (*GetUniversalTripGraphOverviewResponse, error)
+	UpsertTripGraphSegment(ctx context.Context, in *UpsertTripGraphSegmentRequest, opts ...grpc.CallOption) (*UpsertTripGraphSegmentResponse, error)
+	ReconcileParserDiffEvent(ctx context.Context, in *ReconcileParserDiffEventRequest, opts ...grpc.CallOption) (*ReconcileParserDiffEventResponse, error)
+	// Choice 2 (N2/N12): Multi-Source Truth and Live Flight Command
+	GetLiveFlightCommandOverview(ctx context.Context, in *GetLiveFlightCommandOverviewRequest, opts ...grpc.CallOption) (*GetLiveFlightCommandOverviewResponse, error)
+	RecordFlightObservation(ctx context.Context, in *RecordFlightObservationRequest, opts ...grpc.CallOption) (*RecordFlightObservationResponse, error)
+	TriggerDisruptionRecoveryPlan(ctx context.Context, in *TriggerDisruptionRecoveryPlanRequest, opts ...grpc.CallOption) (*TriggerDisruptionRecoveryPlanResponse, error)
+	// Choice 3 (N4): Encrypted Offline Trip Pack
+	GetOfflineTripPackOverview(ctx context.Context, in *GetOfflineTripPackOverviewRequest, opts ...grpc.CallOption) (*GetOfflineTripPackOverviewResponse, error)
+	StageOfflineTripPack(ctx context.Context, in *StageOfflineTripPackRequest, opts ...grpc.CallOption) (*StageOfflineTripPackResponse, error)
+	SyncOfflineMutationReceipt(ctx context.Context, in *SyncOfflineMutationReceiptRequest, opts ...grpc.CallOption) (*SyncOfflineMutationReceiptResponse, error)
+	// Choice 4 (N3): Entry and Document Readiness
+	GetEntryDocumentReadinessOverview(ctx context.Context, in *GetEntryDocumentReadinessOverviewRequest, opts ...grpc.CallOption) (*GetEntryDocumentReadinessOverviewResponse, error)
+	EvaluateEntryReadiness(ctx context.Context, in *EvaluateEntryReadinessRequest, opts ...grpc.CallOption) (*EvaluateEntryReadinessResponse, error)
+	EscalateJurisdictionAmbiguity(ctx context.Context, in *EscalateJurisdictionAmbiguityRequest, opts ...grpc.CallOption) (*EscalateJurisdictionAmbiguityResponse, error)
+	// Choice 5 (N11): Pre-Trip Readiness and Packing
+	GetPreTripReadinessOverview(ctx context.Context, in *GetPreTripReadinessOverviewRequest, opts ...grpc.CallOption) (*GetPreTripReadinessOverviewResponse, error)
+	UpsertPreTripChecklist(ctx context.Context, in *UpsertPreTripChecklistRequest, opts ...grpc.CallOption) (*UpsertPreTripChecklistResponse, error)
+	CompletePackingOrHomeTask(ctx context.Context, in *CompletePackingOrHomeTaskRequest, opts ...grpc.CallOption) (*CompletePackingOrHomeTaskResponse, error)
+	// Choice 6 (N7/N13): Door-to-Door and Airport Operations
+	GetDoorToDoorAirportOverview(ctx context.Context, in *GetDoorToDoorAirportOverviewRequest, opts ...grpc.CallOption) (*GetDoorToDoorAirportOverviewResponse, error)
+	SaveDoorToDoorTimeline(ctx context.Context, in *SaveDoorToDoorTimelineRequest, opts ...grpc.CallOption) (*SaveDoorToDoorTimelineResponse, error)
+	IssueOrRevokePartnerGroundPass(ctx context.Context, in *IssueOrRevokePartnerGroundPassRequest, opts ...grpc.CallOption) (*IssueOrRevokePartnerGroundPassResponse, error)
+	// Choice 7 (N5): Presence Evidence Packet
+	GetPresenceEvidencePacketOverview(ctx context.Context, in *GetPresenceEvidencePacketOverviewRequest, opts ...grpc.CallOption) (*GetPresenceEvidencePacketOverviewResponse, error)
+	SubmitPresenceEvidencePacket(ctx context.Context, in *SubmitPresenceEvidencePacketRequest, opts ...grpc.CallOption) (*SubmitPresenceEvidencePacketResponse, error)
+	FilePresenceVerificationAppeal(ctx context.Context, in *FilePresenceVerificationAppealRequest, opts ...grpc.CallOption) (*FilePresenceVerificationAppealResponse, error)
+	// Choice 8 (N6): Residency and Corporate Travel Ledger
+	GetResidencyTravelLedgerOverview(ctx context.Context, in *GetResidencyTravelLedgerOverviewRequest, opts ...grpc.CallOption) (*GetResidencyTravelLedgerOverviewResponse, error)
+	UpsertResidencyDayLedger(ctx context.Context, in *UpsertResidencyDayLedgerRequest, opts ...grpc.CallOption) (*UpsertResidencyDayLedgerResponse, error)
+	RunRollingWindowForecast(ctx context.Context, in *RunRollingWindowForecastRequest, opts ...grpc.CallOption) (*RunRollingWindowForecastResponse, error)
+	// Choice 9 (N8): Traveler, Family, and Assistant Collaboration
+	GetTravelerCollaborationOverview(ctx context.Context, in *GetTravelerCollaborationOverviewRequest, opts ...grpc.CallOption) (*GetTravelerCollaborationOverviewResponse, error)
+	GrantTripCollaborationRole(ctx context.Context, in *GrantTripCollaborationRoleRequest, opts ...grpc.CallOption) (*GrantTripCollaborationRoleResponse, error)
+	DispatchSafetyCheckinBroadcast(ctx context.Context, in *DispatchSafetyCheckinBroadcastRequest, opts ...grpc.CallOption) (*DispatchSafetyCheckinBroadcastResponse, error)
+	// Choice 10 (N9): Loyalty, Fare, Claims, and Travel Finance
+	GetLoyaltyClaimsFinanceOverview(ctx context.Context, in *GetLoyaltyClaimsFinanceOverviewRequest, opts ...grpc.CallOption) (*GetLoyaltyClaimsFinanceOverviewResponse, error)
+	UpsertLoyaltyOrCompensationClaim(ctx context.Context, in *UpsertLoyaltyOrCompensationClaimRequest, opts ...grpc.CallOption) (*UpsertLoyaltyOrCompensationClaimResponse, error)
+	HandoffTripExpenseToVault(ctx context.Context, in *HandoffTripExpenseToVaultRequest, opts ...grpc.CallOption) (*HandoffTripExpenseToVaultResponse, error)
+	// Choice 11 (N14/N15): Accessible Travel and Crisis Command
+	GetAccessibleCrisisCommandOverview(ctx context.Context, in *GetAccessibleCrisisCommandOverviewRequest, opts ...grpc.CallOption) (*GetAccessibleCrisisCommandOverviewResponse, error)
+	SubmitProviderAssistanceRequest(ctx context.Context, in *SubmitProviderAssistanceRequestRequest, opts ...grpc.CallOption) (*SubmitProviderAssistanceRequestResponse, error)
+	RecordCrisisWelfareCheckin(ctx context.Context, in *RecordCrisisWelfareCheckinRequest, opts ...grpc.CallOption) (*RecordCrisisWelfareCheckinResponse, error)
+	// Choice 12 (N16): Destination Companion
+	GetDestinationCompanionOverview(ctx context.Context, in *GetDestinationCompanionOverviewRequest, opts ...grpc.CallOption) (*GetDestinationCompanionOverviewResponse, error)
+	SaveDestinationDayPlan(ctx context.Context, in *SaveDestinationDayPlanRequest, opts ...grpc.CallOption) (*SaveDestinationDayPlanResponse, error)
+	LogForegroundProximityQuery(ctx context.Context, in *LogForegroundProximityQueryRequest, opts ...grpc.CallOption) (*LogForegroundProximityQueryResponse, error)
+	// Choice 13 (N10): Private Passport and Mobility Proofs
+	GetPrivatePassportProofsOverview(ctx context.Context, in *GetPrivatePassportProofsOverviewRequest, opts ...grpc.CallOption) (*GetPrivatePassportProofsOverviewResponse, error)
+	MintSignedMobilityDossier(ctx context.Context, in *MintSignedMobilityDossierRequest, opts ...grpc.CallOption) (*MintSignedMobilityDossierResponse, error)
+	UpdateFieldPrivacyPolicy(ctx context.Context, in *UpdateFieldPrivacyPolicyRequest, opts ...grpc.CallOption) (*UpdateFieldPrivacyPolicyResponse, error)
+	// Choice 14 (N17): Trip Closure and Long-Term Memory
+	GetTripClosureMemoryOverview(ctx context.Context, in *GetTripClosureMemoryOverviewRequest, opts ...grpc.CallOption) (*GetTripClosureMemoryOverviewResponse, error)
+	ExecuteTripClosureStep(ctx context.Context, in *ExecuteTripClosureStepRequest, opts ...grpc.CallOption) (*ExecuteTripClosureStepResponse, error)
+	ArchiveTripMemoryRecord(ctx context.Context, in *ArchiveTripMemoryRecordRequest, opts ...grpc.CallOption) (*ArchiveTripMemoryRecordResponse, error)
 }
 
 type travelServiceClient struct {
@@ -418,6 +516,426 @@ func (c *travelServiceClient) GenerateNomadAtlas(ctx context.Context, in *Genera
 	return out, nil
 }
 
+func (c *travelServiceClient) GetUniversalTripGraphOverview(ctx context.Context, in *GetUniversalTripGraphOverviewRequest, opts ...grpc.CallOption) (*GetUniversalTripGraphOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetUniversalTripGraphOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetUniversalTripGraphOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpsertTripGraphSegment(ctx context.Context, in *UpsertTripGraphSegmentRequest, opts ...grpc.CallOption) (*UpsertTripGraphSegmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertTripGraphSegmentResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpsertTripGraphSegment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ReconcileParserDiffEvent(ctx context.Context, in *ReconcileParserDiffEventRequest, opts ...grpc.CallOption) (*ReconcileParserDiffEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReconcileParserDiffEventResponse)
+	err := c.cc.Invoke(ctx, TravelService_ReconcileParserDiffEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetLiveFlightCommandOverview(ctx context.Context, in *GetLiveFlightCommandOverviewRequest, opts ...grpc.CallOption) (*GetLiveFlightCommandOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLiveFlightCommandOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetLiveFlightCommandOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) RecordFlightObservation(ctx context.Context, in *RecordFlightObservationRequest, opts ...grpc.CallOption) (*RecordFlightObservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordFlightObservationResponse)
+	err := c.cc.Invoke(ctx, TravelService_RecordFlightObservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) TriggerDisruptionRecoveryPlan(ctx context.Context, in *TriggerDisruptionRecoveryPlanRequest, opts ...grpc.CallOption) (*TriggerDisruptionRecoveryPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerDisruptionRecoveryPlanResponse)
+	err := c.cc.Invoke(ctx, TravelService_TriggerDisruptionRecoveryPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetOfflineTripPackOverview(ctx context.Context, in *GetOfflineTripPackOverviewRequest, opts ...grpc.CallOption) (*GetOfflineTripPackOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOfflineTripPackOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetOfflineTripPackOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) StageOfflineTripPack(ctx context.Context, in *StageOfflineTripPackRequest, opts ...grpc.CallOption) (*StageOfflineTripPackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StageOfflineTripPackResponse)
+	err := c.cc.Invoke(ctx, TravelService_StageOfflineTripPack_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SyncOfflineMutationReceipt(ctx context.Context, in *SyncOfflineMutationReceiptRequest, opts ...grpc.CallOption) (*SyncOfflineMutationReceiptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SyncOfflineMutationReceiptResponse)
+	err := c.cc.Invoke(ctx, TravelService_SyncOfflineMutationReceipt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetEntryDocumentReadinessOverview(ctx context.Context, in *GetEntryDocumentReadinessOverviewRequest, opts ...grpc.CallOption) (*GetEntryDocumentReadinessOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEntryDocumentReadinessOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetEntryDocumentReadinessOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) EvaluateEntryReadiness(ctx context.Context, in *EvaluateEntryReadinessRequest, opts ...grpc.CallOption) (*EvaluateEntryReadinessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateEntryReadinessResponse)
+	err := c.cc.Invoke(ctx, TravelService_EvaluateEntryReadiness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) EscalateJurisdictionAmbiguity(ctx context.Context, in *EscalateJurisdictionAmbiguityRequest, opts ...grpc.CallOption) (*EscalateJurisdictionAmbiguityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EscalateJurisdictionAmbiguityResponse)
+	err := c.cc.Invoke(ctx, TravelService_EscalateJurisdictionAmbiguity_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetPreTripReadinessOverview(ctx context.Context, in *GetPreTripReadinessOverviewRequest, opts ...grpc.CallOption) (*GetPreTripReadinessOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPreTripReadinessOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetPreTripReadinessOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpsertPreTripChecklist(ctx context.Context, in *UpsertPreTripChecklistRequest, opts ...grpc.CallOption) (*UpsertPreTripChecklistResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPreTripChecklistResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpsertPreTripChecklist_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) CompletePackingOrHomeTask(ctx context.Context, in *CompletePackingOrHomeTaskRequest, opts ...grpc.CallOption) (*CompletePackingOrHomeTaskResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompletePackingOrHomeTaskResponse)
+	err := c.cc.Invoke(ctx, TravelService_CompletePackingOrHomeTask_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetDoorToDoorAirportOverview(ctx context.Context, in *GetDoorToDoorAirportOverviewRequest, opts ...grpc.CallOption) (*GetDoorToDoorAirportOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDoorToDoorAirportOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetDoorToDoorAirportOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SaveDoorToDoorTimeline(ctx context.Context, in *SaveDoorToDoorTimelineRequest, opts ...grpc.CallOption) (*SaveDoorToDoorTimelineResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDoorToDoorTimelineResponse)
+	err := c.cc.Invoke(ctx, TravelService_SaveDoorToDoorTimeline_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) IssueOrRevokePartnerGroundPass(ctx context.Context, in *IssueOrRevokePartnerGroundPassRequest, opts ...grpc.CallOption) (*IssueOrRevokePartnerGroundPassResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueOrRevokePartnerGroundPassResponse)
+	err := c.cc.Invoke(ctx, TravelService_IssueOrRevokePartnerGroundPass_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetPresenceEvidencePacketOverview(ctx context.Context, in *GetPresenceEvidencePacketOverviewRequest, opts ...grpc.CallOption) (*GetPresenceEvidencePacketOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPresenceEvidencePacketOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetPresenceEvidencePacketOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SubmitPresenceEvidencePacket(ctx context.Context, in *SubmitPresenceEvidencePacketRequest, opts ...grpc.CallOption) (*SubmitPresenceEvidencePacketResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitPresenceEvidencePacketResponse)
+	err := c.cc.Invoke(ctx, TravelService_SubmitPresenceEvidencePacket_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) FilePresenceVerificationAppeal(ctx context.Context, in *FilePresenceVerificationAppealRequest, opts ...grpc.CallOption) (*FilePresenceVerificationAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FilePresenceVerificationAppealResponse)
+	err := c.cc.Invoke(ctx, TravelService_FilePresenceVerificationAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetResidencyTravelLedgerOverview(ctx context.Context, in *GetResidencyTravelLedgerOverviewRequest, opts ...grpc.CallOption) (*GetResidencyTravelLedgerOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetResidencyTravelLedgerOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetResidencyTravelLedgerOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpsertResidencyDayLedger(ctx context.Context, in *UpsertResidencyDayLedgerRequest, opts ...grpc.CallOption) (*UpsertResidencyDayLedgerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertResidencyDayLedgerResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpsertResidencyDayLedger_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) RunRollingWindowForecast(ctx context.Context, in *RunRollingWindowForecastRequest, opts ...grpc.CallOption) (*RunRollingWindowForecastResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunRollingWindowForecastResponse)
+	err := c.cc.Invoke(ctx, TravelService_RunRollingWindowForecast_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetTravelerCollaborationOverview(ctx context.Context, in *GetTravelerCollaborationOverviewRequest, opts ...grpc.CallOption) (*GetTravelerCollaborationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTravelerCollaborationOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetTravelerCollaborationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GrantTripCollaborationRole(ctx context.Context, in *GrantTripCollaborationRoleRequest, opts ...grpc.CallOption) (*GrantTripCollaborationRoleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GrantTripCollaborationRoleResponse)
+	err := c.cc.Invoke(ctx, TravelService_GrantTripCollaborationRole_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) DispatchSafetyCheckinBroadcast(ctx context.Context, in *DispatchSafetyCheckinBroadcastRequest, opts ...grpc.CallOption) (*DispatchSafetyCheckinBroadcastResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DispatchSafetyCheckinBroadcastResponse)
+	err := c.cc.Invoke(ctx, TravelService_DispatchSafetyCheckinBroadcast_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetLoyaltyClaimsFinanceOverview(ctx context.Context, in *GetLoyaltyClaimsFinanceOverviewRequest, opts ...grpc.CallOption) (*GetLoyaltyClaimsFinanceOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetLoyaltyClaimsFinanceOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetLoyaltyClaimsFinanceOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpsertLoyaltyOrCompensationClaim(ctx context.Context, in *UpsertLoyaltyOrCompensationClaimRequest, opts ...grpc.CallOption) (*UpsertLoyaltyOrCompensationClaimResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertLoyaltyOrCompensationClaimResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpsertLoyaltyOrCompensationClaim_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) HandoffTripExpenseToVault(ctx context.Context, in *HandoffTripExpenseToVaultRequest, opts ...grpc.CallOption) (*HandoffTripExpenseToVaultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(HandoffTripExpenseToVaultResponse)
+	err := c.cc.Invoke(ctx, TravelService_HandoffTripExpenseToVault_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetAccessibleCrisisCommandOverview(ctx context.Context, in *GetAccessibleCrisisCommandOverviewRequest, opts ...grpc.CallOption) (*GetAccessibleCrisisCommandOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAccessibleCrisisCommandOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetAccessibleCrisisCommandOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SubmitProviderAssistanceRequest(ctx context.Context, in *SubmitProviderAssistanceRequestRequest, opts ...grpc.CallOption) (*SubmitProviderAssistanceRequestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitProviderAssistanceRequestResponse)
+	err := c.cc.Invoke(ctx, TravelService_SubmitProviderAssistanceRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) RecordCrisisWelfareCheckin(ctx context.Context, in *RecordCrisisWelfareCheckinRequest, opts ...grpc.CallOption) (*RecordCrisisWelfareCheckinResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordCrisisWelfareCheckinResponse)
+	err := c.cc.Invoke(ctx, TravelService_RecordCrisisWelfareCheckin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetDestinationCompanionOverview(ctx context.Context, in *GetDestinationCompanionOverviewRequest, opts ...grpc.CallOption) (*GetDestinationCompanionOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDestinationCompanionOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetDestinationCompanionOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) SaveDestinationDayPlan(ctx context.Context, in *SaveDestinationDayPlanRequest, opts ...grpc.CallOption) (*SaveDestinationDayPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDestinationDayPlanResponse)
+	err := c.cc.Invoke(ctx, TravelService_SaveDestinationDayPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) LogForegroundProximityQuery(ctx context.Context, in *LogForegroundProximityQueryRequest, opts ...grpc.CallOption) (*LogForegroundProximityQueryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogForegroundProximityQueryResponse)
+	err := c.cc.Invoke(ctx, TravelService_LogForegroundProximityQuery_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetPrivatePassportProofsOverview(ctx context.Context, in *GetPrivatePassportProofsOverviewRequest, opts ...grpc.CallOption) (*GetPrivatePassportProofsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPrivatePassportProofsOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetPrivatePassportProofsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) MintSignedMobilityDossier(ctx context.Context, in *MintSignedMobilityDossierRequest, opts ...grpc.CallOption) (*MintSignedMobilityDossierResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MintSignedMobilityDossierResponse)
+	err := c.cc.Invoke(ctx, TravelService_MintSignedMobilityDossier_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) UpdateFieldPrivacyPolicy(ctx context.Context, in *UpdateFieldPrivacyPolicyRequest, opts ...grpc.CallOption) (*UpdateFieldPrivacyPolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateFieldPrivacyPolicyResponse)
+	err := c.cc.Invoke(ctx, TravelService_UpdateFieldPrivacyPolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) GetTripClosureMemoryOverview(ctx context.Context, in *GetTripClosureMemoryOverviewRequest, opts ...grpc.CallOption) (*GetTripClosureMemoryOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTripClosureMemoryOverviewResponse)
+	err := c.cc.Invoke(ctx, TravelService_GetTripClosureMemoryOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ExecuteTripClosureStep(ctx context.Context, in *ExecuteTripClosureStepRequest, opts ...grpc.CallOption) (*ExecuteTripClosureStepResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteTripClosureStepResponse)
+	err := c.cc.Invoke(ctx, TravelService_ExecuteTripClosureStep_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *travelServiceClient) ArchiveTripMemoryRecord(ctx context.Context, in *ArchiveTripMemoryRecordRequest, opts ...grpc.CallOption) (*ArchiveTripMemoryRecordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ArchiveTripMemoryRecordResponse)
+	err := c.cc.Invoke(ctx, TravelService_ArchiveTripMemoryRecord_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TravelServiceServer is the server API for TravelService service.
 // All implementations must embed UnimplementedTravelServiceServer
 // for forward compatibility.
@@ -464,6 +982,62 @@ type TravelServiceServer interface {
 	RevokePassportShare(context.Context, *RevokePassportShareRequest) (*RevokePassportShareResponse, error)
 	// N4 — Annual Atlas (generated hardcover-grade PDF).
 	GenerateNomadAtlas(context.Context, *GenerateNomadAtlasRequest) (*GenerateNomadAtlasResponse, error)
+	// Choice 1 (N1): Universal Ingestion and Trip Graph
+	GetUniversalTripGraphOverview(context.Context, *GetUniversalTripGraphOverviewRequest) (*GetUniversalTripGraphOverviewResponse, error)
+	UpsertTripGraphSegment(context.Context, *UpsertTripGraphSegmentRequest) (*UpsertTripGraphSegmentResponse, error)
+	ReconcileParserDiffEvent(context.Context, *ReconcileParserDiffEventRequest) (*ReconcileParserDiffEventResponse, error)
+	// Choice 2 (N2/N12): Multi-Source Truth and Live Flight Command
+	GetLiveFlightCommandOverview(context.Context, *GetLiveFlightCommandOverviewRequest) (*GetLiveFlightCommandOverviewResponse, error)
+	RecordFlightObservation(context.Context, *RecordFlightObservationRequest) (*RecordFlightObservationResponse, error)
+	TriggerDisruptionRecoveryPlan(context.Context, *TriggerDisruptionRecoveryPlanRequest) (*TriggerDisruptionRecoveryPlanResponse, error)
+	// Choice 3 (N4): Encrypted Offline Trip Pack
+	GetOfflineTripPackOverview(context.Context, *GetOfflineTripPackOverviewRequest) (*GetOfflineTripPackOverviewResponse, error)
+	StageOfflineTripPack(context.Context, *StageOfflineTripPackRequest) (*StageOfflineTripPackResponse, error)
+	SyncOfflineMutationReceipt(context.Context, *SyncOfflineMutationReceiptRequest) (*SyncOfflineMutationReceiptResponse, error)
+	// Choice 4 (N3): Entry and Document Readiness
+	GetEntryDocumentReadinessOverview(context.Context, *GetEntryDocumentReadinessOverviewRequest) (*GetEntryDocumentReadinessOverviewResponse, error)
+	EvaluateEntryReadiness(context.Context, *EvaluateEntryReadinessRequest) (*EvaluateEntryReadinessResponse, error)
+	EscalateJurisdictionAmbiguity(context.Context, *EscalateJurisdictionAmbiguityRequest) (*EscalateJurisdictionAmbiguityResponse, error)
+	// Choice 5 (N11): Pre-Trip Readiness and Packing
+	GetPreTripReadinessOverview(context.Context, *GetPreTripReadinessOverviewRequest) (*GetPreTripReadinessOverviewResponse, error)
+	UpsertPreTripChecklist(context.Context, *UpsertPreTripChecklistRequest) (*UpsertPreTripChecklistResponse, error)
+	CompletePackingOrHomeTask(context.Context, *CompletePackingOrHomeTaskRequest) (*CompletePackingOrHomeTaskResponse, error)
+	// Choice 6 (N7/N13): Door-to-Door and Airport Operations
+	GetDoorToDoorAirportOverview(context.Context, *GetDoorToDoorAirportOverviewRequest) (*GetDoorToDoorAirportOverviewResponse, error)
+	SaveDoorToDoorTimeline(context.Context, *SaveDoorToDoorTimelineRequest) (*SaveDoorToDoorTimelineResponse, error)
+	IssueOrRevokePartnerGroundPass(context.Context, *IssueOrRevokePartnerGroundPassRequest) (*IssueOrRevokePartnerGroundPassResponse, error)
+	// Choice 7 (N5): Presence Evidence Packet
+	GetPresenceEvidencePacketOverview(context.Context, *GetPresenceEvidencePacketOverviewRequest) (*GetPresenceEvidencePacketOverviewResponse, error)
+	SubmitPresenceEvidencePacket(context.Context, *SubmitPresenceEvidencePacketRequest) (*SubmitPresenceEvidencePacketResponse, error)
+	FilePresenceVerificationAppeal(context.Context, *FilePresenceVerificationAppealRequest) (*FilePresenceVerificationAppealResponse, error)
+	// Choice 8 (N6): Residency and Corporate Travel Ledger
+	GetResidencyTravelLedgerOverview(context.Context, *GetResidencyTravelLedgerOverviewRequest) (*GetResidencyTravelLedgerOverviewResponse, error)
+	UpsertResidencyDayLedger(context.Context, *UpsertResidencyDayLedgerRequest) (*UpsertResidencyDayLedgerResponse, error)
+	RunRollingWindowForecast(context.Context, *RunRollingWindowForecastRequest) (*RunRollingWindowForecastResponse, error)
+	// Choice 9 (N8): Traveler, Family, and Assistant Collaboration
+	GetTravelerCollaborationOverview(context.Context, *GetTravelerCollaborationOverviewRequest) (*GetTravelerCollaborationOverviewResponse, error)
+	GrantTripCollaborationRole(context.Context, *GrantTripCollaborationRoleRequest) (*GrantTripCollaborationRoleResponse, error)
+	DispatchSafetyCheckinBroadcast(context.Context, *DispatchSafetyCheckinBroadcastRequest) (*DispatchSafetyCheckinBroadcastResponse, error)
+	// Choice 10 (N9): Loyalty, Fare, Claims, and Travel Finance
+	GetLoyaltyClaimsFinanceOverview(context.Context, *GetLoyaltyClaimsFinanceOverviewRequest) (*GetLoyaltyClaimsFinanceOverviewResponse, error)
+	UpsertLoyaltyOrCompensationClaim(context.Context, *UpsertLoyaltyOrCompensationClaimRequest) (*UpsertLoyaltyOrCompensationClaimResponse, error)
+	HandoffTripExpenseToVault(context.Context, *HandoffTripExpenseToVaultRequest) (*HandoffTripExpenseToVaultResponse, error)
+	// Choice 11 (N14/N15): Accessible Travel and Crisis Command
+	GetAccessibleCrisisCommandOverview(context.Context, *GetAccessibleCrisisCommandOverviewRequest) (*GetAccessibleCrisisCommandOverviewResponse, error)
+	SubmitProviderAssistanceRequest(context.Context, *SubmitProviderAssistanceRequestRequest) (*SubmitProviderAssistanceRequestResponse, error)
+	RecordCrisisWelfareCheckin(context.Context, *RecordCrisisWelfareCheckinRequest) (*RecordCrisisWelfareCheckinResponse, error)
+	// Choice 12 (N16): Destination Companion
+	GetDestinationCompanionOverview(context.Context, *GetDestinationCompanionOverviewRequest) (*GetDestinationCompanionOverviewResponse, error)
+	SaveDestinationDayPlan(context.Context, *SaveDestinationDayPlanRequest) (*SaveDestinationDayPlanResponse, error)
+	LogForegroundProximityQuery(context.Context, *LogForegroundProximityQueryRequest) (*LogForegroundProximityQueryResponse, error)
+	// Choice 13 (N10): Private Passport and Mobility Proofs
+	GetPrivatePassportProofsOverview(context.Context, *GetPrivatePassportProofsOverviewRequest) (*GetPrivatePassportProofsOverviewResponse, error)
+	MintSignedMobilityDossier(context.Context, *MintSignedMobilityDossierRequest) (*MintSignedMobilityDossierResponse, error)
+	UpdateFieldPrivacyPolicy(context.Context, *UpdateFieldPrivacyPolicyRequest) (*UpdateFieldPrivacyPolicyResponse, error)
+	// Choice 14 (N17): Trip Closure and Long-Term Memory
+	GetTripClosureMemoryOverview(context.Context, *GetTripClosureMemoryOverviewRequest) (*GetTripClosureMemoryOverviewResponse, error)
+	ExecuteTripClosureStep(context.Context, *ExecuteTripClosureStepRequest) (*ExecuteTripClosureStepResponse, error)
+	ArchiveTripMemoryRecord(context.Context, *ArchiveTripMemoryRecordRequest) (*ArchiveTripMemoryRecordResponse, error)
 	mustEmbedUnimplementedTravelServiceServer()
 }
 
@@ -566,6 +1140,132 @@ func (UnimplementedTravelServiceServer) RevokePassportShare(context.Context, *Re
 }
 func (UnimplementedTravelServiceServer) GenerateNomadAtlas(context.Context, *GenerateNomadAtlasRequest) (*GenerateNomadAtlasResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GenerateNomadAtlas not implemented")
+}
+func (UnimplementedTravelServiceServer) GetUniversalTripGraphOverview(context.Context, *GetUniversalTripGraphOverviewRequest) (*GetUniversalTripGraphOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetUniversalTripGraphOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) UpsertTripGraphSegment(context.Context, *UpsertTripGraphSegmentRequest) (*UpsertTripGraphSegmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertTripGraphSegment not implemented")
+}
+func (UnimplementedTravelServiceServer) ReconcileParserDiffEvent(context.Context, *ReconcileParserDiffEventRequest) (*ReconcileParserDiffEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReconcileParserDiffEvent not implemented")
+}
+func (UnimplementedTravelServiceServer) GetLiveFlightCommandOverview(context.Context, *GetLiveFlightCommandOverviewRequest) (*GetLiveFlightCommandOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLiveFlightCommandOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) RecordFlightObservation(context.Context, *RecordFlightObservationRequest) (*RecordFlightObservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordFlightObservation not implemented")
+}
+func (UnimplementedTravelServiceServer) TriggerDisruptionRecoveryPlan(context.Context, *TriggerDisruptionRecoveryPlanRequest) (*TriggerDisruptionRecoveryPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerDisruptionRecoveryPlan not implemented")
+}
+func (UnimplementedTravelServiceServer) GetOfflineTripPackOverview(context.Context, *GetOfflineTripPackOverviewRequest) (*GetOfflineTripPackOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOfflineTripPackOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) StageOfflineTripPack(context.Context, *StageOfflineTripPackRequest) (*StageOfflineTripPackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StageOfflineTripPack not implemented")
+}
+func (UnimplementedTravelServiceServer) SyncOfflineMutationReceipt(context.Context, *SyncOfflineMutationReceiptRequest) (*SyncOfflineMutationReceiptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SyncOfflineMutationReceipt not implemented")
+}
+func (UnimplementedTravelServiceServer) GetEntryDocumentReadinessOverview(context.Context, *GetEntryDocumentReadinessOverviewRequest) (*GetEntryDocumentReadinessOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEntryDocumentReadinessOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) EvaluateEntryReadiness(context.Context, *EvaluateEntryReadinessRequest) (*EvaluateEntryReadinessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateEntryReadiness not implemented")
+}
+func (UnimplementedTravelServiceServer) EscalateJurisdictionAmbiguity(context.Context, *EscalateJurisdictionAmbiguityRequest) (*EscalateJurisdictionAmbiguityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EscalateJurisdictionAmbiguity not implemented")
+}
+func (UnimplementedTravelServiceServer) GetPreTripReadinessOverview(context.Context, *GetPreTripReadinessOverviewRequest) (*GetPreTripReadinessOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPreTripReadinessOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) UpsertPreTripChecklist(context.Context, *UpsertPreTripChecklistRequest) (*UpsertPreTripChecklistResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPreTripChecklist not implemented")
+}
+func (UnimplementedTravelServiceServer) CompletePackingOrHomeTask(context.Context, *CompletePackingOrHomeTaskRequest) (*CompletePackingOrHomeTaskResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompletePackingOrHomeTask not implemented")
+}
+func (UnimplementedTravelServiceServer) GetDoorToDoorAirportOverview(context.Context, *GetDoorToDoorAirportOverviewRequest) (*GetDoorToDoorAirportOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDoorToDoorAirportOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) SaveDoorToDoorTimeline(context.Context, *SaveDoorToDoorTimelineRequest) (*SaveDoorToDoorTimelineResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDoorToDoorTimeline not implemented")
+}
+func (UnimplementedTravelServiceServer) IssueOrRevokePartnerGroundPass(context.Context, *IssueOrRevokePartnerGroundPassRequest) (*IssueOrRevokePartnerGroundPassResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueOrRevokePartnerGroundPass not implemented")
+}
+func (UnimplementedTravelServiceServer) GetPresenceEvidencePacketOverview(context.Context, *GetPresenceEvidencePacketOverviewRequest) (*GetPresenceEvidencePacketOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPresenceEvidencePacketOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) SubmitPresenceEvidencePacket(context.Context, *SubmitPresenceEvidencePacketRequest) (*SubmitPresenceEvidencePacketResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitPresenceEvidencePacket not implemented")
+}
+func (UnimplementedTravelServiceServer) FilePresenceVerificationAppeal(context.Context, *FilePresenceVerificationAppealRequest) (*FilePresenceVerificationAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FilePresenceVerificationAppeal not implemented")
+}
+func (UnimplementedTravelServiceServer) GetResidencyTravelLedgerOverview(context.Context, *GetResidencyTravelLedgerOverviewRequest) (*GetResidencyTravelLedgerOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetResidencyTravelLedgerOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) UpsertResidencyDayLedger(context.Context, *UpsertResidencyDayLedgerRequest) (*UpsertResidencyDayLedgerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertResidencyDayLedger not implemented")
+}
+func (UnimplementedTravelServiceServer) RunRollingWindowForecast(context.Context, *RunRollingWindowForecastRequest) (*RunRollingWindowForecastResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunRollingWindowForecast not implemented")
+}
+func (UnimplementedTravelServiceServer) GetTravelerCollaborationOverview(context.Context, *GetTravelerCollaborationOverviewRequest) (*GetTravelerCollaborationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTravelerCollaborationOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) GrantTripCollaborationRole(context.Context, *GrantTripCollaborationRoleRequest) (*GrantTripCollaborationRoleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GrantTripCollaborationRole not implemented")
+}
+func (UnimplementedTravelServiceServer) DispatchSafetyCheckinBroadcast(context.Context, *DispatchSafetyCheckinBroadcastRequest) (*DispatchSafetyCheckinBroadcastResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DispatchSafetyCheckinBroadcast not implemented")
+}
+func (UnimplementedTravelServiceServer) GetLoyaltyClaimsFinanceOverview(context.Context, *GetLoyaltyClaimsFinanceOverviewRequest) (*GetLoyaltyClaimsFinanceOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetLoyaltyClaimsFinanceOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) UpsertLoyaltyOrCompensationClaim(context.Context, *UpsertLoyaltyOrCompensationClaimRequest) (*UpsertLoyaltyOrCompensationClaimResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertLoyaltyOrCompensationClaim not implemented")
+}
+func (UnimplementedTravelServiceServer) HandoffTripExpenseToVault(context.Context, *HandoffTripExpenseToVaultRequest) (*HandoffTripExpenseToVaultResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method HandoffTripExpenseToVault not implemented")
+}
+func (UnimplementedTravelServiceServer) GetAccessibleCrisisCommandOverview(context.Context, *GetAccessibleCrisisCommandOverviewRequest) (*GetAccessibleCrisisCommandOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAccessibleCrisisCommandOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) SubmitProviderAssistanceRequest(context.Context, *SubmitProviderAssistanceRequestRequest) (*SubmitProviderAssistanceRequestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitProviderAssistanceRequest not implemented")
+}
+func (UnimplementedTravelServiceServer) RecordCrisisWelfareCheckin(context.Context, *RecordCrisisWelfareCheckinRequest) (*RecordCrisisWelfareCheckinResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordCrisisWelfareCheckin not implemented")
+}
+func (UnimplementedTravelServiceServer) GetDestinationCompanionOverview(context.Context, *GetDestinationCompanionOverviewRequest) (*GetDestinationCompanionOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDestinationCompanionOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) SaveDestinationDayPlan(context.Context, *SaveDestinationDayPlanRequest) (*SaveDestinationDayPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDestinationDayPlan not implemented")
+}
+func (UnimplementedTravelServiceServer) LogForegroundProximityQuery(context.Context, *LogForegroundProximityQueryRequest) (*LogForegroundProximityQueryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogForegroundProximityQuery not implemented")
+}
+func (UnimplementedTravelServiceServer) GetPrivatePassportProofsOverview(context.Context, *GetPrivatePassportProofsOverviewRequest) (*GetPrivatePassportProofsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPrivatePassportProofsOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) MintSignedMobilityDossier(context.Context, *MintSignedMobilityDossierRequest) (*MintSignedMobilityDossierResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method MintSignedMobilityDossier not implemented")
+}
+func (UnimplementedTravelServiceServer) UpdateFieldPrivacyPolicy(context.Context, *UpdateFieldPrivacyPolicyRequest) (*UpdateFieldPrivacyPolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateFieldPrivacyPolicy not implemented")
+}
+func (UnimplementedTravelServiceServer) GetTripClosureMemoryOverview(context.Context, *GetTripClosureMemoryOverviewRequest) (*GetTripClosureMemoryOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTripClosureMemoryOverview not implemented")
+}
+func (UnimplementedTravelServiceServer) ExecuteTripClosureStep(context.Context, *ExecuteTripClosureStepRequest) (*ExecuteTripClosureStepResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExecuteTripClosureStep not implemented")
+}
+func (UnimplementedTravelServiceServer) ArchiveTripMemoryRecord(context.Context, *ArchiveTripMemoryRecordRequest) (*ArchiveTripMemoryRecordResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ArchiveTripMemoryRecord not implemented")
 }
 func (UnimplementedTravelServiceServer) mustEmbedUnimplementedTravelServiceServer() {}
 func (UnimplementedTravelServiceServer) testEmbeddedByValue()                       {}
@@ -1146,6 +1846,762 @@ func _TravelService_GenerateNomadAtlas_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TravelService_GetUniversalTripGraphOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUniversalTripGraphOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetUniversalTripGraphOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetUniversalTripGraphOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetUniversalTripGraphOverview(ctx, req.(*GetUniversalTripGraphOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpsertTripGraphSegment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertTripGraphSegmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpsertTripGraphSegment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpsertTripGraphSegment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpsertTripGraphSegment(ctx, req.(*UpsertTripGraphSegmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ReconcileParserDiffEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileParserDiffEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ReconcileParserDiffEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ReconcileParserDiffEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ReconcileParserDiffEvent(ctx, req.(*ReconcileParserDiffEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetLiveFlightCommandOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLiveFlightCommandOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetLiveFlightCommandOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetLiveFlightCommandOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetLiveFlightCommandOverview(ctx, req.(*GetLiveFlightCommandOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_RecordFlightObservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordFlightObservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).RecordFlightObservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_RecordFlightObservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).RecordFlightObservation(ctx, req.(*RecordFlightObservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_TriggerDisruptionRecoveryPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerDisruptionRecoveryPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).TriggerDisruptionRecoveryPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_TriggerDisruptionRecoveryPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).TriggerDisruptionRecoveryPlan(ctx, req.(*TriggerDisruptionRecoveryPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetOfflineTripPackOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOfflineTripPackOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetOfflineTripPackOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetOfflineTripPackOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetOfflineTripPackOverview(ctx, req.(*GetOfflineTripPackOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_StageOfflineTripPack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StageOfflineTripPackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).StageOfflineTripPack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_StageOfflineTripPack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).StageOfflineTripPack(ctx, req.(*StageOfflineTripPackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SyncOfflineMutationReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SyncOfflineMutationReceiptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SyncOfflineMutationReceipt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SyncOfflineMutationReceipt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SyncOfflineMutationReceipt(ctx, req.(*SyncOfflineMutationReceiptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetEntryDocumentReadinessOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEntryDocumentReadinessOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetEntryDocumentReadinessOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetEntryDocumentReadinessOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetEntryDocumentReadinessOverview(ctx, req.(*GetEntryDocumentReadinessOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_EvaluateEntryReadiness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateEntryReadinessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).EvaluateEntryReadiness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_EvaluateEntryReadiness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).EvaluateEntryReadiness(ctx, req.(*EvaluateEntryReadinessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_EscalateJurisdictionAmbiguity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EscalateJurisdictionAmbiguityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).EscalateJurisdictionAmbiguity(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_EscalateJurisdictionAmbiguity_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).EscalateJurisdictionAmbiguity(ctx, req.(*EscalateJurisdictionAmbiguityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetPreTripReadinessOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPreTripReadinessOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetPreTripReadinessOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetPreTripReadinessOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetPreTripReadinessOverview(ctx, req.(*GetPreTripReadinessOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpsertPreTripChecklist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPreTripChecklistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpsertPreTripChecklist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpsertPreTripChecklist_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpsertPreTripChecklist(ctx, req.(*UpsertPreTripChecklistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_CompletePackingOrHomeTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompletePackingOrHomeTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).CompletePackingOrHomeTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_CompletePackingOrHomeTask_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).CompletePackingOrHomeTask(ctx, req.(*CompletePackingOrHomeTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetDoorToDoorAirportOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDoorToDoorAirportOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetDoorToDoorAirportOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetDoorToDoorAirportOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetDoorToDoorAirportOverview(ctx, req.(*GetDoorToDoorAirportOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SaveDoorToDoorTimeline_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDoorToDoorTimelineRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SaveDoorToDoorTimeline(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SaveDoorToDoorTimeline_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SaveDoorToDoorTimeline(ctx, req.(*SaveDoorToDoorTimelineRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_IssueOrRevokePartnerGroundPass_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueOrRevokePartnerGroundPassRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).IssueOrRevokePartnerGroundPass(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_IssueOrRevokePartnerGroundPass_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).IssueOrRevokePartnerGroundPass(ctx, req.(*IssueOrRevokePartnerGroundPassRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetPresenceEvidencePacketOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPresenceEvidencePacketOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetPresenceEvidencePacketOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetPresenceEvidencePacketOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetPresenceEvidencePacketOverview(ctx, req.(*GetPresenceEvidencePacketOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SubmitPresenceEvidencePacket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitPresenceEvidencePacketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SubmitPresenceEvidencePacket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SubmitPresenceEvidencePacket_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SubmitPresenceEvidencePacket(ctx, req.(*SubmitPresenceEvidencePacketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_FilePresenceVerificationAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FilePresenceVerificationAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).FilePresenceVerificationAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_FilePresenceVerificationAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).FilePresenceVerificationAppeal(ctx, req.(*FilePresenceVerificationAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetResidencyTravelLedgerOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetResidencyTravelLedgerOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetResidencyTravelLedgerOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetResidencyTravelLedgerOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetResidencyTravelLedgerOverview(ctx, req.(*GetResidencyTravelLedgerOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpsertResidencyDayLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertResidencyDayLedgerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpsertResidencyDayLedger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpsertResidencyDayLedger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpsertResidencyDayLedger(ctx, req.(*UpsertResidencyDayLedgerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_RunRollingWindowForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunRollingWindowForecastRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).RunRollingWindowForecast(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_RunRollingWindowForecast_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).RunRollingWindowForecast(ctx, req.(*RunRollingWindowForecastRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetTravelerCollaborationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTravelerCollaborationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetTravelerCollaborationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetTravelerCollaborationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetTravelerCollaborationOverview(ctx, req.(*GetTravelerCollaborationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GrantTripCollaborationRole_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GrantTripCollaborationRoleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GrantTripCollaborationRole(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GrantTripCollaborationRole_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GrantTripCollaborationRole(ctx, req.(*GrantTripCollaborationRoleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_DispatchSafetyCheckinBroadcast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DispatchSafetyCheckinBroadcastRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).DispatchSafetyCheckinBroadcast(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_DispatchSafetyCheckinBroadcast_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).DispatchSafetyCheckinBroadcast(ctx, req.(*DispatchSafetyCheckinBroadcastRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetLoyaltyClaimsFinanceOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLoyaltyClaimsFinanceOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetLoyaltyClaimsFinanceOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetLoyaltyClaimsFinanceOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetLoyaltyClaimsFinanceOverview(ctx, req.(*GetLoyaltyClaimsFinanceOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpsertLoyaltyOrCompensationClaim_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertLoyaltyOrCompensationClaimRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpsertLoyaltyOrCompensationClaim(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpsertLoyaltyOrCompensationClaim_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpsertLoyaltyOrCompensationClaim(ctx, req.(*UpsertLoyaltyOrCompensationClaimRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_HandoffTripExpenseToVault_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HandoffTripExpenseToVaultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).HandoffTripExpenseToVault(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_HandoffTripExpenseToVault_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).HandoffTripExpenseToVault(ctx, req.(*HandoffTripExpenseToVaultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetAccessibleCrisisCommandOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAccessibleCrisisCommandOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetAccessibleCrisisCommandOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetAccessibleCrisisCommandOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetAccessibleCrisisCommandOverview(ctx, req.(*GetAccessibleCrisisCommandOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SubmitProviderAssistanceRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitProviderAssistanceRequestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SubmitProviderAssistanceRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SubmitProviderAssistanceRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SubmitProviderAssistanceRequest(ctx, req.(*SubmitProviderAssistanceRequestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_RecordCrisisWelfareCheckin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordCrisisWelfareCheckinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).RecordCrisisWelfareCheckin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_RecordCrisisWelfareCheckin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).RecordCrisisWelfareCheckin(ctx, req.(*RecordCrisisWelfareCheckinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetDestinationCompanionOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDestinationCompanionOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetDestinationCompanionOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetDestinationCompanionOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetDestinationCompanionOverview(ctx, req.(*GetDestinationCompanionOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_SaveDestinationDayPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDestinationDayPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).SaveDestinationDayPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_SaveDestinationDayPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).SaveDestinationDayPlan(ctx, req.(*SaveDestinationDayPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_LogForegroundProximityQuery_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogForegroundProximityQueryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).LogForegroundProximityQuery(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_LogForegroundProximityQuery_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).LogForegroundProximityQuery(ctx, req.(*LogForegroundProximityQueryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetPrivatePassportProofsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPrivatePassportProofsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetPrivatePassportProofsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetPrivatePassportProofsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetPrivatePassportProofsOverview(ctx, req.(*GetPrivatePassportProofsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_MintSignedMobilityDossier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MintSignedMobilityDossierRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).MintSignedMobilityDossier(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_MintSignedMobilityDossier_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).MintSignedMobilityDossier(ctx, req.(*MintSignedMobilityDossierRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_UpdateFieldPrivacyPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFieldPrivacyPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).UpdateFieldPrivacyPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_UpdateFieldPrivacyPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).UpdateFieldPrivacyPolicy(ctx, req.(*UpdateFieldPrivacyPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_GetTripClosureMemoryOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTripClosureMemoryOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).GetTripClosureMemoryOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_GetTripClosureMemoryOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).GetTripClosureMemoryOverview(ctx, req.(*GetTripClosureMemoryOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ExecuteTripClosureStep_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteTripClosureStepRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ExecuteTripClosureStep(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ExecuteTripClosureStep_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ExecuteTripClosureStep(ctx, req.(*ExecuteTripClosureStepRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TravelService_ArchiveTripMemoryRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ArchiveTripMemoryRecordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TravelServiceServer).ArchiveTripMemoryRecord(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: TravelService_ArchiveTripMemoryRecord_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TravelServiceServer).ArchiveTripMemoryRecord(ctx, req.(*ArchiveTripMemoryRecordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // TravelService_ServiceDesc is the grpc.ServiceDesc for TravelService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1276,6 +2732,174 @@ var TravelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GenerateNomadAtlas",
 			Handler:    _TravelService_GenerateNomadAtlas_Handler,
+		},
+		{
+			MethodName: "GetUniversalTripGraphOverview",
+			Handler:    _TravelService_GetUniversalTripGraphOverview_Handler,
+		},
+		{
+			MethodName: "UpsertTripGraphSegment",
+			Handler:    _TravelService_UpsertTripGraphSegment_Handler,
+		},
+		{
+			MethodName: "ReconcileParserDiffEvent",
+			Handler:    _TravelService_ReconcileParserDiffEvent_Handler,
+		},
+		{
+			MethodName: "GetLiveFlightCommandOverview",
+			Handler:    _TravelService_GetLiveFlightCommandOverview_Handler,
+		},
+		{
+			MethodName: "RecordFlightObservation",
+			Handler:    _TravelService_RecordFlightObservation_Handler,
+		},
+		{
+			MethodName: "TriggerDisruptionRecoveryPlan",
+			Handler:    _TravelService_TriggerDisruptionRecoveryPlan_Handler,
+		},
+		{
+			MethodName: "GetOfflineTripPackOverview",
+			Handler:    _TravelService_GetOfflineTripPackOverview_Handler,
+		},
+		{
+			MethodName: "StageOfflineTripPack",
+			Handler:    _TravelService_StageOfflineTripPack_Handler,
+		},
+		{
+			MethodName: "SyncOfflineMutationReceipt",
+			Handler:    _TravelService_SyncOfflineMutationReceipt_Handler,
+		},
+		{
+			MethodName: "GetEntryDocumentReadinessOverview",
+			Handler:    _TravelService_GetEntryDocumentReadinessOverview_Handler,
+		},
+		{
+			MethodName: "EvaluateEntryReadiness",
+			Handler:    _TravelService_EvaluateEntryReadiness_Handler,
+		},
+		{
+			MethodName: "EscalateJurisdictionAmbiguity",
+			Handler:    _TravelService_EscalateJurisdictionAmbiguity_Handler,
+		},
+		{
+			MethodName: "GetPreTripReadinessOverview",
+			Handler:    _TravelService_GetPreTripReadinessOverview_Handler,
+		},
+		{
+			MethodName: "UpsertPreTripChecklist",
+			Handler:    _TravelService_UpsertPreTripChecklist_Handler,
+		},
+		{
+			MethodName: "CompletePackingOrHomeTask",
+			Handler:    _TravelService_CompletePackingOrHomeTask_Handler,
+		},
+		{
+			MethodName: "GetDoorToDoorAirportOverview",
+			Handler:    _TravelService_GetDoorToDoorAirportOverview_Handler,
+		},
+		{
+			MethodName: "SaveDoorToDoorTimeline",
+			Handler:    _TravelService_SaveDoorToDoorTimeline_Handler,
+		},
+		{
+			MethodName: "IssueOrRevokePartnerGroundPass",
+			Handler:    _TravelService_IssueOrRevokePartnerGroundPass_Handler,
+		},
+		{
+			MethodName: "GetPresenceEvidencePacketOverview",
+			Handler:    _TravelService_GetPresenceEvidencePacketOverview_Handler,
+		},
+		{
+			MethodName: "SubmitPresenceEvidencePacket",
+			Handler:    _TravelService_SubmitPresenceEvidencePacket_Handler,
+		},
+		{
+			MethodName: "FilePresenceVerificationAppeal",
+			Handler:    _TravelService_FilePresenceVerificationAppeal_Handler,
+		},
+		{
+			MethodName: "GetResidencyTravelLedgerOverview",
+			Handler:    _TravelService_GetResidencyTravelLedgerOverview_Handler,
+		},
+		{
+			MethodName: "UpsertResidencyDayLedger",
+			Handler:    _TravelService_UpsertResidencyDayLedger_Handler,
+		},
+		{
+			MethodName: "RunRollingWindowForecast",
+			Handler:    _TravelService_RunRollingWindowForecast_Handler,
+		},
+		{
+			MethodName: "GetTravelerCollaborationOverview",
+			Handler:    _TravelService_GetTravelerCollaborationOverview_Handler,
+		},
+		{
+			MethodName: "GrantTripCollaborationRole",
+			Handler:    _TravelService_GrantTripCollaborationRole_Handler,
+		},
+		{
+			MethodName: "DispatchSafetyCheckinBroadcast",
+			Handler:    _TravelService_DispatchSafetyCheckinBroadcast_Handler,
+		},
+		{
+			MethodName: "GetLoyaltyClaimsFinanceOverview",
+			Handler:    _TravelService_GetLoyaltyClaimsFinanceOverview_Handler,
+		},
+		{
+			MethodName: "UpsertLoyaltyOrCompensationClaim",
+			Handler:    _TravelService_UpsertLoyaltyOrCompensationClaim_Handler,
+		},
+		{
+			MethodName: "HandoffTripExpenseToVault",
+			Handler:    _TravelService_HandoffTripExpenseToVault_Handler,
+		},
+		{
+			MethodName: "GetAccessibleCrisisCommandOverview",
+			Handler:    _TravelService_GetAccessibleCrisisCommandOverview_Handler,
+		},
+		{
+			MethodName: "SubmitProviderAssistanceRequest",
+			Handler:    _TravelService_SubmitProviderAssistanceRequest_Handler,
+		},
+		{
+			MethodName: "RecordCrisisWelfareCheckin",
+			Handler:    _TravelService_RecordCrisisWelfareCheckin_Handler,
+		},
+		{
+			MethodName: "GetDestinationCompanionOverview",
+			Handler:    _TravelService_GetDestinationCompanionOverview_Handler,
+		},
+		{
+			MethodName: "SaveDestinationDayPlan",
+			Handler:    _TravelService_SaveDestinationDayPlan_Handler,
+		},
+		{
+			MethodName: "LogForegroundProximityQuery",
+			Handler:    _TravelService_LogForegroundProximityQuery_Handler,
+		},
+		{
+			MethodName: "GetPrivatePassportProofsOverview",
+			Handler:    _TravelService_GetPrivatePassportProofsOverview_Handler,
+		},
+		{
+			MethodName: "MintSignedMobilityDossier",
+			Handler:    _TravelService_MintSignedMobilityDossier_Handler,
+		},
+		{
+			MethodName: "UpdateFieldPrivacyPolicy",
+			Handler:    _TravelService_UpdateFieldPrivacyPolicy_Handler,
+		},
+		{
+			MethodName: "GetTripClosureMemoryOverview",
+			Handler:    _TravelService_GetTripClosureMemoryOverview_Handler,
+		},
+		{
+			MethodName: "ExecuteTripClosureStep",
+			Handler:    _TravelService_ExecuteTripClosureStep_Handler,
+		},
+		{
+			MethodName: "ArchiveTripMemoryRecord",
+			Handler:    _TravelService_ArchiveTripMemoryRecord_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -19,79 +19,163 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	WorkoutService_ListWorkouts_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
-	WorkoutService_GetWorkout_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/GetWorkout"
-	WorkoutService_LogDayWorkout_FullMethodName              = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
-	WorkoutService_ListHistory_FullMethodName                = "/sttattus.workout.v1.WorkoutService/ListHistory"
-	WorkoutService_GetForgeStats_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
-	WorkoutService_SubmitFeedback_FullMethodName             = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
-	WorkoutService_GetToday_FullMethodName                   = "/sttattus.workout.v1.WorkoutService/GetToday"
-	WorkoutService_GetRankLadder_FullMethodName              = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
-	WorkoutService_ListExercises_FullMethodName              = "/sttattus.workout.v1.WorkoutService/ListExercises"
-	WorkoutService_CreateSession_FullMethodName              = "/sttattus.workout.v1.WorkoutService/CreateSession"
-	WorkoutService_GetSession_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/GetSession"
-	WorkoutService_GetActiveSession_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
-	WorkoutService_ListSessions_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListSessions"
-	WorkoutService_UpdateSessionStatus_FullMethodName        = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
-	WorkoutService_LogSet_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/LogSet"
-	WorkoutService_GetForgeStreak_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
-	WorkoutService_CreateFormVideo_FullMethodName            = "/sttattus.workout.v1.WorkoutService/CreateFormVideo"
-	WorkoutService_ListMyFormVideos_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
-	WorkoutService_DeleteFormVideo_FullMethodName            = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
-	WorkoutService_UpdateFormVideoStatus_FullMethodName      = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
-	WorkoutService_ListProgrammes_FullMethodName             = "/sttattus.workout.v1.WorkoutService/ListProgrammes"
-	WorkoutService_GetProgramme_FullMethodName               = "/sttattus.workout.v1.WorkoutService/GetProgramme"
-	WorkoutService_EnrolInProgramme_FullMethodName           = "/sttattus.workout.v1.WorkoutService/EnrolInProgramme"
-	WorkoutService_GetActiveEnrolment_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
-	WorkoutService_ListMyEnrolments_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
-	WorkoutService_UpdateEnrolment_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
-	WorkoutService_ListProgrammeWeeks_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListProgrammeWeeks"
-	WorkoutService_GetProgrammeWeek_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetProgrammeWeek"
-	WorkoutService_ListMyPRs_FullMethodName                  = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
-	WorkoutService_ListRecentPRs_FullMethodName              = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
-	WorkoutService_ListBodyCompositions_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListBodyCompositions"
-	WorkoutService_CreateBodyComposition_FullMethodName      = "/sttattus.workout.v1.WorkoutService/CreateBodyComposition"
-	WorkoutService_DeleteBodyComposition_FullMethodName      = "/sttattus.workout.v1.WorkoutService/DeleteBodyComposition"
-	WorkoutService_ListInjuries_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ListInjuries"
-	WorkoutService_CreateInjury_FullMethodName               = "/sttattus.workout.v1.WorkoutService/CreateInjury"
-	WorkoutService_UpdateInjuryStatus_FullMethodName         = "/sttattus.workout.v1.WorkoutService/UpdateInjuryStatus"
-	WorkoutService_DeleteInjury_FullMethodName               = "/sttattus.workout.v1.WorkoutService/DeleteInjury"
-	WorkoutService_ListMobilityBaselines_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListMobilityBaselines"
-	WorkoutService_GetCurrentMobilityBaseline_FullMethodName = "/sttattus.workout.v1.WorkoutService/GetCurrentMobilityBaseline"
-	WorkoutService_UpsertMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/UpsertMobilityBaseline"
-	WorkoutService_DeleteMobilityBaseline_FullMethodName     = "/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline"
-	WorkoutService_ListSensorConnections_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListSensorConnections"
-	WorkoutService_SetSensorConnectionStatus_FullMethodName  = "/sttattus.workout.v1.WorkoutService/SetSensorConnectionStatus"
-	WorkoutService_MarkSensorSynced_FullMethodName           = "/sttattus.workout.v1.WorkoutService/MarkSensorSynced"
-	WorkoutService_SetSensorPriority_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SetSensorPriority"
-	WorkoutService_GetForgeAnalytics_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GetForgeAnalytics"
-	WorkoutService_GetSessionAnalytics_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetSessionAnalytics"
-	WorkoutService_ListUserEquipment_FullMethodName          = "/sttattus.workout.v1.WorkoutService/ListUserEquipment"
-	WorkoutService_AddUserEquipment_FullMethodName           = "/sttattus.workout.v1.WorkoutService/AddUserEquipment"
-	WorkoutService_DeleteUserEquipment_FullMethodName        = "/sttattus.workout.v1.WorkoutService/DeleteUserEquipment"
-	WorkoutService_ListWorkoutRivalries_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListWorkoutRivalries"
-	WorkoutService_GetRivalryDetail_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetRivalryDetail"
-	WorkoutService_SimulateForgeRank_FullMethodName          = "/sttattus.workout.v1.WorkoutService/SimulateForgeRank"
-	WorkoutService_GetRecoveryScore_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetRecoveryScore"
-	WorkoutService_StartCoachThread_FullMethodName           = "/sttattus.workout.v1.WorkoutService/StartCoachThread"
-	WorkoutService_ListMyCoachThreads_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ListMyCoachThreads"
-	WorkoutService_GetCoachThread_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetCoachThread"
-	WorkoutService_PostCoachMessage_FullMethodName           = "/sttattus.workout.v1.WorkoutService/PostCoachMessage"
-	WorkoutService_ListAnthologyArticles_FullMethodName      = "/sttattus.workout.v1.WorkoutService/ListAnthologyArticles"
-	WorkoutService_GetAnthologyArticle_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetAnthologyArticle"
-	WorkoutService_CreateAthleteShare_FullMethodName         = "/sttattus.workout.v1.WorkoutService/CreateAthleteShare"
-	WorkoutService_ListMyAthleteShares_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ListMyAthleteShares"
-	WorkoutService_RevokeAthleteShare_FullMethodName         = "/sttattus.workout.v1.WorkoutService/RevokeAthleteShare"
-	WorkoutService_GenerateForgeAlmanac_FullMethodName       = "/sttattus.workout.v1.WorkoutService/GenerateForgeAlmanac"
-	WorkoutService_AnalyzeFormVideo_FullMethodName           = "/sttattus.workout.v1.WorkoutService/AnalyzeFormVideo"
-	WorkoutService_CreateRivalry_FullMethodName              = "/sttattus.workout.v1.WorkoutService/CreateRivalry"
-	WorkoutService_GetLeaderboard_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetLeaderboard"
-	WorkoutService_ListForgeLounges_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ListForgeLounges"
-	WorkoutService_ListMyLoungeBookings_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ListMyLoungeBookings"
-	WorkoutService_CreateLoungeBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/CreateLoungeBooking"
-	WorkoutService_CancelLoungeBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/CancelLoungeBooking"
-	WorkoutService_ListCoaches_FullMethodName                = "/sttattus.workout.v1.WorkoutService/ListCoaches"
-	WorkoutService_RequestCoachBooking_FullMethodName        = "/sttattus.workout.v1.WorkoutService/RequestCoachBooking"
+	WorkoutService_ListWorkouts_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/ListWorkouts"
+	WorkoutService_GetWorkout_FullMethodName                                = "/sttattus.workout.v1.WorkoutService/GetWorkout"
+	WorkoutService_LogDayWorkout_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/LogDayWorkout"
+	WorkoutService_ListHistory_FullMethodName                               = "/sttattus.workout.v1.WorkoutService/ListHistory"
+	WorkoutService_GetForgeStats_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/GetForgeStats"
+	WorkoutService_SubmitFeedback_FullMethodName                            = "/sttattus.workout.v1.WorkoutService/SubmitFeedback"
+	WorkoutService_GetToday_FullMethodName                                  = "/sttattus.workout.v1.WorkoutService/GetToday"
+	WorkoutService_GetRankLadder_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/GetRankLadder"
+	WorkoutService_ListExercises_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/ListExercises"
+	WorkoutService_CreateSession_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/CreateSession"
+	WorkoutService_GetSession_FullMethodName                                = "/sttattus.workout.v1.WorkoutService/GetSession"
+	WorkoutService_GetActiveSession_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/GetActiveSession"
+	WorkoutService_ListSessions_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/ListSessions"
+	WorkoutService_UpdateSessionStatus_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/UpdateSessionStatus"
+	WorkoutService_LogSet_FullMethodName                                    = "/sttattus.workout.v1.WorkoutService/LogSet"
+	WorkoutService_GetForgeStreak_FullMethodName                            = "/sttattus.workout.v1.WorkoutService/GetForgeStreak"
+	WorkoutService_CreateFormVideo_FullMethodName                           = "/sttattus.workout.v1.WorkoutService/CreateFormVideo"
+	WorkoutService_ListMyFormVideos_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/ListMyFormVideos"
+	WorkoutService_DeleteFormVideo_FullMethodName                           = "/sttattus.workout.v1.WorkoutService/DeleteFormVideo"
+	WorkoutService_UpdateFormVideoStatus_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/UpdateFormVideoStatus"
+	WorkoutService_ListProgrammes_FullMethodName                            = "/sttattus.workout.v1.WorkoutService/ListProgrammes"
+	WorkoutService_GetProgramme_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/GetProgramme"
+	WorkoutService_EnrolInProgramme_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/EnrolInProgramme"
+	WorkoutService_GetActiveEnrolment_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/GetActiveEnrolment"
+	WorkoutService_ListMyEnrolments_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/ListMyEnrolments"
+	WorkoutService_UpdateEnrolment_FullMethodName                           = "/sttattus.workout.v1.WorkoutService/UpdateEnrolment"
+	WorkoutService_ListProgrammeWeeks_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/ListProgrammeWeeks"
+	WorkoutService_GetProgrammeWeek_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/GetProgrammeWeek"
+	WorkoutService_ListMyPRs_FullMethodName                                 = "/sttattus.workout.v1.WorkoutService/ListMyPRs"
+	WorkoutService_ListRecentPRs_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/ListRecentPRs"
+	WorkoutService_ListBodyCompositions_FullMethodName                      = "/sttattus.workout.v1.WorkoutService/ListBodyCompositions"
+	WorkoutService_CreateBodyComposition_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/CreateBodyComposition"
+	WorkoutService_DeleteBodyComposition_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/DeleteBodyComposition"
+	WorkoutService_ListInjuries_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/ListInjuries"
+	WorkoutService_CreateInjury_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/CreateInjury"
+	WorkoutService_UpdateInjuryStatus_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/UpdateInjuryStatus"
+	WorkoutService_DeleteInjury_FullMethodName                              = "/sttattus.workout.v1.WorkoutService/DeleteInjury"
+	WorkoutService_ListMobilityBaselines_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/ListMobilityBaselines"
+	WorkoutService_GetCurrentMobilityBaseline_FullMethodName                = "/sttattus.workout.v1.WorkoutService/GetCurrentMobilityBaseline"
+	WorkoutService_UpsertMobilityBaseline_FullMethodName                    = "/sttattus.workout.v1.WorkoutService/UpsertMobilityBaseline"
+	WorkoutService_DeleteMobilityBaseline_FullMethodName                    = "/sttattus.workout.v1.WorkoutService/DeleteMobilityBaseline"
+	WorkoutService_ListSensorConnections_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/ListSensorConnections"
+	WorkoutService_SetSensorConnectionStatus_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/SetSensorConnectionStatus"
+	WorkoutService_MarkSensorSynced_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/MarkSensorSynced"
+	WorkoutService_SetSensorPriority_FullMethodName                         = "/sttattus.workout.v1.WorkoutService/SetSensorPriority"
+	WorkoutService_GetForgeAnalytics_FullMethodName                         = "/sttattus.workout.v1.WorkoutService/GetForgeAnalytics"
+	WorkoutService_GetSessionAnalytics_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/GetSessionAnalytics"
+	WorkoutService_ListUserEquipment_FullMethodName                         = "/sttattus.workout.v1.WorkoutService/ListUserEquipment"
+	WorkoutService_AddUserEquipment_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/AddUserEquipment"
+	WorkoutService_DeleteUserEquipment_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/DeleteUserEquipment"
+	WorkoutService_ListWorkoutRivalries_FullMethodName                      = "/sttattus.workout.v1.WorkoutService/ListWorkoutRivalries"
+	WorkoutService_GetRivalryDetail_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/GetRivalryDetail"
+	WorkoutService_SimulateForgeRank_FullMethodName                         = "/sttattus.workout.v1.WorkoutService/SimulateForgeRank"
+	WorkoutService_GetRecoveryScore_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/GetRecoveryScore"
+	WorkoutService_StartCoachThread_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/StartCoachThread"
+	WorkoutService_ListMyCoachThreads_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/ListMyCoachThreads"
+	WorkoutService_GetCoachThread_FullMethodName                            = "/sttattus.workout.v1.WorkoutService/GetCoachThread"
+	WorkoutService_PostCoachMessage_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/PostCoachMessage"
+	WorkoutService_ListAnthologyArticles_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/ListAnthologyArticles"
+	WorkoutService_GetAnthologyArticle_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/GetAnthologyArticle"
+	WorkoutService_CreateAthleteShare_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/CreateAthleteShare"
+	WorkoutService_ListMyAthleteShares_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/ListMyAthleteShares"
+	WorkoutService_RevokeAthleteShare_FullMethodName                        = "/sttattus.workout.v1.WorkoutService/RevokeAthleteShare"
+	WorkoutService_GenerateForgeAlmanac_FullMethodName                      = "/sttattus.workout.v1.WorkoutService/GenerateForgeAlmanac"
+	WorkoutService_AnalyzeFormVideo_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/AnalyzeFormVideo"
+	WorkoutService_CreateRivalry_FullMethodName                             = "/sttattus.workout.v1.WorkoutService/CreateRivalry"
+	WorkoutService_GetLeaderboard_FullMethodName                            = "/sttattus.workout.v1.WorkoutService/GetLeaderboard"
+	WorkoutService_ListForgeLounges_FullMethodName                          = "/sttattus.workout.v1.WorkoutService/ListForgeLounges"
+	WorkoutService_ListMyLoungeBookings_FullMethodName                      = "/sttattus.workout.v1.WorkoutService/ListMyLoungeBookings"
+	WorkoutService_CreateLoungeBooking_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/CreateLoungeBooking"
+	WorkoutService_CancelLoungeBooking_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/CancelLoungeBooking"
+	WorkoutService_ListCoaches_FullMethodName                               = "/sttattus.workout.v1.WorkoutService/ListCoaches"
+	WorkoutService_RequestCoachBooking_FullMethodName                       = "/sttattus.workout.v1.WorkoutService/RequestCoachBooking"
+	WorkoutService_GetAdaptiveProgrammingOverview_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetAdaptiveProgrammingOverview"
+	WorkoutService_GenerateOrUpdateProgrammeVersion_FullMethodName          = "/sttattus.workout.v1.WorkoutService/GenerateOrUpdateProgrammeVersion"
+	WorkoutService_DecideProgrammeDraftAcceptance_FullMethodName            = "/sttattus.workout.v1.WorkoutService/DecideProgrammeDraftAcceptance"
+	WorkoutService_TriggerSafeAdaptiveReplan_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/TriggerSafeAdaptiveReplan"
+	WorkoutService_UpsertAdaptiveProgressionRule_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpsertAdaptiveProgressionRule"
+	WorkoutService_RollbackProgrammeVersion_FullMethodName                  = "/sttattus.workout.v1.WorkoutService/RollbackProgrammeVersion"
+	WorkoutService_GetMovementIntelligenceOverview_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetMovementIntelligenceOverview"
+	WorkoutService_RankIntentPreservingSubstitutions_FullMethodName         = "/sttattus.workout.v1.WorkoutService/RankIntentPreservingSubstitutions"
+	WorkoutService_UpsertPersonalTechniqueManual_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpsertPersonalTechniqueManual"
+	WorkoutService_SubmitCustomMovementForReview_FullMethodName             = "/sttattus.workout.v1.WorkoutService/SubmitCustomMovementForReview"
+	WorkoutService_UpsertMovementGraphProfile_FullMethodName                = "/sttattus.workout.v1.WorkoutService/UpsertMovementGraphProfile"
+	WorkoutService_RecordSubstitutionSelection_FullMethodName               = "/sttattus.workout.v1.WorkoutService/RecordSubstitutionSelection"
+	WorkoutService_GetFormIntelligenceOverview_FullMethodName               = "/sttattus.workout.v1.WorkoutService/GetFormIntelligenceOverview"
+	WorkoutService_SubmitFormClipObservation_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/SubmitFormClipObservation"
+	WorkoutService_EscalateFormClipToCoach_FullMethodName                   = "/sttattus.workout.v1.WorkoutService/EscalateFormClipToCoach"
+	WorkoutService_DecideCoachFormReview_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/DecideCoachFormReview"
+	WorkoutService_UpdateFormPrivacyAndRetention_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpdateFormPrivacyAndRetention"
+	WorkoutService_EraseFormClipAndKeypoints_FullMethodName                 = "/sttattus.workout.v1.WorkoutService/EraseFormClipAndKeypoints"
+	WorkoutService_GetWearableRecoveryFusionOverview_FullMethodName         = "/sttattus.workout.v1.WorkoutService/GetWearableRecoveryFusionOverview"
+	WorkoutService_UpsertWearablePurposeGrant_FullMethodName                = "/sttattus.workout.v1.WorkoutService/UpsertWearablePurposeGrant"
+	WorkoutService_RevokeWearablePurposeGrant_FullMethodName                = "/sttattus.workout.v1.WorkoutService/RevokeWearablePurposeGrant"
+	WorkoutService_ConfigureRecoverySensorStream_FullMethodName             = "/sttattus.workout.v1.WorkoutService/ConfigureRecoverySensorStream"
+	WorkoutService_SubmitNoWearableSubjectiveReadiness_FullMethodName       = "/sttattus.workout.v1.WorkoutService/SubmitNoWearableSubjectiveReadiness"
+	WorkoutService_ReconcileSensorConflictOrOutage_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ReconcileSensorConflictOrOutage"
+	WorkoutService_GetPerformanceAnalyticsStudioOverview_FullMethodName     = "/sttattus.workout.v1.WorkoutService/GetPerformanceAnalyticsStudioOverview"
+	WorkoutService_RecordPerformanceExposureLedger_FullMethodName           = "/sttattus.workout.v1.WorkoutService/RecordPerformanceExposureLedger"
+	WorkoutService_UpsertStrengthPerformanceModel_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpsertStrengthPerformanceModel"
+	WorkoutService_CreateTrainingNOf1Experiment_FullMethodName              = "/sttattus.workout.v1.WorkoutService/CreateTrainingNOf1Experiment"
+	WorkoutService_LogTrainingNOf1ExperimentSession_FullMethodName          = "/sttattus.workout.v1.WorkoutService/LogTrainingNOf1ExperimentSession"
+	WorkoutService_EvaluateTrainingNOf1Experiment_FullMethodName            = "/sttattus.workout.v1.WorkoutService/EvaluateTrainingNOf1Experiment"
+	WorkoutService_GetInjuryReturnPathwayOverview_FullMethodName            = "/sttattus.workout.v1.WorkoutService/GetInjuryReturnPathwayOverview"
+	WorkoutService_UpsertInjuryRestrictionLock_FullMethodName               = "/sttattus.workout.v1.WorkoutService/UpsertInjuryRestrictionLock"
+	WorkoutService_LogInSessionPainTriageEvent_FullMethodName               = "/sttattus.workout.v1.WorkoutService/LogInSessionPainTriageEvent"
+	WorkoutService_AdvanceReturnToTrainingStage_FullMethodName              = "/sttattus.workout.v1.WorkoutService/AdvanceReturnToTrainingStage"
+	WorkoutService_RecordReturnToTrainingSetback_FullMethodName             = "/sttattus.workout.v1.WorkoutService/RecordReturnToTrainingSetback"
+	WorkoutService_ClearInjuryRestrictionLock_FullMethodName                = "/sttattus.workout.v1.WorkoutService/ClearInjuryRestrictionLock"
+	WorkoutService_GetCoachOsCollaborationOverview_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetCoachOsCollaborationOverview"
+	WorkoutService_UpsertCoachAthleteScopedGrant_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpsertCoachAthleteScopedGrant"
+	WorkoutService_RevokeCoachAthleteScopedGrant_FullMethodName             = "/sttattus.workout.v1.WorkoutService/RevokeCoachAthleteScopedGrant"
+	WorkoutService_ProposeCoachProgrammeChange_FullMethodName               = "/sttattus.workout.v1.WorkoutService/ProposeCoachProgrammeChange"
+	WorkoutService_RespondToCoachChangeProposal_FullMethodName              = "/sttattus.workout.v1.WorkoutService/RespondToCoachChangeProposal"
+	WorkoutService_UpdateCoachMarketplaceEngagement_FullMethodName          = "/sttattus.workout.v1.WorkoutService/UpdateCoachMarketplaceEngagement"
+	WorkoutService_GetTeamsClubsFacilitiesOverview_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GetTeamsClubsFacilitiesOverview"
+	WorkoutService_UpsertTeamSquadRoster_FullMethodName                     = "/sttattus.workout.v1.WorkoutService/UpsertTeamSquadRoster"
+	WorkoutService_SubmitTeamTrafficLightCheckin_FullMethodName             = "/sttattus.workout.v1.WorkoutService/SubmitTeamTrafficLightCheckin"
+	WorkoutService_ReserveOrUpdateFacilityRackStation_FullMethodName        = "/sttattus.workout.v1.WorkoutService/ReserveOrUpdateFacilityRackStation"
+	WorkoutService_FlagFacilityMaintenanceOrIncident_FullMethodName         = "/sttattus.workout.v1.WorkoutService/FlagFacilityMaintenanceOrIncident"
+	WorkoutService_VerifyYouthSquadSafeguarding_FullMethodName              = "/sttattus.workout.v1.WorkoutService/VerifyYouthSquadSafeguarding"
+	WorkoutService_GetCompetitionVerifiedPerformanceOverview_FullMethodName = "/sttattus.workout.v1.WorkoutService/GetCompetitionVerifiedPerformanceOverview"
+	WorkoutService_UpsertCompetitionEventPlan_FullMethodName                = "/sttattus.workout.v1.WorkoutService/UpsertCompetitionEventPlan"
+	WorkoutService_SubmitVerifiedPerformanceResult_FullMethodName           = "/sttattus.workout.v1.WorkoutService/SubmitVerifiedPerformanceResult"
+	WorkoutService_FilePerformanceResultAppeal_FullMethodName               = "/sttattus.workout.v1.WorkoutService/FilePerformanceResultAppeal"
+	WorkoutService_RecordCompetitionRuleAndTueCheck_FullMethodName          = "/sttattus.workout.v1.WorkoutService/RecordCompetitionRuleAndTueCheck"
+	WorkoutService_ToggleOfflineVenueCompetitionMode_FullMethodName         = "/sttattus.workout.v1.WorkoutService/ToggleOfflineVenueCompetitionMode"
+	WorkoutService_GetSportHybridStudiosOverview_FullMethodName             = "/sttattus.workout.v1.WorkoutService/GetSportHybridStudiosOverview"
+	WorkoutService_UpsertSportHybridStudioModule_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpsertSportHybridStudioModule"
+	WorkoutService_ConfigureHybridInterferenceSchedule_FullMethodName       = "/sttattus.workout.v1.WorkoutService/ConfigureHybridInterferenceSchedule"
+	WorkoutService_LogSportSkillOrManualActivitySession_FullMethodName      = "/sttattus.workout.v1.WorkoutService/LogSportSkillOrManualActivitySession"
+	WorkoutService_RegisterCustomManualUnvalidatedSport_FullMethodName      = "/sttattus.workout.v1.WorkoutService/RegisterCustomManualUnvalidatedSport"
+	WorkoutService_AuditHybridLoadDeDuplication_FullMethodName              = "/sttattus.workout.v1.WorkoutService/AuditHybridLoadDeDuplication"
+	WorkoutService_GetEquipmentTravelAdaptationOverview_FullMethodName      = "/sttattus.workout.v1.WorkoutService/GetEquipmentTravelAdaptationOverview"
+	WorkoutService_UpsertEquipmentLocationProfile_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpsertEquipmentLocationProfile"
+	WorkoutService_GenerateTravelWorkoutAdaptation_FullMethodName           = "/sttattus.workout.v1.WorkoutService/GenerateTravelWorkoutAdaptation"
+	WorkoutService_UpsertVerifiedGymVenueListing_FullMethodName             = "/sttattus.workout.v1.WorkoutService/UpsertVerifiedGymVenueListing"
+	WorkoutService_FlagStaleGymVenueListing_FullMethodName                  = "/sttattus.workout.v1.WorkoutService/FlagStaleGymVenueListing"
+	WorkoutService_RevertTravelWorkoutToHomeGym_FullMethodName              = "/sttattus.workout.v1.WorkoutService/RevertTravelWorkoutToHomeGym"
+	WorkoutService_GetFuelWeightSafetyOverview_FullMethodName               = "/sttattus.workout.v1.WorkoutService/GetFuelWeightSafetyOverview"
+	WorkoutService_UpsertSessionFuelHydrationPlan_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpsertSessionFuelHydrationPlan"
+	WorkoutService_RecordPrivateBodyCompositionTrend_FullMethodName         = "/sttattus.workout.v1.WorkoutService/RecordPrivateBodyCompositionTrend"
+	WorkoutService_EvaluateWeightClassSafetyPlan_FullMethodName             = "/sttattus.workout.v1.WorkoutService/EvaluateWeightClassSafetyPlan"
+	WorkoutService_EscalateWeightCutToProfessionalRoute_FullMethodName      = "/sttattus.workout.v1.WorkoutService/EscalateWeightCutToProfessionalRoute"
+	WorkoutService_VerifyBodyCompositionPrivacyIsolation_FullMethodName     = "/sttattus.workout.v1.WorkoutService/VerifyBodyCompositionPrivacyIsolation"
+	WorkoutService_GetHealthyCompetitionCrewsOverview_FullMethodName        = "/sttattus.workout.v1.WorkoutService/GetHealthyCompetitionCrewsOverview"
+	WorkoutService_UpsertHealthyCompetitionCohort_FullMethodName            = "/sttattus.workout.v1.WorkoutService/UpsertHealthyCompetitionCohort"
+	WorkoutService_ToggleCompetitionMutePreference_FullMethodName           = "/sttattus.workout.v1.WorkoutService/ToggleCompetitionMutePreference"
+	WorkoutService_SubmitCrewChallengeOrAppeal_FullMethodName               = "/sttattus.workout.v1.WorkoutService/SubmitCrewChallengeOrAppeal"
+	WorkoutService_RecordEmpireRewardContribution_FullMethodName            = "/sttattus.workout.v1.WorkoutService/RecordEmpireRewardContribution"
+	WorkoutService_AdjudicateCrewAntiCheatCase_FullMethodName               = "/sttattus.workout.v1.WorkoutService/AdjudicateCrewAntiCheatCase"
+	WorkoutService_GetOfflineAccessibleReleaseCertOverview_FullMethodName   = "/sttattus.workout.v1.WorkoutService/GetOfflineAccessibleReleaseCertOverview"
+	WorkoutService_CertifyOfflineMultimodalSyncState_FullMethodName         = "/sttattus.workout.v1.WorkoutService/CertifyOfflineMultimodalSyncState"
+	WorkoutService_UpsertAccessibilityAdaptiveProfile_FullMethodName        = "/sttattus.workout.v1.WorkoutService/UpsertAccessibilityAdaptiveProfile"
+	WorkoutService_RunMigrationAndErasureCertification_FullMethodName       = "/sttattus.workout.v1.WorkoutService/RunMigrationAndErasureCertification"
+	WorkoutService_VerifyBatteryAwareSensorPolicy_FullMethodName            = "/sttattus.workout.v1.WorkoutService/VerifyBatteryAwareSensorPolicy"
+	WorkoutService_SignOffForge16Of16ReleaseGate_FullMethodName             = "/sttattus.workout.v1.WorkoutService/SignOffForge16Of16ReleaseGate"
 )
 
 // WorkoutServiceClient is the client API for WorkoutService service.
@@ -224,6 +308,104 @@ type WorkoutServiceClient interface {
 	// can pick up.
 	ListCoaches(ctx context.Context, in *ListCoachesRequest, opts ...grpc.CallOption) (*ListCoachesResponse, error)
 	RequestCoachBooking(ctx context.Context, in *RequestCoachBookingRequest, opts ...grpc.CallOption) (*RequestCoachBookingResponse, error)
+	// ===== Choice 3 (FG3) — Explainable Adaptive Programming Engine =====
+	GetAdaptiveProgrammingOverview(ctx context.Context, in *GetAdaptiveProgrammingOverviewRequest, opts ...grpc.CallOption) (*GetAdaptiveProgrammingOverviewResponse, error)
+	GenerateOrUpdateProgrammeVersion(ctx context.Context, in *GenerateOrUpdateProgrammeVersionRequest, opts ...grpc.CallOption) (*GenerateOrUpdateProgrammeVersionResponse, error)
+	DecideProgrammeDraftAcceptance(ctx context.Context, in *DecideProgrammeDraftAcceptanceRequest, opts ...grpc.CallOption) (*DecideProgrammeDraftAcceptanceResponse, error)
+	TriggerSafeAdaptiveReplan(ctx context.Context, in *TriggerSafeAdaptiveReplanRequest, opts ...grpc.CallOption) (*TriggerSafeAdaptiveReplanResponse, error)
+	UpsertAdaptiveProgressionRule(ctx context.Context, in *UpsertAdaptiveProgressionRuleRequest, opts ...grpc.CallOption) (*UpsertAdaptiveProgressionRuleResponse, error)
+	RollbackProgrammeVersion(ctx context.Context, in *RollbackProgrammeVersionRequest, opts ...grpc.CallOption) (*RollbackProgrammeVersionResponse, error)
+	// ===== Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual =====
+	GetMovementIntelligenceOverview(ctx context.Context, in *GetMovementIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetMovementIntelligenceOverviewResponse, error)
+	RankIntentPreservingSubstitutions(ctx context.Context, in *RankIntentPreservingSubstitutionsRequest, opts ...grpc.CallOption) (*RankIntentPreservingSubstitutionsResponse, error)
+	UpsertPersonalTechniqueManual(ctx context.Context, in *UpsertPersonalTechniqueManualRequest, opts ...grpc.CallOption) (*UpsertPersonalTechniqueManualResponse, error)
+	SubmitCustomMovementForReview(ctx context.Context, in *SubmitCustomMovementForReviewRequest, opts ...grpc.CallOption) (*SubmitCustomMovementForReviewResponse, error)
+	UpsertMovementGraphProfile(ctx context.Context, in *UpsertMovementGraphProfileRequest, opts ...grpc.CallOption) (*UpsertMovementGraphProfileResponse, error)
+	RecordSubstitutionSelection(ctx context.Context, in *RecordSubstitutionSelectionRequest, opts ...grpc.CallOption) (*RecordSubstitutionSelectionResponse, error)
+	// ===== Choice 5 (FG5) — Technique and Form Intelligence Laboratory =====
+	GetFormIntelligenceOverview(ctx context.Context, in *GetFormIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetFormIntelligenceOverviewResponse, error)
+	SubmitFormClipObservation(ctx context.Context, in *SubmitFormClipObservationRequest, opts ...grpc.CallOption) (*SubmitFormClipObservationResponse, error)
+	EscalateFormClipToCoach(ctx context.Context, in *EscalateFormClipToCoachRequest, opts ...grpc.CallOption) (*EscalateFormClipToCoachResponse, error)
+	DecideCoachFormReview(ctx context.Context, in *DecideCoachFormReviewRequest, opts ...grpc.CallOption) (*DecideCoachFormReviewResponse, error)
+	UpdateFormPrivacyAndRetention(ctx context.Context, in *UpdateFormPrivacyAndRetentionRequest, opts ...grpc.CallOption) (*UpdateFormPrivacyAndRetentionResponse, error)
+	EraseFormClipAndKeypoints(ctx context.Context, in *EraseFormClipAndKeypointsRequest, opts ...grpc.CallOption) (*EraseFormClipAndKeypointsResponse, error)
+	// ===== Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion =====
+	GetWearableRecoveryFusionOverview(ctx context.Context, in *GetWearableRecoveryFusionOverviewRequest, opts ...grpc.CallOption) (*GetWearableRecoveryFusionOverviewResponse, error)
+	UpsertWearablePurposeGrant(ctx context.Context, in *UpsertWearablePurposeGrantRequest, opts ...grpc.CallOption) (*UpsertWearablePurposeGrantResponse, error)
+	RevokeWearablePurposeGrant(ctx context.Context, in *RevokeWearablePurposeGrantRequest, opts ...grpc.CallOption) (*RevokeWearablePurposeGrantResponse, error)
+	ConfigureRecoverySensorStream(ctx context.Context, in *ConfigureRecoverySensorStreamRequest, opts ...grpc.CallOption) (*ConfigureRecoverySensorStreamResponse, error)
+	SubmitNoWearableSubjectiveReadiness(ctx context.Context, in *SubmitNoWearableSubjectiveReadinessRequest, opts ...grpc.CallOption) (*SubmitNoWearableSubjectiveReadinessResponse, error)
+	ReconcileSensorConflictOrOutage(ctx context.Context, in *ReconcileSensorConflictOrOutageRequest, opts ...grpc.CallOption) (*ReconcileSensorConflictOrOutageResponse, error)
+	// ===== Choice 7 (FG7) — Training Load, Progression, and Performance Analytics =====
+	GetPerformanceAnalyticsStudioOverview(ctx context.Context, in *GetPerformanceAnalyticsStudioOverviewRequest, opts ...grpc.CallOption) (*GetPerformanceAnalyticsStudioOverviewResponse, error)
+	RecordPerformanceExposureLedger(ctx context.Context, in *RecordPerformanceExposureLedgerRequest, opts ...grpc.CallOption) (*RecordPerformanceExposureLedgerResponse, error)
+	UpsertStrengthPerformanceModel(ctx context.Context, in *UpsertStrengthPerformanceModelRequest, opts ...grpc.CallOption) (*UpsertStrengthPerformanceModelResponse, error)
+	CreateTrainingNOf1Experiment(ctx context.Context, in *CreateTrainingNOf1ExperimentRequest, opts ...grpc.CallOption) (*CreateTrainingNOf1ExperimentResponse, error)
+	LogTrainingNOf1ExperimentSession(ctx context.Context, in *LogTrainingNOf1ExperimentSessionRequest, opts ...grpc.CallOption) (*LogTrainingNOf1ExperimentSessionResponse, error)
+	EvaluateTrainingNOf1Experiment(ctx context.Context, in *EvaluateTrainingNOf1ExperimentRequest, opts ...grpc.CallOption) (*EvaluateTrainingNOf1ExperimentResponse, error)
+	// ===== Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway =====
+	GetInjuryReturnPathwayOverview(ctx context.Context, in *GetInjuryReturnPathwayOverviewRequest, opts ...grpc.CallOption) (*GetInjuryReturnPathwayOverviewResponse, error)
+	UpsertInjuryRestrictionLock(ctx context.Context, in *UpsertInjuryRestrictionLockRequest, opts ...grpc.CallOption) (*UpsertInjuryRestrictionLockResponse, error)
+	LogInSessionPainTriageEvent(ctx context.Context, in *LogInSessionPainTriageEventRequest, opts ...grpc.CallOption) (*LogInSessionPainTriageEventResponse, error)
+	AdvanceReturnToTrainingStage(ctx context.Context, in *AdvanceReturnToTrainingStageRequest, opts ...grpc.CallOption) (*AdvanceReturnToTrainingStageResponse, error)
+	RecordReturnToTrainingSetback(ctx context.Context, in *RecordReturnToTrainingSetbackRequest, opts ...grpc.CallOption) (*RecordReturnToTrainingSetbackResponse, error)
+	ClearInjuryRestrictionLock(ctx context.Context, in *ClearInjuryRestrictionLockRequest, opts ...grpc.CallOption) (*ClearInjuryRestrictionLockResponse, error)
+	// ===== Choice 9 (FG9) — Coach OS and Athlete Collaboration =====
+	GetCoachOsCollaborationOverview(ctx context.Context, in *GetCoachOsCollaborationOverviewRequest, opts ...grpc.CallOption) (*GetCoachOsCollaborationOverviewResponse, error)
+	UpsertCoachAthleteScopedGrant(ctx context.Context, in *UpsertCoachAthleteScopedGrantRequest, opts ...grpc.CallOption) (*UpsertCoachAthleteScopedGrantResponse, error)
+	RevokeCoachAthleteScopedGrant(ctx context.Context, in *RevokeCoachAthleteScopedGrantRequest, opts ...grpc.CallOption) (*RevokeCoachAthleteScopedGrantResponse, error)
+	ProposeCoachProgrammeChange(ctx context.Context, in *ProposeCoachProgrammeChangeRequest, opts ...grpc.CallOption) (*ProposeCoachProgrammeChangeResponse, error)
+	RespondToCoachChangeProposal(ctx context.Context, in *RespondToCoachChangeProposalRequest, opts ...grpc.CallOption) (*RespondToCoachChangeProposalResponse, error)
+	UpdateCoachMarketplaceEngagement(ctx context.Context, in *UpdateCoachMarketplaceEngagementRequest, opts ...grpc.CallOption) (*UpdateCoachMarketplaceEngagementResponse, error)
+	// ===== Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations =====
+	GetTeamsClubsFacilitiesOverview(ctx context.Context, in *GetTeamsClubsFacilitiesOverviewRequest, opts ...grpc.CallOption) (*GetTeamsClubsFacilitiesOverviewResponse, error)
+	UpsertTeamSquadRoster(ctx context.Context, in *UpsertTeamSquadRosterRequest, opts ...grpc.CallOption) (*UpsertTeamSquadRosterResponse, error)
+	SubmitTeamTrafficLightCheckin(ctx context.Context, in *SubmitTeamTrafficLightCheckinRequest, opts ...grpc.CallOption) (*SubmitTeamTrafficLightCheckinResponse, error)
+	ReserveOrUpdateFacilityRackStation(ctx context.Context, in *ReserveOrUpdateFacilityRackStationRequest, opts ...grpc.CallOption) (*ReserveOrUpdateFacilityRackStationResponse, error)
+	FlagFacilityMaintenanceOrIncident(ctx context.Context, in *FlagFacilityMaintenanceOrIncidentRequest, opts ...grpc.CallOption) (*FlagFacilityMaintenanceOrIncidentResponse, error)
+	VerifyYouthSquadSafeguarding(ctx context.Context, in *VerifyYouthSquadSafeguardingRequest, opts ...grpc.CallOption) (*VerifyYouthSquadSafeguardingResponse, error)
+	// ===== Choice 11 (FG11) — Competition, Test Day, and Verified Performance =====
+	GetCompetitionVerifiedPerformanceOverview(ctx context.Context, in *GetCompetitionVerifiedPerformanceOverviewRequest, opts ...grpc.CallOption) (*GetCompetitionVerifiedPerformanceOverviewResponse, error)
+	UpsertCompetitionEventPlan(ctx context.Context, in *UpsertCompetitionEventPlanRequest, opts ...grpc.CallOption) (*UpsertCompetitionEventPlanResponse, error)
+	SubmitVerifiedPerformanceResult(ctx context.Context, in *SubmitVerifiedPerformanceResultRequest, opts ...grpc.CallOption) (*SubmitVerifiedPerformanceResultResponse, error)
+	FilePerformanceResultAppeal(ctx context.Context, in *FilePerformanceResultAppealRequest, opts ...grpc.CallOption) (*FilePerformanceResultAppealResponse, error)
+	RecordCompetitionRuleAndTueCheck(ctx context.Context, in *RecordCompetitionRuleAndTueCheckRequest, opts ...grpc.CallOption) (*RecordCompetitionRuleAndTueCheckResponse, error)
+	ToggleOfflineVenueCompetitionMode(ctx context.Context, in *ToggleOfflineVenueCompetitionModeRequest, opts ...grpc.CallOption) (*ToggleOfflineVenueCompetitionModeResponse, error)
+	// ===== Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios =====
+	GetSportHybridStudiosOverview(ctx context.Context, in *GetSportHybridStudiosOverviewRequest, opts ...grpc.CallOption) (*GetSportHybridStudiosOverviewResponse, error)
+	UpsertSportHybridStudioModule(ctx context.Context, in *UpsertSportHybridStudioModuleRequest, opts ...grpc.CallOption) (*UpsertSportHybridStudioModuleResponse, error)
+	ConfigureHybridInterferenceSchedule(ctx context.Context, in *ConfigureHybridInterferenceScheduleRequest, opts ...grpc.CallOption) (*ConfigureHybridInterferenceScheduleResponse, error)
+	LogSportSkillOrManualActivitySession(ctx context.Context, in *LogSportSkillOrManualActivitySessionRequest, opts ...grpc.CallOption) (*LogSportSkillOrManualActivitySessionResponse, error)
+	RegisterCustomManualUnvalidatedSport(ctx context.Context, in *RegisterCustomManualUnvalidatedSportRequest, opts ...grpc.CallOption) (*RegisterCustomManualUnvalidatedSportResponse, error)
+	AuditHybridLoadDeDuplication(ctx context.Context, in *AuditHybridLoadDeDuplicationRequest, opts ...grpc.CallOption) (*AuditHybridLoadDeDuplicationResponse, error)
+	// ===== Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation =====
+	GetEquipmentTravelAdaptationOverview(ctx context.Context, in *GetEquipmentTravelAdaptationOverviewRequest, opts ...grpc.CallOption) (*GetEquipmentTravelAdaptationOverviewResponse, error)
+	UpsertEquipmentLocationProfile(ctx context.Context, in *UpsertEquipmentLocationProfileRequest, opts ...grpc.CallOption) (*UpsertEquipmentLocationProfileResponse, error)
+	GenerateTravelWorkoutAdaptation(ctx context.Context, in *GenerateTravelWorkoutAdaptationRequest, opts ...grpc.CallOption) (*GenerateTravelWorkoutAdaptationResponse, error)
+	UpsertVerifiedGymVenueListing(ctx context.Context, in *UpsertVerifiedGymVenueListingRequest, opts ...grpc.CallOption) (*UpsertVerifiedGymVenueListingResponse, error)
+	FlagStaleGymVenueListing(ctx context.Context, in *FlagStaleGymVenueListingRequest, opts ...grpc.CallOption) (*FlagStaleGymVenueListingResponse, error)
+	RevertTravelWorkoutToHomeGym(ctx context.Context, in *RevertTravelWorkoutToHomeGymRequest, opts ...grpc.CallOption) (*RevertTravelWorkoutToHomeGymResponse, error)
+	// ===== Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support =====
+	GetFuelWeightSafetyOverview(ctx context.Context, in *GetFuelWeightSafetyOverviewRequest, opts ...grpc.CallOption) (*GetFuelWeightSafetyOverviewResponse, error)
+	UpsertSessionFuelHydrationPlan(ctx context.Context, in *UpsertSessionFuelHydrationPlanRequest, opts ...grpc.CallOption) (*UpsertSessionFuelHydrationPlanResponse, error)
+	RecordPrivateBodyCompositionTrend(ctx context.Context, in *RecordPrivateBodyCompositionTrendRequest, opts ...grpc.CallOption) (*RecordPrivateBodyCompositionTrendResponse, error)
+	EvaluateWeightClassSafetyPlan(ctx context.Context, in *EvaluateWeightClassSafetyPlanRequest, opts ...grpc.CallOption) (*EvaluateWeightClassSafetyPlanResponse, error)
+	EscalateWeightCutToProfessionalRoute(ctx context.Context, in *EscalateWeightCutToProfessionalRouteRequest, opts ...grpc.CallOption) (*EscalateWeightCutToProfessionalRouteResponse, error)
+	VerifyBodyCompositionPrivacyIsolation(ctx context.Context, in *VerifyBodyCompositionPrivacyIsolationRequest, opts ...grpc.CallOption) (*VerifyBodyCompositionPrivacyIsolationResponse, error)
+	// ===== Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution =====
+	GetHealthyCompetitionCrewsOverview(ctx context.Context, in *GetHealthyCompetitionCrewsOverviewRequest, opts ...grpc.CallOption) (*GetHealthyCompetitionCrewsOverviewResponse, error)
+	UpsertHealthyCompetitionCohort(ctx context.Context, in *UpsertHealthyCompetitionCohortRequest, opts ...grpc.CallOption) (*UpsertHealthyCompetitionCohortResponse, error)
+	ToggleCompetitionMutePreference(ctx context.Context, in *ToggleCompetitionMutePreferenceRequest, opts ...grpc.CallOption) (*ToggleCompetitionMutePreferenceResponse, error)
+	SubmitCrewChallengeOrAppeal(ctx context.Context, in *SubmitCrewChallengeOrAppealRequest, opts ...grpc.CallOption) (*SubmitCrewChallengeOrAppealResponse, error)
+	RecordEmpireRewardContribution(ctx context.Context, in *RecordEmpireRewardContributionRequest, opts ...grpc.CallOption) (*RecordEmpireRewardContributionResponse, error)
+	AdjudicateCrewAntiCheatCase(ctx context.Context, in *AdjudicateCrewAntiCheatCaseRequest, opts ...grpc.CallOption) (*AdjudicateCrewAntiCheatCaseResponse, error)
+	// ===== Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge =====
+	GetOfflineAccessibleReleaseCertOverview(ctx context.Context, in *GetOfflineAccessibleReleaseCertOverviewRequest, opts ...grpc.CallOption) (*GetOfflineAccessibleReleaseCertOverviewResponse, error)
+	CertifyOfflineMultimodalSyncState(ctx context.Context, in *CertifyOfflineMultimodalSyncStateRequest, opts ...grpc.CallOption) (*CertifyOfflineMultimodalSyncStateResponse, error)
+	UpsertAccessibilityAdaptiveProfile(ctx context.Context, in *UpsertAccessibilityAdaptiveProfileRequest, opts ...grpc.CallOption) (*UpsertAccessibilityAdaptiveProfileResponse, error)
+	RunMigrationAndErasureCertification(ctx context.Context, in *RunMigrationAndErasureCertificationRequest, opts ...grpc.CallOption) (*RunMigrationAndErasureCertificationResponse, error)
+	VerifyBatteryAwareSensorPolicy(ctx context.Context, in *VerifyBatteryAwareSensorPolicyRequest, opts ...grpc.CallOption) (*VerifyBatteryAwareSensorPolicyResponse, error)
+	SignOffForge16Of16ReleaseGate(ctx context.Context, in *SignOffForge16Of16ReleaseGateRequest, opts ...grpc.CallOption) (*SignOffForge16Of16ReleaseGateResponse, error)
 }
 
 type workoutServiceClient struct {
@@ -964,6 +1146,846 @@ func (c *workoutServiceClient) RequestCoachBooking(ctx context.Context, in *Requ
 	return out, nil
 }
 
+func (c *workoutServiceClient) GetAdaptiveProgrammingOverview(ctx context.Context, in *GetAdaptiveProgrammingOverviewRequest, opts ...grpc.CallOption) (*GetAdaptiveProgrammingOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAdaptiveProgrammingOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetAdaptiveProgrammingOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GenerateOrUpdateProgrammeVersion(ctx context.Context, in *GenerateOrUpdateProgrammeVersionRequest, opts ...grpc.CallOption) (*GenerateOrUpdateProgrammeVersionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateOrUpdateProgrammeVersionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GenerateOrUpdateProgrammeVersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DecideProgrammeDraftAcceptance(ctx context.Context, in *DecideProgrammeDraftAcceptanceRequest, opts ...grpc.CallOption) (*DecideProgrammeDraftAcceptanceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DecideProgrammeDraftAcceptanceResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DecideProgrammeDraftAcceptance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) TriggerSafeAdaptiveReplan(ctx context.Context, in *TriggerSafeAdaptiveReplanRequest, opts ...grpc.CallOption) (*TriggerSafeAdaptiveReplanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerSafeAdaptiveReplanResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_TriggerSafeAdaptiveReplan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertAdaptiveProgressionRule(ctx context.Context, in *UpsertAdaptiveProgressionRuleRequest, opts ...grpc.CallOption) (*UpsertAdaptiveProgressionRuleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertAdaptiveProgressionRuleResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertAdaptiveProgressionRule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RollbackProgrammeVersion(ctx context.Context, in *RollbackProgrammeVersionRequest, opts ...grpc.CallOption) (*RollbackProgrammeVersionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RollbackProgrammeVersionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RollbackProgrammeVersion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetMovementIntelligenceOverview(ctx context.Context, in *GetMovementIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetMovementIntelligenceOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMovementIntelligenceOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetMovementIntelligenceOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RankIntentPreservingSubstitutions(ctx context.Context, in *RankIntentPreservingSubstitutionsRequest, opts ...grpc.CallOption) (*RankIntentPreservingSubstitutionsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RankIntentPreservingSubstitutionsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RankIntentPreservingSubstitutions_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertPersonalTechniqueManual(ctx context.Context, in *UpsertPersonalTechniqueManualRequest, opts ...grpc.CallOption) (*UpsertPersonalTechniqueManualResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertPersonalTechniqueManualResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertPersonalTechniqueManual_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitCustomMovementForReview(ctx context.Context, in *SubmitCustomMovementForReviewRequest, opts ...grpc.CallOption) (*SubmitCustomMovementForReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCustomMovementForReviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitCustomMovementForReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertMovementGraphProfile(ctx context.Context, in *UpsertMovementGraphProfileRequest, opts ...grpc.CallOption) (*UpsertMovementGraphProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertMovementGraphProfileResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertMovementGraphProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordSubstitutionSelection(ctx context.Context, in *RecordSubstitutionSelectionRequest, opts ...grpc.CallOption) (*RecordSubstitutionSelectionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordSubstitutionSelectionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordSubstitutionSelection_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetFormIntelligenceOverview(ctx context.Context, in *GetFormIntelligenceOverviewRequest, opts ...grpc.CallOption) (*GetFormIntelligenceOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetFormIntelligenceOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetFormIntelligenceOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitFormClipObservation(ctx context.Context, in *SubmitFormClipObservationRequest, opts ...grpc.CallOption) (*SubmitFormClipObservationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitFormClipObservationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitFormClipObservation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EscalateFormClipToCoach(ctx context.Context, in *EscalateFormClipToCoachRequest, opts ...grpc.CallOption) (*EscalateFormClipToCoachResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EscalateFormClipToCoachResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EscalateFormClipToCoach_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) DecideCoachFormReview(ctx context.Context, in *DecideCoachFormReviewRequest, opts ...grpc.CallOption) (*DecideCoachFormReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DecideCoachFormReviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_DecideCoachFormReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateFormPrivacyAndRetention(ctx context.Context, in *UpdateFormPrivacyAndRetentionRequest, opts ...grpc.CallOption) (*UpdateFormPrivacyAndRetentionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateFormPrivacyAndRetentionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateFormPrivacyAndRetention_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EraseFormClipAndKeypoints(ctx context.Context, in *EraseFormClipAndKeypointsRequest, opts ...grpc.CallOption) (*EraseFormClipAndKeypointsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EraseFormClipAndKeypointsResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EraseFormClipAndKeypoints_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetWearableRecoveryFusionOverview(ctx context.Context, in *GetWearableRecoveryFusionOverviewRequest, opts ...grpc.CallOption) (*GetWearableRecoveryFusionOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWearableRecoveryFusionOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetWearableRecoveryFusionOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertWearablePurposeGrant(ctx context.Context, in *UpsertWearablePurposeGrantRequest, opts ...grpc.CallOption) (*UpsertWearablePurposeGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertWearablePurposeGrantResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertWearablePurposeGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RevokeWearablePurposeGrant(ctx context.Context, in *RevokeWearablePurposeGrantRequest, opts ...grpc.CallOption) (*RevokeWearablePurposeGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeWearablePurposeGrantResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RevokeWearablePurposeGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ConfigureRecoverySensorStream(ctx context.Context, in *ConfigureRecoverySensorStreamRequest, opts ...grpc.CallOption) (*ConfigureRecoverySensorStreamResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfigureRecoverySensorStreamResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ConfigureRecoverySensorStream_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitNoWearableSubjectiveReadiness(ctx context.Context, in *SubmitNoWearableSubjectiveReadinessRequest, opts ...grpc.CallOption) (*SubmitNoWearableSubjectiveReadinessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitNoWearableSubjectiveReadinessResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitNoWearableSubjectiveReadiness_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ReconcileSensorConflictOrOutage(ctx context.Context, in *ReconcileSensorConflictOrOutageRequest, opts ...grpc.CallOption) (*ReconcileSensorConflictOrOutageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReconcileSensorConflictOrOutageResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ReconcileSensorConflictOrOutage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetPerformanceAnalyticsStudioOverview(ctx context.Context, in *GetPerformanceAnalyticsStudioOverviewRequest, opts ...grpc.CallOption) (*GetPerformanceAnalyticsStudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPerformanceAnalyticsStudioOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetPerformanceAnalyticsStudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordPerformanceExposureLedger(ctx context.Context, in *RecordPerformanceExposureLedgerRequest, opts ...grpc.CallOption) (*RecordPerformanceExposureLedgerResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordPerformanceExposureLedgerResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordPerformanceExposureLedger_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertStrengthPerformanceModel(ctx context.Context, in *UpsertStrengthPerformanceModelRequest, opts ...grpc.CallOption) (*UpsertStrengthPerformanceModelResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertStrengthPerformanceModelResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertStrengthPerformanceModel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CreateTrainingNOf1Experiment(ctx context.Context, in *CreateTrainingNOf1ExperimentRequest, opts ...grpc.CallOption) (*CreateTrainingNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateTrainingNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CreateTrainingNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) LogTrainingNOf1ExperimentSession(ctx context.Context, in *LogTrainingNOf1ExperimentSessionRequest, opts ...grpc.CallOption) (*LogTrainingNOf1ExperimentSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogTrainingNOf1ExperimentSessionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_LogTrainingNOf1ExperimentSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EvaluateTrainingNOf1Experiment(ctx context.Context, in *EvaluateTrainingNOf1ExperimentRequest, opts ...grpc.CallOption) (*EvaluateTrainingNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateTrainingNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EvaluateTrainingNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetInjuryReturnPathwayOverview(ctx context.Context, in *GetInjuryReturnPathwayOverviewRequest, opts ...grpc.CallOption) (*GetInjuryReturnPathwayOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetInjuryReturnPathwayOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetInjuryReturnPathwayOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertInjuryRestrictionLock(ctx context.Context, in *UpsertInjuryRestrictionLockRequest, opts ...grpc.CallOption) (*UpsertInjuryRestrictionLockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertInjuryRestrictionLockResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertInjuryRestrictionLock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) LogInSessionPainTriageEvent(ctx context.Context, in *LogInSessionPainTriageEventRequest, opts ...grpc.CallOption) (*LogInSessionPainTriageEventResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogInSessionPainTriageEventResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_LogInSessionPainTriageEvent_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) AdvanceReturnToTrainingStage(ctx context.Context, in *AdvanceReturnToTrainingStageRequest, opts ...grpc.CallOption) (*AdvanceReturnToTrainingStageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdvanceReturnToTrainingStageResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_AdvanceReturnToTrainingStage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordReturnToTrainingSetback(ctx context.Context, in *RecordReturnToTrainingSetbackRequest, opts ...grpc.CallOption) (*RecordReturnToTrainingSetbackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordReturnToTrainingSetbackResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordReturnToTrainingSetback_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ClearInjuryRestrictionLock(ctx context.Context, in *ClearInjuryRestrictionLockRequest, opts ...grpc.CallOption) (*ClearInjuryRestrictionLockResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ClearInjuryRestrictionLockResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ClearInjuryRestrictionLock_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetCoachOsCollaborationOverview(ctx context.Context, in *GetCoachOsCollaborationOverviewRequest, opts ...grpc.CallOption) (*GetCoachOsCollaborationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCoachOsCollaborationOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetCoachOsCollaborationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertCoachAthleteScopedGrant(ctx context.Context, in *UpsertCoachAthleteScopedGrantRequest, opts ...grpc.CallOption) (*UpsertCoachAthleteScopedGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCoachAthleteScopedGrantResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertCoachAthleteScopedGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RevokeCoachAthleteScopedGrant(ctx context.Context, in *RevokeCoachAthleteScopedGrantRequest, opts ...grpc.CallOption) (*RevokeCoachAthleteScopedGrantResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevokeCoachAthleteScopedGrantResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RevokeCoachAthleteScopedGrant_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ProposeCoachProgrammeChange(ctx context.Context, in *ProposeCoachProgrammeChangeRequest, opts ...grpc.CallOption) (*ProposeCoachProgrammeChangeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProposeCoachProgrammeChangeResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ProposeCoachProgrammeChange_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RespondToCoachChangeProposal(ctx context.Context, in *RespondToCoachChangeProposalRequest, opts ...grpc.CallOption) (*RespondToCoachChangeProposalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RespondToCoachChangeProposalResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RespondToCoachChangeProposal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpdateCoachMarketplaceEngagement(ctx context.Context, in *UpdateCoachMarketplaceEngagementRequest, opts ...grpc.CallOption) (*UpdateCoachMarketplaceEngagementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateCoachMarketplaceEngagementResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpdateCoachMarketplaceEngagement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetTeamsClubsFacilitiesOverview(ctx context.Context, in *GetTeamsClubsFacilitiesOverviewRequest, opts ...grpc.CallOption) (*GetTeamsClubsFacilitiesOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetTeamsClubsFacilitiesOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetTeamsClubsFacilitiesOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertTeamSquadRoster(ctx context.Context, in *UpsertTeamSquadRosterRequest, opts ...grpc.CallOption) (*UpsertTeamSquadRosterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertTeamSquadRosterResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertTeamSquadRoster_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitTeamTrafficLightCheckin(ctx context.Context, in *SubmitTeamTrafficLightCheckinRequest, opts ...grpc.CallOption) (*SubmitTeamTrafficLightCheckinResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitTeamTrafficLightCheckinResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitTeamTrafficLightCheckin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ReserveOrUpdateFacilityRackStation(ctx context.Context, in *ReserveOrUpdateFacilityRackStationRequest, opts ...grpc.CallOption) (*ReserveOrUpdateFacilityRackStationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReserveOrUpdateFacilityRackStationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ReserveOrUpdateFacilityRackStation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) FlagFacilityMaintenanceOrIncident(ctx context.Context, in *FlagFacilityMaintenanceOrIncidentRequest, opts ...grpc.CallOption) (*FlagFacilityMaintenanceOrIncidentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FlagFacilityMaintenanceOrIncidentResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_FlagFacilityMaintenanceOrIncident_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) VerifyYouthSquadSafeguarding(ctx context.Context, in *VerifyYouthSquadSafeguardingRequest, opts ...grpc.CallOption) (*VerifyYouthSquadSafeguardingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyYouthSquadSafeguardingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_VerifyYouthSquadSafeguarding_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetCompetitionVerifiedPerformanceOverview(ctx context.Context, in *GetCompetitionVerifiedPerformanceOverviewRequest, opts ...grpc.CallOption) (*GetCompetitionVerifiedPerformanceOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCompetitionVerifiedPerformanceOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetCompetitionVerifiedPerformanceOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertCompetitionEventPlan(ctx context.Context, in *UpsertCompetitionEventPlanRequest, opts ...grpc.CallOption) (*UpsertCompetitionEventPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertCompetitionEventPlanResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertCompetitionEventPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitVerifiedPerformanceResult(ctx context.Context, in *SubmitVerifiedPerformanceResultRequest, opts ...grpc.CallOption) (*SubmitVerifiedPerformanceResultResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitVerifiedPerformanceResultResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitVerifiedPerformanceResult_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) FilePerformanceResultAppeal(ctx context.Context, in *FilePerformanceResultAppealRequest, opts ...grpc.CallOption) (*FilePerformanceResultAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FilePerformanceResultAppealResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_FilePerformanceResultAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordCompetitionRuleAndTueCheck(ctx context.Context, in *RecordCompetitionRuleAndTueCheckRequest, opts ...grpc.CallOption) (*RecordCompetitionRuleAndTueCheckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordCompetitionRuleAndTueCheckResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordCompetitionRuleAndTueCheck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ToggleOfflineVenueCompetitionMode(ctx context.Context, in *ToggleOfflineVenueCompetitionModeRequest, opts ...grpc.CallOption) (*ToggleOfflineVenueCompetitionModeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ToggleOfflineVenueCompetitionModeResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ToggleOfflineVenueCompetitionMode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetSportHybridStudiosOverview(ctx context.Context, in *GetSportHybridStudiosOverviewRequest, opts ...grpc.CallOption) (*GetSportHybridStudiosOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSportHybridStudiosOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetSportHybridStudiosOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertSportHybridStudioModule(ctx context.Context, in *UpsertSportHybridStudioModuleRequest, opts ...grpc.CallOption) (*UpsertSportHybridStudioModuleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSportHybridStudioModuleResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertSportHybridStudioModule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ConfigureHybridInterferenceSchedule(ctx context.Context, in *ConfigureHybridInterferenceScheduleRequest, opts ...grpc.CallOption) (*ConfigureHybridInterferenceScheduleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfigureHybridInterferenceScheduleResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ConfigureHybridInterferenceSchedule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) LogSportSkillOrManualActivitySession(ctx context.Context, in *LogSportSkillOrManualActivitySessionRequest, opts ...grpc.CallOption) (*LogSportSkillOrManualActivitySessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogSportSkillOrManualActivitySessionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_LogSportSkillOrManualActivitySession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RegisterCustomManualUnvalidatedSport(ctx context.Context, in *RegisterCustomManualUnvalidatedSportRequest, opts ...grpc.CallOption) (*RegisterCustomManualUnvalidatedSportResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterCustomManualUnvalidatedSportResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RegisterCustomManualUnvalidatedSport_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) AuditHybridLoadDeDuplication(ctx context.Context, in *AuditHybridLoadDeDuplicationRequest, opts ...grpc.CallOption) (*AuditHybridLoadDeDuplicationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AuditHybridLoadDeDuplicationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_AuditHybridLoadDeDuplication_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetEquipmentTravelAdaptationOverview(ctx context.Context, in *GetEquipmentTravelAdaptationOverviewRequest, opts ...grpc.CallOption) (*GetEquipmentTravelAdaptationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEquipmentTravelAdaptationOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetEquipmentTravelAdaptationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertEquipmentLocationProfile(ctx context.Context, in *UpsertEquipmentLocationProfileRequest, opts ...grpc.CallOption) (*UpsertEquipmentLocationProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertEquipmentLocationProfileResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertEquipmentLocationProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GenerateTravelWorkoutAdaptation(ctx context.Context, in *GenerateTravelWorkoutAdaptationRequest, opts ...grpc.CallOption) (*GenerateTravelWorkoutAdaptationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateTravelWorkoutAdaptationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GenerateTravelWorkoutAdaptation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertVerifiedGymVenueListing(ctx context.Context, in *UpsertVerifiedGymVenueListingRequest, opts ...grpc.CallOption) (*UpsertVerifiedGymVenueListingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertVerifiedGymVenueListingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertVerifiedGymVenueListing_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) FlagStaleGymVenueListing(ctx context.Context, in *FlagStaleGymVenueListingRequest, opts ...grpc.CallOption) (*FlagStaleGymVenueListingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FlagStaleGymVenueListingResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_FlagStaleGymVenueListing_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RevertTravelWorkoutToHomeGym(ctx context.Context, in *RevertTravelWorkoutToHomeGymRequest, opts ...grpc.CallOption) (*RevertTravelWorkoutToHomeGymResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RevertTravelWorkoutToHomeGymResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RevertTravelWorkoutToHomeGym_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetFuelWeightSafetyOverview(ctx context.Context, in *GetFuelWeightSafetyOverviewRequest, opts ...grpc.CallOption) (*GetFuelWeightSafetyOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetFuelWeightSafetyOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetFuelWeightSafetyOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertSessionFuelHydrationPlan(ctx context.Context, in *UpsertSessionFuelHydrationPlanRequest, opts ...grpc.CallOption) (*UpsertSessionFuelHydrationPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertSessionFuelHydrationPlanResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertSessionFuelHydrationPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordPrivateBodyCompositionTrend(ctx context.Context, in *RecordPrivateBodyCompositionTrendRequest, opts ...grpc.CallOption) (*RecordPrivateBodyCompositionTrendResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordPrivateBodyCompositionTrendResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordPrivateBodyCompositionTrend_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EvaluateWeightClassSafetyPlan(ctx context.Context, in *EvaluateWeightClassSafetyPlanRequest, opts ...grpc.CallOption) (*EvaluateWeightClassSafetyPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateWeightClassSafetyPlanResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EvaluateWeightClassSafetyPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) EscalateWeightCutToProfessionalRoute(ctx context.Context, in *EscalateWeightCutToProfessionalRouteRequest, opts ...grpc.CallOption) (*EscalateWeightCutToProfessionalRouteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EscalateWeightCutToProfessionalRouteResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_EscalateWeightCutToProfessionalRoute_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) VerifyBodyCompositionPrivacyIsolation(ctx context.Context, in *VerifyBodyCompositionPrivacyIsolationRequest, opts ...grpc.CallOption) (*VerifyBodyCompositionPrivacyIsolationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyBodyCompositionPrivacyIsolationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_VerifyBodyCompositionPrivacyIsolation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetHealthyCompetitionCrewsOverview(ctx context.Context, in *GetHealthyCompetitionCrewsOverviewRequest, opts ...grpc.CallOption) (*GetHealthyCompetitionCrewsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetHealthyCompetitionCrewsOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetHealthyCompetitionCrewsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertHealthyCompetitionCohort(ctx context.Context, in *UpsertHealthyCompetitionCohortRequest, opts ...grpc.CallOption) (*UpsertHealthyCompetitionCohortResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertHealthyCompetitionCohortResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertHealthyCompetitionCohort_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) ToggleCompetitionMutePreference(ctx context.Context, in *ToggleCompetitionMutePreferenceRequest, opts ...grpc.CallOption) (*ToggleCompetitionMutePreferenceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ToggleCompetitionMutePreferenceResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_ToggleCompetitionMutePreference_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SubmitCrewChallengeOrAppeal(ctx context.Context, in *SubmitCrewChallengeOrAppealRequest, opts ...grpc.CallOption) (*SubmitCrewChallengeOrAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SubmitCrewChallengeOrAppealResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SubmitCrewChallengeOrAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RecordEmpireRewardContribution(ctx context.Context, in *RecordEmpireRewardContributionRequest, opts ...grpc.CallOption) (*RecordEmpireRewardContributionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordEmpireRewardContributionResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RecordEmpireRewardContribution_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) AdjudicateCrewAntiCheatCase(ctx context.Context, in *AdjudicateCrewAntiCheatCaseRequest, opts ...grpc.CallOption) (*AdjudicateCrewAntiCheatCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdjudicateCrewAntiCheatCaseResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_AdjudicateCrewAntiCheatCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) GetOfflineAccessibleReleaseCertOverview(ctx context.Context, in *GetOfflineAccessibleReleaseCertOverviewRequest, opts ...grpc.CallOption) (*GetOfflineAccessibleReleaseCertOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetOfflineAccessibleReleaseCertOverviewResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_GetOfflineAccessibleReleaseCertOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) CertifyOfflineMultimodalSyncState(ctx context.Context, in *CertifyOfflineMultimodalSyncStateRequest, opts ...grpc.CallOption) (*CertifyOfflineMultimodalSyncStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CertifyOfflineMultimodalSyncStateResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_CertifyOfflineMultimodalSyncState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) UpsertAccessibilityAdaptiveProfile(ctx context.Context, in *UpsertAccessibilityAdaptiveProfileRequest, opts ...grpc.CallOption) (*UpsertAccessibilityAdaptiveProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertAccessibilityAdaptiveProfileResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_UpsertAccessibilityAdaptiveProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) RunMigrationAndErasureCertification(ctx context.Context, in *RunMigrationAndErasureCertificationRequest, opts ...grpc.CallOption) (*RunMigrationAndErasureCertificationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunMigrationAndErasureCertificationResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_RunMigrationAndErasureCertification_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) VerifyBatteryAwareSensorPolicy(ctx context.Context, in *VerifyBatteryAwareSensorPolicyRequest, opts ...grpc.CallOption) (*VerifyBatteryAwareSensorPolicyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyBatteryAwareSensorPolicyResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_VerifyBatteryAwareSensorPolicy_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *workoutServiceClient) SignOffForge16Of16ReleaseGate(ctx context.Context, in *SignOffForge16Of16ReleaseGateRequest, opts ...grpc.CallOption) (*SignOffForge16Of16ReleaseGateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SignOffForge16Of16ReleaseGateResponse)
+	err := c.cc.Invoke(ctx, WorkoutService_SignOffForge16Of16ReleaseGate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WorkoutServiceServer is the server API for WorkoutService service.
 // All implementations must embed UnimplementedWorkoutServiceServer
 // for forward compatibility.
@@ -1094,6 +2116,104 @@ type WorkoutServiceServer interface {
 	// can pick up.
 	ListCoaches(context.Context, *ListCoachesRequest) (*ListCoachesResponse, error)
 	RequestCoachBooking(context.Context, *RequestCoachBookingRequest) (*RequestCoachBookingResponse, error)
+	// ===== Choice 3 (FG3) — Explainable Adaptive Programming Engine =====
+	GetAdaptiveProgrammingOverview(context.Context, *GetAdaptiveProgrammingOverviewRequest) (*GetAdaptiveProgrammingOverviewResponse, error)
+	GenerateOrUpdateProgrammeVersion(context.Context, *GenerateOrUpdateProgrammeVersionRequest) (*GenerateOrUpdateProgrammeVersionResponse, error)
+	DecideProgrammeDraftAcceptance(context.Context, *DecideProgrammeDraftAcceptanceRequest) (*DecideProgrammeDraftAcceptanceResponse, error)
+	TriggerSafeAdaptiveReplan(context.Context, *TriggerSafeAdaptiveReplanRequest) (*TriggerSafeAdaptiveReplanResponse, error)
+	UpsertAdaptiveProgressionRule(context.Context, *UpsertAdaptiveProgressionRuleRequest) (*UpsertAdaptiveProgressionRuleResponse, error)
+	RollbackProgrammeVersion(context.Context, *RollbackProgrammeVersionRequest) (*RollbackProgrammeVersionResponse, error)
+	// ===== Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual =====
+	GetMovementIntelligenceOverview(context.Context, *GetMovementIntelligenceOverviewRequest) (*GetMovementIntelligenceOverviewResponse, error)
+	RankIntentPreservingSubstitutions(context.Context, *RankIntentPreservingSubstitutionsRequest) (*RankIntentPreservingSubstitutionsResponse, error)
+	UpsertPersonalTechniqueManual(context.Context, *UpsertPersonalTechniqueManualRequest) (*UpsertPersonalTechniqueManualResponse, error)
+	SubmitCustomMovementForReview(context.Context, *SubmitCustomMovementForReviewRequest) (*SubmitCustomMovementForReviewResponse, error)
+	UpsertMovementGraphProfile(context.Context, *UpsertMovementGraphProfileRequest) (*UpsertMovementGraphProfileResponse, error)
+	RecordSubstitutionSelection(context.Context, *RecordSubstitutionSelectionRequest) (*RecordSubstitutionSelectionResponse, error)
+	// ===== Choice 5 (FG5) — Technique and Form Intelligence Laboratory =====
+	GetFormIntelligenceOverview(context.Context, *GetFormIntelligenceOverviewRequest) (*GetFormIntelligenceOverviewResponse, error)
+	SubmitFormClipObservation(context.Context, *SubmitFormClipObservationRequest) (*SubmitFormClipObservationResponse, error)
+	EscalateFormClipToCoach(context.Context, *EscalateFormClipToCoachRequest) (*EscalateFormClipToCoachResponse, error)
+	DecideCoachFormReview(context.Context, *DecideCoachFormReviewRequest) (*DecideCoachFormReviewResponse, error)
+	UpdateFormPrivacyAndRetention(context.Context, *UpdateFormPrivacyAndRetentionRequest) (*UpdateFormPrivacyAndRetentionResponse, error)
+	EraseFormClipAndKeypoints(context.Context, *EraseFormClipAndKeypointsRequest) (*EraseFormClipAndKeypointsResponse, error)
+	// ===== Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion =====
+	GetWearableRecoveryFusionOverview(context.Context, *GetWearableRecoveryFusionOverviewRequest) (*GetWearableRecoveryFusionOverviewResponse, error)
+	UpsertWearablePurposeGrant(context.Context, *UpsertWearablePurposeGrantRequest) (*UpsertWearablePurposeGrantResponse, error)
+	RevokeWearablePurposeGrant(context.Context, *RevokeWearablePurposeGrantRequest) (*RevokeWearablePurposeGrantResponse, error)
+	ConfigureRecoverySensorStream(context.Context, *ConfigureRecoverySensorStreamRequest) (*ConfigureRecoverySensorStreamResponse, error)
+	SubmitNoWearableSubjectiveReadiness(context.Context, *SubmitNoWearableSubjectiveReadinessRequest) (*SubmitNoWearableSubjectiveReadinessResponse, error)
+	ReconcileSensorConflictOrOutage(context.Context, *ReconcileSensorConflictOrOutageRequest) (*ReconcileSensorConflictOrOutageResponse, error)
+	// ===== Choice 7 (FG7) — Training Load, Progression, and Performance Analytics =====
+	GetPerformanceAnalyticsStudioOverview(context.Context, *GetPerformanceAnalyticsStudioOverviewRequest) (*GetPerformanceAnalyticsStudioOverviewResponse, error)
+	RecordPerformanceExposureLedger(context.Context, *RecordPerformanceExposureLedgerRequest) (*RecordPerformanceExposureLedgerResponse, error)
+	UpsertStrengthPerformanceModel(context.Context, *UpsertStrengthPerformanceModelRequest) (*UpsertStrengthPerformanceModelResponse, error)
+	CreateTrainingNOf1Experiment(context.Context, *CreateTrainingNOf1ExperimentRequest) (*CreateTrainingNOf1ExperimentResponse, error)
+	LogTrainingNOf1ExperimentSession(context.Context, *LogTrainingNOf1ExperimentSessionRequest) (*LogTrainingNOf1ExperimentSessionResponse, error)
+	EvaluateTrainingNOf1Experiment(context.Context, *EvaluateTrainingNOf1ExperimentRequest) (*EvaluateTrainingNOf1ExperimentResponse, error)
+	// ===== Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway =====
+	GetInjuryReturnPathwayOverview(context.Context, *GetInjuryReturnPathwayOverviewRequest) (*GetInjuryReturnPathwayOverviewResponse, error)
+	UpsertInjuryRestrictionLock(context.Context, *UpsertInjuryRestrictionLockRequest) (*UpsertInjuryRestrictionLockResponse, error)
+	LogInSessionPainTriageEvent(context.Context, *LogInSessionPainTriageEventRequest) (*LogInSessionPainTriageEventResponse, error)
+	AdvanceReturnToTrainingStage(context.Context, *AdvanceReturnToTrainingStageRequest) (*AdvanceReturnToTrainingStageResponse, error)
+	RecordReturnToTrainingSetback(context.Context, *RecordReturnToTrainingSetbackRequest) (*RecordReturnToTrainingSetbackResponse, error)
+	ClearInjuryRestrictionLock(context.Context, *ClearInjuryRestrictionLockRequest) (*ClearInjuryRestrictionLockResponse, error)
+	// ===== Choice 9 (FG9) — Coach OS and Athlete Collaboration =====
+	GetCoachOsCollaborationOverview(context.Context, *GetCoachOsCollaborationOverviewRequest) (*GetCoachOsCollaborationOverviewResponse, error)
+	UpsertCoachAthleteScopedGrant(context.Context, *UpsertCoachAthleteScopedGrantRequest) (*UpsertCoachAthleteScopedGrantResponse, error)
+	RevokeCoachAthleteScopedGrant(context.Context, *RevokeCoachAthleteScopedGrantRequest) (*RevokeCoachAthleteScopedGrantResponse, error)
+	ProposeCoachProgrammeChange(context.Context, *ProposeCoachProgrammeChangeRequest) (*ProposeCoachProgrammeChangeResponse, error)
+	RespondToCoachChangeProposal(context.Context, *RespondToCoachChangeProposalRequest) (*RespondToCoachChangeProposalResponse, error)
+	UpdateCoachMarketplaceEngagement(context.Context, *UpdateCoachMarketplaceEngagementRequest) (*UpdateCoachMarketplaceEngagementResponse, error)
+	// ===== Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations =====
+	GetTeamsClubsFacilitiesOverview(context.Context, *GetTeamsClubsFacilitiesOverviewRequest) (*GetTeamsClubsFacilitiesOverviewResponse, error)
+	UpsertTeamSquadRoster(context.Context, *UpsertTeamSquadRosterRequest) (*UpsertTeamSquadRosterResponse, error)
+	SubmitTeamTrafficLightCheckin(context.Context, *SubmitTeamTrafficLightCheckinRequest) (*SubmitTeamTrafficLightCheckinResponse, error)
+	ReserveOrUpdateFacilityRackStation(context.Context, *ReserveOrUpdateFacilityRackStationRequest) (*ReserveOrUpdateFacilityRackStationResponse, error)
+	FlagFacilityMaintenanceOrIncident(context.Context, *FlagFacilityMaintenanceOrIncidentRequest) (*FlagFacilityMaintenanceOrIncidentResponse, error)
+	VerifyYouthSquadSafeguarding(context.Context, *VerifyYouthSquadSafeguardingRequest) (*VerifyYouthSquadSafeguardingResponse, error)
+	// ===== Choice 11 (FG11) — Competition, Test Day, and Verified Performance =====
+	GetCompetitionVerifiedPerformanceOverview(context.Context, *GetCompetitionVerifiedPerformanceOverviewRequest) (*GetCompetitionVerifiedPerformanceOverviewResponse, error)
+	UpsertCompetitionEventPlan(context.Context, *UpsertCompetitionEventPlanRequest) (*UpsertCompetitionEventPlanResponse, error)
+	SubmitVerifiedPerformanceResult(context.Context, *SubmitVerifiedPerformanceResultRequest) (*SubmitVerifiedPerformanceResultResponse, error)
+	FilePerformanceResultAppeal(context.Context, *FilePerformanceResultAppealRequest) (*FilePerformanceResultAppealResponse, error)
+	RecordCompetitionRuleAndTueCheck(context.Context, *RecordCompetitionRuleAndTueCheckRequest) (*RecordCompetitionRuleAndTueCheckResponse, error)
+	ToggleOfflineVenueCompetitionMode(context.Context, *ToggleOfflineVenueCompetitionModeRequest) (*ToggleOfflineVenueCompetitionModeResponse, error)
+	// ===== Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios =====
+	GetSportHybridStudiosOverview(context.Context, *GetSportHybridStudiosOverviewRequest) (*GetSportHybridStudiosOverviewResponse, error)
+	UpsertSportHybridStudioModule(context.Context, *UpsertSportHybridStudioModuleRequest) (*UpsertSportHybridStudioModuleResponse, error)
+	ConfigureHybridInterferenceSchedule(context.Context, *ConfigureHybridInterferenceScheduleRequest) (*ConfigureHybridInterferenceScheduleResponse, error)
+	LogSportSkillOrManualActivitySession(context.Context, *LogSportSkillOrManualActivitySessionRequest) (*LogSportSkillOrManualActivitySessionResponse, error)
+	RegisterCustomManualUnvalidatedSport(context.Context, *RegisterCustomManualUnvalidatedSportRequest) (*RegisterCustomManualUnvalidatedSportResponse, error)
+	AuditHybridLoadDeDuplication(context.Context, *AuditHybridLoadDeDuplicationRequest) (*AuditHybridLoadDeDuplicationResponse, error)
+	// ===== Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation =====
+	GetEquipmentTravelAdaptationOverview(context.Context, *GetEquipmentTravelAdaptationOverviewRequest) (*GetEquipmentTravelAdaptationOverviewResponse, error)
+	UpsertEquipmentLocationProfile(context.Context, *UpsertEquipmentLocationProfileRequest) (*UpsertEquipmentLocationProfileResponse, error)
+	GenerateTravelWorkoutAdaptation(context.Context, *GenerateTravelWorkoutAdaptationRequest) (*GenerateTravelWorkoutAdaptationResponse, error)
+	UpsertVerifiedGymVenueListing(context.Context, *UpsertVerifiedGymVenueListingRequest) (*UpsertVerifiedGymVenueListingResponse, error)
+	FlagStaleGymVenueListing(context.Context, *FlagStaleGymVenueListingRequest) (*FlagStaleGymVenueListingResponse, error)
+	RevertTravelWorkoutToHomeGym(context.Context, *RevertTravelWorkoutToHomeGymRequest) (*RevertTravelWorkoutToHomeGymResponse, error)
+	// ===== Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support =====
+	GetFuelWeightSafetyOverview(context.Context, *GetFuelWeightSafetyOverviewRequest) (*GetFuelWeightSafetyOverviewResponse, error)
+	UpsertSessionFuelHydrationPlan(context.Context, *UpsertSessionFuelHydrationPlanRequest) (*UpsertSessionFuelHydrationPlanResponse, error)
+	RecordPrivateBodyCompositionTrend(context.Context, *RecordPrivateBodyCompositionTrendRequest) (*RecordPrivateBodyCompositionTrendResponse, error)
+	EvaluateWeightClassSafetyPlan(context.Context, *EvaluateWeightClassSafetyPlanRequest) (*EvaluateWeightClassSafetyPlanResponse, error)
+	EscalateWeightCutToProfessionalRoute(context.Context, *EscalateWeightCutToProfessionalRouteRequest) (*EscalateWeightCutToProfessionalRouteResponse, error)
+	VerifyBodyCompositionPrivacyIsolation(context.Context, *VerifyBodyCompositionPrivacyIsolationRequest) (*VerifyBodyCompositionPrivacyIsolationResponse, error)
+	// ===== Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution =====
+	GetHealthyCompetitionCrewsOverview(context.Context, *GetHealthyCompetitionCrewsOverviewRequest) (*GetHealthyCompetitionCrewsOverviewResponse, error)
+	UpsertHealthyCompetitionCohort(context.Context, *UpsertHealthyCompetitionCohortRequest) (*UpsertHealthyCompetitionCohortResponse, error)
+	ToggleCompetitionMutePreference(context.Context, *ToggleCompetitionMutePreferenceRequest) (*ToggleCompetitionMutePreferenceResponse, error)
+	SubmitCrewChallengeOrAppeal(context.Context, *SubmitCrewChallengeOrAppealRequest) (*SubmitCrewChallengeOrAppealResponse, error)
+	RecordEmpireRewardContribution(context.Context, *RecordEmpireRewardContributionRequest) (*RecordEmpireRewardContributionResponse, error)
+	AdjudicateCrewAntiCheatCase(context.Context, *AdjudicateCrewAntiCheatCaseRequest) (*AdjudicateCrewAntiCheatCaseResponse, error)
+	// ===== Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge =====
+	GetOfflineAccessibleReleaseCertOverview(context.Context, *GetOfflineAccessibleReleaseCertOverviewRequest) (*GetOfflineAccessibleReleaseCertOverviewResponse, error)
+	CertifyOfflineMultimodalSyncState(context.Context, *CertifyOfflineMultimodalSyncStateRequest) (*CertifyOfflineMultimodalSyncStateResponse, error)
+	UpsertAccessibilityAdaptiveProfile(context.Context, *UpsertAccessibilityAdaptiveProfileRequest) (*UpsertAccessibilityAdaptiveProfileResponse, error)
+	RunMigrationAndErasureCertification(context.Context, *RunMigrationAndErasureCertificationRequest) (*RunMigrationAndErasureCertificationResponse, error)
+	VerifyBatteryAwareSensorPolicy(context.Context, *VerifyBatteryAwareSensorPolicyRequest) (*VerifyBatteryAwareSensorPolicyResponse, error)
+	SignOffForge16Of16ReleaseGate(context.Context, *SignOffForge16Of16ReleaseGateRequest) (*SignOffForge16Of16ReleaseGateResponse, error)
 	mustEmbedUnimplementedWorkoutServiceServer()
 }
 
@@ -1322,6 +2442,258 @@ func (UnimplementedWorkoutServiceServer) ListCoaches(context.Context, *ListCoach
 }
 func (UnimplementedWorkoutServiceServer) RequestCoachBooking(context.Context, *RequestCoachBookingRequest) (*RequestCoachBookingResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RequestCoachBooking not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetAdaptiveProgrammingOverview(context.Context, *GetAdaptiveProgrammingOverviewRequest) (*GetAdaptiveProgrammingOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAdaptiveProgrammingOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GenerateOrUpdateProgrammeVersion(context.Context, *GenerateOrUpdateProgrammeVersionRequest) (*GenerateOrUpdateProgrammeVersionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateOrUpdateProgrammeVersion not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DecideProgrammeDraftAcceptance(context.Context, *DecideProgrammeDraftAcceptanceRequest) (*DecideProgrammeDraftAcceptanceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DecideProgrammeDraftAcceptance not implemented")
+}
+func (UnimplementedWorkoutServiceServer) TriggerSafeAdaptiveReplan(context.Context, *TriggerSafeAdaptiveReplanRequest) (*TriggerSafeAdaptiveReplanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerSafeAdaptiveReplan not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertAdaptiveProgressionRule(context.Context, *UpsertAdaptiveProgressionRuleRequest) (*UpsertAdaptiveProgressionRuleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertAdaptiveProgressionRule not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RollbackProgrammeVersion(context.Context, *RollbackProgrammeVersionRequest) (*RollbackProgrammeVersionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RollbackProgrammeVersion not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetMovementIntelligenceOverview(context.Context, *GetMovementIntelligenceOverviewRequest) (*GetMovementIntelligenceOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMovementIntelligenceOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RankIntentPreservingSubstitutions(context.Context, *RankIntentPreservingSubstitutionsRequest) (*RankIntentPreservingSubstitutionsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RankIntentPreservingSubstitutions not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertPersonalTechniqueManual(context.Context, *UpsertPersonalTechniqueManualRequest) (*UpsertPersonalTechniqueManualResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertPersonalTechniqueManual not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitCustomMovementForReview(context.Context, *SubmitCustomMovementForReviewRequest) (*SubmitCustomMovementForReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCustomMovementForReview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertMovementGraphProfile(context.Context, *UpsertMovementGraphProfileRequest) (*UpsertMovementGraphProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertMovementGraphProfile not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordSubstitutionSelection(context.Context, *RecordSubstitutionSelectionRequest) (*RecordSubstitutionSelectionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordSubstitutionSelection not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetFormIntelligenceOverview(context.Context, *GetFormIntelligenceOverviewRequest) (*GetFormIntelligenceOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetFormIntelligenceOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitFormClipObservation(context.Context, *SubmitFormClipObservationRequest) (*SubmitFormClipObservationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitFormClipObservation not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EscalateFormClipToCoach(context.Context, *EscalateFormClipToCoachRequest) (*EscalateFormClipToCoachResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EscalateFormClipToCoach not implemented")
+}
+func (UnimplementedWorkoutServiceServer) DecideCoachFormReview(context.Context, *DecideCoachFormReviewRequest) (*DecideCoachFormReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DecideCoachFormReview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateFormPrivacyAndRetention(context.Context, *UpdateFormPrivacyAndRetentionRequest) (*UpdateFormPrivacyAndRetentionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateFormPrivacyAndRetention not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EraseFormClipAndKeypoints(context.Context, *EraseFormClipAndKeypointsRequest) (*EraseFormClipAndKeypointsResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EraseFormClipAndKeypoints not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetWearableRecoveryFusionOverview(context.Context, *GetWearableRecoveryFusionOverviewRequest) (*GetWearableRecoveryFusionOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWearableRecoveryFusionOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertWearablePurposeGrant(context.Context, *UpsertWearablePurposeGrantRequest) (*UpsertWearablePurposeGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertWearablePurposeGrant not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RevokeWearablePurposeGrant(context.Context, *RevokeWearablePurposeGrantRequest) (*RevokeWearablePurposeGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeWearablePurposeGrant not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ConfigureRecoverySensorStream(context.Context, *ConfigureRecoverySensorStreamRequest) (*ConfigureRecoverySensorStreamResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfigureRecoverySensorStream not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitNoWearableSubjectiveReadiness(context.Context, *SubmitNoWearableSubjectiveReadinessRequest) (*SubmitNoWearableSubjectiveReadinessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitNoWearableSubjectiveReadiness not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ReconcileSensorConflictOrOutage(context.Context, *ReconcileSensorConflictOrOutageRequest) (*ReconcileSensorConflictOrOutageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReconcileSensorConflictOrOutage not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetPerformanceAnalyticsStudioOverview(context.Context, *GetPerformanceAnalyticsStudioOverviewRequest) (*GetPerformanceAnalyticsStudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPerformanceAnalyticsStudioOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordPerformanceExposureLedger(context.Context, *RecordPerformanceExposureLedgerRequest) (*RecordPerformanceExposureLedgerResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordPerformanceExposureLedger not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertStrengthPerformanceModel(context.Context, *UpsertStrengthPerformanceModelRequest) (*UpsertStrengthPerformanceModelResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertStrengthPerformanceModel not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CreateTrainingNOf1Experiment(context.Context, *CreateTrainingNOf1ExperimentRequest) (*CreateTrainingNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateTrainingNOf1Experiment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) LogTrainingNOf1ExperimentSession(context.Context, *LogTrainingNOf1ExperimentSessionRequest) (*LogTrainingNOf1ExperimentSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogTrainingNOf1ExperimentSession not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EvaluateTrainingNOf1Experiment(context.Context, *EvaluateTrainingNOf1ExperimentRequest) (*EvaluateTrainingNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateTrainingNOf1Experiment not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetInjuryReturnPathwayOverview(context.Context, *GetInjuryReturnPathwayOverviewRequest) (*GetInjuryReturnPathwayOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetInjuryReturnPathwayOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertInjuryRestrictionLock(context.Context, *UpsertInjuryRestrictionLockRequest) (*UpsertInjuryRestrictionLockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertInjuryRestrictionLock not implemented")
+}
+func (UnimplementedWorkoutServiceServer) LogInSessionPainTriageEvent(context.Context, *LogInSessionPainTriageEventRequest) (*LogInSessionPainTriageEventResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogInSessionPainTriageEvent not implemented")
+}
+func (UnimplementedWorkoutServiceServer) AdvanceReturnToTrainingStage(context.Context, *AdvanceReturnToTrainingStageRequest) (*AdvanceReturnToTrainingStageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdvanceReturnToTrainingStage not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordReturnToTrainingSetback(context.Context, *RecordReturnToTrainingSetbackRequest) (*RecordReturnToTrainingSetbackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordReturnToTrainingSetback not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ClearInjuryRestrictionLock(context.Context, *ClearInjuryRestrictionLockRequest) (*ClearInjuryRestrictionLockResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ClearInjuryRestrictionLock not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetCoachOsCollaborationOverview(context.Context, *GetCoachOsCollaborationOverviewRequest) (*GetCoachOsCollaborationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCoachOsCollaborationOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertCoachAthleteScopedGrant(context.Context, *UpsertCoachAthleteScopedGrantRequest) (*UpsertCoachAthleteScopedGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCoachAthleteScopedGrant not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RevokeCoachAthleteScopedGrant(context.Context, *RevokeCoachAthleteScopedGrantRequest) (*RevokeCoachAthleteScopedGrantResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevokeCoachAthleteScopedGrant not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ProposeCoachProgrammeChange(context.Context, *ProposeCoachProgrammeChangeRequest) (*ProposeCoachProgrammeChangeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ProposeCoachProgrammeChange not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RespondToCoachChangeProposal(context.Context, *RespondToCoachChangeProposalRequest) (*RespondToCoachChangeProposalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RespondToCoachChangeProposal not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpdateCoachMarketplaceEngagement(context.Context, *UpdateCoachMarketplaceEngagementRequest) (*UpdateCoachMarketplaceEngagementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpdateCoachMarketplaceEngagement not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetTeamsClubsFacilitiesOverview(context.Context, *GetTeamsClubsFacilitiesOverviewRequest) (*GetTeamsClubsFacilitiesOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetTeamsClubsFacilitiesOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertTeamSquadRoster(context.Context, *UpsertTeamSquadRosterRequest) (*UpsertTeamSquadRosterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertTeamSquadRoster not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitTeamTrafficLightCheckin(context.Context, *SubmitTeamTrafficLightCheckinRequest) (*SubmitTeamTrafficLightCheckinResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitTeamTrafficLightCheckin not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ReserveOrUpdateFacilityRackStation(context.Context, *ReserveOrUpdateFacilityRackStationRequest) (*ReserveOrUpdateFacilityRackStationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReserveOrUpdateFacilityRackStation not implemented")
+}
+func (UnimplementedWorkoutServiceServer) FlagFacilityMaintenanceOrIncident(context.Context, *FlagFacilityMaintenanceOrIncidentRequest) (*FlagFacilityMaintenanceOrIncidentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FlagFacilityMaintenanceOrIncident not implemented")
+}
+func (UnimplementedWorkoutServiceServer) VerifyYouthSquadSafeguarding(context.Context, *VerifyYouthSquadSafeguardingRequest) (*VerifyYouthSquadSafeguardingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyYouthSquadSafeguarding not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetCompetitionVerifiedPerformanceOverview(context.Context, *GetCompetitionVerifiedPerformanceOverviewRequest) (*GetCompetitionVerifiedPerformanceOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCompetitionVerifiedPerformanceOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertCompetitionEventPlan(context.Context, *UpsertCompetitionEventPlanRequest) (*UpsertCompetitionEventPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertCompetitionEventPlan not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitVerifiedPerformanceResult(context.Context, *SubmitVerifiedPerformanceResultRequest) (*SubmitVerifiedPerformanceResultResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitVerifiedPerformanceResult not implemented")
+}
+func (UnimplementedWorkoutServiceServer) FilePerformanceResultAppeal(context.Context, *FilePerformanceResultAppealRequest) (*FilePerformanceResultAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FilePerformanceResultAppeal not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordCompetitionRuleAndTueCheck(context.Context, *RecordCompetitionRuleAndTueCheckRequest) (*RecordCompetitionRuleAndTueCheckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordCompetitionRuleAndTueCheck not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ToggleOfflineVenueCompetitionMode(context.Context, *ToggleOfflineVenueCompetitionModeRequest) (*ToggleOfflineVenueCompetitionModeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ToggleOfflineVenueCompetitionMode not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetSportHybridStudiosOverview(context.Context, *GetSportHybridStudiosOverviewRequest) (*GetSportHybridStudiosOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSportHybridStudiosOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertSportHybridStudioModule(context.Context, *UpsertSportHybridStudioModuleRequest) (*UpsertSportHybridStudioModuleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSportHybridStudioModule not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ConfigureHybridInterferenceSchedule(context.Context, *ConfigureHybridInterferenceScheduleRequest) (*ConfigureHybridInterferenceScheduleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfigureHybridInterferenceSchedule not implemented")
+}
+func (UnimplementedWorkoutServiceServer) LogSportSkillOrManualActivitySession(context.Context, *LogSportSkillOrManualActivitySessionRequest) (*LogSportSkillOrManualActivitySessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogSportSkillOrManualActivitySession not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RegisterCustomManualUnvalidatedSport(context.Context, *RegisterCustomManualUnvalidatedSportRequest) (*RegisterCustomManualUnvalidatedSportResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterCustomManualUnvalidatedSport not implemented")
+}
+func (UnimplementedWorkoutServiceServer) AuditHybridLoadDeDuplication(context.Context, *AuditHybridLoadDeDuplicationRequest) (*AuditHybridLoadDeDuplicationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AuditHybridLoadDeDuplication not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetEquipmentTravelAdaptationOverview(context.Context, *GetEquipmentTravelAdaptationOverviewRequest) (*GetEquipmentTravelAdaptationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEquipmentTravelAdaptationOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertEquipmentLocationProfile(context.Context, *UpsertEquipmentLocationProfileRequest) (*UpsertEquipmentLocationProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertEquipmentLocationProfile not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GenerateTravelWorkoutAdaptation(context.Context, *GenerateTravelWorkoutAdaptationRequest) (*GenerateTravelWorkoutAdaptationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateTravelWorkoutAdaptation not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertVerifiedGymVenueListing(context.Context, *UpsertVerifiedGymVenueListingRequest) (*UpsertVerifiedGymVenueListingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertVerifiedGymVenueListing not implemented")
+}
+func (UnimplementedWorkoutServiceServer) FlagStaleGymVenueListing(context.Context, *FlagStaleGymVenueListingRequest) (*FlagStaleGymVenueListingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FlagStaleGymVenueListing not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RevertTravelWorkoutToHomeGym(context.Context, *RevertTravelWorkoutToHomeGymRequest) (*RevertTravelWorkoutToHomeGymResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RevertTravelWorkoutToHomeGym not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetFuelWeightSafetyOverview(context.Context, *GetFuelWeightSafetyOverviewRequest) (*GetFuelWeightSafetyOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetFuelWeightSafetyOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertSessionFuelHydrationPlan(context.Context, *UpsertSessionFuelHydrationPlanRequest) (*UpsertSessionFuelHydrationPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertSessionFuelHydrationPlan not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordPrivateBodyCompositionTrend(context.Context, *RecordPrivateBodyCompositionTrendRequest) (*RecordPrivateBodyCompositionTrendResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordPrivateBodyCompositionTrend not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EvaluateWeightClassSafetyPlan(context.Context, *EvaluateWeightClassSafetyPlanRequest) (*EvaluateWeightClassSafetyPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateWeightClassSafetyPlan not implemented")
+}
+func (UnimplementedWorkoutServiceServer) EscalateWeightCutToProfessionalRoute(context.Context, *EscalateWeightCutToProfessionalRouteRequest) (*EscalateWeightCutToProfessionalRouteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EscalateWeightCutToProfessionalRoute not implemented")
+}
+func (UnimplementedWorkoutServiceServer) VerifyBodyCompositionPrivacyIsolation(context.Context, *VerifyBodyCompositionPrivacyIsolationRequest) (*VerifyBodyCompositionPrivacyIsolationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyBodyCompositionPrivacyIsolation not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetHealthyCompetitionCrewsOverview(context.Context, *GetHealthyCompetitionCrewsOverviewRequest) (*GetHealthyCompetitionCrewsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetHealthyCompetitionCrewsOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertHealthyCompetitionCohort(context.Context, *UpsertHealthyCompetitionCohortRequest) (*UpsertHealthyCompetitionCohortResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertHealthyCompetitionCohort not implemented")
+}
+func (UnimplementedWorkoutServiceServer) ToggleCompetitionMutePreference(context.Context, *ToggleCompetitionMutePreferenceRequest) (*ToggleCompetitionMutePreferenceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ToggleCompetitionMutePreference not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SubmitCrewChallengeOrAppeal(context.Context, *SubmitCrewChallengeOrAppealRequest) (*SubmitCrewChallengeOrAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SubmitCrewChallengeOrAppeal not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RecordEmpireRewardContribution(context.Context, *RecordEmpireRewardContributionRequest) (*RecordEmpireRewardContributionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordEmpireRewardContribution not implemented")
+}
+func (UnimplementedWorkoutServiceServer) AdjudicateCrewAntiCheatCase(context.Context, *AdjudicateCrewAntiCheatCaseRequest) (*AdjudicateCrewAntiCheatCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdjudicateCrewAntiCheatCase not implemented")
+}
+func (UnimplementedWorkoutServiceServer) GetOfflineAccessibleReleaseCertOverview(context.Context, *GetOfflineAccessibleReleaseCertOverviewRequest) (*GetOfflineAccessibleReleaseCertOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetOfflineAccessibleReleaseCertOverview not implemented")
+}
+func (UnimplementedWorkoutServiceServer) CertifyOfflineMultimodalSyncState(context.Context, *CertifyOfflineMultimodalSyncStateRequest) (*CertifyOfflineMultimodalSyncStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CertifyOfflineMultimodalSyncState not implemented")
+}
+func (UnimplementedWorkoutServiceServer) UpsertAccessibilityAdaptiveProfile(context.Context, *UpsertAccessibilityAdaptiveProfileRequest) (*UpsertAccessibilityAdaptiveProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertAccessibilityAdaptiveProfile not implemented")
+}
+func (UnimplementedWorkoutServiceServer) RunMigrationAndErasureCertification(context.Context, *RunMigrationAndErasureCertificationRequest) (*RunMigrationAndErasureCertificationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunMigrationAndErasureCertification not implemented")
+}
+func (UnimplementedWorkoutServiceServer) VerifyBatteryAwareSensorPolicy(context.Context, *VerifyBatteryAwareSensorPolicyRequest) (*VerifyBatteryAwareSensorPolicyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyBatteryAwareSensorPolicy not implemented")
+}
+func (UnimplementedWorkoutServiceServer) SignOffForge16Of16ReleaseGate(context.Context, *SignOffForge16Of16ReleaseGateRequest) (*SignOffForge16Of16ReleaseGateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SignOffForge16Of16ReleaseGate not implemented")
 }
 func (UnimplementedWorkoutServiceServer) mustEmbedUnimplementedWorkoutServiceServer() {}
 func (UnimplementedWorkoutServiceServer) testEmbeddedByValue()                        {}
@@ -2658,6 +4030,1518 @@ func _WorkoutService_RequestCoachBooking_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WorkoutService_GetAdaptiveProgrammingOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAdaptiveProgrammingOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetAdaptiveProgrammingOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetAdaptiveProgrammingOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetAdaptiveProgrammingOverview(ctx, req.(*GetAdaptiveProgrammingOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GenerateOrUpdateProgrammeVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateOrUpdateProgrammeVersionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GenerateOrUpdateProgrammeVersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GenerateOrUpdateProgrammeVersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GenerateOrUpdateProgrammeVersion(ctx, req.(*GenerateOrUpdateProgrammeVersionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DecideProgrammeDraftAcceptance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DecideProgrammeDraftAcceptanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DecideProgrammeDraftAcceptance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DecideProgrammeDraftAcceptance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DecideProgrammeDraftAcceptance(ctx, req.(*DecideProgrammeDraftAcceptanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_TriggerSafeAdaptiveReplan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerSafeAdaptiveReplanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).TriggerSafeAdaptiveReplan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_TriggerSafeAdaptiveReplan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).TriggerSafeAdaptiveReplan(ctx, req.(*TriggerSafeAdaptiveReplanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertAdaptiveProgressionRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertAdaptiveProgressionRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertAdaptiveProgressionRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertAdaptiveProgressionRule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertAdaptiveProgressionRule(ctx, req.(*UpsertAdaptiveProgressionRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RollbackProgrammeVersion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RollbackProgrammeVersionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RollbackProgrammeVersion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RollbackProgrammeVersion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RollbackProgrammeVersion(ctx, req.(*RollbackProgrammeVersionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetMovementIntelligenceOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMovementIntelligenceOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetMovementIntelligenceOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetMovementIntelligenceOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetMovementIntelligenceOverview(ctx, req.(*GetMovementIntelligenceOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RankIntentPreservingSubstitutions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RankIntentPreservingSubstitutionsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RankIntentPreservingSubstitutions(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RankIntentPreservingSubstitutions_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RankIntentPreservingSubstitutions(ctx, req.(*RankIntentPreservingSubstitutionsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertPersonalTechniqueManual_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertPersonalTechniqueManualRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertPersonalTechniqueManual(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertPersonalTechniqueManual_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertPersonalTechniqueManual(ctx, req.(*UpsertPersonalTechniqueManualRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitCustomMovementForReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCustomMovementForReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitCustomMovementForReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitCustomMovementForReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitCustomMovementForReview(ctx, req.(*SubmitCustomMovementForReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertMovementGraphProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertMovementGraphProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertMovementGraphProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertMovementGraphProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertMovementGraphProfile(ctx, req.(*UpsertMovementGraphProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordSubstitutionSelection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordSubstitutionSelectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordSubstitutionSelection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordSubstitutionSelection_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordSubstitutionSelection(ctx, req.(*RecordSubstitutionSelectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetFormIntelligenceOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFormIntelligenceOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetFormIntelligenceOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetFormIntelligenceOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetFormIntelligenceOverview(ctx, req.(*GetFormIntelligenceOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitFormClipObservation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitFormClipObservationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitFormClipObservation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitFormClipObservation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitFormClipObservation(ctx, req.(*SubmitFormClipObservationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EscalateFormClipToCoach_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EscalateFormClipToCoachRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EscalateFormClipToCoach(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EscalateFormClipToCoach_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EscalateFormClipToCoach(ctx, req.(*EscalateFormClipToCoachRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_DecideCoachFormReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DecideCoachFormReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).DecideCoachFormReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_DecideCoachFormReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).DecideCoachFormReview(ctx, req.(*DecideCoachFormReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateFormPrivacyAndRetention_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFormPrivacyAndRetentionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateFormPrivacyAndRetention(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateFormPrivacyAndRetention_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateFormPrivacyAndRetention(ctx, req.(*UpdateFormPrivacyAndRetentionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EraseFormClipAndKeypoints_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EraseFormClipAndKeypointsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EraseFormClipAndKeypoints(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EraseFormClipAndKeypoints_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EraseFormClipAndKeypoints(ctx, req.(*EraseFormClipAndKeypointsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetWearableRecoveryFusionOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWearableRecoveryFusionOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetWearableRecoveryFusionOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetWearableRecoveryFusionOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetWearableRecoveryFusionOverview(ctx, req.(*GetWearableRecoveryFusionOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertWearablePurposeGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertWearablePurposeGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertWearablePurposeGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertWearablePurposeGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertWearablePurposeGrant(ctx, req.(*UpsertWearablePurposeGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RevokeWearablePurposeGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeWearablePurposeGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RevokeWearablePurposeGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RevokeWearablePurposeGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RevokeWearablePurposeGrant(ctx, req.(*RevokeWearablePurposeGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ConfigureRecoverySensorStream_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfigureRecoverySensorStreamRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ConfigureRecoverySensorStream(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ConfigureRecoverySensorStream_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ConfigureRecoverySensorStream(ctx, req.(*ConfigureRecoverySensorStreamRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitNoWearableSubjectiveReadiness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitNoWearableSubjectiveReadinessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitNoWearableSubjectiveReadiness(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitNoWearableSubjectiveReadiness_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitNoWearableSubjectiveReadiness(ctx, req.(*SubmitNoWearableSubjectiveReadinessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ReconcileSensorConflictOrOutage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileSensorConflictOrOutageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ReconcileSensorConflictOrOutage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ReconcileSensorConflictOrOutage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ReconcileSensorConflictOrOutage(ctx, req.(*ReconcileSensorConflictOrOutageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetPerformanceAnalyticsStudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPerformanceAnalyticsStudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetPerformanceAnalyticsStudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetPerformanceAnalyticsStudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetPerformanceAnalyticsStudioOverview(ctx, req.(*GetPerformanceAnalyticsStudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordPerformanceExposureLedger_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordPerformanceExposureLedgerRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordPerformanceExposureLedger(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordPerformanceExposureLedger_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordPerformanceExposureLedger(ctx, req.(*RecordPerformanceExposureLedgerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertStrengthPerformanceModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertStrengthPerformanceModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertStrengthPerformanceModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertStrengthPerformanceModel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertStrengthPerformanceModel(ctx, req.(*UpsertStrengthPerformanceModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CreateTrainingNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTrainingNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CreateTrainingNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CreateTrainingNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CreateTrainingNOf1Experiment(ctx, req.(*CreateTrainingNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_LogTrainingNOf1ExperimentSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogTrainingNOf1ExperimentSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).LogTrainingNOf1ExperimentSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_LogTrainingNOf1ExperimentSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).LogTrainingNOf1ExperimentSession(ctx, req.(*LogTrainingNOf1ExperimentSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EvaluateTrainingNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateTrainingNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EvaluateTrainingNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EvaluateTrainingNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EvaluateTrainingNOf1Experiment(ctx, req.(*EvaluateTrainingNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetInjuryReturnPathwayOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInjuryReturnPathwayOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetInjuryReturnPathwayOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetInjuryReturnPathwayOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetInjuryReturnPathwayOverview(ctx, req.(*GetInjuryReturnPathwayOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertInjuryRestrictionLock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertInjuryRestrictionLockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertInjuryRestrictionLock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertInjuryRestrictionLock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertInjuryRestrictionLock(ctx, req.(*UpsertInjuryRestrictionLockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_LogInSessionPainTriageEvent_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogInSessionPainTriageEventRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).LogInSessionPainTriageEvent(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_LogInSessionPainTriageEvent_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).LogInSessionPainTriageEvent(ctx, req.(*LogInSessionPainTriageEventRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_AdvanceReturnToTrainingStage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdvanceReturnToTrainingStageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).AdvanceReturnToTrainingStage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_AdvanceReturnToTrainingStage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).AdvanceReturnToTrainingStage(ctx, req.(*AdvanceReturnToTrainingStageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordReturnToTrainingSetback_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordReturnToTrainingSetbackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordReturnToTrainingSetback(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordReturnToTrainingSetback_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordReturnToTrainingSetback(ctx, req.(*RecordReturnToTrainingSetbackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ClearInjuryRestrictionLock_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClearInjuryRestrictionLockRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ClearInjuryRestrictionLock(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ClearInjuryRestrictionLock_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ClearInjuryRestrictionLock(ctx, req.(*ClearInjuryRestrictionLockRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetCoachOsCollaborationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCoachOsCollaborationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetCoachOsCollaborationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetCoachOsCollaborationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetCoachOsCollaborationOverview(ctx, req.(*GetCoachOsCollaborationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertCoachAthleteScopedGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCoachAthleteScopedGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertCoachAthleteScopedGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertCoachAthleteScopedGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertCoachAthleteScopedGrant(ctx, req.(*UpsertCoachAthleteScopedGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RevokeCoachAthleteScopedGrant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevokeCoachAthleteScopedGrantRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RevokeCoachAthleteScopedGrant(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RevokeCoachAthleteScopedGrant_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RevokeCoachAthleteScopedGrant(ctx, req.(*RevokeCoachAthleteScopedGrantRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ProposeCoachProgrammeChange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProposeCoachProgrammeChangeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ProposeCoachProgrammeChange(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ProposeCoachProgrammeChange_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ProposeCoachProgrammeChange(ctx, req.(*ProposeCoachProgrammeChangeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RespondToCoachChangeProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RespondToCoachChangeProposalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RespondToCoachChangeProposal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RespondToCoachChangeProposal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RespondToCoachChangeProposal(ctx, req.(*RespondToCoachChangeProposalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpdateCoachMarketplaceEngagement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateCoachMarketplaceEngagementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpdateCoachMarketplaceEngagement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpdateCoachMarketplaceEngagement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpdateCoachMarketplaceEngagement(ctx, req.(*UpdateCoachMarketplaceEngagementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetTeamsClubsFacilitiesOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTeamsClubsFacilitiesOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetTeamsClubsFacilitiesOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetTeamsClubsFacilitiesOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetTeamsClubsFacilitiesOverview(ctx, req.(*GetTeamsClubsFacilitiesOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertTeamSquadRoster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertTeamSquadRosterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertTeamSquadRoster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertTeamSquadRoster_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertTeamSquadRoster(ctx, req.(*UpsertTeamSquadRosterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitTeamTrafficLightCheckin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitTeamTrafficLightCheckinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitTeamTrafficLightCheckin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitTeamTrafficLightCheckin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitTeamTrafficLightCheckin(ctx, req.(*SubmitTeamTrafficLightCheckinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ReserveOrUpdateFacilityRackStation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReserveOrUpdateFacilityRackStationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ReserveOrUpdateFacilityRackStation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ReserveOrUpdateFacilityRackStation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ReserveOrUpdateFacilityRackStation(ctx, req.(*ReserveOrUpdateFacilityRackStationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_FlagFacilityMaintenanceOrIncident_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FlagFacilityMaintenanceOrIncidentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).FlagFacilityMaintenanceOrIncident(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_FlagFacilityMaintenanceOrIncident_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).FlagFacilityMaintenanceOrIncident(ctx, req.(*FlagFacilityMaintenanceOrIncidentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_VerifyYouthSquadSafeguarding_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyYouthSquadSafeguardingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).VerifyYouthSquadSafeguarding(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_VerifyYouthSquadSafeguarding_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).VerifyYouthSquadSafeguarding(ctx, req.(*VerifyYouthSquadSafeguardingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetCompetitionVerifiedPerformanceOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCompetitionVerifiedPerformanceOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetCompetitionVerifiedPerformanceOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetCompetitionVerifiedPerformanceOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetCompetitionVerifiedPerformanceOverview(ctx, req.(*GetCompetitionVerifiedPerformanceOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertCompetitionEventPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertCompetitionEventPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertCompetitionEventPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertCompetitionEventPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertCompetitionEventPlan(ctx, req.(*UpsertCompetitionEventPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitVerifiedPerformanceResult_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitVerifiedPerformanceResultRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitVerifiedPerformanceResult(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitVerifiedPerformanceResult_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitVerifiedPerformanceResult(ctx, req.(*SubmitVerifiedPerformanceResultRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_FilePerformanceResultAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FilePerformanceResultAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).FilePerformanceResultAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_FilePerformanceResultAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).FilePerformanceResultAppeal(ctx, req.(*FilePerformanceResultAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordCompetitionRuleAndTueCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordCompetitionRuleAndTueCheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordCompetitionRuleAndTueCheck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordCompetitionRuleAndTueCheck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordCompetitionRuleAndTueCheck(ctx, req.(*RecordCompetitionRuleAndTueCheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ToggleOfflineVenueCompetitionMode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ToggleOfflineVenueCompetitionModeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ToggleOfflineVenueCompetitionMode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ToggleOfflineVenueCompetitionMode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ToggleOfflineVenueCompetitionMode(ctx, req.(*ToggleOfflineVenueCompetitionModeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetSportHybridStudiosOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSportHybridStudiosOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetSportHybridStudiosOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetSportHybridStudiosOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetSportHybridStudiosOverview(ctx, req.(*GetSportHybridStudiosOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertSportHybridStudioModule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSportHybridStudioModuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertSportHybridStudioModule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertSportHybridStudioModule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertSportHybridStudioModule(ctx, req.(*UpsertSportHybridStudioModuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ConfigureHybridInterferenceSchedule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfigureHybridInterferenceScheduleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ConfigureHybridInterferenceSchedule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ConfigureHybridInterferenceSchedule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ConfigureHybridInterferenceSchedule(ctx, req.(*ConfigureHybridInterferenceScheduleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_LogSportSkillOrManualActivitySession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogSportSkillOrManualActivitySessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).LogSportSkillOrManualActivitySession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_LogSportSkillOrManualActivitySession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).LogSportSkillOrManualActivitySession(ctx, req.(*LogSportSkillOrManualActivitySessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RegisterCustomManualUnvalidatedSport_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterCustomManualUnvalidatedSportRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RegisterCustomManualUnvalidatedSport(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RegisterCustomManualUnvalidatedSport_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RegisterCustomManualUnvalidatedSport(ctx, req.(*RegisterCustomManualUnvalidatedSportRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_AuditHybridLoadDeDuplication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AuditHybridLoadDeDuplicationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).AuditHybridLoadDeDuplication(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_AuditHybridLoadDeDuplication_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).AuditHybridLoadDeDuplication(ctx, req.(*AuditHybridLoadDeDuplicationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetEquipmentTravelAdaptationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEquipmentTravelAdaptationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetEquipmentTravelAdaptationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetEquipmentTravelAdaptationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetEquipmentTravelAdaptationOverview(ctx, req.(*GetEquipmentTravelAdaptationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertEquipmentLocationProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertEquipmentLocationProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertEquipmentLocationProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertEquipmentLocationProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertEquipmentLocationProfile(ctx, req.(*UpsertEquipmentLocationProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GenerateTravelWorkoutAdaptation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateTravelWorkoutAdaptationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GenerateTravelWorkoutAdaptation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GenerateTravelWorkoutAdaptation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GenerateTravelWorkoutAdaptation(ctx, req.(*GenerateTravelWorkoutAdaptationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertVerifiedGymVenueListing_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertVerifiedGymVenueListingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertVerifiedGymVenueListing(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertVerifiedGymVenueListing_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertVerifiedGymVenueListing(ctx, req.(*UpsertVerifiedGymVenueListingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_FlagStaleGymVenueListing_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FlagStaleGymVenueListingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).FlagStaleGymVenueListing(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_FlagStaleGymVenueListing_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).FlagStaleGymVenueListing(ctx, req.(*FlagStaleGymVenueListingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RevertTravelWorkoutToHomeGym_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RevertTravelWorkoutToHomeGymRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RevertTravelWorkoutToHomeGym(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RevertTravelWorkoutToHomeGym_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RevertTravelWorkoutToHomeGym(ctx, req.(*RevertTravelWorkoutToHomeGymRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetFuelWeightSafetyOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFuelWeightSafetyOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetFuelWeightSafetyOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetFuelWeightSafetyOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetFuelWeightSafetyOverview(ctx, req.(*GetFuelWeightSafetyOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertSessionFuelHydrationPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertSessionFuelHydrationPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertSessionFuelHydrationPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertSessionFuelHydrationPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertSessionFuelHydrationPlan(ctx, req.(*UpsertSessionFuelHydrationPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordPrivateBodyCompositionTrend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordPrivateBodyCompositionTrendRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordPrivateBodyCompositionTrend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordPrivateBodyCompositionTrend_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordPrivateBodyCompositionTrend(ctx, req.(*RecordPrivateBodyCompositionTrendRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EvaluateWeightClassSafetyPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateWeightClassSafetyPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EvaluateWeightClassSafetyPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EvaluateWeightClassSafetyPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EvaluateWeightClassSafetyPlan(ctx, req.(*EvaluateWeightClassSafetyPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_EscalateWeightCutToProfessionalRoute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EscalateWeightCutToProfessionalRouteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).EscalateWeightCutToProfessionalRoute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_EscalateWeightCutToProfessionalRoute_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).EscalateWeightCutToProfessionalRoute(ctx, req.(*EscalateWeightCutToProfessionalRouteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_VerifyBodyCompositionPrivacyIsolation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyBodyCompositionPrivacyIsolationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).VerifyBodyCompositionPrivacyIsolation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_VerifyBodyCompositionPrivacyIsolation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).VerifyBodyCompositionPrivacyIsolation(ctx, req.(*VerifyBodyCompositionPrivacyIsolationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetHealthyCompetitionCrewsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHealthyCompetitionCrewsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetHealthyCompetitionCrewsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetHealthyCompetitionCrewsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetHealthyCompetitionCrewsOverview(ctx, req.(*GetHealthyCompetitionCrewsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertHealthyCompetitionCohort_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertHealthyCompetitionCohortRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertHealthyCompetitionCohort(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertHealthyCompetitionCohort_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertHealthyCompetitionCohort(ctx, req.(*UpsertHealthyCompetitionCohortRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_ToggleCompetitionMutePreference_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ToggleCompetitionMutePreferenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).ToggleCompetitionMutePreference(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_ToggleCompetitionMutePreference_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).ToggleCompetitionMutePreference(ctx, req.(*ToggleCompetitionMutePreferenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SubmitCrewChallengeOrAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitCrewChallengeOrAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SubmitCrewChallengeOrAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SubmitCrewChallengeOrAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SubmitCrewChallengeOrAppeal(ctx, req.(*SubmitCrewChallengeOrAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RecordEmpireRewardContribution_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordEmpireRewardContributionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RecordEmpireRewardContribution(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RecordEmpireRewardContribution_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RecordEmpireRewardContribution(ctx, req.(*RecordEmpireRewardContributionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_AdjudicateCrewAntiCheatCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdjudicateCrewAntiCheatCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).AdjudicateCrewAntiCheatCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_AdjudicateCrewAntiCheatCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).AdjudicateCrewAntiCheatCase(ctx, req.(*AdjudicateCrewAntiCheatCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_GetOfflineAccessibleReleaseCertOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOfflineAccessibleReleaseCertOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).GetOfflineAccessibleReleaseCertOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_GetOfflineAccessibleReleaseCertOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).GetOfflineAccessibleReleaseCertOverview(ctx, req.(*GetOfflineAccessibleReleaseCertOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_CertifyOfflineMultimodalSyncState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CertifyOfflineMultimodalSyncStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).CertifyOfflineMultimodalSyncState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_CertifyOfflineMultimodalSyncState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).CertifyOfflineMultimodalSyncState(ctx, req.(*CertifyOfflineMultimodalSyncStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_UpsertAccessibilityAdaptiveProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertAccessibilityAdaptiveProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).UpsertAccessibilityAdaptiveProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_UpsertAccessibilityAdaptiveProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).UpsertAccessibilityAdaptiveProfile(ctx, req.(*UpsertAccessibilityAdaptiveProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_RunMigrationAndErasureCertification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunMigrationAndErasureCertificationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).RunMigrationAndErasureCertification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_RunMigrationAndErasureCertification_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).RunMigrationAndErasureCertification(ctx, req.(*RunMigrationAndErasureCertificationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_VerifyBatteryAwareSensorPolicy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyBatteryAwareSensorPolicyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).VerifyBatteryAwareSensorPolicy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_VerifyBatteryAwareSensorPolicy_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).VerifyBatteryAwareSensorPolicy(ctx, req.(*VerifyBatteryAwareSensorPolicyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WorkoutService_SignOffForge16Of16ReleaseGate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SignOffForge16Of16ReleaseGateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WorkoutServiceServer).SignOffForge16Of16ReleaseGate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: WorkoutService_SignOffForge16Of16ReleaseGate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WorkoutServiceServer).SignOffForge16Of16ReleaseGate(ctx, req.(*SignOffForge16Of16ReleaseGateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // WorkoutService_ServiceDesc is the grpc.ServiceDesc for WorkoutService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2956,6 +5840,342 @@ var WorkoutService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RequestCoachBooking",
 			Handler:    _WorkoutService_RequestCoachBooking_Handler,
+		},
+		{
+			MethodName: "GetAdaptiveProgrammingOverview",
+			Handler:    _WorkoutService_GetAdaptiveProgrammingOverview_Handler,
+		},
+		{
+			MethodName: "GenerateOrUpdateProgrammeVersion",
+			Handler:    _WorkoutService_GenerateOrUpdateProgrammeVersion_Handler,
+		},
+		{
+			MethodName: "DecideProgrammeDraftAcceptance",
+			Handler:    _WorkoutService_DecideProgrammeDraftAcceptance_Handler,
+		},
+		{
+			MethodName: "TriggerSafeAdaptiveReplan",
+			Handler:    _WorkoutService_TriggerSafeAdaptiveReplan_Handler,
+		},
+		{
+			MethodName: "UpsertAdaptiveProgressionRule",
+			Handler:    _WorkoutService_UpsertAdaptiveProgressionRule_Handler,
+		},
+		{
+			MethodName: "RollbackProgrammeVersion",
+			Handler:    _WorkoutService_RollbackProgrammeVersion_Handler,
+		},
+		{
+			MethodName: "GetMovementIntelligenceOverview",
+			Handler:    _WorkoutService_GetMovementIntelligenceOverview_Handler,
+		},
+		{
+			MethodName: "RankIntentPreservingSubstitutions",
+			Handler:    _WorkoutService_RankIntentPreservingSubstitutions_Handler,
+		},
+		{
+			MethodName: "UpsertPersonalTechniqueManual",
+			Handler:    _WorkoutService_UpsertPersonalTechniqueManual_Handler,
+		},
+		{
+			MethodName: "SubmitCustomMovementForReview",
+			Handler:    _WorkoutService_SubmitCustomMovementForReview_Handler,
+		},
+		{
+			MethodName: "UpsertMovementGraphProfile",
+			Handler:    _WorkoutService_UpsertMovementGraphProfile_Handler,
+		},
+		{
+			MethodName: "RecordSubstitutionSelection",
+			Handler:    _WorkoutService_RecordSubstitutionSelection_Handler,
+		},
+		{
+			MethodName: "GetFormIntelligenceOverview",
+			Handler:    _WorkoutService_GetFormIntelligenceOverview_Handler,
+		},
+		{
+			MethodName: "SubmitFormClipObservation",
+			Handler:    _WorkoutService_SubmitFormClipObservation_Handler,
+		},
+		{
+			MethodName: "EscalateFormClipToCoach",
+			Handler:    _WorkoutService_EscalateFormClipToCoach_Handler,
+		},
+		{
+			MethodName: "DecideCoachFormReview",
+			Handler:    _WorkoutService_DecideCoachFormReview_Handler,
+		},
+		{
+			MethodName: "UpdateFormPrivacyAndRetention",
+			Handler:    _WorkoutService_UpdateFormPrivacyAndRetention_Handler,
+		},
+		{
+			MethodName: "EraseFormClipAndKeypoints",
+			Handler:    _WorkoutService_EraseFormClipAndKeypoints_Handler,
+		},
+		{
+			MethodName: "GetWearableRecoveryFusionOverview",
+			Handler:    _WorkoutService_GetWearableRecoveryFusionOverview_Handler,
+		},
+		{
+			MethodName: "UpsertWearablePurposeGrant",
+			Handler:    _WorkoutService_UpsertWearablePurposeGrant_Handler,
+		},
+		{
+			MethodName: "RevokeWearablePurposeGrant",
+			Handler:    _WorkoutService_RevokeWearablePurposeGrant_Handler,
+		},
+		{
+			MethodName: "ConfigureRecoverySensorStream",
+			Handler:    _WorkoutService_ConfigureRecoverySensorStream_Handler,
+		},
+		{
+			MethodName: "SubmitNoWearableSubjectiveReadiness",
+			Handler:    _WorkoutService_SubmitNoWearableSubjectiveReadiness_Handler,
+		},
+		{
+			MethodName: "ReconcileSensorConflictOrOutage",
+			Handler:    _WorkoutService_ReconcileSensorConflictOrOutage_Handler,
+		},
+		{
+			MethodName: "GetPerformanceAnalyticsStudioOverview",
+			Handler:    _WorkoutService_GetPerformanceAnalyticsStudioOverview_Handler,
+		},
+		{
+			MethodName: "RecordPerformanceExposureLedger",
+			Handler:    _WorkoutService_RecordPerformanceExposureLedger_Handler,
+		},
+		{
+			MethodName: "UpsertStrengthPerformanceModel",
+			Handler:    _WorkoutService_UpsertStrengthPerformanceModel_Handler,
+		},
+		{
+			MethodName: "CreateTrainingNOf1Experiment",
+			Handler:    _WorkoutService_CreateTrainingNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "LogTrainingNOf1ExperimentSession",
+			Handler:    _WorkoutService_LogTrainingNOf1ExperimentSession_Handler,
+		},
+		{
+			MethodName: "EvaluateTrainingNOf1Experiment",
+			Handler:    _WorkoutService_EvaluateTrainingNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "GetInjuryReturnPathwayOverview",
+			Handler:    _WorkoutService_GetInjuryReturnPathwayOverview_Handler,
+		},
+		{
+			MethodName: "UpsertInjuryRestrictionLock",
+			Handler:    _WorkoutService_UpsertInjuryRestrictionLock_Handler,
+		},
+		{
+			MethodName: "LogInSessionPainTriageEvent",
+			Handler:    _WorkoutService_LogInSessionPainTriageEvent_Handler,
+		},
+		{
+			MethodName: "AdvanceReturnToTrainingStage",
+			Handler:    _WorkoutService_AdvanceReturnToTrainingStage_Handler,
+		},
+		{
+			MethodName: "RecordReturnToTrainingSetback",
+			Handler:    _WorkoutService_RecordReturnToTrainingSetback_Handler,
+		},
+		{
+			MethodName: "ClearInjuryRestrictionLock",
+			Handler:    _WorkoutService_ClearInjuryRestrictionLock_Handler,
+		},
+		{
+			MethodName: "GetCoachOsCollaborationOverview",
+			Handler:    _WorkoutService_GetCoachOsCollaborationOverview_Handler,
+		},
+		{
+			MethodName: "UpsertCoachAthleteScopedGrant",
+			Handler:    _WorkoutService_UpsertCoachAthleteScopedGrant_Handler,
+		},
+		{
+			MethodName: "RevokeCoachAthleteScopedGrant",
+			Handler:    _WorkoutService_RevokeCoachAthleteScopedGrant_Handler,
+		},
+		{
+			MethodName: "ProposeCoachProgrammeChange",
+			Handler:    _WorkoutService_ProposeCoachProgrammeChange_Handler,
+		},
+		{
+			MethodName: "RespondToCoachChangeProposal",
+			Handler:    _WorkoutService_RespondToCoachChangeProposal_Handler,
+		},
+		{
+			MethodName: "UpdateCoachMarketplaceEngagement",
+			Handler:    _WorkoutService_UpdateCoachMarketplaceEngagement_Handler,
+		},
+		{
+			MethodName: "GetTeamsClubsFacilitiesOverview",
+			Handler:    _WorkoutService_GetTeamsClubsFacilitiesOverview_Handler,
+		},
+		{
+			MethodName: "UpsertTeamSquadRoster",
+			Handler:    _WorkoutService_UpsertTeamSquadRoster_Handler,
+		},
+		{
+			MethodName: "SubmitTeamTrafficLightCheckin",
+			Handler:    _WorkoutService_SubmitTeamTrafficLightCheckin_Handler,
+		},
+		{
+			MethodName: "ReserveOrUpdateFacilityRackStation",
+			Handler:    _WorkoutService_ReserveOrUpdateFacilityRackStation_Handler,
+		},
+		{
+			MethodName: "FlagFacilityMaintenanceOrIncident",
+			Handler:    _WorkoutService_FlagFacilityMaintenanceOrIncident_Handler,
+		},
+		{
+			MethodName: "VerifyYouthSquadSafeguarding",
+			Handler:    _WorkoutService_VerifyYouthSquadSafeguarding_Handler,
+		},
+		{
+			MethodName: "GetCompetitionVerifiedPerformanceOverview",
+			Handler:    _WorkoutService_GetCompetitionVerifiedPerformanceOverview_Handler,
+		},
+		{
+			MethodName: "UpsertCompetitionEventPlan",
+			Handler:    _WorkoutService_UpsertCompetitionEventPlan_Handler,
+		},
+		{
+			MethodName: "SubmitVerifiedPerformanceResult",
+			Handler:    _WorkoutService_SubmitVerifiedPerformanceResult_Handler,
+		},
+		{
+			MethodName: "FilePerformanceResultAppeal",
+			Handler:    _WorkoutService_FilePerformanceResultAppeal_Handler,
+		},
+		{
+			MethodName: "RecordCompetitionRuleAndTueCheck",
+			Handler:    _WorkoutService_RecordCompetitionRuleAndTueCheck_Handler,
+		},
+		{
+			MethodName: "ToggleOfflineVenueCompetitionMode",
+			Handler:    _WorkoutService_ToggleOfflineVenueCompetitionMode_Handler,
+		},
+		{
+			MethodName: "GetSportHybridStudiosOverview",
+			Handler:    _WorkoutService_GetSportHybridStudiosOverview_Handler,
+		},
+		{
+			MethodName: "UpsertSportHybridStudioModule",
+			Handler:    _WorkoutService_UpsertSportHybridStudioModule_Handler,
+		},
+		{
+			MethodName: "ConfigureHybridInterferenceSchedule",
+			Handler:    _WorkoutService_ConfigureHybridInterferenceSchedule_Handler,
+		},
+		{
+			MethodName: "LogSportSkillOrManualActivitySession",
+			Handler:    _WorkoutService_LogSportSkillOrManualActivitySession_Handler,
+		},
+		{
+			MethodName: "RegisterCustomManualUnvalidatedSport",
+			Handler:    _WorkoutService_RegisterCustomManualUnvalidatedSport_Handler,
+		},
+		{
+			MethodName: "AuditHybridLoadDeDuplication",
+			Handler:    _WorkoutService_AuditHybridLoadDeDuplication_Handler,
+		},
+		{
+			MethodName: "GetEquipmentTravelAdaptationOverview",
+			Handler:    _WorkoutService_GetEquipmentTravelAdaptationOverview_Handler,
+		},
+		{
+			MethodName: "UpsertEquipmentLocationProfile",
+			Handler:    _WorkoutService_UpsertEquipmentLocationProfile_Handler,
+		},
+		{
+			MethodName: "GenerateTravelWorkoutAdaptation",
+			Handler:    _WorkoutService_GenerateTravelWorkoutAdaptation_Handler,
+		},
+		{
+			MethodName: "UpsertVerifiedGymVenueListing",
+			Handler:    _WorkoutService_UpsertVerifiedGymVenueListing_Handler,
+		},
+		{
+			MethodName: "FlagStaleGymVenueListing",
+			Handler:    _WorkoutService_FlagStaleGymVenueListing_Handler,
+		},
+		{
+			MethodName: "RevertTravelWorkoutToHomeGym",
+			Handler:    _WorkoutService_RevertTravelWorkoutToHomeGym_Handler,
+		},
+		{
+			MethodName: "GetFuelWeightSafetyOverview",
+			Handler:    _WorkoutService_GetFuelWeightSafetyOverview_Handler,
+		},
+		{
+			MethodName: "UpsertSessionFuelHydrationPlan",
+			Handler:    _WorkoutService_UpsertSessionFuelHydrationPlan_Handler,
+		},
+		{
+			MethodName: "RecordPrivateBodyCompositionTrend",
+			Handler:    _WorkoutService_RecordPrivateBodyCompositionTrend_Handler,
+		},
+		{
+			MethodName: "EvaluateWeightClassSafetyPlan",
+			Handler:    _WorkoutService_EvaluateWeightClassSafetyPlan_Handler,
+		},
+		{
+			MethodName: "EscalateWeightCutToProfessionalRoute",
+			Handler:    _WorkoutService_EscalateWeightCutToProfessionalRoute_Handler,
+		},
+		{
+			MethodName: "VerifyBodyCompositionPrivacyIsolation",
+			Handler:    _WorkoutService_VerifyBodyCompositionPrivacyIsolation_Handler,
+		},
+		{
+			MethodName: "GetHealthyCompetitionCrewsOverview",
+			Handler:    _WorkoutService_GetHealthyCompetitionCrewsOverview_Handler,
+		},
+		{
+			MethodName: "UpsertHealthyCompetitionCohort",
+			Handler:    _WorkoutService_UpsertHealthyCompetitionCohort_Handler,
+		},
+		{
+			MethodName: "ToggleCompetitionMutePreference",
+			Handler:    _WorkoutService_ToggleCompetitionMutePreference_Handler,
+		},
+		{
+			MethodName: "SubmitCrewChallengeOrAppeal",
+			Handler:    _WorkoutService_SubmitCrewChallengeOrAppeal_Handler,
+		},
+		{
+			MethodName: "RecordEmpireRewardContribution",
+			Handler:    _WorkoutService_RecordEmpireRewardContribution_Handler,
+		},
+		{
+			MethodName: "AdjudicateCrewAntiCheatCase",
+			Handler:    _WorkoutService_AdjudicateCrewAntiCheatCase_Handler,
+		},
+		{
+			MethodName: "GetOfflineAccessibleReleaseCertOverview",
+			Handler:    _WorkoutService_GetOfflineAccessibleReleaseCertOverview_Handler,
+		},
+		{
+			MethodName: "CertifyOfflineMultimodalSyncState",
+			Handler:    _WorkoutService_CertifyOfflineMultimodalSyncState_Handler,
+		},
+		{
+			MethodName: "UpsertAccessibilityAdaptiveProfile",
+			Handler:    _WorkoutService_UpsertAccessibilityAdaptiveProfile_Handler,
+		},
+		{
+			MethodName: "RunMigrationAndErasureCertification",
+			Handler:    _WorkoutService_RunMigrationAndErasureCertification_Handler,
+		},
+		{
+			MethodName: "VerifyBatteryAwareSensorPolicy",
+			Handler:    _WorkoutService_VerifyBatteryAwareSensorPolicy_Handler,
+		},
+		{
+			MethodName: "SignOffForge16Of16ReleaseGate",
+			Handler:    _WorkoutService_SignOffForge16Of16ReleaseGate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

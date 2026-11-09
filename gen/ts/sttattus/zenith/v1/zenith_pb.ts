@@ -5740,3 +5740,4026 @@ export class CancelLoungeBookingResponse extends Message<CancelLoungeBookingResp
   }
 }
 
+/**
+ * Choice 1 (Z1): Native Focus Firewall
+ *
+ * @generated from message sttattus.zenith.v1.ZenithFocusFirewallSessionItem
+ */
+export class ZenithFocusFirewallSessionItem extends Message<ZenithFocusFirewallSessionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string firewall_code = 3;
+   */
+  firewallCode = "";
+
+  /**
+   * @generated from field: string session_title = 4;
+   */
+  sessionTitle = "";
+
+  /**
+   * @generated from field: string enforcement_mode = 5;
+   */
+  enforcementMode = "";
+
+  /**
+   * @generated from field: string platform_capability_matrix = 6;
+   */
+  platformCapabilityMatrix = "";
+
+  /**
+   * @generated from field: string whitelisted_emergency_paths = 7;
+   */
+  whitelistedEmergencyPaths = "";
+
+  /**
+   * @generated from field: string override_friction_and_log = 8;
+   */
+  overrideFrictionAndLog = "";
+
+  /**
+   * @generated from field: string firewall_state = 9;
+   */
+  firewallState = "";
+
+  /**
+   * @generated from field: bool emergency_exit_always_permitted = 10;
+   */
+  emergencyExitAlwaysPermitted = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithFocusFirewallSessionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithFocusFirewallSessionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "firewall_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "session_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "enforcement_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "platform_capability_matrix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "whitelisted_emergency_paths", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "override_friction_and_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "firewall_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "emergency_exit_always_permitted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithFocusFirewallSessionItem {
+    return new ZenithFocusFirewallSessionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithFocusFirewallSessionItem {
+    return new ZenithFocusFirewallSessionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithFocusFirewallSessionItem {
+    return new ZenithFocusFirewallSessionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithFocusFirewallSessionItem | PlainMessage<ZenithFocusFirewallSessionItem> | undefined, b: ZenithFocusFirewallSessionItem | PlainMessage<ZenithFocusFirewallSessionItem> | undefined): boolean {
+    return proto3.util.equals(ZenithFocusFirewallSessionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchRequest
+ */
+export class GetZenithFocusFirewallWorkbenchRequest extends Message<GetZenithFocusFirewallWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithFocusFirewallWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithFocusFirewallWorkbenchRequest {
+    return new GetZenithFocusFirewallWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithFocusFirewallWorkbenchRequest {
+    return new GetZenithFocusFirewallWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithFocusFirewallWorkbenchRequest {
+    return new GetZenithFocusFirewallWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithFocusFirewallWorkbenchRequest | PlainMessage<GetZenithFocusFirewallWorkbenchRequest> | undefined, b: GetZenithFocusFirewallWorkbenchRequest | PlainMessage<GetZenithFocusFirewallWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithFocusFirewallWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse
+ */
+export class GetZenithFocusFirewallWorkbenchResponse extends Message<GetZenithFocusFirewallWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithFocusFirewallSessionItem sessions = 1;
+   */
+  sessions: ZenithFocusFirewallSessionItem[] = [];
+
+  /**
+   * @generated from field: bool emergency_exit_always_permitted_enforced = 2;
+   */
+  emergencyExitAlwaysPermittedEnforced = false;
+
+  /**
+   * @generated from field: string honest_platform_capability_summary = 3;
+   */
+  honestPlatformCapabilitySummary = "";
+
+  constructor(data?: PartialMessage<GetZenithFocusFirewallWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sessions", kind: "message", T: ZenithFocusFirewallSessionItem, repeated: true },
+    { no: 2, name: "emergency_exit_always_permitted_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "honest_platform_capability_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithFocusFirewallWorkbenchResponse {
+    return new GetZenithFocusFirewallWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithFocusFirewallWorkbenchResponse {
+    return new GetZenithFocusFirewallWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithFocusFirewallWorkbenchResponse {
+    return new GetZenithFocusFirewallWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithFocusFirewallWorkbenchResponse | PlainMessage<GetZenithFocusFirewallWorkbenchResponse> | undefined, b: GetZenithFocusFirewallWorkbenchResponse | PlainMessage<GetZenithFocusFirewallWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithFocusFirewallWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithFocusFirewallSessionRequest
+ */
+export class SaveZenithFocusFirewallSessionRequest extends Message<SaveZenithFocusFirewallSessionRequest> {
+  /**
+   * @generated from field: string firewall_code = 1;
+   */
+  firewallCode = "";
+
+  /**
+   * @generated from field: string session_title = 2;
+   */
+  sessionTitle = "";
+
+  /**
+   * @generated from field: string enforcement_mode = 3;
+   */
+  enforcementMode = "";
+
+  /**
+   * @generated from field: string platform_capability_matrix = 4;
+   */
+  platformCapabilityMatrix = "";
+
+  /**
+   * @generated from field: string whitelisted_emergency_paths = 5;
+   */
+  whitelistedEmergencyPaths = "";
+
+  /**
+   * @generated from field: string override_friction_and_log = 6;
+   */
+  overrideFrictionAndLog = "";
+
+  /**
+   * @generated from field: string firewall_state = 7;
+   */
+  firewallState = "";
+
+  constructor(data?: PartialMessage<SaveZenithFocusFirewallSessionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithFocusFirewallSessionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "firewall_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "session_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "enforcement_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "platform_capability_matrix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "whitelisted_emergency_paths", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "override_friction_and_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "firewall_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithFocusFirewallSessionRequest {
+    return new SaveZenithFocusFirewallSessionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithFocusFirewallSessionRequest {
+    return new SaveZenithFocusFirewallSessionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithFocusFirewallSessionRequest {
+    return new SaveZenithFocusFirewallSessionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithFocusFirewallSessionRequest | PlainMessage<SaveZenithFocusFirewallSessionRequest> | undefined, b: SaveZenithFocusFirewallSessionRequest | PlainMessage<SaveZenithFocusFirewallSessionRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithFocusFirewallSessionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse
+ */
+export class SaveZenithFocusFirewallSessionResponse extends Message<SaveZenithFocusFirewallSessionResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithFocusFirewallSessionItem session = 1;
+   */
+  session?: ZenithFocusFirewallSessionItem;
+
+  constructor(data?: PartialMessage<SaveZenithFocusFirewallSessionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session", kind: "message", T: ZenithFocusFirewallSessionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithFocusFirewallSessionResponse {
+    return new SaveZenithFocusFirewallSessionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithFocusFirewallSessionResponse {
+    return new SaveZenithFocusFirewallSessionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithFocusFirewallSessionResponse {
+    return new SaveZenithFocusFirewallSessionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithFocusFirewallSessionResponse | PlainMessage<SaveZenithFocusFirewallSessionResponse> | undefined, b: SaveZenithFocusFirewallSessionResponse | PlainMessage<SaveZenithFocusFirewallSessionResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithFocusFirewallSessionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteRequest
+ */
+export class TriggerZenithFocusFirewallBypassOrCompleteRequest extends Message<TriggerZenithFocusFirewallBypassOrCompleteRequest> {
+  /**
+   * @generated from field: string firewall_code = 1;
+   */
+  firewallCode = "";
+
+  /**
+   * @generated from field: string target_state = 2;
+   */
+  targetState = "";
+
+  /**
+   * @generated from field: string override_reason_note = 3;
+   */
+  overrideReasonNote = "";
+
+  constructor(data?: PartialMessage<TriggerZenithFocusFirewallBypassOrCompleteRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "firewall_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "override_reason_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteRequest {
+    return new TriggerZenithFocusFirewallBypassOrCompleteRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteRequest {
+    return new TriggerZenithFocusFirewallBypassOrCompleteRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteRequest {
+    return new TriggerZenithFocusFirewallBypassOrCompleteRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerZenithFocusFirewallBypassOrCompleteRequest | PlainMessage<TriggerZenithFocusFirewallBypassOrCompleteRequest> | undefined, b: TriggerZenithFocusFirewallBypassOrCompleteRequest | PlainMessage<TriggerZenithFocusFirewallBypassOrCompleteRequest> | undefined): boolean {
+    return proto3.util.equals(TriggerZenithFocusFirewallBypassOrCompleteRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse
+ */
+export class TriggerZenithFocusFirewallBypassOrCompleteResponse extends Message<TriggerZenithFocusFirewallBypassOrCompleteResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithFocusFirewallSessionItem session = 1;
+   */
+  session?: ZenithFocusFirewallSessionItem;
+
+  constructor(data?: PartialMessage<TriggerZenithFocusFirewallBypassOrCompleteResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session", kind: "message", T: ZenithFocusFirewallSessionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteResponse {
+    return new TriggerZenithFocusFirewallBypassOrCompleteResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteResponse {
+    return new TriggerZenithFocusFirewallBypassOrCompleteResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TriggerZenithFocusFirewallBypassOrCompleteResponse {
+    return new TriggerZenithFocusFirewallBypassOrCompleteResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: TriggerZenithFocusFirewallBypassOrCompleteResponse | PlainMessage<TriggerZenithFocusFirewallBypassOrCompleteResponse> | undefined, b: TriggerZenithFocusFirewallBypassOrCompleteResponse | PlainMessage<TriggerZenithFocusFirewallBypassOrCompleteResponse> | undefined): boolean {
+    return proto3.util.equals(TriggerZenithFocusFirewallBypassOrCompleteResponse, a, b);
+  }
+}
+
+/**
+ * Choice 2 (Z2): Adaptive Day Architect
+ *
+ * @generated from message sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem
+ */
+export class ZenithAdaptiveDayArchitectPlanItem extends Message<ZenithAdaptiveDayArchitectPlanItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string plan_code = 3;
+   */
+  planCode = "";
+
+  /**
+   * @generated from field: string plan_date_label = 4;
+   */
+  planDateLabel = "";
+
+  /**
+   * @generated from field: string calendar_snapshot_lag_and_coverage = 5;
+   */
+  calendarSnapshotLagAndCoverage = "";
+
+  /**
+   * @generated from field: string proposed_focus_and_buffer_windows = 6;
+   */
+  proposedFocusAndBufferWindows = "";
+
+  /**
+   * @generated from field: string what_changed_replan_diff = 7;
+   */
+  whatChangedReplanDiff = "";
+
+  /**
+   * @generated from field: string readiness_fallback_mode = 8;
+   */
+  readinessFallbackMode = "";
+
+  /**
+   * @generated from field: string plan_state = 9;
+   */
+  planState = "";
+
+  /**
+   * @generated from field: bool silent_calendar_move_blocked = 10;
+   */
+  silentCalendarMoveBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithAdaptiveDayArchitectPlanItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "plan_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "plan_date_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "calendar_snapshot_lag_and_coverage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "proposed_focus_and_buffer_windows", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "what_changed_replan_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "readiness_fallback_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "plan_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "silent_calendar_move_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithAdaptiveDayArchitectPlanItem {
+    return new ZenithAdaptiveDayArchitectPlanItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithAdaptiveDayArchitectPlanItem {
+    return new ZenithAdaptiveDayArchitectPlanItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithAdaptiveDayArchitectPlanItem {
+    return new ZenithAdaptiveDayArchitectPlanItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithAdaptiveDayArchitectPlanItem | PlainMessage<ZenithAdaptiveDayArchitectPlanItem> | undefined, b: ZenithAdaptiveDayArchitectPlanItem | PlainMessage<ZenithAdaptiveDayArchitectPlanItem> | undefined): boolean {
+    return proto3.util.equals(ZenithAdaptiveDayArchitectPlanItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchRequest
+ */
+export class GetZenithAdaptiveDayArchitectWorkbenchRequest extends Message<GetZenithAdaptiveDayArchitectWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithAdaptiveDayArchitectWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchRequest {
+    return new GetZenithAdaptiveDayArchitectWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchRequest {
+    return new GetZenithAdaptiveDayArchitectWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchRequest {
+    return new GetZenithAdaptiveDayArchitectWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithAdaptiveDayArchitectWorkbenchRequest | PlainMessage<GetZenithAdaptiveDayArchitectWorkbenchRequest> | undefined, b: GetZenithAdaptiveDayArchitectWorkbenchRequest | PlainMessage<GetZenithAdaptiveDayArchitectWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithAdaptiveDayArchitectWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse
+ */
+export class GetZenithAdaptiveDayArchitectWorkbenchResponse extends Message<GetZenithAdaptiveDayArchitectWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem plans = 1;
+   */
+  plans: ZenithAdaptiveDayArchitectPlanItem[] = [];
+
+  /**
+   * @generated from field: bool silent_calendar_move_blocked_enforced = 2;
+   */
+  silentCalendarMoveBlockedEnforced = false;
+
+  /**
+   * @generated from field: string no_sensor_fallback_summary = 3;
+   */
+  noSensorFallbackSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithAdaptiveDayArchitectWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plans", kind: "message", T: ZenithAdaptiveDayArchitectPlanItem, repeated: true },
+    { no: 2, name: "silent_calendar_move_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "no_sensor_fallback_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchResponse {
+    return new GetZenithAdaptiveDayArchitectWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchResponse {
+    return new GetZenithAdaptiveDayArchitectWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithAdaptiveDayArchitectWorkbenchResponse {
+    return new GetZenithAdaptiveDayArchitectWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithAdaptiveDayArchitectWorkbenchResponse | PlainMessage<GetZenithAdaptiveDayArchitectWorkbenchResponse> | undefined, b: GetZenithAdaptiveDayArchitectWorkbenchResponse | PlainMessage<GetZenithAdaptiveDayArchitectWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithAdaptiveDayArchitectWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanRequest
+ */
+export class SaveZenithAdaptiveDayArchitectPlanRequest extends Message<SaveZenithAdaptiveDayArchitectPlanRequest> {
+  /**
+   * @generated from field: string plan_code = 1;
+   */
+  planCode = "";
+
+  /**
+   * @generated from field: string plan_date_label = 2;
+   */
+  planDateLabel = "";
+
+  /**
+   * @generated from field: string calendar_snapshot_lag_and_coverage = 3;
+   */
+  calendarSnapshotLagAndCoverage = "";
+
+  /**
+   * @generated from field: string proposed_focus_and_buffer_windows = 4;
+   */
+  proposedFocusAndBufferWindows = "";
+
+  /**
+   * @generated from field: string what_changed_replan_diff = 5;
+   */
+  whatChangedReplanDiff = "";
+
+  /**
+   * @generated from field: string readiness_fallback_mode = 6;
+   */
+  readinessFallbackMode = "";
+
+  /**
+   * @generated from field: string plan_state = 7;
+   */
+  planState = "";
+
+  constructor(data?: PartialMessage<SaveZenithAdaptiveDayArchitectPlanRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "plan_date_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "calendar_snapshot_lag_and_coverage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "proposed_focus_and_buffer_windows", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "what_changed_replan_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "readiness_fallback_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "plan_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithAdaptiveDayArchitectPlanRequest {
+    return new SaveZenithAdaptiveDayArchitectPlanRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithAdaptiveDayArchitectPlanRequest {
+    return new SaveZenithAdaptiveDayArchitectPlanRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithAdaptiveDayArchitectPlanRequest {
+    return new SaveZenithAdaptiveDayArchitectPlanRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithAdaptiveDayArchitectPlanRequest | PlainMessage<SaveZenithAdaptiveDayArchitectPlanRequest> | undefined, b: SaveZenithAdaptiveDayArchitectPlanRequest | PlainMessage<SaveZenithAdaptiveDayArchitectPlanRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithAdaptiveDayArchitectPlanRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse
+ */
+export class SaveZenithAdaptiveDayArchitectPlanResponse extends Message<SaveZenithAdaptiveDayArchitectPlanResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem plan = 1;
+   */
+  plan?: ZenithAdaptiveDayArchitectPlanItem;
+
+  constructor(data?: PartialMessage<SaveZenithAdaptiveDayArchitectPlanResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: ZenithAdaptiveDayArchitectPlanItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithAdaptiveDayArchitectPlanResponse {
+    return new SaveZenithAdaptiveDayArchitectPlanResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithAdaptiveDayArchitectPlanResponse {
+    return new SaveZenithAdaptiveDayArchitectPlanResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithAdaptiveDayArchitectPlanResponse {
+    return new SaveZenithAdaptiveDayArchitectPlanResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithAdaptiveDayArchitectPlanResponse | PlainMessage<SaveZenithAdaptiveDayArchitectPlanResponse> | undefined, b: SaveZenithAdaptiveDayArchitectPlanResponse | PlainMessage<SaveZenithAdaptiveDayArchitectPlanResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithAdaptiveDayArchitectPlanResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectRequest
+ */
+export class AcceptOrReplanZenithDayArchitectRequest extends Message<AcceptOrReplanZenithDayArchitectRequest> {
+  /**
+   * @generated from field: string plan_code = 1;
+   */
+  planCode = "";
+
+  /**
+   * @generated from field: string target_state = 2;
+   */
+  targetState = "";
+
+  /**
+   * @generated from field: string what_changed_replan_diff = 3;
+   */
+  whatChangedReplanDiff = "";
+
+  constructor(data?: PartialMessage<AcceptOrReplanZenithDayArchitectRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "target_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "what_changed_replan_diff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcceptOrReplanZenithDayArchitectRequest {
+    return new AcceptOrReplanZenithDayArchitectRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcceptOrReplanZenithDayArchitectRequest {
+    return new AcceptOrReplanZenithDayArchitectRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcceptOrReplanZenithDayArchitectRequest {
+    return new AcceptOrReplanZenithDayArchitectRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcceptOrReplanZenithDayArchitectRequest | PlainMessage<AcceptOrReplanZenithDayArchitectRequest> | undefined, b: AcceptOrReplanZenithDayArchitectRequest | PlainMessage<AcceptOrReplanZenithDayArchitectRequest> | undefined): boolean {
+    return proto3.util.equals(AcceptOrReplanZenithDayArchitectRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse
+ */
+export class AcceptOrReplanZenithDayArchitectResponse extends Message<AcceptOrReplanZenithDayArchitectResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem plan = 1;
+   */
+  plan?: ZenithAdaptiveDayArchitectPlanItem;
+
+  constructor(data?: PartialMessage<AcceptOrReplanZenithDayArchitectResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "plan", kind: "message", T: ZenithAdaptiveDayArchitectPlanItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcceptOrReplanZenithDayArchitectResponse {
+    return new AcceptOrReplanZenithDayArchitectResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcceptOrReplanZenithDayArchitectResponse {
+    return new AcceptOrReplanZenithDayArchitectResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcceptOrReplanZenithDayArchitectResponse {
+    return new AcceptOrReplanZenithDayArchitectResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcceptOrReplanZenithDayArchitectResponse | PlainMessage<AcceptOrReplanZenithDayArchitectResponse> | undefined, b: AcceptOrReplanZenithDayArchitectResponse | PlainMessage<AcceptOrReplanZenithDayArchitectResponse> | undefined): boolean {
+    return proto3.util.equals(AcceptOrReplanZenithDayArchitectResponse, a, b);
+  }
+}
+
+/**
+ * Choice 3 (Z9): Intention-to-Outcome Focus Loop
+ *
+ * @generated from message sttattus.zenith.v1.ZenithIntentionOutcomeContractItem
+ */
+export class ZenithIntentionOutcomeContractItem extends Message<ZenithIntentionOutcomeContractItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string intention_code = 3;
+   */
+  intentionCode = "";
+
+  /**
+   * @generated from field: string project_and_deliverable = 4;
+   */
+  projectAndDeliverable = "";
+
+  /**
+   * @generated from field: string done_for_now_criteria = 5;
+   */
+  doneForNowCriteria = "";
+
+  /**
+   * @generated from field: string captured_output_and_obstacle = 6;
+   */
+  capturedOutputAndObstacle = "";
+
+  /**
+   * @generated from field: string next_action_step = 7;
+   */
+  nextActionStep = "";
+
+  /**
+   * @generated from field: string loop_state = 8;
+   */
+  loopState = "";
+
+  /**
+   * @generated from field: bool surveillance_scoring_disabled = 9;
+   */
+  surveillanceScoringDisabled = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithIntentionOutcomeContractItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithIntentionOutcomeContractItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "intention_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "project_and_deliverable", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "done_for_now_criteria", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "captured_output_and_obstacle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "next_action_step", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "loop_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "surveillance_scoring_disabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithIntentionOutcomeContractItem {
+    return new ZenithIntentionOutcomeContractItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithIntentionOutcomeContractItem {
+    return new ZenithIntentionOutcomeContractItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithIntentionOutcomeContractItem {
+    return new ZenithIntentionOutcomeContractItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithIntentionOutcomeContractItem | PlainMessage<ZenithIntentionOutcomeContractItem> | undefined, b: ZenithIntentionOutcomeContractItem | PlainMessage<ZenithIntentionOutcomeContractItem> | undefined): boolean {
+    return proto3.util.equals(ZenithIntentionOutcomeContractItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchRequest
+ */
+export class GetZenithIntentionOutcomeWorkbenchRequest extends Message<GetZenithIntentionOutcomeWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithIntentionOutcomeWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithIntentionOutcomeWorkbenchRequest {
+    return new GetZenithIntentionOutcomeWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithIntentionOutcomeWorkbenchRequest {
+    return new GetZenithIntentionOutcomeWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithIntentionOutcomeWorkbenchRequest {
+    return new GetZenithIntentionOutcomeWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithIntentionOutcomeWorkbenchRequest | PlainMessage<GetZenithIntentionOutcomeWorkbenchRequest> | undefined, b: GetZenithIntentionOutcomeWorkbenchRequest | PlainMessage<GetZenithIntentionOutcomeWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithIntentionOutcomeWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse
+ */
+export class GetZenithIntentionOutcomeWorkbenchResponse extends Message<GetZenithIntentionOutcomeWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithIntentionOutcomeContractItem contracts = 1;
+   */
+  contracts: ZenithIntentionOutcomeContractItem[] = [];
+
+  /**
+   * @generated from field: bool surveillance_scoring_disabled_enforced = 2;
+   */
+  surveillanceScoringDisabledEnforced = false;
+
+  /**
+   * @generated from field: string quiet_session_shell_summary = 3;
+   */
+  quietSessionShellSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithIntentionOutcomeWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contracts", kind: "message", T: ZenithIntentionOutcomeContractItem, repeated: true },
+    { no: 2, name: "surveillance_scoring_disabled_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "quiet_session_shell_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithIntentionOutcomeWorkbenchResponse {
+    return new GetZenithIntentionOutcomeWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithIntentionOutcomeWorkbenchResponse {
+    return new GetZenithIntentionOutcomeWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithIntentionOutcomeWorkbenchResponse {
+    return new GetZenithIntentionOutcomeWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithIntentionOutcomeWorkbenchResponse | PlainMessage<GetZenithIntentionOutcomeWorkbenchResponse> | undefined, b: GetZenithIntentionOutcomeWorkbenchResponse | PlainMessage<GetZenithIntentionOutcomeWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithIntentionOutcomeWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithIntentionOutcomeContractRequest
+ */
+export class SaveZenithIntentionOutcomeContractRequest extends Message<SaveZenithIntentionOutcomeContractRequest> {
+  /**
+   * @generated from field: string intention_code = 1;
+   */
+  intentionCode = "";
+
+  /**
+   * @generated from field: string project_and_deliverable = 2;
+   */
+  projectAndDeliverable = "";
+
+  /**
+   * @generated from field: string done_for_now_criteria = 3;
+   */
+  doneForNowCriteria = "";
+
+  /**
+   * @generated from field: string captured_output_and_obstacle = 4;
+   */
+  capturedOutputAndObstacle = "";
+
+  /**
+   * @generated from field: string next_action_step = 5;
+   */
+  nextActionStep = "";
+
+  /**
+   * @generated from field: string loop_state = 6;
+   */
+  loopState = "";
+
+  constructor(data?: PartialMessage<SaveZenithIntentionOutcomeContractRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithIntentionOutcomeContractRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "intention_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "project_and_deliverable", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "done_for_now_criteria", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "captured_output_and_obstacle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "next_action_step", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "loop_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithIntentionOutcomeContractRequest {
+    return new SaveZenithIntentionOutcomeContractRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithIntentionOutcomeContractRequest {
+    return new SaveZenithIntentionOutcomeContractRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithIntentionOutcomeContractRequest {
+    return new SaveZenithIntentionOutcomeContractRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithIntentionOutcomeContractRequest | PlainMessage<SaveZenithIntentionOutcomeContractRequest> | undefined, b: SaveZenithIntentionOutcomeContractRequest | PlainMessage<SaveZenithIntentionOutcomeContractRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithIntentionOutcomeContractRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse
+ */
+export class SaveZenithIntentionOutcomeContractResponse extends Message<SaveZenithIntentionOutcomeContractResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithIntentionOutcomeContractItem contract = 1;
+   */
+  contract?: ZenithIntentionOutcomeContractItem;
+
+  constructor(data?: PartialMessage<SaveZenithIntentionOutcomeContractResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contract", kind: "message", T: ZenithIntentionOutcomeContractItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithIntentionOutcomeContractResponse {
+    return new SaveZenithIntentionOutcomeContractResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithIntentionOutcomeContractResponse {
+    return new SaveZenithIntentionOutcomeContractResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithIntentionOutcomeContractResponse {
+    return new SaveZenithIntentionOutcomeContractResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithIntentionOutcomeContractResponse | PlainMessage<SaveZenithIntentionOutcomeContractResponse> | undefined, b: SaveZenithIntentionOutcomeContractResponse | PlainMessage<SaveZenithIntentionOutcomeContractResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithIntentionOutcomeContractResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopRequest
+ */
+export class CompleteZenithIntentionOutcomeLoopRequest extends Message<CompleteZenithIntentionOutcomeLoopRequest> {
+  /**
+   * @generated from field: string intention_code = 1;
+   */
+  intentionCode = "";
+
+  /**
+   * @generated from field: string captured_output_and_obstacle = 2;
+   */
+  capturedOutputAndObstacle = "";
+
+  /**
+   * @generated from field: string next_action_step = 3;
+   */
+  nextActionStep = "";
+
+  /**
+   * @generated from field: string loop_state = 4;
+   */
+  loopState = "";
+
+  constructor(data?: PartialMessage<CompleteZenithIntentionOutcomeLoopRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "intention_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "captured_output_and_obstacle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "next_action_step", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "loop_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteZenithIntentionOutcomeLoopRequest {
+    return new CompleteZenithIntentionOutcomeLoopRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteZenithIntentionOutcomeLoopRequest {
+    return new CompleteZenithIntentionOutcomeLoopRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteZenithIntentionOutcomeLoopRequest {
+    return new CompleteZenithIntentionOutcomeLoopRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompleteZenithIntentionOutcomeLoopRequest | PlainMessage<CompleteZenithIntentionOutcomeLoopRequest> | undefined, b: CompleteZenithIntentionOutcomeLoopRequest | PlainMessage<CompleteZenithIntentionOutcomeLoopRequest> | undefined): boolean {
+    return proto3.util.equals(CompleteZenithIntentionOutcomeLoopRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse
+ */
+export class CompleteZenithIntentionOutcomeLoopResponse extends Message<CompleteZenithIntentionOutcomeLoopResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithIntentionOutcomeContractItem contract = 1;
+   */
+  contract?: ZenithIntentionOutcomeContractItem;
+
+  constructor(data?: PartialMessage<CompleteZenithIntentionOutcomeLoopResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "contract", kind: "message", T: ZenithIntentionOutcomeContractItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteZenithIntentionOutcomeLoopResponse {
+    return new CompleteZenithIntentionOutcomeLoopResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteZenithIntentionOutcomeLoopResponse {
+    return new CompleteZenithIntentionOutcomeLoopResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteZenithIntentionOutcomeLoopResponse {
+    return new CompleteZenithIntentionOutcomeLoopResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompleteZenithIntentionOutcomeLoopResponse | PlainMessage<CompleteZenithIntentionOutcomeLoopResponse> | undefined, b: CompleteZenithIntentionOutcomeLoopResponse | PlainMessage<CompleteZenithIntentionOutcomeLoopResponse> | undefined): boolean {
+    return proto3.util.equals(CompleteZenithIntentionOutcomeLoopResponse, a, b);
+  }
+}
+
+/**
+ * Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+ *
+ * @generated from message sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem
+ */
+export class ZenithAttentionNOf1ExperimentItem extends Message<ZenithAttentionNOf1ExperimentItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string experiment_code = 3;
+   */
+  experimentCode = "";
+
+  /**
+   * @generated from field: string hypothesis_and_protocol = 4;
+   */
+  hypothesisAndProtocol = "";
+
+  /**
+   * @generated from field: string predeclared_measure_and_min_samples = 5;
+   */
+  predeclaredMeasureAndMinSamples = "";
+
+  /**
+   * @generated from field: string interruption_recovery_summary = 6;
+   */
+  interruptionRecoverySummary = "";
+
+  /**
+   * @generated from field: string correlation_vs_causation_note = 7;
+   */
+  correlationVsCausationNote = "";
+
+  /**
+   * @generated from field: string experiment_state = 8;
+   */
+  experimentState = "";
+
+  /**
+   * @generated from field: bool content_keystroke_capture_blocked = 9;
+   */
+  contentKeystrokeCaptureBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithAttentionNOf1ExperimentItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "experiment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "hypothesis_and_protocol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "predeclared_measure_and_min_samples", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "interruption_recovery_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "correlation_vs_causation_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "experiment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "content_keystroke_capture_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithAttentionNOf1ExperimentItem {
+    return new ZenithAttentionNOf1ExperimentItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithAttentionNOf1ExperimentItem {
+    return new ZenithAttentionNOf1ExperimentItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithAttentionNOf1ExperimentItem {
+    return new ZenithAttentionNOf1ExperimentItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithAttentionNOf1ExperimentItem | PlainMessage<ZenithAttentionNOf1ExperimentItem> | undefined, b: ZenithAttentionNOf1ExperimentItem | PlainMessage<ZenithAttentionNOf1ExperimentItem> | undefined): boolean {
+    return proto3.util.equals(ZenithAttentionNOf1ExperimentItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchRequest
+ */
+export class GetZenithAttentionNOf1LabWorkbenchRequest extends Message<GetZenithAttentionNOf1LabWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithAttentionNOf1LabWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithAttentionNOf1LabWorkbenchRequest {
+    return new GetZenithAttentionNOf1LabWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithAttentionNOf1LabWorkbenchRequest {
+    return new GetZenithAttentionNOf1LabWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithAttentionNOf1LabWorkbenchRequest {
+    return new GetZenithAttentionNOf1LabWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithAttentionNOf1LabWorkbenchRequest | PlainMessage<GetZenithAttentionNOf1LabWorkbenchRequest> | undefined, b: GetZenithAttentionNOf1LabWorkbenchRequest | PlainMessage<GetZenithAttentionNOf1LabWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithAttentionNOf1LabWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse
+ */
+export class GetZenithAttentionNOf1LabWorkbenchResponse extends Message<GetZenithAttentionNOf1LabWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem experiments = 1;
+   */
+  experiments: ZenithAttentionNOf1ExperimentItem[] = [];
+
+  /**
+   * @generated from field: bool content_keystroke_capture_blocked_enforced = 2;
+   */
+  contentKeystrokeCaptureBlockedEnforced = false;
+
+  /**
+   * @generated from field: string correlation_boundary_summary = 3;
+   */
+  correlationBoundarySummary = "";
+
+  constructor(data?: PartialMessage<GetZenithAttentionNOf1LabWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiments", kind: "message", T: ZenithAttentionNOf1ExperimentItem, repeated: true },
+    { no: 2, name: "content_keystroke_capture_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "correlation_boundary_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithAttentionNOf1LabWorkbenchResponse {
+    return new GetZenithAttentionNOf1LabWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithAttentionNOf1LabWorkbenchResponse {
+    return new GetZenithAttentionNOf1LabWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithAttentionNOf1LabWorkbenchResponse {
+    return new GetZenithAttentionNOf1LabWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithAttentionNOf1LabWorkbenchResponse | PlainMessage<GetZenithAttentionNOf1LabWorkbenchResponse> | undefined, b: GetZenithAttentionNOf1LabWorkbenchResponse | PlainMessage<GetZenithAttentionNOf1LabWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithAttentionNOf1LabWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentRequest
+ */
+export class SaveZenithAttentionNOf1ExperimentRequest extends Message<SaveZenithAttentionNOf1ExperimentRequest> {
+  /**
+   * @generated from field: string experiment_code = 1;
+   */
+  experimentCode = "";
+
+  /**
+   * @generated from field: string hypothesis_and_protocol = 2;
+   */
+  hypothesisAndProtocol = "";
+
+  /**
+   * @generated from field: string predeclared_measure_and_min_samples = 3;
+   */
+  predeclaredMeasureAndMinSamples = "";
+
+  /**
+   * @generated from field: string interruption_recovery_summary = 4;
+   */
+  interruptionRecoverySummary = "";
+
+  /**
+   * @generated from field: string correlation_vs_causation_note = 5;
+   */
+  correlationVsCausationNote = "";
+
+  /**
+   * @generated from field: string experiment_state = 6;
+   */
+  experimentState = "";
+
+  constructor(data?: PartialMessage<SaveZenithAttentionNOf1ExperimentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "hypothesis_and_protocol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "predeclared_measure_and_min_samples", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "interruption_recovery_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "correlation_vs_causation_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "experiment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithAttentionNOf1ExperimentRequest {
+    return new SaveZenithAttentionNOf1ExperimentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithAttentionNOf1ExperimentRequest {
+    return new SaveZenithAttentionNOf1ExperimentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithAttentionNOf1ExperimentRequest {
+    return new SaveZenithAttentionNOf1ExperimentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithAttentionNOf1ExperimentRequest | PlainMessage<SaveZenithAttentionNOf1ExperimentRequest> | undefined, b: SaveZenithAttentionNOf1ExperimentRequest | PlainMessage<SaveZenithAttentionNOf1ExperimentRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithAttentionNOf1ExperimentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse
+ */
+export class SaveZenithAttentionNOf1ExperimentResponse extends Message<SaveZenithAttentionNOf1ExperimentResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem experiment = 1;
+   */
+  experiment?: ZenithAttentionNOf1ExperimentItem;
+
+  constructor(data?: PartialMessage<SaveZenithAttentionNOf1ExperimentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment", kind: "message", T: ZenithAttentionNOf1ExperimentItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithAttentionNOf1ExperimentResponse {
+    return new SaveZenithAttentionNOf1ExperimentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithAttentionNOf1ExperimentResponse {
+    return new SaveZenithAttentionNOf1ExperimentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithAttentionNOf1ExperimentResponse {
+    return new SaveZenithAttentionNOf1ExperimentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithAttentionNOf1ExperimentResponse | PlainMessage<SaveZenithAttentionNOf1ExperimentResponse> | undefined, b: SaveZenithAttentionNOf1ExperimentResponse | PlainMessage<SaveZenithAttentionNOf1ExperimentResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithAttentionNOf1ExperimentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentRequest
+ */
+export class EvaluateZenithAttentionNOf1ExperimentRequest extends Message<EvaluateZenithAttentionNOf1ExperimentRequest> {
+  /**
+   * @generated from field: string experiment_code = 1;
+   */
+  experimentCode = "";
+
+  /**
+   * @generated from field: string experiment_state = 2;
+   */
+  experimentState = "";
+
+  /**
+   * @generated from field: string correlation_vs_causation_note = 3;
+   */
+  correlationVsCausationNote = "";
+
+  constructor(data?: PartialMessage<EvaluateZenithAttentionNOf1ExperimentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "experiment_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "correlation_vs_causation_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateZenithAttentionNOf1ExperimentRequest {
+    return new EvaluateZenithAttentionNOf1ExperimentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateZenithAttentionNOf1ExperimentRequest {
+    return new EvaluateZenithAttentionNOf1ExperimentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateZenithAttentionNOf1ExperimentRequest {
+    return new EvaluateZenithAttentionNOf1ExperimentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvaluateZenithAttentionNOf1ExperimentRequest | PlainMessage<EvaluateZenithAttentionNOf1ExperimentRequest> | undefined, b: EvaluateZenithAttentionNOf1ExperimentRequest | PlainMessage<EvaluateZenithAttentionNOf1ExperimentRequest> | undefined): boolean {
+    return proto3.util.equals(EvaluateZenithAttentionNOf1ExperimentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse
+ */
+export class EvaluateZenithAttentionNOf1ExperimentResponse extends Message<EvaluateZenithAttentionNOf1ExperimentResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem experiment = 1;
+   */
+  experiment?: ZenithAttentionNOf1ExperimentItem;
+
+  constructor(data?: PartialMessage<EvaluateZenithAttentionNOf1ExperimentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment", kind: "message", T: ZenithAttentionNOf1ExperimentItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateZenithAttentionNOf1ExperimentResponse {
+    return new EvaluateZenithAttentionNOf1ExperimentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateZenithAttentionNOf1ExperimentResponse {
+    return new EvaluateZenithAttentionNOf1ExperimentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateZenithAttentionNOf1ExperimentResponse {
+    return new EvaluateZenithAttentionNOf1ExperimentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvaluateZenithAttentionNOf1ExperimentResponse | PlainMessage<EvaluateZenithAttentionNOf1ExperimentResponse> | undefined, b: EvaluateZenithAttentionNOf1ExperimentResponse | PlainMessage<EvaluateZenithAttentionNOf1ExperimentResponse> | undefined): boolean {
+    return proto3.util.equals(EvaluateZenithAttentionNOf1ExperimentResponse, a, b);
+  }
+}
+
+/**
+ * Choice 5 (Z4, Z13): Recovery and Protocol Studio
+ *
+ * @generated from message sttattus.zenith.v1.ZenithRecoveryProtocolRunItem
+ */
+export class ZenithRecoveryProtocolRunItem extends Message<ZenithRecoveryProtocolRunItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string protocol_code = 3;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string title_and_modality = 4;
+   */
+  titleAndModality = "";
+
+  /**
+   * @generated from field: string contraindication_and_safety_note = 5;
+   */
+  contraindicationAndSafetyNote = "";
+
+  /**
+   * @generated from field: string sensor_or_nosensor_path = 6;
+   */
+  sensorOrNosensorPath = "";
+
+  /**
+   * @generated from field: string subjective_before_after_delta = 7;
+   */
+  subjectiveBeforeAfterDelta = "";
+
+  /**
+   * @generated from field: string protocol_state = 8;
+   */
+  protocolState = "";
+
+  /**
+   * @generated from field: bool non_medical_wellness_enforced = 9;
+   */
+  nonMedicalWellnessEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithRecoveryProtocolRunItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithRecoveryProtocolRunItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title_and_modality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "contraindication_and_safety_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "sensor_or_nosensor_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "subjective_before_after_delta", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "non_medical_wellness_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithRecoveryProtocolRunItem {
+    return new ZenithRecoveryProtocolRunItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithRecoveryProtocolRunItem {
+    return new ZenithRecoveryProtocolRunItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithRecoveryProtocolRunItem {
+    return new ZenithRecoveryProtocolRunItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithRecoveryProtocolRunItem | PlainMessage<ZenithRecoveryProtocolRunItem> | undefined, b: ZenithRecoveryProtocolRunItem | PlainMessage<ZenithRecoveryProtocolRunItem> | undefined): boolean {
+    return proto3.util.equals(ZenithRecoveryProtocolRunItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchRequest
+ */
+export class GetZenithRecoveryProtocolStudioWorkbenchRequest extends Message<GetZenithRecoveryProtocolStudioWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithRecoveryProtocolStudioWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchRequest {
+    return new GetZenithRecoveryProtocolStudioWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchRequest {
+    return new GetZenithRecoveryProtocolStudioWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchRequest {
+    return new GetZenithRecoveryProtocolStudioWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithRecoveryProtocolStudioWorkbenchRequest | PlainMessage<GetZenithRecoveryProtocolStudioWorkbenchRequest> | undefined, b: GetZenithRecoveryProtocolStudioWorkbenchRequest | PlainMessage<GetZenithRecoveryProtocolStudioWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithRecoveryProtocolStudioWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse
+ */
+export class GetZenithRecoveryProtocolStudioWorkbenchResponse extends Message<GetZenithRecoveryProtocolStudioWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithRecoveryProtocolRunItem runs = 1;
+   */
+  runs: ZenithRecoveryProtocolRunItem[] = [];
+
+  /**
+   * @generated from field: bool non_medical_wellness_enforced = 2;
+   */
+  nonMedicalWellnessEnforced = false;
+
+  /**
+   * @generated from field: string no_sensor_offline_guarantee = 3;
+   */
+  noSensorOfflineGuarantee = "";
+
+  constructor(data?: PartialMessage<GetZenithRecoveryProtocolStudioWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "runs", kind: "message", T: ZenithRecoveryProtocolRunItem, repeated: true },
+    { no: 2, name: "non_medical_wellness_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "no_sensor_offline_guarantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchResponse {
+    return new GetZenithRecoveryProtocolStudioWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchResponse {
+    return new GetZenithRecoveryProtocolStudioWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithRecoveryProtocolStudioWorkbenchResponse {
+    return new GetZenithRecoveryProtocolStudioWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithRecoveryProtocolStudioWorkbenchResponse | PlainMessage<GetZenithRecoveryProtocolStudioWorkbenchResponse> | undefined, b: GetZenithRecoveryProtocolStudioWorkbenchResponse | PlainMessage<GetZenithRecoveryProtocolStudioWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithRecoveryProtocolStudioWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithRecoveryProtocolRunRequest
+ */
+export class SaveZenithRecoveryProtocolRunRequest extends Message<SaveZenithRecoveryProtocolRunRequest> {
+  /**
+   * @generated from field: string protocol_code = 1;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string title_and_modality = 2;
+   */
+  titleAndModality = "";
+
+  /**
+   * @generated from field: string contraindication_and_safety_note = 3;
+   */
+  contraindicationAndSafetyNote = "";
+
+  /**
+   * @generated from field: string sensor_or_nosensor_path = 4;
+   */
+  sensorOrNosensorPath = "";
+
+  /**
+   * @generated from field: string subjective_before_after_delta = 5;
+   */
+  subjectiveBeforeAfterDelta = "";
+
+  /**
+   * @generated from field: string protocol_state = 6;
+   */
+  protocolState = "";
+
+  constructor(data?: PartialMessage<SaveZenithRecoveryProtocolRunRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithRecoveryProtocolRunRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title_and_modality", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "contraindication_and_safety_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "sensor_or_nosensor_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "subjective_before_after_delta", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithRecoveryProtocolRunRequest {
+    return new SaveZenithRecoveryProtocolRunRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithRecoveryProtocolRunRequest {
+    return new SaveZenithRecoveryProtocolRunRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithRecoveryProtocolRunRequest {
+    return new SaveZenithRecoveryProtocolRunRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithRecoveryProtocolRunRequest | PlainMessage<SaveZenithRecoveryProtocolRunRequest> | undefined, b: SaveZenithRecoveryProtocolRunRequest | PlainMessage<SaveZenithRecoveryProtocolRunRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithRecoveryProtocolRunRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse
+ */
+export class SaveZenithRecoveryProtocolRunResponse extends Message<SaveZenithRecoveryProtocolRunResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithRecoveryProtocolRunItem run = 1;
+   */
+  run?: ZenithRecoveryProtocolRunItem;
+
+  constructor(data?: PartialMessage<SaveZenithRecoveryProtocolRunResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "run", kind: "message", T: ZenithRecoveryProtocolRunItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithRecoveryProtocolRunResponse {
+    return new SaveZenithRecoveryProtocolRunResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithRecoveryProtocolRunResponse {
+    return new SaveZenithRecoveryProtocolRunResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithRecoveryProtocolRunResponse {
+    return new SaveZenithRecoveryProtocolRunResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithRecoveryProtocolRunResponse | PlainMessage<SaveZenithRecoveryProtocolRunResponse> | undefined, b: SaveZenithRecoveryProtocolRunResponse | PlainMessage<SaveZenithRecoveryProtocolRunResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithRecoveryProtocolRunResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagRequest
+ */
+export class RecordZenithRecoveryCheckOrAdverseFlagRequest extends Message<RecordZenithRecoveryCheckOrAdverseFlagRequest> {
+  /**
+   * @generated from field: string protocol_code = 1;
+   */
+  protocolCode = "";
+
+  /**
+   * @generated from field: string subjective_before_after_delta = 2;
+   */
+  subjectiveBeforeAfterDelta = "";
+
+  /**
+   * @generated from field: string protocol_state = 3;
+   */
+  protocolState = "";
+
+  constructor(data?: PartialMessage<RecordZenithRecoveryCheckOrAdverseFlagRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "subjective_before_after_delta", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "protocol_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagRequest {
+    return new RecordZenithRecoveryCheckOrAdverseFlagRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagRequest {
+    return new RecordZenithRecoveryCheckOrAdverseFlagRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagRequest {
+    return new RecordZenithRecoveryCheckOrAdverseFlagRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordZenithRecoveryCheckOrAdverseFlagRequest | PlainMessage<RecordZenithRecoveryCheckOrAdverseFlagRequest> | undefined, b: RecordZenithRecoveryCheckOrAdverseFlagRequest | PlainMessage<RecordZenithRecoveryCheckOrAdverseFlagRequest> | undefined): boolean {
+    return proto3.util.equals(RecordZenithRecoveryCheckOrAdverseFlagRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse
+ */
+export class RecordZenithRecoveryCheckOrAdverseFlagResponse extends Message<RecordZenithRecoveryCheckOrAdverseFlagResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithRecoveryProtocolRunItem run = 1;
+   */
+  run?: ZenithRecoveryProtocolRunItem;
+
+  constructor(data?: PartialMessage<RecordZenithRecoveryCheckOrAdverseFlagResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "run", kind: "message", T: ZenithRecoveryProtocolRunItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagResponse {
+    return new RecordZenithRecoveryCheckOrAdverseFlagResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagResponse {
+    return new RecordZenithRecoveryCheckOrAdverseFlagResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordZenithRecoveryCheckOrAdverseFlagResponse {
+    return new RecordZenithRecoveryCheckOrAdverseFlagResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordZenithRecoveryCheckOrAdverseFlagResponse | PlainMessage<RecordZenithRecoveryCheckOrAdverseFlagResponse> | undefined, b: RecordZenithRecoveryCheckOrAdverseFlagResponse | PlainMessage<RecordZenithRecoveryCheckOrAdverseFlagResponse> | undefined): boolean {
+    return proto3.util.equals(RecordZenithRecoveryCheckOrAdverseFlagResponse, a, b);
+  }
+}
+
+/**
+ * Choice 6 (Z10): Communication Boundaries
+ *
+ * @generated from message sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem
+ */
+export class ZenithCommunicationBoundaryRuleItem extends Message<ZenithCommunicationBoundaryRuleItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string boundary_code = 3;
+   */
+  boundaryCode = "";
+
+  /**
+   * @generated from field: string template_and_window = 4;
+   */
+  templateAndWindow = "";
+
+  /**
+   * @generated from field: string vip_and_emergency_exceptions = 5;
+   */
+  vipAndEmergencyExceptions = "";
+
+  /**
+   * @generated from field: string previewed_external_status_copy = 6;
+   */
+  previewedExternalStatusCopy = "";
+
+  /**
+   * @generated from field: string post_focus_catchup_summary = 7;
+   */
+  postFocusCatchupSummary = "";
+
+  /**
+   * @generated from field: string boundary_state = 8;
+   */
+  boundaryState = "";
+
+  /**
+   * @generated from field: bool message_body_collection_blocked = 9;
+   */
+  messageBodyCollectionBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithCommunicationBoundaryRuleItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "boundary_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "template_and_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "vip_and_emergency_exceptions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "previewed_external_status_copy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "post_focus_catchup_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "boundary_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "message_body_collection_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithCommunicationBoundaryRuleItem {
+    return new ZenithCommunicationBoundaryRuleItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithCommunicationBoundaryRuleItem {
+    return new ZenithCommunicationBoundaryRuleItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithCommunicationBoundaryRuleItem {
+    return new ZenithCommunicationBoundaryRuleItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithCommunicationBoundaryRuleItem | PlainMessage<ZenithCommunicationBoundaryRuleItem> | undefined, b: ZenithCommunicationBoundaryRuleItem | PlainMessage<ZenithCommunicationBoundaryRuleItem> | undefined): boolean {
+    return proto3.util.equals(ZenithCommunicationBoundaryRuleItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchRequest
+ */
+export class GetZenithCommunicationBoundaryWorkbenchRequest extends Message<GetZenithCommunicationBoundaryWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithCommunicationBoundaryWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCommunicationBoundaryWorkbenchRequest {
+    return new GetZenithCommunicationBoundaryWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCommunicationBoundaryWorkbenchRequest {
+    return new GetZenithCommunicationBoundaryWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCommunicationBoundaryWorkbenchRequest {
+    return new GetZenithCommunicationBoundaryWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCommunicationBoundaryWorkbenchRequest | PlainMessage<GetZenithCommunicationBoundaryWorkbenchRequest> | undefined, b: GetZenithCommunicationBoundaryWorkbenchRequest | PlainMessage<GetZenithCommunicationBoundaryWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithCommunicationBoundaryWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse
+ */
+export class GetZenithCommunicationBoundaryWorkbenchResponse extends Message<GetZenithCommunicationBoundaryWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem rules = 1;
+   */
+  rules: ZenithCommunicationBoundaryRuleItem[] = [];
+
+  /**
+   * @generated from field: bool message_body_collection_blocked_enforced = 2;
+   */
+  messageBodyCollectionBlockedEnforced = false;
+
+  /**
+   * @generated from field: string preview_before_status_write_summary = 3;
+   */
+  previewBeforeStatusWriteSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithCommunicationBoundaryWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rules", kind: "message", T: ZenithCommunicationBoundaryRuleItem, repeated: true },
+    { no: 2, name: "message_body_collection_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "preview_before_status_write_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCommunicationBoundaryWorkbenchResponse {
+    return new GetZenithCommunicationBoundaryWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCommunicationBoundaryWorkbenchResponse {
+    return new GetZenithCommunicationBoundaryWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCommunicationBoundaryWorkbenchResponse {
+    return new GetZenithCommunicationBoundaryWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCommunicationBoundaryWorkbenchResponse | PlainMessage<GetZenithCommunicationBoundaryWorkbenchResponse> | undefined, b: GetZenithCommunicationBoundaryWorkbenchResponse | PlainMessage<GetZenithCommunicationBoundaryWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithCommunicationBoundaryWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleRequest
+ */
+export class SaveZenithCommunicationBoundaryRuleRequest extends Message<SaveZenithCommunicationBoundaryRuleRequest> {
+  /**
+   * @generated from field: string boundary_code = 1;
+   */
+  boundaryCode = "";
+
+  /**
+   * @generated from field: string template_and_window = 2;
+   */
+  templateAndWindow = "";
+
+  /**
+   * @generated from field: string vip_and_emergency_exceptions = 3;
+   */
+  vipAndEmergencyExceptions = "";
+
+  /**
+   * @generated from field: string previewed_external_status_copy = 4;
+   */
+  previewedExternalStatusCopy = "";
+
+  /**
+   * @generated from field: string post_focus_catchup_summary = 5;
+   */
+  postFocusCatchupSummary = "";
+
+  /**
+   * @generated from field: string boundary_state = 6;
+   */
+  boundaryState = "";
+
+  constructor(data?: PartialMessage<SaveZenithCommunicationBoundaryRuleRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "boundary_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "template_and_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "vip_and_emergency_exceptions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "previewed_external_status_copy", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "post_focus_catchup_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "boundary_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCommunicationBoundaryRuleRequest {
+    return new SaveZenithCommunicationBoundaryRuleRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCommunicationBoundaryRuleRequest {
+    return new SaveZenithCommunicationBoundaryRuleRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCommunicationBoundaryRuleRequest {
+    return new SaveZenithCommunicationBoundaryRuleRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCommunicationBoundaryRuleRequest | PlainMessage<SaveZenithCommunicationBoundaryRuleRequest> | undefined, b: SaveZenithCommunicationBoundaryRuleRequest | PlainMessage<SaveZenithCommunicationBoundaryRuleRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCommunicationBoundaryRuleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse
+ */
+export class SaveZenithCommunicationBoundaryRuleResponse extends Message<SaveZenithCommunicationBoundaryRuleResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem rule = 1;
+   */
+  rule?: ZenithCommunicationBoundaryRuleItem;
+
+  constructor(data?: PartialMessage<SaveZenithCommunicationBoundaryRuleResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rule", kind: "message", T: ZenithCommunicationBoundaryRuleItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCommunicationBoundaryRuleResponse {
+    return new SaveZenithCommunicationBoundaryRuleResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCommunicationBoundaryRuleResponse {
+    return new SaveZenithCommunicationBoundaryRuleResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCommunicationBoundaryRuleResponse {
+    return new SaveZenithCommunicationBoundaryRuleResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCommunicationBoundaryRuleResponse | PlainMessage<SaveZenithCommunicationBoundaryRuleResponse> | undefined, b: SaveZenithCommunicationBoundaryRuleResponse | PlainMessage<SaveZenithCommunicationBoundaryRuleResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCommunicationBoundaryRuleResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupRequest
+ */
+export class ApproveOrReleaseZenithBoundaryCatchupRequest extends Message<ApproveOrReleaseZenithBoundaryCatchupRequest> {
+  /**
+   * @generated from field: string boundary_code = 1;
+   */
+  boundaryCode = "";
+
+  /**
+   * @generated from field: string boundary_state = 2;
+   */
+  boundaryState = "";
+
+  /**
+   * @generated from field: string post_focus_catchup_summary = 3;
+   */
+  postFocusCatchupSummary = "";
+
+  constructor(data?: PartialMessage<ApproveOrReleaseZenithBoundaryCatchupRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "boundary_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "boundary_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "post_focus_catchup_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrReleaseZenithBoundaryCatchupRequest {
+    return new ApproveOrReleaseZenithBoundaryCatchupRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrReleaseZenithBoundaryCatchupRequest {
+    return new ApproveOrReleaseZenithBoundaryCatchupRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrReleaseZenithBoundaryCatchupRequest {
+    return new ApproveOrReleaseZenithBoundaryCatchupRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrReleaseZenithBoundaryCatchupRequest | PlainMessage<ApproveOrReleaseZenithBoundaryCatchupRequest> | undefined, b: ApproveOrReleaseZenithBoundaryCatchupRequest | PlainMessage<ApproveOrReleaseZenithBoundaryCatchupRequest> | undefined): boolean {
+    return proto3.util.equals(ApproveOrReleaseZenithBoundaryCatchupRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse
+ */
+export class ApproveOrReleaseZenithBoundaryCatchupResponse extends Message<ApproveOrReleaseZenithBoundaryCatchupResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem rule = 1;
+   */
+  rule?: ZenithCommunicationBoundaryRuleItem;
+
+  constructor(data?: PartialMessage<ApproveOrReleaseZenithBoundaryCatchupResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rule", kind: "message", T: ZenithCommunicationBoundaryRuleItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrReleaseZenithBoundaryCatchupResponse {
+    return new ApproveOrReleaseZenithBoundaryCatchupResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrReleaseZenithBoundaryCatchupResponse {
+    return new ApproveOrReleaseZenithBoundaryCatchupResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrReleaseZenithBoundaryCatchupResponse {
+    return new ApproveOrReleaseZenithBoundaryCatchupResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrReleaseZenithBoundaryCatchupResponse | PlainMessage<ApproveOrReleaseZenithBoundaryCatchupResponse> | undefined, b: ApproveOrReleaseZenithBoundaryCatchupResponse | PlainMessage<ApproveOrReleaseZenithBoundaryCatchupResponse> | undefined): boolean {
+    return proto3.util.equals(ApproveOrReleaseZenithBoundaryCatchupResponse, a, b);
+  }
+}
+
+/**
+ * Choice 7 (Z5): Cognitive Readiness Battery
+ *
+ * @generated from message sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem
+ */
+export class ZenithCognitiveReadinessSessionItem extends Message<ZenithCognitiveReadinessSessionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string battery_code = 3;
+   */
+  batteryCode = "";
+
+  /**
+   * @generated from field: string alternate_form_and_tasks = 4;
+   */
+  alternateFormAndTasks = "";
+
+  /**
+   * @generated from field: string practice_effect_and_device_calibration = 5;
+   */
+  practiceEffectAndDeviceCalibration = "";
+
+  /**
+   * @generated from field: string readiness_band_and_confidence = 6;
+   */
+  readinessBandAndConfidence = "";
+
+  /**
+   * @generated from field: string exclusion_flag_reason = 7;
+   */
+  exclusionFlagReason = "";
+
+  /**
+   * @generated from field: string session_mode = 8;
+   */
+  sessionMode = "";
+
+  /**
+   * @generated from field: bool non_diagnostic_claim_enforced = 9;
+   */
+  nonDiagnosticClaimEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithCognitiveReadinessSessionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "battery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "alternate_form_and_tasks", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "practice_effect_and_device_calibration", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "readiness_band_and_confidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "exclusion_flag_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "session_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "non_diagnostic_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithCognitiveReadinessSessionItem {
+    return new ZenithCognitiveReadinessSessionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithCognitiveReadinessSessionItem {
+    return new ZenithCognitiveReadinessSessionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithCognitiveReadinessSessionItem {
+    return new ZenithCognitiveReadinessSessionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithCognitiveReadinessSessionItem | PlainMessage<ZenithCognitiveReadinessSessionItem> | undefined, b: ZenithCognitiveReadinessSessionItem | PlainMessage<ZenithCognitiveReadinessSessionItem> | undefined): boolean {
+    return proto3.util.equals(ZenithCognitiveReadinessSessionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchRequest
+ */
+export class GetZenithCognitiveReadinessWorkbenchRequest extends Message<GetZenithCognitiveReadinessWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithCognitiveReadinessWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCognitiveReadinessWorkbenchRequest {
+    return new GetZenithCognitiveReadinessWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCognitiveReadinessWorkbenchRequest {
+    return new GetZenithCognitiveReadinessWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCognitiveReadinessWorkbenchRequest {
+    return new GetZenithCognitiveReadinessWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCognitiveReadinessWorkbenchRequest | PlainMessage<GetZenithCognitiveReadinessWorkbenchRequest> | undefined, b: GetZenithCognitiveReadinessWorkbenchRequest | PlainMessage<GetZenithCognitiveReadinessWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithCognitiveReadinessWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse
+ */
+export class GetZenithCognitiveReadinessWorkbenchResponse extends Message<GetZenithCognitiveReadinessWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem sessions = 1;
+   */
+  sessions: ZenithCognitiveReadinessSessionItem[] = [];
+
+  /**
+   * @generated from field: bool non_diagnostic_claim_enforced = 2;
+   */
+  nonDiagnosticClaimEnforced = false;
+
+  /**
+   * @generated from field: string training_vs_assessment_separation_summary = 3;
+   */
+  trainingVsAssessmentSeparationSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithCognitiveReadinessWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sessions", kind: "message", T: ZenithCognitiveReadinessSessionItem, repeated: true },
+    { no: 2, name: "non_diagnostic_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "training_vs_assessment_separation_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCognitiveReadinessWorkbenchResponse {
+    return new GetZenithCognitiveReadinessWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCognitiveReadinessWorkbenchResponse {
+    return new GetZenithCognitiveReadinessWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCognitiveReadinessWorkbenchResponse {
+    return new GetZenithCognitiveReadinessWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCognitiveReadinessWorkbenchResponse | PlainMessage<GetZenithCognitiveReadinessWorkbenchResponse> | undefined, b: GetZenithCognitiveReadinessWorkbenchResponse | PlainMessage<GetZenithCognitiveReadinessWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithCognitiveReadinessWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionRequest
+ */
+export class SaveZenithCognitiveReadinessSessionRequest extends Message<SaveZenithCognitiveReadinessSessionRequest> {
+  /**
+   * @generated from field: string battery_code = 1;
+   */
+  batteryCode = "";
+
+  /**
+   * @generated from field: string alternate_form_and_tasks = 2;
+   */
+  alternateFormAndTasks = "";
+
+  /**
+   * @generated from field: string practice_effect_and_device_calibration = 3;
+   */
+  practiceEffectAndDeviceCalibration = "";
+
+  /**
+   * @generated from field: string readiness_band_and_confidence = 4;
+   */
+  readinessBandAndConfidence = "";
+
+  /**
+   * @generated from field: string exclusion_flag_reason = 5;
+   */
+  exclusionFlagReason = "";
+
+  /**
+   * @generated from field: string session_mode = 6;
+   */
+  sessionMode = "";
+
+  constructor(data?: PartialMessage<SaveZenithCognitiveReadinessSessionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "battery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "alternate_form_and_tasks", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "practice_effect_and_device_calibration", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "readiness_band_and_confidence", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "exclusion_flag_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "session_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCognitiveReadinessSessionRequest {
+    return new SaveZenithCognitiveReadinessSessionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCognitiveReadinessSessionRequest {
+    return new SaveZenithCognitiveReadinessSessionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCognitiveReadinessSessionRequest {
+    return new SaveZenithCognitiveReadinessSessionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCognitiveReadinessSessionRequest | PlainMessage<SaveZenithCognitiveReadinessSessionRequest> | undefined, b: SaveZenithCognitiveReadinessSessionRequest | PlainMessage<SaveZenithCognitiveReadinessSessionRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCognitiveReadinessSessionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse
+ */
+export class SaveZenithCognitiveReadinessSessionResponse extends Message<SaveZenithCognitiveReadinessSessionResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem session = 1;
+   */
+  session?: ZenithCognitiveReadinessSessionItem;
+
+  constructor(data?: PartialMessage<SaveZenithCognitiveReadinessSessionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session", kind: "message", T: ZenithCognitiveReadinessSessionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCognitiveReadinessSessionResponse {
+    return new SaveZenithCognitiveReadinessSessionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCognitiveReadinessSessionResponse {
+    return new SaveZenithCognitiveReadinessSessionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCognitiveReadinessSessionResponse {
+    return new SaveZenithCognitiveReadinessSessionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCognitiveReadinessSessionResponse | PlainMessage<SaveZenithCognitiveReadinessSessionResponse> | undefined, b: SaveZenithCognitiveReadinessSessionResponse | PlainMessage<SaveZenithCognitiveReadinessSessionResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCognitiveReadinessSessionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionRequest
+ */
+export class FlagOrValidateZenithCognitiveSessionRequest extends Message<FlagOrValidateZenithCognitiveSessionRequest> {
+  /**
+   * @generated from field: string battery_code = 1;
+   */
+  batteryCode = "";
+
+  /**
+   * @generated from field: string exclusion_flag_reason = 2;
+   */
+  exclusionFlagReason = "";
+
+  /**
+   * @generated from field: string session_mode = 3;
+   */
+  sessionMode = "";
+
+  constructor(data?: PartialMessage<FlagOrValidateZenithCognitiveSessionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "battery_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "exclusion_flag_reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "session_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlagOrValidateZenithCognitiveSessionRequest {
+    return new FlagOrValidateZenithCognitiveSessionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlagOrValidateZenithCognitiveSessionRequest {
+    return new FlagOrValidateZenithCognitiveSessionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlagOrValidateZenithCognitiveSessionRequest {
+    return new FlagOrValidateZenithCognitiveSessionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FlagOrValidateZenithCognitiveSessionRequest | PlainMessage<FlagOrValidateZenithCognitiveSessionRequest> | undefined, b: FlagOrValidateZenithCognitiveSessionRequest | PlainMessage<FlagOrValidateZenithCognitiveSessionRequest> | undefined): boolean {
+    return proto3.util.equals(FlagOrValidateZenithCognitiveSessionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse
+ */
+export class FlagOrValidateZenithCognitiveSessionResponse extends Message<FlagOrValidateZenithCognitiveSessionResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem session = 1;
+   */
+  session?: ZenithCognitiveReadinessSessionItem;
+
+  constructor(data?: PartialMessage<FlagOrValidateZenithCognitiveSessionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "session", kind: "message", T: ZenithCognitiveReadinessSessionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlagOrValidateZenithCognitiveSessionResponse {
+    return new FlagOrValidateZenithCognitiveSessionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlagOrValidateZenithCognitiveSessionResponse {
+    return new FlagOrValidateZenithCognitiveSessionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlagOrValidateZenithCognitiveSessionResponse {
+    return new FlagOrValidateZenithCognitiveSessionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FlagOrValidateZenithCognitiveSessionResponse | PlainMessage<FlagOrValidateZenithCognitiveSessionResponse> | undefined, b: FlagOrValidateZenithCognitiveSessionResponse | PlainMessage<FlagOrValidateZenithCognitiveSessionResponse> | undefined): boolean {
+    return proto3.util.equals(FlagOrValidateZenithCognitiveSessionResponse, a, b);
+  }
+}
+
+/**
+ * Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+ *
+ * @generated from message sttattus.zenith.v1.ZenithPrivatePatternMemoryItem
+ */
+export class ZenithPrivatePatternMemoryItem extends Message<ZenithPrivatePatternMemoryItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string pattern_code = 3;
+   */
+  patternCode = "";
+
+  /**
+   * @generated from field: string storage_and_encryption_mode = 4;
+   */
+  storageAndEncryptionMode = "";
+
+  /**
+   * @generated from field: string editable_derived_theme_label = 5;
+   */
+  editableDerivedThemeLabel = "";
+
+  /**
+   * @generated from field: string on_device_rescue_prompt_rule = 6;
+   */
+  onDeviceRescuePromptRule = "";
+
+  /**
+   * @generated from field: string crisis_resource_governance_note = 7;
+   */
+  crisisResourceGovernanceNote = "";
+
+  /**
+   * @generated from field: string pattern_state = 8;
+   */
+  patternState = "";
+
+  /**
+   * @generated from field: bool staff_raw_prose_access_blocked = 9;
+   */
+  staffRawProseAccessBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithPrivatePatternMemoryItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithPrivatePatternMemoryItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "pattern_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "storage_and_encryption_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "editable_derived_theme_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "on_device_rescue_prompt_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "crisis_resource_governance_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "pattern_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "staff_raw_prose_access_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithPrivatePatternMemoryItem {
+    return new ZenithPrivatePatternMemoryItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithPrivatePatternMemoryItem {
+    return new ZenithPrivatePatternMemoryItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithPrivatePatternMemoryItem {
+    return new ZenithPrivatePatternMemoryItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithPrivatePatternMemoryItem | PlainMessage<ZenithPrivatePatternMemoryItem> | undefined, b: ZenithPrivatePatternMemoryItem | PlainMessage<ZenithPrivatePatternMemoryItem> | undefined): boolean {
+    return proto3.util.equals(ZenithPrivatePatternMemoryItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchRequest
+ */
+export class GetZenithPrivatePatternMemoryWorkbenchRequest extends Message<GetZenithPrivatePatternMemoryWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithPrivatePatternMemoryWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithPrivatePatternMemoryWorkbenchRequest {
+    return new GetZenithPrivatePatternMemoryWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithPrivatePatternMemoryWorkbenchRequest {
+    return new GetZenithPrivatePatternMemoryWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithPrivatePatternMemoryWorkbenchRequest {
+    return new GetZenithPrivatePatternMemoryWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithPrivatePatternMemoryWorkbenchRequest | PlainMessage<GetZenithPrivatePatternMemoryWorkbenchRequest> | undefined, b: GetZenithPrivatePatternMemoryWorkbenchRequest | PlainMessage<GetZenithPrivatePatternMemoryWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithPrivatePatternMemoryWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse
+ */
+export class GetZenithPrivatePatternMemoryWorkbenchResponse extends Message<GetZenithPrivatePatternMemoryWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithPrivatePatternMemoryItem memories = 1;
+   */
+  memories: ZenithPrivatePatternMemoryItem[] = [];
+
+  /**
+   * @generated from field: bool staff_raw_prose_access_blocked_enforced = 2;
+   */
+  staffRawProseAccessBlockedEnforced = false;
+
+  /**
+   * @generated from field: string e2ee_and_editable_derivation_summary = 3;
+   */
+  e2eeAndEditableDerivationSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithPrivatePatternMemoryWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memories", kind: "message", T: ZenithPrivatePatternMemoryItem, repeated: true },
+    { no: 2, name: "staff_raw_prose_access_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "e2ee_and_editable_derivation_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithPrivatePatternMemoryWorkbenchResponse {
+    return new GetZenithPrivatePatternMemoryWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithPrivatePatternMemoryWorkbenchResponse {
+    return new GetZenithPrivatePatternMemoryWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithPrivatePatternMemoryWorkbenchResponse {
+    return new GetZenithPrivatePatternMemoryWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithPrivatePatternMemoryWorkbenchResponse | PlainMessage<GetZenithPrivatePatternMemoryWorkbenchResponse> | undefined, b: GetZenithPrivatePatternMemoryWorkbenchResponse | PlainMessage<GetZenithPrivatePatternMemoryWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithPrivatePatternMemoryWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithPrivatePatternMemoryRequest
+ */
+export class SaveZenithPrivatePatternMemoryRequest extends Message<SaveZenithPrivatePatternMemoryRequest> {
+  /**
+   * @generated from field: string pattern_code = 1;
+   */
+  patternCode = "";
+
+  /**
+   * @generated from field: string storage_and_encryption_mode = 2;
+   */
+  storageAndEncryptionMode = "";
+
+  /**
+   * @generated from field: string editable_derived_theme_label = 3;
+   */
+  editableDerivedThemeLabel = "";
+
+  /**
+   * @generated from field: string on_device_rescue_prompt_rule = 4;
+   */
+  onDeviceRescuePromptRule = "";
+
+  /**
+   * @generated from field: string crisis_resource_governance_note = 5;
+   */
+  crisisResourceGovernanceNote = "";
+
+  /**
+   * @generated from field: string pattern_state = 6;
+   */
+  patternState = "";
+
+  constructor(data?: PartialMessage<SaveZenithPrivatePatternMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithPrivatePatternMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pattern_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "storage_and_encryption_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "editable_derived_theme_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "on_device_rescue_prompt_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "crisis_resource_governance_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "pattern_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithPrivatePatternMemoryRequest {
+    return new SaveZenithPrivatePatternMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithPrivatePatternMemoryRequest {
+    return new SaveZenithPrivatePatternMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithPrivatePatternMemoryRequest {
+    return new SaveZenithPrivatePatternMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithPrivatePatternMemoryRequest | PlainMessage<SaveZenithPrivatePatternMemoryRequest> | undefined, b: SaveZenithPrivatePatternMemoryRequest | PlainMessage<SaveZenithPrivatePatternMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithPrivatePatternMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse
+ */
+export class SaveZenithPrivatePatternMemoryResponse extends Message<SaveZenithPrivatePatternMemoryResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithPrivatePatternMemoryItem memory = 1;
+   */
+  memory?: ZenithPrivatePatternMemoryItem;
+
+  constructor(data?: PartialMessage<SaveZenithPrivatePatternMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory", kind: "message", T: ZenithPrivatePatternMemoryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithPrivatePatternMemoryResponse {
+    return new SaveZenithPrivatePatternMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithPrivatePatternMemoryResponse {
+    return new SaveZenithPrivatePatternMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithPrivatePatternMemoryResponse {
+    return new SaveZenithPrivatePatternMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithPrivatePatternMemoryResponse | PlainMessage<SaveZenithPrivatePatternMemoryResponse> | undefined, b: SaveZenithPrivatePatternMemoryResponse | PlainMessage<SaveZenithPrivatePatternMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithPrivatePatternMemoryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryRequest
+ */
+export class EditOrDeleteZenithPrivatePatternMemoryRequest extends Message<EditOrDeleteZenithPrivatePatternMemoryRequest> {
+  /**
+   * @generated from field: string pattern_code = 1;
+   */
+  patternCode = "";
+
+  /**
+   * @generated from field: string editable_derived_theme_label = 2;
+   */
+  editableDerivedThemeLabel = "";
+
+  /**
+   * @generated from field: string pattern_state = 3;
+   */
+  patternState = "";
+
+  constructor(data?: PartialMessage<EditOrDeleteZenithPrivatePatternMemoryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pattern_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "editable_derived_theme_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "pattern_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditOrDeleteZenithPrivatePatternMemoryRequest {
+    return new EditOrDeleteZenithPrivatePatternMemoryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditOrDeleteZenithPrivatePatternMemoryRequest {
+    return new EditOrDeleteZenithPrivatePatternMemoryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditOrDeleteZenithPrivatePatternMemoryRequest {
+    return new EditOrDeleteZenithPrivatePatternMemoryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EditOrDeleteZenithPrivatePatternMemoryRequest | PlainMessage<EditOrDeleteZenithPrivatePatternMemoryRequest> | undefined, b: EditOrDeleteZenithPrivatePatternMemoryRequest | PlainMessage<EditOrDeleteZenithPrivatePatternMemoryRequest> | undefined): boolean {
+    return proto3.util.equals(EditOrDeleteZenithPrivatePatternMemoryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse
+ */
+export class EditOrDeleteZenithPrivatePatternMemoryResponse extends Message<EditOrDeleteZenithPrivatePatternMemoryResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithPrivatePatternMemoryItem memory = 1;
+   */
+  memory?: ZenithPrivatePatternMemoryItem;
+
+  constructor(data?: PartialMessage<EditOrDeleteZenithPrivatePatternMemoryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "memory", kind: "message", T: ZenithPrivatePatternMemoryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditOrDeleteZenithPrivatePatternMemoryResponse {
+    return new EditOrDeleteZenithPrivatePatternMemoryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditOrDeleteZenithPrivatePatternMemoryResponse {
+    return new EditOrDeleteZenithPrivatePatternMemoryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditOrDeleteZenithPrivatePatternMemoryResponse {
+    return new EditOrDeleteZenithPrivatePatternMemoryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EditOrDeleteZenithPrivatePatternMemoryResponse | PlainMessage<EditOrDeleteZenithPrivatePatternMemoryResponse> | undefined, b: EditOrDeleteZenithPrivatePatternMemoryResponse | PlainMessage<EditOrDeleteZenithPrivatePatternMemoryResponse> | undefined): boolean {
+    return proto3.util.equals(EditOrDeleteZenithPrivatePatternMemoryResponse, a, b);
+  }
+}
+
+/**
+ * Choice 9 (Z7): Travel Performance
+ *
+ * @generated from message sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem
+ */
+export class ZenithTravelPerformanceProtocolItem extends Message<ZenithTravelPerformanceProtocolItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string travel_code = 3;
+   */
+  travelCode = "";
+
+  /**
+   * @generated from field: string corridor_and_shift_hours = 4;
+   */
+  corridorAndShiftHours = "";
+
+  /**
+   * @generated from field: string light_meal_sleep_schedule = 5;
+   */
+  lightMealSleepSchedule = "";
+
+  /**
+   * @generated from field: string missed_step_replan_rule = 6;
+   */
+  missedStepReplanRule = "";
+
+  /**
+   * @generated from field: string supplement_default_mode = 7;
+   */
+  supplementDefaultMode = "";
+
+  /**
+   * @generated from field: string adaptation_state = 8;
+   */
+  adaptationState = "";
+
+  /**
+   * @generated from field: bool medication_advice_prohibited = 9;
+   */
+  medicationAdviceProhibited = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithTravelPerformanceProtocolItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "travel_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "corridor_and_shift_hours", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "light_meal_sleep_schedule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "missed_step_replan_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "supplement_default_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "adaptation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "medication_advice_prohibited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithTravelPerformanceProtocolItem {
+    return new ZenithTravelPerformanceProtocolItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithTravelPerformanceProtocolItem {
+    return new ZenithTravelPerformanceProtocolItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithTravelPerformanceProtocolItem {
+    return new ZenithTravelPerformanceProtocolItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithTravelPerformanceProtocolItem | PlainMessage<ZenithTravelPerformanceProtocolItem> | undefined, b: ZenithTravelPerformanceProtocolItem | PlainMessage<ZenithTravelPerformanceProtocolItem> | undefined): boolean {
+    return proto3.util.equals(ZenithTravelPerformanceProtocolItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchRequest
+ */
+export class GetZenithTravelPerformanceWorkbenchRequest extends Message<GetZenithTravelPerformanceWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithTravelPerformanceWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithTravelPerformanceWorkbenchRequest {
+    return new GetZenithTravelPerformanceWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithTravelPerformanceWorkbenchRequest {
+    return new GetZenithTravelPerformanceWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithTravelPerformanceWorkbenchRequest {
+    return new GetZenithTravelPerformanceWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithTravelPerformanceWorkbenchRequest | PlainMessage<GetZenithTravelPerformanceWorkbenchRequest> | undefined, b: GetZenithTravelPerformanceWorkbenchRequest | PlainMessage<GetZenithTravelPerformanceWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithTravelPerformanceWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse
+ */
+export class GetZenithTravelPerformanceWorkbenchResponse extends Message<GetZenithTravelPerformanceWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem protocols = 1;
+   */
+  protocols: ZenithTravelPerformanceProtocolItem[] = [];
+
+  /**
+   * @generated from field: bool medication_advice_prohibited_enforced = 2;
+   */
+  medicationAdviceProhibitedEnforced = false;
+
+  /**
+   * @generated from field: string no_supplement_default_summary = 3;
+   */
+  noSupplementDefaultSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithTravelPerformanceWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocols", kind: "message", T: ZenithTravelPerformanceProtocolItem, repeated: true },
+    { no: 2, name: "medication_advice_prohibited_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "no_supplement_default_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithTravelPerformanceWorkbenchResponse {
+    return new GetZenithTravelPerformanceWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithTravelPerformanceWorkbenchResponse {
+    return new GetZenithTravelPerformanceWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithTravelPerformanceWorkbenchResponse {
+    return new GetZenithTravelPerformanceWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithTravelPerformanceWorkbenchResponse | PlainMessage<GetZenithTravelPerformanceWorkbenchResponse> | undefined, b: GetZenithTravelPerformanceWorkbenchResponse | PlainMessage<GetZenithTravelPerformanceWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithTravelPerformanceWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolRequest
+ */
+export class SaveZenithTravelPerformanceProtocolRequest extends Message<SaveZenithTravelPerformanceProtocolRequest> {
+  /**
+   * @generated from field: string travel_code = 1;
+   */
+  travelCode = "";
+
+  /**
+   * @generated from field: string corridor_and_shift_hours = 2;
+   */
+  corridorAndShiftHours = "";
+
+  /**
+   * @generated from field: string light_meal_sleep_schedule = 3;
+   */
+  lightMealSleepSchedule = "";
+
+  /**
+   * @generated from field: string missed_step_replan_rule = 4;
+   */
+  missedStepReplanRule = "";
+
+  /**
+   * @generated from field: string supplement_default_mode = 5;
+   */
+  supplementDefaultMode = "";
+
+  /**
+   * @generated from field: string adaptation_state = 6;
+   */
+  adaptationState = "";
+
+  constructor(data?: PartialMessage<SaveZenithTravelPerformanceProtocolRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "travel_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "corridor_and_shift_hours", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "light_meal_sleep_schedule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "missed_step_replan_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "supplement_default_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "adaptation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithTravelPerformanceProtocolRequest {
+    return new SaveZenithTravelPerformanceProtocolRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithTravelPerformanceProtocolRequest {
+    return new SaveZenithTravelPerformanceProtocolRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithTravelPerformanceProtocolRequest {
+    return new SaveZenithTravelPerformanceProtocolRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithTravelPerformanceProtocolRequest | PlainMessage<SaveZenithTravelPerformanceProtocolRequest> | undefined, b: SaveZenithTravelPerformanceProtocolRequest | PlainMessage<SaveZenithTravelPerformanceProtocolRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithTravelPerformanceProtocolRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse
+ */
+export class SaveZenithTravelPerformanceProtocolResponse extends Message<SaveZenithTravelPerformanceProtocolResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem protocol = 1;
+   */
+  protocol?: ZenithTravelPerformanceProtocolItem;
+
+  constructor(data?: PartialMessage<SaveZenithTravelPerformanceProtocolResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol", kind: "message", T: ZenithTravelPerformanceProtocolItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithTravelPerformanceProtocolResponse {
+    return new SaveZenithTravelPerformanceProtocolResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithTravelPerformanceProtocolResponse {
+    return new SaveZenithTravelPerformanceProtocolResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithTravelPerformanceProtocolResponse {
+    return new SaveZenithTravelPerformanceProtocolResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithTravelPerformanceProtocolResponse | PlainMessage<SaveZenithTravelPerformanceProtocolResponse> | undefined, b: SaveZenithTravelPerformanceProtocolResponse | PlainMessage<SaveZenithTravelPerformanceProtocolResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithTravelPerformanceProtocolResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ReplanZenithTravelMissedStepRequest
+ */
+export class ReplanZenithTravelMissedStepRequest extends Message<ReplanZenithTravelMissedStepRequest> {
+  /**
+   * @generated from field: string travel_code = 1;
+   */
+  travelCode = "";
+
+  /**
+   * @generated from field: string missed_step_replan_rule = 2;
+   */
+  missedStepReplanRule = "";
+
+  /**
+   * @generated from field: string adaptation_state = 3;
+   */
+  adaptationState = "";
+
+  constructor(data?: PartialMessage<ReplanZenithTravelMissedStepRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ReplanZenithTravelMissedStepRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "travel_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "missed_step_replan_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "adaptation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplanZenithTravelMissedStepRequest {
+    return new ReplanZenithTravelMissedStepRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplanZenithTravelMissedStepRequest {
+    return new ReplanZenithTravelMissedStepRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplanZenithTravelMissedStepRequest {
+    return new ReplanZenithTravelMissedStepRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReplanZenithTravelMissedStepRequest | PlainMessage<ReplanZenithTravelMissedStepRequest> | undefined, b: ReplanZenithTravelMissedStepRequest | PlainMessage<ReplanZenithTravelMissedStepRequest> | undefined): boolean {
+    return proto3.util.equals(ReplanZenithTravelMissedStepRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse
+ */
+export class ReplanZenithTravelMissedStepResponse extends Message<ReplanZenithTravelMissedStepResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem protocol = 1;
+   */
+  protocol?: ZenithTravelPerformanceProtocolItem;
+
+  constructor(data?: PartialMessage<ReplanZenithTravelMissedStepResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "protocol", kind: "message", T: ZenithTravelPerformanceProtocolItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplanZenithTravelMissedStepResponse {
+    return new ReplanZenithTravelMissedStepResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplanZenithTravelMissedStepResponse {
+    return new ReplanZenithTravelMissedStepResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplanZenithTravelMissedStepResponse {
+    return new ReplanZenithTravelMissedStepResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReplanZenithTravelMissedStepResponse | PlainMessage<ReplanZenithTravelMissedStepResponse> | undefined, b: ReplanZenithTravelMissedStepResponse | PlainMessage<ReplanZenithTravelMissedStepResponse> | undefined): boolean {
+    return proto3.util.equals(ReplanZenithTravelMissedStepResponse, a, b);
+  }
+}
+
+/**
+ * Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+ *
+ * @generated from message sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem
+ */
+export class ZenithCoachingTeamMeetingHealthItem extends Message<ZenithCoachingTeamMeetingHealthItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string workspace_code = 3;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string coach_credential_and_scope = 4;
+   */
+  coachCredentialAndScope = "";
+
+  /**
+   * @generated from field: string meeting_load_fragmentation_insight = 5;
+   */
+  meetingLoadFragmentationInsight = "";
+
+  /**
+   * @generated from field: string team_cohort_privacy_summary = 6;
+   */
+  teamCohortPrivacySummary = "";
+
+  /**
+   * @generated from field: string async_or_meeting_free_proposal = 7;
+   */
+  asyncOrMeetingFreeProposal = "";
+
+  /**
+   * @generated from field: string governance_state = 8;
+   */
+  governanceState = "";
+
+  /**
+   * @generated from field: bool individual_surveillance_blocked = 9;
+   */
+  individualSurveillanceBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithCoachingTeamMeetingHealthItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "coach_credential_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "meeting_load_fragmentation_insight", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "team_cohort_privacy_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "async_or_meeting_free_proposal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "individual_surveillance_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithCoachingTeamMeetingHealthItem {
+    return new ZenithCoachingTeamMeetingHealthItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithCoachingTeamMeetingHealthItem {
+    return new ZenithCoachingTeamMeetingHealthItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithCoachingTeamMeetingHealthItem {
+    return new ZenithCoachingTeamMeetingHealthItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithCoachingTeamMeetingHealthItem | PlainMessage<ZenithCoachingTeamMeetingHealthItem> | undefined, b: ZenithCoachingTeamMeetingHealthItem | PlainMessage<ZenithCoachingTeamMeetingHealthItem> | undefined): boolean {
+    return proto3.util.equals(ZenithCoachingTeamMeetingHealthItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchRequest
+ */
+export class GetZenithCoachingTeamMeetingWorkbenchRequest extends Message<GetZenithCoachingTeamMeetingWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithCoachingTeamMeetingWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCoachingTeamMeetingWorkbenchRequest {
+    return new GetZenithCoachingTeamMeetingWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCoachingTeamMeetingWorkbenchRequest {
+    return new GetZenithCoachingTeamMeetingWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCoachingTeamMeetingWorkbenchRequest {
+    return new GetZenithCoachingTeamMeetingWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCoachingTeamMeetingWorkbenchRequest | PlainMessage<GetZenithCoachingTeamMeetingWorkbenchRequest> | undefined, b: GetZenithCoachingTeamMeetingWorkbenchRequest | PlainMessage<GetZenithCoachingTeamMeetingWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithCoachingTeamMeetingWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse
+ */
+export class GetZenithCoachingTeamMeetingWorkbenchResponse extends Message<GetZenithCoachingTeamMeetingWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem workspaces = 1;
+   */
+  workspaces: ZenithCoachingTeamMeetingHealthItem[] = [];
+
+  /**
+   * @generated from field: bool individual_surveillance_blocked_enforced = 2;
+   */
+  individualSurveillanceBlockedEnforced = false;
+
+  /**
+   * @generated from field: string minimum_cohort_and_credential_summary = 3;
+   */
+  minimumCohortAndCredentialSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithCoachingTeamMeetingWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspaces", kind: "message", T: ZenithCoachingTeamMeetingHealthItem, repeated: true },
+    { no: 2, name: "individual_surveillance_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "minimum_cohort_and_credential_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithCoachingTeamMeetingWorkbenchResponse {
+    return new GetZenithCoachingTeamMeetingWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithCoachingTeamMeetingWorkbenchResponse {
+    return new GetZenithCoachingTeamMeetingWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithCoachingTeamMeetingWorkbenchResponse {
+    return new GetZenithCoachingTeamMeetingWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithCoachingTeamMeetingWorkbenchResponse | PlainMessage<GetZenithCoachingTeamMeetingWorkbenchResponse> | undefined, b: GetZenithCoachingTeamMeetingWorkbenchResponse | PlainMessage<GetZenithCoachingTeamMeetingWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithCoachingTeamMeetingWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthRequest
+ */
+export class SaveZenithCoachingTeamMeetingHealthRequest extends Message<SaveZenithCoachingTeamMeetingHealthRequest> {
+  /**
+   * @generated from field: string workspace_code = 1;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string coach_credential_and_scope = 2;
+   */
+  coachCredentialAndScope = "";
+
+  /**
+   * @generated from field: string meeting_load_fragmentation_insight = 3;
+   */
+  meetingLoadFragmentationInsight = "";
+
+  /**
+   * @generated from field: string team_cohort_privacy_summary = 4;
+   */
+  teamCohortPrivacySummary = "";
+
+  /**
+   * @generated from field: string async_or_meeting_free_proposal = 5;
+   */
+  asyncOrMeetingFreeProposal = "";
+
+  /**
+   * @generated from field: string governance_state = 6;
+   */
+  governanceState = "";
+
+  constructor(data?: PartialMessage<SaveZenithCoachingTeamMeetingHealthRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "coach_credential_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "meeting_load_fragmentation_insight", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "team_cohort_privacy_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "async_or_meeting_free_proposal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCoachingTeamMeetingHealthRequest {
+    return new SaveZenithCoachingTeamMeetingHealthRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCoachingTeamMeetingHealthRequest {
+    return new SaveZenithCoachingTeamMeetingHealthRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCoachingTeamMeetingHealthRequest {
+    return new SaveZenithCoachingTeamMeetingHealthRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCoachingTeamMeetingHealthRequest | PlainMessage<SaveZenithCoachingTeamMeetingHealthRequest> | undefined, b: SaveZenithCoachingTeamMeetingHealthRequest | PlainMessage<SaveZenithCoachingTeamMeetingHealthRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCoachingTeamMeetingHealthRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse
+ */
+export class SaveZenithCoachingTeamMeetingHealthResponse extends Message<SaveZenithCoachingTeamMeetingHealthResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem workspace = 1;
+   */
+  workspace?: ZenithCoachingTeamMeetingHealthItem;
+
+  constructor(data?: PartialMessage<SaveZenithCoachingTeamMeetingHealthResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: ZenithCoachingTeamMeetingHealthItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithCoachingTeamMeetingHealthResponse {
+    return new SaveZenithCoachingTeamMeetingHealthResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithCoachingTeamMeetingHealthResponse {
+    return new SaveZenithCoachingTeamMeetingHealthResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithCoachingTeamMeetingHealthResponse {
+    return new SaveZenithCoachingTeamMeetingHealthResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithCoachingTeamMeetingHealthResponse | PlainMessage<SaveZenithCoachingTeamMeetingHealthResponse> | undefined, b: SaveZenithCoachingTeamMeetingHealthResponse | PlainMessage<SaveZenithCoachingTeamMeetingHealthResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithCoachingTeamMeetingHealthResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffRequest
+ */
+export class ProposeZenithMeetingFreeOrOracleHandoffRequest extends Message<ProposeZenithMeetingFreeOrOracleHandoffRequest> {
+  /**
+   * @generated from field: string workspace_code = 1;
+   */
+  workspaceCode = "";
+
+  /**
+   * @generated from field: string async_or_meeting_free_proposal = 2;
+   */
+  asyncOrMeetingFreeProposal = "";
+
+  /**
+   * @generated from field: string governance_state = 3;
+   */
+  governanceState = "";
+
+  constructor(data?: PartialMessage<ProposeZenithMeetingFreeOrOracleHandoffRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "async_or_meeting_free_proposal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "governance_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffRequest {
+    return new ProposeZenithMeetingFreeOrOracleHandoffRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffRequest {
+    return new ProposeZenithMeetingFreeOrOracleHandoffRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffRequest {
+    return new ProposeZenithMeetingFreeOrOracleHandoffRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProposeZenithMeetingFreeOrOracleHandoffRequest | PlainMessage<ProposeZenithMeetingFreeOrOracleHandoffRequest> | undefined, b: ProposeZenithMeetingFreeOrOracleHandoffRequest | PlainMessage<ProposeZenithMeetingFreeOrOracleHandoffRequest> | undefined): boolean {
+    return proto3.util.equals(ProposeZenithMeetingFreeOrOracleHandoffRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse
+ */
+export class ProposeZenithMeetingFreeOrOracleHandoffResponse extends Message<ProposeZenithMeetingFreeOrOracleHandoffResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem workspace = 1;
+   */
+  workspace?: ZenithCoachingTeamMeetingHealthItem;
+
+  constructor(data?: PartialMessage<ProposeZenithMeetingFreeOrOracleHandoffResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: ZenithCoachingTeamMeetingHealthItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffResponse {
+    return new ProposeZenithMeetingFreeOrOracleHandoffResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffResponse {
+    return new ProposeZenithMeetingFreeOrOracleHandoffResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProposeZenithMeetingFreeOrOracleHandoffResponse {
+    return new ProposeZenithMeetingFreeOrOracleHandoffResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProposeZenithMeetingFreeOrOracleHandoffResponse | PlainMessage<ProposeZenithMeetingFreeOrOracleHandoffResponse> | undefined, b: ProposeZenithMeetingFreeOrOracleHandoffResponse | PlainMessage<ProposeZenithMeetingFreeOrOracleHandoffResponse> | undefined): boolean {
+    return proto3.util.equals(ProposeZenithMeetingFreeOrOracleHandoffResponse, a, b);
+  }
+}
+
+/**
+ * Choice 11 (Z11): Sensory Workspace and Desktop Companion
+ *
+ * @generated from message sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem
+ */
+export class ZenithSensoryDesktopWorkspaceItem extends Message<ZenithSensoryDesktopWorkspaceItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string sensory_code = 3;
+   */
+  sensoryCode = "";
+
+  /**
+   * @generated from field: string profile_name_and_needs = 4;
+   */
+  profileNameAndNeeds = "";
+
+  /**
+   * @generated from field: string vendor_capability_and_manual_fallback = 5;
+   */
+  vendorCapabilityAndManualFallback = "";
+
+  /**
+   * @generated from field: string protected_safety_exclusions = 6;
+   */
+  protectedSafetyExclusions = "";
+
+  /**
+   * @generated from field: string desktop_companion_telemetry_mode = 7;
+   */
+  desktopCompanionTelemetryMode = "";
+
+  /**
+   * @generated from field: string workspace_state = 8;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: bool keystroke_screenshot_capture_blocked = 9;
+   */
+  keystrokeScreenshotCaptureBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<ZenithSensoryDesktopWorkspaceItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sensory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "profile_name_and_needs", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "vendor_capability_and_manual_fallback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "protected_safety_exclusions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "desktop_companion_telemetry_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "keystroke_screenshot_capture_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ZenithSensoryDesktopWorkspaceItem {
+    return new ZenithSensoryDesktopWorkspaceItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ZenithSensoryDesktopWorkspaceItem {
+    return new ZenithSensoryDesktopWorkspaceItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ZenithSensoryDesktopWorkspaceItem {
+    return new ZenithSensoryDesktopWorkspaceItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ZenithSensoryDesktopWorkspaceItem | PlainMessage<ZenithSensoryDesktopWorkspaceItem> | undefined, b: ZenithSensoryDesktopWorkspaceItem | PlainMessage<ZenithSensoryDesktopWorkspaceItem> | undefined): boolean {
+    return proto3.util.equals(ZenithSensoryDesktopWorkspaceItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchRequest
+ */
+export class GetZenithSensoryDesktopWorkbenchRequest extends Message<GetZenithSensoryDesktopWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetZenithSensoryDesktopWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithSensoryDesktopWorkbenchRequest {
+    return new GetZenithSensoryDesktopWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithSensoryDesktopWorkbenchRequest {
+    return new GetZenithSensoryDesktopWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithSensoryDesktopWorkbenchRequest {
+    return new GetZenithSensoryDesktopWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithSensoryDesktopWorkbenchRequest | PlainMessage<GetZenithSensoryDesktopWorkbenchRequest> | undefined, b: GetZenithSensoryDesktopWorkbenchRequest | PlainMessage<GetZenithSensoryDesktopWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetZenithSensoryDesktopWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse
+ */
+export class GetZenithSensoryDesktopWorkbenchResponse extends Message<GetZenithSensoryDesktopWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem workspaces = 1;
+   */
+  workspaces: ZenithSensoryDesktopWorkspaceItem[] = [];
+
+  /**
+   * @generated from field: bool keystroke_screenshot_capture_blocked_enforced = 2;
+   */
+  keystrokeScreenshotCaptureBlockedEnforced = false;
+
+  /**
+   * @generated from field: string safety_exclusion_and_manual_fallback_summary = 3;
+   */
+  safetyExclusionAndManualFallbackSummary = "";
+
+  constructor(data?: PartialMessage<GetZenithSensoryDesktopWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspaces", kind: "message", T: ZenithSensoryDesktopWorkspaceItem, repeated: true },
+    { no: 2, name: "keystroke_screenshot_capture_blocked_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "safety_exclusion_and_manual_fallback_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetZenithSensoryDesktopWorkbenchResponse {
+    return new GetZenithSensoryDesktopWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetZenithSensoryDesktopWorkbenchResponse {
+    return new GetZenithSensoryDesktopWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetZenithSensoryDesktopWorkbenchResponse {
+    return new GetZenithSensoryDesktopWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetZenithSensoryDesktopWorkbenchResponse | PlainMessage<GetZenithSensoryDesktopWorkbenchResponse> | undefined, b: GetZenithSensoryDesktopWorkbenchResponse | PlainMessage<GetZenithSensoryDesktopWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetZenithSensoryDesktopWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceRequest
+ */
+export class SaveZenithSensoryDesktopWorkspaceRequest extends Message<SaveZenithSensoryDesktopWorkspaceRequest> {
+  /**
+   * @generated from field: string sensory_code = 1;
+   */
+  sensoryCode = "";
+
+  /**
+   * @generated from field: string profile_name_and_needs = 2;
+   */
+  profileNameAndNeeds = "";
+
+  /**
+   * @generated from field: string vendor_capability_and_manual_fallback = 3;
+   */
+  vendorCapabilityAndManualFallback = "";
+
+  /**
+   * @generated from field: string protected_safety_exclusions = 4;
+   */
+  protectedSafetyExclusions = "";
+
+  /**
+   * @generated from field: string desktop_companion_telemetry_mode = 5;
+   */
+  desktopCompanionTelemetryMode = "";
+
+  /**
+   * @generated from field: string workspace_state = 6;
+   */
+  workspaceState = "";
+
+  constructor(data?: PartialMessage<SaveZenithSensoryDesktopWorkspaceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sensory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "profile_name_and_needs", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "vendor_capability_and_manual_fallback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "protected_safety_exclusions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "desktop_companion_telemetry_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithSensoryDesktopWorkspaceRequest {
+    return new SaveZenithSensoryDesktopWorkspaceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithSensoryDesktopWorkspaceRequest {
+    return new SaveZenithSensoryDesktopWorkspaceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithSensoryDesktopWorkspaceRequest {
+    return new SaveZenithSensoryDesktopWorkspaceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithSensoryDesktopWorkspaceRequest | PlainMessage<SaveZenithSensoryDesktopWorkspaceRequest> | undefined, b: SaveZenithSensoryDesktopWorkspaceRequest | PlainMessage<SaveZenithSensoryDesktopWorkspaceRequest> | undefined): boolean {
+    return proto3.util.equals(SaveZenithSensoryDesktopWorkspaceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse
+ */
+export class SaveZenithSensoryDesktopWorkspaceResponse extends Message<SaveZenithSensoryDesktopWorkspaceResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem workspace = 1;
+   */
+  workspace?: ZenithSensoryDesktopWorkspaceItem;
+
+  constructor(data?: PartialMessage<SaveZenithSensoryDesktopWorkspaceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: ZenithSensoryDesktopWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveZenithSensoryDesktopWorkspaceResponse {
+    return new SaveZenithSensoryDesktopWorkspaceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveZenithSensoryDesktopWorkspaceResponse {
+    return new SaveZenithSensoryDesktopWorkspaceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveZenithSensoryDesktopWorkspaceResponse {
+    return new SaveZenithSensoryDesktopWorkspaceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveZenithSensoryDesktopWorkspaceResponse | PlainMessage<SaveZenithSensoryDesktopWorkspaceResponse> | undefined, b: SaveZenithSensoryDesktopWorkspaceResponse | PlainMessage<SaveZenithSensoryDesktopWorkspaceResponse> | undefined): boolean {
+    return proto3.util.equals(SaveZenithSensoryDesktopWorkspaceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceRequest
+ */
+export class ArmOrFallbackZenithSensoryWorkspaceRequest extends Message<ArmOrFallbackZenithSensoryWorkspaceRequest> {
+  /**
+   * @generated from field: string sensory_code = 1;
+   */
+  sensoryCode = "";
+
+  /**
+   * @generated from field: string workspace_state = 2;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: string vendor_capability_and_manual_fallback = 3;
+   */
+  vendorCapabilityAndManualFallback = "";
+
+  constructor(data?: PartialMessage<ArmOrFallbackZenithSensoryWorkspaceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sensory_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "vendor_capability_and_manual_fallback", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ArmOrFallbackZenithSensoryWorkspaceRequest {
+    return new ArmOrFallbackZenithSensoryWorkspaceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ArmOrFallbackZenithSensoryWorkspaceRequest {
+    return new ArmOrFallbackZenithSensoryWorkspaceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ArmOrFallbackZenithSensoryWorkspaceRequest {
+    return new ArmOrFallbackZenithSensoryWorkspaceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ArmOrFallbackZenithSensoryWorkspaceRequest | PlainMessage<ArmOrFallbackZenithSensoryWorkspaceRequest> | undefined, b: ArmOrFallbackZenithSensoryWorkspaceRequest | PlainMessage<ArmOrFallbackZenithSensoryWorkspaceRequest> | undefined): boolean {
+    return proto3.util.equals(ArmOrFallbackZenithSensoryWorkspaceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponse
+ */
+export class ArmOrFallbackZenithSensoryWorkspaceResponse extends Message<ArmOrFallbackZenithSensoryWorkspaceResponse> {
+  /**
+   * @generated from field: sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem workspace = 1;
+   */
+  workspace?: ZenithSensoryDesktopWorkspaceItem;
+
+  constructor(data?: PartialMessage<ArmOrFallbackZenithSensoryWorkspaceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: ZenithSensoryDesktopWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ArmOrFallbackZenithSensoryWorkspaceResponse {
+    return new ArmOrFallbackZenithSensoryWorkspaceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ArmOrFallbackZenithSensoryWorkspaceResponse {
+    return new ArmOrFallbackZenithSensoryWorkspaceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ArmOrFallbackZenithSensoryWorkspaceResponse {
+    return new ArmOrFallbackZenithSensoryWorkspaceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ArmOrFallbackZenithSensoryWorkspaceResponse | PlainMessage<ArmOrFallbackZenithSensoryWorkspaceResponse> | undefined, b: ArmOrFallbackZenithSensoryWorkspaceResponse | PlainMessage<ArmOrFallbackZenithSensoryWorkspaceResponse> | undefined): boolean {
+    return proto3.util.equals(ArmOrFallbackZenithSensoryWorkspaceResponse, a, b);
+  }
+}
+

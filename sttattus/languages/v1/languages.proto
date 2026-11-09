@@ -878,7 +878,63 @@ service LanguagesService {
 
   // Legacy (Deprecated but kept for bridge)
   rpc ListWords(ListWordsRequest) returns (ListWordsResponse);
+
+  // Choice 6 (L6): Immersion and Personal Import Universe
+  rpc GetImmersionUniverseOverview(GetImmersionUniverseOverviewRequest) returns (GetImmersionUniverseOverviewResponse);
+  rpc ImportPersonalImmersionMedia(ImportPersonalImmersionMediaRequest) returns (ImportPersonalImmersionMediaResponse);
+  rpc CaptureContextConceptSense(CaptureContextConceptSenseRequest) returns (CaptureContextConceptSenseResponse);
+
+  // Choice 7 (L7): Writing and Register Studio
+  rpc GetWritingRegisterStudioOverview(GetWritingRegisterStudioOverviewRequest) returns (GetWritingRegisterStudioOverviewResponse);
+  rpc SubmitWritingRegisterDraft(SubmitWritingRegisterDraftRequest) returns (SubmitWritingRegisterDraftResponse);
+  rpc VerifyDelayedRegisterTransfer(VerifyDelayedRegisterTransferRequest) returns (VerifyDelayedRegisterTransferResponse);
+
+  // Choice 8 (L8): Human Tutoring and Community
+  rpc GetHumanTutoringCommunityOverview(GetHumanTutoringCommunityOverviewRequest) returns (GetHumanTutoringCommunityOverviewResponse);
+  rpc BookOrAskHumanTutor(BookOrAskHumanTutorRequest) returns (BookOrAskHumanTutorResponse);
+  rpc SubmitDoubleBlindCommunityReview(SubmitDoubleBlindCommunityReviewRequest) returns (SubmitDoubleBlindCommunityReviewResponse);
+
+  // Choice 9 (L9): Assessment and Credible Certification
+  rpc GetAssessmentCertificationOverview(GetAssessmentCertificationOverviewRequest) returns (GetAssessmentCertificationOverviewResponse);
+  rpc RunAdaptiveDiagnosticSession(RunAdaptiveDiagnosticSessionRequest) returns (RunAdaptiveDiagnosticSessionResponse);
+  rpc IssueOrRevokeSignedCertificate(IssueOrRevokeSignedCertificateRequest) returns (IssueOrRevokeSignedCertificateResponse);
+
+  // Choice 10 (L10/L11): Culture and Reference Supertools
+  rpc GetCultureReferenceSupertoolsOverview(GetCultureReferenceSupertoolsOverviewRequest) returns (GetCultureReferenceSupertoolsOverviewResponse);
+  rpc RunSupertoolConcordanceLookup(RunSupertoolConcordanceLookupRequest) returns (RunSupertoolConcordanceLookupResponse);
+  rpc CompleteCulturalPragmaticsBranch(CompleteCulturalPragmaticsBranchRequest) returns (CompleteCulturalPragmaticsBranchResponse);
+
+  // Choice 11 (L13): Real-World Missions and Portfolio
+  rpc GetRealWorldMissionsPortfolioOverview(GetRealWorldMissionsPortfolioOverviewRequest) returns (GetRealWorldMissionsPortfolioOverviewResponse);
+  rpc AttestRealWorldMissionCompletion(AttestRealWorldMissionCompletionRequest) returns (AttestRealWorldMissionCompletionResponse);
+  rpc PublishCommunicativePortfolioArtifact(PublishCommunicativePortfolioArtifactRequest) returns (PublishCommunicativePortfolioArtifactResponse);
+
+  // Choice 12 (L14): Ubiquitous Language Layer
+  rpc GetUbiquitousLanguageLayerOverview(GetUbiquitousLanguageLayerOverviewRequest) returns (GetUbiquitousLanguageLayerOverviewResponse);
+  rpc CaptureExplicitLanguageLookup(CaptureExplicitLanguageLookupRequest) returns (CaptureExplicitLanguageLookupResponse);
+  rpc ConfirmCapturedSenseToMastery(ConfirmCapturedSenseToMasteryRequest) returns (ConfirmCapturedSenseToMasteryResponse);
+
+  // Choice 13 (L15/L16): Professional and Heritage Pathways
+  rpc GetProfessionalHeritagePathwaysOverview(GetProfessionalHeritagePathwaysOverviewRequest) returns (GetProfessionalHeritagePathwaysOverviewResponse);
+  rpc EnrollProfessionalOrHeritageTrack(EnrollProfessionalOrHeritageTrackRequest) returns (EnrollProfessionalOrHeritageTrackResponse);
+  rpc RecordHeritageLiteracyMilestone(RecordHeritageLiteracyMilestoneRequest) returns (RecordHeritageLiteracyMilestoneResponse);
+
+  // Choice 14 (L17): Teacher and Classroom OS
+  rpc GetTeacherClassroomOsOverview(GetTeacherClassroomOsOverviewRequest) returns (GetTeacherClassroomOsOverviewResponse);
+  rpc CreateClassroomCohortAssignment(CreateClassroomCohortAssignmentRequest) returns (CreateClassroomCohortAssignmentResponse);
+  rpc ApproveOrDisputeTeacherProposal(ApproveOrDisputeTeacherProposalRequest) returns (ApproveOrDisputeTeacherProposalResponse);
+
+  // Choice 15 (L18/L19): Sustainable Motivation and Learning Lab
+  rpc GetSustainableMotivationLabOverview(GetSustainableMotivationLabOverviewRequest) returns (GetSustainableMotivationLabOverviewResponse);
+  rpc UpdateSustainableHabitContract(UpdateSustainableHabitContractRequest) returns (UpdateSustainableHabitContractResponse);
+  rpc RecordDelayedRetentionExperiment(RecordDelayedRetentionExperimentRequest) returns (RecordDelayedRetentionExperimentResponse);
+
+  // Choice 16 (L12): Offline, Accessibility, and Migration Certification
+  rpc GetOfflineAccessibilityMigrationOverview(GetOfflineAccessibilityMigrationOverviewRequest) returns (GetOfflineAccessibilityMigrationOverviewResponse);
+  rpc CertifyOfflineAccessibilityPack(CertifyOfflineAccessibilityPackRequest) returns (CertifyOfflineAccessibilityPackResponse);
+  rpc RunCompetitorMigrationImport(RunCompetitorMigrationImportRequest) returns (RunCompetitorMigrationImportResponse);
 }
+
 
 // ============================================================================
 // L13 — practice engine
@@ -1468,4 +1524,490 @@ message DismissWritingFlagRequest {
 }
 message DismissWritingFlagResponse {
   WritingSubmission submission = 1;
+}
+
+// === Lexicon Opportunity Choices 6-16 Messages ===
+
+message ImmersionUniverseItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool rights_and_account_fence_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetImmersionUniverseOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetImmersionUniverseOverviewResponse {
+  repeated ImmersionUniverseItem items = 1;
+  string active_policy_version = 2;
+  bool rights_and_account_fence_enforced = 3;
+  string governance_summary = 4;
+}
+
+message ImportPersonalImmersionMediaRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message ImportPersonalImmersionMediaResponse {
+  ImmersionUniverseItem item = 1;
+}
+
+message CaptureContextConceptSenseRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message CaptureContextConceptSenseResponse {
+  ImmersionUniverseItem item = 1;
+}
+
+message WritingRegisterItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_invisible_draft_replacement = 8;
+  string updated_at = 9;
+}
+
+message GetWritingRegisterStudioOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetWritingRegisterStudioOverviewResponse {
+  repeated WritingRegisterItem items = 1;
+  string active_policy_version = 2;
+  bool no_invisible_draft_replacement = 3;
+  string governance_summary = 4;
+}
+
+message SubmitWritingRegisterDraftRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SubmitWritingRegisterDraftResponse {
+  WritingRegisterItem item = 1;
+}
+
+message VerifyDelayedRegisterTransferRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message VerifyDelayedRegisterTransferResponse {
+  WritingRegisterItem item = 1;
+}
+
+message TutoringCommunityItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool double_blind_and_minors_safety_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetHumanTutoringCommunityOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetHumanTutoringCommunityOverviewResponse {
+  repeated TutoringCommunityItem items = 1;
+  string active_policy_version = 2;
+  bool double_blind_and_minors_safety_enforced = 3;
+  string governance_summary = 4;
+}
+
+message BookOrAskHumanTutorRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message BookOrAskHumanTutorResponse {
+  TutoringCommunityItem item = 1;
+}
+
+message SubmitDoubleBlindCommunityReviewRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message SubmitDoubleBlindCommunityReviewResponse {
+  TutoringCommunityItem item = 1;
+}
+
+message AssessmentCertItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool revocable_signed_credential_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetAssessmentCertificationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetAssessmentCertificationOverviewResponse {
+  repeated AssessmentCertItem items = 1;
+  string active_policy_version = 2;
+  bool revocable_signed_credential_enforced = 3;
+  string governance_summary = 4;
+}
+
+message RunAdaptiveDiagnosticSessionRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RunAdaptiveDiagnosticSessionResponse {
+  AssessmentCertItem item = 1;
+}
+
+message IssueOrRevokeSignedCertificateRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message IssueOrRevokeSignedCertificateResponse {
+  AssessmentCertItem item = 1;
+}
+
+message CultureSupertoolItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_national_stereotypes_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetCultureReferenceSupertoolsOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetCultureReferenceSupertoolsOverviewResponse {
+  repeated CultureSupertoolItem items = 1;
+  string active_policy_version = 2;
+  bool no_national_stereotypes_enforced = 3;
+  string governance_summary = 4;
+}
+
+message RunSupertoolConcordanceLookupRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RunSupertoolConcordanceLookupResponse {
+  CultureSupertoolItem item = 1;
+}
+
+message CompleteCulturalPragmaticsBranchRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message CompleteCulturalPragmaticsBranchResponse {
+  CultureSupertoolItem item = 1;
+}
+
+message RealWorldMissionItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool never_inferred_from_gps_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetRealWorldMissionsPortfolioOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetRealWorldMissionsPortfolioOverviewResponse {
+  repeated RealWorldMissionItem items = 1;
+  string active_policy_version = 2;
+  bool never_inferred_from_gps_enforced = 3;
+  string governance_summary = 4;
+}
+
+message AttestRealWorldMissionCompletionRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message AttestRealWorldMissionCompletionResponse {
+  RealWorldMissionItem item = 1;
+}
+
+message PublishCommunicativePortfolioArtifactRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message PublishCommunicativePortfolioArtifactResponse {
+  RealWorldMissionItem item = 1;
+}
+
+message UbiquitousCaptureItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool explicit_action_no_background_sniffing = 8;
+  string updated_at = 9;
+}
+
+message GetUbiquitousLanguageLayerOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetUbiquitousLanguageLayerOverviewResponse {
+  repeated UbiquitousCaptureItem items = 1;
+  string active_policy_version = 2;
+  bool explicit_action_no_background_sniffing = 3;
+  string governance_summary = 4;
+}
+
+message CaptureExplicitLanguageLookupRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message CaptureExplicitLanguageLookupResponse {
+  UbiquitousCaptureItem item = 1;
+}
+
+message ConfirmCapturedSenseToMasteryRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ConfirmCapturedSenseToMasteryResponse {
+  UbiquitousCaptureItem item = 1;
+}
+
+message ProfessionalHeritageItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool non_licensed_interpreter_boundary = 8;
+  string updated_at = 9;
+}
+
+message GetProfessionalHeritagePathwaysOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetProfessionalHeritagePathwaysOverviewResponse {
+  repeated ProfessionalHeritageItem items = 1;
+  string active_policy_version = 2;
+  bool non_licensed_interpreter_boundary = 3;
+  string governance_summary = 4;
+}
+
+message EnrollProfessionalOrHeritageTrackRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message EnrollProfessionalOrHeritageTrackResponse {
+  ProfessionalHeritageItem item = 1;
+}
+
+message RecordHeritageLiteracyMilestoneRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RecordHeritageLiteracyMilestoneResponse {
+  ProfessionalHeritageItem item = 1;
+}
+
+message ClassroomCohortItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool private_self_study_isolated_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetTeacherClassroomOsOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetTeacherClassroomOsOverviewResponse {
+  repeated ClassroomCohortItem items = 1;
+  string active_policy_version = 2;
+  bool private_self_study_isolated_enforced = 3;
+  string governance_summary = 4;
+}
+
+message CreateClassroomCohortAssignmentRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message CreateClassroomCohortAssignmentResponse {
+  ClassroomCohortItem item = 1;
+}
+
+message ApproveOrDisputeTeacherProposalRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ApproveOrDisputeTeacherProposalResponse {
+  ClassroomCohortItem item = 1;
+}
+
+message SustainableHabitItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_clinical_diagnosis_or_punishment = 8;
+  string updated_at = 9;
+}
+
+message GetSustainableMotivationLabOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetSustainableMotivationLabOverviewResponse {
+  repeated SustainableHabitItem items = 1;
+  string active_policy_version = 2;
+  bool no_clinical_diagnosis_or_punishment = 3;
+  string governance_summary = 4;
+}
+
+message UpdateSustainableHabitContractRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpdateSustainableHabitContractResponse {
+  SustainableHabitItem item = 1;
+}
+
+message RecordDelayedRetentionExperimentRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RecordDelayedRetentionExperimentResponse {
+  SustainableHabitItem item = 1;
+}
+
+message OfflineAccessibilityCertItem {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool full_modality_fallback_certified = 8;
+  string updated_at = 9;
+}
+
+message GetOfflineAccessibilityMigrationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetOfflineAccessibilityMigrationOverviewResponse {
+  repeated OfflineAccessibilityCertItem items = 1;
+  string active_policy_version = 2;
+  bool full_modality_fallback_certified = 3;
+  string governance_summary = 4;
+}
+
+message CertifyOfflineAccessibilityPackRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message CertifyOfflineAccessibilityPackResponse {
+  OfflineAccessibilityCertItem item = 1;
+}
+
+message RunCompetitorMigrationImportRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RunCompetitorMigrationImportResponse {
+  OfflineAccessibilityCertItem item = 1;
 }

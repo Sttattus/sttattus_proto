@@ -399,6 +399,348 @@ class LegacyServiceClient extends $grpc.Client {
     return $createUnaryCall(_$parseDocumentExpiry, request, options: options);
   }
 
+  /// Choice 1 (G1): Living Estate Inventory & Plan Health
+  $grpc.ResponseFuture<$0.GetLegacyLivingInventoryWorkbenchResponse>
+      getLegacyLivingInventoryWorkbench(
+    $0.GetLegacyLivingInventoryWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyLivingInventoryWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyLivingEstateInventoryResponse>
+      saveLegacyLivingEstateInventory(
+    $0.SaveLegacyLivingEstateInventoryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyLivingEstateInventory, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SignOffLegacyQuarterlyPlanReviewResponse>
+      signOffLegacyQuarterlyPlanReview(
+    $0.SignOffLegacyQuarterlyPlanReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$signOffLegacyQuarterlyPlanReview, request,
+        options: options);
+  }
+
+  /// Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment Engine
+  $grpc.ResponseFuture<$0.GetLegacyLifeEventAlignmentWorkbenchResponse>
+      getLegacyLifeEventAlignmentWorkbench(
+    $0.GetLegacyLifeEventAlignmentWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyLifeEventAlignmentWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyLifeEventAlignmentResponse>
+      saveLegacyLifeEventAlignment(
+    $0.SaveLegacyLifeEventAlignmentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyLifeEventAlignment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyLegacyAlignmentInstitutionEvidenceResponse>
+      verifyLegacyAlignmentInstitutionEvidence(
+    $0.VerifyLegacyAlignmentInstitutionEvidenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyLegacyAlignmentInstitutionEvidence, request,
+        options: options);
+  }
+
+  /// Choice 3 (G5): Secure Document & Evidence Vault
+  $grpc.ResponseFuture<$0.GetLegacySecureDocumentVaultWorkbenchResponse>
+      getLegacySecureDocumentVaultWorkbench(
+    $0.GetLegacySecureDocumentVaultWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacySecureDocumentVaultWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacySecureDocumentVaultResponse>
+      saveLegacySecureDocumentVault(
+    $0.SaveLegacySecureDocumentVaultRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacySecureDocumentVault, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LockOrExportLegacyDocumentCustodyResponse>
+      lockOrExportLegacyDocumentCustody(
+    $0.LockOrExportLegacyDocumentCustodyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$lockOrExportLegacyDocumentCustody, request,
+        options: options);
+  }
+
+  /// Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+  $grpc.ResponseFuture<$0.GetLegacyJurisdictionDocumentWorkbenchResponse>
+      getLegacyJurisdictionDocumentWorkbench(
+    $0.GetLegacyJurisdictionDocumentWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyJurisdictionDocumentWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyJurisdictionDocumentSystemResponse>
+      saveLegacyJurisdictionDocumentSystem(
+    $0.SaveLegacyJurisdictionDocumentSystemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyJurisdictionDocumentSystem, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.TriggerLegacyCounselReviewOrLockExecutionResponse>
+      triggerLegacyCounselReviewOrLockExecution(
+    $0.TriggerLegacyCounselReviewOrLockExecutionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$triggerLegacyCounselReviewOrLockExecution, request,
+        options: options);
+  }
+
+  /// Choice 5 (G11/G13): Household & Business Continuity Playbooks
+  $grpc.ResponseFuture<$0.GetLegacyContinuityPlaybookWorkbenchResponse>
+      getLegacyContinuityPlaybookWorkbench(
+    $0.GetLegacyContinuityPlaybookWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyContinuityPlaybookWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyHouseholdBusinessContinuityResponse>
+      saveLegacyHouseholdBusinessContinuity(
+    $0.SaveLegacyHouseholdBusinessContinuityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyHouseholdBusinessContinuity, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunLegacyContinuityDrillOrStageDelegationResponse>
+      runLegacyContinuityDrillOrStageDelegation(
+    $0.RunLegacyContinuityDrillOrStageDelegationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$runLegacyContinuityDrillOrStageDelegation, request,
+        options: options);
+  }
+
+  /// Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+  $grpc.ResponseFuture<$0.GetLegacyIncapacityDeadmanWorkbenchResponse>
+      getLegacyIncapacityDeadmanWorkbench(
+    $0.GetLegacyIncapacityDeadmanWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyIncapacityDeadmanWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyIncapacityDeadmanProtocolResponse>
+      saveLegacyIncapacityDeadmanProtocol(
+    $0.SaveLegacyIncapacityDeadmanProtocolRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyIncapacityDeadmanProtocol, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SimulateOrCancelLegacyDeadmanReleaseResponse>
+      simulateOrCancelLegacyDeadmanRelease(
+    $0.SimulateOrCancelLegacyDeadmanReleaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$simulateOrCancelLegacyDeadmanRelease, request,
+        options: options);
+  }
+
+  /// Choice 7 (G7): Executor & Trustee Command Center
+  $grpc.ResponseFuture<$0.GetLegacyExecutorWorkspaceWorkbenchResponse>
+      getLegacyExecutorWorkspaceWorkbench(
+    $0.GetLegacyExecutorWorkspaceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyExecutorWorkspaceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyExecutorTrusteeWorkspaceResponse>
+      saveLegacyExecutorTrusteeWorkspace(
+    $0.SaveLegacyExecutorTrusteeWorkspaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyExecutorTrusteeWorkspace, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdvanceLegacySettlementTaskOrResolveDisputeResponse>
+      advanceLegacySettlementTaskOrResolveDispute(
+    $0.AdvanceLegacySettlementTaskOrResolveDisputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$advanceLegacySettlementTaskOrResolveDispute, request,
+        options: options);
+  }
+
+  /// Choice 8 (G16): Estate & Trust Settlement Accounting
+  $grpc.ResponseFuture<$0.GetLegacySettlementAccountingWorkbenchResponse>
+      getLegacySettlementAccountingWorkbench(
+    $0.GetLegacySettlementAccountingWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacySettlementAccountingWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacySettlementAccountingResponse>
+      saveLegacySettlementAccounting(
+    $0.SaveLegacySettlementAccountingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacySettlementAccounting, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LockOrReverseLegacyAccountingPeriodResponse>
+      lockOrReverseLegacyAccountingPeriod(
+    $0.LockOrReverseLegacyAccountingPeriodRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$lockOrReverseLegacyAccountingPeriod, request,
+        options: options);
+  }
+
+  /// Choice 9 (G8): Digital Asset & Threshold Recovery System
+  $grpc.ResponseFuture<$0.GetLegacyDigitalRecoveryWorkbenchResponse>
+      getLegacyDigitalRecoveryWorkbench(
+    $0.GetLegacyDigitalRecoveryWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyDigitalRecoveryWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyDigitalThresholdRecoveryResponse>
+      saveLegacyDigitalThresholdRecovery(
+    $0.SaveLegacyDigitalThresholdRecoveryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyDigitalThresholdRecovery, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>
+      runLegacyThresholdCeremonyDryRunOrRotateShare(
+    $0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$runLegacyThresholdCeremonyDryRunOrRotateShare, request,
+        options: options);
+  }
+
+  /// Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+  $grpc.ResponseFuture<$0.GetLegacyHeritageArchiveWorkbenchResponse>
+      getLegacyHeritageArchiveWorkbench(
+    $0.GetLegacyHeritageArchiveWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyHeritageArchiveWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyHeritagePreservationArchiveResponse>
+      saveLegacyHeritagePreservationArchive(
+    $0.SaveLegacyHeritagePreservationArchiveRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyHeritagePreservationArchive, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse>
+      verifyLegacyArchiveFixityOrPreviewTrigger(
+    $0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$verifyLegacyArchiveFixityOrPreviewTrigger, request,
+        options: options);
+  }
+
+  /// Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+  $grpc.ResponseFuture<$0.GetLegacyLiquidityReadinessWorkbenchResponse>
+      getLegacyLiquidityReadinessWorkbench(
+    $0.GetLegacyLiquidityReadinessWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyLiquidityReadinessWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyLiquidityInsuranceReadinessResponse>
+      saveLegacyLiquidityInsuranceReadiness(
+    $0.SaveLegacyLiquidityInsuranceReadinessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyLiquidityInsuranceReadiness, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.StressTestLegacyLiquidityOrRouteCounselResponse>
+      stressTestLegacyLiquidityOrRouteCounsel(
+    $0.StressTestLegacyLiquidityOrRouteCounselRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$stressTestLegacyLiquidityOrRouteCounsel, request,
+        options: options);
+  }
+
+  /// Choice 12 (G10/G14): Counsel Collaboration, Family Governance & Next-Gen Stewardship
+  $grpc.ResponseFuture<$0.GetLegacyCounselGovernanceWorkbenchResponse>
+      getLegacyCounselGovernanceWorkbench(
+    $0.GetLegacyCounselGovernanceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getLegacyCounselGovernanceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveLegacyCounselFamilyGovernanceResponse>
+      saveLegacyCounselFamilyGovernance(
+    $0.SaveLegacyCounselFamilyGovernanceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveLegacyCounselFamilyGovernance, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse>
+      unlockLegacyStewardshipModuleOrRevokeCounsel(
+    $0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$unlockLegacyStewardshipModuleOrRevokeCounsel, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$storeDocument =
@@ -647,6 +989,255 @@ class LegacyServiceClient extends $grpc.Client {
       '/sttattus.legacy.v1.LegacyService/ParseDocumentExpiry',
       ($0.ParseDocumentExpiryRequest value) => value.writeToBuffer(),
       $0.ParseDocumentExpiryResponse.fromBuffer);
+  static final _$getLegacyLivingInventoryWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyLivingInventoryWorkbenchRequest,
+          $0.GetLegacyLivingInventoryWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyLivingInventoryWorkbench',
+      ($0.GetLegacyLivingInventoryWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyLivingInventoryWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyLivingEstateInventory = $grpc.ClientMethod<
+          $0.SaveLegacyLivingEstateInventoryRequest,
+          $0.SaveLegacyLivingEstateInventoryResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyLivingEstateInventory',
+      ($0.SaveLegacyLivingEstateInventoryRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyLivingEstateInventoryResponse.fromBuffer);
+  static final _$signOffLegacyQuarterlyPlanReview = $grpc.ClientMethod<
+          $0.SignOffLegacyQuarterlyPlanReviewRequest,
+          $0.SignOffLegacyQuarterlyPlanReviewResponse>(
+      '/sttattus.legacy.v1.LegacyService/SignOffLegacyQuarterlyPlanReview',
+      ($0.SignOffLegacyQuarterlyPlanReviewRequest value) =>
+          value.writeToBuffer(),
+      $0.SignOffLegacyQuarterlyPlanReviewResponse.fromBuffer);
+  static final _$getLegacyLifeEventAlignmentWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyLifeEventAlignmentWorkbenchRequest,
+          $0.GetLegacyLifeEventAlignmentWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyLifeEventAlignmentWorkbench',
+      ($0.GetLegacyLifeEventAlignmentWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyLifeEventAlignmentWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyLifeEventAlignment = $grpc.ClientMethod<
+          $0.SaveLegacyLifeEventAlignmentRequest,
+          $0.SaveLegacyLifeEventAlignmentResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyLifeEventAlignment',
+      ($0.SaveLegacyLifeEventAlignmentRequest value) => value.writeToBuffer(),
+      $0.SaveLegacyLifeEventAlignmentResponse.fromBuffer);
+  static final _$verifyLegacyAlignmentInstitutionEvidence = $grpc.ClientMethod<
+          $0.VerifyLegacyAlignmentInstitutionEvidenceRequest,
+          $0.VerifyLegacyAlignmentInstitutionEvidenceResponse>(
+      '/sttattus.legacy.v1.LegacyService/VerifyLegacyAlignmentInstitutionEvidence',
+      ($0.VerifyLegacyAlignmentInstitutionEvidenceRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyLegacyAlignmentInstitutionEvidenceResponse.fromBuffer);
+  static final _$getLegacySecureDocumentVaultWorkbench = $grpc.ClientMethod<
+          $0.GetLegacySecureDocumentVaultWorkbenchRequest,
+          $0.GetLegacySecureDocumentVaultWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacySecureDocumentVaultWorkbench',
+      ($0.GetLegacySecureDocumentVaultWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacySecureDocumentVaultWorkbenchResponse.fromBuffer);
+  static final _$saveLegacySecureDocumentVault = $grpc.ClientMethod<
+          $0.SaveLegacySecureDocumentVaultRequest,
+          $0.SaveLegacySecureDocumentVaultResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacySecureDocumentVault',
+      ($0.SaveLegacySecureDocumentVaultRequest value) => value.writeToBuffer(),
+      $0.SaveLegacySecureDocumentVaultResponse.fromBuffer);
+  static final _$lockOrExportLegacyDocumentCustody = $grpc.ClientMethod<
+          $0.LockOrExportLegacyDocumentCustodyRequest,
+          $0.LockOrExportLegacyDocumentCustodyResponse>(
+      '/sttattus.legacy.v1.LegacyService/LockOrExportLegacyDocumentCustody',
+      ($0.LockOrExportLegacyDocumentCustodyRequest value) =>
+          value.writeToBuffer(),
+      $0.LockOrExportLegacyDocumentCustodyResponse.fromBuffer);
+  static final _$getLegacyJurisdictionDocumentWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyJurisdictionDocumentWorkbenchRequest,
+          $0.GetLegacyJurisdictionDocumentWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyJurisdictionDocumentWorkbench',
+      ($0.GetLegacyJurisdictionDocumentWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyJurisdictionDocumentWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyJurisdictionDocumentSystem = $grpc.ClientMethod<
+          $0.SaveLegacyJurisdictionDocumentSystemRequest,
+          $0.SaveLegacyJurisdictionDocumentSystemResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyJurisdictionDocumentSystem',
+      ($0.SaveLegacyJurisdictionDocumentSystemRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyJurisdictionDocumentSystemResponse.fromBuffer);
+  static final _$triggerLegacyCounselReviewOrLockExecution = $grpc.ClientMethod<
+          $0.TriggerLegacyCounselReviewOrLockExecutionRequest,
+          $0.TriggerLegacyCounselReviewOrLockExecutionResponse>(
+      '/sttattus.legacy.v1.LegacyService/TriggerLegacyCounselReviewOrLockExecution',
+      ($0.TriggerLegacyCounselReviewOrLockExecutionRequest value) =>
+          value.writeToBuffer(),
+      $0.TriggerLegacyCounselReviewOrLockExecutionResponse.fromBuffer);
+  static final _$getLegacyContinuityPlaybookWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyContinuityPlaybookWorkbenchRequest,
+          $0.GetLegacyContinuityPlaybookWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyContinuityPlaybookWorkbench',
+      ($0.GetLegacyContinuityPlaybookWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyContinuityPlaybookWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyHouseholdBusinessContinuity = $grpc.ClientMethod<
+          $0.SaveLegacyHouseholdBusinessContinuityRequest,
+          $0.SaveLegacyHouseholdBusinessContinuityResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyHouseholdBusinessContinuity',
+      ($0.SaveLegacyHouseholdBusinessContinuityRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyHouseholdBusinessContinuityResponse.fromBuffer);
+  static final _$runLegacyContinuityDrillOrStageDelegation = $grpc.ClientMethod<
+          $0.RunLegacyContinuityDrillOrStageDelegationRequest,
+          $0.RunLegacyContinuityDrillOrStageDelegationResponse>(
+      '/sttattus.legacy.v1.LegacyService/RunLegacyContinuityDrillOrStageDelegation',
+      ($0.RunLegacyContinuityDrillOrStageDelegationRequest value) =>
+          value.writeToBuffer(),
+      $0.RunLegacyContinuityDrillOrStageDelegationResponse.fromBuffer);
+  static final _$getLegacyIncapacityDeadmanWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyIncapacityDeadmanWorkbenchRequest,
+          $0.GetLegacyIncapacityDeadmanWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyIncapacityDeadmanWorkbench',
+      ($0.GetLegacyIncapacityDeadmanWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyIncapacityDeadmanWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyIncapacityDeadmanProtocol = $grpc.ClientMethod<
+          $0.SaveLegacyIncapacityDeadmanProtocolRequest,
+          $0.SaveLegacyIncapacityDeadmanProtocolResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyIncapacityDeadmanProtocol',
+      ($0.SaveLegacyIncapacityDeadmanProtocolRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyIncapacityDeadmanProtocolResponse.fromBuffer);
+  static final _$simulateOrCancelLegacyDeadmanRelease = $grpc.ClientMethod<
+          $0.SimulateOrCancelLegacyDeadmanReleaseRequest,
+          $0.SimulateOrCancelLegacyDeadmanReleaseResponse>(
+      '/sttattus.legacy.v1.LegacyService/SimulateOrCancelLegacyDeadmanRelease',
+      ($0.SimulateOrCancelLegacyDeadmanReleaseRequest value) =>
+          value.writeToBuffer(),
+      $0.SimulateOrCancelLegacyDeadmanReleaseResponse.fromBuffer);
+  static final _$getLegacyExecutorWorkspaceWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyExecutorWorkspaceWorkbenchRequest,
+          $0.GetLegacyExecutorWorkspaceWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyExecutorWorkspaceWorkbench',
+      ($0.GetLegacyExecutorWorkspaceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyExecutorWorkspaceWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyExecutorTrusteeWorkspace = $grpc.ClientMethod<
+          $0.SaveLegacyExecutorTrusteeWorkspaceRequest,
+          $0.SaveLegacyExecutorTrusteeWorkspaceResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyExecutorTrusteeWorkspace',
+      ($0.SaveLegacyExecutorTrusteeWorkspaceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyExecutorTrusteeWorkspaceResponse.fromBuffer);
+  static final _$advanceLegacySettlementTaskOrResolveDispute = $grpc.ClientMethod<
+          $0.AdvanceLegacySettlementTaskOrResolveDisputeRequest,
+          $0.AdvanceLegacySettlementTaskOrResolveDisputeResponse>(
+      '/sttattus.legacy.v1.LegacyService/AdvanceLegacySettlementTaskOrResolveDispute',
+      ($0.AdvanceLegacySettlementTaskOrResolveDisputeRequest value) =>
+          value.writeToBuffer(),
+      $0.AdvanceLegacySettlementTaskOrResolveDisputeResponse.fromBuffer);
+  static final _$getLegacySettlementAccountingWorkbench = $grpc.ClientMethod<
+          $0.GetLegacySettlementAccountingWorkbenchRequest,
+          $0.GetLegacySettlementAccountingWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacySettlementAccountingWorkbench',
+      ($0.GetLegacySettlementAccountingWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacySettlementAccountingWorkbenchResponse.fromBuffer);
+  static final _$saveLegacySettlementAccounting = $grpc.ClientMethod<
+          $0.SaveLegacySettlementAccountingRequest,
+          $0.SaveLegacySettlementAccountingResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacySettlementAccounting',
+      ($0.SaveLegacySettlementAccountingRequest value) => value.writeToBuffer(),
+      $0.SaveLegacySettlementAccountingResponse.fromBuffer);
+  static final _$lockOrReverseLegacyAccountingPeriod = $grpc.ClientMethod<
+          $0.LockOrReverseLegacyAccountingPeriodRequest,
+          $0.LockOrReverseLegacyAccountingPeriodResponse>(
+      '/sttattus.legacy.v1.LegacyService/LockOrReverseLegacyAccountingPeriod',
+      ($0.LockOrReverseLegacyAccountingPeriodRequest value) =>
+          value.writeToBuffer(),
+      $0.LockOrReverseLegacyAccountingPeriodResponse.fromBuffer);
+  static final _$getLegacyDigitalRecoveryWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyDigitalRecoveryWorkbenchRequest,
+          $0.GetLegacyDigitalRecoveryWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyDigitalRecoveryWorkbench',
+      ($0.GetLegacyDigitalRecoveryWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyDigitalRecoveryWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyDigitalThresholdRecovery = $grpc.ClientMethod<
+          $0.SaveLegacyDigitalThresholdRecoveryRequest,
+          $0.SaveLegacyDigitalThresholdRecoveryResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyDigitalThresholdRecovery',
+      ($0.SaveLegacyDigitalThresholdRecoveryRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyDigitalThresholdRecoveryResponse.fromBuffer);
+  static final _$runLegacyThresholdCeremonyDryRunOrRotateShare = $grpc.ClientMethod<
+          $0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest,
+          $0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>(
+      '/sttattus.legacy.v1.LegacyService/RunLegacyThresholdCeremonyDryRunOrRotateShare',
+      ($0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest value) =>
+          value.writeToBuffer(),
+      $0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse.fromBuffer);
+  static final _$getLegacyHeritageArchiveWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyHeritageArchiveWorkbenchRequest,
+          $0.GetLegacyHeritageArchiveWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyHeritageArchiveWorkbench',
+      ($0.GetLegacyHeritageArchiveWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyHeritageArchiveWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyHeritagePreservationArchive = $grpc.ClientMethod<
+          $0.SaveLegacyHeritagePreservationArchiveRequest,
+          $0.SaveLegacyHeritagePreservationArchiveResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyHeritagePreservationArchive',
+      ($0.SaveLegacyHeritagePreservationArchiveRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyHeritagePreservationArchiveResponse.fromBuffer);
+  static final _$verifyLegacyArchiveFixityOrPreviewTrigger = $grpc.ClientMethod<
+          $0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest,
+          $0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse>(
+      '/sttattus.legacy.v1.LegacyService/VerifyLegacyArchiveFixityOrPreviewTrigger',
+      ($0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse.fromBuffer);
+  static final _$getLegacyLiquidityReadinessWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyLiquidityReadinessWorkbenchRequest,
+          $0.GetLegacyLiquidityReadinessWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyLiquidityReadinessWorkbench',
+      ($0.GetLegacyLiquidityReadinessWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyLiquidityReadinessWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyLiquidityInsuranceReadiness = $grpc.ClientMethod<
+          $0.SaveLegacyLiquidityInsuranceReadinessRequest,
+          $0.SaveLegacyLiquidityInsuranceReadinessResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyLiquidityInsuranceReadiness',
+      ($0.SaveLegacyLiquidityInsuranceReadinessRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyLiquidityInsuranceReadinessResponse.fromBuffer);
+  static final _$stressTestLegacyLiquidityOrRouteCounsel = $grpc.ClientMethod<
+          $0.StressTestLegacyLiquidityOrRouteCounselRequest,
+          $0.StressTestLegacyLiquidityOrRouteCounselResponse>(
+      '/sttattus.legacy.v1.LegacyService/StressTestLegacyLiquidityOrRouteCounsel',
+      ($0.StressTestLegacyLiquidityOrRouteCounselRequest value) =>
+          value.writeToBuffer(),
+      $0.StressTestLegacyLiquidityOrRouteCounselResponse.fromBuffer);
+  static final _$getLegacyCounselGovernanceWorkbench = $grpc.ClientMethod<
+          $0.GetLegacyCounselGovernanceWorkbenchRequest,
+          $0.GetLegacyCounselGovernanceWorkbenchResponse>(
+      '/sttattus.legacy.v1.LegacyService/GetLegacyCounselGovernanceWorkbench',
+      ($0.GetLegacyCounselGovernanceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetLegacyCounselGovernanceWorkbenchResponse.fromBuffer);
+  static final _$saveLegacyCounselFamilyGovernance = $grpc.ClientMethod<
+          $0.SaveLegacyCounselFamilyGovernanceRequest,
+          $0.SaveLegacyCounselFamilyGovernanceResponse>(
+      '/sttattus.legacy.v1.LegacyService/SaveLegacyCounselFamilyGovernance',
+      ($0.SaveLegacyCounselFamilyGovernanceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveLegacyCounselFamilyGovernanceResponse.fromBuffer);
+  static final _$unlockLegacyStewardshipModuleOrRevokeCounsel = $grpc.ClientMethod<
+          $0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest,
+          $0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse>(
+      '/sttattus.legacy.v1.LegacyService/UnlockLegacyStewardshipModuleOrRevokeCounsel',
+      ($0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest value) =>
+          value.writeToBuffer(),
+      $0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.legacy.v1.LegacyService')
@@ -1093,6 +1684,397 @@ abstract class LegacyServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ParseDocumentExpiryRequest.fromBuffer(value),
         ($0.ParseDocumentExpiryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLegacyLivingInventoryWorkbenchRequest,
+            $0.GetLegacyLivingInventoryWorkbenchResponse>(
+        'GetLegacyLivingInventoryWorkbench',
+        getLegacyLivingInventoryWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyLivingInventoryWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyLivingInventoryWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacyLivingEstateInventoryRequest,
+            $0.SaveLegacyLivingEstateInventoryResponse>(
+        'SaveLegacyLivingEstateInventory',
+        saveLegacyLivingEstateInventory_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyLivingEstateInventoryRequest.fromBuffer(value),
+        ($0.SaveLegacyLivingEstateInventoryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SignOffLegacyQuarterlyPlanReviewRequest,
+            $0.SignOffLegacyQuarterlyPlanReviewResponse>(
+        'SignOffLegacyQuarterlyPlanReview',
+        signOffLegacyQuarterlyPlanReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SignOffLegacyQuarterlyPlanReviewRequest.fromBuffer(value),
+        ($0.SignOffLegacyQuarterlyPlanReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyLifeEventAlignmentWorkbenchRequest,
+            $0.GetLegacyLifeEventAlignmentWorkbenchResponse>(
+        'GetLegacyLifeEventAlignmentWorkbench',
+        getLegacyLifeEventAlignmentWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyLifeEventAlignmentWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyLifeEventAlignmentWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacyLifeEventAlignmentRequest,
+            $0.SaveLegacyLifeEventAlignmentResponse>(
+        'SaveLegacyLifeEventAlignment',
+        saveLegacyLifeEventAlignment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyLifeEventAlignmentRequest.fromBuffer(value),
+        ($0.SaveLegacyLifeEventAlignmentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyLegacyAlignmentInstitutionEvidenceRequest,
+            $0.VerifyLegacyAlignmentInstitutionEvidenceResponse>(
+        'VerifyLegacyAlignmentInstitutionEvidence',
+        verifyLegacyAlignmentInstitutionEvidence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyLegacyAlignmentInstitutionEvidenceRequest.fromBuffer(
+                value),
+        ($0.VerifyLegacyAlignmentInstitutionEvidenceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacySecureDocumentVaultWorkbenchRequest,
+            $0.GetLegacySecureDocumentVaultWorkbenchResponse>(
+        'GetLegacySecureDocumentVaultWorkbench',
+        getLegacySecureDocumentVaultWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacySecureDocumentVaultWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacySecureDocumentVaultWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacySecureDocumentVaultRequest,
+            $0.SaveLegacySecureDocumentVaultResponse>(
+        'SaveLegacySecureDocumentVault',
+        saveLegacySecureDocumentVault_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacySecureDocumentVaultRequest.fromBuffer(value),
+        ($0.SaveLegacySecureDocumentVaultResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LockOrExportLegacyDocumentCustodyRequest,
+            $0.LockOrExportLegacyDocumentCustodyResponse>(
+        'LockOrExportLegacyDocumentCustody',
+        lockOrExportLegacyDocumentCustody_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LockOrExportLegacyDocumentCustodyRequest.fromBuffer(value),
+        ($0.LockOrExportLegacyDocumentCustodyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyJurisdictionDocumentWorkbenchRequest,
+            $0.GetLegacyJurisdictionDocumentWorkbenchResponse>(
+        'GetLegacyJurisdictionDocumentWorkbench',
+        getLegacyJurisdictionDocumentWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyJurisdictionDocumentWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyJurisdictionDocumentWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveLegacyJurisdictionDocumentSystemRequest,
+            $0.SaveLegacyJurisdictionDocumentSystemResponse>(
+        'SaveLegacyJurisdictionDocumentSystem',
+        saveLegacyJurisdictionDocumentSystem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyJurisdictionDocumentSystemRequest.fromBuffer(value),
+        ($0.SaveLegacyJurisdictionDocumentSystemResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.TriggerLegacyCounselReviewOrLockExecutionRequest,
+            $0.TriggerLegacyCounselReviewOrLockExecutionResponse>(
+        'TriggerLegacyCounselReviewOrLockExecution',
+        triggerLegacyCounselReviewOrLockExecution_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TriggerLegacyCounselReviewOrLockExecutionRequest.fromBuffer(
+                value),
+        ($0.TriggerLegacyCounselReviewOrLockExecutionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyContinuityPlaybookWorkbenchRequest,
+            $0.GetLegacyContinuityPlaybookWorkbenchResponse>(
+        'GetLegacyContinuityPlaybookWorkbench',
+        getLegacyContinuityPlaybookWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyContinuityPlaybookWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyContinuityPlaybookWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveLegacyHouseholdBusinessContinuityRequest,
+            $0.SaveLegacyHouseholdBusinessContinuityResponse>(
+        'SaveLegacyHouseholdBusinessContinuity',
+        saveLegacyHouseholdBusinessContinuity_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyHouseholdBusinessContinuityRequest.fromBuffer(value),
+        ($0.SaveLegacyHouseholdBusinessContinuityResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RunLegacyContinuityDrillOrStageDelegationRequest,
+            $0.RunLegacyContinuityDrillOrStageDelegationResponse>(
+        'RunLegacyContinuityDrillOrStageDelegation',
+        runLegacyContinuityDrillOrStageDelegation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunLegacyContinuityDrillOrStageDelegationRequest.fromBuffer(
+                value),
+        ($0.RunLegacyContinuityDrillOrStageDelegationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyIncapacityDeadmanWorkbenchRequest,
+            $0.GetLegacyIncapacityDeadmanWorkbenchResponse>(
+        'GetLegacyIncapacityDeadmanWorkbench',
+        getLegacyIncapacityDeadmanWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyIncapacityDeadmanWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyIncapacityDeadmanWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveLegacyIncapacityDeadmanProtocolRequest,
+            $0.SaveLegacyIncapacityDeadmanProtocolResponse>(
+        'SaveLegacyIncapacityDeadmanProtocol',
+        saveLegacyIncapacityDeadmanProtocol_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyIncapacityDeadmanProtocolRequest.fromBuffer(value),
+        ($0.SaveLegacyIncapacityDeadmanProtocolResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SimulateOrCancelLegacyDeadmanReleaseRequest,
+            $0.SimulateOrCancelLegacyDeadmanReleaseResponse>(
+        'SimulateOrCancelLegacyDeadmanRelease',
+        simulateOrCancelLegacyDeadmanRelease_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SimulateOrCancelLegacyDeadmanReleaseRequest.fromBuffer(value),
+        ($0.SimulateOrCancelLegacyDeadmanReleaseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyExecutorWorkspaceWorkbenchRequest,
+            $0.GetLegacyExecutorWorkspaceWorkbenchResponse>(
+        'GetLegacyExecutorWorkspaceWorkbench',
+        getLegacyExecutorWorkspaceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyExecutorWorkspaceWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyExecutorWorkspaceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacyExecutorTrusteeWorkspaceRequest,
+            $0.SaveLegacyExecutorTrusteeWorkspaceResponse>(
+        'SaveLegacyExecutorTrusteeWorkspace',
+        saveLegacyExecutorTrusteeWorkspace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyExecutorTrusteeWorkspaceRequest.fromBuffer(value),
+        ($0.SaveLegacyExecutorTrusteeWorkspaceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdvanceLegacySettlementTaskOrResolveDisputeRequest,
+            $0.AdvanceLegacySettlementTaskOrResolveDisputeResponse>(
+        'AdvanceLegacySettlementTaskOrResolveDispute',
+        advanceLegacySettlementTaskOrResolveDispute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdvanceLegacySettlementTaskOrResolveDisputeRequest.fromBuffer(
+                value),
+        ($0.AdvanceLegacySettlementTaskOrResolveDisputeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacySettlementAccountingWorkbenchRequest,
+            $0.GetLegacySettlementAccountingWorkbenchResponse>(
+        'GetLegacySettlementAccountingWorkbench',
+        getLegacySettlementAccountingWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacySettlementAccountingWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacySettlementAccountingWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacySettlementAccountingRequest,
+            $0.SaveLegacySettlementAccountingResponse>(
+        'SaveLegacySettlementAccounting',
+        saveLegacySettlementAccounting_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacySettlementAccountingRequest.fromBuffer(value),
+        ($0.SaveLegacySettlementAccountingResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.LockOrReverseLegacyAccountingPeriodRequest,
+            $0.LockOrReverseLegacyAccountingPeriodResponse>(
+        'LockOrReverseLegacyAccountingPeriod',
+        lockOrReverseLegacyAccountingPeriod_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LockOrReverseLegacyAccountingPeriodRequest.fromBuffer(value),
+        ($0.LockOrReverseLegacyAccountingPeriodResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLegacyDigitalRecoveryWorkbenchRequest,
+            $0.GetLegacyDigitalRecoveryWorkbenchResponse>(
+        'GetLegacyDigitalRecoveryWorkbench',
+        getLegacyDigitalRecoveryWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyDigitalRecoveryWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyDigitalRecoveryWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacyDigitalThresholdRecoveryRequest,
+            $0.SaveLegacyDigitalThresholdRecoveryResponse>(
+        'SaveLegacyDigitalThresholdRecovery',
+        saveLegacyDigitalThresholdRecovery_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyDigitalThresholdRecoveryRequest.fromBuffer(value),
+        ($0.SaveLegacyDigitalThresholdRecoveryResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest,
+            $0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>(
+        'RunLegacyThresholdCeremonyDryRunOrRotateShare',
+        runLegacyThresholdCeremonyDryRunOrRotateShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest.fromBuffer(
+                value),
+        ($0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetLegacyHeritageArchiveWorkbenchRequest,
+            $0.GetLegacyHeritageArchiveWorkbenchResponse>(
+        'GetLegacyHeritageArchiveWorkbench',
+        getLegacyHeritageArchiveWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyHeritageArchiveWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyHeritageArchiveWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveLegacyHeritagePreservationArchiveRequest,
+            $0.SaveLegacyHeritagePreservationArchiveResponse>(
+        'SaveLegacyHeritagePreservationArchive',
+        saveLegacyHeritagePreservationArchive_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyHeritagePreservationArchiveRequest.fromBuffer(value),
+        ($0.SaveLegacyHeritagePreservationArchiveResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest,
+            $0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse>(
+        'VerifyLegacyArchiveFixityOrPreviewTrigger',
+        verifyLegacyArchiveFixityOrPreviewTrigger_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest.fromBuffer(
+                value),
+        ($0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyLiquidityReadinessWorkbenchRequest,
+            $0.GetLegacyLiquidityReadinessWorkbenchResponse>(
+        'GetLegacyLiquidityReadinessWorkbench',
+        getLegacyLiquidityReadinessWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyLiquidityReadinessWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyLiquidityReadinessWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveLegacyLiquidityInsuranceReadinessRequest,
+            $0.SaveLegacyLiquidityInsuranceReadinessResponse>(
+        'SaveLegacyLiquidityInsuranceReadiness',
+        saveLegacyLiquidityInsuranceReadiness_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyLiquidityInsuranceReadinessRequest.fromBuffer(value),
+        ($0.SaveLegacyLiquidityInsuranceReadinessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.StressTestLegacyLiquidityOrRouteCounselRequest,
+            $0.StressTestLegacyLiquidityOrRouteCounselResponse>(
+        'StressTestLegacyLiquidityOrRouteCounsel',
+        stressTestLegacyLiquidityOrRouteCounsel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.StressTestLegacyLiquidityOrRouteCounselRequest.fromBuffer(value),
+        ($0.StressTestLegacyLiquidityOrRouteCounselResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetLegacyCounselGovernanceWorkbenchRequest,
+            $0.GetLegacyCounselGovernanceWorkbenchResponse>(
+        'GetLegacyCounselGovernanceWorkbench',
+        getLegacyCounselGovernanceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetLegacyCounselGovernanceWorkbenchRequest.fromBuffer(value),
+        ($0.GetLegacyCounselGovernanceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveLegacyCounselFamilyGovernanceRequest,
+            $0.SaveLegacyCounselFamilyGovernanceResponse>(
+        'SaveLegacyCounselFamilyGovernance',
+        saveLegacyCounselFamilyGovernance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveLegacyCounselFamilyGovernanceRequest.fromBuffer(value),
+        ($0.SaveLegacyCounselFamilyGovernanceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest,
+            $0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse>(
+        'UnlockLegacyStewardshipModuleOrRevokeCounsel',
+        unlockLegacyStewardshipModuleOrRevokeCounsel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest.fromBuffer(
+                value),
+        ($0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.StoreDocumentResponse> storeDocument_Pre(
@@ -1532,4 +2514,436 @@ abstract class LegacyServiceBase extends $grpc.Service {
 
   $async.Future<$0.ParseDocumentExpiryResponse> parseDocumentExpiry(
       $grpc.ServiceCall call, $0.ParseDocumentExpiryRequest request);
+
+  $async.Future<$0.GetLegacyLivingInventoryWorkbenchResponse>
+      getLegacyLivingInventoryWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyLivingInventoryWorkbenchRequest>
+              $request) async {
+    return getLegacyLivingInventoryWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyLivingInventoryWorkbenchResponse>
+      getLegacyLivingInventoryWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyLivingInventoryWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyLivingEstateInventoryResponse>
+      saveLegacyLivingEstateInventory_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyLivingEstateInventoryRequest>
+              $request) async {
+    return saveLegacyLivingEstateInventory($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyLivingEstateInventoryResponse>
+      saveLegacyLivingEstateInventory($grpc.ServiceCall call,
+          $0.SaveLegacyLivingEstateInventoryRequest request);
+
+  $async.Future<$0.SignOffLegacyQuarterlyPlanReviewResponse>
+      signOffLegacyQuarterlyPlanReview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SignOffLegacyQuarterlyPlanReviewRequest>
+              $request) async {
+    return signOffLegacyQuarterlyPlanReview($call, await $request);
+  }
+
+  $async.Future<$0.SignOffLegacyQuarterlyPlanReviewResponse>
+      signOffLegacyQuarterlyPlanReview($grpc.ServiceCall call,
+          $0.SignOffLegacyQuarterlyPlanReviewRequest request);
+
+  $async.Future<$0.GetLegacyLifeEventAlignmentWorkbenchResponse>
+      getLegacyLifeEventAlignmentWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyLifeEventAlignmentWorkbenchRequest>
+              $request) async {
+    return getLegacyLifeEventAlignmentWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyLifeEventAlignmentWorkbenchResponse>
+      getLegacyLifeEventAlignmentWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyLifeEventAlignmentWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyLifeEventAlignmentResponse>
+      saveLegacyLifeEventAlignment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyLifeEventAlignmentRequest>
+              $request) async {
+    return saveLegacyLifeEventAlignment($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyLifeEventAlignmentResponse>
+      saveLegacyLifeEventAlignment($grpc.ServiceCall call,
+          $0.SaveLegacyLifeEventAlignmentRequest request);
+
+  $async.Future<$0.VerifyLegacyAlignmentInstitutionEvidenceResponse>
+      verifyLegacyAlignmentInstitutionEvidence_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyLegacyAlignmentInstitutionEvidenceRequest>
+              $request) async {
+    return verifyLegacyAlignmentInstitutionEvidence($call, await $request);
+  }
+
+  $async.Future<$0.VerifyLegacyAlignmentInstitutionEvidenceResponse>
+      verifyLegacyAlignmentInstitutionEvidence($grpc.ServiceCall call,
+          $0.VerifyLegacyAlignmentInstitutionEvidenceRequest request);
+
+  $async.Future<$0.GetLegacySecureDocumentVaultWorkbenchResponse>
+      getLegacySecureDocumentVaultWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacySecureDocumentVaultWorkbenchRequest>
+              $request) async {
+    return getLegacySecureDocumentVaultWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacySecureDocumentVaultWorkbenchResponse>
+      getLegacySecureDocumentVaultWorkbench($grpc.ServiceCall call,
+          $0.GetLegacySecureDocumentVaultWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacySecureDocumentVaultResponse>
+      saveLegacySecureDocumentVault_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacySecureDocumentVaultRequest>
+              $request) async {
+    return saveLegacySecureDocumentVault($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacySecureDocumentVaultResponse>
+      saveLegacySecureDocumentVault($grpc.ServiceCall call,
+          $0.SaveLegacySecureDocumentVaultRequest request);
+
+  $async.Future<$0.LockOrExportLegacyDocumentCustodyResponse>
+      lockOrExportLegacyDocumentCustody_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LockOrExportLegacyDocumentCustodyRequest>
+              $request) async {
+    return lockOrExportLegacyDocumentCustody($call, await $request);
+  }
+
+  $async.Future<$0.LockOrExportLegacyDocumentCustodyResponse>
+      lockOrExportLegacyDocumentCustody($grpc.ServiceCall call,
+          $0.LockOrExportLegacyDocumentCustodyRequest request);
+
+  $async.Future<$0.GetLegacyJurisdictionDocumentWorkbenchResponse>
+      getLegacyJurisdictionDocumentWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyJurisdictionDocumentWorkbenchRequest>
+              $request) async {
+    return getLegacyJurisdictionDocumentWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyJurisdictionDocumentWorkbenchResponse>
+      getLegacyJurisdictionDocumentWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyJurisdictionDocumentWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyJurisdictionDocumentSystemResponse>
+      saveLegacyJurisdictionDocumentSystem_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyJurisdictionDocumentSystemRequest>
+              $request) async {
+    return saveLegacyJurisdictionDocumentSystem($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyJurisdictionDocumentSystemResponse>
+      saveLegacyJurisdictionDocumentSystem($grpc.ServiceCall call,
+          $0.SaveLegacyJurisdictionDocumentSystemRequest request);
+
+  $async.Future<$0.TriggerLegacyCounselReviewOrLockExecutionResponse>
+      triggerLegacyCounselReviewOrLockExecution_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.TriggerLegacyCounselReviewOrLockExecutionRequest>
+              $request) async {
+    return triggerLegacyCounselReviewOrLockExecution($call, await $request);
+  }
+
+  $async.Future<$0.TriggerLegacyCounselReviewOrLockExecutionResponse>
+      triggerLegacyCounselReviewOrLockExecution($grpc.ServiceCall call,
+          $0.TriggerLegacyCounselReviewOrLockExecutionRequest request);
+
+  $async.Future<$0.GetLegacyContinuityPlaybookWorkbenchResponse>
+      getLegacyContinuityPlaybookWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyContinuityPlaybookWorkbenchRequest>
+              $request) async {
+    return getLegacyContinuityPlaybookWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyContinuityPlaybookWorkbenchResponse>
+      getLegacyContinuityPlaybookWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyContinuityPlaybookWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyHouseholdBusinessContinuityResponse>
+      saveLegacyHouseholdBusinessContinuity_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyHouseholdBusinessContinuityRequest>
+              $request) async {
+    return saveLegacyHouseholdBusinessContinuity($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyHouseholdBusinessContinuityResponse>
+      saveLegacyHouseholdBusinessContinuity($grpc.ServiceCall call,
+          $0.SaveLegacyHouseholdBusinessContinuityRequest request);
+
+  $async.Future<$0.RunLegacyContinuityDrillOrStageDelegationResponse>
+      runLegacyContinuityDrillOrStageDelegation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunLegacyContinuityDrillOrStageDelegationRequest>
+              $request) async {
+    return runLegacyContinuityDrillOrStageDelegation($call, await $request);
+  }
+
+  $async.Future<$0.RunLegacyContinuityDrillOrStageDelegationResponse>
+      runLegacyContinuityDrillOrStageDelegation($grpc.ServiceCall call,
+          $0.RunLegacyContinuityDrillOrStageDelegationRequest request);
+
+  $async.Future<$0.GetLegacyIncapacityDeadmanWorkbenchResponse>
+      getLegacyIncapacityDeadmanWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyIncapacityDeadmanWorkbenchRequest>
+              $request) async {
+    return getLegacyIncapacityDeadmanWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyIncapacityDeadmanWorkbenchResponse>
+      getLegacyIncapacityDeadmanWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyIncapacityDeadmanWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyIncapacityDeadmanProtocolResponse>
+      saveLegacyIncapacityDeadmanProtocol_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyIncapacityDeadmanProtocolRequest>
+              $request) async {
+    return saveLegacyIncapacityDeadmanProtocol($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyIncapacityDeadmanProtocolResponse>
+      saveLegacyIncapacityDeadmanProtocol($grpc.ServiceCall call,
+          $0.SaveLegacyIncapacityDeadmanProtocolRequest request);
+
+  $async.Future<$0.SimulateOrCancelLegacyDeadmanReleaseResponse>
+      simulateOrCancelLegacyDeadmanRelease_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SimulateOrCancelLegacyDeadmanReleaseRequest>
+              $request) async {
+    return simulateOrCancelLegacyDeadmanRelease($call, await $request);
+  }
+
+  $async.Future<$0.SimulateOrCancelLegacyDeadmanReleaseResponse>
+      simulateOrCancelLegacyDeadmanRelease($grpc.ServiceCall call,
+          $0.SimulateOrCancelLegacyDeadmanReleaseRequest request);
+
+  $async.Future<$0.GetLegacyExecutorWorkspaceWorkbenchResponse>
+      getLegacyExecutorWorkspaceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyExecutorWorkspaceWorkbenchRequest>
+              $request) async {
+    return getLegacyExecutorWorkspaceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyExecutorWorkspaceWorkbenchResponse>
+      getLegacyExecutorWorkspaceWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyExecutorWorkspaceWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyExecutorTrusteeWorkspaceResponse>
+      saveLegacyExecutorTrusteeWorkspace_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyExecutorTrusteeWorkspaceRequest>
+              $request) async {
+    return saveLegacyExecutorTrusteeWorkspace($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyExecutorTrusteeWorkspaceResponse>
+      saveLegacyExecutorTrusteeWorkspace($grpc.ServiceCall call,
+          $0.SaveLegacyExecutorTrusteeWorkspaceRequest request);
+
+  $async.Future<$0.AdvanceLegacySettlementTaskOrResolveDisputeResponse>
+      advanceLegacySettlementTaskOrResolveDispute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdvanceLegacySettlementTaskOrResolveDisputeRequest>
+              $request) async {
+    return advanceLegacySettlementTaskOrResolveDispute($call, await $request);
+  }
+
+  $async.Future<$0.AdvanceLegacySettlementTaskOrResolveDisputeResponse>
+      advanceLegacySettlementTaskOrResolveDispute($grpc.ServiceCall call,
+          $0.AdvanceLegacySettlementTaskOrResolveDisputeRequest request);
+
+  $async.Future<$0.GetLegacySettlementAccountingWorkbenchResponse>
+      getLegacySettlementAccountingWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacySettlementAccountingWorkbenchRequest>
+              $request) async {
+    return getLegacySettlementAccountingWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacySettlementAccountingWorkbenchResponse>
+      getLegacySettlementAccountingWorkbench($grpc.ServiceCall call,
+          $0.GetLegacySettlementAccountingWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacySettlementAccountingResponse>
+      saveLegacySettlementAccounting_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacySettlementAccountingRequest>
+              $request) async {
+    return saveLegacySettlementAccounting($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacySettlementAccountingResponse>
+      saveLegacySettlementAccounting($grpc.ServiceCall call,
+          $0.SaveLegacySettlementAccountingRequest request);
+
+  $async.Future<$0.LockOrReverseLegacyAccountingPeriodResponse>
+      lockOrReverseLegacyAccountingPeriod_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LockOrReverseLegacyAccountingPeriodRequest>
+              $request) async {
+    return lockOrReverseLegacyAccountingPeriod($call, await $request);
+  }
+
+  $async.Future<$0.LockOrReverseLegacyAccountingPeriodResponse>
+      lockOrReverseLegacyAccountingPeriod($grpc.ServiceCall call,
+          $0.LockOrReverseLegacyAccountingPeriodRequest request);
+
+  $async.Future<$0.GetLegacyDigitalRecoveryWorkbenchResponse>
+      getLegacyDigitalRecoveryWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyDigitalRecoveryWorkbenchRequest>
+              $request) async {
+    return getLegacyDigitalRecoveryWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyDigitalRecoveryWorkbenchResponse>
+      getLegacyDigitalRecoveryWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyDigitalRecoveryWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyDigitalThresholdRecoveryResponse>
+      saveLegacyDigitalThresholdRecovery_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyDigitalThresholdRecoveryRequest>
+              $request) async {
+    return saveLegacyDigitalThresholdRecovery($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyDigitalThresholdRecoveryResponse>
+      saveLegacyDigitalThresholdRecovery($grpc.ServiceCall call,
+          $0.SaveLegacyDigitalThresholdRecoveryRequest request);
+
+  $async.Future<$0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>
+      runLegacyThresholdCeremonyDryRunOrRotateShare_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest>
+              $request) async {
+    return runLegacyThresholdCeremonyDryRunOrRotateShare($call, await $request);
+  }
+
+  $async.Future<$0.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>
+      runLegacyThresholdCeremonyDryRunOrRotateShare($grpc.ServiceCall call,
+          $0.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest request);
+
+  $async.Future<$0.GetLegacyHeritageArchiveWorkbenchResponse>
+      getLegacyHeritageArchiveWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyHeritageArchiveWorkbenchRequest>
+              $request) async {
+    return getLegacyHeritageArchiveWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyHeritageArchiveWorkbenchResponse>
+      getLegacyHeritageArchiveWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyHeritageArchiveWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyHeritagePreservationArchiveResponse>
+      saveLegacyHeritagePreservationArchive_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyHeritagePreservationArchiveRequest>
+              $request) async {
+    return saveLegacyHeritagePreservationArchive($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyHeritagePreservationArchiveResponse>
+      saveLegacyHeritagePreservationArchive($grpc.ServiceCall call,
+          $0.SaveLegacyHeritagePreservationArchiveRequest request);
+
+  $async.Future<$0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse>
+      verifyLegacyArchiveFixityOrPreviewTrigger_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest>
+              $request) async {
+    return verifyLegacyArchiveFixityOrPreviewTrigger($call, await $request);
+  }
+
+  $async.Future<$0.VerifyLegacyArchiveFixityOrPreviewTriggerResponse>
+      verifyLegacyArchiveFixityOrPreviewTrigger($grpc.ServiceCall call,
+          $0.VerifyLegacyArchiveFixityOrPreviewTriggerRequest request);
+
+  $async.Future<$0.GetLegacyLiquidityReadinessWorkbenchResponse>
+      getLegacyLiquidityReadinessWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyLiquidityReadinessWorkbenchRequest>
+              $request) async {
+    return getLegacyLiquidityReadinessWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyLiquidityReadinessWorkbenchResponse>
+      getLegacyLiquidityReadinessWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyLiquidityReadinessWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyLiquidityInsuranceReadinessResponse>
+      saveLegacyLiquidityInsuranceReadiness_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyLiquidityInsuranceReadinessRequest>
+              $request) async {
+    return saveLegacyLiquidityInsuranceReadiness($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyLiquidityInsuranceReadinessResponse>
+      saveLegacyLiquidityInsuranceReadiness($grpc.ServiceCall call,
+          $0.SaveLegacyLiquidityInsuranceReadinessRequest request);
+
+  $async.Future<$0.StressTestLegacyLiquidityOrRouteCounselResponse>
+      stressTestLegacyLiquidityOrRouteCounsel_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.StressTestLegacyLiquidityOrRouteCounselRequest>
+              $request) async {
+    return stressTestLegacyLiquidityOrRouteCounsel($call, await $request);
+  }
+
+  $async.Future<$0.StressTestLegacyLiquidityOrRouteCounselResponse>
+      stressTestLegacyLiquidityOrRouteCounsel($grpc.ServiceCall call,
+          $0.StressTestLegacyLiquidityOrRouteCounselRequest request);
+
+  $async.Future<$0.GetLegacyCounselGovernanceWorkbenchResponse>
+      getLegacyCounselGovernanceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetLegacyCounselGovernanceWorkbenchRequest>
+              $request) async {
+    return getLegacyCounselGovernanceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetLegacyCounselGovernanceWorkbenchResponse>
+      getLegacyCounselGovernanceWorkbench($grpc.ServiceCall call,
+          $0.GetLegacyCounselGovernanceWorkbenchRequest request);
+
+  $async.Future<$0.SaveLegacyCounselFamilyGovernanceResponse>
+      saveLegacyCounselFamilyGovernance_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveLegacyCounselFamilyGovernanceRequest>
+              $request) async {
+    return saveLegacyCounselFamilyGovernance($call, await $request);
+  }
+
+  $async.Future<$0.SaveLegacyCounselFamilyGovernanceResponse>
+      saveLegacyCounselFamilyGovernance($grpc.ServiceCall call,
+          $0.SaveLegacyCounselFamilyGovernanceRequest request);
+
+  $async.Future<$0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse>
+      unlockLegacyStewardshipModuleOrRevokeCounsel_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest>
+              $request) async {
+    return unlockLegacyStewardshipModuleOrRevokeCounsel($call, await $request);
+  }
+
+  $async.Future<$0.UnlockLegacyStewardshipModuleOrRevokeCounselResponse>
+      unlockLegacyStewardshipModuleOrRevokeCounsel($grpc.ServiceCall call,
+          $0.UnlockLegacyStewardshipModuleOrRevokeCounselRequest request);
 }

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminVerifyAssetRequest, AdminVerifyAssetResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, CreateVaultShareRequest, CreateVaultShareResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, ExportUsCgtCsvRequest, ExportUsCgtCsvResponse, ExpressCircleInterestRequest, ExpressCircleInterestResponse, GenerateWealthAlmanacRequest, GenerateWealthAlmanacResponse, GetAdvisorThreadRequest, GetAdvisorThreadResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetInvestmentCircleRequest, GetInvestmentCircleResponse, GetLiquidityStressTestRequest, GetLiquidityStressTestResponse, GetPortfolioRequest, GetPortfolioResponse, GetTaxSnapshotRequest, GetTaxSnapshotResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, GetWealthArticleRequest, GetWealthArticleResponse, GetYearInVaultRequest, GetYearInVaultResponse, LinkWalletRequest, LinkWalletResponse, ListAdvisorThreadsRequest, ListAdvisorThreadsResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListInvestmentCirclesRequest, ListInvestmentCirclesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListMyVaultSharesRequest, ListMyVaultSharesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPartnerBanksRequest, ListPartnerBanksResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, ListWealthAnthologyRequest, ListWealthAnthologyResponse, PostAdvisorMessageRequest, PostAdvisorMessageResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, RevokeVaultShareRequest, RevokeVaultShareResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, StartAdvisorThreadRequest, StartAdvisorThreadResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse } from "./vault_pb.js";
+import { AcknowledgeOrReviewVaultCashCommitmentRequest, AcknowledgeOrReviewVaultCashCommitmentResponse, AdminVerifyAssetRequest, AdminVerifyAssetResponse, ApproveOrRevokeVaultAdvisorAccessRequest, ApproveOrRevokeVaultAdvisorAccessResponse, AssignAssetToEntityRequest, AssignAssetToEntityResponse, CompareOrHandoffVaultScenarioRequest, CompareOrHandoffVaultScenarioResponse, ConfirmOrReconcileVaultCapitalNoticeRequest, ConfirmOrReconcileVaultCapitalNoticeResponse, CreateCapTableHoldingRequest, CreateCapTableHoldingResponse, CreateEntityRequest, CreateEntityResponse, CreatePlaidLinkTokenRequest, CreatePlaidLinkTokenResponse, CreateRealEstatePropertyRequest, CreateRealEstatePropertyResponse, CreateVaultShareRequest, CreateVaultShareResponse, DeleteCapTableHoldingRequest, DeleteCapTableHoldingResponse, DeleteEntityRequest, DeleteEntityResponse, DeleteRealEstatePropertyRequest, DeleteRealEstatePropertyResponse, DeleteWalletChainRequest, DeleteWalletChainResponse, EvaluateOrRouteVaultCoverageGapRequest, EvaluateOrRouteVaultCoverageGapResponse, ExchangePlaidPublicTokenRequest, ExchangePlaidPublicTokenResponse, ExecuteOrAppealVaultSafetyActionRequest, ExecuteOrAppealVaultSafetyActionResponse, ExportUsCgtCsvRequest, ExportUsCgtCsvResponse, ExpressCircleInterestRequest, ExpressCircleInterestResponse, GenerateWealthAlmanacRequest, GenerateWealthAlmanacResponse, GetAdvisorThreadRequest, GetAdvisorThreadResponse, GetCurrentAllocationRequest, GetCurrentAllocationResponse, GetInvestmentCircleRequest, GetInvestmentCircleResponse, GetLiquidityStressTestRequest, GetLiquidityStressTestResponse, GetPortfolioRequest, GetPortfolioResponse, GetTaxSnapshotRequest, GetTaxSnapshotResponse, GetVaultAdvisorFamilyWorkbenchRequest, GetVaultAdvisorFamilyWorkbenchResponse, GetVaultEntityOwnershipWorkbenchRequest, GetVaultEntityOwnershipWorkbenchResponse, GetVaultFinancialInboxCloseWorkbenchRequest, GetVaultFinancialInboxCloseWorkbenchResponse, GetVaultFinancialReliabilityWorkbenchRequest, GetVaultFinancialReliabilityWorkbenchResponse, GetVaultFinancialSafetyWorkbenchRequest, GetVaultFinancialSafetyWorkbenchResponse, GetVaultGivingImpactWorkbenchRequest, GetVaultGivingImpactWorkbenchResponse, GetVaultGoalsScenarioWorkbenchRequest, GetVaultGoalsScenarioWorkbenchResponse, GetVaultPerformanceAllocationWorkbenchRequest, GetVaultPerformanceAllocationWorkbenchResponse, GetVaultPersonalCfoCashWorkbenchRequest, GetVaultPersonalCfoCashWorkbenchResponse, GetVaultPrivacyStandingProofWorkbenchRequest, GetVaultPrivacyStandingProofWorkbenchResponse, GetVaultPrivateMarketDocWorkbenchRequest, GetVaultPrivateMarketDocWorkbenchResponse, GetVaultTaxAccountantWorkbenchRequest, GetVaultTaxAccountantWorkbenchResponse, GetVaultTreasuryDebtRiskWorkbenchRequest, GetVaultTreasuryDebtRiskWorkbenchResponse, GetWalletChallengeRequest, GetWalletChallengeResponse, GetWealthArticleRequest, GetWealthArticleResponse, GetYearInVaultRequest, GetYearInVaultResponse, IssueVaultPrivacyStandingProofRequest, IssueVaultPrivacyStandingProofResponse, LinkWalletRequest, LinkWalletResponse, ListAdvisorThreadsRequest, ListAdvisorThreadsResponse, ListAllocationHistoryRequest, ListAllocationHistoryResponse, ListCapTableConnectionsRequest, ListCapTableConnectionsResponse, ListCapTableHoldingsRequest, ListCapTableHoldingsResponse, ListEntitiesRequest, ListEntitiesResponse, ListInvestmentCirclesRequest, ListInvestmentCirclesResponse, ListLatestFxRatesRequest, ListLatestFxRatesResponse, ListMyVaultSharesRequest, ListMyVaultSharesResponse, ListNetWorthHistoryRequest, ListNetWorthHistoryResponse, ListPartnerBanksRequest, ListPartnerBanksResponse, ListPlaidHoldingsRequest, ListPlaidHoldingsResponse, ListPlaidTransactionsRequest, ListPlaidTransactionsResponse, ListRealEstatePropertiesRequest, ListRealEstatePropertiesResponse, ListWalletChainsRequest, ListWalletChainsResponse, ListWealthAnthologyRequest, ListWealthAnthologyResponse, LockOrExportVaultTaxPackageRequest, LockOrExportVaultTaxPackageResponse, LockOrReopenVaultMonthlyCloseRequest, LockOrReopenVaultMonthlyCloseResponse, PostAdvisorMessageRequest, PostAdvisorMessageResponse, ReconcileOrReplayVaultReliabilityRequest, ReconcileOrReplayVaultReliabilityResponse, RecordManualValuationRequest, RecordManualValuationResponse, RefreshAvmValuationRequest, RefreshAvmValuationResponse, RenameEntityRequest, RenameEntityResponse, RevokeVaultShareRequest, RevokeVaultShareResponse, SaveVaultAdvisorEngagementScopeRequest, SaveVaultAdvisorEngagementScopeResponse, SaveVaultEntityOwnershipNodeRequest, SaveVaultEntityOwnershipNodeResponse, SaveVaultFinancialInboxCloseItemRequest, SaveVaultFinancialInboxCloseItemResponse, SaveVaultFinancialReliabilitySourceRequest, SaveVaultFinancialReliabilitySourceResponse, SaveVaultFinancialSafetyIncidentRequest, SaveVaultFinancialSafetyIncidentResponse, SaveVaultGivingImpactPledgeRequest, SaveVaultGivingImpactPledgeResponse, SaveVaultGoalScenarioSnapshotRequest, SaveVaultGoalScenarioSnapshotResponse, SaveVaultPerformanceAllocationModelRequest, SaveVaultPerformanceAllocationModelResponse, SaveVaultPersonalCfoCashForecastRequest, SaveVaultPersonalCfoCashForecastResponse, SaveVaultPrivateMarketCommitmentRequest, SaveVaultPrivateMarketCommitmentResponse, SaveVaultTaxAccountantScenarioRequest, SaveVaultTaxAccountantScenarioResponse, SaveVaultTreasuryDebtRiskPositionRequest, SaveVaultTreasuryDebtRiskPositionResponse, SetCapTableConnectionStatusRequest, SetCapTableConnectionStatusResponse, SimulateOrRefreshVaultAllocationRequest, SimulateOrRefreshVaultAllocationResponse, StartAdvisorThreadRequest, StartAdvisorThreadResponse, SubmitAssetRequest, SubmitAssetResponse, SyncWealthRequest, SyncWealthResponse, UpdateCapTableHoldingRequest, UpdateCapTableHoldingResponse, UpsertWalletChainRequest, UpsertWalletChainResponse, VerifyOrAcknowledgeVaultGiftReceiptRequest, VerifyOrAcknowledgeVaultGiftReceiptResponse, VerifyOrRevokeVaultOwnershipAccessRequest, VerifyOrRevokeVaultOwnershipAccessResponse, VerifyOrRevokeVaultStandingProofRequest, VerifyOrRevokeVaultStandingProofResponse } from "./vault_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -525,6 +525,384 @@ export const VaultService = {
       name: "GetLiquidityStressTest",
       I: GetLiquidityStressTestRequest,
       O: GetLiquidityStressTestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Vault Opportunity Choices 1–13 (V1..V16) =====
+     * Choice 1 (V1): Financial Data Reliability Center
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultFinancialReliabilityWorkbench
+     */
+    getVaultFinancialReliabilityWorkbench: {
+      name: "GetVaultFinancialReliabilityWorkbench",
+      I: GetVaultFinancialReliabilityWorkbenchRequest,
+      O: GetVaultFinancialReliabilityWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultFinancialReliabilitySource
+     */
+    saveVaultFinancialReliabilitySource: {
+      name: "SaveVaultFinancialReliabilitySource",
+      I: SaveVaultFinancialReliabilitySourceRequest,
+      O: SaveVaultFinancialReliabilitySourceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ReconcileOrReplayVaultReliability
+     */
+    reconcileOrReplayVaultReliability: {
+      name: "ReconcileOrReplayVaultReliability",
+      I: ReconcileOrReplayVaultReliabilityRequest,
+      O: ReconcileOrReplayVaultReliabilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (V10): Financial Inbox and Monthly Close
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultFinancialInboxCloseWorkbench
+     */
+    getVaultFinancialInboxCloseWorkbench: {
+      name: "GetVaultFinancialInboxCloseWorkbench",
+      I: GetVaultFinancialInboxCloseWorkbenchRequest,
+      O: GetVaultFinancialInboxCloseWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultFinancialInboxCloseItem
+     */
+    saveVaultFinancialInboxCloseItem: {
+      name: "SaveVaultFinancialInboxCloseItem",
+      I: SaveVaultFinancialInboxCloseItemRequest,
+      O: SaveVaultFinancialInboxCloseItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.LockOrReopenVaultMonthlyClose
+     */
+    lockOrReopenVaultMonthlyClose: {
+      name: "LockOrReopenVaultMonthlyClose",
+      I: LockOrReopenVaultMonthlyCloseRequest,
+      O: LockOrReopenVaultMonthlyCloseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (V2, V11): Personal CFO and Cash Command
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultPersonalCfoCashWorkbench
+     */
+    getVaultPersonalCfoCashWorkbench: {
+      name: "GetVaultPersonalCfoCashWorkbench",
+      I: GetVaultPersonalCfoCashWorkbenchRequest,
+      O: GetVaultPersonalCfoCashWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultPersonalCfoCashForecast
+     */
+    saveVaultPersonalCfoCashForecast: {
+      name: "SaveVaultPersonalCfoCashForecast",
+      I: SaveVaultPersonalCfoCashForecastRequest,
+      O: SaveVaultPersonalCfoCashForecastResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.AcknowledgeOrReviewVaultCashCommitment
+     */
+    acknowledgeOrReviewVaultCashCommitment: {
+      name: "AcknowledgeOrReviewVaultCashCommitment",
+      I: AcknowledgeOrReviewVaultCashCommitmentRequest,
+      O: AcknowledgeOrReviewVaultCashCommitmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (V3): Performance and Allocation Laboratory
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultPerformanceAllocationWorkbench
+     */
+    getVaultPerformanceAllocationWorkbench: {
+      name: "GetVaultPerformanceAllocationWorkbench",
+      I: GetVaultPerformanceAllocationWorkbenchRequest,
+      O: GetVaultPerformanceAllocationWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultPerformanceAllocationModel
+     */
+    saveVaultPerformanceAllocationModel: {
+      name: "SaveVaultPerformanceAllocationModel",
+      I: SaveVaultPerformanceAllocationModelRequest,
+      O: SaveVaultPerformanceAllocationModelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SimulateOrRefreshVaultAllocation
+     */
+    simulateOrRefreshVaultAllocation: {
+      name: "SimulateOrRefreshVaultAllocation",
+      I: SimulateOrRefreshVaultAllocationRequest,
+      O: SimulateOrRefreshVaultAllocationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (V4, V16): Tax and Accountant Workspace
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultTaxAccountantWorkbench
+     */
+    getVaultTaxAccountantWorkbench: {
+      name: "GetVaultTaxAccountantWorkbench",
+      I: GetVaultTaxAccountantWorkbenchRequest,
+      O: GetVaultTaxAccountantWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultTaxAccountantScenario
+     */
+    saveVaultTaxAccountantScenario: {
+      name: "SaveVaultTaxAccountantScenario",
+      I: SaveVaultTaxAccountantScenarioRequest,
+      O: SaveVaultTaxAccountantScenarioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.LockOrExportVaultTaxPackage
+     */
+    lockOrExportVaultTaxPackage: {
+      name: "LockOrExportVaultTaxPackage",
+      I: LockOrExportVaultTaxPackageRequest,
+      O: LockOrExportVaultTaxPackageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (V5): Entity, Household, and Ownership Graph
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultEntityOwnershipWorkbench
+     */
+    getVaultEntityOwnershipWorkbench: {
+      name: "GetVaultEntityOwnershipWorkbench",
+      I: GetVaultEntityOwnershipWorkbenchRequest,
+      O: GetVaultEntityOwnershipWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultEntityOwnershipNode
+     */
+    saveVaultEntityOwnershipNode: {
+      name: "SaveVaultEntityOwnershipNode",
+      I: SaveVaultEntityOwnershipNodeRequest,
+      O: SaveVaultEntityOwnershipNodeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.VerifyOrRevokeVaultOwnershipAccess
+     */
+    verifyOrRevokeVaultOwnershipAccess: {
+      name: "VerifyOrRevokeVaultOwnershipAccess",
+      I: VerifyOrRevokeVaultOwnershipAccessRequest,
+      O: VerifyOrRevokeVaultOwnershipAccessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (V6, V16): Private Markets and Document Room
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultPrivateMarketDocWorkbench
+     */
+    getVaultPrivateMarketDocWorkbench: {
+      name: "GetVaultPrivateMarketDocWorkbench",
+      I: GetVaultPrivateMarketDocWorkbenchRequest,
+      O: GetVaultPrivateMarketDocWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultPrivateMarketCommitment
+     */
+    saveVaultPrivateMarketCommitment: {
+      name: "SaveVaultPrivateMarketCommitment",
+      I: SaveVaultPrivateMarketCommitmentRequest,
+      O: SaveVaultPrivateMarketCommitmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ConfirmOrReconcileVaultCapitalNotice
+     */
+    confirmOrReconcileVaultCapitalNotice: {
+      name: "ConfirmOrReconcileVaultCapitalNotice",
+      I: ConfirmOrReconcileVaultCapitalNoticeRequest,
+      O: ConfirmOrReconcileVaultCapitalNoticeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultTreasuryDebtRiskWorkbench
+     */
+    getVaultTreasuryDebtRiskWorkbench: {
+      name: "GetVaultTreasuryDebtRiskWorkbench",
+      I: GetVaultTreasuryDebtRiskWorkbenchRequest,
+      O: GetVaultTreasuryDebtRiskWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultTreasuryDebtRiskPosition
+     */
+    saveVaultTreasuryDebtRiskPosition: {
+      name: "SaveVaultTreasuryDebtRiskPosition",
+      I: SaveVaultTreasuryDebtRiskPositionRequest,
+      O: SaveVaultTreasuryDebtRiskPositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.EvaluateOrRouteVaultCoverageGap
+     */
+    evaluateOrRouteVaultCoverageGap: {
+      name: "EvaluateOrRouteVaultCoverageGap",
+      I: EvaluateOrRouteVaultCoverageGapRequest,
+      O: EvaluateOrRouteVaultCoverageGapResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (V8): Goals and Scenario Engine
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultGoalsScenarioWorkbench
+     */
+    getVaultGoalsScenarioWorkbench: {
+      name: "GetVaultGoalsScenarioWorkbench",
+      I: GetVaultGoalsScenarioWorkbenchRequest,
+      O: GetVaultGoalsScenarioWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultGoalScenarioSnapshot
+     */
+    saveVaultGoalScenarioSnapshot: {
+      name: "SaveVaultGoalScenarioSnapshot",
+      I: SaveVaultGoalScenarioSnapshotRequest,
+      O: SaveVaultGoalScenarioSnapshotResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.CompareOrHandoffVaultScenario
+     */
+    compareOrHandoffVaultScenario: {
+      name: "CompareOrHandoffVaultScenario",
+      I: CompareOrHandoffVaultScenarioRequest,
+      O: CompareOrHandoffVaultScenarioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (V7): Privacy-Preserving Standing Proofs
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultPrivacyStandingProofWorkbench
+     */
+    getVaultPrivacyStandingProofWorkbench: {
+      name: "GetVaultPrivacyStandingProofWorkbench",
+      I: GetVaultPrivacyStandingProofWorkbenchRequest,
+      O: GetVaultPrivacyStandingProofWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.IssueVaultPrivacyStandingProof
+     */
+    issueVaultPrivacyStandingProof: {
+      name: "IssueVaultPrivacyStandingProof",
+      I: IssueVaultPrivacyStandingProofRequest,
+      O: IssueVaultPrivacyStandingProofResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.VerifyOrRevokeVaultStandingProof
+     */
+    verifyOrRevokeVaultStandingProof: {
+      name: "VerifyOrRevokeVaultStandingProof",
+      I: VerifyOrRevokeVaultStandingProofRequest,
+      O: VerifyOrRevokeVaultStandingProofResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (V9): Advisor and Family-Office Workspace
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultAdvisorFamilyWorkbench
+     */
+    getVaultAdvisorFamilyWorkbench: {
+      name: "GetVaultAdvisorFamilyWorkbench",
+      I: GetVaultAdvisorFamilyWorkbenchRequest,
+      O: GetVaultAdvisorFamilyWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultAdvisorEngagementScope
+     */
+    saveVaultAdvisorEngagementScope: {
+      name: "SaveVaultAdvisorEngagementScope",
+      I: SaveVaultAdvisorEngagementScopeRequest,
+      O: SaveVaultAdvisorEngagementScopeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ApproveOrRevokeVaultAdvisorAccess
+     */
+    approveOrRevokeVaultAdvisorAccess: {
+      name: "ApproveOrRevokeVaultAdvisorAccess",
+      I: ApproveOrRevokeVaultAdvisorAccessRequest,
+      O: ApproveOrRevokeVaultAdvisorAccessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 12 (V13): Financial Safety and Fraud Response
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultFinancialSafetyWorkbench
+     */
+    getVaultFinancialSafetyWorkbench: {
+      name: "GetVaultFinancialSafetyWorkbench",
+      I: GetVaultFinancialSafetyWorkbenchRequest,
+      O: GetVaultFinancialSafetyWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultFinancialSafetyIncident
+     */
+    saveVaultFinancialSafetyIncident: {
+      name: "SaveVaultFinancialSafetyIncident",
+      I: SaveVaultFinancialSafetyIncidentRequest,
+      O: SaveVaultFinancialSafetyIncidentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.ExecuteOrAppealVaultSafetyAction
+     */
+    executeOrAppealVaultSafetyAction: {
+      name: "ExecuteOrAppealVaultSafetyAction",
+      I: ExecuteOrAppealVaultSafetyActionRequest,
+      O: ExecuteOrAppealVaultSafetyActionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 13 (V15): Giving and Impact Ledger
+     *
+     * @generated from rpc sttattus.vault.v1.VaultService.GetVaultGivingImpactWorkbench
+     */
+    getVaultGivingImpactWorkbench: {
+      name: "GetVaultGivingImpactWorkbench",
+      I: GetVaultGivingImpactWorkbenchRequest,
+      O: GetVaultGivingImpactWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.SaveVaultGivingImpactPledge
+     */
+    saveVaultGivingImpactPledge: {
+      name: "SaveVaultGivingImpactPledge",
+      I: SaveVaultGivingImpactPledgeRequest,
+      O: SaveVaultGivingImpactPledgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.vault.v1.VaultService.VerifyOrAcknowledgeVaultGiftReceipt
+     */
+    verifyOrAcknowledgeVaultGiftReceipt: {
+      name: "VerifyOrAcknowledgeVaultGiftReceipt",
+      I: VerifyOrAcknowledgeVaultGiftReceiptRequest,
+      O: VerifyOrAcknowledgeVaultGiftReceiptResponse,
       kind: MethodKind.Unary,
     },
   }

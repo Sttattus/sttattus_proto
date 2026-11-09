@@ -801,6 +801,1358 @@ message GetYearInEmpireResponse {
   int32 pillars_active = 11;
 }
 
+// === Choice 1 (EM1): Transparent Standing Constitution ===
+
+message EmpireStandingConstitutionProfile {
+  string id = 1;
+  string user_id = 2;
+  // full_transparent_dimensions | score_free_qualitative | private_predicates_only
+  string display_mode = 3;
+  string active_policy_version = 4;
+  string public_predicates_json = 5;
+  bool high_impact_use_prohibited = 6;
+  bool cross_lane_contamination_blocked = 7;
+  string recomputed_at = 8;
+}
+
+message EmpireSignedPillarClaim {
+  string id = 1;
+  string user_id = 2;
+  string source_pillar = 3;
+  // skill_achievement | community_contribution | conduct_trust | paid_entitlement
+  string dimension_lane = 4;
+  string signed_claim_digest = 5;
+  string policy_version = 6;
+  int32 weight_basis_points = 7;
+  double cap_score = 8;
+  string decay_rule = 9;
+  // complete_verified | partial_optional | omitted_no_penalty
+  string missingness_state = 10;
+  string counterfactual_explanation = 11;
+  bool raw_sensitive_data_redacted = 12;
+  string snapshot_at = 13;
+}
+
+message EmpireStandingDisputeCase {
+  string id = 1;
+  string user_id = 2;
+  string claim_id = 3;
+  // stale_source_claim | formula_recompute_request | privilege_loss_appeal | lane_isolation_check
+  string dispute_kind = 4;
+  string member_statement = 5;
+  // open_review | recomputed_resolved | upheld_with_explanation | temporary_hold
+  string status = 6;
+  string resolution_note = 7;
+  string created_at = 8;
+}
+
+message GetStandingConstitutionWorkbenchRequest {}
+
+message GetStandingConstitutionWorkbenchResponse {
+  EmpireStandingConstitutionProfile profile = 1;
+  repeated EmpireSignedPillarClaim signed_claims = 2;
+  repeated EmpireStandingDisputeCase dispute_cases = 3;
+}
+
+message UpdateStandingConstitutionModeRequest {
+  string display_mode = 1;
+  string public_predicates_json = 2;
+}
+
+message UpdateStandingConstitutionModeResponse {
+  EmpireStandingConstitutionProfile profile = 1;
+}
+
+message FileStandingDisputeOrRecomputeRequest {
+  string claim_id = 1;
+  string dispute_kind = 2;
+  string member_statement = 3;
+}
+
+message FileStandingDisputeOrRecomputeResponse {
+  EmpireStandingDisputeCase dispute_case = 1;
+}
+
+message AdminListStandingConstitutionAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListStandingConstitutionAuditResponse {
+  repeated EmpireStandingConstitutionProfile profiles = 1;
+  repeated EmpireSignedPillarClaim signed_claims = 2;
+  repeated EmpireStandingDisputeCase dispute_cases = 3;
+}
+
+message AdminResolveStandingDisputeOrPolicyRequest {
+  string dispute_id = 1;
+  string status = 2;
+  string resolution_note = 3;
+}
+
+message AdminResolveStandingDisputeOrPolicyResponse {
+  EmpireStandingDisputeCase dispute_case = 1;
+}
+
+// === Choice 2 (EM2): Twelve-Pillar Today & Action Command Center ===
+
+message EmpireTodayCommandCard {
+  string id = 1;
+  string user_id = 2;
+  string source_pillar = 3;
+  // urgent_safety | expiring_grant | commitment_due | staff_reply | cross_pillar_opportunity
+  string card_category = 4;
+  string title = 5;
+  string purpose_summary = 6;
+  string consequence_note = 7;
+  string effort_estimate = 8;
+  string deep_link_route = 9;
+  // active_ready | snoozed | delegated | dismissed | do_not_suggest | completed_with_receipt
+  string disposition = 10;
+  bool source_online = 11;
+  int32 retrieval_age_seconds = 12;
+  bool private_content_copied = 13;
+  string outcome_receipt_hash = 14;
+  string updated_at = 15;
+}
+
+message EmpireCrossPillarConflictItem {
+  string id = 1;
+  string user_id = 2;
+  string primary_pillar = 3;
+  string secondary_pillar = 4;
+  // trip_itinerary | property_obligation | training_health_plan | document_grant
+  string entity_kind = 5;
+  string conflict_summary = 6;
+  // needs_confirmation | merged_canonical | kept_separate
+  string resolution_state = 7;
+  string resolved_at = 8;
+}
+
+message EmpireTodayModePreference {
+  string id = 1;
+  string user_id = 2;
+  // morning_brief | weekly_review | travel_focus | family_stewardship | quiet_minimal
+  string operating_mode = 3;
+  bool empty_state_celebrated = 4;
+  bool stale_actions_guarded = 5;
+  string updated_at = 6;
+}
+
+message GetTwelvePillarTodayWorkbenchRequest {}
+
+message GetTwelvePillarTodayWorkbenchResponse {
+  EmpireTodayModePreference mode_preference = 1;
+  repeated EmpireTodayCommandCard command_cards = 2;
+  repeated EmpireCrossPillarConflictItem conflict_items = 3;
+}
+
+message UpdateTodayCardDispositionRequest {
+  string card_id = 1;
+  string disposition = 2;
+  string outcome_receipt_hash = 3;
+}
+
+message UpdateTodayCardDispositionResponse {
+  EmpireTodayCommandCard card = 1;
+}
+
+message ResolveCrossPillarConflictRequest {
+  string conflict_id = 1;
+  string resolution_state = 2;
+}
+
+message ResolveCrossPillarConflictResponse {
+  EmpireCrossPillarConflictItem conflict_item = 1;
+}
+
+message UpdateTodayOperatingModeRequest {
+  string operating_mode = 1;
+}
+
+message UpdateTodayOperatingModeResponse {
+  EmpireTodayModePreference mode_preference = 1;
+}
+
+message AdminListTwelvePillarTodayAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListTwelvePillarTodayAuditResponse {
+  repeated EmpireTodayCommandCard command_cards = 1;
+  repeated EmpireCrossPillarConflictItem conflict_items = 2;
+  repeated EmpireTodayModePreference mode_preferences = 3;
+}
+
+message AdminManageTodayContractOrOutageRequest {
+  string card_id = 1;
+  bool source_online = 2;
+  string disposition = 3;
+}
+
+message AdminManageTodayContractOrOutageResponse {
+  EmpireTodayCommandCard card = 1;
+}
+
+// === Choice 3 (EM3): Goal & Life-Season Orchestrator ===
+
+message EmpireLifeSeasonCampaign {
+  string id = 1;
+  string user_id = 2;
+  // prepare_endurance_race | relocate_country | organize_family_estate | acquire_income_property | publish_research_dossier | achieve_language_fluency
+  string campaign_type = 3;
+  string title = 4;
+  string season_horizon = 5;
+  int32 plan_version = 6;
+  string replan_reason = 7;
+  string estimated_cost_range = 8;
+  bool previous_plan_preserved = 9;
+  bool autonomous_external_action_blocked = 10;
+  // active_campaign | replanned_active | paused | completed
+  string status = 11;
+  string updated_at = 12;
+}
+
+message EmpireCampaignMilestone {
+  string id = 1;
+  string campaign_id = 2;
+  string user_id = 3;
+  string pillar_code = 4;
+  string milestone_title = 5;
+  string dependency_note = 6;
+  // available_live | suggested_manual | professional_gate
+  string capability_status = 7;
+  bool requires_member_approval = 8;
+  bool member_approved = 9;
+  string outcome_receipt_ref = 10;
+  // pending | in_progress | completed | skipped
+  string state = 11;
+  string updated_at = 12;
+}
+
+message EmpireCampaignReplanSnapshot {
+  string id = 1;
+  string campaign_id = 2;
+  string user_id = 3;
+  int32 from_version = 4;
+  int32 to_version = 5;
+  string assumptions_summary = 6;
+  string change_reason = 7;
+  string created_at = 8;
+}
+
+message GetGoalOrchestratorWorkbenchRequest {}
+
+message GetGoalOrchestratorWorkbenchResponse {
+  repeated EmpireLifeSeasonCampaign campaigns = 1;
+  repeated EmpireCampaignMilestone milestones = 2;
+  repeated EmpireCampaignReplanSnapshot replan_snapshots = 3;
+}
+
+message CreateOrReplanLifeSeasonCampaignRequest {
+  string campaign_id = 1;
+  string campaign_type = 2;
+  string title = 3;
+  string season_horizon = 4;
+  string replan_reason = 5;
+  string estimated_cost_range = 6;
+}
+
+message CreateOrReplanLifeSeasonCampaignResponse {
+  EmpireLifeSeasonCampaign campaign = 1;
+  EmpireCampaignReplanSnapshot replan_snapshot = 2;
+}
+
+message ApproveOrCompleteCampaignMilestoneRequest {
+  string milestone_id = 1;
+  bool member_approved = 2;
+  string state = 3;
+  string outcome_receipt_ref = 4;
+}
+
+message ApproveOrCompleteCampaignMilestoneResponse {
+  EmpireCampaignMilestone milestone = 1;
+}
+
+message AdminListGoalOrchestratorAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListGoalOrchestratorAuditResponse {
+  repeated EmpireLifeSeasonCampaign campaigns = 1;
+  repeated EmpireCampaignMilestone milestones = 2;
+  repeated EmpireCampaignReplanSnapshot replan_snapshots = 3;
+}
+
+message AdminModerateCampaignCapabilityOrHandoffRequest {
+  string milestone_id = 1;
+  string capability_status = 2;
+  string state = 3;
+}
+
+message AdminModerateCampaignCapabilityOrHandoffResponse {
+  EmpireCampaignMilestone milestone = 1;
+}
+
+// === Choice 4 (EM4): Portable Achievement Wallet ===
+
+message EmpirePortableCredential {
+  string id = 1;
+  string user_id = 2;
+  string source_pillar = 3;
+  // lexicon_course_mastery | forge_verified_benchmark | onyx_published_synthesis | empire_contribution_steward | vault_predicate_attestation | nomad_presence_proof
+  string credential_kind = 4;
+  string title = 5;
+  string evidence_class = 6;
+  string issuer_key_id = 7;
+  string policy_version = 8;
+  // one_time_view | bounded_multi_use
+  string usage_mode = 9;
+  bool verifier_retention_permitted = 10;
+  int32 offline_freshness_window_hours = 11;
+  // active_valid | revoked_by_member | expired_unknown | held_issuer_review
+  string revocation_state = 12;
+  string w3c_vc_json = 13;
+  string issued_at = 14;
+  string expires_at = 15;
+}
+
+message EmpireCredentialVerificationReceipt {
+  string id = 1;
+  string credential_id = 2;
+  string user_id = 3;
+  string verifier_label = 4;
+  // online_live | offline_cached_fresh | offline_expired_unknown
+  string verification_mode = 5;
+  // verified_valid | unknown_expired | revoked_denied | blocked_verifier_abuse
+  string result_status = 6;
+  string verified_at = 7;
+}
+
+message EmpireVerifierAbuseReport {
+  string id = 1;
+  string user_id = 2;
+  string verifier_identifier = 3;
+  string reason = 4;
+  // flagged | rate_limited | blocked_permanently
+  string status = 5;
+  string created_at = 6;
+}
+
+message GetAchievementWalletWorkbenchRequest {}
+
+message GetAchievementWalletWorkbenchResponse {
+  repeated EmpirePortableCredential credentials = 1;
+  repeated EmpireCredentialVerificationReceipt verification_receipts = 2;
+  repeated EmpireVerifierAbuseReport abuse_reports = 3;
+}
+
+message MintPortableAchievementCredentialRequest {
+  string source_pillar = 1;
+  string credential_kind = 2;
+  string title = 3;
+  string usage_mode = 4;
+  bool verifier_retention_permitted = 5;
+  int32 offline_freshness_window_hours = 6;
+}
+
+message MintPortableAchievementCredentialResponse {
+  EmpirePortableCredential credential = 1;
+}
+
+message RevokeOrVerifyPortableCredentialRequest {
+  string credential_id = 1;
+  string revocation_state = 2;
+  string verifier_label = 3;
+  string verification_mode = 4;
+}
+
+message RevokeOrVerifyPortableCredentialResponse {
+  EmpirePortableCredential credential = 1;
+  EmpireCredentialVerificationReceipt receipt = 2;
+}
+
+message AdminListAchievementWalletAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListAchievementWalletAuditResponse {
+  repeated EmpirePortableCredential credentials = 1;
+  repeated EmpireCredentialVerificationReceipt verification_receipts = 2;
+  repeated EmpireVerifierAbuseReport abuse_reports = 3;
+}
+
+message AdminModerateCredentialOrVerifierAbuseRequest {
+  string abuse_report_id = 1;
+  string status = 2;
+}
+
+message AdminModerateCredentialOrVerifierAbuseResponse {
+  EmpireVerifierAbuseReport abuse_report = 1;
+}
+
+// === Choice 5 (EM5): Contextual Directory & Introductions ===
+
+message EmpireContextualDirectoryProfile {
+  string id = 1;
+  string user_id = 2;
+  // expertise_advisory | city_presence | language_practice | project_collaboration | mentoring_office_hours | event_co_attendance
+  string directory_mode = 3;
+  string headline_expertise = 4;
+  string city = 5;
+  string languages_csv = 6;
+  string disclosed_fields_json = 7;
+  int32 weekly_intro_limit = 8;
+  bool quiet_period_active = 9;
+  bool mutual_connection_required = 10;
+  bool ranked_by_popularity = 11;
+  string updated_at = 12;
+}
+
+message EmpireContextualIntroductionRequest {
+  string id = 1;
+  string requester_user_id = 2;
+  string recipient_user_id = 3;
+  string recipient_handle = 4;
+  string purpose_mode = 5;
+  string shared_authored_context = 6;
+  string proposed_agenda = 7;
+  // pending_review | accepted_connected | declined_privately | expired_no_response | blocked_reported
+  string status = 8;
+  bool sensitive_inference_used = 9;
+  bool decline_score_penalty_applied = 10;
+  string created_at = 11;
+}
+
+message GetContextualDirectoryWorkbenchRequest {}
+
+message GetContextualDirectoryWorkbenchResponse {
+  EmpireContextualDirectoryProfile my_profile = 1;
+  repeated EmpireContextualDirectoryProfile peer_profiles = 2;
+  repeated EmpireContextualIntroductionRequest introduction_requests = 3;
+}
+
+message UpdateContextualDirectoryProfileRequest {
+  string directory_mode = 1;
+  string headline_expertise = 2;
+  string city = 3;
+  string languages_csv = 4;
+  string disclosed_fields_json = 5;
+  int32 weekly_intro_limit = 6;
+  bool quiet_period_active = 7;
+  bool mutual_connection_required = 8;
+}
+
+message UpdateContextualDirectoryProfileResponse {
+  EmpireContextualDirectoryProfile profile = 1;
+}
+
+message RequestOrRespondContextualIntroductionRequest {
+  string request_id = 1;
+  string recipient_handle = 2;
+  string purpose_mode = 3;
+  string shared_authored_context = 4;
+  string proposed_agenda = 5;
+  string status = 6;
+}
+
+message RequestOrRespondContextualIntroductionResponse {
+  EmpireContextualIntroductionRequest introduction_request = 1;
+}
+
+message AdminListContextualDirectoryAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListContextualDirectoryAuditResponse {
+  repeated EmpireContextualDirectoryProfile profiles = 1;
+  repeated EmpireContextualIntroductionRequest introduction_requests = 2;
+}
+
+message AdminModerateDirectoryIntroductionAbuseRequest {
+  string request_id = 1;
+  string status = 2;
+}
+
+message AdminModerateDirectoryIntroductionAbuseResponse {
+  EmpireContextualIntroductionRequest introduction_request = 1;
+}
+
+// === Choice 6 (EM6): Circles, Councils, and Projects ===
+
+message EmpireCircleCouncilSpace {
+  string id = 1;
+  string creator_user_id = 2;
+  // public_circle | private_council | invite_only_cohort | temporary_project
+  string space_kind = 3;
+  string title = 4;
+  string purpose_charter = 5;
+  // steward_host | council_chair | contributor | observer
+  string member_role = 6;
+  int32 member_count = 7;
+  int32 unanswered_questions_count = 8;
+  // balanced_participation | newcomer_prompts_needed | steward_attention
+  string voice_balance_status = 9;
+  // approved_space_sources_only | disabled_no_ai
+  string ai_grant_scope = 10;
+  bool ai_invented_consensus_blocked = 11;
+  bool post_volume_gamification_disabled = 12;
+  // active_space | archiving_work | closed_settled
+  string lifecycle_state = 13;
+  string created_at = 14;
+}
+
+message EmpireCircleProjectArtifact {
+  string id = 1;
+  string space_id = 2;
+  string author_user_id = 3;
+  // decision_record | project_milestone | office_hours_brief | closure_export_bundle
+  string artifact_type = 4;
+  string title = 5;
+  string source_citation_link = 6;
+  // live_in_space | exported_member_archive | settled_closed
+  string settlement_or_export_state = 7;
+  string created_at = 8;
+}
+
+message GetCirclesCouncilsWorkbenchRequest {}
+
+message GetCirclesCouncilsWorkbenchResponse {
+  repeated EmpireCircleCouncilSpace spaces = 1;
+  repeated EmpireCircleProjectArtifact artifacts = 2;
+}
+
+message CreateOrUpdateCircleCouncilSpaceRequest {
+  string space_id = 1;
+  string space_kind = 2;
+  string title = 3;
+  string purpose_charter = 4;
+  string member_role = 5;
+  string ai_grant_scope = 6;
+  string lifecycle_state = 7;
+}
+
+message CreateOrUpdateCircleCouncilSpaceResponse {
+  EmpireCircleCouncilSpace space = 1;
+}
+
+message RecordCircleArtifactOrCloseSpaceRequest {
+  string space_id = 1;
+  string artifact_type = 2;
+  string title = 3;
+  string source_citation_link = 4;
+  string settlement_or_export_state = 5;
+  bool close_and_settle_space = 6;
+}
+
+message RecordCircleArtifactOrCloseSpaceResponse {
+  EmpireCircleProjectArtifact artifact = 1;
+  EmpireCircleCouncilSpace space = 2;
+}
+
+message AdminListCirclesCouncilsAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListCirclesCouncilsAuditResponse {
+  repeated EmpireCircleCouncilSpace spaces = 1;
+  repeated EmpireCircleProjectArtifact artifacts = 2;
+}
+
+message AdminModerateCircleSpaceOrDisputeRequest {
+  string space_id = 1;
+  string lifecycle_state = 2;
+  string ai_grant_scope = 3;
+}
+
+message AdminModerateCircleSpaceOrDisputeResponse {
+  EmpireCircleCouncilSpace space = 1;
+}
+
+// === Choice 7 (EM7): Experiences & Access Passport ===
+
+message EmpireExperienceAccessPassportItem {
+  string id = 1;
+  string user_id = 2;
+  string experience_title = 3;
+  string city = 4;
+  string venue = 5;
+  string eligibility_rule_summary = 6;
+  string alternative_access_path = 7;
+  bool hidden_score_cutoff_used = 8;
+  // confirmed_locked | waitlisted_atomic | provider_pending | provider_unknown_reconciling | cancelled_refunded
+  string reservation_state = 9;
+  string accessibility_accommodation = 10;
+  // private_pass_only | salon_guests_only | public_profile_yearbook
+  string attendance_visibility_mode = 11;
+  string pass_token_digest = 12;
+  string starts_at = 13;
+}
+
+message EmpireHostExperienceOperationLog {
+  string id = 1;
+  string passport_item_id = 2;
+  string host_user_id = 3;
+  // announcement_sent | waitlist_promoted_once | accessibility_confirmed | provider_reconciled | refund_issued
+  string operation_kind = 4;
+  string operation_note = 5;
+  string created_at = 6;
+}
+
+message GetExperienceAccessPassportWorkbenchRequest {}
+
+message GetExperienceAccessPassportWorkbenchResponse {
+  repeated EmpireExperienceAccessPassportItem passport_items = 1;
+  repeated EmpireHostExperienceOperationLog operation_logs = 2;
+}
+
+message ReserveOrUpdateExperiencePassportItemRequest {
+  string passport_item_id = 1;
+  string experience_title = 2;
+  string city = 3;
+  string venue = 4;
+  string reservation_state = 5;
+  string accessibility_accommodation = 6;
+  string attendance_visibility_mode = 7;
+}
+
+message ReserveOrUpdateExperiencePassportItemResponse {
+  EmpireExperienceAccessPassportItem passport_item = 1;
+}
+
+message RecordHostExperienceOperationRequest {
+  string passport_item_id = 1;
+  string operation_kind = 2;
+  string operation_note = 3;
+  string updated_reservation_state = 4;
+}
+
+message RecordHostExperienceOperationResponse {
+  EmpireHostExperienceOperationLog operation_log = 1;
+  EmpireExperienceAccessPassportItem passport_item = 2;
+}
+
+message AdminListExperienceAccessPassportAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListExperienceAccessPassportAuditResponse {
+  repeated EmpireExperienceAccessPassportItem passport_items = 1;
+  repeated EmpireHostExperienceOperationLog operation_logs = 2;
+}
+
+message AdminReconcileExperienceReservationOrAppealRequest {
+  string passport_item_id = 1;
+  string reservation_state = 2;
+  string operation_note = 3;
+}
+
+message AdminReconcileExperienceReservationOrAppealResponse {
+  EmpireExperienceAccessPassportItem passport_item = 1;
+}
+
+// === Choice 8 (EM8): Member Feed & Editorial Intelligence ===
+
+message EmpireAuthoredFeedShareItem {
+  string id = 1;
+  string user_id = 2;
+  string source_pillar = 3;
+  // pillar_achievement | help_request | circle_dispatch | editorial_reflection
+  string share_category = 4;
+  string title = 5;
+  string redacted_body_preview = 6;
+  // opted_in_friends | circle_members | city_local | public_empire
+  string audience_scope = 7;
+  // chronological_pure | topic_curated | circle_relationships | local_city | quiet_essential
+  string feed_mode_origin = 8;
+  // active_published | preview_draft | revoked_by_author | moderated_repaired
+  string display_state = 9;
+  string expires_at = 10;
+  string created_at = 11;
+}
+
+message EmpireEditorialProvenanceCard {
+  string id = 1;
+  string user_id = 2;
+  string source_pillar = 3;
+  string article_title = 4;
+  string author_and_version = 5;
+  string rights_and_license = 6;
+  string correction_notice = 7;
+  bool generated_personalization_altered_facts = 8;
+  string published_at = 9;
+}
+
+message GetMemberFeedEditorialWorkbenchRequest {}
+
+message GetMemberFeedEditorialWorkbenchResponse {
+  repeated EmpireAuthoredFeedShareItem feed_shares = 1;
+  repeated EmpireEditorialProvenanceCard editorial_cards = 2;
+}
+
+message PreviewPublishOrRevokeFeedShareRequest {
+  string share_id = 1;
+  string source_pillar = 2;
+  string share_category = 3;
+  string title = 4;
+  string redacted_body_preview = 5;
+  string audience_scope = 6;
+  string feed_mode_origin = 7;
+  string display_state = 8;
+}
+
+message PreviewPublishOrRevokeFeedShareResponse {
+  EmpireAuthoredFeedShareItem feed_share = 1;
+}
+
+message RecordEditorialCorrectionOrResetModeRequest {
+  string card_id = 1;
+  string source_pillar = 2;
+  string article_title = 3;
+  string correction_notice = 4;
+}
+
+message RecordEditorialCorrectionOrResetModeResponse {
+  EmpireEditorialProvenanceCard editorial_card = 1;
+}
+
+message AdminListMemberFeedEditorialAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListMemberFeedEditorialAuditResponse {
+  repeated EmpireAuthoredFeedShareItem feed_shares = 1;
+  repeated EmpireEditorialProvenanceCard editorial_cards = 2;
+}
+
+message AdminModerateFeedShareOrEditorialCorrectionRequest {
+  string share_id = 1;
+  string display_state = 2;
+}
+
+message AdminModerateFeedShareOrEditorialCorrectionResponse {
+  EmpireAuthoredFeedShareItem feed_share = 1;
+}
+
+// === Choice 9 (EM9): Contribution & Gratitude Ledger ===
+
+message EmpireContributionLedgerEntry {
+  string id = 1;
+  string user_id = 2;
+  string contribution_code = 3;
+  // mentoring | hosting | reviewing | teaching | volunteering | creating | troubleshooting | member_service
+  string contribution_category = 4;
+  string title = 5;
+  string delivered_outcome_summary = 6;
+  string evidence_artifact_ref = 7;
+  string recipient_privacy_mode = 8;
+  string sponsor_disclosure_note = 9;
+  // verified_independent | reciprocal_ring_review | sponsor_conflict_flagged | cleared_by_governance
+  string anti_collusion_status = 10;
+  bool opt_in_introductions_and_benefits = 11;
+  bool popularity_decoupled_badge = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message EmpireGratitudeEndorsementReceipt {
+  string id = 1;
+  string user_id = 2;
+  string endorsement_code = 3;
+  string contribution_code = 4;
+  string peer_handle = 5;
+  // private_thank_you | verified_outcome_endorsement | correction_requested | sponsor_acknowledged
+  string endorsement_mode = 6;
+  string specific_outcome_note = 7;
+  // none | pending_author_review | corrected | admin_adjudicated
+  string correction_status = 8;
+  int32 reciprocal_farming_score_bps = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
+
+message GetContributionLedgerWorkbenchRequest {}
+
+message GetContributionLedgerWorkbenchResponse {
+  repeated EmpireContributionLedgerEntry contributions = 1;
+  repeated EmpireGratitudeEndorsementReceipt endorsements = 2;
+}
+
+message RecordContributionOrGratitudeEndorsementRequest {
+  string contribution_code = 1;
+  string contribution_category = 2;
+  string title = 3;
+  string delivered_outcome_summary = 4;
+  string evidence_artifact_ref = 5;
+  string recipient_privacy_mode = 6;
+  string sponsor_disclosure_note = 7;
+  bool opt_in_introductions_and_benefits = 8;
+  string endorsement_code = 9;
+  string peer_handle = 10;
+  string endorsement_mode = 11;
+  string specific_outcome_note = 12;
+}
+
+message RecordContributionOrGratitudeEndorsementResponse {
+  EmpireContributionLedgerEntry contribution = 1;
+  EmpireGratitudeEndorsementReceipt endorsement = 2;
+}
+
+message UpdateContributionVisibilityOrCorrectionRequest {
+  string contribution_code = 1;
+  bool opt_in_introductions_and_benefits = 2;
+  string endorsement_code = 3;
+  string correction_status = 4;
+}
+
+message UpdateContributionVisibilityOrCorrectionResponse {
+  EmpireContributionLedgerEntry contribution = 1;
+  EmpireGratitudeEndorsementReceipt endorsement = 2;
+}
+
+message AdminListContributionLedgerAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListContributionLedgerAuditResponse {
+  repeated EmpireContributionLedgerEntry contributions = 1;
+  repeated EmpireGratitudeEndorsementReceipt endorsements = 2;
+}
+
+message AdminModerateContributionCollusionOrSponsorRequest {
+  string contribution_code = 1;
+  string anti_collusion_status = 2;
+  string sponsor_disclosure_note = 3;
+}
+
+message AdminModerateContributionCollusionOrSponsorResponse {
+  EmpireContributionLedgerEntry contribution = 1;
+}
+
+// === Choice 10 (EM10): Benefits & Redemption Marketplace ===
+
+message EmpireLoyaltyPointsLedgerEntry {
+  string id = 1;
+  string user_id = 2;
+  string ledger_entry_code = 3;
+  string earn_rule_code = 4;
+  string source_event_summary = 5;
+  int32 points_delta = 6;
+  // pending | vested | expired | reversed | corrected
+  string vesting_state = 7;
+  int32 balance_version = 8;
+  bool non_cash_disclosure_accepted = 9;
+  string expiration_date = 10;
+  string correction_note = 11;
+  string created_at = 12;
+  string updated_at = 13;
+}
+
+message EmpireBenefitMarketplaceRedemption {
+  string id = 1;
+  string user_id = 2;
+  string redemption_code = 3;
+  // partner_discount | partner_experience | learning_credit | service_voucher | charitable_donation | guest_access_upgrade | member_created_offer
+  string benefit_category = 4;
+  string offer_title = 5;
+  string provider_name = 6;
+  int32 quoted_points_cost = 7;
+  int32 quoted_money_cents = 8;
+  int32 quoted_taxes_fees_cents = 9;
+  string refundability_policy = 10;
+  string privacy_disclosure_summary = 11;
+  // quoted | reserved | fulfilled | partial | canceled | refunded | disputed | provider_unknown
+  string redemption_state = 12;
+  string idempotency_key = 13;
+  string created_at = 14;
+  string updated_at = 15;
+}
+
+message GetBenefitsMarketplaceWorkbenchRequest {}
+
+message GetBenefitsMarketplaceWorkbenchResponse {
+  repeated EmpireLoyaltyPointsLedgerEntry points_ledger = 1;
+  repeated EmpireBenefitMarketplaceRedemption redemptions = 2;
+}
+
+message QuoteOrRedeemBenefitOfferRequest {
+  string redemption_code = 1;
+  string benefit_category = 2;
+  string offer_title = 3;
+  string provider_name = 4;
+  int32 quoted_points_cost = 5;
+  int32 quoted_money_cents = 6;
+  int32 quoted_taxes_fees_cents = 7;
+  string redemption_state = 8;
+  string idempotency_key = 9;
+}
+
+message QuoteOrRedeemBenefitOfferResponse {
+  EmpireBenefitMarketplaceRedemption redemption = 1;
+}
+
+message UpdateRedemptionDisputeOrCancelRequest {
+  string redemption_code = 1;
+  string redemption_state = 2;
+}
+
+message UpdateRedemptionDisputeOrCancelResponse {
+  EmpireBenefitMarketplaceRedemption redemption = 1;
+}
+
+message AdminListBenefitsMarketplaceAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListBenefitsMarketplaceAuditResponse {
+  repeated EmpireLoyaltyPointsLedgerEntry points_ledger = 1;
+  repeated EmpireBenefitMarketplaceRedemption redemptions = 2;
+}
+
+message AdminReconcileBenefitPointsOrRedemptionRequest {
+  string ledger_entry_code = 1;
+  string vesting_state = 2;
+  string correction_note = 3;
+  string redemption_code = 4;
+  string redemption_state = 5;
+}
+
+message AdminReconcileBenefitPointsOrRedemptionResponse {
+  EmpireLoyaltyPointsLedgerEntry points_entry = 1;
+  EmpireBenefitMarketplaceRedemption redemption = 2;
+}
+
+// === Choice 11 (EM11): Membership & Household Center ===
+
+message EmpireMembershipEntitlementLedger {
+  string id = 1;
+  string user_id = 2;
+  string ledger_code = 3;
+  string membership_tier = 4;
+  // individual | household | gifted | sponsored | enterprise | trial
+  string plan_modality = 5;
+  // active | paused | hardship_relief | downgrade_scheduled | canceled_export_preserved | payment_retry | refunded
+  string billing_state = 6;
+  int32 monthly_price_cents = 7;
+  int32 taxes_cents = 8;
+  string billing_region = 9;
+  string renewal_date = 10;
+  bool paid_vs_earned_separation_verified = 11;
+  string downgrade_loss_preview = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message EmpireHouseholdIdentitySeat {
+  string id = 1;
+  string user_id = 2;
+  string seat_code = 3;
+  string member_display_name = 4;
+  string independent_identity_did = 5;
+  // primary_sponsor | household_adult | household_youth | delegated_payer
+  string billing_role = 6;
+  string privacy_isolation_mode = 7;
+  // active_consented | invited_pending | exited_independent | suspended_by_admin
+  string consent_state = 8;
+  bool independent_exit_ready = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
+
+message GetMembershipHouseholdWorkbenchRequest {}
+
+message GetMembershipHouseholdWorkbenchResponse {
+  repeated EmpireMembershipEntitlementLedger ledgers = 1;
+  repeated EmpireHouseholdIdentitySeat household_seats = 2;
+}
+
+message PreviewOrExecuteMembershipLifecycleActionRequest {
+  string ledger_code = 1;
+  string membership_tier = 2;
+  string plan_modality = 3;
+  string billing_state = 4;
+  string downgrade_loss_preview = 5;
+}
+
+message PreviewOrExecuteMembershipLifecycleActionResponse {
+  EmpireMembershipEntitlementLedger ledger = 1;
+}
+
+message ManageHouseholdMemberSeatRequest {
+  string seat_code = 1;
+  string member_display_name = 2;
+  string billing_role = 3;
+  string consent_state = 4;
+}
+
+message ManageHouseholdMemberSeatResponse {
+  EmpireHouseholdIdentitySeat seat = 1;
+}
+
+message AdminListMembershipHouseholdAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListMembershipHouseholdAuditResponse {
+  repeated EmpireMembershipEntitlementLedger ledgers = 1;
+  repeated EmpireHouseholdIdentitySeat household_seats = 2;
+}
+
+message AdminResolveHardshipOrHouseholdDisputeRequest {
+  string ledger_code = 1;
+  string billing_state = 2;
+  string seat_code = 3;
+  string consent_state = 4;
+}
+
+message AdminResolveHardshipOrHouseholdDisputeResponse {
+  EmpireMembershipEntitlementLedger ledger = 1;
+  EmpireHouseholdIdentitySeat seat = 2;
+}
+
+// === Choice 12 (EM12): Unified Inbox & Communication Control ===
+
+message EmpireUnifiedInboxDispatch {
+  string id = 1;
+  string user_id = 2;
+  string dispatch_code = 3;
+  // transactional_notice | invitation | staff_reply | consequential_approval | reminder | editorial_digest | safety_alert | partner_update | social_message
+  string notice_category = 4;
+  string source_pillar = 5;
+  string subject_line = 6;
+  string explainable_reason = 7;
+  bool legally_or_operationally_required = 8;
+  string dedup_burst_group_key = 9;
+  bool lock_screen_redaction_active = 10;
+  string delivery_reconciliation_state = 11;
+  // unread | acknowledged | action_completed | archived | deleted_ordinary
+  string member_disposition = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message EmpireCommunicationChannelControl {
+  string id = 1;
+  string user_id = 2;
+  string control_code = 3;
+  string category_scope = 4;
+  string preferred_channels = 5;
+  string timezone_name = 6;
+  string quiet_hours_window = 7;
+  bool sensitive_lock_screen_masking = 8;
+  bool marketing_social_opted_out = 9;
+  bool required_notice_immutable_ack = 10;
+  string created_at = 11;
+  string updated_at = 12;
+}
+
+message GetUnifiedInboxWorkbenchRequest {}
+
+message GetUnifiedInboxWorkbenchResponse {
+  repeated EmpireUnifiedInboxDispatch dispatches = 1;
+  repeated EmpireCommunicationChannelControl controls = 2;
+}
+
+message UpdateCommunicationChannelControlRequest {
+  string control_code = 1;
+  string category_scope = 2;
+  string preferred_channels = 3;
+  string timezone_name = 4;
+  string quiet_hours_window = 5;
+  bool sensitive_lock_screen_masking = 6;
+  bool marketing_social_opted_out = 7;
+}
+
+message UpdateCommunicationChannelControlResponse {
+  EmpireCommunicationChannelControl control = 1;
+}
+
+message AcknowledgeOrDeleteInboxDispatchRequest {
+  string dispatch_code = 1;
+  string member_disposition = 2;
+}
+
+message AcknowledgeOrDeleteInboxDispatchResponse {
+  EmpireUnifiedInboxDispatch dispatch = 1;
+}
+
+message AdminListUnifiedInboxAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListUnifiedInboxAuditResponse {
+  repeated EmpireUnifiedInboxDispatch dispatches = 1;
+  repeated EmpireCommunicationChannelControl controls = 2;
+}
+
+message AdminManageRequiredNoticeOrBurstPolicyRequest {
+  string dispatch_code = 1;
+  string delivery_reconciliation_state = 2;
+  bool lock_screen_redaction_active = 3;
+}
+
+message AdminManageRequiredNoticeOrBurstPolicyResponse {
+  EmpireUnifiedInboxDispatch dispatch = 1;
+}
+
+// === Choice 13 (EM13): Ecosystem Concierge ===
+
+message EmpireConciergeServiceRequest {
+  string id = 1;
+  string user_id = 2;
+  string request_code = 3;
+  string routed_pillar = 4;
+  string skill_and_region = 5;
+  string assignee_role = 6;
+  string request_summary = 7;
+  int32 sla_target_hours = 8;
+  string minimum_packet_fields = 9;
+  string human_commitment_owner = 10;
+  int32 quoted_cost_cents = 11;
+  // triaged_ai_drafted | in_progress_human_owned | awaiting_member_approval | transferred_specialist | completed_satisfied | escalated_complaint | refunded_closed
+  string request_state = 12;
+  string next_action_summary = 13;
+  string created_at = 14;
+  string updated_at = 15;
+}
+
+message EmpireConciergePacketAccessLog {
+  string id = 1;
+  string user_id = 2;
+  string access_log_code = 3;
+  string request_code = 4;
+  string staff_actor_handle = 5;
+  string granted_pillar_scope = 6;
+  string purpose_statement = 7;
+  string attachment_safety_status = 8;
+  // active_scoped_grant | revoked_by_member | expired_after_closure | admin_audited
+  string member_grant_status = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
+
+message GetEcosystemConciergeWorkbenchRequest {}
+
+message GetEcosystemConciergeWorkbenchResponse {
+  repeated EmpireConciergeServiceRequest requests = 1;
+  repeated EmpireConciergePacketAccessLog access_logs = 2;
+}
+
+message CreateOrUpdateConciergeRequestRequest {
+  string request_code = 1;
+  string routed_pillar = 2;
+  string skill_and_region = 3;
+  string request_summary = 4;
+  string request_state = 5;
+  string next_action_summary = 6;
+}
+
+message CreateOrUpdateConciergeRequestResponse {
+  EmpireConciergeServiceRequest request = 1;
+}
+
+message ApproveOrEscalateConciergePacketRequest {
+  string access_log_code = 1;
+  string request_code = 2;
+  string granted_pillar_scope = 3;
+  string purpose_statement = 4;
+  string member_grant_status = 5;
+}
+
+message ApproveOrEscalateConciergePacketResponse {
+  EmpireConciergePacketAccessLog access_log = 1;
+}
+
+message AdminListEcosystemConciergeAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListEcosystemConciergeAuditResponse {
+  repeated EmpireConciergeServiceRequest requests = 1;
+  repeated EmpireConciergePacketAccessLog access_logs = 2;
+}
+
+message AdminResolveConciergeCommitmentOrEscalationRequest {
+  string request_code = 1;
+  string request_state = 2;
+  string human_commitment_owner = 3;
+}
+
+message AdminResolveConciergeCommitmentOrEscalationResponse {
+  EmpireConciergeServiceRequest request = 1;
+}
+
+// === Choice 14 (EM14): Personal Review & Life Narrative ===
+
+message EmpirePersonalReviewNarrative {
+  string id = 1;
+  string user_id = 2;
+  string narrative_code = 3;
+  // weekly | quarterly | annual | goal_completion | family_edition | member_defined
+  string review_cadence = 4;
+  string title = 5;
+  string measured_facts_summary = 6;
+  string member_reflection_notes = 7;
+  string editorial_and_ai_narrative = 8;
+  string factual_citations_csv = 9;
+  string redacted_scopes_csv = 10;
+  // digital_private | shared_circle | public_excerpt | immutable_print_proof
+  string preview_variant_mode = 11;
+  string wellbeing_tradeoff_note = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message EmpirePrintedYearbookOrder {
+  string id = 1;
+  string user_id = 2;
+  string print_order_code = 3;
+  string narrative_code = 4;
+  string immutable_proof_hash = 5;
+  string shipping_address_minimization_state = 6;
+  // proof_locked | printing_in_press | bound_and_dispatched | delivered_address_purged | reprint_issued | refunded_incident
+  string vendor_job_state = 7;
+  string address_deletion_schedule = 8;
+  string incident_or_reprint_note = 9;
+  string created_at = 10;
+  string updated_at = 11;
+}
+
+message GetPersonalReviewNarrativeWorkbenchRequest {}
+
+message GetPersonalReviewNarrativeWorkbenchResponse {
+  repeated EmpirePersonalReviewNarrative narratives = 1;
+  repeated EmpirePrintedYearbookOrder print_orders = 2;
+}
+
+message GenerateOrRedactLifeNarrativeReviewRequest {
+  string narrative_code = 1;
+  string review_cadence = 2;
+  string title = 3;
+  string member_reflection_notes = 4;
+  string redacted_scopes_csv = 5;
+  string preview_variant_mode = 6;
+  string wellbeing_tradeoff_note = 7;
+}
+
+message GenerateOrRedactLifeNarrativeReviewResponse {
+  EmpirePersonalReviewNarrative narrative = 1;
+}
+
+message OrderOrManagePrintedYearbookArtifactRequest {
+  string print_order_code = 1;
+  string narrative_code = 2;
+  string vendor_job_state = 3;
+  string incident_or_reprint_note = 4;
+}
+
+message OrderOrManagePrintedYearbookArtifactResponse {
+  EmpirePrintedYearbookOrder print_order = 1;
+}
+
+message AdminListPersonalReviewNarrativeAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListPersonalReviewNarrativeAuditResponse {
+  repeated EmpirePersonalReviewNarrative narratives = 1;
+  repeated EmpirePrintedYearbookOrder print_orders = 2;
+}
+
+message AdminManagePrintJobOrAddressPurgeRequest {
+  string print_order_code = 1;
+  string vendor_job_state = 2;
+  string shipping_address_minimization_state = 3;
+}
+
+message AdminManagePrintJobOrAddressPurgeResponse {
+  EmpirePrintedYearbookOrder print_order = 1;
+}
+
+// === Choice 15 (EM15): Member Governance & Independent Audit ===
+
+message EmpireGovernancePolicyBallot {
+  string id = 1;
+  string user_id = 2;
+  string ballot_code = 3;
+  // standing | moderation | recommendations | membership | benefits | data_use | ai_governance | cross_pillar_access
+  string constitution_domain = 4;
+  string policy_version_diff = 5;
+  string plain_language_summary = 6;
+  string advisory_question = 7;
+  string member_vote_choice = 8;
+  string member_commentary = 9;
+  string observer_sandbox_scope = 10;
+  string coi_declaration_status = 11;
+  // open_advisory_vote | vote_recorded | precedent_published | archived_diff
+  string ballot_state = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message EmpireConsequentialDecisionLedger {
+  string id = 1;
+  string user_id = 2;
+  string decision_code = 3;
+  string decision_origin = 4;
+  string evidence_class = 5;
+  string policy_version_ref = 6;
+  string decision_summary = 7;
+  string available_remedy = 8;
+  // no_appeal_filed | remedy_requested | under_independent_review | remedy_granted | upheld_with_precedent
+  string remedy_state = 9;
+  bool observer_raw_record_blocked = 10;
+  string created_at = 11;
+  string updated_at = 12;
+}
+
+message GetMemberGovernanceAuditWorkbenchRequest {}
+
+message GetMemberGovernanceAuditWorkbenchResponse {
+  repeated EmpireGovernancePolicyBallot ballots = 1;
+  repeated EmpireConsequentialDecisionLedger decisions = 2;
+}
+
+message SubmitAdvisoryPolicyProposalOrVoteRequest {
+  string ballot_code = 1;
+  string constitution_domain = 2;
+  string member_vote_choice = 3;
+  string member_commentary = 4;
+}
+
+message SubmitAdvisoryPolicyProposalOrVoteResponse {
+  EmpireGovernancePolicyBallot ballot = 1;
+}
+
+message RequestDecisionRemedyOrInspectPrecedentRequest {
+  string decision_code = 1;
+  string remedy_state = 2;
+}
+
+message RequestDecisionRemedyOrInspectPrecedentResponse {
+  EmpireConsequentialDecisionLedger decision = 1;
+}
+
+message AdminListMemberGovernanceAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListMemberGovernanceAuditResponse {
+  repeated EmpireGovernancePolicyBallot ballots = 1;
+  repeated EmpireConsequentialDecisionLedger decisions = 2;
+}
+
+message AdminCertifyPolicyDiffOrObserverBoundaryRequest {
+  string ballot_code = 1;
+  string ballot_state = 2;
+  string decision_code = 3;
+  string remedy_state = 4;
+}
+
+message AdminCertifyPolicyDiffOrObserverBoundaryResponse {
+  EmpireGovernancePolicyBallot ballot = 1;
+  EmpireConsequentialDecisionLedger decision = 2;
+}
+
 service EmpireService {
   // GetScoreBreakdown returns the caller's Sttattus Score with the
   // four weighted-bucket components — the glass-box the audit asks for.
@@ -974,4 +2326,110 @@ service EmpireService {
   // GetYearInEmpire returns the caller's annual recap — score, tier, points,
   // salons, top pillar — computed across the requested year.
   rpc GetYearInEmpire(GetYearInEmpireRequest) returns (GetYearInEmpireResponse);
+
+  // Choice 1 (EM1): Transparent Standing Constitution
+  rpc GetStandingConstitutionWorkbench(GetStandingConstitutionWorkbenchRequest) returns (GetStandingConstitutionWorkbenchResponse);
+  rpc UpdateStandingConstitutionMode(UpdateStandingConstitutionModeRequest) returns (UpdateStandingConstitutionModeResponse);
+  rpc FileStandingDisputeOrRecompute(FileStandingDisputeOrRecomputeRequest) returns (FileStandingDisputeOrRecomputeResponse);
+  rpc AdminListStandingConstitutionAudit(AdminListStandingConstitutionAuditRequest) returns (AdminListStandingConstitutionAuditResponse);
+  rpc AdminResolveStandingDisputeOrPolicy(AdminResolveStandingDisputeOrPolicyRequest) returns (AdminResolveStandingDisputeOrPolicyResponse);
+
+  // Choice 2 (EM2): Twelve-Pillar Today & Action Command Center
+  rpc GetTwelvePillarTodayWorkbench(GetTwelvePillarTodayWorkbenchRequest) returns (GetTwelvePillarTodayWorkbenchResponse);
+  rpc UpdateTodayCardDisposition(UpdateTodayCardDispositionRequest) returns (UpdateTodayCardDispositionResponse);
+  rpc ResolveCrossPillarConflict(ResolveCrossPillarConflictRequest) returns (ResolveCrossPillarConflictResponse);
+  rpc UpdateTodayOperatingMode(UpdateTodayOperatingModeRequest) returns (UpdateTodayOperatingModeResponse);
+  rpc AdminListTwelvePillarTodayAudit(AdminListTwelvePillarTodayAuditRequest) returns (AdminListTwelvePillarTodayAuditResponse);
+  rpc AdminManageTodayContractOrOutage(AdminManageTodayContractOrOutageRequest) returns (AdminManageTodayContractOrOutageResponse);
+
+  // Choice 3 (EM3): Goal & Life-Season Orchestrator
+  rpc GetGoalOrchestratorWorkbench(GetGoalOrchestratorWorkbenchRequest) returns (GetGoalOrchestratorWorkbenchResponse);
+  rpc CreateOrReplanLifeSeasonCampaign(CreateOrReplanLifeSeasonCampaignRequest) returns (CreateOrReplanLifeSeasonCampaignResponse);
+  rpc ApproveOrCompleteCampaignMilestone(ApproveOrCompleteCampaignMilestoneRequest) returns (ApproveOrCompleteCampaignMilestoneResponse);
+  rpc AdminListGoalOrchestratorAudit(AdminListGoalOrchestratorAuditRequest) returns (AdminListGoalOrchestratorAuditResponse);
+  rpc AdminModerateCampaignCapabilityOrHandoff(AdminModerateCampaignCapabilityOrHandoffRequest) returns (AdminModerateCampaignCapabilityOrHandoffResponse);
+
+  // Choice 4 (EM4): Portable Achievement Wallet
+  rpc GetAchievementWalletWorkbench(GetAchievementWalletWorkbenchRequest) returns (GetAchievementWalletWorkbenchResponse);
+  rpc MintPortableAchievementCredential(MintPortableAchievementCredentialRequest) returns (MintPortableAchievementCredentialResponse);
+  rpc RevokeOrVerifyPortableCredential(RevokeOrVerifyPortableCredentialRequest) returns (RevokeOrVerifyPortableCredentialResponse);
+  rpc AdminListAchievementWalletAudit(AdminListAchievementWalletAuditRequest) returns (AdminListAchievementWalletAuditResponse);
+  rpc AdminModerateCredentialOrVerifierAbuse(AdminModerateCredentialOrVerifierAbuseRequest) returns (AdminModerateCredentialOrVerifierAbuseResponse);
+
+  // Choice 5 (EM5): Contextual Directory & Introductions
+  rpc GetContextualDirectoryWorkbench(GetContextualDirectoryWorkbenchRequest) returns (GetContextualDirectoryWorkbenchResponse);
+  rpc UpdateContextualDirectoryProfile(UpdateContextualDirectoryProfileRequest) returns (UpdateContextualDirectoryProfileResponse);
+  rpc RequestOrRespondContextualIntroduction(RequestOrRespondContextualIntroductionRequest) returns (RequestOrRespondContextualIntroductionResponse);
+  rpc AdminListContextualDirectoryAudit(AdminListContextualDirectoryAuditRequest) returns (AdminListContextualDirectoryAuditResponse);
+  rpc AdminModerateDirectoryIntroductionAbuse(AdminModerateDirectoryIntroductionAbuseRequest) returns (AdminModerateDirectoryIntroductionAbuseResponse);
+
+  // Choice 6 (EM6): Circles, Councils, and Projects
+  rpc GetCirclesCouncilsWorkbench(GetCirclesCouncilsWorkbenchRequest) returns (GetCirclesCouncilsWorkbenchResponse);
+  rpc CreateOrUpdateCircleCouncilSpace(CreateOrUpdateCircleCouncilSpaceRequest) returns (CreateOrUpdateCircleCouncilSpaceResponse);
+  rpc RecordCircleArtifactOrCloseSpace(RecordCircleArtifactOrCloseSpaceRequest) returns (RecordCircleArtifactOrCloseSpaceResponse);
+  rpc AdminListCirclesCouncilsAudit(AdminListCirclesCouncilsAuditRequest) returns (AdminListCirclesCouncilsAuditResponse);
+  rpc AdminModerateCircleSpaceOrDispute(AdminModerateCircleSpaceOrDisputeRequest) returns (AdminModerateCircleSpaceOrDisputeResponse);
+
+  // Choice 7 (EM7): Experiences & Access Passport
+  rpc GetExperienceAccessPassportWorkbench(GetExperienceAccessPassportWorkbenchRequest) returns (GetExperienceAccessPassportWorkbenchResponse);
+  rpc ReserveOrUpdateExperiencePassportItem(ReserveOrUpdateExperiencePassportItemRequest) returns (ReserveOrUpdateExperiencePassportItemResponse);
+  rpc RecordHostExperienceOperation(RecordHostExperienceOperationRequest) returns (RecordHostExperienceOperationResponse);
+  rpc AdminListExperienceAccessPassportAudit(AdminListExperienceAccessPassportAuditRequest) returns (AdminListExperienceAccessPassportAuditResponse);
+  rpc AdminReconcileExperienceReservationOrAppeal(AdminReconcileExperienceReservationOrAppealRequest) returns (AdminReconcileExperienceReservationOrAppealResponse);
+
+  // Choice 8 (EM8): Member Feed & Editorial Intelligence
+  rpc GetMemberFeedEditorialWorkbench(GetMemberFeedEditorialWorkbenchRequest) returns (GetMemberFeedEditorialWorkbenchResponse);
+  rpc PreviewPublishOrRevokeFeedShare(PreviewPublishOrRevokeFeedShareRequest) returns (PreviewPublishOrRevokeFeedShareResponse);
+  rpc RecordEditorialCorrectionOrResetMode(RecordEditorialCorrectionOrResetModeRequest) returns (RecordEditorialCorrectionOrResetModeResponse);
+  rpc AdminListMemberFeedEditorialAudit(AdminListMemberFeedEditorialAuditRequest) returns (AdminListMemberFeedEditorialAuditResponse);
+  rpc AdminModerateFeedShareOrEditorialCorrection(AdminModerateFeedShareOrEditorialCorrectionRequest) returns (AdminModerateFeedShareOrEditorialCorrectionResponse);
+
+  // Choice 9 (EM9): Contribution & Gratitude Ledger
+  rpc GetContributionLedgerWorkbench(GetContributionLedgerWorkbenchRequest) returns (GetContributionLedgerWorkbenchResponse);
+  rpc RecordContributionOrGratitudeEndorsement(RecordContributionOrGratitudeEndorsementRequest) returns (RecordContributionOrGratitudeEndorsementResponse);
+  rpc UpdateContributionVisibilityOrCorrection(UpdateContributionVisibilityOrCorrectionRequest) returns (UpdateContributionVisibilityOrCorrectionResponse);
+  rpc AdminListContributionLedgerAudit(AdminListContributionLedgerAuditRequest) returns (AdminListContributionLedgerAuditResponse);
+  rpc AdminModerateContributionCollusionOrSponsor(AdminModerateContributionCollusionOrSponsorRequest) returns (AdminModerateContributionCollusionOrSponsorResponse);
+
+  // Choice 10 (EM10): Benefits & Redemption Marketplace
+  rpc GetBenefitsMarketplaceWorkbench(GetBenefitsMarketplaceWorkbenchRequest) returns (GetBenefitsMarketplaceWorkbenchResponse);
+  rpc QuoteOrRedeemBenefitOffer(QuoteOrRedeemBenefitOfferRequest) returns (QuoteOrRedeemBenefitOfferResponse);
+  rpc UpdateRedemptionDisputeOrCancel(UpdateRedemptionDisputeOrCancelRequest) returns (UpdateRedemptionDisputeOrCancelResponse);
+  rpc AdminListBenefitsMarketplaceAudit(AdminListBenefitsMarketplaceAuditRequest) returns (AdminListBenefitsMarketplaceAuditResponse);
+  rpc AdminReconcileBenefitPointsOrRedemption(AdminReconcileBenefitPointsOrRedemptionRequest) returns (AdminReconcileBenefitPointsOrRedemptionResponse);
+
+  // Choice 11 (EM11): Membership & Household Center
+  rpc GetMembershipHouseholdWorkbench(GetMembershipHouseholdWorkbenchRequest) returns (GetMembershipHouseholdWorkbenchResponse);
+  rpc PreviewOrExecuteMembershipLifecycleAction(PreviewOrExecuteMembershipLifecycleActionRequest) returns (PreviewOrExecuteMembershipLifecycleActionResponse);
+  rpc ManageHouseholdMemberSeat(ManageHouseholdMemberSeatRequest) returns (ManageHouseholdMemberSeatResponse);
+  rpc AdminListMembershipHouseholdAudit(AdminListMembershipHouseholdAuditRequest) returns (AdminListMembershipHouseholdAuditResponse);
+  rpc AdminResolveHardshipOrHouseholdDispute(AdminResolveHardshipOrHouseholdDisputeRequest) returns (AdminResolveHardshipOrHouseholdDisputeResponse);
+
+  // Choice 12 (EM12): Unified Inbox & Communication Control
+  rpc GetUnifiedInboxWorkbench(GetUnifiedInboxWorkbenchRequest) returns (GetUnifiedInboxWorkbenchResponse);
+  rpc UpdateCommunicationChannelControl(UpdateCommunicationChannelControlRequest) returns (UpdateCommunicationChannelControlResponse);
+  rpc AcknowledgeOrDeleteInboxDispatch(AcknowledgeOrDeleteInboxDispatchRequest) returns (AcknowledgeOrDeleteInboxDispatchResponse);
+  rpc AdminListUnifiedInboxAudit(AdminListUnifiedInboxAuditRequest) returns (AdminListUnifiedInboxAuditResponse);
+  rpc AdminManageRequiredNoticeOrBurstPolicy(AdminManageRequiredNoticeOrBurstPolicyRequest) returns (AdminManageRequiredNoticeOrBurstPolicyResponse);
+
+  // Choice 13 (EM13): Ecosystem Concierge
+  rpc GetEcosystemConciergeWorkbench(GetEcosystemConciergeWorkbenchRequest) returns (GetEcosystemConciergeWorkbenchResponse);
+  rpc CreateOrUpdateConciergeRequest(CreateOrUpdateConciergeRequestRequest) returns (CreateOrUpdateConciergeRequestResponse);
+  rpc ApproveOrEscalateConciergePacket(ApproveOrEscalateConciergePacketRequest) returns (ApproveOrEscalateConciergePacketResponse);
+  rpc AdminListEcosystemConciergeAudit(AdminListEcosystemConciergeAuditRequest) returns (AdminListEcosystemConciergeAuditResponse);
+  rpc AdminResolveConciergeCommitmentOrEscalation(AdminResolveConciergeCommitmentOrEscalationRequest) returns (AdminResolveConciergeCommitmentOrEscalationResponse);
+
+  // Choice 14 (EM14): Personal Review & Life Narrative
+  rpc GetPersonalReviewNarrativeWorkbench(GetPersonalReviewNarrativeWorkbenchRequest) returns (GetPersonalReviewNarrativeWorkbenchResponse);
+  rpc GenerateOrRedactLifeNarrativeReview(GenerateOrRedactLifeNarrativeReviewRequest) returns (GenerateOrRedactLifeNarrativeReviewResponse);
+  rpc OrderOrManagePrintedYearbookArtifact(OrderOrManagePrintedYearbookArtifactRequest) returns (OrderOrManagePrintedYearbookArtifactResponse);
+  rpc AdminListPersonalReviewNarrativeAudit(AdminListPersonalReviewNarrativeAuditRequest) returns (AdminListPersonalReviewNarrativeAuditResponse);
+  rpc AdminManagePrintJobOrAddressPurge(AdminManagePrintJobOrAddressPurgeRequest) returns (AdminManagePrintJobOrAddressPurgeResponse);
+
+  // Choice 15 (EM15): Member Governance & Independent Audit
+  rpc GetMemberGovernanceAuditWorkbench(GetMemberGovernanceAuditWorkbenchRequest) returns (GetMemberGovernanceAuditWorkbenchResponse);
+  rpc SubmitAdvisoryPolicyProposalOrVote(SubmitAdvisoryPolicyProposalOrVoteRequest) returns (SubmitAdvisoryPolicyProposalOrVoteResponse);
+  rpc RequestDecisionRemedyOrInspectPrecedent(RequestDecisionRemedyOrInspectPrecedentRequest) returns (RequestDecisionRemedyOrInspectPrecedentResponse);
+  rpc AdminListMemberGovernanceAudit(AdminListMemberGovernanceAuditRequest) returns (AdminListMemberGovernanceAuditResponse);
+  rpc AdminCertifyPolicyDiffOrObserverBoundary(AdminCertifyPolicyDiffOrObserverBoundaryRequest) returns (AdminCertifyPolicyDiffOrObserverBoundaryResponse);
 }

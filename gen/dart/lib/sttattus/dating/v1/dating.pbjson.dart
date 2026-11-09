@@ -3667,3 +3667,1778 @@ final $typed_data.Uint8List setPrimaryDatingPhotoResponseDescriptor =
     $convert.base64Decode(
         'Ch1TZXRQcmltYXJ5RGF0aW5nUGhvdG9SZXNwb25zZRI3CgZwaG90b3MYASADKAsyHy5zdHRhdH'
         'R1cy5kYXRpbmcudjEuRGF0aW5nUGhvdG9SBnBob3Rvcw==');
+
+@$core.Deprecated('Use atlasRelationshipAgreementDescriptor instead')
+const AtlasRelationshipAgreement$json = {
+  '1': 'AtlasRelationshipAgreement',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'partner_user_id', '3': 3, '4': 1, '5': 9, '10': 'partnerUserId'},
+    {'1': 'partner_name', '3': 4, '4': 1, '5': 9, '10': 'partnerName'},
+    {'1': 'current_stage', '3': 5, '4': 1, '5': 9, '10': 'currentStage'},
+    {'1': 'stage_structure', '3': 6, '4': 1, '5': 9, '10': 'stageStructure'},
+    {'1': 'discovery_paused', '3': 7, '4': 1, '5': 8, '10': 'discoveryPaused'},
+    {'1': 'pacing_cadence', '3': 8, '4': 1, '5': 9, '10': 'pacingCadence'},
+    {
+      '1': 'shared_boundaries_json',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedBoundariesJson'
+    },
+    {'1': 'previous_stage', '3': 10, '4': 1, '5': 9, '10': 'previousStage'},
+    {'1': 'updated_at', '3': 11, '4': 1, '5': 3, '10': 'updatedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasRelationshipAgreement`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasRelationshipAgreementDescriptor = $convert.base64Decode(
+    'ChpBdGxhc1JlbGF0aW9uc2hpcEFncmVlbWVudBIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl9pZB'
+    'gCIAEoCVIGdXNlcklkEiYKD3BhcnRuZXJfdXNlcl9pZBgDIAEoCVINcGFydG5lclVzZXJJZBIh'
+    'CgxwYXJ0bmVyX25hbWUYBCABKAlSC3BhcnRuZXJOYW1lEiMKDWN1cnJlbnRfc3RhZ2UYBSABKA'
+    'lSDGN1cnJlbnRTdGFnZRInCg9zdGFnZV9zdHJ1Y3R1cmUYBiABKAlSDnN0YWdlU3RydWN0dXJl'
+    'EikKEGRpc2NvdmVyeV9wYXVzZWQYByABKAhSD2Rpc2NvdmVyeVBhdXNlZBIlCg5wYWNpbmdfY2'
+    'FkZW5jZRgIIAEoCVINcGFjaW5nQ2FkZW5jZRI0ChZzaGFyZWRfYm91bmRhcmllc19qc29uGAkg'
+    'ASgJUhRzaGFyZWRCb3VuZGFyaWVzSnNvbhIlCg5wcmV2aW91c19zdGFnZRgKIAEoCVINcHJldm'
+    'lvdXNTdGFnZRIdCgp1cGRhdGVkX2F0GAsgASgDUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use atlasRelationshipCheckinDescriptor instead')
+const AtlasRelationshipCheckin$json = {
+  '1': 'AtlasRelationshipCheckin',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'agreement_id', '3': 2, '4': 1, '5': 9, '10': 'agreementId'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'topic_category', '3': 4, '4': 1, '5': 9, '10': 'topicCategory'},
+    {'1': 'my_reflection', '3': 5, '4': 1, '5': 9, '10': 'myReflection'},
+    {'1': 'visibility_mode', '3': 6, '4': 1, '5': 9, '10': 'visibilityMode'},
+    {'1': 'alignment_state', '3': 7, '4': 1, '5': 9, '10': 'alignmentState'},
+    {
+      '1': 'licensed_boundary_verified',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'licensedBoundaryVerified'
+    },
+    {
+      '1': 'moderation_status',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'moderationStatus'
+    },
+    {'1': 'created_at', '3': 10, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasRelationshipCheckin`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasRelationshipCheckinDescriptor = $convert.base64Decode(
+    'ChhBdGxhc1JlbGF0aW9uc2hpcENoZWNraW4SDgoCaWQYASABKAlSAmlkEiEKDGFncmVlbWVudF'
+    '9pZBgCIAEoCVILYWdyZWVtZW50SWQSFwoHdXNlcl9pZBgDIAEoCVIGdXNlcklkEiUKDnRvcGlj'
+    'X2NhdGVnb3J5GAQgASgJUg10b3BpY0NhdGVnb3J5EiMKDW15X3JlZmxlY3Rpb24YBSABKAlSDG'
+    '15UmVmbGVjdGlvbhInCg92aXNpYmlsaXR5X21vZGUYBiABKAlSDnZpc2liaWxpdHlNb2RlEicK'
+    'D2FsaWdubWVudF9zdGF0ZRgHIAEoCVIOYWxpZ25tZW50U3RhdGUSPAoabGljZW5zZWRfYm91bm'
+    'RhcnlfdmVyaWZpZWQYCCABKAhSGGxpY2Vuc2VkQm91bmRhcnlWZXJpZmllZBIrChFtb2RlcmF0'
+    'aW9uX3N0YXR1cxgJIAEoCVIQbW9kZXJhdGlvblN0YXR1cxIdCgpjcmVhdGVkX2F0GAogASgDUg'
+    'ljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use atlasUncouplingPlanDescriptor instead')
+const AtlasUncouplingPlan$json = {
+  '1': 'AtlasUncouplingPlan',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'agreement_id', '3': 2, '4': 1, '5': 9, '10': 'agreementId'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'separation_state', '3': 4, '4': 1, '5': 9, '10': 'separationState'},
+    {
+      '1': 'shared_media_policy',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedMediaPolicy'
+    },
+    {
+      '1': 'shared_plans_policy',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedPlansPolicy'
+    },
+    {
+      '1': 'mutual_discovery_block',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'mutualDiscoveryBlock'
+    },
+    {'1': 'closure_note', '3': 8, '4': 1, '5': 9, '10': 'closureNote'},
+    {'1': 'resolved_at', '3': 9, '4': 1, '5': 3, '10': 'resolvedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasUncouplingPlan`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasUncouplingPlanDescriptor = $convert.base64Decode(
+    'ChNBdGxhc1VuY291cGxpbmdQbGFuEg4KAmlkGAEgASgJUgJpZBIhCgxhZ3JlZW1lbnRfaWQYAi'
+    'ABKAlSC2FncmVlbWVudElkEhcKB3VzZXJfaWQYAyABKAlSBnVzZXJJZBIpChBzZXBhcmF0aW9u'
+    'X3N0YXRlGAQgASgJUg9zZXBhcmF0aW9uU3RhdGUSLgoTc2hhcmVkX21lZGlhX3BvbGljeRgFIA'
+    'EoCVIRc2hhcmVkTWVkaWFQb2xpY3kSLgoTc2hhcmVkX3BsYW5zX3BvbGljeRgGIAEoCVIRc2hh'
+    'cmVkUGxhbnNQb2xpY3kSNAoWbXV0dWFsX2Rpc2NvdmVyeV9ibG9jaxgHIAEoCFIUbXV0dWFsRG'
+    'lzY292ZXJ5QmxvY2sSIQoMY2xvc3VyZV9ub3RlGAggASgJUgtjbG9zdXJlTm90ZRIfCgtyZXNv'
+    'bHZlZF9hdBgJIAEoA1IKcmVzb2x2ZWRBdA==');
+
+@$core.Deprecated(
+    'Use getRelationshipProgressionWorkbenchRequestDescriptor instead')
+const GetRelationshipProgressionWorkbenchRequest$json = {
+  '1': 'GetRelationshipProgressionWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetRelationshipProgressionWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getRelationshipProgressionWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXRSZWxhdGlvbnNoaXBQcm9ncmVzc2lvbldvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklk');
+
+@$core.Deprecated(
+    'Use getRelationshipProgressionWorkbenchResponseDescriptor instead')
+const GetRelationshipProgressionWorkbenchResponse$json = {
+  '1': 'GetRelationshipProgressionWorkbenchResponse',
+  '2': [
+    {
+      '1': 'agreements',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipAgreement',
+      '10': 'agreements'
+    },
+    {
+      '1': 'checkins',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipCheckin',
+      '10': 'checkins'
+    },
+    {
+      '1': 'uncoupling_plans',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasUncouplingPlan',
+      '10': 'uncouplingPlans'
+    },
+    {
+      '1': 'licensed_provider_boundary_notice',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'licensedProviderBoundaryNotice'
+    },
+  ],
+};
+
+/// Descriptor for `GetRelationshipProgressionWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getRelationshipProgressionWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXRSZWxhdGlvbnNoaXBQcm9ncmVzc2lvbldvcmtiZW5jaFJlc3BvbnNlEk4KCmFncmVlbW'
+        'VudHMYASADKAsyLi5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNSZWxhdGlvbnNoaXBBZ3JlZW1l'
+        'bnRSCmFncmVlbWVudHMSSAoIY2hlY2tpbnMYAiADKAsyLC5zdHRhdHR1cy5kYXRpbmcudjEuQX'
+        'RsYXNSZWxhdGlvbnNoaXBDaGVja2luUghjaGVja2lucxJSChB1bmNvdXBsaW5nX3BsYW5zGAMg'
+        'AygLMicuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzVW5jb3VwbGluZ1BsYW5SD3VuY291cGxpbm'
+        'dQbGFucxJJCiFsaWNlbnNlZF9wcm92aWRlcl9ib3VuZGFyeV9ub3RpY2UYBCABKAlSHmxpY2Vu'
+        'c2VkUHJvdmlkZXJCb3VuZGFyeU5vdGljZQ==');
+
+@$core
+    .Deprecated('Use upsertRelationshipStageAgreementRequestDescriptor instead')
+const UpsertRelationshipStageAgreementRequest$json = {
+  '1': 'UpsertRelationshipStageAgreementRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'partner_user_id', '3': 2, '4': 1, '5': 9, '10': 'partnerUserId'},
+    {'1': 'partner_name', '3': 3, '4': 1, '5': 9, '10': 'partnerName'},
+    {'1': 'current_stage', '3': 4, '4': 1, '5': 9, '10': 'currentStage'},
+    {'1': 'stage_structure', '3': 5, '4': 1, '5': 9, '10': 'stageStructure'},
+    {'1': 'discovery_paused', '3': 6, '4': 1, '5': 8, '10': 'discoveryPaused'},
+    {'1': 'pacing_cadence', '3': 7, '4': 1, '5': 9, '10': 'pacingCadence'},
+    {
+      '1': 'shared_boundaries_json',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedBoundariesJson'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertRelationshipStageAgreementRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertRelationshipStageAgreementRequestDescriptor = $convert.base64Decode(
+    'CidVcHNlcnRSZWxhdGlvbnNoaXBTdGFnZUFncmVlbWVudFJlcXVlc3QSFwoHdXNlcl9pZBgBIA'
+    'EoCVIGdXNlcklkEiYKD3BhcnRuZXJfdXNlcl9pZBgCIAEoCVINcGFydG5lclVzZXJJZBIhCgxw'
+    'YXJ0bmVyX25hbWUYAyABKAlSC3BhcnRuZXJOYW1lEiMKDWN1cnJlbnRfc3RhZ2UYBCABKAlSDG'
+    'N1cnJlbnRTdGFnZRInCg9zdGFnZV9zdHJ1Y3R1cmUYBSABKAlSDnN0YWdlU3RydWN0dXJlEikK'
+    'EGRpc2NvdmVyeV9wYXVzZWQYBiABKAhSD2Rpc2NvdmVyeVBhdXNlZBIlCg5wYWNpbmdfY2FkZW'
+    '5jZRgHIAEoCVINcGFjaW5nQ2FkZW5jZRI0ChZzaGFyZWRfYm91bmRhcmllc19qc29uGAggASgJ'
+    'UhRzaGFyZWRCb3VuZGFyaWVzSnNvbg==');
+
+@$core.Deprecated(
+    'Use upsertRelationshipStageAgreementResponseDescriptor instead')
+const UpsertRelationshipStageAgreementResponse$json = {
+  '1': 'UpsertRelationshipStageAgreementResponse',
+  '2': [
+    {
+      '1': 'agreement',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipAgreement',
+      '10': 'agreement'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertRelationshipStageAgreementResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertRelationshipStageAgreementResponseDescriptor =
+    $convert.base64Decode(
+        'CihVcHNlcnRSZWxhdGlvbnNoaXBTdGFnZUFncmVlbWVudFJlc3BvbnNlEkwKCWFncmVlbWVudB'
+        'gBIAEoCzIuLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc1JlbGF0aW9uc2hpcEFncmVlbWVudFIJ'
+        'YWdyZWVtZW50');
+
+@$core.Deprecated(
+    'Use recordRelationshipCheckinReflectionRequestDescriptor instead')
+const RecordRelationshipCheckinReflectionRequest$json = {
+  '1': 'RecordRelationshipCheckinReflectionRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'agreement_id', '3': 2, '4': 1, '5': 9, '10': 'agreementId'},
+    {'1': 'topic_category', '3': 3, '4': 1, '5': 9, '10': 'topicCategory'},
+    {'1': 'my_reflection', '3': 4, '4': 1, '5': 9, '10': 'myReflection'},
+    {'1': 'visibility_mode', '3': 5, '4': 1, '5': 9, '10': 'visibilityMode'},
+    {'1': 'alignment_state', '3': 6, '4': 1, '5': 9, '10': 'alignmentState'},
+  ],
+};
+
+/// Descriptor for `RecordRelationshipCheckinReflectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    recordRelationshipCheckinReflectionRequestDescriptor =
+    $convert.base64Decode(
+        'CipSZWNvcmRSZWxhdGlvbnNoaXBDaGVja2luUmVmbGVjdGlvblJlcXVlc3QSFwoHdXNlcl9pZB'
+        'gBIAEoCVIGdXNlcklkEiEKDGFncmVlbWVudF9pZBgCIAEoCVILYWdyZWVtZW50SWQSJQoOdG9w'
+        'aWNfY2F0ZWdvcnkYAyABKAlSDXRvcGljQ2F0ZWdvcnkSIwoNbXlfcmVmbGVjdGlvbhgEIAEoCV'
+        'IMbXlSZWZsZWN0aW9uEicKD3Zpc2liaWxpdHlfbW9kZRgFIAEoCVIOdmlzaWJpbGl0eU1vZGUS'
+        'JwoPYWxpZ25tZW50X3N0YXRlGAYgASgJUg5hbGlnbm1lbnRTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use recordRelationshipCheckinReflectionResponseDescriptor instead')
+const RecordRelationshipCheckinReflectionResponse$json = {
+  '1': 'RecordRelationshipCheckinReflectionResponse',
+  '2': [
+    {
+      '1': 'checkin',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipCheckin',
+      '10': 'checkin'
+    },
+  ],
+};
+
+/// Descriptor for `RecordRelationshipCheckinReflectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    recordRelationshipCheckinReflectionResponseDescriptor =
+    $convert.base64Decode(
+        'CitSZWNvcmRSZWxhdGlvbnNoaXBDaGVja2luUmVmbGVjdGlvblJlc3BvbnNlEkYKB2NoZWNraW'
+        '4YASABKAsyLC5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNSZWxhdGlvbnNoaXBDaGVja2luUgdj'
+        'aGVja2lu');
+
+@$core.Deprecated('Use initiateSafeUncouplingPlanRequestDescriptor instead')
+const InitiateSafeUncouplingPlanRequest$json = {
+  '1': 'InitiateSafeUncouplingPlanRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'agreement_id', '3': 2, '4': 1, '5': 9, '10': 'agreementId'},
+    {'1': 'separation_state', '3': 3, '4': 1, '5': 9, '10': 'separationState'},
+    {
+      '1': 'shared_media_policy',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedMediaPolicy'
+    },
+    {
+      '1': 'shared_plans_policy',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'sharedPlansPolicy'
+    },
+    {
+      '1': 'mutual_discovery_block',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'mutualDiscoveryBlock'
+    },
+    {'1': 'closure_note', '3': 7, '4': 1, '5': 9, '10': 'closureNote'},
+  ],
+};
+
+/// Descriptor for `InitiateSafeUncouplingPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initiateSafeUncouplingPlanRequestDescriptor = $convert.base64Decode(
+    'CiFJbml0aWF0ZVNhZmVVbmNvdXBsaW5nUGxhblJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCVIGdX'
+    'NlcklkEiEKDGFncmVlbWVudF9pZBgCIAEoCVILYWdyZWVtZW50SWQSKQoQc2VwYXJhdGlvbl9z'
+    'dGF0ZRgDIAEoCVIPc2VwYXJhdGlvblN0YXRlEi4KE3NoYXJlZF9tZWRpYV9wb2xpY3kYBCABKA'
+    'lSEXNoYXJlZE1lZGlhUG9saWN5Ei4KE3NoYXJlZF9wbGFuc19wb2xpY3kYBSABKAlSEXNoYXJl'
+    'ZFBsYW5zUG9saWN5EjQKFm11dHVhbF9kaXNjb3ZlcnlfYmxvY2sYBiABKAhSFG11dHVhbERpc2'
+    'NvdmVyeUJsb2NrEiEKDGNsb3N1cmVfbm90ZRgHIAEoCVILY2xvc3VyZU5vdGU=');
+
+@$core.Deprecated('Use initiateSafeUncouplingPlanResponseDescriptor instead')
+const InitiateSafeUncouplingPlanResponse$json = {
+  '1': 'InitiateSafeUncouplingPlanResponse',
+  '2': [
+    {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasUncouplingPlan',
+      '10': 'plan'
+    },
+  ],
+};
+
+/// Descriptor for `InitiateSafeUncouplingPlanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List initiateSafeUncouplingPlanResponseDescriptor =
+    $convert.base64Decode(
+        'CiJJbml0aWF0ZVNhZmVVbmNvdXBsaW5nUGxhblJlc3BvbnNlEjsKBHBsYW4YASABKAsyJy5zdH'
+        'RhdHR1cy5kYXRpbmcudjEuQXRsYXNVbmNvdXBsaW5nUGxhblIEcGxhbg==');
+
+@$core.Deprecated(
+    'Use adminListRelationshipProgressionAuditRequestDescriptor instead')
+const AdminListRelationshipProgressionAuditRequest$json = {
+  '1': 'AdminListRelationshipProgressionAuditRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `AdminListRelationshipProgressionAuditRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminListRelationshipProgressionAuditRequestDescriptor =
+    $convert.base64Decode(
+        'CixBZG1pbkxpc3RSZWxhdGlvbnNoaXBQcm9ncmVzc2lvbkF1ZGl0UmVxdWVzdBIUCgVsaW1pdB'
+        'gBIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated(
+    'Use adminListRelationshipProgressionAuditResponseDescriptor instead')
+const AdminListRelationshipProgressionAuditResponse$json = {
+  '1': 'AdminListRelationshipProgressionAuditResponse',
+  '2': [
+    {
+      '1': 'agreements',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipAgreement',
+      '10': 'agreements'
+    },
+    {
+      '1': 'checkins',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipCheckin',
+      '10': 'checkins'
+    },
+    {
+      '1': 'uncoupling_plans',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasUncouplingPlan',
+      '10': 'uncouplingPlans'
+    },
+  ],
+};
+
+/// Descriptor for `AdminListRelationshipProgressionAuditResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminListRelationshipProgressionAuditResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1BZG1pbkxpc3RSZWxhdGlvbnNoaXBQcm9ncmVzc2lvbkF1ZGl0UmVzcG9uc2USTgoKYWdyZW'
+        'VtZW50cxgBIAMoCzIuLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc1JlbGF0aW9uc2hpcEFncmVl'
+        'bWVudFIKYWdyZWVtZW50cxJICghjaGVja2lucxgCIAMoCzIsLnN0dGF0dHVzLmRhdGluZy52MS'
+        '5BdGxhc1JlbGF0aW9uc2hpcENoZWNraW5SCGNoZWNraW5zElIKEHVuY291cGxpbmdfcGxhbnMY'
+        'AyADKAsyJy5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNVbmNvdXBsaW5nUGxhblIPdW5jb3VwbG'
+        'luZ1BsYW5z');
+
+@$core.Deprecated(
+    'Use adminModerateRelationshipPromptSafetyRequestDescriptor instead')
+const AdminModerateRelationshipPromptSafetyRequest$json = {
+  '1': 'AdminModerateRelationshipPromptSafetyRequest',
+  '2': [
+    {'1': 'checkin_id', '3': 1, '4': 1, '5': 9, '10': 'checkinId'},
+    {
+      '1': 'moderation_status',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'moderationStatus'
+    },
+    {
+      '1': 'licensed_boundary_verified',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'licensedBoundaryVerified'
+    },
+    {'1': 'audit_reason', '3': 4, '4': 1, '5': 9, '10': 'auditReason'},
+  ],
+};
+
+/// Descriptor for `AdminModerateRelationshipPromptSafetyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminModerateRelationshipPromptSafetyRequestDescriptor =
+    $convert.base64Decode(
+        'CixBZG1pbk1vZGVyYXRlUmVsYXRpb25zaGlwUHJvbXB0U2FmZXR5UmVxdWVzdBIdCgpjaGVja2'
+        'luX2lkGAEgASgJUgljaGVja2luSWQSKwoRbW9kZXJhdGlvbl9zdGF0dXMYAiABKAlSEG1vZGVy'
+        'YXRpb25TdGF0dXMSPAoabGljZW5zZWRfYm91bmRhcnlfdmVyaWZpZWQYAyABKAhSGGxpY2Vuc2'
+        'VkQm91bmRhcnlWZXJpZmllZBIhCgxhdWRpdF9yZWFzb24YBCABKAlSC2F1ZGl0UmVhc29u');
+
+@$core.Deprecated(
+    'Use adminModerateRelationshipPromptSafetyResponseDescriptor instead')
+const AdminModerateRelationshipPromptSafetyResponse$json = {
+  '1': 'AdminModerateRelationshipPromptSafetyResponse',
+  '2': [
+    {
+      '1': 'checkin',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasRelationshipCheckin',
+      '10': 'checkin'
+    },
+  ],
+};
+
+/// Descriptor for `AdminModerateRelationshipPromptSafetyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminModerateRelationshipPromptSafetyResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1BZG1pbk1vZGVyYXRlUmVsYXRpb25zaGlwUHJvbXB0U2FmZXR5UmVzcG9uc2USRgoHY2hlY2'
+        'tpbhgBIAEoCzIsLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc1JlbGF0aW9uc2hpcENoZWNraW5S'
+        'B2NoZWNraW4=');
+
+@$core.Deprecated('Use atlasTemporaryCrewDescriptor instead')
+const AtlasTemporaryCrew$json = {
+  '1': 'AtlasTemporaryCrew',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'creator_user_id', '3': 2, '4': 1, '5': 9, '10': 'creatorUserId'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'intent_lane', '3': 4, '4': 1, '5': 9, '10': 'intentLane'},
+    {'1': 'city', '3': 5, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'member_role', '3': 6, '4': 1, '5': 9, '10': 'memberRole'},
+    {'1': 'member_count', '3': 7, '4': 1, '5': 5, '10': 'memberCount'},
+    {'1': 'max_members', '3': 8, '4': 1, '5': 5, '10': 'maxMembers'},
+    {'1': 'expense_mode', '3': 9, '4': 1, '5': 9, '10': 'expenseMode'},
+    {
+      '1': 'estimated_share_cents',
+      '3': 10,
+      '4': 1,
+      '5': 5,
+      '10': 'estimatedShareCents'
+    },
+    {'1': 'lifecycle_state', '3': 11, '4': 1, '5': 9, '10': 'lifecycleState'},
+    {
+      '1': 'romantic_lane_isolated',
+      '3': 12,
+      '4': 1,
+      '5': 8,
+      '10': 'romanticLaneIsolated'
+    },
+    {'1': 'dissolves_at', '3': 13, '4': 1, '5': 3, '10': 'dissolvesAt'},
+  ],
+};
+
+/// Descriptor for `AtlasTemporaryCrew`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasTemporaryCrewDescriptor = $convert.base64Decode(
+    'ChJBdGxhc1RlbXBvcmFyeUNyZXcSDgoCaWQYASABKAlSAmlkEiYKD2NyZWF0b3JfdXNlcl9pZB'
+    'gCIAEoCVINY3JlYXRvclVzZXJJZBIUCgV0aXRsZRgDIAEoCVIFdGl0bGUSHwoLaW50ZW50X2xh'
+    'bmUYBCABKAlSCmludGVudExhbmUSEgoEY2l0eRgFIAEoCVIEY2l0eRIfCgttZW1iZXJfcm9sZR'
+    'gGIAEoCVIKbWVtYmVyUm9sZRIhCgxtZW1iZXJfY291bnQYByABKAVSC21lbWJlckNvdW50Eh8K'
+    'C21heF9tZW1iZXJzGAggASgFUgptYXhNZW1iZXJzEiEKDGV4cGVuc2VfbW9kZRgJIAEoCVILZX'
+    'hwZW5zZU1vZGUSMgoVZXN0aW1hdGVkX3NoYXJlX2NlbnRzGAogASgFUhNlc3RpbWF0ZWRTaGFy'
+    'ZUNlbnRzEicKD2xpZmVjeWNsZV9zdGF0ZRgLIAEoCVIObGlmZWN5Y2xlU3RhdGUSNAoWcm9tYW'
+    '50aWNfbGFuZV9pc29sYXRlZBgMIAEoCFIUcm9tYW50aWNMYW5lSXNvbGF0ZWQSIQoMZGlzc29s'
+    'dmVzX2F0GA0gASgDUgtkaXNzb2x2ZXNBdA==');
+
+@$core.Deprecated('Use atlasCrewSocialMissionDescriptor instead')
+const AtlasCrewSocialMission$json = {
+  '1': 'AtlasCrewSocialMission',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'crew_id', '3': 2, '4': 1, '5': 9, '10': 'crewId'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'mission_title', '3': 4, '4': 1, '5': 9, '10': 'missionTitle'},
+    {'1': 'category', '3': 5, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'evidence_kind', '3': 6, '4': 1, '5': 9, '10': 'evidenceKind'},
+    {
+      '1': 'evidence_reference',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'evidenceReference'
+    },
+    {
+      '1': 'verification_status',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {'1': 'completed_at', '3': 9, '4': 1, '5': 3, '10': 'completedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasCrewSocialMission`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasCrewSocialMissionDescriptor = $convert.base64Decode(
+    'ChZBdGxhc0NyZXdTb2NpYWxNaXNzaW9uEg4KAmlkGAEgASgJUgJpZBIXCgdjcmV3X2lkGAIgAS'
+    'gJUgZjcmV3SWQSFwoHdXNlcl9pZBgDIAEoCVIGdXNlcklkEiMKDW1pc3Npb25fdGl0bGUYBCAB'
+    'KAlSDG1pc3Npb25UaXRsZRIaCghjYXRlZ29yeRgFIAEoCVIIY2F0ZWdvcnkSIwoNZXZpZGVuY2'
+    'Vfa2luZBgGIAEoCVIMZXZpZGVuY2VLaW5kEi0KEmV2aWRlbmNlX3JlZmVyZW5jZRgHIAEoCVIR'
+    'ZXZpZGVuY2VSZWZlcmVuY2USLwoTdmVyaWZpY2F0aW9uX3N0YXR1cxgIIAEoCVISdmVyaWZpY2'
+    'F0aW9uU3RhdHVzEiEKDGNvbXBsZXRlZF9hdBgJIAEoA1ILY29tcGxldGVkQXQ=');
+
+@$core.Deprecated('Use atlasContextualCrewEndorsementDescriptor instead')
+const AtlasContextualCrewEndorsement$json = {
+  '1': 'AtlasContextualCrewEndorsement',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'crew_id', '3': 2, '4': 1, '5': 9, '10': 'crewId'},
+    {'1': 'recipient_user_id', '3': 3, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'context_badge', '3': 4, '4': 1, '5': 9, '10': 'contextBadge'},
+    {
+      '1': 'universal_ranking_prohibited',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'universalRankingProhibited'
+    },
+    {'1': 'endorsement_note', '3': 6, '4': 1, '5': 9, '10': 'endorsementNote'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasContextualCrewEndorsement`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasContextualCrewEndorsementDescriptor = $convert.base64Decode(
+    'Ch5BdGxhc0NvbnRleHR1YWxDcmV3RW5kb3JzZW1lbnQSDgoCaWQYASABKAlSAmlkEhcKB2NyZX'
+    'dfaWQYAiABKAlSBmNyZXdJZBIqChFyZWNpcGllbnRfdXNlcl9pZBgDIAEoCVIPcmVjaXBpZW50'
+    'VXNlcklkEiMKDWNvbnRleHRfYmFkZ2UYBCABKAlSDGNvbnRleHRCYWRnZRJAChx1bml2ZXJzYW'
+    'xfcmFua2luZ19wcm9oaWJpdGVkGAUgASgIUhp1bml2ZXJzYWxSYW5raW5nUHJvaGliaXRlZBIp'
+    'ChBlbmRvcnNlbWVudF9ub3RlGAYgASgJUg9lbmRvcnNlbWVudE5vdGUSHQoKY3JlYXRlZF9hdB'
+    'gHIAEoA1IJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use getFriendshipCrewsWorkbenchRequestDescriptor instead')
+const GetFriendshipCrewsWorkbenchRequest$json = {
+  '1': 'GetFriendshipCrewsWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetFriendshipCrewsWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFriendshipCrewsWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CiJHZXRGcmllbmRzaGlwQ3Jld3NXb3JrYmVuY2hSZXF1ZXN0EhcKB3VzZXJfaWQYASABKAlSBn'
+        'VzZXJJZA==');
+
+@$core.Deprecated('Use getFriendshipCrewsWorkbenchResponseDescriptor instead')
+const GetFriendshipCrewsWorkbenchResponse$json = {
+  '1': 'GetFriendshipCrewsWorkbenchResponse',
+  '2': [
+    {
+      '1': 'crews',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasTemporaryCrew',
+      '10': 'crews'
+    },
+    {
+      '1': 'missions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasCrewSocialMission',
+      '10': 'missions'
+    },
+    {
+      '1': 'endorsements',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasContextualCrewEndorsement',
+      '10': 'endorsements'
+    },
+  ],
+};
+
+/// Descriptor for `GetFriendshipCrewsWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getFriendshipCrewsWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CiNHZXRGcmllbmRzaGlwQ3Jld3NXb3JrYmVuY2hSZXNwb25zZRI8CgVjcmV3cxgBIAMoCzImLn'
+        'N0dGF0dHVzLmRhdGluZy52MS5BdGxhc1RlbXBvcmFyeUNyZXdSBWNyZXdzEkYKCG1pc3Npb25z'
+        'GAIgAygLMiouc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzQ3Jld1NvY2lhbE1pc3Npb25SCG1pc3'
+        'Npb25zElYKDGVuZG9yc2VtZW50cxgDIAMoCzIyLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc0Nv'
+        'bnRleHR1YWxDcmV3RW5kb3JzZW1lbnRSDGVuZG9yc2VtZW50cw==');
+
+@$core.Deprecated('Use createTemporaryCrewRequestDescriptor instead')
+const CreateTemporaryCrewRequest$json = {
+  '1': 'CreateTemporaryCrewRequest',
+  '2': [
+    {'1': 'creator_user_id', '3': 1, '4': 1, '5': 9, '10': 'creatorUserId'},
+    {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'intent_lane', '3': 3, '4': 1, '5': 9, '10': 'intentLane'},
+    {'1': 'city', '3': 4, '4': 1, '5': 9, '10': 'city'},
+    {'1': 'member_role', '3': 5, '4': 1, '5': 9, '10': 'memberRole'},
+    {'1': 'max_members', '3': 6, '4': 1, '5': 5, '10': 'maxMembers'},
+    {'1': 'expense_mode', '3': 7, '4': 1, '5': 9, '10': 'expenseMode'},
+    {
+      '1': 'estimated_share_cents',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'estimatedShareCents'
+    },
+  ],
+};
+
+/// Descriptor for `CreateTemporaryCrewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTemporaryCrewRequestDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVUZW1wb3JhcnlDcmV3UmVxdWVzdBImCg9jcmVhdG9yX3VzZXJfaWQYASABKAlSDW'
+    'NyZWF0b3JVc2VySWQSFAoFdGl0bGUYAiABKAlSBXRpdGxlEh8KC2ludGVudF9sYW5lGAMgASgJ'
+    'UgppbnRlbnRMYW5lEhIKBGNpdHkYBCABKAlSBGNpdHkSHwoLbWVtYmVyX3JvbGUYBSABKAlSCm'
+    '1lbWJlclJvbGUSHwoLbWF4X21lbWJlcnMYBiABKAVSCm1heE1lbWJlcnMSIQoMZXhwZW5zZV9t'
+    'b2RlGAcgASgJUgtleHBlbnNlTW9kZRIyChVlc3RpbWF0ZWRfc2hhcmVfY2VudHMYCCABKAVSE2'
+    'VzdGltYXRlZFNoYXJlQ2VudHM=');
+
+@$core.Deprecated('Use createTemporaryCrewResponseDescriptor instead')
+const CreateTemporaryCrewResponse$json = {
+  '1': 'CreateTemporaryCrewResponse',
+  '2': [
+    {
+      '1': 'crew',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasTemporaryCrew',
+      '10': 'crew'
+    },
+  ],
+};
+
+/// Descriptor for `CreateTemporaryCrewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createTemporaryCrewResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVUZW1wb3JhcnlDcmV3UmVzcG9uc2USOgoEY3JldxgBIAEoCzImLnN0dGF0dHVzLm'
+        'RhdGluZy52MS5BdGxhc1RlbXBvcmFyeUNyZXdSBGNyZXc=');
+
+@$core.Deprecated('Use submitCrewMissionEvidenceRequestDescriptor instead')
+const SubmitCrewMissionEvidenceRequest$json = {
+  '1': 'SubmitCrewMissionEvidenceRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'crew_id', '3': 2, '4': 1, '5': 9, '10': 'crewId'},
+    {'1': 'mission_title', '3': 3, '4': 1, '5': 9, '10': 'missionTitle'},
+    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
+    {'1': 'evidence_kind', '3': 5, '4': 1, '5': 9, '10': 'evidenceKind'},
+    {
+      '1': 'evidence_reference',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'evidenceReference'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCrewMissionEvidenceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCrewMissionEvidenceRequestDescriptor = $convert.base64Decode(
+    'CiBTdWJtaXRDcmV3TWlzc2lvbkV2aWRlbmNlUmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2'
+    'VySWQSFwoHY3Jld19pZBgCIAEoCVIGY3Jld0lkEiMKDW1pc3Npb25fdGl0bGUYAyABKAlSDG1p'
+    'c3Npb25UaXRsZRIaCghjYXRlZ29yeRgEIAEoCVIIY2F0ZWdvcnkSIwoNZXZpZGVuY2Vfa2luZB'
+    'gFIAEoCVIMZXZpZGVuY2VLaW5kEi0KEmV2aWRlbmNlX3JlZmVyZW5jZRgGIAEoCVIRZXZpZGVu'
+    'Y2VSZWZlcmVuY2U=');
+
+@$core.Deprecated('Use submitCrewMissionEvidenceResponseDescriptor instead')
+const SubmitCrewMissionEvidenceResponse$json = {
+  '1': 'SubmitCrewMissionEvidenceResponse',
+  '2': [
+    {
+      '1': 'mission',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasCrewSocialMission',
+      '10': 'mission'
+    },
+  ],
+};
+
+/// Descriptor for `SubmitCrewMissionEvidenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List submitCrewMissionEvidenceResponseDescriptor =
+    $convert.base64Decode(
+        'CiFTdWJtaXRDcmV3TWlzc2lvbkV2aWRlbmNlUmVzcG9uc2USRAoHbWlzc2lvbhgBIAEoCzIqLn'
+        'N0dGF0dHVzLmRhdGluZy52MS5BdGxhc0NyZXdTb2NpYWxNaXNzaW9uUgdtaXNzaW9u');
+
+@$core.Deprecated('Use dissolveOrCompleteCrewRequestDescriptor instead')
+const DissolveOrCompleteCrewRequest$json = {
+  '1': 'DissolveOrCompleteCrewRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'crew_id', '3': 2, '4': 1, '5': 9, '10': 'crewId'},
+    {'1': 'lifecycle_state', '3': 3, '4': 1, '5': 9, '10': 'lifecycleState'},
+    {'1': 'context_badge', '3': 4, '4': 1, '5': 9, '10': 'contextBadge'},
+    {'1': 'endorsement_note', '3': 5, '4': 1, '5': 9, '10': 'endorsementNote'},
+  ],
+};
+
+/// Descriptor for `DissolveOrCompleteCrewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dissolveOrCompleteCrewRequestDescriptor = $convert.base64Decode(
+    'Ch1EaXNzb2x2ZU9yQ29tcGxldGVDcmV3UmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUgZ1c2VySW'
+    'QSFwoHY3Jld19pZBgCIAEoCVIGY3Jld0lkEicKD2xpZmVjeWNsZV9zdGF0ZRgDIAEoCVIObGlm'
+    'ZWN5Y2xlU3RhdGUSIwoNY29udGV4dF9iYWRnZRgEIAEoCVIMY29udGV4dEJhZGdlEikKEGVuZG'
+    '9yc2VtZW50X25vdGUYBSABKAlSD2VuZG9yc2VtZW50Tm90ZQ==');
+
+@$core.Deprecated('Use dissolveOrCompleteCrewResponseDescriptor instead')
+const DissolveOrCompleteCrewResponse$json = {
+  '1': 'DissolveOrCompleteCrewResponse',
+  '2': [
+    {
+      '1': 'crew',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasTemporaryCrew',
+      '10': 'crew'
+    },
+    {
+      '1': 'endorsement',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasContextualCrewEndorsement',
+      '10': 'endorsement'
+    },
+  ],
+};
+
+/// Descriptor for `DissolveOrCompleteCrewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dissolveOrCompleteCrewResponseDescriptor =
+    $convert.base64Decode(
+        'Ch5EaXNzb2x2ZU9yQ29tcGxldGVDcmV3UmVzcG9uc2USOgoEY3JldxgBIAEoCzImLnN0dGF0dH'
+        'VzLmRhdGluZy52MS5BdGxhc1RlbXBvcmFyeUNyZXdSBGNyZXcSVAoLZW5kb3JzZW1lbnQYAiAB'
+        'KAsyMi5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNDb250ZXh0dWFsQ3Jld0VuZG9yc2VtZW50Ug'
+        'tlbmRvcnNlbWVudA==');
+
+@$core.Deprecated('Use adminListFriendshipCrewsAuditRequestDescriptor instead')
+const AdminListFriendshipCrewsAuditRequest$json = {
+  '1': 'AdminListFriendshipCrewsAuditRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `AdminListFriendshipCrewsAuditRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminListFriendshipCrewsAuditRequestDescriptor =
+    $convert.base64Decode(
+        'CiRBZG1pbkxpc3RGcmllbmRzaGlwQ3Jld3NBdWRpdFJlcXVlc3QSFAoFbGltaXQYASABKAVSBW'
+        'xpbWl0');
+
+@$core.Deprecated('Use adminListFriendshipCrewsAuditResponseDescriptor instead')
+const AdminListFriendshipCrewsAuditResponse$json = {
+  '1': 'AdminListFriendshipCrewsAuditResponse',
+  '2': [
+    {
+      '1': 'crews',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasTemporaryCrew',
+      '10': 'crews'
+    },
+    {
+      '1': 'missions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasCrewSocialMission',
+      '10': 'missions'
+    },
+    {
+      '1': 'endorsements',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasContextualCrewEndorsement',
+      '10': 'endorsements'
+    },
+  ],
+};
+
+/// Descriptor for `AdminListFriendshipCrewsAuditResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminListFriendshipCrewsAuditResponseDescriptor =
+    $convert.base64Decode(
+        'CiVBZG1pbkxpc3RGcmllbmRzaGlwQ3Jld3NBdWRpdFJlc3BvbnNlEjwKBWNyZXdzGAEgAygLMi'
+        'Yuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzVGVtcG9yYXJ5Q3Jld1IFY3Jld3MSRgoIbWlzc2lv'
+        'bnMYAiADKAsyKi5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNDcmV3U29jaWFsTWlzc2lvblIIbW'
+        'lzc2lvbnMSVgoMZW5kb3JzZW1lbnRzGAMgAygLMjIuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFz'
+        'Q29udGV4dHVhbENyZXdFbmRvcnNlbWVudFIMZW5kb3JzZW1lbnRz');
+
+@$core.Deprecated(
+    'Use adminModerateCrewSafetyAndMissionRequestDescriptor instead')
+const AdminModerateCrewSafetyAndMissionRequest$json = {
+  '1': 'AdminModerateCrewSafetyAndMissionRequest',
+  '2': [
+    {'1': 'mission_id', '3': 1, '4': 1, '5': 9, '10': 'missionId'},
+    {
+      '1': 'verification_status',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'verificationStatus'
+    },
+    {'1': 'audit_reason', '3': 3, '4': 1, '5': 9, '10': 'auditReason'},
+  ],
+};
+
+/// Descriptor for `AdminModerateCrewSafetyAndMissionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminModerateCrewSafetyAndMissionRequestDescriptor =
+    $convert.base64Decode(
+        'CihBZG1pbk1vZGVyYXRlQ3Jld1NhZmV0eUFuZE1pc3Npb25SZXF1ZXN0Eh0KCm1pc3Npb25faW'
+        'QYASABKAlSCW1pc3Npb25JZBIvChN2ZXJpZmljYXRpb25fc3RhdHVzGAIgASgJUhJ2ZXJpZmlj'
+        'YXRpb25TdGF0dXMSIQoMYXVkaXRfcmVhc29uGAMgASgJUgthdWRpdFJlYXNvbg==');
+
+@$core.Deprecated(
+    'Use adminModerateCrewSafetyAndMissionResponseDescriptor instead')
+const AdminModerateCrewSafetyAndMissionResponse$json = {
+  '1': 'AdminModerateCrewSafetyAndMissionResponse',
+  '2': [
+    {
+      '1': 'mission',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasCrewSocialMission',
+      '10': 'mission'
+    },
+  ],
+};
+
+/// Descriptor for `AdminModerateCrewSafetyAndMissionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminModerateCrewSafetyAndMissionResponseDescriptor = $convert.base64Decode(
+        'CilBZG1pbk1vZGVyYXRlQ3Jld1NhZmV0eUFuZE1pc3Npb25SZXNwb25zZRJECgdtaXNzaW9uGA'
+        'EgASgLMiouc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzQ3Jld1NvY2lhbE1pc3Npb25SB21pc3Np'
+        'b24=');
+
+@$core.Deprecated('Use atlasConnectionArchiveEntryDescriptor instead')
+const AtlasConnectionArchiveEntry$json = {
+  '1': 'AtlasConnectionArchiveEntry',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'artifact_kind', '3': 3, '4': 1, '5': 9, '10': 'artifactKind'},
+    {'1': 'title', '3': 4, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 5, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'audience_scope', '3': 6, '4': 1, '5': 9, '10': 'audienceScope'},
+    {
+      '1': 'post_match_disposition',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'postMatchDisposition'
+    },
+    {
+      '1': 'authorship_version',
+      '3': 8,
+      '4': 1,
+      '5': 5,
+      '10': 'authorshipVersion'
+    },
+    {'1': 'created_at', '3': 9, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasConnectionArchiveEntry`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasConnectionArchiveEntryDescriptor = $convert.base64Decode(
+    'ChtBdGxhc0Nvbm5lY3Rpb25BcmNoaXZlRW50cnkSDgoCaWQYASABKAlSAmlkEhcKB3VzZXJfaW'
+    'QYAiABKAlSBnVzZXJJZBIjCg1hcnRpZmFjdF9raW5kGAMgASgJUgxhcnRpZmFjdEtpbmQSFAoF'
+    'dGl0bGUYBCABKAlSBXRpdGxlEhgKB3N1bW1hcnkYBSABKAlSB3N1bW1hcnkSJQoOYXVkaWVuY2'
+    'Vfc2NvcGUYBiABKAlSDWF1ZGllbmNlU2NvcGUSNAoWcG9zdF9tYXRjaF9kaXNwb3NpdGlvbhgH'
+    'IAEoCVIUcG9zdE1hdGNoRGlzcG9zaXRpb24SLQoSYXV0aG9yc2hpcF92ZXJzaW9uGAggASgFUh'
+    'FhdXRob3JzaGlwVmVyc2lvbhIdCgpjcmVhdGVkX2F0GAkgASgDUgljcmVhdGVkQXQ=');
+
+@$core.Deprecated('Use atlasMeaningfulGiftGuardrailDescriptor instead')
+const AtlasMeaningfulGiftGuardrail$json = {
+  '1': 'AtlasMeaningfulGiftGuardrail',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'sender_user_id', '3': 2, '4': 1, '5': 9, '10': 'senderUserId'},
+    {'1': 'recipient_user_id', '3': 3, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'gift_title', '3': 4, '4': 1, '5': 9, '10': 'giftTitle'},
+    {'1': 'gift_kind', '3': 5, '4': 1, '5': 9, '10': 'giftKind'},
+    {'1': 'spend_cents', '3': 6, '4': 1, '5': 5, '10': 'spendCents'},
+    {'1': 'monthly_cap_cents', '3': 7, '4': 1, '5': 5, '10': 'monthlyCapCents'},
+    {
+      '1': 'recipient_preference',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'recipientPreference'
+    },
+    {
+      '1': 'ranking_or_match_advantage_granted',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'rankingOrMatchAdvantageGranted'
+    },
+    {'1': 'dispute_status', '3': 10, '4': 1, '5': 9, '10': 'disputeStatus'},
+    {'1': 'created_at', '3': 11, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasMeaningfulGiftGuardrail`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasMeaningfulGiftGuardrailDescriptor = $convert.base64Decode(
+    'ChxBdGxhc01lYW5pbmdmdWxHaWZ0R3VhcmRyYWlsEg4KAmlkGAEgASgJUgJpZBIkCg5zZW5kZX'
+    'JfdXNlcl9pZBgCIAEoCVIMc2VuZGVyVXNlcklkEioKEXJlY2lwaWVudF91c2VyX2lkGAMgASgJ'
+    'Ug9yZWNpcGllbnRVc2VySWQSHQoKZ2lmdF90aXRsZRgEIAEoCVIJZ2lmdFRpdGxlEhsKCWdpZn'
+    'Rfa2luZBgFIAEoCVIIZ2lmdEtpbmQSHwoLc3BlbmRfY2VudHMYBiABKAVSCnNwZW5kQ2VudHMS'
+    'KgoRbW9udGhseV9jYXBfY2VudHMYByABKAVSD21vbnRobHlDYXBDZW50cxIxChRyZWNpcGllbn'
+    'RfcHJlZmVyZW5jZRgIIAEoCVITcmVjaXBpZW50UHJlZmVyZW5jZRJKCiJyYW5raW5nX29yX21h'
+    'dGNoX2FkdmFudGFnZV9ncmFudGVkGAkgASgIUh5yYW5raW5nT3JNYXRjaEFkdmFudGFnZUdyYW'
+    '50ZWQSJQoOZGlzcHV0ZV9zdGF0dXMYCiABKAlSDWRpc3B1dGVTdGF0dXMSHQoKY3JlYXRlZF9h'
+    'dBgLIAEoA1IJY3JlYXRlZEF0');
+
+@$core.Deprecated('Use atlasYearbookPreviewManifestDescriptor instead')
+const AtlasYearbookPreviewManifest$json = {
+  '1': 'AtlasYearbookPreviewManifest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'year_label', '3': 3, '4': 1, '5': 9, '10': 'yearLabel'},
+    {
+      '1': 'selected_entry_count',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'selectedEntryCount'
+    },
+    {
+      '1': 'preview_quotes_verified',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'previewQuotesVerified'
+    },
+    {
+      '1': 'no_inferred_moments_verified',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'noInferredMomentsVerified'
+    },
+    {'1': 'print_status', '3': 7, '4': 1, '5': 9, '10': 'printStatus'},
+    {'1': 'updated_at', '3': 8, '4': 1, '5': 3, '10': 'updatedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasYearbookPreviewManifest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasYearbookPreviewManifestDescriptor = $convert.base64Decode(
+    'ChxBdGxhc1llYXJib29rUHJldmlld01hbmlmZXN0Eg4KAmlkGAEgASgJUgJpZBIXCgd1c2VyX2'
+    'lkGAIgASgJUgZ1c2VySWQSHQoKeWVhcl9sYWJlbBgDIAEoCVIJeWVhckxhYmVsEjAKFHNlbGVj'
+    'dGVkX2VudHJ5X2NvdW50GAQgASgFUhJzZWxlY3RlZEVudHJ5Q291bnQSNgoXcHJldmlld19xdW'
+    '90ZXNfdmVyaWZpZWQYBSABKAhSFXByZXZpZXdRdW90ZXNWZXJpZmllZBI/Chxub19pbmZlcnJl'
+    'ZF9tb21lbnRzX3ZlcmlmaWVkGAYgASgIUhlub0luZmVycmVkTW9tZW50c1ZlcmlmaWVkEiEKDH'
+    'ByaW50X3N0YXR1cxgHIAEoCVILcHJpbnRTdGF0dXMSHQoKdXBkYXRlZF9hdBgIIAEoA1IJdXBk'
+    'YXRlZEF0');
+
+@$core.Deprecated('Use getConnectionArchiveWorkbenchRequestDescriptor instead')
+const GetConnectionArchiveWorkbenchRequest$json = {
+  '1': 'GetConnectionArchiveWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetConnectionArchiveWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getConnectionArchiveWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CiRHZXRDb25uZWN0aW9uQXJjaGl2ZVdvcmtiZW5jaFJlcXVlc3QSFwoHdXNlcl9pZBgBIAEoCV'
+        'IGdXNlcklk');
+
+@$core.Deprecated('Use getConnectionArchiveWorkbenchResponseDescriptor instead')
+const GetConnectionArchiveWorkbenchResponse$json = {
+  '1': 'GetConnectionArchiveWorkbenchResponse',
+  '2': [
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasConnectionArchiveEntry',
+      '10': 'entries'
+    },
+    {
+      '1': 'gifts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasMeaningfulGiftGuardrail',
+      '10': 'gifts'
+    },
+    {
+      '1': 'yearbook_manifests',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasYearbookPreviewManifest',
+      '10': 'yearbookManifests'
+    },
+  ],
+};
+
+/// Descriptor for `GetConnectionArchiveWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getConnectionArchiveWorkbenchResponseDescriptor = $convert.base64Decode(
+    'CiVHZXRDb25uZWN0aW9uQXJjaGl2ZVdvcmtiZW5jaFJlc3BvbnNlEkkKB2VudHJpZXMYASADKA'
+    'syLy5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNDb25uZWN0aW9uQXJjaGl2ZUVudHJ5UgdlbnRy'
+    'aWVzEkYKBWdpZnRzGAIgAygLMjAuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzTWVhbmluZ2Z1bE'
+    'dpZnRHdWFyZHJhaWxSBWdpZnRzEl8KEnllYXJib29rX21hbmlmZXN0cxgDIAMoCzIwLnN0dGF0'
+    'dHVzLmRhdGluZy52MS5BdGxhc1llYXJib29rUHJldmlld01hbmlmZXN0UhF5ZWFyYm9va01hbm'
+    'lmZXN0cw==');
+
+@$core.Deprecated('Use upsertConnectionArchiveEntryRequestDescriptor instead')
+const UpsertConnectionArchiveEntryRequest$json = {
+  '1': 'UpsertConnectionArchiveEntryRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'artifact_kind', '3': 2, '4': 1, '5': 9, '10': 'artifactKind'},
+    {'1': 'title', '3': 3, '4': 1, '5': 9, '10': 'title'},
+    {'1': 'summary', '3': 4, '4': 1, '5': 9, '10': 'summary'},
+    {'1': 'audience_scope', '3': 5, '4': 1, '5': 9, '10': 'audienceScope'},
+    {
+      '1': 'post_match_disposition',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'postMatchDisposition'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertConnectionArchiveEntryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertConnectionArchiveEntryRequestDescriptor =
+    $convert.base64Decode(
+        'CiNVcHNlcnRDb25uZWN0aW9uQXJjaGl2ZUVudHJ5UmVxdWVzdBIXCgd1c2VyX2lkGAEgASgJUg'
+        'Z1c2VySWQSIwoNYXJ0aWZhY3Rfa2luZBgCIAEoCVIMYXJ0aWZhY3RLaW5kEhQKBXRpdGxlGAMg'
+        'ASgJUgV0aXRsZRIYCgdzdW1tYXJ5GAQgASgJUgdzdW1tYXJ5EiUKDmF1ZGllbmNlX3Njb3BlGA'
+        'UgASgJUg1hdWRpZW5jZVNjb3BlEjQKFnBvc3RfbWF0Y2hfZGlzcG9zaXRpb24YBiABKAlSFHBv'
+        'c3RNYXRjaERpc3Bvc2l0aW9u');
+
+@$core.Deprecated('Use upsertConnectionArchiveEntryResponseDescriptor instead')
+const UpsertConnectionArchiveEntryResponse$json = {
+  '1': 'UpsertConnectionArchiveEntryResponse',
+  '2': [
+    {
+      '1': 'entry',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasConnectionArchiveEntry',
+      '10': 'entry'
+    },
+  ],
+};
+
+/// Descriptor for `UpsertConnectionArchiveEntryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List upsertConnectionArchiveEntryResponseDescriptor =
+    $convert.base64Decode(
+        'CiRVcHNlcnRDb25uZWN0aW9uQXJjaGl2ZUVudHJ5UmVzcG9uc2USRQoFZW50cnkYASABKAsyLy'
+        '5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNDb25uZWN0aW9uQXJjaGl2ZUVudHJ5UgVlbnRyeQ==');
+
+@$core.Deprecated('Use sendMeaningfulGuardedGiftRequestDescriptor instead')
+const SendMeaningfulGuardedGiftRequest$json = {
+  '1': 'SendMeaningfulGuardedGiftRequest',
+  '2': [
+    {'1': 'sender_user_id', '3': 1, '4': 1, '5': 9, '10': 'senderUserId'},
+    {'1': 'recipient_user_id', '3': 2, '4': 1, '5': 9, '10': 'recipientUserId'},
+    {'1': 'gift_title', '3': 3, '4': 1, '5': 9, '10': 'giftTitle'},
+    {'1': 'gift_kind', '3': 4, '4': 1, '5': 9, '10': 'giftKind'},
+    {'1': 'spend_cents', '3': 5, '4': 1, '5': 5, '10': 'spendCents'},
+    {
+      '1': 'recipient_preference',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'recipientPreference'
+    },
+  ],
+};
+
+/// Descriptor for `SendMeaningfulGuardedGiftRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendMeaningfulGuardedGiftRequestDescriptor = $convert.base64Decode(
+    'CiBTZW5kTWVhbmluZ2Z1bEd1YXJkZWRHaWZ0UmVxdWVzdBIkCg5zZW5kZXJfdXNlcl9pZBgBIA'
+    'EoCVIMc2VuZGVyVXNlcklkEioKEXJlY2lwaWVudF91c2VyX2lkGAIgASgJUg9yZWNpcGllbnRV'
+    'c2VySWQSHQoKZ2lmdF90aXRsZRgDIAEoCVIJZ2lmdFRpdGxlEhsKCWdpZnRfa2luZBgEIAEoCV'
+    'IIZ2lmdEtpbmQSHwoLc3BlbmRfY2VudHMYBSABKAVSCnNwZW5kQ2VudHMSMQoUcmVjaXBpZW50'
+    'X3ByZWZlcmVuY2UYBiABKAlSE3JlY2lwaWVudFByZWZlcmVuY2U=');
+
+@$core.Deprecated('Use sendMeaningfulGuardedGiftResponseDescriptor instead')
+const SendMeaningfulGuardedGiftResponse$json = {
+  '1': 'SendMeaningfulGuardedGiftResponse',
+  '2': [
+    {
+      '1': 'gift',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasMeaningfulGiftGuardrail',
+      '10': 'gift'
+    },
+  ],
+};
+
+/// Descriptor for `SendMeaningfulGuardedGiftResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sendMeaningfulGuardedGiftResponseDescriptor =
+    $convert.base64Decode(
+        'CiFTZW5kTWVhbmluZ2Z1bEd1YXJkZWRHaWZ0UmVzcG9uc2USRAoEZ2lmdBgBIAEoCzIwLnN0dG'
+        'F0dHVzLmRhdGluZy52MS5BdGxhc01lYW5pbmdmdWxHaWZ0R3VhcmRyYWlsUgRnaWZ0');
+
+@$core.Deprecated('Use approveYearbookPreviewManifestRequestDescriptor instead')
+const ApproveYearbookPreviewManifestRequest$json = {
+  '1': 'ApproveYearbookPreviewManifestRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'year_label', '3': 2, '4': 1, '5': 9, '10': 'yearLabel'},
+    {
+      '1': 'selected_entry_count',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'selectedEntryCount'
+    },
+    {'1': 'print_status', '3': 4, '4': 1, '5': 9, '10': 'printStatus'},
+  ],
+};
+
+/// Descriptor for `ApproveYearbookPreviewManifestRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List approveYearbookPreviewManifestRequestDescriptor =
+    $convert.base64Decode(
+        'CiVBcHByb3ZlWWVhcmJvb2tQcmV2aWV3TWFuaWZlc3RSZXF1ZXN0EhcKB3VzZXJfaWQYASABKA'
+        'lSBnVzZXJJZBIdCgp5ZWFyX2xhYmVsGAIgASgJUgl5ZWFyTGFiZWwSMAoUc2VsZWN0ZWRfZW50'
+        'cnlfY291bnQYAyABKAVSEnNlbGVjdGVkRW50cnlDb3VudBIhCgxwcmludF9zdGF0dXMYBCABKA'
+        'lSC3ByaW50U3RhdHVz');
+
+@$core
+    .Deprecated('Use approveYearbookPreviewManifestResponseDescriptor instead')
+const ApproveYearbookPreviewManifestResponse$json = {
+  '1': 'ApproveYearbookPreviewManifestResponse',
+  '2': [
+    {
+      '1': 'manifest',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasYearbookPreviewManifest',
+      '10': 'manifest'
+    },
+  ],
+};
+
+/// Descriptor for `ApproveYearbookPreviewManifestResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List approveYearbookPreviewManifestResponseDescriptor =
+    $convert.base64Decode(
+        'CiZBcHByb3ZlWWVhcmJvb2tQcmV2aWV3TWFuaWZlc3RSZXNwb25zZRJMCghtYW5pZmVzdBgBIA'
+        'EoCzIwLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc1llYXJib29rUHJldmlld01hbmlmZXN0Ught'
+        'YW5pZmVzdA==');
+
+@$core
+    .Deprecated('Use adminListConnectionArchiveAuditRequestDescriptor instead')
+const AdminListConnectionArchiveAuditRequest$json = {
+  '1': 'AdminListConnectionArchiveAuditRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `AdminListConnectionArchiveAuditRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminListConnectionArchiveAuditRequestDescriptor =
+    $convert.base64Decode(
+        'CiZBZG1pbkxpc3RDb25uZWN0aW9uQXJjaGl2ZUF1ZGl0UmVxdWVzdBIUCgVsaW1pdBgBIAEoBV'
+        'IFbGltaXQ=');
+
+@$core
+    .Deprecated('Use adminListConnectionArchiveAuditResponseDescriptor instead')
+const AdminListConnectionArchiveAuditResponse$json = {
+  '1': 'AdminListConnectionArchiveAuditResponse',
+  '2': [
+    {
+      '1': 'entries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasConnectionArchiveEntry',
+      '10': 'entries'
+    },
+    {
+      '1': 'gifts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasMeaningfulGiftGuardrail',
+      '10': 'gifts'
+    },
+    {
+      '1': 'yearbook_manifests',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasYearbookPreviewManifest',
+      '10': 'yearbookManifests'
+    },
+  ],
+};
+
+/// Descriptor for `AdminListConnectionArchiveAuditResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminListConnectionArchiveAuditResponseDescriptor =
+    $convert.base64Decode(
+        'CidBZG1pbkxpc3RDb25uZWN0aW9uQXJjaGl2ZUF1ZGl0UmVzcG9uc2USSQoHZW50cmllcxgBIA'
+        'MoCzIvLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc0Nvbm5lY3Rpb25BcmNoaXZlRW50cnlSB2Vu'
+        'dHJpZXMSRgoFZ2lmdHMYAiADKAsyMC5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNNZWFuaW5nZn'
+        'VsR2lmdEd1YXJkcmFpbFIFZ2lmdHMSXwoSeWVhcmJvb2tfbWFuaWZlc3RzGAMgAygLMjAuc3R0'
+        'YXR0dXMuZGF0aW5nLnYxLkF0bGFzWWVhcmJvb2tQcmV2aWV3TWFuaWZlc3RSEXllYXJib29rTW'
+        'FuaWZlc3Rz');
+
+@$core
+    .Deprecated('Use adminResolveGiftOrArchiveDisputeRequestDescriptor instead')
+const AdminResolveGiftOrArchiveDisputeRequest$json = {
+  '1': 'AdminResolveGiftOrArchiveDisputeRequest',
+  '2': [
+    {'1': 'gift_id', '3': 1, '4': 1, '5': 9, '10': 'giftId'},
+    {'1': 'dispute_status', '3': 2, '4': 1, '5': 9, '10': 'disputeStatus'},
+    {'1': 'audit_reason', '3': 3, '4': 1, '5': 9, '10': 'auditReason'},
+  ],
+};
+
+/// Descriptor for `AdminResolveGiftOrArchiveDisputeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminResolveGiftOrArchiveDisputeRequestDescriptor =
+    $convert.base64Decode(
+        'CidBZG1pblJlc29sdmVHaWZ0T3JBcmNoaXZlRGlzcHV0ZVJlcXVlc3QSFwoHZ2lmdF9pZBgBIA'
+        'EoCVIGZ2lmdElkEiUKDmRpc3B1dGVfc3RhdHVzGAIgASgJUg1kaXNwdXRlU3RhdHVzEiEKDGF1'
+        'ZGl0X3JlYXNvbhgDIAEoCVILYXVkaXRSZWFzb24=');
+
+@$core.Deprecated(
+    'Use adminResolveGiftOrArchiveDisputeResponseDescriptor instead')
+const AdminResolveGiftOrArchiveDisputeResponse$json = {
+  '1': 'AdminResolveGiftOrArchiveDisputeResponse',
+  '2': [
+    {
+      '1': 'gift',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasMeaningfulGiftGuardrail',
+      '10': 'gift'
+    },
+  ],
+};
+
+/// Descriptor for `AdminResolveGiftOrArchiveDisputeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List adminResolveGiftOrArchiveDisputeResponseDescriptor =
+    $convert.base64Decode(
+        'CihBZG1pblJlc29sdmVHaWZ0T3JBcmNoaXZlRGlzcHV0ZVJlc3BvbnNlEkQKBGdpZnQYASABKA'
+        'syMC5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNNZWFuaW5nZnVsR2lmdEd1YXJkcmFpbFIEZ2lm'
+        'dA==');
+
+@$core.Deprecated('Use atlasAccessibleInclusionProfileDescriptor instead')
+const AtlasAccessibleInclusionProfile$json = {
+  '1': 'AtlasAccessibleInclusionProfile',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {
+      '1': 'discovery_surface_mode',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'discoverySurfaceMode'
+    },
+    {
+      '1': 'large_type_scale_percent',
+      '3': 4,
+      '4': 1,
+      '5': 5,
+      '10': 'largeTypeScalePercent'
+    },
+    {
+      '1': 'captions_and_transcripts_enforced',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'captionsAndTranscriptsEnforced'
+    },
+    {
+      '1': 'cognitive_simplification_enabled',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'cognitiveSimplificationEnabled'
+    },
+    {
+      '1': 'identity_never_inferred_target',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'identityNeverInferredTarget'
+    },
+    {'1': 'wcag_aa_verified', '3': 8, '4': 1, '5': 8, '10': 'wcagAaVerified'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 3, '10': 'updatedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasAccessibleInclusionProfile`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasAccessibleInclusionProfileDescriptor = $convert.base64Decode(
+    'Ch9BdGxhc0FjY2Vzc2libGVJbmNsdXNpb25Qcm9maWxlEg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSNAoWZGlzY292ZXJ5X3N1cmZhY2VfbW9kZRgDIAEoCVIUZGlz'
+    'Y292ZXJ5U3VyZmFjZU1vZGUSNwoYbGFyZ2VfdHlwZV9zY2FsZV9wZXJjZW50GAQgASgFUhVsYX'
+    'JnZVR5cGVTY2FsZVBlcmNlbnQSSQohY2FwdGlvbnNfYW5kX3RyYW5zY3JpcHRzX2VuZm9yY2Vk'
+    'GAUgASgIUh5jYXB0aW9uc0FuZFRyYW5zY3JpcHRzRW5mb3JjZWQSSAogY29nbml0aXZlX3NpbX'
+    'BsaWZpY2F0aW9uX2VuYWJsZWQYBiABKAhSHmNvZ25pdGl2ZVNpbXBsaWZpY2F0aW9uRW5hYmxl'
+    'ZBJDCh5pZGVudGl0eV9uZXZlcl9pbmZlcnJlZF90YXJnZXQYByABKAhSG2lkZW50aXR5TmV2ZX'
+    'JJbmZlcnJlZFRhcmdldBIoChB3Y2FnX2FhX3ZlcmlmaWVkGAggASgIUg53Y2FnQWFWZXJpZmll'
+    'ZBIdCgp1cGRhdGVkX2F0GAkgASgDUgl1cGRhdGVkQXQ=');
+
+@$core.Deprecated('Use atlasJurisdictionReleaseGateDescriptor instead')
+const AtlasJurisdictionReleaseGate$json = {
+  '1': 'AtlasJurisdictionReleaseGate',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'country_code', '3': 2, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'region_name', '3': 3, '4': 1, '5': 9, '10': 'regionName'},
+    {'1': 'age_floor_years', '3': 4, '4': 1, '5': 5, '10': 'ageFloorYears'},
+    {
+      '1': 'emergency_resource_pack',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'emergencyResourcePack'
+    },
+    {
+      '1': 'low_bandwidth_offline_date_pack',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'lowBandwidthOfflineDatePack'
+    },
+    {
+      '1': 'jurisdiction_certified',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'jurisdictionCertified'
+    },
+    {'1': 'release_state', '3': 8, '4': 1, '5': 9, '10': 'releaseState'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 3, '10': 'updatedAt'},
+  ],
+};
+
+/// Descriptor for `AtlasJurisdictionReleaseGate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasJurisdictionReleaseGateDescriptor = $convert.base64Decode(
+    'ChxBdGxhc0p1cmlzZGljdGlvblJlbGVhc2VHYXRlEg4KAmlkGAEgASgJUgJpZBIhCgxjb3VudH'
+    'J5X2NvZGUYAiABKAlSC2NvdW50cnlDb2RlEh8KC3JlZ2lvbl9uYW1lGAMgASgJUgpyZWdpb25O'
+    'YW1lEiYKD2FnZV9mbG9vcl95ZWFycxgEIAEoBVINYWdlRmxvb3JZZWFycxI2ChdlbWVyZ2VuY3'
+    'lfcmVzb3VyY2VfcGFjaxgFIAEoCVIVZW1lcmdlbmN5UmVzb3VyY2VQYWNrEkQKH2xvd19iYW5k'
+    'd2lkdGhfb2ZmbGluZV9kYXRlX3BhY2sYBiABKAlSG2xvd0JhbmR3aWR0aE9mZmxpbmVEYXRlUG'
+    'FjaxI1ChZqdXJpc2RpY3Rpb25fY2VydGlmaWVkGAcgASgIUhVqdXJpc2RpY3Rpb25DZXJ0aWZp'
+    'ZWQSIwoNcmVsZWFzZV9zdGF0ZRgIIAEoCVIMcmVsZWFzZVN0YXRlEh0KCnVwZGF0ZWRfYXQYCS'
+    'ABKANSCXVwZGF0ZWRBdA==');
+
+@$core.Deprecated('Use atlasPortableConnectionBundleDescriptor instead')
+const AtlasPortableConnectionBundle$json = {
+  '1': 'AtlasPortableConnectionBundle',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'direction', '3': 3, '4': 1, '5': 9, '10': 'direction'},
+    {
+      '1': 'included_artifacts_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'includedArtifactsSummary'
+    },
+    {
+      '1': 'mapping_report_json',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'mappingReportJson'
+    },
+    {
+      '1': 'fabricated_match_or_message_history_blocked',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'fabricatedMatchOrMessageHistoryBlocked'
+    },
+    {'1': 'bundle_status', '3': 7, '4': 1, '5': 9, '10': 'bundleStatus'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+};
+
+/// Descriptor for `AtlasPortableConnectionBundle`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List atlasPortableConnectionBundleDescriptor = $convert.base64Decode(
+    'Ch1BdGxhc1BvcnRhYmxlQ29ubmVjdGlvbkJ1bmRsZRIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEhwKCWRpcmVjdGlvbhgDIAEoCVIJZGlyZWN0aW9uEjwKGmluY2x1'
+    'ZGVkX2FydGlmYWN0c19zdW1tYXJ5GAQgASgJUhhpbmNsdWRlZEFydGlmYWN0c1N1bW1hcnkSLg'
+    'oTbWFwcGluZ19yZXBvcnRfanNvbhgFIAEoCVIRbWFwcGluZ1JlcG9ydEpzb24SWworZmFicmlj'
+    'YXRlZF9tYXRjaF9vcl9tZXNzYWdlX2hpc3RvcnlfYmxvY2tlZBgGIAEoCFImZmFicmljYXRlZE'
+    '1hdGNoT3JNZXNzYWdlSGlzdG9yeUJsb2NrZWQSIwoNYnVuZGxlX3N0YXR1cxgHIAEoCVIMYnVu'
+    'ZGxlU3RhdHVzEh0KCmNyZWF0ZWRfYXQYCCABKANSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated(
+    'Use getInclusiveGlobalReleaseWorkbenchRequestDescriptor instead')
+const GetInclusiveGlobalReleaseWorkbenchRequest$json = {
+  '1': 'GetInclusiveGlobalReleaseWorkbenchRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetInclusiveGlobalReleaseWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getInclusiveGlobalReleaseWorkbenchRequestDescriptor = $convert.base64Decode(
+        'CilHZXRJbmNsdXNpdmVHbG9iYWxSZWxlYXNlV29ya2JlbmNoUmVxdWVzdBIXCgd1c2VyX2lkGA'
+        'EgASgJUgZ1c2VySWQ=');
+
+@$core.Deprecated(
+    'Use getInclusiveGlobalReleaseWorkbenchResponseDescriptor instead')
+const GetInclusiveGlobalReleaseWorkbenchResponse$json = {
+  '1': 'GetInclusiveGlobalReleaseWorkbenchResponse',
+  '2': [
+    {
+      '1': 'inclusion_profiles',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasAccessibleInclusionProfile',
+      '10': 'inclusionProfiles'
+    },
+    {
+      '1': 'jurisdiction_gates',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasJurisdictionReleaseGate',
+      '10': 'jurisdictionGates'
+    },
+    {
+      '1': 'portable_bundles',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasPortableConnectionBundle',
+      '10': 'portableBundles'
+    },
+  ],
+};
+
+/// Descriptor for `GetInclusiveGlobalReleaseWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getInclusiveGlobalReleaseWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CipHZXRJbmNsdXNpdmVHbG9iYWxSZWxlYXNlV29ya2JlbmNoUmVzcG9uc2USYgoSaW5jbHVzaW'
+        '9uX3Byb2ZpbGVzGAEgAygLMjMuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzQWNjZXNzaWJsZUlu'
+        'Y2x1c2lvblByb2ZpbGVSEWluY2x1c2lvblByb2ZpbGVzEl8KEmp1cmlzZGljdGlvbl9nYXRlcx'
+        'gCIAMoCzIwLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc0p1cmlzZGljdGlvblJlbGVhc2VHYXRl'
+        'UhFqdXJpc2RpY3Rpb25HYXRlcxJcChBwb3J0YWJsZV9idW5kbGVzGAMgAygLMjEuc3R0YXR0dX'
+        'MuZGF0aW5nLnYxLkF0bGFzUG9ydGFibGVDb25uZWN0aW9uQnVuZGxlUg9wb3J0YWJsZUJ1bmRs'
+        'ZXM=');
+
+@$core
+    .Deprecated('Use updateAccessibleInclusionProfileRequestDescriptor instead')
+const UpdateAccessibleInclusionProfileRequest$json = {
+  '1': 'UpdateAccessibleInclusionProfileRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {
+      '1': 'discovery_surface_mode',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'discoverySurfaceMode'
+    },
+    {
+      '1': 'large_type_scale_percent',
+      '3': 3,
+      '4': 1,
+      '5': 5,
+      '10': 'largeTypeScalePercent'
+    },
+    {
+      '1': 'captions_and_transcripts_enforced',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'captionsAndTranscriptsEnforced'
+    },
+    {
+      '1': 'cognitive_simplification_enabled',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'cognitiveSimplificationEnabled'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateAccessibleInclusionProfileRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAccessibleInclusionProfileRequestDescriptor =
+    $convert.base64Decode(
+        'CidVcGRhdGVBY2Nlc3NpYmxlSW5jbHVzaW9uUHJvZmlsZVJlcXVlc3QSFwoHdXNlcl9pZBgBIA'
+        'EoCVIGdXNlcklkEjQKFmRpc2NvdmVyeV9zdXJmYWNlX21vZGUYAiABKAlSFGRpc2NvdmVyeVN1'
+        'cmZhY2VNb2RlEjcKGGxhcmdlX3R5cGVfc2NhbGVfcGVyY2VudBgDIAEoBVIVbGFyZ2VUeXBlU2'
+        'NhbGVQZXJjZW50EkkKIWNhcHRpb25zX2FuZF90cmFuc2NyaXB0c19lbmZvcmNlZBgEIAEoCFIe'
+        'Y2FwdGlvbnNBbmRUcmFuc2NyaXB0c0VuZm9yY2VkEkgKIGNvZ25pdGl2ZV9zaW1wbGlmaWNhdG'
+        'lvbl9lbmFibGVkGAUgASgIUh5jb2duaXRpdmVTaW1wbGlmaWNhdGlvbkVuYWJsZWQ=');
+
+@$core.Deprecated(
+    'Use updateAccessibleInclusionProfileResponseDescriptor instead')
+const UpdateAccessibleInclusionProfileResponse$json = {
+  '1': 'UpdateAccessibleInclusionProfileResponse',
+  '2': [
+    {
+      '1': 'profile',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasAccessibleInclusionProfile',
+      '10': 'profile'
+    },
+  ],
+};
+
+/// Descriptor for `UpdateAccessibleInclusionProfileResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateAccessibleInclusionProfileResponseDescriptor =
+    $convert.base64Decode(
+        'CihVcGRhdGVBY2Nlc3NpYmxlSW5jbHVzaW9uUHJvZmlsZVJlc3BvbnNlEk0KB3Byb2ZpbGUYAS'
+        'ABKAsyMy5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNBY2Nlc3NpYmxlSW5jbHVzaW9uUHJvZmls'
+        'ZVIHcHJvZmlsZQ==');
+
+@$core
+    .Deprecated('Use generatePortableConnectionBundleRequestDescriptor instead')
+const GeneratePortableConnectionBundleRequest$json = {
+  '1': 'GeneratePortableConnectionBundleRequest',
+  '2': [
+    {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'direction', '3': 2, '4': 1, '5': 9, '10': 'direction'},
+    {
+      '1': 'included_artifacts_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'includedArtifactsSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GeneratePortableConnectionBundleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generatePortableConnectionBundleRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZW5lcmF0ZVBvcnRhYmxlQ29ubmVjdGlvbkJ1bmRsZVJlcXVlc3QSFwoHdXNlcl9pZBgBIA'
+        'EoCVIGdXNlcklkEhwKCWRpcmVjdGlvbhgCIAEoCVIJZGlyZWN0aW9uEjwKGmluY2x1ZGVkX2Fy'
+        'dGlmYWN0c19zdW1tYXJ5GAMgASgJUhhpbmNsdWRlZEFydGlmYWN0c1N1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use generatePortableConnectionBundleResponseDescriptor instead')
+const GeneratePortableConnectionBundleResponse$json = {
+  '1': 'GeneratePortableConnectionBundleResponse',
+  '2': [
+    {
+      '1': 'bundle',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasPortableConnectionBundle',
+      '10': 'bundle'
+    },
+  ],
+};
+
+/// Descriptor for `GeneratePortableConnectionBundleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generatePortableConnectionBundleResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZW5lcmF0ZVBvcnRhYmxlQ29ubmVjdGlvbkJ1bmRsZVJlc3BvbnNlEkkKBmJ1bmRsZRgBIA'
+        'EoCzIxLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc1BvcnRhYmxlQ29ubmVjdGlvbkJ1bmRsZVIG'
+        'YnVuZGxl');
+
+@$core.Deprecated(
+    'Use verifyJurisdictionOfflineSafetyPackRequestDescriptor instead')
+const VerifyJurisdictionOfflineSafetyPackRequest$json = {
+  '1': 'VerifyJurisdictionOfflineSafetyPackRequest',
+  '2': [
+    {'1': 'country_code', '3': 1, '4': 1, '5': 9, '10': 'countryCode'},
+    {'1': 'region_name', '3': 2, '4': 1, '5': 9, '10': 'regionName'},
+  ],
+};
+
+/// Descriptor for `VerifyJurisdictionOfflineSafetyPackRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyJurisdictionOfflineSafetyPackRequestDescriptor =
+    $convert.base64Decode(
+        'CipWZXJpZnlKdXJpc2RpY3Rpb25PZmZsaW5lU2FmZXR5UGFja1JlcXVlc3QSIQoMY291bnRyeV'
+        '9jb2RlGAEgASgJUgtjb3VudHJ5Q29kZRIfCgtyZWdpb25fbmFtZRgCIAEoCVIKcmVnaW9uTmFt'
+        'ZQ==');
+
+@$core.Deprecated(
+    'Use verifyJurisdictionOfflineSafetyPackResponseDescriptor instead')
+const VerifyJurisdictionOfflineSafetyPackResponse$json = {
+  '1': 'VerifyJurisdictionOfflineSafetyPackResponse',
+  '2': [
+    {
+      '1': 'gate',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasJurisdictionReleaseGate',
+      '10': 'gate'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyJurisdictionOfflineSafetyPackResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyJurisdictionOfflineSafetyPackResponseDescriptor =
+    $convert.base64Decode(
+        'CitWZXJpZnlKdXJpc2RpY3Rpb25PZmZsaW5lU2FmZXR5UGFja1Jlc3BvbnNlEkQKBGdhdGUYAS'
+        'ABKAsyMC5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNKdXJpc2RpY3Rpb25SZWxlYXNlR2F0ZVIE'
+        'Z2F0ZQ==');
+
+@$core.Deprecated(
+    'Use adminListGlobalReleaseCertificationAuditRequestDescriptor instead')
+const AdminListGlobalReleaseCertificationAuditRequest$json = {
+  '1': 'AdminListGlobalReleaseCertificationAuditRequest',
+  '2': [
+    {'1': 'limit', '3': 1, '4': 1, '5': 5, '10': 'limit'},
+  ],
+};
+
+/// Descriptor for `AdminListGlobalReleaseCertificationAuditRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminListGlobalReleaseCertificationAuditRequestDescriptor =
+    $convert.base64Decode(
+        'Ci9BZG1pbkxpc3RHbG9iYWxSZWxlYXNlQ2VydGlmaWNhdGlvbkF1ZGl0UmVxdWVzdBIUCgVsaW'
+        '1pdBgBIAEoBVIFbGltaXQ=');
+
+@$core.Deprecated(
+    'Use adminListGlobalReleaseCertificationAuditResponseDescriptor instead')
+const AdminListGlobalReleaseCertificationAuditResponse$json = {
+  '1': 'AdminListGlobalReleaseCertificationAuditResponse',
+  '2': [
+    {
+      '1': 'inclusion_profiles',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasAccessibleInclusionProfile',
+      '10': 'inclusionProfiles'
+    },
+    {
+      '1': 'jurisdiction_gates',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasJurisdictionReleaseGate',
+      '10': 'jurisdictionGates'
+    },
+    {
+      '1': 'portable_bundles',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasPortableConnectionBundle',
+      '10': 'portableBundles'
+    },
+  ],
+};
+
+/// Descriptor for `AdminListGlobalReleaseCertificationAuditResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminListGlobalReleaseCertificationAuditResponseDescriptor =
+    $convert.base64Decode(
+        'CjBBZG1pbkxpc3RHbG9iYWxSZWxlYXNlQ2VydGlmaWNhdGlvbkF1ZGl0UmVzcG9uc2USYgoSaW'
+        '5jbHVzaW9uX3Byb2ZpbGVzGAEgAygLMjMuc3R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzQWNjZXNz'
+        'aWJsZUluY2x1c2lvblByb2ZpbGVSEWluY2x1c2lvblByb2ZpbGVzEl8KEmp1cmlzZGljdGlvbl'
+        '9nYXRlcxgCIAMoCzIwLnN0dGF0dHVzLmRhdGluZy52MS5BdGxhc0p1cmlzZGljdGlvblJlbGVh'
+        'c2VHYXRlUhFqdXJpc2RpY3Rpb25HYXRlcxJcChBwb3J0YWJsZV9idW5kbGVzGAMgAygLMjEuc3'
+        'R0YXR0dXMuZGF0aW5nLnYxLkF0bGFzUG9ydGFibGVDb25uZWN0aW9uQnVuZGxlUg9wb3J0YWJs'
+        'ZUJ1bmRsZXM=');
+
+@$core.Deprecated(
+    'Use adminCertifyJurisdictionReleaseGateRequestDescriptor instead')
+const AdminCertifyJurisdictionReleaseGateRequest$json = {
+  '1': 'AdminCertifyJurisdictionReleaseGateRequest',
+  '2': [
+    {'1': 'gate_id', '3': 1, '4': 1, '5': 9, '10': 'gateId'},
+    {'1': 'release_state', '3': 2, '4': 1, '5': 9, '10': 'releaseState'},
+    {
+      '1': 'jurisdiction_certified',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '10': 'jurisdictionCertified'
+    },
+    {'1': 'audit_reason', '3': 4, '4': 1, '5': 9, '10': 'auditReason'},
+  ],
+};
+
+/// Descriptor for `AdminCertifyJurisdictionReleaseGateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminCertifyJurisdictionReleaseGateRequestDescriptor =
+    $convert.base64Decode(
+        'CipBZG1pbkNlcnRpZnlKdXJpc2RpY3Rpb25SZWxlYXNlR2F0ZVJlcXVlc3QSFwoHZ2F0ZV9pZB'
+        'gBIAEoCVIGZ2F0ZUlkEiMKDXJlbGVhc2Vfc3RhdGUYAiABKAlSDHJlbGVhc2VTdGF0ZRI1ChZq'
+        'dXJpc2RpY3Rpb25fY2VydGlmaWVkGAMgASgIUhVqdXJpc2RpY3Rpb25DZXJ0aWZpZWQSIQoMYX'
+        'VkaXRfcmVhc29uGAQgASgJUgthdWRpdFJlYXNvbg==');
+
+@$core.Deprecated(
+    'Use adminCertifyJurisdictionReleaseGateResponseDescriptor instead')
+const AdminCertifyJurisdictionReleaseGateResponse$json = {
+  '1': 'AdminCertifyJurisdictionReleaseGateResponse',
+  '2': [
+    {
+      '1': 'gate',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dating.v1.AtlasJurisdictionReleaseGate',
+      '10': 'gate'
+    },
+  ],
+};
+
+/// Descriptor for `AdminCertifyJurisdictionReleaseGateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adminCertifyJurisdictionReleaseGateResponseDescriptor =
+    $convert.base64Decode(
+        'CitBZG1pbkNlcnRpZnlKdXJpc2RpY3Rpb25SZWxlYXNlR2F0ZVJlc3BvbnNlEkQKBGdhdGUYAS'
+        'ABKAsyMC5zdHRhdHR1cy5kYXRpbmcudjEuQXRsYXNKdXJpc2RpY3Rpb25SZWxlYXNlR2F0ZVIE'
+        'Z2F0ZQ==');

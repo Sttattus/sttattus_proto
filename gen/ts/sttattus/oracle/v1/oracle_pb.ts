@@ -4593,3 +4593,7026 @@ export class GenerateYearInOracleResponse extends Message<GenerateYearInOracleRe
   }
 }
 
+/**
+ * @generated from message sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+ */
+export class OracleEvidenceSourceSnapshotItem extends Message<OracleEvidenceSourceSnapshotItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string source_code = 3;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string origin_class = 4;
+   */
+  originClass = "";
+
+  /**
+   * @generated from field: string title = 5;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string jurisdiction_and_rights = 6;
+   */
+  jurisdictionAndRights = "";
+
+  /**
+   * @generated from field: string freshness_state = 7;
+   */
+  freshnessState = "";
+
+  /**
+   * @generated from field: string competing_disagreement_note = 8;
+   */
+  competingDisagreementNote = "";
+
+  /**
+   * @generated from field: int32 correction_generation = 9;
+   */
+  correctionGeneration = 0;
+
+  /**
+   * @generated from field: bool strict_answer_mode_enforced = 10;
+   */
+  strictAnswerModeEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleEvidenceSourceSnapshotItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "origin_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "jurisdiction_and_rights", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "freshness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "competing_disagreement_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "correction_generation", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "strict_answer_mode_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleEvidenceSourceSnapshotItem {
+    return new OracleEvidenceSourceSnapshotItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleEvidenceSourceSnapshotItem {
+    return new OracleEvidenceSourceSnapshotItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleEvidenceSourceSnapshotItem {
+    return new OracleEvidenceSourceSnapshotItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleEvidenceSourceSnapshotItem | PlainMessage<OracleEvidenceSourceSnapshotItem> | undefined, b: OracleEvidenceSourceSnapshotItem | PlainMessage<OracleEvidenceSourceSnapshotItem> | undefined): boolean {
+    return proto3.util.equals(OracleEvidenceSourceSnapshotItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleCitedClaimPassageItem
+ */
+export class OracleCitedClaimPassageItem extends Message<OracleCitedClaimPassageItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string claim_code = 3;
+   */
+  claimCode = "";
+
+  /**
+   * @generated from field: string source_code = 4;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string claim_statement = 5;
+   */
+  claimStatement = "";
+
+  /**
+   * @generated from field: string supporting_passage_excerpt = 6;
+   */
+  supportingPassageExcerpt = "";
+
+  /**
+   * @generated from field: bool primary_source_marker = 7;
+   */
+  primarySourceMarker = false;
+
+  /**
+   * @generated from field: string epistemic_status = 8;
+   */
+  epistemicStatus = "";
+
+  /**
+   * @generated from field: string evidence_gap_disclosure = 9;
+   */
+  evidenceGapDisclosure = "";
+
+  /**
+   * @generated from field: bool unsupported_fluency_refused = 10;
+   */
+  unsupportedFluencyRefused = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleCitedClaimPassageItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleCitedClaimPassageItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "claim_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "claim_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "supporting_passage_excerpt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "primary_source_marker", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "epistemic_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "evidence_gap_disclosure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "unsupported_fluency_refused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleCitedClaimPassageItem {
+    return new OracleCitedClaimPassageItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleCitedClaimPassageItem {
+    return new OracleCitedClaimPassageItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleCitedClaimPassageItem {
+    return new OracleCitedClaimPassageItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleCitedClaimPassageItem | PlainMessage<OracleCitedClaimPassageItem> | undefined, b: OracleCitedClaimPassageItem | PlainMessage<OracleCitedClaimPassageItem> | undefined): boolean {
+    return proto3.util.equals(OracleCitedClaimPassageItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetEvidenceTruthWorkbenchRequest
+ */
+export class GetEvidenceTruthWorkbenchRequest extends Message<GetEvidenceTruthWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetEvidenceTruthWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetEvidenceTruthWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceTruthWorkbenchRequest {
+    return new GetEvidenceTruthWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceTruthWorkbenchRequest {
+    return new GetEvidenceTruthWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceTruthWorkbenchRequest {
+    return new GetEvidenceTruthWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceTruthWorkbenchRequest | PlainMessage<GetEvidenceTruthWorkbenchRequest> | undefined, b: GetEvidenceTruthWorkbenchRequest | PlainMessage<GetEvidenceTruthWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceTruthWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse
+ */
+export class GetEvidenceTruthWorkbenchResponse extends Message<GetEvidenceTruthWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem sources = 1;
+   */
+  sources: OracleEvidenceSourceSnapshotItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCitedClaimPassageItem claims = 2;
+   */
+  claims: OracleCitedClaimPassageItem[] = [];
+
+  /**
+   * @generated from field: bool strict_answer_mode_active = 3;
+   */
+  strictAnswerModeActive = false;
+
+  /**
+   * @generated from field: string epistemic_integrity_banner = 4;
+   */
+  epistemicIntegrityBanner = "";
+
+  constructor(data?: PartialMessage<GetEvidenceTruthWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sources", kind: "message", T: OracleEvidenceSourceSnapshotItem, repeated: true },
+    { no: 2, name: "claims", kind: "message", T: OracleCitedClaimPassageItem, repeated: true },
+    { no: 3, name: "strict_answer_mode_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "epistemic_integrity_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEvidenceTruthWorkbenchResponse {
+    return new GetEvidenceTruthWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEvidenceTruthWorkbenchResponse {
+    return new GetEvidenceTruthWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEvidenceTruthWorkbenchResponse {
+    return new GetEvidenceTruthWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetEvidenceTruthWorkbenchResponse | PlainMessage<GetEvidenceTruthWorkbenchResponse> | undefined, b: GetEvidenceTruthWorkbenchResponse | PlainMessage<GetEvidenceTruthWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetEvidenceTruthWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceRequest
+ */
+export class RegisterOrRefreshEvidenceSourceRequest extends Message<RegisterOrRefreshEvidenceSourceRequest> {
+  /**
+   * @generated from field: string source_code = 1;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string origin_class = 2;
+   */
+  originClass = "";
+
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string jurisdiction_and_rights = 4;
+   */
+  jurisdictionAndRights = "";
+
+  /**
+   * @generated from field: string freshness_state = 5;
+   */
+  freshnessState = "";
+
+  /**
+   * @generated from field: string competing_disagreement_note = 6;
+   */
+  competingDisagreementNote = "";
+
+  /**
+   * @generated from field: bool strict_answer_mode_enforced = 7;
+   */
+  strictAnswerModeEnforced = false;
+
+  constructor(data?: PartialMessage<RegisterOrRefreshEvidenceSourceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "origin_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "jurisdiction_and_rights", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "freshness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "competing_disagreement_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "strict_answer_mode_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterOrRefreshEvidenceSourceRequest {
+    return new RegisterOrRefreshEvidenceSourceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterOrRefreshEvidenceSourceRequest {
+    return new RegisterOrRefreshEvidenceSourceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterOrRefreshEvidenceSourceRequest {
+    return new RegisterOrRefreshEvidenceSourceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterOrRefreshEvidenceSourceRequest | PlainMessage<RegisterOrRefreshEvidenceSourceRequest> | undefined, b: RegisterOrRefreshEvidenceSourceRequest | PlainMessage<RegisterOrRefreshEvidenceSourceRequest> | undefined): boolean {
+    return proto3.util.equals(RegisterOrRefreshEvidenceSourceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse
+ */
+export class RegisterOrRefreshEvidenceSourceResponse extends Message<RegisterOrRefreshEvidenceSourceResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem source = 1;
+   */
+  source?: OracleEvidenceSourceSnapshotItem;
+
+  constructor(data?: PartialMessage<RegisterOrRefreshEvidenceSourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: OracleEvidenceSourceSnapshotItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RegisterOrRefreshEvidenceSourceResponse {
+    return new RegisterOrRefreshEvidenceSourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RegisterOrRefreshEvidenceSourceResponse {
+    return new RegisterOrRefreshEvidenceSourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RegisterOrRefreshEvidenceSourceResponse {
+    return new RegisterOrRefreshEvidenceSourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RegisterOrRefreshEvidenceSourceResponse | PlainMessage<RegisterOrRefreshEvidenceSourceResponse> | undefined, b: RegisterOrRefreshEvidenceSourceResponse | PlainMessage<RegisterOrRefreshEvidenceSourceResponse> | undefined): boolean {
+    return proto3.util.equals(RegisterOrRefreshEvidenceSourceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.VerifyOrInvalidateCitedClaimRequest
+ */
+export class VerifyOrInvalidateCitedClaimRequest extends Message<VerifyOrInvalidateCitedClaimRequest> {
+  /**
+   * @generated from field: string claim_code = 1;
+   */
+  claimCode = "";
+
+  /**
+   * @generated from field: string source_code = 2;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string claim_statement = 3;
+   */
+  claimStatement = "";
+
+  /**
+   * @generated from field: string supporting_passage_excerpt = 4;
+   */
+  supportingPassageExcerpt = "";
+
+  /**
+   * @generated from field: bool primary_source_marker = 5;
+   */
+  primarySourceMarker = false;
+
+  /**
+   * @generated from field: string epistemic_status = 6;
+   */
+  epistemicStatus = "";
+
+  /**
+   * @generated from field: string evidence_gap_disclosure = 7;
+   */
+  evidenceGapDisclosure = "";
+
+  constructor(data?: PartialMessage<VerifyOrInvalidateCitedClaimRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.VerifyOrInvalidateCitedClaimRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "claim_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "claim_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "supporting_passage_excerpt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "primary_source_marker", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "epistemic_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "evidence_gap_disclosure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrInvalidateCitedClaimRequest {
+    return new VerifyOrInvalidateCitedClaimRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrInvalidateCitedClaimRequest {
+    return new VerifyOrInvalidateCitedClaimRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrInvalidateCitedClaimRequest {
+    return new VerifyOrInvalidateCitedClaimRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrInvalidateCitedClaimRequest | PlainMessage<VerifyOrInvalidateCitedClaimRequest> | undefined, b: VerifyOrInvalidateCitedClaimRequest | PlainMessage<VerifyOrInvalidateCitedClaimRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyOrInvalidateCitedClaimRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse
+ */
+export class VerifyOrInvalidateCitedClaimResponse extends Message<VerifyOrInvalidateCitedClaimResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleCitedClaimPassageItem claim = 1;
+   */
+  claim?: OracleCitedClaimPassageItem;
+
+  constructor(data?: PartialMessage<VerifyOrInvalidateCitedClaimResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "claim", kind: "message", T: OracleCitedClaimPassageItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrInvalidateCitedClaimResponse {
+    return new VerifyOrInvalidateCitedClaimResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrInvalidateCitedClaimResponse {
+    return new VerifyOrInvalidateCitedClaimResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrInvalidateCitedClaimResponse {
+    return new VerifyOrInvalidateCitedClaimResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrInvalidateCitedClaimResponse | PlainMessage<VerifyOrInvalidateCitedClaimResponse> | undefined, b: VerifyOrInvalidateCitedClaimResponse | PlainMessage<VerifyOrInvalidateCitedClaimResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyOrInvalidateCitedClaimResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListEvidenceTruthAuditRequest
+ */
+export class AdminListEvidenceTruthAuditRequest extends Message<AdminListEvidenceTruthAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListEvidenceTruthAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListEvidenceTruthAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListEvidenceTruthAuditRequest {
+    return new AdminListEvidenceTruthAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListEvidenceTruthAuditRequest {
+    return new AdminListEvidenceTruthAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListEvidenceTruthAuditRequest {
+    return new AdminListEvidenceTruthAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListEvidenceTruthAuditRequest | PlainMessage<AdminListEvidenceTruthAuditRequest> | undefined, b: AdminListEvidenceTruthAuditRequest | PlainMessage<AdminListEvidenceTruthAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListEvidenceTruthAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse
+ */
+export class AdminListEvidenceTruthAuditResponse extends Message<AdminListEvidenceTruthAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem sources = 1;
+   */
+  sources: OracleEvidenceSourceSnapshotItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCitedClaimPassageItem claims = 2;
+   */
+  claims: OracleCitedClaimPassageItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListEvidenceTruthAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sources", kind: "message", T: OracleEvidenceSourceSnapshotItem, repeated: true },
+    { no: 2, name: "claims", kind: "message", T: OracleCitedClaimPassageItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListEvidenceTruthAuditResponse {
+    return new AdminListEvidenceTruthAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListEvidenceTruthAuditResponse {
+    return new AdminListEvidenceTruthAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListEvidenceTruthAuditResponse {
+    return new AdminListEvidenceTruthAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListEvidenceTruthAuditResponse | PlainMessage<AdminListEvidenceTruthAuditResponse> | undefined, b: AdminListEvidenceTruthAuditResponse | PlainMessage<AdminListEvidenceTruthAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListEvidenceTruthAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionRequest
+ */
+export class AdminManageSourceRightsOrCorrectionRequest extends Message<AdminManageSourceRightsOrCorrectionRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string source_code = 2;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string freshness_state = 3;
+   */
+  freshnessState = "";
+
+  /**
+   * @generated from field: string competing_disagreement_note = 4;
+   */
+  competingDisagreementNote = "";
+
+  constructor(data?: PartialMessage<AdminManageSourceRightsOrCorrectionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "freshness_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "competing_disagreement_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageSourceRightsOrCorrectionRequest {
+    return new AdminManageSourceRightsOrCorrectionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageSourceRightsOrCorrectionRequest {
+    return new AdminManageSourceRightsOrCorrectionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageSourceRightsOrCorrectionRequest {
+    return new AdminManageSourceRightsOrCorrectionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageSourceRightsOrCorrectionRequest | PlainMessage<AdminManageSourceRightsOrCorrectionRequest> | undefined, b: AdminManageSourceRightsOrCorrectionRequest | PlainMessage<AdminManageSourceRightsOrCorrectionRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageSourceRightsOrCorrectionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse
+ */
+export class AdminManageSourceRightsOrCorrectionResponse extends Message<AdminManageSourceRightsOrCorrectionResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem source = 1;
+   */
+  source?: OracleEvidenceSourceSnapshotItem;
+
+  constructor(data?: PartialMessage<AdminManageSourceRightsOrCorrectionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: OracleEvidenceSourceSnapshotItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageSourceRightsOrCorrectionResponse {
+    return new AdminManageSourceRightsOrCorrectionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageSourceRightsOrCorrectionResponse {
+    return new AdminManageSourceRightsOrCorrectionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageSourceRightsOrCorrectionResponse {
+    return new AdminManageSourceRightsOrCorrectionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageSourceRightsOrCorrectionResponse | PlainMessage<AdminManageSourceRightsOrCorrectionResponse> | undefined, b: AdminManageSourceRightsOrCorrectionResponse | PlainMessage<AdminManageSourceRightsOrCorrectionResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageSourceRightsOrCorrectionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+ */
+export class OracleDecisionLedgerRecordItem extends Message<OracleDecisionLedgerRecordItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string decision_code = 3;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string reversibility_class = 5;
+   */
+  reversibilityClass = "";
+
+  /**
+   * @generated from field: string options_compared_summary = 6;
+   */
+  optionsComparedSummary = "";
+
+  /**
+   * @generated from field: string do_nothing_baseline = 7;
+   */
+  doNothingBaseline = "";
+
+  /**
+   * @generated from field: string premortem_and_redteam_critique = 8;
+   */
+  premortemAndRedteamCritique = "";
+
+  /**
+   * @generated from field: string dissent_record = 9;
+   */
+  dissentRecord = "";
+
+  /**
+   * @generated from field: int32 decision_version = 10;
+   */
+  decisionVersion = 0;
+
+  /**
+   * @generated from field: string decision_state = 11;
+   */
+  decisionState = "";
+
+  /**
+   * @generated from field: bool immutable_member_ownership = 12;
+   */
+  immutableMemberOwnership = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 13;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleDecisionLedgerRecordItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleDecisionLedgerRecordItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "reversibility_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "options_compared_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "do_nothing_baseline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "premortem_and_redteam_critique", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "dissent_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "decision_version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "decision_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "immutable_member_ownership", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleDecisionLedgerRecordItem {
+    return new OracleDecisionLedgerRecordItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleDecisionLedgerRecordItem {
+    return new OracleDecisionLedgerRecordItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleDecisionLedgerRecordItem {
+    return new OracleDecisionLedgerRecordItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleDecisionLedgerRecordItem | PlainMessage<OracleDecisionLedgerRecordItem> | undefined, b: OracleDecisionLedgerRecordItem | PlainMessage<OracleDecisionLedgerRecordItem> | undefined): boolean {
+    return proto3.util.equals(OracleDecisionLedgerRecordItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleDecisionAssumptionReviewItem
+ */
+export class OracleDecisionAssumptionReviewItem extends Message<OracleDecisionAssumptionReviewItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string entry_code = 3;
+   */
+  entryCode = "";
+
+  /**
+   * @generated from field: string decision_code = 4;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string assumption_statement = 5;
+   */
+  assumptionStatement = "";
+
+  /**
+   * @generated from field: int32 confidence_band_bps = 6;
+   */
+  confidenceBandBps = 0;
+
+  /**
+   * @generated from field: string sensitivity_impact = 7;
+   */
+  sensitivityImpact = "";
+
+  /**
+   * @generated from field: string review_horizon = 8;
+   */
+  reviewHorizon = "";
+
+  /**
+   * @generated from field: string observed_outcome_and_lesson = 9;
+   */
+  observedOutcomeAndLesson = "";
+
+  /**
+   * @generated from field: string freshness_status = 10;
+   */
+  freshnessStatus = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleDecisionAssumptionReviewItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleDecisionAssumptionReviewItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entry_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "assumption_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "confidence_band_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "sensitivity_impact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "review_horizon", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "observed_outcome_and_lesson", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "freshness_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleDecisionAssumptionReviewItem {
+    return new OracleDecisionAssumptionReviewItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleDecisionAssumptionReviewItem {
+    return new OracleDecisionAssumptionReviewItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleDecisionAssumptionReviewItem {
+    return new OracleDecisionAssumptionReviewItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleDecisionAssumptionReviewItem | PlainMessage<OracleDecisionAssumptionReviewItem> | undefined, b: OracleDecisionAssumptionReviewItem | PlainMessage<OracleDecisionAssumptionReviewItem> | undefined): boolean {
+    return proto3.util.equals(OracleDecisionAssumptionReviewItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetDecisionLedgerWorkbenchRequest
+ */
+export class GetDecisionLedgerWorkbenchRequest extends Message<GetDecisionLedgerWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetDecisionLedgerWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetDecisionLedgerWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDecisionLedgerWorkbenchRequest {
+    return new GetDecisionLedgerWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDecisionLedgerWorkbenchRequest {
+    return new GetDecisionLedgerWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDecisionLedgerWorkbenchRequest {
+    return new GetDecisionLedgerWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDecisionLedgerWorkbenchRequest | PlainMessage<GetDecisionLedgerWorkbenchRequest> | undefined, b: GetDecisionLedgerWorkbenchRequest | PlainMessage<GetDecisionLedgerWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetDecisionLedgerWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse
+ */
+export class GetDecisionLedgerWorkbenchResponse extends Message<GetDecisionLedgerWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDecisionLedgerRecordItem decisions = 1;
+   */
+  decisions: OracleDecisionLedgerRecordItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDecisionAssumptionReviewItem assumptions = 2;
+   */
+  assumptions: OracleDecisionAssumptionReviewItem[] = [];
+
+  /**
+   * @generated from field: bool member_ownership_immutable = 3;
+   */
+  memberOwnershipImmutable = false;
+
+  /**
+   * @generated from field: string decision_governance_banner = 4;
+   */
+  decisionGovernanceBanner = "";
+
+  constructor(data?: PartialMessage<GetDecisionLedgerWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decisions", kind: "message", T: OracleDecisionLedgerRecordItem, repeated: true },
+    { no: 2, name: "assumptions", kind: "message", T: OracleDecisionAssumptionReviewItem, repeated: true },
+    { no: 3, name: "member_ownership_immutable", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "decision_governance_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDecisionLedgerWorkbenchResponse {
+    return new GetDecisionLedgerWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDecisionLedgerWorkbenchResponse {
+    return new GetDecisionLedgerWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDecisionLedgerWorkbenchResponse {
+    return new GetDecisionLedgerWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetDecisionLedgerWorkbenchResponse | PlainMessage<GetDecisionLedgerWorkbenchResponse> | undefined, b: GetDecisionLedgerWorkbenchResponse | PlainMessage<GetDecisionLedgerWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetDecisionLedgerWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordRequest
+ */
+export class CreateOrUpdateDecisionLedgerRecordRequest extends Message<CreateOrUpdateDecisionLedgerRecordRequest> {
+  /**
+   * @generated from field: string decision_code = 1;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string title = 2;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string reversibility_class = 3;
+   */
+  reversibilityClass = "";
+
+  /**
+   * @generated from field: string options_compared_summary = 4;
+   */
+  optionsComparedSummary = "";
+
+  /**
+   * @generated from field: string do_nothing_baseline = 5;
+   */
+  doNothingBaseline = "";
+
+  /**
+   * @generated from field: string premortem_and_redteam_critique = 6;
+   */
+  premortemAndRedteamCritique = "";
+
+  /**
+   * @generated from field: string dissent_record = 7;
+   */
+  dissentRecord = "";
+
+  /**
+   * @generated from field: string decision_state = 8;
+   */
+  decisionState = "";
+
+  constructor(data?: PartialMessage<CreateOrUpdateDecisionLedgerRecordRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reversibility_class", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "options_compared_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "do_nothing_baseline", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "premortem_and_redteam_critique", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "dissent_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "decision_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrUpdateDecisionLedgerRecordRequest {
+    return new CreateOrUpdateDecisionLedgerRecordRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrUpdateDecisionLedgerRecordRequest {
+    return new CreateOrUpdateDecisionLedgerRecordRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrUpdateDecisionLedgerRecordRequest {
+    return new CreateOrUpdateDecisionLedgerRecordRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrUpdateDecisionLedgerRecordRequest | PlainMessage<CreateOrUpdateDecisionLedgerRecordRequest> | undefined, b: CreateOrUpdateDecisionLedgerRecordRequest | PlainMessage<CreateOrUpdateDecisionLedgerRecordRequest> | undefined): boolean {
+    return proto3.util.equals(CreateOrUpdateDecisionLedgerRecordRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse
+ */
+export class CreateOrUpdateDecisionLedgerRecordResponse extends Message<CreateOrUpdateDecisionLedgerRecordResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleDecisionLedgerRecordItem decision = 1;
+   */
+  decision?: OracleDecisionLedgerRecordItem;
+
+  constructor(data?: PartialMessage<CreateOrUpdateDecisionLedgerRecordResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decision", kind: "message", T: OracleDecisionLedgerRecordItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrUpdateDecisionLedgerRecordResponse {
+    return new CreateOrUpdateDecisionLedgerRecordResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrUpdateDecisionLedgerRecordResponse {
+    return new CreateOrUpdateDecisionLedgerRecordResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrUpdateDecisionLedgerRecordResponse {
+    return new CreateOrUpdateDecisionLedgerRecordResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrUpdateDecisionLedgerRecordResponse | PlainMessage<CreateOrUpdateDecisionLedgerRecordResponse> | undefined, b: CreateOrUpdateDecisionLedgerRecordResponse | PlainMessage<CreateOrUpdateDecisionLedgerRecordResponse> | undefined): boolean {
+    return proto3.util.equals(CreateOrUpdateDecisionLedgerRecordResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordDecisionAssumptionOrReviewRequest
+ */
+export class RecordDecisionAssumptionOrReviewRequest extends Message<RecordDecisionAssumptionOrReviewRequest> {
+  /**
+   * @generated from field: string entry_code = 1;
+   */
+  entryCode = "";
+
+  /**
+   * @generated from field: string decision_code = 2;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string assumption_statement = 3;
+   */
+  assumptionStatement = "";
+
+  /**
+   * @generated from field: int32 confidence_band_bps = 4;
+   */
+  confidenceBandBps = 0;
+
+  /**
+   * @generated from field: string sensitivity_impact = 5;
+   */
+  sensitivityImpact = "";
+
+  /**
+   * @generated from field: string review_horizon = 6;
+   */
+  reviewHorizon = "";
+
+  /**
+   * @generated from field: string observed_outcome_and_lesson = 7;
+   */
+  observedOutcomeAndLesson = "";
+
+  /**
+   * @generated from field: string freshness_status = 8;
+   */
+  freshnessStatus = "";
+
+  constructor(data?: PartialMessage<RecordDecisionAssumptionOrReviewRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordDecisionAssumptionOrReviewRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "entry_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "assumption_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "confidence_band_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "sensitivity_impact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "review_horizon", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "observed_outcome_and_lesson", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "freshness_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordDecisionAssumptionOrReviewRequest {
+    return new RecordDecisionAssumptionOrReviewRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordDecisionAssumptionOrReviewRequest {
+    return new RecordDecisionAssumptionOrReviewRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordDecisionAssumptionOrReviewRequest {
+    return new RecordDecisionAssumptionOrReviewRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordDecisionAssumptionOrReviewRequest | PlainMessage<RecordDecisionAssumptionOrReviewRequest> | undefined, b: RecordDecisionAssumptionOrReviewRequest | PlainMessage<RecordDecisionAssumptionOrReviewRequest> | undefined): boolean {
+    return proto3.util.equals(RecordDecisionAssumptionOrReviewRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse
+ */
+export class RecordDecisionAssumptionOrReviewResponse extends Message<RecordDecisionAssumptionOrReviewResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleDecisionAssumptionReviewItem assumption = 1;
+   */
+  assumption?: OracleDecisionAssumptionReviewItem;
+
+  constructor(data?: PartialMessage<RecordDecisionAssumptionOrReviewResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "assumption", kind: "message", T: OracleDecisionAssumptionReviewItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordDecisionAssumptionOrReviewResponse {
+    return new RecordDecisionAssumptionOrReviewResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordDecisionAssumptionOrReviewResponse {
+    return new RecordDecisionAssumptionOrReviewResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordDecisionAssumptionOrReviewResponse {
+    return new RecordDecisionAssumptionOrReviewResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordDecisionAssumptionOrReviewResponse | PlainMessage<RecordDecisionAssumptionOrReviewResponse> | undefined, b: RecordDecisionAssumptionOrReviewResponse | PlainMessage<RecordDecisionAssumptionOrReviewResponse> | undefined): boolean {
+    return proto3.util.equals(RecordDecisionAssumptionOrReviewResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListDecisionLedgerAuditRequest
+ */
+export class AdminListDecisionLedgerAuditRequest extends Message<AdminListDecisionLedgerAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListDecisionLedgerAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListDecisionLedgerAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListDecisionLedgerAuditRequest {
+    return new AdminListDecisionLedgerAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListDecisionLedgerAuditRequest {
+    return new AdminListDecisionLedgerAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListDecisionLedgerAuditRequest {
+    return new AdminListDecisionLedgerAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListDecisionLedgerAuditRequest | PlainMessage<AdminListDecisionLedgerAuditRequest> | undefined, b: AdminListDecisionLedgerAuditRequest | PlainMessage<AdminListDecisionLedgerAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListDecisionLedgerAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse
+ */
+export class AdminListDecisionLedgerAuditResponse extends Message<AdminListDecisionLedgerAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDecisionLedgerRecordItem decisions = 1;
+   */
+  decisions: OracleDecisionLedgerRecordItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDecisionAssumptionReviewItem assumptions = 2;
+   */
+  assumptions: OracleDecisionAssumptionReviewItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListDecisionLedgerAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decisions", kind: "message", T: OracleDecisionLedgerRecordItem, repeated: true },
+    { no: 2, name: "assumptions", kind: "message", T: OracleDecisionAssumptionReviewItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListDecisionLedgerAuditResponse {
+    return new AdminListDecisionLedgerAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListDecisionLedgerAuditResponse {
+    return new AdminListDecisionLedgerAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListDecisionLedgerAuditResponse {
+    return new AdminListDecisionLedgerAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListDecisionLedgerAuditResponse | PlainMessage<AdminListDecisionLedgerAuditResponse> | undefined, b: AdminListDecisionLedgerAuditResponse | PlainMessage<AdminListDecisionLedgerAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListDecisionLedgerAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldRequest
+ */
+export class AdminManageDecisionTemplateOrHoldRequest extends Message<AdminManageDecisionTemplateOrHoldRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string decision_code = 2;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string decision_state = 3;
+   */
+  decisionState = "";
+
+  /**
+   * @generated from field: string dissent_record = 4;
+   */
+  dissentRecord = "";
+
+  constructor(data?: PartialMessage<AdminManageDecisionTemplateOrHoldRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "decision_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "dissent_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageDecisionTemplateOrHoldRequest {
+    return new AdminManageDecisionTemplateOrHoldRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageDecisionTemplateOrHoldRequest {
+    return new AdminManageDecisionTemplateOrHoldRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageDecisionTemplateOrHoldRequest {
+    return new AdminManageDecisionTemplateOrHoldRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageDecisionTemplateOrHoldRequest | PlainMessage<AdminManageDecisionTemplateOrHoldRequest> | undefined, b: AdminManageDecisionTemplateOrHoldRequest | PlainMessage<AdminManageDecisionTemplateOrHoldRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageDecisionTemplateOrHoldRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse
+ */
+export class AdminManageDecisionTemplateOrHoldResponse extends Message<AdminManageDecisionTemplateOrHoldResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleDecisionLedgerRecordItem decision = 1;
+   */
+  decision?: OracleDecisionLedgerRecordItem;
+
+  constructor(data?: PartialMessage<AdminManageDecisionTemplateOrHoldResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "decision", kind: "message", T: OracleDecisionLedgerRecordItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageDecisionTemplateOrHoldResponse {
+    return new AdminManageDecisionTemplateOrHoldResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageDecisionTemplateOrHoldResponse {
+    return new AdminManageDecisionTemplateOrHoldResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageDecisionTemplateOrHoldResponse {
+    return new AdminManageDecisionTemplateOrHoldResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageDecisionTemplateOrHoldResponse | PlainMessage<AdminManageDecisionTemplateOrHoldResponse> | undefined, b: AdminManageDecisionTemplateOrHoldResponse | PlainMessage<AdminManageDecisionTemplateOrHoldResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageDecisionTemplateOrHoldResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleCommitmentExecutionItem
+ */
+export class OracleCommitmentExecutionItem extends Message<OracleCommitmentExecutionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string commitment_code = 3;
+   */
+  commitmentCode = "";
+
+  /**
+   * @generated from field: string decision_code = 4;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string owner_handle = 5;
+   */
+  ownerHandle = "";
+
+  /**
+   * @generated from field: string title = 6;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string dependency_summary = 7;
+   */
+  dependencySummary = "";
+
+  /**
+   * @generated from field: string cancellation_criteria = 8;
+   */
+  cancellationCriteria = "";
+
+  /**
+   * @generated from field: string completion_evidence_ref = 9;
+   */
+  completionEvidenceRef = "";
+
+  /**
+   * @generated from field: string execution_state = 10;
+   */
+  executionState = "";
+
+  /**
+   * @generated from field: string non_judgmental_loop_review = 11;
+   */
+  nonJudgmentalLoopReview = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 12;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleCommitmentExecutionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleCommitmentExecutionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "commitment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "owner_handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "dependency_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "cancellation_criteria", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "completion_evidence_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "execution_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "non_judgmental_loop_review", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleCommitmentExecutionItem {
+    return new OracleCommitmentExecutionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleCommitmentExecutionItem {
+    return new OracleCommitmentExecutionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleCommitmentExecutionItem {
+    return new OracleCommitmentExecutionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleCommitmentExecutionItem | PlainMessage<OracleCommitmentExecutionItem> | undefined, b: OracleCommitmentExecutionItem | PlainMessage<OracleCommitmentExecutionItem> | undefined): boolean {
+    return proto3.util.equals(OracleCommitmentExecutionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+ */
+export class OracleExternalSyncDeliveryReceiptItem extends Message<OracleExternalSyncDeliveryReceiptItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string receipt_code = 3;
+   */
+  receiptCode = "";
+
+  /**
+   * @generated from field: string commitment_code = 4;
+   */
+  commitmentCode = "";
+
+  /**
+   * @generated from field: string target_connector = 5;
+   */
+  targetConnector = "";
+
+  /**
+   * @generated from field: string preview_payload_summary = 6;
+   */
+  previewPayloadSummary = "";
+
+  /**
+   * @generated from field: string idempotency_key = 7;
+   */
+  idempotencyKey = "";
+
+  /**
+   * @generated from field: bool member_explicit_approval = 8;
+   */
+  memberExplicitApproval = false;
+
+  /**
+   * @generated from field: string delivery_state = 9;
+   */
+  deliveryState = "";
+
+  /**
+   * @generated from field: string reconciliation_note = 10;
+   */
+  reconciliationNote = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleExternalSyncDeliveryReceiptItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "receipt_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "commitment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "target_connector", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "preview_payload_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "idempotency_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "member_explicit_approval", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "delivery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "reconciliation_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleExternalSyncDeliveryReceiptItem {
+    return new OracleExternalSyncDeliveryReceiptItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleExternalSyncDeliveryReceiptItem {
+    return new OracleExternalSyncDeliveryReceiptItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleExternalSyncDeliveryReceiptItem {
+    return new OracleExternalSyncDeliveryReceiptItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleExternalSyncDeliveryReceiptItem | PlainMessage<OracleExternalSyncDeliveryReceiptItem> | undefined, b: OracleExternalSyncDeliveryReceiptItem | PlainMessage<OracleExternalSyncDeliveryReceiptItem> | undefined): boolean {
+    return proto3.util.equals(OracleExternalSyncDeliveryReceiptItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchRequest
+ */
+export class GetCommitmentsOutcomeWorkbenchRequest extends Message<GetCommitmentsOutcomeWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetCommitmentsOutcomeWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCommitmentsOutcomeWorkbenchRequest {
+    return new GetCommitmentsOutcomeWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCommitmentsOutcomeWorkbenchRequest {
+    return new GetCommitmentsOutcomeWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCommitmentsOutcomeWorkbenchRequest {
+    return new GetCommitmentsOutcomeWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCommitmentsOutcomeWorkbenchRequest | PlainMessage<GetCommitmentsOutcomeWorkbenchRequest> | undefined, b: GetCommitmentsOutcomeWorkbenchRequest | PlainMessage<GetCommitmentsOutcomeWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetCommitmentsOutcomeWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse
+ */
+export class GetCommitmentsOutcomeWorkbenchResponse extends Message<GetCommitmentsOutcomeWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCommitmentExecutionItem commitments = 1;
+   */
+  commitments: OracleCommitmentExecutionItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem sync_receipts = 2;
+   */
+  syncReceipts: OracleExternalSyncDeliveryReceiptItem[] = [];
+
+  /**
+   * @generated from field: bool preview_and_approval_required = 3;
+   */
+  previewAndApprovalRequired = false;
+
+  /**
+   * @generated from field: string loop_closure_banner = 4;
+   */
+  loopClosureBanner = "";
+
+  constructor(data?: PartialMessage<GetCommitmentsOutcomeWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "commitments", kind: "message", T: OracleCommitmentExecutionItem, repeated: true },
+    { no: 2, name: "sync_receipts", kind: "message", T: OracleExternalSyncDeliveryReceiptItem, repeated: true },
+    { no: 3, name: "preview_and_approval_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "loop_closure_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCommitmentsOutcomeWorkbenchResponse {
+    return new GetCommitmentsOutcomeWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCommitmentsOutcomeWorkbenchResponse {
+    return new GetCommitmentsOutcomeWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCommitmentsOutcomeWorkbenchResponse {
+    return new GetCommitmentsOutcomeWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetCommitmentsOutcomeWorkbenchResponse | PlainMessage<GetCommitmentsOutcomeWorkbenchResponse> | undefined, b: GetCommitmentsOutcomeWorkbenchResponse | PlainMessage<GetCommitmentsOutcomeWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetCommitmentsOutcomeWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrUpdateCommitmentItemRequest
+ */
+export class CreateOrUpdateCommitmentItemRequest extends Message<CreateOrUpdateCommitmentItemRequest> {
+  /**
+   * @generated from field: string commitment_code = 1;
+   */
+  commitmentCode = "";
+
+  /**
+   * @generated from field: string decision_code = 2;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string owner_handle = 3;
+   */
+  ownerHandle = "";
+
+  /**
+   * @generated from field: string title = 4;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string dependency_summary = 5;
+   */
+  dependencySummary = "";
+
+  /**
+   * @generated from field: string cancellation_criteria = 6;
+   */
+  cancellationCriteria = "";
+
+  /**
+   * @generated from field: string completion_evidence_ref = 7;
+   */
+  completionEvidenceRef = "";
+
+  /**
+   * @generated from field: string execution_state = 8;
+   */
+  executionState = "";
+
+  constructor(data?: PartialMessage<CreateOrUpdateCommitmentItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrUpdateCommitmentItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "commitment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "owner_handle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "dependency_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "cancellation_criteria", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "completion_evidence_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "execution_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrUpdateCommitmentItemRequest {
+    return new CreateOrUpdateCommitmentItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrUpdateCommitmentItemRequest {
+    return new CreateOrUpdateCommitmentItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrUpdateCommitmentItemRequest {
+    return new CreateOrUpdateCommitmentItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrUpdateCommitmentItemRequest | PlainMessage<CreateOrUpdateCommitmentItemRequest> | undefined, b: CreateOrUpdateCommitmentItemRequest | PlainMessage<CreateOrUpdateCommitmentItemRequest> | undefined): boolean {
+    return proto3.util.equals(CreateOrUpdateCommitmentItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse
+ */
+export class CreateOrUpdateCommitmentItemResponse extends Message<CreateOrUpdateCommitmentItemResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleCommitmentExecutionItem commitment = 1;
+   */
+  commitment?: OracleCommitmentExecutionItem;
+
+  constructor(data?: PartialMessage<CreateOrUpdateCommitmentItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "commitment", kind: "message", T: OracleCommitmentExecutionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrUpdateCommitmentItemResponse {
+    return new CreateOrUpdateCommitmentItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrUpdateCommitmentItemResponse {
+    return new CreateOrUpdateCommitmentItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrUpdateCommitmentItemResponse {
+    return new CreateOrUpdateCommitmentItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrUpdateCommitmentItemResponse | PlainMessage<CreateOrUpdateCommitmentItemResponse> | undefined, b: CreateOrUpdateCommitmentItemResponse | PlainMessage<CreateOrUpdateCommitmentItemResponse> | undefined): boolean {
+    return proto3.util.equals(CreateOrUpdateCommitmentItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncRequest
+ */
+export class PreviewOrExecuteExternalCommitmentSyncRequest extends Message<PreviewOrExecuteExternalCommitmentSyncRequest> {
+  /**
+   * @generated from field: string receipt_code = 1;
+   */
+  receiptCode = "";
+
+  /**
+   * @generated from field: string commitment_code = 2;
+   */
+  commitmentCode = "";
+
+  /**
+   * @generated from field: string target_connector = 3;
+   */
+  targetConnector = "";
+
+  /**
+   * @generated from field: string preview_payload_summary = 4;
+   */
+  previewPayloadSummary = "";
+
+  /**
+   * @generated from field: string idempotency_key = 5;
+   */
+  idempotencyKey = "";
+
+  /**
+   * @generated from field: bool member_explicit_approval = 6;
+   */
+  memberExplicitApproval = false;
+
+  /**
+   * @generated from field: string delivery_state = 7;
+   */
+  deliveryState = "";
+
+  constructor(data?: PartialMessage<PreviewOrExecuteExternalCommitmentSyncRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "receipt_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "commitment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "target_connector", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "preview_payload_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "idempotency_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "member_explicit_approval", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "delivery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewOrExecuteExternalCommitmentSyncRequest {
+    return new PreviewOrExecuteExternalCommitmentSyncRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewOrExecuteExternalCommitmentSyncRequest {
+    return new PreviewOrExecuteExternalCommitmentSyncRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewOrExecuteExternalCommitmentSyncRequest {
+    return new PreviewOrExecuteExternalCommitmentSyncRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewOrExecuteExternalCommitmentSyncRequest | PlainMessage<PreviewOrExecuteExternalCommitmentSyncRequest> | undefined, b: PreviewOrExecuteExternalCommitmentSyncRequest | PlainMessage<PreviewOrExecuteExternalCommitmentSyncRequest> | undefined): boolean {
+    return proto3.util.equals(PreviewOrExecuteExternalCommitmentSyncRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse
+ */
+export class PreviewOrExecuteExternalCommitmentSyncResponse extends Message<PreviewOrExecuteExternalCommitmentSyncResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem sync_receipt = 1;
+   */
+  syncReceipt?: OracleExternalSyncDeliveryReceiptItem;
+
+  constructor(data?: PartialMessage<PreviewOrExecuteExternalCommitmentSyncResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sync_receipt", kind: "message", T: OracleExternalSyncDeliveryReceiptItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewOrExecuteExternalCommitmentSyncResponse {
+    return new PreviewOrExecuteExternalCommitmentSyncResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewOrExecuteExternalCommitmentSyncResponse {
+    return new PreviewOrExecuteExternalCommitmentSyncResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewOrExecuteExternalCommitmentSyncResponse {
+    return new PreviewOrExecuteExternalCommitmentSyncResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PreviewOrExecuteExternalCommitmentSyncResponse | PlainMessage<PreviewOrExecuteExternalCommitmentSyncResponse> | undefined, b: PreviewOrExecuteExternalCommitmentSyncResponse | PlainMessage<PreviewOrExecuteExternalCommitmentSyncResponse> | undefined): boolean {
+    return proto3.util.equals(PreviewOrExecuteExternalCommitmentSyncResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditRequest
+ */
+export class AdminListCommitmentsOutcomeAuditRequest extends Message<AdminListCommitmentsOutcomeAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListCommitmentsOutcomeAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListCommitmentsOutcomeAuditRequest {
+    return new AdminListCommitmentsOutcomeAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListCommitmentsOutcomeAuditRequest {
+    return new AdminListCommitmentsOutcomeAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListCommitmentsOutcomeAuditRequest {
+    return new AdminListCommitmentsOutcomeAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListCommitmentsOutcomeAuditRequest | PlainMessage<AdminListCommitmentsOutcomeAuditRequest> | undefined, b: AdminListCommitmentsOutcomeAuditRequest | PlainMessage<AdminListCommitmentsOutcomeAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListCommitmentsOutcomeAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse
+ */
+export class AdminListCommitmentsOutcomeAuditResponse extends Message<AdminListCommitmentsOutcomeAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCommitmentExecutionItem commitments = 1;
+   */
+  commitments: OracleCommitmentExecutionItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem sync_receipts = 2;
+   */
+  syncReceipts: OracleExternalSyncDeliveryReceiptItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListCommitmentsOutcomeAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "commitments", kind: "message", T: OracleCommitmentExecutionItem, repeated: true },
+    { no: 2, name: "sync_receipts", kind: "message", T: OracleExternalSyncDeliveryReceiptItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListCommitmentsOutcomeAuditResponse {
+    return new AdminListCommitmentsOutcomeAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListCommitmentsOutcomeAuditResponse {
+    return new AdminListCommitmentsOutcomeAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListCommitmentsOutcomeAuditResponse {
+    return new AdminListCommitmentsOutcomeAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListCommitmentsOutcomeAuditResponse | PlainMessage<AdminListCommitmentsOutcomeAuditResponse> | undefined, b: AdminListCommitmentsOutcomeAuditResponse | PlainMessage<AdminListCommitmentsOutcomeAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListCommitmentsOutcomeAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryRequest
+ */
+export class AdminReconcileExternalSyncDeliveryRequest extends Message<AdminReconcileExternalSyncDeliveryRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string receipt_code = 2;
+   */
+  receiptCode = "";
+
+  /**
+   * @generated from field: string delivery_state = 3;
+   */
+  deliveryState = "";
+
+  /**
+   * @generated from field: string reconciliation_note = 4;
+   */
+  reconciliationNote = "";
+
+  constructor(data?: PartialMessage<AdminReconcileExternalSyncDeliveryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "receipt_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "delivery_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "reconciliation_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminReconcileExternalSyncDeliveryRequest {
+    return new AdminReconcileExternalSyncDeliveryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminReconcileExternalSyncDeliveryRequest {
+    return new AdminReconcileExternalSyncDeliveryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminReconcileExternalSyncDeliveryRequest {
+    return new AdminReconcileExternalSyncDeliveryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminReconcileExternalSyncDeliveryRequest | PlainMessage<AdminReconcileExternalSyncDeliveryRequest> | undefined, b: AdminReconcileExternalSyncDeliveryRequest | PlainMessage<AdminReconcileExternalSyncDeliveryRequest> | undefined): boolean {
+    return proto3.util.equals(AdminReconcileExternalSyncDeliveryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse
+ */
+export class AdminReconcileExternalSyncDeliveryResponse extends Message<AdminReconcileExternalSyncDeliveryResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem sync_receipt = 1;
+   */
+  syncReceipt?: OracleExternalSyncDeliveryReceiptItem;
+
+  constructor(data?: PartialMessage<AdminReconcileExternalSyncDeliveryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sync_receipt", kind: "message", T: OracleExternalSyncDeliveryReceiptItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminReconcileExternalSyncDeliveryResponse {
+    return new AdminReconcileExternalSyncDeliveryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminReconcileExternalSyncDeliveryResponse {
+    return new AdminReconcileExternalSyncDeliveryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminReconcileExternalSyncDeliveryResponse {
+    return new AdminReconcileExternalSyncDeliveryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminReconcileExternalSyncDeliveryResponse | PlainMessage<AdminReconcileExternalSyncDeliveryResponse> | undefined, b: AdminReconcileExternalSyncDeliveryResponse | PlainMessage<AdminReconcileExternalSyncDeliveryResponse> | undefined): boolean {
+    return proto3.util.equals(AdminReconcileExternalSyncDeliveryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+ */
+export class OracleWatchlistEntityMonitorItem extends Message<OracleWatchlistEntityMonitorItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string monitor_code = 3;
+   */
+  monitorCode = "";
+
+  /**
+   * @generated from field: string entity_and_region = 4;
+   */
+  entityAndRegion = "";
+
+  /**
+   * @generated from field: string materiality_threshold = 5;
+   */
+  materialityThreshold = "";
+
+  /**
+   * @generated from field: int32 daily_alert_budget = 6;
+   */
+  dailyAlertBudget = 0;
+
+  /**
+   * @generated from field: string quiet_hours_window = 7;
+   */
+  quietHoursWindow = "";
+
+  /**
+   * @generated from field: string snooze_until_condition = 8;
+   */
+  snoozeUntilCondition = "";
+
+  /**
+   * @generated from field: string feed_health_state = 9;
+   */
+  feedHealthState = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleWatchlistEntityMonitorItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleWatchlistEntityMonitorItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "monitor_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "entity_and_region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "materiality_threshold", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "daily_alert_budget", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "quiet_hours_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "snooze_until_condition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "feed_health_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleWatchlistEntityMonitorItem {
+    return new OracleWatchlistEntityMonitorItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleWatchlistEntityMonitorItem {
+    return new OracleWatchlistEntityMonitorItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleWatchlistEntityMonitorItem {
+    return new OracleWatchlistEntityMonitorItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleWatchlistEntityMonitorItem | PlainMessage<OracleWatchlistEntityMonitorItem> | undefined, b: OracleWatchlistEntityMonitorItem | PlainMessage<OracleWatchlistEntityMonitorItem> | undefined): boolean {
+    return proto3.util.equals(OracleWatchlistEntityMonitorItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleCommandBriefSignalCardItem
+ */
+export class OracleCommandBriefSignalCardItem extends Message<OracleCommandBriefSignalCardItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string signal_code = 3;
+   */
+  signalCode = "";
+
+  /**
+   * @generated from field: string monitor_code = 4;
+   */
+  monitorCode = "";
+
+  /**
+   * @generated from field: string brief_kind = 5;
+   */
+  briefKind = "";
+
+  /**
+   * @generated from field: string observed_fact_statement = 6;
+   */
+  observedFactStatement = "";
+
+  /**
+   * @generated from field: string separated_inference_statement = 7;
+   */
+  separatedInferenceStatement = "";
+
+  /**
+   * @generated from field: string alternative_interpretation = 8;
+   */
+  alternativeInterpretation = "";
+
+  /**
+   * @generated from field: string suggested_next_check = 9;
+   */
+  suggestedNextCheck = "";
+
+  /**
+   * @generated from field: string draft_disposition_state = 10;
+   */
+  draftDispositionState = "";
+
+  /**
+   * @generated from field: bool inference_disguised_as_fact = 11;
+   */
+  inferenceDisguisedAsFact = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 12;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleCommandBriefSignalCardItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleCommandBriefSignalCardItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "signal_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "monitor_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "brief_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "observed_fact_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "separated_inference_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "alternative_interpretation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "suggested_next_check", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "draft_disposition_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "inference_disguised_as_fact", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleCommandBriefSignalCardItem {
+    return new OracleCommandBriefSignalCardItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleCommandBriefSignalCardItem {
+    return new OracleCommandBriefSignalCardItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleCommandBriefSignalCardItem {
+    return new OracleCommandBriefSignalCardItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleCommandBriefSignalCardItem | PlainMessage<OracleCommandBriefSignalCardItem> | undefined, b: OracleCommandBriefSignalCardItem | PlainMessage<OracleCommandBriefSignalCardItem> | undefined): boolean {
+    return proto3.util.equals(OracleCommandBriefSignalCardItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchRequest
+ */
+export class GetWatchlistsCommandBriefWorkbenchRequest extends Message<GetWatchlistsCommandBriefWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetWatchlistsCommandBriefWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWatchlistsCommandBriefWorkbenchRequest {
+    return new GetWatchlistsCommandBriefWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWatchlistsCommandBriefWorkbenchRequest {
+    return new GetWatchlistsCommandBriefWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWatchlistsCommandBriefWorkbenchRequest {
+    return new GetWatchlistsCommandBriefWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWatchlistsCommandBriefWorkbenchRequest | PlainMessage<GetWatchlistsCommandBriefWorkbenchRequest> | undefined, b: GetWatchlistsCommandBriefWorkbenchRequest | PlainMessage<GetWatchlistsCommandBriefWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetWatchlistsCommandBriefWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse
+ */
+export class GetWatchlistsCommandBriefWorkbenchResponse extends Message<GetWatchlistsCommandBriefWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleWatchlistEntityMonitorItem monitors = 1;
+   */
+  monitors: OracleWatchlistEntityMonitorItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCommandBriefSignalCardItem signal_cards = 2;
+   */
+  signalCards: OracleCommandBriefSignalCardItem[] = [];
+
+  /**
+   * @generated from field: bool fact_inference_separation_enforced = 3;
+   */
+  factInferenceSeparationEnforced = false;
+
+  /**
+   * @generated from field: string command_brief_banner = 4;
+   */
+  commandBriefBanner = "";
+
+  constructor(data?: PartialMessage<GetWatchlistsCommandBriefWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "monitors", kind: "message", T: OracleWatchlistEntityMonitorItem, repeated: true },
+    { no: 2, name: "signal_cards", kind: "message", T: OracleCommandBriefSignalCardItem, repeated: true },
+    { no: 3, name: "fact_inference_separation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "command_brief_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWatchlistsCommandBriefWorkbenchResponse {
+    return new GetWatchlistsCommandBriefWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWatchlistsCommandBriefWorkbenchResponse {
+    return new GetWatchlistsCommandBriefWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWatchlistsCommandBriefWorkbenchResponse {
+    return new GetWatchlistsCommandBriefWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWatchlistsCommandBriefWorkbenchResponse | PlainMessage<GetWatchlistsCommandBriefWorkbenchResponse> | undefined, b: GetWatchlistsCommandBriefWorkbenchResponse | PlainMessage<GetWatchlistsCommandBriefWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetWatchlistsCommandBriefWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpsertWatchlistEntityMonitorRequest
+ */
+export class UpsertWatchlistEntityMonitorRequest extends Message<UpsertWatchlistEntityMonitorRequest> {
+  /**
+   * @generated from field: string monitor_code = 1;
+   */
+  monitorCode = "";
+
+  /**
+   * @generated from field: string entity_and_region = 2;
+   */
+  entityAndRegion = "";
+
+  /**
+   * @generated from field: string materiality_threshold = 3;
+   */
+  materialityThreshold = "";
+
+  /**
+   * @generated from field: int32 daily_alert_budget = 4;
+   */
+  dailyAlertBudget = 0;
+
+  /**
+   * @generated from field: string quiet_hours_window = 5;
+   */
+  quietHoursWindow = "";
+
+  /**
+   * @generated from field: string snooze_until_condition = 6;
+   */
+  snoozeUntilCondition = "";
+
+  /**
+   * @generated from field: string feed_health_state = 7;
+   */
+  feedHealthState = "";
+
+  constructor(data?: PartialMessage<UpsertWatchlistEntityMonitorRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpsertWatchlistEntityMonitorRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "monitor_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_and_region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "materiality_threshold", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "daily_alert_budget", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "quiet_hours_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "snooze_until_condition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "feed_health_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWatchlistEntityMonitorRequest {
+    return new UpsertWatchlistEntityMonitorRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWatchlistEntityMonitorRequest {
+    return new UpsertWatchlistEntityMonitorRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWatchlistEntityMonitorRequest {
+    return new UpsertWatchlistEntityMonitorRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWatchlistEntityMonitorRequest | PlainMessage<UpsertWatchlistEntityMonitorRequest> | undefined, b: UpsertWatchlistEntityMonitorRequest | PlainMessage<UpsertWatchlistEntityMonitorRequest> | undefined): boolean {
+    return proto3.util.equals(UpsertWatchlistEntityMonitorRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse
+ */
+export class UpsertWatchlistEntityMonitorResponse extends Message<UpsertWatchlistEntityMonitorResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleWatchlistEntityMonitorItem monitor = 1;
+   */
+  monitor?: OracleWatchlistEntityMonitorItem;
+
+  constructor(data?: PartialMessage<UpsertWatchlistEntityMonitorResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "monitor", kind: "message", T: OracleWatchlistEntityMonitorItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertWatchlistEntityMonitorResponse {
+    return new UpsertWatchlistEntityMonitorResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertWatchlistEntityMonitorResponse {
+    return new UpsertWatchlistEntityMonitorResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertWatchlistEntityMonitorResponse {
+    return new UpsertWatchlistEntityMonitorResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpsertWatchlistEntityMonitorResponse | PlainMessage<UpsertWatchlistEntityMonitorResponse> | undefined, b: UpsertWatchlistEntityMonitorResponse | PlainMessage<UpsertWatchlistEntityMonitorResponse> | undefined): boolean {
+    return proto3.util.equals(UpsertWatchlistEntityMonitorResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalRequest
+ */
+export class ApproveOrSnoozeCommandBriefSignalRequest extends Message<ApproveOrSnoozeCommandBriefSignalRequest> {
+  /**
+   * @generated from field: string signal_code = 1;
+   */
+  signalCode = "";
+
+  /**
+   * @generated from field: string monitor_code = 2;
+   */
+  monitorCode = "";
+
+  /**
+   * @generated from field: string brief_kind = 3;
+   */
+  briefKind = "";
+
+  /**
+   * @generated from field: string observed_fact_statement = 4;
+   */
+  observedFactStatement = "";
+
+  /**
+   * @generated from field: string separated_inference_statement = 5;
+   */
+  separatedInferenceStatement = "";
+
+  /**
+   * @generated from field: string alternative_interpretation = 6;
+   */
+  alternativeInterpretation = "";
+
+  /**
+   * @generated from field: string suggested_next_check = 7;
+   */
+  suggestedNextCheck = "";
+
+  /**
+   * @generated from field: string draft_disposition_state = 8;
+   */
+  draftDispositionState = "";
+
+  constructor(data?: PartialMessage<ApproveOrSnoozeCommandBriefSignalRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "signal_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "monitor_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "brief_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "observed_fact_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "separated_inference_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "alternative_interpretation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "suggested_next_check", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "draft_disposition_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrSnoozeCommandBriefSignalRequest {
+    return new ApproveOrSnoozeCommandBriefSignalRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrSnoozeCommandBriefSignalRequest {
+    return new ApproveOrSnoozeCommandBriefSignalRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrSnoozeCommandBriefSignalRequest {
+    return new ApproveOrSnoozeCommandBriefSignalRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrSnoozeCommandBriefSignalRequest | PlainMessage<ApproveOrSnoozeCommandBriefSignalRequest> | undefined, b: ApproveOrSnoozeCommandBriefSignalRequest | PlainMessage<ApproveOrSnoozeCommandBriefSignalRequest> | undefined): boolean {
+    return proto3.util.equals(ApproveOrSnoozeCommandBriefSignalRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse
+ */
+export class ApproveOrSnoozeCommandBriefSignalResponse extends Message<ApproveOrSnoozeCommandBriefSignalResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleCommandBriefSignalCardItem signal_card = 1;
+   */
+  signalCard?: OracleCommandBriefSignalCardItem;
+
+  constructor(data?: PartialMessage<ApproveOrSnoozeCommandBriefSignalResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "signal_card", kind: "message", T: OracleCommandBriefSignalCardItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrSnoozeCommandBriefSignalResponse {
+    return new ApproveOrSnoozeCommandBriefSignalResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrSnoozeCommandBriefSignalResponse {
+    return new ApproveOrSnoozeCommandBriefSignalResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrSnoozeCommandBriefSignalResponse {
+    return new ApproveOrSnoozeCommandBriefSignalResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrSnoozeCommandBriefSignalResponse | PlainMessage<ApproveOrSnoozeCommandBriefSignalResponse> | undefined, b: ApproveOrSnoozeCommandBriefSignalResponse | PlainMessage<ApproveOrSnoozeCommandBriefSignalResponse> | undefined): boolean {
+    return proto3.util.equals(ApproveOrSnoozeCommandBriefSignalResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditRequest
+ */
+export class AdminListWatchlistsCommandBriefAuditRequest extends Message<AdminListWatchlistsCommandBriefAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListWatchlistsCommandBriefAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListWatchlistsCommandBriefAuditRequest {
+    return new AdminListWatchlistsCommandBriefAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListWatchlistsCommandBriefAuditRequest {
+    return new AdminListWatchlistsCommandBriefAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListWatchlistsCommandBriefAuditRequest {
+    return new AdminListWatchlistsCommandBriefAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListWatchlistsCommandBriefAuditRequest | PlainMessage<AdminListWatchlistsCommandBriefAuditRequest> | undefined, b: AdminListWatchlistsCommandBriefAuditRequest | PlainMessage<AdminListWatchlistsCommandBriefAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListWatchlistsCommandBriefAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse
+ */
+export class AdminListWatchlistsCommandBriefAuditResponse extends Message<AdminListWatchlistsCommandBriefAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleWatchlistEntityMonitorItem monitors = 1;
+   */
+  monitors: OracleWatchlistEntityMonitorItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCommandBriefSignalCardItem signal_cards = 2;
+   */
+  signalCards: OracleCommandBriefSignalCardItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListWatchlistsCommandBriefAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "monitors", kind: "message", T: OracleWatchlistEntityMonitorItem, repeated: true },
+    { no: 2, name: "signal_cards", kind: "message", T: OracleCommandBriefSignalCardItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListWatchlistsCommandBriefAuditResponse {
+    return new AdminListWatchlistsCommandBriefAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListWatchlistsCommandBriefAuditResponse {
+    return new AdminListWatchlistsCommandBriefAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListWatchlistsCommandBriefAuditResponse {
+    return new AdminListWatchlistsCommandBriefAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListWatchlistsCommandBriefAuditResponse | PlainMessage<AdminListWatchlistsCommandBriefAuditResponse> | undefined, b: AdminListWatchlistsCommandBriefAuditResponse | PlainMessage<AdminListWatchlistsCommandBriefAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListWatchlistsCommandBriefAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedRequest
+ */
+export class AdminManageWatchlistAlertBudgetOrFeedRequest extends Message<AdminManageWatchlistAlertBudgetOrFeedRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string monitor_code = 2;
+   */
+  monitorCode = "";
+
+  /**
+   * @generated from field: int32 daily_alert_budget = 3;
+   */
+  dailyAlertBudget = 0;
+
+  /**
+   * @generated from field: string feed_health_state = 4;
+   */
+  feedHealthState = "";
+
+  constructor(data?: PartialMessage<AdminManageWatchlistAlertBudgetOrFeedRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "monitor_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "daily_alert_budget", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "feed_health_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageWatchlistAlertBudgetOrFeedRequest {
+    return new AdminManageWatchlistAlertBudgetOrFeedRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageWatchlistAlertBudgetOrFeedRequest {
+    return new AdminManageWatchlistAlertBudgetOrFeedRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageWatchlistAlertBudgetOrFeedRequest {
+    return new AdminManageWatchlistAlertBudgetOrFeedRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageWatchlistAlertBudgetOrFeedRequest | PlainMessage<AdminManageWatchlistAlertBudgetOrFeedRequest> | undefined, b: AdminManageWatchlistAlertBudgetOrFeedRequest | PlainMessage<AdminManageWatchlistAlertBudgetOrFeedRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageWatchlistAlertBudgetOrFeedRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse
+ */
+export class AdminManageWatchlistAlertBudgetOrFeedResponse extends Message<AdminManageWatchlistAlertBudgetOrFeedResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleWatchlistEntityMonitorItem monitor = 1;
+   */
+  monitor?: OracleWatchlistEntityMonitorItem;
+
+  constructor(data?: PartialMessage<AdminManageWatchlistAlertBudgetOrFeedResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "monitor", kind: "message", T: OracleWatchlistEntityMonitorItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageWatchlistAlertBudgetOrFeedResponse {
+    return new AdminManageWatchlistAlertBudgetOrFeedResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageWatchlistAlertBudgetOrFeedResponse {
+    return new AdminManageWatchlistAlertBudgetOrFeedResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageWatchlistAlertBudgetOrFeedResponse {
+    return new AdminManageWatchlistAlertBudgetOrFeedResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageWatchlistAlertBudgetOrFeedResponse | PlainMessage<AdminManageWatchlistAlertBudgetOrFeedResponse> | undefined, b: AdminManageWatchlistAlertBudgetOrFeedResponse | PlainMessage<AdminManageWatchlistAlertBudgetOrFeedResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageWatchlistAlertBudgetOrFeedResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleAssumptionDriftAlertItem
+ */
+export class OracleAssumptionDriftAlertItem extends Message<OracleAssumptionDriftAlertItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string drift_code = 3;
+   */
+  driftCode = "";
+
+  /**
+   * @generated from field: string decision_code = 4;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string assumption_code = 5;
+   */
+  assumptionCode = "";
+
+  /**
+   * @generated from field: string old_assumption_statement = 6;
+   */
+  oldAssumptionStatement = "";
+
+  /**
+   * @generated from field: string new_evidence_passage = 7;
+   */
+  newEvidencePassage = "";
+
+  /**
+   * @generated from field: string materiality_band = 8;
+   */
+  materialityBand = "";
+
+  /**
+   * @generated from field: string alternative_explanation = 9;
+   */
+  alternativeExplanation = "";
+
+  /**
+   * @generated from field: string member_disposition = 10;
+   */
+  memberDisposition = "";
+
+  /**
+   * @generated from field: bool immutable_predecessor_preserved = 11;
+   */
+  immutablePredecessorPreserved = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 12;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleAssumptionDriftAlertItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleAssumptionDriftAlertItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "drift_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "assumption_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "old_assumption_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "new_evidence_passage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "materiality_band", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "alternative_explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "member_disposition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "immutable_predecessor_preserved", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleAssumptionDriftAlertItem {
+    return new OracleAssumptionDriftAlertItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleAssumptionDriftAlertItem {
+    return new OracleAssumptionDriftAlertItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleAssumptionDriftAlertItem {
+    return new OracleAssumptionDriftAlertItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleAssumptionDriftAlertItem | PlainMessage<OracleAssumptionDriftAlertItem> | undefined, b: OracleAssumptionDriftAlertItem | PlainMessage<OracleAssumptionDriftAlertItem> | undefined): boolean {
+    return proto3.util.equals(OracleAssumptionDriftAlertItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleDriftRadarPolicyItem
+ */
+export class OracleDriftRadarPolicyItem extends Message<OracleDriftRadarPolicyItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string policy_code = 3;
+   */
+  policyCode = "";
+
+  /**
+   * @generated from field: string monitored_domain = 4;
+   */
+  monitoredDomain = "";
+
+  /**
+   * @generated from field: int32 cooldown_hours = 5;
+   */
+  cooldownHours = 0;
+
+  /**
+   * @generated from field: bool notify_only_if_action_possible = 6;
+   */
+  notifyOnlyIfActionPossible = false;
+
+  /**
+   * @generated from field: string radar_state = 7;
+   */
+  radarState = "";
+
+  /**
+   * @generated from field: string false_positive_suppression_note = 8;
+   */
+  falsePositiveSuppressionNote = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleDriftRadarPolicyItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleDriftRadarPolicyItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "policy_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "monitored_domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "cooldown_hours", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "notify_only_if_action_possible", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "radar_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "false_positive_suppression_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleDriftRadarPolicyItem {
+    return new OracleDriftRadarPolicyItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleDriftRadarPolicyItem {
+    return new OracleDriftRadarPolicyItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleDriftRadarPolicyItem {
+    return new OracleDriftRadarPolicyItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleDriftRadarPolicyItem | PlainMessage<OracleDriftRadarPolicyItem> | undefined, b: OracleDriftRadarPolicyItem | PlainMessage<OracleDriftRadarPolicyItem> | undefined): boolean {
+    return proto3.util.equals(OracleDriftRadarPolicyItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchRequest
+ */
+export class GetAssumptionDriftRadarWorkbenchRequest extends Message<GetAssumptionDriftRadarWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetAssumptionDriftRadarWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAssumptionDriftRadarWorkbenchRequest {
+    return new GetAssumptionDriftRadarWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAssumptionDriftRadarWorkbenchRequest {
+    return new GetAssumptionDriftRadarWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAssumptionDriftRadarWorkbenchRequest {
+    return new GetAssumptionDriftRadarWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAssumptionDriftRadarWorkbenchRequest | PlainMessage<GetAssumptionDriftRadarWorkbenchRequest> | undefined, b: GetAssumptionDriftRadarWorkbenchRequest | PlainMessage<GetAssumptionDriftRadarWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetAssumptionDriftRadarWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse
+ */
+export class GetAssumptionDriftRadarWorkbenchResponse extends Message<GetAssumptionDriftRadarWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleAssumptionDriftAlertItem drift_alerts = 1;
+   */
+  driftAlerts: OracleAssumptionDriftAlertItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDriftRadarPolicyItem policies = 2;
+   */
+  policies: OracleDriftRadarPolicyItem[] = [];
+
+  /**
+   * @generated from field: bool immutable_history_preserved = 3;
+   */
+  immutableHistoryPreserved = false;
+
+  /**
+   * @generated from field: string drift_radar_banner = 4;
+   */
+  driftRadarBanner = "";
+
+  constructor(data?: PartialMessage<GetAssumptionDriftRadarWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drift_alerts", kind: "message", T: OracleAssumptionDriftAlertItem, repeated: true },
+    { no: 2, name: "policies", kind: "message", T: OracleDriftRadarPolicyItem, repeated: true },
+    { no: 3, name: "immutable_history_preserved", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "drift_radar_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAssumptionDriftRadarWorkbenchResponse {
+    return new GetAssumptionDriftRadarWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAssumptionDriftRadarWorkbenchResponse {
+    return new GetAssumptionDriftRadarWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAssumptionDriftRadarWorkbenchResponse {
+    return new GetAssumptionDriftRadarWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetAssumptionDriftRadarWorkbenchResponse | PlainMessage<GetAssumptionDriftRadarWorkbenchResponse> | undefined, b: GetAssumptionDriftRadarWorkbenchResponse | PlainMessage<GetAssumptionDriftRadarWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetAssumptionDriftRadarWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RespondToAssumptionDriftAlertRequest
+ */
+export class RespondToAssumptionDriftAlertRequest extends Message<RespondToAssumptionDriftAlertRequest> {
+  /**
+   * @generated from field: string drift_code = 1;
+   */
+  driftCode = "";
+
+  /**
+   * @generated from field: string decision_code = 2;
+   */
+  decisionCode = "";
+
+  /**
+   * @generated from field: string assumption_code = 3;
+   */
+  assumptionCode = "";
+
+  /**
+   * @generated from field: string old_assumption_statement = 4;
+   */
+  oldAssumptionStatement = "";
+
+  /**
+   * @generated from field: string new_evidence_passage = 5;
+   */
+  newEvidencePassage = "";
+
+  /**
+   * @generated from field: string materiality_band = 6;
+   */
+  materialityBand = "";
+
+  /**
+   * @generated from field: string alternative_explanation = 7;
+   */
+  alternativeExplanation = "";
+
+  /**
+   * @generated from field: string member_disposition = 8;
+   */
+  memberDisposition = "";
+
+  constructor(data?: PartialMessage<RespondToAssumptionDriftAlertRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RespondToAssumptionDriftAlertRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drift_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "assumption_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "old_assumption_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "new_evidence_passage", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "materiality_band", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "alternative_explanation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "member_disposition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondToAssumptionDriftAlertRequest {
+    return new RespondToAssumptionDriftAlertRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondToAssumptionDriftAlertRequest {
+    return new RespondToAssumptionDriftAlertRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondToAssumptionDriftAlertRequest {
+    return new RespondToAssumptionDriftAlertRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondToAssumptionDriftAlertRequest | PlainMessage<RespondToAssumptionDriftAlertRequest> | undefined, b: RespondToAssumptionDriftAlertRequest | PlainMessage<RespondToAssumptionDriftAlertRequest> | undefined): boolean {
+    return proto3.util.equals(RespondToAssumptionDriftAlertRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse
+ */
+export class RespondToAssumptionDriftAlertResponse extends Message<RespondToAssumptionDriftAlertResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleAssumptionDriftAlertItem drift_alert = 1;
+   */
+  driftAlert?: OracleAssumptionDriftAlertItem;
+
+  constructor(data?: PartialMessage<RespondToAssumptionDriftAlertResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drift_alert", kind: "message", T: OracleAssumptionDriftAlertItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RespondToAssumptionDriftAlertResponse {
+    return new RespondToAssumptionDriftAlertResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RespondToAssumptionDriftAlertResponse {
+    return new RespondToAssumptionDriftAlertResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RespondToAssumptionDriftAlertResponse {
+    return new RespondToAssumptionDriftAlertResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RespondToAssumptionDriftAlertResponse | PlainMessage<RespondToAssumptionDriftAlertResponse> | undefined, b: RespondToAssumptionDriftAlertResponse | PlainMessage<RespondToAssumptionDriftAlertResponse> | undefined): boolean {
+    return proto3.util.equals(RespondToAssumptionDriftAlertResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpdateDriftRadarPolicyRequest
+ */
+export class UpdateDriftRadarPolicyRequest extends Message<UpdateDriftRadarPolicyRequest> {
+  /**
+   * @generated from field: string policy_code = 1;
+   */
+  policyCode = "";
+
+  /**
+   * @generated from field: string monitored_domain = 2;
+   */
+  monitoredDomain = "";
+
+  /**
+   * @generated from field: int32 cooldown_hours = 3;
+   */
+  cooldownHours = 0;
+
+  /**
+   * @generated from field: bool notify_only_if_action_possible = 4;
+   */
+  notifyOnlyIfActionPossible = false;
+
+  /**
+   * @generated from field: string radar_state = 5;
+   */
+  radarState = "";
+
+  /**
+   * @generated from field: string false_positive_suppression_note = 6;
+   */
+  falsePositiveSuppressionNote = "";
+
+  constructor(data?: PartialMessage<UpdateDriftRadarPolicyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpdateDriftRadarPolicyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "monitored_domain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cooldown_hours", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "notify_only_if_action_possible", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "radar_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "false_positive_suppression_note", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDriftRadarPolicyRequest {
+    return new UpdateDriftRadarPolicyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDriftRadarPolicyRequest {
+    return new UpdateDriftRadarPolicyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDriftRadarPolicyRequest {
+    return new UpdateDriftRadarPolicyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateDriftRadarPolicyRequest | PlainMessage<UpdateDriftRadarPolicyRequest> | undefined, b: UpdateDriftRadarPolicyRequest | PlainMessage<UpdateDriftRadarPolicyRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateDriftRadarPolicyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpdateDriftRadarPolicyResponse
+ */
+export class UpdateDriftRadarPolicyResponse extends Message<UpdateDriftRadarPolicyResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleDriftRadarPolicyItem policy = 1;
+   */
+  policy?: OracleDriftRadarPolicyItem;
+
+  constructor(data?: PartialMessage<UpdateDriftRadarPolicyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpdateDriftRadarPolicyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OracleDriftRadarPolicyItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDriftRadarPolicyResponse {
+    return new UpdateDriftRadarPolicyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDriftRadarPolicyResponse {
+    return new UpdateDriftRadarPolicyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDriftRadarPolicyResponse {
+    return new UpdateDriftRadarPolicyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateDriftRadarPolicyResponse | PlainMessage<UpdateDriftRadarPolicyResponse> | undefined, b: UpdateDriftRadarPolicyResponse | PlainMessage<UpdateDriftRadarPolicyResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateDriftRadarPolicyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditRequest
+ */
+export class AdminListAssumptionDriftRadarAuditRequest extends Message<AdminListAssumptionDriftRadarAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListAssumptionDriftRadarAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListAssumptionDriftRadarAuditRequest {
+    return new AdminListAssumptionDriftRadarAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListAssumptionDriftRadarAuditRequest {
+    return new AdminListAssumptionDriftRadarAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListAssumptionDriftRadarAuditRequest {
+    return new AdminListAssumptionDriftRadarAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListAssumptionDriftRadarAuditRequest | PlainMessage<AdminListAssumptionDriftRadarAuditRequest> | undefined, b: AdminListAssumptionDriftRadarAuditRequest | PlainMessage<AdminListAssumptionDriftRadarAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListAssumptionDriftRadarAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse
+ */
+export class AdminListAssumptionDriftRadarAuditResponse extends Message<AdminListAssumptionDriftRadarAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleAssumptionDriftAlertItem drift_alerts = 1;
+   */
+  driftAlerts: OracleAssumptionDriftAlertItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleDriftRadarPolicyItem policies = 2;
+   */
+  policies: OracleDriftRadarPolicyItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListAssumptionDriftRadarAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "drift_alerts", kind: "message", T: OracleAssumptionDriftAlertItem, repeated: true },
+    { no: 2, name: "policies", kind: "message", T: OracleDriftRadarPolicyItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListAssumptionDriftRadarAuditResponse {
+    return new AdminListAssumptionDriftRadarAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListAssumptionDriftRadarAuditResponse {
+    return new AdminListAssumptionDriftRadarAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListAssumptionDriftRadarAuditResponse {
+    return new AdminListAssumptionDriftRadarAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListAssumptionDriftRadarAuditResponse | PlainMessage<AdminListAssumptionDriftRadarAuditResponse> | undefined, b: AdminListAssumptionDriftRadarAuditResponse | PlainMessage<AdminListAssumptionDriftRadarAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListAssumptionDriftRadarAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainRequest
+ */
+export class AdminCalibrateDriftThresholdOrDomainRequest extends Message<AdminCalibrateDriftThresholdOrDomainRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string policy_code = 2;
+   */
+  policyCode = "";
+
+  /**
+   * @generated from field: int32 cooldown_hours = 3;
+   */
+  cooldownHours = 0;
+
+  /**
+   * @generated from field: string radar_state = 4;
+   */
+  radarState = "";
+
+  constructor(data?: PartialMessage<AdminCalibrateDriftThresholdOrDomainRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "policy_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cooldown_hours", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "radar_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCalibrateDriftThresholdOrDomainRequest {
+    return new AdminCalibrateDriftThresholdOrDomainRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCalibrateDriftThresholdOrDomainRequest {
+    return new AdminCalibrateDriftThresholdOrDomainRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCalibrateDriftThresholdOrDomainRequest {
+    return new AdminCalibrateDriftThresholdOrDomainRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCalibrateDriftThresholdOrDomainRequest | PlainMessage<AdminCalibrateDriftThresholdOrDomainRequest> | undefined, b: AdminCalibrateDriftThresholdOrDomainRequest | PlainMessage<AdminCalibrateDriftThresholdOrDomainRequest> | undefined): boolean {
+    return proto3.util.equals(AdminCalibrateDriftThresholdOrDomainRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse
+ */
+export class AdminCalibrateDriftThresholdOrDomainResponse extends Message<AdminCalibrateDriftThresholdOrDomainResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleDriftRadarPolicyItem policy = 1;
+   */
+  policy?: OracleDriftRadarPolicyItem;
+
+  constructor(data?: PartialMessage<AdminCalibrateDriftThresholdOrDomainResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "policy", kind: "message", T: OracleDriftRadarPolicyItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCalibrateDriftThresholdOrDomainResponse {
+    return new AdminCalibrateDriftThresholdOrDomainResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCalibrateDriftThresholdOrDomainResponse {
+    return new AdminCalibrateDriftThresholdOrDomainResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCalibrateDriftThresholdOrDomainResponse {
+    return new AdminCalibrateDriftThresholdOrDomainResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCalibrateDriftThresholdOrDomainResponse | PlainMessage<AdminCalibrateDriftThresholdOrDomainResponse> | undefined, b: AdminCalibrateDriftThresholdOrDomainResponse | PlainMessage<AdminCalibrateDriftThresholdOrDomainResponse> | undefined): boolean {
+    return proto3.util.equals(AdminCalibrateDriftThresholdOrDomainResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleForecastQuestionItem
+ */
+export class OracleForecastQuestionItem extends Message<OracleForecastQuestionItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string forecast_code = 3;
+   */
+  forecastCode = "";
+
+  /**
+   * @generated from field: string question_statement = 4;
+   */
+  questionStatement = "";
+
+  /**
+   * @generated from field: string resolution_criteria_and_source = 5;
+   */
+  resolutionCriteriaAndSource = "";
+
+  /**
+   * @generated from field: int32 probability_bps = 6;
+   */
+  probabilityBps = 0;
+
+  /**
+   * @generated from field: int32 confidence_band_bps = 7;
+   */
+  confidenceBandBps = 0;
+
+  /**
+   * @generated from field: string base_rate_anchor = 8;
+   */
+  baseRateAnchor = "";
+
+  /**
+   * @generated from field: string scenario_stress_branches = 9;
+   */
+  scenarioStressBranches = "";
+
+  /**
+   * @generated from field: string resolution_state = 10;
+   */
+  resolutionState = "";
+
+  /**
+   * @generated from field: int32 brier_score_milli = 11;
+   */
+  brierScoreMilli = 0;
+
+  /**
+   * @generated from field: bool isolated_sandbox_verified = 12;
+   */
+  isolatedSandboxVerified = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 13;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleForecastQuestionItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleForecastQuestionItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "forecast_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "question_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "resolution_criteria_and_source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "probability_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "confidence_band_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "base_rate_anchor", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "scenario_stress_branches", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "resolution_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "brier_score_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "isolated_sandbox_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleForecastQuestionItem {
+    return new OracleForecastQuestionItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleForecastQuestionItem {
+    return new OracleForecastQuestionItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleForecastQuestionItem {
+    return new OracleForecastQuestionItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleForecastQuestionItem | PlainMessage<OracleForecastQuestionItem> | undefined, b: OracleForecastQuestionItem | PlainMessage<OracleForecastQuestionItem> | undefined): boolean {
+    return proto3.util.equals(OracleForecastQuestionItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleCalibrationLabExperimentItem
+ */
+export class OracleCalibrationLabExperimentItem extends Message<OracleCalibrationLabExperimentItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string experiment_code = 3;
+   */
+  experimentCode = "";
+
+  /**
+   * @generated from field: string domain_and_horizon = 4;
+   */
+  domainAndHorizon = "";
+
+  /**
+   * @generated from field: int32 sample_size_count = 5;
+   */
+  sampleSizeCount = 0;
+
+  /**
+   * @generated from field: string omission_pattern_tracked = 6;
+   */
+  omissionPatternTracked = "";
+
+  /**
+   * @generated from field: string practice_experiment_rule = 7;
+   */
+  practiceExperimentRule = "";
+
+  /**
+   * @generated from field: int32 predeclared_baseline_brier_milli = 8;
+   */
+  predeclaredBaselineBrierMilli = 0;
+
+  /**
+   * @generated from field: int32 observed_brier_milli = 9;
+   */
+  observedBrierMilli = 0;
+
+  /**
+   * @generated from field: bool private_by_default = 10;
+   */
+  privateByDefault = false;
+
+  /**
+   * @generated from field: string lab_status = 11;
+   */
+  labStatus = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 12;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleCalibrationLabExperimentItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleCalibrationLabExperimentItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "experiment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "domain_and_horizon", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "sample_size_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "omission_pattern_tracked", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "practice_experiment_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "predeclared_baseline_brier_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "observed_brier_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "private_by_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "lab_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleCalibrationLabExperimentItem {
+    return new OracleCalibrationLabExperimentItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleCalibrationLabExperimentItem {
+    return new OracleCalibrationLabExperimentItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleCalibrationLabExperimentItem {
+    return new OracleCalibrationLabExperimentItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleCalibrationLabExperimentItem | PlainMessage<OracleCalibrationLabExperimentItem> | undefined, b: OracleCalibrationLabExperimentItem | PlainMessage<OracleCalibrationLabExperimentItem> | undefined): boolean {
+    return proto3.util.equals(OracleCalibrationLabExperimentItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetForecastingCalibrationWorkbenchRequest
+ */
+export class GetForecastingCalibrationWorkbenchRequest extends Message<GetForecastingCalibrationWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetForecastingCalibrationWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetForecastingCalibrationWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForecastingCalibrationWorkbenchRequest {
+    return new GetForecastingCalibrationWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForecastingCalibrationWorkbenchRequest {
+    return new GetForecastingCalibrationWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForecastingCalibrationWorkbenchRequest {
+    return new GetForecastingCalibrationWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForecastingCalibrationWorkbenchRequest | PlainMessage<GetForecastingCalibrationWorkbenchRequest> | undefined, b: GetForecastingCalibrationWorkbenchRequest | PlainMessage<GetForecastingCalibrationWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetForecastingCalibrationWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse
+ */
+export class GetForecastingCalibrationWorkbenchResponse extends Message<GetForecastingCalibrationWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleForecastQuestionItem forecasts = 1;
+   */
+  forecasts: OracleForecastQuestionItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCalibrationLabExperimentItem experiments = 2;
+   */
+  experiments: OracleCalibrationLabExperimentItem[] = [];
+
+  /**
+   * @generated from field: bool private_epistemic_learning_enforced = 3;
+   */
+  privateEpistemicLearningEnforced = false;
+
+  /**
+   * @generated from field: string calibration_banner = 4;
+   */
+  calibrationBanner = "";
+
+  constructor(data?: PartialMessage<GetForecastingCalibrationWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forecasts", kind: "message", T: OracleForecastQuestionItem, repeated: true },
+    { no: 2, name: "experiments", kind: "message", T: OracleCalibrationLabExperimentItem, repeated: true },
+    { no: 3, name: "private_epistemic_learning_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "calibration_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetForecastingCalibrationWorkbenchResponse {
+    return new GetForecastingCalibrationWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetForecastingCalibrationWorkbenchResponse {
+    return new GetForecastingCalibrationWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetForecastingCalibrationWorkbenchResponse {
+    return new GetForecastingCalibrationWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetForecastingCalibrationWorkbenchResponse | PlainMessage<GetForecastingCalibrationWorkbenchResponse> | undefined, b: GetForecastingCalibrationWorkbenchResponse | PlainMessage<GetForecastingCalibrationWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetForecastingCalibrationWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrResolveForecastQuestionRequest
+ */
+export class CreateOrResolveForecastQuestionRequest extends Message<CreateOrResolveForecastQuestionRequest> {
+  /**
+   * @generated from field: string forecast_code = 1;
+   */
+  forecastCode = "";
+
+  /**
+   * @generated from field: string question_statement = 2;
+   */
+  questionStatement = "";
+
+  /**
+   * @generated from field: string resolution_criteria_and_source = 3;
+   */
+  resolutionCriteriaAndSource = "";
+
+  /**
+   * @generated from field: int32 probability_bps = 4;
+   */
+  probabilityBps = 0;
+
+  /**
+   * @generated from field: int32 confidence_band_bps = 5;
+   */
+  confidenceBandBps = 0;
+
+  /**
+   * @generated from field: string base_rate_anchor = 6;
+   */
+  baseRateAnchor = "";
+
+  /**
+   * @generated from field: string scenario_stress_branches = 7;
+   */
+  scenarioStressBranches = "";
+
+  /**
+   * @generated from field: string resolution_state = 8;
+   */
+  resolutionState = "";
+
+  /**
+   * @generated from field: int32 brier_score_milli = 9;
+   */
+  brierScoreMilli = 0;
+
+  constructor(data?: PartialMessage<CreateOrResolveForecastQuestionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrResolveForecastQuestionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forecast_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "question_statement", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "resolution_criteria_and_source", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "probability_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "confidence_band_bps", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "base_rate_anchor", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "scenario_stress_branches", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "resolution_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "brier_score_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrResolveForecastQuestionRequest {
+    return new CreateOrResolveForecastQuestionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrResolveForecastQuestionRequest {
+    return new CreateOrResolveForecastQuestionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrResolveForecastQuestionRequest {
+    return new CreateOrResolveForecastQuestionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrResolveForecastQuestionRequest | PlainMessage<CreateOrResolveForecastQuestionRequest> | undefined, b: CreateOrResolveForecastQuestionRequest | PlainMessage<CreateOrResolveForecastQuestionRequest> | undefined): boolean {
+    return proto3.util.equals(CreateOrResolveForecastQuestionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse
+ */
+export class CreateOrResolveForecastQuestionResponse extends Message<CreateOrResolveForecastQuestionResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleForecastQuestionItem forecast = 1;
+   */
+  forecast?: OracleForecastQuestionItem;
+
+  constructor(data?: PartialMessage<CreateOrResolveForecastQuestionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forecast", kind: "message", T: OracleForecastQuestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrResolveForecastQuestionResponse {
+    return new CreateOrResolveForecastQuestionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrResolveForecastQuestionResponse {
+    return new CreateOrResolveForecastQuestionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrResolveForecastQuestionResponse {
+    return new CreateOrResolveForecastQuestionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrResolveForecastQuestionResponse | PlainMessage<CreateOrResolveForecastQuestionResponse> | undefined, b: CreateOrResolveForecastQuestionResponse | PlainMessage<CreateOrResolveForecastQuestionResponse> | undefined): boolean {
+    return proto3.util.equals(CreateOrResolveForecastQuestionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordCalibrationLabExperimentRequest
+ */
+export class RecordCalibrationLabExperimentRequest extends Message<RecordCalibrationLabExperimentRequest> {
+  /**
+   * @generated from field: string experiment_code = 1;
+   */
+  experimentCode = "";
+
+  /**
+   * @generated from field: string domain_and_horizon = 2;
+   */
+  domainAndHorizon = "";
+
+  /**
+   * @generated from field: int32 sample_size_count = 3;
+   */
+  sampleSizeCount = 0;
+
+  /**
+   * @generated from field: string omission_pattern_tracked = 4;
+   */
+  omissionPatternTracked = "";
+
+  /**
+   * @generated from field: string practice_experiment_rule = 5;
+   */
+  practiceExperimentRule = "";
+
+  /**
+   * @generated from field: int32 predeclared_baseline_brier_milli = 6;
+   */
+  predeclaredBaselineBrierMilli = 0;
+
+  /**
+   * @generated from field: int32 observed_brier_milli = 7;
+   */
+  observedBrierMilli = 0;
+
+  /**
+   * @generated from field: string lab_status = 8;
+   */
+  labStatus = "";
+
+  constructor(data?: PartialMessage<RecordCalibrationLabExperimentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordCalibrationLabExperimentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "domain_and_horizon", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sample_size_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "omission_pattern_tracked", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "practice_experiment_rule", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "predeclared_baseline_brier_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "observed_brier_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "lab_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordCalibrationLabExperimentRequest {
+    return new RecordCalibrationLabExperimentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordCalibrationLabExperimentRequest {
+    return new RecordCalibrationLabExperimentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordCalibrationLabExperimentRequest {
+    return new RecordCalibrationLabExperimentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordCalibrationLabExperimentRequest | PlainMessage<RecordCalibrationLabExperimentRequest> | undefined, b: RecordCalibrationLabExperimentRequest | PlainMessage<RecordCalibrationLabExperimentRequest> | undefined): boolean {
+    return proto3.util.equals(RecordCalibrationLabExperimentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RecordCalibrationLabExperimentResponse
+ */
+export class RecordCalibrationLabExperimentResponse extends Message<RecordCalibrationLabExperimentResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleCalibrationLabExperimentItem experiment = 1;
+   */
+  experiment?: OracleCalibrationLabExperimentItem;
+
+  constructor(data?: PartialMessage<RecordCalibrationLabExperimentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RecordCalibrationLabExperimentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "experiment", kind: "message", T: OracleCalibrationLabExperimentItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RecordCalibrationLabExperimentResponse {
+    return new RecordCalibrationLabExperimentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RecordCalibrationLabExperimentResponse {
+    return new RecordCalibrationLabExperimentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RecordCalibrationLabExperimentResponse {
+    return new RecordCalibrationLabExperimentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RecordCalibrationLabExperimentResponse | PlainMessage<RecordCalibrationLabExperimentResponse> | undefined, b: RecordCalibrationLabExperimentResponse | PlainMessage<RecordCalibrationLabExperimentResponse> | undefined): boolean {
+    return proto3.util.equals(RecordCalibrationLabExperimentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListForecastingCalibrationAuditRequest
+ */
+export class AdminListForecastingCalibrationAuditRequest extends Message<AdminListForecastingCalibrationAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListForecastingCalibrationAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListForecastingCalibrationAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListForecastingCalibrationAuditRequest {
+    return new AdminListForecastingCalibrationAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListForecastingCalibrationAuditRequest {
+    return new AdminListForecastingCalibrationAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListForecastingCalibrationAuditRequest {
+    return new AdminListForecastingCalibrationAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListForecastingCalibrationAuditRequest | PlainMessage<AdminListForecastingCalibrationAuditRequest> | undefined, b: AdminListForecastingCalibrationAuditRequest | PlainMessage<AdminListForecastingCalibrationAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListForecastingCalibrationAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse
+ */
+export class AdminListForecastingCalibrationAuditResponse extends Message<AdminListForecastingCalibrationAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleForecastQuestionItem forecasts = 1;
+   */
+  forecasts: OracleForecastQuestionItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleCalibrationLabExperimentItem experiments = 2;
+   */
+  experiments: OracleCalibrationLabExperimentItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListForecastingCalibrationAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forecasts", kind: "message", T: OracleForecastQuestionItem, repeated: true },
+    { no: 2, name: "experiments", kind: "message", T: OracleCalibrationLabExperimentItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListForecastingCalibrationAuditResponse {
+    return new AdminListForecastingCalibrationAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListForecastingCalibrationAuditResponse {
+    return new AdminListForecastingCalibrationAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListForecastingCalibrationAuditResponse {
+    return new AdminListForecastingCalibrationAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListForecastingCalibrationAuditResponse | PlainMessage<AdminListForecastingCalibrationAuditResponse> | undefined, b: AdminListForecastingCalibrationAuditResponse | PlainMessage<AdminListForecastingCalibrationAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListForecastingCalibrationAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxRequest
+ */
+export class AdminVerifyForecastResolutionOrSandboxRequest extends Message<AdminVerifyForecastResolutionOrSandboxRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string forecast_code = 2;
+   */
+  forecastCode = "";
+
+  /**
+   * @generated from field: string resolution_state = 3;
+   */
+  resolutionState = "";
+
+  /**
+   * @generated from field: int32 brier_score_milli = 4;
+   */
+  brierScoreMilli = 0;
+
+  constructor(data?: PartialMessage<AdminVerifyForecastResolutionOrSandboxRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "forecast_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "resolution_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "brier_score_milli", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyForecastResolutionOrSandboxRequest {
+    return new AdminVerifyForecastResolutionOrSandboxRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyForecastResolutionOrSandboxRequest {
+    return new AdminVerifyForecastResolutionOrSandboxRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyForecastResolutionOrSandboxRequest {
+    return new AdminVerifyForecastResolutionOrSandboxRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyForecastResolutionOrSandboxRequest | PlainMessage<AdminVerifyForecastResolutionOrSandboxRequest> | undefined, b: AdminVerifyForecastResolutionOrSandboxRequest | PlainMessage<AdminVerifyForecastResolutionOrSandboxRequest> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyForecastResolutionOrSandboxRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse
+ */
+export class AdminVerifyForecastResolutionOrSandboxResponse extends Message<AdminVerifyForecastResolutionOrSandboxResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleForecastQuestionItem forecast = 1;
+   */
+  forecast?: OracleForecastQuestionItem;
+
+  constructor(data?: PartialMessage<AdminVerifyForecastResolutionOrSandboxResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "forecast", kind: "message", T: OracleForecastQuestionItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminVerifyForecastResolutionOrSandboxResponse {
+    return new AdminVerifyForecastResolutionOrSandboxResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminVerifyForecastResolutionOrSandboxResponse {
+    return new AdminVerifyForecastResolutionOrSandboxResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminVerifyForecastResolutionOrSandboxResponse {
+    return new AdminVerifyForecastResolutionOrSandboxResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminVerifyForecastResolutionOrSandboxResponse | PlainMessage<AdminVerifyForecastResolutionOrSandboxResponse> | undefined, b: AdminVerifyForecastResolutionOrSandboxResponse | PlainMessage<AdminVerifyForecastResolutionOrSandboxResponse> | undefined): boolean {
+    return proto3.util.equals(AdminVerifyForecastResolutionOrSandboxResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+ */
+export class OracleMeetingNegotiationBriefItem extends Message<OracleMeetingNegotiationBriefItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string meeting_code = 3;
+   */
+  meetingCode = "";
+
+  /**
+   * @generated from field: string title_and_counterpart = 4;
+   */
+  titleAndCounterpart = "";
+
+  /**
+   * @generated from field: string jurisdiction_consent_mode = 5;
+   */
+  jurisdictionConsentMode = "";
+
+  /**
+   * @generated from field: string batna_and_red_lines = 6;
+   */
+  batnaAndRedLines = "";
+
+  /**
+   * @generated from field: string counterpart_rehearsal_style = 7;
+   */
+  counterpartRehearsalStyle = "";
+
+  /**
+   * @generated from field: string missing_evidence_citations = 8;
+   */
+  missingEvidenceCitations = "";
+
+  /**
+   * @generated from field: string capture_state = 9;
+   */
+  captureState = "";
+
+  /**
+   * @generated from field: bool unconsented_audio_refused = 10;
+   */
+  unconsentedAudioRefused = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleMeetingNegotiationBriefItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleMeetingNegotiationBriefItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "meeting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title_and_counterpart", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "jurisdiction_consent_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "batna_and_red_lines", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "counterpart_rehearsal_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "missing_evidence_citations", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "capture_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "unconsented_audio_refused", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleMeetingNegotiationBriefItem {
+    return new OracleMeetingNegotiationBriefItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleMeetingNegotiationBriefItem {
+    return new OracleMeetingNegotiationBriefItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleMeetingNegotiationBriefItem {
+    return new OracleMeetingNegotiationBriefItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleMeetingNegotiationBriefItem | PlainMessage<OracleMeetingNegotiationBriefItem> | undefined, b: OracleMeetingNegotiationBriefItem | PlainMessage<OracleMeetingNegotiationBriefItem> | undefined): boolean {
+    return proto3.util.equals(OracleMeetingNegotiationBriefItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleMeetingCapturedProposalItem
+ */
+export class OracleMeetingCapturedProposalItem extends Message<OracleMeetingCapturedProposalItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string proposal_code = 3;
+   */
+  proposalCode = "";
+
+  /**
+   * @generated from field: string meeting_code = 4;
+   */
+  meetingCode = "";
+
+  /**
+   * @generated from field: string proposal_kind = 5;
+   */
+  proposalKind = "";
+
+  /**
+   * @generated from field: string exact_utterance_and_speaker = 6;
+   */
+  exactUtteranceAndSpeaker = "";
+
+  /**
+   * @generated from field: string proposed_ledger_entry = 7;
+   */
+  proposedLedgerEntry = "";
+
+  /**
+   * @generated from field: string attribution_certainty = 8;
+   */
+  attributionCertainty = "";
+
+  /**
+   * @generated from field: string member_confirmation_state = 9;
+   */
+  memberConfirmationState = "";
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleMeetingCapturedProposalItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleMeetingCapturedProposalItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "proposal_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "meeting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "proposal_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "exact_utterance_and_speaker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "proposed_ledger_entry", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "attribution_certainty", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "member_confirmation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleMeetingCapturedProposalItem {
+    return new OracleMeetingCapturedProposalItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleMeetingCapturedProposalItem {
+    return new OracleMeetingCapturedProposalItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleMeetingCapturedProposalItem {
+    return new OracleMeetingCapturedProposalItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleMeetingCapturedProposalItem | PlainMessage<OracleMeetingCapturedProposalItem> | undefined, b: OracleMeetingCapturedProposalItem | PlainMessage<OracleMeetingCapturedProposalItem> | undefined): boolean {
+    return proto3.util.equals(OracleMeetingCapturedProposalItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchRequest
+ */
+export class GetMeetingNegotiationStudioWorkbenchRequest extends Message<GetMeetingNegotiationStudioWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetMeetingNegotiationStudioWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMeetingNegotiationStudioWorkbenchRequest {
+    return new GetMeetingNegotiationStudioWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMeetingNegotiationStudioWorkbenchRequest {
+    return new GetMeetingNegotiationStudioWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMeetingNegotiationStudioWorkbenchRequest {
+    return new GetMeetingNegotiationStudioWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMeetingNegotiationStudioWorkbenchRequest | PlainMessage<GetMeetingNegotiationStudioWorkbenchRequest> | undefined, b: GetMeetingNegotiationStudioWorkbenchRequest | PlainMessage<GetMeetingNegotiationStudioWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetMeetingNegotiationStudioWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse
+ */
+export class GetMeetingNegotiationStudioWorkbenchResponse extends Message<GetMeetingNegotiationStudioWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleMeetingNegotiationBriefItem briefs = 1;
+   */
+  briefs: OracleMeetingNegotiationBriefItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleMeetingCapturedProposalItem proposals = 2;
+   */
+  proposals: OracleMeetingCapturedProposalItem[] = [];
+
+  /**
+   * @generated from field: bool jurisdiction_consent_enforced = 3;
+   */
+  jurisdictionConsentEnforced = false;
+
+  /**
+   * @generated from field: string meeting_studio_banner = 4;
+   */
+  meetingStudioBanner = "";
+
+  constructor(data?: PartialMessage<GetMeetingNegotiationStudioWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "briefs", kind: "message", T: OracleMeetingNegotiationBriefItem, repeated: true },
+    { no: 2, name: "proposals", kind: "message", T: OracleMeetingCapturedProposalItem, repeated: true },
+    { no: 3, name: "jurisdiction_consent_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "meeting_studio_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMeetingNegotiationStudioWorkbenchResponse {
+    return new GetMeetingNegotiationStudioWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMeetingNegotiationStudioWorkbenchResponse {
+    return new GetMeetingNegotiationStudioWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMeetingNegotiationStudioWorkbenchResponse {
+    return new GetMeetingNegotiationStudioWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetMeetingNegotiationStudioWorkbenchResponse | PlainMessage<GetMeetingNegotiationStudioWorkbenchResponse> | undefined, b: GetMeetingNegotiationStudioWorkbenchResponse | PlainMessage<GetMeetingNegotiationStudioWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetMeetingNegotiationStudioWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalRequest
+ */
+export class SaveMeetingBriefOrRedteamRehearsalRequest extends Message<SaveMeetingBriefOrRedteamRehearsalRequest> {
+  /**
+   * @generated from field: string meeting_code = 1;
+   */
+  meetingCode = "";
+
+  /**
+   * @generated from field: string title_and_counterpart = 2;
+   */
+  titleAndCounterpart = "";
+
+  /**
+   * @generated from field: string jurisdiction_consent_mode = 3;
+   */
+  jurisdictionConsentMode = "";
+
+  /**
+   * @generated from field: string batna_and_red_lines = 4;
+   */
+  batnaAndRedLines = "";
+
+  /**
+   * @generated from field: string counterpart_rehearsal_style = 5;
+   */
+  counterpartRehearsalStyle = "";
+
+  /**
+   * @generated from field: string missing_evidence_citations = 6;
+   */
+  missingEvidenceCitations = "";
+
+  /**
+   * @generated from field: string capture_state = 7;
+   */
+  captureState = "";
+
+  constructor(data?: PartialMessage<SaveMeetingBriefOrRedteamRehearsalRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "meeting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title_and_counterpart", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "jurisdiction_consent_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "batna_and_red_lines", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "counterpart_rehearsal_style", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "missing_evidence_citations", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "capture_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveMeetingBriefOrRedteamRehearsalRequest {
+    return new SaveMeetingBriefOrRedteamRehearsalRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveMeetingBriefOrRedteamRehearsalRequest {
+    return new SaveMeetingBriefOrRedteamRehearsalRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveMeetingBriefOrRedteamRehearsalRequest {
+    return new SaveMeetingBriefOrRedteamRehearsalRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveMeetingBriefOrRedteamRehearsalRequest | PlainMessage<SaveMeetingBriefOrRedteamRehearsalRequest> | undefined, b: SaveMeetingBriefOrRedteamRehearsalRequest | PlainMessage<SaveMeetingBriefOrRedteamRehearsalRequest> | undefined): boolean {
+    return proto3.util.equals(SaveMeetingBriefOrRedteamRehearsalRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse
+ */
+export class SaveMeetingBriefOrRedteamRehearsalResponse extends Message<SaveMeetingBriefOrRedteamRehearsalResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleMeetingNegotiationBriefItem brief = 1;
+   */
+  brief?: OracleMeetingNegotiationBriefItem;
+
+  constructor(data?: PartialMessage<SaveMeetingBriefOrRedteamRehearsalResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: OracleMeetingNegotiationBriefItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveMeetingBriefOrRedteamRehearsalResponse {
+    return new SaveMeetingBriefOrRedteamRehearsalResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveMeetingBriefOrRedteamRehearsalResponse {
+    return new SaveMeetingBriefOrRedteamRehearsalResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveMeetingBriefOrRedteamRehearsalResponse {
+    return new SaveMeetingBriefOrRedteamRehearsalResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveMeetingBriefOrRedteamRehearsalResponse | PlainMessage<SaveMeetingBriefOrRedteamRehearsalResponse> | undefined, b: SaveMeetingBriefOrRedteamRehearsalResponse | PlainMessage<SaveMeetingBriefOrRedteamRehearsalResponse> | undefined): boolean {
+    return proto3.util.equals(SaveMeetingBriefOrRedteamRehearsalResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalRequest
+ */
+export class ConfirmOrRejectCapturedMeetingProposalRequest extends Message<ConfirmOrRejectCapturedMeetingProposalRequest> {
+  /**
+   * @generated from field: string proposal_code = 1;
+   */
+  proposalCode = "";
+
+  /**
+   * @generated from field: string meeting_code = 2;
+   */
+  meetingCode = "";
+
+  /**
+   * @generated from field: string proposal_kind = 3;
+   */
+  proposalKind = "";
+
+  /**
+   * @generated from field: string exact_utterance_and_speaker = 4;
+   */
+  exactUtteranceAndSpeaker = "";
+
+  /**
+   * @generated from field: string proposed_ledger_entry = 5;
+   */
+  proposedLedgerEntry = "";
+
+  /**
+   * @generated from field: string attribution_certainty = 6;
+   */
+  attributionCertainty = "";
+
+  /**
+   * @generated from field: string member_confirmation_state = 7;
+   */
+  memberConfirmationState = "";
+
+  constructor(data?: PartialMessage<ConfirmOrRejectCapturedMeetingProposalRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proposal_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "meeting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "proposal_kind", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "exact_utterance_and_speaker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "proposed_ledger_entry", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "attribution_certainty", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "member_confirmation_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmOrRejectCapturedMeetingProposalRequest {
+    return new ConfirmOrRejectCapturedMeetingProposalRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmOrRejectCapturedMeetingProposalRequest {
+    return new ConfirmOrRejectCapturedMeetingProposalRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmOrRejectCapturedMeetingProposalRequest {
+    return new ConfirmOrRejectCapturedMeetingProposalRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmOrRejectCapturedMeetingProposalRequest | PlainMessage<ConfirmOrRejectCapturedMeetingProposalRequest> | undefined, b: ConfirmOrRejectCapturedMeetingProposalRequest | PlainMessage<ConfirmOrRejectCapturedMeetingProposalRequest> | undefined): boolean {
+    return proto3.util.equals(ConfirmOrRejectCapturedMeetingProposalRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse
+ */
+export class ConfirmOrRejectCapturedMeetingProposalResponse extends Message<ConfirmOrRejectCapturedMeetingProposalResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleMeetingCapturedProposalItem proposal = 1;
+   */
+  proposal?: OracleMeetingCapturedProposalItem;
+
+  constructor(data?: PartialMessage<ConfirmOrRejectCapturedMeetingProposalResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proposal", kind: "message", T: OracleMeetingCapturedProposalItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmOrRejectCapturedMeetingProposalResponse {
+    return new ConfirmOrRejectCapturedMeetingProposalResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmOrRejectCapturedMeetingProposalResponse {
+    return new ConfirmOrRejectCapturedMeetingProposalResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmOrRejectCapturedMeetingProposalResponse {
+    return new ConfirmOrRejectCapturedMeetingProposalResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmOrRejectCapturedMeetingProposalResponse | PlainMessage<ConfirmOrRejectCapturedMeetingProposalResponse> | undefined, b: ConfirmOrRejectCapturedMeetingProposalResponse | PlainMessage<ConfirmOrRejectCapturedMeetingProposalResponse> | undefined): boolean {
+    return proto3.util.equals(ConfirmOrRejectCapturedMeetingProposalResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditRequest
+ */
+export class AdminListMeetingNegotiationStudioAuditRequest extends Message<AdminListMeetingNegotiationStudioAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListMeetingNegotiationStudioAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListMeetingNegotiationStudioAuditRequest {
+    return new AdminListMeetingNegotiationStudioAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListMeetingNegotiationStudioAuditRequest {
+    return new AdminListMeetingNegotiationStudioAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListMeetingNegotiationStudioAuditRequest {
+    return new AdminListMeetingNegotiationStudioAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListMeetingNegotiationStudioAuditRequest | PlainMessage<AdminListMeetingNegotiationStudioAuditRequest> | undefined, b: AdminListMeetingNegotiationStudioAuditRequest | PlainMessage<AdminListMeetingNegotiationStudioAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListMeetingNegotiationStudioAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse
+ */
+export class AdminListMeetingNegotiationStudioAuditResponse extends Message<AdminListMeetingNegotiationStudioAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleMeetingNegotiationBriefItem briefs = 1;
+   */
+  briefs: OracleMeetingNegotiationBriefItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleMeetingCapturedProposalItem proposals = 2;
+   */
+  proposals: OracleMeetingCapturedProposalItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListMeetingNegotiationStudioAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "briefs", kind: "message", T: OracleMeetingNegotiationBriefItem, repeated: true },
+    { no: 2, name: "proposals", kind: "message", T: OracleMeetingCapturedProposalItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListMeetingNegotiationStudioAuditResponse {
+    return new AdminListMeetingNegotiationStudioAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListMeetingNegotiationStudioAuditResponse {
+    return new AdminListMeetingNegotiationStudioAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListMeetingNegotiationStudioAuditResponse {
+    return new AdminListMeetingNegotiationStudioAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListMeetingNegotiationStudioAuditResponse | PlainMessage<AdminListMeetingNegotiationStudioAuditResponse> | undefined, b: AdminListMeetingNegotiationStudioAuditResponse | PlainMessage<AdminListMeetingNegotiationStudioAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListMeetingNegotiationStudioAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionRequest
+ */
+export class AdminManageRecordingConsentOrRedactionRequest extends Message<AdminManageRecordingConsentOrRedactionRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string meeting_code = 2;
+   */
+  meetingCode = "";
+
+  /**
+   * @generated from field: string jurisdiction_consent_mode = 3;
+   */
+  jurisdictionConsentMode = "";
+
+  /**
+   * @generated from field: string capture_state = 4;
+   */
+  captureState = "";
+
+  constructor(data?: PartialMessage<AdminManageRecordingConsentOrRedactionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "meeting_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "jurisdiction_consent_mode", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "capture_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageRecordingConsentOrRedactionRequest {
+    return new AdminManageRecordingConsentOrRedactionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageRecordingConsentOrRedactionRequest {
+    return new AdminManageRecordingConsentOrRedactionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageRecordingConsentOrRedactionRequest {
+    return new AdminManageRecordingConsentOrRedactionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageRecordingConsentOrRedactionRequest | PlainMessage<AdminManageRecordingConsentOrRedactionRequest> | undefined, b: AdminManageRecordingConsentOrRedactionRequest | PlainMessage<AdminManageRecordingConsentOrRedactionRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageRecordingConsentOrRedactionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse
+ */
+export class AdminManageRecordingConsentOrRedactionResponse extends Message<AdminManageRecordingConsentOrRedactionResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleMeetingNegotiationBriefItem brief = 1;
+   */
+  brief?: OracleMeetingNegotiationBriefItem;
+
+  constructor(data?: PartialMessage<AdminManageRecordingConsentOrRedactionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "brief", kind: "message", T: OracleMeetingNegotiationBriefItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageRecordingConsentOrRedactionResponse {
+    return new AdminManageRecordingConsentOrRedactionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageRecordingConsentOrRedactionResponse {
+    return new AdminManageRecordingConsentOrRedactionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageRecordingConsentOrRedactionResponse {
+    return new AdminManageRecordingConsentOrRedactionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageRecordingConsentOrRedactionResponse | PlainMessage<AdminManageRecordingConsentOrRedactionResponse> | undefined, b: AdminManageRecordingConsentOrRedactionResponse | PlainMessage<AdminManageRecordingConsentOrRedactionResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageRecordingConsentOrRedactionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleSecureConnectorGrantItem
+ */
+export class OracleSecureConnectorGrantItem extends Message<OracleSecureConnectorGrantItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string connector_code = 3;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string connector_name_and_pillar = 4;
+   */
+  connectorNameAndPillar = "";
+
+  /**
+   * @generated from field: string risk_classification = 5;
+   */
+  riskClassification = "";
+
+  /**
+   * @generated from field: string permitted_data_and_retention = 6;
+   */
+  permittedDataAndRetention = "";
+
+  /**
+   * @generated from field: string dry_run_preview_summary = 7;
+   */
+  dryRunPreviewSummary = "";
+
+  /**
+   * @generated from field: string grant_status = 8;
+   */
+  grantStatus = "";
+
+  /**
+   * @generated from field: bool autonomous_write_prohibited = 9;
+   */
+  autonomousWriteProhibited = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 10;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleSecureConnectorGrantItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleSecureConnectorGrantItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "connector_name_and_pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "risk_classification", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "permitted_data_and_retention", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "dry_run_preview_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "grant_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "autonomous_write_prohibited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleSecureConnectorGrantItem {
+    return new OracleSecureConnectorGrantItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleSecureConnectorGrantItem {
+    return new OracleSecureConnectorGrantItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleSecureConnectorGrantItem {
+    return new OracleSecureConnectorGrantItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleSecureConnectorGrantItem | PlainMessage<OracleSecureConnectorGrantItem> | undefined, b: OracleSecureConnectorGrantItem | PlainMessage<OracleSecureConnectorGrantItem> | undefined): boolean {
+    return proto3.util.equals(OracleSecureConnectorGrantItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OraclePromptInjectionQuarantineItem
+ */
+export class OraclePromptInjectionQuarantineItem extends Message<OraclePromptInjectionQuarantineItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string event_code = 3;
+   */
+  eventCode = "";
+
+  /**
+   * @generated from field: string connector_code = 4;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string untrusted_source_origin = 5;
+   */
+  untrustedSourceOrigin = "";
+
+  /**
+   * @generated from field: string blocked_escalation_attempt = 6;
+   */
+  blockedEscalationAttempt = "";
+
+  /**
+   * @generated from field: string containment_verdict = 7;
+   */
+  containmentVerdict = "";
+
+  /**
+   * @generated from field: bool member_notified = 8;
+   */
+  memberNotified = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OraclePromptInjectionQuarantineItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OraclePromptInjectionQuarantineItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "event_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "untrusted_source_origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "blocked_escalation_attempt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "containment_verdict", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "member_notified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OraclePromptInjectionQuarantineItem {
+    return new OraclePromptInjectionQuarantineItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OraclePromptInjectionQuarantineItem {
+    return new OraclePromptInjectionQuarantineItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OraclePromptInjectionQuarantineItem {
+    return new OraclePromptInjectionQuarantineItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OraclePromptInjectionQuarantineItem | PlainMessage<OraclePromptInjectionQuarantineItem> | undefined, b: OraclePromptInjectionQuarantineItem | PlainMessage<OraclePromptInjectionQuarantineItem> | undefined): boolean {
+    return proto3.util.equals(OraclePromptInjectionQuarantineItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchRequest
+ */
+export class GetSecureConnectorsToolWorkbenchRequest extends Message<GetSecureConnectorsToolWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetSecureConnectorsToolWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSecureConnectorsToolWorkbenchRequest {
+    return new GetSecureConnectorsToolWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSecureConnectorsToolWorkbenchRequest {
+    return new GetSecureConnectorsToolWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSecureConnectorsToolWorkbenchRequest {
+    return new GetSecureConnectorsToolWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSecureConnectorsToolWorkbenchRequest | PlainMessage<GetSecureConnectorsToolWorkbenchRequest> | undefined, b: GetSecureConnectorsToolWorkbenchRequest | PlainMessage<GetSecureConnectorsToolWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetSecureConnectorsToolWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse
+ */
+export class GetSecureConnectorsToolWorkbenchResponse extends Message<GetSecureConnectorsToolWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleSecureConnectorGrantItem connectors = 1;
+   */
+  connectors: OracleSecureConnectorGrantItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OraclePromptInjectionQuarantineItem quarantines = 2;
+   */
+  quarantines: OraclePromptInjectionQuarantineItem[] = [];
+
+  /**
+   * @generated from field: bool indirect_injection_defense_active = 3;
+   */
+  indirectInjectionDefenseActive = false;
+
+  /**
+   * @generated from field: string connector_platform_banner = 4;
+   */
+  connectorPlatformBanner = "";
+
+  constructor(data?: PartialMessage<GetSecureConnectorsToolWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connectors", kind: "message", T: OracleSecureConnectorGrantItem, repeated: true },
+    { no: 2, name: "quarantines", kind: "message", T: OraclePromptInjectionQuarantineItem, repeated: true },
+    { no: 3, name: "indirect_injection_defense_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "connector_platform_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSecureConnectorsToolWorkbenchResponse {
+    return new GetSecureConnectorsToolWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSecureConnectorsToolWorkbenchResponse {
+    return new GetSecureConnectorsToolWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSecureConnectorsToolWorkbenchResponse {
+    return new GetSecureConnectorsToolWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetSecureConnectorsToolWorkbenchResponse | PlainMessage<GetSecureConnectorsToolWorkbenchResponse> | undefined, b: GetSecureConnectorsToolWorkbenchResponse | PlainMessage<GetSecureConnectorsToolWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetSecureConnectorsToolWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantRequest
+ */
+export class ConfigureOrRevokeConnectorGrantRequest extends Message<ConfigureOrRevokeConnectorGrantRequest> {
+  /**
+   * @generated from field: string connector_code = 1;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string connector_name_and_pillar = 2;
+   */
+  connectorNameAndPillar = "";
+
+  /**
+   * @generated from field: string risk_classification = 3;
+   */
+  riskClassification = "";
+
+  /**
+   * @generated from field: string permitted_data_and_retention = 4;
+   */
+  permittedDataAndRetention = "";
+
+  /**
+   * @generated from field: string dry_run_preview_summary = 5;
+   */
+  dryRunPreviewSummary = "";
+
+  /**
+   * @generated from field: string grant_status = 6;
+   */
+  grantStatus = "";
+
+  constructor(data?: PartialMessage<ConfigureOrRevokeConnectorGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "connector_name_and_pillar", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "risk_classification", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "permitted_data_and_retention", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "dry_run_preview_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "grant_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfigureOrRevokeConnectorGrantRequest {
+    return new ConfigureOrRevokeConnectorGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfigureOrRevokeConnectorGrantRequest {
+    return new ConfigureOrRevokeConnectorGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfigureOrRevokeConnectorGrantRequest {
+    return new ConfigureOrRevokeConnectorGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfigureOrRevokeConnectorGrantRequest | PlainMessage<ConfigureOrRevokeConnectorGrantRequest> | undefined, b: ConfigureOrRevokeConnectorGrantRequest | PlainMessage<ConfigureOrRevokeConnectorGrantRequest> | undefined): boolean {
+    return proto3.util.equals(ConfigureOrRevokeConnectorGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse
+ */
+export class ConfigureOrRevokeConnectorGrantResponse extends Message<ConfigureOrRevokeConnectorGrantResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleSecureConnectorGrantItem connector = 1;
+   */
+  connector?: OracleSecureConnectorGrantItem;
+
+  constructor(data?: PartialMessage<ConfigureOrRevokeConnectorGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connector", kind: "message", T: OracleSecureConnectorGrantItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfigureOrRevokeConnectorGrantResponse {
+    return new ConfigureOrRevokeConnectorGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfigureOrRevokeConnectorGrantResponse {
+    return new ConfigureOrRevokeConnectorGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfigureOrRevokeConnectorGrantResponse {
+    return new ConfigureOrRevokeConnectorGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfigureOrRevokeConnectorGrantResponse | PlainMessage<ConfigureOrRevokeConnectorGrantResponse> | undefined, b: ConfigureOrRevokeConnectorGrantResponse | PlainMessage<ConfigureOrRevokeConnectorGrantResponse> | undefined): boolean {
+    return proto3.util.equals(ConfigureOrRevokeConnectorGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineRequest
+ */
+export class ReportOrReviewPromptInjectionQuarantineRequest extends Message<ReportOrReviewPromptInjectionQuarantineRequest> {
+  /**
+   * @generated from field: string event_code = 1;
+   */
+  eventCode = "";
+
+  /**
+   * @generated from field: string connector_code = 2;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string untrusted_source_origin = 3;
+   */
+  untrustedSourceOrigin = "";
+
+  /**
+   * @generated from field: string blocked_escalation_attempt = 4;
+   */
+  blockedEscalationAttempt = "";
+
+  /**
+   * @generated from field: string containment_verdict = 5;
+   */
+  containmentVerdict = "";
+
+  constructor(data?: PartialMessage<ReportOrReviewPromptInjectionQuarantineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "event_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "untrusted_source_origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "blocked_escalation_attempt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "containment_verdict", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportOrReviewPromptInjectionQuarantineRequest {
+    return new ReportOrReviewPromptInjectionQuarantineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportOrReviewPromptInjectionQuarantineRequest {
+    return new ReportOrReviewPromptInjectionQuarantineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportOrReviewPromptInjectionQuarantineRequest {
+    return new ReportOrReviewPromptInjectionQuarantineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportOrReviewPromptInjectionQuarantineRequest | PlainMessage<ReportOrReviewPromptInjectionQuarantineRequest> | undefined, b: ReportOrReviewPromptInjectionQuarantineRequest | PlainMessage<ReportOrReviewPromptInjectionQuarantineRequest> | undefined): boolean {
+    return proto3.util.equals(ReportOrReviewPromptInjectionQuarantineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse
+ */
+export class ReportOrReviewPromptInjectionQuarantineResponse extends Message<ReportOrReviewPromptInjectionQuarantineResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OraclePromptInjectionQuarantineItem quarantine = 1;
+   */
+  quarantine?: OraclePromptInjectionQuarantineItem;
+
+  constructor(data?: PartialMessage<ReportOrReviewPromptInjectionQuarantineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "quarantine", kind: "message", T: OraclePromptInjectionQuarantineItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReportOrReviewPromptInjectionQuarantineResponse {
+    return new ReportOrReviewPromptInjectionQuarantineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReportOrReviewPromptInjectionQuarantineResponse {
+    return new ReportOrReviewPromptInjectionQuarantineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReportOrReviewPromptInjectionQuarantineResponse {
+    return new ReportOrReviewPromptInjectionQuarantineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReportOrReviewPromptInjectionQuarantineResponse | PlainMessage<ReportOrReviewPromptInjectionQuarantineResponse> | undefined, b: ReportOrReviewPromptInjectionQuarantineResponse | PlainMessage<ReportOrReviewPromptInjectionQuarantineResponse> | undefined): boolean {
+    return proto3.util.equals(ReportOrReviewPromptInjectionQuarantineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListSecureConnectorsToolAuditRequest
+ */
+export class AdminListSecureConnectorsToolAuditRequest extends Message<AdminListSecureConnectorsToolAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListSecureConnectorsToolAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListSecureConnectorsToolAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListSecureConnectorsToolAuditRequest {
+    return new AdminListSecureConnectorsToolAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListSecureConnectorsToolAuditRequest {
+    return new AdminListSecureConnectorsToolAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListSecureConnectorsToolAuditRequest {
+    return new AdminListSecureConnectorsToolAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListSecureConnectorsToolAuditRequest | PlainMessage<AdminListSecureConnectorsToolAuditRequest> | undefined, b: AdminListSecureConnectorsToolAuditRequest | PlainMessage<AdminListSecureConnectorsToolAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListSecureConnectorsToolAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse
+ */
+export class AdminListSecureConnectorsToolAuditResponse extends Message<AdminListSecureConnectorsToolAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleSecureConnectorGrantItem connectors = 1;
+   */
+  connectors: OracleSecureConnectorGrantItem[] = [];
+
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OraclePromptInjectionQuarantineItem quarantines = 2;
+   */
+  quarantines: OraclePromptInjectionQuarantineItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListSecureConnectorsToolAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connectors", kind: "message", T: OracleSecureConnectorGrantItem, repeated: true },
+    { no: 2, name: "quarantines", kind: "message", T: OraclePromptInjectionQuarantineItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListSecureConnectorsToolAuditResponse {
+    return new AdminListSecureConnectorsToolAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListSecureConnectorsToolAuditResponse {
+    return new AdminListSecureConnectorsToolAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListSecureConnectorsToolAuditResponse {
+    return new AdminListSecureConnectorsToolAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListSecureConnectorsToolAuditResponse | PlainMessage<AdminListSecureConnectorsToolAuditResponse> | undefined, b: AdminListSecureConnectorsToolAuditResponse | PlainMessage<AdminListSecureConnectorsToolAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListSecureConnectorsToolAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineRequest
+ */
+export class AdminManageConnectorKillSwitchOrQuarantineRequest extends Message<AdminManageConnectorKillSwitchOrQuarantineRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string connector_code = 2;
+   */
+  connectorCode = "";
+
+  /**
+   * @generated from field: string grant_status = 3;
+   */
+  grantStatus = "";
+
+  /**
+   * @generated from field: string dry_run_preview_summary = 4;
+   */
+  dryRunPreviewSummary = "";
+
+  constructor(data?: PartialMessage<AdminManageConnectorKillSwitchOrQuarantineRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "connector_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "grant_status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "dry_run_preview_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageConnectorKillSwitchOrQuarantineRequest {
+    return new AdminManageConnectorKillSwitchOrQuarantineRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageConnectorKillSwitchOrQuarantineRequest {
+    return new AdminManageConnectorKillSwitchOrQuarantineRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageConnectorKillSwitchOrQuarantineRequest {
+    return new AdminManageConnectorKillSwitchOrQuarantineRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageConnectorKillSwitchOrQuarantineRequest | PlainMessage<AdminManageConnectorKillSwitchOrQuarantineRequest> | undefined, b: AdminManageConnectorKillSwitchOrQuarantineRequest | PlainMessage<AdminManageConnectorKillSwitchOrQuarantineRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageConnectorKillSwitchOrQuarantineRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse
+ */
+export class AdminManageConnectorKillSwitchOrQuarantineResponse extends Message<AdminManageConnectorKillSwitchOrQuarantineResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleSecureConnectorGrantItem connector = 1;
+   */
+  connector?: OracleSecureConnectorGrantItem;
+
+  constructor(data?: PartialMessage<AdminManageConnectorKillSwitchOrQuarantineResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "connector", kind: "message", T: OracleSecureConnectorGrantItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageConnectorKillSwitchOrQuarantineResponse {
+    return new AdminManageConnectorKillSwitchOrQuarantineResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageConnectorKillSwitchOrQuarantineResponse {
+    return new AdminManageConnectorKillSwitchOrQuarantineResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageConnectorKillSwitchOrQuarantineResponse {
+    return new AdminManageConnectorKillSwitchOrQuarantineResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageConnectorKillSwitchOrQuarantineResponse | PlainMessage<AdminManageConnectorKillSwitchOrQuarantineResponse> | undefined, b: AdminManageConnectorKillSwitchOrQuarantineResponse | PlainMessage<AdminManageConnectorKillSwitchOrQuarantineResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageConnectorKillSwitchOrQuarantineResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+ */
+export class OracleTrustedDecisionRoomItem extends Message<OracleTrustedDecisionRoomItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string room_code = 3;
+   */
+  roomCode = "";
+
+  /**
+   * @generated from field: string title_and_scenario = 4;
+   */
+  titleAndScenario = "";
+
+  /**
+   * @generated from field: string specialist_credential_and_jurisdiction = 5;
+   */
+  specialistCredentialAndJurisdiction = "";
+
+  /**
+   * @generated from field: string conflict_of_interest_disclosure = 6;
+   */
+  conflictOfInterestDisclosure = "";
+
+  /**
+   * @generated from field: string scoped_grant_and_expiry = 7;
+   */
+  scopedGrantAndExpiry = "";
+
+  /**
+   * @generated from field: string after_action_closure_summary = 8;
+   */
+  afterActionClosureSummary = "";
+
+  /**
+   * @generated from field: string room_state = 9;
+   */
+  roomState = "";
+
+  /**
+   * @generated from field: bool tenant_boundary_isolated = 10;
+   */
+  tenantBoundaryIsolated = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleTrustedDecisionRoomItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleTrustedDecisionRoomItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "room_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "title_and_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "specialist_credential_and_jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "conflict_of_interest_disclosure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "scoped_grant_and_expiry", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "after_action_closure_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "tenant_boundary_isolated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleTrustedDecisionRoomItem {
+    return new OracleTrustedDecisionRoomItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleTrustedDecisionRoomItem {
+    return new OracleTrustedDecisionRoomItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleTrustedDecisionRoomItem {
+    return new OracleTrustedDecisionRoomItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleTrustedDecisionRoomItem | PlainMessage<OracleTrustedDecisionRoomItem> | undefined, b: OracleTrustedDecisionRoomItem | PlainMessage<OracleTrustedDecisionRoomItem> | undefined): boolean {
+    return proto3.util.equals(OracleTrustedDecisionRoomItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchRequest
+ */
+export class GetTrustedNetworkDecisionRoomsWorkbenchRequest extends Message<GetTrustedNetworkDecisionRoomsWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetTrustedNetworkDecisionRoomsWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchRequest {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchRequest {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchRequest {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTrustedNetworkDecisionRoomsWorkbenchRequest | PlainMessage<GetTrustedNetworkDecisionRoomsWorkbenchRequest> | undefined, b: GetTrustedNetworkDecisionRoomsWorkbenchRequest | PlainMessage<GetTrustedNetworkDecisionRoomsWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetTrustedNetworkDecisionRoomsWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse
+ */
+export class GetTrustedNetworkDecisionRoomsWorkbenchResponse extends Message<GetTrustedNetworkDecisionRoomsWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleTrustedDecisionRoomItem rooms = 1;
+   */
+  rooms: OracleTrustedDecisionRoomItem[] = [];
+
+  /**
+   * @generated from field: bool double_opt_in_and_coi_enforced = 2;
+   */
+  doubleOptInAndCoiEnforced = false;
+
+  /**
+   * @generated from field: string decision_rooms_banner = 3;
+   */
+  decisionRoomsBanner = "";
+
+  constructor(data?: PartialMessage<GetTrustedNetworkDecisionRoomsWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rooms", kind: "message", T: OracleTrustedDecisionRoomItem, repeated: true },
+    { no: 2, name: "double_opt_in_and_coi_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "decision_rooms_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchResponse {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchResponse {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTrustedNetworkDecisionRoomsWorkbenchResponse {
+    return new GetTrustedNetworkDecisionRoomsWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetTrustedNetworkDecisionRoomsWorkbenchResponse | PlainMessage<GetTrustedNetworkDecisionRoomsWorkbenchResponse> | undefined, b: GetTrustedNetworkDecisionRoomsWorkbenchResponse | PlainMessage<GetTrustedNetworkDecisionRoomsWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetTrustedNetworkDecisionRoomsWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomRequest
+ */
+export class CreateOrCloseTrustedDecisionRoomRequest extends Message<CreateOrCloseTrustedDecisionRoomRequest> {
+  /**
+   * @generated from field: string room_code = 1;
+   */
+  roomCode = "";
+
+  /**
+   * @generated from field: string title_and_scenario = 2;
+   */
+  titleAndScenario = "";
+
+  /**
+   * @generated from field: string specialist_credential_and_jurisdiction = 3;
+   */
+  specialistCredentialAndJurisdiction = "";
+
+  /**
+   * @generated from field: string conflict_of_interest_disclosure = 4;
+   */
+  conflictOfInterestDisclosure = "";
+
+  /**
+   * @generated from field: string scoped_grant_and_expiry = 5;
+   */
+  scopedGrantAndExpiry = "";
+
+  /**
+   * @generated from field: string after_action_closure_summary = 6;
+   */
+  afterActionClosureSummary = "";
+
+  /**
+   * @generated from field: string room_state = 7;
+   */
+  roomState = "";
+
+  constructor(data?: PartialMessage<CreateOrCloseTrustedDecisionRoomRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "title_and_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "specialist_credential_and_jurisdiction", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "conflict_of_interest_disclosure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "scoped_grant_and_expiry", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "after_action_closure_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrCloseTrustedDecisionRoomRequest {
+    return new CreateOrCloseTrustedDecisionRoomRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrCloseTrustedDecisionRoomRequest {
+    return new CreateOrCloseTrustedDecisionRoomRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrCloseTrustedDecisionRoomRequest {
+    return new CreateOrCloseTrustedDecisionRoomRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrCloseTrustedDecisionRoomRequest | PlainMessage<CreateOrCloseTrustedDecisionRoomRequest> | undefined, b: CreateOrCloseTrustedDecisionRoomRequest | PlainMessage<CreateOrCloseTrustedDecisionRoomRequest> | undefined): boolean {
+    return proto3.util.equals(CreateOrCloseTrustedDecisionRoomRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse
+ */
+export class CreateOrCloseTrustedDecisionRoomResponse extends Message<CreateOrCloseTrustedDecisionRoomResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleTrustedDecisionRoomItem room = 1;
+   */
+  room?: OracleTrustedDecisionRoomItem;
+
+  constructor(data?: PartialMessage<CreateOrCloseTrustedDecisionRoomResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: OracleTrustedDecisionRoomItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOrCloseTrustedDecisionRoomResponse {
+    return new CreateOrCloseTrustedDecisionRoomResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOrCloseTrustedDecisionRoomResponse {
+    return new CreateOrCloseTrustedDecisionRoomResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOrCloseTrustedDecisionRoomResponse {
+    return new CreateOrCloseTrustedDecisionRoomResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CreateOrCloseTrustedDecisionRoomResponse | PlainMessage<CreateOrCloseTrustedDecisionRoomResponse> | undefined, b: CreateOrCloseTrustedDecisionRoomResponse | PlainMessage<CreateOrCloseTrustedDecisionRoomResponse> | undefined): boolean {
+    return proto3.util.equals(CreateOrCloseTrustedDecisionRoomResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInRequest
+ */
+export class VerifySpecialistDisclosureOrOptInRequest extends Message<VerifySpecialistDisclosureOrOptInRequest> {
+  /**
+   * @generated from field: string room_code = 1;
+   */
+  roomCode = "";
+
+  /**
+   * @generated from field: string conflict_of_interest_disclosure = 2;
+   */
+  conflictOfInterestDisclosure = "";
+
+  /**
+   * @generated from field: string room_state = 3;
+   */
+  roomState = "";
+
+  constructor(data?: PartialMessage<VerifySpecialistDisclosureOrOptInRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "conflict_of_interest_disclosure", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifySpecialistDisclosureOrOptInRequest {
+    return new VerifySpecialistDisclosureOrOptInRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifySpecialistDisclosureOrOptInRequest {
+    return new VerifySpecialistDisclosureOrOptInRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifySpecialistDisclosureOrOptInRequest {
+    return new VerifySpecialistDisclosureOrOptInRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifySpecialistDisclosureOrOptInRequest | PlainMessage<VerifySpecialistDisclosureOrOptInRequest> | undefined, b: VerifySpecialistDisclosureOrOptInRequest | PlainMessage<VerifySpecialistDisclosureOrOptInRequest> | undefined): boolean {
+    return proto3.util.equals(VerifySpecialistDisclosureOrOptInRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse
+ */
+export class VerifySpecialistDisclosureOrOptInResponse extends Message<VerifySpecialistDisclosureOrOptInResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleTrustedDecisionRoomItem room = 1;
+   */
+  room?: OracleTrustedDecisionRoomItem;
+
+  constructor(data?: PartialMessage<VerifySpecialistDisclosureOrOptInResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: OracleTrustedDecisionRoomItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifySpecialistDisclosureOrOptInResponse {
+    return new VerifySpecialistDisclosureOrOptInResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifySpecialistDisclosureOrOptInResponse {
+    return new VerifySpecialistDisclosureOrOptInResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifySpecialistDisclosureOrOptInResponse {
+    return new VerifySpecialistDisclosureOrOptInResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifySpecialistDisclosureOrOptInResponse | PlainMessage<VerifySpecialistDisclosureOrOptInResponse> | undefined, b: VerifySpecialistDisclosureOrOptInResponse | PlainMessage<VerifySpecialistDisclosureOrOptInResponse> | undefined): boolean {
+    return proto3.util.equals(VerifySpecialistDisclosureOrOptInResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditRequest
+ */
+export class AdminListTrustedDecisionRoomsAuditRequest extends Message<AdminListTrustedDecisionRoomsAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListTrustedDecisionRoomsAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListTrustedDecisionRoomsAuditRequest {
+    return new AdminListTrustedDecisionRoomsAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListTrustedDecisionRoomsAuditRequest {
+    return new AdminListTrustedDecisionRoomsAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListTrustedDecisionRoomsAuditRequest {
+    return new AdminListTrustedDecisionRoomsAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListTrustedDecisionRoomsAuditRequest | PlainMessage<AdminListTrustedDecisionRoomsAuditRequest> | undefined, b: AdminListTrustedDecisionRoomsAuditRequest | PlainMessage<AdminListTrustedDecisionRoomsAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListTrustedDecisionRoomsAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse
+ */
+export class AdminListTrustedDecisionRoomsAuditResponse extends Message<AdminListTrustedDecisionRoomsAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleTrustedDecisionRoomItem rooms = 1;
+   */
+  rooms: OracleTrustedDecisionRoomItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListTrustedDecisionRoomsAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rooms", kind: "message", T: OracleTrustedDecisionRoomItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListTrustedDecisionRoomsAuditResponse {
+    return new AdminListTrustedDecisionRoomsAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListTrustedDecisionRoomsAuditResponse {
+    return new AdminListTrustedDecisionRoomsAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListTrustedDecisionRoomsAuditResponse {
+    return new AdminListTrustedDecisionRoomsAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListTrustedDecisionRoomsAuditResponse | PlainMessage<AdminListTrustedDecisionRoomsAuditResponse> | undefined, b: AdminListTrustedDecisionRoomsAuditResponse | PlainMessage<AdminListTrustedDecisionRoomsAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListTrustedDecisionRoomsAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryRequest
+ */
+export class AdminManageDecisionRoomGrantOrBoundaryRequest extends Message<AdminManageDecisionRoomGrantOrBoundaryRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string room_code = 2;
+   */
+  roomCode = "";
+
+  /**
+   * @generated from field: string room_state = 3;
+   */
+  roomState = "";
+
+  /**
+   * @generated from field: string after_action_closure_summary = 4;
+   */
+  afterActionClosureSummary = "";
+
+  constructor(data?: PartialMessage<AdminManageDecisionRoomGrantOrBoundaryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "room_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "after_action_closure_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageDecisionRoomGrantOrBoundaryRequest {
+    return new AdminManageDecisionRoomGrantOrBoundaryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageDecisionRoomGrantOrBoundaryRequest {
+    return new AdminManageDecisionRoomGrantOrBoundaryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageDecisionRoomGrantOrBoundaryRequest {
+    return new AdminManageDecisionRoomGrantOrBoundaryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageDecisionRoomGrantOrBoundaryRequest | PlainMessage<AdminManageDecisionRoomGrantOrBoundaryRequest> | undefined, b: AdminManageDecisionRoomGrantOrBoundaryRequest | PlainMessage<AdminManageDecisionRoomGrantOrBoundaryRequest> | undefined): boolean {
+    return proto3.util.equals(AdminManageDecisionRoomGrantOrBoundaryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse
+ */
+export class AdminManageDecisionRoomGrantOrBoundaryResponse extends Message<AdminManageDecisionRoomGrantOrBoundaryResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleTrustedDecisionRoomItem room = 1;
+   */
+  room?: OracleTrustedDecisionRoomItem;
+
+  constructor(data?: PartialMessage<AdminManageDecisionRoomGrantOrBoundaryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: OracleTrustedDecisionRoomItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminManageDecisionRoomGrantOrBoundaryResponse {
+    return new AdminManageDecisionRoomGrantOrBoundaryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminManageDecisionRoomGrantOrBoundaryResponse {
+    return new AdminManageDecisionRoomGrantOrBoundaryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminManageDecisionRoomGrantOrBoundaryResponse {
+    return new AdminManageDecisionRoomGrantOrBoundaryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminManageDecisionRoomGrantOrBoundaryResponse | PlainMessage<AdminManageDecisionRoomGrantOrBoundaryResponse> | undefined, b: AdminManageDecisionRoomGrantOrBoundaryResponse | PlainMessage<AdminManageDecisionRoomGrantOrBoundaryResponse> | undefined): boolean {
+    return proto3.util.equals(AdminManageDecisionRoomGrantOrBoundaryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OracleWargameExposureSimulationItem
+ */
+export class OracleWargameExposureSimulationItem extends Message<OracleWargameExposureSimulationItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string simulation_code = 3;
+   */
+  simulationCode = "";
+
+  /**
+   * @generated from field: string scenario_title = 4;
+   */
+  scenarioTitle = "";
+
+  /**
+   * @generated from field: string minimal_pillar_contracts_used = 5;
+   */
+  minimalPillarContractsUsed = "";
+
+  /**
+   * @generated from field: string downside_base_upside_ranges = 6;
+   */
+  downsideBaseUpsideRanges = "";
+
+  /**
+   * @generated from field: string tenth_person_and_failure_tree = 7;
+   */
+  tenthPersonAndFailureTree = "";
+
+  /**
+   * @generated from field: string top_sensitivity_driver = 8;
+   */
+  topSensitivityDriver = "";
+
+  /**
+   * @generated from field: string advisor_memo_state = 9;
+   */
+  advisorMemoState = "";
+
+  /**
+   * @generated from field: bool silent_ledger_access_blocked = 10;
+   */
+  silentLedgerAccessBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OracleWargameExposureSimulationItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OracleWargameExposureSimulationItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "simulation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "scenario_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "minimal_pillar_contracts_used", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "downside_base_upside_ranges", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "tenth_person_and_failure_tree", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "top_sensitivity_driver", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "advisor_memo_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "silent_ledger_access_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OracleWargameExposureSimulationItem {
+    return new OracleWargameExposureSimulationItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OracleWargameExposureSimulationItem {
+    return new OracleWargameExposureSimulationItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OracleWargameExposureSimulationItem {
+    return new OracleWargameExposureSimulationItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OracleWargameExposureSimulationItem | PlainMessage<OracleWargameExposureSimulationItem> | undefined, b: OracleWargameExposureSimulationItem | PlainMessage<OracleWargameExposureSimulationItem> | undefined): boolean {
+    return proto3.util.equals(OracleWargameExposureSimulationItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetWargamingExposureWorkbenchRequest
+ */
+export class GetWargamingExposureWorkbenchRequest extends Message<GetWargamingExposureWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetWargamingExposureWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetWargamingExposureWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWargamingExposureWorkbenchRequest {
+    return new GetWargamingExposureWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWargamingExposureWorkbenchRequest {
+    return new GetWargamingExposureWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWargamingExposureWorkbenchRequest {
+    return new GetWargamingExposureWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWargamingExposureWorkbenchRequest | PlainMessage<GetWargamingExposureWorkbenchRequest> | undefined, b: GetWargamingExposureWorkbenchRequest | PlainMessage<GetWargamingExposureWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetWargamingExposureWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse
+ */
+export class GetWargamingExposureWorkbenchResponse extends Message<GetWargamingExposureWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleWargameExposureSimulationItem simulations = 1;
+   */
+  simulations: OracleWargameExposureSimulationItem[] = [];
+
+  /**
+   * @generated from field: bool minimal_contract_isolation_enforced = 2;
+   */
+  minimalContractIsolationEnforced = false;
+
+  /**
+   * @generated from field: string wargaming_exposure_banner = 3;
+   */
+  wargamingExposureBanner = "";
+
+  constructor(data?: PartialMessage<GetWargamingExposureWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulations", kind: "message", T: OracleWargameExposureSimulationItem, repeated: true },
+    { no: 2, name: "minimal_contract_isolation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "wargaming_exposure_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWargamingExposureWorkbenchResponse {
+    return new GetWargamingExposureWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWargamingExposureWorkbenchResponse {
+    return new GetWargamingExposureWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWargamingExposureWorkbenchResponse {
+    return new GetWargamingExposureWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetWargamingExposureWorkbenchResponse | PlainMessage<GetWargamingExposureWorkbenchResponse> | undefined, b: GetWargamingExposureWorkbenchResponse | PlainMessage<GetWargamingExposureWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetWargamingExposureWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RunOrExportWargameExposureSimulationRequest
+ */
+export class RunOrExportWargameExposureSimulationRequest extends Message<RunOrExportWargameExposureSimulationRequest> {
+  /**
+   * @generated from field: string simulation_code = 1;
+   */
+  simulationCode = "";
+
+  /**
+   * @generated from field: string scenario_title = 2;
+   */
+  scenarioTitle = "";
+
+  /**
+   * @generated from field: string minimal_pillar_contracts_used = 3;
+   */
+  minimalPillarContractsUsed = "";
+
+  /**
+   * @generated from field: string downside_base_upside_ranges = 4;
+   */
+  downsideBaseUpsideRanges = "";
+
+  /**
+   * @generated from field: string tenth_person_and_failure_tree = 5;
+   */
+  tenthPersonAndFailureTree = "";
+
+  /**
+   * @generated from field: string top_sensitivity_driver = 6;
+   */
+  topSensitivityDriver = "";
+
+  /**
+   * @generated from field: string advisor_memo_state = 7;
+   */
+  advisorMemoState = "";
+
+  constructor(data?: PartialMessage<RunOrExportWargameExposureSimulationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RunOrExportWargameExposureSimulationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "scenario_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "minimal_pillar_contracts_used", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "downside_base_upside_ranges", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "tenth_person_and_failure_tree", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "top_sensitivity_driver", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "advisor_memo_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunOrExportWargameExposureSimulationRequest {
+    return new RunOrExportWargameExposureSimulationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunOrExportWargameExposureSimulationRequest {
+    return new RunOrExportWargameExposureSimulationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunOrExportWargameExposureSimulationRequest {
+    return new RunOrExportWargameExposureSimulationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunOrExportWargameExposureSimulationRequest | PlainMessage<RunOrExportWargameExposureSimulationRequest> | undefined, b: RunOrExportWargameExposureSimulationRequest | PlainMessage<RunOrExportWargameExposureSimulationRequest> | undefined): boolean {
+    return proto3.util.equals(RunOrExportWargameExposureSimulationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse
+ */
+export class RunOrExportWargameExposureSimulationResponse extends Message<RunOrExportWargameExposureSimulationResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleWargameExposureSimulationItem simulation = 1;
+   */
+  simulation?: OracleWargameExposureSimulationItem;
+
+  constructor(data?: PartialMessage<RunOrExportWargameExposureSimulationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulation", kind: "message", T: OracleWargameExposureSimulationItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RunOrExportWargameExposureSimulationResponse {
+    return new RunOrExportWargameExposureSimulationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RunOrExportWargameExposureSimulationResponse {
+    return new RunOrExportWargameExposureSimulationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunOrExportWargameExposureSimulationResponse {
+    return new RunOrExportWargameExposureSimulationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RunOrExportWargameExposureSimulationResponse | PlainMessage<RunOrExportWargameExposureSimulationResponse> | undefined, b: RunOrExportWargameExposureSimulationResponse | PlainMessage<RunOrExportWargameExposureSimulationResponse> | undefined): boolean {
+    return proto3.util.equals(RunOrExportWargameExposureSimulationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyRequest
+ */
+export class UpdateWargameSensitivityOrContingencyRequest extends Message<UpdateWargameSensitivityOrContingencyRequest> {
+  /**
+   * @generated from field: string simulation_code = 1;
+   */
+  simulationCode = "";
+
+  /**
+   * @generated from field: string top_sensitivity_driver = 2;
+   */
+  topSensitivityDriver = "";
+
+  /**
+   * @generated from field: string advisor_memo_state = 3;
+   */
+  advisorMemoState = "";
+
+  constructor(data?: PartialMessage<UpdateWargameSensitivityOrContingencyRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "top_sensitivity_driver", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "advisor_memo_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWargameSensitivityOrContingencyRequest {
+    return new UpdateWargameSensitivityOrContingencyRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWargameSensitivityOrContingencyRequest {
+    return new UpdateWargameSensitivityOrContingencyRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWargameSensitivityOrContingencyRequest {
+    return new UpdateWargameSensitivityOrContingencyRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateWargameSensitivityOrContingencyRequest | PlainMessage<UpdateWargameSensitivityOrContingencyRequest> | undefined, b: UpdateWargameSensitivityOrContingencyRequest | PlainMessage<UpdateWargameSensitivityOrContingencyRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateWargameSensitivityOrContingencyRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse
+ */
+export class UpdateWargameSensitivityOrContingencyResponse extends Message<UpdateWargameSensitivityOrContingencyResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleWargameExposureSimulationItem simulation = 1;
+   */
+  simulation?: OracleWargameExposureSimulationItem;
+
+  constructor(data?: PartialMessage<UpdateWargameSensitivityOrContingencyResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulation", kind: "message", T: OracleWargameExposureSimulationItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWargameSensitivityOrContingencyResponse {
+    return new UpdateWargameSensitivityOrContingencyResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWargameSensitivityOrContingencyResponse {
+    return new UpdateWargameSensitivityOrContingencyResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWargameSensitivityOrContingencyResponse {
+    return new UpdateWargameSensitivityOrContingencyResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateWargameSensitivityOrContingencyResponse | PlainMessage<UpdateWargameSensitivityOrContingencyResponse> | undefined, b: UpdateWargameSensitivityOrContingencyResponse | PlainMessage<UpdateWargameSensitivityOrContingencyResponse> | undefined): boolean {
+    return proto3.util.equals(UpdateWargameSensitivityOrContingencyResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListWargamingExposureAuditRequest
+ */
+export class AdminListWargamingExposureAuditRequest extends Message<AdminListWargamingExposureAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListWargamingExposureAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListWargamingExposureAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListWargamingExposureAuditRequest {
+    return new AdminListWargamingExposureAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListWargamingExposureAuditRequest {
+    return new AdminListWargamingExposureAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListWargamingExposureAuditRequest {
+    return new AdminListWargamingExposureAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListWargamingExposureAuditRequest | PlainMessage<AdminListWargamingExposureAuditRequest> | undefined, b: AdminListWargamingExposureAuditRequest | PlainMessage<AdminListWargamingExposureAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListWargamingExposureAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListWargamingExposureAuditResponse
+ */
+export class AdminListWargamingExposureAuditResponse extends Message<AdminListWargamingExposureAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OracleWargameExposureSimulationItem simulations = 1;
+   */
+  simulations: OracleWargameExposureSimulationItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListWargamingExposureAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListWargamingExposureAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulations", kind: "message", T: OracleWargameExposureSimulationItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListWargamingExposureAuditResponse {
+    return new AdminListWargamingExposureAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListWargamingExposureAuditResponse {
+    return new AdminListWargamingExposureAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListWargamingExposureAuditResponse {
+    return new AdminListWargamingExposureAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListWargamingExposureAuditResponse | PlainMessage<AdminListWargamingExposureAuditResponse> | undefined, b: AdminListWargamingExposureAuditResponse | PlainMessage<AdminListWargamingExposureAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListWargamingExposureAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerRequest
+ */
+export class AdminCertifyMinimalPillarContractOrDisclaimerRequest extends Message<AdminCertifyMinimalPillarContractOrDisclaimerRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string simulation_code = 2;
+   */
+  simulationCode = "";
+
+  /**
+   * @generated from field: string advisor_memo_state = 3;
+   */
+  advisorMemoState = "";
+
+  /**
+   * @generated from field: string minimal_pillar_contracts_used = 4;
+   */
+  minimalPillarContractsUsed = "";
+
+  constructor(data?: PartialMessage<AdminCertifyMinimalPillarContractOrDisclaimerRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "simulation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "advisor_memo_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "minimal_pillar_contracts_used", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerRequest {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerRequest {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerRequest {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyMinimalPillarContractOrDisclaimerRequest | PlainMessage<AdminCertifyMinimalPillarContractOrDisclaimerRequest> | undefined, b: AdminCertifyMinimalPillarContractOrDisclaimerRequest | PlainMessage<AdminCertifyMinimalPillarContractOrDisclaimerRequest> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyMinimalPillarContractOrDisclaimerRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse
+ */
+export class AdminCertifyMinimalPillarContractOrDisclaimerResponse extends Message<AdminCertifyMinimalPillarContractOrDisclaimerResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OracleWargameExposureSimulationItem simulation = 1;
+   */
+  simulation?: OracleWargameExposureSimulationItem;
+
+  constructor(data?: PartialMessage<AdminCertifyMinimalPillarContractOrDisclaimerResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "simulation", kind: "message", T: OracleWargameExposureSimulationItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerResponse {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerResponse {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyMinimalPillarContractOrDisclaimerResponse {
+    return new AdminCertifyMinimalPillarContractOrDisclaimerResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyMinimalPillarContractOrDisclaimerResponse | PlainMessage<AdminCertifyMinimalPillarContractOrDisclaimerResponse> | undefined, b: AdminCertifyMinimalPillarContractOrDisclaimerResponse | PlainMessage<AdminCertifyMinimalPillarContractOrDisclaimerResponse> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyMinimalPillarContractOrDisclaimerResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+ */
+export class OraclePrivateCaseLibraryEntryItem extends Message<OraclePrivateCaseLibraryEntryItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string case_code = 3;
+   */
+  caseCode = "";
+
+  /**
+   * @generated from field: string source_decision_code = 4;
+   */
+  sourceDecisionCode = "";
+
+  /**
+   * @generated from field: string case_title = 5;
+   */
+  caseTitle = "";
+
+  /**
+   * @generated from field: string structural_match_and_differences = 6;
+   */
+  structuralMatchAndDifferences = "";
+
+  /**
+   * @generated from field: string observed_outcome_vs_counterfactual = 7;
+   */
+  observedOutcomeVsCounterfactual = "";
+
+  /**
+   * @generated from field: string anonymized_institutional_template = 8;
+   */
+  anonymizedInstitutionalTemplate = "";
+
+  /**
+   * @generated from field: string sharing_state = 9;
+   */
+  sharingState = "";
+
+  /**
+   * @generated from field: bool analogy_treated_as_evidence = 10;
+   */
+  analogyTreatedAsEvidence = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 11;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<OraclePrivateCaseLibraryEntryItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "case_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "source_decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "case_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "structural_match_and_differences", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "observed_outcome_vs_counterfactual", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "anonymized_institutional_template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "sharing_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "analogy_treated_as_evidence", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OraclePrivateCaseLibraryEntryItem {
+    return new OraclePrivateCaseLibraryEntryItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OraclePrivateCaseLibraryEntryItem {
+    return new OraclePrivateCaseLibraryEntryItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OraclePrivateCaseLibraryEntryItem {
+    return new OraclePrivateCaseLibraryEntryItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OraclePrivateCaseLibraryEntryItem | PlainMessage<OraclePrivateCaseLibraryEntryItem> | undefined, b: OraclePrivateCaseLibraryEntryItem | PlainMessage<OraclePrivateCaseLibraryEntryItem> | undefined): boolean {
+    return proto3.util.equals(OraclePrivateCaseLibraryEntryItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchRequest
+ */
+export class GetPrivateCaseLibraryWorkbenchRequest extends Message<GetPrivateCaseLibraryWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetPrivateCaseLibraryWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPrivateCaseLibraryWorkbenchRequest {
+    return new GetPrivateCaseLibraryWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPrivateCaseLibraryWorkbenchRequest {
+    return new GetPrivateCaseLibraryWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPrivateCaseLibraryWorkbenchRequest {
+    return new GetPrivateCaseLibraryWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPrivateCaseLibraryWorkbenchRequest | PlainMessage<GetPrivateCaseLibraryWorkbenchRequest> | undefined, b: GetPrivateCaseLibraryWorkbenchRequest | PlainMessage<GetPrivateCaseLibraryWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetPrivateCaseLibraryWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse
+ */
+export class GetPrivateCaseLibraryWorkbenchResponse extends Message<GetPrivateCaseLibraryWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem cases = 1;
+   */
+  cases: OraclePrivateCaseLibraryEntryItem[] = [];
+
+  /**
+   * @generated from field: bool analogy_vs_evidence_guard_enforced = 2;
+   */
+  analogyVsEvidenceGuardEnforced = false;
+
+  /**
+   * @generated from field: string case_library_banner = 3;
+   */
+  caseLibraryBanner = "";
+
+  constructor(data?: PartialMessage<GetPrivateCaseLibraryWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cases", kind: "message", T: OraclePrivateCaseLibraryEntryItem, repeated: true },
+    { no: 2, name: "analogy_vs_evidence_guard_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "case_library_banner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPrivateCaseLibraryWorkbenchResponse {
+    return new GetPrivateCaseLibraryWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPrivateCaseLibraryWorkbenchResponse {
+    return new GetPrivateCaseLibraryWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPrivateCaseLibraryWorkbenchResponse {
+    return new GetPrivateCaseLibraryWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetPrivateCaseLibraryWorkbenchResponse | PlainMessage<GetPrivateCaseLibraryWorkbenchResponse> | undefined, b: GetPrivateCaseLibraryWorkbenchResponse | PlainMessage<GetPrivateCaseLibraryWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetPrivateCaseLibraryWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SaveOrComparePrivateCaseEntryRequest
+ */
+export class SaveOrComparePrivateCaseEntryRequest extends Message<SaveOrComparePrivateCaseEntryRequest> {
+  /**
+   * @generated from field: string case_code = 1;
+   */
+  caseCode = "";
+
+  /**
+   * @generated from field: string source_decision_code = 2;
+   */
+  sourceDecisionCode = "";
+
+  /**
+   * @generated from field: string case_title = 3;
+   */
+  caseTitle = "";
+
+  /**
+   * @generated from field: string structural_match_and_differences = 4;
+   */
+  structuralMatchAndDifferences = "";
+
+  /**
+   * @generated from field: string observed_outcome_vs_counterfactual = 5;
+   */
+  observedOutcomeVsCounterfactual = "";
+
+  /**
+   * @generated from field: string anonymized_institutional_template = 6;
+   */
+  anonymizedInstitutionalTemplate = "";
+
+  /**
+   * @generated from field: string sharing_state = 7;
+   */
+  sharingState = "";
+
+  constructor(data?: PartialMessage<SaveOrComparePrivateCaseEntryRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SaveOrComparePrivateCaseEntryRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_decision_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "case_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "structural_match_and_differences", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "observed_outcome_vs_counterfactual", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "anonymized_institutional_template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "sharing_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveOrComparePrivateCaseEntryRequest {
+    return new SaveOrComparePrivateCaseEntryRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveOrComparePrivateCaseEntryRequest {
+    return new SaveOrComparePrivateCaseEntryRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveOrComparePrivateCaseEntryRequest {
+    return new SaveOrComparePrivateCaseEntryRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveOrComparePrivateCaseEntryRequest | PlainMessage<SaveOrComparePrivateCaseEntryRequest> | undefined, b: SaveOrComparePrivateCaseEntryRequest | PlainMessage<SaveOrComparePrivateCaseEntryRequest> | undefined): boolean {
+    return proto3.util.equals(SaveOrComparePrivateCaseEntryRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse
+ */
+export class SaveOrComparePrivateCaseEntryResponse extends Message<SaveOrComparePrivateCaseEntryResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem case_entry = 1;
+   */
+  caseEntry?: OraclePrivateCaseLibraryEntryItem;
+
+  constructor(data?: PartialMessage<SaveOrComparePrivateCaseEntryResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_entry", kind: "message", T: OraclePrivateCaseLibraryEntryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveOrComparePrivateCaseEntryResponse {
+    return new SaveOrComparePrivateCaseEntryResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveOrComparePrivateCaseEntryResponse {
+    return new SaveOrComparePrivateCaseEntryResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveOrComparePrivateCaseEntryResponse {
+    return new SaveOrComparePrivateCaseEntryResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveOrComparePrivateCaseEntryResponse | PlainMessage<SaveOrComparePrivateCaseEntryResponse> | undefined, b: SaveOrComparePrivateCaseEntryResponse | PlainMessage<SaveOrComparePrivateCaseEntryResponse> | undefined): boolean {
+    return proto3.util.equals(SaveOrComparePrivateCaseEntryResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookRequest
+ */
+export class SubmitOrWithdrawAnonymizedPlaybookRequest extends Message<SubmitOrWithdrawAnonymizedPlaybookRequest> {
+  /**
+   * @generated from field: string case_code = 1;
+   */
+  caseCode = "";
+
+  /**
+   * @generated from field: string anonymized_institutional_template = 2;
+   */
+  anonymizedInstitutionalTemplate = "";
+
+  /**
+   * @generated from field: string sharing_state = 3;
+   */
+  sharingState = "";
+
+  constructor(data?: PartialMessage<SubmitOrWithdrawAnonymizedPlaybookRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "anonymized_institutional_template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sharing_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitOrWithdrawAnonymizedPlaybookRequest {
+    return new SubmitOrWithdrawAnonymizedPlaybookRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitOrWithdrawAnonymizedPlaybookRequest {
+    return new SubmitOrWithdrawAnonymizedPlaybookRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitOrWithdrawAnonymizedPlaybookRequest {
+    return new SubmitOrWithdrawAnonymizedPlaybookRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitOrWithdrawAnonymizedPlaybookRequest | PlainMessage<SubmitOrWithdrawAnonymizedPlaybookRequest> | undefined, b: SubmitOrWithdrawAnonymizedPlaybookRequest | PlainMessage<SubmitOrWithdrawAnonymizedPlaybookRequest> | undefined): boolean {
+    return proto3.util.equals(SubmitOrWithdrawAnonymizedPlaybookRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse
+ */
+export class SubmitOrWithdrawAnonymizedPlaybookResponse extends Message<SubmitOrWithdrawAnonymizedPlaybookResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem case_entry = 1;
+   */
+  caseEntry?: OraclePrivateCaseLibraryEntryItem;
+
+  constructor(data?: PartialMessage<SubmitOrWithdrawAnonymizedPlaybookResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_entry", kind: "message", T: OraclePrivateCaseLibraryEntryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SubmitOrWithdrawAnonymizedPlaybookResponse {
+    return new SubmitOrWithdrawAnonymizedPlaybookResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SubmitOrWithdrawAnonymizedPlaybookResponse {
+    return new SubmitOrWithdrawAnonymizedPlaybookResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SubmitOrWithdrawAnonymizedPlaybookResponse {
+    return new SubmitOrWithdrawAnonymizedPlaybookResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SubmitOrWithdrawAnonymizedPlaybookResponse | PlainMessage<SubmitOrWithdrawAnonymizedPlaybookResponse> | undefined, b: SubmitOrWithdrawAnonymizedPlaybookResponse | PlainMessage<SubmitOrWithdrawAnonymizedPlaybookResponse> | undefined): boolean {
+    return proto3.util.equals(SubmitOrWithdrawAnonymizedPlaybookResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditRequest
+ */
+export class AdminListPrivateCaseLibraryAuditRequest extends Message<AdminListPrivateCaseLibraryAuditRequest> {
+  /**
+   * @generated from field: int32 limit = 1;
+   */
+  limit = 0;
+
+  constructor(data?: PartialMessage<AdminListPrivateCaseLibraryAuditRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "limit", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListPrivateCaseLibraryAuditRequest {
+    return new AdminListPrivateCaseLibraryAuditRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListPrivateCaseLibraryAuditRequest {
+    return new AdminListPrivateCaseLibraryAuditRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListPrivateCaseLibraryAuditRequest {
+    return new AdminListPrivateCaseLibraryAuditRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListPrivateCaseLibraryAuditRequest | PlainMessage<AdminListPrivateCaseLibraryAuditRequest> | undefined, b: AdminListPrivateCaseLibraryAuditRequest | PlainMessage<AdminListPrivateCaseLibraryAuditRequest> | undefined): boolean {
+    return proto3.util.equals(AdminListPrivateCaseLibraryAuditRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse
+ */
+export class AdminListPrivateCaseLibraryAuditResponse extends Message<AdminListPrivateCaseLibraryAuditResponse> {
+  /**
+   * @generated from field: repeated sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem cases = 1;
+   */
+  cases: OraclePrivateCaseLibraryEntryItem[] = [];
+
+  constructor(data?: PartialMessage<AdminListPrivateCaseLibraryAuditResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "cases", kind: "message", T: OraclePrivateCaseLibraryEntryItem, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminListPrivateCaseLibraryAuditResponse {
+    return new AdminListPrivateCaseLibraryAuditResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminListPrivateCaseLibraryAuditResponse {
+    return new AdminListPrivateCaseLibraryAuditResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminListPrivateCaseLibraryAuditResponse {
+    return new AdminListPrivateCaseLibraryAuditResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminListPrivateCaseLibraryAuditResponse | PlainMessage<AdminListPrivateCaseLibraryAuditResponse> | undefined, b: AdminListPrivateCaseLibraryAuditResponse | PlainMessage<AdminListPrivateCaseLibraryAuditResponse> | undefined): boolean {
+    return proto3.util.equals(AdminListPrivateCaseLibraryAuditResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureRequest
+ */
+export class AdminCertifyPlaybookAnonymizationOrErasureRequest extends Message<AdminCertifyPlaybookAnonymizationOrErasureRequest> {
+  /**
+   * @generated from field: string target_user_id = 1;
+   */
+  targetUserId = "";
+
+  /**
+   * @generated from field: string case_code = 2;
+   */
+  caseCode = "";
+
+  /**
+   * @generated from field: string sharing_state = 3;
+   */
+  sharingState = "";
+
+  /**
+   * @generated from field: string anonymized_institutional_template = 4;
+   */
+  anonymizedInstitutionalTemplate = "";
+
+  constructor(data?: PartialMessage<AdminCertifyPlaybookAnonymizationOrErasureRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "target_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "case_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sharing_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "anonymized_institutional_template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureRequest {
+    return new AdminCertifyPlaybookAnonymizationOrErasureRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureRequest {
+    return new AdminCertifyPlaybookAnonymizationOrErasureRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureRequest {
+    return new AdminCertifyPlaybookAnonymizationOrErasureRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyPlaybookAnonymizationOrErasureRequest | PlainMessage<AdminCertifyPlaybookAnonymizationOrErasureRequest> | undefined, b: AdminCertifyPlaybookAnonymizationOrErasureRequest | PlainMessage<AdminCertifyPlaybookAnonymizationOrErasureRequest> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyPlaybookAnonymizationOrErasureRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponse
+ */
+export class AdminCertifyPlaybookAnonymizationOrErasureResponse extends Message<AdminCertifyPlaybookAnonymizationOrErasureResponse> {
+  /**
+   * @generated from field: sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem case_entry = 1;
+   */
+  caseEntry?: OraclePrivateCaseLibraryEntryItem;
+
+  constructor(data?: PartialMessage<AdminCertifyPlaybookAnonymizationOrErasureResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "case_entry", kind: "message", T: OraclePrivateCaseLibraryEntryItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureResponse {
+    return new AdminCertifyPlaybookAnonymizationOrErasureResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureResponse {
+    return new AdminCertifyPlaybookAnonymizationOrErasureResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminCertifyPlaybookAnonymizationOrErasureResponse {
+    return new AdminCertifyPlaybookAnonymizationOrErasureResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminCertifyPlaybookAnonymizationOrErasureResponse | PlainMessage<AdminCertifyPlaybookAnonymizationOrErasureResponse> | undefined, b: AdminCertifyPlaybookAnonymizationOrErasureResponse | PlainMessage<AdminCertifyPlaybookAnonymizationOrErasureResponse> | undefined): boolean {
+    return proto3.util.equals(AdminCertifyPlaybookAnonymizationOrErasureResponse, a, b);
+  }
+}
+

@@ -6847,6 +6847,4941 @@ func (x *CancelLoungeBookingResponse) GetOk() bool {
 	return false
 }
 
+// Choice 1 (Z1): Native Focus Firewall
+type ZenithFocusFirewallSessionItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	FirewallCode                 string                 `protobuf:"bytes,3,opt,name=firewall_code,json=firewallCode,proto3" json:"firewall_code,omitempty"`
+	SessionTitle                 string                 `protobuf:"bytes,4,opt,name=session_title,json=sessionTitle,proto3" json:"session_title,omitempty"`
+	EnforcementMode              string                 `protobuf:"bytes,5,opt,name=enforcement_mode,json=enforcementMode,proto3" json:"enforcement_mode,omitempty"`
+	PlatformCapabilityMatrix     string                 `protobuf:"bytes,6,opt,name=platform_capability_matrix,json=platformCapabilityMatrix,proto3" json:"platform_capability_matrix,omitempty"`
+	WhitelistedEmergencyPaths    string                 `protobuf:"bytes,7,opt,name=whitelisted_emergency_paths,json=whitelistedEmergencyPaths,proto3" json:"whitelisted_emergency_paths,omitempty"`
+	OverrideFrictionAndLog       string                 `protobuf:"bytes,8,opt,name=override_friction_and_log,json=overrideFrictionAndLog,proto3" json:"override_friction_and_log,omitempty"`
+	FirewallState                string                 `protobuf:"bytes,9,opt,name=firewall_state,json=firewallState,proto3" json:"firewall_state,omitempty"`
+	EmergencyExitAlwaysPermitted bool                   `protobuf:"varint,10,opt,name=emergency_exit_always_permitted,json=emergencyExitAlwaysPermitted,proto3" json:"emergency_exit_always_permitted,omitempty"`
+	UpdatedAtIso                 string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *ZenithFocusFirewallSessionItem) Reset() {
+	*x = ZenithFocusFirewallSessionItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithFocusFirewallSessionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithFocusFirewallSessionItem) ProtoMessage() {}
+
+func (x *ZenithFocusFirewallSessionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithFocusFirewallSessionItem.ProtoReflect.Descriptor instead.
+func (*ZenithFocusFirewallSessionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetFirewallCode() string {
+	if x != nil {
+		return x.FirewallCode
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetSessionTitle() string {
+	if x != nil {
+		return x.SessionTitle
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetEnforcementMode() string {
+	if x != nil {
+		return x.EnforcementMode
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetPlatformCapabilityMatrix() string {
+	if x != nil {
+		return x.PlatformCapabilityMatrix
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetWhitelistedEmergencyPaths() string {
+	if x != nil {
+		return x.WhitelistedEmergencyPaths
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetOverrideFrictionAndLog() string {
+	if x != nil {
+		return x.OverrideFrictionAndLog
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetFirewallState() string {
+	if x != nil {
+		return x.FirewallState
+	}
+	return ""
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetEmergencyExitAlwaysPermitted() bool {
+	if x != nil {
+		return x.EmergencyExitAlwaysPermitted
+	}
+	return false
+}
+
+func (x *ZenithFocusFirewallSessionItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithFocusFirewallWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithFocusFirewallWorkbenchRequest) Reset() {
+	*x = GetZenithFocusFirewallWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithFocusFirewallWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithFocusFirewallWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithFocusFirewallWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithFocusFirewallWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithFocusFirewallWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{123}
+}
+
+type GetZenithFocusFirewallWorkbenchResponse struct {
+	state                                protoimpl.MessageState            `protogen:"open.v1"`
+	Sessions                             []*ZenithFocusFirewallSessionItem `protobuf:"bytes,1,rep,name=sessions,proto3" json:"sessions,omitempty"`
+	EmergencyExitAlwaysPermittedEnforced bool                              `protobuf:"varint,2,opt,name=emergency_exit_always_permitted_enforced,json=emergencyExitAlwaysPermittedEnforced,proto3" json:"emergency_exit_always_permitted_enforced,omitempty"`
+	HonestPlatformCapabilitySummary      string                            `protobuf:"bytes,3,opt,name=honest_platform_capability_summary,json=honestPlatformCapabilitySummary,proto3" json:"honest_platform_capability_summary,omitempty"`
+	unknownFields                        protoimpl.UnknownFields
+	sizeCache                            protoimpl.SizeCache
+}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) Reset() {
+	*x = GetZenithFocusFirewallWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithFocusFirewallWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithFocusFirewallWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithFocusFirewallWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) GetSessions() []*ZenithFocusFirewallSessionItem {
+	if x != nil {
+		return x.Sessions
+	}
+	return nil
+}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) GetEmergencyExitAlwaysPermittedEnforced() bool {
+	if x != nil {
+		return x.EmergencyExitAlwaysPermittedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithFocusFirewallWorkbenchResponse) GetHonestPlatformCapabilitySummary() string {
+	if x != nil {
+		return x.HonestPlatformCapabilitySummary
+	}
+	return ""
+}
+
+type SaveZenithFocusFirewallSessionRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	FirewallCode              string                 `protobuf:"bytes,1,opt,name=firewall_code,json=firewallCode,proto3" json:"firewall_code,omitempty"`
+	SessionTitle              string                 `protobuf:"bytes,2,opt,name=session_title,json=sessionTitle,proto3" json:"session_title,omitempty"`
+	EnforcementMode           string                 `protobuf:"bytes,3,opt,name=enforcement_mode,json=enforcementMode,proto3" json:"enforcement_mode,omitempty"`
+	PlatformCapabilityMatrix  string                 `protobuf:"bytes,4,opt,name=platform_capability_matrix,json=platformCapabilityMatrix,proto3" json:"platform_capability_matrix,omitempty"`
+	WhitelistedEmergencyPaths string                 `protobuf:"bytes,5,opt,name=whitelisted_emergency_paths,json=whitelistedEmergencyPaths,proto3" json:"whitelisted_emergency_paths,omitempty"`
+	OverrideFrictionAndLog    string                 `protobuf:"bytes,6,opt,name=override_friction_and_log,json=overrideFrictionAndLog,proto3" json:"override_friction_and_log,omitempty"`
+	FirewallState             string                 `protobuf:"bytes,7,opt,name=firewall_state,json=firewallState,proto3" json:"firewall_state,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) Reset() {
+	*x = SaveZenithFocusFirewallSessionRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithFocusFirewallSessionRequest) ProtoMessage() {}
+
+func (x *SaveZenithFocusFirewallSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithFocusFirewallSessionRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithFocusFirewallSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetFirewallCode() string {
+	if x != nil {
+		return x.FirewallCode
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetSessionTitle() string {
+	if x != nil {
+		return x.SessionTitle
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetEnforcementMode() string {
+	if x != nil {
+		return x.EnforcementMode
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetPlatformCapabilityMatrix() string {
+	if x != nil {
+		return x.PlatformCapabilityMatrix
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetWhitelistedEmergencyPaths() string {
+	if x != nil {
+		return x.WhitelistedEmergencyPaths
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetOverrideFrictionAndLog() string {
+	if x != nil {
+		return x.OverrideFrictionAndLog
+	}
+	return ""
+}
+
+func (x *SaveZenithFocusFirewallSessionRequest) GetFirewallState() string {
+	if x != nil {
+		return x.FirewallState
+	}
+	return ""
+}
+
+type SaveZenithFocusFirewallSessionResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Session       *ZenithFocusFirewallSessionItem `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithFocusFirewallSessionResponse) Reset() {
+	*x = SaveZenithFocusFirewallSessionResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithFocusFirewallSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithFocusFirewallSessionResponse) ProtoMessage() {}
+
+func (x *SaveZenithFocusFirewallSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithFocusFirewallSessionResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithFocusFirewallSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{126}
+}
+
+func (x *SaveZenithFocusFirewallSessionResponse) GetSession() *ZenithFocusFirewallSessionItem {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type TriggerZenithFocusFirewallBypassOrCompleteRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	FirewallCode       string                 `protobuf:"bytes,1,opt,name=firewall_code,json=firewallCode,proto3" json:"firewall_code,omitempty"`
+	TargetState        string                 `protobuf:"bytes,2,opt,name=target_state,json=targetState,proto3" json:"target_state,omitempty"`
+	OverrideReasonNote string                 `protobuf:"bytes,3,opt,name=override_reason_note,json=overrideReasonNote,proto3" json:"override_reason_note,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) Reset() {
+	*x = TriggerZenithFocusFirewallBypassOrCompleteRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerZenithFocusFirewallBypassOrCompleteRequest) ProtoMessage() {}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerZenithFocusFirewallBypassOrCompleteRequest.ProtoReflect.Descriptor instead.
+func (*TriggerZenithFocusFirewallBypassOrCompleteRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) GetFirewallCode() string {
+	if x != nil {
+		return x.FirewallCode
+	}
+	return ""
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) GetTargetState() string {
+	if x != nil {
+		return x.TargetState
+	}
+	return ""
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteRequest) GetOverrideReasonNote() string {
+	if x != nil {
+		return x.OverrideReasonNote
+	}
+	return ""
+}
+
+type TriggerZenithFocusFirewallBypassOrCompleteResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Session       *ZenithFocusFirewallSessionItem `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteResponse) Reset() {
+	*x = TriggerZenithFocusFirewallBypassOrCompleteResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerZenithFocusFirewallBypassOrCompleteResponse) ProtoMessage() {}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerZenithFocusFirewallBypassOrCompleteResponse.ProtoReflect.Descriptor instead.
+func (*TriggerZenithFocusFirewallBypassOrCompleteResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *TriggerZenithFocusFirewallBypassOrCompleteResponse) GetSession() *ZenithFocusFirewallSessionItem {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+// Choice 2 (Z2): Adaptive Day Architect
+type ZenithAdaptiveDayArchitectPlanItem struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PlanCode                       string                 `protobuf:"bytes,3,opt,name=plan_code,json=planCode,proto3" json:"plan_code,omitempty"`
+	PlanDateLabel                  string                 `protobuf:"bytes,4,opt,name=plan_date_label,json=planDateLabel,proto3" json:"plan_date_label,omitempty"`
+	CalendarSnapshotLagAndCoverage string                 `protobuf:"bytes,5,opt,name=calendar_snapshot_lag_and_coverage,json=calendarSnapshotLagAndCoverage,proto3" json:"calendar_snapshot_lag_and_coverage,omitempty"`
+	ProposedFocusAndBufferWindows  string                 `protobuf:"bytes,6,opt,name=proposed_focus_and_buffer_windows,json=proposedFocusAndBufferWindows,proto3" json:"proposed_focus_and_buffer_windows,omitempty"`
+	WhatChangedReplanDiff          string                 `protobuf:"bytes,7,opt,name=what_changed_replan_diff,json=whatChangedReplanDiff,proto3" json:"what_changed_replan_diff,omitempty"`
+	ReadinessFallbackMode          string                 `protobuf:"bytes,8,opt,name=readiness_fallback_mode,json=readinessFallbackMode,proto3" json:"readiness_fallback_mode,omitempty"`
+	PlanState                      string                 `protobuf:"bytes,9,opt,name=plan_state,json=planState,proto3" json:"plan_state,omitempty"`
+	SilentCalendarMoveBlocked      bool                   `protobuf:"varint,10,opt,name=silent_calendar_move_blocked,json=silentCalendarMoveBlocked,proto3" json:"silent_calendar_move_blocked,omitempty"`
+	UpdatedAtIso                   string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) Reset() {
+	*x = ZenithAdaptiveDayArchitectPlanItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithAdaptiveDayArchitectPlanItem) ProtoMessage() {}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithAdaptiveDayArchitectPlanItem.ProtoReflect.Descriptor instead.
+func (*ZenithAdaptiveDayArchitectPlanItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetPlanCode() string {
+	if x != nil {
+		return x.PlanCode
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetPlanDateLabel() string {
+	if x != nil {
+		return x.PlanDateLabel
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetCalendarSnapshotLagAndCoverage() string {
+	if x != nil {
+		return x.CalendarSnapshotLagAndCoverage
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetProposedFocusAndBufferWindows() string {
+	if x != nil {
+		return x.ProposedFocusAndBufferWindows
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetWhatChangedReplanDiff() string {
+	if x != nil {
+		return x.WhatChangedReplanDiff
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetReadinessFallbackMode() string {
+	if x != nil {
+		return x.ReadinessFallbackMode
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetPlanState() string {
+	if x != nil {
+		return x.PlanState
+	}
+	return ""
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetSilentCalendarMoveBlocked() bool {
+	if x != nil {
+		return x.SilentCalendarMoveBlocked
+	}
+	return false
+}
+
+func (x *ZenithAdaptiveDayArchitectPlanItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithAdaptiveDayArchitectWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchRequest) Reset() {
+	*x = GetZenithAdaptiveDayArchitectWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithAdaptiveDayArchitectWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithAdaptiveDayArchitectWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithAdaptiveDayArchitectWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{130}
+}
+
+type GetZenithAdaptiveDayArchitectWorkbenchResponse struct {
+	state                             protoimpl.MessageState                `protogen:"open.v1"`
+	Plans                             []*ZenithAdaptiveDayArchitectPlanItem `protobuf:"bytes,1,rep,name=plans,proto3" json:"plans,omitempty"`
+	SilentCalendarMoveBlockedEnforced bool                                  `protobuf:"varint,2,opt,name=silent_calendar_move_blocked_enforced,json=silentCalendarMoveBlockedEnforced,proto3" json:"silent_calendar_move_blocked_enforced,omitempty"`
+	NoSensorFallbackSummary           string                                `protobuf:"bytes,3,opt,name=no_sensor_fallback_summary,json=noSensorFallbackSummary,proto3" json:"no_sensor_fallback_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) Reset() {
+	*x = GetZenithAdaptiveDayArchitectWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithAdaptiveDayArchitectWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithAdaptiveDayArchitectWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithAdaptiveDayArchitectWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) GetPlans() []*ZenithAdaptiveDayArchitectPlanItem {
+	if x != nil {
+		return x.Plans
+	}
+	return nil
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) GetSilentCalendarMoveBlockedEnforced() bool {
+	if x != nil {
+		return x.SilentCalendarMoveBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithAdaptiveDayArchitectWorkbenchResponse) GetNoSensorFallbackSummary() string {
+	if x != nil {
+		return x.NoSensorFallbackSummary
+	}
+	return ""
+}
+
+type SaveZenithAdaptiveDayArchitectPlanRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	PlanCode                       string                 `protobuf:"bytes,1,opt,name=plan_code,json=planCode,proto3" json:"plan_code,omitempty"`
+	PlanDateLabel                  string                 `protobuf:"bytes,2,opt,name=plan_date_label,json=planDateLabel,proto3" json:"plan_date_label,omitempty"`
+	CalendarSnapshotLagAndCoverage string                 `protobuf:"bytes,3,opt,name=calendar_snapshot_lag_and_coverage,json=calendarSnapshotLagAndCoverage,proto3" json:"calendar_snapshot_lag_and_coverage,omitempty"`
+	ProposedFocusAndBufferWindows  string                 `protobuf:"bytes,4,opt,name=proposed_focus_and_buffer_windows,json=proposedFocusAndBufferWindows,proto3" json:"proposed_focus_and_buffer_windows,omitempty"`
+	WhatChangedReplanDiff          string                 `protobuf:"bytes,5,opt,name=what_changed_replan_diff,json=whatChangedReplanDiff,proto3" json:"what_changed_replan_diff,omitempty"`
+	ReadinessFallbackMode          string                 `protobuf:"bytes,6,opt,name=readiness_fallback_mode,json=readinessFallbackMode,proto3" json:"readiness_fallback_mode,omitempty"`
+	PlanState                      string                 `protobuf:"bytes,7,opt,name=plan_state,json=planState,proto3" json:"plan_state,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) Reset() {
+	*x = SaveZenithAdaptiveDayArchitectPlanRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithAdaptiveDayArchitectPlanRequest) ProtoMessage() {}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithAdaptiveDayArchitectPlanRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithAdaptiveDayArchitectPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetPlanCode() string {
+	if x != nil {
+		return x.PlanCode
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetPlanDateLabel() string {
+	if x != nil {
+		return x.PlanDateLabel
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetCalendarSnapshotLagAndCoverage() string {
+	if x != nil {
+		return x.CalendarSnapshotLagAndCoverage
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetProposedFocusAndBufferWindows() string {
+	if x != nil {
+		return x.ProposedFocusAndBufferWindows
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetWhatChangedReplanDiff() string {
+	if x != nil {
+		return x.WhatChangedReplanDiff
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetReadinessFallbackMode() string {
+	if x != nil {
+		return x.ReadinessFallbackMode
+	}
+	return ""
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanRequest) GetPlanState() string {
+	if x != nil {
+		return x.PlanState
+	}
+	return ""
+}
+
+type SaveZenithAdaptiveDayArchitectPlanResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Plan          *ZenithAdaptiveDayArchitectPlanItem `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanResponse) Reset() {
+	*x = SaveZenithAdaptiveDayArchitectPlanResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithAdaptiveDayArchitectPlanResponse) ProtoMessage() {}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithAdaptiveDayArchitectPlanResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithAdaptiveDayArchitectPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{133}
+}
+
+func (x *SaveZenithAdaptiveDayArchitectPlanResponse) GetPlan() *ZenithAdaptiveDayArchitectPlanItem {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
+type AcceptOrReplanZenithDayArchitectRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	PlanCode              string                 `protobuf:"bytes,1,opt,name=plan_code,json=planCode,proto3" json:"plan_code,omitempty"`
+	TargetState           string                 `protobuf:"bytes,2,opt,name=target_state,json=targetState,proto3" json:"target_state,omitempty"`
+	WhatChangedReplanDiff string                 `protobuf:"bytes,3,opt,name=what_changed_replan_diff,json=whatChangedReplanDiff,proto3" json:"what_changed_replan_diff,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) Reset() {
+	*x = AcceptOrReplanZenithDayArchitectRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcceptOrReplanZenithDayArchitectRequest) ProtoMessage() {}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcceptOrReplanZenithDayArchitectRequest.ProtoReflect.Descriptor instead.
+func (*AcceptOrReplanZenithDayArchitectRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) GetPlanCode() string {
+	if x != nil {
+		return x.PlanCode
+	}
+	return ""
+}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) GetTargetState() string {
+	if x != nil {
+		return x.TargetState
+	}
+	return ""
+}
+
+func (x *AcceptOrReplanZenithDayArchitectRequest) GetWhatChangedReplanDiff() string {
+	if x != nil {
+		return x.WhatChangedReplanDiff
+	}
+	return ""
+}
+
+type AcceptOrReplanZenithDayArchitectResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Plan          *ZenithAdaptiveDayArchitectPlanItem `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AcceptOrReplanZenithDayArchitectResponse) Reset() {
+	*x = AcceptOrReplanZenithDayArchitectResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AcceptOrReplanZenithDayArchitectResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AcceptOrReplanZenithDayArchitectResponse) ProtoMessage() {}
+
+func (x *AcceptOrReplanZenithDayArchitectResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AcceptOrReplanZenithDayArchitectResponse.ProtoReflect.Descriptor instead.
+func (*AcceptOrReplanZenithDayArchitectResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *AcceptOrReplanZenithDayArchitectResponse) GetPlan() *ZenithAdaptiveDayArchitectPlanItem {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
+// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+type ZenithIntentionOutcomeContractItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	IntentionCode               string                 `protobuf:"bytes,3,opt,name=intention_code,json=intentionCode,proto3" json:"intention_code,omitempty"`
+	ProjectAndDeliverable       string                 `protobuf:"bytes,4,opt,name=project_and_deliverable,json=projectAndDeliverable,proto3" json:"project_and_deliverable,omitempty"`
+	DoneForNowCriteria          string                 `protobuf:"bytes,5,opt,name=done_for_now_criteria,json=doneForNowCriteria,proto3" json:"done_for_now_criteria,omitempty"`
+	CapturedOutputAndObstacle   string                 `protobuf:"bytes,6,opt,name=captured_output_and_obstacle,json=capturedOutputAndObstacle,proto3" json:"captured_output_and_obstacle,omitempty"`
+	NextActionStep              string                 `protobuf:"bytes,7,opt,name=next_action_step,json=nextActionStep,proto3" json:"next_action_step,omitempty"`
+	LoopState                   string                 `protobuf:"bytes,8,opt,name=loop_state,json=loopState,proto3" json:"loop_state,omitempty"`
+	SurveillanceScoringDisabled bool                   `protobuf:"varint,9,opt,name=surveillance_scoring_disabled,json=surveillanceScoringDisabled,proto3" json:"surveillance_scoring_disabled,omitempty"`
+	UpdatedAtIso                string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *ZenithIntentionOutcomeContractItem) Reset() {
+	*x = ZenithIntentionOutcomeContractItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithIntentionOutcomeContractItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithIntentionOutcomeContractItem) ProtoMessage() {}
+
+func (x *ZenithIntentionOutcomeContractItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithIntentionOutcomeContractItem.ProtoReflect.Descriptor instead.
+func (*ZenithIntentionOutcomeContractItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetIntentionCode() string {
+	if x != nil {
+		return x.IntentionCode
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetProjectAndDeliverable() string {
+	if x != nil {
+		return x.ProjectAndDeliverable
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetDoneForNowCriteria() string {
+	if x != nil {
+		return x.DoneForNowCriteria
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetCapturedOutputAndObstacle() string {
+	if x != nil {
+		return x.CapturedOutputAndObstacle
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetNextActionStep() string {
+	if x != nil {
+		return x.NextActionStep
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetLoopState() string {
+	if x != nil {
+		return x.LoopState
+	}
+	return ""
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetSurveillanceScoringDisabled() bool {
+	if x != nil {
+		return x.SurveillanceScoringDisabled
+	}
+	return false
+}
+
+func (x *ZenithIntentionOutcomeContractItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithIntentionOutcomeWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchRequest) Reset() {
+	*x = GetZenithIntentionOutcomeWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithIntentionOutcomeWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithIntentionOutcomeWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithIntentionOutcomeWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithIntentionOutcomeWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{137}
+}
+
+type GetZenithIntentionOutcomeWorkbenchResponse struct {
+	state                               protoimpl.MessageState                `protogen:"open.v1"`
+	Contracts                           []*ZenithIntentionOutcomeContractItem `protobuf:"bytes,1,rep,name=contracts,proto3" json:"contracts,omitempty"`
+	SurveillanceScoringDisabledEnforced bool                                  `protobuf:"varint,2,opt,name=surveillance_scoring_disabled_enforced,json=surveillanceScoringDisabledEnforced,proto3" json:"surveillance_scoring_disabled_enforced,omitempty"`
+	QuietSessionShellSummary            string                                `protobuf:"bytes,3,opt,name=quiet_session_shell_summary,json=quietSessionShellSummary,proto3" json:"quiet_session_shell_summary,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) Reset() {
+	*x = GetZenithIntentionOutcomeWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithIntentionOutcomeWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithIntentionOutcomeWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithIntentionOutcomeWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) GetContracts() []*ZenithIntentionOutcomeContractItem {
+	if x != nil {
+		return x.Contracts
+	}
+	return nil
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) GetSurveillanceScoringDisabledEnforced() bool {
+	if x != nil {
+		return x.SurveillanceScoringDisabledEnforced
+	}
+	return false
+}
+
+func (x *GetZenithIntentionOutcomeWorkbenchResponse) GetQuietSessionShellSummary() string {
+	if x != nil {
+		return x.QuietSessionShellSummary
+	}
+	return ""
+}
+
+type SaveZenithIntentionOutcomeContractRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	IntentionCode             string                 `protobuf:"bytes,1,opt,name=intention_code,json=intentionCode,proto3" json:"intention_code,omitempty"`
+	ProjectAndDeliverable     string                 `protobuf:"bytes,2,opt,name=project_and_deliverable,json=projectAndDeliverable,proto3" json:"project_and_deliverable,omitempty"`
+	DoneForNowCriteria        string                 `protobuf:"bytes,3,opt,name=done_for_now_criteria,json=doneForNowCriteria,proto3" json:"done_for_now_criteria,omitempty"`
+	CapturedOutputAndObstacle string                 `protobuf:"bytes,4,opt,name=captured_output_and_obstacle,json=capturedOutputAndObstacle,proto3" json:"captured_output_and_obstacle,omitempty"`
+	NextActionStep            string                 `protobuf:"bytes,5,opt,name=next_action_step,json=nextActionStep,proto3" json:"next_action_step,omitempty"`
+	LoopState                 string                 `protobuf:"bytes,6,opt,name=loop_state,json=loopState,proto3" json:"loop_state,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) Reset() {
+	*x = SaveZenithIntentionOutcomeContractRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithIntentionOutcomeContractRequest) ProtoMessage() {}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithIntentionOutcomeContractRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithIntentionOutcomeContractRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetIntentionCode() string {
+	if x != nil {
+		return x.IntentionCode
+	}
+	return ""
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetProjectAndDeliverable() string {
+	if x != nil {
+		return x.ProjectAndDeliverable
+	}
+	return ""
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetDoneForNowCriteria() string {
+	if x != nil {
+		return x.DoneForNowCriteria
+	}
+	return ""
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetCapturedOutputAndObstacle() string {
+	if x != nil {
+		return x.CapturedOutputAndObstacle
+	}
+	return ""
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetNextActionStep() string {
+	if x != nil {
+		return x.NextActionStep
+	}
+	return ""
+}
+
+func (x *SaveZenithIntentionOutcomeContractRequest) GetLoopState() string {
+	if x != nil {
+		return x.LoopState
+	}
+	return ""
+}
+
+type SaveZenithIntentionOutcomeContractResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Contract      *ZenithIntentionOutcomeContractItem `protobuf:"bytes,1,opt,name=contract,proto3" json:"contract,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithIntentionOutcomeContractResponse) Reset() {
+	*x = SaveZenithIntentionOutcomeContractResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithIntentionOutcomeContractResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithIntentionOutcomeContractResponse) ProtoMessage() {}
+
+func (x *SaveZenithIntentionOutcomeContractResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithIntentionOutcomeContractResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithIntentionOutcomeContractResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{140}
+}
+
+func (x *SaveZenithIntentionOutcomeContractResponse) GetContract() *ZenithIntentionOutcomeContractItem {
+	if x != nil {
+		return x.Contract
+	}
+	return nil
+}
+
+type CompleteZenithIntentionOutcomeLoopRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	IntentionCode             string                 `protobuf:"bytes,1,opt,name=intention_code,json=intentionCode,proto3" json:"intention_code,omitempty"`
+	CapturedOutputAndObstacle string                 `protobuf:"bytes,2,opt,name=captured_output_and_obstacle,json=capturedOutputAndObstacle,proto3" json:"captured_output_and_obstacle,omitempty"`
+	NextActionStep            string                 `protobuf:"bytes,3,opt,name=next_action_step,json=nextActionStep,proto3" json:"next_action_step,omitempty"`
+	LoopState                 string                 `protobuf:"bytes,4,opt,name=loop_state,json=loopState,proto3" json:"loop_state,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) Reset() {
+	*x = CompleteZenithIntentionOutcomeLoopRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteZenithIntentionOutcomeLoopRequest) ProtoMessage() {}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteZenithIntentionOutcomeLoopRequest.ProtoReflect.Descriptor instead.
+func (*CompleteZenithIntentionOutcomeLoopRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) GetIntentionCode() string {
+	if x != nil {
+		return x.IntentionCode
+	}
+	return ""
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) GetCapturedOutputAndObstacle() string {
+	if x != nil {
+		return x.CapturedOutputAndObstacle
+	}
+	return ""
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) GetNextActionStep() string {
+	if x != nil {
+		return x.NextActionStep
+	}
+	return ""
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopRequest) GetLoopState() string {
+	if x != nil {
+		return x.LoopState
+	}
+	return ""
+}
+
+type CompleteZenithIntentionOutcomeLoopResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Contract      *ZenithIntentionOutcomeContractItem `protobuf:"bytes,1,opt,name=contract,proto3" json:"contract,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopResponse) Reset() {
+	*x = CompleteZenithIntentionOutcomeLoopResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteZenithIntentionOutcomeLoopResponse) ProtoMessage() {}
+
+func (x *CompleteZenithIntentionOutcomeLoopResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteZenithIntentionOutcomeLoopResponse.ProtoReflect.Descriptor instead.
+func (*CompleteZenithIntentionOutcomeLoopResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *CompleteZenithIntentionOutcomeLoopResponse) GetContract() *ZenithIntentionOutcomeContractItem {
+	if x != nil {
+		return x.Contract
+	}
+	return nil
+}
+
+// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+type ZenithAttentionNOf1ExperimentItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExperimentCode                  string                 `protobuf:"bytes,3,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	HypothesisAndProtocol           string                 `protobuf:"bytes,4,opt,name=hypothesis_and_protocol,json=hypothesisAndProtocol,proto3" json:"hypothesis_and_protocol,omitempty"`
+	PredeclaredMeasureAndMinSamples string                 `protobuf:"bytes,5,opt,name=predeclared_measure_and_min_samples,json=predeclaredMeasureAndMinSamples,proto3" json:"predeclared_measure_and_min_samples,omitempty"`
+	InterruptionRecoverySummary     string                 `protobuf:"bytes,6,opt,name=interruption_recovery_summary,json=interruptionRecoverySummary,proto3" json:"interruption_recovery_summary,omitempty"`
+	CorrelationVsCausationNote      string                 `protobuf:"bytes,7,opt,name=correlation_vs_causation_note,json=correlationVsCausationNote,proto3" json:"correlation_vs_causation_note,omitempty"`
+	ExperimentState                 string                 `protobuf:"bytes,8,opt,name=experiment_state,json=experimentState,proto3" json:"experiment_state,omitempty"`
+	ContentKeystrokeCaptureBlocked  bool                   `protobuf:"varint,9,opt,name=content_keystroke_capture_blocked,json=contentKeystrokeCaptureBlocked,proto3" json:"content_keystroke_capture_blocked,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) Reset() {
+	*x = ZenithAttentionNOf1ExperimentItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithAttentionNOf1ExperimentItem) ProtoMessage() {}
+
+func (x *ZenithAttentionNOf1ExperimentItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithAttentionNOf1ExperimentItem.ProtoReflect.Descriptor instead.
+func (*ZenithAttentionNOf1ExperimentItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetHypothesisAndProtocol() string {
+	if x != nil {
+		return x.HypothesisAndProtocol
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetPredeclaredMeasureAndMinSamples() string {
+	if x != nil {
+		return x.PredeclaredMeasureAndMinSamples
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetInterruptionRecoverySummary() string {
+	if x != nil {
+		return x.InterruptionRecoverySummary
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetCorrelationVsCausationNote() string {
+	if x != nil {
+		return x.CorrelationVsCausationNote
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetExperimentState() string {
+	if x != nil {
+		return x.ExperimentState
+	}
+	return ""
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetContentKeystrokeCaptureBlocked() bool {
+	if x != nil {
+		return x.ContentKeystrokeCaptureBlocked
+	}
+	return false
+}
+
+func (x *ZenithAttentionNOf1ExperimentItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithAttentionNOf1LabWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchRequest) Reset() {
+	*x = GetZenithAttentionNOf1LabWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithAttentionNOf1LabWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithAttentionNOf1LabWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithAttentionNOf1LabWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{144}
+}
+
+type GetZenithAttentionNOf1LabWorkbenchResponse struct {
+	state                                  protoimpl.MessageState               `protogen:"open.v1"`
+	Experiments                            []*ZenithAttentionNOf1ExperimentItem `protobuf:"bytes,1,rep,name=experiments,proto3" json:"experiments,omitempty"`
+	ContentKeystrokeCaptureBlockedEnforced bool                                 `protobuf:"varint,2,opt,name=content_keystroke_capture_blocked_enforced,json=contentKeystrokeCaptureBlockedEnforced,proto3" json:"content_keystroke_capture_blocked_enforced,omitempty"`
+	CorrelationBoundarySummary             string                               `protobuf:"bytes,3,opt,name=correlation_boundary_summary,json=correlationBoundarySummary,proto3" json:"correlation_boundary_summary,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) Reset() {
+	*x = GetZenithAttentionNOf1LabWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithAttentionNOf1LabWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithAttentionNOf1LabWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithAttentionNOf1LabWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) GetExperiments() []*ZenithAttentionNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiments
+	}
+	return nil
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) GetContentKeystrokeCaptureBlockedEnforced() bool {
+	if x != nil {
+		return x.ContentKeystrokeCaptureBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithAttentionNOf1LabWorkbenchResponse) GetCorrelationBoundarySummary() string {
+	if x != nil {
+		return x.CorrelationBoundarySummary
+	}
+	return ""
+}
+
+type SaveZenithAttentionNOf1ExperimentRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentCode                  string                 `protobuf:"bytes,1,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	HypothesisAndProtocol           string                 `protobuf:"bytes,2,opt,name=hypothesis_and_protocol,json=hypothesisAndProtocol,proto3" json:"hypothesis_and_protocol,omitempty"`
+	PredeclaredMeasureAndMinSamples string                 `protobuf:"bytes,3,opt,name=predeclared_measure_and_min_samples,json=predeclaredMeasureAndMinSamples,proto3" json:"predeclared_measure_and_min_samples,omitempty"`
+	InterruptionRecoverySummary     string                 `protobuf:"bytes,4,opt,name=interruption_recovery_summary,json=interruptionRecoverySummary,proto3" json:"interruption_recovery_summary,omitempty"`
+	CorrelationVsCausationNote      string                 `protobuf:"bytes,5,opt,name=correlation_vs_causation_note,json=correlationVsCausationNote,proto3" json:"correlation_vs_causation_note,omitempty"`
+	ExperimentState                 string                 `protobuf:"bytes,6,opt,name=experiment_state,json=experimentState,proto3" json:"experiment_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) Reset() {
+	*x = SaveZenithAttentionNOf1ExperimentRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithAttentionNOf1ExperimentRequest) ProtoMessage() {}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithAttentionNOf1ExperimentRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithAttentionNOf1ExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetHypothesisAndProtocol() string {
+	if x != nil {
+		return x.HypothesisAndProtocol
+	}
+	return ""
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetPredeclaredMeasureAndMinSamples() string {
+	if x != nil {
+		return x.PredeclaredMeasureAndMinSamples
+	}
+	return ""
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetInterruptionRecoverySummary() string {
+	if x != nil {
+		return x.InterruptionRecoverySummary
+	}
+	return ""
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetCorrelationVsCausationNote() string {
+	if x != nil {
+		return x.CorrelationVsCausationNote
+	}
+	return ""
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentRequest) GetExperimentState() string {
+	if x != nil {
+		return x.ExperimentState
+	}
+	return ""
+}
+
+type SaveZenithAttentionNOf1ExperimentResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Experiment    *ZenithAttentionNOf1ExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentResponse) Reset() {
+	*x = SaveZenithAttentionNOf1ExperimentResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithAttentionNOf1ExperimentResponse) ProtoMessage() {}
+
+func (x *SaveZenithAttentionNOf1ExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithAttentionNOf1ExperimentResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithAttentionNOf1ExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{147}
+}
+
+func (x *SaveZenithAttentionNOf1ExperimentResponse) GetExperiment() *ZenithAttentionNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+type EvaluateZenithAttentionNOf1ExperimentRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentCode             string                 `protobuf:"bytes,1,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	ExperimentState            string                 `protobuf:"bytes,2,opt,name=experiment_state,json=experimentState,proto3" json:"experiment_state,omitempty"`
+	CorrelationVsCausationNote string                 `protobuf:"bytes,3,opt,name=correlation_vs_causation_note,json=correlationVsCausationNote,proto3" json:"correlation_vs_causation_note,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) Reset() {
+	*x = EvaluateZenithAttentionNOf1ExperimentRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateZenithAttentionNOf1ExperimentRequest) ProtoMessage() {}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateZenithAttentionNOf1ExperimentRequest.ProtoReflect.Descriptor instead.
+func (*EvaluateZenithAttentionNOf1ExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) GetExperimentState() string {
+	if x != nil {
+		return x.ExperimentState
+	}
+	return ""
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentRequest) GetCorrelationVsCausationNote() string {
+	if x != nil {
+		return x.CorrelationVsCausationNote
+	}
+	return ""
+}
+
+type EvaluateZenithAttentionNOf1ExperimentResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Experiment    *ZenithAttentionNOf1ExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentResponse) Reset() {
+	*x = EvaluateZenithAttentionNOf1ExperimentResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateZenithAttentionNOf1ExperimentResponse) ProtoMessage() {}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateZenithAttentionNOf1ExperimentResponse.ProtoReflect.Descriptor instead.
+func (*EvaluateZenithAttentionNOf1ExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *EvaluateZenithAttentionNOf1ExperimentResponse) GetExperiment() *ZenithAttentionNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+type ZenithRecoveryProtocolRunItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProtocolCode                  string                 `protobuf:"bytes,3,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	TitleAndModality              string                 `protobuf:"bytes,4,opt,name=title_and_modality,json=titleAndModality,proto3" json:"title_and_modality,omitempty"`
+	ContraindicationAndSafetyNote string                 `protobuf:"bytes,5,opt,name=contraindication_and_safety_note,json=contraindicationAndSafetyNote,proto3" json:"contraindication_and_safety_note,omitempty"`
+	SensorOrNosensorPath          string                 `protobuf:"bytes,6,opt,name=sensor_or_nosensor_path,json=sensorOrNosensorPath,proto3" json:"sensor_or_nosensor_path,omitempty"`
+	SubjectiveBeforeAfterDelta    string                 `protobuf:"bytes,7,opt,name=subjective_before_after_delta,json=subjectiveBeforeAfterDelta,proto3" json:"subjective_before_after_delta,omitempty"`
+	ProtocolState                 string                 `protobuf:"bytes,8,opt,name=protocol_state,json=protocolState,proto3" json:"protocol_state,omitempty"`
+	NonMedicalWellnessEnforced    bool                   `protobuf:"varint,9,opt,name=non_medical_wellness_enforced,json=nonMedicalWellnessEnforced,proto3" json:"non_medical_wellness_enforced,omitempty"`
+	UpdatedAtIso                  string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *ZenithRecoveryProtocolRunItem) Reset() {
+	*x = ZenithRecoveryProtocolRunItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithRecoveryProtocolRunItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithRecoveryProtocolRunItem) ProtoMessage() {}
+
+func (x *ZenithRecoveryProtocolRunItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithRecoveryProtocolRunItem.ProtoReflect.Descriptor instead.
+func (*ZenithRecoveryProtocolRunItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetTitleAndModality() string {
+	if x != nil {
+		return x.TitleAndModality
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetContraindicationAndSafetyNote() string {
+	if x != nil {
+		return x.ContraindicationAndSafetyNote
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetSensorOrNosensorPath() string {
+	if x != nil {
+		return x.SensorOrNosensorPath
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetSubjectiveBeforeAfterDelta() string {
+	if x != nil {
+		return x.SubjectiveBeforeAfterDelta
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetProtocolState() string {
+	if x != nil {
+		return x.ProtocolState
+	}
+	return ""
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetNonMedicalWellnessEnforced() bool {
+	if x != nil {
+		return x.NonMedicalWellnessEnforced
+	}
+	return false
+}
+
+func (x *ZenithRecoveryProtocolRunItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithRecoveryProtocolStudioWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchRequest) Reset() {
+	*x = GetZenithRecoveryProtocolStudioWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithRecoveryProtocolStudioWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithRecoveryProtocolStudioWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithRecoveryProtocolStudioWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{151}
+}
+
+type GetZenithRecoveryProtocolStudioWorkbenchResponse struct {
+	state                      protoimpl.MessageState           `protogen:"open.v1"`
+	Runs                       []*ZenithRecoveryProtocolRunItem `protobuf:"bytes,1,rep,name=runs,proto3" json:"runs,omitempty"`
+	NonMedicalWellnessEnforced bool                             `protobuf:"varint,2,opt,name=non_medical_wellness_enforced,json=nonMedicalWellnessEnforced,proto3" json:"non_medical_wellness_enforced,omitempty"`
+	NoSensorOfflineGuarantee   string                           `protobuf:"bytes,3,opt,name=no_sensor_offline_guarantee,json=noSensorOfflineGuarantee,proto3" json:"no_sensor_offline_guarantee,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) Reset() {
+	*x = GetZenithRecoveryProtocolStudioWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithRecoveryProtocolStudioWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithRecoveryProtocolStudioWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithRecoveryProtocolStudioWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) GetRuns() []*ZenithRecoveryProtocolRunItem {
+	if x != nil {
+		return x.Runs
+	}
+	return nil
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) GetNonMedicalWellnessEnforced() bool {
+	if x != nil {
+		return x.NonMedicalWellnessEnforced
+	}
+	return false
+}
+
+func (x *GetZenithRecoveryProtocolStudioWorkbenchResponse) GetNoSensorOfflineGuarantee() string {
+	if x != nil {
+		return x.NoSensorOfflineGuarantee
+	}
+	return ""
+}
+
+type SaveZenithRecoveryProtocolRunRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	ProtocolCode                  string                 `protobuf:"bytes,1,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	TitleAndModality              string                 `protobuf:"bytes,2,opt,name=title_and_modality,json=titleAndModality,proto3" json:"title_and_modality,omitempty"`
+	ContraindicationAndSafetyNote string                 `protobuf:"bytes,3,opt,name=contraindication_and_safety_note,json=contraindicationAndSafetyNote,proto3" json:"contraindication_and_safety_note,omitempty"`
+	SensorOrNosensorPath          string                 `protobuf:"bytes,4,opt,name=sensor_or_nosensor_path,json=sensorOrNosensorPath,proto3" json:"sensor_or_nosensor_path,omitempty"`
+	SubjectiveBeforeAfterDelta    string                 `protobuf:"bytes,5,opt,name=subjective_before_after_delta,json=subjectiveBeforeAfterDelta,proto3" json:"subjective_before_after_delta,omitempty"`
+	ProtocolState                 string                 `protobuf:"bytes,6,opt,name=protocol_state,json=protocolState,proto3" json:"protocol_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) Reset() {
+	*x = SaveZenithRecoveryProtocolRunRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithRecoveryProtocolRunRequest) ProtoMessage() {}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithRecoveryProtocolRunRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithRecoveryProtocolRunRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{153}
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetTitleAndModality() string {
+	if x != nil {
+		return x.TitleAndModality
+	}
+	return ""
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetContraindicationAndSafetyNote() string {
+	if x != nil {
+		return x.ContraindicationAndSafetyNote
+	}
+	return ""
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetSensorOrNosensorPath() string {
+	if x != nil {
+		return x.SensorOrNosensorPath
+	}
+	return ""
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetSubjectiveBeforeAfterDelta() string {
+	if x != nil {
+		return x.SubjectiveBeforeAfterDelta
+	}
+	return ""
+}
+
+func (x *SaveZenithRecoveryProtocolRunRequest) GetProtocolState() string {
+	if x != nil {
+		return x.ProtocolState
+	}
+	return ""
+}
+
+type SaveZenithRecoveryProtocolRunResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Run           *ZenithRecoveryProtocolRunItem `protobuf:"bytes,1,opt,name=run,proto3" json:"run,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithRecoveryProtocolRunResponse) Reset() {
+	*x = SaveZenithRecoveryProtocolRunResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithRecoveryProtocolRunResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithRecoveryProtocolRunResponse) ProtoMessage() {}
+
+func (x *SaveZenithRecoveryProtocolRunResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithRecoveryProtocolRunResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithRecoveryProtocolRunResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{154}
+}
+
+func (x *SaveZenithRecoveryProtocolRunResponse) GetRun() *ZenithRecoveryProtocolRunItem {
+	if x != nil {
+		return x.Run
+	}
+	return nil
+}
+
+type RecordZenithRecoveryCheckOrAdverseFlagRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	ProtocolCode               string                 `protobuf:"bytes,1,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	SubjectiveBeforeAfterDelta string                 `protobuf:"bytes,2,opt,name=subjective_before_after_delta,json=subjectiveBeforeAfterDelta,proto3" json:"subjective_before_after_delta,omitempty"`
+	ProtocolState              string                 `protobuf:"bytes,3,opt,name=protocol_state,json=protocolState,proto3" json:"protocol_state,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) Reset() {
+	*x = RecordZenithRecoveryCheckOrAdverseFlagRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordZenithRecoveryCheckOrAdverseFlagRequest) ProtoMessage() {}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordZenithRecoveryCheckOrAdverseFlagRequest.ProtoReflect.Descriptor instead.
+func (*RecordZenithRecoveryCheckOrAdverseFlagRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) GetSubjectiveBeforeAfterDelta() string {
+	if x != nil {
+		return x.SubjectiveBeforeAfterDelta
+	}
+	return ""
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagRequest) GetProtocolState() string {
+	if x != nil {
+		return x.ProtocolState
+	}
+	return ""
+}
+
+type RecordZenithRecoveryCheckOrAdverseFlagResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Run           *ZenithRecoveryProtocolRunItem `protobuf:"bytes,1,opt,name=run,proto3" json:"run,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagResponse) Reset() {
+	*x = RecordZenithRecoveryCheckOrAdverseFlagResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordZenithRecoveryCheckOrAdverseFlagResponse) ProtoMessage() {}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordZenithRecoveryCheckOrAdverseFlagResponse.ProtoReflect.Descriptor instead.
+func (*RecordZenithRecoveryCheckOrAdverseFlagResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *RecordZenithRecoveryCheckOrAdverseFlagResponse) GetRun() *ZenithRecoveryProtocolRunItem {
+	if x != nil {
+		return x.Run
+	}
+	return nil
+}
+
+// Choice 6 (Z10): Communication Boundaries
+type ZenithCommunicationBoundaryRuleItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	BoundaryCode                 string                 `protobuf:"bytes,3,opt,name=boundary_code,json=boundaryCode,proto3" json:"boundary_code,omitempty"`
+	TemplateAndWindow            string                 `protobuf:"bytes,4,opt,name=template_and_window,json=templateAndWindow,proto3" json:"template_and_window,omitempty"`
+	VipAndEmergencyExceptions    string                 `protobuf:"bytes,5,opt,name=vip_and_emergency_exceptions,json=vipAndEmergencyExceptions,proto3" json:"vip_and_emergency_exceptions,omitempty"`
+	PreviewedExternalStatusCopy  string                 `protobuf:"bytes,6,opt,name=previewed_external_status_copy,json=previewedExternalStatusCopy,proto3" json:"previewed_external_status_copy,omitempty"`
+	PostFocusCatchupSummary      string                 `protobuf:"bytes,7,opt,name=post_focus_catchup_summary,json=postFocusCatchupSummary,proto3" json:"post_focus_catchup_summary,omitempty"`
+	BoundaryState                string                 `protobuf:"bytes,8,opt,name=boundary_state,json=boundaryState,proto3" json:"boundary_state,omitempty"`
+	MessageBodyCollectionBlocked bool                   `protobuf:"varint,9,opt,name=message_body_collection_blocked,json=messageBodyCollectionBlocked,proto3" json:"message_body_collection_blocked,omitempty"`
+	UpdatedAtIso                 string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) Reset() {
+	*x = ZenithCommunicationBoundaryRuleItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithCommunicationBoundaryRuleItem) ProtoMessage() {}
+
+func (x *ZenithCommunicationBoundaryRuleItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithCommunicationBoundaryRuleItem.ProtoReflect.Descriptor instead.
+func (*ZenithCommunicationBoundaryRuleItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetBoundaryCode() string {
+	if x != nil {
+		return x.BoundaryCode
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetTemplateAndWindow() string {
+	if x != nil {
+		return x.TemplateAndWindow
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetVipAndEmergencyExceptions() string {
+	if x != nil {
+		return x.VipAndEmergencyExceptions
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetPreviewedExternalStatusCopy() string {
+	if x != nil {
+		return x.PreviewedExternalStatusCopy
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetPostFocusCatchupSummary() string {
+	if x != nil {
+		return x.PostFocusCatchupSummary
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetBoundaryState() string {
+	if x != nil {
+		return x.BoundaryState
+	}
+	return ""
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetMessageBodyCollectionBlocked() bool {
+	if x != nil {
+		return x.MessageBodyCollectionBlocked
+	}
+	return false
+}
+
+func (x *ZenithCommunicationBoundaryRuleItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithCommunicationBoundaryWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchRequest) Reset() {
+	*x = GetZenithCommunicationBoundaryWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCommunicationBoundaryWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCommunicationBoundaryWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithCommunicationBoundaryWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{158}
+}
+
+type GetZenithCommunicationBoundaryWorkbenchResponse struct {
+	state                                protoimpl.MessageState                 `protogen:"open.v1"`
+	Rules                                []*ZenithCommunicationBoundaryRuleItem `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
+	MessageBodyCollectionBlockedEnforced bool                                   `protobuf:"varint,2,opt,name=message_body_collection_blocked_enforced,json=messageBodyCollectionBlockedEnforced,proto3" json:"message_body_collection_blocked_enforced,omitempty"`
+	PreviewBeforeStatusWriteSummary      string                                 `protobuf:"bytes,3,opt,name=preview_before_status_write_summary,json=previewBeforeStatusWriteSummary,proto3" json:"preview_before_status_write_summary,omitempty"`
+	unknownFields                        protoimpl.UnknownFields
+	sizeCache                            protoimpl.SizeCache
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) Reset() {
+	*x = GetZenithCommunicationBoundaryWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCommunicationBoundaryWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCommunicationBoundaryWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithCommunicationBoundaryWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) GetRules() []*ZenithCommunicationBoundaryRuleItem {
+	if x != nil {
+		return x.Rules
+	}
+	return nil
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) GetMessageBodyCollectionBlockedEnforced() bool {
+	if x != nil {
+		return x.MessageBodyCollectionBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithCommunicationBoundaryWorkbenchResponse) GetPreviewBeforeStatusWriteSummary() string {
+	if x != nil {
+		return x.PreviewBeforeStatusWriteSummary
+	}
+	return ""
+}
+
+type SaveZenithCommunicationBoundaryRuleRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	BoundaryCode                string                 `protobuf:"bytes,1,opt,name=boundary_code,json=boundaryCode,proto3" json:"boundary_code,omitempty"`
+	TemplateAndWindow           string                 `protobuf:"bytes,2,opt,name=template_and_window,json=templateAndWindow,proto3" json:"template_and_window,omitempty"`
+	VipAndEmergencyExceptions   string                 `protobuf:"bytes,3,opt,name=vip_and_emergency_exceptions,json=vipAndEmergencyExceptions,proto3" json:"vip_and_emergency_exceptions,omitempty"`
+	PreviewedExternalStatusCopy string                 `protobuf:"bytes,4,opt,name=previewed_external_status_copy,json=previewedExternalStatusCopy,proto3" json:"previewed_external_status_copy,omitempty"`
+	PostFocusCatchupSummary     string                 `protobuf:"bytes,5,opt,name=post_focus_catchup_summary,json=postFocusCatchupSummary,proto3" json:"post_focus_catchup_summary,omitempty"`
+	BoundaryState               string                 `protobuf:"bytes,6,opt,name=boundary_state,json=boundaryState,proto3" json:"boundary_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) Reset() {
+	*x = SaveZenithCommunicationBoundaryRuleRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCommunicationBoundaryRuleRequest) ProtoMessage() {}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCommunicationBoundaryRuleRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithCommunicationBoundaryRuleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetBoundaryCode() string {
+	if x != nil {
+		return x.BoundaryCode
+	}
+	return ""
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetTemplateAndWindow() string {
+	if x != nil {
+		return x.TemplateAndWindow
+	}
+	return ""
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetVipAndEmergencyExceptions() string {
+	if x != nil {
+		return x.VipAndEmergencyExceptions
+	}
+	return ""
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetPreviewedExternalStatusCopy() string {
+	if x != nil {
+		return x.PreviewedExternalStatusCopy
+	}
+	return ""
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetPostFocusCatchupSummary() string {
+	if x != nil {
+		return x.PostFocusCatchupSummary
+	}
+	return ""
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleRequest) GetBoundaryState() string {
+	if x != nil {
+		return x.BoundaryState
+	}
+	return ""
+}
+
+type SaveZenithCommunicationBoundaryRuleResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Rule          *ZenithCommunicationBoundaryRuleItem `protobuf:"bytes,1,opt,name=rule,proto3" json:"rule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleResponse) Reset() {
+	*x = SaveZenithCommunicationBoundaryRuleResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCommunicationBoundaryRuleResponse) ProtoMessage() {}
+
+func (x *SaveZenithCommunicationBoundaryRuleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCommunicationBoundaryRuleResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithCommunicationBoundaryRuleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{161}
+}
+
+func (x *SaveZenithCommunicationBoundaryRuleResponse) GetRule() *ZenithCommunicationBoundaryRuleItem {
+	if x != nil {
+		return x.Rule
+	}
+	return nil
+}
+
+type ApproveOrReleaseZenithBoundaryCatchupRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	BoundaryCode            string                 `protobuf:"bytes,1,opt,name=boundary_code,json=boundaryCode,proto3" json:"boundary_code,omitempty"`
+	BoundaryState           string                 `protobuf:"bytes,2,opt,name=boundary_state,json=boundaryState,proto3" json:"boundary_state,omitempty"`
+	PostFocusCatchupSummary string                 `protobuf:"bytes,3,opt,name=post_focus_catchup_summary,json=postFocusCatchupSummary,proto3" json:"post_focus_catchup_summary,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) Reset() {
+	*x = ApproveOrReleaseZenithBoundaryCatchupRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrReleaseZenithBoundaryCatchupRequest) ProtoMessage() {}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrReleaseZenithBoundaryCatchupRequest.ProtoReflect.Descriptor instead.
+func (*ApproveOrReleaseZenithBoundaryCatchupRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) GetBoundaryCode() string {
+	if x != nil {
+		return x.BoundaryCode
+	}
+	return ""
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) GetBoundaryState() string {
+	if x != nil {
+		return x.BoundaryState
+	}
+	return ""
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupRequest) GetPostFocusCatchupSummary() string {
+	if x != nil {
+		return x.PostFocusCatchupSummary
+	}
+	return ""
+}
+
+type ApproveOrReleaseZenithBoundaryCatchupResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Rule          *ZenithCommunicationBoundaryRuleItem `protobuf:"bytes,1,opt,name=rule,proto3" json:"rule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupResponse) Reset() {
+	*x = ApproveOrReleaseZenithBoundaryCatchupResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrReleaseZenithBoundaryCatchupResponse) ProtoMessage() {}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrReleaseZenithBoundaryCatchupResponse.ProtoReflect.Descriptor instead.
+func (*ApproveOrReleaseZenithBoundaryCatchupResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *ApproveOrReleaseZenithBoundaryCatchupResponse) GetRule() *ZenithCommunicationBoundaryRuleItem {
+	if x != nil {
+		return x.Rule
+	}
+	return nil
+}
+
+// Choice 7 (Z5): Cognitive Readiness Battery
+type ZenithCognitiveReadinessSessionItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	BatteryCode                        string                 `protobuf:"bytes,3,opt,name=battery_code,json=batteryCode,proto3" json:"battery_code,omitempty"`
+	AlternateFormAndTasks              string                 `protobuf:"bytes,4,opt,name=alternate_form_and_tasks,json=alternateFormAndTasks,proto3" json:"alternate_form_and_tasks,omitempty"`
+	PracticeEffectAndDeviceCalibration string                 `protobuf:"bytes,5,opt,name=practice_effect_and_device_calibration,json=practiceEffectAndDeviceCalibration,proto3" json:"practice_effect_and_device_calibration,omitempty"`
+	ReadinessBandAndConfidence         string                 `protobuf:"bytes,6,opt,name=readiness_band_and_confidence,json=readinessBandAndConfidence,proto3" json:"readiness_band_and_confidence,omitempty"`
+	ExclusionFlagReason                string                 `protobuf:"bytes,7,opt,name=exclusion_flag_reason,json=exclusionFlagReason,proto3" json:"exclusion_flag_reason,omitempty"`
+	SessionMode                        string                 `protobuf:"bytes,8,opt,name=session_mode,json=sessionMode,proto3" json:"session_mode,omitempty"`
+	NonDiagnosticClaimEnforced         bool                   `protobuf:"varint,9,opt,name=non_diagnostic_claim_enforced,json=nonDiagnosticClaimEnforced,proto3" json:"non_diagnostic_claim_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) Reset() {
+	*x = ZenithCognitiveReadinessSessionItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithCognitiveReadinessSessionItem) ProtoMessage() {}
+
+func (x *ZenithCognitiveReadinessSessionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithCognitiveReadinessSessionItem.ProtoReflect.Descriptor instead.
+func (*ZenithCognitiveReadinessSessionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetBatteryCode() string {
+	if x != nil {
+		return x.BatteryCode
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetAlternateFormAndTasks() string {
+	if x != nil {
+		return x.AlternateFormAndTasks
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetPracticeEffectAndDeviceCalibration() string {
+	if x != nil {
+		return x.PracticeEffectAndDeviceCalibration
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetReadinessBandAndConfidence() string {
+	if x != nil {
+		return x.ReadinessBandAndConfidence
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetExclusionFlagReason() string {
+	if x != nil {
+		return x.ExclusionFlagReason
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetSessionMode() string {
+	if x != nil {
+		return x.SessionMode
+	}
+	return ""
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetNonDiagnosticClaimEnforced() bool {
+	if x != nil {
+		return x.NonDiagnosticClaimEnforced
+	}
+	return false
+}
+
+func (x *ZenithCognitiveReadinessSessionItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithCognitiveReadinessWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchRequest) Reset() {
+	*x = GetZenithCognitiveReadinessWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCognitiveReadinessWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithCognitiveReadinessWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCognitiveReadinessWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithCognitiveReadinessWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{165}
+}
+
+type GetZenithCognitiveReadinessWorkbenchResponse struct {
+	state                                 protoimpl.MessageState                 `protogen:"open.v1"`
+	Sessions                              []*ZenithCognitiveReadinessSessionItem `protobuf:"bytes,1,rep,name=sessions,proto3" json:"sessions,omitempty"`
+	NonDiagnosticClaimEnforced            bool                                   `protobuf:"varint,2,opt,name=non_diagnostic_claim_enforced,json=nonDiagnosticClaimEnforced,proto3" json:"non_diagnostic_claim_enforced,omitempty"`
+	TrainingVsAssessmentSeparationSummary string                                 `protobuf:"bytes,3,opt,name=training_vs_assessment_separation_summary,json=trainingVsAssessmentSeparationSummary,proto3" json:"training_vs_assessment_separation_summary,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) Reset() {
+	*x = GetZenithCognitiveReadinessWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCognitiveReadinessWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCognitiveReadinessWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithCognitiveReadinessWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) GetSessions() []*ZenithCognitiveReadinessSessionItem {
+	if x != nil {
+		return x.Sessions
+	}
+	return nil
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) GetNonDiagnosticClaimEnforced() bool {
+	if x != nil {
+		return x.NonDiagnosticClaimEnforced
+	}
+	return false
+}
+
+func (x *GetZenithCognitiveReadinessWorkbenchResponse) GetTrainingVsAssessmentSeparationSummary() string {
+	if x != nil {
+		return x.TrainingVsAssessmentSeparationSummary
+	}
+	return ""
+}
+
+type SaveZenithCognitiveReadinessSessionRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	BatteryCode                        string                 `protobuf:"bytes,1,opt,name=battery_code,json=batteryCode,proto3" json:"battery_code,omitempty"`
+	AlternateFormAndTasks              string                 `protobuf:"bytes,2,opt,name=alternate_form_and_tasks,json=alternateFormAndTasks,proto3" json:"alternate_form_and_tasks,omitempty"`
+	PracticeEffectAndDeviceCalibration string                 `protobuf:"bytes,3,opt,name=practice_effect_and_device_calibration,json=practiceEffectAndDeviceCalibration,proto3" json:"practice_effect_and_device_calibration,omitempty"`
+	ReadinessBandAndConfidence         string                 `protobuf:"bytes,4,opt,name=readiness_band_and_confidence,json=readinessBandAndConfidence,proto3" json:"readiness_band_and_confidence,omitempty"`
+	ExclusionFlagReason                string                 `protobuf:"bytes,5,opt,name=exclusion_flag_reason,json=exclusionFlagReason,proto3" json:"exclusion_flag_reason,omitempty"`
+	SessionMode                        string                 `protobuf:"bytes,6,opt,name=session_mode,json=sessionMode,proto3" json:"session_mode,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) Reset() {
+	*x = SaveZenithCognitiveReadinessSessionRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCognitiveReadinessSessionRequest) ProtoMessage() {}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCognitiveReadinessSessionRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithCognitiveReadinessSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetBatteryCode() string {
+	if x != nil {
+		return x.BatteryCode
+	}
+	return ""
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetAlternateFormAndTasks() string {
+	if x != nil {
+		return x.AlternateFormAndTasks
+	}
+	return ""
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetPracticeEffectAndDeviceCalibration() string {
+	if x != nil {
+		return x.PracticeEffectAndDeviceCalibration
+	}
+	return ""
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetReadinessBandAndConfidence() string {
+	if x != nil {
+		return x.ReadinessBandAndConfidence
+	}
+	return ""
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetExclusionFlagReason() string {
+	if x != nil {
+		return x.ExclusionFlagReason
+	}
+	return ""
+}
+
+func (x *SaveZenithCognitiveReadinessSessionRequest) GetSessionMode() string {
+	if x != nil {
+		return x.SessionMode
+	}
+	return ""
+}
+
+type SaveZenithCognitiveReadinessSessionResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Session       *ZenithCognitiveReadinessSessionItem `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithCognitiveReadinessSessionResponse) Reset() {
+	*x = SaveZenithCognitiveReadinessSessionResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCognitiveReadinessSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCognitiveReadinessSessionResponse) ProtoMessage() {}
+
+func (x *SaveZenithCognitiveReadinessSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCognitiveReadinessSessionResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithCognitiveReadinessSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{168}
+}
+
+func (x *SaveZenithCognitiveReadinessSessionResponse) GetSession() *ZenithCognitiveReadinessSessionItem {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type FlagOrValidateZenithCognitiveSessionRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	BatteryCode         string                 `protobuf:"bytes,1,opt,name=battery_code,json=batteryCode,proto3" json:"battery_code,omitempty"`
+	ExclusionFlagReason string                 `protobuf:"bytes,2,opt,name=exclusion_flag_reason,json=exclusionFlagReason,proto3" json:"exclusion_flag_reason,omitempty"`
+	SessionMode         string                 `protobuf:"bytes,3,opt,name=session_mode,json=sessionMode,proto3" json:"session_mode,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) Reset() {
+	*x = FlagOrValidateZenithCognitiveSessionRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagOrValidateZenithCognitiveSessionRequest) ProtoMessage() {}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagOrValidateZenithCognitiveSessionRequest.ProtoReflect.Descriptor instead.
+func (*FlagOrValidateZenithCognitiveSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) GetBatteryCode() string {
+	if x != nil {
+		return x.BatteryCode
+	}
+	return ""
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) GetExclusionFlagReason() string {
+	if x != nil {
+		return x.ExclusionFlagReason
+	}
+	return ""
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionRequest) GetSessionMode() string {
+	if x != nil {
+		return x.SessionMode
+	}
+	return ""
+}
+
+type FlagOrValidateZenithCognitiveSessionResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Session       *ZenithCognitiveReadinessSessionItem `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionResponse) Reset() {
+	*x = FlagOrValidateZenithCognitiveSessionResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagOrValidateZenithCognitiveSessionResponse) ProtoMessage() {}
+
+func (x *FlagOrValidateZenithCognitiveSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagOrValidateZenithCognitiveSessionResponse.ProtoReflect.Descriptor instead.
+func (*FlagOrValidateZenithCognitiveSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *FlagOrValidateZenithCognitiveSessionResponse) GetSession() *ZenithCognitiveReadinessSessionItem {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+type ZenithPrivatePatternMemoryItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PatternCode                  string                 `protobuf:"bytes,3,opt,name=pattern_code,json=patternCode,proto3" json:"pattern_code,omitempty"`
+	StorageAndEncryptionMode     string                 `protobuf:"bytes,4,opt,name=storage_and_encryption_mode,json=storageAndEncryptionMode,proto3" json:"storage_and_encryption_mode,omitempty"`
+	EditableDerivedThemeLabel    string                 `protobuf:"bytes,5,opt,name=editable_derived_theme_label,json=editableDerivedThemeLabel,proto3" json:"editable_derived_theme_label,omitempty"`
+	OnDeviceRescuePromptRule     string                 `protobuf:"bytes,6,opt,name=on_device_rescue_prompt_rule,json=onDeviceRescuePromptRule,proto3" json:"on_device_rescue_prompt_rule,omitempty"`
+	CrisisResourceGovernanceNote string                 `protobuf:"bytes,7,opt,name=crisis_resource_governance_note,json=crisisResourceGovernanceNote,proto3" json:"crisis_resource_governance_note,omitempty"`
+	PatternState                 string                 `protobuf:"bytes,8,opt,name=pattern_state,json=patternState,proto3" json:"pattern_state,omitempty"`
+	StaffRawProseAccessBlocked   bool                   `protobuf:"varint,9,opt,name=staff_raw_prose_access_blocked,json=staffRawProseAccessBlocked,proto3" json:"staff_raw_prose_access_blocked,omitempty"`
+	UpdatedAtIso                 string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *ZenithPrivatePatternMemoryItem) Reset() {
+	*x = ZenithPrivatePatternMemoryItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithPrivatePatternMemoryItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithPrivatePatternMemoryItem) ProtoMessage() {}
+
+func (x *ZenithPrivatePatternMemoryItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithPrivatePatternMemoryItem.ProtoReflect.Descriptor instead.
+func (*ZenithPrivatePatternMemoryItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetPatternCode() string {
+	if x != nil {
+		return x.PatternCode
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetStorageAndEncryptionMode() string {
+	if x != nil {
+		return x.StorageAndEncryptionMode
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetEditableDerivedThemeLabel() string {
+	if x != nil {
+		return x.EditableDerivedThemeLabel
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetOnDeviceRescuePromptRule() string {
+	if x != nil {
+		return x.OnDeviceRescuePromptRule
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetCrisisResourceGovernanceNote() string {
+	if x != nil {
+		return x.CrisisResourceGovernanceNote
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetPatternState() string {
+	if x != nil {
+		return x.PatternState
+	}
+	return ""
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetStaffRawProseAccessBlocked() bool {
+	if x != nil {
+		return x.StaffRawProseAccessBlocked
+	}
+	return false
+}
+
+func (x *ZenithPrivatePatternMemoryItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithPrivatePatternMemoryWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchRequest) Reset() {
+	*x = GetZenithPrivatePatternMemoryWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithPrivatePatternMemoryWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithPrivatePatternMemoryWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithPrivatePatternMemoryWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{172}
+}
+
+type GetZenithPrivatePatternMemoryWorkbenchResponse struct {
+	state                              protoimpl.MessageState            `protogen:"open.v1"`
+	Memories                           []*ZenithPrivatePatternMemoryItem `protobuf:"bytes,1,rep,name=memories,proto3" json:"memories,omitempty"`
+	StaffRawProseAccessBlockedEnforced bool                              `protobuf:"varint,2,opt,name=staff_raw_prose_access_blocked_enforced,json=staffRawProseAccessBlockedEnforced,proto3" json:"staff_raw_prose_access_blocked_enforced,omitempty"`
+	E2EeAndEditableDerivationSummary   string                            `protobuf:"bytes,3,opt,name=e2ee_and_editable_derivation_summary,json=e2eeAndEditableDerivationSummary,proto3" json:"e2ee_and_editable_derivation_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) Reset() {
+	*x = GetZenithPrivatePatternMemoryWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithPrivatePatternMemoryWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithPrivatePatternMemoryWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithPrivatePatternMemoryWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) GetMemories() []*ZenithPrivatePatternMemoryItem {
+	if x != nil {
+		return x.Memories
+	}
+	return nil
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) GetStaffRawProseAccessBlockedEnforced() bool {
+	if x != nil {
+		return x.StaffRawProseAccessBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithPrivatePatternMemoryWorkbenchResponse) GetE2EeAndEditableDerivationSummary() string {
+	if x != nil {
+		return x.E2EeAndEditableDerivationSummary
+	}
+	return ""
+}
+
+type SaveZenithPrivatePatternMemoryRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	PatternCode                  string                 `protobuf:"bytes,1,opt,name=pattern_code,json=patternCode,proto3" json:"pattern_code,omitempty"`
+	StorageAndEncryptionMode     string                 `protobuf:"bytes,2,opt,name=storage_and_encryption_mode,json=storageAndEncryptionMode,proto3" json:"storage_and_encryption_mode,omitempty"`
+	EditableDerivedThemeLabel    string                 `protobuf:"bytes,3,opt,name=editable_derived_theme_label,json=editableDerivedThemeLabel,proto3" json:"editable_derived_theme_label,omitempty"`
+	OnDeviceRescuePromptRule     string                 `protobuf:"bytes,4,opt,name=on_device_rescue_prompt_rule,json=onDeviceRescuePromptRule,proto3" json:"on_device_rescue_prompt_rule,omitempty"`
+	CrisisResourceGovernanceNote string                 `protobuf:"bytes,5,opt,name=crisis_resource_governance_note,json=crisisResourceGovernanceNote,proto3" json:"crisis_resource_governance_note,omitempty"`
+	PatternState                 string                 `protobuf:"bytes,6,opt,name=pattern_state,json=patternState,proto3" json:"pattern_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) Reset() {
+	*x = SaveZenithPrivatePatternMemoryRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[174]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithPrivatePatternMemoryRequest) ProtoMessage() {}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[174]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithPrivatePatternMemoryRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithPrivatePatternMemoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{174}
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetPatternCode() string {
+	if x != nil {
+		return x.PatternCode
+	}
+	return ""
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetStorageAndEncryptionMode() string {
+	if x != nil {
+		return x.StorageAndEncryptionMode
+	}
+	return ""
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetEditableDerivedThemeLabel() string {
+	if x != nil {
+		return x.EditableDerivedThemeLabel
+	}
+	return ""
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetOnDeviceRescuePromptRule() string {
+	if x != nil {
+		return x.OnDeviceRescuePromptRule
+	}
+	return ""
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetCrisisResourceGovernanceNote() string {
+	if x != nil {
+		return x.CrisisResourceGovernanceNote
+	}
+	return ""
+}
+
+func (x *SaveZenithPrivatePatternMemoryRequest) GetPatternState() string {
+	if x != nil {
+		return x.PatternState
+	}
+	return ""
+}
+
+type SaveZenithPrivatePatternMemoryResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Memory        *ZenithPrivatePatternMemoryItem `protobuf:"bytes,1,opt,name=memory,proto3" json:"memory,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithPrivatePatternMemoryResponse) Reset() {
+	*x = SaveZenithPrivatePatternMemoryResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[175]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithPrivatePatternMemoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithPrivatePatternMemoryResponse) ProtoMessage() {}
+
+func (x *SaveZenithPrivatePatternMemoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[175]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithPrivatePatternMemoryResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithPrivatePatternMemoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{175}
+}
+
+func (x *SaveZenithPrivatePatternMemoryResponse) GetMemory() *ZenithPrivatePatternMemoryItem {
+	if x != nil {
+		return x.Memory
+	}
+	return nil
+}
+
+type EditOrDeleteZenithPrivatePatternMemoryRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	PatternCode               string                 `protobuf:"bytes,1,opt,name=pattern_code,json=patternCode,proto3" json:"pattern_code,omitempty"`
+	EditableDerivedThemeLabel string                 `protobuf:"bytes,2,opt,name=editable_derived_theme_label,json=editableDerivedThemeLabel,proto3" json:"editable_derived_theme_label,omitempty"`
+	PatternState              string                 `protobuf:"bytes,3,opt,name=pattern_state,json=patternState,proto3" json:"pattern_state,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) Reset() {
+	*x = EditOrDeleteZenithPrivatePatternMemoryRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[176]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditOrDeleteZenithPrivatePatternMemoryRequest) ProtoMessage() {}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[176]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditOrDeleteZenithPrivatePatternMemoryRequest.ProtoReflect.Descriptor instead.
+func (*EditOrDeleteZenithPrivatePatternMemoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{176}
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) GetPatternCode() string {
+	if x != nil {
+		return x.PatternCode
+	}
+	return ""
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) GetEditableDerivedThemeLabel() string {
+	if x != nil {
+		return x.EditableDerivedThemeLabel
+	}
+	return ""
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryRequest) GetPatternState() string {
+	if x != nil {
+		return x.PatternState
+	}
+	return ""
+}
+
+type EditOrDeleteZenithPrivatePatternMemoryResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Memory        *ZenithPrivatePatternMemoryItem `protobuf:"bytes,1,opt,name=memory,proto3" json:"memory,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryResponse) Reset() {
+	*x = EditOrDeleteZenithPrivatePatternMemoryResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[177]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EditOrDeleteZenithPrivatePatternMemoryResponse) ProtoMessage() {}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[177]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EditOrDeleteZenithPrivatePatternMemoryResponse.ProtoReflect.Descriptor instead.
+func (*EditOrDeleteZenithPrivatePatternMemoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{177}
+}
+
+func (x *EditOrDeleteZenithPrivatePatternMemoryResponse) GetMemory() *ZenithPrivatePatternMemoryItem {
+	if x != nil {
+		return x.Memory
+	}
+	return nil
+}
+
+// Choice 9 (Z7): Travel Performance
+type ZenithTravelPerformanceProtocolItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                     string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TravelCode                 string                 `protobuf:"bytes,3,opt,name=travel_code,json=travelCode,proto3" json:"travel_code,omitempty"`
+	CorridorAndShiftHours      string                 `protobuf:"bytes,4,opt,name=corridor_and_shift_hours,json=corridorAndShiftHours,proto3" json:"corridor_and_shift_hours,omitempty"`
+	LightMealSleepSchedule     string                 `protobuf:"bytes,5,opt,name=light_meal_sleep_schedule,json=lightMealSleepSchedule,proto3" json:"light_meal_sleep_schedule,omitempty"`
+	MissedStepReplanRule       string                 `protobuf:"bytes,6,opt,name=missed_step_replan_rule,json=missedStepReplanRule,proto3" json:"missed_step_replan_rule,omitempty"`
+	SupplementDefaultMode      string                 `protobuf:"bytes,7,opt,name=supplement_default_mode,json=supplementDefaultMode,proto3" json:"supplement_default_mode,omitempty"`
+	AdaptationState            string                 `protobuf:"bytes,8,opt,name=adaptation_state,json=adaptationState,proto3" json:"adaptation_state,omitempty"`
+	MedicationAdviceProhibited bool                   `protobuf:"varint,9,opt,name=medication_advice_prohibited,json=medicationAdviceProhibited,proto3" json:"medication_advice_prohibited,omitempty"`
+	UpdatedAtIso               string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) Reset() {
+	*x = ZenithTravelPerformanceProtocolItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[178]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithTravelPerformanceProtocolItem) ProtoMessage() {}
+
+func (x *ZenithTravelPerformanceProtocolItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[178]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithTravelPerformanceProtocolItem.ProtoReflect.Descriptor instead.
+func (*ZenithTravelPerformanceProtocolItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{178}
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetTravelCode() string {
+	if x != nil {
+		return x.TravelCode
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetCorridorAndShiftHours() string {
+	if x != nil {
+		return x.CorridorAndShiftHours
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetLightMealSleepSchedule() string {
+	if x != nil {
+		return x.LightMealSleepSchedule
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetMissedStepReplanRule() string {
+	if x != nil {
+		return x.MissedStepReplanRule
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetSupplementDefaultMode() string {
+	if x != nil {
+		return x.SupplementDefaultMode
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetAdaptationState() string {
+	if x != nil {
+		return x.AdaptationState
+	}
+	return ""
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetMedicationAdviceProhibited() bool {
+	if x != nil {
+		return x.MedicationAdviceProhibited
+	}
+	return false
+}
+
+func (x *ZenithTravelPerformanceProtocolItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithTravelPerformanceWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchRequest) Reset() {
+	*x = GetZenithTravelPerformanceWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[179]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithTravelPerformanceWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithTravelPerformanceWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[179]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithTravelPerformanceWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithTravelPerformanceWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{179}
+}
+
+type GetZenithTravelPerformanceWorkbenchResponse struct {
+	state                              protoimpl.MessageState                 `protogen:"open.v1"`
+	Protocols                          []*ZenithTravelPerformanceProtocolItem `protobuf:"bytes,1,rep,name=protocols,proto3" json:"protocols,omitempty"`
+	MedicationAdviceProhibitedEnforced bool                                   `protobuf:"varint,2,opt,name=medication_advice_prohibited_enforced,json=medicationAdviceProhibitedEnforced,proto3" json:"medication_advice_prohibited_enforced,omitempty"`
+	NoSupplementDefaultSummary         string                                 `protobuf:"bytes,3,opt,name=no_supplement_default_summary,json=noSupplementDefaultSummary,proto3" json:"no_supplement_default_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) Reset() {
+	*x = GetZenithTravelPerformanceWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[180]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithTravelPerformanceWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[180]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithTravelPerformanceWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithTravelPerformanceWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{180}
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) GetProtocols() []*ZenithTravelPerformanceProtocolItem {
+	if x != nil {
+		return x.Protocols
+	}
+	return nil
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) GetMedicationAdviceProhibitedEnforced() bool {
+	if x != nil {
+		return x.MedicationAdviceProhibitedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithTravelPerformanceWorkbenchResponse) GetNoSupplementDefaultSummary() string {
+	if x != nil {
+		return x.NoSupplementDefaultSummary
+	}
+	return ""
+}
+
+type SaveZenithTravelPerformanceProtocolRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	TravelCode             string                 `protobuf:"bytes,1,opt,name=travel_code,json=travelCode,proto3" json:"travel_code,omitempty"`
+	CorridorAndShiftHours  string                 `protobuf:"bytes,2,opt,name=corridor_and_shift_hours,json=corridorAndShiftHours,proto3" json:"corridor_and_shift_hours,omitempty"`
+	LightMealSleepSchedule string                 `protobuf:"bytes,3,opt,name=light_meal_sleep_schedule,json=lightMealSleepSchedule,proto3" json:"light_meal_sleep_schedule,omitempty"`
+	MissedStepReplanRule   string                 `protobuf:"bytes,4,opt,name=missed_step_replan_rule,json=missedStepReplanRule,proto3" json:"missed_step_replan_rule,omitempty"`
+	SupplementDefaultMode  string                 `protobuf:"bytes,5,opt,name=supplement_default_mode,json=supplementDefaultMode,proto3" json:"supplement_default_mode,omitempty"`
+	AdaptationState        string                 `protobuf:"bytes,6,opt,name=adaptation_state,json=adaptationState,proto3" json:"adaptation_state,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) Reset() {
+	*x = SaveZenithTravelPerformanceProtocolRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[181]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithTravelPerformanceProtocolRequest) ProtoMessage() {}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[181]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithTravelPerformanceProtocolRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithTravelPerformanceProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{181}
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetTravelCode() string {
+	if x != nil {
+		return x.TravelCode
+	}
+	return ""
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetCorridorAndShiftHours() string {
+	if x != nil {
+		return x.CorridorAndShiftHours
+	}
+	return ""
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetLightMealSleepSchedule() string {
+	if x != nil {
+		return x.LightMealSleepSchedule
+	}
+	return ""
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetMissedStepReplanRule() string {
+	if x != nil {
+		return x.MissedStepReplanRule
+	}
+	return ""
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetSupplementDefaultMode() string {
+	if x != nil {
+		return x.SupplementDefaultMode
+	}
+	return ""
+}
+
+func (x *SaveZenithTravelPerformanceProtocolRequest) GetAdaptationState() string {
+	if x != nil {
+		return x.AdaptationState
+	}
+	return ""
+}
+
+type SaveZenithTravelPerformanceProtocolResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Protocol      *ZenithTravelPerformanceProtocolItem `protobuf:"bytes,1,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithTravelPerformanceProtocolResponse) Reset() {
+	*x = SaveZenithTravelPerformanceProtocolResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[182]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithTravelPerformanceProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithTravelPerformanceProtocolResponse) ProtoMessage() {}
+
+func (x *SaveZenithTravelPerformanceProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[182]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithTravelPerformanceProtocolResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithTravelPerformanceProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{182}
+}
+
+func (x *SaveZenithTravelPerformanceProtocolResponse) GetProtocol() *ZenithTravelPerformanceProtocolItem {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+type ReplanZenithTravelMissedStepRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	TravelCode           string                 `protobuf:"bytes,1,opt,name=travel_code,json=travelCode,proto3" json:"travel_code,omitempty"`
+	MissedStepReplanRule string                 `protobuf:"bytes,2,opt,name=missed_step_replan_rule,json=missedStepReplanRule,proto3" json:"missed_step_replan_rule,omitempty"`
+	AdaptationState      string                 `protobuf:"bytes,3,opt,name=adaptation_state,json=adaptationState,proto3" json:"adaptation_state,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ReplanZenithTravelMissedStepRequest) Reset() {
+	*x = ReplanZenithTravelMissedStepRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[183]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReplanZenithTravelMissedStepRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReplanZenithTravelMissedStepRequest) ProtoMessage() {}
+
+func (x *ReplanZenithTravelMissedStepRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[183]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReplanZenithTravelMissedStepRequest.ProtoReflect.Descriptor instead.
+func (*ReplanZenithTravelMissedStepRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{183}
+}
+
+func (x *ReplanZenithTravelMissedStepRequest) GetTravelCode() string {
+	if x != nil {
+		return x.TravelCode
+	}
+	return ""
+}
+
+func (x *ReplanZenithTravelMissedStepRequest) GetMissedStepReplanRule() string {
+	if x != nil {
+		return x.MissedStepReplanRule
+	}
+	return ""
+}
+
+func (x *ReplanZenithTravelMissedStepRequest) GetAdaptationState() string {
+	if x != nil {
+		return x.AdaptationState
+	}
+	return ""
+}
+
+type ReplanZenithTravelMissedStepResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Protocol      *ZenithTravelPerformanceProtocolItem `protobuf:"bytes,1,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReplanZenithTravelMissedStepResponse) Reset() {
+	*x = ReplanZenithTravelMissedStepResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[184]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReplanZenithTravelMissedStepResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReplanZenithTravelMissedStepResponse) ProtoMessage() {}
+
+func (x *ReplanZenithTravelMissedStepResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[184]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReplanZenithTravelMissedStepResponse.ProtoReflect.Descriptor instead.
+func (*ReplanZenithTravelMissedStepResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{184}
+}
+
+func (x *ReplanZenithTravelMissedStepResponse) GetProtocol() *ZenithTravelPerformanceProtocolItem {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+type ZenithCoachingTeamMeetingHealthItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WorkspaceCode                   string                 `protobuf:"bytes,3,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	CoachCredentialAndScope         string                 `protobuf:"bytes,4,opt,name=coach_credential_and_scope,json=coachCredentialAndScope,proto3" json:"coach_credential_and_scope,omitempty"`
+	MeetingLoadFragmentationInsight string                 `protobuf:"bytes,5,opt,name=meeting_load_fragmentation_insight,json=meetingLoadFragmentationInsight,proto3" json:"meeting_load_fragmentation_insight,omitempty"`
+	TeamCohortPrivacySummary        string                 `protobuf:"bytes,6,opt,name=team_cohort_privacy_summary,json=teamCohortPrivacySummary,proto3" json:"team_cohort_privacy_summary,omitempty"`
+	AsyncOrMeetingFreeProposal      string                 `protobuf:"bytes,7,opt,name=async_or_meeting_free_proposal,json=asyncOrMeetingFreeProposal,proto3" json:"async_or_meeting_free_proposal,omitempty"`
+	GovernanceState                 string                 `protobuf:"bytes,8,opt,name=governance_state,json=governanceState,proto3" json:"governance_state,omitempty"`
+	IndividualSurveillanceBlocked   bool                   `protobuf:"varint,9,opt,name=individual_surveillance_blocked,json=individualSurveillanceBlocked,proto3" json:"individual_surveillance_blocked,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) Reset() {
+	*x = ZenithCoachingTeamMeetingHealthItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[185]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithCoachingTeamMeetingHealthItem) ProtoMessage() {}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[185]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithCoachingTeamMeetingHealthItem.ProtoReflect.Descriptor instead.
+func (*ZenithCoachingTeamMeetingHealthItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{185}
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetCoachCredentialAndScope() string {
+	if x != nil {
+		return x.CoachCredentialAndScope
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetMeetingLoadFragmentationInsight() string {
+	if x != nil {
+		return x.MeetingLoadFragmentationInsight
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetTeamCohortPrivacySummary() string {
+	if x != nil {
+		return x.TeamCohortPrivacySummary
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetAsyncOrMeetingFreeProposal() string {
+	if x != nil {
+		return x.AsyncOrMeetingFreeProposal
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetGovernanceState() string {
+	if x != nil {
+		return x.GovernanceState
+	}
+	return ""
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetIndividualSurveillanceBlocked() bool {
+	if x != nil {
+		return x.IndividualSurveillanceBlocked
+	}
+	return false
+}
+
+func (x *ZenithCoachingTeamMeetingHealthItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithCoachingTeamMeetingWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchRequest) Reset() {
+	*x = GetZenithCoachingTeamMeetingWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[186]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCoachingTeamMeetingWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[186]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCoachingTeamMeetingWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithCoachingTeamMeetingWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{186}
+}
+
+type GetZenithCoachingTeamMeetingWorkbenchResponse struct {
+	state                                 protoimpl.MessageState                 `protogen:"open.v1"`
+	Workspaces                            []*ZenithCoachingTeamMeetingHealthItem `protobuf:"bytes,1,rep,name=workspaces,proto3" json:"workspaces,omitempty"`
+	IndividualSurveillanceBlockedEnforced bool                                   `protobuf:"varint,2,opt,name=individual_surveillance_blocked_enforced,json=individualSurveillanceBlockedEnforced,proto3" json:"individual_surveillance_blocked_enforced,omitempty"`
+	MinimumCohortAndCredentialSummary     string                                 `protobuf:"bytes,3,opt,name=minimum_cohort_and_credential_summary,json=minimumCohortAndCredentialSummary,proto3" json:"minimum_cohort_and_credential_summary,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) Reset() {
+	*x = GetZenithCoachingTeamMeetingWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[187]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithCoachingTeamMeetingWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[187]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithCoachingTeamMeetingWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithCoachingTeamMeetingWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{187}
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) GetWorkspaces() []*ZenithCoachingTeamMeetingHealthItem {
+	if x != nil {
+		return x.Workspaces
+	}
+	return nil
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) GetIndividualSurveillanceBlockedEnforced() bool {
+	if x != nil {
+		return x.IndividualSurveillanceBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithCoachingTeamMeetingWorkbenchResponse) GetMinimumCohortAndCredentialSummary() string {
+	if x != nil {
+		return x.MinimumCohortAndCredentialSummary
+	}
+	return ""
+}
+
+type SaveZenithCoachingTeamMeetingHealthRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	WorkspaceCode                   string                 `protobuf:"bytes,1,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	CoachCredentialAndScope         string                 `protobuf:"bytes,2,opt,name=coach_credential_and_scope,json=coachCredentialAndScope,proto3" json:"coach_credential_and_scope,omitempty"`
+	MeetingLoadFragmentationInsight string                 `protobuf:"bytes,3,opt,name=meeting_load_fragmentation_insight,json=meetingLoadFragmentationInsight,proto3" json:"meeting_load_fragmentation_insight,omitempty"`
+	TeamCohortPrivacySummary        string                 `protobuf:"bytes,4,opt,name=team_cohort_privacy_summary,json=teamCohortPrivacySummary,proto3" json:"team_cohort_privacy_summary,omitempty"`
+	AsyncOrMeetingFreeProposal      string                 `protobuf:"bytes,5,opt,name=async_or_meeting_free_proposal,json=asyncOrMeetingFreeProposal,proto3" json:"async_or_meeting_free_proposal,omitempty"`
+	GovernanceState                 string                 `protobuf:"bytes,6,opt,name=governance_state,json=governanceState,proto3" json:"governance_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) Reset() {
+	*x = SaveZenithCoachingTeamMeetingHealthRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCoachingTeamMeetingHealthRequest) ProtoMessage() {}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCoachingTeamMeetingHealthRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithCoachingTeamMeetingHealthRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetCoachCredentialAndScope() string {
+	if x != nil {
+		return x.CoachCredentialAndScope
+	}
+	return ""
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetMeetingLoadFragmentationInsight() string {
+	if x != nil {
+		return x.MeetingLoadFragmentationInsight
+	}
+	return ""
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetTeamCohortPrivacySummary() string {
+	if x != nil {
+		return x.TeamCohortPrivacySummary
+	}
+	return ""
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetAsyncOrMeetingFreeProposal() string {
+	if x != nil {
+		return x.AsyncOrMeetingFreeProposal
+	}
+	return ""
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthRequest) GetGovernanceState() string {
+	if x != nil {
+		return x.GovernanceState
+	}
+	return ""
+}
+
+type SaveZenithCoachingTeamMeetingHealthResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Workspace     *ZenithCoachingTeamMeetingHealthItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthResponse) Reset() {
+	*x = SaveZenithCoachingTeamMeetingHealthResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithCoachingTeamMeetingHealthResponse) ProtoMessage() {}
+
+func (x *SaveZenithCoachingTeamMeetingHealthResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithCoachingTeamMeetingHealthResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithCoachingTeamMeetingHealthResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{189}
+}
+
+func (x *SaveZenithCoachingTeamMeetingHealthResponse) GetWorkspace() *ZenithCoachingTeamMeetingHealthItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+type ProposeZenithMeetingFreeOrOracleHandoffRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	WorkspaceCode              string                 `protobuf:"bytes,1,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	AsyncOrMeetingFreeProposal string                 `protobuf:"bytes,2,opt,name=async_or_meeting_free_proposal,json=asyncOrMeetingFreeProposal,proto3" json:"async_or_meeting_free_proposal,omitempty"`
+	GovernanceState            string                 `protobuf:"bytes,3,opt,name=governance_state,json=governanceState,proto3" json:"governance_state,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) Reset() {
+	*x = ProposeZenithMeetingFreeOrOracleHandoffRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProposeZenithMeetingFreeOrOracleHandoffRequest) ProtoMessage() {}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProposeZenithMeetingFreeOrOracleHandoffRequest.ProtoReflect.Descriptor instead.
+func (*ProposeZenithMeetingFreeOrOracleHandoffRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) GetAsyncOrMeetingFreeProposal() string {
+	if x != nil {
+		return x.AsyncOrMeetingFreeProposal
+	}
+	return ""
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffRequest) GetGovernanceState() string {
+	if x != nil {
+		return x.GovernanceState
+	}
+	return ""
+}
+
+type ProposeZenithMeetingFreeOrOracleHandoffResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Workspace     *ZenithCoachingTeamMeetingHealthItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffResponse) Reset() {
+	*x = ProposeZenithMeetingFreeOrOracleHandoffResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProposeZenithMeetingFreeOrOracleHandoffResponse) ProtoMessage() {}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProposeZenithMeetingFreeOrOracleHandoffResponse.ProtoReflect.Descriptor instead.
+func (*ProposeZenithMeetingFreeOrOracleHandoffResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *ProposeZenithMeetingFreeOrOracleHandoffResponse) GetWorkspace() *ZenithCoachingTeamMeetingHealthItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+type ZenithSensoryDesktopWorkspaceItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SensoryCode                       string                 `protobuf:"bytes,3,opt,name=sensory_code,json=sensoryCode,proto3" json:"sensory_code,omitempty"`
+	ProfileNameAndNeeds               string                 `protobuf:"bytes,4,opt,name=profile_name_and_needs,json=profileNameAndNeeds,proto3" json:"profile_name_and_needs,omitempty"`
+	VendorCapabilityAndManualFallback string                 `protobuf:"bytes,5,opt,name=vendor_capability_and_manual_fallback,json=vendorCapabilityAndManualFallback,proto3" json:"vendor_capability_and_manual_fallback,omitempty"`
+	ProtectedSafetyExclusions         string                 `protobuf:"bytes,6,opt,name=protected_safety_exclusions,json=protectedSafetyExclusions,proto3" json:"protected_safety_exclusions,omitempty"`
+	DesktopCompanionTelemetryMode     string                 `protobuf:"bytes,7,opt,name=desktop_companion_telemetry_mode,json=desktopCompanionTelemetryMode,proto3" json:"desktop_companion_telemetry_mode,omitempty"`
+	WorkspaceState                    string                 `protobuf:"bytes,8,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	KeystrokeScreenshotCaptureBlocked bool                   `protobuf:"varint,9,opt,name=keystroke_screenshot_capture_blocked,json=keystrokeScreenshotCaptureBlocked,proto3" json:"keystroke_screenshot_capture_blocked,omitempty"`
+	UpdatedAtIso                      string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) Reset() {
+	*x = ZenithSensoryDesktopWorkspaceItem{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ZenithSensoryDesktopWorkspaceItem) ProtoMessage() {}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ZenithSensoryDesktopWorkspaceItem.ProtoReflect.Descriptor instead.
+func (*ZenithSensoryDesktopWorkspaceItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetSensoryCode() string {
+	if x != nil {
+		return x.SensoryCode
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetProfileNameAndNeeds() string {
+	if x != nil {
+		return x.ProfileNameAndNeeds
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetVendorCapabilityAndManualFallback() string {
+	if x != nil {
+		return x.VendorCapabilityAndManualFallback
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetProtectedSafetyExclusions() string {
+	if x != nil {
+		return x.ProtectedSafetyExclusions
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetDesktopCompanionTelemetryMode() string {
+	if x != nil {
+		return x.DesktopCompanionTelemetryMode
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetKeystrokeScreenshotCaptureBlocked() bool {
+	if x != nil {
+		return x.KeystrokeScreenshotCaptureBlocked
+	}
+	return false
+}
+
+func (x *ZenithSensoryDesktopWorkspaceItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetZenithSensoryDesktopWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchRequest) Reset() {
+	*x = GetZenithSensoryDesktopWorkbenchRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithSensoryDesktopWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetZenithSensoryDesktopWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithSensoryDesktopWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetZenithSensoryDesktopWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{193}
+}
+
+type GetZenithSensoryDesktopWorkbenchResponse struct {
+	state                                     protoimpl.MessageState               `protogen:"open.v1"`
+	Workspaces                                []*ZenithSensoryDesktopWorkspaceItem `protobuf:"bytes,1,rep,name=workspaces,proto3" json:"workspaces,omitempty"`
+	KeystrokeScreenshotCaptureBlockedEnforced bool                                 `protobuf:"varint,2,opt,name=keystroke_screenshot_capture_blocked_enforced,json=keystrokeScreenshotCaptureBlockedEnforced,proto3" json:"keystroke_screenshot_capture_blocked_enforced,omitempty"`
+	SafetyExclusionAndManualFallbackSummary   string                               `protobuf:"bytes,3,opt,name=safety_exclusion_and_manual_fallback_summary,json=safetyExclusionAndManualFallbackSummary,proto3" json:"safety_exclusion_and_manual_fallback_summary,omitempty"`
+	unknownFields                             protoimpl.UnknownFields
+	sizeCache                                 protoimpl.SizeCache
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) Reset() {
+	*x = GetZenithSensoryDesktopWorkbenchResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetZenithSensoryDesktopWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetZenithSensoryDesktopWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetZenithSensoryDesktopWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) GetWorkspaces() []*ZenithSensoryDesktopWorkspaceItem {
+	if x != nil {
+		return x.Workspaces
+	}
+	return nil
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) GetKeystrokeScreenshotCaptureBlockedEnforced() bool {
+	if x != nil {
+		return x.KeystrokeScreenshotCaptureBlockedEnforced
+	}
+	return false
+}
+
+func (x *GetZenithSensoryDesktopWorkbenchResponse) GetSafetyExclusionAndManualFallbackSummary() string {
+	if x != nil {
+		return x.SafetyExclusionAndManualFallbackSummary
+	}
+	return ""
+}
+
+type SaveZenithSensoryDesktopWorkspaceRequest struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	SensoryCode                       string                 `protobuf:"bytes,1,opt,name=sensory_code,json=sensoryCode,proto3" json:"sensory_code,omitempty"`
+	ProfileNameAndNeeds               string                 `protobuf:"bytes,2,opt,name=profile_name_and_needs,json=profileNameAndNeeds,proto3" json:"profile_name_and_needs,omitempty"`
+	VendorCapabilityAndManualFallback string                 `protobuf:"bytes,3,opt,name=vendor_capability_and_manual_fallback,json=vendorCapabilityAndManualFallback,proto3" json:"vendor_capability_and_manual_fallback,omitempty"`
+	ProtectedSafetyExclusions         string                 `protobuf:"bytes,4,opt,name=protected_safety_exclusions,json=protectedSafetyExclusions,proto3" json:"protected_safety_exclusions,omitempty"`
+	DesktopCompanionTelemetryMode     string                 `protobuf:"bytes,5,opt,name=desktop_companion_telemetry_mode,json=desktopCompanionTelemetryMode,proto3" json:"desktop_companion_telemetry_mode,omitempty"`
+	WorkspaceState                    string                 `protobuf:"bytes,6,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) Reset() {
+	*x = SaveZenithSensoryDesktopWorkspaceRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithSensoryDesktopWorkspaceRequest) ProtoMessage() {}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithSensoryDesktopWorkspaceRequest.ProtoReflect.Descriptor instead.
+func (*SaveZenithSensoryDesktopWorkspaceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetSensoryCode() string {
+	if x != nil {
+		return x.SensoryCode
+	}
+	return ""
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetProfileNameAndNeeds() string {
+	if x != nil {
+		return x.ProfileNameAndNeeds
+	}
+	return ""
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetVendorCapabilityAndManualFallback() string {
+	if x != nil {
+		return x.VendorCapabilityAndManualFallback
+	}
+	return ""
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetProtectedSafetyExclusions() string {
+	if x != nil {
+		return x.ProtectedSafetyExclusions
+	}
+	return ""
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetDesktopCompanionTelemetryMode() string {
+	if x != nil {
+		return x.DesktopCompanionTelemetryMode
+	}
+	return ""
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+type SaveZenithSensoryDesktopWorkspaceResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Workspace     *ZenithSensoryDesktopWorkspaceItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceResponse) Reset() {
+	*x = SaveZenithSensoryDesktopWorkspaceResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveZenithSensoryDesktopWorkspaceResponse) ProtoMessage() {}
+
+func (x *SaveZenithSensoryDesktopWorkspaceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveZenithSensoryDesktopWorkspaceResponse.ProtoReflect.Descriptor instead.
+func (*SaveZenithSensoryDesktopWorkspaceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *SaveZenithSensoryDesktopWorkspaceResponse) GetWorkspace() *ZenithSensoryDesktopWorkspaceItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+type ArmOrFallbackZenithSensoryWorkspaceRequest struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	SensoryCode                       string                 `protobuf:"bytes,1,opt,name=sensory_code,json=sensoryCode,proto3" json:"sensory_code,omitempty"`
+	WorkspaceState                    string                 `protobuf:"bytes,2,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	VendorCapabilityAndManualFallback string                 `protobuf:"bytes,3,opt,name=vendor_capability_and_manual_fallback,json=vendorCapabilityAndManualFallback,proto3" json:"vendor_capability_and_manual_fallback,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) Reset() {
+	*x = ArmOrFallbackZenithSensoryWorkspaceRequest{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ArmOrFallbackZenithSensoryWorkspaceRequest) ProtoMessage() {}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ArmOrFallbackZenithSensoryWorkspaceRequest.ProtoReflect.Descriptor instead.
+func (*ArmOrFallbackZenithSensoryWorkspaceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) GetSensoryCode() string {
+	if x != nil {
+		return x.SensoryCode
+	}
+	return ""
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceRequest) GetVendorCapabilityAndManualFallback() string {
+	if x != nil {
+		return x.VendorCapabilityAndManualFallback
+	}
+	return ""
+}
+
+type ArmOrFallbackZenithSensoryWorkspaceResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Workspace     *ZenithSensoryDesktopWorkspaceItem `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceResponse) Reset() {
+	*x = ArmOrFallbackZenithSensoryWorkspaceResponse{}
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ArmOrFallbackZenithSensoryWorkspaceResponse) ProtoMessage() {}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_zenith_v1_zenith_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ArmOrFallbackZenithSensoryWorkspaceResponse.ProtoReflect.Descriptor instead.
+func (*ArmOrFallbackZenithSensoryWorkspaceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_zenith_v1_zenith_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *ArmOrFallbackZenithSensoryWorkspaceResponse) GetWorkspace() *ZenithSensoryDesktopWorkspaceItem {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
 var File_sttattus_zenith_v1_zenith_proto protoreflect.FileDescriptor
 
 const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
@@ -7311,7 +12246,380 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\x1aCancelLoungeBookingRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"-\n" +
 	"\x1bCancelLoungeBookingResponse\x12\x0e\n" +
-	"\x02ok\x18\x01 \x01(\bR\x02ok2\xe1)\n" +
+	"\x02ok\x18\x01 \x01(\bR\x02ok\"\x8b\x04\n" +
+	"\x1eZenithFocusFirewallSessionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rfirewall_code\x18\x03 \x01(\tR\ffirewallCode\x12#\n" +
+	"\rsession_title\x18\x04 \x01(\tR\fsessionTitle\x12)\n" +
+	"\x10enforcement_mode\x18\x05 \x01(\tR\x0fenforcementMode\x12<\n" +
+	"\x1aplatform_capability_matrix\x18\x06 \x01(\tR\x18platformCapabilityMatrix\x12>\n" +
+	"\x1bwhitelisted_emergency_paths\x18\a \x01(\tR\x19whitelistedEmergencyPaths\x129\n" +
+	"\x19override_friction_and_log\x18\b \x01(\tR\x16overrideFrictionAndLog\x12%\n" +
+	"\x0efirewall_state\x18\t \x01(\tR\rfirewallState\x12E\n" +
+	"\x1femergency_exit_always_permitted\x18\n" +
+	" \x01(\bR\x1cemergencyExitAlwaysPermitted\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"(\n" +
+	"&GetZenithFocusFirewallWorkbenchRequest\"\x9e\x02\n" +
+	"'GetZenithFocusFirewallWorkbenchResponse\x12N\n" +
+	"\bsessions\x18\x01 \x03(\v22.sttattus.zenith.v1.ZenithFocusFirewallSessionItemR\bsessions\x12V\n" +
+	"(emergency_exit_always_permitted_enforced\x18\x02 \x01(\bR$emergencyExitAlwaysPermittedEnforced\x12K\n" +
+	"\"honest_platform_capability_summary\x18\x03 \x01(\tR\x1fhonestPlatformCapabilitySummary\"\xfc\x02\n" +
+	"%SaveZenithFocusFirewallSessionRequest\x12#\n" +
+	"\rfirewall_code\x18\x01 \x01(\tR\ffirewallCode\x12#\n" +
+	"\rsession_title\x18\x02 \x01(\tR\fsessionTitle\x12)\n" +
+	"\x10enforcement_mode\x18\x03 \x01(\tR\x0fenforcementMode\x12<\n" +
+	"\x1aplatform_capability_matrix\x18\x04 \x01(\tR\x18platformCapabilityMatrix\x12>\n" +
+	"\x1bwhitelisted_emergency_paths\x18\x05 \x01(\tR\x19whitelistedEmergencyPaths\x129\n" +
+	"\x19override_friction_and_log\x18\x06 \x01(\tR\x16overrideFrictionAndLog\x12%\n" +
+	"\x0efirewall_state\x18\a \x01(\tR\rfirewallState\"v\n" +
+	"&SaveZenithFocusFirewallSessionResponse\x12L\n" +
+	"\asession\x18\x01 \x01(\v22.sttattus.zenith.v1.ZenithFocusFirewallSessionItemR\asession\"\xad\x01\n" +
+	"1TriggerZenithFocusFirewallBypassOrCompleteRequest\x12#\n" +
+	"\rfirewall_code\x18\x01 \x01(\tR\ffirewallCode\x12!\n" +
+	"\ftarget_state\x18\x02 \x01(\tR\vtargetState\x120\n" +
+	"\x14override_reason_note\x18\x03 \x01(\tR\x12overrideReasonNote\"\x82\x01\n" +
+	"2TriggerZenithFocusFirewallBypassOrCompleteResponse\x12L\n" +
+	"\asession\x18\x01 \x01(\v22.sttattus.zenith.v1.ZenithFocusFirewallSessionItemR\asession\"\x9f\x04\n" +
+	"\"ZenithAdaptiveDayArchitectPlanItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
+	"\tplan_code\x18\x03 \x01(\tR\bplanCode\x12&\n" +
+	"\x0fplan_date_label\x18\x04 \x01(\tR\rplanDateLabel\x12J\n" +
+	"\"calendar_snapshot_lag_and_coverage\x18\x05 \x01(\tR\x1ecalendarSnapshotLagAndCoverage\x12H\n" +
+	"!proposed_focus_and_buffer_windows\x18\x06 \x01(\tR\x1dproposedFocusAndBufferWindows\x127\n" +
+	"\x18what_changed_replan_diff\x18\a \x01(\tR\x15whatChangedReplanDiff\x126\n" +
+	"\x17readiness_fallback_mode\x18\b \x01(\tR\x15readinessFallbackMode\x12\x1d\n" +
+	"\n" +
+	"plan_state\x18\t \x01(\tR\tplanState\x12?\n" +
+	"\x1csilent_calendar_move_blocked\x18\n" +
+	" \x01(\bR\x19silentCalendarMoveBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetZenithAdaptiveDayArchitectWorkbenchRequest\"\x8d\x02\n" +
+	".GetZenithAdaptiveDayArchitectWorkbenchResponse\x12L\n" +
+	"\x05plans\x18\x01 \x03(\v26.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItemR\x05plans\x12P\n" +
+	"%silent_calendar_move_blocked_enforced\x18\x02 \x01(\bR!silentCalendarMoveBlockedEnforced\x12;\n" +
+	"\x1ano_sensor_fallback_summary\x18\x03 \x01(\tR\x17noSensorFallbackSummary\"\x96\x03\n" +
+	")SaveZenithAdaptiveDayArchitectPlanRequest\x12\x1b\n" +
+	"\tplan_code\x18\x01 \x01(\tR\bplanCode\x12&\n" +
+	"\x0fplan_date_label\x18\x02 \x01(\tR\rplanDateLabel\x12J\n" +
+	"\"calendar_snapshot_lag_and_coverage\x18\x03 \x01(\tR\x1ecalendarSnapshotLagAndCoverage\x12H\n" +
+	"!proposed_focus_and_buffer_windows\x18\x04 \x01(\tR\x1dproposedFocusAndBufferWindows\x127\n" +
+	"\x18what_changed_replan_diff\x18\x05 \x01(\tR\x15whatChangedReplanDiff\x126\n" +
+	"\x17readiness_fallback_mode\x18\x06 \x01(\tR\x15readinessFallbackMode\x12\x1d\n" +
+	"\n" +
+	"plan_state\x18\a \x01(\tR\tplanState\"x\n" +
+	"*SaveZenithAdaptiveDayArchitectPlanResponse\x12J\n" +
+	"\x04plan\x18\x01 \x01(\v26.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItemR\x04plan\"\xa2\x01\n" +
+	"'AcceptOrReplanZenithDayArchitectRequest\x12\x1b\n" +
+	"\tplan_code\x18\x01 \x01(\tR\bplanCode\x12!\n" +
+	"\ftarget_state\x18\x02 \x01(\tR\vtargetState\x127\n" +
+	"\x18what_changed_replan_diff\x18\x03 \x01(\tR\x15whatChangedReplanDiff\"v\n" +
+	"(AcceptOrReplanZenithDayArchitectResponse\x12J\n" +
+	"\x04plan\x18\x01 \x01(\v26.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItemR\x04plan\"\xd3\x03\n" +
+	"\"ZenithIntentionOutcomeContractItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0eintention_code\x18\x03 \x01(\tR\rintentionCode\x126\n" +
+	"\x17project_and_deliverable\x18\x04 \x01(\tR\x15projectAndDeliverable\x121\n" +
+	"\x15done_for_now_criteria\x18\x05 \x01(\tR\x12doneForNowCriteria\x12?\n" +
+	"\x1ccaptured_output_and_obstacle\x18\x06 \x01(\tR\x19capturedOutputAndObstacle\x12(\n" +
+	"\x10next_action_step\x18\a \x01(\tR\x0enextActionStep\x12\x1d\n" +
+	"\n" +
+	"loop_state\x18\b \x01(\tR\tloopState\x12B\n" +
+	"\x1dsurveillance_scoring_disabled\x18\t \x01(\bR\x1bsurveillanceScoringDisabled\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"+\n" +
+	")GetZenithIntentionOutcomeWorkbenchRequest\"\x96\x02\n" +
+	"*GetZenithIntentionOutcomeWorkbenchResponse\x12T\n" +
+	"\tcontracts\x18\x01 \x03(\v26.sttattus.zenith.v1.ZenithIntentionOutcomeContractItemR\tcontracts\x12S\n" +
+	"&surveillance_scoring_disabled_enforced\x18\x02 \x01(\bR#surveillanceScoringDisabledEnforced\x12=\n" +
+	"\x1bquiet_session_shell_summary\x18\x03 \x01(\tR\x18quietSessionShellSummary\"\xc7\x02\n" +
+	")SaveZenithIntentionOutcomeContractRequest\x12%\n" +
+	"\x0eintention_code\x18\x01 \x01(\tR\rintentionCode\x126\n" +
+	"\x17project_and_deliverable\x18\x02 \x01(\tR\x15projectAndDeliverable\x121\n" +
+	"\x15done_for_now_criteria\x18\x03 \x01(\tR\x12doneForNowCriteria\x12?\n" +
+	"\x1ccaptured_output_and_obstacle\x18\x04 \x01(\tR\x19capturedOutputAndObstacle\x12(\n" +
+	"\x10next_action_step\x18\x05 \x01(\tR\x0enextActionStep\x12\x1d\n" +
+	"\n" +
+	"loop_state\x18\x06 \x01(\tR\tloopState\"\x80\x01\n" +
+	"*SaveZenithIntentionOutcomeContractResponse\x12R\n" +
+	"\bcontract\x18\x01 \x01(\v26.sttattus.zenith.v1.ZenithIntentionOutcomeContractItemR\bcontract\"\xdc\x01\n" +
+	")CompleteZenithIntentionOutcomeLoopRequest\x12%\n" +
+	"\x0eintention_code\x18\x01 \x01(\tR\rintentionCode\x12?\n" +
+	"\x1ccaptured_output_and_obstacle\x18\x02 \x01(\tR\x19capturedOutputAndObstacle\x12(\n" +
+	"\x10next_action_step\x18\x03 \x01(\tR\x0enextActionStep\x12\x1d\n" +
+	"\n" +
+	"loop_state\x18\x04 \x01(\tR\tloopState\"\x80\x01\n" +
+	"*CompleteZenithIntentionOutcomeLoopResponse\x12R\n" +
+	"\bcontract\x18\x01 \x01(\v26.sttattus.zenith.v1.ZenithIntentionOutcomeContractItemR\bcontract\"\x9e\x04\n" +
+	"!ZenithAttentionNOf1ExperimentItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fexperiment_code\x18\x03 \x01(\tR\x0eexperimentCode\x126\n" +
+	"\x17hypothesis_and_protocol\x18\x04 \x01(\tR\x15hypothesisAndProtocol\x12L\n" +
+	"#predeclared_measure_and_min_samples\x18\x05 \x01(\tR\x1fpredeclaredMeasureAndMinSamples\x12B\n" +
+	"\x1dinterruption_recovery_summary\x18\x06 \x01(\tR\x1binterruptionRecoverySummary\x12A\n" +
+	"\x1dcorrelation_vs_causation_note\x18\a \x01(\tR\x1acorrelationVsCausationNote\x12)\n" +
+	"\x10experiment_state\x18\b \x01(\tR\x0fexperimentState\x12I\n" +
+	"!content_keystroke_capture_blocked\x18\t \x01(\bR\x1econtentKeystrokeCaptureBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"+\n" +
+	")GetZenithAttentionNOf1LabWorkbenchRequest\"\xa3\x02\n" +
+	"*GetZenithAttentionNOf1LabWorkbenchResponse\x12W\n" +
+	"\vexperiments\x18\x01 \x03(\v25.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItemR\vexperiments\x12Z\n" +
+	"*content_keystroke_capture_blocked_enforced\x18\x02 \x01(\bR&contentKeystrokeCaptureBlockedEnforced\x12@\n" +
+	"\x1ccorrelation_boundary_summary\x18\x03 \x01(\tR\x1acorrelationBoundarySummary\"\x8b\x03\n" +
+	"(SaveZenithAttentionNOf1ExperimentRequest\x12'\n" +
+	"\x0fexperiment_code\x18\x01 \x01(\tR\x0eexperimentCode\x126\n" +
+	"\x17hypothesis_and_protocol\x18\x02 \x01(\tR\x15hypothesisAndProtocol\x12L\n" +
+	"#predeclared_measure_and_min_samples\x18\x03 \x01(\tR\x1fpredeclaredMeasureAndMinSamples\x12B\n" +
+	"\x1dinterruption_recovery_summary\x18\x04 \x01(\tR\x1binterruptionRecoverySummary\x12A\n" +
+	"\x1dcorrelation_vs_causation_note\x18\x05 \x01(\tR\x1acorrelationVsCausationNote\x12)\n" +
+	"\x10experiment_state\x18\x06 \x01(\tR\x0fexperimentState\"\x82\x01\n" +
+	")SaveZenithAttentionNOf1ExperimentResponse\x12U\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v25.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItemR\n" +
+	"experiment\"\xc5\x01\n" +
+	",EvaluateZenithAttentionNOf1ExperimentRequest\x12'\n" +
+	"\x0fexperiment_code\x18\x01 \x01(\tR\x0eexperimentCode\x12)\n" +
+	"\x10experiment_state\x18\x02 \x01(\tR\x0fexperimentState\x12A\n" +
+	"\x1dcorrelation_vs_causation_note\x18\x03 \x01(\tR\x1acorrelationVsCausationNote\"\x86\x01\n" +
+	"-EvaluateZenithAttentionNOf1ExperimentResponse\x12U\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v25.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItemR\n" +
+	"experiment\"\xee\x03\n" +
+	"\x1dZenithRecoveryProtocolRunItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rprotocol_code\x18\x03 \x01(\tR\fprotocolCode\x12,\n" +
+	"\x12title_and_modality\x18\x04 \x01(\tR\x10titleAndModality\x12G\n" +
+	" contraindication_and_safety_note\x18\x05 \x01(\tR\x1dcontraindicationAndSafetyNote\x125\n" +
+	"\x17sensor_or_nosensor_path\x18\x06 \x01(\tR\x14sensorOrNosensorPath\x12A\n" +
+	"\x1dsubjective_before_after_delta\x18\a \x01(\tR\x1asubjectiveBeforeAfterDelta\x12%\n" +
+	"\x0eprotocol_state\x18\b \x01(\tR\rprotocolState\x12A\n" +
+	"\x1dnon_medical_wellness_enforced\x18\t \x01(\bR\x1anonMedicalWellnessEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"1\n" +
+	"/GetZenithRecoveryProtocolStudioWorkbenchRequest\"\xfb\x01\n" +
+	"0GetZenithRecoveryProtocolStudioWorkbenchResponse\x12E\n" +
+	"\x04runs\x18\x01 \x03(\v21.sttattus.zenith.v1.ZenithRecoveryProtocolRunItemR\x04runs\x12A\n" +
+	"\x1dnon_medical_wellness_enforced\x18\x02 \x01(\bR\x1anonMedicalWellnessEnforced\x12=\n" +
+	"\x1bno_sensor_offline_guarantee\x18\x03 \x01(\tR\x18noSensorOfflineGuarantee\"\xe3\x02\n" +
+	"$SaveZenithRecoveryProtocolRunRequest\x12#\n" +
+	"\rprotocol_code\x18\x01 \x01(\tR\fprotocolCode\x12,\n" +
+	"\x12title_and_modality\x18\x02 \x01(\tR\x10titleAndModality\x12G\n" +
+	" contraindication_and_safety_note\x18\x03 \x01(\tR\x1dcontraindicationAndSafetyNote\x125\n" +
+	"\x17sensor_or_nosensor_path\x18\x04 \x01(\tR\x14sensorOrNosensorPath\x12A\n" +
+	"\x1dsubjective_before_after_delta\x18\x05 \x01(\tR\x1asubjectiveBeforeAfterDelta\x12%\n" +
+	"\x0eprotocol_state\x18\x06 \x01(\tR\rprotocolState\"l\n" +
+	"%SaveZenithRecoveryProtocolRunResponse\x12C\n" +
+	"\x03run\x18\x01 \x01(\v21.sttattus.zenith.v1.ZenithRecoveryProtocolRunItemR\x03run\"\xbe\x01\n" +
+	"-RecordZenithRecoveryCheckOrAdverseFlagRequest\x12#\n" +
+	"\rprotocol_code\x18\x01 \x01(\tR\fprotocolCode\x12A\n" +
+	"\x1dsubjective_before_after_delta\x18\x02 \x01(\tR\x1asubjectiveBeforeAfterDelta\x12%\n" +
+	"\x0eprotocol_state\x18\x03 \x01(\tR\rprotocolState\"u\n" +
+	".RecordZenithRecoveryCheckOrAdverseFlagResponse\x12C\n" +
+	"\x03run\x18\x01 \x01(\v21.sttattus.zenith.v1.ZenithRecoveryProtocolRunItemR\x03run\"\xfa\x03\n" +
+	"#ZenithCommunicationBoundaryRuleItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rboundary_code\x18\x03 \x01(\tR\fboundaryCode\x12.\n" +
+	"\x13template_and_window\x18\x04 \x01(\tR\x11templateAndWindow\x12?\n" +
+	"\x1cvip_and_emergency_exceptions\x18\x05 \x01(\tR\x19vipAndEmergencyExceptions\x12C\n" +
+	"\x1epreviewed_external_status_copy\x18\x06 \x01(\tR\x1bpreviewedExternalStatusCopy\x12;\n" +
+	"\x1apost_focus_catchup_summary\x18\a \x01(\tR\x17postFocusCatchupSummary\x12%\n" +
+	"\x0eboundary_state\x18\b \x01(\tR\rboundaryState\x12E\n" +
+	"\x1fmessage_body_collection_blocked\x18\t \x01(\bR\x1cmessageBodyCollectionBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"0\n" +
+	".GetZenithCommunicationBoundaryWorkbenchRequest\"\xa6\x02\n" +
+	"/GetZenithCommunicationBoundaryWorkbenchResponse\x12M\n" +
+	"\x05rules\x18\x01 \x03(\v27.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItemR\x05rules\x12V\n" +
+	"(message_body_collection_blocked_enforced\x18\x02 \x01(\bR$messageBodyCollectionBlockedEnforced\x12L\n" +
+	"#preview_before_status_write_summary\x18\x03 \x01(\tR\x1fpreviewBeforeStatusWriteSummary\"\xeb\x02\n" +
+	"*SaveZenithCommunicationBoundaryRuleRequest\x12#\n" +
+	"\rboundary_code\x18\x01 \x01(\tR\fboundaryCode\x12.\n" +
+	"\x13template_and_window\x18\x02 \x01(\tR\x11templateAndWindow\x12?\n" +
+	"\x1cvip_and_emergency_exceptions\x18\x03 \x01(\tR\x19vipAndEmergencyExceptions\x12C\n" +
+	"\x1epreviewed_external_status_copy\x18\x04 \x01(\tR\x1bpreviewedExternalStatusCopy\x12;\n" +
+	"\x1apost_focus_catchup_summary\x18\x05 \x01(\tR\x17postFocusCatchupSummary\x12%\n" +
+	"\x0eboundary_state\x18\x06 \x01(\tR\rboundaryState\"z\n" +
+	"+SaveZenithCommunicationBoundaryRuleResponse\x12K\n" +
+	"\x04rule\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItemR\x04rule\"\xb7\x01\n" +
+	",ApproveOrReleaseZenithBoundaryCatchupRequest\x12#\n" +
+	"\rboundary_code\x18\x01 \x01(\tR\fboundaryCode\x12%\n" +
+	"\x0eboundary_state\x18\x02 \x01(\tR\rboundaryState\x12;\n" +
+	"\x1apost_focus_catchup_summary\x18\x03 \x01(\tR\x17postFocusCatchupSummary\"|\n" +
+	"-ApproveOrReleaseZenithBoundaryCatchupResponse\x12K\n" +
+	"\x04rule\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItemR\x04rule\"\x81\x04\n" +
+	"#ZenithCognitiveReadinessSessionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fbattery_code\x18\x03 \x01(\tR\vbatteryCode\x127\n" +
+	"\x18alternate_form_and_tasks\x18\x04 \x01(\tR\x15alternateFormAndTasks\x12R\n" +
+	"&practice_effect_and_device_calibration\x18\x05 \x01(\tR\"practiceEffectAndDeviceCalibration\x12A\n" +
+	"\x1dreadiness_band_and_confidence\x18\x06 \x01(\tR\x1areadinessBandAndConfidence\x122\n" +
+	"\x15exclusion_flag_reason\x18\a \x01(\tR\x13exclusionFlagReason\x12!\n" +
+	"\fsession_mode\x18\b \x01(\tR\vsessionMode\x12A\n" +
+	"\x1dnon_diagnostic_claim_enforced\x18\t \x01(\bR\x1anonDiagnosticClaimEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"-\n" +
+	"+GetZenithCognitiveReadinessWorkbenchRequest\"\xa0\x02\n" +
+	",GetZenithCognitiveReadinessWorkbenchResponse\x12S\n" +
+	"\bsessions\x18\x01 \x03(\v27.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItemR\bsessions\x12A\n" +
+	"\x1dnon_diagnostic_claim_enforced\x18\x02 \x01(\bR\x1anonDiagnosticClaimEnforced\x12X\n" +
+	")training_vs_assessment_separation_summary\x18\x03 \x01(\tR%trainingVsAssessmentSeparationSummary\"\xf6\x02\n" +
+	"*SaveZenithCognitiveReadinessSessionRequest\x12!\n" +
+	"\fbattery_code\x18\x01 \x01(\tR\vbatteryCode\x127\n" +
+	"\x18alternate_form_and_tasks\x18\x02 \x01(\tR\x15alternateFormAndTasks\x12R\n" +
+	"&practice_effect_and_device_calibration\x18\x03 \x01(\tR\"practiceEffectAndDeviceCalibration\x12A\n" +
+	"\x1dreadiness_band_and_confidence\x18\x04 \x01(\tR\x1areadinessBandAndConfidence\x122\n" +
+	"\x15exclusion_flag_reason\x18\x05 \x01(\tR\x13exclusionFlagReason\x12!\n" +
+	"\fsession_mode\x18\x06 \x01(\tR\vsessionMode\"\x80\x01\n" +
+	"+SaveZenithCognitiveReadinessSessionResponse\x12Q\n" +
+	"\asession\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItemR\asession\"\xa7\x01\n" +
+	"+FlagOrValidateZenithCognitiveSessionRequest\x12!\n" +
+	"\fbattery_code\x18\x01 \x01(\tR\vbatteryCode\x122\n" +
+	"\x15exclusion_flag_reason\x18\x02 \x01(\tR\x13exclusionFlagReason\x12!\n" +
+	"\fsession_mode\x18\x03 \x01(\tR\vsessionMode\"\x81\x01\n" +
+	",FlagOrValidateZenithCognitiveSessionResponse\x12Q\n" +
+	"\asession\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItemR\asession\"\x82\x04\n" +
+	"\x1eZenithPrivatePatternMemoryItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fpattern_code\x18\x03 \x01(\tR\vpatternCode\x12=\n" +
+	"\x1bstorage_and_encryption_mode\x18\x04 \x01(\tR\x18storageAndEncryptionMode\x12?\n" +
+	"\x1ceditable_derived_theme_label\x18\x05 \x01(\tR\x19editableDerivedThemeLabel\x12>\n" +
+	"\x1con_device_rescue_prompt_rule\x18\x06 \x01(\tR\x18onDeviceRescuePromptRule\x12E\n" +
+	"\x1fcrisis_resource_governance_note\x18\a \x01(\tR\x1ccrisisResourceGovernanceNote\x12#\n" +
+	"\rpattern_state\x18\b \x01(\tR\fpatternState\x12B\n" +
+	"\x1estaff_raw_prose_access_blocked\x18\t \x01(\bR\x1astaffRawProseAccessBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetZenithPrivatePatternMemoryWorkbenchRequest\"\xa5\x02\n" +
+	".GetZenithPrivatePatternMemoryWorkbenchResponse\x12N\n" +
+	"\bmemories\x18\x01 \x03(\v22.sttattus.zenith.v1.ZenithPrivatePatternMemoryItemR\bmemories\x12S\n" +
+	"'staff_raw_prose_access_blocked_enforced\x18\x02 \x01(\bR\"staffRawProseAccessBlockedEnforced\x12N\n" +
+	"$e2ee_and_editable_derivation_summary\x18\x03 \x01(\tR e2eeAndEditableDerivationSummary\"\xf6\x02\n" +
+	"%SaveZenithPrivatePatternMemoryRequest\x12!\n" +
+	"\fpattern_code\x18\x01 \x01(\tR\vpatternCode\x12=\n" +
+	"\x1bstorage_and_encryption_mode\x18\x02 \x01(\tR\x18storageAndEncryptionMode\x12?\n" +
+	"\x1ceditable_derived_theme_label\x18\x03 \x01(\tR\x19editableDerivedThemeLabel\x12>\n" +
+	"\x1con_device_rescue_prompt_rule\x18\x04 \x01(\tR\x18onDeviceRescuePromptRule\x12E\n" +
+	"\x1fcrisis_resource_governance_note\x18\x05 \x01(\tR\x1ccrisisResourceGovernanceNote\x12#\n" +
+	"\rpattern_state\x18\x06 \x01(\tR\fpatternState\"t\n" +
+	"&SaveZenithPrivatePatternMemoryResponse\x12J\n" +
+	"\x06memory\x18\x01 \x01(\v22.sttattus.zenith.v1.ZenithPrivatePatternMemoryItemR\x06memory\"\xb8\x01\n" +
+	"-EditOrDeleteZenithPrivatePatternMemoryRequest\x12!\n" +
+	"\fpattern_code\x18\x01 \x01(\tR\vpatternCode\x12?\n" +
+	"\x1ceditable_derived_theme_label\x18\x02 \x01(\tR\x19editableDerivedThemeLabel\x12#\n" +
+	"\rpattern_state\x18\x03 \x01(\tR\fpatternState\"|\n" +
+	".EditOrDeleteZenithPrivatePatternMemoryResponse\x12J\n" +
+	"\x06memory\x18\x01 \x01(\v22.sttattus.zenith.v1.ZenithPrivatePatternMemoryItemR\x06memory\"\xe5\x03\n" +
+	"#ZenithTravelPerformanceProtocolItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vtravel_code\x18\x03 \x01(\tR\n" +
+	"travelCode\x127\n" +
+	"\x18corridor_and_shift_hours\x18\x04 \x01(\tR\x15corridorAndShiftHours\x129\n" +
+	"\x19light_meal_sleep_schedule\x18\x05 \x01(\tR\x16lightMealSleepSchedule\x125\n" +
+	"\x17missed_step_replan_rule\x18\x06 \x01(\tR\x14missedStepReplanRule\x126\n" +
+	"\x17supplement_default_mode\x18\a \x01(\tR\x15supplementDefaultMode\x12)\n" +
+	"\x10adaptation_state\x18\b \x01(\tR\x0fadaptationState\x12@\n" +
+	"\x1cmedication_advice_prohibited\x18\t \x01(\bR\x1amedicationAdviceProhibited\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\",\n" +
+	"*GetZenithTravelPerformanceWorkbenchRequest\"\x9a\x02\n" +
+	"+GetZenithTravelPerformanceWorkbenchResponse\x12U\n" +
+	"\tprotocols\x18\x01 \x03(\v27.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItemR\tprotocols\x12Q\n" +
+	"%medication_advice_prohibited_enforced\x18\x02 \x01(\bR\"medicationAdviceProhibitedEnforced\x12A\n" +
+	"\x1dno_supplement_default_summary\x18\x03 \x01(\tR\x1anoSupplementDefaultSummary\"\xdb\x02\n" +
+	"*SaveZenithTravelPerformanceProtocolRequest\x12\x1f\n" +
+	"\vtravel_code\x18\x01 \x01(\tR\n" +
+	"travelCode\x127\n" +
+	"\x18corridor_and_shift_hours\x18\x02 \x01(\tR\x15corridorAndShiftHours\x129\n" +
+	"\x19light_meal_sleep_schedule\x18\x03 \x01(\tR\x16lightMealSleepSchedule\x125\n" +
+	"\x17missed_step_replan_rule\x18\x04 \x01(\tR\x14missedStepReplanRule\x126\n" +
+	"\x17supplement_default_mode\x18\x05 \x01(\tR\x15supplementDefaultMode\x12)\n" +
+	"\x10adaptation_state\x18\x06 \x01(\tR\x0fadaptationState\"\x82\x01\n" +
+	"+SaveZenithTravelPerformanceProtocolResponse\x12S\n" +
+	"\bprotocol\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItemR\bprotocol\"\xa8\x01\n" +
+	"#ReplanZenithTravelMissedStepRequest\x12\x1f\n" +
+	"\vtravel_code\x18\x01 \x01(\tR\n" +
+	"travelCode\x125\n" +
+	"\x17missed_step_replan_rule\x18\x02 \x01(\tR\x14missedStepReplanRule\x12)\n" +
+	"\x10adaptation_state\x18\x03 \x01(\tR\x0fadaptationState\"{\n" +
+	"$ReplanZenithTravelMissedStepResponse\x12S\n" +
+	"\bprotocol\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItemR\bprotocol\"\x9b\x04\n" +
+	"#ZenithCoachingTeamMeetingHealthItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0eworkspace_code\x18\x03 \x01(\tR\rworkspaceCode\x12;\n" +
+	"\x1acoach_credential_and_scope\x18\x04 \x01(\tR\x17coachCredentialAndScope\x12K\n" +
+	"\"meeting_load_fragmentation_insight\x18\x05 \x01(\tR\x1fmeetingLoadFragmentationInsight\x12=\n" +
+	"\x1bteam_cohort_privacy_summary\x18\x06 \x01(\tR\x18teamCohortPrivacySummary\x12B\n" +
+	"\x1easync_or_meeting_free_proposal\x18\a \x01(\tR\x1aasyncOrMeetingFreeProposal\x12)\n" +
+	"\x10governance_state\x18\b \x01(\tR\x0fgovernanceState\x12F\n" +
+	"\x1findividual_surveillance_blocked\x18\t \x01(\bR\x1dindividualSurveillanceBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\".\n" +
+	",GetZenithCoachingTeamMeetingWorkbenchRequest\"\xb3\x02\n" +
+	"-GetZenithCoachingTeamMeetingWorkbenchResponse\x12W\n" +
+	"\n" +
+	"workspaces\x18\x01 \x03(\v27.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItemR\n" +
+	"workspaces\x12W\n" +
+	"(individual_surveillance_blocked_enforced\x18\x02 \x01(\bR%individualSurveillanceBlockedEnforced\x12P\n" +
+	"%minimum_cohort_and_credential_summary\x18\x03 \x01(\tR!minimumCohortAndCredentialSummary\"\x8b\x03\n" +
+	"*SaveZenithCoachingTeamMeetingHealthRequest\x12%\n" +
+	"\x0eworkspace_code\x18\x01 \x01(\tR\rworkspaceCode\x12;\n" +
+	"\x1acoach_credential_and_scope\x18\x02 \x01(\tR\x17coachCredentialAndScope\x12K\n" +
+	"\"meeting_load_fragmentation_insight\x18\x03 \x01(\tR\x1fmeetingLoadFragmentationInsight\x12=\n" +
+	"\x1bteam_cohort_privacy_summary\x18\x04 \x01(\tR\x18teamCohortPrivacySummary\x12B\n" +
+	"\x1easync_or_meeting_free_proposal\x18\x05 \x01(\tR\x1aasyncOrMeetingFreeProposal\x12)\n" +
+	"\x10governance_state\x18\x06 \x01(\tR\x0fgovernanceState\"\x84\x01\n" +
+	"+SaveZenithCoachingTeamMeetingHealthResponse\x12U\n" +
+	"\tworkspace\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItemR\tworkspace\"\xc6\x01\n" +
+	".ProposeZenithMeetingFreeOrOracleHandoffRequest\x12%\n" +
+	"\x0eworkspace_code\x18\x01 \x01(\tR\rworkspaceCode\x12B\n" +
+	"\x1easync_or_meeting_free_proposal\x18\x02 \x01(\tR\x1aasyncOrMeetingFreeProposal\x12)\n" +
+	"\x10governance_state\x18\x03 \x01(\tR\x0fgovernanceState\"\x88\x01\n" +
+	"/ProposeZenithMeetingFreeOrOracleHandoffResponse\x12U\n" +
+	"\tworkspace\x18\x01 \x01(\v27.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItemR\tworkspace\"\x9f\x04\n" +
+	"!ZenithSensoryDesktopWorkspaceItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fsensory_code\x18\x03 \x01(\tR\vsensoryCode\x123\n" +
+	"\x16profile_name_and_needs\x18\x04 \x01(\tR\x13profileNameAndNeeds\x12P\n" +
+	"%vendor_capability_and_manual_fallback\x18\x05 \x01(\tR!vendorCapabilityAndManualFallback\x12>\n" +
+	"\x1bprotected_safety_exclusions\x18\x06 \x01(\tR\x19protectedSafetyExclusions\x12G\n" +
+	" desktop_companion_telemetry_mode\x18\a \x01(\tR\x1ddesktopCompanionTelemetryMode\x12'\n" +
+	"\x0fworkspace_state\x18\b \x01(\tR\x0eworkspaceState\x12O\n" +
+	"$keystroke_screenshot_capture_blocked\x18\t \x01(\bR!keystrokeScreenshotCaptureBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetZenithSensoryDesktopWorkbenchRequest\"\xc2\x02\n" +
+	"(GetZenithSensoryDesktopWorkbenchResponse\x12U\n" +
+	"\n" +
+	"workspaces\x18\x01 \x03(\v25.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItemR\n" +
+	"workspaces\x12`\n" +
+	"-keystroke_screenshot_capture_blocked_enforced\x18\x02 \x01(\bR)keystrokeScreenshotCaptureBlockedEnforced\x12]\n" +
+	",safety_exclusion_and_manual_fallback_summary\x18\x03 \x01(\tR'safetyExclusionAndManualFallbackSummary\"\x86\x03\n" +
+	"(SaveZenithSensoryDesktopWorkspaceRequest\x12!\n" +
+	"\fsensory_code\x18\x01 \x01(\tR\vsensoryCode\x123\n" +
+	"\x16profile_name_and_needs\x18\x02 \x01(\tR\x13profileNameAndNeeds\x12P\n" +
+	"%vendor_capability_and_manual_fallback\x18\x03 \x01(\tR!vendorCapabilityAndManualFallback\x12>\n" +
+	"\x1bprotected_safety_exclusions\x18\x04 \x01(\tR\x19protectedSafetyExclusions\x12G\n" +
+	" desktop_companion_telemetry_mode\x18\x05 \x01(\tR\x1ddesktopCompanionTelemetryMode\x12'\n" +
+	"\x0fworkspace_state\x18\x06 \x01(\tR\x0eworkspaceState\"\x80\x01\n" +
+	")SaveZenithSensoryDesktopWorkspaceResponse\x12S\n" +
+	"\tworkspace\x18\x01 \x01(\v25.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItemR\tworkspace\"\xca\x01\n" +
+	"*ArmOrFallbackZenithSensoryWorkspaceRequest\x12!\n" +
+	"\fsensory_code\x18\x01 \x01(\tR\vsensoryCode\x12'\n" +
+	"\x0fworkspace_state\x18\x02 \x01(\tR\x0eworkspaceState\x12P\n" +
+	"%vendor_capability_and_manual_fallback\x18\x03 \x01(\tR!vendorCapabilityAndManualFallback\"\x82\x01\n" +
+	"+ArmOrFallbackZenithSensoryWorkspaceResponse\x12S\n" +
+	"\tworkspace\x18\x01 \x01(\v25.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItemR\tworkspace2\xa4U\n" +
 	"\rZenithService\x12j\n" +
 	"\x0fLogFocusSession\x12*.sttattus.zenith.v1.LogFocusSessionRequest\x1a+.sttattus.zenith.v1.LogFocusSessionResponse\x12g\n" +
 	"\x0eGetZenithStats\x12).sttattus.zenith.v1.GetZenithStatsRequest\x1a*.sttattus.zenith.v1.GetZenithStatsResponse\x12s\n" +
@@ -7358,7 +12666,40 @@ const file_sttattus_zenith_v1_zenith_proto_rawDesc = "" +
 	"\vListLounges\x12&.sttattus.zenith.v1.ListLoungesRequest\x1a'.sttattus.zenith.v1.ListLoungesResponse\x12v\n" +
 	"\x13CreateLoungeBooking\x12..sttattus.zenith.v1.CreateLoungeBookingRequest\x1a/.sttattus.zenith.v1.CreateLoungeBookingResponse\x12y\n" +
 	"\x14ListMyLoungeBookings\x12/.sttattus.zenith.v1.ListMyLoungeBookingsRequest\x1a0.sttattus.zenith.v1.ListMyLoungeBookingsResponse\x12v\n" +
-	"\x13CancelLoungeBooking\x12..sttattus.zenith.v1.CancelLoungeBookingRequest\x1a/.sttattus.zenith.v1.CancelLoungeBookingResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
+	"\x13CancelLoungeBooking\x12..sttattus.zenith.v1.CancelLoungeBookingRequest\x1a/.sttattus.zenith.v1.CancelLoungeBookingResponse\x12\x9a\x01\n" +
+	"\x1fGetZenithFocusFirewallWorkbench\x12:.sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchRequest\x1a;.sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse\x12\x97\x01\n" +
+	"\x1eSaveZenithFocusFirewallSession\x129.sttattus.zenith.v1.SaveZenithFocusFirewallSessionRequest\x1a:.sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse\x12\xbb\x01\n" +
+	"*TriggerZenithFocusFirewallBypassOrComplete\x12E.sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteRequest\x1aF.sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse\x12\xaf\x01\n" +
+	"&GetZenithAdaptiveDayArchitectWorkbench\x12A.sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchRequest\x1aB.sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse\x12\xa3\x01\n" +
+	"\"SaveZenithAdaptiveDayArchitectPlan\x12=.sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanRequest\x1a>.sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse\x12\x9d\x01\n" +
+	" AcceptOrReplanZenithDayArchitect\x12;.sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectRequest\x1a<.sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse\x12\xa3\x01\n" +
+	"\"GetZenithIntentionOutcomeWorkbench\x12=.sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchRequest\x1a>.sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse\x12\xa3\x01\n" +
+	"\"SaveZenithIntentionOutcomeContract\x12=.sttattus.zenith.v1.SaveZenithIntentionOutcomeContractRequest\x1a>.sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse\x12\xa3\x01\n" +
+	"\"CompleteZenithIntentionOutcomeLoop\x12=.sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopRequest\x1a>.sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse\x12\xa3\x01\n" +
+	"\"GetZenithAttentionNOf1LabWorkbench\x12=.sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchRequest\x1a>.sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse\x12\xa0\x01\n" +
+	"!SaveZenithAttentionNOf1Experiment\x12<.sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentRequest\x1a=.sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse\x12\xac\x01\n" +
+	"%EvaluateZenithAttentionNOf1Experiment\x12@.sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentRequest\x1aA.sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse\x12\xb5\x01\n" +
+	"(GetZenithRecoveryProtocolStudioWorkbench\x12C.sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchRequest\x1aD.sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse\x12\x94\x01\n" +
+	"\x1dSaveZenithRecoveryProtocolRun\x128.sttattus.zenith.v1.SaveZenithRecoveryProtocolRunRequest\x1a9.sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse\x12\xaf\x01\n" +
+	"&RecordZenithRecoveryCheckOrAdverseFlag\x12A.sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagRequest\x1aB.sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse\x12\xb2\x01\n" +
+	"'GetZenithCommunicationBoundaryWorkbench\x12B.sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchRequest\x1aC.sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse\x12\xa6\x01\n" +
+	"#SaveZenithCommunicationBoundaryRule\x12>.sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleRequest\x1a?.sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse\x12\xac\x01\n" +
+	"%ApproveOrReleaseZenithBoundaryCatchup\x12@.sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupRequest\x1aA.sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse\x12\xa9\x01\n" +
+	"$GetZenithCognitiveReadinessWorkbench\x12?.sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchRequest\x1a@.sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse\x12\xa6\x01\n" +
+	"#SaveZenithCognitiveReadinessSession\x12>.sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionRequest\x1a?.sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse\x12\xa9\x01\n" +
+	"$FlagOrValidateZenithCognitiveSession\x12?.sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionRequest\x1a@.sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse\x12\xaf\x01\n" +
+	"&GetZenithPrivatePatternMemoryWorkbench\x12A.sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchRequest\x1aB.sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse\x12\x97\x01\n" +
+	"\x1eSaveZenithPrivatePatternMemory\x129.sttattus.zenith.v1.SaveZenithPrivatePatternMemoryRequest\x1a:.sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse\x12\xaf\x01\n" +
+	"&EditOrDeleteZenithPrivatePatternMemory\x12A.sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryRequest\x1aB.sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse\x12\xa6\x01\n" +
+	"#GetZenithTravelPerformanceWorkbench\x12>.sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchRequest\x1a?.sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse\x12\xa6\x01\n" +
+	"#SaveZenithTravelPerformanceProtocol\x12>.sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolRequest\x1a?.sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse\x12\x91\x01\n" +
+	"\x1cReplanZenithTravelMissedStep\x127.sttattus.zenith.v1.ReplanZenithTravelMissedStepRequest\x1a8.sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse\x12\xac\x01\n" +
+	"%GetZenithCoachingTeamMeetingWorkbench\x12@.sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchRequest\x1aA.sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse\x12\xa6\x01\n" +
+	"#SaveZenithCoachingTeamMeetingHealth\x12>.sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthRequest\x1a?.sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse\x12\xb2\x01\n" +
+	"'ProposeZenithMeetingFreeOrOracleHandoff\x12B.sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffRequest\x1aC.sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse\x12\x9d\x01\n" +
+	" GetZenithSensoryDesktopWorkbench\x12;.sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchRequest\x1a<.sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse\x12\xa0\x01\n" +
+	"!SaveZenithSensoryDesktopWorkspace\x12<.sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceRequest\x1a=.sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse\x12\xa6\x01\n" +
+	"#ArmOrFallbackZenithSensoryWorkspace\x12>.sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceRequest\x1a?.sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/zenith/v1;zenithv1b\x06proto3"
 
 var (
 	file_sttattus_zenith_v1_zenith_proto_rawDescOnce sync.Once
@@ -7372,134 +12713,211 @@ func file_sttattus_zenith_v1_zenith_proto_rawDescGZIP() []byte {
 	return file_sttattus_zenith_v1_zenith_proto_rawDescData
 }
 
-var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 122)
+var file_sttattus_zenith_v1_zenith_proto_msgTypes = make([]protoimpl.MessageInfo, 199)
 var file_sttattus_zenith_v1_zenith_proto_goTypes = []any{
-	(*Session)(nil),                           // 0: sttattus.zenith.v1.Session
-	(*ZenithStats)(nil),                       // 1: sttattus.zenith.v1.ZenithStats
-	(*LogFocusSessionRequest)(nil),            // 2: sttattus.zenith.v1.LogFocusSessionRequest
-	(*LogFocusSessionResponse)(nil),           // 3: sttattus.zenith.v1.LogFocusSessionResponse
-	(*GetZenithStatsRequest)(nil),             // 4: sttattus.zenith.v1.GetZenithStatsRequest
-	(*GetZenithStatsResponse)(nil),            // 5: sttattus.zenith.v1.GetZenithStatsResponse
-	(*ListRecentSessionsRequest)(nil),         // 6: sttattus.zenith.v1.ListRecentSessionsRequest
-	(*ListRecentSessionsResponse)(nil),        // 7: sttattus.zenith.v1.ListRecentSessionsResponse
-	(*LibraryItem)(nil),                       // 8: sttattus.zenith.v1.LibraryItem
-	(*ListLibraryItemsRequest)(nil),           // 9: sttattus.zenith.v1.ListLibraryItemsRequest
-	(*ListLibraryItemsResponse)(nil),          // 10: sttattus.zenith.v1.ListLibraryItemsResponse
-	(*BlockRecommendation)(nil),               // 11: sttattus.zenith.v1.BlockRecommendation
-	(*RecommendBlockRequest)(nil),             // 12: sttattus.zenith.v1.RecommendBlockRequest
-	(*RecommendBlockResponse)(nil),            // 13: sttattus.zenith.v1.RecommendBlockResponse
-	(*CalendarConnection)(nil),                // 14: sttattus.zenith.v1.CalendarConnection
-	(*CalendarEvent)(nil),                     // 15: sttattus.zenith.v1.CalendarEvent
-	(*ListMyCalendarConnectionsRequest)(nil),  // 16: sttattus.zenith.v1.ListMyCalendarConnectionsRequest
-	(*ListMyCalendarConnectionsResponse)(nil), // 17: sttattus.zenith.v1.ListMyCalendarConnectionsResponse
-	(*ListMyCalendarEventsRequest)(nil),       // 18: sttattus.zenith.v1.ListMyCalendarEventsRequest
-	(*ListMyCalendarEventsResponse)(nil),      // 19: sttattus.zenith.v1.ListMyCalendarEventsResponse
-	(*CognitiveLoad)(nil),                     // 20: sttattus.zenith.v1.CognitiveLoad
-	(*GetTodayLoadRequest)(nil),               // 21: sttattus.zenith.v1.GetTodayLoadRequest
-	(*GetTodayLoadResponse)(nil),              // 22: sttattus.zenith.v1.GetTodayLoadResponse
-	(*BlockTemplate)(nil),                     // 23: sttattus.zenith.v1.BlockTemplate
-	(*ListBlockTemplatesRequest)(nil),         // 24: sttattus.zenith.v1.ListBlockTemplatesRequest
-	(*ListBlockTemplatesResponse)(nil),        // 25: sttattus.zenith.v1.ListBlockTemplatesResponse
-	(*Programme)(nil),                         // 26: sttattus.zenith.v1.Programme
-	(*ProgrammeWeek)(nil),                     // 27: sttattus.zenith.v1.ProgrammeWeek
-	(*ListProgrammesRequest)(nil),             // 28: sttattus.zenith.v1.ListProgrammesRequest
-	(*ListProgrammesResponse)(nil),            // 29: sttattus.zenith.v1.ListProgrammesResponse
-	(*GetProgrammeRequest)(nil),               // 30: sttattus.zenith.v1.GetProgrammeRequest
-	(*GetProgrammeResponse)(nil),              // 31: sttattus.zenith.v1.GetProgrammeResponse
-	(*EnrollProgrammeRequest)(nil),            // 32: sttattus.zenith.v1.EnrollProgrammeRequest
-	(*EnrollProgrammeResponse)(nil),           // 33: sttattus.zenith.v1.EnrollProgrammeResponse
-	(*ListMyProgrammesRequest)(nil),           // 34: sttattus.zenith.v1.ListMyProgrammesRequest
-	(*ListMyProgrammesResponse)(nil),          // 35: sttattus.zenith.v1.ListMyProgrammesResponse
-	(*AdvanceProgrammeWeekRequest)(nil),       // 36: sttattus.zenith.v1.AdvanceProgrammeWeekRequest
-	(*AdvanceProgrammeWeekResponse)(nil),      // 37: sttattus.zenith.v1.AdvanceProgrammeWeekResponse
-	(*JournalEntry)(nil),                      // 38: sttattus.zenith.v1.JournalEntry
-	(*AddJournalEntryRequest)(nil),            // 39: sttattus.zenith.v1.AddJournalEntryRequest
-	(*AddJournalEntryResponse)(nil),           // 40: sttattus.zenith.v1.AddJournalEntryResponse
-	(*ListMyJournalEntriesRequest)(nil),       // 41: sttattus.zenith.v1.ListMyJournalEntriesRequest
-	(*ListMyJournalEntriesResponse)(nil),      // 42: sttattus.zenith.v1.ListMyJournalEntriesResponse
-	(*HourBucket)(nil),                        // 43: sttattus.zenith.v1.HourBucket
-	(*DayBucket)(nil),                         // 44: sttattus.zenith.v1.DayBucket
-	(*GetFocusHistoryRequest)(nil),            // 45: sttattus.zenith.v1.GetFocusHistoryRequest
-	(*GetFocusHistoryResponse)(nil),           // 46: sttattus.zenith.v1.GetFocusHistoryResponse
-	(*SimulateFortitudeRequest)(nil),          // 47: sttattus.zenith.v1.SimulateFortitudeRequest
-	(*SimulateFortitudeResponse)(nil),         // 48: sttattus.zenith.v1.SimulateFortitudeResponse
-	(*AudioEnvironment)(nil),                  // 49: sttattus.zenith.v1.AudioEnvironment
-	(*ListAudioEnvironmentsRequest)(nil),      // 50: sttattus.zenith.v1.ListAudioEnvironmentsRequest
-	(*ListAudioEnvironmentsResponse)(nil),     // 51: sttattus.zenith.v1.ListAudioEnvironmentsResponse
-	(*CognitiveLoadSummary)(nil),              // 52: sttattus.zenith.v1.CognitiveLoadSummary
-	(*GetCognitiveLoadRequest)(nil),           // 53: sttattus.zenith.v1.GetCognitiveLoadRequest
-	(*GetCognitiveLoadResponse)(nil),          // 54: sttattus.zenith.v1.GetCognitiveLoadResponse
-	(*StressPrompt)(nil),                      // 55: sttattus.zenith.v1.StressPrompt
-	(*AcknowledgeStressPromptRequest)(nil),    // 56: sttattus.zenith.v1.AcknowledgeStressPromptRequest
-	(*AcknowledgeStressPromptResponse)(nil),   // 57: sttattus.zenith.v1.AcknowledgeStressPromptResponse
-	(*TodaySummary)(nil),                      // 58: sttattus.zenith.v1.TodaySummary
-	(*GetTodaySummaryRequest)(nil),            // 59: sttattus.zenith.v1.GetTodaySummaryRequest
-	(*GetTodaySummaryResponse)(nil),           // 60: sttattus.zenith.v1.GetTodaySummaryResponse
-	(*ConciergeThread)(nil),                   // 61: sttattus.zenith.v1.ConciergeThread
-	(*ConciergeMessage)(nil),                  // 62: sttattus.zenith.v1.ConciergeMessage
-	(*StartConciergeThreadRequest)(nil),       // 63: sttattus.zenith.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),      // 64: sttattus.zenith.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),     // 65: sttattus.zenith.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),    // 66: sttattus.zenith.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),         // 67: sttattus.zenith.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),        // 68: sttattus.zenith.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),       // 69: sttattus.zenith.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),      // 70: sttattus.zenith.v1.PostConciergeMessageResponse
-	(*AnthologyArticle)(nil),                  // 71: sttattus.zenith.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),      // 72: sttattus.zenith.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),     // 73: sttattus.zenith.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),        // 74: sttattus.zenith.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),       // 75: sttattus.zenith.v1.GetAnthologyArticleResponse
-	(*Teacher)(nil),                           // 76: sttattus.zenith.v1.Teacher
-	(*ListTeachersRequest)(nil),               // 77: sttattus.zenith.v1.ListTeachersRequest
-	(*ListTeachersResponse)(nil),              // 78: sttattus.zenith.v1.ListTeachersResponse
-	(*SovereignAudio)(nil),                    // 79: sttattus.zenith.v1.SovereignAudio
-	(*ListSovereignAudioRequest)(nil),         // 80: sttattus.zenith.v1.ListSovereignAudioRequest
-	(*ListSovereignAudioResponse)(nil),        // 81: sttattus.zenith.v1.ListSovereignAudioResponse
-	(*GetSovereignAudioRequest)(nil),          // 82: sttattus.zenith.v1.GetSovereignAudioRequest
-	(*GetSovereignAudioResponse)(nil),         // 83: sttattus.zenith.v1.GetSovereignAudioResponse
-	(*JetLagDay)(nil),                         // 84: sttattus.zenith.v1.JetLagDay
-	(*GetJetLagProtocolRequest)(nil),          // 85: sttattus.zenith.v1.GetJetLagProtocolRequest
-	(*GetJetLagProtocolResponse)(nil),         // 86: sttattus.zenith.v1.GetJetLagProtocolResponse
-	(*CreateProfileShareRequest)(nil),         // 87: sttattus.zenith.v1.CreateProfileShareRequest
-	(*CreateProfileShareResponse)(nil),        // 88: sttattus.zenith.v1.CreateProfileShareResponse
-	(*ProfileShareToken)(nil),                 // 89: sttattus.zenith.v1.ProfileShareToken
-	(*ListMyProfileSharesRequest)(nil),        // 90: sttattus.zenith.v1.ListMyProfileSharesRequest
-	(*ListMyProfileSharesResponse)(nil),       // 91: sttattus.zenith.v1.ListMyProfileSharesResponse
-	(*RevokeProfileShareRequest)(nil),         // 92: sttattus.zenith.v1.RevokeProfileShareRequest
-	(*RevokeProfileShareResponse)(nil),        // 93: sttattus.zenith.v1.RevokeProfileShareResponse
-	(*JournalTheme)(nil),                      // 94: sttattus.zenith.v1.JournalTheme
-	(*GetJournalInsightsRequest)(nil),         // 95: sttattus.zenith.v1.GetJournalInsightsRequest
-	(*GetJournalInsightsResponse)(nil),        // 96: sttattus.zenith.v1.GetJournalInsightsResponse
-	(*CognitiveTest)(nil),                     // 97: sttattus.zenith.v1.CognitiveTest
-	(*SubmitCognitiveTestRequest)(nil),        // 98: sttattus.zenith.v1.SubmitCognitiveTestRequest
-	(*SubmitCognitiveTestResponse)(nil),       // 99: sttattus.zenith.v1.SubmitCognitiveTestResponse
-	(*ListMyCognitiveTestsRequest)(nil),       // 100: sttattus.zenith.v1.ListMyCognitiveTestsRequest
-	(*ListMyCognitiveTestsResponse)(nil),      // 101: sttattus.zenith.v1.ListMyCognitiveTestsResponse
-	(*GetCognitiveTestStatusRequest)(nil),     // 102: sttattus.zenith.v1.GetCognitiveTestStatusRequest
-	(*GetCognitiveTestStatusResponse)(nil),    // 103: sttattus.zenith.v1.GetCognitiveTestStatusResponse
-	(*Ritual)(nil),                            // 104: sttattus.zenith.v1.Ritual
-	(*ListRitualsRequest)(nil),                // 105: sttattus.zenith.v1.ListRitualsRequest
-	(*ListRitualsResponse)(nil),               // 106: sttattus.zenith.v1.ListRitualsResponse
-	(*YearInZenithRecap)(nil),                 // 107: sttattus.zenith.v1.YearInZenithRecap
-	(*GetYearInZenithRecapRequest)(nil),       // 108: sttattus.zenith.v1.GetYearInZenithRecapRequest
-	(*GetYearInZenithRecapResponse)(nil),      // 109: sttattus.zenith.v1.GetYearInZenithRecapResponse
-	(*GenerateZenithAlmanacRequest)(nil),      // 110: sttattus.zenith.v1.GenerateZenithAlmanacRequest
-	(*GenerateZenithAlmanacResponse)(nil),     // 111: sttattus.zenith.v1.GenerateZenithAlmanacResponse
-	(*Lounge)(nil),                            // 112: sttattus.zenith.v1.Lounge
-	(*LoungeBooking)(nil),                     // 113: sttattus.zenith.v1.LoungeBooking
-	(*ListLoungesRequest)(nil),                // 114: sttattus.zenith.v1.ListLoungesRequest
-	(*ListLoungesResponse)(nil),               // 115: sttattus.zenith.v1.ListLoungesResponse
-	(*CreateLoungeBookingRequest)(nil),        // 116: sttattus.zenith.v1.CreateLoungeBookingRequest
-	(*CreateLoungeBookingResponse)(nil),       // 117: sttattus.zenith.v1.CreateLoungeBookingResponse
-	(*ListMyLoungeBookingsRequest)(nil),       // 118: sttattus.zenith.v1.ListMyLoungeBookingsRequest
-	(*ListMyLoungeBookingsResponse)(nil),      // 119: sttattus.zenith.v1.ListMyLoungeBookingsResponse
-	(*CancelLoungeBookingRequest)(nil),        // 120: sttattus.zenith.v1.CancelLoungeBookingRequest
-	(*CancelLoungeBookingResponse)(nil),       // 121: sttattus.zenith.v1.CancelLoungeBookingResponse
-	(*timestamppb.Timestamp)(nil),             // 122: google.protobuf.Timestamp
+	(*Session)(nil),                                            // 0: sttattus.zenith.v1.Session
+	(*ZenithStats)(nil),                                        // 1: sttattus.zenith.v1.ZenithStats
+	(*LogFocusSessionRequest)(nil),                             // 2: sttattus.zenith.v1.LogFocusSessionRequest
+	(*LogFocusSessionResponse)(nil),                            // 3: sttattus.zenith.v1.LogFocusSessionResponse
+	(*GetZenithStatsRequest)(nil),                              // 4: sttattus.zenith.v1.GetZenithStatsRequest
+	(*GetZenithStatsResponse)(nil),                             // 5: sttattus.zenith.v1.GetZenithStatsResponse
+	(*ListRecentSessionsRequest)(nil),                          // 6: sttattus.zenith.v1.ListRecentSessionsRequest
+	(*ListRecentSessionsResponse)(nil),                         // 7: sttattus.zenith.v1.ListRecentSessionsResponse
+	(*LibraryItem)(nil),                                        // 8: sttattus.zenith.v1.LibraryItem
+	(*ListLibraryItemsRequest)(nil),                            // 9: sttattus.zenith.v1.ListLibraryItemsRequest
+	(*ListLibraryItemsResponse)(nil),                           // 10: sttattus.zenith.v1.ListLibraryItemsResponse
+	(*BlockRecommendation)(nil),                                // 11: sttattus.zenith.v1.BlockRecommendation
+	(*RecommendBlockRequest)(nil),                              // 12: sttattus.zenith.v1.RecommendBlockRequest
+	(*RecommendBlockResponse)(nil),                             // 13: sttattus.zenith.v1.RecommendBlockResponse
+	(*CalendarConnection)(nil),                                 // 14: sttattus.zenith.v1.CalendarConnection
+	(*CalendarEvent)(nil),                                      // 15: sttattus.zenith.v1.CalendarEvent
+	(*ListMyCalendarConnectionsRequest)(nil),                   // 16: sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	(*ListMyCalendarConnectionsResponse)(nil),                  // 17: sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	(*ListMyCalendarEventsRequest)(nil),                        // 18: sttattus.zenith.v1.ListMyCalendarEventsRequest
+	(*ListMyCalendarEventsResponse)(nil),                       // 19: sttattus.zenith.v1.ListMyCalendarEventsResponse
+	(*CognitiveLoad)(nil),                                      // 20: sttattus.zenith.v1.CognitiveLoad
+	(*GetTodayLoadRequest)(nil),                                // 21: sttattus.zenith.v1.GetTodayLoadRequest
+	(*GetTodayLoadResponse)(nil),                               // 22: sttattus.zenith.v1.GetTodayLoadResponse
+	(*BlockTemplate)(nil),                                      // 23: sttattus.zenith.v1.BlockTemplate
+	(*ListBlockTemplatesRequest)(nil),                          // 24: sttattus.zenith.v1.ListBlockTemplatesRequest
+	(*ListBlockTemplatesResponse)(nil),                         // 25: sttattus.zenith.v1.ListBlockTemplatesResponse
+	(*Programme)(nil),                                          // 26: sttattus.zenith.v1.Programme
+	(*ProgrammeWeek)(nil),                                      // 27: sttattus.zenith.v1.ProgrammeWeek
+	(*ListProgrammesRequest)(nil),                              // 28: sttattus.zenith.v1.ListProgrammesRequest
+	(*ListProgrammesResponse)(nil),                             // 29: sttattus.zenith.v1.ListProgrammesResponse
+	(*GetProgrammeRequest)(nil),                                // 30: sttattus.zenith.v1.GetProgrammeRequest
+	(*GetProgrammeResponse)(nil),                               // 31: sttattus.zenith.v1.GetProgrammeResponse
+	(*EnrollProgrammeRequest)(nil),                             // 32: sttattus.zenith.v1.EnrollProgrammeRequest
+	(*EnrollProgrammeResponse)(nil),                            // 33: sttattus.zenith.v1.EnrollProgrammeResponse
+	(*ListMyProgrammesRequest)(nil),                            // 34: sttattus.zenith.v1.ListMyProgrammesRequest
+	(*ListMyProgrammesResponse)(nil),                           // 35: sttattus.zenith.v1.ListMyProgrammesResponse
+	(*AdvanceProgrammeWeekRequest)(nil),                        // 36: sttattus.zenith.v1.AdvanceProgrammeWeekRequest
+	(*AdvanceProgrammeWeekResponse)(nil),                       // 37: sttattus.zenith.v1.AdvanceProgrammeWeekResponse
+	(*JournalEntry)(nil),                                       // 38: sttattus.zenith.v1.JournalEntry
+	(*AddJournalEntryRequest)(nil),                             // 39: sttattus.zenith.v1.AddJournalEntryRequest
+	(*AddJournalEntryResponse)(nil),                            // 40: sttattus.zenith.v1.AddJournalEntryResponse
+	(*ListMyJournalEntriesRequest)(nil),                        // 41: sttattus.zenith.v1.ListMyJournalEntriesRequest
+	(*ListMyJournalEntriesResponse)(nil),                       // 42: sttattus.zenith.v1.ListMyJournalEntriesResponse
+	(*HourBucket)(nil),                                         // 43: sttattus.zenith.v1.HourBucket
+	(*DayBucket)(nil),                                          // 44: sttattus.zenith.v1.DayBucket
+	(*GetFocusHistoryRequest)(nil),                             // 45: sttattus.zenith.v1.GetFocusHistoryRequest
+	(*GetFocusHistoryResponse)(nil),                            // 46: sttattus.zenith.v1.GetFocusHistoryResponse
+	(*SimulateFortitudeRequest)(nil),                           // 47: sttattus.zenith.v1.SimulateFortitudeRequest
+	(*SimulateFortitudeResponse)(nil),                          // 48: sttattus.zenith.v1.SimulateFortitudeResponse
+	(*AudioEnvironment)(nil),                                   // 49: sttattus.zenith.v1.AudioEnvironment
+	(*ListAudioEnvironmentsRequest)(nil),                       // 50: sttattus.zenith.v1.ListAudioEnvironmentsRequest
+	(*ListAudioEnvironmentsResponse)(nil),                      // 51: sttattus.zenith.v1.ListAudioEnvironmentsResponse
+	(*CognitiveLoadSummary)(nil),                               // 52: sttattus.zenith.v1.CognitiveLoadSummary
+	(*GetCognitiveLoadRequest)(nil),                            // 53: sttattus.zenith.v1.GetCognitiveLoadRequest
+	(*GetCognitiveLoadResponse)(nil),                           // 54: sttattus.zenith.v1.GetCognitiveLoadResponse
+	(*StressPrompt)(nil),                                       // 55: sttattus.zenith.v1.StressPrompt
+	(*AcknowledgeStressPromptRequest)(nil),                     // 56: sttattus.zenith.v1.AcknowledgeStressPromptRequest
+	(*AcknowledgeStressPromptResponse)(nil),                    // 57: sttattus.zenith.v1.AcknowledgeStressPromptResponse
+	(*TodaySummary)(nil),                                       // 58: sttattus.zenith.v1.TodaySummary
+	(*GetTodaySummaryRequest)(nil),                             // 59: sttattus.zenith.v1.GetTodaySummaryRequest
+	(*GetTodaySummaryResponse)(nil),                            // 60: sttattus.zenith.v1.GetTodaySummaryResponse
+	(*ConciergeThread)(nil),                                    // 61: sttattus.zenith.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                                   // 62: sttattus.zenith.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),                        // 63: sttattus.zenith.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                       // 64: sttattus.zenith.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                      // 65: sttattus.zenith.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),                     // 66: sttattus.zenith.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                          // 67: sttattus.zenith.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                         // 68: sttattus.zenith.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                        // 69: sttattus.zenith.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                       // 70: sttattus.zenith.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                                   // 71: sttattus.zenith.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                       // 72: sttattus.zenith.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                      // 73: sttattus.zenith.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                         // 74: sttattus.zenith.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                        // 75: sttattus.zenith.v1.GetAnthologyArticleResponse
+	(*Teacher)(nil),                                            // 76: sttattus.zenith.v1.Teacher
+	(*ListTeachersRequest)(nil),                                // 77: sttattus.zenith.v1.ListTeachersRequest
+	(*ListTeachersResponse)(nil),                               // 78: sttattus.zenith.v1.ListTeachersResponse
+	(*SovereignAudio)(nil),                                     // 79: sttattus.zenith.v1.SovereignAudio
+	(*ListSovereignAudioRequest)(nil),                          // 80: sttattus.zenith.v1.ListSovereignAudioRequest
+	(*ListSovereignAudioResponse)(nil),                         // 81: sttattus.zenith.v1.ListSovereignAudioResponse
+	(*GetSovereignAudioRequest)(nil),                           // 82: sttattus.zenith.v1.GetSovereignAudioRequest
+	(*GetSovereignAudioResponse)(nil),                          // 83: sttattus.zenith.v1.GetSovereignAudioResponse
+	(*JetLagDay)(nil),                                          // 84: sttattus.zenith.v1.JetLagDay
+	(*GetJetLagProtocolRequest)(nil),                           // 85: sttattus.zenith.v1.GetJetLagProtocolRequest
+	(*GetJetLagProtocolResponse)(nil),                          // 86: sttattus.zenith.v1.GetJetLagProtocolResponse
+	(*CreateProfileShareRequest)(nil),                          // 87: sttattus.zenith.v1.CreateProfileShareRequest
+	(*CreateProfileShareResponse)(nil),                         // 88: sttattus.zenith.v1.CreateProfileShareResponse
+	(*ProfileShareToken)(nil),                                  // 89: sttattus.zenith.v1.ProfileShareToken
+	(*ListMyProfileSharesRequest)(nil),                         // 90: sttattus.zenith.v1.ListMyProfileSharesRequest
+	(*ListMyProfileSharesResponse)(nil),                        // 91: sttattus.zenith.v1.ListMyProfileSharesResponse
+	(*RevokeProfileShareRequest)(nil),                          // 92: sttattus.zenith.v1.RevokeProfileShareRequest
+	(*RevokeProfileShareResponse)(nil),                         // 93: sttattus.zenith.v1.RevokeProfileShareResponse
+	(*JournalTheme)(nil),                                       // 94: sttattus.zenith.v1.JournalTheme
+	(*GetJournalInsightsRequest)(nil),                          // 95: sttattus.zenith.v1.GetJournalInsightsRequest
+	(*GetJournalInsightsResponse)(nil),                         // 96: sttattus.zenith.v1.GetJournalInsightsResponse
+	(*CognitiveTest)(nil),                                      // 97: sttattus.zenith.v1.CognitiveTest
+	(*SubmitCognitiveTestRequest)(nil),                         // 98: sttattus.zenith.v1.SubmitCognitiveTestRequest
+	(*SubmitCognitiveTestResponse)(nil),                        // 99: sttattus.zenith.v1.SubmitCognitiveTestResponse
+	(*ListMyCognitiveTestsRequest)(nil),                        // 100: sttattus.zenith.v1.ListMyCognitiveTestsRequest
+	(*ListMyCognitiveTestsResponse)(nil),                       // 101: sttattus.zenith.v1.ListMyCognitiveTestsResponse
+	(*GetCognitiveTestStatusRequest)(nil),                      // 102: sttattus.zenith.v1.GetCognitiveTestStatusRequest
+	(*GetCognitiveTestStatusResponse)(nil),                     // 103: sttattus.zenith.v1.GetCognitiveTestStatusResponse
+	(*Ritual)(nil),                                             // 104: sttattus.zenith.v1.Ritual
+	(*ListRitualsRequest)(nil),                                 // 105: sttattus.zenith.v1.ListRitualsRequest
+	(*ListRitualsResponse)(nil),                                // 106: sttattus.zenith.v1.ListRitualsResponse
+	(*YearInZenithRecap)(nil),                                  // 107: sttattus.zenith.v1.YearInZenithRecap
+	(*GetYearInZenithRecapRequest)(nil),                        // 108: sttattus.zenith.v1.GetYearInZenithRecapRequest
+	(*GetYearInZenithRecapResponse)(nil),                       // 109: sttattus.zenith.v1.GetYearInZenithRecapResponse
+	(*GenerateZenithAlmanacRequest)(nil),                       // 110: sttattus.zenith.v1.GenerateZenithAlmanacRequest
+	(*GenerateZenithAlmanacResponse)(nil),                      // 111: sttattus.zenith.v1.GenerateZenithAlmanacResponse
+	(*Lounge)(nil),                                             // 112: sttattus.zenith.v1.Lounge
+	(*LoungeBooking)(nil),                                      // 113: sttattus.zenith.v1.LoungeBooking
+	(*ListLoungesRequest)(nil),                                 // 114: sttattus.zenith.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),                                // 115: sttattus.zenith.v1.ListLoungesResponse
+	(*CreateLoungeBookingRequest)(nil),                         // 116: sttattus.zenith.v1.CreateLoungeBookingRequest
+	(*CreateLoungeBookingResponse)(nil),                        // 117: sttattus.zenith.v1.CreateLoungeBookingResponse
+	(*ListMyLoungeBookingsRequest)(nil),                        // 118: sttattus.zenith.v1.ListMyLoungeBookingsRequest
+	(*ListMyLoungeBookingsResponse)(nil),                       // 119: sttattus.zenith.v1.ListMyLoungeBookingsResponse
+	(*CancelLoungeBookingRequest)(nil),                         // 120: sttattus.zenith.v1.CancelLoungeBookingRequest
+	(*CancelLoungeBookingResponse)(nil),                        // 121: sttattus.zenith.v1.CancelLoungeBookingResponse
+	(*ZenithFocusFirewallSessionItem)(nil),                     // 122: sttattus.zenith.v1.ZenithFocusFirewallSessionItem
+	(*GetZenithFocusFirewallWorkbenchRequest)(nil),             // 123: sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchRequest
+	(*GetZenithFocusFirewallWorkbenchResponse)(nil),            // 124: sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse
+	(*SaveZenithFocusFirewallSessionRequest)(nil),              // 125: sttattus.zenith.v1.SaveZenithFocusFirewallSessionRequest
+	(*SaveZenithFocusFirewallSessionResponse)(nil),             // 126: sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse
+	(*TriggerZenithFocusFirewallBypassOrCompleteRequest)(nil),  // 127: sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteRequest
+	(*TriggerZenithFocusFirewallBypassOrCompleteResponse)(nil), // 128: sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse
+	(*ZenithAdaptiveDayArchitectPlanItem)(nil),                 // 129: sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem
+	(*GetZenithAdaptiveDayArchitectWorkbenchRequest)(nil),      // 130: sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchRequest
+	(*GetZenithAdaptiveDayArchitectWorkbenchResponse)(nil),     // 131: sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse
+	(*SaveZenithAdaptiveDayArchitectPlanRequest)(nil),          // 132: sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanRequest
+	(*SaveZenithAdaptiveDayArchitectPlanResponse)(nil),         // 133: sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse
+	(*AcceptOrReplanZenithDayArchitectRequest)(nil),            // 134: sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectRequest
+	(*AcceptOrReplanZenithDayArchitectResponse)(nil),           // 135: sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse
+	(*ZenithIntentionOutcomeContractItem)(nil),                 // 136: sttattus.zenith.v1.ZenithIntentionOutcomeContractItem
+	(*GetZenithIntentionOutcomeWorkbenchRequest)(nil),          // 137: sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchRequest
+	(*GetZenithIntentionOutcomeWorkbenchResponse)(nil),         // 138: sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse
+	(*SaveZenithIntentionOutcomeContractRequest)(nil),          // 139: sttattus.zenith.v1.SaveZenithIntentionOutcomeContractRequest
+	(*SaveZenithIntentionOutcomeContractResponse)(nil),         // 140: sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse
+	(*CompleteZenithIntentionOutcomeLoopRequest)(nil),          // 141: sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopRequest
+	(*CompleteZenithIntentionOutcomeLoopResponse)(nil),         // 142: sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse
+	(*ZenithAttentionNOf1ExperimentItem)(nil),                  // 143: sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem
+	(*GetZenithAttentionNOf1LabWorkbenchRequest)(nil),          // 144: sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchRequest
+	(*GetZenithAttentionNOf1LabWorkbenchResponse)(nil),         // 145: sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse
+	(*SaveZenithAttentionNOf1ExperimentRequest)(nil),           // 146: sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentRequest
+	(*SaveZenithAttentionNOf1ExperimentResponse)(nil),          // 147: sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse
+	(*EvaluateZenithAttentionNOf1ExperimentRequest)(nil),       // 148: sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentRequest
+	(*EvaluateZenithAttentionNOf1ExperimentResponse)(nil),      // 149: sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse
+	(*ZenithRecoveryProtocolRunItem)(nil),                      // 150: sttattus.zenith.v1.ZenithRecoveryProtocolRunItem
+	(*GetZenithRecoveryProtocolStudioWorkbenchRequest)(nil),    // 151: sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchRequest
+	(*GetZenithRecoveryProtocolStudioWorkbenchResponse)(nil),   // 152: sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse
+	(*SaveZenithRecoveryProtocolRunRequest)(nil),               // 153: sttattus.zenith.v1.SaveZenithRecoveryProtocolRunRequest
+	(*SaveZenithRecoveryProtocolRunResponse)(nil),              // 154: sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse
+	(*RecordZenithRecoveryCheckOrAdverseFlagRequest)(nil),      // 155: sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagRequest
+	(*RecordZenithRecoveryCheckOrAdverseFlagResponse)(nil),     // 156: sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse
+	(*ZenithCommunicationBoundaryRuleItem)(nil),                // 157: sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem
+	(*GetZenithCommunicationBoundaryWorkbenchRequest)(nil),     // 158: sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchRequest
+	(*GetZenithCommunicationBoundaryWorkbenchResponse)(nil),    // 159: sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse
+	(*SaveZenithCommunicationBoundaryRuleRequest)(nil),         // 160: sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleRequest
+	(*SaveZenithCommunicationBoundaryRuleResponse)(nil),        // 161: sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse
+	(*ApproveOrReleaseZenithBoundaryCatchupRequest)(nil),       // 162: sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupRequest
+	(*ApproveOrReleaseZenithBoundaryCatchupResponse)(nil),      // 163: sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse
+	(*ZenithCognitiveReadinessSessionItem)(nil),                // 164: sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem
+	(*GetZenithCognitiveReadinessWorkbenchRequest)(nil),        // 165: sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchRequest
+	(*GetZenithCognitiveReadinessWorkbenchResponse)(nil),       // 166: sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse
+	(*SaveZenithCognitiveReadinessSessionRequest)(nil),         // 167: sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionRequest
+	(*SaveZenithCognitiveReadinessSessionResponse)(nil),        // 168: sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse
+	(*FlagOrValidateZenithCognitiveSessionRequest)(nil),        // 169: sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionRequest
+	(*FlagOrValidateZenithCognitiveSessionResponse)(nil),       // 170: sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse
+	(*ZenithPrivatePatternMemoryItem)(nil),                     // 171: sttattus.zenith.v1.ZenithPrivatePatternMemoryItem
+	(*GetZenithPrivatePatternMemoryWorkbenchRequest)(nil),      // 172: sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchRequest
+	(*GetZenithPrivatePatternMemoryWorkbenchResponse)(nil),     // 173: sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse
+	(*SaveZenithPrivatePatternMemoryRequest)(nil),              // 174: sttattus.zenith.v1.SaveZenithPrivatePatternMemoryRequest
+	(*SaveZenithPrivatePatternMemoryResponse)(nil),             // 175: sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse
+	(*EditOrDeleteZenithPrivatePatternMemoryRequest)(nil),      // 176: sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryRequest
+	(*EditOrDeleteZenithPrivatePatternMemoryResponse)(nil),     // 177: sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse
+	(*ZenithTravelPerformanceProtocolItem)(nil),                // 178: sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem
+	(*GetZenithTravelPerformanceWorkbenchRequest)(nil),         // 179: sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchRequest
+	(*GetZenithTravelPerformanceWorkbenchResponse)(nil),        // 180: sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse
+	(*SaveZenithTravelPerformanceProtocolRequest)(nil),         // 181: sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolRequest
+	(*SaveZenithTravelPerformanceProtocolResponse)(nil),        // 182: sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse
+	(*ReplanZenithTravelMissedStepRequest)(nil),                // 183: sttattus.zenith.v1.ReplanZenithTravelMissedStepRequest
+	(*ReplanZenithTravelMissedStepResponse)(nil),               // 184: sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse
+	(*ZenithCoachingTeamMeetingHealthItem)(nil),                // 185: sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem
+	(*GetZenithCoachingTeamMeetingWorkbenchRequest)(nil),       // 186: sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchRequest
+	(*GetZenithCoachingTeamMeetingWorkbenchResponse)(nil),      // 187: sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse
+	(*SaveZenithCoachingTeamMeetingHealthRequest)(nil),         // 188: sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthRequest
+	(*SaveZenithCoachingTeamMeetingHealthResponse)(nil),        // 189: sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse
+	(*ProposeZenithMeetingFreeOrOracleHandoffRequest)(nil),     // 190: sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffRequest
+	(*ProposeZenithMeetingFreeOrOracleHandoffResponse)(nil),    // 191: sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse
+	(*ZenithSensoryDesktopWorkspaceItem)(nil),                  // 192: sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem
+	(*GetZenithSensoryDesktopWorkbenchRequest)(nil),            // 193: sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchRequest
+	(*GetZenithSensoryDesktopWorkbenchResponse)(nil),           // 194: sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse
+	(*SaveZenithSensoryDesktopWorkspaceRequest)(nil),           // 195: sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceRequest
+	(*SaveZenithSensoryDesktopWorkspaceResponse)(nil),          // 196: sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse
+	(*ArmOrFallbackZenithSensoryWorkspaceRequest)(nil),         // 197: sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceRequest
+	(*ArmOrFallbackZenithSensoryWorkspaceResponse)(nil),        // 198: sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponse
+	(*timestamppb.Timestamp)(nil),                              // 199: google.protobuf.Timestamp
 }
 var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
-	122, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
+	199, // 0: sttattus.zenith.v1.Session.started_at:type_name -> google.protobuf.Timestamp
 	0,   // 1: sttattus.zenith.v1.LogFocusSessionRequest.session:type_name -> sttattus.zenith.v1.Session
 	1,   // 2: sttattus.zenith.v1.LogFocusSessionResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
 	1,   // 3: sttattus.zenith.v1.GetZenithStatsResponse.stats:type_name -> sttattus.zenith.v1.ZenithStats
@@ -7547,103 +12965,202 @@ var file_sttattus_zenith_v1_zenith_proto_depIdxs = []int32{
 	112, // 45: sttattus.zenith.v1.ListLoungesResponse.lounges:type_name -> sttattus.zenith.v1.Lounge
 	113, // 46: sttattus.zenith.v1.CreateLoungeBookingResponse.booking:type_name -> sttattus.zenith.v1.LoungeBooking
 	113, // 47: sttattus.zenith.v1.ListMyLoungeBookingsResponse.bookings:type_name -> sttattus.zenith.v1.LoungeBooking
-	2,   // 48: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
-	4,   // 49: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
-	6,   // 50: sttattus.zenith.v1.ZenithService.ListRecentSessions:input_type -> sttattus.zenith.v1.ListRecentSessionsRequest
-	21,  // 51: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
-	16,  // 52: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:input_type -> sttattus.zenith.v1.ListMyCalendarConnectionsRequest
-	18,  // 53: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:input_type -> sttattus.zenith.v1.ListMyCalendarEventsRequest
-	12,  // 54: sttattus.zenith.v1.ZenithService.RecommendBlock:input_type -> sttattus.zenith.v1.RecommendBlockRequest
-	9,   // 55: sttattus.zenith.v1.ZenithService.ListLibraryItems:input_type -> sttattus.zenith.v1.ListLibraryItemsRequest
-	24,  // 56: sttattus.zenith.v1.ZenithService.ListBlockTemplates:input_type -> sttattus.zenith.v1.ListBlockTemplatesRequest
-	28,  // 57: sttattus.zenith.v1.ZenithService.ListProgrammes:input_type -> sttattus.zenith.v1.ListProgrammesRequest
-	30,  // 58: sttattus.zenith.v1.ZenithService.GetProgramme:input_type -> sttattus.zenith.v1.GetProgrammeRequest
-	32,  // 59: sttattus.zenith.v1.ZenithService.EnrollProgramme:input_type -> sttattus.zenith.v1.EnrollProgrammeRequest
-	34,  // 60: sttattus.zenith.v1.ZenithService.ListMyProgrammes:input_type -> sttattus.zenith.v1.ListMyProgrammesRequest
-	36,  // 61: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:input_type -> sttattus.zenith.v1.AdvanceProgrammeWeekRequest
-	39,  // 62: sttattus.zenith.v1.ZenithService.AddJournalEntry:input_type -> sttattus.zenith.v1.AddJournalEntryRequest
-	41,  // 63: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:input_type -> sttattus.zenith.v1.ListMyJournalEntriesRequest
-	45,  // 64: sttattus.zenith.v1.ZenithService.GetFocusHistory:input_type -> sttattus.zenith.v1.GetFocusHistoryRequest
-	47,  // 65: sttattus.zenith.v1.ZenithService.SimulateFortitude:input_type -> sttattus.zenith.v1.SimulateFortitudeRequest
-	50,  // 66: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:input_type -> sttattus.zenith.v1.ListAudioEnvironmentsRequest
-	53,  // 67: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:input_type -> sttattus.zenith.v1.GetCognitiveLoadRequest
-	59,  // 68: sttattus.zenith.v1.ZenithService.GetTodaySummary:input_type -> sttattus.zenith.v1.GetTodaySummaryRequest
-	56,  // 69: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:input_type -> sttattus.zenith.v1.AcknowledgeStressPromptRequest
-	63,  // 70: sttattus.zenith.v1.ZenithService.StartConciergeThread:input_type -> sttattus.zenith.v1.StartConciergeThreadRequest
-	65,  // 71: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:input_type -> sttattus.zenith.v1.ListMyConciergeThreadsRequest
-	67,  // 72: sttattus.zenith.v1.ZenithService.GetConciergeThread:input_type -> sttattus.zenith.v1.GetConciergeThreadRequest
-	69,  // 73: sttattus.zenith.v1.ZenithService.PostConciergeMessage:input_type -> sttattus.zenith.v1.PostConciergeMessageRequest
-	72,  // 74: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:input_type -> sttattus.zenith.v1.ListAnthologyArticlesRequest
-	74,  // 75: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:input_type -> sttattus.zenith.v1.GetAnthologyArticleRequest
-	77,  // 76: sttattus.zenith.v1.ZenithService.ListTeachers:input_type -> sttattus.zenith.v1.ListTeachersRequest
-	80,  // 77: sttattus.zenith.v1.ZenithService.ListSovereignAudio:input_type -> sttattus.zenith.v1.ListSovereignAudioRequest
-	82,  // 78: sttattus.zenith.v1.ZenithService.GetSovereignAudio:input_type -> sttattus.zenith.v1.GetSovereignAudioRequest
-	85,  // 79: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:input_type -> sttattus.zenith.v1.GetJetLagProtocolRequest
-	87,  // 80: sttattus.zenith.v1.ZenithService.CreateProfileShare:input_type -> sttattus.zenith.v1.CreateProfileShareRequest
-	90,  // 81: sttattus.zenith.v1.ZenithService.ListMyProfileShares:input_type -> sttattus.zenith.v1.ListMyProfileSharesRequest
-	92,  // 82: sttattus.zenith.v1.ZenithService.RevokeProfileShare:input_type -> sttattus.zenith.v1.RevokeProfileShareRequest
-	95,  // 83: sttattus.zenith.v1.ZenithService.GetJournalInsights:input_type -> sttattus.zenith.v1.GetJournalInsightsRequest
-	98,  // 84: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:input_type -> sttattus.zenith.v1.SubmitCognitiveTestRequest
-	100, // 85: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:input_type -> sttattus.zenith.v1.ListMyCognitiveTestsRequest
-	102, // 86: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:input_type -> sttattus.zenith.v1.GetCognitiveTestStatusRequest
-	105, // 87: sttattus.zenith.v1.ZenithService.ListRituals:input_type -> sttattus.zenith.v1.ListRitualsRequest
-	108, // 88: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:input_type -> sttattus.zenith.v1.GetYearInZenithRecapRequest
-	110, // 89: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:input_type -> sttattus.zenith.v1.GenerateZenithAlmanacRequest
-	114, // 90: sttattus.zenith.v1.ZenithService.ListLounges:input_type -> sttattus.zenith.v1.ListLoungesRequest
-	116, // 91: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:input_type -> sttattus.zenith.v1.CreateLoungeBookingRequest
-	118, // 92: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:input_type -> sttattus.zenith.v1.ListMyLoungeBookingsRequest
-	120, // 93: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:input_type -> sttattus.zenith.v1.CancelLoungeBookingRequest
-	3,   // 94: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
-	5,   // 95: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
-	7,   // 96: sttattus.zenith.v1.ZenithService.ListRecentSessions:output_type -> sttattus.zenith.v1.ListRecentSessionsResponse
-	22,  // 97: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
-	17,  // 98: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:output_type -> sttattus.zenith.v1.ListMyCalendarConnectionsResponse
-	19,  // 99: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:output_type -> sttattus.zenith.v1.ListMyCalendarEventsResponse
-	13,  // 100: sttattus.zenith.v1.ZenithService.RecommendBlock:output_type -> sttattus.zenith.v1.RecommendBlockResponse
-	10,  // 101: sttattus.zenith.v1.ZenithService.ListLibraryItems:output_type -> sttattus.zenith.v1.ListLibraryItemsResponse
-	25,  // 102: sttattus.zenith.v1.ZenithService.ListBlockTemplates:output_type -> sttattus.zenith.v1.ListBlockTemplatesResponse
-	29,  // 103: sttattus.zenith.v1.ZenithService.ListProgrammes:output_type -> sttattus.zenith.v1.ListProgrammesResponse
-	31,  // 104: sttattus.zenith.v1.ZenithService.GetProgramme:output_type -> sttattus.zenith.v1.GetProgrammeResponse
-	33,  // 105: sttattus.zenith.v1.ZenithService.EnrollProgramme:output_type -> sttattus.zenith.v1.EnrollProgrammeResponse
-	35,  // 106: sttattus.zenith.v1.ZenithService.ListMyProgrammes:output_type -> sttattus.zenith.v1.ListMyProgrammesResponse
-	37,  // 107: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:output_type -> sttattus.zenith.v1.AdvanceProgrammeWeekResponse
-	40,  // 108: sttattus.zenith.v1.ZenithService.AddJournalEntry:output_type -> sttattus.zenith.v1.AddJournalEntryResponse
-	42,  // 109: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:output_type -> sttattus.zenith.v1.ListMyJournalEntriesResponse
-	46,  // 110: sttattus.zenith.v1.ZenithService.GetFocusHistory:output_type -> sttattus.zenith.v1.GetFocusHistoryResponse
-	48,  // 111: sttattus.zenith.v1.ZenithService.SimulateFortitude:output_type -> sttattus.zenith.v1.SimulateFortitudeResponse
-	51,  // 112: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:output_type -> sttattus.zenith.v1.ListAudioEnvironmentsResponse
-	54,  // 113: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:output_type -> sttattus.zenith.v1.GetCognitiveLoadResponse
-	60,  // 114: sttattus.zenith.v1.ZenithService.GetTodaySummary:output_type -> sttattus.zenith.v1.GetTodaySummaryResponse
-	57,  // 115: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:output_type -> sttattus.zenith.v1.AcknowledgeStressPromptResponse
-	64,  // 116: sttattus.zenith.v1.ZenithService.StartConciergeThread:output_type -> sttattus.zenith.v1.StartConciergeThreadResponse
-	66,  // 117: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:output_type -> sttattus.zenith.v1.ListMyConciergeThreadsResponse
-	68,  // 118: sttattus.zenith.v1.ZenithService.GetConciergeThread:output_type -> sttattus.zenith.v1.GetConciergeThreadResponse
-	70,  // 119: sttattus.zenith.v1.ZenithService.PostConciergeMessage:output_type -> sttattus.zenith.v1.PostConciergeMessageResponse
-	73,  // 120: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:output_type -> sttattus.zenith.v1.ListAnthologyArticlesResponse
-	75,  // 121: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:output_type -> sttattus.zenith.v1.GetAnthologyArticleResponse
-	78,  // 122: sttattus.zenith.v1.ZenithService.ListTeachers:output_type -> sttattus.zenith.v1.ListTeachersResponse
-	81,  // 123: sttattus.zenith.v1.ZenithService.ListSovereignAudio:output_type -> sttattus.zenith.v1.ListSovereignAudioResponse
-	83,  // 124: sttattus.zenith.v1.ZenithService.GetSovereignAudio:output_type -> sttattus.zenith.v1.GetSovereignAudioResponse
-	86,  // 125: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:output_type -> sttattus.zenith.v1.GetJetLagProtocolResponse
-	88,  // 126: sttattus.zenith.v1.ZenithService.CreateProfileShare:output_type -> sttattus.zenith.v1.CreateProfileShareResponse
-	91,  // 127: sttattus.zenith.v1.ZenithService.ListMyProfileShares:output_type -> sttattus.zenith.v1.ListMyProfileSharesResponse
-	93,  // 128: sttattus.zenith.v1.ZenithService.RevokeProfileShare:output_type -> sttattus.zenith.v1.RevokeProfileShareResponse
-	96,  // 129: sttattus.zenith.v1.ZenithService.GetJournalInsights:output_type -> sttattus.zenith.v1.GetJournalInsightsResponse
-	99,  // 130: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:output_type -> sttattus.zenith.v1.SubmitCognitiveTestResponse
-	101, // 131: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:output_type -> sttattus.zenith.v1.ListMyCognitiveTestsResponse
-	103, // 132: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:output_type -> sttattus.zenith.v1.GetCognitiveTestStatusResponse
-	106, // 133: sttattus.zenith.v1.ZenithService.ListRituals:output_type -> sttattus.zenith.v1.ListRitualsResponse
-	109, // 134: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:output_type -> sttattus.zenith.v1.GetYearInZenithRecapResponse
-	111, // 135: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:output_type -> sttattus.zenith.v1.GenerateZenithAlmanacResponse
-	115, // 136: sttattus.zenith.v1.ZenithService.ListLounges:output_type -> sttattus.zenith.v1.ListLoungesResponse
-	117, // 137: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:output_type -> sttattus.zenith.v1.CreateLoungeBookingResponse
-	119, // 138: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:output_type -> sttattus.zenith.v1.ListMyLoungeBookingsResponse
-	121, // 139: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:output_type -> sttattus.zenith.v1.CancelLoungeBookingResponse
-	94,  // [94:140] is the sub-list for method output_type
-	48,  // [48:94] is the sub-list for method input_type
-	48,  // [48:48] is the sub-list for extension type_name
-	48,  // [48:48] is the sub-list for extension extendee
-	0,   // [0:48] is the sub-list for field type_name
+	122, // 48: sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse.sessions:type_name -> sttattus.zenith.v1.ZenithFocusFirewallSessionItem
+	122, // 49: sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse.session:type_name -> sttattus.zenith.v1.ZenithFocusFirewallSessionItem
+	122, // 50: sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse.session:type_name -> sttattus.zenith.v1.ZenithFocusFirewallSessionItem
+	129, // 51: sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse.plans:type_name -> sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem
+	129, // 52: sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse.plan:type_name -> sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem
+	129, // 53: sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse.plan:type_name -> sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem
+	136, // 54: sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse.contracts:type_name -> sttattus.zenith.v1.ZenithIntentionOutcomeContractItem
+	136, // 55: sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse.contract:type_name -> sttattus.zenith.v1.ZenithIntentionOutcomeContractItem
+	136, // 56: sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse.contract:type_name -> sttattus.zenith.v1.ZenithIntentionOutcomeContractItem
+	143, // 57: sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse.experiments:type_name -> sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem
+	143, // 58: sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse.experiment:type_name -> sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem
+	143, // 59: sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse.experiment:type_name -> sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem
+	150, // 60: sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse.runs:type_name -> sttattus.zenith.v1.ZenithRecoveryProtocolRunItem
+	150, // 61: sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse.run:type_name -> sttattus.zenith.v1.ZenithRecoveryProtocolRunItem
+	150, // 62: sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse.run:type_name -> sttattus.zenith.v1.ZenithRecoveryProtocolRunItem
+	157, // 63: sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse.rules:type_name -> sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem
+	157, // 64: sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse.rule:type_name -> sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem
+	157, // 65: sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse.rule:type_name -> sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem
+	164, // 66: sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse.sessions:type_name -> sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem
+	164, // 67: sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse.session:type_name -> sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem
+	164, // 68: sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse.session:type_name -> sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem
+	171, // 69: sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse.memories:type_name -> sttattus.zenith.v1.ZenithPrivatePatternMemoryItem
+	171, // 70: sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse.memory:type_name -> sttattus.zenith.v1.ZenithPrivatePatternMemoryItem
+	171, // 71: sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse.memory:type_name -> sttattus.zenith.v1.ZenithPrivatePatternMemoryItem
+	178, // 72: sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse.protocols:type_name -> sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem
+	178, // 73: sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse.protocol:type_name -> sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem
+	178, // 74: sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse.protocol:type_name -> sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem
+	185, // 75: sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse.workspaces:type_name -> sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem
+	185, // 76: sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse.workspace:type_name -> sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem
+	185, // 77: sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse.workspace:type_name -> sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem
+	192, // 78: sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse.workspaces:type_name -> sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem
+	192, // 79: sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse.workspace:type_name -> sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem
+	192, // 80: sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponse.workspace:type_name -> sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem
+	2,   // 81: sttattus.zenith.v1.ZenithService.LogFocusSession:input_type -> sttattus.zenith.v1.LogFocusSessionRequest
+	4,   // 82: sttattus.zenith.v1.ZenithService.GetZenithStats:input_type -> sttattus.zenith.v1.GetZenithStatsRequest
+	6,   // 83: sttattus.zenith.v1.ZenithService.ListRecentSessions:input_type -> sttattus.zenith.v1.ListRecentSessionsRequest
+	21,  // 84: sttattus.zenith.v1.ZenithService.GetTodayLoad:input_type -> sttattus.zenith.v1.GetTodayLoadRequest
+	16,  // 85: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:input_type -> sttattus.zenith.v1.ListMyCalendarConnectionsRequest
+	18,  // 86: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:input_type -> sttattus.zenith.v1.ListMyCalendarEventsRequest
+	12,  // 87: sttattus.zenith.v1.ZenithService.RecommendBlock:input_type -> sttattus.zenith.v1.RecommendBlockRequest
+	9,   // 88: sttattus.zenith.v1.ZenithService.ListLibraryItems:input_type -> sttattus.zenith.v1.ListLibraryItemsRequest
+	24,  // 89: sttattus.zenith.v1.ZenithService.ListBlockTemplates:input_type -> sttattus.zenith.v1.ListBlockTemplatesRequest
+	28,  // 90: sttattus.zenith.v1.ZenithService.ListProgrammes:input_type -> sttattus.zenith.v1.ListProgrammesRequest
+	30,  // 91: sttattus.zenith.v1.ZenithService.GetProgramme:input_type -> sttattus.zenith.v1.GetProgrammeRequest
+	32,  // 92: sttattus.zenith.v1.ZenithService.EnrollProgramme:input_type -> sttattus.zenith.v1.EnrollProgrammeRequest
+	34,  // 93: sttattus.zenith.v1.ZenithService.ListMyProgrammes:input_type -> sttattus.zenith.v1.ListMyProgrammesRequest
+	36,  // 94: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:input_type -> sttattus.zenith.v1.AdvanceProgrammeWeekRequest
+	39,  // 95: sttattus.zenith.v1.ZenithService.AddJournalEntry:input_type -> sttattus.zenith.v1.AddJournalEntryRequest
+	41,  // 96: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:input_type -> sttattus.zenith.v1.ListMyJournalEntriesRequest
+	45,  // 97: sttattus.zenith.v1.ZenithService.GetFocusHistory:input_type -> sttattus.zenith.v1.GetFocusHistoryRequest
+	47,  // 98: sttattus.zenith.v1.ZenithService.SimulateFortitude:input_type -> sttattus.zenith.v1.SimulateFortitudeRequest
+	50,  // 99: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:input_type -> sttattus.zenith.v1.ListAudioEnvironmentsRequest
+	53,  // 100: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:input_type -> sttattus.zenith.v1.GetCognitiveLoadRequest
+	59,  // 101: sttattus.zenith.v1.ZenithService.GetTodaySummary:input_type -> sttattus.zenith.v1.GetTodaySummaryRequest
+	56,  // 102: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:input_type -> sttattus.zenith.v1.AcknowledgeStressPromptRequest
+	63,  // 103: sttattus.zenith.v1.ZenithService.StartConciergeThread:input_type -> sttattus.zenith.v1.StartConciergeThreadRequest
+	65,  // 104: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:input_type -> sttattus.zenith.v1.ListMyConciergeThreadsRequest
+	67,  // 105: sttattus.zenith.v1.ZenithService.GetConciergeThread:input_type -> sttattus.zenith.v1.GetConciergeThreadRequest
+	69,  // 106: sttattus.zenith.v1.ZenithService.PostConciergeMessage:input_type -> sttattus.zenith.v1.PostConciergeMessageRequest
+	72,  // 107: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:input_type -> sttattus.zenith.v1.ListAnthologyArticlesRequest
+	74,  // 108: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:input_type -> sttattus.zenith.v1.GetAnthologyArticleRequest
+	77,  // 109: sttattus.zenith.v1.ZenithService.ListTeachers:input_type -> sttattus.zenith.v1.ListTeachersRequest
+	80,  // 110: sttattus.zenith.v1.ZenithService.ListSovereignAudio:input_type -> sttattus.zenith.v1.ListSovereignAudioRequest
+	82,  // 111: sttattus.zenith.v1.ZenithService.GetSovereignAudio:input_type -> sttattus.zenith.v1.GetSovereignAudioRequest
+	85,  // 112: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:input_type -> sttattus.zenith.v1.GetJetLagProtocolRequest
+	87,  // 113: sttattus.zenith.v1.ZenithService.CreateProfileShare:input_type -> sttattus.zenith.v1.CreateProfileShareRequest
+	90,  // 114: sttattus.zenith.v1.ZenithService.ListMyProfileShares:input_type -> sttattus.zenith.v1.ListMyProfileSharesRequest
+	92,  // 115: sttattus.zenith.v1.ZenithService.RevokeProfileShare:input_type -> sttattus.zenith.v1.RevokeProfileShareRequest
+	95,  // 116: sttattus.zenith.v1.ZenithService.GetJournalInsights:input_type -> sttattus.zenith.v1.GetJournalInsightsRequest
+	98,  // 117: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:input_type -> sttattus.zenith.v1.SubmitCognitiveTestRequest
+	100, // 118: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:input_type -> sttattus.zenith.v1.ListMyCognitiveTestsRequest
+	102, // 119: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:input_type -> sttattus.zenith.v1.GetCognitiveTestStatusRequest
+	105, // 120: sttattus.zenith.v1.ZenithService.ListRituals:input_type -> sttattus.zenith.v1.ListRitualsRequest
+	108, // 121: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:input_type -> sttattus.zenith.v1.GetYearInZenithRecapRequest
+	110, // 122: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:input_type -> sttattus.zenith.v1.GenerateZenithAlmanacRequest
+	114, // 123: sttattus.zenith.v1.ZenithService.ListLounges:input_type -> sttattus.zenith.v1.ListLoungesRequest
+	116, // 124: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:input_type -> sttattus.zenith.v1.CreateLoungeBookingRequest
+	118, // 125: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:input_type -> sttattus.zenith.v1.ListMyLoungeBookingsRequest
+	120, // 126: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:input_type -> sttattus.zenith.v1.CancelLoungeBookingRequest
+	123, // 127: sttattus.zenith.v1.ZenithService.GetZenithFocusFirewallWorkbench:input_type -> sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchRequest
+	125, // 128: sttattus.zenith.v1.ZenithService.SaveZenithFocusFirewallSession:input_type -> sttattus.zenith.v1.SaveZenithFocusFirewallSessionRequest
+	127, // 129: sttattus.zenith.v1.ZenithService.TriggerZenithFocusFirewallBypassOrComplete:input_type -> sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteRequest
+	130, // 130: sttattus.zenith.v1.ZenithService.GetZenithAdaptiveDayArchitectWorkbench:input_type -> sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchRequest
+	132, // 131: sttattus.zenith.v1.ZenithService.SaveZenithAdaptiveDayArchitectPlan:input_type -> sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanRequest
+	134, // 132: sttattus.zenith.v1.ZenithService.AcceptOrReplanZenithDayArchitect:input_type -> sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectRequest
+	137, // 133: sttattus.zenith.v1.ZenithService.GetZenithIntentionOutcomeWorkbench:input_type -> sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchRequest
+	139, // 134: sttattus.zenith.v1.ZenithService.SaveZenithIntentionOutcomeContract:input_type -> sttattus.zenith.v1.SaveZenithIntentionOutcomeContractRequest
+	141, // 135: sttattus.zenith.v1.ZenithService.CompleteZenithIntentionOutcomeLoop:input_type -> sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopRequest
+	144, // 136: sttattus.zenith.v1.ZenithService.GetZenithAttentionNOf1LabWorkbench:input_type -> sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchRequest
+	146, // 137: sttattus.zenith.v1.ZenithService.SaveZenithAttentionNOf1Experiment:input_type -> sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentRequest
+	148, // 138: sttattus.zenith.v1.ZenithService.EvaluateZenithAttentionNOf1Experiment:input_type -> sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentRequest
+	151, // 139: sttattus.zenith.v1.ZenithService.GetZenithRecoveryProtocolStudioWorkbench:input_type -> sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchRequest
+	153, // 140: sttattus.zenith.v1.ZenithService.SaveZenithRecoveryProtocolRun:input_type -> sttattus.zenith.v1.SaveZenithRecoveryProtocolRunRequest
+	155, // 141: sttattus.zenith.v1.ZenithService.RecordZenithRecoveryCheckOrAdverseFlag:input_type -> sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagRequest
+	158, // 142: sttattus.zenith.v1.ZenithService.GetZenithCommunicationBoundaryWorkbench:input_type -> sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchRequest
+	160, // 143: sttattus.zenith.v1.ZenithService.SaveZenithCommunicationBoundaryRule:input_type -> sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleRequest
+	162, // 144: sttattus.zenith.v1.ZenithService.ApproveOrReleaseZenithBoundaryCatchup:input_type -> sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupRequest
+	165, // 145: sttattus.zenith.v1.ZenithService.GetZenithCognitiveReadinessWorkbench:input_type -> sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchRequest
+	167, // 146: sttattus.zenith.v1.ZenithService.SaveZenithCognitiveReadinessSession:input_type -> sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionRequest
+	169, // 147: sttattus.zenith.v1.ZenithService.FlagOrValidateZenithCognitiveSession:input_type -> sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionRequest
+	172, // 148: sttattus.zenith.v1.ZenithService.GetZenithPrivatePatternMemoryWorkbench:input_type -> sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchRequest
+	174, // 149: sttattus.zenith.v1.ZenithService.SaveZenithPrivatePatternMemory:input_type -> sttattus.zenith.v1.SaveZenithPrivatePatternMemoryRequest
+	176, // 150: sttattus.zenith.v1.ZenithService.EditOrDeleteZenithPrivatePatternMemory:input_type -> sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryRequest
+	179, // 151: sttattus.zenith.v1.ZenithService.GetZenithTravelPerformanceWorkbench:input_type -> sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchRequest
+	181, // 152: sttattus.zenith.v1.ZenithService.SaveZenithTravelPerformanceProtocol:input_type -> sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolRequest
+	183, // 153: sttattus.zenith.v1.ZenithService.ReplanZenithTravelMissedStep:input_type -> sttattus.zenith.v1.ReplanZenithTravelMissedStepRequest
+	186, // 154: sttattus.zenith.v1.ZenithService.GetZenithCoachingTeamMeetingWorkbench:input_type -> sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchRequest
+	188, // 155: sttattus.zenith.v1.ZenithService.SaveZenithCoachingTeamMeetingHealth:input_type -> sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthRequest
+	190, // 156: sttattus.zenith.v1.ZenithService.ProposeZenithMeetingFreeOrOracleHandoff:input_type -> sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffRequest
+	193, // 157: sttattus.zenith.v1.ZenithService.GetZenithSensoryDesktopWorkbench:input_type -> sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchRequest
+	195, // 158: sttattus.zenith.v1.ZenithService.SaveZenithSensoryDesktopWorkspace:input_type -> sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceRequest
+	197, // 159: sttattus.zenith.v1.ZenithService.ArmOrFallbackZenithSensoryWorkspace:input_type -> sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceRequest
+	3,   // 160: sttattus.zenith.v1.ZenithService.LogFocusSession:output_type -> sttattus.zenith.v1.LogFocusSessionResponse
+	5,   // 161: sttattus.zenith.v1.ZenithService.GetZenithStats:output_type -> sttattus.zenith.v1.GetZenithStatsResponse
+	7,   // 162: sttattus.zenith.v1.ZenithService.ListRecentSessions:output_type -> sttattus.zenith.v1.ListRecentSessionsResponse
+	22,  // 163: sttattus.zenith.v1.ZenithService.GetTodayLoad:output_type -> sttattus.zenith.v1.GetTodayLoadResponse
+	17,  // 164: sttattus.zenith.v1.ZenithService.ListMyCalendarConnections:output_type -> sttattus.zenith.v1.ListMyCalendarConnectionsResponse
+	19,  // 165: sttattus.zenith.v1.ZenithService.ListMyCalendarEvents:output_type -> sttattus.zenith.v1.ListMyCalendarEventsResponse
+	13,  // 166: sttattus.zenith.v1.ZenithService.RecommendBlock:output_type -> sttattus.zenith.v1.RecommendBlockResponse
+	10,  // 167: sttattus.zenith.v1.ZenithService.ListLibraryItems:output_type -> sttattus.zenith.v1.ListLibraryItemsResponse
+	25,  // 168: sttattus.zenith.v1.ZenithService.ListBlockTemplates:output_type -> sttattus.zenith.v1.ListBlockTemplatesResponse
+	29,  // 169: sttattus.zenith.v1.ZenithService.ListProgrammes:output_type -> sttattus.zenith.v1.ListProgrammesResponse
+	31,  // 170: sttattus.zenith.v1.ZenithService.GetProgramme:output_type -> sttattus.zenith.v1.GetProgrammeResponse
+	33,  // 171: sttattus.zenith.v1.ZenithService.EnrollProgramme:output_type -> sttattus.zenith.v1.EnrollProgrammeResponse
+	35,  // 172: sttattus.zenith.v1.ZenithService.ListMyProgrammes:output_type -> sttattus.zenith.v1.ListMyProgrammesResponse
+	37,  // 173: sttattus.zenith.v1.ZenithService.AdvanceProgrammeWeek:output_type -> sttattus.zenith.v1.AdvanceProgrammeWeekResponse
+	40,  // 174: sttattus.zenith.v1.ZenithService.AddJournalEntry:output_type -> sttattus.zenith.v1.AddJournalEntryResponse
+	42,  // 175: sttattus.zenith.v1.ZenithService.ListMyJournalEntries:output_type -> sttattus.zenith.v1.ListMyJournalEntriesResponse
+	46,  // 176: sttattus.zenith.v1.ZenithService.GetFocusHistory:output_type -> sttattus.zenith.v1.GetFocusHistoryResponse
+	48,  // 177: sttattus.zenith.v1.ZenithService.SimulateFortitude:output_type -> sttattus.zenith.v1.SimulateFortitudeResponse
+	51,  // 178: sttattus.zenith.v1.ZenithService.ListAudioEnvironments:output_type -> sttattus.zenith.v1.ListAudioEnvironmentsResponse
+	54,  // 179: sttattus.zenith.v1.ZenithService.GetCognitiveLoad:output_type -> sttattus.zenith.v1.GetCognitiveLoadResponse
+	60,  // 180: sttattus.zenith.v1.ZenithService.GetTodaySummary:output_type -> sttattus.zenith.v1.GetTodaySummaryResponse
+	57,  // 181: sttattus.zenith.v1.ZenithService.AcknowledgeStressPrompt:output_type -> sttattus.zenith.v1.AcknowledgeStressPromptResponse
+	64,  // 182: sttattus.zenith.v1.ZenithService.StartConciergeThread:output_type -> sttattus.zenith.v1.StartConciergeThreadResponse
+	66,  // 183: sttattus.zenith.v1.ZenithService.ListMyConciergeThreads:output_type -> sttattus.zenith.v1.ListMyConciergeThreadsResponse
+	68,  // 184: sttattus.zenith.v1.ZenithService.GetConciergeThread:output_type -> sttattus.zenith.v1.GetConciergeThreadResponse
+	70,  // 185: sttattus.zenith.v1.ZenithService.PostConciergeMessage:output_type -> sttattus.zenith.v1.PostConciergeMessageResponse
+	73,  // 186: sttattus.zenith.v1.ZenithService.ListAnthologyArticles:output_type -> sttattus.zenith.v1.ListAnthologyArticlesResponse
+	75,  // 187: sttattus.zenith.v1.ZenithService.GetAnthologyArticle:output_type -> sttattus.zenith.v1.GetAnthologyArticleResponse
+	78,  // 188: sttattus.zenith.v1.ZenithService.ListTeachers:output_type -> sttattus.zenith.v1.ListTeachersResponse
+	81,  // 189: sttattus.zenith.v1.ZenithService.ListSovereignAudio:output_type -> sttattus.zenith.v1.ListSovereignAudioResponse
+	83,  // 190: sttattus.zenith.v1.ZenithService.GetSovereignAudio:output_type -> sttattus.zenith.v1.GetSovereignAudioResponse
+	86,  // 191: sttattus.zenith.v1.ZenithService.GetJetLagProtocol:output_type -> sttattus.zenith.v1.GetJetLagProtocolResponse
+	88,  // 192: sttattus.zenith.v1.ZenithService.CreateProfileShare:output_type -> sttattus.zenith.v1.CreateProfileShareResponse
+	91,  // 193: sttattus.zenith.v1.ZenithService.ListMyProfileShares:output_type -> sttattus.zenith.v1.ListMyProfileSharesResponse
+	93,  // 194: sttattus.zenith.v1.ZenithService.RevokeProfileShare:output_type -> sttattus.zenith.v1.RevokeProfileShareResponse
+	96,  // 195: sttattus.zenith.v1.ZenithService.GetJournalInsights:output_type -> sttattus.zenith.v1.GetJournalInsightsResponse
+	99,  // 196: sttattus.zenith.v1.ZenithService.SubmitCognitiveTest:output_type -> sttattus.zenith.v1.SubmitCognitiveTestResponse
+	101, // 197: sttattus.zenith.v1.ZenithService.ListMyCognitiveTests:output_type -> sttattus.zenith.v1.ListMyCognitiveTestsResponse
+	103, // 198: sttattus.zenith.v1.ZenithService.GetCognitiveTestStatus:output_type -> sttattus.zenith.v1.GetCognitiveTestStatusResponse
+	106, // 199: sttattus.zenith.v1.ZenithService.ListRituals:output_type -> sttattus.zenith.v1.ListRitualsResponse
+	109, // 200: sttattus.zenith.v1.ZenithService.GetYearInZenithRecap:output_type -> sttattus.zenith.v1.GetYearInZenithRecapResponse
+	111, // 201: sttattus.zenith.v1.ZenithService.GenerateZenithAlmanac:output_type -> sttattus.zenith.v1.GenerateZenithAlmanacResponse
+	115, // 202: sttattus.zenith.v1.ZenithService.ListLounges:output_type -> sttattus.zenith.v1.ListLoungesResponse
+	117, // 203: sttattus.zenith.v1.ZenithService.CreateLoungeBooking:output_type -> sttattus.zenith.v1.CreateLoungeBookingResponse
+	119, // 204: sttattus.zenith.v1.ZenithService.ListMyLoungeBookings:output_type -> sttattus.zenith.v1.ListMyLoungeBookingsResponse
+	121, // 205: sttattus.zenith.v1.ZenithService.CancelLoungeBooking:output_type -> sttattus.zenith.v1.CancelLoungeBookingResponse
+	124, // 206: sttattus.zenith.v1.ZenithService.GetZenithFocusFirewallWorkbench:output_type -> sttattus.zenith.v1.GetZenithFocusFirewallWorkbenchResponse
+	126, // 207: sttattus.zenith.v1.ZenithService.SaveZenithFocusFirewallSession:output_type -> sttattus.zenith.v1.SaveZenithFocusFirewallSessionResponse
+	128, // 208: sttattus.zenith.v1.ZenithService.TriggerZenithFocusFirewallBypassOrComplete:output_type -> sttattus.zenith.v1.TriggerZenithFocusFirewallBypassOrCompleteResponse
+	131, // 209: sttattus.zenith.v1.ZenithService.GetZenithAdaptiveDayArchitectWorkbench:output_type -> sttattus.zenith.v1.GetZenithAdaptiveDayArchitectWorkbenchResponse
+	133, // 210: sttattus.zenith.v1.ZenithService.SaveZenithAdaptiveDayArchitectPlan:output_type -> sttattus.zenith.v1.SaveZenithAdaptiveDayArchitectPlanResponse
+	135, // 211: sttattus.zenith.v1.ZenithService.AcceptOrReplanZenithDayArchitect:output_type -> sttattus.zenith.v1.AcceptOrReplanZenithDayArchitectResponse
+	138, // 212: sttattus.zenith.v1.ZenithService.GetZenithIntentionOutcomeWorkbench:output_type -> sttattus.zenith.v1.GetZenithIntentionOutcomeWorkbenchResponse
+	140, // 213: sttattus.zenith.v1.ZenithService.SaveZenithIntentionOutcomeContract:output_type -> sttattus.zenith.v1.SaveZenithIntentionOutcomeContractResponse
+	142, // 214: sttattus.zenith.v1.ZenithService.CompleteZenithIntentionOutcomeLoop:output_type -> sttattus.zenith.v1.CompleteZenithIntentionOutcomeLoopResponse
+	145, // 215: sttattus.zenith.v1.ZenithService.GetZenithAttentionNOf1LabWorkbench:output_type -> sttattus.zenith.v1.GetZenithAttentionNOf1LabWorkbenchResponse
+	147, // 216: sttattus.zenith.v1.ZenithService.SaveZenithAttentionNOf1Experiment:output_type -> sttattus.zenith.v1.SaveZenithAttentionNOf1ExperimentResponse
+	149, // 217: sttattus.zenith.v1.ZenithService.EvaluateZenithAttentionNOf1Experiment:output_type -> sttattus.zenith.v1.EvaluateZenithAttentionNOf1ExperimentResponse
+	152, // 218: sttattus.zenith.v1.ZenithService.GetZenithRecoveryProtocolStudioWorkbench:output_type -> sttattus.zenith.v1.GetZenithRecoveryProtocolStudioWorkbenchResponse
+	154, // 219: sttattus.zenith.v1.ZenithService.SaveZenithRecoveryProtocolRun:output_type -> sttattus.zenith.v1.SaveZenithRecoveryProtocolRunResponse
+	156, // 220: sttattus.zenith.v1.ZenithService.RecordZenithRecoveryCheckOrAdverseFlag:output_type -> sttattus.zenith.v1.RecordZenithRecoveryCheckOrAdverseFlagResponse
+	159, // 221: sttattus.zenith.v1.ZenithService.GetZenithCommunicationBoundaryWorkbench:output_type -> sttattus.zenith.v1.GetZenithCommunicationBoundaryWorkbenchResponse
+	161, // 222: sttattus.zenith.v1.ZenithService.SaveZenithCommunicationBoundaryRule:output_type -> sttattus.zenith.v1.SaveZenithCommunicationBoundaryRuleResponse
+	163, // 223: sttattus.zenith.v1.ZenithService.ApproveOrReleaseZenithBoundaryCatchup:output_type -> sttattus.zenith.v1.ApproveOrReleaseZenithBoundaryCatchupResponse
+	166, // 224: sttattus.zenith.v1.ZenithService.GetZenithCognitiveReadinessWorkbench:output_type -> sttattus.zenith.v1.GetZenithCognitiveReadinessWorkbenchResponse
+	168, // 225: sttattus.zenith.v1.ZenithService.SaveZenithCognitiveReadinessSession:output_type -> sttattus.zenith.v1.SaveZenithCognitiveReadinessSessionResponse
+	170, // 226: sttattus.zenith.v1.ZenithService.FlagOrValidateZenithCognitiveSession:output_type -> sttattus.zenith.v1.FlagOrValidateZenithCognitiveSessionResponse
+	173, // 227: sttattus.zenith.v1.ZenithService.GetZenithPrivatePatternMemoryWorkbench:output_type -> sttattus.zenith.v1.GetZenithPrivatePatternMemoryWorkbenchResponse
+	175, // 228: sttattus.zenith.v1.ZenithService.SaveZenithPrivatePatternMemory:output_type -> sttattus.zenith.v1.SaveZenithPrivatePatternMemoryResponse
+	177, // 229: sttattus.zenith.v1.ZenithService.EditOrDeleteZenithPrivatePatternMemory:output_type -> sttattus.zenith.v1.EditOrDeleteZenithPrivatePatternMemoryResponse
+	180, // 230: sttattus.zenith.v1.ZenithService.GetZenithTravelPerformanceWorkbench:output_type -> sttattus.zenith.v1.GetZenithTravelPerformanceWorkbenchResponse
+	182, // 231: sttattus.zenith.v1.ZenithService.SaveZenithTravelPerformanceProtocol:output_type -> sttattus.zenith.v1.SaveZenithTravelPerformanceProtocolResponse
+	184, // 232: sttattus.zenith.v1.ZenithService.ReplanZenithTravelMissedStep:output_type -> sttattus.zenith.v1.ReplanZenithTravelMissedStepResponse
+	187, // 233: sttattus.zenith.v1.ZenithService.GetZenithCoachingTeamMeetingWorkbench:output_type -> sttattus.zenith.v1.GetZenithCoachingTeamMeetingWorkbenchResponse
+	189, // 234: sttattus.zenith.v1.ZenithService.SaveZenithCoachingTeamMeetingHealth:output_type -> sttattus.zenith.v1.SaveZenithCoachingTeamMeetingHealthResponse
+	191, // 235: sttattus.zenith.v1.ZenithService.ProposeZenithMeetingFreeOrOracleHandoff:output_type -> sttattus.zenith.v1.ProposeZenithMeetingFreeOrOracleHandoffResponse
+	194, // 236: sttattus.zenith.v1.ZenithService.GetZenithSensoryDesktopWorkbench:output_type -> sttattus.zenith.v1.GetZenithSensoryDesktopWorkbenchResponse
+	196, // 237: sttattus.zenith.v1.ZenithService.SaveZenithSensoryDesktopWorkspace:output_type -> sttattus.zenith.v1.SaveZenithSensoryDesktopWorkspaceResponse
+	198, // 238: sttattus.zenith.v1.ZenithService.ArmOrFallbackZenithSensoryWorkspace:output_type -> sttattus.zenith.v1.ArmOrFallbackZenithSensoryWorkspaceResponse
+	160, // [160:239] is the sub-list for method output_type
+	81,  // [81:160] is the sub-list for method input_type
+	81,  // [81:81] is the sub-list for extension type_name
+	81,  // [81:81] is the sub-list for extension extendee
+	0,   // [0:81] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_zenith_v1_zenith_proto_init() }
@@ -7657,7 +13174,7 @@ func file_sttattus_zenith_v1_zenith_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_zenith_v1_zenith_proto_rawDesc), len(file_sttattus_zenith_v1_zenith_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   122,
+			NumMessages:   199,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

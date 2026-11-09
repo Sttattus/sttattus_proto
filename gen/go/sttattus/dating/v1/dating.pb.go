@@ -10786,6 +10786,4137 @@ func (x *SetPrimaryDatingPhotoResponse) GetPhotos() []*DatingPhoto {
 	return nil
 }
 
+type AtlasRelationshipAgreement struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PartnerUserId string                 `protobuf:"bytes,3,opt,name=partner_user_id,json=partnerUserId,proto3" json:"partner_user_id,omitempty"`
+	PartnerName   string                 `protobuf:"bytes,4,opt,name=partner_name,json=partnerName,proto3" json:"partner_name,omitempty"`
+	// exploring | dating_intentionally | committed_partnership | anchor_nesting | paused_breathing_room | companionate
+	CurrentStage string `protobuf:"bytes,5,opt,name=current_stage,json=currentStage,proto3" json:"current_stage,omitempty"`
+	// non_linear_inclusive | monogamous | consensual_non_monogamous | queerplatonic
+	StageStructure       string `protobuf:"bytes,6,opt,name=stage_structure,json=stageStructure,proto3" json:"stage_structure,omitempty"`
+	DiscoveryPaused      bool   `protobuf:"varint,7,opt,name=discovery_paused,json=discoveryPaused,proto3" json:"discovery_paused,omitempty"`
+	PacingCadence        string `protobuf:"bytes,8,opt,name=pacing_cadence,json=pacingCadence,proto3" json:"pacing_cadence,omitempty"`
+	SharedBoundariesJson string `protobuf:"bytes,9,opt,name=shared_boundaries_json,json=sharedBoundariesJson,proto3" json:"shared_boundaries_json,omitempty"`
+	PreviousStage        string `protobuf:"bytes,10,opt,name=previous_stage,json=previousStage,proto3" json:"previous_stage,omitempty"`
+	UpdatedAt            int64  `protobuf:"varint,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AtlasRelationshipAgreement) Reset() {
+	*x = AtlasRelationshipAgreement{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasRelationshipAgreement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasRelationshipAgreement) ProtoMessage() {}
+
+func (x *AtlasRelationshipAgreement) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasRelationshipAgreement.ProtoReflect.Descriptor instead.
+func (*AtlasRelationshipAgreement) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *AtlasRelationshipAgreement) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetPartnerUserId() string {
+	if x != nil {
+		return x.PartnerUserId
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetPartnerName() string {
+	if x != nil {
+		return x.PartnerName
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetCurrentStage() string {
+	if x != nil {
+		return x.CurrentStage
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetStageStructure() string {
+	if x != nil {
+		return x.StageStructure
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetDiscoveryPaused() bool {
+	if x != nil {
+		return x.DiscoveryPaused
+	}
+	return false
+}
+
+func (x *AtlasRelationshipAgreement) GetPacingCadence() string {
+	if x != nil {
+		return x.PacingCadence
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetSharedBoundariesJson() string {
+	if x != nil {
+		return x.SharedBoundariesJson
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetPreviousStage() string {
+	if x != nil {
+		return x.PreviousStage
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipAgreement) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+type AtlasRelationshipCheckin struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AgreementId string                 `protobuf:"bytes,2,opt,name=agreement_id,json=agreementId,proto3" json:"agreement_id,omitempty"`
+	UserId      string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// pacing | boundaries | communication | future_alignment | support_needs
+	TopicCategory string `protobuf:"bytes,4,opt,name=topic_category,json=topicCategory,proto3" json:"topic_category,omitempty"`
+	MyReflection  string `protobuf:"bytes,5,opt,name=my_reflection,json=myReflection,proto3" json:"my_reflection,omitempty"`
+	// private_by_default | shared_on_consent
+	VisibilityMode string `protobuf:"bytes,6,opt,name=visibility_mode,json=visibilityMode,proto3" json:"visibility_mode,omitempty"`
+	// aligned | needs_conversation | revisiting
+	AlignmentState           string `protobuf:"bytes,7,opt,name=alignment_state,json=alignmentState,proto3" json:"alignment_state,omitempty"`
+	LicensedBoundaryVerified bool   `protobuf:"varint,8,opt,name=licensed_boundary_verified,json=licensedBoundaryVerified,proto3" json:"licensed_boundary_verified,omitempty"`
+	ModerationStatus         string `protobuf:"bytes,9,opt,name=moderation_status,json=moderationStatus,proto3" json:"moderation_status,omitempty"`
+	CreatedAt                int64  `protobuf:"varint,10,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *AtlasRelationshipCheckin) Reset() {
+	*x = AtlasRelationshipCheckin{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasRelationshipCheckin) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasRelationshipCheckin) ProtoMessage() {}
+
+func (x *AtlasRelationshipCheckin) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasRelationshipCheckin.ProtoReflect.Descriptor instead.
+func (*AtlasRelationshipCheckin) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *AtlasRelationshipCheckin) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetAgreementId() string {
+	if x != nil {
+		return x.AgreementId
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetTopicCategory() string {
+	if x != nil {
+		return x.TopicCategory
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetMyReflection() string {
+	if x != nil {
+		return x.MyReflection
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetVisibilityMode() string {
+	if x != nil {
+		return x.VisibilityMode
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetAlignmentState() string {
+	if x != nil {
+		return x.AlignmentState
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetLicensedBoundaryVerified() bool {
+	if x != nil {
+		return x.LicensedBoundaryVerified
+	}
+	return false
+}
+
+func (x *AtlasRelationshipCheckin) GetModerationStatus() string {
+	if x != nil {
+		return x.ModerationStatus
+	}
+	return ""
+}
+
+func (x *AtlasRelationshipCheckin) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type AtlasUncouplingPlan struct {
+	state       protoimpl.MessageState `protogen:"open.v1"`
+	Id          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	AgreementId string                 `protobuf:"bytes,2,opt,name=agreement_id,json=agreementId,proto3" json:"agreement_id,omitempty"`
+	UserId      string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// active_cooling_off | amicable_separation | no_contact_shield | completed_closure
+	SeparationState string `protobuf:"bytes,4,opt,name=separation_state,json=separationState,proto3" json:"separation_state,omitempty"`
+	// mutual_archive_freeze | keep_own_contributions | full_mutual_hidden
+	SharedMediaPolicy string `protobuf:"bytes,5,opt,name=shared_media_policy,json=sharedMediaPolicy,proto3" json:"shared_media_policy,omitempty"`
+	// cancel_upcoming_bookings | split_reservations
+	SharedPlansPolicy    string `protobuf:"bytes,6,opt,name=shared_plans_policy,json=sharedPlansPolicy,proto3" json:"shared_plans_policy,omitempty"`
+	MutualDiscoveryBlock bool   `protobuf:"varint,7,opt,name=mutual_discovery_block,json=mutualDiscoveryBlock,proto3" json:"mutual_discovery_block,omitempty"`
+	ClosureNote          string `protobuf:"bytes,8,opt,name=closure_note,json=closureNote,proto3" json:"closure_note,omitempty"`
+	ResolvedAt           int64  `protobuf:"varint,9,opt,name=resolved_at,json=resolvedAt,proto3" json:"resolved_at,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AtlasUncouplingPlan) Reset() {
+	*x = AtlasUncouplingPlan{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasUncouplingPlan) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasUncouplingPlan) ProtoMessage() {}
+
+func (x *AtlasUncouplingPlan) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasUncouplingPlan.ProtoReflect.Descriptor instead.
+func (*AtlasUncouplingPlan) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *AtlasUncouplingPlan) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetAgreementId() string {
+	if x != nil {
+		return x.AgreementId
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetSeparationState() string {
+	if x != nil {
+		return x.SeparationState
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetSharedMediaPolicy() string {
+	if x != nil {
+		return x.SharedMediaPolicy
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetSharedPlansPolicy() string {
+	if x != nil {
+		return x.SharedPlansPolicy
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetMutualDiscoveryBlock() bool {
+	if x != nil {
+		return x.MutualDiscoveryBlock
+	}
+	return false
+}
+
+func (x *AtlasUncouplingPlan) GetClosureNote() string {
+	if x != nil {
+		return x.ClosureNote
+	}
+	return ""
+}
+
+func (x *AtlasUncouplingPlan) GetResolvedAt() int64 {
+	if x != nil {
+		return x.ResolvedAt
+	}
+	return 0
+}
+
+type GetRelationshipProgressionWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRelationshipProgressionWorkbenchRequest) Reset() {
+	*x = GetRelationshipProgressionWorkbenchRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRelationshipProgressionWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRelationshipProgressionWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetRelationshipProgressionWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRelationshipProgressionWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetRelationshipProgressionWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *GetRelationshipProgressionWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetRelationshipProgressionWorkbenchResponse struct {
+	state                          protoimpl.MessageState        `protogen:"open.v1"`
+	Agreements                     []*AtlasRelationshipAgreement `protobuf:"bytes,1,rep,name=agreements,proto3" json:"agreements,omitempty"`
+	Checkins                       []*AtlasRelationshipCheckin   `protobuf:"bytes,2,rep,name=checkins,proto3" json:"checkins,omitempty"`
+	UncouplingPlans                []*AtlasUncouplingPlan        `protobuf:"bytes,3,rep,name=uncoupling_plans,json=uncouplingPlans,proto3" json:"uncoupling_plans,omitempty"`
+	LicensedProviderBoundaryNotice string                        `protobuf:"bytes,4,opt,name=licensed_provider_boundary_notice,json=licensedProviderBoundaryNotice,proto3" json:"licensed_provider_boundary_notice,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) Reset() {
+	*x = GetRelationshipProgressionWorkbenchResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRelationshipProgressionWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRelationshipProgressionWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetRelationshipProgressionWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) GetAgreements() []*AtlasRelationshipAgreement {
+	if x != nil {
+		return x.Agreements
+	}
+	return nil
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) GetCheckins() []*AtlasRelationshipCheckin {
+	if x != nil {
+		return x.Checkins
+	}
+	return nil
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) GetUncouplingPlans() []*AtlasUncouplingPlan {
+	if x != nil {
+		return x.UncouplingPlans
+	}
+	return nil
+}
+
+func (x *GetRelationshipProgressionWorkbenchResponse) GetLicensedProviderBoundaryNotice() string {
+	if x != nil {
+		return x.LicensedProviderBoundaryNotice
+	}
+	return ""
+}
+
+type UpsertRelationshipStageAgreementRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PartnerUserId        string                 `protobuf:"bytes,2,opt,name=partner_user_id,json=partnerUserId,proto3" json:"partner_user_id,omitempty"`
+	PartnerName          string                 `protobuf:"bytes,3,opt,name=partner_name,json=partnerName,proto3" json:"partner_name,omitempty"`
+	CurrentStage         string                 `protobuf:"bytes,4,opt,name=current_stage,json=currentStage,proto3" json:"current_stage,omitempty"`
+	StageStructure       string                 `protobuf:"bytes,5,opt,name=stage_structure,json=stageStructure,proto3" json:"stage_structure,omitempty"`
+	DiscoveryPaused      bool                   `protobuf:"varint,6,opt,name=discovery_paused,json=discoveryPaused,proto3" json:"discovery_paused,omitempty"`
+	PacingCadence        string                 `protobuf:"bytes,7,opt,name=pacing_cadence,json=pacingCadence,proto3" json:"pacing_cadence,omitempty"`
+	SharedBoundariesJson string                 `protobuf:"bytes,8,opt,name=shared_boundaries_json,json=sharedBoundariesJson,proto3" json:"shared_boundaries_json,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) Reset() {
+	*x = UpsertRelationshipStageAgreementRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertRelationshipStageAgreementRequest) ProtoMessage() {}
+
+func (x *UpsertRelationshipStageAgreementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertRelationshipStageAgreementRequest.ProtoReflect.Descriptor instead.
+func (*UpsertRelationshipStageAgreementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetPartnerUserId() string {
+	if x != nil {
+		return x.PartnerUserId
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetPartnerName() string {
+	if x != nil {
+		return x.PartnerName
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetCurrentStage() string {
+	if x != nil {
+		return x.CurrentStage
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetStageStructure() string {
+	if x != nil {
+		return x.StageStructure
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetDiscoveryPaused() bool {
+	if x != nil {
+		return x.DiscoveryPaused
+	}
+	return false
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetPacingCadence() string {
+	if x != nil {
+		return x.PacingCadence
+	}
+	return ""
+}
+
+func (x *UpsertRelationshipStageAgreementRequest) GetSharedBoundariesJson() string {
+	if x != nil {
+		return x.SharedBoundariesJson
+	}
+	return ""
+}
+
+type UpsertRelationshipStageAgreementResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Agreement     *AtlasRelationshipAgreement `protobuf:"bytes,1,opt,name=agreement,proto3" json:"agreement,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertRelationshipStageAgreementResponse) Reset() {
+	*x = UpsertRelationshipStageAgreementResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertRelationshipStageAgreementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertRelationshipStageAgreementResponse) ProtoMessage() {}
+
+func (x *UpsertRelationshipStageAgreementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertRelationshipStageAgreementResponse.ProtoReflect.Descriptor instead.
+func (*UpsertRelationshipStageAgreementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *UpsertRelationshipStageAgreementResponse) GetAgreement() *AtlasRelationshipAgreement {
+	if x != nil {
+		return x.Agreement
+	}
+	return nil
+}
+
+type RecordRelationshipCheckinReflectionRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	UserId         string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AgreementId    string                 `protobuf:"bytes,2,opt,name=agreement_id,json=agreementId,proto3" json:"agreement_id,omitempty"`
+	TopicCategory  string                 `protobuf:"bytes,3,opt,name=topic_category,json=topicCategory,proto3" json:"topic_category,omitempty"`
+	MyReflection   string                 `protobuf:"bytes,4,opt,name=my_reflection,json=myReflection,proto3" json:"my_reflection,omitempty"`
+	VisibilityMode string                 `protobuf:"bytes,5,opt,name=visibility_mode,json=visibilityMode,proto3" json:"visibility_mode,omitempty"`
+	AlignmentState string                 `protobuf:"bytes,6,opt,name=alignment_state,json=alignmentState,proto3" json:"alignment_state,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) Reset() {
+	*x = RecordRelationshipCheckinReflectionRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordRelationshipCheckinReflectionRequest) ProtoMessage() {}
+
+func (x *RecordRelationshipCheckinReflectionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordRelationshipCheckinReflectionRequest.ProtoReflect.Descriptor instead.
+func (*RecordRelationshipCheckinReflectionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetAgreementId() string {
+	if x != nil {
+		return x.AgreementId
+	}
+	return ""
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetTopicCategory() string {
+	if x != nil {
+		return x.TopicCategory
+	}
+	return ""
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetMyReflection() string {
+	if x != nil {
+		return x.MyReflection
+	}
+	return ""
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetVisibilityMode() string {
+	if x != nil {
+		return x.VisibilityMode
+	}
+	return ""
+}
+
+func (x *RecordRelationshipCheckinReflectionRequest) GetAlignmentState() string {
+	if x != nil {
+		return x.AlignmentState
+	}
+	return ""
+}
+
+type RecordRelationshipCheckinReflectionResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Checkin       *AtlasRelationshipCheckin `protobuf:"bytes,1,opt,name=checkin,proto3" json:"checkin,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordRelationshipCheckinReflectionResponse) Reset() {
+	*x = RecordRelationshipCheckinReflectionResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordRelationshipCheckinReflectionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordRelationshipCheckinReflectionResponse) ProtoMessage() {}
+
+func (x *RecordRelationshipCheckinReflectionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordRelationshipCheckinReflectionResponse.ProtoReflect.Descriptor instead.
+func (*RecordRelationshipCheckinReflectionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *RecordRelationshipCheckinReflectionResponse) GetCheckin() *AtlasRelationshipCheckin {
+	if x != nil {
+		return x.Checkin
+	}
+	return nil
+}
+
+type InitiateSafeUncouplingPlanRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AgreementId          string                 `protobuf:"bytes,2,opt,name=agreement_id,json=agreementId,proto3" json:"agreement_id,omitempty"`
+	SeparationState      string                 `protobuf:"bytes,3,opt,name=separation_state,json=separationState,proto3" json:"separation_state,omitempty"`
+	SharedMediaPolicy    string                 `protobuf:"bytes,4,opt,name=shared_media_policy,json=sharedMediaPolicy,proto3" json:"shared_media_policy,omitempty"`
+	SharedPlansPolicy    string                 `protobuf:"bytes,5,opt,name=shared_plans_policy,json=sharedPlansPolicy,proto3" json:"shared_plans_policy,omitempty"`
+	MutualDiscoveryBlock bool                   `protobuf:"varint,6,opt,name=mutual_discovery_block,json=mutualDiscoveryBlock,proto3" json:"mutual_discovery_block,omitempty"`
+	ClosureNote          string                 `protobuf:"bytes,7,opt,name=closure_note,json=closureNote,proto3" json:"closure_note,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) Reset() {
+	*x = InitiateSafeUncouplingPlanRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InitiateSafeUncouplingPlanRequest) ProtoMessage() {}
+
+func (x *InitiateSafeUncouplingPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InitiateSafeUncouplingPlanRequest.ProtoReflect.Descriptor instead.
+func (*InitiateSafeUncouplingPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetAgreementId() string {
+	if x != nil {
+		return x.AgreementId
+	}
+	return ""
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetSeparationState() string {
+	if x != nil {
+		return x.SeparationState
+	}
+	return ""
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetSharedMediaPolicy() string {
+	if x != nil {
+		return x.SharedMediaPolicy
+	}
+	return ""
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetSharedPlansPolicy() string {
+	if x != nil {
+		return x.SharedPlansPolicy
+	}
+	return ""
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetMutualDiscoveryBlock() bool {
+	if x != nil {
+		return x.MutualDiscoveryBlock
+	}
+	return false
+}
+
+func (x *InitiateSafeUncouplingPlanRequest) GetClosureNote() string {
+	if x != nil {
+		return x.ClosureNote
+	}
+	return ""
+}
+
+type InitiateSafeUncouplingPlanResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Plan          *AtlasUncouplingPlan   `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *InitiateSafeUncouplingPlanResponse) Reset() {
+	*x = InitiateSafeUncouplingPlanResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InitiateSafeUncouplingPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InitiateSafeUncouplingPlanResponse) ProtoMessage() {}
+
+func (x *InitiateSafeUncouplingPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InitiateSafeUncouplingPlanResponse.ProtoReflect.Descriptor instead.
+func (*InitiateSafeUncouplingPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{200}
+}
+
+func (x *InitiateSafeUncouplingPlanResponse) GetPlan() *AtlasUncouplingPlan {
+	if x != nil {
+		return x.Plan
+	}
+	return nil
+}
+
+type AdminListRelationshipProgressionAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListRelationshipProgressionAuditRequest) Reset() {
+	*x = AdminListRelationshipProgressionAuditRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListRelationshipProgressionAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListRelationshipProgressionAuditRequest) ProtoMessage() {}
+
+func (x *AdminListRelationshipProgressionAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListRelationshipProgressionAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListRelationshipProgressionAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *AdminListRelationshipProgressionAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListRelationshipProgressionAuditResponse struct {
+	state           protoimpl.MessageState        `protogen:"open.v1"`
+	Agreements      []*AtlasRelationshipAgreement `protobuf:"bytes,1,rep,name=agreements,proto3" json:"agreements,omitempty"`
+	Checkins        []*AtlasRelationshipCheckin   `protobuf:"bytes,2,rep,name=checkins,proto3" json:"checkins,omitempty"`
+	UncouplingPlans []*AtlasUncouplingPlan        `protobuf:"bytes,3,rep,name=uncoupling_plans,json=uncouplingPlans,proto3" json:"uncoupling_plans,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AdminListRelationshipProgressionAuditResponse) Reset() {
+	*x = AdminListRelationshipProgressionAuditResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListRelationshipProgressionAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListRelationshipProgressionAuditResponse) ProtoMessage() {}
+
+func (x *AdminListRelationshipProgressionAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListRelationshipProgressionAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListRelationshipProgressionAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *AdminListRelationshipProgressionAuditResponse) GetAgreements() []*AtlasRelationshipAgreement {
+	if x != nil {
+		return x.Agreements
+	}
+	return nil
+}
+
+func (x *AdminListRelationshipProgressionAuditResponse) GetCheckins() []*AtlasRelationshipCheckin {
+	if x != nil {
+		return x.Checkins
+	}
+	return nil
+}
+
+func (x *AdminListRelationshipProgressionAuditResponse) GetUncouplingPlans() []*AtlasUncouplingPlan {
+	if x != nil {
+		return x.UncouplingPlans
+	}
+	return nil
+}
+
+type AdminModerateRelationshipPromptSafetyRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	CheckinId                string                 `protobuf:"bytes,1,opt,name=checkin_id,json=checkinId,proto3" json:"checkin_id,omitempty"`
+	ModerationStatus         string                 `protobuf:"bytes,2,opt,name=moderation_status,json=moderationStatus,proto3" json:"moderation_status,omitempty"`
+	LicensedBoundaryVerified bool                   `protobuf:"varint,3,opt,name=licensed_boundary_verified,json=licensedBoundaryVerified,proto3" json:"licensed_boundary_verified,omitempty"`
+	AuditReason              string                 `protobuf:"bytes,4,opt,name=audit_reason,json=auditReason,proto3" json:"audit_reason,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) Reset() {
+	*x = AdminModerateRelationshipPromptSafetyRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminModerateRelationshipPromptSafetyRequest) ProtoMessage() {}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminModerateRelationshipPromptSafetyRequest.ProtoReflect.Descriptor instead.
+func (*AdminModerateRelationshipPromptSafetyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{203}
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) GetCheckinId() string {
+	if x != nil {
+		return x.CheckinId
+	}
+	return ""
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) GetModerationStatus() string {
+	if x != nil {
+		return x.ModerationStatus
+	}
+	return ""
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) GetLicensedBoundaryVerified() bool {
+	if x != nil {
+		return x.LicensedBoundaryVerified
+	}
+	return false
+}
+
+func (x *AdminModerateRelationshipPromptSafetyRequest) GetAuditReason() string {
+	if x != nil {
+		return x.AuditReason
+	}
+	return ""
+}
+
+type AdminModerateRelationshipPromptSafetyResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Checkin       *AtlasRelationshipCheckin `protobuf:"bytes,1,opt,name=checkin,proto3" json:"checkin,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminModerateRelationshipPromptSafetyResponse) Reset() {
+	*x = AdminModerateRelationshipPromptSafetyResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminModerateRelationshipPromptSafetyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminModerateRelationshipPromptSafetyResponse) ProtoMessage() {}
+
+func (x *AdminModerateRelationshipPromptSafetyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminModerateRelationshipPromptSafetyResponse.ProtoReflect.Descriptor instead.
+func (*AdminModerateRelationshipPromptSafetyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *AdminModerateRelationshipPromptSafetyResponse) GetCheckin() *AtlasRelationshipCheckin {
+	if x != nil {
+		return x.Checkin
+	}
+	return nil
+}
+
+type AtlasTemporaryCrew struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CreatorUserId string                 `protobuf:"bytes,2,opt,name=creator_user_id,json=creatorUserId,proto3" json:"creator_user_id,omitempty"`
+	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	// platonic_friendship | activity_partner | creative_collaborator | city_newcomer_host
+	IntentLane string `protobuf:"bytes,4,opt,name=intent_lane,json=intentLane,proto3" json:"intent_lane,omitempty"`
+	City       string `protobuf:"bytes,5,opt,name=city,proto3" json:"city,omitempty"`
+	// organizer | logistics_lead | treasurer | member
+	MemberRole  string `protobuf:"bytes,6,opt,name=member_role,json=memberRole,proto3" json:"member_role,omitempty"`
+	MemberCount int32  `protobuf:"varint,7,opt,name=member_count,json=memberCount,proto3" json:"member_count,omitempty"`
+	MaxMembers  int32  `protobuf:"varint,8,opt,name=max_members,json=maxMembers,proto3" json:"max_members,omitempty"`
+	// no_cost_public | even_split | each_pays_own | organizer_covered
+	ExpenseMode         string `protobuf:"bytes,9,opt,name=expense_mode,json=expenseMode,proto3" json:"expense_mode,omitempty"`
+	EstimatedShareCents int32  `protobuf:"varint,10,opt,name=estimated_share_cents,json=estimatedShareCents,proto3" json:"estimated_share_cents,omitempty"`
+	// forming | active_outing | completed_gracefully | dissolved
+	LifecycleState       string `protobuf:"bytes,11,opt,name=lifecycle_state,json=lifecycleState,proto3" json:"lifecycle_state,omitempty"`
+	RomanticLaneIsolated bool   `protobuf:"varint,12,opt,name=romantic_lane_isolated,json=romanticLaneIsolated,proto3" json:"romantic_lane_isolated,omitempty"`
+	DissolvesAt          int64  `protobuf:"varint,13,opt,name=dissolves_at,json=dissolvesAt,proto3" json:"dissolves_at,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AtlasTemporaryCrew) Reset() {
+	*x = AtlasTemporaryCrew{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasTemporaryCrew) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasTemporaryCrew) ProtoMessage() {}
+
+func (x *AtlasTemporaryCrew) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasTemporaryCrew.ProtoReflect.Descriptor instead.
+func (*AtlasTemporaryCrew) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *AtlasTemporaryCrew) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetCreatorUserId() string {
+	if x != nil {
+		return x.CreatorUserId
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetIntentLane() string {
+	if x != nil {
+		return x.IntentLane
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetMemberRole() string {
+	if x != nil {
+		return x.MemberRole
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetMemberCount() int32 {
+	if x != nil {
+		return x.MemberCount
+	}
+	return 0
+}
+
+func (x *AtlasTemporaryCrew) GetMaxMembers() int32 {
+	if x != nil {
+		return x.MaxMembers
+	}
+	return 0
+}
+
+func (x *AtlasTemporaryCrew) GetExpenseMode() string {
+	if x != nil {
+		return x.ExpenseMode
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetEstimatedShareCents() int32 {
+	if x != nil {
+		return x.EstimatedShareCents
+	}
+	return 0
+}
+
+func (x *AtlasTemporaryCrew) GetLifecycleState() string {
+	if x != nil {
+		return x.LifecycleState
+	}
+	return ""
+}
+
+func (x *AtlasTemporaryCrew) GetRomanticLaneIsolated() bool {
+	if x != nil {
+		return x.RomanticLaneIsolated
+	}
+	return false
+}
+
+func (x *AtlasTemporaryCrew) GetDissolvesAt() int64 {
+	if x != nil {
+		return x.DissolvesAt
+	}
+	return 0
+}
+
+type AtlasCrewSocialMission struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CrewId       string                 `protobuf:"bytes,2,opt,name=crew_id,json=crewId,proto3" json:"crew_id,omitempty"`
+	UserId       string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MissionTitle string                 `protobuf:"bytes,4,opt,name=mission_title,json=missionTitle,proto3" json:"mission_title,omitempty"`
+	// third_place_salon | outdoor_expedition | volunteer_sprint | cultural_table
+	Category string `protobuf:"bytes,5,opt,name=category,proto3" json:"category,omitempty"`
+	// venue_checkin_qr | dual_presence_ping | host_attestation | shared_photo_opt_in
+	EvidenceKind      string `protobuf:"bytes,6,opt,name=evidence_kind,json=evidenceKind,proto3" json:"evidence_kind,omitempty"`
+	EvidenceReference string `protobuf:"bytes,7,opt,name=evidence_reference,json=evidenceReference,proto3" json:"evidence_reference,omitempty"`
+	// pending | verified | flagged
+	VerificationStatus string `protobuf:"bytes,8,opt,name=verification_status,json=verificationStatus,proto3" json:"verification_status,omitempty"`
+	CompletedAt        int64  `protobuf:"varint,9,opt,name=completed_at,json=completedAt,proto3" json:"completed_at,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *AtlasCrewSocialMission) Reset() {
+	*x = AtlasCrewSocialMission{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasCrewSocialMission) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasCrewSocialMission) ProtoMessage() {}
+
+func (x *AtlasCrewSocialMission) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasCrewSocialMission.ProtoReflect.Descriptor instead.
+func (*AtlasCrewSocialMission) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *AtlasCrewSocialMission) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetCrewId() string {
+	if x != nil {
+		return x.CrewId
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetMissionTitle() string {
+	if x != nil {
+		return x.MissionTitle
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetEvidenceKind() string {
+	if x != nil {
+		return x.EvidenceKind
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetEvidenceReference() string {
+	if x != nil {
+		return x.EvidenceReference
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetVerificationStatus() string {
+	if x != nil {
+		return x.VerificationStatus
+	}
+	return ""
+}
+
+func (x *AtlasCrewSocialMission) GetCompletedAt() int64 {
+	if x != nil {
+		return x.CompletedAt
+	}
+	return 0
+}
+
+type AtlasContextualCrewEndorsement struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CrewId          string                 `protobuf:"bytes,2,opt,name=crew_id,json=crewId,proto3" json:"crew_id,omitempty"`
+	RecipientUserId string                 `protobuf:"bytes,3,opt,name=recipient_user_id,json=recipientUserId,proto3" json:"recipient_user_id,omitempty"`
+	// punctual_organizer | welcoming_guide | clear_communicator | fair_expense_settler
+	ContextBadge               string `protobuf:"bytes,4,opt,name=context_badge,json=contextBadge,proto3" json:"context_badge,omitempty"`
+	UniversalRankingProhibited bool   `protobuf:"varint,5,opt,name=universal_ranking_prohibited,json=universalRankingProhibited,proto3" json:"universal_ranking_prohibited,omitempty"`
+	EndorsementNote            string `protobuf:"bytes,6,opt,name=endorsement_note,json=endorsementNote,proto3" json:"endorsement_note,omitempty"`
+	CreatedAt                  int64  `protobuf:"varint,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AtlasContextualCrewEndorsement) Reset() {
+	*x = AtlasContextualCrewEndorsement{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[207]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasContextualCrewEndorsement) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasContextualCrewEndorsement) ProtoMessage() {}
+
+func (x *AtlasContextualCrewEndorsement) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[207]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasContextualCrewEndorsement.ProtoReflect.Descriptor instead.
+func (*AtlasContextualCrewEndorsement) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{207}
+}
+
+func (x *AtlasContextualCrewEndorsement) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasContextualCrewEndorsement) GetCrewId() string {
+	if x != nil {
+		return x.CrewId
+	}
+	return ""
+}
+
+func (x *AtlasContextualCrewEndorsement) GetRecipientUserId() string {
+	if x != nil {
+		return x.RecipientUserId
+	}
+	return ""
+}
+
+func (x *AtlasContextualCrewEndorsement) GetContextBadge() string {
+	if x != nil {
+		return x.ContextBadge
+	}
+	return ""
+}
+
+func (x *AtlasContextualCrewEndorsement) GetUniversalRankingProhibited() bool {
+	if x != nil {
+		return x.UniversalRankingProhibited
+	}
+	return false
+}
+
+func (x *AtlasContextualCrewEndorsement) GetEndorsementNote() string {
+	if x != nil {
+		return x.EndorsementNote
+	}
+	return ""
+}
+
+func (x *AtlasContextualCrewEndorsement) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type GetFriendshipCrewsWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFriendshipCrewsWorkbenchRequest) Reset() {
+	*x = GetFriendshipCrewsWorkbenchRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[208]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFriendshipCrewsWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFriendshipCrewsWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetFriendshipCrewsWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[208]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFriendshipCrewsWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetFriendshipCrewsWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{208}
+}
+
+func (x *GetFriendshipCrewsWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetFriendshipCrewsWorkbenchResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Crews         []*AtlasTemporaryCrew             `protobuf:"bytes,1,rep,name=crews,proto3" json:"crews,omitempty"`
+	Missions      []*AtlasCrewSocialMission         `protobuf:"bytes,2,rep,name=missions,proto3" json:"missions,omitempty"`
+	Endorsements  []*AtlasContextualCrewEndorsement `protobuf:"bytes,3,rep,name=endorsements,proto3" json:"endorsements,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) Reset() {
+	*x = GetFriendshipCrewsWorkbenchResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[209]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFriendshipCrewsWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[209]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFriendshipCrewsWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetFriendshipCrewsWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{209}
+}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) GetCrews() []*AtlasTemporaryCrew {
+	if x != nil {
+		return x.Crews
+	}
+	return nil
+}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) GetMissions() []*AtlasCrewSocialMission {
+	if x != nil {
+		return x.Missions
+	}
+	return nil
+}
+
+func (x *GetFriendshipCrewsWorkbenchResponse) GetEndorsements() []*AtlasContextualCrewEndorsement {
+	if x != nil {
+		return x.Endorsements
+	}
+	return nil
+}
+
+type CreateTemporaryCrewRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	CreatorUserId       string                 `protobuf:"bytes,1,opt,name=creator_user_id,json=creatorUserId,proto3" json:"creator_user_id,omitempty"`
+	Title               string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	IntentLane          string                 `protobuf:"bytes,3,opt,name=intent_lane,json=intentLane,proto3" json:"intent_lane,omitempty"`
+	City                string                 `protobuf:"bytes,4,opt,name=city,proto3" json:"city,omitempty"`
+	MemberRole          string                 `protobuf:"bytes,5,opt,name=member_role,json=memberRole,proto3" json:"member_role,omitempty"`
+	MaxMembers          int32                  `protobuf:"varint,6,opt,name=max_members,json=maxMembers,proto3" json:"max_members,omitempty"`
+	ExpenseMode         string                 `protobuf:"bytes,7,opt,name=expense_mode,json=expenseMode,proto3" json:"expense_mode,omitempty"`
+	EstimatedShareCents int32                  `protobuf:"varint,8,opt,name=estimated_share_cents,json=estimatedShareCents,proto3" json:"estimated_share_cents,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *CreateTemporaryCrewRequest) Reset() {
+	*x = CreateTemporaryCrewRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[210]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTemporaryCrewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTemporaryCrewRequest) ProtoMessage() {}
+
+func (x *CreateTemporaryCrewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[210]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTemporaryCrewRequest.ProtoReflect.Descriptor instead.
+func (*CreateTemporaryCrewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{210}
+}
+
+func (x *CreateTemporaryCrewRequest) GetCreatorUserId() string {
+	if x != nil {
+		return x.CreatorUserId
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetIntentLane() string {
+	if x != nil {
+		return x.IntentLane
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetCity() string {
+	if x != nil {
+		return x.City
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetMemberRole() string {
+	if x != nil {
+		return x.MemberRole
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetMaxMembers() int32 {
+	if x != nil {
+		return x.MaxMembers
+	}
+	return 0
+}
+
+func (x *CreateTemporaryCrewRequest) GetExpenseMode() string {
+	if x != nil {
+		return x.ExpenseMode
+	}
+	return ""
+}
+
+func (x *CreateTemporaryCrewRequest) GetEstimatedShareCents() int32 {
+	if x != nil {
+		return x.EstimatedShareCents
+	}
+	return 0
+}
+
+type CreateTemporaryCrewResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Crew          *AtlasTemporaryCrew    `protobuf:"bytes,1,opt,name=crew,proto3" json:"crew,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTemporaryCrewResponse) Reset() {
+	*x = CreateTemporaryCrewResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[211]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTemporaryCrewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTemporaryCrewResponse) ProtoMessage() {}
+
+func (x *CreateTemporaryCrewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[211]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTemporaryCrewResponse.ProtoReflect.Descriptor instead.
+func (*CreateTemporaryCrewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{211}
+}
+
+func (x *CreateTemporaryCrewResponse) GetCrew() *AtlasTemporaryCrew {
+	if x != nil {
+		return x.Crew
+	}
+	return nil
+}
+
+type SubmitCrewMissionEvidenceRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	UserId            string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CrewId            string                 `protobuf:"bytes,2,opt,name=crew_id,json=crewId,proto3" json:"crew_id,omitempty"`
+	MissionTitle      string                 `protobuf:"bytes,3,opt,name=mission_title,json=missionTitle,proto3" json:"mission_title,omitempty"`
+	Category          string                 `protobuf:"bytes,4,opt,name=category,proto3" json:"category,omitempty"`
+	EvidenceKind      string                 `protobuf:"bytes,5,opt,name=evidence_kind,json=evidenceKind,proto3" json:"evidence_kind,omitempty"`
+	EvidenceReference string                 `protobuf:"bytes,6,opt,name=evidence_reference,json=evidenceReference,proto3" json:"evidence_reference,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) Reset() {
+	*x = SubmitCrewMissionEvidenceRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[212]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCrewMissionEvidenceRequest) ProtoMessage() {}
+
+func (x *SubmitCrewMissionEvidenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[212]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCrewMissionEvidenceRequest.ProtoReflect.Descriptor instead.
+func (*SubmitCrewMissionEvidenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{212}
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetCrewId() string {
+	if x != nil {
+		return x.CrewId
+	}
+	return ""
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetMissionTitle() string {
+	if x != nil {
+		return x.MissionTitle
+	}
+	return ""
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetCategory() string {
+	if x != nil {
+		return x.Category
+	}
+	return ""
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetEvidenceKind() string {
+	if x != nil {
+		return x.EvidenceKind
+	}
+	return ""
+}
+
+func (x *SubmitCrewMissionEvidenceRequest) GetEvidenceReference() string {
+	if x != nil {
+		return x.EvidenceReference
+	}
+	return ""
+}
+
+type SubmitCrewMissionEvidenceResponse struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Mission       *AtlasCrewSocialMission `protobuf:"bytes,1,opt,name=mission,proto3" json:"mission,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitCrewMissionEvidenceResponse) Reset() {
+	*x = SubmitCrewMissionEvidenceResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[213]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCrewMissionEvidenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCrewMissionEvidenceResponse) ProtoMessage() {}
+
+func (x *SubmitCrewMissionEvidenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[213]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCrewMissionEvidenceResponse.ProtoReflect.Descriptor instead.
+func (*SubmitCrewMissionEvidenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{213}
+}
+
+func (x *SubmitCrewMissionEvidenceResponse) GetMission() *AtlasCrewSocialMission {
+	if x != nil {
+		return x.Mission
+	}
+	return nil
+}
+
+type DissolveOrCompleteCrewRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	UserId          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CrewId          string                 `protobuf:"bytes,2,opt,name=crew_id,json=crewId,proto3" json:"crew_id,omitempty"`
+	LifecycleState  string                 `protobuf:"bytes,3,opt,name=lifecycle_state,json=lifecycleState,proto3" json:"lifecycle_state,omitempty"`
+	ContextBadge    string                 `protobuf:"bytes,4,opt,name=context_badge,json=contextBadge,proto3" json:"context_badge,omitempty"`
+	EndorsementNote string                 `protobuf:"bytes,5,opt,name=endorsement_note,json=endorsementNote,proto3" json:"endorsement_note,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *DissolveOrCompleteCrewRequest) Reset() {
+	*x = DissolveOrCompleteCrewRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[214]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DissolveOrCompleteCrewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DissolveOrCompleteCrewRequest) ProtoMessage() {}
+
+func (x *DissolveOrCompleteCrewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[214]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DissolveOrCompleteCrewRequest.ProtoReflect.Descriptor instead.
+func (*DissolveOrCompleteCrewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{214}
+}
+
+func (x *DissolveOrCompleteCrewRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DissolveOrCompleteCrewRequest) GetCrewId() string {
+	if x != nil {
+		return x.CrewId
+	}
+	return ""
+}
+
+func (x *DissolveOrCompleteCrewRequest) GetLifecycleState() string {
+	if x != nil {
+		return x.LifecycleState
+	}
+	return ""
+}
+
+func (x *DissolveOrCompleteCrewRequest) GetContextBadge() string {
+	if x != nil {
+		return x.ContextBadge
+	}
+	return ""
+}
+
+func (x *DissolveOrCompleteCrewRequest) GetEndorsementNote() string {
+	if x != nil {
+		return x.EndorsementNote
+	}
+	return ""
+}
+
+type DissolveOrCompleteCrewResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Crew          *AtlasTemporaryCrew             `protobuf:"bytes,1,opt,name=crew,proto3" json:"crew,omitempty"`
+	Endorsement   *AtlasContextualCrewEndorsement `protobuf:"bytes,2,opt,name=endorsement,proto3" json:"endorsement,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DissolveOrCompleteCrewResponse) Reset() {
+	*x = DissolveOrCompleteCrewResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[215]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DissolveOrCompleteCrewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DissolveOrCompleteCrewResponse) ProtoMessage() {}
+
+func (x *DissolveOrCompleteCrewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[215]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DissolveOrCompleteCrewResponse.ProtoReflect.Descriptor instead.
+func (*DissolveOrCompleteCrewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{215}
+}
+
+func (x *DissolveOrCompleteCrewResponse) GetCrew() *AtlasTemporaryCrew {
+	if x != nil {
+		return x.Crew
+	}
+	return nil
+}
+
+func (x *DissolveOrCompleteCrewResponse) GetEndorsement() *AtlasContextualCrewEndorsement {
+	if x != nil {
+		return x.Endorsement
+	}
+	return nil
+}
+
+type AdminListFriendshipCrewsAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListFriendshipCrewsAuditRequest) Reset() {
+	*x = AdminListFriendshipCrewsAuditRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[216]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListFriendshipCrewsAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListFriendshipCrewsAuditRequest) ProtoMessage() {}
+
+func (x *AdminListFriendshipCrewsAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[216]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListFriendshipCrewsAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListFriendshipCrewsAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{216}
+}
+
+func (x *AdminListFriendshipCrewsAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListFriendshipCrewsAuditResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Crews         []*AtlasTemporaryCrew             `protobuf:"bytes,1,rep,name=crews,proto3" json:"crews,omitempty"`
+	Missions      []*AtlasCrewSocialMission         `protobuf:"bytes,2,rep,name=missions,proto3" json:"missions,omitempty"`
+	Endorsements  []*AtlasContextualCrewEndorsement `protobuf:"bytes,3,rep,name=endorsements,proto3" json:"endorsements,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListFriendshipCrewsAuditResponse) Reset() {
+	*x = AdminListFriendshipCrewsAuditResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[217]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListFriendshipCrewsAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListFriendshipCrewsAuditResponse) ProtoMessage() {}
+
+func (x *AdminListFriendshipCrewsAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[217]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListFriendshipCrewsAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListFriendshipCrewsAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{217}
+}
+
+func (x *AdminListFriendshipCrewsAuditResponse) GetCrews() []*AtlasTemporaryCrew {
+	if x != nil {
+		return x.Crews
+	}
+	return nil
+}
+
+func (x *AdminListFriendshipCrewsAuditResponse) GetMissions() []*AtlasCrewSocialMission {
+	if x != nil {
+		return x.Missions
+	}
+	return nil
+}
+
+func (x *AdminListFriendshipCrewsAuditResponse) GetEndorsements() []*AtlasContextualCrewEndorsement {
+	if x != nil {
+		return x.Endorsements
+	}
+	return nil
+}
+
+type AdminModerateCrewSafetyAndMissionRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	MissionId          string                 `protobuf:"bytes,1,opt,name=mission_id,json=missionId,proto3" json:"mission_id,omitempty"`
+	VerificationStatus string                 `protobuf:"bytes,2,opt,name=verification_status,json=verificationStatus,proto3" json:"verification_status,omitempty"`
+	AuditReason        string                 `protobuf:"bytes,3,opt,name=audit_reason,json=auditReason,proto3" json:"audit_reason,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) Reset() {
+	*x = AdminModerateCrewSafetyAndMissionRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[218]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminModerateCrewSafetyAndMissionRequest) ProtoMessage() {}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[218]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminModerateCrewSafetyAndMissionRequest.ProtoReflect.Descriptor instead.
+func (*AdminModerateCrewSafetyAndMissionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{218}
+}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) GetMissionId() string {
+	if x != nil {
+		return x.MissionId
+	}
+	return ""
+}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) GetVerificationStatus() string {
+	if x != nil {
+		return x.VerificationStatus
+	}
+	return ""
+}
+
+func (x *AdminModerateCrewSafetyAndMissionRequest) GetAuditReason() string {
+	if x != nil {
+		return x.AuditReason
+	}
+	return ""
+}
+
+type AdminModerateCrewSafetyAndMissionResponse struct {
+	state         protoimpl.MessageState  `protogen:"open.v1"`
+	Mission       *AtlasCrewSocialMission `protobuf:"bytes,1,opt,name=mission,proto3" json:"mission,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminModerateCrewSafetyAndMissionResponse) Reset() {
+	*x = AdminModerateCrewSafetyAndMissionResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[219]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminModerateCrewSafetyAndMissionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminModerateCrewSafetyAndMissionResponse) ProtoMessage() {}
+
+func (x *AdminModerateCrewSafetyAndMissionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[219]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminModerateCrewSafetyAndMissionResponse.ProtoReflect.Descriptor instead.
+func (*AdminModerateCrewSafetyAndMissionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{219}
+}
+
+func (x *AdminModerateCrewSafetyAndMissionResponse) GetMission() *AtlasCrewSocialMission {
+	if x != nil {
+		return x.Mission
+	}
+	return nil
+}
+
+type AtlasConnectionArchiveEntry struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Id     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// akashic_chapter | member_letter | appreciation_gift | salon_keepsake | yearbook_moment
+	ArtifactKind string `protobuf:"bytes,3,opt,name=artifact_kind,json=artifactKind,proto3" json:"artifact_kind,omitempty"`
+	Title        string `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	Summary      string `protobuf:"bytes,5,opt,name=summary,proto3" json:"summary,omitempty"`
+	// private_vault | mutual_connection_only | yearbook_selected
+	AudienceScope string `protobuf:"bytes,6,opt,name=audience_scope,json=audienceScope,proto3" json:"audience_scope,omitempty"`
+	// retain_private | return_to_sender | mutual_hide | delete_permanently | disputed_hold
+	PostMatchDisposition string `protobuf:"bytes,7,opt,name=post_match_disposition,json=postMatchDisposition,proto3" json:"post_match_disposition,omitempty"`
+	AuthorshipVersion    int32  `protobuf:"varint,8,opt,name=authorship_version,json=authorshipVersion,proto3" json:"authorship_version,omitempty"`
+	CreatedAt            int64  `protobuf:"varint,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AtlasConnectionArchiveEntry) Reset() {
+	*x = AtlasConnectionArchiveEntry{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[220]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasConnectionArchiveEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasConnectionArchiveEntry) ProtoMessage() {}
+
+func (x *AtlasConnectionArchiveEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[220]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasConnectionArchiveEntry.ProtoReflect.Descriptor instead.
+func (*AtlasConnectionArchiveEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{220}
+}
+
+func (x *AtlasConnectionArchiveEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetArtifactKind() string {
+	if x != nil {
+		return x.ArtifactKind
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetAudienceScope() string {
+	if x != nil {
+		return x.AudienceScope
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetPostMatchDisposition() string {
+	if x != nil {
+		return x.PostMatchDisposition
+	}
+	return ""
+}
+
+func (x *AtlasConnectionArchiveEntry) GetAuthorshipVersion() int32 {
+	if x != nil {
+		return x.AuthorshipVersion
+	}
+	return 0
+}
+
+func (x *AtlasConnectionArchiveEntry) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type AtlasMeaningfulGiftGuardrail struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SenderUserId    string                 `protobuf:"bytes,2,opt,name=sender_user_id,json=senderUserId,proto3" json:"sender_user_id,omitempty"`
+	RecipientUserId string                 `protobuf:"bytes,3,opt,name=recipient_user_id,json=recipientUserId,proto3" json:"recipient_user_id,omitempty"`
+	GiftTitle       string                 `protobuf:"bytes,4,opt,name=gift_title,json=giftTitle,proto3" json:"gift_title,omitempty"`
+	// non_monetary_note | artisan_token | book_edition | salon_invitation
+	GiftKind        string `protobuf:"bytes,5,opt,name=gift_kind,json=giftKind,proto3" json:"gift_kind,omitempty"`
+	SpendCents      int32  `protobuf:"varint,6,opt,name=spend_cents,json=spendCents,proto3" json:"spend_cents,omitempty"`
+	MonthlyCapCents int32  `protobuf:"varint,7,opt,name=monthly_cap_cents,json=monthlyCapCents,proto3" json:"monthly_cap_cents,omitempty"`
+	// welcome_appreciation | ask_first | no_gifts
+	RecipientPreference            string `protobuf:"bytes,8,opt,name=recipient_preference,json=recipientPreference,proto3" json:"recipient_preference,omitempty"`
+	RankingOrMatchAdvantageGranted bool   `protobuf:"varint,9,opt,name=ranking_or_match_advantage_granted,json=rankingOrMatchAdvantageGranted,proto3" json:"ranking_or_match_advantage_granted,omitempty"`
+	// clear | refunded | held_coercion_review
+	DisputeStatus string `protobuf:"bytes,10,opt,name=dispute_status,json=disputeStatus,proto3" json:"dispute_status,omitempty"`
+	CreatedAt     int64  `protobuf:"varint,11,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) Reset() {
+	*x = AtlasMeaningfulGiftGuardrail{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[221]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasMeaningfulGiftGuardrail) ProtoMessage() {}
+
+func (x *AtlasMeaningfulGiftGuardrail) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[221]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasMeaningfulGiftGuardrail.ProtoReflect.Descriptor instead.
+func (*AtlasMeaningfulGiftGuardrail) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{221}
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetSenderUserId() string {
+	if x != nil {
+		return x.SenderUserId
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetRecipientUserId() string {
+	if x != nil {
+		return x.RecipientUserId
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetGiftTitle() string {
+	if x != nil {
+		return x.GiftTitle
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetGiftKind() string {
+	if x != nil {
+		return x.GiftKind
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetSpendCents() int32 {
+	if x != nil {
+		return x.SpendCents
+	}
+	return 0
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetMonthlyCapCents() int32 {
+	if x != nil {
+		return x.MonthlyCapCents
+	}
+	return 0
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetRecipientPreference() string {
+	if x != nil {
+		return x.RecipientPreference
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetRankingOrMatchAdvantageGranted() bool {
+	if x != nil {
+		return x.RankingOrMatchAdvantageGranted
+	}
+	return false
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetDisputeStatus() string {
+	if x != nil {
+		return x.DisputeStatus
+	}
+	return ""
+}
+
+func (x *AtlasMeaningfulGiftGuardrail) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type AtlasYearbookPreviewManifest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	YearLabel                 string                 `protobuf:"bytes,3,opt,name=year_label,json=yearLabel,proto3" json:"year_label,omitempty"`
+	SelectedEntryCount        int32                  `protobuf:"varint,4,opt,name=selected_entry_count,json=selectedEntryCount,proto3" json:"selected_entry_count,omitempty"`
+	PreviewQuotesVerified     bool                   `protobuf:"varint,5,opt,name=preview_quotes_verified,json=previewQuotesVerified,proto3" json:"preview_quotes_verified,omitempty"`
+	NoInferredMomentsVerified bool                   `protobuf:"varint,6,opt,name=no_inferred_moments_verified,json=noInferredMomentsVerified,proto3" json:"no_inferred_moments_verified,omitempty"`
+	// draft_preview | member_approved | fulfilled
+	PrintStatus   string `protobuf:"bytes,7,opt,name=print_status,json=printStatus,proto3" json:"print_status,omitempty"`
+	UpdatedAt     int64  `protobuf:"varint,8,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasYearbookPreviewManifest) Reset() {
+	*x = AtlasYearbookPreviewManifest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[222]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasYearbookPreviewManifest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasYearbookPreviewManifest) ProtoMessage() {}
+
+func (x *AtlasYearbookPreviewManifest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[222]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasYearbookPreviewManifest.ProtoReflect.Descriptor instead.
+func (*AtlasYearbookPreviewManifest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{222}
+}
+
+func (x *AtlasYearbookPreviewManifest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasYearbookPreviewManifest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasYearbookPreviewManifest) GetYearLabel() string {
+	if x != nil {
+		return x.YearLabel
+	}
+	return ""
+}
+
+func (x *AtlasYearbookPreviewManifest) GetSelectedEntryCount() int32 {
+	if x != nil {
+		return x.SelectedEntryCount
+	}
+	return 0
+}
+
+func (x *AtlasYearbookPreviewManifest) GetPreviewQuotesVerified() bool {
+	if x != nil {
+		return x.PreviewQuotesVerified
+	}
+	return false
+}
+
+func (x *AtlasYearbookPreviewManifest) GetNoInferredMomentsVerified() bool {
+	if x != nil {
+		return x.NoInferredMomentsVerified
+	}
+	return false
+}
+
+func (x *AtlasYearbookPreviewManifest) GetPrintStatus() string {
+	if x != nil {
+		return x.PrintStatus
+	}
+	return ""
+}
+
+func (x *AtlasYearbookPreviewManifest) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+type GetConnectionArchiveWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetConnectionArchiveWorkbenchRequest) Reset() {
+	*x = GetConnectionArchiveWorkbenchRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[223]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConnectionArchiveWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConnectionArchiveWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetConnectionArchiveWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[223]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConnectionArchiveWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetConnectionArchiveWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{223}
+}
+
+func (x *GetConnectionArchiveWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetConnectionArchiveWorkbenchResponse struct {
+	state             protoimpl.MessageState          `protogen:"open.v1"`
+	Entries           []*AtlasConnectionArchiveEntry  `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	Gifts             []*AtlasMeaningfulGiftGuardrail `protobuf:"bytes,2,rep,name=gifts,proto3" json:"gifts,omitempty"`
+	YearbookManifests []*AtlasYearbookPreviewManifest `protobuf:"bytes,3,rep,name=yearbook_manifests,json=yearbookManifests,proto3" json:"yearbook_manifests,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *GetConnectionArchiveWorkbenchResponse) Reset() {
+	*x = GetConnectionArchiveWorkbenchResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[224]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetConnectionArchiveWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetConnectionArchiveWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetConnectionArchiveWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[224]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetConnectionArchiveWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetConnectionArchiveWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{224}
+}
+
+func (x *GetConnectionArchiveWorkbenchResponse) GetEntries() []*AtlasConnectionArchiveEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+func (x *GetConnectionArchiveWorkbenchResponse) GetGifts() []*AtlasMeaningfulGiftGuardrail {
+	if x != nil {
+		return x.Gifts
+	}
+	return nil
+}
+
+func (x *GetConnectionArchiveWorkbenchResponse) GetYearbookManifests() []*AtlasYearbookPreviewManifest {
+	if x != nil {
+		return x.YearbookManifests
+	}
+	return nil
+}
+
+type UpsertConnectionArchiveEntryRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ArtifactKind         string                 `protobuf:"bytes,2,opt,name=artifact_kind,json=artifactKind,proto3" json:"artifact_kind,omitempty"`
+	Title                string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Summary              string                 `protobuf:"bytes,4,opt,name=summary,proto3" json:"summary,omitempty"`
+	AudienceScope        string                 `protobuf:"bytes,5,opt,name=audience_scope,json=audienceScope,proto3" json:"audience_scope,omitempty"`
+	PostMatchDisposition string                 `protobuf:"bytes,6,opt,name=post_match_disposition,json=postMatchDisposition,proto3" json:"post_match_disposition,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) Reset() {
+	*x = UpsertConnectionArchiveEntryRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[225]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertConnectionArchiveEntryRequest) ProtoMessage() {}
+
+func (x *UpsertConnectionArchiveEntryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[225]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertConnectionArchiveEntryRequest.ProtoReflect.Descriptor instead.
+func (*UpsertConnectionArchiveEntryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{225}
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetArtifactKind() string {
+	if x != nil {
+		return x.ArtifactKind
+	}
+	return ""
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetSummary() string {
+	if x != nil {
+		return x.Summary
+	}
+	return ""
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetAudienceScope() string {
+	if x != nil {
+		return x.AudienceScope
+	}
+	return ""
+}
+
+func (x *UpsertConnectionArchiveEntryRequest) GetPostMatchDisposition() string {
+	if x != nil {
+		return x.PostMatchDisposition
+	}
+	return ""
+}
+
+type UpsertConnectionArchiveEntryResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Entry         *AtlasConnectionArchiveEntry `protobuf:"bytes,1,opt,name=entry,proto3" json:"entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertConnectionArchiveEntryResponse) Reset() {
+	*x = UpsertConnectionArchiveEntryResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[226]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertConnectionArchiveEntryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertConnectionArchiveEntryResponse) ProtoMessage() {}
+
+func (x *UpsertConnectionArchiveEntryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[226]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertConnectionArchiveEntryResponse.ProtoReflect.Descriptor instead.
+func (*UpsertConnectionArchiveEntryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{226}
+}
+
+func (x *UpsertConnectionArchiveEntryResponse) GetEntry() *AtlasConnectionArchiveEntry {
+	if x != nil {
+		return x.Entry
+	}
+	return nil
+}
+
+type SendMeaningfulGuardedGiftRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	SenderUserId        string                 `protobuf:"bytes,1,opt,name=sender_user_id,json=senderUserId,proto3" json:"sender_user_id,omitempty"`
+	RecipientUserId     string                 `protobuf:"bytes,2,opt,name=recipient_user_id,json=recipientUserId,proto3" json:"recipient_user_id,omitempty"`
+	GiftTitle           string                 `protobuf:"bytes,3,opt,name=gift_title,json=giftTitle,proto3" json:"gift_title,omitempty"`
+	GiftKind            string                 `protobuf:"bytes,4,opt,name=gift_kind,json=giftKind,proto3" json:"gift_kind,omitempty"`
+	SpendCents          int32                  `protobuf:"varint,5,opt,name=spend_cents,json=spendCents,proto3" json:"spend_cents,omitempty"`
+	RecipientPreference string                 `protobuf:"bytes,6,opt,name=recipient_preference,json=recipientPreference,proto3" json:"recipient_preference,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) Reset() {
+	*x = SendMeaningfulGuardedGiftRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[227]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendMeaningfulGuardedGiftRequest) ProtoMessage() {}
+
+func (x *SendMeaningfulGuardedGiftRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[227]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendMeaningfulGuardedGiftRequest.ProtoReflect.Descriptor instead.
+func (*SendMeaningfulGuardedGiftRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{227}
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetSenderUserId() string {
+	if x != nil {
+		return x.SenderUserId
+	}
+	return ""
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetRecipientUserId() string {
+	if x != nil {
+		return x.RecipientUserId
+	}
+	return ""
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetGiftTitle() string {
+	if x != nil {
+		return x.GiftTitle
+	}
+	return ""
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetGiftKind() string {
+	if x != nil {
+		return x.GiftKind
+	}
+	return ""
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetSpendCents() int32 {
+	if x != nil {
+		return x.SpendCents
+	}
+	return 0
+}
+
+func (x *SendMeaningfulGuardedGiftRequest) GetRecipientPreference() string {
+	if x != nil {
+		return x.RecipientPreference
+	}
+	return ""
+}
+
+type SendMeaningfulGuardedGiftResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Gift          *AtlasMeaningfulGiftGuardrail `protobuf:"bytes,1,opt,name=gift,proto3" json:"gift,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendMeaningfulGuardedGiftResponse) Reset() {
+	*x = SendMeaningfulGuardedGiftResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[228]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendMeaningfulGuardedGiftResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendMeaningfulGuardedGiftResponse) ProtoMessage() {}
+
+func (x *SendMeaningfulGuardedGiftResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[228]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendMeaningfulGuardedGiftResponse.ProtoReflect.Descriptor instead.
+func (*SendMeaningfulGuardedGiftResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{228}
+}
+
+func (x *SendMeaningfulGuardedGiftResponse) GetGift() *AtlasMeaningfulGiftGuardrail {
+	if x != nil {
+		return x.Gift
+	}
+	return nil
+}
+
+type ApproveYearbookPreviewManifestRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	UserId             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	YearLabel          string                 `protobuf:"bytes,2,opt,name=year_label,json=yearLabel,proto3" json:"year_label,omitempty"`
+	SelectedEntryCount int32                  `protobuf:"varint,3,opt,name=selected_entry_count,json=selectedEntryCount,proto3" json:"selected_entry_count,omitempty"`
+	PrintStatus        string                 `protobuf:"bytes,4,opt,name=print_status,json=printStatus,proto3" json:"print_status,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) Reset() {
+	*x = ApproveYearbookPreviewManifestRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[229]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveYearbookPreviewManifestRequest) ProtoMessage() {}
+
+func (x *ApproveYearbookPreviewManifestRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[229]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveYearbookPreviewManifestRequest.ProtoReflect.Descriptor instead.
+func (*ApproveYearbookPreviewManifestRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{229}
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) GetYearLabel() string {
+	if x != nil {
+		return x.YearLabel
+	}
+	return ""
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) GetSelectedEntryCount() int32 {
+	if x != nil {
+		return x.SelectedEntryCount
+	}
+	return 0
+}
+
+func (x *ApproveYearbookPreviewManifestRequest) GetPrintStatus() string {
+	if x != nil {
+		return x.PrintStatus
+	}
+	return ""
+}
+
+type ApproveYearbookPreviewManifestResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Manifest      *AtlasYearbookPreviewManifest `protobuf:"bytes,1,opt,name=manifest,proto3" json:"manifest,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveYearbookPreviewManifestResponse) Reset() {
+	*x = ApproveYearbookPreviewManifestResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[230]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveYearbookPreviewManifestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveYearbookPreviewManifestResponse) ProtoMessage() {}
+
+func (x *ApproveYearbookPreviewManifestResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[230]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveYearbookPreviewManifestResponse.ProtoReflect.Descriptor instead.
+func (*ApproveYearbookPreviewManifestResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{230}
+}
+
+func (x *ApproveYearbookPreviewManifestResponse) GetManifest() *AtlasYearbookPreviewManifest {
+	if x != nil {
+		return x.Manifest
+	}
+	return nil
+}
+
+type AdminListConnectionArchiveAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListConnectionArchiveAuditRequest) Reset() {
+	*x = AdminListConnectionArchiveAuditRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[231]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListConnectionArchiveAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListConnectionArchiveAuditRequest) ProtoMessage() {}
+
+func (x *AdminListConnectionArchiveAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[231]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListConnectionArchiveAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListConnectionArchiveAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{231}
+}
+
+func (x *AdminListConnectionArchiveAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListConnectionArchiveAuditResponse struct {
+	state             protoimpl.MessageState          `protogen:"open.v1"`
+	Entries           []*AtlasConnectionArchiveEntry  `protobuf:"bytes,1,rep,name=entries,proto3" json:"entries,omitempty"`
+	Gifts             []*AtlasMeaningfulGiftGuardrail `protobuf:"bytes,2,rep,name=gifts,proto3" json:"gifts,omitempty"`
+	YearbookManifests []*AtlasYearbookPreviewManifest `protobuf:"bytes,3,rep,name=yearbook_manifests,json=yearbookManifests,proto3" json:"yearbook_manifests,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *AdminListConnectionArchiveAuditResponse) Reset() {
+	*x = AdminListConnectionArchiveAuditResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[232]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListConnectionArchiveAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListConnectionArchiveAuditResponse) ProtoMessage() {}
+
+func (x *AdminListConnectionArchiveAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[232]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListConnectionArchiveAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListConnectionArchiveAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{232}
+}
+
+func (x *AdminListConnectionArchiveAuditResponse) GetEntries() []*AtlasConnectionArchiveEntry {
+	if x != nil {
+		return x.Entries
+	}
+	return nil
+}
+
+func (x *AdminListConnectionArchiveAuditResponse) GetGifts() []*AtlasMeaningfulGiftGuardrail {
+	if x != nil {
+		return x.Gifts
+	}
+	return nil
+}
+
+func (x *AdminListConnectionArchiveAuditResponse) GetYearbookManifests() []*AtlasYearbookPreviewManifest {
+	if x != nil {
+		return x.YearbookManifests
+	}
+	return nil
+}
+
+type AdminResolveGiftOrArchiveDisputeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GiftId        string                 `protobuf:"bytes,1,opt,name=gift_id,json=giftId,proto3" json:"gift_id,omitempty"`
+	DisputeStatus string                 `protobuf:"bytes,2,opt,name=dispute_status,json=disputeStatus,proto3" json:"dispute_status,omitempty"`
+	AuditReason   string                 `protobuf:"bytes,3,opt,name=audit_reason,json=auditReason,proto3" json:"audit_reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) Reset() {
+	*x = AdminResolveGiftOrArchiveDisputeRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[233]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminResolveGiftOrArchiveDisputeRequest) ProtoMessage() {}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[233]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminResolveGiftOrArchiveDisputeRequest.ProtoReflect.Descriptor instead.
+func (*AdminResolveGiftOrArchiveDisputeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{233}
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) GetGiftId() string {
+	if x != nil {
+		return x.GiftId
+	}
+	return ""
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) GetDisputeStatus() string {
+	if x != nil {
+		return x.DisputeStatus
+	}
+	return ""
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeRequest) GetAuditReason() string {
+	if x != nil {
+		return x.AuditReason
+	}
+	return ""
+}
+
+type AdminResolveGiftOrArchiveDisputeResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Gift          *AtlasMeaningfulGiftGuardrail `protobuf:"bytes,1,opt,name=gift,proto3" json:"gift,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeResponse) Reset() {
+	*x = AdminResolveGiftOrArchiveDisputeResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[234]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminResolveGiftOrArchiveDisputeResponse) ProtoMessage() {}
+
+func (x *AdminResolveGiftOrArchiveDisputeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[234]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminResolveGiftOrArchiveDisputeResponse.ProtoReflect.Descriptor instead.
+func (*AdminResolveGiftOrArchiveDisputeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{234}
+}
+
+func (x *AdminResolveGiftOrArchiveDisputeResponse) GetGift() *AtlasMeaningfulGiftGuardrail {
+	if x != nil {
+		return x.Gift
+	}
+	return nil
+}
+
+type AtlasAccessibleInclusionProfile struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Id     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// non_spatial_structured_list | reduced_motion_cards | screen_reader_linear | spatial_cosmos
+	DiscoverySurfaceMode           string `protobuf:"bytes,3,opt,name=discovery_surface_mode,json=discoverySurfaceMode,proto3" json:"discovery_surface_mode,omitempty"`
+	LargeTypeScalePercent          int32  `protobuf:"varint,4,opt,name=large_type_scale_percent,json=largeTypeScalePercent,proto3" json:"large_type_scale_percent,omitempty"`
+	CaptionsAndTranscriptsEnforced bool   `protobuf:"varint,5,opt,name=captions_and_transcripts_enforced,json=captionsAndTranscriptsEnforced,proto3" json:"captions_and_transcripts_enforced,omitempty"`
+	CognitiveSimplificationEnabled bool   `protobuf:"varint,6,opt,name=cognitive_simplification_enabled,json=cognitiveSimplificationEnabled,proto3" json:"cognitive_simplification_enabled,omitempty"`
+	IdentityNeverInferredTarget    bool   `protobuf:"varint,7,opt,name=identity_never_inferred_target,json=identityNeverInferredTarget,proto3" json:"identity_never_inferred_target,omitempty"`
+	WcagAaVerified                 bool   `protobuf:"varint,8,opt,name=wcag_aa_verified,json=wcagAaVerified,proto3" json:"wcag_aa_verified,omitempty"`
+	UpdatedAt                      int64  `protobuf:"varint,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *AtlasAccessibleInclusionProfile) Reset() {
+	*x = AtlasAccessibleInclusionProfile{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[235]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasAccessibleInclusionProfile) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasAccessibleInclusionProfile) ProtoMessage() {}
+
+func (x *AtlasAccessibleInclusionProfile) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[235]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasAccessibleInclusionProfile.ProtoReflect.Descriptor instead.
+func (*AtlasAccessibleInclusionProfile) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{235}
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetDiscoverySurfaceMode() string {
+	if x != nil {
+		return x.DiscoverySurfaceMode
+	}
+	return ""
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetLargeTypeScalePercent() int32 {
+	if x != nil {
+		return x.LargeTypeScalePercent
+	}
+	return 0
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetCaptionsAndTranscriptsEnforced() bool {
+	if x != nil {
+		return x.CaptionsAndTranscriptsEnforced
+	}
+	return false
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetCognitiveSimplificationEnabled() bool {
+	if x != nil {
+		return x.CognitiveSimplificationEnabled
+	}
+	return false
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetIdentityNeverInferredTarget() bool {
+	if x != nil {
+		return x.IdentityNeverInferredTarget
+	}
+	return false
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetWcagAaVerified() bool {
+	if x != nil {
+		return x.WcagAaVerified
+	}
+	return false
+}
+
+func (x *AtlasAccessibleInclusionProfile) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+type AtlasJurisdictionReleaseGate struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CountryCode                 string                 `protobuf:"bytes,2,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	RegionName                  string                 `protobuf:"bytes,3,opt,name=region_name,json=regionName,proto3" json:"region_name,omitempty"`
+	AgeFloorYears               int32                  `protobuf:"varint,4,opt,name=age_floor_years,json=ageFloorYears,proto3" json:"age_floor_years,omitempty"`
+	EmergencyResourcePack       string                 `protobuf:"bytes,5,opt,name=emergency_resource_pack,json=emergencyResourcePack,proto3" json:"emergency_resource_pack,omitempty"`
+	LowBandwidthOfflineDatePack string                 `protobuf:"bytes,6,opt,name=low_bandwidth_offline_date_pack,json=lowBandwidthOfflineDatePack,proto3" json:"low_bandwidth_offline_date_pack,omitempty"`
+	JurisdictionCertified       bool                   `protobuf:"varint,7,opt,name=jurisdiction_certified,json=jurisdictionCertified,proto3" json:"jurisdiction_certified,omitempty"`
+	// certified_live | pilot_review | held_compliance
+	ReleaseState  string `protobuf:"bytes,8,opt,name=release_state,json=releaseState,proto3" json:"release_state,omitempty"`
+	UpdatedAt     int64  `protobuf:"varint,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasJurisdictionReleaseGate) Reset() {
+	*x = AtlasJurisdictionReleaseGate{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[236]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasJurisdictionReleaseGate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasJurisdictionReleaseGate) ProtoMessage() {}
+
+func (x *AtlasJurisdictionReleaseGate) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[236]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasJurisdictionReleaseGate.ProtoReflect.Descriptor instead.
+func (*AtlasJurisdictionReleaseGate) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{236}
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetRegionName() string {
+	if x != nil {
+		return x.RegionName
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetAgeFloorYears() int32 {
+	if x != nil {
+		return x.AgeFloorYears
+	}
+	return 0
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetEmergencyResourcePack() string {
+	if x != nil {
+		return x.EmergencyResourcePack
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetLowBandwidthOfflineDatePack() string {
+	if x != nil {
+		return x.LowBandwidthOfflineDatePack
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetJurisdictionCertified() bool {
+	if x != nil {
+		return x.JurisdictionCertified
+	}
+	return false
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetReleaseState() string {
+	if x != nil {
+		return x.ReleaseState
+	}
+	return ""
+}
+
+func (x *AtlasJurisdictionReleaseGate) GetUpdatedAt() int64 {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return 0
+}
+
+type AtlasPortableConnectionBundle struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Id     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// export_authored_bundle | import_authored_bundle
+	Direction                              string `protobuf:"bytes,3,opt,name=direction,proto3" json:"direction,omitempty"`
+	IncludedArtifactsSummary               string `protobuf:"bytes,4,opt,name=included_artifacts_summary,json=includedArtifactsSummary,proto3" json:"included_artifacts_summary,omitempty"`
+	MappingReportJson                      string `protobuf:"bytes,5,opt,name=mapping_report_json,json=mappingReportJson,proto3" json:"mapping_report_json,omitempty"`
+	FabricatedMatchOrMessageHistoryBlocked bool   `protobuf:"varint,6,opt,name=fabricated_match_or_message_history_blocked,json=fabricatedMatchOrMessageHistoryBlocked,proto3" json:"fabricated_match_or_message_history_blocked,omitempty"`
+	// verified_ready | completed | quarantined
+	BundleStatus  string `protobuf:"bytes,7,opt,name=bundle_status,json=bundleStatus,proto3" json:"bundle_status,omitempty"`
+	CreatedAt     int64  `protobuf:"varint,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AtlasPortableConnectionBundle) Reset() {
+	*x = AtlasPortableConnectionBundle{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[237]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AtlasPortableConnectionBundle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AtlasPortableConnectionBundle) ProtoMessage() {}
+
+func (x *AtlasPortableConnectionBundle) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[237]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AtlasPortableConnectionBundle.ProtoReflect.Descriptor instead.
+func (*AtlasPortableConnectionBundle) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{237}
+}
+
+func (x *AtlasPortableConnectionBundle) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetIncludedArtifactsSummary() string {
+	if x != nil {
+		return x.IncludedArtifactsSummary
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetMappingReportJson() string {
+	if x != nil {
+		return x.MappingReportJson
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetFabricatedMatchOrMessageHistoryBlocked() bool {
+	if x != nil {
+		return x.FabricatedMatchOrMessageHistoryBlocked
+	}
+	return false
+}
+
+func (x *AtlasPortableConnectionBundle) GetBundleStatus() string {
+	if x != nil {
+		return x.BundleStatus
+	}
+	return ""
+}
+
+func (x *AtlasPortableConnectionBundle) GetCreatedAt() int64 {
+	if x != nil {
+		return x.CreatedAt
+	}
+	return 0
+}
+
+type GetInclusiveGlobalReleaseWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchRequest) Reset() {
+	*x = GetInclusiveGlobalReleaseWorkbenchRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[238]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInclusiveGlobalReleaseWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[238]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInclusiveGlobalReleaseWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetInclusiveGlobalReleaseWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{238}
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetInclusiveGlobalReleaseWorkbenchResponse struct {
+	state             protoimpl.MessageState             `protogen:"open.v1"`
+	InclusionProfiles []*AtlasAccessibleInclusionProfile `protobuf:"bytes,1,rep,name=inclusion_profiles,json=inclusionProfiles,proto3" json:"inclusion_profiles,omitempty"`
+	JurisdictionGates []*AtlasJurisdictionReleaseGate    `protobuf:"bytes,2,rep,name=jurisdiction_gates,json=jurisdictionGates,proto3" json:"jurisdiction_gates,omitempty"`
+	PortableBundles   []*AtlasPortableConnectionBundle   `protobuf:"bytes,3,rep,name=portable_bundles,json=portableBundles,proto3" json:"portable_bundles,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) Reset() {
+	*x = GetInclusiveGlobalReleaseWorkbenchResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[239]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInclusiveGlobalReleaseWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[239]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInclusiveGlobalReleaseWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetInclusiveGlobalReleaseWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{239}
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) GetInclusionProfiles() []*AtlasAccessibleInclusionProfile {
+	if x != nil {
+		return x.InclusionProfiles
+	}
+	return nil
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) GetJurisdictionGates() []*AtlasJurisdictionReleaseGate {
+	if x != nil {
+		return x.JurisdictionGates
+	}
+	return nil
+}
+
+func (x *GetInclusiveGlobalReleaseWorkbenchResponse) GetPortableBundles() []*AtlasPortableConnectionBundle {
+	if x != nil {
+		return x.PortableBundles
+	}
+	return nil
+}
+
+type UpdateAccessibleInclusionProfileRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	UserId                         string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DiscoverySurfaceMode           string                 `protobuf:"bytes,2,opt,name=discovery_surface_mode,json=discoverySurfaceMode,proto3" json:"discovery_surface_mode,omitempty"`
+	LargeTypeScalePercent          int32                  `protobuf:"varint,3,opt,name=large_type_scale_percent,json=largeTypeScalePercent,proto3" json:"large_type_scale_percent,omitempty"`
+	CaptionsAndTranscriptsEnforced bool                   `protobuf:"varint,4,opt,name=captions_and_transcripts_enforced,json=captionsAndTranscriptsEnforced,proto3" json:"captions_and_transcripts_enforced,omitempty"`
+	CognitiveSimplificationEnabled bool                   `protobuf:"varint,5,opt,name=cognitive_simplification_enabled,json=cognitiveSimplificationEnabled,proto3" json:"cognitive_simplification_enabled,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) Reset() {
+	*x = UpdateAccessibleInclusionProfileRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[240]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAccessibleInclusionProfileRequest) ProtoMessage() {}
+
+func (x *UpdateAccessibleInclusionProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[240]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAccessibleInclusionProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAccessibleInclusionProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{240}
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) GetDiscoverySurfaceMode() string {
+	if x != nil {
+		return x.DiscoverySurfaceMode
+	}
+	return ""
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) GetLargeTypeScalePercent() int32 {
+	if x != nil {
+		return x.LargeTypeScalePercent
+	}
+	return 0
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) GetCaptionsAndTranscriptsEnforced() bool {
+	if x != nil {
+		return x.CaptionsAndTranscriptsEnforced
+	}
+	return false
+}
+
+func (x *UpdateAccessibleInclusionProfileRequest) GetCognitiveSimplificationEnabled() bool {
+	if x != nil {
+		return x.CognitiveSimplificationEnabled
+	}
+	return false
+}
+
+type UpdateAccessibleInclusionProfileResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Profile       *AtlasAccessibleInclusionProfile `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateAccessibleInclusionProfileResponse) Reset() {
+	*x = UpdateAccessibleInclusionProfileResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[241]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateAccessibleInclusionProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAccessibleInclusionProfileResponse) ProtoMessage() {}
+
+func (x *UpdateAccessibleInclusionProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[241]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAccessibleInclusionProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpdateAccessibleInclusionProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{241}
+}
+
+func (x *UpdateAccessibleInclusionProfileResponse) GetProfile() *AtlasAccessibleInclusionProfile {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type GeneratePortableConnectionBundleRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	UserId                   string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Direction                string                 `protobuf:"bytes,2,opt,name=direction,proto3" json:"direction,omitempty"`
+	IncludedArtifactsSummary string                 `protobuf:"bytes,3,opt,name=included_artifacts_summary,json=includedArtifactsSummary,proto3" json:"included_artifacts_summary,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *GeneratePortableConnectionBundleRequest) Reset() {
+	*x = GeneratePortableConnectionBundleRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[242]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GeneratePortableConnectionBundleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GeneratePortableConnectionBundleRequest) ProtoMessage() {}
+
+func (x *GeneratePortableConnectionBundleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[242]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GeneratePortableConnectionBundleRequest.ProtoReflect.Descriptor instead.
+func (*GeneratePortableConnectionBundleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{242}
+}
+
+func (x *GeneratePortableConnectionBundleRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *GeneratePortableConnectionBundleRequest) GetDirection() string {
+	if x != nil {
+		return x.Direction
+	}
+	return ""
+}
+
+func (x *GeneratePortableConnectionBundleRequest) GetIncludedArtifactsSummary() string {
+	if x != nil {
+		return x.IncludedArtifactsSummary
+	}
+	return ""
+}
+
+type GeneratePortableConnectionBundleResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Bundle        *AtlasPortableConnectionBundle `protobuf:"bytes,1,opt,name=bundle,proto3" json:"bundle,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GeneratePortableConnectionBundleResponse) Reset() {
+	*x = GeneratePortableConnectionBundleResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[243]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GeneratePortableConnectionBundleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GeneratePortableConnectionBundleResponse) ProtoMessage() {}
+
+func (x *GeneratePortableConnectionBundleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[243]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GeneratePortableConnectionBundleResponse.ProtoReflect.Descriptor instead.
+func (*GeneratePortableConnectionBundleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{243}
+}
+
+func (x *GeneratePortableConnectionBundleResponse) GetBundle() *AtlasPortableConnectionBundle {
+	if x != nil {
+		return x.Bundle
+	}
+	return nil
+}
+
+type VerifyJurisdictionOfflineSafetyPackRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CountryCode   string                 `protobuf:"bytes,1,opt,name=country_code,json=countryCode,proto3" json:"country_code,omitempty"`
+	RegionName    string                 `protobuf:"bytes,2,opt,name=region_name,json=regionName,proto3" json:"region_name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackRequest) Reset() {
+	*x = VerifyJurisdictionOfflineSafetyPackRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[244]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyJurisdictionOfflineSafetyPackRequest) ProtoMessage() {}
+
+func (x *VerifyJurisdictionOfflineSafetyPackRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[244]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyJurisdictionOfflineSafetyPackRequest.ProtoReflect.Descriptor instead.
+func (*VerifyJurisdictionOfflineSafetyPackRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{244}
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackRequest) GetCountryCode() string {
+	if x != nil {
+		return x.CountryCode
+	}
+	return ""
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackRequest) GetRegionName() string {
+	if x != nil {
+		return x.RegionName
+	}
+	return ""
+}
+
+type VerifyJurisdictionOfflineSafetyPackResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Gate          *AtlasJurisdictionReleaseGate `protobuf:"bytes,1,opt,name=gate,proto3" json:"gate,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackResponse) Reset() {
+	*x = VerifyJurisdictionOfflineSafetyPackResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[245]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyJurisdictionOfflineSafetyPackResponse) ProtoMessage() {}
+
+func (x *VerifyJurisdictionOfflineSafetyPackResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[245]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyJurisdictionOfflineSafetyPackResponse.ProtoReflect.Descriptor instead.
+func (*VerifyJurisdictionOfflineSafetyPackResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{245}
+}
+
+func (x *VerifyJurisdictionOfflineSafetyPackResponse) GetGate() *AtlasJurisdictionReleaseGate {
+	if x != nil {
+		return x.Gate
+	}
+	return nil
+}
+
+type AdminListGlobalReleaseCertificationAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditRequest) Reset() {
+	*x = AdminListGlobalReleaseCertificationAuditRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[246]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListGlobalReleaseCertificationAuditRequest) ProtoMessage() {}
+
+func (x *AdminListGlobalReleaseCertificationAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[246]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListGlobalReleaseCertificationAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListGlobalReleaseCertificationAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{246}
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListGlobalReleaseCertificationAuditResponse struct {
+	state             protoimpl.MessageState             `protogen:"open.v1"`
+	InclusionProfiles []*AtlasAccessibleInclusionProfile `protobuf:"bytes,1,rep,name=inclusion_profiles,json=inclusionProfiles,proto3" json:"inclusion_profiles,omitempty"`
+	JurisdictionGates []*AtlasJurisdictionReleaseGate    `protobuf:"bytes,2,rep,name=jurisdiction_gates,json=jurisdictionGates,proto3" json:"jurisdiction_gates,omitempty"`
+	PortableBundles   []*AtlasPortableConnectionBundle   `protobuf:"bytes,3,rep,name=portable_bundles,json=portableBundles,proto3" json:"portable_bundles,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) Reset() {
+	*x = AdminListGlobalReleaseCertificationAuditResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[247]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListGlobalReleaseCertificationAuditResponse) ProtoMessage() {}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[247]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListGlobalReleaseCertificationAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListGlobalReleaseCertificationAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{247}
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) GetInclusionProfiles() []*AtlasAccessibleInclusionProfile {
+	if x != nil {
+		return x.InclusionProfiles
+	}
+	return nil
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) GetJurisdictionGates() []*AtlasJurisdictionReleaseGate {
+	if x != nil {
+		return x.JurisdictionGates
+	}
+	return nil
+}
+
+func (x *AdminListGlobalReleaseCertificationAuditResponse) GetPortableBundles() []*AtlasPortableConnectionBundle {
+	if x != nil {
+		return x.PortableBundles
+	}
+	return nil
+}
+
+type AdminCertifyJurisdictionReleaseGateRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	GateId                string                 `protobuf:"bytes,1,opt,name=gate_id,json=gateId,proto3" json:"gate_id,omitempty"`
+	ReleaseState          string                 `protobuf:"bytes,2,opt,name=release_state,json=releaseState,proto3" json:"release_state,omitempty"`
+	JurisdictionCertified bool                   `protobuf:"varint,3,opt,name=jurisdiction_certified,json=jurisdictionCertified,proto3" json:"jurisdiction_certified,omitempty"`
+	AuditReason           string                 `protobuf:"bytes,4,opt,name=audit_reason,json=auditReason,proto3" json:"audit_reason,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) Reset() {
+	*x = AdminCertifyJurisdictionReleaseGateRequest{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[248]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyJurisdictionReleaseGateRequest) ProtoMessage() {}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[248]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyJurisdictionReleaseGateRequest.ProtoReflect.Descriptor instead.
+func (*AdminCertifyJurisdictionReleaseGateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{248}
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) GetGateId() string {
+	if x != nil {
+		return x.GateId
+	}
+	return ""
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) GetReleaseState() string {
+	if x != nil {
+		return x.ReleaseState
+	}
+	return ""
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) GetJurisdictionCertified() bool {
+	if x != nil {
+		return x.JurisdictionCertified
+	}
+	return false
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateRequest) GetAuditReason() string {
+	if x != nil {
+		return x.AuditReason
+	}
+	return ""
+}
+
+type AdminCertifyJurisdictionReleaseGateResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Gate          *AtlasJurisdictionReleaseGate `protobuf:"bytes,1,opt,name=gate,proto3" json:"gate,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateResponse) Reset() {
+	*x = AdminCertifyJurisdictionReleaseGateResponse{}
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[249]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyJurisdictionReleaseGateResponse) ProtoMessage() {}
+
+func (x *AdminCertifyJurisdictionReleaseGateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dating_v1_dating_proto_msgTypes[249]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyJurisdictionReleaseGateResponse.ProtoReflect.Descriptor instead.
+func (*AdminCertifyJurisdictionReleaseGateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dating_v1_dating_proto_rawDescGZIP(), []int{249}
+}
+
+func (x *AdminCertifyJurisdictionReleaseGateResponse) GetGate() *AtlasJurisdictionReleaseGate {
+	if x != nil {
+		return x.Gate
+	}
+	return nil
+}
+
 var File_sttattus_dating_v1_dating_proto protoreflect.FileDescriptor
 
 const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
@@ -11534,7 +15665,344 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x1cSetPrimaryDatingPhotoRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"X\n" +
 	"\x1dSetPrimaryDatingPhotoResponse\x127\n" +
-	"\x06photos\x18\x01 \x03(\v2\x1f.sttattus.dating.v1.DatingPhotoR\x06photos*\x80\x01\n" +
+	"\x06photos\x18\x01 \x03(\v2\x1f.sttattus.dating.v1.DatingPhotoR\x06photos\"\xac\x03\n" +
+	"\x1aAtlasRelationshipAgreement\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12&\n" +
+	"\x0fpartner_user_id\x18\x03 \x01(\tR\rpartnerUserId\x12!\n" +
+	"\fpartner_name\x18\x04 \x01(\tR\vpartnerName\x12#\n" +
+	"\rcurrent_stage\x18\x05 \x01(\tR\fcurrentStage\x12'\n" +
+	"\x0fstage_structure\x18\x06 \x01(\tR\x0estageStructure\x12)\n" +
+	"\x10discovery_paused\x18\a \x01(\bR\x0fdiscoveryPaused\x12%\n" +
+	"\x0epacing_cadence\x18\b \x01(\tR\rpacingCadence\x124\n" +
+	"\x16shared_boundaries_json\x18\t \x01(\tR\x14sharedBoundariesJson\x12%\n" +
+	"\x0eprevious_stage\x18\n" +
+	" \x01(\tR\rpreviousStage\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\v \x01(\x03R\tupdatedAt\"\x8e\x03\n" +
+	"\x18AtlasRelationshipCheckin\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fagreement_id\x18\x02 \x01(\tR\vagreementId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12%\n" +
+	"\x0etopic_category\x18\x04 \x01(\tR\rtopicCategory\x12#\n" +
+	"\rmy_reflection\x18\x05 \x01(\tR\fmyReflection\x12'\n" +
+	"\x0fvisibility_mode\x18\x06 \x01(\tR\x0evisibilityMode\x12'\n" +
+	"\x0falignment_state\x18\a \x01(\tR\x0ealignmentState\x12<\n" +
+	"\x1alicensed_boundary_verified\x18\b \x01(\bR\x18licensedBoundaryVerified\x12+\n" +
+	"\x11moderation_status\x18\t \x01(\tR\x10moderationStatus\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\n" +
+	" \x01(\x03R\tcreatedAt\"\xe6\x02\n" +
+	"\x13AtlasUncouplingPlan\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fagreement_id\x18\x02 \x01(\tR\vagreementId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12)\n" +
+	"\x10separation_state\x18\x04 \x01(\tR\x0fseparationState\x12.\n" +
+	"\x13shared_media_policy\x18\x05 \x01(\tR\x11sharedMediaPolicy\x12.\n" +
+	"\x13shared_plans_policy\x18\x06 \x01(\tR\x11sharedPlansPolicy\x124\n" +
+	"\x16mutual_discovery_block\x18\a \x01(\bR\x14mutualDiscoveryBlock\x12!\n" +
+	"\fclosure_note\x18\b \x01(\tR\vclosureNote\x12\x1f\n" +
+	"\vresolved_at\x18\t \x01(\x03R\n" +
+	"resolvedAt\"E\n" +
+	"*GetRelationshipProgressionWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe6\x02\n" +
+	"+GetRelationshipProgressionWorkbenchResponse\x12N\n" +
+	"\n" +
+	"agreements\x18\x01 \x03(\v2..sttattus.dating.v1.AtlasRelationshipAgreementR\n" +
+	"agreements\x12H\n" +
+	"\bcheckins\x18\x02 \x03(\v2,.sttattus.dating.v1.AtlasRelationshipCheckinR\bcheckins\x12R\n" +
+	"\x10uncoupling_plans\x18\x03 \x03(\v2'.sttattus.dating.v1.AtlasUncouplingPlanR\x0funcouplingPlans\x12I\n" +
+	"!licensed_provider_boundary_notice\x18\x04 \x01(\tR\x1elicensedProviderBoundaryNotice\"\xe3\x02\n" +
+	"'UpsertRelationshipStageAgreementRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12&\n" +
+	"\x0fpartner_user_id\x18\x02 \x01(\tR\rpartnerUserId\x12!\n" +
+	"\fpartner_name\x18\x03 \x01(\tR\vpartnerName\x12#\n" +
+	"\rcurrent_stage\x18\x04 \x01(\tR\fcurrentStage\x12'\n" +
+	"\x0fstage_structure\x18\x05 \x01(\tR\x0estageStructure\x12)\n" +
+	"\x10discovery_paused\x18\x06 \x01(\bR\x0fdiscoveryPaused\x12%\n" +
+	"\x0epacing_cadence\x18\a \x01(\tR\rpacingCadence\x124\n" +
+	"\x16shared_boundaries_json\x18\b \x01(\tR\x14sharedBoundariesJson\"x\n" +
+	"(UpsertRelationshipStageAgreementResponse\x12L\n" +
+	"\tagreement\x18\x01 \x01(\v2..sttattus.dating.v1.AtlasRelationshipAgreementR\tagreement\"\x86\x02\n" +
+	"*RecordRelationshipCheckinReflectionRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
+	"\fagreement_id\x18\x02 \x01(\tR\vagreementId\x12%\n" +
+	"\x0etopic_category\x18\x03 \x01(\tR\rtopicCategory\x12#\n" +
+	"\rmy_reflection\x18\x04 \x01(\tR\fmyReflection\x12'\n" +
+	"\x0fvisibility_mode\x18\x05 \x01(\tR\x0evisibilityMode\x12'\n" +
+	"\x0falignment_state\x18\x06 \x01(\tR\x0ealignmentState\"u\n" +
+	"+RecordRelationshipCheckinReflectionResponse\x12F\n" +
+	"\acheckin\x18\x01 \x01(\v2,.sttattus.dating.v1.AtlasRelationshipCheckinR\acheckin\"\xc3\x02\n" +
+	"!InitiateSafeUncouplingPlanRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
+	"\fagreement_id\x18\x02 \x01(\tR\vagreementId\x12)\n" +
+	"\x10separation_state\x18\x03 \x01(\tR\x0fseparationState\x12.\n" +
+	"\x13shared_media_policy\x18\x04 \x01(\tR\x11sharedMediaPolicy\x12.\n" +
+	"\x13shared_plans_policy\x18\x05 \x01(\tR\x11sharedPlansPolicy\x124\n" +
+	"\x16mutual_discovery_block\x18\x06 \x01(\bR\x14mutualDiscoveryBlock\x12!\n" +
+	"\fclosure_note\x18\a \x01(\tR\vclosureNote\"a\n" +
+	"\"InitiateSafeUncouplingPlanResponse\x12;\n" +
+	"\x04plan\x18\x01 \x01(\v2'.sttattus.dating.v1.AtlasUncouplingPlanR\x04plan\"D\n" +
+	",AdminListRelationshipProgressionAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\x9d\x02\n" +
+	"-AdminListRelationshipProgressionAuditResponse\x12N\n" +
+	"\n" +
+	"agreements\x18\x01 \x03(\v2..sttattus.dating.v1.AtlasRelationshipAgreementR\n" +
+	"agreements\x12H\n" +
+	"\bcheckins\x18\x02 \x03(\v2,.sttattus.dating.v1.AtlasRelationshipCheckinR\bcheckins\x12R\n" +
+	"\x10uncoupling_plans\x18\x03 \x03(\v2'.sttattus.dating.v1.AtlasUncouplingPlanR\x0funcouplingPlans\"\xdb\x01\n" +
+	",AdminModerateRelationshipPromptSafetyRequest\x12\x1d\n" +
+	"\n" +
+	"checkin_id\x18\x01 \x01(\tR\tcheckinId\x12+\n" +
+	"\x11moderation_status\x18\x02 \x01(\tR\x10moderationStatus\x12<\n" +
+	"\x1alicensed_boundary_verified\x18\x03 \x01(\bR\x18licensedBoundaryVerified\x12!\n" +
+	"\faudit_reason\x18\x04 \x01(\tR\vauditReason\"w\n" +
+	"-AdminModerateRelationshipPromptSafetyResponse\x12F\n" +
+	"\acheckin\x18\x01 \x01(\v2,.sttattus.dating.v1.AtlasRelationshipCheckinR\acheckin\"\xd5\x03\n" +
+	"\x12AtlasTemporaryCrew\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12&\n" +
+	"\x0fcreator_user_id\x18\x02 \x01(\tR\rcreatorUserId\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x1f\n" +
+	"\vintent_lane\x18\x04 \x01(\tR\n" +
+	"intentLane\x12\x12\n" +
+	"\x04city\x18\x05 \x01(\tR\x04city\x12\x1f\n" +
+	"\vmember_role\x18\x06 \x01(\tR\n" +
+	"memberRole\x12!\n" +
+	"\fmember_count\x18\a \x01(\x05R\vmemberCount\x12\x1f\n" +
+	"\vmax_members\x18\b \x01(\x05R\n" +
+	"maxMembers\x12!\n" +
+	"\fexpense_mode\x18\t \x01(\tR\vexpenseMode\x122\n" +
+	"\x15estimated_share_cents\x18\n" +
+	" \x01(\x05R\x13estimatedShareCents\x12'\n" +
+	"\x0flifecycle_state\x18\v \x01(\tR\x0elifecycleState\x124\n" +
+	"\x16romantic_lane_isolated\x18\f \x01(\bR\x14romanticLaneIsolated\x12!\n" +
+	"\fdissolves_at\x18\r \x01(\x03R\vdissolvesAt\"\xc3\x02\n" +
+	"\x16AtlasCrewSocialMission\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\acrew_id\x18\x02 \x01(\tR\x06crewId\x12\x17\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x12#\n" +
+	"\rmission_title\x18\x04 \x01(\tR\fmissionTitle\x12\x1a\n" +
+	"\bcategory\x18\x05 \x01(\tR\bcategory\x12#\n" +
+	"\revidence_kind\x18\x06 \x01(\tR\fevidenceKind\x12-\n" +
+	"\x12evidence_reference\x18\a \x01(\tR\x11evidenceReference\x12/\n" +
+	"\x13verification_status\x18\b \x01(\tR\x12verificationStatus\x12!\n" +
+	"\fcompleted_at\x18\t \x01(\x03R\vcompletedAt\"\xa6\x02\n" +
+	"\x1eAtlasContextualCrewEndorsement\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\acrew_id\x18\x02 \x01(\tR\x06crewId\x12*\n" +
+	"\x11recipient_user_id\x18\x03 \x01(\tR\x0frecipientUserId\x12#\n" +
+	"\rcontext_badge\x18\x04 \x01(\tR\fcontextBadge\x12@\n" +
+	"\x1cuniversal_ranking_prohibited\x18\x05 \x01(\bR\x1auniversalRankingProhibited\x12)\n" +
+	"\x10endorsement_note\x18\x06 \x01(\tR\x0fendorsementNote\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\a \x01(\x03R\tcreatedAt\"=\n" +
+	"\"GetFriendshipCrewsWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x83\x02\n" +
+	"#GetFriendshipCrewsWorkbenchResponse\x12<\n" +
+	"\x05crews\x18\x01 \x03(\v2&.sttattus.dating.v1.AtlasTemporaryCrewR\x05crews\x12F\n" +
+	"\bmissions\x18\x02 \x03(\v2*.sttattus.dating.v1.AtlasCrewSocialMissionR\bmissions\x12V\n" +
+	"\fendorsements\x18\x03 \x03(\v22.sttattus.dating.v1.AtlasContextualCrewEndorsementR\fendorsements\"\xa8\x02\n" +
+	"\x1aCreateTemporaryCrewRequest\x12&\n" +
+	"\x0fcreator_user_id\x18\x01 \x01(\tR\rcreatorUserId\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x1f\n" +
+	"\vintent_lane\x18\x03 \x01(\tR\n" +
+	"intentLane\x12\x12\n" +
+	"\x04city\x18\x04 \x01(\tR\x04city\x12\x1f\n" +
+	"\vmember_role\x18\x05 \x01(\tR\n" +
+	"memberRole\x12\x1f\n" +
+	"\vmax_members\x18\x06 \x01(\x05R\n" +
+	"maxMembers\x12!\n" +
+	"\fexpense_mode\x18\a \x01(\tR\vexpenseMode\x122\n" +
+	"\x15estimated_share_cents\x18\b \x01(\x05R\x13estimatedShareCents\"Y\n" +
+	"\x1bCreateTemporaryCrewResponse\x12:\n" +
+	"\x04crew\x18\x01 \x01(\v2&.sttattus.dating.v1.AtlasTemporaryCrewR\x04crew\"\xe9\x01\n" +
+	" SubmitCrewMissionEvidenceRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x17\n" +
+	"\acrew_id\x18\x02 \x01(\tR\x06crewId\x12#\n" +
+	"\rmission_title\x18\x03 \x01(\tR\fmissionTitle\x12\x1a\n" +
+	"\bcategory\x18\x04 \x01(\tR\bcategory\x12#\n" +
+	"\revidence_kind\x18\x05 \x01(\tR\fevidenceKind\x12-\n" +
+	"\x12evidence_reference\x18\x06 \x01(\tR\x11evidenceReference\"i\n" +
+	"!SubmitCrewMissionEvidenceResponse\x12D\n" +
+	"\amission\x18\x01 \x01(\v2*.sttattus.dating.v1.AtlasCrewSocialMissionR\amission\"\xca\x01\n" +
+	"\x1dDissolveOrCompleteCrewRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x17\n" +
+	"\acrew_id\x18\x02 \x01(\tR\x06crewId\x12'\n" +
+	"\x0flifecycle_state\x18\x03 \x01(\tR\x0elifecycleState\x12#\n" +
+	"\rcontext_badge\x18\x04 \x01(\tR\fcontextBadge\x12)\n" +
+	"\x10endorsement_note\x18\x05 \x01(\tR\x0fendorsementNote\"\xb2\x01\n" +
+	"\x1eDissolveOrCompleteCrewResponse\x12:\n" +
+	"\x04crew\x18\x01 \x01(\v2&.sttattus.dating.v1.AtlasTemporaryCrewR\x04crew\x12T\n" +
+	"\vendorsement\x18\x02 \x01(\v22.sttattus.dating.v1.AtlasContextualCrewEndorsementR\vendorsement\"<\n" +
+	"$AdminListFriendshipCrewsAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\x85\x02\n" +
+	"%AdminListFriendshipCrewsAuditResponse\x12<\n" +
+	"\x05crews\x18\x01 \x03(\v2&.sttattus.dating.v1.AtlasTemporaryCrewR\x05crews\x12F\n" +
+	"\bmissions\x18\x02 \x03(\v2*.sttattus.dating.v1.AtlasCrewSocialMissionR\bmissions\x12V\n" +
+	"\fendorsements\x18\x03 \x03(\v22.sttattus.dating.v1.AtlasContextualCrewEndorsementR\fendorsements\"\x9d\x01\n" +
+	"(AdminModerateCrewSafetyAndMissionRequest\x12\x1d\n" +
+	"\n" +
+	"mission_id\x18\x01 \x01(\tR\tmissionId\x12/\n" +
+	"\x13verification_status\x18\x02 \x01(\tR\x12verificationStatus\x12!\n" +
+	"\faudit_reason\x18\x03 \x01(\tR\vauditReason\"q\n" +
+	")AdminModerateCrewSafetyAndMissionResponse\x12D\n" +
+	"\amission\x18\x01 \x01(\v2*.sttattus.dating.v1.AtlasCrewSocialMissionR\amission\"\xc6\x02\n" +
+	"\x1bAtlasConnectionArchiveEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rartifact_kind\x18\x03 \x01(\tR\fartifactKind\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x05 \x01(\tR\asummary\x12%\n" +
+	"\x0eaudience_scope\x18\x06 \x01(\tR\raudienceScope\x124\n" +
+	"\x16post_match_disposition\x18\a \x01(\tR\x14postMatchDisposition\x12-\n" +
+	"\x12authorship_version\x18\b \x01(\x05R\x11authorshipVersion\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\t \x01(\x03R\tcreatedAt\"\xce\x03\n" +
+	"\x1cAtlasMeaningfulGiftGuardrail\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12$\n" +
+	"\x0esender_user_id\x18\x02 \x01(\tR\fsenderUserId\x12*\n" +
+	"\x11recipient_user_id\x18\x03 \x01(\tR\x0frecipientUserId\x12\x1d\n" +
+	"\n" +
+	"gift_title\x18\x04 \x01(\tR\tgiftTitle\x12\x1b\n" +
+	"\tgift_kind\x18\x05 \x01(\tR\bgiftKind\x12\x1f\n" +
+	"\vspend_cents\x18\x06 \x01(\x05R\n" +
+	"spendCents\x12*\n" +
+	"\x11monthly_cap_cents\x18\a \x01(\x05R\x0fmonthlyCapCents\x121\n" +
+	"\x14recipient_preference\x18\b \x01(\tR\x13recipientPreference\x12J\n" +
+	"\"ranking_or_match_advantage_granted\x18\t \x01(\bR\x1erankingOrMatchAdvantageGranted\x12%\n" +
+	"\x0edispute_status\x18\n" +
+	" \x01(\tR\rdisputeStatus\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\v \x01(\x03R\tcreatedAt\"\xd3\x02\n" +
+	"\x1cAtlasYearbookPreviewManifest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"year_label\x18\x03 \x01(\tR\tyearLabel\x120\n" +
+	"\x14selected_entry_count\x18\x04 \x01(\x05R\x12selectedEntryCount\x126\n" +
+	"\x17preview_quotes_verified\x18\x05 \x01(\bR\x15previewQuotesVerified\x12?\n" +
+	"\x1cno_inferred_moments_verified\x18\x06 \x01(\bR\x19noInferredMomentsVerified\x12!\n" +
+	"\fprint_status\x18\a \x01(\tR\vprintStatus\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\b \x01(\x03R\tupdatedAt\"?\n" +
+	"$GetConnectionArchiveWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x9b\x02\n" +
+	"%GetConnectionArchiveWorkbenchResponse\x12I\n" +
+	"\aentries\x18\x01 \x03(\v2/.sttattus.dating.v1.AtlasConnectionArchiveEntryR\aentries\x12F\n" +
+	"\x05gifts\x18\x02 \x03(\v20.sttattus.dating.v1.AtlasMeaningfulGiftGuardrailR\x05gifts\x12_\n" +
+	"\x12yearbook_manifests\x18\x03 \x03(\v20.sttattus.dating.v1.AtlasYearbookPreviewManifestR\x11yearbookManifests\"\xf0\x01\n" +
+	"#UpsertConnectionArchiveEntryRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rartifact_kind\x18\x02 \x01(\tR\fartifactKind\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x18\n" +
+	"\asummary\x18\x04 \x01(\tR\asummary\x12%\n" +
+	"\x0eaudience_scope\x18\x05 \x01(\tR\raudienceScope\x124\n" +
+	"\x16post_match_disposition\x18\x06 \x01(\tR\x14postMatchDisposition\"m\n" +
+	"$UpsertConnectionArchiveEntryResponse\x12E\n" +
+	"\x05entry\x18\x01 \x01(\v2/.sttattus.dating.v1.AtlasConnectionArchiveEntryR\x05entry\"\x84\x02\n" +
+	" SendMeaningfulGuardedGiftRequest\x12$\n" +
+	"\x0esender_user_id\x18\x01 \x01(\tR\fsenderUserId\x12*\n" +
+	"\x11recipient_user_id\x18\x02 \x01(\tR\x0frecipientUserId\x12\x1d\n" +
+	"\n" +
+	"gift_title\x18\x03 \x01(\tR\tgiftTitle\x12\x1b\n" +
+	"\tgift_kind\x18\x04 \x01(\tR\bgiftKind\x12\x1f\n" +
+	"\vspend_cents\x18\x05 \x01(\x05R\n" +
+	"spendCents\x121\n" +
+	"\x14recipient_preference\x18\x06 \x01(\tR\x13recipientPreference\"i\n" +
+	"!SendMeaningfulGuardedGiftResponse\x12D\n" +
+	"\x04gift\x18\x01 \x01(\v20.sttattus.dating.v1.AtlasMeaningfulGiftGuardrailR\x04gift\"\xb4\x01\n" +
+	"%ApproveYearbookPreviewManifestRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"year_label\x18\x02 \x01(\tR\tyearLabel\x120\n" +
+	"\x14selected_entry_count\x18\x03 \x01(\x05R\x12selectedEntryCount\x12!\n" +
+	"\fprint_status\x18\x04 \x01(\tR\vprintStatus\"v\n" +
+	"&ApproveYearbookPreviewManifestResponse\x12L\n" +
+	"\bmanifest\x18\x01 \x01(\v20.sttattus.dating.v1.AtlasYearbookPreviewManifestR\bmanifest\">\n" +
+	"&AdminListConnectionArchiveAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\x9d\x02\n" +
+	"'AdminListConnectionArchiveAuditResponse\x12I\n" +
+	"\aentries\x18\x01 \x03(\v2/.sttattus.dating.v1.AtlasConnectionArchiveEntryR\aentries\x12F\n" +
+	"\x05gifts\x18\x02 \x03(\v20.sttattus.dating.v1.AtlasMeaningfulGiftGuardrailR\x05gifts\x12_\n" +
+	"\x12yearbook_manifests\x18\x03 \x03(\v20.sttattus.dating.v1.AtlasYearbookPreviewManifestR\x11yearbookManifests\"\x8c\x01\n" +
+	"'AdminResolveGiftOrArchiveDisputeRequest\x12\x17\n" +
+	"\agift_id\x18\x01 \x01(\tR\x06giftId\x12%\n" +
+	"\x0edispute_status\x18\x02 \x01(\tR\rdisputeStatus\x12!\n" +
+	"\faudit_reason\x18\x03 \x01(\tR\vauditReason\"p\n" +
+	"(AdminResolveGiftOrArchiveDisputeResponse\x12D\n" +
+	"\x04gift\x18\x01 \x01(\v20.sttattus.dating.v1.AtlasMeaningfulGiftGuardrailR\x04gift\"\xdc\x03\n" +
+	"\x1fAtlasAccessibleInclusionProfile\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x124\n" +
+	"\x16discovery_surface_mode\x18\x03 \x01(\tR\x14discoverySurfaceMode\x127\n" +
+	"\x18large_type_scale_percent\x18\x04 \x01(\x05R\x15largeTypeScalePercent\x12I\n" +
+	"!captions_and_transcripts_enforced\x18\x05 \x01(\bR\x1ecaptionsAndTranscriptsEnforced\x12H\n" +
+	" cognitive_simplification_enabled\x18\x06 \x01(\bR\x1ecognitiveSimplificationEnabled\x12C\n" +
+	"\x1eidentity_never_inferred_target\x18\a \x01(\bR\x1bidentityNeverInferredTarget\x12(\n" +
+	"\x10wcag_aa_verified\x18\b \x01(\bR\x0ewcagAaVerified\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\x03R\tupdatedAt\"\x93\x03\n" +
+	"\x1cAtlasJurisdictionReleaseGate\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fcountry_code\x18\x02 \x01(\tR\vcountryCode\x12\x1f\n" +
+	"\vregion_name\x18\x03 \x01(\tR\n" +
+	"regionName\x12&\n" +
+	"\x0fage_floor_years\x18\x04 \x01(\x05R\rageFloorYears\x126\n" +
+	"\x17emergency_resource_pack\x18\x05 \x01(\tR\x15emergencyResourcePack\x12D\n" +
+	"\x1flow_bandwidth_offline_date_pack\x18\x06 \x01(\tR\x1blowBandwidthOfflineDatePack\x125\n" +
+	"\x16jurisdiction_certified\x18\a \x01(\bR\x15jurisdictionCertified\x12#\n" +
+	"\rrelease_state\x18\b \x01(\tR\freleaseState\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\x03R\tupdatedAt\"\xf5\x02\n" +
+	"\x1dAtlasPortableConnectionBundle\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1c\n" +
+	"\tdirection\x18\x03 \x01(\tR\tdirection\x12<\n" +
+	"\x1aincluded_artifacts_summary\x18\x04 \x01(\tR\x18includedArtifactsSummary\x12.\n" +
+	"\x13mapping_report_json\x18\x05 \x01(\tR\x11mappingReportJson\x12[\n" +
+	"+fabricated_match_or_message_history_blocked\x18\x06 \x01(\bR&fabricatedMatchOrMessageHistoryBlocked\x12#\n" +
+	"\rbundle_status\x18\a \x01(\tR\fbundleStatus\x12\x1d\n" +
+	"\n" +
+	"created_at\x18\b \x01(\x03R\tcreatedAt\"D\n" +
+	")GetInclusiveGlobalReleaseWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xcf\x02\n" +
+	"*GetInclusiveGlobalReleaseWorkbenchResponse\x12b\n" +
+	"\x12inclusion_profiles\x18\x01 \x03(\v23.sttattus.dating.v1.AtlasAccessibleInclusionProfileR\x11inclusionProfiles\x12_\n" +
+	"\x12jurisdiction_gates\x18\x02 \x03(\v20.sttattus.dating.v1.AtlasJurisdictionReleaseGateR\x11jurisdictionGates\x12\\\n" +
+	"\x10portable_bundles\x18\x03 \x03(\v21.sttattus.dating.v1.AtlasPortableConnectionBundleR\x0fportableBundles\"\xc6\x02\n" +
+	"'UpdateAccessibleInclusionProfileRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x124\n" +
+	"\x16discovery_surface_mode\x18\x02 \x01(\tR\x14discoverySurfaceMode\x127\n" +
+	"\x18large_type_scale_percent\x18\x03 \x01(\x05R\x15largeTypeScalePercent\x12I\n" +
+	"!captions_and_transcripts_enforced\x18\x04 \x01(\bR\x1ecaptionsAndTranscriptsEnforced\x12H\n" +
+	" cognitive_simplification_enabled\x18\x05 \x01(\bR\x1ecognitiveSimplificationEnabled\"y\n" +
+	"(UpdateAccessibleInclusionProfileResponse\x12M\n" +
+	"\aprofile\x18\x01 \x01(\v23.sttattus.dating.v1.AtlasAccessibleInclusionProfileR\aprofile\"\x9e\x01\n" +
+	"'GeneratePortableConnectionBundleRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1c\n" +
+	"\tdirection\x18\x02 \x01(\tR\tdirection\x12<\n" +
+	"\x1aincluded_artifacts_summary\x18\x03 \x01(\tR\x18includedArtifactsSummary\"u\n" +
+	"(GeneratePortableConnectionBundleResponse\x12I\n" +
+	"\x06bundle\x18\x01 \x01(\v21.sttattus.dating.v1.AtlasPortableConnectionBundleR\x06bundle\"p\n" +
+	"*VerifyJurisdictionOfflineSafetyPackRequest\x12!\n" +
+	"\fcountry_code\x18\x01 \x01(\tR\vcountryCode\x12\x1f\n" +
+	"\vregion_name\x18\x02 \x01(\tR\n" +
+	"regionName\"s\n" +
+	"+VerifyJurisdictionOfflineSafetyPackResponse\x12D\n" +
+	"\x04gate\x18\x01 \x01(\v20.sttattus.dating.v1.AtlasJurisdictionReleaseGateR\x04gate\"G\n" +
+	"/AdminListGlobalReleaseCertificationAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xd5\x02\n" +
+	"0AdminListGlobalReleaseCertificationAuditResponse\x12b\n" +
+	"\x12inclusion_profiles\x18\x01 \x03(\v23.sttattus.dating.v1.AtlasAccessibleInclusionProfileR\x11inclusionProfiles\x12_\n" +
+	"\x12jurisdiction_gates\x18\x02 \x03(\v20.sttattus.dating.v1.AtlasJurisdictionReleaseGateR\x11jurisdictionGates\x12\\\n" +
+	"\x10portable_bundles\x18\x03 \x03(\v21.sttattus.dating.v1.AtlasPortableConnectionBundleR\x0fportableBundles\"\xc4\x01\n" +
+	"*AdminCertifyJurisdictionReleaseGateRequest\x12\x17\n" +
+	"\agate_id\x18\x01 \x01(\tR\x06gateId\x12#\n" +
+	"\rrelease_state\x18\x02 \x01(\tR\freleaseState\x125\n" +
+	"\x16jurisdiction_certified\x18\x03 \x01(\bR\x15jurisdictionCertified\x12!\n" +
+	"\faudit_reason\x18\x04 \x01(\tR\vauditReason\"s\n" +
+	"+AdminCertifyJurisdictionReleaseGateResponse\x12D\n" +
+	"\x04gate\x18\x01 \x01(\v20.sttattus.dating.v1.AtlasJurisdictionReleaseGateR\x04gate*\x80\x01\n" +
 	"\x0eSwipeDirection\x12\x1f\n" +
 	"\x1bSWIPE_DIRECTION_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14SWIPE_DIRECTION_PASS\x10\x01\x12\x18\n" +
@@ -11545,7 +16013,7 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x14DATING_INTENT_CASUAL\x10\x01\x12\x1e\n" +
 	"\x1aDATING_INTENT_RELATIONSHIP\x10\x02\x12\x19\n" +
 	"\x15DATING_INTENT_FRIENDS\x10\x03\x12\x1c\n" +
-	"\x18DATING_INTENT_NETWORKING\x10\x042\x86C\n" +
+	"\x18DATING_INTENT_NETWORKING\x10\x042\xb0`\n" +
 	"\rDatingService\x12[\n" +
 	"\n" +
 	"GetProfile\x12%.sttattus.dating.v1.GetProfileRequest\x1a&.sttattus.dating.v1.GetProfileResponse\x12d\n" +
@@ -11626,7 +16094,31 @@ const file_sttattus_dating_v1_dating_proto_rawDesc = "" +
 	"\x13ReorderDatingPhotos\x12..sttattus.dating.v1.ReorderDatingPhotosRequest\x1a/.sttattus.dating.v1.ReorderDatingPhotosResponse\x12|\n" +
 	"\x15SetPrimaryDatingPhoto\x120.sttattus.dating.v1.SetPrimaryDatingPhotoRequest\x1a1.sttattus.dating.v1.SetPrimaryDatingPhotoResponse\x12m\n" +
 	"\x10SetVoiceBaseline\x12+.sttattus.dating.v1.SetVoiceBaselineRequest\x1a,.sttattus.dating.v1.SetVoiceBaselineResponse\x12v\n" +
-	"\x13RemoveVoiceBaseline\x12..sttattus.dating.v1.RemoveVoiceBaselineRequest\x1a/.sttattus.dating.v1.RemoveVoiceBaselineResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
+	"\x13RemoveVoiceBaseline\x12..sttattus.dating.v1.RemoveVoiceBaselineRequest\x1a/.sttattus.dating.v1.RemoveVoiceBaselineResponse\x12\xa6\x01\n" +
+	"#GetRelationshipProgressionWorkbench\x12>.sttattus.dating.v1.GetRelationshipProgressionWorkbenchRequest\x1a?.sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse\x12\x9d\x01\n" +
+	" UpsertRelationshipStageAgreement\x12;.sttattus.dating.v1.UpsertRelationshipStageAgreementRequest\x1a<.sttattus.dating.v1.UpsertRelationshipStageAgreementResponse\x12\xa6\x01\n" +
+	"#RecordRelationshipCheckinReflection\x12>.sttattus.dating.v1.RecordRelationshipCheckinReflectionRequest\x1a?.sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse\x12\x8b\x01\n" +
+	"\x1aInitiateSafeUncouplingPlan\x125.sttattus.dating.v1.InitiateSafeUncouplingPlanRequest\x1a6.sttattus.dating.v1.InitiateSafeUncouplingPlanResponse\x12\xac\x01\n" +
+	"%AdminListRelationshipProgressionAudit\x12@.sttattus.dating.v1.AdminListRelationshipProgressionAuditRequest\x1aA.sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse\x12\xac\x01\n" +
+	"%AdminModerateRelationshipPromptSafety\x12@.sttattus.dating.v1.AdminModerateRelationshipPromptSafetyRequest\x1aA.sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse\x12\x8e\x01\n" +
+	"\x1bGetFriendshipCrewsWorkbench\x126.sttattus.dating.v1.GetFriendshipCrewsWorkbenchRequest\x1a7.sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse\x12v\n" +
+	"\x13CreateTemporaryCrew\x12..sttattus.dating.v1.CreateTemporaryCrewRequest\x1a/.sttattus.dating.v1.CreateTemporaryCrewResponse\x12\x88\x01\n" +
+	"\x19SubmitCrewMissionEvidence\x124.sttattus.dating.v1.SubmitCrewMissionEvidenceRequest\x1a5.sttattus.dating.v1.SubmitCrewMissionEvidenceResponse\x12\x7f\n" +
+	"\x16DissolveOrCompleteCrew\x121.sttattus.dating.v1.DissolveOrCompleteCrewRequest\x1a2.sttattus.dating.v1.DissolveOrCompleteCrewResponse\x12\x94\x01\n" +
+	"\x1dAdminListFriendshipCrewsAudit\x128.sttattus.dating.v1.AdminListFriendshipCrewsAuditRequest\x1a9.sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse\x12\xa0\x01\n" +
+	"!AdminModerateCrewSafetyAndMission\x12<.sttattus.dating.v1.AdminModerateCrewSafetyAndMissionRequest\x1a=.sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse\x12\x94\x01\n" +
+	"\x1dGetConnectionArchiveWorkbench\x128.sttattus.dating.v1.GetConnectionArchiveWorkbenchRequest\x1a9.sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse\x12\x91\x01\n" +
+	"\x1cUpsertConnectionArchiveEntry\x127.sttattus.dating.v1.UpsertConnectionArchiveEntryRequest\x1a8.sttattus.dating.v1.UpsertConnectionArchiveEntryResponse\x12\x88\x01\n" +
+	"\x19SendMeaningfulGuardedGift\x124.sttattus.dating.v1.SendMeaningfulGuardedGiftRequest\x1a5.sttattus.dating.v1.SendMeaningfulGuardedGiftResponse\x12\x97\x01\n" +
+	"\x1eApproveYearbookPreviewManifest\x129.sttattus.dating.v1.ApproveYearbookPreviewManifestRequest\x1a:.sttattus.dating.v1.ApproveYearbookPreviewManifestResponse\x12\x9a\x01\n" +
+	"\x1fAdminListConnectionArchiveAudit\x12:.sttattus.dating.v1.AdminListConnectionArchiveAuditRequest\x1a;.sttattus.dating.v1.AdminListConnectionArchiveAuditResponse\x12\x9d\x01\n" +
+	" AdminResolveGiftOrArchiveDispute\x12;.sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeRequest\x1a<.sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse\x12\xa3\x01\n" +
+	"\"GetInclusiveGlobalReleaseWorkbench\x12=.sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchRequest\x1a>.sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse\x12\x9d\x01\n" +
+	" UpdateAccessibleInclusionProfile\x12;.sttattus.dating.v1.UpdateAccessibleInclusionProfileRequest\x1a<.sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse\x12\x9d\x01\n" +
+	" GeneratePortableConnectionBundle\x12;.sttattus.dating.v1.GeneratePortableConnectionBundleRequest\x1a<.sttattus.dating.v1.GeneratePortableConnectionBundleResponse\x12\xa6\x01\n" +
+	"#VerifyJurisdictionOfflineSafetyPack\x12>.sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackRequest\x1a?.sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse\x12\xb5\x01\n" +
+	"(AdminListGlobalReleaseCertificationAudit\x12C.sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditRequest\x1aD.sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse\x12\xa6\x01\n" +
+	"#AdminCertifyJurisdictionReleaseGate\x12>.sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateRequest\x1a?.sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/dating/v1;datingv1b\x06proto3"
 
 var (
 	file_sttattus_dating_v1_dating_proto_rawDescOnce sync.Once
@@ -11641,222 +16133,282 @@ func file_sttattus_dating_v1_dating_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dating_v1_dating_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 190)
+var file_sttattus_dating_v1_dating_proto_msgTypes = make([]protoimpl.MessageInfo, 250)
 var file_sttattus_dating_v1_dating_proto_goTypes = []any{
-	(SwipeDirection)(0),                        // 0: sttattus.dating.v1.SwipeDirection
-	(DatingIntent)(0),                          // 1: sttattus.dating.v1.DatingIntent
-	(*Vec3)(nil),                               // 2: sttattus.dating.v1.Vec3
-	(*DatingProfile)(nil),                      // 3: sttattus.dating.v1.DatingProfile
-	(*DiscoveryPreferences)(nil),               // 4: sttattus.dating.v1.DiscoveryPreferences
-	(*GetDiscoveryPreferencesRequest)(nil),     // 5: sttattus.dating.v1.GetDiscoveryPreferencesRequest
-	(*GetDiscoveryPreferencesResponse)(nil),    // 6: sttattus.dating.v1.GetDiscoveryPreferencesResponse
-	(*UpdateDiscoveryPreferencesRequest)(nil),  // 7: sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
-	(*UpdateDiscoveryPreferencesResponse)(nil), // 8: sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
-	(*Candidate)(nil),                          // 9: sttattus.dating.v1.Candidate
-	(*TravelNote)(nil),                         // 10: sttattus.dating.v1.TravelNote
-	(*Match)(nil),                              // 11: sttattus.dating.v1.Match
-	(*Message)(nil),                            // 12: sttattus.dating.v1.Message
-	(*MessageCard)(nil),                        // 13: sttattus.dating.v1.MessageCard
-	(*MessageCall)(nil),                        // 14: sttattus.dating.v1.MessageCall
-	(*Screening)(nil),                          // 15: sttattus.dating.v1.Screening
-	(*GetProfileRequest)(nil),                  // 16: sttattus.dating.v1.GetProfileRequest
-	(*GetProfileResponse)(nil),                 // 17: sttattus.dating.v1.GetProfileResponse
-	(*UpdateProfileRequest)(nil),               // 18: sttattus.dating.v1.UpdateProfileRequest
-	(*UpdateProfileResponse)(nil),              // 19: sttattus.dating.v1.UpdateProfileResponse
-	(*StreamDiscoveryRequest)(nil),             // 20: sttattus.dating.v1.StreamDiscoveryRequest
-	(*StreamDiscoveryResponse)(nil),            // 21: sttattus.dating.v1.StreamDiscoveryResponse
-	(*SwipeRequest)(nil),                       // 22: sttattus.dating.v1.SwipeRequest
-	(*SwipeResponse)(nil),                      // 23: sttattus.dating.v1.SwipeResponse
-	(*ListMatchesRequest)(nil),                 // 24: sttattus.dating.v1.ListMatchesRequest
-	(*ListMatchesResponse)(nil),                // 25: sttattus.dating.v1.ListMatchesResponse
-	(*UnmatchRequest)(nil),                     // 26: sttattus.dating.v1.UnmatchRequest
-	(*UnmatchResponse)(nil),                    // 27: sttattus.dating.v1.UnmatchResponse
-	(*StreamMessagesRequest)(nil),              // 28: sttattus.dating.v1.StreamMessagesRequest
-	(*StreamMessagesResponse)(nil),             // 29: sttattus.dating.v1.StreamMessagesResponse
-	(*SendMessageRequest)(nil),                 // 30: sttattus.dating.v1.SendMessageRequest
-	(*SendMessageResponse)(nil),                // 31: sttattus.dating.v1.SendMessageResponse
-	(*AtlasVerification)(nil),                  // 32: sttattus.dating.v1.AtlasVerification
-	(*StartVerificationRequest)(nil),           // 33: sttattus.dating.v1.StartVerificationRequest
-	(*StartVerificationResponse)(nil),          // 34: sttattus.dating.v1.StartVerificationResponse
-	(*GetLatestVerificationRequest)(nil),       // 35: sttattus.dating.v1.GetLatestVerificationRequest
-	(*GetLatestVerificationResponse)(nil),      // 36: sttattus.dating.v1.GetLatestVerificationResponse
-	(*TensionSeat)(nil),                        // 37: sttattus.dating.v1.TensionSeat
-	(*ListTensionSeatsRequest)(nil),            // 38: sttattus.dating.v1.ListTensionSeatsRequest
-	(*ListTensionSeatsResponse)(nil),           // 39: sttattus.dating.v1.ListTensionSeatsResponse
-	(*PlaceTensionBidRequest)(nil),             // 40: sttattus.dating.v1.PlaceTensionBidRequest
-	(*PlaceTensionBidResponse)(nil),            // 41: sttattus.dating.v1.PlaceTensionBidResponse
-	(*ReleaseTensionSeatRequest)(nil),          // 42: sttattus.dating.v1.ReleaseTensionSeatRequest
-	(*ReleaseTensionSeatResponse)(nil),         // 43: sttattus.dating.v1.ReleaseTensionSeatResponse
-	(*AkashicChapter)(nil),                     // 44: sttattus.dating.v1.AkashicChapter
-	(*ListAuthorAkashicRequest)(nil),           // 45: sttattus.dating.v1.ListAuthorAkashicRequest
-	(*ListAuthorAkashicResponse)(nil),          // 46: sttattus.dating.v1.ListAuthorAkashicResponse
-	(*ListVisibleAkashicRequest)(nil),          // 47: sttattus.dating.v1.ListVisibleAkashicRequest
-	(*ListVisibleAkashicResponse)(nil),         // 48: sttattus.dating.v1.ListVisibleAkashicResponse
-	(*ReportAkashicChapterRequest)(nil),        // 49: sttattus.dating.v1.ReportAkashicChapterRequest
-	(*ReportAkashicChapterResponse)(nil),       // 50: sttattus.dating.v1.ReportAkashicChapterResponse
-	(*UpsertAkashicChapterRequest)(nil),        // 51: sttattus.dating.v1.UpsertAkashicChapterRequest
-	(*UpsertAkashicChapterResponse)(nil),       // 52: sttattus.dating.v1.UpsertAkashicChapterResponse
-	(*DeleteAkashicChapterRequest)(nil),        // 53: sttattus.dating.v1.DeleteAkashicChapterRequest
-	(*DeleteAkashicChapterResponse)(nil),       // 54: sttattus.dating.v1.DeleteAkashicChapterResponse
-	(*UserBlock)(nil),                          // 55: sttattus.dating.v1.UserBlock
-	(*ListMyBlocksRequest)(nil),                // 56: sttattus.dating.v1.ListMyBlocksRequest
-	(*ListMyBlocksResponse)(nil),               // 57: sttattus.dating.v1.ListMyBlocksResponse
-	(*BlockUserRequest)(nil),                   // 58: sttattus.dating.v1.BlockUserRequest
-	(*BlockUserResponse)(nil),                  // 59: sttattus.dating.v1.BlockUserResponse
-	(*UnblockUserRequest)(nil),                 // 60: sttattus.dating.v1.UnblockUserRequest
-	(*UnblockUserResponse)(nil),                // 61: sttattus.dating.v1.UnblockUserResponse
-	(*UserReport)(nil),                         // 62: sttattus.dating.v1.UserReport
-	(*ListMyReportsRequest)(nil),               // 63: sttattus.dating.v1.ListMyReportsRequest
-	(*ListMyReportsResponse)(nil),              // 64: sttattus.dating.v1.ListMyReportsResponse
-	(*ReportUserRequest)(nil),                  // 65: sttattus.dating.v1.ReportUserRequest
-	(*ReportUserResponse)(nil),                 // 66: sttattus.dating.v1.ReportUserResponse
-	(*PanicAlert)(nil),                         // 67: sttattus.dating.v1.PanicAlert
-	(*TriggerPanicAlertRequest)(nil),           // 68: sttattus.dating.v1.TriggerPanicAlertRequest
-	(*TriggerPanicAlertResponse)(nil),          // 69: sttattus.dating.v1.TriggerPanicAlertResponse
-	(*ListMyPanicAlertsRequest)(nil),           // 70: sttattus.dating.v1.ListMyPanicAlertsRequest
-	(*ListMyPanicAlertsResponse)(nil),          // 71: sttattus.dating.v1.ListMyPanicAlertsResponse
-	(*PanicContact)(nil),                       // 72: sttattus.dating.v1.PanicContact
-	(*GetPanicContactRequest)(nil),             // 73: sttattus.dating.v1.GetPanicContactRequest
-	(*GetPanicContactResponse)(nil),            // 74: sttattus.dating.v1.GetPanicContactResponse
-	(*UpsertPanicContactRequest)(nil),          // 75: sttattus.dating.v1.UpsertPanicContactRequest
-	(*UpsertPanicContactResponse)(nil),         // 76: sttattus.dating.v1.UpsertPanicContactResponse
-	(*PrivacyAxes)(nil),                        // 77: sttattus.dating.v1.PrivacyAxes
-	(*GetPrivacyAxesRequest)(nil),              // 78: sttattus.dating.v1.GetPrivacyAxesRequest
-	(*GetPrivacyAxesResponse)(nil),             // 79: sttattus.dating.v1.GetPrivacyAxesResponse
-	(*UpsertPrivacyAxesRequest)(nil),           // 80: sttattus.dating.v1.UpsertPrivacyAxesRequest
-	(*UpsertPrivacyAxesResponse)(nil),          // 81: sttattus.dating.v1.UpsertPrivacyAxesResponse
-	(*AtlasMapPoint)(nil),                      // 82: sttattus.dating.v1.AtlasMapPoint
-	(*ListAtlasMapPointsRequest)(nil),          // 83: sttattus.dating.v1.ListAtlasMapPointsRequest
-	(*ListAtlasMapPointsResponse)(nil),         // 84: sttattus.dating.v1.ListAtlasMapPointsResponse
-	(*AtlasGroup)(nil),                         // 85: sttattus.dating.v1.AtlasGroup
-	(*ListAtlasGroupsRequest)(nil),             // 86: sttattus.dating.v1.ListAtlasGroupsRequest
-	(*ListAtlasGroupsResponse)(nil),            // 87: sttattus.dating.v1.ListAtlasGroupsResponse
-	(*CreateAtlasGroupRequest)(nil),            // 88: sttattus.dating.v1.CreateAtlasGroupRequest
-	(*CreateAtlasGroupResponse)(nil),           // 89: sttattus.dating.v1.CreateAtlasGroupResponse
-	(*JoinAtlasGroupRequest)(nil),              // 90: sttattus.dating.v1.JoinAtlasGroupRequest
-	(*JoinAtlasGroupResponse)(nil),             // 91: sttattus.dating.v1.JoinAtlasGroupResponse
-	(*LeaveAtlasGroupRequest)(nil),             // 92: sttattus.dating.v1.LeaveAtlasGroupRequest
-	(*LeaveAtlasGroupResponse)(nil),            // 93: sttattus.dating.v1.LeaveAtlasGroupResponse
-	(*CloseAtlasGroupRequest)(nil),             // 94: sttattus.dating.v1.CloseAtlasGroupRequest
-	(*CloseAtlasGroupResponse)(nil),            // 95: sttattus.dating.v1.CloseAtlasGroupResponse
-	(*ReportAtlasGroupRequest)(nil),            // 96: sttattus.dating.v1.ReportAtlasGroupRequest
-	(*ReportAtlasGroupResponse)(nil),           // 97: sttattus.dating.v1.ReportAtlasGroupResponse
-	(*AgoraRoom)(nil),                          // 98: sttattus.dating.v1.AgoraRoom
-	(*ListLiveRoomsRequest)(nil),               // 99: sttattus.dating.v1.ListLiveRoomsRequest
-	(*ListLiveRoomsResponse)(nil),              // 100: sttattus.dating.v1.ListLiveRoomsResponse
-	(*CreateAgoraRoomRequest)(nil),             // 101: sttattus.dating.v1.CreateAgoraRoomRequest
-	(*CreateAgoraRoomResponse)(nil),            // 102: sttattus.dating.v1.CreateAgoraRoomResponse
-	(*EndAgoraRoomRequest)(nil),                // 103: sttattus.dating.v1.EndAgoraRoomRequest
-	(*EndAgoraRoomResponse)(nil),               // 104: sttattus.dating.v1.EndAgoraRoomResponse
-	(*MintLiveKitTokenRequest)(nil),            // 105: sttattus.dating.v1.MintLiveKitTokenRequest
-	(*MintLiveKitTokenResponse)(nil),           // 106: sttattus.dating.v1.MintLiveKitTokenResponse
-	(*MessageAttachment)(nil),                  // 107: sttattus.dating.v1.MessageAttachment
-	(*AttachMediaToMessageRequest)(nil),        // 108: sttattus.dating.v1.AttachMediaToMessageRequest
-	(*AttachMediaToMessageResponse)(nil),       // 109: sttattus.dating.v1.AttachMediaToMessageResponse
-	(*ListMessageAttachmentsRequest)(nil),      // 110: sttattus.dating.v1.ListMessageAttachmentsRequest
-	(*ListMessageAttachmentsResponse)(nil),     // 111: sttattus.dating.v1.ListMessageAttachmentsResponse
-	(*Restaurant)(nil),                         // 112: sttattus.dating.v1.Restaurant
-	(*ListRestaurantsRequest)(nil),             // 113: sttattus.dating.v1.ListRestaurantsRequest
-	(*ListRestaurantsResponse)(nil),            // 114: sttattus.dating.v1.ListRestaurantsResponse
-	(*Reservation)(nil),                        // 115: sttattus.dating.v1.Reservation
-	(*CreateReservationRequest)(nil),           // 116: sttattus.dating.v1.CreateReservationRequest
-	(*CreateReservationResponse)(nil),          // 117: sttattus.dating.v1.CreateReservationResponse
-	(*ListMyReservationsRequest)(nil),          // 118: sttattus.dating.v1.ListMyReservationsRequest
-	(*ListMyReservationsResponse)(nil),         // 119: sttattus.dating.v1.ListMyReservationsResponse
-	(*CancelReservationRequest)(nil),           // 120: sttattus.dating.v1.CancelReservationRequest
-	(*CancelReservationResponse)(nil),          // 121: sttattus.dating.v1.CancelReservationResponse
-	(*CompatibilityFactor)(nil),                // 122: sttattus.dating.v1.CompatibilityFactor
-	(*CompatibilityMatrix)(nil),                // 123: sttattus.dating.v1.CompatibilityMatrix
-	(*GetCompatibilityMatrixRequest)(nil),      // 124: sttattus.dating.v1.GetCompatibilityMatrixRequest
-	(*GetCompatibilityMatrixResponse)(nil),     // 125: sttattus.dating.v1.GetCompatibilityMatrixResponse
-	(*Gift)(nil),                               // 126: sttattus.dating.v1.Gift
-	(*SendGiftRequest)(nil),                    // 127: sttattus.dating.v1.SendGiftRequest
-	(*SendGiftResponse)(nil),                   // 128: sttattus.dating.v1.SendGiftResponse
-	(*ListGiftLedgerRequest)(nil),              // 129: sttattus.dating.v1.ListGiftLedgerRequest
-	(*ListGiftLedgerResponse)(nil),             // 130: sttattus.dating.v1.ListGiftLedgerResponse
-	(*Mission)(nil),                            // 131: sttattus.dating.v1.Mission
-	(*ListMissionsRequest)(nil),                // 132: sttattus.dating.v1.ListMissionsRequest
-	(*ListMissionsResponse)(nil),               // 133: sttattus.dating.v1.ListMissionsResponse
-	(*CompleteMissionRequest)(nil),             // 134: sttattus.dating.v1.CompleteMissionRequest
-	(*CompleteMissionResponse)(nil),            // 135: sttattus.dating.v1.CompleteMissionResponse
-	(*ConciergeThread)(nil),                    // 136: sttattus.dating.v1.ConciergeThread
-	(*ConciergeMessage)(nil),                   // 137: sttattus.dating.v1.ConciergeMessage
-	(*StartConciergeThreadRequest)(nil),        // 138: sttattus.dating.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),       // 139: sttattus.dating.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),      // 140: sttattus.dating.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),     // 141: sttattus.dating.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),          // 142: sttattus.dating.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),         // 143: sttattus.dating.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),        // 144: sttattus.dating.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),       // 145: sttattus.dating.v1.PostConciergeMessageResponse
-	(*MatchmakerProposal)(nil),                 // 146: sttattus.dating.v1.MatchmakerProposal
-	(*ListMatchmakerProposalsRequest)(nil),     // 147: sttattus.dating.v1.ListMatchmakerProposalsRequest
-	(*ListMatchmakerProposalsResponse)(nil),    // 148: sttattus.dating.v1.ListMatchmakerProposalsResponse
-	(*RespondMatchmakerProposalRequest)(nil),   // 149: sttattus.dating.v1.RespondMatchmakerProposalRequest
-	(*RespondMatchmakerProposalResponse)(nil),  // 150: sttattus.dating.v1.RespondMatchmakerProposalResponse
-	(*AtlasLetter)(nil),                        // 151: sttattus.dating.v1.AtlasLetter
-	(*ListAtlasLettersRequest)(nil),            // 152: sttattus.dating.v1.ListAtlasLettersRequest
-	(*ListAtlasLettersResponse)(nil),           // 153: sttattus.dating.v1.ListAtlasLettersResponse
-	(*GetAtlasLetterRequest)(nil),              // 154: sttattus.dating.v1.GetAtlasLetterRequest
-	(*GetAtlasLetterResponse)(nil),             // 155: sttattus.dating.v1.GetAtlasLetterResponse
-	(*AtlasEvent)(nil),                         // 156: sttattus.dating.v1.AtlasEvent
-	(*ListEventsRequest)(nil),                  // 157: sttattus.dating.v1.ListEventsRequest
-	(*ListEventsResponse)(nil),                 // 158: sttattus.dating.v1.ListEventsResponse
-	(*RsvpEventRequest)(nil),                   // 159: sttattus.dating.v1.RsvpEventRequest
-	(*RsvpEventResponse)(nil),                  // 160: sttattus.dating.v1.RsvpEventResponse
-	(*ListMyEventRsvpsRequest)(nil),            // 161: sttattus.dating.v1.ListMyEventRsvpsRequest
-	(*ListMyEventRsvpsResponse)(nil),           // 162: sttattus.dating.v1.ListMyEventRsvpsResponse
-	(*ProfileShareToken)(nil),                  // 163: sttattus.dating.v1.ProfileShareToken
-	(*CreateProfileShareRequest)(nil),          // 164: sttattus.dating.v1.CreateProfileShareRequest
-	(*CreateProfileShareResponse)(nil),         // 165: sttattus.dating.v1.CreateProfileShareResponse
-	(*ListMyProfileSharesRequest)(nil),         // 166: sttattus.dating.v1.ListMyProfileSharesRequest
-	(*ListMyProfileSharesResponse)(nil),        // 167: sttattus.dating.v1.ListMyProfileSharesResponse
-	(*RevokeProfileShareRequest)(nil),          // 168: sttattus.dating.v1.RevokeProfileShareRequest
-	(*RevokeProfileShareResponse)(nil),         // 169: sttattus.dating.v1.RevokeProfileShareResponse
-	(*GenerateAtlasYearbookRequest)(nil),       // 170: sttattus.dating.v1.GenerateAtlasYearbookRequest
-	(*GenerateAtlasYearbookResponse)(nil),      // 171: sttattus.dating.v1.GenerateAtlasYearbookResponse
-	(*CheckInEventRequest)(nil),                // 172: sttattus.dating.v1.CheckInEventRequest
-	(*CheckInEventResponse)(nil),               // 173: sttattus.dating.v1.CheckInEventResponse
-	(*CrossPillarGate)(nil),                    // 174: sttattus.dating.v1.CrossPillarGate
-	(*GetCrossPillarGateRequest)(nil),          // 175: sttattus.dating.v1.GetCrossPillarGateRequest
-	(*GetCrossPillarGateResponse)(nil),         // 176: sttattus.dating.v1.GetCrossPillarGateResponse
-	(*DatingPhoto)(nil),                        // 177: sttattus.dating.v1.DatingPhoto
-	(*ListDatingPhotosRequest)(nil),            // 178: sttattus.dating.v1.ListDatingPhotosRequest
-	(*ListDatingPhotosResponse)(nil),           // 179: sttattus.dating.v1.ListDatingPhotosResponse
-	(*SetVoiceBaselineRequest)(nil),            // 180: sttattus.dating.v1.SetVoiceBaselineRequest
-	(*SetVoiceBaselineResponse)(nil),           // 181: sttattus.dating.v1.SetVoiceBaselineResponse
-	(*RemoveVoiceBaselineRequest)(nil),         // 182: sttattus.dating.v1.RemoveVoiceBaselineRequest
-	(*RemoveVoiceBaselineResponse)(nil),        // 183: sttattus.dating.v1.RemoveVoiceBaselineResponse
-	(*AddDatingPhotoRequest)(nil),              // 184: sttattus.dating.v1.AddDatingPhotoRequest
-	(*AddDatingPhotoResponse)(nil),             // 185: sttattus.dating.v1.AddDatingPhotoResponse
-	(*RemoveDatingPhotoRequest)(nil),           // 186: sttattus.dating.v1.RemoveDatingPhotoRequest
-	(*RemoveDatingPhotoResponse)(nil),          // 187: sttattus.dating.v1.RemoveDatingPhotoResponse
-	(*ReorderDatingPhotosRequest)(nil),         // 188: sttattus.dating.v1.ReorderDatingPhotosRequest
-	(*ReorderDatingPhotosResponse)(nil),        // 189: sttattus.dating.v1.ReorderDatingPhotosResponse
-	(*SetPrimaryDatingPhotoRequest)(nil),       // 190: sttattus.dating.v1.SetPrimaryDatingPhotoRequest
-	(*SetPrimaryDatingPhotoResponse)(nil),      // 191: sttattus.dating.v1.SetPrimaryDatingPhotoResponse
-	(*TrustPanel)(nil),                         // 192: sttattus.dating.v1.TrustPanel
-	(*PillarPredicate)(nil),                    // 193: sttattus.dating.v1.PillarPredicate
-	(*ProfileAnswer)(nil),                      // 194: sttattus.dating.v1.ProfileAnswer
-	(*TemporaryIntent)(nil),                    // 195: sttattus.dating.v1.TemporaryIntent
-	(*ProfileModule)(nil),                      // 196: sttattus.dating.v1.ProfileModule
-	(*CompatibilitySummary)(nil),               // 197: sttattus.dating.v1.CompatibilitySummary
-	(*v1.PageRequest)(nil),                     // 198: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                    // 199: sttattus.common.v1.PageResponse
+	(SwipeDirection)(0),                                      // 0: sttattus.dating.v1.SwipeDirection
+	(DatingIntent)(0),                                        // 1: sttattus.dating.v1.DatingIntent
+	(*Vec3)(nil),                                             // 2: sttattus.dating.v1.Vec3
+	(*DatingProfile)(nil),                                    // 3: sttattus.dating.v1.DatingProfile
+	(*DiscoveryPreferences)(nil),                             // 4: sttattus.dating.v1.DiscoveryPreferences
+	(*GetDiscoveryPreferencesRequest)(nil),                   // 5: sttattus.dating.v1.GetDiscoveryPreferencesRequest
+	(*GetDiscoveryPreferencesResponse)(nil),                  // 6: sttattus.dating.v1.GetDiscoveryPreferencesResponse
+	(*UpdateDiscoveryPreferencesRequest)(nil),                // 7: sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
+	(*UpdateDiscoveryPreferencesResponse)(nil),               // 8: sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
+	(*Candidate)(nil),                                        // 9: sttattus.dating.v1.Candidate
+	(*TravelNote)(nil),                                       // 10: sttattus.dating.v1.TravelNote
+	(*Match)(nil),                                            // 11: sttattus.dating.v1.Match
+	(*Message)(nil),                                          // 12: sttattus.dating.v1.Message
+	(*MessageCard)(nil),                                      // 13: sttattus.dating.v1.MessageCard
+	(*MessageCall)(nil),                                      // 14: sttattus.dating.v1.MessageCall
+	(*Screening)(nil),                                        // 15: sttattus.dating.v1.Screening
+	(*GetProfileRequest)(nil),                                // 16: sttattus.dating.v1.GetProfileRequest
+	(*GetProfileResponse)(nil),                               // 17: sttattus.dating.v1.GetProfileResponse
+	(*UpdateProfileRequest)(nil),                             // 18: sttattus.dating.v1.UpdateProfileRequest
+	(*UpdateProfileResponse)(nil),                            // 19: sttattus.dating.v1.UpdateProfileResponse
+	(*StreamDiscoveryRequest)(nil),                           // 20: sttattus.dating.v1.StreamDiscoveryRequest
+	(*StreamDiscoveryResponse)(nil),                          // 21: sttattus.dating.v1.StreamDiscoveryResponse
+	(*SwipeRequest)(nil),                                     // 22: sttattus.dating.v1.SwipeRequest
+	(*SwipeResponse)(nil),                                    // 23: sttattus.dating.v1.SwipeResponse
+	(*ListMatchesRequest)(nil),                               // 24: sttattus.dating.v1.ListMatchesRequest
+	(*ListMatchesResponse)(nil),                              // 25: sttattus.dating.v1.ListMatchesResponse
+	(*UnmatchRequest)(nil),                                   // 26: sttattus.dating.v1.UnmatchRequest
+	(*UnmatchResponse)(nil),                                  // 27: sttattus.dating.v1.UnmatchResponse
+	(*StreamMessagesRequest)(nil),                            // 28: sttattus.dating.v1.StreamMessagesRequest
+	(*StreamMessagesResponse)(nil),                           // 29: sttattus.dating.v1.StreamMessagesResponse
+	(*SendMessageRequest)(nil),                               // 30: sttattus.dating.v1.SendMessageRequest
+	(*SendMessageResponse)(nil),                              // 31: sttattus.dating.v1.SendMessageResponse
+	(*AtlasVerification)(nil),                                // 32: sttattus.dating.v1.AtlasVerification
+	(*StartVerificationRequest)(nil),                         // 33: sttattus.dating.v1.StartVerificationRequest
+	(*StartVerificationResponse)(nil),                        // 34: sttattus.dating.v1.StartVerificationResponse
+	(*GetLatestVerificationRequest)(nil),                     // 35: sttattus.dating.v1.GetLatestVerificationRequest
+	(*GetLatestVerificationResponse)(nil),                    // 36: sttattus.dating.v1.GetLatestVerificationResponse
+	(*TensionSeat)(nil),                                      // 37: sttattus.dating.v1.TensionSeat
+	(*ListTensionSeatsRequest)(nil),                          // 38: sttattus.dating.v1.ListTensionSeatsRequest
+	(*ListTensionSeatsResponse)(nil),                         // 39: sttattus.dating.v1.ListTensionSeatsResponse
+	(*PlaceTensionBidRequest)(nil),                           // 40: sttattus.dating.v1.PlaceTensionBidRequest
+	(*PlaceTensionBidResponse)(nil),                          // 41: sttattus.dating.v1.PlaceTensionBidResponse
+	(*ReleaseTensionSeatRequest)(nil),                        // 42: sttattus.dating.v1.ReleaseTensionSeatRequest
+	(*ReleaseTensionSeatResponse)(nil),                       // 43: sttattus.dating.v1.ReleaseTensionSeatResponse
+	(*AkashicChapter)(nil),                                   // 44: sttattus.dating.v1.AkashicChapter
+	(*ListAuthorAkashicRequest)(nil),                         // 45: sttattus.dating.v1.ListAuthorAkashicRequest
+	(*ListAuthorAkashicResponse)(nil),                        // 46: sttattus.dating.v1.ListAuthorAkashicResponse
+	(*ListVisibleAkashicRequest)(nil),                        // 47: sttattus.dating.v1.ListVisibleAkashicRequest
+	(*ListVisibleAkashicResponse)(nil),                       // 48: sttattus.dating.v1.ListVisibleAkashicResponse
+	(*ReportAkashicChapterRequest)(nil),                      // 49: sttattus.dating.v1.ReportAkashicChapterRequest
+	(*ReportAkashicChapterResponse)(nil),                     // 50: sttattus.dating.v1.ReportAkashicChapterResponse
+	(*UpsertAkashicChapterRequest)(nil),                      // 51: sttattus.dating.v1.UpsertAkashicChapterRequest
+	(*UpsertAkashicChapterResponse)(nil),                     // 52: sttattus.dating.v1.UpsertAkashicChapterResponse
+	(*DeleteAkashicChapterRequest)(nil),                      // 53: sttattus.dating.v1.DeleteAkashicChapterRequest
+	(*DeleteAkashicChapterResponse)(nil),                     // 54: sttattus.dating.v1.DeleteAkashicChapterResponse
+	(*UserBlock)(nil),                                        // 55: sttattus.dating.v1.UserBlock
+	(*ListMyBlocksRequest)(nil),                              // 56: sttattus.dating.v1.ListMyBlocksRequest
+	(*ListMyBlocksResponse)(nil),                             // 57: sttattus.dating.v1.ListMyBlocksResponse
+	(*BlockUserRequest)(nil),                                 // 58: sttattus.dating.v1.BlockUserRequest
+	(*BlockUserResponse)(nil),                                // 59: sttattus.dating.v1.BlockUserResponse
+	(*UnblockUserRequest)(nil),                               // 60: sttattus.dating.v1.UnblockUserRequest
+	(*UnblockUserResponse)(nil),                              // 61: sttattus.dating.v1.UnblockUserResponse
+	(*UserReport)(nil),                                       // 62: sttattus.dating.v1.UserReport
+	(*ListMyReportsRequest)(nil),                             // 63: sttattus.dating.v1.ListMyReportsRequest
+	(*ListMyReportsResponse)(nil),                            // 64: sttattus.dating.v1.ListMyReportsResponse
+	(*ReportUserRequest)(nil),                                // 65: sttattus.dating.v1.ReportUserRequest
+	(*ReportUserResponse)(nil),                               // 66: sttattus.dating.v1.ReportUserResponse
+	(*PanicAlert)(nil),                                       // 67: sttattus.dating.v1.PanicAlert
+	(*TriggerPanicAlertRequest)(nil),                         // 68: sttattus.dating.v1.TriggerPanicAlertRequest
+	(*TriggerPanicAlertResponse)(nil),                        // 69: sttattus.dating.v1.TriggerPanicAlertResponse
+	(*ListMyPanicAlertsRequest)(nil),                         // 70: sttattus.dating.v1.ListMyPanicAlertsRequest
+	(*ListMyPanicAlertsResponse)(nil),                        // 71: sttattus.dating.v1.ListMyPanicAlertsResponse
+	(*PanicContact)(nil),                                     // 72: sttattus.dating.v1.PanicContact
+	(*GetPanicContactRequest)(nil),                           // 73: sttattus.dating.v1.GetPanicContactRequest
+	(*GetPanicContactResponse)(nil),                          // 74: sttattus.dating.v1.GetPanicContactResponse
+	(*UpsertPanicContactRequest)(nil),                        // 75: sttattus.dating.v1.UpsertPanicContactRequest
+	(*UpsertPanicContactResponse)(nil),                       // 76: sttattus.dating.v1.UpsertPanicContactResponse
+	(*PrivacyAxes)(nil),                                      // 77: sttattus.dating.v1.PrivacyAxes
+	(*GetPrivacyAxesRequest)(nil),                            // 78: sttattus.dating.v1.GetPrivacyAxesRequest
+	(*GetPrivacyAxesResponse)(nil),                           // 79: sttattus.dating.v1.GetPrivacyAxesResponse
+	(*UpsertPrivacyAxesRequest)(nil),                         // 80: sttattus.dating.v1.UpsertPrivacyAxesRequest
+	(*UpsertPrivacyAxesResponse)(nil),                        // 81: sttattus.dating.v1.UpsertPrivacyAxesResponse
+	(*AtlasMapPoint)(nil),                                    // 82: sttattus.dating.v1.AtlasMapPoint
+	(*ListAtlasMapPointsRequest)(nil),                        // 83: sttattus.dating.v1.ListAtlasMapPointsRequest
+	(*ListAtlasMapPointsResponse)(nil),                       // 84: sttattus.dating.v1.ListAtlasMapPointsResponse
+	(*AtlasGroup)(nil),                                       // 85: sttattus.dating.v1.AtlasGroup
+	(*ListAtlasGroupsRequest)(nil),                           // 86: sttattus.dating.v1.ListAtlasGroupsRequest
+	(*ListAtlasGroupsResponse)(nil),                          // 87: sttattus.dating.v1.ListAtlasGroupsResponse
+	(*CreateAtlasGroupRequest)(nil),                          // 88: sttattus.dating.v1.CreateAtlasGroupRequest
+	(*CreateAtlasGroupResponse)(nil),                         // 89: sttattus.dating.v1.CreateAtlasGroupResponse
+	(*JoinAtlasGroupRequest)(nil),                            // 90: sttattus.dating.v1.JoinAtlasGroupRequest
+	(*JoinAtlasGroupResponse)(nil),                           // 91: sttattus.dating.v1.JoinAtlasGroupResponse
+	(*LeaveAtlasGroupRequest)(nil),                           // 92: sttattus.dating.v1.LeaveAtlasGroupRequest
+	(*LeaveAtlasGroupResponse)(nil),                          // 93: sttattus.dating.v1.LeaveAtlasGroupResponse
+	(*CloseAtlasGroupRequest)(nil),                           // 94: sttattus.dating.v1.CloseAtlasGroupRequest
+	(*CloseAtlasGroupResponse)(nil),                          // 95: sttattus.dating.v1.CloseAtlasGroupResponse
+	(*ReportAtlasGroupRequest)(nil),                          // 96: sttattus.dating.v1.ReportAtlasGroupRequest
+	(*ReportAtlasGroupResponse)(nil),                         // 97: sttattus.dating.v1.ReportAtlasGroupResponse
+	(*AgoraRoom)(nil),                                        // 98: sttattus.dating.v1.AgoraRoom
+	(*ListLiveRoomsRequest)(nil),                             // 99: sttattus.dating.v1.ListLiveRoomsRequest
+	(*ListLiveRoomsResponse)(nil),                            // 100: sttattus.dating.v1.ListLiveRoomsResponse
+	(*CreateAgoraRoomRequest)(nil),                           // 101: sttattus.dating.v1.CreateAgoraRoomRequest
+	(*CreateAgoraRoomResponse)(nil),                          // 102: sttattus.dating.v1.CreateAgoraRoomResponse
+	(*EndAgoraRoomRequest)(nil),                              // 103: sttattus.dating.v1.EndAgoraRoomRequest
+	(*EndAgoraRoomResponse)(nil),                             // 104: sttattus.dating.v1.EndAgoraRoomResponse
+	(*MintLiveKitTokenRequest)(nil),                          // 105: sttattus.dating.v1.MintLiveKitTokenRequest
+	(*MintLiveKitTokenResponse)(nil),                         // 106: sttattus.dating.v1.MintLiveKitTokenResponse
+	(*MessageAttachment)(nil),                                // 107: sttattus.dating.v1.MessageAttachment
+	(*AttachMediaToMessageRequest)(nil),                      // 108: sttattus.dating.v1.AttachMediaToMessageRequest
+	(*AttachMediaToMessageResponse)(nil),                     // 109: sttattus.dating.v1.AttachMediaToMessageResponse
+	(*ListMessageAttachmentsRequest)(nil),                    // 110: sttattus.dating.v1.ListMessageAttachmentsRequest
+	(*ListMessageAttachmentsResponse)(nil),                   // 111: sttattus.dating.v1.ListMessageAttachmentsResponse
+	(*Restaurant)(nil),                                       // 112: sttattus.dating.v1.Restaurant
+	(*ListRestaurantsRequest)(nil),                           // 113: sttattus.dating.v1.ListRestaurantsRequest
+	(*ListRestaurantsResponse)(nil),                          // 114: sttattus.dating.v1.ListRestaurantsResponse
+	(*Reservation)(nil),                                      // 115: sttattus.dating.v1.Reservation
+	(*CreateReservationRequest)(nil),                         // 116: sttattus.dating.v1.CreateReservationRequest
+	(*CreateReservationResponse)(nil),                        // 117: sttattus.dating.v1.CreateReservationResponse
+	(*ListMyReservationsRequest)(nil),                        // 118: sttattus.dating.v1.ListMyReservationsRequest
+	(*ListMyReservationsResponse)(nil),                       // 119: sttattus.dating.v1.ListMyReservationsResponse
+	(*CancelReservationRequest)(nil),                         // 120: sttattus.dating.v1.CancelReservationRequest
+	(*CancelReservationResponse)(nil),                        // 121: sttattus.dating.v1.CancelReservationResponse
+	(*CompatibilityFactor)(nil),                              // 122: sttattus.dating.v1.CompatibilityFactor
+	(*CompatibilityMatrix)(nil),                              // 123: sttattus.dating.v1.CompatibilityMatrix
+	(*GetCompatibilityMatrixRequest)(nil),                    // 124: sttattus.dating.v1.GetCompatibilityMatrixRequest
+	(*GetCompatibilityMatrixResponse)(nil),                   // 125: sttattus.dating.v1.GetCompatibilityMatrixResponse
+	(*Gift)(nil),                                             // 126: sttattus.dating.v1.Gift
+	(*SendGiftRequest)(nil),                                  // 127: sttattus.dating.v1.SendGiftRequest
+	(*SendGiftResponse)(nil),                                 // 128: sttattus.dating.v1.SendGiftResponse
+	(*ListGiftLedgerRequest)(nil),                            // 129: sttattus.dating.v1.ListGiftLedgerRequest
+	(*ListGiftLedgerResponse)(nil),                           // 130: sttattus.dating.v1.ListGiftLedgerResponse
+	(*Mission)(nil),                                          // 131: sttattus.dating.v1.Mission
+	(*ListMissionsRequest)(nil),                              // 132: sttattus.dating.v1.ListMissionsRequest
+	(*ListMissionsResponse)(nil),                             // 133: sttattus.dating.v1.ListMissionsResponse
+	(*CompleteMissionRequest)(nil),                           // 134: sttattus.dating.v1.CompleteMissionRequest
+	(*CompleteMissionResponse)(nil),                          // 135: sttattus.dating.v1.CompleteMissionResponse
+	(*ConciergeThread)(nil),                                  // 136: sttattus.dating.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                                 // 137: sttattus.dating.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),                      // 138: sttattus.dating.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                     // 139: sttattus.dating.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                    // 140: sttattus.dating.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),                   // 141: sttattus.dating.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                        // 142: sttattus.dating.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                       // 143: sttattus.dating.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                      // 144: sttattus.dating.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                     // 145: sttattus.dating.v1.PostConciergeMessageResponse
+	(*MatchmakerProposal)(nil),                               // 146: sttattus.dating.v1.MatchmakerProposal
+	(*ListMatchmakerProposalsRequest)(nil),                   // 147: sttattus.dating.v1.ListMatchmakerProposalsRequest
+	(*ListMatchmakerProposalsResponse)(nil),                  // 148: sttattus.dating.v1.ListMatchmakerProposalsResponse
+	(*RespondMatchmakerProposalRequest)(nil),                 // 149: sttattus.dating.v1.RespondMatchmakerProposalRequest
+	(*RespondMatchmakerProposalResponse)(nil),                // 150: sttattus.dating.v1.RespondMatchmakerProposalResponse
+	(*AtlasLetter)(nil),                                      // 151: sttattus.dating.v1.AtlasLetter
+	(*ListAtlasLettersRequest)(nil),                          // 152: sttattus.dating.v1.ListAtlasLettersRequest
+	(*ListAtlasLettersResponse)(nil),                         // 153: sttattus.dating.v1.ListAtlasLettersResponse
+	(*GetAtlasLetterRequest)(nil),                            // 154: sttattus.dating.v1.GetAtlasLetterRequest
+	(*GetAtlasLetterResponse)(nil),                           // 155: sttattus.dating.v1.GetAtlasLetterResponse
+	(*AtlasEvent)(nil),                                       // 156: sttattus.dating.v1.AtlasEvent
+	(*ListEventsRequest)(nil),                                // 157: sttattus.dating.v1.ListEventsRequest
+	(*ListEventsResponse)(nil),                               // 158: sttattus.dating.v1.ListEventsResponse
+	(*RsvpEventRequest)(nil),                                 // 159: sttattus.dating.v1.RsvpEventRequest
+	(*RsvpEventResponse)(nil),                                // 160: sttattus.dating.v1.RsvpEventResponse
+	(*ListMyEventRsvpsRequest)(nil),                          // 161: sttattus.dating.v1.ListMyEventRsvpsRequest
+	(*ListMyEventRsvpsResponse)(nil),                         // 162: sttattus.dating.v1.ListMyEventRsvpsResponse
+	(*ProfileShareToken)(nil),                                // 163: sttattus.dating.v1.ProfileShareToken
+	(*CreateProfileShareRequest)(nil),                        // 164: sttattus.dating.v1.CreateProfileShareRequest
+	(*CreateProfileShareResponse)(nil),                       // 165: sttattus.dating.v1.CreateProfileShareResponse
+	(*ListMyProfileSharesRequest)(nil),                       // 166: sttattus.dating.v1.ListMyProfileSharesRequest
+	(*ListMyProfileSharesResponse)(nil),                      // 167: sttattus.dating.v1.ListMyProfileSharesResponse
+	(*RevokeProfileShareRequest)(nil),                        // 168: sttattus.dating.v1.RevokeProfileShareRequest
+	(*RevokeProfileShareResponse)(nil),                       // 169: sttattus.dating.v1.RevokeProfileShareResponse
+	(*GenerateAtlasYearbookRequest)(nil),                     // 170: sttattus.dating.v1.GenerateAtlasYearbookRequest
+	(*GenerateAtlasYearbookResponse)(nil),                    // 171: sttattus.dating.v1.GenerateAtlasYearbookResponse
+	(*CheckInEventRequest)(nil),                              // 172: sttattus.dating.v1.CheckInEventRequest
+	(*CheckInEventResponse)(nil),                             // 173: sttattus.dating.v1.CheckInEventResponse
+	(*CrossPillarGate)(nil),                                  // 174: sttattus.dating.v1.CrossPillarGate
+	(*GetCrossPillarGateRequest)(nil),                        // 175: sttattus.dating.v1.GetCrossPillarGateRequest
+	(*GetCrossPillarGateResponse)(nil),                       // 176: sttattus.dating.v1.GetCrossPillarGateResponse
+	(*DatingPhoto)(nil),                                      // 177: sttattus.dating.v1.DatingPhoto
+	(*ListDatingPhotosRequest)(nil),                          // 178: sttattus.dating.v1.ListDatingPhotosRequest
+	(*ListDatingPhotosResponse)(nil),                         // 179: sttattus.dating.v1.ListDatingPhotosResponse
+	(*SetVoiceBaselineRequest)(nil),                          // 180: sttattus.dating.v1.SetVoiceBaselineRequest
+	(*SetVoiceBaselineResponse)(nil),                         // 181: sttattus.dating.v1.SetVoiceBaselineResponse
+	(*RemoveVoiceBaselineRequest)(nil),                       // 182: sttattus.dating.v1.RemoveVoiceBaselineRequest
+	(*RemoveVoiceBaselineResponse)(nil),                      // 183: sttattus.dating.v1.RemoveVoiceBaselineResponse
+	(*AddDatingPhotoRequest)(nil),                            // 184: sttattus.dating.v1.AddDatingPhotoRequest
+	(*AddDatingPhotoResponse)(nil),                           // 185: sttattus.dating.v1.AddDatingPhotoResponse
+	(*RemoveDatingPhotoRequest)(nil),                         // 186: sttattus.dating.v1.RemoveDatingPhotoRequest
+	(*RemoveDatingPhotoResponse)(nil),                        // 187: sttattus.dating.v1.RemoveDatingPhotoResponse
+	(*ReorderDatingPhotosRequest)(nil),                       // 188: sttattus.dating.v1.ReorderDatingPhotosRequest
+	(*ReorderDatingPhotosResponse)(nil),                      // 189: sttattus.dating.v1.ReorderDatingPhotosResponse
+	(*SetPrimaryDatingPhotoRequest)(nil),                     // 190: sttattus.dating.v1.SetPrimaryDatingPhotoRequest
+	(*SetPrimaryDatingPhotoResponse)(nil),                    // 191: sttattus.dating.v1.SetPrimaryDatingPhotoResponse
+	(*AtlasRelationshipAgreement)(nil),                       // 192: sttattus.dating.v1.AtlasRelationshipAgreement
+	(*AtlasRelationshipCheckin)(nil),                         // 193: sttattus.dating.v1.AtlasRelationshipCheckin
+	(*AtlasUncouplingPlan)(nil),                              // 194: sttattus.dating.v1.AtlasUncouplingPlan
+	(*GetRelationshipProgressionWorkbenchRequest)(nil),       // 195: sttattus.dating.v1.GetRelationshipProgressionWorkbenchRequest
+	(*GetRelationshipProgressionWorkbenchResponse)(nil),      // 196: sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse
+	(*UpsertRelationshipStageAgreementRequest)(nil),          // 197: sttattus.dating.v1.UpsertRelationshipStageAgreementRequest
+	(*UpsertRelationshipStageAgreementResponse)(nil),         // 198: sttattus.dating.v1.UpsertRelationshipStageAgreementResponse
+	(*RecordRelationshipCheckinReflectionRequest)(nil),       // 199: sttattus.dating.v1.RecordRelationshipCheckinReflectionRequest
+	(*RecordRelationshipCheckinReflectionResponse)(nil),      // 200: sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse
+	(*InitiateSafeUncouplingPlanRequest)(nil),                // 201: sttattus.dating.v1.InitiateSafeUncouplingPlanRequest
+	(*InitiateSafeUncouplingPlanResponse)(nil),               // 202: sttattus.dating.v1.InitiateSafeUncouplingPlanResponse
+	(*AdminListRelationshipProgressionAuditRequest)(nil),     // 203: sttattus.dating.v1.AdminListRelationshipProgressionAuditRequest
+	(*AdminListRelationshipProgressionAuditResponse)(nil),    // 204: sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse
+	(*AdminModerateRelationshipPromptSafetyRequest)(nil),     // 205: sttattus.dating.v1.AdminModerateRelationshipPromptSafetyRequest
+	(*AdminModerateRelationshipPromptSafetyResponse)(nil),    // 206: sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse
+	(*AtlasTemporaryCrew)(nil),                               // 207: sttattus.dating.v1.AtlasTemporaryCrew
+	(*AtlasCrewSocialMission)(nil),                           // 208: sttattus.dating.v1.AtlasCrewSocialMission
+	(*AtlasContextualCrewEndorsement)(nil),                   // 209: sttattus.dating.v1.AtlasContextualCrewEndorsement
+	(*GetFriendshipCrewsWorkbenchRequest)(nil),               // 210: sttattus.dating.v1.GetFriendshipCrewsWorkbenchRequest
+	(*GetFriendshipCrewsWorkbenchResponse)(nil),              // 211: sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse
+	(*CreateTemporaryCrewRequest)(nil),                       // 212: sttattus.dating.v1.CreateTemporaryCrewRequest
+	(*CreateTemporaryCrewResponse)(nil),                      // 213: sttattus.dating.v1.CreateTemporaryCrewResponse
+	(*SubmitCrewMissionEvidenceRequest)(nil),                 // 214: sttattus.dating.v1.SubmitCrewMissionEvidenceRequest
+	(*SubmitCrewMissionEvidenceResponse)(nil),                // 215: sttattus.dating.v1.SubmitCrewMissionEvidenceResponse
+	(*DissolveOrCompleteCrewRequest)(nil),                    // 216: sttattus.dating.v1.DissolveOrCompleteCrewRequest
+	(*DissolveOrCompleteCrewResponse)(nil),                   // 217: sttattus.dating.v1.DissolveOrCompleteCrewResponse
+	(*AdminListFriendshipCrewsAuditRequest)(nil),             // 218: sttattus.dating.v1.AdminListFriendshipCrewsAuditRequest
+	(*AdminListFriendshipCrewsAuditResponse)(nil),            // 219: sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse
+	(*AdminModerateCrewSafetyAndMissionRequest)(nil),         // 220: sttattus.dating.v1.AdminModerateCrewSafetyAndMissionRequest
+	(*AdminModerateCrewSafetyAndMissionResponse)(nil),        // 221: sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse
+	(*AtlasConnectionArchiveEntry)(nil),                      // 222: sttattus.dating.v1.AtlasConnectionArchiveEntry
+	(*AtlasMeaningfulGiftGuardrail)(nil),                     // 223: sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+	(*AtlasYearbookPreviewManifest)(nil),                     // 224: sttattus.dating.v1.AtlasYearbookPreviewManifest
+	(*GetConnectionArchiveWorkbenchRequest)(nil),             // 225: sttattus.dating.v1.GetConnectionArchiveWorkbenchRequest
+	(*GetConnectionArchiveWorkbenchResponse)(nil),            // 226: sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse
+	(*UpsertConnectionArchiveEntryRequest)(nil),              // 227: sttattus.dating.v1.UpsertConnectionArchiveEntryRequest
+	(*UpsertConnectionArchiveEntryResponse)(nil),             // 228: sttattus.dating.v1.UpsertConnectionArchiveEntryResponse
+	(*SendMeaningfulGuardedGiftRequest)(nil),                 // 229: sttattus.dating.v1.SendMeaningfulGuardedGiftRequest
+	(*SendMeaningfulGuardedGiftResponse)(nil),                // 230: sttattus.dating.v1.SendMeaningfulGuardedGiftResponse
+	(*ApproveYearbookPreviewManifestRequest)(nil),            // 231: sttattus.dating.v1.ApproveYearbookPreviewManifestRequest
+	(*ApproveYearbookPreviewManifestResponse)(nil),           // 232: sttattus.dating.v1.ApproveYearbookPreviewManifestResponse
+	(*AdminListConnectionArchiveAuditRequest)(nil),           // 233: sttattus.dating.v1.AdminListConnectionArchiveAuditRequest
+	(*AdminListConnectionArchiveAuditResponse)(nil),          // 234: sttattus.dating.v1.AdminListConnectionArchiveAuditResponse
+	(*AdminResolveGiftOrArchiveDisputeRequest)(nil),          // 235: sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeRequest
+	(*AdminResolveGiftOrArchiveDisputeResponse)(nil),         // 236: sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse
+	(*AtlasAccessibleInclusionProfile)(nil),                  // 237: sttattus.dating.v1.AtlasAccessibleInclusionProfile
+	(*AtlasJurisdictionReleaseGate)(nil),                     // 238: sttattus.dating.v1.AtlasJurisdictionReleaseGate
+	(*AtlasPortableConnectionBundle)(nil),                    // 239: sttattus.dating.v1.AtlasPortableConnectionBundle
+	(*GetInclusiveGlobalReleaseWorkbenchRequest)(nil),        // 240: sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchRequest
+	(*GetInclusiveGlobalReleaseWorkbenchResponse)(nil),       // 241: sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse
+	(*UpdateAccessibleInclusionProfileRequest)(nil),          // 242: sttattus.dating.v1.UpdateAccessibleInclusionProfileRequest
+	(*UpdateAccessibleInclusionProfileResponse)(nil),         // 243: sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse
+	(*GeneratePortableConnectionBundleRequest)(nil),          // 244: sttattus.dating.v1.GeneratePortableConnectionBundleRequest
+	(*GeneratePortableConnectionBundleResponse)(nil),         // 245: sttattus.dating.v1.GeneratePortableConnectionBundleResponse
+	(*VerifyJurisdictionOfflineSafetyPackRequest)(nil),       // 246: sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackRequest
+	(*VerifyJurisdictionOfflineSafetyPackResponse)(nil),      // 247: sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse
+	(*AdminListGlobalReleaseCertificationAuditRequest)(nil),  // 248: sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditRequest
+	(*AdminListGlobalReleaseCertificationAuditResponse)(nil), // 249: sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse
+	(*AdminCertifyJurisdictionReleaseGateRequest)(nil),       // 250: sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateRequest
+	(*AdminCertifyJurisdictionReleaseGateResponse)(nil),      // 251: sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponse
+	(*TrustPanel)(nil),                                       // 252: sttattus.dating.v1.TrustPanel
+	(*PillarPredicate)(nil),                                  // 253: sttattus.dating.v1.PillarPredicate
+	(*ProfileAnswer)(nil),                                    // 254: sttattus.dating.v1.ProfileAnswer
+	(*TemporaryIntent)(nil),                                  // 255: sttattus.dating.v1.TemporaryIntent
+	(*ProfileModule)(nil),                                    // 256: sttattus.dating.v1.ProfileModule
+	(*CompatibilitySummary)(nil),                             // 257: sttattus.dating.v1.CompatibilitySummary
+	(*v1.PageRequest)(nil),                                   // 258: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                                  // 259: sttattus.common.v1.PageResponse
 }
 var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	1,   // 0: sttattus.dating.v1.DatingProfile.intent:type_name -> sttattus.dating.v1.DatingIntent
 	2,   // 1: sttattus.dating.v1.DatingProfile.position:type_name -> sttattus.dating.v1.Vec3
-	192, // 2: sttattus.dating.v1.DatingProfile.trust:type_name -> sttattus.dating.v1.TrustPanel
-	193, // 3: sttattus.dating.v1.DatingProfile.predicates:type_name -> sttattus.dating.v1.PillarPredicate
-	194, // 4: sttattus.dating.v1.DatingProfile.boundaries:type_name -> sttattus.dating.v1.ProfileAnswer
-	195, // 5: sttattus.dating.v1.DatingProfile.right_now:type_name -> sttattus.dating.v1.TemporaryIntent
-	196, // 6: sttattus.dating.v1.DatingProfile.modules:type_name -> sttattus.dating.v1.ProfileModule
+	252, // 2: sttattus.dating.v1.DatingProfile.trust:type_name -> sttattus.dating.v1.TrustPanel
+	253, // 3: sttattus.dating.v1.DatingProfile.predicates:type_name -> sttattus.dating.v1.PillarPredicate
+	254, // 4: sttattus.dating.v1.DatingProfile.boundaries:type_name -> sttattus.dating.v1.ProfileAnswer
+	255, // 5: sttattus.dating.v1.DatingProfile.right_now:type_name -> sttattus.dating.v1.TemporaryIntent
+	256, // 6: sttattus.dating.v1.DatingProfile.modules:type_name -> sttattus.dating.v1.ProfileModule
 	4,   // 7: sttattus.dating.v1.GetDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
 	4,   // 8: sttattus.dating.v1.UpdateDiscoveryPreferencesRequest.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
 	4,   // 9: sttattus.dating.v1.UpdateDiscoveryPreferencesResponse.preferences:type_name -> sttattus.dating.v1.DiscoveryPreferences
 	3,   // 10: sttattus.dating.v1.Candidate.profile:type_name -> sttattus.dating.v1.DatingProfile
-	197, // 11: sttattus.dating.v1.Candidate.compatibility:type_name -> sttattus.dating.v1.CompatibilitySummary
+	257, // 11: sttattus.dating.v1.Candidate.compatibility:type_name -> sttattus.dating.v1.CompatibilitySummary
 	10,  // 12: sttattus.dating.v1.Candidate.travel:type_name -> sttattus.dating.v1.TravelNote
 	3,   // 13: sttattus.dating.v1.Match.other:type_name -> sttattus.dating.v1.DatingProfile
 	13,  // 14: sttattus.dating.v1.Message.card:type_name -> sttattus.dating.v1.MessageCard
@@ -11867,9 +16419,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	9,   // 19: sttattus.dating.v1.StreamDiscoveryResponse.candidate:type_name -> sttattus.dating.v1.Candidate
 	0,   // 20: sttattus.dating.v1.SwipeRequest.direction:type_name -> sttattus.dating.v1.SwipeDirection
 	11,  // 21: sttattus.dating.v1.SwipeResponse.match:type_name -> sttattus.dating.v1.Match
-	198, // 22: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	258, // 22: sttattus.dating.v1.ListMatchesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	11,  // 23: sttattus.dating.v1.ListMatchesResponse.matches:type_name -> sttattus.dating.v1.Match
-	199, // 24: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
+	259, // 24: sttattus.dating.v1.ListMatchesResponse.page:type_name -> sttattus.common.v1.PageResponse
 	12,  // 25: sttattus.dating.v1.StreamMessagesResponse.message:type_name -> sttattus.dating.v1.Message
 	12,  // 26: sttattus.dating.v1.SendMessageResponse.message:type_name -> sttattus.dating.v1.Message
 	15,  // 27: sttattus.dating.v1.SendMessageResponse.screening:type_name -> sttattus.dating.v1.Screening
@@ -11910,9 +16462,9 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	122, // 62: sttattus.dating.v1.CompatibilityMatrix.factors:type_name -> sttattus.dating.v1.CompatibilityFactor
 	123, // 63: sttattus.dating.v1.GetCompatibilityMatrixResponse.matrix:type_name -> sttattus.dating.v1.CompatibilityMatrix
 	126, // 64: sttattus.dating.v1.SendGiftResponse.gift:type_name -> sttattus.dating.v1.Gift
-	198, // 65: sttattus.dating.v1.ListGiftLedgerRequest.page:type_name -> sttattus.common.v1.PageRequest
+	258, // 65: sttattus.dating.v1.ListGiftLedgerRequest.page:type_name -> sttattus.common.v1.PageRequest
 	126, // 66: sttattus.dating.v1.ListGiftLedgerResponse.gifts:type_name -> sttattus.dating.v1.Gift
-	199, // 67: sttattus.dating.v1.ListGiftLedgerResponse.page:type_name -> sttattus.common.v1.PageResponse
+	259, // 67: sttattus.dating.v1.ListGiftLedgerResponse.page:type_name -> sttattus.common.v1.PageResponse
 	131, // 68: sttattus.dating.v1.ListMissionsResponse.missions:type_name -> sttattus.dating.v1.Mission
 	136, // 69: sttattus.dating.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dating.v1.ConciergeThread
 	136, // 70: sttattus.dating.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dating.v1.ConciergeThread
@@ -11935,165 +16487,254 @@ var file_sttattus_dating_v1_dating_proto_depIdxs = []int32{
 	177, // 87: sttattus.dating.v1.RemoveDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
 	177, // 88: sttattus.dating.v1.ReorderDatingPhotosResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
 	177, // 89: sttattus.dating.v1.SetPrimaryDatingPhotoResponse.photos:type_name -> sttattus.dating.v1.DatingPhoto
-	16,  // 90: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
-	18,  // 91: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
-	20,  // 92: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
-	22,  // 93: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
-	24,  // 94: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
-	26,  // 95: sttattus.dating.v1.DatingService.Unmatch:input_type -> sttattus.dating.v1.UnmatchRequest
-	28,  // 96: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
-	30,  // 97: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
-	33,  // 98: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
-	35,  // 99: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
-	38,  // 100: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
-	40,  // 101: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
-	42,  // 102: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
-	45,  // 103: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
-	47,  // 104: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
-	51,  // 105: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
-	53,  // 106: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
-	49,  // 107: sttattus.dating.v1.DatingService.ReportAkashicChapter:input_type -> sttattus.dating.v1.ReportAkashicChapterRequest
-	56,  // 108: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
-	58,  // 109: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
-	60,  // 110: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
-	63,  // 111: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
-	65,  // 112: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
-	73,  // 113: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
-	75,  // 114: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
-	68,  // 115: sttattus.dating.v1.DatingService.TriggerPanicAlert:input_type -> sttattus.dating.v1.TriggerPanicAlertRequest
-	70,  // 116: sttattus.dating.v1.DatingService.ListMyPanicAlerts:input_type -> sttattus.dating.v1.ListMyPanicAlertsRequest
-	78,  // 117: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
-	80,  // 118: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
-	83,  // 119: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
-	86,  // 120: sttattus.dating.v1.DatingService.ListAtlasGroups:input_type -> sttattus.dating.v1.ListAtlasGroupsRequest
-	88,  // 121: sttattus.dating.v1.DatingService.CreateAtlasGroup:input_type -> sttattus.dating.v1.CreateAtlasGroupRequest
-	90,  // 122: sttattus.dating.v1.DatingService.JoinAtlasGroup:input_type -> sttattus.dating.v1.JoinAtlasGroupRequest
-	92,  // 123: sttattus.dating.v1.DatingService.LeaveAtlasGroup:input_type -> sttattus.dating.v1.LeaveAtlasGroupRequest
-	94,  // 124: sttattus.dating.v1.DatingService.CloseAtlasGroup:input_type -> sttattus.dating.v1.CloseAtlasGroupRequest
-	96,  // 125: sttattus.dating.v1.DatingService.ReportAtlasGroup:input_type -> sttattus.dating.v1.ReportAtlasGroupRequest
-	99,  // 126: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
-	101, // 127: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
-	103, // 128: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
-	105, // 129: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
-	108, // 130: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
-	110, // 131: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
-	113, // 132: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
-	116, // 133: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
-	118, // 134: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
-	120, // 135: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
-	124, // 136: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:input_type -> sttattus.dating.v1.GetCompatibilityMatrixRequest
-	127, // 137: sttattus.dating.v1.DatingService.SendGift:input_type -> sttattus.dating.v1.SendGiftRequest
-	129, // 138: sttattus.dating.v1.DatingService.ListGiftLedger:input_type -> sttattus.dating.v1.ListGiftLedgerRequest
-	5,   // 139: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:input_type -> sttattus.dating.v1.GetDiscoveryPreferencesRequest
-	7,   // 140: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:input_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
-	132, // 141: sttattus.dating.v1.DatingService.ListMissions:input_type -> sttattus.dating.v1.ListMissionsRequest
-	134, // 142: sttattus.dating.v1.DatingService.CompleteMission:input_type -> sttattus.dating.v1.CompleteMissionRequest
-	138, // 143: sttattus.dating.v1.DatingService.StartConciergeThread:input_type -> sttattus.dating.v1.StartConciergeThreadRequest
-	140, // 144: sttattus.dating.v1.DatingService.ListMyConciergeThreads:input_type -> sttattus.dating.v1.ListMyConciergeThreadsRequest
-	142, // 145: sttattus.dating.v1.DatingService.GetConciergeThread:input_type -> sttattus.dating.v1.GetConciergeThreadRequest
-	144, // 146: sttattus.dating.v1.DatingService.PostConciergeMessage:input_type -> sttattus.dating.v1.PostConciergeMessageRequest
-	147, // 147: sttattus.dating.v1.DatingService.ListMatchmakerProposals:input_type -> sttattus.dating.v1.ListMatchmakerProposalsRequest
-	149, // 148: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:input_type -> sttattus.dating.v1.RespondMatchmakerProposalRequest
-	152, // 149: sttattus.dating.v1.DatingService.ListAtlasLetters:input_type -> sttattus.dating.v1.ListAtlasLettersRequest
-	154, // 150: sttattus.dating.v1.DatingService.GetAtlasLetter:input_type -> sttattus.dating.v1.GetAtlasLetterRequest
-	157, // 151: sttattus.dating.v1.DatingService.ListEvents:input_type -> sttattus.dating.v1.ListEventsRequest
-	159, // 152: sttattus.dating.v1.DatingService.RsvpEvent:input_type -> sttattus.dating.v1.RsvpEventRequest
-	161, // 153: sttattus.dating.v1.DatingService.ListMyEventRsvps:input_type -> sttattus.dating.v1.ListMyEventRsvpsRequest
-	175, // 154: sttattus.dating.v1.DatingService.GetCrossPillarGate:input_type -> sttattus.dating.v1.GetCrossPillarGateRequest
-	164, // 155: sttattus.dating.v1.DatingService.CreateProfileShare:input_type -> sttattus.dating.v1.CreateProfileShareRequest
-	166, // 156: sttattus.dating.v1.DatingService.ListMyProfileShares:input_type -> sttattus.dating.v1.ListMyProfileSharesRequest
-	168, // 157: sttattus.dating.v1.DatingService.RevokeProfileShare:input_type -> sttattus.dating.v1.RevokeProfileShareRequest
-	170, // 158: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:input_type -> sttattus.dating.v1.GenerateAtlasYearbookRequest
-	172, // 159: sttattus.dating.v1.DatingService.CheckInEvent:input_type -> sttattus.dating.v1.CheckInEventRequest
-	178, // 160: sttattus.dating.v1.DatingService.ListDatingPhotos:input_type -> sttattus.dating.v1.ListDatingPhotosRequest
-	184, // 161: sttattus.dating.v1.DatingService.AddDatingPhoto:input_type -> sttattus.dating.v1.AddDatingPhotoRequest
-	186, // 162: sttattus.dating.v1.DatingService.RemoveDatingPhoto:input_type -> sttattus.dating.v1.RemoveDatingPhotoRequest
-	188, // 163: sttattus.dating.v1.DatingService.ReorderDatingPhotos:input_type -> sttattus.dating.v1.ReorderDatingPhotosRequest
-	190, // 164: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:input_type -> sttattus.dating.v1.SetPrimaryDatingPhotoRequest
-	180, // 165: sttattus.dating.v1.DatingService.SetVoiceBaseline:input_type -> sttattus.dating.v1.SetVoiceBaselineRequest
-	182, // 166: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:input_type -> sttattus.dating.v1.RemoveVoiceBaselineRequest
-	17,  // 167: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
-	19,  // 168: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
-	21,  // 169: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
-	23,  // 170: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
-	25,  // 171: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
-	27,  // 172: sttattus.dating.v1.DatingService.Unmatch:output_type -> sttattus.dating.v1.UnmatchResponse
-	29,  // 173: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
-	31,  // 174: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
-	34,  // 175: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
-	36,  // 176: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
-	39,  // 177: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
-	41,  // 178: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
-	43,  // 179: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
-	46,  // 180: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
-	48,  // 181: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
-	52,  // 182: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
-	54,  // 183: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
-	50,  // 184: sttattus.dating.v1.DatingService.ReportAkashicChapter:output_type -> sttattus.dating.v1.ReportAkashicChapterResponse
-	57,  // 185: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
-	59,  // 186: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
-	61,  // 187: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
-	64,  // 188: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
-	66,  // 189: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
-	74,  // 190: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
-	76,  // 191: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
-	69,  // 192: sttattus.dating.v1.DatingService.TriggerPanicAlert:output_type -> sttattus.dating.v1.TriggerPanicAlertResponse
-	71,  // 193: sttattus.dating.v1.DatingService.ListMyPanicAlerts:output_type -> sttattus.dating.v1.ListMyPanicAlertsResponse
-	79,  // 194: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
-	81,  // 195: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
-	84,  // 196: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
-	87,  // 197: sttattus.dating.v1.DatingService.ListAtlasGroups:output_type -> sttattus.dating.v1.ListAtlasGroupsResponse
-	89,  // 198: sttattus.dating.v1.DatingService.CreateAtlasGroup:output_type -> sttattus.dating.v1.CreateAtlasGroupResponse
-	91,  // 199: sttattus.dating.v1.DatingService.JoinAtlasGroup:output_type -> sttattus.dating.v1.JoinAtlasGroupResponse
-	93,  // 200: sttattus.dating.v1.DatingService.LeaveAtlasGroup:output_type -> sttattus.dating.v1.LeaveAtlasGroupResponse
-	95,  // 201: sttattus.dating.v1.DatingService.CloseAtlasGroup:output_type -> sttattus.dating.v1.CloseAtlasGroupResponse
-	97,  // 202: sttattus.dating.v1.DatingService.ReportAtlasGroup:output_type -> sttattus.dating.v1.ReportAtlasGroupResponse
-	100, // 203: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
-	102, // 204: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
-	104, // 205: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
-	106, // 206: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
-	109, // 207: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
-	111, // 208: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
-	114, // 209: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
-	117, // 210: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
-	119, // 211: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
-	121, // 212: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
-	125, // 213: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:output_type -> sttattus.dating.v1.GetCompatibilityMatrixResponse
-	128, // 214: sttattus.dating.v1.DatingService.SendGift:output_type -> sttattus.dating.v1.SendGiftResponse
-	130, // 215: sttattus.dating.v1.DatingService.ListGiftLedger:output_type -> sttattus.dating.v1.ListGiftLedgerResponse
-	6,   // 216: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:output_type -> sttattus.dating.v1.GetDiscoveryPreferencesResponse
-	8,   // 217: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:output_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
-	133, // 218: sttattus.dating.v1.DatingService.ListMissions:output_type -> sttattus.dating.v1.ListMissionsResponse
-	135, // 219: sttattus.dating.v1.DatingService.CompleteMission:output_type -> sttattus.dating.v1.CompleteMissionResponse
-	139, // 220: sttattus.dating.v1.DatingService.StartConciergeThread:output_type -> sttattus.dating.v1.StartConciergeThreadResponse
-	141, // 221: sttattus.dating.v1.DatingService.ListMyConciergeThreads:output_type -> sttattus.dating.v1.ListMyConciergeThreadsResponse
-	143, // 222: sttattus.dating.v1.DatingService.GetConciergeThread:output_type -> sttattus.dating.v1.GetConciergeThreadResponse
-	145, // 223: sttattus.dating.v1.DatingService.PostConciergeMessage:output_type -> sttattus.dating.v1.PostConciergeMessageResponse
-	148, // 224: sttattus.dating.v1.DatingService.ListMatchmakerProposals:output_type -> sttattus.dating.v1.ListMatchmakerProposalsResponse
-	150, // 225: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:output_type -> sttattus.dating.v1.RespondMatchmakerProposalResponse
-	153, // 226: sttattus.dating.v1.DatingService.ListAtlasLetters:output_type -> sttattus.dating.v1.ListAtlasLettersResponse
-	155, // 227: sttattus.dating.v1.DatingService.GetAtlasLetter:output_type -> sttattus.dating.v1.GetAtlasLetterResponse
-	158, // 228: sttattus.dating.v1.DatingService.ListEvents:output_type -> sttattus.dating.v1.ListEventsResponse
-	160, // 229: sttattus.dating.v1.DatingService.RsvpEvent:output_type -> sttattus.dating.v1.RsvpEventResponse
-	162, // 230: sttattus.dating.v1.DatingService.ListMyEventRsvps:output_type -> sttattus.dating.v1.ListMyEventRsvpsResponse
-	176, // 231: sttattus.dating.v1.DatingService.GetCrossPillarGate:output_type -> sttattus.dating.v1.GetCrossPillarGateResponse
-	165, // 232: sttattus.dating.v1.DatingService.CreateProfileShare:output_type -> sttattus.dating.v1.CreateProfileShareResponse
-	167, // 233: sttattus.dating.v1.DatingService.ListMyProfileShares:output_type -> sttattus.dating.v1.ListMyProfileSharesResponse
-	169, // 234: sttattus.dating.v1.DatingService.RevokeProfileShare:output_type -> sttattus.dating.v1.RevokeProfileShareResponse
-	171, // 235: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:output_type -> sttattus.dating.v1.GenerateAtlasYearbookResponse
-	173, // 236: sttattus.dating.v1.DatingService.CheckInEvent:output_type -> sttattus.dating.v1.CheckInEventResponse
-	179, // 237: sttattus.dating.v1.DatingService.ListDatingPhotos:output_type -> sttattus.dating.v1.ListDatingPhotosResponse
-	185, // 238: sttattus.dating.v1.DatingService.AddDatingPhoto:output_type -> sttattus.dating.v1.AddDatingPhotoResponse
-	187, // 239: sttattus.dating.v1.DatingService.RemoveDatingPhoto:output_type -> sttattus.dating.v1.RemoveDatingPhotoResponse
-	189, // 240: sttattus.dating.v1.DatingService.ReorderDatingPhotos:output_type -> sttattus.dating.v1.ReorderDatingPhotosResponse
-	191, // 241: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:output_type -> sttattus.dating.v1.SetPrimaryDatingPhotoResponse
-	181, // 242: sttattus.dating.v1.DatingService.SetVoiceBaseline:output_type -> sttattus.dating.v1.SetVoiceBaselineResponse
-	183, // 243: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:output_type -> sttattus.dating.v1.RemoveVoiceBaselineResponse
-	167, // [167:244] is the sub-list for method output_type
-	90,  // [90:167] is the sub-list for method input_type
-	90,  // [90:90] is the sub-list for extension type_name
-	90,  // [90:90] is the sub-list for extension extendee
-	0,   // [0:90] is the sub-list for field type_name
+	192, // 90: sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse.agreements:type_name -> sttattus.dating.v1.AtlasRelationshipAgreement
+	193, // 91: sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse.checkins:type_name -> sttattus.dating.v1.AtlasRelationshipCheckin
+	194, // 92: sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse.uncoupling_plans:type_name -> sttattus.dating.v1.AtlasUncouplingPlan
+	192, // 93: sttattus.dating.v1.UpsertRelationshipStageAgreementResponse.agreement:type_name -> sttattus.dating.v1.AtlasRelationshipAgreement
+	193, // 94: sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse.checkin:type_name -> sttattus.dating.v1.AtlasRelationshipCheckin
+	194, // 95: sttattus.dating.v1.InitiateSafeUncouplingPlanResponse.plan:type_name -> sttattus.dating.v1.AtlasUncouplingPlan
+	192, // 96: sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse.agreements:type_name -> sttattus.dating.v1.AtlasRelationshipAgreement
+	193, // 97: sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse.checkins:type_name -> sttattus.dating.v1.AtlasRelationshipCheckin
+	194, // 98: sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse.uncoupling_plans:type_name -> sttattus.dating.v1.AtlasUncouplingPlan
+	193, // 99: sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse.checkin:type_name -> sttattus.dating.v1.AtlasRelationshipCheckin
+	207, // 100: sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse.crews:type_name -> sttattus.dating.v1.AtlasTemporaryCrew
+	208, // 101: sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse.missions:type_name -> sttattus.dating.v1.AtlasCrewSocialMission
+	209, // 102: sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse.endorsements:type_name -> sttattus.dating.v1.AtlasContextualCrewEndorsement
+	207, // 103: sttattus.dating.v1.CreateTemporaryCrewResponse.crew:type_name -> sttattus.dating.v1.AtlasTemporaryCrew
+	208, // 104: sttattus.dating.v1.SubmitCrewMissionEvidenceResponse.mission:type_name -> sttattus.dating.v1.AtlasCrewSocialMission
+	207, // 105: sttattus.dating.v1.DissolveOrCompleteCrewResponse.crew:type_name -> sttattus.dating.v1.AtlasTemporaryCrew
+	209, // 106: sttattus.dating.v1.DissolveOrCompleteCrewResponse.endorsement:type_name -> sttattus.dating.v1.AtlasContextualCrewEndorsement
+	207, // 107: sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse.crews:type_name -> sttattus.dating.v1.AtlasTemporaryCrew
+	208, // 108: sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse.missions:type_name -> sttattus.dating.v1.AtlasCrewSocialMission
+	209, // 109: sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse.endorsements:type_name -> sttattus.dating.v1.AtlasContextualCrewEndorsement
+	208, // 110: sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse.mission:type_name -> sttattus.dating.v1.AtlasCrewSocialMission
+	222, // 111: sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse.entries:type_name -> sttattus.dating.v1.AtlasConnectionArchiveEntry
+	223, // 112: sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse.gifts:type_name -> sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+	224, // 113: sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse.yearbook_manifests:type_name -> sttattus.dating.v1.AtlasYearbookPreviewManifest
+	222, // 114: sttattus.dating.v1.UpsertConnectionArchiveEntryResponse.entry:type_name -> sttattus.dating.v1.AtlasConnectionArchiveEntry
+	223, // 115: sttattus.dating.v1.SendMeaningfulGuardedGiftResponse.gift:type_name -> sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+	224, // 116: sttattus.dating.v1.ApproveYearbookPreviewManifestResponse.manifest:type_name -> sttattus.dating.v1.AtlasYearbookPreviewManifest
+	222, // 117: sttattus.dating.v1.AdminListConnectionArchiveAuditResponse.entries:type_name -> sttattus.dating.v1.AtlasConnectionArchiveEntry
+	223, // 118: sttattus.dating.v1.AdminListConnectionArchiveAuditResponse.gifts:type_name -> sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+	224, // 119: sttattus.dating.v1.AdminListConnectionArchiveAuditResponse.yearbook_manifests:type_name -> sttattus.dating.v1.AtlasYearbookPreviewManifest
+	223, // 120: sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse.gift:type_name -> sttattus.dating.v1.AtlasMeaningfulGiftGuardrail
+	237, // 121: sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse.inclusion_profiles:type_name -> sttattus.dating.v1.AtlasAccessibleInclusionProfile
+	238, // 122: sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse.jurisdiction_gates:type_name -> sttattus.dating.v1.AtlasJurisdictionReleaseGate
+	239, // 123: sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse.portable_bundles:type_name -> sttattus.dating.v1.AtlasPortableConnectionBundle
+	237, // 124: sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse.profile:type_name -> sttattus.dating.v1.AtlasAccessibleInclusionProfile
+	239, // 125: sttattus.dating.v1.GeneratePortableConnectionBundleResponse.bundle:type_name -> sttattus.dating.v1.AtlasPortableConnectionBundle
+	238, // 126: sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse.gate:type_name -> sttattus.dating.v1.AtlasJurisdictionReleaseGate
+	237, // 127: sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse.inclusion_profiles:type_name -> sttattus.dating.v1.AtlasAccessibleInclusionProfile
+	238, // 128: sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse.jurisdiction_gates:type_name -> sttattus.dating.v1.AtlasJurisdictionReleaseGate
+	239, // 129: sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse.portable_bundles:type_name -> sttattus.dating.v1.AtlasPortableConnectionBundle
+	238, // 130: sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponse.gate:type_name -> sttattus.dating.v1.AtlasJurisdictionReleaseGate
+	16,  // 131: sttattus.dating.v1.DatingService.GetProfile:input_type -> sttattus.dating.v1.GetProfileRequest
+	18,  // 132: sttattus.dating.v1.DatingService.UpdateProfile:input_type -> sttattus.dating.v1.UpdateProfileRequest
+	20,  // 133: sttattus.dating.v1.DatingService.StreamDiscovery:input_type -> sttattus.dating.v1.StreamDiscoveryRequest
+	22,  // 134: sttattus.dating.v1.DatingService.Swipe:input_type -> sttattus.dating.v1.SwipeRequest
+	24,  // 135: sttattus.dating.v1.DatingService.ListMatches:input_type -> sttattus.dating.v1.ListMatchesRequest
+	26,  // 136: sttattus.dating.v1.DatingService.Unmatch:input_type -> sttattus.dating.v1.UnmatchRequest
+	28,  // 137: sttattus.dating.v1.DatingService.StreamMessages:input_type -> sttattus.dating.v1.StreamMessagesRequest
+	30,  // 138: sttattus.dating.v1.DatingService.SendMessage:input_type -> sttattus.dating.v1.SendMessageRequest
+	33,  // 139: sttattus.dating.v1.DatingService.StartVerification:input_type -> sttattus.dating.v1.StartVerificationRequest
+	35,  // 140: sttattus.dating.v1.DatingService.GetLatestVerification:input_type -> sttattus.dating.v1.GetLatestVerificationRequest
+	38,  // 141: sttattus.dating.v1.DatingService.ListTensionSeats:input_type -> sttattus.dating.v1.ListTensionSeatsRequest
+	40,  // 142: sttattus.dating.v1.DatingService.PlaceTensionBid:input_type -> sttattus.dating.v1.PlaceTensionBidRequest
+	42,  // 143: sttattus.dating.v1.DatingService.ReleaseTensionSeat:input_type -> sttattus.dating.v1.ReleaseTensionSeatRequest
+	45,  // 144: sttattus.dating.v1.DatingService.ListAuthorAkashic:input_type -> sttattus.dating.v1.ListAuthorAkashicRequest
+	47,  // 145: sttattus.dating.v1.DatingService.ListVisibleAkashic:input_type -> sttattus.dating.v1.ListVisibleAkashicRequest
+	51,  // 146: sttattus.dating.v1.DatingService.UpsertAkashicChapter:input_type -> sttattus.dating.v1.UpsertAkashicChapterRequest
+	53,  // 147: sttattus.dating.v1.DatingService.DeleteAkashicChapter:input_type -> sttattus.dating.v1.DeleteAkashicChapterRequest
+	49,  // 148: sttattus.dating.v1.DatingService.ReportAkashicChapter:input_type -> sttattus.dating.v1.ReportAkashicChapterRequest
+	56,  // 149: sttattus.dating.v1.DatingService.ListMyBlocks:input_type -> sttattus.dating.v1.ListMyBlocksRequest
+	58,  // 150: sttattus.dating.v1.DatingService.BlockUser:input_type -> sttattus.dating.v1.BlockUserRequest
+	60,  // 151: sttattus.dating.v1.DatingService.UnblockUser:input_type -> sttattus.dating.v1.UnblockUserRequest
+	63,  // 152: sttattus.dating.v1.DatingService.ListMyReports:input_type -> sttattus.dating.v1.ListMyReportsRequest
+	65,  // 153: sttattus.dating.v1.DatingService.ReportUser:input_type -> sttattus.dating.v1.ReportUserRequest
+	73,  // 154: sttattus.dating.v1.DatingService.GetPanicContact:input_type -> sttattus.dating.v1.GetPanicContactRequest
+	75,  // 155: sttattus.dating.v1.DatingService.UpsertPanicContact:input_type -> sttattus.dating.v1.UpsertPanicContactRequest
+	68,  // 156: sttattus.dating.v1.DatingService.TriggerPanicAlert:input_type -> sttattus.dating.v1.TriggerPanicAlertRequest
+	70,  // 157: sttattus.dating.v1.DatingService.ListMyPanicAlerts:input_type -> sttattus.dating.v1.ListMyPanicAlertsRequest
+	78,  // 158: sttattus.dating.v1.DatingService.GetPrivacyAxes:input_type -> sttattus.dating.v1.GetPrivacyAxesRequest
+	80,  // 159: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:input_type -> sttattus.dating.v1.UpsertPrivacyAxesRequest
+	83,  // 160: sttattus.dating.v1.DatingService.ListAtlasMapPoints:input_type -> sttattus.dating.v1.ListAtlasMapPointsRequest
+	86,  // 161: sttattus.dating.v1.DatingService.ListAtlasGroups:input_type -> sttattus.dating.v1.ListAtlasGroupsRequest
+	88,  // 162: sttattus.dating.v1.DatingService.CreateAtlasGroup:input_type -> sttattus.dating.v1.CreateAtlasGroupRequest
+	90,  // 163: sttattus.dating.v1.DatingService.JoinAtlasGroup:input_type -> sttattus.dating.v1.JoinAtlasGroupRequest
+	92,  // 164: sttattus.dating.v1.DatingService.LeaveAtlasGroup:input_type -> sttattus.dating.v1.LeaveAtlasGroupRequest
+	94,  // 165: sttattus.dating.v1.DatingService.CloseAtlasGroup:input_type -> sttattus.dating.v1.CloseAtlasGroupRequest
+	96,  // 166: sttattus.dating.v1.DatingService.ReportAtlasGroup:input_type -> sttattus.dating.v1.ReportAtlasGroupRequest
+	99,  // 167: sttattus.dating.v1.DatingService.ListLiveRooms:input_type -> sttattus.dating.v1.ListLiveRoomsRequest
+	101, // 168: sttattus.dating.v1.DatingService.CreateAgoraRoom:input_type -> sttattus.dating.v1.CreateAgoraRoomRequest
+	103, // 169: sttattus.dating.v1.DatingService.EndAgoraRoom:input_type -> sttattus.dating.v1.EndAgoraRoomRequest
+	105, // 170: sttattus.dating.v1.DatingService.MintLiveKitToken:input_type -> sttattus.dating.v1.MintLiveKitTokenRequest
+	108, // 171: sttattus.dating.v1.DatingService.AttachMediaToMessage:input_type -> sttattus.dating.v1.AttachMediaToMessageRequest
+	110, // 172: sttattus.dating.v1.DatingService.ListMessageAttachments:input_type -> sttattus.dating.v1.ListMessageAttachmentsRequest
+	113, // 173: sttattus.dating.v1.DatingService.ListRestaurants:input_type -> sttattus.dating.v1.ListRestaurantsRequest
+	116, // 174: sttattus.dating.v1.DatingService.CreateReservation:input_type -> sttattus.dating.v1.CreateReservationRequest
+	118, // 175: sttattus.dating.v1.DatingService.ListMyReservations:input_type -> sttattus.dating.v1.ListMyReservationsRequest
+	120, // 176: sttattus.dating.v1.DatingService.CancelReservation:input_type -> sttattus.dating.v1.CancelReservationRequest
+	124, // 177: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:input_type -> sttattus.dating.v1.GetCompatibilityMatrixRequest
+	127, // 178: sttattus.dating.v1.DatingService.SendGift:input_type -> sttattus.dating.v1.SendGiftRequest
+	129, // 179: sttattus.dating.v1.DatingService.ListGiftLedger:input_type -> sttattus.dating.v1.ListGiftLedgerRequest
+	5,   // 180: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:input_type -> sttattus.dating.v1.GetDiscoveryPreferencesRequest
+	7,   // 181: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:input_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesRequest
+	132, // 182: sttattus.dating.v1.DatingService.ListMissions:input_type -> sttattus.dating.v1.ListMissionsRequest
+	134, // 183: sttattus.dating.v1.DatingService.CompleteMission:input_type -> sttattus.dating.v1.CompleteMissionRequest
+	138, // 184: sttattus.dating.v1.DatingService.StartConciergeThread:input_type -> sttattus.dating.v1.StartConciergeThreadRequest
+	140, // 185: sttattus.dating.v1.DatingService.ListMyConciergeThreads:input_type -> sttattus.dating.v1.ListMyConciergeThreadsRequest
+	142, // 186: sttattus.dating.v1.DatingService.GetConciergeThread:input_type -> sttattus.dating.v1.GetConciergeThreadRequest
+	144, // 187: sttattus.dating.v1.DatingService.PostConciergeMessage:input_type -> sttattus.dating.v1.PostConciergeMessageRequest
+	147, // 188: sttattus.dating.v1.DatingService.ListMatchmakerProposals:input_type -> sttattus.dating.v1.ListMatchmakerProposalsRequest
+	149, // 189: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:input_type -> sttattus.dating.v1.RespondMatchmakerProposalRequest
+	152, // 190: sttattus.dating.v1.DatingService.ListAtlasLetters:input_type -> sttattus.dating.v1.ListAtlasLettersRequest
+	154, // 191: sttattus.dating.v1.DatingService.GetAtlasLetter:input_type -> sttattus.dating.v1.GetAtlasLetterRequest
+	157, // 192: sttattus.dating.v1.DatingService.ListEvents:input_type -> sttattus.dating.v1.ListEventsRequest
+	159, // 193: sttattus.dating.v1.DatingService.RsvpEvent:input_type -> sttattus.dating.v1.RsvpEventRequest
+	161, // 194: sttattus.dating.v1.DatingService.ListMyEventRsvps:input_type -> sttattus.dating.v1.ListMyEventRsvpsRequest
+	175, // 195: sttattus.dating.v1.DatingService.GetCrossPillarGate:input_type -> sttattus.dating.v1.GetCrossPillarGateRequest
+	164, // 196: sttattus.dating.v1.DatingService.CreateProfileShare:input_type -> sttattus.dating.v1.CreateProfileShareRequest
+	166, // 197: sttattus.dating.v1.DatingService.ListMyProfileShares:input_type -> sttattus.dating.v1.ListMyProfileSharesRequest
+	168, // 198: sttattus.dating.v1.DatingService.RevokeProfileShare:input_type -> sttattus.dating.v1.RevokeProfileShareRequest
+	170, // 199: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:input_type -> sttattus.dating.v1.GenerateAtlasYearbookRequest
+	172, // 200: sttattus.dating.v1.DatingService.CheckInEvent:input_type -> sttattus.dating.v1.CheckInEventRequest
+	178, // 201: sttattus.dating.v1.DatingService.ListDatingPhotos:input_type -> sttattus.dating.v1.ListDatingPhotosRequest
+	184, // 202: sttattus.dating.v1.DatingService.AddDatingPhoto:input_type -> sttattus.dating.v1.AddDatingPhotoRequest
+	186, // 203: sttattus.dating.v1.DatingService.RemoveDatingPhoto:input_type -> sttattus.dating.v1.RemoveDatingPhotoRequest
+	188, // 204: sttattus.dating.v1.DatingService.ReorderDatingPhotos:input_type -> sttattus.dating.v1.ReorderDatingPhotosRequest
+	190, // 205: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:input_type -> sttattus.dating.v1.SetPrimaryDatingPhotoRequest
+	180, // 206: sttattus.dating.v1.DatingService.SetVoiceBaseline:input_type -> sttattus.dating.v1.SetVoiceBaselineRequest
+	182, // 207: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:input_type -> sttattus.dating.v1.RemoveVoiceBaselineRequest
+	195, // 208: sttattus.dating.v1.DatingService.GetRelationshipProgressionWorkbench:input_type -> sttattus.dating.v1.GetRelationshipProgressionWorkbenchRequest
+	197, // 209: sttattus.dating.v1.DatingService.UpsertRelationshipStageAgreement:input_type -> sttattus.dating.v1.UpsertRelationshipStageAgreementRequest
+	199, // 210: sttattus.dating.v1.DatingService.RecordRelationshipCheckinReflection:input_type -> sttattus.dating.v1.RecordRelationshipCheckinReflectionRequest
+	201, // 211: sttattus.dating.v1.DatingService.InitiateSafeUncouplingPlan:input_type -> sttattus.dating.v1.InitiateSafeUncouplingPlanRequest
+	203, // 212: sttattus.dating.v1.DatingService.AdminListRelationshipProgressionAudit:input_type -> sttattus.dating.v1.AdminListRelationshipProgressionAuditRequest
+	205, // 213: sttattus.dating.v1.DatingService.AdminModerateRelationshipPromptSafety:input_type -> sttattus.dating.v1.AdminModerateRelationshipPromptSafetyRequest
+	210, // 214: sttattus.dating.v1.DatingService.GetFriendshipCrewsWorkbench:input_type -> sttattus.dating.v1.GetFriendshipCrewsWorkbenchRequest
+	212, // 215: sttattus.dating.v1.DatingService.CreateTemporaryCrew:input_type -> sttattus.dating.v1.CreateTemporaryCrewRequest
+	214, // 216: sttattus.dating.v1.DatingService.SubmitCrewMissionEvidence:input_type -> sttattus.dating.v1.SubmitCrewMissionEvidenceRequest
+	216, // 217: sttattus.dating.v1.DatingService.DissolveOrCompleteCrew:input_type -> sttattus.dating.v1.DissolveOrCompleteCrewRequest
+	218, // 218: sttattus.dating.v1.DatingService.AdminListFriendshipCrewsAudit:input_type -> sttattus.dating.v1.AdminListFriendshipCrewsAuditRequest
+	220, // 219: sttattus.dating.v1.DatingService.AdminModerateCrewSafetyAndMission:input_type -> sttattus.dating.v1.AdminModerateCrewSafetyAndMissionRequest
+	225, // 220: sttattus.dating.v1.DatingService.GetConnectionArchiveWorkbench:input_type -> sttattus.dating.v1.GetConnectionArchiveWorkbenchRequest
+	227, // 221: sttattus.dating.v1.DatingService.UpsertConnectionArchiveEntry:input_type -> sttattus.dating.v1.UpsertConnectionArchiveEntryRequest
+	229, // 222: sttattus.dating.v1.DatingService.SendMeaningfulGuardedGift:input_type -> sttattus.dating.v1.SendMeaningfulGuardedGiftRequest
+	231, // 223: sttattus.dating.v1.DatingService.ApproveYearbookPreviewManifest:input_type -> sttattus.dating.v1.ApproveYearbookPreviewManifestRequest
+	233, // 224: sttattus.dating.v1.DatingService.AdminListConnectionArchiveAudit:input_type -> sttattus.dating.v1.AdminListConnectionArchiveAuditRequest
+	235, // 225: sttattus.dating.v1.DatingService.AdminResolveGiftOrArchiveDispute:input_type -> sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeRequest
+	240, // 226: sttattus.dating.v1.DatingService.GetInclusiveGlobalReleaseWorkbench:input_type -> sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchRequest
+	242, // 227: sttattus.dating.v1.DatingService.UpdateAccessibleInclusionProfile:input_type -> sttattus.dating.v1.UpdateAccessibleInclusionProfileRequest
+	244, // 228: sttattus.dating.v1.DatingService.GeneratePortableConnectionBundle:input_type -> sttattus.dating.v1.GeneratePortableConnectionBundleRequest
+	246, // 229: sttattus.dating.v1.DatingService.VerifyJurisdictionOfflineSafetyPack:input_type -> sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackRequest
+	248, // 230: sttattus.dating.v1.DatingService.AdminListGlobalReleaseCertificationAudit:input_type -> sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditRequest
+	250, // 231: sttattus.dating.v1.DatingService.AdminCertifyJurisdictionReleaseGate:input_type -> sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateRequest
+	17,  // 232: sttattus.dating.v1.DatingService.GetProfile:output_type -> sttattus.dating.v1.GetProfileResponse
+	19,  // 233: sttattus.dating.v1.DatingService.UpdateProfile:output_type -> sttattus.dating.v1.UpdateProfileResponse
+	21,  // 234: sttattus.dating.v1.DatingService.StreamDiscovery:output_type -> sttattus.dating.v1.StreamDiscoveryResponse
+	23,  // 235: sttattus.dating.v1.DatingService.Swipe:output_type -> sttattus.dating.v1.SwipeResponse
+	25,  // 236: sttattus.dating.v1.DatingService.ListMatches:output_type -> sttattus.dating.v1.ListMatchesResponse
+	27,  // 237: sttattus.dating.v1.DatingService.Unmatch:output_type -> sttattus.dating.v1.UnmatchResponse
+	29,  // 238: sttattus.dating.v1.DatingService.StreamMessages:output_type -> sttattus.dating.v1.StreamMessagesResponse
+	31,  // 239: sttattus.dating.v1.DatingService.SendMessage:output_type -> sttattus.dating.v1.SendMessageResponse
+	34,  // 240: sttattus.dating.v1.DatingService.StartVerification:output_type -> sttattus.dating.v1.StartVerificationResponse
+	36,  // 241: sttattus.dating.v1.DatingService.GetLatestVerification:output_type -> sttattus.dating.v1.GetLatestVerificationResponse
+	39,  // 242: sttattus.dating.v1.DatingService.ListTensionSeats:output_type -> sttattus.dating.v1.ListTensionSeatsResponse
+	41,  // 243: sttattus.dating.v1.DatingService.PlaceTensionBid:output_type -> sttattus.dating.v1.PlaceTensionBidResponse
+	43,  // 244: sttattus.dating.v1.DatingService.ReleaseTensionSeat:output_type -> sttattus.dating.v1.ReleaseTensionSeatResponse
+	46,  // 245: sttattus.dating.v1.DatingService.ListAuthorAkashic:output_type -> sttattus.dating.v1.ListAuthorAkashicResponse
+	48,  // 246: sttattus.dating.v1.DatingService.ListVisibleAkashic:output_type -> sttattus.dating.v1.ListVisibleAkashicResponse
+	52,  // 247: sttattus.dating.v1.DatingService.UpsertAkashicChapter:output_type -> sttattus.dating.v1.UpsertAkashicChapterResponse
+	54,  // 248: sttattus.dating.v1.DatingService.DeleteAkashicChapter:output_type -> sttattus.dating.v1.DeleteAkashicChapterResponse
+	50,  // 249: sttattus.dating.v1.DatingService.ReportAkashicChapter:output_type -> sttattus.dating.v1.ReportAkashicChapterResponse
+	57,  // 250: sttattus.dating.v1.DatingService.ListMyBlocks:output_type -> sttattus.dating.v1.ListMyBlocksResponse
+	59,  // 251: sttattus.dating.v1.DatingService.BlockUser:output_type -> sttattus.dating.v1.BlockUserResponse
+	61,  // 252: sttattus.dating.v1.DatingService.UnblockUser:output_type -> sttattus.dating.v1.UnblockUserResponse
+	64,  // 253: sttattus.dating.v1.DatingService.ListMyReports:output_type -> sttattus.dating.v1.ListMyReportsResponse
+	66,  // 254: sttattus.dating.v1.DatingService.ReportUser:output_type -> sttattus.dating.v1.ReportUserResponse
+	74,  // 255: sttattus.dating.v1.DatingService.GetPanicContact:output_type -> sttattus.dating.v1.GetPanicContactResponse
+	76,  // 256: sttattus.dating.v1.DatingService.UpsertPanicContact:output_type -> sttattus.dating.v1.UpsertPanicContactResponse
+	69,  // 257: sttattus.dating.v1.DatingService.TriggerPanicAlert:output_type -> sttattus.dating.v1.TriggerPanicAlertResponse
+	71,  // 258: sttattus.dating.v1.DatingService.ListMyPanicAlerts:output_type -> sttattus.dating.v1.ListMyPanicAlertsResponse
+	79,  // 259: sttattus.dating.v1.DatingService.GetPrivacyAxes:output_type -> sttattus.dating.v1.GetPrivacyAxesResponse
+	81,  // 260: sttattus.dating.v1.DatingService.UpsertPrivacyAxes:output_type -> sttattus.dating.v1.UpsertPrivacyAxesResponse
+	84,  // 261: sttattus.dating.v1.DatingService.ListAtlasMapPoints:output_type -> sttattus.dating.v1.ListAtlasMapPointsResponse
+	87,  // 262: sttattus.dating.v1.DatingService.ListAtlasGroups:output_type -> sttattus.dating.v1.ListAtlasGroupsResponse
+	89,  // 263: sttattus.dating.v1.DatingService.CreateAtlasGroup:output_type -> sttattus.dating.v1.CreateAtlasGroupResponse
+	91,  // 264: sttattus.dating.v1.DatingService.JoinAtlasGroup:output_type -> sttattus.dating.v1.JoinAtlasGroupResponse
+	93,  // 265: sttattus.dating.v1.DatingService.LeaveAtlasGroup:output_type -> sttattus.dating.v1.LeaveAtlasGroupResponse
+	95,  // 266: sttattus.dating.v1.DatingService.CloseAtlasGroup:output_type -> sttattus.dating.v1.CloseAtlasGroupResponse
+	97,  // 267: sttattus.dating.v1.DatingService.ReportAtlasGroup:output_type -> sttattus.dating.v1.ReportAtlasGroupResponse
+	100, // 268: sttattus.dating.v1.DatingService.ListLiveRooms:output_type -> sttattus.dating.v1.ListLiveRoomsResponse
+	102, // 269: sttattus.dating.v1.DatingService.CreateAgoraRoom:output_type -> sttattus.dating.v1.CreateAgoraRoomResponse
+	104, // 270: sttattus.dating.v1.DatingService.EndAgoraRoom:output_type -> sttattus.dating.v1.EndAgoraRoomResponse
+	106, // 271: sttattus.dating.v1.DatingService.MintLiveKitToken:output_type -> sttattus.dating.v1.MintLiveKitTokenResponse
+	109, // 272: sttattus.dating.v1.DatingService.AttachMediaToMessage:output_type -> sttattus.dating.v1.AttachMediaToMessageResponse
+	111, // 273: sttattus.dating.v1.DatingService.ListMessageAttachments:output_type -> sttattus.dating.v1.ListMessageAttachmentsResponse
+	114, // 274: sttattus.dating.v1.DatingService.ListRestaurants:output_type -> sttattus.dating.v1.ListRestaurantsResponse
+	117, // 275: sttattus.dating.v1.DatingService.CreateReservation:output_type -> sttattus.dating.v1.CreateReservationResponse
+	119, // 276: sttattus.dating.v1.DatingService.ListMyReservations:output_type -> sttattus.dating.v1.ListMyReservationsResponse
+	121, // 277: sttattus.dating.v1.DatingService.CancelReservation:output_type -> sttattus.dating.v1.CancelReservationResponse
+	125, // 278: sttattus.dating.v1.DatingService.GetCompatibilityMatrix:output_type -> sttattus.dating.v1.GetCompatibilityMatrixResponse
+	128, // 279: sttattus.dating.v1.DatingService.SendGift:output_type -> sttattus.dating.v1.SendGiftResponse
+	130, // 280: sttattus.dating.v1.DatingService.ListGiftLedger:output_type -> sttattus.dating.v1.ListGiftLedgerResponse
+	6,   // 281: sttattus.dating.v1.DatingService.GetDiscoveryPreferences:output_type -> sttattus.dating.v1.GetDiscoveryPreferencesResponse
+	8,   // 282: sttattus.dating.v1.DatingService.UpdateDiscoveryPreferences:output_type -> sttattus.dating.v1.UpdateDiscoveryPreferencesResponse
+	133, // 283: sttattus.dating.v1.DatingService.ListMissions:output_type -> sttattus.dating.v1.ListMissionsResponse
+	135, // 284: sttattus.dating.v1.DatingService.CompleteMission:output_type -> sttattus.dating.v1.CompleteMissionResponse
+	139, // 285: sttattus.dating.v1.DatingService.StartConciergeThread:output_type -> sttattus.dating.v1.StartConciergeThreadResponse
+	141, // 286: sttattus.dating.v1.DatingService.ListMyConciergeThreads:output_type -> sttattus.dating.v1.ListMyConciergeThreadsResponse
+	143, // 287: sttattus.dating.v1.DatingService.GetConciergeThread:output_type -> sttattus.dating.v1.GetConciergeThreadResponse
+	145, // 288: sttattus.dating.v1.DatingService.PostConciergeMessage:output_type -> sttattus.dating.v1.PostConciergeMessageResponse
+	148, // 289: sttattus.dating.v1.DatingService.ListMatchmakerProposals:output_type -> sttattus.dating.v1.ListMatchmakerProposalsResponse
+	150, // 290: sttattus.dating.v1.DatingService.RespondMatchmakerProposal:output_type -> sttattus.dating.v1.RespondMatchmakerProposalResponse
+	153, // 291: sttattus.dating.v1.DatingService.ListAtlasLetters:output_type -> sttattus.dating.v1.ListAtlasLettersResponse
+	155, // 292: sttattus.dating.v1.DatingService.GetAtlasLetter:output_type -> sttattus.dating.v1.GetAtlasLetterResponse
+	158, // 293: sttattus.dating.v1.DatingService.ListEvents:output_type -> sttattus.dating.v1.ListEventsResponse
+	160, // 294: sttattus.dating.v1.DatingService.RsvpEvent:output_type -> sttattus.dating.v1.RsvpEventResponse
+	162, // 295: sttattus.dating.v1.DatingService.ListMyEventRsvps:output_type -> sttattus.dating.v1.ListMyEventRsvpsResponse
+	176, // 296: sttattus.dating.v1.DatingService.GetCrossPillarGate:output_type -> sttattus.dating.v1.GetCrossPillarGateResponse
+	165, // 297: sttattus.dating.v1.DatingService.CreateProfileShare:output_type -> sttattus.dating.v1.CreateProfileShareResponse
+	167, // 298: sttattus.dating.v1.DatingService.ListMyProfileShares:output_type -> sttattus.dating.v1.ListMyProfileSharesResponse
+	169, // 299: sttattus.dating.v1.DatingService.RevokeProfileShare:output_type -> sttattus.dating.v1.RevokeProfileShareResponse
+	171, // 300: sttattus.dating.v1.DatingService.GenerateAtlasYearbook:output_type -> sttattus.dating.v1.GenerateAtlasYearbookResponse
+	173, // 301: sttattus.dating.v1.DatingService.CheckInEvent:output_type -> sttattus.dating.v1.CheckInEventResponse
+	179, // 302: sttattus.dating.v1.DatingService.ListDatingPhotos:output_type -> sttattus.dating.v1.ListDatingPhotosResponse
+	185, // 303: sttattus.dating.v1.DatingService.AddDatingPhoto:output_type -> sttattus.dating.v1.AddDatingPhotoResponse
+	187, // 304: sttattus.dating.v1.DatingService.RemoveDatingPhoto:output_type -> sttattus.dating.v1.RemoveDatingPhotoResponse
+	189, // 305: sttattus.dating.v1.DatingService.ReorderDatingPhotos:output_type -> sttattus.dating.v1.ReorderDatingPhotosResponse
+	191, // 306: sttattus.dating.v1.DatingService.SetPrimaryDatingPhoto:output_type -> sttattus.dating.v1.SetPrimaryDatingPhotoResponse
+	181, // 307: sttattus.dating.v1.DatingService.SetVoiceBaseline:output_type -> sttattus.dating.v1.SetVoiceBaselineResponse
+	183, // 308: sttattus.dating.v1.DatingService.RemoveVoiceBaseline:output_type -> sttattus.dating.v1.RemoveVoiceBaselineResponse
+	196, // 309: sttattus.dating.v1.DatingService.GetRelationshipProgressionWorkbench:output_type -> sttattus.dating.v1.GetRelationshipProgressionWorkbenchResponse
+	198, // 310: sttattus.dating.v1.DatingService.UpsertRelationshipStageAgreement:output_type -> sttattus.dating.v1.UpsertRelationshipStageAgreementResponse
+	200, // 311: sttattus.dating.v1.DatingService.RecordRelationshipCheckinReflection:output_type -> sttattus.dating.v1.RecordRelationshipCheckinReflectionResponse
+	202, // 312: sttattus.dating.v1.DatingService.InitiateSafeUncouplingPlan:output_type -> sttattus.dating.v1.InitiateSafeUncouplingPlanResponse
+	204, // 313: sttattus.dating.v1.DatingService.AdminListRelationshipProgressionAudit:output_type -> sttattus.dating.v1.AdminListRelationshipProgressionAuditResponse
+	206, // 314: sttattus.dating.v1.DatingService.AdminModerateRelationshipPromptSafety:output_type -> sttattus.dating.v1.AdminModerateRelationshipPromptSafetyResponse
+	211, // 315: sttattus.dating.v1.DatingService.GetFriendshipCrewsWorkbench:output_type -> sttattus.dating.v1.GetFriendshipCrewsWorkbenchResponse
+	213, // 316: sttattus.dating.v1.DatingService.CreateTemporaryCrew:output_type -> sttattus.dating.v1.CreateTemporaryCrewResponse
+	215, // 317: sttattus.dating.v1.DatingService.SubmitCrewMissionEvidence:output_type -> sttattus.dating.v1.SubmitCrewMissionEvidenceResponse
+	217, // 318: sttattus.dating.v1.DatingService.DissolveOrCompleteCrew:output_type -> sttattus.dating.v1.DissolveOrCompleteCrewResponse
+	219, // 319: sttattus.dating.v1.DatingService.AdminListFriendshipCrewsAudit:output_type -> sttattus.dating.v1.AdminListFriendshipCrewsAuditResponse
+	221, // 320: sttattus.dating.v1.DatingService.AdminModerateCrewSafetyAndMission:output_type -> sttattus.dating.v1.AdminModerateCrewSafetyAndMissionResponse
+	226, // 321: sttattus.dating.v1.DatingService.GetConnectionArchiveWorkbench:output_type -> sttattus.dating.v1.GetConnectionArchiveWorkbenchResponse
+	228, // 322: sttattus.dating.v1.DatingService.UpsertConnectionArchiveEntry:output_type -> sttattus.dating.v1.UpsertConnectionArchiveEntryResponse
+	230, // 323: sttattus.dating.v1.DatingService.SendMeaningfulGuardedGift:output_type -> sttattus.dating.v1.SendMeaningfulGuardedGiftResponse
+	232, // 324: sttattus.dating.v1.DatingService.ApproveYearbookPreviewManifest:output_type -> sttattus.dating.v1.ApproveYearbookPreviewManifestResponse
+	234, // 325: sttattus.dating.v1.DatingService.AdminListConnectionArchiveAudit:output_type -> sttattus.dating.v1.AdminListConnectionArchiveAuditResponse
+	236, // 326: sttattus.dating.v1.DatingService.AdminResolveGiftOrArchiveDispute:output_type -> sttattus.dating.v1.AdminResolveGiftOrArchiveDisputeResponse
+	241, // 327: sttattus.dating.v1.DatingService.GetInclusiveGlobalReleaseWorkbench:output_type -> sttattus.dating.v1.GetInclusiveGlobalReleaseWorkbenchResponse
+	243, // 328: sttattus.dating.v1.DatingService.UpdateAccessibleInclusionProfile:output_type -> sttattus.dating.v1.UpdateAccessibleInclusionProfileResponse
+	245, // 329: sttattus.dating.v1.DatingService.GeneratePortableConnectionBundle:output_type -> sttattus.dating.v1.GeneratePortableConnectionBundleResponse
+	247, // 330: sttattus.dating.v1.DatingService.VerifyJurisdictionOfflineSafetyPack:output_type -> sttattus.dating.v1.VerifyJurisdictionOfflineSafetyPackResponse
+	249, // 331: sttattus.dating.v1.DatingService.AdminListGlobalReleaseCertificationAudit:output_type -> sttattus.dating.v1.AdminListGlobalReleaseCertificationAuditResponse
+	251, // 332: sttattus.dating.v1.DatingService.AdminCertifyJurisdictionReleaseGate:output_type -> sttattus.dating.v1.AdminCertifyJurisdictionReleaseGateResponse
+	232, // [232:333] is the sub-list for method output_type
+	131, // [131:232] is the sub-list for method input_type
+	131, // [131:131] is the sub-list for extension type_name
+	131, // [131:131] is the sub-list for extension extendee
+	0,   // [0:131] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dating_v1_dating_proto_init() }
@@ -12111,7 +16752,7 @@ func file_sttattus_dating_v1_dating_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dating_v1_dating_proto_rawDesc), len(file_sttattus_dating_v1_dating_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   190,
+			NumMessages:   250,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

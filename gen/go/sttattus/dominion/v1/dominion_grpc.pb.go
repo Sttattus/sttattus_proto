@@ -19,45 +19,78 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DominionService_SyncProperties_FullMethodName           = "/sttattus.dominion.v1.DominionService/SyncProperties"
-	DominionService_ListTerritories_FullMethodName          = "/sttattus.dominion.v1.DominionService/ListTerritories"
-	DominionService_GetDominionStats_FullMethodName         = "/sttattus.dominion.v1.DominionService/GetDominionStats"
-	DominionService_GetLoungeKey_FullMethodName             = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
-	DominionService_EstimatePropertyValue_FullMethodName    = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
-	DominionService_SubmitDeed_FullMethodName               = "/sttattus.dominion.v1.DominionService/SubmitDeed"
-	DominionService_ListMyDeeds_FullMethodName              = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
-	DominionService_ListDeedsForProperty_FullMethodName     = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
-	DominionService_AdminReviewDeed_FullMethodName          = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
-	DominionService_ListLounges_FullMethodName              = "/sttattus.dominion.v1.DominionService/ListLounges"
-	DominionService_ListLoungeEvents_FullMethodName         = "/sttattus.dominion.v1.DominionService/ListLoungeEvents"
-	DominionService_RsvpLoungeEvent_FullMethodName          = "/sttattus.dominion.v1.DominionService/RsvpLoungeEvent"
-	DominionService_ListMyLoungeRsvps_FullMethodName        = "/sttattus.dominion.v1.DominionService/ListMyLoungeRsvps"
-	DominionService_ListSalons_FullMethodName               = "/sttattus.dominion.v1.DominionService/ListSalons"
-	DominionService_RsvpSalon_FullMethodName                = "/sttattus.dominion.v1.DominionService/RsvpSalon"
-	DominionService_ListMySalonRsvps_FullMethodName         = "/sttattus.dominion.v1.DominionService/ListMySalonRsvps"
-	DominionService_GetPropertyFinancials_FullMethodName    = "/sttattus.dominion.v1.DominionService/GetPropertyFinancials"
-	DominionService_UpsertPropertyFinancials_FullMethodName = "/sttattus.dominion.v1.DominionService/UpsertPropertyFinancials"
-	DominionService_GetPortfolioYield_FullMethodName        = "/sttattus.dominion.v1.DominionService/GetPortfolioYield"
-	DominionService_ListRegionIntel_FullMethodName          = "/sttattus.dominion.v1.DominionService/ListRegionIntel"
-	DominionService_GetRegionIntel_FullMethodName           = "/sttattus.dominion.v1.DominionService/GetRegionIntel"
-	DominionService_GetTerritoryAllocation_FullMethodName   = "/sttattus.dominion.v1.DominionService/GetTerritoryAllocation"
-	DominionService_GetTodaySummary_FullMethodName          = "/sttattus.dominion.v1.DominionService/GetTodaySummary"
-	DominionService_StartConciergeThread_FullMethodName     = "/sttattus.dominion.v1.DominionService/StartConciergeThread"
-	DominionService_ListMyConciergeThreads_FullMethodName   = "/sttattus.dominion.v1.DominionService/ListMyConciergeThreads"
-	DominionService_GetConciergeThread_FullMethodName       = "/sttattus.dominion.v1.DominionService/GetConciergeThread"
-	DominionService_PostConciergeMessage_FullMethodName     = "/sttattus.dominion.v1.DominionService/PostConciergeMessage"
-	DominionService_ListAnthologyArticles_FullMethodName    = "/sttattus.dominion.v1.DominionService/ListAnthologyArticles"
-	DominionService_GetAnthologyArticle_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetAnthologyArticle"
-	DominionService_ListDirectory_FullMethodName            = "/sttattus.dominion.v1.DominionService/ListDirectory"
-	DominionService_ListOffMarket_FullMethodName            = "/sttattus.dominion.v1.DominionService/ListOffMarket"
-	DominionService_GetOffMarket_FullMethodName             = "/sttattus.dominion.v1.DominionService/GetOffMarket"
-	DominionService_ParseDeed_FullMethodName                = "/sttattus.dominion.v1.DominionService/ParseDeed"
-	DominionService_CreateDominionShare_FullMethodName      = "/sttattus.dominion.v1.DominionService/CreateDominionShare"
-	DominionService_ListMyDominionShares_FullMethodName     = "/sttattus.dominion.v1.DominionService/ListMyDominionShares"
-	DominionService_RevokeDominionShare_FullMethodName      = "/sttattus.dominion.v1.DominionService/RevokeDominionShare"
-	DominionService_GenerateDominionAlmanac_FullMethodName  = "/sttattus.dominion.v1.DominionService/GenerateDominionAlmanac"
-	DominionService_CreateLoungePass_FullMethodName         = "/sttattus.dominion.v1.DominionService/CreateLoungePass"
-	DominionService_ListMyLoungePasses_FullMethodName       = "/sttattus.dominion.v1.DominionService/ListMyLoungePasses"
+	DominionService_SyncProperties_FullMethodName                           = "/sttattus.dominion.v1.DominionService/SyncProperties"
+	DominionService_ListTerritories_FullMethodName                          = "/sttattus.dominion.v1.DominionService/ListTerritories"
+	DominionService_GetDominionStats_FullMethodName                         = "/sttattus.dominion.v1.DominionService/GetDominionStats"
+	DominionService_GetLoungeKey_FullMethodName                             = "/sttattus.dominion.v1.DominionService/GetLoungeKey"
+	DominionService_EstimatePropertyValue_FullMethodName                    = "/sttattus.dominion.v1.DominionService/EstimatePropertyValue"
+	DominionService_SubmitDeed_FullMethodName                               = "/sttattus.dominion.v1.DominionService/SubmitDeed"
+	DominionService_ListMyDeeds_FullMethodName                              = "/sttattus.dominion.v1.DominionService/ListMyDeeds"
+	DominionService_ListDeedsForProperty_FullMethodName                     = "/sttattus.dominion.v1.DominionService/ListDeedsForProperty"
+	DominionService_AdminReviewDeed_FullMethodName                          = "/sttattus.dominion.v1.DominionService/AdminReviewDeed"
+	DominionService_ListLounges_FullMethodName                              = "/sttattus.dominion.v1.DominionService/ListLounges"
+	DominionService_ListLoungeEvents_FullMethodName                         = "/sttattus.dominion.v1.DominionService/ListLoungeEvents"
+	DominionService_RsvpLoungeEvent_FullMethodName                          = "/sttattus.dominion.v1.DominionService/RsvpLoungeEvent"
+	DominionService_ListMyLoungeRsvps_FullMethodName                        = "/sttattus.dominion.v1.DominionService/ListMyLoungeRsvps"
+	DominionService_ListSalons_FullMethodName                               = "/sttattus.dominion.v1.DominionService/ListSalons"
+	DominionService_RsvpSalon_FullMethodName                                = "/sttattus.dominion.v1.DominionService/RsvpSalon"
+	DominionService_ListMySalonRsvps_FullMethodName                         = "/sttattus.dominion.v1.DominionService/ListMySalonRsvps"
+	DominionService_GetPropertyFinancials_FullMethodName                    = "/sttattus.dominion.v1.DominionService/GetPropertyFinancials"
+	DominionService_UpsertPropertyFinancials_FullMethodName                 = "/sttattus.dominion.v1.DominionService/UpsertPropertyFinancials"
+	DominionService_GetPortfolioYield_FullMethodName                        = "/sttattus.dominion.v1.DominionService/GetPortfolioYield"
+	DominionService_ListRegionIntel_FullMethodName                          = "/sttattus.dominion.v1.DominionService/ListRegionIntel"
+	DominionService_GetRegionIntel_FullMethodName                           = "/sttattus.dominion.v1.DominionService/GetRegionIntel"
+	DominionService_GetTerritoryAllocation_FullMethodName                   = "/sttattus.dominion.v1.DominionService/GetTerritoryAllocation"
+	DominionService_GetTodaySummary_FullMethodName                          = "/sttattus.dominion.v1.DominionService/GetTodaySummary"
+	DominionService_StartConciergeThread_FullMethodName                     = "/sttattus.dominion.v1.DominionService/StartConciergeThread"
+	DominionService_ListMyConciergeThreads_FullMethodName                   = "/sttattus.dominion.v1.DominionService/ListMyConciergeThreads"
+	DominionService_GetConciergeThread_FullMethodName                       = "/sttattus.dominion.v1.DominionService/GetConciergeThread"
+	DominionService_PostConciergeMessage_FullMethodName                     = "/sttattus.dominion.v1.DominionService/PostConciergeMessage"
+	DominionService_ListAnthologyArticles_FullMethodName                    = "/sttattus.dominion.v1.DominionService/ListAnthologyArticles"
+	DominionService_GetAnthologyArticle_FullMethodName                      = "/sttattus.dominion.v1.DominionService/GetAnthologyArticle"
+	DominionService_ListDirectory_FullMethodName                            = "/sttattus.dominion.v1.DominionService/ListDirectory"
+	DominionService_ListOffMarket_FullMethodName                            = "/sttattus.dominion.v1.DominionService/ListOffMarket"
+	DominionService_GetOffMarket_FullMethodName                             = "/sttattus.dominion.v1.DominionService/GetOffMarket"
+	DominionService_ParseDeed_FullMethodName                                = "/sttattus.dominion.v1.DominionService/ParseDeed"
+	DominionService_CreateDominionShare_FullMethodName                      = "/sttattus.dominion.v1.DominionService/CreateDominionShare"
+	DominionService_ListMyDominionShares_FullMethodName                     = "/sttattus.dominion.v1.DominionService/ListMyDominionShares"
+	DominionService_RevokeDominionShare_FullMethodName                      = "/sttattus.dominion.v1.DominionService/RevokeDominionShare"
+	DominionService_GenerateDominionAlmanac_FullMethodName                  = "/sttattus.dominion.v1.DominionService/GenerateDominionAlmanac"
+	DominionService_CreateLoungePass_FullMethodName                         = "/sttattus.dominion.v1.DominionService/CreateLoungePass"
+	DominionService_ListMyLoungePasses_FullMethodName                       = "/sttattus.dominion.v1.DominionService/ListMyLoungePasses"
+	DominionService_GetDominionPropertyDigitalTwinWorkbench_FullMethodName  = "/sttattus.dominion.v1.DominionService/GetDominionPropertyDigitalTwinWorkbench"
+	DominionService_SaveDominionPropertyDigitalTwin_FullMethodName          = "/sttattus.dominion.v1.DominionService/SaveDominionPropertyDigitalTwin"
+	DominionService_PropagateOrResolveDominionTwinConflict_FullMethodName   = "/sttattus.dominion.v1.DominionService/PropagateOrResolveDominionTwinConflict"
+	DominionService_GetDominionUnderwritingLabWorkbench_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionUnderwritingLabWorkbench"
+	DominionService_SaveDominionUnderwritingScenario_FullMethodName         = "/sttattus.dominion.v1.DominionService/SaveDominionUnderwritingScenario"
+	DominionService_StressTestOrFreezeDominionScenario_FullMethodName       = "/sttattus.dominion.v1.DominionService/StressTestOrFreezeDominionScenario"
+	DominionService_GetDominionPropertyAccountingWorkbench_FullMethodName   = "/sttattus.dominion.v1.DominionService/GetDominionPropertyAccountingWorkbench"
+	DominionService_SaveDominionPropertyAccountingClose_FullMethodName      = "/sttattus.dominion.v1.DominionService/SaveDominionPropertyAccountingClose"
+	DominionService_LockOrReverseDominionAccountingClose_FullMethodName     = "/sttattus.dominion.v1.DominionService/LockOrReverseDominionAccountingClose"
+	DominionService_GetDominionDocumentObligationWorkbench_FullMethodName   = "/sttattus.dominion.v1.DominionService/GetDominionDocumentObligationWorkbench"
+	DominionService_SaveDominionDocumentObligation_FullMethodName           = "/sttattus.dominion.v1.DominionService/SaveDominionDocumentObligation"
+	DominionService_ConfirmDominionObligationReceiptOrAppeal_FullMethodName = "/sttattus.dominion.v1.DominionService/ConfirmDominionObligationReceiptOrAppeal"
+	DominionService_GetDominionLeasingResidentWorkbench_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionLeasingResidentWorkbench"
+	DominionService_SaveDominionLeasingResidentPortal_FullMethodName        = "/sttattus.dominion.v1.DominionService/SaveDominionLeasingResidentPortal"
+	DominionService_ScheduleDominionRenewalOrDepositClose_FullMethodName    = "/sttattus.dominion.v1.DominionService/ScheduleDominionRenewalOrDepositClose"
+	DominionService_GetDominionMaintenanceVendorWorkbench_FullMethodName    = "/sttattus.dominion.v1.DominionService/GetDominionMaintenanceVendorWorkbench"
+	DominionService_SaveDominionMaintenanceWorkOrder_FullMethodName         = "/sttattus.dominion.v1.DominionService/SaveDominionMaintenanceWorkOrder"
+	DominionService_VerifyDominionThreeWayMatchOrWarranty_FullMethodName    = "/sttattus.dominion.v1.DominionService/VerifyDominionThreeWayMatchOrWarranty"
+	DominionService_GetDominionCapitalProjectWorkbench_FullMethodName       = "/sttattus.dominion.v1.DominionService/GetDominionCapitalProjectWorkbench"
+	DominionService_SaveDominionCapitalProjectControl_FullMethodName        = "/sttattus.dominion.v1.DominionService/SaveDominionCapitalProjectControl"
+	DominionService_ApproveDominionDrawOrPunchlistCloseout_FullMethodName   = "/sttattus.dominion.v1.DominionService/ApproveDominionDrawOrPunchlistCloseout"
+	DominionService_GetDominionMarketValuationWorkbench_FullMethodName      = "/sttattus.dominion.v1.DominionService/GetDominionMarketValuationWorkbench"
+	DominionService_SaveDominionMarketValuationGovernance_FullMethodName    = "/sttattus.dominion.v1.DominionService/SaveDominionMarketValuationGovernance"
+	DominionService_AdjustDominionCompSetOrDisputeValuation_FullMethodName  = "/sttattus.dominion.v1.DominionService/AdjustDominionCompSetOrDisputeValuation"
+	DominionService_GetDominionOwnershipTransactionWorkbench_FullMethodName = "/sttattus.dominion.v1.DominionService/GetDominionOwnershipTransactionWorkbench"
+	DominionService_SaveDominionOwnershipTransactionRoom_FullMethodName     = "/sttattus.dominion.v1.DominionService/SaveDominionOwnershipTransactionRoom"
+	DominionService_StageDominionRefinanceOrDataroomAccess_FullMethodName   = "/sttattus.dominion.v1.DominionService/StageDominionRefinanceOrDataroomAccess"
+	DominionService_GetDominionInsuranceResilienceWorkbench_FullMethodName  = "/sttattus.dominion.v1.DominionService/GetDominionInsuranceResilienceWorkbench"
+	DominionService_SaveDominionInsuranceResilienceCenter_FullMethodName    = "/sttattus.dominion.v1.DominionService/SaveDominionInsuranceResilienceCenter"
+	DominionService_StageDominionClaimPackOrStressReview_FullMethodName     = "/sttattus.dominion.v1.DominionService/StageDominionClaimPackOrStressReview"
+	DominionService_GetDominionUtilityPerformanceWorkbench_FullMethodName   = "/sttattus.dominion.v1.DominionService/GetDominionUtilityPerformanceWorkbench"
+	DominionService_SaveDominionUtilityBuildingPerformance_FullMethodName   = "/sttattus.dominion.v1.DominionService/SaveDominionUtilityBuildingPerformance"
+	DominionService_VerifyDominionRetrofitSavingsOrAnomaly_FullMethodName   = "/sttattus.dominion.v1.DominionService/VerifyDominionRetrofitSavingsOrAnomaly"
 )
 
 // DominionServiceClient is the client API for DominionService service.
@@ -127,6 +160,51 @@ type DominionServiceClient interface {
 	// D14.22 — lounge access pass.
 	CreateLoungePass(ctx context.Context, in *CreateLoungePassRequest, opts ...grpc.CallOption) (*CreateLoungePassResponse, error)
 	ListMyLoungePasses(ctx context.Context, in *ListMyLoungePassesRequest, opts ...grpc.CallOption) (*ListMyLoungePassesResponse, error)
+	// ===== Dominion Opportunity Choices 1–11 (D1..D15) =====
+	// Choice 1 (D1): Property Digital Twin and Registry Integrity
+	GetDominionPropertyDigitalTwinWorkbench(ctx context.Context, in *GetDominionPropertyDigitalTwinWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionPropertyDigitalTwinWorkbenchResponse, error)
+	SaveDominionPropertyDigitalTwin(ctx context.Context, in *SaveDominionPropertyDigitalTwinRequest, opts ...grpc.CallOption) (*SaveDominionPropertyDigitalTwinResponse, error)
+	PropagateOrResolveDominionTwinConflict(ctx context.Context, in *PropagateOrResolveDominionTwinConflictRequest, opts ...grpc.CallOption) (*PropagateOrResolveDominionTwinConflictResponse, error)
+	// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+	GetDominionUnderwritingLabWorkbench(ctx context.Context, in *GetDominionUnderwritingLabWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionUnderwritingLabWorkbenchResponse, error)
+	SaveDominionUnderwritingScenario(ctx context.Context, in *SaveDominionUnderwritingScenarioRequest, opts ...grpc.CallOption) (*SaveDominionUnderwritingScenarioResponse, error)
+	StressTestOrFreezeDominionScenario(ctx context.Context, in *StressTestOrFreezeDominionScenarioRequest, opts ...grpc.CallOption) (*StressTestOrFreezeDominionScenarioResponse, error)
+	// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+	GetDominionPropertyAccountingWorkbench(ctx context.Context, in *GetDominionPropertyAccountingWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionPropertyAccountingWorkbenchResponse, error)
+	SaveDominionPropertyAccountingClose(ctx context.Context, in *SaveDominionPropertyAccountingCloseRequest, opts ...grpc.CallOption) (*SaveDominionPropertyAccountingCloseResponse, error)
+	LockOrReverseDominionAccountingClose(ctx context.Context, in *LockOrReverseDominionAccountingCloseRequest, opts ...grpc.CallOption) (*LockOrReverseDominionAccountingCloseResponse, error)
+	// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+	GetDominionDocumentObligationWorkbench(ctx context.Context, in *GetDominionDocumentObligationWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionDocumentObligationWorkbenchResponse, error)
+	SaveDominionDocumentObligation(ctx context.Context, in *SaveDominionDocumentObligationRequest, opts ...grpc.CallOption) (*SaveDominionDocumentObligationResponse, error)
+	ConfirmDominionObligationReceiptOrAppeal(ctx context.Context, in *ConfirmDominionObligationReceiptOrAppealRequest, opts ...grpc.CallOption) (*ConfirmDominionObligationReceiptOrAppealResponse, error)
+	// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+	GetDominionLeasingResidentWorkbench(ctx context.Context, in *GetDominionLeasingResidentWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionLeasingResidentWorkbenchResponse, error)
+	SaveDominionLeasingResidentPortal(ctx context.Context, in *SaveDominionLeasingResidentPortalRequest, opts ...grpc.CallOption) (*SaveDominionLeasingResidentPortalResponse, error)
+	ScheduleDominionRenewalOrDepositClose(ctx context.Context, in *ScheduleDominionRenewalOrDepositCloseRequest, opts ...grpc.CallOption) (*ScheduleDominionRenewalOrDepositCloseResponse, error)
+	// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+	GetDominionMaintenanceVendorWorkbench(ctx context.Context, in *GetDominionMaintenanceVendorWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionMaintenanceVendorWorkbenchResponse, error)
+	SaveDominionMaintenanceWorkOrder(ctx context.Context, in *SaveDominionMaintenanceWorkOrderRequest, opts ...grpc.CallOption) (*SaveDominionMaintenanceWorkOrderResponse, error)
+	VerifyDominionThreeWayMatchOrWarranty(ctx context.Context, in *VerifyDominionThreeWayMatchOrWarrantyRequest, opts ...grpc.CallOption) (*VerifyDominionThreeWayMatchOrWarrantyResponse, error)
+	// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+	GetDominionCapitalProjectWorkbench(ctx context.Context, in *GetDominionCapitalProjectWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionCapitalProjectWorkbenchResponse, error)
+	SaveDominionCapitalProjectControl(ctx context.Context, in *SaveDominionCapitalProjectControlRequest, opts ...grpc.CallOption) (*SaveDominionCapitalProjectControlResponse, error)
+	ApproveDominionDrawOrPunchlistCloseout(ctx context.Context, in *ApproveDominionDrawOrPunchlistCloseoutRequest, opts ...grpc.CallOption) (*ApproveDominionDrawOrPunchlistCloseoutResponse, error)
+	// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+	GetDominionMarketValuationWorkbench(ctx context.Context, in *GetDominionMarketValuationWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionMarketValuationWorkbenchResponse, error)
+	SaveDominionMarketValuationGovernance(ctx context.Context, in *SaveDominionMarketValuationGovernanceRequest, opts ...grpc.CallOption) (*SaveDominionMarketValuationGovernanceResponse, error)
+	AdjustDominionCompSetOrDisputeValuation(ctx context.Context, in *AdjustDominionCompSetOrDisputeValuationRequest, opts ...grpc.CallOption) (*AdjustDominionCompSetOrDisputeValuationResponse, error)
+	// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+	GetDominionOwnershipTransactionWorkbench(ctx context.Context, in *GetDominionOwnershipTransactionWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionOwnershipTransactionWorkbenchResponse, error)
+	SaveDominionOwnershipTransactionRoom(ctx context.Context, in *SaveDominionOwnershipTransactionRoomRequest, opts ...grpc.CallOption) (*SaveDominionOwnershipTransactionRoomResponse, error)
+	StageDominionRefinanceOrDataroomAccess(ctx context.Context, in *StageDominionRefinanceOrDataroomAccessRequest, opts ...grpc.CallOption) (*StageDominionRefinanceOrDataroomAccessResponse, error)
+	// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+	GetDominionInsuranceResilienceWorkbench(ctx context.Context, in *GetDominionInsuranceResilienceWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionInsuranceResilienceWorkbenchResponse, error)
+	SaveDominionInsuranceResilienceCenter(ctx context.Context, in *SaveDominionInsuranceResilienceCenterRequest, opts ...grpc.CallOption) (*SaveDominionInsuranceResilienceCenterResponse, error)
+	StageDominionClaimPackOrStressReview(ctx context.Context, in *StageDominionClaimPackOrStressReviewRequest, opts ...grpc.CallOption) (*StageDominionClaimPackOrStressReviewResponse, error)
+	// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+	GetDominionUtilityPerformanceWorkbench(ctx context.Context, in *GetDominionUtilityPerformanceWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionUtilityPerformanceWorkbenchResponse, error)
+	SaveDominionUtilityBuildingPerformance(ctx context.Context, in *SaveDominionUtilityBuildingPerformanceRequest, opts ...grpc.CallOption) (*SaveDominionUtilityBuildingPerformanceResponse, error)
+	VerifyDominionRetrofitSavingsOrAnomaly(ctx context.Context, in *VerifyDominionRetrofitSavingsOrAnomalyRequest, opts ...grpc.CallOption) (*VerifyDominionRetrofitSavingsOrAnomalyResponse, error)
 }
 
 type dominionServiceClient struct {
@@ -528,6 +606,336 @@ func (c *dominionServiceClient) ListMyLoungePasses(ctx context.Context, in *List
 	return out, nil
 }
 
+func (c *dominionServiceClient) GetDominionPropertyDigitalTwinWorkbench(ctx context.Context, in *GetDominionPropertyDigitalTwinWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionPropertyDigitalTwinWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionPropertyDigitalTwinWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionPropertyDigitalTwinWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionPropertyDigitalTwin(ctx context.Context, in *SaveDominionPropertyDigitalTwinRequest, opts ...grpc.CallOption) (*SaveDominionPropertyDigitalTwinResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionPropertyDigitalTwinResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionPropertyDigitalTwin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) PropagateOrResolveDominionTwinConflict(ctx context.Context, in *PropagateOrResolveDominionTwinConflictRequest, opts ...grpc.CallOption) (*PropagateOrResolveDominionTwinConflictResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PropagateOrResolveDominionTwinConflictResponse)
+	err := c.cc.Invoke(ctx, DominionService_PropagateOrResolveDominionTwinConflict_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionUnderwritingLabWorkbench(ctx context.Context, in *GetDominionUnderwritingLabWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionUnderwritingLabWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionUnderwritingLabWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionUnderwritingLabWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionUnderwritingScenario(ctx context.Context, in *SaveDominionUnderwritingScenarioRequest, opts ...grpc.CallOption) (*SaveDominionUnderwritingScenarioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionUnderwritingScenarioResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionUnderwritingScenario_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) StressTestOrFreezeDominionScenario(ctx context.Context, in *StressTestOrFreezeDominionScenarioRequest, opts ...grpc.CallOption) (*StressTestOrFreezeDominionScenarioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StressTestOrFreezeDominionScenarioResponse)
+	err := c.cc.Invoke(ctx, DominionService_StressTestOrFreezeDominionScenario_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionPropertyAccountingWorkbench(ctx context.Context, in *GetDominionPropertyAccountingWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionPropertyAccountingWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionPropertyAccountingWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionPropertyAccountingWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionPropertyAccountingClose(ctx context.Context, in *SaveDominionPropertyAccountingCloseRequest, opts ...grpc.CallOption) (*SaveDominionPropertyAccountingCloseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionPropertyAccountingCloseResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionPropertyAccountingClose_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) LockOrReverseDominionAccountingClose(ctx context.Context, in *LockOrReverseDominionAccountingCloseRequest, opts ...grpc.CallOption) (*LockOrReverseDominionAccountingCloseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LockOrReverseDominionAccountingCloseResponse)
+	err := c.cc.Invoke(ctx, DominionService_LockOrReverseDominionAccountingClose_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionDocumentObligationWorkbench(ctx context.Context, in *GetDominionDocumentObligationWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionDocumentObligationWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionDocumentObligationWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionDocumentObligationWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionDocumentObligation(ctx context.Context, in *SaveDominionDocumentObligationRequest, opts ...grpc.CallOption) (*SaveDominionDocumentObligationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionDocumentObligationResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionDocumentObligation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ConfirmDominionObligationReceiptOrAppeal(ctx context.Context, in *ConfirmDominionObligationReceiptOrAppealRequest, opts ...grpc.CallOption) (*ConfirmDominionObligationReceiptOrAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmDominionObligationReceiptOrAppealResponse)
+	err := c.cc.Invoke(ctx, DominionService_ConfirmDominionObligationReceiptOrAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionLeasingResidentWorkbench(ctx context.Context, in *GetDominionLeasingResidentWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionLeasingResidentWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionLeasingResidentWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionLeasingResidentWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionLeasingResidentPortal(ctx context.Context, in *SaveDominionLeasingResidentPortalRequest, opts ...grpc.CallOption) (*SaveDominionLeasingResidentPortalResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionLeasingResidentPortalResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionLeasingResidentPortal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ScheduleDominionRenewalOrDepositClose(ctx context.Context, in *ScheduleDominionRenewalOrDepositCloseRequest, opts ...grpc.CallOption) (*ScheduleDominionRenewalOrDepositCloseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ScheduleDominionRenewalOrDepositCloseResponse)
+	err := c.cc.Invoke(ctx, DominionService_ScheduleDominionRenewalOrDepositClose_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionMaintenanceVendorWorkbench(ctx context.Context, in *GetDominionMaintenanceVendorWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionMaintenanceVendorWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionMaintenanceVendorWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionMaintenanceVendorWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionMaintenanceWorkOrder(ctx context.Context, in *SaveDominionMaintenanceWorkOrderRequest, opts ...grpc.CallOption) (*SaveDominionMaintenanceWorkOrderResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionMaintenanceWorkOrderResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionMaintenanceWorkOrder_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) VerifyDominionThreeWayMatchOrWarranty(ctx context.Context, in *VerifyDominionThreeWayMatchOrWarrantyRequest, opts ...grpc.CallOption) (*VerifyDominionThreeWayMatchOrWarrantyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyDominionThreeWayMatchOrWarrantyResponse)
+	err := c.cc.Invoke(ctx, DominionService_VerifyDominionThreeWayMatchOrWarranty_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionCapitalProjectWorkbench(ctx context.Context, in *GetDominionCapitalProjectWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionCapitalProjectWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionCapitalProjectWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionCapitalProjectWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionCapitalProjectControl(ctx context.Context, in *SaveDominionCapitalProjectControlRequest, opts ...grpc.CallOption) (*SaveDominionCapitalProjectControlResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionCapitalProjectControlResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionCapitalProjectControl_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) ApproveDominionDrawOrPunchlistCloseout(ctx context.Context, in *ApproveDominionDrawOrPunchlistCloseoutRequest, opts ...grpc.CallOption) (*ApproveDominionDrawOrPunchlistCloseoutResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveDominionDrawOrPunchlistCloseoutResponse)
+	err := c.cc.Invoke(ctx, DominionService_ApproveDominionDrawOrPunchlistCloseout_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionMarketValuationWorkbench(ctx context.Context, in *GetDominionMarketValuationWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionMarketValuationWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionMarketValuationWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionMarketValuationWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionMarketValuationGovernance(ctx context.Context, in *SaveDominionMarketValuationGovernanceRequest, opts ...grpc.CallOption) (*SaveDominionMarketValuationGovernanceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionMarketValuationGovernanceResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionMarketValuationGovernance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) AdjustDominionCompSetOrDisputeValuation(ctx context.Context, in *AdjustDominionCompSetOrDisputeValuationRequest, opts ...grpc.CallOption) (*AdjustDominionCompSetOrDisputeValuationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdjustDominionCompSetOrDisputeValuationResponse)
+	err := c.cc.Invoke(ctx, DominionService_AdjustDominionCompSetOrDisputeValuation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionOwnershipTransactionWorkbench(ctx context.Context, in *GetDominionOwnershipTransactionWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionOwnershipTransactionWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionOwnershipTransactionWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionOwnershipTransactionWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionOwnershipTransactionRoom(ctx context.Context, in *SaveDominionOwnershipTransactionRoomRequest, opts ...grpc.CallOption) (*SaveDominionOwnershipTransactionRoomResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionOwnershipTransactionRoomResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionOwnershipTransactionRoom_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) StageDominionRefinanceOrDataroomAccess(ctx context.Context, in *StageDominionRefinanceOrDataroomAccessRequest, opts ...grpc.CallOption) (*StageDominionRefinanceOrDataroomAccessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StageDominionRefinanceOrDataroomAccessResponse)
+	err := c.cc.Invoke(ctx, DominionService_StageDominionRefinanceOrDataroomAccess_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionInsuranceResilienceWorkbench(ctx context.Context, in *GetDominionInsuranceResilienceWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionInsuranceResilienceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionInsuranceResilienceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionInsuranceResilienceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionInsuranceResilienceCenter(ctx context.Context, in *SaveDominionInsuranceResilienceCenterRequest, opts ...grpc.CallOption) (*SaveDominionInsuranceResilienceCenterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionInsuranceResilienceCenterResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionInsuranceResilienceCenter_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) StageDominionClaimPackOrStressReview(ctx context.Context, in *StageDominionClaimPackOrStressReviewRequest, opts ...grpc.CallOption) (*StageDominionClaimPackOrStressReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StageDominionClaimPackOrStressReviewResponse)
+	err := c.cc.Invoke(ctx, DominionService_StageDominionClaimPackOrStressReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) GetDominionUtilityPerformanceWorkbench(ctx context.Context, in *GetDominionUtilityPerformanceWorkbenchRequest, opts ...grpc.CallOption) (*GetDominionUtilityPerformanceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetDominionUtilityPerformanceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, DominionService_GetDominionUtilityPerformanceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) SaveDominionUtilityBuildingPerformance(ctx context.Context, in *SaveDominionUtilityBuildingPerformanceRequest, opts ...grpc.CallOption) (*SaveDominionUtilityBuildingPerformanceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveDominionUtilityBuildingPerformanceResponse)
+	err := c.cc.Invoke(ctx, DominionService_SaveDominionUtilityBuildingPerformance_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dominionServiceClient) VerifyDominionRetrofitSavingsOrAnomaly(ctx context.Context, in *VerifyDominionRetrofitSavingsOrAnomalyRequest, opts ...grpc.CallOption) (*VerifyDominionRetrofitSavingsOrAnomalyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyDominionRetrofitSavingsOrAnomalyResponse)
+	err := c.cc.Invoke(ctx, DominionService_VerifyDominionRetrofitSavingsOrAnomaly_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DominionServiceServer is the server API for DominionService service.
 // All implementations must embed UnimplementedDominionServiceServer
 // for forward compatibility.
@@ -595,6 +1003,51 @@ type DominionServiceServer interface {
 	// D14.22 — lounge access pass.
 	CreateLoungePass(context.Context, *CreateLoungePassRequest) (*CreateLoungePassResponse, error)
 	ListMyLoungePasses(context.Context, *ListMyLoungePassesRequest) (*ListMyLoungePassesResponse, error)
+	// ===== Dominion Opportunity Choices 1–11 (D1..D15) =====
+	// Choice 1 (D1): Property Digital Twin and Registry Integrity
+	GetDominionPropertyDigitalTwinWorkbench(context.Context, *GetDominionPropertyDigitalTwinWorkbenchRequest) (*GetDominionPropertyDigitalTwinWorkbenchResponse, error)
+	SaveDominionPropertyDigitalTwin(context.Context, *SaveDominionPropertyDigitalTwinRequest) (*SaveDominionPropertyDigitalTwinResponse, error)
+	PropagateOrResolveDominionTwinConflict(context.Context, *PropagateOrResolveDominionTwinConflictRequest) (*PropagateOrResolveDominionTwinConflictResponse, error)
+	// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+	GetDominionUnderwritingLabWorkbench(context.Context, *GetDominionUnderwritingLabWorkbenchRequest) (*GetDominionUnderwritingLabWorkbenchResponse, error)
+	SaveDominionUnderwritingScenario(context.Context, *SaveDominionUnderwritingScenarioRequest) (*SaveDominionUnderwritingScenarioResponse, error)
+	StressTestOrFreezeDominionScenario(context.Context, *StressTestOrFreezeDominionScenarioRequest) (*StressTestOrFreezeDominionScenarioResponse, error)
+	// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+	GetDominionPropertyAccountingWorkbench(context.Context, *GetDominionPropertyAccountingWorkbenchRequest) (*GetDominionPropertyAccountingWorkbenchResponse, error)
+	SaveDominionPropertyAccountingClose(context.Context, *SaveDominionPropertyAccountingCloseRequest) (*SaveDominionPropertyAccountingCloseResponse, error)
+	LockOrReverseDominionAccountingClose(context.Context, *LockOrReverseDominionAccountingCloseRequest) (*LockOrReverseDominionAccountingCloseResponse, error)
+	// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+	GetDominionDocumentObligationWorkbench(context.Context, *GetDominionDocumentObligationWorkbenchRequest) (*GetDominionDocumentObligationWorkbenchResponse, error)
+	SaveDominionDocumentObligation(context.Context, *SaveDominionDocumentObligationRequest) (*SaveDominionDocumentObligationResponse, error)
+	ConfirmDominionObligationReceiptOrAppeal(context.Context, *ConfirmDominionObligationReceiptOrAppealRequest) (*ConfirmDominionObligationReceiptOrAppealResponse, error)
+	// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+	GetDominionLeasingResidentWorkbench(context.Context, *GetDominionLeasingResidentWorkbenchRequest) (*GetDominionLeasingResidentWorkbenchResponse, error)
+	SaveDominionLeasingResidentPortal(context.Context, *SaveDominionLeasingResidentPortalRequest) (*SaveDominionLeasingResidentPortalResponse, error)
+	ScheduleDominionRenewalOrDepositClose(context.Context, *ScheduleDominionRenewalOrDepositCloseRequest) (*ScheduleDominionRenewalOrDepositCloseResponse, error)
+	// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+	GetDominionMaintenanceVendorWorkbench(context.Context, *GetDominionMaintenanceVendorWorkbenchRequest) (*GetDominionMaintenanceVendorWorkbenchResponse, error)
+	SaveDominionMaintenanceWorkOrder(context.Context, *SaveDominionMaintenanceWorkOrderRequest) (*SaveDominionMaintenanceWorkOrderResponse, error)
+	VerifyDominionThreeWayMatchOrWarranty(context.Context, *VerifyDominionThreeWayMatchOrWarrantyRequest) (*VerifyDominionThreeWayMatchOrWarrantyResponse, error)
+	// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+	GetDominionCapitalProjectWorkbench(context.Context, *GetDominionCapitalProjectWorkbenchRequest) (*GetDominionCapitalProjectWorkbenchResponse, error)
+	SaveDominionCapitalProjectControl(context.Context, *SaveDominionCapitalProjectControlRequest) (*SaveDominionCapitalProjectControlResponse, error)
+	ApproveDominionDrawOrPunchlistCloseout(context.Context, *ApproveDominionDrawOrPunchlistCloseoutRequest) (*ApproveDominionDrawOrPunchlistCloseoutResponse, error)
+	// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+	GetDominionMarketValuationWorkbench(context.Context, *GetDominionMarketValuationWorkbenchRequest) (*GetDominionMarketValuationWorkbenchResponse, error)
+	SaveDominionMarketValuationGovernance(context.Context, *SaveDominionMarketValuationGovernanceRequest) (*SaveDominionMarketValuationGovernanceResponse, error)
+	AdjustDominionCompSetOrDisputeValuation(context.Context, *AdjustDominionCompSetOrDisputeValuationRequest) (*AdjustDominionCompSetOrDisputeValuationResponse, error)
+	// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+	GetDominionOwnershipTransactionWorkbench(context.Context, *GetDominionOwnershipTransactionWorkbenchRequest) (*GetDominionOwnershipTransactionWorkbenchResponse, error)
+	SaveDominionOwnershipTransactionRoom(context.Context, *SaveDominionOwnershipTransactionRoomRequest) (*SaveDominionOwnershipTransactionRoomResponse, error)
+	StageDominionRefinanceOrDataroomAccess(context.Context, *StageDominionRefinanceOrDataroomAccessRequest) (*StageDominionRefinanceOrDataroomAccessResponse, error)
+	// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+	GetDominionInsuranceResilienceWorkbench(context.Context, *GetDominionInsuranceResilienceWorkbenchRequest) (*GetDominionInsuranceResilienceWorkbenchResponse, error)
+	SaveDominionInsuranceResilienceCenter(context.Context, *SaveDominionInsuranceResilienceCenterRequest) (*SaveDominionInsuranceResilienceCenterResponse, error)
+	StageDominionClaimPackOrStressReview(context.Context, *StageDominionClaimPackOrStressReviewRequest) (*StageDominionClaimPackOrStressReviewResponse, error)
+	// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+	GetDominionUtilityPerformanceWorkbench(context.Context, *GetDominionUtilityPerformanceWorkbenchRequest) (*GetDominionUtilityPerformanceWorkbenchResponse, error)
+	SaveDominionUtilityBuildingPerformance(context.Context, *SaveDominionUtilityBuildingPerformanceRequest) (*SaveDominionUtilityBuildingPerformanceResponse, error)
+	VerifyDominionRetrofitSavingsOrAnomaly(context.Context, *VerifyDominionRetrofitSavingsOrAnomalyRequest) (*VerifyDominionRetrofitSavingsOrAnomalyResponse, error)
 	mustEmbedUnimplementedDominionServiceServer()
 }
 
@@ -721,6 +1174,105 @@ func (UnimplementedDominionServiceServer) CreateLoungePass(context.Context, *Cre
 }
 func (UnimplementedDominionServiceServer) ListMyLoungePasses(context.Context, *ListMyLoungePassesRequest) (*ListMyLoungePassesResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method ListMyLoungePasses not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionPropertyDigitalTwinWorkbench(context.Context, *GetDominionPropertyDigitalTwinWorkbenchRequest) (*GetDominionPropertyDigitalTwinWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionPropertyDigitalTwinWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionPropertyDigitalTwin(context.Context, *SaveDominionPropertyDigitalTwinRequest) (*SaveDominionPropertyDigitalTwinResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionPropertyDigitalTwin not implemented")
+}
+func (UnimplementedDominionServiceServer) PropagateOrResolveDominionTwinConflict(context.Context, *PropagateOrResolveDominionTwinConflictRequest) (*PropagateOrResolveDominionTwinConflictResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PropagateOrResolveDominionTwinConflict not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionUnderwritingLabWorkbench(context.Context, *GetDominionUnderwritingLabWorkbenchRequest) (*GetDominionUnderwritingLabWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionUnderwritingLabWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionUnderwritingScenario(context.Context, *SaveDominionUnderwritingScenarioRequest) (*SaveDominionUnderwritingScenarioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionUnderwritingScenario not implemented")
+}
+func (UnimplementedDominionServiceServer) StressTestOrFreezeDominionScenario(context.Context, *StressTestOrFreezeDominionScenarioRequest) (*StressTestOrFreezeDominionScenarioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StressTestOrFreezeDominionScenario not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionPropertyAccountingWorkbench(context.Context, *GetDominionPropertyAccountingWorkbenchRequest) (*GetDominionPropertyAccountingWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionPropertyAccountingWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionPropertyAccountingClose(context.Context, *SaveDominionPropertyAccountingCloseRequest) (*SaveDominionPropertyAccountingCloseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionPropertyAccountingClose not implemented")
+}
+func (UnimplementedDominionServiceServer) LockOrReverseDominionAccountingClose(context.Context, *LockOrReverseDominionAccountingCloseRequest) (*LockOrReverseDominionAccountingCloseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LockOrReverseDominionAccountingClose not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionDocumentObligationWorkbench(context.Context, *GetDominionDocumentObligationWorkbenchRequest) (*GetDominionDocumentObligationWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionDocumentObligationWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionDocumentObligation(context.Context, *SaveDominionDocumentObligationRequest) (*SaveDominionDocumentObligationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionDocumentObligation not implemented")
+}
+func (UnimplementedDominionServiceServer) ConfirmDominionObligationReceiptOrAppeal(context.Context, *ConfirmDominionObligationReceiptOrAppealRequest) (*ConfirmDominionObligationReceiptOrAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmDominionObligationReceiptOrAppeal not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionLeasingResidentWorkbench(context.Context, *GetDominionLeasingResidentWorkbenchRequest) (*GetDominionLeasingResidentWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionLeasingResidentWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionLeasingResidentPortal(context.Context, *SaveDominionLeasingResidentPortalRequest) (*SaveDominionLeasingResidentPortalResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionLeasingResidentPortal not implemented")
+}
+func (UnimplementedDominionServiceServer) ScheduleDominionRenewalOrDepositClose(context.Context, *ScheduleDominionRenewalOrDepositCloseRequest) (*ScheduleDominionRenewalOrDepositCloseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ScheduleDominionRenewalOrDepositClose not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionMaintenanceVendorWorkbench(context.Context, *GetDominionMaintenanceVendorWorkbenchRequest) (*GetDominionMaintenanceVendorWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionMaintenanceVendorWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionMaintenanceWorkOrder(context.Context, *SaveDominionMaintenanceWorkOrderRequest) (*SaveDominionMaintenanceWorkOrderResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionMaintenanceWorkOrder not implemented")
+}
+func (UnimplementedDominionServiceServer) VerifyDominionThreeWayMatchOrWarranty(context.Context, *VerifyDominionThreeWayMatchOrWarrantyRequest) (*VerifyDominionThreeWayMatchOrWarrantyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyDominionThreeWayMatchOrWarranty not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionCapitalProjectWorkbench(context.Context, *GetDominionCapitalProjectWorkbenchRequest) (*GetDominionCapitalProjectWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionCapitalProjectWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionCapitalProjectControl(context.Context, *SaveDominionCapitalProjectControlRequest) (*SaveDominionCapitalProjectControlResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionCapitalProjectControl not implemented")
+}
+func (UnimplementedDominionServiceServer) ApproveDominionDrawOrPunchlistCloseout(context.Context, *ApproveDominionDrawOrPunchlistCloseoutRequest) (*ApproveDominionDrawOrPunchlistCloseoutResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveDominionDrawOrPunchlistCloseout not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionMarketValuationWorkbench(context.Context, *GetDominionMarketValuationWorkbenchRequest) (*GetDominionMarketValuationWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionMarketValuationWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionMarketValuationGovernance(context.Context, *SaveDominionMarketValuationGovernanceRequest) (*SaveDominionMarketValuationGovernanceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionMarketValuationGovernance not implemented")
+}
+func (UnimplementedDominionServiceServer) AdjustDominionCompSetOrDisputeValuation(context.Context, *AdjustDominionCompSetOrDisputeValuationRequest) (*AdjustDominionCompSetOrDisputeValuationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AdjustDominionCompSetOrDisputeValuation not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionOwnershipTransactionWorkbench(context.Context, *GetDominionOwnershipTransactionWorkbenchRequest) (*GetDominionOwnershipTransactionWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionOwnershipTransactionWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionOwnershipTransactionRoom(context.Context, *SaveDominionOwnershipTransactionRoomRequest) (*SaveDominionOwnershipTransactionRoomResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionOwnershipTransactionRoom not implemented")
+}
+func (UnimplementedDominionServiceServer) StageDominionRefinanceOrDataroomAccess(context.Context, *StageDominionRefinanceOrDataroomAccessRequest) (*StageDominionRefinanceOrDataroomAccessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StageDominionRefinanceOrDataroomAccess not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionInsuranceResilienceWorkbench(context.Context, *GetDominionInsuranceResilienceWorkbenchRequest) (*GetDominionInsuranceResilienceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionInsuranceResilienceWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionInsuranceResilienceCenter(context.Context, *SaveDominionInsuranceResilienceCenterRequest) (*SaveDominionInsuranceResilienceCenterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionInsuranceResilienceCenter not implemented")
+}
+func (UnimplementedDominionServiceServer) StageDominionClaimPackOrStressReview(context.Context, *StageDominionClaimPackOrStressReviewRequest) (*StageDominionClaimPackOrStressReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StageDominionClaimPackOrStressReview not implemented")
+}
+func (UnimplementedDominionServiceServer) GetDominionUtilityPerformanceWorkbench(context.Context, *GetDominionUtilityPerformanceWorkbenchRequest) (*GetDominionUtilityPerformanceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetDominionUtilityPerformanceWorkbench not implemented")
+}
+func (UnimplementedDominionServiceServer) SaveDominionUtilityBuildingPerformance(context.Context, *SaveDominionUtilityBuildingPerformanceRequest) (*SaveDominionUtilityBuildingPerformanceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveDominionUtilityBuildingPerformance not implemented")
+}
+func (UnimplementedDominionServiceServer) VerifyDominionRetrofitSavingsOrAnomaly(context.Context, *VerifyDominionRetrofitSavingsOrAnomalyRequest) (*VerifyDominionRetrofitSavingsOrAnomalyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyDominionRetrofitSavingsOrAnomaly not implemented")
 }
 func (UnimplementedDominionServiceServer) mustEmbedUnimplementedDominionServiceServer() {}
 func (UnimplementedDominionServiceServer) testEmbeddedByValue()                         {}
@@ -1445,6 +1997,600 @@ func _DominionService_ListMyLoungePasses_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DominionService_GetDominionPropertyDigitalTwinWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionPropertyDigitalTwinWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionPropertyDigitalTwinWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionPropertyDigitalTwinWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionPropertyDigitalTwinWorkbench(ctx, req.(*GetDominionPropertyDigitalTwinWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionPropertyDigitalTwin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionPropertyDigitalTwinRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionPropertyDigitalTwin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionPropertyDigitalTwin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionPropertyDigitalTwin(ctx, req.(*SaveDominionPropertyDigitalTwinRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_PropagateOrResolveDominionTwinConflict_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PropagateOrResolveDominionTwinConflictRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).PropagateOrResolveDominionTwinConflict(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_PropagateOrResolveDominionTwinConflict_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).PropagateOrResolveDominionTwinConflict(ctx, req.(*PropagateOrResolveDominionTwinConflictRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionUnderwritingLabWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionUnderwritingLabWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionUnderwritingLabWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionUnderwritingLabWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionUnderwritingLabWorkbench(ctx, req.(*GetDominionUnderwritingLabWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionUnderwritingScenario_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionUnderwritingScenarioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionUnderwritingScenario(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionUnderwritingScenario_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionUnderwritingScenario(ctx, req.(*SaveDominionUnderwritingScenarioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_StressTestOrFreezeDominionScenario_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StressTestOrFreezeDominionScenarioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).StressTestOrFreezeDominionScenario(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_StressTestOrFreezeDominionScenario_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).StressTestOrFreezeDominionScenario(ctx, req.(*StressTestOrFreezeDominionScenarioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionPropertyAccountingWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionPropertyAccountingWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionPropertyAccountingWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionPropertyAccountingWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionPropertyAccountingWorkbench(ctx, req.(*GetDominionPropertyAccountingWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionPropertyAccountingClose_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionPropertyAccountingCloseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionPropertyAccountingClose(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionPropertyAccountingClose_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionPropertyAccountingClose(ctx, req.(*SaveDominionPropertyAccountingCloseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_LockOrReverseDominionAccountingClose_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockOrReverseDominionAccountingCloseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).LockOrReverseDominionAccountingClose(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_LockOrReverseDominionAccountingClose_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).LockOrReverseDominionAccountingClose(ctx, req.(*LockOrReverseDominionAccountingCloseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionDocumentObligationWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionDocumentObligationWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionDocumentObligationWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionDocumentObligationWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionDocumentObligationWorkbench(ctx, req.(*GetDominionDocumentObligationWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionDocumentObligation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionDocumentObligationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionDocumentObligation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionDocumentObligation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionDocumentObligation(ctx, req.(*SaveDominionDocumentObligationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ConfirmDominionObligationReceiptOrAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmDominionObligationReceiptOrAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ConfirmDominionObligationReceiptOrAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ConfirmDominionObligationReceiptOrAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ConfirmDominionObligationReceiptOrAppeal(ctx, req.(*ConfirmDominionObligationReceiptOrAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionLeasingResidentWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionLeasingResidentWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionLeasingResidentWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionLeasingResidentWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionLeasingResidentWorkbench(ctx, req.(*GetDominionLeasingResidentWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionLeasingResidentPortal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionLeasingResidentPortalRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionLeasingResidentPortal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionLeasingResidentPortal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionLeasingResidentPortal(ctx, req.(*SaveDominionLeasingResidentPortalRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ScheduleDominionRenewalOrDepositClose_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ScheduleDominionRenewalOrDepositCloseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ScheduleDominionRenewalOrDepositClose(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ScheduleDominionRenewalOrDepositClose_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ScheduleDominionRenewalOrDepositClose(ctx, req.(*ScheduleDominionRenewalOrDepositCloseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionMaintenanceVendorWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionMaintenanceVendorWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionMaintenanceVendorWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionMaintenanceVendorWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionMaintenanceVendorWorkbench(ctx, req.(*GetDominionMaintenanceVendorWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionMaintenanceWorkOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionMaintenanceWorkOrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionMaintenanceWorkOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionMaintenanceWorkOrder_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionMaintenanceWorkOrder(ctx, req.(*SaveDominionMaintenanceWorkOrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_VerifyDominionThreeWayMatchOrWarranty_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyDominionThreeWayMatchOrWarrantyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).VerifyDominionThreeWayMatchOrWarranty(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_VerifyDominionThreeWayMatchOrWarranty_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).VerifyDominionThreeWayMatchOrWarranty(ctx, req.(*VerifyDominionThreeWayMatchOrWarrantyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionCapitalProjectWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionCapitalProjectWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionCapitalProjectWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionCapitalProjectWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionCapitalProjectWorkbench(ctx, req.(*GetDominionCapitalProjectWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionCapitalProjectControl_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionCapitalProjectControlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionCapitalProjectControl(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionCapitalProjectControl_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionCapitalProjectControl(ctx, req.(*SaveDominionCapitalProjectControlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_ApproveDominionDrawOrPunchlistCloseout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveDominionDrawOrPunchlistCloseoutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).ApproveDominionDrawOrPunchlistCloseout(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_ApproveDominionDrawOrPunchlistCloseout_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).ApproveDominionDrawOrPunchlistCloseout(ctx, req.(*ApproveDominionDrawOrPunchlistCloseoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionMarketValuationWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionMarketValuationWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionMarketValuationWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionMarketValuationWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionMarketValuationWorkbench(ctx, req.(*GetDominionMarketValuationWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionMarketValuationGovernance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionMarketValuationGovernanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionMarketValuationGovernance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionMarketValuationGovernance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionMarketValuationGovernance(ctx, req.(*SaveDominionMarketValuationGovernanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_AdjustDominionCompSetOrDisputeValuation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdjustDominionCompSetOrDisputeValuationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).AdjustDominionCompSetOrDisputeValuation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_AdjustDominionCompSetOrDisputeValuation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).AdjustDominionCompSetOrDisputeValuation(ctx, req.(*AdjustDominionCompSetOrDisputeValuationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionOwnershipTransactionWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionOwnershipTransactionWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionOwnershipTransactionWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionOwnershipTransactionWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionOwnershipTransactionWorkbench(ctx, req.(*GetDominionOwnershipTransactionWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionOwnershipTransactionRoom_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionOwnershipTransactionRoomRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionOwnershipTransactionRoom(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionOwnershipTransactionRoom_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionOwnershipTransactionRoom(ctx, req.(*SaveDominionOwnershipTransactionRoomRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_StageDominionRefinanceOrDataroomAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StageDominionRefinanceOrDataroomAccessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).StageDominionRefinanceOrDataroomAccess(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_StageDominionRefinanceOrDataroomAccess_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).StageDominionRefinanceOrDataroomAccess(ctx, req.(*StageDominionRefinanceOrDataroomAccessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionInsuranceResilienceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionInsuranceResilienceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionInsuranceResilienceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionInsuranceResilienceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionInsuranceResilienceWorkbench(ctx, req.(*GetDominionInsuranceResilienceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionInsuranceResilienceCenter_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionInsuranceResilienceCenterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionInsuranceResilienceCenter(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionInsuranceResilienceCenter_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionInsuranceResilienceCenter(ctx, req.(*SaveDominionInsuranceResilienceCenterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_StageDominionClaimPackOrStressReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StageDominionClaimPackOrStressReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).StageDominionClaimPackOrStressReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_StageDominionClaimPackOrStressReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).StageDominionClaimPackOrStressReview(ctx, req.(*StageDominionClaimPackOrStressReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_GetDominionUtilityPerformanceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDominionUtilityPerformanceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).GetDominionUtilityPerformanceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_GetDominionUtilityPerformanceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).GetDominionUtilityPerformanceWorkbench(ctx, req.(*GetDominionUtilityPerformanceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_SaveDominionUtilityBuildingPerformance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveDominionUtilityBuildingPerformanceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).SaveDominionUtilityBuildingPerformance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_SaveDominionUtilityBuildingPerformance_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).SaveDominionUtilityBuildingPerformance(ctx, req.(*SaveDominionUtilityBuildingPerformanceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DominionService_VerifyDominionRetrofitSavingsOrAnomaly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyDominionRetrofitSavingsOrAnomalyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DominionServiceServer).VerifyDominionRetrofitSavingsOrAnomaly(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DominionService_VerifyDominionRetrofitSavingsOrAnomaly_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DominionServiceServer).VerifyDominionRetrofitSavingsOrAnomaly(ctx, req.(*VerifyDominionRetrofitSavingsOrAnomalyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DominionService_ServiceDesc is the grpc.ServiceDesc for DominionService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1607,6 +2753,138 @@ var DominionService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListMyLoungePasses",
 			Handler:    _DominionService_ListMyLoungePasses_Handler,
+		},
+		{
+			MethodName: "GetDominionPropertyDigitalTwinWorkbench",
+			Handler:    _DominionService_GetDominionPropertyDigitalTwinWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionPropertyDigitalTwin",
+			Handler:    _DominionService_SaveDominionPropertyDigitalTwin_Handler,
+		},
+		{
+			MethodName: "PropagateOrResolveDominionTwinConflict",
+			Handler:    _DominionService_PropagateOrResolveDominionTwinConflict_Handler,
+		},
+		{
+			MethodName: "GetDominionUnderwritingLabWorkbench",
+			Handler:    _DominionService_GetDominionUnderwritingLabWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionUnderwritingScenario",
+			Handler:    _DominionService_SaveDominionUnderwritingScenario_Handler,
+		},
+		{
+			MethodName: "StressTestOrFreezeDominionScenario",
+			Handler:    _DominionService_StressTestOrFreezeDominionScenario_Handler,
+		},
+		{
+			MethodName: "GetDominionPropertyAccountingWorkbench",
+			Handler:    _DominionService_GetDominionPropertyAccountingWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionPropertyAccountingClose",
+			Handler:    _DominionService_SaveDominionPropertyAccountingClose_Handler,
+		},
+		{
+			MethodName: "LockOrReverseDominionAccountingClose",
+			Handler:    _DominionService_LockOrReverseDominionAccountingClose_Handler,
+		},
+		{
+			MethodName: "GetDominionDocumentObligationWorkbench",
+			Handler:    _DominionService_GetDominionDocumentObligationWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionDocumentObligation",
+			Handler:    _DominionService_SaveDominionDocumentObligation_Handler,
+		},
+		{
+			MethodName: "ConfirmDominionObligationReceiptOrAppeal",
+			Handler:    _DominionService_ConfirmDominionObligationReceiptOrAppeal_Handler,
+		},
+		{
+			MethodName: "GetDominionLeasingResidentWorkbench",
+			Handler:    _DominionService_GetDominionLeasingResidentWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionLeasingResidentPortal",
+			Handler:    _DominionService_SaveDominionLeasingResidentPortal_Handler,
+		},
+		{
+			MethodName: "ScheduleDominionRenewalOrDepositClose",
+			Handler:    _DominionService_ScheduleDominionRenewalOrDepositClose_Handler,
+		},
+		{
+			MethodName: "GetDominionMaintenanceVendorWorkbench",
+			Handler:    _DominionService_GetDominionMaintenanceVendorWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionMaintenanceWorkOrder",
+			Handler:    _DominionService_SaveDominionMaintenanceWorkOrder_Handler,
+		},
+		{
+			MethodName: "VerifyDominionThreeWayMatchOrWarranty",
+			Handler:    _DominionService_VerifyDominionThreeWayMatchOrWarranty_Handler,
+		},
+		{
+			MethodName: "GetDominionCapitalProjectWorkbench",
+			Handler:    _DominionService_GetDominionCapitalProjectWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionCapitalProjectControl",
+			Handler:    _DominionService_SaveDominionCapitalProjectControl_Handler,
+		},
+		{
+			MethodName: "ApproveDominionDrawOrPunchlistCloseout",
+			Handler:    _DominionService_ApproveDominionDrawOrPunchlistCloseout_Handler,
+		},
+		{
+			MethodName: "GetDominionMarketValuationWorkbench",
+			Handler:    _DominionService_GetDominionMarketValuationWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionMarketValuationGovernance",
+			Handler:    _DominionService_SaveDominionMarketValuationGovernance_Handler,
+		},
+		{
+			MethodName: "AdjustDominionCompSetOrDisputeValuation",
+			Handler:    _DominionService_AdjustDominionCompSetOrDisputeValuation_Handler,
+		},
+		{
+			MethodName: "GetDominionOwnershipTransactionWorkbench",
+			Handler:    _DominionService_GetDominionOwnershipTransactionWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionOwnershipTransactionRoom",
+			Handler:    _DominionService_SaveDominionOwnershipTransactionRoom_Handler,
+		},
+		{
+			MethodName: "StageDominionRefinanceOrDataroomAccess",
+			Handler:    _DominionService_StageDominionRefinanceOrDataroomAccess_Handler,
+		},
+		{
+			MethodName: "GetDominionInsuranceResilienceWorkbench",
+			Handler:    _DominionService_GetDominionInsuranceResilienceWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionInsuranceResilienceCenter",
+			Handler:    _DominionService_SaveDominionInsuranceResilienceCenter_Handler,
+		},
+		{
+			MethodName: "StageDominionClaimPackOrStressReview",
+			Handler:    _DominionService_StageDominionClaimPackOrStressReview_Handler,
+		},
+		{
+			MethodName: "GetDominionUtilityPerformanceWorkbench",
+			Handler:    _DominionService_GetDominionUtilityPerformanceWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveDominionUtilityBuildingPerformance",
+			Handler:    _DominionService_SaveDominionUtilityBuildingPerformance_Handler,
+		},
+		{
+			MethodName: "VerifyDominionRetrofitSavingsOrAnomaly",
+			Handler:    _DominionService_VerifyDominionRetrofitSavingsOrAnomaly_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

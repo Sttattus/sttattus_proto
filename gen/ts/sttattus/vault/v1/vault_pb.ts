@@ -5905,3 +5905,4566 @@ export class ExportUsCgtCsvResponse extends Message<ExportUsCgtCsvResponse> {
   }
 }
 
+/**
+ * Choice 1 (V1): Financial Data Reliability Center
+ *
+ * @generated from message sttattus.vault.v1.VaultFinancialDataReliabilityItem
+ */
+export class VaultFinancialDataReliabilityItem extends Message<VaultFinancialDataReliabilityItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string source_code = 3;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string institution_and_coverage_window = 4;
+   */
+  institutionAndCoverageWindow = "";
+
+  /**
+   * @generated from field: string sync_freshness_and_reconciliation = 5;
+   */
+  syncFreshnessAndReconciliation = "";
+
+  /**
+   * @generated from field: string confidence_and_lineage_layer = 6;
+   */
+  confidenceAndLineageLayer = "";
+
+  /**
+   * @generated from field: string reliability_state = 7;
+   */
+  reliabilityState = "";
+
+  /**
+   * @generated from field: bool idempotent_replay_dedup_enforced = 8;
+   */
+  idempotentReplayDedupEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultFinancialDataReliabilityItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultFinancialDataReliabilityItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "institution_and_coverage_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "sync_freshness_and_reconciliation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "confidence_and_lineage_layer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "reliability_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "idempotent_replay_dedup_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultFinancialDataReliabilityItem {
+    return new VaultFinancialDataReliabilityItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultFinancialDataReliabilityItem {
+    return new VaultFinancialDataReliabilityItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultFinancialDataReliabilityItem {
+    return new VaultFinancialDataReliabilityItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultFinancialDataReliabilityItem | PlainMessage<VaultFinancialDataReliabilityItem> | undefined, b: VaultFinancialDataReliabilityItem | PlainMessage<VaultFinancialDataReliabilityItem> | undefined): boolean {
+    return proto3.util.equals(VaultFinancialDataReliabilityItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchRequest
+ */
+export class GetVaultFinancialReliabilityWorkbenchRequest extends Message<GetVaultFinancialReliabilityWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultFinancialReliabilityWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialReliabilityWorkbenchRequest {
+    return new GetVaultFinancialReliabilityWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialReliabilityWorkbenchRequest {
+    return new GetVaultFinancialReliabilityWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialReliabilityWorkbenchRequest {
+    return new GetVaultFinancialReliabilityWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialReliabilityWorkbenchRequest | PlainMessage<GetVaultFinancialReliabilityWorkbenchRequest> | undefined, b: GetVaultFinancialReliabilityWorkbenchRequest | PlainMessage<GetVaultFinancialReliabilityWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialReliabilityWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse
+ */
+export class GetVaultFinancialReliabilityWorkbenchResponse extends Message<GetVaultFinancialReliabilityWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultFinancialDataReliabilityItem sources = 1;
+   */
+  sources: VaultFinancialDataReliabilityItem[] = [];
+
+  /**
+   * @generated from field: bool idempotent_replay_dedup_enforced = 2;
+   */
+  idempotentReplayDedupEnforced = false;
+
+  /**
+   * @generated from field: string snapshot_lineage_and_freshness_summary = 3;
+   */
+  snapshotLineageAndFreshnessSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultFinancialReliabilityWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialReliabilityWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sources", kind: "message", T: VaultFinancialDataReliabilityItem, repeated: true },
+    { no: 2, name: "idempotent_replay_dedup_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "snapshot_lineage_and_freshness_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialReliabilityWorkbenchResponse {
+    return new GetVaultFinancialReliabilityWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialReliabilityWorkbenchResponse {
+    return new GetVaultFinancialReliabilityWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialReliabilityWorkbenchResponse {
+    return new GetVaultFinancialReliabilityWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialReliabilityWorkbenchResponse | PlainMessage<GetVaultFinancialReliabilityWorkbenchResponse> | undefined, b: GetVaultFinancialReliabilityWorkbenchResponse | PlainMessage<GetVaultFinancialReliabilityWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialReliabilityWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialReliabilitySourceRequest
+ */
+export class SaveVaultFinancialReliabilitySourceRequest extends Message<SaveVaultFinancialReliabilitySourceRequest> {
+  /**
+   * @generated from field: string source_code = 1;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string institution_and_coverage_window = 2;
+   */
+  institutionAndCoverageWindow = "";
+
+  /**
+   * @generated from field: string sync_freshness_and_reconciliation = 3;
+   */
+  syncFreshnessAndReconciliation = "";
+
+  /**
+   * @generated from field: string confidence_and_lineage_layer = 4;
+   */
+  confidenceAndLineageLayer = "";
+
+  /**
+   * @generated from field: string reliability_state = 5;
+   */
+  reliabilityState = "";
+
+  constructor(data?: PartialMessage<SaveVaultFinancialReliabilitySourceRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialReliabilitySourceRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "institution_and_coverage_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "sync_freshness_and_reconciliation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "confidence_and_lineage_layer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "reliability_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialReliabilitySourceRequest {
+    return new SaveVaultFinancialReliabilitySourceRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialReliabilitySourceRequest {
+    return new SaveVaultFinancialReliabilitySourceRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialReliabilitySourceRequest {
+    return new SaveVaultFinancialReliabilitySourceRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialReliabilitySourceRequest | PlainMessage<SaveVaultFinancialReliabilitySourceRequest> | undefined, b: SaveVaultFinancialReliabilitySourceRequest | PlainMessage<SaveVaultFinancialReliabilitySourceRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialReliabilitySourceRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse
+ */
+export class SaveVaultFinancialReliabilitySourceResponse extends Message<SaveVaultFinancialReliabilitySourceResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialDataReliabilityItem source = 1;
+   */
+  source?: VaultFinancialDataReliabilityItem;
+
+  constructor(data?: PartialMessage<SaveVaultFinancialReliabilitySourceResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialReliabilitySourceResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: VaultFinancialDataReliabilityItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialReliabilitySourceResponse {
+    return new SaveVaultFinancialReliabilitySourceResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialReliabilitySourceResponse {
+    return new SaveVaultFinancialReliabilitySourceResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialReliabilitySourceResponse {
+    return new SaveVaultFinancialReliabilitySourceResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialReliabilitySourceResponse | PlainMessage<SaveVaultFinancialReliabilitySourceResponse> | undefined, b: SaveVaultFinancialReliabilitySourceResponse | PlainMessage<SaveVaultFinancialReliabilitySourceResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialReliabilitySourceResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ReconcileOrReplayVaultReliabilityRequest
+ */
+export class ReconcileOrReplayVaultReliabilityRequest extends Message<ReconcileOrReplayVaultReliabilityRequest> {
+  /**
+   * @generated from field: string source_code = 1;
+   */
+  sourceCode = "";
+
+  /**
+   * @generated from field: string sync_freshness_and_reconciliation = 2;
+   */
+  syncFreshnessAndReconciliation = "";
+
+  /**
+   * @generated from field: string reliability_state = 3;
+   */
+  reliabilityState = "";
+
+  constructor(data?: PartialMessage<ReconcileOrReplayVaultReliabilityRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ReconcileOrReplayVaultReliabilityRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "sync_freshness_and_reconciliation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reliability_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReconcileOrReplayVaultReliabilityRequest {
+    return new ReconcileOrReplayVaultReliabilityRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReconcileOrReplayVaultReliabilityRequest {
+    return new ReconcileOrReplayVaultReliabilityRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReconcileOrReplayVaultReliabilityRequest {
+    return new ReconcileOrReplayVaultReliabilityRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReconcileOrReplayVaultReliabilityRequest | PlainMessage<ReconcileOrReplayVaultReliabilityRequest> | undefined, b: ReconcileOrReplayVaultReliabilityRequest | PlainMessage<ReconcileOrReplayVaultReliabilityRequest> | undefined): boolean {
+    return proto3.util.equals(ReconcileOrReplayVaultReliabilityRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse
+ */
+export class ReconcileOrReplayVaultReliabilityResponse extends Message<ReconcileOrReplayVaultReliabilityResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialDataReliabilityItem source = 1;
+   */
+  source?: VaultFinancialDataReliabilityItem;
+
+  constructor(data?: PartialMessage<ReconcileOrReplayVaultReliabilityResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ReconcileOrReplayVaultReliabilityResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "source", kind: "message", T: VaultFinancialDataReliabilityItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReconcileOrReplayVaultReliabilityResponse {
+    return new ReconcileOrReplayVaultReliabilityResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReconcileOrReplayVaultReliabilityResponse {
+    return new ReconcileOrReplayVaultReliabilityResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReconcileOrReplayVaultReliabilityResponse {
+    return new ReconcileOrReplayVaultReliabilityResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ReconcileOrReplayVaultReliabilityResponse | PlainMessage<ReconcileOrReplayVaultReliabilityResponse> | undefined, b: ReconcileOrReplayVaultReliabilityResponse | PlainMessage<ReconcileOrReplayVaultReliabilityResponse> | undefined): boolean {
+    return proto3.util.equals(ReconcileOrReplayVaultReliabilityResponse, a, b);
+  }
+}
+
+/**
+ * Choice 2 (V10): Financial Inbox and Monthly Close
+ *
+ * @generated from message sttattus.vault.v1.VaultFinancialInboxCloseItem
+ */
+export class VaultFinancialInboxCloseItem extends Message<VaultFinancialInboxCloseItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string inbox_code = 3;
+   */
+  inboxCode = "";
+
+  /**
+   * @generated from field: string exception_and_classification_summary = 4;
+   */
+  exceptionAndClassificationSummary = "";
+
+  /**
+   * @generated from field: string close_checklist_and_snapshot_ref = 5;
+   */
+  closeChecklistAndSnapshotRef = "";
+
+  /**
+   * @generated from field: string what_changed_statement_bridge = 6;
+   */
+  whatChangedStatementBridge = "";
+
+  /**
+   * @generated from field: string inbox_state = 7;
+   */
+  inboxState = "";
+
+  /**
+   * @generated from field: bool reversible_ledger_edits_enforced = 8;
+   */
+  reversibleLedgerEditsEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultFinancialInboxCloseItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultFinancialInboxCloseItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "inbox_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "exception_and_classification_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "close_checklist_and_snapshot_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "what_changed_statement_bridge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "inbox_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "reversible_ledger_edits_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultFinancialInboxCloseItem {
+    return new VaultFinancialInboxCloseItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultFinancialInboxCloseItem {
+    return new VaultFinancialInboxCloseItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultFinancialInboxCloseItem {
+    return new VaultFinancialInboxCloseItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultFinancialInboxCloseItem | PlainMessage<VaultFinancialInboxCloseItem> | undefined, b: VaultFinancialInboxCloseItem | PlainMessage<VaultFinancialInboxCloseItem> | undefined): boolean {
+    return proto3.util.equals(VaultFinancialInboxCloseItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchRequest
+ */
+export class GetVaultFinancialInboxCloseWorkbenchRequest extends Message<GetVaultFinancialInboxCloseWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultFinancialInboxCloseWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialInboxCloseWorkbenchRequest {
+    return new GetVaultFinancialInboxCloseWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialInboxCloseWorkbenchRequest {
+    return new GetVaultFinancialInboxCloseWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialInboxCloseWorkbenchRequest {
+    return new GetVaultFinancialInboxCloseWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialInboxCloseWorkbenchRequest | PlainMessage<GetVaultFinancialInboxCloseWorkbenchRequest> | undefined, b: GetVaultFinancialInboxCloseWorkbenchRequest | PlainMessage<GetVaultFinancialInboxCloseWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialInboxCloseWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse
+ */
+export class GetVaultFinancialInboxCloseWorkbenchResponse extends Message<GetVaultFinancialInboxCloseWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultFinancialInboxCloseItem closes = 1;
+   */
+  closes: VaultFinancialInboxCloseItem[] = [];
+
+  /**
+   * @generated from field: bool reversible_ledger_edits_enforced = 2;
+   */
+  reversibleLedgerEditsEnforced = false;
+
+  /**
+   * @generated from field: string close_lock_and_what_changed_summary = 3;
+   */
+  closeLockAndWhatChangedSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultFinancialInboxCloseWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialInboxCloseWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "closes", kind: "message", T: VaultFinancialInboxCloseItem, repeated: true },
+    { no: 2, name: "reversible_ledger_edits_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "close_lock_and_what_changed_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialInboxCloseWorkbenchResponse {
+    return new GetVaultFinancialInboxCloseWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialInboxCloseWorkbenchResponse {
+    return new GetVaultFinancialInboxCloseWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialInboxCloseWorkbenchResponse {
+    return new GetVaultFinancialInboxCloseWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialInboxCloseWorkbenchResponse | PlainMessage<GetVaultFinancialInboxCloseWorkbenchResponse> | undefined, b: GetVaultFinancialInboxCloseWorkbenchResponse | PlainMessage<GetVaultFinancialInboxCloseWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialInboxCloseWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialInboxCloseItemRequest
+ */
+export class SaveVaultFinancialInboxCloseItemRequest extends Message<SaveVaultFinancialInboxCloseItemRequest> {
+  /**
+   * @generated from field: string inbox_code = 1;
+   */
+  inboxCode = "";
+
+  /**
+   * @generated from field: string exception_and_classification_summary = 2;
+   */
+  exceptionAndClassificationSummary = "";
+
+  /**
+   * @generated from field: string close_checklist_and_snapshot_ref = 3;
+   */
+  closeChecklistAndSnapshotRef = "";
+
+  /**
+   * @generated from field: string what_changed_statement_bridge = 4;
+   */
+  whatChangedStatementBridge = "";
+
+  /**
+   * @generated from field: string inbox_state = 5;
+   */
+  inboxState = "";
+
+  constructor(data?: PartialMessage<SaveVaultFinancialInboxCloseItemRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialInboxCloseItemRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inbox_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "exception_and_classification_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "close_checklist_and_snapshot_ref", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "what_changed_statement_bridge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "inbox_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialInboxCloseItemRequest {
+    return new SaveVaultFinancialInboxCloseItemRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialInboxCloseItemRequest {
+    return new SaveVaultFinancialInboxCloseItemRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialInboxCloseItemRequest {
+    return new SaveVaultFinancialInboxCloseItemRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialInboxCloseItemRequest | PlainMessage<SaveVaultFinancialInboxCloseItemRequest> | undefined, b: SaveVaultFinancialInboxCloseItemRequest | PlainMessage<SaveVaultFinancialInboxCloseItemRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialInboxCloseItemRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse
+ */
+export class SaveVaultFinancialInboxCloseItemResponse extends Message<SaveVaultFinancialInboxCloseItemResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialInboxCloseItem close = 1;
+   */
+  close?: VaultFinancialInboxCloseItem;
+
+  constructor(data?: PartialMessage<SaveVaultFinancialInboxCloseItemResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialInboxCloseItemResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "close", kind: "message", T: VaultFinancialInboxCloseItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialInboxCloseItemResponse {
+    return new SaveVaultFinancialInboxCloseItemResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialInboxCloseItemResponse {
+    return new SaveVaultFinancialInboxCloseItemResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialInboxCloseItemResponse {
+    return new SaveVaultFinancialInboxCloseItemResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialInboxCloseItemResponse | PlainMessage<SaveVaultFinancialInboxCloseItemResponse> | undefined, b: SaveVaultFinancialInboxCloseItemResponse | PlainMessage<SaveVaultFinancialInboxCloseItemResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialInboxCloseItemResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LockOrReopenVaultMonthlyCloseRequest
+ */
+export class LockOrReopenVaultMonthlyCloseRequest extends Message<LockOrReopenVaultMonthlyCloseRequest> {
+  /**
+   * @generated from field: string inbox_code = 1;
+   */
+  inboxCode = "";
+
+  /**
+   * @generated from field: string what_changed_statement_bridge = 2;
+   */
+  whatChangedStatementBridge = "";
+
+  /**
+   * @generated from field: string inbox_state = 3;
+   */
+  inboxState = "";
+
+  constructor(data?: PartialMessage<LockOrReopenVaultMonthlyCloseRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LockOrReopenVaultMonthlyCloseRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "inbox_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "what_changed_statement_bridge", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "inbox_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrReopenVaultMonthlyCloseRequest {
+    return new LockOrReopenVaultMonthlyCloseRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrReopenVaultMonthlyCloseRequest {
+    return new LockOrReopenVaultMonthlyCloseRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrReopenVaultMonthlyCloseRequest {
+    return new LockOrReopenVaultMonthlyCloseRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrReopenVaultMonthlyCloseRequest | PlainMessage<LockOrReopenVaultMonthlyCloseRequest> | undefined, b: LockOrReopenVaultMonthlyCloseRequest | PlainMessage<LockOrReopenVaultMonthlyCloseRequest> | undefined): boolean {
+    return proto3.util.equals(LockOrReopenVaultMonthlyCloseRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse
+ */
+export class LockOrReopenVaultMonthlyCloseResponse extends Message<LockOrReopenVaultMonthlyCloseResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialInboxCloseItem close = 1;
+   */
+  close?: VaultFinancialInboxCloseItem;
+
+  constructor(data?: PartialMessage<LockOrReopenVaultMonthlyCloseResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LockOrReopenVaultMonthlyCloseResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "close", kind: "message", T: VaultFinancialInboxCloseItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrReopenVaultMonthlyCloseResponse {
+    return new LockOrReopenVaultMonthlyCloseResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrReopenVaultMonthlyCloseResponse {
+    return new LockOrReopenVaultMonthlyCloseResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrReopenVaultMonthlyCloseResponse {
+    return new LockOrReopenVaultMonthlyCloseResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrReopenVaultMonthlyCloseResponse | PlainMessage<LockOrReopenVaultMonthlyCloseResponse> | undefined, b: LockOrReopenVaultMonthlyCloseResponse | PlainMessage<LockOrReopenVaultMonthlyCloseResponse> | undefined): boolean {
+    return proto3.util.equals(LockOrReopenVaultMonthlyCloseResponse, a, b);
+  }
+}
+
+/**
+ * Choice 3 (V2, V11): Personal CFO and Cash Command
+ *
+ * @generated from message sttattus.vault.v1.VaultPersonalCfoCashCommandItem
+ */
+export class VaultPersonalCfoCashCommandItem extends Message<VaultPersonalCfoCashCommandItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string command_code = 3;
+   */
+  commandCode = "";
+
+  /**
+   * @generated from field: string liquidity_ladder_and_ratios = 4;
+   */
+  liquidityLadderAndRatios = "";
+
+  /**
+   * @generated from field: string thirteen_week_forecast_and_commitments = 5;
+   */
+  thirteenWeekForecastAndCommitments = "";
+
+  /**
+   * @generated from field: string explainable_variance_and_policy_alert = 6;
+   */
+  explainableVarianceAndPolicyAlert = "";
+
+  /**
+   * @generated from field: string command_state = 7;
+   */
+  commandState = "";
+
+  /**
+   * @generated from field: bool non_auto_transfer_boundary_enforced = 8;
+   */
+  nonAutoTransferBoundaryEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultPersonalCfoCashCommandItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultPersonalCfoCashCommandItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "command_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "liquidity_ladder_and_ratios", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "thirteen_week_forecast_and_commitments", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "explainable_variance_and_policy_alert", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "command_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "non_auto_transfer_boundary_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultPersonalCfoCashCommandItem {
+    return new VaultPersonalCfoCashCommandItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultPersonalCfoCashCommandItem {
+    return new VaultPersonalCfoCashCommandItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultPersonalCfoCashCommandItem {
+    return new VaultPersonalCfoCashCommandItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultPersonalCfoCashCommandItem | PlainMessage<VaultPersonalCfoCashCommandItem> | undefined, b: VaultPersonalCfoCashCommandItem | PlainMessage<VaultPersonalCfoCashCommandItem> | undefined): boolean {
+    return proto3.util.equals(VaultPersonalCfoCashCommandItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchRequest
+ */
+export class GetVaultPersonalCfoCashWorkbenchRequest extends Message<GetVaultPersonalCfoCashWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultPersonalCfoCashWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPersonalCfoCashWorkbenchRequest {
+    return new GetVaultPersonalCfoCashWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPersonalCfoCashWorkbenchRequest {
+    return new GetVaultPersonalCfoCashWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPersonalCfoCashWorkbenchRequest {
+    return new GetVaultPersonalCfoCashWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPersonalCfoCashWorkbenchRequest | PlainMessage<GetVaultPersonalCfoCashWorkbenchRequest> | undefined, b: GetVaultPersonalCfoCashWorkbenchRequest | PlainMessage<GetVaultPersonalCfoCashWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultPersonalCfoCashWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse
+ */
+export class GetVaultPersonalCfoCashWorkbenchResponse extends Message<GetVaultPersonalCfoCashWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultPersonalCfoCashCommandItem commands = 1;
+   */
+  commands: VaultPersonalCfoCashCommandItem[] = [];
+
+  /**
+   * @generated from field: bool non_auto_transfer_boundary_enforced = 2;
+   */
+  nonAutoTransferBoundaryEnforced = false;
+
+  /**
+   * @generated from field: string liquidity_ladder_and_forecast_summary = 3;
+   */
+  liquidityLadderAndForecastSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultPersonalCfoCashWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPersonalCfoCashWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "commands", kind: "message", T: VaultPersonalCfoCashCommandItem, repeated: true },
+    { no: 2, name: "non_auto_transfer_boundary_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "liquidity_ladder_and_forecast_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPersonalCfoCashWorkbenchResponse {
+    return new GetVaultPersonalCfoCashWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPersonalCfoCashWorkbenchResponse {
+    return new GetVaultPersonalCfoCashWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPersonalCfoCashWorkbenchResponse {
+    return new GetVaultPersonalCfoCashWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPersonalCfoCashWorkbenchResponse | PlainMessage<GetVaultPersonalCfoCashWorkbenchResponse> | undefined, b: GetVaultPersonalCfoCashWorkbenchResponse | PlainMessage<GetVaultPersonalCfoCashWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultPersonalCfoCashWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPersonalCfoCashForecastRequest
+ */
+export class SaveVaultPersonalCfoCashForecastRequest extends Message<SaveVaultPersonalCfoCashForecastRequest> {
+  /**
+   * @generated from field: string command_code = 1;
+   */
+  commandCode = "";
+
+  /**
+   * @generated from field: string liquidity_ladder_and_ratios = 2;
+   */
+  liquidityLadderAndRatios = "";
+
+  /**
+   * @generated from field: string thirteen_week_forecast_and_commitments = 3;
+   */
+  thirteenWeekForecastAndCommitments = "";
+
+  /**
+   * @generated from field: string explainable_variance_and_policy_alert = 4;
+   */
+  explainableVarianceAndPolicyAlert = "";
+
+  /**
+   * @generated from field: string command_state = 5;
+   */
+  commandState = "";
+
+  constructor(data?: PartialMessage<SaveVaultPersonalCfoCashForecastRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPersonalCfoCashForecastRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "command_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "liquidity_ladder_and_ratios", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "thirteen_week_forecast_and_commitments", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "explainable_variance_and_policy_alert", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "command_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPersonalCfoCashForecastRequest {
+    return new SaveVaultPersonalCfoCashForecastRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPersonalCfoCashForecastRequest {
+    return new SaveVaultPersonalCfoCashForecastRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPersonalCfoCashForecastRequest {
+    return new SaveVaultPersonalCfoCashForecastRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPersonalCfoCashForecastRequest | PlainMessage<SaveVaultPersonalCfoCashForecastRequest> | undefined, b: SaveVaultPersonalCfoCashForecastRequest | PlainMessage<SaveVaultPersonalCfoCashForecastRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPersonalCfoCashForecastRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse
+ */
+export class SaveVaultPersonalCfoCashForecastResponse extends Message<SaveVaultPersonalCfoCashForecastResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPersonalCfoCashCommandItem command = 1;
+   */
+  command?: VaultPersonalCfoCashCommandItem;
+
+  constructor(data?: PartialMessage<SaveVaultPersonalCfoCashForecastResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPersonalCfoCashForecastResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "command", kind: "message", T: VaultPersonalCfoCashCommandItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPersonalCfoCashForecastResponse {
+    return new SaveVaultPersonalCfoCashForecastResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPersonalCfoCashForecastResponse {
+    return new SaveVaultPersonalCfoCashForecastResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPersonalCfoCashForecastResponse {
+    return new SaveVaultPersonalCfoCashForecastResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPersonalCfoCashForecastResponse | PlainMessage<SaveVaultPersonalCfoCashForecastResponse> | undefined, b: SaveVaultPersonalCfoCashForecastResponse | PlainMessage<SaveVaultPersonalCfoCashForecastResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPersonalCfoCashForecastResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentRequest
+ */
+export class AcknowledgeOrReviewVaultCashCommitmentRequest extends Message<AcknowledgeOrReviewVaultCashCommitmentRequest> {
+  /**
+   * @generated from field: string command_code = 1;
+   */
+  commandCode = "";
+
+  /**
+   * @generated from field: string explainable_variance_and_policy_alert = 2;
+   */
+  explainableVarianceAndPolicyAlert = "";
+
+  /**
+   * @generated from field: string command_state = 3;
+   */
+  commandState = "";
+
+  constructor(data?: PartialMessage<AcknowledgeOrReviewVaultCashCommitmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "command_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "explainable_variance_and_policy_alert", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "command_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgeOrReviewVaultCashCommitmentRequest {
+    return new AcknowledgeOrReviewVaultCashCommitmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgeOrReviewVaultCashCommitmentRequest {
+    return new AcknowledgeOrReviewVaultCashCommitmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgeOrReviewVaultCashCommitmentRequest {
+    return new AcknowledgeOrReviewVaultCashCommitmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgeOrReviewVaultCashCommitmentRequest | PlainMessage<AcknowledgeOrReviewVaultCashCommitmentRequest> | undefined, b: AcknowledgeOrReviewVaultCashCommitmentRequest | PlainMessage<AcknowledgeOrReviewVaultCashCommitmentRequest> | undefined): boolean {
+    return proto3.util.equals(AcknowledgeOrReviewVaultCashCommitmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse
+ */
+export class AcknowledgeOrReviewVaultCashCommitmentResponse extends Message<AcknowledgeOrReviewVaultCashCommitmentResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPersonalCfoCashCommandItem command = 1;
+   */
+  command?: VaultPersonalCfoCashCommandItem;
+
+  constructor(data?: PartialMessage<AcknowledgeOrReviewVaultCashCommitmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.AcknowledgeOrReviewVaultCashCommitmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "command", kind: "message", T: VaultPersonalCfoCashCommandItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AcknowledgeOrReviewVaultCashCommitmentResponse {
+    return new AcknowledgeOrReviewVaultCashCommitmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AcknowledgeOrReviewVaultCashCommitmentResponse {
+    return new AcknowledgeOrReviewVaultCashCommitmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AcknowledgeOrReviewVaultCashCommitmentResponse {
+    return new AcknowledgeOrReviewVaultCashCommitmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AcknowledgeOrReviewVaultCashCommitmentResponse | PlainMessage<AcknowledgeOrReviewVaultCashCommitmentResponse> | undefined, b: AcknowledgeOrReviewVaultCashCommitmentResponse | PlainMessage<AcknowledgeOrReviewVaultCashCommitmentResponse> | undefined): boolean {
+    return proto3.util.equals(AcknowledgeOrReviewVaultCashCommitmentResponse, a, b);
+  }
+}
+
+/**
+ * Choice 4 (V3): Performance and Allocation Laboratory
+ *
+ * @generated from message sttattus.vault.v1.VaultPerformanceAllocationLabItem
+ */
+export class VaultPerformanceAllocationLabItem extends Message<VaultPerformanceAllocationLabItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string allocation_code = 3;
+   */
+  allocationCode = "";
+
+  /**
+   * @generated from field: string twr_mwr_irr_and_benchmark_summary = 4;
+   */
+  twrMwrIrrAndBenchmarkSummary = "";
+
+  /**
+   * @generated from field: string lookthrough_exposure_and_concentration = 5;
+   */
+  lookthroughExposureAndConcentration = "";
+
+  /**
+   * @generated from field: string rebalance_tax_and_cost_scenario = 6;
+   */
+  rebalanceTaxAndCostScenario = "";
+
+  /**
+   * @generated from field: string lab_state = 7;
+   */
+  labState = "";
+
+  /**
+   * @generated from field: bool no_fabricated_smooth_curve_enforced = 8;
+   */
+  noFabricatedSmoothCurveEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultPerformanceAllocationLabItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultPerformanceAllocationLabItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "allocation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "twr_mwr_irr_and_benchmark_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "lookthrough_exposure_and_concentration", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "rebalance_tax_and_cost_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "lab_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_fabricated_smooth_curve_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultPerformanceAllocationLabItem {
+    return new VaultPerformanceAllocationLabItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultPerformanceAllocationLabItem {
+    return new VaultPerformanceAllocationLabItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultPerformanceAllocationLabItem {
+    return new VaultPerformanceAllocationLabItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultPerformanceAllocationLabItem | PlainMessage<VaultPerformanceAllocationLabItem> | undefined, b: VaultPerformanceAllocationLabItem | PlainMessage<VaultPerformanceAllocationLabItem> | undefined): boolean {
+    return proto3.util.equals(VaultPerformanceAllocationLabItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchRequest
+ */
+export class GetVaultPerformanceAllocationWorkbenchRequest extends Message<GetVaultPerformanceAllocationWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultPerformanceAllocationWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPerformanceAllocationWorkbenchRequest {
+    return new GetVaultPerformanceAllocationWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPerformanceAllocationWorkbenchRequest {
+    return new GetVaultPerformanceAllocationWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPerformanceAllocationWorkbenchRequest {
+    return new GetVaultPerformanceAllocationWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPerformanceAllocationWorkbenchRequest | PlainMessage<GetVaultPerformanceAllocationWorkbenchRequest> | undefined, b: GetVaultPerformanceAllocationWorkbenchRequest | PlainMessage<GetVaultPerformanceAllocationWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultPerformanceAllocationWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse
+ */
+export class GetVaultPerformanceAllocationWorkbenchResponse extends Message<GetVaultPerformanceAllocationWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultPerformanceAllocationLabItem models = 1;
+   */
+  models: VaultPerformanceAllocationLabItem[] = [];
+
+  /**
+   * @generated from field: bool no_fabricated_smooth_curve_enforced = 2;
+   */
+  noFabricatedSmoothCurveEnforced = false;
+
+  /**
+   * @generated from field: string snapshot_reproducible_performance_summary = 3;
+   */
+  snapshotReproduciblePerformanceSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultPerformanceAllocationWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPerformanceAllocationWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "models", kind: "message", T: VaultPerformanceAllocationLabItem, repeated: true },
+    { no: 2, name: "no_fabricated_smooth_curve_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "snapshot_reproducible_performance_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPerformanceAllocationWorkbenchResponse {
+    return new GetVaultPerformanceAllocationWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPerformanceAllocationWorkbenchResponse {
+    return new GetVaultPerformanceAllocationWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPerformanceAllocationWorkbenchResponse {
+    return new GetVaultPerformanceAllocationWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPerformanceAllocationWorkbenchResponse | PlainMessage<GetVaultPerformanceAllocationWorkbenchResponse> | undefined, b: GetVaultPerformanceAllocationWorkbenchResponse | PlainMessage<GetVaultPerformanceAllocationWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultPerformanceAllocationWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPerformanceAllocationModelRequest
+ */
+export class SaveVaultPerformanceAllocationModelRequest extends Message<SaveVaultPerformanceAllocationModelRequest> {
+  /**
+   * @generated from field: string allocation_code = 1;
+   */
+  allocationCode = "";
+
+  /**
+   * @generated from field: string twr_mwr_irr_and_benchmark_summary = 2;
+   */
+  twrMwrIrrAndBenchmarkSummary = "";
+
+  /**
+   * @generated from field: string lookthrough_exposure_and_concentration = 3;
+   */
+  lookthroughExposureAndConcentration = "";
+
+  /**
+   * @generated from field: string rebalance_tax_and_cost_scenario = 4;
+   */
+  rebalanceTaxAndCostScenario = "";
+
+  /**
+   * @generated from field: string lab_state = 5;
+   */
+  labState = "";
+
+  constructor(data?: PartialMessage<SaveVaultPerformanceAllocationModelRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPerformanceAllocationModelRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "allocation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "twr_mwr_irr_and_benchmark_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "lookthrough_exposure_and_concentration", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "rebalance_tax_and_cost_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "lab_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPerformanceAllocationModelRequest {
+    return new SaveVaultPerformanceAllocationModelRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPerformanceAllocationModelRequest {
+    return new SaveVaultPerformanceAllocationModelRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPerformanceAllocationModelRequest {
+    return new SaveVaultPerformanceAllocationModelRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPerformanceAllocationModelRequest | PlainMessage<SaveVaultPerformanceAllocationModelRequest> | undefined, b: SaveVaultPerformanceAllocationModelRequest | PlainMessage<SaveVaultPerformanceAllocationModelRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPerformanceAllocationModelRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse
+ */
+export class SaveVaultPerformanceAllocationModelResponse extends Message<SaveVaultPerformanceAllocationModelResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPerformanceAllocationLabItem model = 1;
+   */
+  model?: VaultPerformanceAllocationLabItem;
+
+  constructor(data?: PartialMessage<SaveVaultPerformanceAllocationModelResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPerformanceAllocationModelResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "model", kind: "message", T: VaultPerformanceAllocationLabItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPerformanceAllocationModelResponse {
+    return new SaveVaultPerformanceAllocationModelResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPerformanceAllocationModelResponse {
+    return new SaveVaultPerformanceAllocationModelResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPerformanceAllocationModelResponse {
+    return new SaveVaultPerformanceAllocationModelResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPerformanceAllocationModelResponse | PlainMessage<SaveVaultPerformanceAllocationModelResponse> | undefined, b: SaveVaultPerformanceAllocationModelResponse | PlainMessage<SaveVaultPerformanceAllocationModelResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPerformanceAllocationModelResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SimulateOrRefreshVaultAllocationRequest
+ */
+export class SimulateOrRefreshVaultAllocationRequest extends Message<SimulateOrRefreshVaultAllocationRequest> {
+  /**
+   * @generated from field: string allocation_code = 1;
+   */
+  allocationCode = "";
+
+  /**
+   * @generated from field: string rebalance_tax_and_cost_scenario = 2;
+   */
+  rebalanceTaxAndCostScenario = "";
+
+  /**
+   * @generated from field: string lab_state = 3;
+   */
+  labState = "";
+
+  constructor(data?: PartialMessage<SimulateOrRefreshVaultAllocationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SimulateOrRefreshVaultAllocationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "allocation_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "rebalance_tax_and_cost_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "lab_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SimulateOrRefreshVaultAllocationRequest {
+    return new SimulateOrRefreshVaultAllocationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SimulateOrRefreshVaultAllocationRequest {
+    return new SimulateOrRefreshVaultAllocationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SimulateOrRefreshVaultAllocationRequest {
+    return new SimulateOrRefreshVaultAllocationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SimulateOrRefreshVaultAllocationRequest | PlainMessage<SimulateOrRefreshVaultAllocationRequest> | undefined, b: SimulateOrRefreshVaultAllocationRequest | PlainMessage<SimulateOrRefreshVaultAllocationRequest> | undefined): boolean {
+    return proto3.util.equals(SimulateOrRefreshVaultAllocationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse
+ */
+export class SimulateOrRefreshVaultAllocationResponse extends Message<SimulateOrRefreshVaultAllocationResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPerformanceAllocationLabItem model = 1;
+   */
+  model?: VaultPerformanceAllocationLabItem;
+
+  constructor(data?: PartialMessage<SimulateOrRefreshVaultAllocationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SimulateOrRefreshVaultAllocationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "model", kind: "message", T: VaultPerformanceAllocationLabItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SimulateOrRefreshVaultAllocationResponse {
+    return new SimulateOrRefreshVaultAllocationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SimulateOrRefreshVaultAllocationResponse {
+    return new SimulateOrRefreshVaultAllocationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SimulateOrRefreshVaultAllocationResponse {
+    return new SimulateOrRefreshVaultAllocationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SimulateOrRefreshVaultAllocationResponse | PlainMessage<SimulateOrRefreshVaultAllocationResponse> | undefined, b: SimulateOrRefreshVaultAllocationResponse | PlainMessage<SimulateOrRefreshVaultAllocationResponse> | undefined): boolean {
+    return proto3.util.equals(SimulateOrRefreshVaultAllocationResponse, a, b);
+  }
+}
+
+/**
+ * Choice 5 (V4, V16): Tax and Accountant Workspace
+ *
+ * @generated from message sttattus.vault.v1.VaultTaxAccountantWorkspaceItem
+ */
+export class VaultTaxAccountantWorkspaceItem extends Message<VaultTaxAccountantWorkspaceItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string tax_code = 3;
+   */
+  taxCode = "";
+
+  /**
+   * @generated from field: string jurisdiction_lots_and_wash_sale_scope = 4;
+   */
+  jurisdictionLotsAndWashSaleScope = "";
+
+  /**
+   * @generated from field: string harvest_or_payment_scenario_estimate = 5;
+   */
+  harvestOrPaymentScenarioEstimate = "";
+
+  /**
+   * @generated from field: string accountant_dataroom_and_period_lock = 6;
+   */
+  accountantDataroomAndPeriodLock = "";
+
+  /**
+   * @generated from field: string workspace_state = 7;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: bool non_tax_advice_no_onetap_trade_enforced = 8;
+   */
+  nonTaxAdviceNoOnetapTradeEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultTaxAccountantWorkspaceItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultTaxAccountantWorkspaceItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "tax_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "jurisdiction_lots_and_wash_sale_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "harvest_or_payment_scenario_estimate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "accountant_dataroom_and_period_lock", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "non_tax_advice_no_onetap_trade_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultTaxAccountantWorkspaceItem {
+    return new VaultTaxAccountantWorkspaceItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultTaxAccountantWorkspaceItem {
+    return new VaultTaxAccountantWorkspaceItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultTaxAccountantWorkspaceItem {
+    return new VaultTaxAccountantWorkspaceItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultTaxAccountantWorkspaceItem | PlainMessage<VaultTaxAccountantWorkspaceItem> | undefined, b: VaultTaxAccountantWorkspaceItem | PlainMessage<VaultTaxAccountantWorkspaceItem> | undefined): boolean {
+    return proto3.util.equals(VaultTaxAccountantWorkspaceItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultTaxAccountantWorkbenchRequest
+ */
+export class GetVaultTaxAccountantWorkbenchRequest extends Message<GetVaultTaxAccountantWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultTaxAccountantWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultTaxAccountantWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultTaxAccountantWorkbenchRequest {
+    return new GetVaultTaxAccountantWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultTaxAccountantWorkbenchRequest {
+    return new GetVaultTaxAccountantWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultTaxAccountantWorkbenchRequest {
+    return new GetVaultTaxAccountantWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultTaxAccountantWorkbenchRequest | PlainMessage<GetVaultTaxAccountantWorkbenchRequest> | undefined, b: GetVaultTaxAccountantWorkbenchRequest | PlainMessage<GetVaultTaxAccountantWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultTaxAccountantWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse
+ */
+export class GetVaultTaxAccountantWorkbenchResponse extends Message<GetVaultTaxAccountantWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultTaxAccountantWorkspaceItem workspaces = 1;
+   */
+  workspaces: VaultTaxAccountantWorkspaceItem[] = [];
+
+  /**
+   * @generated from field: bool non_tax_advice_no_onetap_trade_enforced = 2;
+   */
+  nonTaxAdviceNoOnetapTradeEnforced = false;
+
+  /**
+   * @generated from field: string wash_sale_and_accountant_scope_summary = 3;
+   */
+  washSaleAndAccountantScopeSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultTaxAccountantWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultTaxAccountantWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspaces", kind: "message", T: VaultTaxAccountantWorkspaceItem, repeated: true },
+    { no: 2, name: "non_tax_advice_no_onetap_trade_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "wash_sale_and_accountant_scope_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultTaxAccountantWorkbenchResponse {
+    return new GetVaultTaxAccountantWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultTaxAccountantWorkbenchResponse {
+    return new GetVaultTaxAccountantWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultTaxAccountantWorkbenchResponse {
+    return new GetVaultTaxAccountantWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultTaxAccountantWorkbenchResponse | PlainMessage<GetVaultTaxAccountantWorkbenchResponse> | undefined, b: GetVaultTaxAccountantWorkbenchResponse | PlainMessage<GetVaultTaxAccountantWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultTaxAccountantWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultTaxAccountantScenarioRequest
+ */
+export class SaveVaultTaxAccountantScenarioRequest extends Message<SaveVaultTaxAccountantScenarioRequest> {
+  /**
+   * @generated from field: string tax_code = 1;
+   */
+  taxCode = "";
+
+  /**
+   * @generated from field: string jurisdiction_lots_and_wash_sale_scope = 2;
+   */
+  jurisdictionLotsAndWashSaleScope = "";
+
+  /**
+   * @generated from field: string harvest_or_payment_scenario_estimate = 3;
+   */
+  harvestOrPaymentScenarioEstimate = "";
+
+  /**
+   * @generated from field: string accountant_dataroom_and_period_lock = 4;
+   */
+  accountantDataroomAndPeriodLock = "";
+
+  /**
+   * @generated from field: string workspace_state = 5;
+   */
+  workspaceState = "";
+
+  constructor(data?: PartialMessage<SaveVaultTaxAccountantScenarioRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultTaxAccountantScenarioRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tax_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "jurisdiction_lots_and_wash_sale_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "harvest_or_payment_scenario_estimate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "accountant_dataroom_and_period_lock", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultTaxAccountantScenarioRequest {
+    return new SaveVaultTaxAccountantScenarioRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultTaxAccountantScenarioRequest {
+    return new SaveVaultTaxAccountantScenarioRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultTaxAccountantScenarioRequest {
+    return new SaveVaultTaxAccountantScenarioRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultTaxAccountantScenarioRequest | PlainMessage<SaveVaultTaxAccountantScenarioRequest> | undefined, b: SaveVaultTaxAccountantScenarioRequest | PlainMessage<SaveVaultTaxAccountantScenarioRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultTaxAccountantScenarioRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse
+ */
+export class SaveVaultTaxAccountantScenarioResponse extends Message<SaveVaultTaxAccountantScenarioResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultTaxAccountantWorkspaceItem workspace = 1;
+   */
+  workspace?: VaultTaxAccountantWorkspaceItem;
+
+  constructor(data?: PartialMessage<SaveVaultTaxAccountantScenarioResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultTaxAccountantScenarioResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: VaultTaxAccountantWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultTaxAccountantScenarioResponse {
+    return new SaveVaultTaxAccountantScenarioResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultTaxAccountantScenarioResponse {
+    return new SaveVaultTaxAccountantScenarioResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultTaxAccountantScenarioResponse {
+    return new SaveVaultTaxAccountantScenarioResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultTaxAccountantScenarioResponse | PlainMessage<SaveVaultTaxAccountantScenarioResponse> | undefined, b: SaveVaultTaxAccountantScenarioResponse | PlainMessage<SaveVaultTaxAccountantScenarioResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultTaxAccountantScenarioResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LockOrExportVaultTaxPackageRequest
+ */
+export class LockOrExportVaultTaxPackageRequest extends Message<LockOrExportVaultTaxPackageRequest> {
+  /**
+   * @generated from field: string tax_code = 1;
+   */
+  taxCode = "";
+
+  /**
+   * @generated from field: string accountant_dataroom_and_period_lock = 2;
+   */
+  accountantDataroomAndPeriodLock = "";
+
+  /**
+   * @generated from field: string workspace_state = 3;
+   */
+  workspaceState = "";
+
+  constructor(data?: PartialMessage<LockOrExportVaultTaxPackageRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LockOrExportVaultTaxPackageRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "tax_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "accountant_dataroom_and_period_lock", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrExportVaultTaxPackageRequest {
+    return new LockOrExportVaultTaxPackageRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrExportVaultTaxPackageRequest {
+    return new LockOrExportVaultTaxPackageRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrExportVaultTaxPackageRequest {
+    return new LockOrExportVaultTaxPackageRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrExportVaultTaxPackageRequest | PlainMessage<LockOrExportVaultTaxPackageRequest> | undefined, b: LockOrExportVaultTaxPackageRequest | PlainMessage<LockOrExportVaultTaxPackageRequest> | undefined): boolean {
+    return proto3.util.equals(LockOrExportVaultTaxPackageRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.LockOrExportVaultTaxPackageResponse
+ */
+export class LockOrExportVaultTaxPackageResponse extends Message<LockOrExportVaultTaxPackageResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultTaxAccountantWorkspaceItem workspace = 1;
+   */
+  workspace?: VaultTaxAccountantWorkspaceItem;
+
+  constructor(data?: PartialMessage<LockOrExportVaultTaxPackageResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.LockOrExportVaultTaxPackageResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "workspace", kind: "message", T: VaultTaxAccountantWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LockOrExportVaultTaxPackageResponse {
+    return new LockOrExportVaultTaxPackageResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LockOrExportVaultTaxPackageResponse {
+    return new LockOrExportVaultTaxPackageResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LockOrExportVaultTaxPackageResponse {
+    return new LockOrExportVaultTaxPackageResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LockOrExportVaultTaxPackageResponse | PlainMessage<LockOrExportVaultTaxPackageResponse> | undefined, b: LockOrExportVaultTaxPackageResponse | PlainMessage<LockOrExportVaultTaxPackageResponse> | undefined): boolean {
+    return proto3.util.equals(LockOrExportVaultTaxPackageResponse, a, b);
+  }
+}
+
+/**
+ * Choice 6 (V5): Entity, Household, and Ownership Graph
+ *
+ * @generated from message sttattus.vault.v1.VaultEntityOwnershipGraphItem
+ */
+export class VaultEntityOwnershipGraphItem extends Message<VaultEntityOwnershipGraphItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string graph_code = 3;
+   */
+  graphCode = "";
+
+  /**
+   * @generated from field: string entity_and_lookthrough_interest = 4;
+   */
+  entityAndLookthroughInterest = "";
+
+  /**
+   * @generated from field: string collaboration_visibility_and_scope = 5;
+   */
+  collaborationVisibilityAndScope = "";
+
+  /**
+   * @generated from field: string dominion_and_legacy_bridge_summary = 6;
+   */
+  dominionAndLegacyBridgeSummary = "";
+
+  /**
+   * @generated from field: string graph_state = 7;
+   */
+  graphState = "";
+
+  /**
+   * @generated from field: bool zero_double_counting_enforced = 8;
+   */
+  zeroDoubleCountingEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultEntityOwnershipGraphItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultEntityOwnershipGraphItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "graph_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "entity_and_lookthrough_interest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "collaboration_visibility_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "dominion_and_legacy_bridge_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "graph_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "zero_double_counting_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultEntityOwnershipGraphItem {
+    return new VaultEntityOwnershipGraphItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultEntityOwnershipGraphItem {
+    return new VaultEntityOwnershipGraphItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultEntityOwnershipGraphItem {
+    return new VaultEntityOwnershipGraphItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultEntityOwnershipGraphItem | PlainMessage<VaultEntityOwnershipGraphItem> | undefined, b: VaultEntityOwnershipGraphItem | PlainMessage<VaultEntityOwnershipGraphItem> | undefined): boolean {
+    return proto3.util.equals(VaultEntityOwnershipGraphItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchRequest
+ */
+export class GetVaultEntityOwnershipWorkbenchRequest extends Message<GetVaultEntityOwnershipWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultEntityOwnershipWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultEntityOwnershipWorkbenchRequest {
+    return new GetVaultEntityOwnershipWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultEntityOwnershipWorkbenchRequest {
+    return new GetVaultEntityOwnershipWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultEntityOwnershipWorkbenchRequest {
+    return new GetVaultEntityOwnershipWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultEntityOwnershipWorkbenchRequest | PlainMessage<GetVaultEntityOwnershipWorkbenchRequest> | undefined, b: GetVaultEntityOwnershipWorkbenchRequest | PlainMessage<GetVaultEntityOwnershipWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultEntityOwnershipWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse
+ */
+export class GetVaultEntityOwnershipWorkbenchResponse extends Message<GetVaultEntityOwnershipWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultEntityOwnershipGraphItem graphs = 1;
+   */
+  graphs: VaultEntityOwnershipGraphItem[] = [];
+
+  /**
+   * @generated from field: bool zero_double_counting_enforced = 2;
+   */
+  zeroDoubleCountingEnforced = false;
+
+  /**
+   * @generated from field: string lookthrough_and_collaboration_summary = 3;
+   */
+  lookthroughAndCollaborationSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultEntityOwnershipWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultEntityOwnershipWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "graphs", kind: "message", T: VaultEntityOwnershipGraphItem, repeated: true },
+    { no: 2, name: "zero_double_counting_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "lookthrough_and_collaboration_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultEntityOwnershipWorkbenchResponse {
+    return new GetVaultEntityOwnershipWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultEntityOwnershipWorkbenchResponse {
+    return new GetVaultEntityOwnershipWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultEntityOwnershipWorkbenchResponse {
+    return new GetVaultEntityOwnershipWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultEntityOwnershipWorkbenchResponse | PlainMessage<GetVaultEntityOwnershipWorkbenchResponse> | undefined, b: GetVaultEntityOwnershipWorkbenchResponse | PlainMessage<GetVaultEntityOwnershipWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultEntityOwnershipWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultEntityOwnershipNodeRequest
+ */
+export class SaveVaultEntityOwnershipNodeRequest extends Message<SaveVaultEntityOwnershipNodeRequest> {
+  /**
+   * @generated from field: string graph_code = 1;
+   */
+  graphCode = "";
+
+  /**
+   * @generated from field: string entity_and_lookthrough_interest = 2;
+   */
+  entityAndLookthroughInterest = "";
+
+  /**
+   * @generated from field: string collaboration_visibility_and_scope = 3;
+   */
+  collaborationVisibilityAndScope = "";
+
+  /**
+   * @generated from field: string dominion_and_legacy_bridge_summary = 4;
+   */
+  dominionAndLegacyBridgeSummary = "";
+
+  /**
+   * @generated from field: string graph_state = 5;
+   */
+  graphState = "";
+
+  constructor(data?: PartialMessage<SaveVaultEntityOwnershipNodeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultEntityOwnershipNodeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "graph_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_and_lookthrough_interest", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "collaboration_visibility_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "dominion_and_legacy_bridge_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "graph_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultEntityOwnershipNodeRequest {
+    return new SaveVaultEntityOwnershipNodeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultEntityOwnershipNodeRequest {
+    return new SaveVaultEntityOwnershipNodeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultEntityOwnershipNodeRequest {
+    return new SaveVaultEntityOwnershipNodeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultEntityOwnershipNodeRequest | PlainMessage<SaveVaultEntityOwnershipNodeRequest> | undefined, b: SaveVaultEntityOwnershipNodeRequest | PlainMessage<SaveVaultEntityOwnershipNodeRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultEntityOwnershipNodeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse
+ */
+export class SaveVaultEntityOwnershipNodeResponse extends Message<SaveVaultEntityOwnershipNodeResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultEntityOwnershipGraphItem graph = 1;
+   */
+  graph?: VaultEntityOwnershipGraphItem;
+
+  constructor(data?: PartialMessage<SaveVaultEntityOwnershipNodeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultEntityOwnershipNodeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "graph", kind: "message", T: VaultEntityOwnershipGraphItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultEntityOwnershipNodeResponse {
+    return new SaveVaultEntityOwnershipNodeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultEntityOwnershipNodeResponse {
+    return new SaveVaultEntityOwnershipNodeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultEntityOwnershipNodeResponse {
+    return new SaveVaultEntityOwnershipNodeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultEntityOwnershipNodeResponse | PlainMessage<SaveVaultEntityOwnershipNodeResponse> | undefined, b: SaveVaultEntityOwnershipNodeResponse | PlainMessage<SaveVaultEntityOwnershipNodeResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultEntityOwnershipNodeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessRequest
+ */
+export class VerifyOrRevokeVaultOwnershipAccessRequest extends Message<VerifyOrRevokeVaultOwnershipAccessRequest> {
+  /**
+   * @generated from field: string graph_code = 1;
+   */
+  graphCode = "";
+
+  /**
+   * @generated from field: string collaboration_visibility_and_scope = 2;
+   */
+  collaborationVisibilityAndScope = "";
+
+  /**
+   * @generated from field: string graph_state = 3;
+   */
+  graphState = "";
+
+  constructor(data?: PartialMessage<VerifyOrRevokeVaultOwnershipAccessRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "graph_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "collaboration_visibility_and_scope", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "graph_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrRevokeVaultOwnershipAccessRequest {
+    return new VerifyOrRevokeVaultOwnershipAccessRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultOwnershipAccessRequest {
+    return new VerifyOrRevokeVaultOwnershipAccessRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultOwnershipAccessRequest {
+    return new VerifyOrRevokeVaultOwnershipAccessRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrRevokeVaultOwnershipAccessRequest | PlainMessage<VerifyOrRevokeVaultOwnershipAccessRequest> | undefined, b: VerifyOrRevokeVaultOwnershipAccessRequest | PlainMessage<VerifyOrRevokeVaultOwnershipAccessRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyOrRevokeVaultOwnershipAccessRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse
+ */
+export class VerifyOrRevokeVaultOwnershipAccessResponse extends Message<VerifyOrRevokeVaultOwnershipAccessResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultEntityOwnershipGraphItem graph = 1;
+   */
+  graph?: VaultEntityOwnershipGraphItem;
+
+  constructor(data?: PartialMessage<VerifyOrRevokeVaultOwnershipAccessResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrRevokeVaultOwnershipAccessResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "graph", kind: "message", T: VaultEntityOwnershipGraphItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrRevokeVaultOwnershipAccessResponse {
+    return new VerifyOrRevokeVaultOwnershipAccessResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultOwnershipAccessResponse {
+    return new VerifyOrRevokeVaultOwnershipAccessResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultOwnershipAccessResponse {
+    return new VerifyOrRevokeVaultOwnershipAccessResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrRevokeVaultOwnershipAccessResponse | PlainMessage<VerifyOrRevokeVaultOwnershipAccessResponse> | undefined, b: VerifyOrRevokeVaultOwnershipAccessResponse | PlainMessage<VerifyOrRevokeVaultOwnershipAccessResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyOrRevokeVaultOwnershipAccessResponse, a, b);
+  }
+}
+
+/**
+ * Choice 7 (V6, V16): Private Markets and Document Room
+ *
+ * @generated from message sttattus.vault.v1.VaultPrivateMarketDocRoomItem
+ */
+export class VaultPrivateMarketDocRoomItem extends Message<VaultPrivateMarketDocRoomItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string private_code = 3;
+   */
+  privateCode = "";
+
+  /**
+   * @generated from field: string fund_or_direct_asset_and_valuation = 4;
+   */
+  fundOrDirectAssetAndValuation = "";
+
+  /**
+   * @generated from field: string unfunded_commitment_and_call_ladder = 5;
+   */
+  unfundedCommitmentAndCallLadder = "";
+
+  /**
+   * @generated from field: string extracted_notice_and_citation_region = 6;
+   */
+  extractedNoticeAndCitationRegion = "";
+
+  /**
+   * @generated from field: string room_state = 7;
+   */
+  roomState = "";
+
+  /**
+   * @generated from field: bool unverified_ai_ledger_post_blocked = 8;
+   */
+  unverifiedAiLedgerPostBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultPrivateMarketDocRoomItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultPrivateMarketDocRoomItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "private_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "fund_or_direct_asset_and_valuation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "unfunded_commitment_and_call_ladder", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "extracted_notice_and_citation_region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "unverified_ai_ledger_post_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultPrivateMarketDocRoomItem {
+    return new VaultPrivateMarketDocRoomItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultPrivateMarketDocRoomItem {
+    return new VaultPrivateMarketDocRoomItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultPrivateMarketDocRoomItem {
+    return new VaultPrivateMarketDocRoomItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultPrivateMarketDocRoomItem | PlainMessage<VaultPrivateMarketDocRoomItem> | undefined, b: VaultPrivateMarketDocRoomItem | PlainMessage<VaultPrivateMarketDocRoomItem> | undefined): boolean {
+    return proto3.util.equals(VaultPrivateMarketDocRoomItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchRequest
+ */
+export class GetVaultPrivateMarketDocWorkbenchRequest extends Message<GetVaultPrivateMarketDocWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultPrivateMarketDocWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPrivateMarketDocWorkbenchRequest {
+    return new GetVaultPrivateMarketDocWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPrivateMarketDocWorkbenchRequest {
+    return new GetVaultPrivateMarketDocWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPrivateMarketDocWorkbenchRequest {
+    return new GetVaultPrivateMarketDocWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPrivateMarketDocWorkbenchRequest | PlainMessage<GetVaultPrivateMarketDocWorkbenchRequest> | undefined, b: GetVaultPrivateMarketDocWorkbenchRequest | PlainMessage<GetVaultPrivateMarketDocWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultPrivateMarketDocWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse
+ */
+export class GetVaultPrivateMarketDocWorkbenchResponse extends Message<GetVaultPrivateMarketDocWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultPrivateMarketDocRoomItem rooms = 1;
+   */
+  rooms: VaultPrivateMarketDocRoomItem[] = [];
+
+  /**
+   * @generated from field: bool unverified_ai_ledger_post_blocked = 2;
+   */
+  unverifiedAiLedgerPostBlocked = false;
+
+  /**
+   * @generated from field: string commitment_ladder_and_citation_summary = 3;
+   */
+  commitmentLadderAndCitationSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultPrivateMarketDocWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPrivateMarketDocWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "rooms", kind: "message", T: VaultPrivateMarketDocRoomItem, repeated: true },
+    { no: 2, name: "unverified_ai_ledger_post_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "commitment_ladder_and_citation_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPrivateMarketDocWorkbenchResponse {
+    return new GetVaultPrivateMarketDocWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPrivateMarketDocWorkbenchResponse {
+    return new GetVaultPrivateMarketDocWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPrivateMarketDocWorkbenchResponse {
+    return new GetVaultPrivateMarketDocWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPrivateMarketDocWorkbenchResponse | PlainMessage<GetVaultPrivateMarketDocWorkbenchResponse> | undefined, b: GetVaultPrivateMarketDocWorkbenchResponse | PlainMessage<GetVaultPrivateMarketDocWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultPrivateMarketDocWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPrivateMarketCommitmentRequest
+ */
+export class SaveVaultPrivateMarketCommitmentRequest extends Message<SaveVaultPrivateMarketCommitmentRequest> {
+  /**
+   * @generated from field: string private_code = 1;
+   */
+  privateCode = "";
+
+  /**
+   * @generated from field: string fund_or_direct_asset_and_valuation = 2;
+   */
+  fundOrDirectAssetAndValuation = "";
+
+  /**
+   * @generated from field: string unfunded_commitment_and_call_ladder = 3;
+   */
+  unfundedCommitmentAndCallLadder = "";
+
+  /**
+   * @generated from field: string extracted_notice_and_citation_region = 4;
+   */
+  extractedNoticeAndCitationRegion = "";
+
+  /**
+   * @generated from field: string room_state = 5;
+   */
+  roomState = "";
+
+  constructor(data?: PartialMessage<SaveVaultPrivateMarketCommitmentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPrivateMarketCommitmentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "private_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "fund_or_direct_asset_and_valuation", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "unfunded_commitment_and_call_ladder", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "extracted_notice_and_citation_region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPrivateMarketCommitmentRequest {
+    return new SaveVaultPrivateMarketCommitmentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPrivateMarketCommitmentRequest {
+    return new SaveVaultPrivateMarketCommitmentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPrivateMarketCommitmentRequest {
+    return new SaveVaultPrivateMarketCommitmentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPrivateMarketCommitmentRequest | PlainMessage<SaveVaultPrivateMarketCommitmentRequest> | undefined, b: SaveVaultPrivateMarketCommitmentRequest | PlainMessage<SaveVaultPrivateMarketCommitmentRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPrivateMarketCommitmentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse
+ */
+export class SaveVaultPrivateMarketCommitmentResponse extends Message<SaveVaultPrivateMarketCommitmentResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPrivateMarketDocRoomItem room = 1;
+   */
+  room?: VaultPrivateMarketDocRoomItem;
+
+  constructor(data?: PartialMessage<SaveVaultPrivateMarketCommitmentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultPrivateMarketCommitmentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: VaultPrivateMarketDocRoomItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultPrivateMarketCommitmentResponse {
+    return new SaveVaultPrivateMarketCommitmentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultPrivateMarketCommitmentResponse {
+    return new SaveVaultPrivateMarketCommitmentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultPrivateMarketCommitmentResponse {
+    return new SaveVaultPrivateMarketCommitmentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultPrivateMarketCommitmentResponse | PlainMessage<SaveVaultPrivateMarketCommitmentResponse> | undefined, b: SaveVaultPrivateMarketCommitmentResponse | PlainMessage<SaveVaultPrivateMarketCommitmentResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultPrivateMarketCommitmentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeRequest
+ */
+export class ConfirmOrReconcileVaultCapitalNoticeRequest extends Message<ConfirmOrReconcileVaultCapitalNoticeRequest> {
+  /**
+   * @generated from field: string private_code = 1;
+   */
+  privateCode = "";
+
+  /**
+   * @generated from field: string extracted_notice_and_citation_region = 2;
+   */
+  extractedNoticeAndCitationRegion = "";
+
+  /**
+   * @generated from field: string room_state = 3;
+   */
+  roomState = "";
+
+  constructor(data?: PartialMessage<ConfirmOrReconcileVaultCapitalNoticeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "private_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "extracted_notice_and_citation_region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "room_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmOrReconcileVaultCapitalNoticeRequest {
+    return new ConfirmOrReconcileVaultCapitalNoticeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmOrReconcileVaultCapitalNoticeRequest {
+    return new ConfirmOrReconcileVaultCapitalNoticeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmOrReconcileVaultCapitalNoticeRequest {
+    return new ConfirmOrReconcileVaultCapitalNoticeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmOrReconcileVaultCapitalNoticeRequest | PlainMessage<ConfirmOrReconcileVaultCapitalNoticeRequest> | undefined, b: ConfirmOrReconcileVaultCapitalNoticeRequest | PlainMessage<ConfirmOrReconcileVaultCapitalNoticeRequest> | undefined): boolean {
+    return proto3.util.equals(ConfirmOrReconcileVaultCapitalNoticeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse
+ */
+export class ConfirmOrReconcileVaultCapitalNoticeResponse extends Message<ConfirmOrReconcileVaultCapitalNoticeResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPrivateMarketDocRoomItem room = 1;
+   */
+  room?: VaultPrivateMarketDocRoomItem;
+
+  constructor(data?: PartialMessage<ConfirmOrReconcileVaultCapitalNoticeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ConfirmOrReconcileVaultCapitalNoticeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "room", kind: "message", T: VaultPrivateMarketDocRoomItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConfirmOrReconcileVaultCapitalNoticeResponse {
+    return new ConfirmOrReconcileVaultCapitalNoticeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConfirmOrReconcileVaultCapitalNoticeResponse {
+    return new ConfirmOrReconcileVaultCapitalNoticeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConfirmOrReconcileVaultCapitalNoticeResponse {
+    return new ConfirmOrReconcileVaultCapitalNoticeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ConfirmOrReconcileVaultCapitalNoticeResponse | PlainMessage<ConfirmOrReconcileVaultCapitalNoticeResponse> | undefined, b: ConfirmOrReconcileVaultCapitalNoticeResponse | PlainMessage<ConfirmOrReconcileVaultCapitalNoticeResponse> | undefined): boolean {
+    return proto3.util.equals(ConfirmOrReconcileVaultCapitalNoticeResponse, a, b);
+  }
+}
+
+/**
+ * Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+ *
+ * @generated from message sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem
+ */
+export class VaultTreasuryDebtRiskCoverageItem extends Message<VaultTreasuryDebtRiskCoverageItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string treasury_code = 3;
+   */
+  treasuryCode = "";
+
+  /**
+   * @generated from field: string cash_counterparty_and_debt_covenants = 4;
+   */
+  cashCounterpartyAndDebtCovenants = "";
+
+  /**
+   * @generated from field: string policy_coverage_and_deductible_graph = 5;
+   */
+  policyCoverageAndDeductibleGraph = "";
+
+  /**
+   * @generated from field: string sweep_refinance_or_claim_scenario = 6;
+   */
+  sweepRefinanceOrClaimScenario = "";
+
+  /**
+   * @generated from field: string coverage_state = 7;
+   */
+  coverageState = "";
+
+  /**
+   * @generated from field: bool no_coverage_guarantee_claim_enforced = 8;
+   */
+  noCoverageGuaranteeClaimEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultTreasuryDebtRiskCoverageItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "treasury_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cash_counterparty_and_debt_covenants", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "policy_coverage_and_deductible_graph", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "sweep_refinance_or_claim_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "coverage_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_coverage_guarantee_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultTreasuryDebtRiskCoverageItem {
+    return new VaultTreasuryDebtRiskCoverageItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultTreasuryDebtRiskCoverageItem {
+    return new VaultTreasuryDebtRiskCoverageItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultTreasuryDebtRiskCoverageItem {
+    return new VaultTreasuryDebtRiskCoverageItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultTreasuryDebtRiskCoverageItem | PlainMessage<VaultTreasuryDebtRiskCoverageItem> | undefined, b: VaultTreasuryDebtRiskCoverageItem | PlainMessage<VaultTreasuryDebtRiskCoverageItem> | undefined): boolean {
+    return proto3.util.equals(VaultTreasuryDebtRiskCoverageItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchRequest
+ */
+export class GetVaultTreasuryDebtRiskWorkbenchRequest extends Message<GetVaultTreasuryDebtRiskWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultTreasuryDebtRiskWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultTreasuryDebtRiskWorkbenchRequest {
+    return new GetVaultTreasuryDebtRiskWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultTreasuryDebtRiskWorkbenchRequest {
+    return new GetVaultTreasuryDebtRiskWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultTreasuryDebtRiskWorkbenchRequest {
+    return new GetVaultTreasuryDebtRiskWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultTreasuryDebtRiskWorkbenchRequest | PlainMessage<GetVaultTreasuryDebtRiskWorkbenchRequest> | undefined, b: GetVaultTreasuryDebtRiskWorkbenchRequest | PlainMessage<GetVaultTreasuryDebtRiskWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultTreasuryDebtRiskWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse
+ */
+export class GetVaultTreasuryDebtRiskWorkbenchResponse extends Message<GetVaultTreasuryDebtRiskWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem positions = 1;
+   */
+  positions: VaultTreasuryDebtRiskCoverageItem[] = [];
+
+  /**
+   * @generated from field: bool no_coverage_guarantee_claim_enforced = 2;
+   */
+  noCoverageGuaranteeClaimEnforced = false;
+
+  /**
+   * @generated from field: string treasury_covenant_and_policy_summary = 3;
+   */
+  treasuryCovenantAndPolicySummary = "";
+
+  constructor(data?: PartialMessage<GetVaultTreasuryDebtRiskWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultTreasuryDebtRiskWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "positions", kind: "message", T: VaultTreasuryDebtRiskCoverageItem, repeated: true },
+    { no: 2, name: "no_coverage_guarantee_claim_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "treasury_covenant_and_policy_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultTreasuryDebtRiskWorkbenchResponse {
+    return new GetVaultTreasuryDebtRiskWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultTreasuryDebtRiskWorkbenchResponse {
+    return new GetVaultTreasuryDebtRiskWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultTreasuryDebtRiskWorkbenchResponse {
+    return new GetVaultTreasuryDebtRiskWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultTreasuryDebtRiskWorkbenchResponse | PlainMessage<GetVaultTreasuryDebtRiskWorkbenchResponse> | undefined, b: GetVaultTreasuryDebtRiskWorkbenchResponse | PlainMessage<GetVaultTreasuryDebtRiskWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultTreasuryDebtRiskWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionRequest
+ */
+export class SaveVaultTreasuryDebtRiskPositionRequest extends Message<SaveVaultTreasuryDebtRiskPositionRequest> {
+  /**
+   * @generated from field: string treasury_code = 1;
+   */
+  treasuryCode = "";
+
+  /**
+   * @generated from field: string cash_counterparty_and_debt_covenants = 2;
+   */
+  cashCounterpartyAndDebtCovenants = "";
+
+  /**
+   * @generated from field: string policy_coverage_and_deductible_graph = 3;
+   */
+  policyCoverageAndDeductibleGraph = "";
+
+  /**
+   * @generated from field: string sweep_refinance_or_claim_scenario = 4;
+   */
+  sweepRefinanceOrClaimScenario = "";
+
+  /**
+   * @generated from field: string coverage_state = 5;
+   */
+  coverageState = "";
+
+  constructor(data?: PartialMessage<SaveVaultTreasuryDebtRiskPositionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "treasury_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "cash_counterparty_and_debt_covenants", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "policy_coverage_and_deductible_graph", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "sweep_refinance_or_claim_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "coverage_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultTreasuryDebtRiskPositionRequest {
+    return new SaveVaultTreasuryDebtRiskPositionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultTreasuryDebtRiskPositionRequest {
+    return new SaveVaultTreasuryDebtRiskPositionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultTreasuryDebtRiskPositionRequest {
+    return new SaveVaultTreasuryDebtRiskPositionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultTreasuryDebtRiskPositionRequest | PlainMessage<SaveVaultTreasuryDebtRiskPositionRequest> | undefined, b: SaveVaultTreasuryDebtRiskPositionRequest | PlainMessage<SaveVaultTreasuryDebtRiskPositionRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultTreasuryDebtRiskPositionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse
+ */
+export class SaveVaultTreasuryDebtRiskPositionResponse extends Message<SaveVaultTreasuryDebtRiskPositionResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem position = 1;
+   */
+  position?: VaultTreasuryDebtRiskCoverageItem;
+
+  constructor(data?: PartialMessage<SaveVaultTreasuryDebtRiskPositionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultTreasuryDebtRiskPositionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "position", kind: "message", T: VaultTreasuryDebtRiskCoverageItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultTreasuryDebtRiskPositionResponse {
+    return new SaveVaultTreasuryDebtRiskPositionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultTreasuryDebtRiskPositionResponse {
+    return new SaveVaultTreasuryDebtRiskPositionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultTreasuryDebtRiskPositionResponse {
+    return new SaveVaultTreasuryDebtRiskPositionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultTreasuryDebtRiskPositionResponse | PlainMessage<SaveVaultTreasuryDebtRiskPositionResponse> | undefined, b: SaveVaultTreasuryDebtRiskPositionResponse | PlainMessage<SaveVaultTreasuryDebtRiskPositionResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultTreasuryDebtRiskPositionResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapRequest
+ */
+export class EvaluateOrRouteVaultCoverageGapRequest extends Message<EvaluateOrRouteVaultCoverageGapRequest> {
+  /**
+   * @generated from field: string treasury_code = 1;
+   */
+  treasuryCode = "";
+
+  /**
+   * @generated from field: string sweep_refinance_or_claim_scenario = 2;
+   */
+  sweepRefinanceOrClaimScenario = "";
+
+  /**
+   * @generated from field: string coverage_state = 3;
+   */
+  coverageState = "";
+
+  constructor(data?: PartialMessage<EvaluateOrRouteVaultCoverageGapRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "treasury_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "sweep_refinance_or_claim_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "coverage_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateOrRouteVaultCoverageGapRequest {
+    return new EvaluateOrRouteVaultCoverageGapRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateOrRouteVaultCoverageGapRequest {
+    return new EvaluateOrRouteVaultCoverageGapRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateOrRouteVaultCoverageGapRequest {
+    return new EvaluateOrRouteVaultCoverageGapRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvaluateOrRouteVaultCoverageGapRequest | PlainMessage<EvaluateOrRouteVaultCoverageGapRequest> | undefined, b: EvaluateOrRouteVaultCoverageGapRequest | PlainMessage<EvaluateOrRouteVaultCoverageGapRequest> | undefined): boolean {
+    return proto3.util.equals(EvaluateOrRouteVaultCoverageGapRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse
+ */
+export class EvaluateOrRouteVaultCoverageGapResponse extends Message<EvaluateOrRouteVaultCoverageGapResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultTreasuryDebtRiskCoverageItem position = 1;
+   */
+  position?: VaultTreasuryDebtRiskCoverageItem;
+
+  constructor(data?: PartialMessage<EvaluateOrRouteVaultCoverageGapResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.EvaluateOrRouteVaultCoverageGapResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "position", kind: "message", T: VaultTreasuryDebtRiskCoverageItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateOrRouteVaultCoverageGapResponse {
+    return new EvaluateOrRouteVaultCoverageGapResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateOrRouteVaultCoverageGapResponse {
+    return new EvaluateOrRouteVaultCoverageGapResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateOrRouteVaultCoverageGapResponse {
+    return new EvaluateOrRouteVaultCoverageGapResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EvaluateOrRouteVaultCoverageGapResponse | PlainMessage<EvaluateOrRouteVaultCoverageGapResponse> | undefined, b: EvaluateOrRouteVaultCoverageGapResponse | PlainMessage<EvaluateOrRouteVaultCoverageGapResponse> | undefined): boolean {
+    return proto3.util.equals(EvaluateOrRouteVaultCoverageGapResponse, a, b);
+  }
+}
+
+/**
+ * Choice 9 (V8): Goals and Scenario Engine
+ *
+ * @generated from message sttattus.vault.v1.VaultGoalsScenarioEngineItem
+ */
+export class VaultGoalsScenarioEngineItem extends Message<VaultGoalsScenarioEngineItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string scenario_code = 3;
+   */
+  scenarioCode = "";
+
+  /**
+   * @generated from field: string goal_target_and_assumption_ranges = 4;
+   */
+  goalTargetAndAssumptionRanges = "";
+
+  /**
+   * @generated from field: string deterministic_and_monte_carlo_band = 5;
+   */
+  deterministicAndMonteCarloBand = "";
+
+  /**
+   * @generated from field: string what_changed_and_oracle_handoff = 6;
+   */
+  whatChangedAndOracleHandoff = "";
+
+  /**
+   * @generated from field: string engine_state = 7;
+   */
+  engineState = "";
+
+  /**
+   * @generated from field: bool silent_full_ledger_oracle_access_blocked = 8;
+   */
+  silentFullLedgerOracleAccessBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultGoalsScenarioEngineItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultGoalsScenarioEngineItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "scenario_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "goal_target_and_assumption_ranges", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "deterministic_and_monte_carlo_band", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "what_changed_and_oracle_handoff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "engine_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "silent_full_ledger_oracle_access_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultGoalsScenarioEngineItem {
+    return new VaultGoalsScenarioEngineItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultGoalsScenarioEngineItem {
+    return new VaultGoalsScenarioEngineItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultGoalsScenarioEngineItem {
+    return new VaultGoalsScenarioEngineItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultGoalsScenarioEngineItem | PlainMessage<VaultGoalsScenarioEngineItem> | undefined, b: VaultGoalsScenarioEngineItem | PlainMessage<VaultGoalsScenarioEngineItem> | undefined): boolean {
+    return proto3.util.equals(VaultGoalsScenarioEngineItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchRequest
+ */
+export class GetVaultGoalsScenarioWorkbenchRequest extends Message<GetVaultGoalsScenarioWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultGoalsScenarioWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultGoalsScenarioWorkbenchRequest {
+    return new GetVaultGoalsScenarioWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultGoalsScenarioWorkbenchRequest {
+    return new GetVaultGoalsScenarioWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultGoalsScenarioWorkbenchRequest {
+    return new GetVaultGoalsScenarioWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultGoalsScenarioWorkbenchRequest | PlainMessage<GetVaultGoalsScenarioWorkbenchRequest> | undefined, b: GetVaultGoalsScenarioWorkbenchRequest | PlainMessage<GetVaultGoalsScenarioWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultGoalsScenarioWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse
+ */
+export class GetVaultGoalsScenarioWorkbenchResponse extends Message<GetVaultGoalsScenarioWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultGoalsScenarioEngineItem scenarios = 1;
+   */
+  scenarios: VaultGoalsScenarioEngineItem[] = [];
+
+  /**
+   * @generated from field: bool silent_full_ledger_oracle_access_blocked = 2;
+   */
+  silentFullLedgerOracleAccessBlocked = false;
+
+  /**
+   * @generated from field: string plan_vs_prediction_and_handoff_summary = 3;
+   */
+  planVsPredictionAndHandoffSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultGoalsScenarioWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultGoalsScenarioWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scenarios", kind: "message", T: VaultGoalsScenarioEngineItem, repeated: true },
+    { no: 2, name: "silent_full_ledger_oracle_access_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "plan_vs_prediction_and_handoff_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultGoalsScenarioWorkbenchResponse {
+    return new GetVaultGoalsScenarioWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultGoalsScenarioWorkbenchResponse {
+    return new GetVaultGoalsScenarioWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultGoalsScenarioWorkbenchResponse {
+    return new GetVaultGoalsScenarioWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultGoalsScenarioWorkbenchResponse | PlainMessage<GetVaultGoalsScenarioWorkbenchResponse> | undefined, b: GetVaultGoalsScenarioWorkbenchResponse | PlainMessage<GetVaultGoalsScenarioWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultGoalsScenarioWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultGoalScenarioSnapshotRequest
+ */
+export class SaveVaultGoalScenarioSnapshotRequest extends Message<SaveVaultGoalScenarioSnapshotRequest> {
+  /**
+   * @generated from field: string scenario_code = 1;
+   */
+  scenarioCode = "";
+
+  /**
+   * @generated from field: string goal_target_and_assumption_ranges = 2;
+   */
+  goalTargetAndAssumptionRanges = "";
+
+  /**
+   * @generated from field: string deterministic_and_monte_carlo_band = 3;
+   */
+  deterministicAndMonteCarloBand = "";
+
+  /**
+   * @generated from field: string what_changed_and_oracle_handoff = 4;
+   */
+  whatChangedAndOracleHandoff = "";
+
+  /**
+   * @generated from field: string engine_state = 5;
+   */
+  engineState = "";
+
+  constructor(data?: PartialMessage<SaveVaultGoalScenarioSnapshotRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultGoalScenarioSnapshotRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scenario_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "goal_target_and_assumption_ranges", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "deterministic_and_monte_carlo_band", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "what_changed_and_oracle_handoff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "engine_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultGoalScenarioSnapshotRequest {
+    return new SaveVaultGoalScenarioSnapshotRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultGoalScenarioSnapshotRequest {
+    return new SaveVaultGoalScenarioSnapshotRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultGoalScenarioSnapshotRequest {
+    return new SaveVaultGoalScenarioSnapshotRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultGoalScenarioSnapshotRequest | PlainMessage<SaveVaultGoalScenarioSnapshotRequest> | undefined, b: SaveVaultGoalScenarioSnapshotRequest | PlainMessage<SaveVaultGoalScenarioSnapshotRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultGoalScenarioSnapshotRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse
+ */
+export class SaveVaultGoalScenarioSnapshotResponse extends Message<SaveVaultGoalScenarioSnapshotResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultGoalsScenarioEngineItem scenario = 1;
+   */
+  scenario?: VaultGoalsScenarioEngineItem;
+
+  constructor(data?: PartialMessage<SaveVaultGoalScenarioSnapshotResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultGoalScenarioSnapshotResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scenario", kind: "message", T: VaultGoalsScenarioEngineItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultGoalScenarioSnapshotResponse {
+    return new SaveVaultGoalScenarioSnapshotResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultGoalScenarioSnapshotResponse {
+    return new SaveVaultGoalScenarioSnapshotResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultGoalScenarioSnapshotResponse {
+    return new SaveVaultGoalScenarioSnapshotResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultGoalScenarioSnapshotResponse | PlainMessage<SaveVaultGoalScenarioSnapshotResponse> | undefined, b: SaveVaultGoalScenarioSnapshotResponse | PlainMessage<SaveVaultGoalScenarioSnapshotResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultGoalScenarioSnapshotResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CompareOrHandoffVaultScenarioRequest
+ */
+export class CompareOrHandoffVaultScenarioRequest extends Message<CompareOrHandoffVaultScenarioRequest> {
+  /**
+   * @generated from field: string scenario_code = 1;
+   */
+  scenarioCode = "";
+
+  /**
+   * @generated from field: string what_changed_and_oracle_handoff = 2;
+   */
+  whatChangedAndOracleHandoff = "";
+
+  /**
+   * @generated from field: string engine_state = 3;
+   */
+  engineState = "";
+
+  constructor(data?: PartialMessage<CompareOrHandoffVaultScenarioRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CompareOrHandoffVaultScenarioRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scenario_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "what_changed_and_oracle_handoff", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "engine_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompareOrHandoffVaultScenarioRequest {
+    return new CompareOrHandoffVaultScenarioRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompareOrHandoffVaultScenarioRequest {
+    return new CompareOrHandoffVaultScenarioRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompareOrHandoffVaultScenarioRequest {
+    return new CompareOrHandoffVaultScenarioRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompareOrHandoffVaultScenarioRequest | PlainMessage<CompareOrHandoffVaultScenarioRequest> | undefined, b: CompareOrHandoffVaultScenarioRequest | PlainMessage<CompareOrHandoffVaultScenarioRequest> | undefined): boolean {
+    return proto3.util.equals(CompareOrHandoffVaultScenarioRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse
+ */
+export class CompareOrHandoffVaultScenarioResponse extends Message<CompareOrHandoffVaultScenarioResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultGoalsScenarioEngineItem scenario = 1;
+   */
+  scenario?: VaultGoalsScenarioEngineItem;
+
+  constructor(data?: PartialMessage<CompareOrHandoffVaultScenarioResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.CompareOrHandoffVaultScenarioResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "scenario", kind: "message", T: VaultGoalsScenarioEngineItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompareOrHandoffVaultScenarioResponse {
+    return new CompareOrHandoffVaultScenarioResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompareOrHandoffVaultScenarioResponse {
+    return new CompareOrHandoffVaultScenarioResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompareOrHandoffVaultScenarioResponse {
+    return new CompareOrHandoffVaultScenarioResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CompareOrHandoffVaultScenarioResponse | PlainMessage<CompareOrHandoffVaultScenarioResponse> | undefined, b: CompareOrHandoffVaultScenarioResponse | PlainMessage<CompareOrHandoffVaultScenarioResponse> | undefined): boolean {
+    return proto3.util.equals(CompareOrHandoffVaultScenarioResponse, a, b);
+  }
+}
+
+/**
+ * Choice 10 (V7): Privacy-Preserving Standing Proofs
+ *
+ * @generated from message sttattus.vault.v1.VaultPrivacyStandingProofItem
+ */
+export class VaultPrivacyStandingProofItem extends Message<VaultPrivacyStandingProofItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string proof_code = 3;
+   */
+  proofCode = "";
+
+  /**
+   * @generated from field: string predicate_claim_and_verifier_purpose = 4;
+   */
+  predicateClaimAndVerifierPurpose = "";
+
+  /**
+   * @generated from field: string issuer_signature_expiry_and_nonce = 5;
+   */
+  issuerSignatureExpiryAndNonce = "";
+
+  /**
+   * @generated from field: string offline_revocation_snapshot_window = 6;
+   */
+  offlineRevocationSnapshotWindow = "";
+
+  /**
+   * @generated from field: string proof_state = 7;
+   */
+  proofState = "";
+
+  /**
+   * @generated from field: bool raw_balance_disclosure_blocked = 8;
+   */
+  rawBalanceDisclosureBlocked = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultPrivacyStandingProofItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultPrivacyStandingProofItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "proof_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "predicate_claim_and_verifier_purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "issuer_signature_expiry_and_nonce", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "offline_revocation_snapshot_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "proof_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "raw_balance_disclosure_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultPrivacyStandingProofItem {
+    return new VaultPrivacyStandingProofItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultPrivacyStandingProofItem {
+    return new VaultPrivacyStandingProofItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultPrivacyStandingProofItem {
+    return new VaultPrivacyStandingProofItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultPrivacyStandingProofItem | PlainMessage<VaultPrivacyStandingProofItem> | undefined, b: VaultPrivacyStandingProofItem | PlainMessage<VaultPrivacyStandingProofItem> | undefined): boolean {
+    return proto3.util.equals(VaultPrivacyStandingProofItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchRequest
+ */
+export class GetVaultPrivacyStandingProofWorkbenchRequest extends Message<GetVaultPrivacyStandingProofWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultPrivacyStandingProofWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPrivacyStandingProofWorkbenchRequest {
+    return new GetVaultPrivacyStandingProofWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPrivacyStandingProofWorkbenchRequest {
+    return new GetVaultPrivacyStandingProofWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPrivacyStandingProofWorkbenchRequest {
+    return new GetVaultPrivacyStandingProofWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPrivacyStandingProofWorkbenchRequest | PlainMessage<GetVaultPrivacyStandingProofWorkbenchRequest> | undefined, b: GetVaultPrivacyStandingProofWorkbenchRequest | PlainMessage<GetVaultPrivacyStandingProofWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultPrivacyStandingProofWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse
+ */
+export class GetVaultPrivacyStandingProofWorkbenchResponse extends Message<GetVaultPrivacyStandingProofWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultPrivacyStandingProofItem proofs = 1;
+   */
+  proofs: VaultPrivacyStandingProofItem[] = [];
+
+  /**
+   * @generated from field: bool raw_balance_disclosure_blocked = 2;
+   */
+  rawBalanceDisclosureBlocked = false;
+
+  /**
+   * @generated from field: string server_signed_predicate_and_offline_window_summary = 3;
+   */
+  serverSignedPredicateAndOfflineWindowSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultPrivacyStandingProofWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultPrivacyStandingProofWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proofs", kind: "message", T: VaultPrivacyStandingProofItem, repeated: true },
+    { no: 2, name: "raw_balance_disclosure_blocked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "server_signed_predicate_and_offline_window_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultPrivacyStandingProofWorkbenchResponse {
+    return new GetVaultPrivacyStandingProofWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultPrivacyStandingProofWorkbenchResponse {
+    return new GetVaultPrivacyStandingProofWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultPrivacyStandingProofWorkbenchResponse {
+    return new GetVaultPrivacyStandingProofWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultPrivacyStandingProofWorkbenchResponse | PlainMessage<GetVaultPrivacyStandingProofWorkbenchResponse> | undefined, b: GetVaultPrivacyStandingProofWorkbenchResponse | PlainMessage<GetVaultPrivacyStandingProofWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultPrivacyStandingProofWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.IssueVaultPrivacyStandingProofRequest
+ */
+export class IssueVaultPrivacyStandingProofRequest extends Message<IssueVaultPrivacyStandingProofRequest> {
+  /**
+   * @generated from field: string proof_code = 1;
+   */
+  proofCode = "";
+
+  /**
+   * @generated from field: string predicate_claim_and_verifier_purpose = 2;
+   */
+  predicateClaimAndVerifierPurpose = "";
+
+  /**
+   * @generated from field: string issuer_signature_expiry_and_nonce = 3;
+   */
+  issuerSignatureExpiryAndNonce = "";
+
+  /**
+   * @generated from field: string offline_revocation_snapshot_window = 4;
+   */
+  offlineRevocationSnapshotWindow = "";
+
+  /**
+   * @generated from field: string proof_state = 5;
+   */
+  proofState = "";
+
+  constructor(data?: PartialMessage<IssueVaultPrivacyStandingProofRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.IssueVaultPrivacyStandingProofRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proof_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "predicate_claim_and_verifier_purpose", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "issuer_signature_expiry_and_nonce", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "offline_revocation_snapshot_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "proof_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IssueVaultPrivacyStandingProofRequest {
+    return new IssueVaultPrivacyStandingProofRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IssueVaultPrivacyStandingProofRequest {
+    return new IssueVaultPrivacyStandingProofRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IssueVaultPrivacyStandingProofRequest {
+    return new IssueVaultPrivacyStandingProofRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IssueVaultPrivacyStandingProofRequest | PlainMessage<IssueVaultPrivacyStandingProofRequest> | undefined, b: IssueVaultPrivacyStandingProofRequest | PlainMessage<IssueVaultPrivacyStandingProofRequest> | undefined): boolean {
+    return proto3.util.equals(IssueVaultPrivacyStandingProofRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse
+ */
+export class IssueVaultPrivacyStandingProofResponse extends Message<IssueVaultPrivacyStandingProofResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPrivacyStandingProofItem proof = 1;
+   */
+  proof?: VaultPrivacyStandingProofItem;
+
+  constructor(data?: PartialMessage<IssueVaultPrivacyStandingProofResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.IssueVaultPrivacyStandingProofResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proof", kind: "message", T: VaultPrivacyStandingProofItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IssueVaultPrivacyStandingProofResponse {
+    return new IssueVaultPrivacyStandingProofResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IssueVaultPrivacyStandingProofResponse {
+    return new IssueVaultPrivacyStandingProofResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IssueVaultPrivacyStandingProofResponse {
+    return new IssueVaultPrivacyStandingProofResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: IssueVaultPrivacyStandingProofResponse | PlainMessage<IssueVaultPrivacyStandingProofResponse> | undefined, b: IssueVaultPrivacyStandingProofResponse | PlainMessage<IssueVaultPrivacyStandingProofResponse> | undefined): boolean {
+    return proto3.util.equals(IssueVaultPrivacyStandingProofResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrRevokeVaultStandingProofRequest
+ */
+export class VerifyOrRevokeVaultStandingProofRequest extends Message<VerifyOrRevokeVaultStandingProofRequest> {
+  /**
+   * @generated from field: string proof_code = 1;
+   */
+  proofCode = "";
+
+  /**
+   * @generated from field: string offline_revocation_snapshot_window = 2;
+   */
+  offlineRevocationSnapshotWindow = "";
+
+  /**
+   * @generated from field: string proof_state = 3;
+   */
+  proofState = "";
+
+  constructor(data?: PartialMessage<VerifyOrRevokeVaultStandingProofRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrRevokeVaultStandingProofRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proof_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "offline_revocation_snapshot_window", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "proof_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrRevokeVaultStandingProofRequest {
+    return new VerifyOrRevokeVaultStandingProofRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultStandingProofRequest {
+    return new VerifyOrRevokeVaultStandingProofRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultStandingProofRequest {
+    return new VerifyOrRevokeVaultStandingProofRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrRevokeVaultStandingProofRequest | PlainMessage<VerifyOrRevokeVaultStandingProofRequest> | undefined, b: VerifyOrRevokeVaultStandingProofRequest | PlainMessage<VerifyOrRevokeVaultStandingProofRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyOrRevokeVaultStandingProofRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse
+ */
+export class VerifyOrRevokeVaultStandingProofResponse extends Message<VerifyOrRevokeVaultStandingProofResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultPrivacyStandingProofItem proof = 1;
+   */
+  proof?: VaultPrivacyStandingProofItem;
+
+  constructor(data?: PartialMessage<VerifyOrRevokeVaultStandingProofResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrRevokeVaultStandingProofResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "proof", kind: "message", T: VaultPrivacyStandingProofItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrRevokeVaultStandingProofResponse {
+    return new VerifyOrRevokeVaultStandingProofResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultStandingProofResponse {
+    return new VerifyOrRevokeVaultStandingProofResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrRevokeVaultStandingProofResponse {
+    return new VerifyOrRevokeVaultStandingProofResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrRevokeVaultStandingProofResponse | PlainMessage<VerifyOrRevokeVaultStandingProofResponse> | undefined, b: VerifyOrRevokeVaultStandingProofResponse | PlainMessage<VerifyOrRevokeVaultStandingProofResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyOrRevokeVaultStandingProofResponse, a, b);
+  }
+}
+
+/**
+ * Choice 11 (V9): Advisor and Family-Office Workspace
+ *
+ * @generated from message sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem
+ */
+export class VaultAdvisorFamilyWorkspaceItem extends Message<VaultAdvisorFamilyWorkspaceItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string engagement_code = 3;
+   */
+  engagementCode = "";
+
+  /**
+   * @generated from field: string advisor_credential_and_scope_grant = 4;
+   */
+  advisorCredentialAndScopeGrant = "";
+
+  /**
+   * @generated from field: string watermarked_exchange_and_decisions = 5;
+   */
+  watermarkedExchangeAndDecisions = "";
+
+  /**
+   * @generated from field: string disclosures_conflict_and_fee_record = 6;
+   */
+  disclosuresConflictAndFeeRecord = "";
+
+  /**
+   * @generated from field: string workspace_state = 7;
+   */
+  workspaceState = "";
+
+  /**
+   * @generated from field: bool household_professional_separation_enforced = 8;
+   */
+  householdProfessionalSeparationEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultAdvisorFamilyWorkspaceItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "engagement_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "advisor_credential_and_scope_grant", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "watermarked_exchange_and_decisions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "disclosures_conflict_and_fee_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "household_professional_separation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultAdvisorFamilyWorkspaceItem {
+    return new VaultAdvisorFamilyWorkspaceItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultAdvisorFamilyWorkspaceItem {
+    return new VaultAdvisorFamilyWorkspaceItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultAdvisorFamilyWorkspaceItem {
+    return new VaultAdvisorFamilyWorkspaceItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultAdvisorFamilyWorkspaceItem | PlainMessage<VaultAdvisorFamilyWorkspaceItem> | undefined, b: VaultAdvisorFamilyWorkspaceItem | PlainMessage<VaultAdvisorFamilyWorkspaceItem> | undefined): boolean {
+    return proto3.util.equals(VaultAdvisorFamilyWorkspaceItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchRequest
+ */
+export class GetVaultAdvisorFamilyWorkbenchRequest extends Message<GetVaultAdvisorFamilyWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultAdvisorFamilyWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultAdvisorFamilyWorkbenchRequest {
+    return new GetVaultAdvisorFamilyWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultAdvisorFamilyWorkbenchRequest {
+    return new GetVaultAdvisorFamilyWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultAdvisorFamilyWorkbenchRequest {
+    return new GetVaultAdvisorFamilyWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultAdvisorFamilyWorkbenchRequest | PlainMessage<GetVaultAdvisorFamilyWorkbenchRequest> | undefined, b: GetVaultAdvisorFamilyWorkbenchRequest | PlainMessage<GetVaultAdvisorFamilyWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultAdvisorFamilyWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse
+ */
+export class GetVaultAdvisorFamilyWorkbenchResponse extends Message<GetVaultAdvisorFamilyWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem engagements = 1;
+   */
+  engagements: VaultAdvisorFamilyWorkspaceItem[] = [];
+
+  /**
+   * @generated from field: bool household_professional_separation_enforced = 2;
+   */
+  householdProfessionalSeparationEnforced = false;
+
+  /**
+   * @generated from field: string least_privilege_and_watermark_summary = 3;
+   */
+  leastPrivilegeAndWatermarkSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultAdvisorFamilyWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultAdvisorFamilyWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "engagements", kind: "message", T: VaultAdvisorFamilyWorkspaceItem, repeated: true },
+    { no: 2, name: "household_professional_separation_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "least_privilege_and_watermark_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultAdvisorFamilyWorkbenchResponse {
+    return new GetVaultAdvisorFamilyWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultAdvisorFamilyWorkbenchResponse {
+    return new GetVaultAdvisorFamilyWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultAdvisorFamilyWorkbenchResponse {
+    return new GetVaultAdvisorFamilyWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultAdvisorFamilyWorkbenchResponse | PlainMessage<GetVaultAdvisorFamilyWorkbenchResponse> | undefined, b: GetVaultAdvisorFamilyWorkbenchResponse | PlainMessage<GetVaultAdvisorFamilyWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultAdvisorFamilyWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultAdvisorEngagementScopeRequest
+ */
+export class SaveVaultAdvisorEngagementScopeRequest extends Message<SaveVaultAdvisorEngagementScopeRequest> {
+  /**
+   * @generated from field: string engagement_code = 1;
+   */
+  engagementCode = "";
+
+  /**
+   * @generated from field: string advisor_credential_and_scope_grant = 2;
+   */
+  advisorCredentialAndScopeGrant = "";
+
+  /**
+   * @generated from field: string watermarked_exchange_and_decisions = 3;
+   */
+  watermarkedExchangeAndDecisions = "";
+
+  /**
+   * @generated from field: string disclosures_conflict_and_fee_record = 4;
+   */
+  disclosuresConflictAndFeeRecord = "";
+
+  /**
+   * @generated from field: string workspace_state = 5;
+   */
+  workspaceState = "";
+
+  constructor(data?: PartialMessage<SaveVaultAdvisorEngagementScopeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultAdvisorEngagementScopeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "engagement_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "advisor_credential_and_scope_grant", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "watermarked_exchange_and_decisions", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "disclosures_conflict_and_fee_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultAdvisorEngagementScopeRequest {
+    return new SaveVaultAdvisorEngagementScopeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultAdvisorEngagementScopeRequest {
+    return new SaveVaultAdvisorEngagementScopeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultAdvisorEngagementScopeRequest {
+    return new SaveVaultAdvisorEngagementScopeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultAdvisorEngagementScopeRequest | PlainMessage<SaveVaultAdvisorEngagementScopeRequest> | undefined, b: SaveVaultAdvisorEngagementScopeRequest | PlainMessage<SaveVaultAdvisorEngagementScopeRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultAdvisorEngagementScopeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse
+ */
+export class SaveVaultAdvisorEngagementScopeResponse extends Message<SaveVaultAdvisorEngagementScopeResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem engagement = 1;
+   */
+  engagement?: VaultAdvisorFamilyWorkspaceItem;
+
+  constructor(data?: PartialMessage<SaveVaultAdvisorEngagementScopeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultAdvisorEngagementScopeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "engagement", kind: "message", T: VaultAdvisorFamilyWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultAdvisorEngagementScopeResponse {
+    return new SaveVaultAdvisorEngagementScopeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultAdvisorEngagementScopeResponse {
+    return new SaveVaultAdvisorEngagementScopeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultAdvisorEngagementScopeResponse {
+    return new SaveVaultAdvisorEngagementScopeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultAdvisorEngagementScopeResponse | PlainMessage<SaveVaultAdvisorEngagementScopeResponse> | undefined, b: SaveVaultAdvisorEngagementScopeResponse | PlainMessage<SaveVaultAdvisorEngagementScopeResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultAdvisorEngagementScopeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessRequest
+ */
+export class ApproveOrRevokeVaultAdvisorAccessRequest extends Message<ApproveOrRevokeVaultAdvisorAccessRequest> {
+  /**
+   * @generated from field: string engagement_code = 1;
+   */
+  engagementCode = "";
+
+  /**
+   * @generated from field: string disclosures_conflict_and_fee_record = 2;
+   */
+  disclosuresConflictAndFeeRecord = "";
+
+  /**
+   * @generated from field: string workspace_state = 3;
+   */
+  workspaceState = "";
+
+  constructor(data?: PartialMessage<ApproveOrRevokeVaultAdvisorAccessRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "engagement_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "disclosures_conflict_and_fee_record", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workspace_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrRevokeVaultAdvisorAccessRequest {
+    return new ApproveOrRevokeVaultAdvisorAccessRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrRevokeVaultAdvisorAccessRequest {
+    return new ApproveOrRevokeVaultAdvisorAccessRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrRevokeVaultAdvisorAccessRequest {
+    return new ApproveOrRevokeVaultAdvisorAccessRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrRevokeVaultAdvisorAccessRequest | PlainMessage<ApproveOrRevokeVaultAdvisorAccessRequest> | undefined, b: ApproveOrRevokeVaultAdvisorAccessRequest | PlainMessage<ApproveOrRevokeVaultAdvisorAccessRequest> | undefined): boolean {
+    return proto3.util.equals(ApproveOrRevokeVaultAdvisorAccessRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse
+ */
+export class ApproveOrRevokeVaultAdvisorAccessResponse extends Message<ApproveOrRevokeVaultAdvisorAccessResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultAdvisorFamilyWorkspaceItem engagement = 1;
+   */
+  engagement?: VaultAdvisorFamilyWorkspaceItem;
+
+  constructor(data?: PartialMessage<ApproveOrRevokeVaultAdvisorAccessResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ApproveOrRevokeVaultAdvisorAccessResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "engagement", kind: "message", T: VaultAdvisorFamilyWorkspaceItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveOrRevokeVaultAdvisorAccessResponse {
+    return new ApproveOrRevokeVaultAdvisorAccessResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveOrRevokeVaultAdvisorAccessResponse {
+    return new ApproveOrRevokeVaultAdvisorAccessResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveOrRevokeVaultAdvisorAccessResponse {
+    return new ApproveOrRevokeVaultAdvisorAccessResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ApproveOrRevokeVaultAdvisorAccessResponse | PlainMessage<ApproveOrRevokeVaultAdvisorAccessResponse> | undefined, b: ApproveOrRevokeVaultAdvisorAccessResponse | PlainMessage<ApproveOrRevokeVaultAdvisorAccessResponse> | undefined): boolean {
+    return proto3.util.equals(ApproveOrRevokeVaultAdvisorAccessResponse, a, b);
+  }
+}
+
+/**
+ * Choice 12 (V13): Financial Safety and Fraud Response
+ *
+ * @generated from message sttattus.vault.v1.VaultFinancialSafetyResponseItem
+ */
+export class VaultFinancialSafetyResponseItem extends Message<VaultFinancialSafetyResponseItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string safety_code = 3;
+   */
+  safetyCode = "";
+
+  /**
+   * @generated from field: string signal_observation_and_alt_causes = 4;
+   */
+  signalObservationAndAltCauses = "";
+
+  /**
+   * @generated from field: string guided_institution_and_freeze_steps = 5;
+   */
+  guidedInstitutionAndFreezeSteps = "";
+
+  /**
+   * @generated from field: string evidence_preservation_and_appeal = 6;
+   */
+  evidencePreservationAndAppeal = "";
+
+  /**
+   * @generated from field: string safety_state = 7;
+   */
+  safetyState = "";
+
+  /**
+   * @generated from field: bool no_single_score_auto_lock_enforced = 8;
+   */
+  noSingleScoreAutoLockEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultFinancialSafetyResponseItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultFinancialSafetyResponseItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "safety_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "signal_observation_and_alt_causes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "guided_institution_and_freeze_steps", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "evidence_preservation_and_appeal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "safety_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_single_score_auto_lock_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultFinancialSafetyResponseItem {
+    return new VaultFinancialSafetyResponseItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultFinancialSafetyResponseItem {
+    return new VaultFinancialSafetyResponseItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultFinancialSafetyResponseItem {
+    return new VaultFinancialSafetyResponseItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultFinancialSafetyResponseItem | PlainMessage<VaultFinancialSafetyResponseItem> | undefined, b: VaultFinancialSafetyResponseItem | PlainMessage<VaultFinancialSafetyResponseItem> | undefined): boolean {
+    return proto3.util.equals(VaultFinancialSafetyResponseItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchRequest
+ */
+export class GetVaultFinancialSafetyWorkbenchRequest extends Message<GetVaultFinancialSafetyWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultFinancialSafetyWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialSafetyWorkbenchRequest {
+    return new GetVaultFinancialSafetyWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialSafetyWorkbenchRequest {
+    return new GetVaultFinancialSafetyWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialSafetyWorkbenchRequest {
+    return new GetVaultFinancialSafetyWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialSafetyWorkbenchRequest | PlainMessage<GetVaultFinancialSafetyWorkbenchRequest> | undefined, b: GetVaultFinancialSafetyWorkbenchRequest | PlainMessage<GetVaultFinancialSafetyWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialSafetyWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse
+ */
+export class GetVaultFinancialSafetyWorkbenchResponse extends Message<GetVaultFinancialSafetyWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultFinancialSafetyResponseItem incidents = 1;
+   */
+  incidents: VaultFinancialSafetyResponseItem[] = [];
+
+  /**
+   * @generated from field: bool no_single_score_auto_lock_enforced = 2;
+   */
+  noSingleScoreAutoLockEnforced = false;
+
+  /**
+   * @generated from field: string explainable_signal_and_official_freeze_summary = 3;
+   */
+  explainableSignalAndOfficialFreezeSummary = "";
+
+  constructor(data?: PartialMessage<GetVaultFinancialSafetyWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultFinancialSafetyWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "incidents", kind: "message", T: VaultFinancialSafetyResponseItem, repeated: true },
+    { no: 2, name: "no_single_score_auto_lock_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "explainable_signal_and_official_freeze_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultFinancialSafetyWorkbenchResponse {
+    return new GetVaultFinancialSafetyWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultFinancialSafetyWorkbenchResponse {
+    return new GetVaultFinancialSafetyWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultFinancialSafetyWorkbenchResponse {
+    return new GetVaultFinancialSafetyWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultFinancialSafetyWorkbenchResponse | PlainMessage<GetVaultFinancialSafetyWorkbenchResponse> | undefined, b: GetVaultFinancialSafetyWorkbenchResponse | PlainMessage<GetVaultFinancialSafetyWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultFinancialSafetyWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialSafetyIncidentRequest
+ */
+export class SaveVaultFinancialSafetyIncidentRequest extends Message<SaveVaultFinancialSafetyIncidentRequest> {
+  /**
+   * @generated from field: string safety_code = 1;
+   */
+  safetyCode = "";
+
+  /**
+   * @generated from field: string signal_observation_and_alt_causes = 2;
+   */
+  signalObservationAndAltCauses = "";
+
+  /**
+   * @generated from field: string guided_institution_and_freeze_steps = 3;
+   */
+  guidedInstitutionAndFreezeSteps = "";
+
+  /**
+   * @generated from field: string evidence_preservation_and_appeal = 4;
+   */
+  evidencePreservationAndAppeal = "";
+
+  /**
+   * @generated from field: string safety_state = 5;
+   */
+  safetyState = "";
+
+  constructor(data?: PartialMessage<SaveVaultFinancialSafetyIncidentRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialSafetyIncidentRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "safety_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "signal_observation_and_alt_causes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "guided_institution_and_freeze_steps", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "evidence_preservation_and_appeal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "safety_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialSafetyIncidentRequest {
+    return new SaveVaultFinancialSafetyIncidentRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialSafetyIncidentRequest {
+    return new SaveVaultFinancialSafetyIncidentRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialSafetyIncidentRequest {
+    return new SaveVaultFinancialSafetyIncidentRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialSafetyIncidentRequest | PlainMessage<SaveVaultFinancialSafetyIncidentRequest> | undefined, b: SaveVaultFinancialSafetyIncidentRequest | PlainMessage<SaveVaultFinancialSafetyIncidentRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialSafetyIncidentRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse
+ */
+export class SaveVaultFinancialSafetyIncidentResponse extends Message<SaveVaultFinancialSafetyIncidentResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialSafetyResponseItem incident = 1;
+   */
+  incident?: VaultFinancialSafetyResponseItem;
+
+  constructor(data?: PartialMessage<SaveVaultFinancialSafetyIncidentResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultFinancialSafetyIncidentResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "incident", kind: "message", T: VaultFinancialSafetyResponseItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultFinancialSafetyIncidentResponse {
+    return new SaveVaultFinancialSafetyIncidentResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultFinancialSafetyIncidentResponse {
+    return new SaveVaultFinancialSafetyIncidentResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultFinancialSafetyIncidentResponse {
+    return new SaveVaultFinancialSafetyIncidentResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultFinancialSafetyIncidentResponse | PlainMessage<SaveVaultFinancialSafetyIncidentResponse> | undefined, b: SaveVaultFinancialSafetyIncidentResponse | PlainMessage<SaveVaultFinancialSafetyIncidentResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultFinancialSafetyIncidentResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionRequest
+ */
+export class ExecuteOrAppealVaultSafetyActionRequest extends Message<ExecuteOrAppealVaultSafetyActionRequest> {
+  /**
+   * @generated from field: string safety_code = 1;
+   */
+  safetyCode = "";
+
+  /**
+   * @generated from field: string evidence_preservation_and_appeal = 2;
+   */
+  evidencePreservationAndAppeal = "";
+
+  /**
+   * @generated from field: string safety_state = 3;
+   */
+  safetyState = "";
+
+  constructor(data?: PartialMessage<ExecuteOrAppealVaultSafetyActionRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "safety_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "evidence_preservation_and_appeal", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "safety_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteOrAppealVaultSafetyActionRequest {
+    return new ExecuteOrAppealVaultSafetyActionRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteOrAppealVaultSafetyActionRequest {
+    return new ExecuteOrAppealVaultSafetyActionRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteOrAppealVaultSafetyActionRequest {
+    return new ExecuteOrAppealVaultSafetyActionRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExecuteOrAppealVaultSafetyActionRequest | PlainMessage<ExecuteOrAppealVaultSafetyActionRequest> | undefined, b: ExecuteOrAppealVaultSafetyActionRequest | PlainMessage<ExecuteOrAppealVaultSafetyActionRequest> | undefined): boolean {
+    return proto3.util.equals(ExecuteOrAppealVaultSafetyActionRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse
+ */
+export class ExecuteOrAppealVaultSafetyActionResponse extends Message<ExecuteOrAppealVaultSafetyActionResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultFinancialSafetyResponseItem incident = 1;
+   */
+  incident?: VaultFinancialSafetyResponseItem;
+
+  constructor(data?: PartialMessage<ExecuteOrAppealVaultSafetyActionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.ExecuteOrAppealVaultSafetyActionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "incident", kind: "message", T: VaultFinancialSafetyResponseItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteOrAppealVaultSafetyActionResponse {
+    return new ExecuteOrAppealVaultSafetyActionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteOrAppealVaultSafetyActionResponse {
+    return new ExecuteOrAppealVaultSafetyActionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteOrAppealVaultSafetyActionResponse {
+    return new ExecuteOrAppealVaultSafetyActionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ExecuteOrAppealVaultSafetyActionResponse | PlainMessage<ExecuteOrAppealVaultSafetyActionResponse> | undefined, b: ExecuteOrAppealVaultSafetyActionResponse | PlainMessage<ExecuteOrAppealVaultSafetyActionResponse> | undefined): boolean {
+    return proto3.util.equals(ExecuteOrAppealVaultSafetyActionResponse, a, b);
+  }
+}
+
+/**
+ * Choice 13 (V15): Giving and Impact Ledger
+ *
+ * @generated from message sttattus.vault.v1.VaultGivingImpactLedgerItem
+ */
+export class VaultGivingImpactLedgerItem extends Message<VaultGivingImpactLedgerItem> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId = "";
+
+  /**
+   * @generated from field: string giving_code = 3;
+   */
+  givingCode = "";
+
+  /**
+   * @generated from field: string charity_diligence_and_pledge_terms = 4;
+   */
+  charityDiligenceAndPledgeTerms = "";
+
+  /**
+   * @generated from field: string donation_liquidity_and_tax_scenario = 5;
+   */
+  donationLiquidityAndTaxScenario = "";
+
+  /**
+   * @generated from field: string receipt_restriction_and_outcome_log = 6;
+   */
+  receiptRestrictionAndOutcomeLog = "";
+
+  /**
+   * @generated from field: string ledger_state = 7;
+   */
+  ledgerState = "";
+
+  /**
+   * @generated from field: bool no_performative_leaderboard_enforced = 8;
+   */
+  noPerformativeLeaderboardEnforced = false;
+
+  /**
+   * @generated from field: string updated_at_iso = 9;
+   */
+  updatedAtIso = "";
+
+  constructor(data?: PartialMessage<VaultGivingImpactLedgerItem>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VaultGivingImpactLedgerItem";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "giving_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "charity_diligence_and_pledge_terms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "donation_liquidity_and_tax_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "receipt_restriction_and_outcome_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "ledger_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "no_performative_leaderboard_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "updated_at_iso", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VaultGivingImpactLedgerItem {
+    return new VaultGivingImpactLedgerItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VaultGivingImpactLedgerItem {
+    return new VaultGivingImpactLedgerItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VaultGivingImpactLedgerItem {
+    return new VaultGivingImpactLedgerItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VaultGivingImpactLedgerItem | PlainMessage<VaultGivingImpactLedgerItem> | undefined, b: VaultGivingImpactLedgerItem | PlainMessage<VaultGivingImpactLedgerItem> | undefined): boolean {
+    return proto3.util.equals(VaultGivingImpactLedgerItem, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultGivingImpactWorkbenchRequest
+ */
+export class GetVaultGivingImpactWorkbenchRequest extends Message<GetVaultGivingImpactWorkbenchRequest> {
+  constructor(data?: PartialMessage<GetVaultGivingImpactWorkbenchRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultGivingImpactWorkbenchRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultGivingImpactWorkbenchRequest {
+    return new GetVaultGivingImpactWorkbenchRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultGivingImpactWorkbenchRequest {
+    return new GetVaultGivingImpactWorkbenchRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultGivingImpactWorkbenchRequest {
+    return new GetVaultGivingImpactWorkbenchRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultGivingImpactWorkbenchRequest | PlainMessage<GetVaultGivingImpactWorkbenchRequest> | undefined, b: GetVaultGivingImpactWorkbenchRequest | PlainMessage<GetVaultGivingImpactWorkbenchRequest> | undefined): boolean {
+    return proto3.util.equals(GetVaultGivingImpactWorkbenchRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse
+ */
+export class GetVaultGivingImpactWorkbenchResponse extends Message<GetVaultGivingImpactWorkbenchResponse> {
+  /**
+   * @generated from field: repeated sttattus.vault.v1.VaultGivingImpactLedgerItem pledges = 1;
+   */
+  pledges: VaultGivingImpactLedgerItem[] = [];
+
+  /**
+   * @generated from field: bool no_performative_leaderboard_enforced = 2;
+   */
+  noPerformativeLeaderboardEnforced = false;
+
+  /**
+   * @generated from field: string diligence_receipt_and_privacy_summary = 3;
+   */
+  diligenceReceiptAndPrivacySummary = "";
+
+  constructor(data?: PartialMessage<GetVaultGivingImpactWorkbenchResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.GetVaultGivingImpactWorkbenchResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pledges", kind: "message", T: VaultGivingImpactLedgerItem, repeated: true },
+    { no: 2, name: "no_performative_leaderboard_enforced", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "diligence_receipt_and_privacy_summary", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetVaultGivingImpactWorkbenchResponse {
+    return new GetVaultGivingImpactWorkbenchResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetVaultGivingImpactWorkbenchResponse {
+    return new GetVaultGivingImpactWorkbenchResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetVaultGivingImpactWorkbenchResponse {
+    return new GetVaultGivingImpactWorkbenchResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetVaultGivingImpactWorkbenchResponse | PlainMessage<GetVaultGivingImpactWorkbenchResponse> | undefined, b: GetVaultGivingImpactWorkbenchResponse | PlainMessage<GetVaultGivingImpactWorkbenchResponse> | undefined): boolean {
+    return proto3.util.equals(GetVaultGivingImpactWorkbenchResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultGivingImpactPledgeRequest
+ */
+export class SaveVaultGivingImpactPledgeRequest extends Message<SaveVaultGivingImpactPledgeRequest> {
+  /**
+   * @generated from field: string giving_code = 1;
+   */
+  givingCode = "";
+
+  /**
+   * @generated from field: string charity_diligence_and_pledge_terms = 2;
+   */
+  charityDiligenceAndPledgeTerms = "";
+
+  /**
+   * @generated from field: string donation_liquidity_and_tax_scenario = 3;
+   */
+  donationLiquidityAndTaxScenario = "";
+
+  /**
+   * @generated from field: string receipt_restriction_and_outcome_log = 4;
+   */
+  receiptRestrictionAndOutcomeLog = "";
+
+  /**
+   * @generated from field: string ledger_state = 5;
+   */
+  ledgerState = "";
+
+  constructor(data?: PartialMessage<SaveVaultGivingImpactPledgeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultGivingImpactPledgeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "giving_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "charity_diligence_and_pledge_terms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "donation_liquidity_and_tax_scenario", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "receipt_restriction_and_outcome_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "ledger_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultGivingImpactPledgeRequest {
+    return new SaveVaultGivingImpactPledgeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultGivingImpactPledgeRequest {
+    return new SaveVaultGivingImpactPledgeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultGivingImpactPledgeRequest {
+    return new SaveVaultGivingImpactPledgeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultGivingImpactPledgeRequest | PlainMessage<SaveVaultGivingImpactPledgeRequest> | undefined, b: SaveVaultGivingImpactPledgeRequest | PlainMessage<SaveVaultGivingImpactPledgeRequest> | undefined): boolean {
+    return proto3.util.equals(SaveVaultGivingImpactPledgeRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse
+ */
+export class SaveVaultGivingImpactPledgeResponse extends Message<SaveVaultGivingImpactPledgeResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultGivingImpactLedgerItem pledge = 1;
+   */
+  pledge?: VaultGivingImpactLedgerItem;
+
+  constructor(data?: PartialMessage<SaveVaultGivingImpactPledgeResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.SaveVaultGivingImpactPledgeResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pledge", kind: "message", T: VaultGivingImpactLedgerItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveVaultGivingImpactPledgeResponse {
+    return new SaveVaultGivingImpactPledgeResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveVaultGivingImpactPledgeResponse {
+    return new SaveVaultGivingImpactPledgeResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveVaultGivingImpactPledgeResponse {
+    return new SaveVaultGivingImpactPledgeResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SaveVaultGivingImpactPledgeResponse | PlainMessage<SaveVaultGivingImpactPledgeResponse> | undefined, b: SaveVaultGivingImpactPledgeResponse | PlainMessage<SaveVaultGivingImpactPledgeResponse> | undefined): boolean {
+    return proto3.util.equals(SaveVaultGivingImpactPledgeResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptRequest
+ */
+export class VerifyOrAcknowledgeVaultGiftReceiptRequest extends Message<VerifyOrAcknowledgeVaultGiftReceiptRequest> {
+  /**
+   * @generated from field: string giving_code = 1;
+   */
+  givingCode = "";
+
+  /**
+   * @generated from field: string receipt_restriction_and_outcome_log = 2;
+   */
+  receiptRestrictionAndOutcomeLog = "";
+
+  /**
+   * @generated from field: string ledger_state = 3;
+   */
+  ledgerState = "";
+
+  constructor(data?: PartialMessage<VerifyOrAcknowledgeVaultGiftReceiptRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "giving_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "receipt_restriction_and_outcome_log", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "ledger_state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptRequest {
+    return new VerifyOrAcknowledgeVaultGiftReceiptRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptRequest {
+    return new VerifyOrAcknowledgeVaultGiftReceiptRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptRequest {
+    return new VerifyOrAcknowledgeVaultGiftReceiptRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrAcknowledgeVaultGiftReceiptRequest | PlainMessage<VerifyOrAcknowledgeVaultGiftReceiptRequest> | undefined, b: VerifyOrAcknowledgeVaultGiftReceiptRequest | PlainMessage<VerifyOrAcknowledgeVaultGiftReceiptRequest> | undefined): boolean {
+    return proto3.util.equals(VerifyOrAcknowledgeVaultGiftReceiptRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponse
+ */
+export class VerifyOrAcknowledgeVaultGiftReceiptResponse extends Message<VerifyOrAcknowledgeVaultGiftReceiptResponse> {
+  /**
+   * @generated from field: sttattus.vault.v1.VaultGivingImpactLedgerItem pledge = 1;
+   */
+  pledge?: VaultGivingImpactLedgerItem;
+
+  constructor(data?: PartialMessage<VerifyOrAcknowledgeVaultGiftReceiptResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "sttattus.vault.v1.VerifyOrAcknowledgeVaultGiftReceiptResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "pledge", kind: "message", T: VaultGivingImpactLedgerItem },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptResponse {
+    return new VerifyOrAcknowledgeVaultGiftReceiptResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptResponse {
+    return new VerifyOrAcknowledgeVaultGiftReceiptResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerifyOrAcknowledgeVaultGiftReceiptResponse {
+    return new VerifyOrAcknowledgeVaultGiftReceiptResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: VerifyOrAcknowledgeVaultGiftReceiptResponse | PlainMessage<VerifyOrAcknowledgeVaultGiftReceiptResponse> | undefined, b: VerifyOrAcknowledgeVaultGiftReceiptResponse | PlainMessage<VerifyOrAcknowledgeVaultGiftReceiptResponse> | undefined): boolean {
+    return proto3.util.equals(VerifyOrAcknowledgeVaultGiftReceiptResponse, a, b);
+  }
+}
+

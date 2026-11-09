@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ClaimHandleRequest, ClaimHandleResponse, CreateLoungePassRequest, CreateLoungePassResponse, CreateScoreBadgeRequest, CreateScoreBadgeResponse, GenerateEmpireAlmanacRequest, GenerateEmpireAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierCardRequest, GetTierCardResponse, GetTierLadderRequest, GetTierLadderResponse, GetWalletRequest, GetWalletResponse, GetYearInEmpireRequest, GetYearInEmpireResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMemberDirectoryRequest, ListMemberDirectoryResponse, ListMyAlmanacOrdersRequest, ListMyAlmanacOrdersResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyRedemptionsRequest, ListMyRedemptionsResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListRedemptionItemsRequest, ListRedemptionItemsResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, OrderAlmanacPrintRequest, OrderAlmanacPrintResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RedeemItemRequest, RedeemItemResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RespondInviteRequest, RespondInviteResponse, SendInviteRequest, SendInviteResponse, SetDirectoryVisibilityRequest, SetDirectoryVisibilityResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse } from "./empire_pb.js";
+import { AcknowledgeOrDeleteInboxDispatchRequest, AcknowledgeOrDeleteInboxDispatchResponse, AdminCertifyPolicyDiffOrObserverBoundaryRequest, AdminCertifyPolicyDiffOrObserverBoundaryResponse, AdminListAchievementWalletAuditRequest, AdminListAchievementWalletAuditResponse, AdminListBenefitsMarketplaceAuditRequest, AdminListBenefitsMarketplaceAuditResponse, AdminListCirclesCouncilsAuditRequest, AdminListCirclesCouncilsAuditResponse, AdminListContextualDirectoryAuditRequest, AdminListContextualDirectoryAuditResponse, AdminListContributionLedgerAuditRequest, AdminListContributionLedgerAuditResponse, AdminListEcosystemConciergeAuditRequest, AdminListEcosystemConciergeAuditResponse, AdminListExperienceAccessPassportAuditRequest, AdminListExperienceAccessPassportAuditResponse, AdminListGoalOrchestratorAuditRequest, AdminListGoalOrchestratorAuditResponse, AdminListMemberFeedEditorialAuditRequest, AdminListMemberFeedEditorialAuditResponse, AdminListMemberGovernanceAuditRequest, AdminListMemberGovernanceAuditResponse, AdminListMembershipHouseholdAuditRequest, AdminListMembershipHouseholdAuditResponse, AdminListPersonalReviewNarrativeAuditRequest, AdminListPersonalReviewNarrativeAuditResponse, AdminListStandingConstitutionAuditRequest, AdminListStandingConstitutionAuditResponse, AdminListTwelvePillarTodayAuditRequest, AdminListTwelvePillarTodayAuditResponse, AdminListUnifiedInboxAuditRequest, AdminListUnifiedInboxAuditResponse, AdminManagePrintJobOrAddressPurgeRequest, AdminManagePrintJobOrAddressPurgeResponse, AdminManageRequiredNoticeOrBurstPolicyRequest, AdminManageRequiredNoticeOrBurstPolicyResponse, AdminManageTodayContractOrOutageRequest, AdminManageTodayContractOrOutageResponse, AdminModerateCampaignCapabilityOrHandoffRequest, AdminModerateCampaignCapabilityOrHandoffResponse, AdminModerateCircleSpaceOrDisputeRequest, AdminModerateCircleSpaceOrDisputeResponse, AdminModerateContributionCollusionOrSponsorRequest, AdminModerateContributionCollusionOrSponsorResponse, AdminModerateCredentialOrVerifierAbuseRequest, AdminModerateCredentialOrVerifierAbuseResponse, AdminModerateDirectoryIntroductionAbuseRequest, AdminModerateDirectoryIntroductionAbuseResponse, AdminModerateFeedShareOrEditorialCorrectionRequest, AdminModerateFeedShareOrEditorialCorrectionResponse, AdminReconcileBenefitPointsOrRedemptionRequest, AdminReconcileBenefitPointsOrRedemptionResponse, AdminReconcileExperienceReservationOrAppealRequest, AdminReconcileExperienceReservationOrAppealResponse, AdminResolveConciergeCommitmentOrEscalationRequest, AdminResolveConciergeCommitmentOrEscalationResponse, AdminResolveHardshipOrHouseholdDisputeRequest, AdminResolveHardshipOrHouseholdDisputeResponse, AdminResolveStandingDisputeOrPolicyRequest, AdminResolveStandingDisputeOrPolicyResponse, ApproveOrCompleteCampaignMilestoneRequest, ApproveOrCompleteCampaignMilestoneResponse, ApproveOrEscalateConciergePacketRequest, ApproveOrEscalateConciergePacketResponse, ClaimHandleRequest, ClaimHandleResponse, CreateLoungePassRequest, CreateLoungePassResponse, CreateOrReplanLifeSeasonCampaignRequest, CreateOrReplanLifeSeasonCampaignResponse, CreateOrUpdateCircleCouncilSpaceRequest, CreateOrUpdateCircleCouncilSpaceResponse, CreateOrUpdateConciergeRequestRequest, CreateOrUpdateConciergeRequestResponse, CreateScoreBadgeRequest, CreateScoreBadgeResponse, FileStandingDisputeOrRecomputeRequest, FileStandingDisputeOrRecomputeResponse, GenerateEmpireAlmanacRequest, GenerateEmpireAlmanacResponse, GenerateOrRedactLifeNarrativeReviewRequest, GenerateOrRedactLifeNarrativeReviewResponse, GetAchievementWalletWorkbenchRequest, GetAchievementWalletWorkbenchResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetBenefitsMarketplaceWorkbenchRequest, GetBenefitsMarketplaceWorkbenchResponse, GetCirclesCouncilsWorkbenchRequest, GetCirclesCouncilsWorkbenchResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetContextualDirectoryWorkbenchRequest, GetContextualDirectoryWorkbenchResponse, GetContributionLedgerWorkbenchRequest, GetContributionLedgerWorkbenchResponse, GetEcosystemConciergeWorkbenchRequest, GetEcosystemConciergeWorkbenchResponse, GetExperienceAccessPassportWorkbenchRequest, GetExperienceAccessPassportWorkbenchResponse, GetGoalOrchestratorWorkbenchRequest, GetGoalOrchestratorWorkbenchResponse, GetLatestCloutDropRequest, GetLatestCloutDropResponse, GetLatestEditorialDigestRequest, GetLatestEditorialDigestResponse, GetMemberFeedEditorialWorkbenchRequest, GetMemberFeedEditorialWorkbenchResponse, GetMemberGovernanceAuditWorkbenchRequest, GetMemberGovernanceAuditWorkbenchResponse, GetMembershipHouseholdWorkbenchRequest, GetMembershipHouseholdWorkbenchResponse, GetPersonalReviewNarrativeWorkbenchRequest, GetPersonalReviewNarrativeWorkbenchResponse, GetPublicProfileRequest, GetPublicProfileResponse, GetScoreBreakdownRequest, GetScoreBreakdownResponse, GetStandingConstitutionWorkbenchRequest, GetStandingConstitutionWorkbenchResponse, GetTaxStatementRequest, GetTaxStatementResponse, GetTierCardRequest, GetTierCardResponse, GetTierLadderRequest, GetTierLadderResponse, GetTwelvePillarTodayWorkbenchRequest, GetTwelvePillarTodayWorkbenchResponse, GetUnifiedInboxWorkbenchRequest, GetUnifiedInboxWorkbenchResponse, GetWalletRequest, GetWalletResponse, GetYearInEmpireRequest, GetYearInEmpireResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListEditorialDigestsRequest, ListEditorialDigestsResponse, ListFriendsRequest, ListFriendsResponse, ListLedgerEntriesRequest, ListLedgerEntriesResponse, ListLoungesRequest, ListLoungesResponse, ListMemberDirectoryRequest, ListMemberDirectoryResponse, ListMyAlmanacOrdersRequest, ListMyAlmanacOrdersResponse, ListMyAuditLogRequest, ListMyAuditLogResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyRedemptionsRequest, ListMyRedemptionsResponse, ListNotificationPreferencesRequest, ListNotificationPreferencesResponse, ListRedemptionItemsRequest, ListRedemptionItemsResponse, ListUpcomingLoungeEventsRequest, ListUpcomingLoungeEventsResponse, ListUpcomingSalonsRequest, ListUpcomingSalonsResponse, ManageHouseholdMemberSeatRequest, ManageHouseholdMemberSeatResponse, MintPortableAchievementCredentialRequest, MintPortableAchievementCredentialResponse, OrderAlmanacPrintRequest, OrderAlmanacPrintResponse, OrderOrManagePrintedYearbookArtifactRequest, OrderOrManagePrintedYearbookArtifactResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PreviewOrExecuteMembershipLifecycleActionRequest, PreviewOrExecuteMembershipLifecycleActionResponse, PreviewPublishOrRevokeFeedShareRequest, PreviewPublishOrRevokeFeedShareResponse, QuoteOrRedeemBenefitOfferRequest, QuoteOrRedeemBenefitOfferResponse, RecordCircleArtifactOrCloseSpaceRequest, RecordCircleArtifactOrCloseSpaceResponse, RecordContributionOrGratitudeEndorsementRequest, RecordContributionOrGratitudeEndorsementResponse, RecordEditorialCorrectionOrResetModeRequest, RecordEditorialCorrectionOrResetModeResponse, RecordHostExperienceOperationRequest, RecordHostExperienceOperationResponse, RedeemItemRequest, RedeemItemResponse, RegisterDeviceTokenRequest, RegisterDeviceTokenResponse, RemoveFriendRequest, RemoveFriendResponse, RequestDecisionRemedyOrInspectPrecedentRequest, RequestDecisionRemedyOrInspectPrecedentResponse, RequestOrRespondContextualIntroductionRequest, RequestOrRespondContextualIntroductionResponse, ReserveOrUpdateExperiencePassportItemRequest, ReserveOrUpdateExperiencePassportItemResponse, ResolveCrossPillarConflictRequest, ResolveCrossPillarConflictResponse, RespondInviteRequest, RespondInviteResponse, RevokeOrVerifyPortableCredentialRequest, RevokeOrVerifyPortableCredentialResponse, SendInviteRequest, SendInviteResponse, SetDirectoryVisibilityRequest, SetDirectoryVisibilityResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitAdvisoryPolicyProposalOrVoteRequest, SubmitAdvisoryPolicyProposalOrVoteResponse, UnregisterDeviceTokenRequest, UnregisterDeviceTokenResponse, UpdateCommunicationChannelControlRequest, UpdateCommunicationChannelControlResponse, UpdateContextualDirectoryProfileRequest, UpdateContextualDirectoryProfileResponse, UpdateContributionVisibilityOrCorrectionRequest, UpdateContributionVisibilityOrCorrectionResponse, UpdateNotificationPreferenceRequest, UpdateNotificationPreferenceResponse, UpdatePublicProfileRequest, UpdatePublicProfileResponse, UpdateRedemptionDisputeOrCancelRequest, UpdateRedemptionDisputeOrCancelResponse, UpdateSalonRsvpRequest, UpdateSalonRsvpResponse, UpdateStandingConstitutionModeRequest, UpdateStandingConstitutionModeResponse, UpdateTodayCardDispositionRequest, UpdateTodayCardDispositionResponse, UpdateTodayOperatingModeRequest, UpdateTodayOperatingModeResponse } from "./empire_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -515,6 +515,720 @@ export const EmpireService = {
       name: "GetYearInEmpire",
       I: GetYearInEmpireRequest,
       O: GetYearInEmpireResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 1 (EM1): Transparent Standing Constitution
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetStandingConstitutionWorkbench
+     */
+    getStandingConstitutionWorkbench: {
+      name: "GetStandingConstitutionWorkbench",
+      I: GetStandingConstitutionWorkbenchRequest,
+      O: GetStandingConstitutionWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateStandingConstitutionMode
+     */
+    updateStandingConstitutionMode: {
+      name: "UpdateStandingConstitutionMode",
+      I: UpdateStandingConstitutionModeRequest,
+      O: UpdateStandingConstitutionModeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.FileStandingDisputeOrRecompute
+     */
+    fileStandingDisputeOrRecompute: {
+      name: "FileStandingDisputeOrRecompute",
+      I: FileStandingDisputeOrRecomputeRequest,
+      O: FileStandingDisputeOrRecomputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListStandingConstitutionAudit
+     */
+    adminListStandingConstitutionAudit: {
+      name: "AdminListStandingConstitutionAudit",
+      I: AdminListStandingConstitutionAuditRequest,
+      O: AdminListStandingConstitutionAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminResolveStandingDisputeOrPolicy
+     */
+    adminResolveStandingDisputeOrPolicy: {
+      name: "AdminResolveStandingDisputeOrPolicy",
+      I: AdminResolveStandingDisputeOrPolicyRequest,
+      O: AdminResolveStandingDisputeOrPolicyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (EM2): Twelve-Pillar Today & Action Command Center
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetTwelvePillarTodayWorkbench
+     */
+    getTwelvePillarTodayWorkbench: {
+      name: "GetTwelvePillarTodayWorkbench",
+      I: GetTwelvePillarTodayWorkbenchRequest,
+      O: GetTwelvePillarTodayWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateTodayCardDisposition
+     */
+    updateTodayCardDisposition: {
+      name: "UpdateTodayCardDisposition",
+      I: UpdateTodayCardDispositionRequest,
+      O: UpdateTodayCardDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.ResolveCrossPillarConflict
+     */
+    resolveCrossPillarConflict: {
+      name: "ResolveCrossPillarConflict",
+      I: ResolveCrossPillarConflictRequest,
+      O: ResolveCrossPillarConflictResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateTodayOperatingMode
+     */
+    updateTodayOperatingMode: {
+      name: "UpdateTodayOperatingMode",
+      I: UpdateTodayOperatingModeRequest,
+      O: UpdateTodayOperatingModeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListTwelvePillarTodayAudit
+     */
+    adminListTwelvePillarTodayAudit: {
+      name: "AdminListTwelvePillarTodayAudit",
+      I: AdminListTwelvePillarTodayAuditRequest,
+      O: AdminListTwelvePillarTodayAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminManageTodayContractOrOutage
+     */
+    adminManageTodayContractOrOutage: {
+      name: "AdminManageTodayContractOrOutage",
+      I: AdminManageTodayContractOrOutageRequest,
+      O: AdminManageTodayContractOrOutageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (EM3): Goal & Life-Season Orchestrator
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetGoalOrchestratorWorkbench
+     */
+    getGoalOrchestratorWorkbench: {
+      name: "GetGoalOrchestratorWorkbench",
+      I: GetGoalOrchestratorWorkbenchRequest,
+      O: GetGoalOrchestratorWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.CreateOrReplanLifeSeasonCampaign
+     */
+    createOrReplanLifeSeasonCampaign: {
+      name: "CreateOrReplanLifeSeasonCampaign",
+      I: CreateOrReplanLifeSeasonCampaignRequest,
+      O: CreateOrReplanLifeSeasonCampaignResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.ApproveOrCompleteCampaignMilestone
+     */
+    approveOrCompleteCampaignMilestone: {
+      name: "ApproveOrCompleteCampaignMilestone",
+      I: ApproveOrCompleteCampaignMilestoneRequest,
+      O: ApproveOrCompleteCampaignMilestoneResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListGoalOrchestratorAudit
+     */
+    adminListGoalOrchestratorAudit: {
+      name: "AdminListGoalOrchestratorAudit",
+      I: AdminListGoalOrchestratorAuditRequest,
+      O: AdminListGoalOrchestratorAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateCampaignCapabilityOrHandoff
+     */
+    adminModerateCampaignCapabilityOrHandoff: {
+      name: "AdminModerateCampaignCapabilityOrHandoff",
+      I: AdminModerateCampaignCapabilityOrHandoffRequest,
+      O: AdminModerateCampaignCapabilityOrHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (EM4): Portable Achievement Wallet
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetAchievementWalletWorkbench
+     */
+    getAchievementWalletWorkbench: {
+      name: "GetAchievementWalletWorkbench",
+      I: GetAchievementWalletWorkbenchRequest,
+      O: GetAchievementWalletWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.MintPortableAchievementCredential
+     */
+    mintPortableAchievementCredential: {
+      name: "MintPortableAchievementCredential",
+      I: MintPortableAchievementCredentialRequest,
+      O: MintPortableAchievementCredentialResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RevokeOrVerifyPortableCredential
+     */
+    revokeOrVerifyPortableCredential: {
+      name: "RevokeOrVerifyPortableCredential",
+      I: RevokeOrVerifyPortableCredentialRequest,
+      O: RevokeOrVerifyPortableCredentialResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListAchievementWalletAudit
+     */
+    adminListAchievementWalletAudit: {
+      name: "AdminListAchievementWalletAudit",
+      I: AdminListAchievementWalletAuditRequest,
+      O: AdminListAchievementWalletAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateCredentialOrVerifierAbuse
+     */
+    adminModerateCredentialOrVerifierAbuse: {
+      name: "AdminModerateCredentialOrVerifierAbuse",
+      I: AdminModerateCredentialOrVerifierAbuseRequest,
+      O: AdminModerateCredentialOrVerifierAbuseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (EM5): Contextual Directory & Introductions
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetContextualDirectoryWorkbench
+     */
+    getContextualDirectoryWorkbench: {
+      name: "GetContextualDirectoryWorkbench",
+      I: GetContextualDirectoryWorkbenchRequest,
+      O: GetContextualDirectoryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateContextualDirectoryProfile
+     */
+    updateContextualDirectoryProfile: {
+      name: "UpdateContextualDirectoryProfile",
+      I: UpdateContextualDirectoryProfileRequest,
+      O: UpdateContextualDirectoryProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RequestOrRespondContextualIntroduction
+     */
+    requestOrRespondContextualIntroduction: {
+      name: "RequestOrRespondContextualIntroduction",
+      I: RequestOrRespondContextualIntroductionRequest,
+      O: RequestOrRespondContextualIntroductionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListContextualDirectoryAudit
+     */
+    adminListContextualDirectoryAudit: {
+      name: "AdminListContextualDirectoryAudit",
+      I: AdminListContextualDirectoryAuditRequest,
+      O: AdminListContextualDirectoryAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateDirectoryIntroductionAbuse
+     */
+    adminModerateDirectoryIntroductionAbuse: {
+      name: "AdminModerateDirectoryIntroductionAbuse",
+      I: AdminModerateDirectoryIntroductionAbuseRequest,
+      O: AdminModerateDirectoryIntroductionAbuseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (EM6): Circles, Councils, and Projects
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetCirclesCouncilsWorkbench
+     */
+    getCirclesCouncilsWorkbench: {
+      name: "GetCirclesCouncilsWorkbench",
+      I: GetCirclesCouncilsWorkbenchRequest,
+      O: GetCirclesCouncilsWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.CreateOrUpdateCircleCouncilSpace
+     */
+    createOrUpdateCircleCouncilSpace: {
+      name: "CreateOrUpdateCircleCouncilSpace",
+      I: CreateOrUpdateCircleCouncilSpaceRequest,
+      O: CreateOrUpdateCircleCouncilSpaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RecordCircleArtifactOrCloseSpace
+     */
+    recordCircleArtifactOrCloseSpace: {
+      name: "RecordCircleArtifactOrCloseSpace",
+      I: RecordCircleArtifactOrCloseSpaceRequest,
+      O: RecordCircleArtifactOrCloseSpaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListCirclesCouncilsAudit
+     */
+    adminListCirclesCouncilsAudit: {
+      name: "AdminListCirclesCouncilsAudit",
+      I: AdminListCirclesCouncilsAuditRequest,
+      O: AdminListCirclesCouncilsAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateCircleSpaceOrDispute
+     */
+    adminModerateCircleSpaceOrDispute: {
+      name: "AdminModerateCircleSpaceOrDispute",
+      I: AdminModerateCircleSpaceOrDisputeRequest,
+      O: AdminModerateCircleSpaceOrDisputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (EM7): Experiences & Access Passport
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetExperienceAccessPassportWorkbench
+     */
+    getExperienceAccessPassportWorkbench: {
+      name: "GetExperienceAccessPassportWorkbench",
+      I: GetExperienceAccessPassportWorkbenchRequest,
+      O: GetExperienceAccessPassportWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.ReserveOrUpdateExperiencePassportItem
+     */
+    reserveOrUpdateExperiencePassportItem: {
+      name: "ReserveOrUpdateExperiencePassportItem",
+      I: ReserveOrUpdateExperiencePassportItemRequest,
+      O: ReserveOrUpdateExperiencePassportItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RecordHostExperienceOperation
+     */
+    recordHostExperienceOperation: {
+      name: "RecordHostExperienceOperation",
+      I: RecordHostExperienceOperationRequest,
+      O: RecordHostExperienceOperationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListExperienceAccessPassportAudit
+     */
+    adminListExperienceAccessPassportAudit: {
+      name: "AdminListExperienceAccessPassportAudit",
+      I: AdminListExperienceAccessPassportAuditRequest,
+      O: AdminListExperienceAccessPassportAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminReconcileExperienceReservationOrAppeal
+     */
+    adminReconcileExperienceReservationOrAppeal: {
+      name: "AdminReconcileExperienceReservationOrAppeal",
+      I: AdminReconcileExperienceReservationOrAppealRequest,
+      O: AdminReconcileExperienceReservationOrAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (EM8): Member Feed & Editorial Intelligence
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetMemberFeedEditorialWorkbench
+     */
+    getMemberFeedEditorialWorkbench: {
+      name: "GetMemberFeedEditorialWorkbench",
+      I: GetMemberFeedEditorialWorkbenchRequest,
+      O: GetMemberFeedEditorialWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.PreviewPublishOrRevokeFeedShare
+     */
+    previewPublishOrRevokeFeedShare: {
+      name: "PreviewPublishOrRevokeFeedShare",
+      I: PreviewPublishOrRevokeFeedShareRequest,
+      O: PreviewPublishOrRevokeFeedShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RecordEditorialCorrectionOrResetMode
+     */
+    recordEditorialCorrectionOrResetMode: {
+      name: "RecordEditorialCorrectionOrResetMode",
+      I: RecordEditorialCorrectionOrResetModeRequest,
+      O: RecordEditorialCorrectionOrResetModeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListMemberFeedEditorialAudit
+     */
+    adminListMemberFeedEditorialAudit: {
+      name: "AdminListMemberFeedEditorialAudit",
+      I: AdminListMemberFeedEditorialAuditRequest,
+      O: AdminListMemberFeedEditorialAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateFeedShareOrEditorialCorrection
+     */
+    adminModerateFeedShareOrEditorialCorrection: {
+      name: "AdminModerateFeedShareOrEditorialCorrection",
+      I: AdminModerateFeedShareOrEditorialCorrectionRequest,
+      O: AdminModerateFeedShareOrEditorialCorrectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (EM9): Contribution & Gratitude Ledger
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetContributionLedgerWorkbench
+     */
+    getContributionLedgerWorkbench: {
+      name: "GetContributionLedgerWorkbench",
+      I: GetContributionLedgerWorkbenchRequest,
+      O: GetContributionLedgerWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RecordContributionOrGratitudeEndorsement
+     */
+    recordContributionOrGratitudeEndorsement: {
+      name: "RecordContributionOrGratitudeEndorsement",
+      I: RecordContributionOrGratitudeEndorsementRequest,
+      O: RecordContributionOrGratitudeEndorsementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateContributionVisibilityOrCorrection
+     */
+    updateContributionVisibilityOrCorrection: {
+      name: "UpdateContributionVisibilityOrCorrection",
+      I: UpdateContributionVisibilityOrCorrectionRequest,
+      O: UpdateContributionVisibilityOrCorrectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListContributionLedgerAudit
+     */
+    adminListContributionLedgerAudit: {
+      name: "AdminListContributionLedgerAudit",
+      I: AdminListContributionLedgerAuditRequest,
+      O: AdminListContributionLedgerAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminModerateContributionCollusionOrSponsor
+     */
+    adminModerateContributionCollusionOrSponsor: {
+      name: "AdminModerateContributionCollusionOrSponsor",
+      I: AdminModerateContributionCollusionOrSponsorRequest,
+      O: AdminModerateContributionCollusionOrSponsorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (EM10): Benefits & Redemption Marketplace
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetBenefitsMarketplaceWorkbench
+     */
+    getBenefitsMarketplaceWorkbench: {
+      name: "GetBenefitsMarketplaceWorkbench",
+      I: GetBenefitsMarketplaceWorkbenchRequest,
+      O: GetBenefitsMarketplaceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.QuoteOrRedeemBenefitOffer
+     */
+    quoteOrRedeemBenefitOffer: {
+      name: "QuoteOrRedeemBenefitOffer",
+      I: QuoteOrRedeemBenefitOfferRequest,
+      O: QuoteOrRedeemBenefitOfferResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateRedemptionDisputeOrCancel
+     */
+    updateRedemptionDisputeOrCancel: {
+      name: "UpdateRedemptionDisputeOrCancel",
+      I: UpdateRedemptionDisputeOrCancelRequest,
+      O: UpdateRedemptionDisputeOrCancelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListBenefitsMarketplaceAudit
+     */
+    adminListBenefitsMarketplaceAudit: {
+      name: "AdminListBenefitsMarketplaceAudit",
+      I: AdminListBenefitsMarketplaceAuditRequest,
+      O: AdminListBenefitsMarketplaceAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminReconcileBenefitPointsOrRedemption
+     */
+    adminReconcileBenefitPointsOrRedemption: {
+      name: "AdminReconcileBenefitPointsOrRedemption",
+      I: AdminReconcileBenefitPointsOrRedemptionRequest,
+      O: AdminReconcileBenefitPointsOrRedemptionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (EM11): Membership & Household Center
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetMembershipHouseholdWorkbench
+     */
+    getMembershipHouseholdWorkbench: {
+      name: "GetMembershipHouseholdWorkbench",
+      I: GetMembershipHouseholdWorkbenchRequest,
+      O: GetMembershipHouseholdWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.PreviewOrExecuteMembershipLifecycleAction
+     */
+    previewOrExecuteMembershipLifecycleAction: {
+      name: "PreviewOrExecuteMembershipLifecycleAction",
+      I: PreviewOrExecuteMembershipLifecycleActionRequest,
+      O: PreviewOrExecuteMembershipLifecycleActionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.ManageHouseholdMemberSeat
+     */
+    manageHouseholdMemberSeat: {
+      name: "ManageHouseholdMemberSeat",
+      I: ManageHouseholdMemberSeatRequest,
+      O: ManageHouseholdMemberSeatResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListMembershipHouseholdAudit
+     */
+    adminListMembershipHouseholdAudit: {
+      name: "AdminListMembershipHouseholdAudit",
+      I: AdminListMembershipHouseholdAuditRequest,
+      O: AdminListMembershipHouseholdAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminResolveHardshipOrHouseholdDispute
+     */
+    adminResolveHardshipOrHouseholdDispute: {
+      name: "AdminResolveHardshipOrHouseholdDispute",
+      I: AdminResolveHardshipOrHouseholdDisputeRequest,
+      O: AdminResolveHardshipOrHouseholdDisputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 12 (EM12): Unified Inbox & Communication Control
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetUnifiedInboxWorkbench
+     */
+    getUnifiedInboxWorkbench: {
+      name: "GetUnifiedInboxWorkbench",
+      I: GetUnifiedInboxWorkbenchRequest,
+      O: GetUnifiedInboxWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.UpdateCommunicationChannelControl
+     */
+    updateCommunicationChannelControl: {
+      name: "UpdateCommunicationChannelControl",
+      I: UpdateCommunicationChannelControlRequest,
+      O: UpdateCommunicationChannelControlResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AcknowledgeOrDeleteInboxDispatch
+     */
+    acknowledgeOrDeleteInboxDispatch: {
+      name: "AcknowledgeOrDeleteInboxDispatch",
+      I: AcknowledgeOrDeleteInboxDispatchRequest,
+      O: AcknowledgeOrDeleteInboxDispatchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListUnifiedInboxAudit
+     */
+    adminListUnifiedInboxAudit: {
+      name: "AdminListUnifiedInboxAudit",
+      I: AdminListUnifiedInboxAuditRequest,
+      O: AdminListUnifiedInboxAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminManageRequiredNoticeOrBurstPolicy
+     */
+    adminManageRequiredNoticeOrBurstPolicy: {
+      name: "AdminManageRequiredNoticeOrBurstPolicy",
+      I: AdminManageRequiredNoticeOrBurstPolicyRequest,
+      O: AdminManageRequiredNoticeOrBurstPolicyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 13 (EM13): Ecosystem Concierge
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetEcosystemConciergeWorkbench
+     */
+    getEcosystemConciergeWorkbench: {
+      name: "GetEcosystemConciergeWorkbench",
+      I: GetEcosystemConciergeWorkbenchRequest,
+      O: GetEcosystemConciergeWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.CreateOrUpdateConciergeRequest
+     */
+    createOrUpdateConciergeRequest: {
+      name: "CreateOrUpdateConciergeRequest",
+      I: CreateOrUpdateConciergeRequestRequest,
+      O: CreateOrUpdateConciergeRequestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.ApproveOrEscalateConciergePacket
+     */
+    approveOrEscalateConciergePacket: {
+      name: "ApproveOrEscalateConciergePacket",
+      I: ApproveOrEscalateConciergePacketRequest,
+      O: ApproveOrEscalateConciergePacketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListEcosystemConciergeAudit
+     */
+    adminListEcosystemConciergeAudit: {
+      name: "AdminListEcosystemConciergeAudit",
+      I: AdminListEcosystemConciergeAuditRequest,
+      O: AdminListEcosystemConciergeAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminResolveConciergeCommitmentOrEscalation
+     */
+    adminResolveConciergeCommitmentOrEscalation: {
+      name: "AdminResolveConciergeCommitmentOrEscalation",
+      I: AdminResolveConciergeCommitmentOrEscalationRequest,
+      O: AdminResolveConciergeCommitmentOrEscalationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 14 (EM14): Personal Review & Life Narrative
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetPersonalReviewNarrativeWorkbench
+     */
+    getPersonalReviewNarrativeWorkbench: {
+      name: "GetPersonalReviewNarrativeWorkbench",
+      I: GetPersonalReviewNarrativeWorkbenchRequest,
+      O: GetPersonalReviewNarrativeWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.GenerateOrRedactLifeNarrativeReview
+     */
+    generateOrRedactLifeNarrativeReview: {
+      name: "GenerateOrRedactLifeNarrativeReview",
+      I: GenerateOrRedactLifeNarrativeReviewRequest,
+      O: GenerateOrRedactLifeNarrativeReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.OrderOrManagePrintedYearbookArtifact
+     */
+    orderOrManagePrintedYearbookArtifact: {
+      name: "OrderOrManagePrintedYearbookArtifact",
+      I: OrderOrManagePrintedYearbookArtifactRequest,
+      O: OrderOrManagePrintedYearbookArtifactResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListPersonalReviewNarrativeAudit
+     */
+    adminListPersonalReviewNarrativeAudit: {
+      name: "AdminListPersonalReviewNarrativeAudit",
+      I: AdminListPersonalReviewNarrativeAuditRequest,
+      O: AdminListPersonalReviewNarrativeAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminManagePrintJobOrAddressPurge
+     */
+    adminManagePrintJobOrAddressPurge: {
+      name: "AdminManagePrintJobOrAddressPurge",
+      I: AdminManagePrintJobOrAddressPurgeRequest,
+      O: AdminManagePrintJobOrAddressPurgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 15 (EM15): Member Governance & Independent Audit
+     *
+     * @generated from rpc sttattus.empire.v1.EmpireService.GetMemberGovernanceAuditWorkbench
+     */
+    getMemberGovernanceAuditWorkbench: {
+      name: "GetMemberGovernanceAuditWorkbench",
+      I: GetMemberGovernanceAuditWorkbenchRequest,
+      O: GetMemberGovernanceAuditWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.SubmitAdvisoryPolicyProposalOrVote
+     */
+    submitAdvisoryPolicyProposalOrVote: {
+      name: "SubmitAdvisoryPolicyProposalOrVote",
+      I: SubmitAdvisoryPolicyProposalOrVoteRequest,
+      O: SubmitAdvisoryPolicyProposalOrVoteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.RequestDecisionRemedyOrInspectPrecedent
+     */
+    requestDecisionRemedyOrInspectPrecedent: {
+      name: "RequestDecisionRemedyOrInspectPrecedent",
+      I: RequestDecisionRemedyOrInspectPrecedentRequest,
+      O: RequestDecisionRemedyOrInspectPrecedentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminListMemberGovernanceAudit
+     */
+    adminListMemberGovernanceAudit: {
+      name: "AdminListMemberGovernanceAudit",
+      I: AdminListMemberGovernanceAuditRequest,
+      O: AdminListMemberGovernanceAuditResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.empire.v1.EmpireService.AdminCertifyPolicyDiffOrObserverBoundary
+     */
+    adminCertifyPolicyDiffOrObserverBoundary: {
+      name: "AdminCertifyPolicyDiffOrObserverBoundary",
+      I: AdminCertifyPolicyDiffOrObserverBoundaryRequest,
+      O: AdminCertifyPolicyDiffOrObserverBoundaryResponse,
       kind: MethodKind.Unary,
     },
   }

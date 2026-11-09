@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddUserEquipmentRequest, AddUserEquipmentResponse, AnalyzeFormVideoRequest, AnalyzeFormVideoResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateAthleteShareRequest, CreateAthleteShareResponse, CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateRivalryRequest, CreateRivalryResponse, CreateSessionRequest, CreateSessionResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, DeleteUserEquipmentRequest, DeleteUserEquipmentResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, GenerateForgeAlmanacRequest, GenerateForgeAlmanacResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCoachThreadRequest, GetCoachThreadResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetForgeAnalyticsRequest, GetForgeAnalyticsResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetLeaderboardRequest, GetLeaderboardResponse, GetProgrammeRequest, GetProgrammeResponse, GetProgrammeWeekRequest, GetProgrammeWeekResponse, GetRankLadderRequest, GetRankLadderResponse, GetRecoveryScoreRequest, GetRecoveryScoreResponse, GetRivalryDetailRequest, GetRivalryDetailResponse, GetSessionAnalyticsRequest, GetSessionAnalyticsResponse, GetSessionRequest, GetSessionResponse, GetTodayRequest, GetTodayResponse, GetWorkoutRequest, GetWorkoutResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListCoachesRequest, ListCoachesResponse, ListExercisesRequest, ListExercisesResponse, ListForgeLoungesRequest, ListForgeLoungesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyAthleteSharesRequest, ListMyAthleteSharesResponse, ListMyCoachThreadsRequest, ListMyCoachThreadsResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListProgrammeWeeksRequest, ListProgrammeWeeksResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListUserEquipmentRequest, ListUserEquipmentResponse, ListWorkoutRivalriesRequest, ListWorkoutRivalriesResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogSetRequest, LogSetResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, PostCoachMessageRequest, PostCoachMessageResponse, RequestCoachBookingRequest, RequestCoachBookingResponse, RevokeAthleteShareRequest, RevokeAthleteShareResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SimulateForgeRankRequest, SimulateForgeRankResponse, StartCoachThreadRequest, StartCoachThreadResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse } from "./workout_pb.js";
+import { AddUserEquipmentRequest, AddUserEquipmentResponse, AdjudicateCrewAntiCheatCaseRequest, AdjudicateCrewAntiCheatCaseResponse, AdvanceReturnToTrainingStageRequest, AdvanceReturnToTrainingStageResponse, AnalyzeFormVideoRequest, AnalyzeFormVideoResponse, AuditHybridLoadDeDuplicationRequest, AuditHybridLoadDeDuplicationResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CertifyOfflineMultimodalSyncStateRequest, CertifyOfflineMultimodalSyncStateResponse, ClearInjuryRestrictionLockRequest, ClearInjuryRestrictionLockResponse, ConfigureHybridInterferenceScheduleRequest, ConfigureHybridInterferenceScheduleResponse, ConfigureRecoverySensorStreamRequest, ConfigureRecoverySensorStreamResponse, CreateAthleteShareRequest, CreateAthleteShareResponse, CreateBodyCompositionRequest, CreateBodyCompositionResponse, CreateFormVideoRequest, CreateFormVideoResponse, CreateInjuryRequest, CreateInjuryResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateRivalryRequest, CreateRivalryResponse, CreateSessionRequest, CreateSessionResponse, CreateTrainingNOf1ExperimentRequest, CreateTrainingNOf1ExperimentResponse, DecideCoachFormReviewRequest, DecideCoachFormReviewResponse, DecideProgrammeDraftAcceptanceRequest, DecideProgrammeDraftAcceptanceResponse, DeleteBodyCompositionRequest, DeleteBodyCompositionResponse, DeleteFormVideoRequest, DeleteFormVideoResponse, DeleteInjuryRequest, DeleteInjuryResponse, DeleteMobilityBaselineRequest, DeleteMobilityBaselineResponse, DeleteUserEquipmentRequest, DeleteUserEquipmentResponse, EnrolInProgrammeRequest, EnrolInProgrammeResponse, EraseFormClipAndKeypointsRequest, EraseFormClipAndKeypointsResponse, EscalateFormClipToCoachRequest, EscalateFormClipToCoachResponse, EscalateWeightCutToProfessionalRouteRequest, EscalateWeightCutToProfessionalRouteResponse, EvaluateTrainingNOf1ExperimentRequest, EvaluateTrainingNOf1ExperimentResponse, EvaluateWeightClassSafetyPlanRequest, EvaluateWeightClassSafetyPlanResponse, FilePerformanceResultAppealRequest, FilePerformanceResultAppealResponse, FlagFacilityMaintenanceOrIncidentRequest, FlagFacilityMaintenanceOrIncidentResponse, FlagStaleGymVenueListingRequest, FlagStaleGymVenueListingResponse, GenerateForgeAlmanacRequest, GenerateForgeAlmanacResponse, GenerateOrUpdateProgrammeVersionRequest, GenerateOrUpdateProgrammeVersionResponse, GenerateTravelWorkoutAdaptationRequest, GenerateTravelWorkoutAdaptationResponse, GetActiveEnrolmentRequest, GetActiveEnrolmentResponse, GetActiveSessionRequest, GetActiveSessionResponse, GetAdaptiveProgrammingOverviewRequest, GetAdaptiveProgrammingOverviewResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCoachOsCollaborationOverviewRequest, GetCoachOsCollaborationOverviewResponse, GetCoachThreadRequest, GetCoachThreadResponse, GetCompetitionVerifiedPerformanceOverviewRequest, GetCompetitionVerifiedPerformanceOverviewResponse, GetCurrentMobilityBaselineRequest, GetCurrentMobilityBaselineResponse, GetEquipmentTravelAdaptationOverviewRequest, GetEquipmentTravelAdaptationOverviewResponse, GetForgeAnalyticsRequest, GetForgeAnalyticsResponse, GetForgeStatsRequest, GetForgeStatsResponse, GetForgeStreakRequest, GetForgeStreakResponse, GetFormIntelligenceOverviewRequest, GetFormIntelligenceOverviewResponse, GetFuelWeightSafetyOverviewRequest, GetFuelWeightSafetyOverviewResponse, GetHealthyCompetitionCrewsOverviewRequest, GetHealthyCompetitionCrewsOverviewResponse, GetInjuryReturnPathwayOverviewRequest, GetInjuryReturnPathwayOverviewResponse, GetLeaderboardRequest, GetLeaderboardResponse, GetMovementIntelligenceOverviewRequest, GetMovementIntelligenceOverviewResponse, GetOfflineAccessibleReleaseCertOverviewRequest, GetOfflineAccessibleReleaseCertOverviewResponse, GetPerformanceAnalyticsStudioOverviewRequest, GetPerformanceAnalyticsStudioOverviewResponse, GetProgrammeRequest, GetProgrammeResponse, GetProgrammeWeekRequest, GetProgrammeWeekResponse, GetRankLadderRequest, GetRankLadderResponse, GetRecoveryScoreRequest, GetRecoveryScoreResponse, GetRivalryDetailRequest, GetRivalryDetailResponse, GetSessionAnalyticsRequest, GetSessionAnalyticsResponse, GetSessionRequest, GetSessionResponse, GetSportHybridStudiosOverviewRequest, GetSportHybridStudiosOverviewResponse, GetTeamsClubsFacilitiesOverviewRequest, GetTeamsClubsFacilitiesOverviewResponse, GetTodayRequest, GetTodayResponse, GetWearableRecoveryFusionOverviewRequest, GetWearableRecoveryFusionOverviewResponse, GetWorkoutRequest, GetWorkoutResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListBodyCompositionsRequest, ListBodyCompositionsResponse, ListCoachesRequest, ListCoachesResponse, ListExercisesRequest, ListExercisesResponse, ListForgeLoungesRequest, ListForgeLoungesResponse, ListHistoryRequest, ListHistoryResponse, ListInjuriesRequest, ListInjuriesResponse, ListMobilityBaselinesRequest, ListMobilityBaselinesResponse, ListMyAthleteSharesRequest, ListMyAthleteSharesResponse, ListMyCoachThreadsRequest, ListMyCoachThreadsResponse, ListMyEnrolmentsRequest, ListMyEnrolmentsResponse, ListMyFormVideosRequest, ListMyFormVideosResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPRsRequest, ListMyPRsResponse, ListProgrammesRequest, ListProgrammesResponse, ListProgrammeWeeksRequest, ListProgrammeWeeksResponse, ListRecentPRsRequest, ListRecentPRsResponse, ListSensorConnectionsRequest, ListSensorConnectionsResponse, ListSessionsRequest, ListSessionsResponse, ListUserEquipmentRequest, ListUserEquipmentResponse, ListWorkoutRivalriesRequest, ListWorkoutRivalriesResponse, ListWorkoutsRequest, ListWorkoutsResponse, LogDayWorkoutRequest, LogDayWorkoutResponse, LogInSessionPainTriageEventRequest, LogInSessionPainTriageEventResponse, LogSetRequest, LogSetResponse, LogSportSkillOrManualActivitySessionRequest, LogSportSkillOrManualActivitySessionResponse, LogTrainingNOf1ExperimentSessionRequest, LogTrainingNOf1ExperimentSessionResponse, MarkSensorSyncedRequest, MarkSensorSyncedResponse, PostCoachMessageRequest, PostCoachMessageResponse, ProposeCoachProgrammeChangeRequest, ProposeCoachProgrammeChangeResponse, RankIntentPreservingSubstitutionsRequest, RankIntentPreservingSubstitutionsResponse, ReconcileSensorConflictOrOutageRequest, ReconcileSensorConflictOrOutageResponse, RecordCompetitionRuleAndTueCheckRequest, RecordCompetitionRuleAndTueCheckResponse, RecordEmpireRewardContributionRequest, RecordEmpireRewardContributionResponse, RecordPerformanceExposureLedgerRequest, RecordPerformanceExposureLedgerResponse, RecordPrivateBodyCompositionTrendRequest, RecordPrivateBodyCompositionTrendResponse, RecordReturnToTrainingSetbackRequest, RecordReturnToTrainingSetbackResponse, RecordSubstitutionSelectionRequest, RecordSubstitutionSelectionResponse, RegisterCustomManualUnvalidatedSportRequest, RegisterCustomManualUnvalidatedSportResponse, RequestCoachBookingRequest, RequestCoachBookingResponse, ReserveOrUpdateFacilityRackStationRequest, ReserveOrUpdateFacilityRackStationResponse, RespondToCoachChangeProposalRequest, RespondToCoachChangeProposalResponse, RevertTravelWorkoutToHomeGymRequest, RevertTravelWorkoutToHomeGymResponse, RevokeAthleteShareRequest, RevokeAthleteShareResponse, RevokeCoachAthleteScopedGrantRequest, RevokeCoachAthleteScopedGrantResponse, RevokeWearablePurposeGrantRequest, RevokeWearablePurposeGrantResponse, RollbackProgrammeVersionRequest, RollbackProgrammeVersionResponse, RunMigrationAndErasureCertificationRequest, RunMigrationAndErasureCertificationResponse, SetSensorConnectionStatusRequest, SetSensorConnectionStatusResponse, SetSensorPriorityRequest, SetSensorPriorityResponse, SignOffForge16Of16ReleaseGateRequest, SignOffForge16Of16ReleaseGateResponse, SimulateForgeRankRequest, SimulateForgeRankResponse, StartCoachThreadRequest, StartCoachThreadResponse, SubmitCrewChallengeOrAppealRequest, SubmitCrewChallengeOrAppealResponse, SubmitCustomMovementForReviewRequest, SubmitCustomMovementForReviewResponse, SubmitFeedbackRequest, SubmitFeedbackResponse, SubmitFormClipObservationRequest, SubmitFormClipObservationResponse, SubmitNoWearableSubjectiveReadinessRequest, SubmitNoWearableSubjectiveReadinessResponse, SubmitTeamTrafficLightCheckinRequest, SubmitTeamTrafficLightCheckinResponse, SubmitVerifiedPerformanceResultRequest, SubmitVerifiedPerformanceResultResponse, ToggleCompetitionMutePreferenceRequest, ToggleCompetitionMutePreferenceResponse, ToggleOfflineVenueCompetitionModeRequest, ToggleOfflineVenueCompetitionModeResponse, TriggerSafeAdaptiveReplanRequest, TriggerSafeAdaptiveReplanResponse, UpdateCoachMarketplaceEngagementRequest, UpdateCoachMarketplaceEngagementResponse, UpdateEnrolmentRequest, UpdateEnrolmentResponse, UpdateFormPrivacyAndRetentionRequest, UpdateFormPrivacyAndRetentionResponse, UpdateFormVideoStatusRequest, UpdateFormVideoStatusResponse, UpdateInjuryStatusRequest, UpdateInjuryStatusResponse, UpdateSessionStatusRequest, UpdateSessionStatusResponse, UpsertAccessibilityAdaptiveProfileRequest, UpsertAccessibilityAdaptiveProfileResponse, UpsertAdaptiveProgressionRuleRequest, UpsertAdaptiveProgressionRuleResponse, UpsertCoachAthleteScopedGrantRequest, UpsertCoachAthleteScopedGrantResponse, UpsertCompetitionEventPlanRequest, UpsertCompetitionEventPlanResponse, UpsertEquipmentLocationProfileRequest, UpsertEquipmentLocationProfileResponse, UpsertHealthyCompetitionCohortRequest, UpsertHealthyCompetitionCohortResponse, UpsertInjuryRestrictionLockRequest, UpsertInjuryRestrictionLockResponse, UpsertMobilityBaselineRequest, UpsertMobilityBaselineResponse, UpsertMovementGraphProfileRequest, UpsertMovementGraphProfileResponse, UpsertPersonalTechniqueManualRequest, UpsertPersonalTechniqueManualResponse, UpsertSessionFuelHydrationPlanRequest, UpsertSessionFuelHydrationPlanResponse, UpsertSportHybridStudioModuleRequest, UpsertSportHybridStudioModuleResponse, UpsertStrengthPerformanceModelRequest, UpsertStrengthPerformanceModelResponse, UpsertTeamSquadRosterRequest, UpsertTeamSquadRosterResponse, UpsertVerifiedGymVenueListingRequest, UpsertVerifiedGymVenueListingResponse, UpsertWearablePurposeGrantRequest, UpsertWearablePurposeGrantResponse, VerifyBatteryAwareSensorPolicyRequest, VerifyBatteryAwareSensorPolicyResponse, VerifyBodyCompositionPrivacyIsolationRequest, VerifyBodyCompositionPrivacyIsolationResponse, VerifyYouthSquadSafeguardingRequest, VerifyYouthSquadSafeguardingResponse } from "./workout_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -745,6 +745,790 @@ export const WorkoutService = {
       name: "RequestCoachBooking",
       I: RequestCoachBookingRequest,
       O: RequestCoachBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 3 (FG3) — Explainable Adaptive Programming Engine =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetAdaptiveProgrammingOverview
+     */
+    getAdaptiveProgrammingOverview: {
+      name: "GetAdaptiveProgrammingOverview",
+      I: GetAdaptiveProgrammingOverviewRequest,
+      O: GetAdaptiveProgrammingOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GenerateOrUpdateProgrammeVersion
+     */
+    generateOrUpdateProgrammeVersion: {
+      name: "GenerateOrUpdateProgrammeVersion",
+      I: GenerateOrUpdateProgrammeVersionRequest,
+      O: GenerateOrUpdateProgrammeVersionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DecideProgrammeDraftAcceptance
+     */
+    decideProgrammeDraftAcceptance: {
+      name: "DecideProgrammeDraftAcceptance",
+      I: DecideProgrammeDraftAcceptanceRequest,
+      O: DecideProgrammeDraftAcceptanceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.TriggerSafeAdaptiveReplan
+     */
+    triggerSafeAdaptiveReplan: {
+      name: "TriggerSafeAdaptiveReplan",
+      I: TriggerSafeAdaptiveReplanRequest,
+      O: TriggerSafeAdaptiveReplanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertAdaptiveProgressionRule
+     */
+    upsertAdaptiveProgressionRule: {
+      name: "UpsertAdaptiveProgressionRule",
+      I: UpsertAdaptiveProgressionRuleRequest,
+      O: UpsertAdaptiveProgressionRuleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RollbackProgrammeVersion
+     */
+    rollbackProgrammeVersion: {
+      name: "RollbackProgrammeVersion",
+      I: RollbackProgrammeVersionRequest,
+      O: RollbackProgrammeVersionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetMovementIntelligenceOverview
+     */
+    getMovementIntelligenceOverview: {
+      name: "GetMovementIntelligenceOverview",
+      I: GetMovementIntelligenceOverviewRequest,
+      O: GetMovementIntelligenceOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RankIntentPreservingSubstitutions
+     */
+    rankIntentPreservingSubstitutions: {
+      name: "RankIntentPreservingSubstitutions",
+      I: RankIntentPreservingSubstitutionsRequest,
+      O: RankIntentPreservingSubstitutionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertPersonalTechniqueManual
+     */
+    upsertPersonalTechniqueManual: {
+      name: "UpsertPersonalTechniqueManual",
+      I: UpsertPersonalTechniqueManualRequest,
+      O: UpsertPersonalTechniqueManualResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitCustomMovementForReview
+     */
+    submitCustomMovementForReview: {
+      name: "SubmitCustomMovementForReview",
+      I: SubmitCustomMovementForReviewRequest,
+      O: SubmitCustomMovementForReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertMovementGraphProfile
+     */
+    upsertMovementGraphProfile: {
+      name: "UpsertMovementGraphProfile",
+      I: UpsertMovementGraphProfileRequest,
+      O: UpsertMovementGraphProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordSubstitutionSelection
+     */
+    recordSubstitutionSelection: {
+      name: "RecordSubstitutionSelection",
+      I: RecordSubstitutionSelectionRequest,
+      O: RecordSubstitutionSelectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 5 (FG5) — Technique and Form Intelligence Laboratory =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetFormIntelligenceOverview
+     */
+    getFormIntelligenceOverview: {
+      name: "GetFormIntelligenceOverview",
+      I: GetFormIntelligenceOverviewRequest,
+      O: GetFormIntelligenceOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitFormClipObservation
+     */
+    submitFormClipObservation: {
+      name: "SubmitFormClipObservation",
+      I: SubmitFormClipObservationRequest,
+      O: SubmitFormClipObservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EscalateFormClipToCoach
+     */
+    escalateFormClipToCoach: {
+      name: "EscalateFormClipToCoach",
+      I: EscalateFormClipToCoachRequest,
+      O: EscalateFormClipToCoachResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.DecideCoachFormReview
+     */
+    decideCoachFormReview: {
+      name: "DecideCoachFormReview",
+      I: DecideCoachFormReviewRequest,
+      O: DecideCoachFormReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateFormPrivacyAndRetention
+     */
+    updateFormPrivacyAndRetention: {
+      name: "UpdateFormPrivacyAndRetention",
+      I: UpdateFormPrivacyAndRetentionRequest,
+      O: UpdateFormPrivacyAndRetentionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EraseFormClipAndKeypoints
+     */
+    eraseFormClipAndKeypoints: {
+      name: "EraseFormClipAndKeypoints",
+      I: EraseFormClipAndKeypointsRequest,
+      O: EraseFormClipAndKeypointsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetWearableRecoveryFusionOverview
+     */
+    getWearableRecoveryFusionOverview: {
+      name: "GetWearableRecoveryFusionOverview",
+      I: GetWearableRecoveryFusionOverviewRequest,
+      O: GetWearableRecoveryFusionOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertWearablePurposeGrant
+     */
+    upsertWearablePurposeGrant: {
+      name: "UpsertWearablePurposeGrant",
+      I: UpsertWearablePurposeGrantRequest,
+      O: UpsertWearablePurposeGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RevokeWearablePurposeGrant
+     */
+    revokeWearablePurposeGrant: {
+      name: "RevokeWearablePurposeGrant",
+      I: RevokeWearablePurposeGrantRequest,
+      O: RevokeWearablePurposeGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ConfigureRecoverySensorStream
+     */
+    configureRecoverySensorStream: {
+      name: "ConfigureRecoverySensorStream",
+      I: ConfigureRecoverySensorStreamRequest,
+      O: ConfigureRecoverySensorStreamResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitNoWearableSubjectiveReadiness
+     */
+    submitNoWearableSubjectiveReadiness: {
+      name: "SubmitNoWearableSubjectiveReadiness",
+      I: SubmitNoWearableSubjectiveReadinessRequest,
+      O: SubmitNoWearableSubjectiveReadinessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ReconcileSensorConflictOrOutage
+     */
+    reconcileSensorConflictOrOutage: {
+      name: "ReconcileSensorConflictOrOutage",
+      I: ReconcileSensorConflictOrOutageRequest,
+      O: ReconcileSensorConflictOrOutageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 7 (FG7) — Training Load, Progression, and Performance Analytics =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetPerformanceAnalyticsStudioOverview
+     */
+    getPerformanceAnalyticsStudioOverview: {
+      name: "GetPerformanceAnalyticsStudioOverview",
+      I: GetPerformanceAnalyticsStudioOverviewRequest,
+      O: GetPerformanceAnalyticsStudioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordPerformanceExposureLedger
+     */
+    recordPerformanceExposureLedger: {
+      name: "RecordPerformanceExposureLedger",
+      I: RecordPerformanceExposureLedgerRequest,
+      O: RecordPerformanceExposureLedgerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertStrengthPerformanceModel
+     */
+    upsertStrengthPerformanceModel: {
+      name: "UpsertStrengthPerformanceModel",
+      I: UpsertStrengthPerformanceModelRequest,
+      O: UpsertStrengthPerformanceModelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CreateTrainingNOf1Experiment
+     */
+    createTrainingNOf1Experiment: {
+      name: "CreateTrainingNOf1Experiment",
+      I: CreateTrainingNOf1ExperimentRequest,
+      O: CreateTrainingNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.LogTrainingNOf1ExperimentSession
+     */
+    logTrainingNOf1ExperimentSession: {
+      name: "LogTrainingNOf1ExperimentSession",
+      I: LogTrainingNOf1ExperimentSessionRequest,
+      O: LogTrainingNOf1ExperimentSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EvaluateTrainingNOf1Experiment
+     */
+    evaluateTrainingNOf1Experiment: {
+      name: "EvaluateTrainingNOf1Experiment",
+      I: EvaluateTrainingNOf1ExperimentRequest,
+      O: EvaluateTrainingNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetInjuryReturnPathwayOverview
+     */
+    getInjuryReturnPathwayOverview: {
+      name: "GetInjuryReturnPathwayOverview",
+      I: GetInjuryReturnPathwayOverviewRequest,
+      O: GetInjuryReturnPathwayOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertInjuryRestrictionLock
+     */
+    upsertInjuryRestrictionLock: {
+      name: "UpsertInjuryRestrictionLock",
+      I: UpsertInjuryRestrictionLockRequest,
+      O: UpsertInjuryRestrictionLockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.LogInSessionPainTriageEvent
+     */
+    logInSessionPainTriageEvent: {
+      name: "LogInSessionPainTriageEvent",
+      I: LogInSessionPainTriageEventRequest,
+      O: LogInSessionPainTriageEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.AdvanceReturnToTrainingStage
+     */
+    advanceReturnToTrainingStage: {
+      name: "AdvanceReturnToTrainingStage",
+      I: AdvanceReturnToTrainingStageRequest,
+      O: AdvanceReturnToTrainingStageResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordReturnToTrainingSetback
+     */
+    recordReturnToTrainingSetback: {
+      name: "RecordReturnToTrainingSetback",
+      I: RecordReturnToTrainingSetbackRequest,
+      O: RecordReturnToTrainingSetbackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ClearInjuryRestrictionLock
+     */
+    clearInjuryRestrictionLock: {
+      name: "ClearInjuryRestrictionLock",
+      I: ClearInjuryRestrictionLockRequest,
+      O: ClearInjuryRestrictionLockResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 9 (FG9) — Coach OS and Athlete Collaboration =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetCoachOsCollaborationOverview
+     */
+    getCoachOsCollaborationOverview: {
+      name: "GetCoachOsCollaborationOverview",
+      I: GetCoachOsCollaborationOverviewRequest,
+      O: GetCoachOsCollaborationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertCoachAthleteScopedGrant
+     */
+    upsertCoachAthleteScopedGrant: {
+      name: "UpsertCoachAthleteScopedGrant",
+      I: UpsertCoachAthleteScopedGrantRequest,
+      O: UpsertCoachAthleteScopedGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RevokeCoachAthleteScopedGrant
+     */
+    revokeCoachAthleteScopedGrant: {
+      name: "RevokeCoachAthleteScopedGrant",
+      I: RevokeCoachAthleteScopedGrantRequest,
+      O: RevokeCoachAthleteScopedGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ProposeCoachProgrammeChange
+     */
+    proposeCoachProgrammeChange: {
+      name: "ProposeCoachProgrammeChange",
+      I: ProposeCoachProgrammeChangeRequest,
+      O: ProposeCoachProgrammeChangeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RespondToCoachChangeProposal
+     */
+    respondToCoachChangeProposal: {
+      name: "RespondToCoachChangeProposal",
+      I: RespondToCoachChangeProposalRequest,
+      O: RespondToCoachChangeProposalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpdateCoachMarketplaceEngagement
+     */
+    updateCoachMarketplaceEngagement: {
+      name: "UpdateCoachMarketplaceEngagement",
+      I: UpdateCoachMarketplaceEngagementRequest,
+      O: UpdateCoachMarketplaceEngagementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetTeamsClubsFacilitiesOverview
+     */
+    getTeamsClubsFacilitiesOverview: {
+      name: "GetTeamsClubsFacilitiesOverview",
+      I: GetTeamsClubsFacilitiesOverviewRequest,
+      O: GetTeamsClubsFacilitiesOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertTeamSquadRoster
+     */
+    upsertTeamSquadRoster: {
+      name: "UpsertTeamSquadRoster",
+      I: UpsertTeamSquadRosterRequest,
+      O: UpsertTeamSquadRosterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitTeamTrafficLightCheckin
+     */
+    submitTeamTrafficLightCheckin: {
+      name: "SubmitTeamTrafficLightCheckin",
+      I: SubmitTeamTrafficLightCheckinRequest,
+      O: SubmitTeamTrafficLightCheckinResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ReserveOrUpdateFacilityRackStation
+     */
+    reserveOrUpdateFacilityRackStation: {
+      name: "ReserveOrUpdateFacilityRackStation",
+      I: ReserveOrUpdateFacilityRackStationRequest,
+      O: ReserveOrUpdateFacilityRackStationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.FlagFacilityMaintenanceOrIncident
+     */
+    flagFacilityMaintenanceOrIncident: {
+      name: "FlagFacilityMaintenanceOrIncident",
+      I: FlagFacilityMaintenanceOrIncidentRequest,
+      O: FlagFacilityMaintenanceOrIncidentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.VerifyYouthSquadSafeguarding
+     */
+    verifyYouthSquadSafeguarding: {
+      name: "VerifyYouthSquadSafeguarding",
+      I: VerifyYouthSquadSafeguardingRequest,
+      O: VerifyYouthSquadSafeguardingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 11 (FG11) — Competition, Test Day, and Verified Performance =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetCompetitionVerifiedPerformanceOverview
+     */
+    getCompetitionVerifiedPerformanceOverview: {
+      name: "GetCompetitionVerifiedPerformanceOverview",
+      I: GetCompetitionVerifiedPerformanceOverviewRequest,
+      O: GetCompetitionVerifiedPerformanceOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertCompetitionEventPlan
+     */
+    upsertCompetitionEventPlan: {
+      name: "UpsertCompetitionEventPlan",
+      I: UpsertCompetitionEventPlanRequest,
+      O: UpsertCompetitionEventPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitVerifiedPerformanceResult
+     */
+    submitVerifiedPerformanceResult: {
+      name: "SubmitVerifiedPerformanceResult",
+      I: SubmitVerifiedPerformanceResultRequest,
+      O: SubmitVerifiedPerformanceResultResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.FilePerformanceResultAppeal
+     */
+    filePerformanceResultAppeal: {
+      name: "FilePerformanceResultAppeal",
+      I: FilePerformanceResultAppealRequest,
+      O: FilePerformanceResultAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordCompetitionRuleAndTueCheck
+     */
+    recordCompetitionRuleAndTueCheck: {
+      name: "RecordCompetitionRuleAndTueCheck",
+      I: RecordCompetitionRuleAndTueCheckRequest,
+      O: RecordCompetitionRuleAndTueCheckResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ToggleOfflineVenueCompetitionMode
+     */
+    toggleOfflineVenueCompetitionMode: {
+      name: "ToggleOfflineVenueCompetitionMode",
+      I: ToggleOfflineVenueCompetitionModeRequest,
+      O: ToggleOfflineVenueCompetitionModeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetSportHybridStudiosOverview
+     */
+    getSportHybridStudiosOverview: {
+      name: "GetSportHybridStudiosOverview",
+      I: GetSportHybridStudiosOverviewRequest,
+      O: GetSportHybridStudiosOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertSportHybridStudioModule
+     */
+    upsertSportHybridStudioModule: {
+      name: "UpsertSportHybridStudioModule",
+      I: UpsertSportHybridStudioModuleRequest,
+      O: UpsertSportHybridStudioModuleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ConfigureHybridInterferenceSchedule
+     */
+    configureHybridInterferenceSchedule: {
+      name: "ConfigureHybridInterferenceSchedule",
+      I: ConfigureHybridInterferenceScheduleRequest,
+      O: ConfigureHybridInterferenceScheduleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.LogSportSkillOrManualActivitySession
+     */
+    logSportSkillOrManualActivitySession: {
+      name: "LogSportSkillOrManualActivitySession",
+      I: LogSportSkillOrManualActivitySessionRequest,
+      O: LogSportSkillOrManualActivitySessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RegisterCustomManualUnvalidatedSport
+     */
+    registerCustomManualUnvalidatedSport: {
+      name: "RegisterCustomManualUnvalidatedSport",
+      I: RegisterCustomManualUnvalidatedSportRequest,
+      O: RegisterCustomManualUnvalidatedSportResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.AuditHybridLoadDeDuplication
+     */
+    auditHybridLoadDeDuplication: {
+      name: "AuditHybridLoadDeDuplication",
+      I: AuditHybridLoadDeDuplicationRequest,
+      O: AuditHybridLoadDeDuplicationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetEquipmentTravelAdaptationOverview
+     */
+    getEquipmentTravelAdaptationOverview: {
+      name: "GetEquipmentTravelAdaptationOverview",
+      I: GetEquipmentTravelAdaptationOverviewRequest,
+      O: GetEquipmentTravelAdaptationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertEquipmentLocationProfile
+     */
+    upsertEquipmentLocationProfile: {
+      name: "UpsertEquipmentLocationProfile",
+      I: UpsertEquipmentLocationProfileRequest,
+      O: UpsertEquipmentLocationProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GenerateTravelWorkoutAdaptation
+     */
+    generateTravelWorkoutAdaptation: {
+      name: "GenerateTravelWorkoutAdaptation",
+      I: GenerateTravelWorkoutAdaptationRequest,
+      O: GenerateTravelWorkoutAdaptationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertVerifiedGymVenueListing
+     */
+    upsertVerifiedGymVenueListing: {
+      name: "UpsertVerifiedGymVenueListing",
+      I: UpsertVerifiedGymVenueListingRequest,
+      O: UpsertVerifiedGymVenueListingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.FlagStaleGymVenueListing
+     */
+    flagStaleGymVenueListing: {
+      name: "FlagStaleGymVenueListing",
+      I: FlagStaleGymVenueListingRequest,
+      O: FlagStaleGymVenueListingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RevertTravelWorkoutToHomeGym
+     */
+    revertTravelWorkoutToHomeGym: {
+      name: "RevertTravelWorkoutToHomeGym",
+      I: RevertTravelWorkoutToHomeGymRequest,
+      O: RevertTravelWorkoutToHomeGymResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetFuelWeightSafetyOverview
+     */
+    getFuelWeightSafetyOverview: {
+      name: "GetFuelWeightSafetyOverview",
+      I: GetFuelWeightSafetyOverviewRequest,
+      O: GetFuelWeightSafetyOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertSessionFuelHydrationPlan
+     */
+    upsertSessionFuelHydrationPlan: {
+      name: "UpsertSessionFuelHydrationPlan",
+      I: UpsertSessionFuelHydrationPlanRequest,
+      O: UpsertSessionFuelHydrationPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordPrivateBodyCompositionTrend
+     */
+    recordPrivateBodyCompositionTrend: {
+      name: "RecordPrivateBodyCompositionTrend",
+      I: RecordPrivateBodyCompositionTrendRequest,
+      O: RecordPrivateBodyCompositionTrendResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EvaluateWeightClassSafetyPlan
+     */
+    evaluateWeightClassSafetyPlan: {
+      name: "EvaluateWeightClassSafetyPlan",
+      I: EvaluateWeightClassSafetyPlanRequest,
+      O: EvaluateWeightClassSafetyPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.EscalateWeightCutToProfessionalRoute
+     */
+    escalateWeightCutToProfessionalRoute: {
+      name: "EscalateWeightCutToProfessionalRoute",
+      I: EscalateWeightCutToProfessionalRouteRequest,
+      O: EscalateWeightCutToProfessionalRouteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.VerifyBodyCompositionPrivacyIsolation
+     */
+    verifyBodyCompositionPrivacyIsolation: {
+      name: "VerifyBodyCompositionPrivacyIsolation",
+      I: VerifyBodyCompositionPrivacyIsolationRequest,
+      O: VerifyBodyCompositionPrivacyIsolationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetHealthyCompetitionCrewsOverview
+     */
+    getHealthyCompetitionCrewsOverview: {
+      name: "GetHealthyCompetitionCrewsOverview",
+      I: GetHealthyCompetitionCrewsOverviewRequest,
+      O: GetHealthyCompetitionCrewsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertHealthyCompetitionCohort
+     */
+    upsertHealthyCompetitionCohort: {
+      name: "UpsertHealthyCompetitionCohort",
+      I: UpsertHealthyCompetitionCohortRequest,
+      O: UpsertHealthyCompetitionCohortResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.ToggleCompetitionMutePreference
+     */
+    toggleCompetitionMutePreference: {
+      name: "ToggleCompetitionMutePreference",
+      I: ToggleCompetitionMutePreferenceRequest,
+      O: ToggleCompetitionMutePreferenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SubmitCrewChallengeOrAppeal
+     */
+    submitCrewChallengeOrAppeal: {
+      name: "SubmitCrewChallengeOrAppeal",
+      I: SubmitCrewChallengeOrAppealRequest,
+      O: SubmitCrewChallengeOrAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RecordEmpireRewardContribution
+     */
+    recordEmpireRewardContribution: {
+      name: "RecordEmpireRewardContribution",
+      I: RecordEmpireRewardContributionRequest,
+      O: RecordEmpireRewardContributionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.AdjudicateCrewAntiCheatCase
+     */
+    adjudicateCrewAntiCheatCase: {
+      name: "AdjudicateCrewAntiCheatCase",
+      I: AdjudicateCrewAntiCheatCaseRequest,
+      O: AdjudicateCrewAntiCheatCaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge =====
+     *
+     * @generated from rpc sttattus.workout.v1.WorkoutService.GetOfflineAccessibleReleaseCertOverview
+     */
+    getOfflineAccessibleReleaseCertOverview: {
+      name: "GetOfflineAccessibleReleaseCertOverview",
+      I: GetOfflineAccessibleReleaseCertOverviewRequest,
+      O: GetOfflineAccessibleReleaseCertOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.CertifyOfflineMultimodalSyncState
+     */
+    certifyOfflineMultimodalSyncState: {
+      name: "CertifyOfflineMultimodalSyncState",
+      I: CertifyOfflineMultimodalSyncStateRequest,
+      O: CertifyOfflineMultimodalSyncStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.UpsertAccessibilityAdaptiveProfile
+     */
+    upsertAccessibilityAdaptiveProfile: {
+      name: "UpsertAccessibilityAdaptiveProfile",
+      I: UpsertAccessibilityAdaptiveProfileRequest,
+      O: UpsertAccessibilityAdaptiveProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.RunMigrationAndErasureCertification
+     */
+    runMigrationAndErasureCertification: {
+      name: "RunMigrationAndErasureCertification",
+      I: RunMigrationAndErasureCertificationRequest,
+      O: RunMigrationAndErasureCertificationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.VerifyBatteryAwareSensorPolicy
+     */
+    verifyBatteryAwareSensorPolicy: {
+      name: "VerifyBatteryAwareSensorPolicy",
+      I: VerifyBatteryAwareSensorPolicyRequest,
+      O: VerifyBatteryAwareSensorPolicyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.workout.v1.WorkoutService.SignOffForge16Of16ReleaseGate
+     */
+    signOffForge16Of16ReleaseGate: {
+      name: "SignOffForge16Of16ReleaseGate",
+      I: SignOffForge16Of16ReleaseGateRequest,
+      O: SignOffForge16Of16ReleaseGateResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AcceptHandoffRequest, AcceptHandoffResponse, AddBeneficiaryRequest, AddBeneficiaryResponse, AddLetterOfWishesRequest, AddLetterOfWishesResponse, AssignAssetCategoryRequest, AssignAssetCategoryResponse, CheckInDeadManSwitchRequest, CheckInDeadManSwitchResponse, ConfigureDeadManSwitchRequest, ConfigureDeadManSwitchResponse, CreateAnchorRequest, CreateAnchorResponse, CreateLegacyShareRequest, CreateLegacyShareResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, DismissHandoffRequest, DismissHandoffResponse, GenerateDocumentRequest, GenerateDocumentResponse, GenerateLegacyAlmanacRequest, GenerateLegacyAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDeadManSwitchRequest, GetDeadManSwitchResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetEstateReadinessRequest, GetEstateReadinessResponse, GetEstateSummaryRequest, GetEstateSummaryResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, GetTemplateRequest, GetTemplateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListAssetVersionsRequest, ListAssetVersionsResponse, ListIpPortfolioRequest, ListIpPortfolioResponse, ListLawyersRequest, ListLawyersResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyAnchorsRequest, ListMyAnchorsResponse, ListMyBeneficiariesRequest, ListMyBeneficiariesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyGeneratedDocumentsRequest, ListMyGeneratedDocumentsResponse, ListMyHandoffsRequest, ListMyHandoffsResponse, ListMyLegacySharesRequest, ListMyLegacySharesResponse, ListMyLettersOfWishesRequest, ListMyLettersOfWishesResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, ListNotariesRequest, ListNotariesResponse, ListTemplatesRequest, ListTemplatesResponse, ParseDocumentExpiryRequest, ParseDocumentExpiryResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordAssetVersionRequest, RecordAssetVersionResponse, RemoveBeneficiaryRequest, RemoveBeneficiaryResponse, RemoveLetterOfWishesRequest, RemoveLetterOfWishesResponse, RevokeLegacyShareRequest, RevokeLegacyShareResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse } from "./legacy_pb.js";
+import { AcceptHandoffRequest, AcceptHandoffResponse, AddBeneficiaryRequest, AddBeneficiaryResponse, AddLetterOfWishesRequest, AddLetterOfWishesResponse, AdvanceLegacySettlementTaskOrResolveDisputeRequest, AdvanceLegacySettlementTaskOrResolveDisputeResponse, AssignAssetCategoryRequest, AssignAssetCategoryResponse, CheckInDeadManSwitchRequest, CheckInDeadManSwitchResponse, ConfigureDeadManSwitchRequest, ConfigureDeadManSwitchResponse, CreateAnchorRequest, CreateAnchorResponse, CreateLegacyShareRequest, CreateLegacyShareResponse, DeleteRecoveryShareRequest, DeleteRecoveryShareResponse, DismissHandoffRequest, DismissHandoffResponse, GenerateDocumentRequest, GenerateDocumentResponse, GenerateLegacyAlmanacRequest, GenerateLegacyAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetDeadManSwitchRequest, GetDeadManSwitchResponse, GetEncryptedBlobRequest, GetEncryptedBlobResponse, GetEstateReadinessRequest, GetEstateReadinessResponse, GetEstateSummaryRequest, GetEstateSummaryResponse, GetHeritageStatsRequest, GetHeritageStatsResponse, GetLegacyContinuityPlaybookWorkbenchRequest, GetLegacyContinuityPlaybookWorkbenchResponse, GetLegacyCounselGovernanceWorkbenchRequest, GetLegacyCounselGovernanceWorkbenchResponse, GetLegacyDigitalRecoveryWorkbenchRequest, GetLegacyDigitalRecoveryWorkbenchResponse, GetLegacyExecutorWorkspaceWorkbenchRequest, GetLegacyExecutorWorkspaceWorkbenchResponse, GetLegacyHeritageArchiveWorkbenchRequest, GetLegacyHeritageArchiveWorkbenchResponse, GetLegacyIncapacityDeadmanWorkbenchRequest, GetLegacyIncapacityDeadmanWorkbenchResponse, GetLegacyJurisdictionDocumentWorkbenchRequest, GetLegacyJurisdictionDocumentWorkbenchResponse, GetLegacyLifeEventAlignmentWorkbenchRequest, GetLegacyLifeEventAlignmentWorkbenchResponse, GetLegacyLiquidityReadinessWorkbenchRequest, GetLegacyLiquidityReadinessWorkbenchResponse, GetLegacyLivingInventoryWorkbenchRequest, GetLegacyLivingInventoryWorkbenchResponse, GetLegacySecureDocumentVaultWorkbenchRequest, GetLegacySecureDocumentVaultWorkbenchResponse, GetLegacySettlementAccountingWorkbenchRequest, GetLegacySettlementAccountingWorkbenchResponse, GetTemplateRequest, GetTemplateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAssetCategoriesRequest, ListAssetCategoriesResponse, ListAssetsRequest, ListAssetsResponse, ListAssetVersionsRequest, ListAssetVersionsResponse, ListIpPortfolioRequest, ListIpPortfolioResponse, ListLawyersRequest, ListLawyersResponse, ListLegacyCategoriesRequest, ListLegacyCategoriesResponse, ListMyAnchorsRequest, ListMyAnchorsResponse, ListMyBeneficiariesRequest, ListMyBeneficiariesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyEncryptedBlobsRequest, ListMyEncryptedBlobsResponse, ListMyGeneratedDocumentsRequest, ListMyGeneratedDocumentsResponse, ListMyHandoffsRequest, ListMyHandoffsResponse, ListMyLegacySharesRequest, ListMyLegacySharesResponse, ListMyLettersOfWishesRequest, ListMyLettersOfWishesResponse, ListMyRecoverySharesRequest, ListMyRecoverySharesResponse, ListNotariesRequest, ListNotariesResponse, ListTemplatesRequest, ListTemplatesResponse, LockOrExportLegacyDocumentCustodyRequest, LockOrExportLegacyDocumentCustodyResponse, LockOrReverseLegacyAccountingPeriodRequest, LockOrReverseLegacyAccountingPeriodResponse, ParseDocumentExpiryRequest, ParseDocumentExpiryResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordAssetVersionRequest, RecordAssetVersionResponse, RemoveBeneficiaryRequest, RemoveBeneficiaryResponse, RemoveLetterOfWishesRequest, RemoveLetterOfWishesResponse, RevokeLegacyShareRequest, RevokeLegacyShareResponse, RunLegacyContinuityDrillOrStageDelegationRequest, RunLegacyContinuityDrillOrStageDelegationResponse, RunLegacyThresholdCeremonyDryRunOrRotateShareRequest, RunLegacyThresholdCeremonyDryRunOrRotateShareResponse, SaveLegacyCounselFamilyGovernanceRequest, SaveLegacyCounselFamilyGovernanceResponse, SaveLegacyDigitalThresholdRecoveryRequest, SaveLegacyDigitalThresholdRecoveryResponse, SaveLegacyExecutorTrusteeWorkspaceRequest, SaveLegacyExecutorTrusteeWorkspaceResponse, SaveLegacyHeritagePreservationArchiveRequest, SaveLegacyHeritagePreservationArchiveResponse, SaveLegacyHouseholdBusinessContinuityRequest, SaveLegacyHouseholdBusinessContinuityResponse, SaveLegacyIncapacityDeadmanProtocolRequest, SaveLegacyIncapacityDeadmanProtocolResponse, SaveLegacyJurisdictionDocumentSystemRequest, SaveLegacyJurisdictionDocumentSystemResponse, SaveLegacyLifeEventAlignmentRequest, SaveLegacyLifeEventAlignmentResponse, SaveLegacyLiquidityInsuranceReadinessRequest, SaveLegacyLiquidityInsuranceReadinessResponse, SaveLegacyLivingEstateInventoryRequest, SaveLegacyLivingEstateInventoryResponse, SaveLegacySecureDocumentVaultRequest, SaveLegacySecureDocumentVaultResponse, SaveLegacySettlementAccountingRequest, SaveLegacySettlementAccountingResponse, SignOffLegacyQuarterlyPlanReviewRequest, SignOffLegacyQuarterlyPlanReviewResponse, SimulateOrCancelLegacyDeadmanReleaseRequest, SimulateOrCancelLegacyDeadmanReleaseResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, StoreDocumentRequest, StoreDocumentResponse, StoreEncryptedBlobRequest, StoreEncryptedBlobResponse, StoreRecoveryShareRequest, StoreRecoveryShareResponse, StressTestLegacyLiquidityOrRouteCounselRequest, StressTestLegacyLiquidityOrRouteCounselResponse, TriggerLegacyCounselReviewOrLockExecutionRequest, TriggerLegacyCounselReviewOrLockExecutionResponse, UnassignAssetCategoryRequest, UnassignAssetCategoryResponse, UnlockLegacyStewardshipModuleOrRevokeCounselRequest, UnlockLegacyStewardshipModuleOrRevokeCounselResponse, VerifyLegacyAlignmentInstitutionEvidenceRequest, VerifyLegacyAlignmentInstitutionEvidenceResponse, VerifyLegacyArchiveFixityOrPreviewTriggerRequest, VerifyLegacyArchiveFixityOrPreviewTriggerResponse } from "./legacy_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -487,6 +487,354 @@ export const LegacyService = {
       name: "ParseDocumentExpiry",
       I: ParseDocumentExpiryRequest,
       O: ParseDocumentExpiryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 1 (G1): Living Estate Inventory & Plan Health
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyLivingInventoryWorkbench
+     */
+    getLegacyLivingInventoryWorkbench: {
+      name: "GetLegacyLivingInventoryWorkbench",
+      I: GetLegacyLivingInventoryWorkbenchRequest,
+      O: GetLegacyLivingInventoryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyLivingEstateInventory
+     */
+    saveLegacyLivingEstateInventory: {
+      name: "SaveLegacyLivingEstateInventory",
+      I: SaveLegacyLivingEstateInventoryRequest,
+      O: SaveLegacyLivingEstateInventoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SignOffLegacyQuarterlyPlanReview
+     */
+    signOffLegacyQuarterlyPlanReview: {
+      name: "SignOffLegacyQuarterlyPlanReview",
+      I: SignOffLegacyQuarterlyPlanReviewRequest,
+      O: SignOffLegacyQuarterlyPlanReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment Engine
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyLifeEventAlignmentWorkbench
+     */
+    getLegacyLifeEventAlignmentWorkbench: {
+      name: "GetLegacyLifeEventAlignmentWorkbench",
+      I: GetLegacyLifeEventAlignmentWorkbenchRequest,
+      O: GetLegacyLifeEventAlignmentWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyLifeEventAlignment
+     */
+    saveLegacyLifeEventAlignment: {
+      name: "SaveLegacyLifeEventAlignment",
+      I: SaveLegacyLifeEventAlignmentRequest,
+      O: SaveLegacyLifeEventAlignmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.VerifyLegacyAlignmentInstitutionEvidence
+     */
+    verifyLegacyAlignmentInstitutionEvidence: {
+      name: "VerifyLegacyAlignmentInstitutionEvidence",
+      I: VerifyLegacyAlignmentInstitutionEvidenceRequest,
+      O: VerifyLegacyAlignmentInstitutionEvidenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (G5): Secure Document & Evidence Vault
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacySecureDocumentVaultWorkbench
+     */
+    getLegacySecureDocumentVaultWorkbench: {
+      name: "GetLegacySecureDocumentVaultWorkbench",
+      I: GetLegacySecureDocumentVaultWorkbenchRequest,
+      O: GetLegacySecureDocumentVaultWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacySecureDocumentVault
+     */
+    saveLegacySecureDocumentVault: {
+      name: "SaveLegacySecureDocumentVault",
+      I: SaveLegacySecureDocumentVaultRequest,
+      O: SaveLegacySecureDocumentVaultResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.LockOrExportLegacyDocumentCustody
+     */
+    lockOrExportLegacyDocumentCustody: {
+      name: "LockOrExportLegacyDocumentCustody",
+      I: LockOrExportLegacyDocumentCustodyRequest,
+      O: LockOrExportLegacyDocumentCustodyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyJurisdictionDocumentWorkbench
+     */
+    getLegacyJurisdictionDocumentWorkbench: {
+      name: "GetLegacyJurisdictionDocumentWorkbench",
+      I: GetLegacyJurisdictionDocumentWorkbenchRequest,
+      O: GetLegacyJurisdictionDocumentWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyJurisdictionDocumentSystem
+     */
+    saveLegacyJurisdictionDocumentSystem: {
+      name: "SaveLegacyJurisdictionDocumentSystem",
+      I: SaveLegacyJurisdictionDocumentSystemRequest,
+      O: SaveLegacyJurisdictionDocumentSystemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.TriggerLegacyCounselReviewOrLockExecution
+     */
+    triggerLegacyCounselReviewOrLockExecution: {
+      name: "TriggerLegacyCounselReviewOrLockExecution",
+      I: TriggerLegacyCounselReviewOrLockExecutionRequest,
+      O: TriggerLegacyCounselReviewOrLockExecutionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (G11/G13): Household & Business Continuity Playbooks
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyContinuityPlaybookWorkbench
+     */
+    getLegacyContinuityPlaybookWorkbench: {
+      name: "GetLegacyContinuityPlaybookWorkbench",
+      I: GetLegacyContinuityPlaybookWorkbenchRequest,
+      O: GetLegacyContinuityPlaybookWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyHouseholdBusinessContinuity
+     */
+    saveLegacyHouseholdBusinessContinuity: {
+      name: "SaveLegacyHouseholdBusinessContinuity",
+      I: SaveLegacyHouseholdBusinessContinuityRequest,
+      O: SaveLegacyHouseholdBusinessContinuityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RunLegacyContinuityDrillOrStageDelegation
+     */
+    runLegacyContinuityDrillOrStageDelegation: {
+      name: "RunLegacyContinuityDrillOrStageDelegation",
+      I: RunLegacyContinuityDrillOrStageDelegationRequest,
+      O: RunLegacyContinuityDrillOrStageDelegationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyIncapacityDeadmanWorkbench
+     */
+    getLegacyIncapacityDeadmanWorkbench: {
+      name: "GetLegacyIncapacityDeadmanWorkbench",
+      I: GetLegacyIncapacityDeadmanWorkbenchRequest,
+      O: GetLegacyIncapacityDeadmanWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyIncapacityDeadmanProtocol
+     */
+    saveLegacyIncapacityDeadmanProtocol: {
+      name: "SaveLegacyIncapacityDeadmanProtocol",
+      I: SaveLegacyIncapacityDeadmanProtocolRequest,
+      O: SaveLegacyIncapacityDeadmanProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SimulateOrCancelLegacyDeadmanRelease
+     */
+    simulateOrCancelLegacyDeadmanRelease: {
+      name: "SimulateOrCancelLegacyDeadmanRelease",
+      I: SimulateOrCancelLegacyDeadmanReleaseRequest,
+      O: SimulateOrCancelLegacyDeadmanReleaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (G7): Executor & Trustee Command Center
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyExecutorWorkspaceWorkbench
+     */
+    getLegacyExecutorWorkspaceWorkbench: {
+      name: "GetLegacyExecutorWorkspaceWorkbench",
+      I: GetLegacyExecutorWorkspaceWorkbenchRequest,
+      O: GetLegacyExecutorWorkspaceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyExecutorTrusteeWorkspace
+     */
+    saveLegacyExecutorTrusteeWorkspace: {
+      name: "SaveLegacyExecutorTrusteeWorkspace",
+      I: SaveLegacyExecutorTrusteeWorkspaceRequest,
+      O: SaveLegacyExecutorTrusteeWorkspaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.AdvanceLegacySettlementTaskOrResolveDispute
+     */
+    advanceLegacySettlementTaskOrResolveDispute: {
+      name: "AdvanceLegacySettlementTaskOrResolveDispute",
+      I: AdvanceLegacySettlementTaskOrResolveDisputeRequest,
+      O: AdvanceLegacySettlementTaskOrResolveDisputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (G16): Estate & Trust Settlement Accounting
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacySettlementAccountingWorkbench
+     */
+    getLegacySettlementAccountingWorkbench: {
+      name: "GetLegacySettlementAccountingWorkbench",
+      I: GetLegacySettlementAccountingWorkbenchRequest,
+      O: GetLegacySettlementAccountingWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacySettlementAccounting
+     */
+    saveLegacySettlementAccounting: {
+      name: "SaveLegacySettlementAccounting",
+      I: SaveLegacySettlementAccountingRequest,
+      O: SaveLegacySettlementAccountingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.LockOrReverseLegacyAccountingPeriod
+     */
+    lockOrReverseLegacyAccountingPeriod: {
+      name: "LockOrReverseLegacyAccountingPeriod",
+      I: LockOrReverseLegacyAccountingPeriodRequest,
+      O: LockOrReverseLegacyAccountingPeriodResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (G8): Digital Asset & Threshold Recovery System
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyDigitalRecoveryWorkbench
+     */
+    getLegacyDigitalRecoveryWorkbench: {
+      name: "GetLegacyDigitalRecoveryWorkbench",
+      I: GetLegacyDigitalRecoveryWorkbenchRequest,
+      O: GetLegacyDigitalRecoveryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyDigitalThresholdRecovery
+     */
+    saveLegacyDigitalThresholdRecovery: {
+      name: "SaveLegacyDigitalThresholdRecovery",
+      I: SaveLegacyDigitalThresholdRecoveryRequest,
+      O: SaveLegacyDigitalThresholdRecoveryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.RunLegacyThresholdCeremonyDryRunOrRotateShare
+     */
+    runLegacyThresholdCeremonyDryRunOrRotateShare: {
+      name: "RunLegacyThresholdCeremonyDryRunOrRotateShare",
+      I: RunLegacyThresholdCeremonyDryRunOrRotateShareRequest,
+      O: RunLegacyThresholdCeremonyDryRunOrRotateShareResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyHeritageArchiveWorkbench
+     */
+    getLegacyHeritageArchiveWorkbench: {
+      name: "GetLegacyHeritageArchiveWorkbench",
+      I: GetLegacyHeritageArchiveWorkbenchRequest,
+      O: GetLegacyHeritageArchiveWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyHeritagePreservationArchive
+     */
+    saveLegacyHeritagePreservationArchive: {
+      name: "SaveLegacyHeritagePreservationArchive",
+      I: SaveLegacyHeritagePreservationArchiveRequest,
+      O: SaveLegacyHeritagePreservationArchiveResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.VerifyLegacyArchiveFixityOrPreviewTrigger
+     */
+    verifyLegacyArchiveFixityOrPreviewTrigger: {
+      name: "VerifyLegacyArchiveFixityOrPreviewTrigger",
+      I: VerifyLegacyArchiveFixityOrPreviewTriggerRequest,
+      O: VerifyLegacyArchiveFixityOrPreviewTriggerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyLiquidityReadinessWorkbench
+     */
+    getLegacyLiquidityReadinessWorkbench: {
+      name: "GetLegacyLiquidityReadinessWorkbench",
+      I: GetLegacyLiquidityReadinessWorkbenchRequest,
+      O: GetLegacyLiquidityReadinessWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyLiquidityInsuranceReadiness
+     */
+    saveLegacyLiquidityInsuranceReadiness: {
+      name: "SaveLegacyLiquidityInsuranceReadiness",
+      I: SaveLegacyLiquidityInsuranceReadinessRequest,
+      O: SaveLegacyLiquidityInsuranceReadinessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.StressTestLegacyLiquidityOrRouteCounsel
+     */
+    stressTestLegacyLiquidityOrRouteCounsel: {
+      name: "StressTestLegacyLiquidityOrRouteCounsel",
+      I: StressTestLegacyLiquidityOrRouteCounselRequest,
+      O: StressTestLegacyLiquidityOrRouteCounselResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 12 (G10/G14): Counsel Collaboration, Family Governance & Next-Gen Stewardship
+     *
+     * @generated from rpc sttattus.legacy.v1.LegacyService.GetLegacyCounselGovernanceWorkbench
+     */
+    getLegacyCounselGovernanceWorkbench: {
+      name: "GetLegacyCounselGovernanceWorkbench",
+      I: GetLegacyCounselGovernanceWorkbenchRequest,
+      O: GetLegacyCounselGovernanceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.SaveLegacyCounselFamilyGovernance
+     */
+    saveLegacyCounselFamilyGovernance: {
+      name: "SaveLegacyCounselFamilyGovernance",
+      I: SaveLegacyCounselFamilyGovernanceRequest,
+      O: SaveLegacyCounselFamilyGovernanceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.legacy.v1.LegacyService.UnlockLegacyStewardshipModuleOrRevokeCounsel
+     */
+    unlockLegacyStewardshipModuleOrRevokeCounsel: {
+      name: "UnlockLegacyStewardshipModuleOrRevokeCounsel",
+      I: UnlockLegacyStewardshipModuleOrRevokeCounselRequest,
+      O: UnlockLegacyStewardshipModuleOrRevokeCounselResponse,
       kind: MethodKind.Unary,
     },
   }

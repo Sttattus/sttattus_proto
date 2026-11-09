@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BanUserRequest, BanUserResponse, BulkActionRequest, BulkActionResponse, GetUserRequest, GetUserResponse, ListAuditLogsRequest, ListAuditLogsResponse, ListDeviceGrantsRequest, ListDeviceGrantsResponse, ListUsersRequest, ListUsersResponse, RevokeDeviceGrantRequest, RevokeDeviceGrantResponse } from "./admin_pb.js";
+import { ApplyReversibleTrustSanctionRequest, ApplyReversibleTrustSanctionResponse, BanUserRequest, BanUserResponse, BulkActionRequest, BulkActionResponse, CommitFourEyesSopDecisionRequest, CommitFourEyesSopDecisionResponse, CreateLedgerAdjustmentPreviewRequest, CreateLedgerAdjustmentPreviewResponse, CreateTimeBoundObserverEngagementRequest, CreateTimeBoundObserverEngagementResponse, DispatchReviewedMemberReplyRequest, DispatchReviewedMemberReplyResponse, EvaluateExplainableVerificationRuleRequest, EvaluateExplainableVerificationRuleResponse, ExecutePrivacyOrAccountRecoveryCaseRequest, ExecutePrivacyOrAccountRecoveryCaseResponse, FanoutIdempotentBulkRemediationRequest, FanoutIdempotentBulkRemediationResponse, GenerateWatermarkedControlEvidencePackRequest, GenerateWatermarkedControlEvidencePackResponse, GetAiControlQualityCalibrationOverviewRequest, GetAiControlQualityCalibrationOverviewResponse, GetCatalogContentPolicyStudioOverviewRequest, GetCatalogContentPolicyStudioOverviewResponse, GetCommerceEntitlementPayoutOverviewRequest, GetCommerceEntitlementPayoutOverviewResponse, GetCommunicationsConciergeOverviewRequest, GetCommunicationsConciergeOverviewResponse, GetEvidenceSopDecisionOverviewRequest, GetEvidenceSopDecisionOverviewResponse, GetFraudAbuseTrustGraphOverviewRequest, GetFraudAbuseTrustGraphOverviewResponse, GetIndependentAuditObserverOverviewRequest, GetIndependentAuditObserverOverviewResponse, GetMasterIncidentBulkRemediationOverviewRequest, GetMasterIncidentBulkRemediationOverviewResponse, GetPlatformReconciliationOpsOverviewRequest, GetPlatformReconciliationOpsOverviewResponse, GetRoutingSkillsSlaOverviewRequest, GetRoutingSkillsSlaOverviewResponse, GetSecurityPrivacyRecoveryOverviewRequest, GetSecurityPrivacyRecoveryOverviewResponse, GetSimulationReleaseCertificationOverviewRequest, GetSimulationReleaseCertificationOverviewResponse, GetUniversalWorkItemCaseOverviewRequest, GetUniversalWorkItemCaseOverviewResponse, GetUserRequest, GetUserResponse, GetVerificationAutomationAppealsOverviewRequest, GetVerificationAutomationAppealsOverviewResponse, GetWorkforceLearningCertificationOverviewRequest, GetWorkforceLearningCertificationOverviewResponse, IssueSignedReleaseCertificateRequest, IssueSignedReleaseCertificateResponse, ListAuditLogsRequest, ListAuditLogsResponse, ListDeviceGrantsRequest, ListDeviceGrantsResponse, ListUsersRequest, ListUsersResponse, LogExplainableTrustSignalClusterRequest, LogExplainableTrustSignalClusterResponse, PublishOrRollbackStudioReleaseRequest, PublishOrRollbackStudioReleaseResponse, ReconcileEntitlementOrPartnerPayoutRequest, ReconcileEntitlementOrPartnerPayoutResponse, RecordBlindQaCalibrationReviewRequest, RecordBlindQaCalibrationReviewResponse, RecordCalibratedSandboxOrCoachingRequest, RecordCalibratedSandboxOrCoachingResponse, RecordEvidenceCustodyAssertionRequest, RecordEvidenceCustodyAssertionResponse, RegisterModelDeploymentManifestRequest, RegisterModelDeploymentManifestResponse, ReplayDeadLetterOrDryRunRepairRequest, ReplayDeadLetterOrDryRunRepairResponse, RequestJitPrivilegedElevationRequest, RequestJitPrivilegedElevationResponse, ResolveMemberVerificationAppealRequest, ResolveMemberVerificationAppealResponse, RevokeDeviceGrantRequest, RevokeDeviceGrantResponse, RunFailureClockSimulationScenarioRequest, RunFailureClockSimulationScenarioResponse, RunSyntheticJourneyOrInvariantCheckRequest, RunSyntheticJourneyOrInvariantCheckResponse, SaveApprovedMacroOrDraftRequest, SaveApprovedMacroOrDraftResponse, StageCatalogOrPolicyReleaseRequest, StageCatalogOrPolicyReleaseResponse, StageMasterIncidentCohortPlanRequest, StageMasterIncidentCohortPlanResponse, TransitionUniversalWorkItemStateRequest, TransitionUniversalWorkItemStateResponse, TriggerSlaBreachEscalationRequest, TriggerSlaBreachEscalationResponse, UpsertStaffCertificationPathRequest, UpsertStaffCertificationPathResponse, UpsertStaffSkillCapacityProfileRequest, UpsertStaffSkillCapacityProfileResponse, UpsertWorkItemAdapterRuleRequest, UpsertWorkItemAdapterRuleResponse } from "./admin_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -73,6 +73,413 @@ export const AdminService = {
       name: "RevokeDeviceGrant",
       I: RevokeDeviceGrantRequest,
       O: RevokeDeviceGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Admin Opportunity Choices 1-15 RPCs ===
+     *
+     * @generated from rpc sttattus.admin.v1.AdminService.GetUniversalWorkItemCaseOverview
+     */
+    getUniversalWorkItemCaseOverview: {
+      name: "GetUniversalWorkItemCaseOverview",
+      I: GetUniversalWorkItemCaseOverviewRequest,
+      O: GetUniversalWorkItemCaseOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.UpsertWorkItemAdapterRule
+     */
+    upsertWorkItemAdapterRule: {
+      name: "UpsertWorkItemAdapterRule",
+      I: UpsertWorkItemAdapterRuleRequest,
+      O: UpsertWorkItemAdapterRuleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.TransitionUniversalWorkItemState
+     */
+    transitionUniversalWorkItemState: {
+      name: "TransitionUniversalWorkItemState",
+      I: TransitionUniversalWorkItemStateRequest,
+      O: TransitionUniversalWorkItemStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetRoutingSkillsSlaOverview
+     */
+    getRoutingSkillsSlaOverview: {
+      name: "GetRoutingSkillsSlaOverview",
+      I: GetRoutingSkillsSlaOverviewRequest,
+      O: GetRoutingSkillsSlaOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.UpsertStaffSkillCapacityProfile
+     */
+    upsertStaffSkillCapacityProfile: {
+      name: "UpsertStaffSkillCapacityProfile",
+      I: UpsertStaffSkillCapacityProfileRequest,
+      O: UpsertStaffSkillCapacityProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.TriggerSlaBreachEscalation
+     */
+    triggerSlaBreachEscalation: {
+      name: "TriggerSlaBreachEscalation",
+      I: TriggerSlaBreachEscalationRequest,
+      O: TriggerSlaBreachEscalationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetEvidenceSopDecisionOverview
+     */
+    getEvidenceSopDecisionOverview: {
+      name: "GetEvidenceSopDecisionOverview",
+      I: GetEvidenceSopDecisionOverviewRequest,
+      O: GetEvidenceSopDecisionOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RecordEvidenceCustodyAssertion
+     */
+    recordEvidenceCustodyAssertion: {
+      name: "RecordEvidenceCustodyAssertion",
+      I: RecordEvidenceCustodyAssertionRequest,
+      O: RecordEvidenceCustodyAssertionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.CommitFourEyesSopDecision
+     */
+    commitFourEyesSopDecision: {
+      name: "CommitFourEyesSopDecision",
+      I: CommitFourEyesSopDecisionRequest,
+      O: CommitFourEyesSopDecisionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetCommunicationsConciergeOverview
+     */
+    getCommunicationsConciergeOverview: {
+      name: "GetCommunicationsConciergeOverview",
+      I: GetCommunicationsConciergeOverviewRequest,
+      O: GetCommunicationsConciergeOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.SaveApprovedMacroOrDraft
+     */
+    saveApprovedMacroOrDraft: {
+      name: "SaveApprovedMacroOrDraft",
+      I: SaveApprovedMacroOrDraftRequest,
+      O: SaveApprovedMacroOrDraftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.DispatchReviewedMemberReply
+     */
+    dispatchReviewedMemberReply: {
+      name: "DispatchReviewedMemberReply",
+      I: DispatchReviewedMemberReplyRequest,
+      O: DispatchReviewedMemberReplyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetVerificationAutomationAppealsOverview
+     */
+    getVerificationAutomationAppealsOverview: {
+      name: "GetVerificationAutomationAppealsOverview",
+      I: GetVerificationAutomationAppealsOverviewRequest,
+      O: GetVerificationAutomationAppealsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.EvaluateExplainableVerificationRule
+     */
+    evaluateExplainableVerificationRule: {
+      name: "EvaluateExplainableVerificationRule",
+      I: EvaluateExplainableVerificationRuleRequest,
+      O: EvaluateExplainableVerificationRuleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ResolveMemberVerificationAppeal
+     */
+    resolveMemberVerificationAppeal: {
+      name: "ResolveMemberVerificationAppeal",
+      I: ResolveMemberVerificationAppealRequest,
+      O: ResolveMemberVerificationAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetCatalogContentPolicyStudioOverview
+     */
+    getCatalogContentPolicyStudioOverview: {
+      name: "GetCatalogContentPolicyStudioOverview",
+      I: GetCatalogContentPolicyStudioOverviewRequest,
+      O: GetCatalogContentPolicyStudioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.StageCatalogOrPolicyRelease
+     */
+    stageCatalogOrPolicyRelease: {
+      name: "StageCatalogOrPolicyRelease",
+      I: StageCatalogOrPolicyReleaseRequest,
+      O: StageCatalogOrPolicyReleaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.PublishOrRollbackStudioRelease
+     */
+    publishOrRollbackStudioRelease: {
+      name: "PublishOrRollbackStudioRelease",
+      I: PublishOrRollbackStudioReleaseRequest,
+      O: PublishOrRollbackStudioReleaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetPlatformReconciliationOpsOverview
+     */
+    getPlatformReconciliationOpsOverview: {
+      name: "GetPlatformReconciliationOpsOverview",
+      I: GetPlatformReconciliationOpsOverviewRequest,
+      O: GetPlatformReconciliationOpsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RunSyntheticJourneyOrInvariantCheck
+     */
+    runSyntheticJourneyOrInvariantCheck: {
+      name: "RunSyntheticJourneyOrInvariantCheck",
+      I: RunSyntheticJourneyOrInvariantCheckRequest,
+      O: RunSyntheticJourneyOrInvariantCheckResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ReplayDeadLetterOrDryRunRepair
+     */
+    replayDeadLetterOrDryRunRepair: {
+      name: "ReplayDeadLetterOrDryRunRepair",
+      I: ReplayDeadLetterOrDryRunRepairRequest,
+      O: ReplayDeadLetterOrDryRunRepairResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetAiControlQualityCalibrationOverview
+     */
+    getAiControlQualityCalibrationOverview: {
+      name: "GetAiControlQualityCalibrationOverview",
+      I: GetAiControlQualityCalibrationOverviewRequest,
+      O: GetAiControlQualityCalibrationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RegisterModelDeploymentManifest
+     */
+    registerModelDeploymentManifest: {
+      name: "RegisterModelDeploymentManifest",
+      I: RegisterModelDeploymentManifestRequest,
+      O: RegisterModelDeploymentManifestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RecordBlindQaCalibrationReview
+     */
+    recordBlindQaCalibrationReview: {
+      name: "RecordBlindQaCalibrationReview",
+      I: RecordBlindQaCalibrationReviewRequest,
+      O: RecordBlindQaCalibrationReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetSecurityPrivacyRecoveryOverview
+     */
+    getSecurityPrivacyRecoveryOverview: {
+      name: "GetSecurityPrivacyRecoveryOverview",
+      I: GetSecurityPrivacyRecoveryOverviewRequest,
+      O: GetSecurityPrivacyRecoveryOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RequestJitPrivilegedElevation
+     */
+    requestJitPrivilegedElevation: {
+      name: "RequestJitPrivilegedElevation",
+      I: RequestJitPrivilegedElevationRequest,
+      O: RequestJitPrivilegedElevationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ExecutePrivacyOrAccountRecoveryCase
+     */
+    executePrivacyOrAccountRecoveryCase: {
+      name: "ExecutePrivacyOrAccountRecoveryCase",
+      I: ExecutePrivacyOrAccountRecoveryCaseRequest,
+      O: ExecutePrivacyOrAccountRecoveryCaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetFraudAbuseTrustGraphOverview
+     */
+    getFraudAbuseTrustGraphOverview: {
+      name: "GetFraudAbuseTrustGraphOverview",
+      I: GetFraudAbuseTrustGraphOverviewRequest,
+      O: GetFraudAbuseTrustGraphOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.LogExplainableTrustSignalCluster
+     */
+    logExplainableTrustSignalCluster: {
+      name: "LogExplainableTrustSignalCluster",
+      I: LogExplainableTrustSignalClusterRequest,
+      O: LogExplainableTrustSignalClusterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ApplyReversibleTrustSanction
+     */
+    applyReversibleTrustSanction: {
+      name: "ApplyReversibleTrustSanction",
+      I: ApplyReversibleTrustSanctionRequest,
+      O: ApplyReversibleTrustSanctionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetCommerceEntitlementPayoutOverview
+     */
+    getCommerceEntitlementPayoutOverview: {
+      name: "GetCommerceEntitlementPayoutOverview",
+      I: GetCommerceEntitlementPayoutOverviewRequest,
+      O: GetCommerceEntitlementPayoutOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.CreateLedgerAdjustmentPreview
+     */
+    createLedgerAdjustmentPreview: {
+      name: "CreateLedgerAdjustmentPreview",
+      I: CreateLedgerAdjustmentPreviewRequest,
+      O: CreateLedgerAdjustmentPreviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.ReconcileEntitlementOrPartnerPayout
+     */
+    reconcileEntitlementOrPartnerPayout: {
+      name: "ReconcileEntitlementOrPartnerPayout",
+      I: ReconcileEntitlementOrPartnerPayoutRequest,
+      O: ReconcileEntitlementOrPartnerPayoutResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetMasterIncidentBulkRemediationOverview
+     */
+    getMasterIncidentBulkRemediationOverview: {
+      name: "GetMasterIncidentBulkRemediationOverview",
+      I: GetMasterIncidentBulkRemediationOverviewRequest,
+      O: GetMasterIncidentBulkRemediationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.StageMasterIncidentCohortPlan
+     */
+    stageMasterIncidentCohortPlan: {
+      name: "StageMasterIncidentCohortPlan",
+      I: StageMasterIncidentCohortPlanRequest,
+      O: StageMasterIncidentCohortPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.FanoutIdempotentBulkRemediation
+     */
+    fanoutIdempotentBulkRemediation: {
+      name: "FanoutIdempotentBulkRemediation",
+      I: FanoutIdempotentBulkRemediationRequest,
+      O: FanoutIdempotentBulkRemediationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetWorkforceLearningCertificationOverview
+     */
+    getWorkforceLearningCertificationOverview: {
+      name: "GetWorkforceLearningCertificationOverview",
+      I: GetWorkforceLearningCertificationOverviewRequest,
+      O: GetWorkforceLearningCertificationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.UpsertStaffCertificationPath
+     */
+    upsertStaffCertificationPath: {
+      name: "UpsertStaffCertificationPath",
+      I: UpsertStaffCertificationPathRequest,
+      O: UpsertStaffCertificationPathResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RecordCalibratedSandboxOrCoaching
+     */
+    recordCalibratedSandboxOrCoaching: {
+      name: "RecordCalibratedSandboxOrCoaching",
+      I: RecordCalibratedSandboxOrCoachingRequest,
+      O: RecordCalibratedSandboxOrCoachingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetSimulationReleaseCertificationOverview
+     */
+    getSimulationReleaseCertificationOverview: {
+      name: "GetSimulationReleaseCertificationOverview",
+      I: GetSimulationReleaseCertificationOverviewRequest,
+      O: GetSimulationReleaseCertificationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.RunFailureClockSimulationScenario
+     */
+    runFailureClockSimulationScenario: {
+      name: "RunFailureClockSimulationScenario",
+      I: RunFailureClockSimulationScenarioRequest,
+      O: RunFailureClockSimulationScenarioResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.IssueSignedReleaseCertificate
+     */
+    issueSignedReleaseCertificate: {
+      name: "IssueSignedReleaseCertificate",
+      I: IssueSignedReleaseCertificateRequest,
+      O: IssueSignedReleaseCertificateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GetIndependentAuditObserverOverview
+     */
+    getIndependentAuditObserverOverview: {
+      name: "GetIndependentAuditObserverOverview",
+      I: GetIndependentAuditObserverOverviewRequest,
+      O: GetIndependentAuditObserverOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.CreateTimeBoundObserverEngagement
+     */
+    createTimeBoundObserverEngagement: {
+      name: "CreateTimeBoundObserverEngagement",
+      I: CreateTimeBoundObserverEngagementRequest,
+      O: CreateTimeBoundObserverEngagementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.admin.v1.AdminService.GenerateWatermarkedControlEvidencePack
+     */
+    generateWatermarkedControlEvidencePack: {
+      name: "GenerateWatermarkedControlEvidencePack",
+      I: GenerateWatermarkedControlEvidencePackRequest,
+      O: GenerateWatermarkedControlEvidencePackResponse,
       kind: MethodKind.Unary,
     },
   }

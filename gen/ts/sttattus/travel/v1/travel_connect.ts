@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachVisitToTripRequest, AttachVisitToTripResponse, ConfirmItineraryRequest, ConfirmItineraryResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreatePassportShareRequest, CreatePassportShareResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, GenerateNomadAtlasRequest, GenerateNomadAtlasResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLoungeConciergeRequest, GetLoungeConciergeResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetPassportSurfaceRequest, GetPassportSurfaceResponse, GetTravelPartnerRequest, GetTravelPartnerResponse, GetTripArchiveRequest, GetTripArchiveResponse, GetTripRequest, GetTripResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyItinerariesRequest, ListMyItinerariesResponse, ListMyPassportSharesRequest, ListMyPassportSharesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListTravelPartnersRequest, ListTravelPartnersResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, ParseItineraryTextRequest, ParseItineraryTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RevokePassportShareRequest, RevokePassportShareResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse } from "./travel_pb.js";
+import { ArchiveTripMemoryRecordRequest, ArchiveTripMemoryRecordResponse, AttachVisitToTripRequest, AttachVisitToTripResponse, CompletePackingOrHomeTaskRequest, CompletePackingOrHomeTaskResponse, ConfirmItineraryRequest, ConfirmItineraryResponse, CreateMilestoneRequest, CreateMilestoneResponse, CreatePassportShareRequest, CreatePassportShareResponse, CreateTripRequest, CreateTripResponse, DeleteTripRequest, DeleteTripResponse, DispatchSafetyCheckinBroadcastRequest, DispatchSafetyCheckinBroadcastResponse, EscalateJurisdictionAmbiguityRequest, EscalateJurisdictionAmbiguityResponse, EvaluateEntryReadinessRequest, EvaluateEntryReadinessResponse, ExecuteTripClosureStepRequest, ExecuteTripClosureStepResponse, FilePresenceVerificationAppealRequest, FilePresenceVerificationAppealResponse, GenerateNomadAtlasRequest, GenerateNomadAtlasResponse, GetAccessibleCrisisCommandOverviewRequest, GetAccessibleCrisisCommandOverviewResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetDestinationCompanionOverviewRequest, GetDestinationCompanionOverviewResponse, GetDoorToDoorAirportOverviewRequest, GetDoorToDoorAirportOverviewResponse, GetEntryDocumentReadinessOverviewRequest, GetEntryDocumentReadinessOverviewResponse, GetLiveFlightCommandOverviewRequest, GetLiveFlightCommandOverviewResponse, GetLoungeConciergeRequest, GetLoungeConciergeResponse, GetLoyaltyClaimsFinanceOverviewRequest, GetLoyaltyClaimsFinanceOverviewResponse, GetNomadStatsRequest, GetNomadStatsResponse, GetOfflineTripPackOverviewRequest, GetOfflineTripPackOverviewResponse, GetPassportSurfaceRequest, GetPassportSurfaceResponse, GetPresenceEvidencePacketOverviewRequest, GetPresenceEvidencePacketOverviewResponse, GetPreTripReadinessOverviewRequest, GetPreTripReadinessOverviewResponse, GetPrivatePassportProofsOverviewRequest, GetPrivatePassportProofsOverviewResponse, GetResidencyTravelLedgerOverviewRequest, GetResidencyTravelLedgerOverviewResponse, GetTravelerCollaborationOverviewRequest, GetTravelerCollaborationOverviewResponse, GetTravelPartnerRequest, GetTravelPartnerResponse, GetTripArchiveRequest, GetTripArchiveResponse, GetTripClosureMemoryOverviewRequest, GetTripClosureMemoryOverviewResponse, GetTripRequest, GetTripResponse, GetUniversalTripGraphOverviewRequest, GetUniversalTripGraphOverviewResponse, GrantTripCollaborationRoleRequest, GrantTripCollaborationRoleResponse, HandoffTripExpenseToVaultRequest, HandoffTripExpenseToVaultResponse, IssueOrRevokePartnerGroundPassRequest, IssueOrRevokePartnerGroundPassResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListConciergeMessagesRequest, ListConciergeMessagesResponse, ListCountryVisibilityRequest, ListCountryVisibilityResponse, ListFeedRequest, ListFeedResponse, ListMilestonesRequest, ListMilestonesResponse, ListMyItinerariesRequest, ListMyItinerariesResponse, ListMyPassportSharesRequest, ListMyPassportSharesResponse, ListMyTripsRequest, ListMyTripsResponse, ListMyVerificationSignalsRequest, ListMyVerificationSignalsResponse, ListTravelPartnersRequest, ListTravelPartnersResponse, ListVisitedCountriesRequest, ListVisitedCountriesResponse, LogForegroundProximityQueryRequest, LogForegroundProximityQueryResponse, MintSignedMobilityDossierRequest, MintSignedMobilityDossierResponse, ParseItineraryTextRequest, ParseItineraryTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ReconcileParserDiffEventRequest, ReconcileParserDiffEventResponse, RecordCrisisWelfareCheckinRequest, RecordCrisisWelfareCheckinResponse, RecordFlightObservationRequest, RecordFlightObservationResponse, RevokePassportShareRequest, RevokePassportShareResponse, RunRollingWindowForecastRequest, RunRollingWindowForecastResponse, SaveDestinationDayPlanRequest, SaveDestinationDayPlanResponse, SaveDoorToDoorTimelineRequest, SaveDoorToDoorTimelineResponse, SetMilestoneVisibilityRequest, SetMilestoneVisibilityResponse, StageOfflineTripPackRequest, StageOfflineTripPackResponse, SubmitPresenceEvidencePacketRequest, SubmitPresenceEvidencePacketResponse, SubmitProviderAssistanceRequestRequest, SubmitProviderAssistanceRequestResponse, SyncOfflineMutationReceiptRequest, SyncOfflineMutationReceiptResponse, TriggerDisruptionRecoveryPlanRequest, TriggerDisruptionRecoveryPlanResponse, UpdateFieldPrivacyPolicyRequest, UpdateFieldPrivacyPolicyResponse, UpdateTripRequest, UpdateTripResponse, UpsertCountryVisibilityRequest, UpsertCountryVisibilityResponse, UpsertLoyaltyOrCompensationClaimRequest, UpsertLoyaltyOrCompensationClaimResponse, UpsertPreTripChecklistRequest, UpsertPreTripChecklistResponse, UpsertResidencyDayLedgerRequest, UpsertResidencyDayLedgerResponse, UpsertTripGraphSegmentRequest, UpsertTripGraphSegmentResponse } from "./travel_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -311,6 +311,412 @@ export const TravelService = {
       name: "GenerateNomadAtlas",
       I: GenerateNomadAtlasRequest,
       O: GenerateNomadAtlasResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 1 (N1): Universal Ingestion and Trip Graph
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetUniversalTripGraphOverview
+     */
+    getUniversalTripGraphOverview: {
+      name: "GetUniversalTripGraphOverview",
+      I: GetUniversalTripGraphOverviewRequest,
+      O: GetUniversalTripGraphOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpsertTripGraphSegment
+     */
+    upsertTripGraphSegment: {
+      name: "UpsertTripGraphSegment",
+      I: UpsertTripGraphSegmentRequest,
+      O: UpsertTripGraphSegmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ReconcileParserDiffEvent
+     */
+    reconcileParserDiffEvent: {
+      name: "ReconcileParserDiffEvent",
+      I: ReconcileParserDiffEventRequest,
+      O: ReconcileParserDiffEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (N2/N12): Multi-Source Truth and Live Flight Command
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetLiveFlightCommandOverview
+     */
+    getLiveFlightCommandOverview: {
+      name: "GetLiveFlightCommandOverview",
+      I: GetLiveFlightCommandOverviewRequest,
+      O: GetLiveFlightCommandOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.RecordFlightObservation
+     */
+    recordFlightObservation: {
+      name: "RecordFlightObservation",
+      I: RecordFlightObservationRequest,
+      O: RecordFlightObservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.TriggerDisruptionRecoveryPlan
+     */
+    triggerDisruptionRecoveryPlan: {
+      name: "TriggerDisruptionRecoveryPlan",
+      I: TriggerDisruptionRecoveryPlanRequest,
+      O: TriggerDisruptionRecoveryPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (N4): Encrypted Offline Trip Pack
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetOfflineTripPackOverview
+     */
+    getOfflineTripPackOverview: {
+      name: "GetOfflineTripPackOverview",
+      I: GetOfflineTripPackOverviewRequest,
+      O: GetOfflineTripPackOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.StageOfflineTripPack
+     */
+    stageOfflineTripPack: {
+      name: "StageOfflineTripPack",
+      I: StageOfflineTripPackRequest,
+      O: StageOfflineTripPackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SyncOfflineMutationReceipt
+     */
+    syncOfflineMutationReceipt: {
+      name: "SyncOfflineMutationReceipt",
+      I: SyncOfflineMutationReceiptRequest,
+      O: SyncOfflineMutationReceiptResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (N3): Entry and Document Readiness
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetEntryDocumentReadinessOverview
+     */
+    getEntryDocumentReadinessOverview: {
+      name: "GetEntryDocumentReadinessOverview",
+      I: GetEntryDocumentReadinessOverviewRequest,
+      O: GetEntryDocumentReadinessOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.EvaluateEntryReadiness
+     */
+    evaluateEntryReadiness: {
+      name: "EvaluateEntryReadiness",
+      I: EvaluateEntryReadinessRequest,
+      O: EvaluateEntryReadinessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.EscalateJurisdictionAmbiguity
+     */
+    escalateJurisdictionAmbiguity: {
+      name: "EscalateJurisdictionAmbiguity",
+      I: EscalateJurisdictionAmbiguityRequest,
+      O: EscalateJurisdictionAmbiguityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (N11): Pre-Trip Readiness and Packing
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetPreTripReadinessOverview
+     */
+    getPreTripReadinessOverview: {
+      name: "GetPreTripReadinessOverview",
+      I: GetPreTripReadinessOverviewRequest,
+      O: GetPreTripReadinessOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpsertPreTripChecklist
+     */
+    upsertPreTripChecklist: {
+      name: "UpsertPreTripChecklist",
+      I: UpsertPreTripChecklistRequest,
+      O: UpsertPreTripChecklistResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.CompletePackingOrHomeTask
+     */
+    completePackingOrHomeTask: {
+      name: "CompletePackingOrHomeTask",
+      I: CompletePackingOrHomeTaskRequest,
+      O: CompletePackingOrHomeTaskResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (N7/N13): Door-to-Door and Airport Operations
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetDoorToDoorAirportOverview
+     */
+    getDoorToDoorAirportOverview: {
+      name: "GetDoorToDoorAirportOverview",
+      I: GetDoorToDoorAirportOverviewRequest,
+      O: GetDoorToDoorAirportOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SaveDoorToDoorTimeline
+     */
+    saveDoorToDoorTimeline: {
+      name: "SaveDoorToDoorTimeline",
+      I: SaveDoorToDoorTimelineRequest,
+      O: SaveDoorToDoorTimelineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.IssueOrRevokePartnerGroundPass
+     */
+    issueOrRevokePartnerGroundPass: {
+      name: "IssueOrRevokePartnerGroundPass",
+      I: IssueOrRevokePartnerGroundPassRequest,
+      O: IssueOrRevokePartnerGroundPassResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (N5): Presence Evidence Packet
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetPresenceEvidencePacketOverview
+     */
+    getPresenceEvidencePacketOverview: {
+      name: "GetPresenceEvidencePacketOverview",
+      I: GetPresenceEvidencePacketOverviewRequest,
+      O: GetPresenceEvidencePacketOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SubmitPresenceEvidencePacket
+     */
+    submitPresenceEvidencePacket: {
+      name: "SubmitPresenceEvidencePacket",
+      I: SubmitPresenceEvidencePacketRequest,
+      O: SubmitPresenceEvidencePacketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.FilePresenceVerificationAppeal
+     */
+    filePresenceVerificationAppeal: {
+      name: "FilePresenceVerificationAppeal",
+      I: FilePresenceVerificationAppealRequest,
+      O: FilePresenceVerificationAppealResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (N6): Residency and Corporate Travel Ledger
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetResidencyTravelLedgerOverview
+     */
+    getResidencyTravelLedgerOverview: {
+      name: "GetResidencyTravelLedgerOverview",
+      I: GetResidencyTravelLedgerOverviewRequest,
+      O: GetResidencyTravelLedgerOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpsertResidencyDayLedger
+     */
+    upsertResidencyDayLedger: {
+      name: "UpsertResidencyDayLedger",
+      I: UpsertResidencyDayLedgerRequest,
+      O: UpsertResidencyDayLedgerResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.RunRollingWindowForecast
+     */
+    runRollingWindowForecast: {
+      name: "RunRollingWindowForecast",
+      I: RunRollingWindowForecastRequest,
+      O: RunRollingWindowForecastResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (N8): Traveler, Family, and Assistant Collaboration
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetTravelerCollaborationOverview
+     */
+    getTravelerCollaborationOverview: {
+      name: "GetTravelerCollaborationOverview",
+      I: GetTravelerCollaborationOverviewRequest,
+      O: GetTravelerCollaborationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.GrantTripCollaborationRole
+     */
+    grantTripCollaborationRole: {
+      name: "GrantTripCollaborationRole",
+      I: GrantTripCollaborationRoleRequest,
+      O: GrantTripCollaborationRoleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.DispatchSafetyCheckinBroadcast
+     */
+    dispatchSafetyCheckinBroadcast: {
+      name: "DispatchSafetyCheckinBroadcast",
+      I: DispatchSafetyCheckinBroadcastRequest,
+      O: DispatchSafetyCheckinBroadcastResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (N9): Loyalty, Fare, Claims, and Travel Finance
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetLoyaltyClaimsFinanceOverview
+     */
+    getLoyaltyClaimsFinanceOverview: {
+      name: "GetLoyaltyClaimsFinanceOverview",
+      I: GetLoyaltyClaimsFinanceOverviewRequest,
+      O: GetLoyaltyClaimsFinanceOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpsertLoyaltyOrCompensationClaim
+     */
+    upsertLoyaltyOrCompensationClaim: {
+      name: "UpsertLoyaltyOrCompensationClaim",
+      I: UpsertLoyaltyOrCompensationClaimRequest,
+      O: UpsertLoyaltyOrCompensationClaimResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.HandoffTripExpenseToVault
+     */
+    handoffTripExpenseToVault: {
+      name: "HandoffTripExpenseToVault",
+      I: HandoffTripExpenseToVaultRequest,
+      O: HandoffTripExpenseToVaultResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (N14/N15): Accessible Travel and Crisis Command
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetAccessibleCrisisCommandOverview
+     */
+    getAccessibleCrisisCommandOverview: {
+      name: "GetAccessibleCrisisCommandOverview",
+      I: GetAccessibleCrisisCommandOverviewRequest,
+      O: GetAccessibleCrisisCommandOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SubmitProviderAssistanceRequest
+     */
+    submitProviderAssistanceRequest: {
+      name: "SubmitProviderAssistanceRequest",
+      I: SubmitProviderAssistanceRequestRequest,
+      O: SubmitProviderAssistanceRequestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.RecordCrisisWelfareCheckin
+     */
+    recordCrisisWelfareCheckin: {
+      name: "RecordCrisisWelfareCheckin",
+      I: RecordCrisisWelfareCheckinRequest,
+      O: RecordCrisisWelfareCheckinResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 12 (N16): Destination Companion
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetDestinationCompanionOverview
+     */
+    getDestinationCompanionOverview: {
+      name: "GetDestinationCompanionOverview",
+      I: GetDestinationCompanionOverviewRequest,
+      O: GetDestinationCompanionOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.SaveDestinationDayPlan
+     */
+    saveDestinationDayPlan: {
+      name: "SaveDestinationDayPlan",
+      I: SaveDestinationDayPlanRequest,
+      O: SaveDestinationDayPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.LogForegroundProximityQuery
+     */
+    logForegroundProximityQuery: {
+      name: "LogForegroundProximityQuery",
+      I: LogForegroundProximityQueryRequest,
+      O: LogForegroundProximityQueryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 13 (N10): Private Passport and Mobility Proofs
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetPrivatePassportProofsOverview
+     */
+    getPrivatePassportProofsOverview: {
+      name: "GetPrivatePassportProofsOverview",
+      I: GetPrivatePassportProofsOverviewRequest,
+      O: GetPrivatePassportProofsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.MintSignedMobilityDossier
+     */
+    mintSignedMobilityDossier: {
+      name: "MintSignedMobilityDossier",
+      I: MintSignedMobilityDossierRequest,
+      O: MintSignedMobilityDossierResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.UpdateFieldPrivacyPolicy
+     */
+    updateFieldPrivacyPolicy: {
+      name: "UpdateFieldPrivacyPolicy",
+      I: UpdateFieldPrivacyPolicyRequest,
+      O: UpdateFieldPrivacyPolicyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 14 (N17): Trip Closure and Long-Term Memory
+     *
+     * @generated from rpc sttattus.travel.v1.TravelService.GetTripClosureMemoryOverview
+     */
+    getTripClosureMemoryOverview: {
+      name: "GetTripClosureMemoryOverview",
+      I: GetTripClosureMemoryOverviewRequest,
+      O: GetTripClosureMemoryOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ExecuteTripClosureStep
+     */
+    executeTripClosureStep: {
+      name: "ExecuteTripClosureStep",
+      I: ExecuteTripClosureStepRequest,
+      O: ExecuteTripClosureStepResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.travel.v1.TravelService.ArchiveTripMemoryRecord
+     */
+    archiveTripMemoryRecord: {
+      name: "ArchiveTripMemoryRecord",
+      I: ArchiveTripMemoryRecordRequest,
+      O: ArchiveTripMemoryRecordResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -1215,6 +1215,38 @@ service DatingService {
   // client-supplied URL, exactly as AddDatingPhoto does.
   rpc SetVoiceBaseline(SetVoiceBaselineRequest) returns (SetVoiceBaselineResponse);
   rpc RemoveVoiceBaseline(RemoveVoiceBaselineRequest) returns (RemoveVoiceBaselineResponse);
+
+  // --- Atlas Choice 12 (AT11): Relationship Progression and Separation ---
+  rpc GetRelationshipProgressionWorkbench(GetRelationshipProgressionWorkbenchRequest) returns (GetRelationshipProgressionWorkbenchResponse);
+  rpc UpsertRelationshipStageAgreement(UpsertRelationshipStageAgreementRequest) returns (UpsertRelationshipStageAgreementResponse);
+  rpc RecordRelationshipCheckinReflection(RecordRelationshipCheckinReflectionRequest) returns (RecordRelationshipCheckinReflectionResponse);
+  rpc InitiateSafeUncouplingPlan(InitiateSafeUncouplingPlanRequest) returns (InitiateSafeUncouplingPlanResponse);
+  rpc AdminListRelationshipProgressionAudit(AdminListRelationshipProgressionAuditRequest) returns (AdminListRelationshipProgressionAuditResponse);
+  rpc AdminModerateRelationshipPromptSafety(AdminModerateRelationshipPromptSafetyRequest) returns (AdminModerateRelationshipPromptSafetyResponse);
+
+  // --- Atlas Choice 13 (AT12): Friendship, Crews, and Missions ---
+  rpc GetFriendshipCrewsWorkbench(GetFriendshipCrewsWorkbenchRequest) returns (GetFriendshipCrewsWorkbenchResponse);
+  rpc CreateTemporaryCrew(CreateTemporaryCrewRequest) returns (CreateTemporaryCrewResponse);
+  rpc SubmitCrewMissionEvidence(SubmitCrewMissionEvidenceRequest) returns (SubmitCrewMissionEvidenceResponse);
+  rpc DissolveOrCompleteCrew(DissolveOrCompleteCrewRequest) returns (DissolveOrCompleteCrewResponse);
+  rpc AdminListFriendshipCrewsAudit(AdminListFriendshipCrewsAuditRequest) returns (AdminListFriendshipCrewsAuditResponse);
+  rpc AdminModerateCrewSafetyAndMission(AdminModerateCrewSafetyAndMissionRequest) returns (AdminModerateCrewSafetyAndMissionResponse);
+
+  // --- Atlas Choice 14 (AT13): Connection Archive and Meaningful Gifting ---
+  rpc GetConnectionArchiveWorkbench(GetConnectionArchiveWorkbenchRequest) returns (GetConnectionArchiveWorkbenchResponse);
+  rpc UpsertConnectionArchiveEntry(UpsertConnectionArchiveEntryRequest) returns (UpsertConnectionArchiveEntryResponse);
+  rpc SendMeaningfulGuardedGift(SendMeaningfulGuardedGiftRequest) returns (SendMeaningfulGuardedGiftResponse);
+  rpc ApproveYearbookPreviewManifest(ApproveYearbookPreviewManifestRequest) returns (ApproveYearbookPreviewManifestResponse);
+  rpc AdminListConnectionArchiveAudit(AdminListConnectionArchiveAuditRequest) returns (AdminListConnectionArchiveAuditResponse);
+  rpc AdminResolveGiftOrArchiveDispute(AdminResolveGiftOrArchiveDisputeRequest) returns (AdminResolveGiftOrArchiveDisputeResponse);
+
+  // --- Atlas Choice 15 (AT15): Inclusive and Global Release Certification ---
+  rpc GetInclusiveGlobalReleaseWorkbench(GetInclusiveGlobalReleaseWorkbenchRequest) returns (GetInclusiveGlobalReleaseWorkbenchResponse);
+  rpc UpdateAccessibleInclusionProfile(UpdateAccessibleInclusionProfileRequest) returns (UpdateAccessibleInclusionProfileResponse);
+  rpc GeneratePortableConnectionBundle(GeneratePortableConnectionBundleRequest) returns (GeneratePortableConnectionBundleResponse);
+  rpc VerifyJurisdictionOfflineSafetyPack(VerifyJurisdictionOfflineSafetyPackRequest) returns (VerifyJurisdictionOfflineSafetyPackResponse);
+  rpc AdminListGlobalReleaseCertificationAudit(AdminListGlobalReleaseCertificationAuditRequest) returns (AdminListGlobalReleaseCertificationAuditResponse);
+  rpc AdminCertifyJurisdictionReleaseGate(AdminCertifyJurisdictionReleaseGateRequest) returns (AdminCertifyJurisdictionReleaseGateResponse);
 }
 
 // --- A9P6 dating photos ---
@@ -1284,3 +1316,471 @@ message SetPrimaryDatingPhotoRequest {
 message SetPrimaryDatingPhotoResponse {
   repeated DatingPhoto photos = 1;
 }
+
+// ============================================================================
+// Atlas Choice 12 (AT11) — Relationship Progression and Separation
+// ============================================================================
+
+message AtlasRelationshipAgreement {
+  string id = 1;
+  string user_id = 2;
+  string partner_user_id = 3;
+  string partner_name = 4;
+  // exploring | dating_intentionally | committed_partnership | anchor_nesting | paused_breathing_room | companionate
+  string current_stage = 5;
+  // non_linear_inclusive | monogamous | consensual_non_monogamous | queerplatonic
+  string stage_structure = 6;
+  bool discovery_paused = 7;
+  string pacing_cadence = 8;
+  string shared_boundaries_json = 9;
+  string previous_stage = 10;
+  int64 updated_at = 11;
+}
+
+message AtlasRelationshipCheckin {
+  string id = 1;
+  string agreement_id = 2;
+  string user_id = 3;
+  // pacing | boundaries | communication | future_alignment | support_needs
+  string topic_category = 4;
+  string my_reflection = 5;
+  // private_by_default | shared_on_consent
+  string visibility_mode = 6;
+  // aligned | needs_conversation | revisiting
+  string alignment_state = 7;
+  bool licensed_boundary_verified = 8;
+  string moderation_status = 9;
+  int64 created_at = 10;
+}
+
+message AtlasUncouplingPlan {
+  string id = 1;
+  string agreement_id = 2;
+  string user_id = 3;
+  // active_cooling_off | amicable_separation | no_contact_shield | completed_closure
+  string separation_state = 4;
+  // mutual_archive_freeze | keep_own_contributions | full_mutual_hidden
+  string shared_media_policy = 5;
+  // cancel_upcoming_bookings | split_reservations
+  string shared_plans_policy = 6;
+  bool mutual_discovery_block = 7;
+  string closure_note = 8;
+  int64 resolved_at = 9;
+}
+
+message GetRelationshipProgressionWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetRelationshipProgressionWorkbenchResponse {
+  repeated AtlasRelationshipAgreement agreements = 1;
+  repeated AtlasRelationshipCheckin checkins = 2;
+  repeated AtlasUncouplingPlan uncoupling_plans = 3;
+  string licensed_provider_boundary_notice = 4;
+}
+
+message UpsertRelationshipStageAgreementRequest {
+  string user_id = 1;
+  string partner_user_id = 2;
+  string partner_name = 3;
+  string current_stage = 4;
+  string stage_structure = 5;
+  bool discovery_paused = 6;
+  string pacing_cadence = 7;
+  string shared_boundaries_json = 8;
+}
+
+message UpsertRelationshipStageAgreementResponse {
+  AtlasRelationshipAgreement agreement = 1;
+}
+
+message RecordRelationshipCheckinReflectionRequest {
+  string user_id = 1;
+  string agreement_id = 2;
+  string topic_category = 3;
+  string my_reflection = 4;
+  string visibility_mode = 5;
+  string alignment_state = 6;
+}
+
+message RecordRelationshipCheckinReflectionResponse {
+  AtlasRelationshipCheckin checkin = 1;
+}
+
+message InitiateSafeUncouplingPlanRequest {
+  string user_id = 1;
+  string agreement_id = 2;
+  string separation_state = 3;
+  string shared_media_policy = 4;
+  string shared_plans_policy = 5;
+  bool mutual_discovery_block = 6;
+  string closure_note = 7;
+}
+
+message InitiateSafeUncouplingPlanResponse {
+  AtlasUncouplingPlan plan = 1;
+}
+
+message AdminListRelationshipProgressionAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListRelationshipProgressionAuditResponse {
+  repeated AtlasRelationshipAgreement agreements = 1;
+  repeated AtlasRelationshipCheckin checkins = 2;
+  repeated AtlasUncouplingPlan uncoupling_plans = 3;
+}
+
+message AdminModerateRelationshipPromptSafetyRequest {
+  string checkin_id = 1;
+  string moderation_status = 2;
+  bool licensed_boundary_verified = 3;
+  string audit_reason = 4;
+}
+
+message AdminModerateRelationshipPromptSafetyResponse {
+  AtlasRelationshipCheckin checkin = 1;
+}
+
+// ============================================================================
+// Atlas Choice 13 (AT12) — Friendship, Crews, and Missions
+// ============================================================================
+
+message AtlasTemporaryCrew {
+  string id = 1;
+  string creator_user_id = 2;
+  string title = 3;
+  // platonic_friendship | activity_partner | creative_collaborator | city_newcomer_host
+  string intent_lane = 4;
+  string city = 5;
+  // organizer | logistics_lead | treasurer | member
+  string member_role = 6;
+  int32 member_count = 7;
+  int32 max_members = 8;
+  // no_cost_public | even_split | each_pays_own | organizer_covered
+  string expense_mode = 9;
+  int32 estimated_share_cents = 10;
+  // forming | active_outing | completed_gracefully | dissolved
+  string lifecycle_state = 11;
+  bool romantic_lane_isolated = 12;
+  int64 dissolves_at = 13;
+}
+
+message AtlasCrewSocialMission {
+  string id = 1;
+  string crew_id = 2;
+  string user_id = 3;
+  string mission_title = 4;
+  // third_place_salon | outdoor_expedition | volunteer_sprint | cultural_table
+  string category = 5;
+  // venue_checkin_qr | dual_presence_ping | host_attestation | shared_photo_opt_in
+  string evidence_kind = 6;
+  string evidence_reference = 7;
+  // pending | verified | flagged
+  string verification_status = 8;
+  int64 completed_at = 9;
+}
+
+message AtlasContextualCrewEndorsement {
+  string id = 1;
+  string crew_id = 2;
+  string recipient_user_id = 3;
+  // punctual_organizer | welcoming_guide | clear_communicator | fair_expense_settler
+  string context_badge = 4;
+  bool universal_ranking_prohibited = 5;
+  string endorsement_note = 6;
+  int64 created_at = 7;
+}
+
+message GetFriendshipCrewsWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetFriendshipCrewsWorkbenchResponse {
+  repeated AtlasTemporaryCrew crews = 1;
+  repeated AtlasCrewSocialMission missions = 2;
+  repeated AtlasContextualCrewEndorsement endorsements = 3;
+}
+
+message CreateTemporaryCrewRequest {
+  string creator_user_id = 1;
+  string title = 2;
+  string intent_lane = 3;
+  string city = 4;
+  string member_role = 5;
+  int32 max_members = 6;
+  string expense_mode = 7;
+  int32 estimated_share_cents = 8;
+}
+
+message CreateTemporaryCrewResponse {
+  AtlasTemporaryCrew crew = 1;
+}
+
+message SubmitCrewMissionEvidenceRequest {
+  string user_id = 1;
+  string crew_id = 2;
+  string mission_title = 3;
+  string category = 4;
+  string evidence_kind = 5;
+  string evidence_reference = 6;
+}
+
+message SubmitCrewMissionEvidenceResponse {
+  AtlasCrewSocialMission mission = 1;
+}
+
+message DissolveOrCompleteCrewRequest {
+  string user_id = 1;
+  string crew_id = 2;
+  string lifecycle_state = 3;
+  string context_badge = 4;
+  string endorsement_note = 5;
+}
+
+message DissolveOrCompleteCrewResponse {
+  AtlasTemporaryCrew crew = 1;
+  AtlasContextualCrewEndorsement endorsement = 2;
+}
+
+message AdminListFriendshipCrewsAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListFriendshipCrewsAuditResponse {
+  repeated AtlasTemporaryCrew crews = 1;
+  repeated AtlasCrewSocialMission missions = 2;
+  repeated AtlasContextualCrewEndorsement endorsements = 3;
+}
+
+message AdminModerateCrewSafetyAndMissionRequest {
+  string mission_id = 1;
+  string verification_status = 2;
+  string audit_reason = 3;
+}
+
+message AdminModerateCrewSafetyAndMissionResponse {
+  AtlasCrewSocialMission mission = 1;
+}
+
+// ============================================================================
+// Atlas Choice 14 (AT13) — Connection Archive and Meaningful Gifting
+// ============================================================================
+
+message AtlasConnectionArchiveEntry {
+  string id = 1;
+  string user_id = 2;
+  // akashic_chapter | member_letter | appreciation_gift | salon_keepsake | yearbook_moment
+  string artifact_kind = 3;
+  string title = 4;
+  string summary = 5;
+  // private_vault | mutual_connection_only | yearbook_selected
+  string audience_scope = 6;
+  // retain_private | return_to_sender | mutual_hide | delete_permanently | disputed_hold
+  string post_match_disposition = 7;
+  int32 authorship_version = 8;
+  int64 created_at = 9;
+}
+
+message AtlasMeaningfulGiftGuardrail {
+  string id = 1;
+  string sender_user_id = 2;
+  string recipient_user_id = 3;
+  string gift_title = 4;
+  // non_monetary_note | artisan_token | book_edition | salon_invitation
+  string gift_kind = 5;
+  int32 spend_cents = 6;
+  int32 monthly_cap_cents = 7;
+  // welcome_appreciation | ask_first | no_gifts
+  string recipient_preference = 8;
+  bool ranking_or_match_advantage_granted = 9;
+  // clear | refunded | held_coercion_review
+  string dispute_status = 10;
+  int64 created_at = 11;
+}
+
+message AtlasYearbookPreviewManifest {
+  string id = 1;
+  string user_id = 2;
+  string year_label = 3;
+  int32 selected_entry_count = 4;
+  bool preview_quotes_verified = 5;
+  bool no_inferred_moments_verified = 6;
+  // draft_preview | member_approved | fulfilled
+  string print_status = 7;
+  int64 updated_at = 8;
+}
+
+message GetConnectionArchiveWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetConnectionArchiveWorkbenchResponse {
+  repeated AtlasConnectionArchiveEntry entries = 1;
+  repeated AtlasMeaningfulGiftGuardrail gifts = 2;
+  repeated AtlasYearbookPreviewManifest yearbook_manifests = 3;
+}
+
+message UpsertConnectionArchiveEntryRequest {
+  string user_id = 1;
+  string artifact_kind = 2;
+  string title = 3;
+  string summary = 4;
+  string audience_scope = 5;
+  string post_match_disposition = 6;
+}
+
+message UpsertConnectionArchiveEntryResponse {
+  AtlasConnectionArchiveEntry entry = 1;
+}
+
+message SendMeaningfulGuardedGiftRequest {
+  string sender_user_id = 1;
+  string recipient_user_id = 2;
+  string gift_title = 3;
+  string gift_kind = 4;
+  int32 spend_cents = 5;
+  string recipient_preference = 6;
+}
+
+message SendMeaningfulGuardedGiftResponse {
+  AtlasMeaningfulGiftGuardrail gift = 1;
+}
+
+message ApproveYearbookPreviewManifestRequest {
+  string user_id = 1;
+  string year_label = 2;
+  int32 selected_entry_count = 3;
+  string print_status = 4;
+}
+
+message ApproveYearbookPreviewManifestResponse {
+  AtlasYearbookPreviewManifest manifest = 1;
+}
+
+message AdminListConnectionArchiveAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListConnectionArchiveAuditResponse {
+  repeated AtlasConnectionArchiveEntry entries = 1;
+  repeated AtlasMeaningfulGiftGuardrail gifts = 2;
+  repeated AtlasYearbookPreviewManifest yearbook_manifests = 3;
+}
+
+message AdminResolveGiftOrArchiveDisputeRequest {
+  string gift_id = 1;
+  string dispute_status = 2;
+  string audit_reason = 3;
+}
+
+message AdminResolveGiftOrArchiveDisputeResponse {
+  AtlasMeaningfulGiftGuardrail gift = 1;
+}
+
+// ============================================================================
+// Atlas Choice 15 (AT15) — Inclusive and Global Release Certification
+// ============================================================================
+
+message AtlasAccessibleInclusionProfile {
+  string id = 1;
+  string user_id = 2;
+  // non_spatial_structured_list | reduced_motion_cards | screen_reader_linear | spatial_cosmos
+  string discovery_surface_mode = 3;
+  int32 large_type_scale_percent = 4;
+  bool captions_and_transcripts_enforced = 5;
+  bool cognitive_simplification_enabled = 6;
+  bool identity_never_inferred_target = 7;
+  bool wcag_aa_verified = 8;
+  int64 updated_at = 9;
+}
+
+message AtlasJurisdictionReleaseGate {
+  string id = 1;
+  string country_code = 2;
+  string region_name = 3;
+  int32 age_floor_years = 4;
+  string emergency_resource_pack = 5;
+  string low_bandwidth_offline_date_pack = 6;
+  bool jurisdiction_certified = 7;
+  // certified_live | pilot_review | held_compliance
+  string release_state = 8;
+  int64 updated_at = 9;
+}
+
+message AtlasPortableConnectionBundle {
+  string id = 1;
+  string user_id = 2;
+  // export_authored_bundle | import_authored_bundle
+  string direction = 3;
+  string included_artifacts_summary = 4;
+  string mapping_report_json = 5;
+  bool fabricated_match_or_message_history_blocked = 6;
+  // verified_ready | completed | quarantined
+  string bundle_status = 7;
+  int64 created_at = 8;
+}
+
+message GetInclusiveGlobalReleaseWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetInclusiveGlobalReleaseWorkbenchResponse {
+  repeated AtlasAccessibleInclusionProfile inclusion_profiles = 1;
+  repeated AtlasJurisdictionReleaseGate jurisdiction_gates = 2;
+  repeated AtlasPortableConnectionBundle portable_bundles = 3;
+}
+
+message UpdateAccessibleInclusionProfileRequest {
+  string user_id = 1;
+  string discovery_surface_mode = 2;
+  int32 large_type_scale_percent = 3;
+  bool captions_and_transcripts_enforced = 4;
+  bool cognitive_simplification_enabled = 5;
+}
+
+message UpdateAccessibleInclusionProfileResponse {
+  AtlasAccessibleInclusionProfile profile = 1;
+}
+
+message GeneratePortableConnectionBundleRequest {
+  string user_id = 1;
+  string direction = 2;
+  string included_artifacts_summary = 3;
+}
+
+message GeneratePortableConnectionBundleResponse {
+  AtlasPortableConnectionBundle bundle = 1;
+}
+
+message VerifyJurisdictionOfflineSafetyPackRequest {
+  string country_code = 1;
+  string region_name = 2;
+}
+
+message VerifyJurisdictionOfflineSafetyPackResponse {
+  AtlasJurisdictionReleaseGate gate = 1;
+}
+
+message AdminListGlobalReleaseCertificationAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListGlobalReleaseCertificationAuditResponse {
+  repeated AtlasAccessibleInclusionProfile inclusion_profiles = 1;
+  repeated AtlasJurisdictionReleaseGate jurisdiction_gates = 2;
+  repeated AtlasPortableConnectionBundle portable_bundles = 3;
+}
+
+message AdminCertifyJurisdictionReleaseGateRequest {
+  string gate_id = 1;
+  string release_state = 2;
+  bool jurisdiction_certified = 3;
+  string audit_reason = 4;
+}
+
+message AdminCertifyJurisdictionReleaseGateResponse {
+  AtlasJurisdictionReleaseGate gate = 1;
+}
+
+

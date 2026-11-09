@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AcknowledgeStressPromptRequest, AcknowledgeStressPromptResponse, AddJournalEntryRequest, AddJournalEntryResponse, AdvanceProgrammeWeekRequest, AdvanceProgrammeWeekResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateProfileShareRequest, CreateProfileShareResponse, EnrollProgrammeRequest, EnrollProgrammeResponse, GenerateZenithAlmanacRequest, GenerateZenithAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCognitiveLoadRequest, GetCognitiveLoadResponse, GetCognitiveTestStatusRequest, GetCognitiveTestStatusResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetFocusHistoryRequest, GetFocusHistoryResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetJournalInsightsRequest, GetJournalInsightsResponse, GetProgrammeRequest, GetProgrammeResponse, GetSovereignAudioRequest, GetSovereignAudioResponse, GetTodayLoadRequest, GetTodayLoadResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInZenithRecapRequest, GetYearInZenithRecapResponse, GetZenithStatsRequest, GetZenithStatsResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAudioEnvironmentsRequest, ListAudioEnvironmentsResponse, ListBlockTemplatesRequest, ListBlockTemplatesResponse, ListLibraryItemsRequest, ListLibraryItemsResponse, ListLoungesRequest, ListLoungesResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, ListMyCognitiveTestsRequest, ListMyCognitiveTestsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyJournalEntriesRequest, ListMyJournalEntriesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyProgrammesRequest, ListMyProgrammesResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentSessionsRequest, ListRecentSessionsResponse, ListRitualsRequest, ListRitualsResponse, ListSovereignAudioRequest, ListSovereignAudioResponse, ListTeachersRequest, ListTeachersResponse, LogFocusSessionRequest, LogFocusSessionResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecommendBlockRequest, RecommendBlockResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, SimulateFortitudeRequest, SimulateFortitudeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCognitiveTestRequest, SubmitCognitiveTestResponse } from "./zenith_pb.js";
+import { AcceptOrReplanZenithDayArchitectRequest, AcceptOrReplanZenithDayArchitectResponse, AcknowledgeStressPromptRequest, AcknowledgeStressPromptResponse, AddJournalEntryRequest, AddJournalEntryResponse, AdvanceProgrammeWeekRequest, AdvanceProgrammeWeekResponse, ApproveOrReleaseZenithBoundaryCatchupRequest, ApproveOrReleaseZenithBoundaryCatchupResponse, ArmOrFallbackZenithSensoryWorkspaceRequest, ArmOrFallbackZenithSensoryWorkspaceResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CompleteZenithIntentionOutcomeLoopRequest, CompleteZenithIntentionOutcomeLoopResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateProfileShareRequest, CreateProfileShareResponse, EditOrDeleteZenithPrivatePatternMemoryRequest, EditOrDeleteZenithPrivatePatternMemoryResponse, EnrollProgrammeRequest, EnrollProgrammeResponse, EvaluateZenithAttentionNOf1ExperimentRequest, EvaluateZenithAttentionNOf1ExperimentResponse, FlagOrValidateZenithCognitiveSessionRequest, FlagOrValidateZenithCognitiveSessionResponse, GenerateZenithAlmanacRequest, GenerateZenithAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetCognitiveLoadRequest, GetCognitiveLoadResponse, GetCognitiveTestStatusRequest, GetCognitiveTestStatusResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetFocusHistoryRequest, GetFocusHistoryResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetJournalInsightsRequest, GetJournalInsightsResponse, GetProgrammeRequest, GetProgrammeResponse, GetSovereignAudioRequest, GetSovereignAudioResponse, GetTodayLoadRequest, GetTodayLoadResponse, GetTodaySummaryRequest, GetTodaySummaryResponse, GetYearInZenithRecapRequest, GetYearInZenithRecapResponse, GetZenithAdaptiveDayArchitectWorkbenchRequest, GetZenithAdaptiveDayArchitectWorkbenchResponse, GetZenithAttentionNOf1LabWorkbenchRequest, GetZenithAttentionNOf1LabWorkbenchResponse, GetZenithCoachingTeamMeetingWorkbenchRequest, GetZenithCoachingTeamMeetingWorkbenchResponse, GetZenithCognitiveReadinessWorkbenchRequest, GetZenithCognitiveReadinessWorkbenchResponse, GetZenithCommunicationBoundaryWorkbenchRequest, GetZenithCommunicationBoundaryWorkbenchResponse, GetZenithFocusFirewallWorkbenchRequest, GetZenithFocusFirewallWorkbenchResponse, GetZenithIntentionOutcomeWorkbenchRequest, GetZenithIntentionOutcomeWorkbenchResponse, GetZenithPrivatePatternMemoryWorkbenchRequest, GetZenithPrivatePatternMemoryWorkbenchResponse, GetZenithRecoveryProtocolStudioWorkbenchRequest, GetZenithRecoveryProtocolStudioWorkbenchResponse, GetZenithSensoryDesktopWorkbenchRequest, GetZenithSensoryDesktopWorkbenchResponse, GetZenithStatsRequest, GetZenithStatsResponse, GetZenithTravelPerformanceWorkbenchRequest, GetZenithTravelPerformanceWorkbenchResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListAudioEnvironmentsRequest, ListAudioEnvironmentsResponse, ListBlockTemplatesRequest, ListBlockTemplatesResponse, ListLibraryItemsRequest, ListLibraryItemsResponse, ListLoungesRequest, ListLoungesResponse, ListMyCalendarConnectionsRequest, ListMyCalendarConnectionsResponse, ListMyCalendarEventsRequest, ListMyCalendarEventsResponse, ListMyCognitiveTestsRequest, ListMyCognitiveTestsResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyJournalEntriesRequest, ListMyJournalEntriesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyProfileSharesRequest, ListMyProfileSharesResponse, ListMyProgrammesRequest, ListMyProgrammesResponse, ListProgrammesRequest, ListProgrammesResponse, ListRecentSessionsRequest, ListRecentSessionsResponse, ListRitualsRequest, ListRitualsResponse, ListSovereignAudioRequest, ListSovereignAudioResponse, ListTeachersRequest, ListTeachersResponse, LogFocusSessionRequest, LogFocusSessionResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, ProposeZenithMeetingFreeOrOracleHandoffRequest, ProposeZenithMeetingFreeOrOracleHandoffResponse, RecommendBlockRequest, RecommendBlockResponse, RecordZenithRecoveryCheckOrAdverseFlagRequest, RecordZenithRecoveryCheckOrAdverseFlagResponse, ReplanZenithTravelMissedStepRequest, ReplanZenithTravelMissedStepResponse, RevokeProfileShareRequest, RevokeProfileShareResponse, SaveZenithAdaptiveDayArchitectPlanRequest, SaveZenithAdaptiveDayArchitectPlanResponse, SaveZenithAttentionNOf1ExperimentRequest, SaveZenithAttentionNOf1ExperimentResponse, SaveZenithCoachingTeamMeetingHealthRequest, SaveZenithCoachingTeamMeetingHealthResponse, SaveZenithCognitiveReadinessSessionRequest, SaveZenithCognitiveReadinessSessionResponse, SaveZenithCommunicationBoundaryRuleRequest, SaveZenithCommunicationBoundaryRuleResponse, SaveZenithFocusFirewallSessionRequest, SaveZenithFocusFirewallSessionResponse, SaveZenithIntentionOutcomeContractRequest, SaveZenithIntentionOutcomeContractResponse, SaveZenithPrivatePatternMemoryRequest, SaveZenithPrivatePatternMemoryResponse, SaveZenithRecoveryProtocolRunRequest, SaveZenithRecoveryProtocolRunResponse, SaveZenithSensoryDesktopWorkspaceRequest, SaveZenithSensoryDesktopWorkspaceResponse, SaveZenithTravelPerformanceProtocolRequest, SaveZenithTravelPerformanceProtocolResponse, SimulateFortitudeRequest, SimulateFortitudeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitCognitiveTestRequest, SubmitCognitiveTestResponse, TriggerZenithFocusFirewallBypassOrCompleteRequest, TriggerZenithFocusFirewallBypassOrCompleteResponse } from "./zenith_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -471,6 +471,326 @@ export const ZenithService = {
       name: "CancelLoungeBooking",
       I: CancelLoungeBookingRequest,
       O: CancelLoungeBookingResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ===== Zenith Opportunity Choices 1–11 (Z1..Z14) =====
+     * Choice 1 (Z1): Native Focus Firewall
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithFocusFirewallWorkbench
+     */
+    getZenithFocusFirewallWorkbench: {
+      name: "GetZenithFocusFirewallWorkbench",
+      I: GetZenithFocusFirewallWorkbenchRequest,
+      O: GetZenithFocusFirewallWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithFocusFirewallSession
+     */
+    saveZenithFocusFirewallSession: {
+      name: "SaveZenithFocusFirewallSession",
+      I: SaveZenithFocusFirewallSessionRequest,
+      O: SaveZenithFocusFirewallSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.TriggerZenithFocusFirewallBypassOrComplete
+     */
+    triggerZenithFocusFirewallBypassOrComplete: {
+      name: "TriggerZenithFocusFirewallBypassOrComplete",
+      I: TriggerZenithFocusFirewallBypassOrCompleteRequest,
+      O: TriggerZenithFocusFirewallBypassOrCompleteResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 2 (Z2): Adaptive Day Architect
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithAdaptiveDayArchitectWorkbench
+     */
+    getZenithAdaptiveDayArchitectWorkbench: {
+      name: "GetZenithAdaptiveDayArchitectWorkbench",
+      I: GetZenithAdaptiveDayArchitectWorkbenchRequest,
+      O: GetZenithAdaptiveDayArchitectWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithAdaptiveDayArchitectPlan
+     */
+    saveZenithAdaptiveDayArchitectPlan: {
+      name: "SaveZenithAdaptiveDayArchitectPlan",
+      I: SaveZenithAdaptiveDayArchitectPlanRequest,
+      O: SaveZenithAdaptiveDayArchitectPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.AcceptOrReplanZenithDayArchitect
+     */
+    acceptOrReplanZenithDayArchitect: {
+      name: "AcceptOrReplanZenithDayArchitect",
+      I: AcceptOrReplanZenithDayArchitectRequest,
+      O: AcceptOrReplanZenithDayArchitectResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 3 (Z9): Intention-to-Outcome Focus Loop
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithIntentionOutcomeWorkbench
+     */
+    getZenithIntentionOutcomeWorkbench: {
+      name: "GetZenithIntentionOutcomeWorkbench",
+      I: GetZenithIntentionOutcomeWorkbenchRequest,
+      O: GetZenithIntentionOutcomeWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithIntentionOutcomeContract
+     */
+    saveZenithIntentionOutcomeContract: {
+      name: "SaveZenithIntentionOutcomeContract",
+      I: SaveZenithIntentionOutcomeContractRequest,
+      O: SaveZenithIntentionOutcomeContractResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.CompleteZenithIntentionOutcomeLoop
+     */
+    completeZenithIntentionOutcomeLoop: {
+      name: "CompleteZenithIntentionOutcomeLoop",
+      I: CompleteZenithIntentionOutcomeLoopRequest,
+      O: CompleteZenithIntentionOutcomeLoopResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithAttentionNOf1LabWorkbench
+     */
+    getZenithAttentionNOf1LabWorkbench: {
+      name: "GetZenithAttentionNOf1LabWorkbench",
+      I: GetZenithAttentionNOf1LabWorkbenchRequest,
+      O: GetZenithAttentionNOf1LabWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithAttentionNOf1Experiment
+     */
+    saveZenithAttentionNOf1Experiment: {
+      name: "SaveZenithAttentionNOf1Experiment",
+      I: SaveZenithAttentionNOf1ExperimentRequest,
+      O: SaveZenithAttentionNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.EvaluateZenithAttentionNOf1Experiment
+     */
+    evaluateZenithAttentionNOf1Experiment: {
+      name: "EvaluateZenithAttentionNOf1Experiment",
+      I: EvaluateZenithAttentionNOf1ExperimentRequest,
+      O: EvaluateZenithAttentionNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 5 (Z4, Z13): Recovery and Protocol Studio
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithRecoveryProtocolStudioWorkbench
+     */
+    getZenithRecoveryProtocolStudioWorkbench: {
+      name: "GetZenithRecoveryProtocolStudioWorkbench",
+      I: GetZenithRecoveryProtocolStudioWorkbenchRequest,
+      O: GetZenithRecoveryProtocolStudioWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithRecoveryProtocolRun
+     */
+    saveZenithRecoveryProtocolRun: {
+      name: "SaveZenithRecoveryProtocolRun",
+      I: SaveZenithRecoveryProtocolRunRequest,
+      O: SaveZenithRecoveryProtocolRunResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.RecordZenithRecoveryCheckOrAdverseFlag
+     */
+    recordZenithRecoveryCheckOrAdverseFlag: {
+      name: "RecordZenithRecoveryCheckOrAdverseFlag",
+      I: RecordZenithRecoveryCheckOrAdverseFlagRequest,
+      O: RecordZenithRecoveryCheckOrAdverseFlagResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (Z10): Communication Boundaries
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithCommunicationBoundaryWorkbench
+     */
+    getZenithCommunicationBoundaryWorkbench: {
+      name: "GetZenithCommunicationBoundaryWorkbench",
+      I: GetZenithCommunicationBoundaryWorkbenchRequest,
+      O: GetZenithCommunicationBoundaryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithCommunicationBoundaryRule
+     */
+    saveZenithCommunicationBoundaryRule: {
+      name: "SaveZenithCommunicationBoundaryRule",
+      I: SaveZenithCommunicationBoundaryRuleRequest,
+      O: SaveZenithCommunicationBoundaryRuleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ApproveOrReleaseZenithBoundaryCatchup
+     */
+    approveOrReleaseZenithBoundaryCatchup: {
+      name: "ApproveOrReleaseZenithBoundaryCatchup",
+      I: ApproveOrReleaseZenithBoundaryCatchupRequest,
+      O: ApproveOrReleaseZenithBoundaryCatchupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (Z5): Cognitive Readiness Battery
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithCognitiveReadinessWorkbench
+     */
+    getZenithCognitiveReadinessWorkbench: {
+      name: "GetZenithCognitiveReadinessWorkbench",
+      I: GetZenithCognitiveReadinessWorkbenchRequest,
+      O: GetZenithCognitiveReadinessWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithCognitiveReadinessSession
+     */
+    saveZenithCognitiveReadinessSession: {
+      name: "SaveZenithCognitiveReadinessSession",
+      I: SaveZenithCognitiveReadinessSessionRequest,
+      O: SaveZenithCognitiveReadinessSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.FlagOrValidateZenithCognitiveSession
+     */
+    flagOrValidateZenithCognitiveSession: {
+      name: "FlagOrValidateZenithCognitiveSession",
+      I: FlagOrValidateZenithCognitiveSessionRequest,
+      O: FlagOrValidateZenithCognitiveSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithPrivatePatternMemoryWorkbench
+     */
+    getZenithPrivatePatternMemoryWorkbench: {
+      name: "GetZenithPrivatePatternMemoryWorkbench",
+      I: GetZenithPrivatePatternMemoryWorkbenchRequest,
+      O: GetZenithPrivatePatternMemoryWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithPrivatePatternMemory
+     */
+    saveZenithPrivatePatternMemory: {
+      name: "SaveZenithPrivatePatternMemory",
+      I: SaveZenithPrivatePatternMemoryRequest,
+      O: SaveZenithPrivatePatternMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.EditOrDeleteZenithPrivatePatternMemory
+     */
+    editOrDeleteZenithPrivatePatternMemory: {
+      name: "EditOrDeleteZenithPrivatePatternMemory",
+      I: EditOrDeleteZenithPrivatePatternMemoryRequest,
+      O: EditOrDeleteZenithPrivatePatternMemoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (Z7): Travel Performance
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithTravelPerformanceWorkbench
+     */
+    getZenithTravelPerformanceWorkbench: {
+      name: "GetZenithTravelPerformanceWorkbench",
+      I: GetZenithTravelPerformanceWorkbenchRequest,
+      O: GetZenithTravelPerformanceWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithTravelPerformanceProtocol
+     */
+    saveZenithTravelPerformanceProtocol: {
+      name: "SaveZenithTravelPerformanceProtocol",
+      I: SaveZenithTravelPerformanceProtocolRequest,
+      O: SaveZenithTravelPerformanceProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ReplanZenithTravelMissedStep
+     */
+    replanZenithTravelMissedStep: {
+      name: "ReplanZenithTravelMissedStep",
+      I: ReplanZenithTravelMissedStepRequest,
+      O: ReplanZenithTravelMissedStepResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithCoachingTeamMeetingWorkbench
+     */
+    getZenithCoachingTeamMeetingWorkbench: {
+      name: "GetZenithCoachingTeamMeetingWorkbench",
+      I: GetZenithCoachingTeamMeetingWorkbenchRequest,
+      O: GetZenithCoachingTeamMeetingWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithCoachingTeamMeetingHealth
+     */
+    saveZenithCoachingTeamMeetingHealth: {
+      name: "SaveZenithCoachingTeamMeetingHealth",
+      I: SaveZenithCoachingTeamMeetingHealthRequest,
+      O: SaveZenithCoachingTeamMeetingHealthResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ProposeZenithMeetingFreeOrOracleHandoff
+     */
+    proposeZenithMeetingFreeOrOracleHandoff: {
+      name: "ProposeZenithMeetingFreeOrOracleHandoff",
+      I: ProposeZenithMeetingFreeOrOracleHandoffRequest,
+      O: ProposeZenithMeetingFreeOrOracleHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (Z11): Sensory Workspace and Desktop Companion
+     *
+     * @generated from rpc sttattus.zenith.v1.ZenithService.GetZenithSensoryDesktopWorkbench
+     */
+    getZenithSensoryDesktopWorkbench: {
+      name: "GetZenithSensoryDesktopWorkbench",
+      I: GetZenithSensoryDesktopWorkbenchRequest,
+      O: GetZenithSensoryDesktopWorkbenchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.SaveZenithSensoryDesktopWorkspace
+     */
+    saveZenithSensoryDesktopWorkspace: {
+      name: "SaveZenithSensoryDesktopWorkspace",
+      I: SaveZenithSensoryDesktopWorkspaceRequest,
+      O: SaveZenithSensoryDesktopWorkspaceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.zenith.v1.ZenithService.ArmOrFallbackZenithSensoryWorkspace
+     */
+    armOrFallbackZenithSensoryWorkspace: {
+      name: "ArmOrFallbackZenithSensoryWorkspace",
+      I: ArmOrFallbackZenithSensoryWorkspaceRequest,
+      O: ArmOrFallbackZenithSensoryWorkspaceResponse,
       kind: MethodKind.Unary,
     },
   }

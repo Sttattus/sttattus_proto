@@ -1950,3 +1950,2510 @@ final $typed_data.Uint8List listMyLoungePassesResponseDescriptor =
     $convert.base64Decode(
         'ChpMaXN0TXlMb3VuZ2VQYXNzZXNSZXNwb25zZRI4CgZwYXNzZXMYASADKAsyIC5zdHRhdHR1cy'
         '5kb21pbmlvbi52MS5Mb3VuZ2VQYXNzUgZwYXNzZXM=');
+
+@$core.Deprecated('Use dominionPropertyDigitalTwinItemDescriptor instead')
+const DominionPropertyDigitalTwinItem$json = {
+  '1': 'DominionPropertyDigitalTwinItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'twin_code', '3': 3, '4': 1, '5': 9, '10': 'twinCode'},
+    {
+      '1': 'property_and_parcel_identity',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyAndParcelIdentity'
+    },
+    {
+      '1': 'jurisdiction_and_area_model',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionAndAreaModel'
+    },
+    {
+      '1': 'ownership_and_deed_provenance',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'ownershipAndDeedProvenance'
+    },
+    {
+      '1': 'version_and_conflict_resolution',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'versionAndConflictResolution'
+    },
+    {'1': 'twin_state', '3': 8, '4': 1, '5': 9, '10': 'twinState'},
+    {
+      '1': 'duplicate_asset_prevention_enforced',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'duplicateAssetPreventionEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionPropertyDigitalTwinItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionPropertyDigitalTwinItemDescriptor = $convert.base64Decode(
+    'Ch9Eb21pbmlvblByb3BlcnR5RGlnaXRhbFR3aW5JdGVtEg4KAmlkGAEgASgJUgJpZBIXCgd1c2'
+    'VyX2lkGAIgASgJUgZ1c2VySWQSGwoJdHdpbl9jb2RlGAMgASgJUgh0d2luQ29kZRI/Chxwcm9w'
+    'ZXJ0eV9hbmRfcGFyY2VsX2lkZW50aXR5GAQgASgJUhlwcm9wZXJ0eUFuZFBhcmNlbElkZW50aX'
+    'R5Ej0KG2p1cmlzZGljdGlvbl9hbmRfYXJlYV9tb2RlbBgFIAEoCVIYanVyaXNkaWN0aW9uQW5k'
+    'QXJlYU1vZGVsEkEKHW93bmVyc2hpcF9hbmRfZGVlZF9wcm92ZW5hbmNlGAYgASgJUhpvd25lcn'
+    'NoaXBBbmREZWVkUHJvdmVuYW5jZRJFCh92ZXJzaW9uX2FuZF9jb25mbGljdF9yZXNvbHV0aW9u'
+    'GAcgASgJUhx2ZXJzaW9uQW5kQ29uZmxpY3RSZXNvbHV0aW9uEh0KCnR3aW5fc3RhdGUYCCABKA'
+    'lSCXR3aW5TdGF0ZRJNCiNkdXBsaWNhdGVfYXNzZXRfcHJldmVudGlvbl9lbmZvcmNlZBgJIAEo'
+    'CFIgZHVwbGljYXRlQXNzZXRQcmV2ZW50aW9uRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCi'
+    'ABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getDominionPropertyDigitalTwinWorkbenchRequestDescriptor instead')
+const GetDominionPropertyDigitalTwinWorkbenchRequest$json = {
+  '1': 'GetDominionPropertyDigitalTwinWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionPropertyDigitalTwinWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionPropertyDigitalTwinWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXREb21pbmlvblByb3BlcnR5RGlnaXRhbFR3aW5Xb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getDominionPropertyDigitalTwinWorkbenchResponseDescriptor instead')
+const GetDominionPropertyDigitalTwinWorkbenchResponse$json = {
+  '1': 'GetDominionPropertyDigitalTwinWorkbenchResponse',
+  '2': [
+    {
+      '1': 'twins',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyDigitalTwinItem',
+      '10': 'twins'
+    },
+    {
+      '1': 'duplicate_asset_prevention_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'duplicateAssetPreventionEnforced'
+    },
+    {
+      '1': 'canonical_registry_lineage_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'canonicalRegistryLineageSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionPropertyDigitalTwinWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionPropertyDigitalTwinWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9HZXREb21pbmlvblByb3BlcnR5RGlnaXRhbFR3aW5Xb3JrYmVuY2hSZXNwb25zZRJLCgV0d2'
+        'lucxgBIAMoCzI1LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uUHJvcGVydHlEaWdpdGFs'
+        'VHdpbkl0ZW1SBXR3aW5zEk0KI2R1cGxpY2F0ZV9hc3NldF9wcmV2ZW50aW9uX2VuZm9yY2VkGA'
+        'IgASgIUiBkdXBsaWNhdGVBc3NldFByZXZlbnRpb25FbmZvcmNlZBJLCiJjYW5vbmljYWxfcmVn'
+        'aXN0cnlfbGluZWFnZV9zdW1tYXJ5GAMgASgJUh9jYW5vbmljYWxSZWdpc3RyeUxpbmVhZ2VTdW'
+        '1tYXJ5');
+
+@$core
+    .Deprecated('Use saveDominionPropertyDigitalTwinRequestDescriptor instead')
+const SaveDominionPropertyDigitalTwinRequest$json = {
+  '1': 'SaveDominionPropertyDigitalTwinRequest',
+  '2': [
+    {'1': 'twin_code', '3': 1, '4': 1, '5': 9, '10': 'twinCode'},
+    {
+      '1': 'property_and_parcel_identity',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyAndParcelIdentity'
+    },
+    {
+      '1': 'jurisdiction_and_area_model',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionAndAreaModel'
+    },
+    {
+      '1': 'ownership_and_deed_provenance',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'ownershipAndDeedProvenance'
+    },
+    {
+      '1': 'version_and_conflict_resolution',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'versionAndConflictResolution'
+    },
+    {'1': 'twin_state', '3': 6, '4': 1, '5': 9, '10': 'twinState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionPropertyDigitalTwinRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionPropertyDigitalTwinRequestDescriptor = $convert.base64Decode(
+    'CiZTYXZlRG9taW5pb25Qcm9wZXJ0eURpZ2l0YWxUd2luUmVxdWVzdBIbCgl0d2luX2NvZGUYAS'
+    'ABKAlSCHR3aW5Db2RlEj8KHHByb3BlcnR5X2FuZF9wYXJjZWxfaWRlbnRpdHkYAiABKAlSGXBy'
+    'b3BlcnR5QW5kUGFyY2VsSWRlbnRpdHkSPQobanVyaXNkaWN0aW9uX2FuZF9hcmVhX21vZGVsGA'
+    'MgASgJUhhqdXJpc2RpY3Rpb25BbmRBcmVhTW9kZWwSQQodb3duZXJzaGlwX2FuZF9kZWVkX3By'
+    'b3ZlbmFuY2UYBCABKAlSGm93bmVyc2hpcEFuZERlZWRQcm92ZW5hbmNlEkUKH3ZlcnNpb25fYW'
+    '5kX2NvbmZsaWN0X3Jlc29sdXRpb24YBSABKAlSHHZlcnNpb25BbmRDb25mbGljdFJlc29sdXRp'
+    'b24SHQoKdHdpbl9zdGF0ZRgGIAEoCVIJdHdpblN0YXRl');
+
+@$core
+    .Deprecated('Use saveDominionPropertyDigitalTwinResponseDescriptor instead')
+const SaveDominionPropertyDigitalTwinResponse$json = {
+  '1': 'SaveDominionPropertyDigitalTwinResponse',
+  '2': [
+    {
+      '1': 'twin',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyDigitalTwinItem',
+      '10': 'twin'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionPropertyDigitalTwinResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionPropertyDigitalTwinResponseDescriptor =
+    $convert.base64Decode(
+        'CidTYXZlRG9taW5pb25Qcm9wZXJ0eURpZ2l0YWxUd2luUmVzcG9uc2USSQoEdHdpbhgBIAEoCz'
+        'I1LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uUHJvcGVydHlEaWdpdGFsVHdpbkl0ZW1S'
+        'BHR3aW4=');
+
+@$core.Deprecated(
+    'Use propagateOrResolveDominionTwinConflictRequestDescriptor instead')
+const PropagateOrResolveDominionTwinConflictRequest$json = {
+  '1': 'PropagateOrResolveDominionTwinConflictRequest',
+  '2': [
+    {'1': 'twin_code', '3': 1, '4': 1, '5': 9, '10': 'twinCode'},
+    {
+      '1': 'version_and_conflict_resolution',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'versionAndConflictResolution'
+    },
+    {'1': 'twin_state', '3': 3, '4': 1, '5': 9, '10': 'twinState'},
+  ],
+};
+
+/// Descriptor for `PropagateOrResolveDominionTwinConflictRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    propagateOrResolveDominionTwinConflictRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1Qcm9wYWdhdGVPclJlc29sdmVEb21pbmlvblR3aW5Db25mbGljdFJlcXVlc3QSGwoJdHdpbl'
+        '9jb2RlGAEgASgJUgh0d2luQ29kZRJFCh92ZXJzaW9uX2FuZF9jb25mbGljdF9yZXNvbHV0aW9u'
+        'GAIgASgJUhx2ZXJzaW9uQW5kQ29uZmxpY3RSZXNvbHV0aW9uEh0KCnR3aW5fc3RhdGUYAyABKA'
+        'lSCXR3aW5TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use propagateOrResolveDominionTwinConflictResponseDescriptor instead')
+const PropagateOrResolveDominionTwinConflictResponse$json = {
+  '1': 'PropagateOrResolveDominionTwinConflictResponse',
+  '2': [
+    {
+      '1': 'twin',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyDigitalTwinItem',
+      '10': 'twin'
+    },
+  ],
+};
+
+/// Descriptor for `PropagateOrResolveDominionTwinConflictResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    propagateOrResolveDominionTwinConflictResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5Qcm9wYWdhdGVPclJlc29sdmVEb21pbmlvblR3aW5Db25mbGljdFJlc3BvbnNlEkkKBHR3aW'
+        '4YASABKAsyNS5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvblByb3BlcnR5RGlnaXRhbFR3'
+        'aW5JdGVtUgR0d2lu');
+
+@$core.Deprecated('Use dominionUnderwritingScenarioItemDescriptor instead')
+const DominionUnderwritingScenarioItem$json = {
+  '1': 'DominionUnderwritingScenarioItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'scenario_code', '3': 3, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'deal_title_and_strategy',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'dealTitleAndStrategy'
+    },
+    {
+      '1': 'visible_assumptions_and_freshness',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'visibleAssumptionsAndFreshness'
+    },
+    {
+      '1': 'return_metrics_and_sensitivity_band',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'returnMetricsAndSensitivityBand'
+    },
+    {
+      '1': 'input_verification_disclosure',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'inputVerificationDisclosure'
+    },
+    {'1': 'scenario_state', '3': 8, '4': 1, '5': 9, '10': 'scenarioState'},
+    {
+      '1': 'export_screen_parity_verified',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'exportScreenParityVerified'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionUnderwritingScenarioItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionUnderwritingScenarioItemDescriptor = $convert.base64Decode(
+    'CiBEb21pbmlvblVuZGVyd3JpdGluZ1NjZW5hcmlvSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdX'
+    'Nlcl9pZBgCIAEoCVIGdXNlcklkEiMKDXNjZW5hcmlvX2NvZGUYAyABKAlSDHNjZW5hcmlvQ29k'
+    'ZRI1ChdkZWFsX3RpdGxlX2FuZF9zdHJhdGVneRgEIAEoCVIUZGVhbFRpdGxlQW5kU3RyYXRlZ3'
+    'kSSQohdmlzaWJsZV9hc3N1bXB0aW9uc19hbmRfZnJlc2huZXNzGAUgASgJUh52aXNpYmxlQXNz'
+    'dW1wdGlvbnNBbmRGcmVzaG5lc3MSTAojcmV0dXJuX21ldHJpY3NfYW5kX3NlbnNpdGl2aXR5X2'
+    'JhbmQYBiABKAlSH3JldHVybk1ldHJpY3NBbmRTZW5zaXRpdml0eUJhbmQSQgodaW5wdXRfdmVy'
+    'aWZpY2F0aW9uX2Rpc2Nsb3N1cmUYByABKAlSG2lucHV0VmVyaWZpY2F0aW9uRGlzY2xvc3VyZR'
+    'IlCg5zY2VuYXJpb19zdGF0ZRgIIAEoCVINc2NlbmFyaW9TdGF0ZRJBCh1leHBvcnRfc2NyZWVu'
+    'X3Bhcml0eV92ZXJpZmllZBgJIAEoCFIaZXhwb3J0U2NyZWVuUGFyaXR5VmVyaWZpZWQSJAoOdX'
+    'BkYXRlZF9hdF9pc28YCiABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getDominionUnderwritingLabWorkbenchRequestDescriptor instead')
+const GetDominionUnderwritingLabWorkbenchRequest$json = {
+  '1': 'GetDominionUnderwritingLabWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionUnderwritingLabWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionUnderwritingLabWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXREb21pbmlvblVuZGVyd3JpdGluZ0xhYldvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionUnderwritingLabWorkbenchResponseDescriptor instead')
+const GetDominionUnderwritingLabWorkbenchResponse$json = {
+  '1': 'GetDominionUnderwritingLabWorkbenchResponse',
+  '2': [
+    {
+      '1': 'scenarios',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUnderwritingScenarioItem',
+      '10': 'scenarios'
+    },
+    {
+      '1': 'export_screen_parity_verified_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'exportScreenParityVerifiedEnforced'
+    },
+    {
+      '1': 'assumption_provenance_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'assumptionProvenanceSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionUnderwritingLabWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionUnderwritingLabWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXREb21pbmlvblVuZGVyd3JpdGluZ0xhYldvcmtiZW5jaFJlc3BvbnNlElQKCXNjZW5hcm'
+        'lvcxgBIAMoCzI2LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uVW5kZXJ3cml0aW5nU2Nl'
+        'bmFyaW9JdGVtUglzY2VuYXJpb3MSUgomZXhwb3J0X3NjcmVlbl9wYXJpdHlfdmVyaWZpZWRfZW'
+        '5mb3JjZWQYAiABKAhSImV4cG9ydFNjcmVlblBhcml0eVZlcmlmaWVkRW5mb3JjZWQSQgodYXNz'
+        'dW1wdGlvbl9wcm92ZW5hbmNlX3N1bW1hcnkYAyABKAlSG2Fzc3VtcHRpb25Qcm92ZW5hbmNlU3'
+        'VtbWFyeQ==');
+
+@$core
+    .Deprecated('Use saveDominionUnderwritingScenarioRequestDescriptor instead')
+const SaveDominionUnderwritingScenarioRequest$json = {
+  '1': 'SaveDominionUnderwritingScenarioRequest',
+  '2': [
+    {'1': 'scenario_code', '3': 1, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'deal_title_and_strategy',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'dealTitleAndStrategy'
+    },
+    {
+      '1': 'visible_assumptions_and_freshness',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'visibleAssumptionsAndFreshness'
+    },
+    {
+      '1': 'return_metrics_and_sensitivity_band',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'returnMetricsAndSensitivityBand'
+    },
+    {
+      '1': 'input_verification_disclosure',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'inputVerificationDisclosure'
+    },
+    {'1': 'scenario_state', '3': 6, '4': 1, '5': 9, '10': 'scenarioState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionUnderwritingScenarioRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionUnderwritingScenarioRequestDescriptor = $convert.base64Decode(
+    'CidTYXZlRG9taW5pb25VbmRlcndyaXRpbmdTY2VuYXJpb1JlcXVlc3QSIwoNc2NlbmFyaW9fY2'
+    '9kZRgBIAEoCVIMc2NlbmFyaW9Db2RlEjUKF2RlYWxfdGl0bGVfYW5kX3N0cmF0ZWd5GAIgASgJ'
+    'UhRkZWFsVGl0bGVBbmRTdHJhdGVneRJJCiF2aXNpYmxlX2Fzc3VtcHRpb25zX2FuZF9mcmVzaG'
+    '5lc3MYAyABKAlSHnZpc2libGVBc3N1bXB0aW9uc0FuZEZyZXNobmVzcxJMCiNyZXR1cm5fbWV0'
+    'cmljc19hbmRfc2Vuc2l0aXZpdHlfYmFuZBgEIAEoCVIfcmV0dXJuTWV0cmljc0FuZFNlbnNpdG'
+    'l2aXR5QmFuZBJCCh1pbnB1dF92ZXJpZmljYXRpb25fZGlzY2xvc3VyZRgFIAEoCVIbaW5wdXRW'
+    'ZXJpZmljYXRpb25EaXNjbG9zdXJlEiUKDnNjZW5hcmlvX3N0YXRlGAYgASgJUg1zY2VuYXJpb1'
+    'N0YXRl');
+
+@$core.Deprecated(
+    'Use saveDominionUnderwritingScenarioResponseDescriptor instead')
+const SaveDominionUnderwritingScenarioResponse$json = {
+  '1': 'SaveDominionUnderwritingScenarioResponse',
+  '2': [
+    {
+      '1': 'scenario',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUnderwritingScenarioItem',
+      '10': 'scenario'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionUnderwritingScenarioResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionUnderwritingScenarioResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlRG9taW5pb25VbmRlcndyaXRpbmdTY2VuYXJpb1Jlc3BvbnNlElIKCHNjZW5hcmlvGA'
+        'EgASgLMjYuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25VbmRlcndyaXRpbmdTY2VuYXJp'
+        'b0l0ZW1SCHNjZW5hcmlv');
+
+@$core.Deprecated(
+    'Use stressTestOrFreezeDominionScenarioRequestDescriptor instead')
+const StressTestOrFreezeDominionScenarioRequest$json = {
+  '1': 'StressTestOrFreezeDominionScenarioRequest',
+  '2': [
+    {'1': 'scenario_code', '3': 1, '4': 1, '5': 9, '10': 'scenarioCode'},
+    {
+      '1': 'return_metrics_and_sensitivity_band',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'returnMetricsAndSensitivityBand'
+    },
+    {'1': 'scenario_state', '3': 3, '4': 1, '5': 9, '10': 'scenarioState'},
+  ],
+};
+
+/// Descriptor for `StressTestOrFreezeDominionScenarioRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stressTestOrFreezeDominionScenarioRequestDescriptor = $convert.base64Decode(
+        'CilTdHJlc3NUZXN0T3JGcmVlemVEb21pbmlvblNjZW5hcmlvUmVxdWVzdBIjCg1zY2VuYXJpb1'
+        '9jb2RlGAEgASgJUgxzY2VuYXJpb0NvZGUSTAojcmV0dXJuX21ldHJpY3NfYW5kX3NlbnNpdGl2'
+        'aXR5X2JhbmQYAiABKAlSH3JldHVybk1ldHJpY3NBbmRTZW5zaXRpdml0eUJhbmQSJQoOc2Nlbm'
+        'FyaW9fc3RhdGUYAyABKAlSDXNjZW5hcmlvU3RhdGU=');
+
+@$core.Deprecated(
+    'Use stressTestOrFreezeDominionScenarioResponseDescriptor instead')
+const StressTestOrFreezeDominionScenarioResponse$json = {
+  '1': 'StressTestOrFreezeDominionScenarioResponse',
+  '2': [
+    {
+      '1': 'scenario',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUnderwritingScenarioItem',
+      '10': 'scenario'
+    },
+  ],
+};
+
+/// Descriptor for `StressTestOrFreezeDominionScenarioResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stressTestOrFreezeDominionScenarioResponseDescriptor =
+    $convert.base64Decode(
+        'CipTdHJlc3NUZXN0T3JGcmVlemVEb21pbmlvblNjZW5hcmlvUmVzcG9uc2USUgoIc2NlbmFyaW'
+        '8YASABKAsyNi5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvblVuZGVyd3JpdGluZ1NjZW5h'
+        'cmlvSXRlbVIIc2NlbmFyaW8=');
+
+@$core.Deprecated('Use dominionPropertyAccountingCloseItemDescriptor instead')
+const DominionPropertyAccountingCloseItem$json = {
+  '1': 'DominionPropertyAccountingCloseItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'close_code', '3': 3, '4': 1, '5': 9, '10': 'closeCode'},
+    {
+      '1': 'property_and_period_label',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyAndPeriodLabel'
+    },
+    {
+      '1': 'bank_reconciliation_and_data_quality',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'bankReconciliationAndDataQuality'
+    },
+    {
+      '1': 'pnl_cashflow_and_reserve_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'pnlCashflowAndReserveSummary'
+    },
+    {
+      '1': 'accountant_and_tax_export_digest',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantAndTaxExportDigest'
+    },
+    {'1': 'close_state', '3': 8, '4': 1, '5': 9, '10': 'closeState'},
+    {
+      '1': 'double_entry_reversible_enforced',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'doubleEntryReversibleEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionPropertyAccountingCloseItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionPropertyAccountingCloseItemDescriptor = $convert.base64Decode(
+    'CiNEb21pbmlvblByb3BlcnR5QWNjb3VudGluZ0Nsb3NlSXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEh0KCmNsb3NlX2NvZGUYAyABKAlSCWNsb3NlQ29kZRI5'
+    'Chlwcm9wZXJ0eV9hbmRfcGVyaW9kX2xhYmVsGAQgASgJUhZwcm9wZXJ0eUFuZFBlcmlvZExhYm'
+    'VsEk4KJGJhbmtfcmVjb25jaWxpYXRpb25fYW5kX2RhdGFfcXVhbGl0eRgFIAEoCVIgYmFua1Jl'
+    'Y29uY2lsaWF0aW9uQW5kRGF0YVF1YWxpdHkSRgogcG5sX2Nhc2hmbG93X2FuZF9yZXNlcnZlX3'
+    'N1bW1hcnkYBiABKAlSHHBubENhc2hmbG93QW5kUmVzZXJ2ZVN1bW1hcnkSRgogYWNjb3VudGFu'
+    'dF9hbmRfdGF4X2V4cG9ydF9kaWdlc3QYByABKAlSHGFjY291bnRhbnRBbmRUYXhFeHBvcnREaW'
+    'dlc3QSHwoLY2xvc2Vfc3RhdGUYCCABKAlSCmNsb3NlU3RhdGUSRwogZG91YmxlX2VudHJ5X3Jl'
+    'dmVyc2libGVfZW5mb3JjZWQYCSABKAhSHWRvdWJsZUVudHJ5UmV2ZXJzaWJsZUVuZm9yY2VkEi'
+    'QKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getDominionPropertyAccountingWorkbenchRequestDescriptor instead')
+const GetDominionPropertyAccountingWorkbenchRequest$json = {
+  '1': 'GetDominionPropertyAccountingWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionPropertyAccountingWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionPropertyAccountingWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXREb21pbmlvblByb3BlcnR5QWNjb3VudGluZ1dvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionPropertyAccountingWorkbenchResponseDescriptor instead')
+const GetDominionPropertyAccountingWorkbenchResponse$json = {
+  '1': 'GetDominionPropertyAccountingWorkbenchResponse',
+  '2': [
+    {
+      '1': 'closes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyAccountingCloseItem',
+      '10': 'closes'
+    },
+    {
+      '1': 'double_entry_reversible_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'doubleEntryReversibleEnforced'
+    },
+    {
+      '1': 'immutable_close_and_reversal_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'immutableCloseAndReversalSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionPropertyAccountingWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionPropertyAccountingWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXREb21pbmlvblByb3BlcnR5QWNjb3VudGluZ1dvcmtiZW5jaFJlc3BvbnNlElEKBmNsb3'
+        'NlcxgBIAMoCzI5LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uUHJvcGVydHlBY2NvdW50'
+        'aW5nQ2xvc2VJdGVtUgZjbG9zZXMSRwogZG91YmxlX2VudHJ5X3JldmVyc2libGVfZW5mb3JjZW'
+        'QYAiABKAhSHWRvdWJsZUVudHJ5UmV2ZXJzaWJsZUVuZm9yY2VkEk4KJGltbXV0YWJsZV9jbG9z'
+        'ZV9hbmRfcmV2ZXJzYWxfc3VtbWFyeRgDIAEoCVIgaW1tdXRhYmxlQ2xvc2VBbmRSZXZlcnNhbF'
+        'N1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveDominionPropertyAccountingCloseRequestDescriptor instead')
+const SaveDominionPropertyAccountingCloseRequest$json = {
+  '1': 'SaveDominionPropertyAccountingCloseRequest',
+  '2': [
+    {'1': 'close_code', '3': 1, '4': 1, '5': 9, '10': 'closeCode'},
+    {
+      '1': 'property_and_period_label',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyAndPeriodLabel'
+    },
+    {
+      '1': 'bank_reconciliation_and_data_quality',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'bankReconciliationAndDataQuality'
+    },
+    {
+      '1': 'pnl_cashflow_and_reserve_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'pnlCashflowAndReserveSummary'
+    },
+    {
+      '1': 'accountant_and_tax_export_digest',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantAndTaxExportDigest'
+    },
+    {'1': 'close_state', '3': 6, '4': 1, '5': 9, '10': 'closeState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionPropertyAccountingCloseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionPropertyAccountingCloseRequestDescriptor = $convert.base64Decode(
+    'CipTYXZlRG9taW5pb25Qcm9wZXJ0eUFjY291bnRpbmdDbG9zZVJlcXVlc3QSHQoKY2xvc2VfY2'
+    '9kZRgBIAEoCVIJY2xvc2VDb2RlEjkKGXByb3BlcnR5X2FuZF9wZXJpb2RfbGFiZWwYAiABKAlS'
+    'FnByb3BlcnR5QW5kUGVyaW9kTGFiZWwSTgokYmFua19yZWNvbmNpbGlhdGlvbl9hbmRfZGF0YV'
+    '9xdWFsaXR5GAMgASgJUiBiYW5rUmVjb25jaWxpYXRpb25BbmREYXRhUXVhbGl0eRJGCiBwbmxf'
+    'Y2FzaGZsb3dfYW5kX3Jlc2VydmVfc3VtbWFyeRgEIAEoCVIccG5sQ2FzaGZsb3dBbmRSZXNlcn'
+    'ZlU3VtbWFyeRJGCiBhY2NvdW50YW50X2FuZF90YXhfZXhwb3J0X2RpZ2VzdBgFIAEoCVIcYWNj'
+    'b3VudGFudEFuZFRheEV4cG9ydERpZ2VzdBIfCgtjbG9zZV9zdGF0ZRgGIAEoCVIKY2xvc2VTdG'
+    'F0ZQ==');
+
+@$core.Deprecated(
+    'Use saveDominionPropertyAccountingCloseResponseDescriptor instead')
+const SaveDominionPropertyAccountingCloseResponse$json = {
+  '1': 'SaveDominionPropertyAccountingCloseResponse',
+  '2': [
+    {
+      '1': 'close',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyAccountingCloseItem',
+      '10': 'close'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionPropertyAccountingCloseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionPropertyAccountingCloseResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlRG9taW5pb25Qcm9wZXJ0eUFjY291bnRpbmdDbG9zZVJlc3BvbnNlEk8KBWNsb3NlGA'
+        'EgASgLMjkuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25Qcm9wZXJ0eUFjY291bnRpbmdD'
+        'bG9zZUl0ZW1SBWNsb3Nl');
+
+@$core.Deprecated(
+    'Use lockOrReverseDominionAccountingCloseRequestDescriptor instead')
+const LockOrReverseDominionAccountingCloseRequest$json = {
+  '1': 'LockOrReverseDominionAccountingCloseRequest',
+  '2': [
+    {'1': 'close_code', '3': 1, '4': 1, '5': 9, '10': 'closeCode'},
+    {
+      '1': 'accountant_and_tax_export_digest',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'accountantAndTaxExportDigest'
+    },
+    {'1': 'close_state', '3': 3, '4': 1, '5': 9, '10': 'closeState'},
+  ],
+};
+
+/// Descriptor for `LockOrReverseDominionAccountingCloseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    lockOrReverseDominionAccountingCloseRequestDescriptor =
+    $convert.base64Decode(
+        'CitMb2NrT3JSZXZlcnNlRG9taW5pb25BY2NvdW50aW5nQ2xvc2VSZXF1ZXN0Eh0KCmNsb3NlX2'
+        'NvZGUYASABKAlSCWNsb3NlQ29kZRJGCiBhY2NvdW50YW50X2FuZF90YXhfZXhwb3J0X2RpZ2Vz'
+        'dBgCIAEoCVIcYWNjb3VudGFudEFuZFRheEV4cG9ydERpZ2VzdBIfCgtjbG9zZV9zdGF0ZRgDIA'
+        'EoCVIKY2xvc2VTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use lockOrReverseDominionAccountingCloseResponseDescriptor instead')
+const LockOrReverseDominionAccountingCloseResponse$json = {
+  '1': 'LockOrReverseDominionAccountingCloseResponse',
+  '2': [
+    {
+      '1': 'close',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionPropertyAccountingCloseItem',
+      '10': 'close'
+    },
+  ],
+};
+
+/// Descriptor for `LockOrReverseDominionAccountingCloseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    lockOrReverseDominionAccountingCloseResponseDescriptor =
+    $convert.base64Decode(
+        'CixMb2NrT3JSZXZlcnNlRG9taW5pb25BY2NvdW50aW5nQ2xvc2VSZXNwb25zZRJPCgVjbG9zZR'
+        'gBIAEoCzI5LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uUHJvcGVydHlBY2NvdW50aW5n'
+        'Q2xvc2VJdGVtUgVjbG9zZQ==');
+
+@$core.Deprecated('Use dominionDocumentObligationVaultItemDescriptor instead')
+const DominionDocumentObligationVaultItem$json = {
+  '1': 'DominionDocumentObligationVaultItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'obligation_code', '3': 3, '4': 1, '5': 9, '10': 'obligationCode'},
+    {
+      '1': 'document_and_cited_passage',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'documentAndCitedPassage'
+    },
+    {
+      '1': 'jurisdiction_tax_or_permit_deadline',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionTaxOrPermitDeadline'
+    },
+    {
+      '1': 'completion_receipt_or_appeal_pack',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'completionReceiptOrAppealPack'
+    },
+    {
+      '1': 'extraction_confidence_state',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'extractionConfidenceState'
+    },
+    {
+      '1': 'non_legal_opinion_boundary_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonLegalOpinionBoundaryEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionDocumentObligationVaultItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionDocumentObligationVaultItemDescriptor = $convert.base64Decode(
+    'CiNEb21pbmlvbkRvY3VtZW50T2JsaWdhdGlvblZhdWx0SXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEicKD29ibGlnYXRpb25fY29kZRgDIAEoCVIOb2JsaWdh'
+    'dGlvbkNvZGUSOwoaZG9jdW1lbnRfYW5kX2NpdGVkX3Bhc3NhZ2UYBCABKAlSF2RvY3VtZW50QW'
+    '5kQ2l0ZWRQYXNzYWdlEkwKI2p1cmlzZGljdGlvbl90YXhfb3JfcGVybWl0X2RlYWRsaW5lGAUg'
+    'ASgJUh9qdXJpc2RpY3Rpb25UYXhPclBlcm1pdERlYWRsaW5lEkgKIWNvbXBsZXRpb25fcmVjZW'
+    'lwdF9vcl9hcHBlYWxfcGFjaxgGIAEoCVIdY29tcGxldGlvblJlY2VpcHRPckFwcGVhbFBhY2sS'
+    'PgobZXh0cmFjdGlvbl9jb25maWRlbmNlX3N0YXRlGAcgASgJUhlleHRyYWN0aW9uQ29uZmlkZW'
+    '5jZVN0YXRlEkwKI25vbl9sZWdhbF9vcGluaW9uX2JvdW5kYXJ5X2VuZm9yY2VkGAggASgIUh9u'
+    'b25MZWdhbE9waW5pb25Cb3VuZGFyeUVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUg'
+    'x1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getDominionDocumentObligationWorkbenchRequestDescriptor instead')
+const GetDominionDocumentObligationWorkbenchRequest$json = {
+  '1': 'GetDominionDocumentObligationWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionDocumentObligationWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionDocumentObligationWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXREb21pbmlvbkRvY3VtZW50T2JsaWdhdGlvbldvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionDocumentObligationWorkbenchResponseDescriptor instead')
+const GetDominionDocumentObligationWorkbenchResponse$json = {
+  '1': 'GetDominionDocumentObligationWorkbenchResponse',
+  '2': [
+    {
+      '1': 'obligations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionDocumentObligationVaultItem',
+      '10': 'obligations'
+    },
+    {
+      '1': 'non_legal_opinion_boundary_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonLegalOpinionBoundaryEnforced'
+    },
+    {
+      '1': 'receipt_before_completion_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'receiptBeforeCompletionSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionDocumentObligationWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionDocumentObligationWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXREb21pbmlvbkRvY3VtZW50T2JsaWdhdGlvbldvcmtiZW5jaFJlc3BvbnNlElsKC29ibG'
+        'lnYXRpb25zGAEgAygLMjkuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25Eb2N1bWVudE9i'
+        'bGlnYXRpb25WYXVsdEl0ZW1SC29ibGlnYXRpb25zEkwKI25vbl9sZWdhbF9vcGluaW9uX2JvdW'
+        '5kYXJ5X2VuZm9yY2VkGAIgASgIUh9ub25MZWdhbE9waW5pb25Cb3VuZGFyeUVuZm9yY2VkEkkK'
+        'IXJlY2VpcHRfYmVmb3JlX2NvbXBsZXRpb25fc3VtbWFyeRgDIAEoCVIecmVjZWlwdEJlZm9yZU'
+        'NvbXBsZXRpb25TdW1tYXJ5');
+
+@$core.Deprecated('Use saveDominionDocumentObligationRequestDescriptor instead')
+const SaveDominionDocumentObligationRequest$json = {
+  '1': 'SaveDominionDocumentObligationRequest',
+  '2': [
+    {'1': 'obligation_code', '3': 1, '4': 1, '5': 9, '10': 'obligationCode'},
+    {
+      '1': 'document_and_cited_passage',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'documentAndCitedPassage'
+    },
+    {
+      '1': 'jurisdiction_tax_or_permit_deadline',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'jurisdictionTaxOrPermitDeadline'
+    },
+    {
+      '1': 'completion_receipt_or_appeal_pack',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'completionReceiptOrAppealPack'
+    },
+    {
+      '1': 'extraction_confidence_state',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'extractionConfidenceState'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionDocumentObligationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionDocumentObligationRequestDescriptor = $convert.base64Decode(
+    'CiVTYXZlRG9taW5pb25Eb2N1bWVudE9ibGlnYXRpb25SZXF1ZXN0EicKD29ibGlnYXRpb25fY2'
+    '9kZRgBIAEoCVIOb2JsaWdhdGlvbkNvZGUSOwoaZG9jdW1lbnRfYW5kX2NpdGVkX3Bhc3NhZ2UY'
+    'AiABKAlSF2RvY3VtZW50QW5kQ2l0ZWRQYXNzYWdlEkwKI2p1cmlzZGljdGlvbl90YXhfb3JfcG'
+    'VybWl0X2RlYWRsaW5lGAMgASgJUh9qdXJpc2RpY3Rpb25UYXhPclBlcm1pdERlYWRsaW5lEkgK'
+    'IWNvbXBsZXRpb25fcmVjZWlwdF9vcl9hcHBlYWxfcGFjaxgEIAEoCVIdY29tcGxldGlvblJlY2'
+    'VpcHRPckFwcGVhbFBhY2sSPgobZXh0cmFjdGlvbl9jb25maWRlbmNlX3N0YXRlGAUgASgJUhll'
+    'eHRyYWN0aW9uQ29uZmlkZW5jZVN0YXRl');
+
+@$core
+    .Deprecated('Use saveDominionDocumentObligationResponseDescriptor instead')
+const SaveDominionDocumentObligationResponse$json = {
+  '1': 'SaveDominionDocumentObligationResponse',
+  '2': [
+    {
+      '1': 'obligation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionDocumentObligationVaultItem',
+      '10': 'obligation'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionDocumentObligationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionDocumentObligationResponseDescriptor =
+    $convert.base64Decode(
+        'CiZTYXZlRG9taW5pb25Eb2N1bWVudE9ibGlnYXRpb25SZXNwb25zZRJZCgpvYmxpZ2F0aW9uGA'
+        'EgASgLMjkuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25Eb2N1bWVudE9ibGlnYXRpb25W'
+        'YXVsdEl0ZW1SCm9ibGlnYXRpb24=');
+
+@$core.Deprecated(
+    'Use confirmDominionObligationReceiptOrAppealRequestDescriptor instead')
+const ConfirmDominionObligationReceiptOrAppealRequest$json = {
+  '1': 'ConfirmDominionObligationReceiptOrAppealRequest',
+  '2': [
+    {'1': 'obligation_code', '3': 1, '4': 1, '5': 9, '10': 'obligationCode'},
+    {
+      '1': 'completion_receipt_or_appeal_pack',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'completionReceiptOrAppealPack'
+    },
+    {
+      '1': 'extraction_confidence_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'extractionConfidenceState'
+    },
+  ],
+};
+
+/// Descriptor for `ConfirmDominionObligationReceiptOrAppealRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    confirmDominionObligationReceiptOrAppealRequestDescriptor =
+    $convert.base64Decode(
+        'Ci9Db25maXJtRG9taW5pb25PYmxpZ2F0aW9uUmVjZWlwdE9yQXBwZWFsUmVxdWVzdBInCg9vYm'
+        'xpZ2F0aW9uX2NvZGUYASABKAlSDm9ibGlnYXRpb25Db2RlEkgKIWNvbXBsZXRpb25fcmVjZWlw'
+        'dF9vcl9hcHBlYWxfcGFjaxgCIAEoCVIdY29tcGxldGlvblJlY2VpcHRPckFwcGVhbFBhY2sSPg'
+        'obZXh0cmFjdGlvbl9jb25maWRlbmNlX3N0YXRlGAMgASgJUhlleHRyYWN0aW9uQ29uZmlkZW5j'
+        'ZVN0YXRl');
+
+@$core.Deprecated(
+    'Use confirmDominionObligationReceiptOrAppealResponseDescriptor instead')
+const ConfirmDominionObligationReceiptOrAppealResponse$json = {
+  '1': 'ConfirmDominionObligationReceiptOrAppealResponse',
+  '2': [
+    {
+      '1': 'obligation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionDocumentObligationVaultItem',
+      '10': 'obligation'
+    },
+  ],
+};
+
+/// Descriptor for `ConfirmDominionObligationReceiptOrAppealResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    confirmDominionObligationReceiptOrAppealResponseDescriptor =
+    $convert.base64Decode(
+        'CjBDb25maXJtRG9taW5pb25PYmxpZ2F0aW9uUmVjZWlwdE9yQXBwZWFsUmVzcG9uc2USWQoKb2'
+        'JsaWdhdGlvbhgBIAEoCzI5LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uRG9jdW1lbnRP'
+        'YmxpZ2F0aW9uVmF1bHRJdGVtUgpvYmxpZ2F0aW9u');
+
+@$core.Deprecated('Use dominionLeasingResidentPortalItemDescriptor instead')
+const DominionLeasingResidentPortalItem$json = {
+  '1': 'DominionLeasingResidentPortalItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'lease_code', '3': 3, '4': 1, '5': 9, '10': 'leaseCode'},
+    {
+      '1': 'property_unit_and_tenancy_scope',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyUnitAndTenancyScope'
+    },
+    {
+      '1': 'lease_terms_deposit_and_renewal',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'leaseTermsDepositAndRenewal'
+    },
+    {
+      '1': 'partitioned_communication_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'partitionedCommunicationSummary'
+    },
+    {'1': 'portal_state', '3': 7, '4': 1, '5': 9, '10': 'portalState'},
+    {
+      '1': 'cross_tenant_isolation_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'crossTenantIsolationEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionLeasingResidentPortalItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionLeasingResidentPortalItemDescriptor = $convert.base64Decode(
+    'CiFEb21pbmlvbkxlYXNpbmdSZXNpZGVudFBvcnRhbEl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBIdCgpsZWFzZV9jb2RlGAMgASgJUglsZWFzZUNvZGUSRAof'
+    'cHJvcGVydHlfdW5pdF9hbmRfdGVuYW5jeV9zY29wZRgEIAEoCVIbcHJvcGVydHlVbml0QW5kVG'
+    'VuYW5jeVNjb3BlEkQKH2xlYXNlX3Rlcm1zX2RlcG9zaXRfYW5kX3JlbmV3YWwYBSABKAlSG2xl'
+    'YXNlVGVybXNEZXBvc2l0QW5kUmVuZXdhbBJKCiFwYXJ0aXRpb25lZF9jb21tdW5pY2F0aW9uX3'
+    'N1bW1hcnkYBiABKAlSH3BhcnRpdGlvbmVkQ29tbXVuaWNhdGlvblN1bW1hcnkSIQoMcG9ydGFs'
+    'X3N0YXRlGAcgASgJUgtwb3J0YWxTdGF0ZRJFCh9jcm9zc190ZW5hbnRfaXNvbGF0aW9uX2VuZm'
+    '9yY2VkGAggASgIUhxjcm9zc1RlbmFudElzb2xhdGlvbkVuZm9yY2VkEiQKDnVwZGF0ZWRfYXRf'
+    'aXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getDominionLeasingResidentWorkbenchRequestDescriptor instead')
+const GetDominionLeasingResidentWorkbenchRequest$json = {
+  '1': 'GetDominionLeasingResidentWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionLeasingResidentWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionLeasingResidentWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXREb21pbmlvbkxlYXNpbmdSZXNpZGVudFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionLeasingResidentWorkbenchResponseDescriptor instead')
+const GetDominionLeasingResidentWorkbenchResponse$json = {
+  '1': 'GetDominionLeasingResidentWorkbenchResponse',
+  '2': [
+    {
+      '1': 'leases',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionLeasingResidentPortalItem',
+      '10': 'leases'
+    },
+    {
+      '1': 'cross_tenant_isolation_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'crossTenantIsolationEnforced'
+    },
+    {
+      '1': 'unit_scoped_partition_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'unitScopedPartitionSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionLeasingResidentWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionLeasingResidentWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXREb21pbmlvbkxlYXNpbmdSZXNpZGVudFdvcmtiZW5jaFJlc3BvbnNlEk8KBmxlYXNlcx'
+        'gBIAMoCzI3LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uTGVhc2luZ1Jlc2lkZW50UG9y'
+        'dGFsSXRlbVIGbGVhc2VzEkUKH2Nyb3NzX3RlbmFudF9pc29sYXRpb25fZW5mb3JjZWQYAiABKA'
+        'hSHGNyb3NzVGVuYW50SXNvbGF0aW9uRW5mb3JjZWQSQQoddW5pdF9zY29wZWRfcGFydGl0aW9u'
+        'X3N1bW1hcnkYAyABKAlSGnVuaXRTY29wZWRQYXJ0aXRpb25TdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveDominionLeasingResidentPortalRequestDescriptor instead')
+const SaveDominionLeasingResidentPortalRequest$json = {
+  '1': 'SaveDominionLeasingResidentPortalRequest',
+  '2': [
+    {'1': 'lease_code', '3': 1, '4': 1, '5': 9, '10': 'leaseCode'},
+    {
+      '1': 'property_unit_and_tenancy_scope',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'propertyUnitAndTenancyScope'
+    },
+    {
+      '1': 'lease_terms_deposit_and_renewal',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'leaseTermsDepositAndRenewal'
+    },
+    {
+      '1': 'partitioned_communication_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'partitionedCommunicationSummary'
+    },
+    {'1': 'portal_state', '3': 5, '4': 1, '5': 9, '10': 'portalState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionLeasingResidentPortalRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionLeasingResidentPortalRequestDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlRG9taW5pb25MZWFzaW5nUmVzaWRlbnRQb3J0YWxSZXF1ZXN0Eh0KCmxlYXNlX2NvZG'
+        'UYASABKAlSCWxlYXNlQ29kZRJECh9wcm9wZXJ0eV91bml0X2FuZF90ZW5hbmN5X3Njb3BlGAIg'
+        'ASgJUhtwcm9wZXJ0eVVuaXRBbmRUZW5hbmN5U2NvcGUSRAofbGVhc2VfdGVybXNfZGVwb3NpdF'
+        '9hbmRfcmVuZXdhbBgDIAEoCVIbbGVhc2VUZXJtc0RlcG9zaXRBbmRSZW5ld2FsEkoKIXBhcnRp'
+        'dGlvbmVkX2NvbW11bmljYXRpb25fc3VtbWFyeRgEIAEoCVIfcGFydGl0aW9uZWRDb21tdW5pY2'
+        'F0aW9uU3VtbWFyeRIhCgxwb3J0YWxfc3RhdGUYBSABKAlSC3BvcnRhbFN0YXRl');
+
+@$core.Deprecated(
+    'Use saveDominionLeasingResidentPortalResponseDescriptor instead')
+const SaveDominionLeasingResidentPortalResponse$json = {
+  '1': 'SaveDominionLeasingResidentPortalResponse',
+  '2': [
+    {
+      '1': 'lease',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionLeasingResidentPortalItem',
+      '10': 'lease'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionLeasingResidentPortalResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionLeasingResidentPortalResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlRG9taW5pb25MZWFzaW5nUmVzaWRlbnRQb3J0YWxSZXNwb25zZRJNCgVsZWFzZRgBIA'
+        'EoCzI3LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uTGVhc2luZ1Jlc2lkZW50UG9ydGFs'
+        'SXRlbVIFbGVhc2U=');
+
+@$core.Deprecated(
+    'Use scheduleDominionRenewalOrDepositCloseRequestDescriptor instead')
+const ScheduleDominionRenewalOrDepositCloseRequest$json = {
+  '1': 'ScheduleDominionRenewalOrDepositCloseRequest',
+  '2': [
+    {'1': 'lease_code', '3': 1, '4': 1, '5': 9, '10': 'leaseCode'},
+    {
+      '1': 'lease_terms_deposit_and_renewal',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'leaseTermsDepositAndRenewal'
+    },
+    {'1': 'portal_state', '3': 3, '4': 1, '5': 9, '10': 'portalState'},
+  ],
+};
+
+/// Descriptor for `ScheduleDominionRenewalOrDepositCloseRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    scheduleDominionRenewalOrDepositCloseRequestDescriptor =
+    $convert.base64Decode(
+        'CixTY2hlZHVsZURvbWluaW9uUmVuZXdhbE9yRGVwb3NpdENsb3NlUmVxdWVzdBIdCgpsZWFzZV'
+        '9jb2RlGAEgASgJUglsZWFzZUNvZGUSRAofbGVhc2VfdGVybXNfZGVwb3NpdF9hbmRfcmVuZXdh'
+        'bBgCIAEoCVIbbGVhc2VUZXJtc0RlcG9zaXRBbmRSZW5ld2FsEiEKDHBvcnRhbF9zdGF0ZRgDIA'
+        'EoCVILcG9ydGFsU3RhdGU=');
+
+@$core.Deprecated(
+    'Use scheduleDominionRenewalOrDepositCloseResponseDescriptor instead')
+const ScheduleDominionRenewalOrDepositCloseResponse$json = {
+  '1': 'ScheduleDominionRenewalOrDepositCloseResponse',
+  '2': [
+    {
+      '1': 'lease',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionLeasingResidentPortalItem',
+      '10': 'lease'
+    },
+  ],
+};
+
+/// Descriptor for `ScheduleDominionRenewalOrDepositCloseResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    scheduleDominionRenewalOrDepositCloseResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TY2hlZHVsZURvbWluaW9uUmVuZXdhbE9yRGVwb3NpdENsb3NlUmVzcG9uc2USTQoFbGVhc2'
+        'UYASABKAsyNy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbkxlYXNpbmdSZXNpZGVudFBv'
+        'cnRhbEl0ZW1SBWxlYXNl');
+
+@$core.Deprecated('Use dominionMaintenanceVendorNetworkItemDescriptor instead')
+const DominionMaintenanceVendorNetworkItem$json = {
+  '1': 'DominionMaintenanceVendorNetworkItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'work_order_code', '3': 3, '4': 1, '5': 9, '10': 'workOrderCode'},
+    {
+      '1': 'issue_triage_and_sla_window',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'issueTriageAndSlaWindow'
+    },
+    {
+      '1': 'vendor_credentials_and_normalized_bids',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'vendorCredentialsAndNormalizedBids'
+    },
+    {
+      '1': 'three_way_invoice_and_warranty_match',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'threeWayInvoiceAndWarrantyMatch'
+    },
+    {'1': 'work_order_state', '3': 7, '4': 1, '5': 9, '10': 'workOrderState'},
+    {
+      '1': 'zero_pay_to_rank_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'zeroPayToRankEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionMaintenanceVendorNetworkItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionMaintenanceVendorNetworkItemDescriptor = $convert.base64Decode(
+    'CiREb21pbmlvbk1haW50ZW5hbmNlVmVuZG9yTmV0d29ya0l0ZW0SDgoCaWQYASABKAlSAmlkEh'
+    'cKB3VzZXJfaWQYAiABKAlSBnVzZXJJZBImCg93b3JrX29yZGVyX2NvZGUYAyABKAlSDXdvcmtP'
+    'cmRlckNvZGUSPAobaXNzdWVfdHJpYWdlX2FuZF9zbGFfd2luZG93GAQgASgJUhdpc3N1ZVRyaW'
+    'FnZUFuZFNsYVdpbmRvdxJSCiZ2ZW5kb3JfY3JlZGVudGlhbHNfYW5kX25vcm1hbGl6ZWRfYmlk'
+    'cxgFIAEoCVIidmVuZG9yQ3JlZGVudGlhbHNBbmROb3JtYWxpemVkQmlkcxJNCiR0aHJlZV93YX'
+    'lfaW52b2ljZV9hbmRfd2FycmFudHlfbWF0Y2gYBiABKAlSH3RocmVlV2F5SW52b2ljZUFuZFdh'
+    'cnJhbnR5TWF0Y2gSKAoQd29ya19vcmRlcl9zdGF0ZRgHIAEoCVIOd29ya09yZGVyU3RhdGUSOA'
+    'oZemVyb19wYXlfdG9fcmFua19lbmZvcmNlZBgIIAEoCFIVemVyb1BheVRvUmFua0VuZm9yY2Vk'
+    'EiQKDnVwZGF0ZWRfYXRfaXNvGAkgASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getDominionMaintenanceVendorWorkbenchRequestDescriptor instead')
+const GetDominionMaintenanceVendorWorkbenchRequest$json = {
+  '1': 'GetDominionMaintenanceVendorWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionMaintenanceVendorWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionMaintenanceVendorWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CixHZXREb21pbmlvbk1haW50ZW5hbmNlVmVuZG9yV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getDominionMaintenanceVendorWorkbenchResponseDescriptor instead')
+const GetDominionMaintenanceVendorWorkbenchResponse$json = {
+  '1': 'GetDominionMaintenanceVendorWorkbenchResponse',
+  '2': [
+    {
+      '1': 'work_orders',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem',
+      '10': 'workOrders'
+    },
+    {
+      '1': 'zero_pay_to_rank_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'zeroPayToRankEnforced'
+    },
+    {
+      '1': 'three_way_invoice_match_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'threeWayInvoiceMatchSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionMaintenanceVendorWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionMaintenanceVendorWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXREb21pbmlvbk1haW50ZW5hbmNlVmVuZG9yV29ya2JlbmNoUmVzcG9uc2USWwoLd29ya1'
+        '9vcmRlcnMYASADKAsyOi5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk1haW50ZW5hbmNl'
+        'VmVuZG9yTmV0d29ya0l0ZW1SCndvcmtPcmRlcnMSOAoZemVyb19wYXlfdG9fcmFua19lbmZvcm'
+        'NlZBgCIAEoCFIVemVyb1BheVRvUmFua0VuZm9yY2VkEkQKH3RocmVlX3dheV9pbnZvaWNlX21h'
+        'dGNoX3N1bW1hcnkYAyABKAlSG3RocmVlV2F5SW52b2ljZU1hdGNoU3VtbWFyeQ==');
+
+@$core
+    .Deprecated('Use saveDominionMaintenanceWorkOrderRequestDescriptor instead')
+const SaveDominionMaintenanceWorkOrderRequest$json = {
+  '1': 'SaveDominionMaintenanceWorkOrderRequest',
+  '2': [
+    {'1': 'work_order_code', '3': 1, '4': 1, '5': 9, '10': 'workOrderCode'},
+    {
+      '1': 'issue_triage_and_sla_window',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'issueTriageAndSlaWindow'
+    },
+    {
+      '1': 'vendor_credentials_and_normalized_bids',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'vendorCredentialsAndNormalizedBids'
+    },
+    {
+      '1': 'three_way_invoice_and_warranty_match',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'threeWayInvoiceAndWarrantyMatch'
+    },
+    {'1': 'work_order_state', '3': 5, '4': 1, '5': 9, '10': 'workOrderState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionMaintenanceWorkOrderRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionMaintenanceWorkOrderRequestDescriptor = $convert.base64Decode(
+    'CidTYXZlRG9taW5pb25NYWludGVuYW5jZVdvcmtPcmRlclJlcXVlc3QSJgoPd29ya19vcmRlcl'
+    '9jb2RlGAEgASgJUg13b3JrT3JkZXJDb2RlEjwKG2lzc3VlX3RyaWFnZV9hbmRfc2xhX3dpbmRv'
+    'dxgCIAEoCVIXaXNzdWVUcmlhZ2VBbmRTbGFXaW5kb3cSUgomdmVuZG9yX2NyZWRlbnRpYWxzX2'
+    'FuZF9ub3JtYWxpemVkX2JpZHMYAyABKAlSInZlbmRvckNyZWRlbnRpYWxzQW5kTm9ybWFsaXpl'
+    'ZEJpZHMSTQokdGhyZWVfd2F5X2ludm9pY2VfYW5kX3dhcnJhbnR5X21hdGNoGAQgASgJUh90aH'
+    'JlZVdheUludm9pY2VBbmRXYXJyYW50eU1hdGNoEigKEHdvcmtfb3JkZXJfc3RhdGUYBSABKAlS'
+    'DndvcmtPcmRlclN0YXRl');
+
+@$core.Deprecated(
+    'Use saveDominionMaintenanceWorkOrderResponseDescriptor instead')
+const SaveDominionMaintenanceWorkOrderResponse$json = {
+  '1': 'SaveDominionMaintenanceWorkOrderResponse',
+  '2': [
+    {
+      '1': 'work_order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem',
+      '10': 'workOrder'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionMaintenanceWorkOrderResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionMaintenanceWorkOrderResponseDescriptor =
+    $convert.base64Decode(
+        'CihTYXZlRG9taW5pb25NYWludGVuYW5jZVdvcmtPcmRlclJlc3BvbnNlElkKCndvcmtfb3JkZX'
+        'IYASABKAsyOi5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk1haW50ZW5hbmNlVmVuZG9y'
+        'TmV0d29ya0l0ZW1SCXdvcmtPcmRlcg==');
+
+@$core.Deprecated(
+    'Use verifyDominionThreeWayMatchOrWarrantyRequestDescriptor instead')
+const VerifyDominionThreeWayMatchOrWarrantyRequest$json = {
+  '1': 'VerifyDominionThreeWayMatchOrWarrantyRequest',
+  '2': [
+    {'1': 'work_order_code', '3': 1, '4': 1, '5': 9, '10': 'workOrderCode'},
+    {
+      '1': 'three_way_invoice_and_warranty_match',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'threeWayInvoiceAndWarrantyMatch'
+    },
+    {'1': 'work_order_state', '3': 3, '4': 1, '5': 9, '10': 'workOrderState'},
+  ],
+};
+
+/// Descriptor for `VerifyDominionThreeWayMatchOrWarrantyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyDominionThreeWayMatchOrWarrantyRequestDescriptor =
+    $convert.base64Decode(
+        'CixWZXJpZnlEb21pbmlvblRocmVlV2F5TWF0Y2hPcldhcnJhbnR5UmVxdWVzdBImCg93b3JrX2'
+        '9yZGVyX2NvZGUYASABKAlSDXdvcmtPcmRlckNvZGUSTQokdGhyZWVfd2F5X2ludm9pY2VfYW5k'
+        'X3dhcnJhbnR5X21hdGNoGAIgASgJUh90aHJlZVdheUludm9pY2VBbmRXYXJyYW50eU1hdGNoEi'
+        'gKEHdvcmtfb3JkZXJfc3RhdGUYAyABKAlSDndvcmtPcmRlclN0YXRl');
+
+@$core.Deprecated(
+    'Use verifyDominionThreeWayMatchOrWarrantyResponseDescriptor instead')
+const VerifyDominionThreeWayMatchOrWarrantyResponse$json = {
+  '1': 'VerifyDominionThreeWayMatchOrWarrantyResponse',
+  '2': [
+    {
+      '1': 'work_order',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem',
+      '10': 'workOrder'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyDominionThreeWayMatchOrWarrantyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyDominionThreeWayMatchOrWarrantyResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1WZXJpZnlEb21pbmlvblRocmVlV2F5TWF0Y2hPcldhcnJhbnR5UmVzcG9uc2USWQoKd29ya1'
+        '9vcmRlchgBIAEoCzI6LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uTWFpbnRlbmFuY2VW'
+        'ZW5kb3JOZXR3b3JrSXRlbVIJd29ya09yZGVy');
+
+@$core.Deprecated('Use dominionCapitalProjectControlItemDescriptor instead')
+const DominionCapitalProjectControlItem$json = {
+  '1': 'DominionCapitalProjectControlItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'project_code', '3': 3, '4': 1, '5': 9, '10': 'projectCode'},
+    {
+      '1': 'scope_permits_and_baseline_budget',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'scopePermitsAndBaselineBudget'
+    },
+    {
+      '1': 'change_order_draw_and_lien_waiver',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'changeOrderDrawAndLienWaiver'
+    },
+    {
+      '1': 'offline_field_inspection_and_punchlist',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineFieldInspectionAndPunchlist'
+    },
+    {'1': 'project_state', '3': 7, '4': 1, '5': 9, '10': 'projectState'},
+    {
+      '1': 'human_verified_change_orders_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'humanVerifiedChangeOrdersEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionCapitalProjectControlItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionCapitalProjectControlItemDescriptor = $convert.base64Decode(
+    'CiFEb21pbmlvbkNhcGl0YWxQcm9qZWN0Q29udHJvbEl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBIhCgxwcm9qZWN0X2NvZGUYAyABKAlSC3Byb2plY3RDb2Rl'
+    'EkgKIXNjb3BlX3Blcm1pdHNfYW5kX2Jhc2VsaW5lX2J1ZGdldBgEIAEoCVIdc2NvcGVQZXJtaX'
+    'RzQW5kQmFzZWxpbmVCdWRnZXQSRwohY2hhbmdlX29yZGVyX2RyYXdfYW5kX2xpZW5fd2FpdmVy'
+    'GAUgASgJUhxjaGFuZ2VPcmRlckRyYXdBbmRMaWVuV2FpdmVyElIKJm9mZmxpbmVfZmllbGRfaW'
+    '5zcGVjdGlvbl9hbmRfcHVuY2hsaXN0GAYgASgJUiJvZmZsaW5lRmllbGRJbnNwZWN0aW9uQW5k'
+    'UHVuY2hsaXN0EiMKDXByb2plY3Rfc3RhdGUYByABKAlSDHByb2plY3RTdGF0ZRJQCiVodW1hbl'
+    '92ZXJpZmllZF9jaGFuZ2Vfb3JkZXJzX2VuZm9yY2VkGAggASgIUiFodW1hblZlcmlmaWVkQ2hh'
+    'bmdlT3JkZXJzRW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw'
+    '==');
+
+@$core.Deprecated(
+    'Use getDominionCapitalProjectWorkbenchRequestDescriptor instead')
+const GetDominionCapitalProjectWorkbenchRequest$json = {
+  '1': 'GetDominionCapitalProjectWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionCapitalProjectWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionCapitalProjectWorkbenchRequestDescriptor = $convert.base64Decode(
+        'CilHZXREb21pbmlvbkNhcGl0YWxQcm9qZWN0V29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getDominionCapitalProjectWorkbenchResponseDescriptor instead')
+const GetDominionCapitalProjectWorkbenchResponse$json = {
+  '1': 'GetDominionCapitalProjectWorkbenchResponse',
+  '2': [
+    {
+      '1': 'projects',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionCapitalProjectControlItem',
+      '10': 'projects'
+    },
+    {
+      '1': 'human_verified_change_orders_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'humanVerifiedChangeOrdersEnforced'
+    },
+    {
+      '1': 'retainage_and_lien_waiver_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'retainageAndLienWaiverSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionCapitalProjectWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionCapitalProjectWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CipHZXREb21pbmlvbkNhcGl0YWxQcm9qZWN0V29ya2JlbmNoUmVzcG9uc2USUwoIcHJvamVjdH'
+        'MYASADKAsyNy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbkNhcGl0YWxQcm9qZWN0Q29u'
+        'dHJvbEl0ZW1SCHByb2plY3RzElAKJWh1bWFuX3ZlcmlmaWVkX2NoYW5nZV9vcmRlcnNfZW5mb3'
+        'JjZWQYAiABKAhSIWh1bWFuVmVyaWZpZWRDaGFuZ2VPcmRlcnNFbmZvcmNlZBJICiFyZXRhaW5h'
+        'Z2VfYW5kX2xpZW5fd2FpdmVyX3N1bW1hcnkYAyABKAlSHXJldGFpbmFnZUFuZExpZW5XYWl2ZX'
+        'JTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveDominionCapitalProjectControlRequestDescriptor instead')
+const SaveDominionCapitalProjectControlRequest$json = {
+  '1': 'SaveDominionCapitalProjectControlRequest',
+  '2': [
+    {'1': 'project_code', '3': 1, '4': 1, '5': 9, '10': 'projectCode'},
+    {
+      '1': 'scope_permits_and_baseline_budget',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'scopePermitsAndBaselineBudget'
+    },
+    {
+      '1': 'change_order_draw_and_lien_waiver',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'changeOrderDrawAndLienWaiver'
+    },
+    {
+      '1': 'offline_field_inspection_and_punchlist',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'offlineFieldInspectionAndPunchlist'
+    },
+    {'1': 'project_state', '3': 5, '4': 1, '5': 9, '10': 'projectState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionCapitalProjectControlRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveDominionCapitalProjectControlRequestDescriptor = $convert.base64Decode(
+    'CihTYXZlRG9taW5pb25DYXBpdGFsUHJvamVjdENvbnRyb2xSZXF1ZXN0EiEKDHByb2plY3RfY2'
+    '9kZRgBIAEoCVILcHJvamVjdENvZGUSSAohc2NvcGVfcGVybWl0c19hbmRfYmFzZWxpbmVfYnVk'
+    'Z2V0GAIgASgJUh1zY29wZVBlcm1pdHNBbmRCYXNlbGluZUJ1ZGdldBJHCiFjaGFuZ2Vfb3JkZX'
+    'JfZHJhd19hbmRfbGllbl93YWl2ZXIYAyABKAlSHGNoYW5nZU9yZGVyRHJhd0FuZExpZW5XYWl2'
+    'ZXISUgomb2ZmbGluZV9maWVsZF9pbnNwZWN0aW9uX2FuZF9wdW5jaGxpc3QYBCABKAlSIm9mZm'
+    'xpbmVGaWVsZEluc3BlY3Rpb25BbmRQdW5jaGxpc3QSIwoNcHJvamVjdF9zdGF0ZRgFIAEoCVIM'
+    'cHJvamVjdFN0YXRl');
+
+@$core.Deprecated(
+    'Use saveDominionCapitalProjectControlResponseDescriptor instead')
+const SaveDominionCapitalProjectControlResponse$json = {
+  '1': 'SaveDominionCapitalProjectControlResponse',
+  '2': [
+    {
+      '1': 'project',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionCapitalProjectControlItem',
+      '10': 'project'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionCapitalProjectControlResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionCapitalProjectControlResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlRG9taW5pb25DYXBpdGFsUHJvamVjdENvbnRyb2xSZXNwb25zZRJRCgdwcm9qZWN0GA'
+        'EgASgLMjcuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25DYXBpdGFsUHJvamVjdENvbnRy'
+        'b2xJdGVtUgdwcm9qZWN0');
+
+@$core.Deprecated(
+    'Use approveDominionDrawOrPunchlistCloseoutRequestDescriptor instead')
+const ApproveDominionDrawOrPunchlistCloseoutRequest$json = {
+  '1': 'ApproveDominionDrawOrPunchlistCloseoutRequest',
+  '2': [
+    {'1': 'project_code', '3': 1, '4': 1, '5': 9, '10': 'projectCode'},
+    {
+      '1': 'change_order_draw_and_lien_waiver',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'changeOrderDrawAndLienWaiver'
+    },
+    {'1': 'project_state', '3': 3, '4': 1, '5': 9, '10': 'projectState'},
+  ],
+};
+
+/// Descriptor for `ApproveDominionDrawOrPunchlistCloseoutRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    approveDominionDrawOrPunchlistCloseoutRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1BcHByb3ZlRG9taW5pb25EcmF3T3JQdW5jaGxpc3RDbG9zZW91dFJlcXVlc3QSIQoMcHJvam'
+        'VjdF9jb2RlGAEgASgJUgtwcm9qZWN0Q29kZRJHCiFjaGFuZ2Vfb3JkZXJfZHJhd19hbmRfbGll'
+        'bl93YWl2ZXIYAiABKAlSHGNoYW5nZU9yZGVyRHJhd0FuZExpZW5XYWl2ZXISIwoNcHJvamVjdF'
+        '9zdGF0ZRgDIAEoCVIMcHJvamVjdFN0YXRl');
+
+@$core.Deprecated(
+    'Use approveDominionDrawOrPunchlistCloseoutResponseDescriptor instead')
+const ApproveDominionDrawOrPunchlistCloseoutResponse$json = {
+  '1': 'ApproveDominionDrawOrPunchlistCloseoutResponse',
+  '2': [
+    {
+      '1': 'project',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionCapitalProjectControlItem',
+      '10': 'project'
+    },
+  ],
+};
+
+/// Descriptor for `ApproveDominionDrawOrPunchlistCloseoutResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    approveDominionDrawOrPunchlistCloseoutResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5BcHByb3ZlRG9taW5pb25EcmF3T3JQdW5jaGxpc3RDbG9zZW91dFJlc3BvbnNlElEKB3Byb2'
+        'plY3QYASABKAsyNy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbkNhcGl0YWxQcm9qZWN0'
+        'Q29udHJvbEl0ZW1SB3Byb2plY3Q=');
+
+@$core.Deprecated('Use dominionMarketValuationGovernanceItemDescriptor instead')
+const DominionMarketValuationGovernanceItem$json = {
+  '1': 'DominionMarketValuationGovernanceItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'valuation_code', '3': 3, '4': 1, '5': 9, '10': 'valuationCode'},
+    {
+      '1': 'editable_comp_set_and_adjustments',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'editableCompSetAndAdjustments'
+    },
+    {
+      '1': 'avm_range_vs_appraisal_evidence',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'avmRangeVsAppraisalEvidence'
+    },
+    {
+      '1': 'provider_freshness_and_disagreement',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'providerFreshnessAndDisagreement'
+    },
+    {'1': 'valuation_state', '3': 7, '4': 1, '5': 9, '10': 'valuationState'},
+    {
+      '1': 'avm_distinct_from_appraisal_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'avmDistinctFromAppraisalEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionMarketValuationGovernanceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionMarketValuationGovernanceItemDescriptor = $convert.base64Decode(
+    'CiVEb21pbmlvbk1hcmtldFZhbHVhdGlvbkdvdmVybmFuY2VJdGVtEg4KAmlkGAEgASgJUgJpZB'
+    'IXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJQoOdmFsdWF0aW9uX2NvZGUYAyABKAlSDXZhbHVh'
+    'dGlvbkNvZGUSSAohZWRpdGFibGVfY29tcF9zZXRfYW5kX2FkanVzdG1lbnRzGAQgASgJUh1lZG'
+    'l0YWJsZUNvbXBTZXRBbmRBZGp1c3RtZW50cxJECh9hdm1fcmFuZ2VfdnNfYXBwcmFpc2FsX2V2'
+    'aWRlbmNlGAUgASgJUhthdm1SYW5nZVZzQXBwcmFpc2FsRXZpZGVuY2USTQojcHJvdmlkZXJfZn'
+    'Jlc2huZXNzX2FuZF9kaXNhZ3JlZW1lbnQYBiABKAlSIHByb3ZpZGVyRnJlc2huZXNzQW5kRGlz'
+    'YWdyZWVtZW50EicKD3ZhbHVhdGlvbl9zdGF0ZRgHIAEoCVIOdmFsdWF0aW9uU3RhdGUSTgokYX'
+    'ZtX2Rpc3RpbmN0X2Zyb21fYXBwcmFpc2FsX2VuZm9yY2VkGAggASgIUiBhdm1EaXN0aW5jdEZy'
+    'b21BcHByYWlzYWxFbmZvcmNlZBIkCg51cGRhdGVkX2F0X2lzbxgJIAEoCVIMdXBkYXRlZEF0SX'
+    'Nv');
+
+@$core.Deprecated(
+    'Use getDominionMarketValuationWorkbenchRequestDescriptor instead')
+const GetDominionMarketValuationWorkbenchRequest$json = {
+  '1': 'GetDominionMarketValuationWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionMarketValuationWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionMarketValuationWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXREb21pbmlvbk1hcmtldFZhbHVhdGlvbldvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionMarketValuationWorkbenchResponseDescriptor instead')
+const GetDominionMarketValuationWorkbenchResponse$json = {
+  '1': 'GetDominionMarketValuationWorkbenchResponse',
+  '2': [
+    {
+      '1': 'valuations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMarketValuationGovernanceItem',
+      '10': 'valuations'
+    },
+    {
+      '1': 'avm_distinct_from_appraisal_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'avmDistinctFromAppraisalEnforced'
+    },
+    {
+      '1': 'range_and_freshness_governance_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'rangeAndFreshnessGovernanceSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionMarketValuationWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionMarketValuationWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXREb21pbmlvbk1hcmtldFZhbHVhdGlvbldvcmtiZW5jaFJlc3BvbnNlElsKCnZhbHVhdG'
+        'lvbnMYASADKAsyOy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk1hcmtldFZhbHVhdGlv'
+        'bkdvdmVybmFuY2VJdGVtUgp2YWx1YXRpb25zEk4KJGF2bV9kaXN0aW5jdF9mcm9tX2FwcHJhaX'
+        'NhbF9lbmZvcmNlZBgCIAEoCFIgYXZtRGlzdGluY3RGcm9tQXBwcmFpc2FsRW5mb3JjZWQSUgom'
+        'cmFuZ2VfYW5kX2ZyZXNobmVzc19nb3Zlcm5hbmNlX3N1bW1hcnkYAyABKAlSInJhbmdlQW5kRn'
+        'Jlc2huZXNzR292ZXJuYW5jZVN1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveDominionMarketValuationGovernanceRequestDescriptor instead')
+const SaveDominionMarketValuationGovernanceRequest$json = {
+  '1': 'SaveDominionMarketValuationGovernanceRequest',
+  '2': [
+    {'1': 'valuation_code', '3': 1, '4': 1, '5': 9, '10': 'valuationCode'},
+    {
+      '1': 'editable_comp_set_and_adjustments',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'editableCompSetAndAdjustments'
+    },
+    {
+      '1': 'avm_range_vs_appraisal_evidence',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'avmRangeVsAppraisalEvidence'
+    },
+    {
+      '1': 'provider_freshness_and_disagreement',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'providerFreshnessAndDisagreement'
+    },
+    {'1': 'valuation_state', '3': 5, '4': 1, '5': 9, '10': 'valuationState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionMarketValuationGovernanceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionMarketValuationGovernanceRequestDescriptor =
+    $convert.base64Decode(
+        'CixTYXZlRG9taW5pb25NYXJrZXRWYWx1YXRpb25Hb3Zlcm5hbmNlUmVxdWVzdBIlCg52YWx1YX'
+        'Rpb25fY29kZRgBIAEoCVINdmFsdWF0aW9uQ29kZRJICiFlZGl0YWJsZV9jb21wX3NldF9hbmRf'
+        'YWRqdXN0bWVudHMYAiABKAlSHWVkaXRhYmxlQ29tcFNldEFuZEFkanVzdG1lbnRzEkQKH2F2bV'
+        '9yYW5nZV92c19hcHByYWlzYWxfZXZpZGVuY2UYAyABKAlSG2F2bVJhbmdlVnNBcHByYWlzYWxF'
+        'dmlkZW5jZRJNCiNwcm92aWRlcl9mcmVzaG5lc3NfYW5kX2Rpc2FncmVlbWVudBgEIAEoCVIgcH'
+        'JvdmlkZXJGcmVzaG5lc3NBbmREaXNhZ3JlZW1lbnQSJwoPdmFsdWF0aW9uX3N0YXRlGAUgASgJ'
+        'Ug52YWx1YXRpb25TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveDominionMarketValuationGovernanceResponseDescriptor instead')
+const SaveDominionMarketValuationGovernanceResponse$json = {
+  '1': 'SaveDominionMarketValuationGovernanceResponse',
+  '2': [
+    {
+      '1': 'valuation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMarketValuationGovernanceItem',
+      '10': 'valuation'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionMarketValuationGovernanceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionMarketValuationGovernanceResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlRG9taW5pb25NYXJrZXRWYWx1YXRpb25Hb3Zlcm5hbmNlUmVzcG9uc2USWQoJdmFsdW'
+        'F0aW9uGAEgASgLMjsuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25NYXJrZXRWYWx1YXRp'
+        'b25Hb3Zlcm5hbmNlSXRlbVIJdmFsdWF0aW9u');
+
+@$core.Deprecated(
+    'Use adjustDominionCompSetOrDisputeValuationRequestDescriptor instead')
+const AdjustDominionCompSetOrDisputeValuationRequest$json = {
+  '1': 'AdjustDominionCompSetOrDisputeValuationRequest',
+  '2': [
+    {'1': 'valuation_code', '3': 1, '4': 1, '5': 9, '10': 'valuationCode'},
+    {
+      '1': 'editable_comp_set_and_adjustments',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'editableCompSetAndAdjustments'
+    },
+    {'1': 'valuation_state', '3': 3, '4': 1, '5': 9, '10': 'valuationState'},
+  ],
+};
+
+/// Descriptor for `AdjustDominionCompSetOrDisputeValuationRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adjustDominionCompSetOrDisputeValuationRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5BZGp1c3REb21pbmlvbkNvbXBTZXRPckRpc3B1dGVWYWx1YXRpb25SZXF1ZXN0EiUKDnZhbH'
+        'VhdGlvbl9jb2RlGAEgASgJUg12YWx1YXRpb25Db2RlEkgKIWVkaXRhYmxlX2NvbXBfc2V0X2Fu'
+        'ZF9hZGp1c3RtZW50cxgCIAEoCVIdZWRpdGFibGVDb21wU2V0QW5kQWRqdXN0bWVudHMSJwoPdm'
+        'FsdWF0aW9uX3N0YXRlGAMgASgJUg52YWx1YXRpb25TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use adjustDominionCompSetOrDisputeValuationResponseDescriptor instead')
+const AdjustDominionCompSetOrDisputeValuationResponse$json = {
+  '1': 'AdjustDominionCompSetOrDisputeValuationResponse',
+  '2': [
+    {
+      '1': 'valuation',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionMarketValuationGovernanceItem',
+      '10': 'valuation'
+    },
+  ],
+};
+
+/// Descriptor for `AdjustDominionCompSetOrDisputeValuationResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    adjustDominionCompSetOrDisputeValuationResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9BZGp1c3REb21pbmlvbkNvbXBTZXRPckRpc3B1dGVWYWx1YXRpb25SZXNwb25zZRJZCgl2YW'
+        'x1YXRpb24YASABKAsyOy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk1hcmtldFZhbHVh'
+        'dGlvbkdvdmVybmFuY2VJdGVtUgl2YWx1YXRpb24=');
+
+@$core.Deprecated('Use dominionOwnershipTransactionRoomItemDescriptor instead')
+const DominionOwnershipTransactionRoomItem$json = {
+  '1': 'DominionOwnershipTransactionRoomItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'transaction_code', '3': 3, '4': 1, '5': 9, '10': 'transactionCode'},
+    {
+      '1': 'entity_capital_stack_and_covenants',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'entityCapitalStackAndCovenants'
+    },
+    {
+      '1': 'waterfall_and_net_proceeds_range',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'waterfallAndNetProceedsRange'
+    },
+    {
+      '1': 'scoped_dataroom_and_bridge_refs',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'scopedDataroomAndBridgeRefs'
+    },
+    {'1': 'room_state', '3': 7, '4': 1, '5': 9, '10': 'roomState'},
+    {
+      '1': 'non_broker_escrow_boundary_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonBrokerEscrowBoundaryEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionOwnershipTransactionRoomItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionOwnershipTransactionRoomItemDescriptor = $convert.base64Decode(
+    'CiREb21pbmlvbk93bmVyc2hpcFRyYW5zYWN0aW9uUm9vbUl0ZW0SDgoCaWQYASABKAlSAmlkEh'
+    'cKB3VzZXJfaWQYAiABKAlSBnVzZXJJZBIpChB0cmFuc2FjdGlvbl9jb2RlGAMgASgJUg90cmFu'
+    'c2FjdGlvbkNvZGUSSgoiZW50aXR5X2NhcGl0YWxfc3RhY2tfYW5kX2NvdmVuYW50cxgEIAEoCV'
+    'IeZW50aXR5Q2FwaXRhbFN0YWNrQW5kQ292ZW5hbnRzEkYKIHdhdGVyZmFsbF9hbmRfbmV0X3By'
+    'b2NlZWRzX3JhbmdlGAUgASgJUhx3YXRlcmZhbGxBbmROZXRQcm9jZWVkc1JhbmdlEkQKH3Njb3'
+    'BlZF9kYXRhcm9vbV9hbmRfYnJpZGdlX3JlZnMYBiABKAlSG3Njb3BlZERhdGFyb29tQW5kQnJp'
+    'ZGdlUmVmcxIdCgpyb29tX3N0YXRlGAcgASgJUglyb29tU3RhdGUSTAojbm9uX2Jyb2tlcl9lc2'
+    'Nyb3dfYm91bmRhcnlfZW5mb3JjZWQYCCABKAhSH25vbkJyb2tlckVzY3Jvd0JvdW5kYXJ5RW5m'
+    'b3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getDominionOwnershipTransactionWorkbenchRequestDescriptor instead')
+const GetDominionOwnershipTransactionWorkbenchRequest$json = {
+  '1': 'GetDominionOwnershipTransactionWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionOwnershipTransactionWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionOwnershipTransactionWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci9HZXREb21pbmlvbk93bmVyc2hpcFRyYW5zYWN0aW9uV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getDominionOwnershipTransactionWorkbenchResponseDescriptor instead')
+const GetDominionOwnershipTransactionWorkbenchResponse$json = {
+  '1': 'GetDominionOwnershipTransactionWorkbenchResponse',
+  '2': [
+    {
+      '1': 'rooms',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionOwnershipTransactionRoomItem',
+      '10': 'rooms'
+    },
+    {
+      '1': 'non_broker_escrow_boundary_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonBrokerEscrowBoundaryEnforced'
+    },
+    {
+      '1': 'covenant_and_watermarked_dataroom_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'covenantAndWatermarkedDataroomSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionOwnershipTransactionWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionOwnershipTransactionWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CjBHZXREb21pbmlvbk93bmVyc2hpcFRyYW5zYWN0aW9uV29ya2JlbmNoUmVzcG9uc2USUAoFcm'
+        '9vbXMYASADKAsyOi5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk93bmVyc2hpcFRyYW5z'
+        'YWN0aW9uUm9vbUl0ZW1SBXJvb21zEkwKI25vbl9icm9rZXJfZXNjcm93X2JvdW5kYXJ5X2VuZm'
+        '9yY2VkGAIgASgIUh9ub25Ccm9rZXJFc2Nyb3dCb3VuZGFyeUVuZm9yY2VkElgKKWNvdmVuYW50'
+        'X2FuZF93YXRlcm1hcmtlZF9kYXRhcm9vbV9zdW1tYXJ5GAMgASgJUiVjb3ZlbmFudEFuZFdhdG'
+        'VybWFya2VkRGF0YXJvb21TdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveDominionOwnershipTransactionRoomRequestDescriptor instead')
+const SaveDominionOwnershipTransactionRoomRequest$json = {
+  '1': 'SaveDominionOwnershipTransactionRoomRequest',
+  '2': [
+    {'1': 'transaction_code', '3': 1, '4': 1, '5': 9, '10': 'transactionCode'},
+    {
+      '1': 'entity_capital_stack_and_covenants',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'entityCapitalStackAndCovenants'
+    },
+    {
+      '1': 'waterfall_and_net_proceeds_range',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'waterfallAndNetProceedsRange'
+    },
+    {
+      '1': 'scoped_dataroom_and_bridge_refs',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'scopedDataroomAndBridgeRefs'
+    },
+    {'1': 'room_state', '3': 5, '4': 1, '5': 9, '10': 'roomState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionOwnershipTransactionRoomRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionOwnershipTransactionRoomRequestDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlRG9taW5pb25Pd25lcnNoaXBUcmFuc2FjdGlvblJvb21SZXF1ZXN0EikKEHRyYW5zYW'
+        'N0aW9uX2NvZGUYASABKAlSD3RyYW5zYWN0aW9uQ29kZRJKCiJlbnRpdHlfY2FwaXRhbF9zdGFj'
+        'a19hbmRfY292ZW5hbnRzGAIgASgJUh5lbnRpdHlDYXBpdGFsU3RhY2tBbmRDb3ZlbmFudHMSRg'
+        'ogd2F0ZXJmYWxsX2FuZF9uZXRfcHJvY2VlZHNfcmFuZ2UYAyABKAlSHHdhdGVyZmFsbEFuZE5l'
+        'dFByb2NlZWRzUmFuZ2USRAofc2NvcGVkX2RhdGFyb29tX2FuZF9icmlkZ2VfcmVmcxgEIAEoCV'
+        'Ibc2NvcGVkRGF0YXJvb21BbmRCcmlkZ2VSZWZzEh0KCnJvb21fc3RhdGUYBSABKAlSCXJvb21T'
+        'dGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveDominionOwnershipTransactionRoomResponseDescriptor instead')
+const SaveDominionOwnershipTransactionRoomResponse$json = {
+  '1': 'SaveDominionOwnershipTransactionRoomResponse',
+  '2': [
+    {
+      '1': 'room',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionOwnershipTransactionRoomItem',
+      '10': 'room'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionOwnershipTransactionRoomResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionOwnershipTransactionRoomResponseDescriptor =
+    $convert.base64Decode(
+        'CixTYXZlRG9taW5pb25Pd25lcnNoaXBUcmFuc2FjdGlvblJvb21SZXNwb25zZRJOCgRyb29tGA'
+        'EgASgLMjouc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25Pd25lcnNoaXBUcmFuc2FjdGlv'
+        'blJvb21JdGVtUgRyb29t');
+
+@$core.Deprecated(
+    'Use stageDominionRefinanceOrDataroomAccessRequestDescriptor instead')
+const StageDominionRefinanceOrDataroomAccessRequest$json = {
+  '1': 'StageDominionRefinanceOrDataroomAccessRequest',
+  '2': [
+    {'1': 'transaction_code', '3': 1, '4': 1, '5': 9, '10': 'transactionCode'},
+    {
+      '1': 'waterfall_and_net_proceeds_range',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'waterfallAndNetProceedsRange'
+    },
+    {'1': 'room_state', '3': 3, '4': 1, '5': 9, '10': 'roomState'},
+  ],
+};
+
+/// Descriptor for `StageDominionRefinanceOrDataroomAccessRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stageDominionRefinanceOrDataroomAccessRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1TdGFnZURvbWluaW9uUmVmaW5hbmNlT3JEYXRhcm9vbUFjY2Vzc1JlcXVlc3QSKQoQdHJhbn'
+        'NhY3Rpb25fY29kZRgBIAEoCVIPdHJhbnNhY3Rpb25Db2RlEkYKIHdhdGVyZmFsbF9hbmRfbmV0'
+        'X3Byb2NlZWRzX3JhbmdlGAIgASgJUhx3YXRlcmZhbGxBbmROZXRQcm9jZWVkc1JhbmdlEh0KCn'
+        'Jvb21fc3RhdGUYAyABKAlSCXJvb21TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use stageDominionRefinanceOrDataroomAccessResponseDescriptor instead')
+const StageDominionRefinanceOrDataroomAccessResponse$json = {
+  '1': 'StageDominionRefinanceOrDataroomAccessResponse',
+  '2': [
+    {
+      '1': 'room',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionOwnershipTransactionRoomItem',
+      '10': 'room'
+    },
+  ],
+};
+
+/// Descriptor for `StageDominionRefinanceOrDataroomAccessResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stageDominionRefinanceOrDataroomAccessResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5TdGFnZURvbWluaW9uUmVmaW5hbmNlT3JEYXRhcm9vbUFjY2Vzc1Jlc3BvbnNlEk4KBHJvb2'
+        '0YASABKAsyOi5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbk93bmVyc2hpcFRyYW5zYWN0'
+        'aW9uUm9vbUl0ZW1SBHJvb20=');
+
+@$core.Deprecated('Use dominionInsuranceResilienceCenterItemDescriptor instead')
+const DominionInsuranceResilienceCenterItem$json = {
+  '1': 'DominionInsuranceResilienceCenterItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'resilience_code', '3': 3, '4': 1, '5': 9, '10': 'resilienceCode'},
+    {
+      '1': 'policy_limits_deductibles_and_gaps',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'policyLimitsDeductiblesAndGaps'
+    },
+    {
+      '1': 'peril_rate_and_vacancy_stress_bundle',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'perilRateAndVacancyStressBundle'
+    },
+    {
+      '1': 'incident_custody_and_claim_recovery',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'incidentCustodyAndClaimRecovery'
+    },
+    {'1': 'resilience_state', '3': 7, '4': 1, '5': 9, '10': 'resilienceState'},
+    {
+      '1': 'non_legal_coverage_disclaimer_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'nonLegalCoverageDisclaimerEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionInsuranceResilienceCenterItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionInsuranceResilienceCenterItemDescriptor = $convert.base64Decode(
+    'CiVEb21pbmlvbkluc3VyYW5jZVJlc2lsaWVuY2VDZW50ZXJJdGVtEg4KAmlkGAEgASgJUgJpZB'
+    'IXCgd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJwoPcmVzaWxpZW5jZV9jb2RlGAMgASgJUg5yZXNp'
+    'bGllbmNlQ29kZRJKCiJwb2xpY3lfbGltaXRzX2RlZHVjdGlibGVzX2FuZF9nYXBzGAQgASgJUh'
+    '5wb2xpY3lMaW1pdHNEZWR1Y3RpYmxlc0FuZEdhcHMSTQokcGVyaWxfcmF0ZV9hbmRfdmFjYW5j'
+    'eV9zdHJlc3NfYnVuZGxlGAUgASgJUh9wZXJpbFJhdGVBbmRWYWNhbmN5U3RyZXNzQnVuZGxlEk'
+    'wKI2luY2lkZW50X2N1c3RvZHlfYW5kX2NsYWltX3JlY292ZXJ5GAYgASgJUh9pbmNpZGVudEN1'
+    'c3RvZHlBbmRDbGFpbVJlY292ZXJ5EikKEHJlc2lsaWVuY2Vfc3RhdGUYByABKAlSD3Jlc2lsaW'
+    'VuY2VTdGF0ZRJSCiZub25fbGVnYWxfY292ZXJhZ2VfZGlzY2xhaW1lcl9lbmZvcmNlZBgIIAEo'
+    'CFIibm9uTGVnYWxDb3ZlcmFnZURpc2NsYWltZXJFbmZvcmNlZBIkCg51cGRhdGVkX2F0X2lzbx'
+    'gJIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getDominionInsuranceResilienceWorkbenchRequestDescriptor instead')
+const GetDominionInsuranceResilienceWorkbenchRequest$json = {
+  '1': 'GetDominionInsuranceResilienceWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionInsuranceResilienceWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionInsuranceResilienceWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXREb21pbmlvbkluc3VyYW5jZVJlc2lsaWVuY2VXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getDominionInsuranceResilienceWorkbenchResponseDescriptor instead')
+const GetDominionInsuranceResilienceWorkbenchResponse$json = {
+  '1': 'GetDominionInsuranceResilienceWorkbenchResponse',
+  '2': [
+    {
+      '1': 'centers',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionInsuranceResilienceCenterItem',
+      '10': 'centers'
+    },
+    {
+      '1': 'non_legal_coverage_disclaimer_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonLegalCoverageDisclaimerEnforced'
+    },
+    {
+      '1': 'stress_bundle_and_custody_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'stressBundleAndCustodySummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionInsuranceResilienceWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionInsuranceResilienceWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9HZXREb21pbmlvbkluc3VyYW5jZVJlc2lsaWVuY2VXb3JrYmVuY2hSZXNwb25zZRJVCgdjZW'
+        '50ZXJzGAEgAygLMjsuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25JbnN1cmFuY2VSZXNp'
+        'bGllbmNlQ2VudGVySXRlbVIHY2VudGVycxJSCiZub25fbGVnYWxfY292ZXJhZ2VfZGlzY2xhaW'
+        '1lcl9lbmZvcmNlZBgCIAEoCFIibm9uTGVnYWxDb3ZlcmFnZURpc2NsYWltZXJFbmZvcmNlZBJI'
+        'CiFzdHJlc3NfYnVuZGxlX2FuZF9jdXN0b2R5X3N1bW1hcnkYAyABKAlSHXN0cmVzc0J1bmRsZU'
+        'FuZEN1c3RvZHlTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveDominionInsuranceResilienceCenterRequestDescriptor instead')
+const SaveDominionInsuranceResilienceCenterRequest$json = {
+  '1': 'SaveDominionInsuranceResilienceCenterRequest',
+  '2': [
+    {'1': 'resilience_code', '3': 1, '4': 1, '5': 9, '10': 'resilienceCode'},
+    {
+      '1': 'policy_limits_deductibles_and_gaps',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'policyLimitsDeductiblesAndGaps'
+    },
+    {
+      '1': 'peril_rate_and_vacancy_stress_bundle',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'perilRateAndVacancyStressBundle'
+    },
+    {
+      '1': 'incident_custody_and_claim_recovery',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'incidentCustodyAndClaimRecovery'
+    },
+    {'1': 'resilience_state', '3': 5, '4': 1, '5': 9, '10': 'resilienceState'},
+  ],
+};
+
+/// Descriptor for `SaveDominionInsuranceResilienceCenterRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionInsuranceResilienceCenterRequestDescriptor =
+    $convert.base64Decode(
+        'CixTYXZlRG9taW5pb25JbnN1cmFuY2VSZXNpbGllbmNlQ2VudGVyUmVxdWVzdBInCg9yZXNpbG'
+        'llbmNlX2NvZGUYASABKAlSDnJlc2lsaWVuY2VDb2RlEkoKInBvbGljeV9saW1pdHNfZGVkdWN0'
+        'aWJsZXNfYW5kX2dhcHMYAiABKAlSHnBvbGljeUxpbWl0c0RlZHVjdGlibGVzQW5kR2FwcxJNCi'
+        'RwZXJpbF9yYXRlX2FuZF92YWNhbmN5X3N0cmVzc19idW5kbGUYAyABKAlSH3BlcmlsUmF0ZUFu'
+        'ZFZhY2FuY3lTdHJlc3NCdW5kbGUSTAojaW5jaWRlbnRfY3VzdG9keV9hbmRfY2xhaW1fcmVjb3'
+        'ZlcnkYBCABKAlSH2luY2lkZW50Q3VzdG9keUFuZENsYWltUmVjb3ZlcnkSKQoQcmVzaWxpZW5j'
+        'ZV9zdGF0ZRgFIAEoCVIPcmVzaWxpZW5jZVN0YXRl');
+
+@$core.Deprecated(
+    'Use saveDominionInsuranceResilienceCenterResponseDescriptor instead')
+const SaveDominionInsuranceResilienceCenterResponse$json = {
+  '1': 'SaveDominionInsuranceResilienceCenterResponse',
+  '2': [
+    {
+      '1': 'center',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionInsuranceResilienceCenterItem',
+      '10': 'center'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionInsuranceResilienceCenterResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionInsuranceResilienceCenterResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlRG9taW5pb25JbnN1cmFuY2VSZXNpbGllbmNlQ2VudGVyUmVzcG9uc2USUwoGY2VudG'
+        'VyGAEgASgLMjsuc3R0YXR0dXMuZG9taW5pb24udjEuRG9taW5pb25JbnN1cmFuY2VSZXNpbGll'
+        'bmNlQ2VudGVySXRlbVIGY2VudGVy');
+
+@$core.Deprecated(
+    'Use stageDominionClaimPackOrStressReviewRequestDescriptor instead')
+const StageDominionClaimPackOrStressReviewRequest$json = {
+  '1': 'StageDominionClaimPackOrStressReviewRequest',
+  '2': [
+    {'1': 'resilience_code', '3': 1, '4': 1, '5': 9, '10': 'resilienceCode'},
+    {
+      '1': 'incident_custody_and_claim_recovery',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'incidentCustodyAndClaimRecovery'
+    },
+    {'1': 'resilience_state', '3': 3, '4': 1, '5': 9, '10': 'resilienceState'},
+  ],
+};
+
+/// Descriptor for `StageDominionClaimPackOrStressReviewRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stageDominionClaimPackOrStressReviewRequestDescriptor =
+    $convert.base64Decode(
+        'CitTdGFnZURvbWluaW9uQ2xhaW1QYWNrT3JTdHJlc3NSZXZpZXdSZXF1ZXN0EicKD3Jlc2lsaW'
+        'VuY2VfY29kZRgBIAEoCVIOcmVzaWxpZW5jZUNvZGUSTAojaW5jaWRlbnRfY3VzdG9keV9hbmRf'
+        'Y2xhaW1fcmVjb3ZlcnkYAiABKAlSH2luY2lkZW50Q3VzdG9keUFuZENsYWltUmVjb3ZlcnkSKQ'
+        'oQcmVzaWxpZW5jZV9zdGF0ZRgDIAEoCVIPcmVzaWxpZW5jZVN0YXRl');
+
+@$core.Deprecated(
+    'Use stageDominionClaimPackOrStressReviewResponseDescriptor instead')
+const StageDominionClaimPackOrStressReviewResponse$json = {
+  '1': 'StageDominionClaimPackOrStressReviewResponse',
+  '2': [
+    {
+      '1': 'center',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionInsuranceResilienceCenterItem',
+      '10': 'center'
+    },
+  ],
+};
+
+/// Descriptor for `StageDominionClaimPackOrStressReviewResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    stageDominionClaimPackOrStressReviewResponseDescriptor =
+    $convert.base64Decode(
+        'CixTdGFnZURvbWluaW9uQ2xhaW1QYWNrT3JTdHJlc3NSZXZpZXdSZXNwb25zZRJTCgZjZW50ZX'
+        'IYASABKAsyOy5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvbkluc3VyYW5jZVJlc2lsaWVu'
+        'Y2VDZW50ZXJJdGVtUgZjZW50ZXI=');
+
+@$core
+    .Deprecated('Use dominionUtilityBuildingPerformanceItemDescriptor instead')
+const DominionUtilityBuildingPerformanceItem$json = {
+  '1': 'DominionUtilityBuildingPerformanceItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'utility_code', '3': 3, '4': 1, '5': 9, '10': 'utilityCode'},
+    {
+      '1': 'meter_tariff_and_weather_normalized_use',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'meterTariffAndWeatherNormalizedUse'
+    },
+    {
+      '1': 'leak_or_baseload_anomaly_detection',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'leakOrBaseloadAnomalyDetection'
+    },
+    {
+      '1': 'retrofit_roi_and_measured_savings',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'retrofitRoiAndMeasuredSavings'
+    },
+    {
+      '1': 'performance_state',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'performanceState'
+    },
+    {
+      '1': 'tenant_utility_privacy_enforced',
+      '3': 8,
+      '4': 1,
+      '5': 8,
+      '10': 'tenantUtilityPrivacyEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 9, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `DominionUtilityBuildingPerformanceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dominionUtilityBuildingPerformanceItemDescriptor = $convert.base64Decode(
+    'CiZEb21pbmlvblV0aWxpdHlCdWlsZGluZ1BlcmZvcm1hbmNlSXRlbRIOCgJpZBgBIAEoCVICaW'
+    'QSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiEKDHV0aWxpdHlfY29kZRgDIAEoCVILdXRpbGl0'
+    'eUNvZGUSUwonbWV0ZXJfdGFyaWZmX2FuZF93ZWF0aGVyX25vcm1hbGl6ZWRfdXNlGAQgASgJUi'
+    'JtZXRlclRhcmlmZkFuZFdlYXRoZXJOb3JtYWxpemVkVXNlEkoKImxlYWtfb3JfYmFzZWxvYWRf'
+    'YW5vbWFseV9kZXRlY3Rpb24YBSABKAlSHmxlYWtPckJhc2Vsb2FkQW5vbWFseURldGVjdGlvbh'
+    'JICiFyZXRyb2ZpdF9yb2lfYW5kX21lYXN1cmVkX3NhdmluZ3MYBiABKAlSHXJldHJvZml0Um9p'
+    'QW5kTWVhc3VyZWRTYXZpbmdzEisKEXBlcmZvcm1hbmNlX3N0YXRlGAcgASgJUhBwZXJmb3JtYW'
+    '5jZVN0YXRlEkUKH3RlbmFudF91dGlsaXR5X3ByaXZhY3lfZW5mb3JjZWQYCCABKAhSHHRlbmFu'
+    'dFV0aWxpdHlQcml2YWN5RW5mb3JjZWQSJAoOdXBkYXRlZF9hdF9pc28YCSABKAlSDHVwZGF0ZW'
+    'RBdElzbw==');
+
+@$core.Deprecated(
+    'Use getDominionUtilityPerformanceWorkbenchRequestDescriptor instead')
+const GetDominionUtilityPerformanceWorkbenchRequest$json = {
+  '1': 'GetDominionUtilityPerformanceWorkbenchRequest',
+};
+
+/// Descriptor for `GetDominionUtilityPerformanceWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionUtilityPerformanceWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXREb21pbmlvblV0aWxpdHlQZXJmb3JtYW5jZVdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getDominionUtilityPerformanceWorkbenchResponseDescriptor instead')
+const GetDominionUtilityPerformanceWorkbenchResponse$json = {
+  '1': 'GetDominionUtilityPerformanceWorkbenchResponse',
+  '2': [
+    {
+      '1': 'utilities',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem',
+      '10': 'utilities'
+    },
+    {
+      '1': 'tenant_utility_privacy_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'tenantUtilityPrivacyEnforced'
+    },
+    {
+      '1': 'weather_normalized_and_retrofit_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'weatherNormalizedAndRetrofitSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetDominionUtilityPerformanceWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getDominionUtilityPerformanceWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXREb21pbmlvblV0aWxpdHlQZXJmb3JtYW5jZVdvcmtiZW5jaFJlc3BvbnNlEloKCXV0aW'
+        'xpdGllcxgBIAMoCzI8LnN0dGF0dHVzLmRvbWluaW9uLnYxLkRvbWluaW9uVXRpbGl0eUJ1aWxk'
+        'aW5nUGVyZm9ybWFuY2VJdGVtUgl1dGlsaXRpZXMSRQofdGVuYW50X3V0aWxpdHlfcHJpdmFjeV'
+        '9lbmZvcmNlZBgCIAEoCFIcdGVuYW50VXRpbGl0eVByaXZhY3lFbmZvcmNlZBJUCid3ZWF0aGVy'
+        'X25vcm1hbGl6ZWRfYW5kX3JldHJvZml0X3N1bW1hcnkYAyABKAlSI3dlYXRoZXJOb3JtYWxpem'
+        'VkQW5kUmV0cm9maXRTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveDominionUtilityBuildingPerformanceRequestDescriptor instead')
+const SaveDominionUtilityBuildingPerformanceRequest$json = {
+  '1': 'SaveDominionUtilityBuildingPerformanceRequest',
+  '2': [
+    {'1': 'utility_code', '3': 1, '4': 1, '5': 9, '10': 'utilityCode'},
+    {
+      '1': 'meter_tariff_and_weather_normalized_use',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'meterTariffAndWeatherNormalizedUse'
+    },
+    {
+      '1': 'leak_or_baseload_anomaly_detection',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'leakOrBaseloadAnomalyDetection'
+    },
+    {
+      '1': 'retrofit_roi_and_measured_savings',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'retrofitRoiAndMeasuredSavings'
+    },
+    {
+      '1': 'performance_state',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'performanceState'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionUtilityBuildingPerformanceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionUtilityBuildingPerformanceRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1TYXZlRG9taW5pb25VdGlsaXR5QnVpbGRpbmdQZXJmb3JtYW5jZVJlcXVlc3QSIQoMdXRpbG'
+        'l0eV9jb2RlGAEgASgJUgt1dGlsaXR5Q29kZRJTCidtZXRlcl90YXJpZmZfYW5kX3dlYXRoZXJf'
+        'bm9ybWFsaXplZF91c2UYAiABKAlSIm1ldGVyVGFyaWZmQW5kV2VhdGhlck5vcm1hbGl6ZWRVc2'
+        'USSgoibGVha19vcl9iYXNlbG9hZF9hbm9tYWx5X2RldGVjdGlvbhgDIAEoCVIebGVha09yQmFz'
+        'ZWxvYWRBbm9tYWx5RGV0ZWN0aW9uEkgKIXJldHJvZml0X3JvaV9hbmRfbWVhc3VyZWRfc2F2aW'
+        '5ncxgEIAEoCVIdcmV0cm9maXRSb2lBbmRNZWFzdXJlZFNhdmluZ3MSKwoRcGVyZm9ybWFuY2Vf'
+        'c3RhdGUYBSABKAlSEHBlcmZvcm1hbmNlU3RhdGU=');
+
+@$core.Deprecated(
+    'Use saveDominionUtilityBuildingPerformanceResponseDescriptor instead')
+const SaveDominionUtilityBuildingPerformanceResponse$json = {
+  '1': 'SaveDominionUtilityBuildingPerformanceResponse',
+  '2': [
+    {
+      '1': 'utility',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem',
+      '10': 'utility'
+    },
+  ],
+};
+
+/// Descriptor for `SaveDominionUtilityBuildingPerformanceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveDominionUtilityBuildingPerformanceResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5TYXZlRG9taW5pb25VdGlsaXR5QnVpbGRpbmdQZXJmb3JtYW5jZVJlc3BvbnNlElYKB3V0aW'
+        'xpdHkYASABKAsyPC5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvblV0aWxpdHlCdWlsZGlu'
+        'Z1BlcmZvcm1hbmNlSXRlbVIHdXRpbGl0eQ==');
+
+@$core.Deprecated(
+    'Use verifyDominionRetrofitSavingsOrAnomalyRequestDescriptor instead')
+const VerifyDominionRetrofitSavingsOrAnomalyRequest$json = {
+  '1': 'VerifyDominionRetrofitSavingsOrAnomalyRequest',
+  '2': [
+    {'1': 'utility_code', '3': 1, '4': 1, '5': 9, '10': 'utilityCode'},
+    {
+      '1': 'retrofit_roi_and_measured_savings',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'retrofitRoiAndMeasuredSavings'
+    },
+    {
+      '1': 'performance_state',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'performanceState'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyDominionRetrofitSavingsOrAnomalyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyDominionRetrofitSavingsOrAnomalyRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1WZXJpZnlEb21pbmlvblJldHJvZml0U2F2aW5nc09yQW5vbWFseVJlcXVlc3QSIQoMdXRpbG'
+        'l0eV9jb2RlGAEgASgJUgt1dGlsaXR5Q29kZRJICiFyZXRyb2ZpdF9yb2lfYW5kX21lYXN1cmVk'
+        'X3NhdmluZ3MYAiABKAlSHXJldHJvZml0Um9pQW5kTWVhc3VyZWRTYXZpbmdzEisKEXBlcmZvcm'
+        '1hbmNlX3N0YXRlGAMgASgJUhBwZXJmb3JtYW5jZVN0YXRl');
+
+@$core.Deprecated(
+    'Use verifyDominionRetrofitSavingsOrAnomalyResponseDescriptor instead')
+const VerifyDominionRetrofitSavingsOrAnomalyResponse$json = {
+  '1': 'VerifyDominionRetrofitSavingsOrAnomalyResponse',
+  '2': [
+    {
+      '1': 'utility',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem',
+      '10': 'utility'
+    },
+  ],
+};
+
+/// Descriptor for `VerifyDominionRetrofitSavingsOrAnomalyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    verifyDominionRetrofitSavingsOrAnomalyResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5WZXJpZnlEb21pbmlvblJldHJvZml0U2F2aW5nc09yQW5vbWFseVJlc3BvbnNlElYKB3V0aW'
+        'xpdHkYASABKAsyPC5zdHRhdHR1cy5kb21pbmlvbi52MS5Eb21pbmlvblV0aWxpdHlCdWlsZGlu'
+        'Z1BlcmZvcm1hbmNlSXRlbVIHdXRpbGl0eQ==');

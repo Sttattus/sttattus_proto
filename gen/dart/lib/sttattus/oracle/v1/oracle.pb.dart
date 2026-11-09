@@ -6993,6 +6993,12471 @@ class GenerateYearInOracleResponse extends $pb.GeneratedMessage {
   void clearPageCount() => $_clearField(2);
 }
 
+class OracleEvidenceSourceSnapshotItem extends $pb.GeneratedMessage {
+  factory OracleEvidenceSourceSnapshotItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourceCode,
+    $core.String? originClass,
+    $core.String? title,
+    $core.String? jurisdictionAndRights,
+    $core.String? freshnessState,
+    $core.String? competingDisagreementNote,
+    $core.int? correctionGeneration,
+    $core.bool? strictAnswerModeEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (originClass != null) result.originClass = originClass;
+    if (title != null) result.title = title;
+    if (jurisdictionAndRights != null)
+      result.jurisdictionAndRights = jurisdictionAndRights;
+    if (freshnessState != null) result.freshnessState = freshnessState;
+    if (competingDisagreementNote != null)
+      result.competingDisagreementNote = competingDisagreementNote;
+    if (correctionGeneration != null)
+      result.correctionGeneration = correctionGeneration;
+    if (strictAnswerModeEnforced != null)
+      result.strictAnswerModeEnforced = strictAnswerModeEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleEvidenceSourceSnapshotItem._();
+
+  factory OracleEvidenceSourceSnapshotItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleEvidenceSourceSnapshotItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleEvidenceSourceSnapshotItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'originClass')
+    ..aOS(5, _omitFieldNames ? '' : 'title')
+    ..aOS(6, _omitFieldNames ? '' : 'jurisdictionAndRights')
+    ..aOS(7, _omitFieldNames ? '' : 'freshnessState')
+    ..aOS(8, _omitFieldNames ? '' : 'competingDisagreementNote')
+    ..aI(9, _omitFieldNames ? '' : 'correctionGeneration')
+    ..aOB(10, _omitFieldNames ? '' : 'strictAnswerModeEnforced')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleEvidenceSourceSnapshotItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleEvidenceSourceSnapshotItem copyWith(
+          void Function(OracleEvidenceSourceSnapshotItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleEvidenceSourceSnapshotItem))
+          as OracleEvidenceSourceSnapshotItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleEvidenceSourceSnapshotItem create() =>
+      OracleEvidenceSourceSnapshotItem._();
+  @$core.override
+  OracleEvidenceSourceSnapshotItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleEvidenceSourceSnapshotItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleEvidenceSourceSnapshotItem>(
+          create);
+  static OracleEvidenceSourceSnapshotItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get originClass => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set originClass($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOriginClass() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOriginClass() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get title => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set title($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get jurisdictionAndRights => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set jurisdictionAndRights($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasJurisdictionAndRights() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearJurisdictionAndRights() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get freshnessState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set freshnessState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFreshnessState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFreshnessState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get competingDisagreementNote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set competingDisagreementNote($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCompetingDisagreementNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCompetingDisagreementNote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get correctionGeneration => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set correctionGeneration($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCorrectionGeneration() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCorrectionGeneration() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get strictAnswerModeEnforced => $_getBF(9);
+  @$pb.TagNumber(10)
+  set strictAnswerModeEnforced($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasStrictAnswerModeEnforced() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearStrictAnswerModeEnforced() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class OracleCitedClaimPassageItem extends $pb.GeneratedMessage {
+  factory OracleCitedClaimPassageItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? claimCode,
+    $core.String? sourceCode,
+    $core.String? claimStatement,
+    $core.String? supportingPassageExcerpt,
+    $core.bool? primarySourceMarker,
+    $core.String? epistemicStatus,
+    $core.String? evidenceGapDisclosure,
+    $core.bool? unsupportedFluencyRefused,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (claimCode != null) result.claimCode = claimCode;
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (claimStatement != null) result.claimStatement = claimStatement;
+    if (supportingPassageExcerpt != null)
+      result.supportingPassageExcerpt = supportingPassageExcerpt;
+    if (primarySourceMarker != null)
+      result.primarySourceMarker = primarySourceMarker;
+    if (epistemicStatus != null) result.epistemicStatus = epistemicStatus;
+    if (evidenceGapDisclosure != null)
+      result.evidenceGapDisclosure = evidenceGapDisclosure;
+    if (unsupportedFluencyRefused != null)
+      result.unsupportedFluencyRefused = unsupportedFluencyRefused;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleCitedClaimPassageItem._();
+
+  factory OracleCitedClaimPassageItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleCitedClaimPassageItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleCitedClaimPassageItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'claimCode')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(5, _omitFieldNames ? '' : 'claimStatement')
+    ..aOS(6, _omitFieldNames ? '' : 'supportingPassageExcerpt')
+    ..aOB(7, _omitFieldNames ? '' : 'primarySourceMarker')
+    ..aOS(8, _omitFieldNames ? '' : 'epistemicStatus')
+    ..aOS(9, _omitFieldNames ? '' : 'evidenceGapDisclosure')
+    ..aOB(10, _omitFieldNames ? '' : 'unsupportedFluencyRefused')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCitedClaimPassageItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCitedClaimPassageItem copyWith(
+          void Function(OracleCitedClaimPassageItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleCitedClaimPassageItem))
+          as OracleCitedClaimPassageItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleCitedClaimPassageItem create() =>
+      OracleCitedClaimPassageItem._();
+  @$core.override
+  OracleCitedClaimPassageItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleCitedClaimPassageItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleCitedClaimPassageItem>(create);
+  static OracleCitedClaimPassageItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get claimCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set claimCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClaimCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClaimCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get claimStatement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set claimStatement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClaimStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClaimStatement() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get supportingPassageExcerpt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set supportingPassageExcerpt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSupportingPassageExcerpt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSupportingPassageExcerpt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get primarySourceMarker => $_getBF(6);
+  @$pb.TagNumber(7)
+  set primarySourceMarker($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPrimarySourceMarker() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPrimarySourceMarker() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get epistemicStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set epistemicStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEpistemicStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEpistemicStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get evidenceGapDisclosure => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set evidenceGapDisclosure($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEvidenceGapDisclosure() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEvidenceGapDisclosure() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get unsupportedFluencyRefused => $_getBF(9);
+  @$pb.TagNumber(10)
+  set unsupportedFluencyRefused($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUnsupportedFluencyRefused() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUnsupportedFluencyRefused() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetEvidenceTruthWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetEvidenceTruthWorkbenchRequest() => create();
+
+  GetEvidenceTruthWorkbenchRequest._();
+
+  factory GetEvidenceTruthWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceTruthWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceTruthWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceTruthWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceTruthWorkbenchRequest copyWith(
+          void Function(GetEvidenceTruthWorkbenchRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetEvidenceTruthWorkbenchRequest))
+          as GetEvidenceTruthWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceTruthWorkbenchRequest create() =>
+      GetEvidenceTruthWorkbenchRequest._();
+  @$core.override
+  GetEvidenceTruthWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceTruthWorkbenchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceTruthWorkbenchRequest>(
+          create);
+  static GetEvidenceTruthWorkbenchRequest? _defaultInstance;
+}
+
+class GetEvidenceTruthWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetEvidenceTruthWorkbenchResponse({
+    $core.Iterable<OracleEvidenceSourceSnapshotItem>? sources,
+    $core.Iterable<OracleCitedClaimPassageItem>? claims,
+    $core.bool? strictAnswerModeActive,
+    $core.String? epistemicIntegrityBanner,
+  }) {
+    final result = create();
+    if (sources != null) result.sources.addAll(sources);
+    if (claims != null) result.claims.addAll(claims);
+    if (strictAnswerModeActive != null)
+      result.strictAnswerModeActive = strictAnswerModeActive;
+    if (epistemicIntegrityBanner != null)
+      result.epistemicIntegrityBanner = epistemicIntegrityBanner;
+    return result;
+  }
+
+  GetEvidenceTruthWorkbenchResponse._();
+
+  factory GetEvidenceTruthWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEvidenceTruthWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEvidenceTruthWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleEvidenceSourceSnapshotItem>(1, _omitFieldNames ? '' : 'sources',
+        subBuilder: OracleEvidenceSourceSnapshotItem.create)
+    ..pPM<OracleCitedClaimPassageItem>(2, _omitFieldNames ? '' : 'claims',
+        subBuilder: OracleCitedClaimPassageItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'strictAnswerModeActive')
+    ..aOS(4, _omitFieldNames ? '' : 'epistemicIntegrityBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceTruthWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEvidenceTruthWorkbenchResponse copyWith(
+          void Function(GetEvidenceTruthWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetEvidenceTruthWorkbenchResponse))
+          as GetEvidenceTruthWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceTruthWorkbenchResponse create() =>
+      GetEvidenceTruthWorkbenchResponse._();
+  @$core.override
+  GetEvidenceTruthWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEvidenceTruthWorkbenchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEvidenceTruthWorkbenchResponse>(
+          create);
+  static GetEvidenceTruthWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleEvidenceSourceSnapshotItem> get sources => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCitedClaimPassageItem> get claims => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get strictAnswerModeActive => $_getBF(2);
+  @$pb.TagNumber(3)
+  set strictAnswerModeActive($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasStrictAnswerModeActive() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStrictAnswerModeActive() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get epistemicIntegrityBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set epistemicIntegrityBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEpistemicIntegrityBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEpistemicIntegrityBanner() => $_clearField(4);
+}
+
+class RegisterOrRefreshEvidenceSourceRequest extends $pb.GeneratedMessage {
+  factory RegisterOrRefreshEvidenceSourceRequest({
+    $core.String? sourceCode,
+    $core.String? originClass,
+    $core.String? title,
+    $core.String? jurisdictionAndRights,
+    $core.String? freshnessState,
+    $core.String? competingDisagreementNote,
+    $core.bool? strictAnswerModeEnforced,
+  }) {
+    final result = create();
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (originClass != null) result.originClass = originClass;
+    if (title != null) result.title = title;
+    if (jurisdictionAndRights != null)
+      result.jurisdictionAndRights = jurisdictionAndRights;
+    if (freshnessState != null) result.freshnessState = freshnessState;
+    if (competingDisagreementNote != null)
+      result.competingDisagreementNote = competingDisagreementNote;
+    if (strictAnswerModeEnforced != null)
+      result.strictAnswerModeEnforced = strictAnswerModeEnforced;
+    return result;
+  }
+
+  RegisterOrRefreshEvidenceSourceRequest._();
+
+  factory RegisterOrRefreshEvidenceSourceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterOrRefreshEvidenceSourceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterOrRefreshEvidenceSourceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'originClass')
+    ..aOS(3, _omitFieldNames ? '' : 'title')
+    ..aOS(4, _omitFieldNames ? '' : 'jurisdictionAndRights')
+    ..aOS(5, _omitFieldNames ? '' : 'freshnessState')
+    ..aOS(6, _omitFieldNames ? '' : 'competingDisagreementNote')
+    ..aOB(7, _omitFieldNames ? '' : 'strictAnswerModeEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterOrRefreshEvidenceSourceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterOrRefreshEvidenceSourceRequest copyWith(
+          void Function(RegisterOrRefreshEvidenceSourceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RegisterOrRefreshEvidenceSourceRequest))
+          as RegisterOrRefreshEvidenceSourceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterOrRefreshEvidenceSourceRequest create() =>
+      RegisterOrRefreshEvidenceSourceRequest._();
+  @$core.override
+  RegisterOrRefreshEvidenceSourceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterOrRefreshEvidenceSourceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RegisterOrRefreshEvidenceSourceRequest>(create);
+  static RegisterOrRefreshEvidenceSourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get originClass => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set originClass($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOriginClass() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOriginClass() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get title => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set title($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get jurisdictionAndRights => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set jurisdictionAndRights($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasJurisdictionAndRights() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearJurisdictionAndRights() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get freshnessState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set freshnessState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFreshnessState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFreshnessState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get competingDisagreementNote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set competingDisagreementNote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCompetingDisagreementNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCompetingDisagreementNote() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get strictAnswerModeEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set strictAnswerModeEnforced($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStrictAnswerModeEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStrictAnswerModeEnforced() => $_clearField(7);
+}
+
+class RegisterOrRefreshEvidenceSourceResponse extends $pb.GeneratedMessage {
+  factory RegisterOrRefreshEvidenceSourceResponse({
+    OracleEvidenceSourceSnapshotItem? source,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  RegisterOrRefreshEvidenceSourceResponse._();
+
+  factory RegisterOrRefreshEvidenceSourceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterOrRefreshEvidenceSourceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterOrRefreshEvidenceSourceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleEvidenceSourceSnapshotItem>(1, _omitFieldNames ? '' : 'source',
+        subBuilder: OracleEvidenceSourceSnapshotItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterOrRefreshEvidenceSourceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterOrRefreshEvidenceSourceResponse copyWith(
+          void Function(RegisterOrRefreshEvidenceSourceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RegisterOrRefreshEvidenceSourceResponse))
+          as RegisterOrRefreshEvidenceSourceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterOrRefreshEvidenceSourceResponse create() =>
+      RegisterOrRefreshEvidenceSourceResponse._();
+  @$core.override
+  RegisterOrRefreshEvidenceSourceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterOrRefreshEvidenceSourceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RegisterOrRefreshEvidenceSourceResponse>(create);
+  static RegisterOrRefreshEvidenceSourceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleEvidenceSourceSnapshotItem get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(OracleEvidenceSourceSnapshotItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleEvidenceSourceSnapshotItem ensureSource() => $_ensure(0);
+}
+
+class VerifyOrInvalidateCitedClaimRequest extends $pb.GeneratedMessage {
+  factory VerifyOrInvalidateCitedClaimRequest({
+    $core.String? claimCode,
+    $core.String? sourceCode,
+    $core.String? claimStatement,
+    $core.String? supportingPassageExcerpt,
+    $core.bool? primarySourceMarker,
+    $core.String? epistemicStatus,
+    $core.String? evidenceGapDisclosure,
+  }) {
+    final result = create();
+    if (claimCode != null) result.claimCode = claimCode;
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (claimStatement != null) result.claimStatement = claimStatement;
+    if (supportingPassageExcerpt != null)
+      result.supportingPassageExcerpt = supportingPassageExcerpt;
+    if (primarySourceMarker != null)
+      result.primarySourceMarker = primarySourceMarker;
+    if (epistemicStatus != null) result.epistemicStatus = epistemicStatus;
+    if (evidenceGapDisclosure != null)
+      result.evidenceGapDisclosure = evidenceGapDisclosure;
+    return result;
+  }
+
+  VerifyOrInvalidateCitedClaimRequest._();
+
+  factory VerifyOrInvalidateCitedClaimRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrInvalidateCitedClaimRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrInvalidateCitedClaimRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'claimCode')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'claimStatement')
+    ..aOS(4, _omitFieldNames ? '' : 'supportingPassageExcerpt')
+    ..aOB(5, _omitFieldNames ? '' : 'primarySourceMarker')
+    ..aOS(6, _omitFieldNames ? '' : 'epistemicStatus')
+    ..aOS(7, _omitFieldNames ? '' : 'evidenceGapDisclosure')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrInvalidateCitedClaimRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrInvalidateCitedClaimRequest copyWith(
+          void Function(VerifyOrInvalidateCitedClaimRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrInvalidateCitedClaimRequest))
+          as VerifyOrInvalidateCitedClaimRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrInvalidateCitedClaimRequest create() =>
+      VerifyOrInvalidateCitedClaimRequest._();
+  @$core.override
+  VerifyOrInvalidateCitedClaimRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrInvalidateCitedClaimRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrInvalidateCitedClaimRequest>(create);
+  static VerifyOrInvalidateCitedClaimRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get claimCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set claimCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClaimCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClaimCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get claimStatement => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set claimStatement($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasClaimStatement() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearClaimStatement() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get supportingPassageExcerpt => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set supportingPassageExcerpt($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSupportingPassageExcerpt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSupportingPassageExcerpt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get primarySourceMarker => $_getBF(4);
+  @$pb.TagNumber(5)
+  set primarySourceMarker($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPrimarySourceMarker() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPrimarySourceMarker() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get epistemicStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set epistemicStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEpistemicStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEpistemicStatus() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get evidenceGapDisclosure => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set evidenceGapDisclosure($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEvidenceGapDisclosure() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEvidenceGapDisclosure() => $_clearField(7);
+}
+
+class VerifyOrInvalidateCitedClaimResponse extends $pb.GeneratedMessage {
+  factory VerifyOrInvalidateCitedClaimResponse({
+    OracleCitedClaimPassageItem? claim,
+  }) {
+    final result = create();
+    if (claim != null) result.claim = claim;
+    return result;
+  }
+
+  VerifyOrInvalidateCitedClaimResponse._();
+
+  factory VerifyOrInvalidateCitedClaimResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrInvalidateCitedClaimResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrInvalidateCitedClaimResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleCitedClaimPassageItem>(1, _omitFieldNames ? '' : 'claim',
+        subBuilder: OracleCitedClaimPassageItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrInvalidateCitedClaimResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrInvalidateCitedClaimResponse copyWith(
+          void Function(VerifyOrInvalidateCitedClaimResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrInvalidateCitedClaimResponse))
+          as VerifyOrInvalidateCitedClaimResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrInvalidateCitedClaimResponse create() =>
+      VerifyOrInvalidateCitedClaimResponse._();
+  @$core.override
+  VerifyOrInvalidateCitedClaimResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrInvalidateCitedClaimResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrInvalidateCitedClaimResponse>(create);
+  static VerifyOrInvalidateCitedClaimResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleCitedClaimPassageItem get claim => $_getN(0);
+  @$pb.TagNumber(1)
+  set claim(OracleCitedClaimPassageItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClaim() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClaim() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleCitedClaimPassageItem ensureClaim() => $_ensure(0);
+}
+
+class AdminListEvidenceTruthAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListEvidenceTruthAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListEvidenceTruthAuditRequest._();
+
+  factory AdminListEvidenceTruthAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListEvidenceTruthAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListEvidenceTruthAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEvidenceTruthAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEvidenceTruthAuditRequest copyWith(
+          void Function(AdminListEvidenceTruthAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListEvidenceTruthAuditRequest))
+          as AdminListEvidenceTruthAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListEvidenceTruthAuditRequest create() =>
+      AdminListEvidenceTruthAuditRequest._();
+  @$core.override
+  AdminListEvidenceTruthAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListEvidenceTruthAuditRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AdminListEvidenceTruthAuditRequest>(
+          create);
+  static AdminListEvidenceTruthAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListEvidenceTruthAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListEvidenceTruthAuditResponse({
+    $core.Iterable<OracleEvidenceSourceSnapshotItem>? sources,
+    $core.Iterable<OracleCitedClaimPassageItem>? claims,
+  }) {
+    final result = create();
+    if (sources != null) result.sources.addAll(sources);
+    if (claims != null) result.claims.addAll(claims);
+    return result;
+  }
+
+  AdminListEvidenceTruthAuditResponse._();
+
+  factory AdminListEvidenceTruthAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListEvidenceTruthAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListEvidenceTruthAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleEvidenceSourceSnapshotItem>(1, _omitFieldNames ? '' : 'sources',
+        subBuilder: OracleEvidenceSourceSnapshotItem.create)
+    ..pPM<OracleCitedClaimPassageItem>(2, _omitFieldNames ? '' : 'claims',
+        subBuilder: OracleCitedClaimPassageItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEvidenceTruthAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListEvidenceTruthAuditResponse copyWith(
+          void Function(AdminListEvidenceTruthAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListEvidenceTruthAuditResponse))
+          as AdminListEvidenceTruthAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListEvidenceTruthAuditResponse create() =>
+      AdminListEvidenceTruthAuditResponse._();
+  @$core.override
+  AdminListEvidenceTruthAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListEvidenceTruthAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListEvidenceTruthAuditResponse>(create);
+  static AdminListEvidenceTruthAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleEvidenceSourceSnapshotItem> get sources => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCitedClaimPassageItem> get claims => $_getList(1);
+}
+
+class AdminManageSourceRightsOrCorrectionRequest extends $pb.GeneratedMessage {
+  factory AdminManageSourceRightsOrCorrectionRequest({
+    $core.String? targetUserId,
+    $core.String? sourceCode,
+    $core.String? freshnessState,
+    $core.String? competingDisagreementNote,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (freshnessState != null) result.freshnessState = freshnessState;
+    if (competingDisagreementNote != null)
+      result.competingDisagreementNote = competingDisagreementNote;
+    return result;
+  }
+
+  AdminManageSourceRightsOrCorrectionRequest._();
+
+  factory AdminManageSourceRightsOrCorrectionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageSourceRightsOrCorrectionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageSourceRightsOrCorrectionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'freshnessState')
+    ..aOS(4, _omitFieldNames ? '' : 'competingDisagreementNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageSourceRightsOrCorrectionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageSourceRightsOrCorrectionRequest copyWith(
+          void Function(AdminManageSourceRightsOrCorrectionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageSourceRightsOrCorrectionRequest))
+          as AdminManageSourceRightsOrCorrectionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageSourceRightsOrCorrectionRequest create() =>
+      AdminManageSourceRightsOrCorrectionRequest._();
+  @$core.override
+  AdminManageSourceRightsOrCorrectionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageSourceRightsOrCorrectionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageSourceRightsOrCorrectionRequest>(create);
+  static AdminManageSourceRightsOrCorrectionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get freshnessState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set freshnessState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFreshnessState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFreshnessState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get competingDisagreementNote => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set competingDisagreementNote($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCompetingDisagreementNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCompetingDisagreementNote() => $_clearField(4);
+}
+
+class AdminManageSourceRightsOrCorrectionResponse extends $pb.GeneratedMessage {
+  factory AdminManageSourceRightsOrCorrectionResponse({
+    OracleEvidenceSourceSnapshotItem? source,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  AdminManageSourceRightsOrCorrectionResponse._();
+
+  factory AdminManageSourceRightsOrCorrectionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageSourceRightsOrCorrectionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageSourceRightsOrCorrectionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleEvidenceSourceSnapshotItem>(1, _omitFieldNames ? '' : 'source',
+        subBuilder: OracleEvidenceSourceSnapshotItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageSourceRightsOrCorrectionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageSourceRightsOrCorrectionResponse copyWith(
+          void Function(AdminManageSourceRightsOrCorrectionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageSourceRightsOrCorrectionResponse))
+          as AdminManageSourceRightsOrCorrectionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageSourceRightsOrCorrectionResponse create() =>
+      AdminManageSourceRightsOrCorrectionResponse._();
+  @$core.override
+  AdminManageSourceRightsOrCorrectionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageSourceRightsOrCorrectionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageSourceRightsOrCorrectionResponse>(create);
+  static AdminManageSourceRightsOrCorrectionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleEvidenceSourceSnapshotItem get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(OracleEvidenceSourceSnapshotItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleEvidenceSourceSnapshotItem ensureSource() => $_ensure(0);
+}
+
+class OracleDecisionLedgerRecordItem extends $pb.GeneratedMessage {
+  factory OracleDecisionLedgerRecordItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? decisionCode,
+    $core.String? title,
+    $core.String? reversibilityClass,
+    $core.String? optionsComparedSummary,
+    $core.String? doNothingBaseline,
+    $core.String? premortemAndRedteamCritique,
+    $core.String? dissentRecord,
+    $core.int? decisionVersion,
+    $core.String? decisionState,
+    $core.bool? immutableMemberOwnership,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (title != null) result.title = title;
+    if (reversibilityClass != null)
+      result.reversibilityClass = reversibilityClass;
+    if (optionsComparedSummary != null)
+      result.optionsComparedSummary = optionsComparedSummary;
+    if (doNothingBaseline != null) result.doNothingBaseline = doNothingBaseline;
+    if (premortemAndRedteamCritique != null)
+      result.premortemAndRedteamCritique = premortemAndRedteamCritique;
+    if (dissentRecord != null) result.dissentRecord = dissentRecord;
+    if (decisionVersion != null) result.decisionVersion = decisionVersion;
+    if (decisionState != null) result.decisionState = decisionState;
+    if (immutableMemberOwnership != null)
+      result.immutableMemberOwnership = immutableMemberOwnership;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleDecisionLedgerRecordItem._();
+
+  factory OracleDecisionLedgerRecordItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleDecisionLedgerRecordItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleDecisionLedgerRecordItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'reversibilityClass')
+    ..aOS(6, _omitFieldNames ? '' : 'optionsComparedSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'doNothingBaseline')
+    ..aOS(8, _omitFieldNames ? '' : 'premortemAndRedteamCritique')
+    ..aOS(9, _omitFieldNames ? '' : 'dissentRecord')
+    ..aI(10, _omitFieldNames ? '' : 'decisionVersion')
+    ..aOS(11, _omitFieldNames ? '' : 'decisionState')
+    ..aOB(12, _omitFieldNames ? '' : 'immutableMemberOwnership')
+    ..aOS(13, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDecisionLedgerRecordItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDecisionLedgerRecordItem copyWith(
+          void Function(OracleDecisionLedgerRecordItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleDecisionLedgerRecordItem))
+          as OracleDecisionLedgerRecordItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleDecisionLedgerRecordItem create() =>
+      OracleDecisionLedgerRecordItem._();
+  @$core.override
+  OracleDecisionLedgerRecordItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleDecisionLedgerRecordItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleDecisionLedgerRecordItem>(create);
+  static OracleDecisionLedgerRecordItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get decisionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set decisionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDecisionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDecisionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reversibilityClass => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reversibilityClass($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReversibilityClass() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReversibilityClass() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get optionsComparedSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set optionsComparedSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOptionsComparedSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOptionsComparedSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get doNothingBaseline => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set doNothingBaseline($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDoNothingBaseline() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDoNothingBaseline() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get premortemAndRedteamCritique => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set premortemAndRedteamCritique($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPremortemAndRedteamCritique() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPremortemAndRedteamCritique() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get dissentRecord => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set dissentRecord($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDissentRecord() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDissentRecord() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.int get decisionVersion => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set decisionVersion($core.int value) => $_setSignedInt32(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDecisionVersion() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDecisionVersion() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get decisionState => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set decisionState($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasDecisionState() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearDecisionState() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get immutableMemberOwnership => $_getBF(11);
+  @$pb.TagNumber(12)
+  set immutableMemberOwnership($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasImmutableMemberOwnership() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearImmutableMemberOwnership() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get updatedAtIso => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set updatedAtIso($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAtIso() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAtIso() => $_clearField(13);
+}
+
+class OracleDecisionAssumptionReviewItem extends $pb.GeneratedMessage {
+  factory OracleDecisionAssumptionReviewItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? entryCode,
+    $core.String? decisionCode,
+    $core.String? assumptionStatement,
+    $core.int? confidenceBandBps,
+    $core.String? sensitivityImpact,
+    $core.String? reviewHorizon,
+    $core.String? observedOutcomeAndLesson,
+    $core.String? freshnessStatus,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (entryCode != null) result.entryCode = entryCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (assumptionStatement != null)
+      result.assumptionStatement = assumptionStatement;
+    if (confidenceBandBps != null) result.confidenceBandBps = confidenceBandBps;
+    if (sensitivityImpact != null) result.sensitivityImpact = sensitivityImpact;
+    if (reviewHorizon != null) result.reviewHorizon = reviewHorizon;
+    if (observedOutcomeAndLesson != null)
+      result.observedOutcomeAndLesson = observedOutcomeAndLesson;
+    if (freshnessStatus != null) result.freshnessStatus = freshnessStatus;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleDecisionAssumptionReviewItem._();
+
+  factory OracleDecisionAssumptionReviewItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleDecisionAssumptionReviewItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleDecisionAssumptionReviewItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'entryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'assumptionStatement')
+    ..aI(6, _omitFieldNames ? '' : 'confidenceBandBps')
+    ..aOS(7, _omitFieldNames ? '' : 'sensitivityImpact')
+    ..aOS(8, _omitFieldNames ? '' : 'reviewHorizon')
+    ..aOS(9, _omitFieldNames ? '' : 'observedOutcomeAndLesson')
+    ..aOS(10, _omitFieldNames ? '' : 'freshnessStatus')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDecisionAssumptionReviewItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDecisionAssumptionReviewItem copyWith(
+          void Function(OracleDecisionAssumptionReviewItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleDecisionAssumptionReviewItem))
+          as OracleDecisionAssumptionReviewItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleDecisionAssumptionReviewItem create() =>
+      OracleDecisionAssumptionReviewItem._();
+  @$core.override
+  OracleDecisionAssumptionReviewItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleDecisionAssumptionReviewItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleDecisionAssumptionReviewItem>(
+          create);
+  static OracleDecisionAssumptionReviewItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get entryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set entryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEntryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEntryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get decisionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set decisionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDecisionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDecisionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get assumptionStatement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set assumptionStatement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAssumptionStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAssumptionStatement() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get confidenceBandBps => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set confidenceBandBps($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasConfidenceBandBps() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConfidenceBandBps() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sensitivityImpact => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sensitivityImpact($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSensitivityImpact() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSensitivityImpact() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get reviewHorizon => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set reviewHorizon($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReviewHorizon() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReviewHorizon() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get observedOutcomeAndLesson => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set observedOutcomeAndLesson($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasObservedOutcomeAndLesson() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearObservedOutcomeAndLesson() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get freshnessStatus => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set freshnessStatus($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasFreshnessStatus() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearFreshnessStatus() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetDecisionLedgerWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetDecisionLedgerWorkbenchRequest() => create();
+
+  GetDecisionLedgerWorkbenchRequest._();
+
+  factory GetDecisionLedgerWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDecisionLedgerWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDecisionLedgerWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDecisionLedgerWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDecisionLedgerWorkbenchRequest copyWith(
+          void Function(GetDecisionLedgerWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDecisionLedgerWorkbenchRequest))
+          as GetDecisionLedgerWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDecisionLedgerWorkbenchRequest create() =>
+      GetDecisionLedgerWorkbenchRequest._();
+  @$core.override
+  GetDecisionLedgerWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDecisionLedgerWorkbenchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDecisionLedgerWorkbenchRequest>(
+          create);
+  static GetDecisionLedgerWorkbenchRequest? _defaultInstance;
+}
+
+class GetDecisionLedgerWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetDecisionLedgerWorkbenchResponse({
+    $core.Iterable<OracleDecisionLedgerRecordItem>? decisions,
+    $core.Iterable<OracleDecisionAssumptionReviewItem>? assumptions,
+    $core.bool? memberOwnershipImmutable,
+    $core.String? decisionGovernanceBanner,
+  }) {
+    final result = create();
+    if (decisions != null) result.decisions.addAll(decisions);
+    if (assumptions != null) result.assumptions.addAll(assumptions);
+    if (memberOwnershipImmutable != null)
+      result.memberOwnershipImmutable = memberOwnershipImmutable;
+    if (decisionGovernanceBanner != null)
+      result.decisionGovernanceBanner = decisionGovernanceBanner;
+    return result;
+  }
+
+  GetDecisionLedgerWorkbenchResponse._();
+
+  factory GetDecisionLedgerWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDecisionLedgerWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDecisionLedgerWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleDecisionLedgerRecordItem>(1, _omitFieldNames ? '' : 'decisions',
+        subBuilder: OracleDecisionLedgerRecordItem.create)
+    ..pPM<OracleDecisionAssumptionReviewItem>(
+        2, _omitFieldNames ? '' : 'assumptions',
+        subBuilder: OracleDecisionAssumptionReviewItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'memberOwnershipImmutable')
+    ..aOS(4, _omitFieldNames ? '' : 'decisionGovernanceBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDecisionLedgerWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDecisionLedgerWorkbenchResponse copyWith(
+          void Function(GetDecisionLedgerWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetDecisionLedgerWorkbenchResponse))
+          as GetDecisionLedgerWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDecisionLedgerWorkbenchResponse create() =>
+      GetDecisionLedgerWorkbenchResponse._();
+  @$core.override
+  GetDecisionLedgerWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDecisionLedgerWorkbenchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDecisionLedgerWorkbenchResponse>(
+          create);
+  static GetDecisionLedgerWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleDecisionLedgerRecordItem> get decisions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleDecisionAssumptionReviewItem> get assumptions =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get memberOwnershipImmutable => $_getBF(2);
+  @$pb.TagNumber(3)
+  set memberOwnershipImmutable($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMemberOwnershipImmutable() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMemberOwnershipImmutable() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get decisionGovernanceBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set decisionGovernanceBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDecisionGovernanceBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDecisionGovernanceBanner() => $_clearField(4);
+}
+
+class CreateOrUpdateDecisionLedgerRecordRequest extends $pb.GeneratedMessage {
+  factory CreateOrUpdateDecisionLedgerRecordRequest({
+    $core.String? decisionCode,
+    $core.String? title,
+    $core.String? reversibilityClass,
+    $core.String? optionsComparedSummary,
+    $core.String? doNothingBaseline,
+    $core.String? premortemAndRedteamCritique,
+    $core.String? dissentRecord,
+    $core.String? decisionState,
+  }) {
+    final result = create();
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (title != null) result.title = title;
+    if (reversibilityClass != null)
+      result.reversibilityClass = reversibilityClass;
+    if (optionsComparedSummary != null)
+      result.optionsComparedSummary = optionsComparedSummary;
+    if (doNothingBaseline != null) result.doNothingBaseline = doNothingBaseline;
+    if (premortemAndRedteamCritique != null)
+      result.premortemAndRedteamCritique = premortemAndRedteamCritique;
+    if (dissentRecord != null) result.dissentRecord = dissentRecord;
+    if (decisionState != null) result.decisionState = decisionState;
+    return result;
+  }
+
+  CreateOrUpdateDecisionLedgerRecordRequest._();
+
+  factory CreateOrUpdateDecisionLedgerRecordRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateDecisionLedgerRecordRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateDecisionLedgerRecordRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(2, _omitFieldNames ? '' : 'title')
+    ..aOS(3, _omitFieldNames ? '' : 'reversibilityClass')
+    ..aOS(4, _omitFieldNames ? '' : 'optionsComparedSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'doNothingBaseline')
+    ..aOS(6, _omitFieldNames ? '' : 'premortemAndRedteamCritique')
+    ..aOS(7, _omitFieldNames ? '' : 'dissentRecord')
+    ..aOS(8, _omitFieldNames ? '' : 'decisionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateDecisionLedgerRecordRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateDecisionLedgerRecordRequest copyWith(
+          void Function(CreateOrUpdateDecisionLedgerRecordRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateDecisionLedgerRecordRequest))
+          as CreateOrUpdateDecisionLedgerRecordRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateDecisionLedgerRecordRequest create() =>
+      CreateOrUpdateDecisionLedgerRecordRequest._();
+  @$core.override
+  CreateOrUpdateDecisionLedgerRecordRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateDecisionLedgerRecordRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateDecisionLedgerRecordRequest>(create);
+  static CreateOrUpdateDecisionLedgerRecordRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get decisionCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set decisionCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDecisionCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDecisionCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get title => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set title($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reversibilityClass => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reversibilityClass($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReversibilityClass() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReversibilityClass() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get optionsComparedSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set optionsComparedSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOptionsComparedSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOptionsComparedSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get doNothingBaseline => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set doNothingBaseline($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDoNothingBaseline() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDoNothingBaseline() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get premortemAndRedteamCritique => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set premortemAndRedteamCritique($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPremortemAndRedteamCritique() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPremortemAndRedteamCritique() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get dissentRecord => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set dissentRecord($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDissentRecord() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDissentRecord() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get decisionState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set decisionState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDecisionState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDecisionState() => $_clearField(8);
+}
+
+class CreateOrUpdateDecisionLedgerRecordResponse extends $pb.GeneratedMessage {
+  factory CreateOrUpdateDecisionLedgerRecordResponse({
+    OracleDecisionLedgerRecordItem? decision,
+  }) {
+    final result = create();
+    if (decision != null) result.decision = decision;
+    return result;
+  }
+
+  CreateOrUpdateDecisionLedgerRecordResponse._();
+
+  factory CreateOrUpdateDecisionLedgerRecordResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateDecisionLedgerRecordResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateDecisionLedgerRecordResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleDecisionLedgerRecordItem>(1, _omitFieldNames ? '' : 'decision',
+        subBuilder: OracleDecisionLedgerRecordItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateDecisionLedgerRecordResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateDecisionLedgerRecordResponse copyWith(
+          void Function(CreateOrUpdateDecisionLedgerRecordResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateDecisionLedgerRecordResponse))
+          as CreateOrUpdateDecisionLedgerRecordResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateDecisionLedgerRecordResponse create() =>
+      CreateOrUpdateDecisionLedgerRecordResponse._();
+  @$core.override
+  CreateOrUpdateDecisionLedgerRecordResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateDecisionLedgerRecordResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateDecisionLedgerRecordResponse>(create);
+  static CreateOrUpdateDecisionLedgerRecordResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleDecisionLedgerRecordItem get decision => $_getN(0);
+  @$pb.TagNumber(1)
+  set decision(OracleDecisionLedgerRecordItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDecision() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDecision() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleDecisionLedgerRecordItem ensureDecision() => $_ensure(0);
+}
+
+class RecordDecisionAssumptionOrReviewRequest extends $pb.GeneratedMessage {
+  factory RecordDecisionAssumptionOrReviewRequest({
+    $core.String? entryCode,
+    $core.String? decisionCode,
+    $core.String? assumptionStatement,
+    $core.int? confidenceBandBps,
+    $core.String? sensitivityImpact,
+    $core.String? reviewHorizon,
+    $core.String? observedOutcomeAndLesson,
+    $core.String? freshnessStatus,
+  }) {
+    final result = create();
+    if (entryCode != null) result.entryCode = entryCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (assumptionStatement != null)
+      result.assumptionStatement = assumptionStatement;
+    if (confidenceBandBps != null) result.confidenceBandBps = confidenceBandBps;
+    if (sensitivityImpact != null) result.sensitivityImpact = sensitivityImpact;
+    if (reviewHorizon != null) result.reviewHorizon = reviewHorizon;
+    if (observedOutcomeAndLesson != null)
+      result.observedOutcomeAndLesson = observedOutcomeAndLesson;
+    if (freshnessStatus != null) result.freshnessStatus = freshnessStatus;
+    return result;
+  }
+
+  RecordDecisionAssumptionOrReviewRequest._();
+
+  factory RecordDecisionAssumptionOrReviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordDecisionAssumptionOrReviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordDecisionAssumptionOrReviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'entryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'assumptionStatement')
+    ..aI(4, _omitFieldNames ? '' : 'confidenceBandBps')
+    ..aOS(5, _omitFieldNames ? '' : 'sensitivityImpact')
+    ..aOS(6, _omitFieldNames ? '' : 'reviewHorizon')
+    ..aOS(7, _omitFieldNames ? '' : 'observedOutcomeAndLesson')
+    ..aOS(8, _omitFieldNames ? '' : 'freshnessStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordDecisionAssumptionOrReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordDecisionAssumptionOrReviewRequest copyWith(
+          void Function(RecordDecisionAssumptionOrReviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordDecisionAssumptionOrReviewRequest))
+          as RecordDecisionAssumptionOrReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordDecisionAssumptionOrReviewRequest create() =>
+      RecordDecisionAssumptionOrReviewRequest._();
+  @$core.override
+  RecordDecisionAssumptionOrReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordDecisionAssumptionOrReviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordDecisionAssumptionOrReviewRequest>(create);
+  static RecordDecisionAssumptionOrReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get entryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set entryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get decisionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set decisionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDecisionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecisionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get assumptionStatement => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set assumptionStatement($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAssumptionStatement() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAssumptionStatement() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get confidenceBandBps => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set confidenceBandBps($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConfidenceBandBps() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConfidenceBandBps() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get sensitivityImpact => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set sensitivityImpact($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSensitivityImpact() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSensitivityImpact() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get reviewHorizon => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set reviewHorizon($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReviewHorizon() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReviewHorizon() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get observedOutcomeAndLesson => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set observedOutcomeAndLesson($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasObservedOutcomeAndLesson() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearObservedOutcomeAndLesson() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get freshnessStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set freshnessStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFreshnessStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFreshnessStatus() => $_clearField(8);
+}
+
+class RecordDecisionAssumptionOrReviewResponse extends $pb.GeneratedMessage {
+  factory RecordDecisionAssumptionOrReviewResponse({
+    OracleDecisionAssumptionReviewItem? assumption,
+  }) {
+    final result = create();
+    if (assumption != null) result.assumption = assumption;
+    return result;
+  }
+
+  RecordDecisionAssumptionOrReviewResponse._();
+
+  factory RecordDecisionAssumptionOrReviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordDecisionAssumptionOrReviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordDecisionAssumptionOrReviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleDecisionAssumptionReviewItem>(
+        1, _omitFieldNames ? '' : 'assumption',
+        subBuilder: OracleDecisionAssumptionReviewItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordDecisionAssumptionOrReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordDecisionAssumptionOrReviewResponse copyWith(
+          void Function(RecordDecisionAssumptionOrReviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordDecisionAssumptionOrReviewResponse))
+          as RecordDecisionAssumptionOrReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordDecisionAssumptionOrReviewResponse create() =>
+      RecordDecisionAssumptionOrReviewResponse._();
+  @$core.override
+  RecordDecisionAssumptionOrReviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordDecisionAssumptionOrReviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordDecisionAssumptionOrReviewResponse>(create);
+  static RecordDecisionAssumptionOrReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleDecisionAssumptionReviewItem get assumption => $_getN(0);
+  @$pb.TagNumber(1)
+  set assumption(OracleDecisionAssumptionReviewItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAssumption() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssumption() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleDecisionAssumptionReviewItem ensureAssumption() => $_ensure(0);
+}
+
+class AdminListDecisionLedgerAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListDecisionLedgerAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListDecisionLedgerAuditRequest._();
+
+  factory AdminListDecisionLedgerAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListDecisionLedgerAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListDecisionLedgerAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListDecisionLedgerAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListDecisionLedgerAuditRequest copyWith(
+          void Function(AdminListDecisionLedgerAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListDecisionLedgerAuditRequest))
+          as AdminListDecisionLedgerAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListDecisionLedgerAuditRequest create() =>
+      AdminListDecisionLedgerAuditRequest._();
+  @$core.override
+  AdminListDecisionLedgerAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListDecisionLedgerAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListDecisionLedgerAuditRequest>(create);
+  static AdminListDecisionLedgerAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListDecisionLedgerAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListDecisionLedgerAuditResponse({
+    $core.Iterable<OracleDecisionLedgerRecordItem>? decisions,
+    $core.Iterable<OracleDecisionAssumptionReviewItem>? assumptions,
+  }) {
+    final result = create();
+    if (decisions != null) result.decisions.addAll(decisions);
+    if (assumptions != null) result.assumptions.addAll(assumptions);
+    return result;
+  }
+
+  AdminListDecisionLedgerAuditResponse._();
+
+  factory AdminListDecisionLedgerAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListDecisionLedgerAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListDecisionLedgerAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleDecisionLedgerRecordItem>(1, _omitFieldNames ? '' : 'decisions',
+        subBuilder: OracleDecisionLedgerRecordItem.create)
+    ..pPM<OracleDecisionAssumptionReviewItem>(
+        2, _omitFieldNames ? '' : 'assumptions',
+        subBuilder: OracleDecisionAssumptionReviewItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListDecisionLedgerAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListDecisionLedgerAuditResponse copyWith(
+          void Function(AdminListDecisionLedgerAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListDecisionLedgerAuditResponse))
+          as AdminListDecisionLedgerAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListDecisionLedgerAuditResponse create() =>
+      AdminListDecisionLedgerAuditResponse._();
+  @$core.override
+  AdminListDecisionLedgerAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListDecisionLedgerAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListDecisionLedgerAuditResponse>(create);
+  static AdminListDecisionLedgerAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleDecisionLedgerRecordItem> get decisions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleDecisionAssumptionReviewItem> get assumptions =>
+      $_getList(1);
+}
+
+class AdminManageDecisionTemplateOrHoldRequest extends $pb.GeneratedMessage {
+  factory AdminManageDecisionTemplateOrHoldRequest({
+    $core.String? targetUserId,
+    $core.String? decisionCode,
+    $core.String? decisionState,
+    $core.String? dissentRecord,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (decisionState != null) result.decisionState = decisionState;
+    if (dissentRecord != null) result.dissentRecord = dissentRecord;
+    return result;
+  }
+
+  AdminManageDecisionTemplateOrHoldRequest._();
+
+  factory AdminManageDecisionTemplateOrHoldRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageDecisionTemplateOrHoldRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageDecisionTemplateOrHoldRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'decisionState')
+    ..aOS(4, _omitFieldNames ? '' : 'dissentRecord')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionTemplateOrHoldRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionTemplateOrHoldRequest copyWith(
+          void Function(AdminManageDecisionTemplateOrHoldRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageDecisionTemplateOrHoldRequest))
+          as AdminManageDecisionTemplateOrHoldRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionTemplateOrHoldRequest create() =>
+      AdminManageDecisionTemplateOrHoldRequest._();
+  @$core.override
+  AdminManageDecisionTemplateOrHoldRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionTemplateOrHoldRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageDecisionTemplateOrHoldRequest>(create);
+  static AdminManageDecisionTemplateOrHoldRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get decisionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set decisionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDecisionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecisionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get decisionState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set decisionState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDecisionState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDecisionState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get dissentRecord => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set dissentRecord($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDissentRecord() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDissentRecord() => $_clearField(4);
+}
+
+class AdminManageDecisionTemplateOrHoldResponse extends $pb.GeneratedMessage {
+  factory AdminManageDecisionTemplateOrHoldResponse({
+    OracleDecisionLedgerRecordItem? decision,
+  }) {
+    final result = create();
+    if (decision != null) result.decision = decision;
+    return result;
+  }
+
+  AdminManageDecisionTemplateOrHoldResponse._();
+
+  factory AdminManageDecisionTemplateOrHoldResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageDecisionTemplateOrHoldResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageDecisionTemplateOrHoldResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleDecisionLedgerRecordItem>(1, _omitFieldNames ? '' : 'decision',
+        subBuilder: OracleDecisionLedgerRecordItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionTemplateOrHoldResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionTemplateOrHoldResponse copyWith(
+          void Function(AdminManageDecisionTemplateOrHoldResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageDecisionTemplateOrHoldResponse))
+          as AdminManageDecisionTemplateOrHoldResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionTemplateOrHoldResponse create() =>
+      AdminManageDecisionTemplateOrHoldResponse._();
+  @$core.override
+  AdminManageDecisionTemplateOrHoldResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionTemplateOrHoldResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageDecisionTemplateOrHoldResponse>(create);
+  static AdminManageDecisionTemplateOrHoldResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleDecisionLedgerRecordItem get decision => $_getN(0);
+  @$pb.TagNumber(1)
+  set decision(OracleDecisionLedgerRecordItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDecision() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDecision() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleDecisionLedgerRecordItem ensureDecision() => $_ensure(0);
+}
+
+class OracleCommitmentExecutionItem extends $pb.GeneratedMessage {
+  factory OracleCommitmentExecutionItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? commitmentCode,
+    $core.String? decisionCode,
+    $core.String? ownerHandle,
+    $core.String? title,
+    $core.String? dependencySummary,
+    $core.String? cancellationCriteria,
+    $core.String? completionEvidenceRef,
+    $core.String? executionState,
+    $core.String? nonJudgmentalLoopReview,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (commitmentCode != null) result.commitmentCode = commitmentCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (ownerHandle != null) result.ownerHandle = ownerHandle;
+    if (title != null) result.title = title;
+    if (dependencySummary != null) result.dependencySummary = dependencySummary;
+    if (cancellationCriteria != null)
+      result.cancellationCriteria = cancellationCriteria;
+    if (completionEvidenceRef != null)
+      result.completionEvidenceRef = completionEvidenceRef;
+    if (executionState != null) result.executionState = executionState;
+    if (nonJudgmentalLoopReview != null)
+      result.nonJudgmentalLoopReview = nonJudgmentalLoopReview;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleCommitmentExecutionItem._();
+
+  factory OracleCommitmentExecutionItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleCommitmentExecutionItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleCommitmentExecutionItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'commitmentCode')
+    ..aOS(4, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'ownerHandle')
+    ..aOS(6, _omitFieldNames ? '' : 'title')
+    ..aOS(7, _omitFieldNames ? '' : 'dependencySummary')
+    ..aOS(8, _omitFieldNames ? '' : 'cancellationCriteria')
+    ..aOS(9, _omitFieldNames ? '' : 'completionEvidenceRef')
+    ..aOS(10, _omitFieldNames ? '' : 'executionState')
+    ..aOS(11, _omitFieldNames ? '' : 'nonJudgmentalLoopReview')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCommitmentExecutionItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCommitmentExecutionItem copyWith(
+          void Function(OracleCommitmentExecutionItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleCommitmentExecutionItem))
+          as OracleCommitmentExecutionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleCommitmentExecutionItem create() =>
+      OracleCommitmentExecutionItem._();
+  @$core.override
+  OracleCommitmentExecutionItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleCommitmentExecutionItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleCommitmentExecutionItem>(create);
+  static OracleCommitmentExecutionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get commitmentCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set commitmentCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCommitmentCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommitmentCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get decisionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set decisionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDecisionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDecisionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get ownerHandle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set ownerHandle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOwnerHandle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOwnerHandle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get title => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set title($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTitle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTitle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get dependencySummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set dependencySummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDependencySummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDependencySummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get cancellationCriteria => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set cancellationCriteria($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCancellationCriteria() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCancellationCriteria() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get completionEvidenceRef => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set completionEvidenceRef($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCompletionEvidenceRef() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCompletionEvidenceRef() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get executionState => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set executionState($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasExecutionState() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearExecutionState() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get nonJudgmentalLoopReview => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set nonJudgmentalLoopReview($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasNonJudgmentalLoopReview() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearNonJudgmentalLoopReview() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAtIso => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAtIso($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAtIso() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAtIso() => $_clearField(12);
+}
+
+class OracleExternalSyncDeliveryReceiptItem extends $pb.GeneratedMessage {
+  factory OracleExternalSyncDeliveryReceiptItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? receiptCode,
+    $core.String? commitmentCode,
+    $core.String? targetConnector,
+    $core.String? previewPayloadSummary,
+    $core.String? idempotencyKey,
+    $core.bool? memberExplicitApproval,
+    $core.String? deliveryState,
+    $core.String? reconciliationNote,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (receiptCode != null) result.receiptCode = receiptCode;
+    if (commitmentCode != null) result.commitmentCode = commitmentCode;
+    if (targetConnector != null) result.targetConnector = targetConnector;
+    if (previewPayloadSummary != null)
+      result.previewPayloadSummary = previewPayloadSummary;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    if (memberExplicitApproval != null)
+      result.memberExplicitApproval = memberExplicitApproval;
+    if (deliveryState != null) result.deliveryState = deliveryState;
+    if (reconciliationNote != null)
+      result.reconciliationNote = reconciliationNote;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleExternalSyncDeliveryReceiptItem._();
+
+  factory OracleExternalSyncDeliveryReceiptItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleExternalSyncDeliveryReceiptItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleExternalSyncDeliveryReceiptItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'receiptCode')
+    ..aOS(4, _omitFieldNames ? '' : 'commitmentCode')
+    ..aOS(5, _omitFieldNames ? '' : 'targetConnector')
+    ..aOS(6, _omitFieldNames ? '' : 'previewPayloadSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'idempotencyKey')
+    ..aOB(8, _omitFieldNames ? '' : 'memberExplicitApproval')
+    ..aOS(9, _omitFieldNames ? '' : 'deliveryState')
+    ..aOS(10, _omitFieldNames ? '' : 'reconciliationNote')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleExternalSyncDeliveryReceiptItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleExternalSyncDeliveryReceiptItem copyWith(
+          void Function(OracleExternalSyncDeliveryReceiptItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleExternalSyncDeliveryReceiptItem))
+          as OracleExternalSyncDeliveryReceiptItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleExternalSyncDeliveryReceiptItem create() =>
+      OracleExternalSyncDeliveryReceiptItem._();
+  @$core.override
+  OracleExternalSyncDeliveryReceiptItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleExternalSyncDeliveryReceiptItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OracleExternalSyncDeliveryReceiptItem>(create);
+  static OracleExternalSyncDeliveryReceiptItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get receiptCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set receiptCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReceiptCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReceiptCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get commitmentCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set commitmentCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCommitmentCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCommitmentCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get targetConnector => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set targetConnector($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTargetConnector() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTargetConnector() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get previewPayloadSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set previewPayloadSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPreviewPayloadSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreviewPayloadSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get idempotencyKey => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set idempotencyKey($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIdempotencyKey() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIdempotencyKey() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get memberExplicitApproval => $_getBF(7);
+  @$pb.TagNumber(8)
+  set memberExplicitApproval($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberExplicitApproval() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberExplicitApproval() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get deliveryState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set deliveryState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDeliveryState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDeliveryState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get reconciliationNote => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set reconciliationNote($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasReconciliationNote() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearReconciliationNote() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetCommitmentsOutcomeWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetCommitmentsOutcomeWorkbenchRequest() => create();
+
+  GetCommitmentsOutcomeWorkbenchRequest._();
+
+  factory GetCommitmentsOutcomeWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCommitmentsOutcomeWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCommitmentsOutcomeWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCommitmentsOutcomeWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCommitmentsOutcomeWorkbenchRequest copyWith(
+          void Function(GetCommitmentsOutcomeWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetCommitmentsOutcomeWorkbenchRequest))
+          as GetCommitmentsOutcomeWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCommitmentsOutcomeWorkbenchRequest create() =>
+      GetCommitmentsOutcomeWorkbenchRequest._();
+  @$core.override
+  GetCommitmentsOutcomeWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCommitmentsOutcomeWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetCommitmentsOutcomeWorkbenchRequest>(create);
+  static GetCommitmentsOutcomeWorkbenchRequest? _defaultInstance;
+}
+
+class GetCommitmentsOutcomeWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetCommitmentsOutcomeWorkbenchResponse({
+    $core.Iterable<OracleCommitmentExecutionItem>? commitments,
+    $core.Iterable<OracleExternalSyncDeliveryReceiptItem>? syncReceipts,
+    $core.bool? previewAndApprovalRequired,
+    $core.String? loopClosureBanner,
+  }) {
+    final result = create();
+    if (commitments != null) result.commitments.addAll(commitments);
+    if (syncReceipts != null) result.syncReceipts.addAll(syncReceipts);
+    if (previewAndApprovalRequired != null)
+      result.previewAndApprovalRequired = previewAndApprovalRequired;
+    if (loopClosureBanner != null) result.loopClosureBanner = loopClosureBanner;
+    return result;
+  }
+
+  GetCommitmentsOutcomeWorkbenchResponse._();
+
+  factory GetCommitmentsOutcomeWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetCommitmentsOutcomeWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetCommitmentsOutcomeWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleCommitmentExecutionItem>(
+        1, _omitFieldNames ? '' : 'commitments',
+        subBuilder: OracleCommitmentExecutionItem.create)
+    ..pPM<OracleExternalSyncDeliveryReceiptItem>(
+        2, _omitFieldNames ? '' : 'syncReceipts',
+        subBuilder: OracleExternalSyncDeliveryReceiptItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'previewAndApprovalRequired')
+    ..aOS(4, _omitFieldNames ? '' : 'loopClosureBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCommitmentsOutcomeWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetCommitmentsOutcomeWorkbenchResponse copyWith(
+          void Function(GetCommitmentsOutcomeWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetCommitmentsOutcomeWorkbenchResponse))
+          as GetCommitmentsOutcomeWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetCommitmentsOutcomeWorkbenchResponse create() =>
+      GetCommitmentsOutcomeWorkbenchResponse._();
+  @$core.override
+  GetCommitmentsOutcomeWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetCommitmentsOutcomeWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetCommitmentsOutcomeWorkbenchResponse>(create);
+  static GetCommitmentsOutcomeWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleCommitmentExecutionItem> get commitments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleExternalSyncDeliveryReceiptItem> get syncReceipts =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get previewAndApprovalRequired => $_getBF(2);
+  @$pb.TagNumber(3)
+  set previewAndApprovalRequired($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPreviewAndApprovalRequired() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPreviewAndApprovalRequired() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get loopClosureBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set loopClosureBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLoopClosureBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLoopClosureBanner() => $_clearField(4);
+}
+
+class CreateOrUpdateCommitmentItemRequest extends $pb.GeneratedMessage {
+  factory CreateOrUpdateCommitmentItemRequest({
+    $core.String? commitmentCode,
+    $core.String? decisionCode,
+    $core.String? ownerHandle,
+    $core.String? title,
+    $core.String? dependencySummary,
+    $core.String? cancellationCriteria,
+    $core.String? completionEvidenceRef,
+    $core.String? executionState,
+  }) {
+    final result = create();
+    if (commitmentCode != null) result.commitmentCode = commitmentCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (ownerHandle != null) result.ownerHandle = ownerHandle;
+    if (title != null) result.title = title;
+    if (dependencySummary != null) result.dependencySummary = dependencySummary;
+    if (cancellationCriteria != null)
+      result.cancellationCriteria = cancellationCriteria;
+    if (completionEvidenceRef != null)
+      result.completionEvidenceRef = completionEvidenceRef;
+    if (executionState != null) result.executionState = executionState;
+    return result;
+  }
+
+  CreateOrUpdateCommitmentItemRequest._();
+
+  factory CreateOrUpdateCommitmentItemRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateCommitmentItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateCommitmentItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'commitmentCode')
+    ..aOS(2, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'ownerHandle')
+    ..aOS(4, _omitFieldNames ? '' : 'title')
+    ..aOS(5, _omitFieldNames ? '' : 'dependencySummary')
+    ..aOS(6, _omitFieldNames ? '' : 'cancellationCriteria')
+    ..aOS(7, _omitFieldNames ? '' : 'completionEvidenceRef')
+    ..aOS(8, _omitFieldNames ? '' : 'executionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCommitmentItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCommitmentItemRequest copyWith(
+          void Function(CreateOrUpdateCommitmentItemRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateCommitmentItemRequest))
+          as CreateOrUpdateCommitmentItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCommitmentItemRequest create() =>
+      CreateOrUpdateCommitmentItemRequest._();
+  @$core.override
+  CreateOrUpdateCommitmentItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCommitmentItemRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateCommitmentItemRequest>(create);
+  static CreateOrUpdateCommitmentItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get commitmentCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set commitmentCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommitmentCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommitmentCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get decisionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set decisionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDecisionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecisionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ownerHandle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ownerHandle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOwnerHandle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOwnerHandle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get title => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set title($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get dependencySummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set dependencySummary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDependencySummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDependencySummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get cancellationCriteria => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set cancellationCriteria($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCancellationCriteria() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCancellationCriteria() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get completionEvidenceRef => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set completionEvidenceRef($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCompletionEvidenceRef() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCompletionEvidenceRef() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get executionState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set executionState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasExecutionState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearExecutionState() => $_clearField(8);
+}
+
+class CreateOrUpdateCommitmentItemResponse extends $pb.GeneratedMessage {
+  factory CreateOrUpdateCommitmentItemResponse({
+    OracleCommitmentExecutionItem? commitment,
+  }) {
+    final result = create();
+    if (commitment != null) result.commitment = commitment;
+    return result;
+  }
+
+  CreateOrUpdateCommitmentItemResponse._();
+
+  factory CreateOrUpdateCommitmentItemResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrUpdateCommitmentItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrUpdateCommitmentItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleCommitmentExecutionItem>(1, _omitFieldNames ? '' : 'commitment',
+        subBuilder: OracleCommitmentExecutionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCommitmentItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrUpdateCommitmentItemResponse copyWith(
+          void Function(CreateOrUpdateCommitmentItemResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrUpdateCommitmentItemResponse))
+          as CreateOrUpdateCommitmentItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCommitmentItemResponse create() =>
+      CreateOrUpdateCommitmentItemResponse._();
+  @$core.override
+  CreateOrUpdateCommitmentItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrUpdateCommitmentItemResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrUpdateCommitmentItemResponse>(create);
+  static CreateOrUpdateCommitmentItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleCommitmentExecutionItem get commitment => $_getN(0);
+  @$pb.TagNumber(1)
+  set commitment(OracleCommitmentExecutionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommitment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommitment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleCommitmentExecutionItem ensureCommitment() => $_ensure(0);
+}
+
+class PreviewOrExecuteExternalCommitmentSyncRequest
+    extends $pb.GeneratedMessage {
+  factory PreviewOrExecuteExternalCommitmentSyncRequest({
+    $core.String? receiptCode,
+    $core.String? commitmentCode,
+    $core.String? targetConnector,
+    $core.String? previewPayloadSummary,
+    $core.String? idempotencyKey,
+    $core.bool? memberExplicitApproval,
+    $core.String? deliveryState,
+  }) {
+    final result = create();
+    if (receiptCode != null) result.receiptCode = receiptCode;
+    if (commitmentCode != null) result.commitmentCode = commitmentCode;
+    if (targetConnector != null) result.targetConnector = targetConnector;
+    if (previewPayloadSummary != null)
+      result.previewPayloadSummary = previewPayloadSummary;
+    if (idempotencyKey != null) result.idempotencyKey = idempotencyKey;
+    if (memberExplicitApproval != null)
+      result.memberExplicitApproval = memberExplicitApproval;
+    if (deliveryState != null) result.deliveryState = deliveryState;
+    return result;
+  }
+
+  PreviewOrExecuteExternalCommitmentSyncRequest._();
+
+  factory PreviewOrExecuteExternalCommitmentSyncRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewOrExecuteExternalCommitmentSyncRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewOrExecuteExternalCommitmentSyncRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'receiptCode')
+    ..aOS(2, _omitFieldNames ? '' : 'commitmentCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetConnector')
+    ..aOS(4, _omitFieldNames ? '' : 'previewPayloadSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'idempotencyKey')
+    ..aOB(6, _omitFieldNames ? '' : 'memberExplicitApproval')
+    ..aOS(7, _omitFieldNames ? '' : 'deliveryState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteExternalCommitmentSyncRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteExternalCommitmentSyncRequest copyWith(
+          void Function(PreviewOrExecuteExternalCommitmentSyncRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as PreviewOrExecuteExternalCommitmentSyncRequest))
+          as PreviewOrExecuteExternalCommitmentSyncRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteExternalCommitmentSyncRequest create() =>
+      PreviewOrExecuteExternalCommitmentSyncRequest._();
+  @$core.override
+  PreviewOrExecuteExternalCommitmentSyncRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteExternalCommitmentSyncRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewOrExecuteExternalCommitmentSyncRequest>(create);
+  static PreviewOrExecuteExternalCommitmentSyncRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get receiptCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set receiptCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReceiptCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReceiptCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get commitmentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set commitmentCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCommitmentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCommitmentCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetConnector => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetConnector($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetConnector() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetConnector() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get previewPayloadSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set previewPayloadSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPreviewPayloadSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPreviewPayloadSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get idempotencyKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set idempotencyKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIdempotencyKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIdempotencyKey() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get memberExplicitApproval => $_getBF(5);
+  @$pb.TagNumber(6)
+  set memberExplicitApproval($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMemberExplicitApproval() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMemberExplicitApproval() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get deliveryState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set deliveryState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDeliveryState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDeliveryState() => $_clearField(7);
+}
+
+class PreviewOrExecuteExternalCommitmentSyncResponse
+    extends $pb.GeneratedMessage {
+  factory PreviewOrExecuteExternalCommitmentSyncResponse({
+    OracleExternalSyncDeliveryReceiptItem? syncReceipt,
+  }) {
+    final result = create();
+    if (syncReceipt != null) result.syncReceipt = syncReceipt;
+    return result;
+  }
+
+  PreviewOrExecuteExternalCommitmentSyncResponse._();
+
+  factory PreviewOrExecuteExternalCommitmentSyncResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PreviewOrExecuteExternalCommitmentSyncResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PreviewOrExecuteExternalCommitmentSyncResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleExternalSyncDeliveryReceiptItem>(
+        1, _omitFieldNames ? '' : 'syncReceipt',
+        subBuilder: OracleExternalSyncDeliveryReceiptItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteExternalCommitmentSyncResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PreviewOrExecuteExternalCommitmentSyncResponse copyWith(
+          void Function(PreviewOrExecuteExternalCommitmentSyncResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as PreviewOrExecuteExternalCommitmentSyncResponse))
+          as PreviewOrExecuteExternalCommitmentSyncResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteExternalCommitmentSyncResponse create() =>
+      PreviewOrExecuteExternalCommitmentSyncResponse._();
+  @$core.override
+  PreviewOrExecuteExternalCommitmentSyncResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static PreviewOrExecuteExternalCommitmentSyncResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          PreviewOrExecuteExternalCommitmentSyncResponse>(create);
+  static PreviewOrExecuteExternalCommitmentSyncResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleExternalSyncDeliveryReceiptItem get syncReceipt => $_getN(0);
+  @$pb.TagNumber(1)
+  set syncReceipt(OracleExternalSyncDeliveryReceiptItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSyncReceipt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSyncReceipt() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleExternalSyncDeliveryReceiptItem ensureSyncReceipt() => $_ensure(0);
+}
+
+class AdminListCommitmentsOutcomeAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListCommitmentsOutcomeAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListCommitmentsOutcomeAuditRequest._();
+
+  factory AdminListCommitmentsOutcomeAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListCommitmentsOutcomeAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListCommitmentsOutcomeAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCommitmentsOutcomeAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCommitmentsOutcomeAuditRequest copyWith(
+          void Function(AdminListCommitmentsOutcomeAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListCommitmentsOutcomeAuditRequest))
+          as AdminListCommitmentsOutcomeAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListCommitmentsOutcomeAuditRequest create() =>
+      AdminListCommitmentsOutcomeAuditRequest._();
+  @$core.override
+  AdminListCommitmentsOutcomeAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListCommitmentsOutcomeAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListCommitmentsOutcomeAuditRequest>(create);
+  static AdminListCommitmentsOutcomeAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListCommitmentsOutcomeAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListCommitmentsOutcomeAuditResponse({
+    $core.Iterable<OracleCommitmentExecutionItem>? commitments,
+    $core.Iterable<OracleExternalSyncDeliveryReceiptItem>? syncReceipts,
+  }) {
+    final result = create();
+    if (commitments != null) result.commitments.addAll(commitments);
+    if (syncReceipts != null) result.syncReceipts.addAll(syncReceipts);
+    return result;
+  }
+
+  AdminListCommitmentsOutcomeAuditResponse._();
+
+  factory AdminListCommitmentsOutcomeAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListCommitmentsOutcomeAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListCommitmentsOutcomeAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleCommitmentExecutionItem>(
+        1, _omitFieldNames ? '' : 'commitments',
+        subBuilder: OracleCommitmentExecutionItem.create)
+    ..pPM<OracleExternalSyncDeliveryReceiptItem>(
+        2, _omitFieldNames ? '' : 'syncReceipts',
+        subBuilder: OracleExternalSyncDeliveryReceiptItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCommitmentsOutcomeAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListCommitmentsOutcomeAuditResponse copyWith(
+          void Function(AdminListCommitmentsOutcomeAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListCommitmentsOutcomeAuditResponse))
+          as AdminListCommitmentsOutcomeAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListCommitmentsOutcomeAuditResponse create() =>
+      AdminListCommitmentsOutcomeAuditResponse._();
+  @$core.override
+  AdminListCommitmentsOutcomeAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListCommitmentsOutcomeAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListCommitmentsOutcomeAuditResponse>(create);
+  static AdminListCommitmentsOutcomeAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleCommitmentExecutionItem> get commitments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleExternalSyncDeliveryReceiptItem> get syncReceipts =>
+      $_getList(1);
+}
+
+class AdminReconcileExternalSyncDeliveryRequest extends $pb.GeneratedMessage {
+  factory AdminReconcileExternalSyncDeliveryRequest({
+    $core.String? targetUserId,
+    $core.String? receiptCode,
+    $core.String? deliveryState,
+    $core.String? reconciliationNote,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (receiptCode != null) result.receiptCode = receiptCode;
+    if (deliveryState != null) result.deliveryState = deliveryState;
+    if (reconciliationNote != null)
+      result.reconciliationNote = reconciliationNote;
+    return result;
+  }
+
+  AdminReconcileExternalSyncDeliveryRequest._();
+
+  factory AdminReconcileExternalSyncDeliveryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileExternalSyncDeliveryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminReconcileExternalSyncDeliveryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'receiptCode')
+    ..aOS(3, _omitFieldNames ? '' : 'deliveryState')
+    ..aOS(4, _omitFieldNames ? '' : 'reconciliationNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExternalSyncDeliveryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExternalSyncDeliveryRequest copyWith(
+          void Function(AdminReconcileExternalSyncDeliveryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminReconcileExternalSyncDeliveryRequest))
+          as AdminReconcileExternalSyncDeliveryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExternalSyncDeliveryRequest create() =>
+      AdminReconcileExternalSyncDeliveryRequest._();
+  @$core.override
+  AdminReconcileExternalSyncDeliveryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExternalSyncDeliveryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileExternalSyncDeliveryRequest>(create);
+  static AdminReconcileExternalSyncDeliveryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get receiptCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set receiptCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReceiptCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReceiptCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deliveryState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deliveryState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeliveryState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeliveryState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reconciliationNote => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reconciliationNote($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReconciliationNote() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReconciliationNote() => $_clearField(4);
+}
+
+class AdminReconcileExternalSyncDeliveryResponse extends $pb.GeneratedMessage {
+  factory AdminReconcileExternalSyncDeliveryResponse({
+    OracleExternalSyncDeliveryReceiptItem? syncReceipt,
+  }) {
+    final result = create();
+    if (syncReceipt != null) result.syncReceipt = syncReceipt;
+    return result;
+  }
+
+  AdminReconcileExternalSyncDeliveryResponse._();
+
+  factory AdminReconcileExternalSyncDeliveryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminReconcileExternalSyncDeliveryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminReconcileExternalSyncDeliveryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleExternalSyncDeliveryReceiptItem>(
+        1, _omitFieldNames ? '' : 'syncReceipt',
+        subBuilder: OracleExternalSyncDeliveryReceiptItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExternalSyncDeliveryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminReconcileExternalSyncDeliveryResponse copyWith(
+          void Function(AdminReconcileExternalSyncDeliveryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminReconcileExternalSyncDeliveryResponse))
+          as AdminReconcileExternalSyncDeliveryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExternalSyncDeliveryResponse create() =>
+      AdminReconcileExternalSyncDeliveryResponse._();
+  @$core.override
+  AdminReconcileExternalSyncDeliveryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminReconcileExternalSyncDeliveryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminReconcileExternalSyncDeliveryResponse>(create);
+  static AdminReconcileExternalSyncDeliveryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleExternalSyncDeliveryReceiptItem get syncReceipt => $_getN(0);
+  @$pb.TagNumber(1)
+  set syncReceipt(OracleExternalSyncDeliveryReceiptItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSyncReceipt() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSyncReceipt() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleExternalSyncDeliveryReceiptItem ensureSyncReceipt() => $_ensure(0);
+}
+
+class OracleWatchlistEntityMonitorItem extends $pb.GeneratedMessage {
+  factory OracleWatchlistEntityMonitorItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? monitorCode,
+    $core.String? entityAndRegion,
+    $core.String? materialityThreshold,
+    $core.int? dailyAlertBudget,
+    $core.String? quietHoursWindow,
+    $core.String? snoozeUntilCondition,
+    $core.String? feedHealthState,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (monitorCode != null) result.monitorCode = monitorCode;
+    if (entityAndRegion != null) result.entityAndRegion = entityAndRegion;
+    if (materialityThreshold != null)
+      result.materialityThreshold = materialityThreshold;
+    if (dailyAlertBudget != null) result.dailyAlertBudget = dailyAlertBudget;
+    if (quietHoursWindow != null) result.quietHoursWindow = quietHoursWindow;
+    if (snoozeUntilCondition != null)
+      result.snoozeUntilCondition = snoozeUntilCondition;
+    if (feedHealthState != null) result.feedHealthState = feedHealthState;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleWatchlistEntityMonitorItem._();
+
+  factory OracleWatchlistEntityMonitorItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleWatchlistEntityMonitorItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleWatchlistEntityMonitorItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'monitorCode')
+    ..aOS(4, _omitFieldNames ? '' : 'entityAndRegion')
+    ..aOS(5, _omitFieldNames ? '' : 'materialityThreshold')
+    ..aI(6, _omitFieldNames ? '' : 'dailyAlertBudget')
+    ..aOS(7, _omitFieldNames ? '' : 'quietHoursWindow')
+    ..aOS(8, _omitFieldNames ? '' : 'snoozeUntilCondition')
+    ..aOS(9, _omitFieldNames ? '' : 'feedHealthState')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleWatchlistEntityMonitorItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleWatchlistEntityMonitorItem copyWith(
+          void Function(OracleWatchlistEntityMonitorItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleWatchlistEntityMonitorItem))
+          as OracleWatchlistEntityMonitorItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleWatchlistEntityMonitorItem create() =>
+      OracleWatchlistEntityMonitorItem._();
+  @$core.override
+  OracleWatchlistEntityMonitorItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleWatchlistEntityMonitorItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleWatchlistEntityMonitorItem>(
+          create);
+  static OracleWatchlistEntityMonitorItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get monitorCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set monitorCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMonitorCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMonitorCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityAndRegion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityAndRegion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityAndRegion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityAndRegion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get materialityThreshold => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set materialityThreshold($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMaterialityThreshold() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMaterialityThreshold() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get dailyAlertBudget => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set dailyAlertBudget($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDailyAlertBudget() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDailyAlertBudget() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get quietHoursWindow => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set quietHoursWindow($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasQuietHoursWindow() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearQuietHoursWindow() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get snoozeUntilCondition => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set snoozeUntilCondition($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSnoozeUntilCondition() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSnoozeUntilCondition() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get feedHealthState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set feedHealthState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasFeedHealthState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearFeedHealthState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class OracleCommandBriefSignalCardItem extends $pb.GeneratedMessage {
+  factory OracleCommandBriefSignalCardItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? signalCode,
+    $core.String? monitorCode,
+    $core.String? briefKind,
+    $core.String? observedFactStatement,
+    $core.String? separatedInferenceStatement,
+    $core.String? alternativeInterpretation,
+    $core.String? suggestedNextCheck,
+    $core.String? draftDispositionState,
+    $core.bool? inferenceDisguisedAsFact,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (signalCode != null) result.signalCode = signalCode;
+    if (monitorCode != null) result.monitorCode = monitorCode;
+    if (briefKind != null) result.briefKind = briefKind;
+    if (observedFactStatement != null)
+      result.observedFactStatement = observedFactStatement;
+    if (separatedInferenceStatement != null)
+      result.separatedInferenceStatement = separatedInferenceStatement;
+    if (alternativeInterpretation != null)
+      result.alternativeInterpretation = alternativeInterpretation;
+    if (suggestedNextCheck != null)
+      result.suggestedNextCheck = suggestedNextCheck;
+    if (draftDispositionState != null)
+      result.draftDispositionState = draftDispositionState;
+    if (inferenceDisguisedAsFact != null)
+      result.inferenceDisguisedAsFact = inferenceDisguisedAsFact;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleCommandBriefSignalCardItem._();
+
+  factory OracleCommandBriefSignalCardItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleCommandBriefSignalCardItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleCommandBriefSignalCardItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'signalCode')
+    ..aOS(4, _omitFieldNames ? '' : 'monitorCode')
+    ..aOS(5, _omitFieldNames ? '' : 'briefKind')
+    ..aOS(6, _omitFieldNames ? '' : 'observedFactStatement')
+    ..aOS(7, _omitFieldNames ? '' : 'separatedInferenceStatement')
+    ..aOS(8, _omitFieldNames ? '' : 'alternativeInterpretation')
+    ..aOS(9, _omitFieldNames ? '' : 'suggestedNextCheck')
+    ..aOS(10, _omitFieldNames ? '' : 'draftDispositionState')
+    ..aOB(11, _omitFieldNames ? '' : 'inferenceDisguisedAsFact')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCommandBriefSignalCardItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCommandBriefSignalCardItem copyWith(
+          void Function(OracleCommandBriefSignalCardItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleCommandBriefSignalCardItem))
+          as OracleCommandBriefSignalCardItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleCommandBriefSignalCardItem create() =>
+      OracleCommandBriefSignalCardItem._();
+  @$core.override
+  OracleCommandBriefSignalCardItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleCommandBriefSignalCardItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleCommandBriefSignalCardItem>(
+          create);
+  static OracleCommandBriefSignalCardItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get signalCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set signalCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSignalCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSignalCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get monitorCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set monitorCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMonitorCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMonitorCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get briefKind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set briefKind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBriefKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBriefKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get observedFactStatement => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set observedFactStatement($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasObservedFactStatement() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearObservedFactStatement() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get separatedInferenceStatement => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set separatedInferenceStatement($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSeparatedInferenceStatement() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSeparatedInferenceStatement() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get alternativeInterpretation => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set alternativeInterpretation($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAlternativeInterpretation() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAlternativeInterpretation() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get suggestedNextCheck => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set suggestedNextCheck($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSuggestedNextCheck() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSuggestedNextCheck() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get draftDispositionState => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set draftDispositionState($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDraftDispositionState() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDraftDispositionState() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get inferenceDisguisedAsFact => $_getBF(10);
+  @$pb.TagNumber(11)
+  set inferenceDisguisedAsFact($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasInferenceDisguisedAsFact() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearInferenceDisguisedAsFact() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAtIso => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAtIso($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAtIso() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAtIso() => $_clearField(12);
+}
+
+class GetWatchlistsCommandBriefWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetWatchlistsCommandBriefWorkbenchRequest() => create();
+
+  GetWatchlistsCommandBriefWorkbenchRequest._();
+
+  factory GetWatchlistsCommandBriefWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWatchlistsCommandBriefWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWatchlistsCommandBriefWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWatchlistsCommandBriefWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWatchlistsCommandBriefWorkbenchRequest copyWith(
+          void Function(GetWatchlistsCommandBriefWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetWatchlistsCommandBriefWorkbenchRequest))
+          as GetWatchlistsCommandBriefWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWatchlistsCommandBriefWorkbenchRequest create() =>
+      GetWatchlistsCommandBriefWorkbenchRequest._();
+  @$core.override
+  GetWatchlistsCommandBriefWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWatchlistsCommandBriefWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetWatchlistsCommandBriefWorkbenchRequest>(create);
+  static GetWatchlistsCommandBriefWorkbenchRequest? _defaultInstance;
+}
+
+class GetWatchlistsCommandBriefWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetWatchlistsCommandBriefWorkbenchResponse({
+    $core.Iterable<OracleWatchlistEntityMonitorItem>? monitors,
+    $core.Iterable<OracleCommandBriefSignalCardItem>? signalCards,
+    $core.bool? factInferenceSeparationEnforced,
+    $core.String? commandBriefBanner,
+  }) {
+    final result = create();
+    if (monitors != null) result.monitors.addAll(monitors);
+    if (signalCards != null) result.signalCards.addAll(signalCards);
+    if (factInferenceSeparationEnforced != null)
+      result.factInferenceSeparationEnforced = factInferenceSeparationEnforced;
+    if (commandBriefBanner != null)
+      result.commandBriefBanner = commandBriefBanner;
+    return result;
+  }
+
+  GetWatchlistsCommandBriefWorkbenchResponse._();
+
+  factory GetWatchlistsCommandBriefWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWatchlistsCommandBriefWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWatchlistsCommandBriefWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleWatchlistEntityMonitorItem>(
+        1, _omitFieldNames ? '' : 'monitors',
+        subBuilder: OracleWatchlistEntityMonitorItem.create)
+    ..pPM<OracleCommandBriefSignalCardItem>(
+        2, _omitFieldNames ? '' : 'signalCards',
+        subBuilder: OracleCommandBriefSignalCardItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'factInferenceSeparationEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'commandBriefBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWatchlistsCommandBriefWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWatchlistsCommandBriefWorkbenchResponse copyWith(
+          void Function(GetWatchlistsCommandBriefWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetWatchlistsCommandBriefWorkbenchResponse))
+          as GetWatchlistsCommandBriefWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWatchlistsCommandBriefWorkbenchResponse create() =>
+      GetWatchlistsCommandBriefWorkbenchResponse._();
+  @$core.override
+  GetWatchlistsCommandBriefWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWatchlistsCommandBriefWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetWatchlistsCommandBriefWorkbenchResponse>(create);
+  static GetWatchlistsCommandBriefWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleWatchlistEntityMonitorItem> get monitors => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCommandBriefSignalCardItem> get signalCards => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get factInferenceSeparationEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set factInferenceSeparationEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFactInferenceSeparationEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFactInferenceSeparationEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get commandBriefBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set commandBriefBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCommandBriefBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCommandBriefBanner() => $_clearField(4);
+}
+
+class UpsertWatchlistEntityMonitorRequest extends $pb.GeneratedMessage {
+  factory UpsertWatchlistEntityMonitorRequest({
+    $core.String? monitorCode,
+    $core.String? entityAndRegion,
+    $core.String? materialityThreshold,
+    $core.int? dailyAlertBudget,
+    $core.String? quietHoursWindow,
+    $core.String? snoozeUntilCondition,
+    $core.String? feedHealthState,
+  }) {
+    final result = create();
+    if (monitorCode != null) result.monitorCode = monitorCode;
+    if (entityAndRegion != null) result.entityAndRegion = entityAndRegion;
+    if (materialityThreshold != null)
+      result.materialityThreshold = materialityThreshold;
+    if (dailyAlertBudget != null) result.dailyAlertBudget = dailyAlertBudget;
+    if (quietHoursWindow != null) result.quietHoursWindow = quietHoursWindow;
+    if (snoozeUntilCondition != null)
+      result.snoozeUntilCondition = snoozeUntilCondition;
+    if (feedHealthState != null) result.feedHealthState = feedHealthState;
+    return result;
+  }
+
+  UpsertWatchlistEntityMonitorRequest._();
+
+  factory UpsertWatchlistEntityMonitorRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertWatchlistEntityMonitorRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertWatchlistEntityMonitorRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'monitorCode')
+    ..aOS(2, _omitFieldNames ? '' : 'entityAndRegion')
+    ..aOS(3, _omitFieldNames ? '' : 'materialityThreshold')
+    ..aI(4, _omitFieldNames ? '' : 'dailyAlertBudget')
+    ..aOS(5, _omitFieldNames ? '' : 'quietHoursWindow')
+    ..aOS(6, _omitFieldNames ? '' : 'snoozeUntilCondition')
+    ..aOS(7, _omitFieldNames ? '' : 'feedHealthState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistEntityMonitorRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistEntityMonitorRequest copyWith(
+          void Function(UpsertWatchlistEntityMonitorRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertWatchlistEntityMonitorRequest))
+          as UpsertWatchlistEntityMonitorRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistEntityMonitorRequest create() =>
+      UpsertWatchlistEntityMonitorRequest._();
+  @$core.override
+  UpsertWatchlistEntityMonitorRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistEntityMonitorRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertWatchlistEntityMonitorRequest>(create);
+  static UpsertWatchlistEntityMonitorRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get monitorCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set monitorCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMonitorCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMonitorCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityAndRegion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityAndRegion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityAndRegion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityAndRegion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get materialityThreshold => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set materialityThreshold($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMaterialityThreshold() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaterialityThreshold() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get dailyAlertBudget => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set dailyAlertBudget($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDailyAlertBudget() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDailyAlertBudget() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get quietHoursWindow => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set quietHoursWindow($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasQuietHoursWindow() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearQuietHoursWindow() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get snoozeUntilCondition => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set snoozeUntilCondition($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSnoozeUntilCondition() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSnoozeUntilCondition() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get feedHealthState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set feedHealthState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFeedHealthState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFeedHealthState() => $_clearField(7);
+}
+
+class UpsertWatchlistEntityMonitorResponse extends $pb.GeneratedMessage {
+  factory UpsertWatchlistEntityMonitorResponse({
+    OracleWatchlistEntityMonitorItem? monitor,
+  }) {
+    final result = create();
+    if (monitor != null) result.monitor = monitor;
+    return result;
+  }
+
+  UpsertWatchlistEntityMonitorResponse._();
+
+  factory UpsertWatchlistEntityMonitorResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpsertWatchlistEntityMonitorResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpsertWatchlistEntityMonitorResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleWatchlistEntityMonitorItem>(1, _omitFieldNames ? '' : 'monitor',
+        subBuilder: OracleWatchlistEntityMonitorItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistEntityMonitorResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpsertWatchlistEntityMonitorResponse copyWith(
+          void Function(UpsertWatchlistEntityMonitorResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as UpsertWatchlistEntityMonitorResponse))
+          as UpsertWatchlistEntityMonitorResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistEntityMonitorResponse create() =>
+      UpsertWatchlistEntityMonitorResponse._();
+  @$core.override
+  UpsertWatchlistEntityMonitorResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpsertWatchlistEntityMonitorResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpsertWatchlistEntityMonitorResponse>(create);
+  static UpsertWatchlistEntityMonitorResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleWatchlistEntityMonitorItem get monitor => $_getN(0);
+  @$pb.TagNumber(1)
+  set monitor(OracleWatchlistEntityMonitorItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMonitor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMonitor() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleWatchlistEntityMonitorItem ensureMonitor() => $_ensure(0);
+}
+
+class ApproveOrSnoozeCommandBriefSignalRequest extends $pb.GeneratedMessage {
+  factory ApproveOrSnoozeCommandBriefSignalRequest({
+    $core.String? signalCode,
+    $core.String? monitorCode,
+    $core.String? briefKind,
+    $core.String? observedFactStatement,
+    $core.String? separatedInferenceStatement,
+    $core.String? alternativeInterpretation,
+    $core.String? suggestedNextCheck,
+    $core.String? draftDispositionState,
+  }) {
+    final result = create();
+    if (signalCode != null) result.signalCode = signalCode;
+    if (monitorCode != null) result.monitorCode = monitorCode;
+    if (briefKind != null) result.briefKind = briefKind;
+    if (observedFactStatement != null)
+      result.observedFactStatement = observedFactStatement;
+    if (separatedInferenceStatement != null)
+      result.separatedInferenceStatement = separatedInferenceStatement;
+    if (alternativeInterpretation != null)
+      result.alternativeInterpretation = alternativeInterpretation;
+    if (suggestedNextCheck != null)
+      result.suggestedNextCheck = suggestedNextCheck;
+    if (draftDispositionState != null)
+      result.draftDispositionState = draftDispositionState;
+    return result;
+  }
+
+  ApproveOrSnoozeCommandBriefSignalRequest._();
+
+  factory ApproveOrSnoozeCommandBriefSignalRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrSnoozeCommandBriefSignalRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrSnoozeCommandBriefSignalRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'signalCode')
+    ..aOS(2, _omitFieldNames ? '' : 'monitorCode')
+    ..aOS(3, _omitFieldNames ? '' : 'briefKind')
+    ..aOS(4, _omitFieldNames ? '' : 'observedFactStatement')
+    ..aOS(5, _omitFieldNames ? '' : 'separatedInferenceStatement')
+    ..aOS(6, _omitFieldNames ? '' : 'alternativeInterpretation')
+    ..aOS(7, _omitFieldNames ? '' : 'suggestedNextCheck')
+    ..aOS(8, _omitFieldNames ? '' : 'draftDispositionState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrSnoozeCommandBriefSignalRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrSnoozeCommandBriefSignalRequest copyWith(
+          void Function(ApproveOrSnoozeCommandBriefSignalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrSnoozeCommandBriefSignalRequest))
+          as ApproveOrSnoozeCommandBriefSignalRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrSnoozeCommandBriefSignalRequest create() =>
+      ApproveOrSnoozeCommandBriefSignalRequest._();
+  @$core.override
+  ApproveOrSnoozeCommandBriefSignalRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrSnoozeCommandBriefSignalRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrSnoozeCommandBriefSignalRequest>(create);
+  static ApproveOrSnoozeCommandBriefSignalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get signalCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set signalCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSignalCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSignalCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get monitorCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set monitorCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMonitorCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMonitorCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get briefKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set briefKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasBriefKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBriefKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get observedFactStatement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set observedFactStatement($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasObservedFactStatement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearObservedFactStatement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get separatedInferenceStatement => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set separatedInferenceStatement($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSeparatedInferenceStatement() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSeparatedInferenceStatement() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get alternativeInterpretation => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set alternativeInterpretation($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAlternativeInterpretation() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAlternativeInterpretation() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get suggestedNextCheck => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set suggestedNextCheck($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSuggestedNextCheck() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSuggestedNextCheck() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get draftDispositionState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set draftDispositionState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasDraftDispositionState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearDraftDispositionState() => $_clearField(8);
+}
+
+class ApproveOrSnoozeCommandBriefSignalResponse extends $pb.GeneratedMessage {
+  factory ApproveOrSnoozeCommandBriefSignalResponse({
+    OracleCommandBriefSignalCardItem? signalCard,
+  }) {
+    final result = create();
+    if (signalCard != null) result.signalCard = signalCard;
+    return result;
+  }
+
+  ApproveOrSnoozeCommandBriefSignalResponse._();
+
+  factory ApproveOrSnoozeCommandBriefSignalResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrSnoozeCommandBriefSignalResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrSnoozeCommandBriefSignalResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleCommandBriefSignalCardItem>(
+        1, _omitFieldNames ? '' : 'signalCard',
+        subBuilder: OracleCommandBriefSignalCardItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrSnoozeCommandBriefSignalResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrSnoozeCommandBriefSignalResponse copyWith(
+          void Function(ApproveOrSnoozeCommandBriefSignalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrSnoozeCommandBriefSignalResponse))
+          as ApproveOrSnoozeCommandBriefSignalResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrSnoozeCommandBriefSignalResponse create() =>
+      ApproveOrSnoozeCommandBriefSignalResponse._();
+  @$core.override
+  ApproveOrSnoozeCommandBriefSignalResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrSnoozeCommandBriefSignalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrSnoozeCommandBriefSignalResponse>(create);
+  static ApproveOrSnoozeCommandBriefSignalResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleCommandBriefSignalCardItem get signalCard => $_getN(0);
+  @$pb.TagNumber(1)
+  set signalCard(OracleCommandBriefSignalCardItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSignalCard() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSignalCard() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleCommandBriefSignalCardItem ensureSignalCard() => $_ensure(0);
+}
+
+class AdminListWatchlistsCommandBriefAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListWatchlistsCommandBriefAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListWatchlistsCommandBriefAuditRequest._();
+
+  factory AdminListWatchlistsCommandBriefAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListWatchlistsCommandBriefAuditRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListWatchlistsCommandBriefAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWatchlistsCommandBriefAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWatchlistsCommandBriefAuditRequest copyWith(
+          void Function(AdminListWatchlistsCommandBriefAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListWatchlistsCommandBriefAuditRequest))
+          as AdminListWatchlistsCommandBriefAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListWatchlistsCommandBriefAuditRequest create() =>
+      AdminListWatchlistsCommandBriefAuditRequest._();
+  @$core.override
+  AdminListWatchlistsCommandBriefAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListWatchlistsCommandBriefAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListWatchlistsCommandBriefAuditRequest>(create);
+  static AdminListWatchlistsCommandBriefAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListWatchlistsCommandBriefAuditResponse
+    extends $pb.GeneratedMessage {
+  factory AdminListWatchlistsCommandBriefAuditResponse({
+    $core.Iterable<OracleWatchlistEntityMonitorItem>? monitors,
+    $core.Iterable<OracleCommandBriefSignalCardItem>? signalCards,
+  }) {
+    final result = create();
+    if (monitors != null) result.monitors.addAll(monitors);
+    if (signalCards != null) result.signalCards.addAll(signalCards);
+    return result;
+  }
+
+  AdminListWatchlistsCommandBriefAuditResponse._();
+
+  factory AdminListWatchlistsCommandBriefAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListWatchlistsCommandBriefAuditResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListWatchlistsCommandBriefAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleWatchlistEntityMonitorItem>(
+        1, _omitFieldNames ? '' : 'monitors',
+        subBuilder: OracleWatchlistEntityMonitorItem.create)
+    ..pPM<OracleCommandBriefSignalCardItem>(
+        2, _omitFieldNames ? '' : 'signalCards',
+        subBuilder: OracleCommandBriefSignalCardItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWatchlistsCommandBriefAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWatchlistsCommandBriefAuditResponse copyWith(
+          void Function(AdminListWatchlistsCommandBriefAuditResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListWatchlistsCommandBriefAuditResponse))
+          as AdminListWatchlistsCommandBriefAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListWatchlistsCommandBriefAuditResponse create() =>
+      AdminListWatchlistsCommandBriefAuditResponse._();
+  @$core.override
+  AdminListWatchlistsCommandBriefAuditResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListWatchlistsCommandBriefAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListWatchlistsCommandBriefAuditResponse>(create);
+  static AdminListWatchlistsCommandBriefAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleWatchlistEntityMonitorItem> get monitors => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCommandBriefSignalCardItem> get signalCards => $_getList(1);
+}
+
+class AdminManageWatchlistAlertBudgetOrFeedRequest
+    extends $pb.GeneratedMessage {
+  factory AdminManageWatchlistAlertBudgetOrFeedRequest({
+    $core.String? targetUserId,
+    $core.String? monitorCode,
+    $core.int? dailyAlertBudget,
+    $core.String? feedHealthState,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (monitorCode != null) result.monitorCode = monitorCode;
+    if (dailyAlertBudget != null) result.dailyAlertBudget = dailyAlertBudget;
+    if (feedHealthState != null) result.feedHealthState = feedHealthState;
+    return result;
+  }
+
+  AdminManageWatchlistAlertBudgetOrFeedRequest._();
+
+  factory AdminManageWatchlistAlertBudgetOrFeedRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageWatchlistAlertBudgetOrFeedRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageWatchlistAlertBudgetOrFeedRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'monitorCode')
+    ..aI(3, _omitFieldNames ? '' : 'dailyAlertBudget')
+    ..aOS(4, _omitFieldNames ? '' : 'feedHealthState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageWatchlistAlertBudgetOrFeedRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageWatchlistAlertBudgetOrFeedRequest copyWith(
+          void Function(AdminManageWatchlistAlertBudgetOrFeedRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageWatchlistAlertBudgetOrFeedRequest))
+          as AdminManageWatchlistAlertBudgetOrFeedRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageWatchlistAlertBudgetOrFeedRequest create() =>
+      AdminManageWatchlistAlertBudgetOrFeedRequest._();
+  @$core.override
+  AdminManageWatchlistAlertBudgetOrFeedRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageWatchlistAlertBudgetOrFeedRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageWatchlistAlertBudgetOrFeedRequest>(create);
+  static AdminManageWatchlistAlertBudgetOrFeedRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get monitorCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set monitorCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMonitorCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMonitorCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get dailyAlertBudget => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set dailyAlertBudget($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDailyAlertBudget() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDailyAlertBudget() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get feedHealthState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set feedHealthState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFeedHealthState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFeedHealthState() => $_clearField(4);
+}
+
+class AdminManageWatchlistAlertBudgetOrFeedResponse
+    extends $pb.GeneratedMessage {
+  factory AdminManageWatchlistAlertBudgetOrFeedResponse({
+    OracleWatchlistEntityMonitorItem? monitor,
+  }) {
+    final result = create();
+    if (monitor != null) result.monitor = monitor;
+    return result;
+  }
+
+  AdminManageWatchlistAlertBudgetOrFeedResponse._();
+
+  factory AdminManageWatchlistAlertBudgetOrFeedResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageWatchlistAlertBudgetOrFeedResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageWatchlistAlertBudgetOrFeedResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleWatchlistEntityMonitorItem>(1, _omitFieldNames ? '' : 'monitor',
+        subBuilder: OracleWatchlistEntityMonitorItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageWatchlistAlertBudgetOrFeedResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageWatchlistAlertBudgetOrFeedResponse copyWith(
+          void Function(AdminManageWatchlistAlertBudgetOrFeedResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageWatchlistAlertBudgetOrFeedResponse))
+          as AdminManageWatchlistAlertBudgetOrFeedResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageWatchlistAlertBudgetOrFeedResponse create() =>
+      AdminManageWatchlistAlertBudgetOrFeedResponse._();
+  @$core.override
+  AdminManageWatchlistAlertBudgetOrFeedResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageWatchlistAlertBudgetOrFeedResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageWatchlistAlertBudgetOrFeedResponse>(create);
+  static AdminManageWatchlistAlertBudgetOrFeedResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleWatchlistEntityMonitorItem get monitor => $_getN(0);
+  @$pb.TagNumber(1)
+  set monitor(OracleWatchlistEntityMonitorItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMonitor() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMonitor() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleWatchlistEntityMonitorItem ensureMonitor() => $_ensure(0);
+}
+
+class OracleAssumptionDriftAlertItem extends $pb.GeneratedMessage {
+  factory OracleAssumptionDriftAlertItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? driftCode,
+    $core.String? decisionCode,
+    $core.String? assumptionCode,
+    $core.String? oldAssumptionStatement,
+    $core.String? newEvidencePassage,
+    $core.String? materialityBand,
+    $core.String? alternativeExplanation,
+    $core.String? memberDisposition,
+    $core.bool? immutablePredecessorPreserved,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (driftCode != null) result.driftCode = driftCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (assumptionCode != null) result.assumptionCode = assumptionCode;
+    if (oldAssumptionStatement != null)
+      result.oldAssumptionStatement = oldAssumptionStatement;
+    if (newEvidencePassage != null)
+      result.newEvidencePassage = newEvidencePassage;
+    if (materialityBand != null) result.materialityBand = materialityBand;
+    if (alternativeExplanation != null)
+      result.alternativeExplanation = alternativeExplanation;
+    if (memberDisposition != null) result.memberDisposition = memberDisposition;
+    if (immutablePredecessorPreserved != null)
+      result.immutablePredecessorPreserved = immutablePredecessorPreserved;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleAssumptionDriftAlertItem._();
+
+  factory OracleAssumptionDriftAlertItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleAssumptionDriftAlertItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleAssumptionDriftAlertItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'driftCode')
+    ..aOS(4, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'assumptionCode')
+    ..aOS(6, _omitFieldNames ? '' : 'oldAssumptionStatement')
+    ..aOS(7, _omitFieldNames ? '' : 'newEvidencePassage')
+    ..aOS(8, _omitFieldNames ? '' : 'materialityBand')
+    ..aOS(9, _omitFieldNames ? '' : 'alternativeExplanation')
+    ..aOS(10, _omitFieldNames ? '' : 'memberDisposition')
+    ..aOB(11, _omitFieldNames ? '' : 'immutablePredecessorPreserved')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleAssumptionDriftAlertItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleAssumptionDriftAlertItem copyWith(
+          void Function(OracleAssumptionDriftAlertItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleAssumptionDriftAlertItem))
+          as OracleAssumptionDriftAlertItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleAssumptionDriftAlertItem create() =>
+      OracleAssumptionDriftAlertItem._();
+  @$core.override
+  OracleAssumptionDriftAlertItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleAssumptionDriftAlertItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleAssumptionDriftAlertItem>(create);
+  static OracleAssumptionDriftAlertItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get driftCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set driftCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDriftCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDriftCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get decisionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set decisionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDecisionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDecisionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get assumptionCode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set assumptionCode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAssumptionCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAssumptionCode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get oldAssumptionStatement => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set oldAssumptionStatement($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOldAssumptionStatement() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOldAssumptionStatement() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get newEvidencePassage => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set newEvidencePassage($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNewEvidencePassage() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNewEvidencePassage() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get materialityBand => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set materialityBand($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMaterialityBand() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMaterialityBand() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get alternativeExplanation => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set alternativeExplanation($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAlternativeExplanation() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAlternativeExplanation() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get memberDisposition => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set memberDisposition($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasMemberDisposition() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearMemberDisposition() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get immutablePredecessorPreserved => $_getBF(10);
+  @$pb.TagNumber(11)
+  set immutablePredecessorPreserved($core.bool value) => $_setBool(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasImmutablePredecessorPreserved() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearImmutablePredecessorPreserved() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAtIso => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAtIso($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAtIso() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAtIso() => $_clearField(12);
+}
+
+class OracleDriftRadarPolicyItem extends $pb.GeneratedMessage {
+  factory OracleDriftRadarPolicyItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? policyCode,
+    $core.String? monitoredDomain,
+    $core.int? cooldownHours,
+    $core.bool? notifyOnlyIfActionPossible,
+    $core.String? radarState,
+    $core.String? falsePositiveSuppressionNote,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (policyCode != null) result.policyCode = policyCode;
+    if (monitoredDomain != null) result.monitoredDomain = monitoredDomain;
+    if (cooldownHours != null) result.cooldownHours = cooldownHours;
+    if (notifyOnlyIfActionPossible != null)
+      result.notifyOnlyIfActionPossible = notifyOnlyIfActionPossible;
+    if (radarState != null) result.radarState = radarState;
+    if (falsePositiveSuppressionNote != null)
+      result.falsePositiveSuppressionNote = falsePositiveSuppressionNote;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleDriftRadarPolicyItem._();
+
+  factory OracleDriftRadarPolicyItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleDriftRadarPolicyItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleDriftRadarPolicyItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'policyCode')
+    ..aOS(4, _omitFieldNames ? '' : 'monitoredDomain')
+    ..aI(5, _omitFieldNames ? '' : 'cooldownHours')
+    ..aOB(6, _omitFieldNames ? '' : 'notifyOnlyIfActionPossible')
+    ..aOS(7, _omitFieldNames ? '' : 'radarState')
+    ..aOS(8, _omitFieldNames ? '' : 'falsePositiveSuppressionNote')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDriftRadarPolicyItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleDriftRadarPolicyItem copyWith(
+          void Function(OracleDriftRadarPolicyItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleDriftRadarPolicyItem))
+          as OracleDriftRadarPolicyItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleDriftRadarPolicyItem create() => OracleDriftRadarPolicyItem._();
+  @$core.override
+  OracleDriftRadarPolicyItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleDriftRadarPolicyItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleDriftRadarPolicyItem>(create);
+  static OracleDriftRadarPolicyItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get policyCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set policyCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPolicyCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPolicyCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get monitoredDomain => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set monitoredDomain($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMonitoredDomain() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMonitoredDomain() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get cooldownHours => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set cooldownHours($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCooldownHours() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCooldownHours() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get notifyOnlyIfActionPossible => $_getBF(5);
+  @$pb.TagNumber(6)
+  set notifyOnlyIfActionPossible($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNotifyOnlyIfActionPossible() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNotifyOnlyIfActionPossible() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get radarState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set radarState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRadarState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRadarState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get falsePositiveSuppressionNote => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set falsePositiveSuppressionNote($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFalsePositiveSuppressionNote() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFalsePositiveSuppressionNote() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetAssumptionDriftRadarWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetAssumptionDriftRadarWorkbenchRequest() => create();
+
+  GetAssumptionDriftRadarWorkbenchRequest._();
+
+  factory GetAssumptionDriftRadarWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAssumptionDriftRadarWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAssumptionDriftRadarWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAssumptionDriftRadarWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAssumptionDriftRadarWorkbenchRequest copyWith(
+          void Function(GetAssumptionDriftRadarWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAssumptionDriftRadarWorkbenchRequest))
+          as GetAssumptionDriftRadarWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAssumptionDriftRadarWorkbenchRequest create() =>
+      GetAssumptionDriftRadarWorkbenchRequest._();
+  @$core.override
+  GetAssumptionDriftRadarWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAssumptionDriftRadarWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAssumptionDriftRadarWorkbenchRequest>(create);
+  static GetAssumptionDriftRadarWorkbenchRequest? _defaultInstance;
+}
+
+class GetAssumptionDriftRadarWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetAssumptionDriftRadarWorkbenchResponse({
+    $core.Iterable<OracleAssumptionDriftAlertItem>? driftAlerts,
+    $core.Iterable<OracleDriftRadarPolicyItem>? policies,
+    $core.bool? immutableHistoryPreserved,
+    $core.String? driftRadarBanner,
+  }) {
+    final result = create();
+    if (driftAlerts != null) result.driftAlerts.addAll(driftAlerts);
+    if (policies != null) result.policies.addAll(policies);
+    if (immutableHistoryPreserved != null)
+      result.immutableHistoryPreserved = immutableHistoryPreserved;
+    if (driftRadarBanner != null) result.driftRadarBanner = driftRadarBanner;
+    return result;
+  }
+
+  GetAssumptionDriftRadarWorkbenchResponse._();
+
+  factory GetAssumptionDriftRadarWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAssumptionDriftRadarWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAssumptionDriftRadarWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleAssumptionDriftAlertItem>(
+        1, _omitFieldNames ? '' : 'driftAlerts',
+        subBuilder: OracleAssumptionDriftAlertItem.create)
+    ..pPM<OracleDriftRadarPolicyItem>(2, _omitFieldNames ? '' : 'policies',
+        subBuilder: OracleDriftRadarPolicyItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'immutableHistoryPreserved')
+    ..aOS(4, _omitFieldNames ? '' : 'driftRadarBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAssumptionDriftRadarWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetAssumptionDriftRadarWorkbenchResponse copyWith(
+          void Function(GetAssumptionDriftRadarWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetAssumptionDriftRadarWorkbenchResponse))
+          as GetAssumptionDriftRadarWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAssumptionDriftRadarWorkbenchResponse create() =>
+      GetAssumptionDriftRadarWorkbenchResponse._();
+  @$core.override
+  GetAssumptionDriftRadarWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetAssumptionDriftRadarWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetAssumptionDriftRadarWorkbenchResponse>(create);
+  static GetAssumptionDriftRadarWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleAssumptionDriftAlertItem> get driftAlerts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleDriftRadarPolicyItem> get policies => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get immutableHistoryPreserved => $_getBF(2);
+  @$pb.TagNumber(3)
+  set immutableHistoryPreserved($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasImmutableHistoryPreserved() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearImmutableHistoryPreserved() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get driftRadarBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set driftRadarBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDriftRadarBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDriftRadarBanner() => $_clearField(4);
+}
+
+class RespondToAssumptionDriftAlertRequest extends $pb.GeneratedMessage {
+  factory RespondToAssumptionDriftAlertRequest({
+    $core.String? driftCode,
+    $core.String? decisionCode,
+    $core.String? assumptionCode,
+    $core.String? oldAssumptionStatement,
+    $core.String? newEvidencePassage,
+    $core.String? materialityBand,
+    $core.String? alternativeExplanation,
+    $core.String? memberDisposition,
+  }) {
+    final result = create();
+    if (driftCode != null) result.driftCode = driftCode;
+    if (decisionCode != null) result.decisionCode = decisionCode;
+    if (assumptionCode != null) result.assumptionCode = assumptionCode;
+    if (oldAssumptionStatement != null)
+      result.oldAssumptionStatement = oldAssumptionStatement;
+    if (newEvidencePassage != null)
+      result.newEvidencePassage = newEvidencePassage;
+    if (materialityBand != null) result.materialityBand = materialityBand;
+    if (alternativeExplanation != null)
+      result.alternativeExplanation = alternativeExplanation;
+    if (memberDisposition != null) result.memberDisposition = memberDisposition;
+    return result;
+  }
+
+  RespondToAssumptionDriftAlertRequest._();
+
+  factory RespondToAssumptionDriftAlertRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RespondToAssumptionDriftAlertRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RespondToAssumptionDriftAlertRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'driftCode')
+    ..aOS(2, _omitFieldNames ? '' : 'decisionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'assumptionCode')
+    ..aOS(4, _omitFieldNames ? '' : 'oldAssumptionStatement')
+    ..aOS(5, _omitFieldNames ? '' : 'newEvidencePassage')
+    ..aOS(6, _omitFieldNames ? '' : 'materialityBand')
+    ..aOS(7, _omitFieldNames ? '' : 'alternativeExplanation')
+    ..aOS(8, _omitFieldNames ? '' : 'memberDisposition')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondToAssumptionDriftAlertRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondToAssumptionDriftAlertRequest copyWith(
+          void Function(RespondToAssumptionDriftAlertRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RespondToAssumptionDriftAlertRequest))
+          as RespondToAssumptionDriftAlertRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondToAssumptionDriftAlertRequest create() =>
+      RespondToAssumptionDriftAlertRequest._();
+  @$core.override
+  RespondToAssumptionDriftAlertRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RespondToAssumptionDriftAlertRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RespondToAssumptionDriftAlertRequest>(create);
+  static RespondToAssumptionDriftAlertRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get driftCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set driftCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDriftCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDriftCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get decisionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set decisionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDecisionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDecisionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get assumptionCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set assumptionCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAssumptionCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAssumptionCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get oldAssumptionStatement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set oldAssumptionStatement($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOldAssumptionStatement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOldAssumptionStatement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get newEvidencePassage => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set newEvidencePassage($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNewEvidencePassage() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNewEvidencePassage() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get materialityBand => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set materialityBand($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMaterialityBand() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMaterialityBand() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get alternativeExplanation => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set alternativeExplanation($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAlternativeExplanation() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAlternativeExplanation() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get memberDisposition => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set memberDisposition($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberDisposition() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberDisposition() => $_clearField(8);
+}
+
+class RespondToAssumptionDriftAlertResponse extends $pb.GeneratedMessage {
+  factory RespondToAssumptionDriftAlertResponse({
+    OracleAssumptionDriftAlertItem? driftAlert,
+  }) {
+    final result = create();
+    if (driftAlert != null) result.driftAlert = driftAlert;
+    return result;
+  }
+
+  RespondToAssumptionDriftAlertResponse._();
+
+  factory RespondToAssumptionDriftAlertResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RespondToAssumptionDriftAlertResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RespondToAssumptionDriftAlertResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleAssumptionDriftAlertItem>(
+        1, _omitFieldNames ? '' : 'driftAlert',
+        subBuilder: OracleAssumptionDriftAlertItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondToAssumptionDriftAlertResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RespondToAssumptionDriftAlertResponse copyWith(
+          void Function(RespondToAssumptionDriftAlertResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RespondToAssumptionDriftAlertResponse))
+          as RespondToAssumptionDriftAlertResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RespondToAssumptionDriftAlertResponse create() =>
+      RespondToAssumptionDriftAlertResponse._();
+  @$core.override
+  RespondToAssumptionDriftAlertResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RespondToAssumptionDriftAlertResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RespondToAssumptionDriftAlertResponse>(create);
+  static RespondToAssumptionDriftAlertResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleAssumptionDriftAlertItem get driftAlert => $_getN(0);
+  @$pb.TagNumber(1)
+  set driftAlert(OracleAssumptionDriftAlertItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDriftAlert() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDriftAlert() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleAssumptionDriftAlertItem ensureDriftAlert() => $_ensure(0);
+}
+
+class UpdateDriftRadarPolicyRequest extends $pb.GeneratedMessage {
+  factory UpdateDriftRadarPolicyRequest({
+    $core.String? policyCode,
+    $core.String? monitoredDomain,
+    $core.int? cooldownHours,
+    $core.bool? notifyOnlyIfActionPossible,
+    $core.String? radarState,
+    $core.String? falsePositiveSuppressionNote,
+  }) {
+    final result = create();
+    if (policyCode != null) result.policyCode = policyCode;
+    if (monitoredDomain != null) result.monitoredDomain = monitoredDomain;
+    if (cooldownHours != null) result.cooldownHours = cooldownHours;
+    if (notifyOnlyIfActionPossible != null)
+      result.notifyOnlyIfActionPossible = notifyOnlyIfActionPossible;
+    if (radarState != null) result.radarState = radarState;
+    if (falsePositiveSuppressionNote != null)
+      result.falsePositiveSuppressionNote = falsePositiveSuppressionNote;
+    return result;
+  }
+
+  UpdateDriftRadarPolicyRequest._();
+
+  factory UpdateDriftRadarPolicyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateDriftRadarPolicyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateDriftRadarPolicyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'policyCode')
+    ..aOS(2, _omitFieldNames ? '' : 'monitoredDomain')
+    ..aI(3, _omitFieldNames ? '' : 'cooldownHours')
+    ..aOB(4, _omitFieldNames ? '' : 'notifyOnlyIfActionPossible')
+    ..aOS(5, _omitFieldNames ? '' : 'radarState')
+    ..aOS(6, _omitFieldNames ? '' : 'falsePositiveSuppressionNote')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDriftRadarPolicyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDriftRadarPolicyRequest copyWith(
+          void Function(UpdateDriftRadarPolicyRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateDriftRadarPolicyRequest))
+          as UpdateDriftRadarPolicyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateDriftRadarPolicyRequest create() =>
+      UpdateDriftRadarPolicyRequest._();
+  @$core.override
+  UpdateDriftRadarPolicyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateDriftRadarPolicyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateDriftRadarPolicyRequest>(create);
+  static UpdateDriftRadarPolicyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get policyCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set policyCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicyCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicyCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get monitoredDomain => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set monitoredDomain($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMonitoredDomain() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMonitoredDomain() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get cooldownHours => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set cooldownHours($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCooldownHours() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCooldownHours() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get notifyOnlyIfActionPossible => $_getBF(3);
+  @$pb.TagNumber(4)
+  set notifyOnlyIfActionPossible($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNotifyOnlyIfActionPossible() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNotifyOnlyIfActionPossible() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get radarState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set radarState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRadarState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRadarState() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get falsePositiveSuppressionNote => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set falsePositiveSuppressionNote($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFalsePositiveSuppressionNote() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFalsePositiveSuppressionNote() => $_clearField(6);
+}
+
+class UpdateDriftRadarPolicyResponse extends $pb.GeneratedMessage {
+  factory UpdateDriftRadarPolicyResponse({
+    OracleDriftRadarPolicyItem? policy,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    return result;
+  }
+
+  UpdateDriftRadarPolicyResponse._();
+
+  factory UpdateDriftRadarPolicyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateDriftRadarPolicyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateDriftRadarPolicyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleDriftRadarPolicyItem>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OracleDriftRadarPolicyItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDriftRadarPolicyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateDriftRadarPolicyResponse copyWith(
+          void Function(UpdateDriftRadarPolicyResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateDriftRadarPolicyResponse))
+          as UpdateDriftRadarPolicyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateDriftRadarPolicyResponse create() =>
+      UpdateDriftRadarPolicyResponse._();
+  @$core.override
+  UpdateDriftRadarPolicyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateDriftRadarPolicyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateDriftRadarPolicyResponse>(create);
+  static UpdateDriftRadarPolicyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleDriftRadarPolicyItem get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OracleDriftRadarPolicyItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleDriftRadarPolicyItem ensurePolicy() => $_ensure(0);
+}
+
+class AdminListAssumptionDriftRadarAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListAssumptionDriftRadarAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListAssumptionDriftRadarAuditRequest._();
+
+  factory AdminListAssumptionDriftRadarAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListAssumptionDriftRadarAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListAssumptionDriftRadarAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAssumptionDriftRadarAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAssumptionDriftRadarAuditRequest copyWith(
+          void Function(AdminListAssumptionDriftRadarAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListAssumptionDriftRadarAuditRequest))
+          as AdminListAssumptionDriftRadarAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListAssumptionDriftRadarAuditRequest create() =>
+      AdminListAssumptionDriftRadarAuditRequest._();
+  @$core.override
+  AdminListAssumptionDriftRadarAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListAssumptionDriftRadarAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListAssumptionDriftRadarAuditRequest>(create);
+  static AdminListAssumptionDriftRadarAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListAssumptionDriftRadarAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListAssumptionDriftRadarAuditResponse({
+    $core.Iterable<OracleAssumptionDriftAlertItem>? driftAlerts,
+    $core.Iterable<OracleDriftRadarPolicyItem>? policies,
+  }) {
+    final result = create();
+    if (driftAlerts != null) result.driftAlerts.addAll(driftAlerts);
+    if (policies != null) result.policies.addAll(policies);
+    return result;
+  }
+
+  AdminListAssumptionDriftRadarAuditResponse._();
+
+  factory AdminListAssumptionDriftRadarAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListAssumptionDriftRadarAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListAssumptionDriftRadarAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleAssumptionDriftAlertItem>(
+        1, _omitFieldNames ? '' : 'driftAlerts',
+        subBuilder: OracleAssumptionDriftAlertItem.create)
+    ..pPM<OracleDriftRadarPolicyItem>(2, _omitFieldNames ? '' : 'policies',
+        subBuilder: OracleDriftRadarPolicyItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAssumptionDriftRadarAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListAssumptionDriftRadarAuditResponse copyWith(
+          void Function(AdminListAssumptionDriftRadarAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListAssumptionDriftRadarAuditResponse))
+          as AdminListAssumptionDriftRadarAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListAssumptionDriftRadarAuditResponse create() =>
+      AdminListAssumptionDriftRadarAuditResponse._();
+  @$core.override
+  AdminListAssumptionDriftRadarAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListAssumptionDriftRadarAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListAssumptionDriftRadarAuditResponse>(create);
+  static AdminListAssumptionDriftRadarAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleAssumptionDriftAlertItem> get driftAlerts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleDriftRadarPolicyItem> get policies => $_getList(1);
+}
+
+class AdminCalibrateDriftThresholdOrDomainRequest extends $pb.GeneratedMessage {
+  factory AdminCalibrateDriftThresholdOrDomainRequest({
+    $core.String? targetUserId,
+    $core.String? policyCode,
+    $core.int? cooldownHours,
+    $core.String? radarState,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (policyCode != null) result.policyCode = policyCode;
+    if (cooldownHours != null) result.cooldownHours = cooldownHours;
+    if (radarState != null) result.radarState = radarState;
+    return result;
+  }
+
+  AdminCalibrateDriftThresholdOrDomainRequest._();
+
+  factory AdminCalibrateDriftThresholdOrDomainRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCalibrateDriftThresholdOrDomainRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminCalibrateDriftThresholdOrDomainRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'policyCode')
+    ..aI(3, _omitFieldNames ? '' : 'cooldownHours')
+    ..aOS(4, _omitFieldNames ? '' : 'radarState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCalibrateDriftThresholdOrDomainRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCalibrateDriftThresholdOrDomainRequest copyWith(
+          void Function(AdminCalibrateDriftThresholdOrDomainRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminCalibrateDriftThresholdOrDomainRequest))
+          as AdminCalibrateDriftThresholdOrDomainRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCalibrateDriftThresholdOrDomainRequest create() =>
+      AdminCalibrateDriftThresholdOrDomainRequest._();
+  @$core.override
+  AdminCalibrateDriftThresholdOrDomainRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCalibrateDriftThresholdOrDomainRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCalibrateDriftThresholdOrDomainRequest>(create);
+  static AdminCalibrateDriftThresholdOrDomainRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get policyCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set policyCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPolicyCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPolicyCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get cooldownHours => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set cooldownHours($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCooldownHours() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCooldownHours() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get radarState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set radarState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRadarState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRadarState() => $_clearField(4);
+}
+
+class AdminCalibrateDriftThresholdOrDomainResponse
+    extends $pb.GeneratedMessage {
+  factory AdminCalibrateDriftThresholdOrDomainResponse({
+    OracleDriftRadarPolicyItem? policy,
+  }) {
+    final result = create();
+    if (policy != null) result.policy = policy;
+    return result;
+  }
+
+  AdminCalibrateDriftThresholdOrDomainResponse._();
+
+  factory AdminCalibrateDriftThresholdOrDomainResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCalibrateDriftThresholdOrDomainResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminCalibrateDriftThresholdOrDomainResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleDriftRadarPolicyItem>(1, _omitFieldNames ? '' : 'policy',
+        subBuilder: OracleDriftRadarPolicyItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCalibrateDriftThresholdOrDomainResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCalibrateDriftThresholdOrDomainResponse copyWith(
+          void Function(AdminCalibrateDriftThresholdOrDomainResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminCalibrateDriftThresholdOrDomainResponse))
+          as AdminCalibrateDriftThresholdOrDomainResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCalibrateDriftThresholdOrDomainResponse create() =>
+      AdminCalibrateDriftThresholdOrDomainResponse._();
+  @$core.override
+  AdminCalibrateDriftThresholdOrDomainResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCalibrateDriftThresholdOrDomainResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCalibrateDriftThresholdOrDomainResponse>(create);
+  static AdminCalibrateDriftThresholdOrDomainResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleDriftRadarPolicyItem get policy => $_getN(0);
+  @$pb.TagNumber(1)
+  set policy(OracleDriftRadarPolicyItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPolicy() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPolicy() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleDriftRadarPolicyItem ensurePolicy() => $_ensure(0);
+}
+
+class OracleForecastQuestionItem extends $pb.GeneratedMessage {
+  factory OracleForecastQuestionItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? forecastCode,
+    $core.String? questionStatement,
+    $core.String? resolutionCriteriaAndSource,
+    $core.int? probabilityBps,
+    $core.int? confidenceBandBps,
+    $core.String? baseRateAnchor,
+    $core.String? scenarioStressBranches,
+    $core.String? resolutionState,
+    $core.int? brierScoreMilli,
+    $core.bool? isolatedSandboxVerified,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (forecastCode != null) result.forecastCode = forecastCode;
+    if (questionStatement != null) result.questionStatement = questionStatement;
+    if (resolutionCriteriaAndSource != null)
+      result.resolutionCriteriaAndSource = resolutionCriteriaAndSource;
+    if (probabilityBps != null) result.probabilityBps = probabilityBps;
+    if (confidenceBandBps != null) result.confidenceBandBps = confidenceBandBps;
+    if (baseRateAnchor != null) result.baseRateAnchor = baseRateAnchor;
+    if (scenarioStressBranches != null)
+      result.scenarioStressBranches = scenarioStressBranches;
+    if (resolutionState != null) result.resolutionState = resolutionState;
+    if (brierScoreMilli != null) result.brierScoreMilli = brierScoreMilli;
+    if (isolatedSandboxVerified != null)
+      result.isolatedSandboxVerified = isolatedSandboxVerified;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleForecastQuestionItem._();
+
+  factory OracleForecastQuestionItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleForecastQuestionItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleForecastQuestionItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'forecastCode')
+    ..aOS(4, _omitFieldNames ? '' : 'questionStatement')
+    ..aOS(5, _omitFieldNames ? '' : 'resolutionCriteriaAndSource')
+    ..aI(6, _omitFieldNames ? '' : 'probabilityBps')
+    ..aI(7, _omitFieldNames ? '' : 'confidenceBandBps')
+    ..aOS(8, _omitFieldNames ? '' : 'baseRateAnchor')
+    ..aOS(9, _omitFieldNames ? '' : 'scenarioStressBranches')
+    ..aOS(10, _omitFieldNames ? '' : 'resolutionState')
+    ..aI(11, _omitFieldNames ? '' : 'brierScoreMilli')
+    ..aOB(12, _omitFieldNames ? '' : 'isolatedSandboxVerified')
+    ..aOS(13, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleForecastQuestionItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleForecastQuestionItem copyWith(
+          void Function(OracleForecastQuestionItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleForecastQuestionItem))
+          as OracleForecastQuestionItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleForecastQuestionItem create() => OracleForecastQuestionItem._();
+  @$core.override
+  OracleForecastQuestionItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleForecastQuestionItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleForecastQuestionItem>(create);
+  static OracleForecastQuestionItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get forecastCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set forecastCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasForecastCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearForecastCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get questionStatement => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set questionStatement($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasQuestionStatement() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearQuestionStatement() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get resolutionCriteriaAndSource => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set resolutionCriteriaAndSource($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasResolutionCriteriaAndSource() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearResolutionCriteriaAndSource() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get probabilityBps => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set probabilityBps($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProbabilityBps() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProbabilityBps() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get confidenceBandBps => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set confidenceBandBps($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasConfidenceBandBps() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearConfidenceBandBps() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get baseRateAnchor => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set baseRateAnchor($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasBaseRateAnchor() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBaseRateAnchor() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get scenarioStressBranches => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set scenarioStressBranches($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasScenarioStressBranches() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearScenarioStressBranches() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get resolutionState => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set resolutionState($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasResolutionState() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearResolutionState() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.int get brierScoreMilli => $_getIZ(10);
+  @$pb.TagNumber(11)
+  set brierScoreMilli($core.int value) => $_setSignedInt32(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasBrierScoreMilli() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearBrierScoreMilli() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.bool get isolatedSandboxVerified => $_getBF(11);
+  @$pb.TagNumber(12)
+  set isolatedSandboxVerified($core.bool value) => $_setBool(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasIsolatedSandboxVerified() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearIsolatedSandboxVerified() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get updatedAtIso => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set updatedAtIso($core.String value) => $_setString(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasUpdatedAtIso() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearUpdatedAtIso() => $_clearField(13);
+}
+
+class OracleCalibrationLabExperimentItem extends $pb.GeneratedMessage {
+  factory OracleCalibrationLabExperimentItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? experimentCode,
+    $core.String? domainAndHorizon,
+    $core.int? sampleSizeCount,
+    $core.String? omissionPatternTracked,
+    $core.String? practiceExperimentRule,
+    $core.int? predeclaredBaselineBrierMilli,
+    $core.int? observedBrierMilli,
+    $core.bool? privateByDefault,
+    $core.String? labStatus,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (experimentCode != null) result.experimentCode = experimentCode;
+    if (domainAndHorizon != null) result.domainAndHorizon = domainAndHorizon;
+    if (sampleSizeCount != null) result.sampleSizeCount = sampleSizeCount;
+    if (omissionPatternTracked != null)
+      result.omissionPatternTracked = omissionPatternTracked;
+    if (practiceExperimentRule != null)
+      result.practiceExperimentRule = practiceExperimentRule;
+    if (predeclaredBaselineBrierMilli != null)
+      result.predeclaredBaselineBrierMilli = predeclaredBaselineBrierMilli;
+    if (observedBrierMilli != null)
+      result.observedBrierMilli = observedBrierMilli;
+    if (privateByDefault != null) result.privateByDefault = privateByDefault;
+    if (labStatus != null) result.labStatus = labStatus;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleCalibrationLabExperimentItem._();
+
+  factory OracleCalibrationLabExperimentItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleCalibrationLabExperimentItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleCalibrationLabExperimentItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'experimentCode')
+    ..aOS(4, _omitFieldNames ? '' : 'domainAndHorizon')
+    ..aI(5, _omitFieldNames ? '' : 'sampleSizeCount')
+    ..aOS(6, _omitFieldNames ? '' : 'omissionPatternTracked')
+    ..aOS(7, _omitFieldNames ? '' : 'practiceExperimentRule')
+    ..aI(8, _omitFieldNames ? '' : 'predeclaredBaselineBrierMilli')
+    ..aI(9, _omitFieldNames ? '' : 'observedBrierMilli')
+    ..aOB(10, _omitFieldNames ? '' : 'privateByDefault')
+    ..aOS(11, _omitFieldNames ? '' : 'labStatus')
+    ..aOS(12, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCalibrationLabExperimentItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleCalibrationLabExperimentItem copyWith(
+          void Function(OracleCalibrationLabExperimentItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleCalibrationLabExperimentItem))
+          as OracleCalibrationLabExperimentItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleCalibrationLabExperimentItem create() =>
+      OracleCalibrationLabExperimentItem._();
+  @$core.override
+  OracleCalibrationLabExperimentItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleCalibrationLabExperimentItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleCalibrationLabExperimentItem>(
+          create);
+  static OracleCalibrationLabExperimentItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get experimentCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set experimentCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExperimentCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExperimentCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get domainAndHorizon => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set domainAndHorizon($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDomainAndHorizon() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDomainAndHorizon() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get sampleSizeCount => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set sampleSizeCount($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSampleSizeCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSampleSizeCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get omissionPatternTracked => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set omissionPatternTracked($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOmissionPatternTracked() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOmissionPatternTracked() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get practiceExperimentRule => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set practiceExperimentRule($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPracticeExperimentRule() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPracticeExperimentRule() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.int get predeclaredBaselineBrierMilli => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set predeclaredBaselineBrierMilli($core.int value) =>
+      $_setSignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPredeclaredBaselineBrierMilli() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPredeclaredBaselineBrierMilli() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get observedBrierMilli => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set observedBrierMilli($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasObservedBrierMilli() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearObservedBrierMilli() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get privateByDefault => $_getBF(9);
+  @$pb.TagNumber(10)
+  set privateByDefault($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasPrivateByDefault() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearPrivateByDefault() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get labStatus => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set labStatus($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasLabStatus() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearLabStatus() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get updatedAtIso => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set updatedAtIso($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAtIso() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAtIso() => $_clearField(12);
+}
+
+class GetForecastingCalibrationWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetForecastingCalibrationWorkbenchRequest() => create();
+
+  GetForecastingCalibrationWorkbenchRequest._();
+
+  factory GetForecastingCalibrationWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetForecastingCalibrationWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetForecastingCalibrationWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForecastingCalibrationWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForecastingCalibrationWorkbenchRequest copyWith(
+          void Function(GetForecastingCalibrationWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetForecastingCalibrationWorkbenchRequest))
+          as GetForecastingCalibrationWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForecastingCalibrationWorkbenchRequest create() =>
+      GetForecastingCalibrationWorkbenchRequest._();
+  @$core.override
+  GetForecastingCalibrationWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetForecastingCalibrationWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetForecastingCalibrationWorkbenchRequest>(create);
+  static GetForecastingCalibrationWorkbenchRequest? _defaultInstance;
+}
+
+class GetForecastingCalibrationWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetForecastingCalibrationWorkbenchResponse({
+    $core.Iterable<OracleForecastQuestionItem>? forecasts,
+    $core.Iterable<OracleCalibrationLabExperimentItem>? experiments,
+    $core.bool? privateEpistemicLearningEnforced,
+    $core.String? calibrationBanner,
+  }) {
+    final result = create();
+    if (forecasts != null) result.forecasts.addAll(forecasts);
+    if (experiments != null) result.experiments.addAll(experiments);
+    if (privateEpistemicLearningEnforced != null)
+      result.privateEpistemicLearningEnforced =
+          privateEpistemicLearningEnforced;
+    if (calibrationBanner != null) result.calibrationBanner = calibrationBanner;
+    return result;
+  }
+
+  GetForecastingCalibrationWorkbenchResponse._();
+
+  factory GetForecastingCalibrationWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetForecastingCalibrationWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetForecastingCalibrationWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleForecastQuestionItem>(1, _omitFieldNames ? '' : 'forecasts',
+        subBuilder: OracleForecastQuestionItem.create)
+    ..pPM<OracleCalibrationLabExperimentItem>(
+        2, _omitFieldNames ? '' : 'experiments',
+        subBuilder: OracleCalibrationLabExperimentItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'privateEpistemicLearningEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'calibrationBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForecastingCalibrationWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetForecastingCalibrationWorkbenchResponse copyWith(
+          void Function(GetForecastingCalibrationWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetForecastingCalibrationWorkbenchResponse))
+          as GetForecastingCalibrationWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetForecastingCalibrationWorkbenchResponse create() =>
+      GetForecastingCalibrationWorkbenchResponse._();
+  @$core.override
+  GetForecastingCalibrationWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetForecastingCalibrationWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetForecastingCalibrationWorkbenchResponse>(create);
+  static GetForecastingCalibrationWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleForecastQuestionItem> get forecasts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCalibrationLabExperimentItem> get experiments =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get privateEpistemicLearningEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set privateEpistemicLearningEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrivateEpistemicLearningEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrivateEpistemicLearningEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get calibrationBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set calibrationBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCalibrationBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCalibrationBanner() => $_clearField(4);
+}
+
+class CreateOrResolveForecastQuestionRequest extends $pb.GeneratedMessage {
+  factory CreateOrResolveForecastQuestionRequest({
+    $core.String? forecastCode,
+    $core.String? questionStatement,
+    $core.String? resolutionCriteriaAndSource,
+    $core.int? probabilityBps,
+    $core.int? confidenceBandBps,
+    $core.String? baseRateAnchor,
+    $core.String? scenarioStressBranches,
+    $core.String? resolutionState,
+    $core.int? brierScoreMilli,
+  }) {
+    final result = create();
+    if (forecastCode != null) result.forecastCode = forecastCode;
+    if (questionStatement != null) result.questionStatement = questionStatement;
+    if (resolutionCriteriaAndSource != null)
+      result.resolutionCriteriaAndSource = resolutionCriteriaAndSource;
+    if (probabilityBps != null) result.probabilityBps = probabilityBps;
+    if (confidenceBandBps != null) result.confidenceBandBps = confidenceBandBps;
+    if (baseRateAnchor != null) result.baseRateAnchor = baseRateAnchor;
+    if (scenarioStressBranches != null)
+      result.scenarioStressBranches = scenarioStressBranches;
+    if (resolutionState != null) result.resolutionState = resolutionState;
+    if (brierScoreMilli != null) result.brierScoreMilli = brierScoreMilli;
+    return result;
+  }
+
+  CreateOrResolveForecastQuestionRequest._();
+
+  factory CreateOrResolveForecastQuestionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrResolveForecastQuestionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrResolveForecastQuestionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'forecastCode')
+    ..aOS(2, _omitFieldNames ? '' : 'questionStatement')
+    ..aOS(3, _omitFieldNames ? '' : 'resolutionCriteriaAndSource')
+    ..aI(4, _omitFieldNames ? '' : 'probabilityBps')
+    ..aI(5, _omitFieldNames ? '' : 'confidenceBandBps')
+    ..aOS(6, _omitFieldNames ? '' : 'baseRateAnchor')
+    ..aOS(7, _omitFieldNames ? '' : 'scenarioStressBranches')
+    ..aOS(8, _omitFieldNames ? '' : 'resolutionState')
+    ..aI(9, _omitFieldNames ? '' : 'brierScoreMilli')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrResolveForecastQuestionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrResolveForecastQuestionRequest copyWith(
+          void Function(CreateOrResolveForecastQuestionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrResolveForecastQuestionRequest))
+          as CreateOrResolveForecastQuestionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrResolveForecastQuestionRequest create() =>
+      CreateOrResolveForecastQuestionRequest._();
+  @$core.override
+  CreateOrResolveForecastQuestionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrResolveForecastQuestionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrResolveForecastQuestionRequest>(create);
+  static CreateOrResolveForecastQuestionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get forecastCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set forecastCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForecastCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForecastCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get questionStatement => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set questionStatement($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasQuestionStatement() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuestionStatement() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resolutionCriteriaAndSource => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resolutionCriteriaAndSource($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResolutionCriteriaAndSource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResolutionCriteriaAndSource() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get probabilityBps => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set probabilityBps($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProbabilityBps() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProbabilityBps() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get confidenceBandBps => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set confidenceBandBps($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasConfidenceBandBps() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConfidenceBandBps() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get baseRateAnchor => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set baseRateAnchor($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBaseRateAnchor() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBaseRateAnchor() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get scenarioStressBranches => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set scenarioStressBranches($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScenarioStressBranches() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScenarioStressBranches() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get resolutionState => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set resolutionState($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasResolutionState() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearResolutionState() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get brierScoreMilli => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set brierScoreMilli($core.int value) => $_setSignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasBrierScoreMilli() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearBrierScoreMilli() => $_clearField(9);
+}
+
+class CreateOrResolveForecastQuestionResponse extends $pb.GeneratedMessage {
+  factory CreateOrResolveForecastQuestionResponse({
+    OracleForecastQuestionItem? forecast,
+  }) {
+    final result = create();
+    if (forecast != null) result.forecast = forecast;
+    return result;
+  }
+
+  CreateOrResolveForecastQuestionResponse._();
+
+  factory CreateOrResolveForecastQuestionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrResolveForecastQuestionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrResolveForecastQuestionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleForecastQuestionItem>(1, _omitFieldNames ? '' : 'forecast',
+        subBuilder: OracleForecastQuestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrResolveForecastQuestionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrResolveForecastQuestionResponse copyWith(
+          void Function(CreateOrResolveForecastQuestionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrResolveForecastQuestionResponse))
+          as CreateOrResolveForecastQuestionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrResolveForecastQuestionResponse create() =>
+      CreateOrResolveForecastQuestionResponse._();
+  @$core.override
+  CreateOrResolveForecastQuestionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrResolveForecastQuestionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrResolveForecastQuestionResponse>(create);
+  static CreateOrResolveForecastQuestionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleForecastQuestionItem get forecast => $_getN(0);
+  @$pb.TagNumber(1)
+  set forecast(OracleForecastQuestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForecast() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForecast() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleForecastQuestionItem ensureForecast() => $_ensure(0);
+}
+
+class RecordCalibrationLabExperimentRequest extends $pb.GeneratedMessage {
+  factory RecordCalibrationLabExperimentRequest({
+    $core.String? experimentCode,
+    $core.String? domainAndHorizon,
+    $core.int? sampleSizeCount,
+    $core.String? omissionPatternTracked,
+    $core.String? practiceExperimentRule,
+    $core.int? predeclaredBaselineBrierMilli,
+    $core.int? observedBrierMilli,
+    $core.String? labStatus,
+  }) {
+    final result = create();
+    if (experimentCode != null) result.experimentCode = experimentCode;
+    if (domainAndHorizon != null) result.domainAndHorizon = domainAndHorizon;
+    if (sampleSizeCount != null) result.sampleSizeCount = sampleSizeCount;
+    if (omissionPatternTracked != null)
+      result.omissionPatternTracked = omissionPatternTracked;
+    if (practiceExperimentRule != null)
+      result.practiceExperimentRule = practiceExperimentRule;
+    if (predeclaredBaselineBrierMilli != null)
+      result.predeclaredBaselineBrierMilli = predeclaredBaselineBrierMilli;
+    if (observedBrierMilli != null)
+      result.observedBrierMilli = observedBrierMilli;
+    if (labStatus != null) result.labStatus = labStatus;
+    return result;
+  }
+
+  RecordCalibrationLabExperimentRequest._();
+
+  factory RecordCalibrationLabExperimentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCalibrationLabExperimentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCalibrationLabExperimentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'experimentCode')
+    ..aOS(2, _omitFieldNames ? '' : 'domainAndHorizon')
+    ..aI(3, _omitFieldNames ? '' : 'sampleSizeCount')
+    ..aOS(4, _omitFieldNames ? '' : 'omissionPatternTracked')
+    ..aOS(5, _omitFieldNames ? '' : 'practiceExperimentRule')
+    ..aI(6, _omitFieldNames ? '' : 'predeclaredBaselineBrierMilli')
+    ..aI(7, _omitFieldNames ? '' : 'observedBrierMilli')
+    ..aOS(8, _omitFieldNames ? '' : 'labStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCalibrationLabExperimentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCalibrationLabExperimentRequest copyWith(
+          void Function(RecordCalibrationLabExperimentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCalibrationLabExperimentRequest))
+          as RecordCalibrationLabExperimentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCalibrationLabExperimentRequest create() =>
+      RecordCalibrationLabExperimentRequest._();
+  @$core.override
+  RecordCalibrationLabExperimentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCalibrationLabExperimentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordCalibrationLabExperimentRequest>(create);
+  static RecordCalibrationLabExperimentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get experimentCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set experimentCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperimentCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperimentCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get domainAndHorizon => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set domainAndHorizon($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDomainAndHorizon() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDomainAndHorizon() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get sampleSizeCount => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set sampleSizeCount($core.int value) => $_setSignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSampleSizeCount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSampleSizeCount() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get omissionPatternTracked => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set omissionPatternTracked($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOmissionPatternTracked() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOmissionPatternTracked() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get practiceExperimentRule => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set practiceExperimentRule($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPracticeExperimentRule() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPracticeExperimentRule() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get predeclaredBaselineBrierMilli => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set predeclaredBaselineBrierMilli($core.int value) =>
+      $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPredeclaredBaselineBrierMilli() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPredeclaredBaselineBrierMilli() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get observedBrierMilli => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set observedBrierMilli($core.int value) => $_setSignedInt32(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasObservedBrierMilli() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearObservedBrierMilli() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get labStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set labStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLabStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLabStatus() => $_clearField(8);
+}
+
+class RecordCalibrationLabExperimentResponse extends $pb.GeneratedMessage {
+  factory RecordCalibrationLabExperimentResponse({
+    OracleCalibrationLabExperimentItem? experiment,
+  }) {
+    final result = create();
+    if (experiment != null) result.experiment = experiment;
+    return result;
+  }
+
+  RecordCalibrationLabExperimentResponse._();
+
+  factory RecordCalibrationLabExperimentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecordCalibrationLabExperimentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecordCalibrationLabExperimentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleCalibrationLabExperimentItem>(
+        1, _omitFieldNames ? '' : 'experiment',
+        subBuilder: OracleCalibrationLabExperimentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCalibrationLabExperimentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RecordCalibrationLabExperimentResponse copyWith(
+          void Function(RecordCalibrationLabExperimentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as RecordCalibrationLabExperimentResponse))
+          as RecordCalibrationLabExperimentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RecordCalibrationLabExperimentResponse create() =>
+      RecordCalibrationLabExperimentResponse._();
+  @$core.override
+  RecordCalibrationLabExperimentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RecordCalibrationLabExperimentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RecordCalibrationLabExperimentResponse>(create);
+  static RecordCalibrationLabExperimentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleCalibrationLabExperimentItem get experiment => $_getN(0);
+  @$pb.TagNumber(1)
+  set experiment(OracleCalibrationLabExperimentItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasExperiment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearExperiment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleCalibrationLabExperimentItem ensureExperiment() => $_ensure(0);
+}
+
+class AdminListForecastingCalibrationAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListForecastingCalibrationAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListForecastingCalibrationAuditRequest._();
+
+  factory AdminListForecastingCalibrationAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListForecastingCalibrationAuditRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListForecastingCalibrationAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListForecastingCalibrationAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListForecastingCalibrationAuditRequest copyWith(
+          void Function(AdminListForecastingCalibrationAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListForecastingCalibrationAuditRequest))
+          as AdminListForecastingCalibrationAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListForecastingCalibrationAuditRequest create() =>
+      AdminListForecastingCalibrationAuditRequest._();
+  @$core.override
+  AdminListForecastingCalibrationAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListForecastingCalibrationAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListForecastingCalibrationAuditRequest>(create);
+  static AdminListForecastingCalibrationAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListForecastingCalibrationAuditResponse
+    extends $pb.GeneratedMessage {
+  factory AdminListForecastingCalibrationAuditResponse({
+    $core.Iterable<OracleForecastQuestionItem>? forecasts,
+    $core.Iterable<OracleCalibrationLabExperimentItem>? experiments,
+  }) {
+    final result = create();
+    if (forecasts != null) result.forecasts.addAll(forecasts);
+    if (experiments != null) result.experiments.addAll(experiments);
+    return result;
+  }
+
+  AdminListForecastingCalibrationAuditResponse._();
+
+  factory AdminListForecastingCalibrationAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListForecastingCalibrationAuditResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListForecastingCalibrationAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleForecastQuestionItem>(1, _omitFieldNames ? '' : 'forecasts',
+        subBuilder: OracleForecastQuestionItem.create)
+    ..pPM<OracleCalibrationLabExperimentItem>(
+        2, _omitFieldNames ? '' : 'experiments',
+        subBuilder: OracleCalibrationLabExperimentItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListForecastingCalibrationAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListForecastingCalibrationAuditResponse copyWith(
+          void Function(AdminListForecastingCalibrationAuditResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListForecastingCalibrationAuditResponse))
+          as AdminListForecastingCalibrationAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListForecastingCalibrationAuditResponse create() =>
+      AdminListForecastingCalibrationAuditResponse._();
+  @$core.override
+  AdminListForecastingCalibrationAuditResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListForecastingCalibrationAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListForecastingCalibrationAuditResponse>(create);
+  static AdminListForecastingCalibrationAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleForecastQuestionItem> get forecasts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleCalibrationLabExperimentItem> get experiments =>
+      $_getList(1);
+}
+
+class AdminVerifyForecastResolutionOrSandboxRequest
+    extends $pb.GeneratedMessage {
+  factory AdminVerifyForecastResolutionOrSandboxRequest({
+    $core.String? targetUserId,
+    $core.String? forecastCode,
+    $core.String? resolutionState,
+    $core.int? brierScoreMilli,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (forecastCode != null) result.forecastCode = forecastCode;
+    if (resolutionState != null) result.resolutionState = resolutionState;
+    if (brierScoreMilli != null) result.brierScoreMilli = brierScoreMilli;
+    return result;
+  }
+
+  AdminVerifyForecastResolutionOrSandboxRequest._();
+
+  factory AdminVerifyForecastResolutionOrSandboxRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminVerifyForecastResolutionOrSandboxRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminVerifyForecastResolutionOrSandboxRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'forecastCode')
+    ..aOS(3, _omitFieldNames ? '' : 'resolutionState')
+    ..aI(4, _omitFieldNames ? '' : 'brierScoreMilli')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminVerifyForecastResolutionOrSandboxRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminVerifyForecastResolutionOrSandboxRequest copyWith(
+          void Function(AdminVerifyForecastResolutionOrSandboxRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminVerifyForecastResolutionOrSandboxRequest))
+          as AdminVerifyForecastResolutionOrSandboxRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminVerifyForecastResolutionOrSandboxRequest create() =>
+      AdminVerifyForecastResolutionOrSandboxRequest._();
+  @$core.override
+  AdminVerifyForecastResolutionOrSandboxRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminVerifyForecastResolutionOrSandboxRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminVerifyForecastResolutionOrSandboxRequest>(create);
+  static AdminVerifyForecastResolutionOrSandboxRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get forecastCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set forecastCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasForecastCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearForecastCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resolutionState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resolutionState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasResolutionState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResolutionState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get brierScoreMilli => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set brierScoreMilli($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBrierScoreMilli() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBrierScoreMilli() => $_clearField(4);
+}
+
+class AdminVerifyForecastResolutionOrSandboxResponse
+    extends $pb.GeneratedMessage {
+  factory AdminVerifyForecastResolutionOrSandboxResponse({
+    OracleForecastQuestionItem? forecast,
+  }) {
+    final result = create();
+    if (forecast != null) result.forecast = forecast;
+    return result;
+  }
+
+  AdminVerifyForecastResolutionOrSandboxResponse._();
+
+  factory AdminVerifyForecastResolutionOrSandboxResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminVerifyForecastResolutionOrSandboxResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminVerifyForecastResolutionOrSandboxResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleForecastQuestionItem>(1, _omitFieldNames ? '' : 'forecast',
+        subBuilder: OracleForecastQuestionItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminVerifyForecastResolutionOrSandboxResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminVerifyForecastResolutionOrSandboxResponse copyWith(
+          void Function(AdminVerifyForecastResolutionOrSandboxResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminVerifyForecastResolutionOrSandboxResponse))
+          as AdminVerifyForecastResolutionOrSandboxResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminVerifyForecastResolutionOrSandboxResponse create() =>
+      AdminVerifyForecastResolutionOrSandboxResponse._();
+  @$core.override
+  AdminVerifyForecastResolutionOrSandboxResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminVerifyForecastResolutionOrSandboxResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminVerifyForecastResolutionOrSandboxResponse>(create);
+  static AdminVerifyForecastResolutionOrSandboxResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleForecastQuestionItem get forecast => $_getN(0);
+  @$pb.TagNumber(1)
+  set forecast(OracleForecastQuestionItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasForecast() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearForecast() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleForecastQuestionItem ensureForecast() => $_ensure(0);
+}
+
+class OracleMeetingNegotiationBriefItem extends $pb.GeneratedMessage {
+  factory OracleMeetingNegotiationBriefItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? meetingCode,
+    $core.String? titleAndCounterpart,
+    $core.String? jurisdictionConsentMode,
+    $core.String? batnaAndRedLines,
+    $core.String? counterpartRehearsalStyle,
+    $core.String? missingEvidenceCitations,
+    $core.String? captureState,
+    $core.bool? unconsentedAudioRefused,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (meetingCode != null) result.meetingCode = meetingCode;
+    if (titleAndCounterpart != null)
+      result.titleAndCounterpart = titleAndCounterpart;
+    if (jurisdictionConsentMode != null)
+      result.jurisdictionConsentMode = jurisdictionConsentMode;
+    if (batnaAndRedLines != null) result.batnaAndRedLines = batnaAndRedLines;
+    if (counterpartRehearsalStyle != null)
+      result.counterpartRehearsalStyle = counterpartRehearsalStyle;
+    if (missingEvidenceCitations != null)
+      result.missingEvidenceCitations = missingEvidenceCitations;
+    if (captureState != null) result.captureState = captureState;
+    if (unconsentedAudioRefused != null)
+      result.unconsentedAudioRefused = unconsentedAudioRefused;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleMeetingNegotiationBriefItem._();
+
+  factory OracleMeetingNegotiationBriefItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleMeetingNegotiationBriefItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleMeetingNegotiationBriefItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'meetingCode')
+    ..aOS(4, _omitFieldNames ? '' : 'titleAndCounterpart')
+    ..aOS(5, _omitFieldNames ? '' : 'jurisdictionConsentMode')
+    ..aOS(6, _omitFieldNames ? '' : 'batnaAndRedLines')
+    ..aOS(7, _omitFieldNames ? '' : 'counterpartRehearsalStyle')
+    ..aOS(8, _omitFieldNames ? '' : 'missingEvidenceCitations')
+    ..aOS(9, _omitFieldNames ? '' : 'captureState')
+    ..aOB(10, _omitFieldNames ? '' : 'unconsentedAudioRefused')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleMeetingNegotiationBriefItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleMeetingNegotiationBriefItem copyWith(
+          void Function(OracleMeetingNegotiationBriefItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleMeetingNegotiationBriefItem))
+          as OracleMeetingNegotiationBriefItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleMeetingNegotiationBriefItem create() =>
+      OracleMeetingNegotiationBriefItem._();
+  @$core.override
+  OracleMeetingNegotiationBriefItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleMeetingNegotiationBriefItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleMeetingNegotiationBriefItem>(
+          create);
+  static OracleMeetingNegotiationBriefItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get meetingCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set meetingCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMeetingCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMeetingCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get titleAndCounterpart => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set titleAndCounterpart($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitleAndCounterpart() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitleAndCounterpart() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get jurisdictionConsentMode => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set jurisdictionConsentMode($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasJurisdictionConsentMode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearJurisdictionConsentMode() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get batnaAndRedLines => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set batnaAndRedLines($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBatnaAndRedLines() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBatnaAndRedLines() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get counterpartRehearsalStyle => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set counterpartRehearsalStyle($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCounterpartRehearsalStyle() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCounterpartRehearsalStyle() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get missingEvidenceCitations => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set missingEvidenceCitations($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMissingEvidenceCitations() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMissingEvidenceCitations() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get captureState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set captureState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasCaptureState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCaptureState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get unconsentedAudioRefused => $_getBF(9);
+  @$pb.TagNumber(10)
+  set unconsentedAudioRefused($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUnconsentedAudioRefused() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUnconsentedAudioRefused() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class OracleMeetingCapturedProposalItem extends $pb.GeneratedMessage {
+  factory OracleMeetingCapturedProposalItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? proposalCode,
+    $core.String? meetingCode,
+    $core.String? proposalKind,
+    $core.String? exactUtteranceAndSpeaker,
+    $core.String? proposedLedgerEntry,
+    $core.String? attributionCertainty,
+    $core.String? memberConfirmationState,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (proposalCode != null) result.proposalCode = proposalCode;
+    if (meetingCode != null) result.meetingCode = meetingCode;
+    if (proposalKind != null) result.proposalKind = proposalKind;
+    if (exactUtteranceAndSpeaker != null)
+      result.exactUtteranceAndSpeaker = exactUtteranceAndSpeaker;
+    if (proposedLedgerEntry != null)
+      result.proposedLedgerEntry = proposedLedgerEntry;
+    if (attributionCertainty != null)
+      result.attributionCertainty = attributionCertainty;
+    if (memberConfirmationState != null)
+      result.memberConfirmationState = memberConfirmationState;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleMeetingCapturedProposalItem._();
+
+  factory OracleMeetingCapturedProposalItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleMeetingCapturedProposalItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleMeetingCapturedProposalItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'proposalCode')
+    ..aOS(4, _omitFieldNames ? '' : 'meetingCode')
+    ..aOS(5, _omitFieldNames ? '' : 'proposalKind')
+    ..aOS(6, _omitFieldNames ? '' : 'exactUtteranceAndSpeaker')
+    ..aOS(7, _omitFieldNames ? '' : 'proposedLedgerEntry')
+    ..aOS(8, _omitFieldNames ? '' : 'attributionCertainty')
+    ..aOS(9, _omitFieldNames ? '' : 'memberConfirmationState')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleMeetingCapturedProposalItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleMeetingCapturedProposalItem copyWith(
+          void Function(OracleMeetingCapturedProposalItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleMeetingCapturedProposalItem))
+          as OracleMeetingCapturedProposalItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleMeetingCapturedProposalItem create() =>
+      OracleMeetingCapturedProposalItem._();
+  @$core.override
+  OracleMeetingCapturedProposalItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleMeetingCapturedProposalItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleMeetingCapturedProposalItem>(
+          create);
+  static OracleMeetingCapturedProposalItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get proposalCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set proposalCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProposalCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProposalCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get meetingCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set meetingCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMeetingCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMeetingCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get proposalKind => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set proposalKind($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProposalKind() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposalKind() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get exactUtteranceAndSpeaker => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set exactUtteranceAndSpeaker($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExactUtteranceAndSpeaker() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExactUtteranceAndSpeaker() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get proposedLedgerEntry => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set proposedLedgerEntry($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProposedLedgerEntry() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProposedLedgerEntry() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get attributionCertainty => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set attributionCertainty($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAttributionCertainty() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAttributionCertainty() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get memberConfirmationState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set memberConfirmationState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasMemberConfirmationState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearMemberConfirmationState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class GetMeetingNegotiationStudioWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetMeetingNegotiationStudioWorkbenchRequest() => create();
+
+  GetMeetingNegotiationStudioWorkbenchRequest._();
+
+  factory GetMeetingNegotiationStudioWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMeetingNegotiationStudioWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMeetingNegotiationStudioWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMeetingNegotiationStudioWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMeetingNegotiationStudioWorkbenchRequest copyWith(
+          void Function(GetMeetingNegotiationStudioWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMeetingNegotiationStudioWorkbenchRequest))
+          as GetMeetingNegotiationStudioWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMeetingNegotiationStudioWorkbenchRequest create() =>
+      GetMeetingNegotiationStudioWorkbenchRequest._();
+  @$core.override
+  GetMeetingNegotiationStudioWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetMeetingNegotiationStudioWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMeetingNegotiationStudioWorkbenchRequest>(create);
+  static GetMeetingNegotiationStudioWorkbenchRequest? _defaultInstance;
+}
+
+class GetMeetingNegotiationStudioWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetMeetingNegotiationStudioWorkbenchResponse({
+    $core.Iterable<OracleMeetingNegotiationBriefItem>? briefs,
+    $core.Iterable<OracleMeetingCapturedProposalItem>? proposals,
+    $core.bool? jurisdictionConsentEnforced,
+    $core.String? meetingStudioBanner,
+  }) {
+    final result = create();
+    if (briefs != null) result.briefs.addAll(briefs);
+    if (proposals != null) result.proposals.addAll(proposals);
+    if (jurisdictionConsentEnforced != null)
+      result.jurisdictionConsentEnforced = jurisdictionConsentEnforced;
+    if (meetingStudioBanner != null)
+      result.meetingStudioBanner = meetingStudioBanner;
+    return result;
+  }
+
+  GetMeetingNegotiationStudioWorkbenchResponse._();
+
+  factory GetMeetingNegotiationStudioWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetMeetingNegotiationStudioWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetMeetingNegotiationStudioWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleMeetingNegotiationBriefItem>(1, _omitFieldNames ? '' : 'briefs',
+        subBuilder: OracleMeetingNegotiationBriefItem.create)
+    ..pPM<OracleMeetingCapturedProposalItem>(
+        2, _omitFieldNames ? '' : 'proposals',
+        subBuilder: OracleMeetingCapturedProposalItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'jurisdictionConsentEnforced')
+    ..aOS(4, _omitFieldNames ? '' : 'meetingStudioBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMeetingNegotiationStudioWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetMeetingNegotiationStudioWorkbenchResponse copyWith(
+          void Function(GetMeetingNegotiationStudioWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetMeetingNegotiationStudioWorkbenchResponse))
+          as GetMeetingNegotiationStudioWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetMeetingNegotiationStudioWorkbenchResponse create() =>
+      GetMeetingNegotiationStudioWorkbenchResponse._();
+  @$core.override
+  GetMeetingNegotiationStudioWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetMeetingNegotiationStudioWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetMeetingNegotiationStudioWorkbenchResponse>(create);
+  static GetMeetingNegotiationStudioWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleMeetingNegotiationBriefItem> get briefs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleMeetingCapturedProposalItem> get proposals => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get jurisdictionConsentEnforced => $_getBF(2);
+  @$pb.TagNumber(3)
+  set jurisdictionConsentEnforced($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionConsentEnforced() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionConsentEnforced() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get meetingStudioBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set meetingStudioBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMeetingStudioBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMeetingStudioBanner() => $_clearField(4);
+}
+
+class SaveMeetingBriefOrRedteamRehearsalRequest extends $pb.GeneratedMessage {
+  factory SaveMeetingBriefOrRedteamRehearsalRequest({
+    $core.String? meetingCode,
+    $core.String? titleAndCounterpart,
+    $core.String? jurisdictionConsentMode,
+    $core.String? batnaAndRedLines,
+    $core.String? counterpartRehearsalStyle,
+    $core.String? missingEvidenceCitations,
+    $core.String? captureState,
+  }) {
+    final result = create();
+    if (meetingCode != null) result.meetingCode = meetingCode;
+    if (titleAndCounterpart != null)
+      result.titleAndCounterpart = titleAndCounterpart;
+    if (jurisdictionConsentMode != null)
+      result.jurisdictionConsentMode = jurisdictionConsentMode;
+    if (batnaAndRedLines != null) result.batnaAndRedLines = batnaAndRedLines;
+    if (counterpartRehearsalStyle != null)
+      result.counterpartRehearsalStyle = counterpartRehearsalStyle;
+    if (missingEvidenceCitations != null)
+      result.missingEvidenceCitations = missingEvidenceCitations;
+    if (captureState != null) result.captureState = captureState;
+    return result;
+  }
+
+  SaveMeetingBriefOrRedteamRehearsalRequest._();
+
+  factory SaveMeetingBriefOrRedteamRehearsalRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveMeetingBriefOrRedteamRehearsalRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveMeetingBriefOrRedteamRehearsalRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'meetingCode')
+    ..aOS(2, _omitFieldNames ? '' : 'titleAndCounterpart')
+    ..aOS(3, _omitFieldNames ? '' : 'jurisdictionConsentMode')
+    ..aOS(4, _omitFieldNames ? '' : 'batnaAndRedLines')
+    ..aOS(5, _omitFieldNames ? '' : 'counterpartRehearsalStyle')
+    ..aOS(6, _omitFieldNames ? '' : 'missingEvidenceCitations')
+    ..aOS(7, _omitFieldNames ? '' : 'captureState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveMeetingBriefOrRedteamRehearsalRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveMeetingBriefOrRedteamRehearsalRequest copyWith(
+          void Function(SaveMeetingBriefOrRedteamRehearsalRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveMeetingBriefOrRedteamRehearsalRequest))
+          as SaveMeetingBriefOrRedteamRehearsalRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveMeetingBriefOrRedteamRehearsalRequest create() =>
+      SaveMeetingBriefOrRedteamRehearsalRequest._();
+  @$core.override
+  SaveMeetingBriefOrRedteamRehearsalRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveMeetingBriefOrRedteamRehearsalRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveMeetingBriefOrRedteamRehearsalRequest>(create);
+  static SaveMeetingBriefOrRedteamRehearsalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get meetingCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set meetingCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMeetingCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMeetingCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get titleAndCounterpart => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set titleAndCounterpart($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitleAndCounterpart() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitleAndCounterpart() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get jurisdictionConsentMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set jurisdictionConsentMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionConsentMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionConsentMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get batnaAndRedLines => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set batnaAndRedLines($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBatnaAndRedLines() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBatnaAndRedLines() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get counterpartRehearsalStyle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set counterpartRehearsalStyle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCounterpartRehearsalStyle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCounterpartRehearsalStyle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get missingEvidenceCitations => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set missingEvidenceCitations($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasMissingEvidenceCitations() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMissingEvidenceCitations() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get captureState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set captureState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCaptureState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCaptureState() => $_clearField(7);
+}
+
+class SaveMeetingBriefOrRedteamRehearsalResponse extends $pb.GeneratedMessage {
+  factory SaveMeetingBriefOrRedteamRehearsalResponse({
+    OracleMeetingNegotiationBriefItem? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  SaveMeetingBriefOrRedteamRehearsalResponse._();
+
+  factory SaveMeetingBriefOrRedteamRehearsalResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveMeetingBriefOrRedteamRehearsalResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveMeetingBriefOrRedteamRehearsalResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleMeetingNegotiationBriefItem>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: OracleMeetingNegotiationBriefItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveMeetingBriefOrRedteamRehearsalResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveMeetingBriefOrRedteamRehearsalResponse copyWith(
+          void Function(SaveMeetingBriefOrRedteamRehearsalResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveMeetingBriefOrRedteamRehearsalResponse))
+          as SaveMeetingBriefOrRedteamRehearsalResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveMeetingBriefOrRedteamRehearsalResponse create() =>
+      SaveMeetingBriefOrRedteamRehearsalResponse._();
+  @$core.override
+  SaveMeetingBriefOrRedteamRehearsalResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveMeetingBriefOrRedteamRehearsalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveMeetingBriefOrRedteamRehearsalResponse>(create);
+  static SaveMeetingBriefOrRedteamRehearsalResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleMeetingNegotiationBriefItem get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(OracleMeetingNegotiationBriefItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleMeetingNegotiationBriefItem ensureBrief() => $_ensure(0);
+}
+
+class ConfirmOrRejectCapturedMeetingProposalRequest
+    extends $pb.GeneratedMessage {
+  factory ConfirmOrRejectCapturedMeetingProposalRequest({
+    $core.String? proposalCode,
+    $core.String? meetingCode,
+    $core.String? proposalKind,
+    $core.String? exactUtteranceAndSpeaker,
+    $core.String? proposedLedgerEntry,
+    $core.String? attributionCertainty,
+    $core.String? memberConfirmationState,
+  }) {
+    final result = create();
+    if (proposalCode != null) result.proposalCode = proposalCode;
+    if (meetingCode != null) result.meetingCode = meetingCode;
+    if (proposalKind != null) result.proposalKind = proposalKind;
+    if (exactUtteranceAndSpeaker != null)
+      result.exactUtteranceAndSpeaker = exactUtteranceAndSpeaker;
+    if (proposedLedgerEntry != null)
+      result.proposedLedgerEntry = proposedLedgerEntry;
+    if (attributionCertainty != null)
+      result.attributionCertainty = attributionCertainty;
+    if (memberConfirmationState != null)
+      result.memberConfirmationState = memberConfirmationState;
+    return result;
+  }
+
+  ConfirmOrRejectCapturedMeetingProposalRequest._();
+
+  factory ConfirmOrRejectCapturedMeetingProposalRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmOrRejectCapturedMeetingProposalRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmOrRejectCapturedMeetingProposalRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'proposalCode')
+    ..aOS(2, _omitFieldNames ? '' : 'meetingCode')
+    ..aOS(3, _omitFieldNames ? '' : 'proposalKind')
+    ..aOS(4, _omitFieldNames ? '' : 'exactUtteranceAndSpeaker')
+    ..aOS(5, _omitFieldNames ? '' : 'proposedLedgerEntry')
+    ..aOS(6, _omitFieldNames ? '' : 'attributionCertainty')
+    ..aOS(7, _omitFieldNames ? '' : 'memberConfirmationState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrRejectCapturedMeetingProposalRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrRejectCapturedMeetingProposalRequest copyWith(
+          void Function(ConfirmOrRejectCapturedMeetingProposalRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfirmOrRejectCapturedMeetingProposalRequest))
+          as ConfirmOrRejectCapturedMeetingProposalRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrRejectCapturedMeetingProposalRequest create() =>
+      ConfirmOrRejectCapturedMeetingProposalRequest._();
+  @$core.override
+  ConfirmOrRejectCapturedMeetingProposalRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrRejectCapturedMeetingProposalRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmOrRejectCapturedMeetingProposalRequest>(create);
+  static ConfirmOrRejectCapturedMeetingProposalRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get proposalCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set proposalCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProposalCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposalCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get meetingCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set meetingCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMeetingCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMeetingCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get proposalKind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set proposalKind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProposalKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProposalKind() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get exactUtteranceAndSpeaker => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set exactUtteranceAndSpeaker($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExactUtteranceAndSpeaker() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExactUtteranceAndSpeaker() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get proposedLedgerEntry => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set proposedLedgerEntry($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProposedLedgerEntry() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposedLedgerEntry() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get attributionCertainty => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set attributionCertainty($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAttributionCertainty() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAttributionCertainty() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get memberConfirmationState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set memberConfirmationState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasMemberConfirmationState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemberConfirmationState() => $_clearField(7);
+}
+
+class ConfirmOrRejectCapturedMeetingProposalResponse
+    extends $pb.GeneratedMessage {
+  factory ConfirmOrRejectCapturedMeetingProposalResponse({
+    OracleMeetingCapturedProposalItem? proposal,
+  }) {
+    final result = create();
+    if (proposal != null) result.proposal = proposal;
+    return result;
+  }
+
+  ConfirmOrRejectCapturedMeetingProposalResponse._();
+
+  factory ConfirmOrRejectCapturedMeetingProposalResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmOrRejectCapturedMeetingProposalResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmOrRejectCapturedMeetingProposalResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleMeetingCapturedProposalItem>(
+        1, _omitFieldNames ? '' : 'proposal',
+        subBuilder: OracleMeetingCapturedProposalItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrRejectCapturedMeetingProposalResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrRejectCapturedMeetingProposalResponse copyWith(
+          void Function(ConfirmOrRejectCapturedMeetingProposalResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ConfirmOrRejectCapturedMeetingProposalResponse))
+          as ConfirmOrRejectCapturedMeetingProposalResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrRejectCapturedMeetingProposalResponse create() =>
+      ConfirmOrRejectCapturedMeetingProposalResponse._();
+  @$core.override
+  ConfirmOrRejectCapturedMeetingProposalResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrRejectCapturedMeetingProposalResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmOrRejectCapturedMeetingProposalResponse>(create);
+  static ConfirmOrRejectCapturedMeetingProposalResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleMeetingCapturedProposalItem get proposal => $_getN(0);
+  @$pb.TagNumber(1)
+  set proposal(OracleMeetingCapturedProposalItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProposal() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposal() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleMeetingCapturedProposalItem ensureProposal() => $_ensure(0);
+}
+
+class AdminListMeetingNegotiationStudioAuditRequest
+    extends $pb.GeneratedMessage {
+  factory AdminListMeetingNegotiationStudioAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListMeetingNegotiationStudioAuditRequest._();
+
+  factory AdminListMeetingNegotiationStudioAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMeetingNegotiationStudioAuditRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMeetingNegotiationStudioAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMeetingNegotiationStudioAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMeetingNegotiationStudioAuditRequest copyWith(
+          void Function(AdminListMeetingNegotiationStudioAuditRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListMeetingNegotiationStudioAuditRequest))
+          as AdminListMeetingNegotiationStudioAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMeetingNegotiationStudioAuditRequest create() =>
+      AdminListMeetingNegotiationStudioAuditRequest._();
+  @$core.override
+  AdminListMeetingNegotiationStudioAuditRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMeetingNegotiationStudioAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMeetingNegotiationStudioAuditRequest>(create);
+  static AdminListMeetingNegotiationStudioAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListMeetingNegotiationStudioAuditResponse
+    extends $pb.GeneratedMessage {
+  factory AdminListMeetingNegotiationStudioAuditResponse({
+    $core.Iterable<OracleMeetingNegotiationBriefItem>? briefs,
+    $core.Iterable<OracleMeetingCapturedProposalItem>? proposals,
+  }) {
+    final result = create();
+    if (briefs != null) result.briefs.addAll(briefs);
+    if (proposals != null) result.proposals.addAll(proposals);
+    return result;
+  }
+
+  AdminListMeetingNegotiationStudioAuditResponse._();
+
+  factory AdminListMeetingNegotiationStudioAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListMeetingNegotiationStudioAuditResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListMeetingNegotiationStudioAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleMeetingNegotiationBriefItem>(1, _omitFieldNames ? '' : 'briefs',
+        subBuilder: OracleMeetingNegotiationBriefItem.create)
+    ..pPM<OracleMeetingCapturedProposalItem>(
+        2, _omitFieldNames ? '' : 'proposals',
+        subBuilder: OracleMeetingCapturedProposalItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMeetingNegotiationStudioAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListMeetingNegotiationStudioAuditResponse copyWith(
+          void Function(AdminListMeetingNegotiationStudioAuditResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminListMeetingNegotiationStudioAuditResponse))
+          as AdminListMeetingNegotiationStudioAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListMeetingNegotiationStudioAuditResponse create() =>
+      AdminListMeetingNegotiationStudioAuditResponse._();
+  @$core.override
+  AdminListMeetingNegotiationStudioAuditResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListMeetingNegotiationStudioAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListMeetingNegotiationStudioAuditResponse>(create);
+  static AdminListMeetingNegotiationStudioAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleMeetingNegotiationBriefItem> get briefs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OracleMeetingCapturedProposalItem> get proposals => $_getList(1);
+}
+
+class AdminManageRecordingConsentOrRedactionRequest
+    extends $pb.GeneratedMessage {
+  factory AdminManageRecordingConsentOrRedactionRequest({
+    $core.String? targetUserId,
+    $core.String? meetingCode,
+    $core.String? jurisdictionConsentMode,
+    $core.String? captureState,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (meetingCode != null) result.meetingCode = meetingCode;
+    if (jurisdictionConsentMode != null)
+      result.jurisdictionConsentMode = jurisdictionConsentMode;
+    if (captureState != null) result.captureState = captureState;
+    return result;
+  }
+
+  AdminManageRecordingConsentOrRedactionRequest._();
+
+  factory AdminManageRecordingConsentOrRedactionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageRecordingConsentOrRedactionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageRecordingConsentOrRedactionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'meetingCode')
+    ..aOS(3, _omitFieldNames ? '' : 'jurisdictionConsentMode')
+    ..aOS(4, _omitFieldNames ? '' : 'captureState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRecordingConsentOrRedactionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRecordingConsentOrRedactionRequest copyWith(
+          void Function(AdminManageRecordingConsentOrRedactionRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageRecordingConsentOrRedactionRequest))
+          as AdminManageRecordingConsentOrRedactionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRecordingConsentOrRedactionRequest create() =>
+      AdminManageRecordingConsentOrRedactionRequest._();
+  @$core.override
+  AdminManageRecordingConsentOrRedactionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRecordingConsentOrRedactionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageRecordingConsentOrRedactionRequest>(create);
+  static AdminManageRecordingConsentOrRedactionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get meetingCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set meetingCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMeetingCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMeetingCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get jurisdictionConsentMode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set jurisdictionConsentMode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionConsentMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionConsentMode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get captureState => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set captureState($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCaptureState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCaptureState() => $_clearField(4);
+}
+
+class AdminManageRecordingConsentOrRedactionResponse
+    extends $pb.GeneratedMessage {
+  factory AdminManageRecordingConsentOrRedactionResponse({
+    OracleMeetingNegotiationBriefItem? brief,
+  }) {
+    final result = create();
+    if (brief != null) result.brief = brief;
+    return result;
+  }
+
+  AdminManageRecordingConsentOrRedactionResponse._();
+
+  factory AdminManageRecordingConsentOrRedactionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageRecordingConsentOrRedactionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageRecordingConsentOrRedactionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleMeetingNegotiationBriefItem>(1, _omitFieldNames ? '' : 'brief',
+        subBuilder: OracleMeetingNegotiationBriefItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRecordingConsentOrRedactionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageRecordingConsentOrRedactionResponse copyWith(
+          void Function(AdminManageRecordingConsentOrRedactionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminManageRecordingConsentOrRedactionResponse))
+          as AdminManageRecordingConsentOrRedactionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRecordingConsentOrRedactionResponse create() =>
+      AdminManageRecordingConsentOrRedactionResponse._();
+  @$core.override
+  AdminManageRecordingConsentOrRedactionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageRecordingConsentOrRedactionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageRecordingConsentOrRedactionResponse>(create);
+  static AdminManageRecordingConsentOrRedactionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleMeetingNegotiationBriefItem get brief => $_getN(0);
+  @$pb.TagNumber(1)
+  set brief(OracleMeetingNegotiationBriefItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasBrief() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBrief() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleMeetingNegotiationBriefItem ensureBrief() => $_ensure(0);
+}
+
+class OracleSecureConnectorGrantItem extends $pb.GeneratedMessage {
+  factory OracleSecureConnectorGrantItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? connectorCode,
+    $core.String? connectorNameAndPillar,
+    $core.String? riskClassification,
+    $core.String? permittedDataAndRetention,
+    $core.String? dryRunPreviewSummary,
+    $core.String? grantStatus,
+    $core.bool? autonomousWriteProhibited,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (connectorNameAndPillar != null)
+      result.connectorNameAndPillar = connectorNameAndPillar;
+    if (riskClassification != null)
+      result.riskClassification = riskClassification;
+    if (permittedDataAndRetention != null)
+      result.permittedDataAndRetention = permittedDataAndRetention;
+    if (dryRunPreviewSummary != null)
+      result.dryRunPreviewSummary = dryRunPreviewSummary;
+    if (grantStatus != null) result.grantStatus = grantStatus;
+    if (autonomousWriteProhibited != null)
+      result.autonomousWriteProhibited = autonomousWriteProhibited;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleSecureConnectorGrantItem._();
+
+  factory OracleSecureConnectorGrantItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleSecureConnectorGrantItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleSecureConnectorGrantItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(4, _omitFieldNames ? '' : 'connectorNameAndPillar')
+    ..aOS(5, _omitFieldNames ? '' : 'riskClassification')
+    ..aOS(6, _omitFieldNames ? '' : 'permittedDataAndRetention')
+    ..aOS(7, _omitFieldNames ? '' : 'dryRunPreviewSummary')
+    ..aOS(8, _omitFieldNames ? '' : 'grantStatus')
+    ..aOB(9, _omitFieldNames ? '' : 'autonomousWriteProhibited')
+    ..aOS(10, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleSecureConnectorGrantItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleSecureConnectorGrantItem copyWith(
+          void Function(OracleSecureConnectorGrantItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleSecureConnectorGrantItem))
+          as OracleSecureConnectorGrantItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleSecureConnectorGrantItem create() =>
+      OracleSecureConnectorGrantItem._();
+  @$core.override
+  OracleSecureConnectorGrantItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleSecureConnectorGrantItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleSecureConnectorGrantItem>(create);
+  static OracleSecureConnectorGrantItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get connectorCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set connectorCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConnectorCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConnectorCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get connectorNameAndPillar => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set connectorNameAndPillar($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConnectorNameAndPillar() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConnectorNameAndPillar() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get riskClassification => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set riskClassification($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRiskClassification() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRiskClassification() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get permittedDataAndRetention => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set permittedDataAndRetention($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPermittedDataAndRetention() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPermittedDataAndRetention() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get dryRunPreviewSummary => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set dryRunPreviewSummary($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDryRunPreviewSummary() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDryRunPreviewSummary() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get grantStatus => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set grantStatus($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasGrantStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGrantStatus() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get autonomousWriteProhibited => $_getBF(8);
+  @$pb.TagNumber(9)
+  set autonomousWriteProhibited($core.bool value) => $_setBool(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAutonomousWriteProhibited() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAutonomousWriteProhibited() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get updatedAtIso => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set updatedAtIso($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasUpdatedAtIso() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearUpdatedAtIso() => $_clearField(10);
+}
+
+class OraclePromptInjectionQuarantineItem extends $pb.GeneratedMessage {
+  factory OraclePromptInjectionQuarantineItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? eventCode,
+    $core.String? connectorCode,
+    $core.String? untrustedSourceOrigin,
+    $core.String? blockedEscalationAttempt,
+    $core.String? containmentVerdict,
+    $core.bool? memberNotified,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (eventCode != null) result.eventCode = eventCode;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (untrustedSourceOrigin != null)
+      result.untrustedSourceOrigin = untrustedSourceOrigin;
+    if (blockedEscalationAttempt != null)
+      result.blockedEscalationAttempt = blockedEscalationAttempt;
+    if (containmentVerdict != null)
+      result.containmentVerdict = containmentVerdict;
+    if (memberNotified != null) result.memberNotified = memberNotified;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OraclePromptInjectionQuarantineItem._();
+
+  factory OraclePromptInjectionQuarantineItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OraclePromptInjectionQuarantineItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OraclePromptInjectionQuarantineItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'eventCode')
+    ..aOS(4, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(5, _omitFieldNames ? '' : 'untrustedSourceOrigin')
+    ..aOS(6, _omitFieldNames ? '' : 'blockedEscalationAttempt')
+    ..aOS(7, _omitFieldNames ? '' : 'containmentVerdict')
+    ..aOB(8, _omitFieldNames ? '' : 'memberNotified')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OraclePromptInjectionQuarantineItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OraclePromptInjectionQuarantineItem copyWith(
+          void Function(OraclePromptInjectionQuarantineItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OraclePromptInjectionQuarantineItem))
+          as OraclePromptInjectionQuarantineItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OraclePromptInjectionQuarantineItem create() =>
+      OraclePromptInjectionQuarantineItem._();
+  @$core.override
+  OraclePromptInjectionQuarantineItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OraclePromptInjectionQuarantineItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OraclePromptInjectionQuarantineItem>(create);
+  static OraclePromptInjectionQuarantineItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get eventCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set eventCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEventCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEventCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get connectorCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set connectorCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConnectorCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConnectorCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get untrustedSourceOrigin => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set untrustedSourceOrigin($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUntrustedSourceOrigin() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUntrustedSourceOrigin() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get blockedEscalationAttempt => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set blockedEscalationAttempt($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasBlockedEscalationAttempt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBlockedEscalationAttempt() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get containmentVerdict => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set containmentVerdict($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasContainmentVerdict() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearContainmentVerdict() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get memberNotified => $_getBF(7);
+  @$pb.TagNumber(8)
+  set memberNotified($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasMemberNotified() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearMemberNotified() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetSecureConnectorsToolWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetSecureConnectorsToolWorkbenchRequest() => create();
+
+  GetSecureConnectorsToolWorkbenchRequest._();
+
+  factory GetSecureConnectorsToolWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSecureConnectorsToolWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSecureConnectorsToolWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSecureConnectorsToolWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSecureConnectorsToolWorkbenchRequest copyWith(
+          void Function(GetSecureConnectorsToolWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetSecureConnectorsToolWorkbenchRequest))
+          as GetSecureConnectorsToolWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSecureConnectorsToolWorkbenchRequest create() =>
+      GetSecureConnectorsToolWorkbenchRequest._();
+  @$core.override
+  GetSecureConnectorsToolWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSecureConnectorsToolWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetSecureConnectorsToolWorkbenchRequest>(create);
+  static GetSecureConnectorsToolWorkbenchRequest? _defaultInstance;
+}
+
+class GetSecureConnectorsToolWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetSecureConnectorsToolWorkbenchResponse({
+    $core.Iterable<OracleSecureConnectorGrantItem>? connectors,
+    $core.Iterable<OraclePromptInjectionQuarantineItem>? quarantines,
+    $core.bool? indirectInjectionDefenseActive,
+    $core.String? connectorPlatformBanner,
+  }) {
+    final result = create();
+    if (connectors != null) result.connectors.addAll(connectors);
+    if (quarantines != null) result.quarantines.addAll(quarantines);
+    if (indirectInjectionDefenseActive != null)
+      result.indirectInjectionDefenseActive = indirectInjectionDefenseActive;
+    if (connectorPlatformBanner != null)
+      result.connectorPlatformBanner = connectorPlatformBanner;
+    return result;
+  }
+
+  GetSecureConnectorsToolWorkbenchResponse._();
+
+  factory GetSecureConnectorsToolWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSecureConnectorsToolWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSecureConnectorsToolWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleSecureConnectorGrantItem>(
+        1, _omitFieldNames ? '' : 'connectors',
+        subBuilder: OracleSecureConnectorGrantItem.create)
+    ..pPM<OraclePromptInjectionQuarantineItem>(
+        2, _omitFieldNames ? '' : 'quarantines',
+        subBuilder: OraclePromptInjectionQuarantineItem.create)
+    ..aOB(3, _omitFieldNames ? '' : 'indirectInjectionDefenseActive')
+    ..aOS(4, _omitFieldNames ? '' : 'connectorPlatformBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSecureConnectorsToolWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSecureConnectorsToolWorkbenchResponse copyWith(
+          void Function(GetSecureConnectorsToolWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetSecureConnectorsToolWorkbenchResponse))
+          as GetSecureConnectorsToolWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSecureConnectorsToolWorkbenchResponse create() =>
+      GetSecureConnectorsToolWorkbenchResponse._();
+  @$core.override
+  GetSecureConnectorsToolWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSecureConnectorsToolWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetSecureConnectorsToolWorkbenchResponse>(create);
+  static GetSecureConnectorsToolWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleSecureConnectorGrantItem> get connectors => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OraclePromptInjectionQuarantineItem> get quarantines =>
+      $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.bool get indirectInjectionDefenseActive => $_getBF(2);
+  @$pb.TagNumber(3)
+  set indirectInjectionDefenseActive($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIndirectInjectionDefenseActive() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIndirectInjectionDefenseActive() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get connectorPlatformBanner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set connectorPlatformBanner($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConnectorPlatformBanner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConnectorPlatformBanner() => $_clearField(4);
+}
+
+class ConfigureOrRevokeConnectorGrantRequest extends $pb.GeneratedMessage {
+  factory ConfigureOrRevokeConnectorGrantRequest({
+    $core.String? connectorCode,
+    $core.String? connectorNameAndPillar,
+    $core.String? riskClassification,
+    $core.String? permittedDataAndRetention,
+    $core.String? dryRunPreviewSummary,
+    $core.String? grantStatus,
+  }) {
+    final result = create();
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (connectorNameAndPillar != null)
+      result.connectorNameAndPillar = connectorNameAndPillar;
+    if (riskClassification != null)
+      result.riskClassification = riskClassification;
+    if (permittedDataAndRetention != null)
+      result.permittedDataAndRetention = permittedDataAndRetention;
+    if (dryRunPreviewSummary != null)
+      result.dryRunPreviewSummary = dryRunPreviewSummary;
+    if (grantStatus != null) result.grantStatus = grantStatus;
+    return result;
+  }
+
+  ConfigureOrRevokeConnectorGrantRequest._();
+
+  factory ConfigureOrRevokeConnectorGrantRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfigureOrRevokeConnectorGrantRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfigureOrRevokeConnectorGrantRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(2, _omitFieldNames ? '' : 'connectorNameAndPillar')
+    ..aOS(3, _omitFieldNames ? '' : 'riskClassification')
+    ..aOS(4, _omitFieldNames ? '' : 'permittedDataAndRetention')
+    ..aOS(5, _omitFieldNames ? '' : 'dryRunPreviewSummary')
+    ..aOS(6, _omitFieldNames ? '' : 'grantStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfigureOrRevokeConnectorGrantRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfigureOrRevokeConnectorGrantRequest copyWith(
+          void Function(ConfigureOrRevokeConnectorGrantRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfigureOrRevokeConnectorGrantRequest))
+          as ConfigureOrRevokeConnectorGrantRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfigureOrRevokeConnectorGrantRequest create() =>
+      ConfigureOrRevokeConnectorGrantRequest._();
+  @$core.override
+  ConfigureOrRevokeConnectorGrantRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfigureOrRevokeConnectorGrantRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfigureOrRevokeConnectorGrantRequest>(create);
+  static ConfigureOrRevokeConnectorGrantRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get connectorCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set connectorCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnectorCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnectorCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get connectorNameAndPillar => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set connectorNameAndPillar($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConnectorNameAndPillar() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConnectorNameAndPillar() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get riskClassification => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set riskClassification($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRiskClassification() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRiskClassification() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get permittedDataAndRetention => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set permittedDataAndRetention($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPermittedDataAndRetention() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPermittedDataAndRetention() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get dryRunPreviewSummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set dryRunPreviewSummary($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDryRunPreviewSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDryRunPreviewSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get grantStatus => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set grantStatus($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrantStatus() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrantStatus() => $_clearField(6);
+}
+
+class ConfigureOrRevokeConnectorGrantResponse extends $pb.GeneratedMessage {
+  factory ConfigureOrRevokeConnectorGrantResponse({
+    OracleSecureConnectorGrantItem? connector,
+  }) {
+    final result = create();
+    if (connector != null) result.connector = connector;
+    return result;
+  }
+
+  ConfigureOrRevokeConnectorGrantResponse._();
+
+  factory ConfigureOrRevokeConnectorGrantResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfigureOrRevokeConnectorGrantResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfigureOrRevokeConnectorGrantResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleSecureConnectorGrantItem>(1, _omitFieldNames ? '' : 'connector',
+        subBuilder: OracleSecureConnectorGrantItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfigureOrRevokeConnectorGrantResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfigureOrRevokeConnectorGrantResponse copyWith(
+          void Function(ConfigureOrRevokeConnectorGrantResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfigureOrRevokeConnectorGrantResponse))
+          as ConfigureOrRevokeConnectorGrantResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfigureOrRevokeConnectorGrantResponse create() =>
+      ConfigureOrRevokeConnectorGrantResponse._();
+  @$core.override
+  ConfigureOrRevokeConnectorGrantResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfigureOrRevokeConnectorGrantResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfigureOrRevokeConnectorGrantResponse>(create);
+  static ConfigureOrRevokeConnectorGrantResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleSecureConnectorGrantItem get connector => $_getN(0);
+  @$pb.TagNumber(1)
+  set connector(OracleSecureConnectorGrantItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnector() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnector() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleSecureConnectorGrantItem ensureConnector() => $_ensure(0);
+}
+
+class ReportOrReviewPromptInjectionQuarantineRequest
+    extends $pb.GeneratedMessage {
+  factory ReportOrReviewPromptInjectionQuarantineRequest({
+    $core.String? eventCode,
+    $core.String? connectorCode,
+    $core.String? untrustedSourceOrigin,
+    $core.String? blockedEscalationAttempt,
+    $core.String? containmentVerdict,
+  }) {
+    final result = create();
+    if (eventCode != null) result.eventCode = eventCode;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (untrustedSourceOrigin != null)
+      result.untrustedSourceOrigin = untrustedSourceOrigin;
+    if (blockedEscalationAttempt != null)
+      result.blockedEscalationAttempt = blockedEscalationAttempt;
+    if (containmentVerdict != null)
+      result.containmentVerdict = containmentVerdict;
+    return result;
+  }
+
+  ReportOrReviewPromptInjectionQuarantineRequest._();
+
+  factory ReportOrReviewPromptInjectionQuarantineRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportOrReviewPromptInjectionQuarantineRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReportOrReviewPromptInjectionQuarantineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'eventCode')
+    ..aOS(2, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(3, _omitFieldNames ? '' : 'untrustedSourceOrigin')
+    ..aOS(4, _omitFieldNames ? '' : 'blockedEscalationAttempt')
+    ..aOS(5, _omitFieldNames ? '' : 'containmentVerdict')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportOrReviewPromptInjectionQuarantineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportOrReviewPromptInjectionQuarantineRequest copyWith(
+          void Function(ReportOrReviewPromptInjectionQuarantineRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ReportOrReviewPromptInjectionQuarantineRequest))
+          as ReportOrReviewPromptInjectionQuarantineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportOrReviewPromptInjectionQuarantineRequest create() =>
+      ReportOrReviewPromptInjectionQuarantineRequest._();
+  @$core.override
+  ReportOrReviewPromptInjectionQuarantineRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ReportOrReviewPromptInjectionQuarantineRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReportOrReviewPromptInjectionQuarantineRequest>(create);
+  static ReportOrReviewPromptInjectionQuarantineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get eventCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set eventCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEventCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEventCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get connectorCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set connectorCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConnectorCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConnectorCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get untrustedSourceOrigin => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set untrustedSourceOrigin($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUntrustedSourceOrigin() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUntrustedSourceOrigin() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get blockedEscalationAttempt => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set blockedEscalationAttempt($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBlockedEscalationAttempt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBlockedEscalationAttempt() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get containmentVerdict => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set containmentVerdict($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasContainmentVerdict() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearContainmentVerdict() => $_clearField(5);
+}
+
+class ReportOrReviewPromptInjectionQuarantineResponse
+    extends $pb.GeneratedMessage {
+  factory ReportOrReviewPromptInjectionQuarantineResponse({
+    OraclePromptInjectionQuarantineItem? quarantine,
+  }) {
+    final result = create();
+    if (quarantine != null) result.quarantine = quarantine;
+    return result;
+  }
+
+  ReportOrReviewPromptInjectionQuarantineResponse._();
+
+  factory ReportOrReviewPromptInjectionQuarantineResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReportOrReviewPromptInjectionQuarantineResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'ReportOrReviewPromptInjectionQuarantineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OraclePromptInjectionQuarantineItem>(
+        1, _omitFieldNames ? '' : 'quarantine',
+        subBuilder: OraclePromptInjectionQuarantineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportOrReviewPromptInjectionQuarantineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReportOrReviewPromptInjectionQuarantineResponse copyWith(
+          void Function(ReportOrReviewPromptInjectionQuarantineResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as ReportOrReviewPromptInjectionQuarantineResponse))
+          as ReportOrReviewPromptInjectionQuarantineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReportOrReviewPromptInjectionQuarantineResponse create() =>
+      ReportOrReviewPromptInjectionQuarantineResponse._();
+  @$core.override
+  ReportOrReviewPromptInjectionQuarantineResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ReportOrReviewPromptInjectionQuarantineResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReportOrReviewPromptInjectionQuarantineResponse>(create);
+  static ReportOrReviewPromptInjectionQuarantineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OraclePromptInjectionQuarantineItem get quarantine => $_getN(0);
+  @$pb.TagNumber(1)
+  set quarantine(OraclePromptInjectionQuarantineItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasQuarantine() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearQuarantine() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OraclePromptInjectionQuarantineItem ensureQuarantine() => $_ensure(0);
+}
+
+class AdminListSecureConnectorsToolAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListSecureConnectorsToolAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListSecureConnectorsToolAuditRequest._();
+
+  factory AdminListSecureConnectorsToolAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListSecureConnectorsToolAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListSecureConnectorsToolAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListSecureConnectorsToolAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListSecureConnectorsToolAuditRequest copyWith(
+          void Function(AdminListSecureConnectorsToolAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListSecureConnectorsToolAuditRequest))
+          as AdminListSecureConnectorsToolAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListSecureConnectorsToolAuditRequest create() =>
+      AdminListSecureConnectorsToolAuditRequest._();
+  @$core.override
+  AdminListSecureConnectorsToolAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListSecureConnectorsToolAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListSecureConnectorsToolAuditRequest>(create);
+  static AdminListSecureConnectorsToolAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListSecureConnectorsToolAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListSecureConnectorsToolAuditResponse({
+    $core.Iterable<OracleSecureConnectorGrantItem>? connectors,
+    $core.Iterable<OraclePromptInjectionQuarantineItem>? quarantines,
+  }) {
+    final result = create();
+    if (connectors != null) result.connectors.addAll(connectors);
+    if (quarantines != null) result.quarantines.addAll(quarantines);
+    return result;
+  }
+
+  AdminListSecureConnectorsToolAuditResponse._();
+
+  factory AdminListSecureConnectorsToolAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListSecureConnectorsToolAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListSecureConnectorsToolAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleSecureConnectorGrantItem>(
+        1, _omitFieldNames ? '' : 'connectors',
+        subBuilder: OracleSecureConnectorGrantItem.create)
+    ..pPM<OraclePromptInjectionQuarantineItem>(
+        2, _omitFieldNames ? '' : 'quarantines',
+        subBuilder: OraclePromptInjectionQuarantineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListSecureConnectorsToolAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListSecureConnectorsToolAuditResponse copyWith(
+          void Function(AdminListSecureConnectorsToolAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListSecureConnectorsToolAuditResponse))
+          as AdminListSecureConnectorsToolAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListSecureConnectorsToolAuditResponse create() =>
+      AdminListSecureConnectorsToolAuditResponse._();
+  @$core.override
+  AdminListSecureConnectorsToolAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListSecureConnectorsToolAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListSecureConnectorsToolAuditResponse>(create);
+  static AdminListSecureConnectorsToolAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleSecureConnectorGrantItem> get connectors => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<OraclePromptInjectionQuarantineItem> get quarantines =>
+      $_getList(1);
+}
+
+class AdminManageConnectorKillSwitchOrQuarantineRequest
+    extends $pb.GeneratedMessage {
+  factory AdminManageConnectorKillSwitchOrQuarantineRequest({
+    $core.String? targetUserId,
+    $core.String? connectorCode,
+    $core.String? grantStatus,
+    $core.String? dryRunPreviewSummary,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (connectorCode != null) result.connectorCode = connectorCode;
+    if (grantStatus != null) result.grantStatus = grantStatus;
+    if (dryRunPreviewSummary != null)
+      result.dryRunPreviewSummary = dryRunPreviewSummary;
+    return result;
+  }
+
+  AdminManageConnectorKillSwitchOrQuarantineRequest._();
+
+  factory AdminManageConnectorKillSwitchOrQuarantineRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageConnectorKillSwitchOrQuarantineRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminManageConnectorKillSwitchOrQuarantineRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'connectorCode')
+    ..aOS(3, _omitFieldNames ? '' : 'grantStatus')
+    ..aOS(4, _omitFieldNames ? '' : 'dryRunPreviewSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageConnectorKillSwitchOrQuarantineRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageConnectorKillSwitchOrQuarantineRequest copyWith(
+          void Function(AdminManageConnectorKillSwitchOrQuarantineRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminManageConnectorKillSwitchOrQuarantineRequest))
+          as AdminManageConnectorKillSwitchOrQuarantineRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageConnectorKillSwitchOrQuarantineRequest create() =>
+      AdminManageConnectorKillSwitchOrQuarantineRequest._();
+  @$core.override
+  AdminManageConnectorKillSwitchOrQuarantineRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageConnectorKillSwitchOrQuarantineRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageConnectorKillSwitchOrQuarantineRequest>(create);
+  static AdminManageConnectorKillSwitchOrQuarantineRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get connectorCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set connectorCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConnectorCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConnectorCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get grantStatus => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set grantStatus($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGrantStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGrantStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get dryRunPreviewSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set dryRunPreviewSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDryRunPreviewSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDryRunPreviewSummary() => $_clearField(4);
+}
+
+class AdminManageConnectorKillSwitchOrQuarantineResponse
+    extends $pb.GeneratedMessage {
+  factory AdminManageConnectorKillSwitchOrQuarantineResponse({
+    OracleSecureConnectorGrantItem? connector,
+  }) {
+    final result = create();
+    if (connector != null) result.connector = connector;
+    return result;
+  }
+
+  AdminManageConnectorKillSwitchOrQuarantineResponse._();
+
+  factory AdminManageConnectorKillSwitchOrQuarantineResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageConnectorKillSwitchOrQuarantineResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminManageConnectorKillSwitchOrQuarantineResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleSecureConnectorGrantItem>(1, _omitFieldNames ? '' : 'connector',
+        subBuilder: OracleSecureConnectorGrantItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageConnectorKillSwitchOrQuarantineResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageConnectorKillSwitchOrQuarantineResponse copyWith(
+          void Function(AdminManageConnectorKillSwitchOrQuarantineResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminManageConnectorKillSwitchOrQuarantineResponse))
+          as AdminManageConnectorKillSwitchOrQuarantineResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageConnectorKillSwitchOrQuarantineResponse create() =>
+      AdminManageConnectorKillSwitchOrQuarantineResponse._();
+  @$core.override
+  AdminManageConnectorKillSwitchOrQuarantineResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageConnectorKillSwitchOrQuarantineResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageConnectorKillSwitchOrQuarantineResponse>(create);
+  static AdminManageConnectorKillSwitchOrQuarantineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleSecureConnectorGrantItem get connector => $_getN(0);
+  @$pb.TagNumber(1)
+  set connector(OracleSecureConnectorGrantItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConnector() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConnector() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleSecureConnectorGrantItem ensureConnector() => $_ensure(0);
+}
+
+class OracleTrustedDecisionRoomItem extends $pb.GeneratedMessage {
+  factory OracleTrustedDecisionRoomItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? roomCode,
+    $core.String? titleAndScenario,
+    $core.String? specialistCredentialAndJurisdiction,
+    $core.String? conflictOfInterestDisclosure,
+    $core.String? scopedGrantAndExpiry,
+    $core.String? afterActionClosureSummary,
+    $core.String? roomState,
+    $core.bool? tenantBoundaryIsolated,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (roomCode != null) result.roomCode = roomCode;
+    if (titleAndScenario != null) result.titleAndScenario = titleAndScenario;
+    if (specialistCredentialAndJurisdiction != null)
+      result.specialistCredentialAndJurisdiction =
+          specialistCredentialAndJurisdiction;
+    if (conflictOfInterestDisclosure != null)
+      result.conflictOfInterestDisclosure = conflictOfInterestDisclosure;
+    if (scopedGrantAndExpiry != null)
+      result.scopedGrantAndExpiry = scopedGrantAndExpiry;
+    if (afterActionClosureSummary != null)
+      result.afterActionClosureSummary = afterActionClosureSummary;
+    if (roomState != null) result.roomState = roomState;
+    if (tenantBoundaryIsolated != null)
+      result.tenantBoundaryIsolated = tenantBoundaryIsolated;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleTrustedDecisionRoomItem._();
+
+  factory OracleTrustedDecisionRoomItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleTrustedDecisionRoomItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleTrustedDecisionRoomItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'roomCode')
+    ..aOS(4, _omitFieldNames ? '' : 'titleAndScenario')
+    ..aOS(5, _omitFieldNames ? '' : 'specialistCredentialAndJurisdiction')
+    ..aOS(6, _omitFieldNames ? '' : 'conflictOfInterestDisclosure')
+    ..aOS(7, _omitFieldNames ? '' : 'scopedGrantAndExpiry')
+    ..aOS(8, _omitFieldNames ? '' : 'afterActionClosureSummary')
+    ..aOS(9, _omitFieldNames ? '' : 'roomState')
+    ..aOB(10, _omitFieldNames ? '' : 'tenantBoundaryIsolated')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleTrustedDecisionRoomItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleTrustedDecisionRoomItem copyWith(
+          void Function(OracleTrustedDecisionRoomItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as OracleTrustedDecisionRoomItem))
+          as OracleTrustedDecisionRoomItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleTrustedDecisionRoomItem create() =>
+      OracleTrustedDecisionRoomItem._();
+  @$core.override
+  OracleTrustedDecisionRoomItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleTrustedDecisionRoomItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OracleTrustedDecisionRoomItem>(create);
+  static OracleTrustedDecisionRoomItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRoomCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get titleAndScenario => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set titleAndScenario($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTitleAndScenario() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTitleAndScenario() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get specialistCredentialAndJurisdiction => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set specialistCredentialAndJurisdiction($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSpecialistCredentialAndJurisdiction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSpecialistCredentialAndJurisdiction() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get conflictOfInterestDisclosure => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set conflictOfInterestDisclosure($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasConflictOfInterestDisclosure() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConflictOfInterestDisclosure() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get scopedGrantAndExpiry => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set scopedGrantAndExpiry($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScopedGrantAndExpiry() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScopedGrantAndExpiry() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get afterActionClosureSummary => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set afterActionClosureSummary($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAfterActionClosureSummary() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAfterActionClosureSummary() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get roomState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set roomState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRoomState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRoomState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get tenantBoundaryIsolated => $_getBF(9);
+  @$pb.TagNumber(10)
+  set tenantBoundaryIsolated($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTenantBoundaryIsolated() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTenantBoundaryIsolated() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetTrustedNetworkDecisionRoomsWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetTrustedNetworkDecisionRoomsWorkbenchRequest() => create();
+
+  GetTrustedNetworkDecisionRoomsWorkbenchRequest._();
+
+  factory GetTrustedNetworkDecisionRoomsWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTrustedNetworkDecisionRoomsWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetTrustedNetworkDecisionRoomsWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTrustedNetworkDecisionRoomsWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTrustedNetworkDecisionRoomsWorkbenchRequest copyWith(
+          void Function(GetTrustedNetworkDecisionRoomsWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetTrustedNetworkDecisionRoomsWorkbenchRequest))
+          as GetTrustedNetworkDecisionRoomsWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTrustedNetworkDecisionRoomsWorkbenchRequest create() =>
+      GetTrustedNetworkDecisionRoomsWorkbenchRequest._();
+  @$core.override
+  GetTrustedNetworkDecisionRoomsWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetTrustedNetworkDecisionRoomsWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTrustedNetworkDecisionRoomsWorkbenchRequest>(create);
+  static GetTrustedNetworkDecisionRoomsWorkbenchRequest? _defaultInstance;
+}
+
+class GetTrustedNetworkDecisionRoomsWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetTrustedNetworkDecisionRoomsWorkbenchResponse({
+    $core.Iterable<OracleTrustedDecisionRoomItem>? rooms,
+    $core.bool? doubleOptInAndCoiEnforced,
+    $core.String? decisionRoomsBanner,
+  }) {
+    final result = create();
+    if (rooms != null) result.rooms.addAll(rooms);
+    if (doubleOptInAndCoiEnforced != null)
+      result.doubleOptInAndCoiEnforced = doubleOptInAndCoiEnforced;
+    if (decisionRoomsBanner != null)
+      result.decisionRoomsBanner = decisionRoomsBanner;
+    return result;
+  }
+
+  GetTrustedNetworkDecisionRoomsWorkbenchResponse._();
+
+  factory GetTrustedNetworkDecisionRoomsWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetTrustedNetworkDecisionRoomsWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'GetTrustedNetworkDecisionRoomsWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleTrustedDecisionRoomItem>(1, _omitFieldNames ? '' : 'rooms',
+        subBuilder: OracleTrustedDecisionRoomItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'doubleOptInAndCoiEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'decisionRoomsBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTrustedNetworkDecisionRoomsWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetTrustedNetworkDecisionRoomsWorkbenchResponse copyWith(
+          void Function(GetTrustedNetworkDecisionRoomsWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetTrustedNetworkDecisionRoomsWorkbenchResponse))
+          as GetTrustedNetworkDecisionRoomsWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTrustedNetworkDecisionRoomsWorkbenchResponse create() =>
+      GetTrustedNetworkDecisionRoomsWorkbenchResponse._();
+  @$core.override
+  GetTrustedNetworkDecisionRoomsWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetTrustedNetworkDecisionRoomsWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetTrustedNetworkDecisionRoomsWorkbenchResponse>(create);
+  static GetTrustedNetworkDecisionRoomsWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleTrustedDecisionRoomItem> get rooms => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get doubleOptInAndCoiEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set doubleOptInAndCoiEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDoubleOptInAndCoiEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDoubleOptInAndCoiEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get decisionRoomsBanner => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set decisionRoomsBanner($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDecisionRoomsBanner() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDecisionRoomsBanner() => $_clearField(3);
+}
+
+class CreateOrCloseTrustedDecisionRoomRequest extends $pb.GeneratedMessage {
+  factory CreateOrCloseTrustedDecisionRoomRequest({
+    $core.String? roomCode,
+    $core.String? titleAndScenario,
+    $core.String? specialistCredentialAndJurisdiction,
+    $core.String? conflictOfInterestDisclosure,
+    $core.String? scopedGrantAndExpiry,
+    $core.String? afterActionClosureSummary,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (roomCode != null) result.roomCode = roomCode;
+    if (titleAndScenario != null) result.titleAndScenario = titleAndScenario;
+    if (specialistCredentialAndJurisdiction != null)
+      result.specialistCredentialAndJurisdiction =
+          specialistCredentialAndJurisdiction;
+    if (conflictOfInterestDisclosure != null)
+      result.conflictOfInterestDisclosure = conflictOfInterestDisclosure;
+    if (scopedGrantAndExpiry != null)
+      result.scopedGrantAndExpiry = scopedGrantAndExpiry;
+    if (afterActionClosureSummary != null)
+      result.afterActionClosureSummary = afterActionClosureSummary;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  CreateOrCloseTrustedDecisionRoomRequest._();
+
+  factory CreateOrCloseTrustedDecisionRoomRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrCloseTrustedDecisionRoomRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrCloseTrustedDecisionRoomRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomCode')
+    ..aOS(2, _omitFieldNames ? '' : 'titleAndScenario')
+    ..aOS(3, _omitFieldNames ? '' : 'specialistCredentialAndJurisdiction')
+    ..aOS(4, _omitFieldNames ? '' : 'conflictOfInterestDisclosure')
+    ..aOS(5, _omitFieldNames ? '' : 'scopedGrantAndExpiry')
+    ..aOS(6, _omitFieldNames ? '' : 'afterActionClosureSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrCloseTrustedDecisionRoomRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrCloseTrustedDecisionRoomRequest copyWith(
+          void Function(CreateOrCloseTrustedDecisionRoomRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrCloseTrustedDecisionRoomRequest))
+          as CreateOrCloseTrustedDecisionRoomRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrCloseTrustedDecisionRoomRequest create() =>
+      CreateOrCloseTrustedDecisionRoomRequest._();
+  @$core.override
+  CreateOrCloseTrustedDecisionRoomRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrCloseTrustedDecisionRoomRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrCloseTrustedDecisionRoomRequest>(create);
+  static CreateOrCloseTrustedDecisionRoomRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get titleAndScenario => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set titleAndScenario($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTitleAndScenario() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTitleAndScenario() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get specialistCredentialAndJurisdiction => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set specialistCredentialAndJurisdiction($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSpecialistCredentialAndJurisdiction() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSpecialistCredentialAndJurisdiction() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get conflictOfInterestDisclosure => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set conflictOfInterestDisclosure($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConflictOfInterestDisclosure() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConflictOfInterestDisclosure() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get scopedGrantAndExpiry => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set scopedGrantAndExpiry($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasScopedGrantAndExpiry() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearScopedGrantAndExpiry() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get afterActionClosureSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set afterActionClosureSummary($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAfterActionClosureSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAfterActionClosureSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get roomState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomState() => $_clearField(7);
+}
+
+class CreateOrCloseTrustedDecisionRoomResponse extends $pb.GeneratedMessage {
+  factory CreateOrCloseTrustedDecisionRoomResponse({
+    OracleTrustedDecisionRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  CreateOrCloseTrustedDecisionRoomResponse._();
+
+  factory CreateOrCloseTrustedDecisionRoomResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CreateOrCloseTrustedDecisionRoomResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CreateOrCloseTrustedDecisionRoomResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleTrustedDecisionRoomItem>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: OracleTrustedDecisionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrCloseTrustedDecisionRoomResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CreateOrCloseTrustedDecisionRoomResponse copyWith(
+          void Function(CreateOrCloseTrustedDecisionRoomResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CreateOrCloseTrustedDecisionRoomResponse))
+          as CreateOrCloseTrustedDecisionRoomResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateOrCloseTrustedDecisionRoomResponse create() =>
+      CreateOrCloseTrustedDecisionRoomResponse._();
+  @$core.override
+  CreateOrCloseTrustedDecisionRoomResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CreateOrCloseTrustedDecisionRoomResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CreateOrCloseTrustedDecisionRoomResponse>(create);
+  static CreateOrCloseTrustedDecisionRoomResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(OracleTrustedDecisionRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem ensureRoom() => $_ensure(0);
+}
+
+class VerifySpecialistDisclosureOrOptInRequest extends $pb.GeneratedMessage {
+  factory VerifySpecialistDisclosureOrOptInRequest({
+    $core.String? roomCode,
+    $core.String? conflictOfInterestDisclosure,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (roomCode != null) result.roomCode = roomCode;
+    if (conflictOfInterestDisclosure != null)
+      result.conflictOfInterestDisclosure = conflictOfInterestDisclosure;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  VerifySpecialistDisclosureOrOptInRequest._();
+
+  factory VerifySpecialistDisclosureOrOptInRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifySpecialistDisclosureOrOptInRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifySpecialistDisclosureOrOptInRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'roomCode')
+    ..aOS(2, _omitFieldNames ? '' : 'conflictOfInterestDisclosure')
+    ..aOS(3, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifySpecialistDisclosureOrOptInRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifySpecialistDisclosureOrOptInRequest copyWith(
+          void Function(VerifySpecialistDisclosureOrOptInRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifySpecialistDisclosureOrOptInRequest))
+          as VerifySpecialistDisclosureOrOptInRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifySpecialistDisclosureOrOptInRequest create() =>
+      VerifySpecialistDisclosureOrOptInRequest._();
+  @$core.override
+  VerifySpecialistDisclosureOrOptInRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifySpecialistDisclosureOrOptInRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifySpecialistDisclosureOrOptInRequest>(create);
+  static VerifySpecialistDisclosureOrOptInRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get roomCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set roomCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoomCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoomCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get conflictOfInterestDisclosure => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set conflictOfInterestDisclosure($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasConflictOfInterestDisclosure() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearConflictOfInterestDisclosure() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRoomState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomState() => $_clearField(3);
+}
+
+class VerifySpecialistDisclosureOrOptInResponse extends $pb.GeneratedMessage {
+  factory VerifySpecialistDisclosureOrOptInResponse({
+    OracleTrustedDecisionRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  VerifySpecialistDisclosureOrOptInResponse._();
+
+  factory VerifySpecialistDisclosureOrOptInResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifySpecialistDisclosureOrOptInResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifySpecialistDisclosureOrOptInResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleTrustedDecisionRoomItem>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: OracleTrustedDecisionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifySpecialistDisclosureOrOptInResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifySpecialistDisclosureOrOptInResponse copyWith(
+          void Function(VerifySpecialistDisclosureOrOptInResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifySpecialistDisclosureOrOptInResponse))
+          as VerifySpecialistDisclosureOrOptInResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifySpecialistDisclosureOrOptInResponse create() =>
+      VerifySpecialistDisclosureOrOptInResponse._();
+  @$core.override
+  VerifySpecialistDisclosureOrOptInResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifySpecialistDisclosureOrOptInResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifySpecialistDisclosureOrOptInResponse>(create);
+  static VerifySpecialistDisclosureOrOptInResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(OracleTrustedDecisionRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem ensureRoom() => $_ensure(0);
+}
+
+class AdminListTrustedDecisionRoomsAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListTrustedDecisionRoomsAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListTrustedDecisionRoomsAuditRequest._();
+
+  factory AdminListTrustedDecisionRoomsAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListTrustedDecisionRoomsAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListTrustedDecisionRoomsAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTrustedDecisionRoomsAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTrustedDecisionRoomsAuditRequest copyWith(
+          void Function(AdminListTrustedDecisionRoomsAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListTrustedDecisionRoomsAuditRequest))
+          as AdminListTrustedDecisionRoomsAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListTrustedDecisionRoomsAuditRequest create() =>
+      AdminListTrustedDecisionRoomsAuditRequest._();
+  @$core.override
+  AdminListTrustedDecisionRoomsAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListTrustedDecisionRoomsAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListTrustedDecisionRoomsAuditRequest>(create);
+  static AdminListTrustedDecisionRoomsAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListTrustedDecisionRoomsAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListTrustedDecisionRoomsAuditResponse({
+    $core.Iterable<OracleTrustedDecisionRoomItem>? rooms,
+  }) {
+    final result = create();
+    if (rooms != null) result.rooms.addAll(rooms);
+    return result;
+  }
+
+  AdminListTrustedDecisionRoomsAuditResponse._();
+
+  factory AdminListTrustedDecisionRoomsAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListTrustedDecisionRoomsAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListTrustedDecisionRoomsAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleTrustedDecisionRoomItem>(1, _omitFieldNames ? '' : 'rooms',
+        subBuilder: OracleTrustedDecisionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTrustedDecisionRoomsAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListTrustedDecisionRoomsAuditResponse copyWith(
+          void Function(AdminListTrustedDecisionRoomsAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListTrustedDecisionRoomsAuditResponse))
+          as AdminListTrustedDecisionRoomsAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListTrustedDecisionRoomsAuditResponse create() =>
+      AdminListTrustedDecisionRoomsAuditResponse._();
+  @$core.override
+  AdminListTrustedDecisionRoomsAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListTrustedDecisionRoomsAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListTrustedDecisionRoomsAuditResponse>(create);
+  static AdminListTrustedDecisionRoomsAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleTrustedDecisionRoomItem> get rooms => $_getList(0);
+}
+
+class AdminManageDecisionRoomGrantOrBoundaryRequest
+    extends $pb.GeneratedMessage {
+  factory AdminManageDecisionRoomGrantOrBoundaryRequest({
+    $core.String? targetUserId,
+    $core.String? roomCode,
+    $core.String? roomState,
+    $core.String? afterActionClosureSummary,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (roomCode != null) result.roomCode = roomCode;
+    if (roomState != null) result.roomState = roomState;
+    if (afterActionClosureSummary != null)
+      result.afterActionClosureSummary = afterActionClosureSummary;
+    return result;
+  }
+
+  AdminManageDecisionRoomGrantOrBoundaryRequest._();
+
+  factory AdminManageDecisionRoomGrantOrBoundaryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageDecisionRoomGrantOrBoundaryRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageDecisionRoomGrantOrBoundaryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'roomCode')
+    ..aOS(3, _omitFieldNames ? '' : 'roomState')
+    ..aOS(4, _omitFieldNames ? '' : 'afterActionClosureSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionRoomGrantOrBoundaryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionRoomGrantOrBoundaryRequest copyWith(
+          void Function(AdminManageDecisionRoomGrantOrBoundaryRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminManageDecisionRoomGrantOrBoundaryRequest))
+          as AdminManageDecisionRoomGrantOrBoundaryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionRoomGrantOrBoundaryRequest create() =>
+      AdminManageDecisionRoomGrantOrBoundaryRequest._();
+  @$core.override
+  AdminManageDecisionRoomGrantOrBoundaryRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionRoomGrantOrBoundaryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageDecisionRoomGrantOrBoundaryRequest>(create);
+  static AdminManageDecisionRoomGrantOrBoundaryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get roomCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set roomCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRoomCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRoomCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRoomState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get afterActionClosureSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set afterActionClosureSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAfterActionClosureSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAfterActionClosureSummary() => $_clearField(4);
+}
+
+class AdminManageDecisionRoomGrantOrBoundaryResponse
+    extends $pb.GeneratedMessage {
+  factory AdminManageDecisionRoomGrantOrBoundaryResponse({
+    OracleTrustedDecisionRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  AdminManageDecisionRoomGrantOrBoundaryResponse._();
+
+  factory AdminManageDecisionRoomGrantOrBoundaryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminManageDecisionRoomGrantOrBoundaryResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminManageDecisionRoomGrantOrBoundaryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleTrustedDecisionRoomItem>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: OracleTrustedDecisionRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionRoomGrantOrBoundaryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminManageDecisionRoomGrantOrBoundaryResponse copyWith(
+          void Function(AdminManageDecisionRoomGrantOrBoundaryResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminManageDecisionRoomGrantOrBoundaryResponse))
+          as AdminManageDecisionRoomGrantOrBoundaryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionRoomGrantOrBoundaryResponse create() =>
+      AdminManageDecisionRoomGrantOrBoundaryResponse._();
+  @$core.override
+  AdminManageDecisionRoomGrantOrBoundaryResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminManageDecisionRoomGrantOrBoundaryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminManageDecisionRoomGrantOrBoundaryResponse>(create);
+  static AdminManageDecisionRoomGrantOrBoundaryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(OracleTrustedDecisionRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleTrustedDecisionRoomItem ensureRoom() => $_ensure(0);
+}
+
+class OracleWargameExposureSimulationItem extends $pb.GeneratedMessage {
+  factory OracleWargameExposureSimulationItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? simulationCode,
+    $core.String? scenarioTitle,
+    $core.String? minimalPillarContractsUsed,
+    $core.String? downsideBaseUpsideRanges,
+    $core.String? tenthPersonAndFailureTree,
+    $core.String? topSensitivityDriver,
+    $core.String? advisorMemoState,
+    $core.bool? silentLedgerAccessBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (simulationCode != null) result.simulationCode = simulationCode;
+    if (scenarioTitle != null) result.scenarioTitle = scenarioTitle;
+    if (minimalPillarContractsUsed != null)
+      result.minimalPillarContractsUsed = minimalPillarContractsUsed;
+    if (downsideBaseUpsideRanges != null)
+      result.downsideBaseUpsideRanges = downsideBaseUpsideRanges;
+    if (tenthPersonAndFailureTree != null)
+      result.tenthPersonAndFailureTree = tenthPersonAndFailureTree;
+    if (topSensitivityDriver != null)
+      result.topSensitivityDriver = topSensitivityDriver;
+    if (advisorMemoState != null) result.advisorMemoState = advisorMemoState;
+    if (silentLedgerAccessBlocked != null)
+      result.silentLedgerAccessBlocked = silentLedgerAccessBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OracleWargameExposureSimulationItem._();
+
+  factory OracleWargameExposureSimulationItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OracleWargameExposureSimulationItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OracleWargameExposureSimulationItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'simulationCode')
+    ..aOS(4, _omitFieldNames ? '' : 'scenarioTitle')
+    ..aOS(5, _omitFieldNames ? '' : 'minimalPillarContractsUsed')
+    ..aOS(6, _omitFieldNames ? '' : 'downsideBaseUpsideRanges')
+    ..aOS(7, _omitFieldNames ? '' : 'tenthPersonAndFailureTree')
+    ..aOS(8, _omitFieldNames ? '' : 'topSensitivityDriver')
+    ..aOS(9, _omitFieldNames ? '' : 'advisorMemoState')
+    ..aOB(10, _omitFieldNames ? '' : 'silentLedgerAccessBlocked')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleWargameExposureSimulationItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OracleWargameExposureSimulationItem copyWith(
+          void Function(OracleWargameExposureSimulationItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OracleWargameExposureSimulationItem))
+          as OracleWargameExposureSimulationItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OracleWargameExposureSimulationItem create() =>
+      OracleWargameExposureSimulationItem._();
+  @$core.override
+  OracleWargameExposureSimulationItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OracleWargameExposureSimulationItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          OracleWargameExposureSimulationItem>(create);
+  static OracleWargameExposureSimulationItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get simulationCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set simulationCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSimulationCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSimulationCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get scenarioTitle => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set scenarioTitle($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasScenarioTitle() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearScenarioTitle() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get minimalPillarContractsUsed => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set minimalPillarContractsUsed($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMinimalPillarContractsUsed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMinimalPillarContractsUsed() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get downsideBaseUpsideRanges => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set downsideBaseUpsideRanges($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDownsideBaseUpsideRanges() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDownsideBaseUpsideRanges() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get tenthPersonAndFailureTree => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set tenthPersonAndFailureTree($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasTenthPersonAndFailureTree() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTenthPersonAndFailureTree() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get topSensitivityDriver => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set topSensitivityDriver($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTopSensitivityDriver() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTopSensitivityDriver() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get advisorMemoState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set advisorMemoState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAdvisorMemoState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAdvisorMemoState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get silentLedgerAccessBlocked => $_getBF(9);
+  @$pb.TagNumber(10)
+  set silentLedgerAccessBlocked($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSilentLedgerAccessBlocked() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearSilentLedgerAccessBlocked() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetWargamingExposureWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetWargamingExposureWorkbenchRequest() => create();
+
+  GetWargamingExposureWorkbenchRequest._();
+
+  factory GetWargamingExposureWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWargamingExposureWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWargamingExposureWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWargamingExposureWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWargamingExposureWorkbenchRequest copyWith(
+          void Function(GetWargamingExposureWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetWargamingExposureWorkbenchRequest))
+          as GetWargamingExposureWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWargamingExposureWorkbenchRequest create() =>
+      GetWargamingExposureWorkbenchRequest._();
+  @$core.override
+  GetWargamingExposureWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWargamingExposureWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetWargamingExposureWorkbenchRequest>(create);
+  static GetWargamingExposureWorkbenchRequest? _defaultInstance;
+}
+
+class GetWargamingExposureWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetWargamingExposureWorkbenchResponse({
+    $core.Iterable<OracleWargameExposureSimulationItem>? simulations,
+    $core.bool? minimalContractIsolationEnforced,
+    $core.String? wargamingExposureBanner,
+  }) {
+    final result = create();
+    if (simulations != null) result.simulations.addAll(simulations);
+    if (minimalContractIsolationEnforced != null)
+      result.minimalContractIsolationEnforced =
+          minimalContractIsolationEnforced;
+    if (wargamingExposureBanner != null)
+      result.wargamingExposureBanner = wargamingExposureBanner;
+    return result;
+  }
+
+  GetWargamingExposureWorkbenchResponse._();
+
+  factory GetWargamingExposureWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetWargamingExposureWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetWargamingExposureWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleWargameExposureSimulationItem>(
+        1, _omitFieldNames ? '' : 'simulations',
+        subBuilder: OracleWargameExposureSimulationItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'minimalContractIsolationEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'wargamingExposureBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWargamingExposureWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetWargamingExposureWorkbenchResponse copyWith(
+          void Function(GetWargamingExposureWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetWargamingExposureWorkbenchResponse))
+          as GetWargamingExposureWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetWargamingExposureWorkbenchResponse create() =>
+      GetWargamingExposureWorkbenchResponse._();
+  @$core.override
+  GetWargamingExposureWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetWargamingExposureWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetWargamingExposureWorkbenchResponse>(create);
+  static GetWargamingExposureWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleWargameExposureSimulationItem> get simulations =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get minimalContractIsolationEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set minimalContractIsolationEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMinimalContractIsolationEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinimalContractIsolationEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get wargamingExposureBanner => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set wargamingExposureBanner($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWargamingExposureBanner() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWargamingExposureBanner() => $_clearField(3);
+}
+
+class RunOrExportWargameExposureSimulationRequest extends $pb.GeneratedMessage {
+  factory RunOrExportWargameExposureSimulationRequest({
+    $core.String? simulationCode,
+    $core.String? scenarioTitle,
+    $core.String? minimalPillarContractsUsed,
+    $core.String? downsideBaseUpsideRanges,
+    $core.String? tenthPersonAndFailureTree,
+    $core.String? topSensitivityDriver,
+    $core.String? advisorMemoState,
+  }) {
+    final result = create();
+    if (simulationCode != null) result.simulationCode = simulationCode;
+    if (scenarioTitle != null) result.scenarioTitle = scenarioTitle;
+    if (minimalPillarContractsUsed != null)
+      result.minimalPillarContractsUsed = minimalPillarContractsUsed;
+    if (downsideBaseUpsideRanges != null)
+      result.downsideBaseUpsideRanges = downsideBaseUpsideRanges;
+    if (tenthPersonAndFailureTree != null)
+      result.tenthPersonAndFailureTree = tenthPersonAndFailureTree;
+    if (topSensitivityDriver != null)
+      result.topSensitivityDriver = topSensitivityDriver;
+    if (advisorMemoState != null) result.advisorMemoState = advisorMemoState;
+    return result;
+  }
+
+  RunOrExportWargameExposureSimulationRequest._();
+
+  factory RunOrExportWargameExposureSimulationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunOrExportWargameExposureSimulationRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunOrExportWargameExposureSimulationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'simulationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'scenarioTitle')
+    ..aOS(3, _omitFieldNames ? '' : 'minimalPillarContractsUsed')
+    ..aOS(4, _omitFieldNames ? '' : 'downsideBaseUpsideRanges')
+    ..aOS(5, _omitFieldNames ? '' : 'tenthPersonAndFailureTree')
+    ..aOS(6, _omitFieldNames ? '' : 'topSensitivityDriver')
+    ..aOS(7, _omitFieldNames ? '' : 'advisorMemoState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOrExportWargameExposureSimulationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOrExportWargameExposureSimulationRequest copyWith(
+          void Function(RunOrExportWargameExposureSimulationRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as RunOrExportWargameExposureSimulationRequest))
+          as RunOrExportWargameExposureSimulationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunOrExportWargameExposureSimulationRequest create() =>
+      RunOrExportWargameExposureSimulationRequest._();
+  @$core.override
+  RunOrExportWargameExposureSimulationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RunOrExportWargameExposureSimulationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunOrExportWargameExposureSimulationRequest>(create);
+  static RunOrExportWargameExposureSimulationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get simulationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set simulationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSimulationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSimulationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get scenarioTitle => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set scenarioTitle($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScenarioTitle() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScenarioTitle() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get minimalPillarContractsUsed => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set minimalPillarContractsUsed($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMinimalPillarContractsUsed() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMinimalPillarContractsUsed() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get downsideBaseUpsideRanges => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set downsideBaseUpsideRanges($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDownsideBaseUpsideRanges() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDownsideBaseUpsideRanges() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get tenthPersonAndFailureTree => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set tenthPersonAndFailureTree($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTenthPersonAndFailureTree() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTenthPersonAndFailureTree() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get topSensitivityDriver => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set topSensitivityDriver($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTopSensitivityDriver() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTopSensitivityDriver() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get advisorMemoState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set advisorMemoState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAdvisorMemoState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAdvisorMemoState() => $_clearField(7);
+}
+
+class RunOrExportWargameExposureSimulationResponse
+    extends $pb.GeneratedMessage {
+  factory RunOrExportWargameExposureSimulationResponse({
+    OracleWargameExposureSimulationItem? simulation,
+  }) {
+    final result = create();
+    if (simulation != null) result.simulation = simulation;
+    return result;
+  }
+
+  RunOrExportWargameExposureSimulationResponse._();
+
+  factory RunOrExportWargameExposureSimulationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunOrExportWargameExposureSimulationResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RunOrExportWargameExposureSimulationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleWargameExposureSimulationItem>(
+        1, _omitFieldNames ? '' : 'simulation',
+        subBuilder: OracleWargameExposureSimulationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOrExportWargameExposureSimulationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunOrExportWargameExposureSimulationResponse copyWith(
+          void Function(RunOrExportWargameExposureSimulationResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as RunOrExportWargameExposureSimulationResponse))
+          as RunOrExportWargameExposureSimulationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunOrExportWargameExposureSimulationResponse create() =>
+      RunOrExportWargameExposureSimulationResponse._();
+  @$core.override
+  RunOrExportWargameExposureSimulationResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RunOrExportWargameExposureSimulationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunOrExportWargameExposureSimulationResponse>(create);
+  static RunOrExportWargameExposureSimulationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem get simulation => $_getN(0);
+  @$pb.TagNumber(1)
+  set simulation(OracleWargameExposureSimulationItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSimulation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSimulation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem ensureSimulation() => $_ensure(0);
+}
+
+class UpdateWargameSensitivityOrContingencyRequest
+    extends $pb.GeneratedMessage {
+  factory UpdateWargameSensitivityOrContingencyRequest({
+    $core.String? simulationCode,
+    $core.String? topSensitivityDriver,
+    $core.String? advisorMemoState,
+  }) {
+    final result = create();
+    if (simulationCode != null) result.simulationCode = simulationCode;
+    if (topSensitivityDriver != null)
+      result.topSensitivityDriver = topSensitivityDriver;
+    if (advisorMemoState != null) result.advisorMemoState = advisorMemoState;
+    return result;
+  }
+
+  UpdateWargameSensitivityOrContingencyRequest._();
+
+  factory UpdateWargameSensitivityOrContingencyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateWargameSensitivityOrContingencyRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateWargameSensitivityOrContingencyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'simulationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'topSensitivityDriver')
+    ..aOS(3, _omitFieldNames ? '' : 'advisorMemoState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateWargameSensitivityOrContingencyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateWargameSensitivityOrContingencyRequest copyWith(
+          void Function(UpdateWargameSensitivityOrContingencyRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateWargameSensitivityOrContingencyRequest))
+          as UpdateWargameSensitivityOrContingencyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateWargameSensitivityOrContingencyRequest create() =>
+      UpdateWargameSensitivityOrContingencyRequest._();
+  @$core.override
+  UpdateWargameSensitivityOrContingencyRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateWargameSensitivityOrContingencyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateWargameSensitivityOrContingencyRequest>(create);
+  static UpdateWargameSensitivityOrContingencyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get simulationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set simulationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSimulationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSimulationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get topSensitivityDriver => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set topSensitivityDriver($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTopSensitivityDriver() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTopSensitivityDriver() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get advisorMemoState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set advisorMemoState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAdvisorMemoState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdvisorMemoState() => $_clearField(3);
+}
+
+class UpdateWargameSensitivityOrContingencyResponse
+    extends $pb.GeneratedMessage {
+  factory UpdateWargameSensitivityOrContingencyResponse({
+    OracleWargameExposureSimulationItem? simulation,
+  }) {
+    final result = create();
+    if (simulation != null) result.simulation = simulation;
+    return result;
+  }
+
+  UpdateWargameSensitivityOrContingencyResponse._();
+
+  factory UpdateWargameSensitivityOrContingencyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateWargameSensitivityOrContingencyResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateWargameSensitivityOrContingencyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleWargameExposureSimulationItem>(
+        1, _omitFieldNames ? '' : 'simulation',
+        subBuilder: OracleWargameExposureSimulationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateWargameSensitivityOrContingencyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateWargameSensitivityOrContingencyResponse copyWith(
+          void Function(UpdateWargameSensitivityOrContingencyResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as UpdateWargameSensitivityOrContingencyResponse))
+          as UpdateWargameSensitivityOrContingencyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateWargameSensitivityOrContingencyResponse create() =>
+      UpdateWargameSensitivityOrContingencyResponse._();
+  @$core.override
+  UpdateWargameSensitivityOrContingencyResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateWargameSensitivityOrContingencyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UpdateWargameSensitivityOrContingencyResponse>(create);
+  static UpdateWargameSensitivityOrContingencyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem get simulation => $_getN(0);
+  @$pb.TagNumber(1)
+  set simulation(OracleWargameExposureSimulationItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSimulation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSimulation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem ensureSimulation() => $_ensure(0);
+}
+
+class AdminListWargamingExposureAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListWargamingExposureAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListWargamingExposureAuditRequest._();
+
+  factory AdminListWargamingExposureAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListWargamingExposureAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListWargamingExposureAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWargamingExposureAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWargamingExposureAuditRequest copyWith(
+          void Function(AdminListWargamingExposureAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListWargamingExposureAuditRequest))
+          as AdminListWargamingExposureAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListWargamingExposureAuditRequest create() =>
+      AdminListWargamingExposureAuditRequest._();
+  @$core.override
+  AdminListWargamingExposureAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListWargamingExposureAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListWargamingExposureAuditRequest>(create);
+  static AdminListWargamingExposureAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListWargamingExposureAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListWargamingExposureAuditResponse({
+    $core.Iterable<OracleWargameExposureSimulationItem>? simulations,
+  }) {
+    final result = create();
+    if (simulations != null) result.simulations.addAll(simulations);
+    return result;
+  }
+
+  AdminListWargamingExposureAuditResponse._();
+
+  factory AdminListWargamingExposureAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListWargamingExposureAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListWargamingExposureAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OracleWargameExposureSimulationItem>(
+        1, _omitFieldNames ? '' : 'simulations',
+        subBuilder: OracleWargameExposureSimulationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWargamingExposureAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListWargamingExposureAuditResponse copyWith(
+          void Function(AdminListWargamingExposureAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListWargamingExposureAuditResponse))
+          as AdminListWargamingExposureAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListWargamingExposureAuditResponse create() =>
+      AdminListWargamingExposureAuditResponse._();
+  @$core.override
+  AdminListWargamingExposureAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListWargamingExposureAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListWargamingExposureAuditResponse>(create);
+  static AdminListWargamingExposureAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OracleWargameExposureSimulationItem> get simulations =>
+      $_getList(0);
+}
+
+class AdminCertifyMinimalPillarContractOrDisclaimerRequest
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyMinimalPillarContractOrDisclaimerRequest({
+    $core.String? targetUserId,
+    $core.String? simulationCode,
+    $core.String? advisorMemoState,
+    $core.String? minimalPillarContractsUsed,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (simulationCode != null) result.simulationCode = simulationCode;
+    if (advisorMemoState != null) result.advisorMemoState = advisorMemoState;
+    if (minimalPillarContractsUsed != null)
+      result.minimalPillarContractsUsed = minimalPillarContractsUsed;
+    return result;
+  }
+
+  AdminCertifyMinimalPillarContractOrDisclaimerRequest._();
+
+  factory AdminCertifyMinimalPillarContractOrDisclaimerRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyMinimalPillarContractOrDisclaimerRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyMinimalPillarContractOrDisclaimerRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'simulationCode')
+    ..aOS(3, _omitFieldNames ? '' : 'advisorMemoState')
+    ..aOS(4, _omitFieldNames ? '' : 'minimalPillarContractsUsed')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyMinimalPillarContractOrDisclaimerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyMinimalPillarContractOrDisclaimerRequest copyWith(
+          void Function(AdminCertifyMinimalPillarContractOrDisclaimerRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyMinimalPillarContractOrDisclaimerRequest))
+          as AdminCertifyMinimalPillarContractOrDisclaimerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyMinimalPillarContractOrDisclaimerRequest create() =>
+      AdminCertifyMinimalPillarContractOrDisclaimerRequest._();
+  @$core.override
+  AdminCertifyMinimalPillarContractOrDisclaimerRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyMinimalPillarContractOrDisclaimerRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyMinimalPillarContractOrDisclaimerRequest>(create);
+  static AdminCertifyMinimalPillarContractOrDisclaimerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get simulationCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set simulationCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSimulationCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSimulationCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get advisorMemoState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set advisorMemoState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAdvisorMemoState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdvisorMemoState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get minimalPillarContractsUsed => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set minimalPillarContractsUsed($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMinimalPillarContractsUsed() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMinimalPillarContractsUsed() => $_clearField(4);
+}
+
+class AdminCertifyMinimalPillarContractOrDisclaimerResponse
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyMinimalPillarContractOrDisclaimerResponse({
+    OracleWargameExposureSimulationItem? simulation,
+  }) {
+    final result = create();
+    if (simulation != null) result.simulation = simulation;
+    return result;
+  }
+
+  AdminCertifyMinimalPillarContractOrDisclaimerResponse._();
+
+  factory AdminCertifyMinimalPillarContractOrDisclaimerResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyMinimalPillarContractOrDisclaimerResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyMinimalPillarContractOrDisclaimerResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OracleWargameExposureSimulationItem>(
+        1, _omitFieldNames ? '' : 'simulation',
+        subBuilder: OracleWargameExposureSimulationItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyMinimalPillarContractOrDisclaimerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyMinimalPillarContractOrDisclaimerResponse copyWith(
+          void Function(AdminCertifyMinimalPillarContractOrDisclaimerResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyMinimalPillarContractOrDisclaimerResponse))
+          as AdminCertifyMinimalPillarContractOrDisclaimerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyMinimalPillarContractOrDisclaimerResponse create() =>
+      AdminCertifyMinimalPillarContractOrDisclaimerResponse._();
+  @$core.override
+  AdminCertifyMinimalPillarContractOrDisclaimerResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyMinimalPillarContractOrDisclaimerResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyMinimalPillarContractOrDisclaimerResponse>(create);
+  static AdminCertifyMinimalPillarContractOrDisclaimerResponse?
+      _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem get simulation => $_getN(0);
+  @$pb.TagNumber(1)
+  set simulation(OracleWargameExposureSimulationItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSimulation() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSimulation() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OracleWargameExposureSimulationItem ensureSimulation() => $_ensure(0);
+}
+
+class OraclePrivateCaseLibraryEntryItem extends $pb.GeneratedMessage {
+  factory OraclePrivateCaseLibraryEntryItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? caseCode,
+    $core.String? sourceDecisionCode,
+    $core.String? caseTitle,
+    $core.String? structuralMatchAndDifferences,
+    $core.String? observedOutcomeVsCounterfactual,
+    $core.String? anonymizedInstitutionalTemplate,
+    $core.String? sharingState,
+    $core.bool? analogyTreatedAsEvidence,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (caseCode != null) result.caseCode = caseCode;
+    if (sourceDecisionCode != null)
+      result.sourceDecisionCode = sourceDecisionCode;
+    if (caseTitle != null) result.caseTitle = caseTitle;
+    if (structuralMatchAndDifferences != null)
+      result.structuralMatchAndDifferences = structuralMatchAndDifferences;
+    if (observedOutcomeVsCounterfactual != null)
+      result.observedOutcomeVsCounterfactual = observedOutcomeVsCounterfactual;
+    if (anonymizedInstitutionalTemplate != null)
+      result.anonymizedInstitutionalTemplate = anonymizedInstitutionalTemplate;
+    if (sharingState != null) result.sharingState = sharingState;
+    if (analogyTreatedAsEvidence != null)
+      result.analogyTreatedAsEvidence = analogyTreatedAsEvidence;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  OraclePrivateCaseLibraryEntryItem._();
+
+  factory OraclePrivateCaseLibraryEntryItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OraclePrivateCaseLibraryEntryItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OraclePrivateCaseLibraryEntryItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'caseCode')
+    ..aOS(4, _omitFieldNames ? '' : 'sourceDecisionCode')
+    ..aOS(5, _omitFieldNames ? '' : 'caseTitle')
+    ..aOS(6, _omitFieldNames ? '' : 'structuralMatchAndDifferences')
+    ..aOS(7, _omitFieldNames ? '' : 'observedOutcomeVsCounterfactual')
+    ..aOS(8, _omitFieldNames ? '' : 'anonymizedInstitutionalTemplate')
+    ..aOS(9, _omitFieldNames ? '' : 'sharingState')
+    ..aOB(10, _omitFieldNames ? '' : 'analogyTreatedAsEvidence')
+    ..aOS(11, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OraclePrivateCaseLibraryEntryItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OraclePrivateCaseLibraryEntryItem copyWith(
+          void Function(OraclePrivateCaseLibraryEntryItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as OraclePrivateCaseLibraryEntryItem))
+          as OraclePrivateCaseLibraryEntryItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OraclePrivateCaseLibraryEntryItem create() =>
+      OraclePrivateCaseLibraryEntryItem._();
+  @$core.override
+  OraclePrivateCaseLibraryEntryItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OraclePrivateCaseLibraryEntryItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OraclePrivateCaseLibraryEntryItem>(
+          create);
+  static OraclePrivateCaseLibraryEntryItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get caseCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set caseCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCaseCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCaseCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sourceDecisionCode => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sourceDecisionCode($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSourceDecisionCode() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSourceDecisionCode() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get caseTitle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set caseTitle($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCaseTitle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCaseTitle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get structuralMatchAndDifferences => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set structuralMatchAndDifferences($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStructuralMatchAndDifferences() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStructuralMatchAndDifferences() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get observedOutcomeVsCounterfactual => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set observedOutcomeVsCounterfactual($core.String value) =>
+      $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasObservedOutcomeVsCounterfactual() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearObservedOutcomeVsCounterfactual() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get anonymizedInstitutionalTemplate => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set anonymizedInstitutionalTemplate($core.String value) =>
+      $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAnonymizedInstitutionalTemplate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAnonymizedInstitutionalTemplate() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get sharingState => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set sharingState($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasSharingState() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearSharingState() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.bool get analogyTreatedAsEvidence => $_getBF(9);
+  @$pb.TagNumber(10)
+  set analogyTreatedAsEvidence($core.bool value) => $_setBool(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasAnalogyTreatedAsEvidence() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAnalogyTreatedAsEvidence() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get updatedAtIso => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set updatedAtIso($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAtIso() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAtIso() => $_clearField(11);
+}
+
+class GetPrivateCaseLibraryWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetPrivateCaseLibraryWorkbenchRequest() => create();
+
+  GetPrivateCaseLibraryWorkbenchRequest._();
+
+  factory GetPrivateCaseLibraryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPrivateCaseLibraryWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPrivateCaseLibraryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivateCaseLibraryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivateCaseLibraryWorkbenchRequest copyWith(
+          void Function(GetPrivateCaseLibraryWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPrivateCaseLibraryWorkbenchRequest))
+          as GetPrivateCaseLibraryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivateCaseLibraryWorkbenchRequest create() =>
+      GetPrivateCaseLibraryWorkbenchRequest._();
+  @$core.override
+  GetPrivateCaseLibraryWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivateCaseLibraryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPrivateCaseLibraryWorkbenchRequest>(create);
+  static GetPrivateCaseLibraryWorkbenchRequest? _defaultInstance;
+}
+
+class GetPrivateCaseLibraryWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetPrivateCaseLibraryWorkbenchResponse({
+    $core.Iterable<OraclePrivateCaseLibraryEntryItem>? cases,
+    $core.bool? analogyVsEvidenceGuardEnforced,
+    $core.String? caseLibraryBanner,
+  }) {
+    final result = create();
+    if (cases != null) result.cases.addAll(cases);
+    if (analogyVsEvidenceGuardEnforced != null)
+      result.analogyVsEvidenceGuardEnforced = analogyVsEvidenceGuardEnforced;
+    if (caseLibraryBanner != null) result.caseLibraryBanner = caseLibraryBanner;
+    return result;
+  }
+
+  GetPrivateCaseLibraryWorkbenchResponse._();
+
+  factory GetPrivateCaseLibraryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetPrivateCaseLibraryWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetPrivateCaseLibraryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OraclePrivateCaseLibraryEntryItem>(1, _omitFieldNames ? '' : 'cases',
+        subBuilder: OraclePrivateCaseLibraryEntryItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'analogyVsEvidenceGuardEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'caseLibraryBanner')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivateCaseLibraryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetPrivateCaseLibraryWorkbenchResponse copyWith(
+          void Function(GetPrivateCaseLibraryWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetPrivateCaseLibraryWorkbenchResponse))
+          as GetPrivateCaseLibraryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetPrivateCaseLibraryWorkbenchResponse create() =>
+      GetPrivateCaseLibraryWorkbenchResponse._();
+  @$core.override
+  GetPrivateCaseLibraryWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetPrivateCaseLibraryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetPrivateCaseLibraryWorkbenchResponse>(create);
+  static GetPrivateCaseLibraryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OraclePrivateCaseLibraryEntryItem> get cases => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get analogyVsEvidenceGuardEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set analogyVsEvidenceGuardEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAnalogyVsEvidenceGuardEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAnalogyVsEvidenceGuardEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get caseLibraryBanner => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set caseLibraryBanner($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCaseLibraryBanner() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCaseLibraryBanner() => $_clearField(3);
+}
+
+class SaveOrComparePrivateCaseEntryRequest extends $pb.GeneratedMessage {
+  factory SaveOrComparePrivateCaseEntryRequest({
+    $core.String? caseCode,
+    $core.String? sourceDecisionCode,
+    $core.String? caseTitle,
+    $core.String? structuralMatchAndDifferences,
+    $core.String? observedOutcomeVsCounterfactual,
+    $core.String? anonymizedInstitutionalTemplate,
+    $core.String? sharingState,
+  }) {
+    final result = create();
+    if (caseCode != null) result.caseCode = caseCode;
+    if (sourceDecisionCode != null)
+      result.sourceDecisionCode = sourceDecisionCode;
+    if (caseTitle != null) result.caseTitle = caseTitle;
+    if (structuralMatchAndDifferences != null)
+      result.structuralMatchAndDifferences = structuralMatchAndDifferences;
+    if (observedOutcomeVsCounterfactual != null)
+      result.observedOutcomeVsCounterfactual = observedOutcomeVsCounterfactual;
+    if (anonymizedInstitutionalTemplate != null)
+      result.anonymizedInstitutionalTemplate = anonymizedInstitutionalTemplate;
+    if (sharingState != null) result.sharingState = sharingState;
+    return result;
+  }
+
+  SaveOrComparePrivateCaseEntryRequest._();
+
+  factory SaveOrComparePrivateCaseEntryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveOrComparePrivateCaseEntryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveOrComparePrivateCaseEntryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseCode')
+    ..aOS(2, _omitFieldNames ? '' : 'sourceDecisionCode')
+    ..aOS(3, _omitFieldNames ? '' : 'caseTitle')
+    ..aOS(4, _omitFieldNames ? '' : 'structuralMatchAndDifferences')
+    ..aOS(5, _omitFieldNames ? '' : 'observedOutcomeVsCounterfactual')
+    ..aOS(6, _omitFieldNames ? '' : 'anonymizedInstitutionalTemplate')
+    ..aOS(7, _omitFieldNames ? '' : 'sharingState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveOrComparePrivateCaseEntryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveOrComparePrivateCaseEntryRequest copyWith(
+          void Function(SaveOrComparePrivateCaseEntryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveOrComparePrivateCaseEntryRequest))
+          as SaveOrComparePrivateCaseEntryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveOrComparePrivateCaseEntryRequest create() =>
+      SaveOrComparePrivateCaseEntryRequest._();
+  @$core.override
+  SaveOrComparePrivateCaseEntryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveOrComparePrivateCaseEntryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveOrComparePrivateCaseEntryRequest>(create);
+  static SaveOrComparePrivateCaseEntryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sourceDecisionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sourceDecisionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSourceDecisionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSourceDecisionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get caseTitle => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set caseTitle($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCaseTitle() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCaseTitle() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get structuralMatchAndDifferences => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set structuralMatchAndDifferences($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStructuralMatchAndDifferences() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStructuralMatchAndDifferences() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get observedOutcomeVsCounterfactual => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set observedOutcomeVsCounterfactual($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasObservedOutcomeVsCounterfactual() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearObservedOutcomeVsCounterfactual() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get anonymizedInstitutionalTemplate => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set anonymizedInstitutionalTemplate($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAnonymizedInstitutionalTemplate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAnonymizedInstitutionalTemplate() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get sharingState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set sharingState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSharingState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSharingState() => $_clearField(7);
+}
+
+class SaveOrComparePrivateCaseEntryResponse extends $pb.GeneratedMessage {
+  factory SaveOrComparePrivateCaseEntryResponse({
+    OraclePrivateCaseLibraryEntryItem? caseEntry,
+  }) {
+    final result = create();
+    if (caseEntry != null) result.caseEntry = caseEntry;
+    return result;
+  }
+
+  SaveOrComparePrivateCaseEntryResponse._();
+
+  factory SaveOrComparePrivateCaseEntryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveOrComparePrivateCaseEntryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveOrComparePrivateCaseEntryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OraclePrivateCaseLibraryEntryItem>(
+        1, _omitFieldNames ? '' : 'caseEntry',
+        subBuilder: OraclePrivateCaseLibraryEntryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveOrComparePrivateCaseEntryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveOrComparePrivateCaseEntryResponse copyWith(
+          void Function(SaveOrComparePrivateCaseEntryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveOrComparePrivateCaseEntryResponse))
+          as SaveOrComparePrivateCaseEntryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveOrComparePrivateCaseEntryResponse create() =>
+      SaveOrComparePrivateCaseEntryResponse._();
+  @$core.override
+  SaveOrComparePrivateCaseEntryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveOrComparePrivateCaseEntryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveOrComparePrivateCaseEntryResponse>(create);
+  static SaveOrComparePrivateCaseEntryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem get caseEntry => $_getN(0);
+  @$pb.TagNumber(1)
+  set caseEntry(OraclePrivateCaseLibraryEntryItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem ensureCaseEntry() => $_ensure(0);
+}
+
+class SubmitOrWithdrawAnonymizedPlaybookRequest extends $pb.GeneratedMessage {
+  factory SubmitOrWithdrawAnonymizedPlaybookRequest({
+    $core.String? caseCode,
+    $core.String? anonymizedInstitutionalTemplate,
+    $core.String? sharingState,
+  }) {
+    final result = create();
+    if (caseCode != null) result.caseCode = caseCode;
+    if (anonymizedInstitutionalTemplate != null)
+      result.anonymizedInstitutionalTemplate = anonymizedInstitutionalTemplate;
+    if (sharingState != null) result.sharingState = sharingState;
+    return result;
+  }
+
+  SubmitOrWithdrawAnonymizedPlaybookRequest._();
+
+  factory SubmitOrWithdrawAnonymizedPlaybookRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitOrWithdrawAnonymizedPlaybookRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitOrWithdrawAnonymizedPlaybookRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'caseCode')
+    ..aOS(2, _omitFieldNames ? '' : 'anonymizedInstitutionalTemplate')
+    ..aOS(3, _omitFieldNames ? '' : 'sharingState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitOrWithdrawAnonymizedPlaybookRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitOrWithdrawAnonymizedPlaybookRequest copyWith(
+          void Function(SubmitOrWithdrawAnonymizedPlaybookRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitOrWithdrawAnonymizedPlaybookRequest))
+          as SubmitOrWithdrawAnonymizedPlaybookRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitOrWithdrawAnonymizedPlaybookRequest create() =>
+      SubmitOrWithdrawAnonymizedPlaybookRequest._();
+  @$core.override
+  SubmitOrWithdrawAnonymizedPlaybookRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitOrWithdrawAnonymizedPlaybookRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitOrWithdrawAnonymizedPlaybookRequest>(create);
+  static SubmitOrWithdrawAnonymizedPlaybookRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get caseCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set caseCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get anonymizedInstitutionalTemplate => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set anonymizedInstitutionalTemplate($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAnonymizedInstitutionalTemplate() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAnonymizedInstitutionalTemplate() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sharingState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sharingState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSharingState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSharingState() => $_clearField(3);
+}
+
+class SubmitOrWithdrawAnonymizedPlaybookResponse extends $pb.GeneratedMessage {
+  factory SubmitOrWithdrawAnonymizedPlaybookResponse({
+    OraclePrivateCaseLibraryEntryItem? caseEntry,
+  }) {
+    final result = create();
+    if (caseEntry != null) result.caseEntry = caseEntry;
+    return result;
+  }
+
+  SubmitOrWithdrawAnonymizedPlaybookResponse._();
+
+  factory SubmitOrWithdrawAnonymizedPlaybookResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SubmitOrWithdrawAnonymizedPlaybookResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SubmitOrWithdrawAnonymizedPlaybookResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OraclePrivateCaseLibraryEntryItem>(
+        1, _omitFieldNames ? '' : 'caseEntry',
+        subBuilder: OraclePrivateCaseLibraryEntryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitOrWithdrawAnonymizedPlaybookResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SubmitOrWithdrawAnonymizedPlaybookResponse copyWith(
+          void Function(SubmitOrWithdrawAnonymizedPlaybookResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SubmitOrWithdrawAnonymizedPlaybookResponse))
+          as SubmitOrWithdrawAnonymizedPlaybookResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubmitOrWithdrawAnonymizedPlaybookResponse create() =>
+      SubmitOrWithdrawAnonymizedPlaybookResponse._();
+  @$core.override
+  SubmitOrWithdrawAnonymizedPlaybookResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SubmitOrWithdrawAnonymizedPlaybookResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SubmitOrWithdrawAnonymizedPlaybookResponse>(create);
+  static SubmitOrWithdrawAnonymizedPlaybookResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem get caseEntry => $_getN(0);
+  @$pb.TagNumber(1)
+  set caseEntry(OraclePrivateCaseLibraryEntryItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem ensureCaseEntry() => $_ensure(0);
+}
+
+class AdminListPrivateCaseLibraryAuditRequest extends $pb.GeneratedMessage {
+  factory AdminListPrivateCaseLibraryAuditRequest({
+    $core.int? limit,
+  }) {
+    final result = create();
+    if (limit != null) result.limit = limit;
+    return result;
+  }
+
+  AdminListPrivateCaseLibraryAuditRequest._();
+
+  factory AdminListPrivateCaseLibraryAuditRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListPrivateCaseLibraryAuditRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListPrivateCaseLibraryAuditRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'limit')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPrivateCaseLibraryAuditRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPrivateCaseLibraryAuditRequest copyWith(
+          void Function(AdminListPrivateCaseLibraryAuditRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListPrivateCaseLibraryAuditRequest))
+          as AdminListPrivateCaseLibraryAuditRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListPrivateCaseLibraryAuditRequest create() =>
+      AdminListPrivateCaseLibraryAuditRequest._();
+  @$core.override
+  AdminListPrivateCaseLibraryAuditRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListPrivateCaseLibraryAuditRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListPrivateCaseLibraryAuditRequest>(create);
+  static AdminListPrivateCaseLibraryAuditRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get limit => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set limit($core.int value) => $_setSignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLimit() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLimit() => $_clearField(1);
+}
+
+class AdminListPrivateCaseLibraryAuditResponse extends $pb.GeneratedMessage {
+  factory AdminListPrivateCaseLibraryAuditResponse({
+    $core.Iterable<OraclePrivateCaseLibraryEntryItem>? cases,
+  }) {
+    final result = create();
+    if (cases != null) result.cases.addAll(cases);
+    return result;
+  }
+
+  AdminListPrivateCaseLibraryAuditResponse._();
+
+  factory AdminListPrivateCaseLibraryAuditResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminListPrivateCaseLibraryAuditResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AdminListPrivateCaseLibraryAuditResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..pPM<OraclePrivateCaseLibraryEntryItem>(1, _omitFieldNames ? '' : 'cases',
+        subBuilder: OraclePrivateCaseLibraryEntryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPrivateCaseLibraryAuditResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminListPrivateCaseLibraryAuditResponse copyWith(
+          void Function(AdminListPrivateCaseLibraryAuditResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as AdminListPrivateCaseLibraryAuditResponse))
+          as AdminListPrivateCaseLibraryAuditResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminListPrivateCaseLibraryAuditResponse create() =>
+      AdminListPrivateCaseLibraryAuditResponse._();
+  @$core.override
+  AdminListPrivateCaseLibraryAuditResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static AdminListPrivateCaseLibraryAuditResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminListPrivateCaseLibraryAuditResponse>(create);
+  static AdminListPrivateCaseLibraryAuditResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<OraclePrivateCaseLibraryEntryItem> get cases => $_getList(0);
+}
+
+class AdminCertifyPlaybookAnonymizationOrErasureRequest
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyPlaybookAnonymizationOrErasureRequest({
+    $core.String? targetUserId,
+    $core.String? caseCode,
+    $core.String? sharingState,
+    $core.String? anonymizedInstitutionalTemplate,
+  }) {
+    final result = create();
+    if (targetUserId != null) result.targetUserId = targetUserId;
+    if (caseCode != null) result.caseCode = caseCode;
+    if (sharingState != null) result.sharingState = sharingState;
+    if (anonymizedInstitutionalTemplate != null)
+      result.anonymizedInstitutionalTemplate = anonymizedInstitutionalTemplate;
+    return result;
+  }
+
+  AdminCertifyPlaybookAnonymizationOrErasureRequest._();
+
+  factory AdminCertifyPlaybookAnonymizationOrErasureRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyPlaybookAnonymizationOrErasureRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyPlaybookAnonymizationOrErasureRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'targetUserId')
+    ..aOS(2, _omitFieldNames ? '' : 'caseCode')
+    ..aOS(3, _omitFieldNames ? '' : 'sharingState')
+    ..aOS(4, _omitFieldNames ? '' : 'anonymizedInstitutionalTemplate')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPlaybookAnonymizationOrErasureRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPlaybookAnonymizationOrErasureRequest copyWith(
+          void Function(AdminCertifyPlaybookAnonymizationOrErasureRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyPlaybookAnonymizationOrErasureRequest))
+          as AdminCertifyPlaybookAnonymizationOrErasureRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPlaybookAnonymizationOrErasureRequest create() =>
+      AdminCertifyPlaybookAnonymizationOrErasureRequest._();
+  @$core.override
+  AdminCertifyPlaybookAnonymizationOrErasureRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPlaybookAnonymizationOrErasureRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyPlaybookAnonymizationOrErasureRequest>(create);
+  static AdminCertifyPlaybookAnonymizationOrErasureRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get targetUserId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set targetUserId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTargetUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTargetUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get caseCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set caseCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCaseCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCaseCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sharingState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sharingState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSharingState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSharingState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get anonymizedInstitutionalTemplate => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set anonymizedInstitutionalTemplate($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAnonymizedInstitutionalTemplate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAnonymizedInstitutionalTemplate() => $_clearField(4);
+}
+
+class AdminCertifyPlaybookAnonymizationOrErasureResponse
+    extends $pb.GeneratedMessage {
+  factory AdminCertifyPlaybookAnonymizationOrErasureResponse({
+    OraclePrivateCaseLibraryEntryItem? caseEntry,
+  }) {
+    final result = create();
+    if (caseEntry != null) result.caseEntry = caseEntry;
+    return result;
+  }
+
+  AdminCertifyPlaybookAnonymizationOrErasureResponse._();
+
+  factory AdminCertifyPlaybookAnonymizationOrErasureResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdminCertifyPlaybookAnonymizationOrErasureResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdminCertifyPlaybookAnonymizationOrErasureResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.oracle.v1'),
+      createEmptyInstance: create)
+    ..aOM<OraclePrivateCaseLibraryEntryItem>(
+        1, _omitFieldNames ? '' : 'caseEntry',
+        subBuilder: OraclePrivateCaseLibraryEntryItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPlaybookAnonymizationOrErasureResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdminCertifyPlaybookAnonymizationOrErasureResponse copyWith(
+          void Function(AdminCertifyPlaybookAnonymizationOrErasureResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdminCertifyPlaybookAnonymizationOrErasureResponse))
+          as AdminCertifyPlaybookAnonymizationOrErasureResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPlaybookAnonymizationOrErasureResponse create() =>
+      AdminCertifyPlaybookAnonymizationOrErasureResponse._();
+  @$core.override
+  AdminCertifyPlaybookAnonymizationOrErasureResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdminCertifyPlaybookAnonymizationOrErasureResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdminCertifyPlaybookAnonymizationOrErasureResponse>(create);
+  static AdminCertifyPlaybookAnonymizationOrErasureResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem get caseEntry => $_getN(0);
+  @$pb.TagNumber(1)
+  set caseEntry(OraclePrivateCaseLibraryEntryItem value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCaseEntry() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCaseEntry() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OraclePrivateCaseLibraryEntryItem ensureCaseEntry() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

@@ -19,52 +19,85 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	ZenithService_LogFocusSession_FullMethodName           = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
-	ZenithService_GetZenithStats_FullMethodName            = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
-	ZenithService_ListRecentSessions_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListRecentSessions"
-	ZenithService_GetTodayLoad_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
-	ZenithService_ListMyCalendarConnections_FullMethodName = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
-	ZenithService_ListMyCalendarEvents_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
-	ZenithService_RecommendBlock_FullMethodName            = "/sttattus.zenith.v1.ZenithService/RecommendBlock"
-	ZenithService_ListLibraryItems_FullMethodName          = "/sttattus.zenith.v1.ZenithService/ListLibraryItems"
-	ZenithService_ListBlockTemplates_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListBlockTemplates"
-	ZenithService_ListProgrammes_FullMethodName            = "/sttattus.zenith.v1.ZenithService/ListProgrammes"
-	ZenithService_GetProgramme_FullMethodName              = "/sttattus.zenith.v1.ZenithService/GetProgramme"
-	ZenithService_EnrollProgramme_FullMethodName           = "/sttattus.zenith.v1.ZenithService/EnrollProgramme"
-	ZenithService_ListMyProgrammes_FullMethodName          = "/sttattus.zenith.v1.ZenithService/ListMyProgrammes"
-	ZenithService_AdvanceProgrammeWeek_FullMethodName      = "/sttattus.zenith.v1.ZenithService/AdvanceProgrammeWeek"
-	ZenithService_AddJournalEntry_FullMethodName           = "/sttattus.zenith.v1.ZenithService/AddJournalEntry"
-	ZenithService_ListMyJournalEntries_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyJournalEntries"
-	ZenithService_GetFocusHistory_FullMethodName           = "/sttattus.zenith.v1.ZenithService/GetFocusHistory"
-	ZenithService_SimulateFortitude_FullMethodName         = "/sttattus.zenith.v1.ZenithService/SimulateFortitude"
-	ZenithService_ListAudioEnvironments_FullMethodName     = "/sttattus.zenith.v1.ZenithService/ListAudioEnvironments"
-	ZenithService_GetCognitiveLoad_FullMethodName          = "/sttattus.zenith.v1.ZenithService/GetCognitiveLoad"
-	ZenithService_GetTodaySummary_FullMethodName           = "/sttattus.zenith.v1.ZenithService/GetTodaySummary"
-	ZenithService_AcknowledgeStressPrompt_FullMethodName   = "/sttattus.zenith.v1.ZenithService/AcknowledgeStressPrompt"
-	ZenithService_StartConciergeThread_FullMethodName      = "/sttattus.zenith.v1.ZenithService/StartConciergeThread"
-	ZenithService_ListMyConciergeThreads_FullMethodName    = "/sttattus.zenith.v1.ZenithService/ListMyConciergeThreads"
-	ZenithService_GetConciergeThread_FullMethodName        = "/sttattus.zenith.v1.ZenithService/GetConciergeThread"
-	ZenithService_PostConciergeMessage_FullMethodName      = "/sttattus.zenith.v1.ZenithService/PostConciergeMessage"
-	ZenithService_ListAnthologyArticles_FullMethodName     = "/sttattus.zenith.v1.ZenithService/ListAnthologyArticles"
-	ZenithService_GetAnthologyArticle_FullMethodName       = "/sttattus.zenith.v1.ZenithService/GetAnthologyArticle"
-	ZenithService_ListTeachers_FullMethodName              = "/sttattus.zenith.v1.ZenithService/ListTeachers"
-	ZenithService_ListSovereignAudio_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ListSovereignAudio"
-	ZenithService_GetSovereignAudio_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetSovereignAudio"
-	ZenithService_GetJetLagProtocol_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetJetLagProtocol"
-	ZenithService_CreateProfileShare_FullMethodName        = "/sttattus.zenith.v1.ZenithService/CreateProfileShare"
-	ZenithService_ListMyProfileShares_FullMethodName       = "/sttattus.zenith.v1.ZenithService/ListMyProfileShares"
-	ZenithService_RevokeProfileShare_FullMethodName        = "/sttattus.zenith.v1.ZenithService/RevokeProfileShare"
-	ZenithService_GetJournalInsights_FullMethodName        = "/sttattus.zenith.v1.ZenithService/GetJournalInsights"
-	ZenithService_SubmitCognitiveTest_FullMethodName       = "/sttattus.zenith.v1.ZenithService/SubmitCognitiveTest"
-	ZenithService_ListMyCognitiveTests_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyCognitiveTests"
-	ZenithService_GetCognitiveTestStatus_FullMethodName    = "/sttattus.zenith.v1.ZenithService/GetCognitiveTestStatus"
-	ZenithService_ListRituals_FullMethodName               = "/sttattus.zenith.v1.ZenithService/ListRituals"
-	ZenithService_GetYearInZenithRecap_FullMethodName      = "/sttattus.zenith.v1.ZenithService/GetYearInZenithRecap"
-	ZenithService_GenerateZenithAlmanac_FullMethodName     = "/sttattus.zenith.v1.ZenithService/GenerateZenithAlmanac"
-	ZenithService_ListLounges_FullMethodName               = "/sttattus.zenith.v1.ZenithService/ListLounges"
-	ZenithService_CreateLoungeBooking_FullMethodName       = "/sttattus.zenith.v1.ZenithService/CreateLoungeBooking"
-	ZenithService_ListMyLoungeBookings_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ListMyLoungeBookings"
-	ZenithService_CancelLoungeBooking_FullMethodName       = "/sttattus.zenith.v1.ZenithService/CancelLoungeBooking"
+	ZenithService_LogFocusSession_FullMethodName                            = "/sttattus.zenith.v1.ZenithService/LogFocusSession"
+	ZenithService_GetZenithStats_FullMethodName                             = "/sttattus.zenith.v1.ZenithService/GetZenithStats"
+	ZenithService_ListRecentSessions_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/ListRecentSessions"
+	ZenithService_GetTodayLoad_FullMethodName                               = "/sttattus.zenith.v1.ZenithService/GetTodayLoad"
+	ZenithService_ListMyCalendarConnections_FullMethodName                  = "/sttattus.zenith.v1.ZenithService/ListMyCalendarConnections"
+	ZenithService_ListMyCalendarEvents_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/ListMyCalendarEvents"
+	ZenithService_RecommendBlock_FullMethodName                             = "/sttattus.zenith.v1.ZenithService/RecommendBlock"
+	ZenithService_ListLibraryItems_FullMethodName                           = "/sttattus.zenith.v1.ZenithService/ListLibraryItems"
+	ZenithService_ListBlockTemplates_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/ListBlockTemplates"
+	ZenithService_ListProgrammes_FullMethodName                             = "/sttattus.zenith.v1.ZenithService/ListProgrammes"
+	ZenithService_GetProgramme_FullMethodName                               = "/sttattus.zenith.v1.ZenithService/GetProgramme"
+	ZenithService_EnrollProgramme_FullMethodName                            = "/sttattus.zenith.v1.ZenithService/EnrollProgramme"
+	ZenithService_ListMyProgrammes_FullMethodName                           = "/sttattus.zenith.v1.ZenithService/ListMyProgrammes"
+	ZenithService_AdvanceProgrammeWeek_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/AdvanceProgrammeWeek"
+	ZenithService_AddJournalEntry_FullMethodName                            = "/sttattus.zenith.v1.ZenithService/AddJournalEntry"
+	ZenithService_ListMyJournalEntries_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/ListMyJournalEntries"
+	ZenithService_GetFocusHistory_FullMethodName                            = "/sttattus.zenith.v1.ZenithService/GetFocusHistory"
+	ZenithService_SimulateFortitude_FullMethodName                          = "/sttattus.zenith.v1.ZenithService/SimulateFortitude"
+	ZenithService_ListAudioEnvironments_FullMethodName                      = "/sttattus.zenith.v1.ZenithService/ListAudioEnvironments"
+	ZenithService_GetCognitiveLoad_FullMethodName                           = "/sttattus.zenith.v1.ZenithService/GetCognitiveLoad"
+	ZenithService_GetTodaySummary_FullMethodName                            = "/sttattus.zenith.v1.ZenithService/GetTodaySummary"
+	ZenithService_AcknowledgeStressPrompt_FullMethodName                    = "/sttattus.zenith.v1.ZenithService/AcknowledgeStressPrompt"
+	ZenithService_StartConciergeThread_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/StartConciergeThread"
+	ZenithService_ListMyConciergeThreads_FullMethodName                     = "/sttattus.zenith.v1.ZenithService/ListMyConciergeThreads"
+	ZenithService_GetConciergeThread_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/GetConciergeThread"
+	ZenithService_PostConciergeMessage_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/PostConciergeMessage"
+	ZenithService_ListAnthologyArticles_FullMethodName                      = "/sttattus.zenith.v1.ZenithService/ListAnthologyArticles"
+	ZenithService_GetAnthologyArticle_FullMethodName                        = "/sttattus.zenith.v1.ZenithService/GetAnthologyArticle"
+	ZenithService_ListTeachers_FullMethodName                               = "/sttattus.zenith.v1.ZenithService/ListTeachers"
+	ZenithService_ListSovereignAudio_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/ListSovereignAudio"
+	ZenithService_GetSovereignAudio_FullMethodName                          = "/sttattus.zenith.v1.ZenithService/GetSovereignAudio"
+	ZenithService_GetJetLagProtocol_FullMethodName                          = "/sttattus.zenith.v1.ZenithService/GetJetLagProtocol"
+	ZenithService_CreateProfileShare_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/CreateProfileShare"
+	ZenithService_ListMyProfileShares_FullMethodName                        = "/sttattus.zenith.v1.ZenithService/ListMyProfileShares"
+	ZenithService_RevokeProfileShare_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/RevokeProfileShare"
+	ZenithService_GetJournalInsights_FullMethodName                         = "/sttattus.zenith.v1.ZenithService/GetJournalInsights"
+	ZenithService_SubmitCognitiveTest_FullMethodName                        = "/sttattus.zenith.v1.ZenithService/SubmitCognitiveTest"
+	ZenithService_ListMyCognitiveTests_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/ListMyCognitiveTests"
+	ZenithService_GetCognitiveTestStatus_FullMethodName                     = "/sttattus.zenith.v1.ZenithService/GetCognitiveTestStatus"
+	ZenithService_ListRituals_FullMethodName                                = "/sttattus.zenith.v1.ZenithService/ListRituals"
+	ZenithService_GetYearInZenithRecap_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/GetYearInZenithRecap"
+	ZenithService_GenerateZenithAlmanac_FullMethodName                      = "/sttattus.zenith.v1.ZenithService/GenerateZenithAlmanac"
+	ZenithService_ListLounges_FullMethodName                                = "/sttattus.zenith.v1.ZenithService/ListLounges"
+	ZenithService_CreateLoungeBooking_FullMethodName                        = "/sttattus.zenith.v1.ZenithService/CreateLoungeBooking"
+	ZenithService_ListMyLoungeBookings_FullMethodName                       = "/sttattus.zenith.v1.ZenithService/ListMyLoungeBookings"
+	ZenithService_CancelLoungeBooking_FullMethodName                        = "/sttattus.zenith.v1.ZenithService/CancelLoungeBooking"
+	ZenithService_GetZenithFocusFirewallWorkbench_FullMethodName            = "/sttattus.zenith.v1.ZenithService/GetZenithFocusFirewallWorkbench"
+	ZenithService_SaveZenithFocusFirewallSession_FullMethodName             = "/sttattus.zenith.v1.ZenithService/SaveZenithFocusFirewallSession"
+	ZenithService_TriggerZenithFocusFirewallBypassOrComplete_FullMethodName = "/sttattus.zenith.v1.ZenithService/TriggerZenithFocusFirewallBypassOrComplete"
+	ZenithService_GetZenithAdaptiveDayArchitectWorkbench_FullMethodName     = "/sttattus.zenith.v1.ZenithService/GetZenithAdaptiveDayArchitectWorkbench"
+	ZenithService_SaveZenithAdaptiveDayArchitectPlan_FullMethodName         = "/sttattus.zenith.v1.ZenithService/SaveZenithAdaptiveDayArchitectPlan"
+	ZenithService_AcceptOrReplanZenithDayArchitect_FullMethodName           = "/sttattus.zenith.v1.ZenithService/AcceptOrReplanZenithDayArchitect"
+	ZenithService_GetZenithIntentionOutcomeWorkbench_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetZenithIntentionOutcomeWorkbench"
+	ZenithService_SaveZenithIntentionOutcomeContract_FullMethodName         = "/sttattus.zenith.v1.ZenithService/SaveZenithIntentionOutcomeContract"
+	ZenithService_CompleteZenithIntentionOutcomeLoop_FullMethodName         = "/sttattus.zenith.v1.ZenithService/CompleteZenithIntentionOutcomeLoop"
+	ZenithService_GetZenithAttentionNOf1LabWorkbench_FullMethodName         = "/sttattus.zenith.v1.ZenithService/GetZenithAttentionNOf1LabWorkbench"
+	ZenithService_SaveZenithAttentionNOf1Experiment_FullMethodName          = "/sttattus.zenith.v1.ZenithService/SaveZenithAttentionNOf1Experiment"
+	ZenithService_EvaluateZenithAttentionNOf1Experiment_FullMethodName      = "/sttattus.zenith.v1.ZenithService/EvaluateZenithAttentionNOf1Experiment"
+	ZenithService_GetZenithRecoveryProtocolStudioWorkbench_FullMethodName   = "/sttattus.zenith.v1.ZenithService/GetZenithRecoveryProtocolStudioWorkbench"
+	ZenithService_SaveZenithRecoveryProtocolRun_FullMethodName              = "/sttattus.zenith.v1.ZenithService/SaveZenithRecoveryProtocolRun"
+	ZenithService_RecordZenithRecoveryCheckOrAdverseFlag_FullMethodName     = "/sttattus.zenith.v1.ZenithService/RecordZenithRecoveryCheckOrAdverseFlag"
+	ZenithService_GetZenithCommunicationBoundaryWorkbench_FullMethodName    = "/sttattus.zenith.v1.ZenithService/GetZenithCommunicationBoundaryWorkbench"
+	ZenithService_SaveZenithCommunicationBoundaryRule_FullMethodName        = "/sttattus.zenith.v1.ZenithService/SaveZenithCommunicationBoundaryRule"
+	ZenithService_ApproveOrReleaseZenithBoundaryCatchup_FullMethodName      = "/sttattus.zenith.v1.ZenithService/ApproveOrReleaseZenithBoundaryCatchup"
+	ZenithService_GetZenithCognitiveReadinessWorkbench_FullMethodName       = "/sttattus.zenith.v1.ZenithService/GetZenithCognitiveReadinessWorkbench"
+	ZenithService_SaveZenithCognitiveReadinessSession_FullMethodName        = "/sttattus.zenith.v1.ZenithService/SaveZenithCognitiveReadinessSession"
+	ZenithService_FlagOrValidateZenithCognitiveSession_FullMethodName       = "/sttattus.zenith.v1.ZenithService/FlagOrValidateZenithCognitiveSession"
+	ZenithService_GetZenithPrivatePatternMemoryWorkbench_FullMethodName     = "/sttattus.zenith.v1.ZenithService/GetZenithPrivatePatternMemoryWorkbench"
+	ZenithService_SaveZenithPrivatePatternMemory_FullMethodName             = "/sttattus.zenith.v1.ZenithService/SaveZenithPrivatePatternMemory"
+	ZenithService_EditOrDeleteZenithPrivatePatternMemory_FullMethodName     = "/sttattus.zenith.v1.ZenithService/EditOrDeleteZenithPrivatePatternMemory"
+	ZenithService_GetZenithTravelPerformanceWorkbench_FullMethodName        = "/sttattus.zenith.v1.ZenithService/GetZenithTravelPerformanceWorkbench"
+	ZenithService_SaveZenithTravelPerformanceProtocol_FullMethodName        = "/sttattus.zenith.v1.ZenithService/SaveZenithTravelPerformanceProtocol"
+	ZenithService_ReplanZenithTravelMissedStep_FullMethodName               = "/sttattus.zenith.v1.ZenithService/ReplanZenithTravelMissedStep"
+	ZenithService_GetZenithCoachingTeamMeetingWorkbench_FullMethodName      = "/sttattus.zenith.v1.ZenithService/GetZenithCoachingTeamMeetingWorkbench"
+	ZenithService_SaveZenithCoachingTeamMeetingHealth_FullMethodName        = "/sttattus.zenith.v1.ZenithService/SaveZenithCoachingTeamMeetingHealth"
+	ZenithService_ProposeZenithMeetingFreeOrOracleHandoff_FullMethodName    = "/sttattus.zenith.v1.ZenithService/ProposeZenithMeetingFreeOrOracleHandoff"
+	ZenithService_GetZenithSensoryDesktopWorkbench_FullMethodName           = "/sttattus.zenith.v1.ZenithService/GetZenithSensoryDesktopWorkbench"
+	ZenithService_SaveZenithSensoryDesktopWorkspace_FullMethodName          = "/sttattus.zenith.v1.ZenithService/SaveZenithSensoryDesktopWorkspace"
+	ZenithService_ArmOrFallbackZenithSensoryWorkspace_FullMethodName        = "/sttattus.zenith.v1.ZenithService/ArmOrFallbackZenithSensoryWorkspace"
 )
 
 // ZenithServiceClient is the client API for ZenithService service.
@@ -142,6 +175,51 @@ type ZenithServiceClient interface {
 	CreateLoungeBooking(ctx context.Context, in *CreateLoungeBookingRequest, opts ...grpc.CallOption) (*CreateLoungeBookingResponse, error)
 	ListMyLoungeBookings(ctx context.Context, in *ListMyLoungeBookingsRequest, opts ...grpc.CallOption) (*ListMyLoungeBookingsResponse, error)
 	CancelLoungeBooking(ctx context.Context, in *CancelLoungeBookingRequest, opts ...grpc.CallOption) (*CancelLoungeBookingResponse, error)
+	// ===== Zenith Opportunity Choices 1–11 (Z1..Z14) =====
+	// Choice 1 (Z1): Native Focus Firewall
+	GetZenithFocusFirewallWorkbench(ctx context.Context, in *GetZenithFocusFirewallWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithFocusFirewallWorkbenchResponse, error)
+	SaveZenithFocusFirewallSession(ctx context.Context, in *SaveZenithFocusFirewallSessionRequest, opts ...grpc.CallOption) (*SaveZenithFocusFirewallSessionResponse, error)
+	TriggerZenithFocusFirewallBypassOrComplete(ctx context.Context, in *TriggerZenithFocusFirewallBypassOrCompleteRequest, opts ...grpc.CallOption) (*TriggerZenithFocusFirewallBypassOrCompleteResponse, error)
+	// Choice 2 (Z2): Adaptive Day Architect
+	GetZenithAdaptiveDayArchitectWorkbench(ctx context.Context, in *GetZenithAdaptiveDayArchitectWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithAdaptiveDayArchitectWorkbenchResponse, error)
+	SaveZenithAdaptiveDayArchitectPlan(ctx context.Context, in *SaveZenithAdaptiveDayArchitectPlanRequest, opts ...grpc.CallOption) (*SaveZenithAdaptiveDayArchitectPlanResponse, error)
+	AcceptOrReplanZenithDayArchitect(ctx context.Context, in *AcceptOrReplanZenithDayArchitectRequest, opts ...grpc.CallOption) (*AcceptOrReplanZenithDayArchitectResponse, error)
+	// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+	GetZenithIntentionOutcomeWorkbench(ctx context.Context, in *GetZenithIntentionOutcomeWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithIntentionOutcomeWorkbenchResponse, error)
+	SaveZenithIntentionOutcomeContract(ctx context.Context, in *SaveZenithIntentionOutcomeContractRequest, opts ...grpc.CallOption) (*SaveZenithIntentionOutcomeContractResponse, error)
+	CompleteZenithIntentionOutcomeLoop(ctx context.Context, in *CompleteZenithIntentionOutcomeLoopRequest, opts ...grpc.CallOption) (*CompleteZenithIntentionOutcomeLoopResponse, error)
+	// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+	GetZenithAttentionNOf1LabWorkbench(ctx context.Context, in *GetZenithAttentionNOf1LabWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithAttentionNOf1LabWorkbenchResponse, error)
+	SaveZenithAttentionNOf1Experiment(ctx context.Context, in *SaveZenithAttentionNOf1ExperimentRequest, opts ...grpc.CallOption) (*SaveZenithAttentionNOf1ExperimentResponse, error)
+	EvaluateZenithAttentionNOf1Experiment(ctx context.Context, in *EvaluateZenithAttentionNOf1ExperimentRequest, opts ...grpc.CallOption) (*EvaluateZenithAttentionNOf1ExperimentResponse, error)
+	// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+	GetZenithRecoveryProtocolStudioWorkbench(ctx context.Context, in *GetZenithRecoveryProtocolStudioWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithRecoveryProtocolStudioWorkbenchResponse, error)
+	SaveZenithRecoveryProtocolRun(ctx context.Context, in *SaveZenithRecoveryProtocolRunRequest, opts ...grpc.CallOption) (*SaveZenithRecoveryProtocolRunResponse, error)
+	RecordZenithRecoveryCheckOrAdverseFlag(ctx context.Context, in *RecordZenithRecoveryCheckOrAdverseFlagRequest, opts ...grpc.CallOption) (*RecordZenithRecoveryCheckOrAdverseFlagResponse, error)
+	// Choice 6 (Z10): Communication Boundaries
+	GetZenithCommunicationBoundaryWorkbench(ctx context.Context, in *GetZenithCommunicationBoundaryWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCommunicationBoundaryWorkbenchResponse, error)
+	SaveZenithCommunicationBoundaryRule(ctx context.Context, in *SaveZenithCommunicationBoundaryRuleRequest, opts ...grpc.CallOption) (*SaveZenithCommunicationBoundaryRuleResponse, error)
+	ApproveOrReleaseZenithBoundaryCatchup(ctx context.Context, in *ApproveOrReleaseZenithBoundaryCatchupRequest, opts ...grpc.CallOption) (*ApproveOrReleaseZenithBoundaryCatchupResponse, error)
+	// Choice 7 (Z5): Cognitive Readiness Battery
+	GetZenithCognitiveReadinessWorkbench(ctx context.Context, in *GetZenithCognitiveReadinessWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCognitiveReadinessWorkbenchResponse, error)
+	SaveZenithCognitiveReadinessSession(ctx context.Context, in *SaveZenithCognitiveReadinessSessionRequest, opts ...grpc.CallOption) (*SaveZenithCognitiveReadinessSessionResponse, error)
+	FlagOrValidateZenithCognitiveSession(ctx context.Context, in *FlagOrValidateZenithCognitiveSessionRequest, opts ...grpc.CallOption) (*FlagOrValidateZenithCognitiveSessionResponse, error)
+	// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+	GetZenithPrivatePatternMemoryWorkbench(ctx context.Context, in *GetZenithPrivatePatternMemoryWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithPrivatePatternMemoryWorkbenchResponse, error)
+	SaveZenithPrivatePatternMemory(ctx context.Context, in *SaveZenithPrivatePatternMemoryRequest, opts ...grpc.CallOption) (*SaveZenithPrivatePatternMemoryResponse, error)
+	EditOrDeleteZenithPrivatePatternMemory(ctx context.Context, in *EditOrDeleteZenithPrivatePatternMemoryRequest, opts ...grpc.CallOption) (*EditOrDeleteZenithPrivatePatternMemoryResponse, error)
+	// Choice 9 (Z7): Travel Performance
+	GetZenithTravelPerformanceWorkbench(ctx context.Context, in *GetZenithTravelPerformanceWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithTravelPerformanceWorkbenchResponse, error)
+	SaveZenithTravelPerformanceProtocol(ctx context.Context, in *SaveZenithTravelPerformanceProtocolRequest, opts ...grpc.CallOption) (*SaveZenithTravelPerformanceProtocolResponse, error)
+	ReplanZenithTravelMissedStep(ctx context.Context, in *ReplanZenithTravelMissedStepRequest, opts ...grpc.CallOption) (*ReplanZenithTravelMissedStepResponse, error)
+	// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+	GetZenithCoachingTeamMeetingWorkbench(ctx context.Context, in *GetZenithCoachingTeamMeetingWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCoachingTeamMeetingWorkbenchResponse, error)
+	SaveZenithCoachingTeamMeetingHealth(ctx context.Context, in *SaveZenithCoachingTeamMeetingHealthRequest, opts ...grpc.CallOption) (*SaveZenithCoachingTeamMeetingHealthResponse, error)
+	ProposeZenithMeetingFreeOrOracleHandoff(ctx context.Context, in *ProposeZenithMeetingFreeOrOracleHandoffRequest, opts ...grpc.CallOption) (*ProposeZenithMeetingFreeOrOracleHandoffResponse, error)
+	// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+	GetZenithSensoryDesktopWorkbench(ctx context.Context, in *GetZenithSensoryDesktopWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithSensoryDesktopWorkbenchResponse, error)
+	SaveZenithSensoryDesktopWorkspace(ctx context.Context, in *SaveZenithSensoryDesktopWorkspaceRequest, opts ...grpc.CallOption) (*SaveZenithSensoryDesktopWorkspaceResponse, error)
+	ArmOrFallbackZenithSensoryWorkspace(ctx context.Context, in *ArmOrFallbackZenithSensoryWorkspaceRequest, opts ...grpc.CallOption) (*ArmOrFallbackZenithSensoryWorkspaceResponse, error)
 }
 
 type zenithServiceClient struct {
@@ -612,6 +690,336 @@ func (c *zenithServiceClient) CancelLoungeBooking(ctx context.Context, in *Cance
 	return out, nil
 }
 
+func (c *zenithServiceClient) GetZenithFocusFirewallWorkbench(ctx context.Context, in *GetZenithFocusFirewallWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithFocusFirewallWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithFocusFirewallWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithFocusFirewallWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithFocusFirewallSession(ctx context.Context, in *SaveZenithFocusFirewallSessionRequest, opts ...grpc.CallOption) (*SaveZenithFocusFirewallSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithFocusFirewallSessionResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithFocusFirewallSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) TriggerZenithFocusFirewallBypassOrComplete(ctx context.Context, in *TriggerZenithFocusFirewallBypassOrCompleteRequest, opts ...grpc.CallOption) (*TriggerZenithFocusFirewallBypassOrCompleteResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerZenithFocusFirewallBypassOrCompleteResponse)
+	err := c.cc.Invoke(ctx, ZenithService_TriggerZenithFocusFirewallBypassOrComplete_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithAdaptiveDayArchitectWorkbench(ctx context.Context, in *GetZenithAdaptiveDayArchitectWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithAdaptiveDayArchitectWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithAdaptiveDayArchitectWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithAdaptiveDayArchitectWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithAdaptiveDayArchitectPlan(ctx context.Context, in *SaveZenithAdaptiveDayArchitectPlanRequest, opts ...grpc.CallOption) (*SaveZenithAdaptiveDayArchitectPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithAdaptiveDayArchitectPlanResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithAdaptiveDayArchitectPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) AcceptOrReplanZenithDayArchitect(ctx context.Context, in *AcceptOrReplanZenithDayArchitectRequest, opts ...grpc.CallOption) (*AcceptOrReplanZenithDayArchitectResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcceptOrReplanZenithDayArchitectResponse)
+	err := c.cc.Invoke(ctx, ZenithService_AcceptOrReplanZenithDayArchitect_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithIntentionOutcomeWorkbench(ctx context.Context, in *GetZenithIntentionOutcomeWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithIntentionOutcomeWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithIntentionOutcomeWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithIntentionOutcomeWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithIntentionOutcomeContract(ctx context.Context, in *SaveZenithIntentionOutcomeContractRequest, opts ...grpc.CallOption) (*SaveZenithIntentionOutcomeContractResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithIntentionOutcomeContractResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithIntentionOutcomeContract_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) CompleteZenithIntentionOutcomeLoop(ctx context.Context, in *CompleteZenithIntentionOutcomeLoopRequest, opts ...grpc.CallOption) (*CompleteZenithIntentionOutcomeLoopResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompleteZenithIntentionOutcomeLoopResponse)
+	err := c.cc.Invoke(ctx, ZenithService_CompleteZenithIntentionOutcomeLoop_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithAttentionNOf1LabWorkbench(ctx context.Context, in *GetZenithAttentionNOf1LabWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithAttentionNOf1LabWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithAttentionNOf1LabWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithAttentionNOf1LabWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithAttentionNOf1Experiment(ctx context.Context, in *SaveZenithAttentionNOf1ExperimentRequest, opts ...grpc.CallOption) (*SaveZenithAttentionNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithAttentionNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithAttentionNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) EvaluateZenithAttentionNOf1Experiment(ctx context.Context, in *EvaluateZenithAttentionNOf1ExperimentRequest, opts ...grpc.CallOption) (*EvaluateZenithAttentionNOf1ExperimentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateZenithAttentionNOf1ExperimentResponse)
+	err := c.cc.Invoke(ctx, ZenithService_EvaluateZenithAttentionNOf1Experiment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithRecoveryProtocolStudioWorkbench(ctx context.Context, in *GetZenithRecoveryProtocolStudioWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithRecoveryProtocolStudioWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithRecoveryProtocolStudioWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithRecoveryProtocolStudioWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithRecoveryProtocolRun(ctx context.Context, in *SaveZenithRecoveryProtocolRunRequest, opts ...grpc.CallOption) (*SaveZenithRecoveryProtocolRunResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithRecoveryProtocolRunResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithRecoveryProtocolRun_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) RecordZenithRecoveryCheckOrAdverseFlag(ctx context.Context, in *RecordZenithRecoveryCheckOrAdverseFlagRequest, opts ...grpc.CallOption) (*RecordZenithRecoveryCheckOrAdverseFlagResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordZenithRecoveryCheckOrAdverseFlagResponse)
+	err := c.cc.Invoke(ctx, ZenithService_RecordZenithRecoveryCheckOrAdverseFlag_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithCommunicationBoundaryWorkbench(ctx context.Context, in *GetZenithCommunicationBoundaryWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCommunicationBoundaryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithCommunicationBoundaryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithCommunicationBoundaryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithCommunicationBoundaryRule(ctx context.Context, in *SaveZenithCommunicationBoundaryRuleRequest, opts ...grpc.CallOption) (*SaveZenithCommunicationBoundaryRuleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithCommunicationBoundaryRuleResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithCommunicationBoundaryRule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ApproveOrReleaseZenithBoundaryCatchup(ctx context.Context, in *ApproveOrReleaseZenithBoundaryCatchupRequest, opts ...grpc.CallOption) (*ApproveOrReleaseZenithBoundaryCatchupResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrReleaseZenithBoundaryCatchupResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ApproveOrReleaseZenithBoundaryCatchup_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithCognitiveReadinessWorkbench(ctx context.Context, in *GetZenithCognitiveReadinessWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCognitiveReadinessWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithCognitiveReadinessWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithCognitiveReadinessWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithCognitiveReadinessSession(ctx context.Context, in *SaveZenithCognitiveReadinessSessionRequest, opts ...grpc.CallOption) (*SaveZenithCognitiveReadinessSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithCognitiveReadinessSessionResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithCognitiveReadinessSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) FlagOrValidateZenithCognitiveSession(ctx context.Context, in *FlagOrValidateZenithCognitiveSessionRequest, opts ...grpc.CallOption) (*FlagOrValidateZenithCognitiveSessionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FlagOrValidateZenithCognitiveSessionResponse)
+	err := c.cc.Invoke(ctx, ZenithService_FlagOrValidateZenithCognitiveSession_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithPrivatePatternMemoryWorkbench(ctx context.Context, in *GetZenithPrivatePatternMemoryWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithPrivatePatternMemoryWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithPrivatePatternMemoryWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithPrivatePatternMemoryWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithPrivatePatternMemory(ctx context.Context, in *SaveZenithPrivatePatternMemoryRequest, opts ...grpc.CallOption) (*SaveZenithPrivatePatternMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithPrivatePatternMemoryResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithPrivatePatternMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) EditOrDeleteZenithPrivatePatternMemory(ctx context.Context, in *EditOrDeleteZenithPrivatePatternMemoryRequest, opts ...grpc.CallOption) (*EditOrDeleteZenithPrivatePatternMemoryResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EditOrDeleteZenithPrivatePatternMemoryResponse)
+	err := c.cc.Invoke(ctx, ZenithService_EditOrDeleteZenithPrivatePatternMemory_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithTravelPerformanceWorkbench(ctx context.Context, in *GetZenithTravelPerformanceWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithTravelPerformanceWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithTravelPerformanceWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithTravelPerformanceWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithTravelPerformanceProtocol(ctx context.Context, in *SaveZenithTravelPerformanceProtocolRequest, opts ...grpc.CallOption) (*SaveZenithTravelPerformanceProtocolResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithTravelPerformanceProtocolResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithTravelPerformanceProtocol_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ReplanZenithTravelMissedStep(ctx context.Context, in *ReplanZenithTravelMissedStepRequest, opts ...grpc.CallOption) (*ReplanZenithTravelMissedStepResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReplanZenithTravelMissedStepResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ReplanZenithTravelMissedStep_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithCoachingTeamMeetingWorkbench(ctx context.Context, in *GetZenithCoachingTeamMeetingWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithCoachingTeamMeetingWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithCoachingTeamMeetingWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithCoachingTeamMeetingWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithCoachingTeamMeetingHealth(ctx context.Context, in *SaveZenithCoachingTeamMeetingHealthRequest, opts ...grpc.CallOption) (*SaveZenithCoachingTeamMeetingHealthResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithCoachingTeamMeetingHealthResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithCoachingTeamMeetingHealth_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ProposeZenithMeetingFreeOrOracleHandoff(ctx context.Context, in *ProposeZenithMeetingFreeOrOracleHandoffRequest, opts ...grpc.CallOption) (*ProposeZenithMeetingFreeOrOracleHandoffResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ProposeZenithMeetingFreeOrOracleHandoffResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ProposeZenithMeetingFreeOrOracleHandoff_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) GetZenithSensoryDesktopWorkbench(ctx context.Context, in *GetZenithSensoryDesktopWorkbenchRequest, opts ...grpc.CallOption) (*GetZenithSensoryDesktopWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetZenithSensoryDesktopWorkbenchResponse)
+	err := c.cc.Invoke(ctx, ZenithService_GetZenithSensoryDesktopWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) SaveZenithSensoryDesktopWorkspace(ctx context.Context, in *SaveZenithSensoryDesktopWorkspaceRequest, opts ...grpc.CallOption) (*SaveZenithSensoryDesktopWorkspaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveZenithSensoryDesktopWorkspaceResponse)
+	err := c.cc.Invoke(ctx, ZenithService_SaveZenithSensoryDesktopWorkspace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *zenithServiceClient) ArmOrFallbackZenithSensoryWorkspace(ctx context.Context, in *ArmOrFallbackZenithSensoryWorkspaceRequest, opts ...grpc.CallOption) (*ArmOrFallbackZenithSensoryWorkspaceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ArmOrFallbackZenithSensoryWorkspaceResponse)
+	err := c.cc.Invoke(ctx, ZenithService_ArmOrFallbackZenithSensoryWorkspace_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ZenithServiceServer is the server API for ZenithService service.
 // All implementations must embed UnimplementedZenithServiceServer
 // for forward compatibility.
@@ -687,6 +1095,51 @@ type ZenithServiceServer interface {
 	CreateLoungeBooking(context.Context, *CreateLoungeBookingRequest) (*CreateLoungeBookingResponse, error)
 	ListMyLoungeBookings(context.Context, *ListMyLoungeBookingsRequest) (*ListMyLoungeBookingsResponse, error)
 	CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error)
+	// ===== Zenith Opportunity Choices 1–11 (Z1..Z14) =====
+	// Choice 1 (Z1): Native Focus Firewall
+	GetZenithFocusFirewallWorkbench(context.Context, *GetZenithFocusFirewallWorkbenchRequest) (*GetZenithFocusFirewallWorkbenchResponse, error)
+	SaveZenithFocusFirewallSession(context.Context, *SaveZenithFocusFirewallSessionRequest) (*SaveZenithFocusFirewallSessionResponse, error)
+	TriggerZenithFocusFirewallBypassOrComplete(context.Context, *TriggerZenithFocusFirewallBypassOrCompleteRequest) (*TriggerZenithFocusFirewallBypassOrCompleteResponse, error)
+	// Choice 2 (Z2): Adaptive Day Architect
+	GetZenithAdaptiveDayArchitectWorkbench(context.Context, *GetZenithAdaptiveDayArchitectWorkbenchRequest) (*GetZenithAdaptiveDayArchitectWorkbenchResponse, error)
+	SaveZenithAdaptiveDayArchitectPlan(context.Context, *SaveZenithAdaptiveDayArchitectPlanRequest) (*SaveZenithAdaptiveDayArchitectPlanResponse, error)
+	AcceptOrReplanZenithDayArchitect(context.Context, *AcceptOrReplanZenithDayArchitectRequest) (*AcceptOrReplanZenithDayArchitectResponse, error)
+	// Choice 3 (Z9): Intention-to-Outcome Focus Loop
+	GetZenithIntentionOutcomeWorkbench(context.Context, *GetZenithIntentionOutcomeWorkbenchRequest) (*GetZenithIntentionOutcomeWorkbenchResponse, error)
+	SaveZenithIntentionOutcomeContract(context.Context, *SaveZenithIntentionOutcomeContractRequest) (*SaveZenithIntentionOutcomeContractResponse, error)
+	CompleteZenithIntentionOutcomeLoop(context.Context, *CompleteZenithIntentionOutcomeLoopRequest) (*CompleteZenithIntentionOutcomeLoopResponse, error)
+	// Choice 4 (Z3): Attention Analytics and N-of-1 Lab
+	GetZenithAttentionNOf1LabWorkbench(context.Context, *GetZenithAttentionNOf1LabWorkbenchRequest) (*GetZenithAttentionNOf1LabWorkbenchResponse, error)
+	SaveZenithAttentionNOf1Experiment(context.Context, *SaveZenithAttentionNOf1ExperimentRequest) (*SaveZenithAttentionNOf1ExperimentResponse, error)
+	EvaluateZenithAttentionNOf1Experiment(context.Context, *EvaluateZenithAttentionNOf1ExperimentRequest) (*EvaluateZenithAttentionNOf1ExperimentResponse, error)
+	// Choice 5 (Z4, Z13): Recovery and Protocol Studio
+	GetZenithRecoveryProtocolStudioWorkbench(context.Context, *GetZenithRecoveryProtocolStudioWorkbenchRequest) (*GetZenithRecoveryProtocolStudioWorkbenchResponse, error)
+	SaveZenithRecoveryProtocolRun(context.Context, *SaveZenithRecoveryProtocolRunRequest) (*SaveZenithRecoveryProtocolRunResponse, error)
+	RecordZenithRecoveryCheckOrAdverseFlag(context.Context, *RecordZenithRecoveryCheckOrAdverseFlagRequest) (*RecordZenithRecoveryCheckOrAdverseFlagResponse, error)
+	// Choice 6 (Z10): Communication Boundaries
+	GetZenithCommunicationBoundaryWorkbench(context.Context, *GetZenithCommunicationBoundaryWorkbenchRequest) (*GetZenithCommunicationBoundaryWorkbenchResponse, error)
+	SaveZenithCommunicationBoundaryRule(context.Context, *SaveZenithCommunicationBoundaryRuleRequest) (*SaveZenithCommunicationBoundaryRuleResponse, error)
+	ApproveOrReleaseZenithBoundaryCatchup(context.Context, *ApproveOrReleaseZenithBoundaryCatchupRequest) (*ApproveOrReleaseZenithBoundaryCatchupResponse, error)
+	// Choice 7 (Z5): Cognitive Readiness Battery
+	GetZenithCognitiveReadinessWorkbench(context.Context, *GetZenithCognitiveReadinessWorkbenchRequest) (*GetZenithCognitiveReadinessWorkbenchResponse, error)
+	SaveZenithCognitiveReadinessSession(context.Context, *SaveZenithCognitiveReadinessSessionRequest) (*SaveZenithCognitiveReadinessSessionResponse, error)
+	FlagOrValidateZenithCognitiveSession(context.Context, *FlagOrValidateZenithCognitiveSessionRequest) (*FlagOrValidateZenithCognitiveSessionResponse, error)
+	// Choice 8 (Z6, Z14): Private Journal and Pattern Memory
+	GetZenithPrivatePatternMemoryWorkbench(context.Context, *GetZenithPrivatePatternMemoryWorkbenchRequest) (*GetZenithPrivatePatternMemoryWorkbenchResponse, error)
+	SaveZenithPrivatePatternMemory(context.Context, *SaveZenithPrivatePatternMemoryRequest) (*SaveZenithPrivatePatternMemoryResponse, error)
+	EditOrDeleteZenithPrivatePatternMemory(context.Context, *EditOrDeleteZenithPrivatePatternMemoryRequest) (*EditOrDeleteZenithPrivatePatternMemoryResponse, error)
+	// Choice 9 (Z7): Travel Performance
+	GetZenithTravelPerformanceWorkbench(context.Context, *GetZenithTravelPerformanceWorkbenchRequest) (*GetZenithTravelPerformanceWorkbenchResponse, error)
+	SaveZenithTravelPerformanceProtocol(context.Context, *SaveZenithTravelPerformanceProtocolRequest) (*SaveZenithTravelPerformanceProtocolResponse, error)
+	ReplanZenithTravelMissedStep(context.Context, *ReplanZenithTravelMissedStepRequest) (*ReplanZenithTravelMissedStepResponse, error)
+	// Choice 10 (Z8, Z12): Coaching, Teams, and Meeting Health
+	GetZenithCoachingTeamMeetingWorkbench(context.Context, *GetZenithCoachingTeamMeetingWorkbenchRequest) (*GetZenithCoachingTeamMeetingWorkbenchResponse, error)
+	SaveZenithCoachingTeamMeetingHealth(context.Context, *SaveZenithCoachingTeamMeetingHealthRequest) (*SaveZenithCoachingTeamMeetingHealthResponse, error)
+	ProposeZenithMeetingFreeOrOracleHandoff(context.Context, *ProposeZenithMeetingFreeOrOracleHandoffRequest) (*ProposeZenithMeetingFreeOrOracleHandoffResponse, error)
+	// Choice 11 (Z11): Sensory Workspace and Desktop Companion
+	GetZenithSensoryDesktopWorkbench(context.Context, *GetZenithSensoryDesktopWorkbenchRequest) (*GetZenithSensoryDesktopWorkbenchResponse, error)
+	SaveZenithSensoryDesktopWorkspace(context.Context, *SaveZenithSensoryDesktopWorkspaceRequest) (*SaveZenithSensoryDesktopWorkspaceResponse, error)
+	ArmOrFallbackZenithSensoryWorkspace(context.Context, *ArmOrFallbackZenithSensoryWorkspaceRequest) (*ArmOrFallbackZenithSensoryWorkspaceResponse, error)
 	mustEmbedUnimplementedZenithServiceServer()
 }
 
@@ -834,6 +1287,105 @@ func (UnimplementedZenithServiceServer) ListMyLoungeBookings(context.Context, *L
 }
 func (UnimplementedZenithServiceServer) CancelLoungeBooking(context.Context, *CancelLoungeBookingRequest) (*CancelLoungeBookingResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method CancelLoungeBooking not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithFocusFirewallWorkbench(context.Context, *GetZenithFocusFirewallWorkbenchRequest) (*GetZenithFocusFirewallWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithFocusFirewallWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithFocusFirewallSession(context.Context, *SaveZenithFocusFirewallSessionRequest) (*SaveZenithFocusFirewallSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithFocusFirewallSession not implemented")
+}
+func (UnimplementedZenithServiceServer) TriggerZenithFocusFirewallBypassOrComplete(context.Context, *TriggerZenithFocusFirewallBypassOrCompleteRequest) (*TriggerZenithFocusFirewallBypassOrCompleteResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerZenithFocusFirewallBypassOrComplete not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithAdaptiveDayArchitectWorkbench(context.Context, *GetZenithAdaptiveDayArchitectWorkbenchRequest) (*GetZenithAdaptiveDayArchitectWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithAdaptiveDayArchitectWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithAdaptiveDayArchitectPlan(context.Context, *SaveZenithAdaptiveDayArchitectPlanRequest) (*SaveZenithAdaptiveDayArchitectPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithAdaptiveDayArchitectPlan not implemented")
+}
+func (UnimplementedZenithServiceServer) AcceptOrReplanZenithDayArchitect(context.Context, *AcceptOrReplanZenithDayArchitectRequest) (*AcceptOrReplanZenithDayArchitectResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcceptOrReplanZenithDayArchitect not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithIntentionOutcomeWorkbench(context.Context, *GetZenithIntentionOutcomeWorkbenchRequest) (*GetZenithIntentionOutcomeWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithIntentionOutcomeWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithIntentionOutcomeContract(context.Context, *SaveZenithIntentionOutcomeContractRequest) (*SaveZenithIntentionOutcomeContractResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithIntentionOutcomeContract not implemented")
+}
+func (UnimplementedZenithServiceServer) CompleteZenithIntentionOutcomeLoop(context.Context, *CompleteZenithIntentionOutcomeLoopRequest) (*CompleteZenithIntentionOutcomeLoopResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompleteZenithIntentionOutcomeLoop not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithAttentionNOf1LabWorkbench(context.Context, *GetZenithAttentionNOf1LabWorkbenchRequest) (*GetZenithAttentionNOf1LabWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithAttentionNOf1LabWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithAttentionNOf1Experiment(context.Context, *SaveZenithAttentionNOf1ExperimentRequest) (*SaveZenithAttentionNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithAttentionNOf1Experiment not implemented")
+}
+func (UnimplementedZenithServiceServer) EvaluateZenithAttentionNOf1Experiment(context.Context, *EvaluateZenithAttentionNOf1ExperimentRequest) (*EvaluateZenithAttentionNOf1ExperimentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateZenithAttentionNOf1Experiment not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithRecoveryProtocolStudioWorkbench(context.Context, *GetZenithRecoveryProtocolStudioWorkbenchRequest) (*GetZenithRecoveryProtocolStudioWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithRecoveryProtocolStudioWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithRecoveryProtocolRun(context.Context, *SaveZenithRecoveryProtocolRunRequest) (*SaveZenithRecoveryProtocolRunResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithRecoveryProtocolRun not implemented")
+}
+func (UnimplementedZenithServiceServer) RecordZenithRecoveryCheckOrAdverseFlag(context.Context, *RecordZenithRecoveryCheckOrAdverseFlagRequest) (*RecordZenithRecoveryCheckOrAdverseFlagResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordZenithRecoveryCheckOrAdverseFlag not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithCommunicationBoundaryWorkbench(context.Context, *GetZenithCommunicationBoundaryWorkbenchRequest) (*GetZenithCommunicationBoundaryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithCommunicationBoundaryWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithCommunicationBoundaryRule(context.Context, *SaveZenithCommunicationBoundaryRuleRequest) (*SaveZenithCommunicationBoundaryRuleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithCommunicationBoundaryRule not implemented")
+}
+func (UnimplementedZenithServiceServer) ApproveOrReleaseZenithBoundaryCatchup(context.Context, *ApproveOrReleaseZenithBoundaryCatchupRequest) (*ApproveOrReleaseZenithBoundaryCatchupResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrReleaseZenithBoundaryCatchup not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithCognitiveReadinessWorkbench(context.Context, *GetZenithCognitiveReadinessWorkbenchRequest) (*GetZenithCognitiveReadinessWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithCognitiveReadinessWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithCognitiveReadinessSession(context.Context, *SaveZenithCognitiveReadinessSessionRequest) (*SaveZenithCognitiveReadinessSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithCognitiveReadinessSession not implemented")
+}
+func (UnimplementedZenithServiceServer) FlagOrValidateZenithCognitiveSession(context.Context, *FlagOrValidateZenithCognitiveSessionRequest) (*FlagOrValidateZenithCognitiveSessionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FlagOrValidateZenithCognitiveSession not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithPrivatePatternMemoryWorkbench(context.Context, *GetZenithPrivatePatternMemoryWorkbenchRequest) (*GetZenithPrivatePatternMemoryWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithPrivatePatternMemoryWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithPrivatePatternMemory(context.Context, *SaveZenithPrivatePatternMemoryRequest) (*SaveZenithPrivatePatternMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithPrivatePatternMemory not implemented")
+}
+func (UnimplementedZenithServiceServer) EditOrDeleteZenithPrivatePatternMemory(context.Context, *EditOrDeleteZenithPrivatePatternMemoryRequest) (*EditOrDeleteZenithPrivatePatternMemoryResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EditOrDeleteZenithPrivatePatternMemory not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithTravelPerformanceWorkbench(context.Context, *GetZenithTravelPerformanceWorkbenchRequest) (*GetZenithTravelPerformanceWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithTravelPerformanceWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithTravelPerformanceProtocol(context.Context, *SaveZenithTravelPerformanceProtocolRequest) (*SaveZenithTravelPerformanceProtocolResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithTravelPerformanceProtocol not implemented")
+}
+func (UnimplementedZenithServiceServer) ReplanZenithTravelMissedStep(context.Context, *ReplanZenithTravelMissedStepRequest) (*ReplanZenithTravelMissedStepResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReplanZenithTravelMissedStep not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithCoachingTeamMeetingWorkbench(context.Context, *GetZenithCoachingTeamMeetingWorkbenchRequest) (*GetZenithCoachingTeamMeetingWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithCoachingTeamMeetingWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithCoachingTeamMeetingHealth(context.Context, *SaveZenithCoachingTeamMeetingHealthRequest) (*SaveZenithCoachingTeamMeetingHealthResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithCoachingTeamMeetingHealth not implemented")
+}
+func (UnimplementedZenithServiceServer) ProposeZenithMeetingFreeOrOracleHandoff(context.Context, *ProposeZenithMeetingFreeOrOracleHandoffRequest) (*ProposeZenithMeetingFreeOrOracleHandoffResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ProposeZenithMeetingFreeOrOracleHandoff not implemented")
+}
+func (UnimplementedZenithServiceServer) GetZenithSensoryDesktopWorkbench(context.Context, *GetZenithSensoryDesktopWorkbenchRequest) (*GetZenithSensoryDesktopWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetZenithSensoryDesktopWorkbench not implemented")
+}
+func (UnimplementedZenithServiceServer) SaveZenithSensoryDesktopWorkspace(context.Context, *SaveZenithSensoryDesktopWorkspaceRequest) (*SaveZenithSensoryDesktopWorkspaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveZenithSensoryDesktopWorkspace not implemented")
+}
+func (UnimplementedZenithServiceServer) ArmOrFallbackZenithSensoryWorkspace(context.Context, *ArmOrFallbackZenithSensoryWorkspaceRequest) (*ArmOrFallbackZenithSensoryWorkspaceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ArmOrFallbackZenithSensoryWorkspace not implemented")
 }
 func (UnimplementedZenithServiceServer) mustEmbedUnimplementedZenithServiceServer() {}
 func (UnimplementedZenithServiceServer) testEmbeddedByValue()                       {}
@@ -1684,6 +2236,600 @@ func _ZenithService_CancelLoungeBooking_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ZenithService_GetZenithFocusFirewallWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithFocusFirewallWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithFocusFirewallWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithFocusFirewallWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithFocusFirewallWorkbench(ctx, req.(*GetZenithFocusFirewallWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithFocusFirewallSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithFocusFirewallSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithFocusFirewallSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithFocusFirewallSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithFocusFirewallSession(ctx, req.(*SaveZenithFocusFirewallSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_TriggerZenithFocusFirewallBypassOrComplete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerZenithFocusFirewallBypassOrCompleteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).TriggerZenithFocusFirewallBypassOrComplete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_TriggerZenithFocusFirewallBypassOrComplete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).TriggerZenithFocusFirewallBypassOrComplete(ctx, req.(*TriggerZenithFocusFirewallBypassOrCompleteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithAdaptiveDayArchitectWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithAdaptiveDayArchitectWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithAdaptiveDayArchitectWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithAdaptiveDayArchitectWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithAdaptiveDayArchitectWorkbench(ctx, req.(*GetZenithAdaptiveDayArchitectWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithAdaptiveDayArchitectPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithAdaptiveDayArchitectPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithAdaptiveDayArchitectPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithAdaptiveDayArchitectPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithAdaptiveDayArchitectPlan(ctx, req.(*SaveZenithAdaptiveDayArchitectPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_AcceptOrReplanZenithDayArchitect_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcceptOrReplanZenithDayArchitectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).AcceptOrReplanZenithDayArchitect(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_AcceptOrReplanZenithDayArchitect_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).AcceptOrReplanZenithDayArchitect(ctx, req.(*AcceptOrReplanZenithDayArchitectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithIntentionOutcomeWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithIntentionOutcomeWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithIntentionOutcomeWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithIntentionOutcomeWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithIntentionOutcomeWorkbench(ctx, req.(*GetZenithIntentionOutcomeWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithIntentionOutcomeContract_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithIntentionOutcomeContractRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithIntentionOutcomeContract(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithIntentionOutcomeContract_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithIntentionOutcomeContract(ctx, req.(*SaveZenithIntentionOutcomeContractRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_CompleteZenithIntentionOutcomeLoop_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompleteZenithIntentionOutcomeLoopRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).CompleteZenithIntentionOutcomeLoop(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_CompleteZenithIntentionOutcomeLoop_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).CompleteZenithIntentionOutcomeLoop(ctx, req.(*CompleteZenithIntentionOutcomeLoopRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithAttentionNOf1LabWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithAttentionNOf1LabWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithAttentionNOf1LabWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithAttentionNOf1LabWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithAttentionNOf1LabWorkbench(ctx, req.(*GetZenithAttentionNOf1LabWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithAttentionNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithAttentionNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithAttentionNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithAttentionNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithAttentionNOf1Experiment(ctx, req.(*SaveZenithAttentionNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_EvaluateZenithAttentionNOf1Experiment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateZenithAttentionNOf1ExperimentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).EvaluateZenithAttentionNOf1Experiment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_EvaluateZenithAttentionNOf1Experiment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).EvaluateZenithAttentionNOf1Experiment(ctx, req.(*EvaluateZenithAttentionNOf1ExperimentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithRecoveryProtocolStudioWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithRecoveryProtocolStudioWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithRecoveryProtocolStudioWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithRecoveryProtocolStudioWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithRecoveryProtocolStudioWorkbench(ctx, req.(*GetZenithRecoveryProtocolStudioWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithRecoveryProtocolRun_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithRecoveryProtocolRunRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithRecoveryProtocolRun(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithRecoveryProtocolRun_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithRecoveryProtocolRun(ctx, req.(*SaveZenithRecoveryProtocolRunRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_RecordZenithRecoveryCheckOrAdverseFlag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordZenithRecoveryCheckOrAdverseFlagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).RecordZenithRecoveryCheckOrAdverseFlag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_RecordZenithRecoveryCheckOrAdverseFlag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).RecordZenithRecoveryCheckOrAdverseFlag(ctx, req.(*RecordZenithRecoveryCheckOrAdverseFlagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithCommunicationBoundaryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithCommunicationBoundaryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithCommunicationBoundaryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithCommunicationBoundaryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithCommunicationBoundaryWorkbench(ctx, req.(*GetZenithCommunicationBoundaryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithCommunicationBoundaryRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithCommunicationBoundaryRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithCommunicationBoundaryRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithCommunicationBoundaryRule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithCommunicationBoundaryRule(ctx, req.(*SaveZenithCommunicationBoundaryRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ApproveOrReleaseZenithBoundaryCatchup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrReleaseZenithBoundaryCatchupRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ApproveOrReleaseZenithBoundaryCatchup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ApproveOrReleaseZenithBoundaryCatchup_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ApproveOrReleaseZenithBoundaryCatchup(ctx, req.(*ApproveOrReleaseZenithBoundaryCatchupRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithCognitiveReadinessWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithCognitiveReadinessWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithCognitiveReadinessWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithCognitiveReadinessWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithCognitiveReadinessWorkbench(ctx, req.(*GetZenithCognitiveReadinessWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithCognitiveReadinessSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithCognitiveReadinessSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithCognitiveReadinessSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithCognitiveReadinessSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithCognitiveReadinessSession(ctx, req.(*SaveZenithCognitiveReadinessSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_FlagOrValidateZenithCognitiveSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FlagOrValidateZenithCognitiveSessionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).FlagOrValidateZenithCognitiveSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_FlagOrValidateZenithCognitiveSession_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).FlagOrValidateZenithCognitiveSession(ctx, req.(*FlagOrValidateZenithCognitiveSessionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithPrivatePatternMemoryWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithPrivatePatternMemoryWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithPrivatePatternMemoryWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithPrivatePatternMemoryWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithPrivatePatternMemoryWorkbench(ctx, req.(*GetZenithPrivatePatternMemoryWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithPrivatePatternMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithPrivatePatternMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithPrivatePatternMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithPrivatePatternMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithPrivatePatternMemory(ctx, req.(*SaveZenithPrivatePatternMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_EditOrDeleteZenithPrivatePatternMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EditOrDeleteZenithPrivatePatternMemoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).EditOrDeleteZenithPrivatePatternMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_EditOrDeleteZenithPrivatePatternMemory_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).EditOrDeleteZenithPrivatePatternMemory(ctx, req.(*EditOrDeleteZenithPrivatePatternMemoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithTravelPerformanceWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithTravelPerformanceWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithTravelPerformanceWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithTravelPerformanceWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithTravelPerformanceWorkbench(ctx, req.(*GetZenithTravelPerformanceWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithTravelPerformanceProtocol_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithTravelPerformanceProtocolRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithTravelPerformanceProtocol(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithTravelPerformanceProtocol_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithTravelPerformanceProtocol(ctx, req.(*SaveZenithTravelPerformanceProtocolRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ReplanZenithTravelMissedStep_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReplanZenithTravelMissedStepRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ReplanZenithTravelMissedStep(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ReplanZenithTravelMissedStep_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ReplanZenithTravelMissedStep(ctx, req.(*ReplanZenithTravelMissedStepRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithCoachingTeamMeetingWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithCoachingTeamMeetingWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithCoachingTeamMeetingWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithCoachingTeamMeetingWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithCoachingTeamMeetingWorkbench(ctx, req.(*GetZenithCoachingTeamMeetingWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithCoachingTeamMeetingHealth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithCoachingTeamMeetingHealthRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithCoachingTeamMeetingHealth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithCoachingTeamMeetingHealth_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithCoachingTeamMeetingHealth(ctx, req.(*SaveZenithCoachingTeamMeetingHealthRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ProposeZenithMeetingFreeOrOracleHandoff_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProposeZenithMeetingFreeOrOracleHandoffRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ProposeZenithMeetingFreeOrOracleHandoff(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ProposeZenithMeetingFreeOrOracleHandoff_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ProposeZenithMeetingFreeOrOracleHandoff(ctx, req.(*ProposeZenithMeetingFreeOrOracleHandoffRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_GetZenithSensoryDesktopWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetZenithSensoryDesktopWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).GetZenithSensoryDesktopWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_GetZenithSensoryDesktopWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).GetZenithSensoryDesktopWorkbench(ctx, req.(*GetZenithSensoryDesktopWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_SaveZenithSensoryDesktopWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveZenithSensoryDesktopWorkspaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).SaveZenithSensoryDesktopWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_SaveZenithSensoryDesktopWorkspace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).SaveZenithSensoryDesktopWorkspace(ctx, req.(*SaveZenithSensoryDesktopWorkspaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ZenithService_ArmOrFallbackZenithSensoryWorkspace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ArmOrFallbackZenithSensoryWorkspaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ZenithServiceServer).ArmOrFallbackZenithSensoryWorkspace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ZenithService_ArmOrFallbackZenithSensoryWorkspace_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ZenithServiceServer).ArmOrFallbackZenithSensoryWorkspace(ctx, req.(*ArmOrFallbackZenithSensoryWorkspaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ZenithService_ServiceDesc is the grpc.ServiceDesc for ZenithService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -1874,6 +3020,138 @@ var ZenithService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CancelLoungeBooking",
 			Handler:    _ZenithService_CancelLoungeBooking_Handler,
+		},
+		{
+			MethodName: "GetZenithFocusFirewallWorkbench",
+			Handler:    _ZenithService_GetZenithFocusFirewallWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithFocusFirewallSession",
+			Handler:    _ZenithService_SaveZenithFocusFirewallSession_Handler,
+		},
+		{
+			MethodName: "TriggerZenithFocusFirewallBypassOrComplete",
+			Handler:    _ZenithService_TriggerZenithFocusFirewallBypassOrComplete_Handler,
+		},
+		{
+			MethodName: "GetZenithAdaptiveDayArchitectWorkbench",
+			Handler:    _ZenithService_GetZenithAdaptiveDayArchitectWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithAdaptiveDayArchitectPlan",
+			Handler:    _ZenithService_SaveZenithAdaptiveDayArchitectPlan_Handler,
+		},
+		{
+			MethodName: "AcceptOrReplanZenithDayArchitect",
+			Handler:    _ZenithService_AcceptOrReplanZenithDayArchitect_Handler,
+		},
+		{
+			MethodName: "GetZenithIntentionOutcomeWorkbench",
+			Handler:    _ZenithService_GetZenithIntentionOutcomeWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithIntentionOutcomeContract",
+			Handler:    _ZenithService_SaveZenithIntentionOutcomeContract_Handler,
+		},
+		{
+			MethodName: "CompleteZenithIntentionOutcomeLoop",
+			Handler:    _ZenithService_CompleteZenithIntentionOutcomeLoop_Handler,
+		},
+		{
+			MethodName: "GetZenithAttentionNOf1LabWorkbench",
+			Handler:    _ZenithService_GetZenithAttentionNOf1LabWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithAttentionNOf1Experiment",
+			Handler:    _ZenithService_SaveZenithAttentionNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "EvaluateZenithAttentionNOf1Experiment",
+			Handler:    _ZenithService_EvaluateZenithAttentionNOf1Experiment_Handler,
+		},
+		{
+			MethodName: "GetZenithRecoveryProtocolStudioWorkbench",
+			Handler:    _ZenithService_GetZenithRecoveryProtocolStudioWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithRecoveryProtocolRun",
+			Handler:    _ZenithService_SaveZenithRecoveryProtocolRun_Handler,
+		},
+		{
+			MethodName: "RecordZenithRecoveryCheckOrAdverseFlag",
+			Handler:    _ZenithService_RecordZenithRecoveryCheckOrAdverseFlag_Handler,
+		},
+		{
+			MethodName: "GetZenithCommunicationBoundaryWorkbench",
+			Handler:    _ZenithService_GetZenithCommunicationBoundaryWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithCommunicationBoundaryRule",
+			Handler:    _ZenithService_SaveZenithCommunicationBoundaryRule_Handler,
+		},
+		{
+			MethodName: "ApproveOrReleaseZenithBoundaryCatchup",
+			Handler:    _ZenithService_ApproveOrReleaseZenithBoundaryCatchup_Handler,
+		},
+		{
+			MethodName: "GetZenithCognitiveReadinessWorkbench",
+			Handler:    _ZenithService_GetZenithCognitiveReadinessWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithCognitiveReadinessSession",
+			Handler:    _ZenithService_SaveZenithCognitiveReadinessSession_Handler,
+		},
+		{
+			MethodName: "FlagOrValidateZenithCognitiveSession",
+			Handler:    _ZenithService_FlagOrValidateZenithCognitiveSession_Handler,
+		},
+		{
+			MethodName: "GetZenithPrivatePatternMemoryWorkbench",
+			Handler:    _ZenithService_GetZenithPrivatePatternMemoryWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithPrivatePatternMemory",
+			Handler:    _ZenithService_SaveZenithPrivatePatternMemory_Handler,
+		},
+		{
+			MethodName: "EditOrDeleteZenithPrivatePatternMemory",
+			Handler:    _ZenithService_EditOrDeleteZenithPrivatePatternMemory_Handler,
+		},
+		{
+			MethodName: "GetZenithTravelPerformanceWorkbench",
+			Handler:    _ZenithService_GetZenithTravelPerformanceWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithTravelPerformanceProtocol",
+			Handler:    _ZenithService_SaveZenithTravelPerformanceProtocol_Handler,
+		},
+		{
+			MethodName: "ReplanZenithTravelMissedStep",
+			Handler:    _ZenithService_ReplanZenithTravelMissedStep_Handler,
+		},
+		{
+			MethodName: "GetZenithCoachingTeamMeetingWorkbench",
+			Handler:    _ZenithService_GetZenithCoachingTeamMeetingWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithCoachingTeamMeetingHealth",
+			Handler:    _ZenithService_SaveZenithCoachingTeamMeetingHealth_Handler,
+		},
+		{
+			MethodName: "ProposeZenithMeetingFreeOrOracleHandoff",
+			Handler:    _ZenithService_ProposeZenithMeetingFreeOrOracleHandoff_Handler,
+		},
+		{
+			MethodName: "GetZenithSensoryDesktopWorkbench",
+			Handler:    _ZenithService_GetZenithSensoryDesktopWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveZenithSensoryDesktopWorkspace",
+			Handler:    _ZenithService_SaveZenithSensoryDesktopWorkspace_Handler,
+		},
+		{
+			MethodName: "ArmOrFallbackZenithSensoryWorkspace",
+			Handler:    _ZenithService_ArmOrFallbackZenithSensoryWorkspace_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

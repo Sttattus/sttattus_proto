@@ -30,13 +30,27 @@ message Biomarker {
   string id = 1;
   string code = 2; // e.g., 'APO_B', 'TESTOSTERONE_FREE'
   BiomarkerCategory category = 3;
-  double value = 4;
-  string unit = 5; // e.g., 'mg/dL', 'ng/dL'
+  double value = 4; // Canonical normalized value in reference unit
+  string unit = 5; // Canonical normalized unit (e.g., 'mg/dL', 'ng/dL')
   bool verified = 6; // True if extracted from an approved LabReport
   google.protobuf.Timestamp recorded_at = 7;
+  // Choice 1 (AP1) — Health Data Reliability Center provenance & normalization
+  string source = 8; // manual | lab_report | health_connect | healthkit | oura | whoop | garmin | apple_watch | dexcom | libre | import
+  double raw_value = 9; // Original value as submitted by source
+  string raw_unit = 10; // Original unit before canonical normalization
+  string conversion_version = 11; // e.g. 'v1' or 'v1:mmol_to_mgdl'
+  int64 measured_at_unix = 12;
+  int64 received_at_unix = 13;
+  string timezone = 14; // e.g. 'America/Panama', 'UTC'
+  string specimen_or_device = 15; // e.g. 'Quest Venous Serum', 'Oura Gen 4'
+  repeated string confounder_tags = 16; // fasting, illness, travel, alcohol, high_altitude, pregnancy, luteal
+  int32 revision = 17;
+  bool deleted = 18;
+  int32 conflict_count = 19;
+  string freshness_status = 20; // fresh | aging | stale
 }
 
-// LabReport represents a clinical document (PDF/Image) submitted by the user.
+// LabReport represents a clinical document (PDF/Image/FHIR/C-CDA/DICOM) submitted by the user.
 message LabReport {
   string id = 1;
   string file_url = 2; // From shared_uploader
@@ -46,22 +60,52 @@ message LabReport {
   google.protobuf.Timestamp report_date = 6;
   google.protobuf.Timestamp submitted_at = 7;
   repeated Biomarker extracted_markers = 8;
+  // Choice 2 (AP2) — Clinical Document and Imaging Intelligence
+  string document_format = 9; // pdf | image | fhir_bundle | ccda_xml | dicom_manifest | portal_export | paper_photo
+  string isolation_status = 10; // quarantined | scanning | clean | rejected_malware
+  string file_sha256 = 11;
+  string specimen_type = 12; // e.g., 'Venous Serum', 'Whole Blood'
+  string panel_name = 13; // e.g., 'Comprehensive Longevity Panel'
+  string revision_kind = 14; // original | addendum | corrected | duplicate
+  string parent_report_id = 15;
+  string extraction_status = 16; // pending | extracted_provisional | member_confirmed | staff_verified | withdrawn
+  string model_version = 17;
+  string prompt_version = 18;
+  int64 sla_due_at_unix = 19;
+  bool geometry_stable = 20;
+  repeated ExtractedMarkerCandidate marker_candidates = 21;
+  repeated ClinicalDocumentFact extracted_facts = 22;
 }
 
 // REQ/RES
 message SyncVitalsRequest {
   repeated Biomarker metrics = 1; // Used for wearable/manual data
+  string client_mutation_id = 2; // Choice 1 idempotency key
+  string source = 3; // Default source if metric.source is empty
+  string timezone = 4;
+  string specimen_or_device = 5;
+  repeated string confounder_tags = 6;
 }
 
 message SyncVitalsResponse {
   double biological_age = 1;
   double current_apex_score = 2;
+  int32 inserted_count = 3;
+  int32 deduped_count = 4;
+  int32 conflict_count = 5;
+  string receipt_id = 6;
 }
 
 message SubmitLabReportRequest {
   string file_url = 1;
   string clinic_name = 2;
   google.protobuf.Timestamp report_date = 3;
+  string document_format = 4; // pdf | image | fhir_bundle | ccda_xml | dicom_manifest | portal_export | paper_photo
+  string specimen_type = 5;
+  string panel_name = 6;
+  string revision_kind = 7; // original | addendum | corrected | duplicate
+  string parent_report_id = 8;
+  string file_sha256 = 9;
 }
 
 message SubmitLabReportResponse {
@@ -115,6 +159,20 @@ message GetApexAgeResponse {
   string method = 6;
   repeated string markers_used = 7;
   repeated string markers_missing = 8;
+  // Choice 3 (AP3) — Transparent Apex Age Decomposition, Uncertainty & Score-Free Mode
+  string model_code = 9;
+  string model_version = 10;
+  double ci_low_years = 11;
+  double ci_high_years = 12;
+  string uncertainty_band = 13; // narrow | moderate | wide | uncalibrated
+  double completeness_pct = 14;
+  string validation_fit = 15; // in_cohort | age_out_of_bounds | missing_dob | partial_panel
+  bool score_free_mode = 16;
+  string preferred_health_view = 17; // composite_and_systems | systems_only | personal_baselines_only
+  string non_causal_disclaimer = 18;
+  string snapshot_id = 19;
+  repeated ApexAgeContribution contributions = 20;
+  ApexAgeModelCard model_card = 21;
 }
 
 // A11.3 — clinical baseline (DOB / biological sex / chronotype).
@@ -123,6 +181,9 @@ message ApexProfile {
   string date_of_birth = 2; // ISO 8601 YYYY-MM-DD
   string biological_sex = 3; // 'female' | 'male' | 'intersex' | ''
   string chronotype = 4; // 'owl' | 'lark' | 'neutral' | ''
+  // Choice 3 (AP3) — Score-free mode & preferred health view
+  bool score_free_mode = 5;
+  string preferred_health_view = 6; // composite_and_systems | systems_only | personal_baselines_only
 }
 
 message GetMyApexProfileRequest {}
@@ -187,6 +248,7 @@ message GetHrvWindowResponse {
   double delta = 4; // window_mean - baseline_mean (ms)
   int32 window_count = 5;
   int32 baseline_count = 6;
+  bool purpose_grant_enabled = 7; // Choice 1 cross-pillar grant status
 }
 
 // A11.6 Phase 2 — Apex Protocols library.
@@ -466,6 +528,148 @@ service ApexService {
 
   // Admin Methods (Gated by Admin Middleware)
   rpc AdminVerifyLab(AdminVerifyLabRequest) returns (AdminVerifyLabResponse);
+
+  // === Opportunity Choice 1 (AP1): Health Data Reliability Center ===
+  rpc GetHealthDataReliabilityOverview(GetHealthDataReliabilityOverviewRequest) returns (GetHealthDataReliabilityOverviewResponse);
+  rpc ListHealthSources(ListHealthSourcesRequest) returns (ListHealthSourcesResponse);
+  rpc UpsertHealthSourceGrant(UpsertHealthSourceGrantRequest) returns (UpsertHealthSourceGrantResponse);
+  rpc RevokeHealthSourceGrant(RevokeHealthSourceGrantRequest) returns (RevokeHealthSourceGrantResponse);
+  rpc CorrectHealthObservation(CorrectHealthObservationRequest) returns (CorrectHealthObservationResponse);
+  rpc DeleteHealthObservation(DeleteHealthObservationRequest) returns (DeleteHealthObservationResponse);
+  rpc RestoreHealthObservation(RestoreHealthObservationRequest) returns (RestoreHealthObservationResponse);
+  rpc ListObservationRevisions(ListObservationRevisionsRequest) returns (ListObservationRevisionsResponse);
+  rpc ListHealthDataConflicts(ListHealthDataConflictsRequest) returns (ListHealthDataConflictsResponse);
+  rpc ResolveHealthDataConflict(ResolveHealthDataConflictRequest) returns (ResolveHealthDataConflictResponse);
+  rpc CreateHealthCorrectionCase(CreateHealthCorrectionCaseRequest) returns (CreateHealthCorrectionCaseResponse);
+  rpc ListMyHealthCorrectionCases(ListMyHealthCorrectionCasesRequest) returns (ListMyHealthCorrectionCasesResponse);
+  rpc ListCrossPillarHealthGrants(ListCrossPillarHealthGrantsRequest) returns (ListCrossPillarHealthGrantsResponse);
+  rpc UpdateCrossPillarHealthGrant(UpdateCrossPillarHealthGrantRequest) returns (UpdateCrossPillarHealthGrantResponse);
+  rpc RebuildHealthRecord(RebuildHealthRecordRequest) returns (RebuildHealthRecordResponse);
+  rpc ExportHealthObservations(ExportHealthObservationsRequest) returns (ExportHealthObservationsResponse);
+
+  // === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence ===
+  rpc GetClinicalDocumentIntelligenceOverview(GetClinicalDocumentIntelligenceOverviewRequest) returns (GetClinicalDocumentIntelligenceOverviewResponse);
+  rpc InspectClinicalDocument(InspectClinicalDocumentRequest) returns (InspectClinicalDocumentResponse);
+  rpc RunDocumentExtraction(RunDocumentExtractionRequest) returns (RunDocumentExtractionResponse);
+  rpc ConfirmExtractedDocumentItems(ConfirmExtractedDocumentItemsRequest) returns (ConfirmExtractedDocumentItemsResponse);
+  rpc CompareClinicalDocumentRevisions(CompareClinicalDocumentRevisionsRequest) returns (CompareClinicalDocumentRevisionsResponse);
+  rpc GenerateAppointmentBrief(GenerateAppointmentBriefRequest) returns (GenerateAppointmentBriefResponse);
+  rpc ListMyAppointmentBriefs(ListMyAppointmentBriefsRequest) returns (ListMyAppointmentBriefsResponse);
+  rpc UpdateAppointmentBrief(UpdateAppointmentBriefRequest) returns (UpdateAppointmentBriefResponse);
+
+  // === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age ===
+  rpc GetPersonalBaselineAndApexAgeOverview(GetPersonalBaselineAndApexAgeOverviewRequest) returns (GetPersonalBaselineAndApexAgeOverviewResponse);
+  rpc RecomputePersonalBaselinesAndApexAge(RecomputePersonalBaselinesAndApexAgeRequest) returns (RecomputePersonalBaselinesAndApexAgeResponse);
+  rpc UpsertBaselineExcludedPeriod(UpsertBaselineExcludedPeriodRequest) returns (UpsertBaselineExcludedPeriodResponse);
+  rpc DeleteBaselineExcludedPeriod(DeleteBaselineExcludedPeriodRequest) returns (DeleteBaselineExcludedPeriodResponse);
+  rpc UpdateChangeSignalDisposition(UpdateChangeSignalDispositionRequest) returns (UpdateChangeSignalDispositionResponse);
+  rpc UpdateScoreDisplayPreferences(UpdateScoreDisplayPreferencesRequest) returns (UpdateScoreDisplayPreferencesResponse);
+  rpc SubmitApexScoreDispute(SubmitApexScoreDisputeRequest) returns (SubmitApexScoreDisputeResponse);
+  rpc ListMyApexScoreSnapshots(ListMyApexScoreSnapshotsRequest) returns (ListMyApexScoreSnapshotsResponse);
+
+  // === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar ===
+  rpc GetPreventiveCareCalendarOverview(GetPreventiveCareCalendarOverviewRequest) returns (GetPreventiveCareCalendarOverviewResponse);
+  rpc UpdatePreventiveCareProfile(UpdatePreventiveCareProfileRequest) returns (UpdatePreventiveCareProfileResponse);
+  rpc UpdatePreventiveCareItemStatus(UpdatePreventiveCareItemStatusRequest) returns (UpdatePreventiveCareItemStatusResponse);
+  rpc ConfirmPreventiveCareEvidence(ConfirmPreventiveCareEvidenceRequest) returns (ConfirmPreventiveCareEvidenceResponse);
+  rpc UpsertCustomPreventiveCareCheck(UpsertCustomPreventiveCareCheckRequest) returns (UpsertCustomPreventiveCareCheckResponse);
+  rpc SyncPreventiveCarePlanFromGuidelines(SyncPreventiveCarePlanFromGuidelinesRequest) returns (SyncPreventiveCarePlanFromGuidelinesResponse);
+
+  // === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory ===
+  rpc GetExperimentLabOverview(GetExperimentLabOverviewRequest) returns (GetExperimentLabOverviewResponse);
+  rpc PredeclareNOf1Experiment(PredeclareNOf1ExperimentRequest) returns (PredeclareNOf1ExperimentResponse);
+  rpc RecordNOf1DailyLog(RecordNOf1DailyLogRequest) returns (RecordNOf1DailyLogResponse);
+  rpc AnalyzeNOf1Experiment(AnalyzeNOf1ExperimentRequest) returns (AnalyzeNOf1ExperimentResponse);
+  rpc UpdateNOf1ExperimentStatus(UpdateNOf1ExperimentStatusRequest) returns (UpdateNOf1ExperimentStatusResponse);
+  rpc ReportExperimentAdverseEvent(ReportExperimentAdverseEventRequest) returns (ReportExperimentAdverseEventResponse);
+
+  // === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan ===
+  rpc GetAdaptiveDailyPlanOverview(GetAdaptiveDailyPlanOverviewRequest) returns (GetAdaptiveDailyPlanOverviewResponse);
+  rpc ReplanAdaptiveDailyProtocol(ReplanAdaptiveDailyProtocolRequest) returns (ReplanAdaptiveDailyProtocolResponse);
+  rpc RecordDailyPlanStepDisposition(RecordDailyPlanStepDispositionRequest) returns (RecordDailyPlanStepDispositionResponse);
+  rpc UpsertDailyPlanStep(UpsertDailyPlanStepRequest) returns (UpsertDailyPlanStepResponse);
+  rpc UpdateCompassionateAdherencePause(UpdateCompassionateAdherencePauseRequest) returns (UpdateCompassionateAdherencePauseResponse);
+  rpc UpdateCrossPillarTimingHandoff(UpdateCrossPillarTimingHandoffRequest) returns (UpdateCrossPillarTimingHandoffResponse);
+
+  // === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety ===
+  rpc GetMedicationSafetyOverview(GetMedicationSafetyOverviewRequest) returns (GetMedicationSafetyOverviewResponse);
+  rpc UpsertReconciledMedicationItem(UpsertReconciledMedicationItemRequest) returns (UpsertReconciledMedicationItemResponse);
+  rpc UpsertAllergyOrIntolerance(UpsertAllergyOrIntoleranceRequest) returns (UpsertAllergyOrIntoleranceResponse);
+  rpc RunSafetyInteractionCheck(RunSafetyInteractionCheckRequest) returns (RunSafetyInteractionCheckResponse);
+  rpc UpdateInteractionAlertDisposition(UpdateInteractionAlertDispositionRequest) returns (UpdateInteractionAlertDispositionResponse);
+  rpc GenerateMedicationReconciliationPacket(GenerateMedicationReconciliationPacketRequest) returns (GenerateMedicationReconciliationPacketResponse);
+
+  // === Opportunity Choice 8 (AP8): Metabolic Response Studio ===
+  rpc GetMetabolicStudioOverview(GetMetabolicStudioOverviewRequest) returns (GetMetabolicStudioOverviewResponse);
+  rpc RecordMetabolicMealEvent(RecordMetabolicMealEventRequest) returns (RecordMetabolicMealEventResponse);
+  rpc ConfirmMealIngredientsAndPortions(ConfirmMealIngredientsAndPortionsRequest) returns (ConfirmMealIngredientsAndPortionsResponse);
+  rpc CompareRepeatMealResponses(CompareRepeatMealResponsesRequest) returns (CompareRepeatMealResponsesResponse);
+  rpc UpsertMetabolicTargetRange(UpsertMetabolicTargetRangeRequest) returns (UpsertMetabolicTargetRangeResponse);
+  rpc UpsertMetabolicSensorProfile(UpsertMetabolicSensorProfileRequest) returns (UpsertMetabolicSensorProfileResponse);
+
+  // === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace ===
+  rpc GetCycleLifeStageOverview(GetCycleLifeStageOverviewRequest) returns (GetCycleLifeStageOverviewResponse);
+  rpc UpdateLifeStageProfileAndPrivacy(UpdateLifeStageProfileAndPrivacyRequest) returns (UpdateLifeStageProfileAndPrivacyResponse);
+  rpc RecordLifeStageEvent(RecordLifeStageEventRequest) returns (RecordLifeStageEventResponse);
+  rpc GenerateLifeStageAppointmentBrief(GenerateLifeStageAppointmentBriefRequest) returns (GenerateLifeStageAppointmentBriefResponse);
+  rpc PurgeReproductiveAndLifeStageData(PurgeReproductiveAndLifeStageDataRequest) returns (PurgeReproductiveAndLifeStageDataResponse);
+  rpc ExportReproductiveAndLifeStageData(ExportReproductiveAndLifeStageDataRequest) returns (ExportReproductiveAndLifeStageDataResponse);
+
+  // === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+  rpc GetGenomicsAndFamilyHistoryOverview(GetGenomicsAndFamilyHistoryOverviewRequest) returns (GetGenomicsAndFamilyHistoryOverviewResponse);
+  rpc RegisterEncryptedGenomicUpload(RegisterEncryptedGenomicUploadRequest) returns (RegisterEncryptedGenomicUploadResponse);
+  rpc UpdateGenomicVariantVisibility(UpdateGenomicVariantVisibilityRequest) returns (UpdateGenomicVariantVisibilityResponse);
+  rpc UpsertFamilyHistoryEntry(UpsertFamilyHistoryEntryRequest) returns (UpsertFamilyHistoryEntryResponse);
+  rpc SubmitGeneticCounsellorRequest(SubmitGeneticCounsellorRequestRequest) returns (SubmitGeneticCounsellorRequestResponse);
+  rpc RotateGenomicEncryptionKeyOrPurge(RotateGenomicEncryptionKeyOrPurgeRequest) returns (RotateGenomicEncryptionKeyOrPurgeResponse);
+
+  // === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+  rpc GetClinicianCareTeamOverview(GetClinicianCareTeamOverviewRequest) returns (GetClinicianCareTeamOverviewResponse);
+  rpc CreateScopedCareTeamGrant(CreateScopedCareTeamGrantRequest) returns (CreateScopedCareTeamGrantResponse);
+  rpc RevokeScopedCareTeamGrant(RevokeScopedCareTeamGrantRequest) returns (RevokeScopedCareTeamGrantResponse);
+  rpc RecordClinicianDisposition(RecordClinicianDispositionRequest) returns (RecordClinicianDispositionResponse);
+  rpc ExportScopedCareTeamBundle(ExportScopedCareTeamBundleRequest) returns (ExportScopedCareTeamBundleResponse);
+  rpc SubmitClinicianQuestionPacket(SubmitClinicianQuestionPacketRequest) returns (SubmitClinicianQuestionPacketResponse);
+
+  // === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+  rpc GetChangeEscalationOverview(GetChangeEscalationOverviewRequest) returns (GetChangeEscalationOverviewResponse);
+  rpc EvaluateMultiSignalChangeEscalation(EvaluateMultiSignalChangeEscalationRequest) returns (EvaluateMultiSignalChangeEscalationResponse);
+  rpc UpdateChangeEscalationDisposition(UpdateChangeEscalationDispositionRequest) returns (UpdateChangeEscalationDispositionResponse);
+  rpc CreateCareNavigationHandoff(CreateCareNavigationHandoffRequest) returns (CreateCareNavigationHandoffResponse);
+  rpc UpdateCareNavigationHandoffState(UpdateCareNavigationHandoffStateRequest) returns (UpdateCareNavigationHandoffStateResponse);
+  rpc UpsertCareNavigationOption(UpsertCareNavigationOptionRequest) returns (UpsertCareNavigationOptionResponse);
+
+  // === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+  rpc GetSleepCircadianStudioOverview(GetSleepCircadianStudioOverviewRequest) returns (GetSleepCircadianStudioOverviewResponse);
+  rpc RecordSleepAndExposureLog(RecordSleepAndExposureLogRequest) returns (RecordSleepAndExposureLogResponse);
+  rpc UpsertCircadianRoutine(UpsertCircadianRoutineRequest) returns (UpsertCircadianRoutineResponse);
+  rpc UpdateCircadianCrossPillarGrant(UpdateCircadianCrossPillarGrantRequest) returns (UpdateCircadianCrossPillarGrantResponse);
+  rpc UpsertSleepSensorCapability(UpsertSleepSensorCapabilityRequest) returns (UpsertSleepSensorCapabilityResponse);
+  rpc GenerateCircadianTravelOrShiftPlan(GenerateCircadianTravelOrShiftPlanRequest) returns (GenerateCircadianTravelOrShiftPlanResponse);
+
+  // === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+  rpc GetResearchParticipationOverview(GetResearchParticipationOverviewRequest) returns (GetResearchParticipationOverviewResponse);
+  rpc RunLocalStudyPreScreen(RunLocalStudyPreScreenRequest) returns (RunLocalStudyPreScreenResponse);
+  rpc EnrollOrUpdateResearchStudyConsent(EnrollOrUpdateResearchStudyConsentRequest) returns (EnrollOrUpdateResearchStudyConsentResponse);
+  rpc WithdrawResearchStudyConsent(WithdrawResearchStudyConsentRequest) returns (WithdrawResearchStudyConsentResponse);
+  rpc RecordResearchContributionMilestone(RecordResearchContributionMilestoneRequest) returns (RecordResearchContributionMilestoneResponse);
+  rpc UpsertResearchStudy(UpsertResearchStudyRequest) returns (UpsertResearchStudyResponse);
+
+  // === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+  rpc GetPortableHealthDossierOverview(GetPortableHealthDossierOverviewRequest) returns (GetPortableHealthDossierOverviewResponse);
+  rpc UpsertPortableHealthDossier(UpsertPortableHealthDossierRequest) returns (UpsertPortableHealthDossierResponse);
+  rpc ConfirmPortableDossierFreshness(ConfirmPortableDossierFreshnessRequest) returns (ConfirmPortableDossierFreshnessResponse);
+  rpc IssueDossierAccessGrant(IssueDossierAccessGrantRequest) returns (IssueDossierAccessGrantResponse);
+  rpc RevokeDossierAccessGrant(RevokeDossierAccessGrantRequest) returns (RevokeDossierAccessGrantResponse);
+  rpc UpdateLegacyDirectiveReference(UpdateLegacyDirectiveReferenceRequest) returns (UpdateLegacyDirectiveReferenceResponse);
+
+  // === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+  rpc GetGlobalCertificationOverview(GetGlobalCertificationOverviewRequest) returns (GetGlobalCertificationOverviewResponse);
+  rpc UpdateGlobalAccessibilityProfile(UpdateGlobalAccessibilityProfileRequest) returns (UpdateGlobalAccessibilityProfileResponse);
+  rpc RunHealthMigrationImportOrExportJob(RunHealthMigrationImportOrExportJobRequest) returns (RunHealthMigrationImportOrExportJobResponse);
+  rpc UpsertHorizontalCertificationCheck(UpsertHorizontalCertificationCheckRequest) returns (UpsertHorizontalCertificationCheckResponse);
+  rpc VerifyUnitLocalizationLosslessness(VerifyUnitLocalizationLosslessnessRequest) returns (VerifyUnitLocalizationLosslessnessResponse);
+  rpc RunOfflineAndManualParityAudit(RunOfflineAndManualParityAuditRequest) returns (RunOfflineAndManualParityAuditResponse);
 }
 
 // === Phase 2 message types ===
@@ -545,6 +749,13 @@ message GlucoseReading {
   double value_mg_dl = 2;
   int64 recorded_at_unix = 3;
   string source = 4; // dexcom | libre | manual
+  double raw_value = 5;
+  string raw_unit = 6; // mg/dL | mmol/L
+  string conversion_version = 7;
+  string timezone = 8;
+  repeated string confounder_tags = 9;
+  int32 revision = 10;
+  bool deleted = 11;
 }
 
 message ListMyGlucoseRequest {
@@ -560,9 +771,14 @@ message IngestGlucoseReadingRequest {
   double value_mg_dl = 1;
   int64 recorded_at_unix = 2; // 0 = now
   string source = 3; // defaults to "manual"
+  string unit = 4; // optional: 'mg/dL' (default) or 'mmol/L'
+  string timezone = 5;
+  repeated string confounder_tags = 6;
+  string client_mutation_id = 7;
 }
 message IngestGlucoseReadingResponse {
   GlucoseReading reading = 1;
+  bool deduplicated = 2;
 }
 
 // --- Cycle ---
@@ -636,14 +852,17 @@ message SimulateApexAgeResponse {
 
 message ReadinessSnapshot {
   double readiness_0_100 = 1; // composite 0-100
-  string verdict = 2; // optimal | moderate | low | no-data
+  string verdict = 2; // optimal | moderate | low | no-data | revoked
   double hrv_delta_ms = 3; // window mean minus 30d baseline
   double rhr_delta_bpm = 4; // window mean minus 30d baseline (negative = better)
   double sleep_score = 5; // 0-100
   string recommendation = 6; // one-line nudge for the calling pillar
+  bool purpose_grant_enabled = 7; // Choice 1 purpose-scoped summary grant
 }
 
-message GetReadinessRequest {}
+message GetReadinessRequest {
+  string target_pillar = 1; // optional: 'forge' | 'zenith' | 'nomad'
+}
 message GetReadinessResponse {
   ReadinessSnapshot snapshot = 1;
 }
@@ -789,6 +1008,13 @@ message DnaUpload {
   string sha256 = 4;
   int64 parsed_at_unix = 5;
   int64 created_at_unix = 6;
+  string genome_build = 7; // GRCh37 | GRCh38
+  string strand_orientation = 8; // forward_plus | illumina_top
+  double quality_pass_rate = 9;
+  string laboratory_name = 10;
+  bool chain_of_custody_verified = 11;
+  string consent_version = 12;
+  bool secondary_findings_opt_in = 13;
 }
 
 message SnpEntry {
@@ -845,15 +1071,32 @@ message LabMarkerValue {
   string metric_code = 1;
   double value = 2;
   string unit = 3;
+  double ref_range_low = 4;
+  double ref_range_high = 5;
+  string flag = 6; // normal | low | high | critical
+  string specimen_type = 7;
+  string origin = 8; // regex_parser | gemini_ai | fhir_bundle | ccda_xml | member_manual | staff_transcription
+  double confidence = 9; // 0.0..1.0
+  string review_state = 10; // provisional | member_confirmed | staff_verified | rejected | withdrawn
+  int32 page_number = 11;
+  string evidence_snippet = 12;
+  string bbox_json = 13;
+  double normalized_value = 14;
+  string normalized_unit = 15;
+  string conversion_version = 16;
 }
 
 message ExtractLabMarkersRequest {
   string report_id = 1;
   repeated LabMarkerValue markers = 2;
   int64 recorded_at_unix = 3;
+  bool confirm_immediately = 4;
+  string origin = 5;
 }
 message ExtractLabMarkersResponse {
   int32 inserted = 1;
+  int32 provisional_count = 2;
+  int32 confirmed_count = 3;
 }
 
 // --- Clinician shares ---
@@ -938,6 +1181,16 @@ message ImagingStudy {
   // best possible coronary result and the number a member most wants on
   // the record, so 0 cannot double as "not measured".
   bool headline_value_present = 11;
+  // Choice 2 (AP2) — Imaging Intelligence metadata
+  string document_format = 12; // pdf | dicom_manifest | image | portal_export
+  string isolation_status = 13; // quarantined | scanning | clean | rejected_malware
+  string review_state = 14; // provisional | member_confirmed | staff_verified | withdrawn
+  string study_uid = 15;
+  string revision_kind = 16; // original | addendum | corrected | duplicate
+  string parent_study_id = 17;
+  string impression_text = 18;
+  string follow_up_text = 19;
+  repeated ClinicalDocumentFact extracted_facts = 20;
 }
 
 message SubmitImagingStudyRequest {
@@ -952,6 +1205,12 @@ message SubmitImagingStudyRequest {
   // See ImagingStudy.headline_value_present. Absent from an older client
   // means "0 is unset", which is the behaviour that lost a CAC of 0.
   bool headline_value_present = 9;
+  string document_format = 10;
+  string study_uid = 11;
+  string revision_kind = 12;
+  string parent_study_id = 13;
+  string impression_text = 14;
+  string follow_up_text = 15;
 }
 message SubmitImagingStudyResponse {
   ImagingStudy study = 1;
@@ -1014,8 +1273,2716 @@ message CancelLoungeBookingResponse {}
 
 message ParseLabReportTextRequest {
   string report_id = 1;
-  string text = 2; // OCR'd or pasted text
+  string text = 2; // OCR'd or pasted text, FHIR JSON, C-CDA XML, or DICOM manifest
+  string document_format = 3; // text | fhir_bundle | ccda_xml | dicom_manifest
+  bool persist_provisional = 4; // When true, saves provisional candidates on report_id
 }
 message ParseLabReportTextResponse {
   repeated LabMarkerValue extracted = 1;
+  repeated ClinicalDocumentFact extracted_facts = 2;
+  string model_version = 3;
+  string prompt_version = 4;
+}
+
+// === Opportunity Choice 1 (AP1): Health Data Reliability Center message types ===
+
+message HealthUnitConversionRule {
+  string id = 1;
+  string metric_code = 2;
+  string from_unit = 3;
+  string to_unit = 4;
+  double multiplier = 5;
+  double offset_val = 6;
+  string conversion_version = 7;
+  string notes = 8;
+  bool active = 9;
+}
+
+message HealthSourceGrant {
+  string id = 1;
+  string source_code = 2; // health_connect | healthkit | oura | whoop | garmin | apple_watch | dexcom | libre | lab_report | manual
+  string display_name = 3;
+  string category = 4; // wearable | cgm | clinical_lab | manual
+  string status = 5; // active | paused | revoked | error | disconnected
+  int32 priority_rank = 6; // Lower rank = higher authority when multiple sources report same metric
+  repeated string preferred_metrics = 7; // e.g. ['HRV', 'RHR', 'SLEEP_SCORE']
+  int64 last_sync_at_unix = 8;
+  string last_error = 9;
+  int64 revoked_at_unix = 10;
+  int32 observation_count = 11;
+}
+
+message CrossPillarHealthGrant {
+  string id = 1;
+  string target_pillar = 2; // forge | zenith | nomad
+  string purpose_code = 3; // forge_readiness | zenith_hrv_load | nomad_circadian
+  string display_title = 4;
+  string description = 5;
+  repeated string allowed_summary_fields = 6;
+  bool enabled = 7;
+  int64 updated_at_unix = 8;
+  string revoked_reason = 9;
+}
+
+message ObservationRevision {
+  string id = 1;
+  string observation_kind = 2; // vital | glucose
+  string observation_id = 3;
+  string metric_code = 4;
+  string actor_role = 5; // member | staff | system
+  string action = 6; // create | correct | delete | restore | conflict_resolve | unit_normalize
+  int32 revision = 7;
+  double prev_value = 8;
+  string prev_unit = 9;
+  double new_value = 10;
+  string new_unit = 11;
+  string reason = 12;
+  int64 created_at_unix = 13;
+}
+
+message HealthDataConflict {
+  string id = 1;
+  string metric_code = 2;
+  string conflict_kind = 3; // duplicate_window | multi_source_divergence | unit_anomaly | clock_drift
+  string status = 4; // open | resolved_keep_primary | resolved_keep_candidate | resolved_merged | dismissed
+  string primary_vital_id = 5;
+  string candidate_vital_id = 6;
+  string primary_source = 7;
+  string candidate_source = 8;
+  double primary_value = 9;
+  double candidate_value = 10;
+  string unit = 11;
+  int64 measured_at_unix = 12;
+  double delta_pct = 13;
+  string resolution_note = 14;
+  int64 resolved_at_unix = 15;
+  int64 created_at_unix = 16;
+}
+
+message HealthCorrectionCase {
+  string id = 1;
+  string observation_kind = 2; // vital | glucose
+  string observation_id = 3;
+  string metric_code = 4;
+  string case_kind = 5; // wrong_unit | lab_ocr_mismatch | duplicate_import | wrong_date | device_spike | other
+  string status = 6; // open | in_review | resolved | rejected
+  double current_value = 7;
+  string current_unit = 8;
+  double requested_value = 9;
+  string requested_unit = 10;
+  string member_note = 11;
+  string resolution_note = 12;
+  int64 created_at_unix = 13;
+  int64 updated_at_unix = 14;
+  int64 resolved_at_unix = 15;
+}
+
+message HealthRecomputeRun {
+  string id = 1;
+  string trigger_source = 2; // member_rebuild | sync_vitals | conflict_resolve | admin_verify
+  int32 input_count = 3;
+  int32 normalized_count = 4;
+  int32 open_conflicts = 5;
+  double apex_age = 6;
+  double bio_rank = 7;
+  double coverage_pct = 8;
+  string input_sha256 = 9;
+  string output_sha256 = 10;
+  int32 duration_ms = 11;
+  int64 created_at_unix = 12;
+}
+
+message HealthDataReliabilityOverview {
+  int32 total_active_observations = 1;
+  int32 total_deleted_observations = 2;
+  int32 distinct_metrics_covered = 3;
+  int32 reference_metrics_total = 4;
+  double coverage_pct = 5; // 0..100 across core biomarker panel
+  int32 fresh_metrics_count = 6;
+  int32 aging_metrics_count = 7;
+  int32 stale_metrics_count = 8;
+  int32 active_sources_count = 9;
+  int32 open_conflicts_count = 10;
+  int32 open_correction_cases_count = 11;
+  int32 normalized_conversions_count = 12;
+  HealthRecomputeRun latest_recompute = 13;
+  repeated HealthSourceGrant sources = 14;
+  repeated CrossPillarHealthGrant cross_pillar_grants = 15;
+  repeated HealthUnitConversionRule unit_conversions = 16;
+  repeated Biomarker deleted_observations = 17;
+}
+
+message GetHealthDataReliabilityOverviewRequest {}
+message GetHealthDataReliabilityOverviewResponse {
+  HealthDataReliabilityOverview overview = 1;
+}
+
+message ListHealthSourcesRequest {}
+message ListHealthSourcesResponse {
+  repeated HealthSourceGrant sources = 1;
+}
+
+message UpsertHealthSourceGrantRequest {
+  string source_code = 1;
+  string status = 2; // active | paused
+  int32 priority_rank = 3;
+  repeated string preferred_metrics = 4;
+}
+message UpsertHealthSourceGrantResponse {
+  HealthSourceGrant grant = 1;
+}
+
+message RevokeHealthSourceGrantRequest {
+  string source_code = 1;
+  bool purge_unverified_observations = 2;
+  string reason = 3;
+}
+message RevokeHealthSourceGrantResponse {
+  HealthSourceGrant grant = 1;
+  int32 observations_soft_deleted = 2;
+}
+
+message CorrectHealthObservationRequest {
+  string observation_kind = 1; // vital | glucose
+  string observation_id = 2;
+  double new_value = 3;
+  string new_unit = 4;
+  string timezone = 5;
+  string specimen_or_device = 6;
+  repeated string confounder_tags = 7;
+  string reason = 8;
+  int32 expected_revision = 9;
+}
+message CorrectHealthObservationResponse {
+  Biomarker vital = 1;
+  GlucoseReading glucose = 2;
+  ObservationRevision revision = 3;
+}
+
+message DeleteHealthObservationRequest {
+  string observation_kind = 1; // vital | glucose
+  string observation_id = 2;
+  string reason = 3;
+}
+message DeleteHealthObservationResponse {
+  bool deleted = 1;
+  ObservationRevision revision = 2;
+}
+
+message RestoreHealthObservationRequest {
+  string observation_kind = 1; // vital | glucose
+  string observation_id = 2;
+  string reason = 3;
+}
+message RestoreHealthObservationResponse {
+  Biomarker vital = 1;
+  GlucoseReading glucose = 2;
+  ObservationRevision revision = 3;
+}
+
+message ListObservationRevisionsRequest {
+  string observation_kind = 1; // optional filter: vital | glucose
+  string observation_id = 2; // optional filter: specific observation UUID
+  int32 limit = 3;
+}
+message ListObservationRevisionsResponse {
+  repeated ObservationRevision revisions = 1;
+}
+
+message ListHealthDataConflictsRequest {
+  string status = 1; // empty = all, or 'open'
+}
+message ListHealthDataConflictsResponse {
+  repeated HealthDataConflict conflicts = 1;
+}
+
+message ResolveHealthDataConflictRequest {
+  string conflict_id = 1;
+  string resolution = 2; // keep_primary | keep_candidate | dismiss
+  bool promote_source_priority = 3;
+  string resolution_note = 4;
+}
+message ResolveHealthDataConflictResponse {
+  HealthDataConflict conflict = 1;
+}
+
+message CreateHealthCorrectionCaseRequest {
+  string observation_kind = 1; // vital | glucose
+  string observation_id = 2;
+  string metric_code = 3;
+  string case_kind = 4; // wrong_unit | lab_ocr_mismatch | duplicate_import | wrong_date | device_spike | other
+  double requested_value = 5;
+  string requested_unit = 6;
+  string member_note = 7;
+}
+message CreateHealthCorrectionCaseResponse {
+  HealthCorrectionCase correction_case = 1;
+}
+
+message ListMyHealthCorrectionCasesRequest {}
+message ListMyHealthCorrectionCasesResponse {
+  repeated HealthCorrectionCase cases = 1;
+}
+
+message ListCrossPillarHealthGrantsRequest {}
+message ListCrossPillarHealthGrantsResponse {
+  repeated CrossPillarHealthGrant grants = 1;
+}
+
+message UpdateCrossPillarHealthGrantRequest {
+  string purpose_code = 1; // forge_readiness | zenith_hrv_load | nomad_circadian
+  bool enabled = 2;
+  string reason = 3;
+}
+message UpdateCrossPillarHealthGrantResponse {
+  CrossPillarHealthGrant grant = 1;
+}
+
+message RebuildHealthRecordRequest {
+  string reason = 1;
+}
+message RebuildHealthRecordResponse {
+  HealthRecomputeRun run = 1;
+}
+
+message ExportHealthObservationsRequest {
+  string format = 1; // 'json' | 'csv'
+  bool include_deleted = 2;
+  bool include_revisions = 3;
+}
+message ExportHealthObservationsResponse {
+  string format = 1;
+  string filename = 2;
+  string payload = 3;
+  string sha256 = 4;
+  int32 observation_count = 5;
+  int64 generated_at_unix = 6;
+}
+
+// === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence message types ===
+
+message ExtractedMarkerCandidate {
+  string id = 1;
+  string report_id = 2;
+  string metric_code = 3;
+  string display_name = 4;
+  double value = 5; // Canonical normalized value
+  string unit = 6; // Canonical normalized unit
+  double raw_value = 7;
+  string raw_unit = 8;
+  string conversion_version = 9;
+  double ref_range_low = 10;
+  double ref_range_high = 11;
+  bool ref_range_present = 12;
+  string flag = 13; // normal | low | high | critical
+  string specimen_type = 14;
+  string origin = 15; // regex_parser | gemini_ai | fhir_bundle | ccda_xml | member_manual | staff_transcription | legacy_backfill
+  double confidence = 16; // 0.0..1.0
+  string review_state = 17; // provisional | member_confirmed | staff_verified | rejected | withdrawn
+  string reviewer_role = 18; // none | member | technician | clinician | staff
+  bool verified = 19; // True ONLY when staff_verified
+  int32 page_number = 20;
+  string evidence_snippet = 21;
+  string bbox_json = 22;
+  int64 confirmed_at_unix = 23;
+  int64 created_at_unix = 24;
+}
+
+message ClinicalDocumentFact {
+  string id = 1;
+  string report_id = 2;
+  string imaging_study_id = 3;
+  string fact_kind = 4; // impression | finding | follow_up | medication | specimen_note | panel_summary
+  string title = 5;
+  string body_text = 6; // Verbatim clinician/radiologist/pathologist language; never rewritten as an Apex diagnosis
+  string severity = 7; // normal | notable | follow_up_recommended | urgent_discussion
+  int32 page_number = 8;
+  string evidence_snippet = 9;
+  string bbox_json = 10;
+  string origin = 11; // regex_parser | gemini_ai | fhir_bundle | ccda_xml | dicom_manifest | member_manual | staff_transcription
+  double confidence = 12;
+  string review_state = 13; // provisional | member_confirmed | staff_verified | rejected | withdrawn
+  string reviewer_role = 14;
+  int64 confirmed_at_unix = 15;
+  int64 created_at_unix = 16;
+}
+
+message DocumentRevisionDiffItem {
+  string item_kind = 1; // marker | fact
+  string code_or_title = 2;
+  string change_type = 3; // added | changed | unchanged | withdrawn
+  double old_value = 4;
+  string old_unit = 5;
+  double new_value = 6;
+  string new_unit = 7;
+  string old_text = 8;
+  string new_text = 9;
+  string summary = 10;
+}
+
+message AppointmentBriefQuestion {
+  string id = 1;
+  string question = 2;
+  string rationale = 3; // Why this question is suggested (e.g. 'ApoB rose from 78 to 96 mg/dL on Quest addendum')
+  string source_citation = 4; // Verbatim report/page citation
+  string priority = 5; // primary | secondary | optional
+  bool answered = 6;
+  string clinician_response_note = 7;
+}
+
+message AppointmentBrief {
+  string id = 1;
+  string title = 2;
+  string specialty = 3; // e.g., 'Preventive Cardiology', 'Endocrinology', 'Primary Care'
+  string appointment_date = 4; // YYYY-MM-DD
+  repeated string report_ids = 5;
+  repeated string imaging_study_ids = 6;
+  repeated ExtractedMarkerCandidate highlighted_markers = 7;
+  repeated ClinicalDocumentFact verbatim_impressions = 8;
+  repeated AppointmentBriefQuestion questions = 9;
+  string member_notes = 10;
+  string non_diagnostic_disclaimer = 11;
+  string status = 12; // draft | ready | completed | archived
+  int64 created_at_unix = 13;
+  int64 updated_at_unix = 14;
+}
+
+message ExtractionModelSpec {
+  string id = 1;
+  string model_code = 2;
+  string model_version = 3;
+  string prompt_version = 4;
+  repeated string supported_formats = 5;
+  string status = 6; // active | canary | retired
+  double precision_pct = 7;
+  double recall_pct = 8;
+  string notes = 9;
+}
+
+message ClinicalDocumentIntelligenceOverview {
+  int32 total_documents = 1;
+  int32 total_imaging_studies = 2;
+  int32 provisional_markers_count = 3;
+  int32 member_confirmed_markers_count = 4;
+  int32 staff_verified_markers_count = 5;
+  int32 extracted_facts_count = 6;
+  int32 addendum_or_corrected_count = 7;
+  int32 appointment_briefs_count = 8;
+  repeated LabReport documents = 9;
+  repeated ImagingStudy imaging_studies = 10;
+  repeated AppointmentBrief appointment_briefs = 11;
+  repeated ExtractionModelSpec active_models = 12;
+}
+
+message GetClinicalDocumentIntelligenceOverviewRequest {}
+message GetClinicalDocumentIntelligenceOverviewResponse {
+  ClinicalDocumentIntelligenceOverview overview = 1;
+}
+
+message InspectClinicalDocumentRequest {
+  string report_id = 1;
+  string imaging_study_id = 2;
+}
+message InspectClinicalDocumentResponse {
+  LabReport report = 1;
+  ImagingStudy imaging_study = 2;
+  repeated ExtractedMarkerCandidate marker_candidates = 3;
+  repeated ClinicalDocumentFact extracted_facts = 4;
+  repeated LabReport revision_history = 5;
+}
+
+message RunDocumentExtractionRequest {
+  string report_id = 1;
+  string imaging_study_id = 2;
+  string raw_payload = 3; // Pasted OCR text, FHIR Bundle JSON, C-CDA XML, or DICOM manifest text
+  string document_format = 4; // pdf | image | fhir_bundle | ccda_xml | dicom_manifest | portal_export | paper_photo
+  string specimen_type = 5;
+}
+message RunDocumentExtractionResponse {
+  repeated ExtractedMarkerCandidate marker_candidates = 1;
+  repeated ClinicalDocumentFact extracted_facts = 2;
+  string model_version = 3;
+  string prompt_version = 4;
+  int32 provisional_saved_count = 5;
+}
+
+message ConfirmExtractedDocumentItemsRequest {
+  string report_id = 1;
+  string imaging_study_id = 2;
+  repeated string confirm_marker_ids = 3;
+  repeated string reject_marker_ids = 4;
+  repeated string confirm_fact_ids = 5;
+  repeated string reject_fact_ids = 6;
+  string member_note = 7;
+}
+message ConfirmExtractedDocumentItemsResponse {
+  int32 markers_confirmed = 1;
+  int32 markers_rejected = 2;
+  int32 facts_confirmed = 3;
+  int32 facts_rejected = 4;
+  int32 vitals_synced = 5;
+}
+
+message CompareClinicalDocumentRevisionsRequest {
+  string base_report_id = 1;
+  string target_report_id = 2;
+  string link_as_revision_kind = 3; // optional: 'addendum' | 'corrected' | 'duplicate'
+}
+message CompareClinicalDocumentRevisionsResponse {
+  LabReport base_report = 1;
+  LabReport target_report = 2;
+  string revision_relationship = 3; // original_vs_addendum | original_vs_corrected | duplicate | independent_studies
+  int32 added_count = 4;
+  int32 changed_count = 5;
+  int32 unchanged_count = 6;
+  int32 withdrawn_count = 7;
+  repeated DocumentRevisionDiffItem diffs = 8;
+}
+
+message GenerateAppointmentBriefRequest {
+  string title = 1;
+  string specialty = 2;
+  string appointment_date = 3; // YYYY-MM-DD
+  repeated string report_ids = 4;
+  repeated string imaging_study_ids = 5;
+  repeated string custom_questions = 6;
+  string member_notes = 7;
+}
+message GenerateAppointmentBriefResponse {
+  AppointmentBrief brief = 1;
+}
+
+message ListMyAppointmentBriefsRequest {}
+message ListMyAppointmentBriefsResponse {
+  repeated AppointmentBrief briefs = 1;
+}
+
+message UpdateAppointmentBriefRequest {
+  string brief_id = 1;
+  string title = 2;
+  string specialty = 3;
+  string appointment_date = 4;
+  string member_notes = 5;
+  string status = 6; // draft | ready | completed | archived
+  repeated AppointmentBriefQuestion questions = 7;
+}
+message UpdateAppointmentBriefResponse {
+  AppointmentBrief brief = 1;
+}
+
+// === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age message types ===
+
+message ApexAgeModelCard {
+  string id = 1;
+  string model_code = 2; // e.g., 'levine-phenoage-2018', 'apex-system-deviation'
+  string model_version = 3; // e.g., 'v1.2'
+  string display_name = 4;
+  string method = 5; // phenoage | deviation
+  string formula_citation = 6;
+  string validation_population = 7;
+  int32 validation_age_min = 8;
+  int32 validation_age_max = 9;
+  string known_limitations = 10;
+  string uncertainty_methodology = 11;
+  string non_causal_disclaimer = 12;
+  string clinical_owner = 13;
+  string scientific_reviewer = 14;
+  string status = 15; // active | canary | rolled_back | retired
+  double cohort_mae_years = 16;
+  double calibration_r2 = 17;
+  string bias_audit_summary = 18;
+  int64 updated_at_unix = 19;
+}
+
+message ApexAgeContribution {
+  string metric_code = 1;
+  string display_name = 2;
+  string system_id = 3; // cardiovascular | metabolic | hormonal | immune | nutritional | autonomic
+  bool present = 4;
+  double value = 5;
+  string unit = 6;
+  double personal_baseline_mean = 7;
+  double optimal_midpoint = 8;
+  double weight_or_coefficient = 9;
+  double age_contribution_years = 10; // Negative = younger than cohort mean, Positive = older
+  string direction = 11; // favorable | neutral | unfavorable | missing
+  bool verified = 12;
+  string freshness_status = 13; // fresh | aging | stale | missing
+  double sensitivity_10pct_years = 14; // Projected age delta if marker improves by 10% toward optimal
+  string missing_reason = 15; // '' | 'not_measured' | 'unverified_only' | 'excluded_period'
+}
+
+message PersonalMetricBaseline {
+  string id = 1;
+  string metric_code = 2;
+  string display_name = 3;
+  string category = 4;
+  string unit = 5;
+  int32 calibration_window_days = 6;
+  int32 minimum_samples = 7;
+  int32 sample_count = 8;
+  int32 excluded_samples_count = 9;
+  double baseline_mean = 10;
+  double baseline_median = 11;
+  double baseline_stddev = 12;
+  double baseline_p10 = 13;
+  double baseline_p90 = 14;
+  double latest_value = 15;
+  int64 latest_measured_at_unix = 16;
+  double delta_from_baseline = 17;
+  double delta_pct = 18;
+  double z_score = 19;
+  string device_or_lab_continuity = 20; // consistent | mixed_sources | insufficient_history
+  string primary_source_or_device = 21;
+  string confidence_band = 22; // high | moderate | calibrating | insufficient
+  int64 computed_at_unix = 23;
+}
+
+message BaselineExcludedPeriod {
+  string id = 1;
+  string start_date = 2; // YYYY-MM-DD
+  string end_date = 3; // YYYY-MM-DD
+  string reason_tag = 4; // illness | travel | injury | pregnancy | medication_change | device_transition | other
+  repeated string metric_codes = 5; // Empty = applies to all metrics
+  string note = 6;
+  int64 created_at_unix = 7;
+}
+
+message ChangeRadarSignal {
+  string id = 1;
+  string metric_code = 2;
+  string display_name = 3;
+  string signal_kind = 4; // sustained_shift | rapid_rate_of_change | co_moving_cluster | baseline_breakout
+  string direction = 5; // favorable | unfavorable | neutral_shift
+  double baseline_value = 6;
+  double current_value = 7;
+  string unit = 8;
+  double delta_pct = 9;
+  double slope_per_30d = 10;
+  repeated string co_moving_metrics = 11;
+  string data_quality = 12; // verified_clinical | consistent_sensor | mixed_unverified | low_sample
+  double confidence = 13;
+  string summary = 14;
+  string non_diagnostic_note = 15;
+  string status = 16; // active | acknowledged | monitoring | dismissed_confounder | flagged_for_clinician
+  string member_note = 17;
+  int64 detected_at_unix = 18;
+  int64 updated_at_unix = 19;
+}
+
+message ApexScoreSnapshot {
+  string id = 1;
+  string model_code = 2;
+  string model_version = 3;
+  string method = 4; // phenoage | deviation | insufficient | score_free
+  double biological_age = 5;
+  double chronological_age = 6;
+  double delta_years = 7;
+  double bio_rank = 8;
+  double ci_low_years = 9;
+  double ci_high_years = 10;
+  string uncertainty_band = 11; // narrow | moderate | wide | uncalibrated
+  double completeness_pct = 12;
+  string validation_fit = 13; // in_cohort | age_out_of_bounds | missing_dob | partial_panel
+  string input_sha256 = 14;
+  repeated ApexAgeContribution contributions = 15;
+  map<string, double> system_scores = 16;
+  repeated string missing_markers = 17;
+  string trigger_source = 18; // auto | member_recompute | admin_recompute | model_rollback
+  int64 created_at_unix = 19;
+}
+
+message ApexScoreDispute {
+  string id = 1;
+  string snapshot_id = 2;
+  string metric_code = 3;
+  string dispute_kind = 4; // stale_input_used | confounded_period_included | unit_or_lab_mismatch | model_applicability | other
+  string member_note = 5;
+  string status = 6; // open | under_review | resolved_recomputed | dismissed
+  string resolution_note = 7;
+  string recomputed_snapshot_id = 8;
+  int64 created_at_unix = 9;
+  int64 resolved_at_unix = 10;
+}
+
+message PersonalBaselineAndApexAgeOverview {
+  bool score_free_mode = 1;
+  string preferred_health_view = 2; // composite_and_systems | systems_only | personal_baselines_only
+  GetApexAgeResponse current_age = 3;
+  ApexAgeModelCard active_model_card = 4;
+  repeated ApexAgeModelCard available_models = 5;
+  repeated PersonalMetricBaseline baselines = 6;
+  repeated BaselineExcludedPeriod excluded_periods = 7;
+  repeated ChangeRadarSignal change_signals = 8;
+  repeated ApexScoreSnapshot recent_snapshots = 9;
+  repeated ApexScoreDispute disputes = 10;
+  int32 calibrated_baselines_count = 11;
+  int32 calibrating_baselines_count = 12;
+  int32 active_change_signals_count = 13;
+  int32 open_disputes_count = 14;
+}
+
+message GetPersonalBaselineAndApexAgeOverviewRequest {}
+message GetPersonalBaselineAndApexAgeOverviewResponse {
+  PersonalBaselineAndApexAgeOverview overview = 1;
+}
+
+message RecomputePersonalBaselinesAndApexAgeRequest {
+  string reason = 1;
+}
+message RecomputePersonalBaselinesAndApexAgeResponse {
+  PersonalBaselineAndApexAgeOverview overview = 1;
+  ApexScoreSnapshot snapshot = 2;
+}
+
+message UpsertBaselineExcludedPeriodRequest {
+  string id = 1; // Optional: empty creates a new excluded period
+  string start_date = 2; // YYYY-MM-DD
+  string end_date = 3; // YYYY-MM-DD
+  string reason_tag = 4; // illness | travel | injury | pregnancy | medication_change | device_transition | other
+  repeated string metric_codes = 5;
+  string note = 6;
+}
+message UpsertBaselineExcludedPeriodResponse {
+  BaselineExcludedPeriod period = 1;
+  int32 baselines_recomputed = 2;
+}
+
+message DeleteBaselineExcludedPeriodRequest {
+  string id = 1;
+}
+message DeleteBaselineExcludedPeriodResponse {
+  bool deleted = 1;
+  int32 baselines_recomputed = 2;
+}
+
+message UpdateChangeSignalDispositionRequest {
+  string signal_id = 1;
+  string status = 2; // active | acknowledged | monitoring | dismissed_confounder | flagged_for_clinician
+  string member_note = 3;
+}
+message UpdateChangeSignalDispositionResponse {
+  ChangeRadarSignal signal = 1;
+}
+
+message UpdateScoreDisplayPreferencesRequest {
+  bool score_free_mode = 1;
+  string preferred_health_view = 2; // composite_and_systems | systems_only | personal_baselines_only
+}
+message UpdateScoreDisplayPreferencesResponse {
+  bool score_free_mode = 1;
+  string preferred_health_view = 2;
+}
+
+message SubmitApexScoreDisputeRequest {
+  string snapshot_id = 1;
+  string metric_code = 2;
+  string dispute_kind = 3; // stale_input_used | confounded_period_included | unit_or_lab_mismatch | model_applicability | other
+  string member_note = 4;
+}
+message SubmitApexScoreDisputeResponse {
+  ApexScoreDispute dispute = 1;
+}
+
+message ListMyApexScoreSnapshotsRequest {
+  int32 limit = 1;
+}
+message ListMyApexScoreSnapshotsResponse {
+  repeated ApexScoreSnapshot snapshots = 1;
+}
+
+// === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar message types ===
+
+message PreventiveGuidelineRule {
+  string id = 1;
+  string guideline_code = 2;
+  string version = 3;
+  string jurisdiction = 4; // US | EU | UK | CA | AU | GLOBAL
+  string category = 5; // screening | vaccine | dental | vision | hearing | skin | reproductive | labs | imaging
+  string title = 6;
+  string authority_source = 7;
+  string evidence_grade = 8; // A | B | C | consensus
+  string sex_or_anatomy = 9; // all | female | male | cervix | breasts | prostate
+  int32 age_min = 10;
+  int32 age_max = 11;
+  int32 interval_months = 12;
+  string why_applies_template = 13;
+  string alternatives_text = 14;
+  string contraindication_prompt = 15;
+  string professional_review_trigger = 16;
+  string escalation_copy = 17;
+  string partner_specialty = 18;
+  string reviewer_name = 19;
+  string reviewer_credentials = 20;
+  string status = 21; // active | draft | withdrawn
+  string withdrawn_reason = 22;
+  int64 updated_at_unix = 23;
+}
+
+message PreventiveCareProfile {
+  string jurisdiction = 1; // US | EU | UK | CA | AU | GLOBAL
+  repeated string anatomy_inventory = 2; // cervix, breasts, prostate, ovaries, testes, colon
+  string pregnancy_status = 3; // not_pregnant | pregnant | postpartum | trying_to_conceive | not_applicable
+  repeated string family_history_flags = 4; // premature_cad, colorectal_neoplasia, breast_ovarian_cancer, prostate_cancer, melanoma, diabetes, glaucoma
+  repeated string risk_factors = 5; // high_uv_exposure, prior_tobacco, hypertension, occupational_noise, high_lpa
+  string clinician_notes = 6;
+  int64 updated_at_unix = 7;
+}
+
+message PreventiveCareItem {
+  string id = 1;
+  string guideline_id = 2;
+  string guideline_code = 3;
+  string guideline_version = 4;
+  string jurisdiction = 5;
+  string category = 6; // screening | vaccine | dental | vision | hearing | skin | reproductive | labs | imaging
+  string title = 7;
+  string why_applies = 8;
+  string authority_source = 9;
+  int32 interval_months = 10;
+  string status = 11; // due | upcoming | completed_confirmed | evidence_pending_confirmation | externally_completed | not_applicable | declined | deferred | clinician_overridden
+  string last_completed_on = 12; // YYYY-MM-DD
+  string due_window_start = 13; // YYYY-MM-DD
+  string due_window_end = 14; // YYYY-MM-DD
+  string evidence_kind = 15; // none | lab_report | imaging_study | external_record | member_attestation
+  string evidence_report_id = 16;
+  string evidence_imaging_id = 17;
+  string evidence_summary = 18;
+  bool evidence_confirmed = 19;
+  string alternatives_text = 20;
+  string contraindication_prompt = 21;
+  string professional_review_trigger = 22;
+  string member_or_clinician_note = 23;
+  bool is_custom_recurring = 24;
+  bool score_penalty_exempt = 25;
+  string reviewer_name = 26;
+  string reviewer_credentials = 27;
+  string partner_specialty = 28;
+  int64 updated_at_unix = 29;
+}
+
+message PreventiveCareCalendarOverview {
+  PreventiveCareProfile profile = 1;
+  repeated PreventiveCareItem items = 2;
+  repeated PreventiveGuidelineRule active_guidelines = 3;
+  repeated ApexClinic recommended_clinics = 4;
+  repeated LabPartner recommended_lab_partners = 5;
+  int32 due_count = 6;
+  int32 upcoming_count = 7;
+  int32 pending_evidence_count = 8;
+  int32 completed_count = 9;
+  int32 overridden_or_exempt_count = 10;
+}
+
+message GetPreventiveCareCalendarOverviewRequest {
+  string category_filter = 1; // optional filter
+}
+message GetPreventiveCareCalendarOverviewResponse {
+  PreventiveCareCalendarOverview overview = 1;
+}
+
+message UpdatePreventiveCareProfileRequest {
+  string jurisdiction = 1;
+  repeated string anatomy_inventory = 2;
+  string pregnancy_status = 3;
+  repeated string family_history_flags = 4;
+  repeated string risk_factors = 5;
+  string clinician_notes = 6;
+}
+message UpdatePreventiveCareProfileResponse {
+  PreventiveCareProfile profile = 1;
+  int32 items_synced = 2;
+}
+
+message UpdatePreventiveCareItemStatusRequest {
+  string item_id = 1;
+  string status = 2; // due | upcoming | completed_confirmed | externally_completed | not_applicable | declined | deferred | clinician_overridden
+  string last_completed_on = 3; // YYYY-MM-DD (optional)
+  string due_window_end = 4; // YYYY-MM-DD (optional)
+  string member_or_clinician_note = 5;
+  string evidence_summary = 6;
+}
+message UpdatePreventiveCareItemStatusResponse {
+  PreventiveCareItem item = 1;
+}
+
+message ConfirmPreventiveCareEvidenceRequest {
+  string item_id = 1;
+  bool confirm = 2; // true = confirm candidate evidence & mark completed_confirmed; false = reject candidate evidence
+  string evidence_kind = 3; // lab_report | imaging_study | external_record | member_attestation
+  string evidence_report_id = 4;
+  string evidence_imaging_id = 5;
+  string completed_on = 6; // YYYY-MM-DD
+  string evidence_summary = 7;
+  string member_note = 8;
+}
+message ConfirmPreventiveCareEvidenceResponse {
+  PreventiveCareItem item = 1;
+}
+
+message UpsertCustomPreventiveCareCheckRequest {
+  string item_id = 1; // empty = create new custom recurring check
+  string category = 2; // screening | vaccine | dental | vision | hearing | skin | reproductive | labs | imaging
+  string title = 3;
+  string why_applies = 4;
+  int32 interval_months = 5;
+  string due_window_start = 6; // YYYY-MM-DD
+  string due_window_end = 7; // YYYY-MM-DD
+  string alternatives_text = 8;
+  string member_or_clinician_note = 9;
+}
+message UpsertCustomPreventiveCareCheckResponse {
+  PreventiveCareItem item = 1;
+}
+
+message SyncPreventiveCarePlanFromGuidelinesRequest {
+  string reason = 1;
+}
+message SyncPreventiveCarePlanFromGuidelinesResponse {
+  PreventiveCareCalendarOverview overview = 1;
+  int32 items_synced = 2;
+  int32 candidate_evidence_matched = 3;
+}
+
+
+// === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory message types ===
+
+message ExperimentTemplate {
+  string id = 1;
+  string template_code = 2;
+  string version = 3; // e.g. "v2026.1"
+  string domain = 4; // sleep | nutrition | exercise | stress | timing | environment
+  string title = 5;
+  string hypothesis_template = 6;
+  string study_design = 7; // observational_ab | randomized_crossover | counterbalanced_abab
+  bool randomization_safe = 8;
+  string primary_outcome_metric = 9; // HRV | RHR | SLEEP_SCORE | FASTING_GLUCOSE | APO_B | HS_CRP
+  repeated string secondary_outcome_metrics = 10;
+  int32 baseline_days = 11;
+  int32 intervention_days = 12;
+  int32 washout_days = 13;
+  int32 minimum_samples_per_phase = 14;
+  string default_dose_or_exposure = 15;
+  string stop_rule_text = 16;
+  repeated string safety_exclusions = 17;
+  string contraindications_text = 18;
+  repeated string default_confounders = 19;
+  string analysis_engine_version = 20; // e.g. "n1-effect-engine-v1.0"
+  string reviewer_name = 21;
+  string reviewer_credentials = 22;
+  string status = 23; // active | draft | withdrawn
+  string withdrawn_reason = 24;
+}
+
+message NOf1DailyLogEntry {
+  string id = 1;
+  string experiment_id = 2;
+  string log_date = 3; // YYYY-MM-DD
+  string phase = 4; // baseline | intervention_a | washout | crossover_b
+  string adherence_status = 5; // hit | partial | miss | excluded
+  double dose_value = 6;
+  string dose_unit = 7;
+  double outcome_value = 8;
+  string outcome_unit = 9;
+  repeated string confounder_tags = 10; // travel | illness | cycle_phase | medication_change | device_gap | poor_sleep_env
+  bool excluded_from_analysis = 11;
+  string exclusion_reason = 12;
+  string note = 13;
+  int64 recorded_at_unix = 14;
+}
+
+message NOf1ExperimentAnalysis {
+  string analysis_engine_version = 1; // e.g. "n1-effect-engine-v1.0"
+  string study_classification = 2; // randomized_crossover | observational_only
+  int32 baseline_sample_count = 3;
+  int32 intervention_sample_count = 4;
+  int32 washout_excluded_count = 5;
+  int32 confounded_excluded_count = 6;
+  int32 minimum_samples_required = 7;
+  double baseline_mean = 8;
+  double baseline_stddev = 9;
+  double intervention_mean = 10;
+  double intervention_stddev = 11;
+  double absolute_delta = 12;
+  double delta_pct = 13;
+  double effect_size_cohens_d = 14;
+  double ci_95_low = 15;
+  double ci_95_high = 16;
+  double null_zone_threshold = 17; // e.g. |d| < 0.35 or CI spanning 0 = no meaningful change
+  string verdict = 18; // meaningful_favorable | meaningful_unfavorable | no_meaningful_change | insufficient_samples | observational_confounded
+  string plain_language_summary = 19;
+  string non_causal_guardrail_note = 20;
+  int64 analyzed_at_unix = 21;
+}
+
+message ExperimentAdverseEvent {
+  string id = 1;
+  string experiment_id = 2;
+  string experiment_title = 3;
+  string severity = 4; // mild | moderate | severe_stop_triggered
+  string symptom_or_event = 5;
+  bool stop_rule_triggered = 6;
+  string status = 7; // open | staff_reviewed | escalated_to_clinician | resolved
+  string staff_resolution_note = 8;
+  int64 reported_at_unix = 9;
+  int64 resolved_at_unix = 10;
+}
+
+message NOf1Experiment {
+  string id = 1;
+  string template_id = 2;
+  string template_code = 3;
+  string domain = 4; // sleep | nutrition | exercise | stress | timing | environment
+  string title = 5;
+  string predeclared_hypothesis = 6;
+  string study_design = 7; // observational_ab | randomized_crossover | counterbalanced_abab
+  bool is_randomized = 8;
+  string primary_outcome_metric = 9;
+  string primary_outcome_unit = 10;
+  repeated string secondary_outcome_metrics = 11;
+  int32 baseline_days = 12;
+  int32 intervention_days = 13;
+  int32 washout_days = 14;
+  int32 minimum_samples_per_phase = 15;
+  string dose_or_exposure_spec = 16;
+  string predeclared_stop_rule = 17;
+  repeated string predeclared_confounders = 18;
+  string status = 19; // active | completed | paused | stopped_stop_rule | stopped_adverse_event | withdrawn
+  string current_phase = 20; // baseline | intervention_a | washout | crossover_b | completed
+  string started_on = 21; // YYYY-MM-DD
+  string ended_on = 22; // YYYY-MM-DD
+  bool research_consent_opt_in = 23; // Strictly separate from product self-tracking consent
+  double adherence_pct = 24;
+  NOf1ExperimentAnalysis latest_analysis = 25;
+  repeated NOf1DailyLogEntry logs = 26;
+  int64 updated_at_unix = 27;
+}
+
+message ExperimentLabOverview {
+  repeated ExperimentTemplate templates = 1;
+  repeated NOf1Experiment experiments = 2;
+  repeated ExperimentAdverseEvent adverse_events = 3;
+  int32 active_count = 4;
+  int32 completed_count = 5;
+  int32 no_meaningful_change_count = 6;
+  int32 adverse_stopped_count = 7;
+  string safety_governance_notice = 8;
+}
+
+message GetExperimentLabOverviewRequest {
+  string domain_filter = 1; // optional filter
+}
+message GetExperimentLabOverviewResponse {
+  ExperimentLabOverview overview = 1;
+}
+
+message PredeclareNOf1ExperimentRequest {
+  string template_id = 1; // optional template UUID
+  string domain = 2; // sleep | nutrition | exercise | stress | timing | environment
+  string title = 3;
+  string predeclared_hypothesis = 4;
+  string study_design = 5; // observational_ab | randomized_crossover | counterbalanced_abab
+  string primary_outcome_metric = 6;
+  string primary_outcome_unit = 7;
+  repeated string secondary_outcome_metrics = 8;
+  int32 baseline_days = 9;
+  int32 intervention_days = 10;
+  int32 washout_days = 11;
+  int32 minimum_samples_per_phase = 12;
+  string dose_or_exposure_spec = 13;
+  string predeclared_stop_rule = 14;
+  repeated string predeclared_confounders = 15;
+  bool research_consent_opt_in = 16;
+}
+message PredeclareNOf1ExperimentResponse {
+  NOf1Experiment experiment = 1;
+}
+
+message RecordNOf1DailyLogRequest {
+  string experiment_id = 1;
+  string log_date = 2; // YYYY-MM-DD (empty = today)
+  string phase = 3; // baseline | intervention_a | washout | crossover_b
+  string adherence_status = 4; // hit | partial | miss | excluded
+  double dose_value = 5;
+  string dose_unit = 6;
+  double outcome_value = 7;
+  string outcome_unit = 8;
+  repeated string confounder_tags = 9; // travel | illness | cycle_phase | medication_change | device_gap | poor_sleep_env
+  bool excluded_from_analysis = 10;
+  string exclusion_reason = 11;
+  string note = 12;
+}
+message RecordNOf1DailyLogResponse {
+  NOf1DailyLogEntry entry = 1;
+  NOf1Experiment updated_experiment = 2;
+}
+
+message AnalyzeNOf1ExperimentRequest {
+  string experiment_id = 1;
+}
+message AnalyzeNOf1ExperimentResponse {
+  NOf1Experiment experiment = 1;
+  NOf1ExperimentAnalysis analysis = 2;
+}
+
+message UpdateNOf1ExperimentStatusRequest {
+  string experiment_id = 1;
+  string status = 2; // active | completed | paused | stopped_stop_rule
+  string current_phase = 3; // baseline | intervention_a | washout | crossover_b | completed
+  string note = 4;
+  bool research_consent_opt_in = 5;
+}
+message UpdateNOf1ExperimentStatusResponse {
+  NOf1Experiment experiment = 1;
+}
+
+message ReportExperimentAdverseEventRequest {
+  string experiment_id = 1;
+  string severity = 2; // mild | moderate | severe_stop_triggered
+  string symptom_or_event = 3;
+  bool trigger_stop_rule = 4;
+}
+message ReportExperimentAdverseEventResponse {
+  ExperimentAdverseEvent adverse_event = 1;
+  NOf1Experiment updated_experiment = 2;
+}
+
+// === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan message types ===
+
+message ProtocolStepTemplate {
+  string id = 1;
+  string template_code = 2;
+  string version = 3; // e.g. "v2026.1"
+  string step_category = 4; // medication | protocol_step | meal | movement | sleep | measurement | appointment
+  string title = 5;
+  string default_window = 6; // morning | midday | afternoon | evening | bedtime | anytime
+  int32 minutes_required = 7;
+  string burden_level = 8; // low | moderate | high
+  string source_evidence = 9;
+  string applicable_member_facts = 10;
+  string confidence_band = 11; // high | moderate | emerging
+  string alternatives_text = 12;
+  string cost_estimate = 13;
+  int32 expected_review_days = 14;
+  bool clinician_locked = 15;
+  bool no_device_compatible = 16;
+  string reviewer_name = 17;
+  string reviewer_credentials = 18;
+  string status = 19; // active | draft | withdrawn
+}
+
+message DailyPlanContext {
+  string active_replan_mode = 1; // standard | travel | tight_schedule | low_recovery | cycle_support | limited_equipment | accessibility_simplified | no_wearable_manual
+  string compassionate_pause_status = 2; // none | paused_illness | paused_disability | paused_caregiving | clinician_directed_stop | reduced_burden
+  string pause_note = 3;
+  string replan_rationale = 4;
+  string zenith_focus_window = 5; // e.g. "08:30-11:30 Peak HRV Focus Window"
+  string forge_training_window = 6; // e.g. "16:30-17:30 Zone 2 / Strength Window"
+  string nomad_circadian_window = 7; // e.g. "07:00 Morning Light / 19:30 Last Meal"
+  bool zenith_grant_enabled = 8;
+  bool forge_grant_enabled = 9;
+  bool nomad_grant_enabled = 10;
+  int64 updated_at_unix = 11;
+}
+
+message DailyPlanStep {
+  string id = 1;
+  string template_id = 2;
+  string template_code = 3;
+  string plan_date = 4; // YYYY-MM-DD
+  string step_category = 5; // medication | protocol_step | meal | movement | sleep | measurement | appointment
+  string title = 6;
+  string scheduled_window = 7; // morning | midday | afternoon | evening | bedtime | anytime
+  int32 minutes_required = 8;
+  string burden_level = 9; // low | moderate | high
+  string source_evidence = 10;
+  string applicable_member_facts = 11;
+  string confidence_band = 12; // high | moderate | emerging
+  string alternatives_text = 13;
+  string cost_estimate = 14;
+  string expected_review_date = 15; // YYYY-MM-DD
+  bool clinician_locked = 16;
+  bool no_device_compatible = 17;
+  string disposition = 18; // pending | completed | substituted | reduced_burden | paused_compassionate | clinician_stopped | skipped_no_penalty
+  string member_note = 19;
+  bool score_penalty_exempt = 20;
+  int64 updated_at_unix = 21;
+}
+
+message AdaptiveDailyPlanOverview {
+  string plan_date = 1; // YYYY-MM-DD
+  DailyPlanContext context = 2;
+  repeated DailyPlanStep steps = 3;
+  repeated ProtocolStepTemplate templates = 4;
+  int32 total_steps_count = 5;
+  int32 completed_or_adapted_count = 6;
+  int32 clinician_locked_count = 7;
+  int32 compassionate_exempt_count = 8;
+  int32 total_minutes_planned = 9;
+  string non_punitive_adherence_notice = 10;
+}
+
+message GetAdaptiveDailyPlanOverviewRequest {
+  string plan_date = 1; // YYYY-MM-DD (empty = today)
+}
+message GetAdaptiveDailyPlanOverviewResponse {
+  AdaptiveDailyPlanOverview overview = 1;
+}
+
+message ReplanAdaptiveDailyProtocolRequest {
+  string plan_date = 1; // YYYY-MM-DD (empty = today)
+  string replan_mode = 2; // standard | travel | tight_schedule | low_recovery | cycle_support | limited_equipment | accessibility_simplified | no_wearable_manual
+  string context_note = 3;
+}
+message ReplanAdaptiveDailyProtocolResponse {
+  AdaptiveDailyPlanOverview overview = 1;
+  int32 steps_adapted = 2;
+  int32 clinician_locked_preserved = 3;
+}
+
+message RecordDailyPlanStepDispositionRequest {
+  string step_id = 1;
+  string disposition = 2; // pending | completed | substituted | reduced_burden | paused_compassionate | clinician_stopped | skipped_no_penalty
+  string member_note = 3;
+}
+message RecordDailyPlanStepDispositionResponse {
+  DailyPlanStep step = 1;
+  AdaptiveDailyPlanOverview overview = 2;
+}
+
+message UpsertDailyPlanStepRequest {
+  string step_id = 1; // empty = create new step
+  string template_id = 2; // optional template UUID
+  string plan_date = 3; // YYYY-MM-DD (empty = today)
+  string step_category = 4; // medication | protocol_step | meal | movement | sleep | measurement | appointment
+  string title = 5;
+  string scheduled_window = 6; // morning | midday | afternoon | evening | bedtime | anytime
+  int32 minutes_required = 7;
+  string burden_level = 8; // low | moderate | high
+  string source_evidence = 9;
+  string applicable_member_facts = 10;
+  string confidence_band = 11; // high | moderate | emerging
+  string alternatives_text = 12;
+  string cost_estimate = 13;
+  string expected_review_date = 14; // YYYY-MM-DD
+  bool clinician_locked = 15;
+  bool no_device_compatible = 16;
+  string member_note = 17;
+}
+message UpsertDailyPlanStepResponse {
+  DailyPlanStep step = 1;
+}
+
+message UpdateCompassionateAdherencePauseRequest {
+  string compassionate_pause_status = 1; // none | paused_illness | paused_disability | paused_caregiving | clinician_directed_stop | reduced_burden
+  string pause_note = 2;
+}
+message UpdateCompassionateAdherencePauseResponse {
+  DailyPlanContext context = 1;
+  AdaptiveDailyPlanOverview overview = 2;
+}
+
+message UpdateCrossPillarTimingHandoffRequest {
+  string zenith_focus_window = 1;
+  string forge_training_window = 2;
+  string nomad_circadian_window = 3;
+}
+message UpdateCrossPillarTimingHandoffResponse {
+  DailyPlanContext context = 1;
+}
+
+// === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety message types ===
+
+message ReconciledMedicationItem {
+  string id = 1;
+  string item_kind = 2; // prescription | otc | supplement
+  string display_name = 3;
+  repeated string active_ingredients = 4; // e.g. ["rosuvastatin"], ["magnesium_glycinate"], ["red_yeast_rice", "monacolin_k"]
+  string rxnorm_or_atc_code = 5; // e.g. "RxNorm:301542" | "ATC:C10AA07" | "DSLD:MAG-300"
+  double dose_amount = 6;
+  string dose_unit = 7; // mg | mcg | IU | g | mL
+  string schedule = 8; // e.g. "Evening with dinner", "Morning fasting"
+  string prescriber_name = 9;
+  string pharmacy_name = 10;
+  string indication = 11;
+  string started_on = 12; // YYYY-MM-DD
+  string stopped_on = 13; // YYYY-MM-DD (empty if active)
+  string reconciliation_status = 14; // reconciled | needs_clinician_confirm | discontinued
+  string refill_due_date = 15; // YYYY-MM-DD
+  string lot_or_batch_code = 16;
+  bool travel_letter_ready = 17;
+  string safe_disposal_guidance = 18;
+  string member_notes = 19;
+  int64 updated_at_unix = 20;
+}
+
+message AllergyIntoleranceEntry {
+  string id = 1;
+  string substance = 2; // e.g. "Penicillin", "NSAIDs (Ibuprofen)", "Shellfish Iodine"
+  string substance_class = 3; // beta_lactam | nsaid | statin | excipient | food | other
+  string reaction_kind = 4; // allergy | intolerance | contraindication
+  string severity = 5; // mild | moderate | severe_anaphylaxis
+  string manifestation = 6; // e.g. "Urticaria and bronchospasm", "GI distress"
+  string recorded_on = 7; // YYYY-MM-DD
+  bool verified_by_clinician = 8;
+  string notes = 9;
+}
+
+message SafetyInteractionRule {
+  string id = 1;
+  string rule_code = 2;
+  string version = 3; // e.g. "v2026.1"
+  string interaction_vector = 4; // drug_drug | drug_supplement | duplicate_ingredient | dose_ceiling | pregnancy_lactation | pre_procedure | lab_interference | food_timing | allergy_cross_reactivity
+  string trigger_a = 5; // ingredient or class A
+  string trigger_b = 6; // ingredient, context, lab, or allergy class B
+  string action_tier = 7; // informational | pharmacist_review | clinician_review | urgent_care_resource
+  string title = 8;
+  string clinical_summary = 9;
+  string non_directive_guidance = 10; // Never tells member to stop/alter prescribed treatment without clinician
+  string appointment_question_prompt = 11;
+  string source_vendor = 12; // e.g. "RxNorm / DailyMed + Stockley / Natural Medicines 2026"
+  string jurisdiction = 13; // US | EU | UK | GLOBAL
+  string reviewer_name = 14;
+  string reviewer_credentials = 15;
+  string status = 16; // active | draft | withdrawn
+}
+
+message MemberInteractionAlert {
+  string id = 1;
+  string rule_id = 2;
+  string rule_code = 3;
+  string interaction_vector = 4; // drug_drug | drug_supplement | duplicate_ingredient | dose_ceiling | pregnancy_lactation | pre_procedure | lab_interference | food_timing | allergy_cross_reactivity
+  string action_tier = 5; // informational | pharmacist_review | clinician_review | urgent_care_resource
+  string involved_items_summary = 6;
+  string title = 7;
+  string clinical_summary = 8;
+  string non_directive_guidance = 9;
+  string appointment_question = 10;
+  string source_vendor = 11;
+  string disposition = 12; // active | acknowledged | clinician_monitored | disputed_false_positive | resolved
+  string member_or_clinician_note = 13;
+  int64 detected_at_unix = 14;
+  int64 updated_at_unix = 15;
+}
+
+message MedicationSafetyNotice {
+  string id = 1;
+  string notice_code = 2;
+  string notice_kind = 3; // recall | shortage | travel_regulation | safe_disposal
+  string target_substance = 4;
+  string affected_lot_or_scope = 5;
+  string severity = 6; // advisory | action_required | class_i_recall
+  string title = 7;
+  string summary_text = 8;
+  string recommended_next_step = 9;
+  string authority_source = 10; // e.g. "FDA MedWatch / EMA Safety Gate / DEA Take-Back"
+  string published_on = 11; // YYYY-MM-DD
+  string status = 12; // active | archived
+}
+
+message MedicationReconciliationPacket {
+  string id = 1;
+  string title = 2;
+  string appointment_specialty = 3;
+  string appointment_date = 4; // YYYY-MM-DD
+  repeated ReconciledMedicationItem reconciled_items = 5;
+  repeated AllergyIntoleranceEntry allergies = 6;
+  repeated MemberInteractionAlert active_alerts = 7;
+  repeated string unresolved_questions = 8;
+  string non_pharmacy_disclaimer = 9;
+  int64 generated_at_unix = 10;
+}
+
+message MedicationSafetyOverview {
+  repeated ReconciledMedicationItem medications = 1;
+  repeated AllergyIntoleranceEntry allergies = 2;
+  repeated MemberInteractionAlert alerts = 3;
+  repeated SafetyInteractionRule rules = 4;
+  repeated MedicationSafetyNotice safety_notices = 5;
+  repeated MedicationReconciliationPacket packets = 6;
+  int32 active_prescriptions_count = 7;
+  int32 active_otc_and_supplements_count = 8;
+  int32 active_alerts_count = 9;
+  int32 clinician_or_pharmacist_review_count = 10;
+  int32 refills_due_soon_count = 11;
+  string knowledge_vendor_status = 12; // e.g. "ONLINE • RxNorm/DailyMed + Natural Medicines v2026.1 (Jurisdiction: US/GLOBAL)"
+  string non_directive_safety_banner = 13;
+}
+
+message GetMedicationSafetyOverviewRequest {}
+message GetMedicationSafetyOverviewResponse {
+  MedicationSafetyOverview overview = 1;
+}
+
+message UpsertReconciledMedicationItemRequest {
+  string item_id = 1; // empty = create new
+  string item_kind = 2; // prescription | otc | supplement
+  string display_name = 3;
+  repeated string active_ingredients = 4;
+  string rxnorm_or_atc_code = 5;
+  double dose_amount = 6;
+  string dose_unit = 7;
+  string schedule = 8;
+  string prescriber_name = 9;
+  string pharmacy_name = 10;
+  string indication = 11;
+  string started_on = 12;
+  string stopped_on = 13;
+  string reconciliation_status = 14; // reconciled | needs_clinician_confirm | discontinued
+  string refill_due_date = 15;
+  string lot_or_batch_code = 16;
+  bool travel_letter_ready = 17;
+  string member_notes = 18;
+}
+message UpsertReconciledMedicationItemResponse {
+  ReconciledMedicationItem item = 1;
+  MedicationSafetyOverview overview = 2;
+}
+
+message UpsertAllergyOrIntoleranceRequest {
+  string entry_id = 1; // empty = create new
+  string substance = 2;
+  string substance_class = 3;
+  string reaction_kind = 4; // allergy | intolerance | contraindication
+  string severity = 5; // mild | moderate | severe_anaphylaxis
+  string manifestation = 6;
+  string recorded_on = 7;
+  bool verified_by_clinician = 8;
+  string notes = 9;
+}
+message UpsertAllergyOrIntoleranceResponse {
+  AllergyIntoleranceEntry entry = 1;
+  MedicationSafetyOverview overview = 2;
+}
+
+message RunSafetyInteractionCheckRequest {
+  bool pregnancy_or_lactation_context = 1;
+  string upcoming_procedure_context = 2; // e.g. "elective_surgery_anesthesia" | "contrast_ct" | ""
+  string upcoming_lab_context = 3; // e.g. "biotin_immunoassay_panel" | "fasting_lipid_panel" | ""
+}
+message RunSafetyInteractionCheckResponse {
+  repeated MemberInteractionAlert alerts = 1;
+  MedicationSafetyOverview overview = 2;
+}
+
+message UpdateInteractionAlertDispositionRequest {
+  string alert_id = 1;
+  string disposition = 2; // active | acknowledged | clinician_monitored | disputed_false_positive | resolved
+  string member_or_clinician_note = 3;
+}
+message UpdateInteractionAlertDispositionResponse {
+  MemberInteractionAlert alert = 1;
+}
+
+message GenerateMedicationReconciliationPacketRequest {
+  string title = 1;
+  string appointment_specialty = 2;
+  string appointment_date = 3; // YYYY-MM-DD
+  repeated string custom_questions = 4;
+}
+message GenerateMedicationReconciliationPacketResponse {
+  MedicationReconciliationPacket packet = 1;
+}
+
+// === Opportunity Choice 8 (AP8): Metabolic Response Studio message types ===
+
+message MetabolicSensorProfile {
+  string id = 1;
+  string profile_code = 2;
+  string device_kind = 3; // cgm_interstitial | capillary_fingerstick | venous_lab | manual_entry
+  string vendor_or_model = 4;
+  int32 default_sensor_lag_minutes = 5;
+  double mard_percent = 6;
+  string calibration_mode = 7; // factory_calibrated | lot_coded_capillary | laboratory_reference
+  int32 low_verification_threshold_mg_dl = 8;
+  int32 high_verification_threshold_mg_dl = 9;
+  string escalation_guidance = 10;
+  string non_emergency_disclaimer = 11;
+  string jurisdiction = 12;
+  string status = 13; // active | retired
+}
+
+message MetabolicTargetRange {
+  string user_id = 1;
+  string range_source = 2; // member_selected | clinician_supplied
+  string clinician_name = 3;
+  int32 lower_target_mg_dl = 4;
+  int32 upper_target_mg_dl = 5;
+  int32 fasting_upper_mg_dl = 6;
+  int32 postprandial_delta_cap_mg_dl = 7;
+  string active_sensor_profile_code = 8;
+  bool non_moralizing_mode = 9;
+  int64 updated_at_unix = 10;
+}
+
+message MetabolicMealEvent {
+  string id = 1;
+  string meal_title = 2;
+  string capture_method = 3; // photo_assist | barcode_scan | manual_entry | clinician_test_meal
+  string confirmation_status = 4; // provisional | member_confirmed | edited_by_member
+  double portion_confidence = 5; // 0.0..1.0
+  repeated string ingredients_list = 6;
+  repeated string uncertain_items = 7;
+  double carbs_g = 8;
+  double fiber_g = 9;
+  double protein_g = 10;
+  double fat_g = 11;
+  string food_order_sequence = 12; // fiber_protein_first | mixed_standard | carbs_first | liquid_carbs
+  string device_kind = 13; // cgm_interstitial | capillary_fingerstick | venous_lab | manual_entry
+  int32 sensor_lag_minutes = 14;
+  string calibration_quality = 15; // high_confidence | warmup_first_24h | compression_artifact_risk | capillary_verified
+  int32 pre_meal_glucose_mg_dl = 16;
+  int32 peak_glucose_mg_dl = 17;
+  int32 peak_delta_mg_dl = 18;
+  double auc_2h_mg_dl_min = 19;
+  int32 recovery_minutes = 20;
+  int32 post_meal_walk_minutes = 21;
+  double sleep_hours_prior = 22;
+  string stress_or_illness_context = 23; // baseline | high_stress | acute_illness | luteal_phase | travel_shift
+  string medication_timing_context = 24;
+  string non_moralizing_interpretation = 25;
+  string escalation_flag = 26; // none | verify_low_capillary | verify_high_capillary | sensor_artifact_check
+  string escalation_copy = 27;
+  int64 occurred_at_unix = 28;
+  int64 updated_at_unix = 29;
+}
+
+message RepeatMealComparison {
+  string id = 1;
+  string comparison_title = 2;
+  string baseline_meal_event_id = 3;
+  string comparison_meal_event_id = 4;
+  string context_variable = 5; // post_meal_walk | fiber_protein_preload | sleep_debt_vs_rested | meal_timing_circadian
+  int32 baseline_peak_delta_mg_dl = 6;
+  int32 comparison_peak_delta_mg_dl = 7;
+  int32 delta_difference_mg_dl = 8; // negative = lower excursion in comparison
+  int32 baseline_recovery_minutes = 9;
+  int32 comparison_recovery_minutes = 10;
+  string non_diagnostic_summary = 11;
+  string safety_guardrail_note = 12;
+  int64 created_at_unix = 13;
+}
+
+message MetabolicStudioOverview {
+  MetabolicTargetRange target_range = 1;
+  MetabolicSensorProfile active_sensor_profile = 2;
+  repeated MetabolicSensorProfile sensor_profiles = 3;
+  repeated MetabolicMealEvent meal_events = 4;
+  repeated RepeatMealComparison repeat_comparisons = 5;
+  repeated GlucoseReading recent_glucose_readings = 6;
+  double time_in_member_range_pct = 7;
+  double mean_glucose_mg_dl = 8;
+  double glycemic_variability_cv_pct = 9;
+  double mean_postprandial_delta_mg_dl = 10;
+  double mean_recovery_minutes = 11;
+  int32 provisional_meals_pending_count = 12;
+  int32 capillary_verification_prompts_count = 13;
+  string non_moralizing_charter = 14;
+  string non_emergency_monitoring_disclaimer = 15;
+}
+
+message GetMetabolicStudioOverviewRequest {}
+message GetMetabolicStudioOverviewResponse {
+  MetabolicStudioOverview overview = 1;
+}
+
+message RecordMetabolicMealEventRequest {
+  string meal_title = 1;
+  string capture_method = 2; // photo_assist | barcode_scan | manual_entry | clinician_test_meal
+  repeated string ingredients_list = 3;
+  repeated string uncertain_items = 4;
+  double carbs_g = 5;
+  double fiber_g = 6;
+  double protein_g = 7;
+  double fat_g = 8;
+  string food_order_sequence = 9; // fiber_protein_first | mixed_standard | carbs_first | liquid_carbs
+  string device_kind = 10;
+  string calibration_quality = 11;
+  int32 pre_meal_glucose_mg_dl = 12;
+  int32 peak_glucose_mg_dl = 13;
+  int32 recovery_minutes = 14;
+  int32 post_meal_walk_minutes = 15;
+  double sleep_hours_prior = 16;
+  string stress_or_illness_context = 17;
+  string medication_timing_context = 18;
+  bool confirm_immediately = 19;
+}
+message RecordMetabolicMealEventResponse {
+  MetabolicMealEvent meal_event = 1;
+  MetabolicStudioOverview overview = 2;
+}
+
+message ConfirmMealIngredientsAndPortionsRequest {
+  string meal_event_id = 1;
+  string confirmation_status = 2; // member_confirmed | edited_by_member
+  repeated string confirmed_ingredients = 3;
+  double carbs_g = 4;
+  double fiber_g = 5;
+  double protein_g = 6;
+  double fat_g = 7;
+  string food_order_sequence = 8;
+}
+message ConfirmMealIngredientsAndPortionsResponse {
+  MetabolicMealEvent meal_event = 1;
+  MetabolicStudioOverview overview = 2;
+}
+
+message CompareRepeatMealResponsesRequest {
+  string comparison_title = 1;
+  string baseline_meal_event_id = 2;
+  string comparison_meal_event_id = 3;
+  string context_variable = 4; // post_meal_walk | fiber_protein_preload | sleep_debt_vs_rested | meal_timing_circadian
+}
+message CompareRepeatMealResponsesResponse {
+  RepeatMealComparison comparison = 1;
+  MetabolicStudioOverview overview = 2;
+}
+
+message UpsertMetabolicTargetRangeRequest {
+  string range_source = 1; // member_selected | clinician_supplied
+  string clinician_name = 2;
+  int32 lower_target_mg_dl = 3;
+  int32 upper_target_mg_dl = 4;
+  int32 fasting_upper_mg_dl = 5;
+  int32 postprandial_delta_cap_mg_dl = 6;
+  string active_sensor_profile_code = 7;
+  bool non_moralizing_mode = 8;
+}
+message UpsertMetabolicTargetRangeResponse {
+  MetabolicTargetRange target_range = 1;
+  MetabolicStudioOverview overview = 2;
+}
+
+message UpsertMetabolicSensorProfileRequest {
+  string profile_code = 1;
+  string device_kind = 2;
+  string vendor_or_model = 3;
+  int32 default_sensor_lag_minutes = 4;
+  double mard_percent = 5;
+  string calibration_mode = 6;
+  int32 low_verification_threshold_mg_dl = 7;
+  int32 high_verification_threshold_mg_dl = 8;
+  string escalation_guidance = 9;
+}
+message UpsertMetabolicSensorProfileResponse {
+  MetabolicSensorProfile profile = 1;
+}
+
+// === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace message types ===
+
+message LifeStageProfile {
+  string user_id = 1;
+  string active_lifestage_context = 2; // natural_cycle | hormonal_contraception | iud_copper_or_hormonal | fertility_preservation_ivf | trying_to_conceive | pregnancy | postpartum_lactation | perimenopause | menopause_hrt | gender_affirming_hormone_therapy | not_applicable_or_paused
+  string inclusive_pronouns_or_label = 3;
+  bool cycle_prediction_enabled = 4;
+  int32 prediction_uncertainty_days = 5;
+  bool opt_in_sleep_correlation = 6;
+  bool opt_in_glucose_correlation = 7;
+  bool opt_in_training_correlation = 8;
+  bool opt_in_lab_hormone_correlation = 9;
+  bool cross_pillar_isolation = 10; // Always defaults true — never expose reproductive status to another pillar
+  bool routine_staff_redacted = 11; // Always defaults true — routine staff cannot inspect identifiable reproductive logs
+  bool discreet_notifications_enabled = 12; // Uses neutral "Apex Daily Check-In" notification copy
+  bool local_only_notes_mode = 13;
+  string retention_policy = 14; // member_controlled_indefinite | auto_purge_90d | auto_purge_30d
+  int64 updated_at_unix = 15;
+}
+
+message LifeStageEvent {
+  string id = 1;
+  string event_date = 2; // YYYY-MM-DD
+  string lifestage_context = 3;
+  string event_category = 4; // bleeding_or_spotting | symptom_and_mood | ovulation_or_lh_test | contraception_or_hrt_dose | fertility_protocol_step | perimenopause_vasomotor | hormone_lab_anchor
+  string title = 5;
+  double intensity_or_value = 6;
+  string unit_or_qualifier = 7;
+  string correlated_signal_summary = 8;
+  string discreet_private_note = 9;
+  int64 created_at_unix = 10;
+}
+
+message LifeStageClinicalClaim {
+  string id = 1;
+  string claim_code = 2;
+  string lifestage_scope = 3;
+  string title = 4;
+  string evidence_summary = 5;
+  string uncertainty_and_limits = 6;
+  string non_contraceptive_disclaimer = 7;
+  string clinical_reviewer_name = 8;
+  string clinical_reviewer_credentials = 9;
+  string jurisdiction = 10;
+  string status = 11;
+}
+
+message ReproductivePrivacyAuditReceipt {
+  string id = 1;
+  string action_kind = 2; // rapid_purge_executed | portable_export_generated | privacy_firewall_updated | appointment_brief_generated
+  int32 rows_affected = 3;
+  string redacted_receipt_code = 4;
+  int64 created_at_unix = 5;
+}
+
+message CycleLifeStageOverview {
+  LifeStageProfile profile = 1;
+  CycleStatus cycle_status = 2;
+  string uncertainty_window_label = 3; // e.g., "Estimated window: 2026-11-18 to 2026-11-24 (±3 days biological variance — non-contraceptive)"
+  repeated LifeStageEvent events = 4;
+  repeated LifeStageClinicalClaim clinical_claims = 5;
+  repeated ReproductivePrivacyAuditReceipt privacy_receipts = 6;
+  repeated string opt_in_correlation_insights = 7;
+  string reproductive_privacy_charter = 8;
+  string non_contraceptive_safety_banner = 9;
+}
+
+message GetCycleLifeStageOverviewRequest {}
+message GetCycleLifeStageOverviewResponse {
+  CycleLifeStageOverview overview = 1;
+}
+
+message UpdateLifeStageProfileAndPrivacyRequest {
+  string active_lifestage_context = 1;
+  string inclusive_pronouns_or_label = 2;
+  bool cycle_prediction_enabled = 3;
+  int32 prediction_uncertainty_days = 4;
+  bool opt_in_sleep_correlation = 5;
+  bool opt_in_glucose_correlation = 6;
+  bool opt_in_training_correlation = 7;
+  bool opt_in_lab_hormone_correlation = 8;
+  bool cross_pillar_isolation = 9;
+  bool routine_staff_redacted = 10;
+  bool discreet_notifications_enabled = 11;
+  bool local_only_notes_mode = 12;
+  string retention_policy = 13;
+}
+message UpdateLifeStageProfileAndPrivacyResponse {
+  LifeStageProfile profile = 1;
+  CycleLifeStageOverview overview = 2;
+}
+
+message RecordLifeStageEventRequest {
+  string event_date = 1; // YYYY-MM-DD
+  string lifestage_context = 2;
+  string event_category = 3;
+  string title = 4;
+  double intensity_or_value = 5;
+  string unit_or_qualifier = 6;
+  string discreet_private_note = 7;
+}
+message RecordLifeStageEventResponse {
+  LifeStageEvent event = 1;
+  CycleLifeStageOverview overview = 2;
+}
+
+message GenerateLifeStageAppointmentBriefRequest {
+  string title = 1;
+  string specialty = 2; // e.g. "OB/GYN & Reproductive Endocrinology"
+  string appointment_date = 3;
+  repeated string custom_questions = 4;
+}
+message GenerateLifeStageAppointmentBriefResponse {
+  AppointmentBrief brief = 1;
+  ReproductivePrivacyAuditReceipt receipt = 2;
+}
+
+message PurgeReproductiveAndLifeStageDataRequest {
+  string confirmation_phrase = 1; // e.g., "PURGE"
+  bool reset_profile_to_paused = 2;
+}
+message PurgeReproductiveAndLifeStageDataResponse {
+  int32 rows_purged = 1;
+  ReproductivePrivacyAuditReceipt receipt = 2;
+  CycleLifeStageOverview overview = 3;
+}
+
+message ExportReproductiveAndLifeStageDataRequest {}
+message ExportReproductiveAndLifeStageDataResponse {
+  string filename = 1;
+  string payload_json = 2;
+  string sha256 = 3;
+  int32 records_exported = 4;
+  ReproductivePrivacyAuditReceipt receipt = 5;
+}
+
+// === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+
+message CuratedGenomicVariant {
+  string id = 1;
+  string variant_code = 2;
+  string rsid = 3;
+  string gene_symbol = 4;
+  string trait_or_condition = 5;
+  string category = 6; // cardiometabolic | pharmacogenomics | longevity_neurovascular | nutrigenomics
+  string evidence_level = 7; // ClinVar_4Star_Expert | CPIC_Level_A | GWAS_Replicated_Longevity
+  string ancestry_population_limits = 8;
+  string source_database = 9;
+  string source_version_date = 10;
+  string uncertainty_note = 11;
+  string confirmatory_test_guidance = 12;
+  string non_diagnostic_disclaimer = 13;
+  string reviewer_name = 14;
+  string reviewer_credentials = 15;
+  string status = 16;
+}
+
+message EncryptedMemberSnpFinding {
+  string id = 1;
+  string rsid = 2;
+  string gene_symbol = 3;
+  string genotype_sentinel = 4; // Always 'ENCRYPTED_PAYLOAD' at rest
+  string decrypted_genotype_display = 5; // Decrypted on-the-fly for authorized member unless hidden_by_member = true
+  string genotype_token_hash = 6;
+  string encryption_key_version = 7;
+  string genome_build = 8;
+  string strand = 9;
+  double call_quality_score = 10;
+  string interpretation = 11;
+  string evidence_level = 12;
+  string ancestry_population_limits = 13;
+  bool confirmatory_clinical_test_required = 14;
+  bool hidden_by_member = 15; // "Do Not Show Me" control
+  int64 created_at_unix = 16;
+}
+
+message FamilyHistoryEntry {
+  string id = 1;
+  string relative_relation = 2; // Father | Mother | Sibling | Paternal Grandfather | Maternal Grandmother | etc.
+  string lineage_side = 3; // paternal | maternal | first_degree | bilateral
+  string condition_name = 4;
+  string category = 5; // cardiovascular | metabolic | oncology | endocrine | neurologic
+  string onset_age_band = 6; // under_40 | 40_to_49 | 50_to_59 | 60_to_69 | 70_plus | unknown
+  string verification_status = 7; // member_reported | clinician_confirmed_record
+  string relative_contact_preference = 8; // do_not_contact | member_mediated_letter_only | deceased_no_contact
+  string notes = 9;
+  int64 created_at_unix = 10;
+}
+
+message GeneticCounsellorRequestItem {
+  string id = 1;
+  string topic_category = 2; // cardiometabolic_risk | pharmacogenomics | secondary_findings | family_cascade_screening
+  repeated string related_rsids = 3;
+  string member_question = 4;
+  string secondary_findings_preference = 5; // exclude_secondary_findings | opt_in_actionable_acmg
+  string status = 6; // open | reviewed | scheduled_consult | closed
+  string counsellor_name = 7;
+  string counsellor_response = 8;
+  int64 created_at_unix = 9;
+}
+
+message GenomicAccessAuditEntry {
+  string id = 1;
+  string actor_role = 2; // member | system_migration | genetic_counsellor | admin_key_rotation
+  string action_kind = 3;
+  string key_version = 4;
+  int32 variants_affected = 5;
+  string redacted_receipt_code = 6;
+  int64 created_at_unix = 7;
+}
+
+message GenomicsAndFamilyHistoryOverview {
+  repeated DnaUpload uploads = 1;
+  repeated EncryptedMemberSnpFinding member_findings = 2;
+  repeated CuratedGenomicVariant curated_variants = 3;
+  repeated FamilyHistoryEntry family_history = 4;
+  repeated GeneticCounsellorRequestItem counsellor_requests = 5;
+  repeated GenomicAccessAuditEntry access_audit_log = 6;
+  int32 plaintext_genotype_count = 7; // Must always be 0 after AP10 migration
+  string active_encryption_key_version = 8;
+  string non_diagnostic_confirmatory_banner = 9;
+  string genomic_privacy_charter = 10;
+}
+
+message GetGenomicsAndFamilyHistoryOverviewRequest {
+  bool include_hidden_variants = 1;
+}
+message GetGenomicsAndFamilyHistoryOverviewResponse {
+  GenomicsAndFamilyHistoryOverview overview = 1;
+}
+
+message RegisterEncryptedGenomicUploadRequest {
+  string source = 1;
+  string genome_build = 2;
+  string strand_orientation = 3;
+  double quality_pass_rate = 4;
+  string laboratory_name = 5;
+  bool chain_of_custody_verified = 6;
+  string consent_version = 7;
+  bool secondary_findings_opt_in = 8;
+  string rsid = 9; // Optional initial SNP call to encrypt and store
+  string raw_genotype_call = 10; // Encrypted immediately into encrypted_genotype_ciphertext
+  string gene_symbol = 11;
+  string interpretation = 12;
+  string evidence_level = 13;
+}
+message RegisterEncryptedGenomicUploadResponse {
+  DnaUpload upload = 1;
+  EncryptedMemberSnpFinding finding = 2;
+  GenomicsAndFamilyHistoryOverview overview = 3;
+}
+
+message UpdateGenomicVariantVisibilityRequest {
+  string rsid = 1;
+  bool hidden_by_member = 2; // true = "Do Not Show Me"
+}
+message UpdateGenomicVariantVisibilityResponse {
+  EncryptedMemberSnpFinding finding = 1;
+  GenomicsAndFamilyHistoryOverview overview = 2;
+}
+
+message UpsertFamilyHistoryEntryRequest {
+  string id = 1; // empty = create
+  string relative_relation = 2;
+  string lineage_side = 3;
+  string condition_name = 4;
+  string category = 5;
+  string onset_age_band = 6;
+  string verification_status = 7;
+  string relative_contact_preference = 8;
+  string notes = 9;
+}
+message UpsertFamilyHistoryEntryResponse {
+  FamilyHistoryEntry entry = 1;
+  GenomicsAndFamilyHistoryOverview overview = 2;
+}
+
+message SubmitGeneticCounsellorRequestRequest {
+  string topic_category = 1;
+  repeated string related_rsids = 2;
+  string member_question = 3;
+  string secondary_findings_preference = 4;
+}
+message SubmitGeneticCounsellorRequestResponse {
+  GeneticCounsellorRequestItem request = 1;
+  GenomicsAndFamilyHistoryOverview overview = 2;
+}
+
+message RotateGenomicEncryptionKeyOrPurgeRequest {
+  string operation = 1; // rotate_key | purge_all_genomic_data
+  string target_key_version = 2; // e.g., kms-apex-genomics-v3
+  string confirmation_phrase = 3;
+}
+message RotateGenomicEncryptionKeyOrPurgeResponse {
+  int32 variants_affected = 1;
+  GenomicAccessAuditEntry audit_entry = 2;
+  GenomicsAndFamilyHistoryOverview overview = 3;
+}
+
+// === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+
+message VerifiedClinicianDirectoryItem {
+  string id = 1;
+  string clinician_code = 2;
+  string full_name = 3;
+  string credentials = 4;
+  string role_scope = 5; // primary_care | specialist | pharmacist | dietitian | genetic_counsellor | trainer | caregiver
+  string specialty = 6;
+  string organization_name = 7;
+  string license_or_npi = 8;
+  string jurisdiction = 9;
+  string verification_status = 10; // verified | pending_review | suspended
+}
+
+message ScopedCareTeamGrant {
+  string id = 1;
+  string clinician_id = 2;
+  string recipient_name = 3;
+  string recipient_role = 4; // primary_care | specialist | pharmacist | dietitian | genetic_counsellor | trainer | caregiver
+  string recipient_organization = 5;
+  string purpose = 6;
+  repeated string allowed_datasets = 7; // labs | vitals | medications | preventive_gaps | experiments
+  repeated string excluded_domains = 8; // reproductive_lifestage | raw_genomics | imaging
+  string date_range_start = 9; // YYYY-MM-DD
+  string date_range_end = 10; // YYYY-MM-DD
+  int64 expires_at_unix = 11;
+  bool allow_download = 12;
+  bool allow_reshare = 13; // Always false by default per APEX-CARE-001
+  string status = 14; // active | revoked | expired
+  string revoked_reason = 15;
+  int64 created_at_unix = 16;
+}
+
+message ClinicianDispositionItem {
+  string id = 1;
+  string grant_id = 2;
+  string clinician_name = 3;
+  string clinician_role = 4;
+  string action_type = 5; // annotation | correction | care_instruction_approval | data_request | medication_reconciliation_annotation
+  string target_domain = 6;
+  string member_question = 7;
+  string clinician_note = 8;
+  string disposition_status = 9; // completed | pending_clinician | data_requested
+  int64 created_at_unix = 10;
+}
+
+message CareAccessLedgerEntry {
+  string id = 1;
+  string grant_id = 2;
+  string actor_name = 3;
+  string actor_role = 4;
+  string event_kind = 5;
+  repeated string scoped_datasets = 6;
+  string bundle_format = 7; // FHIR_R4_JSON | PRINTABLE_SUMMARY_PDF
+  string bundle_version_hash = 8;
+  int64 created_at_unix = 9;
+}
+
+message ClinicianCareTeamOverview {
+  repeated VerifiedClinicianDirectoryItem verified_clinicians = 1;
+  repeated ScopedCareTeamGrant grants = 2;
+  repeated ClinicianDispositionItem dispositions = 3;
+  repeated CareAccessLedgerEntry access_ledger = 4;
+  repeated string collaboration_packet_highlights = 5;
+  string non_interchangeable_scope_charter = 6;
+  string zero_unrelated_history_guarantee = 7;
+}
+
+message GetClinicianCareTeamOverviewRequest {}
+message GetClinicianCareTeamOverviewResponse {
+  ClinicianCareTeamOverview overview = 1;
+}
+
+message CreateScopedCareTeamGrantRequest {
+  string clinician_id = 1;
+  string recipient_name = 2;
+  string recipient_role = 3;
+  string recipient_organization = 4;
+  string purpose = 5;
+  repeated string allowed_datasets = 6;
+  repeated string excluded_domains = 7;
+  string date_range_start = 8;
+  string date_range_end = 9;
+  int32 ttl_days = 10;
+  bool allow_download = 11;
+}
+message CreateScopedCareTeamGrantResponse {
+  ScopedCareTeamGrant grant = 1;
+  ClinicianCareTeamOverview overview = 2;
+}
+
+message RevokeScopedCareTeamGrantRequest {
+  string grant_id = 1;
+  string revoked_reason = 2;
+}
+message RevokeScopedCareTeamGrantResponse {
+  ScopedCareTeamGrant grant = 1;
+  ClinicianCareTeamOverview overview = 2;
+}
+
+message RecordClinicianDispositionRequest {
+  string grant_id = 1;
+  string clinician_name = 2;
+  string clinician_role = 3;
+  string action_type = 4;
+  string target_domain = 5;
+  string member_question = 6;
+  string clinician_note = 7;
+  string disposition_status = 8;
+}
+message RecordClinicianDispositionResponse {
+  ClinicianDispositionItem disposition = 1;
+  ClinicianCareTeamOverview overview = 2;
+}
+
+message ExportScopedCareTeamBundleRequest {
+  string grant_id = 1;
+  string bundle_format = 2; // FHIR_R4_JSON | PRINTABLE_SUMMARY_PDF
+}
+message ExportScopedCareTeamBundleResponse {
+  string filename = 1;
+  string bundle_format = 2;
+  string bundle_version_hash = 3;
+  string payload_preview = 4;
+  CareAccessLedgerEntry ledger_entry = 5;
+  ClinicianCareTeamOverview overview = 6;
+}
+
+message SubmitClinicianQuestionPacketRequest {
+  string grant_id = 1;
+  string target_domain = 2;
+  string member_question = 3;
+}
+message SubmitClinicianQuestionPacketResponse {
+  ClinicianDispositionItem disposition = 1;
+  ClinicianCareTeamOverview overview = 2;
+}
+
+// === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+
+message ChangeEscalationSignalItem {
+  string id = 1;
+  string signal_title = 2;
+  repeated string contributing_metrics = 3;
+  double data_quality_score = 4;
+  int32 trend_duration_days = 5;
+  string stated_symptom_context = 6;
+  string outcome_category = 7; // keep_observing | repeat_or_confirm | ask_a_professional | reviewed_urgent_resources
+  string recommended_next_step = 8;
+  string prepared_clinician_question = 9;
+  string member_disposition = 10; // open | observing | repeat_ordered | handoff_created | resolved
+  int64 created_at_unix = 11;
+  int64 updated_at_unix = 12;
+}
+
+message CareNavigationOptionItem {
+  string id = 1;
+  string option_code = 2;
+  string provider_or_service_name = 3;
+  string credential_summary = 4;
+  string specialty_category = 5; // preventive_cardiology | confirmatory_lab_draw | endocrinology_metabolic | clinical_pharmacy | urgent_guidance
+  string jurisdiction = 6;
+  string availability_window = 7;
+  string price_estimate_display = 8;
+  string insurance_payment_context = 9;
+  repeated string supported_languages = 10;
+  string modality = 11; // telehealth | in_person_lab | telehealth_and_in_person | second_opinion
+  string status = 12; // active | paused | retired
+}
+
+message CareNavigationHandoffItem {
+  string id = 1;
+  string escalation_id = 2;
+  string navigation_option_id = 3;
+  string action_type = 4; // appointment_request | prepared_question | trusted_contact_notify | confirmatory_lab_order
+  string recipient_display = 5;
+  string prepared_question_or_note = 6;
+  string handoff_state = 7; // scheduled | declined | unreachable | completed | refunded | escalated | transferred
+  string closure_reason = 8;
+  int64 created_at_unix = 9;
+  int64 updated_at_unix = 10;
+}
+
+message EscalationUrgentResourceItem {
+  string id = 1;
+  string resource_code = 2;
+  string jurisdiction = 3;
+  string title = 4;
+  string when_to_use = 5;
+  string contact_instructions = 6;
+  string non_monitoring_disclaimer = 7;
+  string status = 8;
+}
+
+message ChangeEscalationOverview {
+  repeated ChangeEscalationSignalItem escalations = 1;
+  repeated CareNavigationOptionItem navigation_options = 2;
+  repeated CareNavigationHandoffItem handoffs = 3;
+  repeated EscalationUrgentResourceItem urgent_resources = 4;
+  string four_outcomes_taxonomy_charter = 5;
+  string non_monitoring_emergency_disclaimer = 6;
+  string handoff_closure_machine_charter = 7;
+}
+
+message GetChangeEscalationOverviewRequest {}
+message GetChangeEscalationOverviewResponse {
+  ChangeEscalationOverview overview = 1;
+}
+
+message EvaluateMultiSignalChangeEscalationRequest {
+  string signal_title = 1;
+  repeated string contributing_metrics = 2;
+  double data_quality_score = 3;
+  int32 trend_duration_days = 4;
+  string stated_symptom_context = 5;
+  string outcome_category = 6; // keep_observing | repeat_or_confirm | ask_a_professional | reviewed_urgent_resources
+  string recommended_next_step = 7;
+  string prepared_clinician_question = 8;
+}
+message EvaluateMultiSignalChangeEscalationResponse {
+  ChangeEscalationSignalItem escalation = 1;
+  ChangeEscalationOverview overview = 2;
+}
+
+message UpdateChangeEscalationDispositionRequest {
+  string escalation_id = 1;
+  string outcome_category = 2;
+  string member_disposition = 3; // open | observing | repeat_ordered | handoff_created | resolved
+  string prepared_clinician_question = 4;
+}
+message UpdateChangeEscalationDispositionResponse {
+  ChangeEscalationSignalItem escalation = 1;
+  ChangeEscalationOverview overview = 2;
+}
+
+message CreateCareNavigationHandoffRequest {
+  string escalation_id = 1;
+  string navigation_option_id = 2;
+  string action_type = 3; // appointment_request | prepared_question | trusted_contact_notify | confirmatory_lab_order
+  string recipient_display = 4;
+  string prepared_question_or_note = 5;
+  string initial_handoff_state = 6; // scheduled | declined | unreachable | completed | refunded | escalated | transferred
+}
+message CreateCareNavigationHandoffResponse {
+  CareNavigationHandoffItem handoff = 1;
+  ChangeEscalationOverview overview = 2;
+}
+
+message UpdateCareNavigationHandoffStateRequest {
+  string handoff_id = 1;
+  string handoff_state = 2; // scheduled | declined | unreachable | completed | refunded | escalated | transferred
+  string closure_reason = 3;
+}
+message UpdateCareNavigationHandoffStateResponse {
+  CareNavigationHandoffItem handoff = 1;
+  ChangeEscalationOverview overview = 2;
+}
+
+message UpsertCareNavigationOptionRequest {
+  string option_code = 1;
+  string provider_or_service_name = 2;
+  string credential_summary = 3;
+  string specialty_category = 4;
+  string jurisdiction = 5;
+  string availability_window = 6;
+  string price_estimate_display = 7;
+  string insurance_payment_context = 8;
+  repeated string supported_languages = 9;
+  string modality = 10;
+  string status = 11;
+}
+message UpsertCareNavigationOptionResponse {
+  CareNavigationOptionItem option = 1;
+  ChangeEscalationOverview overview = 2;
+}
+
+// === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+
+message SleepSensorCapabilityItem {
+  string id = 1;
+  string sensor_code = 2;
+  string device_name = 3;
+  string modality = 4; // wearable_photoplethysmography | mattress_bcg_and_thermal | environmental_room_sensor
+  string stage_estimation_capability = 5;
+  repeated string environmental_metrics = 6;
+  double typical_missingness_pct = 7;
+  string confidence_band_label = 8;
+  string medical_device_boundary_note = 9;
+  string status = 10; // active | retired
+}
+
+message SleepCircadianExposureLogItem {
+  string id = 1;
+  string sleep_date = 2; // YYYY-MM-DD
+  string source_sensor_code = 3;
+  int32 total_sleep_minutes = 4;
+  double sleep_efficiency_pct = 5;
+  int32 rem_minutes = 6;
+  int32 deep_minutes = 7;
+  double stage_confidence_score = 8;
+  double missingness_pct = 9;
+  int32 morning_light_lux_minutes = 10;
+  double bedroom_temp_celsius = 11;
+  int32 bedroom_co2_ppm = 12;
+  double bedroom_noise_dba = 13;
+  double caffeine_cutoff_hours_before_bed = 14;
+  double alcohol_units_evening = 15;
+  double late_meal_hours_before_bed = 16;
+  double timezone_offset_shift_hours = 17;
+  string notes = 18;
+  int64 created_at_unix = 19;
+}
+
+message CircadianRoutineItem {
+  string id = 1;
+  string routine_type = 2; // bedroom_and_wind_down | travel_jet_lag | shift_work | insomnia_support | seasonal_light
+  string title = 3;
+  string target_sleep_window = 4;
+  repeated string light_and_temp_blocks = 5;
+  string caffeine_meal_cutoff_rule = 6;
+  bool offline_capable = 7;
+  bool medical_device_safety_confirmed = 8;
+  string status = 9; // active | paused | archived
+  int64 created_at_unix = 10;
+  int64 updated_at_unix = 11;
+}
+
+message CircadianCrossPillarGrantItem {
+  string id = 1;
+  bool nomad_itinerary_ingest_enabled = 2;
+  bool zenith_sleep_window_export_enabled = 3;
+  string shared_sleep_window = 4;
+  string last_nomad_itinerary_summary = 5;
+  bool raw_clinical_record_isolated = 6;
+  int64 updated_at_unix = 7;
+}
+
+message SleepCircadianStudioOverview {
+  repeated SleepSensorCapabilityItem sensor_capabilities = 1;
+  repeated SleepCircadianExposureLogItem exposure_logs = 2;
+  repeated CircadianRoutineItem routines = 3;
+  CircadianCrossPillarGrantItem cross_pillar_grant = 4;
+  string device_capability_and_missingness_charter = 5;
+  string medical_device_safety_boundary_notice = 6;
+  string cross_pillar_minimum_data_charter = 7;
+}
+
+message GetSleepCircadianStudioOverviewRequest {}
+message GetSleepCircadianStudioOverviewResponse {
+  SleepCircadianStudioOverview overview = 1;
+}
+
+message RecordSleepAndExposureLogRequest {
+  string sleep_date = 1; // YYYY-MM-DD
+  string source_sensor_code = 2;
+  int32 total_sleep_minutes = 3;
+  double sleep_efficiency_pct = 4;
+  int32 rem_minutes = 5;
+  int32 deep_minutes = 6;
+  double stage_confidence_score = 7;
+  double missingness_pct = 8;
+  int32 morning_light_lux_minutes = 9;
+  double bedroom_temp_celsius = 10;
+  int32 bedroom_co2_ppm = 11;
+  double bedroom_noise_dba = 12;
+  double caffeine_cutoff_hours_before_bed = 13;
+  double alcohol_units_evening = 14;
+  double late_meal_hours_before_bed = 15;
+  double timezone_offset_shift_hours = 16;
+  string notes = 17;
+}
+message RecordSleepAndExposureLogResponse {
+  SleepCircadianExposureLogItem log_entry = 1;
+  SleepCircadianStudioOverview overview = 2;
+}
+
+message UpsertCircadianRoutineRequest {
+  string routine_id = 1; // empty = create
+  string routine_type = 2; // bedroom_and_wind_down | travel_jet_lag | shift_work | insomnia_support | seasonal_light
+  string title = 3;
+  string target_sleep_window = 4;
+  repeated string light_and_temp_blocks = 5;
+  string caffeine_meal_cutoff_rule = 6;
+  bool offline_capable = 7;
+  string status = 8;
+}
+message UpsertCircadianRoutineResponse {
+  CircadianRoutineItem routine = 1;
+  SleepCircadianStudioOverview overview = 2;
+}
+
+message UpdateCircadianCrossPillarGrantRequest {
+  bool nomad_itinerary_ingest_enabled = 1;
+  bool zenith_sleep_window_export_enabled = 2;
+  string shared_sleep_window = 3;
+  string last_nomad_itinerary_summary = 4;
+}
+message UpdateCircadianCrossPillarGrantResponse {
+  CircadianCrossPillarGrantItem grant = 1;
+  SleepCircadianStudioOverview overview = 2;
+}
+
+message UpsertSleepSensorCapabilityRequest {
+  string sensor_code = 1;
+  string device_name = 2;
+  string modality = 3;
+  string stage_estimation_capability = 4;
+  repeated string environmental_metrics = 5;
+  double typical_missingness_pct = 6;
+  string confidence_band_label = 7;
+  string status = 8;
+}
+message UpsertSleepSensorCapabilityResponse {
+  SleepSensorCapabilityItem capability = 1;
+  SleepCircadianStudioOverview overview = 2;
+}
+
+message GenerateCircadianTravelOrShiftPlanRequest {
+  string routine_type = 1; // travel_jet_lag | shift_work | insomnia_support
+  double timezone_shift_hours = 2;
+  string destination_or_shift_label = 3;
+  string target_sleep_window = 4;
+}
+message GenerateCircadianTravelOrShiftPlanResponse {
+  CircadianRoutineItem routine = 1;
+  SleepCircadianStudioOverview overview = 2;
+}
+
+// === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+
+message ResearchStudyItem {
+  string id = 1;
+  string study_code = 2;
+  string title = 3;
+  string sponsor_institution = 4;
+  string irb_protocol_version = 5;
+  string eligibility_summary = 6;
+  repeated string eligible_domains = 7;
+  string compensation_and_terms = 8;
+  string data_use_agreement_summary = 9;
+  int32 minimum_cell_size = 10; // Always >= 25 (k-anonymity floor)
+  string reproducible_env_id = 11;
+  string aggregate_findings_summary = 12;
+  string status = 13; // recruiting | active_closed_enrollment | completed | paused
+}
+
+message ResearchConsentItem {
+  string id = 1;
+  string study_id = 2;
+  string study_code = 3;
+  string protocol_version_accepted = 4;
+  string consent_status = 5; // active_consented | withdrawn | declined
+  bool local_prescreen_passed = 6;
+  bool recontact_permission = 7;
+  bool return_of_results_opt_in = 8;
+  string withdrawn_reason = 9;
+  string already_published_notice = 10;
+  int64 consented_at_unix = 11;
+  int64 withdrawn_at_unix = 12;
+}
+
+message ResearchContributionItem {
+  string id = 1;
+  string study_id = 2;
+  string study_code = 3;
+  string visit_or_milestone = 4;
+  int32 deidentified_cohort_cell_size = 5; // Always >= minimum_cell_size (>= 25)
+  string contribution_status = 6; // completed | pending_visit | excluded_post_withdrawal
+  string aggregate_result_returned = 7;
+  int64 created_at_unix = 8;
+}
+
+message ResearchParticipationOverview {
+  repeated ResearchStudyItem studies = 1;
+  repeated ResearchConsentItem consents = 2;
+  repeated ResearchContributionItem contributions = 3;
+  string separate_study_consent_charter = 4;
+  string zero_data_sale_and_k_anonymity_charter = 5;
+  string honest_withdrawal_semantics_notice = 6;
+}
+
+message GetResearchParticipationOverviewRequest {}
+message GetResearchParticipationOverviewResponse {
+  ResearchParticipationOverview overview = 1;
+}
+
+message RunLocalStudyPreScreenRequest {
+  string study_id = 1;
+  string study_code = 2;
+}
+message RunLocalStudyPreScreenResponse {
+  bool eligible = 1;
+  string prescreen_summary = 2;
+  repeated string matched_domains = 3;
+  string zero_leakage_attestation = 4;
+}
+
+message EnrollOrUpdateResearchStudyConsentRequest {
+  string study_id = 1;
+  string study_code = 2;
+  string protocol_version_accepted = 3;
+  bool recontact_permission = 4;
+  bool return_of_results_opt_in = 5;
+}
+message EnrollOrUpdateResearchStudyConsentResponse {
+  ResearchConsentItem consent = 1;
+  ResearchParticipationOverview overview = 2;
+}
+
+message WithdrawResearchStudyConsentRequest {
+  string study_id = 1;
+  string study_code = 2;
+  string withdrawn_reason = 3;
+}
+message WithdrawResearchStudyConsentResponse {
+  ResearchConsentItem consent = 1;
+  ResearchParticipationOverview overview = 2;
+}
+
+message RecordResearchContributionMilestoneRequest {
+  string study_id = 1;
+  string study_code = 2;
+  string visit_or_milestone = 3;
+  int32 deidentified_cohort_cell_size = 4;
+}
+message RecordResearchContributionMilestoneResponse {
+  ResearchContributionItem contribution = 1;
+  ResearchParticipationOverview overview = 2;
+}
+
+message UpsertResearchStudyRequest {
+  string study_code = 1;
+  string title = 2;
+  string sponsor_institution = 3;
+  string irb_protocol_version = 4;
+  string eligibility_summary = 5;
+  repeated string eligible_domains = 6;
+  string compensation_and_terms = 7;
+  string data_use_agreement_summary = 8;
+  int32 minimum_cell_size = 9;
+  string aggregate_findings_summary = 10;
+  string status = 11;
+}
+message UpsertResearchStudyResponse {
+  ResearchStudyItem study = 1;
+  ResearchParticipationOverview overview = 2;
+}
+
+// === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+
+message PortableDossierPacketItem {
+  string id = 1;
+  string packet_type = 2; // emergency | travel | new_clinician | specialist | insurance
+  string title = 3;
+  string identity_and_blood_type = 4;
+  string emergency_contacts_summary = 5;
+  string verified_allergies_summary = 6;
+  string reconciled_medications_summary = 7;
+  string active_conditions_and_devices = 8;
+  string directives_reference_summary = 9;
+  string clinician_contacts_summary = 10;
+  repeated string stale_or_missing_flags = 11;
+  bool unverified_facts_excluded = 12;
+  int64 last_confirmed_at_unix = 13;
+  string version_hash = 14;
+  int64 updated_at_unix = 15;
+}
+
+message DossierAccessGrantItem {
+  string id = 1;
+  string dossier_id = 2;
+  string grant_code = 3;
+  string access_mode = 4; // offline_qr_and_short_lived_pin | printable_pdf_packet | one_time_clinician_pass
+  string recipient_context = 5;
+  int64 expires_at_unix = 6;
+  string status = 7; // active | revoked | expired
+  string hospital_integration_disclaimer = 8;
+  int64 revoked_at_unix = 9;
+  int64 created_at_unix = 10;
+}
+
+message DossierDisclosureEventItem {
+  string id = 1;
+  string dossier_id = 2;
+  string grant_id = 3;
+  string event_kind = 4; // packet_confirmed | qr_grant_issued | qr_grant_accessed | qr_grant_revoked | legacy_directive_synced
+  string actor_or_channel = 5;
+  string freshness_state_at_access = 6; // confirmed_fresh_within_30d | aging_review_recommended | stale_unconfirmed_warning
+  string receipt_code = 7;
+  int64 created_at_unix = 8;
+}
+
+message LegacyDirectiveRefItem {
+  string user_id = 1;
+  bool share_directive_ref_with_legacy = 2;
+  string directive_document_ref = 3;
+  string healthcare_proxy_contact = 4;
+  bool full_health_timeline_isolated = 5;
+  int64 updated_at_unix = 6;
+}
+
+message PortableHealthDossierOverview {
+  repeated PortableDossierPacketItem dossiers = 1;
+  repeated DossierAccessGrantItem access_grants = 2;
+  repeated DossierDisclosureEventItem disclosure_events = 3;
+  LegacyDirectiveRefItem legacy_directive_ref = 4;
+  string source_linked_fact_verification_charter = 5;
+  string hospital_integration_and_qr_ttl_charter = 6;
+  string legacy_directive_boundary_charter = 7;
+}
+
+message GetPortableHealthDossierOverviewRequest {}
+message GetPortableHealthDossierOverviewResponse {
+  PortableHealthDossierOverview overview = 1;
+}
+
+message UpsertPortableHealthDossierRequest {
+  string dossier_id = 1;
+  string packet_type = 2; // emergency | travel | new_clinician | specialist | insurance
+  string title = 3;
+  string identity_and_blood_type = 4;
+  string emergency_contacts_summary = 5;
+  string verified_allergies_summary = 6;
+  string reconciled_medications_summary = 7;
+  string active_conditions_and_devices = 8;
+  string directives_reference_summary = 9;
+  string clinician_contacts_summary = 10;
+  repeated string stale_or_missing_flags = 11;
+}
+message UpsertPortableHealthDossierResponse {
+  PortableDossierPacketItem dossier = 1;
+  PortableHealthDossierOverview overview = 2;
+}
+
+message ConfirmPortableDossierFreshnessRequest {
+  string dossier_id = 1;
+  string confirmation_note = 2;
+}
+message ConfirmPortableDossierFreshnessResponse {
+  PortableDossierPacketItem dossier = 1;
+  DossierDisclosureEventItem disclosure_event = 2;
+  PortableHealthDossierOverview overview = 3;
+}
+
+message IssueDossierAccessGrantRequest {
+  string dossier_id = 1;
+  string access_mode = 2; // offline_qr_and_short_lived_pin | printable_pdf_packet | one_time_clinician_pass
+  string recipient_context = 3;
+  int32 ttl_hours = 4;
+}
+message IssueDossierAccessGrantResponse {
+  DossierAccessGrantItem grant = 1;
+  DossierDisclosureEventItem disclosure_event = 2;
+  PortableHealthDossierOverview overview = 3;
+}
+
+message RevokeDossierAccessGrantRequest {
+  string grant_id = 1;
+  string reason = 2;
+}
+message RevokeDossierAccessGrantResponse {
+  DossierAccessGrantItem grant = 1;
+  DossierDisclosureEventItem disclosure_event = 2;
+  PortableHealthDossierOverview overview = 3;
+}
+
+message UpdateLegacyDirectiveReferenceRequest {
+  bool share_directive_ref_with_legacy = 1;
+  string directive_document_ref = 2;
+  string healthcare_proxy_contact = 3;
+}
+message UpdateLegacyDirectiveReferenceResponse {
+  LegacyDirectiveRefItem legacy_directive_ref = 1;
+  PortableHealthDossierOverview overview = 2;
+}
+
+// === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+
+message GlobalAccessibilityProfileItem {
+  string user_id = 1;
+  string preferred_locale = 2; // en-US | es-LA | fr-FR
+  string unit_system = 3; // US_Conventional_with_SI_Dual | SI_Metric_with_US_Dual | SI_Metric_Strict | US_Conventional_Strict
+  string jurisdiction_health_system = 4; // US-CLIA-USPSTF | EU-IVDR-ESC | UK-NHS-NICE | CA-HEALTH-CTFPHC
+  string timezone_id = 5;
+  string calendar_system = 6; // Gregorian_ISO8601
+  string inclusive_anatomy_terminology = 7; // clinical_and_member_affirmed | anatomical_inventory_explicit
+  bool screen_reader_verbose_semantics = 8;
+  double large_type_scale = 9;
+  bool reduced_motion_enabled = 10;
+  bool high_contrast_enabled = 11;
+  bool cognitive_plain_language_mode = 12;
+  bool caregiver_assisted_mode = 13;
+  bool no_wearable_manual_first_mode = 14;
+  bool offline_essential_record_pinned = 15;
+  int64 updated_at_unix = 16;
+}
+
+message MigrationImportExportJobItem {
+  string id = 1;
+  string direction = 2; // import | export
+  string source_or_target_format = 3; // FHIR_R4_Bundle_JSON | Apple_Health_XML | HL7_CDA_XML | Canonical_CSV_v2
+  string competitor_or_standard_name = 4;
+  int32 total_records_processed = 5;
+  int32 mapped_valid_records = 6;
+  int32 rejected_records = 7;
+  string field_mapping_summary = 8;
+  string rejection_report_summary = 9;
+  bool no_fabricated_continuity_verified = 10;
+  string status = 11; // completed_with_validation_report | completed_lossless_export | quarantined_schema_mismatch
+  int64 created_at_unix = 12;
+}
+
+message HorizontalCertificationCheckItem {
+  string id = 1;
+  string check_code = 2;
+  string choice_range = 3; // AP1-AP4 | AP5-AP8 | AP9-AP12 | AP13-AP16 | AP1-AP16
+  string gate_category = 4;
+  string title = 5;
+  string verification_evidence = 6;
+  bool no_wearable_parity_verified = 7;
+  bool offline_conflict_resolution_verified = 8;
+  bool talkback_voiceover_semantics_verified = 9;
+  string status = 10; // certified_pass | under_remediation
+  string auditor_name = 11;
+  int64 updated_at_unix = 12;
+}
+
+message GlobalCertificationOverview {
+  GlobalAccessibilityProfileItem profile = 1;
+  repeated MigrationImportExportJobItem migration_jobs = 2;
+  repeated HorizontalCertificationCheckItem certification_checks = 3;
+  string lossless_localization_charter = 4;
+  string accessibility_and_manual_parity_charter = 5;
+  string migration_and_zero_fabricated_continuity_charter = 6;
+}
+
+message GetGlobalCertificationOverviewRequest {}
+message GetGlobalCertificationOverviewResponse {
+  GlobalCertificationOverview overview = 1;
+}
+
+message UpdateGlobalAccessibilityProfileRequest {
+  string preferred_locale = 1;
+  string unit_system = 2;
+  string jurisdiction_health_system = 3;
+  string timezone_id = 4;
+  string calendar_system = 5;
+  string inclusive_anatomy_terminology = 6;
+  bool screen_reader_verbose_semantics = 7;
+  double large_type_scale = 8;
+  bool reduced_motion_enabled = 9;
+  bool high_contrast_enabled = 10;
+  bool cognitive_plain_language_mode = 11;
+  bool caregiver_assisted_mode = 12;
+  bool no_wearable_manual_first_mode = 13;
+  bool offline_essential_record_pinned = 14;
+}
+message UpdateGlobalAccessibilityProfileResponse {
+  GlobalAccessibilityProfileItem profile = 1;
+  GlobalCertificationOverview overview = 2;
+}
+
+message RunHealthMigrationImportOrExportJobRequest {
+  string direction = 1; // import | export
+  string source_or_target_format = 2; // FHIR_R4_Bundle_JSON | Apple_Health_XML | HL7_CDA_XML | Canonical_CSV_v2
+  string competitor_or_standard_name = 3;
+  int32 total_records_processed = 4;
+  int32 rejected_records = 5;
+  string field_mapping_summary = 6;
+  string rejection_report_summary = 7;
+}
+message RunHealthMigrationImportOrExportJobResponse {
+  MigrationImportExportJobItem job = 1;
+  GlobalCertificationOverview overview = 2;
+}
+
+message UpsertHorizontalCertificationCheckRequest {
+  string check_code = 1;
+  string choice_range = 2;
+  string gate_category = 3;
+  string title = 4;
+  string verification_evidence = 5;
+  bool no_wearable_parity_verified = 6;
+  bool offline_conflict_resolution_verified = 7;
+  bool talkback_voiceover_semantics_verified = 8;
+  string status = 9;
+  string auditor_name = 10;
+}
+message UpsertHorizontalCertificationCheckResponse {
+  HorizontalCertificationCheckItem check = 1;
+  GlobalCertificationOverview overview = 2;
+}
+
+message VerifyUnitLocalizationLosslessnessRequest {
+  string metric_code = 1; // e.g., GLUCOSE_FASTING | APO_B | VITAMIN_D
+  double raw_value = 2;
+  string raw_unit = 3;
+  string target_unit_system = 4; // SI_Metric_Strict | US_Conventional_Strict | US_Conventional_with_SI_Dual
+}
+message VerifyUnitLocalizationLosslessnessResponse {
+  string metric_code = 1;
+  double preserved_raw_value = 2;
+  string preserved_raw_unit = 3;
+  double localized_display_value = 4;
+  string localized_display_unit = 5;
+  bool raw_mutation_detected = 6;
+  string lossless_attestation = 7;
+}
+
+message RunOfflineAndManualParityAuditRequest {
+  string choice_range = 1;
+}
+message RunOfflineAndManualParityAuditResponse {
+  int32 choices_audited = 1;
+  bool all_choices_certified = 2;
+  string audit_summary = 3;
+  GlobalCertificationOverview overview = 4;
 }

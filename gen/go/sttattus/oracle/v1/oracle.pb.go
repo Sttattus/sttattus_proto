@@ -5475,6 +5475,8682 @@ func (x *GenerateYearInOracleResponse) GetPageCount() int32 {
 	return 0
 }
 
+type OracleEvidenceSourceSnapshotItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SourceCode                string                 `protobuf:"bytes,3,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	OriginClass               string                 `protobuf:"bytes,4,opt,name=origin_class,json=originClass,proto3" json:"origin_class,omitempty"`
+	Title                     string                 `protobuf:"bytes,5,opt,name=title,proto3" json:"title,omitempty"`
+	JurisdictionAndRights     string                 `protobuf:"bytes,6,opt,name=jurisdiction_and_rights,json=jurisdictionAndRights,proto3" json:"jurisdiction_and_rights,omitempty"`
+	FreshnessState            string                 `protobuf:"bytes,7,opt,name=freshness_state,json=freshnessState,proto3" json:"freshness_state,omitempty"`
+	CompetingDisagreementNote string                 `protobuf:"bytes,8,opt,name=competing_disagreement_note,json=competingDisagreementNote,proto3" json:"competing_disagreement_note,omitempty"`
+	CorrectionGeneration      int32                  `protobuf:"varint,9,opt,name=correction_generation,json=correctionGeneration,proto3" json:"correction_generation,omitempty"`
+	StrictAnswerModeEnforced  bool                   `protobuf:"varint,10,opt,name=strict_answer_mode_enforced,json=strictAnswerModeEnforced,proto3" json:"strict_answer_mode_enforced,omitempty"`
+	UpdatedAtIso              string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) Reset() {
+	*x = OracleEvidenceSourceSnapshotItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleEvidenceSourceSnapshotItem) ProtoMessage() {}
+
+func (x *OracleEvidenceSourceSnapshotItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleEvidenceSourceSnapshotItem.ProtoReflect.Descriptor instead.
+func (*OracleEvidenceSourceSnapshotItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetOriginClass() string {
+	if x != nil {
+		return x.OriginClass
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetJurisdictionAndRights() string {
+	if x != nil {
+		return x.JurisdictionAndRights
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetFreshnessState() string {
+	if x != nil {
+		return x.FreshnessState
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetCompetingDisagreementNote() string {
+	if x != nil {
+		return x.CompetingDisagreementNote
+	}
+	return ""
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetCorrectionGeneration() int32 {
+	if x != nil {
+		return x.CorrectionGeneration
+	}
+	return 0
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetStrictAnswerModeEnforced() bool {
+	if x != nil {
+		return x.StrictAnswerModeEnforced
+	}
+	return false
+}
+
+func (x *OracleEvidenceSourceSnapshotItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleCitedClaimPassageItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ClaimCode                 string                 `protobuf:"bytes,3,opt,name=claim_code,json=claimCode,proto3" json:"claim_code,omitempty"`
+	SourceCode                string                 `protobuf:"bytes,4,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	ClaimStatement            string                 `protobuf:"bytes,5,opt,name=claim_statement,json=claimStatement,proto3" json:"claim_statement,omitempty"`
+	SupportingPassageExcerpt  string                 `protobuf:"bytes,6,opt,name=supporting_passage_excerpt,json=supportingPassageExcerpt,proto3" json:"supporting_passage_excerpt,omitempty"`
+	PrimarySourceMarker       bool                   `protobuf:"varint,7,opt,name=primary_source_marker,json=primarySourceMarker,proto3" json:"primary_source_marker,omitempty"`
+	EpistemicStatus           string                 `protobuf:"bytes,8,opt,name=epistemic_status,json=epistemicStatus,proto3" json:"epistemic_status,omitempty"`
+	EvidenceGapDisclosure     string                 `protobuf:"bytes,9,opt,name=evidence_gap_disclosure,json=evidenceGapDisclosure,proto3" json:"evidence_gap_disclosure,omitempty"`
+	UnsupportedFluencyRefused bool                   `protobuf:"varint,10,opt,name=unsupported_fluency_refused,json=unsupportedFluencyRefused,proto3" json:"unsupported_fluency_refused,omitempty"`
+	UpdatedAtIso              string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *OracleCitedClaimPassageItem) Reset() {
+	*x = OracleCitedClaimPassageItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleCitedClaimPassageItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleCitedClaimPassageItem) ProtoMessage() {}
+
+func (x *OracleCitedClaimPassageItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleCitedClaimPassageItem.ProtoReflect.Descriptor instead.
+func (*OracleCitedClaimPassageItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *OracleCitedClaimPassageItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetClaimCode() string {
+	if x != nil {
+		return x.ClaimCode
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetClaimStatement() string {
+	if x != nil {
+		return x.ClaimStatement
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetSupportingPassageExcerpt() string {
+	if x != nil {
+		return x.SupportingPassageExcerpt
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetPrimarySourceMarker() bool {
+	if x != nil {
+		return x.PrimarySourceMarker
+	}
+	return false
+}
+
+func (x *OracleCitedClaimPassageItem) GetEpistemicStatus() string {
+	if x != nil {
+		return x.EpistemicStatus
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetEvidenceGapDisclosure() string {
+	if x != nil {
+		return x.EvidenceGapDisclosure
+	}
+	return ""
+}
+
+func (x *OracleCitedClaimPassageItem) GetUnsupportedFluencyRefused() bool {
+	if x != nil {
+		return x.UnsupportedFluencyRefused
+	}
+	return false
+}
+
+func (x *OracleCitedClaimPassageItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetEvidenceTruthWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEvidenceTruthWorkbenchRequest) Reset() {
+	*x = GetEvidenceTruthWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceTruthWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceTruthWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetEvidenceTruthWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceTruthWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetEvidenceTruthWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{105}
+}
+
+type GetEvidenceTruthWorkbenchResponse struct {
+	state                    protoimpl.MessageState              `protogen:"open.v1"`
+	Sources                  []*OracleEvidenceSourceSnapshotItem `protobuf:"bytes,1,rep,name=sources,proto3" json:"sources,omitempty"`
+	Claims                   []*OracleCitedClaimPassageItem      `protobuf:"bytes,2,rep,name=claims,proto3" json:"claims,omitempty"`
+	StrictAnswerModeActive   bool                                `protobuf:"varint,3,opt,name=strict_answer_mode_active,json=strictAnswerModeActive,proto3" json:"strict_answer_mode_active,omitempty"`
+	EpistemicIntegrityBanner string                              `protobuf:"bytes,4,opt,name=epistemic_integrity_banner,json=epistemicIntegrityBanner,proto3" json:"epistemic_integrity_banner,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) Reset() {
+	*x = GetEvidenceTruthWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceTruthWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetEvidenceTruthWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceTruthWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetEvidenceTruthWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) GetSources() []*OracleEvidenceSourceSnapshotItem {
+	if x != nil {
+		return x.Sources
+	}
+	return nil
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) GetClaims() []*OracleCitedClaimPassageItem {
+	if x != nil {
+		return x.Claims
+	}
+	return nil
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) GetStrictAnswerModeActive() bool {
+	if x != nil {
+		return x.StrictAnswerModeActive
+	}
+	return false
+}
+
+func (x *GetEvidenceTruthWorkbenchResponse) GetEpistemicIntegrityBanner() string {
+	if x != nil {
+		return x.EpistemicIntegrityBanner
+	}
+	return ""
+}
+
+type RegisterOrRefreshEvidenceSourceRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	SourceCode                string                 `protobuf:"bytes,1,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	OriginClass               string                 `protobuf:"bytes,2,opt,name=origin_class,json=originClass,proto3" json:"origin_class,omitempty"`
+	Title                     string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	JurisdictionAndRights     string                 `protobuf:"bytes,4,opt,name=jurisdiction_and_rights,json=jurisdictionAndRights,proto3" json:"jurisdiction_and_rights,omitempty"`
+	FreshnessState            string                 `protobuf:"bytes,5,opt,name=freshness_state,json=freshnessState,proto3" json:"freshness_state,omitempty"`
+	CompetingDisagreementNote string                 `protobuf:"bytes,6,opt,name=competing_disagreement_note,json=competingDisagreementNote,proto3" json:"competing_disagreement_note,omitempty"`
+	StrictAnswerModeEnforced  bool                   `protobuf:"varint,7,opt,name=strict_answer_mode_enforced,json=strictAnswerModeEnforced,proto3" json:"strict_answer_mode_enforced,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) Reset() {
+	*x = RegisterOrRefreshEvidenceSourceRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterOrRefreshEvidenceSourceRequest) ProtoMessage() {}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterOrRefreshEvidenceSourceRequest.ProtoReflect.Descriptor instead.
+func (*RegisterOrRefreshEvidenceSourceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetOriginClass() string {
+	if x != nil {
+		return x.OriginClass
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetJurisdictionAndRights() string {
+	if x != nil {
+		return x.JurisdictionAndRights
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetFreshnessState() string {
+	if x != nil {
+		return x.FreshnessState
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetCompetingDisagreementNote() string {
+	if x != nil {
+		return x.CompetingDisagreementNote
+	}
+	return ""
+}
+
+func (x *RegisterOrRefreshEvidenceSourceRequest) GetStrictAnswerModeEnforced() bool {
+	if x != nil {
+		return x.StrictAnswerModeEnforced
+	}
+	return false
+}
+
+type RegisterOrRefreshEvidenceSourceResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Source        *OracleEvidenceSourceSnapshotItem `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterOrRefreshEvidenceSourceResponse) Reset() {
+	*x = RegisterOrRefreshEvidenceSourceResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterOrRefreshEvidenceSourceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterOrRefreshEvidenceSourceResponse) ProtoMessage() {}
+
+func (x *RegisterOrRefreshEvidenceSourceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterOrRefreshEvidenceSourceResponse.ProtoReflect.Descriptor instead.
+func (*RegisterOrRefreshEvidenceSourceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *RegisterOrRefreshEvidenceSourceResponse) GetSource() *OracleEvidenceSourceSnapshotItem {
+	if x != nil {
+		return x.Source
+	}
+	return nil
+}
+
+type VerifyOrInvalidateCitedClaimRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	ClaimCode                string                 `protobuf:"bytes,1,opt,name=claim_code,json=claimCode,proto3" json:"claim_code,omitempty"`
+	SourceCode               string                 `protobuf:"bytes,2,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	ClaimStatement           string                 `protobuf:"bytes,3,opt,name=claim_statement,json=claimStatement,proto3" json:"claim_statement,omitempty"`
+	SupportingPassageExcerpt string                 `protobuf:"bytes,4,opt,name=supporting_passage_excerpt,json=supportingPassageExcerpt,proto3" json:"supporting_passage_excerpt,omitempty"`
+	PrimarySourceMarker      bool                   `protobuf:"varint,5,opt,name=primary_source_marker,json=primarySourceMarker,proto3" json:"primary_source_marker,omitempty"`
+	EpistemicStatus          string                 `protobuf:"bytes,6,opt,name=epistemic_status,json=epistemicStatus,proto3" json:"epistemic_status,omitempty"`
+	EvidenceGapDisclosure    string                 `protobuf:"bytes,7,opt,name=evidence_gap_disclosure,json=evidenceGapDisclosure,proto3" json:"evidence_gap_disclosure,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) Reset() {
+	*x = VerifyOrInvalidateCitedClaimRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrInvalidateCitedClaimRequest) ProtoMessage() {}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrInvalidateCitedClaimRequest.ProtoReflect.Descriptor instead.
+func (*VerifyOrInvalidateCitedClaimRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{109}
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetClaimCode() string {
+	if x != nil {
+		return x.ClaimCode
+	}
+	return ""
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetClaimStatement() string {
+	if x != nil {
+		return x.ClaimStatement
+	}
+	return ""
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetSupportingPassageExcerpt() string {
+	if x != nil {
+		return x.SupportingPassageExcerpt
+	}
+	return ""
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetPrimarySourceMarker() bool {
+	if x != nil {
+		return x.PrimarySourceMarker
+	}
+	return false
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetEpistemicStatus() string {
+	if x != nil {
+		return x.EpistemicStatus
+	}
+	return ""
+}
+
+func (x *VerifyOrInvalidateCitedClaimRequest) GetEvidenceGapDisclosure() string {
+	if x != nil {
+		return x.EvidenceGapDisclosure
+	}
+	return ""
+}
+
+type VerifyOrInvalidateCitedClaimResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Claim         *OracleCitedClaimPassageItem `protobuf:"bytes,1,opt,name=claim,proto3" json:"claim,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyOrInvalidateCitedClaimResponse) Reset() {
+	*x = VerifyOrInvalidateCitedClaimResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyOrInvalidateCitedClaimResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyOrInvalidateCitedClaimResponse) ProtoMessage() {}
+
+func (x *VerifyOrInvalidateCitedClaimResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyOrInvalidateCitedClaimResponse.ProtoReflect.Descriptor instead.
+func (*VerifyOrInvalidateCitedClaimResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *VerifyOrInvalidateCitedClaimResponse) GetClaim() *OracleCitedClaimPassageItem {
+	if x != nil {
+		return x.Claim
+	}
+	return nil
+}
+
+type AdminListEvidenceTruthAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListEvidenceTruthAuditRequest) Reset() {
+	*x = AdminListEvidenceTruthAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListEvidenceTruthAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListEvidenceTruthAuditRequest) ProtoMessage() {}
+
+func (x *AdminListEvidenceTruthAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListEvidenceTruthAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListEvidenceTruthAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *AdminListEvidenceTruthAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListEvidenceTruthAuditResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Sources       []*OracleEvidenceSourceSnapshotItem `protobuf:"bytes,1,rep,name=sources,proto3" json:"sources,omitempty"`
+	Claims        []*OracleCitedClaimPassageItem      `protobuf:"bytes,2,rep,name=claims,proto3" json:"claims,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListEvidenceTruthAuditResponse) Reset() {
+	*x = AdminListEvidenceTruthAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListEvidenceTruthAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListEvidenceTruthAuditResponse) ProtoMessage() {}
+
+func (x *AdminListEvidenceTruthAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListEvidenceTruthAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListEvidenceTruthAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{112}
+}
+
+func (x *AdminListEvidenceTruthAuditResponse) GetSources() []*OracleEvidenceSourceSnapshotItem {
+	if x != nil {
+		return x.Sources
+	}
+	return nil
+}
+
+func (x *AdminListEvidenceTruthAuditResponse) GetClaims() []*OracleCitedClaimPassageItem {
+	if x != nil {
+		return x.Claims
+	}
+	return nil
+}
+
+type AdminManageSourceRightsOrCorrectionRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId              string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	SourceCode                string                 `protobuf:"bytes,2,opt,name=source_code,json=sourceCode,proto3" json:"source_code,omitempty"`
+	FreshnessState            string                 `protobuf:"bytes,3,opt,name=freshness_state,json=freshnessState,proto3" json:"freshness_state,omitempty"`
+	CompetingDisagreementNote string                 `protobuf:"bytes,4,opt,name=competing_disagreement_note,json=competingDisagreementNote,proto3" json:"competing_disagreement_note,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) Reset() {
+	*x = AdminManageSourceRightsOrCorrectionRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageSourceRightsOrCorrectionRequest) ProtoMessage() {}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageSourceRightsOrCorrectionRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageSourceRightsOrCorrectionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) GetSourceCode() string {
+	if x != nil {
+		return x.SourceCode
+	}
+	return ""
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) GetFreshnessState() string {
+	if x != nil {
+		return x.FreshnessState
+	}
+	return ""
+}
+
+func (x *AdminManageSourceRightsOrCorrectionRequest) GetCompetingDisagreementNote() string {
+	if x != nil {
+		return x.CompetingDisagreementNote
+	}
+	return ""
+}
+
+type AdminManageSourceRightsOrCorrectionResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Source        *OracleEvidenceSourceSnapshotItem `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageSourceRightsOrCorrectionResponse) Reset() {
+	*x = AdminManageSourceRightsOrCorrectionResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageSourceRightsOrCorrectionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageSourceRightsOrCorrectionResponse) ProtoMessage() {}
+
+func (x *AdminManageSourceRightsOrCorrectionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageSourceRightsOrCorrectionResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageSourceRightsOrCorrectionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *AdminManageSourceRightsOrCorrectionResponse) GetSource() *OracleEvidenceSourceSnapshotItem {
+	if x != nil {
+		return x.Source
+	}
+	return nil
+}
+
+type OracleDecisionLedgerRecordItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DecisionCode                string                 `protobuf:"bytes,3,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	Title                       string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	ReversibilityClass          string                 `protobuf:"bytes,5,opt,name=reversibility_class,json=reversibilityClass,proto3" json:"reversibility_class,omitempty"`
+	OptionsComparedSummary      string                 `protobuf:"bytes,6,opt,name=options_compared_summary,json=optionsComparedSummary,proto3" json:"options_compared_summary,omitempty"`
+	DoNothingBaseline           string                 `protobuf:"bytes,7,opt,name=do_nothing_baseline,json=doNothingBaseline,proto3" json:"do_nothing_baseline,omitempty"`
+	PremortemAndRedteamCritique string                 `protobuf:"bytes,8,opt,name=premortem_and_redteam_critique,json=premortemAndRedteamCritique,proto3" json:"premortem_and_redteam_critique,omitempty"`
+	DissentRecord               string                 `protobuf:"bytes,9,opt,name=dissent_record,json=dissentRecord,proto3" json:"dissent_record,omitempty"`
+	DecisionVersion             int32                  `protobuf:"varint,10,opt,name=decision_version,json=decisionVersion,proto3" json:"decision_version,omitempty"`
+	DecisionState               string                 `protobuf:"bytes,11,opt,name=decision_state,json=decisionState,proto3" json:"decision_state,omitempty"`
+	ImmutableMemberOwnership    bool                   `protobuf:"varint,12,opt,name=immutable_member_ownership,json=immutableMemberOwnership,proto3" json:"immutable_member_ownership,omitempty"`
+	UpdatedAtIso                string                 `protobuf:"bytes,13,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *OracleDecisionLedgerRecordItem) Reset() {
+	*x = OracleDecisionLedgerRecordItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleDecisionLedgerRecordItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleDecisionLedgerRecordItem) ProtoMessage() {}
+
+func (x *OracleDecisionLedgerRecordItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleDecisionLedgerRecordItem.ProtoReflect.Descriptor instead.
+func (*OracleDecisionLedgerRecordItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetReversibilityClass() string {
+	if x != nil {
+		return x.ReversibilityClass
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetOptionsComparedSummary() string {
+	if x != nil {
+		return x.OptionsComparedSummary
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetDoNothingBaseline() string {
+	if x != nil {
+		return x.DoNothingBaseline
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetPremortemAndRedteamCritique() string {
+	if x != nil {
+		return x.PremortemAndRedteamCritique
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetDissentRecord() string {
+	if x != nil {
+		return x.DissentRecord
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetDecisionVersion() int32 {
+	if x != nil {
+		return x.DecisionVersion
+	}
+	return 0
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetDecisionState() string {
+	if x != nil {
+		return x.DecisionState
+	}
+	return ""
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetImmutableMemberOwnership() bool {
+	if x != nil {
+		return x.ImmutableMemberOwnership
+	}
+	return false
+}
+
+func (x *OracleDecisionLedgerRecordItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleDecisionAssumptionReviewItem struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                   string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EntryCode                string                 `protobuf:"bytes,3,opt,name=entry_code,json=entryCode,proto3" json:"entry_code,omitempty"`
+	DecisionCode             string                 `protobuf:"bytes,4,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	AssumptionStatement      string                 `protobuf:"bytes,5,opt,name=assumption_statement,json=assumptionStatement,proto3" json:"assumption_statement,omitempty"`
+	ConfidenceBandBps        int32                  `protobuf:"varint,6,opt,name=confidence_band_bps,json=confidenceBandBps,proto3" json:"confidence_band_bps,omitempty"`
+	SensitivityImpact        string                 `protobuf:"bytes,7,opt,name=sensitivity_impact,json=sensitivityImpact,proto3" json:"sensitivity_impact,omitempty"`
+	ReviewHorizon            string                 `protobuf:"bytes,8,opt,name=review_horizon,json=reviewHorizon,proto3" json:"review_horizon,omitempty"`
+	ObservedOutcomeAndLesson string                 `protobuf:"bytes,9,opt,name=observed_outcome_and_lesson,json=observedOutcomeAndLesson,proto3" json:"observed_outcome_and_lesson,omitempty"`
+	FreshnessStatus          string                 `protobuf:"bytes,10,opt,name=freshness_status,json=freshnessStatus,proto3" json:"freshness_status,omitempty"`
+	UpdatedAtIso             string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *OracleDecisionAssumptionReviewItem) Reset() {
+	*x = OracleDecisionAssumptionReviewItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleDecisionAssumptionReviewItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleDecisionAssumptionReviewItem) ProtoMessage() {}
+
+func (x *OracleDecisionAssumptionReviewItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleDecisionAssumptionReviewItem.ProtoReflect.Descriptor instead.
+func (*OracleDecisionAssumptionReviewItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetEntryCode() string {
+	if x != nil {
+		return x.EntryCode
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetAssumptionStatement() string {
+	if x != nil {
+		return x.AssumptionStatement
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetConfidenceBandBps() int32 {
+	if x != nil {
+		return x.ConfidenceBandBps
+	}
+	return 0
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetSensitivityImpact() string {
+	if x != nil {
+		return x.SensitivityImpact
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetReviewHorizon() string {
+	if x != nil {
+		return x.ReviewHorizon
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetObservedOutcomeAndLesson() string {
+	if x != nil {
+		return x.ObservedOutcomeAndLesson
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetFreshnessStatus() string {
+	if x != nil {
+		return x.FreshnessStatus
+	}
+	return ""
+}
+
+func (x *OracleDecisionAssumptionReviewItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDecisionLedgerWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDecisionLedgerWorkbenchRequest) Reset() {
+	*x = GetDecisionLedgerWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDecisionLedgerWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDecisionLedgerWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDecisionLedgerWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDecisionLedgerWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDecisionLedgerWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{117}
+}
+
+type GetDecisionLedgerWorkbenchResponse struct {
+	state                    protoimpl.MessageState                `protogen:"open.v1"`
+	Decisions                []*OracleDecisionLedgerRecordItem     `protobuf:"bytes,1,rep,name=decisions,proto3" json:"decisions,omitempty"`
+	Assumptions              []*OracleDecisionAssumptionReviewItem `protobuf:"bytes,2,rep,name=assumptions,proto3" json:"assumptions,omitempty"`
+	MemberOwnershipImmutable bool                                  `protobuf:"varint,3,opt,name=member_ownership_immutable,json=memberOwnershipImmutable,proto3" json:"member_ownership_immutable,omitempty"`
+	DecisionGovernanceBanner string                                `protobuf:"bytes,4,opt,name=decision_governance_banner,json=decisionGovernanceBanner,proto3" json:"decision_governance_banner,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) Reset() {
+	*x = GetDecisionLedgerWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDecisionLedgerWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDecisionLedgerWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDecisionLedgerWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDecisionLedgerWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) GetDecisions() []*OracleDecisionLedgerRecordItem {
+	if x != nil {
+		return x.Decisions
+	}
+	return nil
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) GetAssumptions() []*OracleDecisionAssumptionReviewItem {
+	if x != nil {
+		return x.Assumptions
+	}
+	return nil
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) GetMemberOwnershipImmutable() bool {
+	if x != nil {
+		return x.MemberOwnershipImmutable
+	}
+	return false
+}
+
+func (x *GetDecisionLedgerWorkbenchResponse) GetDecisionGovernanceBanner() string {
+	if x != nil {
+		return x.DecisionGovernanceBanner
+	}
+	return ""
+}
+
+type CreateOrUpdateDecisionLedgerRecordRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	DecisionCode                string                 `protobuf:"bytes,1,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	Title                       string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	ReversibilityClass          string                 `protobuf:"bytes,3,opt,name=reversibility_class,json=reversibilityClass,proto3" json:"reversibility_class,omitempty"`
+	OptionsComparedSummary      string                 `protobuf:"bytes,4,opt,name=options_compared_summary,json=optionsComparedSummary,proto3" json:"options_compared_summary,omitempty"`
+	DoNothingBaseline           string                 `protobuf:"bytes,5,opt,name=do_nothing_baseline,json=doNothingBaseline,proto3" json:"do_nothing_baseline,omitempty"`
+	PremortemAndRedteamCritique string                 `protobuf:"bytes,6,opt,name=premortem_and_redteam_critique,json=premortemAndRedteamCritique,proto3" json:"premortem_and_redteam_critique,omitempty"`
+	DissentRecord               string                 `protobuf:"bytes,7,opt,name=dissent_record,json=dissentRecord,proto3" json:"dissent_record,omitempty"`
+	DecisionState               string                 `protobuf:"bytes,8,opt,name=decision_state,json=decisionState,proto3" json:"decision_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) Reset() {
+	*x = CreateOrUpdateDecisionLedgerRecordRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrUpdateDecisionLedgerRecordRequest) ProtoMessage() {}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrUpdateDecisionLedgerRecordRequest.ProtoReflect.Descriptor instead.
+func (*CreateOrUpdateDecisionLedgerRecordRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetReversibilityClass() string {
+	if x != nil {
+		return x.ReversibilityClass
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetOptionsComparedSummary() string {
+	if x != nil {
+		return x.OptionsComparedSummary
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetDoNothingBaseline() string {
+	if x != nil {
+		return x.DoNothingBaseline
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetPremortemAndRedteamCritique() string {
+	if x != nil {
+		return x.PremortemAndRedteamCritique
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetDissentRecord() string {
+	if x != nil {
+		return x.DissentRecord
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordRequest) GetDecisionState() string {
+	if x != nil {
+		return x.DecisionState
+	}
+	return ""
+}
+
+type CreateOrUpdateDecisionLedgerRecordResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Decision      *OracleDecisionLedgerRecordItem `protobuf:"bytes,1,opt,name=decision,proto3" json:"decision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordResponse) Reset() {
+	*x = CreateOrUpdateDecisionLedgerRecordResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrUpdateDecisionLedgerRecordResponse) ProtoMessage() {}
+
+func (x *CreateOrUpdateDecisionLedgerRecordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrUpdateDecisionLedgerRecordResponse.ProtoReflect.Descriptor instead.
+func (*CreateOrUpdateDecisionLedgerRecordResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *CreateOrUpdateDecisionLedgerRecordResponse) GetDecision() *OracleDecisionLedgerRecordItem {
+	if x != nil {
+		return x.Decision
+	}
+	return nil
+}
+
+type RecordDecisionAssumptionOrReviewRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	EntryCode                string                 `protobuf:"bytes,1,opt,name=entry_code,json=entryCode,proto3" json:"entry_code,omitempty"`
+	DecisionCode             string                 `protobuf:"bytes,2,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	AssumptionStatement      string                 `protobuf:"bytes,3,opt,name=assumption_statement,json=assumptionStatement,proto3" json:"assumption_statement,omitempty"`
+	ConfidenceBandBps        int32                  `protobuf:"varint,4,opt,name=confidence_band_bps,json=confidenceBandBps,proto3" json:"confidence_band_bps,omitempty"`
+	SensitivityImpact        string                 `protobuf:"bytes,5,opt,name=sensitivity_impact,json=sensitivityImpact,proto3" json:"sensitivity_impact,omitempty"`
+	ReviewHorizon            string                 `protobuf:"bytes,6,opt,name=review_horizon,json=reviewHorizon,proto3" json:"review_horizon,omitempty"`
+	ObservedOutcomeAndLesson string                 `protobuf:"bytes,7,opt,name=observed_outcome_and_lesson,json=observedOutcomeAndLesson,proto3" json:"observed_outcome_and_lesson,omitempty"`
+	FreshnessStatus          string                 `protobuf:"bytes,8,opt,name=freshness_status,json=freshnessStatus,proto3" json:"freshness_status,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) Reset() {
+	*x = RecordDecisionAssumptionOrReviewRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordDecisionAssumptionOrReviewRequest) ProtoMessage() {}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordDecisionAssumptionOrReviewRequest.ProtoReflect.Descriptor instead.
+func (*RecordDecisionAssumptionOrReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetEntryCode() string {
+	if x != nil {
+		return x.EntryCode
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetAssumptionStatement() string {
+	if x != nil {
+		return x.AssumptionStatement
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetConfidenceBandBps() int32 {
+	if x != nil {
+		return x.ConfidenceBandBps
+	}
+	return 0
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetSensitivityImpact() string {
+	if x != nil {
+		return x.SensitivityImpact
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetReviewHorizon() string {
+	if x != nil {
+		return x.ReviewHorizon
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetObservedOutcomeAndLesson() string {
+	if x != nil {
+		return x.ObservedOutcomeAndLesson
+	}
+	return ""
+}
+
+func (x *RecordDecisionAssumptionOrReviewRequest) GetFreshnessStatus() string {
+	if x != nil {
+		return x.FreshnessStatus
+	}
+	return ""
+}
+
+type RecordDecisionAssumptionOrReviewResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Assumption    *OracleDecisionAssumptionReviewItem `protobuf:"bytes,1,opt,name=assumption,proto3" json:"assumption,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordDecisionAssumptionOrReviewResponse) Reset() {
+	*x = RecordDecisionAssumptionOrReviewResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordDecisionAssumptionOrReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordDecisionAssumptionOrReviewResponse) ProtoMessage() {}
+
+func (x *RecordDecisionAssumptionOrReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordDecisionAssumptionOrReviewResponse.ProtoReflect.Descriptor instead.
+func (*RecordDecisionAssumptionOrReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *RecordDecisionAssumptionOrReviewResponse) GetAssumption() *OracleDecisionAssumptionReviewItem {
+	if x != nil {
+		return x.Assumption
+	}
+	return nil
+}
+
+type AdminListDecisionLedgerAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListDecisionLedgerAuditRequest) Reset() {
+	*x = AdminListDecisionLedgerAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListDecisionLedgerAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListDecisionLedgerAuditRequest) ProtoMessage() {}
+
+func (x *AdminListDecisionLedgerAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListDecisionLedgerAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListDecisionLedgerAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *AdminListDecisionLedgerAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListDecisionLedgerAuditResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Decisions     []*OracleDecisionLedgerRecordItem     `protobuf:"bytes,1,rep,name=decisions,proto3" json:"decisions,omitempty"`
+	Assumptions   []*OracleDecisionAssumptionReviewItem `protobuf:"bytes,2,rep,name=assumptions,proto3" json:"assumptions,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListDecisionLedgerAuditResponse) Reset() {
+	*x = AdminListDecisionLedgerAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListDecisionLedgerAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListDecisionLedgerAuditResponse) ProtoMessage() {}
+
+func (x *AdminListDecisionLedgerAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListDecisionLedgerAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListDecisionLedgerAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *AdminListDecisionLedgerAuditResponse) GetDecisions() []*OracleDecisionLedgerRecordItem {
+	if x != nil {
+		return x.Decisions
+	}
+	return nil
+}
+
+func (x *AdminListDecisionLedgerAuditResponse) GetAssumptions() []*OracleDecisionAssumptionReviewItem {
+	if x != nil {
+		return x.Assumptions
+	}
+	return nil
+}
+
+type AdminManageDecisionTemplateOrHoldRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId  string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	DecisionCode  string                 `protobuf:"bytes,2,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	DecisionState string                 `protobuf:"bytes,3,opt,name=decision_state,json=decisionState,proto3" json:"decision_state,omitempty"`
+	DissentRecord string                 `protobuf:"bytes,4,opt,name=dissent_record,json=dissentRecord,proto3" json:"dissent_record,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) Reset() {
+	*x = AdminManageDecisionTemplateOrHoldRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageDecisionTemplateOrHoldRequest) ProtoMessage() {}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageDecisionTemplateOrHoldRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageDecisionTemplateOrHoldRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) GetDecisionState() string {
+	if x != nil {
+		return x.DecisionState
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionTemplateOrHoldRequest) GetDissentRecord() string {
+	if x != nil {
+		return x.DissentRecord
+	}
+	return ""
+}
+
+type AdminManageDecisionTemplateOrHoldResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Decision      *OracleDecisionLedgerRecordItem `protobuf:"bytes,1,opt,name=decision,proto3" json:"decision,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageDecisionTemplateOrHoldResponse) Reset() {
+	*x = AdminManageDecisionTemplateOrHoldResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageDecisionTemplateOrHoldResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageDecisionTemplateOrHoldResponse) ProtoMessage() {}
+
+func (x *AdminManageDecisionTemplateOrHoldResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageDecisionTemplateOrHoldResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageDecisionTemplateOrHoldResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{126}
+}
+
+func (x *AdminManageDecisionTemplateOrHoldResponse) GetDecision() *OracleDecisionLedgerRecordItem {
+	if x != nil {
+		return x.Decision
+	}
+	return nil
+}
+
+type OracleCommitmentExecutionItem struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CommitmentCode          string                 `protobuf:"bytes,3,opt,name=commitment_code,json=commitmentCode,proto3" json:"commitment_code,omitempty"`
+	DecisionCode            string                 `protobuf:"bytes,4,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	OwnerHandle             string                 `protobuf:"bytes,5,opt,name=owner_handle,json=ownerHandle,proto3" json:"owner_handle,omitempty"`
+	Title                   string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
+	DependencySummary       string                 `protobuf:"bytes,7,opt,name=dependency_summary,json=dependencySummary,proto3" json:"dependency_summary,omitempty"`
+	CancellationCriteria    string                 `protobuf:"bytes,8,opt,name=cancellation_criteria,json=cancellationCriteria,proto3" json:"cancellation_criteria,omitempty"`
+	CompletionEvidenceRef   string                 `protobuf:"bytes,9,opt,name=completion_evidence_ref,json=completionEvidenceRef,proto3" json:"completion_evidence_ref,omitempty"`
+	ExecutionState          string                 `protobuf:"bytes,10,opt,name=execution_state,json=executionState,proto3" json:"execution_state,omitempty"`
+	NonJudgmentalLoopReview string                 `protobuf:"bytes,11,opt,name=non_judgmental_loop_review,json=nonJudgmentalLoopReview,proto3" json:"non_judgmental_loop_review,omitempty"`
+	UpdatedAtIso            string                 `protobuf:"bytes,12,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *OracleCommitmentExecutionItem) Reset() {
+	*x = OracleCommitmentExecutionItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleCommitmentExecutionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleCommitmentExecutionItem) ProtoMessage() {}
+
+func (x *OracleCommitmentExecutionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleCommitmentExecutionItem.ProtoReflect.Descriptor instead.
+func (*OracleCommitmentExecutionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *OracleCommitmentExecutionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetCommitmentCode() string {
+	if x != nil {
+		return x.CommitmentCode
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetOwnerHandle() string {
+	if x != nil {
+		return x.OwnerHandle
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetDependencySummary() string {
+	if x != nil {
+		return x.DependencySummary
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetCancellationCriteria() string {
+	if x != nil {
+		return x.CancellationCriteria
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetCompletionEvidenceRef() string {
+	if x != nil {
+		return x.CompletionEvidenceRef
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetExecutionState() string {
+	if x != nil {
+		return x.ExecutionState
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetNonJudgmentalLoopReview() string {
+	if x != nil {
+		return x.NonJudgmentalLoopReview
+	}
+	return ""
+}
+
+func (x *OracleCommitmentExecutionItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleExternalSyncDeliveryReceiptItem struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                 string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ReceiptCode            string                 `protobuf:"bytes,3,opt,name=receipt_code,json=receiptCode,proto3" json:"receipt_code,omitempty"`
+	CommitmentCode         string                 `protobuf:"bytes,4,opt,name=commitment_code,json=commitmentCode,proto3" json:"commitment_code,omitempty"`
+	TargetConnector        string                 `protobuf:"bytes,5,opt,name=target_connector,json=targetConnector,proto3" json:"target_connector,omitempty"`
+	PreviewPayloadSummary  string                 `protobuf:"bytes,6,opt,name=preview_payload_summary,json=previewPayloadSummary,proto3" json:"preview_payload_summary,omitempty"`
+	IdempotencyKey         string                 `protobuf:"bytes,7,opt,name=idempotency_key,json=idempotencyKey,proto3" json:"idempotency_key,omitempty"`
+	MemberExplicitApproval bool                   `protobuf:"varint,8,opt,name=member_explicit_approval,json=memberExplicitApproval,proto3" json:"member_explicit_approval,omitempty"`
+	DeliveryState          string                 `protobuf:"bytes,9,opt,name=delivery_state,json=deliveryState,proto3" json:"delivery_state,omitempty"`
+	ReconciliationNote     string                 `protobuf:"bytes,10,opt,name=reconciliation_note,json=reconciliationNote,proto3" json:"reconciliation_note,omitempty"`
+	UpdatedAtIso           string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) Reset() {
+	*x = OracleExternalSyncDeliveryReceiptItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleExternalSyncDeliveryReceiptItem) ProtoMessage() {}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleExternalSyncDeliveryReceiptItem.ProtoReflect.Descriptor instead.
+func (*OracleExternalSyncDeliveryReceiptItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetReceiptCode() string {
+	if x != nil {
+		return x.ReceiptCode
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetCommitmentCode() string {
+	if x != nil {
+		return x.CommitmentCode
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetTargetConnector() string {
+	if x != nil {
+		return x.TargetConnector
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetPreviewPayloadSummary() string {
+	if x != nil {
+		return x.PreviewPayloadSummary
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetIdempotencyKey() string {
+	if x != nil {
+		return x.IdempotencyKey
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetMemberExplicitApproval() bool {
+	if x != nil {
+		return x.MemberExplicitApproval
+	}
+	return false
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetDeliveryState() string {
+	if x != nil {
+		return x.DeliveryState
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetReconciliationNote() string {
+	if x != nil {
+		return x.ReconciliationNote
+	}
+	return ""
+}
+
+func (x *OracleExternalSyncDeliveryReceiptItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetCommitmentsOutcomeWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchRequest) Reset() {
+	*x = GetCommitmentsOutcomeWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommitmentsOutcomeWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetCommitmentsOutcomeWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommitmentsOutcomeWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetCommitmentsOutcomeWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{129}
+}
+
+type GetCommitmentsOutcomeWorkbenchResponse struct {
+	state                      protoimpl.MessageState                   `protogen:"open.v1"`
+	Commitments                []*OracleCommitmentExecutionItem         `protobuf:"bytes,1,rep,name=commitments,proto3" json:"commitments,omitempty"`
+	SyncReceipts               []*OracleExternalSyncDeliveryReceiptItem `protobuf:"bytes,2,rep,name=sync_receipts,json=syncReceipts,proto3" json:"sync_receipts,omitempty"`
+	PreviewAndApprovalRequired bool                                     `protobuf:"varint,3,opt,name=preview_and_approval_required,json=previewAndApprovalRequired,proto3" json:"preview_and_approval_required,omitempty"`
+	LoopClosureBanner          string                                   `protobuf:"bytes,4,opt,name=loop_closure_banner,json=loopClosureBanner,proto3" json:"loop_closure_banner,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) Reset() {
+	*x = GetCommitmentsOutcomeWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommitmentsOutcomeWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommitmentsOutcomeWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetCommitmentsOutcomeWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{130}
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) GetCommitments() []*OracleCommitmentExecutionItem {
+	if x != nil {
+		return x.Commitments
+	}
+	return nil
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) GetSyncReceipts() []*OracleExternalSyncDeliveryReceiptItem {
+	if x != nil {
+		return x.SyncReceipts
+	}
+	return nil
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) GetPreviewAndApprovalRequired() bool {
+	if x != nil {
+		return x.PreviewAndApprovalRequired
+	}
+	return false
+}
+
+func (x *GetCommitmentsOutcomeWorkbenchResponse) GetLoopClosureBanner() string {
+	if x != nil {
+		return x.LoopClosureBanner
+	}
+	return ""
+}
+
+type CreateOrUpdateCommitmentItemRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	CommitmentCode        string                 `protobuf:"bytes,1,opt,name=commitment_code,json=commitmentCode,proto3" json:"commitment_code,omitempty"`
+	DecisionCode          string                 `protobuf:"bytes,2,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	OwnerHandle           string                 `protobuf:"bytes,3,opt,name=owner_handle,json=ownerHandle,proto3" json:"owner_handle,omitempty"`
+	Title                 string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	DependencySummary     string                 `protobuf:"bytes,5,opt,name=dependency_summary,json=dependencySummary,proto3" json:"dependency_summary,omitempty"`
+	CancellationCriteria  string                 `protobuf:"bytes,6,opt,name=cancellation_criteria,json=cancellationCriteria,proto3" json:"cancellation_criteria,omitempty"`
+	CompletionEvidenceRef string                 `protobuf:"bytes,7,opt,name=completion_evidence_ref,json=completionEvidenceRef,proto3" json:"completion_evidence_ref,omitempty"`
+	ExecutionState        string                 `protobuf:"bytes,8,opt,name=execution_state,json=executionState,proto3" json:"execution_state,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) Reset() {
+	*x = CreateOrUpdateCommitmentItemRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrUpdateCommitmentItemRequest) ProtoMessage() {}
+
+func (x *CreateOrUpdateCommitmentItemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrUpdateCommitmentItemRequest.ProtoReflect.Descriptor instead.
+func (*CreateOrUpdateCommitmentItemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetCommitmentCode() string {
+	if x != nil {
+		return x.CommitmentCode
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetOwnerHandle() string {
+	if x != nil {
+		return x.OwnerHandle
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetDependencySummary() string {
+	if x != nil {
+		return x.DependencySummary
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetCancellationCriteria() string {
+	if x != nil {
+		return x.CancellationCriteria
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetCompletionEvidenceRef() string {
+	if x != nil {
+		return x.CompletionEvidenceRef
+	}
+	return ""
+}
+
+func (x *CreateOrUpdateCommitmentItemRequest) GetExecutionState() string {
+	if x != nil {
+		return x.ExecutionState
+	}
+	return ""
+}
+
+type CreateOrUpdateCommitmentItemResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Commitment    *OracleCommitmentExecutionItem `protobuf:"bytes,1,opt,name=commitment,proto3" json:"commitment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrUpdateCommitmentItemResponse) Reset() {
+	*x = CreateOrUpdateCommitmentItemResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrUpdateCommitmentItemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrUpdateCommitmentItemResponse) ProtoMessage() {}
+
+func (x *CreateOrUpdateCommitmentItemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrUpdateCommitmentItemResponse.ProtoReflect.Descriptor instead.
+func (*CreateOrUpdateCommitmentItemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *CreateOrUpdateCommitmentItemResponse) GetCommitment() *OracleCommitmentExecutionItem {
+	if x != nil {
+		return x.Commitment
+	}
+	return nil
+}
+
+type PreviewOrExecuteExternalCommitmentSyncRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	ReceiptCode            string                 `protobuf:"bytes,1,opt,name=receipt_code,json=receiptCode,proto3" json:"receipt_code,omitempty"`
+	CommitmentCode         string                 `protobuf:"bytes,2,opt,name=commitment_code,json=commitmentCode,proto3" json:"commitment_code,omitempty"`
+	TargetConnector        string                 `protobuf:"bytes,3,opt,name=target_connector,json=targetConnector,proto3" json:"target_connector,omitempty"`
+	PreviewPayloadSummary  string                 `protobuf:"bytes,4,opt,name=preview_payload_summary,json=previewPayloadSummary,proto3" json:"preview_payload_summary,omitempty"`
+	IdempotencyKey         string                 `protobuf:"bytes,5,opt,name=idempotency_key,json=idempotencyKey,proto3" json:"idempotency_key,omitempty"`
+	MemberExplicitApproval bool                   `protobuf:"varint,6,opt,name=member_explicit_approval,json=memberExplicitApproval,proto3" json:"member_explicit_approval,omitempty"`
+	DeliveryState          string                 `protobuf:"bytes,7,opt,name=delivery_state,json=deliveryState,proto3" json:"delivery_state,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) Reset() {
+	*x = PreviewOrExecuteExternalCommitmentSyncRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PreviewOrExecuteExternalCommitmentSyncRequest) ProtoMessage() {}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PreviewOrExecuteExternalCommitmentSyncRequest.ProtoReflect.Descriptor instead.
+func (*PreviewOrExecuteExternalCommitmentSyncRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{133}
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetReceiptCode() string {
+	if x != nil {
+		return x.ReceiptCode
+	}
+	return ""
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetCommitmentCode() string {
+	if x != nil {
+		return x.CommitmentCode
+	}
+	return ""
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetTargetConnector() string {
+	if x != nil {
+		return x.TargetConnector
+	}
+	return ""
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetPreviewPayloadSummary() string {
+	if x != nil {
+		return x.PreviewPayloadSummary
+	}
+	return ""
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetIdempotencyKey() string {
+	if x != nil {
+		return x.IdempotencyKey
+	}
+	return ""
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetMemberExplicitApproval() bool {
+	if x != nil {
+		return x.MemberExplicitApproval
+	}
+	return false
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncRequest) GetDeliveryState() string {
+	if x != nil {
+		return x.DeliveryState
+	}
+	return ""
+}
+
+type PreviewOrExecuteExternalCommitmentSyncResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	SyncReceipt   *OracleExternalSyncDeliveryReceiptItem `protobuf:"bytes,1,opt,name=sync_receipt,json=syncReceipt,proto3" json:"sync_receipt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncResponse) Reset() {
+	*x = PreviewOrExecuteExternalCommitmentSyncResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PreviewOrExecuteExternalCommitmentSyncResponse) ProtoMessage() {}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PreviewOrExecuteExternalCommitmentSyncResponse.ProtoReflect.Descriptor instead.
+func (*PreviewOrExecuteExternalCommitmentSyncResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *PreviewOrExecuteExternalCommitmentSyncResponse) GetSyncReceipt() *OracleExternalSyncDeliveryReceiptItem {
+	if x != nil {
+		return x.SyncReceipt
+	}
+	return nil
+}
+
+type AdminListCommitmentsOutcomeAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListCommitmentsOutcomeAuditRequest) Reset() {
+	*x = AdminListCommitmentsOutcomeAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListCommitmentsOutcomeAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListCommitmentsOutcomeAuditRequest) ProtoMessage() {}
+
+func (x *AdminListCommitmentsOutcomeAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListCommitmentsOutcomeAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListCommitmentsOutcomeAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *AdminListCommitmentsOutcomeAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListCommitmentsOutcomeAuditResponse struct {
+	state         protoimpl.MessageState                   `protogen:"open.v1"`
+	Commitments   []*OracleCommitmentExecutionItem         `protobuf:"bytes,1,rep,name=commitments,proto3" json:"commitments,omitempty"`
+	SyncReceipts  []*OracleExternalSyncDeliveryReceiptItem `protobuf:"bytes,2,rep,name=sync_receipts,json=syncReceipts,proto3" json:"sync_receipts,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListCommitmentsOutcomeAuditResponse) Reset() {
+	*x = AdminListCommitmentsOutcomeAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListCommitmentsOutcomeAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListCommitmentsOutcomeAuditResponse) ProtoMessage() {}
+
+func (x *AdminListCommitmentsOutcomeAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListCommitmentsOutcomeAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListCommitmentsOutcomeAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *AdminListCommitmentsOutcomeAuditResponse) GetCommitments() []*OracleCommitmentExecutionItem {
+	if x != nil {
+		return x.Commitments
+	}
+	return nil
+}
+
+func (x *AdminListCommitmentsOutcomeAuditResponse) GetSyncReceipts() []*OracleExternalSyncDeliveryReceiptItem {
+	if x != nil {
+		return x.SyncReceipts
+	}
+	return nil
+}
+
+type AdminReconcileExternalSyncDeliveryRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId       string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	ReceiptCode        string                 `protobuf:"bytes,2,opt,name=receipt_code,json=receiptCode,proto3" json:"receipt_code,omitempty"`
+	DeliveryState      string                 `protobuf:"bytes,3,opt,name=delivery_state,json=deliveryState,proto3" json:"delivery_state,omitempty"`
+	ReconciliationNote string                 `protobuf:"bytes,4,opt,name=reconciliation_note,json=reconciliationNote,proto3" json:"reconciliation_note,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) Reset() {
+	*x = AdminReconcileExternalSyncDeliveryRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminReconcileExternalSyncDeliveryRequest) ProtoMessage() {}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminReconcileExternalSyncDeliveryRequest.ProtoReflect.Descriptor instead.
+func (*AdminReconcileExternalSyncDeliveryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) GetReceiptCode() string {
+	if x != nil {
+		return x.ReceiptCode
+	}
+	return ""
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) GetDeliveryState() string {
+	if x != nil {
+		return x.DeliveryState
+	}
+	return ""
+}
+
+func (x *AdminReconcileExternalSyncDeliveryRequest) GetReconciliationNote() string {
+	if x != nil {
+		return x.ReconciliationNote
+	}
+	return ""
+}
+
+type AdminReconcileExternalSyncDeliveryResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	SyncReceipt   *OracleExternalSyncDeliveryReceiptItem `protobuf:"bytes,1,opt,name=sync_receipt,json=syncReceipt,proto3" json:"sync_receipt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminReconcileExternalSyncDeliveryResponse) Reset() {
+	*x = AdminReconcileExternalSyncDeliveryResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminReconcileExternalSyncDeliveryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminReconcileExternalSyncDeliveryResponse) ProtoMessage() {}
+
+func (x *AdminReconcileExternalSyncDeliveryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminReconcileExternalSyncDeliveryResponse.ProtoReflect.Descriptor instead.
+func (*AdminReconcileExternalSyncDeliveryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *AdminReconcileExternalSyncDeliveryResponse) GetSyncReceipt() *OracleExternalSyncDeliveryReceiptItem {
+	if x != nil {
+		return x.SyncReceipt
+	}
+	return nil
+}
+
+type OracleWatchlistEntityMonitorItem struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId               string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MonitorCode          string                 `protobuf:"bytes,3,opt,name=monitor_code,json=monitorCode,proto3" json:"monitor_code,omitempty"`
+	EntityAndRegion      string                 `protobuf:"bytes,4,opt,name=entity_and_region,json=entityAndRegion,proto3" json:"entity_and_region,omitempty"`
+	MaterialityThreshold string                 `protobuf:"bytes,5,opt,name=materiality_threshold,json=materialityThreshold,proto3" json:"materiality_threshold,omitempty"`
+	DailyAlertBudget     int32                  `protobuf:"varint,6,opt,name=daily_alert_budget,json=dailyAlertBudget,proto3" json:"daily_alert_budget,omitempty"`
+	QuietHoursWindow     string                 `protobuf:"bytes,7,opt,name=quiet_hours_window,json=quietHoursWindow,proto3" json:"quiet_hours_window,omitempty"`
+	SnoozeUntilCondition string                 `protobuf:"bytes,8,opt,name=snooze_until_condition,json=snoozeUntilCondition,proto3" json:"snooze_until_condition,omitempty"`
+	FeedHealthState      string                 `protobuf:"bytes,9,opt,name=feed_health_state,json=feedHealthState,proto3" json:"feed_health_state,omitempty"`
+	UpdatedAtIso         string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *OracleWatchlistEntityMonitorItem) Reset() {
+	*x = OracleWatchlistEntityMonitorItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleWatchlistEntityMonitorItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleWatchlistEntityMonitorItem) ProtoMessage() {}
+
+func (x *OracleWatchlistEntityMonitorItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleWatchlistEntityMonitorItem.ProtoReflect.Descriptor instead.
+func (*OracleWatchlistEntityMonitorItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetMonitorCode() string {
+	if x != nil {
+		return x.MonitorCode
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetEntityAndRegion() string {
+	if x != nil {
+		return x.EntityAndRegion
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetMaterialityThreshold() string {
+	if x != nil {
+		return x.MaterialityThreshold
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetDailyAlertBudget() int32 {
+	if x != nil {
+		return x.DailyAlertBudget
+	}
+	return 0
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetQuietHoursWindow() string {
+	if x != nil {
+		return x.QuietHoursWindow
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetSnoozeUntilCondition() string {
+	if x != nil {
+		return x.SnoozeUntilCondition
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetFeedHealthState() string {
+	if x != nil {
+		return x.FeedHealthState
+	}
+	return ""
+}
+
+func (x *OracleWatchlistEntityMonitorItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleCommandBriefSignalCardItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SignalCode                  string                 `protobuf:"bytes,3,opt,name=signal_code,json=signalCode,proto3" json:"signal_code,omitempty"`
+	MonitorCode                 string                 `protobuf:"bytes,4,opt,name=monitor_code,json=monitorCode,proto3" json:"monitor_code,omitempty"`
+	BriefKind                   string                 `protobuf:"bytes,5,opt,name=brief_kind,json=briefKind,proto3" json:"brief_kind,omitempty"`
+	ObservedFactStatement       string                 `protobuf:"bytes,6,opt,name=observed_fact_statement,json=observedFactStatement,proto3" json:"observed_fact_statement,omitempty"`
+	SeparatedInferenceStatement string                 `protobuf:"bytes,7,opt,name=separated_inference_statement,json=separatedInferenceStatement,proto3" json:"separated_inference_statement,omitempty"`
+	AlternativeInterpretation   string                 `protobuf:"bytes,8,opt,name=alternative_interpretation,json=alternativeInterpretation,proto3" json:"alternative_interpretation,omitempty"`
+	SuggestedNextCheck          string                 `protobuf:"bytes,9,opt,name=suggested_next_check,json=suggestedNextCheck,proto3" json:"suggested_next_check,omitempty"`
+	DraftDispositionState       string                 `protobuf:"bytes,10,opt,name=draft_disposition_state,json=draftDispositionState,proto3" json:"draft_disposition_state,omitempty"`
+	InferenceDisguisedAsFact    bool                   `protobuf:"varint,11,opt,name=inference_disguised_as_fact,json=inferenceDisguisedAsFact,proto3" json:"inference_disguised_as_fact,omitempty"`
+	UpdatedAtIso                string                 `protobuf:"bytes,12,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *OracleCommandBriefSignalCardItem) Reset() {
+	*x = OracleCommandBriefSignalCardItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleCommandBriefSignalCardItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleCommandBriefSignalCardItem) ProtoMessage() {}
+
+func (x *OracleCommandBriefSignalCardItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleCommandBriefSignalCardItem.ProtoReflect.Descriptor instead.
+func (*OracleCommandBriefSignalCardItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{140}
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetSignalCode() string {
+	if x != nil {
+		return x.SignalCode
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetMonitorCode() string {
+	if x != nil {
+		return x.MonitorCode
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetBriefKind() string {
+	if x != nil {
+		return x.BriefKind
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetObservedFactStatement() string {
+	if x != nil {
+		return x.ObservedFactStatement
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetSeparatedInferenceStatement() string {
+	if x != nil {
+		return x.SeparatedInferenceStatement
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetAlternativeInterpretation() string {
+	if x != nil {
+		return x.AlternativeInterpretation
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetSuggestedNextCheck() string {
+	if x != nil {
+		return x.SuggestedNextCheck
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetDraftDispositionState() string {
+	if x != nil {
+		return x.DraftDispositionState
+	}
+	return ""
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetInferenceDisguisedAsFact() bool {
+	if x != nil {
+		return x.InferenceDisguisedAsFact
+	}
+	return false
+}
+
+func (x *OracleCommandBriefSignalCardItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetWatchlistsCommandBriefWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchRequest) Reset() {
+	*x = GetWatchlistsCommandBriefWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWatchlistsCommandBriefWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetWatchlistsCommandBriefWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWatchlistsCommandBriefWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetWatchlistsCommandBriefWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{141}
+}
+
+type GetWatchlistsCommandBriefWorkbenchResponse struct {
+	state                           protoimpl.MessageState              `protogen:"open.v1"`
+	Monitors                        []*OracleWatchlistEntityMonitorItem `protobuf:"bytes,1,rep,name=monitors,proto3" json:"monitors,omitempty"`
+	SignalCards                     []*OracleCommandBriefSignalCardItem `protobuf:"bytes,2,rep,name=signal_cards,json=signalCards,proto3" json:"signal_cards,omitempty"`
+	FactInferenceSeparationEnforced bool                                `protobuf:"varint,3,opt,name=fact_inference_separation_enforced,json=factInferenceSeparationEnforced,proto3" json:"fact_inference_separation_enforced,omitempty"`
+	CommandBriefBanner              string                              `protobuf:"bytes,4,opt,name=command_brief_banner,json=commandBriefBanner,proto3" json:"command_brief_banner,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) Reset() {
+	*x = GetWatchlistsCommandBriefWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWatchlistsCommandBriefWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWatchlistsCommandBriefWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetWatchlistsCommandBriefWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) GetMonitors() []*OracleWatchlistEntityMonitorItem {
+	if x != nil {
+		return x.Monitors
+	}
+	return nil
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) GetSignalCards() []*OracleCommandBriefSignalCardItem {
+	if x != nil {
+		return x.SignalCards
+	}
+	return nil
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) GetFactInferenceSeparationEnforced() bool {
+	if x != nil {
+		return x.FactInferenceSeparationEnforced
+	}
+	return false
+}
+
+func (x *GetWatchlistsCommandBriefWorkbenchResponse) GetCommandBriefBanner() string {
+	if x != nil {
+		return x.CommandBriefBanner
+	}
+	return ""
+}
+
+type UpsertWatchlistEntityMonitorRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	MonitorCode          string                 `protobuf:"bytes,1,opt,name=monitor_code,json=monitorCode,proto3" json:"monitor_code,omitempty"`
+	EntityAndRegion      string                 `protobuf:"bytes,2,opt,name=entity_and_region,json=entityAndRegion,proto3" json:"entity_and_region,omitempty"`
+	MaterialityThreshold string                 `protobuf:"bytes,3,opt,name=materiality_threshold,json=materialityThreshold,proto3" json:"materiality_threshold,omitempty"`
+	DailyAlertBudget     int32                  `protobuf:"varint,4,opt,name=daily_alert_budget,json=dailyAlertBudget,proto3" json:"daily_alert_budget,omitempty"`
+	QuietHoursWindow     string                 `protobuf:"bytes,5,opt,name=quiet_hours_window,json=quietHoursWindow,proto3" json:"quiet_hours_window,omitempty"`
+	SnoozeUntilCondition string                 `protobuf:"bytes,6,opt,name=snooze_until_condition,json=snoozeUntilCondition,proto3" json:"snooze_until_condition,omitempty"`
+	FeedHealthState      string                 `protobuf:"bytes,7,opt,name=feed_health_state,json=feedHealthState,proto3" json:"feed_health_state,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) Reset() {
+	*x = UpsertWatchlistEntityMonitorRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWatchlistEntityMonitorRequest) ProtoMessage() {}
+
+func (x *UpsertWatchlistEntityMonitorRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWatchlistEntityMonitorRequest.ProtoReflect.Descriptor instead.
+func (*UpsertWatchlistEntityMonitorRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetMonitorCode() string {
+	if x != nil {
+		return x.MonitorCode
+	}
+	return ""
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetEntityAndRegion() string {
+	if x != nil {
+		return x.EntityAndRegion
+	}
+	return ""
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetMaterialityThreshold() string {
+	if x != nil {
+		return x.MaterialityThreshold
+	}
+	return ""
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetDailyAlertBudget() int32 {
+	if x != nil {
+		return x.DailyAlertBudget
+	}
+	return 0
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetQuietHoursWindow() string {
+	if x != nil {
+		return x.QuietHoursWindow
+	}
+	return ""
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetSnoozeUntilCondition() string {
+	if x != nil {
+		return x.SnoozeUntilCondition
+	}
+	return ""
+}
+
+func (x *UpsertWatchlistEntityMonitorRequest) GetFeedHealthState() string {
+	if x != nil {
+		return x.FeedHealthState
+	}
+	return ""
+}
+
+type UpsertWatchlistEntityMonitorResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Monitor       *OracleWatchlistEntityMonitorItem `protobuf:"bytes,1,opt,name=monitor,proto3" json:"monitor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertWatchlistEntityMonitorResponse) Reset() {
+	*x = UpsertWatchlistEntityMonitorResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWatchlistEntityMonitorResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWatchlistEntityMonitorResponse) ProtoMessage() {}
+
+func (x *UpsertWatchlistEntityMonitorResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWatchlistEntityMonitorResponse.ProtoReflect.Descriptor instead.
+func (*UpsertWatchlistEntityMonitorResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *UpsertWatchlistEntityMonitorResponse) GetMonitor() *OracleWatchlistEntityMonitorItem {
+	if x != nil {
+		return x.Monitor
+	}
+	return nil
+}
+
+type ApproveOrSnoozeCommandBriefSignalRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	SignalCode                  string                 `protobuf:"bytes,1,opt,name=signal_code,json=signalCode,proto3" json:"signal_code,omitempty"`
+	MonitorCode                 string                 `protobuf:"bytes,2,opt,name=monitor_code,json=monitorCode,proto3" json:"monitor_code,omitempty"`
+	BriefKind                   string                 `protobuf:"bytes,3,opt,name=brief_kind,json=briefKind,proto3" json:"brief_kind,omitempty"`
+	ObservedFactStatement       string                 `protobuf:"bytes,4,opt,name=observed_fact_statement,json=observedFactStatement,proto3" json:"observed_fact_statement,omitempty"`
+	SeparatedInferenceStatement string                 `protobuf:"bytes,5,opt,name=separated_inference_statement,json=separatedInferenceStatement,proto3" json:"separated_inference_statement,omitempty"`
+	AlternativeInterpretation   string                 `protobuf:"bytes,6,opt,name=alternative_interpretation,json=alternativeInterpretation,proto3" json:"alternative_interpretation,omitempty"`
+	SuggestedNextCheck          string                 `protobuf:"bytes,7,opt,name=suggested_next_check,json=suggestedNextCheck,proto3" json:"suggested_next_check,omitempty"`
+	DraftDispositionState       string                 `protobuf:"bytes,8,opt,name=draft_disposition_state,json=draftDispositionState,proto3" json:"draft_disposition_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) Reset() {
+	*x = ApproveOrSnoozeCommandBriefSignalRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrSnoozeCommandBriefSignalRequest) ProtoMessage() {}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrSnoozeCommandBriefSignalRequest.ProtoReflect.Descriptor instead.
+func (*ApproveOrSnoozeCommandBriefSignalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetSignalCode() string {
+	if x != nil {
+		return x.SignalCode
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetMonitorCode() string {
+	if x != nil {
+		return x.MonitorCode
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetBriefKind() string {
+	if x != nil {
+		return x.BriefKind
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetObservedFactStatement() string {
+	if x != nil {
+		return x.ObservedFactStatement
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetSeparatedInferenceStatement() string {
+	if x != nil {
+		return x.SeparatedInferenceStatement
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetAlternativeInterpretation() string {
+	if x != nil {
+		return x.AlternativeInterpretation
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetSuggestedNextCheck() string {
+	if x != nil {
+		return x.SuggestedNextCheck
+	}
+	return ""
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalRequest) GetDraftDispositionState() string {
+	if x != nil {
+		return x.DraftDispositionState
+	}
+	return ""
+}
+
+type ApproveOrSnoozeCommandBriefSignalResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	SignalCard    *OracleCommandBriefSignalCardItem `protobuf:"bytes,1,opt,name=signal_card,json=signalCard,proto3" json:"signal_card,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalResponse) Reset() {
+	*x = ApproveOrSnoozeCommandBriefSignalResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveOrSnoozeCommandBriefSignalResponse) ProtoMessage() {}
+
+func (x *ApproveOrSnoozeCommandBriefSignalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveOrSnoozeCommandBriefSignalResponse.ProtoReflect.Descriptor instead.
+func (*ApproveOrSnoozeCommandBriefSignalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *ApproveOrSnoozeCommandBriefSignalResponse) GetSignalCard() *OracleCommandBriefSignalCardItem {
+	if x != nil {
+		return x.SignalCard
+	}
+	return nil
+}
+
+type AdminListWatchlistsCommandBriefAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditRequest) Reset() {
+	*x = AdminListWatchlistsCommandBriefAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListWatchlistsCommandBriefAuditRequest) ProtoMessage() {}
+
+func (x *AdminListWatchlistsCommandBriefAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListWatchlistsCommandBriefAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListWatchlistsCommandBriefAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{147}
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListWatchlistsCommandBriefAuditResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Monitors      []*OracleWatchlistEntityMonitorItem `protobuf:"bytes,1,rep,name=monitors,proto3" json:"monitors,omitempty"`
+	SignalCards   []*OracleCommandBriefSignalCardItem `protobuf:"bytes,2,rep,name=signal_cards,json=signalCards,proto3" json:"signal_cards,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditResponse) Reset() {
+	*x = AdminListWatchlistsCommandBriefAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListWatchlistsCommandBriefAuditResponse) ProtoMessage() {}
+
+func (x *AdminListWatchlistsCommandBriefAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListWatchlistsCommandBriefAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListWatchlistsCommandBriefAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditResponse) GetMonitors() []*OracleWatchlistEntityMonitorItem {
+	if x != nil {
+		return x.Monitors
+	}
+	return nil
+}
+
+func (x *AdminListWatchlistsCommandBriefAuditResponse) GetSignalCards() []*OracleCommandBriefSignalCardItem {
+	if x != nil {
+		return x.SignalCards
+	}
+	return nil
+}
+
+type AdminManageWatchlistAlertBudgetOrFeedRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId     string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	MonitorCode      string                 `protobuf:"bytes,2,opt,name=monitor_code,json=monitorCode,proto3" json:"monitor_code,omitempty"`
+	DailyAlertBudget int32                  `protobuf:"varint,3,opt,name=daily_alert_budget,json=dailyAlertBudget,proto3" json:"daily_alert_budget,omitempty"`
+	FeedHealthState  string                 `protobuf:"bytes,4,opt,name=feed_health_state,json=feedHealthState,proto3" json:"feed_health_state,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) Reset() {
+	*x = AdminManageWatchlistAlertBudgetOrFeedRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageWatchlistAlertBudgetOrFeedRequest) ProtoMessage() {}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageWatchlistAlertBudgetOrFeedRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageWatchlistAlertBudgetOrFeedRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) GetMonitorCode() string {
+	if x != nil {
+		return x.MonitorCode
+	}
+	return ""
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) GetDailyAlertBudget() int32 {
+	if x != nil {
+		return x.DailyAlertBudget
+	}
+	return 0
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedRequest) GetFeedHealthState() string {
+	if x != nil {
+		return x.FeedHealthState
+	}
+	return ""
+}
+
+type AdminManageWatchlistAlertBudgetOrFeedResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Monitor       *OracleWatchlistEntityMonitorItem `protobuf:"bytes,1,opt,name=monitor,proto3" json:"monitor,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedResponse) Reset() {
+	*x = AdminManageWatchlistAlertBudgetOrFeedResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageWatchlistAlertBudgetOrFeedResponse) ProtoMessage() {}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageWatchlistAlertBudgetOrFeedResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageWatchlistAlertBudgetOrFeedResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *AdminManageWatchlistAlertBudgetOrFeedResponse) GetMonitor() *OracleWatchlistEntityMonitorItem {
+	if x != nil {
+		return x.Monitor
+	}
+	return nil
+}
+
+type OracleAssumptionDriftAlertItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DriftCode                     string                 `protobuf:"bytes,3,opt,name=drift_code,json=driftCode,proto3" json:"drift_code,omitempty"`
+	DecisionCode                  string                 `protobuf:"bytes,4,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	AssumptionCode                string                 `protobuf:"bytes,5,opt,name=assumption_code,json=assumptionCode,proto3" json:"assumption_code,omitempty"`
+	OldAssumptionStatement        string                 `protobuf:"bytes,6,opt,name=old_assumption_statement,json=oldAssumptionStatement,proto3" json:"old_assumption_statement,omitempty"`
+	NewEvidencePassage            string                 `protobuf:"bytes,7,opt,name=new_evidence_passage,json=newEvidencePassage,proto3" json:"new_evidence_passage,omitempty"`
+	MaterialityBand               string                 `protobuf:"bytes,8,opt,name=materiality_band,json=materialityBand,proto3" json:"materiality_band,omitempty"`
+	AlternativeExplanation        string                 `protobuf:"bytes,9,opt,name=alternative_explanation,json=alternativeExplanation,proto3" json:"alternative_explanation,omitempty"`
+	MemberDisposition             string                 `protobuf:"bytes,10,opt,name=member_disposition,json=memberDisposition,proto3" json:"member_disposition,omitempty"`
+	ImmutablePredecessorPreserved bool                   `protobuf:"varint,11,opt,name=immutable_predecessor_preserved,json=immutablePredecessorPreserved,proto3" json:"immutable_predecessor_preserved,omitempty"`
+	UpdatedAtIso                  string                 `protobuf:"bytes,12,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *OracleAssumptionDriftAlertItem) Reset() {
+	*x = OracleAssumptionDriftAlertItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleAssumptionDriftAlertItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleAssumptionDriftAlertItem) ProtoMessage() {}
+
+func (x *OracleAssumptionDriftAlertItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleAssumptionDriftAlertItem.ProtoReflect.Descriptor instead.
+func (*OracleAssumptionDriftAlertItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetDriftCode() string {
+	if x != nil {
+		return x.DriftCode
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetAssumptionCode() string {
+	if x != nil {
+		return x.AssumptionCode
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetOldAssumptionStatement() string {
+	if x != nil {
+		return x.OldAssumptionStatement
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetNewEvidencePassage() string {
+	if x != nil {
+		return x.NewEvidencePassage
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetMaterialityBand() string {
+	if x != nil {
+		return x.MaterialityBand
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetAlternativeExplanation() string {
+	if x != nil {
+		return x.AlternativeExplanation
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetMemberDisposition() string {
+	if x != nil {
+		return x.MemberDisposition
+	}
+	return ""
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetImmutablePredecessorPreserved() bool {
+	if x != nil {
+		return x.ImmutablePredecessorPreserved
+	}
+	return false
+}
+
+func (x *OracleAssumptionDriftAlertItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleDriftRadarPolicyItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PolicyCode                   string                 `protobuf:"bytes,3,opt,name=policy_code,json=policyCode,proto3" json:"policy_code,omitempty"`
+	MonitoredDomain              string                 `protobuf:"bytes,4,opt,name=monitored_domain,json=monitoredDomain,proto3" json:"monitored_domain,omitempty"`
+	CooldownHours                int32                  `protobuf:"varint,5,opt,name=cooldown_hours,json=cooldownHours,proto3" json:"cooldown_hours,omitempty"`
+	NotifyOnlyIfActionPossible   bool                   `protobuf:"varint,6,opt,name=notify_only_if_action_possible,json=notifyOnlyIfActionPossible,proto3" json:"notify_only_if_action_possible,omitempty"`
+	RadarState                   string                 `protobuf:"bytes,7,opt,name=radar_state,json=radarState,proto3" json:"radar_state,omitempty"`
+	FalsePositiveSuppressionNote string                 `protobuf:"bytes,8,opt,name=false_positive_suppression_note,json=falsePositiveSuppressionNote,proto3" json:"false_positive_suppression_note,omitempty"`
+	UpdatedAtIso                 string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *OracleDriftRadarPolicyItem) Reset() {
+	*x = OracleDriftRadarPolicyItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleDriftRadarPolicyItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleDriftRadarPolicyItem) ProtoMessage() {}
+
+func (x *OracleDriftRadarPolicyItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleDriftRadarPolicyItem.ProtoReflect.Descriptor instead.
+func (*OracleDriftRadarPolicyItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *OracleDriftRadarPolicyItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetPolicyCode() string {
+	if x != nil {
+		return x.PolicyCode
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetMonitoredDomain() string {
+	if x != nil {
+		return x.MonitoredDomain
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetCooldownHours() int32 {
+	if x != nil {
+		return x.CooldownHours
+	}
+	return 0
+}
+
+func (x *OracleDriftRadarPolicyItem) GetNotifyOnlyIfActionPossible() bool {
+	if x != nil {
+		return x.NotifyOnlyIfActionPossible
+	}
+	return false
+}
+
+func (x *OracleDriftRadarPolicyItem) GetRadarState() string {
+	if x != nil {
+		return x.RadarState
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetFalsePositiveSuppressionNote() string {
+	if x != nil {
+		return x.FalsePositiveSuppressionNote
+	}
+	return ""
+}
+
+func (x *OracleDriftRadarPolicyItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetAssumptionDriftRadarWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchRequest) Reset() {
+	*x = GetAssumptionDriftRadarWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAssumptionDriftRadarWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetAssumptionDriftRadarWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAssumptionDriftRadarWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetAssumptionDriftRadarWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{153}
+}
+
+type GetAssumptionDriftRadarWorkbenchResponse struct {
+	state                     protoimpl.MessageState            `protogen:"open.v1"`
+	DriftAlerts               []*OracleAssumptionDriftAlertItem `protobuf:"bytes,1,rep,name=drift_alerts,json=driftAlerts,proto3" json:"drift_alerts,omitempty"`
+	Policies                  []*OracleDriftRadarPolicyItem     `protobuf:"bytes,2,rep,name=policies,proto3" json:"policies,omitempty"`
+	ImmutableHistoryPreserved bool                              `protobuf:"varint,3,opt,name=immutable_history_preserved,json=immutableHistoryPreserved,proto3" json:"immutable_history_preserved,omitempty"`
+	DriftRadarBanner          string                            `protobuf:"bytes,4,opt,name=drift_radar_banner,json=driftRadarBanner,proto3" json:"drift_radar_banner,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) Reset() {
+	*x = GetAssumptionDriftRadarWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAssumptionDriftRadarWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAssumptionDriftRadarWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetAssumptionDriftRadarWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{154}
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) GetDriftAlerts() []*OracleAssumptionDriftAlertItem {
+	if x != nil {
+		return x.DriftAlerts
+	}
+	return nil
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) GetPolicies() []*OracleDriftRadarPolicyItem {
+	if x != nil {
+		return x.Policies
+	}
+	return nil
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) GetImmutableHistoryPreserved() bool {
+	if x != nil {
+		return x.ImmutableHistoryPreserved
+	}
+	return false
+}
+
+func (x *GetAssumptionDriftRadarWorkbenchResponse) GetDriftRadarBanner() string {
+	if x != nil {
+		return x.DriftRadarBanner
+	}
+	return ""
+}
+
+type RespondToAssumptionDriftAlertRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	DriftCode              string                 `protobuf:"bytes,1,opt,name=drift_code,json=driftCode,proto3" json:"drift_code,omitempty"`
+	DecisionCode           string                 `protobuf:"bytes,2,opt,name=decision_code,json=decisionCode,proto3" json:"decision_code,omitempty"`
+	AssumptionCode         string                 `protobuf:"bytes,3,opt,name=assumption_code,json=assumptionCode,proto3" json:"assumption_code,omitempty"`
+	OldAssumptionStatement string                 `protobuf:"bytes,4,opt,name=old_assumption_statement,json=oldAssumptionStatement,proto3" json:"old_assumption_statement,omitempty"`
+	NewEvidencePassage     string                 `protobuf:"bytes,5,opt,name=new_evidence_passage,json=newEvidencePassage,proto3" json:"new_evidence_passage,omitempty"`
+	MaterialityBand        string                 `protobuf:"bytes,6,opt,name=materiality_band,json=materialityBand,proto3" json:"materiality_band,omitempty"`
+	AlternativeExplanation string                 `protobuf:"bytes,7,opt,name=alternative_explanation,json=alternativeExplanation,proto3" json:"alternative_explanation,omitempty"`
+	MemberDisposition      string                 `protobuf:"bytes,8,opt,name=member_disposition,json=memberDisposition,proto3" json:"member_disposition,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) Reset() {
+	*x = RespondToAssumptionDriftAlertRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondToAssumptionDriftAlertRequest) ProtoMessage() {}
+
+func (x *RespondToAssumptionDriftAlertRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondToAssumptionDriftAlertRequest.ProtoReflect.Descriptor instead.
+func (*RespondToAssumptionDriftAlertRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetDriftCode() string {
+	if x != nil {
+		return x.DriftCode
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetDecisionCode() string {
+	if x != nil {
+		return x.DecisionCode
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetAssumptionCode() string {
+	if x != nil {
+		return x.AssumptionCode
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetOldAssumptionStatement() string {
+	if x != nil {
+		return x.OldAssumptionStatement
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetNewEvidencePassage() string {
+	if x != nil {
+		return x.NewEvidencePassage
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetMaterialityBand() string {
+	if x != nil {
+		return x.MaterialityBand
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetAlternativeExplanation() string {
+	if x != nil {
+		return x.AlternativeExplanation
+	}
+	return ""
+}
+
+func (x *RespondToAssumptionDriftAlertRequest) GetMemberDisposition() string {
+	if x != nil {
+		return x.MemberDisposition
+	}
+	return ""
+}
+
+type RespondToAssumptionDriftAlertResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	DriftAlert    *OracleAssumptionDriftAlertItem `protobuf:"bytes,1,opt,name=drift_alert,json=driftAlert,proto3" json:"drift_alert,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RespondToAssumptionDriftAlertResponse) Reset() {
+	*x = RespondToAssumptionDriftAlertResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondToAssumptionDriftAlertResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondToAssumptionDriftAlertResponse) ProtoMessage() {}
+
+func (x *RespondToAssumptionDriftAlertResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondToAssumptionDriftAlertResponse.ProtoReflect.Descriptor instead.
+func (*RespondToAssumptionDriftAlertResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *RespondToAssumptionDriftAlertResponse) GetDriftAlert() *OracleAssumptionDriftAlertItem {
+	if x != nil {
+		return x.DriftAlert
+	}
+	return nil
+}
+
+type UpdateDriftRadarPolicyRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	PolicyCode                   string                 `protobuf:"bytes,1,opt,name=policy_code,json=policyCode,proto3" json:"policy_code,omitempty"`
+	MonitoredDomain              string                 `protobuf:"bytes,2,opt,name=monitored_domain,json=monitoredDomain,proto3" json:"monitored_domain,omitempty"`
+	CooldownHours                int32                  `protobuf:"varint,3,opt,name=cooldown_hours,json=cooldownHours,proto3" json:"cooldown_hours,omitempty"`
+	NotifyOnlyIfActionPossible   bool                   `protobuf:"varint,4,opt,name=notify_only_if_action_possible,json=notifyOnlyIfActionPossible,proto3" json:"notify_only_if_action_possible,omitempty"`
+	RadarState                   string                 `protobuf:"bytes,5,opt,name=radar_state,json=radarState,proto3" json:"radar_state,omitempty"`
+	FalsePositiveSuppressionNote string                 `protobuf:"bytes,6,opt,name=false_positive_suppression_note,json=falsePositiveSuppressionNote,proto3" json:"false_positive_suppression_note,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *UpdateDriftRadarPolicyRequest) Reset() {
+	*x = UpdateDriftRadarPolicyRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateDriftRadarPolicyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateDriftRadarPolicyRequest) ProtoMessage() {}
+
+func (x *UpdateDriftRadarPolicyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateDriftRadarPolicyRequest.ProtoReflect.Descriptor instead.
+func (*UpdateDriftRadarPolicyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetPolicyCode() string {
+	if x != nil {
+		return x.PolicyCode
+	}
+	return ""
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetMonitoredDomain() string {
+	if x != nil {
+		return x.MonitoredDomain
+	}
+	return ""
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetCooldownHours() int32 {
+	if x != nil {
+		return x.CooldownHours
+	}
+	return 0
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetNotifyOnlyIfActionPossible() bool {
+	if x != nil {
+		return x.NotifyOnlyIfActionPossible
+	}
+	return false
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetRadarState() string {
+	if x != nil {
+		return x.RadarState
+	}
+	return ""
+}
+
+func (x *UpdateDriftRadarPolicyRequest) GetFalsePositiveSuppressionNote() string {
+	if x != nil {
+		return x.FalsePositiveSuppressionNote
+	}
+	return ""
+}
+
+type UpdateDriftRadarPolicyResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Policy        *OracleDriftRadarPolicyItem `protobuf:"bytes,1,opt,name=policy,proto3" json:"policy,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateDriftRadarPolicyResponse) Reset() {
+	*x = UpdateDriftRadarPolicyResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateDriftRadarPolicyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateDriftRadarPolicyResponse) ProtoMessage() {}
+
+func (x *UpdateDriftRadarPolicyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateDriftRadarPolicyResponse.ProtoReflect.Descriptor instead.
+func (*UpdateDriftRadarPolicyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{158}
+}
+
+func (x *UpdateDriftRadarPolicyResponse) GetPolicy() *OracleDriftRadarPolicyItem {
+	if x != nil {
+		return x.Policy
+	}
+	return nil
+}
+
+type AdminListAssumptionDriftRadarAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListAssumptionDriftRadarAuditRequest) Reset() {
+	*x = AdminListAssumptionDriftRadarAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListAssumptionDriftRadarAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListAssumptionDriftRadarAuditRequest) ProtoMessage() {}
+
+func (x *AdminListAssumptionDriftRadarAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListAssumptionDriftRadarAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListAssumptionDriftRadarAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *AdminListAssumptionDriftRadarAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListAssumptionDriftRadarAuditResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	DriftAlerts   []*OracleAssumptionDriftAlertItem `protobuf:"bytes,1,rep,name=drift_alerts,json=driftAlerts,proto3" json:"drift_alerts,omitempty"`
+	Policies      []*OracleDriftRadarPolicyItem     `protobuf:"bytes,2,rep,name=policies,proto3" json:"policies,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListAssumptionDriftRadarAuditResponse) Reset() {
+	*x = AdminListAssumptionDriftRadarAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListAssumptionDriftRadarAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListAssumptionDriftRadarAuditResponse) ProtoMessage() {}
+
+func (x *AdminListAssumptionDriftRadarAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListAssumptionDriftRadarAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListAssumptionDriftRadarAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *AdminListAssumptionDriftRadarAuditResponse) GetDriftAlerts() []*OracleAssumptionDriftAlertItem {
+	if x != nil {
+		return x.DriftAlerts
+	}
+	return nil
+}
+
+func (x *AdminListAssumptionDriftRadarAuditResponse) GetPolicies() []*OracleDriftRadarPolicyItem {
+	if x != nil {
+		return x.Policies
+	}
+	return nil
+}
+
+type AdminCalibrateDriftThresholdOrDomainRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId  string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	PolicyCode    string                 `protobuf:"bytes,2,opt,name=policy_code,json=policyCode,proto3" json:"policy_code,omitempty"`
+	CooldownHours int32                  `protobuf:"varint,3,opt,name=cooldown_hours,json=cooldownHours,proto3" json:"cooldown_hours,omitempty"`
+	RadarState    string                 `protobuf:"bytes,4,opt,name=radar_state,json=radarState,proto3" json:"radar_state,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) Reset() {
+	*x = AdminCalibrateDriftThresholdOrDomainRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCalibrateDriftThresholdOrDomainRequest) ProtoMessage() {}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCalibrateDriftThresholdOrDomainRequest.ProtoReflect.Descriptor instead.
+func (*AdminCalibrateDriftThresholdOrDomainRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{161}
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) GetPolicyCode() string {
+	if x != nil {
+		return x.PolicyCode
+	}
+	return ""
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) GetCooldownHours() int32 {
+	if x != nil {
+		return x.CooldownHours
+	}
+	return 0
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainRequest) GetRadarState() string {
+	if x != nil {
+		return x.RadarState
+	}
+	return ""
+}
+
+type AdminCalibrateDriftThresholdOrDomainResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Policy        *OracleDriftRadarPolicyItem `protobuf:"bytes,1,opt,name=policy,proto3" json:"policy,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainResponse) Reset() {
+	*x = AdminCalibrateDriftThresholdOrDomainResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCalibrateDriftThresholdOrDomainResponse) ProtoMessage() {}
+
+func (x *AdminCalibrateDriftThresholdOrDomainResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCalibrateDriftThresholdOrDomainResponse.ProtoReflect.Descriptor instead.
+func (*AdminCalibrateDriftThresholdOrDomainResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *AdminCalibrateDriftThresholdOrDomainResponse) GetPolicy() *OracleDriftRadarPolicyItem {
+	if x != nil {
+		return x.Policy
+	}
+	return nil
+}
+
+type OracleForecastQuestionItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ForecastCode                string                 `protobuf:"bytes,3,opt,name=forecast_code,json=forecastCode,proto3" json:"forecast_code,omitempty"`
+	QuestionStatement           string                 `protobuf:"bytes,4,opt,name=question_statement,json=questionStatement,proto3" json:"question_statement,omitempty"`
+	ResolutionCriteriaAndSource string                 `protobuf:"bytes,5,opt,name=resolution_criteria_and_source,json=resolutionCriteriaAndSource,proto3" json:"resolution_criteria_and_source,omitempty"`
+	ProbabilityBps              int32                  `protobuf:"varint,6,opt,name=probability_bps,json=probabilityBps,proto3" json:"probability_bps,omitempty"`
+	ConfidenceBandBps           int32                  `protobuf:"varint,7,opt,name=confidence_band_bps,json=confidenceBandBps,proto3" json:"confidence_band_bps,omitempty"`
+	BaseRateAnchor              string                 `protobuf:"bytes,8,opt,name=base_rate_anchor,json=baseRateAnchor,proto3" json:"base_rate_anchor,omitempty"`
+	ScenarioStressBranches      string                 `protobuf:"bytes,9,opt,name=scenario_stress_branches,json=scenarioStressBranches,proto3" json:"scenario_stress_branches,omitempty"`
+	ResolutionState             string                 `protobuf:"bytes,10,opt,name=resolution_state,json=resolutionState,proto3" json:"resolution_state,omitempty"`
+	BrierScoreMilli             int32                  `protobuf:"varint,11,opt,name=brier_score_milli,json=brierScoreMilli,proto3" json:"brier_score_milli,omitempty"`
+	IsolatedSandboxVerified     bool                   `protobuf:"varint,12,opt,name=isolated_sandbox_verified,json=isolatedSandboxVerified,proto3" json:"isolated_sandbox_verified,omitempty"`
+	UpdatedAtIso                string                 `protobuf:"bytes,13,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *OracleForecastQuestionItem) Reset() {
+	*x = OracleForecastQuestionItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleForecastQuestionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleForecastQuestionItem) ProtoMessage() {}
+
+func (x *OracleForecastQuestionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleForecastQuestionItem.ProtoReflect.Descriptor instead.
+func (*OracleForecastQuestionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *OracleForecastQuestionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetForecastCode() string {
+	if x != nil {
+		return x.ForecastCode
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetQuestionStatement() string {
+	if x != nil {
+		return x.QuestionStatement
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetResolutionCriteriaAndSource() string {
+	if x != nil {
+		return x.ResolutionCriteriaAndSource
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetProbabilityBps() int32 {
+	if x != nil {
+		return x.ProbabilityBps
+	}
+	return 0
+}
+
+func (x *OracleForecastQuestionItem) GetConfidenceBandBps() int32 {
+	if x != nil {
+		return x.ConfidenceBandBps
+	}
+	return 0
+}
+
+func (x *OracleForecastQuestionItem) GetBaseRateAnchor() string {
+	if x != nil {
+		return x.BaseRateAnchor
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetScenarioStressBranches() string {
+	if x != nil {
+		return x.ScenarioStressBranches
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetResolutionState() string {
+	if x != nil {
+		return x.ResolutionState
+	}
+	return ""
+}
+
+func (x *OracleForecastQuestionItem) GetBrierScoreMilli() int32 {
+	if x != nil {
+		return x.BrierScoreMilli
+	}
+	return 0
+}
+
+func (x *OracleForecastQuestionItem) GetIsolatedSandboxVerified() bool {
+	if x != nil {
+		return x.IsolatedSandboxVerified
+	}
+	return false
+}
+
+func (x *OracleForecastQuestionItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleCalibrationLabExperimentItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExperimentCode                string                 `protobuf:"bytes,3,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	DomainAndHorizon              string                 `protobuf:"bytes,4,opt,name=domain_and_horizon,json=domainAndHorizon,proto3" json:"domain_and_horizon,omitempty"`
+	SampleSizeCount               int32                  `protobuf:"varint,5,opt,name=sample_size_count,json=sampleSizeCount,proto3" json:"sample_size_count,omitempty"`
+	OmissionPatternTracked        string                 `protobuf:"bytes,6,opt,name=omission_pattern_tracked,json=omissionPatternTracked,proto3" json:"omission_pattern_tracked,omitempty"`
+	PracticeExperimentRule        string                 `protobuf:"bytes,7,opt,name=practice_experiment_rule,json=practiceExperimentRule,proto3" json:"practice_experiment_rule,omitempty"`
+	PredeclaredBaselineBrierMilli int32                  `protobuf:"varint,8,opt,name=predeclared_baseline_brier_milli,json=predeclaredBaselineBrierMilli,proto3" json:"predeclared_baseline_brier_milli,omitempty"`
+	ObservedBrierMilli            int32                  `protobuf:"varint,9,opt,name=observed_brier_milli,json=observedBrierMilli,proto3" json:"observed_brier_milli,omitempty"`
+	PrivateByDefault              bool                   `protobuf:"varint,10,opt,name=private_by_default,json=privateByDefault,proto3" json:"private_by_default,omitempty"`
+	LabStatus                     string                 `protobuf:"bytes,11,opt,name=lab_status,json=labStatus,proto3" json:"lab_status,omitempty"`
+	UpdatedAtIso                  string                 `protobuf:"bytes,12,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *OracleCalibrationLabExperimentItem) Reset() {
+	*x = OracleCalibrationLabExperimentItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleCalibrationLabExperimentItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleCalibrationLabExperimentItem) ProtoMessage() {}
+
+func (x *OracleCalibrationLabExperimentItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleCalibrationLabExperimentItem.ProtoReflect.Descriptor instead.
+func (*OracleCalibrationLabExperimentItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetDomainAndHorizon() string {
+	if x != nil {
+		return x.DomainAndHorizon
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetSampleSizeCount() int32 {
+	if x != nil {
+		return x.SampleSizeCount
+	}
+	return 0
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetOmissionPatternTracked() string {
+	if x != nil {
+		return x.OmissionPatternTracked
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetPracticeExperimentRule() string {
+	if x != nil {
+		return x.PracticeExperimentRule
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetPredeclaredBaselineBrierMilli() int32 {
+	if x != nil {
+		return x.PredeclaredBaselineBrierMilli
+	}
+	return 0
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetObservedBrierMilli() int32 {
+	if x != nil {
+		return x.ObservedBrierMilli
+	}
+	return 0
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetPrivateByDefault() bool {
+	if x != nil {
+		return x.PrivateByDefault
+	}
+	return false
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetLabStatus() string {
+	if x != nil {
+		return x.LabStatus
+	}
+	return ""
+}
+
+func (x *OracleCalibrationLabExperimentItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetForecastingCalibrationWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetForecastingCalibrationWorkbenchRequest) Reset() {
+	*x = GetForecastingCalibrationWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetForecastingCalibrationWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetForecastingCalibrationWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetForecastingCalibrationWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetForecastingCalibrationWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetForecastingCalibrationWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{165}
+}
+
+type GetForecastingCalibrationWorkbenchResponse struct {
+	state                            protoimpl.MessageState                `protogen:"open.v1"`
+	Forecasts                        []*OracleForecastQuestionItem         `protobuf:"bytes,1,rep,name=forecasts,proto3" json:"forecasts,omitempty"`
+	Experiments                      []*OracleCalibrationLabExperimentItem `protobuf:"bytes,2,rep,name=experiments,proto3" json:"experiments,omitempty"`
+	PrivateEpistemicLearningEnforced bool                                  `protobuf:"varint,3,opt,name=private_epistemic_learning_enforced,json=privateEpistemicLearningEnforced,proto3" json:"private_epistemic_learning_enforced,omitempty"`
+	CalibrationBanner                string                                `protobuf:"bytes,4,opt,name=calibration_banner,json=calibrationBanner,proto3" json:"calibration_banner,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) Reset() {
+	*x = GetForecastingCalibrationWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetForecastingCalibrationWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetForecastingCalibrationWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetForecastingCalibrationWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) GetForecasts() []*OracleForecastQuestionItem {
+	if x != nil {
+		return x.Forecasts
+	}
+	return nil
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) GetExperiments() []*OracleCalibrationLabExperimentItem {
+	if x != nil {
+		return x.Experiments
+	}
+	return nil
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) GetPrivateEpistemicLearningEnforced() bool {
+	if x != nil {
+		return x.PrivateEpistemicLearningEnforced
+	}
+	return false
+}
+
+func (x *GetForecastingCalibrationWorkbenchResponse) GetCalibrationBanner() string {
+	if x != nil {
+		return x.CalibrationBanner
+	}
+	return ""
+}
+
+type CreateOrResolveForecastQuestionRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	ForecastCode                string                 `protobuf:"bytes,1,opt,name=forecast_code,json=forecastCode,proto3" json:"forecast_code,omitempty"`
+	QuestionStatement           string                 `protobuf:"bytes,2,opt,name=question_statement,json=questionStatement,proto3" json:"question_statement,omitempty"`
+	ResolutionCriteriaAndSource string                 `protobuf:"bytes,3,opt,name=resolution_criteria_and_source,json=resolutionCriteriaAndSource,proto3" json:"resolution_criteria_and_source,omitempty"`
+	ProbabilityBps              int32                  `protobuf:"varint,4,opt,name=probability_bps,json=probabilityBps,proto3" json:"probability_bps,omitempty"`
+	ConfidenceBandBps           int32                  `protobuf:"varint,5,opt,name=confidence_band_bps,json=confidenceBandBps,proto3" json:"confidence_band_bps,omitempty"`
+	BaseRateAnchor              string                 `protobuf:"bytes,6,opt,name=base_rate_anchor,json=baseRateAnchor,proto3" json:"base_rate_anchor,omitempty"`
+	ScenarioStressBranches      string                 `protobuf:"bytes,7,opt,name=scenario_stress_branches,json=scenarioStressBranches,proto3" json:"scenario_stress_branches,omitempty"`
+	ResolutionState             string                 `protobuf:"bytes,8,opt,name=resolution_state,json=resolutionState,proto3" json:"resolution_state,omitempty"`
+	BrierScoreMilli             int32                  `protobuf:"varint,9,opt,name=brier_score_milli,json=brierScoreMilli,proto3" json:"brier_score_milli,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) Reset() {
+	*x = CreateOrResolveForecastQuestionRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrResolveForecastQuestionRequest) ProtoMessage() {}
+
+func (x *CreateOrResolveForecastQuestionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrResolveForecastQuestionRequest.ProtoReflect.Descriptor instead.
+func (*CreateOrResolveForecastQuestionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetForecastCode() string {
+	if x != nil {
+		return x.ForecastCode
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetQuestionStatement() string {
+	if x != nil {
+		return x.QuestionStatement
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetResolutionCriteriaAndSource() string {
+	if x != nil {
+		return x.ResolutionCriteriaAndSource
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetProbabilityBps() int32 {
+	if x != nil {
+		return x.ProbabilityBps
+	}
+	return 0
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetConfidenceBandBps() int32 {
+	if x != nil {
+		return x.ConfidenceBandBps
+	}
+	return 0
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetBaseRateAnchor() string {
+	if x != nil {
+		return x.BaseRateAnchor
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetScenarioStressBranches() string {
+	if x != nil {
+		return x.ScenarioStressBranches
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetResolutionState() string {
+	if x != nil {
+		return x.ResolutionState
+	}
+	return ""
+}
+
+func (x *CreateOrResolveForecastQuestionRequest) GetBrierScoreMilli() int32 {
+	if x != nil {
+		return x.BrierScoreMilli
+	}
+	return 0
+}
+
+type CreateOrResolveForecastQuestionResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Forecast      *OracleForecastQuestionItem `protobuf:"bytes,1,opt,name=forecast,proto3" json:"forecast,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrResolveForecastQuestionResponse) Reset() {
+	*x = CreateOrResolveForecastQuestionResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrResolveForecastQuestionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrResolveForecastQuestionResponse) ProtoMessage() {}
+
+func (x *CreateOrResolveForecastQuestionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrResolveForecastQuestionResponse.ProtoReflect.Descriptor instead.
+func (*CreateOrResolveForecastQuestionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{168}
+}
+
+func (x *CreateOrResolveForecastQuestionResponse) GetForecast() *OracleForecastQuestionItem {
+	if x != nil {
+		return x.Forecast
+	}
+	return nil
+}
+
+type RecordCalibrationLabExperimentRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentCode                string                 `protobuf:"bytes,1,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	DomainAndHorizon              string                 `protobuf:"bytes,2,opt,name=domain_and_horizon,json=domainAndHorizon,proto3" json:"domain_and_horizon,omitempty"`
+	SampleSizeCount               int32                  `protobuf:"varint,3,opt,name=sample_size_count,json=sampleSizeCount,proto3" json:"sample_size_count,omitempty"`
+	OmissionPatternTracked        string                 `protobuf:"bytes,4,opt,name=omission_pattern_tracked,json=omissionPatternTracked,proto3" json:"omission_pattern_tracked,omitempty"`
+	PracticeExperimentRule        string                 `protobuf:"bytes,5,opt,name=practice_experiment_rule,json=practiceExperimentRule,proto3" json:"practice_experiment_rule,omitempty"`
+	PredeclaredBaselineBrierMilli int32                  `protobuf:"varint,6,opt,name=predeclared_baseline_brier_milli,json=predeclaredBaselineBrierMilli,proto3" json:"predeclared_baseline_brier_milli,omitempty"`
+	ObservedBrierMilli            int32                  `protobuf:"varint,7,opt,name=observed_brier_milli,json=observedBrierMilli,proto3" json:"observed_brier_milli,omitempty"`
+	LabStatus                     string                 `protobuf:"bytes,8,opt,name=lab_status,json=labStatus,proto3" json:"lab_status,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *RecordCalibrationLabExperimentRequest) Reset() {
+	*x = RecordCalibrationLabExperimentRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCalibrationLabExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCalibrationLabExperimentRequest) ProtoMessage() {}
+
+func (x *RecordCalibrationLabExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCalibrationLabExperimentRequest.ProtoReflect.Descriptor instead.
+func (*RecordCalibrationLabExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetDomainAndHorizon() string {
+	if x != nil {
+		return x.DomainAndHorizon
+	}
+	return ""
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetSampleSizeCount() int32 {
+	if x != nil {
+		return x.SampleSizeCount
+	}
+	return 0
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetOmissionPatternTracked() string {
+	if x != nil {
+		return x.OmissionPatternTracked
+	}
+	return ""
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetPracticeExperimentRule() string {
+	if x != nil {
+		return x.PracticeExperimentRule
+	}
+	return ""
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetPredeclaredBaselineBrierMilli() int32 {
+	if x != nil {
+		return x.PredeclaredBaselineBrierMilli
+	}
+	return 0
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetObservedBrierMilli() int32 {
+	if x != nil {
+		return x.ObservedBrierMilli
+	}
+	return 0
+}
+
+func (x *RecordCalibrationLabExperimentRequest) GetLabStatus() string {
+	if x != nil {
+		return x.LabStatus
+	}
+	return ""
+}
+
+type RecordCalibrationLabExperimentResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Experiment    *OracleCalibrationLabExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordCalibrationLabExperimentResponse) Reset() {
+	*x = RecordCalibrationLabExperimentResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCalibrationLabExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCalibrationLabExperimentResponse) ProtoMessage() {}
+
+func (x *RecordCalibrationLabExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCalibrationLabExperimentResponse.ProtoReflect.Descriptor instead.
+func (*RecordCalibrationLabExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *RecordCalibrationLabExperimentResponse) GetExperiment() *OracleCalibrationLabExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+type AdminListForecastingCalibrationAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListForecastingCalibrationAuditRequest) Reset() {
+	*x = AdminListForecastingCalibrationAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListForecastingCalibrationAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListForecastingCalibrationAuditRequest) ProtoMessage() {}
+
+func (x *AdminListForecastingCalibrationAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListForecastingCalibrationAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListForecastingCalibrationAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *AdminListForecastingCalibrationAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListForecastingCalibrationAuditResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Forecasts     []*OracleForecastQuestionItem         `protobuf:"bytes,1,rep,name=forecasts,proto3" json:"forecasts,omitempty"`
+	Experiments   []*OracleCalibrationLabExperimentItem `protobuf:"bytes,2,rep,name=experiments,proto3" json:"experiments,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListForecastingCalibrationAuditResponse) Reset() {
+	*x = AdminListForecastingCalibrationAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListForecastingCalibrationAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListForecastingCalibrationAuditResponse) ProtoMessage() {}
+
+func (x *AdminListForecastingCalibrationAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListForecastingCalibrationAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListForecastingCalibrationAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{172}
+}
+
+func (x *AdminListForecastingCalibrationAuditResponse) GetForecasts() []*OracleForecastQuestionItem {
+	if x != nil {
+		return x.Forecasts
+	}
+	return nil
+}
+
+func (x *AdminListForecastingCalibrationAuditResponse) GetExperiments() []*OracleCalibrationLabExperimentItem {
+	if x != nil {
+		return x.Experiments
+	}
+	return nil
+}
+
+type AdminVerifyForecastResolutionOrSandboxRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId    string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	ForecastCode    string                 `protobuf:"bytes,2,opt,name=forecast_code,json=forecastCode,proto3" json:"forecast_code,omitempty"`
+	ResolutionState string                 `protobuf:"bytes,3,opt,name=resolution_state,json=resolutionState,proto3" json:"resolution_state,omitempty"`
+	BrierScoreMilli int32                  `protobuf:"varint,4,opt,name=brier_score_milli,json=brierScoreMilli,proto3" json:"brier_score_milli,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) Reset() {
+	*x = AdminVerifyForecastResolutionOrSandboxRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminVerifyForecastResolutionOrSandboxRequest) ProtoMessage() {}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminVerifyForecastResolutionOrSandboxRequest.ProtoReflect.Descriptor instead.
+func (*AdminVerifyForecastResolutionOrSandboxRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) GetForecastCode() string {
+	if x != nil {
+		return x.ForecastCode
+	}
+	return ""
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) GetResolutionState() string {
+	if x != nil {
+		return x.ResolutionState
+	}
+	return ""
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxRequest) GetBrierScoreMilli() int32 {
+	if x != nil {
+		return x.BrierScoreMilli
+	}
+	return 0
+}
+
+type AdminVerifyForecastResolutionOrSandboxResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Forecast      *OracleForecastQuestionItem `protobuf:"bytes,1,opt,name=forecast,proto3" json:"forecast,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxResponse) Reset() {
+	*x = AdminVerifyForecastResolutionOrSandboxResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[174]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminVerifyForecastResolutionOrSandboxResponse) ProtoMessage() {}
+
+func (x *AdminVerifyForecastResolutionOrSandboxResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[174]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminVerifyForecastResolutionOrSandboxResponse.ProtoReflect.Descriptor instead.
+func (*AdminVerifyForecastResolutionOrSandboxResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{174}
+}
+
+func (x *AdminVerifyForecastResolutionOrSandboxResponse) GetForecast() *OracleForecastQuestionItem {
+	if x != nil {
+		return x.Forecast
+	}
+	return nil
+}
+
+type OracleMeetingNegotiationBriefItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MeetingCode               string                 `protobuf:"bytes,3,opt,name=meeting_code,json=meetingCode,proto3" json:"meeting_code,omitempty"`
+	TitleAndCounterpart       string                 `protobuf:"bytes,4,opt,name=title_and_counterpart,json=titleAndCounterpart,proto3" json:"title_and_counterpart,omitempty"`
+	JurisdictionConsentMode   string                 `protobuf:"bytes,5,opt,name=jurisdiction_consent_mode,json=jurisdictionConsentMode,proto3" json:"jurisdiction_consent_mode,omitempty"`
+	BatnaAndRedLines          string                 `protobuf:"bytes,6,opt,name=batna_and_red_lines,json=batnaAndRedLines,proto3" json:"batna_and_red_lines,omitempty"`
+	CounterpartRehearsalStyle string                 `protobuf:"bytes,7,opt,name=counterpart_rehearsal_style,json=counterpartRehearsalStyle,proto3" json:"counterpart_rehearsal_style,omitempty"`
+	MissingEvidenceCitations  string                 `protobuf:"bytes,8,opt,name=missing_evidence_citations,json=missingEvidenceCitations,proto3" json:"missing_evidence_citations,omitempty"`
+	CaptureState              string                 `protobuf:"bytes,9,opt,name=capture_state,json=captureState,proto3" json:"capture_state,omitempty"`
+	UnconsentedAudioRefused   bool                   `protobuf:"varint,10,opt,name=unconsented_audio_refused,json=unconsentedAudioRefused,proto3" json:"unconsented_audio_refused,omitempty"`
+	UpdatedAtIso              string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *OracleMeetingNegotiationBriefItem) Reset() {
+	*x = OracleMeetingNegotiationBriefItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[175]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleMeetingNegotiationBriefItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleMeetingNegotiationBriefItem) ProtoMessage() {}
+
+func (x *OracleMeetingNegotiationBriefItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[175]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleMeetingNegotiationBriefItem.ProtoReflect.Descriptor instead.
+func (*OracleMeetingNegotiationBriefItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{175}
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetMeetingCode() string {
+	if x != nil {
+		return x.MeetingCode
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetTitleAndCounterpart() string {
+	if x != nil {
+		return x.TitleAndCounterpart
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetJurisdictionConsentMode() string {
+	if x != nil {
+		return x.JurisdictionConsentMode
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetBatnaAndRedLines() string {
+	if x != nil {
+		return x.BatnaAndRedLines
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetCounterpartRehearsalStyle() string {
+	if x != nil {
+		return x.CounterpartRehearsalStyle
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetMissingEvidenceCitations() string {
+	if x != nil {
+		return x.MissingEvidenceCitations
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetCaptureState() string {
+	if x != nil {
+		return x.CaptureState
+	}
+	return ""
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetUnconsentedAudioRefused() bool {
+	if x != nil {
+		return x.UnconsentedAudioRefused
+	}
+	return false
+}
+
+func (x *OracleMeetingNegotiationBriefItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OracleMeetingCapturedProposalItem struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                   string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProposalCode             string                 `protobuf:"bytes,3,opt,name=proposal_code,json=proposalCode,proto3" json:"proposal_code,omitempty"`
+	MeetingCode              string                 `protobuf:"bytes,4,opt,name=meeting_code,json=meetingCode,proto3" json:"meeting_code,omitempty"`
+	ProposalKind             string                 `protobuf:"bytes,5,opt,name=proposal_kind,json=proposalKind,proto3" json:"proposal_kind,omitempty"`
+	ExactUtteranceAndSpeaker string                 `protobuf:"bytes,6,opt,name=exact_utterance_and_speaker,json=exactUtteranceAndSpeaker,proto3" json:"exact_utterance_and_speaker,omitempty"`
+	ProposedLedgerEntry      string                 `protobuf:"bytes,7,opt,name=proposed_ledger_entry,json=proposedLedgerEntry,proto3" json:"proposed_ledger_entry,omitempty"`
+	AttributionCertainty     string                 `protobuf:"bytes,8,opt,name=attribution_certainty,json=attributionCertainty,proto3" json:"attribution_certainty,omitempty"`
+	MemberConfirmationState  string                 `protobuf:"bytes,9,opt,name=member_confirmation_state,json=memberConfirmationState,proto3" json:"member_confirmation_state,omitempty"`
+	UpdatedAtIso             string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *OracleMeetingCapturedProposalItem) Reset() {
+	*x = OracleMeetingCapturedProposalItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[176]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleMeetingCapturedProposalItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleMeetingCapturedProposalItem) ProtoMessage() {}
+
+func (x *OracleMeetingCapturedProposalItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[176]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleMeetingCapturedProposalItem.ProtoReflect.Descriptor instead.
+func (*OracleMeetingCapturedProposalItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{176}
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetProposalCode() string {
+	if x != nil {
+		return x.ProposalCode
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetMeetingCode() string {
+	if x != nil {
+		return x.MeetingCode
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetProposalKind() string {
+	if x != nil {
+		return x.ProposalKind
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetExactUtteranceAndSpeaker() string {
+	if x != nil {
+		return x.ExactUtteranceAndSpeaker
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetProposedLedgerEntry() string {
+	if x != nil {
+		return x.ProposedLedgerEntry
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetAttributionCertainty() string {
+	if x != nil {
+		return x.AttributionCertainty
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetMemberConfirmationState() string {
+	if x != nil {
+		return x.MemberConfirmationState
+	}
+	return ""
+}
+
+func (x *OracleMeetingCapturedProposalItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetMeetingNegotiationStudioWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchRequest) Reset() {
+	*x = GetMeetingNegotiationStudioWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[177]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMeetingNegotiationStudioWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetMeetingNegotiationStudioWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[177]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMeetingNegotiationStudioWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetMeetingNegotiationStudioWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{177}
+}
+
+type GetMeetingNegotiationStudioWorkbenchResponse struct {
+	state                       protoimpl.MessageState               `protogen:"open.v1"`
+	Briefs                      []*OracleMeetingNegotiationBriefItem `protobuf:"bytes,1,rep,name=briefs,proto3" json:"briefs,omitempty"`
+	Proposals                   []*OracleMeetingCapturedProposalItem `protobuf:"bytes,2,rep,name=proposals,proto3" json:"proposals,omitempty"`
+	JurisdictionConsentEnforced bool                                 `protobuf:"varint,3,opt,name=jurisdiction_consent_enforced,json=jurisdictionConsentEnforced,proto3" json:"jurisdiction_consent_enforced,omitempty"`
+	MeetingStudioBanner         string                               `protobuf:"bytes,4,opt,name=meeting_studio_banner,json=meetingStudioBanner,proto3" json:"meeting_studio_banner,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) Reset() {
+	*x = GetMeetingNegotiationStudioWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[178]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMeetingNegotiationStudioWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[178]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMeetingNegotiationStudioWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetMeetingNegotiationStudioWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{178}
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) GetBriefs() []*OracleMeetingNegotiationBriefItem {
+	if x != nil {
+		return x.Briefs
+	}
+	return nil
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) GetProposals() []*OracleMeetingCapturedProposalItem {
+	if x != nil {
+		return x.Proposals
+	}
+	return nil
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) GetJurisdictionConsentEnforced() bool {
+	if x != nil {
+		return x.JurisdictionConsentEnforced
+	}
+	return false
+}
+
+func (x *GetMeetingNegotiationStudioWorkbenchResponse) GetMeetingStudioBanner() string {
+	if x != nil {
+		return x.MeetingStudioBanner
+	}
+	return ""
+}
+
+type SaveMeetingBriefOrRedteamRehearsalRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	MeetingCode               string                 `protobuf:"bytes,1,opt,name=meeting_code,json=meetingCode,proto3" json:"meeting_code,omitempty"`
+	TitleAndCounterpart       string                 `protobuf:"bytes,2,opt,name=title_and_counterpart,json=titleAndCounterpart,proto3" json:"title_and_counterpart,omitempty"`
+	JurisdictionConsentMode   string                 `protobuf:"bytes,3,opt,name=jurisdiction_consent_mode,json=jurisdictionConsentMode,proto3" json:"jurisdiction_consent_mode,omitempty"`
+	BatnaAndRedLines          string                 `protobuf:"bytes,4,opt,name=batna_and_red_lines,json=batnaAndRedLines,proto3" json:"batna_and_red_lines,omitempty"`
+	CounterpartRehearsalStyle string                 `protobuf:"bytes,5,opt,name=counterpart_rehearsal_style,json=counterpartRehearsalStyle,proto3" json:"counterpart_rehearsal_style,omitempty"`
+	MissingEvidenceCitations  string                 `protobuf:"bytes,6,opt,name=missing_evidence_citations,json=missingEvidenceCitations,proto3" json:"missing_evidence_citations,omitempty"`
+	CaptureState              string                 `protobuf:"bytes,7,opt,name=capture_state,json=captureState,proto3" json:"capture_state,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) Reset() {
+	*x = SaveMeetingBriefOrRedteamRehearsalRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[179]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveMeetingBriefOrRedteamRehearsalRequest) ProtoMessage() {}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[179]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveMeetingBriefOrRedteamRehearsalRequest.ProtoReflect.Descriptor instead.
+func (*SaveMeetingBriefOrRedteamRehearsalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{179}
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetMeetingCode() string {
+	if x != nil {
+		return x.MeetingCode
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetTitleAndCounterpart() string {
+	if x != nil {
+		return x.TitleAndCounterpart
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetJurisdictionConsentMode() string {
+	if x != nil {
+		return x.JurisdictionConsentMode
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetBatnaAndRedLines() string {
+	if x != nil {
+		return x.BatnaAndRedLines
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetCounterpartRehearsalStyle() string {
+	if x != nil {
+		return x.CounterpartRehearsalStyle
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetMissingEvidenceCitations() string {
+	if x != nil {
+		return x.MissingEvidenceCitations
+	}
+	return ""
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalRequest) GetCaptureState() string {
+	if x != nil {
+		return x.CaptureState
+	}
+	return ""
+}
+
+type SaveMeetingBriefOrRedteamRehearsalResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Brief         *OracleMeetingNegotiationBriefItem `protobuf:"bytes,1,opt,name=brief,proto3" json:"brief,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalResponse) Reset() {
+	*x = SaveMeetingBriefOrRedteamRehearsalResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[180]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveMeetingBriefOrRedteamRehearsalResponse) ProtoMessage() {}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[180]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveMeetingBriefOrRedteamRehearsalResponse.ProtoReflect.Descriptor instead.
+func (*SaveMeetingBriefOrRedteamRehearsalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{180}
+}
+
+func (x *SaveMeetingBriefOrRedteamRehearsalResponse) GetBrief() *OracleMeetingNegotiationBriefItem {
+	if x != nil {
+		return x.Brief
+	}
+	return nil
+}
+
+type ConfirmOrRejectCapturedMeetingProposalRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	ProposalCode             string                 `protobuf:"bytes,1,opt,name=proposal_code,json=proposalCode,proto3" json:"proposal_code,omitempty"`
+	MeetingCode              string                 `protobuf:"bytes,2,opt,name=meeting_code,json=meetingCode,proto3" json:"meeting_code,omitempty"`
+	ProposalKind             string                 `protobuf:"bytes,3,opt,name=proposal_kind,json=proposalKind,proto3" json:"proposal_kind,omitempty"`
+	ExactUtteranceAndSpeaker string                 `protobuf:"bytes,4,opt,name=exact_utterance_and_speaker,json=exactUtteranceAndSpeaker,proto3" json:"exact_utterance_and_speaker,omitempty"`
+	ProposedLedgerEntry      string                 `protobuf:"bytes,5,opt,name=proposed_ledger_entry,json=proposedLedgerEntry,proto3" json:"proposed_ledger_entry,omitempty"`
+	AttributionCertainty     string                 `protobuf:"bytes,6,opt,name=attribution_certainty,json=attributionCertainty,proto3" json:"attribution_certainty,omitempty"`
+	MemberConfirmationState  string                 `protobuf:"bytes,7,opt,name=member_confirmation_state,json=memberConfirmationState,proto3" json:"member_confirmation_state,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) Reset() {
+	*x = ConfirmOrRejectCapturedMeetingProposalRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[181]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmOrRejectCapturedMeetingProposalRequest) ProtoMessage() {}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[181]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmOrRejectCapturedMeetingProposalRequest.ProtoReflect.Descriptor instead.
+func (*ConfirmOrRejectCapturedMeetingProposalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{181}
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetProposalCode() string {
+	if x != nil {
+		return x.ProposalCode
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetMeetingCode() string {
+	if x != nil {
+		return x.MeetingCode
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetProposalKind() string {
+	if x != nil {
+		return x.ProposalKind
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetExactUtteranceAndSpeaker() string {
+	if x != nil {
+		return x.ExactUtteranceAndSpeaker
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetProposedLedgerEntry() string {
+	if x != nil {
+		return x.ProposedLedgerEntry
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetAttributionCertainty() string {
+	if x != nil {
+		return x.AttributionCertainty
+	}
+	return ""
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalRequest) GetMemberConfirmationState() string {
+	if x != nil {
+		return x.MemberConfirmationState
+	}
+	return ""
+}
+
+type ConfirmOrRejectCapturedMeetingProposalResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Proposal      *OracleMeetingCapturedProposalItem `protobuf:"bytes,1,opt,name=proposal,proto3" json:"proposal,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalResponse) Reset() {
+	*x = ConfirmOrRejectCapturedMeetingProposalResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[182]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmOrRejectCapturedMeetingProposalResponse) ProtoMessage() {}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[182]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmOrRejectCapturedMeetingProposalResponse.ProtoReflect.Descriptor instead.
+func (*ConfirmOrRejectCapturedMeetingProposalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{182}
+}
+
+func (x *ConfirmOrRejectCapturedMeetingProposalResponse) GetProposal() *OracleMeetingCapturedProposalItem {
+	if x != nil {
+		return x.Proposal
+	}
+	return nil
+}
+
+type AdminListMeetingNegotiationStudioAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditRequest) Reset() {
+	*x = AdminListMeetingNegotiationStudioAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[183]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListMeetingNegotiationStudioAuditRequest) ProtoMessage() {}
+
+func (x *AdminListMeetingNegotiationStudioAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[183]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListMeetingNegotiationStudioAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListMeetingNegotiationStudioAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{183}
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListMeetingNegotiationStudioAuditResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Briefs        []*OracleMeetingNegotiationBriefItem `protobuf:"bytes,1,rep,name=briefs,proto3" json:"briefs,omitempty"`
+	Proposals     []*OracleMeetingCapturedProposalItem `protobuf:"bytes,2,rep,name=proposals,proto3" json:"proposals,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditResponse) Reset() {
+	*x = AdminListMeetingNegotiationStudioAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[184]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListMeetingNegotiationStudioAuditResponse) ProtoMessage() {}
+
+func (x *AdminListMeetingNegotiationStudioAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[184]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListMeetingNegotiationStudioAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListMeetingNegotiationStudioAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{184}
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditResponse) GetBriefs() []*OracleMeetingNegotiationBriefItem {
+	if x != nil {
+		return x.Briefs
+	}
+	return nil
+}
+
+func (x *AdminListMeetingNegotiationStudioAuditResponse) GetProposals() []*OracleMeetingCapturedProposalItem {
+	if x != nil {
+		return x.Proposals
+	}
+	return nil
+}
+
+type AdminManageRecordingConsentOrRedactionRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId            string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	MeetingCode             string                 `protobuf:"bytes,2,opt,name=meeting_code,json=meetingCode,proto3" json:"meeting_code,omitempty"`
+	JurisdictionConsentMode string                 `protobuf:"bytes,3,opt,name=jurisdiction_consent_mode,json=jurisdictionConsentMode,proto3" json:"jurisdiction_consent_mode,omitempty"`
+	CaptureState            string                 `protobuf:"bytes,4,opt,name=capture_state,json=captureState,proto3" json:"capture_state,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) Reset() {
+	*x = AdminManageRecordingConsentOrRedactionRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[185]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageRecordingConsentOrRedactionRequest) ProtoMessage() {}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[185]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageRecordingConsentOrRedactionRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageRecordingConsentOrRedactionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{185}
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) GetMeetingCode() string {
+	if x != nil {
+		return x.MeetingCode
+	}
+	return ""
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) GetJurisdictionConsentMode() string {
+	if x != nil {
+		return x.JurisdictionConsentMode
+	}
+	return ""
+}
+
+func (x *AdminManageRecordingConsentOrRedactionRequest) GetCaptureState() string {
+	if x != nil {
+		return x.CaptureState
+	}
+	return ""
+}
+
+type AdminManageRecordingConsentOrRedactionResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Brief         *OracleMeetingNegotiationBriefItem `protobuf:"bytes,1,opt,name=brief,proto3" json:"brief,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageRecordingConsentOrRedactionResponse) Reset() {
+	*x = AdminManageRecordingConsentOrRedactionResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[186]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageRecordingConsentOrRedactionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageRecordingConsentOrRedactionResponse) ProtoMessage() {}
+
+func (x *AdminManageRecordingConsentOrRedactionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[186]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageRecordingConsentOrRedactionResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageRecordingConsentOrRedactionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{186}
+}
+
+func (x *AdminManageRecordingConsentOrRedactionResponse) GetBrief() *OracleMeetingNegotiationBriefItem {
+	if x != nil {
+		return x.Brief
+	}
+	return nil
+}
+
+type OracleSecureConnectorGrantItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ConnectorCode             string                 `protobuf:"bytes,3,opt,name=connector_code,json=connectorCode,proto3" json:"connector_code,omitempty"`
+	ConnectorNameAndPillar    string                 `protobuf:"bytes,4,opt,name=connector_name_and_pillar,json=connectorNameAndPillar,proto3" json:"connector_name_and_pillar,omitempty"`
+	RiskClassification        string                 `protobuf:"bytes,5,opt,name=risk_classification,json=riskClassification,proto3" json:"risk_classification,omitempty"`
+	PermittedDataAndRetention string                 `protobuf:"bytes,6,opt,name=permitted_data_and_retention,json=permittedDataAndRetention,proto3" json:"permitted_data_and_retention,omitempty"`
+	DryRunPreviewSummary      string                 `protobuf:"bytes,7,opt,name=dry_run_preview_summary,json=dryRunPreviewSummary,proto3" json:"dry_run_preview_summary,omitempty"`
+	GrantStatus               string                 `protobuf:"bytes,8,opt,name=grant_status,json=grantStatus,proto3" json:"grant_status,omitempty"`
+	AutonomousWriteProhibited bool                   `protobuf:"varint,9,opt,name=autonomous_write_prohibited,json=autonomousWriteProhibited,proto3" json:"autonomous_write_prohibited,omitempty"`
+	UpdatedAtIso              string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *OracleSecureConnectorGrantItem) Reset() {
+	*x = OracleSecureConnectorGrantItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[187]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleSecureConnectorGrantItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleSecureConnectorGrantItem) ProtoMessage() {}
+
+func (x *OracleSecureConnectorGrantItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[187]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleSecureConnectorGrantItem.ProtoReflect.Descriptor instead.
+func (*OracleSecureConnectorGrantItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{187}
+}
+
+func (x *OracleSecureConnectorGrantItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetConnectorCode() string {
+	if x != nil {
+		return x.ConnectorCode
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetConnectorNameAndPillar() string {
+	if x != nil {
+		return x.ConnectorNameAndPillar
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetRiskClassification() string {
+	if x != nil {
+		return x.RiskClassification
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetPermittedDataAndRetention() string {
+	if x != nil {
+		return x.PermittedDataAndRetention
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetDryRunPreviewSummary() string {
+	if x != nil {
+		return x.DryRunPreviewSummary
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetGrantStatus() string {
+	if x != nil {
+		return x.GrantStatus
+	}
+	return ""
+}
+
+func (x *OracleSecureConnectorGrantItem) GetAutonomousWriteProhibited() bool {
+	if x != nil {
+		return x.AutonomousWriteProhibited
+	}
+	return false
+}
+
+func (x *OracleSecureConnectorGrantItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type OraclePromptInjectionQuarantineItem struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                   string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EventCode                string                 `protobuf:"bytes,3,opt,name=event_code,json=eventCode,proto3" json:"event_code,omitempty"`
+	ConnectorCode            string                 `protobuf:"bytes,4,opt,name=connector_code,json=connectorCode,proto3" json:"connector_code,omitempty"`
+	UntrustedSourceOrigin    string                 `protobuf:"bytes,5,opt,name=untrusted_source_origin,json=untrustedSourceOrigin,proto3" json:"untrusted_source_origin,omitempty"`
+	BlockedEscalationAttempt string                 `protobuf:"bytes,6,opt,name=blocked_escalation_attempt,json=blockedEscalationAttempt,proto3" json:"blocked_escalation_attempt,omitempty"`
+	ContainmentVerdict       string                 `protobuf:"bytes,7,opt,name=containment_verdict,json=containmentVerdict,proto3" json:"containment_verdict,omitempty"`
+	MemberNotified           bool                   `protobuf:"varint,8,opt,name=member_notified,json=memberNotified,proto3" json:"member_notified,omitempty"`
+	UpdatedAtIso             string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *OraclePromptInjectionQuarantineItem) Reset() {
+	*x = OraclePromptInjectionQuarantineItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OraclePromptInjectionQuarantineItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OraclePromptInjectionQuarantineItem) ProtoMessage() {}
+
+func (x *OraclePromptInjectionQuarantineItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OraclePromptInjectionQuarantineItem.ProtoReflect.Descriptor instead.
+func (*OraclePromptInjectionQuarantineItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetEventCode() string {
+	if x != nil {
+		return x.EventCode
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetConnectorCode() string {
+	if x != nil {
+		return x.ConnectorCode
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetUntrustedSourceOrigin() string {
+	if x != nil {
+		return x.UntrustedSourceOrigin
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetBlockedEscalationAttempt() string {
+	if x != nil {
+		return x.BlockedEscalationAttempt
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetContainmentVerdict() string {
+	if x != nil {
+		return x.ContainmentVerdict
+	}
+	return ""
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetMemberNotified() bool {
+	if x != nil {
+		return x.MemberNotified
+	}
+	return false
+}
+
+func (x *OraclePromptInjectionQuarantineItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetSecureConnectorsToolWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSecureConnectorsToolWorkbenchRequest) Reset() {
+	*x = GetSecureConnectorsToolWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSecureConnectorsToolWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSecureConnectorsToolWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetSecureConnectorsToolWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSecureConnectorsToolWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetSecureConnectorsToolWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{189}
+}
+
+type GetSecureConnectorsToolWorkbenchResponse struct {
+	state                          protoimpl.MessageState                 `protogen:"open.v1"`
+	Connectors                     []*OracleSecureConnectorGrantItem      `protobuf:"bytes,1,rep,name=connectors,proto3" json:"connectors,omitempty"`
+	Quarantines                    []*OraclePromptInjectionQuarantineItem `protobuf:"bytes,2,rep,name=quarantines,proto3" json:"quarantines,omitempty"`
+	IndirectInjectionDefenseActive bool                                   `protobuf:"varint,3,opt,name=indirect_injection_defense_active,json=indirectInjectionDefenseActive,proto3" json:"indirect_injection_defense_active,omitempty"`
+	ConnectorPlatformBanner        string                                 `protobuf:"bytes,4,opt,name=connector_platform_banner,json=connectorPlatformBanner,proto3" json:"connector_platform_banner,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) Reset() {
+	*x = GetSecureConnectorsToolWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSecureConnectorsToolWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSecureConnectorsToolWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetSecureConnectorsToolWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) GetConnectors() []*OracleSecureConnectorGrantItem {
+	if x != nil {
+		return x.Connectors
+	}
+	return nil
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) GetQuarantines() []*OraclePromptInjectionQuarantineItem {
+	if x != nil {
+		return x.Quarantines
+	}
+	return nil
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) GetIndirectInjectionDefenseActive() bool {
+	if x != nil {
+		return x.IndirectInjectionDefenseActive
+	}
+	return false
+}
+
+func (x *GetSecureConnectorsToolWorkbenchResponse) GetConnectorPlatformBanner() string {
+	if x != nil {
+		return x.ConnectorPlatformBanner
+	}
+	return ""
+}
+
+type ConfigureOrRevokeConnectorGrantRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	ConnectorCode             string                 `protobuf:"bytes,1,opt,name=connector_code,json=connectorCode,proto3" json:"connector_code,omitempty"`
+	ConnectorNameAndPillar    string                 `protobuf:"bytes,2,opt,name=connector_name_and_pillar,json=connectorNameAndPillar,proto3" json:"connector_name_and_pillar,omitempty"`
+	RiskClassification        string                 `protobuf:"bytes,3,opt,name=risk_classification,json=riskClassification,proto3" json:"risk_classification,omitempty"`
+	PermittedDataAndRetention string                 `protobuf:"bytes,4,opt,name=permitted_data_and_retention,json=permittedDataAndRetention,proto3" json:"permitted_data_and_retention,omitempty"`
+	DryRunPreviewSummary      string                 `protobuf:"bytes,5,opt,name=dry_run_preview_summary,json=dryRunPreviewSummary,proto3" json:"dry_run_preview_summary,omitempty"`
+	GrantStatus               string                 `protobuf:"bytes,6,opt,name=grant_status,json=grantStatus,proto3" json:"grant_status,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) Reset() {
+	*x = ConfigureOrRevokeConnectorGrantRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureOrRevokeConnectorGrantRequest) ProtoMessage() {}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureOrRevokeConnectorGrantRequest.ProtoReflect.Descriptor instead.
+func (*ConfigureOrRevokeConnectorGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetConnectorCode() string {
+	if x != nil {
+		return x.ConnectorCode
+	}
+	return ""
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetConnectorNameAndPillar() string {
+	if x != nil {
+		return x.ConnectorNameAndPillar
+	}
+	return ""
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetRiskClassification() string {
+	if x != nil {
+		return x.RiskClassification
+	}
+	return ""
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetPermittedDataAndRetention() string {
+	if x != nil {
+		return x.PermittedDataAndRetention
+	}
+	return ""
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetDryRunPreviewSummary() string {
+	if x != nil {
+		return x.DryRunPreviewSummary
+	}
+	return ""
+}
+
+func (x *ConfigureOrRevokeConnectorGrantRequest) GetGrantStatus() string {
+	if x != nil {
+		return x.GrantStatus
+	}
+	return ""
+}
+
+type ConfigureOrRevokeConnectorGrantResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Connector     *OracleSecureConnectorGrantItem `protobuf:"bytes,1,opt,name=connector,proto3" json:"connector,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigureOrRevokeConnectorGrantResponse) Reset() {
+	*x = ConfigureOrRevokeConnectorGrantResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureOrRevokeConnectorGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureOrRevokeConnectorGrantResponse) ProtoMessage() {}
+
+func (x *ConfigureOrRevokeConnectorGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureOrRevokeConnectorGrantResponse.ProtoReflect.Descriptor instead.
+func (*ConfigureOrRevokeConnectorGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *ConfigureOrRevokeConnectorGrantResponse) GetConnector() *OracleSecureConnectorGrantItem {
+	if x != nil {
+		return x.Connector
+	}
+	return nil
+}
+
+type ReportOrReviewPromptInjectionQuarantineRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	EventCode                string                 `protobuf:"bytes,1,opt,name=event_code,json=eventCode,proto3" json:"event_code,omitempty"`
+	ConnectorCode            string                 `protobuf:"bytes,2,opt,name=connector_code,json=connectorCode,proto3" json:"connector_code,omitempty"`
+	UntrustedSourceOrigin    string                 `protobuf:"bytes,3,opt,name=untrusted_source_origin,json=untrustedSourceOrigin,proto3" json:"untrusted_source_origin,omitempty"`
+	BlockedEscalationAttempt string                 `protobuf:"bytes,4,opt,name=blocked_escalation_attempt,json=blockedEscalationAttempt,proto3" json:"blocked_escalation_attempt,omitempty"`
+	ContainmentVerdict       string                 `protobuf:"bytes,5,opt,name=containment_verdict,json=containmentVerdict,proto3" json:"containment_verdict,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) Reset() {
+	*x = ReportOrReviewPromptInjectionQuarantineRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportOrReviewPromptInjectionQuarantineRequest) ProtoMessage() {}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportOrReviewPromptInjectionQuarantineRequest.ProtoReflect.Descriptor instead.
+func (*ReportOrReviewPromptInjectionQuarantineRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) GetEventCode() string {
+	if x != nil {
+		return x.EventCode
+	}
+	return ""
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) GetConnectorCode() string {
+	if x != nil {
+		return x.ConnectorCode
+	}
+	return ""
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) GetUntrustedSourceOrigin() string {
+	if x != nil {
+		return x.UntrustedSourceOrigin
+	}
+	return ""
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) GetBlockedEscalationAttempt() string {
+	if x != nil {
+		return x.BlockedEscalationAttempt
+	}
+	return ""
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineRequest) GetContainmentVerdict() string {
+	if x != nil {
+		return x.ContainmentVerdict
+	}
+	return ""
+}
+
+type ReportOrReviewPromptInjectionQuarantineResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Quarantine    *OraclePromptInjectionQuarantineItem `protobuf:"bytes,1,opt,name=quarantine,proto3" json:"quarantine,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineResponse) Reset() {
+	*x = ReportOrReviewPromptInjectionQuarantineResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportOrReviewPromptInjectionQuarantineResponse) ProtoMessage() {}
+
+func (x *ReportOrReviewPromptInjectionQuarantineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportOrReviewPromptInjectionQuarantineResponse.ProtoReflect.Descriptor instead.
+func (*ReportOrReviewPromptInjectionQuarantineResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *ReportOrReviewPromptInjectionQuarantineResponse) GetQuarantine() *OraclePromptInjectionQuarantineItem {
+	if x != nil {
+		return x.Quarantine
+	}
+	return nil
+}
+
+type AdminListSecureConnectorsToolAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListSecureConnectorsToolAuditRequest) Reset() {
+	*x = AdminListSecureConnectorsToolAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListSecureConnectorsToolAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListSecureConnectorsToolAuditRequest) ProtoMessage() {}
+
+func (x *AdminListSecureConnectorsToolAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListSecureConnectorsToolAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListSecureConnectorsToolAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *AdminListSecureConnectorsToolAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListSecureConnectorsToolAuditResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Connectors    []*OracleSecureConnectorGrantItem      `protobuf:"bytes,1,rep,name=connectors,proto3" json:"connectors,omitempty"`
+	Quarantines   []*OraclePromptInjectionQuarantineItem `protobuf:"bytes,2,rep,name=quarantines,proto3" json:"quarantines,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListSecureConnectorsToolAuditResponse) Reset() {
+	*x = AdminListSecureConnectorsToolAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListSecureConnectorsToolAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListSecureConnectorsToolAuditResponse) ProtoMessage() {}
+
+func (x *AdminListSecureConnectorsToolAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListSecureConnectorsToolAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListSecureConnectorsToolAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *AdminListSecureConnectorsToolAuditResponse) GetConnectors() []*OracleSecureConnectorGrantItem {
+	if x != nil {
+		return x.Connectors
+	}
+	return nil
+}
+
+func (x *AdminListSecureConnectorsToolAuditResponse) GetQuarantines() []*OraclePromptInjectionQuarantineItem {
+	if x != nil {
+		return x.Quarantines
+	}
+	return nil
+}
+
+type AdminManageConnectorKillSwitchOrQuarantineRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId         string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	ConnectorCode        string                 `protobuf:"bytes,2,opt,name=connector_code,json=connectorCode,proto3" json:"connector_code,omitempty"`
+	GrantStatus          string                 `protobuf:"bytes,3,opt,name=grant_status,json=grantStatus,proto3" json:"grant_status,omitempty"`
+	DryRunPreviewSummary string                 `protobuf:"bytes,4,opt,name=dry_run_preview_summary,json=dryRunPreviewSummary,proto3" json:"dry_run_preview_summary,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) Reset() {
+	*x = AdminManageConnectorKillSwitchOrQuarantineRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageConnectorKillSwitchOrQuarantineRequest) ProtoMessage() {}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageConnectorKillSwitchOrQuarantineRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageConnectorKillSwitchOrQuarantineRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) GetConnectorCode() string {
+	if x != nil {
+		return x.ConnectorCode
+	}
+	return ""
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) GetGrantStatus() string {
+	if x != nil {
+		return x.GrantStatus
+	}
+	return ""
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineRequest) GetDryRunPreviewSummary() string {
+	if x != nil {
+		return x.DryRunPreviewSummary
+	}
+	return ""
+}
+
+type AdminManageConnectorKillSwitchOrQuarantineResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Connector     *OracleSecureConnectorGrantItem `protobuf:"bytes,1,opt,name=connector,proto3" json:"connector,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineResponse) Reset() {
+	*x = AdminManageConnectorKillSwitchOrQuarantineResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageConnectorKillSwitchOrQuarantineResponse) ProtoMessage() {}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageConnectorKillSwitchOrQuarantineResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageConnectorKillSwitchOrQuarantineResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *AdminManageConnectorKillSwitchOrQuarantineResponse) GetConnector() *OracleSecureConnectorGrantItem {
+	if x != nil {
+		return x.Connector
+	}
+	return nil
+}
+
+type OracleTrustedDecisionRoomItem struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	Id                                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                              string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RoomCode                            string                 `protobuf:"bytes,3,opt,name=room_code,json=roomCode,proto3" json:"room_code,omitempty"`
+	TitleAndScenario                    string                 `protobuf:"bytes,4,opt,name=title_and_scenario,json=titleAndScenario,proto3" json:"title_and_scenario,omitempty"`
+	SpecialistCredentialAndJurisdiction string                 `protobuf:"bytes,5,opt,name=specialist_credential_and_jurisdiction,json=specialistCredentialAndJurisdiction,proto3" json:"specialist_credential_and_jurisdiction,omitempty"`
+	ConflictOfInterestDisclosure        string                 `protobuf:"bytes,6,opt,name=conflict_of_interest_disclosure,json=conflictOfInterestDisclosure,proto3" json:"conflict_of_interest_disclosure,omitempty"`
+	ScopedGrantAndExpiry                string                 `protobuf:"bytes,7,opt,name=scoped_grant_and_expiry,json=scopedGrantAndExpiry,proto3" json:"scoped_grant_and_expiry,omitempty"`
+	AfterActionClosureSummary           string                 `protobuf:"bytes,8,opt,name=after_action_closure_summary,json=afterActionClosureSummary,proto3" json:"after_action_closure_summary,omitempty"`
+	RoomState                           string                 `protobuf:"bytes,9,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	TenantBoundaryIsolated              bool                   `protobuf:"varint,10,opt,name=tenant_boundary_isolated,json=tenantBoundaryIsolated,proto3" json:"tenant_boundary_isolated,omitempty"`
+	UpdatedAtIso                        string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *OracleTrustedDecisionRoomItem) Reset() {
+	*x = OracleTrustedDecisionRoomItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleTrustedDecisionRoomItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleTrustedDecisionRoomItem) ProtoMessage() {}
+
+func (x *OracleTrustedDecisionRoomItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleTrustedDecisionRoomItem.ProtoReflect.Descriptor instead.
+func (*OracleTrustedDecisionRoomItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetRoomCode() string {
+	if x != nil {
+		return x.RoomCode
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetTitleAndScenario() string {
+	if x != nil {
+		return x.TitleAndScenario
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetSpecialistCredentialAndJurisdiction() string {
+	if x != nil {
+		return x.SpecialistCredentialAndJurisdiction
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetConflictOfInterestDisclosure() string {
+	if x != nil {
+		return x.ConflictOfInterestDisclosure
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetScopedGrantAndExpiry() string {
+	if x != nil {
+		return x.ScopedGrantAndExpiry
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetAfterActionClosureSummary() string {
+	if x != nil {
+		return x.AfterActionClosureSummary
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetTenantBoundaryIsolated() bool {
+	if x != nil {
+		return x.TenantBoundaryIsolated
+	}
+	return false
+}
+
+func (x *OracleTrustedDecisionRoomItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetTrustedNetworkDecisionRoomsWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchRequest) Reset() {
+	*x = GetTrustedNetworkDecisionRoomsWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTrustedNetworkDecisionRoomsWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTrustedNetworkDecisionRoomsWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetTrustedNetworkDecisionRoomsWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{200}
+}
+
+type GetTrustedNetworkDecisionRoomsWorkbenchResponse struct {
+	state                     protoimpl.MessageState           `protogen:"open.v1"`
+	Rooms                     []*OracleTrustedDecisionRoomItem `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	DoubleOptInAndCoiEnforced bool                             `protobuf:"varint,2,opt,name=double_opt_in_and_coi_enforced,json=doubleOptInAndCoiEnforced,proto3" json:"double_opt_in_and_coi_enforced,omitempty"`
+	DecisionRoomsBanner       string                           `protobuf:"bytes,3,opt,name=decision_rooms_banner,json=decisionRoomsBanner,proto3" json:"decision_rooms_banner,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) Reset() {
+	*x = GetTrustedNetworkDecisionRoomsWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTrustedNetworkDecisionRoomsWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTrustedNetworkDecisionRoomsWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetTrustedNetworkDecisionRoomsWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) GetRooms() []*OracleTrustedDecisionRoomItem {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) GetDoubleOptInAndCoiEnforced() bool {
+	if x != nil {
+		return x.DoubleOptInAndCoiEnforced
+	}
+	return false
+}
+
+func (x *GetTrustedNetworkDecisionRoomsWorkbenchResponse) GetDecisionRoomsBanner() string {
+	if x != nil {
+		return x.DecisionRoomsBanner
+	}
+	return ""
+}
+
+type CreateOrCloseTrustedDecisionRoomRequest struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	RoomCode                            string                 `protobuf:"bytes,1,opt,name=room_code,json=roomCode,proto3" json:"room_code,omitempty"`
+	TitleAndScenario                    string                 `protobuf:"bytes,2,opt,name=title_and_scenario,json=titleAndScenario,proto3" json:"title_and_scenario,omitempty"`
+	SpecialistCredentialAndJurisdiction string                 `protobuf:"bytes,3,opt,name=specialist_credential_and_jurisdiction,json=specialistCredentialAndJurisdiction,proto3" json:"specialist_credential_and_jurisdiction,omitempty"`
+	ConflictOfInterestDisclosure        string                 `protobuf:"bytes,4,opt,name=conflict_of_interest_disclosure,json=conflictOfInterestDisclosure,proto3" json:"conflict_of_interest_disclosure,omitempty"`
+	ScopedGrantAndExpiry                string                 `protobuf:"bytes,5,opt,name=scoped_grant_and_expiry,json=scopedGrantAndExpiry,proto3" json:"scoped_grant_and_expiry,omitempty"`
+	AfterActionClosureSummary           string                 `protobuf:"bytes,6,opt,name=after_action_closure_summary,json=afterActionClosureSummary,proto3" json:"after_action_closure_summary,omitempty"`
+	RoomState                           string                 `protobuf:"bytes,7,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) Reset() {
+	*x = CreateOrCloseTrustedDecisionRoomRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrCloseTrustedDecisionRoomRequest) ProtoMessage() {}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrCloseTrustedDecisionRoomRequest.ProtoReflect.Descriptor instead.
+func (*CreateOrCloseTrustedDecisionRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetRoomCode() string {
+	if x != nil {
+		return x.RoomCode
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetTitleAndScenario() string {
+	if x != nil {
+		return x.TitleAndScenario
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetSpecialistCredentialAndJurisdiction() string {
+	if x != nil {
+		return x.SpecialistCredentialAndJurisdiction
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetConflictOfInterestDisclosure() string {
+	if x != nil {
+		return x.ConflictOfInterestDisclosure
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetScopedGrantAndExpiry() string {
+	if x != nil {
+		return x.ScopedGrantAndExpiry
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetAfterActionClosureSummary() string {
+	if x != nil {
+		return x.AfterActionClosureSummary
+	}
+	return ""
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type CreateOrCloseTrustedDecisionRoomResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Room          *OracleTrustedDecisionRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomResponse) Reset() {
+	*x = CreateOrCloseTrustedDecisionRoomResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateOrCloseTrustedDecisionRoomResponse) ProtoMessage() {}
+
+func (x *CreateOrCloseTrustedDecisionRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateOrCloseTrustedDecisionRoomResponse.ProtoReflect.Descriptor instead.
+func (*CreateOrCloseTrustedDecisionRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{203}
+}
+
+func (x *CreateOrCloseTrustedDecisionRoomResponse) GetRoom() *OracleTrustedDecisionRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type VerifySpecialistDisclosureOrOptInRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	RoomCode                     string                 `protobuf:"bytes,1,opt,name=room_code,json=roomCode,proto3" json:"room_code,omitempty"`
+	ConflictOfInterestDisclosure string                 `protobuf:"bytes,2,opt,name=conflict_of_interest_disclosure,json=conflictOfInterestDisclosure,proto3" json:"conflict_of_interest_disclosure,omitempty"`
+	RoomState                    string                 `protobuf:"bytes,3,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) Reset() {
+	*x = VerifySpecialistDisclosureOrOptInRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifySpecialistDisclosureOrOptInRequest) ProtoMessage() {}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifySpecialistDisclosureOrOptInRequest.ProtoReflect.Descriptor instead.
+func (*VerifySpecialistDisclosureOrOptInRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) GetRoomCode() string {
+	if x != nil {
+		return x.RoomCode
+	}
+	return ""
+}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) GetConflictOfInterestDisclosure() string {
+	if x != nil {
+		return x.ConflictOfInterestDisclosure
+	}
+	return ""
+}
+
+func (x *VerifySpecialistDisclosureOrOptInRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type VerifySpecialistDisclosureOrOptInResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Room          *OracleTrustedDecisionRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifySpecialistDisclosureOrOptInResponse) Reset() {
+	*x = VerifySpecialistDisclosureOrOptInResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifySpecialistDisclosureOrOptInResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifySpecialistDisclosureOrOptInResponse) ProtoMessage() {}
+
+func (x *VerifySpecialistDisclosureOrOptInResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifySpecialistDisclosureOrOptInResponse.ProtoReflect.Descriptor instead.
+func (*VerifySpecialistDisclosureOrOptInResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *VerifySpecialistDisclosureOrOptInResponse) GetRoom() *OracleTrustedDecisionRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type AdminListTrustedDecisionRoomsAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditRequest) Reset() {
+	*x = AdminListTrustedDecisionRoomsAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListTrustedDecisionRoomsAuditRequest) ProtoMessage() {}
+
+func (x *AdminListTrustedDecisionRoomsAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListTrustedDecisionRoomsAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListTrustedDecisionRoomsAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListTrustedDecisionRoomsAuditResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Rooms         []*OracleTrustedDecisionRoomItem `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditResponse) Reset() {
+	*x = AdminListTrustedDecisionRoomsAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[207]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListTrustedDecisionRoomsAuditResponse) ProtoMessage() {}
+
+func (x *AdminListTrustedDecisionRoomsAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[207]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListTrustedDecisionRoomsAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListTrustedDecisionRoomsAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{207}
+}
+
+func (x *AdminListTrustedDecisionRoomsAuditResponse) GetRooms() []*OracleTrustedDecisionRoomItem {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+type AdminManageDecisionRoomGrantOrBoundaryRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId              string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	RoomCode                  string                 `protobuf:"bytes,2,opt,name=room_code,json=roomCode,proto3" json:"room_code,omitempty"`
+	RoomState                 string                 `protobuf:"bytes,3,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	AfterActionClosureSummary string                 `protobuf:"bytes,4,opt,name=after_action_closure_summary,json=afterActionClosureSummary,proto3" json:"after_action_closure_summary,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) Reset() {
+	*x = AdminManageDecisionRoomGrantOrBoundaryRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[208]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageDecisionRoomGrantOrBoundaryRequest) ProtoMessage() {}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[208]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageDecisionRoomGrantOrBoundaryRequest.ProtoReflect.Descriptor instead.
+func (*AdminManageDecisionRoomGrantOrBoundaryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{208}
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) GetRoomCode() string {
+	if x != nil {
+		return x.RoomCode
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryRequest) GetAfterActionClosureSummary() string {
+	if x != nil {
+		return x.AfterActionClosureSummary
+	}
+	return ""
+}
+
+type AdminManageDecisionRoomGrantOrBoundaryResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Room          *OracleTrustedDecisionRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryResponse) Reset() {
+	*x = AdminManageDecisionRoomGrantOrBoundaryResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[209]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminManageDecisionRoomGrantOrBoundaryResponse) ProtoMessage() {}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[209]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminManageDecisionRoomGrantOrBoundaryResponse.ProtoReflect.Descriptor instead.
+func (*AdminManageDecisionRoomGrantOrBoundaryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{209}
+}
+
+func (x *AdminManageDecisionRoomGrantOrBoundaryResponse) GetRoom() *OracleTrustedDecisionRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type OracleWargameExposureSimulationItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                     string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SimulationCode             string                 `protobuf:"bytes,3,opt,name=simulation_code,json=simulationCode,proto3" json:"simulation_code,omitempty"`
+	ScenarioTitle              string                 `protobuf:"bytes,4,opt,name=scenario_title,json=scenarioTitle,proto3" json:"scenario_title,omitempty"`
+	MinimalPillarContractsUsed string                 `protobuf:"bytes,5,opt,name=minimal_pillar_contracts_used,json=minimalPillarContractsUsed,proto3" json:"minimal_pillar_contracts_used,omitempty"`
+	DownsideBaseUpsideRanges   string                 `protobuf:"bytes,6,opt,name=downside_base_upside_ranges,json=downsideBaseUpsideRanges,proto3" json:"downside_base_upside_ranges,omitempty"`
+	TenthPersonAndFailureTree  string                 `protobuf:"bytes,7,opt,name=tenth_person_and_failure_tree,json=tenthPersonAndFailureTree,proto3" json:"tenth_person_and_failure_tree,omitempty"`
+	TopSensitivityDriver       string                 `protobuf:"bytes,8,opt,name=top_sensitivity_driver,json=topSensitivityDriver,proto3" json:"top_sensitivity_driver,omitempty"`
+	AdvisorMemoState           string                 `protobuf:"bytes,9,opt,name=advisor_memo_state,json=advisorMemoState,proto3" json:"advisor_memo_state,omitempty"`
+	SilentLedgerAccessBlocked  bool                   `protobuf:"varint,10,opt,name=silent_ledger_access_blocked,json=silentLedgerAccessBlocked,proto3" json:"silent_ledger_access_blocked,omitempty"`
+	UpdatedAtIso               string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *OracleWargameExposureSimulationItem) Reset() {
+	*x = OracleWargameExposureSimulationItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[210]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OracleWargameExposureSimulationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OracleWargameExposureSimulationItem) ProtoMessage() {}
+
+func (x *OracleWargameExposureSimulationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[210]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OracleWargameExposureSimulationItem.ProtoReflect.Descriptor instead.
+func (*OracleWargameExposureSimulationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{210}
+}
+
+func (x *OracleWargameExposureSimulationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetSimulationCode() string {
+	if x != nil {
+		return x.SimulationCode
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetScenarioTitle() string {
+	if x != nil {
+		return x.ScenarioTitle
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetMinimalPillarContractsUsed() string {
+	if x != nil {
+		return x.MinimalPillarContractsUsed
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetDownsideBaseUpsideRanges() string {
+	if x != nil {
+		return x.DownsideBaseUpsideRanges
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetTenthPersonAndFailureTree() string {
+	if x != nil {
+		return x.TenthPersonAndFailureTree
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetTopSensitivityDriver() string {
+	if x != nil {
+		return x.TopSensitivityDriver
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetAdvisorMemoState() string {
+	if x != nil {
+		return x.AdvisorMemoState
+	}
+	return ""
+}
+
+func (x *OracleWargameExposureSimulationItem) GetSilentLedgerAccessBlocked() bool {
+	if x != nil {
+		return x.SilentLedgerAccessBlocked
+	}
+	return false
+}
+
+func (x *OracleWargameExposureSimulationItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetWargamingExposureWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWargamingExposureWorkbenchRequest) Reset() {
+	*x = GetWargamingExposureWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[211]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWargamingExposureWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWargamingExposureWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetWargamingExposureWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[211]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWargamingExposureWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetWargamingExposureWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{211}
+}
+
+type GetWargamingExposureWorkbenchResponse struct {
+	state                            protoimpl.MessageState                 `protogen:"open.v1"`
+	Simulations                      []*OracleWargameExposureSimulationItem `protobuf:"bytes,1,rep,name=simulations,proto3" json:"simulations,omitempty"`
+	MinimalContractIsolationEnforced bool                                   `protobuf:"varint,2,opt,name=minimal_contract_isolation_enforced,json=minimalContractIsolationEnforced,proto3" json:"minimal_contract_isolation_enforced,omitempty"`
+	WargamingExposureBanner          string                                 `protobuf:"bytes,3,opt,name=wargaming_exposure_banner,json=wargamingExposureBanner,proto3" json:"wargaming_exposure_banner,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetWargamingExposureWorkbenchResponse) Reset() {
+	*x = GetWargamingExposureWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[212]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWargamingExposureWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWargamingExposureWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetWargamingExposureWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[212]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWargamingExposureWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetWargamingExposureWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{212}
+}
+
+func (x *GetWargamingExposureWorkbenchResponse) GetSimulations() []*OracleWargameExposureSimulationItem {
+	if x != nil {
+		return x.Simulations
+	}
+	return nil
+}
+
+func (x *GetWargamingExposureWorkbenchResponse) GetMinimalContractIsolationEnforced() bool {
+	if x != nil {
+		return x.MinimalContractIsolationEnforced
+	}
+	return false
+}
+
+func (x *GetWargamingExposureWorkbenchResponse) GetWargamingExposureBanner() string {
+	if x != nil {
+		return x.WargamingExposureBanner
+	}
+	return ""
+}
+
+type RunOrExportWargameExposureSimulationRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	SimulationCode             string                 `protobuf:"bytes,1,opt,name=simulation_code,json=simulationCode,proto3" json:"simulation_code,omitempty"`
+	ScenarioTitle              string                 `protobuf:"bytes,2,opt,name=scenario_title,json=scenarioTitle,proto3" json:"scenario_title,omitempty"`
+	MinimalPillarContractsUsed string                 `protobuf:"bytes,3,opt,name=minimal_pillar_contracts_used,json=minimalPillarContractsUsed,proto3" json:"minimal_pillar_contracts_used,omitempty"`
+	DownsideBaseUpsideRanges   string                 `protobuf:"bytes,4,opt,name=downside_base_upside_ranges,json=downsideBaseUpsideRanges,proto3" json:"downside_base_upside_ranges,omitempty"`
+	TenthPersonAndFailureTree  string                 `protobuf:"bytes,5,opt,name=tenth_person_and_failure_tree,json=tenthPersonAndFailureTree,proto3" json:"tenth_person_and_failure_tree,omitempty"`
+	TopSensitivityDriver       string                 `protobuf:"bytes,6,opt,name=top_sensitivity_driver,json=topSensitivityDriver,proto3" json:"top_sensitivity_driver,omitempty"`
+	AdvisorMemoState           string                 `protobuf:"bytes,7,opt,name=advisor_memo_state,json=advisorMemoState,proto3" json:"advisor_memo_state,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) Reset() {
+	*x = RunOrExportWargameExposureSimulationRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[213]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunOrExportWargameExposureSimulationRequest) ProtoMessage() {}
+
+func (x *RunOrExportWargameExposureSimulationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[213]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunOrExportWargameExposureSimulationRequest.ProtoReflect.Descriptor instead.
+func (*RunOrExportWargameExposureSimulationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{213}
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetSimulationCode() string {
+	if x != nil {
+		return x.SimulationCode
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetScenarioTitle() string {
+	if x != nil {
+		return x.ScenarioTitle
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetMinimalPillarContractsUsed() string {
+	if x != nil {
+		return x.MinimalPillarContractsUsed
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetDownsideBaseUpsideRanges() string {
+	if x != nil {
+		return x.DownsideBaseUpsideRanges
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetTenthPersonAndFailureTree() string {
+	if x != nil {
+		return x.TenthPersonAndFailureTree
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetTopSensitivityDriver() string {
+	if x != nil {
+		return x.TopSensitivityDriver
+	}
+	return ""
+}
+
+func (x *RunOrExportWargameExposureSimulationRequest) GetAdvisorMemoState() string {
+	if x != nil {
+		return x.AdvisorMemoState
+	}
+	return ""
+}
+
+type RunOrExportWargameExposureSimulationResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Simulation    *OracleWargameExposureSimulationItem `protobuf:"bytes,1,opt,name=simulation,proto3" json:"simulation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunOrExportWargameExposureSimulationResponse) Reset() {
+	*x = RunOrExportWargameExposureSimulationResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[214]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunOrExportWargameExposureSimulationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunOrExportWargameExposureSimulationResponse) ProtoMessage() {}
+
+func (x *RunOrExportWargameExposureSimulationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[214]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunOrExportWargameExposureSimulationResponse.ProtoReflect.Descriptor instead.
+func (*RunOrExportWargameExposureSimulationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{214}
+}
+
+func (x *RunOrExportWargameExposureSimulationResponse) GetSimulation() *OracleWargameExposureSimulationItem {
+	if x != nil {
+		return x.Simulation
+	}
+	return nil
+}
+
+type UpdateWargameSensitivityOrContingencyRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	SimulationCode       string                 `protobuf:"bytes,1,opt,name=simulation_code,json=simulationCode,proto3" json:"simulation_code,omitempty"`
+	TopSensitivityDriver string                 `protobuf:"bytes,2,opt,name=top_sensitivity_driver,json=topSensitivityDriver,proto3" json:"top_sensitivity_driver,omitempty"`
+	AdvisorMemoState     string                 `protobuf:"bytes,3,opt,name=advisor_memo_state,json=advisorMemoState,proto3" json:"advisor_memo_state,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) Reset() {
+	*x = UpdateWargameSensitivityOrContingencyRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[215]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateWargameSensitivityOrContingencyRequest) ProtoMessage() {}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[215]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateWargameSensitivityOrContingencyRequest.ProtoReflect.Descriptor instead.
+func (*UpdateWargameSensitivityOrContingencyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{215}
+}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) GetSimulationCode() string {
+	if x != nil {
+		return x.SimulationCode
+	}
+	return ""
+}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) GetTopSensitivityDriver() string {
+	if x != nil {
+		return x.TopSensitivityDriver
+	}
+	return ""
+}
+
+func (x *UpdateWargameSensitivityOrContingencyRequest) GetAdvisorMemoState() string {
+	if x != nil {
+		return x.AdvisorMemoState
+	}
+	return ""
+}
+
+type UpdateWargameSensitivityOrContingencyResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Simulation    *OracleWargameExposureSimulationItem `protobuf:"bytes,1,opt,name=simulation,proto3" json:"simulation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateWargameSensitivityOrContingencyResponse) Reset() {
+	*x = UpdateWargameSensitivityOrContingencyResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[216]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateWargameSensitivityOrContingencyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateWargameSensitivityOrContingencyResponse) ProtoMessage() {}
+
+func (x *UpdateWargameSensitivityOrContingencyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[216]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateWargameSensitivityOrContingencyResponse.ProtoReflect.Descriptor instead.
+func (*UpdateWargameSensitivityOrContingencyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{216}
+}
+
+func (x *UpdateWargameSensitivityOrContingencyResponse) GetSimulation() *OracleWargameExposureSimulationItem {
+	if x != nil {
+		return x.Simulation
+	}
+	return nil
+}
+
+type AdminListWargamingExposureAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListWargamingExposureAuditRequest) Reset() {
+	*x = AdminListWargamingExposureAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[217]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListWargamingExposureAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListWargamingExposureAuditRequest) ProtoMessage() {}
+
+func (x *AdminListWargamingExposureAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[217]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListWargamingExposureAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListWargamingExposureAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{217}
+}
+
+func (x *AdminListWargamingExposureAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListWargamingExposureAuditResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Simulations   []*OracleWargameExposureSimulationItem `protobuf:"bytes,1,rep,name=simulations,proto3" json:"simulations,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListWargamingExposureAuditResponse) Reset() {
+	*x = AdminListWargamingExposureAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[218]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListWargamingExposureAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListWargamingExposureAuditResponse) ProtoMessage() {}
+
+func (x *AdminListWargamingExposureAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[218]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListWargamingExposureAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListWargamingExposureAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{218}
+}
+
+func (x *AdminListWargamingExposureAuditResponse) GetSimulations() []*OracleWargameExposureSimulationItem {
+	if x != nil {
+		return x.Simulations
+	}
+	return nil
+}
+
+type AdminCertifyMinimalPillarContractOrDisclaimerRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId               string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	SimulationCode             string                 `protobuf:"bytes,2,opt,name=simulation_code,json=simulationCode,proto3" json:"simulation_code,omitempty"`
+	AdvisorMemoState           string                 `protobuf:"bytes,3,opt,name=advisor_memo_state,json=advisorMemoState,proto3" json:"advisor_memo_state,omitempty"`
+	MinimalPillarContractsUsed string                 `protobuf:"bytes,4,opt,name=minimal_pillar_contracts_used,json=minimalPillarContractsUsed,proto3" json:"minimal_pillar_contracts_used,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) Reset() {
+	*x = AdminCertifyMinimalPillarContractOrDisclaimerRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[219]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyMinimalPillarContractOrDisclaimerRequest) ProtoMessage() {}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[219]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyMinimalPillarContractOrDisclaimerRequest.ProtoReflect.Descriptor instead.
+func (*AdminCertifyMinimalPillarContractOrDisclaimerRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{219}
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) GetSimulationCode() string {
+	if x != nil {
+		return x.SimulationCode
+	}
+	return ""
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) GetAdvisorMemoState() string {
+	if x != nil {
+		return x.AdvisorMemoState
+	}
+	return ""
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerRequest) GetMinimalPillarContractsUsed() string {
+	if x != nil {
+		return x.MinimalPillarContractsUsed
+	}
+	return ""
+}
+
+type AdminCertifyMinimalPillarContractOrDisclaimerResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Simulation    *OracleWargameExposureSimulationItem `protobuf:"bytes,1,opt,name=simulation,proto3" json:"simulation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerResponse) Reset() {
+	*x = AdminCertifyMinimalPillarContractOrDisclaimerResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[220]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyMinimalPillarContractOrDisclaimerResponse) ProtoMessage() {}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[220]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyMinimalPillarContractOrDisclaimerResponse.ProtoReflect.Descriptor instead.
+func (*AdminCertifyMinimalPillarContractOrDisclaimerResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{220}
+}
+
+func (x *AdminCertifyMinimalPillarContractOrDisclaimerResponse) GetSimulation() *OracleWargameExposureSimulationItem {
+	if x != nil {
+		return x.Simulation
+	}
+	return nil
+}
+
+type OraclePrivateCaseLibraryEntryItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CaseCode                        string                 `protobuf:"bytes,3,opt,name=case_code,json=caseCode,proto3" json:"case_code,omitempty"`
+	SourceDecisionCode              string                 `protobuf:"bytes,4,opt,name=source_decision_code,json=sourceDecisionCode,proto3" json:"source_decision_code,omitempty"`
+	CaseTitle                       string                 `protobuf:"bytes,5,opt,name=case_title,json=caseTitle,proto3" json:"case_title,omitempty"`
+	StructuralMatchAndDifferences   string                 `protobuf:"bytes,6,opt,name=structural_match_and_differences,json=structuralMatchAndDifferences,proto3" json:"structural_match_and_differences,omitempty"`
+	ObservedOutcomeVsCounterfactual string                 `protobuf:"bytes,7,opt,name=observed_outcome_vs_counterfactual,json=observedOutcomeVsCounterfactual,proto3" json:"observed_outcome_vs_counterfactual,omitempty"`
+	AnonymizedInstitutionalTemplate string                 `protobuf:"bytes,8,opt,name=anonymized_institutional_template,json=anonymizedInstitutionalTemplate,proto3" json:"anonymized_institutional_template,omitempty"`
+	SharingState                    string                 `protobuf:"bytes,9,opt,name=sharing_state,json=sharingState,proto3" json:"sharing_state,omitempty"`
+	AnalogyTreatedAsEvidence        bool                   `protobuf:"varint,10,opt,name=analogy_treated_as_evidence,json=analogyTreatedAsEvidence,proto3" json:"analogy_treated_as_evidence,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,11,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) Reset() {
+	*x = OraclePrivateCaseLibraryEntryItem{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[221]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OraclePrivateCaseLibraryEntryItem) ProtoMessage() {}
+
+func (x *OraclePrivateCaseLibraryEntryItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[221]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OraclePrivateCaseLibraryEntryItem.ProtoReflect.Descriptor instead.
+func (*OraclePrivateCaseLibraryEntryItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{221}
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetCaseCode() string {
+	if x != nil {
+		return x.CaseCode
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetSourceDecisionCode() string {
+	if x != nil {
+		return x.SourceDecisionCode
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetCaseTitle() string {
+	if x != nil {
+		return x.CaseTitle
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetStructuralMatchAndDifferences() string {
+	if x != nil {
+		return x.StructuralMatchAndDifferences
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetObservedOutcomeVsCounterfactual() string {
+	if x != nil {
+		return x.ObservedOutcomeVsCounterfactual
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetAnonymizedInstitutionalTemplate() string {
+	if x != nil {
+		return x.AnonymizedInstitutionalTemplate
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetSharingState() string {
+	if x != nil {
+		return x.SharingState
+	}
+	return ""
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetAnalogyTreatedAsEvidence() bool {
+	if x != nil {
+		return x.AnalogyTreatedAsEvidence
+	}
+	return false
+}
+
+func (x *OraclePrivateCaseLibraryEntryItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetPrivateCaseLibraryWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchRequest) Reset() {
+	*x = GetPrivateCaseLibraryWorkbenchRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[222]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPrivateCaseLibraryWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetPrivateCaseLibraryWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[222]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPrivateCaseLibraryWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetPrivateCaseLibraryWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{222}
+}
+
+type GetPrivateCaseLibraryWorkbenchResponse struct {
+	state                          protoimpl.MessageState               `protogen:"open.v1"`
+	Cases                          []*OraclePrivateCaseLibraryEntryItem `protobuf:"bytes,1,rep,name=cases,proto3" json:"cases,omitempty"`
+	AnalogyVsEvidenceGuardEnforced bool                                 `protobuf:"varint,2,opt,name=analogy_vs_evidence_guard_enforced,json=analogyVsEvidenceGuardEnforced,proto3" json:"analogy_vs_evidence_guard_enforced,omitempty"`
+	CaseLibraryBanner              string                               `protobuf:"bytes,3,opt,name=case_library_banner,json=caseLibraryBanner,proto3" json:"case_library_banner,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) Reset() {
+	*x = GetPrivateCaseLibraryWorkbenchResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[223]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPrivateCaseLibraryWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[223]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPrivateCaseLibraryWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetPrivateCaseLibraryWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{223}
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) GetCases() []*OraclePrivateCaseLibraryEntryItem {
+	if x != nil {
+		return x.Cases
+	}
+	return nil
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) GetAnalogyVsEvidenceGuardEnforced() bool {
+	if x != nil {
+		return x.AnalogyVsEvidenceGuardEnforced
+	}
+	return false
+}
+
+func (x *GetPrivateCaseLibraryWorkbenchResponse) GetCaseLibraryBanner() string {
+	if x != nil {
+		return x.CaseLibraryBanner
+	}
+	return ""
+}
+
+type SaveOrComparePrivateCaseEntryRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	CaseCode                        string                 `protobuf:"bytes,1,opt,name=case_code,json=caseCode,proto3" json:"case_code,omitempty"`
+	SourceDecisionCode              string                 `protobuf:"bytes,2,opt,name=source_decision_code,json=sourceDecisionCode,proto3" json:"source_decision_code,omitempty"`
+	CaseTitle                       string                 `protobuf:"bytes,3,opt,name=case_title,json=caseTitle,proto3" json:"case_title,omitempty"`
+	StructuralMatchAndDifferences   string                 `protobuf:"bytes,4,opt,name=structural_match_and_differences,json=structuralMatchAndDifferences,proto3" json:"structural_match_and_differences,omitempty"`
+	ObservedOutcomeVsCounterfactual string                 `protobuf:"bytes,5,opt,name=observed_outcome_vs_counterfactual,json=observedOutcomeVsCounterfactual,proto3" json:"observed_outcome_vs_counterfactual,omitempty"`
+	AnonymizedInstitutionalTemplate string                 `protobuf:"bytes,6,opt,name=anonymized_institutional_template,json=anonymizedInstitutionalTemplate,proto3" json:"anonymized_institutional_template,omitempty"`
+	SharingState                    string                 `protobuf:"bytes,7,opt,name=sharing_state,json=sharingState,proto3" json:"sharing_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) Reset() {
+	*x = SaveOrComparePrivateCaseEntryRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[224]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveOrComparePrivateCaseEntryRequest) ProtoMessage() {}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[224]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveOrComparePrivateCaseEntryRequest.ProtoReflect.Descriptor instead.
+func (*SaveOrComparePrivateCaseEntryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{224}
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetCaseCode() string {
+	if x != nil {
+		return x.CaseCode
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetSourceDecisionCode() string {
+	if x != nil {
+		return x.SourceDecisionCode
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetCaseTitle() string {
+	if x != nil {
+		return x.CaseTitle
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetStructuralMatchAndDifferences() string {
+	if x != nil {
+		return x.StructuralMatchAndDifferences
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetObservedOutcomeVsCounterfactual() string {
+	if x != nil {
+		return x.ObservedOutcomeVsCounterfactual
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetAnonymizedInstitutionalTemplate() string {
+	if x != nil {
+		return x.AnonymizedInstitutionalTemplate
+	}
+	return ""
+}
+
+func (x *SaveOrComparePrivateCaseEntryRequest) GetSharingState() string {
+	if x != nil {
+		return x.SharingState
+	}
+	return ""
+}
+
+type SaveOrComparePrivateCaseEntryResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	CaseEntry     *OraclePrivateCaseLibraryEntryItem `protobuf:"bytes,1,opt,name=case_entry,json=caseEntry,proto3" json:"case_entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveOrComparePrivateCaseEntryResponse) Reset() {
+	*x = SaveOrComparePrivateCaseEntryResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[225]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveOrComparePrivateCaseEntryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveOrComparePrivateCaseEntryResponse) ProtoMessage() {}
+
+func (x *SaveOrComparePrivateCaseEntryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[225]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveOrComparePrivateCaseEntryResponse.ProtoReflect.Descriptor instead.
+func (*SaveOrComparePrivateCaseEntryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{225}
+}
+
+func (x *SaveOrComparePrivateCaseEntryResponse) GetCaseEntry() *OraclePrivateCaseLibraryEntryItem {
+	if x != nil {
+		return x.CaseEntry
+	}
+	return nil
+}
+
+type SubmitOrWithdrawAnonymizedPlaybookRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	CaseCode                        string                 `protobuf:"bytes,1,opt,name=case_code,json=caseCode,proto3" json:"case_code,omitempty"`
+	AnonymizedInstitutionalTemplate string                 `protobuf:"bytes,2,opt,name=anonymized_institutional_template,json=anonymizedInstitutionalTemplate,proto3" json:"anonymized_institutional_template,omitempty"`
+	SharingState                    string                 `protobuf:"bytes,3,opt,name=sharing_state,json=sharingState,proto3" json:"sharing_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) Reset() {
+	*x = SubmitOrWithdrawAnonymizedPlaybookRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[226]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitOrWithdrawAnonymizedPlaybookRequest) ProtoMessage() {}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[226]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitOrWithdrawAnonymizedPlaybookRequest.ProtoReflect.Descriptor instead.
+func (*SubmitOrWithdrawAnonymizedPlaybookRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{226}
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) GetCaseCode() string {
+	if x != nil {
+		return x.CaseCode
+	}
+	return ""
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) GetAnonymizedInstitutionalTemplate() string {
+	if x != nil {
+		return x.AnonymizedInstitutionalTemplate
+	}
+	return ""
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookRequest) GetSharingState() string {
+	if x != nil {
+		return x.SharingState
+	}
+	return ""
+}
+
+type SubmitOrWithdrawAnonymizedPlaybookResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	CaseEntry     *OraclePrivateCaseLibraryEntryItem `protobuf:"bytes,1,opt,name=case_entry,json=caseEntry,proto3" json:"case_entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookResponse) Reset() {
+	*x = SubmitOrWithdrawAnonymizedPlaybookResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[227]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitOrWithdrawAnonymizedPlaybookResponse) ProtoMessage() {}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[227]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitOrWithdrawAnonymizedPlaybookResponse.ProtoReflect.Descriptor instead.
+func (*SubmitOrWithdrawAnonymizedPlaybookResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{227}
+}
+
+func (x *SubmitOrWithdrawAnonymizedPlaybookResponse) GetCaseEntry() *OraclePrivateCaseLibraryEntryItem {
+	if x != nil {
+		return x.CaseEntry
+	}
+	return nil
+}
+
+type AdminListPrivateCaseLibraryAuditRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListPrivateCaseLibraryAuditRequest) Reset() {
+	*x = AdminListPrivateCaseLibraryAuditRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[228]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListPrivateCaseLibraryAuditRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListPrivateCaseLibraryAuditRequest) ProtoMessage() {}
+
+func (x *AdminListPrivateCaseLibraryAuditRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[228]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListPrivateCaseLibraryAuditRequest.ProtoReflect.Descriptor instead.
+func (*AdminListPrivateCaseLibraryAuditRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{228}
+}
+
+func (x *AdminListPrivateCaseLibraryAuditRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type AdminListPrivateCaseLibraryAuditResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Cases         []*OraclePrivateCaseLibraryEntryItem `protobuf:"bytes,1,rep,name=cases,proto3" json:"cases,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminListPrivateCaseLibraryAuditResponse) Reset() {
+	*x = AdminListPrivateCaseLibraryAuditResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[229]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminListPrivateCaseLibraryAuditResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminListPrivateCaseLibraryAuditResponse) ProtoMessage() {}
+
+func (x *AdminListPrivateCaseLibraryAuditResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[229]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminListPrivateCaseLibraryAuditResponse.ProtoReflect.Descriptor instead.
+func (*AdminListPrivateCaseLibraryAuditResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{229}
+}
+
+func (x *AdminListPrivateCaseLibraryAuditResponse) GetCases() []*OraclePrivateCaseLibraryEntryItem {
+	if x != nil {
+		return x.Cases
+	}
+	return nil
+}
+
+type AdminCertifyPlaybookAnonymizationOrErasureRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	TargetUserId                    string                 `protobuf:"bytes,1,opt,name=target_user_id,json=targetUserId,proto3" json:"target_user_id,omitempty"`
+	CaseCode                        string                 `protobuf:"bytes,2,opt,name=case_code,json=caseCode,proto3" json:"case_code,omitempty"`
+	SharingState                    string                 `protobuf:"bytes,3,opt,name=sharing_state,json=sharingState,proto3" json:"sharing_state,omitempty"`
+	AnonymizedInstitutionalTemplate string                 `protobuf:"bytes,4,opt,name=anonymized_institutional_template,json=anonymizedInstitutionalTemplate,proto3" json:"anonymized_institutional_template,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) Reset() {
+	*x = AdminCertifyPlaybookAnonymizationOrErasureRequest{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[230]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyPlaybookAnonymizationOrErasureRequest) ProtoMessage() {}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[230]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyPlaybookAnonymizationOrErasureRequest.ProtoReflect.Descriptor instead.
+func (*AdminCertifyPlaybookAnonymizationOrErasureRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{230}
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) GetTargetUserId() string {
+	if x != nil {
+		return x.TargetUserId
+	}
+	return ""
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) GetCaseCode() string {
+	if x != nil {
+		return x.CaseCode
+	}
+	return ""
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) GetSharingState() string {
+	if x != nil {
+		return x.SharingState
+	}
+	return ""
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureRequest) GetAnonymizedInstitutionalTemplate() string {
+	if x != nil {
+		return x.AnonymizedInstitutionalTemplate
+	}
+	return ""
+}
+
+type AdminCertifyPlaybookAnonymizationOrErasureResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	CaseEntry     *OraclePrivateCaseLibraryEntryItem `protobuf:"bytes,1,opt,name=case_entry,json=caseEntry,proto3" json:"case_entry,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureResponse) Reset() {
+	*x = AdminCertifyPlaybookAnonymizationOrErasureResponse{}
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[231]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdminCertifyPlaybookAnonymizationOrErasureResponse) ProtoMessage() {}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_oracle_v1_oracle_proto_msgTypes[231]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdminCertifyPlaybookAnonymizationOrErasureResponse.ProtoReflect.Descriptor instead.
+func (*AdminCertifyPlaybookAnonymizationOrErasureResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_oracle_v1_oracle_proto_rawDescGZIP(), []int{231}
+}
+
+func (x *AdminCertifyPlaybookAnonymizationOrErasureResponse) GetCaseEntry() *OraclePrivateCaseLibraryEntryItem {
+	if x != nil {
+		return x.CaseEntry
+	}
+	return nil
+}
+
 var File_sttattus_oracle_v1_oracle_proto protoreflect.FileDescriptor
 
 const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
@@ -5824,13 +14500,717 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\x1cGenerateYearInOracleResponse\x12\x10\n" +
 	"\x03url\x18\x01 \x01(\tR\x03url\x12\x1d\n" +
 	"\n" +
-	"page_count\x18\x02 \x01(\x05R\tpageCount*\xc6\x01\n" +
+	"page_count\x18\x02 \x01(\x05R\tpageCount\"\xe0\x03\n" +
+	" OracleEvidenceSourceSnapshotItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsource_code\x18\x03 \x01(\tR\n" +
+	"sourceCode\x12!\n" +
+	"\forigin_class\x18\x04 \x01(\tR\voriginClass\x12\x14\n" +
+	"\x05title\x18\x05 \x01(\tR\x05title\x126\n" +
+	"\x17jurisdiction_and_rights\x18\x06 \x01(\tR\x15jurisdictionAndRights\x12'\n" +
+	"\x0ffreshness_state\x18\a \x01(\tR\x0efreshnessState\x12>\n" +
+	"\x1bcompeting_disagreement_note\x18\b \x01(\tR\x19competingDisagreementNote\x123\n" +
+	"\x15correction_generation\x18\t \x01(\x05R\x14correctionGeneration\x12=\n" +
+	"\x1bstrict_answer_mode_enforced\x18\n" +
+	" \x01(\bR\x18strictAnswerModeEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"\xea\x03\n" +
+	"\x1bOracleCitedClaimPassageItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"claim_code\x18\x03 \x01(\tR\tclaimCode\x12\x1f\n" +
+	"\vsource_code\x18\x04 \x01(\tR\n" +
+	"sourceCode\x12'\n" +
+	"\x0fclaim_statement\x18\x05 \x01(\tR\x0eclaimStatement\x12<\n" +
+	"\x1asupporting_passage_excerpt\x18\x06 \x01(\tR\x18supportingPassageExcerpt\x122\n" +
+	"\x15primary_source_marker\x18\a \x01(\bR\x13primarySourceMarker\x12)\n" +
+	"\x10epistemic_status\x18\b \x01(\tR\x0fepistemicStatus\x126\n" +
+	"\x17evidence_gap_disclosure\x18\t \x01(\tR\x15evidenceGapDisclosure\x12>\n" +
+	"\x1bunsupported_fluency_refused\x18\n" +
+	" \x01(\bR\x19unsupportedFluencyRefused\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"\"\n" +
+	" GetEvidenceTruthWorkbenchRequest\"\xb5\x02\n" +
+	"!GetEvidenceTruthWorkbenchResponse\x12N\n" +
+	"\asources\x18\x01 \x03(\v24.sttattus.oracle.v1.OracleEvidenceSourceSnapshotItemR\asources\x12G\n" +
+	"\x06claims\x18\x02 \x03(\v2/.sttattus.oracle.v1.OracleCitedClaimPassageItemR\x06claims\x129\n" +
+	"\x19strict_answer_mode_active\x18\x03 \x01(\bR\x16strictAnswerModeActive\x12<\n" +
+	"\x1aepistemic_integrity_banner\x18\x04 \x01(\tR\x18epistemicIntegrityBanner\"\xe2\x02\n" +
+	"&RegisterOrRefreshEvidenceSourceRequest\x12\x1f\n" +
+	"\vsource_code\x18\x01 \x01(\tR\n" +
+	"sourceCode\x12!\n" +
+	"\forigin_class\x18\x02 \x01(\tR\voriginClass\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x126\n" +
+	"\x17jurisdiction_and_rights\x18\x04 \x01(\tR\x15jurisdictionAndRights\x12'\n" +
+	"\x0ffreshness_state\x18\x05 \x01(\tR\x0efreshnessState\x12>\n" +
+	"\x1bcompeting_disagreement_note\x18\x06 \x01(\tR\x19competingDisagreementNote\x12=\n" +
+	"\x1bstrict_answer_mode_enforced\x18\a \x01(\bR\x18strictAnswerModeEnforced\"w\n" +
+	"'RegisterOrRefreshEvidenceSourceResponse\x12L\n" +
+	"\x06source\x18\x01 \x01(\v24.sttattus.oracle.v1.OracleEvidenceSourceSnapshotItemR\x06source\"\xe3\x02\n" +
+	"#VerifyOrInvalidateCitedClaimRequest\x12\x1d\n" +
+	"\n" +
+	"claim_code\x18\x01 \x01(\tR\tclaimCode\x12\x1f\n" +
+	"\vsource_code\x18\x02 \x01(\tR\n" +
+	"sourceCode\x12'\n" +
+	"\x0fclaim_statement\x18\x03 \x01(\tR\x0eclaimStatement\x12<\n" +
+	"\x1asupporting_passage_excerpt\x18\x04 \x01(\tR\x18supportingPassageExcerpt\x122\n" +
+	"\x15primary_source_marker\x18\x05 \x01(\bR\x13primarySourceMarker\x12)\n" +
+	"\x10epistemic_status\x18\x06 \x01(\tR\x0fepistemicStatus\x126\n" +
+	"\x17evidence_gap_disclosure\x18\a \x01(\tR\x15evidenceGapDisclosure\"m\n" +
+	"$VerifyOrInvalidateCitedClaimResponse\x12E\n" +
+	"\x05claim\x18\x01 \x01(\v2/.sttattus.oracle.v1.OracleCitedClaimPassageItemR\x05claim\":\n" +
+	"\"AdminListEvidenceTruthAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xbe\x01\n" +
+	"#AdminListEvidenceTruthAuditResponse\x12N\n" +
+	"\asources\x18\x01 \x03(\v24.sttattus.oracle.v1.OracleEvidenceSourceSnapshotItemR\asources\x12G\n" +
+	"\x06claims\x18\x02 \x03(\v2/.sttattus.oracle.v1.OracleCitedClaimPassageItemR\x06claims\"\xdc\x01\n" +
+	"*AdminManageSourceRightsOrCorrectionRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12\x1f\n" +
+	"\vsource_code\x18\x02 \x01(\tR\n" +
+	"sourceCode\x12'\n" +
+	"\x0ffreshness_state\x18\x03 \x01(\tR\x0efreshnessState\x12>\n" +
+	"\x1bcompeting_disagreement_note\x18\x04 \x01(\tR\x19competingDisagreementNote\"{\n" +
+	"+AdminManageSourceRightsOrCorrectionResponse\x12L\n" +
+	"\x06source\x18\x01 \x01(\v24.sttattus.oracle.v1.OracleEvidenceSourceSnapshotItemR\x06source\"\xc1\x04\n" +
+	"\x1eOracleDecisionLedgerRecordItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rdecision_code\x18\x03 \x01(\tR\fdecisionCode\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12/\n" +
+	"\x13reversibility_class\x18\x05 \x01(\tR\x12reversibilityClass\x128\n" +
+	"\x18options_compared_summary\x18\x06 \x01(\tR\x16optionsComparedSummary\x12.\n" +
+	"\x13do_nothing_baseline\x18\a \x01(\tR\x11doNothingBaseline\x12C\n" +
+	"\x1epremortem_and_redteam_critique\x18\b \x01(\tR\x1bpremortemAndRedteamCritique\x12%\n" +
+	"\x0edissent_record\x18\t \x01(\tR\rdissentRecord\x12)\n" +
+	"\x10decision_version\x18\n" +
+	" \x01(\x05R\x0fdecisionVersion\x12%\n" +
+	"\x0edecision_state\x18\v \x01(\tR\rdecisionState\x12<\n" +
+	"\x1aimmutable_member_ownership\x18\f \x01(\bR\x18immutableMemberOwnership\x12$\n" +
+	"\x0eupdated_at_iso\x18\r \x01(\tR\fupdatedAtIso\"\xda\x03\n" +
+	"\"OracleDecisionAssumptionReviewItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"entry_code\x18\x03 \x01(\tR\tentryCode\x12#\n" +
+	"\rdecision_code\x18\x04 \x01(\tR\fdecisionCode\x121\n" +
+	"\x14assumption_statement\x18\x05 \x01(\tR\x13assumptionStatement\x12.\n" +
+	"\x13confidence_band_bps\x18\x06 \x01(\x05R\x11confidenceBandBps\x12-\n" +
+	"\x12sensitivity_impact\x18\a \x01(\tR\x11sensitivityImpact\x12%\n" +
+	"\x0ereview_horizon\x18\b \x01(\tR\rreviewHorizon\x12=\n" +
+	"\x1bobserved_outcome_and_lesson\x18\t \x01(\tR\x18observedOutcomeAndLesson\x12)\n" +
+	"\x10freshness_status\x18\n" +
+	" \x01(\tR\x0ffreshnessStatus\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"#\n" +
+	"!GetDecisionLedgerWorkbenchRequest\"\xcc\x02\n" +
+	"\"GetDecisionLedgerWorkbenchResponse\x12P\n" +
+	"\tdecisions\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleDecisionLedgerRecordItemR\tdecisions\x12X\n" +
+	"\vassumptions\x18\x02 \x03(\v26.sttattus.oracle.v1.OracleDecisionAssumptionReviewItemR\vassumptions\x12<\n" +
+	"\x1amember_ownership_immutable\x18\x03 \x01(\bR\x18memberOwnershipImmutable\x12<\n" +
+	"\x1adecision_governance_banner\x18\x04 \x01(\tR\x18decisionGovernanceBanner\"\x94\x03\n" +
+	")CreateOrUpdateDecisionLedgerRecordRequest\x12#\n" +
+	"\rdecision_code\x18\x01 \x01(\tR\fdecisionCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12/\n" +
+	"\x13reversibility_class\x18\x03 \x01(\tR\x12reversibilityClass\x128\n" +
+	"\x18options_compared_summary\x18\x04 \x01(\tR\x16optionsComparedSummary\x12.\n" +
+	"\x13do_nothing_baseline\x18\x05 \x01(\tR\x11doNothingBaseline\x12C\n" +
+	"\x1epremortem_and_redteam_critique\x18\x06 \x01(\tR\x1bpremortemAndRedteamCritique\x12%\n" +
+	"\x0edissent_record\x18\a \x01(\tR\rdissentRecord\x12%\n" +
+	"\x0edecision_state\x18\b \x01(\tR\rdecisionState\"|\n" +
+	"*CreateOrUpdateDecisionLedgerRecordResponse\x12N\n" +
+	"\bdecision\x18\x01 \x01(\v22.sttattus.oracle.v1.OracleDecisionLedgerRecordItemR\bdecision\"\x90\x03\n" +
+	"'RecordDecisionAssumptionOrReviewRequest\x12\x1d\n" +
+	"\n" +
+	"entry_code\x18\x01 \x01(\tR\tentryCode\x12#\n" +
+	"\rdecision_code\x18\x02 \x01(\tR\fdecisionCode\x121\n" +
+	"\x14assumption_statement\x18\x03 \x01(\tR\x13assumptionStatement\x12.\n" +
+	"\x13confidence_band_bps\x18\x04 \x01(\x05R\x11confidenceBandBps\x12-\n" +
+	"\x12sensitivity_impact\x18\x05 \x01(\tR\x11sensitivityImpact\x12%\n" +
+	"\x0ereview_horizon\x18\x06 \x01(\tR\rreviewHorizon\x12=\n" +
+	"\x1bobserved_outcome_and_lesson\x18\a \x01(\tR\x18observedOutcomeAndLesson\x12)\n" +
+	"\x10freshness_status\x18\b \x01(\tR\x0ffreshnessStatus\"\x82\x01\n" +
+	"(RecordDecisionAssumptionOrReviewResponse\x12V\n" +
+	"\n" +
+	"assumption\x18\x01 \x01(\v26.sttattus.oracle.v1.OracleDecisionAssumptionReviewItemR\n" +
+	"assumption\";\n" +
+	"#AdminListDecisionLedgerAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xd2\x01\n" +
+	"$AdminListDecisionLedgerAuditResponse\x12P\n" +
+	"\tdecisions\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleDecisionLedgerRecordItemR\tdecisions\x12X\n" +
+	"\vassumptions\x18\x02 \x03(\v26.sttattus.oracle.v1.OracleDecisionAssumptionReviewItemR\vassumptions\"\xc3\x01\n" +
+	"(AdminManageDecisionTemplateOrHoldRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12#\n" +
+	"\rdecision_code\x18\x02 \x01(\tR\fdecisionCode\x12%\n" +
+	"\x0edecision_state\x18\x03 \x01(\tR\rdecisionState\x12%\n" +
+	"\x0edissent_record\x18\x04 \x01(\tR\rdissentRecord\"{\n" +
+	")AdminManageDecisionTemplateOrHoldResponse\x12N\n" +
+	"\bdecision\x18\x01 \x01(\v22.sttattus.oracle.v1.OracleDecisionLedgerRecordItemR\bdecision\"\xf7\x03\n" +
+	"\x1dOracleCommitmentExecutionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fcommitment_code\x18\x03 \x01(\tR\x0ecommitmentCode\x12#\n" +
+	"\rdecision_code\x18\x04 \x01(\tR\fdecisionCode\x12!\n" +
+	"\fowner_handle\x18\x05 \x01(\tR\vownerHandle\x12\x14\n" +
+	"\x05title\x18\x06 \x01(\tR\x05title\x12-\n" +
+	"\x12dependency_summary\x18\a \x01(\tR\x11dependencySummary\x123\n" +
+	"\x15cancellation_criteria\x18\b \x01(\tR\x14cancellationCriteria\x126\n" +
+	"\x17completion_evidence_ref\x18\t \x01(\tR\x15completionEvidenceRef\x12'\n" +
+	"\x0fexecution_state\x18\n" +
+	" \x01(\tR\x0eexecutionState\x12;\n" +
+	"\x1anon_judgmental_loop_review\x18\v \x01(\tR\x17nonJudgmentalLoopReview\x12$\n" +
+	"\x0eupdated_at_iso\x18\f \x01(\tR\fupdatedAtIso\"\xe0\x03\n" +
+	"%OracleExternalSyncDeliveryReceiptItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\freceipt_code\x18\x03 \x01(\tR\vreceiptCode\x12'\n" +
+	"\x0fcommitment_code\x18\x04 \x01(\tR\x0ecommitmentCode\x12)\n" +
+	"\x10target_connector\x18\x05 \x01(\tR\x0ftargetConnector\x126\n" +
+	"\x17preview_payload_summary\x18\x06 \x01(\tR\x15previewPayloadSummary\x12'\n" +
+	"\x0fidempotency_key\x18\a \x01(\tR\x0eidempotencyKey\x128\n" +
+	"\x18member_explicit_approval\x18\b \x01(\bR\x16memberExplicitApproval\x12%\n" +
+	"\x0edelivery_state\x18\t \x01(\tR\rdeliveryState\x12/\n" +
+	"\x13reconciliation_note\x18\n" +
+	" \x01(\tR\x12reconciliationNote\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"'\n" +
+	"%GetCommitmentsOutcomeWorkbenchRequest\"\xd0\x02\n" +
+	"&GetCommitmentsOutcomeWorkbenchResponse\x12S\n" +
+	"\vcommitments\x18\x01 \x03(\v21.sttattus.oracle.v1.OracleCommitmentExecutionItemR\vcommitments\x12^\n" +
+	"\rsync_receipts\x18\x02 \x03(\v29.sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItemR\fsyncReceipts\x12A\n" +
+	"\x1dpreview_and_approval_required\x18\x03 \x01(\bR\x1apreviewAndApprovalRequired\x12.\n" +
+	"\x13loop_closure_banner\x18\x04 \x01(\tR\x11loopClosureBanner\"\xf1\x02\n" +
+	"#CreateOrUpdateCommitmentItemRequest\x12'\n" +
+	"\x0fcommitment_code\x18\x01 \x01(\tR\x0ecommitmentCode\x12#\n" +
+	"\rdecision_code\x18\x02 \x01(\tR\fdecisionCode\x12!\n" +
+	"\fowner_handle\x18\x03 \x01(\tR\vownerHandle\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12-\n" +
+	"\x12dependency_summary\x18\x05 \x01(\tR\x11dependencySummary\x123\n" +
+	"\x15cancellation_criteria\x18\x06 \x01(\tR\x14cancellationCriteria\x126\n" +
+	"\x17completion_evidence_ref\x18\a \x01(\tR\x15completionEvidenceRef\x12'\n" +
+	"\x0fexecution_state\x18\b \x01(\tR\x0eexecutionState\"y\n" +
+	"$CreateOrUpdateCommitmentItemResponse\x12Q\n" +
+	"\n" +
+	"commitment\x18\x01 \x01(\v21.sttattus.oracle.v1.OracleCommitmentExecutionItemR\n" +
+	"commitment\"\xe8\x02\n" +
+	"-PreviewOrExecuteExternalCommitmentSyncRequest\x12!\n" +
+	"\freceipt_code\x18\x01 \x01(\tR\vreceiptCode\x12'\n" +
+	"\x0fcommitment_code\x18\x02 \x01(\tR\x0ecommitmentCode\x12)\n" +
+	"\x10target_connector\x18\x03 \x01(\tR\x0ftargetConnector\x126\n" +
+	"\x17preview_payload_summary\x18\x04 \x01(\tR\x15previewPayloadSummary\x12'\n" +
+	"\x0fidempotency_key\x18\x05 \x01(\tR\x0eidempotencyKey\x128\n" +
+	"\x18member_explicit_approval\x18\x06 \x01(\bR\x16memberExplicitApproval\x12%\n" +
+	"\x0edelivery_state\x18\a \x01(\tR\rdeliveryState\"\x8e\x01\n" +
+	".PreviewOrExecuteExternalCommitmentSyncResponse\x12\\\n" +
+	"\fsync_receipt\x18\x01 \x01(\v29.sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItemR\vsyncReceipt\"?\n" +
+	"'AdminListCommitmentsOutcomeAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xdf\x01\n" +
+	"(AdminListCommitmentsOutcomeAuditResponse\x12S\n" +
+	"\vcommitments\x18\x01 \x03(\v21.sttattus.oracle.v1.OracleCommitmentExecutionItemR\vcommitments\x12^\n" +
+	"\rsync_receipts\x18\x02 \x03(\v29.sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItemR\fsyncReceipts\"\xcc\x01\n" +
+	")AdminReconcileExternalSyncDeliveryRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12!\n" +
+	"\freceipt_code\x18\x02 \x01(\tR\vreceiptCode\x12%\n" +
+	"\x0edelivery_state\x18\x03 \x01(\tR\rdeliveryState\x12/\n" +
+	"\x13reconciliation_note\x18\x04 \x01(\tR\x12reconciliationNote\"\x8a\x01\n" +
+	"*AdminReconcileExternalSyncDeliveryResponse\x12\\\n" +
+	"\fsync_receipt\x18\x01 \x01(\v29.sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItemR\vsyncReceipt\"\xb3\x03\n" +
+	" OracleWatchlistEntityMonitorItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fmonitor_code\x18\x03 \x01(\tR\vmonitorCode\x12*\n" +
+	"\x11entity_and_region\x18\x04 \x01(\tR\x0fentityAndRegion\x123\n" +
+	"\x15materiality_threshold\x18\x05 \x01(\tR\x14materialityThreshold\x12,\n" +
+	"\x12daily_alert_budget\x18\x06 \x01(\x05R\x10dailyAlertBudget\x12,\n" +
+	"\x12quiet_hours_window\x18\a \x01(\tR\x10quietHoursWindow\x124\n" +
+	"\x16snooze_until_condition\x18\b \x01(\tR\x14snoozeUntilCondition\x12*\n" +
+	"\x11feed_health_state\x18\t \x01(\tR\x0ffeedHealthState\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"\xb8\x04\n" +
+	" OracleCommandBriefSignalCardItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsignal_code\x18\x03 \x01(\tR\n" +
+	"signalCode\x12!\n" +
+	"\fmonitor_code\x18\x04 \x01(\tR\vmonitorCode\x12\x1d\n" +
+	"\n" +
+	"brief_kind\x18\x05 \x01(\tR\tbriefKind\x126\n" +
+	"\x17observed_fact_statement\x18\x06 \x01(\tR\x15observedFactStatement\x12B\n" +
+	"\x1dseparated_inference_statement\x18\a \x01(\tR\x1bseparatedInferenceStatement\x12=\n" +
+	"\x1aalternative_interpretation\x18\b \x01(\tR\x19alternativeInterpretation\x120\n" +
+	"\x14suggested_next_check\x18\t \x01(\tR\x12suggestedNextCheck\x126\n" +
+	"\x17draft_disposition_state\x18\n" +
+	" \x01(\tR\x15draftDispositionState\x12=\n" +
+	"\x1binference_disguised_as_fact\x18\v \x01(\bR\x18inferenceDisguisedAsFact\x12$\n" +
+	"\x0eupdated_at_iso\x18\f \x01(\tR\fupdatedAtIso\"+\n" +
+	")GetWatchlistsCommandBriefWorkbenchRequest\"\xd6\x02\n" +
+	"*GetWatchlistsCommandBriefWorkbenchResponse\x12P\n" +
+	"\bmonitors\x18\x01 \x03(\v24.sttattus.oracle.v1.OracleWatchlistEntityMonitorItemR\bmonitors\x12W\n" +
+	"\fsignal_cards\x18\x02 \x03(\v24.sttattus.oracle.v1.OracleCommandBriefSignalCardItemR\vsignalCards\x12K\n" +
+	"\"fact_inference_separation_enforced\x18\x03 \x01(\bR\x1ffactInferenceSeparationEnforced\x120\n" +
+	"\x14command_brief_banner\x18\x04 \x01(\tR\x12commandBriefBanner\"\xe7\x02\n" +
+	"#UpsertWatchlistEntityMonitorRequest\x12!\n" +
+	"\fmonitor_code\x18\x01 \x01(\tR\vmonitorCode\x12*\n" +
+	"\x11entity_and_region\x18\x02 \x01(\tR\x0fentityAndRegion\x123\n" +
+	"\x15materiality_threshold\x18\x03 \x01(\tR\x14materialityThreshold\x12,\n" +
+	"\x12daily_alert_budget\x18\x04 \x01(\x05R\x10dailyAlertBudget\x12,\n" +
+	"\x12quiet_hours_window\x18\x05 \x01(\tR\x10quietHoursWindow\x124\n" +
+	"\x16snooze_until_condition\x18\x06 \x01(\tR\x14snoozeUntilCondition\x12*\n" +
+	"\x11feed_health_state\x18\a \x01(\tR\x0ffeedHealthState\"v\n" +
+	"$UpsertWatchlistEntityMonitorResponse\x12N\n" +
+	"\amonitor\x18\x01 \x01(\v24.sttattus.oracle.v1.OracleWatchlistEntityMonitorItemR\amonitor\"\xb2\x03\n" +
+	"(ApproveOrSnoozeCommandBriefSignalRequest\x12\x1f\n" +
+	"\vsignal_code\x18\x01 \x01(\tR\n" +
+	"signalCode\x12!\n" +
+	"\fmonitor_code\x18\x02 \x01(\tR\vmonitorCode\x12\x1d\n" +
+	"\n" +
+	"brief_kind\x18\x03 \x01(\tR\tbriefKind\x126\n" +
+	"\x17observed_fact_statement\x18\x04 \x01(\tR\x15observedFactStatement\x12B\n" +
+	"\x1dseparated_inference_statement\x18\x05 \x01(\tR\x1bseparatedInferenceStatement\x12=\n" +
+	"\x1aalternative_interpretation\x18\x06 \x01(\tR\x19alternativeInterpretation\x120\n" +
+	"\x14suggested_next_check\x18\a \x01(\tR\x12suggestedNextCheck\x126\n" +
+	"\x17draft_disposition_state\x18\b \x01(\tR\x15draftDispositionState\"\x82\x01\n" +
+	")ApproveOrSnoozeCommandBriefSignalResponse\x12U\n" +
+	"\vsignal_card\x18\x01 \x01(\v24.sttattus.oracle.v1.OracleCommandBriefSignalCardItemR\n" +
+	"signalCard\"C\n" +
+	"+AdminListWatchlistsCommandBriefAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xd9\x01\n" +
+	",AdminListWatchlistsCommandBriefAuditResponse\x12P\n" +
+	"\bmonitors\x18\x01 \x03(\v24.sttattus.oracle.v1.OracleWatchlistEntityMonitorItemR\bmonitors\x12W\n" +
+	"\fsignal_cards\x18\x02 \x03(\v24.sttattus.oracle.v1.OracleCommandBriefSignalCardItemR\vsignalCards\"\xd1\x01\n" +
+	",AdminManageWatchlistAlertBudgetOrFeedRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12!\n" +
+	"\fmonitor_code\x18\x02 \x01(\tR\vmonitorCode\x12,\n" +
+	"\x12daily_alert_budget\x18\x03 \x01(\x05R\x10dailyAlertBudget\x12*\n" +
+	"\x11feed_health_state\x18\x04 \x01(\tR\x0ffeedHealthState\"\x7f\n" +
+	"-AdminManageWatchlistAlertBudgetOrFeedResponse\x12N\n" +
+	"\amonitor\x18\x01 \x01(\v24.sttattus.oracle.v1.OracleWatchlistEntityMonitorItemR\amonitor\"\xa3\x04\n" +
+	"\x1eOracleAssumptionDriftAlertItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"drift_code\x18\x03 \x01(\tR\tdriftCode\x12#\n" +
+	"\rdecision_code\x18\x04 \x01(\tR\fdecisionCode\x12'\n" +
+	"\x0fassumption_code\x18\x05 \x01(\tR\x0eassumptionCode\x128\n" +
+	"\x18old_assumption_statement\x18\x06 \x01(\tR\x16oldAssumptionStatement\x120\n" +
+	"\x14new_evidence_passage\x18\a \x01(\tR\x12newEvidencePassage\x12)\n" +
+	"\x10materiality_band\x18\b \x01(\tR\x0fmaterialityBand\x127\n" +
+	"\x17alternative_explanation\x18\t \x01(\tR\x16alternativeExplanation\x12-\n" +
+	"\x12member_disposition\x18\n" +
+	" \x01(\tR\x11memberDisposition\x12F\n" +
+	"\x1fimmutable_predecessor_preserved\x18\v \x01(\bR\x1dimmutablePredecessorPreserved\x12$\n" +
+	"\x0eupdated_at_iso\x18\f \x01(\tR\fupdatedAtIso\"\x8a\x03\n" +
+	"\x1aOracleDriftRadarPolicyItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vpolicy_code\x18\x03 \x01(\tR\n" +
+	"policyCode\x12)\n" +
+	"\x10monitored_domain\x18\x04 \x01(\tR\x0fmonitoredDomain\x12%\n" +
+	"\x0ecooldown_hours\x18\x05 \x01(\x05R\rcooldownHours\x12B\n" +
+	"\x1enotify_only_if_action_possible\x18\x06 \x01(\bR\x1anotifyOnlyIfActionPossible\x12\x1f\n" +
+	"\vradar_state\x18\a \x01(\tR\n" +
+	"radarState\x12E\n" +
+	"\x1ffalse_positive_suppression_note\x18\b \x01(\tR\x1cfalsePositiveSuppressionNote\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetAssumptionDriftRadarWorkbenchRequest\"\xbb\x02\n" +
+	"(GetAssumptionDriftRadarWorkbenchResponse\x12U\n" +
+	"\fdrift_alerts\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleAssumptionDriftAlertItemR\vdriftAlerts\x12J\n" +
+	"\bpolicies\x18\x02 \x03(\v2..sttattus.oracle.v1.OracleDriftRadarPolicyItemR\bpolicies\x12>\n" +
+	"\x1bimmutable_history_preserved\x18\x03 \x01(\bR\x19immutableHistoryPreserved\x12,\n" +
+	"\x12drift_radar_banner\x18\x04 \x01(\tR\x10driftRadarBanner\"\x92\x03\n" +
+	"$RespondToAssumptionDriftAlertRequest\x12\x1d\n" +
+	"\n" +
+	"drift_code\x18\x01 \x01(\tR\tdriftCode\x12#\n" +
+	"\rdecision_code\x18\x02 \x01(\tR\fdecisionCode\x12'\n" +
+	"\x0fassumption_code\x18\x03 \x01(\tR\x0eassumptionCode\x128\n" +
+	"\x18old_assumption_statement\x18\x04 \x01(\tR\x16oldAssumptionStatement\x120\n" +
+	"\x14new_evidence_passage\x18\x05 \x01(\tR\x12newEvidencePassage\x12)\n" +
+	"\x10materiality_band\x18\x06 \x01(\tR\x0fmaterialityBand\x127\n" +
+	"\x17alternative_explanation\x18\a \x01(\tR\x16alternativeExplanation\x12-\n" +
+	"\x12member_disposition\x18\b \x01(\tR\x11memberDisposition\"|\n" +
+	"%RespondToAssumptionDriftAlertResponse\x12S\n" +
+	"\vdrift_alert\x18\x01 \x01(\v22.sttattus.oracle.v1.OracleAssumptionDriftAlertItemR\n" +
+	"driftAlert\"\xbe\x02\n" +
+	"\x1dUpdateDriftRadarPolicyRequest\x12\x1f\n" +
+	"\vpolicy_code\x18\x01 \x01(\tR\n" +
+	"policyCode\x12)\n" +
+	"\x10monitored_domain\x18\x02 \x01(\tR\x0fmonitoredDomain\x12%\n" +
+	"\x0ecooldown_hours\x18\x03 \x01(\x05R\rcooldownHours\x12B\n" +
+	"\x1enotify_only_if_action_possible\x18\x04 \x01(\bR\x1anotifyOnlyIfActionPossible\x12\x1f\n" +
+	"\vradar_state\x18\x05 \x01(\tR\n" +
+	"radarState\x12E\n" +
+	"\x1ffalse_positive_suppression_note\x18\x06 \x01(\tR\x1cfalsePositiveSuppressionNote\"h\n" +
+	"\x1eUpdateDriftRadarPolicyResponse\x12F\n" +
+	"\x06policy\x18\x01 \x01(\v2..sttattus.oracle.v1.OracleDriftRadarPolicyItemR\x06policy\"A\n" +
+	")AdminListAssumptionDriftRadarAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xcf\x01\n" +
+	"*AdminListAssumptionDriftRadarAuditResponse\x12U\n" +
+	"\fdrift_alerts\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleAssumptionDriftAlertItemR\vdriftAlerts\x12J\n" +
+	"\bpolicies\x18\x02 \x03(\v2..sttattus.oracle.v1.OracleDriftRadarPolicyItemR\bpolicies\"\xbc\x01\n" +
+	"+AdminCalibrateDriftThresholdOrDomainRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12\x1f\n" +
+	"\vpolicy_code\x18\x02 \x01(\tR\n" +
+	"policyCode\x12%\n" +
+	"\x0ecooldown_hours\x18\x03 \x01(\x05R\rcooldownHours\x12\x1f\n" +
+	"\vradar_state\x18\x04 \x01(\tR\n" +
+	"radarState\"v\n" +
+	",AdminCalibrateDriftThresholdOrDomainResponse\x12F\n" +
+	"\x06policy\x18\x01 \x01(\v2..sttattus.oracle.v1.OracleDriftRadarPolicyItemR\x06policy\"\xd4\x04\n" +
+	"\x1aOracleForecastQuestionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rforecast_code\x18\x03 \x01(\tR\fforecastCode\x12-\n" +
+	"\x12question_statement\x18\x04 \x01(\tR\x11questionStatement\x12C\n" +
+	"\x1eresolution_criteria_and_source\x18\x05 \x01(\tR\x1bresolutionCriteriaAndSource\x12'\n" +
+	"\x0fprobability_bps\x18\x06 \x01(\x05R\x0eprobabilityBps\x12.\n" +
+	"\x13confidence_band_bps\x18\a \x01(\x05R\x11confidenceBandBps\x12(\n" +
+	"\x10base_rate_anchor\x18\b \x01(\tR\x0ebaseRateAnchor\x128\n" +
+	"\x18scenario_stress_branches\x18\t \x01(\tR\x16scenarioStressBranches\x12)\n" +
+	"\x10resolution_state\x18\n" +
+	" \x01(\tR\x0fresolutionState\x12*\n" +
+	"\x11brier_score_milli\x18\v \x01(\x05R\x0fbrierScoreMilli\x12:\n" +
+	"\x19isolated_sandbox_verified\x18\f \x01(\bR\x17isolatedSandboxVerified\x12$\n" +
+	"\x0eupdated_at_iso\x18\r \x01(\tR\fupdatedAtIso\"\xb2\x04\n" +
+	"\"OracleCalibrationLabExperimentItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fexperiment_code\x18\x03 \x01(\tR\x0eexperimentCode\x12,\n" +
+	"\x12domain_and_horizon\x18\x04 \x01(\tR\x10domainAndHorizon\x12*\n" +
+	"\x11sample_size_count\x18\x05 \x01(\x05R\x0fsampleSizeCount\x128\n" +
+	"\x18omission_pattern_tracked\x18\x06 \x01(\tR\x16omissionPatternTracked\x128\n" +
+	"\x18practice_experiment_rule\x18\a \x01(\tR\x16practiceExperimentRule\x12G\n" +
+	" predeclared_baseline_brier_milli\x18\b \x01(\x05R\x1dpredeclaredBaselineBrierMilli\x120\n" +
+	"\x14observed_brier_milli\x18\t \x01(\x05R\x12observedBrierMilli\x12,\n" +
+	"\x12private_by_default\x18\n" +
+	" \x01(\bR\x10privateByDefault\x12\x1d\n" +
+	"\n" +
+	"lab_status\x18\v \x01(\tR\tlabStatus\x12$\n" +
+	"\x0eupdated_at_iso\x18\f \x01(\tR\fupdatedAtIso\"+\n" +
+	")GetForecastingCalibrationWorkbenchRequest\"\xd2\x02\n" +
+	"*GetForecastingCalibrationWorkbenchResponse\x12L\n" +
+	"\tforecasts\x18\x01 \x03(\v2..sttattus.oracle.v1.OracleForecastQuestionItemR\tforecasts\x12X\n" +
+	"\vexperiments\x18\x02 \x03(\v26.sttattus.oracle.v1.OracleCalibrationLabExperimentItemR\vexperiments\x12M\n" +
+	"#private_epistemic_learning_enforced\x18\x03 \x01(\bR privateEpistemicLearningEnforced\x12-\n" +
+	"\x12calibration_banner\x18\x04 \x01(\tR\x11calibrationBanner\"\xd5\x03\n" +
+	"&CreateOrResolveForecastQuestionRequest\x12#\n" +
+	"\rforecast_code\x18\x01 \x01(\tR\fforecastCode\x12-\n" +
+	"\x12question_statement\x18\x02 \x01(\tR\x11questionStatement\x12C\n" +
+	"\x1eresolution_criteria_and_source\x18\x03 \x01(\tR\x1bresolutionCriteriaAndSource\x12'\n" +
+	"\x0fprobability_bps\x18\x04 \x01(\x05R\x0eprobabilityBps\x12.\n" +
+	"\x13confidence_band_bps\x18\x05 \x01(\x05R\x11confidenceBandBps\x12(\n" +
+	"\x10base_rate_anchor\x18\x06 \x01(\tR\x0ebaseRateAnchor\x128\n" +
+	"\x18scenario_stress_branches\x18\a \x01(\tR\x16scenarioStressBranches\x12)\n" +
+	"\x10resolution_state\x18\b \x01(\tR\x0fresolutionState\x12*\n" +
+	"\x11brier_score_milli\x18\t \x01(\x05R\x0fbrierScoreMilli\"u\n" +
+	"'CreateOrResolveForecastQuestionResponse\x12J\n" +
+	"\bforecast\x18\x01 \x01(\v2..sttattus.oracle.v1.OracleForecastQuestionItemR\bforecast\"\xb8\x03\n" +
+	"%RecordCalibrationLabExperimentRequest\x12'\n" +
+	"\x0fexperiment_code\x18\x01 \x01(\tR\x0eexperimentCode\x12,\n" +
+	"\x12domain_and_horizon\x18\x02 \x01(\tR\x10domainAndHorizon\x12*\n" +
+	"\x11sample_size_count\x18\x03 \x01(\x05R\x0fsampleSizeCount\x128\n" +
+	"\x18omission_pattern_tracked\x18\x04 \x01(\tR\x16omissionPatternTracked\x128\n" +
+	"\x18practice_experiment_rule\x18\x05 \x01(\tR\x16practiceExperimentRule\x12G\n" +
+	" predeclared_baseline_brier_milli\x18\x06 \x01(\x05R\x1dpredeclaredBaselineBrierMilli\x120\n" +
+	"\x14observed_brier_milli\x18\a \x01(\x05R\x12observedBrierMilli\x12\x1d\n" +
+	"\n" +
+	"lab_status\x18\b \x01(\tR\tlabStatus\"\x80\x01\n" +
+	"&RecordCalibrationLabExperimentResponse\x12V\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v26.sttattus.oracle.v1.OracleCalibrationLabExperimentItemR\n" +
+	"experiment\"C\n" +
+	"+AdminListForecastingCalibrationAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xd6\x01\n" +
+	",AdminListForecastingCalibrationAuditResponse\x12L\n" +
+	"\tforecasts\x18\x01 \x03(\v2..sttattus.oracle.v1.OracleForecastQuestionItemR\tforecasts\x12X\n" +
+	"\vexperiments\x18\x02 \x03(\v26.sttattus.oracle.v1.OracleCalibrationLabExperimentItemR\vexperiments\"\xd1\x01\n" +
+	"-AdminVerifyForecastResolutionOrSandboxRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12#\n" +
+	"\rforecast_code\x18\x02 \x01(\tR\fforecastCode\x12)\n" +
+	"\x10resolution_state\x18\x03 \x01(\tR\x0fresolutionState\x12*\n" +
+	"\x11brier_score_milli\x18\x04 \x01(\x05R\x0fbrierScoreMilli\"|\n" +
+	".AdminVerifyForecastResolutionOrSandboxResponse\x12J\n" +
+	"\bforecast\x18\x01 \x01(\v2..sttattus.oracle.v1.OracleForecastQuestionItemR\bforecast\"\x93\x04\n" +
+	"!OracleMeetingNegotiationBriefItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fmeeting_code\x18\x03 \x01(\tR\vmeetingCode\x122\n" +
+	"\x15title_and_counterpart\x18\x04 \x01(\tR\x13titleAndCounterpart\x12:\n" +
+	"\x19jurisdiction_consent_mode\x18\x05 \x01(\tR\x17jurisdictionConsentMode\x12-\n" +
+	"\x13batna_and_red_lines\x18\x06 \x01(\tR\x10batnaAndRedLines\x12>\n" +
+	"\x1bcounterpart_rehearsal_style\x18\a \x01(\tR\x19counterpartRehearsalStyle\x12<\n" +
+	"\x1amissing_evidence_citations\x18\b \x01(\tR\x18missingEvidenceCitations\x12#\n" +
+	"\rcapture_state\x18\t \x01(\tR\fcaptureState\x12:\n" +
+	"\x19unconsented_audio_refused\x18\n" +
+	" \x01(\bR\x17unconsentedAudioRefused\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"\xc3\x03\n" +
+	"!OracleMeetingCapturedProposalItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rproposal_code\x18\x03 \x01(\tR\fproposalCode\x12!\n" +
+	"\fmeeting_code\x18\x04 \x01(\tR\vmeetingCode\x12#\n" +
+	"\rproposal_kind\x18\x05 \x01(\tR\fproposalKind\x12=\n" +
+	"\x1bexact_utterance_and_speaker\x18\x06 \x01(\tR\x18exactUtteranceAndSpeaker\x122\n" +
+	"\x15proposed_ledger_entry\x18\a \x01(\tR\x13proposedLedgerEntry\x123\n" +
+	"\x15attribution_certainty\x18\b \x01(\tR\x14attributionCertainty\x12:\n" +
+	"\x19member_confirmation_state\x18\t \x01(\tR\x17memberConfirmationState\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"-\n" +
+	"+GetMeetingNegotiationStudioWorkbenchRequest\"\xca\x02\n" +
+	",GetMeetingNegotiationStudioWorkbenchResponse\x12M\n" +
+	"\x06briefs\x18\x01 \x03(\v25.sttattus.oracle.v1.OracleMeetingNegotiationBriefItemR\x06briefs\x12S\n" +
+	"\tproposals\x18\x02 \x03(\v25.sttattus.oracle.v1.OracleMeetingCapturedProposalItemR\tproposals\x12B\n" +
+	"\x1djurisdiction_consent_enforced\x18\x03 \x01(\bR\x1bjurisdictionConsentEnforced\x122\n" +
+	"\x15meeting_studio_banner\x18\x04 \x01(\tR\x13meetingStudioBanner\"\x90\x03\n" +
+	")SaveMeetingBriefOrRedteamRehearsalRequest\x12!\n" +
+	"\fmeeting_code\x18\x01 \x01(\tR\vmeetingCode\x122\n" +
+	"\x15title_and_counterpart\x18\x02 \x01(\tR\x13titleAndCounterpart\x12:\n" +
+	"\x19jurisdiction_consent_mode\x18\x03 \x01(\tR\x17jurisdictionConsentMode\x12-\n" +
+	"\x13batna_and_red_lines\x18\x04 \x01(\tR\x10batnaAndRedLines\x12>\n" +
+	"\x1bcounterpart_rehearsal_style\x18\x05 \x01(\tR\x19counterpartRehearsalStyle\x12<\n" +
+	"\x1amissing_evidence_citations\x18\x06 \x01(\tR\x18missingEvidenceCitations\x12#\n" +
+	"\rcapture_state\x18\a \x01(\tR\fcaptureState\"y\n" +
+	"*SaveMeetingBriefOrRedteamRehearsalResponse\x12K\n" +
+	"\x05brief\x18\x01 \x01(\v25.sttattus.oracle.v1.OracleMeetingNegotiationBriefItemR\x05brief\"\x80\x03\n" +
+	"-ConfirmOrRejectCapturedMeetingProposalRequest\x12#\n" +
+	"\rproposal_code\x18\x01 \x01(\tR\fproposalCode\x12!\n" +
+	"\fmeeting_code\x18\x02 \x01(\tR\vmeetingCode\x12#\n" +
+	"\rproposal_kind\x18\x03 \x01(\tR\fproposalKind\x12=\n" +
+	"\x1bexact_utterance_and_speaker\x18\x04 \x01(\tR\x18exactUtteranceAndSpeaker\x122\n" +
+	"\x15proposed_ledger_entry\x18\x05 \x01(\tR\x13proposedLedgerEntry\x123\n" +
+	"\x15attribution_certainty\x18\x06 \x01(\tR\x14attributionCertainty\x12:\n" +
+	"\x19member_confirmation_state\x18\a \x01(\tR\x17memberConfirmationState\"\x83\x01\n" +
+	".ConfirmOrRejectCapturedMeetingProposalResponse\x12Q\n" +
+	"\bproposal\x18\x01 \x01(\v25.sttattus.oracle.v1.OracleMeetingCapturedProposalItemR\bproposal\"E\n" +
+	"-AdminListMeetingNegotiationStudioAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xd4\x01\n" +
+	".AdminListMeetingNegotiationStudioAuditResponse\x12M\n" +
+	"\x06briefs\x18\x01 \x03(\v25.sttattus.oracle.v1.OracleMeetingNegotiationBriefItemR\x06briefs\x12S\n" +
+	"\tproposals\x18\x02 \x03(\v25.sttattus.oracle.v1.OracleMeetingCapturedProposalItemR\tproposals\"\xd9\x01\n" +
+	"-AdminManageRecordingConsentOrRedactionRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12!\n" +
+	"\fmeeting_code\x18\x02 \x01(\tR\vmeetingCode\x12:\n" +
+	"\x19jurisdiction_consent_mode\x18\x03 \x01(\tR\x17jurisdictionConsentMode\x12#\n" +
+	"\rcapture_state\x18\x04 \x01(\tR\fcaptureState\"}\n" +
+	".AdminManageRecordingConsentOrRedactionResponse\x12K\n" +
+	"\x05brief\x18\x01 \x01(\v25.sttattus.oracle.v1.OracleMeetingNegotiationBriefItemR\x05brief\"\xdd\x03\n" +
+	"\x1eOracleSecureConnectorGrantItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0econnector_code\x18\x03 \x01(\tR\rconnectorCode\x129\n" +
+	"\x19connector_name_and_pillar\x18\x04 \x01(\tR\x16connectorNameAndPillar\x12/\n" +
+	"\x13risk_classification\x18\x05 \x01(\tR\x12riskClassification\x12?\n" +
+	"\x1cpermitted_data_and_retention\x18\x06 \x01(\tR\x19permittedDataAndRetention\x125\n" +
+	"\x17dry_run_preview_summary\x18\a \x01(\tR\x14dryRunPreviewSummary\x12!\n" +
+	"\fgrant_status\x18\b \x01(\tR\vgrantStatus\x12>\n" +
+	"\x1bautonomous_write_prohibited\x18\t \x01(\bR\x19autonomousWriteProhibited\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"\x8a\x03\n" +
+	"#OraclePromptInjectionQuarantineItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"event_code\x18\x03 \x01(\tR\teventCode\x12%\n" +
+	"\x0econnector_code\x18\x04 \x01(\tR\rconnectorCode\x126\n" +
+	"\x17untrusted_source_origin\x18\x05 \x01(\tR\x15untrustedSourceOrigin\x12<\n" +
+	"\x1ablocked_escalation_attempt\x18\x06 \x01(\tR\x18blockedEscalationAttempt\x12/\n" +
+	"\x13containment_verdict\x18\a \x01(\tR\x12containmentVerdict\x12'\n" +
+	"\x0fmember_notified\x18\b \x01(\bR\x0ememberNotified\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\")\n" +
+	"'GetSecureConnectorsToolWorkbenchRequest\"\xe0\x02\n" +
+	"(GetSecureConnectorsToolWorkbenchResponse\x12R\n" +
+	"\n" +
+	"connectors\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleSecureConnectorGrantItemR\n" +
+	"connectors\x12Y\n" +
+	"\vquarantines\x18\x02 \x03(\v27.sttattus.oracle.v1.OraclePromptInjectionQuarantineItemR\vquarantines\x12I\n" +
+	"!indirect_injection_defense_active\x18\x03 \x01(\bR\x1eindirectInjectionDefenseActive\x12:\n" +
+	"\x19connector_platform_banner\x18\x04 \x01(\tR\x17connectorPlatformBanner\"\xd6\x02\n" +
+	"&ConfigureOrRevokeConnectorGrantRequest\x12%\n" +
+	"\x0econnector_code\x18\x01 \x01(\tR\rconnectorCode\x129\n" +
+	"\x19connector_name_and_pillar\x18\x02 \x01(\tR\x16connectorNameAndPillar\x12/\n" +
+	"\x13risk_classification\x18\x03 \x01(\tR\x12riskClassification\x12?\n" +
+	"\x1cpermitted_data_and_retention\x18\x04 \x01(\tR\x19permittedDataAndRetention\x125\n" +
+	"\x17dry_run_preview_summary\x18\x05 \x01(\tR\x14dryRunPreviewSummary\x12!\n" +
+	"\fgrant_status\x18\x06 \x01(\tR\vgrantStatus\"{\n" +
+	"'ConfigureOrRevokeConnectorGrantResponse\x12P\n" +
+	"\tconnector\x18\x01 \x01(\v22.sttattus.oracle.v1.OracleSecureConnectorGrantItemR\tconnector\"\x9d\x02\n" +
+	".ReportOrReviewPromptInjectionQuarantineRequest\x12\x1d\n" +
+	"\n" +
+	"event_code\x18\x01 \x01(\tR\teventCode\x12%\n" +
+	"\x0econnector_code\x18\x02 \x01(\tR\rconnectorCode\x126\n" +
+	"\x17untrusted_source_origin\x18\x03 \x01(\tR\x15untrustedSourceOrigin\x12<\n" +
+	"\x1ablocked_escalation_attempt\x18\x04 \x01(\tR\x18blockedEscalationAttempt\x12/\n" +
+	"\x13containment_verdict\x18\x05 \x01(\tR\x12containmentVerdict\"\x8a\x01\n" +
+	"/ReportOrReviewPromptInjectionQuarantineResponse\x12W\n" +
+	"\n" +
+	"quarantine\x18\x01 \x01(\v27.sttattus.oracle.v1.OraclePromptInjectionQuarantineItemR\n" +
+	"quarantine\"A\n" +
+	")AdminListSecureConnectorsToolAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\xdb\x01\n" +
+	"*AdminListSecureConnectorsToolAuditResponse\x12R\n" +
+	"\n" +
+	"connectors\x18\x01 \x03(\v22.sttattus.oracle.v1.OracleSecureConnectorGrantItemR\n" +
+	"connectors\x12Y\n" +
+	"\vquarantines\x18\x02 \x03(\v27.sttattus.oracle.v1.OraclePromptInjectionQuarantineItemR\vquarantines\"\xda\x01\n" +
+	"1AdminManageConnectorKillSwitchOrQuarantineRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12%\n" +
+	"\x0econnector_code\x18\x02 \x01(\tR\rconnectorCode\x12!\n" +
+	"\fgrant_status\x18\x03 \x01(\tR\vgrantStatus\x125\n" +
+	"\x17dry_run_preview_summary\x18\x04 \x01(\tR\x14dryRunPreviewSummary\"\x86\x01\n" +
+	"2AdminManageConnectorKillSwitchOrQuarantineResponse\x12P\n" +
+	"\tconnector\x18\x01 \x01(\v22.sttattus.oracle.v1.OracleSecureConnectorGrantItemR\tconnector\"\xa6\x04\n" +
+	"\x1dOracleTrustedDecisionRoomItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
+	"\troom_code\x18\x03 \x01(\tR\broomCode\x12,\n" +
+	"\x12title_and_scenario\x18\x04 \x01(\tR\x10titleAndScenario\x12S\n" +
+	"&specialist_credential_and_jurisdiction\x18\x05 \x01(\tR#specialistCredentialAndJurisdiction\x12E\n" +
+	"\x1fconflict_of_interest_disclosure\x18\x06 \x01(\tR\x1cconflictOfInterestDisclosure\x125\n" +
+	"\x17scoped_grant_and_expiry\x18\a \x01(\tR\x14scopedGrantAndExpiry\x12?\n" +
+	"\x1cafter_action_closure_summary\x18\b \x01(\tR\x19afterActionClosureSummary\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\t \x01(\tR\troomState\x128\n" +
+	"\x18tenant_boundary_isolated\x18\n" +
+	" \x01(\bR\x16tenantBoundaryIsolated\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"0\n" +
+	".GetTrustedNetworkDecisionRoomsWorkbenchRequest\"\xf1\x01\n" +
+	"/GetTrustedNetworkDecisionRoomsWorkbenchResponse\x12G\n" +
+	"\x05rooms\x18\x01 \x03(\v21.sttattus.oracle.v1.OracleTrustedDecisionRoomItemR\x05rooms\x12A\n" +
+	"\x1edouble_opt_in_and_coi_enforced\x18\x02 \x01(\bR\x19doubleOptInAndCoiEnforced\x122\n" +
+	"\x15decision_rooms_banner\x18\x03 \x01(\tR\x13decisionRoomsBanner\"\xa7\x03\n" +
+	"'CreateOrCloseTrustedDecisionRoomRequest\x12\x1b\n" +
+	"\troom_code\x18\x01 \x01(\tR\broomCode\x12,\n" +
+	"\x12title_and_scenario\x18\x02 \x01(\tR\x10titleAndScenario\x12S\n" +
+	"&specialist_credential_and_jurisdiction\x18\x03 \x01(\tR#specialistCredentialAndJurisdiction\x12E\n" +
+	"\x1fconflict_of_interest_disclosure\x18\x04 \x01(\tR\x1cconflictOfInterestDisclosure\x125\n" +
+	"\x17scoped_grant_and_expiry\x18\x05 \x01(\tR\x14scopedGrantAndExpiry\x12?\n" +
+	"\x1cafter_action_closure_summary\x18\x06 \x01(\tR\x19afterActionClosureSummary\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\a \x01(\tR\troomState\"q\n" +
+	"(CreateOrCloseTrustedDecisionRoomResponse\x12E\n" +
+	"\x04room\x18\x01 \x01(\v21.sttattus.oracle.v1.OracleTrustedDecisionRoomItemR\x04room\"\xad\x01\n" +
+	"(VerifySpecialistDisclosureOrOptInRequest\x12\x1b\n" +
+	"\troom_code\x18\x01 \x01(\tR\broomCode\x12E\n" +
+	"\x1fconflict_of_interest_disclosure\x18\x02 \x01(\tR\x1cconflictOfInterestDisclosure\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x03 \x01(\tR\troomState\"r\n" +
+	")VerifySpecialistDisclosureOrOptInResponse\x12E\n" +
+	"\x04room\x18\x01 \x01(\v21.sttattus.oracle.v1.OracleTrustedDecisionRoomItemR\x04room\"A\n" +
+	")AdminListTrustedDecisionRoomsAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"u\n" +
+	"*AdminListTrustedDecisionRoomsAuditResponse\x12G\n" +
+	"\x05rooms\x18\x01 \x03(\v21.sttattus.oracle.v1.OracleTrustedDecisionRoomItemR\x05rooms\"\xd2\x01\n" +
+	"-AdminManageDecisionRoomGrantOrBoundaryRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12\x1b\n" +
+	"\troom_code\x18\x02 \x01(\tR\broomCode\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x03 \x01(\tR\troomState\x12?\n" +
+	"\x1cafter_action_closure_summary\x18\x04 \x01(\tR\x19afterActionClosureSummary\"w\n" +
+	".AdminManageDecisionRoomGrantOrBoundaryResponse\x12E\n" +
+	"\x04room\x18\x01 \x01(\v21.sttattus.oracle.v1.OracleTrustedDecisionRoomItemR\x04room\"\xad\x04\n" +
+	"#OracleWargameExposureSimulationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fsimulation_code\x18\x03 \x01(\tR\x0esimulationCode\x12%\n" +
+	"\x0escenario_title\x18\x04 \x01(\tR\rscenarioTitle\x12A\n" +
+	"\x1dminimal_pillar_contracts_used\x18\x05 \x01(\tR\x1aminimalPillarContractsUsed\x12=\n" +
+	"\x1bdownside_base_upside_ranges\x18\x06 \x01(\tR\x18downsideBaseUpsideRanges\x12@\n" +
+	"\x1dtenth_person_and_failure_tree\x18\a \x01(\tR\x19tenthPersonAndFailureTree\x124\n" +
+	"\x16top_sensitivity_driver\x18\b \x01(\tR\x14topSensitivityDriver\x12,\n" +
+	"\x12advisor_memo_state\x18\t \x01(\tR\x10advisorMemoState\x12?\n" +
+	"\x1csilent_ledger_access_blocked\x18\n" +
+	" \x01(\bR\x19silentLedgerAccessBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"&\n" +
+	"$GetWargamingExposureWorkbenchRequest\"\x8d\x02\n" +
+	"%GetWargamingExposureWorkbenchResponse\x12Y\n" +
+	"\vsimulations\x18\x01 \x03(\v27.sttattus.oracle.v1.OracleWargameExposureSimulationItemR\vsimulations\x12M\n" +
+	"#minimal_contract_isolation_enforced\x18\x02 \x01(\bR minimalContractIsolationEnforced\x12:\n" +
+	"\x19wargaming_exposure_banner\x18\x03 \x01(\tR\x17wargamingExposureBanner\"\xa5\x03\n" +
+	"+RunOrExportWargameExposureSimulationRequest\x12'\n" +
+	"\x0fsimulation_code\x18\x01 \x01(\tR\x0esimulationCode\x12%\n" +
+	"\x0escenario_title\x18\x02 \x01(\tR\rscenarioTitle\x12A\n" +
+	"\x1dminimal_pillar_contracts_used\x18\x03 \x01(\tR\x1aminimalPillarContractsUsed\x12=\n" +
+	"\x1bdownside_base_upside_ranges\x18\x04 \x01(\tR\x18downsideBaseUpsideRanges\x12@\n" +
+	"\x1dtenth_person_and_failure_tree\x18\x05 \x01(\tR\x19tenthPersonAndFailureTree\x124\n" +
+	"\x16top_sensitivity_driver\x18\x06 \x01(\tR\x14topSensitivityDriver\x12,\n" +
+	"\x12advisor_memo_state\x18\a \x01(\tR\x10advisorMemoState\"\x87\x01\n" +
+	",RunOrExportWargameExposureSimulationResponse\x12W\n" +
+	"\n" +
+	"simulation\x18\x01 \x01(\v27.sttattus.oracle.v1.OracleWargameExposureSimulationItemR\n" +
+	"simulation\"\xbb\x01\n" +
+	",UpdateWargameSensitivityOrContingencyRequest\x12'\n" +
+	"\x0fsimulation_code\x18\x01 \x01(\tR\x0esimulationCode\x124\n" +
+	"\x16top_sensitivity_driver\x18\x02 \x01(\tR\x14topSensitivityDriver\x12,\n" +
+	"\x12advisor_memo_state\x18\x03 \x01(\tR\x10advisorMemoState\"\x88\x01\n" +
+	"-UpdateWargameSensitivityOrContingencyResponse\x12W\n" +
+	"\n" +
+	"simulation\x18\x01 \x01(\v27.sttattus.oracle.v1.OracleWargameExposureSimulationItemR\n" +
+	"simulation\">\n" +
+	"&AdminListWargamingExposureAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"\x84\x01\n" +
+	"'AdminListWargamingExposureAuditResponse\x12Y\n" +
+	"\vsimulations\x18\x01 \x03(\v27.sttattus.oracle.v1.OracleWargameExposureSimulationItemR\vsimulations\"\xf6\x01\n" +
+	"4AdminCertifyMinimalPillarContractOrDisclaimerRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12'\n" +
+	"\x0fsimulation_code\x18\x02 \x01(\tR\x0esimulationCode\x12,\n" +
+	"\x12advisor_memo_state\x18\x03 \x01(\tR\x10advisorMemoState\x12A\n" +
+	"\x1dminimal_pillar_contracts_used\x18\x04 \x01(\tR\x1aminimalPillarContractsUsed\"\x90\x01\n" +
+	"5AdminCertifyMinimalPillarContractOrDisclaimerResponse\x12W\n" +
+	"\n" +
+	"simulation\x18\x01 \x01(\v27.sttattus.oracle.v1.OracleWargameExposureSimulationItemR\n" +
+	"simulation\"\xa6\x04\n" +
+	"!OraclePrivateCaseLibraryEntryItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
+	"\tcase_code\x18\x03 \x01(\tR\bcaseCode\x120\n" +
+	"\x14source_decision_code\x18\x04 \x01(\tR\x12sourceDecisionCode\x12\x1d\n" +
+	"\n" +
+	"case_title\x18\x05 \x01(\tR\tcaseTitle\x12G\n" +
+	" structural_match_and_differences\x18\x06 \x01(\tR\x1dstructuralMatchAndDifferences\x12K\n" +
+	"\"observed_outcome_vs_counterfactual\x18\a \x01(\tR\x1fobservedOutcomeVsCounterfactual\x12J\n" +
+	"!anonymized_institutional_template\x18\b \x01(\tR\x1fanonymizedInstitutionalTemplate\x12#\n" +
+	"\rsharing_state\x18\t \x01(\tR\fsharingState\x12=\n" +
+	"\x1banalogy_treated_as_evidence\x18\n" +
+	" \x01(\bR\x18analogyTreatedAsEvidence\x12$\n" +
+	"\x0eupdated_at_iso\x18\v \x01(\tR\fupdatedAtIso\"'\n" +
+	"%GetPrivateCaseLibraryWorkbenchRequest\"\xf1\x01\n" +
+	"&GetPrivateCaseLibraryWorkbenchResponse\x12K\n" +
+	"\x05cases\x18\x01 \x03(\v25.sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItemR\x05cases\x12J\n" +
+	"\"analogy_vs_evidence_guard_enforced\x18\x02 \x01(\bR\x1eanalogyVsEvidenceGuardEnforced\x12.\n" +
+	"\x13case_library_banner\x18\x03 \x01(\tR\x11caseLibraryBanner\"\x9b\x03\n" +
+	"$SaveOrComparePrivateCaseEntryRequest\x12\x1b\n" +
+	"\tcase_code\x18\x01 \x01(\tR\bcaseCode\x120\n" +
+	"\x14source_decision_code\x18\x02 \x01(\tR\x12sourceDecisionCode\x12\x1d\n" +
+	"\n" +
+	"case_title\x18\x03 \x01(\tR\tcaseTitle\x12G\n" +
+	" structural_match_and_differences\x18\x04 \x01(\tR\x1dstructuralMatchAndDifferences\x12K\n" +
+	"\"observed_outcome_vs_counterfactual\x18\x05 \x01(\tR\x1fobservedOutcomeVsCounterfactual\x12J\n" +
+	"!anonymized_institutional_template\x18\x06 \x01(\tR\x1fanonymizedInstitutionalTemplate\x12#\n" +
+	"\rsharing_state\x18\a \x01(\tR\fsharingState\"}\n" +
+	"%SaveOrComparePrivateCaseEntryResponse\x12T\n" +
+	"\n" +
+	"case_entry\x18\x01 \x01(\v25.sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItemR\tcaseEntry\"\xb9\x01\n" +
+	")SubmitOrWithdrawAnonymizedPlaybookRequest\x12\x1b\n" +
+	"\tcase_code\x18\x01 \x01(\tR\bcaseCode\x12J\n" +
+	"!anonymized_institutional_template\x18\x02 \x01(\tR\x1fanonymizedInstitutionalTemplate\x12#\n" +
+	"\rsharing_state\x18\x03 \x01(\tR\fsharingState\"\x82\x01\n" +
+	"*SubmitOrWithdrawAnonymizedPlaybookResponse\x12T\n" +
+	"\n" +
+	"case_entry\x18\x01 \x01(\v25.sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItemR\tcaseEntry\"?\n" +
+	"'AdminListPrivateCaseLibraryAuditRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\"w\n" +
+	"(AdminListPrivateCaseLibraryAuditResponse\x12K\n" +
+	"\x05cases\x18\x01 \x03(\v25.sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItemR\x05cases\"\xe7\x01\n" +
+	"1AdminCertifyPlaybookAnonymizationOrErasureRequest\x12$\n" +
+	"\x0etarget_user_id\x18\x01 \x01(\tR\ftargetUserId\x12\x1b\n" +
+	"\tcase_code\x18\x02 \x01(\tR\bcaseCode\x12#\n" +
+	"\rsharing_state\x18\x03 \x01(\tR\fsharingState\x12J\n" +
+	"!anonymized_institutional_template\x18\x04 \x01(\tR\x1fanonymizedInstitutionalTemplate\"\x8a\x01\n" +
+	"2AdminCertifyPlaybookAnonymizationOrErasureResponse\x12T\n" +
+	"\n" +
+	"case_entry\x18\x01 \x01(\v25.sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItemR\tcaseEntry*\xc6\x01\n" +
 	"\x0fStrategicDomain\x12 \n" +
 	"\x1cSTRATEGIC_DOMAIN_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cSTRATEGIC_DOMAIN_GEOPOLITICS\x10\x01\x12$\n" +
 	" STRATEGIC_DOMAIN_MACRO_ECONOMICS\x10\x02\x12\x1f\n" +
 	"\x1bSTRATEGIC_DOMAIN_BIO_ETHICS\x10\x03\x12(\n" +
-	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\x97$\n" +
+	"$STRATEGIC_DOMAIN_VENTURE_ENGINEERING\x10\x042\xd2j\n" +
 	"\rOracleService\x12L\n" +
 	"\x05Query\x12 .sttattus.oracle.v1.QueryRequest\x1a!.sttattus.oracle.v1.QueryResponse\x12y\n" +
 	"\x14GetYearInOracleRecap\x12/.sttattus.oracle.v1.GetYearInOracleRecapRequest\x1a0.sttattus.oracle.v1.GetYearInOracleRecapResponse\x12y\n" +
@@ -5874,7 +15254,62 @@ const file_sttattus_oracle_v1_oracle_proto_rawDesc = "" +
 	"\vRevokeScope\x12&.sttattus.oracle.v1.RevokeScopeRequest\x1a'.sttattus.oracle.v1.RevokeScopeResponse\x12s\n" +
 	"\x12ListAvailableTools\x12-.sttattus.oracle.v1.ListAvailableToolsRequest\x1a..sttattus.oracle.v1.ListAvailableToolsResponse\x12d\n" +
 	"\rRunOracleTool\x12(.sttattus.oracle.v1.RunOracleToolRequest\x1a).sttattus.oracle.v1.RunOracleToolResponse\x12m\n" +
-	"\x10GetRankExplainer\x12+.sttattus.oracle.v1.GetRankExplainerRequest\x1a,.sttattus.oracle.v1.GetRankExplainerResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
+	"\x10GetRankExplainer\x12+.sttattus.oracle.v1.GetRankExplainerRequest\x1a,.sttattus.oracle.v1.GetRankExplainerResponse\x12\x88\x01\n" +
+	"\x19GetEvidenceTruthWorkbench\x124.sttattus.oracle.v1.GetEvidenceTruthWorkbenchRequest\x1a5.sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse\x12\x9a\x01\n" +
+	"\x1fRegisterOrRefreshEvidenceSource\x12:.sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceRequest\x1a;.sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse\x12\x91\x01\n" +
+	"\x1cVerifyOrInvalidateCitedClaim\x127.sttattus.oracle.v1.VerifyOrInvalidateCitedClaimRequest\x1a8.sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse\x12\x8e\x01\n" +
+	"\x1bAdminListEvidenceTruthAudit\x126.sttattus.oracle.v1.AdminListEvidenceTruthAuditRequest\x1a7.sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse\x12\xa6\x01\n" +
+	"#AdminManageSourceRightsOrCorrection\x12>.sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionRequest\x1a?.sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse\x12\x8b\x01\n" +
+	"\x1aGetDecisionLedgerWorkbench\x125.sttattus.oracle.v1.GetDecisionLedgerWorkbenchRequest\x1a6.sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse\x12\xa3\x01\n" +
+	"\"CreateOrUpdateDecisionLedgerRecord\x12=.sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordRequest\x1a>.sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse\x12\x9d\x01\n" +
+	" RecordDecisionAssumptionOrReview\x12;.sttattus.oracle.v1.RecordDecisionAssumptionOrReviewRequest\x1a<.sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse\x12\x91\x01\n" +
+	"\x1cAdminListDecisionLedgerAudit\x127.sttattus.oracle.v1.AdminListDecisionLedgerAuditRequest\x1a8.sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse\x12\xa0\x01\n" +
+	"!AdminManageDecisionTemplateOrHold\x12<.sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldRequest\x1a=.sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse\x12\x97\x01\n" +
+	"\x1eGetCommitmentsOutcomeWorkbench\x129.sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchRequest\x1a:.sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse\x12\x91\x01\n" +
+	"\x1cCreateOrUpdateCommitmentItem\x127.sttattus.oracle.v1.CreateOrUpdateCommitmentItemRequest\x1a8.sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse\x12\xaf\x01\n" +
+	"&PreviewOrExecuteExternalCommitmentSync\x12A.sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncRequest\x1aB.sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse\x12\x9d\x01\n" +
+	" AdminListCommitmentsOutcomeAudit\x12;.sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditRequest\x1a<.sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse\x12\xa3\x01\n" +
+	"\"AdminReconcileExternalSyncDelivery\x12=.sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryRequest\x1a>.sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse\x12\xa3\x01\n" +
+	"\"GetWatchlistsCommandBriefWorkbench\x12=.sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchRequest\x1a>.sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse\x12\x91\x01\n" +
+	"\x1cUpsertWatchlistEntityMonitor\x127.sttattus.oracle.v1.UpsertWatchlistEntityMonitorRequest\x1a8.sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse\x12\xa0\x01\n" +
+	"!ApproveOrSnoozeCommandBriefSignal\x12<.sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalRequest\x1a=.sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse\x12\xa9\x01\n" +
+	"$AdminListWatchlistsCommandBriefAudit\x12?.sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditRequest\x1a@.sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse\x12\xaa\x01\n" +
+	"#AdminTuneWatchlistAlertBudgetOrFeed\x12@.sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedRequest\x1aA.sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse\x12\x9d\x01\n" +
+	" GetAssumptionDriftRadarWorkbench\x12;.sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchRequest\x1a<.sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse\x12\x94\x01\n" +
+	"\x1dRespondToAssumptionDriftAlert\x128.sttattus.oracle.v1.RespondToAssumptionDriftAlertRequest\x1a9.sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse\x12\x7f\n" +
+	"\x16UpdateDriftRadarPolicy\x121.sttattus.oracle.v1.UpdateDriftRadarPolicyRequest\x1a2.sttattus.oracle.v1.UpdateDriftRadarPolicyResponse\x12\xa3\x01\n" +
+	"\"AdminListAssumptionDriftRadarAudit\x12=.sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditRequest\x1a>.sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse\x12\xa9\x01\n" +
+	"$AdminCalibrateDriftThresholdOrDomain\x12?.sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainRequest\x1a@.sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse\x12\xa3\x01\n" +
+	"\"GetForecastingCalibrationWorkbench\x12=.sttattus.oracle.v1.GetForecastingCalibrationWorkbenchRequest\x1a>.sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse\x12\x9a\x01\n" +
+	"\x1fCreateOrResolveForecastQuestion\x12:.sttattus.oracle.v1.CreateOrResolveForecastQuestionRequest\x1a;.sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse\x12\x97\x01\n" +
+	"\x1eRecordCalibrationLabExperiment\x129.sttattus.oracle.v1.RecordCalibrationLabExperimentRequest\x1a:.sttattus.oracle.v1.RecordCalibrationLabExperimentResponse\x12\xa9\x01\n" +
+	"$AdminListForecastingCalibrationAudit\x12?.sttattus.oracle.v1.AdminListForecastingCalibrationAuditRequest\x1a@.sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse\x12\xaf\x01\n" +
+	"&AdminVerifyForecastResolutionOrSandbox\x12A.sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxRequest\x1aB.sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse\x12\xa9\x01\n" +
+	"$GetMeetingNegotiationStudioWorkbench\x12?.sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchRequest\x1a@.sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse\x12\xa3\x01\n" +
+	"\"SaveMeetingBriefOrRedteamRehearsal\x12=.sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalRequest\x1a>.sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse\x12\xaf\x01\n" +
+	"&ConfirmOrRejectCapturedMeetingProposal\x12A.sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalRequest\x1aB.sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse\x12\xaf\x01\n" +
+	"&AdminListMeetingNegotiationStudioAudit\x12A.sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditRequest\x1aB.sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse\x12\xaf\x01\n" +
+	"&AdminManageRecordingConsentOrRedaction\x12A.sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionRequest\x1aB.sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse\x12\x9d\x01\n" +
+	" GetSecureConnectorsToolWorkbench\x12;.sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchRequest\x1a<.sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse\x12\x9a\x01\n" +
+	"\x1fConfigureOrRevokeConnectorGrant\x12:.sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantRequest\x1a;.sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse\x12\xb2\x01\n" +
+	"'ReportOrReviewPromptInjectionQuarantine\x12B.sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineRequest\x1aC.sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse\x12\xa3\x01\n" +
+	"\"AdminListSecureConnectorsToolAudit\x12=.sttattus.oracle.v1.AdminListSecureConnectorsToolAuditRequest\x1a>.sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse\x12\xbb\x01\n" +
+	"*AdminManageConnectorKillSwitchOrQuarantine\x12E.sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineRequest\x1aF.sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse\x12\xb2\x01\n" +
+	"'GetTrustedNetworkDecisionRoomsWorkbench\x12B.sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchRequest\x1aC.sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse\x12\x9d\x01\n" +
+	" CreateOrCloseTrustedDecisionRoom\x12;.sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomRequest\x1a<.sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse\x12\xa0\x01\n" +
+	"!VerifySpecialistDisclosureOrOptIn\x12<.sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInRequest\x1a=.sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse\x12\xa3\x01\n" +
+	"\"AdminListTrustedDecisionRoomsAudit\x12=.sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditRequest\x1a>.sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse\x12\xaf\x01\n" +
+	"&AdminManageDecisionRoomGrantOrBoundary\x12A.sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryRequest\x1aB.sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse\x12\x94\x01\n" +
+	"\x1dGetWargamingExposureWorkbench\x128.sttattus.oracle.v1.GetWargamingExposureWorkbenchRequest\x1a9.sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse\x12\xa9\x01\n" +
+	"$RunOrExportWargameExposureSimulation\x12?.sttattus.oracle.v1.RunOrExportWargameExposureSimulationRequest\x1a@.sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse\x12\xac\x01\n" +
+	"%UpdateWargameSensitivityOrContingency\x12@.sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyRequest\x1aA.sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse\x12\x9a\x01\n" +
+	"\x1fAdminListWargamingExposureAudit\x12:.sttattus.oracle.v1.AdminListWargamingExposureAuditRequest\x1a;.sttattus.oracle.v1.AdminListWargamingExposureAuditResponse\x12\xc4\x01\n" +
+	"-AdminCertifyMinimalPillarContractOrDisclaimer\x12H.sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerRequest\x1aI.sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse\x12\x97\x01\n" +
+	"\x1eGetPrivateCaseLibraryWorkbench\x129.sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchRequest\x1a:.sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse\x12\x94\x01\n" +
+	"\x1dSaveOrComparePrivateCaseEntry\x128.sttattus.oracle.v1.SaveOrComparePrivateCaseEntryRequest\x1a9.sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse\x12\xa3\x01\n" +
+	"\"SubmitOrWithdrawAnonymizedPlaybook\x12=.sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookRequest\x1a>.sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse\x12\x9d\x01\n" +
+	" AdminListPrivateCaseLibraryAudit\x12;.sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditRequest\x1a<.sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse\x12\xbb\x01\n" +
+	"*AdminCertifyPlaybookAnonymizationOrErasure\x12E.sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureRequest\x1aF.sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/oracle/v1;oraclev1b\x06proto3"
 
 var (
 	file_sttattus_oracle_v1_oracle_proto_rawDescOnce sync.Once
@@ -5889,129 +15324,258 @@ func file_sttattus_oracle_v1_oracle_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_oracle_v1_oracle_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 106)
+var file_sttattus_oracle_v1_oracle_proto_msgTypes = make([]protoimpl.MessageInfo, 235)
 var file_sttattus_oracle_v1_oracle_proto_goTypes = []any{
-	(StrategicDomain)(0),                   // 0: sttattus.oracle.v1.StrategicDomain
-	(*DepthGrading)(nil),                   // 1: sttattus.oracle.v1.DepthGrading
-	(*StrategicInsight)(nil),               // 2: sttattus.oracle.v1.StrategicInsight
-	(*OracleStats)(nil),                    // 3: sttattus.oracle.v1.OracleStats
-	(*QueryRequest)(nil),                   // 4: sttattus.oracle.v1.QueryRequest
-	(*QueryResponse)(nil),                  // 5: sttattus.oracle.v1.QueryResponse
-	(*GetOracleStatsRequest)(nil),          // 6: sttattus.oracle.v1.GetOracleStatsRequest
-	(*GetOracleStatsResponse)(nil),         // 7: sttattus.oracle.v1.GetOracleStatsResponse
-	(*RankExplainer)(nil),                  // 8: sttattus.oracle.v1.RankExplainer
-	(*GetRankExplainerRequest)(nil),        // 9: sttattus.oracle.v1.GetRankExplainerRequest
-	(*GetRankExplainerResponse)(nil),       // 10: sttattus.oracle.v1.GetRankExplainerResponse
-	(*OracleTool)(nil),                     // 11: sttattus.oracle.v1.OracleTool
-	(*ListAvailableToolsRequest)(nil),      // 12: sttattus.oracle.v1.ListAvailableToolsRequest
-	(*ListAvailableToolsResponse)(nil),     // 13: sttattus.oracle.v1.ListAvailableToolsResponse
-	(*RunOracleToolRequest)(nil),           // 14: sttattus.oracle.v1.RunOracleToolRequest
-	(*RunOracleToolResponse)(nil),          // 15: sttattus.oracle.v1.RunOracleToolResponse
-	(*ScopeGrant)(nil),                     // 16: sttattus.oracle.v1.ScopeGrant
-	(*ListMyScopeGrantsRequest)(nil),       // 17: sttattus.oracle.v1.ListMyScopeGrantsRequest
-	(*ListMyScopeGrantsResponse)(nil),      // 18: sttattus.oracle.v1.ListMyScopeGrantsResponse
-	(*GrantScopeRequest)(nil),              // 19: sttattus.oracle.v1.GrantScopeRequest
-	(*GrantScopeResponse)(nil),             // 20: sttattus.oracle.v1.GrantScopeResponse
-	(*RevokeScopeRequest)(nil),             // 21: sttattus.oracle.v1.RevokeScopeRequest
-	(*RevokeScopeResponse)(nil),            // 22: sttattus.oracle.v1.RevokeScopeResponse
-	(*EpisodicMemory)(nil),                 // 23: sttattus.oracle.v1.EpisodicMemory
-	(*SemanticMemory)(nil),                 // 24: sttattus.oracle.v1.SemanticMemory
-	(*RecordEpisodicMemoryRequest)(nil),    // 25: sttattus.oracle.v1.RecordEpisodicMemoryRequest
-	(*RecordEpisodicMemoryResponse)(nil),   // 26: sttattus.oracle.v1.RecordEpisodicMemoryResponse
-	(*ListMyEpisodicMemoryRequest)(nil),    // 27: sttattus.oracle.v1.ListMyEpisodicMemoryRequest
-	(*ListMyEpisodicMemoryResponse)(nil),   // 28: sttattus.oracle.v1.ListMyEpisodicMemoryResponse
-	(*DeleteEpisodicMemoryRequest)(nil),    // 29: sttattus.oracle.v1.DeleteEpisodicMemoryRequest
-	(*DeleteEpisodicMemoryResponse)(nil),   // 30: sttattus.oracle.v1.DeleteEpisodicMemoryResponse
-	(*UpsertSemanticMemoryRequest)(nil),    // 31: sttattus.oracle.v1.UpsertSemanticMemoryRequest
-	(*UpsertSemanticMemoryResponse)(nil),   // 32: sttattus.oracle.v1.UpsertSemanticMemoryResponse
-	(*ListMySemanticMemoryRequest)(nil),    // 33: sttattus.oracle.v1.ListMySemanticMemoryRequest
-	(*ListMySemanticMemoryResponse)(nil),   // 34: sttattus.oracle.v1.ListMySemanticMemoryResponse
-	(*DeleteSemanticMemoryRequest)(nil),    // 35: sttattus.oracle.v1.DeleteSemanticMemoryRequest
-	(*DeleteSemanticMemoryResponse)(nil),   // 36: sttattus.oracle.v1.DeleteSemanticMemoryResponse
-	(*OracleThread)(nil),                   // 37: sttattus.oracle.v1.OracleThread
-	(*OracleThreadMessage)(nil),            // 38: sttattus.oracle.v1.OracleThreadMessage
-	(*ListMyThreadsRequest)(nil),           // 39: sttattus.oracle.v1.ListMyThreadsRequest
-	(*ListMyThreadsResponse)(nil),          // 40: sttattus.oracle.v1.ListMyThreadsResponse
-	(*CreateThreadRequest)(nil),            // 41: sttattus.oracle.v1.CreateThreadRequest
-	(*CreateThreadResponse)(nil),           // 42: sttattus.oracle.v1.CreateThreadResponse
-	(*RenameThreadRequest)(nil),            // 43: sttattus.oracle.v1.RenameThreadRequest
-	(*RenameThreadResponse)(nil),           // 44: sttattus.oracle.v1.RenameThreadResponse
-	(*DeleteThreadRequest)(nil),            // 45: sttattus.oracle.v1.DeleteThreadRequest
-	(*DeleteThreadResponse)(nil),           // 46: sttattus.oracle.v1.DeleteThreadResponse
-	(*ListThreadMessagesRequest)(nil),      // 47: sttattus.oracle.v1.ListThreadMessagesRequest
-	(*ListThreadMessagesResponse)(nil),     // 48: sttattus.oracle.v1.ListThreadMessagesResponse
-	(*StreamQueryRequest)(nil),             // 49: sttattus.oracle.v1.StreamQueryRequest
-	(*StreamQueryResponse)(nil),            // 50: sttattus.oracle.v1.StreamQueryResponse
-	(*BriefingLine)(nil),                   // 51: sttattus.oracle.v1.BriefingLine
-	(*GetTodayBriefingRequest)(nil),        // 52: sttattus.oracle.v1.GetTodayBriefingRequest
-	(*GetTodayBriefingResponse)(nil),       // 53: sttattus.oracle.v1.GetTodayBriefingResponse
-	(*OracleTrigger)(nil),                  // 54: sttattus.oracle.v1.OracleTrigger
-	(*CreateTriggerRequest)(nil),           // 55: sttattus.oracle.v1.CreateTriggerRequest
-	(*CreateTriggerResponse)(nil),          // 56: sttattus.oracle.v1.CreateTriggerResponse
-	(*ListMyTriggersRequest)(nil),          // 57: sttattus.oracle.v1.ListMyTriggersRequest
-	(*ListMyTriggersResponse)(nil),         // 58: sttattus.oracle.v1.ListMyTriggersResponse
-	(*DeleteTriggerRequest)(nil),           // 59: sttattus.oracle.v1.DeleteTriggerRequest
-	(*DeleteTriggerResponse)(nil),          // 60: sttattus.oracle.v1.DeleteTriggerResponse
-	(*InboxItem)(nil),                      // 61: sttattus.oracle.v1.InboxItem
-	(*GetInboxRequest)(nil),                // 62: sttattus.oracle.v1.GetInboxRequest
-	(*GetInboxResponse)(nil),               // 63: sttattus.oracle.v1.GetInboxResponse
-	(*OracleDocument)(nil),                 // 64: sttattus.oracle.v1.OracleDocument
-	(*CreateDocumentRequest)(nil),          // 65: sttattus.oracle.v1.CreateDocumentRequest
-	(*CreateDocumentResponse)(nil),         // 66: sttattus.oracle.v1.CreateDocumentResponse
-	(*ListMyDocumentsRequest)(nil),         // 67: sttattus.oracle.v1.ListMyDocumentsRequest
-	(*ListMyDocumentsResponse)(nil),        // 68: sttattus.oracle.v1.ListMyDocumentsResponse
-	(*GetDocumentRequest)(nil),             // 69: sttattus.oracle.v1.GetDocumentRequest
-	(*GetDocumentResponse)(nil),            // 70: sttattus.oracle.v1.GetDocumentResponse
-	(*UpdateDocumentRequest)(nil),          // 71: sttattus.oracle.v1.UpdateDocumentRequest
-	(*UpdateDocumentResponse)(nil),         // 72: sttattus.oracle.v1.UpdateDocumentResponse
-	(*DeleteDocumentRequest)(nil),          // 73: sttattus.oracle.v1.DeleteDocumentRequest
-	(*DeleteDocumentResponse)(nil),         // 74: sttattus.oracle.v1.DeleteDocumentResponse
-	(*DraftDocumentRequest)(nil),           // 75: sttattus.oracle.v1.DraftDocumentRequest
-	(*DraftDocumentResponse)(nil),          // 76: sttattus.oracle.v1.DraftDocumentResponse
-	(*ConciergeThread)(nil),                // 77: sttattus.oracle.v1.ConciergeThread
-	(*ConciergeMessage)(nil),               // 78: sttattus.oracle.v1.ConciergeMessage
-	(*StartConciergeThreadRequest)(nil),    // 79: sttattus.oracle.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),   // 80: sttattus.oracle.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),  // 81: sttattus.oracle.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil), // 82: sttattus.oracle.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),      // 83: sttattus.oracle.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),     // 84: sttattus.oracle.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),    // 85: sttattus.oracle.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),   // 86: sttattus.oracle.v1.PostConciergeMessageResponse
-	(*AnthologyArticle)(nil),               // 87: sttattus.oracle.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),   // 88: sttattus.oracle.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),  // 89: sttattus.oracle.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),     // 90: sttattus.oracle.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),    // 91: sttattus.oracle.v1.GetAnthologyArticleResponse
-	(*BriefShare)(nil),                     // 92: sttattus.oracle.v1.BriefShare
-	(*CreateBriefShareRequest)(nil),        // 93: sttattus.oracle.v1.CreateBriefShareRequest
-	(*CreateBriefShareResponse)(nil),       // 94: sttattus.oracle.v1.CreateBriefShareResponse
-	(*ListMyBriefSharesRequest)(nil),       // 95: sttattus.oracle.v1.ListMyBriefSharesRequest
-	(*ListMyBriefSharesResponse)(nil),      // 96: sttattus.oracle.v1.ListMyBriefSharesResponse
-	(*RevokeBriefShareRequest)(nil),        // 97: sttattus.oracle.v1.RevokeBriefShareRequest
-	(*RevokeBriefShareResponse)(nil),       // 98: sttattus.oracle.v1.RevokeBriefShareResponse
-	(*YearInOracleRecap)(nil),              // 99: sttattus.oracle.v1.YearInOracleRecap
-	(*GetYearInOracleRecapRequest)(nil),    // 100: sttattus.oracle.v1.GetYearInOracleRecapRequest
-	(*GetYearInOracleRecapResponse)(nil),   // 101: sttattus.oracle.v1.GetYearInOracleRecapResponse
-	(*GenerateYearInOracleRequest)(nil),    // 102: sttattus.oracle.v1.GenerateYearInOracleRequest
-	(*GenerateYearInOracleResponse)(nil),   // 103: sttattus.oracle.v1.GenerateYearInOracleResponse
-	nil,                                    // 104: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
-	nil,                                    // 105: sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry
-	nil,                                    // 106: sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry
-	(*timestamppb.Timestamp)(nil),          // 107: google.protobuf.Timestamp
+	(StrategicDomain)(0),                                          // 0: sttattus.oracle.v1.StrategicDomain
+	(*DepthGrading)(nil),                                          // 1: sttattus.oracle.v1.DepthGrading
+	(*StrategicInsight)(nil),                                      // 2: sttattus.oracle.v1.StrategicInsight
+	(*OracleStats)(nil),                                           // 3: sttattus.oracle.v1.OracleStats
+	(*QueryRequest)(nil),                                          // 4: sttattus.oracle.v1.QueryRequest
+	(*QueryResponse)(nil),                                         // 5: sttattus.oracle.v1.QueryResponse
+	(*GetOracleStatsRequest)(nil),                                 // 6: sttattus.oracle.v1.GetOracleStatsRequest
+	(*GetOracleStatsResponse)(nil),                                // 7: sttattus.oracle.v1.GetOracleStatsResponse
+	(*RankExplainer)(nil),                                         // 8: sttattus.oracle.v1.RankExplainer
+	(*GetRankExplainerRequest)(nil),                               // 9: sttattus.oracle.v1.GetRankExplainerRequest
+	(*GetRankExplainerResponse)(nil),                              // 10: sttattus.oracle.v1.GetRankExplainerResponse
+	(*OracleTool)(nil),                                            // 11: sttattus.oracle.v1.OracleTool
+	(*ListAvailableToolsRequest)(nil),                             // 12: sttattus.oracle.v1.ListAvailableToolsRequest
+	(*ListAvailableToolsResponse)(nil),                            // 13: sttattus.oracle.v1.ListAvailableToolsResponse
+	(*RunOracleToolRequest)(nil),                                  // 14: sttattus.oracle.v1.RunOracleToolRequest
+	(*RunOracleToolResponse)(nil),                                 // 15: sttattus.oracle.v1.RunOracleToolResponse
+	(*ScopeGrant)(nil),                                            // 16: sttattus.oracle.v1.ScopeGrant
+	(*ListMyScopeGrantsRequest)(nil),                              // 17: sttattus.oracle.v1.ListMyScopeGrantsRequest
+	(*ListMyScopeGrantsResponse)(nil),                             // 18: sttattus.oracle.v1.ListMyScopeGrantsResponse
+	(*GrantScopeRequest)(nil),                                     // 19: sttattus.oracle.v1.GrantScopeRequest
+	(*GrantScopeResponse)(nil),                                    // 20: sttattus.oracle.v1.GrantScopeResponse
+	(*RevokeScopeRequest)(nil),                                    // 21: sttattus.oracle.v1.RevokeScopeRequest
+	(*RevokeScopeResponse)(nil),                                   // 22: sttattus.oracle.v1.RevokeScopeResponse
+	(*EpisodicMemory)(nil),                                        // 23: sttattus.oracle.v1.EpisodicMemory
+	(*SemanticMemory)(nil),                                        // 24: sttattus.oracle.v1.SemanticMemory
+	(*RecordEpisodicMemoryRequest)(nil),                           // 25: sttattus.oracle.v1.RecordEpisodicMemoryRequest
+	(*RecordEpisodicMemoryResponse)(nil),                          // 26: sttattus.oracle.v1.RecordEpisodicMemoryResponse
+	(*ListMyEpisodicMemoryRequest)(nil),                           // 27: sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+	(*ListMyEpisodicMemoryResponse)(nil),                          // 28: sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+	(*DeleteEpisodicMemoryRequest)(nil),                           // 29: sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+	(*DeleteEpisodicMemoryResponse)(nil),                          // 30: sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+	(*UpsertSemanticMemoryRequest)(nil),                           // 31: sttattus.oracle.v1.UpsertSemanticMemoryRequest
+	(*UpsertSemanticMemoryResponse)(nil),                          // 32: sttattus.oracle.v1.UpsertSemanticMemoryResponse
+	(*ListMySemanticMemoryRequest)(nil),                           // 33: sttattus.oracle.v1.ListMySemanticMemoryRequest
+	(*ListMySemanticMemoryResponse)(nil),                          // 34: sttattus.oracle.v1.ListMySemanticMemoryResponse
+	(*DeleteSemanticMemoryRequest)(nil),                           // 35: sttattus.oracle.v1.DeleteSemanticMemoryRequest
+	(*DeleteSemanticMemoryResponse)(nil),                          // 36: sttattus.oracle.v1.DeleteSemanticMemoryResponse
+	(*OracleThread)(nil),                                          // 37: sttattus.oracle.v1.OracleThread
+	(*OracleThreadMessage)(nil),                                   // 38: sttattus.oracle.v1.OracleThreadMessage
+	(*ListMyThreadsRequest)(nil),                                  // 39: sttattus.oracle.v1.ListMyThreadsRequest
+	(*ListMyThreadsResponse)(nil),                                 // 40: sttattus.oracle.v1.ListMyThreadsResponse
+	(*CreateThreadRequest)(nil),                                   // 41: sttattus.oracle.v1.CreateThreadRequest
+	(*CreateThreadResponse)(nil),                                  // 42: sttattus.oracle.v1.CreateThreadResponse
+	(*RenameThreadRequest)(nil),                                   // 43: sttattus.oracle.v1.RenameThreadRequest
+	(*RenameThreadResponse)(nil),                                  // 44: sttattus.oracle.v1.RenameThreadResponse
+	(*DeleteThreadRequest)(nil),                                   // 45: sttattus.oracle.v1.DeleteThreadRequest
+	(*DeleteThreadResponse)(nil),                                  // 46: sttattus.oracle.v1.DeleteThreadResponse
+	(*ListThreadMessagesRequest)(nil),                             // 47: sttattus.oracle.v1.ListThreadMessagesRequest
+	(*ListThreadMessagesResponse)(nil),                            // 48: sttattus.oracle.v1.ListThreadMessagesResponse
+	(*StreamQueryRequest)(nil),                                    // 49: sttattus.oracle.v1.StreamQueryRequest
+	(*StreamQueryResponse)(nil),                                   // 50: sttattus.oracle.v1.StreamQueryResponse
+	(*BriefingLine)(nil),                                          // 51: sttattus.oracle.v1.BriefingLine
+	(*GetTodayBriefingRequest)(nil),                               // 52: sttattus.oracle.v1.GetTodayBriefingRequest
+	(*GetTodayBriefingResponse)(nil),                              // 53: sttattus.oracle.v1.GetTodayBriefingResponse
+	(*OracleTrigger)(nil),                                         // 54: sttattus.oracle.v1.OracleTrigger
+	(*CreateTriggerRequest)(nil),                                  // 55: sttattus.oracle.v1.CreateTriggerRequest
+	(*CreateTriggerResponse)(nil),                                 // 56: sttattus.oracle.v1.CreateTriggerResponse
+	(*ListMyTriggersRequest)(nil),                                 // 57: sttattus.oracle.v1.ListMyTriggersRequest
+	(*ListMyTriggersResponse)(nil),                                // 58: sttattus.oracle.v1.ListMyTriggersResponse
+	(*DeleteTriggerRequest)(nil),                                  // 59: sttattus.oracle.v1.DeleteTriggerRequest
+	(*DeleteTriggerResponse)(nil),                                 // 60: sttattus.oracle.v1.DeleteTriggerResponse
+	(*InboxItem)(nil),                                             // 61: sttattus.oracle.v1.InboxItem
+	(*GetInboxRequest)(nil),                                       // 62: sttattus.oracle.v1.GetInboxRequest
+	(*GetInboxResponse)(nil),                                      // 63: sttattus.oracle.v1.GetInboxResponse
+	(*OracleDocument)(nil),                                        // 64: sttattus.oracle.v1.OracleDocument
+	(*CreateDocumentRequest)(nil),                                 // 65: sttattus.oracle.v1.CreateDocumentRequest
+	(*CreateDocumentResponse)(nil),                                // 66: sttattus.oracle.v1.CreateDocumentResponse
+	(*ListMyDocumentsRequest)(nil),                                // 67: sttattus.oracle.v1.ListMyDocumentsRequest
+	(*ListMyDocumentsResponse)(nil),                               // 68: sttattus.oracle.v1.ListMyDocumentsResponse
+	(*GetDocumentRequest)(nil),                                    // 69: sttattus.oracle.v1.GetDocumentRequest
+	(*GetDocumentResponse)(nil),                                   // 70: sttattus.oracle.v1.GetDocumentResponse
+	(*UpdateDocumentRequest)(nil),                                 // 71: sttattus.oracle.v1.UpdateDocumentRequest
+	(*UpdateDocumentResponse)(nil),                                // 72: sttattus.oracle.v1.UpdateDocumentResponse
+	(*DeleteDocumentRequest)(nil),                                 // 73: sttattus.oracle.v1.DeleteDocumentRequest
+	(*DeleteDocumentResponse)(nil),                                // 74: sttattus.oracle.v1.DeleteDocumentResponse
+	(*DraftDocumentRequest)(nil),                                  // 75: sttattus.oracle.v1.DraftDocumentRequest
+	(*DraftDocumentResponse)(nil),                                 // 76: sttattus.oracle.v1.DraftDocumentResponse
+	(*ConciergeThread)(nil),                                       // 77: sttattus.oracle.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                                      // 78: sttattus.oracle.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),                           // 79: sttattus.oracle.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                          // 80: sttattus.oracle.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                         // 81: sttattus.oracle.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),                        // 82: sttattus.oracle.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                             // 83: sttattus.oracle.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                            // 84: sttattus.oracle.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                           // 85: sttattus.oracle.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                          // 86: sttattus.oracle.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                                      // 87: sttattus.oracle.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                          // 88: sttattus.oracle.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                         // 89: sttattus.oracle.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                            // 90: sttattus.oracle.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                           // 91: sttattus.oracle.v1.GetAnthologyArticleResponse
+	(*BriefShare)(nil),                                            // 92: sttattus.oracle.v1.BriefShare
+	(*CreateBriefShareRequest)(nil),                               // 93: sttattus.oracle.v1.CreateBriefShareRequest
+	(*CreateBriefShareResponse)(nil),                              // 94: sttattus.oracle.v1.CreateBriefShareResponse
+	(*ListMyBriefSharesRequest)(nil),                              // 95: sttattus.oracle.v1.ListMyBriefSharesRequest
+	(*ListMyBriefSharesResponse)(nil),                             // 96: sttattus.oracle.v1.ListMyBriefSharesResponse
+	(*RevokeBriefShareRequest)(nil),                               // 97: sttattus.oracle.v1.RevokeBriefShareRequest
+	(*RevokeBriefShareResponse)(nil),                              // 98: sttattus.oracle.v1.RevokeBriefShareResponse
+	(*YearInOracleRecap)(nil),                                     // 99: sttattus.oracle.v1.YearInOracleRecap
+	(*GetYearInOracleRecapRequest)(nil),                           // 100: sttattus.oracle.v1.GetYearInOracleRecapRequest
+	(*GetYearInOracleRecapResponse)(nil),                          // 101: sttattus.oracle.v1.GetYearInOracleRecapResponse
+	(*GenerateYearInOracleRequest)(nil),                           // 102: sttattus.oracle.v1.GenerateYearInOracleRequest
+	(*GenerateYearInOracleResponse)(nil),                          // 103: sttattus.oracle.v1.GenerateYearInOracleResponse
+	(*OracleEvidenceSourceSnapshotItem)(nil),                      // 104: sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+	(*OracleCitedClaimPassageItem)(nil),                           // 105: sttattus.oracle.v1.OracleCitedClaimPassageItem
+	(*GetEvidenceTruthWorkbenchRequest)(nil),                      // 106: sttattus.oracle.v1.GetEvidenceTruthWorkbenchRequest
+	(*GetEvidenceTruthWorkbenchResponse)(nil),                     // 107: sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse
+	(*RegisterOrRefreshEvidenceSourceRequest)(nil),                // 108: sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceRequest
+	(*RegisterOrRefreshEvidenceSourceResponse)(nil),               // 109: sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse
+	(*VerifyOrInvalidateCitedClaimRequest)(nil),                   // 110: sttattus.oracle.v1.VerifyOrInvalidateCitedClaimRequest
+	(*VerifyOrInvalidateCitedClaimResponse)(nil),                  // 111: sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse
+	(*AdminListEvidenceTruthAuditRequest)(nil),                    // 112: sttattus.oracle.v1.AdminListEvidenceTruthAuditRequest
+	(*AdminListEvidenceTruthAuditResponse)(nil),                   // 113: sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse
+	(*AdminManageSourceRightsOrCorrectionRequest)(nil),            // 114: sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionRequest
+	(*AdminManageSourceRightsOrCorrectionResponse)(nil),           // 115: sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse
+	(*OracleDecisionLedgerRecordItem)(nil),                        // 116: sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+	(*OracleDecisionAssumptionReviewItem)(nil),                    // 117: sttattus.oracle.v1.OracleDecisionAssumptionReviewItem
+	(*GetDecisionLedgerWorkbenchRequest)(nil),                     // 118: sttattus.oracle.v1.GetDecisionLedgerWorkbenchRequest
+	(*GetDecisionLedgerWorkbenchResponse)(nil),                    // 119: sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse
+	(*CreateOrUpdateDecisionLedgerRecordRequest)(nil),             // 120: sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordRequest
+	(*CreateOrUpdateDecisionLedgerRecordResponse)(nil),            // 121: sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse
+	(*RecordDecisionAssumptionOrReviewRequest)(nil),               // 122: sttattus.oracle.v1.RecordDecisionAssumptionOrReviewRequest
+	(*RecordDecisionAssumptionOrReviewResponse)(nil),              // 123: sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse
+	(*AdminListDecisionLedgerAuditRequest)(nil),                   // 124: sttattus.oracle.v1.AdminListDecisionLedgerAuditRequest
+	(*AdminListDecisionLedgerAuditResponse)(nil),                  // 125: sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse
+	(*AdminManageDecisionTemplateOrHoldRequest)(nil),              // 126: sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldRequest
+	(*AdminManageDecisionTemplateOrHoldResponse)(nil),             // 127: sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse
+	(*OracleCommitmentExecutionItem)(nil),                         // 128: sttattus.oracle.v1.OracleCommitmentExecutionItem
+	(*OracleExternalSyncDeliveryReceiptItem)(nil),                 // 129: sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+	(*GetCommitmentsOutcomeWorkbenchRequest)(nil),                 // 130: sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchRequest
+	(*GetCommitmentsOutcomeWorkbenchResponse)(nil),                // 131: sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse
+	(*CreateOrUpdateCommitmentItemRequest)(nil),                   // 132: sttattus.oracle.v1.CreateOrUpdateCommitmentItemRequest
+	(*CreateOrUpdateCommitmentItemResponse)(nil),                  // 133: sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse
+	(*PreviewOrExecuteExternalCommitmentSyncRequest)(nil),         // 134: sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncRequest
+	(*PreviewOrExecuteExternalCommitmentSyncResponse)(nil),        // 135: sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse
+	(*AdminListCommitmentsOutcomeAuditRequest)(nil),               // 136: sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditRequest
+	(*AdminListCommitmentsOutcomeAuditResponse)(nil),              // 137: sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse
+	(*AdminReconcileExternalSyncDeliveryRequest)(nil),             // 138: sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryRequest
+	(*AdminReconcileExternalSyncDeliveryResponse)(nil),            // 139: sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse
+	(*OracleWatchlistEntityMonitorItem)(nil),                      // 140: sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+	(*OracleCommandBriefSignalCardItem)(nil),                      // 141: sttattus.oracle.v1.OracleCommandBriefSignalCardItem
+	(*GetWatchlistsCommandBriefWorkbenchRequest)(nil),             // 142: sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchRequest
+	(*GetWatchlistsCommandBriefWorkbenchResponse)(nil),            // 143: sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse
+	(*UpsertWatchlistEntityMonitorRequest)(nil),                   // 144: sttattus.oracle.v1.UpsertWatchlistEntityMonitorRequest
+	(*UpsertWatchlistEntityMonitorResponse)(nil),                  // 145: sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse
+	(*ApproveOrSnoozeCommandBriefSignalRequest)(nil),              // 146: sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalRequest
+	(*ApproveOrSnoozeCommandBriefSignalResponse)(nil),             // 147: sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse
+	(*AdminListWatchlistsCommandBriefAuditRequest)(nil),           // 148: sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditRequest
+	(*AdminListWatchlistsCommandBriefAuditResponse)(nil),          // 149: sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse
+	(*AdminManageWatchlistAlertBudgetOrFeedRequest)(nil),          // 150: sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedRequest
+	(*AdminManageWatchlistAlertBudgetOrFeedResponse)(nil),         // 151: sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse
+	(*OracleAssumptionDriftAlertItem)(nil),                        // 152: sttattus.oracle.v1.OracleAssumptionDriftAlertItem
+	(*OracleDriftRadarPolicyItem)(nil),                            // 153: sttattus.oracle.v1.OracleDriftRadarPolicyItem
+	(*GetAssumptionDriftRadarWorkbenchRequest)(nil),               // 154: sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchRequest
+	(*GetAssumptionDriftRadarWorkbenchResponse)(nil),              // 155: sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse
+	(*RespondToAssumptionDriftAlertRequest)(nil),                  // 156: sttattus.oracle.v1.RespondToAssumptionDriftAlertRequest
+	(*RespondToAssumptionDriftAlertResponse)(nil),                 // 157: sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse
+	(*UpdateDriftRadarPolicyRequest)(nil),                         // 158: sttattus.oracle.v1.UpdateDriftRadarPolicyRequest
+	(*UpdateDriftRadarPolicyResponse)(nil),                        // 159: sttattus.oracle.v1.UpdateDriftRadarPolicyResponse
+	(*AdminListAssumptionDriftRadarAuditRequest)(nil),             // 160: sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditRequest
+	(*AdminListAssumptionDriftRadarAuditResponse)(nil),            // 161: sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse
+	(*AdminCalibrateDriftThresholdOrDomainRequest)(nil),           // 162: sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainRequest
+	(*AdminCalibrateDriftThresholdOrDomainResponse)(nil),          // 163: sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse
+	(*OracleForecastQuestionItem)(nil),                            // 164: sttattus.oracle.v1.OracleForecastQuestionItem
+	(*OracleCalibrationLabExperimentItem)(nil),                    // 165: sttattus.oracle.v1.OracleCalibrationLabExperimentItem
+	(*GetForecastingCalibrationWorkbenchRequest)(nil),             // 166: sttattus.oracle.v1.GetForecastingCalibrationWorkbenchRequest
+	(*GetForecastingCalibrationWorkbenchResponse)(nil),            // 167: sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse
+	(*CreateOrResolveForecastQuestionRequest)(nil),                // 168: sttattus.oracle.v1.CreateOrResolveForecastQuestionRequest
+	(*CreateOrResolveForecastQuestionResponse)(nil),               // 169: sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse
+	(*RecordCalibrationLabExperimentRequest)(nil),                 // 170: sttattus.oracle.v1.RecordCalibrationLabExperimentRequest
+	(*RecordCalibrationLabExperimentResponse)(nil),                // 171: sttattus.oracle.v1.RecordCalibrationLabExperimentResponse
+	(*AdminListForecastingCalibrationAuditRequest)(nil),           // 172: sttattus.oracle.v1.AdminListForecastingCalibrationAuditRequest
+	(*AdminListForecastingCalibrationAuditResponse)(nil),          // 173: sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse
+	(*AdminVerifyForecastResolutionOrSandboxRequest)(nil),         // 174: sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxRequest
+	(*AdminVerifyForecastResolutionOrSandboxResponse)(nil),        // 175: sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse
+	(*OracleMeetingNegotiationBriefItem)(nil),                     // 176: sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+	(*OracleMeetingCapturedProposalItem)(nil),                     // 177: sttattus.oracle.v1.OracleMeetingCapturedProposalItem
+	(*GetMeetingNegotiationStudioWorkbenchRequest)(nil),           // 178: sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchRequest
+	(*GetMeetingNegotiationStudioWorkbenchResponse)(nil),          // 179: sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse
+	(*SaveMeetingBriefOrRedteamRehearsalRequest)(nil),             // 180: sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalRequest
+	(*SaveMeetingBriefOrRedteamRehearsalResponse)(nil),            // 181: sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse
+	(*ConfirmOrRejectCapturedMeetingProposalRequest)(nil),         // 182: sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalRequest
+	(*ConfirmOrRejectCapturedMeetingProposalResponse)(nil),        // 183: sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse
+	(*AdminListMeetingNegotiationStudioAuditRequest)(nil),         // 184: sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditRequest
+	(*AdminListMeetingNegotiationStudioAuditResponse)(nil),        // 185: sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse
+	(*AdminManageRecordingConsentOrRedactionRequest)(nil),         // 186: sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionRequest
+	(*AdminManageRecordingConsentOrRedactionResponse)(nil),        // 187: sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse
+	(*OracleSecureConnectorGrantItem)(nil),                        // 188: sttattus.oracle.v1.OracleSecureConnectorGrantItem
+	(*OraclePromptInjectionQuarantineItem)(nil),                   // 189: sttattus.oracle.v1.OraclePromptInjectionQuarantineItem
+	(*GetSecureConnectorsToolWorkbenchRequest)(nil),               // 190: sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchRequest
+	(*GetSecureConnectorsToolWorkbenchResponse)(nil),              // 191: sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse
+	(*ConfigureOrRevokeConnectorGrantRequest)(nil),                // 192: sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantRequest
+	(*ConfigureOrRevokeConnectorGrantResponse)(nil),               // 193: sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse
+	(*ReportOrReviewPromptInjectionQuarantineRequest)(nil),        // 194: sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineRequest
+	(*ReportOrReviewPromptInjectionQuarantineResponse)(nil),       // 195: sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse
+	(*AdminListSecureConnectorsToolAuditRequest)(nil),             // 196: sttattus.oracle.v1.AdminListSecureConnectorsToolAuditRequest
+	(*AdminListSecureConnectorsToolAuditResponse)(nil),            // 197: sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse
+	(*AdminManageConnectorKillSwitchOrQuarantineRequest)(nil),     // 198: sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineRequest
+	(*AdminManageConnectorKillSwitchOrQuarantineResponse)(nil),    // 199: sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse
+	(*OracleTrustedDecisionRoomItem)(nil),                         // 200: sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	(*GetTrustedNetworkDecisionRoomsWorkbenchRequest)(nil),        // 201: sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchRequest
+	(*GetTrustedNetworkDecisionRoomsWorkbenchResponse)(nil),       // 202: sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse
+	(*CreateOrCloseTrustedDecisionRoomRequest)(nil),               // 203: sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomRequest
+	(*CreateOrCloseTrustedDecisionRoomResponse)(nil),              // 204: sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse
+	(*VerifySpecialistDisclosureOrOptInRequest)(nil),              // 205: sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInRequest
+	(*VerifySpecialistDisclosureOrOptInResponse)(nil),             // 206: sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse
+	(*AdminListTrustedDecisionRoomsAuditRequest)(nil),             // 207: sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditRequest
+	(*AdminListTrustedDecisionRoomsAuditResponse)(nil),            // 208: sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse
+	(*AdminManageDecisionRoomGrantOrBoundaryRequest)(nil),         // 209: sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryRequest
+	(*AdminManageDecisionRoomGrantOrBoundaryResponse)(nil),        // 210: sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse
+	(*OracleWargameExposureSimulationItem)(nil),                   // 211: sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	(*GetWargamingExposureWorkbenchRequest)(nil),                  // 212: sttattus.oracle.v1.GetWargamingExposureWorkbenchRequest
+	(*GetWargamingExposureWorkbenchResponse)(nil),                 // 213: sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse
+	(*RunOrExportWargameExposureSimulationRequest)(nil),           // 214: sttattus.oracle.v1.RunOrExportWargameExposureSimulationRequest
+	(*RunOrExportWargameExposureSimulationResponse)(nil),          // 215: sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse
+	(*UpdateWargameSensitivityOrContingencyRequest)(nil),          // 216: sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyRequest
+	(*UpdateWargameSensitivityOrContingencyResponse)(nil),         // 217: sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse
+	(*AdminListWargamingExposureAuditRequest)(nil),                // 218: sttattus.oracle.v1.AdminListWargamingExposureAuditRequest
+	(*AdminListWargamingExposureAuditResponse)(nil),               // 219: sttattus.oracle.v1.AdminListWargamingExposureAuditResponse
+	(*AdminCertifyMinimalPillarContractOrDisclaimerRequest)(nil),  // 220: sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerRequest
+	(*AdminCertifyMinimalPillarContractOrDisclaimerResponse)(nil), // 221: sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse
+	(*OraclePrivateCaseLibraryEntryItem)(nil),                     // 222: sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	(*GetPrivateCaseLibraryWorkbenchRequest)(nil),                 // 223: sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchRequest
+	(*GetPrivateCaseLibraryWorkbenchResponse)(nil),                // 224: sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse
+	(*SaveOrComparePrivateCaseEntryRequest)(nil),                  // 225: sttattus.oracle.v1.SaveOrComparePrivateCaseEntryRequest
+	(*SaveOrComparePrivateCaseEntryResponse)(nil),                 // 226: sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse
+	(*SubmitOrWithdrawAnonymizedPlaybookRequest)(nil),             // 227: sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookRequest
+	(*SubmitOrWithdrawAnonymizedPlaybookResponse)(nil),            // 228: sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse
+	(*AdminListPrivateCaseLibraryAuditRequest)(nil),               // 229: sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditRequest
+	(*AdminListPrivateCaseLibraryAuditResponse)(nil),              // 230: sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse
+	(*AdminCertifyPlaybookAnonymizationOrErasureRequest)(nil),     // 231: sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureRequest
+	(*AdminCertifyPlaybookAnonymizationOrErasureResponse)(nil),    // 232: sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponse
+	nil,                           // 233: sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	nil,                           // 234: sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry
+	nil,                           // 235: sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry
+	(*timestamppb.Timestamp)(nil), // 236: google.protobuf.Timestamp
 }
 var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
 	0,   // 0: sttattus.oracle.v1.StrategicInsight.domain:type_name -> sttattus.oracle.v1.StrategicDomain
 	1,   // 1: sttattus.oracle.v1.StrategicInsight.grading:type_name -> sttattus.oracle.v1.DepthGrading
-	107, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
-	104, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
+	236, // 2: sttattus.oracle.v1.StrategicInsight.discovered_at:type_name -> google.protobuf.Timestamp
+	233, // 3: sttattus.oracle.v1.OracleStats.domain_mastery:type_name -> sttattus.oracle.v1.OracleStats.DomainMasteryEntry
 	2,   // 4: sttattus.oracle.v1.QueryResponse.insight:type_name -> sttattus.oracle.v1.StrategicInsight
 	3,   // 5: sttattus.oracle.v1.QueryResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
 	3,   // 6: sttattus.oracle.v1.GetOracleStatsResponse.stats:type_name -> sttattus.oracle.v1.OracleStats
-	105, // 7: sttattus.oracle.v1.RankExplainer.per_domain_clout:type_name -> sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry
+	234, // 7: sttattus.oracle.v1.RankExplainer.per_domain_clout:type_name -> sttattus.oracle.v1.RankExplainer.PerDomainCloutEntry
 	8,   // 8: sttattus.oracle.v1.GetRankExplainerResponse.explainer:type_name -> sttattus.oracle.v1.RankExplainer
 	11,  // 9: sttattus.oracle.v1.ListAvailableToolsResponse.tools:type_name -> sttattus.oracle.v1.OracleTool
-	106, // 10: sttattus.oracle.v1.RunOracleToolRequest.args:type_name -> sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry
+	235, // 10: sttattus.oracle.v1.RunOracleToolRequest.args:type_name -> sttattus.oracle.v1.RunOracleToolRequest.ArgsEntry
 	16,  // 11: sttattus.oracle.v1.ListMyScopeGrantsResponse.grants:type_name -> sttattus.oracle.v1.ScopeGrant
 	16,  // 12: sttattus.oracle.v1.GrantScopeResponse.grant:type_name -> sttattus.oracle.v1.ScopeGrant
 	16,  // 13: sttattus.oracle.v1.RevokeScopeResponse.grant:type_name -> sttattus.oracle.v1.ScopeGrant
@@ -6043,95 +15607,276 @@ var file_sttattus_oracle_v1_oracle_proto_depIdxs = []int32{
 	92,  // 39: sttattus.oracle.v1.CreateBriefShareResponse.share:type_name -> sttattus.oracle.v1.BriefShare
 	92,  // 40: sttattus.oracle.v1.ListMyBriefSharesResponse.shares:type_name -> sttattus.oracle.v1.BriefShare
 	99,  // 41: sttattus.oracle.v1.GetYearInOracleRecapResponse.recap:type_name -> sttattus.oracle.v1.YearInOracleRecap
-	4,   // 42: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
-	100, // 43: sttattus.oracle.v1.OracleService.GetYearInOracleRecap:input_type -> sttattus.oracle.v1.GetYearInOracleRecapRequest
-	102, // 44: sttattus.oracle.v1.OracleService.GenerateYearInOracle:input_type -> sttattus.oracle.v1.GenerateYearInOracleRequest
-	79,  // 45: sttattus.oracle.v1.OracleService.StartConciergeThread:input_type -> sttattus.oracle.v1.StartConciergeThreadRequest
-	81,  // 46: sttattus.oracle.v1.OracleService.ListMyConciergeThreads:input_type -> sttattus.oracle.v1.ListMyConciergeThreadsRequest
-	83,  // 47: sttattus.oracle.v1.OracleService.GetConciergeThread:input_type -> sttattus.oracle.v1.GetConciergeThreadRequest
-	85,  // 48: sttattus.oracle.v1.OracleService.PostConciergeMessage:input_type -> sttattus.oracle.v1.PostConciergeMessageRequest
-	88,  // 49: sttattus.oracle.v1.OracleService.ListAnthologyArticles:input_type -> sttattus.oracle.v1.ListAnthologyArticlesRequest
-	90,  // 50: sttattus.oracle.v1.OracleService.GetAnthologyArticle:input_type -> sttattus.oracle.v1.GetAnthologyArticleRequest
-	93,  // 51: sttattus.oracle.v1.OracleService.CreateBriefShare:input_type -> sttattus.oracle.v1.CreateBriefShareRequest
-	95,  // 52: sttattus.oracle.v1.OracleService.ListMyBriefShares:input_type -> sttattus.oracle.v1.ListMyBriefSharesRequest
-	97,  // 53: sttattus.oracle.v1.OracleService.RevokeBriefShare:input_type -> sttattus.oracle.v1.RevokeBriefShareRequest
-	52,  // 54: sttattus.oracle.v1.OracleService.GetTodayBriefing:input_type -> sttattus.oracle.v1.GetTodayBriefingRequest
-	55,  // 55: sttattus.oracle.v1.OracleService.CreateTrigger:input_type -> sttattus.oracle.v1.CreateTriggerRequest
-	57,  // 56: sttattus.oracle.v1.OracleService.ListMyTriggers:input_type -> sttattus.oracle.v1.ListMyTriggersRequest
-	59,  // 57: sttattus.oracle.v1.OracleService.DeleteTrigger:input_type -> sttattus.oracle.v1.DeleteTriggerRequest
-	62,  // 58: sttattus.oracle.v1.OracleService.GetInbox:input_type -> sttattus.oracle.v1.GetInboxRequest
-	65,  // 59: sttattus.oracle.v1.OracleService.CreateDocument:input_type -> sttattus.oracle.v1.CreateDocumentRequest
-	67,  // 60: sttattus.oracle.v1.OracleService.ListMyDocuments:input_type -> sttattus.oracle.v1.ListMyDocumentsRequest
-	69,  // 61: sttattus.oracle.v1.OracleService.GetDocument:input_type -> sttattus.oracle.v1.GetDocumentRequest
-	71,  // 62: sttattus.oracle.v1.OracleService.UpdateDocument:input_type -> sttattus.oracle.v1.UpdateDocumentRequest
-	73,  // 63: sttattus.oracle.v1.OracleService.DeleteDocument:input_type -> sttattus.oracle.v1.DeleteDocumentRequest
-	75,  // 64: sttattus.oracle.v1.OracleService.DraftDocument:input_type -> sttattus.oracle.v1.DraftDocumentRequest
-	6,   // 65: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
-	39,  // 66: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
-	41,  // 67: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
-	43,  // 68: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
-	45,  // 69: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
-	47,  // 70: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
-	49,  // 71: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
-	25,  // 72: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
-	27,  // 73: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
-	29,  // 74: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
-	31,  // 75: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
-	33,  // 76: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
-	35,  // 77: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
-	17,  // 78: sttattus.oracle.v1.OracleService.ListMyScopeGrants:input_type -> sttattus.oracle.v1.ListMyScopeGrantsRequest
-	19,  // 79: sttattus.oracle.v1.OracleService.GrantScope:input_type -> sttattus.oracle.v1.GrantScopeRequest
-	21,  // 80: sttattus.oracle.v1.OracleService.RevokeScope:input_type -> sttattus.oracle.v1.RevokeScopeRequest
-	12,  // 81: sttattus.oracle.v1.OracleService.ListAvailableTools:input_type -> sttattus.oracle.v1.ListAvailableToolsRequest
-	14,  // 82: sttattus.oracle.v1.OracleService.RunOracleTool:input_type -> sttattus.oracle.v1.RunOracleToolRequest
-	9,   // 83: sttattus.oracle.v1.OracleService.GetRankExplainer:input_type -> sttattus.oracle.v1.GetRankExplainerRequest
-	5,   // 84: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
-	101, // 85: sttattus.oracle.v1.OracleService.GetYearInOracleRecap:output_type -> sttattus.oracle.v1.GetYearInOracleRecapResponse
-	103, // 86: sttattus.oracle.v1.OracleService.GenerateYearInOracle:output_type -> sttattus.oracle.v1.GenerateYearInOracleResponse
-	80,  // 87: sttattus.oracle.v1.OracleService.StartConciergeThread:output_type -> sttattus.oracle.v1.StartConciergeThreadResponse
-	82,  // 88: sttattus.oracle.v1.OracleService.ListMyConciergeThreads:output_type -> sttattus.oracle.v1.ListMyConciergeThreadsResponse
-	84,  // 89: sttattus.oracle.v1.OracleService.GetConciergeThread:output_type -> sttattus.oracle.v1.GetConciergeThreadResponse
-	86,  // 90: sttattus.oracle.v1.OracleService.PostConciergeMessage:output_type -> sttattus.oracle.v1.PostConciergeMessageResponse
-	89,  // 91: sttattus.oracle.v1.OracleService.ListAnthologyArticles:output_type -> sttattus.oracle.v1.ListAnthologyArticlesResponse
-	91,  // 92: sttattus.oracle.v1.OracleService.GetAnthologyArticle:output_type -> sttattus.oracle.v1.GetAnthologyArticleResponse
-	94,  // 93: sttattus.oracle.v1.OracleService.CreateBriefShare:output_type -> sttattus.oracle.v1.CreateBriefShareResponse
-	96,  // 94: sttattus.oracle.v1.OracleService.ListMyBriefShares:output_type -> sttattus.oracle.v1.ListMyBriefSharesResponse
-	98,  // 95: sttattus.oracle.v1.OracleService.RevokeBriefShare:output_type -> sttattus.oracle.v1.RevokeBriefShareResponse
-	53,  // 96: sttattus.oracle.v1.OracleService.GetTodayBriefing:output_type -> sttattus.oracle.v1.GetTodayBriefingResponse
-	56,  // 97: sttattus.oracle.v1.OracleService.CreateTrigger:output_type -> sttattus.oracle.v1.CreateTriggerResponse
-	58,  // 98: sttattus.oracle.v1.OracleService.ListMyTriggers:output_type -> sttattus.oracle.v1.ListMyTriggersResponse
-	60,  // 99: sttattus.oracle.v1.OracleService.DeleteTrigger:output_type -> sttattus.oracle.v1.DeleteTriggerResponse
-	63,  // 100: sttattus.oracle.v1.OracleService.GetInbox:output_type -> sttattus.oracle.v1.GetInboxResponse
-	66,  // 101: sttattus.oracle.v1.OracleService.CreateDocument:output_type -> sttattus.oracle.v1.CreateDocumentResponse
-	68,  // 102: sttattus.oracle.v1.OracleService.ListMyDocuments:output_type -> sttattus.oracle.v1.ListMyDocumentsResponse
-	70,  // 103: sttattus.oracle.v1.OracleService.GetDocument:output_type -> sttattus.oracle.v1.GetDocumentResponse
-	72,  // 104: sttattus.oracle.v1.OracleService.UpdateDocument:output_type -> sttattus.oracle.v1.UpdateDocumentResponse
-	74,  // 105: sttattus.oracle.v1.OracleService.DeleteDocument:output_type -> sttattus.oracle.v1.DeleteDocumentResponse
-	76,  // 106: sttattus.oracle.v1.OracleService.DraftDocument:output_type -> sttattus.oracle.v1.DraftDocumentResponse
-	7,   // 107: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
-	40,  // 108: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
-	42,  // 109: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
-	44,  // 110: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
-	46,  // 111: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
-	48,  // 112: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
-	50,  // 113: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryResponse
-	26,  // 114: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
-	28,  // 115: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
-	30,  // 116: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
-	32,  // 117: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
-	34,  // 118: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
-	36,  // 119: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
-	18,  // 120: sttattus.oracle.v1.OracleService.ListMyScopeGrants:output_type -> sttattus.oracle.v1.ListMyScopeGrantsResponse
-	20,  // 121: sttattus.oracle.v1.OracleService.GrantScope:output_type -> sttattus.oracle.v1.GrantScopeResponse
-	22,  // 122: sttattus.oracle.v1.OracleService.RevokeScope:output_type -> sttattus.oracle.v1.RevokeScopeResponse
-	13,  // 123: sttattus.oracle.v1.OracleService.ListAvailableTools:output_type -> sttattus.oracle.v1.ListAvailableToolsResponse
-	15,  // 124: sttattus.oracle.v1.OracleService.RunOracleTool:output_type -> sttattus.oracle.v1.RunOracleToolResponse
-	10,  // 125: sttattus.oracle.v1.OracleService.GetRankExplainer:output_type -> sttattus.oracle.v1.GetRankExplainerResponse
-	84,  // [84:126] is the sub-list for method output_type
-	42,  // [42:84] is the sub-list for method input_type
-	42,  // [42:42] is the sub-list for extension type_name
-	42,  // [42:42] is the sub-list for extension extendee
-	0,   // [0:42] is the sub-list for field type_name
+	104, // 42: sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse.sources:type_name -> sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+	105, // 43: sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse.claims:type_name -> sttattus.oracle.v1.OracleCitedClaimPassageItem
+	104, // 44: sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse.source:type_name -> sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+	105, // 45: sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse.claim:type_name -> sttattus.oracle.v1.OracleCitedClaimPassageItem
+	104, // 46: sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse.sources:type_name -> sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+	105, // 47: sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse.claims:type_name -> sttattus.oracle.v1.OracleCitedClaimPassageItem
+	104, // 48: sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse.source:type_name -> sttattus.oracle.v1.OracleEvidenceSourceSnapshotItem
+	116, // 49: sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse.decisions:type_name -> sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+	117, // 50: sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse.assumptions:type_name -> sttattus.oracle.v1.OracleDecisionAssumptionReviewItem
+	116, // 51: sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse.decision:type_name -> sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+	117, // 52: sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse.assumption:type_name -> sttattus.oracle.v1.OracleDecisionAssumptionReviewItem
+	116, // 53: sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse.decisions:type_name -> sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+	117, // 54: sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse.assumptions:type_name -> sttattus.oracle.v1.OracleDecisionAssumptionReviewItem
+	116, // 55: sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse.decision:type_name -> sttattus.oracle.v1.OracleDecisionLedgerRecordItem
+	128, // 56: sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse.commitments:type_name -> sttattus.oracle.v1.OracleCommitmentExecutionItem
+	129, // 57: sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse.sync_receipts:type_name -> sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+	128, // 58: sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse.commitment:type_name -> sttattus.oracle.v1.OracleCommitmentExecutionItem
+	129, // 59: sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse.sync_receipt:type_name -> sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+	128, // 60: sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse.commitments:type_name -> sttattus.oracle.v1.OracleCommitmentExecutionItem
+	129, // 61: sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse.sync_receipts:type_name -> sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+	129, // 62: sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse.sync_receipt:type_name -> sttattus.oracle.v1.OracleExternalSyncDeliveryReceiptItem
+	140, // 63: sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse.monitors:type_name -> sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+	141, // 64: sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse.signal_cards:type_name -> sttattus.oracle.v1.OracleCommandBriefSignalCardItem
+	140, // 65: sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse.monitor:type_name -> sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+	141, // 66: sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse.signal_card:type_name -> sttattus.oracle.v1.OracleCommandBriefSignalCardItem
+	140, // 67: sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse.monitors:type_name -> sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+	141, // 68: sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse.signal_cards:type_name -> sttattus.oracle.v1.OracleCommandBriefSignalCardItem
+	140, // 69: sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse.monitor:type_name -> sttattus.oracle.v1.OracleWatchlistEntityMonitorItem
+	152, // 70: sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse.drift_alerts:type_name -> sttattus.oracle.v1.OracleAssumptionDriftAlertItem
+	153, // 71: sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse.policies:type_name -> sttattus.oracle.v1.OracleDriftRadarPolicyItem
+	152, // 72: sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse.drift_alert:type_name -> sttattus.oracle.v1.OracleAssumptionDriftAlertItem
+	153, // 73: sttattus.oracle.v1.UpdateDriftRadarPolicyResponse.policy:type_name -> sttattus.oracle.v1.OracleDriftRadarPolicyItem
+	152, // 74: sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse.drift_alerts:type_name -> sttattus.oracle.v1.OracleAssumptionDriftAlertItem
+	153, // 75: sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse.policies:type_name -> sttattus.oracle.v1.OracleDriftRadarPolicyItem
+	153, // 76: sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse.policy:type_name -> sttattus.oracle.v1.OracleDriftRadarPolicyItem
+	164, // 77: sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse.forecasts:type_name -> sttattus.oracle.v1.OracleForecastQuestionItem
+	165, // 78: sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse.experiments:type_name -> sttattus.oracle.v1.OracleCalibrationLabExperimentItem
+	164, // 79: sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse.forecast:type_name -> sttattus.oracle.v1.OracleForecastQuestionItem
+	165, // 80: sttattus.oracle.v1.RecordCalibrationLabExperimentResponse.experiment:type_name -> sttattus.oracle.v1.OracleCalibrationLabExperimentItem
+	164, // 81: sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse.forecasts:type_name -> sttattus.oracle.v1.OracleForecastQuestionItem
+	165, // 82: sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse.experiments:type_name -> sttattus.oracle.v1.OracleCalibrationLabExperimentItem
+	164, // 83: sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse.forecast:type_name -> sttattus.oracle.v1.OracleForecastQuestionItem
+	176, // 84: sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse.briefs:type_name -> sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+	177, // 85: sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse.proposals:type_name -> sttattus.oracle.v1.OracleMeetingCapturedProposalItem
+	176, // 86: sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse.brief:type_name -> sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+	177, // 87: sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse.proposal:type_name -> sttattus.oracle.v1.OracleMeetingCapturedProposalItem
+	176, // 88: sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse.briefs:type_name -> sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+	177, // 89: sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse.proposals:type_name -> sttattus.oracle.v1.OracleMeetingCapturedProposalItem
+	176, // 90: sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse.brief:type_name -> sttattus.oracle.v1.OracleMeetingNegotiationBriefItem
+	188, // 91: sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse.connectors:type_name -> sttattus.oracle.v1.OracleSecureConnectorGrantItem
+	189, // 92: sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse.quarantines:type_name -> sttattus.oracle.v1.OraclePromptInjectionQuarantineItem
+	188, // 93: sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse.connector:type_name -> sttattus.oracle.v1.OracleSecureConnectorGrantItem
+	189, // 94: sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse.quarantine:type_name -> sttattus.oracle.v1.OraclePromptInjectionQuarantineItem
+	188, // 95: sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse.connectors:type_name -> sttattus.oracle.v1.OracleSecureConnectorGrantItem
+	189, // 96: sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse.quarantines:type_name -> sttattus.oracle.v1.OraclePromptInjectionQuarantineItem
+	188, // 97: sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse.connector:type_name -> sttattus.oracle.v1.OracleSecureConnectorGrantItem
+	200, // 98: sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse.rooms:type_name -> sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	200, // 99: sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse.room:type_name -> sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	200, // 100: sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse.room:type_name -> sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	200, // 101: sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse.rooms:type_name -> sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	200, // 102: sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse.room:type_name -> sttattus.oracle.v1.OracleTrustedDecisionRoomItem
+	211, // 103: sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse.simulations:type_name -> sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	211, // 104: sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse.simulation:type_name -> sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	211, // 105: sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse.simulation:type_name -> sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	211, // 106: sttattus.oracle.v1.AdminListWargamingExposureAuditResponse.simulations:type_name -> sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	211, // 107: sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse.simulation:type_name -> sttattus.oracle.v1.OracleWargameExposureSimulationItem
+	222, // 108: sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse.cases:type_name -> sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	222, // 109: sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse.case_entry:type_name -> sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	222, // 110: sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse.case_entry:type_name -> sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	222, // 111: sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse.cases:type_name -> sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	222, // 112: sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponse.case_entry:type_name -> sttattus.oracle.v1.OraclePrivateCaseLibraryEntryItem
+	4,   // 113: sttattus.oracle.v1.OracleService.Query:input_type -> sttattus.oracle.v1.QueryRequest
+	100, // 114: sttattus.oracle.v1.OracleService.GetYearInOracleRecap:input_type -> sttattus.oracle.v1.GetYearInOracleRecapRequest
+	102, // 115: sttattus.oracle.v1.OracleService.GenerateYearInOracle:input_type -> sttattus.oracle.v1.GenerateYearInOracleRequest
+	79,  // 116: sttattus.oracle.v1.OracleService.StartConciergeThread:input_type -> sttattus.oracle.v1.StartConciergeThreadRequest
+	81,  // 117: sttattus.oracle.v1.OracleService.ListMyConciergeThreads:input_type -> sttattus.oracle.v1.ListMyConciergeThreadsRequest
+	83,  // 118: sttattus.oracle.v1.OracleService.GetConciergeThread:input_type -> sttattus.oracle.v1.GetConciergeThreadRequest
+	85,  // 119: sttattus.oracle.v1.OracleService.PostConciergeMessage:input_type -> sttattus.oracle.v1.PostConciergeMessageRequest
+	88,  // 120: sttattus.oracle.v1.OracleService.ListAnthologyArticles:input_type -> sttattus.oracle.v1.ListAnthologyArticlesRequest
+	90,  // 121: sttattus.oracle.v1.OracleService.GetAnthologyArticle:input_type -> sttattus.oracle.v1.GetAnthologyArticleRequest
+	93,  // 122: sttattus.oracle.v1.OracleService.CreateBriefShare:input_type -> sttattus.oracle.v1.CreateBriefShareRequest
+	95,  // 123: sttattus.oracle.v1.OracleService.ListMyBriefShares:input_type -> sttattus.oracle.v1.ListMyBriefSharesRequest
+	97,  // 124: sttattus.oracle.v1.OracleService.RevokeBriefShare:input_type -> sttattus.oracle.v1.RevokeBriefShareRequest
+	52,  // 125: sttattus.oracle.v1.OracleService.GetTodayBriefing:input_type -> sttattus.oracle.v1.GetTodayBriefingRequest
+	55,  // 126: sttattus.oracle.v1.OracleService.CreateTrigger:input_type -> sttattus.oracle.v1.CreateTriggerRequest
+	57,  // 127: sttattus.oracle.v1.OracleService.ListMyTriggers:input_type -> sttattus.oracle.v1.ListMyTriggersRequest
+	59,  // 128: sttattus.oracle.v1.OracleService.DeleteTrigger:input_type -> sttattus.oracle.v1.DeleteTriggerRequest
+	62,  // 129: sttattus.oracle.v1.OracleService.GetInbox:input_type -> sttattus.oracle.v1.GetInboxRequest
+	65,  // 130: sttattus.oracle.v1.OracleService.CreateDocument:input_type -> sttattus.oracle.v1.CreateDocumentRequest
+	67,  // 131: sttattus.oracle.v1.OracleService.ListMyDocuments:input_type -> sttattus.oracle.v1.ListMyDocumentsRequest
+	69,  // 132: sttattus.oracle.v1.OracleService.GetDocument:input_type -> sttattus.oracle.v1.GetDocumentRequest
+	71,  // 133: sttattus.oracle.v1.OracleService.UpdateDocument:input_type -> sttattus.oracle.v1.UpdateDocumentRequest
+	73,  // 134: sttattus.oracle.v1.OracleService.DeleteDocument:input_type -> sttattus.oracle.v1.DeleteDocumentRequest
+	75,  // 135: sttattus.oracle.v1.OracleService.DraftDocument:input_type -> sttattus.oracle.v1.DraftDocumentRequest
+	6,   // 136: sttattus.oracle.v1.OracleService.GetOracleStats:input_type -> sttattus.oracle.v1.GetOracleStatsRequest
+	39,  // 137: sttattus.oracle.v1.OracleService.ListMyThreads:input_type -> sttattus.oracle.v1.ListMyThreadsRequest
+	41,  // 138: sttattus.oracle.v1.OracleService.CreateThread:input_type -> sttattus.oracle.v1.CreateThreadRequest
+	43,  // 139: sttattus.oracle.v1.OracleService.RenameThread:input_type -> sttattus.oracle.v1.RenameThreadRequest
+	45,  // 140: sttattus.oracle.v1.OracleService.DeleteThread:input_type -> sttattus.oracle.v1.DeleteThreadRequest
+	47,  // 141: sttattus.oracle.v1.OracleService.ListThreadMessages:input_type -> sttattus.oracle.v1.ListThreadMessagesRequest
+	49,  // 142: sttattus.oracle.v1.OracleService.StreamQuery:input_type -> sttattus.oracle.v1.StreamQueryRequest
+	25,  // 143: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:input_type -> sttattus.oracle.v1.RecordEpisodicMemoryRequest
+	27,  // 144: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:input_type -> sttattus.oracle.v1.ListMyEpisodicMemoryRequest
+	29,  // 145: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:input_type -> sttattus.oracle.v1.DeleteEpisodicMemoryRequest
+	31,  // 146: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:input_type -> sttattus.oracle.v1.UpsertSemanticMemoryRequest
+	33,  // 147: sttattus.oracle.v1.OracleService.ListMySemanticMemory:input_type -> sttattus.oracle.v1.ListMySemanticMemoryRequest
+	35,  // 148: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:input_type -> sttattus.oracle.v1.DeleteSemanticMemoryRequest
+	17,  // 149: sttattus.oracle.v1.OracleService.ListMyScopeGrants:input_type -> sttattus.oracle.v1.ListMyScopeGrantsRequest
+	19,  // 150: sttattus.oracle.v1.OracleService.GrantScope:input_type -> sttattus.oracle.v1.GrantScopeRequest
+	21,  // 151: sttattus.oracle.v1.OracleService.RevokeScope:input_type -> sttattus.oracle.v1.RevokeScopeRequest
+	12,  // 152: sttattus.oracle.v1.OracleService.ListAvailableTools:input_type -> sttattus.oracle.v1.ListAvailableToolsRequest
+	14,  // 153: sttattus.oracle.v1.OracleService.RunOracleTool:input_type -> sttattus.oracle.v1.RunOracleToolRequest
+	9,   // 154: sttattus.oracle.v1.OracleService.GetRankExplainer:input_type -> sttattus.oracle.v1.GetRankExplainerRequest
+	106, // 155: sttattus.oracle.v1.OracleService.GetEvidenceTruthWorkbench:input_type -> sttattus.oracle.v1.GetEvidenceTruthWorkbenchRequest
+	108, // 156: sttattus.oracle.v1.OracleService.RegisterOrRefreshEvidenceSource:input_type -> sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceRequest
+	110, // 157: sttattus.oracle.v1.OracleService.VerifyOrInvalidateCitedClaim:input_type -> sttattus.oracle.v1.VerifyOrInvalidateCitedClaimRequest
+	112, // 158: sttattus.oracle.v1.OracleService.AdminListEvidenceTruthAudit:input_type -> sttattus.oracle.v1.AdminListEvidenceTruthAuditRequest
+	114, // 159: sttattus.oracle.v1.OracleService.AdminManageSourceRightsOrCorrection:input_type -> sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionRequest
+	118, // 160: sttattus.oracle.v1.OracleService.GetDecisionLedgerWorkbench:input_type -> sttattus.oracle.v1.GetDecisionLedgerWorkbenchRequest
+	120, // 161: sttattus.oracle.v1.OracleService.CreateOrUpdateDecisionLedgerRecord:input_type -> sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordRequest
+	122, // 162: sttattus.oracle.v1.OracleService.RecordDecisionAssumptionOrReview:input_type -> sttattus.oracle.v1.RecordDecisionAssumptionOrReviewRequest
+	124, // 163: sttattus.oracle.v1.OracleService.AdminListDecisionLedgerAudit:input_type -> sttattus.oracle.v1.AdminListDecisionLedgerAuditRequest
+	126, // 164: sttattus.oracle.v1.OracleService.AdminManageDecisionTemplateOrHold:input_type -> sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldRequest
+	130, // 165: sttattus.oracle.v1.OracleService.GetCommitmentsOutcomeWorkbench:input_type -> sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchRequest
+	132, // 166: sttattus.oracle.v1.OracleService.CreateOrUpdateCommitmentItem:input_type -> sttattus.oracle.v1.CreateOrUpdateCommitmentItemRequest
+	134, // 167: sttattus.oracle.v1.OracleService.PreviewOrExecuteExternalCommitmentSync:input_type -> sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncRequest
+	136, // 168: sttattus.oracle.v1.OracleService.AdminListCommitmentsOutcomeAudit:input_type -> sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditRequest
+	138, // 169: sttattus.oracle.v1.OracleService.AdminReconcileExternalSyncDelivery:input_type -> sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryRequest
+	142, // 170: sttattus.oracle.v1.OracleService.GetWatchlistsCommandBriefWorkbench:input_type -> sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchRequest
+	144, // 171: sttattus.oracle.v1.OracleService.UpsertWatchlistEntityMonitor:input_type -> sttattus.oracle.v1.UpsertWatchlistEntityMonitorRequest
+	146, // 172: sttattus.oracle.v1.OracleService.ApproveOrSnoozeCommandBriefSignal:input_type -> sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalRequest
+	148, // 173: sttattus.oracle.v1.OracleService.AdminListWatchlistsCommandBriefAudit:input_type -> sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditRequest
+	150, // 174: sttattus.oracle.v1.OracleService.AdminTuneWatchlistAlertBudgetOrFeed:input_type -> sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedRequest
+	154, // 175: sttattus.oracle.v1.OracleService.GetAssumptionDriftRadarWorkbench:input_type -> sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchRequest
+	156, // 176: sttattus.oracle.v1.OracleService.RespondToAssumptionDriftAlert:input_type -> sttattus.oracle.v1.RespondToAssumptionDriftAlertRequest
+	158, // 177: sttattus.oracle.v1.OracleService.UpdateDriftRadarPolicy:input_type -> sttattus.oracle.v1.UpdateDriftRadarPolicyRequest
+	160, // 178: sttattus.oracle.v1.OracleService.AdminListAssumptionDriftRadarAudit:input_type -> sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditRequest
+	162, // 179: sttattus.oracle.v1.OracleService.AdminCalibrateDriftThresholdOrDomain:input_type -> sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainRequest
+	166, // 180: sttattus.oracle.v1.OracleService.GetForecastingCalibrationWorkbench:input_type -> sttattus.oracle.v1.GetForecastingCalibrationWorkbenchRequest
+	168, // 181: sttattus.oracle.v1.OracleService.CreateOrResolveForecastQuestion:input_type -> sttattus.oracle.v1.CreateOrResolveForecastQuestionRequest
+	170, // 182: sttattus.oracle.v1.OracleService.RecordCalibrationLabExperiment:input_type -> sttattus.oracle.v1.RecordCalibrationLabExperimentRequest
+	172, // 183: sttattus.oracle.v1.OracleService.AdminListForecastingCalibrationAudit:input_type -> sttattus.oracle.v1.AdminListForecastingCalibrationAuditRequest
+	174, // 184: sttattus.oracle.v1.OracleService.AdminVerifyForecastResolutionOrSandbox:input_type -> sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxRequest
+	178, // 185: sttattus.oracle.v1.OracleService.GetMeetingNegotiationStudioWorkbench:input_type -> sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchRequest
+	180, // 186: sttattus.oracle.v1.OracleService.SaveMeetingBriefOrRedteamRehearsal:input_type -> sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalRequest
+	182, // 187: sttattus.oracle.v1.OracleService.ConfirmOrRejectCapturedMeetingProposal:input_type -> sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalRequest
+	184, // 188: sttattus.oracle.v1.OracleService.AdminListMeetingNegotiationStudioAudit:input_type -> sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditRequest
+	186, // 189: sttattus.oracle.v1.OracleService.AdminManageRecordingConsentOrRedaction:input_type -> sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionRequest
+	190, // 190: sttattus.oracle.v1.OracleService.GetSecureConnectorsToolWorkbench:input_type -> sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchRequest
+	192, // 191: sttattus.oracle.v1.OracleService.ConfigureOrRevokeConnectorGrant:input_type -> sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantRequest
+	194, // 192: sttattus.oracle.v1.OracleService.ReportOrReviewPromptInjectionQuarantine:input_type -> sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineRequest
+	196, // 193: sttattus.oracle.v1.OracleService.AdminListSecureConnectorsToolAudit:input_type -> sttattus.oracle.v1.AdminListSecureConnectorsToolAuditRequest
+	198, // 194: sttattus.oracle.v1.OracleService.AdminManageConnectorKillSwitchOrQuarantine:input_type -> sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineRequest
+	201, // 195: sttattus.oracle.v1.OracleService.GetTrustedNetworkDecisionRoomsWorkbench:input_type -> sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchRequest
+	203, // 196: sttattus.oracle.v1.OracleService.CreateOrCloseTrustedDecisionRoom:input_type -> sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomRequest
+	205, // 197: sttattus.oracle.v1.OracleService.VerifySpecialistDisclosureOrOptIn:input_type -> sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInRequest
+	207, // 198: sttattus.oracle.v1.OracleService.AdminListTrustedDecisionRoomsAudit:input_type -> sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditRequest
+	209, // 199: sttattus.oracle.v1.OracleService.AdminManageDecisionRoomGrantOrBoundary:input_type -> sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryRequest
+	212, // 200: sttattus.oracle.v1.OracleService.GetWargamingExposureWorkbench:input_type -> sttattus.oracle.v1.GetWargamingExposureWorkbenchRequest
+	214, // 201: sttattus.oracle.v1.OracleService.RunOrExportWargameExposureSimulation:input_type -> sttattus.oracle.v1.RunOrExportWargameExposureSimulationRequest
+	216, // 202: sttattus.oracle.v1.OracleService.UpdateWargameSensitivityOrContingency:input_type -> sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyRequest
+	218, // 203: sttattus.oracle.v1.OracleService.AdminListWargamingExposureAudit:input_type -> sttattus.oracle.v1.AdminListWargamingExposureAuditRequest
+	220, // 204: sttattus.oracle.v1.OracleService.AdminCertifyMinimalPillarContractOrDisclaimer:input_type -> sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerRequest
+	223, // 205: sttattus.oracle.v1.OracleService.GetPrivateCaseLibraryWorkbench:input_type -> sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchRequest
+	225, // 206: sttattus.oracle.v1.OracleService.SaveOrComparePrivateCaseEntry:input_type -> sttattus.oracle.v1.SaveOrComparePrivateCaseEntryRequest
+	227, // 207: sttattus.oracle.v1.OracleService.SubmitOrWithdrawAnonymizedPlaybook:input_type -> sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookRequest
+	229, // 208: sttattus.oracle.v1.OracleService.AdminListPrivateCaseLibraryAudit:input_type -> sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditRequest
+	231, // 209: sttattus.oracle.v1.OracleService.AdminCertifyPlaybookAnonymizationOrErasure:input_type -> sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureRequest
+	5,   // 210: sttattus.oracle.v1.OracleService.Query:output_type -> sttattus.oracle.v1.QueryResponse
+	101, // 211: sttattus.oracle.v1.OracleService.GetYearInOracleRecap:output_type -> sttattus.oracle.v1.GetYearInOracleRecapResponse
+	103, // 212: sttattus.oracle.v1.OracleService.GenerateYearInOracle:output_type -> sttattus.oracle.v1.GenerateYearInOracleResponse
+	80,  // 213: sttattus.oracle.v1.OracleService.StartConciergeThread:output_type -> sttattus.oracle.v1.StartConciergeThreadResponse
+	82,  // 214: sttattus.oracle.v1.OracleService.ListMyConciergeThreads:output_type -> sttattus.oracle.v1.ListMyConciergeThreadsResponse
+	84,  // 215: sttattus.oracle.v1.OracleService.GetConciergeThread:output_type -> sttattus.oracle.v1.GetConciergeThreadResponse
+	86,  // 216: sttattus.oracle.v1.OracleService.PostConciergeMessage:output_type -> sttattus.oracle.v1.PostConciergeMessageResponse
+	89,  // 217: sttattus.oracle.v1.OracleService.ListAnthologyArticles:output_type -> sttattus.oracle.v1.ListAnthologyArticlesResponse
+	91,  // 218: sttattus.oracle.v1.OracleService.GetAnthologyArticle:output_type -> sttattus.oracle.v1.GetAnthologyArticleResponse
+	94,  // 219: sttattus.oracle.v1.OracleService.CreateBriefShare:output_type -> sttattus.oracle.v1.CreateBriefShareResponse
+	96,  // 220: sttattus.oracle.v1.OracleService.ListMyBriefShares:output_type -> sttattus.oracle.v1.ListMyBriefSharesResponse
+	98,  // 221: sttattus.oracle.v1.OracleService.RevokeBriefShare:output_type -> sttattus.oracle.v1.RevokeBriefShareResponse
+	53,  // 222: sttattus.oracle.v1.OracleService.GetTodayBriefing:output_type -> sttattus.oracle.v1.GetTodayBriefingResponse
+	56,  // 223: sttattus.oracle.v1.OracleService.CreateTrigger:output_type -> sttattus.oracle.v1.CreateTriggerResponse
+	58,  // 224: sttattus.oracle.v1.OracleService.ListMyTriggers:output_type -> sttattus.oracle.v1.ListMyTriggersResponse
+	60,  // 225: sttattus.oracle.v1.OracleService.DeleteTrigger:output_type -> sttattus.oracle.v1.DeleteTriggerResponse
+	63,  // 226: sttattus.oracle.v1.OracleService.GetInbox:output_type -> sttattus.oracle.v1.GetInboxResponse
+	66,  // 227: sttattus.oracle.v1.OracleService.CreateDocument:output_type -> sttattus.oracle.v1.CreateDocumentResponse
+	68,  // 228: sttattus.oracle.v1.OracleService.ListMyDocuments:output_type -> sttattus.oracle.v1.ListMyDocumentsResponse
+	70,  // 229: sttattus.oracle.v1.OracleService.GetDocument:output_type -> sttattus.oracle.v1.GetDocumentResponse
+	72,  // 230: sttattus.oracle.v1.OracleService.UpdateDocument:output_type -> sttattus.oracle.v1.UpdateDocumentResponse
+	74,  // 231: sttattus.oracle.v1.OracleService.DeleteDocument:output_type -> sttattus.oracle.v1.DeleteDocumentResponse
+	76,  // 232: sttattus.oracle.v1.OracleService.DraftDocument:output_type -> sttattus.oracle.v1.DraftDocumentResponse
+	7,   // 233: sttattus.oracle.v1.OracleService.GetOracleStats:output_type -> sttattus.oracle.v1.GetOracleStatsResponse
+	40,  // 234: sttattus.oracle.v1.OracleService.ListMyThreads:output_type -> sttattus.oracle.v1.ListMyThreadsResponse
+	42,  // 235: sttattus.oracle.v1.OracleService.CreateThread:output_type -> sttattus.oracle.v1.CreateThreadResponse
+	44,  // 236: sttattus.oracle.v1.OracleService.RenameThread:output_type -> sttattus.oracle.v1.RenameThreadResponse
+	46,  // 237: sttattus.oracle.v1.OracleService.DeleteThread:output_type -> sttattus.oracle.v1.DeleteThreadResponse
+	48,  // 238: sttattus.oracle.v1.OracleService.ListThreadMessages:output_type -> sttattus.oracle.v1.ListThreadMessagesResponse
+	50,  // 239: sttattus.oracle.v1.OracleService.StreamQuery:output_type -> sttattus.oracle.v1.StreamQueryResponse
+	26,  // 240: sttattus.oracle.v1.OracleService.RecordEpisodicMemory:output_type -> sttattus.oracle.v1.RecordEpisodicMemoryResponse
+	28,  // 241: sttattus.oracle.v1.OracleService.ListMyEpisodicMemory:output_type -> sttattus.oracle.v1.ListMyEpisodicMemoryResponse
+	30,  // 242: sttattus.oracle.v1.OracleService.DeleteEpisodicMemory:output_type -> sttattus.oracle.v1.DeleteEpisodicMemoryResponse
+	32,  // 243: sttattus.oracle.v1.OracleService.UpsertSemanticMemory:output_type -> sttattus.oracle.v1.UpsertSemanticMemoryResponse
+	34,  // 244: sttattus.oracle.v1.OracleService.ListMySemanticMemory:output_type -> sttattus.oracle.v1.ListMySemanticMemoryResponse
+	36,  // 245: sttattus.oracle.v1.OracleService.DeleteSemanticMemory:output_type -> sttattus.oracle.v1.DeleteSemanticMemoryResponse
+	18,  // 246: sttattus.oracle.v1.OracleService.ListMyScopeGrants:output_type -> sttattus.oracle.v1.ListMyScopeGrantsResponse
+	20,  // 247: sttattus.oracle.v1.OracleService.GrantScope:output_type -> sttattus.oracle.v1.GrantScopeResponse
+	22,  // 248: sttattus.oracle.v1.OracleService.RevokeScope:output_type -> sttattus.oracle.v1.RevokeScopeResponse
+	13,  // 249: sttattus.oracle.v1.OracleService.ListAvailableTools:output_type -> sttattus.oracle.v1.ListAvailableToolsResponse
+	15,  // 250: sttattus.oracle.v1.OracleService.RunOracleTool:output_type -> sttattus.oracle.v1.RunOracleToolResponse
+	10,  // 251: sttattus.oracle.v1.OracleService.GetRankExplainer:output_type -> sttattus.oracle.v1.GetRankExplainerResponse
+	107, // 252: sttattus.oracle.v1.OracleService.GetEvidenceTruthWorkbench:output_type -> sttattus.oracle.v1.GetEvidenceTruthWorkbenchResponse
+	109, // 253: sttattus.oracle.v1.OracleService.RegisterOrRefreshEvidenceSource:output_type -> sttattus.oracle.v1.RegisterOrRefreshEvidenceSourceResponse
+	111, // 254: sttattus.oracle.v1.OracleService.VerifyOrInvalidateCitedClaim:output_type -> sttattus.oracle.v1.VerifyOrInvalidateCitedClaimResponse
+	113, // 255: sttattus.oracle.v1.OracleService.AdminListEvidenceTruthAudit:output_type -> sttattus.oracle.v1.AdminListEvidenceTruthAuditResponse
+	115, // 256: sttattus.oracle.v1.OracleService.AdminManageSourceRightsOrCorrection:output_type -> sttattus.oracle.v1.AdminManageSourceRightsOrCorrectionResponse
+	119, // 257: sttattus.oracle.v1.OracleService.GetDecisionLedgerWorkbench:output_type -> sttattus.oracle.v1.GetDecisionLedgerWorkbenchResponse
+	121, // 258: sttattus.oracle.v1.OracleService.CreateOrUpdateDecisionLedgerRecord:output_type -> sttattus.oracle.v1.CreateOrUpdateDecisionLedgerRecordResponse
+	123, // 259: sttattus.oracle.v1.OracleService.RecordDecisionAssumptionOrReview:output_type -> sttattus.oracle.v1.RecordDecisionAssumptionOrReviewResponse
+	125, // 260: sttattus.oracle.v1.OracleService.AdminListDecisionLedgerAudit:output_type -> sttattus.oracle.v1.AdminListDecisionLedgerAuditResponse
+	127, // 261: sttattus.oracle.v1.OracleService.AdminManageDecisionTemplateOrHold:output_type -> sttattus.oracle.v1.AdminManageDecisionTemplateOrHoldResponse
+	131, // 262: sttattus.oracle.v1.OracleService.GetCommitmentsOutcomeWorkbench:output_type -> sttattus.oracle.v1.GetCommitmentsOutcomeWorkbenchResponse
+	133, // 263: sttattus.oracle.v1.OracleService.CreateOrUpdateCommitmentItem:output_type -> sttattus.oracle.v1.CreateOrUpdateCommitmentItemResponse
+	135, // 264: sttattus.oracle.v1.OracleService.PreviewOrExecuteExternalCommitmentSync:output_type -> sttattus.oracle.v1.PreviewOrExecuteExternalCommitmentSyncResponse
+	137, // 265: sttattus.oracle.v1.OracleService.AdminListCommitmentsOutcomeAudit:output_type -> sttattus.oracle.v1.AdminListCommitmentsOutcomeAuditResponse
+	139, // 266: sttattus.oracle.v1.OracleService.AdminReconcileExternalSyncDelivery:output_type -> sttattus.oracle.v1.AdminReconcileExternalSyncDeliveryResponse
+	143, // 267: sttattus.oracle.v1.OracleService.GetWatchlistsCommandBriefWorkbench:output_type -> sttattus.oracle.v1.GetWatchlistsCommandBriefWorkbenchResponse
+	145, // 268: sttattus.oracle.v1.OracleService.UpsertWatchlistEntityMonitor:output_type -> sttattus.oracle.v1.UpsertWatchlistEntityMonitorResponse
+	147, // 269: sttattus.oracle.v1.OracleService.ApproveOrSnoozeCommandBriefSignal:output_type -> sttattus.oracle.v1.ApproveOrSnoozeCommandBriefSignalResponse
+	149, // 270: sttattus.oracle.v1.OracleService.AdminListWatchlistsCommandBriefAudit:output_type -> sttattus.oracle.v1.AdminListWatchlistsCommandBriefAuditResponse
+	151, // 271: sttattus.oracle.v1.OracleService.AdminTuneWatchlistAlertBudgetOrFeed:output_type -> sttattus.oracle.v1.AdminManageWatchlistAlertBudgetOrFeedResponse
+	155, // 272: sttattus.oracle.v1.OracleService.GetAssumptionDriftRadarWorkbench:output_type -> sttattus.oracle.v1.GetAssumptionDriftRadarWorkbenchResponse
+	157, // 273: sttattus.oracle.v1.OracleService.RespondToAssumptionDriftAlert:output_type -> sttattus.oracle.v1.RespondToAssumptionDriftAlertResponse
+	159, // 274: sttattus.oracle.v1.OracleService.UpdateDriftRadarPolicy:output_type -> sttattus.oracle.v1.UpdateDriftRadarPolicyResponse
+	161, // 275: sttattus.oracle.v1.OracleService.AdminListAssumptionDriftRadarAudit:output_type -> sttattus.oracle.v1.AdminListAssumptionDriftRadarAuditResponse
+	163, // 276: sttattus.oracle.v1.OracleService.AdminCalibrateDriftThresholdOrDomain:output_type -> sttattus.oracle.v1.AdminCalibrateDriftThresholdOrDomainResponse
+	167, // 277: sttattus.oracle.v1.OracleService.GetForecastingCalibrationWorkbench:output_type -> sttattus.oracle.v1.GetForecastingCalibrationWorkbenchResponse
+	169, // 278: sttattus.oracle.v1.OracleService.CreateOrResolveForecastQuestion:output_type -> sttattus.oracle.v1.CreateOrResolveForecastQuestionResponse
+	171, // 279: sttattus.oracle.v1.OracleService.RecordCalibrationLabExperiment:output_type -> sttattus.oracle.v1.RecordCalibrationLabExperimentResponse
+	173, // 280: sttattus.oracle.v1.OracleService.AdminListForecastingCalibrationAudit:output_type -> sttattus.oracle.v1.AdminListForecastingCalibrationAuditResponse
+	175, // 281: sttattus.oracle.v1.OracleService.AdminVerifyForecastResolutionOrSandbox:output_type -> sttattus.oracle.v1.AdminVerifyForecastResolutionOrSandboxResponse
+	179, // 282: sttattus.oracle.v1.OracleService.GetMeetingNegotiationStudioWorkbench:output_type -> sttattus.oracle.v1.GetMeetingNegotiationStudioWorkbenchResponse
+	181, // 283: sttattus.oracle.v1.OracleService.SaveMeetingBriefOrRedteamRehearsal:output_type -> sttattus.oracle.v1.SaveMeetingBriefOrRedteamRehearsalResponse
+	183, // 284: sttattus.oracle.v1.OracleService.ConfirmOrRejectCapturedMeetingProposal:output_type -> sttattus.oracle.v1.ConfirmOrRejectCapturedMeetingProposalResponse
+	185, // 285: sttattus.oracle.v1.OracleService.AdminListMeetingNegotiationStudioAudit:output_type -> sttattus.oracle.v1.AdminListMeetingNegotiationStudioAuditResponse
+	187, // 286: sttattus.oracle.v1.OracleService.AdminManageRecordingConsentOrRedaction:output_type -> sttattus.oracle.v1.AdminManageRecordingConsentOrRedactionResponse
+	191, // 287: sttattus.oracle.v1.OracleService.GetSecureConnectorsToolWorkbench:output_type -> sttattus.oracle.v1.GetSecureConnectorsToolWorkbenchResponse
+	193, // 288: sttattus.oracle.v1.OracleService.ConfigureOrRevokeConnectorGrant:output_type -> sttattus.oracle.v1.ConfigureOrRevokeConnectorGrantResponse
+	195, // 289: sttattus.oracle.v1.OracleService.ReportOrReviewPromptInjectionQuarantine:output_type -> sttattus.oracle.v1.ReportOrReviewPromptInjectionQuarantineResponse
+	197, // 290: sttattus.oracle.v1.OracleService.AdminListSecureConnectorsToolAudit:output_type -> sttattus.oracle.v1.AdminListSecureConnectorsToolAuditResponse
+	199, // 291: sttattus.oracle.v1.OracleService.AdminManageConnectorKillSwitchOrQuarantine:output_type -> sttattus.oracle.v1.AdminManageConnectorKillSwitchOrQuarantineResponse
+	202, // 292: sttattus.oracle.v1.OracleService.GetTrustedNetworkDecisionRoomsWorkbench:output_type -> sttattus.oracle.v1.GetTrustedNetworkDecisionRoomsWorkbenchResponse
+	204, // 293: sttattus.oracle.v1.OracleService.CreateOrCloseTrustedDecisionRoom:output_type -> sttattus.oracle.v1.CreateOrCloseTrustedDecisionRoomResponse
+	206, // 294: sttattus.oracle.v1.OracleService.VerifySpecialistDisclosureOrOptIn:output_type -> sttattus.oracle.v1.VerifySpecialistDisclosureOrOptInResponse
+	208, // 295: sttattus.oracle.v1.OracleService.AdminListTrustedDecisionRoomsAudit:output_type -> sttattus.oracle.v1.AdminListTrustedDecisionRoomsAuditResponse
+	210, // 296: sttattus.oracle.v1.OracleService.AdminManageDecisionRoomGrantOrBoundary:output_type -> sttattus.oracle.v1.AdminManageDecisionRoomGrantOrBoundaryResponse
+	213, // 297: sttattus.oracle.v1.OracleService.GetWargamingExposureWorkbench:output_type -> sttattus.oracle.v1.GetWargamingExposureWorkbenchResponse
+	215, // 298: sttattus.oracle.v1.OracleService.RunOrExportWargameExposureSimulation:output_type -> sttattus.oracle.v1.RunOrExportWargameExposureSimulationResponse
+	217, // 299: sttattus.oracle.v1.OracleService.UpdateWargameSensitivityOrContingency:output_type -> sttattus.oracle.v1.UpdateWargameSensitivityOrContingencyResponse
+	219, // 300: sttattus.oracle.v1.OracleService.AdminListWargamingExposureAudit:output_type -> sttattus.oracle.v1.AdminListWargamingExposureAuditResponse
+	221, // 301: sttattus.oracle.v1.OracleService.AdminCertifyMinimalPillarContractOrDisclaimer:output_type -> sttattus.oracle.v1.AdminCertifyMinimalPillarContractOrDisclaimerResponse
+	224, // 302: sttattus.oracle.v1.OracleService.GetPrivateCaseLibraryWorkbench:output_type -> sttattus.oracle.v1.GetPrivateCaseLibraryWorkbenchResponse
+	226, // 303: sttattus.oracle.v1.OracleService.SaveOrComparePrivateCaseEntry:output_type -> sttattus.oracle.v1.SaveOrComparePrivateCaseEntryResponse
+	228, // 304: sttattus.oracle.v1.OracleService.SubmitOrWithdrawAnonymizedPlaybook:output_type -> sttattus.oracle.v1.SubmitOrWithdrawAnonymizedPlaybookResponse
+	230, // 305: sttattus.oracle.v1.OracleService.AdminListPrivateCaseLibraryAudit:output_type -> sttattus.oracle.v1.AdminListPrivateCaseLibraryAuditResponse
+	232, // 306: sttattus.oracle.v1.OracleService.AdminCertifyPlaybookAnonymizationOrErasure:output_type -> sttattus.oracle.v1.AdminCertifyPlaybookAnonymizationOrErasureResponse
+	210, // [210:307] is the sub-list for method output_type
+	113, // [113:210] is the sub-list for method input_type
+	113, // [113:113] is the sub-list for extension type_name
+	113, // [113:113] is the sub-list for extension extendee
+	0,   // [0:113] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_oracle_v1_oracle_proto_init() }
@@ -6145,7 +15890,7 @@ func file_sttattus_oracle_v1_oracle_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_oracle_v1_oracle_proto_rawDesc), len(file_sttattus_oracle_v1_oracle_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   106,
+			NumMessages:   235,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

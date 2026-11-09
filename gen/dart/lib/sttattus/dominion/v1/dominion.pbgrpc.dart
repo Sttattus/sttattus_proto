@@ -337,6 +337,315 @@ class DominionServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listMyLoungePasses, request, options: options);
   }
 
+  /// ===== Dominion Opportunity Choices 1–11 (D1..D15) =====
+  /// Choice 1 (D1): Property Digital Twin and Registry Integrity
+  $grpc.ResponseFuture<$0.GetDominionPropertyDigitalTwinWorkbenchResponse>
+      getDominionPropertyDigitalTwinWorkbench(
+    $0.GetDominionPropertyDigitalTwinWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionPropertyDigitalTwinWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionPropertyDigitalTwinResponse>
+      saveDominionPropertyDigitalTwin(
+    $0.SaveDominionPropertyDigitalTwinRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionPropertyDigitalTwin, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PropagateOrResolveDominionTwinConflictResponse>
+      propagateOrResolveDominionTwinConflict(
+    $0.PropagateOrResolveDominionTwinConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$propagateOrResolveDominionTwinConflict, request,
+        options: options);
+  }
+
+  /// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+  $grpc.ResponseFuture<$0.GetDominionUnderwritingLabWorkbenchResponse>
+      getDominionUnderwritingLabWorkbench(
+    $0.GetDominionUnderwritingLabWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionUnderwritingLabWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionUnderwritingScenarioResponse>
+      saveDominionUnderwritingScenario(
+    $0.SaveDominionUnderwritingScenarioRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionUnderwritingScenario, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.StressTestOrFreezeDominionScenarioResponse>
+      stressTestOrFreezeDominionScenario(
+    $0.StressTestOrFreezeDominionScenarioRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$stressTestOrFreezeDominionScenario, request,
+        options: options);
+  }
+
+  /// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+  $grpc.ResponseFuture<$0.GetDominionPropertyAccountingWorkbenchResponse>
+      getDominionPropertyAccountingWorkbench(
+    $0.GetDominionPropertyAccountingWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionPropertyAccountingWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionPropertyAccountingCloseResponse>
+      saveDominionPropertyAccountingClose(
+    $0.SaveDominionPropertyAccountingCloseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionPropertyAccountingClose, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LockOrReverseDominionAccountingCloseResponse>
+      lockOrReverseDominionAccountingClose(
+    $0.LockOrReverseDominionAccountingCloseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$lockOrReverseDominionAccountingClose, request,
+        options: options);
+  }
+
+  /// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+  $grpc.ResponseFuture<$0.GetDominionDocumentObligationWorkbenchResponse>
+      getDominionDocumentObligationWorkbench(
+    $0.GetDominionDocumentObligationWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionDocumentObligationWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionDocumentObligationResponse>
+      saveDominionDocumentObligation(
+    $0.SaveDominionDocumentObligationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionDocumentObligation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmDominionObligationReceiptOrAppealResponse>
+      confirmDominionObligationReceiptOrAppeal(
+    $0.ConfirmDominionObligationReceiptOrAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmDominionObligationReceiptOrAppeal, request,
+        options: options);
+  }
+
+  /// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+  $grpc.ResponseFuture<$0.GetDominionLeasingResidentWorkbenchResponse>
+      getDominionLeasingResidentWorkbench(
+    $0.GetDominionLeasingResidentWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionLeasingResidentWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionLeasingResidentPortalResponse>
+      saveDominionLeasingResidentPortal(
+    $0.SaveDominionLeasingResidentPortalRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionLeasingResidentPortal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ScheduleDominionRenewalOrDepositCloseResponse>
+      scheduleDominionRenewalOrDepositClose(
+    $0.ScheduleDominionRenewalOrDepositCloseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$scheduleDominionRenewalOrDepositClose, request,
+        options: options);
+  }
+
+  /// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+  $grpc.ResponseFuture<$0.GetDominionMaintenanceVendorWorkbenchResponse>
+      getDominionMaintenanceVendorWorkbench(
+    $0.GetDominionMaintenanceVendorWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionMaintenanceVendorWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionMaintenanceWorkOrderResponse>
+      saveDominionMaintenanceWorkOrder(
+    $0.SaveDominionMaintenanceWorkOrderRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionMaintenanceWorkOrder, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyDominionThreeWayMatchOrWarrantyResponse>
+      verifyDominionThreeWayMatchOrWarranty(
+    $0.VerifyDominionThreeWayMatchOrWarrantyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyDominionThreeWayMatchOrWarranty, request,
+        options: options);
+  }
+
+  /// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+  $grpc.ResponseFuture<$0.GetDominionCapitalProjectWorkbenchResponse>
+      getDominionCapitalProjectWorkbench(
+    $0.GetDominionCapitalProjectWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionCapitalProjectWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionCapitalProjectControlResponse>
+      saveDominionCapitalProjectControl(
+    $0.SaveDominionCapitalProjectControlRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionCapitalProjectControl, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveDominionDrawOrPunchlistCloseoutResponse>
+      approveDominionDrawOrPunchlistCloseout(
+    $0.ApproveDominionDrawOrPunchlistCloseoutRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveDominionDrawOrPunchlistCloseout, request,
+        options: options);
+  }
+
+  /// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+  $grpc.ResponseFuture<$0.GetDominionMarketValuationWorkbenchResponse>
+      getDominionMarketValuationWorkbench(
+    $0.GetDominionMarketValuationWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionMarketValuationWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionMarketValuationGovernanceResponse>
+      saveDominionMarketValuationGovernance(
+    $0.SaveDominionMarketValuationGovernanceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionMarketValuationGovernance, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdjustDominionCompSetOrDisputeValuationResponse>
+      adjustDominionCompSetOrDisputeValuation(
+    $0.AdjustDominionCompSetOrDisputeValuationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adjustDominionCompSetOrDisputeValuation, request,
+        options: options);
+  }
+
+  /// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+  $grpc.ResponseFuture<$0.GetDominionOwnershipTransactionWorkbenchResponse>
+      getDominionOwnershipTransactionWorkbench(
+    $0.GetDominionOwnershipTransactionWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionOwnershipTransactionWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionOwnershipTransactionRoomResponse>
+      saveDominionOwnershipTransactionRoom(
+    $0.SaveDominionOwnershipTransactionRoomRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionOwnershipTransactionRoom, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.StageDominionRefinanceOrDataroomAccessResponse>
+      stageDominionRefinanceOrDataroomAccess(
+    $0.StageDominionRefinanceOrDataroomAccessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$stageDominionRefinanceOrDataroomAccess, request,
+        options: options);
+  }
+
+  /// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+  $grpc.ResponseFuture<$0.GetDominionInsuranceResilienceWorkbenchResponse>
+      getDominionInsuranceResilienceWorkbench(
+    $0.GetDominionInsuranceResilienceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionInsuranceResilienceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionInsuranceResilienceCenterResponse>
+      saveDominionInsuranceResilienceCenter(
+    $0.SaveDominionInsuranceResilienceCenterRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionInsuranceResilienceCenter, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.StageDominionClaimPackOrStressReviewResponse>
+      stageDominionClaimPackOrStressReview(
+    $0.StageDominionClaimPackOrStressReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$stageDominionClaimPackOrStressReview, request,
+        options: options);
+  }
+
+  /// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+  $grpc.ResponseFuture<$0.GetDominionUtilityPerformanceWorkbenchResponse>
+      getDominionUtilityPerformanceWorkbench(
+    $0.GetDominionUtilityPerformanceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDominionUtilityPerformanceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveDominionUtilityBuildingPerformanceResponse>
+      saveDominionUtilityBuildingPerformance(
+    $0.SaveDominionUtilityBuildingPerformanceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveDominionUtilityBuildingPerformance, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyDominionRetrofitSavingsOrAnomalyResponse>
+      verifyDominionRetrofitSavingsOrAnomaly(
+    $0.VerifyDominionRetrofitSavingsOrAnomalyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyDominionRetrofitSavingsOrAnomaly, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$syncProperties =
@@ -536,6 +845,236 @@ class DominionServiceClient extends $grpc.Client {
       '/sttattus.dominion.v1.DominionService/ListMyLoungePasses',
       ($0.ListMyLoungePassesRequest value) => value.writeToBuffer(),
       $0.ListMyLoungePassesResponse.fromBuffer);
+  static final _$getDominionPropertyDigitalTwinWorkbench = $grpc.ClientMethod<
+          $0.GetDominionPropertyDigitalTwinWorkbenchRequest,
+          $0.GetDominionPropertyDigitalTwinWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionPropertyDigitalTwinWorkbench',
+      ($0.GetDominionPropertyDigitalTwinWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionPropertyDigitalTwinWorkbenchResponse.fromBuffer);
+  static final _$saveDominionPropertyDigitalTwin = $grpc.ClientMethod<
+          $0.SaveDominionPropertyDigitalTwinRequest,
+          $0.SaveDominionPropertyDigitalTwinResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionPropertyDigitalTwin',
+      ($0.SaveDominionPropertyDigitalTwinRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionPropertyDigitalTwinResponse.fromBuffer);
+  static final _$propagateOrResolveDominionTwinConflict = $grpc.ClientMethod<
+          $0.PropagateOrResolveDominionTwinConflictRequest,
+          $0.PropagateOrResolveDominionTwinConflictResponse>(
+      '/sttattus.dominion.v1.DominionService/PropagateOrResolveDominionTwinConflict',
+      ($0.PropagateOrResolveDominionTwinConflictRequest value) =>
+          value.writeToBuffer(),
+      $0.PropagateOrResolveDominionTwinConflictResponse.fromBuffer);
+  static final _$getDominionUnderwritingLabWorkbench = $grpc.ClientMethod<
+          $0.GetDominionUnderwritingLabWorkbenchRequest,
+          $0.GetDominionUnderwritingLabWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionUnderwritingLabWorkbench',
+      ($0.GetDominionUnderwritingLabWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionUnderwritingLabWorkbenchResponse.fromBuffer);
+  static final _$saveDominionUnderwritingScenario = $grpc.ClientMethod<
+          $0.SaveDominionUnderwritingScenarioRequest,
+          $0.SaveDominionUnderwritingScenarioResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionUnderwritingScenario',
+      ($0.SaveDominionUnderwritingScenarioRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionUnderwritingScenarioResponse.fromBuffer);
+  static final _$stressTestOrFreezeDominionScenario = $grpc.ClientMethod<
+          $0.StressTestOrFreezeDominionScenarioRequest,
+          $0.StressTestOrFreezeDominionScenarioResponse>(
+      '/sttattus.dominion.v1.DominionService/StressTestOrFreezeDominionScenario',
+      ($0.StressTestOrFreezeDominionScenarioRequest value) =>
+          value.writeToBuffer(),
+      $0.StressTestOrFreezeDominionScenarioResponse.fromBuffer);
+  static final _$getDominionPropertyAccountingWorkbench = $grpc.ClientMethod<
+          $0.GetDominionPropertyAccountingWorkbenchRequest,
+          $0.GetDominionPropertyAccountingWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionPropertyAccountingWorkbench',
+      ($0.GetDominionPropertyAccountingWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionPropertyAccountingWorkbenchResponse.fromBuffer);
+  static final _$saveDominionPropertyAccountingClose = $grpc.ClientMethod<
+          $0.SaveDominionPropertyAccountingCloseRequest,
+          $0.SaveDominionPropertyAccountingCloseResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionPropertyAccountingClose',
+      ($0.SaveDominionPropertyAccountingCloseRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionPropertyAccountingCloseResponse.fromBuffer);
+  static final _$lockOrReverseDominionAccountingClose = $grpc.ClientMethod<
+          $0.LockOrReverseDominionAccountingCloseRequest,
+          $0.LockOrReverseDominionAccountingCloseResponse>(
+      '/sttattus.dominion.v1.DominionService/LockOrReverseDominionAccountingClose',
+      ($0.LockOrReverseDominionAccountingCloseRequest value) =>
+          value.writeToBuffer(),
+      $0.LockOrReverseDominionAccountingCloseResponse.fromBuffer);
+  static final _$getDominionDocumentObligationWorkbench = $grpc.ClientMethod<
+          $0.GetDominionDocumentObligationWorkbenchRequest,
+          $0.GetDominionDocumentObligationWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionDocumentObligationWorkbench',
+      ($0.GetDominionDocumentObligationWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionDocumentObligationWorkbenchResponse.fromBuffer);
+  static final _$saveDominionDocumentObligation = $grpc.ClientMethod<
+          $0.SaveDominionDocumentObligationRequest,
+          $0.SaveDominionDocumentObligationResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionDocumentObligation',
+      ($0.SaveDominionDocumentObligationRequest value) => value.writeToBuffer(),
+      $0.SaveDominionDocumentObligationResponse.fromBuffer);
+  static final _$confirmDominionObligationReceiptOrAppeal = $grpc.ClientMethod<
+          $0.ConfirmDominionObligationReceiptOrAppealRequest,
+          $0.ConfirmDominionObligationReceiptOrAppealResponse>(
+      '/sttattus.dominion.v1.DominionService/ConfirmDominionObligationReceiptOrAppeal',
+      ($0.ConfirmDominionObligationReceiptOrAppealRequest value) =>
+          value.writeToBuffer(),
+      $0.ConfirmDominionObligationReceiptOrAppealResponse.fromBuffer);
+  static final _$getDominionLeasingResidentWorkbench = $grpc.ClientMethod<
+          $0.GetDominionLeasingResidentWorkbenchRequest,
+          $0.GetDominionLeasingResidentWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionLeasingResidentWorkbench',
+      ($0.GetDominionLeasingResidentWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionLeasingResidentWorkbenchResponse.fromBuffer);
+  static final _$saveDominionLeasingResidentPortal = $grpc.ClientMethod<
+          $0.SaveDominionLeasingResidentPortalRequest,
+          $0.SaveDominionLeasingResidentPortalResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionLeasingResidentPortal',
+      ($0.SaveDominionLeasingResidentPortalRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionLeasingResidentPortalResponse.fromBuffer);
+  static final _$scheduleDominionRenewalOrDepositClose = $grpc.ClientMethod<
+          $0.ScheduleDominionRenewalOrDepositCloseRequest,
+          $0.ScheduleDominionRenewalOrDepositCloseResponse>(
+      '/sttattus.dominion.v1.DominionService/ScheduleDominionRenewalOrDepositClose',
+      ($0.ScheduleDominionRenewalOrDepositCloseRequest value) =>
+          value.writeToBuffer(),
+      $0.ScheduleDominionRenewalOrDepositCloseResponse.fromBuffer);
+  static final _$getDominionMaintenanceVendorWorkbench = $grpc.ClientMethod<
+          $0.GetDominionMaintenanceVendorWorkbenchRequest,
+          $0.GetDominionMaintenanceVendorWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionMaintenanceVendorWorkbench',
+      ($0.GetDominionMaintenanceVendorWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionMaintenanceVendorWorkbenchResponse.fromBuffer);
+  static final _$saveDominionMaintenanceWorkOrder = $grpc.ClientMethod<
+          $0.SaveDominionMaintenanceWorkOrderRequest,
+          $0.SaveDominionMaintenanceWorkOrderResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionMaintenanceWorkOrder',
+      ($0.SaveDominionMaintenanceWorkOrderRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionMaintenanceWorkOrderResponse.fromBuffer);
+  static final _$verifyDominionThreeWayMatchOrWarranty = $grpc.ClientMethod<
+          $0.VerifyDominionThreeWayMatchOrWarrantyRequest,
+          $0.VerifyDominionThreeWayMatchOrWarrantyResponse>(
+      '/sttattus.dominion.v1.DominionService/VerifyDominionThreeWayMatchOrWarranty',
+      ($0.VerifyDominionThreeWayMatchOrWarrantyRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyDominionThreeWayMatchOrWarrantyResponse.fromBuffer);
+  static final _$getDominionCapitalProjectWorkbench = $grpc.ClientMethod<
+          $0.GetDominionCapitalProjectWorkbenchRequest,
+          $0.GetDominionCapitalProjectWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionCapitalProjectWorkbench',
+      ($0.GetDominionCapitalProjectWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionCapitalProjectWorkbenchResponse.fromBuffer);
+  static final _$saveDominionCapitalProjectControl = $grpc.ClientMethod<
+          $0.SaveDominionCapitalProjectControlRequest,
+          $0.SaveDominionCapitalProjectControlResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionCapitalProjectControl',
+      ($0.SaveDominionCapitalProjectControlRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionCapitalProjectControlResponse.fromBuffer);
+  static final _$approveDominionDrawOrPunchlistCloseout = $grpc.ClientMethod<
+          $0.ApproveDominionDrawOrPunchlistCloseoutRequest,
+          $0.ApproveDominionDrawOrPunchlistCloseoutResponse>(
+      '/sttattus.dominion.v1.DominionService/ApproveDominionDrawOrPunchlistCloseout',
+      ($0.ApproveDominionDrawOrPunchlistCloseoutRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveDominionDrawOrPunchlistCloseoutResponse.fromBuffer);
+  static final _$getDominionMarketValuationWorkbench = $grpc.ClientMethod<
+          $0.GetDominionMarketValuationWorkbenchRequest,
+          $0.GetDominionMarketValuationWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionMarketValuationWorkbench',
+      ($0.GetDominionMarketValuationWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionMarketValuationWorkbenchResponse.fromBuffer);
+  static final _$saveDominionMarketValuationGovernance = $grpc.ClientMethod<
+          $0.SaveDominionMarketValuationGovernanceRequest,
+          $0.SaveDominionMarketValuationGovernanceResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionMarketValuationGovernance',
+      ($0.SaveDominionMarketValuationGovernanceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionMarketValuationGovernanceResponse.fromBuffer);
+  static final _$adjustDominionCompSetOrDisputeValuation = $grpc.ClientMethod<
+          $0.AdjustDominionCompSetOrDisputeValuationRequest,
+          $0.AdjustDominionCompSetOrDisputeValuationResponse>(
+      '/sttattus.dominion.v1.DominionService/AdjustDominionCompSetOrDisputeValuation',
+      ($0.AdjustDominionCompSetOrDisputeValuationRequest value) =>
+          value.writeToBuffer(),
+      $0.AdjustDominionCompSetOrDisputeValuationResponse.fromBuffer);
+  static final _$getDominionOwnershipTransactionWorkbench = $grpc.ClientMethod<
+          $0.GetDominionOwnershipTransactionWorkbenchRequest,
+          $0.GetDominionOwnershipTransactionWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionOwnershipTransactionWorkbench',
+      ($0.GetDominionOwnershipTransactionWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionOwnershipTransactionWorkbenchResponse.fromBuffer);
+  static final _$saveDominionOwnershipTransactionRoom = $grpc.ClientMethod<
+          $0.SaveDominionOwnershipTransactionRoomRequest,
+          $0.SaveDominionOwnershipTransactionRoomResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionOwnershipTransactionRoom',
+      ($0.SaveDominionOwnershipTransactionRoomRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionOwnershipTransactionRoomResponse.fromBuffer);
+  static final _$stageDominionRefinanceOrDataroomAccess = $grpc.ClientMethod<
+          $0.StageDominionRefinanceOrDataroomAccessRequest,
+          $0.StageDominionRefinanceOrDataroomAccessResponse>(
+      '/sttattus.dominion.v1.DominionService/StageDominionRefinanceOrDataroomAccess',
+      ($0.StageDominionRefinanceOrDataroomAccessRequest value) =>
+          value.writeToBuffer(),
+      $0.StageDominionRefinanceOrDataroomAccessResponse.fromBuffer);
+  static final _$getDominionInsuranceResilienceWorkbench = $grpc.ClientMethod<
+          $0.GetDominionInsuranceResilienceWorkbenchRequest,
+          $0.GetDominionInsuranceResilienceWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionInsuranceResilienceWorkbench',
+      ($0.GetDominionInsuranceResilienceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionInsuranceResilienceWorkbenchResponse.fromBuffer);
+  static final _$saveDominionInsuranceResilienceCenter = $grpc.ClientMethod<
+          $0.SaveDominionInsuranceResilienceCenterRequest,
+          $0.SaveDominionInsuranceResilienceCenterResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionInsuranceResilienceCenter',
+      ($0.SaveDominionInsuranceResilienceCenterRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionInsuranceResilienceCenterResponse.fromBuffer);
+  static final _$stageDominionClaimPackOrStressReview = $grpc.ClientMethod<
+          $0.StageDominionClaimPackOrStressReviewRequest,
+          $0.StageDominionClaimPackOrStressReviewResponse>(
+      '/sttattus.dominion.v1.DominionService/StageDominionClaimPackOrStressReview',
+      ($0.StageDominionClaimPackOrStressReviewRequest value) =>
+          value.writeToBuffer(),
+      $0.StageDominionClaimPackOrStressReviewResponse.fromBuffer);
+  static final _$getDominionUtilityPerformanceWorkbench = $grpc.ClientMethod<
+          $0.GetDominionUtilityPerformanceWorkbenchRequest,
+          $0.GetDominionUtilityPerformanceWorkbenchResponse>(
+      '/sttattus.dominion.v1.DominionService/GetDominionUtilityPerformanceWorkbench',
+      ($0.GetDominionUtilityPerformanceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetDominionUtilityPerformanceWorkbenchResponse.fromBuffer);
+  static final _$saveDominionUtilityBuildingPerformance = $grpc.ClientMethod<
+          $0.SaveDominionUtilityBuildingPerformanceRequest,
+          $0.SaveDominionUtilityBuildingPerformanceResponse>(
+      '/sttattus.dominion.v1.DominionService/SaveDominionUtilityBuildingPerformance',
+      ($0.SaveDominionUtilityBuildingPerformanceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveDominionUtilityBuildingPerformanceResponse.fromBuffer);
+  static final _$verifyDominionRetrofitSavingsOrAnomaly = $grpc.ClientMethod<
+          $0.VerifyDominionRetrofitSavingsOrAnomalyRequest,
+          $0.VerifyDominionRetrofitSavingsOrAnomalyResponse>(
+      '/sttattus.dominion.v1.DominionService/VerifyDominionRetrofitSavingsOrAnomaly',
+      ($0.VerifyDominionRetrofitSavingsOrAnomalyRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyDominionRetrofitSavingsOrAnomalyResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.dominion.v1.DominionService')
@@ -886,6 +1425,363 @@ abstract class DominionServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.ListMyLoungePassesRequest.fromBuffer(value),
         ($0.ListMyLoungePassesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionPropertyDigitalTwinWorkbenchRequest,
+            $0.GetDominionPropertyDigitalTwinWorkbenchResponse>(
+        'GetDominionPropertyDigitalTwinWorkbench',
+        getDominionPropertyDigitalTwinWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionPropertyDigitalTwinWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionPropertyDigitalTwinWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionPropertyDigitalTwinRequest,
+            $0.SaveDominionPropertyDigitalTwinResponse>(
+        'SaveDominionPropertyDigitalTwin',
+        saveDominionPropertyDigitalTwin_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionPropertyDigitalTwinRequest.fromBuffer(value),
+        ($0.SaveDominionPropertyDigitalTwinResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.PropagateOrResolveDominionTwinConflictRequest,
+            $0.PropagateOrResolveDominionTwinConflictResponse>(
+        'PropagateOrResolveDominionTwinConflict',
+        propagateOrResolveDominionTwinConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PropagateOrResolveDominionTwinConflictRequest.fromBuffer(value),
+        ($0.PropagateOrResolveDominionTwinConflictResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionUnderwritingLabWorkbenchRequest,
+            $0.GetDominionUnderwritingLabWorkbenchResponse>(
+        'GetDominionUnderwritingLabWorkbench',
+        getDominionUnderwritingLabWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionUnderwritingLabWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionUnderwritingLabWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionUnderwritingScenarioRequest,
+            $0.SaveDominionUnderwritingScenarioResponse>(
+        'SaveDominionUnderwritingScenario',
+        saveDominionUnderwritingScenario_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionUnderwritingScenarioRequest.fromBuffer(value),
+        ($0.SaveDominionUnderwritingScenarioResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StressTestOrFreezeDominionScenarioRequest,
+            $0.StressTestOrFreezeDominionScenarioResponse>(
+        'StressTestOrFreezeDominionScenario',
+        stressTestOrFreezeDominionScenario_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.StressTestOrFreezeDominionScenarioRequest.fromBuffer(value),
+        ($0.StressTestOrFreezeDominionScenarioResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionPropertyAccountingWorkbenchRequest,
+            $0.GetDominionPropertyAccountingWorkbenchResponse>(
+        'GetDominionPropertyAccountingWorkbench',
+        getDominionPropertyAccountingWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionPropertyAccountingWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionPropertyAccountingWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveDominionPropertyAccountingCloseRequest,
+            $0.SaveDominionPropertyAccountingCloseResponse>(
+        'SaveDominionPropertyAccountingClose',
+        saveDominionPropertyAccountingClose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionPropertyAccountingCloseRequest.fromBuffer(value),
+        ($0.SaveDominionPropertyAccountingCloseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.LockOrReverseDominionAccountingCloseRequest,
+            $0.LockOrReverseDominionAccountingCloseResponse>(
+        'LockOrReverseDominionAccountingClose',
+        lockOrReverseDominionAccountingClose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LockOrReverseDominionAccountingCloseRequest.fromBuffer(value),
+        ($0.LockOrReverseDominionAccountingCloseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionDocumentObligationWorkbenchRequest,
+            $0.GetDominionDocumentObligationWorkbenchResponse>(
+        'GetDominionDocumentObligationWorkbench',
+        getDominionDocumentObligationWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionDocumentObligationWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionDocumentObligationWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionDocumentObligationRequest,
+            $0.SaveDominionDocumentObligationResponse>(
+        'SaveDominionDocumentObligation',
+        saveDominionDocumentObligation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionDocumentObligationRequest.fromBuffer(value),
+        ($0.SaveDominionDocumentObligationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ConfirmDominionObligationReceiptOrAppealRequest,
+            $0.ConfirmDominionObligationReceiptOrAppealResponse>(
+        'ConfirmDominionObligationReceiptOrAppeal',
+        confirmDominionObligationReceiptOrAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmDominionObligationReceiptOrAppealRequest.fromBuffer(
+                value),
+        ($0.ConfirmDominionObligationReceiptOrAppealResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionLeasingResidentWorkbenchRequest,
+            $0.GetDominionLeasingResidentWorkbenchResponse>(
+        'GetDominionLeasingResidentWorkbench',
+        getDominionLeasingResidentWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionLeasingResidentWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionLeasingResidentWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionLeasingResidentPortalRequest,
+            $0.SaveDominionLeasingResidentPortalResponse>(
+        'SaveDominionLeasingResidentPortal',
+        saveDominionLeasingResidentPortal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionLeasingResidentPortalRequest.fromBuffer(value),
+        ($0.SaveDominionLeasingResidentPortalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ScheduleDominionRenewalOrDepositCloseRequest,
+            $0.ScheduleDominionRenewalOrDepositCloseResponse>(
+        'ScheduleDominionRenewalOrDepositClose',
+        scheduleDominionRenewalOrDepositClose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ScheduleDominionRenewalOrDepositCloseRequest.fromBuffer(value),
+        ($0.ScheduleDominionRenewalOrDepositCloseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionMaintenanceVendorWorkbenchRequest,
+            $0.GetDominionMaintenanceVendorWorkbenchResponse>(
+        'GetDominionMaintenanceVendorWorkbench',
+        getDominionMaintenanceVendorWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionMaintenanceVendorWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionMaintenanceVendorWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionMaintenanceWorkOrderRequest,
+            $0.SaveDominionMaintenanceWorkOrderResponse>(
+        'SaveDominionMaintenanceWorkOrder',
+        saveDominionMaintenanceWorkOrder_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionMaintenanceWorkOrderRequest.fromBuffer(value),
+        ($0.SaveDominionMaintenanceWorkOrderResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyDominionThreeWayMatchOrWarrantyRequest,
+            $0.VerifyDominionThreeWayMatchOrWarrantyResponse>(
+        'VerifyDominionThreeWayMatchOrWarranty',
+        verifyDominionThreeWayMatchOrWarranty_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyDominionThreeWayMatchOrWarrantyRequest.fromBuffer(value),
+        ($0.VerifyDominionThreeWayMatchOrWarrantyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDominionCapitalProjectWorkbenchRequest,
+            $0.GetDominionCapitalProjectWorkbenchResponse>(
+        'GetDominionCapitalProjectWorkbench',
+        getDominionCapitalProjectWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionCapitalProjectWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionCapitalProjectWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveDominionCapitalProjectControlRequest,
+            $0.SaveDominionCapitalProjectControlResponse>(
+        'SaveDominionCapitalProjectControl',
+        saveDominionCapitalProjectControl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionCapitalProjectControlRequest.fromBuffer(value),
+        ($0.SaveDominionCapitalProjectControlResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ApproveDominionDrawOrPunchlistCloseoutRequest,
+            $0.ApproveDominionDrawOrPunchlistCloseoutResponse>(
+        'ApproveDominionDrawOrPunchlistCloseout',
+        approveDominionDrawOrPunchlistCloseout_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveDominionDrawOrPunchlistCloseoutRequest.fromBuffer(value),
+        ($0.ApproveDominionDrawOrPunchlistCloseoutResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionMarketValuationWorkbenchRequest,
+            $0.GetDominionMarketValuationWorkbenchResponse>(
+        'GetDominionMarketValuationWorkbench',
+        getDominionMarketValuationWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionMarketValuationWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionMarketValuationWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveDominionMarketValuationGovernanceRequest,
+            $0.SaveDominionMarketValuationGovernanceResponse>(
+        'SaveDominionMarketValuationGovernance',
+        saveDominionMarketValuationGovernance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionMarketValuationGovernanceRequest.fromBuffer(value),
+        ($0.SaveDominionMarketValuationGovernanceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdjustDominionCompSetOrDisputeValuationRequest,
+            $0.AdjustDominionCompSetOrDisputeValuationResponse>(
+        'AdjustDominionCompSetOrDisputeValuation',
+        adjustDominionCompSetOrDisputeValuation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdjustDominionCompSetOrDisputeValuationRequest.fromBuffer(value),
+        ($0.AdjustDominionCompSetOrDisputeValuationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionOwnershipTransactionWorkbenchRequest,
+            $0.GetDominionOwnershipTransactionWorkbenchResponse>(
+        'GetDominionOwnershipTransactionWorkbench',
+        getDominionOwnershipTransactionWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionOwnershipTransactionWorkbenchRequest.fromBuffer(
+                value),
+        ($0.GetDominionOwnershipTransactionWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveDominionOwnershipTransactionRoomRequest,
+            $0.SaveDominionOwnershipTransactionRoomResponse>(
+        'SaveDominionOwnershipTransactionRoom',
+        saveDominionOwnershipTransactionRoom_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionOwnershipTransactionRoomRequest.fromBuffer(value),
+        ($0.SaveDominionOwnershipTransactionRoomResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.StageDominionRefinanceOrDataroomAccessRequest,
+            $0.StageDominionRefinanceOrDataroomAccessResponse>(
+        'StageDominionRefinanceOrDataroomAccess',
+        stageDominionRefinanceOrDataroomAccess_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.StageDominionRefinanceOrDataroomAccessRequest.fromBuffer(value),
+        ($0.StageDominionRefinanceOrDataroomAccessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionInsuranceResilienceWorkbenchRequest,
+            $0.GetDominionInsuranceResilienceWorkbenchResponse>(
+        'GetDominionInsuranceResilienceWorkbench',
+        getDominionInsuranceResilienceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionInsuranceResilienceWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionInsuranceResilienceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveDominionInsuranceResilienceCenterRequest,
+            $0.SaveDominionInsuranceResilienceCenterResponse>(
+        'SaveDominionInsuranceResilienceCenter',
+        saveDominionInsuranceResilienceCenter_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionInsuranceResilienceCenterRequest.fromBuffer(value),
+        ($0.SaveDominionInsuranceResilienceCenterResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.StageDominionClaimPackOrStressReviewRequest,
+            $0.StageDominionClaimPackOrStressReviewResponse>(
+        'StageDominionClaimPackOrStressReview',
+        stageDominionClaimPackOrStressReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.StageDominionClaimPackOrStressReviewRequest.fromBuffer(value),
+        ($0.StageDominionClaimPackOrStressReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetDominionUtilityPerformanceWorkbenchRequest,
+            $0.GetDominionUtilityPerformanceWorkbenchResponse>(
+        'GetDominionUtilityPerformanceWorkbench',
+        getDominionUtilityPerformanceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDominionUtilityPerformanceWorkbenchRequest.fromBuffer(value),
+        ($0.GetDominionUtilityPerformanceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveDominionUtilityBuildingPerformanceRequest,
+            $0.SaveDominionUtilityBuildingPerformanceResponse>(
+        'SaveDominionUtilityBuildingPerformance',
+        saveDominionUtilityBuildingPerformance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveDominionUtilityBuildingPerformanceRequest.fromBuffer(value),
+        ($0.SaveDominionUtilityBuildingPerformanceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyDominionRetrofitSavingsOrAnomalyRequest,
+            $0.VerifyDominionRetrofitSavingsOrAnomalyResponse>(
+        'VerifyDominionRetrofitSavingsOrAnomaly',
+        verifyDominionRetrofitSavingsOrAnomaly_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyDominionRetrofitSavingsOrAnomalyRequest.fromBuffer(value),
+        ($0.VerifyDominionRetrofitSavingsOrAnomalyResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.SyncPropertiesResponse> syncProperties_Pre(
@@ -1232,4 +2128,400 @@ abstract class DominionServiceBase extends $grpc.Service {
 
   $async.Future<$0.ListMyLoungePassesResponse> listMyLoungePasses(
       $grpc.ServiceCall call, $0.ListMyLoungePassesRequest request);
+
+  $async.Future<$0.GetDominionPropertyDigitalTwinWorkbenchResponse>
+      getDominionPropertyDigitalTwinWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionPropertyDigitalTwinWorkbenchRequest>
+              $request) async {
+    return getDominionPropertyDigitalTwinWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionPropertyDigitalTwinWorkbenchResponse>
+      getDominionPropertyDigitalTwinWorkbench($grpc.ServiceCall call,
+          $0.GetDominionPropertyDigitalTwinWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionPropertyDigitalTwinResponse>
+      saveDominionPropertyDigitalTwin_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionPropertyDigitalTwinRequest>
+              $request) async {
+    return saveDominionPropertyDigitalTwin($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionPropertyDigitalTwinResponse>
+      saveDominionPropertyDigitalTwin($grpc.ServiceCall call,
+          $0.SaveDominionPropertyDigitalTwinRequest request);
+
+  $async.Future<$0.PropagateOrResolveDominionTwinConflictResponse>
+      propagateOrResolveDominionTwinConflict_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PropagateOrResolveDominionTwinConflictRequest>
+              $request) async {
+    return propagateOrResolveDominionTwinConflict($call, await $request);
+  }
+
+  $async.Future<$0.PropagateOrResolveDominionTwinConflictResponse>
+      propagateOrResolveDominionTwinConflict($grpc.ServiceCall call,
+          $0.PropagateOrResolveDominionTwinConflictRequest request);
+
+  $async.Future<$0.GetDominionUnderwritingLabWorkbenchResponse>
+      getDominionUnderwritingLabWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionUnderwritingLabWorkbenchRequest>
+              $request) async {
+    return getDominionUnderwritingLabWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionUnderwritingLabWorkbenchResponse>
+      getDominionUnderwritingLabWorkbench($grpc.ServiceCall call,
+          $0.GetDominionUnderwritingLabWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionUnderwritingScenarioResponse>
+      saveDominionUnderwritingScenario_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionUnderwritingScenarioRequest>
+              $request) async {
+    return saveDominionUnderwritingScenario($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionUnderwritingScenarioResponse>
+      saveDominionUnderwritingScenario($grpc.ServiceCall call,
+          $0.SaveDominionUnderwritingScenarioRequest request);
+
+  $async.Future<$0.StressTestOrFreezeDominionScenarioResponse>
+      stressTestOrFreezeDominionScenario_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.StressTestOrFreezeDominionScenarioRequest>
+              $request) async {
+    return stressTestOrFreezeDominionScenario($call, await $request);
+  }
+
+  $async.Future<$0.StressTestOrFreezeDominionScenarioResponse>
+      stressTestOrFreezeDominionScenario($grpc.ServiceCall call,
+          $0.StressTestOrFreezeDominionScenarioRequest request);
+
+  $async.Future<$0.GetDominionPropertyAccountingWorkbenchResponse>
+      getDominionPropertyAccountingWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionPropertyAccountingWorkbenchRequest>
+              $request) async {
+    return getDominionPropertyAccountingWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionPropertyAccountingWorkbenchResponse>
+      getDominionPropertyAccountingWorkbench($grpc.ServiceCall call,
+          $0.GetDominionPropertyAccountingWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionPropertyAccountingCloseResponse>
+      saveDominionPropertyAccountingClose_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionPropertyAccountingCloseRequest>
+              $request) async {
+    return saveDominionPropertyAccountingClose($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionPropertyAccountingCloseResponse>
+      saveDominionPropertyAccountingClose($grpc.ServiceCall call,
+          $0.SaveDominionPropertyAccountingCloseRequest request);
+
+  $async.Future<$0.LockOrReverseDominionAccountingCloseResponse>
+      lockOrReverseDominionAccountingClose_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LockOrReverseDominionAccountingCloseRequest>
+              $request) async {
+    return lockOrReverseDominionAccountingClose($call, await $request);
+  }
+
+  $async.Future<$0.LockOrReverseDominionAccountingCloseResponse>
+      lockOrReverseDominionAccountingClose($grpc.ServiceCall call,
+          $0.LockOrReverseDominionAccountingCloseRequest request);
+
+  $async.Future<$0.GetDominionDocumentObligationWorkbenchResponse>
+      getDominionDocumentObligationWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionDocumentObligationWorkbenchRequest>
+              $request) async {
+    return getDominionDocumentObligationWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionDocumentObligationWorkbenchResponse>
+      getDominionDocumentObligationWorkbench($grpc.ServiceCall call,
+          $0.GetDominionDocumentObligationWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionDocumentObligationResponse>
+      saveDominionDocumentObligation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionDocumentObligationRequest>
+              $request) async {
+    return saveDominionDocumentObligation($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionDocumentObligationResponse>
+      saveDominionDocumentObligation($grpc.ServiceCall call,
+          $0.SaveDominionDocumentObligationRequest request);
+
+  $async.Future<$0.ConfirmDominionObligationReceiptOrAppealResponse>
+      confirmDominionObligationReceiptOrAppeal_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmDominionObligationReceiptOrAppealRequest>
+              $request) async {
+    return confirmDominionObligationReceiptOrAppeal($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmDominionObligationReceiptOrAppealResponse>
+      confirmDominionObligationReceiptOrAppeal($grpc.ServiceCall call,
+          $0.ConfirmDominionObligationReceiptOrAppealRequest request);
+
+  $async.Future<$0.GetDominionLeasingResidentWorkbenchResponse>
+      getDominionLeasingResidentWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionLeasingResidentWorkbenchRequest>
+              $request) async {
+    return getDominionLeasingResidentWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionLeasingResidentWorkbenchResponse>
+      getDominionLeasingResidentWorkbench($grpc.ServiceCall call,
+          $0.GetDominionLeasingResidentWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionLeasingResidentPortalResponse>
+      saveDominionLeasingResidentPortal_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionLeasingResidentPortalRequest>
+              $request) async {
+    return saveDominionLeasingResidentPortal($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionLeasingResidentPortalResponse>
+      saveDominionLeasingResidentPortal($grpc.ServiceCall call,
+          $0.SaveDominionLeasingResidentPortalRequest request);
+
+  $async.Future<$0.ScheduleDominionRenewalOrDepositCloseResponse>
+      scheduleDominionRenewalOrDepositClose_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ScheduleDominionRenewalOrDepositCloseRequest>
+              $request) async {
+    return scheduleDominionRenewalOrDepositClose($call, await $request);
+  }
+
+  $async.Future<$0.ScheduleDominionRenewalOrDepositCloseResponse>
+      scheduleDominionRenewalOrDepositClose($grpc.ServiceCall call,
+          $0.ScheduleDominionRenewalOrDepositCloseRequest request);
+
+  $async.Future<$0.GetDominionMaintenanceVendorWorkbenchResponse>
+      getDominionMaintenanceVendorWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionMaintenanceVendorWorkbenchRequest>
+              $request) async {
+    return getDominionMaintenanceVendorWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionMaintenanceVendorWorkbenchResponse>
+      getDominionMaintenanceVendorWorkbench($grpc.ServiceCall call,
+          $0.GetDominionMaintenanceVendorWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionMaintenanceWorkOrderResponse>
+      saveDominionMaintenanceWorkOrder_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionMaintenanceWorkOrderRequest>
+              $request) async {
+    return saveDominionMaintenanceWorkOrder($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionMaintenanceWorkOrderResponse>
+      saveDominionMaintenanceWorkOrder($grpc.ServiceCall call,
+          $0.SaveDominionMaintenanceWorkOrderRequest request);
+
+  $async.Future<$0.VerifyDominionThreeWayMatchOrWarrantyResponse>
+      verifyDominionThreeWayMatchOrWarranty_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyDominionThreeWayMatchOrWarrantyRequest>
+              $request) async {
+    return verifyDominionThreeWayMatchOrWarranty($call, await $request);
+  }
+
+  $async.Future<$0.VerifyDominionThreeWayMatchOrWarrantyResponse>
+      verifyDominionThreeWayMatchOrWarranty($grpc.ServiceCall call,
+          $0.VerifyDominionThreeWayMatchOrWarrantyRequest request);
+
+  $async.Future<$0.GetDominionCapitalProjectWorkbenchResponse>
+      getDominionCapitalProjectWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionCapitalProjectWorkbenchRequest>
+              $request) async {
+    return getDominionCapitalProjectWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionCapitalProjectWorkbenchResponse>
+      getDominionCapitalProjectWorkbench($grpc.ServiceCall call,
+          $0.GetDominionCapitalProjectWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionCapitalProjectControlResponse>
+      saveDominionCapitalProjectControl_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionCapitalProjectControlRequest>
+              $request) async {
+    return saveDominionCapitalProjectControl($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionCapitalProjectControlResponse>
+      saveDominionCapitalProjectControl($grpc.ServiceCall call,
+          $0.SaveDominionCapitalProjectControlRequest request);
+
+  $async.Future<$0.ApproveDominionDrawOrPunchlistCloseoutResponse>
+      approveDominionDrawOrPunchlistCloseout_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveDominionDrawOrPunchlistCloseoutRequest>
+              $request) async {
+    return approveDominionDrawOrPunchlistCloseout($call, await $request);
+  }
+
+  $async.Future<$0.ApproveDominionDrawOrPunchlistCloseoutResponse>
+      approveDominionDrawOrPunchlistCloseout($grpc.ServiceCall call,
+          $0.ApproveDominionDrawOrPunchlistCloseoutRequest request);
+
+  $async.Future<$0.GetDominionMarketValuationWorkbenchResponse>
+      getDominionMarketValuationWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionMarketValuationWorkbenchRequest>
+              $request) async {
+    return getDominionMarketValuationWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionMarketValuationWorkbenchResponse>
+      getDominionMarketValuationWorkbench($grpc.ServiceCall call,
+          $0.GetDominionMarketValuationWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionMarketValuationGovernanceResponse>
+      saveDominionMarketValuationGovernance_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionMarketValuationGovernanceRequest>
+              $request) async {
+    return saveDominionMarketValuationGovernance($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionMarketValuationGovernanceResponse>
+      saveDominionMarketValuationGovernance($grpc.ServiceCall call,
+          $0.SaveDominionMarketValuationGovernanceRequest request);
+
+  $async.Future<$0.AdjustDominionCompSetOrDisputeValuationResponse>
+      adjustDominionCompSetOrDisputeValuation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdjustDominionCompSetOrDisputeValuationRequest>
+              $request) async {
+    return adjustDominionCompSetOrDisputeValuation($call, await $request);
+  }
+
+  $async.Future<$0.AdjustDominionCompSetOrDisputeValuationResponse>
+      adjustDominionCompSetOrDisputeValuation($grpc.ServiceCall call,
+          $0.AdjustDominionCompSetOrDisputeValuationRequest request);
+
+  $async.Future<$0.GetDominionOwnershipTransactionWorkbenchResponse>
+      getDominionOwnershipTransactionWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionOwnershipTransactionWorkbenchRequest>
+              $request) async {
+    return getDominionOwnershipTransactionWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionOwnershipTransactionWorkbenchResponse>
+      getDominionOwnershipTransactionWorkbench($grpc.ServiceCall call,
+          $0.GetDominionOwnershipTransactionWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionOwnershipTransactionRoomResponse>
+      saveDominionOwnershipTransactionRoom_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionOwnershipTransactionRoomRequest>
+              $request) async {
+    return saveDominionOwnershipTransactionRoom($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionOwnershipTransactionRoomResponse>
+      saveDominionOwnershipTransactionRoom($grpc.ServiceCall call,
+          $0.SaveDominionOwnershipTransactionRoomRequest request);
+
+  $async.Future<$0.StageDominionRefinanceOrDataroomAccessResponse>
+      stageDominionRefinanceOrDataroomAccess_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.StageDominionRefinanceOrDataroomAccessRequest>
+              $request) async {
+    return stageDominionRefinanceOrDataroomAccess($call, await $request);
+  }
+
+  $async.Future<$0.StageDominionRefinanceOrDataroomAccessResponse>
+      stageDominionRefinanceOrDataroomAccess($grpc.ServiceCall call,
+          $0.StageDominionRefinanceOrDataroomAccessRequest request);
+
+  $async.Future<$0.GetDominionInsuranceResilienceWorkbenchResponse>
+      getDominionInsuranceResilienceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionInsuranceResilienceWorkbenchRequest>
+              $request) async {
+    return getDominionInsuranceResilienceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionInsuranceResilienceWorkbenchResponse>
+      getDominionInsuranceResilienceWorkbench($grpc.ServiceCall call,
+          $0.GetDominionInsuranceResilienceWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionInsuranceResilienceCenterResponse>
+      saveDominionInsuranceResilienceCenter_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionInsuranceResilienceCenterRequest>
+              $request) async {
+    return saveDominionInsuranceResilienceCenter($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionInsuranceResilienceCenterResponse>
+      saveDominionInsuranceResilienceCenter($grpc.ServiceCall call,
+          $0.SaveDominionInsuranceResilienceCenterRequest request);
+
+  $async.Future<$0.StageDominionClaimPackOrStressReviewResponse>
+      stageDominionClaimPackOrStressReview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.StageDominionClaimPackOrStressReviewRequest>
+              $request) async {
+    return stageDominionClaimPackOrStressReview($call, await $request);
+  }
+
+  $async.Future<$0.StageDominionClaimPackOrStressReviewResponse>
+      stageDominionClaimPackOrStressReview($grpc.ServiceCall call,
+          $0.StageDominionClaimPackOrStressReviewRequest request);
+
+  $async.Future<$0.GetDominionUtilityPerformanceWorkbenchResponse>
+      getDominionUtilityPerformanceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetDominionUtilityPerformanceWorkbenchRequest>
+              $request) async {
+    return getDominionUtilityPerformanceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetDominionUtilityPerformanceWorkbenchResponse>
+      getDominionUtilityPerformanceWorkbench($grpc.ServiceCall call,
+          $0.GetDominionUtilityPerformanceWorkbenchRequest request);
+
+  $async.Future<$0.SaveDominionUtilityBuildingPerformanceResponse>
+      saveDominionUtilityBuildingPerformance_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveDominionUtilityBuildingPerformanceRequest>
+              $request) async {
+    return saveDominionUtilityBuildingPerformance($call, await $request);
+  }
+
+  $async.Future<$0.SaveDominionUtilityBuildingPerformanceResponse>
+      saveDominionUtilityBuildingPerformance($grpc.ServiceCall call,
+          $0.SaveDominionUtilityBuildingPerformanceRequest request);
+
+  $async.Future<$0.VerifyDominionRetrofitSavingsOrAnomalyResponse>
+      verifyDominionRetrofitSavingsOrAnomaly_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyDominionRetrofitSavingsOrAnomalyRequest>
+              $request) async {
+    return verifyDominionRetrofitSavingsOrAnomaly($call, await $request);
+  }
+
+  $async.Future<$0.VerifyDominionRetrofitSavingsOrAnomalyResponse>
+      verifyDominionRetrofitSavingsOrAnomaly($grpc.ServiceCall call,
+          $0.VerifyDominionRetrofitSavingsOrAnomalyRequest request);
 }

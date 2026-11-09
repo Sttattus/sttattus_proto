@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddMyLanguageRequest, AddMyLanguageResponse, CompleteInteractionRequest, CompleteInteractionResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, DismissWritingFlagRequest, DismissWritingFlagResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAdaptivePlanRequest, GetAdaptivePlanResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetMasteryMapRequest, GetMasteryMapResponse, GetMemberPrefsRequest, GetMemberPrefsResponse, GetNodeEvidenceRequest, GetNodeEvidenceResponse, GetPracticeSessionRequest, GetPracticeSessionResponse, GetPracticeStatsRequest, GetPracticeStatsResponse, GetReadingTextRequest, GetReadingTextResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, IssueCertificateRequest, IssueCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, SetMemberPrefsRequest, SetMemberPrefsResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SkipPlanItemRequest, SkipPlanItemResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitAnswerRequest, SubmitAnswerResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitReadingAnswerRequest, SubmitReadingAnswerResponse, SubmitWritingRequest, SubmitWritingResponse } from "./languages_pb.js";
+import { AddMyLanguageRequest, AddMyLanguageResponse, ApproveOrDisputeTeacherProposalRequest, ApproveOrDisputeTeacherProposalResponse, AttestRealWorldMissionCompletionRequest, AttestRealWorldMissionCompletionResponse, BookOrAskHumanTutorRequest, BookOrAskHumanTutorResponse, CaptureContextConceptSenseRequest, CaptureContextConceptSenseResponse, CaptureExplicitLanguageLookupRequest, CaptureExplicitLanguageLookupResponse, CertifyOfflineAccessibilityPackRequest, CertifyOfflineAccessibilityPackResponse, CompleteCulturalPragmaticsBranchRequest, CompleteCulturalPragmaticsBranchResponse, CompleteInteractionRequest, CompleteInteractionResponse, ConfirmCapturedSenseToMasteryRequest, ConfirmCapturedSenseToMasteryResponse, CreateClassroomCohortAssignmentRequest, CreateClassroomCohortAssignmentResponse, CreateLinguistShareRequest, CreateLinguistShareResponse, CreateSpeakingAttemptRequest, CreateSpeakingAttemptResponse, DismissWritingFlagRequest, DismissWritingFlagResponse, EnrollProfessionalOrHeritageTrackRequest, EnrollProfessionalOrHeritageTrackResponse, GenerateLinguistAlmanacRequest, GenerateLinguistAlmanacResponse, GetAdaptivePlanRequest, GetAdaptivePlanResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetAssessmentCertificationOverviewRequest, GetAssessmentCertificationOverviewResponse, GetCultureReferenceSupertoolsOverviewRequest, GetCultureReferenceSupertoolsOverviewResponse, GetHumanTutoringCommunityOverviewRequest, GetHumanTutoringCommunityOverviewResponse, GetImmersionUniverseOverviewRequest, GetImmersionUniverseOverviewResponse, GetLinguistStatsRequest, GetLinguistStatsResponse, GetMasteryMapRequest, GetMasteryMapResponse, GetMemberPrefsRequest, GetMemberPrefsResponse, GetNodeEvidenceRequest, GetNodeEvidenceResponse, GetOfflineAccessibilityMigrationOverviewRequest, GetOfflineAccessibilityMigrationOverviewResponse, GetPracticeSessionRequest, GetPracticeSessionResponse, GetPracticeStatsRequest, GetPracticeStatsResponse, GetProfessionalHeritagePathwaysOverviewRequest, GetProfessionalHeritagePathwaysOverviewResponse, GetReadingTextRequest, GetReadingTextResponse, GetRealWorldMissionsPortfolioOverviewRequest, GetRealWorldMissionsPortfolioOverviewResponse, GetSpeakingAttemptRequest, GetSpeakingAttemptResponse, GetSustainableMotivationLabOverviewRequest, GetSustainableMotivationLabOverviewResponse, GetTeacherClassroomOsOverviewRequest, GetTeacherClassroomOsOverviewResponse, GetTodayPlanRequest, GetTodayPlanResponse, GetTutorThreadRequest, GetTutorThreadResponse, GetUbiquitousLanguageLayerOverviewRequest, GetUbiquitousLanguageLayerOverviewResponse, GetWritingRegisterStudioOverviewRequest, GetWritingRegisterStudioOverviewResponse, GetWritingSubmissionRequest, GetWritingSubmissionResponse, ImportPersonalImmersionMediaRequest, ImportPersonalImmersionMediaResponse, IssueCertificateRequest, IssueCertificateResponse, IssueOrRevokeSignedCertificateRequest, IssueOrRevokeSignedCertificateResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListCulturalModulesRequest, ListCulturalModulesResponse, ListIdiomsRequest, ListIdiomsResponse, ListMyCertificatesRequest, ListMyCertificatesResponse, ListMyLanguagesRequest, ListMyLanguagesResponse, ListMyPlacementResultsRequest, ListMyPlacementResultsResponse, ListMyTutorThreadsRequest, ListMyTutorThreadsResponse, ListMyWritingSubmissionsRequest, ListMyWritingSubmissionsResponse, ListPlacementQuestionsRequest, ListPlacementQuestionsResponse, ListReadingTextsRequest, ListReadingTextsResponse, ListScenariosRequest, ListScenariosResponse, ListSpeakingPromptsRequest, ListSpeakingPromptsResponse, ListTodayImmersionRequest, ListTodayImmersionResponse, ListWordsRequest, ListWordsResponse, ListWritingPromptsRequest, ListWritingPromptsResponse, MarkCulturalCompletedRequest, MarkCulturalCompletedResponse, MarkImmersionCompletedRequest, MarkImmersionCompletedResponse, MarkPlanBlockRequest, MarkPlanBlockResponse, PostTutorMessageRequest, PostTutorMessageResponse, PublishCommunicativePortfolioArtifactRequest, PublishCommunicativePortfolioArtifactResponse, RecordDelayedRetentionExperimentRequest, RecordDelayedRetentionExperimentResponse, RecordHeritageLiteracyMilestoneRequest, RecordHeritageLiteracyMilestoneResponse, RemoveMyLanguageRequest, RemoveMyLanguageResponse, RunAdaptiveDiagnosticSessionRequest, RunAdaptiveDiagnosticSessionResponse, RunCompetitorMigrationImportRequest, RunCompetitorMigrationImportResponse, RunSupertoolConcordanceLookupRequest, RunSupertoolConcordanceLookupResponse, SetMemberPrefsRequest, SetMemberPrefsResponse, SetMyPrimaryLanguageRequest, SetMyPrimaryLanguageResponse, SkipPlanItemRequest, SkipPlanItemResponse, StartTutorThreadRequest, StartTutorThreadResponse, SubmitAnswerRequest, SubmitAnswerResponse, SubmitDoubleBlindCommunityReviewRequest, SubmitDoubleBlindCommunityReviewResponse, SubmitPlacementResultRequest, SubmitPlacementResultResponse, SubmitReadingAnswerRequest, SubmitReadingAnswerResponse, SubmitWritingRegisterDraftRequest, SubmitWritingRegisterDraftResponse, SubmitWritingRequest, SubmitWritingResponse, UpdateSustainableHabitContractRequest, UpdateSustainableHabitContractResponse, VerifyDelayedRegisterTransferRequest, VerifyDelayedRegisterTransferResponse } from "./languages_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -487,6 +487,325 @@ export const LanguagesService = {
       name: "ListWords",
       I: ListWordsRequest,
       O: ListWordsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 6 (L6): Immersion and Personal Import Universe
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetImmersionUniverseOverview
+     */
+    getImmersionUniverseOverview: {
+      name: "GetImmersionUniverseOverview",
+      I: GetImmersionUniverseOverviewRequest,
+      O: GetImmersionUniverseOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ImportPersonalImmersionMedia
+     */
+    importPersonalImmersionMedia: {
+      name: "ImportPersonalImmersionMedia",
+      I: ImportPersonalImmersionMediaRequest,
+      O: ImportPersonalImmersionMediaResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CaptureContextConceptSense
+     */
+    captureContextConceptSense: {
+      name: "CaptureContextConceptSense",
+      I: CaptureContextConceptSenseRequest,
+      O: CaptureContextConceptSenseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 7 (L7): Writing and Register Studio
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetWritingRegisterStudioOverview
+     */
+    getWritingRegisterStudioOverview: {
+      name: "GetWritingRegisterStudioOverview",
+      I: GetWritingRegisterStudioOverviewRequest,
+      O: GetWritingRegisterStudioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitWritingRegisterDraft
+     */
+    submitWritingRegisterDraft: {
+      name: "SubmitWritingRegisterDraft",
+      I: SubmitWritingRegisterDraftRequest,
+      O: SubmitWritingRegisterDraftResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.VerifyDelayedRegisterTransfer
+     */
+    verifyDelayedRegisterTransfer: {
+      name: "VerifyDelayedRegisterTransfer",
+      I: VerifyDelayedRegisterTransferRequest,
+      O: VerifyDelayedRegisterTransferResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 8 (L8): Human Tutoring and Community
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetHumanTutoringCommunityOverview
+     */
+    getHumanTutoringCommunityOverview: {
+      name: "GetHumanTutoringCommunityOverview",
+      I: GetHumanTutoringCommunityOverviewRequest,
+      O: GetHumanTutoringCommunityOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.BookOrAskHumanTutor
+     */
+    bookOrAskHumanTutor: {
+      name: "BookOrAskHumanTutor",
+      I: BookOrAskHumanTutorRequest,
+      O: BookOrAskHumanTutorResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.SubmitDoubleBlindCommunityReview
+     */
+    submitDoubleBlindCommunityReview: {
+      name: "SubmitDoubleBlindCommunityReview",
+      I: SubmitDoubleBlindCommunityReviewRequest,
+      O: SubmitDoubleBlindCommunityReviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 9 (L9): Assessment and Credible Certification
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetAssessmentCertificationOverview
+     */
+    getAssessmentCertificationOverview: {
+      name: "GetAssessmentCertificationOverview",
+      I: GetAssessmentCertificationOverviewRequest,
+      O: GetAssessmentCertificationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RunAdaptiveDiagnosticSession
+     */
+    runAdaptiveDiagnosticSession: {
+      name: "RunAdaptiveDiagnosticSession",
+      I: RunAdaptiveDiagnosticSessionRequest,
+      O: RunAdaptiveDiagnosticSessionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.IssueOrRevokeSignedCertificate
+     */
+    issueOrRevokeSignedCertificate: {
+      name: "IssueOrRevokeSignedCertificate",
+      I: IssueOrRevokeSignedCertificateRequest,
+      O: IssueOrRevokeSignedCertificateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 10 (L10/L11): Culture and Reference Supertools
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetCultureReferenceSupertoolsOverview
+     */
+    getCultureReferenceSupertoolsOverview: {
+      name: "GetCultureReferenceSupertoolsOverview",
+      I: GetCultureReferenceSupertoolsOverviewRequest,
+      O: GetCultureReferenceSupertoolsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RunSupertoolConcordanceLookup
+     */
+    runSupertoolConcordanceLookup: {
+      name: "RunSupertoolConcordanceLookup",
+      I: RunSupertoolConcordanceLookupRequest,
+      O: RunSupertoolConcordanceLookupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CompleteCulturalPragmaticsBranch
+     */
+    completeCulturalPragmaticsBranch: {
+      name: "CompleteCulturalPragmaticsBranch",
+      I: CompleteCulturalPragmaticsBranchRequest,
+      O: CompleteCulturalPragmaticsBranchResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 11 (L13): Real-World Missions and Portfolio
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetRealWorldMissionsPortfolioOverview
+     */
+    getRealWorldMissionsPortfolioOverview: {
+      name: "GetRealWorldMissionsPortfolioOverview",
+      I: GetRealWorldMissionsPortfolioOverviewRequest,
+      O: GetRealWorldMissionsPortfolioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.AttestRealWorldMissionCompletion
+     */
+    attestRealWorldMissionCompletion: {
+      name: "AttestRealWorldMissionCompletion",
+      I: AttestRealWorldMissionCompletionRequest,
+      O: AttestRealWorldMissionCompletionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.PublishCommunicativePortfolioArtifact
+     */
+    publishCommunicativePortfolioArtifact: {
+      name: "PublishCommunicativePortfolioArtifact",
+      I: PublishCommunicativePortfolioArtifactRequest,
+      O: PublishCommunicativePortfolioArtifactResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 12 (L14): Ubiquitous Language Layer
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetUbiquitousLanguageLayerOverview
+     */
+    getUbiquitousLanguageLayerOverview: {
+      name: "GetUbiquitousLanguageLayerOverview",
+      I: GetUbiquitousLanguageLayerOverviewRequest,
+      O: GetUbiquitousLanguageLayerOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CaptureExplicitLanguageLookup
+     */
+    captureExplicitLanguageLookup: {
+      name: "CaptureExplicitLanguageLookup",
+      I: CaptureExplicitLanguageLookupRequest,
+      O: CaptureExplicitLanguageLookupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ConfirmCapturedSenseToMastery
+     */
+    confirmCapturedSenseToMastery: {
+      name: "ConfirmCapturedSenseToMastery",
+      I: ConfirmCapturedSenseToMasteryRequest,
+      O: ConfirmCapturedSenseToMasteryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 13 (L15/L16): Professional and Heritage Pathways
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetProfessionalHeritagePathwaysOverview
+     */
+    getProfessionalHeritagePathwaysOverview: {
+      name: "GetProfessionalHeritagePathwaysOverview",
+      I: GetProfessionalHeritagePathwaysOverviewRequest,
+      O: GetProfessionalHeritagePathwaysOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.EnrollProfessionalOrHeritageTrack
+     */
+    enrollProfessionalOrHeritageTrack: {
+      name: "EnrollProfessionalOrHeritageTrack",
+      I: EnrollProfessionalOrHeritageTrackRequest,
+      O: EnrollProfessionalOrHeritageTrackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RecordHeritageLiteracyMilestone
+     */
+    recordHeritageLiteracyMilestone: {
+      name: "RecordHeritageLiteracyMilestone",
+      I: RecordHeritageLiteracyMilestoneRequest,
+      O: RecordHeritageLiteracyMilestoneResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 14 (L17): Teacher and Classroom OS
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetTeacherClassroomOsOverview
+     */
+    getTeacherClassroomOsOverview: {
+      name: "GetTeacherClassroomOsOverview",
+      I: GetTeacherClassroomOsOverviewRequest,
+      O: GetTeacherClassroomOsOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CreateClassroomCohortAssignment
+     */
+    createClassroomCohortAssignment: {
+      name: "CreateClassroomCohortAssignment",
+      I: CreateClassroomCohortAssignmentRequest,
+      O: CreateClassroomCohortAssignmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.ApproveOrDisputeTeacherProposal
+     */
+    approveOrDisputeTeacherProposal: {
+      name: "ApproveOrDisputeTeacherProposal",
+      I: ApproveOrDisputeTeacherProposalRequest,
+      O: ApproveOrDisputeTeacherProposalResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 15 (L18/L19): Sustainable Motivation and Learning Lab
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetSustainableMotivationLabOverview
+     */
+    getSustainableMotivationLabOverview: {
+      name: "GetSustainableMotivationLabOverview",
+      I: GetSustainableMotivationLabOverviewRequest,
+      O: GetSustainableMotivationLabOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.UpdateSustainableHabitContract
+     */
+    updateSustainableHabitContract: {
+      name: "UpdateSustainableHabitContract",
+      I: UpdateSustainableHabitContractRequest,
+      O: UpdateSustainableHabitContractResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RecordDelayedRetentionExperiment
+     */
+    recordDelayedRetentionExperiment: {
+      name: "RecordDelayedRetentionExperiment",
+      I: RecordDelayedRetentionExperimentRequest,
+      O: RecordDelayedRetentionExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Choice 16 (L12): Offline, Accessibility, and Migration Certification
+     *
+     * @generated from rpc sttattus.languages.v1.LanguagesService.GetOfflineAccessibilityMigrationOverview
+     */
+    getOfflineAccessibilityMigrationOverview: {
+      name: "GetOfflineAccessibilityMigrationOverview",
+      I: GetOfflineAccessibilityMigrationOverviewRequest,
+      O: GetOfflineAccessibilityMigrationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.CertifyOfflineAccessibilityPack
+     */
+    certifyOfflineAccessibilityPack: {
+      name: "CertifyOfflineAccessibilityPack",
+      I: CertifyOfflineAccessibilityPackRequest,
+      O: CertifyOfflineAccessibilityPackResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.languages.v1.LanguagesService.RunCompetitorMigrationImport
+     */
+    runCompetitorMigrationImport: {
+      name: "RunCompetitorMigrationImport",
+      I: RunCompetitorMigrationImportRequest,
+      O: RunCompetitorMigrationImportResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -8975,6 +8975,8377 @@ class ParseDocumentExpiryResponse extends $pb.GeneratedMessage {
   void clearDetectedText() => $_clearField(3);
 }
 
+class LegacyLivingEstateInventoryView extends $pb.GeneratedMessage {
+  factory LegacyLivingEstateInventoryView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? inventoryCode,
+    $core.String? assetFiduciaryAndOwnerScope,
+    $core.String? planHealthGapsAndEvidence,
+    $core.String? tenMinuteQuarterlyReviewLog,
+    $core.String? inventoryState,
+    $core.bool? noSilentSignedDocRewriteEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (inventoryCode != null) result.inventoryCode = inventoryCode;
+    if (assetFiduciaryAndOwnerScope != null)
+      result.assetFiduciaryAndOwnerScope = assetFiduciaryAndOwnerScope;
+    if (planHealthGapsAndEvidence != null)
+      result.planHealthGapsAndEvidence = planHealthGapsAndEvidence;
+    if (tenMinuteQuarterlyReviewLog != null)
+      result.tenMinuteQuarterlyReviewLog = tenMinuteQuarterlyReviewLog;
+    if (inventoryState != null) result.inventoryState = inventoryState;
+    if (noSilentSignedDocRewriteEnforced != null)
+      result.noSilentSignedDocRewriteEnforced =
+          noSilentSignedDocRewriteEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyLivingEstateInventoryView._();
+
+  factory LegacyLivingEstateInventoryView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyLivingEstateInventoryView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyLivingEstateInventoryView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'inventoryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'assetFiduciaryAndOwnerScope')
+    ..aOS(5, _omitFieldNames ? '' : 'planHealthGapsAndEvidence')
+    ..aOS(6, _omitFieldNames ? '' : 'tenMinuteQuarterlyReviewLog')
+    ..aOS(7, _omitFieldNames ? '' : 'inventoryState')
+    ..aOB(8, _omitFieldNames ? '' : 'noSilentSignedDocRewriteEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLivingEstateInventoryView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLivingEstateInventoryView copyWith(
+          void Function(LegacyLivingEstateInventoryView) updates) =>
+      super.copyWith(
+              (message) => updates(message as LegacyLivingEstateInventoryView))
+          as LegacyLivingEstateInventoryView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyLivingEstateInventoryView create() =>
+      LegacyLivingEstateInventoryView._();
+  @$core.override
+  LegacyLivingEstateInventoryView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyLivingEstateInventoryView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyLivingEstateInventoryView>(
+          create);
+  static LegacyLivingEstateInventoryView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get inventoryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set inventoryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInventoryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInventoryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get assetFiduciaryAndOwnerScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set assetFiduciaryAndOwnerScope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAssetFiduciaryAndOwnerScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAssetFiduciaryAndOwnerScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get planHealthGapsAndEvidence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set planHealthGapsAndEvidence($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPlanHealthGapsAndEvidence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPlanHealthGapsAndEvidence() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get tenMinuteQuarterlyReviewLog => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set tenMinuteQuarterlyReviewLog($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasTenMinuteQuarterlyReviewLog() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearTenMinuteQuarterlyReviewLog() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get inventoryState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set inventoryState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasInventoryState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearInventoryState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noSilentSignedDocRewriteEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noSilentSignedDocRewriteEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoSilentSignedDocRewriteEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoSilentSignedDocRewriteEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyLivingInventoryWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyLivingInventoryWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyLivingInventoryWorkbenchRequest._();
+
+  factory GetLegacyLivingInventoryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLivingInventoryWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLivingInventoryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLivingInventoryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLivingInventoryWorkbenchRequest copyWith(
+          void Function(GetLegacyLivingInventoryWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLivingInventoryWorkbenchRequest))
+          as GetLegacyLivingInventoryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLivingInventoryWorkbenchRequest create() =>
+      GetLegacyLivingInventoryWorkbenchRequest._();
+  @$core.override
+  GetLegacyLivingInventoryWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLivingInventoryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLivingInventoryWorkbenchRequest>(create);
+  static GetLegacyLivingInventoryWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyLivingInventoryWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyLivingInventoryWorkbenchResponse({
+    $core.Iterable<LegacyLivingEstateInventoryView>? inventories,
+    $core.int? openGapCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (inventories != null) result.inventories.addAll(inventories);
+    if (openGapCount != null) result.openGapCount = openGapCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyLivingInventoryWorkbenchResponse._();
+
+  factory GetLegacyLivingInventoryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLivingInventoryWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLivingInventoryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyLivingEstateInventoryView>(
+        1, _omitFieldNames ? '' : 'inventories',
+        subBuilder: LegacyLivingEstateInventoryView.create)
+    ..aI(2, _omitFieldNames ? '' : 'openGapCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLivingInventoryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLivingInventoryWorkbenchResponse copyWith(
+          void Function(GetLegacyLivingInventoryWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLivingInventoryWorkbenchResponse))
+          as GetLegacyLivingInventoryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLivingInventoryWorkbenchResponse create() =>
+      GetLegacyLivingInventoryWorkbenchResponse._();
+  @$core.override
+  GetLegacyLivingInventoryWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLivingInventoryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLivingInventoryWorkbenchResponse>(create);
+  static GetLegacyLivingInventoryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyLivingEstateInventoryView> get inventories => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get openGapCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set openGapCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOpenGapCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOpenGapCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyLivingEstateInventoryRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyLivingEstateInventoryRequest({
+    $core.String? userId,
+    $core.String? inventoryCode,
+    $core.String? assetFiduciaryAndOwnerScope,
+    $core.String? planHealthGapsAndEvidence,
+    $core.String? tenMinuteQuarterlyReviewLog,
+    $core.String? inventoryState,
+    $core.bool? noSilentSignedDocRewriteEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (inventoryCode != null) result.inventoryCode = inventoryCode;
+    if (assetFiduciaryAndOwnerScope != null)
+      result.assetFiduciaryAndOwnerScope = assetFiduciaryAndOwnerScope;
+    if (planHealthGapsAndEvidence != null)
+      result.planHealthGapsAndEvidence = planHealthGapsAndEvidence;
+    if (tenMinuteQuarterlyReviewLog != null)
+      result.tenMinuteQuarterlyReviewLog = tenMinuteQuarterlyReviewLog;
+    if (inventoryState != null) result.inventoryState = inventoryState;
+    if (noSilentSignedDocRewriteEnforced != null)
+      result.noSilentSignedDocRewriteEnforced =
+          noSilentSignedDocRewriteEnforced;
+    return result;
+  }
+
+  SaveLegacyLivingEstateInventoryRequest._();
+
+  factory SaveLegacyLivingEstateInventoryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLivingEstateInventoryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLivingEstateInventoryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'inventoryCode')
+    ..aOS(3, _omitFieldNames ? '' : 'assetFiduciaryAndOwnerScope')
+    ..aOS(4, _omitFieldNames ? '' : 'planHealthGapsAndEvidence')
+    ..aOS(5, _omitFieldNames ? '' : 'tenMinuteQuarterlyReviewLog')
+    ..aOS(6, _omitFieldNames ? '' : 'inventoryState')
+    ..aOB(7, _omitFieldNames ? '' : 'noSilentSignedDocRewriteEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLivingEstateInventoryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLivingEstateInventoryRequest copyWith(
+          void Function(SaveLegacyLivingEstateInventoryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLivingEstateInventoryRequest))
+          as SaveLegacyLivingEstateInventoryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLivingEstateInventoryRequest create() =>
+      SaveLegacyLivingEstateInventoryRequest._();
+  @$core.override
+  SaveLegacyLivingEstateInventoryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLivingEstateInventoryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLivingEstateInventoryRequest>(create);
+  static SaveLegacyLivingEstateInventoryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inventoryCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inventoryCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInventoryCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInventoryCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get assetFiduciaryAndOwnerScope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set assetFiduciaryAndOwnerScope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAssetFiduciaryAndOwnerScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAssetFiduciaryAndOwnerScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get planHealthGapsAndEvidence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set planHealthGapsAndEvidence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlanHealthGapsAndEvidence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlanHealthGapsAndEvidence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get tenMinuteQuarterlyReviewLog => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set tenMinuteQuarterlyReviewLog($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTenMinuteQuarterlyReviewLog() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTenMinuteQuarterlyReviewLog() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get inventoryState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set inventoryState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasInventoryState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearInventoryState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get noSilentSignedDocRewriteEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set noSilentSignedDocRewriteEnforced($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNoSilentSignedDocRewriteEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNoSilentSignedDocRewriteEnforced() => $_clearField(7);
+}
+
+class SaveLegacyLivingEstateInventoryResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyLivingEstateInventoryResponse({
+    LegacyLivingEstateInventoryView? inventory,
+  }) {
+    final result = create();
+    if (inventory != null) result.inventory = inventory;
+    return result;
+  }
+
+  SaveLegacyLivingEstateInventoryResponse._();
+
+  factory SaveLegacyLivingEstateInventoryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLivingEstateInventoryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLivingEstateInventoryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLivingEstateInventoryView>(
+        1, _omitFieldNames ? '' : 'inventory',
+        subBuilder: LegacyLivingEstateInventoryView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLivingEstateInventoryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLivingEstateInventoryResponse copyWith(
+          void Function(SaveLegacyLivingEstateInventoryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLivingEstateInventoryResponse))
+          as SaveLegacyLivingEstateInventoryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLivingEstateInventoryResponse create() =>
+      SaveLegacyLivingEstateInventoryResponse._();
+  @$core.override
+  SaveLegacyLivingEstateInventoryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLivingEstateInventoryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLivingEstateInventoryResponse>(create);
+  static SaveLegacyLivingEstateInventoryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLivingEstateInventoryView get inventory => $_getN(0);
+  @$pb.TagNumber(1)
+  set inventory(LegacyLivingEstateInventoryView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInventory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInventory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLivingEstateInventoryView ensureInventory() => $_ensure(0);
+}
+
+class SignOffLegacyQuarterlyPlanReviewRequest extends $pb.GeneratedMessage {
+  factory SignOffLegacyQuarterlyPlanReviewRequest({
+    $core.String? userId,
+    $core.String? inventoryCode,
+    $core.String? targetInventoryState,
+    $core.String? reviewNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (inventoryCode != null) result.inventoryCode = inventoryCode;
+    if (targetInventoryState != null)
+      result.targetInventoryState = targetInventoryState;
+    if (reviewNotes != null) result.reviewNotes = reviewNotes;
+    return result;
+  }
+
+  SignOffLegacyQuarterlyPlanReviewRequest._();
+
+  factory SignOffLegacyQuarterlyPlanReviewRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SignOffLegacyQuarterlyPlanReviewRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SignOffLegacyQuarterlyPlanReviewRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'inventoryCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetInventoryState')
+    ..aOS(4, _omitFieldNames ? '' : 'reviewNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignOffLegacyQuarterlyPlanReviewRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignOffLegacyQuarterlyPlanReviewRequest copyWith(
+          void Function(SignOffLegacyQuarterlyPlanReviewRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SignOffLegacyQuarterlyPlanReviewRequest))
+          as SignOffLegacyQuarterlyPlanReviewRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignOffLegacyQuarterlyPlanReviewRequest create() =>
+      SignOffLegacyQuarterlyPlanReviewRequest._();
+  @$core.override
+  SignOffLegacyQuarterlyPlanReviewRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SignOffLegacyQuarterlyPlanReviewRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SignOffLegacyQuarterlyPlanReviewRequest>(create);
+  static SignOffLegacyQuarterlyPlanReviewRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inventoryCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inventoryCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInventoryCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInventoryCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetInventoryState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetInventoryState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetInventoryState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetInventoryState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reviewNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reviewNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReviewNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReviewNotes() => $_clearField(4);
+}
+
+class SignOffLegacyQuarterlyPlanReviewResponse extends $pb.GeneratedMessage {
+  factory SignOffLegacyQuarterlyPlanReviewResponse({
+    LegacyLivingEstateInventoryView? inventory,
+    $core.String? reviewStatus,
+  }) {
+    final result = create();
+    if (inventory != null) result.inventory = inventory;
+    if (reviewStatus != null) result.reviewStatus = reviewStatus;
+    return result;
+  }
+
+  SignOffLegacyQuarterlyPlanReviewResponse._();
+
+  factory SignOffLegacyQuarterlyPlanReviewResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SignOffLegacyQuarterlyPlanReviewResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SignOffLegacyQuarterlyPlanReviewResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLivingEstateInventoryView>(
+        1, _omitFieldNames ? '' : 'inventory',
+        subBuilder: LegacyLivingEstateInventoryView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'reviewStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignOffLegacyQuarterlyPlanReviewResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SignOffLegacyQuarterlyPlanReviewResponse copyWith(
+          void Function(SignOffLegacyQuarterlyPlanReviewResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SignOffLegacyQuarterlyPlanReviewResponse))
+          as SignOffLegacyQuarterlyPlanReviewResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SignOffLegacyQuarterlyPlanReviewResponse create() =>
+      SignOffLegacyQuarterlyPlanReviewResponse._();
+  @$core.override
+  SignOffLegacyQuarterlyPlanReviewResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SignOffLegacyQuarterlyPlanReviewResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SignOffLegacyQuarterlyPlanReviewResponse>(create);
+  static SignOffLegacyQuarterlyPlanReviewResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLivingEstateInventoryView get inventory => $_getN(0);
+  @$pb.TagNumber(1)
+  set inventory(LegacyLivingEstateInventoryView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInventory() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInventory() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLivingEstateInventoryView ensureInventory() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get reviewStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set reviewStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReviewStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReviewStatus() => $_clearField(2);
+}
+
+class LegacyLifeEventAlignmentView extends $pb.GeneratedMessage {
+  factory LegacyLifeEventAlignmentView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? alignmentCode,
+    $core.String? confirmedLifeEventAndImpactMap,
+    $core.String? beneficiaryAndTrustFundingDiff,
+    $core.String? institutionChecklistAndEvidence,
+    $core.String? alignmentState,
+    $core.bool? evidenceRequiredBeforeCompleteEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (alignmentCode != null) result.alignmentCode = alignmentCode;
+    if (confirmedLifeEventAndImpactMap != null)
+      result.confirmedLifeEventAndImpactMap = confirmedLifeEventAndImpactMap;
+    if (beneficiaryAndTrustFundingDiff != null)
+      result.beneficiaryAndTrustFundingDiff = beneficiaryAndTrustFundingDiff;
+    if (institutionChecklistAndEvidence != null)
+      result.institutionChecklistAndEvidence = institutionChecklistAndEvidence;
+    if (alignmentState != null) result.alignmentState = alignmentState;
+    if (evidenceRequiredBeforeCompleteEnforced != null)
+      result.evidenceRequiredBeforeCompleteEnforced =
+          evidenceRequiredBeforeCompleteEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyLifeEventAlignmentView._();
+
+  factory LegacyLifeEventAlignmentView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyLifeEventAlignmentView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyLifeEventAlignmentView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'alignmentCode')
+    ..aOS(4, _omitFieldNames ? '' : 'confirmedLifeEventAndImpactMap')
+    ..aOS(5, _omitFieldNames ? '' : 'beneficiaryAndTrustFundingDiff')
+    ..aOS(6, _omitFieldNames ? '' : 'institutionChecklistAndEvidence')
+    ..aOS(7, _omitFieldNames ? '' : 'alignmentState')
+    ..aOB(8, _omitFieldNames ? '' : 'evidenceRequiredBeforeCompleteEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLifeEventAlignmentView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLifeEventAlignmentView copyWith(
+          void Function(LegacyLifeEventAlignmentView) updates) =>
+      super.copyWith(
+              (message) => updates(message as LegacyLifeEventAlignmentView))
+          as LegacyLifeEventAlignmentView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyLifeEventAlignmentView create() =>
+      LegacyLifeEventAlignmentView._();
+  @$core.override
+  LegacyLifeEventAlignmentView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyLifeEventAlignmentView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyLifeEventAlignmentView>(create);
+  static LegacyLifeEventAlignmentView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get alignmentCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set alignmentCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAlignmentCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAlignmentCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get confirmedLifeEventAndImpactMap => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set confirmedLifeEventAndImpactMap($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConfirmedLifeEventAndImpactMap() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConfirmedLifeEventAndImpactMap() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get beneficiaryAndTrustFundingDiff => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set beneficiaryAndTrustFundingDiff($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBeneficiaryAndTrustFundingDiff() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBeneficiaryAndTrustFundingDiff() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get institutionChecklistAndEvidence => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set institutionChecklistAndEvidence($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasInstitutionChecklistAndEvidence() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearInstitutionChecklistAndEvidence() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get alignmentState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set alignmentState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAlignmentState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAlignmentState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get evidenceRequiredBeforeCompleteEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set evidenceRequiredBeforeCompleteEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEvidenceRequiredBeforeCompleteEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEvidenceRequiredBeforeCompleteEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyLifeEventAlignmentWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyLifeEventAlignmentWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyLifeEventAlignmentWorkbenchRequest._();
+
+  factory GetLegacyLifeEventAlignmentWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLifeEventAlignmentWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLifeEventAlignmentWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLifeEventAlignmentWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLifeEventAlignmentWorkbenchRequest copyWith(
+          void Function(GetLegacyLifeEventAlignmentWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLifeEventAlignmentWorkbenchRequest))
+          as GetLegacyLifeEventAlignmentWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLifeEventAlignmentWorkbenchRequest create() =>
+      GetLegacyLifeEventAlignmentWorkbenchRequest._();
+  @$core.override
+  GetLegacyLifeEventAlignmentWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLifeEventAlignmentWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLifeEventAlignmentWorkbenchRequest>(create);
+  static GetLegacyLifeEventAlignmentWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyLifeEventAlignmentWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacyLifeEventAlignmentWorkbenchResponse({
+    $core.Iterable<LegacyLifeEventAlignmentView>? alignments,
+    $core.int? unalignedDesignationCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (alignments != null) result.alignments.addAll(alignments);
+    if (unalignedDesignationCount != null)
+      result.unalignedDesignationCount = unalignedDesignationCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyLifeEventAlignmentWorkbenchResponse._();
+
+  factory GetLegacyLifeEventAlignmentWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLifeEventAlignmentWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLifeEventAlignmentWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyLifeEventAlignmentView>(1, _omitFieldNames ? '' : 'alignments',
+        subBuilder: LegacyLifeEventAlignmentView.create)
+    ..aI(2, _omitFieldNames ? '' : 'unalignedDesignationCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLifeEventAlignmentWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLifeEventAlignmentWorkbenchResponse copyWith(
+          void Function(GetLegacyLifeEventAlignmentWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLifeEventAlignmentWorkbenchResponse))
+          as GetLegacyLifeEventAlignmentWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLifeEventAlignmentWorkbenchResponse create() =>
+      GetLegacyLifeEventAlignmentWorkbenchResponse._();
+  @$core.override
+  GetLegacyLifeEventAlignmentWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLifeEventAlignmentWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLifeEventAlignmentWorkbenchResponse>(create);
+  static GetLegacyLifeEventAlignmentWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyLifeEventAlignmentView> get alignments => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get unalignedDesignationCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set unalignedDesignationCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUnalignedDesignationCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnalignedDesignationCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyLifeEventAlignmentRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyLifeEventAlignmentRequest({
+    $core.String? userId,
+    $core.String? alignmentCode,
+    $core.String? confirmedLifeEventAndImpactMap,
+    $core.String? beneficiaryAndTrustFundingDiff,
+    $core.String? institutionChecklistAndEvidence,
+    $core.String? alignmentState,
+    $core.bool? evidenceRequiredBeforeCompleteEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (alignmentCode != null) result.alignmentCode = alignmentCode;
+    if (confirmedLifeEventAndImpactMap != null)
+      result.confirmedLifeEventAndImpactMap = confirmedLifeEventAndImpactMap;
+    if (beneficiaryAndTrustFundingDiff != null)
+      result.beneficiaryAndTrustFundingDiff = beneficiaryAndTrustFundingDiff;
+    if (institutionChecklistAndEvidence != null)
+      result.institutionChecklistAndEvidence = institutionChecklistAndEvidence;
+    if (alignmentState != null) result.alignmentState = alignmentState;
+    if (evidenceRequiredBeforeCompleteEnforced != null)
+      result.evidenceRequiredBeforeCompleteEnforced =
+          evidenceRequiredBeforeCompleteEnforced;
+    return result;
+  }
+
+  SaveLegacyLifeEventAlignmentRequest._();
+
+  factory SaveLegacyLifeEventAlignmentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLifeEventAlignmentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLifeEventAlignmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'alignmentCode')
+    ..aOS(3, _omitFieldNames ? '' : 'confirmedLifeEventAndImpactMap')
+    ..aOS(4, _omitFieldNames ? '' : 'beneficiaryAndTrustFundingDiff')
+    ..aOS(5, _omitFieldNames ? '' : 'institutionChecklistAndEvidence')
+    ..aOS(6, _omitFieldNames ? '' : 'alignmentState')
+    ..aOB(7, _omitFieldNames ? '' : 'evidenceRequiredBeforeCompleteEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLifeEventAlignmentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLifeEventAlignmentRequest copyWith(
+          void Function(SaveLegacyLifeEventAlignmentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLifeEventAlignmentRequest))
+          as SaveLegacyLifeEventAlignmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLifeEventAlignmentRequest create() =>
+      SaveLegacyLifeEventAlignmentRequest._();
+  @$core.override
+  SaveLegacyLifeEventAlignmentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLifeEventAlignmentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLifeEventAlignmentRequest>(create);
+  static SaveLegacyLifeEventAlignmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get alignmentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set alignmentCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAlignmentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAlignmentCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get confirmedLifeEventAndImpactMap => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set confirmedLifeEventAndImpactMap($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasConfirmedLifeEventAndImpactMap() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearConfirmedLifeEventAndImpactMap() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get beneficiaryAndTrustFundingDiff => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set beneficiaryAndTrustFundingDiff($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasBeneficiaryAndTrustFundingDiff() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearBeneficiaryAndTrustFundingDiff() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get institutionChecklistAndEvidence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set institutionChecklistAndEvidence($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasInstitutionChecklistAndEvidence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearInstitutionChecklistAndEvidence() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get alignmentState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set alignmentState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAlignmentState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAlignmentState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get evidenceRequiredBeforeCompleteEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set evidenceRequiredBeforeCompleteEnforced($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEvidenceRequiredBeforeCompleteEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEvidenceRequiredBeforeCompleteEnforced() => $_clearField(7);
+}
+
+class SaveLegacyLifeEventAlignmentResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyLifeEventAlignmentResponse({
+    LegacyLifeEventAlignmentView? alignment,
+  }) {
+    final result = create();
+    if (alignment != null) result.alignment = alignment;
+    return result;
+  }
+
+  SaveLegacyLifeEventAlignmentResponse._();
+
+  factory SaveLegacyLifeEventAlignmentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLifeEventAlignmentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLifeEventAlignmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLifeEventAlignmentView>(1, _omitFieldNames ? '' : 'alignment',
+        subBuilder: LegacyLifeEventAlignmentView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLifeEventAlignmentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLifeEventAlignmentResponse copyWith(
+          void Function(SaveLegacyLifeEventAlignmentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLifeEventAlignmentResponse))
+          as SaveLegacyLifeEventAlignmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLifeEventAlignmentResponse create() =>
+      SaveLegacyLifeEventAlignmentResponse._();
+  @$core.override
+  SaveLegacyLifeEventAlignmentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLifeEventAlignmentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLifeEventAlignmentResponse>(create);
+  static SaveLegacyLifeEventAlignmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLifeEventAlignmentView get alignment => $_getN(0);
+  @$pb.TagNumber(1)
+  set alignment(LegacyLifeEventAlignmentView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAlignment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAlignment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLifeEventAlignmentView ensureAlignment() => $_ensure(0);
+}
+
+class VerifyLegacyAlignmentInstitutionEvidenceRequest
+    extends $pb.GeneratedMessage {
+  factory VerifyLegacyAlignmentInstitutionEvidenceRequest({
+    $core.String? userId,
+    $core.String? alignmentCode,
+    $core.String? targetAlignmentState,
+    $core.String? evidenceNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (alignmentCode != null) result.alignmentCode = alignmentCode;
+    if (targetAlignmentState != null)
+      result.targetAlignmentState = targetAlignmentState;
+    if (evidenceNotes != null) result.evidenceNotes = evidenceNotes;
+    return result;
+  }
+
+  VerifyLegacyAlignmentInstitutionEvidenceRequest._();
+
+  factory VerifyLegacyAlignmentInstitutionEvidenceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyLegacyAlignmentInstitutionEvidenceRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'VerifyLegacyAlignmentInstitutionEvidenceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'alignmentCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetAlignmentState')
+    ..aOS(4, _omitFieldNames ? '' : 'evidenceNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyAlignmentInstitutionEvidenceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyAlignmentInstitutionEvidenceRequest copyWith(
+          void Function(VerifyLegacyAlignmentInstitutionEvidenceRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as VerifyLegacyAlignmentInstitutionEvidenceRequest))
+          as VerifyLegacyAlignmentInstitutionEvidenceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyAlignmentInstitutionEvidenceRequest create() =>
+      VerifyLegacyAlignmentInstitutionEvidenceRequest._();
+  @$core.override
+  VerifyLegacyAlignmentInstitutionEvidenceRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyAlignmentInstitutionEvidenceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyLegacyAlignmentInstitutionEvidenceRequest>(create);
+  static VerifyLegacyAlignmentInstitutionEvidenceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get alignmentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set alignmentCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAlignmentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAlignmentCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetAlignmentState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetAlignmentState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetAlignmentState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetAlignmentState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidenceNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidenceNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidenceNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidenceNotes() => $_clearField(4);
+}
+
+class VerifyLegacyAlignmentInstitutionEvidenceResponse
+    extends $pb.GeneratedMessage {
+  factory VerifyLegacyAlignmentInstitutionEvidenceResponse({
+    LegacyLifeEventAlignmentView? alignment,
+    $core.String? verificationStatus,
+  }) {
+    final result = create();
+    if (alignment != null) result.alignment = alignment;
+    if (verificationStatus != null)
+      result.verificationStatus = verificationStatus;
+    return result;
+  }
+
+  VerifyLegacyAlignmentInstitutionEvidenceResponse._();
+
+  factory VerifyLegacyAlignmentInstitutionEvidenceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyLegacyAlignmentInstitutionEvidenceResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'VerifyLegacyAlignmentInstitutionEvidenceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLifeEventAlignmentView>(1, _omitFieldNames ? '' : 'alignment',
+        subBuilder: LegacyLifeEventAlignmentView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'verificationStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyAlignmentInstitutionEvidenceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyAlignmentInstitutionEvidenceResponse copyWith(
+          void Function(VerifyLegacyAlignmentInstitutionEvidenceResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as VerifyLegacyAlignmentInstitutionEvidenceResponse))
+          as VerifyLegacyAlignmentInstitutionEvidenceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyAlignmentInstitutionEvidenceResponse create() =>
+      VerifyLegacyAlignmentInstitutionEvidenceResponse._();
+  @$core.override
+  VerifyLegacyAlignmentInstitutionEvidenceResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyAlignmentInstitutionEvidenceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyLegacyAlignmentInstitutionEvidenceResponse>(create);
+  static VerifyLegacyAlignmentInstitutionEvidenceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLifeEventAlignmentView get alignment => $_getN(0);
+  @$pb.TagNumber(1)
+  set alignment(LegacyLifeEventAlignmentView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAlignment() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAlignment() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLifeEventAlignmentView ensureAlignment() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get verificationStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set verificationStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVerificationStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVerificationStatus() => $_clearField(2);
+}
+
+class LegacySecureDocumentVaultView extends $pb.GeneratedMessage {
+  factory LegacySecureDocumentVaultView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? documentCode,
+    $core.String? versionFamilyAndExecutionStatus,
+    $core.String? citedClauseAndOcrConfidence,
+    $core.String? custodyRetentionAndOfflineCache,
+    $core.String? vaultState,
+    $core.bool? publicGalleryLeakBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (documentCode != null) result.documentCode = documentCode;
+    if (versionFamilyAndExecutionStatus != null)
+      result.versionFamilyAndExecutionStatus = versionFamilyAndExecutionStatus;
+    if (citedClauseAndOcrConfidence != null)
+      result.citedClauseAndOcrConfidence = citedClauseAndOcrConfidence;
+    if (custodyRetentionAndOfflineCache != null)
+      result.custodyRetentionAndOfflineCache = custodyRetentionAndOfflineCache;
+    if (vaultState != null) result.vaultState = vaultState;
+    if (publicGalleryLeakBlocked != null)
+      result.publicGalleryLeakBlocked = publicGalleryLeakBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacySecureDocumentVaultView._();
+
+  factory LegacySecureDocumentVaultView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacySecureDocumentVaultView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacySecureDocumentVaultView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'documentCode')
+    ..aOS(4, _omitFieldNames ? '' : 'versionFamilyAndExecutionStatus')
+    ..aOS(5, _omitFieldNames ? '' : 'citedClauseAndOcrConfidence')
+    ..aOS(6, _omitFieldNames ? '' : 'custodyRetentionAndOfflineCache')
+    ..aOS(7, _omitFieldNames ? '' : 'vaultState')
+    ..aOB(8, _omitFieldNames ? '' : 'publicGalleryLeakBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacySecureDocumentVaultView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacySecureDocumentVaultView copyWith(
+          void Function(LegacySecureDocumentVaultView) updates) =>
+      super.copyWith(
+              (message) => updates(message as LegacySecureDocumentVaultView))
+          as LegacySecureDocumentVaultView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacySecureDocumentVaultView create() =>
+      LegacySecureDocumentVaultView._();
+  @$core.override
+  LegacySecureDocumentVaultView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacySecureDocumentVaultView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacySecureDocumentVaultView>(create);
+  static LegacySecureDocumentVaultView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get documentCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set documentCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDocumentCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDocumentCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get versionFamilyAndExecutionStatus => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set versionFamilyAndExecutionStatus($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVersionFamilyAndExecutionStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVersionFamilyAndExecutionStatus() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get citedClauseAndOcrConfidence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set citedClauseAndOcrConfidence($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCitedClauseAndOcrConfidence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCitedClauseAndOcrConfidence() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get custodyRetentionAndOfflineCache => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set custodyRetentionAndOfflineCache($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCustodyRetentionAndOfflineCache() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCustodyRetentionAndOfflineCache() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get vaultState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set vaultState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasVaultState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVaultState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get publicGalleryLeakBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set publicGalleryLeakBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPublicGalleryLeakBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPublicGalleryLeakBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacySecureDocumentVaultWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetLegacySecureDocumentVaultWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacySecureDocumentVaultWorkbenchRequest._();
+
+  factory GetLegacySecureDocumentVaultWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacySecureDocumentVaultWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacySecureDocumentVaultWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySecureDocumentVaultWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySecureDocumentVaultWorkbenchRequest copyWith(
+          void Function(GetLegacySecureDocumentVaultWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacySecureDocumentVaultWorkbenchRequest))
+          as GetLegacySecureDocumentVaultWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySecureDocumentVaultWorkbenchRequest create() =>
+      GetLegacySecureDocumentVaultWorkbenchRequest._();
+  @$core.override
+  GetLegacySecureDocumentVaultWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySecureDocumentVaultWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacySecureDocumentVaultWorkbenchRequest>(create);
+  static GetLegacySecureDocumentVaultWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacySecureDocumentVaultWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacySecureDocumentVaultWorkbenchResponse({
+    $core.Iterable<LegacySecureDocumentVaultView>? documents,
+    $core.int? provisionalReviewCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (documents != null) result.documents.addAll(documents);
+    if (provisionalReviewCount != null)
+      result.provisionalReviewCount = provisionalReviewCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacySecureDocumentVaultWorkbenchResponse._();
+
+  factory GetLegacySecureDocumentVaultWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacySecureDocumentVaultWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacySecureDocumentVaultWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacySecureDocumentVaultView>(1, _omitFieldNames ? '' : 'documents',
+        subBuilder: LegacySecureDocumentVaultView.create)
+    ..aI(2, _omitFieldNames ? '' : 'provisionalReviewCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySecureDocumentVaultWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySecureDocumentVaultWorkbenchResponse copyWith(
+          void Function(GetLegacySecureDocumentVaultWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacySecureDocumentVaultWorkbenchResponse))
+          as GetLegacySecureDocumentVaultWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySecureDocumentVaultWorkbenchResponse create() =>
+      GetLegacySecureDocumentVaultWorkbenchResponse._();
+  @$core.override
+  GetLegacySecureDocumentVaultWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySecureDocumentVaultWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacySecureDocumentVaultWorkbenchResponse>(create);
+  static GetLegacySecureDocumentVaultWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacySecureDocumentVaultView> get documents => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get provisionalReviewCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set provisionalReviewCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProvisionalReviewCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProvisionalReviewCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacySecureDocumentVaultRequest extends $pb.GeneratedMessage {
+  factory SaveLegacySecureDocumentVaultRequest({
+    $core.String? userId,
+    $core.String? documentCode,
+    $core.String? versionFamilyAndExecutionStatus,
+    $core.String? citedClauseAndOcrConfidence,
+    $core.String? custodyRetentionAndOfflineCache,
+    $core.String? vaultState,
+    $core.bool? publicGalleryLeakBlocked,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (documentCode != null) result.documentCode = documentCode;
+    if (versionFamilyAndExecutionStatus != null)
+      result.versionFamilyAndExecutionStatus = versionFamilyAndExecutionStatus;
+    if (citedClauseAndOcrConfidence != null)
+      result.citedClauseAndOcrConfidence = citedClauseAndOcrConfidence;
+    if (custodyRetentionAndOfflineCache != null)
+      result.custodyRetentionAndOfflineCache = custodyRetentionAndOfflineCache;
+    if (vaultState != null) result.vaultState = vaultState;
+    if (publicGalleryLeakBlocked != null)
+      result.publicGalleryLeakBlocked = publicGalleryLeakBlocked;
+    return result;
+  }
+
+  SaveLegacySecureDocumentVaultRequest._();
+
+  factory SaveLegacySecureDocumentVaultRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacySecureDocumentVaultRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacySecureDocumentVaultRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'documentCode')
+    ..aOS(3, _omitFieldNames ? '' : 'versionFamilyAndExecutionStatus')
+    ..aOS(4, _omitFieldNames ? '' : 'citedClauseAndOcrConfidence')
+    ..aOS(5, _omitFieldNames ? '' : 'custodyRetentionAndOfflineCache')
+    ..aOS(6, _omitFieldNames ? '' : 'vaultState')
+    ..aOB(7, _omitFieldNames ? '' : 'publicGalleryLeakBlocked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySecureDocumentVaultRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySecureDocumentVaultRequest copyWith(
+          void Function(SaveLegacySecureDocumentVaultRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacySecureDocumentVaultRequest))
+          as SaveLegacySecureDocumentVaultRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySecureDocumentVaultRequest create() =>
+      SaveLegacySecureDocumentVaultRequest._();
+  @$core.override
+  SaveLegacySecureDocumentVaultRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySecureDocumentVaultRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacySecureDocumentVaultRequest>(create);
+  static SaveLegacySecureDocumentVaultRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get documentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set documentCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDocumentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocumentCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get versionFamilyAndExecutionStatus => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set versionFamilyAndExecutionStatus($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVersionFamilyAndExecutionStatus() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVersionFamilyAndExecutionStatus() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get citedClauseAndOcrConfidence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set citedClauseAndOcrConfidence($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCitedClauseAndOcrConfidence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCitedClauseAndOcrConfidence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get custodyRetentionAndOfflineCache => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set custodyRetentionAndOfflineCache($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCustodyRetentionAndOfflineCache() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCustodyRetentionAndOfflineCache() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get vaultState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set vaultState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasVaultState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearVaultState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get publicGalleryLeakBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set publicGalleryLeakBlocked($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasPublicGalleryLeakBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPublicGalleryLeakBlocked() => $_clearField(7);
+}
+
+class SaveLegacySecureDocumentVaultResponse extends $pb.GeneratedMessage {
+  factory SaveLegacySecureDocumentVaultResponse({
+    LegacySecureDocumentVaultView? document,
+  }) {
+    final result = create();
+    if (document != null) result.document = document;
+    return result;
+  }
+
+  SaveLegacySecureDocumentVaultResponse._();
+
+  factory SaveLegacySecureDocumentVaultResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacySecureDocumentVaultResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacySecureDocumentVaultResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacySecureDocumentVaultView>(1, _omitFieldNames ? '' : 'document',
+        subBuilder: LegacySecureDocumentVaultView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySecureDocumentVaultResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySecureDocumentVaultResponse copyWith(
+          void Function(SaveLegacySecureDocumentVaultResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacySecureDocumentVaultResponse))
+          as SaveLegacySecureDocumentVaultResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySecureDocumentVaultResponse create() =>
+      SaveLegacySecureDocumentVaultResponse._();
+  @$core.override
+  SaveLegacySecureDocumentVaultResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySecureDocumentVaultResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacySecureDocumentVaultResponse>(create);
+  static SaveLegacySecureDocumentVaultResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacySecureDocumentVaultView get document => $_getN(0);
+  @$pb.TagNumber(1)
+  set document(LegacySecureDocumentVaultView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDocument() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDocument() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacySecureDocumentVaultView ensureDocument() => $_ensure(0);
+}
+
+class LockOrExportLegacyDocumentCustodyRequest extends $pb.GeneratedMessage {
+  factory LockOrExportLegacyDocumentCustodyRequest({
+    $core.String? userId,
+    $core.String? documentCode,
+    $core.String? targetVaultState,
+    $core.String? custodyNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (documentCode != null) result.documentCode = documentCode;
+    if (targetVaultState != null) result.targetVaultState = targetVaultState;
+    if (custodyNotes != null) result.custodyNotes = custodyNotes;
+    return result;
+  }
+
+  LockOrExportLegacyDocumentCustodyRequest._();
+
+  factory LockOrExportLegacyDocumentCustodyRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrExportLegacyDocumentCustodyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrExportLegacyDocumentCustodyRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'documentCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetVaultState')
+    ..aOS(4, _omitFieldNames ? '' : 'custodyNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportLegacyDocumentCustodyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportLegacyDocumentCustodyRequest copyWith(
+          void Function(LockOrExportLegacyDocumentCustodyRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrExportLegacyDocumentCustodyRequest))
+          as LockOrExportLegacyDocumentCustodyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportLegacyDocumentCustodyRequest create() =>
+      LockOrExportLegacyDocumentCustodyRequest._();
+  @$core.override
+  LockOrExportLegacyDocumentCustodyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportLegacyDocumentCustodyRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrExportLegacyDocumentCustodyRequest>(create);
+  static LockOrExportLegacyDocumentCustodyRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get documentCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set documentCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDocumentCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDocumentCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetVaultState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetVaultState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetVaultState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetVaultState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get custodyNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set custodyNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCustodyNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCustodyNotes() => $_clearField(4);
+}
+
+class LockOrExportLegacyDocumentCustodyResponse extends $pb.GeneratedMessage {
+  factory LockOrExportLegacyDocumentCustodyResponse({
+    LegacySecureDocumentVaultView? document,
+    $core.String? custodyStatus,
+  }) {
+    final result = create();
+    if (document != null) result.document = document;
+    if (custodyStatus != null) result.custodyStatus = custodyStatus;
+    return result;
+  }
+
+  LockOrExportLegacyDocumentCustodyResponse._();
+
+  factory LockOrExportLegacyDocumentCustodyResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrExportLegacyDocumentCustodyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrExportLegacyDocumentCustodyResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacySecureDocumentVaultView>(1, _omitFieldNames ? '' : 'document',
+        subBuilder: LegacySecureDocumentVaultView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'custodyStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportLegacyDocumentCustodyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportLegacyDocumentCustodyResponse copyWith(
+          void Function(LockOrExportLegacyDocumentCustodyResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrExportLegacyDocumentCustodyResponse))
+          as LockOrExportLegacyDocumentCustodyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportLegacyDocumentCustodyResponse create() =>
+      LockOrExportLegacyDocumentCustodyResponse._();
+  @$core.override
+  LockOrExportLegacyDocumentCustodyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportLegacyDocumentCustodyResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrExportLegacyDocumentCustodyResponse>(create);
+  static LockOrExportLegacyDocumentCustodyResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacySecureDocumentVaultView get document => $_getN(0);
+  @$pb.TagNumber(1)
+  set document(LegacySecureDocumentVaultView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDocument() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDocument() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacySecureDocumentVaultView ensureDocument() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get custodyStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set custodyStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCustodyStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCustodyStatus() => $_clearField(2);
+}
+
+class LegacyJurisdictionDocumentSystemView extends $pb.GeneratedMessage {
+  factory LegacyJurisdictionDocumentSystemView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? systemCode,
+    $core.String? jurisdictionRulePackAndScope,
+    $core.String? clauseVersionAndAttorneyTrigger,
+    $core.String? executionWitnessAndNotaryChecklist,
+    $core.String? documentState,
+    $core.bool? nonAttorneyImpersonationEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (systemCode != null) result.systemCode = systemCode;
+    if (jurisdictionRulePackAndScope != null)
+      result.jurisdictionRulePackAndScope = jurisdictionRulePackAndScope;
+    if (clauseVersionAndAttorneyTrigger != null)
+      result.clauseVersionAndAttorneyTrigger = clauseVersionAndAttorneyTrigger;
+    if (executionWitnessAndNotaryChecklist != null)
+      result.executionWitnessAndNotaryChecklist =
+          executionWitnessAndNotaryChecklist;
+    if (documentState != null) result.documentState = documentState;
+    if (nonAttorneyImpersonationEnforced != null)
+      result.nonAttorneyImpersonationEnforced =
+          nonAttorneyImpersonationEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyJurisdictionDocumentSystemView._();
+
+  factory LegacyJurisdictionDocumentSystemView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyJurisdictionDocumentSystemView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyJurisdictionDocumentSystemView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'systemCode')
+    ..aOS(4, _omitFieldNames ? '' : 'jurisdictionRulePackAndScope')
+    ..aOS(5, _omitFieldNames ? '' : 'clauseVersionAndAttorneyTrigger')
+    ..aOS(6, _omitFieldNames ? '' : 'executionWitnessAndNotaryChecklist')
+    ..aOS(7, _omitFieldNames ? '' : 'documentState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonAttorneyImpersonationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyJurisdictionDocumentSystemView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyJurisdictionDocumentSystemView copyWith(
+          void Function(LegacyJurisdictionDocumentSystemView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyJurisdictionDocumentSystemView))
+          as LegacyJurisdictionDocumentSystemView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyJurisdictionDocumentSystemView create() =>
+      LegacyJurisdictionDocumentSystemView._();
+  @$core.override
+  LegacyJurisdictionDocumentSystemView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyJurisdictionDocumentSystemView getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LegacyJurisdictionDocumentSystemView>(create);
+  static LegacyJurisdictionDocumentSystemView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get systemCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set systemCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSystemCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSystemCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get jurisdictionRulePackAndScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set jurisdictionRulePackAndScope($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasJurisdictionRulePackAndScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearJurisdictionRulePackAndScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get clauseVersionAndAttorneyTrigger => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set clauseVersionAndAttorneyTrigger($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasClauseVersionAndAttorneyTrigger() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearClauseVersionAndAttorneyTrigger() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get executionWitnessAndNotaryChecklist => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set executionWitnessAndNotaryChecklist($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExecutionWitnessAndNotaryChecklist() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExecutionWitnessAndNotaryChecklist() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get documentState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set documentState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDocumentState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDocumentState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonAttorneyImpersonationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonAttorneyImpersonationEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonAttorneyImpersonationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonAttorneyImpersonationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyJurisdictionDocumentWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetLegacyJurisdictionDocumentWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyJurisdictionDocumentWorkbenchRequest._();
+
+  factory GetLegacyJurisdictionDocumentWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyJurisdictionDocumentWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyJurisdictionDocumentWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyJurisdictionDocumentWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyJurisdictionDocumentWorkbenchRequest copyWith(
+          void Function(GetLegacyJurisdictionDocumentWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyJurisdictionDocumentWorkbenchRequest))
+          as GetLegacyJurisdictionDocumentWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyJurisdictionDocumentWorkbenchRequest create() =>
+      GetLegacyJurisdictionDocumentWorkbenchRequest._();
+  @$core.override
+  GetLegacyJurisdictionDocumentWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyJurisdictionDocumentWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyJurisdictionDocumentWorkbenchRequest>(create);
+  static GetLegacyJurisdictionDocumentWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyJurisdictionDocumentWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacyJurisdictionDocumentWorkbenchResponse({
+    $core.Iterable<LegacyJurisdictionDocumentSystemView>? systems,
+    $core.int? attorneyTriggerCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (systems != null) result.systems.addAll(systems);
+    if (attorneyTriggerCount != null)
+      result.attorneyTriggerCount = attorneyTriggerCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyJurisdictionDocumentWorkbenchResponse._();
+
+  factory GetLegacyJurisdictionDocumentWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyJurisdictionDocumentWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyJurisdictionDocumentWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyJurisdictionDocumentSystemView>(
+        1, _omitFieldNames ? '' : 'systems',
+        subBuilder: LegacyJurisdictionDocumentSystemView.create)
+    ..aI(2, _omitFieldNames ? '' : 'attorneyTriggerCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyJurisdictionDocumentWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyJurisdictionDocumentWorkbenchResponse copyWith(
+          void Function(GetLegacyJurisdictionDocumentWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetLegacyJurisdictionDocumentWorkbenchResponse))
+          as GetLegacyJurisdictionDocumentWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyJurisdictionDocumentWorkbenchResponse create() =>
+      GetLegacyJurisdictionDocumentWorkbenchResponse._();
+  @$core.override
+  GetLegacyJurisdictionDocumentWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyJurisdictionDocumentWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyJurisdictionDocumentWorkbenchResponse>(create);
+  static GetLegacyJurisdictionDocumentWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyJurisdictionDocumentSystemView> get systems => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get attorneyTriggerCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set attorneyTriggerCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAttorneyTriggerCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAttorneyTriggerCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyJurisdictionDocumentSystemRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyJurisdictionDocumentSystemRequest({
+    $core.String? userId,
+    $core.String? systemCode,
+    $core.String? jurisdictionRulePackAndScope,
+    $core.String? clauseVersionAndAttorneyTrigger,
+    $core.String? executionWitnessAndNotaryChecklist,
+    $core.String? documentState,
+    $core.bool? nonAttorneyImpersonationEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (systemCode != null) result.systemCode = systemCode;
+    if (jurisdictionRulePackAndScope != null)
+      result.jurisdictionRulePackAndScope = jurisdictionRulePackAndScope;
+    if (clauseVersionAndAttorneyTrigger != null)
+      result.clauseVersionAndAttorneyTrigger = clauseVersionAndAttorneyTrigger;
+    if (executionWitnessAndNotaryChecklist != null)
+      result.executionWitnessAndNotaryChecklist =
+          executionWitnessAndNotaryChecklist;
+    if (documentState != null) result.documentState = documentState;
+    if (nonAttorneyImpersonationEnforced != null)
+      result.nonAttorneyImpersonationEnforced =
+          nonAttorneyImpersonationEnforced;
+    return result;
+  }
+
+  SaveLegacyJurisdictionDocumentSystemRequest._();
+
+  factory SaveLegacyJurisdictionDocumentSystemRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyJurisdictionDocumentSystemRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyJurisdictionDocumentSystemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'systemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'jurisdictionRulePackAndScope')
+    ..aOS(4, _omitFieldNames ? '' : 'clauseVersionAndAttorneyTrigger')
+    ..aOS(5, _omitFieldNames ? '' : 'executionWitnessAndNotaryChecklist')
+    ..aOS(6, _omitFieldNames ? '' : 'documentState')
+    ..aOB(7, _omitFieldNames ? '' : 'nonAttorneyImpersonationEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyJurisdictionDocumentSystemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyJurisdictionDocumentSystemRequest copyWith(
+          void Function(SaveLegacyJurisdictionDocumentSystemRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyJurisdictionDocumentSystemRequest))
+          as SaveLegacyJurisdictionDocumentSystemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyJurisdictionDocumentSystemRequest create() =>
+      SaveLegacyJurisdictionDocumentSystemRequest._();
+  @$core.override
+  SaveLegacyJurisdictionDocumentSystemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyJurisdictionDocumentSystemRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyJurisdictionDocumentSystemRequest>(create);
+  static SaveLegacyJurisdictionDocumentSystemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get systemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set systemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSystemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get jurisdictionRulePackAndScope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set jurisdictionRulePackAndScope($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasJurisdictionRulePackAndScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearJurisdictionRulePackAndScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clauseVersionAndAttorneyTrigger => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clauseVersionAndAttorneyTrigger($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClauseVersionAndAttorneyTrigger() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClauseVersionAndAttorneyTrigger() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get executionWitnessAndNotaryChecklist => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set executionWitnessAndNotaryChecklist($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasExecutionWitnessAndNotaryChecklist() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExecutionWitnessAndNotaryChecklist() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get documentState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set documentState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDocumentState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDocumentState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get nonAttorneyImpersonationEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set nonAttorneyImpersonationEnforced($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNonAttorneyImpersonationEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNonAttorneyImpersonationEnforced() => $_clearField(7);
+}
+
+class SaveLegacyJurisdictionDocumentSystemResponse
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyJurisdictionDocumentSystemResponse({
+    LegacyJurisdictionDocumentSystemView? system,
+  }) {
+    final result = create();
+    if (system != null) result.system = system;
+    return result;
+  }
+
+  SaveLegacyJurisdictionDocumentSystemResponse._();
+
+  factory SaveLegacyJurisdictionDocumentSystemResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyJurisdictionDocumentSystemResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyJurisdictionDocumentSystemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyJurisdictionDocumentSystemView>(
+        1, _omitFieldNames ? '' : 'system',
+        subBuilder: LegacyJurisdictionDocumentSystemView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyJurisdictionDocumentSystemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyJurisdictionDocumentSystemResponse copyWith(
+          void Function(SaveLegacyJurisdictionDocumentSystemResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyJurisdictionDocumentSystemResponse))
+          as SaveLegacyJurisdictionDocumentSystemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyJurisdictionDocumentSystemResponse create() =>
+      SaveLegacyJurisdictionDocumentSystemResponse._();
+  @$core.override
+  SaveLegacyJurisdictionDocumentSystemResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyJurisdictionDocumentSystemResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyJurisdictionDocumentSystemResponse>(create);
+  static SaveLegacyJurisdictionDocumentSystemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyJurisdictionDocumentSystemView get system => $_getN(0);
+  @$pb.TagNumber(1)
+  set system(LegacyJurisdictionDocumentSystemView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSystem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSystem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyJurisdictionDocumentSystemView ensureSystem() => $_ensure(0);
+}
+
+class TriggerLegacyCounselReviewOrLockExecutionRequest
+    extends $pb.GeneratedMessage {
+  factory TriggerLegacyCounselReviewOrLockExecutionRequest({
+    $core.String? userId,
+    $core.String? systemCode,
+    $core.String? targetDocumentState,
+    $core.String? executionNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (systemCode != null) result.systemCode = systemCode;
+    if (targetDocumentState != null)
+      result.targetDocumentState = targetDocumentState;
+    if (executionNotes != null) result.executionNotes = executionNotes;
+    return result;
+  }
+
+  TriggerLegacyCounselReviewOrLockExecutionRequest._();
+
+  factory TriggerLegacyCounselReviewOrLockExecutionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerLegacyCounselReviewOrLockExecutionRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'TriggerLegacyCounselReviewOrLockExecutionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'systemCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetDocumentState')
+    ..aOS(4, _omitFieldNames ? '' : 'executionNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerLegacyCounselReviewOrLockExecutionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerLegacyCounselReviewOrLockExecutionRequest copyWith(
+          void Function(TriggerLegacyCounselReviewOrLockExecutionRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as TriggerLegacyCounselReviewOrLockExecutionRequest))
+          as TriggerLegacyCounselReviewOrLockExecutionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerLegacyCounselReviewOrLockExecutionRequest create() =>
+      TriggerLegacyCounselReviewOrLockExecutionRequest._();
+  @$core.override
+  TriggerLegacyCounselReviewOrLockExecutionRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerLegacyCounselReviewOrLockExecutionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerLegacyCounselReviewOrLockExecutionRequest>(create);
+  static TriggerLegacyCounselReviewOrLockExecutionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get systemCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set systemCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSystemCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetDocumentState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetDocumentState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetDocumentState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetDocumentState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get executionNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set executionNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExecutionNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExecutionNotes() => $_clearField(4);
+}
+
+class TriggerLegacyCounselReviewOrLockExecutionResponse
+    extends $pb.GeneratedMessage {
+  factory TriggerLegacyCounselReviewOrLockExecutionResponse({
+    LegacyJurisdictionDocumentSystemView? system,
+    $core.String? executionStatus,
+  }) {
+    final result = create();
+    if (system != null) result.system = system;
+    if (executionStatus != null) result.executionStatus = executionStatus;
+    return result;
+  }
+
+  TriggerLegacyCounselReviewOrLockExecutionResponse._();
+
+  factory TriggerLegacyCounselReviewOrLockExecutionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TriggerLegacyCounselReviewOrLockExecutionResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'TriggerLegacyCounselReviewOrLockExecutionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyJurisdictionDocumentSystemView>(
+        1, _omitFieldNames ? '' : 'system',
+        subBuilder: LegacyJurisdictionDocumentSystemView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'executionStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerLegacyCounselReviewOrLockExecutionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  TriggerLegacyCounselReviewOrLockExecutionResponse copyWith(
+          void Function(TriggerLegacyCounselReviewOrLockExecutionResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as TriggerLegacyCounselReviewOrLockExecutionResponse))
+          as TriggerLegacyCounselReviewOrLockExecutionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static TriggerLegacyCounselReviewOrLockExecutionResponse create() =>
+      TriggerLegacyCounselReviewOrLockExecutionResponse._();
+  @$core.override
+  TriggerLegacyCounselReviewOrLockExecutionResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static TriggerLegacyCounselReviewOrLockExecutionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          TriggerLegacyCounselReviewOrLockExecutionResponse>(create);
+  static TriggerLegacyCounselReviewOrLockExecutionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyJurisdictionDocumentSystemView get system => $_getN(0);
+  @$pb.TagNumber(1)
+  set system(LegacyJurisdictionDocumentSystemView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSystem() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSystem() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyJurisdictionDocumentSystemView ensureSystem() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get executionStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set executionStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExecutionStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExecutionStatus() => $_clearField(2);
+}
+
+class LegacyHouseholdBusinessContinuityView extends $pb.GeneratedMessage {
+  factory LegacyHouseholdBusinessContinuityView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? continuityCode,
+    $core.String? rolePlaybookAndFirstWeekGuide,
+    $core.String? authorityMatrixAndSignatoryLimits,
+    $core.String? offlineEmergencyCardAndDrillLog,
+    $core.String? continuityState,
+    $core.bool? fullVaultUnscopedLeakBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (continuityCode != null) result.continuityCode = continuityCode;
+    if (rolePlaybookAndFirstWeekGuide != null)
+      result.rolePlaybookAndFirstWeekGuide = rolePlaybookAndFirstWeekGuide;
+    if (authorityMatrixAndSignatoryLimits != null)
+      result.authorityMatrixAndSignatoryLimits =
+          authorityMatrixAndSignatoryLimits;
+    if (offlineEmergencyCardAndDrillLog != null)
+      result.offlineEmergencyCardAndDrillLog = offlineEmergencyCardAndDrillLog;
+    if (continuityState != null) result.continuityState = continuityState;
+    if (fullVaultUnscopedLeakBlocked != null)
+      result.fullVaultUnscopedLeakBlocked = fullVaultUnscopedLeakBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyHouseholdBusinessContinuityView._();
+
+  factory LegacyHouseholdBusinessContinuityView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyHouseholdBusinessContinuityView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyHouseholdBusinessContinuityView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'continuityCode')
+    ..aOS(4, _omitFieldNames ? '' : 'rolePlaybookAndFirstWeekGuide')
+    ..aOS(5, _omitFieldNames ? '' : 'authorityMatrixAndSignatoryLimits')
+    ..aOS(6, _omitFieldNames ? '' : 'offlineEmergencyCardAndDrillLog')
+    ..aOS(7, _omitFieldNames ? '' : 'continuityState')
+    ..aOB(8, _omitFieldNames ? '' : 'fullVaultUnscopedLeakBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyHouseholdBusinessContinuityView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyHouseholdBusinessContinuityView copyWith(
+          void Function(LegacyHouseholdBusinessContinuityView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyHouseholdBusinessContinuityView))
+          as LegacyHouseholdBusinessContinuityView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyHouseholdBusinessContinuityView create() =>
+      LegacyHouseholdBusinessContinuityView._();
+  @$core.override
+  LegacyHouseholdBusinessContinuityView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyHouseholdBusinessContinuityView getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LegacyHouseholdBusinessContinuityView>(create);
+  static LegacyHouseholdBusinessContinuityView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get continuityCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set continuityCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasContinuityCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearContinuityCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get rolePlaybookAndFirstWeekGuide => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set rolePlaybookAndFirstWeekGuide($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRolePlaybookAndFirstWeekGuide() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRolePlaybookAndFirstWeekGuide() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get authorityMatrixAndSignatoryLimits => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set authorityMatrixAndSignatoryLimits($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAuthorityMatrixAndSignatoryLimits() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAuthorityMatrixAndSignatoryLimits() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get offlineEmergencyCardAndDrillLog => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set offlineEmergencyCardAndDrillLog($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOfflineEmergencyCardAndDrillLog() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOfflineEmergencyCardAndDrillLog() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get continuityState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set continuityState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasContinuityState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearContinuityState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get fullVaultUnscopedLeakBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set fullVaultUnscopedLeakBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFullVaultUnscopedLeakBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFullVaultUnscopedLeakBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyContinuityPlaybookWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyContinuityPlaybookWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyContinuityPlaybookWorkbenchRequest._();
+
+  factory GetLegacyContinuityPlaybookWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyContinuityPlaybookWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyContinuityPlaybookWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyContinuityPlaybookWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyContinuityPlaybookWorkbenchRequest copyWith(
+          void Function(GetLegacyContinuityPlaybookWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyContinuityPlaybookWorkbenchRequest))
+          as GetLegacyContinuityPlaybookWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyContinuityPlaybookWorkbenchRequest create() =>
+      GetLegacyContinuityPlaybookWorkbenchRequest._();
+  @$core.override
+  GetLegacyContinuityPlaybookWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyContinuityPlaybookWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyContinuityPlaybookWorkbenchRequest>(create);
+  static GetLegacyContinuityPlaybookWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyContinuityPlaybookWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacyContinuityPlaybookWorkbenchResponse({
+    $core.Iterable<LegacyHouseholdBusinessContinuityView>? playbooks,
+    $core.int? refreshDueCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (playbooks != null) result.playbooks.addAll(playbooks);
+    if (refreshDueCount != null) result.refreshDueCount = refreshDueCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyContinuityPlaybookWorkbenchResponse._();
+
+  factory GetLegacyContinuityPlaybookWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyContinuityPlaybookWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyContinuityPlaybookWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyHouseholdBusinessContinuityView>(
+        1, _omitFieldNames ? '' : 'playbooks',
+        subBuilder: LegacyHouseholdBusinessContinuityView.create)
+    ..aI(2, _omitFieldNames ? '' : 'refreshDueCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyContinuityPlaybookWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyContinuityPlaybookWorkbenchResponse copyWith(
+          void Function(GetLegacyContinuityPlaybookWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyContinuityPlaybookWorkbenchResponse))
+          as GetLegacyContinuityPlaybookWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyContinuityPlaybookWorkbenchResponse create() =>
+      GetLegacyContinuityPlaybookWorkbenchResponse._();
+  @$core.override
+  GetLegacyContinuityPlaybookWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyContinuityPlaybookWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyContinuityPlaybookWorkbenchResponse>(create);
+  static GetLegacyContinuityPlaybookWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyHouseholdBusinessContinuityView> get playbooks =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get refreshDueCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set refreshDueCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRefreshDueCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRefreshDueCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyHouseholdBusinessContinuityRequest
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyHouseholdBusinessContinuityRequest({
+    $core.String? userId,
+    $core.String? continuityCode,
+    $core.String? rolePlaybookAndFirstWeekGuide,
+    $core.String? authorityMatrixAndSignatoryLimits,
+    $core.String? offlineEmergencyCardAndDrillLog,
+    $core.String? continuityState,
+    $core.bool? fullVaultUnscopedLeakBlocked,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (continuityCode != null) result.continuityCode = continuityCode;
+    if (rolePlaybookAndFirstWeekGuide != null)
+      result.rolePlaybookAndFirstWeekGuide = rolePlaybookAndFirstWeekGuide;
+    if (authorityMatrixAndSignatoryLimits != null)
+      result.authorityMatrixAndSignatoryLimits =
+          authorityMatrixAndSignatoryLimits;
+    if (offlineEmergencyCardAndDrillLog != null)
+      result.offlineEmergencyCardAndDrillLog = offlineEmergencyCardAndDrillLog;
+    if (continuityState != null) result.continuityState = continuityState;
+    if (fullVaultUnscopedLeakBlocked != null)
+      result.fullVaultUnscopedLeakBlocked = fullVaultUnscopedLeakBlocked;
+    return result;
+  }
+
+  SaveLegacyHouseholdBusinessContinuityRequest._();
+
+  factory SaveLegacyHouseholdBusinessContinuityRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyHouseholdBusinessContinuityRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyHouseholdBusinessContinuityRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'continuityCode')
+    ..aOS(3, _omitFieldNames ? '' : 'rolePlaybookAndFirstWeekGuide')
+    ..aOS(4, _omitFieldNames ? '' : 'authorityMatrixAndSignatoryLimits')
+    ..aOS(5, _omitFieldNames ? '' : 'offlineEmergencyCardAndDrillLog')
+    ..aOS(6, _omitFieldNames ? '' : 'continuityState')
+    ..aOB(7, _omitFieldNames ? '' : 'fullVaultUnscopedLeakBlocked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHouseholdBusinessContinuityRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHouseholdBusinessContinuityRequest copyWith(
+          void Function(SaveLegacyHouseholdBusinessContinuityRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyHouseholdBusinessContinuityRequest))
+          as SaveLegacyHouseholdBusinessContinuityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHouseholdBusinessContinuityRequest create() =>
+      SaveLegacyHouseholdBusinessContinuityRequest._();
+  @$core.override
+  SaveLegacyHouseholdBusinessContinuityRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHouseholdBusinessContinuityRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyHouseholdBusinessContinuityRequest>(create);
+  static SaveLegacyHouseholdBusinessContinuityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get continuityCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set continuityCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContinuityCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContinuityCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get rolePlaybookAndFirstWeekGuide => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set rolePlaybookAndFirstWeekGuide($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRolePlaybookAndFirstWeekGuide() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRolePlaybookAndFirstWeekGuide() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get authorityMatrixAndSignatoryLimits => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set authorityMatrixAndSignatoryLimits($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAuthorityMatrixAndSignatoryLimits() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthorityMatrixAndSignatoryLimits() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get offlineEmergencyCardAndDrillLog => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set offlineEmergencyCardAndDrillLog($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOfflineEmergencyCardAndDrillLog() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOfflineEmergencyCardAndDrillLog() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get continuityState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set continuityState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasContinuityState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearContinuityState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get fullVaultUnscopedLeakBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set fullVaultUnscopedLeakBlocked($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasFullVaultUnscopedLeakBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFullVaultUnscopedLeakBlocked() => $_clearField(7);
+}
+
+class SaveLegacyHouseholdBusinessContinuityResponse
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyHouseholdBusinessContinuityResponse({
+    LegacyHouseholdBusinessContinuityView? playbook,
+  }) {
+    final result = create();
+    if (playbook != null) result.playbook = playbook;
+    return result;
+  }
+
+  SaveLegacyHouseholdBusinessContinuityResponse._();
+
+  factory SaveLegacyHouseholdBusinessContinuityResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyHouseholdBusinessContinuityResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyHouseholdBusinessContinuityResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyHouseholdBusinessContinuityView>(
+        1, _omitFieldNames ? '' : 'playbook',
+        subBuilder: LegacyHouseholdBusinessContinuityView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHouseholdBusinessContinuityResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHouseholdBusinessContinuityResponse copyWith(
+          void Function(SaveLegacyHouseholdBusinessContinuityResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyHouseholdBusinessContinuityResponse))
+          as SaveLegacyHouseholdBusinessContinuityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHouseholdBusinessContinuityResponse create() =>
+      SaveLegacyHouseholdBusinessContinuityResponse._();
+  @$core.override
+  SaveLegacyHouseholdBusinessContinuityResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHouseholdBusinessContinuityResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyHouseholdBusinessContinuityResponse>(create);
+  static SaveLegacyHouseholdBusinessContinuityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyHouseholdBusinessContinuityView get playbook => $_getN(0);
+  @$pb.TagNumber(1)
+  set playbook(LegacyHouseholdBusinessContinuityView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlaybook() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlaybook() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyHouseholdBusinessContinuityView ensurePlaybook() => $_ensure(0);
+}
+
+class RunLegacyContinuityDrillOrStageDelegationRequest
+    extends $pb.GeneratedMessage {
+  factory RunLegacyContinuityDrillOrStageDelegationRequest({
+    $core.String? userId,
+    $core.String? continuityCode,
+    $core.String? targetContinuityState,
+    $core.String? drillNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (continuityCode != null) result.continuityCode = continuityCode;
+    if (targetContinuityState != null)
+      result.targetContinuityState = targetContinuityState;
+    if (drillNotes != null) result.drillNotes = drillNotes;
+    return result;
+  }
+
+  RunLegacyContinuityDrillOrStageDelegationRequest._();
+
+  factory RunLegacyContinuityDrillOrStageDelegationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunLegacyContinuityDrillOrStageDelegationRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RunLegacyContinuityDrillOrStageDelegationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'continuityCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetContinuityState')
+    ..aOS(4, _omitFieldNames ? '' : 'drillNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyContinuityDrillOrStageDelegationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyContinuityDrillOrStageDelegationRequest copyWith(
+          void Function(RunLegacyContinuityDrillOrStageDelegationRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RunLegacyContinuityDrillOrStageDelegationRequest))
+          as RunLegacyContinuityDrillOrStageDelegationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyContinuityDrillOrStageDelegationRequest create() =>
+      RunLegacyContinuityDrillOrStageDelegationRequest._();
+  @$core.override
+  RunLegacyContinuityDrillOrStageDelegationRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyContinuityDrillOrStageDelegationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunLegacyContinuityDrillOrStageDelegationRequest>(create);
+  static RunLegacyContinuityDrillOrStageDelegationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get continuityCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set continuityCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContinuityCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContinuityCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetContinuityState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetContinuityState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetContinuityState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetContinuityState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get drillNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set drillNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDrillNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDrillNotes() => $_clearField(4);
+}
+
+class RunLegacyContinuityDrillOrStageDelegationResponse
+    extends $pb.GeneratedMessage {
+  factory RunLegacyContinuityDrillOrStageDelegationResponse({
+    LegacyHouseholdBusinessContinuityView? playbook,
+    $core.String? drillStatus,
+  }) {
+    final result = create();
+    if (playbook != null) result.playbook = playbook;
+    if (drillStatus != null) result.drillStatus = drillStatus;
+    return result;
+  }
+
+  RunLegacyContinuityDrillOrStageDelegationResponse._();
+
+  factory RunLegacyContinuityDrillOrStageDelegationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunLegacyContinuityDrillOrStageDelegationResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RunLegacyContinuityDrillOrStageDelegationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyHouseholdBusinessContinuityView>(
+        1, _omitFieldNames ? '' : 'playbook',
+        subBuilder: LegacyHouseholdBusinessContinuityView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'drillStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyContinuityDrillOrStageDelegationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyContinuityDrillOrStageDelegationResponse copyWith(
+          void Function(RunLegacyContinuityDrillOrStageDelegationResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RunLegacyContinuityDrillOrStageDelegationResponse))
+          as RunLegacyContinuityDrillOrStageDelegationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyContinuityDrillOrStageDelegationResponse create() =>
+      RunLegacyContinuityDrillOrStageDelegationResponse._();
+  @$core.override
+  RunLegacyContinuityDrillOrStageDelegationResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyContinuityDrillOrStageDelegationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunLegacyContinuityDrillOrStageDelegationResponse>(create);
+  static RunLegacyContinuityDrillOrStageDelegationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyHouseholdBusinessContinuityView get playbook => $_getN(0);
+  @$pb.TagNumber(1)
+  set playbook(LegacyHouseholdBusinessContinuityView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPlaybook() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPlaybook() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyHouseholdBusinessContinuityView ensurePlaybook() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get drillStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set drillStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDrillStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDrillStatus() => $_clearField(2);
+}
+
+class LegacyIncapacityDeadmanProtocolView extends $pb.GeneratedMessage {
+  factory LegacyIncapacityDeadmanProtocolView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? protocolCode,
+    $core.String? workflowBranchAndWaitingClocks,
+    $core.String? multiPartyThresholdAndEvidence,
+    $core.String? stagedWatermarkedReleaseBundle,
+    $core.String? protocolState,
+    $core.bool? singleActorReleaseBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (workflowBranchAndWaitingClocks != null)
+      result.workflowBranchAndWaitingClocks = workflowBranchAndWaitingClocks;
+    if (multiPartyThresholdAndEvidence != null)
+      result.multiPartyThresholdAndEvidence = multiPartyThresholdAndEvidence;
+    if (stagedWatermarkedReleaseBundle != null)
+      result.stagedWatermarkedReleaseBundle = stagedWatermarkedReleaseBundle;
+    if (protocolState != null) result.protocolState = protocolState;
+    if (singleActorReleaseBlocked != null)
+      result.singleActorReleaseBlocked = singleActorReleaseBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyIncapacityDeadmanProtocolView._();
+
+  factory LegacyIncapacityDeadmanProtocolView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyIncapacityDeadmanProtocolView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyIncapacityDeadmanProtocolView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(4, _omitFieldNames ? '' : 'workflowBranchAndWaitingClocks')
+    ..aOS(5, _omitFieldNames ? '' : 'multiPartyThresholdAndEvidence')
+    ..aOS(6, _omitFieldNames ? '' : 'stagedWatermarkedReleaseBundle')
+    ..aOS(7, _omitFieldNames ? '' : 'protocolState')
+    ..aOB(8, _omitFieldNames ? '' : 'singleActorReleaseBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyIncapacityDeadmanProtocolView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyIncapacityDeadmanProtocolView copyWith(
+          void Function(LegacyIncapacityDeadmanProtocolView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyIncapacityDeadmanProtocolView))
+          as LegacyIncapacityDeadmanProtocolView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyIncapacityDeadmanProtocolView create() =>
+      LegacyIncapacityDeadmanProtocolView._();
+  @$core.override
+  LegacyIncapacityDeadmanProtocolView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyIncapacityDeadmanProtocolView getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LegacyIncapacityDeadmanProtocolView>(create);
+  static LegacyIncapacityDeadmanProtocolView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get protocolCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set protocolCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProtocolCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProtocolCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get workflowBranchAndWaitingClocks => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set workflowBranchAndWaitingClocks($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWorkflowBranchAndWaitingClocks() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWorkflowBranchAndWaitingClocks() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get multiPartyThresholdAndEvidence => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set multiPartyThresholdAndEvidence($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasMultiPartyThresholdAndEvidence() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMultiPartyThresholdAndEvidence() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get stagedWatermarkedReleaseBundle => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set stagedWatermarkedReleaseBundle($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasStagedWatermarkedReleaseBundle() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearStagedWatermarkedReleaseBundle() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get protocolState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set protocolState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProtocolState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProtocolState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get singleActorReleaseBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set singleActorReleaseBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSingleActorReleaseBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSingleActorReleaseBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyIncapacityDeadmanWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyIncapacityDeadmanWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyIncapacityDeadmanWorkbenchRequest._();
+
+  factory GetLegacyIncapacityDeadmanWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyIncapacityDeadmanWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyIncapacityDeadmanWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyIncapacityDeadmanWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyIncapacityDeadmanWorkbenchRequest copyWith(
+          void Function(GetLegacyIncapacityDeadmanWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyIncapacityDeadmanWorkbenchRequest))
+          as GetLegacyIncapacityDeadmanWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyIncapacityDeadmanWorkbenchRequest create() =>
+      GetLegacyIncapacityDeadmanWorkbenchRequest._();
+  @$core.override
+  GetLegacyIncapacityDeadmanWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyIncapacityDeadmanWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyIncapacityDeadmanWorkbenchRequest>(create);
+  static GetLegacyIncapacityDeadmanWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyIncapacityDeadmanWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyIncapacityDeadmanWorkbenchResponse({
+    $core.Iterable<LegacyIncapacityDeadmanProtocolView>? protocols,
+    $core.int? activeGraceWindowCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (protocols != null) result.protocols.addAll(protocols);
+    if (activeGraceWindowCount != null)
+      result.activeGraceWindowCount = activeGraceWindowCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyIncapacityDeadmanWorkbenchResponse._();
+
+  factory GetLegacyIncapacityDeadmanWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyIncapacityDeadmanWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyIncapacityDeadmanWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyIncapacityDeadmanProtocolView>(
+        1, _omitFieldNames ? '' : 'protocols',
+        subBuilder: LegacyIncapacityDeadmanProtocolView.create)
+    ..aI(2, _omitFieldNames ? '' : 'activeGraceWindowCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyIncapacityDeadmanWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyIncapacityDeadmanWorkbenchResponse copyWith(
+          void Function(GetLegacyIncapacityDeadmanWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyIncapacityDeadmanWorkbenchResponse))
+          as GetLegacyIncapacityDeadmanWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyIncapacityDeadmanWorkbenchResponse create() =>
+      GetLegacyIncapacityDeadmanWorkbenchResponse._();
+  @$core.override
+  GetLegacyIncapacityDeadmanWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyIncapacityDeadmanWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyIncapacityDeadmanWorkbenchResponse>(create);
+  static GetLegacyIncapacityDeadmanWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyIncapacityDeadmanProtocolView> get protocols => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get activeGraceWindowCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set activeGraceWindowCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasActiveGraceWindowCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearActiveGraceWindowCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyIncapacityDeadmanProtocolRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyIncapacityDeadmanProtocolRequest({
+    $core.String? userId,
+    $core.String? protocolCode,
+    $core.String? workflowBranchAndWaitingClocks,
+    $core.String? multiPartyThresholdAndEvidence,
+    $core.String? stagedWatermarkedReleaseBundle,
+    $core.String? protocolState,
+    $core.bool? singleActorReleaseBlocked,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (workflowBranchAndWaitingClocks != null)
+      result.workflowBranchAndWaitingClocks = workflowBranchAndWaitingClocks;
+    if (multiPartyThresholdAndEvidence != null)
+      result.multiPartyThresholdAndEvidence = multiPartyThresholdAndEvidence;
+    if (stagedWatermarkedReleaseBundle != null)
+      result.stagedWatermarkedReleaseBundle = stagedWatermarkedReleaseBundle;
+    if (protocolState != null) result.protocolState = protocolState;
+    if (singleActorReleaseBlocked != null)
+      result.singleActorReleaseBlocked = singleActorReleaseBlocked;
+    return result;
+  }
+
+  SaveLegacyIncapacityDeadmanProtocolRequest._();
+
+  factory SaveLegacyIncapacityDeadmanProtocolRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyIncapacityDeadmanProtocolRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyIncapacityDeadmanProtocolRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(3, _omitFieldNames ? '' : 'workflowBranchAndWaitingClocks')
+    ..aOS(4, _omitFieldNames ? '' : 'multiPartyThresholdAndEvidence')
+    ..aOS(5, _omitFieldNames ? '' : 'stagedWatermarkedReleaseBundle')
+    ..aOS(6, _omitFieldNames ? '' : 'protocolState')
+    ..aOB(7, _omitFieldNames ? '' : 'singleActorReleaseBlocked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyIncapacityDeadmanProtocolRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyIncapacityDeadmanProtocolRequest copyWith(
+          void Function(SaveLegacyIncapacityDeadmanProtocolRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyIncapacityDeadmanProtocolRequest))
+          as SaveLegacyIncapacityDeadmanProtocolRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyIncapacityDeadmanProtocolRequest create() =>
+      SaveLegacyIncapacityDeadmanProtocolRequest._();
+  @$core.override
+  SaveLegacyIncapacityDeadmanProtocolRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyIncapacityDeadmanProtocolRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyIncapacityDeadmanProtocolRequest>(create);
+  static SaveLegacyIncapacityDeadmanProtocolRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get protocolCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set protocolCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProtocolCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProtocolCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workflowBranchAndWaitingClocks => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workflowBranchAndWaitingClocks($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkflowBranchAndWaitingClocks() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkflowBranchAndWaitingClocks() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get multiPartyThresholdAndEvidence => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set multiPartyThresholdAndEvidence($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMultiPartyThresholdAndEvidence() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMultiPartyThresholdAndEvidence() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get stagedWatermarkedReleaseBundle => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set stagedWatermarkedReleaseBundle($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasStagedWatermarkedReleaseBundle() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStagedWatermarkedReleaseBundle() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get protocolState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set protocolState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProtocolState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProtocolState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get singleActorReleaseBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set singleActorReleaseBlocked($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSingleActorReleaseBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSingleActorReleaseBlocked() => $_clearField(7);
+}
+
+class SaveLegacyIncapacityDeadmanProtocolResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyIncapacityDeadmanProtocolResponse({
+    LegacyIncapacityDeadmanProtocolView? protocol,
+  }) {
+    final result = create();
+    if (protocol != null) result.protocol = protocol;
+    return result;
+  }
+
+  SaveLegacyIncapacityDeadmanProtocolResponse._();
+
+  factory SaveLegacyIncapacityDeadmanProtocolResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyIncapacityDeadmanProtocolResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyIncapacityDeadmanProtocolResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyIncapacityDeadmanProtocolView>(
+        1, _omitFieldNames ? '' : 'protocol',
+        subBuilder: LegacyIncapacityDeadmanProtocolView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyIncapacityDeadmanProtocolResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyIncapacityDeadmanProtocolResponse copyWith(
+          void Function(SaveLegacyIncapacityDeadmanProtocolResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyIncapacityDeadmanProtocolResponse))
+          as SaveLegacyIncapacityDeadmanProtocolResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyIncapacityDeadmanProtocolResponse create() =>
+      SaveLegacyIncapacityDeadmanProtocolResponse._();
+  @$core.override
+  SaveLegacyIncapacityDeadmanProtocolResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyIncapacityDeadmanProtocolResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyIncapacityDeadmanProtocolResponse>(create);
+  static SaveLegacyIncapacityDeadmanProtocolResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyIncapacityDeadmanProtocolView get protocol => $_getN(0);
+  @$pb.TagNumber(1)
+  set protocol(LegacyIncapacityDeadmanProtocolView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocol() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyIncapacityDeadmanProtocolView ensureProtocol() => $_ensure(0);
+}
+
+class SimulateOrCancelLegacyDeadmanReleaseRequest extends $pb.GeneratedMessage {
+  factory SimulateOrCancelLegacyDeadmanReleaseRequest({
+    $core.String? userId,
+    $core.String? protocolCode,
+    $core.String? targetProtocolState,
+    $core.String? protocolNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (protocolCode != null) result.protocolCode = protocolCode;
+    if (targetProtocolState != null)
+      result.targetProtocolState = targetProtocolState;
+    if (protocolNotes != null) result.protocolNotes = protocolNotes;
+    return result;
+  }
+
+  SimulateOrCancelLegacyDeadmanReleaseRequest._();
+
+  factory SimulateOrCancelLegacyDeadmanReleaseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateOrCancelLegacyDeadmanReleaseRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateOrCancelLegacyDeadmanReleaseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'protocolCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetProtocolState')
+    ..aOS(4, _omitFieldNames ? '' : 'protocolNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrCancelLegacyDeadmanReleaseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrCancelLegacyDeadmanReleaseRequest copyWith(
+          void Function(SimulateOrCancelLegacyDeadmanReleaseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SimulateOrCancelLegacyDeadmanReleaseRequest))
+          as SimulateOrCancelLegacyDeadmanReleaseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrCancelLegacyDeadmanReleaseRequest create() =>
+      SimulateOrCancelLegacyDeadmanReleaseRequest._();
+  @$core.override
+  SimulateOrCancelLegacyDeadmanReleaseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrCancelLegacyDeadmanReleaseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SimulateOrCancelLegacyDeadmanReleaseRequest>(create);
+  static SimulateOrCancelLegacyDeadmanReleaseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get protocolCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set protocolCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProtocolCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProtocolCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetProtocolState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetProtocolState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetProtocolState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetProtocolState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get protocolNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set protocolNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProtocolNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProtocolNotes() => $_clearField(4);
+}
+
+class SimulateOrCancelLegacyDeadmanReleaseResponse
+    extends $pb.GeneratedMessage {
+  factory SimulateOrCancelLegacyDeadmanReleaseResponse({
+    LegacyIncapacityDeadmanProtocolView? protocol,
+    $core.String? protocolStatus,
+  }) {
+    final result = create();
+    if (protocol != null) result.protocol = protocol;
+    if (protocolStatus != null) result.protocolStatus = protocolStatus;
+    return result;
+  }
+
+  SimulateOrCancelLegacyDeadmanReleaseResponse._();
+
+  factory SimulateOrCancelLegacyDeadmanReleaseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateOrCancelLegacyDeadmanReleaseResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateOrCancelLegacyDeadmanReleaseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyIncapacityDeadmanProtocolView>(
+        1, _omitFieldNames ? '' : 'protocol',
+        subBuilder: LegacyIncapacityDeadmanProtocolView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'protocolStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrCancelLegacyDeadmanReleaseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrCancelLegacyDeadmanReleaseResponse copyWith(
+          void Function(SimulateOrCancelLegacyDeadmanReleaseResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SimulateOrCancelLegacyDeadmanReleaseResponse))
+          as SimulateOrCancelLegacyDeadmanReleaseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrCancelLegacyDeadmanReleaseResponse create() =>
+      SimulateOrCancelLegacyDeadmanReleaseResponse._();
+  @$core.override
+  SimulateOrCancelLegacyDeadmanReleaseResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrCancelLegacyDeadmanReleaseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SimulateOrCancelLegacyDeadmanReleaseResponse>(create);
+  static SimulateOrCancelLegacyDeadmanReleaseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyIncapacityDeadmanProtocolView get protocol => $_getN(0);
+  @$pb.TagNumber(1)
+  set protocol(LegacyIncapacityDeadmanProtocolView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProtocol() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProtocol() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyIncapacityDeadmanProtocolView ensureProtocol() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get protocolStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set protocolStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasProtocolStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearProtocolStatus() => $_clearField(2);
+}
+
+class LegacyExecutorTrusteeWorkspaceView extends $pb.GeneratedMessage {
+  factory LegacyExecutorTrusteeWorkspaceView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? workspaceCode,
+    $core.String? executorAuthorityAndJurisdiction,
+    $core.String? settlementTaskAndClaimTimeline,
+    $core.String? partitionedBeneficiaryPortalSummary,
+    $core.String? workspaceState,
+    $core.bool? unrelatedBeneficiaryIsolationEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (executorAuthorityAndJurisdiction != null)
+      result.executorAuthorityAndJurisdiction =
+          executorAuthorityAndJurisdiction;
+    if (settlementTaskAndClaimTimeline != null)
+      result.settlementTaskAndClaimTimeline = settlementTaskAndClaimTimeline;
+    if (partitionedBeneficiaryPortalSummary != null)
+      result.partitionedBeneficiaryPortalSummary =
+          partitionedBeneficiaryPortalSummary;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (unrelatedBeneficiaryIsolationEnforced != null)
+      result.unrelatedBeneficiaryIsolationEnforced =
+          unrelatedBeneficiaryIsolationEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyExecutorTrusteeWorkspaceView._();
+
+  factory LegacyExecutorTrusteeWorkspaceView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyExecutorTrusteeWorkspaceView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyExecutorTrusteeWorkspaceView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'executorAuthorityAndJurisdiction')
+    ..aOS(5, _omitFieldNames ? '' : 'settlementTaskAndClaimTimeline')
+    ..aOS(6, _omitFieldNames ? '' : 'partitionedBeneficiaryPortalSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'workspaceState')
+    ..aOB(8, _omitFieldNames ? '' : 'unrelatedBeneficiaryIsolationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyExecutorTrusteeWorkspaceView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyExecutorTrusteeWorkspaceView copyWith(
+          void Function(LegacyExecutorTrusteeWorkspaceView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyExecutorTrusteeWorkspaceView))
+          as LegacyExecutorTrusteeWorkspaceView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyExecutorTrusteeWorkspaceView create() =>
+      LegacyExecutorTrusteeWorkspaceView._();
+  @$core.override
+  LegacyExecutorTrusteeWorkspaceView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyExecutorTrusteeWorkspaceView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyExecutorTrusteeWorkspaceView>(
+          create);
+  static LegacyExecutorTrusteeWorkspaceView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workspaceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workspaceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkspaceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkspaceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get executorAuthorityAndJurisdiction => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set executorAuthorityAndJurisdiction($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExecutorAuthorityAndJurisdiction() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExecutorAuthorityAndJurisdiction() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get settlementTaskAndClaimTimeline => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set settlementTaskAndClaimTimeline($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSettlementTaskAndClaimTimeline() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSettlementTaskAndClaimTimeline() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get partitionedBeneficiaryPortalSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set partitionedBeneficiaryPortalSummary($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPartitionedBeneficiaryPortalSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPartitionedBeneficiaryPortalSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get workspaceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workspaceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWorkspaceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkspaceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get unrelatedBeneficiaryIsolationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set unrelatedBeneficiaryIsolationEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUnrelatedBeneficiaryIsolationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUnrelatedBeneficiaryIsolationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyExecutorWorkspaceWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyExecutorWorkspaceWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyExecutorWorkspaceWorkbenchRequest._();
+
+  factory GetLegacyExecutorWorkspaceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyExecutorWorkspaceWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyExecutorWorkspaceWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyExecutorWorkspaceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyExecutorWorkspaceWorkbenchRequest copyWith(
+          void Function(GetLegacyExecutorWorkspaceWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyExecutorWorkspaceWorkbenchRequest))
+          as GetLegacyExecutorWorkspaceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyExecutorWorkspaceWorkbenchRequest create() =>
+      GetLegacyExecutorWorkspaceWorkbenchRequest._();
+  @$core.override
+  GetLegacyExecutorWorkspaceWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyExecutorWorkspaceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyExecutorWorkspaceWorkbenchRequest>(create);
+  static GetLegacyExecutorWorkspaceWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyExecutorWorkspaceWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyExecutorWorkspaceWorkbenchResponse({
+    $core.Iterable<LegacyExecutorTrusteeWorkspaceView>? workspaces,
+    $core.int? openDisputeCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (workspaces != null) result.workspaces.addAll(workspaces);
+    if (openDisputeCount != null) result.openDisputeCount = openDisputeCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyExecutorWorkspaceWorkbenchResponse._();
+
+  factory GetLegacyExecutorWorkspaceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyExecutorWorkspaceWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyExecutorWorkspaceWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyExecutorTrusteeWorkspaceView>(
+        1, _omitFieldNames ? '' : 'workspaces',
+        subBuilder: LegacyExecutorTrusteeWorkspaceView.create)
+    ..aI(2, _omitFieldNames ? '' : 'openDisputeCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyExecutorWorkspaceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyExecutorWorkspaceWorkbenchResponse copyWith(
+          void Function(GetLegacyExecutorWorkspaceWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyExecutorWorkspaceWorkbenchResponse))
+          as GetLegacyExecutorWorkspaceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyExecutorWorkspaceWorkbenchResponse create() =>
+      GetLegacyExecutorWorkspaceWorkbenchResponse._();
+  @$core.override
+  GetLegacyExecutorWorkspaceWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyExecutorWorkspaceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyExecutorWorkspaceWorkbenchResponse>(create);
+  static GetLegacyExecutorWorkspaceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyExecutorTrusteeWorkspaceView> get workspaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get openDisputeCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set openDisputeCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOpenDisputeCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOpenDisputeCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyExecutorTrusteeWorkspaceRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyExecutorTrusteeWorkspaceRequest({
+    $core.String? userId,
+    $core.String? workspaceCode,
+    $core.String? executorAuthorityAndJurisdiction,
+    $core.String? settlementTaskAndClaimTimeline,
+    $core.String? partitionedBeneficiaryPortalSummary,
+    $core.String? workspaceState,
+    $core.bool? unrelatedBeneficiaryIsolationEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (executorAuthorityAndJurisdiction != null)
+      result.executorAuthorityAndJurisdiction =
+          executorAuthorityAndJurisdiction;
+    if (settlementTaskAndClaimTimeline != null)
+      result.settlementTaskAndClaimTimeline = settlementTaskAndClaimTimeline;
+    if (partitionedBeneficiaryPortalSummary != null)
+      result.partitionedBeneficiaryPortalSummary =
+          partitionedBeneficiaryPortalSummary;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (unrelatedBeneficiaryIsolationEnforced != null)
+      result.unrelatedBeneficiaryIsolationEnforced =
+          unrelatedBeneficiaryIsolationEnforced;
+    return result;
+  }
+
+  SaveLegacyExecutorTrusteeWorkspaceRequest._();
+
+  factory SaveLegacyExecutorTrusteeWorkspaceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyExecutorTrusteeWorkspaceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyExecutorTrusteeWorkspaceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'executorAuthorityAndJurisdiction')
+    ..aOS(4, _omitFieldNames ? '' : 'settlementTaskAndClaimTimeline')
+    ..aOS(5, _omitFieldNames ? '' : 'partitionedBeneficiaryPortalSummary')
+    ..aOS(6, _omitFieldNames ? '' : 'workspaceState')
+    ..aOB(7, _omitFieldNames ? '' : 'unrelatedBeneficiaryIsolationEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyExecutorTrusteeWorkspaceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyExecutorTrusteeWorkspaceRequest copyWith(
+          void Function(SaveLegacyExecutorTrusteeWorkspaceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyExecutorTrusteeWorkspaceRequest))
+          as SaveLegacyExecutorTrusteeWorkspaceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyExecutorTrusteeWorkspaceRequest create() =>
+      SaveLegacyExecutorTrusteeWorkspaceRequest._();
+  @$core.override
+  SaveLegacyExecutorTrusteeWorkspaceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyExecutorTrusteeWorkspaceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyExecutorTrusteeWorkspaceRequest>(create);
+  static SaveLegacyExecutorTrusteeWorkspaceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get executorAuthorityAndJurisdiction => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set executorAuthorityAndJurisdiction($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExecutorAuthorityAndJurisdiction() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExecutorAuthorityAndJurisdiction() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get settlementTaskAndClaimTimeline => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set settlementTaskAndClaimTimeline($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSettlementTaskAndClaimTimeline() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSettlementTaskAndClaimTimeline() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get partitionedBeneficiaryPortalSummary => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set partitionedBeneficiaryPortalSummary($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPartitionedBeneficiaryPortalSummary() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPartitionedBeneficiaryPortalSummary() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get workspaceState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set workspaceState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWorkspaceState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWorkspaceState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get unrelatedBeneficiaryIsolationEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set unrelatedBeneficiaryIsolationEnforced($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasUnrelatedBeneficiaryIsolationEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUnrelatedBeneficiaryIsolationEnforced() => $_clearField(7);
+}
+
+class SaveLegacyExecutorTrusteeWorkspaceResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyExecutorTrusteeWorkspaceResponse({
+    LegacyExecutorTrusteeWorkspaceView? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  SaveLegacyExecutorTrusteeWorkspaceResponse._();
+
+  factory SaveLegacyExecutorTrusteeWorkspaceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyExecutorTrusteeWorkspaceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyExecutorTrusteeWorkspaceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyExecutorTrusteeWorkspaceView>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: LegacyExecutorTrusteeWorkspaceView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyExecutorTrusteeWorkspaceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyExecutorTrusteeWorkspaceResponse copyWith(
+          void Function(SaveLegacyExecutorTrusteeWorkspaceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyExecutorTrusteeWorkspaceResponse))
+          as SaveLegacyExecutorTrusteeWorkspaceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyExecutorTrusteeWorkspaceResponse create() =>
+      SaveLegacyExecutorTrusteeWorkspaceResponse._();
+  @$core.override
+  SaveLegacyExecutorTrusteeWorkspaceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyExecutorTrusteeWorkspaceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyExecutorTrusteeWorkspaceResponse>(create);
+  static SaveLegacyExecutorTrusteeWorkspaceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyExecutorTrusteeWorkspaceView get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(LegacyExecutorTrusteeWorkspaceView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyExecutorTrusteeWorkspaceView ensureWorkspace() => $_ensure(0);
+}
+
+class AdvanceLegacySettlementTaskOrResolveDisputeRequest
+    extends $pb.GeneratedMessage {
+  factory AdvanceLegacySettlementTaskOrResolveDisputeRequest({
+    $core.String? userId,
+    $core.String? workspaceCode,
+    $core.String? targetWorkspaceState,
+    $core.String? resolutionNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (workspaceCode != null) result.workspaceCode = workspaceCode;
+    if (targetWorkspaceState != null)
+      result.targetWorkspaceState = targetWorkspaceState;
+    if (resolutionNotes != null) result.resolutionNotes = resolutionNotes;
+    return result;
+  }
+
+  AdvanceLegacySettlementTaskOrResolveDisputeRequest._();
+
+  factory AdvanceLegacySettlementTaskOrResolveDisputeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdvanceLegacySettlementTaskOrResolveDisputeRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdvanceLegacySettlementTaskOrResolveDisputeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetWorkspaceState')
+    ..aOS(4, _omitFieldNames ? '' : 'resolutionNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdvanceLegacySettlementTaskOrResolveDisputeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdvanceLegacySettlementTaskOrResolveDisputeRequest copyWith(
+          void Function(AdvanceLegacySettlementTaskOrResolveDisputeRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdvanceLegacySettlementTaskOrResolveDisputeRequest))
+          as AdvanceLegacySettlementTaskOrResolveDisputeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdvanceLegacySettlementTaskOrResolveDisputeRequest create() =>
+      AdvanceLegacySettlementTaskOrResolveDisputeRequest._();
+  @$core.override
+  AdvanceLegacySettlementTaskOrResolveDisputeRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdvanceLegacySettlementTaskOrResolveDisputeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdvanceLegacySettlementTaskOrResolveDisputeRequest>(create);
+  static AdvanceLegacySettlementTaskOrResolveDisputeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetWorkspaceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetWorkspaceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetWorkspaceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetWorkspaceState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get resolutionNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set resolutionNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasResolutionNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResolutionNotes() => $_clearField(4);
+}
+
+class AdvanceLegacySettlementTaskOrResolveDisputeResponse
+    extends $pb.GeneratedMessage {
+  factory AdvanceLegacySettlementTaskOrResolveDisputeResponse({
+    LegacyExecutorTrusteeWorkspaceView? workspace,
+    $core.String? workspaceStatus,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    if (workspaceStatus != null) result.workspaceStatus = workspaceStatus;
+    return result;
+  }
+
+  AdvanceLegacySettlementTaskOrResolveDisputeResponse._();
+
+  factory AdvanceLegacySettlementTaskOrResolveDisputeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AdvanceLegacySettlementTaskOrResolveDisputeResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'AdvanceLegacySettlementTaskOrResolveDisputeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyExecutorTrusteeWorkspaceView>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: LegacyExecutorTrusteeWorkspaceView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'workspaceStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdvanceLegacySettlementTaskOrResolveDisputeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AdvanceLegacySettlementTaskOrResolveDisputeResponse copyWith(
+          void Function(AdvanceLegacySettlementTaskOrResolveDisputeResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AdvanceLegacySettlementTaskOrResolveDisputeResponse))
+          as AdvanceLegacySettlementTaskOrResolveDisputeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AdvanceLegacySettlementTaskOrResolveDisputeResponse create() =>
+      AdvanceLegacySettlementTaskOrResolveDisputeResponse._();
+  @$core.override
+  AdvanceLegacySettlementTaskOrResolveDisputeResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AdvanceLegacySettlementTaskOrResolveDisputeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AdvanceLegacySettlementTaskOrResolveDisputeResponse>(create);
+  static AdvanceLegacySettlementTaskOrResolveDisputeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyExecutorTrusteeWorkspaceView get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(LegacyExecutorTrusteeWorkspaceView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyExecutorTrusteeWorkspaceView ensureWorkspace() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get workspaceStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set workspaceStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWorkspaceStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWorkspaceStatus() => $_clearField(2);
+}
+
+class LegacySettlementAccountingView extends $pb.GeneratedMessage {
+  factory LegacySettlementAccountingView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? accountingCode,
+    $core.String? openingInventoryAndDodValuations,
+    $core.String? reversibleLedgerAndPeriodLock,
+    $core.String? proposedDistributionAndReceiptPack,
+    $core.String? accountingState,
+    $core.bool? nonCustodialExecutionBoundaryEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (accountingCode != null) result.accountingCode = accountingCode;
+    if (openingInventoryAndDodValuations != null)
+      result.openingInventoryAndDodValuations =
+          openingInventoryAndDodValuations;
+    if (reversibleLedgerAndPeriodLock != null)
+      result.reversibleLedgerAndPeriodLock = reversibleLedgerAndPeriodLock;
+    if (proposedDistributionAndReceiptPack != null)
+      result.proposedDistributionAndReceiptPack =
+          proposedDistributionAndReceiptPack;
+    if (accountingState != null) result.accountingState = accountingState;
+    if (nonCustodialExecutionBoundaryEnforced != null)
+      result.nonCustodialExecutionBoundaryEnforced =
+          nonCustodialExecutionBoundaryEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacySettlementAccountingView._();
+
+  factory LegacySettlementAccountingView.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacySettlementAccountingView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacySettlementAccountingView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'accountingCode')
+    ..aOS(4, _omitFieldNames ? '' : 'openingInventoryAndDodValuations')
+    ..aOS(5, _omitFieldNames ? '' : 'reversibleLedgerAndPeriodLock')
+    ..aOS(6, _omitFieldNames ? '' : 'proposedDistributionAndReceiptPack')
+    ..aOS(7, _omitFieldNames ? '' : 'accountingState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonCustodialExecutionBoundaryEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacySettlementAccountingView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacySettlementAccountingView copyWith(
+          void Function(LegacySettlementAccountingView) updates) =>
+      super.copyWith(
+              (message) => updates(message as LegacySettlementAccountingView))
+          as LegacySettlementAccountingView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacySettlementAccountingView create() =>
+      LegacySettlementAccountingView._();
+  @$core.override
+  LegacySettlementAccountingView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacySettlementAccountingView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacySettlementAccountingView>(create);
+  static LegacySettlementAccountingView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get accountingCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set accountingCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAccountingCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAccountingCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get openingInventoryAndDodValuations => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set openingInventoryAndDodValuations($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOpeningInventoryAndDodValuations() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOpeningInventoryAndDodValuations() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reversibleLedgerAndPeriodLock => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reversibleLedgerAndPeriodLock($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReversibleLedgerAndPeriodLock() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReversibleLedgerAndPeriodLock() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get proposedDistributionAndReceiptPack => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set proposedDistributionAndReceiptPack($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasProposedDistributionAndReceiptPack() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProposedDistributionAndReceiptPack() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get accountingState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set accountingState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAccountingState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAccountingState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonCustodialExecutionBoundaryEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonCustodialExecutionBoundaryEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonCustodialExecutionBoundaryEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonCustodialExecutionBoundaryEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacySettlementAccountingWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetLegacySettlementAccountingWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacySettlementAccountingWorkbenchRequest._();
+
+  factory GetLegacySettlementAccountingWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacySettlementAccountingWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacySettlementAccountingWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySettlementAccountingWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySettlementAccountingWorkbenchRequest copyWith(
+          void Function(GetLegacySettlementAccountingWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacySettlementAccountingWorkbenchRequest))
+          as GetLegacySettlementAccountingWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySettlementAccountingWorkbenchRequest create() =>
+      GetLegacySettlementAccountingWorkbenchRequest._();
+  @$core.override
+  GetLegacySettlementAccountingWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySettlementAccountingWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacySettlementAccountingWorkbenchRequest>(create);
+  static GetLegacySettlementAccountingWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacySettlementAccountingWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacySettlementAccountingWorkbenchResponse({
+    $core.Iterable<LegacySettlementAccountingView>? accountings,
+    $core.int? openReconcilingCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (accountings != null) result.accountings.addAll(accountings);
+    if (openReconcilingCount != null)
+      result.openReconcilingCount = openReconcilingCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacySettlementAccountingWorkbenchResponse._();
+
+  factory GetLegacySettlementAccountingWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacySettlementAccountingWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacySettlementAccountingWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacySettlementAccountingView>(
+        1, _omitFieldNames ? '' : 'accountings',
+        subBuilder: LegacySettlementAccountingView.create)
+    ..aI(2, _omitFieldNames ? '' : 'openReconcilingCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySettlementAccountingWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacySettlementAccountingWorkbenchResponse copyWith(
+          void Function(GetLegacySettlementAccountingWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetLegacySettlementAccountingWorkbenchResponse))
+          as GetLegacySettlementAccountingWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySettlementAccountingWorkbenchResponse create() =>
+      GetLegacySettlementAccountingWorkbenchResponse._();
+  @$core.override
+  GetLegacySettlementAccountingWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacySettlementAccountingWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacySettlementAccountingWorkbenchResponse>(create);
+  static GetLegacySettlementAccountingWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacySettlementAccountingView> get accountings => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get openReconcilingCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set openReconcilingCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOpenReconcilingCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOpenReconcilingCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacySettlementAccountingRequest extends $pb.GeneratedMessage {
+  factory SaveLegacySettlementAccountingRequest({
+    $core.String? userId,
+    $core.String? accountingCode,
+    $core.String? openingInventoryAndDodValuations,
+    $core.String? reversibleLedgerAndPeriodLock,
+    $core.String? proposedDistributionAndReceiptPack,
+    $core.String? accountingState,
+    $core.bool? nonCustodialExecutionBoundaryEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (accountingCode != null) result.accountingCode = accountingCode;
+    if (openingInventoryAndDodValuations != null)
+      result.openingInventoryAndDodValuations =
+          openingInventoryAndDodValuations;
+    if (reversibleLedgerAndPeriodLock != null)
+      result.reversibleLedgerAndPeriodLock = reversibleLedgerAndPeriodLock;
+    if (proposedDistributionAndReceiptPack != null)
+      result.proposedDistributionAndReceiptPack =
+          proposedDistributionAndReceiptPack;
+    if (accountingState != null) result.accountingState = accountingState;
+    if (nonCustodialExecutionBoundaryEnforced != null)
+      result.nonCustodialExecutionBoundaryEnforced =
+          nonCustodialExecutionBoundaryEnforced;
+    return result;
+  }
+
+  SaveLegacySettlementAccountingRequest._();
+
+  factory SaveLegacySettlementAccountingRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacySettlementAccountingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacySettlementAccountingRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'accountingCode')
+    ..aOS(3, _omitFieldNames ? '' : 'openingInventoryAndDodValuations')
+    ..aOS(4, _omitFieldNames ? '' : 'reversibleLedgerAndPeriodLock')
+    ..aOS(5, _omitFieldNames ? '' : 'proposedDistributionAndReceiptPack')
+    ..aOS(6, _omitFieldNames ? '' : 'accountingState')
+    ..aOB(7, _omitFieldNames ? '' : 'nonCustodialExecutionBoundaryEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySettlementAccountingRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySettlementAccountingRequest copyWith(
+          void Function(SaveLegacySettlementAccountingRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacySettlementAccountingRequest))
+          as SaveLegacySettlementAccountingRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySettlementAccountingRequest create() =>
+      SaveLegacySettlementAccountingRequest._();
+  @$core.override
+  SaveLegacySettlementAccountingRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySettlementAccountingRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacySettlementAccountingRequest>(create);
+  static SaveLegacySettlementAccountingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountingCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountingCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountingCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountingCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get openingInventoryAndDodValuations => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set openingInventoryAndDodValuations($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOpeningInventoryAndDodValuations() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOpeningInventoryAndDodValuations() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get reversibleLedgerAndPeriodLock => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reversibleLedgerAndPeriodLock($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReversibleLedgerAndPeriodLock() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReversibleLedgerAndPeriodLock() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get proposedDistributionAndReceiptPack => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set proposedDistributionAndReceiptPack($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProposedDistributionAndReceiptPack() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProposedDistributionAndReceiptPack() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get accountingState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set accountingState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAccountingState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAccountingState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get nonCustodialExecutionBoundaryEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set nonCustodialExecutionBoundaryEnforced($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNonCustodialExecutionBoundaryEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNonCustodialExecutionBoundaryEnforced() => $_clearField(7);
+}
+
+class SaveLegacySettlementAccountingResponse extends $pb.GeneratedMessage {
+  factory SaveLegacySettlementAccountingResponse({
+    LegacySettlementAccountingView? accounting,
+  }) {
+    final result = create();
+    if (accounting != null) result.accounting = accounting;
+    return result;
+  }
+
+  SaveLegacySettlementAccountingResponse._();
+
+  factory SaveLegacySettlementAccountingResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacySettlementAccountingResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacySettlementAccountingResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacySettlementAccountingView>(
+        1, _omitFieldNames ? '' : 'accounting',
+        subBuilder: LegacySettlementAccountingView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySettlementAccountingResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacySettlementAccountingResponse copyWith(
+          void Function(SaveLegacySettlementAccountingResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacySettlementAccountingResponse))
+          as SaveLegacySettlementAccountingResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySettlementAccountingResponse create() =>
+      SaveLegacySettlementAccountingResponse._();
+  @$core.override
+  SaveLegacySettlementAccountingResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacySettlementAccountingResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacySettlementAccountingResponse>(create);
+  static SaveLegacySettlementAccountingResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacySettlementAccountingView get accounting => $_getN(0);
+  @$pb.TagNumber(1)
+  set accounting(LegacySettlementAccountingView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccounting() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccounting() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacySettlementAccountingView ensureAccounting() => $_ensure(0);
+}
+
+class LockOrReverseLegacyAccountingPeriodRequest extends $pb.GeneratedMessage {
+  factory LockOrReverseLegacyAccountingPeriodRequest({
+    $core.String? userId,
+    $core.String? accountingCode,
+    $core.String? targetAccountingState,
+    $core.String? accountingNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (accountingCode != null) result.accountingCode = accountingCode;
+    if (targetAccountingState != null)
+      result.targetAccountingState = targetAccountingState;
+    if (accountingNotes != null) result.accountingNotes = accountingNotes;
+    return result;
+  }
+
+  LockOrReverseLegacyAccountingPeriodRequest._();
+
+  factory LockOrReverseLegacyAccountingPeriodRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReverseLegacyAccountingPeriodRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReverseLegacyAccountingPeriodRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'accountingCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetAccountingState')
+    ..aOS(4, _omitFieldNames ? '' : 'accountingNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseLegacyAccountingPeriodRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseLegacyAccountingPeriodRequest copyWith(
+          void Function(LockOrReverseLegacyAccountingPeriodRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReverseLegacyAccountingPeriodRequest))
+          as LockOrReverseLegacyAccountingPeriodRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseLegacyAccountingPeriodRequest create() =>
+      LockOrReverseLegacyAccountingPeriodRequest._();
+  @$core.override
+  LockOrReverseLegacyAccountingPeriodRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseLegacyAccountingPeriodRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReverseLegacyAccountingPeriodRequest>(create);
+  static LockOrReverseLegacyAccountingPeriodRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountingCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountingCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountingCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountingCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetAccountingState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetAccountingState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetAccountingState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetAccountingState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get accountingNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set accountingNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAccountingNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAccountingNotes() => $_clearField(4);
+}
+
+class LockOrReverseLegacyAccountingPeriodResponse extends $pb.GeneratedMessage {
+  factory LockOrReverseLegacyAccountingPeriodResponse({
+    LegacySettlementAccountingView? accounting,
+    $core.String? accountingStatus,
+  }) {
+    final result = create();
+    if (accounting != null) result.accounting = accounting;
+    if (accountingStatus != null) result.accountingStatus = accountingStatus;
+    return result;
+  }
+
+  LockOrReverseLegacyAccountingPeriodResponse._();
+
+  factory LockOrReverseLegacyAccountingPeriodResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReverseLegacyAccountingPeriodResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReverseLegacyAccountingPeriodResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacySettlementAccountingView>(
+        1, _omitFieldNames ? '' : 'accounting',
+        subBuilder: LegacySettlementAccountingView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'accountingStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseLegacyAccountingPeriodResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReverseLegacyAccountingPeriodResponse copyWith(
+          void Function(LockOrReverseLegacyAccountingPeriodResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReverseLegacyAccountingPeriodResponse))
+          as LockOrReverseLegacyAccountingPeriodResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseLegacyAccountingPeriodResponse create() =>
+      LockOrReverseLegacyAccountingPeriodResponse._();
+  @$core.override
+  LockOrReverseLegacyAccountingPeriodResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReverseLegacyAccountingPeriodResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReverseLegacyAccountingPeriodResponse>(create);
+  static LockOrReverseLegacyAccountingPeriodResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacySettlementAccountingView get accounting => $_getN(0);
+  @$pb.TagNumber(1)
+  set accounting(LegacySettlementAccountingView value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAccounting() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAccounting() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacySettlementAccountingView ensureAccounting() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get accountingStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountingStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountingStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountingStatus() => $_clearField(2);
+}
+
+class LegacyDigitalThresholdRecoveryView extends $pb.GeneratedMessage {
+  factory LegacyDigitalThresholdRecoveryView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? recoveryCode,
+    $core.String? digitalAssetInventoryAndWishes,
+    $core.String? shamirThresholdAndCustodianDomains,
+    $core.String? ceremonyDryRunAndRotationLog,
+    $core.String? recoveryState,
+    $core.bool? staffSubthresholdReconstructionBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (recoveryCode != null) result.recoveryCode = recoveryCode;
+    if (digitalAssetInventoryAndWishes != null)
+      result.digitalAssetInventoryAndWishes = digitalAssetInventoryAndWishes;
+    if (shamirThresholdAndCustodianDomains != null)
+      result.shamirThresholdAndCustodianDomains =
+          shamirThresholdAndCustodianDomains;
+    if (ceremonyDryRunAndRotationLog != null)
+      result.ceremonyDryRunAndRotationLog = ceremonyDryRunAndRotationLog;
+    if (recoveryState != null) result.recoveryState = recoveryState;
+    if (staffSubthresholdReconstructionBlocked != null)
+      result.staffSubthresholdReconstructionBlocked =
+          staffSubthresholdReconstructionBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyDigitalThresholdRecoveryView._();
+
+  factory LegacyDigitalThresholdRecoveryView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyDigitalThresholdRecoveryView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyDigitalThresholdRecoveryView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'recoveryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'digitalAssetInventoryAndWishes')
+    ..aOS(5, _omitFieldNames ? '' : 'shamirThresholdAndCustodianDomains')
+    ..aOS(6, _omitFieldNames ? '' : 'ceremonyDryRunAndRotationLog')
+    ..aOS(7, _omitFieldNames ? '' : 'recoveryState')
+    ..aOB(8, _omitFieldNames ? '' : 'staffSubthresholdReconstructionBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyDigitalThresholdRecoveryView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyDigitalThresholdRecoveryView copyWith(
+          void Function(LegacyDigitalThresholdRecoveryView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyDigitalThresholdRecoveryView))
+          as LegacyDigitalThresholdRecoveryView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyDigitalThresholdRecoveryView create() =>
+      LegacyDigitalThresholdRecoveryView._();
+  @$core.override
+  LegacyDigitalThresholdRecoveryView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyDigitalThresholdRecoveryView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyDigitalThresholdRecoveryView>(
+          create);
+  static LegacyDigitalThresholdRecoveryView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get recoveryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set recoveryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRecoveryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRecoveryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get digitalAssetInventoryAndWishes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set digitalAssetInventoryAndWishes($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDigitalAssetInventoryAndWishes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDigitalAssetInventoryAndWishes() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get shamirThresholdAndCustodianDomains => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set shamirThresholdAndCustodianDomains($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasShamirThresholdAndCustodianDomains() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShamirThresholdAndCustodianDomains() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get ceremonyDryRunAndRotationLog => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set ceremonyDryRunAndRotationLog($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCeremonyDryRunAndRotationLog() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCeremonyDryRunAndRotationLog() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get recoveryState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set recoveryState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRecoveryState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRecoveryState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get staffSubthresholdReconstructionBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set staffSubthresholdReconstructionBlocked($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasStaffSubthresholdReconstructionBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStaffSubthresholdReconstructionBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyDigitalRecoveryWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyDigitalRecoveryWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyDigitalRecoveryWorkbenchRequest._();
+
+  factory GetLegacyDigitalRecoveryWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyDigitalRecoveryWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyDigitalRecoveryWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyDigitalRecoveryWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyDigitalRecoveryWorkbenchRequest copyWith(
+          void Function(GetLegacyDigitalRecoveryWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyDigitalRecoveryWorkbenchRequest))
+          as GetLegacyDigitalRecoveryWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyDigitalRecoveryWorkbenchRequest create() =>
+      GetLegacyDigitalRecoveryWorkbenchRequest._();
+  @$core.override
+  GetLegacyDigitalRecoveryWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyDigitalRecoveryWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyDigitalRecoveryWorkbenchRequest>(create);
+  static GetLegacyDigitalRecoveryWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyDigitalRecoveryWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyDigitalRecoveryWorkbenchResponse({
+    $core.Iterable<LegacyDigitalThresholdRecoveryView>? recoveries,
+    $core.int? quarantinedShareCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (recoveries != null) result.recoveries.addAll(recoveries);
+    if (quarantinedShareCount != null)
+      result.quarantinedShareCount = quarantinedShareCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyDigitalRecoveryWorkbenchResponse._();
+
+  factory GetLegacyDigitalRecoveryWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyDigitalRecoveryWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyDigitalRecoveryWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyDigitalThresholdRecoveryView>(
+        1, _omitFieldNames ? '' : 'recoveries',
+        subBuilder: LegacyDigitalThresholdRecoveryView.create)
+    ..aI(2, _omitFieldNames ? '' : 'quarantinedShareCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyDigitalRecoveryWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyDigitalRecoveryWorkbenchResponse copyWith(
+          void Function(GetLegacyDigitalRecoveryWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyDigitalRecoveryWorkbenchResponse))
+          as GetLegacyDigitalRecoveryWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyDigitalRecoveryWorkbenchResponse create() =>
+      GetLegacyDigitalRecoveryWorkbenchResponse._();
+  @$core.override
+  GetLegacyDigitalRecoveryWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyDigitalRecoveryWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyDigitalRecoveryWorkbenchResponse>(create);
+  static GetLegacyDigitalRecoveryWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyDigitalThresholdRecoveryView> get recoveries => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get quarantinedShareCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set quarantinedShareCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasQuarantinedShareCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearQuarantinedShareCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyDigitalThresholdRecoveryRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyDigitalThresholdRecoveryRequest({
+    $core.String? userId,
+    $core.String? recoveryCode,
+    $core.String? digitalAssetInventoryAndWishes,
+    $core.String? shamirThresholdAndCustodianDomains,
+    $core.String? ceremonyDryRunAndRotationLog,
+    $core.String? recoveryState,
+    $core.bool? staffSubthresholdReconstructionBlocked,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (recoveryCode != null) result.recoveryCode = recoveryCode;
+    if (digitalAssetInventoryAndWishes != null)
+      result.digitalAssetInventoryAndWishes = digitalAssetInventoryAndWishes;
+    if (shamirThresholdAndCustodianDomains != null)
+      result.shamirThresholdAndCustodianDomains =
+          shamirThresholdAndCustodianDomains;
+    if (ceremonyDryRunAndRotationLog != null)
+      result.ceremonyDryRunAndRotationLog = ceremonyDryRunAndRotationLog;
+    if (recoveryState != null) result.recoveryState = recoveryState;
+    if (staffSubthresholdReconstructionBlocked != null)
+      result.staffSubthresholdReconstructionBlocked =
+          staffSubthresholdReconstructionBlocked;
+    return result;
+  }
+
+  SaveLegacyDigitalThresholdRecoveryRequest._();
+
+  factory SaveLegacyDigitalThresholdRecoveryRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyDigitalThresholdRecoveryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyDigitalThresholdRecoveryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'recoveryCode')
+    ..aOS(3, _omitFieldNames ? '' : 'digitalAssetInventoryAndWishes')
+    ..aOS(4, _omitFieldNames ? '' : 'shamirThresholdAndCustodianDomains')
+    ..aOS(5, _omitFieldNames ? '' : 'ceremonyDryRunAndRotationLog')
+    ..aOS(6, _omitFieldNames ? '' : 'recoveryState')
+    ..aOB(7, _omitFieldNames ? '' : 'staffSubthresholdReconstructionBlocked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyDigitalThresholdRecoveryRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyDigitalThresholdRecoveryRequest copyWith(
+          void Function(SaveLegacyDigitalThresholdRecoveryRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyDigitalThresholdRecoveryRequest))
+          as SaveLegacyDigitalThresholdRecoveryRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyDigitalThresholdRecoveryRequest create() =>
+      SaveLegacyDigitalThresholdRecoveryRequest._();
+  @$core.override
+  SaveLegacyDigitalThresholdRecoveryRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyDigitalThresholdRecoveryRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyDigitalThresholdRecoveryRequest>(create);
+  static SaveLegacyDigitalThresholdRecoveryRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get recoveryCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set recoveryCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRecoveryCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRecoveryCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get digitalAssetInventoryAndWishes => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set digitalAssetInventoryAndWishes($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDigitalAssetInventoryAndWishes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDigitalAssetInventoryAndWishes() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get shamirThresholdAndCustodianDomains => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set shamirThresholdAndCustodianDomains($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasShamirThresholdAndCustodianDomains() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearShamirThresholdAndCustodianDomains() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get ceremonyDryRunAndRotationLog => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set ceremonyDryRunAndRotationLog($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCeremonyDryRunAndRotationLog() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCeremonyDryRunAndRotationLog() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get recoveryState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set recoveryState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRecoveryState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRecoveryState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get staffSubthresholdReconstructionBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set staffSubthresholdReconstructionBlocked($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStaffSubthresholdReconstructionBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStaffSubthresholdReconstructionBlocked() => $_clearField(7);
+}
+
+class SaveLegacyDigitalThresholdRecoveryResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyDigitalThresholdRecoveryResponse({
+    LegacyDigitalThresholdRecoveryView? recovery,
+  }) {
+    final result = create();
+    if (recovery != null) result.recovery = recovery;
+    return result;
+  }
+
+  SaveLegacyDigitalThresholdRecoveryResponse._();
+
+  factory SaveLegacyDigitalThresholdRecoveryResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyDigitalThresholdRecoveryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyDigitalThresholdRecoveryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyDigitalThresholdRecoveryView>(
+        1, _omitFieldNames ? '' : 'recovery',
+        subBuilder: LegacyDigitalThresholdRecoveryView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyDigitalThresholdRecoveryResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyDigitalThresholdRecoveryResponse copyWith(
+          void Function(SaveLegacyDigitalThresholdRecoveryResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyDigitalThresholdRecoveryResponse))
+          as SaveLegacyDigitalThresholdRecoveryResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyDigitalThresholdRecoveryResponse create() =>
+      SaveLegacyDigitalThresholdRecoveryResponse._();
+  @$core.override
+  SaveLegacyDigitalThresholdRecoveryResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyDigitalThresholdRecoveryResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyDigitalThresholdRecoveryResponse>(create);
+  static SaveLegacyDigitalThresholdRecoveryResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyDigitalThresholdRecoveryView get recovery => $_getN(0);
+  @$pb.TagNumber(1)
+  set recovery(LegacyDigitalThresholdRecoveryView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRecovery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRecovery() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyDigitalThresholdRecoveryView ensureRecovery() => $_ensure(0);
+}
+
+class RunLegacyThresholdCeremonyDryRunOrRotateShareRequest
+    extends $pb.GeneratedMessage {
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareRequest({
+    $core.String? userId,
+    $core.String? recoveryCode,
+    $core.String? targetRecoveryState,
+    $core.String? ceremonyNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (recoveryCode != null) result.recoveryCode = recoveryCode;
+    if (targetRecoveryState != null)
+      result.targetRecoveryState = targetRecoveryState;
+    if (ceremonyNotes != null) result.ceremonyNotes = ceremonyNotes;
+    return result;
+  }
+
+  RunLegacyThresholdCeremonyDryRunOrRotateShareRequest._();
+
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RunLegacyThresholdCeremonyDryRunOrRotateShareRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'recoveryCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetRecoveryState')
+    ..aOS(4, _omitFieldNames ? '' : 'ceremonyNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyThresholdCeremonyDryRunOrRotateShareRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyThresholdCeremonyDryRunOrRotateShareRequest copyWith(
+          void Function(RunLegacyThresholdCeremonyDryRunOrRotateShareRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RunLegacyThresholdCeremonyDryRunOrRotateShareRequest))
+          as RunLegacyThresholdCeremonyDryRunOrRotateShareRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareRequest create() =>
+      RunLegacyThresholdCeremonyDryRunOrRotateShareRequest._();
+  @$core.override
+  RunLegacyThresholdCeremonyDryRunOrRotateShareRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunLegacyThresholdCeremonyDryRunOrRotateShareRequest>(create);
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get recoveryCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set recoveryCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRecoveryCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRecoveryCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetRecoveryState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetRecoveryState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetRecoveryState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetRecoveryState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ceremonyNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ceremonyNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCeremonyNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCeremonyNotes() => $_clearField(4);
+}
+
+class RunLegacyThresholdCeremonyDryRunOrRotateShareResponse
+    extends $pb.GeneratedMessage {
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareResponse({
+    LegacyDigitalThresholdRecoveryView? recovery,
+    $core.String? ceremonyStatus,
+  }) {
+    final result = create();
+    if (recovery != null) result.recovery = recovery;
+    if (ceremonyStatus != null) result.ceremonyStatus = ceremonyStatus;
+    return result;
+  }
+
+  RunLegacyThresholdCeremonyDryRunOrRotateShareResponse._();
+
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RunLegacyThresholdCeremonyDryRunOrRotateShareResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'RunLegacyThresholdCeremonyDryRunOrRotateShareResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyDigitalThresholdRecoveryView>(
+        1, _omitFieldNames ? '' : 'recovery',
+        subBuilder: LegacyDigitalThresholdRecoveryView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'ceremonyStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyThresholdCeremonyDryRunOrRotateShareResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RunLegacyThresholdCeremonyDryRunOrRotateShareResponse copyWith(
+          void Function(RunLegacyThresholdCeremonyDryRunOrRotateShareResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as RunLegacyThresholdCeremonyDryRunOrRotateShareResponse))
+          as RunLegacyThresholdCeremonyDryRunOrRotateShareResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareResponse create() =>
+      RunLegacyThresholdCeremonyDryRunOrRotateShareResponse._();
+  @$core.override
+  RunLegacyThresholdCeremonyDryRunOrRotateShareResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          RunLegacyThresholdCeremonyDryRunOrRotateShareResponse>(create);
+  static RunLegacyThresholdCeremonyDryRunOrRotateShareResponse?
+      _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyDigitalThresholdRecoveryView get recovery => $_getN(0);
+  @$pb.TagNumber(1)
+  set recovery(LegacyDigitalThresholdRecoveryView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRecovery() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRecovery() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyDigitalThresholdRecoveryView ensureRecovery() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get ceremonyStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ceremonyStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCeremonyStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCeremonyStatus() => $_clearField(2);
+}
+
+class LegacyHeritagePreservationArchiveView extends $pb.GeneratedMessage {
+  factory LegacyHeritagePreservationArchiveView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? archiveCode,
+    $core.String? mediaManifestAndFixitySignature,
+    $core.String? deliveryTriggerAndRecipientConsent,
+    $core.String? formatMigrationAndRestorationTest,
+    $core.String? archiveState,
+    $core.bool? originalArtifactMutationBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (archiveCode != null) result.archiveCode = archiveCode;
+    if (mediaManifestAndFixitySignature != null)
+      result.mediaManifestAndFixitySignature = mediaManifestAndFixitySignature;
+    if (deliveryTriggerAndRecipientConsent != null)
+      result.deliveryTriggerAndRecipientConsent =
+          deliveryTriggerAndRecipientConsent;
+    if (formatMigrationAndRestorationTest != null)
+      result.formatMigrationAndRestorationTest =
+          formatMigrationAndRestorationTest;
+    if (archiveState != null) result.archiveState = archiveState;
+    if (originalArtifactMutationBlocked != null)
+      result.originalArtifactMutationBlocked = originalArtifactMutationBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyHeritagePreservationArchiveView._();
+
+  factory LegacyHeritagePreservationArchiveView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyHeritagePreservationArchiveView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyHeritagePreservationArchiveView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'archiveCode')
+    ..aOS(4, _omitFieldNames ? '' : 'mediaManifestAndFixitySignature')
+    ..aOS(5, _omitFieldNames ? '' : 'deliveryTriggerAndRecipientConsent')
+    ..aOS(6, _omitFieldNames ? '' : 'formatMigrationAndRestorationTest')
+    ..aOS(7, _omitFieldNames ? '' : 'archiveState')
+    ..aOB(8, _omitFieldNames ? '' : 'originalArtifactMutationBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyHeritagePreservationArchiveView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyHeritagePreservationArchiveView copyWith(
+          void Function(LegacyHeritagePreservationArchiveView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyHeritagePreservationArchiveView))
+          as LegacyHeritagePreservationArchiveView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyHeritagePreservationArchiveView create() =>
+      LegacyHeritagePreservationArchiveView._();
+  @$core.override
+  LegacyHeritagePreservationArchiveView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyHeritagePreservationArchiveView getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LegacyHeritagePreservationArchiveView>(create);
+  static LegacyHeritagePreservationArchiveView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get archiveCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set archiveCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasArchiveCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearArchiveCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get mediaManifestAndFixitySignature => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set mediaManifestAndFixitySignature($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMediaManifestAndFixitySignature() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMediaManifestAndFixitySignature() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get deliveryTriggerAndRecipientConsent => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set deliveryTriggerAndRecipientConsent($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDeliveryTriggerAndRecipientConsent() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeliveryTriggerAndRecipientConsent() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get formatMigrationAndRestorationTest => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set formatMigrationAndRestorationTest($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasFormatMigrationAndRestorationTest() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearFormatMigrationAndRestorationTest() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get archiveState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set archiveState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasArchiveState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearArchiveState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get originalArtifactMutationBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set originalArtifactMutationBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasOriginalArtifactMutationBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearOriginalArtifactMutationBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyHeritageArchiveWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyHeritageArchiveWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyHeritageArchiveWorkbenchRequest._();
+
+  factory GetLegacyHeritageArchiveWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyHeritageArchiveWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyHeritageArchiveWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyHeritageArchiveWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyHeritageArchiveWorkbenchRequest copyWith(
+          void Function(GetLegacyHeritageArchiveWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyHeritageArchiveWorkbenchRequest))
+          as GetLegacyHeritageArchiveWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyHeritageArchiveWorkbenchRequest create() =>
+      GetLegacyHeritageArchiveWorkbenchRequest._();
+  @$core.override
+  GetLegacyHeritageArchiveWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyHeritageArchiveWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyHeritageArchiveWorkbenchRequest>(create);
+  static GetLegacyHeritageArchiveWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyHeritageArchiveWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyHeritageArchiveWorkbenchResponse({
+    $core.Iterable<LegacyHeritagePreservationArchiveView>? archives,
+    $core.int? contactRepairCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (archives != null) result.archives.addAll(archives);
+    if (contactRepairCount != null)
+      result.contactRepairCount = contactRepairCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyHeritageArchiveWorkbenchResponse._();
+
+  factory GetLegacyHeritageArchiveWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyHeritageArchiveWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyHeritageArchiveWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyHeritagePreservationArchiveView>(
+        1, _omitFieldNames ? '' : 'archives',
+        subBuilder: LegacyHeritagePreservationArchiveView.create)
+    ..aI(2, _omitFieldNames ? '' : 'contactRepairCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyHeritageArchiveWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyHeritageArchiveWorkbenchResponse copyWith(
+          void Function(GetLegacyHeritageArchiveWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyHeritageArchiveWorkbenchResponse))
+          as GetLegacyHeritageArchiveWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyHeritageArchiveWorkbenchResponse create() =>
+      GetLegacyHeritageArchiveWorkbenchResponse._();
+  @$core.override
+  GetLegacyHeritageArchiveWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyHeritageArchiveWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyHeritageArchiveWorkbenchResponse>(create);
+  static GetLegacyHeritageArchiveWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyHeritagePreservationArchiveView> get archives =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get contactRepairCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set contactRepairCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContactRepairCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContactRepairCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyHeritagePreservationArchiveRequest
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyHeritagePreservationArchiveRequest({
+    $core.String? userId,
+    $core.String? archiveCode,
+    $core.String? mediaManifestAndFixitySignature,
+    $core.String? deliveryTriggerAndRecipientConsent,
+    $core.String? formatMigrationAndRestorationTest,
+    $core.String? archiveState,
+    $core.bool? originalArtifactMutationBlocked,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (archiveCode != null) result.archiveCode = archiveCode;
+    if (mediaManifestAndFixitySignature != null)
+      result.mediaManifestAndFixitySignature = mediaManifestAndFixitySignature;
+    if (deliveryTriggerAndRecipientConsent != null)
+      result.deliveryTriggerAndRecipientConsent =
+          deliveryTriggerAndRecipientConsent;
+    if (formatMigrationAndRestorationTest != null)
+      result.formatMigrationAndRestorationTest =
+          formatMigrationAndRestorationTest;
+    if (archiveState != null) result.archiveState = archiveState;
+    if (originalArtifactMutationBlocked != null)
+      result.originalArtifactMutationBlocked = originalArtifactMutationBlocked;
+    return result;
+  }
+
+  SaveLegacyHeritagePreservationArchiveRequest._();
+
+  factory SaveLegacyHeritagePreservationArchiveRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyHeritagePreservationArchiveRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyHeritagePreservationArchiveRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'archiveCode')
+    ..aOS(3, _omitFieldNames ? '' : 'mediaManifestAndFixitySignature')
+    ..aOS(4, _omitFieldNames ? '' : 'deliveryTriggerAndRecipientConsent')
+    ..aOS(5, _omitFieldNames ? '' : 'formatMigrationAndRestorationTest')
+    ..aOS(6, _omitFieldNames ? '' : 'archiveState')
+    ..aOB(7, _omitFieldNames ? '' : 'originalArtifactMutationBlocked')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHeritagePreservationArchiveRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHeritagePreservationArchiveRequest copyWith(
+          void Function(SaveLegacyHeritagePreservationArchiveRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyHeritagePreservationArchiveRequest))
+          as SaveLegacyHeritagePreservationArchiveRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHeritagePreservationArchiveRequest create() =>
+      SaveLegacyHeritagePreservationArchiveRequest._();
+  @$core.override
+  SaveLegacyHeritagePreservationArchiveRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHeritagePreservationArchiveRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyHeritagePreservationArchiveRequest>(create);
+  static SaveLegacyHeritagePreservationArchiveRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get archiveCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set archiveCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasArchiveCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearArchiveCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get mediaManifestAndFixitySignature => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set mediaManifestAndFixitySignature($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMediaManifestAndFixitySignature() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMediaManifestAndFixitySignature() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get deliveryTriggerAndRecipientConsent => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set deliveryTriggerAndRecipientConsent($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDeliveryTriggerAndRecipientConsent() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDeliveryTriggerAndRecipientConsent() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get formatMigrationAndRestorationTest => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set formatMigrationAndRestorationTest($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFormatMigrationAndRestorationTest() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFormatMigrationAndRestorationTest() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get archiveState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set archiveState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasArchiveState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearArchiveState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get originalArtifactMutationBlocked => $_getBF(6);
+  @$pb.TagNumber(7)
+  set originalArtifactMutationBlocked($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOriginalArtifactMutationBlocked() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOriginalArtifactMutationBlocked() => $_clearField(7);
+}
+
+class SaveLegacyHeritagePreservationArchiveResponse
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyHeritagePreservationArchiveResponse({
+    LegacyHeritagePreservationArchiveView? archive,
+  }) {
+    final result = create();
+    if (archive != null) result.archive = archive;
+    return result;
+  }
+
+  SaveLegacyHeritagePreservationArchiveResponse._();
+
+  factory SaveLegacyHeritagePreservationArchiveResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyHeritagePreservationArchiveResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyHeritagePreservationArchiveResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyHeritagePreservationArchiveView>(
+        1, _omitFieldNames ? '' : 'archive',
+        subBuilder: LegacyHeritagePreservationArchiveView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHeritagePreservationArchiveResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyHeritagePreservationArchiveResponse copyWith(
+          void Function(SaveLegacyHeritagePreservationArchiveResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyHeritagePreservationArchiveResponse))
+          as SaveLegacyHeritagePreservationArchiveResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHeritagePreservationArchiveResponse create() =>
+      SaveLegacyHeritagePreservationArchiveResponse._();
+  @$core.override
+  SaveLegacyHeritagePreservationArchiveResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyHeritagePreservationArchiveResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyHeritagePreservationArchiveResponse>(create);
+  static SaveLegacyHeritagePreservationArchiveResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyHeritagePreservationArchiveView get archive => $_getN(0);
+  @$pb.TagNumber(1)
+  set archive(LegacyHeritagePreservationArchiveView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArchive() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArchive() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyHeritagePreservationArchiveView ensureArchive() => $_ensure(0);
+}
+
+class VerifyLegacyArchiveFixityOrPreviewTriggerRequest
+    extends $pb.GeneratedMessage {
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerRequest({
+    $core.String? userId,
+    $core.String? archiveCode,
+    $core.String? targetArchiveState,
+    $core.String? archiveNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (archiveCode != null) result.archiveCode = archiveCode;
+    if (targetArchiveState != null)
+      result.targetArchiveState = targetArchiveState;
+    if (archiveNotes != null) result.archiveNotes = archiveNotes;
+    return result;
+  }
+
+  VerifyLegacyArchiveFixityOrPreviewTriggerRequest._();
+
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'VerifyLegacyArchiveFixityOrPreviewTriggerRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'archiveCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetArchiveState')
+    ..aOS(4, _omitFieldNames ? '' : 'archiveNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyArchiveFixityOrPreviewTriggerRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyArchiveFixityOrPreviewTriggerRequest copyWith(
+          void Function(VerifyLegacyArchiveFixityOrPreviewTriggerRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as VerifyLegacyArchiveFixityOrPreviewTriggerRequest))
+          as VerifyLegacyArchiveFixityOrPreviewTriggerRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyArchiveFixityOrPreviewTriggerRequest create() =>
+      VerifyLegacyArchiveFixityOrPreviewTriggerRequest._();
+  @$core.override
+  VerifyLegacyArchiveFixityOrPreviewTriggerRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyArchiveFixityOrPreviewTriggerRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyLegacyArchiveFixityOrPreviewTriggerRequest>(create);
+  static VerifyLegacyArchiveFixityOrPreviewTriggerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get archiveCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set archiveCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasArchiveCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearArchiveCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetArchiveState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetArchiveState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetArchiveState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetArchiveState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get archiveNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set archiveNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasArchiveNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearArchiveNotes() => $_clearField(4);
+}
+
+class VerifyLegacyArchiveFixityOrPreviewTriggerResponse
+    extends $pb.GeneratedMessage {
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerResponse({
+    LegacyHeritagePreservationArchiveView? archive,
+    $core.String? archiveStatus,
+  }) {
+    final result = create();
+    if (archive != null) result.archive = archive;
+    if (archiveStatus != null) result.archiveStatus = archiveStatus;
+    return result;
+  }
+
+  VerifyLegacyArchiveFixityOrPreviewTriggerResponse._();
+
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyLegacyArchiveFixityOrPreviewTriggerResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'VerifyLegacyArchiveFixityOrPreviewTriggerResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyHeritagePreservationArchiveView>(
+        1, _omitFieldNames ? '' : 'archive',
+        subBuilder: LegacyHeritagePreservationArchiveView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'archiveStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyArchiveFixityOrPreviewTriggerResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyLegacyArchiveFixityOrPreviewTriggerResponse copyWith(
+          void Function(VerifyLegacyArchiveFixityOrPreviewTriggerResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as VerifyLegacyArchiveFixityOrPreviewTriggerResponse))
+          as VerifyLegacyArchiveFixityOrPreviewTriggerResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyArchiveFixityOrPreviewTriggerResponse create() =>
+      VerifyLegacyArchiveFixityOrPreviewTriggerResponse._();
+  @$core.override
+  VerifyLegacyArchiveFixityOrPreviewTriggerResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyLegacyArchiveFixityOrPreviewTriggerResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyLegacyArchiveFixityOrPreviewTriggerResponse>(create);
+  static VerifyLegacyArchiveFixityOrPreviewTriggerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyHeritagePreservationArchiveView get archive => $_getN(0);
+  @$pb.TagNumber(1)
+  set archive(LegacyHeritagePreservationArchiveView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasArchive() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearArchive() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyHeritagePreservationArchiveView ensureArchive() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get archiveStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set archiveStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasArchiveStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearArchiveStatus() => $_clearField(2);
+}
+
+class LegacyLiquidityInsuranceReadinessView extends $pb.GeneratedMessage {
+  factory LegacyLiquidityInsuranceReadinessView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? readinessCode,
+    $core.String? obligationsTaxesAndFundingMap,
+    $core.String? policyClaimPackAndSourceRefs,
+    $core.String? shortfallStressAndCounselTrigger,
+    $core.String? readinessState,
+    $core.bool? noGuaranteedTaxProbateClaimEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (readinessCode != null) result.readinessCode = readinessCode;
+    if (obligationsTaxesAndFundingMap != null)
+      result.obligationsTaxesAndFundingMap = obligationsTaxesAndFundingMap;
+    if (policyClaimPackAndSourceRefs != null)
+      result.policyClaimPackAndSourceRefs = policyClaimPackAndSourceRefs;
+    if (shortfallStressAndCounselTrigger != null)
+      result.shortfallStressAndCounselTrigger =
+          shortfallStressAndCounselTrigger;
+    if (readinessState != null) result.readinessState = readinessState;
+    if (noGuaranteedTaxProbateClaimEnforced != null)
+      result.noGuaranteedTaxProbateClaimEnforced =
+          noGuaranteedTaxProbateClaimEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyLiquidityInsuranceReadinessView._();
+
+  factory LegacyLiquidityInsuranceReadinessView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyLiquidityInsuranceReadinessView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyLiquidityInsuranceReadinessView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'readinessCode')
+    ..aOS(4, _omitFieldNames ? '' : 'obligationsTaxesAndFundingMap')
+    ..aOS(5, _omitFieldNames ? '' : 'policyClaimPackAndSourceRefs')
+    ..aOS(6, _omitFieldNames ? '' : 'shortfallStressAndCounselTrigger')
+    ..aOS(7, _omitFieldNames ? '' : 'readinessState')
+    ..aOB(8, _omitFieldNames ? '' : 'noGuaranteedTaxProbateClaimEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLiquidityInsuranceReadinessView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyLiquidityInsuranceReadinessView copyWith(
+          void Function(LegacyLiquidityInsuranceReadinessView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyLiquidityInsuranceReadinessView))
+          as LegacyLiquidityInsuranceReadinessView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyLiquidityInsuranceReadinessView create() =>
+      LegacyLiquidityInsuranceReadinessView._();
+  @$core.override
+  LegacyLiquidityInsuranceReadinessView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyLiquidityInsuranceReadinessView getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LegacyLiquidityInsuranceReadinessView>(create);
+  static LegacyLiquidityInsuranceReadinessView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get readinessCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set readinessCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReadinessCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReadinessCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get obligationsTaxesAndFundingMap => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set obligationsTaxesAndFundingMap($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasObligationsTaxesAndFundingMap() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearObligationsTaxesAndFundingMap() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get policyClaimPackAndSourceRefs => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set policyClaimPackAndSourceRefs($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPolicyClaimPackAndSourceRefs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPolicyClaimPackAndSourceRefs() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get shortfallStressAndCounselTrigger => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set shortfallStressAndCounselTrigger($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasShortfallStressAndCounselTrigger() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearShortfallStressAndCounselTrigger() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get readinessState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set readinessState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReadinessState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReadinessState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noGuaranteedTaxProbateClaimEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noGuaranteedTaxProbateClaimEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoGuaranteedTaxProbateClaimEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoGuaranteedTaxProbateClaimEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyLiquidityReadinessWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyLiquidityReadinessWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyLiquidityReadinessWorkbenchRequest._();
+
+  factory GetLegacyLiquidityReadinessWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLiquidityReadinessWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLiquidityReadinessWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLiquidityReadinessWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLiquidityReadinessWorkbenchRequest copyWith(
+          void Function(GetLegacyLiquidityReadinessWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLiquidityReadinessWorkbenchRequest))
+          as GetLegacyLiquidityReadinessWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLiquidityReadinessWorkbenchRequest create() =>
+      GetLegacyLiquidityReadinessWorkbenchRequest._();
+  @$core.override
+  GetLegacyLiquidityReadinessWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLiquidityReadinessWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLiquidityReadinessWorkbenchRequest>(create);
+  static GetLegacyLiquidityReadinessWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyLiquidityReadinessWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetLegacyLiquidityReadinessWorkbenchResponse({
+    $core.Iterable<LegacyLiquidityInsuranceReadinessView>? readinessPlans,
+    $core.int? shortfallFlagCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (readinessPlans != null) result.readinessPlans.addAll(readinessPlans);
+    if (shortfallFlagCount != null)
+      result.shortfallFlagCount = shortfallFlagCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyLiquidityReadinessWorkbenchResponse._();
+
+  factory GetLegacyLiquidityReadinessWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyLiquidityReadinessWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyLiquidityReadinessWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyLiquidityInsuranceReadinessView>(
+        1, _omitFieldNames ? '' : 'readinessPlans',
+        subBuilder: LegacyLiquidityInsuranceReadinessView.create)
+    ..aI(2, _omitFieldNames ? '' : 'shortfallFlagCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLiquidityReadinessWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyLiquidityReadinessWorkbenchResponse copyWith(
+          void Function(GetLegacyLiquidityReadinessWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyLiquidityReadinessWorkbenchResponse))
+          as GetLegacyLiquidityReadinessWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLiquidityReadinessWorkbenchResponse create() =>
+      GetLegacyLiquidityReadinessWorkbenchResponse._();
+  @$core.override
+  GetLegacyLiquidityReadinessWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyLiquidityReadinessWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyLiquidityReadinessWorkbenchResponse>(create);
+  static GetLegacyLiquidityReadinessWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyLiquidityInsuranceReadinessView> get readinessPlans =>
+      $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get shortfallFlagCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set shortfallFlagCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasShortfallFlagCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShortfallFlagCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyLiquidityInsuranceReadinessRequest
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyLiquidityInsuranceReadinessRequest({
+    $core.String? userId,
+    $core.String? readinessCode,
+    $core.String? obligationsTaxesAndFundingMap,
+    $core.String? policyClaimPackAndSourceRefs,
+    $core.String? shortfallStressAndCounselTrigger,
+    $core.String? readinessState,
+    $core.bool? noGuaranteedTaxProbateClaimEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (readinessCode != null) result.readinessCode = readinessCode;
+    if (obligationsTaxesAndFundingMap != null)
+      result.obligationsTaxesAndFundingMap = obligationsTaxesAndFundingMap;
+    if (policyClaimPackAndSourceRefs != null)
+      result.policyClaimPackAndSourceRefs = policyClaimPackAndSourceRefs;
+    if (shortfallStressAndCounselTrigger != null)
+      result.shortfallStressAndCounselTrigger =
+          shortfallStressAndCounselTrigger;
+    if (readinessState != null) result.readinessState = readinessState;
+    if (noGuaranteedTaxProbateClaimEnforced != null)
+      result.noGuaranteedTaxProbateClaimEnforced =
+          noGuaranteedTaxProbateClaimEnforced;
+    return result;
+  }
+
+  SaveLegacyLiquidityInsuranceReadinessRequest._();
+
+  factory SaveLegacyLiquidityInsuranceReadinessRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLiquidityInsuranceReadinessRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLiquidityInsuranceReadinessRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'readinessCode')
+    ..aOS(3, _omitFieldNames ? '' : 'obligationsTaxesAndFundingMap')
+    ..aOS(4, _omitFieldNames ? '' : 'policyClaimPackAndSourceRefs')
+    ..aOS(5, _omitFieldNames ? '' : 'shortfallStressAndCounselTrigger')
+    ..aOS(6, _omitFieldNames ? '' : 'readinessState')
+    ..aOB(7, _omitFieldNames ? '' : 'noGuaranteedTaxProbateClaimEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLiquidityInsuranceReadinessRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLiquidityInsuranceReadinessRequest copyWith(
+          void Function(SaveLegacyLiquidityInsuranceReadinessRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLiquidityInsuranceReadinessRequest))
+          as SaveLegacyLiquidityInsuranceReadinessRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLiquidityInsuranceReadinessRequest create() =>
+      SaveLegacyLiquidityInsuranceReadinessRequest._();
+  @$core.override
+  SaveLegacyLiquidityInsuranceReadinessRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLiquidityInsuranceReadinessRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLiquidityInsuranceReadinessRequest>(create);
+  static SaveLegacyLiquidityInsuranceReadinessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get readinessCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set readinessCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadinessCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadinessCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get obligationsTaxesAndFundingMap => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set obligationsTaxesAndFundingMap($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasObligationsTaxesAndFundingMap() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearObligationsTaxesAndFundingMap() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get policyClaimPackAndSourceRefs => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set policyClaimPackAndSourceRefs($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPolicyClaimPackAndSourceRefs() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPolicyClaimPackAndSourceRefs() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get shortfallStressAndCounselTrigger => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set shortfallStressAndCounselTrigger($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasShortfallStressAndCounselTrigger() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearShortfallStressAndCounselTrigger() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get readinessState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set readinessState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReadinessState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReadinessState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get noGuaranteedTaxProbateClaimEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set noGuaranteedTaxProbateClaimEnforced($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNoGuaranteedTaxProbateClaimEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNoGuaranteedTaxProbateClaimEnforced() => $_clearField(7);
+}
+
+class SaveLegacyLiquidityInsuranceReadinessResponse
+    extends $pb.GeneratedMessage {
+  factory SaveLegacyLiquidityInsuranceReadinessResponse({
+    LegacyLiquidityInsuranceReadinessView? readinessPlan,
+  }) {
+    final result = create();
+    if (readinessPlan != null) result.readinessPlan = readinessPlan;
+    return result;
+  }
+
+  SaveLegacyLiquidityInsuranceReadinessResponse._();
+
+  factory SaveLegacyLiquidityInsuranceReadinessResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyLiquidityInsuranceReadinessResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyLiquidityInsuranceReadinessResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLiquidityInsuranceReadinessView>(
+        1, _omitFieldNames ? '' : 'readinessPlan',
+        subBuilder: LegacyLiquidityInsuranceReadinessView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLiquidityInsuranceReadinessResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyLiquidityInsuranceReadinessResponse copyWith(
+          void Function(SaveLegacyLiquidityInsuranceReadinessResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyLiquidityInsuranceReadinessResponse))
+          as SaveLegacyLiquidityInsuranceReadinessResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLiquidityInsuranceReadinessResponse create() =>
+      SaveLegacyLiquidityInsuranceReadinessResponse._();
+  @$core.override
+  SaveLegacyLiquidityInsuranceReadinessResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyLiquidityInsuranceReadinessResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyLiquidityInsuranceReadinessResponse>(create);
+  static SaveLegacyLiquidityInsuranceReadinessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLiquidityInsuranceReadinessView get readinessPlan => $_getN(0);
+  @$pb.TagNumber(1)
+  set readinessPlan(LegacyLiquidityInsuranceReadinessView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReadinessPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReadinessPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLiquidityInsuranceReadinessView ensureReadinessPlan() => $_ensure(0);
+}
+
+class StressTestLegacyLiquidityOrRouteCounselRequest
+    extends $pb.GeneratedMessage {
+  factory StressTestLegacyLiquidityOrRouteCounselRequest({
+    $core.String? userId,
+    $core.String? readinessCode,
+    $core.String? targetReadinessState,
+    $core.String? stressNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (readinessCode != null) result.readinessCode = readinessCode;
+    if (targetReadinessState != null)
+      result.targetReadinessState = targetReadinessState;
+    if (stressNotes != null) result.stressNotes = stressNotes;
+    return result;
+  }
+
+  StressTestLegacyLiquidityOrRouteCounselRequest._();
+
+  factory StressTestLegacyLiquidityOrRouteCounselRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StressTestLegacyLiquidityOrRouteCounselRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StressTestLegacyLiquidityOrRouteCounselRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'readinessCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetReadinessState')
+    ..aOS(4, _omitFieldNames ? '' : 'stressNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestLegacyLiquidityOrRouteCounselRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestLegacyLiquidityOrRouteCounselRequest copyWith(
+          void Function(StressTestLegacyLiquidityOrRouteCounselRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as StressTestLegacyLiquidityOrRouteCounselRequest))
+          as StressTestLegacyLiquidityOrRouteCounselRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StressTestLegacyLiquidityOrRouteCounselRequest create() =>
+      StressTestLegacyLiquidityOrRouteCounselRequest._();
+  @$core.override
+  StressTestLegacyLiquidityOrRouteCounselRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static StressTestLegacyLiquidityOrRouteCounselRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StressTestLegacyLiquidityOrRouteCounselRequest>(create);
+  static StressTestLegacyLiquidityOrRouteCounselRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get readinessCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set readinessCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadinessCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadinessCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetReadinessState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetReadinessState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetReadinessState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetReadinessState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get stressNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set stressNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStressNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStressNotes() => $_clearField(4);
+}
+
+class StressTestLegacyLiquidityOrRouteCounselResponse
+    extends $pb.GeneratedMessage {
+  factory StressTestLegacyLiquidityOrRouteCounselResponse({
+    LegacyLiquidityInsuranceReadinessView? readinessPlan,
+    $core.String? readinessStatus,
+  }) {
+    final result = create();
+    if (readinessPlan != null) result.readinessPlan = readinessPlan;
+    if (readinessStatus != null) result.readinessStatus = readinessStatus;
+    return result;
+  }
+
+  StressTestLegacyLiquidityOrRouteCounselResponse._();
+
+  factory StressTestLegacyLiquidityOrRouteCounselResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StressTestLegacyLiquidityOrRouteCounselResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'StressTestLegacyLiquidityOrRouteCounselResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyLiquidityInsuranceReadinessView>(
+        1, _omitFieldNames ? '' : 'readinessPlan',
+        subBuilder: LegacyLiquidityInsuranceReadinessView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'readinessStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestLegacyLiquidityOrRouteCounselResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StressTestLegacyLiquidityOrRouteCounselResponse copyWith(
+          void Function(StressTestLegacyLiquidityOrRouteCounselResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as StressTestLegacyLiquidityOrRouteCounselResponse))
+          as StressTestLegacyLiquidityOrRouteCounselResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StressTestLegacyLiquidityOrRouteCounselResponse create() =>
+      StressTestLegacyLiquidityOrRouteCounselResponse._();
+  @$core.override
+  StressTestLegacyLiquidityOrRouteCounselResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static StressTestLegacyLiquidityOrRouteCounselResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          StressTestLegacyLiquidityOrRouteCounselResponse>(create);
+  static StressTestLegacyLiquidityOrRouteCounselResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyLiquidityInsuranceReadinessView get readinessPlan => $_getN(0);
+  @$pb.TagNumber(1)
+  set readinessPlan(LegacyLiquidityInsuranceReadinessView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasReadinessPlan() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReadinessPlan() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyLiquidityInsuranceReadinessView ensureReadinessPlan() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get readinessStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set readinessStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReadinessStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReadinessStatus() => $_clearField(2);
+}
+
+class LegacyCounselFamilyGovernanceView extends $pb.GeneratedMessage {
+  factory LegacyCounselFamilyGovernanceView({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? governanceCode,
+    $core.String? counselCredentialsAndScopedDataroom,
+    $core.String? familyCharterAndDecisionRecords,
+    $core.String? nextGenEducationAndPrivacyGate,
+    $core.String? governanceState,
+    $core.bool? noAiValuesOrFamilyRankingEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (governanceCode != null) result.governanceCode = governanceCode;
+    if (counselCredentialsAndScopedDataroom != null)
+      result.counselCredentialsAndScopedDataroom =
+          counselCredentialsAndScopedDataroom;
+    if (familyCharterAndDecisionRecords != null)
+      result.familyCharterAndDecisionRecords = familyCharterAndDecisionRecords;
+    if (nextGenEducationAndPrivacyGate != null)
+      result.nextGenEducationAndPrivacyGate = nextGenEducationAndPrivacyGate;
+    if (governanceState != null) result.governanceState = governanceState;
+    if (noAiValuesOrFamilyRankingEnforced != null)
+      result.noAiValuesOrFamilyRankingEnforced =
+          noAiValuesOrFamilyRankingEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  LegacyCounselFamilyGovernanceView._();
+
+  factory LegacyCounselFamilyGovernanceView.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LegacyCounselFamilyGovernanceView.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LegacyCounselFamilyGovernanceView',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'governanceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'counselCredentialsAndScopedDataroom')
+    ..aOS(5, _omitFieldNames ? '' : 'familyCharterAndDecisionRecords')
+    ..aOS(6, _omitFieldNames ? '' : 'nextGenEducationAndPrivacyGate')
+    ..aOS(7, _omitFieldNames ? '' : 'governanceState')
+    ..aOB(8, _omitFieldNames ? '' : 'noAiValuesOrFamilyRankingEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyCounselFamilyGovernanceView clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LegacyCounselFamilyGovernanceView copyWith(
+          void Function(LegacyCounselFamilyGovernanceView) updates) =>
+      super.copyWith((message) =>
+              updates(message as LegacyCounselFamilyGovernanceView))
+          as LegacyCounselFamilyGovernanceView;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LegacyCounselFamilyGovernanceView create() =>
+      LegacyCounselFamilyGovernanceView._();
+  @$core.override
+  LegacyCounselFamilyGovernanceView createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LegacyCounselFamilyGovernanceView getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LegacyCounselFamilyGovernanceView>(
+          create);
+  static LegacyCounselFamilyGovernanceView? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get governanceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set governanceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGovernanceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGovernanceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get counselCredentialsAndScopedDataroom => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set counselCredentialsAndScopedDataroom($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCounselCredentialsAndScopedDataroom() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCounselCredentialsAndScopedDataroom() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get familyCharterAndDecisionRecords => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set familyCharterAndDecisionRecords($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFamilyCharterAndDecisionRecords() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFamilyCharterAndDecisionRecords() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get nextGenEducationAndPrivacyGate => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set nextGenEducationAndPrivacyGate($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNextGenEducationAndPrivacyGate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNextGenEducationAndPrivacyGate() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get governanceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set governanceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGovernanceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGovernanceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noAiValuesOrFamilyRankingEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noAiValuesOrFamilyRankingEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoAiValuesOrFamilyRankingEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoAiValuesOrFamilyRankingEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetLegacyCounselGovernanceWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetLegacyCounselGovernanceWorkbenchRequest({
+    $core.String? userId,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    return result;
+  }
+
+  GetLegacyCounselGovernanceWorkbenchRequest._();
+
+  factory GetLegacyCounselGovernanceWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyCounselGovernanceWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyCounselGovernanceWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyCounselGovernanceWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyCounselGovernanceWorkbenchRequest copyWith(
+          void Function(GetLegacyCounselGovernanceWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyCounselGovernanceWorkbenchRequest))
+          as GetLegacyCounselGovernanceWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyCounselGovernanceWorkbenchRequest create() =>
+      GetLegacyCounselGovernanceWorkbenchRequest._();
+  @$core.override
+  GetLegacyCounselGovernanceWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyCounselGovernanceWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyCounselGovernanceWorkbenchRequest>(create);
+  static GetLegacyCounselGovernanceWorkbenchRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+}
+
+class GetLegacyCounselGovernanceWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetLegacyCounselGovernanceWorkbenchResponse({
+    $core.Iterable<LegacyCounselFamilyGovernanceView>? governances,
+    $core.int? openProposalCount,
+    $core.String? workbenchSummary,
+  }) {
+    final result = create();
+    if (governances != null) result.governances.addAll(governances);
+    if (openProposalCount != null) result.openProposalCount = openProposalCount;
+    if (workbenchSummary != null) result.workbenchSummary = workbenchSummary;
+    return result;
+  }
+
+  GetLegacyCounselGovernanceWorkbenchResponse._();
+
+  factory GetLegacyCounselGovernanceWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetLegacyCounselGovernanceWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetLegacyCounselGovernanceWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..pPM<LegacyCounselFamilyGovernanceView>(
+        1, _omitFieldNames ? '' : 'governances',
+        subBuilder: LegacyCounselFamilyGovernanceView.create)
+    ..aI(2, _omitFieldNames ? '' : 'openProposalCount')
+    ..aOS(3, _omitFieldNames ? '' : 'workbenchSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyCounselGovernanceWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetLegacyCounselGovernanceWorkbenchResponse copyWith(
+          void Function(GetLegacyCounselGovernanceWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetLegacyCounselGovernanceWorkbenchResponse))
+          as GetLegacyCounselGovernanceWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyCounselGovernanceWorkbenchResponse create() =>
+      GetLegacyCounselGovernanceWorkbenchResponse._();
+  @$core.override
+  GetLegacyCounselGovernanceWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetLegacyCounselGovernanceWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetLegacyCounselGovernanceWorkbenchResponse>(create);
+  static GetLegacyCounselGovernanceWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<LegacyCounselFamilyGovernanceView> get governances => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.int get openProposalCount => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set openProposalCount($core.int value) => $_setSignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOpenProposalCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOpenProposalCount() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workbenchSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workbenchSummary($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkbenchSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkbenchSummary() => $_clearField(3);
+}
+
+class SaveLegacyCounselFamilyGovernanceRequest extends $pb.GeneratedMessage {
+  factory SaveLegacyCounselFamilyGovernanceRequest({
+    $core.String? userId,
+    $core.String? governanceCode,
+    $core.String? counselCredentialsAndScopedDataroom,
+    $core.String? familyCharterAndDecisionRecords,
+    $core.String? nextGenEducationAndPrivacyGate,
+    $core.String? governanceState,
+    $core.bool? noAiValuesOrFamilyRankingEnforced,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (governanceCode != null) result.governanceCode = governanceCode;
+    if (counselCredentialsAndScopedDataroom != null)
+      result.counselCredentialsAndScopedDataroom =
+          counselCredentialsAndScopedDataroom;
+    if (familyCharterAndDecisionRecords != null)
+      result.familyCharterAndDecisionRecords = familyCharterAndDecisionRecords;
+    if (nextGenEducationAndPrivacyGate != null)
+      result.nextGenEducationAndPrivacyGate = nextGenEducationAndPrivacyGate;
+    if (governanceState != null) result.governanceState = governanceState;
+    if (noAiValuesOrFamilyRankingEnforced != null)
+      result.noAiValuesOrFamilyRankingEnforced =
+          noAiValuesOrFamilyRankingEnforced;
+    return result;
+  }
+
+  SaveLegacyCounselFamilyGovernanceRequest._();
+
+  factory SaveLegacyCounselFamilyGovernanceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyCounselFamilyGovernanceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyCounselFamilyGovernanceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'governanceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'counselCredentialsAndScopedDataroom')
+    ..aOS(4, _omitFieldNames ? '' : 'familyCharterAndDecisionRecords')
+    ..aOS(5, _omitFieldNames ? '' : 'nextGenEducationAndPrivacyGate')
+    ..aOS(6, _omitFieldNames ? '' : 'governanceState')
+    ..aOB(7, _omitFieldNames ? '' : 'noAiValuesOrFamilyRankingEnforced')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyCounselFamilyGovernanceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyCounselFamilyGovernanceRequest copyWith(
+          void Function(SaveLegacyCounselFamilyGovernanceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyCounselFamilyGovernanceRequest))
+          as SaveLegacyCounselFamilyGovernanceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyCounselFamilyGovernanceRequest create() =>
+      SaveLegacyCounselFamilyGovernanceRequest._();
+  @$core.override
+  SaveLegacyCounselFamilyGovernanceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyCounselFamilyGovernanceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyCounselFamilyGovernanceRequest>(create);
+  static SaveLegacyCounselFamilyGovernanceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get governanceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set governanceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGovernanceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGovernanceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get counselCredentialsAndScopedDataroom => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set counselCredentialsAndScopedDataroom($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCounselCredentialsAndScopedDataroom() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCounselCredentialsAndScopedDataroom() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get familyCharterAndDecisionRecords => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set familyCharterAndDecisionRecords($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFamilyCharterAndDecisionRecords() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFamilyCharterAndDecisionRecords() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get nextGenEducationAndPrivacyGate => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set nextGenEducationAndPrivacyGate($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNextGenEducationAndPrivacyGate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNextGenEducationAndPrivacyGate() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get governanceState => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set governanceState($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGovernanceState() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGovernanceState() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get noAiValuesOrFamilyRankingEnforced => $_getBF(6);
+  @$pb.TagNumber(7)
+  set noAiValuesOrFamilyRankingEnforced($core.bool value) =>
+      $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNoAiValuesOrFamilyRankingEnforced() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNoAiValuesOrFamilyRankingEnforced() => $_clearField(7);
+}
+
+class SaveLegacyCounselFamilyGovernanceResponse extends $pb.GeneratedMessage {
+  factory SaveLegacyCounselFamilyGovernanceResponse({
+    LegacyCounselFamilyGovernanceView? governance,
+  }) {
+    final result = create();
+    if (governance != null) result.governance = governance;
+    return result;
+  }
+
+  SaveLegacyCounselFamilyGovernanceResponse._();
+
+  factory SaveLegacyCounselFamilyGovernanceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveLegacyCounselFamilyGovernanceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveLegacyCounselFamilyGovernanceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyCounselFamilyGovernanceView>(
+        1, _omitFieldNames ? '' : 'governance',
+        subBuilder: LegacyCounselFamilyGovernanceView.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyCounselFamilyGovernanceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveLegacyCounselFamilyGovernanceResponse copyWith(
+          void Function(SaveLegacyCounselFamilyGovernanceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveLegacyCounselFamilyGovernanceResponse))
+          as SaveLegacyCounselFamilyGovernanceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyCounselFamilyGovernanceResponse create() =>
+      SaveLegacyCounselFamilyGovernanceResponse._();
+  @$core.override
+  SaveLegacyCounselFamilyGovernanceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveLegacyCounselFamilyGovernanceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveLegacyCounselFamilyGovernanceResponse>(create);
+  static SaveLegacyCounselFamilyGovernanceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyCounselFamilyGovernanceView get governance => $_getN(0);
+  @$pb.TagNumber(1)
+  set governance(LegacyCounselFamilyGovernanceView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGovernance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGovernance() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyCounselFamilyGovernanceView ensureGovernance() => $_ensure(0);
+}
+
+class UnlockLegacyStewardshipModuleOrRevokeCounselRequest
+    extends $pb.GeneratedMessage {
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselRequest({
+    $core.String? userId,
+    $core.String? governanceCode,
+    $core.String? targetGovernanceState,
+    $core.String? governanceNotes,
+  }) {
+    final result = create();
+    if (userId != null) result.userId = userId;
+    if (governanceCode != null) result.governanceCode = governanceCode;
+    if (targetGovernanceState != null)
+      result.targetGovernanceState = targetGovernanceState;
+    if (governanceNotes != null) result.governanceNotes = governanceNotes;
+    return result;
+  }
+
+  UnlockLegacyStewardshipModuleOrRevokeCounselRequest._();
+
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'UnlockLegacyStewardshipModuleOrRevokeCounselRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'userId')
+    ..aOS(2, _omitFieldNames ? '' : 'governanceCode')
+    ..aOS(3, _omitFieldNames ? '' : 'targetGovernanceState')
+    ..aOS(4, _omitFieldNames ? '' : 'governanceNotes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnlockLegacyStewardshipModuleOrRevokeCounselRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnlockLegacyStewardshipModuleOrRevokeCounselRequest copyWith(
+          void Function(UnlockLegacyStewardshipModuleOrRevokeCounselRequest)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as UnlockLegacyStewardshipModuleOrRevokeCounselRequest))
+          as UnlockLegacyStewardshipModuleOrRevokeCounselRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlockLegacyStewardshipModuleOrRevokeCounselRequest create() =>
+      UnlockLegacyStewardshipModuleOrRevokeCounselRequest._();
+  @$core.override
+  UnlockLegacyStewardshipModuleOrRevokeCounselRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UnlockLegacyStewardshipModuleOrRevokeCounselRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UnlockLegacyStewardshipModuleOrRevokeCounselRequest>(create);
+  static UnlockLegacyStewardshipModuleOrRevokeCounselRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get userId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set userId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUserId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUserId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get governanceCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set governanceCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGovernanceCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGovernanceCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get targetGovernanceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set targetGovernanceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTargetGovernanceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTargetGovernanceState() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get governanceNotes => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set governanceNotes($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGovernanceNotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGovernanceNotes() => $_clearField(4);
+}
+
+class UnlockLegacyStewardshipModuleOrRevokeCounselResponse
+    extends $pb.GeneratedMessage {
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselResponse({
+    LegacyCounselFamilyGovernanceView? governance,
+    $core.String? governanceStatus,
+  }) {
+    final result = create();
+    if (governance != null) result.governance = governance;
+    if (governanceStatus != null) result.governanceStatus = governanceStatus;
+    return result;
+  }
+
+  UnlockLegacyStewardshipModuleOrRevokeCounselResponse._();
+
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UnlockLegacyStewardshipModuleOrRevokeCounselResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames
+          ? ''
+          : 'UnlockLegacyStewardshipModuleOrRevokeCounselResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.legacy.v1'),
+      createEmptyInstance: create)
+    ..aOM<LegacyCounselFamilyGovernanceView>(
+        1, _omitFieldNames ? '' : 'governance',
+        subBuilder: LegacyCounselFamilyGovernanceView.create)
+    ..aOS(2, _omitFieldNames ? '' : 'governanceStatus')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnlockLegacyStewardshipModuleOrRevokeCounselResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UnlockLegacyStewardshipModuleOrRevokeCounselResponse copyWith(
+          void Function(UnlockLegacyStewardshipModuleOrRevokeCounselResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as UnlockLegacyStewardshipModuleOrRevokeCounselResponse))
+          as UnlockLegacyStewardshipModuleOrRevokeCounselResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UnlockLegacyStewardshipModuleOrRevokeCounselResponse create() =>
+      UnlockLegacyStewardshipModuleOrRevokeCounselResponse._();
+  @$core.override
+  UnlockLegacyStewardshipModuleOrRevokeCounselResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static UnlockLegacyStewardshipModuleOrRevokeCounselResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          UnlockLegacyStewardshipModuleOrRevokeCounselResponse>(create);
+  static UnlockLegacyStewardshipModuleOrRevokeCounselResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  LegacyCounselFamilyGovernanceView get governance => $_getN(0);
+  @$pb.TagNumber(1)
+  set governance(LegacyCounselFamilyGovernanceView value) =>
+      $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGovernance() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGovernance() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LegacyCounselFamilyGovernanceView ensureGovernance() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get governanceStatus => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set governanceStatus($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGovernanceStatus() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGovernanceStatus() => $_clearField(2);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

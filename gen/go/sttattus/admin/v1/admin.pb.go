@@ -1089,6 +1089,6546 @@ func (x *RevokeDeviceGrantResponse) GetRow() *DeviceGrantRow {
 	return nil
 }
 
+type UniversalWorkItemCaseEntry struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                         string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                            string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                           string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                    string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                  string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                 string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	SourceTableAuthoritativeEnforced bool                   `protobuf:"varint,8,opt,name=source_table_authoritative_enforced,json=sourceTableAuthoritativeEnforced,proto3" json:"source_table_authoritative_enforced,omitempty"`
+	UpdatedAt                        string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *UniversalWorkItemCaseEntry) Reset() {
+	*x = UniversalWorkItemCaseEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UniversalWorkItemCaseEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UniversalWorkItemCaseEntry) ProtoMessage() {}
+
+func (x *UniversalWorkItemCaseEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[17]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UniversalWorkItemCaseEntry.ProtoReflect.Descriptor instead.
+func (*UniversalWorkItemCaseEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UniversalWorkItemCaseEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *UniversalWorkItemCaseEntry) GetSourceTableAuthoritativeEnforced() bool {
+	if x != nil {
+		return x.SourceTableAuthoritativeEnforced
+	}
+	return false
+}
+
+func (x *UniversalWorkItemCaseEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetUniversalWorkItemCaseOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUniversalWorkItemCaseOverviewRequest) Reset() {
+	*x = GetUniversalWorkItemCaseOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[18]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUniversalWorkItemCaseOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUniversalWorkItemCaseOverviewRequest) ProtoMessage() {}
+
+func (x *GetUniversalWorkItemCaseOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[18]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUniversalWorkItemCaseOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetUniversalWorkItemCaseOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *GetUniversalWorkItemCaseOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetUniversalWorkItemCaseOverviewResponse struct {
+	state                            protoimpl.MessageState        `protogen:"open.v1"`
+	Items                            []*UniversalWorkItemCaseEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion              string                        `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	SourceTableAuthoritativeEnforced bool                          `protobuf:"varint,3,opt,name=source_table_authoritative_enforced,json=sourceTableAuthoritativeEnforced,proto3" json:"source_table_authoritative_enforced,omitempty"`
+	GovernanceSummary                string                        `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) Reset() {
+	*x = GetUniversalWorkItemCaseOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[19]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUniversalWorkItemCaseOverviewResponse) ProtoMessage() {}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[19]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUniversalWorkItemCaseOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetUniversalWorkItemCaseOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) GetItems() []*UniversalWorkItemCaseEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) GetSourceTableAuthoritativeEnforced() bool {
+	if x != nil {
+		return x.SourceTableAuthoritativeEnforced
+	}
+	return false
+}
+
+func (x *GetUniversalWorkItemCaseOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type UpsertWorkItemAdapterRuleRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) Reset() {
+	*x = UpsertWorkItemAdapterRuleRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[20]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWorkItemAdapterRuleRequest) ProtoMessage() {}
+
+func (x *UpsertWorkItemAdapterRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[20]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWorkItemAdapterRuleRequest.ProtoReflect.Descriptor instead.
+func (*UpsertWorkItemAdapterRuleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UpsertWorkItemAdapterRuleRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type UpsertWorkItemAdapterRuleResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Item          *UniversalWorkItemCaseEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertWorkItemAdapterRuleResponse) Reset() {
+	*x = UpsertWorkItemAdapterRuleResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[21]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWorkItemAdapterRuleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWorkItemAdapterRuleResponse) ProtoMessage() {}
+
+func (x *UpsertWorkItemAdapterRuleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[21]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWorkItemAdapterRuleResponse.ProtoReflect.Descriptor instead.
+func (*UpsertWorkItemAdapterRuleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *UpsertWorkItemAdapterRuleResponse) GetItem() *UniversalWorkItemCaseEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type TransitionUniversalWorkItemStateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TransitionUniversalWorkItemStateRequest) Reset() {
+	*x = TransitionUniversalWorkItemStateRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TransitionUniversalWorkItemStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TransitionUniversalWorkItemStateRequest) ProtoMessage() {}
+
+func (x *TransitionUniversalWorkItemStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TransitionUniversalWorkItemStateRequest.ProtoReflect.Descriptor instead.
+func (*TransitionUniversalWorkItemStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *TransitionUniversalWorkItemStateRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *TransitionUniversalWorkItemStateRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *TransitionUniversalWorkItemStateRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type TransitionUniversalWorkItemStateResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Item          *UniversalWorkItemCaseEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TransitionUniversalWorkItemStateResponse) Reset() {
+	*x = TransitionUniversalWorkItemStateResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TransitionUniversalWorkItemStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TransitionUniversalWorkItemStateResponse) ProtoMessage() {}
+
+func (x *TransitionUniversalWorkItemStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TransitionUniversalWorkItemStateResponse.ProtoReflect.Descriptor instead.
+func (*TransitionUniversalWorkItemStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *TransitionUniversalWorkItemStateResponse) GetItem() *UniversalWorkItemCaseEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RoutingSkillsSlaEntry struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoUnqualifiedOrUnownedRouting bool                   `protobuf:"varint,8,opt,name=no_unqualified_or_unowned_routing,json=noUnqualifiedOrUnownedRouting,proto3" json:"no_unqualified_or_unowned_routing,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *RoutingSkillsSlaEntry) Reset() {
+	*x = RoutingSkillsSlaEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RoutingSkillsSlaEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RoutingSkillsSlaEntry) ProtoMessage() {}
+
+func (x *RoutingSkillsSlaEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RoutingSkillsSlaEntry.ProtoReflect.Descriptor instead.
+func (*RoutingSkillsSlaEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *RoutingSkillsSlaEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *RoutingSkillsSlaEntry) GetNoUnqualifiedOrUnownedRouting() bool {
+	if x != nil {
+		return x.NoUnqualifiedOrUnownedRouting
+	}
+	return false
+}
+
+func (x *RoutingSkillsSlaEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetRoutingSkillsSlaOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetRoutingSkillsSlaOverviewRequest) Reset() {
+	*x = GetRoutingSkillsSlaOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRoutingSkillsSlaOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRoutingSkillsSlaOverviewRequest) ProtoMessage() {}
+
+func (x *GetRoutingSkillsSlaOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRoutingSkillsSlaOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetRoutingSkillsSlaOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *GetRoutingSkillsSlaOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetRoutingSkillsSlaOverviewResponse struct {
+	state                         protoimpl.MessageState   `protogen:"open.v1"`
+	Items                         []*RoutingSkillsSlaEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                   `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoUnqualifiedOrUnownedRouting bool                     `protobuf:"varint,3,opt,name=no_unqualified_or_unowned_routing,json=noUnqualifiedOrUnownedRouting,proto3" json:"no_unqualified_or_unowned_routing,omitempty"`
+	GovernanceSummary             string                   `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) Reset() {
+	*x = GetRoutingSkillsSlaOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetRoutingSkillsSlaOverviewResponse) ProtoMessage() {}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetRoutingSkillsSlaOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetRoutingSkillsSlaOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) GetItems() []*RoutingSkillsSlaEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) GetNoUnqualifiedOrUnownedRouting() bool {
+	if x != nil {
+		return x.NoUnqualifiedOrUnownedRouting
+	}
+	return false
+}
+
+func (x *GetRoutingSkillsSlaOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type UpsertStaffSkillCapacityProfileRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) Reset() {
+	*x = UpsertStaffSkillCapacityProfileRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStaffSkillCapacityProfileRequest) ProtoMessage() {}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStaffSkillCapacityProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpsertStaffSkillCapacityProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UpsertStaffSkillCapacityProfileRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type UpsertStaffSkillCapacityProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *RoutingSkillsSlaEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertStaffSkillCapacityProfileResponse) Reset() {
+	*x = UpsertStaffSkillCapacityProfileResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStaffSkillCapacityProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStaffSkillCapacityProfileResponse) ProtoMessage() {}
+
+func (x *UpsertStaffSkillCapacityProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStaffSkillCapacityProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpsertStaffSkillCapacityProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *UpsertStaffSkillCapacityProfileResponse) GetItem() *RoutingSkillsSlaEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type TriggerSlaBreachEscalationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TriggerSlaBreachEscalationRequest) Reset() {
+	*x = TriggerSlaBreachEscalationRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerSlaBreachEscalationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerSlaBreachEscalationRequest) ProtoMessage() {}
+
+func (x *TriggerSlaBreachEscalationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerSlaBreachEscalationRequest.ProtoReflect.Descriptor instead.
+func (*TriggerSlaBreachEscalationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *TriggerSlaBreachEscalationRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *TriggerSlaBreachEscalationRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *TriggerSlaBreachEscalationRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type TriggerSlaBreachEscalationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Item          *RoutingSkillsSlaEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TriggerSlaBreachEscalationResponse) Reset() {
+	*x = TriggerSlaBreachEscalationResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[30]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerSlaBreachEscalationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerSlaBreachEscalationResponse) ProtoMessage() {}
+
+func (x *TriggerSlaBreachEscalationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[30]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerSlaBreachEscalationResponse.ProtoReflect.Descriptor instead.
+func (*TriggerSlaBreachEscalationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *TriggerSlaBreachEscalationResponse) GetItem() *RoutingSkillsSlaEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type EvidenceSopDecisionEntry struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                  string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                     string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                    string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail             string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail           string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice          string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	TwoPersonFourEyesEnforced bool                   `protobuf:"varint,8,opt,name=two_person_four_eyes_enforced,json=twoPersonFourEyesEnforced,proto3" json:"two_person_four_eyes_enforced,omitempty"`
+	UpdatedAt                 string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *EvidenceSopDecisionEntry) Reset() {
+	*x = EvidenceSopDecisionEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[31]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvidenceSopDecisionEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvidenceSopDecisionEntry) ProtoMessage() {}
+
+func (x *EvidenceSopDecisionEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[31]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvidenceSopDecisionEntry.ProtoReflect.Descriptor instead.
+func (*EvidenceSopDecisionEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *EvidenceSopDecisionEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *EvidenceSopDecisionEntry) GetTwoPersonFourEyesEnforced() bool {
+	if x != nil {
+		return x.TwoPersonFourEyesEnforced
+	}
+	return false
+}
+
+func (x *EvidenceSopDecisionEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetEvidenceSopDecisionOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEvidenceSopDecisionOverviewRequest) Reset() {
+	*x = GetEvidenceSopDecisionOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[32]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceSopDecisionOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceSopDecisionOverviewRequest) ProtoMessage() {}
+
+func (x *GetEvidenceSopDecisionOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[32]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceSopDecisionOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetEvidenceSopDecisionOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *GetEvidenceSopDecisionOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetEvidenceSopDecisionOverviewResponse struct {
+	state                     protoimpl.MessageState      `protogen:"open.v1"`
+	Items                     []*EvidenceSopDecisionEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion       string                      `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	TwoPersonFourEyesEnforced bool                        `protobuf:"varint,3,opt,name=two_person_four_eyes_enforced,json=twoPersonFourEyesEnforced,proto3" json:"two_person_four_eyes_enforced,omitempty"`
+	GovernanceSummary         string                      `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) Reset() {
+	*x = GetEvidenceSopDecisionOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[33]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEvidenceSopDecisionOverviewResponse) ProtoMessage() {}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[33]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEvidenceSopDecisionOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetEvidenceSopDecisionOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) GetItems() []*EvidenceSopDecisionEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) GetTwoPersonFourEyesEnforced() bool {
+	if x != nil {
+		return x.TwoPersonFourEyesEnforced
+	}
+	return false
+}
+
+func (x *GetEvidenceSopDecisionOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RecordEvidenceCustodyAssertionRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) Reset() {
+	*x = RecordEvidenceCustodyAssertionRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[34]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordEvidenceCustodyAssertionRequest) ProtoMessage() {}
+
+func (x *RecordEvidenceCustodyAssertionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[34]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordEvidenceCustodyAssertionRequest.ProtoReflect.Descriptor instead.
+func (*RecordEvidenceCustodyAssertionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RecordEvidenceCustodyAssertionRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RecordEvidenceCustodyAssertionResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Item          *EvidenceSopDecisionEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordEvidenceCustodyAssertionResponse) Reset() {
+	*x = RecordEvidenceCustodyAssertionResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[35]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordEvidenceCustodyAssertionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordEvidenceCustodyAssertionResponse) ProtoMessage() {}
+
+func (x *RecordEvidenceCustodyAssertionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[35]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordEvidenceCustodyAssertionResponse.ProtoReflect.Descriptor instead.
+func (*RecordEvidenceCustodyAssertionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *RecordEvidenceCustodyAssertionResponse) GetItem() *EvidenceSopDecisionEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CommitFourEyesSopDecisionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CommitFourEyesSopDecisionRequest) Reset() {
+	*x = CommitFourEyesSopDecisionRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[36]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CommitFourEyesSopDecisionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommitFourEyesSopDecisionRequest) ProtoMessage() {}
+
+func (x *CommitFourEyesSopDecisionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[36]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommitFourEyesSopDecisionRequest.ProtoReflect.Descriptor instead.
+func (*CommitFourEyesSopDecisionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *CommitFourEyesSopDecisionRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *CommitFourEyesSopDecisionRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *CommitFourEyesSopDecisionRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type CommitFourEyesSopDecisionResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Item          *EvidenceSopDecisionEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CommitFourEyesSopDecisionResponse) Reset() {
+	*x = CommitFourEyesSopDecisionResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[37]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CommitFourEyesSopDecisionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommitFourEyesSopDecisionResponse) ProtoMessage() {}
+
+func (x *CommitFourEyesSopDecisionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[37]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommitFourEyesSopDecisionResponse.ProtoReflect.Descriptor instead.
+func (*CommitFourEyesSopDecisionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *CommitFourEyesSopDecisionResponse) GetItem() *EvidenceSopDecisionEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CommunicationsConciergeEntry struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	HumanReviewBeforeSendEnforced bool                   `protobuf:"varint,8,opt,name=human_review_before_send_enforced,json=humanReviewBeforeSendEnforced,proto3" json:"human_review_before_send_enforced,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *CommunicationsConciergeEntry) Reset() {
+	*x = CommunicationsConciergeEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[38]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CommunicationsConciergeEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommunicationsConciergeEntry) ProtoMessage() {}
+
+func (x *CommunicationsConciergeEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[38]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommunicationsConciergeEntry.ProtoReflect.Descriptor instead.
+func (*CommunicationsConciergeEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *CommunicationsConciergeEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *CommunicationsConciergeEntry) GetHumanReviewBeforeSendEnforced() bool {
+	if x != nil {
+		return x.HumanReviewBeforeSendEnforced
+	}
+	return false
+}
+
+func (x *CommunicationsConciergeEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetCommunicationsConciergeOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCommunicationsConciergeOverviewRequest) Reset() {
+	*x = GetCommunicationsConciergeOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommunicationsConciergeOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommunicationsConciergeOverviewRequest) ProtoMessage() {}
+
+func (x *GetCommunicationsConciergeOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommunicationsConciergeOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCommunicationsConciergeOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *GetCommunicationsConciergeOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetCommunicationsConciergeOverviewResponse struct {
+	state                         protoimpl.MessageState          `protogen:"open.v1"`
+	Items                         []*CommunicationsConciergeEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                          `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	HumanReviewBeforeSendEnforced bool                            `protobuf:"varint,3,opt,name=human_review_before_send_enforced,json=humanReviewBeforeSendEnforced,proto3" json:"human_review_before_send_enforced,omitempty"`
+	GovernanceSummary             string                          `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) Reset() {
+	*x = GetCommunicationsConciergeOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[40]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommunicationsConciergeOverviewResponse) ProtoMessage() {}
+
+func (x *GetCommunicationsConciergeOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[40]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommunicationsConciergeOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCommunicationsConciergeOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) GetItems() []*CommunicationsConciergeEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) GetHumanReviewBeforeSendEnforced() bool {
+	if x != nil {
+		return x.HumanReviewBeforeSendEnforced
+	}
+	return false
+}
+
+func (x *GetCommunicationsConciergeOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type SaveApprovedMacroOrDraftRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) Reset() {
+	*x = SaveApprovedMacroOrDraftRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[41]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveApprovedMacroOrDraftRequest) ProtoMessage() {}
+
+func (x *SaveApprovedMacroOrDraftRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[41]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveApprovedMacroOrDraftRequest.ProtoReflect.Descriptor instead.
+func (*SaveApprovedMacroOrDraftRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *SaveApprovedMacroOrDraftRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type SaveApprovedMacroOrDraftResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *CommunicationsConciergeEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveApprovedMacroOrDraftResponse) Reset() {
+	*x = SaveApprovedMacroOrDraftResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[42]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveApprovedMacroOrDraftResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveApprovedMacroOrDraftResponse) ProtoMessage() {}
+
+func (x *SaveApprovedMacroOrDraftResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[42]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveApprovedMacroOrDraftResponse.ProtoReflect.Descriptor instead.
+func (*SaveApprovedMacroOrDraftResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *SaveApprovedMacroOrDraftResponse) GetItem() *CommunicationsConciergeEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type DispatchReviewedMemberReplyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DispatchReviewedMemberReplyRequest) Reset() {
+	*x = DispatchReviewedMemberReplyRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[43]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DispatchReviewedMemberReplyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DispatchReviewedMemberReplyRequest) ProtoMessage() {}
+
+func (x *DispatchReviewedMemberReplyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[43]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DispatchReviewedMemberReplyRequest.ProtoReflect.Descriptor instead.
+func (*DispatchReviewedMemberReplyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *DispatchReviewedMemberReplyRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *DispatchReviewedMemberReplyRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *DispatchReviewedMemberReplyRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type DispatchReviewedMemberReplyResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *CommunicationsConciergeEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DispatchReviewedMemberReplyResponse) Reset() {
+	*x = DispatchReviewedMemberReplyResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[44]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DispatchReviewedMemberReplyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DispatchReviewedMemberReplyResponse) ProtoMessage() {}
+
+func (x *DispatchReviewedMemberReplyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[44]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DispatchReviewedMemberReplyResponse.ProtoReflect.Descriptor instead.
+func (*DispatchReviewedMemberReplyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *DispatchReviewedMemberReplyResponse) GetItem() *CommunicationsConciergeEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type VerificationAutomationAppealsEntry struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                    string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                       string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                      string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail               string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail             string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice            string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	AutoDisableOnErrorThreshold bool                   `protobuf:"varint,8,opt,name=auto_disable_on_error_threshold,json=autoDisableOnErrorThreshold,proto3" json:"auto_disable_on_error_threshold,omitempty"`
+	UpdatedAt                   string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *VerificationAutomationAppealsEntry) Reset() {
+	*x = VerificationAutomationAppealsEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[45]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerificationAutomationAppealsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerificationAutomationAppealsEntry) ProtoMessage() {}
+
+func (x *VerificationAutomationAppealsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[45]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerificationAutomationAppealsEntry.ProtoReflect.Descriptor instead.
+func (*VerificationAutomationAppealsEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *VerificationAutomationAppealsEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *VerificationAutomationAppealsEntry) GetAutoDisableOnErrorThreshold() bool {
+	if x != nil {
+		return x.AutoDisableOnErrorThreshold
+	}
+	return false
+}
+
+func (x *VerificationAutomationAppealsEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetVerificationAutomationAppealsOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetVerificationAutomationAppealsOverviewRequest) Reset() {
+	*x = GetVerificationAutomationAppealsOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[46]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVerificationAutomationAppealsOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVerificationAutomationAppealsOverviewRequest) ProtoMessage() {}
+
+func (x *GetVerificationAutomationAppealsOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[46]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVerificationAutomationAppealsOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetVerificationAutomationAppealsOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *GetVerificationAutomationAppealsOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetVerificationAutomationAppealsOverviewResponse struct {
+	state                       protoimpl.MessageState                `protogen:"open.v1"`
+	Items                       []*VerificationAutomationAppealsEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion         string                                `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	AutoDisableOnErrorThreshold bool                                  `protobuf:"varint,3,opt,name=auto_disable_on_error_threshold,json=autoDisableOnErrorThreshold,proto3" json:"auto_disable_on_error_threshold,omitempty"`
+	GovernanceSummary           string                                `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) Reset() {
+	*x = GetVerificationAutomationAppealsOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[47]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetVerificationAutomationAppealsOverviewResponse) ProtoMessage() {}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[47]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetVerificationAutomationAppealsOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetVerificationAutomationAppealsOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) GetItems() []*VerificationAutomationAppealsEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) GetAutoDisableOnErrorThreshold() bool {
+	if x != nil {
+		return x.AutoDisableOnErrorThreshold
+	}
+	return false
+}
+
+func (x *GetVerificationAutomationAppealsOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type EvaluateExplainableVerificationRuleRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) Reset() {
+	*x = EvaluateExplainableVerificationRuleRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[48]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateExplainableVerificationRuleRequest) ProtoMessage() {}
+
+func (x *EvaluateExplainableVerificationRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[48]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateExplainableVerificationRuleRequest.ProtoReflect.Descriptor instead.
+func (*EvaluateExplainableVerificationRuleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *EvaluateExplainableVerificationRuleRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type EvaluateExplainableVerificationRuleResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Item          *VerificationAutomationAppealsEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EvaluateExplainableVerificationRuleResponse) Reset() {
+	*x = EvaluateExplainableVerificationRuleResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[49]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateExplainableVerificationRuleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateExplainableVerificationRuleResponse) ProtoMessage() {}
+
+func (x *EvaluateExplainableVerificationRuleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[49]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateExplainableVerificationRuleResponse.ProtoReflect.Descriptor instead.
+func (*EvaluateExplainableVerificationRuleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *EvaluateExplainableVerificationRuleResponse) GetItem() *VerificationAutomationAppealsEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ResolveMemberVerificationAppealRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResolveMemberVerificationAppealRequest) Reset() {
+	*x = ResolveMemberVerificationAppealRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[50]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResolveMemberVerificationAppealRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResolveMemberVerificationAppealRequest) ProtoMessage() {}
+
+func (x *ResolveMemberVerificationAppealRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[50]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResolveMemberVerificationAppealRequest.ProtoReflect.Descriptor instead.
+func (*ResolveMemberVerificationAppealRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *ResolveMemberVerificationAppealRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ResolveMemberVerificationAppealRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ResolveMemberVerificationAppealRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ResolveMemberVerificationAppealResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Item          *VerificationAutomationAppealsEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ResolveMemberVerificationAppealResponse) Reset() {
+	*x = ResolveMemberVerificationAppealResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[51]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ResolveMemberVerificationAppealResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResolveMemberVerificationAppealResponse) ProtoMessage() {}
+
+func (x *ResolveMemberVerificationAppealResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[51]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResolveMemberVerificationAppealResponse.ProtoReflect.Descriptor instead.
+func (*ResolveMemberVerificationAppealResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *ResolveMemberVerificationAppealResponse) GetItem() *VerificationAutomationAppealsEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CatalogContentPolicyStudioEntry struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                    string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                       string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                      string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail               string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail             string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice            string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoSilentRetroactiveMutation bool                   `protobuf:"varint,8,opt,name=no_silent_retroactive_mutation,json=noSilentRetroactiveMutation,proto3" json:"no_silent_retroactive_mutation,omitempty"`
+	UpdatedAt                   string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *CatalogContentPolicyStudioEntry) Reset() {
+	*x = CatalogContentPolicyStudioEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[52]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CatalogContentPolicyStudioEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CatalogContentPolicyStudioEntry) ProtoMessage() {}
+
+func (x *CatalogContentPolicyStudioEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[52]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CatalogContentPolicyStudioEntry.ProtoReflect.Descriptor instead.
+func (*CatalogContentPolicyStudioEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetNoSilentRetroactiveMutation() bool {
+	if x != nil {
+		return x.NoSilentRetroactiveMutation
+	}
+	return false
+}
+
+func (x *CatalogContentPolicyStudioEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetCatalogContentPolicyStudioOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewRequest) Reset() {
+	*x = GetCatalogContentPolicyStudioOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[53]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCatalogContentPolicyStudioOverviewRequest) ProtoMessage() {}
+
+func (x *GetCatalogContentPolicyStudioOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[53]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCatalogContentPolicyStudioOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCatalogContentPolicyStudioOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetCatalogContentPolicyStudioOverviewResponse struct {
+	state                       protoimpl.MessageState             `protogen:"open.v1"`
+	Items                       []*CatalogContentPolicyStudioEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion         string                             `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoSilentRetroactiveMutation bool                               `protobuf:"varint,3,opt,name=no_silent_retroactive_mutation,json=noSilentRetroactiveMutation,proto3" json:"no_silent_retroactive_mutation,omitempty"`
+	GovernanceSummary           string                             `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) Reset() {
+	*x = GetCatalogContentPolicyStudioOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[54]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCatalogContentPolicyStudioOverviewResponse) ProtoMessage() {}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[54]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCatalogContentPolicyStudioOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCatalogContentPolicyStudioOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) GetItems() []*CatalogContentPolicyStudioEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) GetNoSilentRetroactiveMutation() bool {
+	if x != nil {
+		return x.NoSilentRetroactiveMutation
+	}
+	return false
+}
+
+func (x *GetCatalogContentPolicyStudioOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type StageCatalogOrPolicyReleaseRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) Reset() {
+	*x = StageCatalogOrPolicyReleaseRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[55]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageCatalogOrPolicyReleaseRequest) ProtoMessage() {}
+
+func (x *StageCatalogOrPolicyReleaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[55]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageCatalogOrPolicyReleaseRequest.ProtoReflect.Descriptor instead.
+func (*StageCatalogOrPolicyReleaseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *StageCatalogOrPolicyReleaseRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type StageCatalogOrPolicyReleaseResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Item          *CatalogContentPolicyStudioEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StageCatalogOrPolicyReleaseResponse) Reset() {
+	*x = StageCatalogOrPolicyReleaseResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[56]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageCatalogOrPolicyReleaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageCatalogOrPolicyReleaseResponse) ProtoMessage() {}
+
+func (x *StageCatalogOrPolicyReleaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[56]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageCatalogOrPolicyReleaseResponse.ProtoReflect.Descriptor instead.
+func (*StageCatalogOrPolicyReleaseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *StageCatalogOrPolicyReleaseResponse) GetItem() *CatalogContentPolicyStudioEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type PublishOrRollbackStudioReleaseRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishOrRollbackStudioReleaseRequest) Reset() {
+	*x = PublishOrRollbackStudioReleaseRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishOrRollbackStudioReleaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishOrRollbackStudioReleaseRequest) ProtoMessage() {}
+
+func (x *PublishOrRollbackStudioReleaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishOrRollbackStudioReleaseRequest.ProtoReflect.Descriptor instead.
+func (*PublishOrRollbackStudioReleaseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *PublishOrRollbackStudioReleaseRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *PublishOrRollbackStudioReleaseRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *PublishOrRollbackStudioReleaseRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type PublishOrRollbackStudioReleaseResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Item          *CatalogContentPolicyStudioEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PublishOrRollbackStudioReleaseResponse) Reset() {
+	*x = PublishOrRollbackStudioReleaseResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PublishOrRollbackStudioReleaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PublishOrRollbackStudioReleaseResponse) ProtoMessage() {}
+
+func (x *PublishOrRollbackStudioReleaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PublishOrRollbackStudioReleaseResponse.ProtoReflect.Descriptor instead.
+func (*PublishOrRollbackStudioReleaseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *PublishOrRollbackStudioReleaseResponse) GetItem() *CatalogContentPolicyStudioEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type PlatformReconciliationOpsEntry struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                     string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                        string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                       string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail              string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice             string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	DryRunAndBlastRadiusEnforced bool                   `protobuf:"varint,8,opt,name=dry_run_and_blast_radius_enforced,json=dryRunAndBlastRadiusEnforced,proto3" json:"dry_run_and_blast_radius_enforced,omitempty"`
+	UpdatedAt                    string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *PlatformReconciliationOpsEntry) Reset() {
+	*x = PlatformReconciliationOpsEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PlatformReconciliationOpsEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PlatformReconciliationOpsEntry) ProtoMessage() {}
+
+func (x *PlatformReconciliationOpsEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PlatformReconciliationOpsEntry.ProtoReflect.Descriptor instead.
+func (*PlatformReconciliationOpsEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *PlatformReconciliationOpsEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *PlatformReconciliationOpsEntry) GetDryRunAndBlastRadiusEnforced() bool {
+	if x != nil {
+		return x.DryRunAndBlastRadiusEnforced
+	}
+	return false
+}
+
+func (x *PlatformReconciliationOpsEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetPlatformReconciliationOpsOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPlatformReconciliationOpsOverviewRequest) Reset() {
+	*x = GetPlatformReconciliationOpsOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPlatformReconciliationOpsOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPlatformReconciliationOpsOverviewRequest) ProtoMessage() {}
+
+func (x *GetPlatformReconciliationOpsOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPlatformReconciliationOpsOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetPlatformReconciliationOpsOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *GetPlatformReconciliationOpsOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetPlatformReconciliationOpsOverviewResponse struct {
+	state                        protoimpl.MessageState            `protogen:"open.v1"`
+	Items                        []*PlatformReconciliationOpsEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion          string                            `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	DryRunAndBlastRadiusEnforced bool                              `protobuf:"varint,3,opt,name=dry_run_and_blast_radius_enforced,json=dryRunAndBlastRadiusEnforced,proto3" json:"dry_run_and_blast_radius_enforced,omitempty"`
+	GovernanceSummary            string                            `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) Reset() {
+	*x = GetPlatformReconciliationOpsOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPlatformReconciliationOpsOverviewResponse) ProtoMessage() {}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPlatformReconciliationOpsOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetPlatformReconciliationOpsOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) GetItems() []*PlatformReconciliationOpsEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) GetDryRunAndBlastRadiusEnforced() bool {
+	if x != nil {
+		return x.DryRunAndBlastRadiusEnforced
+	}
+	return false
+}
+
+func (x *GetPlatformReconciliationOpsOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RunSyntheticJourneyOrInvariantCheckRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) Reset() {
+	*x = RunSyntheticJourneyOrInvariantCheckRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunSyntheticJourneyOrInvariantCheckRequest) ProtoMessage() {}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunSyntheticJourneyOrInvariantCheckRequest.ProtoReflect.Descriptor instead.
+func (*RunSyntheticJourneyOrInvariantCheckRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RunSyntheticJourneyOrInvariantCheckResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Item          *PlatformReconciliationOpsEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckResponse) Reset() {
+	*x = RunSyntheticJourneyOrInvariantCheckResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunSyntheticJourneyOrInvariantCheckResponse) ProtoMessage() {}
+
+func (x *RunSyntheticJourneyOrInvariantCheckResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunSyntheticJourneyOrInvariantCheckResponse.ProtoReflect.Descriptor instead.
+func (*RunSyntheticJourneyOrInvariantCheckResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *RunSyntheticJourneyOrInvariantCheckResponse) GetItem() *PlatformReconciliationOpsEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ReplayDeadLetterOrDryRunRepairRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) Reset() {
+	*x = ReplayDeadLetterOrDryRunRepairRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReplayDeadLetterOrDryRunRepairRequest) ProtoMessage() {}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReplayDeadLetterOrDryRunRepairRequest.ProtoReflect.Descriptor instead.
+func (*ReplayDeadLetterOrDryRunRepairRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ReplayDeadLetterOrDryRunRepairResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Item          *PlatformReconciliationOpsEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairResponse) Reset() {
+	*x = ReplayDeadLetterOrDryRunRepairResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReplayDeadLetterOrDryRunRepairResponse) ProtoMessage() {}
+
+func (x *ReplayDeadLetterOrDryRunRepairResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReplayDeadLetterOrDryRunRepairResponse.ProtoReflect.Descriptor instead.
+func (*ReplayDeadLetterOrDryRunRepairResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *ReplayDeadLetterOrDryRunRepairResponse) GetItem() *PlatformReconciliationOpsEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type AiControlQualityCalibrationEntry struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                      string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                        string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                 string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail               string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice              string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoAutoTrainingWithoutEvalGate bool                   `protobuf:"varint,8,opt,name=no_auto_training_without_eval_gate,json=noAutoTrainingWithoutEvalGate,proto3" json:"no_auto_training_without_eval_gate,omitempty"`
+	UpdatedAt                     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *AiControlQualityCalibrationEntry) Reset() {
+	*x = AiControlQualityCalibrationEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AiControlQualityCalibrationEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AiControlQualityCalibrationEntry) ProtoMessage() {}
+
+func (x *AiControlQualityCalibrationEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AiControlQualityCalibrationEntry.ProtoReflect.Descriptor instead.
+func (*AiControlQualityCalibrationEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *AiControlQualityCalibrationEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *AiControlQualityCalibrationEntry) GetNoAutoTrainingWithoutEvalGate() bool {
+	if x != nil {
+		return x.NoAutoTrainingWithoutEvalGate
+	}
+	return false
+}
+
+func (x *AiControlQualityCalibrationEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetAiControlQualityCalibrationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAiControlQualityCalibrationOverviewRequest) Reset() {
+	*x = GetAiControlQualityCalibrationOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAiControlQualityCalibrationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAiControlQualityCalibrationOverviewRequest) ProtoMessage() {}
+
+func (x *GetAiControlQualityCalibrationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAiControlQualityCalibrationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetAiControlQualityCalibrationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *GetAiControlQualityCalibrationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetAiControlQualityCalibrationOverviewResponse struct {
+	state                         protoimpl.MessageState              `protogen:"open.v1"`
+	Items                         []*AiControlQualityCalibrationEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion           string                              `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoAutoTrainingWithoutEvalGate bool                                `protobuf:"varint,3,opt,name=no_auto_training_without_eval_gate,json=noAutoTrainingWithoutEvalGate,proto3" json:"no_auto_training_without_eval_gate,omitempty"`
+	GovernanceSummary             string                              `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) Reset() {
+	*x = GetAiControlQualityCalibrationOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAiControlQualityCalibrationOverviewResponse) ProtoMessage() {}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAiControlQualityCalibrationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetAiControlQualityCalibrationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) GetItems() []*AiControlQualityCalibrationEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) GetNoAutoTrainingWithoutEvalGate() bool {
+	if x != nil {
+		return x.NoAutoTrainingWithoutEvalGate
+	}
+	return false
+}
+
+func (x *GetAiControlQualityCalibrationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RegisterModelDeploymentManifestRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RegisterModelDeploymentManifestRequest) Reset() {
+	*x = RegisterModelDeploymentManifestRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterModelDeploymentManifestRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterModelDeploymentManifestRequest) ProtoMessage() {}
+
+func (x *RegisterModelDeploymentManifestRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterModelDeploymentManifestRequest.ProtoReflect.Descriptor instead.
+func (*RegisterModelDeploymentManifestRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *RegisterModelDeploymentManifestRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RegisterModelDeploymentManifestRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RegisterModelDeploymentManifestRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RegisterModelDeploymentManifestRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RegisterModelDeploymentManifestResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Item          *AiControlQualityCalibrationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterModelDeploymentManifestResponse) Reset() {
+	*x = RegisterModelDeploymentManifestResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterModelDeploymentManifestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterModelDeploymentManifestResponse) ProtoMessage() {}
+
+func (x *RegisterModelDeploymentManifestResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterModelDeploymentManifestResponse.ProtoReflect.Descriptor instead.
+func (*RegisterModelDeploymentManifestResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *RegisterModelDeploymentManifestResponse) GetItem() *AiControlQualityCalibrationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RecordBlindQaCalibrationReviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordBlindQaCalibrationReviewRequest) Reset() {
+	*x = RecordBlindQaCalibrationReviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordBlindQaCalibrationReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordBlindQaCalibrationReviewRequest) ProtoMessage() {}
+
+func (x *RecordBlindQaCalibrationReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordBlindQaCalibrationReviewRequest.ProtoReflect.Descriptor instead.
+func (*RecordBlindQaCalibrationReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *RecordBlindQaCalibrationReviewRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RecordBlindQaCalibrationReviewRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *RecordBlindQaCalibrationReviewRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type RecordBlindQaCalibrationReviewResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Item          *AiControlQualityCalibrationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordBlindQaCalibrationReviewResponse) Reset() {
+	*x = RecordBlindQaCalibrationReviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordBlindQaCalibrationReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordBlindQaCalibrationReviewResponse) ProtoMessage() {}
+
+func (x *RecordBlindQaCalibrationReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordBlindQaCalibrationReviewResponse.ProtoReflect.Descriptor instead.
+func (*RecordBlindQaCalibrationReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *RecordBlindQaCalibrationReviewResponse) GetItem() *AiControlQualityCalibrationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type SecurityPrivacyRecoveryEntry struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                 string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                    string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                   string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail            string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail          string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice         string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoSecretRevealOrHardNuke bool                   `protobuf:"varint,8,opt,name=no_secret_reveal_or_hard_nuke,json=noSecretRevealOrHardNuke,proto3" json:"no_secret_reveal_or_hard_nuke,omitempty"`
+	UpdatedAt                string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *SecurityPrivacyRecoveryEntry) Reset() {
+	*x = SecurityPrivacyRecoveryEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SecurityPrivacyRecoveryEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SecurityPrivacyRecoveryEntry) ProtoMessage() {}
+
+func (x *SecurityPrivacyRecoveryEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SecurityPrivacyRecoveryEntry.ProtoReflect.Descriptor instead.
+func (*SecurityPrivacyRecoveryEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetNoSecretRevealOrHardNuke() bool {
+	if x != nil {
+		return x.NoSecretRevealOrHardNuke
+	}
+	return false
+}
+
+func (x *SecurityPrivacyRecoveryEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetSecurityPrivacyRecoveryOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewRequest) Reset() {
+	*x = GetSecurityPrivacyRecoveryOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSecurityPrivacyRecoveryOverviewRequest) ProtoMessage() {}
+
+func (x *GetSecurityPrivacyRecoveryOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSecurityPrivacyRecoveryOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetSecurityPrivacyRecoveryOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetSecurityPrivacyRecoveryOverviewResponse struct {
+	state                    protoimpl.MessageState          `protogen:"open.v1"`
+	Items                    []*SecurityPrivacyRecoveryEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion      string                          `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoSecretRevealOrHardNuke bool                            `protobuf:"varint,3,opt,name=no_secret_reveal_or_hard_nuke,json=noSecretRevealOrHardNuke,proto3" json:"no_secret_reveal_or_hard_nuke,omitempty"`
+	GovernanceSummary        string                          `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) Reset() {
+	*x = GetSecurityPrivacyRecoveryOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSecurityPrivacyRecoveryOverviewResponse) ProtoMessage() {}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSecurityPrivacyRecoveryOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetSecurityPrivacyRecoveryOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) GetItems() []*SecurityPrivacyRecoveryEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) GetNoSecretRevealOrHardNuke() bool {
+	if x != nil {
+		return x.NoSecretRevealOrHardNuke
+	}
+	return false
+}
+
+func (x *GetSecurityPrivacyRecoveryOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RequestJitPrivilegedElevationRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RequestJitPrivilegedElevationRequest) Reset() {
+	*x = RequestJitPrivilegedElevationRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestJitPrivilegedElevationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestJitPrivilegedElevationRequest) ProtoMessage() {}
+
+func (x *RequestJitPrivilegedElevationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestJitPrivilegedElevationRequest.ProtoReflect.Descriptor instead.
+func (*RequestJitPrivilegedElevationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *RequestJitPrivilegedElevationRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RequestJitPrivilegedElevationRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RequestJitPrivilegedElevationRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RequestJitPrivilegedElevationRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RequestJitPrivilegedElevationResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *SecurityPrivacyRecoveryEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RequestJitPrivilegedElevationResponse) Reset() {
+	*x = RequestJitPrivilegedElevationResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RequestJitPrivilegedElevationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestJitPrivilegedElevationResponse) ProtoMessage() {}
+
+func (x *RequestJitPrivilegedElevationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestJitPrivilegedElevationResponse.ProtoReflect.Descriptor instead.
+func (*RequestJitPrivilegedElevationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *RequestJitPrivilegedElevationResponse) GetItem() *SecurityPrivacyRecoveryEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ExecutePrivacyOrAccountRecoveryCaseRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) Reset() {
+	*x = ExecutePrivacyOrAccountRecoveryCaseRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecutePrivacyOrAccountRecoveryCaseRequest) ProtoMessage() {}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecutePrivacyOrAccountRecoveryCaseRequest.ProtoReflect.Descriptor instead.
+func (*ExecutePrivacyOrAccountRecoveryCaseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ExecutePrivacyOrAccountRecoveryCaseResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Item          *SecurityPrivacyRecoveryEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseResponse) Reset() {
+	*x = ExecutePrivacyOrAccountRecoveryCaseResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ExecutePrivacyOrAccountRecoveryCaseResponse) ProtoMessage() {}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ExecutePrivacyOrAccountRecoveryCaseResponse.ProtoReflect.Descriptor instead.
+func (*ExecutePrivacyOrAccountRecoveryCaseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *ExecutePrivacyOrAccountRecoveryCaseResponse) GetItem() *SecurityPrivacyRecoveryEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type FraudAbuseTrustGraphEntry struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode               string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                  string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                 string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail          string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail        string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice       string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoOpaqueSingleScoreBan bool                   `protobuf:"varint,8,opt,name=no_opaque_single_score_ban,json=noOpaqueSingleScoreBan,proto3" json:"no_opaque_single_score_ban,omitempty"`
+	UpdatedAt              string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *FraudAbuseTrustGraphEntry) Reset() {
+	*x = FraudAbuseTrustGraphEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FraudAbuseTrustGraphEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FraudAbuseTrustGraphEntry) ProtoMessage() {}
+
+func (x *FraudAbuseTrustGraphEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FraudAbuseTrustGraphEntry.ProtoReflect.Descriptor instead.
+func (*FraudAbuseTrustGraphEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetNoOpaqueSingleScoreBan() bool {
+	if x != nil {
+		return x.NoOpaqueSingleScoreBan
+	}
+	return false
+}
+
+func (x *FraudAbuseTrustGraphEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetFraudAbuseTrustGraphOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewRequest) Reset() {
+	*x = GetFraudAbuseTrustGraphOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFraudAbuseTrustGraphOverviewRequest) ProtoMessage() {}
+
+func (x *GetFraudAbuseTrustGraphOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFraudAbuseTrustGraphOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetFraudAbuseTrustGraphOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetFraudAbuseTrustGraphOverviewResponse struct {
+	state                  protoimpl.MessageState       `protogen:"open.v1"`
+	Items                  []*FraudAbuseTrustGraphEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion    string                       `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoOpaqueSingleScoreBan bool                         `protobuf:"varint,3,opt,name=no_opaque_single_score_ban,json=noOpaqueSingleScoreBan,proto3" json:"no_opaque_single_score_ban,omitempty"`
+	GovernanceSummary      string                       `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) Reset() {
+	*x = GetFraudAbuseTrustGraphOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFraudAbuseTrustGraphOverviewResponse) ProtoMessage() {}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFraudAbuseTrustGraphOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetFraudAbuseTrustGraphOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) GetItems() []*FraudAbuseTrustGraphEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) GetNoOpaqueSingleScoreBan() bool {
+	if x != nil {
+		return x.NoOpaqueSingleScoreBan
+	}
+	return false
+}
+
+func (x *GetFraudAbuseTrustGraphOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type LogExplainableTrustSignalClusterRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) Reset() {
+	*x = LogExplainableTrustSignalClusterRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogExplainableTrustSignalClusterRequest) ProtoMessage() {}
+
+func (x *LogExplainableTrustSignalClusterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogExplainableTrustSignalClusterRequest.ProtoReflect.Descriptor instead.
+func (*LogExplainableTrustSignalClusterRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *LogExplainableTrustSignalClusterRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type LogExplainableTrustSignalClusterResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Item          *FraudAbuseTrustGraphEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogExplainableTrustSignalClusterResponse) Reset() {
+	*x = LogExplainableTrustSignalClusterResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogExplainableTrustSignalClusterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogExplainableTrustSignalClusterResponse) ProtoMessage() {}
+
+func (x *LogExplainableTrustSignalClusterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogExplainableTrustSignalClusterResponse.ProtoReflect.Descriptor instead.
+func (*LogExplainableTrustSignalClusterResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *LogExplainableTrustSignalClusterResponse) GetItem() *FraudAbuseTrustGraphEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ApplyReversibleTrustSanctionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApplyReversibleTrustSanctionRequest) Reset() {
+	*x = ApplyReversibleTrustSanctionRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApplyReversibleTrustSanctionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApplyReversibleTrustSanctionRequest) ProtoMessage() {}
+
+func (x *ApplyReversibleTrustSanctionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApplyReversibleTrustSanctionRequest.ProtoReflect.Descriptor instead.
+func (*ApplyReversibleTrustSanctionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *ApplyReversibleTrustSanctionRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ApplyReversibleTrustSanctionRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ApplyReversibleTrustSanctionRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ApplyReversibleTrustSanctionResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	Item          *FraudAbuseTrustGraphEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApplyReversibleTrustSanctionResponse) Reset() {
+	*x = ApplyReversibleTrustSanctionResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApplyReversibleTrustSanctionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApplyReversibleTrustSanctionResponse) ProtoMessage() {}
+
+func (x *ApplyReversibleTrustSanctionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApplyReversibleTrustSanctionResponse.ProtoReflect.Descriptor instead.
+func (*ApplyReversibleTrustSanctionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *ApplyReversibleTrustSanctionResponse) GetItem() *FraudAbuseTrustGraphEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type CommerceEntitlementPayoutEntry struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                           string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                              string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                             string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                      string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                    string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                   string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	IdempotentWebhookAndLedgerEnforced bool                   `protobuf:"varint,8,opt,name=idempotent_webhook_and_ledger_enforced,json=idempotentWebhookAndLedgerEnforced,proto3" json:"idempotent_webhook_and_ledger_enforced,omitempty"`
+	UpdatedAt                          string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *CommerceEntitlementPayoutEntry) Reset() {
+	*x = CommerceEntitlementPayoutEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CommerceEntitlementPayoutEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CommerceEntitlementPayoutEntry) ProtoMessage() {}
+
+func (x *CommerceEntitlementPayoutEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CommerceEntitlementPayoutEntry.ProtoReflect.Descriptor instead.
+func (*CommerceEntitlementPayoutEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetIdempotentWebhookAndLedgerEnforced() bool {
+	if x != nil {
+		return x.IdempotentWebhookAndLedgerEnforced
+	}
+	return false
+}
+
+func (x *CommerceEntitlementPayoutEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetCommerceEntitlementPayoutOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewRequest) Reset() {
+	*x = GetCommerceEntitlementPayoutOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommerceEntitlementPayoutOverviewRequest) ProtoMessage() {}
+
+func (x *GetCommerceEntitlementPayoutOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommerceEntitlementPayoutOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCommerceEntitlementPayoutOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetCommerceEntitlementPayoutOverviewResponse struct {
+	state                              protoimpl.MessageState            `protogen:"open.v1"`
+	Items                              []*CommerceEntitlementPayoutEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion                string                            `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	IdempotentWebhookAndLedgerEnforced bool                              `protobuf:"varint,3,opt,name=idempotent_webhook_and_ledger_enforced,json=idempotentWebhookAndLedgerEnforced,proto3" json:"idempotent_webhook_and_ledger_enforced,omitempty"`
+	GovernanceSummary                  string                            `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) Reset() {
+	*x = GetCommerceEntitlementPayoutOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCommerceEntitlementPayoutOverviewResponse) ProtoMessage() {}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCommerceEntitlementPayoutOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCommerceEntitlementPayoutOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) GetItems() []*CommerceEntitlementPayoutEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) GetIdempotentWebhookAndLedgerEnforced() bool {
+	if x != nil {
+		return x.IdempotentWebhookAndLedgerEnforced
+	}
+	return false
+}
+
+func (x *GetCommerceEntitlementPayoutOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type CreateLedgerAdjustmentPreviewRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) Reset() {
+	*x = CreateLedgerAdjustmentPreviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLedgerAdjustmentPreviewRequest) ProtoMessage() {}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLedgerAdjustmentPreviewRequest.ProtoReflect.Descriptor instead.
+func (*CreateLedgerAdjustmentPreviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CreateLedgerAdjustmentPreviewRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type CreateLedgerAdjustmentPreviewResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Item          *CommerceEntitlementPayoutEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateLedgerAdjustmentPreviewResponse) Reset() {
+	*x = CreateLedgerAdjustmentPreviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateLedgerAdjustmentPreviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLedgerAdjustmentPreviewResponse) ProtoMessage() {}
+
+func (x *CreateLedgerAdjustmentPreviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLedgerAdjustmentPreviewResponse.ProtoReflect.Descriptor instead.
+func (*CreateLedgerAdjustmentPreviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *CreateLedgerAdjustmentPreviewResponse) GetItem() *CommerceEntitlementPayoutEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type ReconcileEntitlementOrPartnerPayoutRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) Reset() {
+	*x = ReconcileEntitlementOrPartnerPayoutRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileEntitlementOrPartnerPayoutRequest) ProtoMessage() {}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileEntitlementOrPartnerPayoutRequest.ProtoReflect.Descriptor instead.
+func (*ReconcileEntitlementOrPartnerPayoutRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ReconcileEntitlementOrPartnerPayoutResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Item          *CommerceEntitlementPayoutEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutResponse) Reset() {
+	*x = ReconcileEntitlementOrPartnerPayoutResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileEntitlementOrPartnerPayoutResponse) ProtoMessage() {}
+
+func (x *ReconcileEntitlementOrPartnerPayoutResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileEntitlementOrPartnerPayoutResponse.ProtoReflect.Descriptor instead.
+func (*ReconcileEntitlementOrPartnerPayoutResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *ReconcileEntitlementOrPartnerPayoutResponse) GetItem() *CommerceEntitlementPayoutEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type MasterIncidentBulkRemediationEntry struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                       string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                          string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                         string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                  string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice               string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	IdempotentCohortFanoutEnforced bool                   `protobuf:"varint,8,opt,name=idempotent_cohort_fanout_enforced,json=idempotentCohortFanoutEnforced,proto3" json:"idempotent_cohort_fanout_enforced,omitempty"`
+	UpdatedAt                      string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *MasterIncidentBulkRemediationEntry) Reset() {
+	*x = MasterIncidentBulkRemediationEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MasterIncidentBulkRemediationEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MasterIncidentBulkRemediationEntry) ProtoMessage() {}
+
+func (x *MasterIncidentBulkRemediationEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MasterIncidentBulkRemediationEntry.ProtoReflect.Descriptor instead.
+func (*MasterIncidentBulkRemediationEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetIdempotentCohortFanoutEnforced() bool {
+	if x != nil {
+		return x.IdempotentCohortFanoutEnforced
+	}
+	return false
+}
+
+func (x *MasterIncidentBulkRemediationEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetMasterIncidentBulkRemediationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewRequest) Reset() {
+	*x = GetMasterIncidentBulkRemediationOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMasterIncidentBulkRemediationOverviewRequest) ProtoMessage() {}
+
+func (x *GetMasterIncidentBulkRemediationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMasterIncidentBulkRemediationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetMasterIncidentBulkRemediationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetMasterIncidentBulkRemediationOverviewResponse struct {
+	state                          protoimpl.MessageState                `protogen:"open.v1"`
+	Items                          []*MasterIncidentBulkRemediationEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion            string                                `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	IdempotentCohortFanoutEnforced bool                                  `protobuf:"varint,3,opt,name=idempotent_cohort_fanout_enforced,json=idempotentCohortFanoutEnforced,proto3" json:"idempotent_cohort_fanout_enforced,omitempty"`
+	GovernanceSummary              string                                `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) Reset() {
+	*x = GetMasterIncidentBulkRemediationOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMasterIncidentBulkRemediationOverviewResponse) ProtoMessage() {}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMasterIncidentBulkRemediationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetMasterIncidentBulkRemediationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) GetItems() []*MasterIncidentBulkRemediationEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) GetIdempotentCohortFanoutEnforced() bool {
+	if x != nil {
+		return x.IdempotentCohortFanoutEnforced
+	}
+	return false
+}
+
+func (x *GetMasterIncidentBulkRemediationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type StageMasterIncidentCohortPlanRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) Reset() {
+	*x = StageMasterIncidentCohortPlanRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageMasterIncidentCohortPlanRequest) ProtoMessage() {}
+
+func (x *StageMasterIncidentCohortPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageMasterIncidentCohortPlanRequest.ProtoReflect.Descriptor instead.
+func (*StageMasterIncidentCohortPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *StageMasterIncidentCohortPlanRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type StageMasterIncidentCohortPlanResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Item          *MasterIncidentBulkRemediationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StageMasterIncidentCohortPlanResponse) Reset() {
+	*x = StageMasterIncidentCohortPlanResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageMasterIncidentCohortPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageMasterIncidentCohortPlanResponse) ProtoMessage() {}
+
+func (x *StageMasterIncidentCohortPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageMasterIncidentCohortPlanResponse.ProtoReflect.Descriptor instead.
+func (*StageMasterIncidentCohortPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *StageMasterIncidentCohortPlanResponse) GetItem() *MasterIncidentBulkRemediationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type FanoutIdempotentBulkRemediationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FanoutIdempotentBulkRemediationRequest) Reset() {
+	*x = FanoutIdempotentBulkRemediationRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FanoutIdempotentBulkRemediationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FanoutIdempotentBulkRemediationRequest) ProtoMessage() {}
+
+func (x *FanoutIdempotentBulkRemediationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FanoutIdempotentBulkRemediationRequest.ProtoReflect.Descriptor instead.
+func (*FanoutIdempotentBulkRemediationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *FanoutIdempotentBulkRemediationRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *FanoutIdempotentBulkRemediationRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *FanoutIdempotentBulkRemediationRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type FanoutIdempotentBulkRemediationResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Item          *MasterIncidentBulkRemediationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FanoutIdempotentBulkRemediationResponse) Reset() {
+	*x = FanoutIdempotentBulkRemediationResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FanoutIdempotentBulkRemediationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FanoutIdempotentBulkRemediationResponse) ProtoMessage() {}
+
+func (x *FanoutIdempotentBulkRemediationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FanoutIdempotentBulkRemediationResponse.ProtoReflect.Descriptor instead.
+func (*FanoutIdempotentBulkRemediationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *FanoutIdempotentBulkRemediationResponse) GetItem() *MasterIncidentBulkRemediationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type WorkforceLearningCertificationEntry struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                        string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                           string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                          string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                   string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                 string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice                string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	NoKeystrokeOrScreenSurveillance bool                   `protobuf:"varint,8,opt,name=no_keystroke_or_screen_surveillance,json=noKeystrokeOrScreenSurveillance,proto3" json:"no_keystroke_or_screen_surveillance,omitempty"`
+	UpdatedAt                       string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *WorkforceLearningCertificationEntry) Reset() {
+	*x = WorkforceLearningCertificationEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WorkforceLearningCertificationEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WorkforceLearningCertificationEntry) ProtoMessage() {}
+
+func (x *WorkforceLearningCertificationEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WorkforceLearningCertificationEntry.ProtoReflect.Descriptor instead.
+func (*WorkforceLearningCertificationEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *WorkforceLearningCertificationEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *WorkforceLearningCertificationEntry) GetNoKeystrokeOrScreenSurveillance() bool {
+	if x != nil {
+		return x.NoKeystrokeOrScreenSurveillance
+	}
+	return false
+}
+
+func (x *WorkforceLearningCertificationEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetWorkforceLearningCertificationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWorkforceLearningCertificationOverviewRequest) Reset() {
+	*x = GetWorkforceLearningCertificationOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWorkforceLearningCertificationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWorkforceLearningCertificationOverviewRequest) ProtoMessage() {}
+
+func (x *GetWorkforceLearningCertificationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWorkforceLearningCertificationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetWorkforceLearningCertificationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *GetWorkforceLearningCertificationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetWorkforceLearningCertificationOverviewResponse struct {
+	state                           protoimpl.MessageState                 `protogen:"open.v1"`
+	Items                           []*WorkforceLearningCertificationEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion             string                                 `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	NoKeystrokeOrScreenSurveillance bool                                   `protobuf:"varint,3,opt,name=no_keystroke_or_screen_surveillance,json=noKeystrokeOrScreenSurveillance,proto3" json:"no_keystroke_or_screen_surveillance,omitempty"`
+	GovernanceSummary               string                                 `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) Reset() {
+	*x = GetWorkforceLearningCertificationOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWorkforceLearningCertificationOverviewResponse) ProtoMessage() {}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWorkforceLearningCertificationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetWorkforceLearningCertificationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) GetItems() []*WorkforceLearningCertificationEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) GetNoKeystrokeOrScreenSurveillance() bool {
+	if x != nil {
+		return x.NoKeystrokeOrScreenSurveillance
+	}
+	return false
+}
+
+func (x *GetWorkforceLearningCertificationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type UpsertStaffCertificationPathRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpsertStaffCertificationPathRequest) Reset() {
+	*x = UpsertStaffCertificationPathRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStaffCertificationPathRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStaffCertificationPathRequest) ProtoMessage() {}
+
+func (x *UpsertStaffCertificationPathRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStaffCertificationPathRequest.ProtoReflect.Descriptor instead.
+func (*UpsertStaffCertificationPathRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *UpsertStaffCertificationPathRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *UpsertStaffCertificationPathRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertStaffCertificationPathRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *UpsertStaffCertificationPathRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type UpsertStaffCertificationPathResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Item          *WorkforceLearningCertificationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertStaffCertificationPathResponse) Reset() {
+	*x = UpsertStaffCertificationPathResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStaffCertificationPathResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStaffCertificationPathResponse) ProtoMessage() {}
+
+func (x *UpsertStaffCertificationPathResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStaffCertificationPathResponse.ProtoReflect.Descriptor instead.
+func (*UpsertStaffCertificationPathResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *UpsertStaffCertificationPathResponse) GetItem() *WorkforceLearningCertificationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type RecordCalibratedSandboxOrCoachingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) Reset() {
+	*x = RecordCalibratedSandboxOrCoachingRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCalibratedSandboxOrCoachingRequest) ProtoMessage() {}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCalibratedSandboxOrCoachingRequest.ProtoReflect.Descriptor instead.
+func (*RecordCalibratedSandboxOrCoachingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *RecordCalibratedSandboxOrCoachingRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type RecordCalibratedSandboxOrCoachingResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Item          *WorkforceLearningCertificationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordCalibratedSandboxOrCoachingResponse) Reset() {
+	*x = RecordCalibratedSandboxOrCoachingResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCalibratedSandboxOrCoachingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCalibratedSandboxOrCoachingResponse) ProtoMessage() {}
+
+func (x *RecordCalibratedSandboxOrCoachingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCalibratedSandboxOrCoachingResponse.ProtoReflect.Descriptor instead.
+func (*RecordCalibratedSandboxOrCoachingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *RecordCalibratedSandboxOrCoachingResponse) GetItem() *WorkforceLearningCertificationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type SimulationReleaseCertificationEntry struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                       string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                          string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                         string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                  string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail                string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice               string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	MemberToAdminToMemberCertified bool                   `protobuf:"varint,8,opt,name=member_to_admin_to_member_certified,json=memberToAdminToMemberCertified,proto3" json:"member_to_admin_to_member_certified,omitempty"`
+	UpdatedAt                      string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SimulationReleaseCertificationEntry) Reset() {
+	*x = SimulationReleaseCertificationEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulationReleaseCertificationEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulationReleaseCertificationEntry) ProtoMessage() {}
+
+func (x *SimulationReleaseCertificationEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulationReleaseCertificationEntry.ProtoReflect.Descriptor instead.
+func (*SimulationReleaseCertificationEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *SimulationReleaseCertificationEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *SimulationReleaseCertificationEntry) GetMemberToAdminToMemberCertified() bool {
+	if x != nil {
+		return x.MemberToAdminToMemberCertified
+	}
+	return false
+}
+
+func (x *SimulationReleaseCertificationEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetSimulationReleaseCertificationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSimulationReleaseCertificationOverviewRequest) Reset() {
+	*x = GetSimulationReleaseCertificationOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSimulationReleaseCertificationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSimulationReleaseCertificationOverviewRequest) ProtoMessage() {}
+
+func (x *GetSimulationReleaseCertificationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSimulationReleaseCertificationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetSimulationReleaseCertificationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{109}
+}
+
+func (x *GetSimulationReleaseCertificationOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetSimulationReleaseCertificationOverviewResponse struct {
+	state                          protoimpl.MessageState                 `protogen:"open.v1"`
+	Items                          []*SimulationReleaseCertificationEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion            string                                 `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	MemberToAdminToMemberCertified bool                                   `protobuf:"varint,3,opt,name=member_to_admin_to_member_certified,json=memberToAdminToMemberCertified,proto3" json:"member_to_admin_to_member_certified,omitempty"`
+	GovernanceSummary              string                                 `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) Reset() {
+	*x = GetSimulationReleaseCertificationOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSimulationReleaseCertificationOverviewResponse) ProtoMessage() {}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSimulationReleaseCertificationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetSimulationReleaseCertificationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) GetItems() []*SimulationReleaseCertificationEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) GetMemberToAdminToMemberCertified() bool {
+	if x != nil {
+		return x.MemberToAdminToMemberCertified
+	}
+	return false
+}
+
+func (x *GetSimulationReleaseCertificationOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type RunFailureClockSimulationScenarioRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) Reset() {
+	*x = RunFailureClockSimulationScenarioRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunFailureClockSimulationScenarioRequest) ProtoMessage() {}
+
+func (x *RunFailureClockSimulationScenarioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunFailureClockSimulationScenarioRequest.ProtoReflect.Descriptor instead.
+func (*RunFailureClockSimulationScenarioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *RunFailureClockSimulationScenarioRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type RunFailureClockSimulationScenarioResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Item          *SimulationReleaseCertificationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunFailureClockSimulationScenarioResponse) Reset() {
+	*x = RunFailureClockSimulationScenarioResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunFailureClockSimulationScenarioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunFailureClockSimulationScenarioResponse) ProtoMessage() {}
+
+func (x *RunFailureClockSimulationScenarioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunFailureClockSimulationScenarioResponse.ProtoReflect.Descriptor instead.
+func (*RunFailureClockSimulationScenarioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{112}
+}
+
+func (x *RunFailureClockSimulationScenarioResponse) GetItem() *SimulationReleaseCertificationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type IssueSignedReleaseCertificateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IssueSignedReleaseCertificateRequest) Reset() {
+	*x = IssueSignedReleaseCertificateRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueSignedReleaseCertificateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueSignedReleaseCertificateRequest) ProtoMessage() {}
+
+func (x *IssueSignedReleaseCertificateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueSignedReleaseCertificateRequest.ProtoReflect.Descriptor instead.
+func (*IssueSignedReleaseCertificateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *IssueSignedReleaseCertificateRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *IssueSignedReleaseCertificateRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *IssueSignedReleaseCertificateRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type IssueSignedReleaseCertificateResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Item          *SimulationReleaseCertificationEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IssueSignedReleaseCertificateResponse) Reset() {
+	*x = IssueSignedReleaseCertificateResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IssueSignedReleaseCertificateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IssueSignedReleaseCertificateResponse) ProtoMessage() {}
+
+func (x *IssueSignedReleaseCertificateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IssueSignedReleaseCertificateResponse.ProtoReflect.Descriptor instead.
+func (*IssueSignedReleaseCertificateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *IssueSignedReleaseCertificateResponse) GetItem() *SimulationReleaseCertificationEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type IndependentAuditObserverEntry struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ItemCode                     string                 `protobuf:"bytes,2,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title                        string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	Status                       string                 `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
+	PrimaryDetail                string                 `protobuf:"bytes,5,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail              string                 `protobuf:"bytes,6,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	GovernanceNotice             string                 `protobuf:"bytes,7,opt,name=governance_notice,json=governanceNotice,proto3" json:"governance_notice,omitempty"`
+	ReadOnlyZeroMutationObserver bool                   `protobuf:"varint,8,opt,name=read_only_zero_mutation_observer,json=readOnlyZeroMutationObserver,proto3" json:"read_only_zero_mutation_observer,omitempty"`
+	UpdatedAt                    string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *IndependentAuditObserverEntry) Reset() {
+	*x = IndependentAuditObserverEntry{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IndependentAuditObserverEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IndependentAuditObserverEntry) ProtoMessage() {}
+
+func (x *IndependentAuditObserverEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IndependentAuditObserverEntry.ProtoReflect.Descriptor instead.
+func (*IndependentAuditObserverEntry) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *IndependentAuditObserverEntry) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetGovernanceNotice() string {
+	if x != nil {
+		return x.GovernanceNotice
+	}
+	return ""
+}
+
+func (x *IndependentAuditObserverEntry) GetReadOnlyZeroMutationObserver() bool {
+	if x != nil {
+		return x.ReadOnlyZeroMutationObserver
+	}
+	return false
+}
+
+func (x *IndependentAuditObserverEntry) GetUpdatedAt() string {
+	if x != nil {
+		return x.UpdatedAt
+	}
+	return ""
+}
+
+type GetIndependentAuditObserverOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	FilterStatus  string                 `protobuf:"bytes,1,opt,name=filter_status,json=filterStatus,proto3" json:"filter_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetIndependentAuditObserverOverviewRequest) Reset() {
+	*x = GetIndependentAuditObserverOverviewRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetIndependentAuditObserverOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIndependentAuditObserverOverviewRequest) ProtoMessage() {}
+
+func (x *GetIndependentAuditObserverOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIndependentAuditObserverOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetIndependentAuditObserverOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *GetIndependentAuditObserverOverviewRequest) GetFilterStatus() string {
+	if x != nil {
+		return x.FilterStatus
+	}
+	return ""
+}
+
+type GetIndependentAuditObserverOverviewResponse struct {
+	state                        protoimpl.MessageState           `protogen:"open.v1"`
+	Items                        []*IndependentAuditObserverEntry `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	ActivePolicyVersion          string                           `protobuf:"bytes,2,opt,name=active_policy_version,json=activePolicyVersion,proto3" json:"active_policy_version,omitempty"`
+	ReadOnlyZeroMutationObserver bool                             `protobuf:"varint,3,opt,name=read_only_zero_mutation_observer,json=readOnlyZeroMutationObserver,proto3" json:"read_only_zero_mutation_observer,omitempty"`
+	GovernanceSummary            string                           `protobuf:"bytes,4,opt,name=governance_summary,json=governanceSummary,proto3" json:"governance_summary,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) Reset() {
+	*x = GetIndependentAuditObserverOverviewResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIndependentAuditObserverOverviewResponse) ProtoMessage() {}
+
+func (x *GetIndependentAuditObserverOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIndependentAuditObserverOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetIndependentAuditObserverOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{117}
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) GetItems() []*IndependentAuditObserverEntry {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) GetActivePolicyVersion() string {
+	if x != nil {
+		return x.ActivePolicyVersion
+	}
+	return ""
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) GetReadOnlyZeroMutationObserver() bool {
+	if x != nil {
+		return x.ReadOnlyZeroMutationObserver
+	}
+	return false
+}
+
+func (x *GetIndependentAuditObserverOverviewResponse) GetGovernanceSummary() string {
+	if x != nil {
+		return x.GovernanceSummary
+	}
+	return ""
+}
+
+type CreateTimeBoundObserverEngagementRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ItemCode        string                 `protobuf:"bytes,1,opt,name=item_code,json=itemCode,proto3" json:"item_code,omitempty"`
+	Title           string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	PrimaryDetail   string                 `protobuf:"bytes,3,opt,name=primary_detail,json=primaryDetail,proto3" json:"primary_detail,omitempty"`
+	SecondaryDetail string                 `protobuf:"bytes,4,opt,name=secondary_detail,json=secondaryDetail,proto3" json:"secondary_detail,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) Reset() {
+	*x = CreateTimeBoundObserverEngagementRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTimeBoundObserverEngagementRequest) ProtoMessage() {}
+
+func (x *CreateTimeBoundObserverEngagementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTimeBoundObserverEngagementRequest.ProtoReflect.Descriptor instead.
+func (*CreateTimeBoundObserverEngagementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) GetItemCode() string {
+	if x != nil {
+		return x.ItemCode
+	}
+	return ""
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) GetPrimaryDetail() string {
+	if x != nil {
+		return x.PrimaryDetail
+	}
+	return ""
+}
+
+func (x *CreateTimeBoundObserverEngagementRequest) GetSecondaryDetail() string {
+	if x != nil {
+		return x.SecondaryDetail
+	}
+	return ""
+}
+
+type CreateTimeBoundObserverEngagementResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Item          *IndependentAuditObserverEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTimeBoundObserverEngagementResponse) Reset() {
+	*x = CreateTimeBoundObserverEngagementResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTimeBoundObserverEngagementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTimeBoundObserverEngagementResponse) ProtoMessage() {}
+
+func (x *CreateTimeBoundObserverEngagementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTimeBoundObserverEngagementResponse.ProtoReflect.Descriptor instead.
+func (*CreateTimeBoundObserverEngagementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{119}
+}
+
+func (x *CreateTimeBoundObserverEngagementResponse) GetItem() *IndependentAuditObserverEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
+type GenerateWatermarkedControlEvidencePackRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ItemId        string                 `protobuf:"bytes,1,opt,name=item_id,json=itemId,proto3" json:"item_id,omitempty"`
+	ActionKind    string                 `protobuf:"bytes,2,opt,name=action_kind,json=actionKind,proto3" json:"action_kind,omitempty"`
+	OperatorNote  string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) Reset() {
+	*x = GenerateWatermarkedControlEvidencePackRequest{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateWatermarkedControlEvidencePackRequest) ProtoMessage() {}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateWatermarkedControlEvidencePackRequest.ProtoReflect.Descriptor instead.
+func (*GenerateWatermarkedControlEvidencePackRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) GetItemId() string {
+	if x != nil {
+		return x.ItemId
+	}
+	return ""
+}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) GetActionKind() string {
+	if x != nil {
+		return x.ActionKind
+	}
+	return ""
+}
+
+func (x *GenerateWatermarkedControlEvidencePackRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type GenerateWatermarkedControlEvidencePackResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Item          *IndependentAuditObserverEntry `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateWatermarkedControlEvidencePackResponse) Reset() {
+	*x = GenerateWatermarkedControlEvidencePackResponse{}
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateWatermarkedControlEvidencePackResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateWatermarkedControlEvidencePackResponse) ProtoMessage() {}
+
+func (x *GenerateWatermarkedControlEvidencePackResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_admin_v1_admin_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateWatermarkedControlEvidencePackResponse.ProtoReflect.Descriptor instead.
+func (*GenerateWatermarkedControlEvidencePackResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_admin_v1_admin_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *GenerateWatermarkedControlEvidencePackResponse) GetItem() *IndependentAuditObserverEntry {
+	if x != nil {
+		return x.Item
+	}
+	return nil
+}
+
 var File_sttattus_admin_v1_admin_proto protoreflect.FileDescriptor
 
 const file_sttattus_admin_v1_admin_proto_rawDesc = "" +
@@ -1168,13 +7708,493 @@ const file_sttattus_admin_v1_admin_proto_rawDesc = "" +
 	"\tdevice_id\x18\x01 \x01(\tR\bdeviceId\x12\x16\n" +
 	"\x06reason\x18\x02 \x01(\tR\x06reason\"P\n" +
 	"\x19RevokeDeviceGrantResponse\x123\n" +
-	"\x03row\x18\x01 \x01(\v2!.sttattus.admin.v1.DeviceGrantRowR\x03row*q\n" +
+	"\x03row\x18\x01 \x01(\v2!.sttattus.admin.v1.DeviceGrantRowR\x03row\"\xe4\x02\n" +
+	"\x1aUniversalWorkItemCaseEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12M\n" +
+	"#source_table_authoritative_enforced\x18\b \x01(\bR sourceTableAuthoritativeEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"N\n" +
+	"'GetUniversalWorkItemCaseOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa1\x02\n" +
+	"(GetUniversalWorkItemCaseOverviewResponse\x12C\n" +
+	"\x05items\x18\x01 \x03(\v2-.sttattus.admin.v1.UniversalWorkItemCaseEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12M\n" +
+	"#source_table_authoritative_enforced\x18\x03 \x01(\bR sourceTableAuthoritativeEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xa7\x01\n" +
+	" UpsertWorkItemAdapterRuleRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"f\n" +
+	"!UpsertWorkItemAdapterRuleResponse\x12A\n" +
+	"\x04item\x18\x01 \x01(\v2-.sttattus.admin.v1.UniversalWorkItemCaseEntryR\x04item\"\x88\x01\n" +
+	"'TransitionUniversalWorkItemStateRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"m\n" +
+	"(TransitionUniversalWorkItemStateResponse\x12A\n" +
+	"\x04item\x18\x01 \x01(\v2-.sttattus.admin.v1.UniversalWorkItemCaseEntryR\x04item\"\xda\x02\n" +
+	"\x15RoutingSkillsSlaEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12H\n" +
+	"!no_unqualified_or_unowned_routing\x18\b \x01(\bR\x1dnoUnqualifiedOrUnownedRouting\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"I\n" +
+	"\"GetRoutingSkillsSlaOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x92\x02\n" +
+	"#GetRoutingSkillsSlaOverviewResponse\x12>\n" +
+	"\x05items\x18\x01 \x03(\v2(.sttattus.admin.v1.RoutingSkillsSlaEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12H\n" +
+	"!no_unqualified_or_unowned_routing\x18\x03 \x01(\bR\x1dnoUnqualifiedOrUnownedRouting\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xad\x01\n" +
+	"&UpsertStaffSkillCapacityProfileRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"g\n" +
+	"'UpsertStaffSkillCapacityProfileResponse\x12<\n" +
+	"\x04item\x18\x01 \x01(\v2(.sttattus.admin.v1.RoutingSkillsSlaEntryR\x04item\"\x82\x01\n" +
+	"!TriggerSlaBreachEscalationRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"b\n" +
+	"\"TriggerSlaBreachEscalationResponse\x12<\n" +
+	"\x04item\x18\x01 \x01(\v2(.sttattus.admin.v1.RoutingSkillsSlaEntryR\x04item\"\xd5\x02\n" +
+	"\x18EvidenceSopDecisionEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12@\n" +
+	"\x1dtwo_person_four_eyes_enforced\x18\b \x01(\bR\x19twoPersonFourEyesEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"L\n" +
+	"%GetEvidenceSopDecisionOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x90\x02\n" +
+	"&GetEvidenceSopDecisionOverviewResponse\x12A\n" +
+	"\x05items\x18\x01 \x03(\v2+.sttattus.admin.v1.EvidenceSopDecisionEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12@\n" +
+	"\x1dtwo_person_four_eyes_enforced\x18\x03 \x01(\bR\x19twoPersonFourEyesEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xac\x01\n" +
+	"%RecordEvidenceCustodyAssertionRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"i\n" +
+	"&RecordEvidenceCustodyAssertionResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.admin.v1.EvidenceSopDecisionEntryR\x04item\"\x81\x01\n" +
+	" CommitFourEyesSopDecisionRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"d\n" +
+	"!CommitFourEyesSopDecisionResponse\x12?\n" +
+	"\x04item\x18\x01 \x01(\v2+.sttattus.admin.v1.EvidenceSopDecisionEntryR\x04item\"\xe1\x02\n" +
+	"\x1cCommunicationsConciergeEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12H\n" +
+	"!human_review_before_send_enforced\x18\b \x01(\bR\x1dhumanReviewBeforeSendEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"P\n" +
+	")GetCommunicationsConciergeOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa0\x02\n" +
+	"*GetCommunicationsConciergeOverviewResponse\x12E\n" +
+	"\x05items\x18\x01 \x03(\v2/.sttattus.admin.v1.CommunicationsConciergeEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12H\n" +
+	"!human_review_before_send_enforced\x18\x03 \x01(\bR\x1dhumanReviewBeforeSendEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xa6\x01\n" +
+	"\x1fSaveApprovedMacroOrDraftRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"g\n" +
+	" SaveApprovedMacroOrDraftResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.admin.v1.CommunicationsConciergeEntryR\x04item\"\x83\x01\n" +
+	"\"DispatchReviewedMemberReplyRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"j\n" +
+	"#DispatchReviewedMemberReplyResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.admin.v1.CommunicationsConciergeEntryR\x04item\"\xe3\x02\n" +
+	"\"VerificationAutomationAppealsEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12D\n" +
+	"\x1fauto_disable_on_error_threshold\x18\b \x01(\bR\x1bautoDisableOnErrorThreshold\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"V\n" +
+	"/GetVerificationAutomationAppealsOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa8\x02\n" +
+	"0GetVerificationAutomationAppealsOverviewResponse\x12K\n" +
+	"\x05items\x18\x01 \x03(\v25.sttattus.admin.v1.VerificationAutomationAppealsEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12D\n" +
+	"\x1fauto_disable_on_error_threshold\x18\x03 \x01(\bR\x1bautoDisableOnErrorThreshold\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xb1\x01\n" +
+	"*EvaluateExplainableVerificationRuleRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"x\n" +
+	"+EvaluateExplainableVerificationRuleResponse\x12I\n" +
+	"\x04item\x18\x01 \x01(\v25.sttattus.admin.v1.VerificationAutomationAppealsEntryR\x04item\"\x87\x01\n" +
+	"&ResolveMemberVerificationAppealRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"t\n" +
+	"'ResolveMemberVerificationAppealResponse\x12I\n" +
+	"\x04item\x18\x01 \x01(\v25.sttattus.admin.v1.VerificationAutomationAppealsEntryR\x04item\"\xdf\x02\n" +
+	"\x1fCatalogContentPolicyStudioEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12C\n" +
+	"\x1eno_silent_retroactive_mutation\x18\b \x01(\bR\x1bnoSilentRetroactiveMutation\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"S\n" +
+	",GetCatalogContentPolicyStudioOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa1\x02\n" +
+	"-GetCatalogContentPolicyStudioOverviewResponse\x12H\n" +
+	"\x05items\x18\x01 \x03(\v22.sttattus.admin.v1.CatalogContentPolicyStudioEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12C\n" +
+	"\x1eno_silent_retroactive_mutation\x18\x03 \x01(\bR\x1bnoSilentRetroactiveMutation\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xa9\x01\n" +
+	"\"StageCatalogOrPolicyReleaseRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"m\n" +
+	"#StageCatalogOrPolicyReleaseResponse\x12F\n" +
+	"\x04item\x18\x01 \x01(\v22.sttattus.admin.v1.CatalogContentPolicyStudioEntryR\x04item\"\x86\x01\n" +
+	"%PublishOrRollbackStudioReleaseRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"p\n" +
+	"&PublishOrRollbackStudioReleaseResponse\x12F\n" +
+	"\x04item\x18\x01 \x01(\v22.sttattus.admin.v1.CatalogContentPolicyStudioEntryR\x04item\"\xe2\x02\n" +
+	"\x1ePlatformReconciliationOpsEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12G\n" +
+	"!dry_run_and_blast_radius_enforced\x18\b \x01(\bR\x1cdryRunAndBlastRadiusEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"R\n" +
+	"+GetPlatformReconciliationOpsOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa3\x02\n" +
+	",GetPlatformReconciliationOpsOverviewResponse\x12G\n" +
+	"\x05items\x18\x01 \x03(\v21.sttattus.admin.v1.PlatformReconciliationOpsEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12G\n" +
+	"!dry_run_and_blast_radius_enforced\x18\x03 \x01(\bR\x1cdryRunAndBlastRadiusEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xb1\x01\n" +
+	"*RunSyntheticJourneyOrInvariantCheckRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"t\n" +
+	"+RunSyntheticJourneyOrInvariantCheckResponse\x12E\n" +
+	"\x04item\x18\x01 \x01(\v21.sttattus.admin.v1.PlatformReconciliationOpsEntryR\x04item\"\x86\x01\n" +
+	"%ReplayDeadLetterOrDryRunRepairRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"o\n" +
+	"&ReplayDeadLetterOrDryRunRepairResponse\x12E\n" +
+	"\x04item\x18\x01 \x01(\v21.sttattus.admin.v1.PlatformReconciliationOpsEntryR\x04item\"\xe6\x02\n" +
+	" AiControlQualityCalibrationEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12I\n" +
+	"\"no_auto_training_without_eval_gate\x18\b \x01(\bR\x1dnoAutoTrainingWithoutEvalGate\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"T\n" +
+	"-GetAiControlQualityCalibrationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa9\x02\n" +
+	".GetAiControlQualityCalibrationOverviewResponse\x12I\n" +
+	"\x05items\x18\x01 \x03(\v23.sttattus.admin.v1.AiControlQualityCalibrationEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12I\n" +
+	"\"no_auto_training_without_eval_gate\x18\x03 \x01(\bR\x1dnoAutoTrainingWithoutEvalGate\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xad\x01\n" +
+	"&RegisterModelDeploymentManifestRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"r\n" +
+	"'RegisterModelDeploymentManifestResponse\x12G\n" +
+	"\x04item\x18\x01 \x01(\v23.sttattus.admin.v1.AiControlQualityCalibrationEntryR\x04item\"\x86\x01\n" +
+	"%RecordBlindQaCalibrationReviewRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"q\n" +
+	"&RecordBlindQaCalibrationReviewResponse\x12G\n" +
+	"\x04item\x18\x01 \x01(\v23.sttattus.admin.v1.AiControlQualityCalibrationEntryR\x04item\"\xd8\x02\n" +
+	"\x1cSecurityPrivacyRecoveryEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12?\n" +
+	"\x1dno_secret_reveal_or_hard_nuke\x18\b \x01(\bR\x18noSecretRevealOrHardNuke\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"P\n" +
+	")GetSecurityPrivacyRecoveryOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x97\x02\n" +
+	"*GetSecurityPrivacyRecoveryOverviewResponse\x12E\n" +
+	"\x05items\x18\x01 \x03(\v2/.sttattus.admin.v1.SecurityPrivacyRecoveryEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12?\n" +
+	"\x1dno_secret_reveal_or_hard_nuke\x18\x03 \x01(\bR\x18noSecretRevealOrHardNuke\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xab\x01\n" +
+	"$RequestJitPrivilegedElevationRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"l\n" +
+	"%RequestJitPrivilegedElevationResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.admin.v1.SecurityPrivacyRecoveryEntryR\x04item\"\x8b\x01\n" +
+	"*ExecutePrivacyOrAccountRecoveryCaseRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"r\n" +
+	"+ExecutePrivacyOrAccountRecoveryCaseResponse\x12C\n" +
+	"\x04item\x18\x01 \x01(\v2/.sttattus.admin.v1.SecurityPrivacyRecoveryEntryR\x04item\"\xd0\x02\n" +
+	"\x19FraudAbuseTrustGraphEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12:\n" +
+	"\x1ano_opaque_single_score_ban\x18\b \x01(\bR\x16noOpaqueSingleScoreBan\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"M\n" +
+	"&GetFraudAbuseTrustGraphOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\x8c\x02\n" +
+	"'GetFraudAbuseTrustGraphOverviewResponse\x12B\n" +
+	"\x05items\x18\x01 \x03(\v2,.sttattus.admin.v1.FraudAbuseTrustGraphEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12:\n" +
+	"\x1ano_opaque_single_score_ban\x18\x03 \x01(\bR\x16noOpaqueSingleScoreBan\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xae\x01\n" +
+	"'LogExplainableTrustSignalClusterRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"l\n" +
+	"(LogExplainableTrustSignalClusterResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.admin.v1.FraudAbuseTrustGraphEntryR\x04item\"\x84\x01\n" +
+	"#ApplyReversibleTrustSanctionRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"h\n" +
+	"$ApplyReversibleTrustSanctionResponse\x12@\n" +
+	"\x04item\x18\x01 \x01(\v2,.sttattus.admin.v1.FraudAbuseTrustGraphEntryR\x04item\"\xed\x02\n" +
+	"\x1eCommerceEntitlementPayoutEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12R\n" +
+	"&idempotent_webhook_and_ledger_enforced\x18\b \x01(\bR\"idempotentWebhookAndLedgerEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"R\n" +
+	"+GetCommerceEntitlementPayoutOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xae\x02\n" +
+	",GetCommerceEntitlementPayoutOverviewResponse\x12G\n" +
+	"\x05items\x18\x01 \x03(\v21.sttattus.admin.v1.CommerceEntitlementPayoutEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12R\n" +
+	"&idempotent_webhook_and_ledger_enforced\x18\x03 \x01(\bR\"idempotentWebhookAndLedgerEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xab\x01\n" +
+	"$CreateLedgerAdjustmentPreviewRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"n\n" +
+	"%CreateLedgerAdjustmentPreviewResponse\x12E\n" +
+	"\x04item\x18\x01 \x01(\v21.sttattus.admin.v1.CommerceEntitlementPayoutEntryR\x04item\"\x8b\x01\n" +
+	"*ReconcileEntitlementOrPartnerPayoutRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"t\n" +
+	"+ReconcileEntitlementOrPartnerPayoutResponse\x12E\n" +
+	"\x04item\x18\x01 \x01(\v21.sttattus.admin.v1.CommerceEntitlementPayoutEntryR\x04item\"\xe8\x02\n" +
+	"\"MasterIncidentBulkRemediationEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12I\n" +
+	"!idempotent_cohort_fanout_enforced\x18\b \x01(\bR\x1eidempotentCohortFanoutEnforced\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"V\n" +
+	"/GetMasterIncidentBulkRemediationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xad\x02\n" +
+	"0GetMasterIncidentBulkRemediationOverviewResponse\x12K\n" +
+	"\x05items\x18\x01 \x03(\v25.sttattus.admin.v1.MasterIncidentBulkRemediationEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12I\n" +
+	"!idempotent_cohort_fanout_enforced\x18\x03 \x01(\bR\x1eidempotentCohortFanoutEnforced\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xab\x01\n" +
+	"$StageMasterIncidentCohortPlanRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"r\n" +
+	"%StageMasterIncidentCohortPlanResponse\x12I\n" +
+	"\x04item\x18\x01 \x01(\v25.sttattus.admin.v1.MasterIncidentBulkRemediationEntryR\x04item\"\x87\x01\n" +
+	"&FanoutIdempotentBulkRemediationRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"t\n" +
+	"'FanoutIdempotentBulkRemediationResponse\x12I\n" +
+	"\x04item\x18\x01 \x01(\v25.sttattus.admin.v1.MasterIncidentBulkRemediationEntryR\x04item\"\xec\x02\n" +
+	"#WorkforceLearningCertificationEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12L\n" +
+	"#no_keystroke_or_screen_surveillance\x18\b \x01(\bR\x1fnoKeystrokeOrScreenSurveillance\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"W\n" +
+	"0GetWorkforceLearningCertificationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xb2\x02\n" +
+	"1GetWorkforceLearningCertificationOverviewResponse\x12L\n" +
+	"\x05items\x18\x01 \x03(\v26.sttattus.admin.v1.WorkforceLearningCertificationEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12L\n" +
+	"#no_keystroke_or_screen_surveillance\x18\x03 \x01(\bR\x1fnoKeystrokeOrScreenSurveillance\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaa\x01\n" +
+	"#UpsertStaffCertificationPathRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"r\n" +
+	"$UpsertStaffCertificationPathResponse\x12J\n" +
+	"\x04item\x18\x01 \x01(\v26.sttattus.admin.v1.WorkforceLearningCertificationEntryR\x04item\"\x89\x01\n" +
+	"(RecordCalibratedSandboxOrCoachingRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"w\n" +
+	")RecordCalibratedSandboxOrCoachingResponse\x12J\n" +
+	"\x04item\x18\x01 \x01(\v26.sttattus.admin.v1.WorkforceLearningCertificationEntryR\x04item\"\xeb\x02\n" +
+	"#SimulationReleaseCertificationEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12K\n" +
+	"#member_to_admin_to_member_certified\x18\b \x01(\bR\x1ememberToAdminToMemberCertified\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"W\n" +
+	"0GetSimulationReleaseCertificationOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xb1\x02\n" +
+	"1GetSimulationReleaseCertificationOverviewResponse\x12L\n" +
+	"\x05items\x18\x01 \x03(\v26.sttattus.admin.v1.SimulationReleaseCertificationEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12K\n" +
+	"#member_to_admin_to_member_certified\x18\x03 \x01(\bR\x1ememberToAdminToMemberCertified\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaf\x01\n" +
+	"(RunFailureClockSimulationScenarioRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"w\n" +
+	")RunFailureClockSimulationScenarioResponse\x12J\n" +
+	"\x04item\x18\x01 \x01(\v26.sttattus.admin.v1.SimulationReleaseCertificationEntryR\x04item\"\x85\x01\n" +
+	"$IssueSignedReleaseCertificateRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"s\n" +
+	"%IssueSignedReleaseCertificateResponse\x12J\n" +
+	"\x04item\x18\x01 \x01(\v26.sttattus.admin.v1.SimulationReleaseCertificationEntryR\x04item\"\xe0\x02\n" +
+	"\x1dIndependentAuditObserverEntry\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\titem_code\x18\x02 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12\x16\n" +
+	"\x06status\x18\x04 \x01(\tR\x06status\x12%\n" +
+	"\x0eprimary_detail\x18\x05 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x06 \x01(\tR\x0fsecondaryDetail\x12+\n" +
+	"\x11governance_notice\x18\a \x01(\tR\x10governanceNotice\x12F\n" +
+	" read_only_zero_mutation_observer\x18\b \x01(\bR\x1creadOnlyZeroMutationObserver\x12\x1d\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\"Q\n" +
+	"*GetIndependentAuditObserverOverviewRequest\x12#\n" +
+	"\rfilter_status\x18\x01 \x01(\tR\ffilterStatus\"\xa0\x02\n" +
+	"+GetIndependentAuditObserverOverviewResponse\x12F\n" +
+	"\x05items\x18\x01 \x03(\v20.sttattus.admin.v1.IndependentAuditObserverEntryR\x05items\x122\n" +
+	"\x15active_policy_version\x18\x02 \x01(\tR\x13activePolicyVersion\x12F\n" +
+	" read_only_zero_mutation_observer\x18\x03 \x01(\bR\x1creadOnlyZeroMutationObserver\x12-\n" +
+	"\x12governance_summary\x18\x04 \x01(\tR\x11governanceSummary\"\xaf\x01\n" +
+	"(CreateTimeBoundObserverEngagementRequest\x12\x1b\n" +
+	"\titem_code\x18\x01 \x01(\tR\bitemCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0eprimary_detail\x18\x03 \x01(\tR\rprimaryDetail\x12)\n" +
+	"\x10secondary_detail\x18\x04 \x01(\tR\x0fsecondaryDetail\"q\n" +
+	")CreateTimeBoundObserverEngagementResponse\x12D\n" +
+	"\x04item\x18\x01 \x01(\v20.sttattus.admin.v1.IndependentAuditObserverEntryR\x04item\"\x8e\x01\n" +
+	"-GenerateWatermarkedControlEvidencePackRequest\x12\x17\n" +
+	"\aitem_id\x18\x01 \x01(\tR\x06itemId\x12\x1f\n" +
+	"\vaction_kind\x18\x02 \x01(\tR\n" +
+	"actionKind\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"v\n" +
+	".GenerateWatermarkedControlEvidencePackResponse\x12D\n" +
+	"\x04item\x18\x01 \x01(\v20.sttattus.admin.v1.IndependentAuditObserverEntryR\x04item*q\n" +
 	"\n" +
 	"BulkAction\x12\x1b\n" +
 	"\x17BULK_ACTION_UNSPECIFIED\x10\x00\x12\x13\n" +
 	"\x0fBULK_ACTION_BAN\x10\x01\x12\x15\n" +
 	"\x11BULK_ACTION_UNBAN\x10\x02\x12\x1a\n" +
-	"\x16BULK_ACTION_REVOKE_APP\x10\x032\xa6\x05\n" +
+	"\x16BULK_ACTION_REVOKE_APP\x10\x032\xf5<\n" +
 	"\fAdminService\x12V\n" +
 	"\tListUsers\x12#.sttattus.admin.v1.ListUsersRequest\x1a$.sttattus.admin.v1.ListUsersResponse\x12P\n" +
 	"\aGetUser\x12!.sttattus.admin.v1.GetUserRequest\x1a\".sttattus.admin.v1.GetUserResponse\x12P\n" +
@@ -1183,7 +8203,52 @@ const file_sttattus_admin_v1_admin_proto_rawDesc = "" +
 	"BulkAction\x12$.sttattus.admin.v1.BulkActionRequest\x1a%.sttattus.admin.v1.BulkActionResponse\x12b\n" +
 	"\rListAuditLogs\x12'.sttattus.admin.v1.ListAuditLogsRequest\x1a(.sttattus.admin.v1.ListAuditLogsResponse\x12k\n" +
 	"\x10ListDeviceGrants\x12*.sttattus.admin.v1.ListDeviceGrantsRequest\x1a+.sttattus.admin.v1.ListDeviceGrantsResponse\x12n\n" +
-	"\x11RevokeDeviceGrant\x12+.sttattus.admin.v1.RevokeDeviceGrantRequest\x1a,.sttattus.admin.v1.RevokeDeviceGrantResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/admin/v1;adminv1b\x06proto3"
+	"\x11RevokeDeviceGrant\x12+.sttattus.admin.v1.RevokeDeviceGrantRequest\x1a,.sttattus.admin.v1.RevokeDeviceGrantResponse\x12\x9b\x01\n" +
+	" GetUniversalWorkItemCaseOverview\x12:.sttattus.admin.v1.GetUniversalWorkItemCaseOverviewRequest\x1a;.sttattus.admin.v1.GetUniversalWorkItemCaseOverviewResponse\x12\x86\x01\n" +
+	"\x19UpsertWorkItemAdapterRule\x123.sttattus.admin.v1.UpsertWorkItemAdapterRuleRequest\x1a4.sttattus.admin.v1.UpsertWorkItemAdapterRuleResponse\x12\x9b\x01\n" +
+	" TransitionUniversalWorkItemState\x12:.sttattus.admin.v1.TransitionUniversalWorkItemStateRequest\x1a;.sttattus.admin.v1.TransitionUniversalWorkItemStateResponse\x12\x8c\x01\n" +
+	"\x1bGetRoutingSkillsSlaOverview\x125.sttattus.admin.v1.GetRoutingSkillsSlaOverviewRequest\x1a6.sttattus.admin.v1.GetRoutingSkillsSlaOverviewResponse\x12\x98\x01\n" +
+	"\x1fUpsertStaffSkillCapacityProfile\x129.sttattus.admin.v1.UpsertStaffSkillCapacityProfileRequest\x1a:.sttattus.admin.v1.UpsertStaffSkillCapacityProfileResponse\x12\x89\x01\n" +
+	"\x1aTriggerSlaBreachEscalation\x124.sttattus.admin.v1.TriggerSlaBreachEscalationRequest\x1a5.sttattus.admin.v1.TriggerSlaBreachEscalationResponse\x12\x95\x01\n" +
+	"\x1eGetEvidenceSopDecisionOverview\x128.sttattus.admin.v1.GetEvidenceSopDecisionOverviewRequest\x1a9.sttattus.admin.v1.GetEvidenceSopDecisionOverviewResponse\x12\x95\x01\n" +
+	"\x1eRecordEvidenceCustodyAssertion\x128.sttattus.admin.v1.RecordEvidenceCustodyAssertionRequest\x1a9.sttattus.admin.v1.RecordEvidenceCustodyAssertionResponse\x12\x86\x01\n" +
+	"\x19CommitFourEyesSopDecision\x123.sttattus.admin.v1.CommitFourEyesSopDecisionRequest\x1a4.sttattus.admin.v1.CommitFourEyesSopDecisionResponse\x12\xa1\x01\n" +
+	"\"GetCommunicationsConciergeOverview\x12<.sttattus.admin.v1.GetCommunicationsConciergeOverviewRequest\x1a=.sttattus.admin.v1.GetCommunicationsConciergeOverviewResponse\x12\x83\x01\n" +
+	"\x18SaveApprovedMacroOrDraft\x122.sttattus.admin.v1.SaveApprovedMacroOrDraftRequest\x1a3.sttattus.admin.v1.SaveApprovedMacroOrDraftResponse\x12\x8c\x01\n" +
+	"\x1bDispatchReviewedMemberReply\x125.sttattus.admin.v1.DispatchReviewedMemberReplyRequest\x1a6.sttattus.admin.v1.DispatchReviewedMemberReplyResponse\x12\xb3\x01\n" +
+	"(GetVerificationAutomationAppealsOverview\x12B.sttattus.admin.v1.GetVerificationAutomationAppealsOverviewRequest\x1aC.sttattus.admin.v1.GetVerificationAutomationAppealsOverviewResponse\x12\xa4\x01\n" +
+	"#EvaluateExplainableVerificationRule\x12=.sttattus.admin.v1.EvaluateExplainableVerificationRuleRequest\x1a>.sttattus.admin.v1.EvaluateExplainableVerificationRuleResponse\x12\x98\x01\n" +
+	"\x1fResolveMemberVerificationAppeal\x129.sttattus.admin.v1.ResolveMemberVerificationAppealRequest\x1a:.sttattus.admin.v1.ResolveMemberVerificationAppealResponse\x12\xaa\x01\n" +
+	"%GetCatalogContentPolicyStudioOverview\x12?.sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewRequest\x1a@.sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewResponse\x12\x8c\x01\n" +
+	"\x1bStageCatalogOrPolicyRelease\x125.sttattus.admin.v1.StageCatalogOrPolicyReleaseRequest\x1a6.sttattus.admin.v1.StageCatalogOrPolicyReleaseResponse\x12\x95\x01\n" +
+	"\x1ePublishOrRollbackStudioRelease\x128.sttattus.admin.v1.PublishOrRollbackStudioReleaseRequest\x1a9.sttattus.admin.v1.PublishOrRollbackStudioReleaseResponse\x12\xa7\x01\n" +
+	"$GetPlatformReconciliationOpsOverview\x12>.sttattus.admin.v1.GetPlatformReconciliationOpsOverviewRequest\x1a?.sttattus.admin.v1.GetPlatformReconciliationOpsOverviewResponse\x12\xa4\x01\n" +
+	"#RunSyntheticJourneyOrInvariantCheck\x12=.sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckRequest\x1a>.sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckResponse\x12\x95\x01\n" +
+	"\x1eReplayDeadLetterOrDryRunRepair\x128.sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairRequest\x1a9.sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairResponse\x12\xad\x01\n" +
+	"&GetAiControlQualityCalibrationOverview\x12@.sttattus.admin.v1.GetAiControlQualityCalibrationOverviewRequest\x1aA.sttattus.admin.v1.GetAiControlQualityCalibrationOverviewResponse\x12\x98\x01\n" +
+	"\x1fRegisterModelDeploymentManifest\x129.sttattus.admin.v1.RegisterModelDeploymentManifestRequest\x1a:.sttattus.admin.v1.RegisterModelDeploymentManifestResponse\x12\x95\x01\n" +
+	"\x1eRecordBlindQaCalibrationReview\x128.sttattus.admin.v1.RecordBlindQaCalibrationReviewRequest\x1a9.sttattus.admin.v1.RecordBlindQaCalibrationReviewResponse\x12\xa1\x01\n" +
+	"\"GetSecurityPrivacyRecoveryOverview\x12<.sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewRequest\x1a=.sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewResponse\x12\x92\x01\n" +
+	"\x1dRequestJitPrivilegedElevation\x127.sttattus.admin.v1.RequestJitPrivilegedElevationRequest\x1a8.sttattus.admin.v1.RequestJitPrivilegedElevationResponse\x12\xa4\x01\n" +
+	"#ExecutePrivacyOrAccountRecoveryCase\x12=.sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseRequest\x1a>.sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseResponse\x12\x98\x01\n" +
+	"\x1fGetFraudAbuseTrustGraphOverview\x129.sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewRequest\x1a:.sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewResponse\x12\x9b\x01\n" +
+	" LogExplainableTrustSignalCluster\x12:.sttattus.admin.v1.LogExplainableTrustSignalClusterRequest\x1a;.sttattus.admin.v1.LogExplainableTrustSignalClusterResponse\x12\x8f\x01\n" +
+	"\x1cApplyReversibleTrustSanction\x126.sttattus.admin.v1.ApplyReversibleTrustSanctionRequest\x1a7.sttattus.admin.v1.ApplyReversibleTrustSanctionResponse\x12\xa7\x01\n" +
+	"$GetCommerceEntitlementPayoutOverview\x12>.sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewRequest\x1a?.sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewResponse\x12\x92\x01\n" +
+	"\x1dCreateLedgerAdjustmentPreview\x127.sttattus.admin.v1.CreateLedgerAdjustmentPreviewRequest\x1a8.sttattus.admin.v1.CreateLedgerAdjustmentPreviewResponse\x12\xa4\x01\n" +
+	"#ReconcileEntitlementOrPartnerPayout\x12=.sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutRequest\x1a>.sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutResponse\x12\xb3\x01\n" +
+	"(GetMasterIncidentBulkRemediationOverview\x12B.sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewRequest\x1aC.sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewResponse\x12\x92\x01\n" +
+	"\x1dStageMasterIncidentCohortPlan\x127.sttattus.admin.v1.StageMasterIncidentCohortPlanRequest\x1a8.sttattus.admin.v1.StageMasterIncidentCohortPlanResponse\x12\x98\x01\n" +
+	"\x1fFanoutIdempotentBulkRemediation\x129.sttattus.admin.v1.FanoutIdempotentBulkRemediationRequest\x1a:.sttattus.admin.v1.FanoutIdempotentBulkRemediationResponse\x12\xb6\x01\n" +
+	")GetWorkforceLearningCertificationOverview\x12C.sttattus.admin.v1.GetWorkforceLearningCertificationOverviewRequest\x1aD.sttattus.admin.v1.GetWorkforceLearningCertificationOverviewResponse\x12\x8f\x01\n" +
+	"\x1cUpsertStaffCertificationPath\x126.sttattus.admin.v1.UpsertStaffCertificationPathRequest\x1a7.sttattus.admin.v1.UpsertStaffCertificationPathResponse\x12\x9e\x01\n" +
+	"!RecordCalibratedSandboxOrCoaching\x12;.sttattus.admin.v1.RecordCalibratedSandboxOrCoachingRequest\x1a<.sttattus.admin.v1.RecordCalibratedSandboxOrCoachingResponse\x12\xb6\x01\n" +
+	")GetSimulationReleaseCertificationOverview\x12C.sttattus.admin.v1.GetSimulationReleaseCertificationOverviewRequest\x1aD.sttattus.admin.v1.GetSimulationReleaseCertificationOverviewResponse\x12\x9e\x01\n" +
+	"!RunFailureClockSimulationScenario\x12;.sttattus.admin.v1.RunFailureClockSimulationScenarioRequest\x1a<.sttattus.admin.v1.RunFailureClockSimulationScenarioResponse\x12\x92\x01\n" +
+	"\x1dIssueSignedReleaseCertificate\x127.sttattus.admin.v1.IssueSignedReleaseCertificateRequest\x1a8.sttattus.admin.v1.IssueSignedReleaseCertificateResponse\x12\xa4\x01\n" +
+	"#GetIndependentAuditObserverOverview\x12=.sttattus.admin.v1.GetIndependentAuditObserverOverviewRequest\x1a>.sttattus.admin.v1.GetIndependentAuditObserverOverviewResponse\x12\x9e\x01\n" +
+	"!CreateTimeBoundObserverEngagement\x12;.sttattus.admin.v1.CreateTimeBoundObserverEngagementRequest\x1a<.sttattus.admin.v1.CreateTimeBoundObserverEngagementResponse\x12\xad\x01\n" +
+	"&GenerateWatermarkedControlEvidencePack\x12@.sttattus.admin.v1.GenerateWatermarkedControlEvidencePackRequest\x1aA.sttattus.admin.v1.GenerateWatermarkedControlEvidencePackResponseB<Z:github.com/sttattus/proto/gen/go/sttattus/admin/v1;adminv1b\x06proto3"
 
 var (
 	file_sttattus_admin_v1_admin_proto_rawDescOnce sync.Once
@@ -1198,73 +8263,313 @@ func file_sttattus_admin_v1_admin_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_admin_v1_admin_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_sttattus_admin_v1_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_sttattus_admin_v1_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 122)
 var file_sttattus_admin_v1_admin_proto_goTypes = []any{
-	(BulkAction)(0),                   // 0: sttattus.admin.v1.BulkAction
-	(*AdminUserRow)(nil),              // 1: sttattus.admin.v1.AdminUserRow
-	(*ListUsersRequest)(nil),          // 2: sttattus.admin.v1.ListUsersRequest
-	(*ListUsersResponse)(nil),         // 3: sttattus.admin.v1.ListUsersResponse
-	(*GetUserRequest)(nil),            // 4: sttattus.admin.v1.GetUserRequest
-	(*GetUserResponse)(nil),           // 5: sttattus.admin.v1.GetUserResponse
-	(*BanUserRequest)(nil),            // 6: sttattus.admin.v1.BanUserRequest
-	(*BanUserResponse)(nil),           // 7: sttattus.admin.v1.BanUserResponse
-	(*BulkActionRequest)(nil),         // 8: sttattus.admin.v1.BulkActionRequest
-	(*BulkActionResponse)(nil),        // 9: sttattus.admin.v1.BulkActionResponse
-	(*AuditLogEntry)(nil),             // 10: sttattus.admin.v1.AuditLogEntry
-	(*ListAuditLogsRequest)(nil),      // 11: sttattus.admin.v1.ListAuditLogsRequest
-	(*ListAuditLogsResponse)(nil),     // 12: sttattus.admin.v1.ListAuditLogsResponse
-	(*DeviceGrantRow)(nil),            // 13: sttattus.admin.v1.DeviceGrantRow
-	(*ListDeviceGrantsRequest)(nil),   // 14: sttattus.admin.v1.ListDeviceGrantsRequest
-	(*ListDeviceGrantsResponse)(nil),  // 15: sttattus.admin.v1.ListDeviceGrantsResponse
-	(*RevokeDeviceGrantRequest)(nil),  // 16: sttattus.admin.v1.RevokeDeviceGrantRequest
-	(*RevokeDeviceGrantResponse)(nil), // 17: sttattus.admin.v1.RevokeDeviceGrantResponse
-	(*v1.UserProfile)(nil),            // 18: sttattus.user.v1.UserProfile
-	(*v1.AppAccess)(nil),              // 19: sttattus.user.v1.AppAccess
-	(*v11.PageRequest)(nil),           // 20: sttattus.common.v1.PageRequest
-	(v12.AppCode)(0),                  // 21: sttattus.auth.v1.AppCode
-	(*v11.PageResponse)(nil),          // 22: sttattus.common.v1.PageResponse
-	(*timestamppb.Timestamp)(nil),     // 23: google.protobuf.Timestamp
+	(BulkAction)(0),                                           // 0: sttattus.admin.v1.BulkAction
+	(*AdminUserRow)(nil),                                      // 1: sttattus.admin.v1.AdminUserRow
+	(*ListUsersRequest)(nil),                                  // 2: sttattus.admin.v1.ListUsersRequest
+	(*ListUsersResponse)(nil),                                 // 3: sttattus.admin.v1.ListUsersResponse
+	(*GetUserRequest)(nil),                                    // 4: sttattus.admin.v1.GetUserRequest
+	(*GetUserResponse)(nil),                                   // 5: sttattus.admin.v1.GetUserResponse
+	(*BanUserRequest)(nil),                                    // 6: sttattus.admin.v1.BanUserRequest
+	(*BanUserResponse)(nil),                                   // 7: sttattus.admin.v1.BanUserResponse
+	(*BulkActionRequest)(nil),                                 // 8: sttattus.admin.v1.BulkActionRequest
+	(*BulkActionResponse)(nil),                                // 9: sttattus.admin.v1.BulkActionResponse
+	(*AuditLogEntry)(nil),                                     // 10: sttattus.admin.v1.AuditLogEntry
+	(*ListAuditLogsRequest)(nil),                              // 11: sttattus.admin.v1.ListAuditLogsRequest
+	(*ListAuditLogsResponse)(nil),                             // 12: sttattus.admin.v1.ListAuditLogsResponse
+	(*DeviceGrantRow)(nil),                                    // 13: sttattus.admin.v1.DeviceGrantRow
+	(*ListDeviceGrantsRequest)(nil),                           // 14: sttattus.admin.v1.ListDeviceGrantsRequest
+	(*ListDeviceGrantsResponse)(nil),                          // 15: sttattus.admin.v1.ListDeviceGrantsResponse
+	(*RevokeDeviceGrantRequest)(nil),                          // 16: sttattus.admin.v1.RevokeDeviceGrantRequest
+	(*RevokeDeviceGrantResponse)(nil),                         // 17: sttattus.admin.v1.RevokeDeviceGrantResponse
+	(*UniversalWorkItemCaseEntry)(nil),                        // 18: sttattus.admin.v1.UniversalWorkItemCaseEntry
+	(*GetUniversalWorkItemCaseOverviewRequest)(nil),           // 19: sttattus.admin.v1.GetUniversalWorkItemCaseOverviewRequest
+	(*GetUniversalWorkItemCaseOverviewResponse)(nil),          // 20: sttattus.admin.v1.GetUniversalWorkItemCaseOverviewResponse
+	(*UpsertWorkItemAdapterRuleRequest)(nil),                  // 21: sttattus.admin.v1.UpsertWorkItemAdapterRuleRequest
+	(*UpsertWorkItemAdapterRuleResponse)(nil),                 // 22: sttattus.admin.v1.UpsertWorkItemAdapterRuleResponse
+	(*TransitionUniversalWorkItemStateRequest)(nil),           // 23: sttattus.admin.v1.TransitionUniversalWorkItemStateRequest
+	(*TransitionUniversalWorkItemStateResponse)(nil),          // 24: sttattus.admin.v1.TransitionUniversalWorkItemStateResponse
+	(*RoutingSkillsSlaEntry)(nil),                             // 25: sttattus.admin.v1.RoutingSkillsSlaEntry
+	(*GetRoutingSkillsSlaOverviewRequest)(nil),                // 26: sttattus.admin.v1.GetRoutingSkillsSlaOverviewRequest
+	(*GetRoutingSkillsSlaOverviewResponse)(nil),               // 27: sttattus.admin.v1.GetRoutingSkillsSlaOverviewResponse
+	(*UpsertStaffSkillCapacityProfileRequest)(nil),            // 28: sttattus.admin.v1.UpsertStaffSkillCapacityProfileRequest
+	(*UpsertStaffSkillCapacityProfileResponse)(nil),           // 29: sttattus.admin.v1.UpsertStaffSkillCapacityProfileResponse
+	(*TriggerSlaBreachEscalationRequest)(nil),                 // 30: sttattus.admin.v1.TriggerSlaBreachEscalationRequest
+	(*TriggerSlaBreachEscalationResponse)(nil),                // 31: sttattus.admin.v1.TriggerSlaBreachEscalationResponse
+	(*EvidenceSopDecisionEntry)(nil),                          // 32: sttattus.admin.v1.EvidenceSopDecisionEntry
+	(*GetEvidenceSopDecisionOverviewRequest)(nil),             // 33: sttattus.admin.v1.GetEvidenceSopDecisionOverviewRequest
+	(*GetEvidenceSopDecisionOverviewResponse)(nil),            // 34: sttattus.admin.v1.GetEvidenceSopDecisionOverviewResponse
+	(*RecordEvidenceCustodyAssertionRequest)(nil),             // 35: sttattus.admin.v1.RecordEvidenceCustodyAssertionRequest
+	(*RecordEvidenceCustodyAssertionResponse)(nil),            // 36: sttattus.admin.v1.RecordEvidenceCustodyAssertionResponse
+	(*CommitFourEyesSopDecisionRequest)(nil),                  // 37: sttattus.admin.v1.CommitFourEyesSopDecisionRequest
+	(*CommitFourEyesSopDecisionResponse)(nil),                 // 38: sttattus.admin.v1.CommitFourEyesSopDecisionResponse
+	(*CommunicationsConciergeEntry)(nil),                      // 39: sttattus.admin.v1.CommunicationsConciergeEntry
+	(*GetCommunicationsConciergeOverviewRequest)(nil),         // 40: sttattus.admin.v1.GetCommunicationsConciergeOverviewRequest
+	(*GetCommunicationsConciergeOverviewResponse)(nil),        // 41: sttattus.admin.v1.GetCommunicationsConciergeOverviewResponse
+	(*SaveApprovedMacroOrDraftRequest)(nil),                   // 42: sttattus.admin.v1.SaveApprovedMacroOrDraftRequest
+	(*SaveApprovedMacroOrDraftResponse)(nil),                  // 43: sttattus.admin.v1.SaveApprovedMacroOrDraftResponse
+	(*DispatchReviewedMemberReplyRequest)(nil),                // 44: sttattus.admin.v1.DispatchReviewedMemberReplyRequest
+	(*DispatchReviewedMemberReplyResponse)(nil),               // 45: sttattus.admin.v1.DispatchReviewedMemberReplyResponse
+	(*VerificationAutomationAppealsEntry)(nil),                // 46: sttattus.admin.v1.VerificationAutomationAppealsEntry
+	(*GetVerificationAutomationAppealsOverviewRequest)(nil),   // 47: sttattus.admin.v1.GetVerificationAutomationAppealsOverviewRequest
+	(*GetVerificationAutomationAppealsOverviewResponse)(nil),  // 48: sttattus.admin.v1.GetVerificationAutomationAppealsOverviewResponse
+	(*EvaluateExplainableVerificationRuleRequest)(nil),        // 49: sttattus.admin.v1.EvaluateExplainableVerificationRuleRequest
+	(*EvaluateExplainableVerificationRuleResponse)(nil),       // 50: sttattus.admin.v1.EvaluateExplainableVerificationRuleResponse
+	(*ResolveMemberVerificationAppealRequest)(nil),            // 51: sttattus.admin.v1.ResolveMemberVerificationAppealRequest
+	(*ResolveMemberVerificationAppealResponse)(nil),           // 52: sttattus.admin.v1.ResolveMemberVerificationAppealResponse
+	(*CatalogContentPolicyStudioEntry)(nil),                   // 53: sttattus.admin.v1.CatalogContentPolicyStudioEntry
+	(*GetCatalogContentPolicyStudioOverviewRequest)(nil),      // 54: sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewRequest
+	(*GetCatalogContentPolicyStudioOverviewResponse)(nil),     // 55: sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewResponse
+	(*StageCatalogOrPolicyReleaseRequest)(nil),                // 56: sttattus.admin.v1.StageCatalogOrPolicyReleaseRequest
+	(*StageCatalogOrPolicyReleaseResponse)(nil),               // 57: sttattus.admin.v1.StageCatalogOrPolicyReleaseResponse
+	(*PublishOrRollbackStudioReleaseRequest)(nil),             // 58: sttattus.admin.v1.PublishOrRollbackStudioReleaseRequest
+	(*PublishOrRollbackStudioReleaseResponse)(nil),            // 59: sttattus.admin.v1.PublishOrRollbackStudioReleaseResponse
+	(*PlatformReconciliationOpsEntry)(nil),                    // 60: sttattus.admin.v1.PlatformReconciliationOpsEntry
+	(*GetPlatformReconciliationOpsOverviewRequest)(nil),       // 61: sttattus.admin.v1.GetPlatformReconciliationOpsOverviewRequest
+	(*GetPlatformReconciliationOpsOverviewResponse)(nil),      // 62: sttattus.admin.v1.GetPlatformReconciliationOpsOverviewResponse
+	(*RunSyntheticJourneyOrInvariantCheckRequest)(nil),        // 63: sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckRequest
+	(*RunSyntheticJourneyOrInvariantCheckResponse)(nil),       // 64: sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckResponse
+	(*ReplayDeadLetterOrDryRunRepairRequest)(nil),             // 65: sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairRequest
+	(*ReplayDeadLetterOrDryRunRepairResponse)(nil),            // 66: sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairResponse
+	(*AiControlQualityCalibrationEntry)(nil),                  // 67: sttattus.admin.v1.AiControlQualityCalibrationEntry
+	(*GetAiControlQualityCalibrationOverviewRequest)(nil),     // 68: sttattus.admin.v1.GetAiControlQualityCalibrationOverviewRequest
+	(*GetAiControlQualityCalibrationOverviewResponse)(nil),    // 69: sttattus.admin.v1.GetAiControlQualityCalibrationOverviewResponse
+	(*RegisterModelDeploymentManifestRequest)(nil),            // 70: sttattus.admin.v1.RegisterModelDeploymentManifestRequest
+	(*RegisterModelDeploymentManifestResponse)(nil),           // 71: sttattus.admin.v1.RegisterModelDeploymentManifestResponse
+	(*RecordBlindQaCalibrationReviewRequest)(nil),             // 72: sttattus.admin.v1.RecordBlindQaCalibrationReviewRequest
+	(*RecordBlindQaCalibrationReviewResponse)(nil),            // 73: sttattus.admin.v1.RecordBlindQaCalibrationReviewResponse
+	(*SecurityPrivacyRecoveryEntry)(nil),                      // 74: sttattus.admin.v1.SecurityPrivacyRecoveryEntry
+	(*GetSecurityPrivacyRecoveryOverviewRequest)(nil),         // 75: sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewRequest
+	(*GetSecurityPrivacyRecoveryOverviewResponse)(nil),        // 76: sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewResponse
+	(*RequestJitPrivilegedElevationRequest)(nil),              // 77: sttattus.admin.v1.RequestJitPrivilegedElevationRequest
+	(*RequestJitPrivilegedElevationResponse)(nil),             // 78: sttattus.admin.v1.RequestJitPrivilegedElevationResponse
+	(*ExecutePrivacyOrAccountRecoveryCaseRequest)(nil),        // 79: sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseRequest
+	(*ExecutePrivacyOrAccountRecoveryCaseResponse)(nil),       // 80: sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseResponse
+	(*FraudAbuseTrustGraphEntry)(nil),                         // 81: sttattus.admin.v1.FraudAbuseTrustGraphEntry
+	(*GetFraudAbuseTrustGraphOverviewRequest)(nil),            // 82: sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewRequest
+	(*GetFraudAbuseTrustGraphOverviewResponse)(nil),           // 83: sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewResponse
+	(*LogExplainableTrustSignalClusterRequest)(nil),           // 84: sttattus.admin.v1.LogExplainableTrustSignalClusterRequest
+	(*LogExplainableTrustSignalClusterResponse)(nil),          // 85: sttattus.admin.v1.LogExplainableTrustSignalClusterResponse
+	(*ApplyReversibleTrustSanctionRequest)(nil),               // 86: sttattus.admin.v1.ApplyReversibleTrustSanctionRequest
+	(*ApplyReversibleTrustSanctionResponse)(nil),              // 87: sttattus.admin.v1.ApplyReversibleTrustSanctionResponse
+	(*CommerceEntitlementPayoutEntry)(nil),                    // 88: sttattus.admin.v1.CommerceEntitlementPayoutEntry
+	(*GetCommerceEntitlementPayoutOverviewRequest)(nil),       // 89: sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewRequest
+	(*GetCommerceEntitlementPayoutOverviewResponse)(nil),      // 90: sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewResponse
+	(*CreateLedgerAdjustmentPreviewRequest)(nil),              // 91: sttattus.admin.v1.CreateLedgerAdjustmentPreviewRequest
+	(*CreateLedgerAdjustmentPreviewResponse)(nil),             // 92: sttattus.admin.v1.CreateLedgerAdjustmentPreviewResponse
+	(*ReconcileEntitlementOrPartnerPayoutRequest)(nil),        // 93: sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutRequest
+	(*ReconcileEntitlementOrPartnerPayoutResponse)(nil),       // 94: sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutResponse
+	(*MasterIncidentBulkRemediationEntry)(nil),                // 95: sttattus.admin.v1.MasterIncidentBulkRemediationEntry
+	(*GetMasterIncidentBulkRemediationOverviewRequest)(nil),   // 96: sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewRequest
+	(*GetMasterIncidentBulkRemediationOverviewResponse)(nil),  // 97: sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewResponse
+	(*StageMasterIncidentCohortPlanRequest)(nil),              // 98: sttattus.admin.v1.StageMasterIncidentCohortPlanRequest
+	(*StageMasterIncidentCohortPlanResponse)(nil),             // 99: sttattus.admin.v1.StageMasterIncidentCohortPlanResponse
+	(*FanoutIdempotentBulkRemediationRequest)(nil),            // 100: sttattus.admin.v1.FanoutIdempotentBulkRemediationRequest
+	(*FanoutIdempotentBulkRemediationResponse)(nil),           // 101: sttattus.admin.v1.FanoutIdempotentBulkRemediationResponse
+	(*WorkforceLearningCertificationEntry)(nil),               // 102: sttattus.admin.v1.WorkforceLearningCertificationEntry
+	(*GetWorkforceLearningCertificationOverviewRequest)(nil),  // 103: sttattus.admin.v1.GetWorkforceLearningCertificationOverviewRequest
+	(*GetWorkforceLearningCertificationOverviewResponse)(nil), // 104: sttattus.admin.v1.GetWorkforceLearningCertificationOverviewResponse
+	(*UpsertStaffCertificationPathRequest)(nil),               // 105: sttattus.admin.v1.UpsertStaffCertificationPathRequest
+	(*UpsertStaffCertificationPathResponse)(nil),              // 106: sttattus.admin.v1.UpsertStaffCertificationPathResponse
+	(*RecordCalibratedSandboxOrCoachingRequest)(nil),          // 107: sttattus.admin.v1.RecordCalibratedSandboxOrCoachingRequest
+	(*RecordCalibratedSandboxOrCoachingResponse)(nil),         // 108: sttattus.admin.v1.RecordCalibratedSandboxOrCoachingResponse
+	(*SimulationReleaseCertificationEntry)(nil),               // 109: sttattus.admin.v1.SimulationReleaseCertificationEntry
+	(*GetSimulationReleaseCertificationOverviewRequest)(nil),  // 110: sttattus.admin.v1.GetSimulationReleaseCertificationOverviewRequest
+	(*GetSimulationReleaseCertificationOverviewResponse)(nil), // 111: sttattus.admin.v1.GetSimulationReleaseCertificationOverviewResponse
+	(*RunFailureClockSimulationScenarioRequest)(nil),          // 112: sttattus.admin.v1.RunFailureClockSimulationScenarioRequest
+	(*RunFailureClockSimulationScenarioResponse)(nil),         // 113: sttattus.admin.v1.RunFailureClockSimulationScenarioResponse
+	(*IssueSignedReleaseCertificateRequest)(nil),              // 114: sttattus.admin.v1.IssueSignedReleaseCertificateRequest
+	(*IssueSignedReleaseCertificateResponse)(nil),             // 115: sttattus.admin.v1.IssueSignedReleaseCertificateResponse
+	(*IndependentAuditObserverEntry)(nil),                     // 116: sttattus.admin.v1.IndependentAuditObserverEntry
+	(*GetIndependentAuditObserverOverviewRequest)(nil),        // 117: sttattus.admin.v1.GetIndependentAuditObserverOverviewRequest
+	(*GetIndependentAuditObserverOverviewResponse)(nil),       // 118: sttattus.admin.v1.GetIndependentAuditObserverOverviewResponse
+	(*CreateTimeBoundObserverEngagementRequest)(nil),          // 119: sttattus.admin.v1.CreateTimeBoundObserverEngagementRequest
+	(*CreateTimeBoundObserverEngagementResponse)(nil),         // 120: sttattus.admin.v1.CreateTimeBoundObserverEngagementResponse
+	(*GenerateWatermarkedControlEvidencePackRequest)(nil),     // 121: sttattus.admin.v1.GenerateWatermarkedControlEvidencePackRequest
+	(*GenerateWatermarkedControlEvidencePackResponse)(nil),    // 122: sttattus.admin.v1.GenerateWatermarkedControlEvidencePackResponse
+	(*v1.UserProfile)(nil),                                    // 123: sttattus.user.v1.UserProfile
+	(*v1.AppAccess)(nil),                                      // 124: sttattus.user.v1.AppAccess
+	(*v11.PageRequest)(nil),                                   // 125: sttattus.common.v1.PageRequest
+	(v12.AppCode)(0),                                          // 126: sttattus.auth.v1.AppCode
+	(*v11.PageResponse)(nil),                                  // 127: sttattus.common.v1.PageResponse
+	(*timestamppb.Timestamp)(nil),                             // 128: google.protobuf.Timestamp
 }
 var file_sttattus_admin_v1_admin_proto_depIdxs = []int32{
-	18, // 0: sttattus.admin.v1.AdminUserRow.profile:type_name -> sttattus.user.v1.UserProfile
-	19, // 1: sttattus.admin.v1.AdminUserRow.apps:type_name -> sttattus.user.v1.AppAccess
-	20, // 2: sttattus.admin.v1.ListUsersRequest.page:type_name -> sttattus.common.v1.PageRequest
-	21, // 3: sttattus.admin.v1.ListUsersRequest.filter_by_app:type_name -> sttattus.auth.v1.AppCode
-	1,  // 4: sttattus.admin.v1.ListUsersResponse.rows:type_name -> sttattus.admin.v1.AdminUserRow
-	22, // 5: sttattus.admin.v1.ListUsersResponse.page:type_name -> sttattus.common.v1.PageResponse
-	1,  // 6: sttattus.admin.v1.GetUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
-	1,  // 7: sttattus.admin.v1.BanUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
-	0,  // 8: sttattus.admin.v1.BulkActionRequest.action:type_name -> sttattus.admin.v1.BulkAction
-	21, // 9: sttattus.admin.v1.BulkActionRequest.app_code:type_name -> sttattus.auth.v1.AppCode
-	20, // 10: sttattus.admin.v1.ListAuditLogsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	10, // 11: sttattus.admin.v1.ListAuditLogsResponse.entries:type_name -> sttattus.admin.v1.AuditLogEntry
-	22, // 12: sttattus.admin.v1.ListAuditLogsResponse.page:type_name -> sttattus.common.v1.PageResponse
-	23, // 13: sttattus.admin.v1.DeviceGrantRow.created_at:type_name -> google.protobuf.Timestamp
-	23, // 14: sttattus.admin.v1.DeviceGrantRow.expires_at:type_name -> google.protobuf.Timestamp
-	23, // 15: sttattus.admin.v1.DeviceGrantRow.last_sync_at:type_name -> google.protobuf.Timestamp
-	20, // 16: sttattus.admin.v1.ListDeviceGrantsRequest.page:type_name -> sttattus.common.v1.PageRequest
-	13, // 17: sttattus.admin.v1.ListDeviceGrantsResponse.rows:type_name -> sttattus.admin.v1.DeviceGrantRow
-	22, // 18: sttattus.admin.v1.ListDeviceGrantsResponse.page:type_name -> sttattus.common.v1.PageResponse
-	13, // 19: sttattus.admin.v1.RevokeDeviceGrantResponse.row:type_name -> sttattus.admin.v1.DeviceGrantRow
-	2,  // 20: sttattus.admin.v1.AdminService.ListUsers:input_type -> sttattus.admin.v1.ListUsersRequest
-	4,  // 21: sttattus.admin.v1.AdminService.GetUser:input_type -> sttattus.admin.v1.GetUserRequest
-	6,  // 22: sttattus.admin.v1.AdminService.BanUser:input_type -> sttattus.admin.v1.BanUserRequest
-	8,  // 23: sttattus.admin.v1.AdminService.BulkAction:input_type -> sttattus.admin.v1.BulkActionRequest
-	11, // 24: sttattus.admin.v1.AdminService.ListAuditLogs:input_type -> sttattus.admin.v1.ListAuditLogsRequest
-	14, // 25: sttattus.admin.v1.AdminService.ListDeviceGrants:input_type -> sttattus.admin.v1.ListDeviceGrantsRequest
-	16, // 26: sttattus.admin.v1.AdminService.RevokeDeviceGrant:input_type -> sttattus.admin.v1.RevokeDeviceGrantRequest
-	3,  // 27: sttattus.admin.v1.AdminService.ListUsers:output_type -> sttattus.admin.v1.ListUsersResponse
-	5,  // 28: sttattus.admin.v1.AdminService.GetUser:output_type -> sttattus.admin.v1.GetUserResponse
-	7,  // 29: sttattus.admin.v1.AdminService.BanUser:output_type -> sttattus.admin.v1.BanUserResponse
-	9,  // 30: sttattus.admin.v1.AdminService.BulkAction:output_type -> sttattus.admin.v1.BulkActionResponse
-	12, // 31: sttattus.admin.v1.AdminService.ListAuditLogs:output_type -> sttattus.admin.v1.ListAuditLogsResponse
-	15, // 32: sttattus.admin.v1.AdminService.ListDeviceGrants:output_type -> sttattus.admin.v1.ListDeviceGrantsResponse
-	17, // 33: sttattus.admin.v1.AdminService.RevokeDeviceGrant:output_type -> sttattus.admin.v1.RevokeDeviceGrantResponse
-	27, // [27:34] is the sub-list for method output_type
-	20, // [20:27] is the sub-list for method input_type
-	20, // [20:20] is the sub-list for extension type_name
-	20, // [20:20] is the sub-list for extension extendee
-	0,  // [0:20] is the sub-list for field type_name
+	123, // 0: sttattus.admin.v1.AdminUserRow.profile:type_name -> sttattus.user.v1.UserProfile
+	124, // 1: sttattus.admin.v1.AdminUserRow.apps:type_name -> sttattus.user.v1.AppAccess
+	125, // 2: sttattus.admin.v1.ListUsersRequest.page:type_name -> sttattus.common.v1.PageRequest
+	126, // 3: sttattus.admin.v1.ListUsersRequest.filter_by_app:type_name -> sttattus.auth.v1.AppCode
+	1,   // 4: sttattus.admin.v1.ListUsersResponse.rows:type_name -> sttattus.admin.v1.AdminUserRow
+	127, // 5: sttattus.admin.v1.ListUsersResponse.page:type_name -> sttattus.common.v1.PageResponse
+	1,   // 6: sttattus.admin.v1.GetUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
+	1,   // 7: sttattus.admin.v1.BanUserResponse.row:type_name -> sttattus.admin.v1.AdminUserRow
+	0,   // 8: sttattus.admin.v1.BulkActionRequest.action:type_name -> sttattus.admin.v1.BulkAction
+	126, // 9: sttattus.admin.v1.BulkActionRequest.app_code:type_name -> sttattus.auth.v1.AppCode
+	125, // 10: sttattus.admin.v1.ListAuditLogsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	10,  // 11: sttattus.admin.v1.ListAuditLogsResponse.entries:type_name -> sttattus.admin.v1.AuditLogEntry
+	127, // 12: sttattus.admin.v1.ListAuditLogsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	128, // 13: sttattus.admin.v1.DeviceGrantRow.created_at:type_name -> google.protobuf.Timestamp
+	128, // 14: sttattus.admin.v1.DeviceGrantRow.expires_at:type_name -> google.protobuf.Timestamp
+	128, // 15: sttattus.admin.v1.DeviceGrantRow.last_sync_at:type_name -> google.protobuf.Timestamp
+	125, // 16: sttattus.admin.v1.ListDeviceGrantsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	13,  // 17: sttattus.admin.v1.ListDeviceGrantsResponse.rows:type_name -> sttattus.admin.v1.DeviceGrantRow
+	127, // 18: sttattus.admin.v1.ListDeviceGrantsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	13,  // 19: sttattus.admin.v1.RevokeDeviceGrantResponse.row:type_name -> sttattus.admin.v1.DeviceGrantRow
+	18,  // 20: sttattus.admin.v1.GetUniversalWorkItemCaseOverviewResponse.items:type_name -> sttattus.admin.v1.UniversalWorkItemCaseEntry
+	18,  // 21: sttattus.admin.v1.UpsertWorkItemAdapterRuleResponse.item:type_name -> sttattus.admin.v1.UniversalWorkItemCaseEntry
+	18,  // 22: sttattus.admin.v1.TransitionUniversalWorkItemStateResponse.item:type_name -> sttattus.admin.v1.UniversalWorkItemCaseEntry
+	25,  // 23: sttattus.admin.v1.GetRoutingSkillsSlaOverviewResponse.items:type_name -> sttattus.admin.v1.RoutingSkillsSlaEntry
+	25,  // 24: sttattus.admin.v1.UpsertStaffSkillCapacityProfileResponse.item:type_name -> sttattus.admin.v1.RoutingSkillsSlaEntry
+	25,  // 25: sttattus.admin.v1.TriggerSlaBreachEscalationResponse.item:type_name -> sttattus.admin.v1.RoutingSkillsSlaEntry
+	32,  // 26: sttattus.admin.v1.GetEvidenceSopDecisionOverviewResponse.items:type_name -> sttattus.admin.v1.EvidenceSopDecisionEntry
+	32,  // 27: sttattus.admin.v1.RecordEvidenceCustodyAssertionResponse.item:type_name -> sttattus.admin.v1.EvidenceSopDecisionEntry
+	32,  // 28: sttattus.admin.v1.CommitFourEyesSopDecisionResponse.item:type_name -> sttattus.admin.v1.EvidenceSopDecisionEntry
+	39,  // 29: sttattus.admin.v1.GetCommunicationsConciergeOverviewResponse.items:type_name -> sttattus.admin.v1.CommunicationsConciergeEntry
+	39,  // 30: sttattus.admin.v1.SaveApprovedMacroOrDraftResponse.item:type_name -> sttattus.admin.v1.CommunicationsConciergeEntry
+	39,  // 31: sttattus.admin.v1.DispatchReviewedMemberReplyResponse.item:type_name -> sttattus.admin.v1.CommunicationsConciergeEntry
+	46,  // 32: sttattus.admin.v1.GetVerificationAutomationAppealsOverviewResponse.items:type_name -> sttattus.admin.v1.VerificationAutomationAppealsEntry
+	46,  // 33: sttattus.admin.v1.EvaluateExplainableVerificationRuleResponse.item:type_name -> sttattus.admin.v1.VerificationAutomationAppealsEntry
+	46,  // 34: sttattus.admin.v1.ResolveMemberVerificationAppealResponse.item:type_name -> sttattus.admin.v1.VerificationAutomationAppealsEntry
+	53,  // 35: sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewResponse.items:type_name -> sttattus.admin.v1.CatalogContentPolicyStudioEntry
+	53,  // 36: sttattus.admin.v1.StageCatalogOrPolicyReleaseResponse.item:type_name -> sttattus.admin.v1.CatalogContentPolicyStudioEntry
+	53,  // 37: sttattus.admin.v1.PublishOrRollbackStudioReleaseResponse.item:type_name -> sttattus.admin.v1.CatalogContentPolicyStudioEntry
+	60,  // 38: sttattus.admin.v1.GetPlatformReconciliationOpsOverviewResponse.items:type_name -> sttattus.admin.v1.PlatformReconciliationOpsEntry
+	60,  // 39: sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckResponse.item:type_name -> sttattus.admin.v1.PlatformReconciliationOpsEntry
+	60,  // 40: sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairResponse.item:type_name -> sttattus.admin.v1.PlatformReconciliationOpsEntry
+	67,  // 41: sttattus.admin.v1.GetAiControlQualityCalibrationOverviewResponse.items:type_name -> sttattus.admin.v1.AiControlQualityCalibrationEntry
+	67,  // 42: sttattus.admin.v1.RegisterModelDeploymentManifestResponse.item:type_name -> sttattus.admin.v1.AiControlQualityCalibrationEntry
+	67,  // 43: sttattus.admin.v1.RecordBlindQaCalibrationReviewResponse.item:type_name -> sttattus.admin.v1.AiControlQualityCalibrationEntry
+	74,  // 44: sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewResponse.items:type_name -> sttattus.admin.v1.SecurityPrivacyRecoveryEntry
+	74,  // 45: sttattus.admin.v1.RequestJitPrivilegedElevationResponse.item:type_name -> sttattus.admin.v1.SecurityPrivacyRecoveryEntry
+	74,  // 46: sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseResponse.item:type_name -> sttattus.admin.v1.SecurityPrivacyRecoveryEntry
+	81,  // 47: sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewResponse.items:type_name -> sttattus.admin.v1.FraudAbuseTrustGraphEntry
+	81,  // 48: sttattus.admin.v1.LogExplainableTrustSignalClusterResponse.item:type_name -> sttattus.admin.v1.FraudAbuseTrustGraphEntry
+	81,  // 49: sttattus.admin.v1.ApplyReversibleTrustSanctionResponse.item:type_name -> sttattus.admin.v1.FraudAbuseTrustGraphEntry
+	88,  // 50: sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewResponse.items:type_name -> sttattus.admin.v1.CommerceEntitlementPayoutEntry
+	88,  // 51: sttattus.admin.v1.CreateLedgerAdjustmentPreviewResponse.item:type_name -> sttattus.admin.v1.CommerceEntitlementPayoutEntry
+	88,  // 52: sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutResponse.item:type_name -> sttattus.admin.v1.CommerceEntitlementPayoutEntry
+	95,  // 53: sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewResponse.items:type_name -> sttattus.admin.v1.MasterIncidentBulkRemediationEntry
+	95,  // 54: sttattus.admin.v1.StageMasterIncidentCohortPlanResponse.item:type_name -> sttattus.admin.v1.MasterIncidentBulkRemediationEntry
+	95,  // 55: sttattus.admin.v1.FanoutIdempotentBulkRemediationResponse.item:type_name -> sttattus.admin.v1.MasterIncidentBulkRemediationEntry
+	102, // 56: sttattus.admin.v1.GetWorkforceLearningCertificationOverviewResponse.items:type_name -> sttattus.admin.v1.WorkforceLearningCertificationEntry
+	102, // 57: sttattus.admin.v1.UpsertStaffCertificationPathResponse.item:type_name -> sttattus.admin.v1.WorkforceLearningCertificationEntry
+	102, // 58: sttattus.admin.v1.RecordCalibratedSandboxOrCoachingResponse.item:type_name -> sttattus.admin.v1.WorkforceLearningCertificationEntry
+	109, // 59: sttattus.admin.v1.GetSimulationReleaseCertificationOverviewResponse.items:type_name -> sttattus.admin.v1.SimulationReleaseCertificationEntry
+	109, // 60: sttattus.admin.v1.RunFailureClockSimulationScenarioResponse.item:type_name -> sttattus.admin.v1.SimulationReleaseCertificationEntry
+	109, // 61: sttattus.admin.v1.IssueSignedReleaseCertificateResponse.item:type_name -> sttattus.admin.v1.SimulationReleaseCertificationEntry
+	116, // 62: sttattus.admin.v1.GetIndependentAuditObserverOverviewResponse.items:type_name -> sttattus.admin.v1.IndependentAuditObserverEntry
+	116, // 63: sttattus.admin.v1.CreateTimeBoundObserverEngagementResponse.item:type_name -> sttattus.admin.v1.IndependentAuditObserverEntry
+	116, // 64: sttattus.admin.v1.GenerateWatermarkedControlEvidencePackResponse.item:type_name -> sttattus.admin.v1.IndependentAuditObserverEntry
+	2,   // 65: sttattus.admin.v1.AdminService.ListUsers:input_type -> sttattus.admin.v1.ListUsersRequest
+	4,   // 66: sttattus.admin.v1.AdminService.GetUser:input_type -> sttattus.admin.v1.GetUserRequest
+	6,   // 67: sttattus.admin.v1.AdminService.BanUser:input_type -> sttattus.admin.v1.BanUserRequest
+	8,   // 68: sttattus.admin.v1.AdminService.BulkAction:input_type -> sttattus.admin.v1.BulkActionRequest
+	11,  // 69: sttattus.admin.v1.AdminService.ListAuditLogs:input_type -> sttattus.admin.v1.ListAuditLogsRequest
+	14,  // 70: sttattus.admin.v1.AdminService.ListDeviceGrants:input_type -> sttattus.admin.v1.ListDeviceGrantsRequest
+	16,  // 71: sttattus.admin.v1.AdminService.RevokeDeviceGrant:input_type -> sttattus.admin.v1.RevokeDeviceGrantRequest
+	19,  // 72: sttattus.admin.v1.AdminService.GetUniversalWorkItemCaseOverview:input_type -> sttattus.admin.v1.GetUniversalWorkItemCaseOverviewRequest
+	21,  // 73: sttattus.admin.v1.AdminService.UpsertWorkItemAdapterRule:input_type -> sttattus.admin.v1.UpsertWorkItemAdapterRuleRequest
+	23,  // 74: sttattus.admin.v1.AdminService.TransitionUniversalWorkItemState:input_type -> sttattus.admin.v1.TransitionUniversalWorkItemStateRequest
+	26,  // 75: sttattus.admin.v1.AdminService.GetRoutingSkillsSlaOverview:input_type -> sttattus.admin.v1.GetRoutingSkillsSlaOverviewRequest
+	28,  // 76: sttattus.admin.v1.AdminService.UpsertStaffSkillCapacityProfile:input_type -> sttattus.admin.v1.UpsertStaffSkillCapacityProfileRequest
+	30,  // 77: sttattus.admin.v1.AdminService.TriggerSlaBreachEscalation:input_type -> sttattus.admin.v1.TriggerSlaBreachEscalationRequest
+	33,  // 78: sttattus.admin.v1.AdminService.GetEvidenceSopDecisionOverview:input_type -> sttattus.admin.v1.GetEvidenceSopDecisionOverviewRequest
+	35,  // 79: sttattus.admin.v1.AdminService.RecordEvidenceCustodyAssertion:input_type -> sttattus.admin.v1.RecordEvidenceCustodyAssertionRequest
+	37,  // 80: sttattus.admin.v1.AdminService.CommitFourEyesSopDecision:input_type -> sttattus.admin.v1.CommitFourEyesSopDecisionRequest
+	40,  // 81: sttattus.admin.v1.AdminService.GetCommunicationsConciergeOverview:input_type -> sttattus.admin.v1.GetCommunicationsConciergeOverviewRequest
+	42,  // 82: sttattus.admin.v1.AdminService.SaveApprovedMacroOrDraft:input_type -> sttattus.admin.v1.SaveApprovedMacroOrDraftRequest
+	44,  // 83: sttattus.admin.v1.AdminService.DispatchReviewedMemberReply:input_type -> sttattus.admin.v1.DispatchReviewedMemberReplyRequest
+	47,  // 84: sttattus.admin.v1.AdminService.GetVerificationAutomationAppealsOverview:input_type -> sttattus.admin.v1.GetVerificationAutomationAppealsOverviewRequest
+	49,  // 85: sttattus.admin.v1.AdminService.EvaluateExplainableVerificationRule:input_type -> sttattus.admin.v1.EvaluateExplainableVerificationRuleRequest
+	51,  // 86: sttattus.admin.v1.AdminService.ResolveMemberVerificationAppeal:input_type -> sttattus.admin.v1.ResolveMemberVerificationAppealRequest
+	54,  // 87: sttattus.admin.v1.AdminService.GetCatalogContentPolicyStudioOverview:input_type -> sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewRequest
+	56,  // 88: sttattus.admin.v1.AdminService.StageCatalogOrPolicyRelease:input_type -> sttattus.admin.v1.StageCatalogOrPolicyReleaseRequest
+	58,  // 89: sttattus.admin.v1.AdminService.PublishOrRollbackStudioRelease:input_type -> sttattus.admin.v1.PublishOrRollbackStudioReleaseRequest
+	61,  // 90: sttattus.admin.v1.AdminService.GetPlatformReconciliationOpsOverview:input_type -> sttattus.admin.v1.GetPlatformReconciliationOpsOverviewRequest
+	63,  // 91: sttattus.admin.v1.AdminService.RunSyntheticJourneyOrInvariantCheck:input_type -> sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckRequest
+	65,  // 92: sttattus.admin.v1.AdminService.ReplayDeadLetterOrDryRunRepair:input_type -> sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairRequest
+	68,  // 93: sttattus.admin.v1.AdminService.GetAiControlQualityCalibrationOverview:input_type -> sttattus.admin.v1.GetAiControlQualityCalibrationOverviewRequest
+	70,  // 94: sttattus.admin.v1.AdminService.RegisterModelDeploymentManifest:input_type -> sttattus.admin.v1.RegisterModelDeploymentManifestRequest
+	72,  // 95: sttattus.admin.v1.AdminService.RecordBlindQaCalibrationReview:input_type -> sttattus.admin.v1.RecordBlindQaCalibrationReviewRequest
+	75,  // 96: sttattus.admin.v1.AdminService.GetSecurityPrivacyRecoveryOverview:input_type -> sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewRequest
+	77,  // 97: sttattus.admin.v1.AdminService.RequestJitPrivilegedElevation:input_type -> sttattus.admin.v1.RequestJitPrivilegedElevationRequest
+	79,  // 98: sttattus.admin.v1.AdminService.ExecutePrivacyOrAccountRecoveryCase:input_type -> sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseRequest
+	82,  // 99: sttattus.admin.v1.AdminService.GetFraudAbuseTrustGraphOverview:input_type -> sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewRequest
+	84,  // 100: sttattus.admin.v1.AdminService.LogExplainableTrustSignalCluster:input_type -> sttattus.admin.v1.LogExplainableTrustSignalClusterRequest
+	86,  // 101: sttattus.admin.v1.AdminService.ApplyReversibleTrustSanction:input_type -> sttattus.admin.v1.ApplyReversibleTrustSanctionRequest
+	89,  // 102: sttattus.admin.v1.AdminService.GetCommerceEntitlementPayoutOverview:input_type -> sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewRequest
+	91,  // 103: sttattus.admin.v1.AdminService.CreateLedgerAdjustmentPreview:input_type -> sttattus.admin.v1.CreateLedgerAdjustmentPreviewRequest
+	93,  // 104: sttattus.admin.v1.AdminService.ReconcileEntitlementOrPartnerPayout:input_type -> sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutRequest
+	96,  // 105: sttattus.admin.v1.AdminService.GetMasterIncidentBulkRemediationOverview:input_type -> sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewRequest
+	98,  // 106: sttattus.admin.v1.AdminService.StageMasterIncidentCohortPlan:input_type -> sttattus.admin.v1.StageMasterIncidentCohortPlanRequest
+	100, // 107: sttattus.admin.v1.AdminService.FanoutIdempotentBulkRemediation:input_type -> sttattus.admin.v1.FanoutIdempotentBulkRemediationRequest
+	103, // 108: sttattus.admin.v1.AdminService.GetWorkforceLearningCertificationOverview:input_type -> sttattus.admin.v1.GetWorkforceLearningCertificationOverviewRequest
+	105, // 109: sttattus.admin.v1.AdminService.UpsertStaffCertificationPath:input_type -> sttattus.admin.v1.UpsertStaffCertificationPathRequest
+	107, // 110: sttattus.admin.v1.AdminService.RecordCalibratedSandboxOrCoaching:input_type -> sttattus.admin.v1.RecordCalibratedSandboxOrCoachingRequest
+	110, // 111: sttattus.admin.v1.AdminService.GetSimulationReleaseCertificationOverview:input_type -> sttattus.admin.v1.GetSimulationReleaseCertificationOverviewRequest
+	112, // 112: sttattus.admin.v1.AdminService.RunFailureClockSimulationScenario:input_type -> sttattus.admin.v1.RunFailureClockSimulationScenarioRequest
+	114, // 113: sttattus.admin.v1.AdminService.IssueSignedReleaseCertificate:input_type -> sttattus.admin.v1.IssueSignedReleaseCertificateRequest
+	117, // 114: sttattus.admin.v1.AdminService.GetIndependentAuditObserverOverview:input_type -> sttattus.admin.v1.GetIndependentAuditObserverOverviewRequest
+	119, // 115: sttattus.admin.v1.AdminService.CreateTimeBoundObserverEngagement:input_type -> sttattus.admin.v1.CreateTimeBoundObserverEngagementRequest
+	121, // 116: sttattus.admin.v1.AdminService.GenerateWatermarkedControlEvidencePack:input_type -> sttattus.admin.v1.GenerateWatermarkedControlEvidencePackRequest
+	3,   // 117: sttattus.admin.v1.AdminService.ListUsers:output_type -> sttattus.admin.v1.ListUsersResponse
+	5,   // 118: sttattus.admin.v1.AdminService.GetUser:output_type -> sttattus.admin.v1.GetUserResponse
+	7,   // 119: sttattus.admin.v1.AdminService.BanUser:output_type -> sttattus.admin.v1.BanUserResponse
+	9,   // 120: sttattus.admin.v1.AdminService.BulkAction:output_type -> sttattus.admin.v1.BulkActionResponse
+	12,  // 121: sttattus.admin.v1.AdminService.ListAuditLogs:output_type -> sttattus.admin.v1.ListAuditLogsResponse
+	15,  // 122: sttattus.admin.v1.AdminService.ListDeviceGrants:output_type -> sttattus.admin.v1.ListDeviceGrantsResponse
+	17,  // 123: sttattus.admin.v1.AdminService.RevokeDeviceGrant:output_type -> sttattus.admin.v1.RevokeDeviceGrantResponse
+	20,  // 124: sttattus.admin.v1.AdminService.GetUniversalWorkItemCaseOverview:output_type -> sttattus.admin.v1.GetUniversalWorkItemCaseOverviewResponse
+	22,  // 125: sttattus.admin.v1.AdminService.UpsertWorkItemAdapterRule:output_type -> sttattus.admin.v1.UpsertWorkItemAdapterRuleResponse
+	24,  // 126: sttattus.admin.v1.AdminService.TransitionUniversalWorkItemState:output_type -> sttattus.admin.v1.TransitionUniversalWorkItemStateResponse
+	27,  // 127: sttattus.admin.v1.AdminService.GetRoutingSkillsSlaOverview:output_type -> sttattus.admin.v1.GetRoutingSkillsSlaOverviewResponse
+	29,  // 128: sttattus.admin.v1.AdminService.UpsertStaffSkillCapacityProfile:output_type -> sttattus.admin.v1.UpsertStaffSkillCapacityProfileResponse
+	31,  // 129: sttattus.admin.v1.AdminService.TriggerSlaBreachEscalation:output_type -> sttattus.admin.v1.TriggerSlaBreachEscalationResponse
+	34,  // 130: sttattus.admin.v1.AdminService.GetEvidenceSopDecisionOverview:output_type -> sttattus.admin.v1.GetEvidenceSopDecisionOverviewResponse
+	36,  // 131: sttattus.admin.v1.AdminService.RecordEvidenceCustodyAssertion:output_type -> sttattus.admin.v1.RecordEvidenceCustodyAssertionResponse
+	38,  // 132: sttattus.admin.v1.AdminService.CommitFourEyesSopDecision:output_type -> sttattus.admin.v1.CommitFourEyesSopDecisionResponse
+	41,  // 133: sttattus.admin.v1.AdminService.GetCommunicationsConciergeOverview:output_type -> sttattus.admin.v1.GetCommunicationsConciergeOverviewResponse
+	43,  // 134: sttattus.admin.v1.AdminService.SaveApprovedMacroOrDraft:output_type -> sttattus.admin.v1.SaveApprovedMacroOrDraftResponse
+	45,  // 135: sttattus.admin.v1.AdminService.DispatchReviewedMemberReply:output_type -> sttattus.admin.v1.DispatchReviewedMemberReplyResponse
+	48,  // 136: sttattus.admin.v1.AdminService.GetVerificationAutomationAppealsOverview:output_type -> sttattus.admin.v1.GetVerificationAutomationAppealsOverviewResponse
+	50,  // 137: sttattus.admin.v1.AdminService.EvaluateExplainableVerificationRule:output_type -> sttattus.admin.v1.EvaluateExplainableVerificationRuleResponse
+	52,  // 138: sttattus.admin.v1.AdminService.ResolveMemberVerificationAppeal:output_type -> sttattus.admin.v1.ResolveMemberVerificationAppealResponse
+	55,  // 139: sttattus.admin.v1.AdminService.GetCatalogContentPolicyStudioOverview:output_type -> sttattus.admin.v1.GetCatalogContentPolicyStudioOverviewResponse
+	57,  // 140: sttattus.admin.v1.AdminService.StageCatalogOrPolicyRelease:output_type -> sttattus.admin.v1.StageCatalogOrPolicyReleaseResponse
+	59,  // 141: sttattus.admin.v1.AdminService.PublishOrRollbackStudioRelease:output_type -> sttattus.admin.v1.PublishOrRollbackStudioReleaseResponse
+	62,  // 142: sttattus.admin.v1.AdminService.GetPlatformReconciliationOpsOverview:output_type -> sttattus.admin.v1.GetPlatformReconciliationOpsOverviewResponse
+	64,  // 143: sttattus.admin.v1.AdminService.RunSyntheticJourneyOrInvariantCheck:output_type -> sttattus.admin.v1.RunSyntheticJourneyOrInvariantCheckResponse
+	66,  // 144: sttattus.admin.v1.AdminService.ReplayDeadLetterOrDryRunRepair:output_type -> sttattus.admin.v1.ReplayDeadLetterOrDryRunRepairResponse
+	69,  // 145: sttattus.admin.v1.AdminService.GetAiControlQualityCalibrationOverview:output_type -> sttattus.admin.v1.GetAiControlQualityCalibrationOverviewResponse
+	71,  // 146: sttattus.admin.v1.AdminService.RegisterModelDeploymentManifest:output_type -> sttattus.admin.v1.RegisterModelDeploymentManifestResponse
+	73,  // 147: sttattus.admin.v1.AdminService.RecordBlindQaCalibrationReview:output_type -> sttattus.admin.v1.RecordBlindQaCalibrationReviewResponse
+	76,  // 148: sttattus.admin.v1.AdminService.GetSecurityPrivacyRecoveryOverview:output_type -> sttattus.admin.v1.GetSecurityPrivacyRecoveryOverviewResponse
+	78,  // 149: sttattus.admin.v1.AdminService.RequestJitPrivilegedElevation:output_type -> sttattus.admin.v1.RequestJitPrivilegedElevationResponse
+	80,  // 150: sttattus.admin.v1.AdminService.ExecutePrivacyOrAccountRecoveryCase:output_type -> sttattus.admin.v1.ExecutePrivacyOrAccountRecoveryCaseResponse
+	83,  // 151: sttattus.admin.v1.AdminService.GetFraudAbuseTrustGraphOverview:output_type -> sttattus.admin.v1.GetFraudAbuseTrustGraphOverviewResponse
+	85,  // 152: sttattus.admin.v1.AdminService.LogExplainableTrustSignalCluster:output_type -> sttattus.admin.v1.LogExplainableTrustSignalClusterResponse
+	87,  // 153: sttattus.admin.v1.AdminService.ApplyReversibleTrustSanction:output_type -> sttattus.admin.v1.ApplyReversibleTrustSanctionResponse
+	90,  // 154: sttattus.admin.v1.AdminService.GetCommerceEntitlementPayoutOverview:output_type -> sttattus.admin.v1.GetCommerceEntitlementPayoutOverviewResponse
+	92,  // 155: sttattus.admin.v1.AdminService.CreateLedgerAdjustmentPreview:output_type -> sttattus.admin.v1.CreateLedgerAdjustmentPreviewResponse
+	94,  // 156: sttattus.admin.v1.AdminService.ReconcileEntitlementOrPartnerPayout:output_type -> sttattus.admin.v1.ReconcileEntitlementOrPartnerPayoutResponse
+	97,  // 157: sttattus.admin.v1.AdminService.GetMasterIncidentBulkRemediationOverview:output_type -> sttattus.admin.v1.GetMasterIncidentBulkRemediationOverviewResponse
+	99,  // 158: sttattus.admin.v1.AdminService.StageMasterIncidentCohortPlan:output_type -> sttattus.admin.v1.StageMasterIncidentCohortPlanResponse
+	101, // 159: sttattus.admin.v1.AdminService.FanoutIdempotentBulkRemediation:output_type -> sttattus.admin.v1.FanoutIdempotentBulkRemediationResponse
+	104, // 160: sttattus.admin.v1.AdminService.GetWorkforceLearningCertificationOverview:output_type -> sttattus.admin.v1.GetWorkforceLearningCertificationOverviewResponse
+	106, // 161: sttattus.admin.v1.AdminService.UpsertStaffCertificationPath:output_type -> sttattus.admin.v1.UpsertStaffCertificationPathResponse
+	108, // 162: sttattus.admin.v1.AdminService.RecordCalibratedSandboxOrCoaching:output_type -> sttattus.admin.v1.RecordCalibratedSandboxOrCoachingResponse
+	111, // 163: sttattus.admin.v1.AdminService.GetSimulationReleaseCertificationOverview:output_type -> sttattus.admin.v1.GetSimulationReleaseCertificationOverviewResponse
+	113, // 164: sttattus.admin.v1.AdminService.RunFailureClockSimulationScenario:output_type -> sttattus.admin.v1.RunFailureClockSimulationScenarioResponse
+	115, // 165: sttattus.admin.v1.AdminService.IssueSignedReleaseCertificate:output_type -> sttattus.admin.v1.IssueSignedReleaseCertificateResponse
+	118, // 166: sttattus.admin.v1.AdminService.GetIndependentAuditObserverOverview:output_type -> sttattus.admin.v1.GetIndependentAuditObserverOverviewResponse
+	120, // 167: sttattus.admin.v1.AdminService.CreateTimeBoundObserverEngagement:output_type -> sttattus.admin.v1.CreateTimeBoundObserverEngagementResponse
+	122, // 168: sttattus.admin.v1.AdminService.GenerateWatermarkedControlEvidencePack:output_type -> sttattus.admin.v1.GenerateWatermarkedControlEvidencePackResponse
+	117, // [117:169] is the sub-list for method output_type
+	65,  // [65:117] is the sub-list for method input_type
+	65,  // [65:65] is the sub-list for extension type_name
+	65,  // [65:65] is the sub-list for extension extendee
+	0,   // [0:65] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_admin_v1_admin_proto_init() }
@@ -1278,7 +8583,7 @@ func file_sttattus_admin_v1_admin_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_admin_v1_admin_proto_rawDesc), len(file_sttattus_admin_v1_admin_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   17,
+			NumMessages:   122,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -511,6 +511,996 @@ class ApexServiceClient extends $grpc.Client {
     return $createUnaryCall(_$adminVerifyLab, request, options: options);
   }
 
+  /// === Opportunity Choice 1 (AP1): Health Data Reliability Center ===
+  $grpc.ResponseFuture<$0.GetHealthDataReliabilityOverviewResponse>
+      getHealthDataReliabilityOverview(
+    $0.GetHealthDataReliabilityOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getHealthDataReliabilityOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListHealthSourcesResponse> listHealthSources(
+    $0.ListHealthSourcesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listHealthSources, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertHealthSourceGrantResponse>
+      upsertHealthSourceGrant(
+    $0.UpsertHealthSourceGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertHealthSourceGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeHealthSourceGrantResponse>
+      revokeHealthSourceGrant(
+    $0.RevokeHealthSourceGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeHealthSourceGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CorrectHealthObservationResponse>
+      correctHealthObservation(
+    $0.CorrectHealthObservationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$correctHealthObservation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteHealthObservationResponse>
+      deleteHealthObservation(
+    $0.DeleteHealthObservationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteHealthObservation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RestoreHealthObservationResponse>
+      restoreHealthObservation(
+    $0.RestoreHealthObservationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$restoreHealthObservation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListObservationRevisionsResponse>
+      listObservationRevisions(
+    $0.ListObservationRevisionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listObservationRevisions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListHealthDataConflictsResponse>
+      listHealthDataConflicts(
+    $0.ListHealthDataConflictsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listHealthDataConflicts, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveHealthDataConflictResponse>
+      resolveHealthDataConflict(
+    $0.ResolveHealthDataConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveHealthDataConflict, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateHealthCorrectionCaseResponse>
+      createHealthCorrectionCase(
+    $0.CreateHealthCorrectionCaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createHealthCorrectionCase, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyHealthCorrectionCasesResponse>
+      listMyHealthCorrectionCases(
+    $0.ListMyHealthCorrectionCasesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyHealthCorrectionCases, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListCrossPillarHealthGrantsResponse>
+      listCrossPillarHealthGrants(
+    $0.ListCrossPillarHealthGrantsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listCrossPillarHealthGrants, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCrossPillarHealthGrantResponse>
+      updateCrossPillarHealthGrant(
+    $0.UpdateCrossPillarHealthGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCrossPillarHealthGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RebuildHealthRecordResponse> rebuildHealthRecord(
+    $0.RebuildHealthRecordRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$rebuildHealthRecord, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportHealthObservationsResponse>
+      exportHealthObservations(
+    $0.ExportHealthObservationsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportHealthObservations, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence ===
+  $grpc.ResponseFuture<$0.GetClinicalDocumentIntelligenceOverviewResponse>
+      getClinicalDocumentIntelligenceOverview(
+    $0.GetClinicalDocumentIntelligenceOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getClinicalDocumentIntelligenceOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InspectClinicalDocumentResponse>
+      inspectClinicalDocument(
+    $0.InspectClinicalDocumentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$inspectClinicalDocument, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunDocumentExtractionResponse> runDocumentExtraction(
+    $0.RunDocumentExtractionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runDocumentExtraction, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmExtractedDocumentItemsResponse>
+      confirmExtractedDocumentItems(
+    $0.ConfirmExtractedDocumentItemsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmExtractedDocumentItems, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompareClinicalDocumentRevisionsResponse>
+      compareClinicalDocumentRevisions(
+    $0.CompareClinicalDocumentRevisionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$compareClinicalDocumentRevisions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateAppointmentBriefResponse>
+      generateAppointmentBrief(
+    $0.GenerateAppointmentBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateAppointmentBrief, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyAppointmentBriefsResponse>
+      listMyAppointmentBriefs(
+    $0.ListMyAppointmentBriefsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyAppointmentBriefs, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateAppointmentBriefResponse>
+      updateAppointmentBrief(
+    $0.UpdateAppointmentBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateAppointmentBrief, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age ===
+  $grpc.ResponseFuture<$0.GetPersonalBaselineAndApexAgeOverviewResponse>
+      getPersonalBaselineAndApexAgeOverview(
+    $0.GetPersonalBaselineAndApexAgeOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPersonalBaselineAndApexAgeOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecomputePersonalBaselinesAndApexAgeResponse>
+      recomputePersonalBaselinesAndApexAge(
+    $0.RecomputePersonalBaselinesAndApexAgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recomputePersonalBaselinesAndApexAge, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertBaselineExcludedPeriodResponse>
+      upsertBaselineExcludedPeriod(
+    $0.UpsertBaselineExcludedPeriodRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertBaselineExcludedPeriod, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DeleteBaselineExcludedPeriodResponse>
+      deleteBaselineExcludedPeriod(
+    $0.DeleteBaselineExcludedPeriodRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteBaselineExcludedPeriod, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateChangeSignalDispositionResponse>
+      updateChangeSignalDisposition(
+    $0.UpdateChangeSignalDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateChangeSignalDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateScoreDisplayPreferencesResponse>
+      updateScoreDisplayPreferences(
+    $0.UpdateScoreDisplayPreferencesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateScoreDisplayPreferences, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitApexScoreDisputeResponse>
+      submitApexScoreDispute(
+    $0.SubmitApexScoreDisputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitApexScoreDispute, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ListMyApexScoreSnapshotsResponse>
+      listMyApexScoreSnapshots(
+    $0.ListMyApexScoreSnapshotsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listMyApexScoreSnapshots, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar ===
+  $grpc.ResponseFuture<$0.GetPreventiveCareCalendarOverviewResponse>
+      getPreventiveCareCalendarOverview(
+    $0.GetPreventiveCareCalendarOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPreventiveCareCalendarOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdatePreventiveCareProfileResponse>
+      updatePreventiveCareProfile(
+    $0.UpdatePreventiveCareProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updatePreventiveCareProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdatePreventiveCareItemStatusResponse>
+      updatePreventiveCareItemStatus(
+    $0.UpdatePreventiveCareItemStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updatePreventiveCareItemStatus, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmPreventiveCareEvidenceResponse>
+      confirmPreventiveCareEvidence(
+    $0.ConfirmPreventiveCareEvidenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmPreventiveCareEvidence, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCustomPreventiveCareCheckResponse>
+      upsertCustomPreventiveCareCheck(
+    $0.UpsertCustomPreventiveCareCheckRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertCustomPreventiveCareCheck, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SyncPreventiveCarePlanFromGuidelinesResponse>
+      syncPreventiveCarePlanFromGuidelines(
+    $0.SyncPreventiveCarePlanFromGuidelinesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$syncPreventiveCarePlanFromGuidelines, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory ===
+  $grpc.ResponseFuture<$0.GetExperimentLabOverviewResponse>
+      getExperimentLabOverview(
+    $0.GetExperimentLabOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getExperimentLabOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PredeclareNOf1ExperimentResponse>
+      predeclareNOf1Experiment(
+    $0.PredeclareNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$predeclareNOf1Experiment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordNOf1DailyLogResponse> recordNOf1DailyLog(
+    $0.RecordNOf1DailyLogRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordNOf1DailyLog, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AnalyzeNOf1ExperimentResponse> analyzeNOf1Experiment(
+    $0.AnalyzeNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$analyzeNOf1Experiment, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateNOf1ExperimentStatusResponse>
+      updateNOf1ExperimentStatus(
+    $0.UpdateNOf1ExperimentStatusRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateNOf1ExperimentStatus, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReportExperimentAdverseEventResponse>
+      reportExperimentAdverseEvent(
+    $0.ReportExperimentAdverseEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reportExperimentAdverseEvent, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan ===
+  $grpc.ResponseFuture<$0.GetAdaptiveDailyPlanOverviewResponse>
+      getAdaptiveDailyPlanOverview(
+    $0.GetAdaptiveDailyPlanOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAdaptiveDailyPlanOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReplanAdaptiveDailyProtocolResponse>
+      replanAdaptiveDailyProtocol(
+    $0.ReplanAdaptiveDailyProtocolRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$replanAdaptiveDailyProtocol, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordDailyPlanStepDispositionResponse>
+      recordDailyPlanStepDisposition(
+    $0.RecordDailyPlanStepDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordDailyPlanStepDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertDailyPlanStepResponse> upsertDailyPlanStep(
+    $0.UpsertDailyPlanStepRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertDailyPlanStep, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCompassionateAdherencePauseResponse>
+      updateCompassionateAdherencePause(
+    $0.UpdateCompassionateAdherencePauseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCompassionateAdherencePause, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCrossPillarTimingHandoffResponse>
+      updateCrossPillarTimingHandoff(
+    $0.UpdateCrossPillarTimingHandoffRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCrossPillarTimingHandoff, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety ===
+  $grpc.ResponseFuture<$0.GetMedicationSafetyOverviewResponse>
+      getMedicationSafetyOverview(
+    $0.GetMedicationSafetyOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMedicationSafetyOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertReconciledMedicationItemResponse>
+      upsertReconciledMedicationItem(
+    $0.UpsertReconciledMedicationItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertReconciledMedicationItem, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertAllergyOrIntoleranceResponse>
+      upsertAllergyOrIntolerance(
+    $0.UpsertAllergyOrIntoleranceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertAllergyOrIntolerance, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunSafetyInteractionCheckResponse>
+      runSafetyInteractionCheck(
+    $0.RunSafetyInteractionCheckRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runSafetyInteractionCheck, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateInteractionAlertDispositionResponse>
+      updateInteractionAlertDisposition(
+    $0.UpdateInteractionAlertDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateInteractionAlertDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateMedicationReconciliationPacketResponse>
+      generateMedicationReconciliationPacket(
+    $0.GenerateMedicationReconciliationPacketRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateMedicationReconciliationPacket, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 8 (AP8): Metabolic Response Studio ===
+  $grpc.ResponseFuture<$0.GetMetabolicStudioOverviewResponse>
+      getMetabolicStudioOverview(
+    $0.GetMetabolicStudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMetabolicStudioOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordMetabolicMealEventResponse>
+      recordMetabolicMealEvent(
+    $0.RecordMetabolicMealEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordMetabolicMealEvent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmMealIngredientsAndPortionsResponse>
+      confirmMealIngredientsAndPortions(
+    $0.ConfirmMealIngredientsAndPortionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmMealIngredientsAndPortions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompareRepeatMealResponsesResponse>
+      compareRepeatMealResponses(
+    $0.CompareRepeatMealResponsesRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$compareRepeatMealResponses, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertMetabolicTargetRangeResponse>
+      upsertMetabolicTargetRange(
+    $0.UpsertMetabolicTargetRangeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertMetabolicTargetRange, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertMetabolicSensorProfileResponse>
+      upsertMetabolicSensorProfile(
+    $0.UpsertMetabolicSensorProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertMetabolicSensorProfile, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace ===
+  $grpc.ResponseFuture<$0.GetCycleLifeStageOverviewResponse>
+      getCycleLifeStageOverview(
+    $0.GetCycleLifeStageOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCycleLifeStageOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateLifeStageProfileAndPrivacyResponse>
+      updateLifeStageProfileAndPrivacy(
+    $0.UpdateLifeStageProfileAndPrivacyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateLifeStageProfileAndPrivacy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordLifeStageEventResponse> recordLifeStageEvent(
+    $0.RecordLifeStageEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordLifeStageEvent, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateLifeStageAppointmentBriefResponse>
+      generateLifeStageAppointmentBrief(
+    $0.GenerateLifeStageAppointmentBriefRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateLifeStageAppointmentBrief, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PurgeReproductiveAndLifeStageDataResponse>
+      purgeReproductiveAndLifeStageData(
+    $0.PurgeReproductiveAndLifeStageDataRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$purgeReproductiveAndLifeStageData, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportReproductiveAndLifeStageDataResponse>
+      exportReproductiveAndLifeStageData(
+    $0.ExportReproductiveAndLifeStageDataRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportReproductiveAndLifeStageData, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+  $grpc.ResponseFuture<$0.GetGenomicsAndFamilyHistoryOverviewResponse>
+      getGenomicsAndFamilyHistoryOverview(
+    $0.GetGenomicsAndFamilyHistoryOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getGenomicsAndFamilyHistoryOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RegisterEncryptedGenomicUploadResponse>
+      registerEncryptedGenomicUpload(
+    $0.RegisterEncryptedGenomicUploadRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$registerEncryptedGenomicUpload, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateGenomicVariantVisibilityResponse>
+      updateGenomicVariantVisibility(
+    $0.UpdateGenomicVariantVisibilityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateGenomicVariantVisibility, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertFamilyHistoryEntryResponse>
+      upsertFamilyHistoryEntry(
+    $0.UpsertFamilyHistoryEntryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertFamilyHistoryEntry, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitGeneticCounsellorRequestResponse>
+      submitGeneticCounsellorRequest(
+    $0.SubmitGeneticCounsellorRequestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitGeneticCounsellorRequest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RotateGenomicEncryptionKeyOrPurgeResponse>
+      rotateGenomicEncryptionKeyOrPurge(
+    $0.RotateGenomicEncryptionKeyOrPurgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$rotateGenomicEncryptionKeyOrPurge, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+  $grpc.ResponseFuture<$0.GetClinicianCareTeamOverviewResponse>
+      getClinicianCareTeamOverview(
+    $0.GetClinicianCareTeamOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getClinicianCareTeamOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateScopedCareTeamGrantResponse>
+      createScopedCareTeamGrant(
+    $0.CreateScopedCareTeamGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createScopedCareTeamGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeScopedCareTeamGrantResponse>
+      revokeScopedCareTeamGrant(
+    $0.RevokeScopedCareTeamGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeScopedCareTeamGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordClinicianDispositionResponse>
+      recordClinicianDisposition(
+    $0.RecordClinicianDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordClinicianDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExportScopedCareTeamBundleResponse>
+      exportScopedCareTeamBundle(
+    $0.ExportScopedCareTeamBundleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$exportScopedCareTeamBundle, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitClinicianQuestionPacketResponse>
+      submitClinicianQuestionPacket(
+    $0.SubmitClinicianQuestionPacketRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitClinicianQuestionPacket, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+  $grpc.ResponseFuture<$0.GetChangeEscalationOverviewResponse>
+      getChangeEscalationOverview(
+    $0.GetChangeEscalationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getChangeEscalationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EvaluateMultiSignalChangeEscalationResponse>
+      evaluateMultiSignalChangeEscalation(
+    $0.EvaluateMultiSignalChangeEscalationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$evaluateMultiSignalChangeEscalation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateChangeEscalationDispositionResponse>
+      updateChangeEscalationDisposition(
+    $0.UpdateChangeEscalationDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateChangeEscalationDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateCareNavigationHandoffResponse>
+      createCareNavigationHandoff(
+    $0.CreateCareNavigationHandoffRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createCareNavigationHandoff, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCareNavigationHandoffStateResponse>
+      updateCareNavigationHandoffState(
+    $0.UpdateCareNavigationHandoffStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCareNavigationHandoffState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCareNavigationOptionResponse>
+      upsertCareNavigationOption(
+    $0.UpsertCareNavigationOptionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertCareNavigationOption, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+  $grpc.ResponseFuture<$0.GetSleepCircadianStudioOverviewResponse>
+      getSleepCircadianStudioOverview(
+    $0.GetSleepCircadianStudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSleepCircadianStudioOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordSleepAndExposureLogResponse>
+      recordSleepAndExposureLog(
+    $0.RecordSleepAndExposureLogRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordSleepAndExposureLog, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCircadianRoutineResponse>
+      upsertCircadianRoutine(
+    $0.UpsertCircadianRoutineRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertCircadianRoutine, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCircadianCrossPillarGrantResponse>
+      updateCircadianCrossPillarGrant(
+    $0.UpdateCircadianCrossPillarGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCircadianCrossPillarGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSleepSensorCapabilityResponse>
+      upsertSleepSensorCapability(
+    $0.UpsertSleepSensorCapabilityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSleepSensorCapability, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateCircadianTravelOrShiftPlanResponse>
+      generateCircadianTravelOrShiftPlan(
+    $0.GenerateCircadianTravelOrShiftPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateCircadianTravelOrShiftPlan, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+  $grpc.ResponseFuture<$0.GetResearchParticipationOverviewResponse>
+      getResearchParticipationOverview(
+    $0.GetResearchParticipationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getResearchParticipationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunLocalStudyPreScreenResponse>
+      runLocalStudyPreScreen(
+    $0.RunLocalStudyPreScreenRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runLocalStudyPreScreen, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EnrollOrUpdateResearchStudyConsentResponse>
+      enrollOrUpdateResearchStudyConsent(
+    $0.EnrollOrUpdateResearchStudyConsentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$enrollOrUpdateResearchStudyConsent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.WithdrawResearchStudyConsentResponse>
+      withdrawResearchStudyConsent(
+    $0.WithdrawResearchStudyConsentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$withdrawResearchStudyConsent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordResearchContributionMilestoneResponse>
+      recordResearchContributionMilestone(
+    $0.RecordResearchContributionMilestoneRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordResearchContributionMilestone, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertResearchStudyResponse> upsertResearchStudy(
+    $0.UpsertResearchStudyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertResearchStudy, request, options: options);
+  }
+
+  /// === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+  $grpc.ResponseFuture<$0.GetPortableHealthDossierOverviewResponse>
+      getPortableHealthDossierOverview(
+    $0.GetPortableHealthDossierOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPortableHealthDossierOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertPortableHealthDossierResponse>
+      upsertPortableHealthDossier(
+    $0.UpsertPortableHealthDossierRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertPortableHealthDossier, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmPortableDossierFreshnessResponse>
+      confirmPortableDossierFreshness(
+    $0.ConfirmPortableDossierFreshnessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmPortableDossierFreshness, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.IssueDossierAccessGrantResponse>
+      issueDossierAccessGrant(
+    $0.IssueDossierAccessGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$issueDossierAccessGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeDossierAccessGrantResponse>
+      revokeDossierAccessGrant(
+    $0.RevokeDossierAccessGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeDossierAccessGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateLegacyDirectiveReferenceResponse>
+      updateLegacyDirectiveReference(
+    $0.UpdateLegacyDirectiveReferenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateLegacyDirectiveReference, request,
+        options: options);
+  }
+
+  /// === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+  $grpc.ResponseFuture<$0.GetGlobalCertificationOverviewResponse>
+      getGlobalCertificationOverview(
+    $0.GetGlobalCertificationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getGlobalCertificationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateGlobalAccessibilityProfileResponse>
+      updateGlobalAccessibilityProfile(
+    $0.UpdateGlobalAccessibilityProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateGlobalAccessibilityProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunHealthMigrationImportOrExportJobResponse>
+      runHealthMigrationImportOrExportJob(
+    $0.RunHealthMigrationImportOrExportJobRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runHealthMigrationImportOrExportJob, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertHorizontalCertificationCheckResponse>
+      upsertHorizontalCertificationCheck(
+    $0.UpsertHorizontalCertificationCheckRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertHorizontalCertificationCheck, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyUnitLocalizationLosslessnessResponse>
+      verifyUnitLocalizationLosslessness(
+    $0.VerifyUnitLocalizationLosslessnessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyUnitLocalizationLosslessness, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunOfflineAndManualParityAuditResponse>
+      runOfflineAndManualParityAudit(
+    $0.RunOfflineAndManualParityAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runOfflineAndManualParityAudit, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$syncVitals =
@@ -824,6 +1814,687 @@ class ApexServiceClient extends $grpc.Client {
           '/sttattus.apex.v1.ApexService/AdminVerifyLab',
           ($0.AdminVerifyLabRequest value) => value.writeToBuffer(),
           $0.AdminVerifyLabResponse.fromBuffer);
+  static final _$getHealthDataReliabilityOverview = $grpc.ClientMethod<
+          $0.GetHealthDataReliabilityOverviewRequest,
+          $0.GetHealthDataReliabilityOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetHealthDataReliabilityOverview',
+      ($0.GetHealthDataReliabilityOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetHealthDataReliabilityOverviewResponse.fromBuffer);
+  static final _$listHealthSources = $grpc.ClientMethod<
+          $0.ListHealthSourcesRequest, $0.ListHealthSourcesResponse>(
+      '/sttattus.apex.v1.ApexService/ListHealthSources',
+      ($0.ListHealthSourcesRequest value) => value.writeToBuffer(),
+      $0.ListHealthSourcesResponse.fromBuffer);
+  static final _$upsertHealthSourceGrant = $grpc.ClientMethod<
+          $0.UpsertHealthSourceGrantRequest,
+          $0.UpsertHealthSourceGrantResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertHealthSourceGrant',
+      ($0.UpsertHealthSourceGrantRequest value) => value.writeToBuffer(),
+      $0.UpsertHealthSourceGrantResponse.fromBuffer);
+  static final _$revokeHealthSourceGrant = $grpc.ClientMethod<
+          $0.RevokeHealthSourceGrantRequest,
+          $0.RevokeHealthSourceGrantResponse>(
+      '/sttattus.apex.v1.ApexService/RevokeHealthSourceGrant',
+      ($0.RevokeHealthSourceGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeHealthSourceGrantResponse.fromBuffer);
+  static final _$correctHealthObservation = $grpc.ClientMethod<
+          $0.CorrectHealthObservationRequest,
+          $0.CorrectHealthObservationResponse>(
+      '/sttattus.apex.v1.ApexService/CorrectHealthObservation',
+      ($0.CorrectHealthObservationRequest value) => value.writeToBuffer(),
+      $0.CorrectHealthObservationResponse.fromBuffer);
+  static final _$deleteHealthObservation = $grpc.ClientMethod<
+          $0.DeleteHealthObservationRequest,
+          $0.DeleteHealthObservationResponse>(
+      '/sttattus.apex.v1.ApexService/DeleteHealthObservation',
+      ($0.DeleteHealthObservationRequest value) => value.writeToBuffer(),
+      $0.DeleteHealthObservationResponse.fromBuffer);
+  static final _$restoreHealthObservation = $grpc.ClientMethod<
+          $0.RestoreHealthObservationRequest,
+          $0.RestoreHealthObservationResponse>(
+      '/sttattus.apex.v1.ApexService/RestoreHealthObservation',
+      ($0.RestoreHealthObservationRequest value) => value.writeToBuffer(),
+      $0.RestoreHealthObservationResponse.fromBuffer);
+  static final _$listObservationRevisions = $grpc.ClientMethod<
+          $0.ListObservationRevisionsRequest,
+          $0.ListObservationRevisionsResponse>(
+      '/sttattus.apex.v1.ApexService/ListObservationRevisions',
+      ($0.ListObservationRevisionsRequest value) => value.writeToBuffer(),
+      $0.ListObservationRevisionsResponse.fromBuffer);
+  static final _$listHealthDataConflicts = $grpc.ClientMethod<
+          $0.ListHealthDataConflictsRequest,
+          $0.ListHealthDataConflictsResponse>(
+      '/sttattus.apex.v1.ApexService/ListHealthDataConflicts',
+      ($0.ListHealthDataConflictsRequest value) => value.writeToBuffer(),
+      $0.ListHealthDataConflictsResponse.fromBuffer);
+  static final _$resolveHealthDataConflict = $grpc.ClientMethod<
+          $0.ResolveHealthDataConflictRequest,
+          $0.ResolveHealthDataConflictResponse>(
+      '/sttattus.apex.v1.ApexService/ResolveHealthDataConflict',
+      ($0.ResolveHealthDataConflictRequest value) => value.writeToBuffer(),
+      $0.ResolveHealthDataConflictResponse.fromBuffer);
+  static final _$createHealthCorrectionCase = $grpc.ClientMethod<
+          $0.CreateHealthCorrectionCaseRequest,
+          $0.CreateHealthCorrectionCaseResponse>(
+      '/sttattus.apex.v1.ApexService/CreateHealthCorrectionCase',
+      ($0.CreateHealthCorrectionCaseRequest value) => value.writeToBuffer(),
+      $0.CreateHealthCorrectionCaseResponse.fromBuffer);
+  static final _$listMyHealthCorrectionCases = $grpc.ClientMethod<
+          $0.ListMyHealthCorrectionCasesRequest,
+          $0.ListMyHealthCorrectionCasesResponse>(
+      '/sttattus.apex.v1.ApexService/ListMyHealthCorrectionCases',
+      ($0.ListMyHealthCorrectionCasesRequest value) => value.writeToBuffer(),
+      $0.ListMyHealthCorrectionCasesResponse.fromBuffer);
+  static final _$listCrossPillarHealthGrants = $grpc.ClientMethod<
+          $0.ListCrossPillarHealthGrantsRequest,
+          $0.ListCrossPillarHealthGrantsResponse>(
+      '/sttattus.apex.v1.ApexService/ListCrossPillarHealthGrants',
+      ($0.ListCrossPillarHealthGrantsRequest value) => value.writeToBuffer(),
+      $0.ListCrossPillarHealthGrantsResponse.fromBuffer);
+  static final _$updateCrossPillarHealthGrant = $grpc.ClientMethod<
+          $0.UpdateCrossPillarHealthGrantRequest,
+          $0.UpdateCrossPillarHealthGrantResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateCrossPillarHealthGrant',
+      ($0.UpdateCrossPillarHealthGrantRequest value) => value.writeToBuffer(),
+      $0.UpdateCrossPillarHealthGrantResponse.fromBuffer);
+  static final _$rebuildHealthRecord = $grpc.ClientMethod<
+          $0.RebuildHealthRecordRequest, $0.RebuildHealthRecordResponse>(
+      '/sttattus.apex.v1.ApexService/RebuildHealthRecord',
+      ($0.RebuildHealthRecordRequest value) => value.writeToBuffer(),
+      $0.RebuildHealthRecordResponse.fromBuffer);
+  static final _$exportHealthObservations = $grpc.ClientMethod<
+          $0.ExportHealthObservationsRequest,
+          $0.ExportHealthObservationsResponse>(
+      '/sttattus.apex.v1.ApexService/ExportHealthObservations',
+      ($0.ExportHealthObservationsRequest value) => value.writeToBuffer(),
+      $0.ExportHealthObservationsResponse.fromBuffer);
+  static final _$getClinicalDocumentIntelligenceOverview = $grpc.ClientMethod<
+          $0.GetClinicalDocumentIntelligenceOverviewRequest,
+          $0.GetClinicalDocumentIntelligenceOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetClinicalDocumentIntelligenceOverview',
+      ($0.GetClinicalDocumentIntelligenceOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetClinicalDocumentIntelligenceOverviewResponse.fromBuffer);
+  static final _$inspectClinicalDocument = $grpc.ClientMethod<
+          $0.InspectClinicalDocumentRequest,
+          $0.InspectClinicalDocumentResponse>(
+      '/sttattus.apex.v1.ApexService/InspectClinicalDocument',
+      ($0.InspectClinicalDocumentRequest value) => value.writeToBuffer(),
+      $0.InspectClinicalDocumentResponse.fromBuffer);
+  static final _$runDocumentExtraction = $grpc.ClientMethod<
+          $0.RunDocumentExtractionRequest, $0.RunDocumentExtractionResponse>(
+      '/sttattus.apex.v1.ApexService/RunDocumentExtraction',
+      ($0.RunDocumentExtractionRequest value) => value.writeToBuffer(),
+      $0.RunDocumentExtractionResponse.fromBuffer);
+  static final _$confirmExtractedDocumentItems = $grpc.ClientMethod<
+          $0.ConfirmExtractedDocumentItemsRequest,
+          $0.ConfirmExtractedDocumentItemsResponse>(
+      '/sttattus.apex.v1.ApexService/ConfirmExtractedDocumentItems',
+      ($0.ConfirmExtractedDocumentItemsRequest value) => value.writeToBuffer(),
+      $0.ConfirmExtractedDocumentItemsResponse.fromBuffer);
+  static final _$compareClinicalDocumentRevisions = $grpc.ClientMethod<
+          $0.CompareClinicalDocumentRevisionsRequest,
+          $0.CompareClinicalDocumentRevisionsResponse>(
+      '/sttattus.apex.v1.ApexService/CompareClinicalDocumentRevisions',
+      ($0.CompareClinicalDocumentRevisionsRequest value) =>
+          value.writeToBuffer(),
+      $0.CompareClinicalDocumentRevisionsResponse.fromBuffer);
+  static final _$generateAppointmentBrief = $grpc.ClientMethod<
+          $0.GenerateAppointmentBriefRequest,
+          $0.GenerateAppointmentBriefResponse>(
+      '/sttattus.apex.v1.ApexService/GenerateAppointmentBrief',
+      ($0.GenerateAppointmentBriefRequest value) => value.writeToBuffer(),
+      $0.GenerateAppointmentBriefResponse.fromBuffer);
+  static final _$listMyAppointmentBriefs = $grpc.ClientMethod<
+          $0.ListMyAppointmentBriefsRequest,
+          $0.ListMyAppointmentBriefsResponse>(
+      '/sttattus.apex.v1.ApexService/ListMyAppointmentBriefs',
+      ($0.ListMyAppointmentBriefsRequest value) => value.writeToBuffer(),
+      $0.ListMyAppointmentBriefsResponse.fromBuffer);
+  static final _$updateAppointmentBrief = $grpc.ClientMethod<
+          $0.UpdateAppointmentBriefRequest, $0.UpdateAppointmentBriefResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateAppointmentBrief',
+      ($0.UpdateAppointmentBriefRequest value) => value.writeToBuffer(),
+      $0.UpdateAppointmentBriefResponse.fromBuffer);
+  static final _$getPersonalBaselineAndApexAgeOverview = $grpc.ClientMethod<
+          $0.GetPersonalBaselineAndApexAgeOverviewRequest,
+          $0.GetPersonalBaselineAndApexAgeOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetPersonalBaselineAndApexAgeOverview',
+      ($0.GetPersonalBaselineAndApexAgeOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetPersonalBaselineAndApexAgeOverviewResponse.fromBuffer);
+  static final _$recomputePersonalBaselinesAndApexAge = $grpc.ClientMethod<
+          $0.RecomputePersonalBaselinesAndApexAgeRequest,
+          $0.RecomputePersonalBaselinesAndApexAgeResponse>(
+      '/sttattus.apex.v1.ApexService/RecomputePersonalBaselinesAndApexAge',
+      ($0.RecomputePersonalBaselinesAndApexAgeRequest value) =>
+          value.writeToBuffer(),
+      $0.RecomputePersonalBaselinesAndApexAgeResponse.fromBuffer);
+  static final _$upsertBaselineExcludedPeriod = $grpc.ClientMethod<
+          $0.UpsertBaselineExcludedPeriodRequest,
+          $0.UpsertBaselineExcludedPeriodResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertBaselineExcludedPeriod',
+      ($0.UpsertBaselineExcludedPeriodRequest value) => value.writeToBuffer(),
+      $0.UpsertBaselineExcludedPeriodResponse.fromBuffer);
+  static final _$deleteBaselineExcludedPeriod = $grpc.ClientMethod<
+          $0.DeleteBaselineExcludedPeriodRequest,
+          $0.DeleteBaselineExcludedPeriodResponse>(
+      '/sttattus.apex.v1.ApexService/DeleteBaselineExcludedPeriod',
+      ($0.DeleteBaselineExcludedPeriodRequest value) => value.writeToBuffer(),
+      $0.DeleteBaselineExcludedPeriodResponse.fromBuffer);
+  static final _$updateChangeSignalDisposition = $grpc.ClientMethod<
+          $0.UpdateChangeSignalDispositionRequest,
+          $0.UpdateChangeSignalDispositionResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateChangeSignalDisposition',
+      ($0.UpdateChangeSignalDispositionRequest value) => value.writeToBuffer(),
+      $0.UpdateChangeSignalDispositionResponse.fromBuffer);
+  static final _$updateScoreDisplayPreferences = $grpc.ClientMethod<
+          $0.UpdateScoreDisplayPreferencesRequest,
+          $0.UpdateScoreDisplayPreferencesResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateScoreDisplayPreferences',
+      ($0.UpdateScoreDisplayPreferencesRequest value) => value.writeToBuffer(),
+      $0.UpdateScoreDisplayPreferencesResponse.fromBuffer);
+  static final _$submitApexScoreDispute = $grpc.ClientMethod<
+          $0.SubmitApexScoreDisputeRequest, $0.SubmitApexScoreDisputeResponse>(
+      '/sttattus.apex.v1.ApexService/SubmitApexScoreDispute',
+      ($0.SubmitApexScoreDisputeRequest value) => value.writeToBuffer(),
+      $0.SubmitApexScoreDisputeResponse.fromBuffer);
+  static final _$listMyApexScoreSnapshots = $grpc.ClientMethod<
+          $0.ListMyApexScoreSnapshotsRequest,
+          $0.ListMyApexScoreSnapshotsResponse>(
+      '/sttattus.apex.v1.ApexService/ListMyApexScoreSnapshots',
+      ($0.ListMyApexScoreSnapshotsRequest value) => value.writeToBuffer(),
+      $0.ListMyApexScoreSnapshotsResponse.fromBuffer);
+  static final _$getPreventiveCareCalendarOverview = $grpc.ClientMethod<
+          $0.GetPreventiveCareCalendarOverviewRequest,
+          $0.GetPreventiveCareCalendarOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetPreventiveCareCalendarOverview',
+      ($0.GetPreventiveCareCalendarOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetPreventiveCareCalendarOverviewResponse.fromBuffer);
+  static final _$updatePreventiveCareProfile = $grpc.ClientMethod<
+          $0.UpdatePreventiveCareProfileRequest,
+          $0.UpdatePreventiveCareProfileResponse>(
+      '/sttattus.apex.v1.ApexService/UpdatePreventiveCareProfile',
+      ($0.UpdatePreventiveCareProfileRequest value) => value.writeToBuffer(),
+      $0.UpdatePreventiveCareProfileResponse.fromBuffer);
+  static final _$updatePreventiveCareItemStatus = $grpc.ClientMethod<
+          $0.UpdatePreventiveCareItemStatusRequest,
+          $0.UpdatePreventiveCareItemStatusResponse>(
+      '/sttattus.apex.v1.ApexService/UpdatePreventiveCareItemStatus',
+      ($0.UpdatePreventiveCareItemStatusRequest value) => value.writeToBuffer(),
+      $0.UpdatePreventiveCareItemStatusResponse.fromBuffer);
+  static final _$confirmPreventiveCareEvidence = $grpc.ClientMethod<
+          $0.ConfirmPreventiveCareEvidenceRequest,
+          $0.ConfirmPreventiveCareEvidenceResponse>(
+      '/sttattus.apex.v1.ApexService/ConfirmPreventiveCareEvidence',
+      ($0.ConfirmPreventiveCareEvidenceRequest value) => value.writeToBuffer(),
+      $0.ConfirmPreventiveCareEvidenceResponse.fromBuffer);
+  static final _$upsertCustomPreventiveCareCheck = $grpc.ClientMethod<
+          $0.UpsertCustomPreventiveCareCheckRequest,
+          $0.UpsertCustomPreventiveCareCheckResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertCustomPreventiveCareCheck',
+      ($0.UpsertCustomPreventiveCareCheckRequest value) =>
+          value.writeToBuffer(),
+      $0.UpsertCustomPreventiveCareCheckResponse.fromBuffer);
+  static final _$syncPreventiveCarePlanFromGuidelines = $grpc.ClientMethod<
+          $0.SyncPreventiveCarePlanFromGuidelinesRequest,
+          $0.SyncPreventiveCarePlanFromGuidelinesResponse>(
+      '/sttattus.apex.v1.ApexService/SyncPreventiveCarePlanFromGuidelines',
+      ($0.SyncPreventiveCarePlanFromGuidelinesRequest value) =>
+          value.writeToBuffer(),
+      $0.SyncPreventiveCarePlanFromGuidelinesResponse.fromBuffer);
+  static final _$getExperimentLabOverview = $grpc.ClientMethod<
+          $0.GetExperimentLabOverviewRequest,
+          $0.GetExperimentLabOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetExperimentLabOverview',
+      ($0.GetExperimentLabOverviewRequest value) => value.writeToBuffer(),
+      $0.GetExperimentLabOverviewResponse.fromBuffer);
+  static final _$predeclareNOf1Experiment = $grpc.ClientMethod<
+          $0.PredeclareNOf1ExperimentRequest,
+          $0.PredeclareNOf1ExperimentResponse>(
+      '/sttattus.apex.v1.ApexService/PredeclareNOf1Experiment',
+      ($0.PredeclareNOf1ExperimentRequest value) => value.writeToBuffer(),
+      $0.PredeclareNOf1ExperimentResponse.fromBuffer);
+  static final _$recordNOf1DailyLog = $grpc.ClientMethod<
+          $0.RecordNOf1DailyLogRequest, $0.RecordNOf1DailyLogResponse>(
+      '/sttattus.apex.v1.ApexService/RecordNOf1DailyLog',
+      ($0.RecordNOf1DailyLogRequest value) => value.writeToBuffer(),
+      $0.RecordNOf1DailyLogResponse.fromBuffer);
+  static final _$analyzeNOf1Experiment = $grpc.ClientMethod<
+          $0.AnalyzeNOf1ExperimentRequest, $0.AnalyzeNOf1ExperimentResponse>(
+      '/sttattus.apex.v1.ApexService/AnalyzeNOf1Experiment',
+      ($0.AnalyzeNOf1ExperimentRequest value) => value.writeToBuffer(),
+      $0.AnalyzeNOf1ExperimentResponse.fromBuffer);
+  static final _$updateNOf1ExperimentStatus = $grpc.ClientMethod<
+          $0.UpdateNOf1ExperimentStatusRequest,
+          $0.UpdateNOf1ExperimentStatusResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateNOf1ExperimentStatus',
+      ($0.UpdateNOf1ExperimentStatusRequest value) => value.writeToBuffer(),
+      $0.UpdateNOf1ExperimentStatusResponse.fromBuffer);
+  static final _$reportExperimentAdverseEvent = $grpc.ClientMethod<
+          $0.ReportExperimentAdverseEventRequest,
+          $0.ReportExperimentAdverseEventResponse>(
+      '/sttattus.apex.v1.ApexService/ReportExperimentAdverseEvent',
+      ($0.ReportExperimentAdverseEventRequest value) => value.writeToBuffer(),
+      $0.ReportExperimentAdverseEventResponse.fromBuffer);
+  static final _$getAdaptiveDailyPlanOverview = $grpc.ClientMethod<
+          $0.GetAdaptiveDailyPlanOverviewRequest,
+          $0.GetAdaptiveDailyPlanOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetAdaptiveDailyPlanOverview',
+      ($0.GetAdaptiveDailyPlanOverviewRequest value) => value.writeToBuffer(),
+      $0.GetAdaptiveDailyPlanOverviewResponse.fromBuffer);
+  static final _$replanAdaptiveDailyProtocol = $grpc.ClientMethod<
+          $0.ReplanAdaptiveDailyProtocolRequest,
+          $0.ReplanAdaptiveDailyProtocolResponse>(
+      '/sttattus.apex.v1.ApexService/ReplanAdaptiveDailyProtocol',
+      ($0.ReplanAdaptiveDailyProtocolRequest value) => value.writeToBuffer(),
+      $0.ReplanAdaptiveDailyProtocolResponse.fromBuffer);
+  static final _$recordDailyPlanStepDisposition = $grpc.ClientMethod<
+          $0.RecordDailyPlanStepDispositionRequest,
+          $0.RecordDailyPlanStepDispositionResponse>(
+      '/sttattus.apex.v1.ApexService/RecordDailyPlanStepDisposition',
+      ($0.RecordDailyPlanStepDispositionRequest value) => value.writeToBuffer(),
+      $0.RecordDailyPlanStepDispositionResponse.fromBuffer);
+  static final _$upsertDailyPlanStep = $grpc.ClientMethod<
+          $0.UpsertDailyPlanStepRequest, $0.UpsertDailyPlanStepResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertDailyPlanStep',
+      ($0.UpsertDailyPlanStepRequest value) => value.writeToBuffer(),
+      $0.UpsertDailyPlanStepResponse.fromBuffer);
+  static final _$updateCompassionateAdherencePause = $grpc.ClientMethod<
+          $0.UpdateCompassionateAdherencePauseRequest,
+          $0.UpdateCompassionateAdherencePauseResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateCompassionateAdherencePause',
+      ($0.UpdateCompassionateAdherencePauseRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateCompassionateAdherencePauseResponse.fromBuffer);
+  static final _$updateCrossPillarTimingHandoff = $grpc.ClientMethod<
+          $0.UpdateCrossPillarTimingHandoffRequest,
+          $0.UpdateCrossPillarTimingHandoffResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateCrossPillarTimingHandoff',
+      ($0.UpdateCrossPillarTimingHandoffRequest value) => value.writeToBuffer(),
+      $0.UpdateCrossPillarTimingHandoffResponse.fromBuffer);
+  static final _$getMedicationSafetyOverview = $grpc.ClientMethod<
+          $0.GetMedicationSafetyOverviewRequest,
+          $0.GetMedicationSafetyOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetMedicationSafetyOverview',
+      ($0.GetMedicationSafetyOverviewRequest value) => value.writeToBuffer(),
+      $0.GetMedicationSafetyOverviewResponse.fromBuffer);
+  static final _$upsertReconciledMedicationItem = $grpc.ClientMethod<
+          $0.UpsertReconciledMedicationItemRequest,
+          $0.UpsertReconciledMedicationItemResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertReconciledMedicationItem',
+      ($0.UpsertReconciledMedicationItemRequest value) => value.writeToBuffer(),
+      $0.UpsertReconciledMedicationItemResponse.fromBuffer);
+  static final _$upsertAllergyOrIntolerance = $grpc.ClientMethod<
+          $0.UpsertAllergyOrIntoleranceRequest,
+          $0.UpsertAllergyOrIntoleranceResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertAllergyOrIntolerance',
+      ($0.UpsertAllergyOrIntoleranceRequest value) => value.writeToBuffer(),
+      $0.UpsertAllergyOrIntoleranceResponse.fromBuffer);
+  static final _$runSafetyInteractionCheck = $grpc.ClientMethod<
+          $0.RunSafetyInteractionCheckRequest,
+          $0.RunSafetyInteractionCheckResponse>(
+      '/sttattus.apex.v1.ApexService/RunSafetyInteractionCheck',
+      ($0.RunSafetyInteractionCheckRequest value) => value.writeToBuffer(),
+      $0.RunSafetyInteractionCheckResponse.fromBuffer);
+  static final _$updateInteractionAlertDisposition = $grpc.ClientMethod<
+          $0.UpdateInteractionAlertDispositionRequest,
+          $0.UpdateInteractionAlertDispositionResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateInteractionAlertDisposition',
+      ($0.UpdateInteractionAlertDispositionRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateInteractionAlertDispositionResponse.fromBuffer);
+  static final _$generateMedicationReconciliationPacket = $grpc.ClientMethod<
+          $0.GenerateMedicationReconciliationPacketRequest,
+          $0.GenerateMedicationReconciliationPacketResponse>(
+      '/sttattus.apex.v1.ApexService/GenerateMedicationReconciliationPacket',
+      ($0.GenerateMedicationReconciliationPacketRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateMedicationReconciliationPacketResponse.fromBuffer);
+  static final _$getMetabolicStudioOverview = $grpc.ClientMethod<
+          $0.GetMetabolicStudioOverviewRequest,
+          $0.GetMetabolicStudioOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetMetabolicStudioOverview',
+      ($0.GetMetabolicStudioOverviewRequest value) => value.writeToBuffer(),
+      $0.GetMetabolicStudioOverviewResponse.fromBuffer);
+  static final _$recordMetabolicMealEvent = $grpc.ClientMethod<
+          $0.RecordMetabolicMealEventRequest,
+          $0.RecordMetabolicMealEventResponse>(
+      '/sttattus.apex.v1.ApexService/RecordMetabolicMealEvent',
+      ($0.RecordMetabolicMealEventRequest value) => value.writeToBuffer(),
+      $0.RecordMetabolicMealEventResponse.fromBuffer);
+  static final _$confirmMealIngredientsAndPortions = $grpc.ClientMethod<
+          $0.ConfirmMealIngredientsAndPortionsRequest,
+          $0.ConfirmMealIngredientsAndPortionsResponse>(
+      '/sttattus.apex.v1.ApexService/ConfirmMealIngredientsAndPortions',
+      ($0.ConfirmMealIngredientsAndPortionsRequest value) =>
+          value.writeToBuffer(),
+      $0.ConfirmMealIngredientsAndPortionsResponse.fromBuffer);
+  static final _$compareRepeatMealResponses = $grpc.ClientMethod<
+          $0.CompareRepeatMealResponsesRequest,
+          $0.CompareRepeatMealResponsesResponse>(
+      '/sttattus.apex.v1.ApexService/CompareRepeatMealResponses',
+      ($0.CompareRepeatMealResponsesRequest value) => value.writeToBuffer(),
+      $0.CompareRepeatMealResponsesResponse.fromBuffer);
+  static final _$upsertMetabolicTargetRange = $grpc.ClientMethod<
+          $0.UpsertMetabolicTargetRangeRequest,
+          $0.UpsertMetabolicTargetRangeResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertMetabolicTargetRange',
+      ($0.UpsertMetabolicTargetRangeRequest value) => value.writeToBuffer(),
+      $0.UpsertMetabolicTargetRangeResponse.fromBuffer);
+  static final _$upsertMetabolicSensorProfile = $grpc.ClientMethod<
+          $0.UpsertMetabolicSensorProfileRequest,
+          $0.UpsertMetabolicSensorProfileResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertMetabolicSensorProfile',
+      ($0.UpsertMetabolicSensorProfileRequest value) => value.writeToBuffer(),
+      $0.UpsertMetabolicSensorProfileResponse.fromBuffer);
+  static final _$getCycleLifeStageOverview = $grpc.ClientMethod<
+          $0.GetCycleLifeStageOverviewRequest,
+          $0.GetCycleLifeStageOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetCycleLifeStageOverview',
+      ($0.GetCycleLifeStageOverviewRequest value) => value.writeToBuffer(),
+      $0.GetCycleLifeStageOverviewResponse.fromBuffer);
+  static final _$updateLifeStageProfileAndPrivacy = $grpc.ClientMethod<
+          $0.UpdateLifeStageProfileAndPrivacyRequest,
+          $0.UpdateLifeStageProfileAndPrivacyResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateLifeStageProfileAndPrivacy',
+      ($0.UpdateLifeStageProfileAndPrivacyRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateLifeStageProfileAndPrivacyResponse.fromBuffer);
+  static final _$recordLifeStageEvent = $grpc.ClientMethod<
+          $0.RecordLifeStageEventRequest, $0.RecordLifeStageEventResponse>(
+      '/sttattus.apex.v1.ApexService/RecordLifeStageEvent',
+      ($0.RecordLifeStageEventRequest value) => value.writeToBuffer(),
+      $0.RecordLifeStageEventResponse.fromBuffer);
+  static final _$generateLifeStageAppointmentBrief = $grpc.ClientMethod<
+          $0.GenerateLifeStageAppointmentBriefRequest,
+          $0.GenerateLifeStageAppointmentBriefResponse>(
+      '/sttattus.apex.v1.ApexService/GenerateLifeStageAppointmentBrief',
+      ($0.GenerateLifeStageAppointmentBriefRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateLifeStageAppointmentBriefResponse.fromBuffer);
+  static final _$purgeReproductiveAndLifeStageData = $grpc.ClientMethod<
+          $0.PurgeReproductiveAndLifeStageDataRequest,
+          $0.PurgeReproductiveAndLifeStageDataResponse>(
+      '/sttattus.apex.v1.ApexService/PurgeReproductiveAndLifeStageData',
+      ($0.PurgeReproductiveAndLifeStageDataRequest value) =>
+          value.writeToBuffer(),
+      $0.PurgeReproductiveAndLifeStageDataResponse.fromBuffer);
+  static final _$exportReproductiveAndLifeStageData = $grpc.ClientMethod<
+          $0.ExportReproductiveAndLifeStageDataRequest,
+          $0.ExportReproductiveAndLifeStageDataResponse>(
+      '/sttattus.apex.v1.ApexService/ExportReproductiveAndLifeStageData',
+      ($0.ExportReproductiveAndLifeStageDataRequest value) =>
+          value.writeToBuffer(),
+      $0.ExportReproductiveAndLifeStageDataResponse.fromBuffer);
+  static final _$getGenomicsAndFamilyHistoryOverview = $grpc.ClientMethod<
+          $0.GetGenomicsAndFamilyHistoryOverviewRequest,
+          $0.GetGenomicsAndFamilyHistoryOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetGenomicsAndFamilyHistoryOverview',
+      ($0.GetGenomicsAndFamilyHistoryOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetGenomicsAndFamilyHistoryOverviewResponse.fromBuffer);
+  static final _$registerEncryptedGenomicUpload = $grpc.ClientMethod<
+          $0.RegisterEncryptedGenomicUploadRequest,
+          $0.RegisterEncryptedGenomicUploadResponse>(
+      '/sttattus.apex.v1.ApexService/RegisterEncryptedGenomicUpload',
+      ($0.RegisterEncryptedGenomicUploadRequest value) => value.writeToBuffer(),
+      $0.RegisterEncryptedGenomicUploadResponse.fromBuffer);
+  static final _$updateGenomicVariantVisibility = $grpc.ClientMethod<
+          $0.UpdateGenomicVariantVisibilityRequest,
+          $0.UpdateGenomicVariantVisibilityResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateGenomicVariantVisibility',
+      ($0.UpdateGenomicVariantVisibilityRequest value) => value.writeToBuffer(),
+      $0.UpdateGenomicVariantVisibilityResponse.fromBuffer);
+  static final _$upsertFamilyHistoryEntry = $grpc.ClientMethod<
+          $0.UpsertFamilyHistoryEntryRequest,
+          $0.UpsertFamilyHistoryEntryResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertFamilyHistoryEntry',
+      ($0.UpsertFamilyHistoryEntryRequest value) => value.writeToBuffer(),
+      $0.UpsertFamilyHistoryEntryResponse.fromBuffer);
+  static final _$submitGeneticCounsellorRequest = $grpc.ClientMethod<
+          $0.SubmitGeneticCounsellorRequestRequest,
+          $0.SubmitGeneticCounsellorRequestResponse>(
+      '/sttattus.apex.v1.ApexService/SubmitGeneticCounsellorRequest',
+      ($0.SubmitGeneticCounsellorRequestRequest value) => value.writeToBuffer(),
+      $0.SubmitGeneticCounsellorRequestResponse.fromBuffer);
+  static final _$rotateGenomicEncryptionKeyOrPurge = $grpc.ClientMethod<
+          $0.RotateGenomicEncryptionKeyOrPurgeRequest,
+          $0.RotateGenomicEncryptionKeyOrPurgeResponse>(
+      '/sttattus.apex.v1.ApexService/RotateGenomicEncryptionKeyOrPurge',
+      ($0.RotateGenomicEncryptionKeyOrPurgeRequest value) =>
+          value.writeToBuffer(),
+      $0.RotateGenomicEncryptionKeyOrPurgeResponse.fromBuffer);
+  static final _$getClinicianCareTeamOverview = $grpc.ClientMethod<
+          $0.GetClinicianCareTeamOverviewRequest,
+          $0.GetClinicianCareTeamOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetClinicianCareTeamOverview',
+      ($0.GetClinicianCareTeamOverviewRequest value) => value.writeToBuffer(),
+      $0.GetClinicianCareTeamOverviewResponse.fromBuffer);
+  static final _$createScopedCareTeamGrant = $grpc.ClientMethod<
+          $0.CreateScopedCareTeamGrantRequest,
+          $0.CreateScopedCareTeamGrantResponse>(
+      '/sttattus.apex.v1.ApexService/CreateScopedCareTeamGrant',
+      ($0.CreateScopedCareTeamGrantRequest value) => value.writeToBuffer(),
+      $0.CreateScopedCareTeamGrantResponse.fromBuffer);
+  static final _$revokeScopedCareTeamGrant = $grpc.ClientMethod<
+          $0.RevokeScopedCareTeamGrantRequest,
+          $0.RevokeScopedCareTeamGrantResponse>(
+      '/sttattus.apex.v1.ApexService/RevokeScopedCareTeamGrant',
+      ($0.RevokeScopedCareTeamGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeScopedCareTeamGrantResponse.fromBuffer);
+  static final _$recordClinicianDisposition = $grpc.ClientMethod<
+          $0.RecordClinicianDispositionRequest,
+          $0.RecordClinicianDispositionResponse>(
+      '/sttattus.apex.v1.ApexService/RecordClinicianDisposition',
+      ($0.RecordClinicianDispositionRequest value) => value.writeToBuffer(),
+      $0.RecordClinicianDispositionResponse.fromBuffer);
+  static final _$exportScopedCareTeamBundle = $grpc.ClientMethod<
+          $0.ExportScopedCareTeamBundleRequest,
+          $0.ExportScopedCareTeamBundleResponse>(
+      '/sttattus.apex.v1.ApexService/ExportScopedCareTeamBundle',
+      ($0.ExportScopedCareTeamBundleRequest value) => value.writeToBuffer(),
+      $0.ExportScopedCareTeamBundleResponse.fromBuffer);
+  static final _$submitClinicianQuestionPacket = $grpc.ClientMethod<
+          $0.SubmitClinicianQuestionPacketRequest,
+          $0.SubmitClinicianQuestionPacketResponse>(
+      '/sttattus.apex.v1.ApexService/SubmitClinicianQuestionPacket',
+      ($0.SubmitClinicianQuestionPacketRequest value) => value.writeToBuffer(),
+      $0.SubmitClinicianQuestionPacketResponse.fromBuffer);
+  static final _$getChangeEscalationOverview = $grpc.ClientMethod<
+          $0.GetChangeEscalationOverviewRequest,
+          $0.GetChangeEscalationOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetChangeEscalationOverview',
+      ($0.GetChangeEscalationOverviewRequest value) => value.writeToBuffer(),
+      $0.GetChangeEscalationOverviewResponse.fromBuffer);
+  static final _$evaluateMultiSignalChangeEscalation = $grpc.ClientMethod<
+          $0.EvaluateMultiSignalChangeEscalationRequest,
+          $0.EvaluateMultiSignalChangeEscalationResponse>(
+      '/sttattus.apex.v1.ApexService/EvaluateMultiSignalChangeEscalation',
+      ($0.EvaluateMultiSignalChangeEscalationRequest value) =>
+          value.writeToBuffer(),
+      $0.EvaluateMultiSignalChangeEscalationResponse.fromBuffer);
+  static final _$updateChangeEscalationDisposition = $grpc.ClientMethod<
+          $0.UpdateChangeEscalationDispositionRequest,
+          $0.UpdateChangeEscalationDispositionResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateChangeEscalationDisposition',
+      ($0.UpdateChangeEscalationDispositionRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateChangeEscalationDispositionResponse.fromBuffer);
+  static final _$createCareNavigationHandoff = $grpc.ClientMethod<
+          $0.CreateCareNavigationHandoffRequest,
+          $0.CreateCareNavigationHandoffResponse>(
+      '/sttattus.apex.v1.ApexService/CreateCareNavigationHandoff',
+      ($0.CreateCareNavigationHandoffRequest value) => value.writeToBuffer(),
+      $0.CreateCareNavigationHandoffResponse.fromBuffer);
+  static final _$updateCareNavigationHandoffState = $grpc.ClientMethod<
+          $0.UpdateCareNavigationHandoffStateRequest,
+          $0.UpdateCareNavigationHandoffStateResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateCareNavigationHandoffState',
+      ($0.UpdateCareNavigationHandoffStateRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateCareNavigationHandoffStateResponse.fromBuffer);
+  static final _$upsertCareNavigationOption = $grpc.ClientMethod<
+          $0.UpsertCareNavigationOptionRequest,
+          $0.UpsertCareNavigationOptionResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertCareNavigationOption',
+      ($0.UpsertCareNavigationOptionRequest value) => value.writeToBuffer(),
+      $0.UpsertCareNavigationOptionResponse.fromBuffer);
+  static final _$getSleepCircadianStudioOverview = $grpc.ClientMethod<
+          $0.GetSleepCircadianStudioOverviewRequest,
+          $0.GetSleepCircadianStudioOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetSleepCircadianStudioOverview',
+      ($0.GetSleepCircadianStudioOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetSleepCircadianStudioOverviewResponse.fromBuffer);
+  static final _$recordSleepAndExposureLog = $grpc.ClientMethod<
+          $0.RecordSleepAndExposureLogRequest,
+          $0.RecordSleepAndExposureLogResponse>(
+      '/sttattus.apex.v1.ApexService/RecordSleepAndExposureLog',
+      ($0.RecordSleepAndExposureLogRequest value) => value.writeToBuffer(),
+      $0.RecordSleepAndExposureLogResponse.fromBuffer);
+  static final _$upsertCircadianRoutine = $grpc.ClientMethod<
+          $0.UpsertCircadianRoutineRequest, $0.UpsertCircadianRoutineResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertCircadianRoutine',
+      ($0.UpsertCircadianRoutineRequest value) => value.writeToBuffer(),
+      $0.UpsertCircadianRoutineResponse.fromBuffer);
+  static final _$updateCircadianCrossPillarGrant = $grpc.ClientMethod<
+          $0.UpdateCircadianCrossPillarGrantRequest,
+          $0.UpdateCircadianCrossPillarGrantResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateCircadianCrossPillarGrant',
+      ($0.UpdateCircadianCrossPillarGrantRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateCircadianCrossPillarGrantResponse.fromBuffer);
+  static final _$upsertSleepSensorCapability = $grpc.ClientMethod<
+          $0.UpsertSleepSensorCapabilityRequest,
+          $0.UpsertSleepSensorCapabilityResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertSleepSensorCapability',
+      ($0.UpsertSleepSensorCapabilityRequest value) => value.writeToBuffer(),
+      $0.UpsertSleepSensorCapabilityResponse.fromBuffer);
+  static final _$generateCircadianTravelOrShiftPlan = $grpc.ClientMethod<
+          $0.GenerateCircadianTravelOrShiftPlanRequest,
+          $0.GenerateCircadianTravelOrShiftPlanResponse>(
+      '/sttattus.apex.v1.ApexService/GenerateCircadianTravelOrShiftPlan',
+      ($0.GenerateCircadianTravelOrShiftPlanRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateCircadianTravelOrShiftPlanResponse.fromBuffer);
+  static final _$getResearchParticipationOverview = $grpc.ClientMethod<
+          $0.GetResearchParticipationOverviewRequest,
+          $0.GetResearchParticipationOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetResearchParticipationOverview',
+      ($0.GetResearchParticipationOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetResearchParticipationOverviewResponse.fromBuffer);
+  static final _$runLocalStudyPreScreen = $grpc.ClientMethod<
+          $0.RunLocalStudyPreScreenRequest, $0.RunLocalStudyPreScreenResponse>(
+      '/sttattus.apex.v1.ApexService/RunLocalStudyPreScreen',
+      ($0.RunLocalStudyPreScreenRequest value) => value.writeToBuffer(),
+      $0.RunLocalStudyPreScreenResponse.fromBuffer);
+  static final _$enrollOrUpdateResearchStudyConsent = $grpc.ClientMethod<
+          $0.EnrollOrUpdateResearchStudyConsentRequest,
+          $0.EnrollOrUpdateResearchStudyConsentResponse>(
+      '/sttattus.apex.v1.ApexService/EnrollOrUpdateResearchStudyConsent',
+      ($0.EnrollOrUpdateResearchStudyConsentRequest value) =>
+          value.writeToBuffer(),
+      $0.EnrollOrUpdateResearchStudyConsentResponse.fromBuffer);
+  static final _$withdrawResearchStudyConsent = $grpc.ClientMethod<
+          $0.WithdrawResearchStudyConsentRequest,
+          $0.WithdrawResearchStudyConsentResponse>(
+      '/sttattus.apex.v1.ApexService/WithdrawResearchStudyConsent',
+      ($0.WithdrawResearchStudyConsentRequest value) => value.writeToBuffer(),
+      $0.WithdrawResearchStudyConsentResponse.fromBuffer);
+  static final _$recordResearchContributionMilestone = $grpc.ClientMethod<
+          $0.RecordResearchContributionMilestoneRequest,
+          $0.RecordResearchContributionMilestoneResponse>(
+      '/sttattus.apex.v1.ApexService/RecordResearchContributionMilestone',
+      ($0.RecordResearchContributionMilestoneRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordResearchContributionMilestoneResponse.fromBuffer);
+  static final _$upsertResearchStudy = $grpc.ClientMethod<
+          $0.UpsertResearchStudyRequest, $0.UpsertResearchStudyResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertResearchStudy',
+      ($0.UpsertResearchStudyRequest value) => value.writeToBuffer(),
+      $0.UpsertResearchStudyResponse.fromBuffer);
+  static final _$getPortableHealthDossierOverview = $grpc.ClientMethod<
+          $0.GetPortableHealthDossierOverviewRequest,
+          $0.GetPortableHealthDossierOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetPortableHealthDossierOverview',
+      ($0.GetPortableHealthDossierOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetPortableHealthDossierOverviewResponse.fromBuffer);
+  static final _$upsertPortableHealthDossier = $grpc.ClientMethod<
+          $0.UpsertPortableHealthDossierRequest,
+          $0.UpsertPortableHealthDossierResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertPortableHealthDossier',
+      ($0.UpsertPortableHealthDossierRequest value) => value.writeToBuffer(),
+      $0.UpsertPortableHealthDossierResponse.fromBuffer);
+  static final _$confirmPortableDossierFreshness = $grpc.ClientMethod<
+          $0.ConfirmPortableDossierFreshnessRequest,
+          $0.ConfirmPortableDossierFreshnessResponse>(
+      '/sttattus.apex.v1.ApexService/ConfirmPortableDossierFreshness',
+      ($0.ConfirmPortableDossierFreshnessRequest value) =>
+          value.writeToBuffer(),
+      $0.ConfirmPortableDossierFreshnessResponse.fromBuffer);
+  static final _$issueDossierAccessGrant = $grpc.ClientMethod<
+          $0.IssueDossierAccessGrantRequest,
+          $0.IssueDossierAccessGrantResponse>(
+      '/sttattus.apex.v1.ApexService/IssueDossierAccessGrant',
+      ($0.IssueDossierAccessGrantRequest value) => value.writeToBuffer(),
+      $0.IssueDossierAccessGrantResponse.fromBuffer);
+  static final _$revokeDossierAccessGrant = $grpc.ClientMethod<
+          $0.RevokeDossierAccessGrantRequest,
+          $0.RevokeDossierAccessGrantResponse>(
+      '/sttattus.apex.v1.ApexService/RevokeDossierAccessGrant',
+      ($0.RevokeDossierAccessGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeDossierAccessGrantResponse.fromBuffer);
+  static final _$updateLegacyDirectiveReference = $grpc.ClientMethod<
+          $0.UpdateLegacyDirectiveReferenceRequest,
+          $0.UpdateLegacyDirectiveReferenceResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateLegacyDirectiveReference',
+      ($0.UpdateLegacyDirectiveReferenceRequest value) => value.writeToBuffer(),
+      $0.UpdateLegacyDirectiveReferenceResponse.fromBuffer);
+  static final _$getGlobalCertificationOverview = $grpc.ClientMethod<
+          $0.GetGlobalCertificationOverviewRequest,
+          $0.GetGlobalCertificationOverviewResponse>(
+      '/sttattus.apex.v1.ApexService/GetGlobalCertificationOverview',
+      ($0.GetGlobalCertificationOverviewRequest value) => value.writeToBuffer(),
+      $0.GetGlobalCertificationOverviewResponse.fromBuffer);
+  static final _$updateGlobalAccessibilityProfile = $grpc.ClientMethod<
+          $0.UpdateGlobalAccessibilityProfileRequest,
+          $0.UpdateGlobalAccessibilityProfileResponse>(
+      '/sttattus.apex.v1.ApexService/UpdateGlobalAccessibilityProfile',
+      ($0.UpdateGlobalAccessibilityProfileRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateGlobalAccessibilityProfileResponse.fromBuffer);
+  static final _$runHealthMigrationImportOrExportJob = $grpc.ClientMethod<
+          $0.RunHealthMigrationImportOrExportJobRequest,
+          $0.RunHealthMigrationImportOrExportJobResponse>(
+      '/sttattus.apex.v1.ApexService/RunHealthMigrationImportOrExportJob',
+      ($0.RunHealthMigrationImportOrExportJobRequest value) =>
+          value.writeToBuffer(),
+      $0.RunHealthMigrationImportOrExportJobResponse.fromBuffer);
+  static final _$upsertHorizontalCertificationCheck = $grpc.ClientMethod<
+          $0.UpsertHorizontalCertificationCheckRequest,
+          $0.UpsertHorizontalCertificationCheckResponse>(
+      '/sttattus.apex.v1.ApexService/UpsertHorizontalCertificationCheck',
+      ($0.UpsertHorizontalCertificationCheckRequest value) =>
+          value.writeToBuffer(),
+      $0.UpsertHorizontalCertificationCheckResponse.fromBuffer);
+  static final _$verifyUnitLocalizationLosslessness = $grpc.ClientMethod<
+          $0.VerifyUnitLocalizationLosslessnessRequest,
+          $0.VerifyUnitLocalizationLosslessnessResponse>(
+      '/sttattus.apex.v1.ApexService/VerifyUnitLocalizationLosslessness',
+      ($0.VerifyUnitLocalizationLosslessnessRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyUnitLocalizationLosslessnessResponse.fromBuffer);
+  static final _$runOfflineAndManualParityAudit = $grpc.ClientMethod<
+          $0.RunOfflineAndManualParityAuditRequest,
+          $0.RunOfflineAndManualParityAuditResponse>(
+      '/sttattus.apex.v1.ApexService/RunOfflineAndManualParityAudit',
+      ($0.RunOfflineAndManualParityAuditRequest value) => value.writeToBuffer(),
+      $0.RunOfflineAndManualParityAuditResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.apex.v1.ApexService')
@@ -1380,6 +3051,1079 @@ abstract class ApexServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.AdminVerifyLabRequest.fromBuffer(value),
         ($0.AdminVerifyLabResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetHealthDataReliabilityOverviewRequest,
+            $0.GetHealthDataReliabilityOverviewResponse>(
+        'GetHealthDataReliabilityOverview',
+        getHealthDataReliabilityOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetHealthDataReliabilityOverviewRequest.fromBuffer(value),
+        ($0.GetHealthDataReliabilityOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListHealthSourcesRequest,
+            $0.ListHealthSourcesResponse>(
+        'ListHealthSources',
+        listHealthSources_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListHealthSourcesRequest.fromBuffer(value),
+        ($0.ListHealthSourcesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertHealthSourceGrantRequest,
+            $0.UpsertHealthSourceGrantResponse>(
+        'UpsertHealthSourceGrant',
+        upsertHealthSourceGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertHealthSourceGrantRequest.fromBuffer(value),
+        ($0.UpsertHealthSourceGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeHealthSourceGrantRequest,
+            $0.RevokeHealthSourceGrantResponse>(
+        'RevokeHealthSourceGrant',
+        revokeHealthSourceGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeHealthSourceGrantRequest.fromBuffer(value),
+        ($0.RevokeHealthSourceGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CorrectHealthObservationRequest,
+            $0.CorrectHealthObservationResponse>(
+        'CorrectHealthObservation',
+        correctHealthObservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CorrectHealthObservationRequest.fromBuffer(value),
+        ($0.CorrectHealthObservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteHealthObservationRequest,
+            $0.DeleteHealthObservationResponse>(
+        'DeleteHealthObservation',
+        deleteHealthObservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteHealthObservationRequest.fromBuffer(value),
+        ($0.DeleteHealthObservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RestoreHealthObservationRequest,
+            $0.RestoreHealthObservationResponse>(
+        'RestoreHealthObservation',
+        restoreHealthObservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RestoreHealthObservationRequest.fromBuffer(value),
+        ($0.RestoreHealthObservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListObservationRevisionsRequest,
+            $0.ListObservationRevisionsResponse>(
+        'ListObservationRevisions',
+        listObservationRevisions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListObservationRevisionsRequest.fromBuffer(value),
+        ($0.ListObservationRevisionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListHealthDataConflictsRequest,
+            $0.ListHealthDataConflictsResponse>(
+        'ListHealthDataConflicts',
+        listHealthDataConflicts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListHealthDataConflictsRequest.fromBuffer(value),
+        ($0.ListHealthDataConflictsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveHealthDataConflictRequest,
+            $0.ResolveHealthDataConflictResponse>(
+        'ResolveHealthDataConflict',
+        resolveHealthDataConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveHealthDataConflictRequest.fromBuffer(value),
+        ($0.ResolveHealthDataConflictResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateHealthCorrectionCaseRequest,
+            $0.CreateHealthCorrectionCaseResponse>(
+        'CreateHealthCorrectionCase',
+        createHealthCorrectionCase_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateHealthCorrectionCaseRequest.fromBuffer(value),
+        ($0.CreateHealthCorrectionCaseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyHealthCorrectionCasesRequest,
+            $0.ListMyHealthCorrectionCasesResponse>(
+        'ListMyHealthCorrectionCases',
+        listMyHealthCorrectionCases_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyHealthCorrectionCasesRequest.fromBuffer(value),
+        ($0.ListMyHealthCorrectionCasesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListCrossPillarHealthGrantsRequest,
+            $0.ListCrossPillarHealthGrantsResponse>(
+        'ListCrossPillarHealthGrants',
+        listCrossPillarHealthGrants_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListCrossPillarHealthGrantsRequest.fromBuffer(value),
+        ($0.ListCrossPillarHealthGrantsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCrossPillarHealthGrantRequest,
+            $0.UpdateCrossPillarHealthGrantResponse>(
+        'UpdateCrossPillarHealthGrant',
+        updateCrossPillarHealthGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCrossPillarHealthGrantRequest.fromBuffer(value),
+        ($0.UpdateCrossPillarHealthGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RebuildHealthRecordRequest,
+            $0.RebuildHealthRecordResponse>(
+        'RebuildHealthRecord',
+        rebuildHealthRecord_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RebuildHealthRecordRequest.fromBuffer(value),
+        ($0.RebuildHealthRecordResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportHealthObservationsRequest,
+            $0.ExportHealthObservationsResponse>(
+        'ExportHealthObservations',
+        exportHealthObservations_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportHealthObservationsRequest.fromBuffer(value),
+        ($0.ExportHealthObservationsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetClinicalDocumentIntelligenceOverviewRequest,
+            $0.GetClinicalDocumentIntelligenceOverviewResponse>(
+        'GetClinicalDocumentIntelligenceOverview',
+        getClinicalDocumentIntelligenceOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetClinicalDocumentIntelligenceOverviewRequest.fromBuffer(value),
+        ($0.GetClinicalDocumentIntelligenceOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.InspectClinicalDocumentRequest,
+            $0.InspectClinicalDocumentResponse>(
+        'InspectClinicalDocument',
+        inspectClinicalDocument_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.InspectClinicalDocumentRequest.fromBuffer(value),
+        ($0.InspectClinicalDocumentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunDocumentExtractionRequest,
+            $0.RunDocumentExtractionResponse>(
+        'RunDocumentExtraction',
+        runDocumentExtraction_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunDocumentExtractionRequest.fromBuffer(value),
+        ($0.RunDocumentExtractionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmExtractedDocumentItemsRequest,
+            $0.ConfirmExtractedDocumentItemsResponse>(
+        'ConfirmExtractedDocumentItems',
+        confirmExtractedDocumentItems_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmExtractedDocumentItemsRequest.fromBuffer(value),
+        ($0.ConfirmExtractedDocumentItemsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompareClinicalDocumentRevisionsRequest,
+            $0.CompareClinicalDocumentRevisionsResponse>(
+        'CompareClinicalDocumentRevisions',
+        compareClinicalDocumentRevisions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompareClinicalDocumentRevisionsRequest.fromBuffer(value),
+        ($0.CompareClinicalDocumentRevisionsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateAppointmentBriefRequest,
+            $0.GenerateAppointmentBriefResponse>(
+        'GenerateAppointmentBrief',
+        generateAppointmentBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateAppointmentBriefRequest.fromBuffer(value),
+        ($0.GenerateAppointmentBriefResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyAppointmentBriefsRequest,
+            $0.ListMyAppointmentBriefsResponse>(
+        'ListMyAppointmentBriefs',
+        listMyAppointmentBriefs_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyAppointmentBriefsRequest.fromBuffer(value),
+        ($0.ListMyAppointmentBriefsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateAppointmentBriefRequest,
+            $0.UpdateAppointmentBriefResponse>(
+        'UpdateAppointmentBrief',
+        updateAppointmentBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateAppointmentBriefRequest.fromBuffer(value),
+        ($0.UpdateAppointmentBriefResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetPersonalBaselineAndApexAgeOverviewRequest,
+            $0.GetPersonalBaselineAndApexAgeOverviewResponse>(
+        'GetPersonalBaselineAndApexAgeOverview',
+        getPersonalBaselineAndApexAgeOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPersonalBaselineAndApexAgeOverviewRequest.fromBuffer(value),
+        ($0.GetPersonalBaselineAndApexAgeOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecomputePersonalBaselinesAndApexAgeRequest,
+            $0.RecomputePersonalBaselinesAndApexAgeResponse>(
+        'RecomputePersonalBaselinesAndApexAge',
+        recomputePersonalBaselinesAndApexAge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecomputePersonalBaselinesAndApexAgeRequest.fromBuffer(value),
+        ($0.RecomputePersonalBaselinesAndApexAgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertBaselineExcludedPeriodRequest,
+            $0.UpsertBaselineExcludedPeriodResponse>(
+        'UpsertBaselineExcludedPeriod',
+        upsertBaselineExcludedPeriod_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertBaselineExcludedPeriodRequest.fromBuffer(value),
+        ($0.UpsertBaselineExcludedPeriodResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DeleteBaselineExcludedPeriodRequest,
+            $0.DeleteBaselineExcludedPeriodResponse>(
+        'DeleteBaselineExcludedPeriod',
+        deleteBaselineExcludedPeriod_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DeleteBaselineExcludedPeriodRequest.fromBuffer(value),
+        ($0.DeleteBaselineExcludedPeriodResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateChangeSignalDispositionRequest,
+            $0.UpdateChangeSignalDispositionResponse>(
+        'UpdateChangeSignalDisposition',
+        updateChangeSignalDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateChangeSignalDispositionRequest.fromBuffer(value),
+        ($0.UpdateChangeSignalDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateScoreDisplayPreferencesRequest,
+            $0.UpdateScoreDisplayPreferencesResponse>(
+        'UpdateScoreDisplayPreferences',
+        updateScoreDisplayPreferences_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateScoreDisplayPreferencesRequest.fromBuffer(value),
+        ($0.UpdateScoreDisplayPreferencesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitApexScoreDisputeRequest,
+            $0.SubmitApexScoreDisputeResponse>(
+        'SubmitApexScoreDispute',
+        submitApexScoreDispute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitApexScoreDisputeRequest.fromBuffer(value),
+        ($0.SubmitApexScoreDisputeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ListMyApexScoreSnapshotsRequest,
+            $0.ListMyApexScoreSnapshotsResponse>(
+        'ListMyApexScoreSnapshots',
+        listMyApexScoreSnapshots_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ListMyApexScoreSnapshotsRequest.fromBuffer(value),
+        ($0.ListMyApexScoreSnapshotsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPreventiveCareCalendarOverviewRequest,
+            $0.GetPreventiveCareCalendarOverviewResponse>(
+        'GetPreventiveCareCalendarOverview',
+        getPreventiveCareCalendarOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPreventiveCareCalendarOverviewRequest.fromBuffer(value),
+        ($0.GetPreventiveCareCalendarOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdatePreventiveCareProfileRequest,
+            $0.UpdatePreventiveCareProfileResponse>(
+        'UpdatePreventiveCareProfile',
+        updatePreventiveCareProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdatePreventiveCareProfileRequest.fromBuffer(value),
+        ($0.UpdatePreventiveCareProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdatePreventiveCareItemStatusRequest,
+            $0.UpdatePreventiveCareItemStatusResponse>(
+        'UpdatePreventiveCareItemStatus',
+        updatePreventiveCareItemStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdatePreventiveCareItemStatusRequest.fromBuffer(value),
+        ($0.UpdatePreventiveCareItemStatusResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmPreventiveCareEvidenceRequest,
+            $0.ConfirmPreventiveCareEvidenceResponse>(
+        'ConfirmPreventiveCareEvidence',
+        confirmPreventiveCareEvidence_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmPreventiveCareEvidenceRequest.fromBuffer(value),
+        ($0.ConfirmPreventiveCareEvidenceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCustomPreventiveCareCheckRequest,
+            $0.UpsertCustomPreventiveCareCheckResponse>(
+        'UpsertCustomPreventiveCareCheck',
+        upsertCustomPreventiveCareCheck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertCustomPreventiveCareCheckRequest.fromBuffer(value),
+        ($0.UpsertCustomPreventiveCareCheckResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SyncPreventiveCarePlanFromGuidelinesRequest,
+            $0.SyncPreventiveCarePlanFromGuidelinesResponse>(
+        'SyncPreventiveCarePlanFromGuidelines',
+        syncPreventiveCarePlanFromGuidelines_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SyncPreventiveCarePlanFromGuidelinesRequest.fromBuffer(value),
+        ($0.SyncPreventiveCarePlanFromGuidelinesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetExperimentLabOverviewRequest,
+            $0.GetExperimentLabOverviewResponse>(
+        'GetExperimentLabOverview',
+        getExperimentLabOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetExperimentLabOverviewRequest.fromBuffer(value),
+        ($0.GetExperimentLabOverviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PredeclareNOf1ExperimentRequest,
+            $0.PredeclareNOf1ExperimentResponse>(
+        'PredeclareNOf1Experiment',
+        predeclareNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PredeclareNOf1ExperimentRequest.fromBuffer(value),
+        ($0.PredeclareNOf1ExperimentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordNOf1DailyLogRequest,
+            $0.RecordNOf1DailyLogResponse>(
+        'RecordNOf1DailyLog',
+        recordNOf1DailyLog_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordNOf1DailyLogRequest.fromBuffer(value),
+        ($0.RecordNOf1DailyLogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AnalyzeNOf1ExperimentRequest,
+            $0.AnalyzeNOf1ExperimentResponse>(
+        'AnalyzeNOf1Experiment',
+        analyzeNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AnalyzeNOf1ExperimentRequest.fromBuffer(value),
+        ($0.AnalyzeNOf1ExperimentResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateNOf1ExperimentStatusRequest,
+            $0.UpdateNOf1ExperimentStatusResponse>(
+        'UpdateNOf1ExperimentStatus',
+        updateNOf1ExperimentStatus_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateNOf1ExperimentStatusRequest.fromBuffer(value),
+        ($0.UpdateNOf1ExperimentStatusResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReportExperimentAdverseEventRequest,
+            $0.ReportExperimentAdverseEventResponse>(
+        'ReportExperimentAdverseEvent',
+        reportExperimentAdverseEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReportExperimentAdverseEventRequest.fromBuffer(value),
+        ($0.ReportExperimentAdverseEventResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAdaptiveDailyPlanOverviewRequest,
+            $0.GetAdaptiveDailyPlanOverviewResponse>(
+        'GetAdaptiveDailyPlanOverview',
+        getAdaptiveDailyPlanOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAdaptiveDailyPlanOverviewRequest.fromBuffer(value),
+        ($0.GetAdaptiveDailyPlanOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReplanAdaptiveDailyProtocolRequest,
+            $0.ReplanAdaptiveDailyProtocolResponse>(
+        'ReplanAdaptiveDailyProtocol',
+        replanAdaptiveDailyProtocol_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReplanAdaptiveDailyProtocolRequest.fromBuffer(value),
+        ($0.ReplanAdaptiveDailyProtocolResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordDailyPlanStepDispositionRequest,
+            $0.RecordDailyPlanStepDispositionResponse>(
+        'RecordDailyPlanStepDisposition',
+        recordDailyPlanStepDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordDailyPlanStepDispositionRequest.fromBuffer(value),
+        ($0.RecordDailyPlanStepDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertDailyPlanStepRequest,
+            $0.UpsertDailyPlanStepResponse>(
+        'UpsertDailyPlanStep',
+        upsertDailyPlanStep_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertDailyPlanStepRequest.fromBuffer(value),
+        ($0.UpsertDailyPlanStepResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCompassionateAdherencePauseRequest,
+            $0.UpdateCompassionateAdherencePauseResponse>(
+        'UpdateCompassionateAdherencePause',
+        updateCompassionateAdherencePause_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCompassionateAdherencePauseRequest.fromBuffer(value),
+        ($0.UpdateCompassionateAdherencePauseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCrossPillarTimingHandoffRequest,
+            $0.UpdateCrossPillarTimingHandoffResponse>(
+        'UpdateCrossPillarTimingHandoff',
+        updateCrossPillarTimingHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCrossPillarTimingHandoffRequest.fromBuffer(value),
+        ($0.UpdateCrossPillarTimingHandoffResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMedicationSafetyOverviewRequest,
+            $0.GetMedicationSafetyOverviewResponse>(
+        'GetMedicationSafetyOverview',
+        getMedicationSafetyOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMedicationSafetyOverviewRequest.fromBuffer(value),
+        ($0.GetMedicationSafetyOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertReconciledMedicationItemRequest,
+            $0.UpsertReconciledMedicationItemResponse>(
+        'UpsertReconciledMedicationItem',
+        upsertReconciledMedicationItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertReconciledMedicationItemRequest.fromBuffer(value),
+        ($0.UpsertReconciledMedicationItemResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertAllergyOrIntoleranceRequest,
+            $0.UpsertAllergyOrIntoleranceResponse>(
+        'UpsertAllergyOrIntolerance',
+        upsertAllergyOrIntolerance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertAllergyOrIntoleranceRequest.fromBuffer(value),
+        ($0.UpsertAllergyOrIntoleranceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunSafetyInteractionCheckRequest,
+            $0.RunSafetyInteractionCheckResponse>(
+        'RunSafetyInteractionCheck',
+        runSafetyInteractionCheck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunSafetyInteractionCheckRequest.fromBuffer(value),
+        ($0.RunSafetyInteractionCheckResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateInteractionAlertDispositionRequest,
+            $0.UpdateInteractionAlertDispositionResponse>(
+        'UpdateInteractionAlertDisposition',
+        updateInteractionAlertDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateInteractionAlertDispositionRequest.fromBuffer(value),
+        ($0.UpdateInteractionAlertDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GenerateMedicationReconciliationPacketRequest,
+            $0.GenerateMedicationReconciliationPacketResponse>(
+        'GenerateMedicationReconciliationPacket',
+        generateMedicationReconciliationPacket_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateMedicationReconciliationPacketRequest.fromBuffer(value),
+        ($0.GenerateMedicationReconciliationPacketResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMetabolicStudioOverviewRequest,
+            $0.GetMetabolicStudioOverviewResponse>(
+        'GetMetabolicStudioOverview',
+        getMetabolicStudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMetabolicStudioOverviewRequest.fromBuffer(value),
+        ($0.GetMetabolicStudioOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordMetabolicMealEventRequest,
+            $0.RecordMetabolicMealEventResponse>(
+        'RecordMetabolicMealEvent',
+        recordMetabolicMealEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordMetabolicMealEventRequest.fromBuffer(value),
+        ($0.RecordMetabolicMealEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmMealIngredientsAndPortionsRequest,
+            $0.ConfirmMealIngredientsAndPortionsResponse>(
+        'ConfirmMealIngredientsAndPortions',
+        confirmMealIngredientsAndPortions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmMealIngredientsAndPortionsRequest.fromBuffer(value),
+        ($0.ConfirmMealIngredientsAndPortionsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompareRepeatMealResponsesRequest,
+            $0.CompareRepeatMealResponsesResponse>(
+        'CompareRepeatMealResponses',
+        compareRepeatMealResponses_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompareRepeatMealResponsesRequest.fromBuffer(value),
+        ($0.CompareRepeatMealResponsesResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertMetabolicTargetRangeRequest,
+            $0.UpsertMetabolicTargetRangeResponse>(
+        'UpsertMetabolicTargetRange',
+        upsertMetabolicTargetRange_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertMetabolicTargetRangeRequest.fromBuffer(value),
+        ($0.UpsertMetabolicTargetRangeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertMetabolicSensorProfileRequest,
+            $0.UpsertMetabolicSensorProfileResponse>(
+        'UpsertMetabolicSensorProfile',
+        upsertMetabolicSensorProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertMetabolicSensorProfileRequest.fromBuffer(value),
+        ($0.UpsertMetabolicSensorProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCycleLifeStageOverviewRequest,
+            $0.GetCycleLifeStageOverviewResponse>(
+        'GetCycleLifeStageOverview',
+        getCycleLifeStageOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCycleLifeStageOverviewRequest.fromBuffer(value),
+        ($0.GetCycleLifeStageOverviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateLifeStageProfileAndPrivacyRequest,
+            $0.UpdateLifeStageProfileAndPrivacyResponse>(
+        'UpdateLifeStageProfileAndPrivacy',
+        updateLifeStageProfileAndPrivacy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateLifeStageProfileAndPrivacyRequest.fromBuffer(value),
+        ($0.UpdateLifeStageProfileAndPrivacyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordLifeStageEventRequest,
+            $0.RecordLifeStageEventResponse>(
+        'RecordLifeStageEvent',
+        recordLifeStageEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordLifeStageEventRequest.fromBuffer(value),
+        ($0.RecordLifeStageEventResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateLifeStageAppointmentBriefRequest,
+            $0.GenerateLifeStageAppointmentBriefResponse>(
+        'GenerateLifeStageAppointmentBrief',
+        generateLifeStageAppointmentBrief_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateLifeStageAppointmentBriefRequest.fromBuffer(value),
+        ($0.GenerateLifeStageAppointmentBriefResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PurgeReproductiveAndLifeStageDataRequest,
+            $0.PurgeReproductiveAndLifeStageDataResponse>(
+        'PurgeReproductiveAndLifeStageData',
+        purgeReproductiveAndLifeStageData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PurgeReproductiveAndLifeStageDataRequest.fromBuffer(value),
+        ($0.PurgeReproductiveAndLifeStageDataResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportReproductiveAndLifeStageDataRequest,
+            $0.ExportReproductiveAndLifeStageDataResponse>(
+        'ExportReproductiveAndLifeStageData',
+        exportReproductiveAndLifeStageData_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportReproductiveAndLifeStageDataRequest.fromBuffer(value),
+        ($0.ExportReproductiveAndLifeStageDataResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetGenomicsAndFamilyHistoryOverviewRequest,
+            $0.GetGenomicsAndFamilyHistoryOverviewResponse>(
+        'GetGenomicsAndFamilyHistoryOverview',
+        getGenomicsAndFamilyHistoryOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetGenomicsAndFamilyHistoryOverviewRequest.fromBuffer(value),
+        ($0.GetGenomicsAndFamilyHistoryOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RegisterEncryptedGenomicUploadRequest,
+            $0.RegisterEncryptedGenomicUploadResponse>(
+        'RegisterEncryptedGenomicUpload',
+        registerEncryptedGenomicUpload_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RegisterEncryptedGenomicUploadRequest.fromBuffer(value),
+        ($0.RegisterEncryptedGenomicUploadResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateGenomicVariantVisibilityRequest,
+            $0.UpdateGenomicVariantVisibilityResponse>(
+        'UpdateGenomicVariantVisibility',
+        updateGenomicVariantVisibility_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateGenomicVariantVisibilityRequest.fromBuffer(value),
+        ($0.UpdateGenomicVariantVisibilityResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertFamilyHistoryEntryRequest,
+            $0.UpsertFamilyHistoryEntryResponse>(
+        'UpsertFamilyHistoryEntry',
+        upsertFamilyHistoryEntry_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertFamilyHistoryEntryRequest.fromBuffer(value),
+        ($0.UpsertFamilyHistoryEntryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitGeneticCounsellorRequestRequest,
+            $0.SubmitGeneticCounsellorRequestResponse>(
+        'SubmitGeneticCounsellorRequest',
+        submitGeneticCounsellorRequest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitGeneticCounsellorRequestRequest.fromBuffer(value),
+        ($0.SubmitGeneticCounsellorRequestResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RotateGenomicEncryptionKeyOrPurgeRequest,
+            $0.RotateGenomicEncryptionKeyOrPurgeResponse>(
+        'RotateGenomicEncryptionKeyOrPurge',
+        rotateGenomicEncryptionKeyOrPurge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RotateGenomicEncryptionKeyOrPurgeRequest.fromBuffer(value),
+        ($0.RotateGenomicEncryptionKeyOrPurgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetClinicianCareTeamOverviewRequest,
+            $0.GetClinicianCareTeamOverviewResponse>(
+        'GetClinicianCareTeamOverview',
+        getClinicianCareTeamOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetClinicianCareTeamOverviewRequest.fromBuffer(value),
+        ($0.GetClinicianCareTeamOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateScopedCareTeamGrantRequest,
+            $0.CreateScopedCareTeamGrantResponse>(
+        'CreateScopedCareTeamGrant',
+        createScopedCareTeamGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateScopedCareTeamGrantRequest.fromBuffer(value),
+        ($0.CreateScopedCareTeamGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeScopedCareTeamGrantRequest,
+            $0.RevokeScopedCareTeamGrantResponse>(
+        'RevokeScopedCareTeamGrant',
+        revokeScopedCareTeamGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeScopedCareTeamGrantRequest.fromBuffer(value),
+        ($0.RevokeScopedCareTeamGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordClinicianDispositionRequest,
+            $0.RecordClinicianDispositionResponse>(
+        'RecordClinicianDisposition',
+        recordClinicianDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordClinicianDispositionRequest.fromBuffer(value),
+        ($0.RecordClinicianDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExportScopedCareTeamBundleRequest,
+            $0.ExportScopedCareTeamBundleResponse>(
+        'ExportScopedCareTeamBundle',
+        exportScopedCareTeamBundle_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExportScopedCareTeamBundleRequest.fromBuffer(value),
+        ($0.ExportScopedCareTeamBundleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitClinicianQuestionPacketRequest,
+            $0.SubmitClinicianQuestionPacketResponse>(
+        'SubmitClinicianQuestionPacket',
+        submitClinicianQuestionPacket_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitClinicianQuestionPacketRequest.fromBuffer(value),
+        ($0.SubmitClinicianQuestionPacketResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetChangeEscalationOverviewRequest,
+            $0.GetChangeEscalationOverviewResponse>(
+        'GetChangeEscalationOverview',
+        getChangeEscalationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetChangeEscalationOverviewRequest.fromBuffer(value),
+        ($0.GetChangeEscalationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.EvaluateMultiSignalChangeEscalationRequest,
+            $0.EvaluateMultiSignalChangeEscalationResponse>(
+        'EvaluateMultiSignalChangeEscalation',
+        evaluateMultiSignalChangeEscalation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EvaluateMultiSignalChangeEscalationRequest.fromBuffer(value),
+        ($0.EvaluateMultiSignalChangeEscalationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateChangeEscalationDispositionRequest,
+            $0.UpdateChangeEscalationDispositionResponse>(
+        'UpdateChangeEscalationDisposition',
+        updateChangeEscalationDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateChangeEscalationDispositionRequest.fromBuffer(value),
+        ($0.UpdateChangeEscalationDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateCareNavigationHandoffRequest,
+            $0.CreateCareNavigationHandoffResponse>(
+        'CreateCareNavigationHandoff',
+        createCareNavigationHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateCareNavigationHandoffRequest.fromBuffer(value),
+        ($0.CreateCareNavigationHandoffResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCareNavigationHandoffStateRequest,
+            $0.UpdateCareNavigationHandoffStateResponse>(
+        'UpdateCareNavigationHandoffState',
+        updateCareNavigationHandoffState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCareNavigationHandoffStateRequest.fromBuffer(value),
+        ($0.UpdateCareNavigationHandoffStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCareNavigationOptionRequest,
+            $0.UpsertCareNavigationOptionResponse>(
+        'UpsertCareNavigationOption',
+        upsertCareNavigationOption_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertCareNavigationOptionRequest.fromBuffer(value),
+        ($0.UpsertCareNavigationOptionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSleepCircadianStudioOverviewRequest,
+            $0.GetSleepCircadianStudioOverviewResponse>(
+        'GetSleepCircadianStudioOverview',
+        getSleepCircadianStudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSleepCircadianStudioOverviewRequest.fromBuffer(value),
+        ($0.GetSleepCircadianStudioOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordSleepAndExposureLogRequest,
+            $0.RecordSleepAndExposureLogResponse>(
+        'RecordSleepAndExposureLog',
+        recordSleepAndExposureLog_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordSleepAndExposureLogRequest.fromBuffer(value),
+        ($0.RecordSleepAndExposureLogResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCircadianRoutineRequest,
+            $0.UpsertCircadianRoutineResponse>(
+        'UpsertCircadianRoutine',
+        upsertCircadianRoutine_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertCircadianRoutineRequest.fromBuffer(value),
+        ($0.UpsertCircadianRoutineResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCircadianCrossPillarGrantRequest,
+            $0.UpdateCircadianCrossPillarGrantResponse>(
+        'UpdateCircadianCrossPillarGrant',
+        updateCircadianCrossPillarGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCircadianCrossPillarGrantRequest.fromBuffer(value),
+        ($0.UpdateCircadianCrossPillarGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSleepSensorCapabilityRequest,
+            $0.UpsertSleepSensorCapabilityResponse>(
+        'UpsertSleepSensorCapability',
+        upsertSleepSensorCapability_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSleepSensorCapabilityRequest.fromBuffer(value),
+        ($0.UpsertSleepSensorCapabilityResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateCircadianTravelOrShiftPlanRequest,
+            $0.GenerateCircadianTravelOrShiftPlanResponse>(
+        'GenerateCircadianTravelOrShiftPlan',
+        generateCircadianTravelOrShiftPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateCircadianTravelOrShiftPlanRequest.fromBuffer(value),
+        ($0.GenerateCircadianTravelOrShiftPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetResearchParticipationOverviewRequest,
+            $0.GetResearchParticipationOverviewResponse>(
+        'GetResearchParticipationOverview',
+        getResearchParticipationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetResearchParticipationOverviewRequest.fromBuffer(value),
+        ($0.GetResearchParticipationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunLocalStudyPreScreenRequest,
+            $0.RunLocalStudyPreScreenResponse>(
+        'RunLocalStudyPreScreen',
+        runLocalStudyPreScreen_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunLocalStudyPreScreenRequest.fromBuffer(value),
+        ($0.RunLocalStudyPreScreenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EnrollOrUpdateResearchStudyConsentRequest,
+            $0.EnrollOrUpdateResearchStudyConsentResponse>(
+        'EnrollOrUpdateResearchStudyConsent',
+        enrollOrUpdateResearchStudyConsent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EnrollOrUpdateResearchStudyConsentRequest.fromBuffer(value),
+        ($0.EnrollOrUpdateResearchStudyConsentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.WithdrawResearchStudyConsentRequest,
+            $0.WithdrawResearchStudyConsentResponse>(
+        'WithdrawResearchStudyConsent',
+        withdrawResearchStudyConsent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.WithdrawResearchStudyConsentRequest.fromBuffer(value),
+        ($0.WithdrawResearchStudyConsentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecordResearchContributionMilestoneRequest,
+            $0.RecordResearchContributionMilestoneResponse>(
+        'RecordResearchContributionMilestone',
+        recordResearchContributionMilestone_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordResearchContributionMilestoneRequest.fromBuffer(value),
+        ($0.RecordResearchContributionMilestoneResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertResearchStudyRequest,
+            $0.UpsertResearchStudyResponse>(
+        'UpsertResearchStudy',
+        upsertResearchStudy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertResearchStudyRequest.fromBuffer(value),
+        ($0.UpsertResearchStudyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetPortableHealthDossierOverviewRequest,
+            $0.GetPortableHealthDossierOverviewResponse>(
+        'GetPortableHealthDossierOverview',
+        getPortableHealthDossierOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPortableHealthDossierOverviewRequest.fromBuffer(value),
+        ($0.GetPortableHealthDossierOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertPortableHealthDossierRequest,
+            $0.UpsertPortableHealthDossierResponse>(
+        'UpsertPortableHealthDossier',
+        upsertPortableHealthDossier_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertPortableHealthDossierRequest.fromBuffer(value),
+        ($0.UpsertPortableHealthDossierResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfirmPortableDossierFreshnessRequest,
+            $0.ConfirmPortableDossierFreshnessResponse>(
+        'ConfirmPortableDossierFreshness',
+        confirmPortableDossierFreshness_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmPortableDossierFreshnessRequest.fromBuffer(value),
+        ($0.ConfirmPortableDossierFreshnessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IssueDossierAccessGrantRequest,
+            $0.IssueDossierAccessGrantResponse>(
+        'IssueDossierAccessGrant',
+        issueDossierAccessGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.IssueDossierAccessGrantRequest.fromBuffer(value),
+        ($0.IssueDossierAccessGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeDossierAccessGrantRequest,
+            $0.RevokeDossierAccessGrantResponse>(
+        'RevokeDossierAccessGrant',
+        revokeDossierAccessGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeDossierAccessGrantRequest.fromBuffer(value),
+        ($0.RevokeDossierAccessGrantResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateLegacyDirectiveReferenceRequest,
+            $0.UpdateLegacyDirectiveReferenceResponse>(
+        'UpdateLegacyDirectiveReference',
+        updateLegacyDirectiveReference_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateLegacyDirectiveReferenceRequest.fromBuffer(value),
+        ($0.UpdateLegacyDirectiveReferenceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetGlobalCertificationOverviewRequest,
+            $0.GetGlobalCertificationOverviewResponse>(
+        'GetGlobalCertificationOverview',
+        getGlobalCertificationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetGlobalCertificationOverviewRequest.fromBuffer(value),
+        ($0.GetGlobalCertificationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateGlobalAccessibilityProfileRequest,
+            $0.UpdateGlobalAccessibilityProfileResponse>(
+        'UpdateGlobalAccessibilityProfile',
+        updateGlobalAccessibilityProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateGlobalAccessibilityProfileRequest.fromBuffer(value),
+        ($0.UpdateGlobalAccessibilityProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RunHealthMigrationImportOrExportJobRequest,
+            $0.RunHealthMigrationImportOrExportJobResponse>(
+        'RunHealthMigrationImportOrExportJob',
+        runHealthMigrationImportOrExportJob_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunHealthMigrationImportOrExportJobRequest.fromBuffer(value),
+        ($0.RunHealthMigrationImportOrExportJobResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertHorizontalCertificationCheckRequest,
+            $0.UpsertHorizontalCertificationCheckResponse>(
+        'UpsertHorizontalCertificationCheck',
+        upsertHorizontalCertificationCheck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertHorizontalCertificationCheckRequest.fromBuffer(value),
+        ($0.UpsertHorizontalCertificationCheckResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyUnitLocalizationLosslessnessRequest,
+            $0.VerifyUnitLocalizationLosslessnessResponse>(
+        'VerifyUnitLocalizationLosslessness',
+        verifyUnitLocalizationLosslessness_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyUnitLocalizationLosslessnessRequest.fromBuffer(value),
+        ($0.VerifyUnitLocalizationLosslessnessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RunOfflineAndManualParityAuditRequest,
+            $0.RunOfflineAndManualParityAuditResponse>(
+        'RunOfflineAndManualParityAudit',
+        runOfflineAndManualParityAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunOfflineAndManualParityAuditRequest.fromBuffer(value),
+        ($0.RunOfflineAndManualParityAuditResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.SyncVitalsResponse> syncVitals_Pre($grpc.ServiceCall $call,
@@ -1936,4 +4680,1180 @@ abstract class ApexServiceBase extends $grpc.Service {
 
   $async.Future<$0.AdminVerifyLabResponse> adminVerifyLab(
       $grpc.ServiceCall call, $0.AdminVerifyLabRequest request);
+
+  $async.Future<$0.GetHealthDataReliabilityOverviewResponse>
+      getHealthDataReliabilityOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetHealthDataReliabilityOverviewRequest>
+              $request) async {
+    return getHealthDataReliabilityOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetHealthDataReliabilityOverviewResponse>
+      getHealthDataReliabilityOverview($grpc.ServiceCall call,
+          $0.GetHealthDataReliabilityOverviewRequest request);
+
+  $async.Future<$0.ListHealthSourcesResponse> listHealthSources_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListHealthSourcesRequest> $request) async {
+    return listHealthSources($call, await $request);
+  }
+
+  $async.Future<$0.ListHealthSourcesResponse> listHealthSources(
+      $grpc.ServiceCall call, $0.ListHealthSourcesRequest request);
+
+  $async.Future<$0.UpsertHealthSourceGrantResponse> upsertHealthSourceGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertHealthSourceGrantRequest> $request) async {
+    return upsertHealthSourceGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpsertHealthSourceGrantResponse> upsertHealthSourceGrant(
+      $grpc.ServiceCall call, $0.UpsertHealthSourceGrantRequest request);
+
+  $async.Future<$0.RevokeHealthSourceGrantResponse> revokeHealthSourceGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RevokeHealthSourceGrantRequest> $request) async {
+    return revokeHealthSourceGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeHealthSourceGrantResponse> revokeHealthSourceGrant(
+      $grpc.ServiceCall call, $0.RevokeHealthSourceGrantRequest request);
+
+  $async.Future<$0.CorrectHealthObservationResponse>
+      correctHealthObservation_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CorrectHealthObservationRequest> $request) async {
+    return correctHealthObservation($call, await $request);
+  }
+
+  $async.Future<$0.CorrectHealthObservationResponse> correctHealthObservation(
+      $grpc.ServiceCall call, $0.CorrectHealthObservationRequest request);
+
+  $async.Future<$0.DeleteHealthObservationResponse> deleteHealthObservation_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DeleteHealthObservationRequest> $request) async {
+    return deleteHealthObservation($call, await $request);
+  }
+
+  $async.Future<$0.DeleteHealthObservationResponse> deleteHealthObservation(
+      $grpc.ServiceCall call, $0.DeleteHealthObservationRequest request);
+
+  $async.Future<$0.RestoreHealthObservationResponse>
+      restoreHealthObservation_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RestoreHealthObservationRequest> $request) async {
+    return restoreHealthObservation($call, await $request);
+  }
+
+  $async.Future<$0.RestoreHealthObservationResponse> restoreHealthObservation(
+      $grpc.ServiceCall call, $0.RestoreHealthObservationRequest request);
+
+  $async.Future<$0.ListObservationRevisionsResponse>
+      listObservationRevisions_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListObservationRevisionsRequest> $request) async {
+    return listObservationRevisions($call, await $request);
+  }
+
+  $async.Future<$0.ListObservationRevisionsResponse> listObservationRevisions(
+      $grpc.ServiceCall call, $0.ListObservationRevisionsRequest request);
+
+  $async.Future<$0.ListHealthDataConflictsResponse> listHealthDataConflicts_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListHealthDataConflictsRequest> $request) async {
+    return listHealthDataConflicts($call, await $request);
+  }
+
+  $async.Future<$0.ListHealthDataConflictsResponse> listHealthDataConflicts(
+      $grpc.ServiceCall call, $0.ListHealthDataConflictsRequest request);
+
+  $async.Future<$0.ResolveHealthDataConflictResponse>
+      resolveHealthDataConflict_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ResolveHealthDataConflictRequest> $request) async {
+    return resolveHealthDataConflict($call, await $request);
+  }
+
+  $async.Future<$0.ResolveHealthDataConflictResponse> resolveHealthDataConflict(
+      $grpc.ServiceCall call, $0.ResolveHealthDataConflictRequest request);
+
+  $async.Future<$0.CreateHealthCorrectionCaseResponse>
+      createHealthCorrectionCase_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CreateHealthCorrectionCaseRequest> $request) async {
+    return createHealthCorrectionCase($call, await $request);
+  }
+
+  $async.Future<$0.CreateHealthCorrectionCaseResponse>
+      createHealthCorrectionCase(
+          $grpc.ServiceCall call, $0.CreateHealthCorrectionCaseRequest request);
+
+  $async.Future<$0.ListMyHealthCorrectionCasesResponse>
+      listMyHealthCorrectionCases_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListMyHealthCorrectionCasesRequest> $request) async {
+    return listMyHealthCorrectionCases($call, await $request);
+  }
+
+  $async.Future<$0.ListMyHealthCorrectionCasesResponse>
+      listMyHealthCorrectionCases($grpc.ServiceCall call,
+          $0.ListMyHealthCorrectionCasesRequest request);
+
+  $async.Future<$0.ListCrossPillarHealthGrantsResponse>
+      listCrossPillarHealthGrants_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListCrossPillarHealthGrantsRequest> $request) async {
+    return listCrossPillarHealthGrants($call, await $request);
+  }
+
+  $async.Future<$0.ListCrossPillarHealthGrantsResponse>
+      listCrossPillarHealthGrants($grpc.ServiceCall call,
+          $0.ListCrossPillarHealthGrantsRequest request);
+
+  $async.Future<$0.UpdateCrossPillarHealthGrantResponse>
+      updateCrossPillarHealthGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCrossPillarHealthGrantRequest>
+              $request) async {
+    return updateCrossPillarHealthGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCrossPillarHealthGrantResponse>
+      updateCrossPillarHealthGrant($grpc.ServiceCall call,
+          $0.UpdateCrossPillarHealthGrantRequest request);
+
+  $async.Future<$0.RebuildHealthRecordResponse> rebuildHealthRecord_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RebuildHealthRecordRequest> $request) async {
+    return rebuildHealthRecord($call, await $request);
+  }
+
+  $async.Future<$0.RebuildHealthRecordResponse> rebuildHealthRecord(
+      $grpc.ServiceCall call, $0.RebuildHealthRecordRequest request);
+
+  $async.Future<$0.ExportHealthObservationsResponse>
+      exportHealthObservations_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ExportHealthObservationsRequest> $request) async {
+    return exportHealthObservations($call, await $request);
+  }
+
+  $async.Future<$0.ExportHealthObservationsResponse> exportHealthObservations(
+      $grpc.ServiceCall call, $0.ExportHealthObservationsRequest request);
+
+  $async.Future<$0.GetClinicalDocumentIntelligenceOverviewResponse>
+      getClinicalDocumentIntelligenceOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetClinicalDocumentIntelligenceOverviewRequest>
+              $request) async {
+    return getClinicalDocumentIntelligenceOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetClinicalDocumentIntelligenceOverviewResponse>
+      getClinicalDocumentIntelligenceOverview($grpc.ServiceCall call,
+          $0.GetClinicalDocumentIntelligenceOverviewRequest request);
+
+  $async.Future<$0.InspectClinicalDocumentResponse> inspectClinicalDocument_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.InspectClinicalDocumentRequest> $request) async {
+    return inspectClinicalDocument($call, await $request);
+  }
+
+  $async.Future<$0.InspectClinicalDocumentResponse> inspectClinicalDocument(
+      $grpc.ServiceCall call, $0.InspectClinicalDocumentRequest request);
+
+  $async.Future<$0.RunDocumentExtractionResponse> runDocumentExtraction_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RunDocumentExtractionRequest> $request) async {
+    return runDocumentExtraction($call, await $request);
+  }
+
+  $async.Future<$0.RunDocumentExtractionResponse> runDocumentExtraction(
+      $grpc.ServiceCall call, $0.RunDocumentExtractionRequest request);
+
+  $async.Future<$0.ConfirmExtractedDocumentItemsResponse>
+      confirmExtractedDocumentItems_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmExtractedDocumentItemsRequest>
+              $request) async {
+    return confirmExtractedDocumentItems($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmExtractedDocumentItemsResponse>
+      confirmExtractedDocumentItems($grpc.ServiceCall call,
+          $0.ConfirmExtractedDocumentItemsRequest request);
+
+  $async.Future<$0.CompareClinicalDocumentRevisionsResponse>
+      compareClinicalDocumentRevisions_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CompareClinicalDocumentRevisionsRequest>
+              $request) async {
+    return compareClinicalDocumentRevisions($call, await $request);
+  }
+
+  $async.Future<$0.CompareClinicalDocumentRevisionsResponse>
+      compareClinicalDocumentRevisions($grpc.ServiceCall call,
+          $0.CompareClinicalDocumentRevisionsRequest request);
+
+  $async.Future<$0.GenerateAppointmentBriefResponse>
+      generateAppointmentBrief_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GenerateAppointmentBriefRequest> $request) async {
+    return generateAppointmentBrief($call, await $request);
+  }
+
+  $async.Future<$0.GenerateAppointmentBriefResponse> generateAppointmentBrief(
+      $grpc.ServiceCall call, $0.GenerateAppointmentBriefRequest request);
+
+  $async.Future<$0.ListMyAppointmentBriefsResponse> listMyAppointmentBriefs_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.ListMyAppointmentBriefsRequest> $request) async {
+    return listMyAppointmentBriefs($call, await $request);
+  }
+
+  $async.Future<$0.ListMyAppointmentBriefsResponse> listMyAppointmentBriefs(
+      $grpc.ServiceCall call, $0.ListMyAppointmentBriefsRequest request);
+
+  $async.Future<$0.UpdateAppointmentBriefResponse> updateAppointmentBrief_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpdateAppointmentBriefRequest> $request) async {
+    return updateAppointmentBrief($call, await $request);
+  }
+
+  $async.Future<$0.UpdateAppointmentBriefResponse> updateAppointmentBrief(
+      $grpc.ServiceCall call, $0.UpdateAppointmentBriefRequest request);
+
+  $async.Future<$0.GetPersonalBaselineAndApexAgeOverviewResponse>
+      getPersonalBaselineAndApexAgeOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPersonalBaselineAndApexAgeOverviewRequest>
+              $request) async {
+    return getPersonalBaselineAndApexAgeOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetPersonalBaselineAndApexAgeOverviewResponse>
+      getPersonalBaselineAndApexAgeOverview($grpc.ServiceCall call,
+          $0.GetPersonalBaselineAndApexAgeOverviewRequest request);
+
+  $async.Future<$0.RecomputePersonalBaselinesAndApexAgeResponse>
+      recomputePersonalBaselinesAndApexAge_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecomputePersonalBaselinesAndApexAgeRequest>
+              $request) async {
+    return recomputePersonalBaselinesAndApexAge($call, await $request);
+  }
+
+  $async.Future<$0.RecomputePersonalBaselinesAndApexAgeResponse>
+      recomputePersonalBaselinesAndApexAge($grpc.ServiceCall call,
+          $0.RecomputePersonalBaselinesAndApexAgeRequest request);
+
+  $async.Future<$0.UpsertBaselineExcludedPeriodResponse>
+      upsertBaselineExcludedPeriod_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertBaselineExcludedPeriodRequest>
+              $request) async {
+    return upsertBaselineExcludedPeriod($call, await $request);
+  }
+
+  $async.Future<$0.UpsertBaselineExcludedPeriodResponse>
+      upsertBaselineExcludedPeriod($grpc.ServiceCall call,
+          $0.UpsertBaselineExcludedPeriodRequest request);
+
+  $async.Future<$0.DeleteBaselineExcludedPeriodResponse>
+      deleteBaselineExcludedPeriod_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.DeleteBaselineExcludedPeriodRequest>
+              $request) async {
+    return deleteBaselineExcludedPeriod($call, await $request);
+  }
+
+  $async.Future<$0.DeleteBaselineExcludedPeriodResponse>
+      deleteBaselineExcludedPeriod($grpc.ServiceCall call,
+          $0.DeleteBaselineExcludedPeriodRequest request);
+
+  $async.Future<$0.UpdateChangeSignalDispositionResponse>
+      updateChangeSignalDisposition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateChangeSignalDispositionRequest>
+              $request) async {
+    return updateChangeSignalDisposition($call, await $request);
+  }
+
+  $async.Future<$0.UpdateChangeSignalDispositionResponse>
+      updateChangeSignalDisposition($grpc.ServiceCall call,
+          $0.UpdateChangeSignalDispositionRequest request);
+
+  $async.Future<$0.UpdateScoreDisplayPreferencesResponse>
+      updateScoreDisplayPreferences_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateScoreDisplayPreferencesRequest>
+              $request) async {
+    return updateScoreDisplayPreferences($call, await $request);
+  }
+
+  $async.Future<$0.UpdateScoreDisplayPreferencesResponse>
+      updateScoreDisplayPreferences($grpc.ServiceCall call,
+          $0.UpdateScoreDisplayPreferencesRequest request);
+
+  $async.Future<$0.SubmitApexScoreDisputeResponse> submitApexScoreDispute_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.SubmitApexScoreDisputeRequest> $request) async {
+    return submitApexScoreDispute($call, await $request);
+  }
+
+  $async.Future<$0.SubmitApexScoreDisputeResponse> submitApexScoreDispute(
+      $grpc.ServiceCall call, $0.SubmitApexScoreDisputeRequest request);
+
+  $async.Future<$0.ListMyApexScoreSnapshotsResponse>
+      listMyApexScoreSnapshots_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ListMyApexScoreSnapshotsRequest> $request) async {
+    return listMyApexScoreSnapshots($call, await $request);
+  }
+
+  $async.Future<$0.ListMyApexScoreSnapshotsResponse> listMyApexScoreSnapshots(
+      $grpc.ServiceCall call, $0.ListMyApexScoreSnapshotsRequest request);
+
+  $async.Future<$0.GetPreventiveCareCalendarOverviewResponse>
+      getPreventiveCareCalendarOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPreventiveCareCalendarOverviewRequest>
+              $request) async {
+    return getPreventiveCareCalendarOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetPreventiveCareCalendarOverviewResponse>
+      getPreventiveCareCalendarOverview($grpc.ServiceCall call,
+          $0.GetPreventiveCareCalendarOverviewRequest request);
+
+  $async.Future<$0.UpdatePreventiveCareProfileResponse>
+      updatePreventiveCareProfile_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdatePreventiveCareProfileRequest> $request) async {
+    return updatePreventiveCareProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdatePreventiveCareProfileResponse>
+      updatePreventiveCareProfile($grpc.ServiceCall call,
+          $0.UpdatePreventiveCareProfileRequest request);
+
+  $async.Future<$0.UpdatePreventiveCareItemStatusResponse>
+      updatePreventiveCareItemStatus_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdatePreventiveCareItemStatusRequest>
+              $request) async {
+    return updatePreventiveCareItemStatus($call, await $request);
+  }
+
+  $async.Future<$0.UpdatePreventiveCareItemStatusResponse>
+      updatePreventiveCareItemStatus($grpc.ServiceCall call,
+          $0.UpdatePreventiveCareItemStatusRequest request);
+
+  $async.Future<$0.ConfirmPreventiveCareEvidenceResponse>
+      confirmPreventiveCareEvidence_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmPreventiveCareEvidenceRequest>
+              $request) async {
+    return confirmPreventiveCareEvidence($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmPreventiveCareEvidenceResponse>
+      confirmPreventiveCareEvidence($grpc.ServiceCall call,
+          $0.ConfirmPreventiveCareEvidenceRequest request);
+
+  $async.Future<$0.UpsertCustomPreventiveCareCheckResponse>
+      upsertCustomPreventiveCareCheck_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertCustomPreventiveCareCheckRequest>
+              $request) async {
+    return upsertCustomPreventiveCareCheck($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCustomPreventiveCareCheckResponse>
+      upsertCustomPreventiveCareCheck($grpc.ServiceCall call,
+          $0.UpsertCustomPreventiveCareCheckRequest request);
+
+  $async.Future<$0.SyncPreventiveCarePlanFromGuidelinesResponse>
+      syncPreventiveCarePlanFromGuidelines_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SyncPreventiveCarePlanFromGuidelinesRequest>
+              $request) async {
+    return syncPreventiveCarePlanFromGuidelines($call, await $request);
+  }
+
+  $async.Future<$0.SyncPreventiveCarePlanFromGuidelinesResponse>
+      syncPreventiveCarePlanFromGuidelines($grpc.ServiceCall call,
+          $0.SyncPreventiveCarePlanFromGuidelinesRequest request);
+
+  $async.Future<$0.GetExperimentLabOverviewResponse>
+      getExperimentLabOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetExperimentLabOverviewRequest> $request) async {
+    return getExperimentLabOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetExperimentLabOverviewResponse> getExperimentLabOverview(
+      $grpc.ServiceCall call, $0.GetExperimentLabOverviewRequest request);
+
+  $async.Future<$0.PredeclareNOf1ExperimentResponse>
+      predeclareNOf1Experiment_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.PredeclareNOf1ExperimentRequest> $request) async {
+    return predeclareNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.PredeclareNOf1ExperimentResponse> predeclareNOf1Experiment(
+      $grpc.ServiceCall call, $0.PredeclareNOf1ExperimentRequest request);
+
+  $async.Future<$0.RecordNOf1DailyLogResponse> recordNOf1DailyLog_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordNOf1DailyLogRequest> $request) async {
+    return recordNOf1DailyLog($call, await $request);
+  }
+
+  $async.Future<$0.RecordNOf1DailyLogResponse> recordNOf1DailyLog(
+      $grpc.ServiceCall call, $0.RecordNOf1DailyLogRequest request);
+
+  $async.Future<$0.AnalyzeNOf1ExperimentResponse> analyzeNOf1Experiment_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.AnalyzeNOf1ExperimentRequest> $request) async {
+    return analyzeNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.AnalyzeNOf1ExperimentResponse> analyzeNOf1Experiment(
+      $grpc.ServiceCall call, $0.AnalyzeNOf1ExperimentRequest request);
+
+  $async.Future<$0.UpdateNOf1ExperimentStatusResponse>
+      updateNOf1ExperimentStatus_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdateNOf1ExperimentStatusRequest> $request) async {
+    return updateNOf1ExperimentStatus($call, await $request);
+  }
+
+  $async.Future<$0.UpdateNOf1ExperimentStatusResponse>
+      updateNOf1ExperimentStatus(
+          $grpc.ServiceCall call, $0.UpdateNOf1ExperimentStatusRequest request);
+
+  $async.Future<$0.ReportExperimentAdverseEventResponse>
+      reportExperimentAdverseEvent_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReportExperimentAdverseEventRequest>
+              $request) async {
+    return reportExperimentAdverseEvent($call, await $request);
+  }
+
+  $async.Future<$0.ReportExperimentAdverseEventResponse>
+      reportExperimentAdverseEvent($grpc.ServiceCall call,
+          $0.ReportExperimentAdverseEventRequest request);
+
+  $async.Future<$0.GetAdaptiveDailyPlanOverviewResponse>
+      getAdaptiveDailyPlanOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetAdaptiveDailyPlanOverviewRequest>
+              $request) async {
+    return getAdaptiveDailyPlanOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetAdaptiveDailyPlanOverviewResponse>
+      getAdaptiveDailyPlanOverview($grpc.ServiceCall call,
+          $0.GetAdaptiveDailyPlanOverviewRequest request);
+
+  $async.Future<$0.ReplanAdaptiveDailyProtocolResponse>
+      replanAdaptiveDailyProtocol_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ReplanAdaptiveDailyProtocolRequest> $request) async {
+    return replanAdaptiveDailyProtocol($call, await $request);
+  }
+
+  $async.Future<$0.ReplanAdaptiveDailyProtocolResponse>
+      replanAdaptiveDailyProtocol($grpc.ServiceCall call,
+          $0.ReplanAdaptiveDailyProtocolRequest request);
+
+  $async.Future<$0.RecordDailyPlanStepDispositionResponse>
+      recordDailyPlanStepDisposition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordDailyPlanStepDispositionRequest>
+              $request) async {
+    return recordDailyPlanStepDisposition($call, await $request);
+  }
+
+  $async.Future<$0.RecordDailyPlanStepDispositionResponse>
+      recordDailyPlanStepDisposition($grpc.ServiceCall call,
+          $0.RecordDailyPlanStepDispositionRequest request);
+
+  $async.Future<$0.UpsertDailyPlanStepResponse> upsertDailyPlanStep_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertDailyPlanStepRequest> $request) async {
+    return upsertDailyPlanStep($call, await $request);
+  }
+
+  $async.Future<$0.UpsertDailyPlanStepResponse> upsertDailyPlanStep(
+      $grpc.ServiceCall call, $0.UpsertDailyPlanStepRequest request);
+
+  $async.Future<$0.UpdateCompassionateAdherencePauseResponse>
+      updateCompassionateAdherencePause_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCompassionateAdherencePauseRequest>
+              $request) async {
+    return updateCompassionateAdherencePause($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCompassionateAdherencePauseResponse>
+      updateCompassionateAdherencePause($grpc.ServiceCall call,
+          $0.UpdateCompassionateAdherencePauseRequest request);
+
+  $async.Future<$0.UpdateCrossPillarTimingHandoffResponse>
+      updateCrossPillarTimingHandoff_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCrossPillarTimingHandoffRequest>
+              $request) async {
+    return updateCrossPillarTimingHandoff($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCrossPillarTimingHandoffResponse>
+      updateCrossPillarTimingHandoff($grpc.ServiceCall call,
+          $0.UpdateCrossPillarTimingHandoffRequest request);
+
+  $async.Future<$0.GetMedicationSafetyOverviewResponse>
+      getMedicationSafetyOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetMedicationSafetyOverviewRequest> $request) async {
+    return getMedicationSafetyOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetMedicationSafetyOverviewResponse>
+      getMedicationSafetyOverview($grpc.ServiceCall call,
+          $0.GetMedicationSafetyOverviewRequest request);
+
+  $async.Future<$0.UpsertReconciledMedicationItemResponse>
+      upsertReconciledMedicationItem_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertReconciledMedicationItemRequest>
+              $request) async {
+    return upsertReconciledMedicationItem($call, await $request);
+  }
+
+  $async.Future<$0.UpsertReconciledMedicationItemResponse>
+      upsertReconciledMedicationItem($grpc.ServiceCall call,
+          $0.UpsertReconciledMedicationItemRequest request);
+
+  $async.Future<$0.UpsertAllergyOrIntoleranceResponse>
+      upsertAllergyOrIntolerance_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertAllergyOrIntoleranceRequest> $request) async {
+    return upsertAllergyOrIntolerance($call, await $request);
+  }
+
+  $async.Future<$0.UpsertAllergyOrIntoleranceResponse>
+      upsertAllergyOrIntolerance(
+          $grpc.ServiceCall call, $0.UpsertAllergyOrIntoleranceRequest request);
+
+  $async.Future<$0.RunSafetyInteractionCheckResponse>
+      runSafetyInteractionCheck_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RunSafetyInteractionCheckRequest> $request) async {
+    return runSafetyInteractionCheck($call, await $request);
+  }
+
+  $async.Future<$0.RunSafetyInteractionCheckResponse> runSafetyInteractionCheck(
+      $grpc.ServiceCall call, $0.RunSafetyInteractionCheckRequest request);
+
+  $async.Future<$0.UpdateInteractionAlertDispositionResponse>
+      updateInteractionAlertDisposition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateInteractionAlertDispositionRequest>
+              $request) async {
+    return updateInteractionAlertDisposition($call, await $request);
+  }
+
+  $async.Future<$0.UpdateInteractionAlertDispositionResponse>
+      updateInteractionAlertDisposition($grpc.ServiceCall call,
+          $0.UpdateInteractionAlertDispositionRequest request);
+
+  $async.Future<$0.GenerateMedicationReconciliationPacketResponse>
+      generateMedicationReconciliationPacket_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateMedicationReconciliationPacketRequest>
+              $request) async {
+    return generateMedicationReconciliationPacket($call, await $request);
+  }
+
+  $async.Future<$0.GenerateMedicationReconciliationPacketResponse>
+      generateMedicationReconciliationPacket($grpc.ServiceCall call,
+          $0.GenerateMedicationReconciliationPacketRequest request);
+
+  $async.Future<$0.GetMetabolicStudioOverviewResponse>
+      getMetabolicStudioOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetMetabolicStudioOverviewRequest> $request) async {
+    return getMetabolicStudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetMetabolicStudioOverviewResponse>
+      getMetabolicStudioOverview(
+          $grpc.ServiceCall call, $0.GetMetabolicStudioOverviewRequest request);
+
+  $async.Future<$0.RecordMetabolicMealEventResponse>
+      recordMetabolicMealEvent_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordMetabolicMealEventRequest> $request) async {
+    return recordMetabolicMealEvent($call, await $request);
+  }
+
+  $async.Future<$0.RecordMetabolicMealEventResponse> recordMetabolicMealEvent(
+      $grpc.ServiceCall call, $0.RecordMetabolicMealEventRequest request);
+
+  $async.Future<$0.ConfirmMealIngredientsAndPortionsResponse>
+      confirmMealIngredientsAndPortions_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmMealIngredientsAndPortionsRequest>
+              $request) async {
+    return confirmMealIngredientsAndPortions($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmMealIngredientsAndPortionsResponse>
+      confirmMealIngredientsAndPortions($grpc.ServiceCall call,
+          $0.ConfirmMealIngredientsAndPortionsRequest request);
+
+  $async.Future<$0.CompareRepeatMealResponsesResponse>
+      compareRepeatMealResponses_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CompareRepeatMealResponsesRequest> $request) async {
+    return compareRepeatMealResponses($call, await $request);
+  }
+
+  $async.Future<$0.CompareRepeatMealResponsesResponse>
+      compareRepeatMealResponses(
+          $grpc.ServiceCall call, $0.CompareRepeatMealResponsesRequest request);
+
+  $async.Future<$0.UpsertMetabolicTargetRangeResponse>
+      upsertMetabolicTargetRange_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertMetabolicTargetRangeRequest> $request) async {
+    return upsertMetabolicTargetRange($call, await $request);
+  }
+
+  $async.Future<$0.UpsertMetabolicTargetRangeResponse>
+      upsertMetabolicTargetRange(
+          $grpc.ServiceCall call, $0.UpsertMetabolicTargetRangeRequest request);
+
+  $async.Future<$0.UpsertMetabolicSensorProfileResponse>
+      upsertMetabolicSensorProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertMetabolicSensorProfileRequest>
+              $request) async {
+    return upsertMetabolicSensorProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpsertMetabolicSensorProfileResponse>
+      upsertMetabolicSensorProfile($grpc.ServiceCall call,
+          $0.UpsertMetabolicSensorProfileRequest request);
+
+  $async.Future<$0.GetCycleLifeStageOverviewResponse>
+      getCycleLifeStageOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetCycleLifeStageOverviewRequest> $request) async {
+    return getCycleLifeStageOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetCycleLifeStageOverviewResponse> getCycleLifeStageOverview(
+      $grpc.ServiceCall call, $0.GetCycleLifeStageOverviewRequest request);
+
+  $async.Future<$0.UpdateLifeStageProfileAndPrivacyResponse>
+      updateLifeStageProfileAndPrivacy_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateLifeStageProfileAndPrivacyRequest>
+              $request) async {
+    return updateLifeStageProfileAndPrivacy($call, await $request);
+  }
+
+  $async.Future<$0.UpdateLifeStageProfileAndPrivacyResponse>
+      updateLifeStageProfileAndPrivacy($grpc.ServiceCall call,
+          $0.UpdateLifeStageProfileAndPrivacyRequest request);
+
+  $async.Future<$0.RecordLifeStageEventResponse> recordLifeStageEvent_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecordLifeStageEventRequest> $request) async {
+    return recordLifeStageEvent($call, await $request);
+  }
+
+  $async.Future<$0.RecordLifeStageEventResponse> recordLifeStageEvent(
+      $grpc.ServiceCall call, $0.RecordLifeStageEventRequest request);
+
+  $async.Future<$0.GenerateLifeStageAppointmentBriefResponse>
+      generateLifeStageAppointmentBrief_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateLifeStageAppointmentBriefRequest>
+              $request) async {
+    return generateLifeStageAppointmentBrief($call, await $request);
+  }
+
+  $async.Future<$0.GenerateLifeStageAppointmentBriefResponse>
+      generateLifeStageAppointmentBrief($grpc.ServiceCall call,
+          $0.GenerateLifeStageAppointmentBriefRequest request);
+
+  $async.Future<$0.PurgeReproductiveAndLifeStageDataResponse>
+      purgeReproductiveAndLifeStageData_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PurgeReproductiveAndLifeStageDataRequest>
+              $request) async {
+    return purgeReproductiveAndLifeStageData($call, await $request);
+  }
+
+  $async.Future<$0.PurgeReproductiveAndLifeStageDataResponse>
+      purgeReproductiveAndLifeStageData($grpc.ServiceCall call,
+          $0.PurgeReproductiveAndLifeStageDataRequest request);
+
+  $async.Future<$0.ExportReproductiveAndLifeStageDataResponse>
+      exportReproductiveAndLifeStageData_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ExportReproductiveAndLifeStageDataRequest>
+              $request) async {
+    return exportReproductiveAndLifeStageData($call, await $request);
+  }
+
+  $async.Future<$0.ExportReproductiveAndLifeStageDataResponse>
+      exportReproductiveAndLifeStageData($grpc.ServiceCall call,
+          $0.ExportReproductiveAndLifeStageDataRequest request);
+
+  $async.Future<$0.GetGenomicsAndFamilyHistoryOverviewResponse>
+      getGenomicsAndFamilyHistoryOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetGenomicsAndFamilyHistoryOverviewRequest>
+              $request) async {
+    return getGenomicsAndFamilyHistoryOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetGenomicsAndFamilyHistoryOverviewResponse>
+      getGenomicsAndFamilyHistoryOverview($grpc.ServiceCall call,
+          $0.GetGenomicsAndFamilyHistoryOverviewRequest request);
+
+  $async.Future<$0.RegisterEncryptedGenomicUploadResponse>
+      registerEncryptedGenomicUpload_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RegisterEncryptedGenomicUploadRequest>
+              $request) async {
+    return registerEncryptedGenomicUpload($call, await $request);
+  }
+
+  $async.Future<$0.RegisterEncryptedGenomicUploadResponse>
+      registerEncryptedGenomicUpload($grpc.ServiceCall call,
+          $0.RegisterEncryptedGenomicUploadRequest request);
+
+  $async.Future<$0.UpdateGenomicVariantVisibilityResponse>
+      updateGenomicVariantVisibility_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateGenomicVariantVisibilityRequest>
+              $request) async {
+    return updateGenomicVariantVisibility($call, await $request);
+  }
+
+  $async.Future<$0.UpdateGenomicVariantVisibilityResponse>
+      updateGenomicVariantVisibility($grpc.ServiceCall call,
+          $0.UpdateGenomicVariantVisibilityRequest request);
+
+  $async.Future<$0.UpsertFamilyHistoryEntryResponse>
+      upsertFamilyHistoryEntry_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertFamilyHistoryEntryRequest> $request) async {
+    return upsertFamilyHistoryEntry($call, await $request);
+  }
+
+  $async.Future<$0.UpsertFamilyHistoryEntryResponse> upsertFamilyHistoryEntry(
+      $grpc.ServiceCall call, $0.UpsertFamilyHistoryEntryRequest request);
+
+  $async.Future<$0.SubmitGeneticCounsellorRequestResponse>
+      submitGeneticCounsellorRequest_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitGeneticCounsellorRequestRequest>
+              $request) async {
+    return submitGeneticCounsellorRequest($call, await $request);
+  }
+
+  $async.Future<$0.SubmitGeneticCounsellorRequestResponse>
+      submitGeneticCounsellorRequest($grpc.ServiceCall call,
+          $0.SubmitGeneticCounsellorRequestRequest request);
+
+  $async.Future<$0.RotateGenomicEncryptionKeyOrPurgeResponse>
+      rotateGenomicEncryptionKeyOrPurge_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RotateGenomicEncryptionKeyOrPurgeRequest>
+              $request) async {
+    return rotateGenomicEncryptionKeyOrPurge($call, await $request);
+  }
+
+  $async.Future<$0.RotateGenomicEncryptionKeyOrPurgeResponse>
+      rotateGenomicEncryptionKeyOrPurge($grpc.ServiceCall call,
+          $0.RotateGenomicEncryptionKeyOrPurgeRequest request);
+
+  $async.Future<$0.GetClinicianCareTeamOverviewResponse>
+      getClinicianCareTeamOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetClinicianCareTeamOverviewRequest>
+              $request) async {
+    return getClinicianCareTeamOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetClinicianCareTeamOverviewResponse>
+      getClinicianCareTeamOverview($grpc.ServiceCall call,
+          $0.GetClinicianCareTeamOverviewRequest request);
+
+  $async.Future<$0.CreateScopedCareTeamGrantResponse>
+      createScopedCareTeamGrant_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CreateScopedCareTeamGrantRequest> $request) async {
+    return createScopedCareTeamGrant($call, await $request);
+  }
+
+  $async.Future<$0.CreateScopedCareTeamGrantResponse> createScopedCareTeamGrant(
+      $grpc.ServiceCall call, $0.CreateScopedCareTeamGrantRequest request);
+
+  $async.Future<$0.RevokeScopedCareTeamGrantResponse>
+      revokeScopedCareTeamGrant_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeScopedCareTeamGrantRequest> $request) async {
+    return revokeScopedCareTeamGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeScopedCareTeamGrantResponse> revokeScopedCareTeamGrant(
+      $grpc.ServiceCall call, $0.RevokeScopedCareTeamGrantRequest request);
+
+  $async.Future<$0.RecordClinicianDispositionResponse>
+      recordClinicianDisposition_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordClinicianDispositionRequest> $request) async {
+    return recordClinicianDisposition($call, await $request);
+  }
+
+  $async.Future<$0.RecordClinicianDispositionResponse>
+      recordClinicianDisposition(
+          $grpc.ServiceCall call, $0.RecordClinicianDispositionRequest request);
+
+  $async.Future<$0.ExportScopedCareTeamBundleResponse>
+      exportScopedCareTeamBundle_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ExportScopedCareTeamBundleRequest> $request) async {
+    return exportScopedCareTeamBundle($call, await $request);
+  }
+
+  $async.Future<$0.ExportScopedCareTeamBundleResponse>
+      exportScopedCareTeamBundle(
+          $grpc.ServiceCall call, $0.ExportScopedCareTeamBundleRequest request);
+
+  $async.Future<$0.SubmitClinicianQuestionPacketResponse>
+      submitClinicianQuestionPacket_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitClinicianQuestionPacketRequest>
+              $request) async {
+    return submitClinicianQuestionPacket($call, await $request);
+  }
+
+  $async.Future<$0.SubmitClinicianQuestionPacketResponse>
+      submitClinicianQuestionPacket($grpc.ServiceCall call,
+          $0.SubmitClinicianQuestionPacketRequest request);
+
+  $async.Future<$0.GetChangeEscalationOverviewResponse>
+      getChangeEscalationOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetChangeEscalationOverviewRequest> $request) async {
+    return getChangeEscalationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetChangeEscalationOverviewResponse>
+      getChangeEscalationOverview($grpc.ServiceCall call,
+          $0.GetChangeEscalationOverviewRequest request);
+
+  $async.Future<$0.EvaluateMultiSignalChangeEscalationResponse>
+      evaluateMultiSignalChangeEscalation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EvaluateMultiSignalChangeEscalationRequest>
+              $request) async {
+    return evaluateMultiSignalChangeEscalation($call, await $request);
+  }
+
+  $async.Future<$0.EvaluateMultiSignalChangeEscalationResponse>
+      evaluateMultiSignalChangeEscalation($grpc.ServiceCall call,
+          $0.EvaluateMultiSignalChangeEscalationRequest request);
+
+  $async.Future<$0.UpdateChangeEscalationDispositionResponse>
+      updateChangeEscalationDisposition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateChangeEscalationDispositionRequest>
+              $request) async {
+    return updateChangeEscalationDisposition($call, await $request);
+  }
+
+  $async.Future<$0.UpdateChangeEscalationDispositionResponse>
+      updateChangeEscalationDisposition($grpc.ServiceCall call,
+          $0.UpdateChangeEscalationDispositionRequest request);
+
+  $async.Future<$0.CreateCareNavigationHandoffResponse>
+      createCareNavigationHandoff_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.CreateCareNavigationHandoffRequest> $request) async {
+    return createCareNavigationHandoff($call, await $request);
+  }
+
+  $async.Future<$0.CreateCareNavigationHandoffResponse>
+      createCareNavigationHandoff($grpc.ServiceCall call,
+          $0.CreateCareNavigationHandoffRequest request);
+
+  $async.Future<$0.UpdateCareNavigationHandoffStateResponse>
+      updateCareNavigationHandoffState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCareNavigationHandoffStateRequest>
+              $request) async {
+    return updateCareNavigationHandoffState($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCareNavigationHandoffStateResponse>
+      updateCareNavigationHandoffState($grpc.ServiceCall call,
+          $0.UpdateCareNavigationHandoffStateRequest request);
+
+  $async.Future<$0.UpsertCareNavigationOptionResponse>
+      upsertCareNavigationOption_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertCareNavigationOptionRequest> $request) async {
+    return upsertCareNavigationOption($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCareNavigationOptionResponse>
+      upsertCareNavigationOption(
+          $grpc.ServiceCall call, $0.UpsertCareNavigationOptionRequest request);
+
+  $async.Future<$0.GetSleepCircadianStudioOverviewResponse>
+      getSleepCircadianStudioOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetSleepCircadianStudioOverviewRequest>
+              $request) async {
+    return getSleepCircadianStudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetSleepCircadianStudioOverviewResponse>
+      getSleepCircadianStudioOverview($grpc.ServiceCall call,
+          $0.GetSleepCircadianStudioOverviewRequest request);
+
+  $async.Future<$0.RecordSleepAndExposureLogResponse>
+      recordSleepAndExposureLog_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordSleepAndExposureLogRequest> $request) async {
+    return recordSleepAndExposureLog($call, await $request);
+  }
+
+  $async.Future<$0.RecordSleepAndExposureLogResponse> recordSleepAndExposureLog(
+      $grpc.ServiceCall call, $0.RecordSleepAndExposureLogRequest request);
+
+  $async.Future<$0.UpsertCircadianRoutineResponse> upsertCircadianRoutine_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertCircadianRoutineRequest> $request) async {
+    return upsertCircadianRoutine($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCircadianRoutineResponse> upsertCircadianRoutine(
+      $grpc.ServiceCall call, $0.UpsertCircadianRoutineRequest request);
+
+  $async.Future<$0.UpdateCircadianCrossPillarGrantResponse>
+      updateCircadianCrossPillarGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCircadianCrossPillarGrantRequest>
+              $request) async {
+    return updateCircadianCrossPillarGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCircadianCrossPillarGrantResponse>
+      updateCircadianCrossPillarGrant($grpc.ServiceCall call,
+          $0.UpdateCircadianCrossPillarGrantRequest request);
+
+  $async.Future<$0.UpsertSleepSensorCapabilityResponse>
+      upsertSleepSensorCapability_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertSleepSensorCapabilityRequest> $request) async {
+    return upsertSleepSensorCapability($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSleepSensorCapabilityResponse>
+      upsertSleepSensorCapability($grpc.ServiceCall call,
+          $0.UpsertSleepSensorCapabilityRequest request);
+
+  $async.Future<$0.GenerateCircadianTravelOrShiftPlanResponse>
+      generateCircadianTravelOrShiftPlan_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateCircadianTravelOrShiftPlanRequest>
+              $request) async {
+    return generateCircadianTravelOrShiftPlan($call, await $request);
+  }
+
+  $async.Future<$0.GenerateCircadianTravelOrShiftPlanResponse>
+      generateCircadianTravelOrShiftPlan($grpc.ServiceCall call,
+          $0.GenerateCircadianTravelOrShiftPlanRequest request);
+
+  $async.Future<$0.GetResearchParticipationOverviewResponse>
+      getResearchParticipationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetResearchParticipationOverviewRequest>
+              $request) async {
+    return getResearchParticipationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetResearchParticipationOverviewResponse>
+      getResearchParticipationOverview($grpc.ServiceCall call,
+          $0.GetResearchParticipationOverviewRequest request);
+
+  $async.Future<$0.RunLocalStudyPreScreenResponse> runLocalStudyPreScreen_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RunLocalStudyPreScreenRequest> $request) async {
+    return runLocalStudyPreScreen($call, await $request);
+  }
+
+  $async.Future<$0.RunLocalStudyPreScreenResponse> runLocalStudyPreScreen(
+      $grpc.ServiceCall call, $0.RunLocalStudyPreScreenRequest request);
+
+  $async.Future<$0.EnrollOrUpdateResearchStudyConsentResponse>
+      enrollOrUpdateResearchStudyConsent_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EnrollOrUpdateResearchStudyConsentRequest>
+              $request) async {
+    return enrollOrUpdateResearchStudyConsent($call, await $request);
+  }
+
+  $async.Future<$0.EnrollOrUpdateResearchStudyConsentResponse>
+      enrollOrUpdateResearchStudyConsent($grpc.ServiceCall call,
+          $0.EnrollOrUpdateResearchStudyConsentRequest request);
+
+  $async.Future<$0.WithdrawResearchStudyConsentResponse>
+      withdrawResearchStudyConsent_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.WithdrawResearchStudyConsentRequest>
+              $request) async {
+    return withdrawResearchStudyConsent($call, await $request);
+  }
+
+  $async.Future<$0.WithdrawResearchStudyConsentResponse>
+      withdrawResearchStudyConsent($grpc.ServiceCall call,
+          $0.WithdrawResearchStudyConsentRequest request);
+
+  $async.Future<$0.RecordResearchContributionMilestoneResponse>
+      recordResearchContributionMilestone_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordResearchContributionMilestoneRequest>
+              $request) async {
+    return recordResearchContributionMilestone($call, await $request);
+  }
+
+  $async.Future<$0.RecordResearchContributionMilestoneResponse>
+      recordResearchContributionMilestone($grpc.ServiceCall call,
+          $0.RecordResearchContributionMilestoneRequest request);
+
+  $async.Future<$0.UpsertResearchStudyResponse> upsertResearchStudy_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertResearchStudyRequest> $request) async {
+    return upsertResearchStudy($call, await $request);
+  }
+
+  $async.Future<$0.UpsertResearchStudyResponse> upsertResearchStudy(
+      $grpc.ServiceCall call, $0.UpsertResearchStudyRequest request);
+
+  $async.Future<$0.GetPortableHealthDossierOverviewResponse>
+      getPortableHealthDossierOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPortableHealthDossierOverviewRequest>
+              $request) async {
+    return getPortableHealthDossierOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetPortableHealthDossierOverviewResponse>
+      getPortableHealthDossierOverview($grpc.ServiceCall call,
+          $0.GetPortableHealthDossierOverviewRequest request);
+
+  $async.Future<$0.UpsertPortableHealthDossierResponse>
+      upsertPortableHealthDossier_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertPortableHealthDossierRequest> $request) async {
+    return upsertPortableHealthDossier($call, await $request);
+  }
+
+  $async.Future<$0.UpsertPortableHealthDossierResponse>
+      upsertPortableHealthDossier($grpc.ServiceCall call,
+          $0.UpsertPortableHealthDossierRequest request);
+
+  $async.Future<$0.ConfirmPortableDossierFreshnessResponse>
+      confirmPortableDossierFreshness_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmPortableDossierFreshnessRequest>
+              $request) async {
+    return confirmPortableDossierFreshness($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmPortableDossierFreshnessResponse>
+      confirmPortableDossierFreshness($grpc.ServiceCall call,
+          $0.ConfirmPortableDossierFreshnessRequest request);
+
+  $async.Future<$0.IssueDossierAccessGrantResponse> issueDossierAccessGrant_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.IssueDossierAccessGrantRequest> $request) async {
+    return issueDossierAccessGrant($call, await $request);
+  }
+
+  $async.Future<$0.IssueDossierAccessGrantResponse> issueDossierAccessGrant(
+      $grpc.ServiceCall call, $0.IssueDossierAccessGrantRequest request);
+
+  $async.Future<$0.RevokeDossierAccessGrantResponse>
+      revokeDossierAccessGrant_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeDossierAccessGrantRequest> $request) async {
+    return revokeDossierAccessGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeDossierAccessGrantResponse> revokeDossierAccessGrant(
+      $grpc.ServiceCall call, $0.RevokeDossierAccessGrantRequest request);
+
+  $async.Future<$0.UpdateLegacyDirectiveReferenceResponse>
+      updateLegacyDirectiveReference_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateLegacyDirectiveReferenceRequest>
+              $request) async {
+    return updateLegacyDirectiveReference($call, await $request);
+  }
+
+  $async.Future<$0.UpdateLegacyDirectiveReferenceResponse>
+      updateLegacyDirectiveReference($grpc.ServiceCall call,
+          $0.UpdateLegacyDirectiveReferenceRequest request);
+
+  $async.Future<$0.GetGlobalCertificationOverviewResponse>
+      getGlobalCertificationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetGlobalCertificationOverviewRequest>
+              $request) async {
+    return getGlobalCertificationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetGlobalCertificationOverviewResponse>
+      getGlobalCertificationOverview($grpc.ServiceCall call,
+          $0.GetGlobalCertificationOverviewRequest request);
+
+  $async.Future<$0.UpdateGlobalAccessibilityProfileResponse>
+      updateGlobalAccessibilityProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateGlobalAccessibilityProfileRequest>
+              $request) async {
+    return updateGlobalAccessibilityProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdateGlobalAccessibilityProfileResponse>
+      updateGlobalAccessibilityProfile($grpc.ServiceCall call,
+          $0.UpdateGlobalAccessibilityProfileRequest request);
+
+  $async.Future<$0.RunHealthMigrationImportOrExportJobResponse>
+      runHealthMigrationImportOrExportJob_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunHealthMigrationImportOrExportJobRequest>
+              $request) async {
+    return runHealthMigrationImportOrExportJob($call, await $request);
+  }
+
+  $async.Future<$0.RunHealthMigrationImportOrExportJobResponse>
+      runHealthMigrationImportOrExportJob($grpc.ServiceCall call,
+          $0.RunHealthMigrationImportOrExportJobRequest request);
+
+  $async.Future<$0.UpsertHorizontalCertificationCheckResponse>
+      upsertHorizontalCertificationCheck_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertHorizontalCertificationCheckRequest>
+              $request) async {
+    return upsertHorizontalCertificationCheck($call, await $request);
+  }
+
+  $async.Future<$0.UpsertHorizontalCertificationCheckResponse>
+      upsertHorizontalCertificationCheck($grpc.ServiceCall call,
+          $0.UpsertHorizontalCertificationCheckRequest request);
+
+  $async.Future<$0.VerifyUnitLocalizationLosslessnessResponse>
+      verifyUnitLocalizationLosslessness_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyUnitLocalizationLosslessnessRequest>
+              $request) async {
+    return verifyUnitLocalizationLosslessness($call, await $request);
+  }
+
+  $async.Future<$0.VerifyUnitLocalizationLosslessnessResponse>
+      verifyUnitLocalizationLosslessness($grpc.ServiceCall call,
+          $0.VerifyUnitLocalizationLosslessnessRequest request);
+
+  $async.Future<$0.RunOfflineAndManualParityAuditResponse>
+      runOfflineAndManualParityAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunOfflineAndManualParityAuditRequest>
+              $request) async {
+    return runOfflineAndManualParityAudit($call, await $request);
+  }
+
+  $async.Future<$0.RunOfflineAndManualParityAuditResponse>
+      runOfflineAndManualParityAudit($grpc.ServiceCall call,
+          $0.RunOfflineAndManualParityAuditRequest request);
 }

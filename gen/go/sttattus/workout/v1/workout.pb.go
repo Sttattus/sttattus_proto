@@ -11811,6 +11811,15180 @@ func (x *GetRecoveryScoreResponse) GetApexLinked() bool {
 	return false
 }
 
+type AdaptiveProgressionRuleItem struct {
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Id       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	RuleCode string                 `protobuf:"bytes,2,opt,name=rule_code,json=ruleCode,proto3" json:"rule_code,omitempty"`
+	Title    string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
+	// linear | double_progression | percentage_1rm | rpe_rir_autoreg |
+	// velocity_based | top_set_backoff | block_periodization | daily_undulating |
+	// conjugate | endurance_zones | custom_deterministic
+	ProgressionModel           string  `protobuf:"bytes,4,opt,name=progression_model,json=progressionModel,proto3" json:"progression_model,omitempty"`
+	GoalFocus                  string  `protobuf:"bytes,5,opt,name=goal_focus,json=goalFocus,proto3" json:"goal_focus,omitempty"`
+	DoseFormulaSummary         string  `protobuf:"bytes,6,opt,name=dose_formula_summary,json=doseFormulaSummary,proto3" json:"dose_formula_summary,omitempty"`
+	DeloadTriggerPolicy        string  `protobuf:"bytes,7,opt,name=deload_trigger_policy,json=deloadTriggerPolicy,proto3" json:"deload_trigger_policy,omitempty"`
+	MaxWeeklyVolumeJumpPct     float64 `protobuf:"fixed64,8,opt,name=max_weekly_volume_jump_pct,json=maxWeeklyVolumeJumpPct,proto3" json:"max_weekly_volume_jump_pct,omitempty"`
+	ContraindicationGuardrails string  `protobuf:"bytes,9,opt,name=contraindication_guardrails,json=contraindicationGuardrails,proto3" json:"contraindication_guardrails,omitempty"`
+	Status                     string  `protobuf:"bytes,10,opt,name=status,proto3" json:"status,omitempty"` // active | draft | withdrawn
+	UpdatedAtUnix              int64   `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AdaptiveProgressionRuleItem) Reset() {
+	*x = AdaptiveProgressionRuleItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdaptiveProgressionRuleItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdaptiveProgressionRuleItem) ProtoMessage() {}
+
+func (x *AdaptiveProgressionRuleItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdaptiveProgressionRuleItem.ProtoReflect.Descriptor instead.
+func (*AdaptiveProgressionRuleItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *AdaptiveProgressionRuleItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetRuleCode() string {
+	if x != nil {
+		return x.RuleCode
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetProgressionModel() string {
+	if x != nil {
+		return x.ProgressionModel
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetGoalFocus() string {
+	if x != nil {
+		return x.GoalFocus
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetDoseFormulaSummary() string {
+	if x != nil {
+		return x.DoseFormulaSummary
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetDeloadTriggerPolicy() string {
+	if x != nil {
+		return x.DeloadTriggerPolicy
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetMaxWeeklyVolumeJumpPct() float64 {
+	if x != nil {
+		return x.MaxWeeklyVolumeJumpPct
+	}
+	return 0
+}
+
+func (x *AdaptiveProgressionRuleItem) GetContraindicationGuardrails() string {
+	if x != nil {
+		return x.ContraindicationGuardrails
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AdaptiveProgressionRuleItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type AdaptiveProgrammeVersionItem struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProgrammeSlug string                 `protobuf:"bytes,3,opt,name=programme_slug,json=programmeSlug,proto3" json:"programme_slug,omitempty"`
+	Title         string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	VersionNumber int32                  `protobuf:"varint,5,opt,name=version_number,json=versionNumber,proto3" json:"version_number,omitempty"`
+	// deterministic_rule_engine | ai_assisted_draft | coach_authored
+	BuilderSource string `protobuf:"bytes,6,opt,name=builder_source,json=builderSource,proto3" json:"builder_source,omitempty"`
+	// active_accepted | draft_pending_acceptance | superseded | rolled_back
+	AcceptanceStatus       string `protobuf:"bytes,7,opt,name=acceptance_status,json=acceptanceStatus,proto3" json:"acceptance_status,omitempty"`
+	GoalAndSport           string `protobuf:"bytes,8,opt,name=goal_and_sport,json=goalAndSport,proto3" json:"goal_and_sport,omitempty"`
+	SessionsPerWeek        int32  `protobuf:"varint,9,opt,name=sessions_per_week,json=sessionsPerWeek,proto3" json:"sessions_per_week,omitempty"`
+	SessionDurationMinutes int32  `protobuf:"varint,10,opt,name=session_duration_minutes,json=sessionDurationMinutes,proto3" json:"session_duration_minutes,omitempty"`
+	ProgressionModel       string `protobuf:"bytes,11,opt,name=progression_model,json=progressionModel,proto3" json:"progression_model,omitempty"`
+	WhyThisPrescription    string `protobuf:"bytes,12,opt,name=why_this_prescription,json=whyThisPrescription,proto3" json:"why_this_prescription,omitempty"`
+	AthleteEvidenceSummary string `protobuf:"bytes,13,opt,name=athlete_evidence_summary,json=athleteEvidenceSummary,proto3" json:"athlete_evidence_summary,omitempty"`
+	CoachLockedSlots       string `protobuf:"bytes,14,opt,name=coach_locked_slots,json=coachLockedSlots,proto3" json:"coach_locked_slots,omitempty"`
+	CreatedAtUnix          int64  `protobuf:"varint,15,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *AdaptiveProgrammeVersionItem) Reset() {
+	*x = AdaptiveProgrammeVersionItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdaptiveProgrammeVersionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdaptiveProgrammeVersionItem) ProtoMessage() {}
+
+func (x *AdaptiveProgrammeVersionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdaptiveProgrammeVersionItem.ProtoReflect.Descriptor instead.
+func (*AdaptiveProgrammeVersionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{189}
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetProgrammeSlug() string {
+	if x != nil {
+		return x.ProgrammeSlug
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetVersionNumber() int32 {
+	if x != nil {
+		return x.VersionNumber
+	}
+	return 0
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetBuilderSource() string {
+	if x != nil {
+		return x.BuilderSource
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetAcceptanceStatus() string {
+	if x != nil {
+		return x.AcceptanceStatus
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetGoalAndSport() string {
+	if x != nil {
+		return x.GoalAndSport
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetSessionsPerWeek() int32 {
+	if x != nil {
+		return x.SessionsPerWeek
+	}
+	return 0
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetSessionDurationMinutes() int32 {
+	if x != nil {
+		return x.SessionDurationMinutes
+	}
+	return 0
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetProgressionModel() string {
+	if x != nil {
+		return x.ProgressionModel
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetWhyThisPrescription() string {
+	if x != nil {
+		return x.WhyThisPrescription
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetAthleteEvidenceSummary() string {
+	if x != nil {
+		return x.AthleteEvidenceSummary
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetCoachLockedSlots() string {
+	if x != nil {
+		return x.CoachLockedSlots
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammeVersionItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type AdaptiveReplanEventItem struct {
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	VersionId string                 `protobuf:"bytes,3,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
+	// missed_days | travel_hotel | equipment_loss | fatigue_spike |
+	// pain_flag | illness_recovery | competition_taper | calendar_shift
+	TriggerKind                    string `protobuf:"bytes,4,opt,name=trigger_kind,json=triggerKind,proto3" json:"trigger_kind,omitempty"`
+	DaysAffected                   int32  `protobuf:"varint,5,opt,name=days_affected,json=daysAffected,proto3" json:"days_affected,omitempty"`
+	BeforePlanSummary              string `protobuf:"bytes,6,opt,name=before_plan_summary,json=beforePlanSummary,proto3" json:"before_plan_summary,omitempty"`
+	AfterPlanSummary               string `protobuf:"bytes,7,opt,name=after_plan_summary,json=afterPlanSummary,proto3" json:"after_plan_summary,omitempty"`
+	ExplanationRationale           string `protobuf:"bytes,8,opt,name=explanation_rationale,json=explanationRationale,proto3" json:"explanation_rationale,omitempty"`
+	UnsafeVolumeCompressionBlocked bool   `protobuf:"varint,9,opt,name=unsafe_volume_compression_blocked,json=unsafeVolumeCompressionBlocked,proto3" json:"unsafe_volume_compression_blocked,omitempty"`
+	CoachLockPreserved             bool   `protobuf:"varint,10,opt,name=coach_lock_preserved,json=coachLockPreserved,proto3" json:"coach_lock_preserved,omitempty"`
+	Status                         string `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"` // applied | draft_proposed | reverted
+	CreatedAtUnix                  int64  `protobuf:"varint,12,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *AdaptiveReplanEventItem) Reset() {
+	*x = AdaptiveReplanEventItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdaptiveReplanEventItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdaptiveReplanEventItem) ProtoMessage() {}
+
+func (x *AdaptiveReplanEventItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdaptiveReplanEventItem.ProtoReflect.Descriptor instead.
+func (*AdaptiveReplanEventItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *AdaptiveReplanEventItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetVersionId() string {
+	if x != nil {
+		return x.VersionId
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetTriggerKind() string {
+	if x != nil {
+		return x.TriggerKind
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetDaysAffected() int32 {
+	if x != nil {
+		return x.DaysAffected
+	}
+	return 0
+}
+
+func (x *AdaptiveReplanEventItem) GetBeforePlanSummary() string {
+	if x != nil {
+		return x.BeforePlanSummary
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetAfterPlanSummary() string {
+	if x != nil {
+		return x.AfterPlanSummary
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetExplanationRationale() string {
+	if x != nil {
+		return x.ExplanationRationale
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetUnsafeVolumeCompressionBlocked() bool {
+	if x != nil {
+		return x.UnsafeVolumeCompressionBlocked
+	}
+	return false
+}
+
+func (x *AdaptiveReplanEventItem) GetCoachLockPreserved() bool {
+	if x != nil {
+		return x.CoachLockPreserved
+	}
+	return false
+}
+
+func (x *AdaptiveReplanEventItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *AdaptiveReplanEventItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type AdaptiveProgrammingOverview struct {
+	state                  protoimpl.MessageState          `protogen:"open.v1"`
+	ExplainabilityCharter  string                          `protobuf:"bytes,1,opt,name=explainability_charter,json=explainabilityCharter,proto3" json:"explainability_charter,omitempty"`
+	SafeReplanningCharter  string                          `protobuf:"bytes,2,opt,name=safe_replanning_charter,json=safeReplanningCharter,proto3" json:"safe_replanning_charter,omitempty"`
+	DraftGovernanceCharter string                          `protobuf:"bytes,3,opt,name=draft_governance_charter,json=draftGovernanceCharter,proto3" json:"draft_governance_charter,omitempty"`
+	Rules                  []*AdaptiveProgressionRuleItem  `protobuf:"bytes,4,rep,name=rules,proto3" json:"rules,omitempty"`
+	Versions               []*AdaptiveProgrammeVersionItem `protobuf:"bytes,5,rep,name=versions,proto3" json:"versions,omitempty"`
+	ReplanEvents           []*AdaptiveReplanEventItem      `protobuf:"bytes,6,rep,name=replan_events,json=replanEvents,proto3" json:"replan_events,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *AdaptiveProgrammingOverview) Reset() {
+	*x = AdaptiveProgrammingOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdaptiveProgrammingOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdaptiveProgrammingOverview) ProtoMessage() {}
+
+func (x *AdaptiveProgrammingOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdaptiveProgrammingOverview.ProtoReflect.Descriptor instead.
+func (*AdaptiveProgrammingOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *AdaptiveProgrammingOverview) GetExplainabilityCharter() string {
+	if x != nil {
+		return x.ExplainabilityCharter
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammingOverview) GetSafeReplanningCharter() string {
+	if x != nil {
+		return x.SafeReplanningCharter
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammingOverview) GetDraftGovernanceCharter() string {
+	if x != nil {
+		return x.DraftGovernanceCharter
+	}
+	return ""
+}
+
+func (x *AdaptiveProgrammingOverview) GetRules() []*AdaptiveProgressionRuleItem {
+	if x != nil {
+		return x.Rules
+	}
+	return nil
+}
+
+func (x *AdaptiveProgrammingOverview) GetVersions() []*AdaptiveProgrammeVersionItem {
+	if x != nil {
+		return x.Versions
+	}
+	return nil
+}
+
+func (x *AdaptiveProgrammingOverview) GetReplanEvents() []*AdaptiveReplanEventItem {
+	if x != nil {
+		return x.ReplanEvents
+	}
+	return nil
+}
+
+type GetAdaptiveProgrammingOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdaptiveProgrammingOverviewRequest) Reset() {
+	*x = GetAdaptiveProgrammingOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdaptiveProgrammingOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdaptiveProgrammingOverviewRequest) ProtoMessage() {}
+
+func (x *GetAdaptiveProgrammingOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdaptiveProgrammingOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetAdaptiveProgrammingOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{192}
+}
+
+type GetAdaptiveProgrammingOverviewResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Overview      *AdaptiveProgrammingOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetAdaptiveProgrammingOverviewResponse) Reset() {
+	*x = GetAdaptiveProgrammingOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetAdaptiveProgrammingOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAdaptiveProgrammingOverviewResponse) ProtoMessage() {}
+
+func (x *GetAdaptiveProgrammingOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAdaptiveProgrammingOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetAdaptiveProgrammingOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *GetAdaptiveProgrammingOverviewResponse) GetOverview() *AdaptiveProgrammingOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type GenerateOrUpdateProgrammeVersionRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	ProgrammeSlug          string                 `protobuf:"bytes,1,opt,name=programme_slug,json=programmeSlug,proto3" json:"programme_slug,omitempty"`
+	Title                  string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	BuilderSource          string                 `protobuf:"bytes,3,opt,name=builder_source,json=builderSource,proto3" json:"builder_source,omitempty"`
+	GoalAndSport           string                 `protobuf:"bytes,4,opt,name=goal_and_sport,json=goalAndSport,proto3" json:"goal_and_sport,omitempty"`
+	SessionsPerWeek        int32                  `protobuf:"varint,5,opt,name=sessions_per_week,json=sessionsPerWeek,proto3" json:"sessions_per_week,omitempty"`
+	SessionDurationMinutes int32                  `protobuf:"varint,6,opt,name=session_duration_minutes,json=sessionDurationMinutes,proto3" json:"session_duration_minutes,omitempty"`
+	ProgressionModel       string                 `protobuf:"bytes,7,opt,name=progression_model,json=progressionModel,proto3" json:"progression_model,omitempty"`
+	WhyThisPrescription    string                 `protobuf:"bytes,8,opt,name=why_this_prescription,json=whyThisPrescription,proto3" json:"why_this_prescription,omitempty"`
+	AthleteEvidenceSummary string                 `protobuf:"bytes,9,opt,name=athlete_evidence_summary,json=athleteEvidenceSummary,proto3" json:"athlete_evidence_summary,omitempty"`
+	CoachLockedSlots       string                 `protobuf:"bytes,10,opt,name=coach_locked_slots,json=coachLockedSlots,proto3" json:"coach_locked_slots,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) Reset() {
+	*x = GenerateOrUpdateProgrammeVersionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateOrUpdateProgrammeVersionRequest) ProtoMessage() {}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateOrUpdateProgrammeVersionRequest.ProtoReflect.Descriptor instead.
+func (*GenerateOrUpdateProgrammeVersionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetProgrammeSlug() string {
+	if x != nil {
+		return x.ProgrammeSlug
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetBuilderSource() string {
+	if x != nil {
+		return x.BuilderSource
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetGoalAndSport() string {
+	if x != nil {
+		return x.GoalAndSport
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetSessionsPerWeek() int32 {
+	if x != nil {
+		return x.SessionsPerWeek
+	}
+	return 0
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetSessionDurationMinutes() int32 {
+	if x != nil {
+		return x.SessionDurationMinutes
+	}
+	return 0
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetProgressionModel() string {
+	if x != nil {
+		return x.ProgressionModel
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetWhyThisPrescription() string {
+	if x != nil {
+		return x.WhyThisPrescription
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetAthleteEvidenceSummary() string {
+	if x != nil {
+		return x.AthleteEvidenceSummary
+	}
+	return ""
+}
+
+func (x *GenerateOrUpdateProgrammeVersionRequest) GetCoachLockedSlots() string {
+	if x != nil {
+		return x.CoachLockedSlots
+	}
+	return ""
+}
+
+type GenerateOrUpdateProgrammeVersionResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Version       *AdaptiveProgrammeVersionItem `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GenerateOrUpdateProgrammeVersionResponse) Reset() {
+	*x = GenerateOrUpdateProgrammeVersionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateOrUpdateProgrammeVersionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateOrUpdateProgrammeVersionResponse) ProtoMessage() {}
+
+func (x *GenerateOrUpdateProgrammeVersionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateOrUpdateProgrammeVersionResponse.ProtoReflect.Descriptor instead.
+func (*GenerateOrUpdateProgrammeVersionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *GenerateOrUpdateProgrammeVersionResponse) GetVersion() *AdaptiveProgrammeVersionItem {
+	if x != nil {
+		return x.Version
+	}
+	return nil
+}
+
+type DecideProgrammeDraftAcceptanceRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	VersionId     string                 `protobuf:"bytes,1,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
+	Decision      string                 `protobuf:"bytes,2,opt,name=decision,proto3" json:"decision,omitempty"` // accept | reject
+	DecisionNote  string                 `protobuf:"bytes,3,opt,name=decision_note,json=decisionNote,proto3" json:"decision_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) Reset() {
+	*x = DecideProgrammeDraftAcceptanceRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DecideProgrammeDraftAcceptanceRequest) ProtoMessage() {}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DecideProgrammeDraftAcceptanceRequest.ProtoReflect.Descriptor instead.
+func (*DecideProgrammeDraftAcceptanceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) GetVersionId() string {
+	if x != nil {
+		return x.VersionId
+	}
+	return ""
+}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) GetDecision() string {
+	if x != nil {
+		return x.Decision
+	}
+	return ""
+}
+
+func (x *DecideProgrammeDraftAcceptanceRequest) GetDecisionNote() string {
+	if x != nil {
+		return x.DecisionNote
+	}
+	return ""
+}
+
+type DecideProgrammeDraftAcceptanceResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Version       *AdaptiveProgrammeVersionItem `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DecideProgrammeDraftAcceptanceResponse) Reset() {
+	*x = DecideProgrammeDraftAcceptanceResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DecideProgrammeDraftAcceptanceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DecideProgrammeDraftAcceptanceResponse) ProtoMessage() {}
+
+func (x *DecideProgrammeDraftAcceptanceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DecideProgrammeDraftAcceptanceResponse.ProtoReflect.Descriptor instead.
+func (*DecideProgrammeDraftAcceptanceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *DecideProgrammeDraftAcceptanceResponse) GetVersion() *AdaptiveProgrammeVersionItem {
+	if x != nil {
+		return x.Version
+	}
+	return nil
+}
+
+type TriggerSafeAdaptiveReplanRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	VersionId      string                 `protobuf:"bytes,1,opt,name=version_id,json=versionId,proto3" json:"version_id,omitempty"`
+	TriggerKind    string                 `protobuf:"bytes,2,opt,name=trigger_kind,json=triggerKind,proto3" json:"trigger_kind,omitempty"`
+	DaysAffected   int32                  `protobuf:"varint,3,opt,name=days_affected,json=daysAffected,proto3" json:"days_affected,omitempty"`
+	ConstraintNote string                 `protobuf:"bytes,4,opt,name=constraint_note,json=constraintNote,proto3" json:"constraint_note,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) Reset() {
+	*x = TriggerSafeAdaptiveReplanRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerSafeAdaptiveReplanRequest) ProtoMessage() {}
+
+func (x *TriggerSafeAdaptiveReplanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerSafeAdaptiveReplanRequest.ProtoReflect.Descriptor instead.
+func (*TriggerSafeAdaptiveReplanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) GetVersionId() string {
+	if x != nil {
+		return x.VersionId
+	}
+	return ""
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) GetTriggerKind() string {
+	if x != nil {
+		return x.TriggerKind
+	}
+	return ""
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) GetDaysAffected() int32 {
+	if x != nil {
+		return x.DaysAffected
+	}
+	return 0
+}
+
+func (x *TriggerSafeAdaptiveReplanRequest) GetConstraintNote() string {
+	if x != nil {
+		return x.ConstraintNote
+	}
+	return ""
+}
+
+type TriggerSafeAdaptiveReplanResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	ReplanEvent   *AdaptiveReplanEventItem `protobuf:"bytes,1,opt,name=replan_event,json=replanEvent,proto3" json:"replan_event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TriggerSafeAdaptiveReplanResponse) Reset() {
+	*x = TriggerSafeAdaptiveReplanResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerSafeAdaptiveReplanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerSafeAdaptiveReplanResponse) ProtoMessage() {}
+
+func (x *TriggerSafeAdaptiveReplanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerSafeAdaptiveReplanResponse.ProtoReflect.Descriptor instead.
+func (*TriggerSafeAdaptiveReplanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *TriggerSafeAdaptiveReplanResponse) GetReplanEvent() *AdaptiveReplanEventItem {
+	if x != nil {
+		return x.ReplanEvent
+	}
+	return nil
+}
+
+type UpsertAdaptiveProgressionRuleRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	RuleCode                   string                 `protobuf:"bytes,1,opt,name=rule_code,json=ruleCode,proto3" json:"rule_code,omitempty"`
+	Title                      string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	ProgressionModel           string                 `protobuf:"bytes,3,opt,name=progression_model,json=progressionModel,proto3" json:"progression_model,omitempty"`
+	GoalFocus                  string                 `protobuf:"bytes,4,opt,name=goal_focus,json=goalFocus,proto3" json:"goal_focus,omitempty"`
+	DoseFormulaSummary         string                 `protobuf:"bytes,5,opt,name=dose_formula_summary,json=doseFormulaSummary,proto3" json:"dose_formula_summary,omitempty"`
+	DeloadTriggerPolicy        string                 `protobuf:"bytes,6,opt,name=deload_trigger_policy,json=deloadTriggerPolicy,proto3" json:"deload_trigger_policy,omitempty"`
+	MaxWeeklyVolumeJumpPct     float64                `protobuf:"fixed64,7,opt,name=max_weekly_volume_jump_pct,json=maxWeeklyVolumeJumpPct,proto3" json:"max_weekly_volume_jump_pct,omitempty"`
+	ContraindicationGuardrails string                 `protobuf:"bytes,8,opt,name=contraindication_guardrails,json=contraindicationGuardrails,proto3" json:"contraindication_guardrails,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) Reset() {
+	*x = UpsertAdaptiveProgressionRuleRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAdaptiveProgressionRuleRequest) ProtoMessage() {}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAdaptiveProgressionRuleRequest.ProtoReflect.Descriptor instead.
+func (*UpsertAdaptiveProgressionRuleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{200}
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetRuleCode() string {
+	if x != nil {
+		return x.RuleCode
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetProgressionModel() string {
+	if x != nil {
+		return x.ProgressionModel
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetGoalFocus() string {
+	if x != nil {
+		return x.GoalFocus
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetDoseFormulaSummary() string {
+	if x != nil {
+		return x.DoseFormulaSummary
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetDeloadTriggerPolicy() string {
+	if x != nil {
+		return x.DeloadTriggerPolicy
+	}
+	return ""
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetMaxWeeklyVolumeJumpPct() float64 {
+	if x != nil {
+		return x.MaxWeeklyVolumeJumpPct
+	}
+	return 0
+}
+
+func (x *UpsertAdaptiveProgressionRuleRequest) GetContraindicationGuardrails() string {
+	if x != nil {
+		return x.ContraindicationGuardrails
+	}
+	return ""
+}
+
+type UpsertAdaptiveProgressionRuleResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Rule          *AdaptiveProgressionRuleItem `protobuf:"bytes,1,opt,name=rule,proto3" json:"rule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertAdaptiveProgressionRuleResponse) Reset() {
+	*x = UpsertAdaptiveProgressionRuleResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAdaptiveProgressionRuleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAdaptiveProgressionRuleResponse) ProtoMessage() {}
+
+func (x *UpsertAdaptiveProgressionRuleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAdaptiveProgressionRuleResponse.ProtoReflect.Descriptor instead.
+func (*UpsertAdaptiveProgressionRuleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *UpsertAdaptiveProgressionRuleResponse) GetRule() *AdaptiveProgressionRuleItem {
+	if x != nil {
+		return x.Rule
+	}
+	return nil
+}
+
+type RollbackProgrammeVersionRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	TargetVersionId string                 `protobuf:"bytes,1,opt,name=target_version_id,json=targetVersionId,proto3" json:"target_version_id,omitempty"`
+	Reason          string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *RollbackProgrammeVersionRequest) Reset() {
+	*x = RollbackProgrammeVersionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RollbackProgrammeVersionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RollbackProgrammeVersionRequest) ProtoMessage() {}
+
+func (x *RollbackProgrammeVersionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RollbackProgrammeVersionRequest.ProtoReflect.Descriptor instead.
+func (*RollbackProgrammeVersionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *RollbackProgrammeVersionRequest) GetTargetVersionId() string {
+	if x != nil {
+		return x.TargetVersionId
+	}
+	return ""
+}
+
+func (x *RollbackProgrammeVersionRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RollbackProgrammeVersionResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	ActiveVersion *AdaptiveProgrammeVersionItem `protobuf:"bytes,1,opt,name=active_version,json=activeVersion,proto3" json:"active_version,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RollbackProgrammeVersionResponse) Reset() {
+	*x = RollbackProgrammeVersionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RollbackProgrammeVersionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RollbackProgrammeVersionResponse) ProtoMessage() {}
+
+func (x *RollbackProgrammeVersionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RollbackProgrammeVersionResponse.ProtoReflect.Descriptor instead.
+func (*RollbackProgrammeVersionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{203}
+}
+
+func (x *RollbackProgrammeVersionResponse) GetActiveVersion() *AdaptiveProgrammeVersionItem {
+	if x != nil {
+		return x.ActiveVersion
+	}
+	return nil
+}
+
+type MovementGraphProfileItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	MovementSlug              string                 `protobuf:"bytes,2,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName              string                 `protobuf:"bytes,3,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	MovementPattern           string                 `protobuf:"bytes,4,opt,name=movement_pattern,json=movementPattern,proto3" json:"movement_pattern,omitempty"`
+	PrimaryMuscles            string                 `protobuf:"bytes,5,opt,name=primary_muscles,json=primaryMuscles,proto3" json:"primary_muscles,omitempty"`
+	JointLoadingProfile       string                 `protobuf:"bytes,6,opt,name=joint_loading_profile,json=jointLoadingProfile,proto3" json:"joint_loading_profile,omitempty"`
+	EquipmentRequired         string                 `protobuf:"bytes,7,opt,name=equipment_required,json=equipmentRequired,proto3" json:"equipment_required,omitempty"`
+	DifficultyTier            string                 `protobuf:"bytes,8,opt,name=difficulty_tier,json=difficultyTier,proto3" json:"difficulty_tier,omitempty"`
+	SkillPrerequisites        string                 `protobuf:"bytes,9,opt,name=skill_prerequisites,json=skillPrerequisites,proto3" json:"skill_prerequisites,omitempty"`
+	RegressionSlug            string                 `protobuf:"bytes,10,opt,name=regression_slug,json=regressionSlug,proto3" json:"regression_slug,omitempty"`
+	ProgressionSlug           string                 `protobuf:"bytes,11,opt,name=progression_slug,json=progressionSlug,proto3" json:"progression_slug,omitempty"`
+	ContraindicationPrompts   string                 `protobuf:"bytes,12,opt,name=contraindication_prompts,json=contraindicationPrompts,proto3" json:"contraindication_prompts,omitempty"`
+	MultiBodyA11YMediaSummary string                 `protobuf:"bytes,13,opt,name=multi_body_a11y_media_summary,json=multiBodyA11yMediaSummary,proto3" json:"multi_body_a11y_media_summary,omitempty"`
+	BreathingBracingSetup     string                 `protobuf:"bytes,14,opt,name=breathing_bracing_setup,json=breathingBracingSetup,proto3" json:"breathing_bracing_setup,omitempty"`
+	CommonErrorsAndCaptions   string                 `protobuf:"bytes,15,opt,name=common_errors_and_captions,json=commonErrorsAndCaptions,proto3" json:"common_errors_and_captions,omitempty"`
+	ReviewStatus              string                 `protobuf:"bytes,16,opt,name=review_status,json=reviewStatus,proto3" json:"review_status,omitempty"` // reviewed_catalog | private_unreviewed | pending_catalog_review
+	UpdatedAtUnix             int64                  `protobuf:"varint,17,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *MovementGraphProfileItem) Reset() {
+	*x = MovementGraphProfileItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MovementGraphProfileItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MovementGraphProfileItem) ProtoMessage() {}
+
+func (x *MovementGraphProfileItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MovementGraphProfileItem.ProtoReflect.Descriptor instead.
+func (*MovementGraphProfileItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *MovementGraphProfileItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetMovementPattern() string {
+	if x != nil {
+		return x.MovementPattern
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetPrimaryMuscles() string {
+	if x != nil {
+		return x.PrimaryMuscles
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetJointLoadingProfile() string {
+	if x != nil {
+		return x.JointLoadingProfile
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetEquipmentRequired() string {
+	if x != nil {
+		return x.EquipmentRequired
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetDifficultyTier() string {
+	if x != nil {
+		return x.DifficultyTier
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetSkillPrerequisites() string {
+	if x != nil {
+		return x.SkillPrerequisites
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetRegressionSlug() string {
+	if x != nil {
+		return x.RegressionSlug
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetProgressionSlug() string {
+	if x != nil {
+		return x.ProgressionSlug
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetContraindicationPrompts() string {
+	if x != nil {
+		return x.ContraindicationPrompts
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetMultiBodyA11YMediaSummary() string {
+	if x != nil {
+		return x.MultiBodyA11YMediaSummary
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetBreathingBracingSetup() string {
+	if x != nil {
+		return x.BreathingBracingSetup
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetCommonErrorsAndCaptions() string {
+	if x != nil {
+		return x.CommonErrorsAndCaptions
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetReviewStatus() string {
+	if x != nil {
+		return x.ReviewStatus
+	}
+	return ""
+}
+
+func (x *MovementGraphProfileItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type MovementSubstitutionEdgeItem struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SourceMovementSlug     string                 `protobuf:"bytes,2,opt,name=source_movement_slug,json=sourceMovementSlug,proto3" json:"source_movement_slug,omitempty"`
+	SubstituteMovementSlug string                 `protobuf:"bytes,3,opt,name=substitute_movement_slug,json=substituteMovementSlug,proto3" json:"substitute_movement_slug,omitempty"`
+	SubstituteMovementName string                 `protobuf:"bytes,4,opt,name=substitute_movement_name,json=substituteMovementName,proto3" json:"substitute_movement_name,omitempty"`
+	ProgrammeIntent        string                 `protobuf:"bytes,5,opt,name=programme_intent,json=programmeIntent,proto3" json:"programme_intent,omitempty"`
+	RequiredEquipment      string                 `protobuf:"bytes,6,opt,name=required_equipment,json=requiredEquipment,proto3" json:"required_equipment,omitempty"`
+	PreservedStimulus      string                 `protobuf:"bytes,7,opt,name=preserved_stimulus,json=preservedStimulus,proto3" json:"preserved_stimulus,omitempty"`
+	LostAttributes         string                 `protobuf:"bytes,8,opt,name=lost_attributes,json=lostAttributes,proto3" json:"lost_attributes,omitempty"`
+	EquivalentDoseFactor   float64                `protobuf:"fixed64,9,opt,name=equivalent_dose_factor,json=equivalentDoseFactor,proto3" json:"equivalent_dose_factor,omitempty"`
+	PainFreeJointFriendly  bool                   `protobuf:"varint,10,opt,name=pain_free_joint_friendly,json=painFreeJointFriendly,proto3" json:"pain_free_joint_friendly,omitempty"`
+	MatchRankScore         int32                  `protobuf:"varint,11,opt,name=match_rank_score,json=matchRankScore,proto3" json:"match_rank_score,omitempty"`
+	UpdatedAtUnix          int64                  `protobuf:"varint,12,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *MovementSubstitutionEdgeItem) Reset() {
+	*x = MovementSubstitutionEdgeItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MovementSubstitutionEdgeItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MovementSubstitutionEdgeItem) ProtoMessage() {}
+
+func (x *MovementSubstitutionEdgeItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MovementSubstitutionEdgeItem.ProtoReflect.Descriptor instead.
+func (*MovementSubstitutionEdgeItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *MovementSubstitutionEdgeItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetSourceMovementSlug() string {
+	if x != nil {
+		return x.SourceMovementSlug
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetSubstituteMovementSlug() string {
+	if x != nil {
+		return x.SubstituteMovementSlug
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetSubstituteMovementName() string {
+	if x != nil {
+		return x.SubstituteMovementName
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetProgrammeIntent() string {
+	if x != nil {
+		return x.ProgrammeIntent
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetRequiredEquipment() string {
+	if x != nil {
+		return x.RequiredEquipment
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetPreservedStimulus() string {
+	if x != nil {
+		return x.PreservedStimulus
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetLostAttributes() string {
+	if x != nil {
+		return x.LostAttributes
+	}
+	return ""
+}
+
+func (x *MovementSubstitutionEdgeItem) GetEquivalentDoseFactor() float64 {
+	if x != nil {
+		return x.EquivalentDoseFactor
+	}
+	return 0
+}
+
+func (x *MovementSubstitutionEdgeItem) GetPainFreeJointFriendly() bool {
+	if x != nil {
+		return x.PainFreeJointFriendly
+	}
+	return false
+}
+
+func (x *MovementSubstitutionEdgeItem) GetMatchRankScore() int32 {
+	if x != nil {
+		return x.MatchRankScore
+	}
+	return 0
+}
+
+func (x *MovementSubstitutionEdgeItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type PersonalTechniqueManualItem struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId               string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MovementSlug         string                 `protobuf:"bytes,3,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName         string                 `protobuf:"bytes,4,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	LocationLabel        string                 `protobuf:"bytes,5,opt,name=location_label,json=locationLabel,proto3" json:"location_label,omitempty"`
+	RackAndSeatSettings  string                 `protobuf:"bytes,6,opt,name=rack_and_seat_settings,json=rackAndSeatSettings,proto3" json:"rack_and_seat_settings,omitempty"`
+	StanceAndGripNotes   string                 `protobuf:"bytes,7,opt,name=stance_and_grip_notes,json=stanceAndGripNotes,proto3" json:"stance_and_grip_notes,omitempty"`
+	PersonalCues         string                 `protobuf:"bytes,8,opt,name=personal_cues,json=personalCues,proto3" json:"personal_cues,omitempty"`
+	CoachInstructionLock string                 `protobuf:"bytes,9,opt,name=coach_instruction_lock,json=coachInstructionLock,proto3" json:"coach_instruction_lock,omitempty"`
+	VisibilityScope      string                 `protobuf:"bytes,10,opt,name=visibility_scope,json=visibilityScope,proto3" json:"visibility_scope,omitempty"` // private_owner | shared_with_coach | submitted_for_review
+	UpdatedAtUnix        int64                  `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *PersonalTechniqueManualItem) Reset() {
+	*x = PersonalTechniqueManualItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PersonalTechniqueManualItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PersonalTechniqueManualItem) ProtoMessage() {}
+
+func (x *PersonalTechniqueManualItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PersonalTechniqueManualItem.ProtoReflect.Descriptor instead.
+func (*PersonalTechniqueManualItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *PersonalTechniqueManualItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetLocationLabel() string {
+	if x != nil {
+		return x.LocationLabel
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetRackAndSeatSettings() string {
+	if x != nil {
+		return x.RackAndSeatSettings
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetStanceAndGripNotes() string {
+	if x != nil {
+		return x.StanceAndGripNotes
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetPersonalCues() string {
+	if x != nil {
+		return x.PersonalCues
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetCoachInstructionLock() string {
+	if x != nil {
+		return x.CoachInstructionLock
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetVisibilityScope() string {
+	if x != nil {
+		return x.VisibilityScope
+	}
+	return ""
+}
+
+func (x *PersonalTechniqueManualItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type MovementIntelligenceOverview struct {
+	state                      protoimpl.MessageState          `protogen:"open.v1"`
+	MovementGraphCharter       string                          `protobuf:"bytes,1,opt,name=movement_graph_charter,json=movementGraphCharter,proto3" json:"movement_graph_charter,omitempty"`
+	SubstitutionHonestyCharter string                          `protobuf:"bytes,2,opt,name=substitution_honesty_charter,json=substitutionHonestyCharter,proto3" json:"substitution_honesty_charter,omitempty"`
+	CustomPrivacyCharter       string                          `protobuf:"bytes,3,opt,name=custom_privacy_charter,json=customPrivacyCharter,proto3" json:"custom_privacy_charter,omitempty"`
+	Profiles                   []*MovementGraphProfileItem     `protobuf:"bytes,4,rep,name=profiles,proto3" json:"profiles,omitempty"`
+	Substitutions              []*MovementSubstitutionEdgeItem `protobuf:"bytes,5,rep,name=substitutions,proto3" json:"substitutions,omitempty"`
+	PersonalManuals            []*PersonalTechniqueManualItem  `protobuf:"bytes,6,rep,name=personal_manuals,json=personalManuals,proto3" json:"personal_manuals,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *MovementIntelligenceOverview) Reset() {
+	*x = MovementIntelligenceOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[207]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MovementIntelligenceOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MovementIntelligenceOverview) ProtoMessage() {}
+
+func (x *MovementIntelligenceOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[207]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MovementIntelligenceOverview.ProtoReflect.Descriptor instead.
+func (*MovementIntelligenceOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{207}
+}
+
+func (x *MovementIntelligenceOverview) GetMovementGraphCharter() string {
+	if x != nil {
+		return x.MovementGraphCharter
+	}
+	return ""
+}
+
+func (x *MovementIntelligenceOverview) GetSubstitutionHonestyCharter() string {
+	if x != nil {
+		return x.SubstitutionHonestyCharter
+	}
+	return ""
+}
+
+func (x *MovementIntelligenceOverview) GetCustomPrivacyCharter() string {
+	if x != nil {
+		return x.CustomPrivacyCharter
+	}
+	return ""
+}
+
+func (x *MovementIntelligenceOverview) GetProfiles() []*MovementGraphProfileItem {
+	if x != nil {
+		return x.Profiles
+	}
+	return nil
+}
+
+func (x *MovementIntelligenceOverview) GetSubstitutions() []*MovementSubstitutionEdgeItem {
+	if x != nil {
+		return x.Substitutions
+	}
+	return nil
+}
+
+func (x *MovementIntelligenceOverview) GetPersonalManuals() []*PersonalTechniqueManualItem {
+	if x != nil {
+		return x.PersonalManuals
+	}
+	return nil
+}
+
+type GetMovementIntelligenceOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMovementIntelligenceOverviewRequest) Reset() {
+	*x = GetMovementIntelligenceOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[208]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMovementIntelligenceOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMovementIntelligenceOverviewRequest) ProtoMessage() {}
+
+func (x *GetMovementIntelligenceOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[208]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMovementIntelligenceOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetMovementIntelligenceOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{208}
+}
+
+type GetMovementIntelligenceOverviewResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Overview      *MovementIntelligenceOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetMovementIntelligenceOverviewResponse) Reset() {
+	*x = GetMovementIntelligenceOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[209]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetMovementIntelligenceOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMovementIntelligenceOverviewResponse) ProtoMessage() {}
+
+func (x *GetMovementIntelligenceOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[209]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMovementIntelligenceOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetMovementIntelligenceOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{209}
+}
+
+func (x *GetMovementIntelligenceOverviewResponse) GetOverview() *MovementIntelligenceOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type RankIntentPreservingSubstitutionsRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	SourceMovementSlug          string                 `protobuf:"bytes,1,opt,name=source_movement_slug,json=sourceMovementSlug,proto3" json:"source_movement_slug,omitempty"`
+	ProgrammeIntent             string                 `protobuf:"bytes,2,opt,name=programme_intent,json=programmeIntent,proto3" json:"programme_intent,omitempty"`
+	AvailableEquipment          string                 `protobuf:"bytes,3,opt,name=available_equipment,json=availableEquipment,proto3" json:"available_equipment,omitempty"`
+	RequirePainFreeJointSparing bool                   `protobuf:"varint,4,opt,name=require_pain_free_joint_sparing,json=requirePainFreeJointSparing,proto3" json:"require_pain_free_joint_sparing,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) Reset() {
+	*x = RankIntentPreservingSubstitutionsRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[210]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RankIntentPreservingSubstitutionsRequest) ProtoMessage() {}
+
+func (x *RankIntentPreservingSubstitutionsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[210]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RankIntentPreservingSubstitutionsRequest.ProtoReflect.Descriptor instead.
+func (*RankIntentPreservingSubstitutionsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{210}
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) GetSourceMovementSlug() string {
+	if x != nil {
+		return x.SourceMovementSlug
+	}
+	return ""
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) GetProgrammeIntent() string {
+	if x != nil {
+		return x.ProgrammeIntent
+	}
+	return ""
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) GetAvailableEquipment() string {
+	if x != nil {
+		return x.AvailableEquipment
+	}
+	return ""
+}
+
+func (x *RankIntentPreservingSubstitutionsRequest) GetRequirePainFreeJointSparing() bool {
+	if x != nil {
+		return x.RequirePainFreeJointSparing
+	}
+	return false
+}
+
+type RankIntentPreservingSubstitutionsResponse struct {
+	state               protoimpl.MessageState          `protogen:"open.v1"`
+	RankedSubstitutions []*MovementSubstitutionEdgeItem `protobuf:"bytes,1,rep,name=ranked_substitutions,json=rankedSubstitutions,proto3" json:"ranked_substitutions,omitempty"`
+	RankingExplanation  string                          `protobuf:"bytes,2,opt,name=ranking_explanation,json=rankingExplanation,proto3" json:"ranking_explanation,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *RankIntentPreservingSubstitutionsResponse) Reset() {
+	*x = RankIntentPreservingSubstitutionsResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[211]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RankIntentPreservingSubstitutionsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RankIntentPreservingSubstitutionsResponse) ProtoMessage() {}
+
+func (x *RankIntentPreservingSubstitutionsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[211]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RankIntentPreservingSubstitutionsResponse.ProtoReflect.Descriptor instead.
+func (*RankIntentPreservingSubstitutionsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{211}
+}
+
+func (x *RankIntentPreservingSubstitutionsResponse) GetRankedSubstitutions() []*MovementSubstitutionEdgeItem {
+	if x != nil {
+		return x.RankedSubstitutions
+	}
+	return nil
+}
+
+func (x *RankIntentPreservingSubstitutionsResponse) GetRankingExplanation() string {
+	if x != nil {
+		return x.RankingExplanation
+	}
+	return ""
+}
+
+type UpsertPersonalTechniqueManualRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug         string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName         string                 `protobuf:"bytes,2,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	LocationLabel        string                 `protobuf:"bytes,3,opt,name=location_label,json=locationLabel,proto3" json:"location_label,omitempty"`
+	RackAndSeatSettings  string                 `protobuf:"bytes,4,opt,name=rack_and_seat_settings,json=rackAndSeatSettings,proto3" json:"rack_and_seat_settings,omitempty"`
+	StanceAndGripNotes   string                 `protobuf:"bytes,5,opt,name=stance_and_grip_notes,json=stanceAndGripNotes,proto3" json:"stance_and_grip_notes,omitempty"`
+	PersonalCues         string                 `protobuf:"bytes,6,opt,name=personal_cues,json=personalCues,proto3" json:"personal_cues,omitempty"`
+	CoachInstructionLock string                 `protobuf:"bytes,7,opt,name=coach_instruction_lock,json=coachInstructionLock,proto3" json:"coach_instruction_lock,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) Reset() {
+	*x = UpsertPersonalTechniqueManualRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[212]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPersonalTechniqueManualRequest) ProtoMessage() {}
+
+func (x *UpsertPersonalTechniqueManualRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[212]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPersonalTechniqueManualRequest.ProtoReflect.Descriptor instead.
+func (*UpsertPersonalTechniqueManualRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{212}
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetLocationLabel() string {
+	if x != nil {
+		return x.LocationLabel
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetRackAndSeatSettings() string {
+	if x != nil {
+		return x.RackAndSeatSettings
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetStanceAndGripNotes() string {
+	if x != nil {
+		return x.StanceAndGripNotes
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetPersonalCues() string {
+	if x != nil {
+		return x.PersonalCues
+	}
+	return ""
+}
+
+func (x *UpsertPersonalTechniqueManualRequest) GetCoachInstructionLock() string {
+	if x != nil {
+		return x.CoachInstructionLock
+	}
+	return ""
+}
+
+type UpsertPersonalTechniqueManualResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Manual        *PersonalTechniqueManualItem `protobuf:"bytes,1,opt,name=manual,proto3" json:"manual,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertPersonalTechniqueManualResponse) Reset() {
+	*x = UpsertPersonalTechniqueManualResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[213]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertPersonalTechniqueManualResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertPersonalTechniqueManualResponse) ProtoMessage() {}
+
+func (x *UpsertPersonalTechniqueManualResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[213]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertPersonalTechniqueManualResponse.ProtoReflect.Descriptor instead.
+func (*UpsertPersonalTechniqueManualResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{213}
+}
+
+func (x *UpsertPersonalTechniqueManualResponse) GetManual() *PersonalTechniqueManualItem {
+	if x != nil {
+		return x.Manual
+	}
+	return nil
+}
+
+type SubmitCustomMovementForReviewRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug          string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName          string                 `protobuf:"bytes,2,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	MovementPattern       string                 `protobuf:"bytes,3,opt,name=movement_pattern,json=movementPattern,proto3" json:"movement_pattern,omitempty"`
+	EquipmentRequired     string                 `protobuf:"bytes,4,opt,name=equipment_required,json=equipmentRequired,proto3" json:"equipment_required,omitempty"`
+	BreathingBracingSetup string                 `protobuf:"bytes,5,opt,name=breathing_bracing_setup,json=breathingBracingSetup,proto3" json:"breathing_bracing_setup,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *SubmitCustomMovementForReviewRequest) Reset() {
+	*x = SubmitCustomMovementForReviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[214]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCustomMovementForReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCustomMovementForReviewRequest) ProtoMessage() {}
+
+func (x *SubmitCustomMovementForReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[214]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCustomMovementForReviewRequest.ProtoReflect.Descriptor instead.
+func (*SubmitCustomMovementForReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{214}
+}
+
+func (x *SubmitCustomMovementForReviewRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *SubmitCustomMovementForReviewRequest) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *SubmitCustomMovementForReviewRequest) GetMovementPattern() string {
+	if x != nil {
+		return x.MovementPattern
+	}
+	return ""
+}
+
+func (x *SubmitCustomMovementForReviewRequest) GetEquipmentRequired() string {
+	if x != nil {
+		return x.EquipmentRequired
+	}
+	return ""
+}
+
+func (x *SubmitCustomMovementForReviewRequest) GetBreathingBracingSetup() string {
+	if x != nil {
+		return x.BreathingBracingSetup
+	}
+	return ""
+}
+
+type SubmitCustomMovementForReviewResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Profile       *MovementGraphProfileItem `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitCustomMovementForReviewResponse) Reset() {
+	*x = SubmitCustomMovementForReviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[215]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCustomMovementForReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCustomMovementForReviewResponse) ProtoMessage() {}
+
+func (x *SubmitCustomMovementForReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[215]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCustomMovementForReviewResponse.ProtoReflect.Descriptor instead.
+func (*SubmitCustomMovementForReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{215}
+}
+
+func (x *SubmitCustomMovementForReviewResponse) GetProfile() *MovementGraphProfileItem {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type UpsertMovementGraphProfileRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug              string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName              string                 `protobuf:"bytes,2,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	MovementPattern           string                 `protobuf:"bytes,3,opt,name=movement_pattern,json=movementPattern,proto3" json:"movement_pattern,omitempty"`
+	PrimaryMuscles            string                 `protobuf:"bytes,4,opt,name=primary_muscles,json=primaryMuscles,proto3" json:"primary_muscles,omitempty"`
+	JointLoadingProfile       string                 `protobuf:"bytes,5,opt,name=joint_loading_profile,json=jointLoadingProfile,proto3" json:"joint_loading_profile,omitempty"`
+	EquipmentRequired         string                 `protobuf:"bytes,6,opt,name=equipment_required,json=equipmentRequired,proto3" json:"equipment_required,omitempty"`
+	DifficultyTier            string                 `protobuf:"bytes,7,opt,name=difficulty_tier,json=difficultyTier,proto3" json:"difficulty_tier,omitempty"`
+	RegressionSlug            string                 `protobuf:"bytes,8,opt,name=regression_slug,json=regressionSlug,proto3" json:"regression_slug,omitempty"`
+	ProgressionSlug           string                 `protobuf:"bytes,9,opt,name=progression_slug,json=progressionSlug,proto3" json:"progression_slug,omitempty"`
+	ContraindicationPrompts   string                 `protobuf:"bytes,10,opt,name=contraindication_prompts,json=contraindicationPrompts,proto3" json:"contraindication_prompts,omitempty"`
+	MultiBodyA11YMediaSummary string                 `protobuf:"bytes,11,opt,name=multi_body_a11y_media_summary,json=multiBodyA11yMediaSummary,proto3" json:"multi_body_a11y_media_summary,omitempty"`
+	BreathingBracingSetup     string                 `protobuf:"bytes,12,opt,name=breathing_bracing_setup,json=breathingBracingSetup,proto3" json:"breathing_bracing_setup,omitempty"`
+	CommonErrorsAndCaptions   string                 `protobuf:"bytes,13,opt,name=common_errors_and_captions,json=commonErrorsAndCaptions,proto3" json:"common_errors_and_captions,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *UpsertMovementGraphProfileRequest) Reset() {
+	*x = UpsertMovementGraphProfileRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[216]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertMovementGraphProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertMovementGraphProfileRequest) ProtoMessage() {}
+
+func (x *UpsertMovementGraphProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[216]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertMovementGraphProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpsertMovementGraphProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{216}
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetMovementPattern() string {
+	if x != nil {
+		return x.MovementPattern
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetPrimaryMuscles() string {
+	if x != nil {
+		return x.PrimaryMuscles
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetJointLoadingProfile() string {
+	if x != nil {
+		return x.JointLoadingProfile
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetEquipmentRequired() string {
+	if x != nil {
+		return x.EquipmentRequired
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetDifficultyTier() string {
+	if x != nil {
+		return x.DifficultyTier
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetRegressionSlug() string {
+	if x != nil {
+		return x.RegressionSlug
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetProgressionSlug() string {
+	if x != nil {
+		return x.ProgressionSlug
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetContraindicationPrompts() string {
+	if x != nil {
+		return x.ContraindicationPrompts
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetMultiBodyA11YMediaSummary() string {
+	if x != nil {
+		return x.MultiBodyA11YMediaSummary
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetBreathingBracingSetup() string {
+	if x != nil {
+		return x.BreathingBracingSetup
+	}
+	return ""
+}
+
+func (x *UpsertMovementGraphProfileRequest) GetCommonErrorsAndCaptions() string {
+	if x != nil {
+		return x.CommonErrorsAndCaptions
+	}
+	return ""
+}
+
+type UpsertMovementGraphProfileResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Profile       *MovementGraphProfileItem `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertMovementGraphProfileResponse) Reset() {
+	*x = UpsertMovementGraphProfileResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[217]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertMovementGraphProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertMovementGraphProfileResponse) ProtoMessage() {}
+
+func (x *UpsertMovementGraphProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[217]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertMovementGraphProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpsertMovementGraphProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{217}
+}
+
+func (x *UpsertMovementGraphProfileResponse) GetProfile() *MovementGraphProfileItem {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type RecordSubstitutionSelectionRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	SourceMovementSlug     string                 `protobuf:"bytes,1,opt,name=source_movement_slug,json=sourceMovementSlug,proto3" json:"source_movement_slug,omitempty"`
+	SubstituteMovementSlug string                 `protobuf:"bytes,2,opt,name=substitute_movement_slug,json=substituteMovementSlug,proto3" json:"substitute_movement_slug,omitempty"`
+	ProgrammeIntent        string                 `protobuf:"bytes,3,opt,name=programme_intent,json=programmeIntent,proto3" json:"programme_intent,omitempty"`
+	Reason                 string                 `protobuf:"bytes,4,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *RecordSubstitutionSelectionRequest) Reset() {
+	*x = RecordSubstitutionSelectionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[218]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordSubstitutionSelectionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordSubstitutionSelectionRequest) ProtoMessage() {}
+
+func (x *RecordSubstitutionSelectionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[218]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordSubstitutionSelectionRequest.ProtoReflect.Descriptor instead.
+func (*RecordSubstitutionSelectionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{218}
+}
+
+func (x *RecordSubstitutionSelectionRequest) GetSourceMovementSlug() string {
+	if x != nil {
+		return x.SourceMovementSlug
+	}
+	return ""
+}
+
+func (x *RecordSubstitutionSelectionRequest) GetSubstituteMovementSlug() string {
+	if x != nil {
+		return x.SubstituteMovementSlug
+	}
+	return ""
+}
+
+func (x *RecordSubstitutionSelectionRequest) GetProgrammeIntent() string {
+	if x != nil {
+		return x.ProgrammeIntent
+	}
+	return ""
+}
+
+func (x *RecordSubstitutionSelectionRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RecordSubstitutionSelectionResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	SelectedEdge  *MovementSubstitutionEdgeItem `protobuf:"bytes,1,opt,name=selected_edge,json=selectedEdge,proto3" json:"selected_edge,omitempty"`
+	AuditReceipt  string                        `protobuf:"bytes,2,opt,name=audit_receipt,json=auditReceipt,proto3" json:"audit_receipt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordSubstitutionSelectionResponse) Reset() {
+	*x = RecordSubstitutionSelectionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[219]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordSubstitutionSelectionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordSubstitutionSelectionResponse) ProtoMessage() {}
+
+func (x *RecordSubstitutionSelectionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[219]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordSubstitutionSelectionResponse.ProtoReflect.Descriptor instead.
+func (*RecordSubstitutionSelectionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{219}
+}
+
+func (x *RecordSubstitutionSelectionResponse) GetSelectedEdge() *MovementSubstitutionEdgeItem {
+	if x != nil {
+		return x.SelectedEdge
+	}
+	return nil
+}
+
+func (x *RecordSubstitutionSelectionResponse) GetAuditReceipt() string {
+	if x != nil {
+		return x.AuditReceipt
+	}
+	return ""
+}
+
+type FormCapabilityMatrixItem struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	MovementSlug            string                 `protobuf:"bytes,2,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName            string                 `protobuf:"bytes,3,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	RequiredCameraAngle     string                 `protobuf:"bytes,4,opt,name=required_camera_angle,json=requiredCameraAngle,proto3" json:"required_camera_angle,omitempty"` // sagittal_90_deg | anterior_45_deg | posterior_90_deg
+	CameraDistanceMeters    float64                `protobuf:"fixed64,5,opt,name=camera_distance_meters,json=cameraDistanceMeters,proto3" json:"camera_distance_meters,omitempty"`
+	MinFps                  int32                  `protobuf:"varint,6,opt,name=min_fps,json=minFps,proto3" json:"min_fps,omitempty"`
+	MinKeypointConfidence   float64                `protobuf:"fixed64,7,opt,name=min_keypoint_confidence,json=minKeypointConfidence,proto3" json:"min_keypoint_confidence,omitempty"`
+	CalibrationObjectHint   string                 `protobuf:"bytes,8,opt,name=calibration_object_hint,json=calibrationObjectHint,proto3" json:"calibration_object_hint,omitempty"`
+	SupportedObservations   string                 `protobuf:"bytes,9,opt,name=supported_observations,json=supportedObservations,proto3" json:"supported_observations,omitempty"`
+	UnsupportedClaimRefusal string                 `protobuf:"bytes,10,opt,name=unsupported_claim_refusal,json=unsupportedClaimRefusal,proto3" json:"unsupported_claim_refusal,omitempty"`
+	Status                  string                 `protobuf:"bytes,11,opt,name=status,proto3" json:"status,omitempty"` // active | experimental | retired
+	UpdatedAtUnix           int64                  `protobuf:"varint,12,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *FormCapabilityMatrixItem) Reset() {
+	*x = FormCapabilityMatrixItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[220]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FormCapabilityMatrixItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FormCapabilityMatrixItem) ProtoMessage() {}
+
+func (x *FormCapabilityMatrixItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[220]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FormCapabilityMatrixItem.ProtoReflect.Descriptor instead.
+func (*FormCapabilityMatrixItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{220}
+}
+
+func (x *FormCapabilityMatrixItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetRequiredCameraAngle() string {
+	if x != nil {
+		return x.RequiredCameraAngle
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetCameraDistanceMeters() float64 {
+	if x != nil {
+		return x.CameraDistanceMeters
+	}
+	return 0
+}
+
+func (x *FormCapabilityMatrixItem) GetMinFps() int32 {
+	if x != nil {
+		return x.MinFps
+	}
+	return 0
+}
+
+func (x *FormCapabilityMatrixItem) GetMinKeypointConfidence() float64 {
+	if x != nil {
+		return x.MinKeypointConfidence
+	}
+	return 0
+}
+
+func (x *FormCapabilityMatrixItem) GetCalibrationObjectHint() string {
+	if x != nil {
+		return x.CalibrationObjectHint
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetSupportedObservations() string {
+	if x != nil {
+		return x.SupportedObservations
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetUnsupportedClaimRefusal() string {
+	if x != nil {
+		return x.UnsupportedClaimRefusal
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *FormCapabilityMatrixItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type FormAnalysisAttemptItem struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	Id                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MovementSlug       string                 `protobuf:"bytes,3,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName       string                 `protobuf:"bytes,4,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	CameraAngle        string                 `protobuf:"bytes,5,opt,name=camera_angle,json=cameraAngle,proto3" json:"camera_angle,omitempty"`
+	CapturedFps        int32                  `protobuf:"varint,6,opt,name=captured_fps,json=capturedFps,proto3" json:"captured_fps,omitempty"`
+	KeypointConfidence float64                `protobuf:"fixed64,7,opt,name=keypoint_confidence,json=keypointConfidence,proto3" json:"keypoint_confidence,omitempty"`
+	PainTagged         bool                   `protobuf:"varint,8,opt,name=pain_tagged,json=painTagged,proto3" json:"pain_tagged,omitempty"`
+	// Strictly: unsupported | observation | needs_human_review (never "pass")
+	Verdict                  string `protobuf:"bytes,9,opt,name=verdict,proto3" json:"verdict,omitempty"`
+	PhaseAndTempoObservation string `protobuf:"bytes,10,opt,name=phase_and_tempo_observation,json=phaseAndTempoObservation,proto3" json:"phase_and_tempo_observation,omitempty"`
+	BarPathAndDepthProxy     string `protobuf:"bytes,11,opt,name=bar_path_and_depth_proxy,json=barPathAndDepthProxy,proto3" json:"bar_path_and_depth_proxy,omitempty"`
+	PersonalVsCoachTarget    string `protobuf:"bytes,12,opt,name=personal_vs_coach_target,json=personalVsCoachTarget,proto3" json:"personal_vs_coach_target,omitempty"`
+	UncertaintyAndLimitsNote string `protobuf:"bytes,13,opt,name=uncertainty_and_limits_note,json=uncertaintyAndLimitsNote,proto3" json:"uncertainty_and_limits_note,omitempty"`
+	CoachReviewStatus        string `protobuf:"bytes,14,opt,name=coach_review_status,json=coachReviewStatus,proto3" json:"coach_review_status,omitempty"` // not_requested | queued_for_coach | reviewed_by_coach | erased_by_member
+	CoachFeedbackNote        string `protobuf:"bytes,15,opt,name=coach_feedback_note,json=coachFeedbackNote,proto3" json:"coach_feedback_note,omitempty"`
+	BystanderBlurApplied     bool   `protobuf:"varint,16,opt,name=bystander_blur_applied,json=bystanderBlurApplied,proto3" json:"bystander_blur_applied,omitempty"`
+	CreatedAtUnix            int64  `protobuf:"varint,17,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *FormAnalysisAttemptItem) Reset() {
+	*x = FormAnalysisAttemptItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[221]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FormAnalysisAttemptItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FormAnalysisAttemptItem) ProtoMessage() {}
+
+func (x *FormAnalysisAttemptItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[221]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FormAnalysisAttemptItem.ProtoReflect.Descriptor instead.
+func (*FormAnalysisAttemptItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{221}
+}
+
+func (x *FormAnalysisAttemptItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetCameraAngle() string {
+	if x != nil {
+		return x.CameraAngle
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetCapturedFps() int32 {
+	if x != nil {
+		return x.CapturedFps
+	}
+	return 0
+}
+
+func (x *FormAnalysisAttemptItem) GetKeypointConfidence() float64 {
+	if x != nil {
+		return x.KeypointConfidence
+	}
+	return 0
+}
+
+func (x *FormAnalysisAttemptItem) GetPainTagged() bool {
+	if x != nil {
+		return x.PainTagged
+	}
+	return false
+}
+
+func (x *FormAnalysisAttemptItem) GetVerdict() string {
+	if x != nil {
+		return x.Verdict
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetPhaseAndTempoObservation() string {
+	if x != nil {
+		return x.PhaseAndTempoObservation
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetBarPathAndDepthProxy() string {
+	if x != nil {
+		return x.BarPathAndDepthProxy
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetPersonalVsCoachTarget() string {
+	if x != nil {
+		return x.PersonalVsCoachTarget
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetUncertaintyAndLimitsNote() string {
+	if x != nil {
+		return x.UncertaintyAndLimitsNote
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetCoachReviewStatus() string {
+	if x != nil {
+		return x.CoachReviewStatus
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetCoachFeedbackNote() string {
+	if x != nil {
+		return x.CoachFeedbackNote
+	}
+	return ""
+}
+
+func (x *FormAnalysisAttemptItem) GetBystanderBlurApplied() bool {
+	if x != nil {
+		return x.BystanderBlurApplied
+	}
+	return false
+}
+
+func (x *FormAnalysisAttemptItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type FormPrivacyConsentItem struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                   string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	BystanderBlurDefault     bool                   `protobuf:"varint,3,opt,name=bystander_blur_default,json=bystanderBlurDefault,proto3" json:"bystander_blur_default,omitempty"`
+	AllowModelTraining       bool                   `protobuf:"varint,4,opt,name=allow_model_training,json=allowModelTraining,proto3" json:"allow_model_training,omitempty"` // false by default
+	RetentionDays            int32                  `protobuf:"varint,5,opt,name=retention_days,json=retentionDays,proto3" json:"retention_days,omitempty"`                  // 7 | 30 | 90
+	EncryptedStorageVerified bool                   `protobuf:"varint,6,opt,name=encrypted_storage_verified,json=encryptedStorageVerified,proto3" json:"encrypted_storage_verified,omitempty"`
+	ConsentVersion           string                 `protobuf:"bytes,7,opt,name=consent_version,json=consentVersion,proto3" json:"consent_version,omitempty"`
+	UpdatedAtUnix            int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *FormPrivacyConsentItem) Reset() {
+	*x = FormPrivacyConsentItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[222]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FormPrivacyConsentItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FormPrivacyConsentItem) ProtoMessage() {}
+
+func (x *FormPrivacyConsentItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[222]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FormPrivacyConsentItem.ProtoReflect.Descriptor instead.
+func (*FormPrivacyConsentItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{222}
+}
+
+func (x *FormPrivacyConsentItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FormPrivacyConsentItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *FormPrivacyConsentItem) GetBystanderBlurDefault() bool {
+	if x != nil {
+		return x.BystanderBlurDefault
+	}
+	return false
+}
+
+func (x *FormPrivacyConsentItem) GetAllowModelTraining() bool {
+	if x != nil {
+		return x.AllowModelTraining
+	}
+	return false
+}
+
+func (x *FormPrivacyConsentItem) GetRetentionDays() int32 {
+	if x != nil {
+		return x.RetentionDays
+	}
+	return 0
+}
+
+func (x *FormPrivacyConsentItem) GetEncryptedStorageVerified() bool {
+	if x != nil {
+		return x.EncryptedStorageVerified
+	}
+	return false
+}
+
+func (x *FormPrivacyConsentItem) GetConsentVersion() string {
+	if x != nil {
+		return x.ConsentVersion
+	}
+	return ""
+}
+
+func (x *FormPrivacyConsentItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type FormIntelligenceOverview struct {
+	state                  protoimpl.MessageState      `protogen:"open.v1"`
+	HonestVerdictCharter   string                      `protobuf:"bytes,1,opt,name=honest_verdict_charter,json=honestVerdictCharter,proto3" json:"honest_verdict_charter,omitempty"`
+	CoachEscalationCharter string                      `protobuf:"bytes,2,opt,name=coach_escalation_charter,json=coachEscalationCharter,proto3" json:"coach_escalation_charter,omitempty"`
+	PrivacyAndBlurCharter  string                      `protobuf:"bytes,3,opt,name=privacy_and_blur_charter,json=privacyAndBlurCharter,proto3" json:"privacy_and_blur_charter,omitempty"`
+	CapabilityMatrix       []*FormCapabilityMatrixItem `protobuf:"bytes,4,rep,name=capability_matrix,json=capabilityMatrix,proto3" json:"capability_matrix,omitempty"`
+	Attempts               []*FormAnalysisAttemptItem  `protobuf:"bytes,5,rep,name=attempts,proto3" json:"attempts,omitempty"`
+	PrivacyConsent         *FormPrivacyConsentItem     `protobuf:"bytes,6,opt,name=privacy_consent,json=privacyConsent,proto3" json:"privacy_consent,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *FormIntelligenceOverview) Reset() {
+	*x = FormIntelligenceOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[223]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FormIntelligenceOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FormIntelligenceOverview) ProtoMessage() {}
+
+func (x *FormIntelligenceOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[223]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FormIntelligenceOverview.ProtoReflect.Descriptor instead.
+func (*FormIntelligenceOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{223}
+}
+
+func (x *FormIntelligenceOverview) GetHonestVerdictCharter() string {
+	if x != nil {
+		return x.HonestVerdictCharter
+	}
+	return ""
+}
+
+func (x *FormIntelligenceOverview) GetCoachEscalationCharter() string {
+	if x != nil {
+		return x.CoachEscalationCharter
+	}
+	return ""
+}
+
+func (x *FormIntelligenceOverview) GetPrivacyAndBlurCharter() string {
+	if x != nil {
+		return x.PrivacyAndBlurCharter
+	}
+	return ""
+}
+
+func (x *FormIntelligenceOverview) GetCapabilityMatrix() []*FormCapabilityMatrixItem {
+	if x != nil {
+		return x.CapabilityMatrix
+	}
+	return nil
+}
+
+func (x *FormIntelligenceOverview) GetAttempts() []*FormAnalysisAttemptItem {
+	if x != nil {
+		return x.Attempts
+	}
+	return nil
+}
+
+func (x *FormIntelligenceOverview) GetPrivacyConsent() *FormPrivacyConsentItem {
+	if x != nil {
+		return x.PrivacyConsent
+	}
+	return nil
+}
+
+type GetFormIntelligenceOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFormIntelligenceOverviewRequest) Reset() {
+	*x = GetFormIntelligenceOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[224]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFormIntelligenceOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFormIntelligenceOverviewRequest) ProtoMessage() {}
+
+func (x *GetFormIntelligenceOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[224]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFormIntelligenceOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetFormIntelligenceOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{224}
+}
+
+type GetFormIntelligenceOverviewResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Overview      *FormIntelligenceOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFormIntelligenceOverviewResponse) Reset() {
+	*x = GetFormIntelligenceOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[225]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFormIntelligenceOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFormIntelligenceOverviewResponse) ProtoMessage() {}
+
+func (x *GetFormIntelligenceOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[225]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFormIntelligenceOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetFormIntelligenceOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{225}
+}
+
+func (x *GetFormIntelligenceOverviewResponse) GetOverview() *FormIntelligenceOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type SubmitFormClipObservationRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug       string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName       string                 `protobuf:"bytes,2,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	CameraAngle        string                 `protobuf:"bytes,3,opt,name=camera_angle,json=cameraAngle,proto3" json:"camera_angle,omitempty"`
+	CapturedFps        int32                  `protobuf:"varint,4,opt,name=captured_fps,json=capturedFps,proto3" json:"captured_fps,omitempty"`
+	KeypointConfidence float64                `protobuf:"fixed64,5,opt,name=keypoint_confidence,json=keypointConfidence,proto3" json:"keypoint_confidence,omitempty"`
+	PainTagged         bool                   `protobuf:"varint,6,opt,name=pain_tagged,json=painTagged,proto3" json:"pain_tagged,omitempty"`
+	AthleteNote        string                 `protobuf:"bytes,7,opt,name=athlete_note,json=athleteNote,proto3" json:"athlete_note,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *SubmitFormClipObservationRequest) Reset() {
+	*x = SubmitFormClipObservationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[226]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitFormClipObservationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitFormClipObservationRequest) ProtoMessage() {}
+
+func (x *SubmitFormClipObservationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[226]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitFormClipObservationRequest.ProtoReflect.Descriptor instead.
+func (*SubmitFormClipObservationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{226}
+}
+
+func (x *SubmitFormClipObservationRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *SubmitFormClipObservationRequest) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *SubmitFormClipObservationRequest) GetCameraAngle() string {
+	if x != nil {
+		return x.CameraAngle
+	}
+	return ""
+}
+
+func (x *SubmitFormClipObservationRequest) GetCapturedFps() int32 {
+	if x != nil {
+		return x.CapturedFps
+	}
+	return 0
+}
+
+func (x *SubmitFormClipObservationRequest) GetKeypointConfidence() float64 {
+	if x != nil {
+		return x.KeypointConfidence
+	}
+	return 0
+}
+
+func (x *SubmitFormClipObservationRequest) GetPainTagged() bool {
+	if x != nil {
+		return x.PainTagged
+	}
+	return false
+}
+
+func (x *SubmitFormClipObservationRequest) GetAthleteNote() string {
+	if x != nil {
+		return x.AthleteNote
+	}
+	return ""
+}
+
+type SubmitFormClipObservationResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Attempt       *FormAnalysisAttemptItem `protobuf:"bytes,1,opt,name=attempt,proto3" json:"attempt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitFormClipObservationResponse) Reset() {
+	*x = SubmitFormClipObservationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[227]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitFormClipObservationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitFormClipObservationResponse) ProtoMessage() {}
+
+func (x *SubmitFormClipObservationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[227]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitFormClipObservationResponse.ProtoReflect.Descriptor instead.
+func (*SubmitFormClipObservationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{227}
+}
+
+func (x *SubmitFormClipObservationResponse) GetAttempt() *FormAnalysisAttemptItem {
+	if x != nil {
+		return x.Attempt
+	}
+	return nil
+}
+
+type EscalateFormClipToCoachRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	AttemptId        string                 `protobuf:"bytes,1,opt,name=attempt_id,json=attemptId,proto3" json:"attempt_id,omitempty"`
+	EscalationReason string                 `protobuf:"bytes,2,opt,name=escalation_reason,json=escalationReason,proto3" json:"escalation_reason,omitempty"`
+	PainFlagged      bool                   `protobuf:"varint,3,opt,name=pain_flagged,json=painFlagged,proto3" json:"pain_flagged,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *EscalateFormClipToCoachRequest) Reset() {
+	*x = EscalateFormClipToCoachRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[228]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EscalateFormClipToCoachRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EscalateFormClipToCoachRequest) ProtoMessage() {}
+
+func (x *EscalateFormClipToCoachRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[228]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EscalateFormClipToCoachRequest.ProtoReflect.Descriptor instead.
+func (*EscalateFormClipToCoachRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{228}
+}
+
+func (x *EscalateFormClipToCoachRequest) GetAttemptId() string {
+	if x != nil {
+		return x.AttemptId
+	}
+	return ""
+}
+
+func (x *EscalateFormClipToCoachRequest) GetEscalationReason() string {
+	if x != nil {
+		return x.EscalationReason
+	}
+	return ""
+}
+
+func (x *EscalateFormClipToCoachRequest) GetPainFlagged() bool {
+	if x != nil {
+		return x.PainFlagged
+	}
+	return false
+}
+
+type EscalateFormClipToCoachResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Attempt       *FormAnalysisAttemptItem `protobuf:"bytes,1,opt,name=attempt,proto3" json:"attempt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EscalateFormClipToCoachResponse) Reset() {
+	*x = EscalateFormClipToCoachResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[229]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EscalateFormClipToCoachResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EscalateFormClipToCoachResponse) ProtoMessage() {}
+
+func (x *EscalateFormClipToCoachResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[229]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EscalateFormClipToCoachResponse.ProtoReflect.Descriptor instead.
+func (*EscalateFormClipToCoachResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{229}
+}
+
+func (x *EscalateFormClipToCoachResponse) GetAttempt() *FormAnalysisAttemptItem {
+	if x != nil {
+		return x.Attempt
+	}
+	return nil
+}
+
+type DecideCoachFormReviewRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	AttemptId             string                 `protobuf:"bytes,1,opt,name=attempt_id,json=attemptId,proto3" json:"attempt_id,omitempty"`
+	CoachFeedbackNote     string                 `protobuf:"bytes,2,opt,name=coach_feedback_note,json=coachFeedbackNote,proto3" json:"coach_feedback_note,omitempty"`
+	UpdatedPersonalTarget string                 `protobuf:"bytes,3,opt,name=updated_personal_target,json=updatedPersonalTarget,proto3" json:"updated_personal_target,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *DecideCoachFormReviewRequest) Reset() {
+	*x = DecideCoachFormReviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[230]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DecideCoachFormReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DecideCoachFormReviewRequest) ProtoMessage() {}
+
+func (x *DecideCoachFormReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[230]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DecideCoachFormReviewRequest.ProtoReflect.Descriptor instead.
+func (*DecideCoachFormReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{230}
+}
+
+func (x *DecideCoachFormReviewRequest) GetAttemptId() string {
+	if x != nil {
+		return x.AttemptId
+	}
+	return ""
+}
+
+func (x *DecideCoachFormReviewRequest) GetCoachFeedbackNote() string {
+	if x != nil {
+		return x.CoachFeedbackNote
+	}
+	return ""
+}
+
+func (x *DecideCoachFormReviewRequest) GetUpdatedPersonalTarget() string {
+	if x != nil {
+		return x.UpdatedPersonalTarget
+	}
+	return ""
+}
+
+type DecideCoachFormReviewResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Attempt       *FormAnalysisAttemptItem `protobuf:"bytes,1,opt,name=attempt,proto3" json:"attempt,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DecideCoachFormReviewResponse) Reset() {
+	*x = DecideCoachFormReviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[231]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DecideCoachFormReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DecideCoachFormReviewResponse) ProtoMessage() {}
+
+func (x *DecideCoachFormReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[231]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DecideCoachFormReviewResponse.ProtoReflect.Descriptor instead.
+func (*DecideCoachFormReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{231}
+}
+
+func (x *DecideCoachFormReviewResponse) GetAttempt() *FormAnalysisAttemptItem {
+	if x != nil {
+		return x.Attempt
+	}
+	return nil
+}
+
+type UpdateFormPrivacyAndRetentionRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	BystanderBlurDefault bool                   `protobuf:"varint,1,opt,name=bystander_blur_default,json=bystanderBlurDefault,proto3" json:"bystander_blur_default,omitempty"`
+	AllowModelTraining   bool                   `protobuf:"varint,2,opt,name=allow_model_training,json=allowModelTraining,proto3" json:"allow_model_training,omitempty"`
+	RetentionDays        int32                  `protobuf:"varint,3,opt,name=retention_days,json=retentionDays,proto3" json:"retention_days,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) Reset() {
+	*x = UpdateFormPrivacyAndRetentionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[232]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateFormPrivacyAndRetentionRequest) ProtoMessage() {}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[232]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateFormPrivacyAndRetentionRequest.ProtoReflect.Descriptor instead.
+func (*UpdateFormPrivacyAndRetentionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{232}
+}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) GetBystanderBlurDefault() bool {
+	if x != nil {
+		return x.BystanderBlurDefault
+	}
+	return false
+}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) GetAllowModelTraining() bool {
+	if x != nil {
+		return x.AllowModelTraining
+	}
+	return false
+}
+
+func (x *UpdateFormPrivacyAndRetentionRequest) GetRetentionDays() int32 {
+	if x != nil {
+		return x.RetentionDays
+	}
+	return 0
+}
+
+type UpdateFormPrivacyAndRetentionResponse struct {
+	state          protoimpl.MessageState  `protogen:"open.v1"`
+	PrivacyConsent *FormPrivacyConsentItem `protobuf:"bytes,1,opt,name=privacy_consent,json=privacyConsent,proto3" json:"privacy_consent,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *UpdateFormPrivacyAndRetentionResponse) Reset() {
+	*x = UpdateFormPrivacyAndRetentionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[233]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateFormPrivacyAndRetentionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateFormPrivacyAndRetentionResponse) ProtoMessage() {}
+
+func (x *UpdateFormPrivacyAndRetentionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[233]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateFormPrivacyAndRetentionResponse.ProtoReflect.Descriptor instead.
+func (*UpdateFormPrivacyAndRetentionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{233}
+}
+
+func (x *UpdateFormPrivacyAndRetentionResponse) GetPrivacyConsent() *FormPrivacyConsentItem {
+	if x != nil {
+		return x.PrivacyConsent
+	}
+	return nil
+}
+
+type EraseFormClipAndKeypointsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AttemptId     string                 `protobuf:"bytes,1,opt,name=attempt_id,json=attemptId,proto3" json:"attempt_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EraseFormClipAndKeypointsRequest) Reset() {
+	*x = EraseFormClipAndKeypointsRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[234]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EraseFormClipAndKeypointsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EraseFormClipAndKeypointsRequest) ProtoMessage() {}
+
+func (x *EraseFormClipAndKeypointsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[234]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EraseFormClipAndKeypointsRequest.ProtoReflect.Descriptor instead.
+func (*EraseFormClipAndKeypointsRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{234}
+}
+
+func (x *EraseFormClipAndKeypointsRequest) GetAttemptId() string {
+	if x != nil {
+		return x.AttemptId
+	}
+	return ""
+}
+
+func (x *EraseFormClipAndKeypointsRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type EraseFormClipAndKeypointsResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ErasedAttemptId string                 `protobuf:"bytes,1,opt,name=erased_attempt_id,json=erasedAttemptId,proto3" json:"erased_attempt_id,omitempty"`
+	ErasureReceipt  string                 `protobuf:"bytes,2,opt,name=erasure_receipt,json=erasureReceipt,proto3" json:"erasure_receipt,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *EraseFormClipAndKeypointsResponse) Reset() {
+	*x = EraseFormClipAndKeypointsResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[235]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EraseFormClipAndKeypointsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EraseFormClipAndKeypointsResponse) ProtoMessage() {}
+
+func (x *EraseFormClipAndKeypointsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[235]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EraseFormClipAndKeypointsResponse.ProtoReflect.Descriptor instead.
+func (*EraseFormClipAndKeypointsResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{235}
+}
+
+func (x *EraseFormClipAndKeypointsResponse) GetErasedAttemptId() string {
+	if x != nil {
+		return x.ErasedAttemptId
+	}
+	return ""
+}
+
+func (x *EraseFormClipAndKeypointsResponse) GetErasureReceipt() string {
+	if x != nil {
+		return x.ErasureReceipt
+	}
+	return ""
+}
+
+type WearablePurposeGrantItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                     string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ConnectorSource            string                 `protobuf:"bytes,3,opt,name=connector_source,json=connectorSource,proto3" json:"connector_source,omitempty"` // apple_health | health_connect | whoop | oura | garmin | concept2_pm5 | gymaware_vbt | apex_readiness_bridge
+	PurposeScope               string                 `protobuf:"bytes,4,opt,name=purpose_scope,json=purposeScope,proto3" json:"purpose_scope,omitempty"`          // training_load | recovery_hrv_sleep | velocity_bar_speed | machine_erg_split | apex_signed_readiness_predicate
+	GrantStatus                string                 `protobuf:"bytes,5,opt,name=grant_status,json=grantStatus,proto3" json:"grant_status,omitempty"`             // active | revoked | expired
+	RawClinicalAccessBlocked   bool                   `protobuf:"varint,6,opt,name=raw_clinical_access_blocked,json=rawClinicalAccessBlocked,proto3" json:"raw_clinical_access_blocked,omitempty"`
+	ApexSignedPredicateSummary string                 `protobuf:"bytes,7,opt,name=apex_signed_predicate_summary,json=apexSignedPredicateSummary,proto3" json:"apex_signed_predicate_summary,omitempty"`
+	GrantedAtUnix              int64                  `protobuf:"varint,8,opt,name=granted_at_unix,json=grantedAtUnix,proto3" json:"granted_at_unix,omitempty"`
+	UpdatedAtUnix              int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *WearablePurposeGrantItem) Reset() {
+	*x = WearablePurposeGrantItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[236]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WearablePurposeGrantItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WearablePurposeGrantItem) ProtoMessage() {}
+
+func (x *WearablePurposeGrantItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[236]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WearablePurposeGrantItem.ProtoReflect.Descriptor instead.
+func (*WearablePurposeGrantItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{236}
+}
+
+func (x *WearablePurposeGrantItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetConnectorSource() string {
+	if x != nil {
+		return x.ConnectorSource
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetPurposeScope() string {
+	if x != nil {
+		return x.PurposeScope
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetGrantStatus() string {
+	if x != nil {
+		return x.GrantStatus
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetRawClinicalAccessBlocked() bool {
+	if x != nil {
+		return x.RawClinicalAccessBlocked
+	}
+	return false
+}
+
+func (x *WearablePurposeGrantItem) GetApexSignedPredicateSummary() string {
+	if x != nil {
+		return x.ApexSignedPredicateSummary
+	}
+	return ""
+}
+
+func (x *WearablePurposeGrantItem) GetGrantedAtUnix() int64 {
+	if x != nil {
+		return x.GrantedAtUnix
+	}
+	return 0
+}
+
+func (x *WearablePurposeGrantItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type RecoverySensorStreamItem struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                 string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MetricKey              string                 `protobuf:"bytes,3,opt,name=metric_key,json=metricKey,proto3" json:"metric_key,omitempty"` // hrv_rmssd | resting_hr | sleep_duration | bar_velocity_ms | rower_split_500m | bike_power_watts
+	PrimarySource          string                 `protobuf:"bytes,4,opt,name=primary_source,json=primarySource,proto3" json:"primary_source,omitempty"`
+	FallbackSource         string                 `protobuf:"bytes,5,opt,name=fallback_source,json=fallbackSource,proto3" json:"fallback_source,omitempty"`
+	SyncAgeMinutes         int32                  `protobuf:"varint,6,opt,name=sync_age_minutes,json=syncAgeMinutes,proto3" json:"sync_age_minutes,omitempty"`
+	MeasurementKind        string                 `protobuf:"bytes,7,opt,name=measurement_kind,json=measurementKind,proto3" json:"measurement_kind,omitempty"` // measured_direct | estimated_proxy | missing_stale
+	ConflictDetected       bool                   `protobuf:"varint,8,opt,name=conflict_detected,json=conflictDetected,proto3" json:"conflict_detected,omitempty"`
+	ConflictResolutionRule string                 `protobuf:"bytes,9,opt,name=conflict_resolution_rule,json=conflictResolutionRule,proto3" json:"conflict_resolution_rule,omitempty"`
+	VendorOutageStatus     string                 `protobuf:"bytes,10,opt,name=vendor_outage_status,json=vendorOutageStatus,proto3" json:"vendor_outage_status,omitempty"` // healthy | degraded_sync | vendor_outage
+	LatestValueDisplay     string                 `protobuf:"bytes,11,opt,name=latest_value_display,json=latestValueDisplay,proto3" json:"latest_value_display,omitempty"`
+	UpdatedAtUnix          int64                  `protobuf:"varint,12,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *RecoverySensorStreamItem) Reset() {
+	*x = RecoverySensorStreamItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[237]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecoverySensorStreamItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecoverySensorStreamItem) ProtoMessage() {}
+
+func (x *RecoverySensorStreamItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[237]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecoverySensorStreamItem.ProtoReflect.Descriptor instead.
+func (*RecoverySensorStreamItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{237}
+}
+
+func (x *RecoverySensorStreamItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetMetricKey() string {
+	if x != nil {
+		return x.MetricKey
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetPrimarySource() string {
+	if x != nil {
+		return x.PrimarySource
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetFallbackSource() string {
+	if x != nil {
+		return x.FallbackSource
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetSyncAgeMinutes() int32 {
+	if x != nil {
+		return x.SyncAgeMinutes
+	}
+	return 0
+}
+
+func (x *RecoverySensorStreamItem) GetMeasurementKind() string {
+	if x != nil {
+		return x.MeasurementKind
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetConflictDetected() bool {
+	if x != nil {
+		return x.ConflictDetected
+	}
+	return false
+}
+
+func (x *RecoverySensorStreamItem) GetConflictResolutionRule() string {
+	if x != nil {
+		return x.ConflictResolutionRule
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetVendorOutageStatus() string {
+	if x != nil {
+		return x.VendorOutageStatus
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetLatestValueDisplay() string {
+	if x != nil {
+		return x.LatestValueDisplay
+	}
+	return ""
+}
+
+func (x *RecoverySensorStreamItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type RecoveryReadinessAssessmentItem struct {
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Id     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	// Strictly: ready_high | ready_moderate | recovery_priority | unknown | no_wearable_subjective
+	ReadinessVerdict             string `protobuf:"bytes,3,opt,name=readiness_verdict,json=readinessVerdict,proto3" json:"readiness_verdict,omitempty"`
+	InputMode                    string `protobuf:"bytes,4,opt,name=input_mode,json=inputMode,proto3" json:"input_mode,omitempty"`                         // fused_wearable_and_subjective | no_wearable_subjective | stale_sensor_unknown
+	SleepHoursTenths             int32  `protobuf:"varint,5,opt,name=sleep_hours_tenths,json=sleepHoursTenths,proto3" json:"sleep_hours_tenths,omitempty"` // e.g., 78 = 7.8h
+	SubjectiveEnergy_1To_5       int32  `protobuf:"varint,6,opt,name=subjective_energy_1_to_5,json=subjectiveEnergy1To5,proto3" json:"subjective_energy_1_to_5,omitempty"`
+	Soreness_1To_5               int32  `protobuf:"varint,7,opt,name=soreness_1_to_5,json=soreness1To5,proto3" json:"soreness_1_to_5,omitempty"`
+	PainOrIllnessFlag            bool   `protobuf:"varint,8,opt,name=pain_or_illness_flag,json=painOrIllnessFlag,proto3" json:"pain_or_illness_flag,omitempty"`
+	TravelOrTimeZoneShift        bool   `protobuf:"varint,9,opt,name=travel_or_time_zone_shift,json=travelOrTimeZoneShift,proto3" json:"travel_or_time_zone_shift,omitempty"`
+	MinimumDataRuleStatus        string `protobuf:"bytes,10,opt,name=minimum_data_rule_status,json=minimumDataRuleStatus,proto3" json:"minimum_data_rule_status,omitempty"`
+	ExplanationSummary           string `protobuf:"bytes,11,opt,name=explanation_summary,json=explanationSummary,proto3" json:"explanation_summary,omitempty"`
+	RecommendedSessionAdjustment string `protobuf:"bytes,12,opt,name=recommended_session_adjustment,json=recommendedSessionAdjustment,proto3" json:"recommended_session_adjustment,omitempty"`
+	ZeroPenaltyGuaranteed        bool   `protobuf:"varint,13,opt,name=zero_penalty_guaranteed,json=zeroPenaltyGuaranteed,proto3" json:"zero_penalty_guaranteed,omitempty"`
+	AssessedAtUnix               int64  `protobuf:"varint,14,opt,name=assessed_at_unix,json=assessedAtUnix,proto3" json:"assessed_at_unix,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *RecoveryReadinessAssessmentItem) Reset() {
+	*x = RecoveryReadinessAssessmentItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[238]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecoveryReadinessAssessmentItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecoveryReadinessAssessmentItem) ProtoMessage() {}
+
+func (x *RecoveryReadinessAssessmentItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[238]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecoveryReadinessAssessmentItem.ProtoReflect.Descriptor instead.
+func (*RecoveryReadinessAssessmentItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{238}
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetReadinessVerdict() string {
+	if x != nil {
+		return x.ReadinessVerdict
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetInputMode() string {
+	if x != nil {
+		return x.InputMode
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetSleepHoursTenths() int32 {
+	if x != nil {
+		return x.SleepHoursTenths
+	}
+	return 0
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetSubjectiveEnergy_1To_5() int32 {
+	if x != nil {
+		return x.SubjectiveEnergy_1To_5
+	}
+	return 0
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetSoreness_1To_5() int32 {
+	if x != nil {
+		return x.Soreness_1To_5
+	}
+	return 0
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetPainOrIllnessFlag() bool {
+	if x != nil {
+		return x.PainOrIllnessFlag
+	}
+	return false
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetTravelOrTimeZoneShift() bool {
+	if x != nil {
+		return x.TravelOrTimeZoneShift
+	}
+	return false
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetMinimumDataRuleStatus() string {
+	if x != nil {
+		return x.MinimumDataRuleStatus
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetExplanationSummary() string {
+	if x != nil {
+		return x.ExplanationSummary
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetRecommendedSessionAdjustment() string {
+	if x != nil {
+		return x.RecommendedSessionAdjustment
+	}
+	return ""
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetZeroPenaltyGuaranteed() bool {
+	if x != nil {
+		return x.ZeroPenaltyGuaranteed
+	}
+	return false
+}
+
+func (x *RecoveryReadinessAssessmentItem) GetAssessedAtUnix() int64 {
+	if x != nil {
+		return x.AssessedAtUnix
+	}
+	return 0
+}
+
+type WearableRecoveryFusionOverview struct {
+	state                   protoimpl.MessageState             `protogen:"open.v1"`
+	PurposeGrantCharter     string                             `protobuf:"bytes,1,opt,name=purpose_grant_charter,json=purposeGrantCharter,proto3" json:"purpose_grant_charter,omitempty"`
+	UnknownReadinessCharter string                             `protobuf:"bytes,2,opt,name=unknown_readiness_charter,json=unknownReadinessCharter,proto3" json:"unknown_readiness_charter,omitempty"`
+	ApexBoundaryCharter     string                             `protobuf:"bytes,3,opt,name=apex_boundary_charter,json=apexBoundaryCharter,proto3" json:"apex_boundary_charter,omitempty"`
+	PurposeGrants           []*WearablePurposeGrantItem        `protobuf:"bytes,4,rep,name=purpose_grants,json=purposeGrants,proto3" json:"purpose_grants,omitempty"`
+	SensorStreams           []*RecoverySensorStreamItem        `protobuf:"bytes,5,rep,name=sensor_streams,json=sensorStreams,proto3" json:"sensor_streams,omitempty"`
+	Assessments             []*RecoveryReadinessAssessmentItem `protobuf:"bytes,6,rep,name=assessments,proto3" json:"assessments,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *WearableRecoveryFusionOverview) Reset() {
+	*x = WearableRecoveryFusionOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[239]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WearableRecoveryFusionOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WearableRecoveryFusionOverview) ProtoMessage() {}
+
+func (x *WearableRecoveryFusionOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[239]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WearableRecoveryFusionOverview.ProtoReflect.Descriptor instead.
+func (*WearableRecoveryFusionOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{239}
+}
+
+func (x *WearableRecoveryFusionOverview) GetPurposeGrantCharter() string {
+	if x != nil {
+		return x.PurposeGrantCharter
+	}
+	return ""
+}
+
+func (x *WearableRecoveryFusionOverview) GetUnknownReadinessCharter() string {
+	if x != nil {
+		return x.UnknownReadinessCharter
+	}
+	return ""
+}
+
+func (x *WearableRecoveryFusionOverview) GetApexBoundaryCharter() string {
+	if x != nil {
+		return x.ApexBoundaryCharter
+	}
+	return ""
+}
+
+func (x *WearableRecoveryFusionOverview) GetPurposeGrants() []*WearablePurposeGrantItem {
+	if x != nil {
+		return x.PurposeGrants
+	}
+	return nil
+}
+
+func (x *WearableRecoveryFusionOverview) GetSensorStreams() []*RecoverySensorStreamItem {
+	if x != nil {
+		return x.SensorStreams
+	}
+	return nil
+}
+
+func (x *WearableRecoveryFusionOverview) GetAssessments() []*RecoveryReadinessAssessmentItem {
+	if x != nil {
+		return x.Assessments
+	}
+	return nil
+}
+
+type GetWearableRecoveryFusionOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWearableRecoveryFusionOverviewRequest) Reset() {
+	*x = GetWearableRecoveryFusionOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[240]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWearableRecoveryFusionOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWearableRecoveryFusionOverviewRequest) ProtoMessage() {}
+
+func (x *GetWearableRecoveryFusionOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[240]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWearableRecoveryFusionOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetWearableRecoveryFusionOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{240}
+}
+
+type GetWearableRecoveryFusionOverviewResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Overview      *WearableRecoveryFusionOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetWearableRecoveryFusionOverviewResponse) Reset() {
+	*x = GetWearableRecoveryFusionOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[241]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetWearableRecoveryFusionOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetWearableRecoveryFusionOverviewResponse) ProtoMessage() {}
+
+func (x *GetWearableRecoveryFusionOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[241]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetWearableRecoveryFusionOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetWearableRecoveryFusionOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{241}
+}
+
+func (x *GetWearableRecoveryFusionOverviewResponse) GetOverview() *WearableRecoveryFusionOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertWearablePurposeGrantRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	ConnectorSource            string                 `protobuf:"bytes,1,opt,name=connector_source,json=connectorSource,proto3" json:"connector_source,omitempty"`
+	PurposeScope               string                 `protobuf:"bytes,2,opt,name=purpose_scope,json=purposeScope,proto3" json:"purpose_scope,omitempty"`
+	ApexSignedPredicateSummary string                 `protobuf:"bytes,3,opt,name=apex_signed_predicate_summary,json=apexSignedPredicateSummary,proto3" json:"apex_signed_predicate_summary,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *UpsertWearablePurposeGrantRequest) Reset() {
+	*x = UpsertWearablePurposeGrantRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[242]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWearablePurposeGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWearablePurposeGrantRequest) ProtoMessage() {}
+
+func (x *UpsertWearablePurposeGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[242]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWearablePurposeGrantRequest.ProtoReflect.Descriptor instead.
+func (*UpsertWearablePurposeGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{242}
+}
+
+func (x *UpsertWearablePurposeGrantRequest) GetConnectorSource() string {
+	if x != nil {
+		return x.ConnectorSource
+	}
+	return ""
+}
+
+func (x *UpsertWearablePurposeGrantRequest) GetPurposeScope() string {
+	if x != nil {
+		return x.PurposeScope
+	}
+	return ""
+}
+
+func (x *UpsertWearablePurposeGrantRequest) GetApexSignedPredicateSummary() string {
+	if x != nil {
+		return x.ApexSignedPredicateSummary
+	}
+	return ""
+}
+
+type UpsertWearablePurposeGrantResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Grant         *WearablePurposeGrantItem `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertWearablePurposeGrantResponse) Reset() {
+	*x = UpsertWearablePurposeGrantResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[243]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertWearablePurposeGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertWearablePurposeGrantResponse) ProtoMessage() {}
+
+func (x *UpsertWearablePurposeGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[243]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertWearablePurposeGrantResponse.ProtoReflect.Descriptor instead.
+func (*UpsertWearablePurposeGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{243}
+}
+
+func (x *UpsertWearablePurposeGrantResponse) GetGrant() *WearablePurposeGrantItem {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
+type RevokeWearablePurposeGrantRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GrantId       string                 `protobuf:"bytes,1,opt,name=grant_id,json=grantId,proto3" json:"grant_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeWearablePurposeGrantRequest) Reset() {
+	*x = RevokeWearablePurposeGrantRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[244]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeWearablePurposeGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeWearablePurposeGrantRequest) ProtoMessage() {}
+
+func (x *RevokeWearablePurposeGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[244]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeWearablePurposeGrantRequest.ProtoReflect.Descriptor instead.
+func (*RevokeWearablePurposeGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{244}
+}
+
+func (x *RevokeWearablePurposeGrantRequest) GetGrantId() string {
+	if x != nil {
+		return x.GrantId
+	}
+	return ""
+}
+
+func (x *RevokeWearablePurposeGrantRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RevokeWearablePurposeGrantResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Grant         *WearablePurposeGrantItem `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeWearablePurposeGrantResponse) Reset() {
+	*x = RevokeWearablePurposeGrantResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[245]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeWearablePurposeGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeWearablePurposeGrantResponse) ProtoMessage() {}
+
+func (x *RevokeWearablePurposeGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[245]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeWearablePurposeGrantResponse.ProtoReflect.Descriptor instead.
+func (*RevokeWearablePurposeGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{245}
+}
+
+func (x *RevokeWearablePurposeGrantResponse) GetGrant() *WearablePurposeGrantItem {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
+type ConfigureRecoverySensorStreamRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	MetricKey              string                 `protobuf:"bytes,1,opt,name=metric_key,json=metricKey,proto3" json:"metric_key,omitempty"`
+	PrimarySource          string                 `protobuf:"bytes,2,opt,name=primary_source,json=primarySource,proto3" json:"primary_source,omitempty"`
+	FallbackSource         string                 `protobuf:"bytes,3,opt,name=fallback_source,json=fallbackSource,proto3" json:"fallback_source,omitempty"`
+	ConflictResolutionRule string                 `protobuf:"bytes,4,opt,name=conflict_resolution_rule,json=conflictResolutionRule,proto3" json:"conflict_resolution_rule,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) Reset() {
+	*x = ConfigureRecoverySensorStreamRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[246]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureRecoverySensorStreamRequest) ProtoMessage() {}
+
+func (x *ConfigureRecoverySensorStreamRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[246]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureRecoverySensorStreamRequest.ProtoReflect.Descriptor instead.
+func (*ConfigureRecoverySensorStreamRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{246}
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) GetMetricKey() string {
+	if x != nil {
+		return x.MetricKey
+	}
+	return ""
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) GetPrimarySource() string {
+	if x != nil {
+		return x.PrimarySource
+	}
+	return ""
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) GetFallbackSource() string {
+	if x != nil {
+		return x.FallbackSource
+	}
+	return ""
+}
+
+func (x *ConfigureRecoverySensorStreamRequest) GetConflictResolutionRule() string {
+	if x != nil {
+		return x.ConflictResolutionRule
+	}
+	return ""
+}
+
+type ConfigureRecoverySensorStreamResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Stream        *RecoverySensorStreamItem `protobuf:"bytes,1,opt,name=stream,proto3" json:"stream,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigureRecoverySensorStreamResponse) Reset() {
+	*x = ConfigureRecoverySensorStreamResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[247]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureRecoverySensorStreamResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureRecoverySensorStreamResponse) ProtoMessage() {}
+
+func (x *ConfigureRecoverySensorStreamResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[247]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureRecoverySensorStreamResponse.ProtoReflect.Descriptor instead.
+func (*ConfigureRecoverySensorStreamResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{247}
+}
+
+func (x *ConfigureRecoverySensorStreamResponse) GetStream() *RecoverySensorStreamItem {
+	if x != nil {
+		return x.Stream
+	}
+	return nil
+}
+
+type SubmitNoWearableSubjectiveReadinessRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	InputMode              string                 `protobuf:"bytes,1,opt,name=input_mode,json=inputMode,proto3" json:"input_mode,omitempty"` // no_wearable_subjective | fused_wearable_and_subjective | stale_sensor_unknown
+	SleepHoursTenths       int32                  `protobuf:"varint,2,opt,name=sleep_hours_tenths,json=sleepHoursTenths,proto3" json:"sleep_hours_tenths,omitempty"`
+	SubjectiveEnergy_1To_5 int32                  `protobuf:"varint,3,opt,name=subjective_energy_1_to_5,json=subjectiveEnergy1To5,proto3" json:"subjective_energy_1_to_5,omitempty"`
+	Soreness_1To_5         int32                  `protobuf:"varint,4,opt,name=soreness_1_to_5,json=soreness1To5,proto3" json:"soreness_1_to_5,omitempty"`
+	PainOrIllnessFlag      bool                   `protobuf:"varint,5,opt,name=pain_or_illness_flag,json=painOrIllnessFlag,proto3" json:"pain_or_illness_flag,omitempty"`
+	TravelOrTimeZoneShift  bool                   `protobuf:"varint,6,opt,name=travel_or_time_zone_shift,json=travelOrTimeZoneShift,proto3" json:"travel_or_time_zone_shift,omitempty"`
+	AthleteNote            string                 `protobuf:"bytes,7,opt,name=athlete_note,json=athleteNote,proto3" json:"athlete_note,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) Reset() {
+	*x = SubmitNoWearableSubjectiveReadinessRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[248]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitNoWearableSubjectiveReadinessRequest) ProtoMessage() {}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[248]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitNoWearableSubjectiveReadinessRequest.ProtoReflect.Descriptor instead.
+func (*SubmitNoWearableSubjectiveReadinessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{248}
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetInputMode() string {
+	if x != nil {
+		return x.InputMode
+	}
+	return ""
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetSleepHoursTenths() int32 {
+	if x != nil {
+		return x.SleepHoursTenths
+	}
+	return 0
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetSubjectiveEnergy_1To_5() int32 {
+	if x != nil {
+		return x.SubjectiveEnergy_1To_5
+	}
+	return 0
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetSoreness_1To_5() int32 {
+	if x != nil {
+		return x.Soreness_1To_5
+	}
+	return 0
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetPainOrIllnessFlag() bool {
+	if x != nil {
+		return x.PainOrIllnessFlag
+	}
+	return false
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetTravelOrTimeZoneShift() bool {
+	if x != nil {
+		return x.TravelOrTimeZoneShift
+	}
+	return false
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessRequest) GetAthleteNote() string {
+	if x != nil {
+		return x.AthleteNote
+	}
+	return ""
+}
+
+type SubmitNoWearableSubjectiveReadinessResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Assessment    *RecoveryReadinessAssessmentItem `protobuf:"bytes,1,opt,name=assessment,proto3" json:"assessment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessResponse) Reset() {
+	*x = SubmitNoWearableSubjectiveReadinessResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[249]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitNoWearableSubjectiveReadinessResponse) ProtoMessage() {}
+
+func (x *SubmitNoWearableSubjectiveReadinessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[249]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitNoWearableSubjectiveReadinessResponse.ProtoReflect.Descriptor instead.
+func (*SubmitNoWearableSubjectiveReadinessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{249}
+}
+
+func (x *SubmitNoWearableSubjectiveReadinessResponse) GetAssessment() *RecoveryReadinessAssessmentItem {
+	if x != nil {
+		return x.Assessment
+	}
+	return nil
+}
+
+type ReconcileSensorConflictOrOutageRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	StreamId         string                 `protobuf:"bytes,1,opt,name=stream_id,json=streamId,proto3" json:"stream_id,omitempty"`
+	ResolutionAction string                 `protobuf:"bytes,2,opt,name=resolution_action,json=resolutionAction,proto3" json:"resolution_action,omitempty"` // prefer_primary | prefer_fallback | mark_unknown_until_resync
+	OperatorNote     string                 `protobuf:"bytes,3,opt,name=operator_note,json=operatorNote,proto3" json:"operator_note,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *ReconcileSensorConflictOrOutageRequest) Reset() {
+	*x = ReconcileSensorConflictOrOutageRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[250]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileSensorConflictOrOutageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileSensorConflictOrOutageRequest) ProtoMessage() {}
+
+func (x *ReconcileSensorConflictOrOutageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[250]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileSensorConflictOrOutageRequest.ProtoReflect.Descriptor instead.
+func (*ReconcileSensorConflictOrOutageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{250}
+}
+
+func (x *ReconcileSensorConflictOrOutageRequest) GetStreamId() string {
+	if x != nil {
+		return x.StreamId
+	}
+	return ""
+}
+
+func (x *ReconcileSensorConflictOrOutageRequest) GetResolutionAction() string {
+	if x != nil {
+		return x.ResolutionAction
+	}
+	return ""
+}
+
+func (x *ReconcileSensorConflictOrOutageRequest) GetOperatorNote() string {
+	if x != nil {
+		return x.OperatorNote
+	}
+	return ""
+}
+
+type ReconcileSensorConflictOrOutageResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Stream        *RecoverySensorStreamItem `protobuf:"bytes,1,opt,name=stream,proto3" json:"stream,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReconcileSensorConflictOrOutageResponse) Reset() {
+	*x = ReconcileSensorConflictOrOutageResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[251]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReconcileSensorConflictOrOutageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReconcileSensorConflictOrOutageResponse) ProtoMessage() {}
+
+func (x *ReconcileSensorConflictOrOutageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[251]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReconcileSensorConflictOrOutageResponse.ProtoReflect.Descriptor instead.
+func (*ReconcileSensorConflictOrOutageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{251}
+}
+
+func (x *ReconcileSensorConflictOrOutageResponse) GetStream() *RecoverySensorStreamItem {
+	if x != nil {
+		return x.Stream
+	}
+	return nil
+}
+
+type PerformanceExposureLedgerItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                     string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WindowLabel                string                 `protobuf:"bytes,3,opt,name=window_label,json=windowLabel,proto3" json:"window_label,omitempty"`          // e.g., 2026-W45
+	FormulaVersion             string                 `protobuf:"bytes,4,opt,name=formula_version,json=formulaVersion,proto3" json:"formula_version,omitempty"` // FG7-LOAD-2026.1
+	MuscleOrMovementGroup      string                 `protobuf:"bytes,5,opt,name=muscle_or_movement_group,json=muscleOrMovementGroup,proto3" json:"muscle_or_movement_group,omitempty"`
+	PlannedHardSets            int32                  `protobuf:"varint,6,opt,name=planned_hard_sets,json=plannedHardSets,proto3" json:"planned_hard_sets,omitempty"`
+	PerformedHardSets          int32                  `protobuf:"varint,7,opt,name=performed_hard_sets,json=performedHardSets,proto3" json:"performed_hard_sets,omitempty"`
+	WeeklyTonnageKg            float64                `protobuf:"fixed64,8,opt,name=weekly_tonnage_kg,json=weeklyTonnageKg,proto3" json:"weekly_tonnage_kg,omitempty"`
+	AcuteChronicRatio          float64                `protobuf:"fixed64,9,opt,name=acute_chronic_ratio,json=acuteChronicRatio,proto3" json:"acute_chronic_ratio,omitempty"`
+	MonotonyIndex              float64                `protobuf:"fixed64,10,opt,name=monotony_index,json=monotonyIndex,proto3" json:"monotony_index,omitempty"`
+	StrainScore                float64                `protobuf:"fixed64,11,opt,name=strain_score,json=strainScore,proto3" json:"strain_score,omitempty"`
+	AdherencePct               float64                `protobuf:"fixed64,12,opt,name=adherence_pct,json=adherencePct,proto3" json:"adherence_pct,omitempty"`
+	NonCausalPlateauHypotheses string                 `protobuf:"bytes,13,opt,name=non_causal_plateau_hypotheses,json=nonCausalPlateauHypotheses,proto3" json:"non_causal_plateau_hypotheses,omitempty"`
+	PlanVsPerformedDiffSummary string                 `protobuf:"bytes,14,opt,name=plan_vs_performed_diff_summary,json=planVsPerformedDiffSummary,proto3" json:"plan_vs_performed_diff_summary,omitempty"`
+	UpdatedAtUnix              int64                  `protobuf:"varint,15,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *PerformanceExposureLedgerItem) Reset() {
+	*x = PerformanceExposureLedgerItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[252]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PerformanceExposureLedgerItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PerformanceExposureLedgerItem) ProtoMessage() {}
+
+func (x *PerformanceExposureLedgerItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[252]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PerformanceExposureLedgerItem.ProtoReflect.Descriptor instead.
+func (*PerformanceExposureLedgerItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{252}
+}
+
+func (x *PerformanceExposureLedgerItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetWindowLabel() string {
+	if x != nil {
+		return x.WindowLabel
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetFormulaVersion() string {
+	if x != nil {
+		return x.FormulaVersion
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetMuscleOrMovementGroup() string {
+	if x != nil {
+		return x.MuscleOrMovementGroup
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetPlannedHardSets() int32 {
+	if x != nil {
+		return x.PlannedHardSets
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetPerformedHardSets() int32 {
+	if x != nil {
+		return x.PerformedHardSets
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetWeeklyTonnageKg() float64 {
+	if x != nil {
+		return x.WeeklyTonnageKg
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetAcuteChronicRatio() float64 {
+	if x != nil {
+		return x.AcuteChronicRatio
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetMonotonyIndex() float64 {
+	if x != nil {
+		return x.MonotonyIndex
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetStrainScore() float64 {
+	if x != nil {
+		return x.StrainScore
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetAdherencePct() float64 {
+	if x != nil {
+		return x.AdherencePct
+	}
+	return 0
+}
+
+func (x *PerformanceExposureLedgerItem) GetNonCausalPlateauHypotheses() string {
+	if x != nil {
+		return x.NonCausalPlateauHypotheses
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetPlanVsPerformedDiffSummary() string {
+	if x != nil {
+		return x.PlanVsPerformedDiffSummary
+	}
+	return ""
+}
+
+func (x *PerformanceExposureLedgerItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type StrengthPerformanceModelItem struct {
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Id           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MovementSlug string                 `protobuf:"bytes,3,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName string                 `protobuf:"bytes,4,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	// Strictly: tested_official_or_gym | estimated_submax | velocity_load_profile
+	RecordOrigin             string  `protobuf:"bytes,5,opt,name=record_origin,json=recordOrigin,proto3" json:"record_origin,omitempty"`
+	ValueKg                  float64 `protobuf:"fixed64,6,opt,name=value_kg,json=valueKg,proto3" json:"value_kg,omitempty"`
+	ConfidencePct            float64 `protobuf:"fixed64,7,opt,name=confidence_pct,json=confidencePct,proto3" json:"confidence_pct,omitempty"`
+	SpecificityAndSourceNote string  `protobuf:"bytes,8,opt,name=specificity_and_source_note,json=specificityAndSourceNote,proto3" json:"specificity_and_source_note,omitempty"`
+	FormulaUsed              string  `protobuf:"bytes,9,opt,name=formula_used,json=formulaUsed,proto3" json:"formula_used,omitempty"`
+	CapturedAtUnix           int64   `protobuf:"varint,10,opt,name=captured_at_unix,json=capturedAtUnix,proto3" json:"captured_at_unix,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *StrengthPerformanceModelItem) Reset() {
+	*x = StrengthPerformanceModelItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[253]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StrengthPerformanceModelItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StrengthPerformanceModelItem) ProtoMessage() {}
+
+func (x *StrengthPerformanceModelItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[253]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StrengthPerformanceModelItem.ProtoReflect.Descriptor instead.
+func (*StrengthPerformanceModelItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{253}
+}
+
+func (x *StrengthPerformanceModelItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetRecordOrigin() string {
+	if x != nil {
+		return x.RecordOrigin
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetValueKg() float64 {
+	if x != nil {
+		return x.ValueKg
+	}
+	return 0
+}
+
+func (x *StrengthPerformanceModelItem) GetConfidencePct() float64 {
+	if x != nil {
+		return x.ConfidencePct
+	}
+	return 0
+}
+
+func (x *StrengthPerformanceModelItem) GetSpecificityAndSourceNote() string {
+	if x != nil {
+		return x.SpecificityAndSourceNote
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetFormulaUsed() string {
+	if x != nil {
+		return x.FormulaUsed
+	}
+	return ""
+}
+
+func (x *StrengthPerformanceModelItem) GetCapturedAtUnix() int64 {
+	if x != nil {
+		return x.CapturedAtUnix
+	}
+	return 0
+}
+
+type TrainingNOf1ExperimentItem struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	Id                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ExperimentCode        string                 `protobuf:"bytes,3,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	Title                 string                 `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	IndependentVariable   string                 `protobuf:"bytes,5,opt,name=independent_variable,json=independentVariable,proto3" json:"independent_variable,omitempty"`
+	PredeclaredHypothesis string                 `protobuf:"bytes,6,opt,name=predeclared_hypothesis,json=predeclaredHypothesis,proto3" json:"predeclared_hypothesis,omitempty"`
+	BaselineProtocol      string                 `protobuf:"bytes,7,opt,name=baseline_protocol,json=baselineProtocol,proto3" json:"baseline_protocol,omitempty"`
+	InterventionProtocol  string                 `protobuf:"bytes,8,opt,name=intervention_protocol,json=interventionProtocol,proto3" json:"intervention_protocol,omitempty"`
+	MinSessionsRequired   int32                  `protobuf:"varint,9,opt,name=min_sessions_required,json=minSessionsRequired,proto3" json:"min_sessions_required,omitempty"`
+	CompletedSessions     int32                  `protobuf:"varint,10,opt,name=completed_sessions,json=completedSessions,proto3" json:"completed_sessions,omitempty"`
+	CherryPickLocked      bool                   `protobuf:"varint,11,opt,name=cherry_pick_locked,json=cherryPickLocked,proto3" json:"cherry_pick_locked,omitempty"`
+	Status                string                 `protobuf:"bytes,12,opt,name=status,proto3" json:"status,omitempty"` // active_collecting | completed_evaluated | stopped_early_safety
+	OutcomeSummary        string                 `protobuf:"bytes,13,opt,name=outcome_summary,json=outcomeSummary,proto3" json:"outcome_summary,omitempty"`
+	UpdatedAtUnix         int64                  `protobuf:"varint,14,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *TrainingNOf1ExperimentItem) Reset() {
+	*x = TrainingNOf1ExperimentItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[254]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TrainingNOf1ExperimentItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TrainingNOf1ExperimentItem) ProtoMessage() {}
+
+func (x *TrainingNOf1ExperimentItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[254]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TrainingNOf1ExperimentItem.ProtoReflect.Descriptor instead.
+func (*TrainingNOf1ExperimentItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{254}
+}
+
+func (x *TrainingNOf1ExperimentItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetIndependentVariable() string {
+	if x != nil {
+		return x.IndependentVariable
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetPredeclaredHypothesis() string {
+	if x != nil {
+		return x.PredeclaredHypothesis
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetBaselineProtocol() string {
+	if x != nil {
+		return x.BaselineProtocol
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetInterventionProtocol() string {
+	if x != nil {
+		return x.InterventionProtocol
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetMinSessionsRequired() int32 {
+	if x != nil {
+		return x.MinSessionsRequired
+	}
+	return 0
+}
+
+func (x *TrainingNOf1ExperimentItem) GetCompletedSessions() int32 {
+	if x != nil {
+		return x.CompletedSessions
+	}
+	return 0
+}
+
+func (x *TrainingNOf1ExperimentItem) GetCherryPickLocked() bool {
+	if x != nil {
+		return x.CherryPickLocked
+	}
+	return false
+}
+
+func (x *TrainingNOf1ExperimentItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetOutcomeSummary() string {
+	if x != nil {
+		return x.OutcomeSummary
+	}
+	return ""
+}
+
+func (x *TrainingNOf1ExperimentItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type PerformanceAnalyticsStudioOverview struct {
+	state                     protoimpl.MessageState           `protogen:"open.v1"`
+	TransparentFormulaCharter string                           `protobuf:"bytes,1,opt,name=transparent_formula_charter,json=transparentFormulaCharter,proto3" json:"transparent_formula_charter,omitempty"`
+	TestedVsEstimatedCharter  string                           `protobuf:"bytes,2,opt,name=tested_vs_estimated_charter,json=testedVsEstimatedCharter,proto3" json:"tested_vs_estimated_charter,omitempty"`
+	NOf_1CherryPickCharter    string                           `protobuf:"bytes,3,opt,name=n_of_1_cherry_pick_charter,json=nOf1CherryPickCharter,proto3" json:"n_of_1_cherry_pick_charter,omitempty"`
+	ExposureLedgers           []*PerformanceExposureLedgerItem `protobuf:"bytes,4,rep,name=exposure_ledgers,json=exposureLedgers,proto3" json:"exposure_ledgers,omitempty"`
+	StrengthModels            []*StrengthPerformanceModelItem  `protobuf:"bytes,5,rep,name=strength_models,json=strengthModels,proto3" json:"strength_models,omitempty"`
+	Experiments               []*TrainingNOf1ExperimentItem    `protobuf:"bytes,6,rep,name=experiments,proto3" json:"experiments,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *PerformanceAnalyticsStudioOverview) Reset() {
+	*x = PerformanceAnalyticsStudioOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[255]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PerformanceAnalyticsStudioOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PerformanceAnalyticsStudioOverview) ProtoMessage() {}
+
+func (x *PerformanceAnalyticsStudioOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[255]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PerformanceAnalyticsStudioOverview.ProtoReflect.Descriptor instead.
+func (*PerformanceAnalyticsStudioOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{255}
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetTransparentFormulaCharter() string {
+	if x != nil {
+		return x.TransparentFormulaCharter
+	}
+	return ""
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetTestedVsEstimatedCharter() string {
+	if x != nil {
+		return x.TestedVsEstimatedCharter
+	}
+	return ""
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetNOf_1CherryPickCharter() string {
+	if x != nil {
+		return x.NOf_1CherryPickCharter
+	}
+	return ""
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetExposureLedgers() []*PerformanceExposureLedgerItem {
+	if x != nil {
+		return x.ExposureLedgers
+	}
+	return nil
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetStrengthModels() []*StrengthPerformanceModelItem {
+	if x != nil {
+		return x.StrengthModels
+	}
+	return nil
+}
+
+func (x *PerformanceAnalyticsStudioOverview) GetExperiments() []*TrainingNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiments
+	}
+	return nil
+}
+
+type GetPerformanceAnalyticsStudioOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPerformanceAnalyticsStudioOverviewRequest) Reset() {
+	*x = GetPerformanceAnalyticsStudioOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[256]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPerformanceAnalyticsStudioOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPerformanceAnalyticsStudioOverviewRequest) ProtoMessage() {}
+
+func (x *GetPerformanceAnalyticsStudioOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[256]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPerformanceAnalyticsStudioOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetPerformanceAnalyticsStudioOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{256}
+}
+
+type GetPerformanceAnalyticsStudioOverviewResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Overview      *PerformanceAnalyticsStudioOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetPerformanceAnalyticsStudioOverviewResponse) Reset() {
+	*x = GetPerformanceAnalyticsStudioOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[257]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetPerformanceAnalyticsStudioOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPerformanceAnalyticsStudioOverviewResponse) ProtoMessage() {}
+
+func (x *GetPerformanceAnalyticsStudioOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[257]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPerformanceAnalyticsStudioOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetPerformanceAnalyticsStudioOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{257}
+}
+
+func (x *GetPerformanceAnalyticsStudioOverviewResponse) GetOverview() *PerformanceAnalyticsStudioOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type RecordPerformanceExposureLedgerRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	WindowLabel                string                 `protobuf:"bytes,1,opt,name=window_label,json=windowLabel,proto3" json:"window_label,omitempty"`
+	MuscleOrMovementGroup      string                 `protobuf:"bytes,2,opt,name=muscle_or_movement_group,json=muscleOrMovementGroup,proto3" json:"muscle_or_movement_group,omitempty"`
+	PlannedHardSets            int32                  `protobuf:"varint,3,opt,name=planned_hard_sets,json=plannedHardSets,proto3" json:"planned_hard_sets,omitempty"`
+	PerformedHardSets          int32                  `protobuf:"varint,4,opt,name=performed_hard_sets,json=performedHardSets,proto3" json:"performed_hard_sets,omitempty"`
+	WeeklyTonnageKg            float64                `protobuf:"fixed64,5,opt,name=weekly_tonnage_kg,json=weeklyTonnageKg,proto3" json:"weekly_tonnage_kg,omitempty"`
+	AcuteChronicRatio          float64                `protobuf:"fixed64,6,opt,name=acute_chronic_ratio,json=acuteChronicRatio,proto3" json:"acute_chronic_ratio,omitempty"`
+	MonotonyIndex              float64                `protobuf:"fixed64,7,opt,name=monotony_index,json=monotonyIndex,proto3" json:"monotony_index,omitempty"`
+	NonCausalPlateauHypotheses string                 `protobuf:"bytes,8,opt,name=non_causal_plateau_hypotheses,json=nonCausalPlateauHypotheses,proto3" json:"non_causal_plateau_hypotheses,omitempty"`
+	PlanVsPerformedDiffSummary string                 `protobuf:"bytes,9,opt,name=plan_vs_performed_diff_summary,json=planVsPerformedDiffSummary,proto3" json:"plan_vs_performed_diff_summary,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) Reset() {
+	*x = RecordPerformanceExposureLedgerRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[258]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordPerformanceExposureLedgerRequest) ProtoMessage() {}
+
+func (x *RecordPerformanceExposureLedgerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[258]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordPerformanceExposureLedgerRequest.ProtoReflect.Descriptor instead.
+func (*RecordPerformanceExposureLedgerRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{258}
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetWindowLabel() string {
+	if x != nil {
+		return x.WindowLabel
+	}
+	return ""
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetMuscleOrMovementGroup() string {
+	if x != nil {
+		return x.MuscleOrMovementGroup
+	}
+	return ""
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetPlannedHardSets() int32 {
+	if x != nil {
+		return x.PlannedHardSets
+	}
+	return 0
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetPerformedHardSets() int32 {
+	if x != nil {
+		return x.PerformedHardSets
+	}
+	return 0
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetWeeklyTonnageKg() float64 {
+	if x != nil {
+		return x.WeeklyTonnageKg
+	}
+	return 0
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetAcuteChronicRatio() float64 {
+	if x != nil {
+		return x.AcuteChronicRatio
+	}
+	return 0
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetMonotonyIndex() float64 {
+	if x != nil {
+		return x.MonotonyIndex
+	}
+	return 0
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetNonCausalPlateauHypotheses() string {
+	if x != nil {
+		return x.NonCausalPlateauHypotheses
+	}
+	return ""
+}
+
+func (x *RecordPerformanceExposureLedgerRequest) GetPlanVsPerformedDiffSummary() string {
+	if x != nil {
+		return x.PlanVsPerformedDiffSummary
+	}
+	return ""
+}
+
+type RecordPerformanceExposureLedgerResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Ledger        *PerformanceExposureLedgerItem `protobuf:"bytes,1,opt,name=ledger,proto3" json:"ledger,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordPerformanceExposureLedgerResponse) Reset() {
+	*x = RecordPerformanceExposureLedgerResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[259]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordPerformanceExposureLedgerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordPerformanceExposureLedgerResponse) ProtoMessage() {}
+
+func (x *RecordPerformanceExposureLedgerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[259]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordPerformanceExposureLedgerResponse.ProtoReflect.Descriptor instead.
+func (*RecordPerformanceExposureLedgerResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{259}
+}
+
+func (x *RecordPerformanceExposureLedgerResponse) GetLedger() *PerformanceExposureLedgerItem {
+	if x != nil {
+		return x.Ledger
+	}
+	return nil
+}
+
+type UpsertStrengthPerformanceModelRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug             string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	MovementName             string                 `protobuf:"bytes,2,opt,name=movement_name,json=movementName,proto3" json:"movement_name,omitempty"`
+	RecordOrigin             string                 `protobuf:"bytes,3,opt,name=record_origin,json=recordOrigin,proto3" json:"record_origin,omitempty"`
+	ValueKg                  float64                `protobuf:"fixed64,4,opt,name=value_kg,json=valueKg,proto3" json:"value_kg,omitempty"`
+	ConfidencePct            float64                `protobuf:"fixed64,5,opt,name=confidence_pct,json=confidencePct,proto3" json:"confidence_pct,omitempty"`
+	SpecificityAndSourceNote string                 `protobuf:"bytes,6,opt,name=specificity_and_source_note,json=specificityAndSourceNote,proto3" json:"specificity_and_source_note,omitempty"`
+	FormulaUsed              string                 `protobuf:"bytes,7,opt,name=formula_used,json=formulaUsed,proto3" json:"formula_used,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) Reset() {
+	*x = UpsertStrengthPerformanceModelRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[260]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStrengthPerformanceModelRequest) ProtoMessage() {}
+
+func (x *UpsertStrengthPerformanceModelRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[260]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStrengthPerformanceModelRequest.ProtoReflect.Descriptor instead.
+func (*UpsertStrengthPerformanceModelRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{260}
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetMovementName() string {
+	if x != nil {
+		return x.MovementName
+	}
+	return ""
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetRecordOrigin() string {
+	if x != nil {
+		return x.RecordOrigin
+	}
+	return ""
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetValueKg() float64 {
+	if x != nil {
+		return x.ValueKg
+	}
+	return 0
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetConfidencePct() float64 {
+	if x != nil {
+		return x.ConfidencePct
+	}
+	return 0
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetSpecificityAndSourceNote() string {
+	if x != nil {
+		return x.SpecificityAndSourceNote
+	}
+	return ""
+}
+
+func (x *UpsertStrengthPerformanceModelRequest) GetFormulaUsed() string {
+	if x != nil {
+		return x.FormulaUsed
+	}
+	return ""
+}
+
+type UpsertStrengthPerformanceModelResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Model         *StrengthPerformanceModelItem `protobuf:"bytes,1,opt,name=model,proto3" json:"model,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertStrengthPerformanceModelResponse) Reset() {
+	*x = UpsertStrengthPerformanceModelResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[261]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertStrengthPerformanceModelResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertStrengthPerformanceModelResponse) ProtoMessage() {}
+
+func (x *UpsertStrengthPerformanceModelResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[261]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertStrengthPerformanceModelResponse.ProtoReflect.Descriptor instead.
+func (*UpsertStrengthPerformanceModelResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{261}
+}
+
+func (x *UpsertStrengthPerformanceModelResponse) GetModel() *StrengthPerformanceModelItem {
+	if x != nil {
+		return x.Model
+	}
+	return nil
+}
+
+type CreateTrainingNOf1ExperimentRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentCode        string                 `protobuf:"bytes,1,opt,name=experiment_code,json=experimentCode,proto3" json:"experiment_code,omitempty"`
+	Title                 string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	IndependentVariable   string                 `protobuf:"bytes,3,opt,name=independent_variable,json=independentVariable,proto3" json:"independent_variable,omitempty"`
+	PredeclaredHypothesis string                 `protobuf:"bytes,4,opt,name=predeclared_hypothesis,json=predeclaredHypothesis,proto3" json:"predeclared_hypothesis,omitempty"`
+	BaselineProtocol      string                 `protobuf:"bytes,5,opt,name=baseline_protocol,json=baselineProtocol,proto3" json:"baseline_protocol,omitempty"`
+	InterventionProtocol  string                 `protobuf:"bytes,6,opt,name=intervention_protocol,json=interventionProtocol,proto3" json:"intervention_protocol,omitempty"`
+	MinSessionsRequired   int32                  `protobuf:"varint,7,opt,name=min_sessions_required,json=minSessionsRequired,proto3" json:"min_sessions_required,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) Reset() {
+	*x = CreateTrainingNOf1ExperimentRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[262]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTrainingNOf1ExperimentRequest) ProtoMessage() {}
+
+func (x *CreateTrainingNOf1ExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[262]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTrainingNOf1ExperimentRequest.ProtoReflect.Descriptor instead.
+func (*CreateTrainingNOf1ExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{262}
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetExperimentCode() string {
+	if x != nil {
+		return x.ExperimentCode
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetIndependentVariable() string {
+	if x != nil {
+		return x.IndependentVariable
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetPredeclaredHypothesis() string {
+	if x != nil {
+		return x.PredeclaredHypothesis
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetBaselineProtocol() string {
+	if x != nil {
+		return x.BaselineProtocol
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetInterventionProtocol() string {
+	if x != nil {
+		return x.InterventionProtocol
+	}
+	return ""
+}
+
+func (x *CreateTrainingNOf1ExperimentRequest) GetMinSessionsRequired() int32 {
+	if x != nil {
+		return x.MinSessionsRequired
+	}
+	return 0
+}
+
+type CreateTrainingNOf1ExperimentResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Experiment    *TrainingNOf1ExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CreateTrainingNOf1ExperimentResponse) Reset() {
+	*x = CreateTrainingNOf1ExperimentResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[263]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CreateTrainingNOf1ExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateTrainingNOf1ExperimentResponse) ProtoMessage() {}
+
+func (x *CreateTrainingNOf1ExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[263]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateTrainingNOf1ExperimentResponse.ProtoReflect.Descriptor instead.
+func (*CreateTrainingNOf1ExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{263}
+}
+
+func (x *CreateTrainingNOf1ExperimentResponse) GetExperiment() *TrainingNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+type LogTrainingNOf1ExperimentSessionRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentId           string                 `protobuf:"bytes,1,opt,name=experiment_id,json=experimentId,proto3" json:"experiment_id,omitempty"`
+	SessionObservationNote string                 `protobuf:"bytes,2,opt,name=session_observation_note,json=sessionObservationNote,proto3" json:"session_observation_note,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *LogTrainingNOf1ExperimentSessionRequest) Reset() {
+	*x = LogTrainingNOf1ExperimentSessionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[264]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogTrainingNOf1ExperimentSessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogTrainingNOf1ExperimentSessionRequest) ProtoMessage() {}
+
+func (x *LogTrainingNOf1ExperimentSessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[264]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogTrainingNOf1ExperimentSessionRequest.ProtoReflect.Descriptor instead.
+func (*LogTrainingNOf1ExperimentSessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{264}
+}
+
+func (x *LogTrainingNOf1ExperimentSessionRequest) GetExperimentId() string {
+	if x != nil {
+		return x.ExperimentId
+	}
+	return ""
+}
+
+func (x *LogTrainingNOf1ExperimentSessionRequest) GetSessionObservationNote() string {
+	if x != nil {
+		return x.SessionObservationNote
+	}
+	return ""
+}
+
+type LogTrainingNOf1ExperimentSessionResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Experiment    *TrainingNOf1ExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogTrainingNOf1ExperimentSessionResponse) Reset() {
+	*x = LogTrainingNOf1ExperimentSessionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[265]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogTrainingNOf1ExperimentSessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogTrainingNOf1ExperimentSessionResponse) ProtoMessage() {}
+
+func (x *LogTrainingNOf1ExperimentSessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[265]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogTrainingNOf1ExperimentSessionResponse.ProtoReflect.Descriptor instead.
+func (*LogTrainingNOf1ExperimentSessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{265}
+}
+
+func (x *LogTrainingNOf1ExperimentSessionResponse) GetExperiment() *TrainingNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+type EvaluateTrainingNOf1ExperimentRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	ExperimentId   string                 `protobuf:"bytes,1,opt,name=experiment_id,json=experimentId,proto3" json:"experiment_id,omitempty"`
+	OutcomeSummary string                 `protobuf:"bytes,2,opt,name=outcome_summary,json=outcomeSummary,proto3" json:"outcome_summary,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *EvaluateTrainingNOf1ExperimentRequest) Reset() {
+	*x = EvaluateTrainingNOf1ExperimentRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[266]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateTrainingNOf1ExperimentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateTrainingNOf1ExperimentRequest) ProtoMessage() {}
+
+func (x *EvaluateTrainingNOf1ExperimentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[266]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateTrainingNOf1ExperimentRequest.ProtoReflect.Descriptor instead.
+func (*EvaluateTrainingNOf1ExperimentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{266}
+}
+
+func (x *EvaluateTrainingNOf1ExperimentRequest) GetExperimentId() string {
+	if x != nil {
+		return x.ExperimentId
+	}
+	return ""
+}
+
+func (x *EvaluateTrainingNOf1ExperimentRequest) GetOutcomeSummary() string {
+	if x != nil {
+		return x.OutcomeSummary
+	}
+	return ""
+}
+
+type EvaluateTrainingNOf1ExperimentResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Experiment    *TrainingNOf1ExperimentItem `protobuf:"bytes,1,opt,name=experiment,proto3" json:"experiment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EvaluateTrainingNOf1ExperimentResponse) Reset() {
+	*x = EvaluateTrainingNOf1ExperimentResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[267]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateTrainingNOf1ExperimentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateTrainingNOf1ExperimentResponse) ProtoMessage() {}
+
+func (x *EvaluateTrainingNOf1ExperimentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[267]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateTrainingNOf1ExperimentResponse.ProtoReflect.Descriptor instead.
+func (*EvaluateTrainingNOf1ExperimentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{267}
+}
+
+func (x *EvaluateTrainingNOf1ExperimentResponse) GetExperiment() *TrainingNOf1ExperimentItem {
+	if x != nil {
+		return x.Experiment
+	}
+	return nil
+}
+
+type InjuryRestrictionLockItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	BodyRegionAndSide             string                 `protobuf:"bytes,3,opt,name=body_region_and_side,json=bodyRegionAndSide,proto3" json:"body_region_and_side,omitempty"`
+	OnsetAndMechanism             string                 `protobuf:"bytes,4,opt,name=onset_and_mechanism,json=onsetAndMechanism,proto3" json:"onset_and_mechanism,omitempty"`
+	AggravatingMovements          string                 `protobuf:"bytes,5,opt,name=aggravating_movements,json=aggravatingMovements,proto3" json:"aggravating_movements,omitempty"`
+	ClinicianRestrictionSummary   string                 `protobuf:"bytes,6,opt,name=clinician_restriction_summary,json=clinicianRestrictionSummary,proto3" json:"clinician_restriction_summary,omitempty"`
+	AuthorizingProfessional       string                 `protobuf:"bytes,7,opt,name=authorizing_professional,json=authorizingProfessional,proto3" json:"authorizing_professional,omitempty"`
+	BlocksAutoProgression         bool                   `protobuf:"varint,8,opt,name=blocks_auto_progression,json=blocksAutoProgression,proto3" json:"blocks_auto_progression,omitempty"`
+	IsolatedFromSocialAndRankings bool                   `protobuf:"varint,9,opt,name=isolated_from_social_and_rankings,json=isolatedFromSocialAndRankings,proto3" json:"isolated_from_social_and_rankings,omitempty"`
+	ReviewDate                    string                 `protobuf:"bytes,10,opt,name=review_date,json=reviewDate,proto3" json:"review_date,omitempty"`
+	LockStatus                    string                 `protobuf:"bytes,11,opt,name=lock_status,json=lockStatus,proto3" json:"lock_status,omitempty"` // active_locked | review_due | cleared_graduated
+	UpdatedAtUnix                 int64                  `protobuf:"varint,12,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *InjuryRestrictionLockItem) Reset() {
+	*x = InjuryRestrictionLockItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[268]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InjuryRestrictionLockItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InjuryRestrictionLockItem) ProtoMessage() {}
+
+func (x *InjuryRestrictionLockItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[268]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InjuryRestrictionLockItem.ProtoReflect.Descriptor instead.
+func (*InjuryRestrictionLockItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{268}
+}
+
+func (x *InjuryRestrictionLockItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetBodyRegionAndSide() string {
+	if x != nil {
+		return x.BodyRegionAndSide
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetOnsetAndMechanism() string {
+	if x != nil {
+		return x.OnsetAndMechanism
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetAggravatingMovements() string {
+	if x != nil {
+		return x.AggravatingMovements
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetClinicianRestrictionSummary() string {
+	if x != nil {
+		return x.ClinicianRestrictionSummary
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetAuthorizingProfessional() string {
+	if x != nil {
+		return x.AuthorizingProfessional
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetBlocksAutoProgression() bool {
+	if x != nil {
+		return x.BlocksAutoProgression
+	}
+	return false
+}
+
+func (x *InjuryRestrictionLockItem) GetIsolatedFromSocialAndRankings() bool {
+	if x != nil {
+		return x.IsolatedFromSocialAndRankings
+	}
+	return false
+}
+
+func (x *InjuryRestrictionLockItem) GetReviewDate() string {
+	if x != nil {
+		return x.ReviewDate
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetLockStatus() string {
+	if x != nil {
+		return x.LockStatus
+	}
+	return ""
+}
+
+func (x *InjuryRestrictionLockItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type PainSessionTriageEventItem struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MovementSlug            string                 `protobuf:"bytes,3,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	BodyRegionAndSide       string                 `protobuf:"bytes,4,opt,name=body_region_and_side,json=bodyRegionAndSide,proto3" json:"body_region_and_side,omitempty"`
+	PainIntensity_1To_10    int32                  `protobuf:"varint,5,opt,name=pain_intensity_1_to_10,json=painIntensity1To10,proto3" json:"pain_intensity_1_to_10,omitempty"`
+	RedFlagSymptomsReported bool                   `protobuf:"varint,6,opt,name=red_flag_symptoms_reported,json=redFlagSymptomsReported,proto3" json:"red_flag_symptoms_reported,omitempty"`
+	// stop_session | modify_load_or_rom | substitute_pain_free | contact_professional | urgent_care_resource
+	ChosenTriageAction   string `protobuf:"bytes,7,opt,name=chosen_triage_action,json=chosenTriageAction,proto3" json:"chosen_triage_action,omitempty"`
+	AutoDiagnosisRefused bool   `protobuf:"varint,8,opt,name=auto_diagnosis_refused,json=autoDiagnosisRefused,proto3" json:"auto_diagnosis_refused,omitempty"`
+	TriageResolutionNote string `protobuf:"bytes,9,opt,name=triage_resolution_note,json=triageResolutionNote,proto3" json:"triage_resolution_note,omitempty"`
+	CreatedAtUnix        int64  `protobuf:"varint,10,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *PainSessionTriageEventItem) Reset() {
+	*x = PainSessionTriageEventItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[269]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PainSessionTriageEventItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PainSessionTriageEventItem) ProtoMessage() {}
+
+func (x *PainSessionTriageEventItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[269]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PainSessionTriageEventItem.ProtoReflect.Descriptor instead.
+func (*PainSessionTriageEventItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{269}
+}
+
+func (x *PainSessionTriageEventItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetBodyRegionAndSide() string {
+	if x != nil {
+		return x.BodyRegionAndSide
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetPainIntensity_1To_10() int32 {
+	if x != nil {
+		return x.PainIntensity_1To_10
+	}
+	return 0
+}
+
+func (x *PainSessionTriageEventItem) GetRedFlagSymptomsReported() bool {
+	if x != nil {
+		return x.RedFlagSymptomsReported
+	}
+	return false
+}
+
+func (x *PainSessionTriageEventItem) GetChosenTriageAction() string {
+	if x != nil {
+		return x.ChosenTriageAction
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetAutoDiagnosisRefused() bool {
+	if x != nil {
+		return x.AutoDiagnosisRefused
+	}
+	return false
+}
+
+func (x *PainSessionTriageEventItem) GetTriageResolutionNote() string {
+	if x != nil {
+		return x.TriageResolutionNote
+	}
+	return ""
+}
+
+func (x *PainSessionTriageEventItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type ReturnToTrainingStageItem struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RestrictionLockId string                 `protobuf:"bytes,3,opt,name=restriction_lock_id,json=restrictionLockId,proto3" json:"restriction_lock_id,omitempty"`
+	PathwayTitle      string                 `protobuf:"bytes,4,opt,name=pathway_title,json=pathwayTitle,proto3" json:"pathway_title,omitempty"`
+	// isometric_pain_control | eccentric_capacity | submax_pattern_reload | full_sport_velocity | graduated_unrestricted
+	CurrentStage                string `protobuf:"bytes,5,opt,name=current_stage,json=currentStage,proto3" json:"current_stage,omitempty"`
+	PainToleranceCeiling_1To_10 int32  `protobuf:"varint,6,opt,name=pain_tolerance_ceiling_1_to_10,json=painToleranceCeiling1To10,proto3" json:"pain_tolerance_ceiling_1_to_10,omitempty"`
+	FunctionalExitCriteria      string `protobuf:"bytes,7,opt,name=functional_exit_criteria,json=functionalExitCriteria,proto3" json:"functional_exit_criteria,omitempty"`
+	AllowedLoadExposureSummary  string `protobuf:"bytes,8,opt,name=allowed_load_exposure_summary,json=allowedLoadExposureSummary,proto3" json:"allowed_load_exposure_summary,omitempty"`
+	SetbackRollbackRule         string `protobuf:"bytes,9,opt,name=setback_rollback_rule,json=setbackRollbackRule,proto3" json:"setback_rollback_rule,omitempty"`
+	CriteriaMet                 bool   `protobuf:"varint,10,opt,name=criteria_met,json=criteriaMet,proto3" json:"criteria_met,omitempty"`
+	UpdatedAtUnix               int64  `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *ReturnToTrainingStageItem) Reset() {
+	*x = ReturnToTrainingStageItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[270]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReturnToTrainingStageItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReturnToTrainingStageItem) ProtoMessage() {}
+
+func (x *ReturnToTrainingStageItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[270]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReturnToTrainingStageItem.ProtoReflect.Descriptor instead.
+func (*ReturnToTrainingStageItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{270}
+}
+
+func (x *ReturnToTrainingStageItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetRestrictionLockId() string {
+	if x != nil {
+		return x.RestrictionLockId
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetPathwayTitle() string {
+	if x != nil {
+		return x.PathwayTitle
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetCurrentStage() string {
+	if x != nil {
+		return x.CurrentStage
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetPainToleranceCeiling_1To_10() int32 {
+	if x != nil {
+		return x.PainToleranceCeiling_1To_10
+	}
+	return 0
+}
+
+func (x *ReturnToTrainingStageItem) GetFunctionalExitCriteria() string {
+	if x != nil {
+		return x.FunctionalExitCriteria
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetAllowedLoadExposureSummary() string {
+	if x != nil {
+		return x.AllowedLoadExposureSummary
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetSetbackRollbackRule() string {
+	if x != nil {
+		return x.SetbackRollbackRule
+	}
+	return ""
+}
+
+func (x *ReturnToTrainingStageItem) GetCriteriaMet() bool {
+	if x != nil {
+		return x.CriteriaMet
+	}
+	return false
+}
+
+func (x *ReturnToTrainingStageItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type InjuryReturnPathwayOverview struct {
+	state                      protoimpl.MessageState        `protogen:"open.v1"`
+	ClinicianLockCharter       string                        `protobuf:"bytes,1,opt,name=clinician_lock_charter,json=clinicianLockCharter,proto3" json:"clinician_lock_charter,omitempty"`
+	NonDiagnosticTriageCharter string                        `protobuf:"bytes,2,opt,name=non_diagnostic_triage_charter,json=nonDiagnosticTriageCharter,proto3" json:"non_diagnostic_triage_charter,omitempty"`
+	PrivacyIsolationCharter    string                        `protobuf:"bytes,3,opt,name=privacy_isolation_charter,json=privacyIsolationCharter,proto3" json:"privacy_isolation_charter,omitempty"`
+	RestrictionLocks           []*InjuryRestrictionLockItem  `protobuf:"bytes,4,rep,name=restriction_locks,json=restrictionLocks,proto3" json:"restriction_locks,omitempty"`
+	TriageEvents               []*PainSessionTriageEventItem `protobuf:"bytes,5,rep,name=triage_events,json=triageEvents,proto3" json:"triage_events,omitempty"`
+	ReturnStages               []*ReturnToTrainingStageItem  `protobuf:"bytes,6,rep,name=return_stages,json=returnStages,proto3" json:"return_stages,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *InjuryReturnPathwayOverview) Reset() {
+	*x = InjuryReturnPathwayOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[271]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *InjuryReturnPathwayOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InjuryReturnPathwayOverview) ProtoMessage() {}
+
+func (x *InjuryReturnPathwayOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[271]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InjuryReturnPathwayOverview.ProtoReflect.Descriptor instead.
+func (*InjuryReturnPathwayOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{271}
+}
+
+func (x *InjuryReturnPathwayOverview) GetClinicianLockCharter() string {
+	if x != nil {
+		return x.ClinicianLockCharter
+	}
+	return ""
+}
+
+func (x *InjuryReturnPathwayOverview) GetNonDiagnosticTriageCharter() string {
+	if x != nil {
+		return x.NonDiagnosticTriageCharter
+	}
+	return ""
+}
+
+func (x *InjuryReturnPathwayOverview) GetPrivacyIsolationCharter() string {
+	if x != nil {
+		return x.PrivacyIsolationCharter
+	}
+	return ""
+}
+
+func (x *InjuryReturnPathwayOverview) GetRestrictionLocks() []*InjuryRestrictionLockItem {
+	if x != nil {
+		return x.RestrictionLocks
+	}
+	return nil
+}
+
+func (x *InjuryReturnPathwayOverview) GetTriageEvents() []*PainSessionTriageEventItem {
+	if x != nil {
+		return x.TriageEvents
+	}
+	return nil
+}
+
+func (x *InjuryReturnPathwayOverview) GetReturnStages() []*ReturnToTrainingStageItem {
+	if x != nil {
+		return x.ReturnStages
+	}
+	return nil
+}
+
+type GetInjuryReturnPathwayOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetInjuryReturnPathwayOverviewRequest) Reset() {
+	*x = GetInjuryReturnPathwayOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[272]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInjuryReturnPathwayOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInjuryReturnPathwayOverviewRequest) ProtoMessage() {}
+
+func (x *GetInjuryReturnPathwayOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[272]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInjuryReturnPathwayOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetInjuryReturnPathwayOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{272}
+}
+
+type GetInjuryReturnPathwayOverviewResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Overview      *InjuryReturnPathwayOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetInjuryReturnPathwayOverviewResponse) Reset() {
+	*x = GetInjuryReturnPathwayOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[273]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetInjuryReturnPathwayOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInjuryReturnPathwayOverviewResponse) ProtoMessage() {}
+
+func (x *GetInjuryReturnPathwayOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[273]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInjuryReturnPathwayOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetInjuryReturnPathwayOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{273}
+}
+
+func (x *GetInjuryReturnPathwayOverviewResponse) GetOverview() *InjuryReturnPathwayOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertInjuryRestrictionLockRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	BodyRegionAndSide           string                 `protobuf:"bytes,1,opt,name=body_region_and_side,json=bodyRegionAndSide,proto3" json:"body_region_and_side,omitempty"`
+	OnsetAndMechanism           string                 `protobuf:"bytes,2,opt,name=onset_and_mechanism,json=onsetAndMechanism,proto3" json:"onset_and_mechanism,omitempty"`
+	AggravatingMovements        string                 `protobuf:"bytes,3,opt,name=aggravating_movements,json=aggravatingMovements,proto3" json:"aggravating_movements,omitempty"`
+	ClinicianRestrictionSummary string                 `protobuf:"bytes,4,opt,name=clinician_restriction_summary,json=clinicianRestrictionSummary,proto3" json:"clinician_restriction_summary,omitempty"`
+	AuthorizingProfessional     string                 `protobuf:"bytes,5,opt,name=authorizing_professional,json=authorizingProfessional,proto3" json:"authorizing_professional,omitempty"`
+	BlocksAutoProgression       bool                   `protobuf:"varint,6,opt,name=blocks_auto_progression,json=blocksAutoProgression,proto3" json:"blocks_auto_progression,omitempty"`
+	ReviewDate                  string                 `protobuf:"bytes,7,opt,name=review_date,json=reviewDate,proto3" json:"review_date,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) Reset() {
+	*x = UpsertInjuryRestrictionLockRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[274]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertInjuryRestrictionLockRequest) ProtoMessage() {}
+
+func (x *UpsertInjuryRestrictionLockRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[274]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertInjuryRestrictionLockRequest.ProtoReflect.Descriptor instead.
+func (*UpsertInjuryRestrictionLockRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{274}
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetBodyRegionAndSide() string {
+	if x != nil {
+		return x.BodyRegionAndSide
+	}
+	return ""
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetOnsetAndMechanism() string {
+	if x != nil {
+		return x.OnsetAndMechanism
+	}
+	return ""
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetAggravatingMovements() string {
+	if x != nil {
+		return x.AggravatingMovements
+	}
+	return ""
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetClinicianRestrictionSummary() string {
+	if x != nil {
+		return x.ClinicianRestrictionSummary
+	}
+	return ""
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetAuthorizingProfessional() string {
+	if x != nil {
+		return x.AuthorizingProfessional
+	}
+	return ""
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetBlocksAutoProgression() bool {
+	if x != nil {
+		return x.BlocksAutoProgression
+	}
+	return false
+}
+
+func (x *UpsertInjuryRestrictionLockRequest) GetReviewDate() string {
+	if x != nil {
+		return x.ReviewDate
+	}
+	return ""
+}
+
+type UpsertInjuryRestrictionLockResponse struct {
+	state           protoimpl.MessageState     `protogen:"open.v1"`
+	RestrictionLock *InjuryRestrictionLockItem `protobuf:"bytes,1,opt,name=restriction_lock,json=restrictionLock,proto3" json:"restriction_lock,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpsertInjuryRestrictionLockResponse) Reset() {
+	*x = UpsertInjuryRestrictionLockResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[275]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertInjuryRestrictionLockResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertInjuryRestrictionLockResponse) ProtoMessage() {}
+
+func (x *UpsertInjuryRestrictionLockResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[275]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertInjuryRestrictionLockResponse.ProtoReflect.Descriptor instead.
+func (*UpsertInjuryRestrictionLockResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{275}
+}
+
+func (x *UpsertInjuryRestrictionLockResponse) GetRestrictionLock() *InjuryRestrictionLockItem {
+	if x != nil {
+		return x.RestrictionLock
+	}
+	return nil
+}
+
+type LogInSessionPainTriageEventRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	MovementSlug            string                 `protobuf:"bytes,1,opt,name=movement_slug,json=movementSlug,proto3" json:"movement_slug,omitempty"`
+	BodyRegionAndSide       string                 `protobuf:"bytes,2,opt,name=body_region_and_side,json=bodyRegionAndSide,proto3" json:"body_region_and_side,omitempty"`
+	PainIntensity_1To_10    int32                  `protobuf:"varint,3,opt,name=pain_intensity_1_to_10,json=painIntensity1To10,proto3" json:"pain_intensity_1_to_10,omitempty"`
+	RedFlagSymptomsReported bool                   `protobuf:"varint,4,opt,name=red_flag_symptoms_reported,json=redFlagSymptomsReported,proto3" json:"red_flag_symptoms_reported,omitempty"`
+	ChosenTriageAction      string                 `protobuf:"bytes,5,opt,name=chosen_triage_action,json=chosenTriageAction,proto3" json:"chosen_triage_action,omitempty"`
+	TriageResolutionNote    string                 `protobuf:"bytes,6,opt,name=triage_resolution_note,json=triageResolutionNote,proto3" json:"triage_resolution_note,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *LogInSessionPainTriageEventRequest) Reset() {
+	*x = LogInSessionPainTriageEventRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[276]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogInSessionPainTriageEventRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogInSessionPainTriageEventRequest) ProtoMessage() {}
+
+func (x *LogInSessionPainTriageEventRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[276]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogInSessionPainTriageEventRequest.ProtoReflect.Descriptor instead.
+func (*LogInSessionPainTriageEventRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{276}
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetMovementSlug() string {
+	if x != nil {
+		return x.MovementSlug
+	}
+	return ""
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetBodyRegionAndSide() string {
+	if x != nil {
+		return x.BodyRegionAndSide
+	}
+	return ""
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetPainIntensity_1To_10() int32 {
+	if x != nil {
+		return x.PainIntensity_1To_10
+	}
+	return 0
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetRedFlagSymptomsReported() bool {
+	if x != nil {
+		return x.RedFlagSymptomsReported
+	}
+	return false
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetChosenTriageAction() string {
+	if x != nil {
+		return x.ChosenTriageAction
+	}
+	return ""
+}
+
+func (x *LogInSessionPainTriageEventRequest) GetTriageResolutionNote() string {
+	if x != nil {
+		return x.TriageResolutionNote
+	}
+	return ""
+}
+
+type LogInSessionPainTriageEventResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	TriageEvent   *PainSessionTriageEventItem `protobuf:"bytes,1,opt,name=triage_event,json=triageEvent,proto3" json:"triage_event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogInSessionPainTriageEventResponse) Reset() {
+	*x = LogInSessionPainTriageEventResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[277]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogInSessionPainTriageEventResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogInSessionPainTriageEventResponse) ProtoMessage() {}
+
+func (x *LogInSessionPainTriageEventResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[277]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogInSessionPainTriageEventResponse.ProtoReflect.Descriptor instead.
+func (*LogInSessionPainTriageEventResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{277}
+}
+
+func (x *LogInSessionPainTriageEventResponse) GetTriageEvent() *PainSessionTriageEventItem {
+	if x != nil {
+		return x.TriageEvent
+	}
+	return nil
+}
+
+type AdvanceReturnToTrainingStageRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	StageId                    string                 `protobuf:"bytes,1,opt,name=stage_id,json=stageId,proto3" json:"stage_id,omitempty"`
+	TargetStage                string                 `protobuf:"bytes,2,opt,name=target_stage,json=targetStage,proto3" json:"target_stage,omitempty"`
+	FunctionalExitCriteria     string                 `protobuf:"bytes,3,opt,name=functional_exit_criteria,json=functionalExitCriteria,proto3" json:"functional_exit_criteria,omitempty"`
+	AllowedLoadExposureSummary string                 `protobuf:"bytes,4,opt,name=allowed_load_exposure_summary,json=allowedLoadExposureSummary,proto3" json:"allowed_load_exposure_summary,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) Reset() {
+	*x = AdvanceReturnToTrainingStageRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[278]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceReturnToTrainingStageRequest) ProtoMessage() {}
+
+func (x *AdvanceReturnToTrainingStageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[278]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceReturnToTrainingStageRequest.ProtoReflect.Descriptor instead.
+func (*AdvanceReturnToTrainingStageRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{278}
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) GetStageId() string {
+	if x != nil {
+		return x.StageId
+	}
+	return ""
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) GetTargetStage() string {
+	if x != nil {
+		return x.TargetStage
+	}
+	return ""
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) GetFunctionalExitCriteria() string {
+	if x != nil {
+		return x.FunctionalExitCriteria
+	}
+	return ""
+}
+
+func (x *AdvanceReturnToTrainingStageRequest) GetAllowedLoadExposureSummary() string {
+	if x != nil {
+		return x.AllowedLoadExposureSummary
+	}
+	return ""
+}
+
+type AdvanceReturnToTrainingStageResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	ReturnStage   *ReturnToTrainingStageItem `protobuf:"bytes,1,opt,name=return_stage,json=returnStage,proto3" json:"return_stage,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdvanceReturnToTrainingStageResponse) Reset() {
+	*x = AdvanceReturnToTrainingStageResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[279]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceReturnToTrainingStageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceReturnToTrainingStageResponse) ProtoMessage() {}
+
+func (x *AdvanceReturnToTrainingStageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[279]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceReturnToTrainingStageResponse.ProtoReflect.Descriptor instead.
+func (*AdvanceReturnToTrainingStageResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{279}
+}
+
+func (x *AdvanceReturnToTrainingStageResponse) GetReturnStage() *ReturnToTrainingStageItem {
+	if x != nil {
+		return x.ReturnStage
+	}
+	return nil
+}
+
+type RecordReturnToTrainingSetbackRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	StageId       string                 `protobuf:"bytes,1,opt,name=stage_id,json=stageId,proto3" json:"stage_id,omitempty"`
+	RollbackStage string                 `protobuf:"bytes,2,opt,name=rollback_stage,json=rollbackStage,proto3" json:"rollback_stage,omitempty"`
+	SetbackReason string                 `protobuf:"bytes,3,opt,name=setback_reason,json=setbackReason,proto3" json:"setback_reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordReturnToTrainingSetbackRequest) Reset() {
+	*x = RecordReturnToTrainingSetbackRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[280]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordReturnToTrainingSetbackRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordReturnToTrainingSetbackRequest) ProtoMessage() {}
+
+func (x *RecordReturnToTrainingSetbackRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[280]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordReturnToTrainingSetbackRequest.ProtoReflect.Descriptor instead.
+func (*RecordReturnToTrainingSetbackRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{280}
+}
+
+func (x *RecordReturnToTrainingSetbackRequest) GetStageId() string {
+	if x != nil {
+		return x.StageId
+	}
+	return ""
+}
+
+func (x *RecordReturnToTrainingSetbackRequest) GetRollbackStage() string {
+	if x != nil {
+		return x.RollbackStage
+	}
+	return ""
+}
+
+func (x *RecordReturnToTrainingSetbackRequest) GetSetbackReason() string {
+	if x != nil {
+		return x.SetbackReason
+	}
+	return ""
+}
+
+type RecordReturnToTrainingSetbackResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	ReturnStage   *ReturnToTrainingStageItem `protobuf:"bytes,1,opt,name=return_stage,json=returnStage,proto3" json:"return_stage,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordReturnToTrainingSetbackResponse) Reset() {
+	*x = RecordReturnToTrainingSetbackResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[281]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordReturnToTrainingSetbackResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordReturnToTrainingSetbackResponse) ProtoMessage() {}
+
+func (x *RecordReturnToTrainingSetbackResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[281]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordReturnToTrainingSetbackResponse.ProtoReflect.Descriptor instead.
+func (*RecordReturnToTrainingSetbackResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{281}
+}
+
+func (x *RecordReturnToTrainingSetbackResponse) GetReturnStage() *ReturnToTrainingStageItem {
+	if x != nil {
+		return x.ReturnStage
+	}
+	return nil
+}
+
+type ClearInjuryRestrictionLockRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	LockId        string                 `protobuf:"bytes,1,opt,name=lock_id,json=lockId,proto3" json:"lock_id,omitempty"`
+	ClearanceNote string                 `protobuf:"bytes,2,opt,name=clearance_note,json=clearanceNote,proto3" json:"clearance_note,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ClearInjuryRestrictionLockRequest) Reset() {
+	*x = ClearInjuryRestrictionLockRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[282]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClearInjuryRestrictionLockRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClearInjuryRestrictionLockRequest) ProtoMessage() {}
+
+func (x *ClearInjuryRestrictionLockRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[282]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClearInjuryRestrictionLockRequest.ProtoReflect.Descriptor instead.
+func (*ClearInjuryRestrictionLockRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{282}
+}
+
+func (x *ClearInjuryRestrictionLockRequest) GetLockId() string {
+	if x != nil {
+		return x.LockId
+	}
+	return ""
+}
+
+func (x *ClearInjuryRestrictionLockRequest) GetClearanceNote() string {
+	if x != nil {
+		return x.ClearanceNote
+	}
+	return ""
+}
+
+type ClearInjuryRestrictionLockResponse struct {
+	state           protoimpl.MessageState     `protogen:"open.v1"`
+	RestrictionLock *InjuryRestrictionLockItem `protobuf:"bytes,1,opt,name=restriction_lock,json=restrictionLock,proto3" json:"restriction_lock,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ClearInjuryRestrictionLockResponse) Reset() {
+	*x = ClearInjuryRestrictionLockResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[283]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ClearInjuryRestrictionLockResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ClearInjuryRestrictionLockResponse) ProtoMessage() {}
+
+func (x *ClearInjuryRestrictionLockResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[283]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ClearInjuryRestrictionLockResponse.ProtoReflect.Descriptor instead.
+func (*ClearInjuryRestrictionLockResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{283}
+}
+
+func (x *ClearInjuryRestrictionLockResponse) GetRestrictionLock() *InjuryRestrictionLockItem {
+	if x != nil {
+		return x.RestrictionLock
+	}
+	return nil
+}
+
+type CoachAthleteScopedGrantItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CoachId                         string                 `protobuf:"bytes,3,opt,name=coach_id,json=coachId,proto3" json:"coach_id,omitempty"`
+	CoachName                       string                 `protobuf:"bytes,4,opt,name=coach_name,json=coachName,proto3" json:"coach_name,omitempty"`
+	CoachCredentials                string                 `protobuf:"bytes,5,opt,name=coach_credentials,json=coachCredentials,proto3" json:"coach_credentials,omitempty"`
+	GrantedCategories               string                 `protobuf:"bytes,6,opt,name=granted_categories,json=grantedCategories,proto3" json:"granted_categories,omitempty"`
+	DateRangeStart                  string                 `protobuf:"bytes,7,opt,name=date_range_start,json=dateRangeStart,proto3" json:"date_range_start,omitempty"`
+	DateRangeEnd                    string                 `protobuf:"bytes,8,opt,name=date_range_end,json=dateRangeEnd,proto3" json:"date_range_end,omitempty"`
+	ApexAndMedicalAutoAccessBlocked bool                   `protobuf:"varint,9,opt,name=apex_and_medical_auto_access_blocked,json=apexAndMedicalAutoAccessBlocked,proto3" json:"apex_and_medical_auto_access_blocked,omitempty"`
+	GrantStatus                     string                 `protobuf:"bytes,10,opt,name=grant_status,json=grantStatus,proto3" json:"grant_status,omitempty"` // active_granted | revoked_by_athlete | expired_offboarded
+	UpdatedAtUnix                   int64                  `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *CoachAthleteScopedGrantItem) Reset() {
+	*x = CoachAthleteScopedGrantItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[284]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CoachAthleteScopedGrantItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CoachAthleteScopedGrantItem) ProtoMessage() {}
+
+func (x *CoachAthleteScopedGrantItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[284]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CoachAthleteScopedGrantItem.ProtoReflect.Descriptor instead.
+func (*CoachAthleteScopedGrantItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{284}
+}
+
+func (x *CoachAthleteScopedGrantItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetCoachId() string {
+	if x != nil {
+		return x.CoachId
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetCoachName() string {
+	if x != nil {
+		return x.CoachName
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetCoachCredentials() string {
+	if x != nil {
+		return x.CoachCredentials
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetGrantedCategories() string {
+	if x != nil {
+		return x.GrantedCategories
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetDateRangeStart() string {
+	if x != nil {
+		return x.DateRangeStart
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetDateRangeEnd() string {
+	if x != nil {
+		return x.DateRangeEnd
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetApexAndMedicalAutoAccessBlocked() bool {
+	if x != nil {
+		return x.ApexAndMedicalAutoAccessBlocked
+	}
+	return false
+}
+
+func (x *CoachAthleteScopedGrantItem) GetGrantStatus() string {
+	if x != nil {
+		return x.GrantStatus
+	}
+	return ""
+}
+
+func (x *CoachAthleteScopedGrantItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type CoachChangeProposalItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CoachId                   string                 `protobuf:"bytes,3,opt,name=coach_id,json=coachId,proto3" json:"coach_id,omitempty"`
+	CoachName                 string                 `protobuf:"bytes,4,opt,name=coach_name,json=coachName,proto3" json:"coach_name,omitempty"`
+	ProgrammeOrMovementTarget string                 `protobuf:"bytes,5,opt,name=programme_or_movement_target,json=programmeOrMovementTarget,proto3" json:"programme_or_movement_target,omitempty"`
+	ProposedDiffSummary       string                 `protobuf:"bytes,6,opt,name=proposed_diff_summary,json=proposedDiffSummary,proto3" json:"proposed_diff_summary,omitempty"`
+	CoachRationale            string                 `protobuf:"bytes,7,opt,name=coach_rationale,json=coachRationale,proto3" json:"coach_rationale,omitempty"`
+	MedicalLockPreserved      bool                   `protobuf:"varint,8,opt,name=medical_lock_preserved,json=medicalLockPreserved,proto3" json:"medical_lock_preserved,omitempty"`
+	ProposalStatus            string                 `protobuf:"bytes,9,opt,name=proposal_status,json=proposalStatus,proto3" json:"proposal_status,omitempty"` // pending_athlete_ack | accepted_by_athlete | declined_preserve_override
+	AthleteResponseNote       string                 `protobuf:"bytes,10,opt,name=athlete_response_note,json=athleteResponseNote,proto3" json:"athlete_response_note,omitempty"`
+	CreatedAtUnix             int64                  `protobuf:"varint,11,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *CoachChangeProposalItem) Reset() {
+	*x = CoachChangeProposalItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[285]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CoachChangeProposalItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CoachChangeProposalItem) ProtoMessage() {}
+
+func (x *CoachChangeProposalItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[285]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CoachChangeProposalItem.ProtoReflect.Descriptor instead.
+func (*CoachChangeProposalItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{285}
+}
+
+func (x *CoachChangeProposalItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetCoachId() string {
+	if x != nil {
+		return x.CoachId
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetCoachName() string {
+	if x != nil {
+		return x.CoachName
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetProgrammeOrMovementTarget() string {
+	if x != nil {
+		return x.ProgrammeOrMovementTarget
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetProposedDiffSummary() string {
+	if x != nil {
+		return x.ProposedDiffSummary
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetCoachRationale() string {
+	if x != nil {
+		return x.CoachRationale
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetMedicalLockPreserved() bool {
+	if x != nil {
+		return x.MedicalLockPreserved
+	}
+	return false
+}
+
+func (x *CoachChangeProposalItem) GetProposalStatus() string {
+	if x != nil {
+		return x.ProposalStatus
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetAthleteResponseNote() string {
+	if x != nil {
+		return x.AthleteResponseNote
+	}
+	return ""
+}
+
+func (x *CoachChangeProposalItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type CoachMarketplaceListingItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	CoachSlug                    string                 `protobuf:"bytes,2,opt,name=coach_slug,json=coachSlug,proto3" json:"coach_slug,omitempty"`
+	CoachName                    string                 `protobuf:"bytes,3,opt,name=coach_name,json=coachName,proto3" json:"coach_name,omitempty"`
+	VerifiedCredentials          string                 `protobuf:"bytes,4,opt,name=verified_credentials,json=verifiedCredentials,proto3" json:"verified_credentials,omitempty"`
+	SpecialtyFocus               string                 `protobuf:"bytes,5,opt,name=specialty_focus,json=specialtyFocus,proto3" json:"specialty_focus,omitempty"`
+	SupportedLanguages           string                 `protobuf:"bytes,6,opt,name=supported_languages,json=supportedLanguages,proto3" json:"supported_languages,omitempty"`
+	MonthlyRateUsd               int32                  `protobuf:"varint,7,opt,name=monthly_rate_usd,json=monthlyRateUsd,proto3" json:"monthly_rate_usd,omitempty"`
+	AvailabilityStatus           string                 `protobuf:"bytes,8,opt,name=availability_status,json=availabilityStatus,proto3" json:"availability_status,omitempty"` // accepting_athletes | waitlist_only | Paused
+	BookingAndRefundPolicy       string                 `protobuf:"bytes,9,opt,name=booking_and_refund_policy,json=bookingAndRefundPolicy,proto3" json:"booking_and_refund_policy,omitempty"`
+	ActiveAthleteEngagementState string                 `protobuf:"bytes,10,opt,name=active_athlete_engagement_state,json=activeAthleteEngagementState,proto3" json:"active_athlete_engagement_state,omitempty"` // browsing | active_coaching | substitution_requested | offboarded_clean
+	UpdatedAtUnix                int64                  `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *CoachMarketplaceListingItem) Reset() {
+	*x = CoachMarketplaceListingItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[286]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CoachMarketplaceListingItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CoachMarketplaceListingItem) ProtoMessage() {}
+
+func (x *CoachMarketplaceListingItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[286]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CoachMarketplaceListingItem.ProtoReflect.Descriptor instead.
+func (*CoachMarketplaceListingItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{286}
+}
+
+func (x *CoachMarketplaceListingItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetCoachSlug() string {
+	if x != nil {
+		return x.CoachSlug
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetCoachName() string {
+	if x != nil {
+		return x.CoachName
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetVerifiedCredentials() string {
+	if x != nil {
+		return x.VerifiedCredentials
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetSpecialtyFocus() string {
+	if x != nil {
+		return x.SpecialtyFocus
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetSupportedLanguages() string {
+	if x != nil {
+		return x.SupportedLanguages
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetMonthlyRateUsd() int32 {
+	if x != nil {
+		return x.MonthlyRateUsd
+	}
+	return 0
+}
+
+func (x *CoachMarketplaceListingItem) GetAvailabilityStatus() string {
+	if x != nil {
+		return x.AvailabilityStatus
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetBookingAndRefundPolicy() string {
+	if x != nil {
+		return x.BookingAndRefundPolicy
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetActiveAthleteEngagementState() string {
+	if x != nil {
+		return x.ActiveAthleteEngagementState
+	}
+	return ""
+}
+
+func (x *CoachMarketplaceListingItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type CoachOsCollaborationOverview struct {
+	state                       protoimpl.MessageState         `protogen:"open.v1"`
+	ScopedGrantCharter          string                         `protobuf:"bytes,1,opt,name=scoped_grant_charter,json=scopedGrantCharter,proto3" json:"scoped_grant_charter,omitempty"`
+	ProposalDiffAndLockCharter  string                         `protobuf:"bytes,2,opt,name=proposal_diff_and_lock_charter,json=proposalDiffAndLockCharter,proto3" json:"proposal_diff_and_lock_charter,omitempty"`
+	MarketplaceLifecycleCharter string                         `protobuf:"bytes,3,opt,name=marketplace_lifecycle_charter,json=marketplaceLifecycleCharter,proto3" json:"marketplace_lifecycle_charter,omitempty"`
+	ScopedGrants                []*CoachAthleteScopedGrantItem `protobuf:"bytes,4,rep,name=scoped_grants,json=scopedGrants,proto3" json:"scoped_grants,omitempty"`
+	Proposals                   []*CoachChangeProposalItem     `protobuf:"bytes,5,rep,name=proposals,proto3" json:"proposals,omitempty"`
+	MarketplaceListings         []*CoachMarketplaceListingItem `protobuf:"bytes,6,rep,name=marketplace_listings,json=marketplaceListings,proto3" json:"marketplace_listings,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *CoachOsCollaborationOverview) Reset() {
+	*x = CoachOsCollaborationOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[287]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CoachOsCollaborationOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CoachOsCollaborationOverview) ProtoMessage() {}
+
+func (x *CoachOsCollaborationOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[287]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CoachOsCollaborationOverview.ProtoReflect.Descriptor instead.
+func (*CoachOsCollaborationOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{287}
+}
+
+func (x *CoachOsCollaborationOverview) GetScopedGrantCharter() string {
+	if x != nil {
+		return x.ScopedGrantCharter
+	}
+	return ""
+}
+
+func (x *CoachOsCollaborationOverview) GetProposalDiffAndLockCharter() string {
+	if x != nil {
+		return x.ProposalDiffAndLockCharter
+	}
+	return ""
+}
+
+func (x *CoachOsCollaborationOverview) GetMarketplaceLifecycleCharter() string {
+	if x != nil {
+		return x.MarketplaceLifecycleCharter
+	}
+	return ""
+}
+
+func (x *CoachOsCollaborationOverview) GetScopedGrants() []*CoachAthleteScopedGrantItem {
+	if x != nil {
+		return x.ScopedGrants
+	}
+	return nil
+}
+
+func (x *CoachOsCollaborationOverview) GetProposals() []*CoachChangeProposalItem {
+	if x != nil {
+		return x.Proposals
+	}
+	return nil
+}
+
+func (x *CoachOsCollaborationOverview) GetMarketplaceListings() []*CoachMarketplaceListingItem {
+	if x != nil {
+		return x.MarketplaceListings
+	}
+	return nil
+}
+
+type GetCoachOsCollaborationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCoachOsCollaborationOverviewRequest) Reset() {
+	*x = GetCoachOsCollaborationOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[288]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCoachOsCollaborationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCoachOsCollaborationOverviewRequest) ProtoMessage() {}
+
+func (x *GetCoachOsCollaborationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[288]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCoachOsCollaborationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCoachOsCollaborationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{288}
+}
+
+type GetCoachOsCollaborationOverviewResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Overview      *CoachOsCollaborationOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCoachOsCollaborationOverviewResponse) Reset() {
+	*x = GetCoachOsCollaborationOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[289]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCoachOsCollaborationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCoachOsCollaborationOverviewResponse) ProtoMessage() {}
+
+func (x *GetCoachOsCollaborationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[289]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCoachOsCollaborationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCoachOsCollaborationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{289}
+}
+
+func (x *GetCoachOsCollaborationOverviewResponse) GetOverview() *CoachOsCollaborationOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertCoachAthleteScopedGrantRequest struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	CoachId           string                 `protobuf:"bytes,1,opt,name=coach_id,json=coachId,proto3" json:"coach_id,omitempty"`
+	CoachName         string                 `protobuf:"bytes,2,opt,name=coach_name,json=coachName,proto3" json:"coach_name,omitempty"`
+	CoachCredentials  string                 `protobuf:"bytes,3,opt,name=coach_credentials,json=coachCredentials,proto3" json:"coach_credentials,omitempty"`
+	GrantedCategories string                 `protobuf:"bytes,4,opt,name=granted_categories,json=grantedCategories,proto3" json:"granted_categories,omitempty"`
+	DateRangeStart    string                 `protobuf:"bytes,5,opt,name=date_range_start,json=dateRangeStart,proto3" json:"date_range_start,omitempty"`
+	DateRangeEnd      string                 `protobuf:"bytes,6,opt,name=date_range_end,json=dateRangeEnd,proto3" json:"date_range_end,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) Reset() {
+	*x = UpsertCoachAthleteScopedGrantRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[290]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCoachAthleteScopedGrantRequest) ProtoMessage() {}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[290]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCoachAthleteScopedGrantRequest.ProtoReflect.Descriptor instead.
+func (*UpsertCoachAthleteScopedGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{290}
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetCoachId() string {
+	if x != nil {
+		return x.CoachId
+	}
+	return ""
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetCoachName() string {
+	if x != nil {
+		return x.CoachName
+	}
+	return ""
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetCoachCredentials() string {
+	if x != nil {
+		return x.CoachCredentials
+	}
+	return ""
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetGrantedCategories() string {
+	if x != nil {
+		return x.GrantedCategories
+	}
+	return ""
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetDateRangeStart() string {
+	if x != nil {
+		return x.DateRangeStart
+	}
+	return ""
+}
+
+func (x *UpsertCoachAthleteScopedGrantRequest) GetDateRangeEnd() string {
+	if x != nil {
+		return x.DateRangeEnd
+	}
+	return ""
+}
+
+type UpsertCoachAthleteScopedGrantResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Grant         *CoachAthleteScopedGrantItem `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertCoachAthleteScopedGrantResponse) Reset() {
+	*x = UpsertCoachAthleteScopedGrantResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[291]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCoachAthleteScopedGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCoachAthleteScopedGrantResponse) ProtoMessage() {}
+
+func (x *UpsertCoachAthleteScopedGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[291]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCoachAthleteScopedGrantResponse.ProtoReflect.Descriptor instead.
+func (*UpsertCoachAthleteScopedGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{291}
+}
+
+func (x *UpsertCoachAthleteScopedGrantResponse) GetGrant() *CoachAthleteScopedGrantItem {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
+type RevokeCoachAthleteScopedGrantRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	GrantId       string                 `protobuf:"bytes,1,opt,name=grant_id,json=grantId,proto3" json:"grant_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeCoachAthleteScopedGrantRequest) Reset() {
+	*x = RevokeCoachAthleteScopedGrantRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[292]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeCoachAthleteScopedGrantRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeCoachAthleteScopedGrantRequest) ProtoMessage() {}
+
+func (x *RevokeCoachAthleteScopedGrantRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[292]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeCoachAthleteScopedGrantRequest.ProtoReflect.Descriptor instead.
+func (*RevokeCoachAthleteScopedGrantRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{292}
+}
+
+func (x *RevokeCoachAthleteScopedGrantRequest) GetGrantId() string {
+	if x != nil {
+		return x.GrantId
+	}
+	return ""
+}
+
+func (x *RevokeCoachAthleteScopedGrantRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RevokeCoachAthleteScopedGrantResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Grant         *CoachAthleteScopedGrantItem `protobuf:"bytes,1,opt,name=grant,proto3" json:"grant,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevokeCoachAthleteScopedGrantResponse) Reset() {
+	*x = RevokeCoachAthleteScopedGrantResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[293]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevokeCoachAthleteScopedGrantResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevokeCoachAthleteScopedGrantResponse) ProtoMessage() {}
+
+func (x *RevokeCoachAthleteScopedGrantResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[293]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevokeCoachAthleteScopedGrantResponse.ProtoReflect.Descriptor instead.
+func (*RevokeCoachAthleteScopedGrantResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{293}
+}
+
+func (x *RevokeCoachAthleteScopedGrantResponse) GetGrant() *CoachAthleteScopedGrantItem {
+	if x != nil {
+		return x.Grant
+	}
+	return nil
+}
+
+type ProposeCoachProgrammeChangeRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	CoachId                   string                 `protobuf:"bytes,1,opt,name=coach_id,json=coachId,proto3" json:"coach_id,omitempty"`
+	CoachName                 string                 `protobuf:"bytes,2,opt,name=coach_name,json=coachName,proto3" json:"coach_name,omitempty"`
+	ProgrammeOrMovementTarget string                 `protobuf:"bytes,3,opt,name=programme_or_movement_target,json=programmeOrMovementTarget,proto3" json:"programme_or_movement_target,omitempty"`
+	ProposedDiffSummary       string                 `protobuf:"bytes,4,opt,name=proposed_diff_summary,json=proposedDiffSummary,proto3" json:"proposed_diff_summary,omitempty"`
+	CoachRationale            string                 `protobuf:"bytes,5,opt,name=coach_rationale,json=coachRationale,proto3" json:"coach_rationale,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) Reset() {
+	*x = ProposeCoachProgrammeChangeRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[294]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProposeCoachProgrammeChangeRequest) ProtoMessage() {}
+
+func (x *ProposeCoachProgrammeChangeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[294]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProposeCoachProgrammeChangeRequest.ProtoReflect.Descriptor instead.
+func (*ProposeCoachProgrammeChangeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{294}
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) GetCoachId() string {
+	if x != nil {
+		return x.CoachId
+	}
+	return ""
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) GetCoachName() string {
+	if x != nil {
+		return x.CoachName
+	}
+	return ""
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) GetProgrammeOrMovementTarget() string {
+	if x != nil {
+		return x.ProgrammeOrMovementTarget
+	}
+	return ""
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) GetProposedDiffSummary() string {
+	if x != nil {
+		return x.ProposedDiffSummary
+	}
+	return ""
+}
+
+func (x *ProposeCoachProgrammeChangeRequest) GetCoachRationale() string {
+	if x != nil {
+		return x.CoachRationale
+	}
+	return ""
+}
+
+type ProposeCoachProgrammeChangeResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Proposal      *CoachChangeProposalItem `protobuf:"bytes,1,opt,name=proposal,proto3" json:"proposal,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProposeCoachProgrammeChangeResponse) Reset() {
+	*x = ProposeCoachProgrammeChangeResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[295]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProposeCoachProgrammeChangeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProposeCoachProgrammeChangeResponse) ProtoMessage() {}
+
+func (x *ProposeCoachProgrammeChangeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[295]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProposeCoachProgrammeChangeResponse.ProtoReflect.Descriptor instead.
+func (*ProposeCoachProgrammeChangeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{295}
+}
+
+func (x *ProposeCoachProgrammeChangeResponse) GetProposal() *CoachChangeProposalItem {
+	if x != nil {
+		return x.Proposal
+	}
+	return nil
+}
+
+type RespondToCoachChangeProposalRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	ProposalId          string                 `protobuf:"bytes,1,opt,name=proposal_id,json=proposalId,proto3" json:"proposal_id,omitempty"`
+	Decision            string                 `protobuf:"bytes,2,opt,name=decision,proto3" json:"decision,omitempty"` // accept | decline
+	AthleteResponseNote string                 `protobuf:"bytes,3,opt,name=athlete_response_note,json=athleteResponseNote,proto3" json:"athlete_response_note,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *RespondToCoachChangeProposalRequest) Reset() {
+	*x = RespondToCoachChangeProposalRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[296]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondToCoachChangeProposalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondToCoachChangeProposalRequest) ProtoMessage() {}
+
+func (x *RespondToCoachChangeProposalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[296]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondToCoachChangeProposalRequest.ProtoReflect.Descriptor instead.
+func (*RespondToCoachChangeProposalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{296}
+}
+
+func (x *RespondToCoachChangeProposalRequest) GetProposalId() string {
+	if x != nil {
+		return x.ProposalId
+	}
+	return ""
+}
+
+func (x *RespondToCoachChangeProposalRequest) GetDecision() string {
+	if x != nil {
+		return x.Decision
+	}
+	return ""
+}
+
+func (x *RespondToCoachChangeProposalRequest) GetAthleteResponseNote() string {
+	if x != nil {
+		return x.AthleteResponseNote
+	}
+	return ""
+}
+
+type RespondToCoachChangeProposalResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Proposal      *CoachChangeProposalItem `protobuf:"bytes,1,opt,name=proposal,proto3" json:"proposal,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RespondToCoachChangeProposalResponse) Reset() {
+	*x = RespondToCoachChangeProposalResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[297]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RespondToCoachChangeProposalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RespondToCoachChangeProposalResponse) ProtoMessage() {}
+
+func (x *RespondToCoachChangeProposalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[297]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RespondToCoachChangeProposalResponse.ProtoReflect.Descriptor instead.
+func (*RespondToCoachChangeProposalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{297}
+}
+
+func (x *RespondToCoachChangeProposalResponse) GetProposal() *CoachChangeProposalItem {
+	if x != nil {
+		return x.Proposal
+	}
+	return nil
+}
+
+type UpdateCoachMarketplaceEngagementRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	ListingId             string                 `protobuf:"bytes,1,opt,name=listing_id,json=listingId,proto3" json:"listing_id,omitempty"`
+	TargetEngagementState string                 `protobuf:"bytes,2,opt,name=target_engagement_state,json=targetEngagementState,proto3" json:"target_engagement_state,omitempty"` // active_coaching | substitution_requested | offboarded_clean
+	Note                  string                 `protobuf:"bytes,3,opt,name=note,proto3" json:"note,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) Reset() {
+	*x = UpdateCoachMarketplaceEngagementRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[298]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCoachMarketplaceEngagementRequest) ProtoMessage() {}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[298]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCoachMarketplaceEngagementRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCoachMarketplaceEngagementRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{298}
+}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) GetListingId() string {
+	if x != nil {
+		return x.ListingId
+	}
+	return ""
+}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) GetTargetEngagementState() string {
+	if x != nil {
+		return x.TargetEngagementState
+	}
+	return ""
+}
+
+func (x *UpdateCoachMarketplaceEngagementRequest) GetNote() string {
+	if x != nil {
+		return x.Note
+	}
+	return ""
+}
+
+type UpdateCoachMarketplaceEngagementResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Listing       *CoachMarketplaceListingItem `protobuf:"bytes,1,opt,name=listing,proto3" json:"listing,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdateCoachMarketplaceEngagementResponse) Reset() {
+	*x = UpdateCoachMarketplaceEngagementResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[299]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdateCoachMarketplaceEngagementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateCoachMarketplaceEngagementResponse) ProtoMessage() {}
+
+func (x *UpdateCoachMarketplaceEngagementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[299]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateCoachMarketplaceEngagementResponse.ProtoReflect.Descriptor instead.
+func (*UpdateCoachMarketplaceEngagementResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{299}
+}
+
+func (x *UpdateCoachMarketplaceEngagementResponse) GetListing() *CoachMarketplaceListingItem {
+	if x != nil {
+		return x.Listing
+	}
+	return nil
+}
+
+type TeamSquadRosterItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	SquadSlug                 string                 `protobuf:"bytes,2,opt,name=squad_slug,json=squadSlug,proto3" json:"squad_slug,omitempty"`
+	OrganizationName          string                 `protobuf:"bytes,3,opt,name=organization_name,json=organizationName,proto3" json:"organization_name,omitempty"`
+	SquadName                 string                 `protobuf:"bytes,4,opt,name=squad_name,json=squadName,proto3" json:"squad_name,omitempty"`
+	SeasonLabel               string                 `protobuf:"bytes,5,opt,name=season_label,json=seasonLabel,proto3" json:"season_label,omitempty"`
+	ActiveAthleteCount        int32                  `protobuf:"varint,6,opt,name=active_athlete_count,json=activeAthleteCount,proto3" json:"active_athlete_count,omitempty"`
+	MinCohortSize             int32                  `protobuf:"varint,7,opt,name=min_cohort_size,json=minCohortSize,proto3" json:"min_cohort_size,omitempty"`
+	PrivateHealthDataBlocked  bool                   `protobuf:"varint,8,opt,name=private_health_data_blocked,json=privateHealthDataBlocked,proto3" json:"private_health_data_blocked,omitempty"`
+	IsYouthSquad              bool                   `protobuf:"varint,9,opt,name=is_youth_squad,json=isYouthSquad,proto3" json:"is_youth_squad,omitempty"`
+	YouthSafeguardingVerified bool                   `protobuf:"varint,10,opt,name=youth_safeguarding_verified,json=youthSafeguardingVerified,proto3" json:"youth_safeguarding_verified,omitempty"`
+	HeadStrengthCoach         string                 `protobuf:"bytes,11,opt,name=head_strength_coach,json=headStrengthCoach,proto3" json:"head_strength_coach,omitempty"`
+	UpdatedAtUnix             int64                  `protobuf:"varint,12,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *TeamSquadRosterItem) Reset() {
+	*x = TeamSquadRosterItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[300]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TeamSquadRosterItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TeamSquadRosterItem) ProtoMessage() {}
+
+func (x *TeamSquadRosterItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[300]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TeamSquadRosterItem.ProtoReflect.Descriptor instead.
+func (*TeamSquadRosterItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{300}
+}
+
+func (x *TeamSquadRosterItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetSquadSlug() string {
+	if x != nil {
+		return x.SquadSlug
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetOrganizationName() string {
+	if x != nil {
+		return x.OrganizationName
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetSquadName() string {
+	if x != nil {
+		return x.SquadName
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetSeasonLabel() string {
+	if x != nil {
+		return x.SeasonLabel
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetActiveAthleteCount() int32 {
+	if x != nil {
+		return x.ActiveAthleteCount
+	}
+	return 0
+}
+
+func (x *TeamSquadRosterItem) GetMinCohortSize() int32 {
+	if x != nil {
+		return x.MinCohortSize
+	}
+	return 0
+}
+
+func (x *TeamSquadRosterItem) GetPrivateHealthDataBlocked() bool {
+	if x != nil {
+		return x.PrivateHealthDataBlocked
+	}
+	return false
+}
+
+func (x *TeamSquadRosterItem) GetIsYouthSquad() bool {
+	if x != nil {
+		return x.IsYouthSquad
+	}
+	return false
+}
+
+func (x *TeamSquadRosterItem) GetYouthSafeguardingVerified() bool {
+	if x != nil {
+		return x.YouthSafeguardingVerified
+	}
+	return false
+}
+
+func (x *TeamSquadRosterItem) GetHeadStrengthCoach() string {
+	if x != nil {
+		return x.HeadStrengthCoach
+	}
+	return ""
+}
+
+func (x *TeamSquadRosterItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type TeamTrafficLightCheckinItem struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SquadSlug                         string                 `protobuf:"bytes,3,opt,name=squad_slug,json=squadSlug,proto3" json:"squad_slug,omitempty"`
+	CheckinDate                       string                 `protobuf:"bytes,4,opt,name=checkin_date,json=checkinDate,proto3" json:"checkin_date,omitempty"`
+	TrafficLightState                 string                 `protobuf:"bytes,5,opt,name=traffic_light_state,json=trafficLightState,proto3" json:"traffic_light_state,omitempty"` // green_available | amber_modified | red_unavailable
+	SharedCoachModificationNote       string                 `protobuf:"bytes,6,opt,name=shared_coach_modification_note,json=sharedCoachModificationNote,proto3" json:"shared_coach_modification_note,omitempty"`
+	UnderlyingMedicalAndCycleRedacted bool                   `protobuf:"varint,7,opt,name=underlying_medical_and_cycle_redacted,json=underlyingMedicalAndCycleRedacted,proto3" json:"underlying_medical_and_cycle_redacted,omitempty"`
+	CreatedAtUnix                     int64                  `protobuf:"varint,8,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *TeamTrafficLightCheckinItem) Reset() {
+	*x = TeamTrafficLightCheckinItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[301]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TeamTrafficLightCheckinItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TeamTrafficLightCheckinItem) ProtoMessage() {}
+
+func (x *TeamTrafficLightCheckinItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[301]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TeamTrafficLightCheckinItem.ProtoReflect.Descriptor instead.
+func (*TeamTrafficLightCheckinItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{301}
+}
+
+func (x *TeamTrafficLightCheckinItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetSquadSlug() string {
+	if x != nil {
+		return x.SquadSlug
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetCheckinDate() string {
+	if x != nil {
+		return x.CheckinDate
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetTrafficLightState() string {
+	if x != nil {
+		return x.TrafficLightState
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetSharedCoachModificationNote() string {
+	if x != nil {
+		return x.SharedCoachModificationNote
+	}
+	return ""
+}
+
+func (x *TeamTrafficLightCheckinItem) GetUnderlyingMedicalAndCycleRedacted() bool {
+	if x != nil {
+		return x.UnderlyingMedicalAndCycleRedacted
+	}
+	return false
+}
+
+func (x *TeamTrafficLightCheckinItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type FacilityRackOperationItem struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	Id                            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	StationCode                   string                 `protobuf:"bytes,2,opt,name=station_code,json=stationCode,proto3" json:"station_code,omitempty"`
+	FacilityName                  string                 `protobuf:"bytes,3,opt,name=facility_name,json=facilityName,proto3" json:"facility_name,omitempty"`
+	StationType                   string                 `protobuf:"bytes,4,opt,name=station_type,json=stationType,proto3" json:"station_type,omitempty"`
+	OperationalStatus             string                 `protobuf:"bytes,5,opt,name=operational_status,json=operationalStatus,proto3" json:"operational_status,omitempty"` // operational_available | booked_squad_block | maintenance_lockout | inspection_due
+	LastCleaningAndInspection     string                 `protobuf:"bytes,6,opt,name=last_cleaning_and_inspection,json=lastCleaningAndInspection,proto3" json:"last_cleaning_and_inspection,omitempty"`
+	AccessibleAdaptiveAlternative string                 `protobuf:"bytes,7,opt,name=accessible_adaptive_alternative,json=accessibleAdaptiveAlternative,proto3" json:"accessible_adaptive_alternative,omitempty"`
+	ActiveBookingSummary          string                 `protobuf:"bytes,8,opt,name=active_booking_summary,json=activeBookingSummary,proto3" json:"active_booking_summary,omitempty"`
+	UpdatedAtUnix                 int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *FacilityRackOperationItem) Reset() {
+	*x = FacilityRackOperationItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[302]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FacilityRackOperationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FacilityRackOperationItem) ProtoMessage() {}
+
+func (x *FacilityRackOperationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[302]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FacilityRackOperationItem.ProtoReflect.Descriptor instead.
+func (*FacilityRackOperationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{302}
+}
+
+func (x *FacilityRackOperationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetStationCode() string {
+	if x != nil {
+		return x.StationCode
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetFacilityName() string {
+	if x != nil {
+		return x.FacilityName
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetStationType() string {
+	if x != nil {
+		return x.StationType
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetOperationalStatus() string {
+	if x != nil {
+		return x.OperationalStatus
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetLastCleaningAndInspection() string {
+	if x != nil {
+		return x.LastCleaningAndInspection
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetAccessibleAdaptiveAlternative() string {
+	if x != nil {
+		return x.AccessibleAdaptiveAlternative
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetActiveBookingSummary() string {
+	if x != nil {
+		return x.ActiveBookingSummary
+	}
+	return ""
+}
+
+func (x *FacilityRackOperationItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type TeamsClubsFacilitiesOverview struct {
+	state                          protoimpl.MessageState         `protogen:"open.v1"`
+	CohortPrivacyCharter           string                         `protobuf:"bytes,1,opt,name=cohort_privacy_charter,json=cohortPrivacyCharter,proto3" json:"cohort_privacy_charter,omitempty"`
+	TrafficLightReadinessCharter   string                         `protobuf:"bytes,2,opt,name=traffic_light_readiness_charter,json=trafficLightReadinessCharter,proto3" json:"traffic_light_readiness_charter,omitempty"`
+	FacilityAndSafeguardingCharter string                         `protobuf:"bytes,3,opt,name=facility_and_safeguarding_charter,json=facilityAndSafeguardingCharter,proto3" json:"facility_and_safeguarding_charter,omitempty"`
+	Squads                         []*TeamSquadRosterItem         `protobuf:"bytes,4,rep,name=squads,proto3" json:"squads,omitempty"`
+	Checkins                       []*TeamTrafficLightCheckinItem `protobuf:"bytes,5,rep,name=checkins,proto3" json:"checkins,omitempty"`
+	RackOperations                 []*FacilityRackOperationItem   `protobuf:"bytes,6,rep,name=rack_operations,json=rackOperations,proto3" json:"rack_operations,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *TeamsClubsFacilitiesOverview) Reset() {
+	*x = TeamsClubsFacilitiesOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[303]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TeamsClubsFacilitiesOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TeamsClubsFacilitiesOverview) ProtoMessage() {}
+
+func (x *TeamsClubsFacilitiesOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[303]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TeamsClubsFacilitiesOverview.ProtoReflect.Descriptor instead.
+func (*TeamsClubsFacilitiesOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{303}
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetCohortPrivacyCharter() string {
+	if x != nil {
+		return x.CohortPrivacyCharter
+	}
+	return ""
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetTrafficLightReadinessCharter() string {
+	if x != nil {
+		return x.TrafficLightReadinessCharter
+	}
+	return ""
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetFacilityAndSafeguardingCharter() string {
+	if x != nil {
+		return x.FacilityAndSafeguardingCharter
+	}
+	return ""
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetSquads() []*TeamSquadRosterItem {
+	if x != nil {
+		return x.Squads
+	}
+	return nil
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetCheckins() []*TeamTrafficLightCheckinItem {
+	if x != nil {
+		return x.Checkins
+	}
+	return nil
+}
+
+func (x *TeamsClubsFacilitiesOverview) GetRackOperations() []*FacilityRackOperationItem {
+	if x != nil {
+		return x.RackOperations
+	}
+	return nil
+}
+
+type GetTeamsClubsFacilitiesOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTeamsClubsFacilitiesOverviewRequest) Reset() {
+	*x = GetTeamsClubsFacilitiesOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[304]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTeamsClubsFacilitiesOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTeamsClubsFacilitiesOverviewRequest) ProtoMessage() {}
+
+func (x *GetTeamsClubsFacilitiesOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[304]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTeamsClubsFacilitiesOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetTeamsClubsFacilitiesOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{304}
+}
+
+type GetTeamsClubsFacilitiesOverviewResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Overview      *TeamsClubsFacilitiesOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetTeamsClubsFacilitiesOverviewResponse) Reset() {
+	*x = GetTeamsClubsFacilitiesOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[305]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetTeamsClubsFacilitiesOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetTeamsClubsFacilitiesOverviewResponse) ProtoMessage() {}
+
+func (x *GetTeamsClubsFacilitiesOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[305]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetTeamsClubsFacilitiesOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetTeamsClubsFacilitiesOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{305}
+}
+
+func (x *GetTeamsClubsFacilitiesOverviewResponse) GetOverview() *TeamsClubsFacilitiesOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertTeamSquadRosterRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	SquadSlug          string                 `protobuf:"bytes,1,opt,name=squad_slug,json=squadSlug,proto3" json:"squad_slug,omitempty"`
+	OrganizationName   string                 `protobuf:"bytes,2,opt,name=organization_name,json=organizationName,proto3" json:"organization_name,omitempty"`
+	SquadName          string                 `protobuf:"bytes,3,opt,name=squad_name,json=squadName,proto3" json:"squad_name,omitempty"`
+	SeasonLabel        string                 `protobuf:"bytes,4,opt,name=season_label,json=seasonLabel,proto3" json:"season_label,omitempty"`
+	ActiveAthleteCount int32                  `protobuf:"varint,5,opt,name=active_athlete_count,json=activeAthleteCount,proto3" json:"active_athlete_count,omitempty"`
+	IsYouthSquad       bool                   `protobuf:"varint,6,opt,name=is_youth_squad,json=isYouthSquad,proto3" json:"is_youth_squad,omitempty"`
+	HeadStrengthCoach  string                 `protobuf:"bytes,7,opt,name=head_strength_coach,json=headStrengthCoach,proto3" json:"head_strength_coach,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *UpsertTeamSquadRosterRequest) Reset() {
+	*x = UpsertTeamSquadRosterRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[306]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertTeamSquadRosterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertTeamSquadRosterRequest) ProtoMessage() {}
+
+func (x *UpsertTeamSquadRosterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[306]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertTeamSquadRosterRequest.ProtoReflect.Descriptor instead.
+func (*UpsertTeamSquadRosterRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{306}
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetSquadSlug() string {
+	if x != nil {
+		return x.SquadSlug
+	}
+	return ""
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetOrganizationName() string {
+	if x != nil {
+		return x.OrganizationName
+	}
+	return ""
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetSquadName() string {
+	if x != nil {
+		return x.SquadName
+	}
+	return ""
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetSeasonLabel() string {
+	if x != nil {
+		return x.SeasonLabel
+	}
+	return ""
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetActiveAthleteCount() int32 {
+	if x != nil {
+		return x.ActiveAthleteCount
+	}
+	return 0
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetIsYouthSquad() bool {
+	if x != nil {
+		return x.IsYouthSquad
+	}
+	return false
+}
+
+func (x *UpsertTeamSquadRosterRequest) GetHeadStrengthCoach() string {
+	if x != nil {
+		return x.HeadStrengthCoach
+	}
+	return ""
+}
+
+type UpsertTeamSquadRosterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Squad         *TeamSquadRosterItem   `protobuf:"bytes,1,opt,name=squad,proto3" json:"squad,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertTeamSquadRosterResponse) Reset() {
+	*x = UpsertTeamSquadRosterResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[307]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertTeamSquadRosterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertTeamSquadRosterResponse) ProtoMessage() {}
+
+func (x *UpsertTeamSquadRosterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[307]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertTeamSquadRosterResponse.ProtoReflect.Descriptor instead.
+func (*UpsertTeamSquadRosterResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{307}
+}
+
+func (x *UpsertTeamSquadRosterResponse) GetSquad() *TeamSquadRosterItem {
+	if x != nil {
+		return x.Squad
+	}
+	return nil
+}
+
+type SubmitTeamTrafficLightCheckinRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	SquadSlug                   string                 `protobuf:"bytes,1,opt,name=squad_slug,json=squadSlug,proto3" json:"squad_slug,omitempty"`
+	CheckinDate                 string                 `protobuf:"bytes,2,opt,name=checkin_date,json=checkinDate,proto3" json:"checkin_date,omitempty"`
+	TrafficLightState           string                 `protobuf:"bytes,3,opt,name=traffic_light_state,json=trafficLightState,proto3" json:"traffic_light_state,omitempty"` // green_available | amber_modified | red_unavailable
+	SharedCoachModificationNote string                 `protobuf:"bytes,4,opt,name=shared_coach_modification_note,json=sharedCoachModificationNote,proto3" json:"shared_coach_modification_note,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) Reset() {
+	*x = SubmitTeamTrafficLightCheckinRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[308]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitTeamTrafficLightCheckinRequest) ProtoMessage() {}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[308]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitTeamTrafficLightCheckinRequest.ProtoReflect.Descriptor instead.
+func (*SubmitTeamTrafficLightCheckinRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{308}
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) GetSquadSlug() string {
+	if x != nil {
+		return x.SquadSlug
+	}
+	return ""
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) GetCheckinDate() string {
+	if x != nil {
+		return x.CheckinDate
+	}
+	return ""
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) GetTrafficLightState() string {
+	if x != nil {
+		return x.TrafficLightState
+	}
+	return ""
+}
+
+func (x *SubmitTeamTrafficLightCheckinRequest) GetSharedCoachModificationNote() string {
+	if x != nil {
+		return x.SharedCoachModificationNote
+	}
+	return ""
+}
+
+type SubmitTeamTrafficLightCheckinResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Checkin       *TeamTrafficLightCheckinItem `protobuf:"bytes,1,opt,name=checkin,proto3" json:"checkin,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubmitTeamTrafficLightCheckinResponse) Reset() {
+	*x = SubmitTeamTrafficLightCheckinResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[309]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitTeamTrafficLightCheckinResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitTeamTrafficLightCheckinResponse) ProtoMessage() {}
+
+func (x *SubmitTeamTrafficLightCheckinResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[309]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitTeamTrafficLightCheckinResponse.ProtoReflect.Descriptor instead.
+func (*SubmitTeamTrafficLightCheckinResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{309}
+}
+
+func (x *SubmitTeamTrafficLightCheckinResponse) GetCheckin() *TeamTrafficLightCheckinItem {
+	if x != nil {
+		return x.Checkin
+	}
+	return nil
+}
+
+type ReserveOrUpdateFacilityRackStationRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	StationCode          string                 `protobuf:"bytes,1,opt,name=station_code,json=stationCode,proto3" json:"station_code,omitempty"`
+	OperationalStatus    string                 `protobuf:"bytes,2,opt,name=operational_status,json=operationalStatus,proto3" json:"operational_status,omitempty"` // operational_available | booked_squad_block | maintenance_lockout | inspection_due
+	ActiveBookingSummary string                 `protobuf:"bytes,3,opt,name=active_booking_summary,json=activeBookingSummary,proto3" json:"active_booking_summary,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) Reset() {
+	*x = ReserveOrUpdateFacilityRackStationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[310]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReserveOrUpdateFacilityRackStationRequest) ProtoMessage() {}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[310]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReserveOrUpdateFacilityRackStationRequest.ProtoReflect.Descriptor instead.
+func (*ReserveOrUpdateFacilityRackStationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{310}
+}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) GetStationCode() string {
+	if x != nil {
+		return x.StationCode
+	}
+	return ""
+}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) GetOperationalStatus() string {
+	if x != nil {
+		return x.OperationalStatus
+	}
+	return ""
+}
+
+func (x *ReserveOrUpdateFacilityRackStationRequest) GetActiveBookingSummary() string {
+	if x != nil {
+		return x.ActiveBookingSummary
+	}
+	return ""
+}
+
+type ReserveOrUpdateFacilityRackStationResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	RackOperation *FacilityRackOperationItem `protobuf:"bytes,1,opt,name=rack_operation,json=rackOperation,proto3" json:"rack_operation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ReserveOrUpdateFacilityRackStationResponse) Reset() {
+	*x = ReserveOrUpdateFacilityRackStationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[311]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ReserveOrUpdateFacilityRackStationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReserveOrUpdateFacilityRackStationResponse) ProtoMessage() {}
+
+func (x *ReserveOrUpdateFacilityRackStationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[311]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReserveOrUpdateFacilityRackStationResponse.ProtoReflect.Descriptor instead.
+func (*ReserveOrUpdateFacilityRackStationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{311}
+}
+
+func (x *ReserveOrUpdateFacilityRackStationResponse) GetRackOperation() *FacilityRackOperationItem {
+	if x != nil {
+		return x.RackOperation
+	}
+	return nil
+}
+
+type FlagFacilityMaintenanceOrIncidentRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	StationCode                   string                 `protobuf:"bytes,1,opt,name=station_code,json=stationCode,proto3" json:"station_code,omitempty"`
+	IncidentAndInspectionNote     string                 `protobuf:"bytes,2,opt,name=incident_and_inspection_note,json=incidentAndInspectionNote,proto3" json:"incident_and_inspection_note,omitempty"`
+	AccessibleAdaptiveAlternative string                 `protobuf:"bytes,3,opt,name=accessible_adaptive_alternative,json=accessibleAdaptiveAlternative,proto3" json:"accessible_adaptive_alternative,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) Reset() {
+	*x = FlagFacilityMaintenanceOrIncidentRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[312]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagFacilityMaintenanceOrIncidentRequest) ProtoMessage() {}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[312]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagFacilityMaintenanceOrIncidentRequest.ProtoReflect.Descriptor instead.
+func (*FlagFacilityMaintenanceOrIncidentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{312}
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) GetStationCode() string {
+	if x != nil {
+		return x.StationCode
+	}
+	return ""
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) GetIncidentAndInspectionNote() string {
+	if x != nil {
+		return x.IncidentAndInspectionNote
+	}
+	return ""
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentRequest) GetAccessibleAdaptiveAlternative() string {
+	if x != nil {
+		return x.AccessibleAdaptiveAlternative
+	}
+	return ""
+}
+
+type FlagFacilityMaintenanceOrIncidentResponse struct {
+	state         protoimpl.MessageState     `protogen:"open.v1"`
+	RackOperation *FacilityRackOperationItem `protobuf:"bytes,1,opt,name=rack_operation,json=rackOperation,proto3" json:"rack_operation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentResponse) Reset() {
+	*x = FlagFacilityMaintenanceOrIncidentResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[313]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagFacilityMaintenanceOrIncidentResponse) ProtoMessage() {}
+
+func (x *FlagFacilityMaintenanceOrIncidentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[313]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagFacilityMaintenanceOrIncidentResponse.ProtoReflect.Descriptor instead.
+func (*FlagFacilityMaintenanceOrIncidentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{313}
+}
+
+func (x *FlagFacilityMaintenanceOrIncidentResponse) GetRackOperation() *FacilityRackOperationItem {
+	if x != nil {
+		return x.RackOperation
+	}
+	return nil
+}
+
+type VerifyYouthSquadSafeguardingRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	SquadSlug                    string                 `protobuf:"bytes,1,opt,name=squad_slug,json=squadSlug,proto3" json:"squad_slug,omitempty"`
+	SafeguardingVerificationNote string                 `protobuf:"bytes,2,opt,name=safeguarding_verification_note,json=safeguardingVerificationNote,proto3" json:"safeguarding_verification_note,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *VerifyYouthSquadSafeguardingRequest) Reset() {
+	*x = VerifyYouthSquadSafeguardingRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[314]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyYouthSquadSafeguardingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyYouthSquadSafeguardingRequest) ProtoMessage() {}
+
+func (x *VerifyYouthSquadSafeguardingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[314]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyYouthSquadSafeguardingRequest.ProtoReflect.Descriptor instead.
+func (*VerifyYouthSquadSafeguardingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{314}
+}
+
+func (x *VerifyYouthSquadSafeguardingRequest) GetSquadSlug() string {
+	if x != nil {
+		return x.SquadSlug
+	}
+	return ""
+}
+
+func (x *VerifyYouthSquadSafeguardingRequest) GetSafeguardingVerificationNote() string {
+	if x != nil {
+		return x.SafeguardingVerificationNote
+	}
+	return ""
+}
+
+type VerifyYouthSquadSafeguardingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Squad         *TeamSquadRosterItem   `protobuf:"bytes,1,opt,name=squad,proto3" json:"squad,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyYouthSquadSafeguardingResponse) Reset() {
+	*x = VerifyYouthSquadSafeguardingResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[315]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyYouthSquadSafeguardingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyYouthSquadSafeguardingResponse) ProtoMessage() {}
+
+func (x *VerifyYouthSquadSafeguardingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[315]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyYouthSquadSafeguardingResponse.ProtoReflect.Descriptor instead.
+func (*VerifyYouthSquadSafeguardingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{315}
+}
+
+func (x *VerifyYouthSquadSafeguardingResponse) GetSquad() *TeamSquadRosterItem {
+	if x != nil {
+		return x.Squad
+	}
+	return nil
+}
+
+type CompetitionEventPlanItem struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EventSlug               string                 `protobuf:"bytes,3,opt,name=event_slug,json=eventSlug,proto3" json:"event_slug,omitempty"`
+	EventTitle              string                 `protobuf:"bytes,4,opt,name=event_title,json=eventTitle,proto3" json:"event_title,omitempty"`
+	GoverningBodyAndClass   string                 `protobuf:"bytes,5,opt,name=governing_body_and_class,json=governingBodyAndClass,proto3" json:"governing_body_and_class,omitempty"`
+	EventDate               string                 `protobuf:"bytes,6,opt,name=event_date,json=eventDate,proto3" json:"event_date,omitempty"`
+	TaperAndWarmupProtocol  string                 `protobuf:"bytes,7,opt,name=taper_and_warmup_protocol,json=taperAndWarmupProtocol,proto3" json:"taper_and_warmup_protocol,omitempty"`
+	AttemptOrPacingPlan     string                 `protobuf:"bytes,8,opt,name=attempt_or_pacing_plan,json=attemptOrPacingPlan,proto3" json:"attempt_or_pacing_plan,omitempty"`
+	OfflineVenueModeEnabled bool                   `protobuf:"varint,9,opt,name=offline_venue_mode_enabled,json=offlineVenueModeEnabled,proto3" json:"offline_venue_mode_enabled,omitempty"`
+	PlanStatus              string                 `protobuf:"bytes,10,opt,name=plan_status,json=planStatus,proto3" json:"plan_status,omitempty"` // active_peaking | draft_scenario | completed_archived
+	UpdatedAtUnix           int64                  `protobuf:"varint,11,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *CompetitionEventPlanItem) Reset() {
+	*x = CompetitionEventPlanItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[316]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompetitionEventPlanItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompetitionEventPlanItem) ProtoMessage() {}
+
+func (x *CompetitionEventPlanItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[316]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompetitionEventPlanItem.ProtoReflect.Descriptor instead.
+func (*CompetitionEventPlanItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{316}
+}
+
+func (x *CompetitionEventPlanItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetEventSlug() string {
+	if x != nil {
+		return x.EventSlug
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetEventTitle() string {
+	if x != nil {
+		return x.EventTitle
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetGoverningBodyAndClass() string {
+	if x != nil {
+		return x.GoverningBodyAndClass
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetEventDate() string {
+	if x != nil {
+		return x.EventDate
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetTaperAndWarmupProtocol() string {
+	if x != nil {
+		return x.TaperAndWarmupProtocol
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetAttemptOrPacingPlan() string {
+	if x != nil {
+		return x.AttemptOrPacingPlan
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetOfflineVenueModeEnabled() bool {
+	if x != nil {
+		return x.OfflineVenueModeEnabled
+	}
+	return false
+}
+
+func (x *CompetitionEventPlanItem) GetPlanStatus() string {
+	if x != nil {
+		return x.PlanStatus
+	}
+	return ""
+}
+
+func (x *CompetitionEventPlanItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type VerifiedPerformanceResultItem struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EventOrLiftName string                 `protobuf:"bytes,3,opt,name=event_or_lift_name,json=eventOrLiftName,proto3" json:"event_or_lift_name,omitempty"`
+	ResultDisplay   string                 `protobuf:"bytes,4,opt,name=result_display,json=resultDisplay,proto3" json:"result_display,omitempty"`
+	// self_logged_gym | sensor_video_assisted | coach_attested | official_organizer_verified
+	VerificationTier          string `protobuf:"bytes,5,opt,name=verification_tier,json=verificationTier,proto3" json:"verification_tier,omitempty"`
+	EvidenceAndWitnessSummary string `protobuf:"bytes,6,opt,name=evidence_and_witness_summary,json=evidenceAndWitnessSummary,proto3" json:"evidence_and_witness_summary,omitempty"`
+	AdjudicationStatus        string `protobuf:"bytes,7,opt,name=adjudication_status,json=adjudicationStatus,proto3" json:"adjudication_status,omitempty"` // verified_final | pending_adjudication | appeal_open | corrected_after_review
+	CreatedAtUnix             int64  `protobuf:"varint,8,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *VerifiedPerformanceResultItem) Reset() {
+	*x = VerifiedPerformanceResultItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[317]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifiedPerformanceResultItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifiedPerformanceResultItem) ProtoMessage() {}
+
+func (x *VerifiedPerformanceResultItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[317]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifiedPerformanceResultItem.ProtoReflect.Descriptor instead.
+func (*VerifiedPerformanceResultItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{317}
+}
+
+func (x *VerifiedPerformanceResultItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetEventOrLiftName() string {
+	if x != nil {
+		return x.EventOrLiftName
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetResultDisplay() string {
+	if x != nil {
+		return x.ResultDisplay
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetVerificationTier() string {
+	if x != nil {
+		return x.VerificationTier
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetEvidenceAndWitnessSummary() string {
+	if x != nil {
+		return x.EvidenceAndWitnessSummary
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetAdjudicationStatus() string {
+	if x != nil {
+		return x.AdjudicationStatus
+	}
+	return ""
+}
+
+func (x *VerifiedPerformanceResultItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type CompetitionRuleTueCheckItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GoverningBody                string                 `protobuf:"bytes,3,opt,name=governing_body,json=governingBody,proto3" json:"governing_body,omitempty"`
+	EquipmentAndRuleSummary      string                 `protobuf:"bytes,4,opt,name=equipment_and_rule_summary,json=equipmentAndRuleSummary,proto3" json:"equipment_and_rule_summary,omitempty"`
+	TueAndAntidopingReference    string                 `protobuf:"bytes,5,opt,name=tue_and_antidoping_reference,json=tueAndAntidopingReference,proto3" json:"tue_and_antidoping_reference,omitempty"`
+	MedicalLegalClearanceClaimed bool                   `protobuf:"varint,6,opt,name=medical_legal_clearance_claimed,json=medicalLegalClearanceClaimed,proto3" json:"medical_legal_clearance_claimed,omitempty"`
+	CheckStatus                  string                 `protobuf:"bytes,7,opt,name=check_status,json=checkStatus,proto3" json:"check_status,omitempty"` // reviewed_reference_only | clinician_tue_consult_needed
+	UpdatedAtUnix                int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *CompetitionRuleTueCheckItem) Reset() {
+	*x = CompetitionRuleTueCheckItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[318]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompetitionRuleTueCheckItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompetitionRuleTueCheckItem) ProtoMessage() {}
+
+func (x *CompetitionRuleTueCheckItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[318]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompetitionRuleTueCheckItem.ProtoReflect.Descriptor instead.
+func (*CompetitionRuleTueCheckItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{318}
+}
+
+func (x *CompetitionRuleTueCheckItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetGoverningBody() string {
+	if x != nil {
+		return x.GoverningBody
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetEquipmentAndRuleSummary() string {
+	if x != nil {
+		return x.EquipmentAndRuleSummary
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetTueAndAntidopingReference() string {
+	if x != nil {
+		return x.TueAndAntidopingReference
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetMedicalLegalClearanceClaimed() bool {
+	if x != nil {
+		return x.MedicalLegalClearanceClaimed
+	}
+	return false
+}
+
+func (x *CompetitionRuleTueCheckItem) GetCheckStatus() string {
+	if x != nil {
+		return x.CheckStatus
+	}
+	return ""
+}
+
+func (x *CompetitionRuleTueCheckItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type CompetitionVerifiedPerformanceOverview struct {
+	state                             protoimpl.MessageState           `protogen:"open.v1"`
+	TestDayAndOfflineVenueCharter     string                           `protobuf:"bytes,1,opt,name=test_day_and_offline_venue_charter,json=testDayAndOfflineVenueCharter,proto3" json:"test_day_and_offline_venue_charter,omitempty"`
+	VerificationTierSeparationCharter string                           `protobuf:"bytes,2,opt,name=verification_tier_separation_charter,json=verificationTierSeparationCharter,proto3" json:"verification_tier_separation_charter,omitempty"`
+	AntidopingAndTueReferenceCharter  string                           `protobuf:"bytes,3,opt,name=antidoping_and_tue_reference_charter,json=antidopingAndTueReferenceCharter,proto3" json:"antidoping_and_tue_reference_charter,omitempty"`
+	EventPlans                        []*CompetitionEventPlanItem      `protobuf:"bytes,4,rep,name=event_plans,json=eventPlans,proto3" json:"event_plans,omitempty"`
+	VerifiedResults                   []*VerifiedPerformanceResultItem `protobuf:"bytes,5,rep,name=verified_results,json=verifiedResults,proto3" json:"verified_results,omitempty"`
+	RuleTueChecks                     []*CompetitionRuleTueCheckItem   `protobuf:"bytes,6,rep,name=rule_tue_checks,json=ruleTueChecks,proto3" json:"rule_tue_checks,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) Reset() {
+	*x = CompetitionVerifiedPerformanceOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[319]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompetitionVerifiedPerformanceOverview) ProtoMessage() {}
+
+func (x *CompetitionVerifiedPerformanceOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[319]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompetitionVerifiedPerformanceOverview.ProtoReflect.Descriptor instead.
+func (*CompetitionVerifiedPerformanceOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{319}
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetTestDayAndOfflineVenueCharter() string {
+	if x != nil {
+		return x.TestDayAndOfflineVenueCharter
+	}
+	return ""
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetVerificationTierSeparationCharter() string {
+	if x != nil {
+		return x.VerificationTierSeparationCharter
+	}
+	return ""
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetAntidopingAndTueReferenceCharter() string {
+	if x != nil {
+		return x.AntidopingAndTueReferenceCharter
+	}
+	return ""
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetEventPlans() []*CompetitionEventPlanItem {
+	if x != nil {
+		return x.EventPlans
+	}
+	return nil
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetVerifiedResults() []*VerifiedPerformanceResultItem {
+	if x != nil {
+		return x.VerifiedResults
+	}
+	return nil
+}
+
+func (x *CompetitionVerifiedPerformanceOverview) GetRuleTueChecks() []*CompetitionRuleTueCheckItem {
+	if x != nil {
+		return x.RuleTueChecks
+	}
+	return nil
+}
+
+type GetCompetitionVerifiedPerformanceOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewRequest) Reset() {
+	*x = GetCompetitionVerifiedPerformanceOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[320]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCompetitionVerifiedPerformanceOverviewRequest) ProtoMessage() {}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[320]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCompetitionVerifiedPerformanceOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetCompetitionVerifiedPerformanceOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{320}
+}
+
+type GetCompetitionVerifiedPerformanceOverviewResponse struct {
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	Overview      *CompetitionVerifiedPerformanceOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewResponse) Reset() {
+	*x = GetCompetitionVerifiedPerformanceOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[321]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCompetitionVerifiedPerformanceOverviewResponse) ProtoMessage() {}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[321]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCompetitionVerifiedPerformanceOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetCompetitionVerifiedPerformanceOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{321}
+}
+
+func (x *GetCompetitionVerifiedPerformanceOverviewResponse) GetOverview() *CompetitionVerifiedPerformanceOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertCompetitionEventPlanRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	EventSlug              string                 `protobuf:"bytes,1,opt,name=event_slug,json=eventSlug,proto3" json:"event_slug,omitempty"`
+	EventTitle             string                 `protobuf:"bytes,2,opt,name=event_title,json=eventTitle,proto3" json:"event_title,omitempty"`
+	GoverningBodyAndClass  string                 `protobuf:"bytes,3,opt,name=governing_body_and_class,json=governingBodyAndClass,proto3" json:"governing_body_and_class,omitempty"`
+	EventDate              string                 `protobuf:"bytes,4,opt,name=event_date,json=eventDate,proto3" json:"event_date,omitempty"`
+	TaperAndWarmupProtocol string                 `protobuf:"bytes,5,opt,name=taper_and_warmup_protocol,json=taperAndWarmupProtocol,proto3" json:"taper_and_warmup_protocol,omitempty"`
+	AttemptOrPacingPlan    string                 `protobuf:"bytes,6,opt,name=attempt_or_pacing_plan,json=attemptOrPacingPlan,proto3" json:"attempt_or_pacing_plan,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *UpsertCompetitionEventPlanRequest) Reset() {
+	*x = UpsertCompetitionEventPlanRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[322]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCompetitionEventPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCompetitionEventPlanRequest) ProtoMessage() {}
+
+func (x *UpsertCompetitionEventPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[322]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCompetitionEventPlanRequest.ProtoReflect.Descriptor instead.
+func (*UpsertCompetitionEventPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{322}
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetEventSlug() string {
+	if x != nil {
+		return x.EventSlug
+	}
+	return ""
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetEventTitle() string {
+	if x != nil {
+		return x.EventTitle
+	}
+	return ""
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetGoverningBodyAndClass() string {
+	if x != nil {
+		return x.GoverningBodyAndClass
+	}
+	return ""
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetEventDate() string {
+	if x != nil {
+		return x.EventDate
+	}
+	return ""
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetTaperAndWarmupProtocol() string {
+	if x != nil {
+		return x.TaperAndWarmupProtocol
+	}
+	return ""
+}
+
+func (x *UpsertCompetitionEventPlanRequest) GetAttemptOrPacingPlan() string {
+	if x != nil {
+		return x.AttemptOrPacingPlan
+	}
+	return ""
+}
+
+type UpsertCompetitionEventPlanResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	EventPlan     *CompetitionEventPlanItem `protobuf:"bytes,1,opt,name=event_plan,json=eventPlan,proto3" json:"event_plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertCompetitionEventPlanResponse) Reset() {
+	*x = UpsertCompetitionEventPlanResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[323]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertCompetitionEventPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertCompetitionEventPlanResponse) ProtoMessage() {}
+
+func (x *UpsertCompetitionEventPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[323]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertCompetitionEventPlanResponse.ProtoReflect.Descriptor instead.
+func (*UpsertCompetitionEventPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{323}
+}
+
+func (x *UpsertCompetitionEventPlanResponse) GetEventPlan() *CompetitionEventPlanItem {
+	if x != nil {
+		return x.EventPlan
+	}
+	return nil
+}
+
+type SubmitVerifiedPerformanceResultRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	EventOrLiftName           string                 `protobuf:"bytes,1,opt,name=event_or_lift_name,json=eventOrLiftName,proto3" json:"event_or_lift_name,omitempty"`
+	ResultDisplay             string                 `protobuf:"bytes,2,opt,name=result_display,json=resultDisplay,proto3" json:"result_display,omitempty"`
+	VerificationTier          string                 `protobuf:"bytes,3,opt,name=verification_tier,json=verificationTier,proto3" json:"verification_tier,omitempty"`
+	EvidenceAndWitnessSummary string                 `protobuf:"bytes,4,opt,name=evidence_and_witness_summary,json=evidenceAndWitnessSummary,proto3" json:"evidence_and_witness_summary,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) Reset() {
+	*x = SubmitVerifiedPerformanceResultRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[324]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitVerifiedPerformanceResultRequest) ProtoMessage() {}
+
+func (x *SubmitVerifiedPerformanceResultRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[324]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitVerifiedPerformanceResultRequest.ProtoReflect.Descriptor instead.
+func (*SubmitVerifiedPerformanceResultRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{324}
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) GetEventOrLiftName() string {
+	if x != nil {
+		return x.EventOrLiftName
+	}
+	return ""
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) GetResultDisplay() string {
+	if x != nil {
+		return x.ResultDisplay
+	}
+	return ""
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) GetVerificationTier() string {
+	if x != nil {
+		return x.VerificationTier
+	}
+	return ""
+}
+
+func (x *SubmitVerifiedPerformanceResultRequest) GetEvidenceAndWitnessSummary() string {
+	if x != nil {
+		return x.EvidenceAndWitnessSummary
+	}
+	return ""
+}
+
+type SubmitVerifiedPerformanceResultResponse struct {
+	state          protoimpl.MessageState         `protogen:"open.v1"`
+	VerifiedResult *VerifiedPerformanceResultItem `protobuf:"bytes,1,opt,name=verified_result,json=verifiedResult,proto3" json:"verified_result,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SubmitVerifiedPerformanceResultResponse) Reset() {
+	*x = SubmitVerifiedPerformanceResultResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[325]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitVerifiedPerformanceResultResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitVerifiedPerformanceResultResponse) ProtoMessage() {}
+
+func (x *SubmitVerifiedPerformanceResultResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[325]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitVerifiedPerformanceResultResponse.ProtoReflect.Descriptor instead.
+func (*SubmitVerifiedPerformanceResultResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{325}
+}
+
+func (x *SubmitVerifiedPerformanceResultResponse) GetVerifiedResult() *VerifiedPerformanceResultItem {
+	if x != nil {
+		return x.VerifiedResult
+	}
+	return nil
+}
+
+type FilePerformanceResultAppealRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	ResultId                string                 `protobuf:"bytes,1,opt,name=result_id,json=resultId,proto3" json:"result_id,omitempty"`
+	AppealReasonAndEvidence string                 `protobuf:"bytes,2,opt,name=appeal_reason_and_evidence,json=appealReasonAndEvidence,proto3" json:"appeal_reason_and_evidence,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *FilePerformanceResultAppealRequest) Reset() {
+	*x = FilePerformanceResultAppealRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[326]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FilePerformanceResultAppealRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FilePerformanceResultAppealRequest) ProtoMessage() {}
+
+func (x *FilePerformanceResultAppealRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[326]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FilePerformanceResultAppealRequest.ProtoReflect.Descriptor instead.
+func (*FilePerformanceResultAppealRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{326}
+}
+
+func (x *FilePerformanceResultAppealRequest) GetResultId() string {
+	if x != nil {
+		return x.ResultId
+	}
+	return ""
+}
+
+func (x *FilePerformanceResultAppealRequest) GetAppealReasonAndEvidence() string {
+	if x != nil {
+		return x.AppealReasonAndEvidence
+	}
+	return ""
+}
+
+type FilePerformanceResultAppealResponse struct {
+	state          protoimpl.MessageState         `protogen:"open.v1"`
+	VerifiedResult *VerifiedPerformanceResultItem `protobuf:"bytes,1,opt,name=verified_result,json=verifiedResult,proto3" json:"verified_result,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *FilePerformanceResultAppealResponse) Reset() {
+	*x = FilePerformanceResultAppealResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[327]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FilePerformanceResultAppealResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FilePerformanceResultAppealResponse) ProtoMessage() {}
+
+func (x *FilePerformanceResultAppealResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[327]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FilePerformanceResultAppealResponse.ProtoReflect.Descriptor instead.
+func (*FilePerformanceResultAppealResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{327}
+}
+
+func (x *FilePerformanceResultAppealResponse) GetVerifiedResult() *VerifiedPerformanceResultItem {
+	if x != nil {
+		return x.VerifiedResult
+	}
+	return nil
+}
+
+type RecordCompetitionRuleAndTueCheckRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	GoverningBody             string                 `protobuf:"bytes,1,opt,name=governing_body,json=governingBody,proto3" json:"governing_body,omitempty"`
+	EquipmentAndRuleSummary   string                 `protobuf:"bytes,2,opt,name=equipment_and_rule_summary,json=equipmentAndRuleSummary,proto3" json:"equipment_and_rule_summary,omitempty"`
+	TueAndAntidopingReference string                 `protobuf:"bytes,3,opt,name=tue_and_antidoping_reference,json=tueAndAntidopingReference,proto3" json:"tue_and_antidoping_reference,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) Reset() {
+	*x = RecordCompetitionRuleAndTueCheckRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[328]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCompetitionRuleAndTueCheckRequest) ProtoMessage() {}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[328]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCompetitionRuleAndTueCheckRequest.ProtoReflect.Descriptor instead.
+func (*RecordCompetitionRuleAndTueCheckRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{328}
+}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) GetGoverningBody() string {
+	if x != nil {
+		return x.GoverningBody
+	}
+	return ""
+}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) GetEquipmentAndRuleSummary() string {
+	if x != nil {
+		return x.EquipmentAndRuleSummary
+	}
+	return ""
+}
+
+func (x *RecordCompetitionRuleAndTueCheckRequest) GetTueAndAntidopingReference() string {
+	if x != nil {
+		return x.TueAndAntidopingReference
+	}
+	return ""
+}
+
+type RecordCompetitionRuleAndTueCheckResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	RuleTueCheck  *CompetitionRuleTueCheckItem `protobuf:"bytes,1,opt,name=rule_tue_check,json=ruleTueCheck,proto3" json:"rule_tue_check,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RecordCompetitionRuleAndTueCheckResponse) Reset() {
+	*x = RecordCompetitionRuleAndTueCheckResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[329]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordCompetitionRuleAndTueCheckResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordCompetitionRuleAndTueCheckResponse) ProtoMessage() {}
+
+func (x *RecordCompetitionRuleAndTueCheckResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[329]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordCompetitionRuleAndTueCheckResponse.ProtoReflect.Descriptor instead.
+func (*RecordCompetitionRuleAndTueCheckResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{329}
+}
+
+func (x *RecordCompetitionRuleAndTueCheckResponse) GetRuleTueCheck() *CompetitionRuleTueCheckItem {
+	if x != nil {
+		return x.RuleTueCheck
+	}
+	return nil
+}
+
+type ToggleOfflineVenueCompetitionModeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	PlanId        string                 `protobuf:"bytes,1,opt,name=plan_id,json=planId,proto3" json:"plan_id,omitempty"`
+	PlanStatus    string                 `protobuf:"bytes,2,opt,name=plan_status,json=planStatus,proto3" json:"plan_status,omitempty"` // active_peaking | draft_scenario | completed_archived
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ToggleOfflineVenueCompetitionModeRequest) Reset() {
+	*x = ToggleOfflineVenueCompetitionModeRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[330]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToggleOfflineVenueCompetitionModeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToggleOfflineVenueCompetitionModeRequest) ProtoMessage() {}
+
+func (x *ToggleOfflineVenueCompetitionModeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[330]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToggleOfflineVenueCompetitionModeRequest.ProtoReflect.Descriptor instead.
+func (*ToggleOfflineVenueCompetitionModeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{330}
+}
+
+func (x *ToggleOfflineVenueCompetitionModeRequest) GetPlanId() string {
+	if x != nil {
+		return x.PlanId
+	}
+	return ""
+}
+
+func (x *ToggleOfflineVenueCompetitionModeRequest) GetPlanStatus() string {
+	if x != nil {
+		return x.PlanStatus
+	}
+	return ""
+}
+
+type ToggleOfflineVenueCompetitionModeResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	EventPlan     *CompetitionEventPlanItem `protobuf:"bytes,1,opt,name=event_plan,json=eventPlan,proto3" json:"event_plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ToggleOfflineVenueCompetitionModeResponse) Reset() {
+	*x = ToggleOfflineVenueCompetitionModeResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[331]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToggleOfflineVenueCompetitionModeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToggleOfflineVenueCompetitionModeResponse) ProtoMessage() {}
+
+func (x *ToggleOfflineVenueCompetitionModeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[331]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToggleOfflineVenueCompetitionModeResponse.ProtoReflect.Descriptor instead.
+func (*ToggleOfflineVenueCompetitionModeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{331}
+}
+
+func (x *ToggleOfflineVenueCompetitionModeResponse) GetEventPlan() *CompetitionEventPlanItem {
+	if x != nil {
+		return x.EventPlan
+	}
+	return nil
+}
+
+type SportHybridStudioModuleItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ModuleSlug                 string                 `protobuf:"bytes,2,opt,name=module_slug,json=moduleSlug,proto3" json:"module_slug,omitempty"`
+	SportOrHybridName          string                 `protobuf:"bytes,3,opt,name=sport_or_hybrid_name,json=sportOrHybridName,proto3" json:"sport_or_hybrid_name,omitempty"`
+	ModuleGovernanceState      string                 `protobuf:"bytes,4,opt,name=module_governance_state,json=moduleGovernanceState,proto3" json:"module_governance_state,omitempty"` // reviewed_qualified_module | custom_manual_unvalidated_sport
+	QualifiedEditorialOwner    string                 `protobuf:"bytes,5,opt,name=qualified_editorial_owner,json=qualifiedEditorialOwner,proto3" json:"qualified_editorial_owner,omitempty"`
+	DomainMetricsAndGrammar    string                 `protobuf:"bytes,6,opt,name=domain_metrics_and_grammar,json=domainMetricsAndGrammar,proto3" json:"domain_metrics_and_grammar,omitempty"`
+	UnvalidatedAiExpertBlocked bool                   `protobuf:"varint,7,opt,name=unvalidated_ai_expert_blocked,json=unvalidatedAiExpertBlocked,proto3" json:"unvalidated_ai_expert_blocked,omitempty"`
+	UpdatedAtUnix              int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *SportHybridStudioModuleItem) Reset() {
+	*x = SportHybridStudioModuleItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[332]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SportHybridStudioModuleItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SportHybridStudioModuleItem) ProtoMessage() {}
+
+func (x *SportHybridStudioModuleItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[332]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SportHybridStudioModuleItem.ProtoReflect.Descriptor instead.
+func (*SportHybridStudioModuleItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{332}
+}
+
+func (x *SportHybridStudioModuleItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetModuleSlug() string {
+	if x != nil {
+		return x.ModuleSlug
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetSportOrHybridName() string {
+	if x != nil {
+		return x.SportOrHybridName
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetModuleGovernanceState() string {
+	if x != nil {
+		return x.ModuleGovernanceState
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetQualifiedEditorialOwner() string {
+	if x != nil {
+		return x.QualifiedEditorialOwner
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetDomainMetricsAndGrammar() string {
+	if x != nil {
+		return x.DomainMetricsAndGrammar
+	}
+	return ""
+}
+
+func (x *SportHybridStudioModuleItem) GetUnvalidatedAiExpertBlocked() bool {
+	if x != nil {
+		return x.UnvalidatedAiExpertBlocked
+	}
+	return false
+}
+
+func (x *SportHybridStudioModuleItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type HybridInterferenceScheduleItem struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	Id                           string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                       string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	PrimaryPriorityGoal          string                 `protobuf:"bytes,3,opt,name=primary_priority_goal,json=primaryPriorityGoal,proto3" json:"primary_priority_goal,omitempty"`
+	WeeklyPairingSummary         string                 `protobuf:"bytes,4,opt,name=weekly_pairing_summary,json=weeklyPairingSummary,proto3" json:"weekly_pairing_summary,omitempty"`
+	InterferenceTradeoffNote     string                 `protobuf:"bytes,5,opt,name=interference_tradeoff_note,json=interferenceTradeoffNote,proto3" json:"interference_tradeoff_note,omitempty"`
+	DoubleCountingPrevented      bool                   `protobuf:"varint,6,opt,name=double_counting_prevented,json=doubleCountingPrevented,proto3" json:"double_counting_prevented,omitempty"`
+	HighIntensityConflictBlocked bool                   `protobuf:"varint,7,opt,name=high_intensity_conflict_blocked,json=highIntensityConflictBlocked,proto3" json:"high_intensity_conflict_blocked,omitempty"`
+	ScheduleStatus               string                 `protobuf:"bytes,8,opt,name=schedule_status,json=scheduleStatus,proto3" json:"schedule_status,omitempty"` // active_balanced | taper_adjusted | manual_override
+	UpdatedAtUnix                int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *HybridInterferenceScheduleItem) Reset() {
+	*x = HybridInterferenceScheduleItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[333]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HybridInterferenceScheduleItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HybridInterferenceScheduleItem) ProtoMessage() {}
+
+func (x *HybridInterferenceScheduleItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[333]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HybridInterferenceScheduleItem.ProtoReflect.Descriptor instead.
+func (*HybridInterferenceScheduleItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{333}
+}
+
+func (x *HybridInterferenceScheduleItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetPrimaryPriorityGoal() string {
+	if x != nil {
+		return x.PrimaryPriorityGoal
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetWeeklyPairingSummary() string {
+	if x != nil {
+		return x.WeeklyPairingSummary
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetInterferenceTradeoffNote() string {
+	if x != nil {
+		return x.InterferenceTradeoffNote
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetDoubleCountingPrevented() bool {
+	if x != nil {
+		return x.DoubleCountingPrevented
+	}
+	return false
+}
+
+func (x *HybridInterferenceScheduleItem) GetHighIntensityConflictBlocked() bool {
+	if x != nil {
+		return x.HighIntensityConflictBlocked
+	}
+	return false
+}
+
+func (x *HybridInterferenceScheduleItem) GetScheduleStatus() string {
+	if x != nil {
+		return x.ScheduleStatus
+	}
+	return ""
+}
+
+func (x *HybridInterferenceScheduleItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type SportSkillAndManualSessionItem struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	Id                        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                    string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ModuleSlug                string                 `protobuf:"bytes,3,opt,name=module_slug,json=moduleSlug,proto3" json:"module_slug,omitempty"`
+	SkillOrActivityTitle      string                 `protobuf:"bytes,4,opt,name=skill_or_activity_title,json=skillOrActivityTitle,proto3" json:"skill_or_activity_title,omitempty"`
+	AttemptsAndQualitySummary string                 `protobuf:"bytes,5,opt,name=attempts_and_quality_summary,json=attemptsAndQualitySummary,proto3" json:"attempts_and_quality_summary,omitempty"`
+	CoachOrAthleteReflection  string                 `protobuf:"bytes,6,opt,name=coach_or_athlete_reflection,json=coachOrAthleteReflection,proto3" json:"coach_or_athlete_reflection,omitempty"`
+	FakeSensorScoreClaimed    bool                   `protobuf:"varint,7,opt,name=fake_sensor_score_claimed,json=fakeSensorScoreClaimed,proto3" json:"fake_sensor_score_claimed,omitempty"`
+	CreatedAtUnix             int64                  `protobuf:"varint,8,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *SportSkillAndManualSessionItem) Reset() {
+	*x = SportSkillAndManualSessionItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[334]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SportSkillAndManualSessionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SportSkillAndManualSessionItem) ProtoMessage() {}
+
+func (x *SportSkillAndManualSessionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[334]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SportSkillAndManualSessionItem.ProtoReflect.Descriptor instead.
+func (*SportSkillAndManualSessionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{334}
+}
+
+func (x *SportSkillAndManualSessionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetModuleSlug() string {
+	if x != nil {
+		return x.ModuleSlug
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetSkillOrActivityTitle() string {
+	if x != nil {
+		return x.SkillOrActivityTitle
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetAttemptsAndQualitySummary() string {
+	if x != nil {
+		return x.AttemptsAndQualitySummary
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetCoachOrAthleteReflection() string {
+	if x != nil {
+		return x.CoachOrAthleteReflection
+	}
+	return ""
+}
+
+func (x *SportSkillAndManualSessionItem) GetFakeSensorScoreClaimed() bool {
+	if x != nil {
+		return x.FakeSensorScoreClaimed
+	}
+	return false
+}
+
+func (x *SportSkillAndManualSessionItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type SportHybridStudiosOverview struct {
+	state                              protoimpl.MessageState            `protogen:"open.v1"`
+	QualifiedModuleGovernanceCharter   string                            `protobuf:"bytes,1,opt,name=qualified_module_governance_charter,json=qualifiedModuleGovernanceCharter,proto3" json:"qualified_module_governance_charter,omitempty"`
+	HybridInterferenceAndDedupeCharter string                            `protobuf:"bytes,2,opt,name=hybrid_interference_and_dedupe_charter,json=hybridInterferenceAndDedupeCharter,proto3" json:"hybrid_interference_and_dedupe_charter,omitempty"`
+	HonestSkillAndManualSportCharter   string                            `protobuf:"bytes,3,opt,name=honest_skill_and_manual_sport_charter,json=honestSkillAndManualSportCharter,proto3" json:"honest_skill_and_manual_sport_charter,omitempty"`
+	Modules                            []*SportHybridStudioModuleItem    `protobuf:"bytes,4,rep,name=modules,proto3" json:"modules,omitempty"`
+	InterferenceSchedules              []*HybridInterferenceScheduleItem `protobuf:"bytes,5,rep,name=interference_schedules,json=interferenceSchedules,proto3" json:"interference_schedules,omitempty"`
+	SkillAndManualSessions             []*SportSkillAndManualSessionItem `protobuf:"bytes,6,rep,name=skill_and_manual_sessions,json=skillAndManualSessions,proto3" json:"skill_and_manual_sessions,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SportHybridStudiosOverview) Reset() {
+	*x = SportHybridStudiosOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[335]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SportHybridStudiosOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SportHybridStudiosOverview) ProtoMessage() {}
+
+func (x *SportHybridStudiosOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[335]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SportHybridStudiosOverview.ProtoReflect.Descriptor instead.
+func (*SportHybridStudiosOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{335}
+}
+
+func (x *SportHybridStudiosOverview) GetQualifiedModuleGovernanceCharter() string {
+	if x != nil {
+		return x.QualifiedModuleGovernanceCharter
+	}
+	return ""
+}
+
+func (x *SportHybridStudiosOverview) GetHybridInterferenceAndDedupeCharter() string {
+	if x != nil {
+		return x.HybridInterferenceAndDedupeCharter
+	}
+	return ""
+}
+
+func (x *SportHybridStudiosOverview) GetHonestSkillAndManualSportCharter() string {
+	if x != nil {
+		return x.HonestSkillAndManualSportCharter
+	}
+	return ""
+}
+
+func (x *SportHybridStudiosOverview) GetModules() []*SportHybridStudioModuleItem {
+	if x != nil {
+		return x.Modules
+	}
+	return nil
+}
+
+func (x *SportHybridStudiosOverview) GetInterferenceSchedules() []*HybridInterferenceScheduleItem {
+	if x != nil {
+		return x.InterferenceSchedules
+	}
+	return nil
+}
+
+func (x *SportHybridStudiosOverview) GetSkillAndManualSessions() []*SportSkillAndManualSessionItem {
+	if x != nil {
+		return x.SkillAndManualSessions
+	}
+	return nil
+}
+
+type GetSportHybridStudiosOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSportHybridStudiosOverviewRequest) Reset() {
+	*x = GetSportHybridStudiosOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[336]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSportHybridStudiosOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSportHybridStudiosOverviewRequest) ProtoMessage() {}
+
+func (x *GetSportHybridStudiosOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[336]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSportHybridStudiosOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetSportHybridStudiosOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{336}
+}
+
+type GetSportHybridStudiosOverviewResponse struct {
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Overview      *SportHybridStudiosOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetSportHybridStudiosOverviewResponse) Reset() {
+	*x = GetSportHybridStudiosOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[337]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetSportHybridStudiosOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetSportHybridStudiosOverviewResponse) ProtoMessage() {}
+
+func (x *GetSportHybridStudiosOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[337]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetSportHybridStudiosOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetSportHybridStudiosOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{337}
+}
+
+func (x *GetSportHybridStudiosOverviewResponse) GetOverview() *SportHybridStudiosOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertSportHybridStudioModuleRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	ModuleSlug              string                 `protobuf:"bytes,1,opt,name=module_slug,json=moduleSlug,proto3" json:"module_slug,omitempty"`
+	SportOrHybridName       string                 `protobuf:"bytes,2,opt,name=sport_or_hybrid_name,json=sportOrHybridName,proto3" json:"sport_or_hybrid_name,omitempty"`
+	QualifiedEditorialOwner string                 `protobuf:"bytes,3,opt,name=qualified_editorial_owner,json=qualifiedEditorialOwner,proto3" json:"qualified_editorial_owner,omitempty"`
+	DomainMetricsAndGrammar string                 `protobuf:"bytes,4,opt,name=domain_metrics_and_grammar,json=domainMetricsAndGrammar,proto3" json:"domain_metrics_and_grammar,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) Reset() {
+	*x = UpsertSportHybridStudioModuleRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[338]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertSportHybridStudioModuleRequest) ProtoMessage() {}
+
+func (x *UpsertSportHybridStudioModuleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[338]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertSportHybridStudioModuleRequest.ProtoReflect.Descriptor instead.
+func (*UpsertSportHybridStudioModuleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{338}
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) GetModuleSlug() string {
+	if x != nil {
+		return x.ModuleSlug
+	}
+	return ""
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) GetSportOrHybridName() string {
+	if x != nil {
+		return x.SportOrHybridName
+	}
+	return ""
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) GetQualifiedEditorialOwner() string {
+	if x != nil {
+		return x.QualifiedEditorialOwner
+	}
+	return ""
+}
+
+func (x *UpsertSportHybridStudioModuleRequest) GetDomainMetricsAndGrammar() string {
+	if x != nil {
+		return x.DomainMetricsAndGrammar
+	}
+	return ""
+}
+
+type UpsertSportHybridStudioModuleResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Module        *SportHybridStudioModuleItem `protobuf:"bytes,1,opt,name=module,proto3" json:"module,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertSportHybridStudioModuleResponse) Reset() {
+	*x = UpsertSportHybridStudioModuleResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[339]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertSportHybridStudioModuleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertSportHybridStudioModuleResponse) ProtoMessage() {}
+
+func (x *UpsertSportHybridStudioModuleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[339]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertSportHybridStudioModuleResponse.ProtoReflect.Descriptor instead.
+func (*UpsertSportHybridStudioModuleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{339}
+}
+
+func (x *UpsertSportHybridStudioModuleResponse) GetModule() *SportHybridStudioModuleItem {
+	if x != nil {
+		return x.Module
+	}
+	return nil
+}
+
+type ConfigureHybridInterferenceScheduleRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	PrimaryPriorityGoal      string                 `protobuf:"bytes,1,opt,name=primary_priority_goal,json=primaryPriorityGoal,proto3" json:"primary_priority_goal,omitempty"`
+	WeeklyPairingSummary     string                 `protobuf:"bytes,2,opt,name=weekly_pairing_summary,json=weeklyPairingSummary,proto3" json:"weekly_pairing_summary,omitempty"`
+	InterferenceTradeoffNote string                 `protobuf:"bytes,3,opt,name=interference_tradeoff_note,json=interferenceTradeoffNote,proto3" json:"interference_tradeoff_note,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) Reset() {
+	*x = ConfigureHybridInterferenceScheduleRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[340]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureHybridInterferenceScheduleRequest) ProtoMessage() {}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[340]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureHybridInterferenceScheduleRequest.ProtoReflect.Descriptor instead.
+func (*ConfigureHybridInterferenceScheduleRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{340}
+}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) GetPrimaryPriorityGoal() string {
+	if x != nil {
+		return x.PrimaryPriorityGoal
+	}
+	return ""
+}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) GetWeeklyPairingSummary() string {
+	if x != nil {
+		return x.WeeklyPairingSummary
+	}
+	return ""
+}
+
+func (x *ConfigureHybridInterferenceScheduleRequest) GetInterferenceTradeoffNote() string {
+	if x != nil {
+		return x.InterferenceTradeoffNote
+	}
+	return ""
+}
+
+type ConfigureHybridInterferenceScheduleResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Schedule      *HybridInterferenceScheduleItem `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigureHybridInterferenceScheduleResponse) Reset() {
+	*x = ConfigureHybridInterferenceScheduleResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[341]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigureHybridInterferenceScheduleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigureHybridInterferenceScheduleResponse) ProtoMessage() {}
+
+func (x *ConfigureHybridInterferenceScheduleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[341]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigureHybridInterferenceScheduleResponse.ProtoReflect.Descriptor instead.
+func (*ConfigureHybridInterferenceScheduleResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{341}
+}
+
+func (x *ConfigureHybridInterferenceScheduleResponse) GetSchedule() *HybridInterferenceScheduleItem {
+	if x != nil {
+		return x.Schedule
+	}
+	return nil
+}
+
+type LogSportSkillOrManualActivitySessionRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	ModuleSlug                string                 `protobuf:"bytes,1,opt,name=module_slug,json=moduleSlug,proto3" json:"module_slug,omitempty"`
+	SkillOrActivityTitle      string                 `protobuf:"bytes,2,opt,name=skill_or_activity_title,json=skillOrActivityTitle,proto3" json:"skill_or_activity_title,omitempty"`
+	AttemptsAndQualitySummary string                 `protobuf:"bytes,3,opt,name=attempts_and_quality_summary,json=attemptsAndQualitySummary,proto3" json:"attempts_and_quality_summary,omitempty"`
+	CoachOrAthleteReflection  string                 `protobuf:"bytes,4,opt,name=coach_or_athlete_reflection,json=coachOrAthleteReflection,proto3" json:"coach_or_athlete_reflection,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) Reset() {
+	*x = LogSportSkillOrManualActivitySessionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[342]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogSportSkillOrManualActivitySessionRequest) ProtoMessage() {}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[342]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogSportSkillOrManualActivitySessionRequest.ProtoReflect.Descriptor instead.
+func (*LogSportSkillOrManualActivitySessionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{342}
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) GetModuleSlug() string {
+	if x != nil {
+		return x.ModuleSlug
+	}
+	return ""
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) GetSkillOrActivityTitle() string {
+	if x != nil {
+		return x.SkillOrActivityTitle
+	}
+	return ""
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) GetAttemptsAndQualitySummary() string {
+	if x != nil {
+		return x.AttemptsAndQualitySummary
+	}
+	return ""
+}
+
+func (x *LogSportSkillOrManualActivitySessionRequest) GetCoachOrAthleteReflection() string {
+	if x != nil {
+		return x.CoachOrAthleteReflection
+	}
+	return ""
+}
+
+type LogSportSkillOrManualActivitySessionResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Session       *SportSkillAndManualSessionItem `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LogSportSkillOrManualActivitySessionResponse) Reset() {
+	*x = LogSportSkillOrManualActivitySessionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[343]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LogSportSkillOrManualActivitySessionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LogSportSkillOrManualActivitySessionResponse) ProtoMessage() {}
+
+func (x *LogSportSkillOrManualActivitySessionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[343]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LogSportSkillOrManualActivitySessionResponse.ProtoReflect.Descriptor instead.
+func (*LogSportSkillOrManualActivitySessionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{343}
+}
+
+func (x *LogSportSkillOrManualActivitySessionResponse) GetSession() *SportSkillAndManualSessionItem {
+	if x != nil {
+		return x.Session
+	}
+	return nil
+}
+
+type RegisterCustomManualUnvalidatedSportRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	ModuleSlug              string                 `protobuf:"bytes,1,opt,name=module_slug,json=moduleSlug,proto3" json:"module_slug,omitempty"`
+	SportOrHybridName       string                 `protobuf:"bytes,2,opt,name=sport_or_hybrid_name,json=sportOrHybridName,proto3" json:"sport_or_hybrid_name,omitempty"`
+	DomainMetricsAndGrammar string                 `protobuf:"bytes,3,opt,name=domain_metrics_and_grammar,json=domainMetricsAndGrammar,proto3" json:"domain_metrics_and_grammar,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) Reset() {
+	*x = RegisterCustomManualUnvalidatedSportRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[344]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterCustomManualUnvalidatedSportRequest) ProtoMessage() {}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[344]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterCustomManualUnvalidatedSportRequest.ProtoReflect.Descriptor instead.
+func (*RegisterCustomManualUnvalidatedSportRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{344}
+}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) GetModuleSlug() string {
+	if x != nil {
+		return x.ModuleSlug
+	}
+	return ""
+}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) GetSportOrHybridName() string {
+	if x != nil {
+		return x.SportOrHybridName
+	}
+	return ""
+}
+
+func (x *RegisterCustomManualUnvalidatedSportRequest) GetDomainMetricsAndGrammar() string {
+	if x != nil {
+		return x.DomainMetricsAndGrammar
+	}
+	return ""
+}
+
+type RegisterCustomManualUnvalidatedSportResponse struct {
+	state         protoimpl.MessageState       `protogen:"open.v1"`
+	Module        *SportHybridStudioModuleItem `protobuf:"bytes,1,opt,name=module,proto3" json:"module,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RegisterCustomManualUnvalidatedSportResponse) Reset() {
+	*x = RegisterCustomManualUnvalidatedSportResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[345]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RegisterCustomManualUnvalidatedSportResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RegisterCustomManualUnvalidatedSportResponse) ProtoMessage() {}
+
+func (x *RegisterCustomManualUnvalidatedSportResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[345]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RegisterCustomManualUnvalidatedSportResponse.ProtoReflect.Descriptor instead.
+func (*RegisterCustomManualUnvalidatedSportResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{345}
+}
+
+func (x *RegisterCustomManualUnvalidatedSportResponse) GetModule() *SportHybridStudioModuleItem {
+	if x != nil {
+		return x.Module
+	}
+	return nil
+}
+
+type AuditHybridLoadDeDuplicationRequest struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	ScheduleId     string                 `protobuf:"bytes,1,opt,name=schedule_id,json=scheduleId,proto3" json:"schedule_id,omitempty"`
+	ScheduleStatus string                 `protobuf:"bytes,2,opt,name=schedule_status,json=scheduleStatus,proto3" json:"schedule_status,omitempty"` // active_balanced | taper_adjusted | manual_override
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *AuditHybridLoadDeDuplicationRequest) Reset() {
+	*x = AuditHybridLoadDeDuplicationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[346]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AuditHybridLoadDeDuplicationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AuditHybridLoadDeDuplicationRequest) ProtoMessage() {}
+
+func (x *AuditHybridLoadDeDuplicationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[346]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AuditHybridLoadDeDuplicationRequest.ProtoReflect.Descriptor instead.
+func (*AuditHybridLoadDeDuplicationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{346}
+}
+
+func (x *AuditHybridLoadDeDuplicationRequest) GetScheduleId() string {
+	if x != nil {
+		return x.ScheduleId
+	}
+	return ""
+}
+
+func (x *AuditHybridLoadDeDuplicationRequest) GetScheduleStatus() string {
+	if x != nil {
+		return x.ScheduleStatus
+	}
+	return ""
+}
+
+type AuditHybridLoadDeDuplicationResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Schedule      *HybridInterferenceScheduleItem `protobuf:"bytes,1,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AuditHybridLoadDeDuplicationResponse) Reset() {
+	*x = AuditHybridLoadDeDuplicationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[347]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AuditHybridLoadDeDuplicationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AuditHybridLoadDeDuplicationResponse) ProtoMessage() {}
+
+func (x *AuditHybridLoadDeDuplicationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[347]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AuditHybridLoadDeDuplicationResponse.ProtoReflect.Descriptor instead.
+func (*AuditHybridLoadDeDuplicationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{347}
+}
+
+func (x *AuditHybridLoadDeDuplicationResponse) GetSchedule() *HybridInterferenceScheduleItem {
+	if x != nil {
+		return x.Schedule
+	}
+	return nil
+}
+
+type EquipmentLocationProfileItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	LocationSlug                string                 `protobuf:"bytes,3,opt,name=location_slug,json=locationSlug,proto3" json:"location_slug,omitempty"`
+	LocationName                string                 `protobuf:"bytes,4,opt,name=location_name,json=locationName,proto3" json:"location_name,omitempty"`
+	ImplementInventorySummary   string                 `protobuf:"bytes,5,opt,name=implement_inventory_summary,json=implementInventorySummary,proto3" json:"implement_inventory_summary,omitempty"`
+	SmallestIncrementKg         float64                `protobuf:"fixed64,6,opt,name=smallest_increment_kg,json=smallestIncrementKg,proto3" json:"smallest_increment_kg,omitempty"`
+	RackAndAdaptiveNotes        string                 `protobuf:"bytes,7,opt,name=rack_and_adaptive_notes,json=rackAndAdaptiveNotes,proto3" json:"rack_and_adaptive_notes,omitempty"`
+	AthleteConfirmedUsableState bool                   `protobuf:"varint,8,opt,name=athlete_confirmed_usable_state,json=athleteConfirmedUsableState,proto3" json:"athlete_confirmed_usable_state,omitempty"`
+	UpdatedAtUnix               int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *EquipmentLocationProfileItem) Reset() {
+	*x = EquipmentLocationProfileItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[348]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EquipmentLocationProfileItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EquipmentLocationProfileItem) ProtoMessage() {}
+
+func (x *EquipmentLocationProfileItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[348]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EquipmentLocationProfileItem.ProtoReflect.Descriptor instead.
+func (*EquipmentLocationProfileItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{348}
+}
+
+func (x *EquipmentLocationProfileItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetLocationSlug() string {
+	if x != nil {
+		return x.LocationSlug
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetLocationName() string {
+	if x != nil {
+		return x.LocationName
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetImplementInventorySummary() string {
+	if x != nil {
+		return x.ImplementInventorySummary
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetSmallestIncrementKg() float64 {
+	if x != nil {
+		return x.SmallestIncrementKg
+	}
+	return 0
+}
+
+func (x *EquipmentLocationProfileItem) GetRackAndAdaptiveNotes() string {
+	if x != nil {
+		return x.RackAndAdaptiveNotes
+	}
+	return ""
+}
+
+func (x *EquipmentLocationProfileItem) GetAthleteConfirmedUsableState() bool {
+	if x != nil {
+		return x.AthleteConfirmedUsableState
+	}
+	return false
+}
+
+func (x *EquipmentLocationProfileItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type TravelWorkoutAdaptationItem struct {
+	state                                protoimpl.MessageState `protogen:"open.v1"`
+	Id                                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                               string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	LocationSlug                         string                 `protobuf:"bytes,3,opt,name=location_slug,json=locationSlug,proto3" json:"location_slug,omitempty"`
+	TravelContextSummary                 string                 `protobuf:"bytes,4,opt,name=travel_context_summary,json=travelContextSummary,proto3" json:"travel_context_summary,omitempty"`
+	AdaptedSessionPrescription           string                 `protobuf:"bytes,5,opt,name=adapted_session_prescription,json=adaptedSessionPrescription,proto3" json:"adapted_session_prescription,omitempty"`
+	PreservedProgrammeIntent             string                 `protobuf:"bytes,6,opt,name=preserved_programme_intent,json=preservedProgrammeIntent,proto3" json:"preserved_programme_intent,omitempty"`
+	RawNomadDocumentsOrGpsHistoryBlocked bool                   `protobuf:"varint,7,opt,name=raw_nomad_documents_or_gps_history_blocked,json=rawNomadDocumentsOrGpsHistoryBlocked,proto3" json:"raw_nomad_documents_or_gps_history_blocked,omitempty"`
+	AdaptationStatus                     string                 `protobuf:"bytes,8,opt,name=adaptation_status,json=adaptationStatus,proto3" json:"adaptation_status,omitempty"` // applied_active | draft_proposed | reverted_home_gym
+	CreatedAtUnix                        int64                  `protobuf:"varint,9,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields                        protoimpl.UnknownFields
+	sizeCache                            protoimpl.SizeCache
+}
+
+func (x *TravelWorkoutAdaptationItem) Reset() {
+	*x = TravelWorkoutAdaptationItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[349]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TravelWorkoutAdaptationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TravelWorkoutAdaptationItem) ProtoMessage() {}
+
+func (x *TravelWorkoutAdaptationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[349]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TravelWorkoutAdaptationItem.ProtoReflect.Descriptor instead.
+func (*TravelWorkoutAdaptationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{349}
+}
+
+func (x *TravelWorkoutAdaptationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetLocationSlug() string {
+	if x != nil {
+		return x.LocationSlug
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetTravelContextSummary() string {
+	if x != nil {
+		return x.TravelContextSummary
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetAdaptedSessionPrescription() string {
+	if x != nil {
+		return x.AdaptedSessionPrescription
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetPreservedProgrammeIntent() string {
+	if x != nil {
+		return x.PreservedProgrammeIntent
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetRawNomadDocumentsOrGpsHistoryBlocked() bool {
+	if x != nil {
+		return x.RawNomadDocumentsOrGpsHistoryBlocked
+	}
+	return false
+}
+
+func (x *TravelWorkoutAdaptationItem) GetAdaptationStatus() string {
+	if x != nil {
+		return x.AdaptationStatus
+	}
+	return ""
+}
+
+func (x *TravelWorkoutAdaptationItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type VerifiedGymVenueDirectoryItem struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	VenueSlug                string                 `protobuf:"bytes,2,opt,name=venue_slug,json=venueSlug,proto3" json:"venue_slug,omitempty"`
+	VenueName                string                 `protobuf:"bytes,3,opt,name=venue_name,json=venueName,proto3" json:"venue_name,omitempty"`
+	CityAndRegion            string                 `protobuf:"bytes,4,opt,name=city_and_region,json=cityAndRegion,proto3" json:"city_and_region,omitempty"`
+	VerifiedEquipmentSummary string                 `protobuf:"bytes,5,opt,name=verified_equipment_summary,json=verifiedEquipmentSummary,proto3" json:"verified_equipment_summary,omitempty"`
+	AccessibilityFeatures    string                 `protobuf:"bytes,6,opt,name=accessibility_features,json=accessibilityFeatures,proto3" json:"accessibility_features,omitempty"`
+	ListingFreshnessState    string                 `protobuf:"bytes,7,opt,name=listing_freshness_state,json=listingFreshnessState,proto3" json:"listing_freshness_state,omitempty"` // verified_fresh | stale_reverification_due | temporarily_closed
+	DayPassAndBookingPolicy  string                 `protobuf:"bytes,8,opt,name=day_pass_and_booking_policy,json=dayPassAndBookingPolicy,proto3" json:"day_pass_and_booking_policy,omitempty"`
+	UpdatedAtUnix            int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *VerifiedGymVenueDirectoryItem) Reset() {
+	*x = VerifiedGymVenueDirectoryItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[350]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifiedGymVenueDirectoryItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifiedGymVenueDirectoryItem) ProtoMessage() {}
+
+func (x *VerifiedGymVenueDirectoryItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[350]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifiedGymVenueDirectoryItem.ProtoReflect.Descriptor instead.
+func (*VerifiedGymVenueDirectoryItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{350}
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetVenueSlug() string {
+	if x != nil {
+		return x.VenueSlug
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetVenueName() string {
+	if x != nil {
+		return x.VenueName
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetCityAndRegion() string {
+	if x != nil {
+		return x.CityAndRegion
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetVerifiedEquipmentSummary() string {
+	if x != nil {
+		return x.VerifiedEquipmentSummary
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetAccessibilityFeatures() string {
+	if x != nil {
+		return x.AccessibilityFeatures
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetListingFreshnessState() string {
+	if x != nil {
+		return x.ListingFreshnessState
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetDayPassAndBookingPolicy() string {
+	if x != nil {
+		return x.DayPassAndBookingPolicy
+	}
+	return ""
+}
+
+func (x *VerifiedGymVenueDirectoryItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type EquipmentTravelAdaptationOverview struct {
+	state                          protoimpl.MessageState           `protogen:"open.v1"`
+	ConfirmedEquipmentVaultCharter string                           `protobuf:"bytes,1,opt,name=confirmed_equipment_vault_charter,json=confirmedEquipmentVaultCharter,proto3" json:"confirmed_equipment_vault_charter,omitempty"`
+	TravelAndNomadBoundaryCharter  string                           `protobuf:"bytes,2,opt,name=travel_and_nomad_boundary_charter,json=travelAndNomadBoundaryCharter,proto3" json:"travel_and_nomad_boundary_charter,omitempty"`
+	VerifiedVenueFreshnessCharter  string                           `protobuf:"bytes,3,opt,name=verified_venue_freshness_charter,json=verifiedVenueFreshnessCharter,proto3" json:"verified_venue_freshness_charter,omitempty"`
+	EquipmentProfiles              []*EquipmentLocationProfileItem  `protobuf:"bytes,4,rep,name=equipment_profiles,json=equipmentProfiles,proto3" json:"equipment_profiles,omitempty"`
+	TravelAdaptations              []*TravelWorkoutAdaptationItem   `protobuf:"bytes,5,rep,name=travel_adaptations,json=travelAdaptations,proto3" json:"travel_adaptations,omitempty"`
+	GymVenues                      []*VerifiedGymVenueDirectoryItem `protobuf:"bytes,6,rep,name=gym_venues,json=gymVenues,proto3" json:"gym_venues,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *EquipmentTravelAdaptationOverview) Reset() {
+	*x = EquipmentTravelAdaptationOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[351]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EquipmentTravelAdaptationOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EquipmentTravelAdaptationOverview) ProtoMessage() {}
+
+func (x *EquipmentTravelAdaptationOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[351]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EquipmentTravelAdaptationOverview.ProtoReflect.Descriptor instead.
+func (*EquipmentTravelAdaptationOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{351}
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetConfirmedEquipmentVaultCharter() string {
+	if x != nil {
+		return x.ConfirmedEquipmentVaultCharter
+	}
+	return ""
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetTravelAndNomadBoundaryCharter() string {
+	if x != nil {
+		return x.TravelAndNomadBoundaryCharter
+	}
+	return ""
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetVerifiedVenueFreshnessCharter() string {
+	if x != nil {
+		return x.VerifiedVenueFreshnessCharter
+	}
+	return ""
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetEquipmentProfiles() []*EquipmentLocationProfileItem {
+	if x != nil {
+		return x.EquipmentProfiles
+	}
+	return nil
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetTravelAdaptations() []*TravelWorkoutAdaptationItem {
+	if x != nil {
+		return x.TravelAdaptations
+	}
+	return nil
+}
+
+func (x *EquipmentTravelAdaptationOverview) GetGymVenues() []*VerifiedGymVenueDirectoryItem {
+	if x != nil {
+		return x.GymVenues
+	}
+	return nil
+}
+
+type GetEquipmentTravelAdaptationOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEquipmentTravelAdaptationOverviewRequest) Reset() {
+	*x = GetEquipmentTravelAdaptationOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[352]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEquipmentTravelAdaptationOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEquipmentTravelAdaptationOverviewRequest) ProtoMessage() {}
+
+func (x *GetEquipmentTravelAdaptationOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[352]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEquipmentTravelAdaptationOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetEquipmentTravelAdaptationOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{352}
+}
+
+type GetEquipmentTravelAdaptationOverviewResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Overview      *EquipmentTravelAdaptationOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetEquipmentTravelAdaptationOverviewResponse) Reset() {
+	*x = GetEquipmentTravelAdaptationOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[353]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetEquipmentTravelAdaptationOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetEquipmentTravelAdaptationOverviewResponse) ProtoMessage() {}
+
+func (x *GetEquipmentTravelAdaptationOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[353]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetEquipmentTravelAdaptationOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetEquipmentTravelAdaptationOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{353}
+}
+
+func (x *GetEquipmentTravelAdaptationOverviewResponse) GetOverview() *EquipmentTravelAdaptationOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertEquipmentLocationProfileRequest struct {
+	state                     protoimpl.MessageState `protogen:"open.v1"`
+	LocationSlug              string                 `protobuf:"bytes,1,opt,name=location_slug,json=locationSlug,proto3" json:"location_slug,omitempty"`
+	LocationName              string                 `protobuf:"bytes,2,opt,name=location_name,json=locationName,proto3" json:"location_name,omitempty"`
+	ImplementInventorySummary string                 `protobuf:"bytes,3,opt,name=implement_inventory_summary,json=implementInventorySummary,proto3" json:"implement_inventory_summary,omitempty"`
+	SmallestIncrementKg       float64                `protobuf:"fixed64,4,opt,name=smallest_increment_kg,json=smallestIncrementKg,proto3" json:"smallest_increment_kg,omitempty"`
+	RackAndAdaptiveNotes      string                 `protobuf:"bytes,5,opt,name=rack_and_adaptive_notes,json=rackAndAdaptiveNotes,proto3" json:"rack_and_adaptive_notes,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) Reset() {
+	*x = UpsertEquipmentLocationProfileRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[354]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertEquipmentLocationProfileRequest) ProtoMessage() {}
+
+func (x *UpsertEquipmentLocationProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[354]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertEquipmentLocationProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpsertEquipmentLocationProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{354}
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) GetLocationSlug() string {
+	if x != nil {
+		return x.LocationSlug
+	}
+	return ""
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) GetLocationName() string {
+	if x != nil {
+		return x.LocationName
+	}
+	return ""
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) GetImplementInventorySummary() string {
+	if x != nil {
+		return x.ImplementInventorySummary
+	}
+	return ""
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) GetSmallestIncrementKg() float64 {
+	if x != nil {
+		return x.SmallestIncrementKg
+	}
+	return 0
+}
+
+func (x *UpsertEquipmentLocationProfileRequest) GetRackAndAdaptiveNotes() string {
+	if x != nil {
+		return x.RackAndAdaptiveNotes
+	}
+	return ""
+}
+
+type UpsertEquipmentLocationProfileResponse struct {
+	state            protoimpl.MessageState        `protogen:"open.v1"`
+	EquipmentProfile *EquipmentLocationProfileItem `protobuf:"bytes,1,opt,name=equipment_profile,json=equipmentProfile,proto3" json:"equipment_profile,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UpsertEquipmentLocationProfileResponse) Reset() {
+	*x = UpsertEquipmentLocationProfileResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[355]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertEquipmentLocationProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertEquipmentLocationProfileResponse) ProtoMessage() {}
+
+func (x *UpsertEquipmentLocationProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[355]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertEquipmentLocationProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpsertEquipmentLocationProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{355}
+}
+
+func (x *UpsertEquipmentLocationProfileResponse) GetEquipmentProfile() *EquipmentLocationProfileItem {
+	if x != nil {
+		return x.EquipmentProfile
+	}
+	return nil
+}
+
+type GenerateTravelWorkoutAdaptationRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	LocationSlug               string                 `protobuf:"bytes,1,opt,name=location_slug,json=locationSlug,proto3" json:"location_slug,omitempty"`
+	TravelContextSummary       string                 `protobuf:"bytes,2,opt,name=travel_context_summary,json=travelContextSummary,proto3" json:"travel_context_summary,omitempty"`
+	AdaptedSessionPrescription string                 `protobuf:"bytes,3,opt,name=adapted_session_prescription,json=adaptedSessionPrescription,proto3" json:"adapted_session_prescription,omitempty"`
+	PreservedProgrammeIntent   string                 `protobuf:"bytes,4,opt,name=preserved_programme_intent,json=preservedProgrammeIntent,proto3" json:"preserved_programme_intent,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) Reset() {
+	*x = GenerateTravelWorkoutAdaptationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[356]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateTravelWorkoutAdaptationRequest) ProtoMessage() {}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[356]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateTravelWorkoutAdaptationRequest.ProtoReflect.Descriptor instead.
+func (*GenerateTravelWorkoutAdaptationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{356}
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) GetLocationSlug() string {
+	if x != nil {
+		return x.LocationSlug
+	}
+	return ""
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) GetTravelContextSummary() string {
+	if x != nil {
+		return x.TravelContextSummary
+	}
+	return ""
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) GetAdaptedSessionPrescription() string {
+	if x != nil {
+		return x.AdaptedSessionPrescription
+	}
+	return ""
+}
+
+func (x *GenerateTravelWorkoutAdaptationRequest) GetPreservedProgrammeIntent() string {
+	if x != nil {
+		return x.PreservedProgrammeIntent
+	}
+	return ""
+}
+
+type GenerateTravelWorkoutAdaptationResponse struct {
+	state            protoimpl.MessageState       `protogen:"open.v1"`
+	TravelAdaptation *TravelWorkoutAdaptationItem `protobuf:"bytes,1,opt,name=travel_adaptation,json=travelAdaptation,proto3" json:"travel_adaptation,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GenerateTravelWorkoutAdaptationResponse) Reset() {
+	*x = GenerateTravelWorkoutAdaptationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[357]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GenerateTravelWorkoutAdaptationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateTravelWorkoutAdaptationResponse) ProtoMessage() {}
+
+func (x *GenerateTravelWorkoutAdaptationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[357]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateTravelWorkoutAdaptationResponse.ProtoReflect.Descriptor instead.
+func (*GenerateTravelWorkoutAdaptationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{357}
+}
+
+func (x *GenerateTravelWorkoutAdaptationResponse) GetTravelAdaptation() *TravelWorkoutAdaptationItem {
+	if x != nil {
+		return x.TravelAdaptation
+	}
+	return nil
+}
+
+type UpsertVerifiedGymVenueListingRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	VenueSlug                string                 `protobuf:"bytes,1,opt,name=venue_slug,json=venueSlug,proto3" json:"venue_slug,omitempty"`
+	VenueName                string                 `protobuf:"bytes,2,opt,name=venue_name,json=venueName,proto3" json:"venue_name,omitempty"`
+	CityAndRegion            string                 `protobuf:"bytes,3,opt,name=city_and_region,json=cityAndRegion,proto3" json:"city_and_region,omitempty"`
+	VerifiedEquipmentSummary string                 `protobuf:"bytes,4,opt,name=verified_equipment_summary,json=verifiedEquipmentSummary,proto3" json:"verified_equipment_summary,omitempty"`
+	AccessibilityFeatures    string                 `protobuf:"bytes,5,opt,name=accessibility_features,json=accessibilityFeatures,proto3" json:"accessibility_features,omitempty"`
+	DayPassAndBookingPolicy  string                 `protobuf:"bytes,6,opt,name=day_pass_and_booking_policy,json=dayPassAndBookingPolicy,proto3" json:"day_pass_and_booking_policy,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) Reset() {
+	*x = UpsertVerifiedGymVenueListingRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[358]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertVerifiedGymVenueListingRequest) ProtoMessage() {}
+
+func (x *UpsertVerifiedGymVenueListingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[358]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertVerifiedGymVenueListingRequest.ProtoReflect.Descriptor instead.
+func (*UpsertVerifiedGymVenueListingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{358}
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetVenueSlug() string {
+	if x != nil {
+		return x.VenueSlug
+	}
+	return ""
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetVenueName() string {
+	if x != nil {
+		return x.VenueName
+	}
+	return ""
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetCityAndRegion() string {
+	if x != nil {
+		return x.CityAndRegion
+	}
+	return ""
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetVerifiedEquipmentSummary() string {
+	if x != nil {
+		return x.VerifiedEquipmentSummary
+	}
+	return ""
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetAccessibilityFeatures() string {
+	if x != nil {
+		return x.AccessibilityFeatures
+	}
+	return ""
+}
+
+func (x *UpsertVerifiedGymVenueListingRequest) GetDayPassAndBookingPolicy() string {
+	if x != nil {
+		return x.DayPassAndBookingPolicy
+	}
+	return ""
+}
+
+type UpsertVerifiedGymVenueListingResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	GymVenue      *VerifiedGymVenueDirectoryItem `protobuf:"bytes,1,opt,name=gym_venue,json=gymVenue,proto3" json:"gym_venue,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertVerifiedGymVenueListingResponse) Reset() {
+	*x = UpsertVerifiedGymVenueListingResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[359]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertVerifiedGymVenueListingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertVerifiedGymVenueListingResponse) ProtoMessage() {}
+
+func (x *UpsertVerifiedGymVenueListingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[359]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertVerifiedGymVenueListingResponse.ProtoReflect.Descriptor instead.
+func (*UpsertVerifiedGymVenueListingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{359}
+}
+
+func (x *UpsertVerifiedGymVenueListingResponse) GetGymVenue() *VerifiedGymVenueDirectoryItem {
+	if x != nil {
+		return x.GymVenue
+	}
+	return nil
+}
+
+type FlagStaleGymVenueListingRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	VenueSlug             string                 `protobuf:"bytes,1,opt,name=venue_slug,json=venueSlug,proto3" json:"venue_slug,omitempty"`
+	ListingFreshnessState string                 `protobuf:"bytes,2,opt,name=listing_freshness_state,json=listingFreshnessState,proto3" json:"listing_freshness_state,omitempty"` // verified_fresh | stale_reverification_due | temporarily_closed
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *FlagStaleGymVenueListingRequest) Reset() {
+	*x = FlagStaleGymVenueListingRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[360]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagStaleGymVenueListingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagStaleGymVenueListingRequest) ProtoMessage() {}
+
+func (x *FlagStaleGymVenueListingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[360]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagStaleGymVenueListingRequest.ProtoReflect.Descriptor instead.
+func (*FlagStaleGymVenueListingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{360}
+}
+
+func (x *FlagStaleGymVenueListingRequest) GetVenueSlug() string {
+	if x != nil {
+		return x.VenueSlug
+	}
+	return ""
+}
+
+func (x *FlagStaleGymVenueListingRequest) GetListingFreshnessState() string {
+	if x != nil {
+		return x.ListingFreshnessState
+	}
+	return ""
+}
+
+type FlagStaleGymVenueListingResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	GymVenue      *VerifiedGymVenueDirectoryItem `protobuf:"bytes,1,opt,name=gym_venue,json=gymVenue,proto3" json:"gym_venue,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *FlagStaleGymVenueListingResponse) Reset() {
+	*x = FlagStaleGymVenueListingResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[361]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FlagStaleGymVenueListingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FlagStaleGymVenueListingResponse) ProtoMessage() {}
+
+func (x *FlagStaleGymVenueListingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[361]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FlagStaleGymVenueListingResponse.ProtoReflect.Descriptor instead.
+func (*FlagStaleGymVenueListingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{361}
+}
+
+func (x *FlagStaleGymVenueListingResponse) GetGymVenue() *VerifiedGymVenueDirectoryItem {
+	if x != nil {
+		return x.GymVenue
+	}
+	return nil
+}
+
+type RevertTravelWorkoutToHomeGymRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AdaptationId  string                 `protobuf:"bytes,1,opt,name=adaptation_id,json=adaptationId,proto3" json:"adaptation_id,omitempty"`
+	Reason        string                 `protobuf:"bytes,2,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RevertTravelWorkoutToHomeGymRequest) Reset() {
+	*x = RevertTravelWorkoutToHomeGymRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[362]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevertTravelWorkoutToHomeGymRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevertTravelWorkoutToHomeGymRequest) ProtoMessage() {}
+
+func (x *RevertTravelWorkoutToHomeGymRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[362]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevertTravelWorkoutToHomeGymRequest.ProtoReflect.Descriptor instead.
+func (*RevertTravelWorkoutToHomeGymRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{362}
+}
+
+func (x *RevertTravelWorkoutToHomeGymRequest) GetAdaptationId() string {
+	if x != nil {
+		return x.AdaptationId
+	}
+	return ""
+}
+
+func (x *RevertTravelWorkoutToHomeGymRequest) GetReason() string {
+	if x != nil {
+		return x.Reason
+	}
+	return ""
+}
+
+type RevertTravelWorkoutToHomeGymResponse struct {
+	state            protoimpl.MessageState       `protogen:"open.v1"`
+	TravelAdaptation *TravelWorkoutAdaptationItem `protobuf:"bytes,1,opt,name=travel_adaptation,json=travelAdaptation,proto3" json:"travel_adaptation,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *RevertTravelWorkoutToHomeGymResponse) Reset() {
+	*x = RevertTravelWorkoutToHomeGymResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[363]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RevertTravelWorkoutToHomeGymResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RevertTravelWorkoutToHomeGymResponse) ProtoMessage() {}
+
+func (x *RevertTravelWorkoutToHomeGymResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[363]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RevertTravelWorkoutToHomeGymResponse.ProtoReflect.Descriptor instead.
+func (*RevertTravelWorkoutToHomeGymResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{363}
+}
+
+func (x *RevertTravelWorkoutToHomeGymResponse) GetTravelAdaptation() *TravelWorkoutAdaptationItem {
+	if x != nil {
+		return x.TravelAdaptation
+	}
+	return nil
+}
+
+type SessionFuelHydrationPlanItem struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SessionTypeAndDuration         string                 `protobuf:"bytes,3,opt,name=session_type_and_duration,json=sessionTypeAndDuration,proto3" json:"session_type_and_duration,omitempty"`
+	PreIntraPostFuelTiming         string                 `protobuf:"bytes,4,opt,name=pre_intra_post_fuel_timing,json=preIntraPostFuelTiming,proto3" json:"pre_intra_post_fuel_timing,omitempty"`
+	HydrationAndElectrolyteTarget  string                 `protobuf:"bytes,5,opt,name=hydration_and_electrolyte_target,json=hydrationAndElectrolyteTarget,proto3" json:"hydration_and_electrolyte_target,omitempty"`
+	ApexAllergyInstructionSummary  string                 `protobuf:"bytes,6,opt,name=apex_allergy_instruction_summary,json=apexAllergyInstructionSummary,proto3" json:"apex_allergy_instruction_summary,omitempty"`
+	MandatoryCalorieLoggingBlocked bool                   `protobuf:"varint,7,opt,name=mandatory_calorie_logging_blocked,json=mandatoryCalorieLoggingBlocked,proto3" json:"mandatory_calorie_logging_blocked,omitempty"`
+	RawApexClinicalRecordsBlocked  bool                   `protobuf:"varint,8,opt,name=raw_apex_clinical_records_blocked,json=rawApexClinicalRecordsBlocked,proto3" json:"raw_apex_clinical_records_blocked,omitempty"`
+	UpdatedAtUnix                  int64                  `protobuf:"varint,9,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SessionFuelHydrationPlanItem) Reset() {
+	*x = SessionFuelHydrationPlanItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[364]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SessionFuelHydrationPlanItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SessionFuelHydrationPlanItem) ProtoMessage() {}
+
+func (x *SessionFuelHydrationPlanItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[364]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SessionFuelHydrationPlanItem.ProtoReflect.Descriptor instead.
+func (*SessionFuelHydrationPlanItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{364}
+}
+
+func (x *SessionFuelHydrationPlanItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetSessionTypeAndDuration() string {
+	if x != nil {
+		return x.SessionTypeAndDuration
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetPreIntraPostFuelTiming() string {
+	if x != nil {
+		return x.PreIntraPostFuelTiming
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetHydrationAndElectrolyteTarget() string {
+	if x != nil {
+		return x.HydrationAndElectrolyteTarget
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetApexAllergyInstructionSummary() string {
+	if x != nil {
+		return x.ApexAllergyInstructionSummary
+	}
+	return ""
+}
+
+func (x *SessionFuelHydrationPlanItem) GetMandatoryCalorieLoggingBlocked() bool {
+	if x != nil {
+		return x.MandatoryCalorieLoggingBlocked
+	}
+	return false
+}
+
+func (x *SessionFuelHydrationPlanItem) GetRawApexClinicalRecordsBlocked() bool {
+	if x != nil {
+		return x.RawApexClinicalRecordsBlocked
+	}
+	return false
+}
+
+func (x *SessionFuelHydrationPlanItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type PrivateBodyCompositionTrendItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MeasurementMethod                  string                 `protobuf:"bytes,3,opt,name=measurement_method,json=measurementMethod,proto3" json:"measurement_method,omitempty"`
+	TrendAndUncertaintySummary         string                 `protobuf:"bytes,4,opt,name=trend_and_uncertainty_summary,json=trendAndUncertaintySummary,proto3" json:"trend_and_uncertainty_summary,omitempty"`
+	AthleteFunctionalGoal              string                 `protobuf:"bytes,5,opt,name=athlete_functional_goal,json=athleteFunctionalGoal,proto3" json:"athlete_functional_goal,omitempty"`
+	PublicBodyScoreOrRankEffectBlocked bool                   `protobuf:"varint,6,opt,name=public_body_score_or_rank_effect_blocked,json=publicBodyScoreOrRankEffectBlocked,proto3" json:"public_body_score_or_rank_effect_blocked,omitempty"`
+	PrivateOwnerOnly                   bool                   `protobuf:"varint,7,opt,name=private_owner_only,json=privateOwnerOnly,proto3" json:"private_owner_only,omitempty"`
+	UpdatedAtUnix                      int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *PrivateBodyCompositionTrendItem) Reset() {
+	*x = PrivateBodyCompositionTrendItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[365]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PrivateBodyCompositionTrendItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PrivateBodyCompositionTrendItem) ProtoMessage() {}
+
+func (x *PrivateBodyCompositionTrendItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[365]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PrivateBodyCompositionTrendItem.ProtoReflect.Descriptor instead.
+func (*PrivateBodyCompositionTrendItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{365}
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetMeasurementMethod() string {
+	if x != nil {
+		return x.MeasurementMethod
+	}
+	return ""
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetTrendAndUncertaintySummary() string {
+	if x != nil {
+		return x.TrendAndUncertaintySummary
+	}
+	return ""
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetAthleteFunctionalGoal() string {
+	if x != nil {
+		return x.AthleteFunctionalGoal
+	}
+	return ""
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetPublicBodyScoreOrRankEffectBlocked() bool {
+	if x != nil {
+		return x.PublicBodyScoreOrRankEffectBlocked
+	}
+	return false
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetPrivateOwnerOnly() bool {
+	if x != nil {
+		return x.PrivateOwnerOnly
+	}
+	return false
+}
+
+func (x *PrivateBodyCompositionTrendItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type WeightClassSafetyMonitorItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TargetClassAndEventDate          string                 `protobuf:"bytes,3,opt,name=target_class_and_event_date,json=targetClassAndEventDate,proto3" json:"target_class_and_event_date,omitempty"`
+	WeeklyRatePct                    float64                `protobuf:"fixed64,4,opt,name=weekly_rate_pct,json=weeklyRatePct,proto3" json:"weekly_rate_pct,omitempty"`
+	DangerousCutOrDehydrationFlagged bool                   `protobuf:"varint,5,opt,name=dangerous_cut_or_dehydration_flagged,json=dangerousCutOrDehydrationFlagged,proto3" json:"dangerous_cut_or_dehydration_flagged,omitempty"`
+	// safe_gradual_within_bounds | escalated_sports_dietitian_physician | blocked_youth_or_unsafe_cut
+	ProfessionalSafetyRouteStatus string `protobuf:"bytes,6,opt,name=professional_safety_route_status,json=professionalSafetyRouteStatus,proto3" json:"professional_safety_route_status,omitempty"`
+	SafetyGuidanceNote            string `protobuf:"bytes,7,opt,name=safety_guidance_note,json=safetyGuidanceNote,proto3" json:"safety_guidance_note,omitempty"`
+	UpdatedAtUnix                 int64  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *WeightClassSafetyMonitorItem) Reset() {
+	*x = WeightClassSafetyMonitorItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[366]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *WeightClassSafetyMonitorItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WeightClassSafetyMonitorItem) ProtoMessage() {}
+
+func (x *WeightClassSafetyMonitorItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[366]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WeightClassSafetyMonitorItem.ProtoReflect.Descriptor instead.
+func (*WeightClassSafetyMonitorItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{366}
+}
+
+func (x *WeightClassSafetyMonitorItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *WeightClassSafetyMonitorItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *WeightClassSafetyMonitorItem) GetTargetClassAndEventDate() string {
+	if x != nil {
+		return x.TargetClassAndEventDate
+	}
+	return ""
+}
+
+func (x *WeightClassSafetyMonitorItem) GetWeeklyRatePct() float64 {
+	if x != nil {
+		return x.WeeklyRatePct
+	}
+	return 0
+}
+
+func (x *WeightClassSafetyMonitorItem) GetDangerousCutOrDehydrationFlagged() bool {
+	if x != nil {
+		return x.DangerousCutOrDehydrationFlagged
+	}
+	return false
+}
+
+func (x *WeightClassSafetyMonitorItem) GetProfessionalSafetyRouteStatus() string {
+	if x != nil {
+		return x.ProfessionalSafetyRouteStatus
+	}
+	return ""
+}
+
+func (x *WeightClassSafetyMonitorItem) GetSafetyGuidanceNote() string {
+	if x != nil {
+		return x.SafetyGuidanceNote
+	}
+	return ""
+}
+
+func (x *WeightClassSafetyMonitorItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type FuelWeightSafetyOverview struct {
+	state                                 protoimpl.MessageState             `protogen:"open.v1"`
+	OptionalFuelingAndApexBoundaryCharter string                             `protobuf:"bytes,1,opt,name=optional_fueling_and_apex_boundary_charter,json=optionalFuelingAndApexBoundaryCharter,proto3" json:"optional_fueling_and_apex_boundary_charter,omitempty"`
+	PrivateBodyCompositionCharter         string                             `protobuf:"bytes,2,opt,name=private_body_composition_charter,json=privateBodyCompositionCharter,proto3" json:"private_body_composition_charter,omitempty"`
+	WeightClassSafetyAndEscalationCharter string                             `protobuf:"bytes,3,opt,name=weight_class_safety_and_escalation_charter,json=weightClassSafetyAndEscalationCharter,proto3" json:"weight_class_safety_and_escalation_charter,omitempty"`
+	FuelHydrationPlans                    []*SessionFuelHydrationPlanItem    `protobuf:"bytes,4,rep,name=fuel_hydration_plans,json=fuelHydrationPlans,proto3" json:"fuel_hydration_plans,omitempty"`
+	BodyCompositionTrends                 []*PrivateBodyCompositionTrendItem `protobuf:"bytes,5,rep,name=body_composition_trends,json=bodyCompositionTrends,proto3" json:"body_composition_trends,omitempty"`
+	WeightClassMonitors                   []*WeightClassSafetyMonitorItem    `protobuf:"bytes,6,rep,name=weight_class_monitors,json=weightClassMonitors,proto3" json:"weight_class_monitors,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *FuelWeightSafetyOverview) Reset() {
+	*x = FuelWeightSafetyOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[367]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *FuelWeightSafetyOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FuelWeightSafetyOverview) ProtoMessage() {}
+
+func (x *FuelWeightSafetyOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[367]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FuelWeightSafetyOverview.ProtoReflect.Descriptor instead.
+func (*FuelWeightSafetyOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{367}
+}
+
+func (x *FuelWeightSafetyOverview) GetOptionalFuelingAndApexBoundaryCharter() string {
+	if x != nil {
+		return x.OptionalFuelingAndApexBoundaryCharter
+	}
+	return ""
+}
+
+func (x *FuelWeightSafetyOverview) GetPrivateBodyCompositionCharter() string {
+	if x != nil {
+		return x.PrivateBodyCompositionCharter
+	}
+	return ""
+}
+
+func (x *FuelWeightSafetyOverview) GetWeightClassSafetyAndEscalationCharter() string {
+	if x != nil {
+		return x.WeightClassSafetyAndEscalationCharter
+	}
+	return ""
+}
+
+func (x *FuelWeightSafetyOverview) GetFuelHydrationPlans() []*SessionFuelHydrationPlanItem {
+	if x != nil {
+		return x.FuelHydrationPlans
+	}
+	return nil
+}
+
+func (x *FuelWeightSafetyOverview) GetBodyCompositionTrends() []*PrivateBodyCompositionTrendItem {
+	if x != nil {
+		return x.BodyCompositionTrends
+	}
+	return nil
+}
+
+func (x *FuelWeightSafetyOverview) GetWeightClassMonitors() []*WeightClassSafetyMonitorItem {
+	if x != nil {
+		return x.WeightClassMonitors
+	}
+	return nil
+}
+
+type GetFuelWeightSafetyOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFuelWeightSafetyOverviewRequest) Reset() {
+	*x = GetFuelWeightSafetyOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[368]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFuelWeightSafetyOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFuelWeightSafetyOverviewRequest) ProtoMessage() {}
+
+func (x *GetFuelWeightSafetyOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[368]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFuelWeightSafetyOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetFuelWeightSafetyOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{368}
+}
+
+type GetFuelWeightSafetyOverviewResponse struct {
+	state         protoimpl.MessageState    `protogen:"open.v1"`
+	Overview      *FuelWeightSafetyOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetFuelWeightSafetyOverviewResponse) Reset() {
+	*x = GetFuelWeightSafetyOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[369]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetFuelWeightSafetyOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetFuelWeightSafetyOverviewResponse) ProtoMessage() {}
+
+func (x *GetFuelWeightSafetyOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[369]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetFuelWeightSafetyOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetFuelWeightSafetyOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{369}
+}
+
+func (x *GetFuelWeightSafetyOverviewResponse) GetOverview() *FuelWeightSafetyOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertSessionFuelHydrationPlanRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	SessionTypeAndDuration        string                 `protobuf:"bytes,1,opt,name=session_type_and_duration,json=sessionTypeAndDuration,proto3" json:"session_type_and_duration,omitempty"`
+	PreIntraPostFuelTiming        string                 `protobuf:"bytes,2,opt,name=pre_intra_post_fuel_timing,json=preIntraPostFuelTiming,proto3" json:"pre_intra_post_fuel_timing,omitempty"`
+	HydrationAndElectrolyteTarget string                 `protobuf:"bytes,3,opt,name=hydration_and_electrolyte_target,json=hydrationAndElectrolyteTarget,proto3" json:"hydration_and_electrolyte_target,omitempty"`
+	ApexAllergyInstructionSummary string                 `protobuf:"bytes,4,opt,name=apex_allergy_instruction_summary,json=apexAllergyInstructionSummary,proto3" json:"apex_allergy_instruction_summary,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) Reset() {
+	*x = UpsertSessionFuelHydrationPlanRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[370]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertSessionFuelHydrationPlanRequest) ProtoMessage() {}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[370]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertSessionFuelHydrationPlanRequest.ProtoReflect.Descriptor instead.
+func (*UpsertSessionFuelHydrationPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{370}
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) GetSessionTypeAndDuration() string {
+	if x != nil {
+		return x.SessionTypeAndDuration
+	}
+	return ""
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) GetPreIntraPostFuelTiming() string {
+	if x != nil {
+		return x.PreIntraPostFuelTiming
+	}
+	return ""
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) GetHydrationAndElectrolyteTarget() string {
+	if x != nil {
+		return x.HydrationAndElectrolyteTarget
+	}
+	return ""
+}
+
+func (x *UpsertSessionFuelHydrationPlanRequest) GetApexAllergyInstructionSummary() string {
+	if x != nil {
+		return x.ApexAllergyInstructionSummary
+	}
+	return ""
+}
+
+type UpsertSessionFuelHydrationPlanResponse struct {
+	state             protoimpl.MessageState        `protogen:"open.v1"`
+	FuelHydrationPlan *SessionFuelHydrationPlanItem `protobuf:"bytes,1,opt,name=fuel_hydration_plan,json=fuelHydrationPlan,proto3" json:"fuel_hydration_plan,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *UpsertSessionFuelHydrationPlanResponse) Reset() {
+	*x = UpsertSessionFuelHydrationPlanResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[371]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertSessionFuelHydrationPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertSessionFuelHydrationPlanResponse) ProtoMessage() {}
+
+func (x *UpsertSessionFuelHydrationPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[371]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertSessionFuelHydrationPlanResponse.ProtoReflect.Descriptor instead.
+func (*UpsertSessionFuelHydrationPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{371}
+}
+
+func (x *UpsertSessionFuelHydrationPlanResponse) GetFuelHydrationPlan() *SessionFuelHydrationPlanItem {
+	if x != nil {
+		return x.FuelHydrationPlan
+	}
+	return nil
+}
+
+type RecordPrivateBodyCompositionTrendRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	MeasurementMethod          string                 `protobuf:"bytes,1,opt,name=measurement_method,json=measurementMethod,proto3" json:"measurement_method,omitempty"`
+	TrendAndUncertaintySummary string                 `protobuf:"bytes,2,opt,name=trend_and_uncertainty_summary,json=trendAndUncertaintySummary,proto3" json:"trend_and_uncertainty_summary,omitempty"`
+	AthleteFunctionalGoal      string                 `protobuf:"bytes,3,opt,name=athlete_functional_goal,json=athleteFunctionalGoal,proto3" json:"athlete_functional_goal,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) Reset() {
+	*x = RecordPrivateBodyCompositionTrendRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[372]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordPrivateBodyCompositionTrendRequest) ProtoMessage() {}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[372]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordPrivateBodyCompositionTrendRequest.ProtoReflect.Descriptor instead.
+func (*RecordPrivateBodyCompositionTrendRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{372}
+}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) GetMeasurementMethod() string {
+	if x != nil {
+		return x.MeasurementMethod
+	}
+	return ""
+}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) GetTrendAndUncertaintySummary() string {
+	if x != nil {
+		return x.TrendAndUncertaintySummary
+	}
+	return ""
+}
+
+func (x *RecordPrivateBodyCompositionTrendRequest) GetAthleteFunctionalGoal() string {
+	if x != nil {
+		return x.AthleteFunctionalGoal
+	}
+	return ""
+}
+
+type RecordPrivateBodyCompositionTrendResponse struct {
+	state                protoimpl.MessageState           `protogen:"open.v1"`
+	BodyCompositionTrend *PrivateBodyCompositionTrendItem `protobuf:"bytes,1,opt,name=body_composition_trend,json=bodyCompositionTrend,proto3" json:"body_composition_trend,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *RecordPrivateBodyCompositionTrendResponse) Reset() {
+	*x = RecordPrivateBodyCompositionTrendResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[373]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordPrivateBodyCompositionTrendResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordPrivateBodyCompositionTrendResponse) ProtoMessage() {}
+
+func (x *RecordPrivateBodyCompositionTrendResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[373]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordPrivateBodyCompositionTrendResponse.ProtoReflect.Descriptor instead.
+func (*RecordPrivateBodyCompositionTrendResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{373}
+}
+
+func (x *RecordPrivateBodyCompositionTrendResponse) GetBodyCompositionTrend() *PrivateBodyCompositionTrendItem {
+	if x != nil {
+		return x.BodyCompositionTrend
+	}
+	return nil
+}
+
+type EvaluateWeightClassSafetyPlanRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	TargetClassAndEventDate string                 `protobuf:"bytes,1,opt,name=target_class_and_event_date,json=targetClassAndEventDate,proto3" json:"target_class_and_event_date,omitempty"`
+	WeeklyRatePct           float64                `protobuf:"fixed64,2,opt,name=weekly_rate_pct,json=weeklyRatePct,proto3" json:"weekly_rate_pct,omitempty"`
+	IsYouthAthlete          bool                   `protobuf:"varint,3,opt,name=is_youth_athlete,json=isYouthAthlete,proto3" json:"is_youth_athlete,omitempty"`
+	SafetyGuidanceNote      string                 `protobuf:"bytes,4,opt,name=safety_guidance_note,json=safetyGuidanceNote,proto3" json:"safety_guidance_note,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) Reset() {
+	*x = EvaluateWeightClassSafetyPlanRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[374]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateWeightClassSafetyPlanRequest) ProtoMessage() {}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[374]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateWeightClassSafetyPlanRequest.ProtoReflect.Descriptor instead.
+func (*EvaluateWeightClassSafetyPlanRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{374}
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) GetTargetClassAndEventDate() string {
+	if x != nil {
+		return x.TargetClassAndEventDate
+	}
+	return ""
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) GetWeeklyRatePct() float64 {
+	if x != nil {
+		return x.WeeklyRatePct
+	}
+	return 0
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) GetIsYouthAthlete() bool {
+	if x != nil {
+		return x.IsYouthAthlete
+	}
+	return false
+}
+
+func (x *EvaluateWeightClassSafetyPlanRequest) GetSafetyGuidanceNote() string {
+	if x != nil {
+		return x.SafetyGuidanceNote
+	}
+	return ""
+}
+
+type EvaluateWeightClassSafetyPlanResponse struct {
+	state              protoimpl.MessageState        `protogen:"open.v1"`
+	WeightClassMonitor *WeightClassSafetyMonitorItem `protobuf:"bytes,1,opt,name=weight_class_monitor,json=weightClassMonitor,proto3" json:"weight_class_monitor,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *EvaluateWeightClassSafetyPlanResponse) Reset() {
+	*x = EvaluateWeightClassSafetyPlanResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[375]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EvaluateWeightClassSafetyPlanResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EvaluateWeightClassSafetyPlanResponse) ProtoMessage() {}
+
+func (x *EvaluateWeightClassSafetyPlanResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[375]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EvaluateWeightClassSafetyPlanResponse.ProtoReflect.Descriptor instead.
+func (*EvaluateWeightClassSafetyPlanResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{375}
+}
+
+func (x *EvaluateWeightClassSafetyPlanResponse) GetWeightClassMonitor() *WeightClassSafetyMonitorItem {
+	if x != nil {
+		return x.WeightClassMonitor
+	}
+	return nil
+}
+
+type EscalateWeightCutToProfessionalRouteRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	MonitorId        string                 `protobuf:"bytes,1,opt,name=monitor_id,json=monitorId,proto3" json:"monitor_id,omitempty"`
+	EscalationReason string                 `protobuf:"bytes,2,opt,name=escalation_reason,json=escalationReason,proto3" json:"escalation_reason,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *EscalateWeightCutToProfessionalRouteRequest) Reset() {
+	*x = EscalateWeightCutToProfessionalRouteRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[376]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EscalateWeightCutToProfessionalRouteRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EscalateWeightCutToProfessionalRouteRequest) ProtoMessage() {}
+
+func (x *EscalateWeightCutToProfessionalRouteRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[376]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EscalateWeightCutToProfessionalRouteRequest.ProtoReflect.Descriptor instead.
+func (*EscalateWeightCutToProfessionalRouteRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{376}
+}
+
+func (x *EscalateWeightCutToProfessionalRouteRequest) GetMonitorId() string {
+	if x != nil {
+		return x.MonitorId
+	}
+	return ""
+}
+
+func (x *EscalateWeightCutToProfessionalRouteRequest) GetEscalationReason() string {
+	if x != nil {
+		return x.EscalationReason
+	}
+	return ""
+}
+
+type EscalateWeightCutToProfessionalRouteResponse struct {
+	state              protoimpl.MessageState        `protogen:"open.v1"`
+	WeightClassMonitor *WeightClassSafetyMonitorItem `protobuf:"bytes,1,opt,name=weight_class_monitor,json=weightClassMonitor,proto3" json:"weight_class_monitor,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *EscalateWeightCutToProfessionalRouteResponse) Reset() {
+	*x = EscalateWeightCutToProfessionalRouteResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[377]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EscalateWeightCutToProfessionalRouteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EscalateWeightCutToProfessionalRouteResponse) ProtoMessage() {}
+
+func (x *EscalateWeightCutToProfessionalRouteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[377]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EscalateWeightCutToProfessionalRouteResponse.ProtoReflect.Descriptor instead.
+func (*EscalateWeightCutToProfessionalRouteResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{377}
+}
+
+func (x *EscalateWeightCutToProfessionalRouteResponse) GetWeightClassMonitor() *WeightClassSafetyMonitorItem {
+	if x != nil {
+		return x.WeightClassMonitor
+	}
+	return nil
+}
+
+type VerifyBodyCompositionPrivacyIsolationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TrendId       string                 `protobuf:"bytes,1,opt,name=trend_id,json=trendId,proto3" json:"trend_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationRequest) Reset() {
+	*x = VerifyBodyCompositionPrivacyIsolationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[378]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyBodyCompositionPrivacyIsolationRequest) ProtoMessage() {}
+
+func (x *VerifyBodyCompositionPrivacyIsolationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[378]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyBodyCompositionPrivacyIsolationRequest.ProtoReflect.Descriptor instead.
+func (*VerifyBodyCompositionPrivacyIsolationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{378}
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationRequest) GetTrendId() string {
+	if x != nil {
+		return x.TrendId
+	}
+	return ""
+}
+
+type VerifyBodyCompositionPrivacyIsolationResponse struct {
+	state                protoimpl.MessageState           `protogen:"open.v1"`
+	BodyCompositionTrend *PrivateBodyCompositionTrendItem `protobuf:"bytes,1,opt,name=body_composition_trend,json=bodyCompositionTrend,proto3" json:"body_composition_trend,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationResponse) Reset() {
+	*x = VerifyBodyCompositionPrivacyIsolationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[379]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyBodyCompositionPrivacyIsolationResponse) ProtoMessage() {}
+
+func (x *VerifyBodyCompositionPrivacyIsolationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[379]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyBodyCompositionPrivacyIsolationResponse.ProtoReflect.Descriptor instead.
+func (*VerifyBodyCompositionPrivacyIsolationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{379}
+}
+
+func (x *VerifyBodyCompositionPrivacyIsolationResponse) GetBodyCompositionTrend() *PrivateBodyCompositionTrendItem {
+	if x != nil {
+		return x.BodyCompositionTrend
+	}
+	return nil
+}
+
+type HealthyCompetitionCohortItem struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	Id                          string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                      string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CohortSlug                  string                 `protobuf:"bytes,3,opt,name=cohort_slug,json=cohortSlug,proto3" json:"cohort_slug,omitempty"`
+	CohortTitle                 string                 `protobuf:"bytes,4,opt,name=cohort_title,json=cohortTitle,proto3" json:"cohort_title,omitempty"`
+	CompetitionMode             string                 `protobuf:"bytes,5,opt,name=competition_mode,json=competitionMode,proto3" json:"competition_mode,omitempty"` // self_only | invited_crew | comparable_cohort | verified_event
+	NormalizationAndAbilityRule string                 `protobuf:"bytes,6,opt,name=normalization_and_ability_rule,json=normalizationAndAbilityRule,proto3" json:"normalization_and_ability_rule,omitempty"`
+	CompetitionMuteEnabled      bool                   `protobuf:"varint,7,opt,name=competition_mute_enabled,json=competitionMuteEnabled,proto3" json:"competition_mute_enabled,omitempty"`
+	GlobalBodyRankingBlocked    bool                   `protobuf:"varint,8,opt,name=global_body_ranking_blocked,json=globalBodyRankingBlocked,proto3" json:"global_body_ranking_blocked,omitempty"`
+	BodyAndHealthDataHidden     bool                   `protobuf:"varint,9,opt,name=body_and_health_data_hidden,json=bodyAndHealthDataHidden,proto3" json:"body_and_health_data_hidden,omitempty"`
+	UpdatedAtUnix               int64                  `protobuf:"varint,10,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *HealthyCompetitionCohortItem) Reset() {
+	*x = HealthyCompetitionCohortItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[380]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HealthyCompetitionCohortItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HealthyCompetitionCohortItem) ProtoMessage() {}
+
+func (x *HealthyCompetitionCohortItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[380]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HealthyCompetitionCohortItem.ProtoReflect.Descriptor instead.
+func (*HealthyCompetitionCohortItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{380}
+}
+
+func (x *HealthyCompetitionCohortItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetCohortSlug() string {
+	if x != nil {
+		return x.CohortSlug
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetCohortTitle() string {
+	if x != nil {
+		return x.CohortTitle
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetCompetitionMode() string {
+	if x != nil {
+		return x.CompetitionMode
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetNormalizationAndAbilityRule() string {
+	if x != nil {
+		return x.NormalizationAndAbilityRule
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCohortItem) GetCompetitionMuteEnabled() bool {
+	if x != nil {
+		return x.CompetitionMuteEnabled
+	}
+	return false
+}
+
+func (x *HealthyCompetitionCohortItem) GetGlobalBodyRankingBlocked() bool {
+	if x != nil {
+		return x.GlobalBodyRankingBlocked
+	}
+	return false
+}
+
+func (x *HealthyCompetitionCohortItem) GetBodyAndHealthDataHidden() bool {
+	if x != nil {
+		return x.BodyAndHealthDataHidden
+	}
+	return false
+}
+
+func (x *HealthyCompetitionCohortItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type CrewChallengeAndModerationItem struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	Id                         string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	ChallengeSlug              string                 `protobuf:"bytes,2,opt,name=challenge_slug,json=challengeSlug,proto3" json:"challenge_slug,omitempty"`
+	ChallengeTitle             string                 `protobuf:"bytes,3,opt,name=challenge_title,json=challengeTitle,proto3" json:"challenge_title,omitempty"`
+	ChallengeCategory          string                 `protobuf:"bytes,4,opt,name=challenge_category,json=challengeCategory,proto3" json:"challenge_category,omitempty"` // safe_adherence_and_skill | anti_cheat_review | club_service_mission
+	SafetyAndAntiCheatRule     string                 `protobuf:"bytes,5,opt,name=safety_and_anti_cheat_rule,json=safetyAndAntiCheatRule,proto3" json:"safety_and_anti_cheat_rule,omitempty"`
+	VerificationAndAppealState string                 `protobuf:"bytes,6,opt,name=verification_and_appeal_state,json=verificationAndAppealState,proto3" json:"verification_and_appeal_state,omitempty"` // verified_clean | appeal_window_open | disqualified_impossible_load
+	EvidenceSummary            string                 `protobuf:"bytes,7,opt,name=evidence_summary,json=evidenceSummary,proto3" json:"evidence_summary,omitempty"`
+	UpdatedAtUnix              int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *CrewChallengeAndModerationItem) Reset() {
+	*x = CrewChallengeAndModerationItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[381]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CrewChallengeAndModerationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CrewChallengeAndModerationItem) ProtoMessage() {}
+
+func (x *CrewChallengeAndModerationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[381]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CrewChallengeAndModerationItem.ProtoReflect.Descriptor instead.
+func (*CrewChallengeAndModerationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{381}
+}
+
+func (x *CrewChallengeAndModerationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetChallengeSlug() string {
+	if x != nil {
+		return x.ChallengeSlug
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetChallengeTitle() string {
+	if x != nil {
+		return x.ChallengeTitle
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetChallengeCategory() string {
+	if x != nil {
+		return x.ChallengeCategory
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetSafetyAndAntiCheatRule() string {
+	if x != nil {
+		return x.SafetyAndAntiCheatRule
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetVerificationAndAppealState() string {
+	if x != nil {
+		return x.VerificationAndAppealState
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetEvidenceSummary() string {
+	if x != nil {
+		return x.EvidenceSummary
+	}
+	return ""
+}
+
+func (x *CrewChallengeAndModerationItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type EmpireRewardContributionItem struct {
+	state                                    protoimpl.MessageState `protogen:"open.v1"`
+	Id                                       string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                   string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ContributionKind                         string                 `protobuf:"bytes,3,opt,name=contribution_kind,json=contributionKind,proto3" json:"contribution_kind,omitempty"`
+	RewardDescription                        string                 `protobuf:"bytes,4,opt,name=reward_description,json=rewardDescription,proto3" json:"reward_description,omitempty"`
+	EmpireLedgerReceiptCode                  string                 `protobuf:"bytes,5,opt,name=empire_ledger_receipt_code,json=empireLedgerReceiptCode,proto3" json:"empire_ledger_receipt_code,omitempty"`
+	PayToRankAndOvertrainingIncentiveBlocked bool                   `protobuf:"varint,6,opt,name=pay_to_rank_and_overtraining_incentive_blocked,json=payToRankAndOvertrainingIncentiveBlocked,proto3" json:"pay_to_rank_and_overtraining_incentive_blocked,omitempty"`
+	Status                                   string                 `protobuf:"bytes,7,opt,name=status,proto3" json:"status,omitempty"` // credited_auditable | pending_verification
+	CreatedAtUnix                            int64                  `protobuf:"varint,8,opt,name=created_at_unix,json=createdAtUnix,proto3" json:"created_at_unix,omitempty"`
+	unknownFields                            protoimpl.UnknownFields
+	sizeCache                                protoimpl.SizeCache
+}
+
+func (x *EmpireRewardContributionItem) Reset() {
+	*x = EmpireRewardContributionItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[382]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EmpireRewardContributionItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EmpireRewardContributionItem) ProtoMessage() {}
+
+func (x *EmpireRewardContributionItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[382]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EmpireRewardContributionItem.ProtoReflect.Descriptor instead.
+func (*EmpireRewardContributionItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{382}
+}
+
+func (x *EmpireRewardContributionItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetContributionKind() string {
+	if x != nil {
+		return x.ContributionKind
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetRewardDescription() string {
+	if x != nil {
+		return x.RewardDescription
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetEmpireLedgerReceiptCode() string {
+	if x != nil {
+		return x.EmpireLedgerReceiptCode
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetPayToRankAndOvertrainingIncentiveBlocked() bool {
+	if x != nil {
+		return x.PayToRankAndOvertrainingIncentiveBlocked
+	}
+	return false
+}
+
+func (x *EmpireRewardContributionItem) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *EmpireRewardContributionItem) GetCreatedAtUnix() int64 {
+	if x != nil {
+		return x.CreatedAtUnix
+	}
+	return 0
+}
+
+type HealthyCompetitionCrewsOverview struct {
+	state                              protoimpl.MessageState            `protogen:"open.v1"`
+	ComparableCohortAndMuteCharter     string                            `protobuf:"bytes,1,opt,name=comparable_cohort_and_mute_charter,json=comparableCohortAndMuteCharter,proto3" json:"comparable_cohort_and_mute_charter,omitempty"`
+	SafeAdherenceAndAntiCheatCharter   string                            `protobuf:"bytes,2,opt,name=safe_adherence_and_anti_cheat_charter,json=safeAdherenceAndAntiCheatCharter,proto3" json:"safe_adherence_and_anti_cheat_charter,omitempty"`
+	EmpireContributionAndRewardCharter string                            `protobuf:"bytes,3,opt,name=empire_contribution_and_reward_charter,json=empireContributionAndRewardCharter,proto3" json:"empire_contribution_and_reward_charter,omitempty"`
+	Cohorts                            []*HealthyCompetitionCohortItem   `protobuf:"bytes,4,rep,name=cohorts,proto3" json:"cohorts,omitempty"`
+	ChallengesAndCases                 []*CrewChallengeAndModerationItem `protobuf:"bytes,5,rep,name=challenges_and_cases,json=challengesAndCases,proto3" json:"challenges_and_cases,omitempty"`
+	RewardContributions                []*EmpireRewardContributionItem   `protobuf:"bytes,6,rep,name=reward_contributions,json=rewardContributions,proto3" json:"reward_contributions,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *HealthyCompetitionCrewsOverview) Reset() {
+	*x = HealthyCompetitionCrewsOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[383]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *HealthyCompetitionCrewsOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HealthyCompetitionCrewsOverview) ProtoMessage() {}
+
+func (x *HealthyCompetitionCrewsOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[383]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HealthyCompetitionCrewsOverview.ProtoReflect.Descriptor instead.
+func (*HealthyCompetitionCrewsOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{383}
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetComparableCohortAndMuteCharter() string {
+	if x != nil {
+		return x.ComparableCohortAndMuteCharter
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetSafeAdherenceAndAntiCheatCharter() string {
+	if x != nil {
+		return x.SafeAdherenceAndAntiCheatCharter
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetEmpireContributionAndRewardCharter() string {
+	if x != nil {
+		return x.EmpireContributionAndRewardCharter
+	}
+	return ""
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetCohorts() []*HealthyCompetitionCohortItem {
+	if x != nil {
+		return x.Cohorts
+	}
+	return nil
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetChallengesAndCases() []*CrewChallengeAndModerationItem {
+	if x != nil {
+		return x.ChallengesAndCases
+	}
+	return nil
+}
+
+func (x *HealthyCompetitionCrewsOverview) GetRewardContributions() []*EmpireRewardContributionItem {
+	if x != nil {
+		return x.RewardContributions
+	}
+	return nil
+}
+
+type GetHealthyCompetitionCrewsOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetHealthyCompetitionCrewsOverviewRequest) Reset() {
+	*x = GetHealthyCompetitionCrewsOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[384]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHealthyCompetitionCrewsOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHealthyCompetitionCrewsOverviewRequest) ProtoMessage() {}
+
+func (x *GetHealthyCompetitionCrewsOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[384]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHealthyCompetitionCrewsOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetHealthyCompetitionCrewsOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{384}
+}
+
+type GetHealthyCompetitionCrewsOverviewResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Overview      *HealthyCompetitionCrewsOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetHealthyCompetitionCrewsOverviewResponse) Reset() {
+	*x = GetHealthyCompetitionCrewsOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[385]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetHealthyCompetitionCrewsOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHealthyCompetitionCrewsOverviewResponse) ProtoMessage() {}
+
+func (x *GetHealthyCompetitionCrewsOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[385]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHealthyCompetitionCrewsOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetHealthyCompetitionCrewsOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{385}
+}
+
+func (x *GetHealthyCompetitionCrewsOverviewResponse) GetOverview() *HealthyCompetitionCrewsOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type UpsertHealthyCompetitionCohortRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	CohortSlug                  string                 `protobuf:"bytes,1,opt,name=cohort_slug,json=cohortSlug,proto3" json:"cohort_slug,omitempty"`
+	CohortTitle                 string                 `protobuf:"bytes,2,opt,name=cohort_title,json=cohortTitle,proto3" json:"cohort_title,omitempty"`
+	CompetitionMode             string                 `protobuf:"bytes,3,opt,name=competition_mode,json=competitionMode,proto3" json:"competition_mode,omitempty"`
+	NormalizationAndAbilityRule string                 `protobuf:"bytes,4,opt,name=normalization_and_ability_rule,json=normalizationAndAbilityRule,proto3" json:"normalization_and_ability_rule,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) Reset() {
+	*x = UpsertHealthyCompetitionCohortRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[386]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertHealthyCompetitionCohortRequest) ProtoMessage() {}
+
+func (x *UpsertHealthyCompetitionCohortRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[386]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertHealthyCompetitionCohortRequest.ProtoReflect.Descriptor instead.
+func (*UpsertHealthyCompetitionCohortRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{386}
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) GetCohortSlug() string {
+	if x != nil {
+		return x.CohortSlug
+	}
+	return ""
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) GetCohortTitle() string {
+	if x != nil {
+		return x.CohortTitle
+	}
+	return ""
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) GetCompetitionMode() string {
+	if x != nil {
+		return x.CompetitionMode
+	}
+	return ""
+}
+
+func (x *UpsertHealthyCompetitionCohortRequest) GetNormalizationAndAbilityRule() string {
+	if x != nil {
+		return x.NormalizationAndAbilityRule
+	}
+	return ""
+}
+
+type UpsertHealthyCompetitionCohortResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Cohort        *HealthyCompetitionCohortItem `protobuf:"bytes,1,opt,name=cohort,proto3" json:"cohort,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpsertHealthyCompetitionCohortResponse) Reset() {
+	*x = UpsertHealthyCompetitionCohortResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[387]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertHealthyCompetitionCohortResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertHealthyCompetitionCohortResponse) ProtoMessage() {}
+
+func (x *UpsertHealthyCompetitionCohortResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[387]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertHealthyCompetitionCohortResponse.ProtoReflect.Descriptor instead.
+func (*UpsertHealthyCompetitionCohortResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{387}
+}
+
+func (x *UpsertHealthyCompetitionCohortResponse) GetCohort() *HealthyCompetitionCohortItem {
+	if x != nil {
+		return x.Cohort
+	}
+	return nil
+}
+
+type ToggleCompetitionMutePreferenceRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	CohortId               string                 `protobuf:"bytes,1,opt,name=cohort_id,json=cohortId,proto3" json:"cohort_id,omitempty"`
+	CompetitionMuteEnabled bool                   `protobuf:"varint,2,opt,name=competition_mute_enabled,json=competitionMuteEnabled,proto3" json:"competition_mute_enabled,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *ToggleCompetitionMutePreferenceRequest) Reset() {
+	*x = ToggleCompetitionMutePreferenceRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[388]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToggleCompetitionMutePreferenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToggleCompetitionMutePreferenceRequest) ProtoMessage() {}
+
+func (x *ToggleCompetitionMutePreferenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[388]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToggleCompetitionMutePreferenceRequest.ProtoReflect.Descriptor instead.
+func (*ToggleCompetitionMutePreferenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{388}
+}
+
+func (x *ToggleCompetitionMutePreferenceRequest) GetCohortId() string {
+	if x != nil {
+		return x.CohortId
+	}
+	return ""
+}
+
+func (x *ToggleCompetitionMutePreferenceRequest) GetCompetitionMuteEnabled() bool {
+	if x != nil {
+		return x.CompetitionMuteEnabled
+	}
+	return false
+}
+
+type ToggleCompetitionMutePreferenceResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Cohort        *HealthyCompetitionCohortItem `protobuf:"bytes,1,opt,name=cohort,proto3" json:"cohort,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ToggleCompetitionMutePreferenceResponse) Reset() {
+	*x = ToggleCompetitionMutePreferenceResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[389]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ToggleCompetitionMutePreferenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ToggleCompetitionMutePreferenceResponse) ProtoMessage() {}
+
+func (x *ToggleCompetitionMutePreferenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[389]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ToggleCompetitionMutePreferenceResponse.ProtoReflect.Descriptor instead.
+func (*ToggleCompetitionMutePreferenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{389}
+}
+
+func (x *ToggleCompetitionMutePreferenceResponse) GetCohort() *HealthyCompetitionCohortItem {
+	if x != nil {
+		return x.Cohort
+	}
+	return nil
+}
+
+type SubmitCrewChallengeOrAppealRequest struct {
+	state                  protoimpl.MessageState `protogen:"open.v1"`
+	ChallengeSlug          string                 `protobuf:"bytes,1,opt,name=challenge_slug,json=challengeSlug,proto3" json:"challenge_slug,omitempty"`
+	ChallengeTitle         string                 `protobuf:"bytes,2,opt,name=challenge_title,json=challengeTitle,proto3" json:"challenge_title,omitempty"`
+	ChallengeCategory      string                 `protobuf:"bytes,3,opt,name=challenge_category,json=challengeCategory,proto3" json:"challenge_category,omitempty"`
+	SafetyAndAntiCheatRule string                 `protobuf:"bytes,4,opt,name=safety_and_anti_cheat_rule,json=safetyAndAntiCheatRule,proto3" json:"safety_and_anti_cheat_rule,omitempty"`
+	EvidenceSummary        string                 `protobuf:"bytes,5,opt,name=evidence_summary,json=evidenceSummary,proto3" json:"evidence_summary,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) Reset() {
+	*x = SubmitCrewChallengeOrAppealRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[390]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCrewChallengeOrAppealRequest) ProtoMessage() {}
+
+func (x *SubmitCrewChallengeOrAppealRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[390]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCrewChallengeOrAppealRequest.ProtoReflect.Descriptor instead.
+func (*SubmitCrewChallengeOrAppealRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{390}
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) GetChallengeSlug() string {
+	if x != nil {
+		return x.ChallengeSlug
+	}
+	return ""
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) GetChallengeTitle() string {
+	if x != nil {
+		return x.ChallengeTitle
+	}
+	return ""
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) GetChallengeCategory() string {
+	if x != nil {
+		return x.ChallengeCategory
+	}
+	return ""
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) GetSafetyAndAntiCheatRule() string {
+	if x != nil {
+		return x.SafetyAndAntiCheatRule
+	}
+	return ""
+}
+
+func (x *SubmitCrewChallengeOrAppealRequest) GetEvidenceSummary() string {
+	if x != nil {
+		return x.EvidenceSummary
+	}
+	return ""
+}
+
+type SubmitCrewChallengeOrAppealResponse struct {
+	state           protoimpl.MessageState          `protogen:"open.v1"`
+	ChallengeOrCase *CrewChallengeAndModerationItem `protobuf:"bytes,1,opt,name=challenge_or_case,json=challengeOrCase,proto3" json:"challenge_or_case,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *SubmitCrewChallengeOrAppealResponse) Reset() {
+	*x = SubmitCrewChallengeOrAppealResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[391]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubmitCrewChallengeOrAppealResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubmitCrewChallengeOrAppealResponse) ProtoMessage() {}
+
+func (x *SubmitCrewChallengeOrAppealResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[391]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubmitCrewChallengeOrAppealResponse.ProtoReflect.Descriptor instead.
+func (*SubmitCrewChallengeOrAppealResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{391}
+}
+
+func (x *SubmitCrewChallengeOrAppealResponse) GetChallengeOrCase() *CrewChallengeAndModerationItem {
+	if x != nil {
+		return x.ChallengeOrCase
+	}
+	return nil
+}
+
+type RecordEmpireRewardContributionRequest struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	ContributionKind        string                 `protobuf:"bytes,1,opt,name=contribution_kind,json=contributionKind,proto3" json:"contribution_kind,omitempty"`
+	RewardDescription       string                 `protobuf:"bytes,2,opt,name=reward_description,json=rewardDescription,proto3" json:"reward_description,omitempty"`
+	EmpireLedgerReceiptCode string                 `protobuf:"bytes,3,opt,name=empire_ledger_receipt_code,json=empireLedgerReceiptCode,proto3" json:"empire_ledger_receipt_code,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *RecordEmpireRewardContributionRequest) Reset() {
+	*x = RecordEmpireRewardContributionRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[392]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordEmpireRewardContributionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordEmpireRewardContributionRequest) ProtoMessage() {}
+
+func (x *RecordEmpireRewardContributionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[392]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordEmpireRewardContributionRequest.ProtoReflect.Descriptor instead.
+func (*RecordEmpireRewardContributionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{392}
+}
+
+func (x *RecordEmpireRewardContributionRequest) GetContributionKind() string {
+	if x != nil {
+		return x.ContributionKind
+	}
+	return ""
+}
+
+func (x *RecordEmpireRewardContributionRequest) GetRewardDescription() string {
+	if x != nil {
+		return x.RewardDescription
+	}
+	return ""
+}
+
+func (x *RecordEmpireRewardContributionRequest) GetEmpireLedgerReceiptCode() string {
+	if x != nil {
+		return x.EmpireLedgerReceiptCode
+	}
+	return ""
+}
+
+type RecordEmpireRewardContributionResponse struct {
+	state              protoimpl.MessageState        `protogen:"open.v1"`
+	RewardContribution *EmpireRewardContributionItem `protobuf:"bytes,1,opt,name=reward_contribution,json=rewardContribution,proto3" json:"reward_contribution,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *RecordEmpireRewardContributionResponse) Reset() {
+	*x = RecordEmpireRewardContributionResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[393]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RecordEmpireRewardContributionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RecordEmpireRewardContributionResponse) ProtoMessage() {}
+
+func (x *RecordEmpireRewardContributionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[393]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RecordEmpireRewardContributionResponse.ProtoReflect.Descriptor instead.
+func (*RecordEmpireRewardContributionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{393}
+}
+
+func (x *RecordEmpireRewardContributionResponse) GetRewardContribution() *EmpireRewardContributionItem {
+	if x != nil {
+		return x.RewardContribution
+	}
+	return nil
+}
+
+type AdjudicateCrewAntiCheatCaseRequest struct {
+	state                      protoimpl.MessageState `protogen:"open.v1"`
+	ChallengeId                string                 `protobuf:"bytes,1,opt,name=challenge_id,json=challengeId,proto3" json:"challenge_id,omitempty"`
+	VerificationAndAppealState string                 `protobuf:"bytes,2,opt,name=verification_and_appeal_state,json=verificationAndAppealState,proto3" json:"verification_and_appeal_state,omitempty"`
+	EvidenceSummary            string                 `protobuf:"bytes,3,opt,name=evidence_summary,json=evidenceSummary,proto3" json:"evidence_summary,omitempty"`
+	unknownFields              protoimpl.UnknownFields
+	sizeCache                  protoimpl.SizeCache
+}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) Reset() {
+	*x = AdjudicateCrewAntiCheatCaseRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[394]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdjudicateCrewAntiCheatCaseRequest) ProtoMessage() {}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[394]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdjudicateCrewAntiCheatCaseRequest.ProtoReflect.Descriptor instead.
+func (*AdjudicateCrewAntiCheatCaseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{394}
+}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) GetChallengeId() string {
+	if x != nil {
+		return x.ChallengeId
+	}
+	return ""
+}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) GetVerificationAndAppealState() string {
+	if x != nil {
+		return x.VerificationAndAppealState
+	}
+	return ""
+}
+
+func (x *AdjudicateCrewAntiCheatCaseRequest) GetEvidenceSummary() string {
+	if x != nil {
+		return x.EvidenceSummary
+	}
+	return ""
+}
+
+type AdjudicateCrewAntiCheatCaseResponse struct {
+	state           protoimpl.MessageState          `protogen:"open.v1"`
+	ChallengeOrCase *CrewChallengeAndModerationItem `protobuf:"bytes,1,opt,name=challenge_or_case,json=challengeOrCase,proto3" json:"challenge_or_case,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AdjudicateCrewAntiCheatCaseResponse) Reset() {
+	*x = AdjudicateCrewAntiCheatCaseResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[395]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdjudicateCrewAntiCheatCaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdjudicateCrewAntiCheatCaseResponse) ProtoMessage() {}
+
+func (x *AdjudicateCrewAntiCheatCaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[395]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdjudicateCrewAntiCheatCaseResponse.ProtoReflect.Descriptor instead.
+func (*AdjudicateCrewAntiCheatCaseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{395}
+}
+
+func (x *AdjudicateCrewAntiCheatCaseResponse) GetChallengeOrCase() *CrewChallengeAndModerationItem {
+	if x != nil {
+		return x.ChallengeOrCase
+	}
+	return nil
+}
+
+type OfflineMultimodalSyncCertificationItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DeviceAndWatchPair                 string                 `protobuf:"bytes,3,opt,name=device_and_watch_pair,json=deviceAndWatchPair,proto3" json:"device_and_watch_pair,omitempty"`
+	OfflineOutboxAndCrashRecoveryState string                 `protobuf:"bytes,4,opt,name=offline_outbox_and_crash_recovery_state,json=offlineOutboxAndCrashRecoveryState,proto3" json:"offline_outbox_and_crash_recovery_state,omitempty"`
+	BatteryAwareSensorPolicy           string                 `protobuf:"bytes,5,opt,name=battery_aware_sensor_policy,json=batteryAwareSensorPolicy,proto3" json:"battery_aware_sensor_policy,omitempty"`
+	DeterministicMergeDigest           string                 `protobuf:"bytes,6,opt,name=deterministic_merge_digest,json=deterministicMergeDigest,proto3" json:"deterministic_merge_digest,omitempty"`
+	CertificationStatus                string                 `protobuf:"bytes,7,opt,name=certification_status,json=certificationStatus,proto3" json:"certification_status,omitempty"` // certified_production_ready | syncing_reconciling
+	UpdatedAtUnix                      int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) Reset() {
+	*x = OfflineMultimodalSyncCertificationItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[396]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OfflineMultimodalSyncCertificationItem) ProtoMessage() {}
+
+func (x *OfflineMultimodalSyncCertificationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[396]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OfflineMultimodalSyncCertificationItem.ProtoReflect.Descriptor instead.
+func (*OfflineMultimodalSyncCertificationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{396}
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetDeviceAndWatchPair() string {
+	if x != nil {
+		return x.DeviceAndWatchPair
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetOfflineOutboxAndCrashRecoveryState() string {
+	if x != nil {
+		return x.OfflineOutboxAndCrashRecoveryState
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetBatteryAwareSensorPolicy() string {
+	if x != nil {
+		return x.BatteryAwareSensorPolicy
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetDeterministicMergeDigest() string {
+	if x != nil {
+		return x.DeterministicMergeDigest
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetCertificationStatus() string {
+	if x != nil {
+		return x.CertificationStatus
+	}
+	return ""
+}
+
+func (x *OfflineMultimodalSyncCertificationItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type AccessibilityAdaptiveProfileItem struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	Id                                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	InputAndScreenReaderModes             string                 `protobuf:"bytes,3,opt,name=input_and_screen_reader_modes,json=inputAndScreenReaderModes,proto3" json:"input_and_screen_reader_modes,omitempty"`
+	AdaptiveEquipmentAndSeatedProgramming string                 `protobuf:"bytes,4,opt,name=adaptive_equipment_and_seated_programming,json=adaptiveEquipmentAndSeatedProgramming,proto3" json:"adaptive_equipment_and_seated_programming,omitempty"`
+	ColorIndependentPlatesAndZones        bool                   `protobuf:"varint,5,opt,name=color_independent_plates_and_zones,json=colorIndependentPlatesAndZones,proto3" json:"color_independent_plates_and_zones,omitempty"`
+	AccessibilityIsEasyModeBlocked        bool                   `protobuf:"varint,6,opt,name=accessibility_is_easy_mode_blocked,json=accessibilityIsEasyModeBlocked,proto3" json:"accessibility_is_easy_mode_blocked,omitempty"`
+	UpdatedAtUnix                         int64                  `protobuf:"varint,7,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *AccessibilityAdaptiveProfileItem) Reset() {
+	*x = AccessibilityAdaptiveProfileItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[397]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AccessibilityAdaptiveProfileItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccessibilityAdaptiveProfileItem) ProtoMessage() {}
+
+func (x *AccessibilityAdaptiveProfileItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[397]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccessibilityAdaptiveProfileItem.ProtoReflect.Descriptor instead.
+func (*AccessibilityAdaptiveProfileItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{397}
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetInputAndScreenReaderModes() string {
+	if x != nil {
+		return x.InputAndScreenReaderModes
+	}
+	return ""
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetAdaptiveEquipmentAndSeatedProgramming() string {
+	if x != nil {
+		return x.AdaptiveEquipmentAndSeatedProgramming
+	}
+	return ""
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetColorIndependentPlatesAndZones() bool {
+	if x != nil {
+		return x.ColorIndependentPlatesAndZones
+	}
+	return false
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetAccessibilityIsEasyModeBlocked() bool {
+	if x != nil {
+		return x.AccessibilityIsEasyModeBlocked
+	}
+	return false
+}
+
+func (x *AccessibilityAdaptiveProfileItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type MigrationDeletionCertificationItem struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	LocaleAndUnitSystem            string                 `protobuf:"bytes,3,opt,name=locale_and_unit_system,json=localeAndUnitSystem,proto3" json:"locale_and_unit_system,omitempty"`
+	ExportImportRoundtripSummary   string                 `protobuf:"bytes,4,opt,name=export_import_roundtrip_summary,json=exportImportRoundtripSummary,proto3" json:"export_import_roundtrip_summary,omitempty"`
+	AccountErasureReadinessSummary string                 `protobuf:"bytes,5,opt,name=account_erasure_readiness_summary,json=accountErasureReadinessSummary,proto3" json:"account_erasure_readiness_summary,omitempty"`
+	OriginalDataMutatedByLocale    bool                   `protobuf:"varint,6,opt,name=original_data_mutated_by_locale,json=originalDataMutatedByLocale,proto3" json:"original_data_mutated_by_locale,omitempty"`
+	CertificationStatus            string                 `protobuf:"bytes,7,opt,name=certification_status,json=certificationStatus,proto3" json:"certification_status,omitempty"` // certified_16_of_16 | pending_audit
+	UpdatedAtUnix                  int64                  `protobuf:"varint,8,opt,name=updated_at_unix,json=updatedAtUnix,proto3" json:"updated_at_unix,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *MigrationDeletionCertificationItem) Reset() {
+	*x = MigrationDeletionCertificationItem{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[398]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MigrationDeletionCertificationItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MigrationDeletionCertificationItem) ProtoMessage() {}
+
+func (x *MigrationDeletionCertificationItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[398]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MigrationDeletionCertificationItem.ProtoReflect.Descriptor instead.
+func (*MigrationDeletionCertificationItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{398}
+}
+
+func (x *MigrationDeletionCertificationItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetLocaleAndUnitSystem() string {
+	if x != nil {
+		return x.LocaleAndUnitSystem
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetExportImportRoundtripSummary() string {
+	if x != nil {
+		return x.ExportImportRoundtripSummary
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetAccountErasureReadinessSummary() string {
+	if x != nil {
+		return x.AccountErasureReadinessSummary
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetOriginalDataMutatedByLocale() bool {
+	if x != nil {
+		return x.OriginalDataMutatedByLocale
+	}
+	return false
+}
+
+func (x *MigrationDeletionCertificationItem) GetCertificationStatus() string {
+	if x != nil {
+		return x.CertificationStatus
+	}
+	return ""
+}
+
+func (x *MigrationDeletionCertificationItem) GetUpdatedAtUnix() int64 {
+	if x != nil {
+		return x.UpdatedAtUnix
+	}
+	return 0
+}
+
+type OfflineAccessibleReleaseCertOverview struct {
+	state                                  protoimpl.MessageState                    `protogen:"open.v1"`
+	OfflineMultimodalAndBatteryCharter     string                                    `protobuf:"bytes,1,opt,name=offline_multimodal_and_battery_charter,json=offlineMultimodalAndBatteryCharter,proto3" json:"offline_multimodal_and_battery_charter,omitempty"`
+	AccessibilityAndAdaptiveAthleteCharter string                                    `protobuf:"bytes,2,opt,name=accessibility_and_adaptive_athlete_charter,json=accessibilityAndAdaptiveAthleteCharter,proto3" json:"accessibility_and_adaptive_athlete_charter,omitempty"`
+	MigrationLocaleAndErasureCharter       string                                    `protobuf:"bytes,3,opt,name=migration_locale_and_erasure_charter,json=migrationLocaleAndErasureCharter,proto3" json:"migration_locale_and_erasure_charter,omitempty"`
+	OfflineCertifications                  []*OfflineMultimodalSyncCertificationItem `protobuf:"bytes,4,rep,name=offline_certifications,json=offlineCertifications,proto3" json:"offline_certifications,omitempty"`
+	AccessibilityProfiles                  []*AccessibilityAdaptiveProfileItem       `protobuf:"bytes,5,rep,name=accessibility_profiles,json=accessibilityProfiles,proto3" json:"accessibility_profiles,omitempty"`
+	MigrationCertifications                []*MigrationDeletionCertificationItem     `protobuf:"bytes,6,rep,name=migration_certifications,json=migrationCertifications,proto3" json:"migration_certifications,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) Reset() {
+	*x = OfflineAccessibleReleaseCertOverview{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[399]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OfflineAccessibleReleaseCertOverview) ProtoMessage() {}
+
+func (x *OfflineAccessibleReleaseCertOverview) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[399]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OfflineAccessibleReleaseCertOverview.ProtoReflect.Descriptor instead.
+func (*OfflineAccessibleReleaseCertOverview) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{399}
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetOfflineMultimodalAndBatteryCharter() string {
+	if x != nil {
+		return x.OfflineMultimodalAndBatteryCharter
+	}
+	return ""
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetAccessibilityAndAdaptiveAthleteCharter() string {
+	if x != nil {
+		return x.AccessibilityAndAdaptiveAthleteCharter
+	}
+	return ""
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetMigrationLocaleAndErasureCharter() string {
+	if x != nil {
+		return x.MigrationLocaleAndErasureCharter
+	}
+	return ""
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetOfflineCertifications() []*OfflineMultimodalSyncCertificationItem {
+	if x != nil {
+		return x.OfflineCertifications
+	}
+	return nil
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetAccessibilityProfiles() []*AccessibilityAdaptiveProfileItem {
+	if x != nil {
+		return x.AccessibilityProfiles
+	}
+	return nil
+}
+
+func (x *OfflineAccessibleReleaseCertOverview) GetMigrationCertifications() []*MigrationDeletionCertificationItem {
+	if x != nil {
+		return x.MigrationCertifications
+	}
+	return nil
+}
+
+type GetOfflineAccessibleReleaseCertOverviewRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewRequest) Reset() {
+	*x = GetOfflineAccessibleReleaseCertOverviewRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[400]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOfflineAccessibleReleaseCertOverviewRequest) ProtoMessage() {}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[400]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOfflineAccessibleReleaseCertOverviewRequest.ProtoReflect.Descriptor instead.
+func (*GetOfflineAccessibleReleaseCertOverviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{400}
+}
+
+type GetOfflineAccessibleReleaseCertOverviewResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Overview      *OfflineAccessibleReleaseCertOverview `protobuf:"bytes,1,opt,name=overview,proto3" json:"overview,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewResponse) Reset() {
+	*x = GetOfflineAccessibleReleaseCertOverviewResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[401]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOfflineAccessibleReleaseCertOverviewResponse) ProtoMessage() {}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[401]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOfflineAccessibleReleaseCertOverviewResponse.ProtoReflect.Descriptor instead.
+func (*GetOfflineAccessibleReleaseCertOverviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{401}
+}
+
+func (x *GetOfflineAccessibleReleaseCertOverviewResponse) GetOverview() *OfflineAccessibleReleaseCertOverview {
+	if x != nil {
+		return x.Overview
+	}
+	return nil
+}
+
+type CertifyOfflineMultimodalSyncStateRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	DeviceAndWatchPair                 string                 `protobuf:"bytes,1,opt,name=device_and_watch_pair,json=deviceAndWatchPair,proto3" json:"device_and_watch_pair,omitempty"`
+	OfflineOutboxAndCrashRecoveryState string                 `protobuf:"bytes,2,opt,name=offline_outbox_and_crash_recovery_state,json=offlineOutboxAndCrashRecoveryState,proto3" json:"offline_outbox_and_crash_recovery_state,omitempty"`
+	BatteryAwareSensorPolicy           string                 `protobuf:"bytes,3,opt,name=battery_aware_sensor_policy,json=batteryAwareSensorPolicy,proto3" json:"battery_aware_sensor_policy,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) Reset() {
+	*x = CertifyOfflineMultimodalSyncStateRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[402]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CertifyOfflineMultimodalSyncStateRequest) ProtoMessage() {}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[402]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CertifyOfflineMultimodalSyncStateRequest.ProtoReflect.Descriptor instead.
+func (*CertifyOfflineMultimodalSyncStateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{402}
+}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) GetDeviceAndWatchPair() string {
+	if x != nil {
+		return x.DeviceAndWatchPair
+	}
+	return ""
+}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) GetOfflineOutboxAndCrashRecoveryState() string {
+	if x != nil {
+		return x.OfflineOutboxAndCrashRecoveryState
+	}
+	return ""
+}
+
+func (x *CertifyOfflineMultimodalSyncStateRequest) GetBatteryAwareSensorPolicy() string {
+	if x != nil {
+		return x.BatteryAwareSensorPolicy
+	}
+	return ""
+}
+
+type CertifyOfflineMultimodalSyncStateResponse struct {
+	state                protoimpl.MessageState                  `protogen:"open.v1"`
+	OfflineCertification *OfflineMultimodalSyncCertificationItem `protobuf:"bytes,1,opt,name=offline_certification,json=offlineCertification,proto3" json:"offline_certification,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *CertifyOfflineMultimodalSyncStateResponse) Reset() {
+	*x = CertifyOfflineMultimodalSyncStateResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[403]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CertifyOfflineMultimodalSyncStateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CertifyOfflineMultimodalSyncStateResponse) ProtoMessage() {}
+
+func (x *CertifyOfflineMultimodalSyncStateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[403]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CertifyOfflineMultimodalSyncStateResponse.ProtoReflect.Descriptor instead.
+func (*CertifyOfflineMultimodalSyncStateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{403}
+}
+
+func (x *CertifyOfflineMultimodalSyncStateResponse) GetOfflineCertification() *OfflineMultimodalSyncCertificationItem {
+	if x != nil {
+		return x.OfflineCertification
+	}
+	return nil
+}
+
+type UpsertAccessibilityAdaptiveProfileRequest struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	InputAndScreenReaderModes             string                 `protobuf:"bytes,1,opt,name=input_and_screen_reader_modes,json=inputAndScreenReaderModes,proto3" json:"input_and_screen_reader_modes,omitempty"`
+	AdaptiveEquipmentAndSeatedProgramming string                 `protobuf:"bytes,2,opt,name=adaptive_equipment_and_seated_programming,json=adaptiveEquipmentAndSeatedProgramming,proto3" json:"adaptive_equipment_and_seated_programming,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileRequest) Reset() {
+	*x = UpsertAccessibilityAdaptiveProfileRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[404]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAccessibilityAdaptiveProfileRequest) ProtoMessage() {}
+
+func (x *UpsertAccessibilityAdaptiveProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[404]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAccessibilityAdaptiveProfileRequest.ProtoReflect.Descriptor instead.
+func (*UpsertAccessibilityAdaptiveProfileRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{404}
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileRequest) GetInputAndScreenReaderModes() string {
+	if x != nil {
+		return x.InputAndScreenReaderModes
+	}
+	return ""
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileRequest) GetAdaptiveEquipmentAndSeatedProgramming() string {
+	if x != nil {
+		return x.AdaptiveEquipmentAndSeatedProgramming
+	}
+	return ""
+}
+
+type UpsertAccessibilityAdaptiveProfileResponse struct {
+	state                protoimpl.MessageState            `protogen:"open.v1"`
+	AccessibilityProfile *AccessibilityAdaptiveProfileItem `protobuf:"bytes,1,opt,name=accessibility_profile,json=accessibilityProfile,proto3" json:"accessibility_profile,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileResponse) Reset() {
+	*x = UpsertAccessibilityAdaptiveProfileResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[405]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpsertAccessibilityAdaptiveProfileResponse) ProtoMessage() {}
+
+func (x *UpsertAccessibilityAdaptiveProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[405]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpsertAccessibilityAdaptiveProfileResponse.ProtoReflect.Descriptor instead.
+func (*UpsertAccessibilityAdaptiveProfileResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{405}
+}
+
+func (x *UpsertAccessibilityAdaptiveProfileResponse) GetAccessibilityProfile() *AccessibilityAdaptiveProfileItem {
+	if x != nil {
+		return x.AccessibilityProfile
+	}
+	return nil
+}
+
+type RunMigrationAndErasureCertificationRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	LocaleAndUnitSystem            string                 `protobuf:"bytes,1,opt,name=locale_and_unit_system,json=localeAndUnitSystem,proto3" json:"locale_and_unit_system,omitempty"`
+	ExportImportRoundtripSummary   string                 `protobuf:"bytes,2,opt,name=export_import_roundtrip_summary,json=exportImportRoundtripSummary,proto3" json:"export_import_roundtrip_summary,omitempty"`
+	AccountErasureReadinessSummary string                 `protobuf:"bytes,3,opt,name=account_erasure_readiness_summary,json=accountErasureReadinessSummary,proto3" json:"account_erasure_readiness_summary,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *RunMigrationAndErasureCertificationRequest) Reset() {
+	*x = RunMigrationAndErasureCertificationRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[406]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunMigrationAndErasureCertificationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunMigrationAndErasureCertificationRequest) ProtoMessage() {}
+
+func (x *RunMigrationAndErasureCertificationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[406]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunMigrationAndErasureCertificationRequest.ProtoReflect.Descriptor instead.
+func (*RunMigrationAndErasureCertificationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{406}
+}
+
+func (x *RunMigrationAndErasureCertificationRequest) GetLocaleAndUnitSystem() string {
+	if x != nil {
+		return x.LocaleAndUnitSystem
+	}
+	return ""
+}
+
+func (x *RunMigrationAndErasureCertificationRequest) GetExportImportRoundtripSummary() string {
+	if x != nil {
+		return x.ExportImportRoundtripSummary
+	}
+	return ""
+}
+
+func (x *RunMigrationAndErasureCertificationRequest) GetAccountErasureReadinessSummary() string {
+	if x != nil {
+		return x.AccountErasureReadinessSummary
+	}
+	return ""
+}
+
+type RunMigrationAndErasureCertificationResponse struct {
+	state                  protoimpl.MessageState              `protogen:"open.v1"`
+	MigrationCertification *MigrationDeletionCertificationItem `protobuf:"bytes,1,opt,name=migration_certification,json=migrationCertification,proto3" json:"migration_certification,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *RunMigrationAndErasureCertificationResponse) Reset() {
+	*x = RunMigrationAndErasureCertificationResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[407]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunMigrationAndErasureCertificationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunMigrationAndErasureCertificationResponse) ProtoMessage() {}
+
+func (x *RunMigrationAndErasureCertificationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[407]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunMigrationAndErasureCertificationResponse.ProtoReflect.Descriptor instead.
+func (*RunMigrationAndErasureCertificationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{407}
+}
+
+func (x *RunMigrationAndErasureCertificationResponse) GetMigrationCertification() *MigrationDeletionCertificationItem {
+	if x != nil {
+		return x.MigrationCertification
+	}
+	return nil
+}
+
+type VerifyBatteryAwareSensorPolicyRequest struct {
+	state                    protoimpl.MessageState `protogen:"open.v1"`
+	CertificationId          string                 `protobuf:"bytes,1,opt,name=certification_id,json=certificationId,proto3" json:"certification_id,omitempty"`
+	BatteryAwareSensorPolicy string                 `protobuf:"bytes,2,opt,name=battery_aware_sensor_policy,json=batteryAwareSensorPolicy,proto3" json:"battery_aware_sensor_policy,omitempty"`
+	unknownFields            protoimpl.UnknownFields
+	sizeCache                protoimpl.SizeCache
+}
+
+func (x *VerifyBatteryAwareSensorPolicyRequest) Reset() {
+	*x = VerifyBatteryAwareSensorPolicyRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[408]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyBatteryAwareSensorPolicyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyBatteryAwareSensorPolicyRequest) ProtoMessage() {}
+
+func (x *VerifyBatteryAwareSensorPolicyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[408]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyBatteryAwareSensorPolicyRequest.ProtoReflect.Descriptor instead.
+func (*VerifyBatteryAwareSensorPolicyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{408}
+}
+
+func (x *VerifyBatteryAwareSensorPolicyRequest) GetCertificationId() string {
+	if x != nil {
+		return x.CertificationId
+	}
+	return ""
+}
+
+func (x *VerifyBatteryAwareSensorPolicyRequest) GetBatteryAwareSensorPolicy() string {
+	if x != nil {
+		return x.BatteryAwareSensorPolicy
+	}
+	return ""
+}
+
+type VerifyBatteryAwareSensorPolicyResponse struct {
+	state                protoimpl.MessageState                  `protogen:"open.v1"`
+	OfflineCertification *OfflineMultimodalSyncCertificationItem `protobuf:"bytes,1,opt,name=offline_certification,json=offlineCertification,proto3" json:"offline_certification,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *VerifyBatteryAwareSensorPolicyResponse) Reset() {
+	*x = VerifyBatteryAwareSensorPolicyResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[409]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyBatteryAwareSensorPolicyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyBatteryAwareSensorPolicyResponse) ProtoMessage() {}
+
+func (x *VerifyBatteryAwareSensorPolicyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[409]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyBatteryAwareSensorPolicyResponse.ProtoReflect.Descriptor instead.
+func (*VerifyBatteryAwareSensorPolicyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{409}
+}
+
+func (x *VerifyBatteryAwareSensorPolicyResponse) GetOfflineCertification() *OfflineMultimodalSyncCertificationItem {
+	if x != nil {
+		return x.OfflineCertification
+	}
+	return nil
+}
+
+type SignOffForge16Of16ReleaseGateRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	MigrationCertId     string                 `protobuf:"bytes,1,opt,name=migration_cert_id,json=migrationCertId,proto3" json:"migration_cert_id,omitempty"`
+	CertificationStatus string                 `protobuf:"bytes,2,opt,name=certification_status,json=certificationStatus,proto3" json:"certification_status,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *SignOffForge16Of16ReleaseGateRequest) Reset() {
+	*x = SignOffForge16Of16ReleaseGateRequest{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[410]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SignOffForge16Of16ReleaseGateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SignOffForge16Of16ReleaseGateRequest) ProtoMessage() {}
+
+func (x *SignOffForge16Of16ReleaseGateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[410]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SignOffForge16Of16ReleaseGateRequest.ProtoReflect.Descriptor instead.
+func (*SignOffForge16Of16ReleaseGateRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{410}
+}
+
+func (x *SignOffForge16Of16ReleaseGateRequest) GetMigrationCertId() string {
+	if x != nil {
+		return x.MigrationCertId
+	}
+	return ""
+}
+
+func (x *SignOffForge16Of16ReleaseGateRequest) GetCertificationStatus() string {
+	if x != nil {
+		return x.CertificationStatus
+	}
+	return ""
+}
+
+type SignOffForge16Of16ReleaseGateResponse struct {
+	state                  protoimpl.MessageState              `protogen:"open.v1"`
+	MigrationCertification *MigrationDeletionCertificationItem `protobuf:"bytes,1,opt,name=migration_certification,json=migrationCertification,proto3" json:"migration_certification,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *SignOffForge16Of16ReleaseGateResponse) Reset() {
+	*x = SignOffForge16Of16ReleaseGateResponse{}
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[411]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SignOffForge16Of16ReleaseGateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SignOffForge16Of16ReleaseGateResponse) ProtoMessage() {}
+
+func (x *SignOffForge16Of16ReleaseGateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_workout_v1_workout_proto_msgTypes[411]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SignOffForge16Of16ReleaseGateResponse.ProtoReflect.Descriptor instead.
+func (*SignOffForge16Of16ReleaseGateResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_workout_v1_workout_proto_rawDescGZIP(), []int{411}
+}
+
+func (x *SignOffForge16Of16ReleaseGateResponse) GetMigrationCertification() *MigrationDeletionCertificationItem {
+	if x != nil {
+		return x.MigrationCertification
+	}
+	return nil
+}
+
 var File_sttattus_workout_v1_workout_proto protoreflect.FileDescriptor
 
 const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
@@ -12731,7 +27905,1208 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x10streak_component\x18\x06 \x01(\x05R\x0fstreakComponent\x12%\n" +
 	"\x0eapex_component\x18\a \x01(\x05R\rapexComponent\x12\x1f\n" +
 	"\vapex_linked\x18\b \x01(\bR\n" +
-	"apexLinked2\xf1@\n" +
+	"apexLinked\"\xcf\x03\n" +
+	"\x1bAdaptiveProgressionRuleItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
+	"\trule_code\x18\x02 \x01(\tR\bruleCode\x12\x14\n" +
+	"\x05title\x18\x03 \x01(\tR\x05title\x12+\n" +
+	"\x11progression_model\x18\x04 \x01(\tR\x10progressionModel\x12\x1d\n" +
+	"\n" +
+	"goal_focus\x18\x05 \x01(\tR\tgoalFocus\x120\n" +
+	"\x14dose_formula_summary\x18\x06 \x01(\tR\x12doseFormulaSummary\x122\n" +
+	"\x15deload_trigger_policy\x18\a \x01(\tR\x13deloadTriggerPolicy\x12:\n" +
+	"\x1amax_weekly_volume_jump_pct\x18\b \x01(\x01R\x16maxWeeklyVolumeJumpPct\x12?\n" +
+	"\x1bcontraindication_guardrails\x18\t \x01(\tR\x1acontraindicationGuardrails\x12\x16\n" +
+	"\x06status\x18\n" +
+	" \x01(\tR\x06status\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xfc\x04\n" +
+	"\x1cAdaptiveProgrammeVersionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0eprogramme_slug\x18\x03 \x01(\tR\rprogrammeSlug\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x12%\n" +
+	"\x0eversion_number\x18\x05 \x01(\x05R\rversionNumber\x12%\n" +
+	"\x0ebuilder_source\x18\x06 \x01(\tR\rbuilderSource\x12+\n" +
+	"\x11acceptance_status\x18\a \x01(\tR\x10acceptanceStatus\x12$\n" +
+	"\x0egoal_and_sport\x18\b \x01(\tR\fgoalAndSport\x12*\n" +
+	"\x11sessions_per_week\x18\t \x01(\x05R\x0fsessionsPerWeek\x128\n" +
+	"\x18session_duration_minutes\x18\n" +
+	" \x01(\x05R\x16sessionDurationMinutes\x12+\n" +
+	"\x11progression_model\x18\v \x01(\tR\x10progressionModel\x122\n" +
+	"\x15why_this_prescription\x18\f \x01(\tR\x13whyThisPrescription\x128\n" +
+	"\x18athlete_evidence_summary\x18\r \x01(\tR\x16athleteEvidenceSummary\x12,\n" +
+	"\x12coach_locked_slots\x18\x0e \x01(\tR\x10coachLockedSlots\x12&\n" +
+	"\x0fcreated_at_unix\x18\x0f \x01(\x03R\rcreatedAtUnix\"\xf9\x03\n" +
+	"\x17AdaptiveReplanEventItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"version_id\x18\x03 \x01(\tR\tversionId\x12!\n" +
+	"\ftrigger_kind\x18\x04 \x01(\tR\vtriggerKind\x12#\n" +
+	"\rdays_affected\x18\x05 \x01(\x05R\fdaysAffected\x12.\n" +
+	"\x13before_plan_summary\x18\x06 \x01(\tR\x11beforePlanSummary\x12,\n" +
+	"\x12after_plan_summary\x18\a \x01(\tR\x10afterPlanSummary\x123\n" +
+	"\x15explanation_rationale\x18\b \x01(\tR\x14explanationRationale\x12I\n" +
+	"!unsafe_volume_compression_blocked\x18\t \x01(\bR\x1eunsafeVolumeCompressionBlocked\x120\n" +
+	"\x14coach_lock_preserved\x18\n" +
+	" \x01(\bR\x12coachLockPreserved\x12\x16\n" +
+	"\x06status\x18\v \x01(\tR\x06status\x12&\n" +
+	"\x0fcreated_at_unix\x18\f \x01(\x03R\rcreatedAtUnix\"\xb0\x03\n" +
+	"\x1bAdaptiveProgrammingOverview\x125\n" +
+	"\x16explainability_charter\x18\x01 \x01(\tR\x15explainabilityCharter\x126\n" +
+	"\x17safe_replanning_charter\x18\x02 \x01(\tR\x15safeReplanningCharter\x128\n" +
+	"\x18draft_governance_charter\x18\x03 \x01(\tR\x16draftGovernanceCharter\x12F\n" +
+	"\x05rules\x18\x04 \x03(\v20.sttattus.workout.v1.AdaptiveProgressionRuleItemR\x05rules\x12M\n" +
+	"\bversions\x18\x05 \x03(\v21.sttattus.workout.v1.AdaptiveProgrammeVersionItemR\bversions\x12Q\n" +
+	"\rreplan_events\x18\x06 \x03(\v2,.sttattus.workout.v1.AdaptiveReplanEventItemR\freplanEvents\"'\n" +
+	"%GetAdaptiveProgrammingOverviewRequest\"v\n" +
+	"&GetAdaptiveProgrammingOverviewResponse\x12L\n" +
+	"\boverview\x18\x01 \x01(\v20.sttattus.workout.v1.AdaptiveProgrammingOverviewR\boverview\"\xe2\x03\n" +
+	"'GenerateOrUpdateProgrammeVersionRequest\x12%\n" +
+	"\x0eprogramme_slug\x18\x01 \x01(\tR\rprogrammeSlug\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12%\n" +
+	"\x0ebuilder_source\x18\x03 \x01(\tR\rbuilderSource\x12$\n" +
+	"\x0egoal_and_sport\x18\x04 \x01(\tR\fgoalAndSport\x12*\n" +
+	"\x11sessions_per_week\x18\x05 \x01(\x05R\x0fsessionsPerWeek\x128\n" +
+	"\x18session_duration_minutes\x18\x06 \x01(\x05R\x16sessionDurationMinutes\x12+\n" +
+	"\x11progression_model\x18\a \x01(\tR\x10progressionModel\x122\n" +
+	"\x15why_this_prescription\x18\b \x01(\tR\x13whyThisPrescription\x128\n" +
+	"\x18athlete_evidence_summary\x18\t \x01(\tR\x16athleteEvidenceSummary\x12,\n" +
+	"\x12coach_locked_slots\x18\n" +
+	" \x01(\tR\x10coachLockedSlots\"w\n" +
+	"(GenerateOrUpdateProgrammeVersionResponse\x12K\n" +
+	"\aversion\x18\x01 \x01(\v21.sttattus.workout.v1.AdaptiveProgrammeVersionItemR\aversion\"\x87\x01\n" +
+	"%DecideProgrammeDraftAcceptanceRequest\x12\x1d\n" +
+	"\n" +
+	"version_id\x18\x01 \x01(\tR\tversionId\x12\x1a\n" +
+	"\bdecision\x18\x02 \x01(\tR\bdecision\x12#\n" +
+	"\rdecision_note\x18\x03 \x01(\tR\fdecisionNote\"u\n" +
+	"&DecideProgrammeDraftAcceptanceResponse\x12K\n" +
+	"\aversion\x18\x01 \x01(\v21.sttattus.workout.v1.AdaptiveProgrammeVersionItemR\aversion\"\xb2\x01\n" +
+	" TriggerSafeAdaptiveReplanRequest\x12\x1d\n" +
+	"\n" +
+	"version_id\x18\x01 \x01(\tR\tversionId\x12!\n" +
+	"\ftrigger_kind\x18\x02 \x01(\tR\vtriggerKind\x12#\n" +
+	"\rdays_affected\x18\x03 \x01(\x05R\fdaysAffected\x12'\n" +
+	"\x0fconstraint_note\x18\x04 \x01(\tR\x0econstraintNote\"t\n" +
+	"!TriggerSafeAdaptiveReplanResponse\x12O\n" +
+	"\freplan_event\x18\x01 \x01(\v2,.sttattus.workout.v1.AdaptiveReplanEventItemR\vreplanEvent\"\x88\x03\n" +
+	"$UpsertAdaptiveProgressionRuleRequest\x12\x1b\n" +
+	"\trule_code\x18\x01 \x01(\tR\bruleCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12+\n" +
+	"\x11progression_model\x18\x03 \x01(\tR\x10progressionModel\x12\x1d\n" +
+	"\n" +
+	"goal_focus\x18\x04 \x01(\tR\tgoalFocus\x120\n" +
+	"\x14dose_formula_summary\x18\x05 \x01(\tR\x12doseFormulaSummary\x122\n" +
+	"\x15deload_trigger_policy\x18\x06 \x01(\tR\x13deloadTriggerPolicy\x12:\n" +
+	"\x1amax_weekly_volume_jump_pct\x18\a \x01(\x01R\x16maxWeeklyVolumeJumpPct\x12?\n" +
+	"\x1bcontraindication_guardrails\x18\b \x01(\tR\x1acontraindicationGuardrails\"m\n" +
+	"%UpsertAdaptiveProgressionRuleResponse\x12D\n" +
+	"\x04rule\x18\x01 \x01(\v20.sttattus.workout.v1.AdaptiveProgressionRuleItemR\x04rule\"e\n" +
+	"\x1fRollbackProgrammeVersionRequest\x12*\n" +
+	"\x11target_version_id\x18\x01 \x01(\tR\x0ftargetVersionId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"|\n" +
+	" RollbackProgrammeVersionResponse\x12X\n" +
+	"\x0eactive_version\x18\x01 \x01(\v21.sttattus.workout.v1.AdaptiveProgrammeVersionItemR\ractiveVersion\"\x98\x06\n" +
+	"\x18MovementGraphProfileItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rmovement_slug\x18\x02 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x03 \x01(\tR\fmovementName\x12)\n" +
+	"\x10movement_pattern\x18\x04 \x01(\tR\x0fmovementPattern\x12'\n" +
+	"\x0fprimary_muscles\x18\x05 \x01(\tR\x0eprimaryMuscles\x122\n" +
+	"\x15joint_loading_profile\x18\x06 \x01(\tR\x13jointLoadingProfile\x12-\n" +
+	"\x12equipment_required\x18\a \x01(\tR\x11equipmentRequired\x12'\n" +
+	"\x0fdifficulty_tier\x18\b \x01(\tR\x0edifficultyTier\x12/\n" +
+	"\x13skill_prerequisites\x18\t \x01(\tR\x12skillPrerequisites\x12'\n" +
+	"\x0fregression_slug\x18\n" +
+	" \x01(\tR\x0eregressionSlug\x12)\n" +
+	"\x10progression_slug\x18\v \x01(\tR\x0fprogressionSlug\x129\n" +
+	"\x18contraindication_prompts\x18\f \x01(\tR\x17contraindicationPrompts\x12@\n" +
+	"\x1dmulti_body_a11y_media_summary\x18\r \x01(\tR\x19multiBodyA11yMediaSummary\x126\n" +
+	"\x17breathing_bracing_setup\x18\x0e \x01(\tR\x15breathingBracingSetup\x12;\n" +
+	"\x1acommon_errors_and_captions\x18\x0f \x01(\tR\x17commonErrorsAndCaptions\x12#\n" +
+	"\rreview_status\x18\x10 \x01(\tR\freviewStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\x11 \x01(\x03R\rupdatedAtUnix\"\xc7\x04\n" +
+	"\x1cMovementSubstitutionEdgeItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x120\n" +
+	"\x14source_movement_slug\x18\x02 \x01(\tR\x12sourceMovementSlug\x128\n" +
+	"\x18substitute_movement_slug\x18\x03 \x01(\tR\x16substituteMovementSlug\x128\n" +
+	"\x18substitute_movement_name\x18\x04 \x01(\tR\x16substituteMovementName\x12)\n" +
+	"\x10programme_intent\x18\x05 \x01(\tR\x0fprogrammeIntent\x12-\n" +
+	"\x12required_equipment\x18\x06 \x01(\tR\x11requiredEquipment\x12-\n" +
+	"\x12preserved_stimulus\x18\a \x01(\tR\x11preservedStimulus\x12'\n" +
+	"\x0flost_attributes\x18\b \x01(\tR\x0elostAttributes\x124\n" +
+	"\x16equivalent_dose_factor\x18\t \x01(\x01R\x14equivalentDoseFactor\x127\n" +
+	"\x18pain_free_joint_friendly\x18\n" +
+	" \x01(\bR\x15painFreeJointFriendly\x12(\n" +
+	"\x10match_rank_score\x18\v \x01(\x05R\x0ematchRankScore\x12&\n" +
+	"\x0fupdated_at_unix\x18\f \x01(\x03R\rupdatedAtUnix\"\xcd\x03\n" +
+	"\x1bPersonalTechniqueManualItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rmovement_slug\x18\x03 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x04 \x01(\tR\fmovementName\x12%\n" +
+	"\x0elocation_label\x18\x05 \x01(\tR\rlocationLabel\x123\n" +
+	"\x16rack_and_seat_settings\x18\x06 \x01(\tR\x13rackAndSeatSettings\x121\n" +
+	"\x15stance_and_grip_notes\x18\a \x01(\tR\x12stanceAndGripNotes\x12#\n" +
+	"\rpersonal_cues\x18\b \x01(\tR\fpersonalCues\x124\n" +
+	"\x16coach_instruction_lock\x18\t \x01(\tR\x14coachInstructionLock\x12)\n" +
+	"\x10visibility_scope\x18\n" +
+	" \x01(\tR\x0fvisibilityScope\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xcd\x03\n" +
+	"\x1cMovementIntelligenceOverview\x124\n" +
+	"\x16movement_graph_charter\x18\x01 \x01(\tR\x14movementGraphCharter\x12@\n" +
+	"\x1csubstitution_honesty_charter\x18\x02 \x01(\tR\x1asubstitutionHonestyCharter\x124\n" +
+	"\x16custom_privacy_charter\x18\x03 \x01(\tR\x14customPrivacyCharter\x12I\n" +
+	"\bprofiles\x18\x04 \x03(\v2-.sttattus.workout.v1.MovementGraphProfileItemR\bprofiles\x12W\n" +
+	"\rsubstitutions\x18\x05 \x03(\v21.sttattus.workout.v1.MovementSubstitutionEdgeItemR\rsubstitutions\x12[\n" +
+	"\x10personal_manuals\x18\x06 \x03(\v20.sttattus.workout.v1.PersonalTechniqueManualItemR\x0fpersonalManuals\"(\n" +
+	"&GetMovementIntelligenceOverviewRequest\"x\n" +
+	"'GetMovementIntelligenceOverviewResponse\x12M\n" +
+	"\boverview\x18\x01 \x01(\v21.sttattus.workout.v1.MovementIntelligenceOverviewR\boverview\"\xfe\x01\n" +
+	"(RankIntentPreservingSubstitutionsRequest\x120\n" +
+	"\x14source_movement_slug\x18\x01 \x01(\tR\x12sourceMovementSlug\x12)\n" +
+	"\x10programme_intent\x18\x02 \x01(\tR\x0fprogrammeIntent\x12/\n" +
+	"\x13available_equipment\x18\x03 \x01(\tR\x12availableEquipment\x12D\n" +
+	"\x1frequire_pain_free_joint_sparing\x18\x04 \x01(\bR\x1brequirePainFreeJointSparing\"\xc2\x01\n" +
+	")RankIntentPreservingSubstitutionsResponse\x12d\n" +
+	"\x14ranked_substitutions\x18\x01 \x03(\v21.sttattus.workout.v1.MovementSubstitutionEdgeItemR\x13rankedSubstitutions\x12/\n" +
+	"\x13ranking_explanation\x18\x02 \x01(\tR\x12rankingExplanation\"\xda\x02\n" +
+	"$UpsertPersonalTechniqueManualRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x02 \x01(\tR\fmovementName\x12%\n" +
+	"\x0elocation_label\x18\x03 \x01(\tR\rlocationLabel\x123\n" +
+	"\x16rack_and_seat_settings\x18\x04 \x01(\tR\x13rackAndSeatSettings\x121\n" +
+	"\x15stance_and_grip_notes\x18\x05 \x01(\tR\x12stanceAndGripNotes\x12#\n" +
+	"\rpersonal_cues\x18\x06 \x01(\tR\fpersonalCues\x124\n" +
+	"\x16coach_instruction_lock\x18\a \x01(\tR\x14coachInstructionLock\"q\n" +
+	"%UpsertPersonalTechniqueManualResponse\x12H\n" +
+	"\x06manual\x18\x01 \x01(\v20.sttattus.workout.v1.PersonalTechniqueManualItemR\x06manual\"\x82\x02\n" +
+	"$SubmitCustomMovementForReviewRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x02 \x01(\tR\fmovementName\x12)\n" +
+	"\x10movement_pattern\x18\x03 \x01(\tR\x0fmovementPattern\x12-\n" +
+	"\x12equipment_required\x18\x04 \x01(\tR\x11equipmentRequired\x126\n" +
+	"\x17breathing_bracing_setup\x18\x05 \x01(\tR\x15breathingBracingSetup\"p\n" +
+	"%SubmitCustomMovementForReviewResponse\x12G\n" +
+	"\aprofile\x18\x01 \x01(\v2-.sttattus.workout.v1.MovementGraphProfileItemR\aprofile\"\x93\x05\n" +
+	"!UpsertMovementGraphProfileRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x02 \x01(\tR\fmovementName\x12)\n" +
+	"\x10movement_pattern\x18\x03 \x01(\tR\x0fmovementPattern\x12'\n" +
+	"\x0fprimary_muscles\x18\x04 \x01(\tR\x0eprimaryMuscles\x122\n" +
+	"\x15joint_loading_profile\x18\x05 \x01(\tR\x13jointLoadingProfile\x12-\n" +
+	"\x12equipment_required\x18\x06 \x01(\tR\x11equipmentRequired\x12'\n" +
+	"\x0fdifficulty_tier\x18\a \x01(\tR\x0edifficultyTier\x12'\n" +
+	"\x0fregression_slug\x18\b \x01(\tR\x0eregressionSlug\x12)\n" +
+	"\x10progression_slug\x18\t \x01(\tR\x0fprogressionSlug\x129\n" +
+	"\x18contraindication_prompts\x18\n" +
+	" \x01(\tR\x17contraindicationPrompts\x12@\n" +
+	"\x1dmulti_body_a11y_media_summary\x18\v \x01(\tR\x19multiBodyA11yMediaSummary\x126\n" +
+	"\x17breathing_bracing_setup\x18\f \x01(\tR\x15breathingBracingSetup\x12;\n" +
+	"\x1acommon_errors_and_captions\x18\r \x01(\tR\x17commonErrorsAndCaptions\"m\n" +
+	"\"UpsertMovementGraphProfileResponse\x12G\n" +
+	"\aprofile\x18\x01 \x01(\v2-.sttattus.workout.v1.MovementGraphProfileItemR\aprofile\"\xd3\x01\n" +
+	"\"RecordSubstitutionSelectionRequest\x120\n" +
+	"\x14source_movement_slug\x18\x01 \x01(\tR\x12sourceMovementSlug\x128\n" +
+	"\x18substitute_movement_slug\x18\x02 \x01(\tR\x16substituteMovementSlug\x12)\n" +
+	"\x10programme_intent\x18\x03 \x01(\tR\x0fprogrammeIntent\x12\x16\n" +
+	"\x06reason\x18\x04 \x01(\tR\x06reason\"\xa2\x01\n" +
+	"#RecordSubstitutionSelectionResponse\x12V\n" +
+	"\rselected_edge\x18\x01 \x01(\v21.sttattus.workout.v1.MovementSubstitutionEdgeItemR\fselectedEdge\x12#\n" +
+	"\raudit_receipt\x18\x02 \x01(\tR\fauditReceipt\"\x9a\x04\n" +
+	"\x18FormCapabilityMatrixItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
+	"\rmovement_slug\x18\x02 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x03 \x01(\tR\fmovementName\x122\n" +
+	"\x15required_camera_angle\x18\x04 \x01(\tR\x13requiredCameraAngle\x124\n" +
+	"\x16camera_distance_meters\x18\x05 \x01(\x01R\x14cameraDistanceMeters\x12\x17\n" +
+	"\amin_fps\x18\x06 \x01(\x05R\x06minFps\x126\n" +
+	"\x17min_keypoint_confidence\x18\a \x01(\x01R\x15minKeypointConfidence\x126\n" +
+	"\x17calibration_object_hint\x18\b \x01(\tR\x15calibrationObjectHint\x125\n" +
+	"\x16supported_observations\x18\t \x01(\tR\x15supportedObservations\x12:\n" +
+	"\x19unsupported_claim_refusal\x18\n" +
+	" \x01(\tR\x17unsupportedClaimRefusal\x12\x16\n" +
+	"\x06status\x18\v \x01(\tR\x06status\x12&\n" +
+	"\x0fupdated_at_unix\x18\f \x01(\x03R\rupdatedAtUnix\"\xeb\x05\n" +
+	"\x17FormAnalysisAttemptItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rmovement_slug\x18\x03 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x04 \x01(\tR\fmovementName\x12!\n" +
+	"\fcamera_angle\x18\x05 \x01(\tR\vcameraAngle\x12!\n" +
+	"\fcaptured_fps\x18\x06 \x01(\x05R\vcapturedFps\x12/\n" +
+	"\x13keypoint_confidence\x18\a \x01(\x01R\x12keypointConfidence\x12\x1f\n" +
+	"\vpain_tagged\x18\b \x01(\bR\n" +
+	"painTagged\x12\x18\n" +
+	"\averdict\x18\t \x01(\tR\averdict\x12=\n" +
+	"\x1bphase_and_tempo_observation\x18\n" +
+	" \x01(\tR\x18phaseAndTempoObservation\x126\n" +
+	"\x18bar_path_and_depth_proxy\x18\v \x01(\tR\x14barPathAndDepthProxy\x127\n" +
+	"\x18personal_vs_coach_target\x18\f \x01(\tR\x15personalVsCoachTarget\x12=\n" +
+	"\x1buncertainty_and_limits_note\x18\r \x01(\tR\x18uncertaintyAndLimitsNote\x12.\n" +
+	"\x13coach_review_status\x18\x0e \x01(\tR\x11coachReviewStatus\x12.\n" +
+	"\x13coach_feedback_note\x18\x0f \x01(\tR\x11coachFeedbackNote\x124\n" +
+	"\x16bystander_blur_applied\x18\x10 \x01(\bR\x14bystanderBlurApplied\x12&\n" +
+	"\x0fcreated_at_unix\x18\x11 \x01(\x03R\rcreatedAtUnix\"\xdf\x02\n" +
+	"\x16FormPrivacyConsentItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x124\n" +
+	"\x16bystander_blur_default\x18\x03 \x01(\bR\x14bystanderBlurDefault\x120\n" +
+	"\x14allow_model_training\x18\x04 \x01(\bR\x12allowModelTraining\x12%\n" +
+	"\x0eretention_days\x18\x05 \x01(\x05R\rretentionDays\x12<\n" +
+	"\x1aencrypted_storage_verified\x18\x06 \x01(\bR\x18encryptedStorageVerified\x12'\n" +
+	"\x0fconsent_version\x18\a \x01(\tR\x0econsentVersion\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xbf\x03\n" +
+	"\x18FormIntelligenceOverview\x124\n" +
+	"\x16honest_verdict_charter\x18\x01 \x01(\tR\x14honestVerdictCharter\x128\n" +
+	"\x18coach_escalation_charter\x18\x02 \x01(\tR\x16coachEscalationCharter\x127\n" +
+	"\x18privacy_and_blur_charter\x18\x03 \x01(\tR\x15privacyAndBlurCharter\x12Z\n" +
+	"\x11capability_matrix\x18\x04 \x03(\v2-.sttattus.workout.v1.FormCapabilityMatrixItemR\x10capabilityMatrix\x12H\n" +
+	"\battempts\x18\x05 \x03(\v2,.sttattus.workout.v1.FormAnalysisAttemptItemR\battempts\x12T\n" +
+	"\x0fprivacy_consent\x18\x06 \x01(\v2+.sttattus.workout.v1.FormPrivacyConsentItemR\x0eprivacyConsent\"$\n" +
+	"\"GetFormIntelligenceOverviewRequest\"p\n" +
+	"#GetFormIntelligenceOverviewResponse\x12I\n" +
+	"\boverview\x18\x01 \x01(\v2-.sttattus.workout.v1.FormIntelligenceOverviewR\boverview\"\xa7\x02\n" +
+	" SubmitFormClipObservationRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x02 \x01(\tR\fmovementName\x12!\n" +
+	"\fcamera_angle\x18\x03 \x01(\tR\vcameraAngle\x12!\n" +
+	"\fcaptured_fps\x18\x04 \x01(\x05R\vcapturedFps\x12/\n" +
+	"\x13keypoint_confidence\x18\x05 \x01(\x01R\x12keypointConfidence\x12\x1f\n" +
+	"\vpain_tagged\x18\x06 \x01(\bR\n" +
+	"painTagged\x12!\n" +
+	"\fathlete_note\x18\a \x01(\tR\vathleteNote\"k\n" +
+	"!SubmitFormClipObservationResponse\x12F\n" +
+	"\aattempt\x18\x01 \x01(\v2,.sttattus.workout.v1.FormAnalysisAttemptItemR\aattempt\"\x8f\x01\n" +
+	"\x1eEscalateFormClipToCoachRequest\x12\x1d\n" +
+	"\n" +
+	"attempt_id\x18\x01 \x01(\tR\tattemptId\x12+\n" +
+	"\x11escalation_reason\x18\x02 \x01(\tR\x10escalationReason\x12!\n" +
+	"\fpain_flagged\x18\x03 \x01(\bR\vpainFlagged\"i\n" +
+	"\x1fEscalateFormClipToCoachResponse\x12F\n" +
+	"\aattempt\x18\x01 \x01(\v2,.sttattus.workout.v1.FormAnalysisAttemptItemR\aattempt\"\xa5\x01\n" +
+	"\x1cDecideCoachFormReviewRequest\x12\x1d\n" +
+	"\n" +
+	"attempt_id\x18\x01 \x01(\tR\tattemptId\x12.\n" +
+	"\x13coach_feedback_note\x18\x02 \x01(\tR\x11coachFeedbackNote\x126\n" +
+	"\x17updated_personal_target\x18\x03 \x01(\tR\x15updatedPersonalTarget\"g\n" +
+	"\x1dDecideCoachFormReviewResponse\x12F\n" +
+	"\aattempt\x18\x01 \x01(\v2,.sttattus.workout.v1.FormAnalysisAttemptItemR\aattempt\"\xb5\x01\n" +
+	"$UpdateFormPrivacyAndRetentionRequest\x124\n" +
+	"\x16bystander_blur_default\x18\x01 \x01(\bR\x14bystanderBlurDefault\x120\n" +
+	"\x14allow_model_training\x18\x02 \x01(\bR\x12allowModelTraining\x12%\n" +
+	"\x0eretention_days\x18\x03 \x01(\x05R\rretentionDays\"}\n" +
+	"%UpdateFormPrivacyAndRetentionResponse\x12T\n" +
+	"\x0fprivacy_consent\x18\x01 \x01(\v2+.sttattus.workout.v1.FormPrivacyConsentItemR\x0eprivacyConsent\"Y\n" +
+	" EraseFormClipAndKeypointsRequest\x12\x1d\n" +
+	"\n" +
+	"attempt_id\x18\x01 \x01(\tR\tattemptId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"x\n" +
+	"!EraseFormClipAndKeypointsResponse\x12*\n" +
+	"\x11erased_attempt_id\x18\x01 \x01(\tR\x0ferasedAttemptId\x12'\n" +
+	"\x0ferasure_receipt\x18\x02 \x01(\tR\x0eerasureReceipt\"\x88\x03\n" +
+	"\x18WearablePurposeGrantItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12)\n" +
+	"\x10connector_source\x18\x03 \x01(\tR\x0fconnectorSource\x12#\n" +
+	"\rpurpose_scope\x18\x04 \x01(\tR\fpurposeScope\x12!\n" +
+	"\fgrant_status\x18\x05 \x01(\tR\vgrantStatus\x12=\n" +
+	"\x1braw_clinical_access_blocked\x18\x06 \x01(\bR\x18rawClinicalAccessBlocked\x12A\n" +
+	"\x1dapex_signed_predicate_summary\x18\a \x01(\tR\x1aapexSignedPredicateSummary\x12&\n" +
+	"\x0fgranted_at_unix\x18\b \x01(\x03R\rgrantedAtUnix\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\xfa\x03\n" +
+	"\x18RecoverySensorStreamItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"metric_key\x18\x03 \x01(\tR\tmetricKey\x12%\n" +
+	"\x0eprimary_source\x18\x04 \x01(\tR\rprimarySource\x12'\n" +
+	"\x0ffallback_source\x18\x05 \x01(\tR\x0efallbackSource\x12(\n" +
+	"\x10sync_age_minutes\x18\x06 \x01(\x05R\x0esyncAgeMinutes\x12)\n" +
+	"\x10measurement_kind\x18\a \x01(\tR\x0fmeasurementKind\x12+\n" +
+	"\x11conflict_detected\x18\b \x01(\bR\x10conflictDetected\x128\n" +
+	"\x18conflict_resolution_rule\x18\t \x01(\tR\x16conflictResolutionRule\x120\n" +
+	"\x14vendor_outage_status\x18\n" +
+	" \x01(\tR\x12vendorOutageStatus\x120\n" +
+	"\x14latest_value_display\x18\v \x01(\tR\x12latestValueDisplay\x12&\n" +
+	"\x0fupdated_at_unix\x18\f \x01(\x03R\rupdatedAtUnix\"\xa0\x05\n" +
+	"\x1fRecoveryReadinessAssessmentItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12+\n" +
+	"\x11readiness_verdict\x18\x03 \x01(\tR\x10readinessVerdict\x12\x1d\n" +
+	"\n" +
+	"input_mode\x18\x04 \x01(\tR\tinputMode\x12,\n" +
+	"\x12sleep_hours_tenths\x18\x05 \x01(\x05R\x10sleepHoursTenths\x126\n" +
+	"\x18subjective_energy_1_to_5\x18\x06 \x01(\x05R\x14subjectiveEnergy1To5\x12%\n" +
+	"\x0fsoreness_1_to_5\x18\a \x01(\x05R\fsoreness1To5\x12/\n" +
+	"\x14pain_or_illness_flag\x18\b \x01(\bR\x11painOrIllnessFlag\x128\n" +
+	"\x19travel_or_time_zone_shift\x18\t \x01(\bR\x15travelOrTimeZoneShift\x127\n" +
+	"\x18minimum_data_rule_status\x18\n" +
+	" \x01(\tR\x15minimumDataRuleStatus\x12/\n" +
+	"\x13explanation_summary\x18\v \x01(\tR\x12explanationSummary\x12D\n" +
+	"\x1erecommended_session_adjustment\x18\f \x01(\tR\x1crecommendedSessionAdjustment\x126\n" +
+	"\x17zero_penalty_guaranteed\x18\r \x01(\bR\x15zeroPenaltyGuaranteed\x12(\n" +
+	"\x10assessed_at_unix\x18\x0e \x01(\x03R\x0eassessedAtUnix\"\xc8\x03\n" +
+	"\x1eWearableRecoveryFusionOverview\x122\n" +
+	"\x15purpose_grant_charter\x18\x01 \x01(\tR\x13purposeGrantCharter\x12:\n" +
+	"\x19unknown_readiness_charter\x18\x02 \x01(\tR\x17unknownReadinessCharter\x122\n" +
+	"\x15apex_boundary_charter\x18\x03 \x01(\tR\x13apexBoundaryCharter\x12T\n" +
+	"\x0epurpose_grants\x18\x04 \x03(\v2-.sttattus.workout.v1.WearablePurposeGrantItemR\rpurposeGrants\x12T\n" +
+	"\x0esensor_streams\x18\x05 \x03(\v2-.sttattus.workout.v1.RecoverySensorStreamItemR\rsensorStreams\x12V\n" +
+	"\vassessments\x18\x06 \x03(\v24.sttattus.workout.v1.RecoveryReadinessAssessmentItemR\vassessments\"*\n" +
+	"(GetWearableRecoveryFusionOverviewRequest\"|\n" +
+	")GetWearableRecoveryFusionOverviewResponse\x12O\n" +
+	"\boverview\x18\x01 \x01(\v23.sttattus.workout.v1.WearableRecoveryFusionOverviewR\boverview\"\xb6\x01\n" +
+	"!UpsertWearablePurposeGrantRequest\x12)\n" +
+	"\x10connector_source\x18\x01 \x01(\tR\x0fconnectorSource\x12#\n" +
+	"\rpurpose_scope\x18\x02 \x01(\tR\fpurposeScope\x12A\n" +
+	"\x1dapex_signed_predicate_summary\x18\x03 \x01(\tR\x1aapexSignedPredicateSummary\"i\n" +
+	"\"UpsertWearablePurposeGrantResponse\x12C\n" +
+	"\x05grant\x18\x01 \x01(\v2-.sttattus.workout.v1.WearablePurposeGrantItemR\x05grant\"V\n" +
+	"!RevokeWearablePurposeGrantRequest\x12\x19\n" +
+	"\bgrant_id\x18\x01 \x01(\tR\agrantId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"i\n" +
+	"\"RevokeWearablePurposeGrantResponse\x12C\n" +
+	"\x05grant\x18\x01 \x01(\v2-.sttattus.workout.v1.WearablePurposeGrantItemR\x05grant\"\xcf\x01\n" +
+	"$ConfigureRecoverySensorStreamRequest\x12\x1d\n" +
+	"\n" +
+	"metric_key\x18\x01 \x01(\tR\tmetricKey\x12%\n" +
+	"\x0eprimary_source\x18\x02 \x01(\tR\rprimarySource\x12'\n" +
+	"\x0ffallback_source\x18\x03 \x01(\tR\x0efallbackSource\x128\n" +
+	"\x18conflict_resolution_rule\x18\x04 \x01(\tR\x16conflictResolutionRule\"n\n" +
+	"%ConfigureRecoverySensorStreamResponse\x12E\n" +
+	"\x06stream\x18\x01 \x01(\v2-.sttattus.workout.v1.RecoverySensorStreamItemR\x06stream\"\xe6\x02\n" +
+	"*SubmitNoWearableSubjectiveReadinessRequest\x12\x1d\n" +
+	"\n" +
+	"input_mode\x18\x01 \x01(\tR\tinputMode\x12,\n" +
+	"\x12sleep_hours_tenths\x18\x02 \x01(\x05R\x10sleepHoursTenths\x126\n" +
+	"\x18subjective_energy_1_to_5\x18\x03 \x01(\x05R\x14subjectiveEnergy1To5\x12%\n" +
+	"\x0fsoreness_1_to_5\x18\x04 \x01(\x05R\fsoreness1To5\x12/\n" +
+	"\x14pain_or_illness_flag\x18\x05 \x01(\bR\x11painOrIllnessFlag\x128\n" +
+	"\x19travel_or_time_zone_shift\x18\x06 \x01(\bR\x15travelOrTimeZoneShift\x12!\n" +
+	"\fathlete_note\x18\a \x01(\tR\vathleteNote\"\x83\x01\n" +
+	"+SubmitNoWearableSubjectiveReadinessResponse\x12T\n" +
+	"\n" +
+	"assessment\x18\x01 \x01(\v24.sttattus.workout.v1.RecoveryReadinessAssessmentItemR\n" +
+	"assessment\"\x97\x01\n" +
+	"&ReconcileSensorConflictOrOutageRequest\x12\x1b\n" +
+	"\tstream_id\x18\x01 \x01(\tR\bstreamId\x12+\n" +
+	"\x11resolution_action\x18\x02 \x01(\tR\x10resolutionAction\x12#\n" +
+	"\roperator_note\x18\x03 \x01(\tR\foperatorNote\"p\n" +
+	"'ReconcileSensorConflictOrOutageResponse\x12E\n" +
+	"\x06stream\x18\x01 \x01(\v2-.sttattus.workout.v1.RecoverySensorStreamItemR\x06stream\"\xa3\x05\n" +
+	"\x1dPerformanceExposureLedgerItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fwindow_label\x18\x03 \x01(\tR\vwindowLabel\x12'\n" +
+	"\x0fformula_version\x18\x04 \x01(\tR\x0eformulaVersion\x127\n" +
+	"\x18muscle_or_movement_group\x18\x05 \x01(\tR\x15muscleOrMovementGroup\x12*\n" +
+	"\x11planned_hard_sets\x18\x06 \x01(\x05R\x0fplannedHardSets\x12.\n" +
+	"\x13performed_hard_sets\x18\a \x01(\x05R\x11performedHardSets\x12*\n" +
+	"\x11weekly_tonnage_kg\x18\b \x01(\x01R\x0fweeklyTonnageKg\x12.\n" +
+	"\x13acute_chronic_ratio\x18\t \x01(\x01R\x11acuteChronicRatio\x12%\n" +
+	"\x0emonotony_index\x18\n" +
+	" \x01(\x01R\rmonotonyIndex\x12!\n" +
+	"\fstrain_score\x18\v \x01(\x01R\vstrainScore\x12#\n" +
+	"\radherence_pct\x18\f \x01(\x01R\fadherencePct\x12A\n" +
+	"\x1dnon_causal_plateau_hypotheses\x18\r \x01(\tR\x1anonCausalPlateauHypotheses\x12B\n" +
+	"\x1eplan_vs_performed_diff_summary\x18\x0e \x01(\tR\x1aplanVsPerformedDiffSummary\x12&\n" +
+	"\x0fupdated_at_unix\x18\x0f \x01(\x03R\rupdatedAtUnix\"\x84\x03\n" +
+	"\x1cStrengthPerformanceModelItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rmovement_slug\x18\x03 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x04 \x01(\tR\fmovementName\x12#\n" +
+	"\rrecord_origin\x18\x05 \x01(\tR\frecordOrigin\x12\x19\n" +
+	"\bvalue_kg\x18\x06 \x01(\x01R\avalueKg\x12%\n" +
+	"\x0econfidence_pct\x18\a \x01(\x01R\rconfidencePct\x12=\n" +
+	"\x1bspecificity_and_source_note\x18\b \x01(\tR\x18specificityAndSourceNote\x12!\n" +
+	"\fformula_used\x18\t \x01(\tR\vformulaUsed\x12(\n" +
+	"\x10captured_at_unix\x18\n" +
+	" \x01(\x03R\x0ecapturedAtUnix\"\xca\x04\n" +
+	"\x1aTrainingNOf1ExperimentItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fexperiment_code\x18\x03 \x01(\tR\x0eexperimentCode\x12\x14\n" +
+	"\x05title\x18\x04 \x01(\tR\x05title\x121\n" +
+	"\x14independent_variable\x18\x05 \x01(\tR\x13independentVariable\x125\n" +
+	"\x16predeclared_hypothesis\x18\x06 \x01(\tR\x15predeclaredHypothesis\x12+\n" +
+	"\x11baseline_protocol\x18\a \x01(\tR\x10baselineProtocol\x123\n" +
+	"\x15intervention_protocol\x18\b \x01(\tR\x14interventionProtocol\x122\n" +
+	"\x15min_sessions_required\x18\t \x01(\x05R\x13minSessionsRequired\x12-\n" +
+	"\x12completed_sessions\x18\n" +
+	" \x01(\x05R\x11completedSessions\x12,\n" +
+	"\x12cherry_pick_locked\x18\v \x01(\bR\x10cherryPickLocked\x12\x16\n" +
+	"\x06status\x18\f \x01(\tR\x06status\x12'\n" +
+	"\x0foutcome_summary\x18\r \x01(\tR\x0eoutcomeSummary\x12&\n" +
+	"\x0fupdated_at_unix\x18\x0e \x01(\x03R\rupdatedAtUnix\"\xec\x03\n" +
+	"\"PerformanceAnalyticsStudioOverview\x12>\n" +
+	"\x1btransparent_formula_charter\x18\x01 \x01(\tR\x19transparentFormulaCharter\x12=\n" +
+	"\x1btested_vs_estimated_charter\x18\x02 \x01(\tR\x18testedVsEstimatedCharter\x129\n" +
+	"\x1an_of_1_cherry_pick_charter\x18\x03 \x01(\tR\x15nOf1CherryPickCharter\x12]\n" +
+	"\x10exposure_ledgers\x18\x04 \x03(\v22.sttattus.workout.v1.PerformanceExposureLedgerItemR\x0fexposureLedgers\x12Z\n" +
+	"\x0fstrength_models\x18\x05 \x03(\v21.sttattus.workout.v1.StrengthPerformanceModelItemR\x0estrengthModels\x12Q\n" +
+	"\vexperiments\x18\x06 \x03(\v2/.sttattus.workout.v1.TrainingNOf1ExperimentItemR\vexperiments\".\n" +
+	",GetPerformanceAnalyticsStudioOverviewRequest\"\x84\x01\n" +
+	"-GetPerformanceAnalyticsStudioOverviewResponse\x12S\n" +
+	"\boverview\x18\x01 \x01(\v27.sttattus.workout.v1.PerformanceAnalyticsStudioOverviewR\boverview\"\xea\x03\n" +
+	"&RecordPerformanceExposureLedgerRequest\x12!\n" +
+	"\fwindow_label\x18\x01 \x01(\tR\vwindowLabel\x127\n" +
+	"\x18muscle_or_movement_group\x18\x02 \x01(\tR\x15muscleOrMovementGroup\x12*\n" +
+	"\x11planned_hard_sets\x18\x03 \x01(\x05R\x0fplannedHardSets\x12.\n" +
+	"\x13performed_hard_sets\x18\x04 \x01(\x05R\x11performedHardSets\x12*\n" +
+	"\x11weekly_tonnage_kg\x18\x05 \x01(\x01R\x0fweeklyTonnageKg\x12.\n" +
+	"\x13acute_chronic_ratio\x18\x06 \x01(\x01R\x11acuteChronicRatio\x12%\n" +
+	"\x0emonotony_index\x18\a \x01(\x01R\rmonotonyIndex\x12A\n" +
+	"\x1dnon_causal_plateau_hypotheses\x18\b \x01(\tR\x1anonCausalPlateauHypotheses\x12B\n" +
+	"\x1eplan_vs_performed_diff_summary\x18\t \x01(\tR\x1aplanVsPerformedDiffSummary\"u\n" +
+	"'RecordPerformanceExposureLedgerResponse\x12J\n" +
+	"\x06ledger\x18\x01 \x01(\v22.sttattus.workout.v1.PerformanceExposureLedgerItemR\x06ledger\"\xba\x02\n" +
+	"%UpsertStrengthPerformanceModelRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12#\n" +
+	"\rmovement_name\x18\x02 \x01(\tR\fmovementName\x12#\n" +
+	"\rrecord_origin\x18\x03 \x01(\tR\frecordOrigin\x12\x19\n" +
+	"\bvalue_kg\x18\x04 \x01(\x01R\avalueKg\x12%\n" +
+	"\x0econfidence_pct\x18\x05 \x01(\x01R\rconfidencePct\x12=\n" +
+	"\x1bspecificity_and_source_note\x18\x06 \x01(\tR\x18specificityAndSourceNote\x12!\n" +
+	"\fformula_used\x18\a \x01(\tR\vformulaUsed\"q\n" +
+	"&UpsertStrengthPerformanceModelResponse\x12G\n" +
+	"\x05model\x18\x01 \x01(\v21.sttattus.workout.v1.StrengthPerformanceModelItemR\x05model\"\xe4\x02\n" +
+	"#CreateTrainingNOf1ExperimentRequest\x12'\n" +
+	"\x0fexperiment_code\x18\x01 \x01(\tR\x0eexperimentCode\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x121\n" +
+	"\x14independent_variable\x18\x03 \x01(\tR\x13independentVariable\x125\n" +
+	"\x16predeclared_hypothesis\x18\x04 \x01(\tR\x15predeclaredHypothesis\x12+\n" +
+	"\x11baseline_protocol\x18\x05 \x01(\tR\x10baselineProtocol\x123\n" +
+	"\x15intervention_protocol\x18\x06 \x01(\tR\x14interventionProtocol\x122\n" +
+	"\x15min_sessions_required\x18\a \x01(\x05R\x13minSessionsRequired\"w\n" +
+	"$CreateTrainingNOf1ExperimentResponse\x12O\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v2/.sttattus.workout.v1.TrainingNOf1ExperimentItemR\n" +
+	"experiment\"\x88\x01\n" +
+	"'LogTrainingNOf1ExperimentSessionRequest\x12#\n" +
+	"\rexperiment_id\x18\x01 \x01(\tR\fexperimentId\x128\n" +
+	"\x18session_observation_note\x18\x02 \x01(\tR\x16sessionObservationNote\"{\n" +
+	"(LogTrainingNOf1ExperimentSessionResponse\x12O\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v2/.sttattus.workout.v1.TrainingNOf1ExperimentItemR\n" +
+	"experiment\"u\n" +
+	"%EvaluateTrainingNOf1ExperimentRequest\x12#\n" +
+	"\rexperiment_id\x18\x01 \x01(\tR\fexperimentId\x12'\n" +
+	"\x0foutcome_summary\x18\x02 \x01(\tR\x0eoutcomeSummary\"y\n" +
+	"&EvaluateTrainingNOf1ExperimentResponse\x12O\n" +
+	"\n" +
+	"experiment\x18\x01 \x01(\v2/.sttattus.workout.v1.TrainingNOf1ExperimentItemR\n" +
+	"experiment\"\xc5\x04\n" +
+	"\x19InjuryRestrictionLockItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12/\n" +
+	"\x14body_region_and_side\x18\x03 \x01(\tR\x11bodyRegionAndSide\x12.\n" +
+	"\x13onset_and_mechanism\x18\x04 \x01(\tR\x11onsetAndMechanism\x123\n" +
+	"\x15aggravating_movements\x18\x05 \x01(\tR\x14aggravatingMovements\x12B\n" +
+	"\x1dclinician_restriction_summary\x18\x06 \x01(\tR\x1bclinicianRestrictionSummary\x129\n" +
+	"\x18authorizing_professional\x18\a \x01(\tR\x17authorizingProfessional\x126\n" +
+	"\x17blocks_auto_progression\x18\b \x01(\bR\x15blocksAutoProgression\x12H\n" +
+	"!isolated_from_social_and_rankings\x18\t \x01(\bR\x1disolatedFromSocialAndRankings\x12\x1f\n" +
+	"\vreview_date\x18\n" +
+	" \x01(\tR\n" +
+	"reviewDate\x12\x1f\n" +
+	"\vlock_status\x18\v \x01(\tR\n" +
+	"lockStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\f \x01(\x03R\rupdatedAtUnix\"\xd2\x03\n" +
+	"\x1aPainSessionTriageEventItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rmovement_slug\x18\x03 \x01(\tR\fmovementSlug\x12/\n" +
+	"\x14body_region_and_side\x18\x04 \x01(\tR\x11bodyRegionAndSide\x122\n" +
+	"\x16pain_intensity_1_to_10\x18\x05 \x01(\x05R\x12painIntensity1To10\x12;\n" +
+	"\x1ared_flag_symptoms_reported\x18\x06 \x01(\bR\x17redFlagSymptomsReported\x120\n" +
+	"\x14chosen_triage_action\x18\a \x01(\tR\x12chosenTriageAction\x124\n" +
+	"\x16auto_diagnosis_refused\x18\b \x01(\bR\x14autoDiagnosisRefused\x124\n" +
+	"\x16triage_resolution_note\x18\t \x01(\tR\x14triageResolutionNote\x12&\n" +
+	"\x0fcreated_at_unix\x18\n" +
+	" \x01(\x03R\rcreatedAtUnix\"\xfd\x03\n" +
+	"\x19ReturnToTrainingStageItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12.\n" +
+	"\x13restriction_lock_id\x18\x03 \x01(\tR\x11restrictionLockId\x12#\n" +
+	"\rpathway_title\x18\x04 \x01(\tR\fpathwayTitle\x12#\n" +
+	"\rcurrent_stage\x18\x05 \x01(\tR\fcurrentStage\x12A\n" +
+	"\x1epain_tolerance_ceiling_1_to_10\x18\x06 \x01(\x05R\x19painToleranceCeiling1To10\x128\n" +
+	"\x18functional_exit_criteria\x18\a \x01(\tR\x16functionalExitCriteria\x12A\n" +
+	"\x1dallowed_load_exposure_summary\x18\b \x01(\tR\x1aallowedLoadExposureSummary\x122\n" +
+	"\x15setback_rollback_rule\x18\t \x01(\tR\x13setbackRollbackRule\x12!\n" +
+	"\fcriteria_met\x18\n" +
+	" \x01(\bR\vcriteriaMet\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xda\x03\n" +
+	"\x1bInjuryReturnPathwayOverview\x124\n" +
+	"\x16clinician_lock_charter\x18\x01 \x01(\tR\x14clinicianLockCharter\x12A\n" +
+	"\x1dnon_diagnostic_triage_charter\x18\x02 \x01(\tR\x1anonDiagnosticTriageCharter\x12:\n" +
+	"\x19privacy_isolation_charter\x18\x03 \x01(\tR\x17privacyIsolationCharter\x12[\n" +
+	"\x11restriction_locks\x18\x04 \x03(\v2..sttattus.workout.v1.InjuryRestrictionLockItemR\x10restrictionLocks\x12T\n" +
+	"\rtriage_events\x18\x05 \x03(\v2/.sttattus.workout.v1.PainSessionTriageEventItemR\ftriageEvents\x12S\n" +
+	"\rreturn_stages\x18\x06 \x03(\v2..sttattus.workout.v1.ReturnToTrainingStageItemR\freturnStages\"'\n" +
+	"%GetInjuryReturnPathwayOverviewRequest\"v\n" +
+	"&GetInjuryReturnPathwayOverviewResponse\x12L\n" +
+	"\boverview\x18\x01 \x01(\v20.sttattus.workout.v1.InjuryReturnPathwayOverviewR\boverview\"\x92\x03\n" +
+	"\"UpsertInjuryRestrictionLockRequest\x12/\n" +
+	"\x14body_region_and_side\x18\x01 \x01(\tR\x11bodyRegionAndSide\x12.\n" +
+	"\x13onset_and_mechanism\x18\x02 \x01(\tR\x11onsetAndMechanism\x123\n" +
+	"\x15aggravating_movements\x18\x03 \x01(\tR\x14aggravatingMovements\x12B\n" +
+	"\x1dclinician_restriction_summary\x18\x04 \x01(\tR\x1bclinicianRestrictionSummary\x129\n" +
+	"\x18authorizing_professional\x18\x05 \x01(\tR\x17authorizingProfessional\x126\n" +
+	"\x17blocks_auto_progression\x18\x06 \x01(\bR\x15blocksAutoProgression\x12\x1f\n" +
+	"\vreview_date\x18\a \x01(\tR\n" +
+	"reviewDate\"\x80\x01\n" +
+	"#UpsertInjuryRestrictionLockResponse\x12Y\n" +
+	"\x10restriction_lock\x18\x01 \x01(\v2..sttattus.workout.v1.InjuryRestrictionLockItemR\x0frestrictionLock\"\xd3\x02\n" +
+	"\"LogInSessionPainTriageEventRequest\x12#\n" +
+	"\rmovement_slug\x18\x01 \x01(\tR\fmovementSlug\x12/\n" +
+	"\x14body_region_and_side\x18\x02 \x01(\tR\x11bodyRegionAndSide\x122\n" +
+	"\x16pain_intensity_1_to_10\x18\x03 \x01(\x05R\x12painIntensity1To10\x12;\n" +
+	"\x1ared_flag_symptoms_reported\x18\x04 \x01(\bR\x17redFlagSymptomsReported\x120\n" +
+	"\x14chosen_triage_action\x18\x05 \x01(\tR\x12chosenTriageAction\x124\n" +
+	"\x16triage_resolution_note\x18\x06 \x01(\tR\x14triageResolutionNote\"y\n" +
+	"#LogInSessionPainTriageEventResponse\x12R\n" +
+	"\ftriage_event\x18\x01 \x01(\v2/.sttattus.workout.v1.PainSessionTriageEventItemR\vtriageEvent\"\xe0\x01\n" +
+	"#AdvanceReturnToTrainingStageRequest\x12\x19\n" +
+	"\bstage_id\x18\x01 \x01(\tR\astageId\x12!\n" +
+	"\ftarget_stage\x18\x02 \x01(\tR\vtargetStage\x128\n" +
+	"\x18functional_exit_criteria\x18\x03 \x01(\tR\x16functionalExitCriteria\x12A\n" +
+	"\x1dallowed_load_exposure_summary\x18\x04 \x01(\tR\x1aallowedLoadExposureSummary\"y\n" +
+	"$AdvanceReturnToTrainingStageResponse\x12Q\n" +
+	"\freturn_stage\x18\x01 \x01(\v2..sttattus.workout.v1.ReturnToTrainingStageItemR\vreturnStage\"\x8f\x01\n" +
+	"$RecordReturnToTrainingSetbackRequest\x12\x19\n" +
+	"\bstage_id\x18\x01 \x01(\tR\astageId\x12%\n" +
+	"\x0erollback_stage\x18\x02 \x01(\tR\rrollbackStage\x12%\n" +
+	"\x0esetback_reason\x18\x03 \x01(\tR\rsetbackReason\"z\n" +
+	"%RecordReturnToTrainingSetbackResponse\x12Q\n" +
+	"\freturn_stage\x18\x01 \x01(\v2..sttattus.workout.v1.ReturnToTrainingStageItemR\vreturnStage\"c\n" +
+	"!ClearInjuryRestrictionLockRequest\x12\x17\n" +
+	"\alock_id\x18\x01 \x01(\tR\x06lockId\x12%\n" +
+	"\x0eclearance_note\x18\x02 \x01(\tR\rclearanceNote\"\x7f\n" +
+	"\"ClearInjuryRestrictionLockResponse\x12Y\n" +
+	"\x10restriction_lock\x18\x01 \x01(\v2..sttattus.workout.v1.InjuryRestrictionLockItemR\x0frestrictionLock\"\xc6\x03\n" +
+	"\x1bCoachAthleteScopedGrantItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x19\n" +
+	"\bcoach_id\x18\x03 \x01(\tR\acoachId\x12\x1d\n" +
+	"\n" +
+	"coach_name\x18\x04 \x01(\tR\tcoachName\x12+\n" +
+	"\x11coach_credentials\x18\x05 \x01(\tR\x10coachCredentials\x12-\n" +
+	"\x12granted_categories\x18\x06 \x01(\tR\x11grantedCategories\x12(\n" +
+	"\x10date_range_start\x18\a \x01(\tR\x0edateRangeStart\x12$\n" +
+	"\x0edate_range_end\x18\b \x01(\tR\fdateRangeEnd\x12M\n" +
+	"$apex_and_medical_auto_access_blocked\x18\t \x01(\bR\x1fapexAndMedicalAutoAccessBlocked\x12!\n" +
+	"\fgrant_status\x18\n" +
+	" \x01(\tR\vgrantStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xd5\x03\n" +
+	"\x17CoachChangeProposalItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x19\n" +
+	"\bcoach_id\x18\x03 \x01(\tR\acoachId\x12\x1d\n" +
+	"\n" +
+	"coach_name\x18\x04 \x01(\tR\tcoachName\x12?\n" +
+	"\x1cprogramme_or_movement_target\x18\x05 \x01(\tR\x19programmeOrMovementTarget\x122\n" +
+	"\x15proposed_diff_summary\x18\x06 \x01(\tR\x13proposedDiffSummary\x12'\n" +
+	"\x0fcoach_rationale\x18\a \x01(\tR\x0ecoachRationale\x124\n" +
+	"\x16medical_lock_preserved\x18\b \x01(\bR\x14medicalLockPreserved\x12'\n" +
+	"\x0fproposal_status\x18\t \x01(\tR\x0eproposalStatus\x122\n" +
+	"\x15athlete_response_note\x18\n" +
+	" \x01(\tR\x13athleteResponseNote\x12&\n" +
+	"\x0fcreated_at_unix\x18\v \x01(\x03R\rcreatedAtUnix\"\xfd\x03\n" +
+	"\x1bCoachMarketplaceListingItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"coach_slug\x18\x02 \x01(\tR\tcoachSlug\x12\x1d\n" +
+	"\n" +
+	"coach_name\x18\x03 \x01(\tR\tcoachName\x121\n" +
+	"\x14verified_credentials\x18\x04 \x01(\tR\x13verifiedCredentials\x12'\n" +
+	"\x0fspecialty_focus\x18\x05 \x01(\tR\x0especialtyFocus\x12/\n" +
+	"\x13supported_languages\x18\x06 \x01(\tR\x12supportedLanguages\x12(\n" +
+	"\x10monthly_rate_usd\x18\a \x01(\x05R\x0emonthlyRateUsd\x12/\n" +
+	"\x13availability_status\x18\b \x01(\tR\x12availabilityStatus\x129\n" +
+	"\x19booking_and_refund_policy\x18\t \x01(\tR\x16bookingAndRefundPolicy\x12E\n" +
+	"\x1factive_athlete_engagement_state\x18\n" +
+	" \x01(\tR\x1cactiveAthleteEngagementState\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xe0\x03\n" +
+	"\x1cCoachOsCollaborationOverview\x120\n" +
+	"\x14scoped_grant_charter\x18\x01 \x01(\tR\x12scopedGrantCharter\x12B\n" +
+	"\x1eproposal_diff_and_lock_charter\x18\x02 \x01(\tR\x1aproposalDiffAndLockCharter\x12B\n" +
+	"\x1dmarketplace_lifecycle_charter\x18\x03 \x01(\tR\x1bmarketplaceLifecycleCharter\x12U\n" +
+	"\rscoped_grants\x18\x04 \x03(\v20.sttattus.workout.v1.CoachAthleteScopedGrantItemR\fscopedGrants\x12J\n" +
+	"\tproposals\x18\x05 \x03(\v2,.sttattus.workout.v1.CoachChangeProposalItemR\tproposals\x12c\n" +
+	"\x14marketplace_listings\x18\x06 \x03(\v20.sttattus.workout.v1.CoachMarketplaceListingItemR\x13marketplaceListings\"(\n" +
+	"&GetCoachOsCollaborationOverviewRequest\"x\n" +
+	"'GetCoachOsCollaborationOverviewResponse\x12M\n" +
+	"\boverview\x18\x01 \x01(\v21.sttattus.workout.v1.CoachOsCollaborationOverviewR\boverview\"\x8c\x02\n" +
+	"$UpsertCoachAthleteScopedGrantRequest\x12\x19\n" +
+	"\bcoach_id\x18\x01 \x01(\tR\acoachId\x12\x1d\n" +
+	"\n" +
+	"coach_name\x18\x02 \x01(\tR\tcoachName\x12+\n" +
+	"\x11coach_credentials\x18\x03 \x01(\tR\x10coachCredentials\x12-\n" +
+	"\x12granted_categories\x18\x04 \x01(\tR\x11grantedCategories\x12(\n" +
+	"\x10date_range_start\x18\x05 \x01(\tR\x0edateRangeStart\x12$\n" +
+	"\x0edate_range_end\x18\x06 \x01(\tR\fdateRangeEnd\"o\n" +
+	"%UpsertCoachAthleteScopedGrantResponse\x12F\n" +
+	"\x05grant\x18\x01 \x01(\v20.sttattus.workout.v1.CoachAthleteScopedGrantItemR\x05grant\"Y\n" +
+	"$RevokeCoachAthleteScopedGrantRequest\x12\x19\n" +
+	"\bgrant_id\x18\x01 \x01(\tR\agrantId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"o\n" +
+	"%RevokeCoachAthleteScopedGrantResponse\x12F\n" +
+	"\x05grant\x18\x01 \x01(\v20.sttattus.workout.v1.CoachAthleteScopedGrantItemR\x05grant\"\xfc\x01\n" +
+	"\"ProposeCoachProgrammeChangeRequest\x12\x19\n" +
+	"\bcoach_id\x18\x01 \x01(\tR\acoachId\x12\x1d\n" +
+	"\n" +
+	"coach_name\x18\x02 \x01(\tR\tcoachName\x12?\n" +
+	"\x1cprogramme_or_movement_target\x18\x03 \x01(\tR\x19programmeOrMovementTarget\x122\n" +
+	"\x15proposed_diff_summary\x18\x04 \x01(\tR\x13proposedDiffSummary\x12'\n" +
+	"\x0fcoach_rationale\x18\x05 \x01(\tR\x0ecoachRationale\"o\n" +
+	"#ProposeCoachProgrammeChangeResponse\x12H\n" +
+	"\bproposal\x18\x01 \x01(\v2,.sttattus.workout.v1.CoachChangeProposalItemR\bproposal\"\x96\x01\n" +
+	"#RespondToCoachChangeProposalRequest\x12\x1f\n" +
+	"\vproposal_id\x18\x01 \x01(\tR\n" +
+	"proposalId\x12\x1a\n" +
+	"\bdecision\x18\x02 \x01(\tR\bdecision\x122\n" +
+	"\x15athlete_response_note\x18\x03 \x01(\tR\x13athleteResponseNote\"p\n" +
+	"$RespondToCoachChangeProposalResponse\x12H\n" +
+	"\bproposal\x18\x01 \x01(\v2,.sttattus.workout.v1.CoachChangeProposalItemR\bproposal\"\x94\x01\n" +
+	"'UpdateCoachMarketplaceEngagementRequest\x12\x1d\n" +
+	"\n" +
+	"listing_id\x18\x01 \x01(\tR\tlistingId\x126\n" +
+	"\x17target_engagement_state\x18\x02 \x01(\tR\x15targetEngagementState\x12\x12\n" +
+	"\x04note\x18\x03 \x01(\tR\x04note\"v\n" +
+	"(UpdateCoachMarketplaceEngagementResponse\x12J\n" +
+	"\alisting\x18\x01 \x01(\v20.sttattus.workout.v1.CoachMarketplaceListingItemR\alisting\"\x8a\x04\n" +
+	"\x13TeamSquadRosterItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"squad_slug\x18\x02 \x01(\tR\tsquadSlug\x12+\n" +
+	"\x11organization_name\x18\x03 \x01(\tR\x10organizationName\x12\x1d\n" +
+	"\n" +
+	"squad_name\x18\x04 \x01(\tR\tsquadName\x12!\n" +
+	"\fseason_label\x18\x05 \x01(\tR\vseasonLabel\x120\n" +
+	"\x14active_athlete_count\x18\x06 \x01(\x05R\x12activeAthleteCount\x12&\n" +
+	"\x0fmin_cohort_size\x18\a \x01(\x05R\rminCohortSize\x12=\n" +
+	"\x1bprivate_health_data_blocked\x18\b \x01(\bR\x18privateHealthDataBlocked\x12$\n" +
+	"\x0eis_youth_squad\x18\t \x01(\bR\fisYouthSquad\x12>\n" +
+	"\x1byouth_safeguarding_verified\x18\n" +
+	" \x01(\bR\x19youthSafeguardingVerified\x12.\n" +
+	"\x13head_strength_coach\x18\v \x01(\tR\x11headStrengthCoach\x12&\n" +
+	"\x0fupdated_at_unix\x18\f \x01(\x03R\rupdatedAtUnix\"\xf7\x02\n" +
+	"\x1bTeamTrafficLightCheckinItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"squad_slug\x18\x03 \x01(\tR\tsquadSlug\x12!\n" +
+	"\fcheckin_date\x18\x04 \x01(\tR\vcheckinDate\x12.\n" +
+	"\x13traffic_light_state\x18\x05 \x01(\tR\x11trafficLightState\x12C\n" +
+	"\x1eshared_coach_modification_note\x18\x06 \x01(\tR\x1bsharedCoachModificationNote\x12P\n" +
+	"%underlying_medical_and_cycle_redacted\x18\a \x01(\bR!underlyingMedicalAndCycleRedacted\x12&\n" +
+	"\x0fcreated_at_unix\x18\b \x01(\x03R\rcreatedAtUnix\"\xac\x03\n" +
+	"\x19FacilityRackOperationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
+	"\fstation_code\x18\x02 \x01(\tR\vstationCode\x12#\n" +
+	"\rfacility_name\x18\x03 \x01(\tR\ffacilityName\x12!\n" +
+	"\fstation_type\x18\x04 \x01(\tR\vstationType\x12-\n" +
+	"\x12operational_status\x18\x05 \x01(\tR\x11operationalStatus\x12?\n" +
+	"\x1clast_cleaning_and_inspection\x18\x06 \x01(\tR\x19lastCleaningAndInspection\x12F\n" +
+	"\x1faccessible_adaptive_alternative\x18\a \x01(\tR\x1daccessibleAdaptiveAlternative\x124\n" +
+	"\x16active_booking_summary\x18\b \x01(\tR\x14activeBookingSummary\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\xcf\x03\n" +
+	"\x1cTeamsClubsFacilitiesOverview\x124\n" +
+	"\x16cohort_privacy_charter\x18\x01 \x01(\tR\x14cohortPrivacyCharter\x12E\n" +
+	"\x1ftraffic_light_readiness_charter\x18\x02 \x01(\tR\x1ctrafficLightReadinessCharter\x12I\n" +
+	"!facility_and_safeguarding_charter\x18\x03 \x01(\tR\x1efacilityAndSafeguardingCharter\x12@\n" +
+	"\x06squads\x18\x04 \x03(\v2(.sttattus.workout.v1.TeamSquadRosterItemR\x06squads\x12L\n" +
+	"\bcheckins\x18\x05 \x03(\v20.sttattus.workout.v1.TeamTrafficLightCheckinItemR\bcheckins\x12W\n" +
+	"\x0frack_operations\x18\x06 \x03(\v2..sttattus.workout.v1.FacilityRackOperationItemR\x0erackOperations\"(\n" +
+	"&GetTeamsClubsFacilitiesOverviewRequest\"x\n" +
+	"'GetTeamsClubsFacilitiesOverviewResponse\x12M\n" +
+	"\boverview\x18\x01 \x01(\v21.sttattus.workout.v1.TeamsClubsFacilitiesOverviewR\boverview\"\xb4\x02\n" +
+	"\x1cUpsertTeamSquadRosterRequest\x12\x1d\n" +
+	"\n" +
+	"squad_slug\x18\x01 \x01(\tR\tsquadSlug\x12+\n" +
+	"\x11organization_name\x18\x02 \x01(\tR\x10organizationName\x12\x1d\n" +
+	"\n" +
+	"squad_name\x18\x03 \x01(\tR\tsquadName\x12!\n" +
+	"\fseason_label\x18\x04 \x01(\tR\vseasonLabel\x120\n" +
+	"\x14active_athlete_count\x18\x05 \x01(\x05R\x12activeAthleteCount\x12$\n" +
+	"\x0eis_youth_squad\x18\x06 \x01(\bR\fisYouthSquad\x12.\n" +
+	"\x13head_strength_coach\x18\a \x01(\tR\x11headStrengthCoach\"_\n" +
+	"\x1dUpsertTeamSquadRosterResponse\x12>\n" +
+	"\x05squad\x18\x01 \x01(\v2(.sttattus.workout.v1.TeamSquadRosterItemR\x05squad\"\xdd\x01\n" +
+	"$SubmitTeamTrafficLightCheckinRequest\x12\x1d\n" +
+	"\n" +
+	"squad_slug\x18\x01 \x01(\tR\tsquadSlug\x12!\n" +
+	"\fcheckin_date\x18\x02 \x01(\tR\vcheckinDate\x12.\n" +
+	"\x13traffic_light_state\x18\x03 \x01(\tR\x11trafficLightState\x12C\n" +
+	"\x1eshared_coach_modification_note\x18\x04 \x01(\tR\x1bsharedCoachModificationNote\"s\n" +
+	"%SubmitTeamTrafficLightCheckinResponse\x12J\n" +
+	"\acheckin\x18\x01 \x01(\v20.sttattus.workout.v1.TeamTrafficLightCheckinItemR\acheckin\"\xb3\x01\n" +
+	")ReserveOrUpdateFacilityRackStationRequest\x12!\n" +
+	"\fstation_code\x18\x01 \x01(\tR\vstationCode\x12-\n" +
+	"\x12operational_status\x18\x02 \x01(\tR\x11operationalStatus\x124\n" +
+	"\x16active_booking_summary\x18\x03 \x01(\tR\x14activeBookingSummary\"\x83\x01\n" +
+	"*ReserveOrUpdateFacilityRackStationResponse\x12U\n" +
+	"\x0erack_operation\x18\x01 \x01(\v2..sttattus.workout.v1.FacilityRackOperationItemR\rrackOperation\"\xd6\x01\n" +
+	"(FlagFacilityMaintenanceOrIncidentRequest\x12!\n" +
+	"\fstation_code\x18\x01 \x01(\tR\vstationCode\x12?\n" +
+	"\x1cincident_and_inspection_note\x18\x02 \x01(\tR\x19incidentAndInspectionNote\x12F\n" +
+	"\x1faccessible_adaptive_alternative\x18\x03 \x01(\tR\x1daccessibleAdaptiveAlternative\"\x82\x01\n" +
+	")FlagFacilityMaintenanceOrIncidentResponse\x12U\n" +
+	"\x0erack_operation\x18\x01 \x01(\v2..sttattus.workout.v1.FacilityRackOperationItemR\rrackOperation\"\x8a\x01\n" +
+	"#VerifyYouthSquadSafeguardingRequest\x12\x1d\n" +
+	"\n" +
+	"squad_slug\x18\x01 \x01(\tR\tsquadSlug\x12D\n" +
+	"\x1esafeguarding_verification_note\x18\x02 \x01(\tR\x1csafeguardingVerificationNote\"f\n" +
+	"$VerifyYouthSquadSafeguardingResponse\x12>\n" +
+	"\x05squad\x18\x01 \x01(\v2(.sttattus.workout.v1.TeamSquadRosterItemR\x05squad\"\xd1\x03\n" +
+	"\x18CompetitionEventPlanItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"event_slug\x18\x03 \x01(\tR\teventSlug\x12\x1f\n" +
+	"\vevent_title\x18\x04 \x01(\tR\n" +
+	"eventTitle\x127\n" +
+	"\x18governing_body_and_class\x18\x05 \x01(\tR\x15governingBodyAndClass\x12\x1d\n" +
+	"\n" +
+	"event_date\x18\x06 \x01(\tR\teventDate\x129\n" +
+	"\x19taper_and_warmup_protocol\x18\a \x01(\tR\x16taperAndWarmupProtocol\x123\n" +
+	"\x16attempt_or_pacing_plan\x18\b \x01(\tR\x13attemptOrPacingPlan\x12;\n" +
+	"\x1aoffline_venue_mode_enabled\x18\t \x01(\bR\x17offlineVenueModeEnabled\x12\x1f\n" +
+	"\vplan_status\x18\n" +
+	" \x01(\tR\n" +
+	"planStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\v \x01(\x03R\rupdatedAtUnix\"\xe3\x02\n" +
+	"\x1dVerifiedPerformanceResultItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12+\n" +
+	"\x12event_or_lift_name\x18\x03 \x01(\tR\x0feventOrLiftName\x12%\n" +
+	"\x0eresult_display\x18\x04 \x01(\tR\rresultDisplay\x12+\n" +
+	"\x11verification_tier\x18\x05 \x01(\tR\x10verificationTier\x12?\n" +
+	"\x1cevidence_and_witness_summary\x18\x06 \x01(\tR\x19evidenceAndWitnessSummary\x12/\n" +
+	"\x13adjudication_status\x18\a \x01(\tR\x12adjudicationStatus\x12&\n" +
+	"\x0fcreated_at_unix\x18\b \x01(\x03R\rcreatedAtUnix\"\xfd\x02\n" +
+	"\x1bCompetitionRuleTueCheckItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0egoverning_body\x18\x03 \x01(\tR\rgoverningBody\x12;\n" +
+	"\x1aequipment_and_rule_summary\x18\x04 \x01(\tR\x17equipmentAndRuleSummary\x12?\n" +
+	"\x1ctue_and_antidoping_reference\x18\x05 \x01(\tR\x19tueAndAntidopingReference\x12E\n" +
+	"\x1fmedical_legal_clearance_claimed\x18\x06 \x01(\bR\x1cmedicalLegalClearanceClaimed\x12!\n" +
+	"\fcheck_status\x18\a \x01(\tR\vcheckStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\x9d\x04\n" +
+	"&CompetitionVerifiedPerformanceOverview\x12I\n" +
+	"\"test_day_and_offline_venue_charter\x18\x01 \x01(\tR\x1dtestDayAndOfflineVenueCharter\x12O\n" +
+	"$verification_tier_separation_charter\x18\x02 \x01(\tR!verificationTierSeparationCharter\x12N\n" +
+	"$antidoping_and_tue_reference_charter\x18\x03 \x01(\tR antidopingAndTueReferenceCharter\x12N\n" +
+	"\vevent_plans\x18\x04 \x03(\v2-.sttattus.workout.v1.CompetitionEventPlanItemR\n" +
+	"eventPlans\x12]\n" +
+	"\x10verified_results\x18\x05 \x03(\v22.sttattus.workout.v1.VerifiedPerformanceResultItemR\x0fverifiedResults\x12X\n" +
+	"\x0frule_tue_checks\x18\x06 \x03(\v20.sttattus.workout.v1.CompetitionRuleTueCheckItemR\rruleTueChecks\"2\n" +
+	"0GetCompetitionVerifiedPerformanceOverviewRequest\"\x8c\x01\n" +
+	"1GetCompetitionVerifiedPerformanceOverviewResponse\x12W\n" +
+	"\boverview\x18\x01 \x01(\v2;.sttattus.workout.v1.CompetitionVerifiedPerformanceOverviewR\boverview\"\xab\x02\n" +
+	"!UpsertCompetitionEventPlanRequest\x12\x1d\n" +
+	"\n" +
+	"event_slug\x18\x01 \x01(\tR\teventSlug\x12\x1f\n" +
+	"\vevent_title\x18\x02 \x01(\tR\n" +
+	"eventTitle\x127\n" +
+	"\x18governing_body_and_class\x18\x03 \x01(\tR\x15governingBodyAndClass\x12\x1d\n" +
+	"\n" +
+	"event_date\x18\x04 \x01(\tR\teventDate\x129\n" +
+	"\x19taper_and_warmup_protocol\x18\x05 \x01(\tR\x16taperAndWarmupProtocol\x123\n" +
+	"\x16attempt_or_pacing_plan\x18\x06 \x01(\tR\x13attemptOrPacingPlan\"r\n" +
+	"\"UpsertCompetitionEventPlanResponse\x12L\n" +
+	"\n" +
+	"event_plan\x18\x01 \x01(\v2-.sttattus.workout.v1.CompetitionEventPlanItemR\teventPlan\"\xea\x01\n" +
+	"&SubmitVerifiedPerformanceResultRequest\x12+\n" +
+	"\x12event_or_lift_name\x18\x01 \x01(\tR\x0feventOrLiftName\x12%\n" +
+	"\x0eresult_display\x18\x02 \x01(\tR\rresultDisplay\x12+\n" +
+	"\x11verification_tier\x18\x03 \x01(\tR\x10verificationTier\x12?\n" +
+	"\x1cevidence_and_witness_summary\x18\x04 \x01(\tR\x19evidenceAndWitnessSummary\"\x86\x01\n" +
+	"'SubmitVerifiedPerformanceResultResponse\x12[\n" +
+	"\x0fverified_result\x18\x01 \x01(\v22.sttattus.workout.v1.VerifiedPerformanceResultItemR\x0everifiedResult\"~\n" +
+	"\"FilePerformanceResultAppealRequest\x12\x1b\n" +
+	"\tresult_id\x18\x01 \x01(\tR\bresultId\x12;\n" +
+	"\x1aappeal_reason_and_evidence\x18\x02 \x01(\tR\x17appealReasonAndEvidence\"\x82\x01\n" +
+	"#FilePerformanceResultAppealResponse\x12[\n" +
+	"\x0fverified_result\x18\x01 \x01(\v22.sttattus.workout.v1.VerifiedPerformanceResultItemR\x0everifiedResult\"\xce\x01\n" +
+	"'RecordCompetitionRuleAndTueCheckRequest\x12%\n" +
+	"\x0egoverning_body\x18\x01 \x01(\tR\rgoverningBody\x12;\n" +
+	"\x1aequipment_and_rule_summary\x18\x02 \x01(\tR\x17equipmentAndRuleSummary\x12?\n" +
+	"\x1ctue_and_antidoping_reference\x18\x03 \x01(\tR\x19tueAndAntidopingReference\"\x82\x01\n" +
+	"(RecordCompetitionRuleAndTueCheckResponse\x12V\n" +
+	"\x0erule_tue_check\x18\x01 \x01(\v20.sttattus.workout.v1.CompetitionRuleTueCheckItemR\fruleTueCheck\"d\n" +
+	"(ToggleOfflineVenueCompetitionModeRequest\x12\x17\n" +
+	"\aplan_id\x18\x01 \x01(\tR\x06planId\x12\x1f\n" +
+	"\vplan_status\x18\x02 \x01(\tR\n" +
+	"planStatus\"y\n" +
+	")ToggleOfflineVenueCompetitionModeResponse\x12L\n" +
+	"\n" +
+	"event_plan\x18\x01 \x01(\v2-.sttattus.workout.v1.CompetitionEventPlanItemR\teventPlan\"\x9b\x03\n" +
+	"\x1bSportHybridStudioModuleItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
+	"\vmodule_slug\x18\x02 \x01(\tR\n" +
+	"moduleSlug\x12/\n" +
+	"\x14sport_or_hybrid_name\x18\x03 \x01(\tR\x11sportOrHybridName\x126\n" +
+	"\x17module_governance_state\x18\x04 \x01(\tR\x15moduleGovernanceState\x12:\n" +
+	"\x19qualified_editorial_owner\x18\x05 \x01(\tR\x17qualifiedEditorialOwner\x12;\n" +
+	"\x1adomain_metrics_and_grammar\x18\x06 \x01(\tR\x17domainMetricsAndGrammar\x12A\n" +
+	"\x1dunvalidated_ai_expert_blocked\x18\a \x01(\bR\x1aunvalidatedAiExpertBlocked\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xc5\x03\n" +
+	"\x1eHybridInterferenceScheduleItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x122\n" +
+	"\x15primary_priority_goal\x18\x03 \x01(\tR\x13primaryPriorityGoal\x124\n" +
+	"\x16weekly_pairing_summary\x18\x04 \x01(\tR\x14weeklyPairingSummary\x12<\n" +
+	"\x1ainterference_tradeoff_note\x18\x05 \x01(\tR\x18interferenceTradeoffNote\x12:\n" +
+	"\x19double_counting_prevented\x18\x06 \x01(\bR\x17doubleCountingPrevented\x12E\n" +
+	"\x1fhigh_intensity_conflict_blocked\x18\a \x01(\bR\x1chighIntensityConflictBlocked\x12'\n" +
+	"\x0fschedule_status\x18\b \x01(\tR\x0escheduleStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\x84\x03\n" +
+	"\x1eSportSkillAndManualSessionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vmodule_slug\x18\x03 \x01(\tR\n" +
+	"moduleSlug\x125\n" +
+	"\x17skill_or_activity_title\x18\x04 \x01(\tR\x14skillOrActivityTitle\x12?\n" +
+	"\x1cattempts_and_quality_summary\x18\x05 \x01(\tR\x19attemptsAndQualitySummary\x12=\n" +
+	"\x1bcoach_or_athlete_reflection\x18\x06 \x01(\tR\x18coachOrAthleteReflection\x129\n" +
+	"\x19fake_sensor_score_claimed\x18\a \x01(\bR\x16fakeSensorScoreClaimed\x12&\n" +
+	"\x0fcreated_at_unix\x18\b \x01(\x03R\rcreatedAtUnix\"\xb8\x04\n" +
+	"\x1aSportHybridStudiosOverview\x12M\n" +
+	"#qualified_module_governance_charter\x18\x01 \x01(\tR qualifiedModuleGovernanceCharter\x12R\n" +
+	"&hybrid_interference_and_dedupe_charter\x18\x02 \x01(\tR\"hybridInterferenceAndDedupeCharter\x12O\n" +
+	"%honest_skill_and_manual_sport_charter\x18\x03 \x01(\tR honestSkillAndManualSportCharter\x12J\n" +
+	"\amodules\x18\x04 \x03(\v20.sttattus.workout.v1.SportHybridStudioModuleItemR\amodules\x12j\n" +
+	"\x16interference_schedules\x18\x05 \x03(\v23.sttattus.workout.v1.HybridInterferenceScheduleItemR\x15interferenceSchedules\x12n\n" +
+	"\x19skill_and_manual_sessions\x18\x06 \x03(\v23.sttattus.workout.v1.SportSkillAndManualSessionItemR\x16skillAndManualSessions\"&\n" +
+	"$GetSportHybridStudiosOverviewRequest\"t\n" +
+	"%GetSportHybridStudiosOverviewResponse\x12K\n" +
+	"\boverview\x18\x01 \x01(\v2/.sttattus.workout.v1.SportHybridStudiosOverviewR\boverview\"\xf1\x01\n" +
+	"$UpsertSportHybridStudioModuleRequest\x12\x1f\n" +
+	"\vmodule_slug\x18\x01 \x01(\tR\n" +
+	"moduleSlug\x12/\n" +
+	"\x14sport_or_hybrid_name\x18\x02 \x01(\tR\x11sportOrHybridName\x12:\n" +
+	"\x19qualified_editorial_owner\x18\x03 \x01(\tR\x17qualifiedEditorialOwner\x12;\n" +
+	"\x1adomain_metrics_and_grammar\x18\x04 \x01(\tR\x17domainMetricsAndGrammar\"q\n" +
+	"%UpsertSportHybridStudioModuleResponse\x12H\n" +
+	"\x06module\x18\x01 \x01(\v20.sttattus.workout.v1.SportHybridStudioModuleItemR\x06module\"\xd4\x01\n" +
+	"*ConfigureHybridInterferenceScheduleRequest\x122\n" +
+	"\x15primary_priority_goal\x18\x01 \x01(\tR\x13primaryPriorityGoal\x124\n" +
+	"\x16weekly_pairing_summary\x18\x02 \x01(\tR\x14weeklyPairingSummary\x12<\n" +
+	"\x1ainterference_tradeoff_note\x18\x03 \x01(\tR\x18interferenceTradeoffNote\"~\n" +
+	"+ConfigureHybridInterferenceScheduleResponse\x12O\n" +
+	"\bschedule\x18\x01 \x01(\v23.sttattus.workout.v1.HybridInterferenceScheduleItemR\bschedule\"\x85\x02\n" +
+	"+LogSportSkillOrManualActivitySessionRequest\x12\x1f\n" +
+	"\vmodule_slug\x18\x01 \x01(\tR\n" +
+	"moduleSlug\x125\n" +
+	"\x17skill_or_activity_title\x18\x02 \x01(\tR\x14skillOrActivityTitle\x12?\n" +
+	"\x1cattempts_and_quality_summary\x18\x03 \x01(\tR\x19attemptsAndQualitySummary\x12=\n" +
+	"\x1bcoach_or_athlete_reflection\x18\x04 \x01(\tR\x18coachOrAthleteReflection\"}\n" +
+	",LogSportSkillOrManualActivitySessionResponse\x12M\n" +
+	"\asession\x18\x01 \x01(\v23.sttattus.workout.v1.SportSkillAndManualSessionItemR\asession\"\xbc\x01\n" +
+	"+RegisterCustomManualUnvalidatedSportRequest\x12\x1f\n" +
+	"\vmodule_slug\x18\x01 \x01(\tR\n" +
+	"moduleSlug\x12/\n" +
+	"\x14sport_or_hybrid_name\x18\x02 \x01(\tR\x11sportOrHybridName\x12;\n" +
+	"\x1adomain_metrics_and_grammar\x18\x03 \x01(\tR\x17domainMetricsAndGrammar\"x\n" +
+	",RegisterCustomManualUnvalidatedSportResponse\x12H\n" +
+	"\x06module\x18\x01 \x01(\v20.sttattus.workout.v1.SportHybridStudioModuleItemR\x06module\"o\n" +
+	"#AuditHybridLoadDeDuplicationRequest\x12\x1f\n" +
+	"\vschedule_id\x18\x01 \x01(\tR\n" +
+	"scheduleId\x12'\n" +
+	"\x0fschedule_status\x18\x02 \x01(\tR\x0escheduleStatus\"w\n" +
+	"$AuditHybridLoadDeDuplicationResponse\x12O\n" +
+	"\bschedule\x18\x01 \x01(\v23.sttattus.workout.v1.HybridInterferenceScheduleItemR\bschedule\"\xa9\x03\n" +
+	"\x1cEquipmentLocationProfileItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rlocation_slug\x18\x03 \x01(\tR\flocationSlug\x12#\n" +
+	"\rlocation_name\x18\x04 \x01(\tR\flocationName\x12>\n" +
+	"\x1bimplement_inventory_summary\x18\x05 \x01(\tR\x19implementInventorySummary\x122\n" +
+	"\x15smallest_increment_kg\x18\x06 \x01(\x01R\x13smallestIncrementKg\x125\n" +
+	"\x17rack_and_adaptive_notes\x18\a \x01(\tR\x14rackAndAdaptiveNotes\x12C\n" +
+	"\x1eathlete_confirmed_usable_state\x18\b \x01(\bR\x1bathleteConfirmedUsableState\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\xd0\x03\n" +
+	"\x1bTravelWorkoutAdaptationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rlocation_slug\x18\x03 \x01(\tR\flocationSlug\x124\n" +
+	"\x16travel_context_summary\x18\x04 \x01(\tR\x14travelContextSummary\x12@\n" +
+	"\x1cadapted_session_prescription\x18\x05 \x01(\tR\x1aadaptedSessionPrescription\x12<\n" +
+	"\x1apreserved_programme_intent\x18\x06 \x01(\tR\x18preservedProgrammeIntent\x12X\n" +
+	"*raw_nomad_documents_or_gps_history_blocked\x18\a \x01(\bR$rawNomadDocumentsOrGpsHistoryBlocked\x12+\n" +
+	"\x11adaptation_status\x18\b \x01(\tR\x10adaptationStatus\x12&\n" +
+	"\x0fcreated_at_unix\x18\t \x01(\x03R\rcreatedAtUnix\"\xa8\x03\n" +
+	"\x1dVerifiedGymVenueDirectoryItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
+	"\n" +
+	"venue_slug\x18\x02 \x01(\tR\tvenueSlug\x12\x1d\n" +
+	"\n" +
+	"venue_name\x18\x03 \x01(\tR\tvenueName\x12&\n" +
+	"\x0fcity_and_region\x18\x04 \x01(\tR\rcityAndRegion\x12<\n" +
+	"\x1averified_equipment_summary\x18\x05 \x01(\tR\x18verifiedEquipmentSummary\x125\n" +
+	"\x16accessibility_features\x18\x06 \x01(\tR\x15accessibilityFeatures\x126\n" +
+	"\x17listing_freshness_state\x18\a \x01(\tR\x15listingFreshnessState\x12<\n" +
+	"\x1bday_pass_and_booking_policy\x18\b \x01(\tR\x17dayPassAndBookingPolicy\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\x97\x04\n" +
+	"!EquipmentTravelAdaptationOverview\x12I\n" +
+	"!confirmed_equipment_vault_charter\x18\x01 \x01(\tR\x1econfirmedEquipmentVaultCharter\x12H\n" +
+	"!travel_and_nomad_boundary_charter\x18\x02 \x01(\tR\x1dtravelAndNomadBoundaryCharter\x12G\n" +
+	" verified_venue_freshness_charter\x18\x03 \x01(\tR\x1dverifiedVenueFreshnessCharter\x12`\n" +
+	"\x12equipment_profiles\x18\x04 \x03(\v21.sttattus.workout.v1.EquipmentLocationProfileItemR\x11equipmentProfiles\x12_\n" +
+	"\x12travel_adaptations\x18\x05 \x03(\v20.sttattus.workout.v1.TravelWorkoutAdaptationItemR\x11travelAdaptations\x12Q\n" +
+	"\n" +
+	"gym_venues\x18\x06 \x03(\v22.sttattus.workout.v1.VerifiedGymVenueDirectoryItemR\tgymVenues\"-\n" +
+	"+GetEquipmentTravelAdaptationOverviewRequest\"\x82\x01\n" +
+	",GetEquipmentTravelAdaptationOverviewResponse\x12R\n" +
+	"\boverview\x18\x01 \x01(\v26.sttattus.workout.v1.EquipmentTravelAdaptationOverviewR\boverview\"\x9c\x02\n" +
+	"%UpsertEquipmentLocationProfileRequest\x12#\n" +
+	"\rlocation_slug\x18\x01 \x01(\tR\flocationSlug\x12#\n" +
+	"\rlocation_name\x18\x02 \x01(\tR\flocationName\x12>\n" +
+	"\x1bimplement_inventory_summary\x18\x03 \x01(\tR\x19implementInventorySummary\x122\n" +
+	"\x15smallest_increment_kg\x18\x04 \x01(\x01R\x13smallestIncrementKg\x125\n" +
+	"\x17rack_and_adaptive_notes\x18\x05 \x01(\tR\x14rackAndAdaptiveNotes\"\x88\x01\n" +
+	"&UpsertEquipmentLocationProfileResponse\x12^\n" +
+	"\x11equipment_profile\x18\x01 \x01(\v21.sttattus.workout.v1.EquipmentLocationProfileItemR\x10equipmentProfile\"\x83\x02\n" +
+	"&GenerateTravelWorkoutAdaptationRequest\x12#\n" +
+	"\rlocation_slug\x18\x01 \x01(\tR\flocationSlug\x124\n" +
+	"\x16travel_context_summary\x18\x02 \x01(\tR\x14travelContextSummary\x12@\n" +
+	"\x1cadapted_session_prescription\x18\x03 \x01(\tR\x1aadaptedSessionPrescription\x12<\n" +
+	"\x1apreserved_programme_intent\x18\x04 \x01(\tR\x18preservedProgrammeIntent\"\x88\x01\n" +
+	"'GenerateTravelWorkoutAdaptationResponse\x12]\n" +
+	"\x11travel_adaptation\x18\x01 \x01(\v20.sttattus.workout.v1.TravelWorkoutAdaptationItemR\x10travelAdaptation\"\xbf\x02\n" +
+	"$UpsertVerifiedGymVenueListingRequest\x12\x1d\n" +
+	"\n" +
+	"venue_slug\x18\x01 \x01(\tR\tvenueSlug\x12\x1d\n" +
+	"\n" +
+	"venue_name\x18\x02 \x01(\tR\tvenueName\x12&\n" +
+	"\x0fcity_and_region\x18\x03 \x01(\tR\rcityAndRegion\x12<\n" +
+	"\x1averified_equipment_summary\x18\x04 \x01(\tR\x18verifiedEquipmentSummary\x125\n" +
+	"\x16accessibility_features\x18\x05 \x01(\tR\x15accessibilityFeatures\x12<\n" +
+	"\x1bday_pass_and_booking_policy\x18\x06 \x01(\tR\x17dayPassAndBookingPolicy\"x\n" +
+	"%UpsertVerifiedGymVenueListingResponse\x12O\n" +
+	"\tgym_venue\x18\x01 \x01(\v22.sttattus.workout.v1.VerifiedGymVenueDirectoryItemR\bgymVenue\"x\n" +
+	"\x1fFlagStaleGymVenueListingRequest\x12\x1d\n" +
+	"\n" +
+	"venue_slug\x18\x01 \x01(\tR\tvenueSlug\x126\n" +
+	"\x17listing_freshness_state\x18\x02 \x01(\tR\x15listingFreshnessState\"s\n" +
+	" FlagStaleGymVenueListingResponse\x12O\n" +
+	"\tgym_venue\x18\x01 \x01(\v22.sttattus.workout.v1.VerifiedGymVenueDirectoryItemR\bgymVenue\"b\n" +
+	"#RevertTravelWorkoutToHomeGymRequest\x12#\n" +
+	"\radaptation_id\x18\x01 \x01(\tR\fadaptationId\x12\x16\n" +
+	"\x06reason\x18\x02 \x01(\tR\x06reason\"\x85\x01\n" +
+	"$RevertTravelWorkoutToHomeGymResponse\x12]\n" +
+	"\x11travel_adaptation\x18\x01 \x01(\v20.sttattus.workout.v1.TravelWorkoutAdaptationItemR\x10travelAdaptation\"\x8d\x04\n" +
+	"\x1cSessionFuelHydrationPlanItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x129\n" +
+	"\x19session_type_and_duration\x18\x03 \x01(\tR\x16sessionTypeAndDuration\x12:\n" +
+	"\x1apre_intra_post_fuel_timing\x18\x04 \x01(\tR\x16preIntraPostFuelTiming\x12G\n" +
+	" hydration_and_electrolyte_target\x18\x05 \x01(\tR\x1dhydrationAndElectrolyteTarget\x12G\n" +
+	" apex_allergy_instruction_summary\x18\x06 \x01(\tR\x1dapexAllergyInstructionSummary\x12I\n" +
+	"!mandatory_calorie_logging_blocked\x18\a \x01(\bR\x1emandatoryCalorieLoggingBlocked\x12H\n" +
+	"!raw_apex_clinical_records_blocked\x18\b \x01(\bR\x1drawApexClinicalRecordsBlocked\x12&\n" +
+	"\x0fupdated_at_unix\x18\t \x01(\x03R\rupdatedAtUnix\"\xa0\x03\n" +
+	"\x1fPrivateBodyCompositionTrendItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12-\n" +
+	"\x12measurement_method\x18\x03 \x01(\tR\x11measurementMethod\x12A\n" +
+	"\x1dtrend_and_uncertainty_summary\x18\x04 \x01(\tR\x1atrendAndUncertaintySummary\x126\n" +
+	"\x17athlete_functional_goal\x18\x05 \x01(\tR\x15athleteFunctionalGoal\x12T\n" +
+	"(public_body_score_or_rank_effect_blocked\x18\x06 \x01(\bR\"publicBodyScoreOrRankEffectBlocked\x12,\n" +
+	"\x12private_owner_only\x18\a \x01(\bR\x10privateOwnerOnly\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xa0\x03\n" +
+	"\x1cWeightClassSafetyMonitorItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12<\n" +
+	"\x1btarget_class_and_event_date\x18\x03 \x01(\tR\x17targetClassAndEventDate\x12&\n" +
+	"\x0fweekly_rate_pct\x18\x04 \x01(\x01R\rweeklyRatePct\x12N\n" +
+	"$dangerous_cut_or_dehydration_flagged\x18\x05 \x01(\bR dangerousCutOrDehydrationFlagged\x12G\n" +
+	" professional_safety_route_status\x18\x06 \x01(\tR\x1dprofessionalSafetyRouteStatus\x120\n" +
+	"\x14safety_guidance_note\x18\a \x01(\tR\x12safetyGuidanceNote\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xd3\x04\n" +
+	"\x18FuelWeightSafetyOverview\x12Y\n" +
+	"*optional_fueling_and_apex_boundary_charter\x18\x01 \x01(\tR%optionalFuelingAndApexBoundaryCharter\x12G\n" +
+	" private_body_composition_charter\x18\x02 \x01(\tR\x1dprivateBodyCompositionCharter\x12Y\n" +
+	"*weight_class_safety_and_escalation_charter\x18\x03 \x01(\tR%weightClassSafetyAndEscalationCharter\x12c\n" +
+	"\x14fuel_hydration_plans\x18\x04 \x03(\v21.sttattus.workout.v1.SessionFuelHydrationPlanItemR\x12fuelHydrationPlans\x12l\n" +
+	"\x17body_composition_trends\x18\x05 \x03(\v24.sttattus.workout.v1.PrivateBodyCompositionTrendItemR\x15bodyCompositionTrends\x12e\n" +
+	"\x15weight_class_monitors\x18\x06 \x03(\v21.sttattus.workout.v1.WeightClassSafetyMonitorItemR\x13weightClassMonitors\"$\n" +
+	"\"GetFuelWeightSafetyOverviewRequest\"p\n" +
+	"#GetFuelWeightSafetyOverviewResponse\x12I\n" +
+	"\boverview\x18\x01 \x01(\v2-.sttattus.workout.v1.FuelWeightSafetyOverviewR\boverview\"\xb0\x02\n" +
+	"%UpsertSessionFuelHydrationPlanRequest\x129\n" +
+	"\x19session_type_and_duration\x18\x01 \x01(\tR\x16sessionTypeAndDuration\x12:\n" +
+	"\x1apre_intra_post_fuel_timing\x18\x02 \x01(\tR\x16preIntraPostFuelTiming\x12G\n" +
+	" hydration_and_electrolyte_target\x18\x03 \x01(\tR\x1dhydrationAndElectrolyteTarget\x12G\n" +
+	" apex_allergy_instruction_summary\x18\x04 \x01(\tR\x1dapexAllergyInstructionSummary\"\x8b\x01\n" +
+	"&UpsertSessionFuelHydrationPlanResponse\x12a\n" +
+	"\x13fuel_hydration_plan\x18\x01 \x01(\v21.sttattus.workout.v1.SessionFuelHydrationPlanItemR\x11fuelHydrationPlan\"\xd4\x01\n" +
+	"(RecordPrivateBodyCompositionTrendRequest\x12-\n" +
+	"\x12measurement_method\x18\x01 \x01(\tR\x11measurementMethod\x12A\n" +
+	"\x1dtrend_and_uncertainty_summary\x18\x02 \x01(\tR\x1atrendAndUncertaintySummary\x126\n" +
+	"\x17athlete_functional_goal\x18\x03 \x01(\tR\x15athleteFunctionalGoal\"\x97\x01\n" +
+	")RecordPrivateBodyCompositionTrendResponse\x12j\n" +
+	"\x16body_composition_trend\x18\x01 \x01(\v24.sttattus.workout.v1.PrivateBodyCompositionTrendItemR\x14bodyCompositionTrend\"\xe8\x01\n" +
+	"$EvaluateWeightClassSafetyPlanRequest\x12<\n" +
+	"\x1btarget_class_and_event_date\x18\x01 \x01(\tR\x17targetClassAndEventDate\x12&\n" +
+	"\x0fweekly_rate_pct\x18\x02 \x01(\x01R\rweeklyRatePct\x12(\n" +
+	"\x10is_youth_athlete\x18\x03 \x01(\bR\x0eisYouthAthlete\x120\n" +
+	"\x14safety_guidance_note\x18\x04 \x01(\tR\x12safetyGuidanceNote\"\x8c\x01\n" +
+	"%EvaluateWeightClassSafetyPlanResponse\x12c\n" +
+	"\x14weight_class_monitor\x18\x01 \x01(\v21.sttattus.workout.v1.WeightClassSafetyMonitorItemR\x12weightClassMonitor\"y\n" +
+	"+EscalateWeightCutToProfessionalRouteRequest\x12\x1d\n" +
+	"\n" +
+	"monitor_id\x18\x01 \x01(\tR\tmonitorId\x12+\n" +
+	"\x11escalation_reason\x18\x02 \x01(\tR\x10escalationReason\"\x93\x01\n" +
+	",EscalateWeightCutToProfessionalRouteResponse\x12c\n" +
+	"\x14weight_class_monitor\x18\x01 \x01(\v21.sttattus.workout.v1.WeightClassSafetyMonitorItemR\x12weightClassMonitor\"I\n" +
+	",VerifyBodyCompositionPrivacyIsolationRequest\x12\x19\n" +
+	"\btrend_id\x18\x01 \x01(\tR\atrendId\"\x9b\x01\n" +
+	"-VerifyBodyCompositionPrivacyIsolationResponse\x12j\n" +
+	"\x16body_composition_trend\x18\x01 \x01(\v24.sttattus.workout.v1.PrivateBodyCompositionTrendItemR\x14bodyCompositionTrend\"\xda\x03\n" +
+	"\x1cHealthyCompetitionCohortItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vcohort_slug\x18\x03 \x01(\tR\n" +
+	"cohortSlug\x12!\n" +
+	"\fcohort_title\x18\x04 \x01(\tR\vcohortTitle\x12)\n" +
+	"\x10competition_mode\x18\x05 \x01(\tR\x0fcompetitionMode\x12C\n" +
+	"\x1enormalization_and_ability_rule\x18\x06 \x01(\tR\x1bnormalizationAndAbilityRule\x128\n" +
+	"\x18competition_mute_enabled\x18\a \x01(\bR\x16competitionMuteEnabled\x12=\n" +
+	"\x1bglobal_body_ranking_blocked\x18\b \x01(\bR\x18globalBodyRankingBlocked\x12<\n" +
+	"\x1bbody_and_health_data_hidden\x18\t \x01(\bR\x17bodyAndHealthDataHidden\x12&\n" +
+	"\x0fupdated_at_unix\x18\n" +
+	" \x01(\x03R\rupdatedAtUnix\"\x81\x03\n" +
+	"\x1eCrewChallengeAndModerationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
+	"\x0echallenge_slug\x18\x02 \x01(\tR\rchallengeSlug\x12'\n" +
+	"\x0fchallenge_title\x18\x03 \x01(\tR\x0echallengeTitle\x12-\n" +
+	"\x12challenge_category\x18\x04 \x01(\tR\x11challengeCategory\x12:\n" +
+	"\x1asafety_and_anti_cheat_rule\x18\x05 \x01(\tR\x16safetyAndAntiCheatRule\x12A\n" +
+	"\x1dverification_and_appeal_state\x18\x06 \x01(\tR\x1averificationAndAppealState\x12)\n" +
+	"\x10evidence_summary\x18\a \x01(\tR\x0fevidenceSummary\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\x82\x03\n" +
+	"\x1cEmpireRewardContributionItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12+\n" +
+	"\x11contribution_kind\x18\x03 \x01(\tR\x10contributionKind\x12-\n" +
+	"\x12reward_description\x18\x04 \x01(\tR\x11rewardDescription\x12;\n" +
+	"\x1aempire_ledger_receipt_code\x18\x05 \x01(\tR\x17empireLedgerReceiptCode\x12`\n" +
+	".pay_to_rank_and_overtraining_incentive_blocked\x18\x06 \x01(\bR(payToRankAndOvertrainingIncentiveBlocked\x12\x16\n" +
+	"\x06status\x18\a \x01(\tR\x06status\x12&\n" +
+	"\x0fcreated_at_unix\x18\b \x01(\x03R\rcreatedAtUnix\"\xac\x04\n" +
+	"\x1fHealthyCompetitionCrewsOverview\x12J\n" +
+	"\"comparable_cohort_and_mute_charter\x18\x01 \x01(\tR\x1ecomparableCohortAndMuteCharter\x12O\n" +
+	"%safe_adherence_and_anti_cheat_charter\x18\x02 \x01(\tR safeAdherenceAndAntiCheatCharter\x12R\n" +
+	"&empire_contribution_and_reward_charter\x18\x03 \x01(\tR\"empireContributionAndRewardCharter\x12K\n" +
+	"\acohorts\x18\x04 \x03(\v21.sttattus.workout.v1.HealthyCompetitionCohortItemR\acohorts\x12e\n" +
+	"\x14challenges_and_cases\x18\x05 \x03(\v23.sttattus.workout.v1.CrewChallengeAndModerationItemR\x12challengesAndCases\x12d\n" +
+	"\x14reward_contributions\x18\x06 \x03(\v21.sttattus.workout.v1.EmpireRewardContributionItemR\x13rewardContributions\"+\n" +
+	")GetHealthyCompetitionCrewsOverviewRequest\"~\n" +
+	"*GetHealthyCompetitionCrewsOverviewResponse\x12P\n" +
+	"\boverview\x18\x01 \x01(\v24.sttattus.workout.v1.HealthyCompetitionCrewsOverviewR\boverview\"\xdb\x01\n" +
+	"%UpsertHealthyCompetitionCohortRequest\x12\x1f\n" +
+	"\vcohort_slug\x18\x01 \x01(\tR\n" +
+	"cohortSlug\x12!\n" +
+	"\fcohort_title\x18\x02 \x01(\tR\vcohortTitle\x12)\n" +
+	"\x10competition_mode\x18\x03 \x01(\tR\x0fcompetitionMode\x12C\n" +
+	"\x1enormalization_and_ability_rule\x18\x04 \x01(\tR\x1bnormalizationAndAbilityRule\"s\n" +
+	"&UpsertHealthyCompetitionCohortResponse\x12I\n" +
+	"\x06cohort\x18\x01 \x01(\v21.sttattus.workout.v1.HealthyCompetitionCohortItemR\x06cohort\"\x7f\n" +
+	"&ToggleCompetitionMutePreferenceRequest\x12\x1b\n" +
+	"\tcohort_id\x18\x01 \x01(\tR\bcohortId\x128\n" +
+	"\x18competition_mute_enabled\x18\x02 \x01(\bR\x16competitionMuteEnabled\"t\n" +
+	"'ToggleCompetitionMutePreferenceResponse\x12I\n" +
+	"\x06cohort\x18\x01 \x01(\v21.sttattus.workout.v1.HealthyCompetitionCohortItemR\x06cohort\"\x8a\x02\n" +
+	"\"SubmitCrewChallengeOrAppealRequest\x12%\n" +
+	"\x0echallenge_slug\x18\x01 \x01(\tR\rchallengeSlug\x12'\n" +
+	"\x0fchallenge_title\x18\x02 \x01(\tR\x0echallengeTitle\x12-\n" +
+	"\x12challenge_category\x18\x03 \x01(\tR\x11challengeCategory\x12:\n" +
+	"\x1asafety_and_anti_cheat_rule\x18\x04 \x01(\tR\x16safetyAndAntiCheatRule\x12)\n" +
+	"\x10evidence_summary\x18\x05 \x01(\tR\x0fevidenceSummary\"\x86\x01\n" +
+	"#SubmitCrewChallengeOrAppealResponse\x12_\n" +
+	"\x11challenge_or_case\x18\x01 \x01(\v23.sttattus.workout.v1.CrewChallengeAndModerationItemR\x0fchallengeOrCase\"\xc0\x01\n" +
+	"%RecordEmpireRewardContributionRequest\x12+\n" +
+	"\x11contribution_kind\x18\x01 \x01(\tR\x10contributionKind\x12-\n" +
+	"\x12reward_description\x18\x02 \x01(\tR\x11rewardDescription\x12;\n" +
+	"\x1aempire_ledger_receipt_code\x18\x03 \x01(\tR\x17empireLedgerReceiptCode\"\x8c\x01\n" +
+	"&RecordEmpireRewardContributionResponse\x12b\n" +
+	"\x13reward_contribution\x18\x01 \x01(\v21.sttattus.workout.v1.EmpireRewardContributionItemR\x12rewardContribution\"\xb5\x01\n" +
+	"\"AdjudicateCrewAntiCheatCaseRequest\x12!\n" +
+	"\fchallenge_id\x18\x01 \x01(\tR\vchallengeId\x12A\n" +
+	"\x1dverification_and_appeal_state\x18\x02 \x01(\tR\x1averificationAndAppealState\x12)\n" +
+	"\x10evidence_summary\x18\x03 \x01(\tR\x0fevidenceSummary\"\x86\x01\n" +
+	"#AdjudicateCrewAntiCheatCaseResponse\x12_\n" +
+	"\x11challenge_or_case\x18\x01 \x01(\v23.sttattus.workout.v1.CrewChallengeAndModerationItemR\x0fchallengeOrCase\"\xb1\x03\n" +
+	"&OfflineMultimodalSyncCertificationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x121\n" +
+	"\x15device_and_watch_pair\x18\x03 \x01(\tR\x12deviceAndWatchPair\x12S\n" +
+	"'offline_outbox_and_crash_recovery_state\x18\x04 \x01(\tR\"offlineOutboxAndCrashRecoveryState\x12=\n" +
+	"\x1bbattery_aware_sensor_policy\x18\x05 \x01(\tR\x18batteryAwareSensorPolicy\x12<\n" +
+	"\x1adeterministic_merge_digest\x18\x06 \x01(\tR\x18deterministicMergeDigest\x121\n" +
+	"\x14certification_status\x18\a \x01(\tR\x13certificationStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xa7\x03\n" +
+	" AccessibilityAdaptiveProfileItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12@\n" +
+	"\x1dinput_and_screen_reader_modes\x18\x03 \x01(\tR\x19inputAndScreenReaderModes\x12X\n" +
+	")adaptive_equipment_and_seated_programming\x18\x04 \x01(\tR%adaptiveEquipmentAndSeatedProgramming\x12J\n" +
+	"\"color_independent_plates_and_zones\x18\x05 \x01(\bR\x1ecolorIndependentPlatesAndZones\x12J\n" +
+	"\"accessibility_is_easy_mode_blocked\x18\x06 \x01(\bR\x1eaccessibilityIsEasyModeBlocked\x12&\n" +
+	"\x0fupdated_at_unix\x18\a \x01(\x03R\rupdatedAtUnix\"\xb5\x03\n" +
+	"\"MigrationDeletionCertificationItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x123\n" +
+	"\x16locale_and_unit_system\x18\x03 \x01(\tR\x13localeAndUnitSystem\x12E\n" +
+	"\x1fexport_import_roundtrip_summary\x18\x04 \x01(\tR\x1cexportImportRoundtripSummary\x12I\n" +
+	"!account_erasure_readiness_summary\x18\x05 \x01(\tR\x1eaccountErasureReadinessSummary\x12D\n" +
+	"\x1foriginal_data_mutated_by_locale\x18\x06 \x01(\bR\x1boriginalDataMutatedByLocale\x121\n" +
+	"\x14certification_status\x18\a \x01(\tR\x13certificationStatus\x12&\n" +
+	"\x0fupdated_at_unix\x18\b \x01(\x03R\rupdatedAtUnix\"\xfc\x04\n" +
+	"$OfflineAccessibleReleaseCertOverview\x12R\n" +
+	"&offline_multimodal_and_battery_charter\x18\x01 \x01(\tR\"offlineMultimodalAndBatteryCharter\x12Z\n" +
+	"*accessibility_and_adaptive_athlete_charter\x18\x02 \x01(\tR&accessibilityAndAdaptiveAthleteCharter\x12N\n" +
+	"$migration_locale_and_erasure_charter\x18\x03 \x01(\tR migrationLocaleAndErasureCharter\x12r\n" +
+	"\x16offline_certifications\x18\x04 \x03(\v2;.sttattus.workout.v1.OfflineMultimodalSyncCertificationItemR\x15offlineCertifications\x12l\n" +
+	"\x16accessibility_profiles\x18\x05 \x03(\v25.sttattus.workout.v1.AccessibilityAdaptiveProfileItemR\x15accessibilityProfiles\x12r\n" +
+	"\x18migration_certifications\x18\x06 \x03(\v27.sttattus.workout.v1.MigrationDeletionCertificationItemR\x17migrationCertifications\"0\n" +
+	".GetOfflineAccessibleReleaseCertOverviewRequest\"\x88\x01\n" +
+	"/GetOfflineAccessibleReleaseCertOverviewResponse\x12U\n" +
+	"\boverview\x18\x01 \x01(\v29.sttattus.workout.v1.OfflineAccessibleReleaseCertOverviewR\boverview\"\xf1\x01\n" +
+	"(CertifyOfflineMultimodalSyncStateRequest\x121\n" +
+	"\x15device_and_watch_pair\x18\x01 \x01(\tR\x12deviceAndWatchPair\x12S\n" +
+	"'offline_outbox_and_crash_recovery_state\x18\x02 \x01(\tR\"offlineOutboxAndCrashRecoveryState\x12=\n" +
+	"\x1bbattery_aware_sensor_policy\x18\x03 \x01(\tR\x18batteryAwareSensorPolicy\"\x9d\x01\n" +
+	")CertifyOfflineMultimodalSyncStateResponse\x12p\n" +
+	"\x15offline_certification\x18\x01 \x01(\v2;.sttattus.workout.v1.OfflineMultimodalSyncCertificationItemR\x14offlineCertification\"\xc7\x01\n" +
+	")UpsertAccessibilityAdaptiveProfileRequest\x12@\n" +
+	"\x1dinput_and_screen_reader_modes\x18\x01 \x01(\tR\x19inputAndScreenReaderModes\x12X\n" +
+	")adaptive_equipment_and_seated_programming\x18\x02 \x01(\tR%adaptiveEquipmentAndSeatedProgramming\"\x98\x01\n" +
+	"*UpsertAccessibilityAdaptiveProfileResponse\x12j\n" +
+	"\x15accessibility_profile\x18\x01 \x01(\v25.sttattus.workout.v1.AccessibilityAdaptiveProfileItemR\x14accessibilityProfile\"\xf3\x01\n" +
+	"*RunMigrationAndErasureCertificationRequest\x123\n" +
+	"\x16locale_and_unit_system\x18\x01 \x01(\tR\x13localeAndUnitSystem\x12E\n" +
+	"\x1fexport_import_roundtrip_summary\x18\x02 \x01(\tR\x1cexportImportRoundtripSummary\x12I\n" +
+	"!account_erasure_readiness_summary\x18\x03 \x01(\tR\x1eaccountErasureReadinessSummary\"\x9f\x01\n" +
+	"+RunMigrationAndErasureCertificationResponse\x12p\n" +
+	"\x17migration_certification\x18\x01 \x01(\v27.sttattus.workout.v1.MigrationDeletionCertificationItemR\x16migrationCertification\"\x91\x01\n" +
+	"%VerifyBatteryAwareSensorPolicyRequest\x12)\n" +
+	"\x10certification_id\x18\x01 \x01(\tR\x0fcertificationId\x12=\n" +
+	"\x1bbattery_aware_sensor_policy\x18\x02 \x01(\tR\x18batteryAwareSensorPolicy\"\x9a\x01\n" +
+	"&VerifyBatteryAwareSensorPolicyResponse\x12p\n" +
+	"\x15offline_certification\x18\x01 \x01(\v2;.sttattus.workout.v1.OfflineMultimodalSyncCertificationItemR\x14offlineCertification\"\x85\x01\n" +
+	"$SignOffForge16Of16ReleaseGateRequest\x12*\n" +
+	"\x11migration_cert_id\x18\x01 \x01(\tR\x0fmigrationCertId\x121\n" +
+	"\x14certification_status\x18\x02 \x01(\tR\x13certificationStatus\"\x99\x01\n" +
+	"%SignOffForge16Of16ReleaseGateResponse\x12p\n" +
+	"\x17migration_certification\x18\x01 \x01(\v27.sttattus.workout.v1.MigrationDeletionCertificationItemR\x16migrationCertification2\x8d\xa7\x01\n" +
 	"\x0eWorkoutService\x12c\n" +
 	"\fListWorkouts\x12(.sttattus.workout.v1.ListWorkoutsRequest\x1a).sttattus.workout.v1.ListWorkoutsResponse\x12]\n" +
 	"\n" +
@@ -12807,7 +29182,91 @@ const file_sttattus_workout_v1_workout_proto_rawDesc = "" +
 	"\x13CreateLoungeBooking\x12/.sttattus.workout.v1.CreateLoungeBookingRequest\x1a0.sttattus.workout.v1.CreateLoungeBookingResponse\x12x\n" +
 	"\x13CancelLoungeBooking\x12/.sttattus.workout.v1.CancelLoungeBookingRequest\x1a0.sttattus.workout.v1.CancelLoungeBookingResponse\x12`\n" +
 	"\vListCoaches\x12'.sttattus.workout.v1.ListCoachesRequest\x1a(.sttattus.workout.v1.ListCoachesResponse\x12x\n" +
-	"\x13RequestCoachBooking\x12/.sttattus.workout.v1.RequestCoachBookingRequest\x1a0.sttattus.workout.v1.RequestCoachBookingResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
+	"\x13RequestCoachBooking\x12/.sttattus.workout.v1.RequestCoachBookingRequest\x1a0.sttattus.workout.v1.RequestCoachBookingResponse\x12\x99\x01\n" +
+	"\x1eGetAdaptiveProgrammingOverview\x12:.sttattus.workout.v1.GetAdaptiveProgrammingOverviewRequest\x1a;.sttattus.workout.v1.GetAdaptiveProgrammingOverviewResponse\x12\x9f\x01\n" +
+	" GenerateOrUpdateProgrammeVersion\x12<.sttattus.workout.v1.GenerateOrUpdateProgrammeVersionRequest\x1a=.sttattus.workout.v1.GenerateOrUpdateProgrammeVersionResponse\x12\x99\x01\n" +
+	"\x1eDecideProgrammeDraftAcceptance\x12:.sttattus.workout.v1.DecideProgrammeDraftAcceptanceRequest\x1a;.sttattus.workout.v1.DecideProgrammeDraftAcceptanceResponse\x12\x8a\x01\n" +
+	"\x19TriggerSafeAdaptiveReplan\x125.sttattus.workout.v1.TriggerSafeAdaptiveReplanRequest\x1a6.sttattus.workout.v1.TriggerSafeAdaptiveReplanResponse\x12\x96\x01\n" +
+	"\x1dUpsertAdaptiveProgressionRule\x129.sttattus.workout.v1.UpsertAdaptiveProgressionRuleRequest\x1a:.sttattus.workout.v1.UpsertAdaptiveProgressionRuleResponse\x12\x87\x01\n" +
+	"\x18RollbackProgrammeVersion\x124.sttattus.workout.v1.RollbackProgrammeVersionRequest\x1a5.sttattus.workout.v1.RollbackProgrammeVersionResponse\x12\x9c\x01\n" +
+	"\x1fGetMovementIntelligenceOverview\x12;.sttattus.workout.v1.GetMovementIntelligenceOverviewRequest\x1a<.sttattus.workout.v1.GetMovementIntelligenceOverviewResponse\x12\xa2\x01\n" +
+	"!RankIntentPreservingSubstitutions\x12=.sttattus.workout.v1.RankIntentPreservingSubstitutionsRequest\x1a>.sttattus.workout.v1.RankIntentPreservingSubstitutionsResponse\x12\x96\x01\n" +
+	"\x1dUpsertPersonalTechniqueManual\x129.sttattus.workout.v1.UpsertPersonalTechniqueManualRequest\x1a:.sttattus.workout.v1.UpsertPersonalTechniqueManualResponse\x12\x96\x01\n" +
+	"\x1dSubmitCustomMovementForReview\x129.sttattus.workout.v1.SubmitCustomMovementForReviewRequest\x1a:.sttattus.workout.v1.SubmitCustomMovementForReviewResponse\x12\x8d\x01\n" +
+	"\x1aUpsertMovementGraphProfile\x126.sttattus.workout.v1.UpsertMovementGraphProfileRequest\x1a7.sttattus.workout.v1.UpsertMovementGraphProfileResponse\x12\x90\x01\n" +
+	"\x1bRecordSubstitutionSelection\x127.sttattus.workout.v1.RecordSubstitutionSelectionRequest\x1a8.sttattus.workout.v1.RecordSubstitutionSelectionResponse\x12\x90\x01\n" +
+	"\x1bGetFormIntelligenceOverview\x127.sttattus.workout.v1.GetFormIntelligenceOverviewRequest\x1a8.sttattus.workout.v1.GetFormIntelligenceOverviewResponse\x12\x8a\x01\n" +
+	"\x19SubmitFormClipObservation\x125.sttattus.workout.v1.SubmitFormClipObservationRequest\x1a6.sttattus.workout.v1.SubmitFormClipObservationResponse\x12\x84\x01\n" +
+	"\x17EscalateFormClipToCoach\x123.sttattus.workout.v1.EscalateFormClipToCoachRequest\x1a4.sttattus.workout.v1.EscalateFormClipToCoachResponse\x12~\n" +
+	"\x15DecideCoachFormReview\x121.sttattus.workout.v1.DecideCoachFormReviewRequest\x1a2.sttattus.workout.v1.DecideCoachFormReviewResponse\x12\x96\x01\n" +
+	"\x1dUpdateFormPrivacyAndRetention\x129.sttattus.workout.v1.UpdateFormPrivacyAndRetentionRequest\x1a:.sttattus.workout.v1.UpdateFormPrivacyAndRetentionResponse\x12\x8a\x01\n" +
+	"\x19EraseFormClipAndKeypoints\x125.sttattus.workout.v1.EraseFormClipAndKeypointsRequest\x1a6.sttattus.workout.v1.EraseFormClipAndKeypointsResponse\x12\xa2\x01\n" +
+	"!GetWearableRecoveryFusionOverview\x12=.sttattus.workout.v1.GetWearableRecoveryFusionOverviewRequest\x1a>.sttattus.workout.v1.GetWearableRecoveryFusionOverviewResponse\x12\x8d\x01\n" +
+	"\x1aUpsertWearablePurposeGrant\x126.sttattus.workout.v1.UpsertWearablePurposeGrantRequest\x1a7.sttattus.workout.v1.UpsertWearablePurposeGrantResponse\x12\x8d\x01\n" +
+	"\x1aRevokeWearablePurposeGrant\x126.sttattus.workout.v1.RevokeWearablePurposeGrantRequest\x1a7.sttattus.workout.v1.RevokeWearablePurposeGrantResponse\x12\x96\x01\n" +
+	"\x1dConfigureRecoverySensorStream\x129.sttattus.workout.v1.ConfigureRecoverySensorStreamRequest\x1a:.sttattus.workout.v1.ConfigureRecoverySensorStreamResponse\x12\xa8\x01\n" +
+	"#SubmitNoWearableSubjectiveReadiness\x12?.sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessRequest\x1a@.sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessResponse\x12\x9c\x01\n" +
+	"\x1fReconcileSensorConflictOrOutage\x12;.sttattus.workout.v1.ReconcileSensorConflictOrOutageRequest\x1a<.sttattus.workout.v1.ReconcileSensorConflictOrOutageResponse\x12\xae\x01\n" +
+	"%GetPerformanceAnalyticsStudioOverview\x12A.sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewRequest\x1aB.sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewResponse\x12\x9c\x01\n" +
+	"\x1fRecordPerformanceExposureLedger\x12;.sttattus.workout.v1.RecordPerformanceExposureLedgerRequest\x1a<.sttattus.workout.v1.RecordPerformanceExposureLedgerResponse\x12\x99\x01\n" +
+	"\x1eUpsertStrengthPerformanceModel\x12:.sttattus.workout.v1.UpsertStrengthPerformanceModelRequest\x1a;.sttattus.workout.v1.UpsertStrengthPerformanceModelResponse\x12\x93\x01\n" +
+	"\x1cCreateTrainingNOf1Experiment\x128.sttattus.workout.v1.CreateTrainingNOf1ExperimentRequest\x1a9.sttattus.workout.v1.CreateTrainingNOf1ExperimentResponse\x12\x9f\x01\n" +
+	" LogTrainingNOf1ExperimentSession\x12<.sttattus.workout.v1.LogTrainingNOf1ExperimentSessionRequest\x1a=.sttattus.workout.v1.LogTrainingNOf1ExperimentSessionResponse\x12\x99\x01\n" +
+	"\x1eEvaluateTrainingNOf1Experiment\x12:.sttattus.workout.v1.EvaluateTrainingNOf1ExperimentRequest\x1a;.sttattus.workout.v1.EvaluateTrainingNOf1ExperimentResponse\x12\x99\x01\n" +
+	"\x1eGetInjuryReturnPathwayOverview\x12:.sttattus.workout.v1.GetInjuryReturnPathwayOverviewRequest\x1a;.sttattus.workout.v1.GetInjuryReturnPathwayOverviewResponse\x12\x90\x01\n" +
+	"\x1bUpsertInjuryRestrictionLock\x127.sttattus.workout.v1.UpsertInjuryRestrictionLockRequest\x1a8.sttattus.workout.v1.UpsertInjuryRestrictionLockResponse\x12\x90\x01\n" +
+	"\x1bLogInSessionPainTriageEvent\x127.sttattus.workout.v1.LogInSessionPainTriageEventRequest\x1a8.sttattus.workout.v1.LogInSessionPainTriageEventResponse\x12\x93\x01\n" +
+	"\x1cAdvanceReturnToTrainingStage\x128.sttattus.workout.v1.AdvanceReturnToTrainingStageRequest\x1a9.sttattus.workout.v1.AdvanceReturnToTrainingStageResponse\x12\x96\x01\n" +
+	"\x1dRecordReturnToTrainingSetback\x129.sttattus.workout.v1.RecordReturnToTrainingSetbackRequest\x1a:.sttattus.workout.v1.RecordReturnToTrainingSetbackResponse\x12\x8d\x01\n" +
+	"\x1aClearInjuryRestrictionLock\x126.sttattus.workout.v1.ClearInjuryRestrictionLockRequest\x1a7.sttattus.workout.v1.ClearInjuryRestrictionLockResponse\x12\x9c\x01\n" +
+	"\x1fGetCoachOsCollaborationOverview\x12;.sttattus.workout.v1.GetCoachOsCollaborationOverviewRequest\x1a<.sttattus.workout.v1.GetCoachOsCollaborationOverviewResponse\x12\x96\x01\n" +
+	"\x1dUpsertCoachAthleteScopedGrant\x129.sttattus.workout.v1.UpsertCoachAthleteScopedGrantRequest\x1a:.sttattus.workout.v1.UpsertCoachAthleteScopedGrantResponse\x12\x96\x01\n" +
+	"\x1dRevokeCoachAthleteScopedGrant\x129.sttattus.workout.v1.RevokeCoachAthleteScopedGrantRequest\x1a:.sttattus.workout.v1.RevokeCoachAthleteScopedGrantResponse\x12\x90\x01\n" +
+	"\x1bProposeCoachProgrammeChange\x127.sttattus.workout.v1.ProposeCoachProgrammeChangeRequest\x1a8.sttattus.workout.v1.ProposeCoachProgrammeChangeResponse\x12\x93\x01\n" +
+	"\x1cRespondToCoachChangeProposal\x128.sttattus.workout.v1.RespondToCoachChangeProposalRequest\x1a9.sttattus.workout.v1.RespondToCoachChangeProposalResponse\x12\x9f\x01\n" +
+	" UpdateCoachMarketplaceEngagement\x12<.sttattus.workout.v1.UpdateCoachMarketplaceEngagementRequest\x1a=.sttattus.workout.v1.UpdateCoachMarketplaceEngagementResponse\x12\x9c\x01\n" +
+	"\x1fGetTeamsClubsFacilitiesOverview\x12;.sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewRequest\x1a<.sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewResponse\x12~\n" +
+	"\x15UpsertTeamSquadRoster\x121.sttattus.workout.v1.UpsertTeamSquadRosterRequest\x1a2.sttattus.workout.v1.UpsertTeamSquadRosterResponse\x12\x96\x01\n" +
+	"\x1dSubmitTeamTrafficLightCheckin\x129.sttattus.workout.v1.SubmitTeamTrafficLightCheckinRequest\x1a:.sttattus.workout.v1.SubmitTeamTrafficLightCheckinResponse\x12\xa5\x01\n" +
+	"\"ReserveOrUpdateFacilityRackStation\x12>.sttattus.workout.v1.ReserveOrUpdateFacilityRackStationRequest\x1a?.sttattus.workout.v1.ReserveOrUpdateFacilityRackStationResponse\x12\xa2\x01\n" +
+	"!FlagFacilityMaintenanceOrIncident\x12=.sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentRequest\x1a>.sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentResponse\x12\x93\x01\n" +
+	"\x1cVerifyYouthSquadSafeguarding\x128.sttattus.workout.v1.VerifyYouthSquadSafeguardingRequest\x1a9.sttattus.workout.v1.VerifyYouthSquadSafeguardingResponse\x12\xba\x01\n" +
+	")GetCompetitionVerifiedPerformanceOverview\x12E.sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewRequest\x1aF.sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewResponse\x12\x8d\x01\n" +
+	"\x1aUpsertCompetitionEventPlan\x126.sttattus.workout.v1.UpsertCompetitionEventPlanRequest\x1a7.sttattus.workout.v1.UpsertCompetitionEventPlanResponse\x12\x9c\x01\n" +
+	"\x1fSubmitVerifiedPerformanceResult\x12;.sttattus.workout.v1.SubmitVerifiedPerformanceResultRequest\x1a<.sttattus.workout.v1.SubmitVerifiedPerformanceResultResponse\x12\x90\x01\n" +
+	"\x1bFilePerformanceResultAppeal\x127.sttattus.workout.v1.FilePerformanceResultAppealRequest\x1a8.sttattus.workout.v1.FilePerformanceResultAppealResponse\x12\x9f\x01\n" +
+	" RecordCompetitionRuleAndTueCheck\x12<.sttattus.workout.v1.RecordCompetitionRuleAndTueCheckRequest\x1a=.sttattus.workout.v1.RecordCompetitionRuleAndTueCheckResponse\x12\xa2\x01\n" +
+	"!ToggleOfflineVenueCompetitionMode\x12=.sttattus.workout.v1.ToggleOfflineVenueCompetitionModeRequest\x1a>.sttattus.workout.v1.ToggleOfflineVenueCompetitionModeResponse\x12\x96\x01\n" +
+	"\x1dGetSportHybridStudiosOverview\x129.sttattus.workout.v1.GetSportHybridStudiosOverviewRequest\x1a:.sttattus.workout.v1.GetSportHybridStudiosOverviewResponse\x12\x96\x01\n" +
+	"\x1dUpsertSportHybridStudioModule\x129.sttattus.workout.v1.UpsertSportHybridStudioModuleRequest\x1a:.sttattus.workout.v1.UpsertSportHybridStudioModuleResponse\x12\xa8\x01\n" +
+	"#ConfigureHybridInterferenceSchedule\x12?.sttattus.workout.v1.ConfigureHybridInterferenceScheduleRequest\x1a@.sttattus.workout.v1.ConfigureHybridInterferenceScheduleResponse\x12\xab\x01\n" +
+	"$LogSportSkillOrManualActivitySession\x12@.sttattus.workout.v1.LogSportSkillOrManualActivitySessionRequest\x1aA.sttattus.workout.v1.LogSportSkillOrManualActivitySessionResponse\x12\xab\x01\n" +
+	"$RegisterCustomManualUnvalidatedSport\x12@.sttattus.workout.v1.RegisterCustomManualUnvalidatedSportRequest\x1aA.sttattus.workout.v1.RegisterCustomManualUnvalidatedSportResponse\x12\x93\x01\n" +
+	"\x1cAuditHybridLoadDeDuplication\x128.sttattus.workout.v1.AuditHybridLoadDeDuplicationRequest\x1a9.sttattus.workout.v1.AuditHybridLoadDeDuplicationResponse\x12\xab\x01\n" +
+	"$GetEquipmentTravelAdaptationOverview\x12@.sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewRequest\x1aA.sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewResponse\x12\x99\x01\n" +
+	"\x1eUpsertEquipmentLocationProfile\x12:.sttattus.workout.v1.UpsertEquipmentLocationProfileRequest\x1a;.sttattus.workout.v1.UpsertEquipmentLocationProfileResponse\x12\x9c\x01\n" +
+	"\x1fGenerateTravelWorkoutAdaptation\x12;.sttattus.workout.v1.GenerateTravelWorkoutAdaptationRequest\x1a<.sttattus.workout.v1.GenerateTravelWorkoutAdaptationResponse\x12\x96\x01\n" +
+	"\x1dUpsertVerifiedGymVenueListing\x129.sttattus.workout.v1.UpsertVerifiedGymVenueListingRequest\x1a:.sttattus.workout.v1.UpsertVerifiedGymVenueListingResponse\x12\x87\x01\n" +
+	"\x18FlagStaleGymVenueListing\x124.sttattus.workout.v1.FlagStaleGymVenueListingRequest\x1a5.sttattus.workout.v1.FlagStaleGymVenueListingResponse\x12\x93\x01\n" +
+	"\x1cRevertTravelWorkoutToHomeGym\x128.sttattus.workout.v1.RevertTravelWorkoutToHomeGymRequest\x1a9.sttattus.workout.v1.RevertTravelWorkoutToHomeGymResponse\x12\x90\x01\n" +
+	"\x1bGetFuelWeightSafetyOverview\x127.sttattus.workout.v1.GetFuelWeightSafetyOverviewRequest\x1a8.sttattus.workout.v1.GetFuelWeightSafetyOverviewResponse\x12\x99\x01\n" +
+	"\x1eUpsertSessionFuelHydrationPlan\x12:.sttattus.workout.v1.UpsertSessionFuelHydrationPlanRequest\x1a;.sttattus.workout.v1.UpsertSessionFuelHydrationPlanResponse\x12\xa2\x01\n" +
+	"!RecordPrivateBodyCompositionTrend\x12=.sttattus.workout.v1.RecordPrivateBodyCompositionTrendRequest\x1a>.sttattus.workout.v1.RecordPrivateBodyCompositionTrendResponse\x12\x96\x01\n" +
+	"\x1dEvaluateWeightClassSafetyPlan\x129.sttattus.workout.v1.EvaluateWeightClassSafetyPlanRequest\x1a:.sttattus.workout.v1.EvaluateWeightClassSafetyPlanResponse\x12\xab\x01\n" +
+	"$EscalateWeightCutToProfessionalRoute\x12@.sttattus.workout.v1.EscalateWeightCutToProfessionalRouteRequest\x1aA.sttattus.workout.v1.EscalateWeightCutToProfessionalRouteResponse\x12\xae\x01\n" +
+	"%VerifyBodyCompositionPrivacyIsolation\x12A.sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationRequest\x1aB.sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationResponse\x12\xa5\x01\n" +
+	"\"GetHealthyCompetitionCrewsOverview\x12>.sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewRequest\x1a?.sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewResponse\x12\x99\x01\n" +
+	"\x1eUpsertHealthyCompetitionCohort\x12:.sttattus.workout.v1.UpsertHealthyCompetitionCohortRequest\x1a;.sttattus.workout.v1.UpsertHealthyCompetitionCohortResponse\x12\x9c\x01\n" +
+	"\x1fToggleCompetitionMutePreference\x12;.sttattus.workout.v1.ToggleCompetitionMutePreferenceRequest\x1a<.sttattus.workout.v1.ToggleCompetitionMutePreferenceResponse\x12\x90\x01\n" +
+	"\x1bSubmitCrewChallengeOrAppeal\x127.sttattus.workout.v1.SubmitCrewChallengeOrAppealRequest\x1a8.sttattus.workout.v1.SubmitCrewChallengeOrAppealResponse\x12\x99\x01\n" +
+	"\x1eRecordEmpireRewardContribution\x12:.sttattus.workout.v1.RecordEmpireRewardContributionRequest\x1a;.sttattus.workout.v1.RecordEmpireRewardContributionResponse\x12\x90\x01\n" +
+	"\x1bAdjudicateCrewAntiCheatCase\x127.sttattus.workout.v1.AdjudicateCrewAntiCheatCaseRequest\x1a8.sttattus.workout.v1.AdjudicateCrewAntiCheatCaseResponse\x12\xb4\x01\n" +
+	"'GetOfflineAccessibleReleaseCertOverview\x12C.sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewRequest\x1aD.sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewResponse\x12\xa2\x01\n" +
+	"!CertifyOfflineMultimodalSyncState\x12=.sttattus.workout.v1.CertifyOfflineMultimodalSyncStateRequest\x1a>.sttattus.workout.v1.CertifyOfflineMultimodalSyncStateResponse\x12\xa5\x01\n" +
+	"\"UpsertAccessibilityAdaptiveProfile\x12>.sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileRequest\x1a?.sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileResponse\x12\xa8\x01\n" +
+	"#RunMigrationAndErasureCertification\x12?.sttattus.workout.v1.RunMigrationAndErasureCertificationRequest\x1a@.sttattus.workout.v1.RunMigrationAndErasureCertificationResponse\x12\x99\x01\n" +
+	"\x1eVerifyBatteryAwareSensorPolicy\x12:.sttattus.workout.v1.VerifyBatteryAwareSensorPolicyRequest\x1a;.sttattus.workout.v1.VerifyBatteryAwareSensorPolicyResponse\x12\x96\x01\n" +
+	"\x1dSignOffForge16Of16ReleaseGate\x129.sttattus.workout.v1.SignOffForge16Of16ReleaseGateRequest\x1a:.sttattus.workout.v1.SignOffForge16Of16ReleaseGateResponseB@Z>github.com/sttattus/proto/gen/go/sttattus/workout/v1;workoutv1b\x06proto3"
 
 var (
 	file_sttattus_workout_v1_workout_proto_rawDescOnce sync.Once
@@ -12821,226 +29280,450 @@ func file_sttattus_workout_v1_workout_proto_rawDescGZIP() []byte {
 	return file_sttattus_workout_v1_workout_proto_rawDescData
 }
 
-var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 188)
+var file_sttattus_workout_v1_workout_proto_msgTypes = make([]protoimpl.MessageInfo, 412)
 var file_sttattus_workout_v1_workout_proto_goTypes = []any{
-	(*Tag)(nil),                                // 0: sttattus.workout.v1.Tag
-	(*Workout)(nil),                            // 1: sttattus.workout.v1.Workout
-	(*Series)(nil),                             // 2: sttattus.workout.v1.Series
-	(*StrainMetrics)(nil),                      // 3: sttattus.workout.v1.StrainMetrics
-	(*DayWorkout)(nil),                         // 4: sttattus.workout.v1.DayWorkout
-	(*ForgeStats)(nil),                         // 5: sttattus.workout.v1.ForgeStats
-	(*ListWorkoutsRequest)(nil),                // 6: sttattus.workout.v1.ListWorkoutsRequest
-	(*ListWorkoutsResponse)(nil),               // 7: sttattus.workout.v1.ListWorkoutsResponse
-	(*GetWorkoutRequest)(nil),                  // 8: sttattus.workout.v1.GetWorkoutRequest
-	(*GetWorkoutResponse)(nil),                 // 9: sttattus.workout.v1.GetWorkoutResponse
-	(*LogDayWorkoutRequest)(nil),               // 10: sttattus.workout.v1.LogDayWorkoutRequest
-	(*LogDayWorkoutResponse)(nil),              // 11: sttattus.workout.v1.LogDayWorkoutResponse
-	(*ListHistoryRequest)(nil),                 // 12: sttattus.workout.v1.ListHistoryRequest
-	(*ListHistoryResponse)(nil),                // 13: sttattus.workout.v1.ListHistoryResponse
-	(*GetForgeStatsRequest)(nil),               // 14: sttattus.workout.v1.GetForgeStatsRequest
-	(*GetForgeStatsResponse)(nil),              // 15: sttattus.workout.v1.GetForgeStatsResponse
-	(*SubmitFeedbackRequest)(nil),              // 16: sttattus.workout.v1.SubmitFeedbackRequest
-	(*SubmitFeedbackResponse)(nil),             // 17: sttattus.workout.v1.SubmitFeedbackResponse
-	(*Exercise)(nil),                           // 18: sttattus.workout.v1.Exercise
-	(*SessionSet)(nil),                         // 19: sttattus.workout.v1.SessionSet
-	(*SessionExercise)(nil),                    // 20: sttattus.workout.v1.SessionExercise
-	(*SessionBlock)(nil),                       // 21: sttattus.workout.v1.SessionBlock
-	(*ForgeSession)(nil),                       // 22: sttattus.workout.v1.ForgeSession
-	(*PlannedExercise)(nil),                    // 23: sttattus.workout.v1.PlannedExercise
-	(*ListExercisesRequest)(nil),               // 24: sttattus.workout.v1.ListExercisesRequest
-	(*ListExercisesResponse)(nil),              // 25: sttattus.workout.v1.ListExercisesResponse
-	(*CreateSessionRequest)(nil),               // 26: sttattus.workout.v1.CreateSessionRequest
-	(*CreateSessionResponse)(nil),              // 27: sttattus.workout.v1.CreateSessionResponse
-	(*GetSessionRequest)(nil),                  // 28: sttattus.workout.v1.GetSessionRequest
-	(*GetSessionResponse)(nil),                 // 29: sttattus.workout.v1.GetSessionResponse
-	(*GetActiveSessionRequest)(nil),            // 30: sttattus.workout.v1.GetActiveSessionRequest
-	(*GetActiveSessionResponse)(nil),           // 31: sttattus.workout.v1.GetActiveSessionResponse
-	(*ListSessionsRequest)(nil),                // 32: sttattus.workout.v1.ListSessionsRequest
-	(*ListSessionsResponse)(nil),               // 33: sttattus.workout.v1.ListSessionsResponse
-	(*UpdateSessionStatusRequest)(nil),         // 34: sttattus.workout.v1.UpdateSessionStatusRequest
-	(*UpdateSessionStatusResponse)(nil),        // 35: sttattus.workout.v1.UpdateSessionStatusResponse
-	(*LogSetRequest)(nil),                      // 36: sttattus.workout.v1.LogSetRequest
-	(*LogSetResponse)(nil),                     // 37: sttattus.workout.v1.LogSetResponse
-	(*SessionMetricPoint)(nil),                 // 38: sttattus.workout.v1.SessionMetricPoint
-	(*SessionAnalytics)(nil),                   // 39: sttattus.workout.v1.SessionAnalytics
-	(*GetSessionAnalyticsRequest)(nil),         // 40: sttattus.workout.v1.GetSessionAnalyticsRequest
-	(*GetSessionAnalyticsResponse)(nil),        // 41: sttattus.workout.v1.GetSessionAnalyticsResponse
-	(*UserEquipment)(nil),                      // 42: sttattus.workout.v1.UserEquipment
-	(*ListUserEquipmentRequest)(nil),           // 43: sttattus.workout.v1.ListUserEquipmentRequest
-	(*ListUserEquipmentResponse)(nil),          // 44: sttattus.workout.v1.ListUserEquipmentResponse
-	(*AddUserEquipmentRequest)(nil),            // 45: sttattus.workout.v1.AddUserEquipmentRequest
-	(*AddUserEquipmentResponse)(nil),           // 46: sttattus.workout.v1.AddUserEquipmentResponse
-	(*DeleteUserEquipmentRequest)(nil),         // 47: sttattus.workout.v1.DeleteUserEquipmentRequest
-	(*DeleteUserEquipmentResponse)(nil),        // 48: sttattus.workout.v1.DeleteUserEquipmentResponse
-	(*WorkoutRivalry)(nil),                     // 49: sttattus.workout.v1.WorkoutRivalry
-	(*ListWorkoutRivalriesRequest)(nil),        // 50: sttattus.workout.v1.ListWorkoutRivalriesRequest
-	(*ListWorkoutRivalriesResponse)(nil),       // 51: sttattus.workout.v1.ListWorkoutRivalriesResponse
-	(*GetRivalryDetailRequest)(nil),            // 52: sttattus.workout.v1.GetRivalryDetailRequest
-	(*GetRivalryDetailResponse)(nil),           // 53: sttattus.workout.v1.GetRivalryDetailResponse
-	(*RankBand)(nil),                           // 54: sttattus.workout.v1.RankBand
-	(*GetRankLadderRequest)(nil),               // 55: sttattus.workout.v1.GetRankLadderRequest
-	(*GetRankLadderResponse)(nil),              // 56: sttattus.workout.v1.GetRankLadderResponse
-	(*TodaySnapshot)(nil),                      // 57: sttattus.workout.v1.TodaySnapshot
-	(*GetTodayRequest)(nil),                    // 58: sttattus.workout.v1.GetTodayRequest
-	(*GetTodayResponse)(nil),                   // 59: sttattus.workout.v1.GetTodayResponse
-	(*ForgeStreak)(nil),                        // 60: sttattus.workout.v1.ForgeStreak
-	(*GetForgeStreakRequest)(nil),              // 61: sttattus.workout.v1.GetForgeStreakRequest
-	(*GetForgeStreakResponse)(nil),             // 62: sttattus.workout.v1.GetForgeStreakResponse
-	(*FormVideo)(nil),                          // 63: sttattus.workout.v1.FormVideo
-	(*CreateFormVideoRequest)(nil),             // 64: sttattus.workout.v1.CreateFormVideoRequest
-	(*CreateFormVideoResponse)(nil),            // 65: sttattus.workout.v1.CreateFormVideoResponse
-	(*ListMyFormVideosRequest)(nil),            // 66: sttattus.workout.v1.ListMyFormVideosRequest
-	(*ListMyFormVideosResponse)(nil),           // 67: sttattus.workout.v1.ListMyFormVideosResponse
-	(*DeleteFormVideoRequest)(nil),             // 68: sttattus.workout.v1.DeleteFormVideoRequest
-	(*DeleteFormVideoResponse)(nil),            // 69: sttattus.workout.v1.DeleteFormVideoResponse
-	(*UpdateFormVideoStatusRequest)(nil),       // 70: sttattus.workout.v1.UpdateFormVideoStatusRequest
-	(*UpdateFormVideoStatusResponse)(nil),      // 71: sttattus.workout.v1.UpdateFormVideoStatusResponse
-	(*Programme)(nil),                          // 72: sttattus.workout.v1.Programme
-	(*ProgrammeEnrolment)(nil),                 // 73: sttattus.workout.v1.ProgrammeEnrolment
-	(*ListProgrammesRequest)(nil),              // 74: sttattus.workout.v1.ListProgrammesRequest
-	(*ListProgrammesResponse)(nil),             // 75: sttattus.workout.v1.ListProgrammesResponse
-	(*GetProgrammeRequest)(nil),                // 76: sttattus.workout.v1.GetProgrammeRequest
-	(*GetProgrammeResponse)(nil),               // 77: sttattus.workout.v1.GetProgrammeResponse
-	(*EnrolInProgrammeRequest)(nil),            // 78: sttattus.workout.v1.EnrolInProgrammeRequest
-	(*EnrolInProgrammeResponse)(nil),           // 79: sttattus.workout.v1.EnrolInProgrammeResponse
-	(*GetActiveEnrolmentRequest)(nil),          // 80: sttattus.workout.v1.GetActiveEnrolmentRequest
-	(*GetActiveEnrolmentResponse)(nil),         // 81: sttattus.workout.v1.GetActiveEnrolmentResponse
-	(*ListMyEnrolmentsRequest)(nil),            // 82: sttattus.workout.v1.ListMyEnrolmentsRequest
-	(*ListMyEnrolmentsResponse)(nil),           // 83: sttattus.workout.v1.ListMyEnrolmentsResponse
-	(*UpdateEnrolmentRequest)(nil),             // 84: sttattus.workout.v1.UpdateEnrolmentRequest
-	(*UpdateEnrolmentResponse)(nil),            // 85: sttattus.workout.v1.UpdateEnrolmentResponse
-	(*ProgrammeWeekHeader)(nil),                // 86: sttattus.workout.v1.ProgrammeWeekHeader
-	(*ProgrammeWeekExercise)(nil),              // 87: sttattus.workout.v1.ProgrammeWeekExercise
-	(*ProgrammeWeek)(nil),                      // 88: sttattus.workout.v1.ProgrammeWeek
-	(*ListProgrammeWeeksRequest)(nil),          // 89: sttattus.workout.v1.ListProgrammeWeeksRequest
-	(*ListProgrammeWeeksResponse)(nil),         // 90: sttattus.workout.v1.ListProgrammeWeeksResponse
-	(*GetProgrammeWeekRequest)(nil),            // 91: sttattus.workout.v1.GetProgrammeWeekRequest
-	(*GetProgrammeWeekResponse)(nil),           // 92: sttattus.workout.v1.GetProgrammeWeekResponse
-	(*PersonalRecord)(nil),                     // 93: sttattus.workout.v1.PersonalRecord
-	(*ListMyPRsRequest)(nil),                   // 94: sttattus.workout.v1.ListMyPRsRequest
-	(*ListMyPRsResponse)(nil),                  // 95: sttattus.workout.v1.ListMyPRsResponse
-	(*ListRecentPRsRequest)(nil),               // 96: sttattus.workout.v1.ListRecentPRsRequest
-	(*ListRecentPRsResponse)(nil),              // 97: sttattus.workout.v1.ListRecentPRsResponse
-	(*BodyComposition)(nil),                    // 98: sttattus.workout.v1.BodyComposition
-	(*ListBodyCompositionsRequest)(nil),        // 99: sttattus.workout.v1.ListBodyCompositionsRequest
-	(*ListBodyCompositionsResponse)(nil),       // 100: sttattus.workout.v1.ListBodyCompositionsResponse
-	(*CreateBodyCompositionRequest)(nil),       // 101: sttattus.workout.v1.CreateBodyCompositionRequest
-	(*CreateBodyCompositionResponse)(nil),      // 102: sttattus.workout.v1.CreateBodyCompositionResponse
-	(*DeleteBodyCompositionRequest)(nil),       // 103: sttattus.workout.v1.DeleteBodyCompositionRequest
-	(*DeleteBodyCompositionResponse)(nil),      // 104: sttattus.workout.v1.DeleteBodyCompositionResponse
-	(*Injury)(nil),                             // 105: sttattus.workout.v1.Injury
-	(*ListInjuriesRequest)(nil),                // 106: sttattus.workout.v1.ListInjuriesRequest
-	(*ListInjuriesResponse)(nil),               // 107: sttattus.workout.v1.ListInjuriesResponse
-	(*CreateInjuryRequest)(nil),                // 108: sttattus.workout.v1.CreateInjuryRequest
-	(*CreateInjuryResponse)(nil),               // 109: sttattus.workout.v1.CreateInjuryResponse
-	(*UpdateInjuryStatusRequest)(nil),          // 110: sttattus.workout.v1.UpdateInjuryStatusRequest
-	(*UpdateInjuryStatusResponse)(nil),         // 111: sttattus.workout.v1.UpdateInjuryStatusResponse
-	(*DeleteInjuryRequest)(nil),                // 112: sttattus.workout.v1.DeleteInjuryRequest
-	(*DeleteInjuryResponse)(nil),               // 113: sttattus.workout.v1.DeleteInjuryResponse
-	(*MobilityScore)(nil),                      // 114: sttattus.workout.v1.MobilityScore
-	(*MobilityBaseline)(nil),                   // 115: sttattus.workout.v1.MobilityBaseline
-	(*ListMobilityBaselinesRequest)(nil),       // 116: sttattus.workout.v1.ListMobilityBaselinesRequest
-	(*ListMobilityBaselinesResponse)(nil),      // 117: sttattus.workout.v1.ListMobilityBaselinesResponse
-	(*GetCurrentMobilityBaselineRequest)(nil),  // 118: sttattus.workout.v1.GetCurrentMobilityBaselineRequest
-	(*GetCurrentMobilityBaselineResponse)(nil), // 119: sttattus.workout.v1.GetCurrentMobilityBaselineResponse
-	(*UpsertMobilityBaselineRequest)(nil),      // 120: sttattus.workout.v1.UpsertMobilityBaselineRequest
-	(*UpsertMobilityBaselineResponse)(nil),     // 121: sttattus.workout.v1.UpsertMobilityBaselineResponse
-	(*DeleteMobilityBaselineRequest)(nil),      // 122: sttattus.workout.v1.DeleteMobilityBaselineRequest
-	(*DeleteMobilityBaselineResponse)(nil),     // 123: sttattus.workout.v1.DeleteMobilityBaselineResponse
-	(*SensorConnection)(nil),                   // 124: sttattus.workout.v1.SensorConnection
-	(*SensorPriority)(nil),                     // 125: sttattus.workout.v1.SensorPriority
-	(*ListSensorConnectionsRequest)(nil),       // 126: sttattus.workout.v1.ListSensorConnectionsRequest
-	(*ListSensorConnectionsResponse)(nil),      // 127: sttattus.workout.v1.ListSensorConnectionsResponse
-	(*SetSensorConnectionStatusRequest)(nil),   // 128: sttattus.workout.v1.SetSensorConnectionStatusRequest
-	(*SetSensorConnectionStatusResponse)(nil),  // 129: sttattus.workout.v1.SetSensorConnectionStatusResponse
-	(*MarkSensorSyncedRequest)(nil),            // 130: sttattus.workout.v1.MarkSensorSyncedRequest
-	(*MarkSensorSyncedResponse)(nil),           // 131: sttattus.workout.v1.MarkSensorSyncedResponse
-	(*SetSensorPriorityRequest)(nil),           // 132: sttattus.workout.v1.SetSensorPriorityRequest
-	(*SetSensorPriorityResponse)(nil),          // 133: sttattus.workout.v1.SetSensorPriorityResponse
-	(*ForgeAnalytics)(nil),                     // 134: sttattus.workout.v1.ForgeAnalytics
-	(*ForgeDailyVolume)(nil),                   // 135: sttattus.workout.v1.ForgeDailyVolume
-	(*GetForgeAnalyticsRequest)(nil),           // 136: sttattus.workout.v1.GetForgeAnalyticsRequest
-	(*GetForgeAnalyticsResponse)(nil),          // 137: sttattus.workout.v1.GetForgeAnalyticsResponse
-	(*CreateRivalryRequest)(nil),               // 138: sttattus.workout.v1.CreateRivalryRequest
-	(*CreateRivalryResponse)(nil),              // 139: sttattus.workout.v1.CreateRivalryResponse
-	(*LeaderboardEntry)(nil),                   // 140: sttattus.workout.v1.LeaderboardEntry
-	(*GetLeaderboardRequest)(nil),              // 141: sttattus.workout.v1.GetLeaderboardRequest
-	(*GetLeaderboardResponse)(nil),             // 142: sttattus.workout.v1.GetLeaderboardResponse
-	(*ForgeLounge)(nil),                        // 143: sttattus.workout.v1.ForgeLounge
-	(*ForgeLoungeBooking)(nil),                 // 144: sttattus.workout.v1.ForgeLoungeBooking
-	(*ListForgeLoungesRequest)(nil),            // 145: sttattus.workout.v1.ListForgeLoungesRequest
-	(*ListForgeLoungesResponse)(nil),           // 146: sttattus.workout.v1.ListForgeLoungesResponse
-	(*ListMyLoungeBookingsRequest)(nil),        // 147: sttattus.workout.v1.ListMyLoungeBookingsRequest
-	(*ListMyLoungeBookingsResponse)(nil),       // 148: sttattus.workout.v1.ListMyLoungeBookingsResponse
-	(*CreateLoungeBookingRequest)(nil),         // 149: sttattus.workout.v1.CreateLoungeBookingRequest
-	(*CreateLoungeBookingResponse)(nil),        // 150: sttattus.workout.v1.CreateLoungeBookingResponse
-	(*CancelLoungeBookingRequest)(nil),         // 151: sttattus.workout.v1.CancelLoungeBookingRequest
-	(*CancelLoungeBookingResponse)(nil),        // 152: sttattus.workout.v1.CancelLoungeBookingResponse
-	(*Coach)(nil),                              // 153: sttattus.workout.v1.Coach
-	(*ListCoachesRequest)(nil),                 // 154: sttattus.workout.v1.ListCoachesRequest
-	(*ListCoachesResponse)(nil),                // 155: sttattus.workout.v1.ListCoachesResponse
-	(*RequestCoachBookingRequest)(nil),         // 156: sttattus.workout.v1.RequestCoachBookingRequest
-	(*RequestCoachBookingResponse)(nil),        // 157: sttattus.workout.v1.RequestCoachBookingResponse
-	(*GenerateForgeAlmanacRequest)(nil),        // 158: sttattus.workout.v1.GenerateForgeAlmanacRequest
-	(*GenerateForgeAlmanacResponse)(nil),       // 159: sttattus.workout.v1.GenerateForgeAlmanacResponse
-	(*AnalyzeFormVideoRequest)(nil),            // 160: sttattus.workout.v1.AnalyzeFormVideoRequest
-	(*AnalyzeFormVideoResponse)(nil),           // 161: sttattus.workout.v1.AnalyzeFormVideoResponse
-	(*AthleteShare)(nil),                       // 162: sttattus.workout.v1.AthleteShare
-	(*CreateAthleteShareRequest)(nil),          // 163: sttattus.workout.v1.CreateAthleteShareRequest
-	(*CreateAthleteShareResponse)(nil),         // 164: sttattus.workout.v1.CreateAthleteShareResponse
-	(*ListMyAthleteSharesRequest)(nil),         // 165: sttattus.workout.v1.ListMyAthleteSharesRequest
-	(*ListMyAthleteSharesResponse)(nil),        // 166: sttattus.workout.v1.ListMyAthleteSharesResponse
-	(*RevokeAthleteShareRequest)(nil),          // 167: sttattus.workout.v1.RevokeAthleteShareRequest
-	(*RevokeAthleteShareResponse)(nil),         // 168: sttattus.workout.v1.RevokeAthleteShareResponse
-	(*CoachThread)(nil),                        // 169: sttattus.workout.v1.CoachThread
-	(*CoachMessage)(nil),                       // 170: sttattus.workout.v1.CoachMessage
-	(*StartCoachThreadRequest)(nil),            // 171: sttattus.workout.v1.StartCoachThreadRequest
-	(*StartCoachThreadResponse)(nil),           // 172: sttattus.workout.v1.StartCoachThreadResponse
-	(*ListMyCoachThreadsRequest)(nil),          // 173: sttattus.workout.v1.ListMyCoachThreadsRequest
-	(*ListMyCoachThreadsResponse)(nil),         // 174: sttattus.workout.v1.ListMyCoachThreadsResponse
-	(*GetCoachThreadRequest)(nil),              // 175: sttattus.workout.v1.GetCoachThreadRequest
-	(*GetCoachThreadResponse)(nil),             // 176: sttattus.workout.v1.GetCoachThreadResponse
-	(*PostCoachMessageRequest)(nil),            // 177: sttattus.workout.v1.PostCoachMessageRequest
-	(*PostCoachMessageResponse)(nil),           // 178: sttattus.workout.v1.PostCoachMessageResponse
-	(*AnthologyArticle)(nil),                   // 179: sttattus.workout.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),       // 180: sttattus.workout.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),      // 181: sttattus.workout.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),         // 182: sttattus.workout.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),        // 183: sttattus.workout.v1.GetAnthologyArticleResponse
-	(*SimulateForgeRankRequest)(nil),           // 184: sttattus.workout.v1.SimulateForgeRankRequest
-	(*SimulateForgeRankResponse)(nil),          // 185: sttattus.workout.v1.SimulateForgeRankResponse
-	(*GetRecoveryScoreRequest)(nil),            // 186: sttattus.workout.v1.GetRecoveryScoreRequest
-	(*GetRecoveryScoreResponse)(nil),           // 187: sttattus.workout.v1.GetRecoveryScoreResponse
-	(*v1.PageRequest)(nil),                     // 188: sttattus.common.v1.PageRequest
-	(*v1.PageResponse)(nil),                    // 189: sttattus.common.v1.PageResponse
+	(*Tag)(nil),                                               // 0: sttattus.workout.v1.Tag
+	(*Workout)(nil),                                           // 1: sttattus.workout.v1.Workout
+	(*Series)(nil),                                            // 2: sttattus.workout.v1.Series
+	(*StrainMetrics)(nil),                                     // 3: sttattus.workout.v1.StrainMetrics
+	(*DayWorkout)(nil),                                        // 4: sttattus.workout.v1.DayWorkout
+	(*ForgeStats)(nil),                                        // 5: sttattus.workout.v1.ForgeStats
+	(*ListWorkoutsRequest)(nil),                               // 6: sttattus.workout.v1.ListWorkoutsRequest
+	(*ListWorkoutsResponse)(nil),                              // 7: sttattus.workout.v1.ListWorkoutsResponse
+	(*GetWorkoutRequest)(nil),                                 // 8: sttattus.workout.v1.GetWorkoutRequest
+	(*GetWorkoutResponse)(nil),                                // 9: sttattus.workout.v1.GetWorkoutResponse
+	(*LogDayWorkoutRequest)(nil),                              // 10: sttattus.workout.v1.LogDayWorkoutRequest
+	(*LogDayWorkoutResponse)(nil),                             // 11: sttattus.workout.v1.LogDayWorkoutResponse
+	(*ListHistoryRequest)(nil),                                // 12: sttattus.workout.v1.ListHistoryRequest
+	(*ListHistoryResponse)(nil),                               // 13: sttattus.workout.v1.ListHistoryResponse
+	(*GetForgeStatsRequest)(nil),                              // 14: sttattus.workout.v1.GetForgeStatsRequest
+	(*GetForgeStatsResponse)(nil),                             // 15: sttattus.workout.v1.GetForgeStatsResponse
+	(*SubmitFeedbackRequest)(nil),                             // 16: sttattus.workout.v1.SubmitFeedbackRequest
+	(*SubmitFeedbackResponse)(nil),                            // 17: sttattus.workout.v1.SubmitFeedbackResponse
+	(*Exercise)(nil),                                          // 18: sttattus.workout.v1.Exercise
+	(*SessionSet)(nil),                                        // 19: sttattus.workout.v1.SessionSet
+	(*SessionExercise)(nil),                                   // 20: sttattus.workout.v1.SessionExercise
+	(*SessionBlock)(nil),                                      // 21: sttattus.workout.v1.SessionBlock
+	(*ForgeSession)(nil),                                      // 22: sttattus.workout.v1.ForgeSession
+	(*PlannedExercise)(nil),                                   // 23: sttattus.workout.v1.PlannedExercise
+	(*ListExercisesRequest)(nil),                              // 24: sttattus.workout.v1.ListExercisesRequest
+	(*ListExercisesResponse)(nil),                             // 25: sttattus.workout.v1.ListExercisesResponse
+	(*CreateSessionRequest)(nil),                              // 26: sttattus.workout.v1.CreateSessionRequest
+	(*CreateSessionResponse)(nil),                             // 27: sttattus.workout.v1.CreateSessionResponse
+	(*GetSessionRequest)(nil),                                 // 28: sttattus.workout.v1.GetSessionRequest
+	(*GetSessionResponse)(nil),                                // 29: sttattus.workout.v1.GetSessionResponse
+	(*GetActiveSessionRequest)(nil),                           // 30: sttattus.workout.v1.GetActiveSessionRequest
+	(*GetActiveSessionResponse)(nil),                          // 31: sttattus.workout.v1.GetActiveSessionResponse
+	(*ListSessionsRequest)(nil),                               // 32: sttattus.workout.v1.ListSessionsRequest
+	(*ListSessionsResponse)(nil),                              // 33: sttattus.workout.v1.ListSessionsResponse
+	(*UpdateSessionStatusRequest)(nil),                        // 34: sttattus.workout.v1.UpdateSessionStatusRequest
+	(*UpdateSessionStatusResponse)(nil),                       // 35: sttattus.workout.v1.UpdateSessionStatusResponse
+	(*LogSetRequest)(nil),                                     // 36: sttattus.workout.v1.LogSetRequest
+	(*LogSetResponse)(nil),                                    // 37: sttattus.workout.v1.LogSetResponse
+	(*SessionMetricPoint)(nil),                                // 38: sttattus.workout.v1.SessionMetricPoint
+	(*SessionAnalytics)(nil),                                  // 39: sttattus.workout.v1.SessionAnalytics
+	(*GetSessionAnalyticsRequest)(nil),                        // 40: sttattus.workout.v1.GetSessionAnalyticsRequest
+	(*GetSessionAnalyticsResponse)(nil),                       // 41: sttattus.workout.v1.GetSessionAnalyticsResponse
+	(*UserEquipment)(nil),                                     // 42: sttattus.workout.v1.UserEquipment
+	(*ListUserEquipmentRequest)(nil),                          // 43: sttattus.workout.v1.ListUserEquipmentRequest
+	(*ListUserEquipmentResponse)(nil),                         // 44: sttattus.workout.v1.ListUserEquipmentResponse
+	(*AddUserEquipmentRequest)(nil),                           // 45: sttattus.workout.v1.AddUserEquipmentRequest
+	(*AddUserEquipmentResponse)(nil),                          // 46: sttattus.workout.v1.AddUserEquipmentResponse
+	(*DeleteUserEquipmentRequest)(nil),                        // 47: sttattus.workout.v1.DeleteUserEquipmentRequest
+	(*DeleteUserEquipmentResponse)(nil),                       // 48: sttattus.workout.v1.DeleteUserEquipmentResponse
+	(*WorkoutRivalry)(nil),                                    // 49: sttattus.workout.v1.WorkoutRivalry
+	(*ListWorkoutRivalriesRequest)(nil),                       // 50: sttattus.workout.v1.ListWorkoutRivalriesRequest
+	(*ListWorkoutRivalriesResponse)(nil),                      // 51: sttattus.workout.v1.ListWorkoutRivalriesResponse
+	(*GetRivalryDetailRequest)(nil),                           // 52: sttattus.workout.v1.GetRivalryDetailRequest
+	(*GetRivalryDetailResponse)(nil),                          // 53: sttattus.workout.v1.GetRivalryDetailResponse
+	(*RankBand)(nil),                                          // 54: sttattus.workout.v1.RankBand
+	(*GetRankLadderRequest)(nil),                              // 55: sttattus.workout.v1.GetRankLadderRequest
+	(*GetRankLadderResponse)(nil),                             // 56: sttattus.workout.v1.GetRankLadderResponse
+	(*TodaySnapshot)(nil),                                     // 57: sttattus.workout.v1.TodaySnapshot
+	(*GetTodayRequest)(nil),                                   // 58: sttattus.workout.v1.GetTodayRequest
+	(*GetTodayResponse)(nil),                                  // 59: sttattus.workout.v1.GetTodayResponse
+	(*ForgeStreak)(nil),                                       // 60: sttattus.workout.v1.ForgeStreak
+	(*GetForgeStreakRequest)(nil),                             // 61: sttattus.workout.v1.GetForgeStreakRequest
+	(*GetForgeStreakResponse)(nil),                            // 62: sttattus.workout.v1.GetForgeStreakResponse
+	(*FormVideo)(nil),                                         // 63: sttattus.workout.v1.FormVideo
+	(*CreateFormVideoRequest)(nil),                            // 64: sttattus.workout.v1.CreateFormVideoRequest
+	(*CreateFormVideoResponse)(nil),                           // 65: sttattus.workout.v1.CreateFormVideoResponse
+	(*ListMyFormVideosRequest)(nil),                           // 66: sttattus.workout.v1.ListMyFormVideosRequest
+	(*ListMyFormVideosResponse)(nil),                          // 67: sttattus.workout.v1.ListMyFormVideosResponse
+	(*DeleteFormVideoRequest)(nil),                            // 68: sttattus.workout.v1.DeleteFormVideoRequest
+	(*DeleteFormVideoResponse)(nil),                           // 69: sttattus.workout.v1.DeleteFormVideoResponse
+	(*UpdateFormVideoStatusRequest)(nil),                      // 70: sttattus.workout.v1.UpdateFormVideoStatusRequest
+	(*UpdateFormVideoStatusResponse)(nil),                     // 71: sttattus.workout.v1.UpdateFormVideoStatusResponse
+	(*Programme)(nil),                                         // 72: sttattus.workout.v1.Programme
+	(*ProgrammeEnrolment)(nil),                                // 73: sttattus.workout.v1.ProgrammeEnrolment
+	(*ListProgrammesRequest)(nil),                             // 74: sttattus.workout.v1.ListProgrammesRequest
+	(*ListProgrammesResponse)(nil),                            // 75: sttattus.workout.v1.ListProgrammesResponse
+	(*GetProgrammeRequest)(nil),                               // 76: sttattus.workout.v1.GetProgrammeRequest
+	(*GetProgrammeResponse)(nil),                              // 77: sttattus.workout.v1.GetProgrammeResponse
+	(*EnrolInProgrammeRequest)(nil),                           // 78: sttattus.workout.v1.EnrolInProgrammeRequest
+	(*EnrolInProgrammeResponse)(nil),                          // 79: sttattus.workout.v1.EnrolInProgrammeResponse
+	(*GetActiveEnrolmentRequest)(nil),                         // 80: sttattus.workout.v1.GetActiveEnrolmentRequest
+	(*GetActiveEnrolmentResponse)(nil),                        // 81: sttattus.workout.v1.GetActiveEnrolmentResponse
+	(*ListMyEnrolmentsRequest)(nil),                           // 82: sttattus.workout.v1.ListMyEnrolmentsRequest
+	(*ListMyEnrolmentsResponse)(nil),                          // 83: sttattus.workout.v1.ListMyEnrolmentsResponse
+	(*UpdateEnrolmentRequest)(nil),                            // 84: sttattus.workout.v1.UpdateEnrolmentRequest
+	(*UpdateEnrolmentResponse)(nil),                           // 85: sttattus.workout.v1.UpdateEnrolmentResponse
+	(*ProgrammeWeekHeader)(nil),                               // 86: sttattus.workout.v1.ProgrammeWeekHeader
+	(*ProgrammeWeekExercise)(nil),                             // 87: sttattus.workout.v1.ProgrammeWeekExercise
+	(*ProgrammeWeek)(nil),                                     // 88: sttattus.workout.v1.ProgrammeWeek
+	(*ListProgrammeWeeksRequest)(nil),                         // 89: sttattus.workout.v1.ListProgrammeWeeksRequest
+	(*ListProgrammeWeeksResponse)(nil),                        // 90: sttattus.workout.v1.ListProgrammeWeeksResponse
+	(*GetProgrammeWeekRequest)(nil),                           // 91: sttattus.workout.v1.GetProgrammeWeekRequest
+	(*GetProgrammeWeekResponse)(nil),                          // 92: sttattus.workout.v1.GetProgrammeWeekResponse
+	(*PersonalRecord)(nil),                                    // 93: sttattus.workout.v1.PersonalRecord
+	(*ListMyPRsRequest)(nil),                                  // 94: sttattus.workout.v1.ListMyPRsRequest
+	(*ListMyPRsResponse)(nil),                                 // 95: sttattus.workout.v1.ListMyPRsResponse
+	(*ListRecentPRsRequest)(nil),                              // 96: sttattus.workout.v1.ListRecentPRsRequest
+	(*ListRecentPRsResponse)(nil),                             // 97: sttattus.workout.v1.ListRecentPRsResponse
+	(*BodyComposition)(nil),                                   // 98: sttattus.workout.v1.BodyComposition
+	(*ListBodyCompositionsRequest)(nil),                       // 99: sttattus.workout.v1.ListBodyCompositionsRequest
+	(*ListBodyCompositionsResponse)(nil),                      // 100: sttattus.workout.v1.ListBodyCompositionsResponse
+	(*CreateBodyCompositionRequest)(nil),                      // 101: sttattus.workout.v1.CreateBodyCompositionRequest
+	(*CreateBodyCompositionResponse)(nil),                     // 102: sttattus.workout.v1.CreateBodyCompositionResponse
+	(*DeleteBodyCompositionRequest)(nil),                      // 103: sttattus.workout.v1.DeleteBodyCompositionRequest
+	(*DeleteBodyCompositionResponse)(nil),                     // 104: sttattus.workout.v1.DeleteBodyCompositionResponse
+	(*Injury)(nil),                                            // 105: sttattus.workout.v1.Injury
+	(*ListInjuriesRequest)(nil),                               // 106: sttattus.workout.v1.ListInjuriesRequest
+	(*ListInjuriesResponse)(nil),                              // 107: sttattus.workout.v1.ListInjuriesResponse
+	(*CreateInjuryRequest)(nil),                               // 108: sttattus.workout.v1.CreateInjuryRequest
+	(*CreateInjuryResponse)(nil),                              // 109: sttattus.workout.v1.CreateInjuryResponse
+	(*UpdateInjuryStatusRequest)(nil),                         // 110: sttattus.workout.v1.UpdateInjuryStatusRequest
+	(*UpdateInjuryStatusResponse)(nil),                        // 111: sttattus.workout.v1.UpdateInjuryStatusResponse
+	(*DeleteInjuryRequest)(nil),                               // 112: sttattus.workout.v1.DeleteInjuryRequest
+	(*DeleteInjuryResponse)(nil),                              // 113: sttattus.workout.v1.DeleteInjuryResponse
+	(*MobilityScore)(nil),                                     // 114: sttattus.workout.v1.MobilityScore
+	(*MobilityBaseline)(nil),                                  // 115: sttattus.workout.v1.MobilityBaseline
+	(*ListMobilityBaselinesRequest)(nil),                      // 116: sttattus.workout.v1.ListMobilityBaselinesRequest
+	(*ListMobilityBaselinesResponse)(nil),                     // 117: sttattus.workout.v1.ListMobilityBaselinesResponse
+	(*GetCurrentMobilityBaselineRequest)(nil),                 // 118: sttattus.workout.v1.GetCurrentMobilityBaselineRequest
+	(*GetCurrentMobilityBaselineResponse)(nil),                // 119: sttattus.workout.v1.GetCurrentMobilityBaselineResponse
+	(*UpsertMobilityBaselineRequest)(nil),                     // 120: sttattus.workout.v1.UpsertMobilityBaselineRequest
+	(*UpsertMobilityBaselineResponse)(nil),                    // 121: sttattus.workout.v1.UpsertMobilityBaselineResponse
+	(*DeleteMobilityBaselineRequest)(nil),                     // 122: sttattus.workout.v1.DeleteMobilityBaselineRequest
+	(*DeleteMobilityBaselineResponse)(nil),                    // 123: sttattus.workout.v1.DeleteMobilityBaselineResponse
+	(*SensorConnection)(nil),                                  // 124: sttattus.workout.v1.SensorConnection
+	(*SensorPriority)(nil),                                    // 125: sttattus.workout.v1.SensorPriority
+	(*ListSensorConnectionsRequest)(nil),                      // 126: sttattus.workout.v1.ListSensorConnectionsRequest
+	(*ListSensorConnectionsResponse)(nil),                     // 127: sttattus.workout.v1.ListSensorConnectionsResponse
+	(*SetSensorConnectionStatusRequest)(nil),                  // 128: sttattus.workout.v1.SetSensorConnectionStatusRequest
+	(*SetSensorConnectionStatusResponse)(nil),                 // 129: sttattus.workout.v1.SetSensorConnectionStatusResponse
+	(*MarkSensorSyncedRequest)(nil),                           // 130: sttattus.workout.v1.MarkSensorSyncedRequest
+	(*MarkSensorSyncedResponse)(nil),                          // 131: sttattus.workout.v1.MarkSensorSyncedResponse
+	(*SetSensorPriorityRequest)(nil),                          // 132: sttattus.workout.v1.SetSensorPriorityRequest
+	(*SetSensorPriorityResponse)(nil),                         // 133: sttattus.workout.v1.SetSensorPriorityResponse
+	(*ForgeAnalytics)(nil),                                    // 134: sttattus.workout.v1.ForgeAnalytics
+	(*ForgeDailyVolume)(nil),                                  // 135: sttattus.workout.v1.ForgeDailyVolume
+	(*GetForgeAnalyticsRequest)(nil),                          // 136: sttattus.workout.v1.GetForgeAnalyticsRequest
+	(*GetForgeAnalyticsResponse)(nil),                         // 137: sttattus.workout.v1.GetForgeAnalyticsResponse
+	(*CreateRivalryRequest)(nil),                              // 138: sttattus.workout.v1.CreateRivalryRequest
+	(*CreateRivalryResponse)(nil),                             // 139: sttattus.workout.v1.CreateRivalryResponse
+	(*LeaderboardEntry)(nil),                                  // 140: sttattus.workout.v1.LeaderboardEntry
+	(*GetLeaderboardRequest)(nil),                             // 141: sttattus.workout.v1.GetLeaderboardRequest
+	(*GetLeaderboardResponse)(nil),                            // 142: sttattus.workout.v1.GetLeaderboardResponse
+	(*ForgeLounge)(nil),                                       // 143: sttattus.workout.v1.ForgeLounge
+	(*ForgeLoungeBooking)(nil),                                // 144: sttattus.workout.v1.ForgeLoungeBooking
+	(*ListForgeLoungesRequest)(nil),                           // 145: sttattus.workout.v1.ListForgeLoungesRequest
+	(*ListForgeLoungesResponse)(nil),                          // 146: sttattus.workout.v1.ListForgeLoungesResponse
+	(*ListMyLoungeBookingsRequest)(nil),                       // 147: sttattus.workout.v1.ListMyLoungeBookingsRequest
+	(*ListMyLoungeBookingsResponse)(nil),                      // 148: sttattus.workout.v1.ListMyLoungeBookingsResponse
+	(*CreateLoungeBookingRequest)(nil),                        // 149: sttattus.workout.v1.CreateLoungeBookingRequest
+	(*CreateLoungeBookingResponse)(nil),                       // 150: sttattus.workout.v1.CreateLoungeBookingResponse
+	(*CancelLoungeBookingRequest)(nil),                        // 151: sttattus.workout.v1.CancelLoungeBookingRequest
+	(*CancelLoungeBookingResponse)(nil),                       // 152: sttattus.workout.v1.CancelLoungeBookingResponse
+	(*Coach)(nil),                                             // 153: sttattus.workout.v1.Coach
+	(*ListCoachesRequest)(nil),                                // 154: sttattus.workout.v1.ListCoachesRequest
+	(*ListCoachesResponse)(nil),                               // 155: sttattus.workout.v1.ListCoachesResponse
+	(*RequestCoachBookingRequest)(nil),                        // 156: sttattus.workout.v1.RequestCoachBookingRequest
+	(*RequestCoachBookingResponse)(nil),                       // 157: sttattus.workout.v1.RequestCoachBookingResponse
+	(*GenerateForgeAlmanacRequest)(nil),                       // 158: sttattus.workout.v1.GenerateForgeAlmanacRequest
+	(*GenerateForgeAlmanacResponse)(nil),                      // 159: sttattus.workout.v1.GenerateForgeAlmanacResponse
+	(*AnalyzeFormVideoRequest)(nil),                           // 160: sttattus.workout.v1.AnalyzeFormVideoRequest
+	(*AnalyzeFormVideoResponse)(nil),                          // 161: sttattus.workout.v1.AnalyzeFormVideoResponse
+	(*AthleteShare)(nil),                                      // 162: sttattus.workout.v1.AthleteShare
+	(*CreateAthleteShareRequest)(nil),                         // 163: sttattus.workout.v1.CreateAthleteShareRequest
+	(*CreateAthleteShareResponse)(nil),                        // 164: sttattus.workout.v1.CreateAthleteShareResponse
+	(*ListMyAthleteSharesRequest)(nil),                        // 165: sttattus.workout.v1.ListMyAthleteSharesRequest
+	(*ListMyAthleteSharesResponse)(nil),                       // 166: sttattus.workout.v1.ListMyAthleteSharesResponse
+	(*RevokeAthleteShareRequest)(nil),                         // 167: sttattus.workout.v1.RevokeAthleteShareRequest
+	(*RevokeAthleteShareResponse)(nil),                        // 168: sttattus.workout.v1.RevokeAthleteShareResponse
+	(*CoachThread)(nil),                                       // 169: sttattus.workout.v1.CoachThread
+	(*CoachMessage)(nil),                                      // 170: sttattus.workout.v1.CoachMessage
+	(*StartCoachThreadRequest)(nil),                           // 171: sttattus.workout.v1.StartCoachThreadRequest
+	(*StartCoachThreadResponse)(nil),                          // 172: sttattus.workout.v1.StartCoachThreadResponse
+	(*ListMyCoachThreadsRequest)(nil),                         // 173: sttattus.workout.v1.ListMyCoachThreadsRequest
+	(*ListMyCoachThreadsResponse)(nil),                        // 174: sttattus.workout.v1.ListMyCoachThreadsResponse
+	(*GetCoachThreadRequest)(nil),                             // 175: sttattus.workout.v1.GetCoachThreadRequest
+	(*GetCoachThreadResponse)(nil),                            // 176: sttattus.workout.v1.GetCoachThreadResponse
+	(*PostCoachMessageRequest)(nil),                           // 177: sttattus.workout.v1.PostCoachMessageRequest
+	(*PostCoachMessageResponse)(nil),                          // 178: sttattus.workout.v1.PostCoachMessageResponse
+	(*AnthologyArticle)(nil),                                  // 179: sttattus.workout.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                      // 180: sttattus.workout.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                     // 181: sttattus.workout.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                        // 182: sttattus.workout.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                       // 183: sttattus.workout.v1.GetAnthologyArticleResponse
+	(*SimulateForgeRankRequest)(nil),                          // 184: sttattus.workout.v1.SimulateForgeRankRequest
+	(*SimulateForgeRankResponse)(nil),                         // 185: sttattus.workout.v1.SimulateForgeRankResponse
+	(*GetRecoveryScoreRequest)(nil),                           // 186: sttattus.workout.v1.GetRecoveryScoreRequest
+	(*GetRecoveryScoreResponse)(nil),                          // 187: sttattus.workout.v1.GetRecoveryScoreResponse
+	(*AdaptiveProgressionRuleItem)(nil),                       // 188: sttattus.workout.v1.AdaptiveProgressionRuleItem
+	(*AdaptiveProgrammeVersionItem)(nil),                      // 189: sttattus.workout.v1.AdaptiveProgrammeVersionItem
+	(*AdaptiveReplanEventItem)(nil),                           // 190: sttattus.workout.v1.AdaptiveReplanEventItem
+	(*AdaptiveProgrammingOverview)(nil),                       // 191: sttattus.workout.v1.AdaptiveProgrammingOverview
+	(*GetAdaptiveProgrammingOverviewRequest)(nil),             // 192: sttattus.workout.v1.GetAdaptiveProgrammingOverviewRequest
+	(*GetAdaptiveProgrammingOverviewResponse)(nil),            // 193: sttattus.workout.v1.GetAdaptiveProgrammingOverviewResponse
+	(*GenerateOrUpdateProgrammeVersionRequest)(nil),           // 194: sttattus.workout.v1.GenerateOrUpdateProgrammeVersionRequest
+	(*GenerateOrUpdateProgrammeVersionResponse)(nil),          // 195: sttattus.workout.v1.GenerateOrUpdateProgrammeVersionResponse
+	(*DecideProgrammeDraftAcceptanceRequest)(nil),             // 196: sttattus.workout.v1.DecideProgrammeDraftAcceptanceRequest
+	(*DecideProgrammeDraftAcceptanceResponse)(nil),            // 197: sttattus.workout.v1.DecideProgrammeDraftAcceptanceResponse
+	(*TriggerSafeAdaptiveReplanRequest)(nil),                  // 198: sttattus.workout.v1.TriggerSafeAdaptiveReplanRequest
+	(*TriggerSafeAdaptiveReplanResponse)(nil),                 // 199: sttattus.workout.v1.TriggerSafeAdaptiveReplanResponse
+	(*UpsertAdaptiveProgressionRuleRequest)(nil),              // 200: sttattus.workout.v1.UpsertAdaptiveProgressionRuleRequest
+	(*UpsertAdaptiveProgressionRuleResponse)(nil),             // 201: sttattus.workout.v1.UpsertAdaptiveProgressionRuleResponse
+	(*RollbackProgrammeVersionRequest)(nil),                   // 202: sttattus.workout.v1.RollbackProgrammeVersionRequest
+	(*RollbackProgrammeVersionResponse)(nil),                  // 203: sttattus.workout.v1.RollbackProgrammeVersionResponse
+	(*MovementGraphProfileItem)(nil),                          // 204: sttattus.workout.v1.MovementGraphProfileItem
+	(*MovementSubstitutionEdgeItem)(nil),                      // 205: sttattus.workout.v1.MovementSubstitutionEdgeItem
+	(*PersonalTechniqueManualItem)(nil),                       // 206: sttattus.workout.v1.PersonalTechniqueManualItem
+	(*MovementIntelligenceOverview)(nil),                      // 207: sttattus.workout.v1.MovementIntelligenceOverview
+	(*GetMovementIntelligenceOverviewRequest)(nil),            // 208: sttattus.workout.v1.GetMovementIntelligenceOverviewRequest
+	(*GetMovementIntelligenceOverviewResponse)(nil),           // 209: sttattus.workout.v1.GetMovementIntelligenceOverviewResponse
+	(*RankIntentPreservingSubstitutionsRequest)(nil),          // 210: sttattus.workout.v1.RankIntentPreservingSubstitutionsRequest
+	(*RankIntentPreservingSubstitutionsResponse)(nil),         // 211: sttattus.workout.v1.RankIntentPreservingSubstitutionsResponse
+	(*UpsertPersonalTechniqueManualRequest)(nil),              // 212: sttattus.workout.v1.UpsertPersonalTechniqueManualRequest
+	(*UpsertPersonalTechniqueManualResponse)(nil),             // 213: sttattus.workout.v1.UpsertPersonalTechniqueManualResponse
+	(*SubmitCustomMovementForReviewRequest)(nil),              // 214: sttattus.workout.v1.SubmitCustomMovementForReviewRequest
+	(*SubmitCustomMovementForReviewResponse)(nil),             // 215: sttattus.workout.v1.SubmitCustomMovementForReviewResponse
+	(*UpsertMovementGraphProfileRequest)(nil),                 // 216: sttattus.workout.v1.UpsertMovementGraphProfileRequest
+	(*UpsertMovementGraphProfileResponse)(nil),                // 217: sttattus.workout.v1.UpsertMovementGraphProfileResponse
+	(*RecordSubstitutionSelectionRequest)(nil),                // 218: sttattus.workout.v1.RecordSubstitutionSelectionRequest
+	(*RecordSubstitutionSelectionResponse)(nil),               // 219: sttattus.workout.v1.RecordSubstitutionSelectionResponse
+	(*FormCapabilityMatrixItem)(nil),                          // 220: sttattus.workout.v1.FormCapabilityMatrixItem
+	(*FormAnalysisAttemptItem)(nil),                           // 221: sttattus.workout.v1.FormAnalysisAttemptItem
+	(*FormPrivacyConsentItem)(nil),                            // 222: sttattus.workout.v1.FormPrivacyConsentItem
+	(*FormIntelligenceOverview)(nil),                          // 223: sttattus.workout.v1.FormIntelligenceOverview
+	(*GetFormIntelligenceOverviewRequest)(nil),                // 224: sttattus.workout.v1.GetFormIntelligenceOverviewRequest
+	(*GetFormIntelligenceOverviewResponse)(nil),               // 225: sttattus.workout.v1.GetFormIntelligenceOverviewResponse
+	(*SubmitFormClipObservationRequest)(nil),                  // 226: sttattus.workout.v1.SubmitFormClipObservationRequest
+	(*SubmitFormClipObservationResponse)(nil),                 // 227: sttattus.workout.v1.SubmitFormClipObservationResponse
+	(*EscalateFormClipToCoachRequest)(nil),                    // 228: sttattus.workout.v1.EscalateFormClipToCoachRequest
+	(*EscalateFormClipToCoachResponse)(nil),                   // 229: sttattus.workout.v1.EscalateFormClipToCoachResponse
+	(*DecideCoachFormReviewRequest)(nil),                      // 230: sttattus.workout.v1.DecideCoachFormReviewRequest
+	(*DecideCoachFormReviewResponse)(nil),                     // 231: sttattus.workout.v1.DecideCoachFormReviewResponse
+	(*UpdateFormPrivacyAndRetentionRequest)(nil),              // 232: sttattus.workout.v1.UpdateFormPrivacyAndRetentionRequest
+	(*UpdateFormPrivacyAndRetentionResponse)(nil),             // 233: sttattus.workout.v1.UpdateFormPrivacyAndRetentionResponse
+	(*EraseFormClipAndKeypointsRequest)(nil),                  // 234: sttattus.workout.v1.EraseFormClipAndKeypointsRequest
+	(*EraseFormClipAndKeypointsResponse)(nil),                 // 235: sttattus.workout.v1.EraseFormClipAndKeypointsResponse
+	(*WearablePurposeGrantItem)(nil),                          // 236: sttattus.workout.v1.WearablePurposeGrantItem
+	(*RecoverySensorStreamItem)(nil),                          // 237: sttattus.workout.v1.RecoverySensorStreamItem
+	(*RecoveryReadinessAssessmentItem)(nil),                   // 238: sttattus.workout.v1.RecoveryReadinessAssessmentItem
+	(*WearableRecoveryFusionOverview)(nil),                    // 239: sttattus.workout.v1.WearableRecoveryFusionOverview
+	(*GetWearableRecoveryFusionOverviewRequest)(nil),          // 240: sttattus.workout.v1.GetWearableRecoveryFusionOverviewRequest
+	(*GetWearableRecoveryFusionOverviewResponse)(nil),         // 241: sttattus.workout.v1.GetWearableRecoveryFusionOverviewResponse
+	(*UpsertWearablePurposeGrantRequest)(nil),                 // 242: sttattus.workout.v1.UpsertWearablePurposeGrantRequest
+	(*UpsertWearablePurposeGrantResponse)(nil),                // 243: sttattus.workout.v1.UpsertWearablePurposeGrantResponse
+	(*RevokeWearablePurposeGrantRequest)(nil),                 // 244: sttattus.workout.v1.RevokeWearablePurposeGrantRequest
+	(*RevokeWearablePurposeGrantResponse)(nil),                // 245: sttattus.workout.v1.RevokeWearablePurposeGrantResponse
+	(*ConfigureRecoverySensorStreamRequest)(nil),              // 246: sttattus.workout.v1.ConfigureRecoverySensorStreamRequest
+	(*ConfigureRecoverySensorStreamResponse)(nil),             // 247: sttattus.workout.v1.ConfigureRecoverySensorStreamResponse
+	(*SubmitNoWearableSubjectiveReadinessRequest)(nil),        // 248: sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessRequest
+	(*SubmitNoWearableSubjectiveReadinessResponse)(nil),       // 249: sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessResponse
+	(*ReconcileSensorConflictOrOutageRequest)(nil),            // 250: sttattus.workout.v1.ReconcileSensorConflictOrOutageRequest
+	(*ReconcileSensorConflictOrOutageResponse)(nil),           // 251: sttattus.workout.v1.ReconcileSensorConflictOrOutageResponse
+	(*PerformanceExposureLedgerItem)(nil),                     // 252: sttattus.workout.v1.PerformanceExposureLedgerItem
+	(*StrengthPerformanceModelItem)(nil),                      // 253: sttattus.workout.v1.StrengthPerformanceModelItem
+	(*TrainingNOf1ExperimentItem)(nil),                        // 254: sttattus.workout.v1.TrainingNOf1ExperimentItem
+	(*PerformanceAnalyticsStudioOverview)(nil),                // 255: sttattus.workout.v1.PerformanceAnalyticsStudioOverview
+	(*GetPerformanceAnalyticsStudioOverviewRequest)(nil),      // 256: sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewRequest
+	(*GetPerformanceAnalyticsStudioOverviewResponse)(nil),     // 257: sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewResponse
+	(*RecordPerformanceExposureLedgerRequest)(nil),            // 258: sttattus.workout.v1.RecordPerformanceExposureLedgerRequest
+	(*RecordPerformanceExposureLedgerResponse)(nil),           // 259: sttattus.workout.v1.RecordPerformanceExposureLedgerResponse
+	(*UpsertStrengthPerformanceModelRequest)(nil),             // 260: sttattus.workout.v1.UpsertStrengthPerformanceModelRequest
+	(*UpsertStrengthPerformanceModelResponse)(nil),            // 261: sttattus.workout.v1.UpsertStrengthPerformanceModelResponse
+	(*CreateTrainingNOf1ExperimentRequest)(nil),               // 262: sttattus.workout.v1.CreateTrainingNOf1ExperimentRequest
+	(*CreateTrainingNOf1ExperimentResponse)(nil),              // 263: sttattus.workout.v1.CreateTrainingNOf1ExperimentResponse
+	(*LogTrainingNOf1ExperimentSessionRequest)(nil),           // 264: sttattus.workout.v1.LogTrainingNOf1ExperimentSessionRequest
+	(*LogTrainingNOf1ExperimentSessionResponse)(nil),          // 265: sttattus.workout.v1.LogTrainingNOf1ExperimentSessionResponse
+	(*EvaluateTrainingNOf1ExperimentRequest)(nil),             // 266: sttattus.workout.v1.EvaluateTrainingNOf1ExperimentRequest
+	(*EvaluateTrainingNOf1ExperimentResponse)(nil),            // 267: sttattus.workout.v1.EvaluateTrainingNOf1ExperimentResponse
+	(*InjuryRestrictionLockItem)(nil),                         // 268: sttattus.workout.v1.InjuryRestrictionLockItem
+	(*PainSessionTriageEventItem)(nil),                        // 269: sttattus.workout.v1.PainSessionTriageEventItem
+	(*ReturnToTrainingStageItem)(nil),                         // 270: sttattus.workout.v1.ReturnToTrainingStageItem
+	(*InjuryReturnPathwayOverview)(nil),                       // 271: sttattus.workout.v1.InjuryReturnPathwayOverview
+	(*GetInjuryReturnPathwayOverviewRequest)(nil),             // 272: sttattus.workout.v1.GetInjuryReturnPathwayOverviewRequest
+	(*GetInjuryReturnPathwayOverviewResponse)(nil),            // 273: sttattus.workout.v1.GetInjuryReturnPathwayOverviewResponse
+	(*UpsertInjuryRestrictionLockRequest)(nil),                // 274: sttattus.workout.v1.UpsertInjuryRestrictionLockRequest
+	(*UpsertInjuryRestrictionLockResponse)(nil),               // 275: sttattus.workout.v1.UpsertInjuryRestrictionLockResponse
+	(*LogInSessionPainTriageEventRequest)(nil),                // 276: sttattus.workout.v1.LogInSessionPainTriageEventRequest
+	(*LogInSessionPainTriageEventResponse)(nil),               // 277: sttattus.workout.v1.LogInSessionPainTriageEventResponse
+	(*AdvanceReturnToTrainingStageRequest)(nil),               // 278: sttattus.workout.v1.AdvanceReturnToTrainingStageRequest
+	(*AdvanceReturnToTrainingStageResponse)(nil),              // 279: sttattus.workout.v1.AdvanceReturnToTrainingStageResponse
+	(*RecordReturnToTrainingSetbackRequest)(nil),              // 280: sttattus.workout.v1.RecordReturnToTrainingSetbackRequest
+	(*RecordReturnToTrainingSetbackResponse)(nil),             // 281: sttattus.workout.v1.RecordReturnToTrainingSetbackResponse
+	(*ClearInjuryRestrictionLockRequest)(nil),                 // 282: sttattus.workout.v1.ClearInjuryRestrictionLockRequest
+	(*ClearInjuryRestrictionLockResponse)(nil),                // 283: sttattus.workout.v1.ClearInjuryRestrictionLockResponse
+	(*CoachAthleteScopedGrantItem)(nil),                       // 284: sttattus.workout.v1.CoachAthleteScopedGrantItem
+	(*CoachChangeProposalItem)(nil),                           // 285: sttattus.workout.v1.CoachChangeProposalItem
+	(*CoachMarketplaceListingItem)(nil),                       // 286: sttattus.workout.v1.CoachMarketplaceListingItem
+	(*CoachOsCollaborationOverview)(nil),                      // 287: sttattus.workout.v1.CoachOsCollaborationOverview
+	(*GetCoachOsCollaborationOverviewRequest)(nil),            // 288: sttattus.workout.v1.GetCoachOsCollaborationOverviewRequest
+	(*GetCoachOsCollaborationOverviewResponse)(nil),           // 289: sttattus.workout.v1.GetCoachOsCollaborationOverviewResponse
+	(*UpsertCoachAthleteScopedGrantRequest)(nil),              // 290: sttattus.workout.v1.UpsertCoachAthleteScopedGrantRequest
+	(*UpsertCoachAthleteScopedGrantResponse)(nil),             // 291: sttattus.workout.v1.UpsertCoachAthleteScopedGrantResponse
+	(*RevokeCoachAthleteScopedGrantRequest)(nil),              // 292: sttattus.workout.v1.RevokeCoachAthleteScopedGrantRequest
+	(*RevokeCoachAthleteScopedGrantResponse)(nil),             // 293: sttattus.workout.v1.RevokeCoachAthleteScopedGrantResponse
+	(*ProposeCoachProgrammeChangeRequest)(nil),                // 294: sttattus.workout.v1.ProposeCoachProgrammeChangeRequest
+	(*ProposeCoachProgrammeChangeResponse)(nil),               // 295: sttattus.workout.v1.ProposeCoachProgrammeChangeResponse
+	(*RespondToCoachChangeProposalRequest)(nil),               // 296: sttattus.workout.v1.RespondToCoachChangeProposalRequest
+	(*RespondToCoachChangeProposalResponse)(nil),              // 297: sttattus.workout.v1.RespondToCoachChangeProposalResponse
+	(*UpdateCoachMarketplaceEngagementRequest)(nil),           // 298: sttattus.workout.v1.UpdateCoachMarketplaceEngagementRequest
+	(*UpdateCoachMarketplaceEngagementResponse)(nil),          // 299: sttattus.workout.v1.UpdateCoachMarketplaceEngagementResponse
+	(*TeamSquadRosterItem)(nil),                               // 300: sttattus.workout.v1.TeamSquadRosterItem
+	(*TeamTrafficLightCheckinItem)(nil),                       // 301: sttattus.workout.v1.TeamTrafficLightCheckinItem
+	(*FacilityRackOperationItem)(nil),                         // 302: sttattus.workout.v1.FacilityRackOperationItem
+	(*TeamsClubsFacilitiesOverview)(nil),                      // 303: sttattus.workout.v1.TeamsClubsFacilitiesOverview
+	(*GetTeamsClubsFacilitiesOverviewRequest)(nil),            // 304: sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewRequest
+	(*GetTeamsClubsFacilitiesOverviewResponse)(nil),           // 305: sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewResponse
+	(*UpsertTeamSquadRosterRequest)(nil),                      // 306: sttattus.workout.v1.UpsertTeamSquadRosterRequest
+	(*UpsertTeamSquadRosterResponse)(nil),                     // 307: sttattus.workout.v1.UpsertTeamSquadRosterResponse
+	(*SubmitTeamTrafficLightCheckinRequest)(nil),              // 308: sttattus.workout.v1.SubmitTeamTrafficLightCheckinRequest
+	(*SubmitTeamTrafficLightCheckinResponse)(nil),             // 309: sttattus.workout.v1.SubmitTeamTrafficLightCheckinResponse
+	(*ReserveOrUpdateFacilityRackStationRequest)(nil),         // 310: sttattus.workout.v1.ReserveOrUpdateFacilityRackStationRequest
+	(*ReserveOrUpdateFacilityRackStationResponse)(nil),        // 311: sttattus.workout.v1.ReserveOrUpdateFacilityRackStationResponse
+	(*FlagFacilityMaintenanceOrIncidentRequest)(nil),          // 312: sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentRequest
+	(*FlagFacilityMaintenanceOrIncidentResponse)(nil),         // 313: sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentResponse
+	(*VerifyYouthSquadSafeguardingRequest)(nil),               // 314: sttattus.workout.v1.VerifyYouthSquadSafeguardingRequest
+	(*VerifyYouthSquadSafeguardingResponse)(nil),              // 315: sttattus.workout.v1.VerifyYouthSquadSafeguardingResponse
+	(*CompetitionEventPlanItem)(nil),                          // 316: sttattus.workout.v1.CompetitionEventPlanItem
+	(*VerifiedPerformanceResultItem)(nil),                     // 317: sttattus.workout.v1.VerifiedPerformanceResultItem
+	(*CompetitionRuleTueCheckItem)(nil),                       // 318: sttattus.workout.v1.CompetitionRuleTueCheckItem
+	(*CompetitionVerifiedPerformanceOverview)(nil),            // 319: sttattus.workout.v1.CompetitionVerifiedPerformanceOverview
+	(*GetCompetitionVerifiedPerformanceOverviewRequest)(nil),  // 320: sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewRequest
+	(*GetCompetitionVerifiedPerformanceOverviewResponse)(nil), // 321: sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewResponse
+	(*UpsertCompetitionEventPlanRequest)(nil),                 // 322: sttattus.workout.v1.UpsertCompetitionEventPlanRequest
+	(*UpsertCompetitionEventPlanResponse)(nil),                // 323: sttattus.workout.v1.UpsertCompetitionEventPlanResponse
+	(*SubmitVerifiedPerformanceResultRequest)(nil),            // 324: sttattus.workout.v1.SubmitVerifiedPerformanceResultRequest
+	(*SubmitVerifiedPerformanceResultResponse)(nil),           // 325: sttattus.workout.v1.SubmitVerifiedPerformanceResultResponse
+	(*FilePerformanceResultAppealRequest)(nil),                // 326: sttattus.workout.v1.FilePerformanceResultAppealRequest
+	(*FilePerformanceResultAppealResponse)(nil),               // 327: sttattus.workout.v1.FilePerformanceResultAppealResponse
+	(*RecordCompetitionRuleAndTueCheckRequest)(nil),           // 328: sttattus.workout.v1.RecordCompetitionRuleAndTueCheckRequest
+	(*RecordCompetitionRuleAndTueCheckResponse)(nil),          // 329: sttattus.workout.v1.RecordCompetitionRuleAndTueCheckResponse
+	(*ToggleOfflineVenueCompetitionModeRequest)(nil),          // 330: sttattus.workout.v1.ToggleOfflineVenueCompetitionModeRequest
+	(*ToggleOfflineVenueCompetitionModeResponse)(nil),         // 331: sttattus.workout.v1.ToggleOfflineVenueCompetitionModeResponse
+	(*SportHybridStudioModuleItem)(nil),                       // 332: sttattus.workout.v1.SportHybridStudioModuleItem
+	(*HybridInterferenceScheduleItem)(nil),                    // 333: sttattus.workout.v1.HybridInterferenceScheduleItem
+	(*SportSkillAndManualSessionItem)(nil),                    // 334: sttattus.workout.v1.SportSkillAndManualSessionItem
+	(*SportHybridStudiosOverview)(nil),                        // 335: sttattus.workout.v1.SportHybridStudiosOverview
+	(*GetSportHybridStudiosOverviewRequest)(nil),              // 336: sttattus.workout.v1.GetSportHybridStudiosOverviewRequest
+	(*GetSportHybridStudiosOverviewResponse)(nil),             // 337: sttattus.workout.v1.GetSportHybridStudiosOverviewResponse
+	(*UpsertSportHybridStudioModuleRequest)(nil),              // 338: sttattus.workout.v1.UpsertSportHybridStudioModuleRequest
+	(*UpsertSportHybridStudioModuleResponse)(nil),             // 339: sttattus.workout.v1.UpsertSportHybridStudioModuleResponse
+	(*ConfigureHybridInterferenceScheduleRequest)(nil),        // 340: sttattus.workout.v1.ConfigureHybridInterferenceScheduleRequest
+	(*ConfigureHybridInterferenceScheduleResponse)(nil),       // 341: sttattus.workout.v1.ConfigureHybridInterferenceScheduleResponse
+	(*LogSportSkillOrManualActivitySessionRequest)(nil),       // 342: sttattus.workout.v1.LogSportSkillOrManualActivitySessionRequest
+	(*LogSportSkillOrManualActivitySessionResponse)(nil),      // 343: sttattus.workout.v1.LogSportSkillOrManualActivitySessionResponse
+	(*RegisterCustomManualUnvalidatedSportRequest)(nil),       // 344: sttattus.workout.v1.RegisterCustomManualUnvalidatedSportRequest
+	(*RegisterCustomManualUnvalidatedSportResponse)(nil),      // 345: sttattus.workout.v1.RegisterCustomManualUnvalidatedSportResponse
+	(*AuditHybridLoadDeDuplicationRequest)(nil),               // 346: sttattus.workout.v1.AuditHybridLoadDeDuplicationRequest
+	(*AuditHybridLoadDeDuplicationResponse)(nil),              // 347: sttattus.workout.v1.AuditHybridLoadDeDuplicationResponse
+	(*EquipmentLocationProfileItem)(nil),                      // 348: sttattus.workout.v1.EquipmentLocationProfileItem
+	(*TravelWorkoutAdaptationItem)(nil),                       // 349: sttattus.workout.v1.TravelWorkoutAdaptationItem
+	(*VerifiedGymVenueDirectoryItem)(nil),                     // 350: sttattus.workout.v1.VerifiedGymVenueDirectoryItem
+	(*EquipmentTravelAdaptationOverview)(nil),                 // 351: sttattus.workout.v1.EquipmentTravelAdaptationOverview
+	(*GetEquipmentTravelAdaptationOverviewRequest)(nil),       // 352: sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewRequest
+	(*GetEquipmentTravelAdaptationOverviewResponse)(nil),      // 353: sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewResponse
+	(*UpsertEquipmentLocationProfileRequest)(nil),             // 354: sttattus.workout.v1.UpsertEquipmentLocationProfileRequest
+	(*UpsertEquipmentLocationProfileResponse)(nil),            // 355: sttattus.workout.v1.UpsertEquipmentLocationProfileResponse
+	(*GenerateTravelWorkoutAdaptationRequest)(nil),            // 356: sttattus.workout.v1.GenerateTravelWorkoutAdaptationRequest
+	(*GenerateTravelWorkoutAdaptationResponse)(nil),           // 357: sttattus.workout.v1.GenerateTravelWorkoutAdaptationResponse
+	(*UpsertVerifiedGymVenueListingRequest)(nil),              // 358: sttattus.workout.v1.UpsertVerifiedGymVenueListingRequest
+	(*UpsertVerifiedGymVenueListingResponse)(nil),             // 359: sttattus.workout.v1.UpsertVerifiedGymVenueListingResponse
+	(*FlagStaleGymVenueListingRequest)(nil),                   // 360: sttattus.workout.v1.FlagStaleGymVenueListingRequest
+	(*FlagStaleGymVenueListingResponse)(nil),                  // 361: sttattus.workout.v1.FlagStaleGymVenueListingResponse
+	(*RevertTravelWorkoutToHomeGymRequest)(nil),               // 362: sttattus.workout.v1.RevertTravelWorkoutToHomeGymRequest
+	(*RevertTravelWorkoutToHomeGymResponse)(nil),              // 363: sttattus.workout.v1.RevertTravelWorkoutToHomeGymResponse
+	(*SessionFuelHydrationPlanItem)(nil),                      // 364: sttattus.workout.v1.SessionFuelHydrationPlanItem
+	(*PrivateBodyCompositionTrendItem)(nil),                   // 365: sttattus.workout.v1.PrivateBodyCompositionTrendItem
+	(*WeightClassSafetyMonitorItem)(nil),                      // 366: sttattus.workout.v1.WeightClassSafetyMonitorItem
+	(*FuelWeightSafetyOverview)(nil),                          // 367: sttattus.workout.v1.FuelWeightSafetyOverview
+	(*GetFuelWeightSafetyOverviewRequest)(nil),                // 368: sttattus.workout.v1.GetFuelWeightSafetyOverviewRequest
+	(*GetFuelWeightSafetyOverviewResponse)(nil),               // 369: sttattus.workout.v1.GetFuelWeightSafetyOverviewResponse
+	(*UpsertSessionFuelHydrationPlanRequest)(nil),             // 370: sttattus.workout.v1.UpsertSessionFuelHydrationPlanRequest
+	(*UpsertSessionFuelHydrationPlanResponse)(nil),            // 371: sttattus.workout.v1.UpsertSessionFuelHydrationPlanResponse
+	(*RecordPrivateBodyCompositionTrendRequest)(nil),          // 372: sttattus.workout.v1.RecordPrivateBodyCompositionTrendRequest
+	(*RecordPrivateBodyCompositionTrendResponse)(nil),         // 373: sttattus.workout.v1.RecordPrivateBodyCompositionTrendResponse
+	(*EvaluateWeightClassSafetyPlanRequest)(nil),              // 374: sttattus.workout.v1.EvaluateWeightClassSafetyPlanRequest
+	(*EvaluateWeightClassSafetyPlanResponse)(nil),             // 375: sttattus.workout.v1.EvaluateWeightClassSafetyPlanResponse
+	(*EscalateWeightCutToProfessionalRouteRequest)(nil),       // 376: sttattus.workout.v1.EscalateWeightCutToProfessionalRouteRequest
+	(*EscalateWeightCutToProfessionalRouteResponse)(nil),      // 377: sttattus.workout.v1.EscalateWeightCutToProfessionalRouteResponse
+	(*VerifyBodyCompositionPrivacyIsolationRequest)(nil),      // 378: sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationRequest
+	(*VerifyBodyCompositionPrivacyIsolationResponse)(nil),     // 379: sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationResponse
+	(*HealthyCompetitionCohortItem)(nil),                      // 380: sttattus.workout.v1.HealthyCompetitionCohortItem
+	(*CrewChallengeAndModerationItem)(nil),                    // 381: sttattus.workout.v1.CrewChallengeAndModerationItem
+	(*EmpireRewardContributionItem)(nil),                      // 382: sttattus.workout.v1.EmpireRewardContributionItem
+	(*HealthyCompetitionCrewsOverview)(nil),                   // 383: sttattus.workout.v1.HealthyCompetitionCrewsOverview
+	(*GetHealthyCompetitionCrewsOverviewRequest)(nil),         // 384: sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewRequest
+	(*GetHealthyCompetitionCrewsOverviewResponse)(nil),        // 385: sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewResponse
+	(*UpsertHealthyCompetitionCohortRequest)(nil),             // 386: sttattus.workout.v1.UpsertHealthyCompetitionCohortRequest
+	(*UpsertHealthyCompetitionCohortResponse)(nil),            // 387: sttattus.workout.v1.UpsertHealthyCompetitionCohortResponse
+	(*ToggleCompetitionMutePreferenceRequest)(nil),            // 388: sttattus.workout.v1.ToggleCompetitionMutePreferenceRequest
+	(*ToggleCompetitionMutePreferenceResponse)(nil),           // 389: sttattus.workout.v1.ToggleCompetitionMutePreferenceResponse
+	(*SubmitCrewChallengeOrAppealRequest)(nil),                // 390: sttattus.workout.v1.SubmitCrewChallengeOrAppealRequest
+	(*SubmitCrewChallengeOrAppealResponse)(nil),               // 391: sttattus.workout.v1.SubmitCrewChallengeOrAppealResponse
+	(*RecordEmpireRewardContributionRequest)(nil),             // 392: sttattus.workout.v1.RecordEmpireRewardContributionRequest
+	(*RecordEmpireRewardContributionResponse)(nil),            // 393: sttattus.workout.v1.RecordEmpireRewardContributionResponse
+	(*AdjudicateCrewAntiCheatCaseRequest)(nil),                // 394: sttattus.workout.v1.AdjudicateCrewAntiCheatCaseRequest
+	(*AdjudicateCrewAntiCheatCaseResponse)(nil),               // 395: sttattus.workout.v1.AdjudicateCrewAntiCheatCaseResponse
+	(*OfflineMultimodalSyncCertificationItem)(nil),            // 396: sttattus.workout.v1.OfflineMultimodalSyncCertificationItem
+	(*AccessibilityAdaptiveProfileItem)(nil),                  // 397: sttattus.workout.v1.AccessibilityAdaptiveProfileItem
+	(*MigrationDeletionCertificationItem)(nil),                // 398: sttattus.workout.v1.MigrationDeletionCertificationItem
+	(*OfflineAccessibleReleaseCertOverview)(nil),              // 399: sttattus.workout.v1.OfflineAccessibleReleaseCertOverview
+	(*GetOfflineAccessibleReleaseCertOverviewRequest)(nil),    // 400: sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewRequest
+	(*GetOfflineAccessibleReleaseCertOverviewResponse)(nil),   // 401: sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewResponse
+	(*CertifyOfflineMultimodalSyncStateRequest)(nil),          // 402: sttattus.workout.v1.CertifyOfflineMultimodalSyncStateRequest
+	(*CertifyOfflineMultimodalSyncStateResponse)(nil),         // 403: sttattus.workout.v1.CertifyOfflineMultimodalSyncStateResponse
+	(*UpsertAccessibilityAdaptiveProfileRequest)(nil),         // 404: sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileRequest
+	(*UpsertAccessibilityAdaptiveProfileResponse)(nil),        // 405: sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileResponse
+	(*RunMigrationAndErasureCertificationRequest)(nil),        // 406: sttattus.workout.v1.RunMigrationAndErasureCertificationRequest
+	(*RunMigrationAndErasureCertificationResponse)(nil),       // 407: sttattus.workout.v1.RunMigrationAndErasureCertificationResponse
+	(*VerifyBatteryAwareSensorPolicyRequest)(nil),             // 408: sttattus.workout.v1.VerifyBatteryAwareSensorPolicyRequest
+	(*VerifyBatteryAwareSensorPolicyResponse)(nil),            // 409: sttattus.workout.v1.VerifyBatteryAwareSensorPolicyResponse
+	(*SignOffForge16Of16ReleaseGateRequest)(nil),              // 410: sttattus.workout.v1.SignOffForge16Of16ReleaseGateRequest
+	(*SignOffForge16Of16ReleaseGateResponse)(nil),             // 411: sttattus.workout.v1.SignOffForge16Of16ReleaseGateResponse
+	(*v1.PageRequest)(nil),                                    // 412: sttattus.common.v1.PageRequest
+	(*v1.PageResponse)(nil),                                   // 413: sttattus.common.v1.PageResponse
 }
 var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	0,   // 0: sttattus.workout.v1.Workout.tags:type_name -> sttattus.workout.v1.Tag
 	1,   // 1: sttattus.workout.v1.DayWorkout.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 2: sttattus.workout.v1.DayWorkout.series:type_name -> sttattus.workout.v1.Series
 	3,   // 3: sttattus.workout.v1.DayWorkout.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	188, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 4: sttattus.workout.v1.ListWorkoutsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	1,   // 5: sttattus.workout.v1.ListWorkoutsResponse.workouts:type_name -> sttattus.workout.v1.Workout
-	189, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
+	413, // 6: sttattus.workout.v1.ListWorkoutsResponse.page:type_name -> sttattus.common.v1.PageResponse
 	1,   // 7: sttattus.workout.v1.GetWorkoutResponse.workout:type_name -> sttattus.workout.v1.Workout
 	2,   // 8: sttattus.workout.v1.LogDayWorkoutRequest.series:type_name -> sttattus.workout.v1.Series
 	3,   // 9: sttattus.workout.v1.LogDayWorkoutRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
 	4,   // 10: sttattus.workout.v1.LogDayWorkoutResponse.day_workout:type_name -> sttattus.workout.v1.DayWorkout
 	5,   // 11: sttattus.workout.v1.LogDayWorkoutResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
-	188, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 12: sttattus.workout.v1.ListHistoryRequest.page:type_name -> sttattus.common.v1.PageRequest
 	4,   // 13: sttattus.workout.v1.ListHistoryResponse.entries:type_name -> sttattus.workout.v1.DayWorkout
-	189, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
+	413, // 14: sttattus.workout.v1.ListHistoryResponse.page:type_name -> sttattus.common.v1.PageResponse
 	5,   // 15: sttattus.workout.v1.GetForgeStatsResponse.stats:type_name -> sttattus.workout.v1.ForgeStats
 	19,  // 16: sttattus.workout.v1.SessionExercise.sets:type_name -> sttattus.workout.v1.SessionSet
 	20,  // 17: sttattus.workout.v1.ForgeSession.exercises:type_name -> sttattus.workout.v1.SessionExercise
 	21,  // 18: sttattus.workout.v1.ForgeSession.blocks:type_name -> sttattus.workout.v1.SessionBlock
-	188, // 19: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 19: sttattus.workout.v1.ListExercisesRequest.page:type_name -> sttattus.common.v1.PageRequest
 	18,  // 20: sttattus.workout.v1.ListExercisesResponse.exercises:type_name -> sttattus.workout.v1.Exercise
 	23,  // 21: sttattus.workout.v1.CreateSessionRequest.exercises:type_name -> sttattus.workout.v1.PlannedExercise
 	22,  // 22: sttattus.workout.v1.CreateSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	22,  // 23: sttattus.workout.v1.GetSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	22,  // 24: sttattus.workout.v1.GetActiveSessionResponse.session:type_name -> sttattus.workout.v1.ForgeSession
-	188, // 25: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 25: sttattus.workout.v1.ListSessionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	22,  // 26: sttattus.workout.v1.ListSessionsResponse.sessions:type_name -> sttattus.workout.v1.ForgeSession
 	22,  // 27: sttattus.workout.v1.UpdateSessionStatusResponse.session:type_name -> sttattus.workout.v1.ForgeSession
 	19,  // 28: sttattus.workout.v1.LogSetResponse.set:type_name -> sttattus.workout.v1.SessionSet
@@ -13060,7 +29743,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	57,  // 42: sttattus.workout.v1.GetTodayResponse.today:type_name -> sttattus.workout.v1.TodaySnapshot
 	60,  // 43: sttattus.workout.v1.GetForgeStreakResponse.streak:type_name -> sttattus.workout.v1.ForgeStreak
 	63,  // 44: sttattus.workout.v1.CreateFormVideoResponse.video:type_name -> sttattus.workout.v1.FormVideo
-	188, // 45: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 45: sttattus.workout.v1.ListMyFormVideosRequest.page:type_name -> sttattus.common.v1.PageRequest
 	63,  // 46: sttattus.workout.v1.ListMyFormVideosResponse.videos:type_name -> sttattus.workout.v1.FormVideo
 	63,  // 47: sttattus.workout.v1.UpdateFormVideoStatusResponse.video:type_name -> sttattus.workout.v1.FormVideo
 	72,  // 48: sttattus.workout.v1.ProgrammeEnrolment.programme:type_name -> sttattus.workout.v1.Programme
@@ -13075,7 +29758,7 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	88,  // 57: sttattus.workout.v1.GetProgrammeWeekResponse.week:type_name -> sttattus.workout.v1.ProgrammeWeek
 	93,  // 58: sttattus.workout.v1.ListMyPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
 	93,  // 59: sttattus.workout.v1.ListRecentPRsResponse.prs:type_name -> sttattus.workout.v1.PersonalRecord
-	188, // 60: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
+	412, // 60: sttattus.workout.v1.ListBodyCompositionsRequest.page:type_name -> sttattus.common.v1.PageRequest
 	98,  // 61: sttattus.workout.v1.ListBodyCompositionsResponse.entries:type_name -> sttattus.workout.v1.BodyComposition
 	98,  // 62: sttattus.workout.v1.CreateBodyCompositionResponse.entry:type_name -> sttattus.workout.v1.BodyComposition
 	105, // 63: sttattus.workout.v1.ListInjuriesResponse.injuries:type_name -> sttattus.workout.v1.Injury
@@ -13111,157 +29794,450 @@ var file_sttattus_workout_v1_workout_proto_depIdxs = []int32{
 	179, // 93: sttattus.workout.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.workout.v1.AnthologyArticle
 	2,   // 94: sttattus.workout.v1.SimulateForgeRankRequest.series:type_name -> sttattus.workout.v1.Series
 	3,   // 95: sttattus.workout.v1.SimulateForgeRankRequest.strain:type_name -> sttattus.workout.v1.StrainMetrics
-	6,   // 96: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
-	8,   // 97: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
-	10,  // 98: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
-	12,  // 99: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
-	14,  // 100: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
-	16,  // 101: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
-	58,  // 102: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
-	55,  // 103: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
-	24,  // 104: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
-	26,  // 105: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
-	28,  // 106: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
-	30,  // 107: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
-	32,  // 108: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
-	34,  // 109: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
-	36,  // 110: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
-	61,  // 111: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
-	64,  // 112: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
-	66,  // 113: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
-	68,  // 114: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
-	70,  // 115: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
-	74,  // 116: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
-	76,  // 117: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
-	78,  // 118: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
-	80,  // 119: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
-	82,  // 120: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
-	84,  // 121: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
-	89,  // 122: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:input_type -> sttattus.workout.v1.ListProgrammeWeeksRequest
-	91,  // 123: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:input_type -> sttattus.workout.v1.GetProgrammeWeekRequest
-	94,  // 124: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
-	96,  // 125: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
-	99,  // 126: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
-	101, // 127: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
-	103, // 128: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
-	106, // 129: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
-	108, // 130: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
-	110, // 131: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
-	112, // 132: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
-	116, // 133: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
-	118, // 134: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
-	120, // 135: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
-	122, // 136: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
-	126, // 137: sttattus.workout.v1.WorkoutService.ListSensorConnections:input_type -> sttattus.workout.v1.ListSensorConnectionsRequest
-	128, // 138: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:input_type -> sttattus.workout.v1.SetSensorConnectionStatusRequest
-	130, // 139: sttattus.workout.v1.WorkoutService.MarkSensorSynced:input_type -> sttattus.workout.v1.MarkSensorSyncedRequest
-	132, // 140: sttattus.workout.v1.WorkoutService.SetSensorPriority:input_type -> sttattus.workout.v1.SetSensorPriorityRequest
-	136, // 141: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:input_type -> sttattus.workout.v1.GetForgeAnalyticsRequest
-	40,  // 142: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:input_type -> sttattus.workout.v1.GetSessionAnalyticsRequest
-	43,  // 143: sttattus.workout.v1.WorkoutService.ListUserEquipment:input_type -> sttattus.workout.v1.ListUserEquipmentRequest
-	45,  // 144: sttattus.workout.v1.WorkoutService.AddUserEquipment:input_type -> sttattus.workout.v1.AddUserEquipmentRequest
-	47,  // 145: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:input_type -> sttattus.workout.v1.DeleteUserEquipmentRequest
-	50,  // 146: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:input_type -> sttattus.workout.v1.ListWorkoutRivalriesRequest
-	52,  // 147: sttattus.workout.v1.WorkoutService.GetRivalryDetail:input_type -> sttattus.workout.v1.GetRivalryDetailRequest
-	184, // 148: sttattus.workout.v1.WorkoutService.SimulateForgeRank:input_type -> sttattus.workout.v1.SimulateForgeRankRequest
-	186, // 149: sttattus.workout.v1.WorkoutService.GetRecoveryScore:input_type -> sttattus.workout.v1.GetRecoveryScoreRequest
-	171, // 150: sttattus.workout.v1.WorkoutService.StartCoachThread:input_type -> sttattus.workout.v1.StartCoachThreadRequest
-	173, // 151: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:input_type -> sttattus.workout.v1.ListMyCoachThreadsRequest
-	175, // 152: sttattus.workout.v1.WorkoutService.GetCoachThread:input_type -> sttattus.workout.v1.GetCoachThreadRequest
-	177, // 153: sttattus.workout.v1.WorkoutService.PostCoachMessage:input_type -> sttattus.workout.v1.PostCoachMessageRequest
-	180, // 154: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:input_type -> sttattus.workout.v1.ListAnthologyArticlesRequest
-	182, // 155: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:input_type -> sttattus.workout.v1.GetAnthologyArticleRequest
-	163, // 156: sttattus.workout.v1.WorkoutService.CreateAthleteShare:input_type -> sttattus.workout.v1.CreateAthleteShareRequest
-	165, // 157: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:input_type -> sttattus.workout.v1.ListMyAthleteSharesRequest
-	167, // 158: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:input_type -> sttattus.workout.v1.RevokeAthleteShareRequest
-	158, // 159: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:input_type -> sttattus.workout.v1.GenerateForgeAlmanacRequest
-	160, // 160: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:input_type -> sttattus.workout.v1.AnalyzeFormVideoRequest
-	138, // 161: sttattus.workout.v1.WorkoutService.CreateRivalry:input_type -> sttattus.workout.v1.CreateRivalryRequest
-	141, // 162: sttattus.workout.v1.WorkoutService.GetLeaderboard:input_type -> sttattus.workout.v1.GetLeaderboardRequest
-	145, // 163: sttattus.workout.v1.WorkoutService.ListForgeLounges:input_type -> sttattus.workout.v1.ListForgeLoungesRequest
-	147, // 164: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:input_type -> sttattus.workout.v1.ListMyLoungeBookingsRequest
-	149, // 165: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:input_type -> sttattus.workout.v1.CreateLoungeBookingRequest
-	151, // 166: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:input_type -> sttattus.workout.v1.CancelLoungeBookingRequest
-	154, // 167: sttattus.workout.v1.WorkoutService.ListCoaches:input_type -> sttattus.workout.v1.ListCoachesRequest
-	156, // 168: sttattus.workout.v1.WorkoutService.RequestCoachBooking:input_type -> sttattus.workout.v1.RequestCoachBookingRequest
-	7,   // 169: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
-	9,   // 170: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
-	11,  // 171: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
-	13,  // 172: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
-	15,  // 173: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
-	17,  // 174: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
-	59,  // 175: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
-	56,  // 176: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
-	25,  // 177: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
-	27,  // 178: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
-	29,  // 179: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
-	31,  // 180: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
-	33,  // 181: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
-	35,  // 182: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
-	37,  // 183: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
-	62,  // 184: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
-	65,  // 185: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
-	67,  // 186: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
-	69,  // 187: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
-	71,  // 188: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
-	75,  // 189: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
-	77,  // 190: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
-	79,  // 191: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
-	81,  // 192: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
-	83,  // 193: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
-	85,  // 194: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
-	90,  // 195: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:output_type -> sttattus.workout.v1.ListProgrammeWeeksResponse
-	92,  // 196: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:output_type -> sttattus.workout.v1.GetProgrammeWeekResponse
-	95,  // 197: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
-	97,  // 198: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
-	100, // 199: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
-	102, // 200: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
-	104, // 201: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
-	107, // 202: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
-	109, // 203: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
-	111, // 204: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
-	113, // 205: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
-	117, // 206: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
-	119, // 207: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
-	121, // 208: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
-	123, // 209: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
-	127, // 210: sttattus.workout.v1.WorkoutService.ListSensorConnections:output_type -> sttattus.workout.v1.ListSensorConnectionsResponse
-	129, // 211: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:output_type -> sttattus.workout.v1.SetSensorConnectionStatusResponse
-	131, // 212: sttattus.workout.v1.WorkoutService.MarkSensorSynced:output_type -> sttattus.workout.v1.MarkSensorSyncedResponse
-	133, // 213: sttattus.workout.v1.WorkoutService.SetSensorPriority:output_type -> sttattus.workout.v1.SetSensorPriorityResponse
-	137, // 214: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:output_type -> sttattus.workout.v1.GetForgeAnalyticsResponse
-	41,  // 215: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:output_type -> sttattus.workout.v1.GetSessionAnalyticsResponse
-	44,  // 216: sttattus.workout.v1.WorkoutService.ListUserEquipment:output_type -> sttattus.workout.v1.ListUserEquipmentResponse
-	46,  // 217: sttattus.workout.v1.WorkoutService.AddUserEquipment:output_type -> sttattus.workout.v1.AddUserEquipmentResponse
-	48,  // 218: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:output_type -> sttattus.workout.v1.DeleteUserEquipmentResponse
-	51,  // 219: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:output_type -> sttattus.workout.v1.ListWorkoutRivalriesResponse
-	53,  // 220: sttattus.workout.v1.WorkoutService.GetRivalryDetail:output_type -> sttattus.workout.v1.GetRivalryDetailResponse
-	185, // 221: sttattus.workout.v1.WorkoutService.SimulateForgeRank:output_type -> sttattus.workout.v1.SimulateForgeRankResponse
-	187, // 222: sttattus.workout.v1.WorkoutService.GetRecoveryScore:output_type -> sttattus.workout.v1.GetRecoveryScoreResponse
-	172, // 223: sttattus.workout.v1.WorkoutService.StartCoachThread:output_type -> sttattus.workout.v1.StartCoachThreadResponse
-	174, // 224: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:output_type -> sttattus.workout.v1.ListMyCoachThreadsResponse
-	176, // 225: sttattus.workout.v1.WorkoutService.GetCoachThread:output_type -> sttattus.workout.v1.GetCoachThreadResponse
-	178, // 226: sttattus.workout.v1.WorkoutService.PostCoachMessage:output_type -> sttattus.workout.v1.PostCoachMessageResponse
-	181, // 227: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:output_type -> sttattus.workout.v1.ListAnthologyArticlesResponse
-	183, // 228: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:output_type -> sttattus.workout.v1.GetAnthologyArticleResponse
-	164, // 229: sttattus.workout.v1.WorkoutService.CreateAthleteShare:output_type -> sttattus.workout.v1.CreateAthleteShareResponse
-	166, // 230: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:output_type -> sttattus.workout.v1.ListMyAthleteSharesResponse
-	168, // 231: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:output_type -> sttattus.workout.v1.RevokeAthleteShareResponse
-	159, // 232: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:output_type -> sttattus.workout.v1.GenerateForgeAlmanacResponse
-	161, // 233: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:output_type -> sttattus.workout.v1.AnalyzeFormVideoResponse
-	139, // 234: sttattus.workout.v1.WorkoutService.CreateRivalry:output_type -> sttattus.workout.v1.CreateRivalryResponse
-	142, // 235: sttattus.workout.v1.WorkoutService.GetLeaderboard:output_type -> sttattus.workout.v1.GetLeaderboardResponse
-	146, // 236: sttattus.workout.v1.WorkoutService.ListForgeLounges:output_type -> sttattus.workout.v1.ListForgeLoungesResponse
-	148, // 237: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:output_type -> sttattus.workout.v1.ListMyLoungeBookingsResponse
-	150, // 238: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:output_type -> sttattus.workout.v1.CreateLoungeBookingResponse
-	152, // 239: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:output_type -> sttattus.workout.v1.CancelLoungeBookingResponse
-	155, // 240: sttattus.workout.v1.WorkoutService.ListCoaches:output_type -> sttattus.workout.v1.ListCoachesResponse
-	157, // 241: sttattus.workout.v1.WorkoutService.RequestCoachBooking:output_type -> sttattus.workout.v1.RequestCoachBookingResponse
-	169, // [169:242] is the sub-list for method output_type
-	96,  // [96:169] is the sub-list for method input_type
-	96,  // [96:96] is the sub-list for extension type_name
-	96,  // [96:96] is the sub-list for extension extendee
-	0,   // [0:96] is the sub-list for field type_name
+	188, // 96: sttattus.workout.v1.AdaptiveProgrammingOverview.rules:type_name -> sttattus.workout.v1.AdaptiveProgressionRuleItem
+	189, // 97: sttattus.workout.v1.AdaptiveProgrammingOverview.versions:type_name -> sttattus.workout.v1.AdaptiveProgrammeVersionItem
+	190, // 98: sttattus.workout.v1.AdaptiveProgrammingOverview.replan_events:type_name -> sttattus.workout.v1.AdaptiveReplanEventItem
+	191, // 99: sttattus.workout.v1.GetAdaptiveProgrammingOverviewResponse.overview:type_name -> sttattus.workout.v1.AdaptiveProgrammingOverview
+	189, // 100: sttattus.workout.v1.GenerateOrUpdateProgrammeVersionResponse.version:type_name -> sttattus.workout.v1.AdaptiveProgrammeVersionItem
+	189, // 101: sttattus.workout.v1.DecideProgrammeDraftAcceptanceResponse.version:type_name -> sttattus.workout.v1.AdaptiveProgrammeVersionItem
+	190, // 102: sttattus.workout.v1.TriggerSafeAdaptiveReplanResponse.replan_event:type_name -> sttattus.workout.v1.AdaptiveReplanEventItem
+	188, // 103: sttattus.workout.v1.UpsertAdaptiveProgressionRuleResponse.rule:type_name -> sttattus.workout.v1.AdaptiveProgressionRuleItem
+	189, // 104: sttattus.workout.v1.RollbackProgrammeVersionResponse.active_version:type_name -> sttattus.workout.v1.AdaptiveProgrammeVersionItem
+	204, // 105: sttattus.workout.v1.MovementIntelligenceOverview.profiles:type_name -> sttattus.workout.v1.MovementGraphProfileItem
+	205, // 106: sttattus.workout.v1.MovementIntelligenceOverview.substitutions:type_name -> sttattus.workout.v1.MovementSubstitutionEdgeItem
+	206, // 107: sttattus.workout.v1.MovementIntelligenceOverview.personal_manuals:type_name -> sttattus.workout.v1.PersonalTechniqueManualItem
+	207, // 108: sttattus.workout.v1.GetMovementIntelligenceOverviewResponse.overview:type_name -> sttattus.workout.v1.MovementIntelligenceOverview
+	205, // 109: sttattus.workout.v1.RankIntentPreservingSubstitutionsResponse.ranked_substitutions:type_name -> sttattus.workout.v1.MovementSubstitutionEdgeItem
+	206, // 110: sttattus.workout.v1.UpsertPersonalTechniqueManualResponse.manual:type_name -> sttattus.workout.v1.PersonalTechniqueManualItem
+	204, // 111: sttattus.workout.v1.SubmitCustomMovementForReviewResponse.profile:type_name -> sttattus.workout.v1.MovementGraphProfileItem
+	204, // 112: sttattus.workout.v1.UpsertMovementGraphProfileResponse.profile:type_name -> sttattus.workout.v1.MovementGraphProfileItem
+	205, // 113: sttattus.workout.v1.RecordSubstitutionSelectionResponse.selected_edge:type_name -> sttattus.workout.v1.MovementSubstitutionEdgeItem
+	220, // 114: sttattus.workout.v1.FormIntelligenceOverview.capability_matrix:type_name -> sttattus.workout.v1.FormCapabilityMatrixItem
+	221, // 115: sttattus.workout.v1.FormIntelligenceOverview.attempts:type_name -> sttattus.workout.v1.FormAnalysisAttemptItem
+	222, // 116: sttattus.workout.v1.FormIntelligenceOverview.privacy_consent:type_name -> sttattus.workout.v1.FormPrivacyConsentItem
+	223, // 117: sttattus.workout.v1.GetFormIntelligenceOverviewResponse.overview:type_name -> sttattus.workout.v1.FormIntelligenceOverview
+	221, // 118: sttattus.workout.v1.SubmitFormClipObservationResponse.attempt:type_name -> sttattus.workout.v1.FormAnalysisAttemptItem
+	221, // 119: sttattus.workout.v1.EscalateFormClipToCoachResponse.attempt:type_name -> sttattus.workout.v1.FormAnalysisAttemptItem
+	221, // 120: sttattus.workout.v1.DecideCoachFormReviewResponse.attempt:type_name -> sttattus.workout.v1.FormAnalysisAttemptItem
+	222, // 121: sttattus.workout.v1.UpdateFormPrivacyAndRetentionResponse.privacy_consent:type_name -> sttattus.workout.v1.FormPrivacyConsentItem
+	236, // 122: sttattus.workout.v1.WearableRecoveryFusionOverview.purpose_grants:type_name -> sttattus.workout.v1.WearablePurposeGrantItem
+	237, // 123: sttattus.workout.v1.WearableRecoveryFusionOverview.sensor_streams:type_name -> sttattus.workout.v1.RecoverySensorStreamItem
+	238, // 124: sttattus.workout.v1.WearableRecoveryFusionOverview.assessments:type_name -> sttattus.workout.v1.RecoveryReadinessAssessmentItem
+	239, // 125: sttattus.workout.v1.GetWearableRecoveryFusionOverviewResponse.overview:type_name -> sttattus.workout.v1.WearableRecoveryFusionOverview
+	236, // 126: sttattus.workout.v1.UpsertWearablePurposeGrantResponse.grant:type_name -> sttattus.workout.v1.WearablePurposeGrantItem
+	236, // 127: sttattus.workout.v1.RevokeWearablePurposeGrantResponse.grant:type_name -> sttattus.workout.v1.WearablePurposeGrantItem
+	237, // 128: sttattus.workout.v1.ConfigureRecoverySensorStreamResponse.stream:type_name -> sttattus.workout.v1.RecoverySensorStreamItem
+	238, // 129: sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessResponse.assessment:type_name -> sttattus.workout.v1.RecoveryReadinessAssessmentItem
+	237, // 130: sttattus.workout.v1.ReconcileSensorConflictOrOutageResponse.stream:type_name -> sttattus.workout.v1.RecoverySensorStreamItem
+	252, // 131: sttattus.workout.v1.PerformanceAnalyticsStudioOverview.exposure_ledgers:type_name -> sttattus.workout.v1.PerformanceExposureLedgerItem
+	253, // 132: sttattus.workout.v1.PerformanceAnalyticsStudioOverview.strength_models:type_name -> sttattus.workout.v1.StrengthPerformanceModelItem
+	254, // 133: sttattus.workout.v1.PerformanceAnalyticsStudioOverview.experiments:type_name -> sttattus.workout.v1.TrainingNOf1ExperimentItem
+	255, // 134: sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewResponse.overview:type_name -> sttattus.workout.v1.PerformanceAnalyticsStudioOverview
+	252, // 135: sttattus.workout.v1.RecordPerformanceExposureLedgerResponse.ledger:type_name -> sttattus.workout.v1.PerformanceExposureLedgerItem
+	253, // 136: sttattus.workout.v1.UpsertStrengthPerformanceModelResponse.model:type_name -> sttattus.workout.v1.StrengthPerformanceModelItem
+	254, // 137: sttattus.workout.v1.CreateTrainingNOf1ExperimentResponse.experiment:type_name -> sttattus.workout.v1.TrainingNOf1ExperimentItem
+	254, // 138: sttattus.workout.v1.LogTrainingNOf1ExperimentSessionResponse.experiment:type_name -> sttattus.workout.v1.TrainingNOf1ExperimentItem
+	254, // 139: sttattus.workout.v1.EvaluateTrainingNOf1ExperimentResponse.experiment:type_name -> sttattus.workout.v1.TrainingNOf1ExperimentItem
+	268, // 140: sttattus.workout.v1.InjuryReturnPathwayOverview.restriction_locks:type_name -> sttattus.workout.v1.InjuryRestrictionLockItem
+	269, // 141: sttattus.workout.v1.InjuryReturnPathwayOverview.triage_events:type_name -> sttattus.workout.v1.PainSessionTriageEventItem
+	270, // 142: sttattus.workout.v1.InjuryReturnPathwayOverview.return_stages:type_name -> sttattus.workout.v1.ReturnToTrainingStageItem
+	271, // 143: sttattus.workout.v1.GetInjuryReturnPathwayOverviewResponse.overview:type_name -> sttattus.workout.v1.InjuryReturnPathwayOverview
+	268, // 144: sttattus.workout.v1.UpsertInjuryRestrictionLockResponse.restriction_lock:type_name -> sttattus.workout.v1.InjuryRestrictionLockItem
+	269, // 145: sttattus.workout.v1.LogInSessionPainTriageEventResponse.triage_event:type_name -> sttattus.workout.v1.PainSessionTriageEventItem
+	270, // 146: sttattus.workout.v1.AdvanceReturnToTrainingStageResponse.return_stage:type_name -> sttattus.workout.v1.ReturnToTrainingStageItem
+	270, // 147: sttattus.workout.v1.RecordReturnToTrainingSetbackResponse.return_stage:type_name -> sttattus.workout.v1.ReturnToTrainingStageItem
+	268, // 148: sttattus.workout.v1.ClearInjuryRestrictionLockResponse.restriction_lock:type_name -> sttattus.workout.v1.InjuryRestrictionLockItem
+	284, // 149: sttattus.workout.v1.CoachOsCollaborationOverview.scoped_grants:type_name -> sttattus.workout.v1.CoachAthleteScopedGrantItem
+	285, // 150: sttattus.workout.v1.CoachOsCollaborationOverview.proposals:type_name -> sttattus.workout.v1.CoachChangeProposalItem
+	286, // 151: sttattus.workout.v1.CoachOsCollaborationOverview.marketplace_listings:type_name -> sttattus.workout.v1.CoachMarketplaceListingItem
+	287, // 152: sttattus.workout.v1.GetCoachOsCollaborationOverviewResponse.overview:type_name -> sttattus.workout.v1.CoachOsCollaborationOverview
+	284, // 153: sttattus.workout.v1.UpsertCoachAthleteScopedGrantResponse.grant:type_name -> sttattus.workout.v1.CoachAthleteScopedGrantItem
+	284, // 154: sttattus.workout.v1.RevokeCoachAthleteScopedGrantResponse.grant:type_name -> sttattus.workout.v1.CoachAthleteScopedGrantItem
+	285, // 155: sttattus.workout.v1.ProposeCoachProgrammeChangeResponse.proposal:type_name -> sttattus.workout.v1.CoachChangeProposalItem
+	285, // 156: sttattus.workout.v1.RespondToCoachChangeProposalResponse.proposal:type_name -> sttattus.workout.v1.CoachChangeProposalItem
+	286, // 157: sttattus.workout.v1.UpdateCoachMarketplaceEngagementResponse.listing:type_name -> sttattus.workout.v1.CoachMarketplaceListingItem
+	300, // 158: sttattus.workout.v1.TeamsClubsFacilitiesOverview.squads:type_name -> sttattus.workout.v1.TeamSquadRosterItem
+	301, // 159: sttattus.workout.v1.TeamsClubsFacilitiesOverview.checkins:type_name -> sttattus.workout.v1.TeamTrafficLightCheckinItem
+	302, // 160: sttattus.workout.v1.TeamsClubsFacilitiesOverview.rack_operations:type_name -> sttattus.workout.v1.FacilityRackOperationItem
+	303, // 161: sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewResponse.overview:type_name -> sttattus.workout.v1.TeamsClubsFacilitiesOverview
+	300, // 162: sttattus.workout.v1.UpsertTeamSquadRosterResponse.squad:type_name -> sttattus.workout.v1.TeamSquadRosterItem
+	301, // 163: sttattus.workout.v1.SubmitTeamTrafficLightCheckinResponse.checkin:type_name -> sttattus.workout.v1.TeamTrafficLightCheckinItem
+	302, // 164: sttattus.workout.v1.ReserveOrUpdateFacilityRackStationResponse.rack_operation:type_name -> sttattus.workout.v1.FacilityRackOperationItem
+	302, // 165: sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentResponse.rack_operation:type_name -> sttattus.workout.v1.FacilityRackOperationItem
+	300, // 166: sttattus.workout.v1.VerifyYouthSquadSafeguardingResponse.squad:type_name -> sttattus.workout.v1.TeamSquadRosterItem
+	316, // 167: sttattus.workout.v1.CompetitionVerifiedPerformanceOverview.event_plans:type_name -> sttattus.workout.v1.CompetitionEventPlanItem
+	317, // 168: sttattus.workout.v1.CompetitionVerifiedPerformanceOverview.verified_results:type_name -> sttattus.workout.v1.VerifiedPerformanceResultItem
+	318, // 169: sttattus.workout.v1.CompetitionVerifiedPerformanceOverview.rule_tue_checks:type_name -> sttattus.workout.v1.CompetitionRuleTueCheckItem
+	319, // 170: sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewResponse.overview:type_name -> sttattus.workout.v1.CompetitionVerifiedPerformanceOverview
+	316, // 171: sttattus.workout.v1.UpsertCompetitionEventPlanResponse.event_plan:type_name -> sttattus.workout.v1.CompetitionEventPlanItem
+	317, // 172: sttattus.workout.v1.SubmitVerifiedPerformanceResultResponse.verified_result:type_name -> sttattus.workout.v1.VerifiedPerformanceResultItem
+	317, // 173: sttattus.workout.v1.FilePerformanceResultAppealResponse.verified_result:type_name -> sttattus.workout.v1.VerifiedPerformanceResultItem
+	318, // 174: sttattus.workout.v1.RecordCompetitionRuleAndTueCheckResponse.rule_tue_check:type_name -> sttattus.workout.v1.CompetitionRuleTueCheckItem
+	316, // 175: sttattus.workout.v1.ToggleOfflineVenueCompetitionModeResponse.event_plan:type_name -> sttattus.workout.v1.CompetitionEventPlanItem
+	332, // 176: sttattus.workout.v1.SportHybridStudiosOverview.modules:type_name -> sttattus.workout.v1.SportHybridStudioModuleItem
+	333, // 177: sttattus.workout.v1.SportHybridStudiosOverview.interference_schedules:type_name -> sttattus.workout.v1.HybridInterferenceScheduleItem
+	334, // 178: sttattus.workout.v1.SportHybridStudiosOverview.skill_and_manual_sessions:type_name -> sttattus.workout.v1.SportSkillAndManualSessionItem
+	335, // 179: sttattus.workout.v1.GetSportHybridStudiosOverviewResponse.overview:type_name -> sttattus.workout.v1.SportHybridStudiosOverview
+	332, // 180: sttattus.workout.v1.UpsertSportHybridStudioModuleResponse.module:type_name -> sttattus.workout.v1.SportHybridStudioModuleItem
+	333, // 181: sttattus.workout.v1.ConfigureHybridInterferenceScheduleResponse.schedule:type_name -> sttattus.workout.v1.HybridInterferenceScheduleItem
+	334, // 182: sttattus.workout.v1.LogSportSkillOrManualActivitySessionResponse.session:type_name -> sttattus.workout.v1.SportSkillAndManualSessionItem
+	332, // 183: sttattus.workout.v1.RegisterCustomManualUnvalidatedSportResponse.module:type_name -> sttattus.workout.v1.SportHybridStudioModuleItem
+	333, // 184: sttattus.workout.v1.AuditHybridLoadDeDuplicationResponse.schedule:type_name -> sttattus.workout.v1.HybridInterferenceScheduleItem
+	348, // 185: sttattus.workout.v1.EquipmentTravelAdaptationOverview.equipment_profiles:type_name -> sttattus.workout.v1.EquipmentLocationProfileItem
+	349, // 186: sttattus.workout.v1.EquipmentTravelAdaptationOverview.travel_adaptations:type_name -> sttattus.workout.v1.TravelWorkoutAdaptationItem
+	350, // 187: sttattus.workout.v1.EquipmentTravelAdaptationOverview.gym_venues:type_name -> sttattus.workout.v1.VerifiedGymVenueDirectoryItem
+	351, // 188: sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewResponse.overview:type_name -> sttattus.workout.v1.EquipmentTravelAdaptationOverview
+	348, // 189: sttattus.workout.v1.UpsertEquipmentLocationProfileResponse.equipment_profile:type_name -> sttattus.workout.v1.EquipmentLocationProfileItem
+	349, // 190: sttattus.workout.v1.GenerateTravelWorkoutAdaptationResponse.travel_adaptation:type_name -> sttattus.workout.v1.TravelWorkoutAdaptationItem
+	350, // 191: sttattus.workout.v1.UpsertVerifiedGymVenueListingResponse.gym_venue:type_name -> sttattus.workout.v1.VerifiedGymVenueDirectoryItem
+	350, // 192: sttattus.workout.v1.FlagStaleGymVenueListingResponse.gym_venue:type_name -> sttattus.workout.v1.VerifiedGymVenueDirectoryItem
+	349, // 193: sttattus.workout.v1.RevertTravelWorkoutToHomeGymResponse.travel_adaptation:type_name -> sttattus.workout.v1.TravelWorkoutAdaptationItem
+	364, // 194: sttattus.workout.v1.FuelWeightSafetyOverview.fuel_hydration_plans:type_name -> sttattus.workout.v1.SessionFuelHydrationPlanItem
+	365, // 195: sttattus.workout.v1.FuelWeightSafetyOverview.body_composition_trends:type_name -> sttattus.workout.v1.PrivateBodyCompositionTrendItem
+	366, // 196: sttattus.workout.v1.FuelWeightSafetyOverview.weight_class_monitors:type_name -> sttattus.workout.v1.WeightClassSafetyMonitorItem
+	367, // 197: sttattus.workout.v1.GetFuelWeightSafetyOverviewResponse.overview:type_name -> sttattus.workout.v1.FuelWeightSafetyOverview
+	364, // 198: sttattus.workout.v1.UpsertSessionFuelHydrationPlanResponse.fuel_hydration_plan:type_name -> sttattus.workout.v1.SessionFuelHydrationPlanItem
+	365, // 199: sttattus.workout.v1.RecordPrivateBodyCompositionTrendResponse.body_composition_trend:type_name -> sttattus.workout.v1.PrivateBodyCompositionTrendItem
+	366, // 200: sttattus.workout.v1.EvaluateWeightClassSafetyPlanResponse.weight_class_monitor:type_name -> sttattus.workout.v1.WeightClassSafetyMonitorItem
+	366, // 201: sttattus.workout.v1.EscalateWeightCutToProfessionalRouteResponse.weight_class_monitor:type_name -> sttattus.workout.v1.WeightClassSafetyMonitorItem
+	365, // 202: sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationResponse.body_composition_trend:type_name -> sttattus.workout.v1.PrivateBodyCompositionTrendItem
+	380, // 203: sttattus.workout.v1.HealthyCompetitionCrewsOverview.cohorts:type_name -> sttattus.workout.v1.HealthyCompetitionCohortItem
+	381, // 204: sttattus.workout.v1.HealthyCompetitionCrewsOverview.challenges_and_cases:type_name -> sttattus.workout.v1.CrewChallengeAndModerationItem
+	382, // 205: sttattus.workout.v1.HealthyCompetitionCrewsOverview.reward_contributions:type_name -> sttattus.workout.v1.EmpireRewardContributionItem
+	383, // 206: sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewResponse.overview:type_name -> sttattus.workout.v1.HealthyCompetitionCrewsOverview
+	380, // 207: sttattus.workout.v1.UpsertHealthyCompetitionCohortResponse.cohort:type_name -> sttattus.workout.v1.HealthyCompetitionCohortItem
+	380, // 208: sttattus.workout.v1.ToggleCompetitionMutePreferenceResponse.cohort:type_name -> sttattus.workout.v1.HealthyCompetitionCohortItem
+	381, // 209: sttattus.workout.v1.SubmitCrewChallengeOrAppealResponse.challenge_or_case:type_name -> sttattus.workout.v1.CrewChallengeAndModerationItem
+	382, // 210: sttattus.workout.v1.RecordEmpireRewardContributionResponse.reward_contribution:type_name -> sttattus.workout.v1.EmpireRewardContributionItem
+	381, // 211: sttattus.workout.v1.AdjudicateCrewAntiCheatCaseResponse.challenge_or_case:type_name -> sttattus.workout.v1.CrewChallengeAndModerationItem
+	396, // 212: sttattus.workout.v1.OfflineAccessibleReleaseCertOverview.offline_certifications:type_name -> sttattus.workout.v1.OfflineMultimodalSyncCertificationItem
+	397, // 213: sttattus.workout.v1.OfflineAccessibleReleaseCertOverview.accessibility_profiles:type_name -> sttattus.workout.v1.AccessibilityAdaptiveProfileItem
+	398, // 214: sttattus.workout.v1.OfflineAccessibleReleaseCertOverview.migration_certifications:type_name -> sttattus.workout.v1.MigrationDeletionCertificationItem
+	399, // 215: sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewResponse.overview:type_name -> sttattus.workout.v1.OfflineAccessibleReleaseCertOverview
+	396, // 216: sttattus.workout.v1.CertifyOfflineMultimodalSyncStateResponse.offline_certification:type_name -> sttattus.workout.v1.OfflineMultimodalSyncCertificationItem
+	397, // 217: sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileResponse.accessibility_profile:type_name -> sttattus.workout.v1.AccessibilityAdaptiveProfileItem
+	398, // 218: sttattus.workout.v1.RunMigrationAndErasureCertificationResponse.migration_certification:type_name -> sttattus.workout.v1.MigrationDeletionCertificationItem
+	396, // 219: sttattus.workout.v1.VerifyBatteryAwareSensorPolicyResponse.offline_certification:type_name -> sttattus.workout.v1.OfflineMultimodalSyncCertificationItem
+	398, // 220: sttattus.workout.v1.SignOffForge16Of16ReleaseGateResponse.migration_certification:type_name -> sttattus.workout.v1.MigrationDeletionCertificationItem
+	6,   // 221: sttattus.workout.v1.WorkoutService.ListWorkouts:input_type -> sttattus.workout.v1.ListWorkoutsRequest
+	8,   // 222: sttattus.workout.v1.WorkoutService.GetWorkout:input_type -> sttattus.workout.v1.GetWorkoutRequest
+	10,  // 223: sttattus.workout.v1.WorkoutService.LogDayWorkout:input_type -> sttattus.workout.v1.LogDayWorkoutRequest
+	12,  // 224: sttattus.workout.v1.WorkoutService.ListHistory:input_type -> sttattus.workout.v1.ListHistoryRequest
+	14,  // 225: sttattus.workout.v1.WorkoutService.GetForgeStats:input_type -> sttattus.workout.v1.GetForgeStatsRequest
+	16,  // 226: sttattus.workout.v1.WorkoutService.SubmitFeedback:input_type -> sttattus.workout.v1.SubmitFeedbackRequest
+	58,  // 227: sttattus.workout.v1.WorkoutService.GetToday:input_type -> sttattus.workout.v1.GetTodayRequest
+	55,  // 228: sttattus.workout.v1.WorkoutService.GetRankLadder:input_type -> sttattus.workout.v1.GetRankLadderRequest
+	24,  // 229: sttattus.workout.v1.WorkoutService.ListExercises:input_type -> sttattus.workout.v1.ListExercisesRequest
+	26,  // 230: sttattus.workout.v1.WorkoutService.CreateSession:input_type -> sttattus.workout.v1.CreateSessionRequest
+	28,  // 231: sttattus.workout.v1.WorkoutService.GetSession:input_type -> sttattus.workout.v1.GetSessionRequest
+	30,  // 232: sttattus.workout.v1.WorkoutService.GetActiveSession:input_type -> sttattus.workout.v1.GetActiveSessionRequest
+	32,  // 233: sttattus.workout.v1.WorkoutService.ListSessions:input_type -> sttattus.workout.v1.ListSessionsRequest
+	34,  // 234: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:input_type -> sttattus.workout.v1.UpdateSessionStatusRequest
+	36,  // 235: sttattus.workout.v1.WorkoutService.LogSet:input_type -> sttattus.workout.v1.LogSetRequest
+	61,  // 236: sttattus.workout.v1.WorkoutService.GetForgeStreak:input_type -> sttattus.workout.v1.GetForgeStreakRequest
+	64,  // 237: sttattus.workout.v1.WorkoutService.CreateFormVideo:input_type -> sttattus.workout.v1.CreateFormVideoRequest
+	66,  // 238: sttattus.workout.v1.WorkoutService.ListMyFormVideos:input_type -> sttattus.workout.v1.ListMyFormVideosRequest
+	68,  // 239: sttattus.workout.v1.WorkoutService.DeleteFormVideo:input_type -> sttattus.workout.v1.DeleteFormVideoRequest
+	70,  // 240: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:input_type -> sttattus.workout.v1.UpdateFormVideoStatusRequest
+	74,  // 241: sttattus.workout.v1.WorkoutService.ListProgrammes:input_type -> sttattus.workout.v1.ListProgrammesRequest
+	76,  // 242: sttattus.workout.v1.WorkoutService.GetProgramme:input_type -> sttattus.workout.v1.GetProgrammeRequest
+	78,  // 243: sttattus.workout.v1.WorkoutService.EnrolInProgramme:input_type -> sttattus.workout.v1.EnrolInProgrammeRequest
+	80,  // 244: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:input_type -> sttattus.workout.v1.GetActiveEnrolmentRequest
+	82,  // 245: sttattus.workout.v1.WorkoutService.ListMyEnrolments:input_type -> sttattus.workout.v1.ListMyEnrolmentsRequest
+	84,  // 246: sttattus.workout.v1.WorkoutService.UpdateEnrolment:input_type -> sttattus.workout.v1.UpdateEnrolmentRequest
+	89,  // 247: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:input_type -> sttattus.workout.v1.ListProgrammeWeeksRequest
+	91,  // 248: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:input_type -> sttattus.workout.v1.GetProgrammeWeekRequest
+	94,  // 249: sttattus.workout.v1.WorkoutService.ListMyPRs:input_type -> sttattus.workout.v1.ListMyPRsRequest
+	96,  // 250: sttattus.workout.v1.WorkoutService.ListRecentPRs:input_type -> sttattus.workout.v1.ListRecentPRsRequest
+	99,  // 251: sttattus.workout.v1.WorkoutService.ListBodyCompositions:input_type -> sttattus.workout.v1.ListBodyCompositionsRequest
+	101, // 252: sttattus.workout.v1.WorkoutService.CreateBodyComposition:input_type -> sttattus.workout.v1.CreateBodyCompositionRequest
+	103, // 253: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:input_type -> sttattus.workout.v1.DeleteBodyCompositionRequest
+	106, // 254: sttattus.workout.v1.WorkoutService.ListInjuries:input_type -> sttattus.workout.v1.ListInjuriesRequest
+	108, // 255: sttattus.workout.v1.WorkoutService.CreateInjury:input_type -> sttattus.workout.v1.CreateInjuryRequest
+	110, // 256: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:input_type -> sttattus.workout.v1.UpdateInjuryStatusRequest
+	112, // 257: sttattus.workout.v1.WorkoutService.DeleteInjury:input_type -> sttattus.workout.v1.DeleteInjuryRequest
+	116, // 258: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:input_type -> sttattus.workout.v1.ListMobilityBaselinesRequest
+	118, // 259: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:input_type -> sttattus.workout.v1.GetCurrentMobilityBaselineRequest
+	120, // 260: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:input_type -> sttattus.workout.v1.UpsertMobilityBaselineRequest
+	122, // 261: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:input_type -> sttattus.workout.v1.DeleteMobilityBaselineRequest
+	126, // 262: sttattus.workout.v1.WorkoutService.ListSensorConnections:input_type -> sttattus.workout.v1.ListSensorConnectionsRequest
+	128, // 263: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:input_type -> sttattus.workout.v1.SetSensorConnectionStatusRequest
+	130, // 264: sttattus.workout.v1.WorkoutService.MarkSensorSynced:input_type -> sttattus.workout.v1.MarkSensorSyncedRequest
+	132, // 265: sttattus.workout.v1.WorkoutService.SetSensorPriority:input_type -> sttattus.workout.v1.SetSensorPriorityRequest
+	136, // 266: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:input_type -> sttattus.workout.v1.GetForgeAnalyticsRequest
+	40,  // 267: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:input_type -> sttattus.workout.v1.GetSessionAnalyticsRequest
+	43,  // 268: sttattus.workout.v1.WorkoutService.ListUserEquipment:input_type -> sttattus.workout.v1.ListUserEquipmentRequest
+	45,  // 269: sttattus.workout.v1.WorkoutService.AddUserEquipment:input_type -> sttattus.workout.v1.AddUserEquipmentRequest
+	47,  // 270: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:input_type -> sttattus.workout.v1.DeleteUserEquipmentRequest
+	50,  // 271: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:input_type -> sttattus.workout.v1.ListWorkoutRivalriesRequest
+	52,  // 272: sttattus.workout.v1.WorkoutService.GetRivalryDetail:input_type -> sttattus.workout.v1.GetRivalryDetailRequest
+	184, // 273: sttattus.workout.v1.WorkoutService.SimulateForgeRank:input_type -> sttattus.workout.v1.SimulateForgeRankRequest
+	186, // 274: sttattus.workout.v1.WorkoutService.GetRecoveryScore:input_type -> sttattus.workout.v1.GetRecoveryScoreRequest
+	171, // 275: sttattus.workout.v1.WorkoutService.StartCoachThread:input_type -> sttattus.workout.v1.StartCoachThreadRequest
+	173, // 276: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:input_type -> sttattus.workout.v1.ListMyCoachThreadsRequest
+	175, // 277: sttattus.workout.v1.WorkoutService.GetCoachThread:input_type -> sttattus.workout.v1.GetCoachThreadRequest
+	177, // 278: sttattus.workout.v1.WorkoutService.PostCoachMessage:input_type -> sttattus.workout.v1.PostCoachMessageRequest
+	180, // 279: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:input_type -> sttattus.workout.v1.ListAnthologyArticlesRequest
+	182, // 280: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:input_type -> sttattus.workout.v1.GetAnthologyArticleRequest
+	163, // 281: sttattus.workout.v1.WorkoutService.CreateAthleteShare:input_type -> sttattus.workout.v1.CreateAthleteShareRequest
+	165, // 282: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:input_type -> sttattus.workout.v1.ListMyAthleteSharesRequest
+	167, // 283: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:input_type -> sttattus.workout.v1.RevokeAthleteShareRequest
+	158, // 284: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:input_type -> sttattus.workout.v1.GenerateForgeAlmanacRequest
+	160, // 285: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:input_type -> sttattus.workout.v1.AnalyzeFormVideoRequest
+	138, // 286: sttattus.workout.v1.WorkoutService.CreateRivalry:input_type -> sttattus.workout.v1.CreateRivalryRequest
+	141, // 287: sttattus.workout.v1.WorkoutService.GetLeaderboard:input_type -> sttattus.workout.v1.GetLeaderboardRequest
+	145, // 288: sttattus.workout.v1.WorkoutService.ListForgeLounges:input_type -> sttattus.workout.v1.ListForgeLoungesRequest
+	147, // 289: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:input_type -> sttattus.workout.v1.ListMyLoungeBookingsRequest
+	149, // 290: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:input_type -> sttattus.workout.v1.CreateLoungeBookingRequest
+	151, // 291: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:input_type -> sttattus.workout.v1.CancelLoungeBookingRequest
+	154, // 292: sttattus.workout.v1.WorkoutService.ListCoaches:input_type -> sttattus.workout.v1.ListCoachesRequest
+	156, // 293: sttattus.workout.v1.WorkoutService.RequestCoachBooking:input_type -> sttattus.workout.v1.RequestCoachBookingRequest
+	192, // 294: sttattus.workout.v1.WorkoutService.GetAdaptiveProgrammingOverview:input_type -> sttattus.workout.v1.GetAdaptiveProgrammingOverviewRequest
+	194, // 295: sttattus.workout.v1.WorkoutService.GenerateOrUpdateProgrammeVersion:input_type -> sttattus.workout.v1.GenerateOrUpdateProgrammeVersionRequest
+	196, // 296: sttattus.workout.v1.WorkoutService.DecideProgrammeDraftAcceptance:input_type -> sttattus.workout.v1.DecideProgrammeDraftAcceptanceRequest
+	198, // 297: sttattus.workout.v1.WorkoutService.TriggerSafeAdaptiveReplan:input_type -> sttattus.workout.v1.TriggerSafeAdaptiveReplanRequest
+	200, // 298: sttattus.workout.v1.WorkoutService.UpsertAdaptiveProgressionRule:input_type -> sttattus.workout.v1.UpsertAdaptiveProgressionRuleRequest
+	202, // 299: sttattus.workout.v1.WorkoutService.RollbackProgrammeVersion:input_type -> sttattus.workout.v1.RollbackProgrammeVersionRequest
+	208, // 300: sttattus.workout.v1.WorkoutService.GetMovementIntelligenceOverview:input_type -> sttattus.workout.v1.GetMovementIntelligenceOverviewRequest
+	210, // 301: sttattus.workout.v1.WorkoutService.RankIntentPreservingSubstitutions:input_type -> sttattus.workout.v1.RankIntentPreservingSubstitutionsRequest
+	212, // 302: sttattus.workout.v1.WorkoutService.UpsertPersonalTechniqueManual:input_type -> sttattus.workout.v1.UpsertPersonalTechniqueManualRequest
+	214, // 303: sttattus.workout.v1.WorkoutService.SubmitCustomMovementForReview:input_type -> sttattus.workout.v1.SubmitCustomMovementForReviewRequest
+	216, // 304: sttattus.workout.v1.WorkoutService.UpsertMovementGraphProfile:input_type -> sttattus.workout.v1.UpsertMovementGraphProfileRequest
+	218, // 305: sttattus.workout.v1.WorkoutService.RecordSubstitutionSelection:input_type -> sttattus.workout.v1.RecordSubstitutionSelectionRequest
+	224, // 306: sttattus.workout.v1.WorkoutService.GetFormIntelligenceOverview:input_type -> sttattus.workout.v1.GetFormIntelligenceOverviewRequest
+	226, // 307: sttattus.workout.v1.WorkoutService.SubmitFormClipObservation:input_type -> sttattus.workout.v1.SubmitFormClipObservationRequest
+	228, // 308: sttattus.workout.v1.WorkoutService.EscalateFormClipToCoach:input_type -> sttattus.workout.v1.EscalateFormClipToCoachRequest
+	230, // 309: sttattus.workout.v1.WorkoutService.DecideCoachFormReview:input_type -> sttattus.workout.v1.DecideCoachFormReviewRequest
+	232, // 310: sttattus.workout.v1.WorkoutService.UpdateFormPrivacyAndRetention:input_type -> sttattus.workout.v1.UpdateFormPrivacyAndRetentionRequest
+	234, // 311: sttattus.workout.v1.WorkoutService.EraseFormClipAndKeypoints:input_type -> sttattus.workout.v1.EraseFormClipAndKeypointsRequest
+	240, // 312: sttattus.workout.v1.WorkoutService.GetWearableRecoveryFusionOverview:input_type -> sttattus.workout.v1.GetWearableRecoveryFusionOverviewRequest
+	242, // 313: sttattus.workout.v1.WorkoutService.UpsertWearablePurposeGrant:input_type -> sttattus.workout.v1.UpsertWearablePurposeGrantRequest
+	244, // 314: sttattus.workout.v1.WorkoutService.RevokeWearablePurposeGrant:input_type -> sttattus.workout.v1.RevokeWearablePurposeGrantRequest
+	246, // 315: sttattus.workout.v1.WorkoutService.ConfigureRecoverySensorStream:input_type -> sttattus.workout.v1.ConfigureRecoverySensorStreamRequest
+	248, // 316: sttattus.workout.v1.WorkoutService.SubmitNoWearableSubjectiveReadiness:input_type -> sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessRequest
+	250, // 317: sttattus.workout.v1.WorkoutService.ReconcileSensorConflictOrOutage:input_type -> sttattus.workout.v1.ReconcileSensorConflictOrOutageRequest
+	256, // 318: sttattus.workout.v1.WorkoutService.GetPerformanceAnalyticsStudioOverview:input_type -> sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewRequest
+	258, // 319: sttattus.workout.v1.WorkoutService.RecordPerformanceExposureLedger:input_type -> sttattus.workout.v1.RecordPerformanceExposureLedgerRequest
+	260, // 320: sttattus.workout.v1.WorkoutService.UpsertStrengthPerformanceModel:input_type -> sttattus.workout.v1.UpsertStrengthPerformanceModelRequest
+	262, // 321: sttattus.workout.v1.WorkoutService.CreateTrainingNOf1Experiment:input_type -> sttattus.workout.v1.CreateTrainingNOf1ExperimentRequest
+	264, // 322: sttattus.workout.v1.WorkoutService.LogTrainingNOf1ExperimentSession:input_type -> sttattus.workout.v1.LogTrainingNOf1ExperimentSessionRequest
+	266, // 323: sttattus.workout.v1.WorkoutService.EvaluateTrainingNOf1Experiment:input_type -> sttattus.workout.v1.EvaluateTrainingNOf1ExperimentRequest
+	272, // 324: sttattus.workout.v1.WorkoutService.GetInjuryReturnPathwayOverview:input_type -> sttattus.workout.v1.GetInjuryReturnPathwayOverviewRequest
+	274, // 325: sttattus.workout.v1.WorkoutService.UpsertInjuryRestrictionLock:input_type -> sttattus.workout.v1.UpsertInjuryRestrictionLockRequest
+	276, // 326: sttattus.workout.v1.WorkoutService.LogInSessionPainTriageEvent:input_type -> sttattus.workout.v1.LogInSessionPainTriageEventRequest
+	278, // 327: sttattus.workout.v1.WorkoutService.AdvanceReturnToTrainingStage:input_type -> sttattus.workout.v1.AdvanceReturnToTrainingStageRequest
+	280, // 328: sttattus.workout.v1.WorkoutService.RecordReturnToTrainingSetback:input_type -> sttattus.workout.v1.RecordReturnToTrainingSetbackRequest
+	282, // 329: sttattus.workout.v1.WorkoutService.ClearInjuryRestrictionLock:input_type -> sttattus.workout.v1.ClearInjuryRestrictionLockRequest
+	288, // 330: sttattus.workout.v1.WorkoutService.GetCoachOsCollaborationOverview:input_type -> sttattus.workout.v1.GetCoachOsCollaborationOverviewRequest
+	290, // 331: sttattus.workout.v1.WorkoutService.UpsertCoachAthleteScopedGrant:input_type -> sttattus.workout.v1.UpsertCoachAthleteScopedGrantRequest
+	292, // 332: sttattus.workout.v1.WorkoutService.RevokeCoachAthleteScopedGrant:input_type -> sttattus.workout.v1.RevokeCoachAthleteScopedGrantRequest
+	294, // 333: sttattus.workout.v1.WorkoutService.ProposeCoachProgrammeChange:input_type -> sttattus.workout.v1.ProposeCoachProgrammeChangeRequest
+	296, // 334: sttattus.workout.v1.WorkoutService.RespondToCoachChangeProposal:input_type -> sttattus.workout.v1.RespondToCoachChangeProposalRequest
+	298, // 335: sttattus.workout.v1.WorkoutService.UpdateCoachMarketplaceEngagement:input_type -> sttattus.workout.v1.UpdateCoachMarketplaceEngagementRequest
+	304, // 336: sttattus.workout.v1.WorkoutService.GetTeamsClubsFacilitiesOverview:input_type -> sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewRequest
+	306, // 337: sttattus.workout.v1.WorkoutService.UpsertTeamSquadRoster:input_type -> sttattus.workout.v1.UpsertTeamSquadRosterRequest
+	308, // 338: sttattus.workout.v1.WorkoutService.SubmitTeamTrafficLightCheckin:input_type -> sttattus.workout.v1.SubmitTeamTrafficLightCheckinRequest
+	310, // 339: sttattus.workout.v1.WorkoutService.ReserveOrUpdateFacilityRackStation:input_type -> sttattus.workout.v1.ReserveOrUpdateFacilityRackStationRequest
+	312, // 340: sttattus.workout.v1.WorkoutService.FlagFacilityMaintenanceOrIncident:input_type -> sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentRequest
+	314, // 341: sttattus.workout.v1.WorkoutService.VerifyYouthSquadSafeguarding:input_type -> sttattus.workout.v1.VerifyYouthSquadSafeguardingRequest
+	320, // 342: sttattus.workout.v1.WorkoutService.GetCompetitionVerifiedPerformanceOverview:input_type -> sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewRequest
+	322, // 343: sttattus.workout.v1.WorkoutService.UpsertCompetitionEventPlan:input_type -> sttattus.workout.v1.UpsertCompetitionEventPlanRequest
+	324, // 344: sttattus.workout.v1.WorkoutService.SubmitVerifiedPerformanceResult:input_type -> sttattus.workout.v1.SubmitVerifiedPerformanceResultRequest
+	326, // 345: sttattus.workout.v1.WorkoutService.FilePerformanceResultAppeal:input_type -> sttattus.workout.v1.FilePerformanceResultAppealRequest
+	328, // 346: sttattus.workout.v1.WorkoutService.RecordCompetitionRuleAndTueCheck:input_type -> sttattus.workout.v1.RecordCompetitionRuleAndTueCheckRequest
+	330, // 347: sttattus.workout.v1.WorkoutService.ToggleOfflineVenueCompetitionMode:input_type -> sttattus.workout.v1.ToggleOfflineVenueCompetitionModeRequest
+	336, // 348: sttattus.workout.v1.WorkoutService.GetSportHybridStudiosOverview:input_type -> sttattus.workout.v1.GetSportHybridStudiosOverviewRequest
+	338, // 349: sttattus.workout.v1.WorkoutService.UpsertSportHybridStudioModule:input_type -> sttattus.workout.v1.UpsertSportHybridStudioModuleRequest
+	340, // 350: sttattus.workout.v1.WorkoutService.ConfigureHybridInterferenceSchedule:input_type -> sttattus.workout.v1.ConfigureHybridInterferenceScheduleRequest
+	342, // 351: sttattus.workout.v1.WorkoutService.LogSportSkillOrManualActivitySession:input_type -> sttattus.workout.v1.LogSportSkillOrManualActivitySessionRequest
+	344, // 352: sttattus.workout.v1.WorkoutService.RegisterCustomManualUnvalidatedSport:input_type -> sttattus.workout.v1.RegisterCustomManualUnvalidatedSportRequest
+	346, // 353: sttattus.workout.v1.WorkoutService.AuditHybridLoadDeDuplication:input_type -> sttattus.workout.v1.AuditHybridLoadDeDuplicationRequest
+	352, // 354: sttattus.workout.v1.WorkoutService.GetEquipmentTravelAdaptationOverview:input_type -> sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewRequest
+	354, // 355: sttattus.workout.v1.WorkoutService.UpsertEquipmentLocationProfile:input_type -> sttattus.workout.v1.UpsertEquipmentLocationProfileRequest
+	356, // 356: sttattus.workout.v1.WorkoutService.GenerateTravelWorkoutAdaptation:input_type -> sttattus.workout.v1.GenerateTravelWorkoutAdaptationRequest
+	358, // 357: sttattus.workout.v1.WorkoutService.UpsertVerifiedGymVenueListing:input_type -> sttattus.workout.v1.UpsertVerifiedGymVenueListingRequest
+	360, // 358: sttattus.workout.v1.WorkoutService.FlagStaleGymVenueListing:input_type -> sttattus.workout.v1.FlagStaleGymVenueListingRequest
+	362, // 359: sttattus.workout.v1.WorkoutService.RevertTravelWorkoutToHomeGym:input_type -> sttattus.workout.v1.RevertTravelWorkoutToHomeGymRequest
+	368, // 360: sttattus.workout.v1.WorkoutService.GetFuelWeightSafetyOverview:input_type -> sttattus.workout.v1.GetFuelWeightSafetyOverviewRequest
+	370, // 361: sttattus.workout.v1.WorkoutService.UpsertSessionFuelHydrationPlan:input_type -> sttattus.workout.v1.UpsertSessionFuelHydrationPlanRequest
+	372, // 362: sttattus.workout.v1.WorkoutService.RecordPrivateBodyCompositionTrend:input_type -> sttattus.workout.v1.RecordPrivateBodyCompositionTrendRequest
+	374, // 363: sttattus.workout.v1.WorkoutService.EvaluateWeightClassSafetyPlan:input_type -> sttattus.workout.v1.EvaluateWeightClassSafetyPlanRequest
+	376, // 364: sttattus.workout.v1.WorkoutService.EscalateWeightCutToProfessionalRoute:input_type -> sttattus.workout.v1.EscalateWeightCutToProfessionalRouteRequest
+	378, // 365: sttattus.workout.v1.WorkoutService.VerifyBodyCompositionPrivacyIsolation:input_type -> sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationRequest
+	384, // 366: sttattus.workout.v1.WorkoutService.GetHealthyCompetitionCrewsOverview:input_type -> sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewRequest
+	386, // 367: sttattus.workout.v1.WorkoutService.UpsertHealthyCompetitionCohort:input_type -> sttattus.workout.v1.UpsertHealthyCompetitionCohortRequest
+	388, // 368: sttattus.workout.v1.WorkoutService.ToggleCompetitionMutePreference:input_type -> sttattus.workout.v1.ToggleCompetitionMutePreferenceRequest
+	390, // 369: sttattus.workout.v1.WorkoutService.SubmitCrewChallengeOrAppeal:input_type -> sttattus.workout.v1.SubmitCrewChallengeOrAppealRequest
+	392, // 370: sttattus.workout.v1.WorkoutService.RecordEmpireRewardContribution:input_type -> sttattus.workout.v1.RecordEmpireRewardContributionRequest
+	394, // 371: sttattus.workout.v1.WorkoutService.AdjudicateCrewAntiCheatCase:input_type -> sttattus.workout.v1.AdjudicateCrewAntiCheatCaseRequest
+	400, // 372: sttattus.workout.v1.WorkoutService.GetOfflineAccessibleReleaseCertOverview:input_type -> sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewRequest
+	402, // 373: sttattus.workout.v1.WorkoutService.CertifyOfflineMultimodalSyncState:input_type -> sttattus.workout.v1.CertifyOfflineMultimodalSyncStateRequest
+	404, // 374: sttattus.workout.v1.WorkoutService.UpsertAccessibilityAdaptiveProfile:input_type -> sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileRequest
+	406, // 375: sttattus.workout.v1.WorkoutService.RunMigrationAndErasureCertification:input_type -> sttattus.workout.v1.RunMigrationAndErasureCertificationRequest
+	408, // 376: sttattus.workout.v1.WorkoutService.VerifyBatteryAwareSensorPolicy:input_type -> sttattus.workout.v1.VerifyBatteryAwareSensorPolicyRequest
+	410, // 377: sttattus.workout.v1.WorkoutService.SignOffForge16Of16ReleaseGate:input_type -> sttattus.workout.v1.SignOffForge16Of16ReleaseGateRequest
+	7,   // 378: sttattus.workout.v1.WorkoutService.ListWorkouts:output_type -> sttattus.workout.v1.ListWorkoutsResponse
+	9,   // 379: sttattus.workout.v1.WorkoutService.GetWorkout:output_type -> sttattus.workout.v1.GetWorkoutResponse
+	11,  // 380: sttattus.workout.v1.WorkoutService.LogDayWorkout:output_type -> sttattus.workout.v1.LogDayWorkoutResponse
+	13,  // 381: sttattus.workout.v1.WorkoutService.ListHistory:output_type -> sttattus.workout.v1.ListHistoryResponse
+	15,  // 382: sttattus.workout.v1.WorkoutService.GetForgeStats:output_type -> sttattus.workout.v1.GetForgeStatsResponse
+	17,  // 383: sttattus.workout.v1.WorkoutService.SubmitFeedback:output_type -> sttattus.workout.v1.SubmitFeedbackResponse
+	59,  // 384: sttattus.workout.v1.WorkoutService.GetToday:output_type -> sttattus.workout.v1.GetTodayResponse
+	56,  // 385: sttattus.workout.v1.WorkoutService.GetRankLadder:output_type -> sttattus.workout.v1.GetRankLadderResponse
+	25,  // 386: sttattus.workout.v1.WorkoutService.ListExercises:output_type -> sttattus.workout.v1.ListExercisesResponse
+	27,  // 387: sttattus.workout.v1.WorkoutService.CreateSession:output_type -> sttattus.workout.v1.CreateSessionResponse
+	29,  // 388: sttattus.workout.v1.WorkoutService.GetSession:output_type -> sttattus.workout.v1.GetSessionResponse
+	31,  // 389: sttattus.workout.v1.WorkoutService.GetActiveSession:output_type -> sttattus.workout.v1.GetActiveSessionResponse
+	33,  // 390: sttattus.workout.v1.WorkoutService.ListSessions:output_type -> sttattus.workout.v1.ListSessionsResponse
+	35,  // 391: sttattus.workout.v1.WorkoutService.UpdateSessionStatus:output_type -> sttattus.workout.v1.UpdateSessionStatusResponse
+	37,  // 392: sttattus.workout.v1.WorkoutService.LogSet:output_type -> sttattus.workout.v1.LogSetResponse
+	62,  // 393: sttattus.workout.v1.WorkoutService.GetForgeStreak:output_type -> sttattus.workout.v1.GetForgeStreakResponse
+	65,  // 394: sttattus.workout.v1.WorkoutService.CreateFormVideo:output_type -> sttattus.workout.v1.CreateFormVideoResponse
+	67,  // 395: sttattus.workout.v1.WorkoutService.ListMyFormVideos:output_type -> sttattus.workout.v1.ListMyFormVideosResponse
+	69,  // 396: sttattus.workout.v1.WorkoutService.DeleteFormVideo:output_type -> sttattus.workout.v1.DeleteFormVideoResponse
+	71,  // 397: sttattus.workout.v1.WorkoutService.UpdateFormVideoStatus:output_type -> sttattus.workout.v1.UpdateFormVideoStatusResponse
+	75,  // 398: sttattus.workout.v1.WorkoutService.ListProgrammes:output_type -> sttattus.workout.v1.ListProgrammesResponse
+	77,  // 399: sttattus.workout.v1.WorkoutService.GetProgramme:output_type -> sttattus.workout.v1.GetProgrammeResponse
+	79,  // 400: sttattus.workout.v1.WorkoutService.EnrolInProgramme:output_type -> sttattus.workout.v1.EnrolInProgrammeResponse
+	81,  // 401: sttattus.workout.v1.WorkoutService.GetActiveEnrolment:output_type -> sttattus.workout.v1.GetActiveEnrolmentResponse
+	83,  // 402: sttattus.workout.v1.WorkoutService.ListMyEnrolments:output_type -> sttattus.workout.v1.ListMyEnrolmentsResponse
+	85,  // 403: sttattus.workout.v1.WorkoutService.UpdateEnrolment:output_type -> sttattus.workout.v1.UpdateEnrolmentResponse
+	90,  // 404: sttattus.workout.v1.WorkoutService.ListProgrammeWeeks:output_type -> sttattus.workout.v1.ListProgrammeWeeksResponse
+	92,  // 405: sttattus.workout.v1.WorkoutService.GetProgrammeWeek:output_type -> sttattus.workout.v1.GetProgrammeWeekResponse
+	95,  // 406: sttattus.workout.v1.WorkoutService.ListMyPRs:output_type -> sttattus.workout.v1.ListMyPRsResponse
+	97,  // 407: sttattus.workout.v1.WorkoutService.ListRecentPRs:output_type -> sttattus.workout.v1.ListRecentPRsResponse
+	100, // 408: sttattus.workout.v1.WorkoutService.ListBodyCompositions:output_type -> sttattus.workout.v1.ListBodyCompositionsResponse
+	102, // 409: sttattus.workout.v1.WorkoutService.CreateBodyComposition:output_type -> sttattus.workout.v1.CreateBodyCompositionResponse
+	104, // 410: sttattus.workout.v1.WorkoutService.DeleteBodyComposition:output_type -> sttattus.workout.v1.DeleteBodyCompositionResponse
+	107, // 411: sttattus.workout.v1.WorkoutService.ListInjuries:output_type -> sttattus.workout.v1.ListInjuriesResponse
+	109, // 412: sttattus.workout.v1.WorkoutService.CreateInjury:output_type -> sttattus.workout.v1.CreateInjuryResponse
+	111, // 413: sttattus.workout.v1.WorkoutService.UpdateInjuryStatus:output_type -> sttattus.workout.v1.UpdateInjuryStatusResponse
+	113, // 414: sttattus.workout.v1.WorkoutService.DeleteInjury:output_type -> sttattus.workout.v1.DeleteInjuryResponse
+	117, // 415: sttattus.workout.v1.WorkoutService.ListMobilityBaselines:output_type -> sttattus.workout.v1.ListMobilityBaselinesResponse
+	119, // 416: sttattus.workout.v1.WorkoutService.GetCurrentMobilityBaseline:output_type -> sttattus.workout.v1.GetCurrentMobilityBaselineResponse
+	121, // 417: sttattus.workout.v1.WorkoutService.UpsertMobilityBaseline:output_type -> sttattus.workout.v1.UpsertMobilityBaselineResponse
+	123, // 418: sttattus.workout.v1.WorkoutService.DeleteMobilityBaseline:output_type -> sttattus.workout.v1.DeleteMobilityBaselineResponse
+	127, // 419: sttattus.workout.v1.WorkoutService.ListSensorConnections:output_type -> sttattus.workout.v1.ListSensorConnectionsResponse
+	129, // 420: sttattus.workout.v1.WorkoutService.SetSensorConnectionStatus:output_type -> sttattus.workout.v1.SetSensorConnectionStatusResponse
+	131, // 421: sttattus.workout.v1.WorkoutService.MarkSensorSynced:output_type -> sttattus.workout.v1.MarkSensorSyncedResponse
+	133, // 422: sttattus.workout.v1.WorkoutService.SetSensorPriority:output_type -> sttattus.workout.v1.SetSensorPriorityResponse
+	137, // 423: sttattus.workout.v1.WorkoutService.GetForgeAnalytics:output_type -> sttattus.workout.v1.GetForgeAnalyticsResponse
+	41,  // 424: sttattus.workout.v1.WorkoutService.GetSessionAnalytics:output_type -> sttattus.workout.v1.GetSessionAnalyticsResponse
+	44,  // 425: sttattus.workout.v1.WorkoutService.ListUserEquipment:output_type -> sttattus.workout.v1.ListUserEquipmentResponse
+	46,  // 426: sttattus.workout.v1.WorkoutService.AddUserEquipment:output_type -> sttattus.workout.v1.AddUserEquipmentResponse
+	48,  // 427: sttattus.workout.v1.WorkoutService.DeleteUserEquipment:output_type -> sttattus.workout.v1.DeleteUserEquipmentResponse
+	51,  // 428: sttattus.workout.v1.WorkoutService.ListWorkoutRivalries:output_type -> sttattus.workout.v1.ListWorkoutRivalriesResponse
+	53,  // 429: sttattus.workout.v1.WorkoutService.GetRivalryDetail:output_type -> sttattus.workout.v1.GetRivalryDetailResponse
+	185, // 430: sttattus.workout.v1.WorkoutService.SimulateForgeRank:output_type -> sttattus.workout.v1.SimulateForgeRankResponse
+	187, // 431: sttattus.workout.v1.WorkoutService.GetRecoveryScore:output_type -> sttattus.workout.v1.GetRecoveryScoreResponse
+	172, // 432: sttattus.workout.v1.WorkoutService.StartCoachThread:output_type -> sttattus.workout.v1.StartCoachThreadResponse
+	174, // 433: sttattus.workout.v1.WorkoutService.ListMyCoachThreads:output_type -> sttattus.workout.v1.ListMyCoachThreadsResponse
+	176, // 434: sttattus.workout.v1.WorkoutService.GetCoachThread:output_type -> sttattus.workout.v1.GetCoachThreadResponse
+	178, // 435: sttattus.workout.v1.WorkoutService.PostCoachMessage:output_type -> sttattus.workout.v1.PostCoachMessageResponse
+	181, // 436: sttattus.workout.v1.WorkoutService.ListAnthologyArticles:output_type -> sttattus.workout.v1.ListAnthologyArticlesResponse
+	183, // 437: sttattus.workout.v1.WorkoutService.GetAnthologyArticle:output_type -> sttattus.workout.v1.GetAnthologyArticleResponse
+	164, // 438: sttattus.workout.v1.WorkoutService.CreateAthleteShare:output_type -> sttattus.workout.v1.CreateAthleteShareResponse
+	166, // 439: sttattus.workout.v1.WorkoutService.ListMyAthleteShares:output_type -> sttattus.workout.v1.ListMyAthleteSharesResponse
+	168, // 440: sttattus.workout.v1.WorkoutService.RevokeAthleteShare:output_type -> sttattus.workout.v1.RevokeAthleteShareResponse
+	159, // 441: sttattus.workout.v1.WorkoutService.GenerateForgeAlmanac:output_type -> sttattus.workout.v1.GenerateForgeAlmanacResponse
+	161, // 442: sttattus.workout.v1.WorkoutService.AnalyzeFormVideo:output_type -> sttattus.workout.v1.AnalyzeFormVideoResponse
+	139, // 443: sttattus.workout.v1.WorkoutService.CreateRivalry:output_type -> sttattus.workout.v1.CreateRivalryResponse
+	142, // 444: sttattus.workout.v1.WorkoutService.GetLeaderboard:output_type -> sttattus.workout.v1.GetLeaderboardResponse
+	146, // 445: sttattus.workout.v1.WorkoutService.ListForgeLounges:output_type -> sttattus.workout.v1.ListForgeLoungesResponse
+	148, // 446: sttattus.workout.v1.WorkoutService.ListMyLoungeBookings:output_type -> sttattus.workout.v1.ListMyLoungeBookingsResponse
+	150, // 447: sttattus.workout.v1.WorkoutService.CreateLoungeBooking:output_type -> sttattus.workout.v1.CreateLoungeBookingResponse
+	152, // 448: sttattus.workout.v1.WorkoutService.CancelLoungeBooking:output_type -> sttattus.workout.v1.CancelLoungeBookingResponse
+	155, // 449: sttattus.workout.v1.WorkoutService.ListCoaches:output_type -> sttattus.workout.v1.ListCoachesResponse
+	157, // 450: sttattus.workout.v1.WorkoutService.RequestCoachBooking:output_type -> sttattus.workout.v1.RequestCoachBookingResponse
+	193, // 451: sttattus.workout.v1.WorkoutService.GetAdaptiveProgrammingOverview:output_type -> sttattus.workout.v1.GetAdaptiveProgrammingOverviewResponse
+	195, // 452: sttattus.workout.v1.WorkoutService.GenerateOrUpdateProgrammeVersion:output_type -> sttattus.workout.v1.GenerateOrUpdateProgrammeVersionResponse
+	197, // 453: sttattus.workout.v1.WorkoutService.DecideProgrammeDraftAcceptance:output_type -> sttattus.workout.v1.DecideProgrammeDraftAcceptanceResponse
+	199, // 454: sttattus.workout.v1.WorkoutService.TriggerSafeAdaptiveReplan:output_type -> sttattus.workout.v1.TriggerSafeAdaptiveReplanResponse
+	201, // 455: sttattus.workout.v1.WorkoutService.UpsertAdaptiveProgressionRule:output_type -> sttattus.workout.v1.UpsertAdaptiveProgressionRuleResponse
+	203, // 456: sttattus.workout.v1.WorkoutService.RollbackProgrammeVersion:output_type -> sttattus.workout.v1.RollbackProgrammeVersionResponse
+	209, // 457: sttattus.workout.v1.WorkoutService.GetMovementIntelligenceOverview:output_type -> sttattus.workout.v1.GetMovementIntelligenceOverviewResponse
+	211, // 458: sttattus.workout.v1.WorkoutService.RankIntentPreservingSubstitutions:output_type -> sttattus.workout.v1.RankIntentPreservingSubstitutionsResponse
+	213, // 459: sttattus.workout.v1.WorkoutService.UpsertPersonalTechniqueManual:output_type -> sttattus.workout.v1.UpsertPersonalTechniqueManualResponse
+	215, // 460: sttattus.workout.v1.WorkoutService.SubmitCustomMovementForReview:output_type -> sttattus.workout.v1.SubmitCustomMovementForReviewResponse
+	217, // 461: sttattus.workout.v1.WorkoutService.UpsertMovementGraphProfile:output_type -> sttattus.workout.v1.UpsertMovementGraphProfileResponse
+	219, // 462: sttattus.workout.v1.WorkoutService.RecordSubstitutionSelection:output_type -> sttattus.workout.v1.RecordSubstitutionSelectionResponse
+	225, // 463: sttattus.workout.v1.WorkoutService.GetFormIntelligenceOverview:output_type -> sttattus.workout.v1.GetFormIntelligenceOverviewResponse
+	227, // 464: sttattus.workout.v1.WorkoutService.SubmitFormClipObservation:output_type -> sttattus.workout.v1.SubmitFormClipObservationResponse
+	229, // 465: sttattus.workout.v1.WorkoutService.EscalateFormClipToCoach:output_type -> sttattus.workout.v1.EscalateFormClipToCoachResponse
+	231, // 466: sttattus.workout.v1.WorkoutService.DecideCoachFormReview:output_type -> sttattus.workout.v1.DecideCoachFormReviewResponse
+	233, // 467: sttattus.workout.v1.WorkoutService.UpdateFormPrivacyAndRetention:output_type -> sttattus.workout.v1.UpdateFormPrivacyAndRetentionResponse
+	235, // 468: sttattus.workout.v1.WorkoutService.EraseFormClipAndKeypoints:output_type -> sttattus.workout.v1.EraseFormClipAndKeypointsResponse
+	241, // 469: sttattus.workout.v1.WorkoutService.GetWearableRecoveryFusionOverview:output_type -> sttattus.workout.v1.GetWearableRecoveryFusionOverviewResponse
+	243, // 470: sttattus.workout.v1.WorkoutService.UpsertWearablePurposeGrant:output_type -> sttattus.workout.v1.UpsertWearablePurposeGrantResponse
+	245, // 471: sttattus.workout.v1.WorkoutService.RevokeWearablePurposeGrant:output_type -> sttattus.workout.v1.RevokeWearablePurposeGrantResponse
+	247, // 472: sttattus.workout.v1.WorkoutService.ConfigureRecoverySensorStream:output_type -> sttattus.workout.v1.ConfigureRecoverySensorStreamResponse
+	249, // 473: sttattus.workout.v1.WorkoutService.SubmitNoWearableSubjectiveReadiness:output_type -> sttattus.workout.v1.SubmitNoWearableSubjectiveReadinessResponse
+	251, // 474: sttattus.workout.v1.WorkoutService.ReconcileSensorConflictOrOutage:output_type -> sttattus.workout.v1.ReconcileSensorConflictOrOutageResponse
+	257, // 475: sttattus.workout.v1.WorkoutService.GetPerformanceAnalyticsStudioOverview:output_type -> sttattus.workout.v1.GetPerformanceAnalyticsStudioOverviewResponse
+	259, // 476: sttattus.workout.v1.WorkoutService.RecordPerformanceExposureLedger:output_type -> sttattus.workout.v1.RecordPerformanceExposureLedgerResponse
+	261, // 477: sttattus.workout.v1.WorkoutService.UpsertStrengthPerformanceModel:output_type -> sttattus.workout.v1.UpsertStrengthPerformanceModelResponse
+	263, // 478: sttattus.workout.v1.WorkoutService.CreateTrainingNOf1Experiment:output_type -> sttattus.workout.v1.CreateTrainingNOf1ExperimentResponse
+	265, // 479: sttattus.workout.v1.WorkoutService.LogTrainingNOf1ExperimentSession:output_type -> sttattus.workout.v1.LogTrainingNOf1ExperimentSessionResponse
+	267, // 480: sttattus.workout.v1.WorkoutService.EvaluateTrainingNOf1Experiment:output_type -> sttattus.workout.v1.EvaluateTrainingNOf1ExperimentResponse
+	273, // 481: sttattus.workout.v1.WorkoutService.GetInjuryReturnPathwayOverview:output_type -> sttattus.workout.v1.GetInjuryReturnPathwayOverviewResponse
+	275, // 482: sttattus.workout.v1.WorkoutService.UpsertInjuryRestrictionLock:output_type -> sttattus.workout.v1.UpsertInjuryRestrictionLockResponse
+	277, // 483: sttattus.workout.v1.WorkoutService.LogInSessionPainTriageEvent:output_type -> sttattus.workout.v1.LogInSessionPainTriageEventResponse
+	279, // 484: sttattus.workout.v1.WorkoutService.AdvanceReturnToTrainingStage:output_type -> sttattus.workout.v1.AdvanceReturnToTrainingStageResponse
+	281, // 485: sttattus.workout.v1.WorkoutService.RecordReturnToTrainingSetback:output_type -> sttattus.workout.v1.RecordReturnToTrainingSetbackResponse
+	283, // 486: sttattus.workout.v1.WorkoutService.ClearInjuryRestrictionLock:output_type -> sttattus.workout.v1.ClearInjuryRestrictionLockResponse
+	289, // 487: sttattus.workout.v1.WorkoutService.GetCoachOsCollaborationOverview:output_type -> sttattus.workout.v1.GetCoachOsCollaborationOverviewResponse
+	291, // 488: sttattus.workout.v1.WorkoutService.UpsertCoachAthleteScopedGrant:output_type -> sttattus.workout.v1.UpsertCoachAthleteScopedGrantResponse
+	293, // 489: sttattus.workout.v1.WorkoutService.RevokeCoachAthleteScopedGrant:output_type -> sttattus.workout.v1.RevokeCoachAthleteScopedGrantResponse
+	295, // 490: sttattus.workout.v1.WorkoutService.ProposeCoachProgrammeChange:output_type -> sttattus.workout.v1.ProposeCoachProgrammeChangeResponse
+	297, // 491: sttattus.workout.v1.WorkoutService.RespondToCoachChangeProposal:output_type -> sttattus.workout.v1.RespondToCoachChangeProposalResponse
+	299, // 492: sttattus.workout.v1.WorkoutService.UpdateCoachMarketplaceEngagement:output_type -> sttattus.workout.v1.UpdateCoachMarketplaceEngagementResponse
+	305, // 493: sttattus.workout.v1.WorkoutService.GetTeamsClubsFacilitiesOverview:output_type -> sttattus.workout.v1.GetTeamsClubsFacilitiesOverviewResponse
+	307, // 494: sttattus.workout.v1.WorkoutService.UpsertTeamSquadRoster:output_type -> sttattus.workout.v1.UpsertTeamSquadRosterResponse
+	309, // 495: sttattus.workout.v1.WorkoutService.SubmitTeamTrafficLightCheckin:output_type -> sttattus.workout.v1.SubmitTeamTrafficLightCheckinResponse
+	311, // 496: sttattus.workout.v1.WorkoutService.ReserveOrUpdateFacilityRackStation:output_type -> sttattus.workout.v1.ReserveOrUpdateFacilityRackStationResponse
+	313, // 497: sttattus.workout.v1.WorkoutService.FlagFacilityMaintenanceOrIncident:output_type -> sttattus.workout.v1.FlagFacilityMaintenanceOrIncidentResponse
+	315, // 498: sttattus.workout.v1.WorkoutService.VerifyYouthSquadSafeguarding:output_type -> sttattus.workout.v1.VerifyYouthSquadSafeguardingResponse
+	321, // 499: sttattus.workout.v1.WorkoutService.GetCompetitionVerifiedPerformanceOverview:output_type -> sttattus.workout.v1.GetCompetitionVerifiedPerformanceOverviewResponse
+	323, // 500: sttattus.workout.v1.WorkoutService.UpsertCompetitionEventPlan:output_type -> sttattus.workout.v1.UpsertCompetitionEventPlanResponse
+	325, // 501: sttattus.workout.v1.WorkoutService.SubmitVerifiedPerformanceResult:output_type -> sttattus.workout.v1.SubmitVerifiedPerformanceResultResponse
+	327, // 502: sttattus.workout.v1.WorkoutService.FilePerformanceResultAppeal:output_type -> sttattus.workout.v1.FilePerformanceResultAppealResponse
+	329, // 503: sttattus.workout.v1.WorkoutService.RecordCompetitionRuleAndTueCheck:output_type -> sttattus.workout.v1.RecordCompetitionRuleAndTueCheckResponse
+	331, // 504: sttattus.workout.v1.WorkoutService.ToggleOfflineVenueCompetitionMode:output_type -> sttattus.workout.v1.ToggleOfflineVenueCompetitionModeResponse
+	337, // 505: sttattus.workout.v1.WorkoutService.GetSportHybridStudiosOverview:output_type -> sttattus.workout.v1.GetSportHybridStudiosOverviewResponse
+	339, // 506: sttattus.workout.v1.WorkoutService.UpsertSportHybridStudioModule:output_type -> sttattus.workout.v1.UpsertSportHybridStudioModuleResponse
+	341, // 507: sttattus.workout.v1.WorkoutService.ConfigureHybridInterferenceSchedule:output_type -> sttattus.workout.v1.ConfigureHybridInterferenceScheduleResponse
+	343, // 508: sttattus.workout.v1.WorkoutService.LogSportSkillOrManualActivitySession:output_type -> sttattus.workout.v1.LogSportSkillOrManualActivitySessionResponse
+	345, // 509: sttattus.workout.v1.WorkoutService.RegisterCustomManualUnvalidatedSport:output_type -> sttattus.workout.v1.RegisterCustomManualUnvalidatedSportResponse
+	347, // 510: sttattus.workout.v1.WorkoutService.AuditHybridLoadDeDuplication:output_type -> sttattus.workout.v1.AuditHybridLoadDeDuplicationResponse
+	353, // 511: sttattus.workout.v1.WorkoutService.GetEquipmentTravelAdaptationOverview:output_type -> sttattus.workout.v1.GetEquipmentTravelAdaptationOverviewResponse
+	355, // 512: sttattus.workout.v1.WorkoutService.UpsertEquipmentLocationProfile:output_type -> sttattus.workout.v1.UpsertEquipmentLocationProfileResponse
+	357, // 513: sttattus.workout.v1.WorkoutService.GenerateTravelWorkoutAdaptation:output_type -> sttattus.workout.v1.GenerateTravelWorkoutAdaptationResponse
+	359, // 514: sttattus.workout.v1.WorkoutService.UpsertVerifiedGymVenueListing:output_type -> sttattus.workout.v1.UpsertVerifiedGymVenueListingResponse
+	361, // 515: sttattus.workout.v1.WorkoutService.FlagStaleGymVenueListing:output_type -> sttattus.workout.v1.FlagStaleGymVenueListingResponse
+	363, // 516: sttattus.workout.v1.WorkoutService.RevertTravelWorkoutToHomeGym:output_type -> sttattus.workout.v1.RevertTravelWorkoutToHomeGymResponse
+	369, // 517: sttattus.workout.v1.WorkoutService.GetFuelWeightSafetyOverview:output_type -> sttattus.workout.v1.GetFuelWeightSafetyOverviewResponse
+	371, // 518: sttattus.workout.v1.WorkoutService.UpsertSessionFuelHydrationPlan:output_type -> sttattus.workout.v1.UpsertSessionFuelHydrationPlanResponse
+	373, // 519: sttattus.workout.v1.WorkoutService.RecordPrivateBodyCompositionTrend:output_type -> sttattus.workout.v1.RecordPrivateBodyCompositionTrendResponse
+	375, // 520: sttattus.workout.v1.WorkoutService.EvaluateWeightClassSafetyPlan:output_type -> sttattus.workout.v1.EvaluateWeightClassSafetyPlanResponse
+	377, // 521: sttattus.workout.v1.WorkoutService.EscalateWeightCutToProfessionalRoute:output_type -> sttattus.workout.v1.EscalateWeightCutToProfessionalRouteResponse
+	379, // 522: sttattus.workout.v1.WorkoutService.VerifyBodyCompositionPrivacyIsolation:output_type -> sttattus.workout.v1.VerifyBodyCompositionPrivacyIsolationResponse
+	385, // 523: sttattus.workout.v1.WorkoutService.GetHealthyCompetitionCrewsOverview:output_type -> sttattus.workout.v1.GetHealthyCompetitionCrewsOverviewResponse
+	387, // 524: sttattus.workout.v1.WorkoutService.UpsertHealthyCompetitionCohort:output_type -> sttattus.workout.v1.UpsertHealthyCompetitionCohortResponse
+	389, // 525: sttattus.workout.v1.WorkoutService.ToggleCompetitionMutePreference:output_type -> sttattus.workout.v1.ToggleCompetitionMutePreferenceResponse
+	391, // 526: sttattus.workout.v1.WorkoutService.SubmitCrewChallengeOrAppeal:output_type -> sttattus.workout.v1.SubmitCrewChallengeOrAppealResponse
+	393, // 527: sttattus.workout.v1.WorkoutService.RecordEmpireRewardContribution:output_type -> sttattus.workout.v1.RecordEmpireRewardContributionResponse
+	395, // 528: sttattus.workout.v1.WorkoutService.AdjudicateCrewAntiCheatCase:output_type -> sttattus.workout.v1.AdjudicateCrewAntiCheatCaseResponse
+	401, // 529: sttattus.workout.v1.WorkoutService.GetOfflineAccessibleReleaseCertOverview:output_type -> sttattus.workout.v1.GetOfflineAccessibleReleaseCertOverviewResponse
+	403, // 530: sttattus.workout.v1.WorkoutService.CertifyOfflineMultimodalSyncState:output_type -> sttattus.workout.v1.CertifyOfflineMultimodalSyncStateResponse
+	405, // 531: sttattus.workout.v1.WorkoutService.UpsertAccessibilityAdaptiveProfile:output_type -> sttattus.workout.v1.UpsertAccessibilityAdaptiveProfileResponse
+	407, // 532: sttattus.workout.v1.WorkoutService.RunMigrationAndErasureCertification:output_type -> sttattus.workout.v1.RunMigrationAndErasureCertificationResponse
+	409, // 533: sttattus.workout.v1.WorkoutService.VerifyBatteryAwareSensorPolicy:output_type -> sttattus.workout.v1.VerifyBatteryAwareSensorPolicyResponse
+	411, // 534: sttattus.workout.v1.WorkoutService.SignOffForge16Of16ReleaseGate:output_type -> sttattus.workout.v1.SignOffForge16Of16ReleaseGateResponse
+	378, // [378:535] is the sub-list for method output_type
+	221, // [221:378] is the sub-list for method input_type
+	221, // [221:221] is the sub-list for extension type_name
+	221, // [221:221] is the sub-list for extension extendee
+	0,   // [0:221] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_workout_v1_workout_proto_init() }
@@ -13276,7 +30252,7 @@ func file_sttattus_workout_v1_workout_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_workout_v1_workout_proto_rawDesc), len(file_sttattus_workout_v1_workout_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   188,
+			NumMessages:   412,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

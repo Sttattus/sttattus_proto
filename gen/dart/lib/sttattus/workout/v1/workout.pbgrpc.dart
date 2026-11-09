@@ -604,6 +604,773 @@ class WorkoutServiceClient extends $grpc.Client {
     return $createUnaryCall(_$requestCoachBooking, request, options: options);
   }
 
+  /// ===== Choice 3 (FG3) — Explainable Adaptive Programming Engine =====
+  $grpc.ResponseFuture<$0.GetAdaptiveProgrammingOverviewResponse>
+      getAdaptiveProgrammingOverview(
+    $0.GetAdaptiveProgrammingOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAdaptiveProgrammingOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateOrUpdateProgrammeVersionResponse>
+      generateOrUpdateProgrammeVersion(
+    $0.GenerateOrUpdateProgrammeVersionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateOrUpdateProgrammeVersion, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DecideProgrammeDraftAcceptanceResponse>
+      decideProgrammeDraftAcceptance(
+    $0.DecideProgrammeDraftAcceptanceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$decideProgrammeDraftAcceptance, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.TriggerSafeAdaptiveReplanResponse>
+      triggerSafeAdaptiveReplan(
+    $0.TriggerSafeAdaptiveReplanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$triggerSafeAdaptiveReplan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertAdaptiveProgressionRuleResponse>
+      upsertAdaptiveProgressionRule(
+    $0.UpsertAdaptiveProgressionRuleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertAdaptiveProgressionRule, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RollbackProgrammeVersionResponse>
+      rollbackProgrammeVersion(
+    $0.RollbackProgrammeVersionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$rollbackProgrammeVersion, request,
+        options: options);
+  }
+
+  /// ===== Choice 4 (FG4) — Movement Library, Substitutions, and Personal Technique Manual =====
+  $grpc.ResponseFuture<$0.GetMovementIntelligenceOverviewResponse>
+      getMovementIntelligenceOverview(
+    $0.GetMovementIntelligenceOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMovementIntelligenceOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RankIntentPreservingSubstitutionsResponse>
+      rankIntentPreservingSubstitutions(
+    $0.RankIntentPreservingSubstitutionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$rankIntentPreservingSubstitutions, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertPersonalTechniqueManualResponse>
+      upsertPersonalTechniqueManual(
+    $0.UpsertPersonalTechniqueManualRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertPersonalTechniqueManual, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCustomMovementForReviewResponse>
+      submitCustomMovementForReview(
+    $0.SubmitCustomMovementForReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitCustomMovementForReview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertMovementGraphProfileResponse>
+      upsertMovementGraphProfile(
+    $0.UpsertMovementGraphProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertMovementGraphProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordSubstitutionSelectionResponse>
+      recordSubstitutionSelection(
+    $0.RecordSubstitutionSelectionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordSubstitutionSelection, request,
+        options: options);
+  }
+
+  /// ===== Choice 5 (FG5) — Technique and Form Intelligence Laboratory =====
+  $grpc.ResponseFuture<$0.GetFormIntelligenceOverviewResponse>
+      getFormIntelligenceOverview(
+    $0.GetFormIntelligenceOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getFormIntelligenceOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitFormClipObservationResponse>
+      submitFormClipObservation(
+    $0.SubmitFormClipObservationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitFormClipObservation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EscalateFormClipToCoachResponse>
+      escalateFormClipToCoach(
+    $0.EscalateFormClipToCoachRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$escalateFormClipToCoach, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.DecideCoachFormReviewResponse> decideCoachFormReview(
+    $0.DecideCoachFormReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$decideCoachFormReview, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateFormPrivacyAndRetentionResponse>
+      updateFormPrivacyAndRetention(
+    $0.UpdateFormPrivacyAndRetentionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateFormPrivacyAndRetention, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EraseFormClipAndKeypointsResponse>
+      eraseFormClipAndKeypoints(
+    $0.EraseFormClipAndKeypointsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$eraseFormClipAndKeypoints, request,
+        options: options);
+  }
+
+  /// ===== Choice 6 (FG6) — Wearable, Machine, and Recovery Data Fusion =====
+  $grpc.ResponseFuture<$0.GetWearableRecoveryFusionOverviewResponse>
+      getWearableRecoveryFusionOverview(
+    $0.GetWearableRecoveryFusionOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getWearableRecoveryFusionOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertWearablePurposeGrantResponse>
+      upsertWearablePurposeGrant(
+    $0.UpsertWearablePurposeGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertWearablePurposeGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeWearablePurposeGrantResponse>
+      revokeWearablePurposeGrant(
+    $0.RevokeWearablePurposeGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeWearablePurposeGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfigureRecoverySensorStreamResponse>
+      configureRecoverySensorStream(
+    $0.ConfigureRecoverySensorStreamRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$configureRecoverySensorStream, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitNoWearableSubjectiveReadinessResponse>
+      submitNoWearableSubjectiveReadiness(
+    $0.SubmitNoWearableSubjectiveReadinessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitNoWearableSubjectiveReadiness, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReconcileSensorConflictOrOutageResponse>
+      reconcileSensorConflictOrOutage(
+    $0.ReconcileSensorConflictOrOutageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reconcileSensorConflictOrOutage, request,
+        options: options);
+  }
+
+  /// ===== Choice 7 (FG7) — Training Load, Progression, and Performance Analytics =====
+  $grpc.ResponseFuture<$0.GetPerformanceAnalyticsStudioOverviewResponse>
+      getPerformanceAnalyticsStudioOverview(
+    $0.GetPerformanceAnalyticsStudioOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPerformanceAnalyticsStudioOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordPerformanceExposureLedgerResponse>
+      recordPerformanceExposureLedger(
+    $0.RecordPerformanceExposureLedgerRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordPerformanceExposureLedger, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertStrengthPerformanceModelResponse>
+      upsertStrengthPerformanceModel(
+    $0.UpsertStrengthPerformanceModelRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertStrengthPerformanceModel, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateTrainingNOf1ExperimentResponse>
+      createTrainingNOf1Experiment(
+    $0.CreateTrainingNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createTrainingNOf1Experiment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LogTrainingNOf1ExperimentSessionResponse>
+      logTrainingNOf1ExperimentSession(
+    $0.LogTrainingNOf1ExperimentSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$logTrainingNOf1ExperimentSession, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EvaluateTrainingNOf1ExperimentResponse>
+      evaluateTrainingNOf1Experiment(
+    $0.EvaluateTrainingNOf1ExperimentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$evaluateTrainingNOf1Experiment, request,
+        options: options);
+  }
+
+  /// ===== Choice 8 (FG8) — Pain, Injury, Mobility, and Return-to-Training Pathway =====
+  $grpc.ResponseFuture<$0.GetInjuryReturnPathwayOverviewResponse>
+      getInjuryReturnPathwayOverview(
+    $0.GetInjuryReturnPathwayOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getInjuryReturnPathwayOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertInjuryRestrictionLockResponse>
+      upsertInjuryRestrictionLock(
+    $0.UpsertInjuryRestrictionLockRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertInjuryRestrictionLock, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LogInSessionPainTriageEventResponse>
+      logInSessionPainTriageEvent(
+    $0.LogInSessionPainTriageEventRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$logInSessionPainTriageEvent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdvanceReturnToTrainingStageResponse>
+      advanceReturnToTrainingStage(
+    $0.AdvanceReturnToTrainingStageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$advanceReturnToTrainingStage, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordReturnToTrainingSetbackResponse>
+      recordReturnToTrainingSetback(
+    $0.RecordReturnToTrainingSetbackRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordReturnToTrainingSetback, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ClearInjuryRestrictionLockResponse>
+      clearInjuryRestrictionLock(
+    $0.ClearInjuryRestrictionLockRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$clearInjuryRestrictionLock, request,
+        options: options);
+  }
+
+  /// ===== Choice 9 (FG9) — Coach OS and Athlete Collaboration =====
+  $grpc.ResponseFuture<$0.GetCoachOsCollaborationOverviewResponse>
+      getCoachOsCollaborationOverview(
+    $0.GetCoachOsCollaborationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCoachOsCollaborationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCoachAthleteScopedGrantResponse>
+      upsertCoachAthleteScopedGrant(
+    $0.UpsertCoachAthleteScopedGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertCoachAthleteScopedGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeCoachAthleteScopedGrantResponse>
+      revokeCoachAthleteScopedGrant(
+    $0.RevokeCoachAthleteScopedGrantRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeCoachAthleteScopedGrant, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ProposeCoachProgrammeChangeResponse>
+      proposeCoachProgrammeChange(
+    $0.ProposeCoachProgrammeChangeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$proposeCoachProgrammeChange, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RespondToCoachChangeProposalResponse>
+      respondToCoachChangeProposal(
+    $0.RespondToCoachChangeProposalRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$respondToCoachChangeProposal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCoachMarketplaceEngagementResponse>
+      updateCoachMarketplaceEngagement(
+    $0.UpdateCoachMarketplaceEngagementRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCoachMarketplaceEngagement, request,
+        options: options);
+  }
+
+  /// ===== Choice 10 (FG10) — Teams, Clubs, Facilities, and Strength-Room Operations =====
+  $grpc.ResponseFuture<$0.GetTeamsClubsFacilitiesOverviewResponse>
+      getTeamsClubsFacilitiesOverview(
+    $0.GetTeamsClubsFacilitiesOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getTeamsClubsFacilitiesOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertTeamSquadRosterResponse> upsertTeamSquadRoster(
+    $0.UpsertTeamSquadRosterRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertTeamSquadRoster, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitTeamTrafficLightCheckinResponse>
+      submitTeamTrafficLightCheckin(
+    $0.SubmitTeamTrafficLightCheckinRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitTeamTrafficLightCheckin, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReserveOrUpdateFacilityRackStationResponse>
+      reserveOrUpdateFacilityRackStation(
+    $0.ReserveOrUpdateFacilityRackStationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reserveOrUpdateFacilityRackStation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FlagFacilityMaintenanceOrIncidentResponse>
+      flagFacilityMaintenanceOrIncident(
+    $0.FlagFacilityMaintenanceOrIncidentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$flagFacilityMaintenanceOrIncident, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyYouthSquadSafeguardingResponse>
+      verifyYouthSquadSafeguarding(
+    $0.VerifyYouthSquadSafeguardingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyYouthSquadSafeguarding, request,
+        options: options);
+  }
+
+  /// ===== Choice 11 (FG11) — Competition, Test Day, and Verified Performance =====
+  $grpc.ResponseFuture<$0.GetCompetitionVerifiedPerformanceOverviewResponse>
+      getCompetitionVerifiedPerformanceOverview(
+    $0.GetCompetitionVerifiedPerformanceOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$getCompetitionVerifiedPerformanceOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertCompetitionEventPlanResponse>
+      upsertCompetitionEventPlan(
+    $0.UpsertCompetitionEventPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertCompetitionEventPlan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitVerifiedPerformanceResultResponse>
+      submitVerifiedPerformanceResult(
+    $0.SubmitVerifiedPerformanceResultRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitVerifiedPerformanceResult, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FilePerformanceResultAppealResponse>
+      filePerformanceResultAppeal(
+    $0.FilePerformanceResultAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$filePerformanceResultAppeal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordCompetitionRuleAndTueCheckResponse>
+      recordCompetitionRuleAndTueCheck(
+    $0.RecordCompetitionRuleAndTueCheckRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordCompetitionRuleAndTueCheck, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ToggleOfflineVenueCompetitionModeResponse>
+      toggleOfflineVenueCompetitionMode(
+    $0.ToggleOfflineVenueCompetitionModeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$toggleOfflineVenueCompetitionMode, request,
+        options: options);
+  }
+
+  /// ===== Choice 12 (FG12) — Sport-Specific and Hybrid-Performance Studios =====
+  $grpc.ResponseFuture<$0.GetSportHybridStudiosOverviewResponse>
+      getSportHybridStudiosOverview(
+    $0.GetSportHybridStudiosOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSportHybridStudiosOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSportHybridStudioModuleResponse>
+      upsertSportHybridStudioModule(
+    $0.UpsertSportHybridStudioModuleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSportHybridStudioModule, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfigureHybridInterferenceScheduleResponse>
+      configureHybridInterferenceSchedule(
+    $0.ConfigureHybridInterferenceScheduleRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$configureHybridInterferenceSchedule, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LogSportSkillOrManualActivitySessionResponse>
+      logSportSkillOrManualActivitySession(
+    $0.LogSportSkillOrManualActivitySessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$logSportSkillOrManualActivitySession, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RegisterCustomManualUnvalidatedSportResponse>
+      registerCustomManualUnvalidatedSport(
+    $0.RegisterCustomManualUnvalidatedSportRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$registerCustomManualUnvalidatedSport, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AuditHybridLoadDeDuplicationResponse>
+      auditHybridLoadDeDuplication(
+    $0.AuditHybridLoadDeDuplicationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$auditHybridLoadDeDuplication, request,
+        options: options);
+  }
+
+  /// ===== Choice 13 (FG13) — Equipment, Location, Travel, and Workout Adaptation =====
+  $grpc.ResponseFuture<$0.GetEquipmentTravelAdaptationOverviewResponse>
+      getEquipmentTravelAdaptationOverview(
+    $0.GetEquipmentTravelAdaptationOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEquipmentTravelAdaptationOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertEquipmentLocationProfileResponse>
+      upsertEquipmentLocationProfile(
+    $0.UpsertEquipmentLocationProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertEquipmentLocationProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateTravelWorkoutAdaptationResponse>
+      generateTravelWorkoutAdaptation(
+    $0.GenerateTravelWorkoutAdaptationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateTravelWorkoutAdaptation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertVerifiedGymVenueListingResponse>
+      upsertVerifiedGymVenueListing(
+    $0.UpsertVerifiedGymVenueListingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertVerifiedGymVenueListing, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FlagStaleGymVenueListingResponse>
+      flagStaleGymVenueListing(
+    $0.FlagStaleGymVenueListingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$flagStaleGymVenueListing, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevertTravelWorkoutToHomeGymResponse>
+      revertTravelWorkoutToHomeGym(
+    $0.RevertTravelWorkoutToHomeGymRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revertTravelWorkoutToHomeGym, request,
+        options: options);
+  }
+
+  /// ===== Choice 14 (FG14) — Fuel, Hydration, Body Composition, and Weight-Class Support =====
+  $grpc.ResponseFuture<$0.GetFuelWeightSafetyOverviewResponse>
+      getFuelWeightSafetyOverview(
+    $0.GetFuelWeightSafetyOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getFuelWeightSafetyOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertSessionFuelHydrationPlanResponse>
+      upsertSessionFuelHydrationPlan(
+    $0.UpsertSessionFuelHydrationPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertSessionFuelHydrationPlan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordPrivateBodyCompositionTrendResponse>
+      recordPrivateBodyCompositionTrend(
+    $0.RecordPrivateBodyCompositionTrendRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordPrivateBodyCompositionTrend, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EvaluateWeightClassSafetyPlanResponse>
+      evaluateWeightClassSafetyPlan(
+    $0.EvaluateWeightClassSafetyPlanRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$evaluateWeightClassSafetyPlan, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EscalateWeightCutToProfessionalRouteResponse>
+      escalateWeightCutToProfessionalRoute(
+    $0.EscalateWeightCutToProfessionalRouteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$escalateWeightCutToProfessionalRoute, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyBodyCompositionPrivacyIsolationResponse>
+      verifyBodyCompositionPrivacyIsolation(
+    $0.VerifyBodyCompositionPrivacyIsolationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyBodyCompositionPrivacyIsolation, request,
+        options: options);
+  }
+
+  /// ===== Choice 15 (FG15) — Healthy Competition, Crews, Rewards, and Contribution =====
+  $grpc.ResponseFuture<$0.GetHealthyCompetitionCrewsOverviewResponse>
+      getHealthyCompetitionCrewsOverview(
+    $0.GetHealthyCompetitionCrewsOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getHealthyCompetitionCrewsOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertHealthyCompetitionCohortResponse>
+      upsertHealthyCompetitionCohort(
+    $0.UpsertHealthyCompetitionCohortRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertHealthyCompetitionCohort, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ToggleCompetitionMutePreferenceResponse>
+      toggleCompetitionMutePreference(
+    $0.ToggleCompetitionMutePreferenceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$toggleCompetitionMutePreference, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitCrewChallengeOrAppealResponse>
+      submitCrewChallengeOrAppeal(
+    $0.SubmitCrewChallengeOrAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitCrewChallengeOrAppeal, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordEmpireRewardContributionResponse>
+      recordEmpireRewardContribution(
+    $0.RecordEmpireRewardContributionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordEmpireRewardContribution, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdjudicateCrewAntiCheatCaseResponse>
+      adjudicateCrewAntiCheatCase(
+    $0.AdjudicateCrewAntiCheatCaseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adjudicateCrewAntiCheatCase, request,
+        options: options);
+  }
+
+  /// ===== Choice 16 (FG16) — Offline, Accessible, Multimodal, and Migration-Certified Forge =====
+  $grpc.ResponseFuture<$0.GetOfflineAccessibleReleaseCertOverviewResponse>
+      getOfflineAccessibleReleaseCertOverview(
+    $0.GetOfflineAccessibleReleaseCertOverviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getOfflineAccessibleReleaseCertOverview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CertifyOfflineMultimodalSyncStateResponse>
+      certifyOfflineMultimodalSyncState(
+    $0.CertifyOfflineMultimodalSyncStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$certifyOfflineMultimodalSyncState, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpsertAccessibilityAdaptiveProfileResponse>
+      upsertAccessibilityAdaptiveProfile(
+    $0.UpsertAccessibilityAdaptiveProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$upsertAccessibilityAdaptiveProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RunMigrationAndErasureCertificationResponse>
+      runMigrationAndErasureCertification(
+    $0.RunMigrationAndErasureCertificationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$runMigrationAndErasureCertification, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyBatteryAwareSensorPolicyResponse>
+      verifyBatteryAwareSensorPolicy(
+    $0.VerifyBatteryAwareSensorPolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyBatteryAwareSensorPolicy, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SignOffForge16Of16ReleaseGateResponse>
+      signOffForge16Of16ReleaseGate(
+    $0.SignOffForge16Of16ReleaseGateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$signOffForge16Of16ReleaseGate, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$listWorkouts =
@@ -973,6 +1740,540 @@ class WorkoutServiceClient extends $grpc.Client {
       '/sttattus.workout.v1.WorkoutService/RequestCoachBooking',
       ($0.RequestCoachBookingRequest value) => value.writeToBuffer(),
       $0.RequestCoachBookingResponse.fromBuffer);
+  static final _$getAdaptiveProgrammingOverview = $grpc.ClientMethod<
+          $0.GetAdaptiveProgrammingOverviewRequest,
+          $0.GetAdaptiveProgrammingOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetAdaptiveProgrammingOverview',
+      ($0.GetAdaptiveProgrammingOverviewRequest value) => value.writeToBuffer(),
+      $0.GetAdaptiveProgrammingOverviewResponse.fromBuffer);
+  static final _$generateOrUpdateProgrammeVersion = $grpc.ClientMethod<
+          $0.GenerateOrUpdateProgrammeVersionRequest,
+          $0.GenerateOrUpdateProgrammeVersionResponse>(
+      '/sttattus.workout.v1.WorkoutService/GenerateOrUpdateProgrammeVersion',
+      ($0.GenerateOrUpdateProgrammeVersionRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateOrUpdateProgrammeVersionResponse.fromBuffer);
+  static final _$decideProgrammeDraftAcceptance = $grpc.ClientMethod<
+          $0.DecideProgrammeDraftAcceptanceRequest,
+          $0.DecideProgrammeDraftAcceptanceResponse>(
+      '/sttattus.workout.v1.WorkoutService/DecideProgrammeDraftAcceptance',
+      ($0.DecideProgrammeDraftAcceptanceRequest value) => value.writeToBuffer(),
+      $0.DecideProgrammeDraftAcceptanceResponse.fromBuffer);
+  static final _$triggerSafeAdaptiveReplan = $grpc.ClientMethod<
+          $0.TriggerSafeAdaptiveReplanRequest,
+          $0.TriggerSafeAdaptiveReplanResponse>(
+      '/sttattus.workout.v1.WorkoutService/TriggerSafeAdaptiveReplan',
+      ($0.TriggerSafeAdaptiveReplanRequest value) => value.writeToBuffer(),
+      $0.TriggerSafeAdaptiveReplanResponse.fromBuffer);
+  static final _$upsertAdaptiveProgressionRule = $grpc.ClientMethod<
+          $0.UpsertAdaptiveProgressionRuleRequest,
+          $0.UpsertAdaptiveProgressionRuleResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertAdaptiveProgressionRule',
+      ($0.UpsertAdaptiveProgressionRuleRequest value) => value.writeToBuffer(),
+      $0.UpsertAdaptiveProgressionRuleResponse.fromBuffer);
+  static final _$rollbackProgrammeVersion = $grpc.ClientMethod<
+          $0.RollbackProgrammeVersionRequest,
+          $0.RollbackProgrammeVersionResponse>(
+      '/sttattus.workout.v1.WorkoutService/RollbackProgrammeVersion',
+      ($0.RollbackProgrammeVersionRequest value) => value.writeToBuffer(),
+      $0.RollbackProgrammeVersionResponse.fromBuffer);
+  static final _$getMovementIntelligenceOverview = $grpc.ClientMethod<
+          $0.GetMovementIntelligenceOverviewRequest,
+          $0.GetMovementIntelligenceOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetMovementIntelligenceOverview',
+      ($0.GetMovementIntelligenceOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetMovementIntelligenceOverviewResponse.fromBuffer);
+  static final _$rankIntentPreservingSubstitutions = $grpc.ClientMethod<
+          $0.RankIntentPreservingSubstitutionsRequest,
+          $0.RankIntentPreservingSubstitutionsResponse>(
+      '/sttattus.workout.v1.WorkoutService/RankIntentPreservingSubstitutions',
+      ($0.RankIntentPreservingSubstitutionsRequest value) =>
+          value.writeToBuffer(),
+      $0.RankIntentPreservingSubstitutionsResponse.fromBuffer);
+  static final _$upsertPersonalTechniqueManual = $grpc.ClientMethod<
+          $0.UpsertPersonalTechniqueManualRequest,
+          $0.UpsertPersonalTechniqueManualResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertPersonalTechniqueManual',
+      ($0.UpsertPersonalTechniqueManualRequest value) => value.writeToBuffer(),
+      $0.UpsertPersonalTechniqueManualResponse.fromBuffer);
+  static final _$submitCustomMovementForReview = $grpc.ClientMethod<
+          $0.SubmitCustomMovementForReviewRequest,
+          $0.SubmitCustomMovementForReviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitCustomMovementForReview',
+      ($0.SubmitCustomMovementForReviewRequest value) => value.writeToBuffer(),
+      $0.SubmitCustomMovementForReviewResponse.fromBuffer);
+  static final _$upsertMovementGraphProfile = $grpc.ClientMethod<
+          $0.UpsertMovementGraphProfileRequest,
+          $0.UpsertMovementGraphProfileResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertMovementGraphProfile',
+      ($0.UpsertMovementGraphProfileRequest value) => value.writeToBuffer(),
+      $0.UpsertMovementGraphProfileResponse.fromBuffer);
+  static final _$recordSubstitutionSelection = $grpc.ClientMethod<
+          $0.RecordSubstitutionSelectionRequest,
+          $0.RecordSubstitutionSelectionResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordSubstitutionSelection',
+      ($0.RecordSubstitutionSelectionRequest value) => value.writeToBuffer(),
+      $0.RecordSubstitutionSelectionResponse.fromBuffer);
+  static final _$getFormIntelligenceOverview = $grpc.ClientMethod<
+          $0.GetFormIntelligenceOverviewRequest,
+          $0.GetFormIntelligenceOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetFormIntelligenceOverview',
+      ($0.GetFormIntelligenceOverviewRequest value) => value.writeToBuffer(),
+      $0.GetFormIntelligenceOverviewResponse.fromBuffer);
+  static final _$submitFormClipObservation = $grpc.ClientMethod<
+          $0.SubmitFormClipObservationRequest,
+          $0.SubmitFormClipObservationResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitFormClipObservation',
+      ($0.SubmitFormClipObservationRequest value) => value.writeToBuffer(),
+      $0.SubmitFormClipObservationResponse.fromBuffer);
+  static final _$escalateFormClipToCoach = $grpc.ClientMethod<
+          $0.EscalateFormClipToCoachRequest,
+          $0.EscalateFormClipToCoachResponse>(
+      '/sttattus.workout.v1.WorkoutService/EscalateFormClipToCoach',
+      ($0.EscalateFormClipToCoachRequest value) => value.writeToBuffer(),
+      $0.EscalateFormClipToCoachResponse.fromBuffer);
+  static final _$decideCoachFormReview = $grpc.ClientMethod<
+          $0.DecideCoachFormReviewRequest, $0.DecideCoachFormReviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/DecideCoachFormReview',
+      ($0.DecideCoachFormReviewRequest value) => value.writeToBuffer(),
+      $0.DecideCoachFormReviewResponse.fromBuffer);
+  static final _$updateFormPrivacyAndRetention = $grpc.ClientMethod<
+          $0.UpdateFormPrivacyAndRetentionRequest,
+          $0.UpdateFormPrivacyAndRetentionResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateFormPrivacyAndRetention',
+      ($0.UpdateFormPrivacyAndRetentionRequest value) => value.writeToBuffer(),
+      $0.UpdateFormPrivacyAndRetentionResponse.fromBuffer);
+  static final _$eraseFormClipAndKeypoints = $grpc.ClientMethod<
+          $0.EraseFormClipAndKeypointsRequest,
+          $0.EraseFormClipAndKeypointsResponse>(
+      '/sttattus.workout.v1.WorkoutService/EraseFormClipAndKeypoints',
+      ($0.EraseFormClipAndKeypointsRequest value) => value.writeToBuffer(),
+      $0.EraseFormClipAndKeypointsResponse.fromBuffer);
+  static final _$getWearableRecoveryFusionOverview = $grpc.ClientMethod<
+          $0.GetWearableRecoveryFusionOverviewRequest,
+          $0.GetWearableRecoveryFusionOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetWearableRecoveryFusionOverview',
+      ($0.GetWearableRecoveryFusionOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetWearableRecoveryFusionOverviewResponse.fromBuffer);
+  static final _$upsertWearablePurposeGrant = $grpc.ClientMethod<
+          $0.UpsertWearablePurposeGrantRequest,
+          $0.UpsertWearablePurposeGrantResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertWearablePurposeGrant',
+      ($0.UpsertWearablePurposeGrantRequest value) => value.writeToBuffer(),
+      $0.UpsertWearablePurposeGrantResponse.fromBuffer);
+  static final _$revokeWearablePurposeGrant = $grpc.ClientMethod<
+          $0.RevokeWearablePurposeGrantRequest,
+          $0.RevokeWearablePurposeGrantResponse>(
+      '/sttattus.workout.v1.WorkoutService/RevokeWearablePurposeGrant',
+      ($0.RevokeWearablePurposeGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeWearablePurposeGrantResponse.fromBuffer);
+  static final _$configureRecoverySensorStream = $grpc.ClientMethod<
+          $0.ConfigureRecoverySensorStreamRequest,
+          $0.ConfigureRecoverySensorStreamResponse>(
+      '/sttattus.workout.v1.WorkoutService/ConfigureRecoverySensorStream',
+      ($0.ConfigureRecoverySensorStreamRequest value) => value.writeToBuffer(),
+      $0.ConfigureRecoverySensorStreamResponse.fromBuffer);
+  static final _$submitNoWearableSubjectiveReadiness = $grpc.ClientMethod<
+          $0.SubmitNoWearableSubjectiveReadinessRequest,
+          $0.SubmitNoWearableSubjectiveReadinessResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitNoWearableSubjectiveReadiness',
+      ($0.SubmitNoWearableSubjectiveReadinessRequest value) =>
+          value.writeToBuffer(),
+      $0.SubmitNoWearableSubjectiveReadinessResponse.fromBuffer);
+  static final _$reconcileSensorConflictOrOutage = $grpc.ClientMethod<
+          $0.ReconcileSensorConflictOrOutageRequest,
+          $0.ReconcileSensorConflictOrOutageResponse>(
+      '/sttattus.workout.v1.WorkoutService/ReconcileSensorConflictOrOutage',
+      ($0.ReconcileSensorConflictOrOutageRequest value) =>
+          value.writeToBuffer(),
+      $0.ReconcileSensorConflictOrOutageResponse.fromBuffer);
+  static final _$getPerformanceAnalyticsStudioOverview = $grpc.ClientMethod<
+          $0.GetPerformanceAnalyticsStudioOverviewRequest,
+          $0.GetPerformanceAnalyticsStudioOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetPerformanceAnalyticsStudioOverview',
+      ($0.GetPerformanceAnalyticsStudioOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetPerformanceAnalyticsStudioOverviewResponse.fromBuffer);
+  static final _$recordPerformanceExposureLedger = $grpc.ClientMethod<
+          $0.RecordPerformanceExposureLedgerRequest,
+          $0.RecordPerformanceExposureLedgerResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordPerformanceExposureLedger',
+      ($0.RecordPerformanceExposureLedgerRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordPerformanceExposureLedgerResponse.fromBuffer);
+  static final _$upsertStrengthPerformanceModel = $grpc.ClientMethod<
+          $0.UpsertStrengthPerformanceModelRequest,
+          $0.UpsertStrengthPerformanceModelResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertStrengthPerformanceModel',
+      ($0.UpsertStrengthPerformanceModelRequest value) => value.writeToBuffer(),
+      $0.UpsertStrengthPerformanceModelResponse.fromBuffer);
+  static final _$createTrainingNOf1Experiment = $grpc.ClientMethod<
+          $0.CreateTrainingNOf1ExperimentRequest,
+          $0.CreateTrainingNOf1ExperimentResponse>(
+      '/sttattus.workout.v1.WorkoutService/CreateTrainingNOf1Experiment',
+      ($0.CreateTrainingNOf1ExperimentRequest value) => value.writeToBuffer(),
+      $0.CreateTrainingNOf1ExperimentResponse.fromBuffer);
+  static final _$logTrainingNOf1ExperimentSession = $grpc.ClientMethod<
+          $0.LogTrainingNOf1ExperimentSessionRequest,
+          $0.LogTrainingNOf1ExperimentSessionResponse>(
+      '/sttattus.workout.v1.WorkoutService/LogTrainingNOf1ExperimentSession',
+      ($0.LogTrainingNOf1ExperimentSessionRequest value) =>
+          value.writeToBuffer(),
+      $0.LogTrainingNOf1ExperimentSessionResponse.fromBuffer);
+  static final _$evaluateTrainingNOf1Experiment = $grpc.ClientMethod<
+          $0.EvaluateTrainingNOf1ExperimentRequest,
+          $0.EvaluateTrainingNOf1ExperimentResponse>(
+      '/sttattus.workout.v1.WorkoutService/EvaluateTrainingNOf1Experiment',
+      ($0.EvaluateTrainingNOf1ExperimentRequest value) => value.writeToBuffer(),
+      $0.EvaluateTrainingNOf1ExperimentResponse.fromBuffer);
+  static final _$getInjuryReturnPathwayOverview = $grpc.ClientMethod<
+          $0.GetInjuryReturnPathwayOverviewRequest,
+          $0.GetInjuryReturnPathwayOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetInjuryReturnPathwayOverview',
+      ($0.GetInjuryReturnPathwayOverviewRequest value) => value.writeToBuffer(),
+      $0.GetInjuryReturnPathwayOverviewResponse.fromBuffer);
+  static final _$upsertInjuryRestrictionLock = $grpc.ClientMethod<
+          $0.UpsertInjuryRestrictionLockRequest,
+          $0.UpsertInjuryRestrictionLockResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertInjuryRestrictionLock',
+      ($0.UpsertInjuryRestrictionLockRequest value) => value.writeToBuffer(),
+      $0.UpsertInjuryRestrictionLockResponse.fromBuffer);
+  static final _$logInSessionPainTriageEvent = $grpc.ClientMethod<
+          $0.LogInSessionPainTriageEventRequest,
+          $0.LogInSessionPainTriageEventResponse>(
+      '/sttattus.workout.v1.WorkoutService/LogInSessionPainTriageEvent',
+      ($0.LogInSessionPainTriageEventRequest value) => value.writeToBuffer(),
+      $0.LogInSessionPainTriageEventResponse.fromBuffer);
+  static final _$advanceReturnToTrainingStage = $grpc.ClientMethod<
+          $0.AdvanceReturnToTrainingStageRequest,
+          $0.AdvanceReturnToTrainingStageResponse>(
+      '/sttattus.workout.v1.WorkoutService/AdvanceReturnToTrainingStage',
+      ($0.AdvanceReturnToTrainingStageRequest value) => value.writeToBuffer(),
+      $0.AdvanceReturnToTrainingStageResponse.fromBuffer);
+  static final _$recordReturnToTrainingSetback = $grpc.ClientMethod<
+          $0.RecordReturnToTrainingSetbackRequest,
+          $0.RecordReturnToTrainingSetbackResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordReturnToTrainingSetback',
+      ($0.RecordReturnToTrainingSetbackRequest value) => value.writeToBuffer(),
+      $0.RecordReturnToTrainingSetbackResponse.fromBuffer);
+  static final _$clearInjuryRestrictionLock = $grpc.ClientMethod<
+          $0.ClearInjuryRestrictionLockRequest,
+          $0.ClearInjuryRestrictionLockResponse>(
+      '/sttattus.workout.v1.WorkoutService/ClearInjuryRestrictionLock',
+      ($0.ClearInjuryRestrictionLockRequest value) => value.writeToBuffer(),
+      $0.ClearInjuryRestrictionLockResponse.fromBuffer);
+  static final _$getCoachOsCollaborationOverview = $grpc.ClientMethod<
+          $0.GetCoachOsCollaborationOverviewRequest,
+          $0.GetCoachOsCollaborationOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetCoachOsCollaborationOverview',
+      ($0.GetCoachOsCollaborationOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetCoachOsCollaborationOverviewResponse.fromBuffer);
+  static final _$upsertCoachAthleteScopedGrant = $grpc.ClientMethod<
+          $0.UpsertCoachAthleteScopedGrantRequest,
+          $0.UpsertCoachAthleteScopedGrantResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertCoachAthleteScopedGrant',
+      ($0.UpsertCoachAthleteScopedGrantRequest value) => value.writeToBuffer(),
+      $0.UpsertCoachAthleteScopedGrantResponse.fromBuffer);
+  static final _$revokeCoachAthleteScopedGrant = $grpc.ClientMethod<
+          $0.RevokeCoachAthleteScopedGrantRequest,
+          $0.RevokeCoachAthleteScopedGrantResponse>(
+      '/sttattus.workout.v1.WorkoutService/RevokeCoachAthleteScopedGrant',
+      ($0.RevokeCoachAthleteScopedGrantRequest value) => value.writeToBuffer(),
+      $0.RevokeCoachAthleteScopedGrantResponse.fromBuffer);
+  static final _$proposeCoachProgrammeChange = $grpc.ClientMethod<
+          $0.ProposeCoachProgrammeChangeRequest,
+          $0.ProposeCoachProgrammeChangeResponse>(
+      '/sttattus.workout.v1.WorkoutService/ProposeCoachProgrammeChange',
+      ($0.ProposeCoachProgrammeChangeRequest value) => value.writeToBuffer(),
+      $0.ProposeCoachProgrammeChangeResponse.fromBuffer);
+  static final _$respondToCoachChangeProposal = $grpc.ClientMethod<
+          $0.RespondToCoachChangeProposalRequest,
+          $0.RespondToCoachChangeProposalResponse>(
+      '/sttattus.workout.v1.WorkoutService/RespondToCoachChangeProposal',
+      ($0.RespondToCoachChangeProposalRequest value) => value.writeToBuffer(),
+      $0.RespondToCoachChangeProposalResponse.fromBuffer);
+  static final _$updateCoachMarketplaceEngagement = $grpc.ClientMethod<
+          $0.UpdateCoachMarketplaceEngagementRequest,
+          $0.UpdateCoachMarketplaceEngagementResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpdateCoachMarketplaceEngagement',
+      ($0.UpdateCoachMarketplaceEngagementRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateCoachMarketplaceEngagementResponse.fromBuffer);
+  static final _$getTeamsClubsFacilitiesOverview = $grpc.ClientMethod<
+          $0.GetTeamsClubsFacilitiesOverviewRequest,
+          $0.GetTeamsClubsFacilitiesOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetTeamsClubsFacilitiesOverview',
+      ($0.GetTeamsClubsFacilitiesOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetTeamsClubsFacilitiesOverviewResponse.fromBuffer);
+  static final _$upsertTeamSquadRoster = $grpc.ClientMethod<
+          $0.UpsertTeamSquadRosterRequest, $0.UpsertTeamSquadRosterResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertTeamSquadRoster',
+      ($0.UpsertTeamSquadRosterRequest value) => value.writeToBuffer(),
+      $0.UpsertTeamSquadRosterResponse.fromBuffer);
+  static final _$submitTeamTrafficLightCheckin = $grpc.ClientMethod<
+          $0.SubmitTeamTrafficLightCheckinRequest,
+          $0.SubmitTeamTrafficLightCheckinResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitTeamTrafficLightCheckin',
+      ($0.SubmitTeamTrafficLightCheckinRequest value) => value.writeToBuffer(),
+      $0.SubmitTeamTrafficLightCheckinResponse.fromBuffer);
+  static final _$reserveOrUpdateFacilityRackStation = $grpc.ClientMethod<
+          $0.ReserveOrUpdateFacilityRackStationRequest,
+          $0.ReserveOrUpdateFacilityRackStationResponse>(
+      '/sttattus.workout.v1.WorkoutService/ReserveOrUpdateFacilityRackStation',
+      ($0.ReserveOrUpdateFacilityRackStationRequest value) =>
+          value.writeToBuffer(),
+      $0.ReserveOrUpdateFacilityRackStationResponse.fromBuffer);
+  static final _$flagFacilityMaintenanceOrIncident = $grpc.ClientMethod<
+          $0.FlagFacilityMaintenanceOrIncidentRequest,
+          $0.FlagFacilityMaintenanceOrIncidentResponse>(
+      '/sttattus.workout.v1.WorkoutService/FlagFacilityMaintenanceOrIncident',
+      ($0.FlagFacilityMaintenanceOrIncidentRequest value) =>
+          value.writeToBuffer(),
+      $0.FlagFacilityMaintenanceOrIncidentResponse.fromBuffer);
+  static final _$verifyYouthSquadSafeguarding = $grpc.ClientMethod<
+          $0.VerifyYouthSquadSafeguardingRequest,
+          $0.VerifyYouthSquadSafeguardingResponse>(
+      '/sttattus.workout.v1.WorkoutService/VerifyYouthSquadSafeguarding',
+      ($0.VerifyYouthSquadSafeguardingRequest value) => value.writeToBuffer(),
+      $0.VerifyYouthSquadSafeguardingResponse.fromBuffer);
+  static final _$getCompetitionVerifiedPerformanceOverview = $grpc.ClientMethod<
+          $0.GetCompetitionVerifiedPerformanceOverviewRequest,
+          $0.GetCompetitionVerifiedPerformanceOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetCompetitionVerifiedPerformanceOverview',
+      ($0.GetCompetitionVerifiedPerformanceOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetCompetitionVerifiedPerformanceOverviewResponse.fromBuffer);
+  static final _$upsertCompetitionEventPlan = $grpc.ClientMethod<
+          $0.UpsertCompetitionEventPlanRequest,
+          $0.UpsertCompetitionEventPlanResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertCompetitionEventPlan',
+      ($0.UpsertCompetitionEventPlanRequest value) => value.writeToBuffer(),
+      $0.UpsertCompetitionEventPlanResponse.fromBuffer);
+  static final _$submitVerifiedPerformanceResult = $grpc.ClientMethod<
+          $0.SubmitVerifiedPerformanceResultRequest,
+          $0.SubmitVerifiedPerformanceResultResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitVerifiedPerformanceResult',
+      ($0.SubmitVerifiedPerformanceResultRequest value) =>
+          value.writeToBuffer(),
+      $0.SubmitVerifiedPerformanceResultResponse.fromBuffer);
+  static final _$filePerformanceResultAppeal = $grpc.ClientMethod<
+          $0.FilePerformanceResultAppealRequest,
+          $0.FilePerformanceResultAppealResponse>(
+      '/sttattus.workout.v1.WorkoutService/FilePerformanceResultAppeal',
+      ($0.FilePerformanceResultAppealRequest value) => value.writeToBuffer(),
+      $0.FilePerformanceResultAppealResponse.fromBuffer);
+  static final _$recordCompetitionRuleAndTueCheck = $grpc.ClientMethod<
+          $0.RecordCompetitionRuleAndTueCheckRequest,
+          $0.RecordCompetitionRuleAndTueCheckResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordCompetitionRuleAndTueCheck',
+      ($0.RecordCompetitionRuleAndTueCheckRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordCompetitionRuleAndTueCheckResponse.fromBuffer);
+  static final _$toggleOfflineVenueCompetitionMode = $grpc.ClientMethod<
+          $0.ToggleOfflineVenueCompetitionModeRequest,
+          $0.ToggleOfflineVenueCompetitionModeResponse>(
+      '/sttattus.workout.v1.WorkoutService/ToggleOfflineVenueCompetitionMode',
+      ($0.ToggleOfflineVenueCompetitionModeRequest value) =>
+          value.writeToBuffer(),
+      $0.ToggleOfflineVenueCompetitionModeResponse.fromBuffer);
+  static final _$getSportHybridStudiosOverview = $grpc.ClientMethod<
+          $0.GetSportHybridStudiosOverviewRequest,
+          $0.GetSportHybridStudiosOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetSportHybridStudiosOverview',
+      ($0.GetSportHybridStudiosOverviewRequest value) => value.writeToBuffer(),
+      $0.GetSportHybridStudiosOverviewResponse.fromBuffer);
+  static final _$upsertSportHybridStudioModule = $grpc.ClientMethod<
+          $0.UpsertSportHybridStudioModuleRequest,
+          $0.UpsertSportHybridStudioModuleResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertSportHybridStudioModule',
+      ($0.UpsertSportHybridStudioModuleRequest value) => value.writeToBuffer(),
+      $0.UpsertSportHybridStudioModuleResponse.fromBuffer);
+  static final _$configureHybridInterferenceSchedule = $grpc.ClientMethod<
+          $0.ConfigureHybridInterferenceScheduleRequest,
+          $0.ConfigureHybridInterferenceScheduleResponse>(
+      '/sttattus.workout.v1.WorkoutService/ConfigureHybridInterferenceSchedule',
+      ($0.ConfigureHybridInterferenceScheduleRequest value) =>
+          value.writeToBuffer(),
+      $0.ConfigureHybridInterferenceScheduleResponse.fromBuffer);
+  static final _$logSportSkillOrManualActivitySession = $grpc.ClientMethod<
+          $0.LogSportSkillOrManualActivitySessionRequest,
+          $0.LogSportSkillOrManualActivitySessionResponse>(
+      '/sttattus.workout.v1.WorkoutService/LogSportSkillOrManualActivitySession',
+      ($0.LogSportSkillOrManualActivitySessionRequest value) =>
+          value.writeToBuffer(),
+      $0.LogSportSkillOrManualActivitySessionResponse.fromBuffer);
+  static final _$registerCustomManualUnvalidatedSport = $grpc.ClientMethod<
+          $0.RegisterCustomManualUnvalidatedSportRequest,
+          $0.RegisterCustomManualUnvalidatedSportResponse>(
+      '/sttattus.workout.v1.WorkoutService/RegisterCustomManualUnvalidatedSport',
+      ($0.RegisterCustomManualUnvalidatedSportRequest value) =>
+          value.writeToBuffer(),
+      $0.RegisterCustomManualUnvalidatedSportResponse.fromBuffer);
+  static final _$auditHybridLoadDeDuplication = $grpc.ClientMethod<
+          $0.AuditHybridLoadDeDuplicationRequest,
+          $0.AuditHybridLoadDeDuplicationResponse>(
+      '/sttattus.workout.v1.WorkoutService/AuditHybridLoadDeDuplication',
+      ($0.AuditHybridLoadDeDuplicationRequest value) => value.writeToBuffer(),
+      $0.AuditHybridLoadDeDuplicationResponse.fromBuffer);
+  static final _$getEquipmentTravelAdaptationOverview = $grpc.ClientMethod<
+          $0.GetEquipmentTravelAdaptationOverviewRequest,
+          $0.GetEquipmentTravelAdaptationOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetEquipmentTravelAdaptationOverview',
+      ($0.GetEquipmentTravelAdaptationOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetEquipmentTravelAdaptationOverviewResponse.fromBuffer);
+  static final _$upsertEquipmentLocationProfile = $grpc.ClientMethod<
+          $0.UpsertEquipmentLocationProfileRequest,
+          $0.UpsertEquipmentLocationProfileResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertEquipmentLocationProfile',
+      ($0.UpsertEquipmentLocationProfileRequest value) => value.writeToBuffer(),
+      $0.UpsertEquipmentLocationProfileResponse.fromBuffer);
+  static final _$generateTravelWorkoutAdaptation = $grpc.ClientMethod<
+          $0.GenerateTravelWorkoutAdaptationRequest,
+          $0.GenerateTravelWorkoutAdaptationResponse>(
+      '/sttattus.workout.v1.WorkoutService/GenerateTravelWorkoutAdaptation',
+      ($0.GenerateTravelWorkoutAdaptationRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateTravelWorkoutAdaptationResponse.fromBuffer);
+  static final _$upsertVerifiedGymVenueListing = $grpc.ClientMethod<
+          $0.UpsertVerifiedGymVenueListingRequest,
+          $0.UpsertVerifiedGymVenueListingResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertVerifiedGymVenueListing',
+      ($0.UpsertVerifiedGymVenueListingRequest value) => value.writeToBuffer(),
+      $0.UpsertVerifiedGymVenueListingResponse.fromBuffer);
+  static final _$flagStaleGymVenueListing = $grpc.ClientMethod<
+          $0.FlagStaleGymVenueListingRequest,
+          $0.FlagStaleGymVenueListingResponse>(
+      '/sttattus.workout.v1.WorkoutService/FlagStaleGymVenueListing',
+      ($0.FlagStaleGymVenueListingRequest value) => value.writeToBuffer(),
+      $0.FlagStaleGymVenueListingResponse.fromBuffer);
+  static final _$revertTravelWorkoutToHomeGym = $grpc.ClientMethod<
+          $0.RevertTravelWorkoutToHomeGymRequest,
+          $0.RevertTravelWorkoutToHomeGymResponse>(
+      '/sttattus.workout.v1.WorkoutService/RevertTravelWorkoutToHomeGym',
+      ($0.RevertTravelWorkoutToHomeGymRequest value) => value.writeToBuffer(),
+      $0.RevertTravelWorkoutToHomeGymResponse.fromBuffer);
+  static final _$getFuelWeightSafetyOverview = $grpc.ClientMethod<
+          $0.GetFuelWeightSafetyOverviewRequest,
+          $0.GetFuelWeightSafetyOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetFuelWeightSafetyOverview',
+      ($0.GetFuelWeightSafetyOverviewRequest value) => value.writeToBuffer(),
+      $0.GetFuelWeightSafetyOverviewResponse.fromBuffer);
+  static final _$upsertSessionFuelHydrationPlan = $grpc.ClientMethod<
+          $0.UpsertSessionFuelHydrationPlanRequest,
+          $0.UpsertSessionFuelHydrationPlanResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertSessionFuelHydrationPlan',
+      ($0.UpsertSessionFuelHydrationPlanRequest value) => value.writeToBuffer(),
+      $0.UpsertSessionFuelHydrationPlanResponse.fromBuffer);
+  static final _$recordPrivateBodyCompositionTrend = $grpc.ClientMethod<
+          $0.RecordPrivateBodyCompositionTrendRequest,
+          $0.RecordPrivateBodyCompositionTrendResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordPrivateBodyCompositionTrend',
+      ($0.RecordPrivateBodyCompositionTrendRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordPrivateBodyCompositionTrendResponse.fromBuffer);
+  static final _$evaluateWeightClassSafetyPlan = $grpc.ClientMethod<
+          $0.EvaluateWeightClassSafetyPlanRequest,
+          $0.EvaluateWeightClassSafetyPlanResponse>(
+      '/sttattus.workout.v1.WorkoutService/EvaluateWeightClassSafetyPlan',
+      ($0.EvaluateWeightClassSafetyPlanRequest value) => value.writeToBuffer(),
+      $0.EvaluateWeightClassSafetyPlanResponse.fromBuffer);
+  static final _$escalateWeightCutToProfessionalRoute = $grpc.ClientMethod<
+          $0.EscalateWeightCutToProfessionalRouteRequest,
+          $0.EscalateWeightCutToProfessionalRouteResponse>(
+      '/sttattus.workout.v1.WorkoutService/EscalateWeightCutToProfessionalRoute',
+      ($0.EscalateWeightCutToProfessionalRouteRequest value) =>
+          value.writeToBuffer(),
+      $0.EscalateWeightCutToProfessionalRouteResponse.fromBuffer);
+  static final _$verifyBodyCompositionPrivacyIsolation = $grpc.ClientMethod<
+          $0.VerifyBodyCompositionPrivacyIsolationRequest,
+          $0.VerifyBodyCompositionPrivacyIsolationResponse>(
+      '/sttattus.workout.v1.WorkoutService/VerifyBodyCompositionPrivacyIsolation',
+      ($0.VerifyBodyCompositionPrivacyIsolationRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyBodyCompositionPrivacyIsolationResponse.fromBuffer);
+  static final _$getHealthyCompetitionCrewsOverview = $grpc.ClientMethod<
+          $0.GetHealthyCompetitionCrewsOverviewRequest,
+          $0.GetHealthyCompetitionCrewsOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetHealthyCompetitionCrewsOverview',
+      ($0.GetHealthyCompetitionCrewsOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetHealthyCompetitionCrewsOverviewResponse.fromBuffer);
+  static final _$upsertHealthyCompetitionCohort = $grpc.ClientMethod<
+          $0.UpsertHealthyCompetitionCohortRequest,
+          $0.UpsertHealthyCompetitionCohortResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertHealthyCompetitionCohort',
+      ($0.UpsertHealthyCompetitionCohortRequest value) => value.writeToBuffer(),
+      $0.UpsertHealthyCompetitionCohortResponse.fromBuffer);
+  static final _$toggleCompetitionMutePreference = $grpc.ClientMethod<
+          $0.ToggleCompetitionMutePreferenceRequest,
+          $0.ToggleCompetitionMutePreferenceResponse>(
+      '/sttattus.workout.v1.WorkoutService/ToggleCompetitionMutePreference',
+      ($0.ToggleCompetitionMutePreferenceRequest value) =>
+          value.writeToBuffer(),
+      $0.ToggleCompetitionMutePreferenceResponse.fromBuffer);
+  static final _$submitCrewChallengeOrAppeal = $grpc.ClientMethod<
+          $0.SubmitCrewChallengeOrAppealRequest,
+          $0.SubmitCrewChallengeOrAppealResponse>(
+      '/sttattus.workout.v1.WorkoutService/SubmitCrewChallengeOrAppeal',
+      ($0.SubmitCrewChallengeOrAppealRequest value) => value.writeToBuffer(),
+      $0.SubmitCrewChallengeOrAppealResponse.fromBuffer);
+  static final _$recordEmpireRewardContribution = $grpc.ClientMethod<
+          $0.RecordEmpireRewardContributionRequest,
+          $0.RecordEmpireRewardContributionResponse>(
+      '/sttattus.workout.v1.WorkoutService/RecordEmpireRewardContribution',
+      ($0.RecordEmpireRewardContributionRequest value) => value.writeToBuffer(),
+      $0.RecordEmpireRewardContributionResponse.fromBuffer);
+  static final _$adjudicateCrewAntiCheatCase = $grpc.ClientMethod<
+          $0.AdjudicateCrewAntiCheatCaseRequest,
+          $0.AdjudicateCrewAntiCheatCaseResponse>(
+      '/sttattus.workout.v1.WorkoutService/AdjudicateCrewAntiCheatCase',
+      ($0.AdjudicateCrewAntiCheatCaseRequest value) => value.writeToBuffer(),
+      $0.AdjudicateCrewAntiCheatCaseResponse.fromBuffer);
+  static final _$getOfflineAccessibleReleaseCertOverview = $grpc.ClientMethod<
+          $0.GetOfflineAccessibleReleaseCertOverviewRequest,
+          $0.GetOfflineAccessibleReleaseCertOverviewResponse>(
+      '/sttattus.workout.v1.WorkoutService/GetOfflineAccessibleReleaseCertOverview',
+      ($0.GetOfflineAccessibleReleaseCertOverviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GetOfflineAccessibleReleaseCertOverviewResponse.fromBuffer);
+  static final _$certifyOfflineMultimodalSyncState = $grpc.ClientMethod<
+          $0.CertifyOfflineMultimodalSyncStateRequest,
+          $0.CertifyOfflineMultimodalSyncStateResponse>(
+      '/sttattus.workout.v1.WorkoutService/CertifyOfflineMultimodalSyncState',
+      ($0.CertifyOfflineMultimodalSyncStateRequest value) =>
+          value.writeToBuffer(),
+      $0.CertifyOfflineMultimodalSyncStateResponse.fromBuffer);
+  static final _$upsertAccessibilityAdaptiveProfile = $grpc.ClientMethod<
+          $0.UpsertAccessibilityAdaptiveProfileRequest,
+          $0.UpsertAccessibilityAdaptiveProfileResponse>(
+      '/sttattus.workout.v1.WorkoutService/UpsertAccessibilityAdaptiveProfile',
+      ($0.UpsertAccessibilityAdaptiveProfileRequest value) =>
+          value.writeToBuffer(),
+      $0.UpsertAccessibilityAdaptiveProfileResponse.fromBuffer);
+  static final _$runMigrationAndErasureCertification = $grpc.ClientMethod<
+          $0.RunMigrationAndErasureCertificationRequest,
+          $0.RunMigrationAndErasureCertificationResponse>(
+      '/sttattus.workout.v1.WorkoutService/RunMigrationAndErasureCertification',
+      ($0.RunMigrationAndErasureCertificationRequest value) =>
+          value.writeToBuffer(),
+      $0.RunMigrationAndErasureCertificationResponse.fromBuffer);
+  static final _$verifyBatteryAwareSensorPolicy = $grpc.ClientMethod<
+          $0.VerifyBatteryAwareSensorPolicyRequest,
+          $0.VerifyBatteryAwareSensorPolicyResponse>(
+      '/sttattus.workout.v1.WorkoutService/VerifyBatteryAwareSensorPolicy',
+      ($0.VerifyBatteryAwareSensorPolicyRequest value) => value.writeToBuffer(),
+      $0.VerifyBatteryAwareSensorPolicyResponse.fromBuffer);
+  static final _$signOffForge16Of16ReleaseGate = $grpc.ClientMethod<
+          $0.SignOffForge16Of16ReleaseGateRequest,
+          $0.SignOffForge16Of16ReleaseGateResponse>(
+      '/sttattus.workout.v1.WorkoutService/SignOffForge16Of16ReleaseGate',
+      ($0.SignOffForge16Of16ReleaseGateRequest value) => value.writeToBuffer(),
+      $0.SignOffForge16Of16ReleaseGateResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.workout.v1.WorkoutService')
@@ -1628,6 +2929,850 @@ abstract class WorkoutServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RequestCoachBookingRequest.fromBuffer(value),
         ($0.RequestCoachBookingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAdaptiveProgrammingOverviewRequest,
+            $0.GetAdaptiveProgrammingOverviewResponse>(
+        'GetAdaptiveProgrammingOverview',
+        getAdaptiveProgrammingOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAdaptiveProgrammingOverviewRequest.fromBuffer(value),
+        ($0.GetAdaptiveProgrammingOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateOrUpdateProgrammeVersionRequest,
+            $0.GenerateOrUpdateProgrammeVersionResponse>(
+        'GenerateOrUpdateProgrammeVersion',
+        generateOrUpdateProgrammeVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateOrUpdateProgrammeVersionRequest.fromBuffer(value),
+        ($0.GenerateOrUpdateProgrammeVersionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DecideProgrammeDraftAcceptanceRequest,
+            $0.DecideProgrammeDraftAcceptanceResponse>(
+        'DecideProgrammeDraftAcceptance',
+        decideProgrammeDraftAcceptance_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DecideProgrammeDraftAcceptanceRequest.fromBuffer(value),
+        ($0.DecideProgrammeDraftAcceptanceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.TriggerSafeAdaptiveReplanRequest,
+            $0.TriggerSafeAdaptiveReplanResponse>(
+        'TriggerSafeAdaptiveReplan',
+        triggerSafeAdaptiveReplan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.TriggerSafeAdaptiveReplanRequest.fromBuffer(value),
+        ($0.TriggerSafeAdaptiveReplanResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertAdaptiveProgressionRuleRequest,
+            $0.UpsertAdaptiveProgressionRuleResponse>(
+        'UpsertAdaptiveProgressionRule',
+        upsertAdaptiveProgressionRule_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertAdaptiveProgressionRuleRequest.fromBuffer(value),
+        ($0.UpsertAdaptiveProgressionRuleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RollbackProgrammeVersionRequest,
+            $0.RollbackProgrammeVersionResponse>(
+        'RollbackProgrammeVersion',
+        rollbackProgrammeVersion_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RollbackProgrammeVersionRequest.fromBuffer(value),
+        ($0.RollbackProgrammeVersionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMovementIntelligenceOverviewRequest,
+            $0.GetMovementIntelligenceOverviewResponse>(
+        'GetMovementIntelligenceOverview',
+        getMovementIntelligenceOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMovementIntelligenceOverviewRequest.fromBuffer(value),
+        ($0.GetMovementIntelligenceOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RankIntentPreservingSubstitutionsRequest,
+            $0.RankIntentPreservingSubstitutionsResponse>(
+        'RankIntentPreservingSubstitutions',
+        rankIntentPreservingSubstitutions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RankIntentPreservingSubstitutionsRequest.fromBuffer(value),
+        ($0.RankIntentPreservingSubstitutionsResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertPersonalTechniqueManualRequest,
+            $0.UpsertPersonalTechniqueManualResponse>(
+        'UpsertPersonalTechniqueManual',
+        upsertPersonalTechniqueManual_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertPersonalTechniqueManualRequest.fromBuffer(value),
+        ($0.UpsertPersonalTechniqueManualResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCustomMovementForReviewRequest,
+            $0.SubmitCustomMovementForReviewResponse>(
+        'SubmitCustomMovementForReview',
+        submitCustomMovementForReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitCustomMovementForReviewRequest.fromBuffer(value),
+        ($0.SubmitCustomMovementForReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertMovementGraphProfileRequest,
+            $0.UpsertMovementGraphProfileResponse>(
+        'UpsertMovementGraphProfile',
+        upsertMovementGraphProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertMovementGraphProfileRequest.fromBuffer(value),
+        ($0.UpsertMovementGraphProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordSubstitutionSelectionRequest,
+            $0.RecordSubstitutionSelectionResponse>(
+        'RecordSubstitutionSelection',
+        recordSubstitutionSelection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordSubstitutionSelectionRequest.fromBuffer(value),
+        ($0.RecordSubstitutionSelectionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetFormIntelligenceOverviewRequest,
+            $0.GetFormIntelligenceOverviewResponse>(
+        'GetFormIntelligenceOverview',
+        getFormIntelligenceOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetFormIntelligenceOverviewRequest.fromBuffer(value),
+        ($0.GetFormIntelligenceOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitFormClipObservationRequest,
+            $0.SubmitFormClipObservationResponse>(
+        'SubmitFormClipObservation',
+        submitFormClipObservation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitFormClipObservationRequest.fromBuffer(value),
+        ($0.SubmitFormClipObservationResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EscalateFormClipToCoachRequest,
+            $0.EscalateFormClipToCoachResponse>(
+        'EscalateFormClipToCoach',
+        escalateFormClipToCoach_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EscalateFormClipToCoachRequest.fromBuffer(value),
+        ($0.EscalateFormClipToCoachResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.DecideCoachFormReviewRequest,
+            $0.DecideCoachFormReviewResponse>(
+        'DecideCoachFormReview',
+        decideCoachFormReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.DecideCoachFormReviewRequest.fromBuffer(value),
+        ($0.DecideCoachFormReviewResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateFormPrivacyAndRetentionRequest,
+            $0.UpdateFormPrivacyAndRetentionResponse>(
+        'UpdateFormPrivacyAndRetention',
+        updateFormPrivacyAndRetention_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateFormPrivacyAndRetentionRequest.fromBuffer(value),
+        ($0.UpdateFormPrivacyAndRetentionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EraseFormClipAndKeypointsRequest,
+            $0.EraseFormClipAndKeypointsResponse>(
+        'EraseFormClipAndKeypoints',
+        eraseFormClipAndKeypoints_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EraseFormClipAndKeypointsRequest.fromBuffer(value),
+        ($0.EraseFormClipAndKeypointsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetWearableRecoveryFusionOverviewRequest,
+            $0.GetWearableRecoveryFusionOverviewResponse>(
+        'GetWearableRecoveryFusionOverview',
+        getWearableRecoveryFusionOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetWearableRecoveryFusionOverviewRequest.fromBuffer(value),
+        ($0.GetWearableRecoveryFusionOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertWearablePurposeGrantRequest,
+            $0.UpsertWearablePurposeGrantResponse>(
+        'UpsertWearablePurposeGrant',
+        upsertWearablePurposeGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertWearablePurposeGrantRequest.fromBuffer(value),
+        ($0.UpsertWearablePurposeGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeWearablePurposeGrantRequest,
+            $0.RevokeWearablePurposeGrantResponse>(
+        'RevokeWearablePurposeGrant',
+        revokeWearablePurposeGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeWearablePurposeGrantRequest.fromBuffer(value),
+        ($0.RevokeWearablePurposeGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ConfigureRecoverySensorStreamRequest,
+            $0.ConfigureRecoverySensorStreamResponse>(
+        'ConfigureRecoverySensorStream',
+        configureRecoverySensorStream_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfigureRecoverySensorStreamRequest.fromBuffer(value),
+        ($0.ConfigureRecoverySensorStreamResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SubmitNoWearableSubjectiveReadinessRequest,
+            $0.SubmitNoWearableSubjectiveReadinessResponse>(
+        'SubmitNoWearableSubjectiveReadiness',
+        submitNoWearableSubjectiveReadiness_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitNoWearableSubjectiveReadinessRequest.fromBuffer(value),
+        ($0.SubmitNoWearableSubjectiveReadinessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReconcileSensorConflictOrOutageRequest,
+            $0.ReconcileSensorConflictOrOutageResponse>(
+        'ReconcileSensorConflictOrOutage',
+        reconcileSensorConflictOrOutage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReconcileSensorConflictOrOutageRequest.fromBuffer(value),
+        ($0.ReconcileSensorConflictOrOutageResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetPerformanceAnalyticsStudioOverviewRequest,
+            $0.GetPerformanceAnalyticsStudioOverviewResponse>(
+        'GetPerformanceAnalyticsStudioOverview',
+        getPerformanceAnalyticsStudioOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPerformanceAnalyticsStudioOverviewRequest.fromBuffer(value),
+        ($0.GetPerformanceAnalyticsStudioOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordPerformanceExposureLedgerRequest,
+            $0.RecordPerformanceExposureLedgerResponse>(
+        'RecordPerformanceExposureLedger',
+        recordPerformanceExposureLedger_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordPerformanceExposureLedgerRequest.fromBuffer(value),
+        ($0.RecordPerformanceExposureLedgerResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertStrengthPerformanceModelRequest,
+            $0.UpsertStrengthPerformanceModelResponse>(
+        'UpsertStrengthPerformanceModel',
+        upsertStrengthPerformanceModel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertStrengthPerformanceModelRequest.fromBuffer(value),
+        ($0.UpsertStrengthPerformanceModelResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateTrainingNOf1ExperimentRequest,
+            $0.CreateTrainingNOf1ExperimentResponse>(
+        'CreateTrainingNOf1Experiment',
+        createTrainingNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateTrainingNOf1ExperimentRequest.fromBuffer(value),
+        ($0.CreateTrainingNOf1ExperimentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LogTrainingNOf1ExperimentSessionRequest,
+            $0.LogTrainingNOf1ExperimentSessionResponse>(
+        'LogTrainingNOf1ExperimentSession',
+        logTrainingNOf1ExperimentSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LogTrainingNOf1ExperimentSessionRequest.fromBuffer(value),
+        ($0.LogTrainingNOf1ExperimentSessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EvaluateTrainingNOf1ExperimentRequest,
+            $0.EvaluateTrainingNOf1ExperimentResponse>(
+        'EvaluateTrainingNOf1Experiment',
+        evaluateTrainingNOf1Experiment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EvaluateTrainingNOf1ExperimentRequest.fromBuffer(value),
+        ($0.EvaluateTrainingNOf1ExperimentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetInjuryReturnPathwayOverviewRequest,
+            $0.GetInjuryReturnPathwayOverviewResponse>(
+        'GetInjuryReturnPathwayOverview',
+        getInjuryReturnPathwayOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetInjuryReturnPathwayOverviewRequest.fromBuffer(value),
+        ($0.GetInjuryReturnPathwayOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertInjuryRestrictionLockRequest,
+            $0.UpsertInjuryRestrictionLockResponse>(
+        'UpsertInjuryRestrictionLock',
+        upsertInjuryRestrictionLock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertInjuryRestrictionLockRequest.fromBuffer(value),
+        ($0.UpsertInjuryRestrictionLockResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LogInSessionPainTriageEventRequest,
+            $0.LogInSessionPainTriageEventResponse>(
+        'LogInSessionPainTriageEvent',
+        logInSessionPainTriageEvent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LogInSessionPainTriageEventRequest.fromBuffer(value),
+        ($0.LogInSessionPainTriageEventResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdvanceReturnToTrainingStageRequest,
+            $0.AdvanceReturnToTrainingStageResponse>(
+        'AdvanceReturnToTrainingStage',
+        advanceReturnToTrainingStage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdvanceReturnToTrainingStageRequest.fromBuffer(value),
+        ($0.AdvanceReturnToTrainingStageResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordReturnToTrainingSetbackRequest,
+            $0.RecordReturnToTrainingSetbackResponse>(
+        'RecordReturnToTrainingSetback',
+        recordReturnToTrainingSetback_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordReturnToTrainingSetbackRequest.fromBuffer(value),
+        ($0.RecordReturnToTrainingSetbackResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ClearInjuryRestrictionLockRequest,
+            $0.ClearInjuryRestrictionLockResponse>(
+        'ClearInjuryRestrictionLock',
+        clearInjuryRestrictionLock_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ClearInjuryRestrictionLockRequest.fromBuffer(value),
+        ($0.ClearInjuryRestrictionLockResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCoachOsCollaborationOverviewRequest,
+            $0.GetCoachOsCollaborationOverviewResponse>(
+        'GetCoachOsCollaborationOverview',
+        getCoachOsCollaborationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCoachOsCollaborationOverviewRequest.fromBuffer(value),
+        ($0.GetCoachOsCollaborationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCoachAthleteScopedGrantRequest,
+            $0.UpsertCoachAthleteScopedGrantResponse>(
+        'UpsertCoachAthleteScopedGrant',
+        upsertCoachAthleteScopedGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertCoachAthleteScopedGrantRequest.fromBuffer(value),
+        ($0.UpsertCoachAthleteScopedGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeCoachAthleteScopedGrantRequest,
+            $0.RevokeCoachAthleteScopedGrantResponse>(
+        'RevokeCoachAthleteScopedGrant',
+        revokeCoachAthleteScopedGrant_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeCoachAthleteScopedGrantRequest.fromBuffer(value),
+        ($0.RevokeCoachAthleteScopedGrantResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ProposeCoachProgrammeChangeRequest,
+            $0.ProposeCoachProgrammeChangeResponse>(
+        'ProposeCoachProgrammeChange',
+        proposeCoachProgrammeChange_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ProposeCoachProgrammeChangeRequest.fromBuffer(value),
+        ($0.ProposeCoachProgrammeChangeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RespondToCoachChangeProposalRequest,
+            $0.RespondToCoachChangeProposalResponse>(
+        'RespondToCoachChangeProposal',
+        respondToCoachChangeProposal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RespondToCoachChangeProposalRequest.fromBuffer(value),
+        ($0.RespondToCoachChangeProposalResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCoachMarketplaceEngagementRequest,
+            $0.UpdateCoachMarketplaceEngagementResponse>(
+        'UpdateCoachMarketplaceEngagement',
+        updateCoachMarketplaceEngagement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCoachMarketplaceEngagementRequest.fromBuffer(value),
+        ($0.UpdateCoachMarketplaceEngagementResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTeamsClubsFacilitiesOverviewRequest,
+            $0.GetTeamsClubsFacilitiesOverviewResponse>(
+        'GetTeamsClubsFacilitiesOverview',
+        getTeamsClubsFacilitiesOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetTeamsClubsFacilitiesOverviewRequest.fromBuffer(value),
+        ($0.GetTeamsClubsFacilitiesOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertTeamSquadRosterRequest,
+            $0.UpsertTeamSquadRosterResponse>(
+        'UpsertTeamSquadRoster',
+        upsertTeamSquadRoster_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertTeamSquadRosterRequest.fromBuffer(value),
+        ($0.UpsertTeamSquadRosterResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitTeamTrafficLightCheckinRequest,
+            $0.SubmitTeamTrafficLightCheckinResponse>(
+        'SubmitTeamTrafficLightCheckin',
+        submitTeamTrafficLightCheckin_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitTeamTrafficLightCheckinRequest.fromBuffer(value),
+        ($0.SubmitTeamTrafficLightCheckinResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReserveOrUpdateFacilityRackStationRequest,
+            $0.ReserveOrUpdateFacilityRackStationResponse>(
+        'ReserveOrUpdateFacilityRackStation',
+        reserveOrUpdateFacilityRackStation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReserveOrUpdateFacilityRackStationRequest.fromBuffer(value),
+        ($0.ReserveOrUpdateFacilityRackStationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FlagFacilityMaintenanceOrIncidentRequest,
+            $0.FlagFacilityMaintenanceOrIncidentResponse>(
+        'FlagFacilityMaintenanceOrIncident',
+        flagFacilityMaintenanceOrIncident_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FlagFacilityMaintenanceOrIncidentRequest.fromBuffer(value),
+        ($0.FlagFacilityMaintenanceOrIncidentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyYouthSquadSafeguardingRequest,
+            $0.VerifyYouthSquadSafeguardingResponse>(
+        'VerifyYouthSquadSafeguarding',
+        verifyYouthSquadSafeguarding_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyYouthSquadSafeguardingRequest.fromBuffer(value),
+        ($0.VerifyYouthSquadSafeguardingResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetCompetitionVerifiedPerformanceOverviewRequest,
+            $0.GetCompetitionVerifiedPerformanceOverviewResponse>(
+        'GetCompetitionVerifiedPerformanceOverview',
+        getCompetitionVerifiedPerformanceOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCompetitionVerifiedPerformanceOverviewRequest.fromBuffer(
+                value),
+        ($0.GetCompetitionVerifiedPerformanceOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertCompetitionEventPlanRequest,
+            $0.UpsertCompetitionEventPlanResponse>(
+        'UpsertCompetitionEventPlan',
+        upsertCompetitionEventPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertCompetitionEventPlanRequest.fromBuffer(value),
+        ($0.UpsertCompetitionEventPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitVerifiedPerformanceResultRequest,
+            $0.SubmitVerifiedPerformanceResultResponse>(
+        'SubmitVerifiedPerformanceResult',
+        submitVerifiedPerformanceResult_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitVerifiedPerformanceResultRequest.fromBuffer(value),
+        ($0.SubmitVerifiedPerformanceResultResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FilePerformanceResultAppealRequest,
+            $0.FilePerformanceResultAppealResponse>(
+        'FilePerformanceResultAppeal',
+        filePerformanceResultAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FilePerformanceResultAppealRequest.fromBuffer(value),
+        ($0.FilePerformanceResultAppealResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordCompetitionRuleAndTueCheckRequest,
+            $0.RecordCompetitionRuleAndTueCheckResponse>(
+        'RecordCompetitionRuleAndTueCheck',
+        recordCompetitionRuleAndTueCheck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordCompetitionRuleAndTueCheckRequest.fromBuffer(value),
+        ($0.RecordCompetitionRuleAndTueCheckResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ToggleOfflineVenueCompetitionModeRequest,
+            $0.ToggleOfflineVenueCompetitionModeResponse>(
+        'ToggleOfflineVenueCompetitionMode',
+        toggleOfflineVenueCompetitionMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ToggleOfflineVenueCompetitionModeRequest.fromBuffer(value),
+        ($0.ToggleOfflineVenueCompetitionModeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetSportHybridStudiosOverviewRequest,
+            $0.GetSportHybridStudiosOverviewResponse>(
+        'GetSportHybridStudiosOverview',
+        getSportHybridStudiosOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetSportHybridStudiosOverviewRequest.fromBuffer(value),
+        ($0.GetSportHybridStudiosOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSportHybridStudioModuleRequest,
+            $0.UpsertSportHybridStudioModuleResponse>(
+        'UpsertSportHybridStudioModule',
+        upsertSportHybridStudioModule_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSportHybridStudioModuleRequest.fromBuffer(value),
+        ($0.UpsertSportHybridStudioModuleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ConfigureHybridInterferenceScheduleRequest,
+            $0.ConfigureHybridInterferenceScheduleResponse>(
+        'ConfigureHybridInterferenceSchedule',
+        configureHybridInterferenceSchedule_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfigureHybridInterferenceScheduleRequest.fromBuffer(value),
+        ($0.ConfigureHybridInterferenceScheduleResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.LogSportSkillOrManualActivitySessionRequest,
+            $0.LogSportSkillOrManualActivitySessionResponse>(
+        'LogSportSkillOrManualActivitySession',
+        logSportSkillOrManualActivitySession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LogSportSkillOrManualActivitySessionRequest.fromBuffer(value),
+        ($0.LogSportSkillOrManualActivitySessionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RegisterCustomManualUnvalidatedSportRequest,
+            $0.RegisterCustomManualUnvalidatedSportResponse>(
+        'RegisterCustomManualUnvalidatedSport',
+        registerCustomManualUnvalidatedSport_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RegisterCustomManualUnvalidatedSportRequest.fromBuffer(value),
+        ($0.RegisterCustomManualUnvalidatedSportResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AuditHybridLoadDeDuplicationRequest,
+            $0.AuditHybridLoadDeDuplicationResponse>(
+        'AuditHybridLoadDeDuplication',
+        auditHybridLoadDeDuplication_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AuditHybridLoadDeDuplicationRequest.fromBuffer(value),
+        ($0.AuditHybridLoadDeDuplicationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetEquipmentTravelAdaptationOverviewRequest,
+            $0.GetEquipmentTravelAdaptationOverviewResponse>(
+        'GetEquipmentTravelAdaptationOverview',
+        getEquipmentTravelAdaptationOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetEquipmentTravelAdaptationOverviewRequest.fromBuffer(value),
+        ($0.GetEquipmentTravelAdaptationOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertEquipmentLocationProfileRequest,
+            $0.UpsertEquipmentLocationProfileResponse>(
+        'UpsertEquipmentLocationProfile',
+        upsertEquipmentLocationProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertEquipmentLocationProfileRequest.fromBuffer(value),
+        ($0.UpsertEquipmentLocationProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GenerateTravelWorkoutAdaptationRequest,
+            $0.GenerateTravelWorkoutAdaptationResponse>(
+        'GenerateTravelWorkoutAdaptation',
+        generateTravelWorkoutAdaptation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateTravelWorkoutAdaptationRequest.fromBuffer(value),
+        ($0.GenerateTravelWorkoutAdaptationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertVerifiedGymVenueListingRequest,
+            $0.UpsertVerifiedGymVenueListingResponse>(
+        'UpsertVerifiedGymVenueListing',
+        upsertVerifiedGymVenueListing_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertVerifiedGymVenueListingRequest.fromBuffer(value),
+        ($0.UpsertVerifiedGymVenueListingResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FlagStaleGymVenueListingRequest,
+            $0.FlagStaleGymVenueListingResponse>(
+        'FlagStaleGymVenueListing',
+        flagStaleGymVenueListing_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FlagStaleGymVenueListingRequest.fromBuffer(value),
+        ($0.FlagStaleGymVenueListingResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevertTravelWorkoutToHomeGymRequest,
+            $0.RevertTravelWorkoutToHomeGymResponse>(
+        'RevertTravelWorkoutToHomeGym',
+        revertTravelWorkoutToHomeGym_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevertTravelWorkoutToHomeGymRequest.fromBuffer(value),
+        ($0.RevertTravelWorkoutToHomeGymResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetFuelWeightSafetyOverviewRequest,
+            $0.GetFuelWeightSafetyOverviewResponse>(
+        'GetFuelWeightSafetyOverview',
+        getFuelWeightSafetyOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetFuelWeightSafetyOverviewRequest.fromBuffer(value),
+        ($0.GetFuelWeightSafetyOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertSessionFuelHydrationPlanRequest,
+            $0.UpsertSessionFuelHydrationPlanResponse>(
+        'UpsertSessionFuelHydrationPlan',
+        upsertSessionFuelHydrationPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertSessionFuelHydrationPlanRequest.fromBuffer(value),
+        ($0.UpsertSessionFuelHydrationPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordPrivateBodyCompositionTrendRequest,
+            $0.RecordPrivateBodyCompositionTrendResponse>(
+        'RecordPrivateBodyCompositionTrend',
+        recordPrivateBodyCompositionTrend_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordPrivateBodyCompositionTrendRequest.fromBuffer(value),
+        ($0.RecordPrivateBodyCompositionTrendResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EvaluateWeightClassSafetyPlanRequest,
+            $0.EvaluateWeightClassSafetyPlanResponse>(
+        'EvaluateWeightClassSafetyPlan',
+        evaluateWeightClassSafetyPlan_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EvaluateWeightClassSafetyPlanRequest.fromBuffer(value),
+        ($0.EvaluateWeightClassSafetyPlanResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.EscalateWeightCutToProfessionalRouteRequest,
+            $0.EscalateWeightCutToProfessionalRouteResponse>(
+        'EscalateWeightCutToProfessionalRoute',
+        escalateWeightCutToProfessionalRoute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EscalateWeightCutToProfessionalRouteRequest.fromBuffer(value),
+        ($0.EscalateWeightCutToProfessionalRouteResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyBodyCompositionPrivacyIsolationRequest,
+            $0.VerifyBodyCompositionPrivacyIsolationResponse>(
+        'VerifyBodyCompositionPrivacyIsolation',
+        verifyBodyCompositionPrivacyIsolation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyBodyCompositionPrivacyIsolationRequest.fromBuffer(value),
+        ($0.VerifyBodyCompositionPrivacyIsolationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetHealthyCompetitionCrewsOverviewRequest,
+            $0.GetHealthyCompetitionCrewsOverviewResponse>(
+        'GetHealthyCompetitionCrewsOverview',
+        getHealthyCompetitionCrewsOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetHealthyCompetitionCrewsOverviewRequest.fromBuffer(value),
+        ($0.GetHealthyCompetitionCrewsOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertHealthyCompetitionCohortRequest,
+            $0.UpsertHealthyCompetitionCohortResponse>(
+        'UpsertHealthyCompetitionCohort',
+        upsertHealthyCompetitionCohort_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertHealthyCompetitionCohortRequest.fromBuffer(value),
+        ($0.UpsertHealthyCompetitionCohortResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ToggleCompetitionMutePreferenceRequest,
+            $0.ToggleCompetitionMutePreferenceResponse>(
+        'ToggleCompetitionMutePreference',
+        toggleCompetitionMutePreference_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ToggleCompetitionMutePreferenceRequest.fromBuffer(value),
+        ($0.ToggleCompetitionMutePreferenceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitCrewChallengeOrAppealRequest,
+            $0.SubmitCrewChallengeOrAppealResponse>(
+        'SubmitCrewChallengeOrAppeal',
+        submitCrewChallengeOrAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitCrewChallengeOrAppealRequest.fromBuffer(value),
+        ($0.SubmitCrewChallengeOrAppealResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordEmpireRewardContributionRequest,
+            $0.RecordEmpireRewardContributionResponse>(
+        'RecordEmpireRewardContribution',
+        recordEmpireRewardContribution_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordEmpireRewardContributionRequest.fromBuffer(value),
+        ($0.RecordEmpireRewardContributionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdjudicateCrewAntiCheatCaseRequest,
+            $0.AdjudicateCrewAntiCheatCaseResponse>(
+        'AdjudicateCrewAntiCheatCase',
+        adjudicateCrewAntiCheatCase_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdjudicateCrewAntiCheatCaseRequest.fromBuffer(value),
+        ($0.AdjudicateCrewAntiCheatCaseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetOfflineAccessibleReleaseCertOverviewRequest,
+            $0.GetOfflineAccessibleReleaseCertOverviewResponse>(
+        'GetOfflineAccessibleReleaseCertOverview',
+        getOfflineAccessibleReleaseCertOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetOfflineAccessibleReleaseCertOverviewRequest.fromBuffer(value),
+        ($0.GetOfflineAccessibleReleaseCertOverviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CertifyOfflineMultimodalSyncStateRequest,
+            $0.CertifyOfflineMultimodalSyncStateResponse>(
+        'CertifyOfflineMultimodalSyncState',
+        certifyOfflineMultimodalSyncState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CertifyOfflineMultimodalSyncStateRequest.fromBuffer(value),
+        ($0.CertifyOfflineMultimodalSyncStateResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpsertAccessibilityAdaptiveProfileRequest,
+            $0.UpsertAccessibilityAdaptiveProfileResponse>(
+        'UpsertAccessibilityAdaptiveProfile',
+        upsertAccessibilityAdaptiveProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpsertAccessibilityAdaptiveProfileRequest.fromBuffer(value),
+        ($0.UpsertAccessibilityAdaptiveProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RunMigrationAndErasureCertificationRequest,
+            $0.RunMigrationAndErasureCertificationResponse>(
+        'RunMigrationAndErasureCertification',
+        runMigrationAndErasureCertification_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RunMigrationAndErasureCertificationRequest.fromBuffer(value),
+        ($0.RunMigrationAndErasureCertificationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyBatteryAwareSensorPolicyRequest,
+            $0.VerifyBatteryAwareSensorPolicyResponse>(
+        'VerifyBatteryAwareSensorPolicy',
+        verifyBatteryAwareSensorPolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyBatteryAwareSensorPolicyRequest.fromBuffer(value),
+        ($0.VerifyBatteryAwareSensorPolicyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SignOffForge16Of16ReleaseGateRequest,
+            $0.SignOffForge16Of16ReleaseGateResponse>(
+        'SignOffForge16Of16ReleaseGate',
+        signOffForge16Of16ReleaseGate_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SignOffForge16Of16ReleaseGateRequest.fromBuffer(value),
+        ($0.SignOffForge16Of16ReleaseGateResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.ListWorkoutsResponse> listWorkouts_Pre(
@@ -2280,4 +4425,960 @@ abstract class WorkoutServiceBase extends $grpc.Service {
 
   $async.Future<$0.RequestCoachBookingResponse> requestCoachBooking(
       $grpc.ServiceCall call, $0.RequestCoachBookingRequest request);
+
+  $async.Future<$0.GetAdaptiveProgrammingOverviewResponse>
+      getAdaptiveProgrammingOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetAdaptiveProgrammingOverviewRequest>
+              $request) async {
+    return getAdaptiveProgrammingOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetAdaptiveProgrammingOverviewResponse>
+      getAdaptiveProgrammingOverview($grpc.ServiceCall call,
+          $0.GetAdaptiveProgrammingOverviewRequest request);
+
+  $async.Future<$0.GenerateOrUpdateProgrammeVersionResponse>
+      generateOrUpdateProgrammeVersion_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateOrUpdateProgrammeVersionRequest>
+              $request) async {
+    return generateOrUpdateProgrammeVersion($call, await $request);
+  }
+
+  $async.Future<$0.GenerateOrUpdateProgrammeVersionResponse>
+      generateOrUpdateProgrammeVersion($grpc.ServiceCall call,
+          $0.GenerateOrUpdateProgrammeVersionRequest request);
+
+  $async.Future<$0.DecideProgrammeDraftAcceptanceResponse>
+      decideProgrammeDraftAcceptance_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.DecideProgrammeDraftAcceptanceRequest>
+              $request) async {
+    return decideProgrammeDraftAcceptance($call, await $request);
+  }
+
+  $async.Future<$0.DecideProgrammeDraftAcceptanceResponse>
+      decideProgrammeDraftAcceptance($grpc.ServiceCall call,
+          $0.DecideProgrammeDraftAcceptanceRequest request);
+
+  $async.Future<$0.TriggerSafeAdaptiveReplanResponse>
+      triggerSafeAdaptiveReplan_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.TriggerSafeAdaptiveReplanRequest> $request) async {
+    return triggerSafeAdaptiveReplan($call, await $request);
+  }
+
+  $async.Future<$0.TriggerSafeAdaptiveReplanResponse> triggerSafeAdaptiveReplan(
+      $grpc.ServiceCall call, $0.TriggerSafeAdaptiveReplanRequest request);
+
+  $async.Future<$0.UpsertAdaptiveProgressionRuleResponse>
+      upsertAdaptiveProgressionRule_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertAdaptiveProgressionRuleRequest>
+              $request) async {
+    return upsertAdaptiveProgressionRule($call, await $request);
+  }
+
+  $async.Future<$0.UpsertAdaptiveProgressionRuleResponse>
+      upsertAdaptiveProgressionRule($grpc.ServiceCall call,
+          $0.UpsertAdaptiveProgressionRuleRequest request);
+
+  $async.Future<$0.RollbackProgrammeVersionResponse>
+      rollbackProgrammeVersion_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RollbackProgrammeVersionRequest> $request) async {
+    return rollbackProgrammeVersion($call, await $request);
+  }
+
+  $async.Future<$0.RollbackProgrammeVersionResponse> rollbackProgrammeVersion(
+      $grpc.ServiceCall call, $0.RollbackProgrammeVersionRequest request);
+
+  $async.Future<$0.GetMovementIntelligenceOverviewResponse>
+      getMovementIntelligenceOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetMovementIntelligenceOverviewRequest>
+              $request) async {
+    return getMovementIntelligenceOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetMovementIntelligenceOverviewResponse>
+      getMovementIntelligenceOverview($grpc.ServiceCall call,
+          $0.GetMovementIntelligenceOverviewRequest request);
+
+  $async.Future<$0.RankIntentPreservingSubstitutionsResponse>
+      rankIntentPreservingSubstitutions_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RankIntentPreservingSubstitutionsRequest>
+              $request) async {
+    return rankIntentPreservingSubstitutions($call, await $request);
+  }
+
+  $async.Future<$0.RankIntentPreservingSubstitutionsResponse>
+      rankIntentPreservingSubstitutions($grpc.ServiceCall call,
+          $0.RankIntentPreservingSubstitutionsRequest request);
+
+  $async.Future<$0.UpsertPersonalTechniqueManualResponse>
+      upsertPersonalTechniqueManual_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertPersonalTechniqueManualRequest>
+              $request) async {
+    return upsertPersonalTechniqueManual($call, await $request);
+  }
+
+  $async.Future<$0.UpsertPersonalTechniqueManualResponse>
+      upsertPersonalTechniqueManual($grpc.ServiceCall call,
+          $0.UpsertPersonalTechniqueManualRequest request);
+
+  $async.Future<$0.SubmitCustomMovementForReviewResponse>
+      submitCustomMovementForReview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitCustomMovementForReviewRequest>
+              $request) async {
+    return submitCustomMovementForReview($call, await $request);
+  }
+
+  $async.Future<$0.SubmitCustomMovementForReviewResponse>
+      submitCustomMovementForReview($grpc.ServiceCall call,
+          $0.SubmitCustomMovementForReviewRequest request);
+
+  $async.Future<$0.UpsertMovementGraphProfileResponse>
+      upsertMovementGraphProfile_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertMovementGraphProfileRequest> $request) async {
+    return upsertMovementGraphProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpsertMovementGraphProfileResponse>
+      upsertMovementGraphProfile(
+          $grpc.ServiceCall call, $0.UpsertMovementGraphProfileRequest request);
+
+  $async.Future<$0.RecordSubstitutionSelectionResponse>
+      recordSubstitutionSelection_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RecordSubstitutionSelectionRequest> $request) async {
+    return recordSubstitutionSelection($call, await $request);
+  }
+
+  $async.Future<$0.RecordSubstitutionSelectionResponse>
+      recordSubstitutionSelection($grpc.ServiceCall call,
+          $0.RecordSubstitutionSelectionRequest request);
+
+  $async.Future<$0.GetFormIntelligenceOverviewResponse>
+      getFormIntelligenceOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetFormIntelligenceOverviewRequest> $request) async {
+    return getFormIntelligenceOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetFormIntelligenceOverviewResponse>
+      getFormIntelligenceOverview($grpc.ServiceCall call,
+          $0.GetFormIntelligenceOverviewRequest request);
+
+  $async.Future<$0.SubmitFormClipObservationResponse>
+      submitFormClipObservation_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SubmitFormClipObservationRequest> $request) async {
+    return submitFormClipObservation($call, await $request);
+  }
+
+  $async.Future<$0.SubmitFormClipObservationResponse> submitFormClipObservation(
+      $grpc.ServiceCall call, $0.SubmitFormClipObservationRequest request);
+
+  $async.Future<$0.EscalateFormClipToCoachResponse> escalateFormClipToCoach_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.EscalateFormClipToCoachRequest> $request) async {
+    return escalateFormClipToCoach($call, await $request);
+  }
+
+  $async.Future<$0.EscalateFormClipToCoachResponse> escalateFormClipToCoach(
+      $grpc.ServiceCall call, $0.EscalateFormClipToCoachRequest request);
+
+  $async.Future<$0.DecideCoachFormReviewResponse> decideCoachFormReview_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.DecideCoachFormReviewRequest> $request) async {
+    return decideCoachFormReview($call, await $request);
+  }
+
+  $async.Future<$0.DecideCoachFormReviewResponse> decideCoachFormReview(
+      $grpc.ServiceCall call, $0.DecideCoachFormReviewRequest request);
+
+  $async.Future<$0.UpdateFormPrivacyAndRetentionResponse>
+      updateFormPrivacyAndRetention_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateFormPrivacyAndRetentionRequest>
+              $request) async {
+    return updateFormPrivacyAndRetention($call, await $request);
+  }
+
+  $async.Future<$0.UpdateFormPrivacyAndRetentionResponse>
+      updateFormPrivacyAndRetention($grpc.ServiceCall call,
+          $0.UpdateFormPrivacyAndRetentionRequest request);
+
+  $async.Future<$0.EraseFormClipAndKeypointsResponse>
+      eraseFormClipAndKeypoints_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.EraseFormClipAndKeypointsRequest> $request) async {
+    return eraseFormClipAndKeypoints($call, await $request);
+  }
+
+  $async.Future<$0.EraseFormClipAndKeypointsResponse> eraseFormClipAndKeypoints(
+      $grpc.ServiceCall call, $0.EraseFormClipAndKeypointsRequest request);
+
+  $async.Future<$0.GetWearableRecoveryFusionOverviewResponse>
+      getWearableRecoveryFusionOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetWearableRecoveryFusionOverviewRequest>
+              $request) async {
+    return getWearableRecoveryFusionOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetWearableRecoveryFusionOverviewResponse>
+      getWearableRecoveryFusionOverview($grpc.ServiceCall call,
+          $0.GetWearableRecoveryFusionOverviewRequest request);
+
+  $async.Future<$0.UpsertWearablePurposeGrantResponse>
+      upsertWearablePurposeGrant_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertWearablePurposeGrantRequest> $request) async {
+    return upsertWearablePurposeGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpsertWearablePurposeGrantResponse>
+      upsertWearablePurposeGrant(
+          $grpc.ServiceCall call, $0.UpsertWearablePurposeGrantRequest request);
+
+  $async.Future<$0.RevokeWearablePurposeGrantResponse>
+      revokeWearablePurposeGrant_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.RevokeWearablePurposeGrantRequest> $request) async {
+    return revokeWearablePurposeGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeWearablePurposeGrantResponse>
+      revokeWearablePurposeGrant(
+          $grpc.ServiceCall call, $0.RevokeWearablePurposeGrantRequest request);
+
+  $async.Future<$0.ConfigureRecoverySensorStreamResponse>
+      configureRecoverySensorStream_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfigureRecoverySensorStreamRequest>
+              $request) async {
+    return configureRecoverySensorStream($call, await $request);
+  }
+
+  $async.Future<$0.ConfigureRecoverySensorStreamResponse>
+      configureRecoverySensorStream($grpc.ServiceCall call,
+          $0.ConfigureRecoverySensorStreamRequest request);
+
+  $async.Future<$0.SubmitNoWearableSubjectiveReadinessResponse>
+      submitNoWearableSubjectiveReadiness_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitNoWearableSubjectiveReadinessRequest>
+              $request) async {
+    return submitNoWearableSubjectiveReadiness($call, await $request);
+  }
+
+  $async.Future<$0.SubmitNoWearableSubjectiveReadinessResponse>
+      submitNoWearableSubjectiveReadiness($grpc.ServiceCall call,
+          $0.SubmitNoWearableSubjectiveReadinessRequest request);
+
+  $async.Future<$0.ReconcileSensorConflictOrOutageResponse>
+      reconcileSensorConflictOrOutage_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReconcileSensorConflictOrOutageRequest>
+              $request) async {
+    return reconcileSensorConflictOrOutage($call, await $request);
+  }
+
+  $async.Future<$0.ReconcileSensorConflictOrOutageResponse>
+      reconcileSensorConflictOrOutage($grpc.ServiceCall call,
+          $0.ReconcileSensorConflictOrOutageRequest request);
+
+  $async.Future<$0.GetPerformanceAnalyticsStudioOverviewResponse>
+      getPerformanceAnalyticsStudioOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPerformanceAnalyticsStudioOverviewRequest>
+              $request) async {
+    return getPerformanceAnalyticsStudioOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetPerformanceAnalyticsStudioOverviewResponse>
+      getPerformanceAnalyticsStudioOverview($grpc.ServiceCall call,
+          $0.GetPerformanceAnalyticsStudioOverviewRequest request);
+
+  $async.Future<$0.RecordPerformanceExposureLedgerResponse>
+      recordPerformanceExposureLedger_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordPerformanceExposureLedgerRequest>
+              $request) async {
+    return recordPerformanceExposureLedger($call, await $request);
+  }
+
+  $async.Future<$0.RecordPerformanceExposureLedgerResponse>
+      recordPerformanceExposureLedger($grpc.ServiceCall call,
+          $0.RecordPerformanceExposureLedgerRequest request);
+
+  $async.Future<$0.UpsertStrengthPerformanceModelResponse>
+      upsertStrengthPerformanceModel_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertStrengthPerformanceModelRequest>
+              $request) async {
+    return upsertStrengthPerformanceModel($call, await $request);
+  }
+
+  $async.Future<$0.UpsertStrengthPerformanceModelResponse>
+      upsertStrengthPerformanceModel($grpc.ServiceCall call,
+          $0.UpsertStrengthPerformanceModelRequest request);
+
+  $async.Future<$0.CreateTrainingNOf1ExperimentResponse>
+      createTrainingNOf1Experiment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateTrainingNOf1ExperimentRequest>
+              $request) async {
+    return createTrainingNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.CreateTrainingNOf1ExperimentResponse>
+      createTrainingNOf1Experiment($grpc.ServiceCall call,
+          $0.CreateTrainingNOf1ExperimentRequest request);
+
+  $async.Future<$0.LogTrainingNOf1ExperimentSessionResponse>
+      logTrainingNOf1ExperimentSession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LogTrainingNOf1ExperimentSessionRequest>
+              $request) async {
+    return logTrainingNOf1ExperimentSession($call, await $request);
+  }
+
+  $async.Future<$0.LogTrainingNOf1ExperimentSessionResponse>
+      logTrainingNOf1ExperimentSession($grpc.ServiceCall call,
+          $0.LogTrainingNOf1ExperimentSessionRequest request);
+
+  $async.Future<$0.EvaluateTrainingNOf1ExperimentResponse>
+      evaluateTrainingNOf1Experiment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EvaluateTrainingNOf1ExperimentRequest>
+              $request) async {
+    return evaluateTrainingNOf1Experiment($call, await $request);
+  }
+
+  $async.Future<$0.EvaluateTrainingNOf1ExperimentResponse>
+      evaluateTrainingNOf1Experiment($grpc.ServiceCall call,
+          $0.EvaluateTrainingNOf1ExperimentRequest request);
+
+  $async.Future<$0.GetInjuryReturnPathwayOverviewResponse>
+      getInjuryReturnPathwayOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetInjuryReturnPathwayOverviewRequest>
+              $request) async {
+    return getInjuryReturnPathwayOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetInjuryReturnPathwayOverviewResponse>
+      getInjuryReturnPathwayOverview($grpc.ServiceCall call,
+          $0.GetInjuryReturnPathwayOverviewRequest request);
+
+  $async.Future<$0.UpsertInjuryRestrictionLockResponse>
+      upsertInjuryRestrictionLock_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertInjuryRestrictionLockRequest> $request) async {
+    return upsertInjuryRestrictionLock($call, await $request);
+  }
+
+  $async.Future<$0.UpsertInjuryRestrictionLockResponse>
+      upsertInjuryRestrictionLock($grpc.ServiceCall call,
+          $0.UpsertInjuryRestrictionLockRequest request);
+
+  $async.Future<$0.LogInSessionPainTriageEventResponse>
+      logInSessionPainTriageEvent_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.LogInSessionPainTriageEventRequest> $request) async {
+    return logInSessionPainTriageEvent($call, await $request);
+  }
+
+  $async.Future<$0.LogInSessionPainTriageEventResponse>
+      logInSessionPainTriageEvent($grpc.ServiceCall call,
+          $0.LogInSessionPainTriageEventRequest request);
+
+  $async.Future<$0.AdvanceReturnToTrainingStageResponse>
+      advanceReturnToTrainingStage_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdvanceReturnToTrainingStageRequest>
+              $request) async {
+    return advanceReturnToTrainingStage($call, await $request);
+  }
+
+  $async.Future<$0.AdvanceReturnToTrainingStageResponse>
+      advanceReturnToTrainingStage($grpc.ServiceCall call,
+          $0.AdvanceReturnToTrainingStageRequest request);
+
+  $async.Future<$0.RecordReturnToTrainingSetbackResponse>
+      recordReturnToTrainingSetback_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordReturnToTrainingSetbackRequest>
+              $request) async {
+    return recordReturnToTrainingSetback($call, await $request);
+  }
+
+  $async.Future<$0.RecordReturnToTrainingSetbackResponse>
+      recordReturnToTrainingSetback($grpc.ServiceCall call,
+          $0.RecordReturnToTrainingSetbackRequest request);
+
+  $async.Future<$0.ClearInjuryRestrictionLockResponse>
+      clearInjuryRestrictionLock_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ClearInjuryRestrictionLockRequest> $request) async {
+    return clearInjuryRestrictionLock($call, await $request);
+  }
+
+  $async.Future<$0.ClearInjuryRestrictionLockResponse>
+      clearInjuryRestrictionLock(
+          $grpc.ServiceCall call, $0.ClearInjuryRestrictionLockRequest request);
+
+  $async.Future<$0.GetCoachOsCollaborationOverviewResponse>
+      getCoachOsCollaborationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetCoachOsCollaborationOverviewRequest>
+              $request) async {
+    return getCoachOsCollaborationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetCoachOsCollaborationOverviewResponse>
+      getCoachOsCollaborationOverview($grpc.ServiceCall call,
+          $0.GetCoachOsCollaborationOverviewRequest request);
+
+  $async.Future<$0.UpsertCoachAthleteScopedGrantResponse>
+      upsertCoachAthleteScopedGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertCoachAthleteScopedGrantRequest>
+              $request) async {
+    return upsertCoachAthleteScopedGrant($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCoachAthleteScopedGrantResponse>
+      upsertCoachAthleteScopedGrant($grpc.ServiceCall call,
+          $0.UpsertCoachAthleteScopedGrantRequest request);
+
+  $async.Future<$0.RevokeCoachAthleteScopedGrantResponse>
+      revokeCoachAthleteScopedGrant_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RevokeCoachAthleteScopedGrantRequest>
+              $request) async {
+    return revokeCoachAthleteScopedGrant($call, await $request);
+  }
+
+  $async.Future<$0.RevokeCoachAthleteScopedGrantResponse>
+      revokeCoachAthleteScopedGrant($grpc.ServiceCall call,
+          $0.RevokeCoachAthleteScopedGrantRequest request);
+
+  $async.Future<$0.ProposeCoachProgrammeChangeResponse>
+      proposeCoachProgrammeChange_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ProposeCoachProgrammeChangeRequest> $request) async {
+    return proposeCoachProgrammeChange($call, await $request);
+  }
+
+  $async.Future<$0.ProposeCoachProgrammeChangeResponse>
+      proposeCoachProgrammeChange($grpc.ServiceCall call,
+          $0.ProposeCoachProgrammeChangeRequest request);
+
+  $async.Future<$0.RespondToCoachChangeProposalResponse>
+      respondToCoachChangeProposal_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RespondToCoachChangeProposalRequest>
+              $request) async {
+    return respondToCoachChangeProposal($call, await $request);
+  }
+
+  $async.Future<$0.RespondToCoachChangeProposalResponse>
+      respondToCoachChangeProposal($grpc.ServiceCall call,
+          $0.RespondToCoachChangeProposalRequest request);
+
+  $async.Future<$0.UpdateCoachMarketplaceEngagementResponse>
+      updateCoachMarketplaceEngagement_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCoachMarketplaceEngagementRequest>
+              $request) async {
+    return updateCoachMarketplaceEngagement($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCoachMarketplaceEngagementResponse>
+      updateCoachMarketplaceEngagement($grpc.ServiceCall call,
+          $0.UpdateCoachMarketplaceEngagementRequest request);
+
+  $async.Future<$0.GetTeamsClubsFacilitiesOverviewResponse>
+      getTeamsClubsFacilitiesOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetTeamsClubsFacilitiesOverviewRequest>
+              $request) async {
+    return getTeamsClubsFacilitiesOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetTeamsClubsFacilitiesOverviewResponse>
+      getTeamsClubsFacilitiesOverview($grpc.ServiceCall call,
+          $0.GetTeamsClubsFacilitiesOverviewRequest request);
+
+  $async.Future<$0.UpsertTeamSquadRosterResponse> upsertTeamSquadRoster_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.UpsertTeamSquadRosterRequest> $request) async {
+    return upsertTeamSquadRoster($call, await $request);
+  }
+
+  $async.Future<$0.UpsertTeamSquadRosterResponse> upsertTeamSquadRoster(
+      $grpc.ServiceCall call, $0.UpsertTeamSquadRosterRequest request);
+
+  $async.Future<$0.SubmitTeamTrafficLightCheckinResponse>
+      submitTeamTrafficLightCheckin_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitTeamTrafficLightCheckinRequest>
+              $request) async {
+    return submitTeamTrafficLightCheckin($call, await $request);
+  }
+
+  $async.Future<$0.SubmitTeamTrafficLightCheckinResponse>
+      submitTeamTrafficLightCheckin($grpc.ServiceCall call,
+          $0.SubmitTeamTrafficLightCheckinRequest request);
+
+  $async.Future<$0.ReserveOrUpdateFacilityRackStationResponse>
+      reserveOrUpdateFacilityRackStation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReserveOrUpdateFacilityRackStationRequest>
+              $request) async {
+    return reserveOrUpdateFacilityRackStation($call, await $request);
+  }
+
+  $async.Future<$0.ReserveOrUpdateFacilityRackStationResponse>
+      reserveOrUpdateFacilityRackStation($grpc.ServiceCall call,
+          $0.ReserveOrUpdateFacilityRackStationRequest request);
+
+  $async.Future<$0.FlagFacilityMaintenanceOrIncidentResponse>
+      flagFacilityMaintenanceOrIncident_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.FlagFacilityMaintenanceOrIncidentRequest>
+              $request) async {
+    return flagFacilityMaintenanceOrIncident($call, await $request);
+  }
+
+  $async.Future<$0.FlagFacilityMaintenanceOrIncidentResponse>
+      flagFacilityMaintenanceOrIncident($grpc.ServiceCall call,
+          $0.FlagFacilityMaintenanceOrIncidentRequest request);
+
+  $async.Future<$0.VerifyYouthSquadSafeguardingResponse>
+      verifyYouthSquadSafeguarding_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyYouthSquadSafeguardingRequest>
+              $request) async {
+    return verifyYouthSquadSafeguarding($call, await $request);
+  }
+
+  $async.Future<$0.VerifyYouthSquadSafeguardingResponse>
+      verifyYouthSquadSafeguarding($grpc.ServiceCall call,
+          $0.VerifyYouthSquadSafeguardingRequest request);
+
+  $async.Future<$0.GetCompetitionVerifiedPerformanceOverviewResponse>
+      getCompetitionVerifiedPerformanceOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetCompetitionVerifiedPerformanceOverviewRequest>
+              $request) async {
+    return getCompetitionVerifiedPerformanceOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetCompetitionVerifiedPerformanceOverviewResponse>
+      getCompetitionVerifiedPerformanceOverview($grpc.ServiceCall call,
+          $0.GetCompetitionVerifiedPerformanceOverviewRequest request);
+
+  $async.Future<$0.UpsertCompetitionEventPlanResponse>
+      upsertCompetitionEventPlan_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpsertCompetitionEventPlanRequest> $request) async {
+    return upsertCompetitionEventPlan($call, await $request);
+  }
+
+  $async.Future<$0.UpsertCompetitionEventPlanResponse>
+      upsertCompetitionEventPlan(
+          $grpc.ServiceCall call, $0.UpsertCompetitionEventPlanRequest request);
+
+  $async.Future<$0.SubmitVerifiedPerformanceResultResponse>
+      submitVerifiedPerformanceResult_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitVerifiedPerformanceResultRequest>
+              $request) async {
+    return submitVerifiedPerformanceResult($call, await $request);
+  }
+
+  $async.Future<$0.SubmitVerifiedPerformanceResultResponse>
+      submitVerifiedPerformanceResult($grpc.ServiceCall call,
+          $0.SubmitVerifiedPerformanceResultRequest request);
+
+  $async.Future<$0.FilePerformanceResultAppealResponse>
+      filePerformanceResultAppeal_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.FilePerformanceResultAppealRequest> $request) async {
+    return filePerformanceResultAppeal($call, await $request);
+  }
+
+  $async.Future<$0.FilePerformanceResultAppealResponse>
+      filePerformanceResultAppeal($grpc.ServiceCall call,
+          $0.FilePerformanceResultAppealRequest request);
+
+  $async.Future<$0.RecordCompetitionRuleAndTueCheckResponse>
+      recordCompetitionRuleAndTueCheck_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordCompetitionRuleAndTueCheckRequest>
+              $request) async {
+    return recordCompetitionRuleAndTueCheck($call, await $request);
+  }
+
+  $async.Future<$0.RecordCompetitionRuleAndTueCheckResponse>
+      recordCompetitionRuleAndTueCheck($grpc.ServiceCall call,
+          $0.RecordCompetitionRuleAndTueCheckRequest request);
+
+  $async.Future<$0.ToggleOfflineVenueCompetitionModeResponse>
+      toggleOfflineVenueCompetitionMode_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ToggleOfflineVenueCompetitionModeRequest>
+              $request) async {
+    return toggleOfflineVenueCompetitionMode($call, await $request);
+  }
+
+  $async.Future<$0.ToggleOfflineVenueCompetitionModeResponse>
+      toggleOfflineVenueCompetitionMode($grpc.ServiceCall call,
+          $0.ToggleOfflineVenueCompetitionModeRequest request);
+
+  $async.Future<$0.GetSportHybridStudiosOverviewResponse>
+      getSportHybridStudiosOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetSportHybridStudiosOverviewRequest>
+              $request) async {
+    return getSportHybridStudiosOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetSportHybridStudiosOverviewResponse>
+      getSportHybridStudiosOverview($grpc.ServiceCall call,
+          $0.GetSportHybridStudiosOverviewRequest request);
+
+  $async.Future<$0.UpsertSportHybridStudioModuleResponse>
+      upsertSportHybridStudioModule_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertSportHybridStudioModuleRequest>
+              $request) async {
+    return upsertSportHybridStudioModule($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSportHybridStudioModuleResponse>
+      upsertSportHybridStudioModule($grpc.ServiceCall call,
+          $0.UpsertSportHybridStudioModuleRequest request);
+
+  $async.Future<$0.ConfigureHybridInterferenceScheduleResponse>
+      configureHybridInterferenceSchedule_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfigureHybridInterferenceScheduleRequest>
+              $request) async {
+    return configureHybridInterferenceSchedule($call, await $request);
+  }
+
+  $async.Future<$0.ConfigureHybridInterferenceScheduleResponse>
+      configureHybridInterferenceSchedule($grpc.ServiceCall call,
+          $0.ConfigureHybridInterferenceScheduleRequest request);
+
+  $async.Future<$0.LogSportSkillOrManualActivitySessionResponse>
+      logSportSkillOrManualActivitySession_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LogSportSkillOrManualActivitySessionRequest>
+              $request) async {
+    return logSportSkillOrManualActivitySession($call, await $request);
+  }
+
+  $async.Future<$0.LogSportSkillOrManualActivitySessionResponse>
+      logSportSkillOrManualActivitySession($grpc.ServiceCall call,
+          $0.LogSportSkillOrManualActivitySessionRequest request);
+
+  $async.Future<$0.RegisterCustomManualUnvalidatedSportResponse>
+      registerCustomManualUnvalidatedSport_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RegisterCustomManualUnvalidatedSportRequest>
+              $request) async {
+    return registerCustomManualUnvalidatedSport($call, await $request);
+  }
+
+  $async.Future<$0.RegisterCustomManualUnvalidatedSportResponse>
+      registerCustomManualUnvalidatedSport($grpc.ServiceCall call,
+          $0.RegisterCustomManualUnvalidatedSportRequest request);
+
+  $async.Future<$0.AuditHybridLoadDeDuplicationResponse>
+      auditHybridLoadDeDuplication_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AuditHybridLoadDeDuplicationRequest>
+              $request) async {
+    return auditHybridLoadDeDuplication($call, await $request);
+  }
+
+  $async.Future<$0.AuditHybridLoadDeDuplicationResponse>
+      auditHybridLoadDeDuplication($grpc.ServiceCall call,
+          $0.AuditHybridLoadDeDuplicationRequest request);
+
+  $async.Future<$0.GetEquipmentTravelAdaptationOverviewResponse>
+      getEquipmentTravelAdaptationOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetEquipmentTravelAdaptationOverviewRequest>
+              $request) async {
+    return getEquipmentTravelAdaptationOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetEquipmentTravelAdaptationOverviewResponse>
+      getEquipmentTravelAdaptationOverview($grpc.ServiceCall call,
+          $0.GetEquipmentTravelAdaptationOverviewRequest request);
+
+  $async.Future<$0.UpsertEquipmentLocationProfileResponse>
+      upsertEquipmentLocationProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertEquipmentLocationProfileRequest>
+              $request) async {
+    return upsertEquipmentLocationProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpsertEquipmentLocationProfileResponse>
+      upsertEquipmentLocationProfile($grpc.ServiceCall call,
+          $0.UpsertEquipmentLocationProfileRequest request);
+
+  $async.Future<$0.GenerateTravelWorkoutAdaptationResponse>
+      generateTravelWorkoutAdaptation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateTravelWorkoutAdaptationRequest>
+              $request) async {
+    return generateTravelWorkoutAdaptation($call, await $request);
+  }
+
+  $async.Future<$0.GenerateTravelWorkoutAdaptationResponse>
+      generateTravelWorkoutAdaptation($grpc.ServiceCall call,
+          $0.GenerateTravelWorkoutAdaptationRequest request);
+
+  $async.Future<$0.UpsertVerifiedGymVenueListingResponse>
+      upsertVerifiedGymVenueListing_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertVerifiedGymVenueListingRequest>
+              $request) async {
+    return upsertVerifiedGymVenueListing($call, await $request);
+  }
+
+  $async.Future<$0.UpsertVerifiedGymVenueListingResponse>
+      upsertVerifiedGymVenueListing($grpc.ServiceCall call,
+          $0.UpsertVerifiedGymVenueListingRequest request);
+
+  $async.Future<$0.FlagStaleGymVenueListingResponse>
+      flagStaleGymVenueListing_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.FlagStaleGymVenueListingRequest> $request) async {
+    return flagStaleGymVenueListing($call, await $request);
+  }
+
+  $async.Future<$0.FlagStaleGymVenueListingResponse> flagStaleGymVenueListing(
+      $grpc.ServiceCall call, $0.FlagStaleGymVenueListingRequest request);
+
+  $async.Future<$0.RevertTravelWorkoutToHomeGymResponse>
+      revertTravelWorkoutToHomeGym_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RevertTravelWorkoutToHomeGymRequest>
+              $request) async {
+    return revertTravelWorkoutToHomeGym($call, await $request);
+  }
+
+  $async.Future<$0.RevertTravelWorkoutToHomeGymResponse>
+      revertTravelWorkoutToHomeGym($grpc.ServiceCall call,
+          $0.RevertTravelWorkoutToHomeGymRequest request);
+
+  $async.Future<$0.GetFuelWeightSafetyOverviewResponse>
+      getFuelWeightSafetyOverview_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetFuelWeightSafetyOverviewRequest> $request) async {
+    return getFuelWeightSafetyOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetFuelWeightSafetyOverviewResponse>
+      getFuelWeightSafetyOverview($grpc.ServiceCall call,
+          $0.GetFuelWeightSafetyOverviewRequest request);
+
+  $async.Future<$0.UpsertSessionFuelHydrationPlanResponse>
+      upsertSessionFuelHydrationPlan_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertSessionFuelHydrationPlanRequest>
+              $request) async {
+    return upsertSessionFuelHydrationPlan($call, await $request);
+  }
+
+  $async.Future<$0.UpsertSessionFuelHydrationPlanResponse>
+      upsertSessionFuelHydrationPlan($grpc.ServiceCall call,
+          $0.UpsertSessionFuelHydrationPlanRequest request);
+
+  $async.Future<$0.RecordPrivateBodyCompositionTrendResponse>
+      recordPrivateBodyCompositionTrend_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordPrivateBodyCompositionTrendRequest>
+              $request) async {
+    return recordPrivateBodyCompositionTrend($call, await $request);
+  }
+
+  $async.Future<$0.RecordPrivateBodyCompositionTrendResponse>
+      recordPrivateBodyCompositionTrend($grpc.ServiceCall call,
+          $0.RecordPrivateBodyCompositionTrendRequest request);
+
+  $async.Future<$0.EvaluateWeightClassSafetyPlanResponse>
+      evaluateWeightClassSafetyPlan_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EvaluateWeightClassSafetyPlanRequest>
+              $request) async {
+    return evaluateWeightClassSafetyPlan($call, await $request);
+  }
+
+  $async.Future<$0.EvaluateWeightClassSafetyPlanResponse>
+      evaluateWeightClassSafetyPlan($grpc.ServiceCall call,
+          $0.EvaluateWeightClassSafetyPlanRequest request);
+
+  $async.Future<$0.EscalateWeightCutToProfessionalRouteResponse>
+      escalateWeightCutToProfessionalRoute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EscalateWeightCutToProfessionalRouteRequest>
+              $request) async {
+    return escalateWeightCutToProfessionalRoute($call, await $request);
+  }
+
+  $async.Future<$0.EscalateWeightCutToProfessionalRouteResponse>
+      escalateWeightCutToProfessionalRoute($grpc.ServiceCall call,
+          $0.EscalateWeightCutToProfessionalRouteRequest request);
+
+  $async.Future<$0.VerifyBodyCompositionPrivacyIsolationResponse>
+      verifyBodyCompositionPrivacyIsolation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyBodyCompositionPrivacyIsolationRequest>
+              $request) async {
+    return verifyBodyCompositionPrivacyIsolation($call, await $request);
+  }
+
+  $async.Future<$0.VerifyBodyCompositionPrivacyIsolationResponse>
+      verifyBodyCompositionPrivacyIsolation($grpc.ServiceCall call,
+          $0.VerifyBodyCompositionPrivacyIsolationRequest request);
+
+  $async.Future<$0.GetHealthyCompetitionCrewsOverviewResponse>
+      getHealthyCompetitionCrewsOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetHealthyCompetitionCrewsOverviewRequest>
+              $request) async {
+    return getHealthyCompetitionCrewsOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetHealthyCompetitionCrewsOverviewResponse>
+      getHealthyCompetitionCrewsOverview($grpc.ServiceCall call,
+          $0.GetHealthyCompetitionCrewsOverviewRequest request);
+
+  $async.Future<$0.UpsertHealthyCompetitionCohortResponse>
+      upsertHealthyCompetitionCohort_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertHealthyCompetitionCohortRequest>
+              $request) async {
+    return upsertHealthyCompetitionCohort($call, await $request);
+  }
+
+  $async.Future<$0.UpsertHealthyCompetitionCohortResponse>
+      upsertHealthyCompetitionCohort($grpc.ServiceCall call,
+          $0.UpsertHealthyCompetitionCohortRequest request);
+
+  $async.Future<$0.ToggleCompetitionMutePreferenceResponse>
+      toggleCompetitionMutePreference_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ToggleCompetitionMutePreferenceRequest>
+              $request) async {
+    return toggleCompetitionMutePreference($call, await $request);
+  }
+
+  $async.Future<$0.ToggleCompetitionMutePreferenceResponse>
+      toggleCompetitionMutePreference($grpc.ServiceCall call,
+          $0.ToggleCompetitionMutePreferenceRequest request);
+
+  $async.Future<$0.SubmitCrewChallengeOrAppealResponse>
+      submitCrewChallengeOrAppeal_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SubmitCrewChallengeOrAppealRequest> $request) async {
+    return submitCrewChallengeOrAppeal($call, await $request);
+  }
+
+  $async.Future<$0.SubmitCrewChallengeOrAppealResponse>
+      submitCrewChallengeOrAppeal($grpc.ServiceCall call,
+          $0.SubmitCrewChallengeOrAppealRequest request);
+
+  $async.Future<$0.RecordEmpireRewardContributionResponse>
+      recordEmpireRewardContribution_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordEmpireRewardContributionRequest>
+              $request) async {
+    return recordEmpireRewardContribution($call, await $request);
+  }
+
+  $async.Future<$0.RecordEmpireRewardContributionResponse>
+      recordEmpireRewardContribution($grpc.ServiceCall call,
+          $0.RecordEmpireRewardContributionRequest request);
+
+  $async.Future<$0.AdjudicateCrewAntiCheatCaseResponse>
+      adjudicateCrewAntiCheatCase_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.AdjudicateCrewAntiCheatCaseRequest> $request) async {
+    return adjudicateCrewAntiCheatCase($call, await $request);
+  }
+
+  $async.Future<$0.AdjudicateCrewAntiCheatCaseResponse>
+      adjudicateCrewAntiCheatCase($grpc.ServiceCall call,
+          $0.AdjudicateCrewAntiCheatCaseRequest request);
+
+  $async.Future<$0.GetOfflineAccessibleReleaseCertOverviewResponse>
+      getOfflineAccessibleReleaseCertOverview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetOfflineAccessibleReleaseCertOverviewRequest>
+              $request) async {
+    return getOfflineAccessibleReleaseCertOverview($call, await $request);
+  }
+
+  $async.Future<$0.GetOfflineAccessibleReleaseCertOverviewResponse>
+      getOfflineAccessibleReleaseCertOverview($grpc.ServiceCall call,
+          $0.GetOfflineAccessibleReleaseCertOverviewRequest request);
+
+  $async.Future<$0.CertifyOfflineMultimodalSyncStateResponse>
+      certifyOfflineMultimodalSyncState_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CertifyOfflineMultimodalSyncStateRequest>
+              $request) async {
+    return certifyOfflineMultimodalSyncState($call, await $request);
+  }
+
+  $async.Future<$0.CertifyOfflineMultimodalSyncStateResponse>
+      certifyOfflineMultimodalSyncState($grpc.ServiceCall call,
+          $0.CertifyOfflineMultimodalSyncStateRequest request);
+
+  $async.Future<$0.UpsertAccessibilityAdaptiveProfileResponse>
+      upsertAccessibilityAdaptiveProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpsertAccessibilityAdaptiveProfileRequest>
+              $request) async {
+    return upsertAccessibilityAdaptiveProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpsertAccessibilityAdaptiveProfileResponse>
+      upsertAccessibilityAdaptiveProfile($grpc.ServiceCall call,
+          $0.UpsertAccessibilityAdaptiveProfileRequest request);
+
+  $async.Future<$0.RunMigrationAndErasureCertificationResponse>
+      runMigrationAndErasureCertification_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RunMigrationAndErasureCertificationRequest>
+              $request) async {
+    return runMigrationAndErasureCertification($call, await $request);
+  }
+
+  $async.Future<$0.RunMigrationAndErasureCertificationResponse>
+      runMigrationAndErasureCertification($grpc.ServiceCall call,
+          $0.RunMigrationAndErasureCertificationRequest request);
+
+  $async.Future<$0.VerifyBatteryAwareSensorPolicyResponse>
+      verifyBatteryAwareSensorPolicy_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyBatteryAwareSensorPolicyRequest>
+              $request) async {
+    return verifyBatteryAwareSensorPolicy($call, await $request);
+  }
+
+  $async.Future<$0.VerifyBatteryAwareSensorPolicyResponse>
+      verifyBatteryAwareSensorPolicy($grpc.ServiceCall call,
+          $0.VerifyBatteryAwareSensorPolicyRequest request);
+
+  $async.Future<$0.SignOffForge16Of16ReleaseGateResponse>
+      signOffForge16Of16ReleaseGate_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SignOffForge16Of16ReleaseGateRequest>
+              $request) async {
+    return signOffForge16Of16ReleaseGate($call, await $request);
+  }
+
+  $async.Future<$0.SignOffForge16Of16ReleaseGateResponse>
+      signOffForge16Of16ReleaseGate($grpc.ServiceCall call,
+          $0.SignOffForge16Of16ReleaseGateRequest request);
 }

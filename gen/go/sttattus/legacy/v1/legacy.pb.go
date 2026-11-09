@@ -6971,6 +6971,5622 @@ func (x *ParseDocumentExpiryResponse) GetDetectedText() string {
 	return ""
 }
 
+type LegacyLivingEstateInventoryView struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	InventoryCode                    string                 `protobuf:"bytes,3,opt,name=inventory_code,json=inventoryCode,proto3" json:"inventory_code,omitempty"`
+	AssetFiduciaryAndOwnerScope      string                 `protobuf:"bytes,4,opt,name=asset_fiduciary_and_owner_scope,json=assetFiduciaryAndOwnerScope,proto3" json:"asset_fiduciary_and_owner_scope,omitempty"`
+	PlanHealthGapsAndEvidence        string                 `protobuf:"bytes,5,opt,name=plan_health_gaps_and_evidence,json=planHealthGapsAndEvidence,proto3" json:"plan_health_gaps_and_evidence,omitempty"`
+	TenMinuteQuarterlyReviewLog      string                 `protobuf:"bytes,6,opt,name=ten_minute_quarterly_review_log,json=tenMinuteQuarterlyReviewLog,proto3" json:"ten_minute_quarterly_review_log,omitempty"`
+	InventoryState                   string                 `protobuf:"bytes,7,opt,name=inventory_state,json=inventoryState,proto3" json:"inventory_state,omitempty"`
+	NoSilentSignedDocRewriteEnforced bool                   `protobuf:"varint,8,opt,name=no_silent_signed_doc_rewrite_enforced,json=noSilentSignedDocRewriteEnforced,proto3" json:"no_silent_signed_doc_rewrite_enforced,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *LegacyLivingEstateInventoryView) Reset() {
+	*x = LegacyLivingEstateInventoryView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyLivingEstateInventoryView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyLivingEstateInventoryView) ProtoMessage() {}
+
+func (x *LegacyLivingEstateInventoryView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyLivingEstateInventoryView.ProtoReflect.Descriptor instead.
+func (*LegacyLivingEstateInventoryView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *LegacyLivingEstateInventoryView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetInventoryCode() string {
+	if x != nil {
+		return x.InventoryCode
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetAssetFiduciaryAndOwnerScope() string {
+	if x != nil {
+		return x.AssetFiduciaryAndOwnerScope
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetPlanHealthGapsAndEvidence() string {
+	if x != nil {
+		return x.PlanHealthGapsAndEvidence
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetTenMinuteQuarterlyReviewLog() string {
+	if x != nil {
+		return x.TenMinuteQuarterlyReviewLog
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetInventoryState() string {
+	if x != nil {
+		return x.InventoryState
+	}
+	return ""
+}
+
+func (x *LegacyLivingEstateInventoryView) GetNoSilentSignedDocRewriteEnforced() bool {
+	if x != nil {
+		return x.NoSilentSignedDocRewriteEnforced
+	}
+	return false
+}
+
+func (x *LegacyLivingEstateInventoryView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyLivingInventoryWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchRequest) Reset() {
+	*x = GetLegacyLivingInventoryWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLivingInventoryWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyLivingInventoryWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLivingInventoryWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyLivingInventoryWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyLivingInventoryWorkbenchResponse struct {
+	state            protoimpl.MessageState             `protogen:"open.v1"`
+	Inventories      []*LegacyLivingEstateInventoryView `protobuf:"bytes,1,rep,name=inventories,proto3" json:"inventories,omitempty"`
+	OpenGapCount     int32                              `protobuf:"varint,2,opt,name=open_gap_count,json=openGapCount,proto3" json:"open_gap_count,omitempty"`
+	WorkbenchSummary string                             `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) Reset() {
+	*x = GetLegacyLivingInventoryWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLivingInventoryWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLivingInventoryWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyLivingInventoryWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) GetInventories() []*LegacyLivingEstateInventoryView {
+	if x != nil {
+		return x.Inventories
+	}
+	return nil
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) GetOpenGapCount() int32 {
+	if x != nil {
+		return x.OpenGapCount
+	}
+	return 0
+}
+
+func (x *GetLegacyLivingInventoryWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyLivingEstateInventoryRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	UserId                           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	InventoryCode                    string                 `protobuf:"bytes,2,opt,name=inventory_code,json=inventoryCode,proto3" json:"inventory_code,omitempty"`
+	AssetFiduciaryAndOwnerScope      string                 `protobuf:"bytes,3,opt,name=asset_fiduciary_and_owner_scope,json=assetFiduciaryAndOwnerScope,proto3" json:"asset_fiduciary_and_owner_scope,omitempty"`
+	PlanHealthGapsAndEvidence        string                 `protobuf:"bytes,4,opt,name=plan_health_gaps_and_evidence,json=planHealthGapsAndEvidence,proto3" json:"plan_health_gaps_and_evidence,omitempty"`
+	TenMinuteQuarterlyReviewLog      string                 `protobuf:"bytes,5,opt,name=ten_minute_quarterly_review_log,json=tenMinuteQuarterlyReviewLog,proto3" json:"ten_minute_quarterly_review_log,omitempty"`
+	InventoryState                   string                 `protobuf:"bytes,6,opt,name=inventory_state,json=inventoryState,proto3" json:"inventory_state,omitempty"`
+	NoSilentSignedDocRewriteEnforced bool                   `protobuf:"varint,7,opt,name=no_silent_signed_doc_rewrite_enforced,json=noSilentSignedDocRewriteEnforced,proto3" json:"no_silent_signed_doc_rewrite_enforced,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) Reset() {
+	*x = SaveLegacyLivingEstateInventoryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLivingEstateInventoryRequest) ProtoMessage() {}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLivingEstateInventoryRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLivingEstateInventoryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{126}
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetInventoryCode() string {
+	if x != nil {
+		return x.InventoryCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetAssetFiduciaryAndOwnerScope() string {
+	if x != nil {
+		return x.AssetFiduciaryAndOwnerScope
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetPlanHealthGapsAndEvidence() string {
+	if x != nil {
+		return x.PlanHealthGapsAndEvidence
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetTenMinuteQuarterlyReviewLog() string {
+	if x != nil {
+		return x.TenMinuteQuarterlyReviewLog
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetInventoryState() string {
+	if x != nil {
+		return x.InventoryState
+	}
+	return ""
+}
+
+func (x *SaveLegacyLivingEstateInventoryRequest) GetNoSilentSignedDocRewriteEnforced() bool {
+	if x != nil {
+		return x.NoSilentSignedDocRewriteEnforced
+	}
+	return false
+}
+
+type SaveLegacyLivingEstateInventoryResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Inventory     *LegacyLivingEstateInventoryView `protobuf:"bytes,1,opt,name=inventory,proto3" json:"inventory,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLivingEstateInventoryResponse) Reset() {
+	*x = SaveLegacyLivingEstateInventoryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLivingEstateInventoryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLivingEstateInventoryResponse) ProtoMessage() {}
+
+func (x *SaveLegacyLivingEstateInventoryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLivingEstateInventoryResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLivingEstateInventoryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *SaveLegacyLivingEstateInventoryResponse) GetInventory() *LegacyLivingEstateInventoryView {
+	if x != nil {
+		return x.Inventory
+	}
+	return nil
+}
+
+type SignOffLegacyQuarterlyPlanReviewRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	InventoryCode        string                 `protobuf:"bytes,2,opt,name=inventory_code,json=inventoryCode,proto3" json:"inventory_code,omitempty"`
+	TargetInventoryState string                 `protobuf:"bytes,3,opt,name=target_inventory_state,json=targetInventoryState,proto3" json:"target_inventory_state,omitempty"`
+	ReviewNotes          string                 `protobuf:"bytes,4,opt,name=review_notes,json=reviewNotes,proto3" json:"review_notes,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) Reset() {
+	*x = SignOffLegacyQuarterlyPlanReviewRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SignOffLegacyQuarterlyPlanReviewRequest) ProtoMessage() {}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SignOffLegacyQuarterlyPlanReviewRequest.ProtoReflect.Descriptor instead.
+func (*SignOffLegacyQuarterlyPlanReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) GetInventoryCode() string {
+	if x != nil {
+		return x.InventoryCode
+	}
+	return ""
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) GetTargetInventoryState() string {
+	if x != nil {
+		return x.TargetInventoryState
+	}
+	return ""
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewRequest) GetReviewNotes() string {
+	if x != nil {
+		return x.ReviewNotes
+	}
+	return ""
+}
+
+type SignOffLegacyQuarterlyPlanReviewResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Inventory     *LegacyLivingEstateInventoryView `protobuf:"bytes,1,opt,name=inventory,proto3" json:"inventory,omitempty"`
+	ReviewStatus  string                           `protobuf:"bytes,2,opt,name=review_status,json=reviewStatus,proto3" json:"review_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewResponse) Reset() {
+	*x = SignOffLegacyQuarterlyPlanReviewResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SignOffLegacyQuarterlyPlanReviewResponse) ProtoMessage() {}
+
+func (x *SignOffLegacyQuarterlyPlanReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SignOffLegacyQuarterlyPlanReviewResponse.ProtoReflect.Descriptor instead.
+func (*SignOffLegacyQuarterlyPlanReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewResponse) GetInventory() *LegacyLivingEstateInventoryView {
+	if x != nil {
+		return x.Inventory
+	}
+	return nil
+}
+
+func (x *SignOffLegacyQuarterlyPlanReviewResponse) GetReviewStatus() string {
+	if x != nil {
+		return x.ReviewStatus
+	}
+	return ""
+}
+
+type LegacyLifeEventAlignmentView struct {
+	state                                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                 string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AlignmentCode                          string                 `protobuf:"bytes,3,opt,name=alignment_code,json=alignmentCode,proto3" json:"alignment_code,omitempty"`
+	ConfirmedLifeEventAndImpactMap         string                 `protobuf:"bytes,4,opt,name=confirmed_life_event_and_impact_map,json=confirmedLifeEventAndImpactMap,proto3" json:"confirmed_life_event_and_impact_map,omitempty"`
+	BeneficiaryAndTrustFundingDiff         string                 `protobuf:"bytes,5,opt,name=beneficiary_and_trust_funding_diff,json=beneficiaryAndTrustFundingDiff,proto3" json:"beneficiary_and_trust_funding_diff,omitempty"`
+	InstitutionChecklistAndEvidence        string                 `protobuf:"bytes,6,opt,name=institution_checklist_and_evidence,json=institutionChecklistAndEvidence,proto3" json:"institution_checklist_and_evidence,omitempty"`
+	AlignmentState                         string                 `protobuf:"bytes,7,opt,name=alignment_state,json=alignmentState,proto3" json:"alignment_state,omitempty"`
+	EvidenceRequiredBeforeCompleteEnforced bool                   `protobuf:"varint,8,opt,name=evidence_required_before_complete_enforced,json=evidenceRequiredBeforeCompleteEnforced,proto3" json:"evidence_required_before_complete_enforced,omitempty"`
+	UpdatedAtIso                           string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *LegacyLifeEventAlignmentView) Reset() {
+	*x = LegacyLifeEventAlignmentView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyLifeEventAlignmentView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyLifeEventAlignmentView) ProtoMessage() {}
+
+func (x *LegacyLifeEventAlignmentView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyLifeEventAlignmentView.ProtoReflect.Descriptor instead.
+func (*LegacyLifeEventAlignmentView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{130}
+}
+
+func (x *LegacyLifeEventAlignmentView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetAlignmentCode() string {
+	if x != nil {
+		return x.AlignmentCode
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetConfirmedLifeEventAndImpactMap() string {
+	if x != nil {
+		return x.ConfirmedLifeEventAndImpactMap
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetBeneficiaryAndTrustFundingDiff() string {
+	if x != nil {
+		return x.BeneficiaryAndTrustFundingDiff
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetInstitutionChecklistAndEvidence() string {
+	if x != nil {
+		return x.InstitutionChecklistAndEvidence
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetAlignmentState() string {
+	if x != nil {
+		return x.AlignmentState
+	}
+	return ""
+}
+
+func (x *LegacyLifeEventAlignmentView) GetEvidenceRequiredBeforeCompleteEnforced() bool {
+	if x != nil {
+		return x.EvidenceRequiredBeforeCompleteEnforced
+	}
+	return false
+}
+
+func (x *LegacyLifeEventAlignmentView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyLifeEventAlignmentWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchRequest) Reset() {
+	*x = GetLegacyLifeEventAlignmentWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLifeEventAlignmentWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLifeEventAlignmentWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyLifeEventAlignmentWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyLifeEventAlignmentWorkbenchResponse struct {
+	state                     protoimpl.MessageState          `protogen:"open.v1"`
+	Alignments                []*LegacyLifeEventAlignmentView `protobuf:"bytes,1,rep,name=alignments,proto3" json:"alignments,omitempty"`
+	UnalignedDesignationCount int32                           `protobuf:"varint,2,opt,name=unaligned_designation_count,json=unalignedDesignationCount,proto3" json:"unaligned_designation_count,omitempty"`
+	WorkbenchSummary          string                          `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields             protoimpl.UnknownFields
+	sizeCache                 protoimpl.SizeCache
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) Reset() {
+	*x = GetLegacyLifeEventAlignmentWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLifeEventAlignmentWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLifeEventAlignmentWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyLifeEventAlignmentWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) GetAlignments() []*LegacyLifeEventAlignmentView {
+	if x != nil {
+		return x.Alignments
+	}
+	return nil
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) GetUnalignedDesignationCount() int32 {
+	if x != nil {
+		return x.UnalignedDesignationCount
+	}
+	return 0
+}
+
+func (x *GetLegacyLifeEventAlignmentWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyLifeEventAlignmentRequest struct {
+	state                                  protoimpl.MessageState `protogen:"open.v1"`
+	UserId                                 string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AlignmentCode                          string                 `protobuf:"bytes,2,opt,name=alignment_code,json=alignmentCode,proto3" json:"alignment_code,omitempty"`
+	ConfirmedLifeEventAndImpactMap         string                 `protobuf:"bytes,3,opt,name=confirmed_life_event_and_impact_map,json=confirmedLifeEventAndImpactMap,proto3" json:"confirmed_life_event_and_impact_map,omitempty"`
+	BeneficiaryAndTrustFundingDiff         string                 `protobuf:"bytes,4,opt,name=beneficiary_and_trust_funding_diff,json=beneficiaryAndTrustFundingDiff,proto3" json:"beneficiary_and_trust_funding_diff,omitempty"`
+	InstitutionChecklistAndEvidence        string                 `protobuf:"bytes,5,opt,name=institution_checklist_and_evidence,json=institutionChecklistAndEvidence,proto3" json:"institution_checklist_and_evidence,omitempty"`
+	AlignmentState                         string                 `protobuf:"bytes,6,opt,name=alignment_state,json=alignmentState,proto3" json:"alignment_state,omitempty"`
+	EvidenceRequiredBeforeCompleteEnforced bool                   `protobuf:"varint,7,opt,name=evidence_required_before_complete_enforced,json=evidenceRequiredBeforeCompleteEnforced,proto3" json:"evidence_required_before_complete_enforced,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) Reset() {
+	*x = SaveLegacyLifeEventAlignmentRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLifeEventAlignmentRequest) ProtoMessage() {}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLifeEventAlignmentRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLifeEventAlignmentRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{133}
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetAlignmentCode() string {
+	if x != nil {
+		return x.AlignmentCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetConfirmedLifeEventAndImpactMap() string {
+	if x != nil {
+		return x.ConfirmedLifeEventAndImpactMap
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetBeneficiaryAndTrustFundingDiff() string {
+	if x != nil {
+		return x.BeneficiaryAndTrustFundingDiff
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetInstitutionChecklistAndEvidence() string {
+	if x != nil {
+		return x.InstitutionChecklistAndEvidence
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetAlignmentState() string {
+	if x != nil {
+		return x.AlignmentState
+	}
+	return ""
+}
+
+func (x *SaveLegacyLifeEventAlignmentRequest) GetEvidenceRequiredBeforeCompleteEnforced() bool {
+	if x != nil {
+		return x.EvidenceRequiredBeforeCompleteEnforced
+	}
+	return false
+}
+
+type SaveLegacyLifeEventAlignmentResponse struct {
+	state         protoimpl.MessageState        `protogen:"open.v1"`
+	Alignment     *LegacyLifeEventAlignmentView `protobuf:"bytes,1,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLifeEventAlignmentResponse) Reset() {
+	*x = SaveLegacyLifeEventAlignmentResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLifeEventAlignmentResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLifeEventAlignmentResponse) ProtoMessage() {}
+
+func (x *SaveLegacyLifeEventAlignmentResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLifeEventAlignmentResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLifeEventAlignmentResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *SaveLegacyLifeEventAlignmentResponse) GetAlignment() *LegacyLifeEventAlignmentView {
+	if x != nil {
+		return x.Alignment
+	}
+	return nil
+}
+
+type VerifyLegacyAlignmentInstitutionEvidenceRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AlignmentCode        string                 `protobuf:"bytes,2,opt,name=alignment_code,json=alignmentCode,proto3" json:"alignment_code,omitempty"`
+	TargetAlignmentState string                 `protobuf:"bytes,3,opt,name=target_alignment_state,json=targetAlignmentState,proto3" json:"target_alignment_state,omitempty"`
+	EvidenceNotes        string                 `protobuf:"bytes,4,opt,name=evidence_notes,json=evidenceNotes,proto3" json:"evidence_notes,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) Reset() {
+	*x = VerifyLegacyAlignmentInstitutionEvidenceRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyLegacyAlignmentInstitutionEvidenceRequest) ProtoMessage() {}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyLegacyAlignmentInstitutionEvidenceRequest.ProtoReflect.Descriptor instead.
+func (*VerifyLegacyAlignmentInstitutionEvidenceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) GetAlignmentCode() string {
+	if x != nil {
+		return x.AlignmentCode
+	}
+	return ""
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) GetTargetAlignmentState() string {
+	if x != nil {
+		return x.TargetAlignmentState
+	}
+	return ""
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceRequest) GetEvidenceNotes() string {
+	if x != nil {
+		return x.EvidenceNotes
+	}
+	return ""
+}
+
+type VerifyLegacyAlignmentInstitutionEvidenceResponse struct {
+	state              protoimpl.MessageState        `protogen:"open.v1"`
+	Alignment          *LegacyLifeEventAlignmentView `protobuf:"bytes,1,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	VerificationStatus string                        `protobuf:"bytes,2,opt,name=verification_status,json=verificationStatus,proto3" json:"verification_status,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceResponse) Reset() {
+	*x = VerifyLegacyAlignmentInstitutionEvidenceResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyLegacyAlignmentInstitutionEvidenceResponse) ProtoMessage() {}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyLegacyAlignmentInstitutionEvidenceResponse.ProtoReflect.Descriptor instead.
+func (*VerifyLegacyAlignmentInstitutionEvidenceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceResponse) GetAlignment() *LegacyLifeEventAlignmentView {
+	if x != nil {
+		return x.Alignment
+	}
+	return nil
+}
+
+func (x *VerifyLegacyAlignmentInstitutionEvidenceResponse) GetVerificationStatus() string {
+	if x != nil {
+		return x.VerificationStatus
+	}
+	return ""
+}
+
+type LegacySecureDocumentVaultView struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DocumentCode                    string                 `protobuf:"bytes,3,opt,name=document_code,json=documentCode,proto3" json:"document_code,omitempty"`
+	VersionFamilyAndExecutionStatus string                 `protobuf:"bytes,4,opt,name=version_family_and_execution_status,json=versionFamilyAndExecutionStatus,proto3" json:"version_family_and_execution_status,omitempty"`
+	CitedClauseAndOcrConfidence     string                 `protobuf:"bytes,5,opt,name=cited_clause_and_ocr_confidence,json=citedClauseAndOcrConfidence,proto3" json:"cited_clause_and_ocr_confidence,omitempty"`
+	CustodyRetentionAndOfflineCache string                 `protobuf:"bytes,6,opt,name=custody_retention_and_offline_cache,json=custodyRetentionAndOfflineCache,proto3" json:"custody_retention_and_offline_cache,omitempty"`
+	VaultState                      string                 `protobuf:"bytes,7,opt,name=vault_state,json=vaultState,proto3" json:"vault_state,omitempty"`
+	PublicGalleryLeakBlocked        bool                   `protobuf:"varint,8,opt,name=public_gallery_leak_blocked,json=publicGalleryLeakBlocked,proto3" json:"public_gallery_leak_blocked,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *LegacySecureDocumentVaultView) Reset() {
+	*x = LegacySecureDocumentVaultView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacySecureDocumentVaultView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacySecureDocumentVaultView) ProtoMessage() {}
+
+func (x *LegacySecureDocumentVaultView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacySecureDocumentVaultView.ProtoReflect.Descriptor instead.
+func (*LegacySecureDocumentVaultView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *LegacySecureDocumentVaultView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetDocumentCode() string {
+	if x != nil {
+		return x.DocumentCode
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetVersionFamilyAndExecutionStatus() string {
+	if x != nil {
+		return x.VersionFamilyAndExecutionStatus
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetCitedClauseAndOcrConfidence() string {
+	if x != nil {
+		return x.CitedClauseAndOcrConfidence
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetCustodyRetentionAndOfflineCache() string {
+	if x != nil {
+		return x.CustodyRetentionAndOfflineCache
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetVaultState() string {
+	if x != nil {
+		return x.VaultState
+	}
+	return ""
+}
+
+func (x *LegacySecureDocumentVaultView) GetPublicGalleryLeakBlocked() bool {
+	if x != nil {
+		return x.PublicGalleryLeakBlocked
+	}
+	return false
+}
+
+func (x *LegacySecureDocumentVaultView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacySecureDocumentVaultWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchRequest) Reset() {
+	*x = GetLegacySecureDocumentVaultWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacySecureDocumentVaultWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacySecureDocumentVaultWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacySecureDocumentVaultWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacySecureDocumentVaultWorkbenchResponse struct {
+	state                  protoimpl.MessageState           `protogen:"open.v1"`
+	Documents              []*LegacySecureDocumentVaultView `protobuf:"bytes,1,rep,name=documents,proto3" json:"documents,omitempty"`
+	ProvisionalReviewCount int32                            `protobuf:"varint,2,opt,name=provisional_review_count,json=provisionalReviewCount,proto3" json:"provisional_review_count,omitempty"`
+	WorkbenchSummary       string                           `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) Reset() {
+	*x = GetLegacySecureDocumentVaultWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacySecureDocumentVaultWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacySecureDocumentVaultWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacySecureDocumentVaultWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) GetDocuments() []*LegacySecureDocumentVaultView {
+	if x != nil {
+		return x.Documents
+	}
+	return nil
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) GetProvisionalReviewCount() int32 {
+	if x != nil {
+		return x.ProvisionalReviewCount
+	}
+	return 0
+}
+
+func (x *GetLegacySecureDocumentVaultWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacySecureDocumentVaultRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	UserId                          string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DocumentCode                    string                 `protobuf:"bytes,2,opt,name=document_code,json=documentCode,proto3" json:"document_code,omitempty"`
+	VersionFamilyAndExecutionStatus string                 `protobuf:"bytes,3,opt,name=version_family_and_execution_status,json=versionFamilyAndExecutionStatus,proto3" json:"version_family_and_execution_status,omitempty"`
+	CitedClauseAndOcrConfidence     string                 `protobuf:"bytes,4,opt,name=cited_clause_and_ocr_confidence,json=citedClauseAndOcrConfidence,proto3" json:"cited_clause_and_ocr_confidence,omitempty"`
+	CustodyRetentionAndOfflineCache string                 `protobuf:"bytes,5,opt,name=custody_retention_and_offline_cache,json=custodyRetentionAndOfflineCache,proto3" json:"custody_retention_and_offline_cache,omitempty"`
+	VaultState                      string                 `protobuf:"bytes,6,opt,name=vault_state,json=vaultState,proto3" json:"vault_state,omitempty"`
+	PublicGalleryLeakBlocked        bool                   `protobuf:"varint,7,opt,name=public_gallery_leak_blocked,json=publicGalleryLeakBlocked,proto3" json:"public_gallery_leak_blocked,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) Reset() {
+	*x = SaveLegacySecureDocumentVaultRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacySecureDocumentVaultRequest) ProtoMessage() {}
+
+func (x *SaveLegacySecureDocumentVaultRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacySecureDocumentVaultRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacySecureDocumentVaultRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{140}
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetDocumentCode() string {
+	if x != nil {
+		return x.DocumentCode
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetVersionFamilyAndExecutionStatus() string {
+	if x != nil {
+		return x.VersionFamilyAndExecutionStatus
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetCitedClauseAndOcrConfidence() string {
+	if x != nil {
+		return x.CitedClauseAndOcrConfidence
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetCustodyRetentionAndOfflineCache() string {
+	if x != nil {
+		return x.CustodyRetentionAndOfflineCache
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetVaultState() string {
+	if x != nil {
+		return x.VaultState
+	}
+	return ""
+}
+
+func (x *SaveLegacySecureDocumentVaultRequest) GetPublicGalleryLeakBlocked() bool {
+	if x != nil {
+		return x.PublicGalleryLeakBlocked
+	}
+	return false
+}
+
+type SaveLegacySecureDocumentVaultResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Document      *LegacySecureDocumentVaultView `protobuf:"bytes,1,opt,name=document,proto3" json:"document,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacySecureDocumentVaultResponse) Reset() {
+	*x = SaveLegacySecureDocumentVaultResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacySecureDocumentVaultResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacySecureDocumentVaultResponse) ProtoMessage() {}
+
+func (x *SaveLegacySecureDocumentVaultResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacySecureDocumentVaultResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacySecureDocumentVaultResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *SaveLegacySecureDocumentVaultResponse) GetDocument() *LegacySecureDocumentVaultView {
+	if x != nil {
+		return x.Document
+	}
+	return nil
+}
+
+type LockOrExportLegacyDocumentCustodyRequest struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DocumentCode     string                 `protobuf:"bytes,2,opt,name=document_code,json=documentCode,proto3" json:"document_code,omitempty"`
+	TargetVaultState string                 `protobuf:"bytes,3,opt,name=target_vault_state,json=targetVaultState,proto3" json:"target_vault_state,omitempty"`
+	CustodyNotes     string                 `protobuf:"bytes,4,opt,name=custody_notes,json=custodyNotes,proto3" json:"custody_notes,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) Reset() {
+	*x = LockOrExportLegacyDocumentCustodyRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrExportLegacyDocumentCustodyRequest) ProtoMessage() {}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrExportLegacyDocumentCustodyRequest.ProtoReflect.Descriptor instead.
+func (*LockOrExportLegacyDocumentCustodyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) GetDocumentCode() string {
+	if x != nil {
+		return x.DocumentCode
+	}
+	return ""
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) GetTargetVaultState() string {
+	if x != nil {
+		return x.TargetVaultState
+	}
+	return ""
+}
+
+func (x *LockOrExportLegacyDocumentCustodyRequest) GetCustodyNotes() string {
+	if x != nil {
+		return x.CustodyNotes
+	}
+	return ""
+}
+
+type LockOrExportLegacyDocumentCustodyResponse struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Document      *LegacySecureDocumentVaultView `protobuf:"bytes,1,opt,name=document,proto3" json:"document,omitempty"`
+	CustodyStatus string                         `protobuf:"bytes,2,opt,name=custody_status,json=custodyStatus,proto3" json:"custody_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LockOrExportLegacyDocumentCustodyResponse) Reset() {
+	*x = LockOrExportLegacyDocumentCustodyResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrExportLegacyDocumentCustodyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrExportLegacyDocumentCustodyResponse) ProtoMessage() {}
+
+func (x *LockOrExportLegacyDocumentCustodyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrExportLegacyDocumentCustodyResponse.ProtoReflect.Descriptor instead.
+func (*LockOrExportLegacyDocumentCustodyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *LockOrExportLegacyDocumentCustodyResponse) GetDocument() *LegacySecureDocumentVaultView {
+	if x != nil {
+		return x.Document
+	}
+	return nil
+}
+
+func (x *LockOrExportLegacyDocumentCustodyResponse) GetCustodyStatus() string {
+	if x != nil {
+		return x.CustodyStatus
+	}
+	return ""
+}
+
+type LegacyJurisdictionDocumentSystemView struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SystemCode                         string                 `protobuf:"bytes,3,opt,name=system_code,json=systemCode,proto3" json:"system_code,omitempty"`
+	JurisdictionRulePackAndScope       string                 `protobuf:"bytes,4,opt,name=jurisdiction_rule_pack_and_scope,json=jurisdictionRulePackAndScope,proto3" json:"jurisdiction_rule_pack_and_scope,omitempty"`
+	ClauseVersionAndAttorneyTrigger    string                 `protobuf:"bytes,5,opt,name=clause_version_and_attorney_trigger,json=clauseVersionAndAttorneyTrigger,proto3" json:"clause_version_and_attorney_trigger,omitempty"`
+	ExecutionWitnessAndNotaryChecklist string                 `protobuf:"bytes,6,opt,name=execution_witness_and_notary_checklist,json=executionWitnessAndNotaryChecklist,proto3" json:"execution_witness_and_notary_checklist,omitempty"`
+	DocumentState                      string                 `protobuf:"bytes,7,opt,name=document_state,json=documentState,proto3" json:"document_state,omitempty"`
+	NonAttorneyImpersonationEnforced   bool                   `protobuf:"varint,8,opt,name=non_attorney_impersonation_enforced,json=nonAttorneyImpersonationEnforced,proto3" json:"non_attorney_impersonation_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) Reset() {
+	*x = LegacyJurisdictionDocumentSystemView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyJurisdictionDocumentSystemView) ProtoMessage() {}
+
+func (x *LegacyJurisdictionDocumentSystemView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyJurisdictionDocumentSystemView.ProtoReflect.Descriptor instead.
+func (*LegacyJurisdictionDocumentSystemView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetSystemCode() string {
+	if x != nil {
+		return x.SystemCode
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetJurisdictionRulePackAndScope() string {
+	if x != nil {
+		return x.JurisdictionRulePackAndScope
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetClauseVersionAndAttorneyTrigger() string {
+	if x != nil {
+		return x.ClauseVersionAndAttorneyTrigger
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetExecutionWitnessAndNotaryChecklist() string {
+	if x != nil {
+		return x.ExecutionWitnessAndNotaryChecklist
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetDocumentState() string {
+	if x != nil {
+		return x.DocumentState
+	}
+	return ""
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetNonAttorneyImpersonationEnforced() bool {
+	if x != nil {
+		return x.NonAttorneyImpersonationEnforced
+	}
+	return false
+}
+
+func (x *LegacyJurisdictionDocumentSystemView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyJurisdictionDocumentWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchRequest) Reset() {
+	*x = GetLegacyJurisdictionDocumentWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyJurisdictionDocumentWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyJurisdictionDocumentWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyJurisdictionDocumentWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyJurisdictionDocumentWorkbenchResponse struct {
+	state                protoimpl.MessageState                  `protogen:"open.v1"`
+	Systems              []*LegacyJurisdictionDocumentSystemView `protobuf:"bytes,1,rep,name=systems,proto3" json:"systems,omitempty"`
+	AttorneyTriggerCount int32                                   `protobuf:"varint,2,opt,name=attorney_trigger_count,json=attorneyTriggerCount,proto3" json:"attorney_trigger_count,omitempty"`
+	WorkbenchSummary     string                                  `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) Reset() {
+	*x = GetLegacyJurisdictionDocumentWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyJurisdictionDocumentWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyJurisdictionDocumentWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyJurisdictionDocumentWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) GetSystems() []*LegacyJurisdictionDocumentSystemView {
+	if x != nil {
+		return x.Systems
+	}
+	return nil
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) GetAttorneyTriggerCount() int32 {
+	if x != nil {
+		return x.AttorneyTriggerCount
+	}
+	return 0
+}
+
+func (x *GetLegacyJurisdictionDocumentWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyJurisdictionDocumentSystemRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	UserId                             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SystemCode                         string                 `protobuf:"bytes,2,opt,name=system_code,json=systemCode,proto3" json:"system_code,omitempty"`
+	JurisdictionRulePackAndScope       string                 `protobuf:"bytes,3,opt,name=jurisdiction_rule_pack_and_scope,json=jurisdictionRulePackAndScope,proto3" json:"jurisdiction_rule_pack_and_scope,omitempty"`
+	ClauseVersionAndAttorneyTrigger    string                 `protobuf:"bytes,4,opt,name=clause_version_and_attorney_trigger,json=clauseVersionAndAttorneyTrigger,proto3" json:"clause_version_and_attorney_trigger,omitempty"`
+	ExecutionWitnessAndNotaryChecklist string                 `protobuf:"bytes,5,opt,name=execution_witness_and_notary_checklist,json=executionWitnessAndNotaryChecklist,proto3" json:"execution_witness_and_notary_checklist,omitempty"`
+	DocumentState                      string                 `protobuf:"bytes,6,opt,name=document_state,json=documentState,proto3" json:"document_state,omitempty"`
+	NonAttorneyImpersonationEnforced   bool                   `protobuf:"varint,7,opt,name=non_attorney_impersonation_enforced,json=nonAttorneyImpersonationEnforced,proto3" json:"non_attorney_impersonation_enforced,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) Reset() {
+	*x = SaveLegacyJurisdictionDocumentSystemRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyJurisdictionDocumentSystemRequest) ProtoMessage() {}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyJurisdictionDocumentSystemRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyJurisdictionDocumentSystemRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{147}
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetSystemCode() string {
+	if x != nil {
+		return x.SystemCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetJurisdictionRulePackAndScope() string {
+	if x != nil {
+		return x.JurisdictionRulePackAndScope
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetClauseVersionAndAttorneyTrigger() string {
+	if x != nil {
+		return x.ClauseVersionAndAttorneyTrigger
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetExecutionWitnessAndNotaryChecklist() string {
+	if x != nil {
+		return x.ExecutionWitnessAndNotaryChecklist
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetDocumentState() string {
+	if x != nil {
+		return x.DocumentState
+	}
+	return ""
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemRequest) GetNonAttorneyImpersonationEnforced() bool {
+	if x != nil {
+		return x.NonAttorneyImpersonationEnforced
+	}
+	return false
+}
+
+type SaveLegacyJurisdictionDocumentSystemResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	System        *LegacyJurisdictionDocumentSystemView `protobuf:"bytes,1,opt,name=system,proto3" json:"system,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemResponse) Reset() {
+	*x = SaveLegacyJurisdictionDocumentSystemResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyJurisdictionDocumentSystemResponse) ProtoMessage() {}
+
+func (x *SaveLegacyJurisdictionDocumentSystemResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyJurisdictionDocumentSystemResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyJurisdictionDocumentSystemResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *SaveLegacyJurisdictionDocumentSystemResponse) GetSystem() *LegacyJurisdictionDocumentSystemView {
+	if x != nil {
+		return x.System
+	}
+	return nil
+}
+
+type TriggerLegacyCounselReviewOrLockExecutionRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	SystemCode          string                 `protobuf:"bytes,2,opt,name=system_code,json=systemCode,proto3" json:"system_code,omitempty"`
+	TargetDocumentState string                 `protobuf:"bytes,3,opt,name=target_document_state,json=targetDocumentState,proto3" json:"target_document_state,omitempty"`
+	ExecutionNotes      string                 `protobuf:"bytes,4,opt,name=execution_notes,json=executionNotes,proto3" json:"execution_notes,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) Reset() {
+	*x = TriggerLegacyCounselReviewOrLockExecutionRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerLegacyCounselReviewOrLockExecutionRequest) ProtoMessage() {}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerLegacyCounselReviewOrLockExecutionRequest.ProtoReflect.Descriptor instead.
+func (*TriggerLegacyCounselReviewOrLockExecutionRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) GetSystemCode() string {
+	if x != nil {
+		return x.SystemCode
+	}
+	return ""
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) GetTargetDocumentState() string {
+	if x != nil {
+		return x.TargetDocumentState
+	}
+	return ""
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionRequest) GetExecutionNotes() string {
+	if x != nil {
+		return x.ExecutionNotes
+	}
+	return ""
+}
+
+type TriggerLegacyCounselReviewOrLockExecutionResponse struct {
+	state           protoimpl.MessageState                `protogen:"open.v1"`
+	System          *LegacyJurisdictionDocumentSystemView `protobuf:"bytes,1,opt,name=system,proto3" json:"system,omitempty"`
+	ExecutionStatus string                                `protobuf:"bytes,2,opt,name=execution_status,json=executionStatus,proto3" json:"execution_status,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionResponse) Reset() {
+	*x = TriggerLegacyCounselReviewOrLockExecutionResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TriggerLegacyCounselReviewOrLockExecutionResponse) ProtoMessage() {}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TriggerLegacyCounselReviewOrLockExecutionResponse.ProtoReflect.Descriptor instead.
+func (*TriggerLegacyCounselReviewOrLockExecutionResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionResponse) GetSystem() *LegacyJurisdictionDocumentSystemView {
+	if x != nil {
+		return x.System
+	}
+	return nil
+}
+
+func (x *TriggerLegacyCounselReviewOrLockExecutionResponse) GetExecutionStatus() string {
+	if x != nil {
+		return x.ExecutionStatus
+	}
+	return ""
+}
+
+type LegacyHouseholdBusinessContinuityView struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	Id                                string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ContinuityCode                    string                 `protobuf:"bytes,3,opt,name=continuity_code,json=continuityCode,proto3" json:"continuity_code,omitempty"`
+	RolePlaybookAndFirstWeekGuide     string                 `protobuf:"bytes,4,opt,name=role_playbook_and_first_week_guide,json=rolePlaybookAndFirstWeekGuide,proto3" json:"role_playbook_and_first_week_guide,omitempty"`
+	AuthorityMatrixAndSignatoryLimits string                 `protobuf:"bytes,5,opt,name=authority_matrix_and_signatory_limits,json=authorityMatrixAndSignatoryLimits,proto3" json:"authority_matrix_and_signatory_limits,omitempty"`
+	OfflineEmergencyCardAndDrillLog   string                 `protobuf:"bytes,6,opt,name=offline_emergency_card_and_drill_log,json=offlineEmergencyCardAndDrillLog,proto3" json:"offline_emergency_card_and_drill_log,omitempty"`
+	ContinuityState                   string                 `protobuf:"bytes,7,opt,name=continuity_state,json=continuityState,proto3" json:"continuity_state,omitempty"`
+	FullVaultUnscopedLeakBlocked      bool                   `protobuf:"varint,8,opt,name=full_vault_unscoped_leak_blocked,json=fullVaultUnscopedLeakBlocked,proto3" json:"full_vault_unscoped_leak_blocked,omitempty"`
+	UpdatedAtIso                      string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) Reset() {
+	*x = LegacyHouseholdBusinessContinuityView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyHouseholdBusinessContinuityView) ProtoMessage() {}
+
+func (x *LegacyHouseholdBusinessContinuityView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyHouseholdBusinessContinuityView.ProtoReflect.Descriptor instead.
+func (*LegacyHouseholdBusinessContinuityView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetContinuityCode() string {
+	if x != nil {
+		return x.ContinuityCode
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetRolePlaybookAndFirstWeekGuide() string {
+	if x != nil {
+		return x.RolePlaybookAndFirstWeekGuide
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetAuthorityMatrixAndSignatoryLimits() string {
+	if x != nil {
+		return x.AuthorityMatrixAndSignatoryLimits
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetOfflineEmergencyCardAndDrillLog() string {
+	if x != nil {
+		return x.OfflineEmergencyCardAndDrillLog
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetContinuityState() string {
+	if x != nil {
+		return x.ContinuityState
+	}
+	return ""
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetFullVaultUnscopedLeakBlocked() bool {
+	if x != nil {
+		return x.FullVaultUnscopedLeakBlocked
+	}
+	return false
+}
+
+func (x *LegacyHouseholdBusinessContinuityView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyContinuityPlaybookWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchRequest) Reset() {
+	*x = GetLegacyContinuityPlaybookWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyContinuityPlaybookWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyContinuityPlaybookWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyContinuityPlaybookWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyContinuityPlaybookWorkbenchResponse struct {
+	state            protoimpl.MessageState                   `protogen:"open.v1"`
+	Playbooks        []*LegacyHouseholdBusinessContinuityView `protobuf:"bytes,1,rep,name=playbooks,proto3" json:"playbooks,omitempty"`
+	RefreshDueCount  int32                                    `protobuf:"varint,2,opt,name=refresh_due_count,json=refreshDueCount,proto3" json:"refresh_due_count,omitempty"`
+	WorkbenchSummary string                                   `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) Reset() {
+	*x = GetLegacyContinuityPlaybookWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyContinuityPlaybookWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyContinuityPlaybookWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyContinuityPlaybookWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{153}
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) GetPlaybooks() []*LegacyHouseholdBusinessContinuityView {
+	if x != nil {
+		return x.Playbooks
+	}
+	return nil
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) GetRefreshDueCount() int32 {
+	if x != nil {
+		return x.RefreshDueCount
+	}
+	return 0
+}
+
+func (x *GetLegacyContinuityPlaybookWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyHouseholdBusinessContinuityRequest struct {
+	state                             protoimpl.MessageState `protogen:"open.v1"`
+	UserId                            string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ContinuityCode                    string                 `protobuf:"bytes,2,opt,name=continuity_code,json=continuityCode,proto3" json:"continuity_code,omitempty"`
+	RolePlaybookAndFirstWeekGuide     string                 `protobuf:"bytes,3,opt,name=role_playbook_and_first_week_guide,json=rolePlaybookAndFirstWeekGuide,proto3" json:"role_playbook_and_first_week_guide,omitempty"`
+	AuthorityMatrixAndSignatoryLimits string                 `protobuf:"bytes,4,opt,name=authority_matrix_and_signatory_limits,json=authorityMatrixAndSignatoryLimits,proto3" json:"authority_matrix_and_signatory_limits,omitempty"`
+	OfflineEmergencyCardAndDrillLog   string                 `protobuf:"bytes,5,opt,name=offline_emergency_card_and_drill_log,json=offlineEmergencyCardAndDrillLog,proto3" json:"offline_emergency_card_and_drill_log,omitempty"`
+	ContinuityState                   string                 `protobuf:"bytes,6,opt,name=continuity_state,json=continuityState,proto3" json:"continuity_state,omitempty"`
+	FullVaultUnscopedLeakBlocked      bool                   `protobuf:"varint,7,opt,name=full_vault_unscoped_leak_blocked,json=fullVaultUnscopedLeakBlocked,proto3" json:"full_vault_unscoped_leak_blocked,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) Reset() {
+	*x = SaveLegacyHouseholdBusinessContinuityRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyHouseholdBusinessContinuityRequest) ProtoMessage() {}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyHouseholdBusinessContinuityRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyHouseholdBusinessContinuityRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{154}
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetContinuityCode() string {
+	if x != nil {
+		return x.ContinuityCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetRolePlaybookAndFirstWeekGuide() string {
+	if x != nil {
+		return x.RolePlaybookAndFirstWeekGuide
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetAuthorityMatrixAndSignatoryLimits() string {
+	if x != nil {
+		return x.AuthorityMatrixAndSignatoryLimits
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetOfflineEmergencyCardAndDrillLog() string {
+	if x != nil {
+		return x.OfflineEmergencyCardAndDrillLog
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetContinuityState() string {
+	if x != nil {
+		return x.ContinuityState
+	}
+	return ""
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityRequest) GetFullVaultUnscopedLeakBlocked() bool {
+	if x != nil {
+		return x.FullVaultUnscopedLeakBlocked
+	}
+	return false
+}
+
+type SaveLegacyHouseholdBusinessContinuityResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Playbook      *LegacyHouseholdBusinessContinuityView `protobuf:"bytes,1,opt,name=playbook,proto3" json:"playbook,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityResponse) Reset() {
+	*x = SaveLegacyHouseholdBusinessContinuityResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyHouseholdBusinessContinuityResponse) ProtoMessage() {}
+
+func (x *SaveLegacyHouseholdBusinessContinuityResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyHouseholdBusinessContinuityResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyHouseholdBusinessContinuityResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *SaveLegacyHouseholdBusinessContinuityResponse) GetPlaybook() *LegacyHouseholdBusinessContinuityView {
+	if x != nil {
+		return x.Playbook
+	}
+	return nil
+}
+
+type RunLegacyContinuityDrillOrStageDelegationRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ContinuityCode        string                 `protobuf:"bytes,2,opt,name=continuity_code,json=continuityCode,proto3" json:"continuity_code,omitempty"`
+	TargetContinuityState string                 `protobuf:"bytes,3,opt,name=target_continuity_state,json=targetContinuityState,proto3" json:"target_continuity_state,omitempty"`
+	DrillNotes            string                 `protobuf:"bytes,4,opt,name=drill_notes,json=drillNotes,proto3" json:"drill_notes,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) Reset() {
+	*x = RunLegacyContinuityDrillOrStageDelegationRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunLegacyContinuityDrillOrStageDelegationRequest) ProtoMessage() {}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunLegacyContinuityDrillOrStageDelegationRequest.ProtoReflect.Descriptor instead.
+func (*RunLegacyContinuityDrillOrStageDelegationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) GetContinuityCode() string {
+	if x != nil {
+		return x.ContinuityCode
+	}
+	return ""
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) GetTargetContinuityState() string {
+	if x != nil {
+		return x.TargetContinuityState
+	}
+	return ""
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationRequest) GetDrillNotes() string {
+	if x != nil {
+		return x.DrillNotes
+	}
+	return ""
+}
+
+type RunLegacyContinuityDrillOrStageDelegationResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Playbook      *LegacyHouseholdBusinessContinuityView `protobuf:"bytes,1,opt,name=playbook,proto3" json:"playbook,omitempty"`
+	DrillStatus   string                                 `protobuf:"bytes,2,opt,name=drill_status,json=drillStatus,proto3" json:"drill_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationResponse) Reset() {
+	*x = RunLegacyContinuityDrillOrStageDelegationResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunLegacyContinuityDrillOrStageDelegationResponse) ProtoMessage() {}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunLegacyContinuityDrillOrStageDelegationResponse.ProtoReflect.Descriptor instead.
+func (*RunLegacyContinuityDrillOrStageDelegationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationResponse) GetPlaybook() *LegacyHouseholdBusinessContinuityView {
+	if x != nil {
+		return x.Playbook
+	}
+	return nil
+}
+
+func (x *RunLegacyContinuityDrillOrStageDelegationResponse) GetDrillStatus() string {
+	if x != nil {
+		return x.DrillStatus
+	}
+	return ""
+}
+
+type LegacyIncapacityDeadmanProtocolView struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	Id                             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProtocolCode                   string                 `protobuf:"bytes,3,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	WorkflowBranchAndWaitingClocks string                 `protobuf:"bytes,4,opt,name=workflow_branch_and_waiting_clocks,json=workflowBranchAndWaitingClocks,proto3" json:"workflow_branch_and_waiting_clocks,omitempty"`
+	MultiPartyThresholdAndEvidence string                 `protobuf:"bytes,5,opt,name=multi_party_threshold_and_evidence,json=multiPartyThresholdAndEvidence,proto3" json:"multi_party_threshold_and_evidence,omitempty"`
+	StagedWatermarkedReleaseBundle string                 `protobuf:"bytes,6,opt,name=staged_watermarked_release_bundle,json=stagedWatermarkedReleaseBundle,proto3" json:"staged_watermarked_release_bundle,omitempty"`
+	ProtocolState                  string                 `protobuf:"bytes,7,opt,name=protocol_state,json=protocolState,proto3" json:"protocol_state,omitempty"`
+	SingleActorReleaseBlocked      bool                   `protobuf:"varint,8,opt,name=single_actor_release_blocked,json=singleActorReleaseBlocked,proto3" json:"single_actor_release_blocked,omitempty"`
+	UpdatedAtIso                   string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) Reset() {
+	*x = LegacyIncapacityDeadmanProtocolView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyIncapacityDeadmanProtocolView) ProtoMessage() {}
+
+func (x *LegacyIncapacityDeadmanProtocolView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyIncapacityDeadmanProtocolView.ProtoReflect.Descriptor instead.
+func (*LegacyIncapacityDeadmanProtocolView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{158}
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetWorkflowBranchAndWaitingClocks() string {
+	if x != nil {
+		return x.WorkflowBranchAndWaitingClocks
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetMultiPartyThresholdAndEvidence() string {
+	if x != nil {
+		return x.MultiPartyThresholdAndEvidence
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetStagedWatermarkedReleaseBundle() string {
+	if x != nil {
+		return x.StagedWatermarkedReleaseBundle
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetProtocolState() string {
+	if x != nil {
+		return x.ProtocolState
+	}
+	return ""
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetSingleActorReleaseBlocked() bool {
+	if x != nil {
+		return x.SingleActorReleaseBlocked
+	}
+	return false
+}
+
+func (x *LegacyIncapacityDeadmanProtocolView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyIncapacityDeadmanWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchRequest) Reset() {
+	*x = GetLegacyIncapacityDeadmanWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyIncapacityDeadmanWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyIncapacityDeadmanWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyIncapacityDeadmanWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyIncapacityDeadmanWorkbenchResponse struct {
+	state                  protoimpl.MessageState                 `protogen:"open.v1"`
+	Protocols              []*LegacyIncapacityDeadmanProtocolView `protobuf:"bytes,1,rep,name=protocols,proto3" json:"protocols,omitempty"`
+	ActiveGraceWindowCount int32                                  `protobuf:"varint,2,opt,name=active_grace_window_count,json=activeGraceWindowCount,proto3" json:"active_grace_window_count,omitempty"`
+	WorkbenchSummary       string                                 `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields          protoimpl.UnknownFields
+	sizeCache              protoimpl.SizeCache
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) Reset() {
+	*x = GetLegacyIncapacityDeadmanWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyIncapacityDeadmanWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyIncapacityDeadmanWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyIncapacityDeadmanWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) GetProtocols() []*LegacyIncapacityDeadmanProtocolView {
+	if x != nil {
+		return x.Protocols
+	}
+	return nil
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) GetActiveGraceWindowCount() int32 {
+	if x != nil {
+		return x.ActiveGraceWindowCount
+	}
+	return 0
+}
+
+func (x *GetLegacyIncapacityDeadmanWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyIncapacityDeadmanProtocolRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	UserId                         string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProtocolCode                   string                 `protobuf:"bytes,2,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	WorkflowBranchAndWaitingClocks string                 `protobuf:"bytes,3,opt,name=workflow_branch_and_waiting_clocks,json=workflowBranchAndWaitingClocks,proto3" json:"workflow_branch_and_waiting_clocks,omitempty"`
+	MultiPartyThresholdAndEvidence string                 `protobuf:"bytes,4,opt,name=multi_party_threshold_and_evidence,json=multiPartyThresholdAndEvidence,proto3" json:"multi_party_threshold_and_evidence,omitempty"`
+	StagedWatermarkedReleaseBundle string                 `protobuf:"bytes,5,opt,name=staged_watermarked_release_bundle,json=stagedWatermarkedReleaseBundle,proto3" json:"staged_watermarked_release_bundle,omitempty"`
+	ProtocolState                  string                 `protobuf:"bytes,6,opt,name=protocol_state,json=protocolState,proto3" json:"protocol_state,omitempty"`
+	SingleActorReleaseBlocked      bool                   `protobuf:"varint,7,opt,name=single_actor_release_blocked,json=singleActorReleaseBlocked,proto3" json:"single_actor_release_blocked,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) Reset() {
+	*x = SaveLegacyIncapacityDeadmanProtocolRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyIncapacityDeadmanProtocolRequest) ProtoMessage() {}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyIncapacityDeadmanProtocolRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyIncapacityDeadmanProtocolRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{161}
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetWorkflowBranchAndWaitingClocks() string {
+	if x != nil {
+		return x.WorkflowBranchAndWaitingClocks
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetMultiPartyThresholdAndEvidence() string {
+	if x != nil {
+		return x.MultiPartyThresholdAndEvidence
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetStagedWatermarkedReleaseBundle() string {
+	if x != nil {
+		return x.StagedWatermarkedReleaseBundle
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetProtocolState() string {
+	if x != nil {
+		return x.ProtocolState
+	}
+	return ""
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolRequest) GetSingleActorReleaseBlocked() bool {
+	if x != nil {
+		return x.SingleActorReleaseBlocked
+	}
+	return false
+}
+
+type SaveLegacyIncapacityDeadmanProtocolResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Protocol      *LegacyIncapacityDeadmanProtocolView `protobuf:"bytes,1,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolResponse) Reset() {
+	*x = SaveLegacyIncapacityDeadmanProtocolResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyIncapacityDeadmanProtocolResponse) ProtoMessage() {}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyIncapacityDeadmanProtocolResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyIncapacityDeadmanProtocolResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *SaveLegacyIncapacityDeadmanProtocolResponse) GetProtocol() *LegacyIncapacityDeadmanProtocolView {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+type SimulateOrCancelLegacyDeadmanReleaseRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProtocolCode        string                 `protobuf:"bytes,2,opt,name=protocol_code,json=protocolCode,proto3" json:"protocol_code,omitempty"`
+	TargetProtocolState string                 `protobuf:"bytes,3,opt,name=target_protocol_state,json=targetProtocolState,proto3" json:"target_protocol_state,omitempty"`
+	ProtocolNotes       string                 `protobuf:"bytes,4,opt,name=protocol_notes,json=protocolNotes,proto3" json:"protocol_notes,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) Reset() {
+	*x = SimulateOrCancelLegacyDeadmanReleaseRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateOrCancelLegacyDeadmanReleaseRequest) ProtoMessage() {}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateOrCancelLegacyDeadmanReleaseRequest.ProtoReflect.Descriptor instead.
+func (*SimulateOrCancelLegacyDeadmanReleaseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) GetProtocolCode() string {
+	if x != nil {
+		return x.ProtocolCode
+	}
+	return ""
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) GetTargetProtocolState() string {
+	if x != nil {
+		return x.TargetProtocolState
+	}
+	return ""
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseRequest) GetProtocolNotes() string {
+	if x != nil {
+		return x.ProtocolNotes
+	}
+	return ""
+}
+
+type SimulateOrCancelLegacyDeadmanReleaseResponse struct {
+	state          protoimpl.MessageState               `protogen:"open.v1"`
+	Protocol       *LegacyIncapacityDeadmanProtocolView `protobuf:"bytes,1,opt,name=protocol,proto3" json:"protocol,omitempty"`
+	ProtocolStatus string                               `protobuf:"bytes,2,opt,name=protocol_status,json=protocolStatus,proto3" json:"protocol_status,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseResponse) Reset() {
+	*x = SimulateOrCancelLegacyDeadmanReleaseResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SimulateOrCancelLegacyDeadmanReleaseResponse) ProtoMessage() {}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SimulateOrCancelLegacyDeadmanReleaseResponse.ProtoReflect.Descriptor instead.
+func (*SimulateOrCancelLegacyDeadmanReleaseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseResponse) GetProtocol() *LegacyIncapacityDeadmanProtocolView {
+	if x != nil {
+		return x.Protocol
+	}
+	return nil
+}
+
+func (x *SimulateOrCancelLegacyDeadmanReleaseResponse) GetProtocolStatus() string {
+	if x != nil {
+		return x.ProtocolStatus
+	}
+	return ""
+}
+
+type LegacyExecutorTrusteeWorkspaceView struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	Id                                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WorkspaceCode                         string                 `protobuf:"bytes,3,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	ExecutorAuthorityAndJurisdiction      string                 `protobuf:"bytes,4,opt,name=executor_authority_and_jurisdiction,json=executorAuthorityAndJurisdiction,proto3" json:"executor_authority_and_jurisdiction,omitempty"`
+	SettlementTaskAndClaimTimeline        string                 `protobuf:"bytes,5,opt,name=settlement_task_and_claim_timeline,json=settlementTaskAndClaimTimeline,proto3" json:"settlement_task_and_claim_timeline,omitempty"`
+	PartitionedBeneficiaryPortalSummary   string                 `protobuf:"bytes,6,opt,name=partitioned_beneficiary_portal_summary,json=partitionedBeneficiaryPortalSummary,proto3" json:"partitioned_beneficiary_portal_summary,omitempty"`
+	WorkspaceState                        string                 `protobuf:"bytes,7,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	UnrelatedBeneficiaryIsolationEnforced bool                   `protobuf:"varint,8,opt,name=unrelated_beneficiary_isolation_enforced,json=unrelatedBeneficiaryIsolationEnforced,proto3" json:"unrelated_beneficiary_isolation_enforced,omitempty"`
+	UpdatedAtIso                          string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) Reset() {
+	*x = LegacyExecutorTrusteeWorkspaceView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyExecutorTrusteeWorkspaceView) ProtoMessage() {}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyExecutorTrusteeWorkspaceView.ProtoReflect.Descriptor instead.
+func (*LegacyExecutorTrusteeWorkspaceView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{165}
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetExecutorAuthorityAndJurisdiction() string {
+	if x != nil {
+		return x.ExecutorAuthorityAndJurisdiction
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetSettlementTaskAndClaimTimeline() string {
+	if x != nil {
+		return x.SettlementTaskAndClaimTimeline
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetPartitionedBeneficiaryPortalSummary() string {
+	if x != nil {
+		return x.PartitionedBeneficiaryPortalSummary
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetUnrelatedBeneficiaryIsolationEnforced() bool {
+	if x != nil {
+		return x.UnrelatedBeneficiaryIsolationEnforced
+	}
+	return false
+}
+
+func (x *LegacyExecutorTrusteeWorkspaceView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyExecutorWorkspaceWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchRequest) Reset() {
+	*x = GetLegacyExecutorWorkspaceWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyExecutorWorkspaceWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyExecutorWorkspaceWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyExecutorWorkspaceWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyExecutorWorkspaceWorkbenchResponse struct {
+	state            protoimpl.MessageState                `protogen:"open.v1"`
+	Workspaces       []*LegacyExecutorTrusteeWorkspaceView `protobuf:"bytes,1,rep,name=workspaces,proto3" json:"workspaces,omitempty"`
+	OpenDisputeCount int32                                 `protobuf:"varint,2,opt,name=open_dispute_count,json=openDisputeCount,proto3" json:"open_dispute_count,omitempty"`
+	WorkbenchSummary string                                `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) Reset() {
+	*x = GetLegacyExecutorWorkspaceWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyExecutorWorkspaceWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyExecutorWorkspaceWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyExecutorWorkspaceWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) GetWorkspaces() []*LegacyExecutorTrusteeWorkspaceView {
+	if x != nil {
+		return x.Workspaces
+	}
+	return nil
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) GetOpenDisputeCount() int32 {
+	if x != nil {
+		return x.OpenDisputeCount
+	}
+	return 0
+}
+
+func (x *GetLegacyExecutorWorkspaceWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyExecutorTrusteeWorkspaceRequest struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WorkspaceCode                         string                 `protobuf:"bytes,2,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	ExecutorAuthorityAndJurisdiction      string                 `protobuf:"bytes,3,opt,name=executor_authority_and_jurisdiction,json=executorAuthorityAndJurisdiction,proto3" json:"executor_authority_and_jurisdiction,omitempty"`
+	SettlementTaskAndClaimTimeline        string                 `protobuf:"bytes,4,opt,name=settlement_task_and_claim_timeline,json=settlementTaskAndClaimTimeline,proto3" json:"settlement_task_and_claim_timeline,omitempty"`
+	PartitionedBeneficiaryPortalSummary   string                 `protobuf:"bytes,5,opt,name=partitioned_beneficiary_portal_summary,json=partitionedBeneficiaryPortalSummary,proto3" json:"partitioned_beneficiary_portal_summary,omitempty"`
+	WorkspaceState                        string                 `protobuf:"bytes,6,opt,name=workspace_state,json=workspaceState,proto3" json:"workspace_state,omitempty"`
+	UnrelatedBeneficiaryIsolationEnforced bool                   `protobuf:"varint,7,opt,name=unrelated_beneficiary_isolation_enforced,json=unrelatedBeneficiaryIsolationEnforced,proto3" json:"unrelated_beneficiary_isolation_enforced,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) Reset() {
+	*x = SaveLegacyExecutorTrusteeWorkspaceRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyExecutorTrusteeWorkspaceRequest) ProtoMessage() {}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyExecutorTrusteeWorkspaceRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyExecutorTrusteeWorkspaceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{168}
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetExecutorAuthorityAndJurisdiction() string {
+	if x != nil {
+		return x.ExecutorAuthorityAndJurisdiction
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetSettlementTaskAndClaimTimeline() string {
+	if x != nil {
+		return x.SettlementTaskAndClaimTimeline
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetPartitionedBeneficiaryPortalSummary() string {
+	if x != nil {
+		return x.PartitionedBeneficiaryPortalSummary
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetWorkspaceState() string {
+	if x != nil {
+		return x.WorkspaceState
+	}
+	return ""
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceRequest) GetUnrelatedBeneficiaryIsolationEnforced() bool {
+	if x != nil {
+		return x.UnrelatedBeneficiaryIsolationEnforced
+	}
+	return false
+}
+
+type SaveLegacyExecutorTrusteeWorkspaceResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Workspace     *LegacyExecutorTrusteeWorkspaceView `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceResponse) Reset() {
+	*x = SaveLegacyExecutorTrusteeWorkspaceResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyExecutorTrusteeWorkspaceResponse) ProtoMessage() {}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyExecutorTrusteeWorkspaceResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyExecutorTrusteeWorkspaceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *SaveLegacyExecutorTrusteeWorkspaceResponse) GetWorkspace() *LegacyExecutorTrusteeWorkspaceView {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+type AdvanceLegacySettlementTaskOrResolveDisputeRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WorkspaceCode        string                 `protobuf:"bytes,2,opt,name=workspace_code,json=workspaceCode,proto3" json:"workspace_code,omitempty"`
+	TargetWorkspaceState string                 `protobuf:"bytes,3,opt,name=target_workspace_state,json=targetWorkspaceState,proto3" json:"target_workspace_state,omitempty"`
+	ResolutionNotes      string                 `protobuf:"bytes,4,opt,name=resolution_notes,json=resolutionNotes,proto3" json:"resolution_notes,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) Reset() {
+	*x = AdvanceLegacySettlementTaskOrResolveDisputeRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceLegacySettlementTaskOrResolveDisputeRequest) ProtoMessage() {}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceLegacySettlementTaskOrResolveDisputeRequest.ProtoReflect.Descriptor instead.
+func (*AdvanceLegacySettlementTaskOrResolveDisputeRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) GetWorkspaceCode() string {
+	if x != nil {
+		return x.WorkspaceCode
+	}
+	return ""
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) GetTargetWorkspaceState() string {
+	if x != nil {
+		return x.TargetWorkspaceState
+	}
+	return ""
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeRequest) GetResolutionNotes() string {
+	if x != nil {
+		return x.ResolutionNotes
+	}
+	return ""
+}
+
+type AdvanceLegacySettlementTaskOrResolveDisputeResponse struct {
+	state           protoimpl.MessageState              `protogen:"open.v1"`
+	Workspace       *LegacyExecutorTrusteeWorkspaceView `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
+	WorkspaceStatus string                              `protobuf:"bytes,2,opt,name=workspace_status,json=workspaceStatus,proto3" json:"workspace_status,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeResponse) Reset() {
+	*x = AdvanceLegacySettlementTaskOrResolveDisputeResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdvanceLegacySettlementTaskOrResolveDisputeResponse) ProtoMessage() {}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdvanceLegacySettlementTaskOrResolveDisputeResponse.ProtoReflect.Descriptor instead.
+func (*AdvanceLegacySettlementTaskOrResolveDisputeResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeResponse) GetWorkspace() *LegacyExecutorTrusteeWorkspaceView {
+	if x != nil {
+		return x.Workspace
+	}
+	return nil
+}
+
+func (x *AdvanceLegacySettlementTaskOrResolveDisputeResponse) GetWorkspaceStatus() string {
+	if x != nil {
+		return x.WorkspaceStatus
+	}
+	return ""
+}
+
+type LegacySettlementAccountingView struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	Id                                    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountingCode                        string                 `protobuf:"bytes,3,opt,name=accounting_code,json=accountingCode,proto3" json:"accounting_code,omitempty"`
+	OpeningInventoryAndDodValuations      string                 `protobuf:"bytes,4,opt,name=opening_inventory_and_dod_valuations,json=openingInventoryAndDodValuations,proto3" json:"opening_inventory_and_dod_valuations,omitempty"`
+	ReversibleLedgerAndPeriodLock         string                 `protobuf:"bytes,5,opt,name=reversible_ledger_and_period_lock,json=reversibleLedgerAndPeriodLock,proto3" json:"reversible_ledger_and_period_lock,omitempty"`
+	ProposedDistributionAndReceiptPack    string                 `protobuf:"bytes,6,opt,name=proposed_distribution_and_receipt_pack,json=proposedDistributionAndReceiptPack,proto3" json:"proposed_distribution_and_receipt_pack,omitempty"`
+	AccountingState                       string                 `protobuf:"bytes,7,opt,name=accounting_state,json=accountingState,proto3" json:"accounting_state,omitempty"`
+	NonCustodialExecutionBoundaryEnforced bool                   `protobuf:"varint,8,opt,name=non_custodial_execution_boundary_enforced,json=nonCustodialExecutionBoundaryEnforced,proto3" json:"non_custodial_execution_boundary_enforced,omitempty"`
+	UpdatedAtIso                          string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *LegacySettlementAccountingView) Reset() {
+	*x = LegacySettlementAccountingView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacySettlementAccountingView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacySettlementAccountingView) ProtoMessage() {}
+
+func (x *LegacySettlementAccountingView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacySettlementAccountingView.ProtoReflect.Descriptor instead.
+func (*LegacySettlementAccountingView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{172}
+}
+
+func (x *LegacySettlementAccountingView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetAccountingCode() string {
+	if x != nil {
+		return x.AccountingCode
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetOpeningInventoryAndDodValuations() string {
+	if x != nil {
+		return x.OpeningInventoryAndDodValuations
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetReversibleLedgerAndPeriodLock() string {
+	if x != nil {
+		return x.ReversibleLedgerAndPeriodLock
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetProposedDistributionAndReceiptPack() string {
+	if x != nil {
+		return x.ProposedDistributionAndReceiptPack
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetAccountingState() string {
+	if x != nil {
+		return x.AccountingState
+	}
+	return ""
+}
+
+func (x *LegacySettlementAccountingView) GetNonCustodialExecutionBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonCustodialExecutionBoundaryEnforced
+	}
+	return false
+}
+
+func (x *LegacySettlementAccountingView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacySettlementAccountingWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchRequest) Reset() {
+	*x = GetLegacySettlementAccountingWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacySettlementAccountingWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacySettlementAccountingWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacySettlementAccountingWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacySettlementAccountingWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacySettlementAccountingWorkbenchResponse struct {
+	state                protoimpl.MessageState            `protogen:"open.v1"`
+	Accountings          []*LegacySettlementAccountingView `protobuf:"bytes,1,rep,name=accountings,proto3" json:"accountings,omitempty"`
+	OpenReconcilingCount int32                             `protobuf:"varint,2,opt,name=open_reconciling_count,json=openReconcilingCount,proto3" json:"open_reconciling_count,omitempty"`
+	WorkbenchSummary     string                            `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) Reset() {
+	*x = GetLegacySettlementAccountingWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[174]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacySettlementAccountingWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[174]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacySettlementAccountingWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacySettlementAccountingWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{174}
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) GetAccountings() []*LegacySettlementAccountingView {
+	if x != nil {
+		return x.Accountings
+	}
+	return nil
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) GetOpenReconcilingCount() int32 {
+	if x != nil {
+		return x.OpenReconcilingCount
+	}
+	return 0
+}
+
+func (x *GetLegacySettlementAccountingWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacySettlementAccountingRequest struct {
+	state                                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountingCode                        string                 `protobuf:"bytes,2,opt,name=accounting_code,json=accountingCode,proto3" json:"accounting_code,omitempty"`
+	OpeningInventoryAndDodValuations      string                 `protobuf:"bytes,3,opt,name=opening_inventory_and_dod_valuations,json=openingInventoryAndDodValuations,proto3" json:"opening_inventory_and_dod_valuations,omitempty"`
+	ReversibleLedgerAndPeriodLock         string                 `protobuf:"bytes,4,opt,name=reversible_ledger_and_period_lock,json=reversibleLedgerAndPeriodLock,proto3" json:"reversible_ledger_and_period_lock,omitempty"`
+	ProposedDistributionAndReceiptPack    string                 `protobuf:"bytes,5,opt,name=proposed_distribution_and_receipt_pack,json=proposedDistributionAndReceiptPack,proto3" json:"proposed_distribution_and_receipt_pack,omitempty"`
+	AccountingState                       string                 `protobuf:"bytes,6,opt,name=accounting_state,json=accountingState,proto3" json:"accounting_state,omitempty"`
+	NonCustodialExecutionBoundaryEnforced bool                   `protobuf:"varint,7,opt,name=non_custodial_execution_boundary_enforced,json=nonCustodialExecutionBoundaryEnforced,proto3" json:"non_custodial_execution_boundary_enforced,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *SaveLegacySettlementAccountingRequest) Reset() {
+	*x = SaveLegacySettlementAccountingRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[175]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacySettlementAccountingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacySettlementAccountingRequest) ProtoMessage() {}
+
+func (x *SaveLegacySettlementAccountingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[175]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacySettlementAccountingRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacySettlementAccountingRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{175}
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetAccountingCode() string {
+	if x != nil {
+		return x.AccountingCode
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetOpeningInventoryAndDodValuations() string {
+	if x != nil {
+		return x.OpeningInventoryAndDodValuations
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetReversibleLedgerAndPeriodLock() string {
+	if x != nil {
+		return x.ReversibleLedgerAndPeriodLock
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetProposedDistributionAndReceiptPack() string {
+	if x != nil {
+		return x.ProposedDistributionAndReceiptPack
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetAccountingState() string {
+	if x != nil {
+		return x.AccountingState
+	}
+	return ""
+}
+
+func (x *SaveLegacySettlementAccountingRequest) GetNonCustodialExecutionBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonCustodialExecutionBoundaryEnforced
+	}
+	return false
+}
+
+type SaveLegacySettlementAccountingResponse struct {
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Accounting    *LegacySettlementAccountingView `protobuf:"bytes,1,opt,name=accounting,proto3" json:"accounting,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacySettlementAccountingResponse) Reset() {
+	*x = SaveLegacySettlementAccountingResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[176]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacySettlementAccountingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacySettlementAccountingResponse) ProtoMessage() {}
+
+func (x *SaveLegacySettlementAccountingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[176]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacySettlementAccountingResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacySettlementAccountingResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{176}
+}
+
+func (x *SaveLegacySettlementAccountingResponse) GetAccounting() *LegacySettlementAccountingView {
+	if x != nil {
+		return x.Accounting
+	}
+	return nil
+}
+
+type LockOrReverseLegacyAccountingPeriodRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AccountingCode        string                 `protobuf:"bytes,2,opt,name=accounting_code,json=accountingCode,proto3" json:"accounting_code,omitempty"`
+	TargetAccountingState string                 `protobuf:"bytes,3,opt,name=target_accounting_state,json=targetAccountingState,proto3" json:"target_accounting_state,omitempty"`
+	AccountingNotes       string                 `protobuf:"bytes,4,opt,name=accounting_notes,json=accountingNotes,proto3" json:"accounting_notes,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) Reset() {
+	*x = LockOrReverseLegacyAccountingPeriodRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[177]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReverseLegacyAccountingPeriodRequest) ProtoMessage() {}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[177]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReverseLegacyAccountingPeriodRequest.ProtoReflect.Descriptor instead.
+func (*LockOrReverseLegacyAccountingPeriodRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{177}
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) GetAccountingCode() string {
+	if x != nil {
+		return x.AccountingCode
+	}
+	return ""
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) GetTargetAccountingState() string {
+	if x != nil {
+		return x.TargetAccountingState
+	}
+	return ""
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodRequest) GetAccountingNotes() string {
+	if x != nil {
+		return x.AccountingNotes
+	}
+	return ""
+}
+
+type LockOrReverseLegacyAccountingPeriodResponse struct {
+	state            protoimpl.MessageState          `protogen:"open.v1"`
+	Accounting       *LegacySettlementAccountingView `protobuf:"bytes,1,opt,name=accounting,proto3" json:"accounting,omitempty"`
+	AccountingStatus string                          `protobuf:"bytes,2,opt,name=accounting_status,json=accountingStatus,proto3" json:"accounting_status,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodResponse) Reset() {
+	*x = LockOrReverseLegacyAccountingPeriodResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[178]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReverseLegacyAccountingPeriodResponse) ProtoMessage() {}
+
+func (x *LockOrReverseLegacyAccountingPeriodResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[178]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReverseLegacyAccountingPeriodResponse.ProtoReflect.Descriptor instead.
+func (*LockOrReverseLegacyAccountingPeriodResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{178}
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodResponse) GetAccounting() *LegacySettlementAccountingView {
+	if x != nil {
+		return x.Accounting
+	}
+	return nil
+}
+
+func (x *LockOrReverseLegacyAccountingPeriodResponse) GetAccountingStatus() string {
+	if x != nil {
+		return x.AccountingStatus
+	}
+	return ""
+}
+
+type LegacyDigitalThresholdRecoveryView struct {
+	state                                  protoimpl.MessageState `protogen:"open.v1"`
+	Id                                     string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                                 string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RecoveryCode                           string                 `protobuf:"bytes,3,opt,name=recovery_code,json=recoveryCode,proto3" json:"recovery_code,omitempty"`
+	DigitalAssetInventoryAndWishes         string                 `protobuf:"bytes,4,opt,name=digital_asset_inventory_and_wishes,json=digitalAssetInventoryAndWishes,proto3" json:"digital_asset_inventory_and_wishes,omitempty"`
+	ShamirThresholdAndCustodianDomains     string                 `protobuf:"bytes,5,opt,name=shamir_threshold_and_custodian_domains,json=shamirThresholdAndCustodianDomains,proto3" json:"shamir_threshold_and_custodian_domains,omitempty"`
+	CeremonyDryRunAndRotationLog           string                 `protobuf:"bytes,6,opt,name=ceremony_dry_run_and_rotation_log,json=ceremonyDryRunAndRotationLog,proto3" json:"ceremony_dry_run_and_rotation_log,omitempty"`
+	RecoveryState                          string                 `protobuf:"bytes,7,opt,name=recovery_state,json=recoveryState,proto3" json:"recovery_state,omitempty"`
+	StaffSubthresholdReconstructionBlocked bool                   `protobuf:"varint,8,opt,name=staff_subthreshold_reconstruction_blocked,json=staffSubthresholdReconstructionBlocked,proto3" json:"staff_subthreshold_reconstruction_blocked,omitempty"`
+	UpdatedAtIso                           string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) Reset() {
+	*x = LegacyDigitalThresholdRecoveryView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[179]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyDigitalThresholdRecoveryView) ProtoMessage() {}
+
+func (x *LegacyDigitalThresholdRecoveryView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[179]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyDigitalThresholdRecoveryView.ProtoReflect.Descriptor instead.
+func (*LegacyDigitalThresholdRecoveryView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{179}
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetRecoveryCode() string {
+	if x != nil {
+		return x.RecoveryCode
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetDigitalAssetInventoryAndWishes() string {
+	if x != nil {
+		return x.DigitalAssetInventoryAndWishes
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetShamirThresholdAndCustodianDomains() string {
+	if x != nil {
+		return x.ShamirThresholdAndCustodianDomains
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetCeremonyDryRunAndRotationLog() string {
+	if x != nil {
+		return x.CeremonyDryRunAndRotationLog
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetRecoveryState() string {
+	if x != nil {
+		return x.RecoveryState
+	}
+	return ""
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetStaffSubthresholdReconstructionBlocked() bool {
+	if x != nil {
+		return x.StaffSubthresholdReconstructionBlocked
+	}
+	return false
+}
+
+func (x *LegacyDigitalThresholdRecoveryView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyDigitalRecoveryWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchRequest) Reset() {
+	*x = GetLegacyDigitalRecoveryWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[180]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyDigitalRecoveryWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[180]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyDigitalRecoveryWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyDigitalRecoveryWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{180}
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyDigitalRecoveryWorkbenchResponse struct {
+	state                 protoimpl.MessageState                `protogen:"open.v1"`
+	Recoveries            []*LegacyDigitalThresholdRecoveryView `protobuf:"bytes,1,rep,name=recoveries,proto3" json:"recoveries,omitempty"`
+	QuarantinedShareCount int32                                 `protobuf:"varint,2,opt,name=quarantined_share_count,json=quarantinedShareCount,proto3" json:"quarantined_share_count,omitempty"`
+	WorkbenchSummary      string                                `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) Reset() {
+	*x = GetLegacyDigitalRecoveryWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[181]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyDigitalRecoveryWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[181]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyDigitalRecoveryWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyDigitalRecoveryWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{181}
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) GetRecoveries() []*LegacyDigitalThresholdRecoveryView {
+	if x != nil {
+		return x.Recoveries
+	}
+	return nil
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) GetQuarantinedShareCount() int32 {
+	if x != nil {
+		return x.QuarantinedShareCount
+	}
+	return 0
+}
+
+func (x *GetLegacyDigitalRecoveryWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyDigitalThresholdRecoveryRequest struct {
+	state                                  protoimpl.MessageState `protogen:"open.v1"`
+	UserId                                 string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RecoveryCode                           string                 `protobuf:"bytes,2,opt,name=recovery_code,json=recoveryCode,proto3" json:"recovery_code,omitempty"`
+	DigitalAssetInventoryAndWishes         string                 `protobuf:"bytes,3,opt,name=digital_asset_inventory_and_wishes,json=digitalAssetInventoryAndWishes,proto3" json:"digital_asset_inventory_and_wishes,omitempty"`
+	ShamirThresholdAndCustodianDomains     string                 `protobuf:"bytes,4,opt,name=shamir_threshold_and_custodian_domains,json=shamirThresholdAndCustodianDomains,proto3" json:"shamir_threshold_and_custodian_domains,omitempty"`
+	CeremonyDryRunAndRotationLog           string                 `protobuf:"bytes,5,opt,name=ceremony_dry_run_and_rotation_log,json=ceremonyDryRunAndRotationLog,proto3" json:"ceremony_dry_run_and_rotation_log,omitempty"`
+	RecoveryState                          string                 `protobuf:"bytes,6,opt,name=recovery_state,json=recoveryState,proto3" json:"recovery_state,omitempty"`
+	StaffSubthresholdReconstructionBlocked bool                   `protobuf:"varint,7,opt,name=staff_subthreshold_reconstruction_blocked,json=staffSubthresholdReconstructionBlocked,proto3" json:"staff_subthreshold_reconstruction_blocked,omitempty"`
+	unknownFields                          protoimpl.UnknownFields
+	sizeCache                              protoimpl.SizeCache
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) Reset() {
+	*x = SaveLegacyDigitalThresholdRecoveryRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[182]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyDigitalThresholdRecoveryRequest) ProtoMessage() {}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[182]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyDigitalThresholdRecoveryRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyDigitalThresholdRecoveryRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{182}
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetRecoveryCode() string {
+	if x != nil {
+		return x.RecoveryCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetDigitalAssetInventoryAndWishes() string {
+	if x != nil {
+		return x.DigitalAssetInventoryAndWishes
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetShamirThresholdAndCustodianDomains() string {
+	if x != nil {
+		return x.ShamirThresholdAndCustodianDomains
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetCeremonyDryRunAndRotationLog() string {
+	if x != nil {
+		return x.CeremonyDryRunAndRotationLog
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetRecoveryState() string {
+	if x != nil {
+		return x.RecoveryState
+	}
+	return ""
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryRequest) GetStaffSubthresholdReconstructionBlocked() bool {
+	if x != nil {
+		return x.StaffSubthresholdReconstructionBlocked
+	}
+	return false
+}
+
+type SaveLegacyDigitalThresholdRecoveryResponse struct {
+	state         protoimpl.MessageState              `protogen:"open.v1"`
+	Recovery      *LegacyDigitalThresholdRecoveryView `protobuf:"bytes,1,opt,name=recovery,proto3" json:"recovery,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryResponse) Reset() {
+	*x = SaveLegacyDigitalThresholdRecoveryResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[183]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyDigitalThresholdRecoveryResponse) ProtoMessage() {}
+
+func (x *SaveLegacyDigitalThresholdRecoveryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[183]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyDigitalThresholdRecoveryResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyDigitalThresholdRecoveryResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{183}
+}
+
+func (x *SaveLegacyDigitalThresholdRecoveryResponse) GetRecovery() *LegacyDigitalThresholdRecoveryView {
+	if x != nil {
+		return x.Recovery
+	}
+	return nil
+}
+
+type RunLegacyThresholdCeremonyDryRunOrRotateShareRequest struct {
+	state               protoimpl.MessageState `protogen:"open.v1"`
+	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RecoveryCode        string                 `protobuf:"bytes,2,opt,name=recovery_code,json=recoveryCode,proto3" json:"recovery_code,omitempty"`
+	TargetRecoveryState string                 `protobuf:"bytes,3,opt,name=target_recovery_state,json=targetRecoveryState,proto3" json:"target_recovery_state,omitempty"`
+	CeremonyNotes       string                 `protobuf:"bytes,4,opt,name=ceremony_notes,json=ceremonyNotes,proto3" json:"ceremony_notes,omitempty"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) Reset() {
+	*x = RunLegacyThresholdCeremonyDryRunOrRotateShareRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[184]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) ProtoMessage() {}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[184]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunLegacyThresholdCeremonyDryRunOrRotateShareRequest.ProtoReflect.Descriptor instead.
+func (*RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{184}
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) GetRecoveryCode() string {
+	if x != nil {
+		return x.RecoveryCode
+	}
+	return ""
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) GetTargetRecoveryState() string {
+	if x != nil {
+		return x.TargetRecoveryState
+	}
+	return ""
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) GetCeremonyNotes() string {
+	if x != nil {
+		return x.CeremonyNotes
+	}
+	return ""
+}
+
+type RunLegacyThresholdCeremonyDryRunOrRotateShareResponse struct {
+	state          protoimpl.MessageState              `protogen:"open.v1"`
+	Recovery       *LegacyDigitalThresholdRecoveryView `protobuf:"bytes,1,opt,name=recovery,proto3" json:"recovery,omitempty"`
+	CeremonyStatus string                              `protobuf:"bytes,2,opt,name=ceremony_status,json=ceremonyStatus,proto3" json:"ceremony_status,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) Reset() {
+	*x = RunLegacyThresholdCeremonyDryRunOrRotateShareResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[185]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) ProtoMessage() {}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[185]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RunLegacyThresholdCeremonyDryRunOrRotateShareResponse.ProtoReflect.Descriptor instead.
+func (*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{185}
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) GetRecovery() *LegacyDigitalThresholdRecoveryView {
+	if x != nil {
+		return x.Recovery
+	}
+	return nil
+}
+
+func (x *RunLegacyThresholdCeremonyDryRunOrRotateShareResponse) GetCeremonyStatus() string {
+	if x != nil {
+		return x.CeremonyStatus
+	}
+	return ""
+}
+
+type LegacyHeritagePreservationArchiveView struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ArchiveCode                        string                 `protobuf:"bytes,3,opt,name=archive_code,json=archiveCode,proto3" json:"archive_code,omitempty"`
+	MediaManifestAndFixitySignature    string                 `protobuf:"bytes,4,opt,name=media_manifest_and_fixity_signature,json=mediaManifestAndFixitySignature,proto3" json:"media_manifest_and_fixity_signature,omitempty"`
+	DeliveryTriggerAndRecipientConsent string                 `protobuf:"bytes,5,opt,name=delivery_trigger_and_recipient_consent,json=deliveryTriggerAndRecipientConsent,proto3" json:"delivery_trigger_and_recipient_consent,omitempty"`
+	FormatMigrationAndRestorationTest  string                 `protobuf:"bytes,6,opt,name=format_migration_and_restoration_test,json=formatMigrationAndRestorationTest,proto3" json:"format_migration_and_restoration_test,omitempty"`
+	ArchiveState                       string                 `protobuf:"bytes,7,opt,name=archive_state,json=archiveState,proto3" json:"archive_state,omitempty"`
+	OriginalArtifactMutationBlocked    bool                   `protobuf:"varint,8,opt,name=original_artifact_mutation_blocked,json=originalArtifactMutationBlocked,proto3" json:"original_artifact_mutation_blocked,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *LegacyHeritagePreservationArchiveView) Reset() {
+	*x = LegacyHeritagePreservationArchiveView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[186]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyHeritagePreservationArchiveView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyHeritagePreservationArchiveView) ProtoMessage() {}
+
+func (x *LegacyHeritagePreservationArchiveView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[186]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyHeritagePreservationArchiveView.ProtoReflect.Descriptor instead.
+func (*LegacyHeritagePreservationArchiveView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{186}
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetArchiveCode() string {
+	if x != nil {
+		return x.ArchiveCode
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetMediaManifestAndFixitySignature() string {
+	if x != nil {
+		return x.MediaManifestAndFixitySignature
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetDeliveryTriggerAndRecipientConsent() string {
+	if x != nil {
+		return x.DeliveryTriggerAndRecipientConsent
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetFormatMigrationAndRestorationTest() string {
+	if x != nil {
+		return x.FormatMigrationAndRestorationTest
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetArchiveState() string {
+	if x != nil {
+		return x.ArchiveState
+	}
+	return ""
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetOriginalArtifactMutationBlocked() bool {
+	if x != nil {
+		return x.OriginalArtifactMutationBlocked
+	}
+	return false
+}
+
+func (x *LegacyHeritagePreservationArchiveView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyHeritageArchiveWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchRequest) Reset() {
+	*x = GetLegacyHeritageArchiveWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[187]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyHeritageArchiveWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyHeritageArchiveWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[187]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyHeritageArchiveWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyHeritageArchiveWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{187}
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyHeritageArchiveWorkbenchResponse struct {
+	state              protoimpl.MessageState                   `protogen:"open.v1"`
+	Archives           []*LegacyHeritagePreservationArchiveView `protobuf:"bytes,1,rep,name=archives,proto3" json:"archives,omitempty"`
+	ContactRepairCount int32                                    `protobuf:"varint,2,opt,name=contact_repair_count,json=contactRepairCount,proto3" json:"contact_repair_count,omitempty"`
+	WorkbenchSummary   string                                   `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) Reset() {
+	*x = GetLegacyHeritageArchiveWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[188]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyHeritageArchiveWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[188]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyHeritageArchiveWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyHeritageArchiveWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{188}
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) GetArchives() []*LegacyHeritagePreservationArchiveView {
+	if x != nil {
+		return x.Archives
+	}
+	return nil
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) GetContactRepairCount() int32 {
+	if x != nil {
+		return x.ContactRepairCount
+	}
+	return 0
+}
+
+func (x *GetLegacyHeritageArchiveWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyHeritagePreservationArchiveRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	UserId                             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ArchiveCode                        string                 `protobuf:"bytes,2,opt,name=archive_code,json=archiveCode,proto3" json:"archive_code,omitempty"`
+	MediaManifestAndFixitySignature    string                 `protobuf:"bytes,3,opt,name=media_manifest_and_fixity_signature,json=mediaManifestAndFixitySignature,proto3" json:"media_manifest_and_fixity_signature,omitempty"`
+	DeliveryTriggerAndRecipientConsent string                 `protobuf:"bytes,4,opt,name=delivery_trigger_and_recipient_consent,json=deliveryTriggerAndRecipientConsent,proto3" json:"delivery_trigger_and_recipient_consent,omitempty"`
+	FormatMigrationAndRestorationTest  string                 `protobuf:"bytes,5,opt,name=format_migration_and_restoration_test,json=formatMigrationAndRestorationTest,proto3" json:"format_migration_and_restoration_test,omitempty"`
+	ArchiveState                       string                 `protobuf:"bytes,6,opt,name=archive_state,json=archiveState,proto3" json:"archive_state,omitempty"`
+	OriginalArtifactMutationBlocked    bool                   `protobuf:"varint,7,opt,name=original_artifact_mutation_blocked,json=originalArtifactMutationBlocked,proto3" json:"original_artifact_mutation_blocked,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) Reset() {
+	*x = SaveLegacyHeritagePreservationArchiveRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[189]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyHeritagePreservationArchiveRequest) ProtoMessage() {}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[189]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyHeritagePreservationArchiveRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyHeritagePreservationArchiveRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{189}
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetArchiveCode() string {
+	if x != nil {
+		return x.ArchiveCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetMediaManifestAndFixitySignature() string {
+	if x != nil {
+		return x.MediaManifestAndFixitySignature
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetDeliveryTriggerAndRecipientConsent() string {
+	if x != nil {
+		return x.DeliveryTriggerAndRecipientConsent
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetFormatMigrationAndRestorationTest() string {
+	if x != nil {
+		return x.FormatMigrationAndRestorationTest
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetArchiveState() string {
+	if x != nil {
+		return x.ArchiveState
+	}
+	return ""
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveRequest) GetOriginalArtifactMutationBlocked() bool {
+	if x != nil {
+		return x.OriginalArtifactMutationBlocked
+	}
+	return false
+}
+
+type SaveLegacyHeritagePreservationArchiveResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Archive       *LegacyHeritagePreservationArchiveView `protobuf:"bytes,1,opt,name=archive,proto3" json:"archive,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveResponse) Reset() {
+	*x = SaveLegacyHeritagePreservationArchiveResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[190]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyHeritagePreservationArchiveResponse) ProtoMessage() {}
+
+func (x *SaveLegacyHeritagePreservationArchiveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[190]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyHeritagePreservationArchiveResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyHeritagePreservationArchiveResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{190}
+}
+
+func (x *SaveLegacyHeritagePreservationArchiveResponse) GetArchive() *LegacyHeritagePreservationArchiveView {
+	if x != nil {
+		return x.Archive
+	}
+	return nil
+}
+
+type VerifyLegacyArchiveFixityOrPreviewTriggerRequest struct {
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	UserId             string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ArchiveCode        string                 `protobuf:"bytes,2,opt,name=archive_code,json=archiveCode,proto3" json:"archive_code,omitempty"`
+	TargetArchiveState string                 `protobuf:"bytes,3,opt,name=target_archive_state,json=targetArchiveState,proto3" json:"target_archive_state,omitempty"`
+	ArchiveNotes       string                 `protobuf:"bytes,4,opt,name=archive_notes,json=archiveNotes,proto3" json:"archive_notes,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) Reset() {
+	*x = VerifyLegacyArchiveFixityOrPreviewTriggerRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[191]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyLegacyArchiveFixityOrPreviewTriggerRequest) ProtoMessage() {}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[191]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyLegacyArchiveFixityOrPreviewTriggerRequest.ProtoReflect.Descriptor instead.
+func (*VerifyLegacyArchiveFixityOrPreviewTriggerRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{191}
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) GetArchiveCode() string {
+	if x != nil {
+		return x.ArchiveCode
+	}
+	return ""
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) GetTargetArchiveState() string {
+	if x != nil {
+		return x.TargetArchiveState
+	}
+	return ""
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerRequest) GetArchiveNotes() string {
+	if x != nil {
+		return x.ArchiveNotes
+	}
+	return ""
+}
+
+type VerifyLegacyArchiveFixityOrPreviewTriggerResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Archive       *LegacyHeritagePreservationArchiveView `protobuf:"bytes,1,opt,name=archive,proto3" json:"archive,omitempty"`
+	ArchiveStatus string                                 `protobuf:"bytes,2,opt,name=archive_status,json=archiveStatus,proto3" json:"archive_status,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerResponse) Reset() {
+	*x = VerifyLegacyArchiveFixityOrPreviewTriggerResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[192]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse) ProtoMessage() {}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[192]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyLegacyArchiveFixityOrPreviewTriggerResponse.ProtoReflect.Descriptor instead.
+func (*VerifyLegacyArchiveFixityOrPreviewTriggerResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{192}
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerResponse) GetArchive() *LegacyHeritagePreservationArchiveView {
+	if x != nil {
+		return x.Archive
+	}
+	return nil
+}
+
+func (x *VerifyLegacyArchiveFixityOrPreviewTriggerResponse) GetArchiveStatus() string {
+	if x != nil {
+		return x.ArchiveStatus
+	}
+	return ""
+}
+
+type LegacyLiquidityInsuranceReadinessView struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	Id                                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                              string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ReadinessCode                       string                 `protobuf:"bytes,3,opt,name=readiness_code,json=readinessCode,proto3" json:"readiness_code,omitempty"`
+	ObligationsTaxesAndFundingMap       string                 `protobuf:"bytes,4,opt,name=obligations_taxes_and_funding_map,json=obligationsTaxesAndFundingMap,proto3" json:"obligations_taxes_and_funding_map,omitempty"`
+	PolicyClaimPackAndSourceRefs        string                 `protobuf:"bytes,5,opt,name=policy_claim_pack_and_source_refs,json=policyClaimPackAndSourceRefs,proto3" json:"policy_claim_pack_and_source_refs,omitempty"`
+	ShortfallStressAndCounselTrigger    string                 `protobuf:"bytes,6,opt,name=shortfall_stress_and_counsel_trigger,json=shortfallStressAndCounselTrigger,proto3" json:"shortfall_stress_and_counsel_trigger,omitempty"`
+	ReadinessState                      string                 `protobuf:"bytes,7,opt,name=readiness_state,json=readinessState,proto3" json:"readiness_state,omitempty"`
+	NoGuaranteedTaxProbateClaimEnforced bool                   `protobuf:"varint,8,opt,name=no_guaranteed_tax_probate_claim_enforced,json=noGuaranteedTaxProbateClaimEnforced,proto3" json:"no_guaranteed_tax_probate_claim_enforced,omitempty"`
+	UpdatedAtIso                        string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) Reset() {
+	*x = LegacyLiquidityInsuranceReadinessView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[193]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyLiquidityInsuranceReadinessView) ProtoMessage() {}
+
+func (x *LegacyLiquidityInsuranceReadinessView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[193]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyLiquidityInsuranceReadinessView.ProtoReflect.Descriptor instead.
+func (*LegacyLiquidityInsuranceReadinessView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{193}
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetReadinessCode() string {
+	if x != nil {
+		return x.ReadinessCode
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetObligationsTaxesAndFundingMap() string {
+	if x != nil {
+		return x.ObligationsTaxesAndFundingMap
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetPolicyClaimPackAndSourceRefs() string {
+	if x != nil {
+		return x.PolicyClaimPackAndSourceRefs
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetShortfallStressAndCounselTrigger() string {
+	if x != nil {
+		return x.ShortfallStressAndCounselTrigger
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetReadinessState() string {
+	if x != nil {
+		return x.ReadinessState
+	}
+	return ""
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetNoGuaranteedTaxProbateClaimEnforced() bool {
+	if x != nil {
+		return x.NoGuaranteedTaxProbateClaimEnforced
+	}
+	return false
+}
+
+func (x *LegacyLiquidityInsuranceReadinessView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyLiquidityReadinessWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchRequest) Reset() {
+	*x = GetLegacyLiquidityReadinessWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[194]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLiquidityReadinessWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[194]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLiquidityReadinessWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyLiquidityReadinessWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{194}
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyLiquidityReadinessWorkbenchResponse struct {
+	state              protoimpl.MessageState                   `protogen:"open.v1"`
+	ReadinessPlans     []*LegacyLiquidityInsuranceReadinessView `protobuf:"bytes,1,rep,name=readiness_plans,json=readinessPlans,proto3" json:"readiness_plans,omitempty"`
+	ShortfallFlagCount int32                                    `protobuf:"varint,2,opt,name=shortfall_flag_count,json=shortfallFlagCount,proto3" json:"shortfall_flag_count,omitempty"`
+	WorkbenchSummary   string                                   `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) Reset() {
+	*x = GetLegacyLiquidityReadinessWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[195]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyLiquidityReadinessWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[195]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyLiquidityReadinessWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyLiquidityReadinessWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{195}
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) GetReadinessPlans() []*LegacyLiquidityInsuranceReadinessView {
+	if x != nil {
+		return x.ReadinessPlans
+	}
+	return nil
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) GetShortfallFlagCount() int32 {
+	if x != nil {
+		return x.ShortfallFlagCount
+	}
+	return 0
+}
+
+func (x *GetLegacyLiquidityReadinessWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyLiquidityInsuranceReadinessRequest struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	UserId                              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ReadinessCode                       string                 `protobuf:"bytes,2,opt,name=readiness_code,json=readinessCode,proto3" json:"readiness_code,omitempty"`
+	ObligationsTaxesAndFundingMap       string                 `protobuf:"bytes,3,opt,name=obligations_taxes_and_funding_map,json=obligationsTaxesAndFundingMap,proto3" json:"obligations_taxes_and_funding_map,omitempty"`
+	PolicyClaimPackAndSourceRefs        string                 `protobuf:"bytes,4,opt,name=policy_claim_pack_and_source_refs,json=policyClaimPackAndSourceRefs,proto3" json:"policy_claim_pack_and_source_refs,omitempty"`
+	ShortfallStressAndCounselTrigger    string                 `protobuf:"bytes,5,opt,name=shortfall_stress_and_counsel_trigger,json=shortfallStressAndCounselTrigger,proto3" json:"shortfall_stress_and_counsel_trigger,omitempty"`
+	ReadinessState                      string                 `protobuf:"bytes,6,opt,name=readiness_state,json=readinessState,proto3" json:"readiness_state,omitempty"`
+	NoGuaranteedTaxProbateClaimEnforced bool                   `protobuf:"varint,7,opt,name=no_guaranteed_tax_probate_claim_enforced,json=noGuaranteedTaxProbateClaimEnforced,proto3" json:"no_guaranteed_tax_probate_claim_enforced,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) Reset() {
+	*x = SaveLegacyLiquidityInsuranceReadinessRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[196]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLiquidityInsuranceReadinessRequest) ProtoMessage() {}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[196]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLiquidityInsuranceReadinessRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLiquidityInsuranceReadinessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{196}
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetReadinessCode() string {
+	if x != nil {
+		return x.ReadinessCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetObligationsTaxesAndFundingMap() string {
+	if x != nil {
+		return x.ObligationsTaxesAndFundingMap
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetPolicyClaimPackAndSourceRefs() string {
+	if x != nil {
+		return x.PolicyClaimPackAndSourceRefs
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetShortfallStressAndCounselTrigger() string {
+	if x != nil {
+		return x.ShortfallStressAndCounselTrigger
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetReadinessState() string {
+	if x != nil {
+		return x.ReadinessState
+	}
+	return ""
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessRequest) GetNoGuaranteedTaxProbateClaimEnforced() bool {
+	if x != nil {
+		return x.NoGuaranteedTaxProbateClaimEnforced
+	}
+	return false
+}
+
+type SaveLegacyLiquidityInsuranceReadinessResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	ReadinessPlan *LegacyLiquidityInsuranceReadinessView `protobuf:"bytes,1,opt,name=readiness_plan,json=readinessPlan,proto3" json:"readiness_plan,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessResponse) Reset() {
+	*x = SaveLegacyLiquidityInsuranceReadinessResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[197]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyLiquidityInsuranceReadinessResponse) ProtoMessage() {}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[197]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyLiquidityInsuranceReadinessResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyLiquidityInsuranceReadinessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{197}
+}
+
+func (x *SaveLegacyLiquidityInsuranceReadinessResponse) GetReadinessPlan() *LegacyLiquidityInsuranceReadinessView {
+	if x != nil {
+		return x.ReadinessPlan
+	}
+	return nil
+}
+
+type StressTestLegacyLiquidityOrRouteCounselRequest struct {
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	UserId               string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ReadinessCode        string                 `protobuf:"bytes,2,opt,name=readiness_code,json=readinessCode,proto3" json:"readiness_code,omitempty"`
+	TargetReadinessState string                 `protobuf:"bytes,3,opt,name=target_readiness_state,json=targetReadinessState,proto3" json:"target_readiness_state,omitempty"`
+	StressNotes          string                 `protobuf:"bytes,4,opt,name=stress_notes,json=stressNotes,proto3" json:"stress_notes,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) Reset() {
+	*x = StressTestLegacyLiquidityOrRouteCounselRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[198]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StressTestLegacyLiquidityOrRouteCounselRequest) ProtoMessage() {}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[198]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StressTestLegacyLiquidityOrRouteCounselRequest.ProtoReflect.Descriptor instead.
+func (*StressTestLegacyLiquidityOrRouteCounselRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{198}
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) GetReadinessCode() string {
+	if x != nil {
+		return x.ReadinessCode
+	}
+	return ""
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) GetTargetReadinessState() string {
+	if x != nil {
+		return x.TargetReadinessState
+	}
+	return ""
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselRequest) GetStressNotes() string {
+	if x != nil {
+		return x.StressNotes
+	}
+	return ""
+}
+
+type StressTestLegacyLiquidityOrRouteCounselResponse struct {
+	state           protoimpl.MessageState                 `protogen:"open.v1"`
+	ReadinessPlan   *LegacyLiquidityInsuranceReadinessView `protobuf:"bytes,1,opt,name=readiness_plan,json=readinessPlan,proto3" json:"readiness_plan,omitempty"`
+	ReadinessStatus string                                 `protobuf:"bytes,2,opt,name=readiness_status,json=readinessStatus,proto3" json:"readiness_status,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselResponse) Reset() {
+	*x = StressTestLegacyLiquidityOrRouteCounselResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[199]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StressTestLegacyLiquidityOrRouteCounselResponse) ProtoMessage() {}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[199]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StressTestLegacyLiquidityOrRouteCounselResponse.ProtoReflect.Descriptor instead.
+func (*StressTestLegacyLiquidityOrRouteCounselResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{199}
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselResponse) GetReadinessPlan() *LegacyLiquidityInsuranceReadinessView {
+	if x != nil {
+		return x.ReadinessPlan
+	}
+	return nil
+}
+
+func (x *StressTestLegacyLiquidityOrRouteCounselResponse) GetReadinessStatus() string {
+	if x != nil {
+		return x.ReadinessStatus
+	}
+	return ""
+}
+
+type LegacyCounselFamilyGovernanceView struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	Id                                  string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                              string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GovernanceCode                      string                 `protobuf:"bytes,3,opt,name=governance_code,json=governanceCode,proto3" json:"governance_code,omitempty"`
+	CounselCredentialsAndScopedDataroom string                 `protobuf:"bytes,4,opt,name=counsel_credentials_and_scoped_dataroom,json=counselCredentialsAndScopedDataroom,proto3" json:"counsel_credentials_and_scoped_dataroom,omitempty"`
+	FamilyCharterAndDecisionRecords     string                 `protobuf:"bytes,5,opt,name=family_charter_and_decision_records,json=familyCharterAndDecisionRecords,proto3" json:"family_charter_and_decision_records,omitempty"`
+	NextGenEducationAndPrivacyGate      string                 `protobuf:"bytes,6,opt,name=next_gen_education_and_privacy_gate,json=nextGenEducationAndPrivacyGate,proto3" json:"next_gen_education_and_privacy_gate,omitempty"`
+	GovernanceState                     string                 `protobuf:"bytes,7,opt,name=governance_state,json=governanceState,proto3" json:"governance_state,omitempty"`
+	NoAiValuesOrFamilyRankingEnforced   bool                   `protobuf:"varint,8,opt,name=no_ai_values_or_family_ranking_enforced,json=noAiValuesOrFamilyRankingEnforced,proto3" json:"no_ai_values_or_family_ranking_enforced,omitempty"`
+	UpdatedAtIso                        string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *LegacyCounselFamilyGovernanceView) Reset() {
+	*x = LegacyCounselFamilyGovernanceView{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[200]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LegacyCounselFamilyGovernanceView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LegacyCounselFamilyGovernanceView) ProtoMessage() {}
+
+func (x *LegacyCounselFamilyGovernanceView) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[200]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LegacyCounselFamilyGovernanceView.ProtoReflect.Descriptor instead.
+func (*LegacyCounselFamilyGovernanceView) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{200}
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetGovernanceCode() string {
+	if x != nil {
+		return x.GovernanceCode
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetCounselCredentialsAndScopedDataroom() string {
+	if x != nil {
+		return x.CounselCredentialsAndScopedDataroom
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetFamilyCharterAndDecisionRecords() string {
+	if x != nil {
+		return x.FamilyCharterAndDecisionRecords
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetNextGenEducationAndPrivacyGate() string {
+	if x != nil {
+		return x.NextGenEducationAndPrivacyGate
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetGovernanceState() string {
+	if x != nil {
+		return x.GovernanceState
+	}
+	return ""
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetNoAiValuesOrFamilyRankingEnforced() bool {
+	if x != nil {
+		return x.NoAiValuesOrFamilyRankingEnforced
+	}
+	return false
+}
+
+func (x *LegacyCounselFamilyGovernanceView) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetLegacyCounselGovernanceWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchRequest) Reset() {
+	*x = GetLegacyCounselGovernanceWorkbenchRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[201]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyCounselGovernanceWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetLegacyCounselGovernanceWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[201]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyCounselGovernanceWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetLegacyCounselGovernanceWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{201}
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetLegacyCounselGovernanceWorkbenchResponse struct {
+	state             protoimpl.MessageState               `protogen:"open.v1"`
+	Governances       []*LegacyCounselFamilyGovernanceView `protobuf:"bytes,1,rep,name=governances,proto3" json:"governances,omitempty"`
+	OpenProposalCount int32                                `protobuf:"varint,2,opt,name=open_proposal_count,json=openProposalCount,proto3" json:"open_proposal_count,omitempty"`
+	WorkbenchSummary  string                               `protobuf:"bytes,3,opt,name=workbench_summary,json=workbenchSummary,proto3" json:"workbench_summary,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) Reset() {
+	*x = GetLegacyCounselGovernanceWorkbenchResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[202]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLegacyCounselGovernanceWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[202]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLegacyCounselGovernanceWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetLegacyCounselGovernanceWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{202}
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) GetGovernances() []*LegacyCounselFamilyGovernanceView {
+	if x != nil {
+		return x.Governances
+	}
+	return nil
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) GetOpenProposalCount() int32 {
+	if x != nil {
+		return x.OpenProposalCount
+	}
+	return 0
+}
+
+func (x *GetLegacyCounselGovernanceWorkbenchResponse) GetWorkbenchSummary() string {
+	if x != nil {
+		return x.WorkbenchSummary
+	}
+	return ""
+}
+
+type SaveLegacyCounselFamilyGovernanceRequest struct {
+	state                               protoimpl.MessageState `protogen:"open.v1"`
+	UserId                              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GovernanceCode                      string                 `protobuf:"bytes,2,opt,name=governance_code,json=governanceCode,proto3" json:"governance_code,omitempty"`
+	CounselCredentialsAndScopedDataroom string                 `protobuf:"bytes,3,opt,name=counsel_credentials_and_scoped_dataroom,json=counselCredentialsAndScopedDataroom,proto3" json:"counsel_credentials_and_scoped_dataroom,omitempty"`
+	FamilyCharterAndDecisionRecords     string                 `protobuf:"bytes,4,opt,name=family_charter_and_decision_records,json=familyCharterAndDecisionRecords,proto3" json:"family_charter_and_decision_records,omitempty"`
+	NextGenEducationAndPrivacyGate      string                 `protobuf:"bytes,5,opt,name=next_gen_education_and_privacy_gate,json=nextGenEducationAndPrivacyGate,proto3" json:"next_gen_education_and_privacy_gate,omitempty"`
+	GovernanceState                     string                 `protobuf:"bytes,6,opt,name=governance_state,json=governanceState,proto3" json:"governance_state,omitempty"`
+	NoAiValuesOrFamilyRankingEnforced   bool                   `protobuf:"varint,7,opt,name=no_ai_values_or_family_ranking_enforced,json=noAiValuesOrFamilyRankingEnforced,proto3" json:"no_ai_values_or_family_ranking_enforced,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) Reset() {
+	*x = SaveLegacyCounselFamilyGovernanceRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[203]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyCounselFamilyGovernanceRequest) ProtoMessage() {}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[203]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyCounselFamilyGovernanceRequest.ProtoReflect.Descriptor instead.
+func (*SaveLegacyCounselFamilyGovernanceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{203}
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetGovernanceCode() string {
+	if x != nil {
+		return x.GovernanceCode
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetCounselCredentialsAndScopedDataroom() string {
+	if x != nil {
+		return x.CounselCredentialsAndScopedDataroom
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetFamilyCharterAndDecisionRecords() string {
+	if x != nil {
+		return x.FamilyCharterAndDecisionRecords
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetNextGenEducationAndPrivacyGate() string {
+	if x != nil {
+		return x.NextGenEducationAndPrivacyGate
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetGovernanceState() string {
+	if x != nil {
+		return x.GovernanceState
+	}
+	return ""
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceRequest) GetNoAiValuesOrFamilyRankingEnforced() bool {
+	if x != nil {
+		return x.NoAiValuesOrFamilyRankingEnforced
+	}
+	return false
+}
+
+type SaveLegacyCounselFamilyGovernanceResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Governance    *LegacyCounselFamilyGovernanceView `protobuf:"bytes,1,opt,name=governance,proto3" json:"governance,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceResponse) Reset() {
+	*x = SaveLegacyCounselFamilyGovernanceResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[204]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveLegacyCounselFamilyGovernanceResponse) ProtoMessage() {}
+
+func (x *SaveLegacyCounselFamilyGovernanceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[204]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveLegacyCounselFamilyGovernanceResponse.ProtoReflect.Descriptor instead.
+func (*SaveLegacyCounselFamilyGovernanceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{204}
+}
+
+func (x *SaveLegacyCounselFamilyGovernanceResponse) GetGovernance() *LegacyCounselFamilyGovernanceView {
+	if x != nil {
+		return x.Governance
+	}
+	return nil
+}
+
+type UnlockLegacyStewardshipModuleOrRevokeCounselRequest struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	UserId                string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	GovernanceCode        string                 `protobuf:"bytes,2,opt,name=governance_code,json=governanceCode,proto3" json:"governance_code,omitempty"`
+	TargetGovernanceState string                 `protobuf:"bytes,3,opt,name=target_governance_state,json=targetGovernanceState,proto3" json:"target_governance_state,omitempty"`
+	GovernanceNotes       string                 `protobuf:"bytes,4,opt,name=governance_notes,json=governanceNotes,proto3" json:"governance_notes,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) Reset() {
+	*x = UnlockLegacyStewardshipModuleOrRevokeCounselRequest{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[205]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnlockLegacyStewardshipModuleOrRevokeCounselRequest) ProtoMessage() {}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[205]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnlockLegacyStewardshipModuleOrRevokeCounselRequest.ProtoReflect.Descriptor instead.
+func (*UnlockLegacyStewardshipModuleOrRevokeCounselRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{205}
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) GetGovernanceCode() string {
+	if x != nil {
+		return x.GovernanceCode
+	}
+	return ""
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) GetTargetGovernanceState() string {
+	if x != nil {
+		return x.TargetGovernanceState
+	}
+	return ""
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselRequest) GetGovernanceNotes() string {
+	if x != nil {
+		return x.GovernanceNotes
+	}
+	return ""
+}
+
+type UnlockLegacyStewardshipModuleOrRevokeCounselResponse struct {
+	state            protoimpl.MessageState             `protogen:"open.v1"`
+	Governance       *LegacyCounselFamilyGovernanceView `protobuf:"bytes,1,opt,name=governance,proto3" json:"governance,omitempty"`
+	GovernanceStatus string                             `protobuf:"bytes,2,opt,name=governance_status,json=governanceStatus,proto3" json:"governance_status,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselResponse) Reset() {
+	*x = UnlockLegacyStewardshipModuleOrRevokeCounselResponse{}
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[206]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse) ProtoMessage() {}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_legacy_v1_legacy_proto_msgTypes[206]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UnlockLegacyStewardshipModuleOrRevokeCounselResponse.ProtoReflect.Descriptor instead.
+func (*UnlockLegacyStewardshipModuleOrRevokeCounselResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_legacy_v1_legacy_proto_rawDescGZIP(), []int{206}
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselResponse) GetGovernance() *LegacyCounselFamilyGovernanceView {
+	if x != nil {
+		return x.Governance
+	}
+	return nil
+}
+
+func (x *UnlockLegacyStewardshipModuleOrRevokeCounselResponse) GetGovernanceStatus() string {
+	if x != nil {
+		return x.GovernanceStatus
+	}
+	return ""
+}
+
 var File_sttattus_legacy_v1_legacy_proto protoreflect.FileDescriptor
 
 const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
@@ -7441,7 +13057,435 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x1bParseDocumentExpiryResponse\x12\x14\n" +
 	"\x05found\x18\x01 \x01(\bR\x05found\x12&\n" +
 	"\x0fexpires_at_unix\x18\x02 \x01(\x03R\rexpiresAtUnix\x12#\n" +
-	"\rdetected_text\x18\x03 \x01(\tR\fdetectedText*\xd0\x01\n" +
+	"\rdetected_text\x18\x03 \x01(\tR\fdetectedText\"\xdf\x03\n" +
+	"\x1fLegacyLivingEstateInventoryView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0einventory_code\x18\x03 \x01(\tR\rinventoryCode\x12D\n" +
+	"\x1fasset_fiduciary_and_owner_scope\x18\x04 \x01(\tR\x1bassetFiduciaryAndOwnerScope\x12@\n" +
+	"\x1dplan_health_gaps_and_evidence\x18\x05 \x01(\tR\x19planHealthGapsAndEvidence\x12D\n" +
+	"\x1ften_minute_quarterly_review_log\x18\x06 \x01(\tR\x1btenMinuteQuarterlyReviewLog\x12'\n" +
+	"\x0finventory_state\x18\a \x01(\tR\x0einventoryState\x12O\n" +
+	"%no_silent_signed_doc_rewrite_enforced\x18\b \x01(\bR noSilentSignedDocRewriteEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"C\n" +
+	"(GetLegacyLivingInventoryWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xd5\x01\n" +
+	")GetLegacyLivingInventoryWorkbenchResponse\x12U\n" +
+	"\vinventories\x18\x01 \x03(\v23.sttattus.legacy.v1.LegacyLivingEstateInventoryViewR\vinventories\x12$\n" +
+	"\x0eopen_gap_count\x18\x02 \x01(\x05R\fopenGapCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xb0\x03\n" +
+	"&SaveLegacyLivingEstateInventoryRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0einventory_code\x18\x02 \x01(\tR\rinventoryCode\x12D\n" +
+	"\x1fasset_fiduciary_and_owner_scope\x18\x03 \x01(\tR\x1bassetFiduciaryAndOwnerScope\x12@\n" +
+	"\x1dplan_health_gaps_and_evidence\x18\x04 \x01(\tR\x19planHealthGapsAndEvidence\x12D\n" +
+	"\x1ften_minute_quarterly_review_log\x18\x05 \x01(\tR\x1btenMinuteQuarterlyReviewLog\x12'\n" +
+	"\x0finventory_state\x18\x06 \x01(\tR\x0einventoryState\x12O\n" +
+	"%no_silent_signed_doc_rewrite_enforced\x18\a \x01(\bR noSilentSignedDocRewriteEnforced\"|\n" +
+	"'SaveLegacyLivingEstateInventoryResponse\x12Q\n" +
+	"\tinventory\x18\x01 \x01(\v23.sttattus.legacy.v1.LegacyLivingEstateInventoryViewR\tinventory\"\xc2\x01\n" +
+	"'SignOffLegacyQuarterlyPlanReviewRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0einventory_code\x18\x02 \x01(\tR\rinventoryCode\x124\n" +
+	"\x16target_inventory_state\x18\x03 \x01(\tR\x14targetInventoryState\x12!\n" +
+	"\freview_notes\x18\x04 \x01(\tR\vreviewNotes\"\xa2\x01\n" +
+	"(SignOffLegacyQuarterlyPlanReviewResponse\x12Q\n" +
+	"\tinventory\x18\x01 \x01(\v23.sttattus.legacy.v1.LegacyLivingEstateInventoryViewR\tinventory\x12#\n" +
+	"\rreview_status\x18\x02 \x01(\tR\freviewStatus\"\xff\x03\n" +
+	"\x1cLegacyLifeEventAlignmentView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0ealignment_code\x18\x03 \x01(\tR\ralignmentCode\x12K\n" +
+	"#confirmed_life_event_and_impact_map\x18\x04 \x01(\tR\x1econfirmedLifeEventAndImpactMap\x12J\n" +
+	"\"beneficiary_and_trust_funding_diff\x18\x05 \x01(\tR\x1ebeneficiaryAndTrustFundingDiff\x12K\n" +
+	"\"institution_checklist_and_evidence\x18\x06 \x01(\tR\x1finstitutionChecklistAndEvidence\x12'\n" +
+	"\x0falignment_state\x18\a \x01(\tR\x0ealignmentState\x12Z\n" +
+	"*evidence_required_before_complete_enforced\x18\b \x01(\bR&evidenceRequiredBeforeCompleteEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"F\n" +
+	"+GetLegacyLifeEventAlignmentWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xed\x01\n" +
+	",GetLegacyLifeEventAlignmentWorkbenchResponse\x12P\n" +
+	"\n" +
+	"alignments\x18\x01 \x03(\v20.sttattus.legacy.v1.LegacyLifeEventAlignmentViewR\n" +
+	"alignments\x12>\n" +
+	"\x1bunaligned_designation_count\x18\x02 \x01(\x05R\x19unalignedDesignationCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xd0\x03\n" +
+	"#SaveLegacyLifeEventAlignmentRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0ealignment_code\x18\x02 \x01(\tR\ralignmentCode\x12K\n" +
+	"#confirmed_life_event_and_impact_map\x18\x03 \x01(\tR\x1econfirmedLifeEventAndImpactMap\x12J\n" +
+	"\"beneficiary_and_trust_funding_diff\x18\x04 \x01(\tR\x1ebeneficiaryAndTrustFundingDiff\x12K\n" +
+	"\"institution_checklist_and_evidence\x18\x05 \x01(\tR\x1finstitutionChecklistAndEvidence\x12'\n" +
+	"\x0falignment_state\x18\x06 \x01(\tR\x0ealignmentState\x12Z\n" +
+	"*evidence_required_before_complete_enforced\x18\a \x01(\bR&evidenceRequiredBeforeCompleteEnforced\"v\n" +
+	"$SaveLegacyLifeEventAlignmentResponse\x12N\n" +
+	"\talignment\x18\x01 \x01(\v20.sttattus.legacy.v1.LegacyLifeEventAlignmentViewR\talignment\"\xce\x01\n" +
+	"/VerifyLegacyAlignmentInstitutionEvidenceRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0ealignment_code\x18\x02 \x01(\tR\ralignmentCode\x124\n" +
+	"\x16target_alignment_state\x18\x03 \x01(\tR\x14targetAlignmentState\x12%\n" +
+	"\x0eevidence_notes\x18\x04 \x01(\tR\revidenceNotes\"\xb3\x01\n" +
+	"0VerifyLegacyAlignmentInstitutionEvidenceResponse\x12N\n" +
+	"\talignment\x18\x01 \x01(\v20.sttattus.legacy.v1.LegacyLifeEventAlignmentViewR\talignment\x12/\n" +
+	"\x13verification_status\x18\x02 \x01(\tR\x12verificationStatus\"\xd5\x03\n" +
+	"\x1dLegacySecureDocumentVaultView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rdocument_code\x18\x03 \x01(\tR\fdocumentCode\x12L\n" +
+	"#version_family_and_execution_status\x18\x04 \x01(\tR\x1fversionFamilyAndExecutionStatus\x12D\n" +
+	"\x1fcited_clause_and_ocr_confidence\x18\x05 \x01(\tR\x1bcitedClauseAndOcrConfidence\x12L\n" +
+	"#custody_retention_and_offline_cache\x18\x06 \x01(\tR\x1fcustodyRetentionAndOfflineCache\x12\x1f\n" +
+	"\vvault_state\x18\a \x01(\tR\n" +
+	"vaultState\x12=\n" +
+	"\x1bpublic_gallery_leak_blocked\x18\b \x01(\bR\x18publicGalleryLeakBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"G\n" +
+	",GetLegacySecureDocumentVaultWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe7\x01\n" +
+	"-GetLegacySecureDocumentVaultWorkbenchResponse\x12O\n" +
+	"\tdocuments\x18\x01 \x03(\v21.sttattus.legacy.v1.LegacySecureDocumentVaultViewR\tdocuments\x128\n" +
+	"\x18provisional_review_count\x18\x02 \x01(\x05R\x16provisionalReviewCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xa6\x03\n" +
+	"$SaveLegacySecureDocumentVaultRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rdocument_code\x18\x02 \x01(\tR\fdocumentCode\x12L\n" +
+	"#version_family_and_execution_status\x18\x03 \x01(\tR\x1fversionFamilyAndExecutionStatus\x12D\n" +
+	"\x1fcited_clause_and_ocr_confidence\x18\x04 \x01(\tR\x1bcitedClauseAndOcrConfidence\x12L\n" +
+	"#custody_retention_and_offline_cache\x18\x05 \x01(\tR\x1fcustodyRetentionAndOfflineCache\x12\x1f\n" +
+	"\vvault_state\x18\x06 \x01(\tR\n" +
+	"vaultState\x12=\n" +
+	"\x1bpublic_gallery_leak_blocked\x18\a \x01(\bR\x18publicGalleryLeakBlocked\"v\n" +
+	"%SaveLegacySecureDocumentVaultResponse\x12M\n" +
+	"\bdocument\x18\x01 \x01(\v21.sttattus.legacy.v1.LegacySecureDocumentVaultViewR\bdocument\"\xbb\x01\n" +
+	"(LockOrExportLegacyDocumentCustodyRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rdocument_code\x18\x02 \x01(\tR\fdocumentCode\x12,\n" +
+	"\x12target_vault_state\x18\x03 \x01(\tR\x10targetVaultState\x12#\n" +
+	"\rcustody_notes\x18\x04 \x01(\tR\fcustodyNotes\"\xa1\x01\n" +
+	")LockOrExportLegacyDocumentCustodyResponse\x12M\n" +
+	"\bdocument\x18\x01 \x01(\v21.sttattus.legacy.v1.LegacySecureDocumentVaultViewR\bdocument\x12%\n" +
+	"\x0ecustody_status\x18\x02 \x01(\tR\rcustodyStatus\"\xf6\x03\n" +
+	"$LegacyJurisdictionDocumentSystemView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsystem_code\x18\x03 \x01(\tR\n" +
+	"systemCode\x12F\n" +
+	" jurisdiction_rule_pack_and_scope\x18\x04 \x01(\tR\x1cjurisdictionRulePackAndScope\x12L\n" +
+	"#clause_version_and_attorney_trigger\x18\x05 \x01(\tR\x1fclauseVersionAndAttorneyTrigger\x12R\n" +
+	"&execution_witness_and_notary_checklist\x18\x06 \x01(\tR\"executionWitnessAndNotaryChecklist\x12%\n" +
+	"\x0edocument_state\x18\a \x01(\tR\rdocumentState\x12M\n" +
+	"#non_attorney_impersonation_enforced\x18\b \x01(\bR nonAttorneyImpersonationEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"H\n" +
+	"-GetLegacyJurisdictionDocumentWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe7\x01\n" +
+	".GetLegacyJurisdictionDocumentWorkbenchResponse\x12R\n" +
+	"\asystems\x18\x01 \x03(\v28.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemViewR\asystems\x124\n" +
+	"\x16attorney_trigger_count\x18\x02 \x01(\x05R\x14attorneyTriggerCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xc7\x03\n" +
+	"+SaveLegacyJurisdictionDocumentSystemRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsystem_code\x18\x02 \x01(\tR\n" +
+	"systemCode\x12F\n" +
+	" jurisdiction_rule_pack_and_scope\x18\x03 \x01(\tR\x1cjurisdictionRulePackAndScope\x12L\n" +
+	"#clause_version_and_attorney_trigger\x18\x04 \x01(\tR\x1fclauseVersionAndAttorneyTrigger\x12R\n" +
+	"&execution_witness_and_notary_checklist\x18\x05 \x01(\tR\"executionWitnessAndNotaryChecklist\x12%\n" +
+	"\x0edocument_state\x18\x06 \x01(\tR\rdocumentState\x12M\n" +
+	"#non_attorney_impersonation_enforced\x18\a \x01(\bR nonAttorneyImpersonationEnforced\"\x80\x01\n" +
+	",SaveLegacyJurisdictionDocumentSystemResponse\x12P\n" +
+	"\x06system\x18\x01 \x01(\v28.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemViewR\x06system\"\xc9\x01\n" +
+	"0TriggerLegacyCounselReviewOrLockExecutionRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vsystem_code\x18\x02 \x01(\tR\n" +
+	"systemCode\x122\n" +
+	"\x15target_document_state\x18\x03 \x01(\tR\x13targetDocumentState\x12'\n" +
+	"\x0fexecution_notes\x18\x04 \x01(\tR\x0eexecutionNotes\"\xb0\x01\n" +
+	"1TriggerLegacyCounselReviewOrLockExecutionResponse\x12P\n" +
+	"\x06system\x18\x01 \x01(\v28.sttattus.legacy.v1.LegacyJurisdictionDocumentSystemViewR\x06system\x12)\n" +
+	"\x10execution_status\x18\x02 \x01(\tR\x0fexecutionStatus\"\xfe\x03\n" +
+	"%LegacyHouseholdBusinessContinuityView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fcontinuity_code\x18\x03 \x01(\tR\x0econtinuityCode\x12I\n" +
+	"\"role_playbook_and_first_week_guide\x18\x04 \x01(\tR\x1drolePlaybookAndFirstWeekGuide\x12P\n" +
+	"%authority_matrix_and_signatory_limits\x18\x05 \x01(\tR!authorityMatrixAndSignatoryLimits\x12M\n" +
+	"$offline_emergency_card_and_drill_log\x18\x06 \x01(\tR\x1fofflineEmergencyCardAndDrillLog\x12)\n" +
+	"\x10continuity_state\x18\a \x01(\tR\x0fcontinuityState\x12F\n" +
+	" full_vault_unscoped_leak_blocked\x18\b \x01(\bR\x1cfullVaultUnscopedLeakBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"F\n" +
+	"+GetLegacyContinuityPlaybookWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe0\x01\n" +
+	",GetLegacyContinuityPlaybookWorkbenchResponse\x12W\n" +
+	"\tplaybooks\x18\x01 \x03(\v29.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityViewR\tplaybooks\x12*\n" +
+	"\x11refresh_due_count\x18\x02 \x01(\x05R\x0frefreshDueCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xcf\x03\n" +
+	",SaveLegacyHouseholdBusinessContinuityRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0fcontinuity_code\x18\x02 \x01(\tR\x0econtinuityCode\x12I\n" +
+	"\"role_playbook_and_first_week_guide\x18\x03 \x01(\tR\x1drolePlaybookAndFirstWeekGuide\x12P\n" +
+	"%authority_matrix_and_signatory_limits\x18\x04 \x01(\tR!authorityMatrixAndSignatoryLimits\x12M\n" +
+	"$offline_emergency_card_and_drill_log\x18\x05 \x01(\tR\x1fofflineEmergencyCardAndDrillLog\x12)\n" +
+	"\x10continuity_state\x18\x06 \x01(\tR\x0fcontinuityState\x12F\n" +
+	" full_vault_unscoped_leak_blocked\x18\a \x01(\bR\x1cfullVaultUnscopedLeakBlocked\"\x86\x01\n" +
+	"-SaveLegacyHouseholdBusinessContinuityResponse\x12U\n" +
+	"\bplaybook\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityViewR\bplaybook\"\xcd\x01\n" +
+	"0RunLegacyContinuityDrillOrStageDelegationRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0fcontinuity_code\x18\x02 \x01(\tR\x0econtinuityCode\x126\n" +
+	"\x17target_continuity_state\x18\x03 \x01(\tR\x15targetContinuityState\x12\x1f\n" +
+	"\vdrill_notes\x18\x04 \x01(\tR\n" +
+	"drillNotes\"\xad\x01\n" +
+	"1RunLegacyContinuityDrillOrStageDelegationResponse\x12U\n" +
+	"\bplaybook\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyHouseholdBusinessContinuityViewR\bplaybook\x12!\n" +
+	"\fdrill_status\x18\x02 \x01(\tR\vdrillStatus\"\xe4\x03\n" +
+	"#LegacyIncapacityDeadmanProtocolView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rprotocol_code\x18\x03 \x01(\tR\fprotocolCode\x12J\n" +
+	"\"workflow_branch_and_waiting_clocks\x18\x04 \x01(\tR\x1eworkflowBranchAndWaitingClocks\x12J\n" +
+	"\"multi_party_threshold_and_evidence\x18\x05 \x01(\tR\x1emultiPartyThresholdAndEvidence\x12I\n" +
+	"!staged_watermarked_release_bundle\x18\x06 \x01(\tR\x1estagedWatermarkedReleaseBundle\x12%\n" +
+	"\x0eprotocol_state\x18\a \x01(\tR\rprotocolState\x12?\n" +
+	"\x1csingle_actor_release_blocked\x18\b \x01(\bR\x19singleActorReleaseBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"E\n" +
+	"*GetLegacyIncapacityDeadmanWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xec\x01\n" +
+	"+GetLegacyIncapacityDeadmanWorkbenchResponse\x12U\n" +
+	"\tprotocols\x18\x01 \x03(\v27.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolViewR\tprotocols\x129\n" +
+	"\x19active_grace_window_count\x18\x02 \x01(\x05R\x16activeGraceWindowCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xb5\x03\n" +
+	"*SaveLegacyIncapacityDeadmanProtocolRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rprotocol_code\x18\x02 \x01(\tR\fprotocolCode\x12J\n" +
+	"\"workflow_branch_and_waiting_clocks\x18\x03 \x01(\tR\x1eworkflowBranchAndWaitingClocks\x12J\n" +
+	"\"multi_party_threshold_and_evidence\x18\x04 \x01(\tR\x1emultiPartyThresholdAndEvidence\x12I\n" +
+	"!staged_watermarked_release_bundle\x18\x05 \x01(\tR\x1estagedWatermarkedReleaseBundle\x12%\n" +
+	"\x0eprotocol_state\x18\x06 \x01(\tR\rprotocolState\x12?\n" +
+	"\x1csingle_actor_release_blocked\x18\a \x01(\bR\x19singleActorReleaseBlocked\"\x82\x01\n" +
+	"+SaveLegacyIncapacityDeadmanProtocolResponse\x12S\n" +
+	"\bprotocol\x18\x01 \x01(\v27.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolViewR\bprotocol\"\xc6\x01\n" +
+	"+SimulateOrCancelLegacyDeadmanReleaseRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rprotocol_code\x18\x02 \x01(\tR\fprotocolCode\x122\n" +
+	"\x15target_protocol_state\x18\x03 \x01(\tR\x13targetProtocolState\x12%\n" +
+	"\x0eprotocol_notes\x18\x04 \x01(\tR\rprotocolNotes\"\xac\x01\n" +
+	",SimulateOrCancelLegacyDeadmanReleaseResponse\x12S\n" +
+	"\bprotocol\x18\x01 \x01(\v27.sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolViewR\bprotocol\x12'\n" +
+	"\x0fprotocol_status\x18\x02 \x01(\tR\x0eprotocolStatus\"\x8c\x04\n" +
+	"\"LegacyExecutorTrusteeWorkspaceView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0eworkspace_code\x18\x03 \x01(\tR\rworkspaceCode\x12M\n" +
+	"#executor_authority_and_jurisdiction\x18\x04 \x01(\tR executorAuthorityAndJurisdiction\x12J\n" +
+	"\"settlement_task_and_claim_timeline\x18\x05 \x01(\tR\x1esettlementTaskAndClaimTimeline\x12S\n" +
+	"&partitioned_beneficiary_portal_summary\x18\x06 \x01(\tR#partitionedBeneficiaryPortalSummary\x12'\n" +
+	"\x0fworkspace_state\x18\a \x01(\tR\x0eworkspaceState\x12W\n" +
+	"(unrelated_beneficiary_isolation_enforced\x18\b \x01(\bR%unrelatedBeneficiaryIsolationEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"E\n" +
+	"*GetLegacyExecutorWorkspaceWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe0\x01\n" +
+	"+GetLegacyExecutorWorkspaceWorkbenchResponse\x12V\n" +
+	"\n" +
+	"workspaces\x18\x01 \x03(\v26.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceViewR\n" +
+	"workspaces\x12,\n" +
+	"\x12open_dispute_count\x18\x02 \x01(\x05R\x10openDisputeCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xdd\x03\n" +
+	")SaveLegacyExecutorTrusteeWorkspaceRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0eworkspace_code\x18\x02 \x01(\tR\rworkspaceCode\x12M\n" +
+	"#executor_authority_and_jurisdiction\x18\x03 \x01(\tR executorAuthorityAndJurisdiction\x12J\n" +
+	"\"settlement_task_and_claim_timeline\x18\x04 \x01(\tR\x1esettlementTaskAndClaimTimeline\x12S\n" +
+	"&partitioned_beneficiary_portal_summary\x18\x05 \x01(\tR#partitionedBeneficiaryPortalSummary\x12'\n" +
+	"\x0fworkspace_state\x18\x06 \x01(\tR\x0eworkspaceState\x12W\n" +
+	"(unrelated_beneficiary_isolation_enforced\x18\a \x01(\bR%unrelatedBeneficiaryIsolationEnforced\"\x82\x01\n" +
+	"*SaveLegacyExecutorTrusteeWorkspaceResponse\x12T\n" +
+	"\tworkspace\x18\x01 \x01(\v26.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceViewR\tworkspace\"\xd5\x01\n" +
+	"2AdvanceLegacySettlementTaskOrResolveDisputeRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0eworkspace_code\x18\x02 \x01(\tR\rworkspaceCode\x124\n" +
+	"\x16target_workspace_state\x18\x03 \x01(\tR\x14targetWorkspaceState\x12)\n" +
+	"\x10resolution_notes\x18\x04 \x01(\tR\x0fresolutionNotes\"\xb6\x01\n" +
+	"3AdvanceLegacySettlementTaskOrResolveDisputeResponse\x12T\n" +
+	"\tworkspace\x18\x01 \x01(\v26.sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceViewR\tworkspace\x12)\n" +
+	"\x10workspace_status\x18\x02 \x01(\tR\x0fworkspaceStatus\"\x8b\x04\n" +
+	"\x1eLegacySettlementAccountingView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0faccounting_code\x18\x03 \x01(\tR\x0eaccountingCode\x12N\n" +
+	"$opening_inventory_and_dod_valuations\x18\x04 \x01(\tR openingInventoryAndDodValuations\x12H\n" +
+	"!reversible_ledger_and_period_lock\x18\x05 \x01(\tR\x1dreversibleLedgerAndPeriodLock\x12R\n" +
+	"&proposed_distribution_and_receipt_pack\x18\x06 \x01(\tR\"proposedDistributionAndReceiptPack\x12)\n" +
+	"\x10accounting_state\x18\a \x01(\tR\x0faccountingState\x12X\n" +
+	")non_custodial_execution_boundary_enforced\x18\b \x01(\bR%nonCustodialExecutionBoundaryEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"H\n" +
+	"-GetLegacySettlementAccountingWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe9\x01\n" +
+	".GetLegacySettlementAccountingWorkbenchResponse\x12T\n" +
+	"\vaccountings\x18\x01 \x03(\v22.sttattus.legacy.v1.LegacySettlementAccountingViewR\vaccountings\x124\n" +
+	"\x16open_reconciling_count\x18\x02 \x01(\x05R\x14openReconcilingCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xdc\x03\n" +
+	"%SaveLegacySettlementAccountingRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0faccounting_code\x18\x02 \x01(\tR\x0eaccountingCode\x12N\n" +
+	"$opening_inventory_and_dod_valuations\x18\x03 \x01(\tR openingInventoryAndDodValuations\x12H\n" +
+	"!reversible_ledger_and_period_lock\x18\x04 \x01(\tR\x1dreversibleLedgerAndPeriodLock\x12R\n" +
+	"&proposed_distribution_and_receipt_pack\x18\x05 \x01(\tR\"proposedDistributionAndReceiptPack\x12)\n" +
+	"\x10accounting_state\x18\x06 \x01(\tR\x0faccountingState\x12X\n" +
+	")non_custodial_execution_boundary_enforced\x18\a \x01(\bR%nonCustodialExecutionBoundaryEnforced\"|\n" +
+	"&SaveLegacySettlementAccountingResponse\x12R\n" +
+	"\n" +
+	"accounting\x18\x01 \x01(\v22.sttattus.legacy.v1.LegacySettlementAccountingViewR\n" +
+	"accounting\"\xd1\x01\n" +
+	"*LockOrReverseLegacyAccountingPeriodRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0faccounting_code\x18\x02 \x01(\tR\x0eaccountingCode\x126\n" +
+	"\x17target_accounting_state\x18\x03 \x01(\tR\x15targetAccountingState\x12)\n" +
+	"\x10accounting_notes\x18\x04 \x01(\tR\x0faccountingNotes\"\xae\x01\n" +
+	"+LockOrReverseLegacyAccountingPeriodResponse\x12R\n" +
+	"\n" +
+	"accounting\x18\x01 \x01(\v22.sttattus.legacy.v1.LegacySettlementAccountingViewR\n" +
+	"accounting\x12+\n" +
+	"\x11accounting_status\x18\x02 \x01(\tR\x10accountingStatus\"\x83\x04\n" +
+	"\"LegacyDigitalThresholdRecoveryView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rrecovery_code\x18\x03 \x01(\tR\frecoveryCode\x12J\n" +
+	"\"digital_asset_inventory_and_wishes\x18\x04 \x01(\tR\x1edigitalAssetInventoryAndWishes\x12R\n" +
+	"&shamir_threshold_and_custodian_domains\x18\x05 \x01(\tR\"shamirThresholdAndCustodianDomains\x12G\n" +
+	"!ceremony_dry_run_and_rotation_log\x18\x06 \x01(\tR\x1cceremonyDryRunAndRotationLog\x12%\n" +
+	"\x0erecovery_state\x18\a \x01(\tR\rrecoveryState\x12Y\n" +
+	")staff_subthreshold_reconstruction_blocked\x18\b \x01(\bR&staffSubthresholdReconstructionBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"C\n" +
+	"(GetLegacyDigitalRecoveryWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe8\x01\n" +
+	")GetLegacyDigitalRecoveryWorkbenchResponse\x12V\n" +
+	"\n" +
+	"recoveries\x18\x01 \x03(\v26.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryViewR\n" +
+	"recoveries\x126\n" +
+	"\x17quarantined_share_count\x18\x02 \x01(\x05R\x15quarantinedShareCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xd4\x03\n" +
+	")SaveLegacyDigitalThresholdRecoveryRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rrecovery_code\x18\x02 \x01(\tR\frecoveryCode\x12J\n" +
+	"\"digital_asset_inventory_and_wishes\x18\x03 \x01(\tR\x1edigitalAssetInventoryAndWishes\x12R\n" +
+	"&shamir_threshold_and_custodian_domains\x18\x04 \x01(\tR\"shamirThresholdAndCustodianDomains\x12G\n" +
+	"!ceremony_dry_run_and_rotation_log\x18\x05 \x01(\tR\x1cceremonyDryRunAndRotationLog\x12%\n" +
+	"\x0erecovery_state\x18\x06 \x01(\tR\rrecoveryState\x12Y\n" +
+	")staff_subthreshold_reconstruction_blocked\x18\a \x01(\bR&staffSubthresholdReconstructionBlocked\"\x80\x01\n" +
+	"*SaveLegacyDigitalThresholdRecoveryResponse\x12R\n" +
+	"\brecovery\x18\x01 \x01(\v26.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryViewR\brecovery\"\xcf\x01\n" +
+	"4RunLegacyThresholdCeremonyDryRunOrRotateShareRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12#\n" +
+	"\rrecovery_code\x18\x02 \x01(\tR\frecoveryCode\x122\n" +
+	"\x15target_recovery_state\x18\x03 \x01(\tR\x13targetRecoveryState\x12%\n" +
+	"\x0eceremony_notes\x18\x04 \x01(\tR\rceremonyNotes\"\xb4\x01\n" +
+	"5RunLegacyThresholdCeremonyDryRunOrRotateShareResponse\x12R\n" +
+	"\brecovery\x18\x01 \x01(\v26.sttattus.legacy.v1.LegacyDigitalThresholdRecoveryViewR\brecovery\x12'\n" +
+	"\x0fceremony_status\x18\x02 \x01(\tR\x0eceremonyStatus\"\xff\x03\n" +
+	"%LegacyHeritagePreservationArchiveView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\farchive_code\x18\x03 \x01(\tR\varchiveCode\x12L\n" +
+	"#media_manifest_and_fixity_signature\x18\x04 \x01(\tR\x1fmediaManifestAndFixitySignature\x12R\n" +
+	"&delivery_trigger_and_recipient_consent\x18\x05 \x01(\tR\"deliveryTriggerAndRecipientConsent\x12P\n" +
+	"%format_migration_and_restoration_test\x18\x06 \x01(\tR!formatMigrationAndRestorationTest\x12#\n" +
+	"\rarchive_state\x18\a \x01(\tR\farchiveState\x12K\n" +
+	"\"original_artifact_mutation_blocked\x18\b \x01(\bR\x1foriginalArtifactMutationBlocked\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"C\n" +
+	"(GetLegacyHeritageArchiveWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe1\x01\n" +
+	")GetLegacyHeritageArchiveWorkbenchResponse\x12U\n" +
+	"\barchives\x18\x01 \x03(\v29.sttattus.legacy.v1.LegacyHeritagePreservationArchiveViewR\barchives\x120\n" +
+	"\x14contact_repair_count\x18\x02 \x01(\x05R\x12contactRepairCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xd0\x03\n" +
+	",SaveLegacyHeritagePreservationArchiveRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
+	"\farchive_code\x18\x02 \x01(\tR\varchiveCode\x12L\n" +
+	"#media_manifest_and_fixity_signature\x18\x03 \x01(\tR\x1fmediaManifestAndFixitySignature\x12R\n" +
+	"&delivery_trigger_and_recipient_consent\x18\x04 \x01(\tR\"deliveryTriggerAndRecipientConsent\x12P\n" +
+	"%format_migration_and_restoration_test\x18\x05 \x01(\tR!formatMigrationAndRestorationTest\x12#\n" +
+	"\rarchive_state\x18\x06 \x01(\tR\farchiveState\x12K\n" +
+	"\"original_artifact_mutation_blocked\x18\a \x01(\bR\x1foriginalArtifactMutationBlocked\"\x84\x01\n" +
+	"-SaveLegacyHeritagePreservationArchiveResponse\x12S\n" +
+	"\aarchive\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyHeritagePreservationArchiveViewR\aarchive\"\xc5\x01\n" +
+	"0VerifyLegacyArchiveFixityOrPreviewTriggerRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
+	"\farchive_code\x18\x02 \x01(\tR\varchiveCode\x120\n" +
+	"\x14target_archive_state\x18\x03 \x01(\tR\x12targetArchiveState\x12#\n" +
+	"\rarchive_notes\x18\x04 \x01(\tR\farchiveNotes\"\xaf\x01\n" +
+	"1VerifyLegacyArchiveFixityOrPreviewTriggerResponse\x12S\n" +
+	"\aarchive\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyHeritagePreservationArchiveViewR\aarchive\x12%\n" +
+	"\x0earchive_status\x18\x02 \x01(\tR\rarchiveStatus\"\x80\x04\n" +
+	"%LegacyLiquidityInsuranceReadinessView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0ereadiness_code\x18\x03 \x01(\tR\rreadinessCode\x12H\n" +
+	"!obligations_taxes_and_funding_map\x18\x04 \x01(\tR\x1dobligationsTaxesAndFundingMap\x12G\n" +
+	"!policy_claim_pack_and_source_refs\x18\x05 \x01(\tR\x1cpolicyClaimPackAndSourceRefs\x12N\n" +
+	"$shortfall_stress_and_counsel_trigger\x18\x06 \x01(\tR shortfallStressAndCounselTrigger\x12'\n" +
+	"\x0freadiness_state\x18\a \x01(\tR\x0ereadinessState\x12U\n" +
+	"(no_guaranteed_tax_probate_claim_enforced\x18\b \x01(\bR#noGuaranteedTaxProbateClaimEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"F\n" +
+	"+GetLegacyLiquidityReadinessWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xf1\x01\n" +
+	",GetLegacyLiquidityReadinessWorkbenchResponse\x12b\n" +
+	"\x0freadiness_plans\x18\x01 \x03(\v29.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessViewR\x0ereadinessPlans\x120\n" +
+	"\x14shortfall_flag_count\x18\x02 \x01(\x05R\x12shortfallFlagCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xd1\x03\n" +
+	",SaveLegacyLiquidityInsuranceReadinessRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0ereadiness_code\x18\x02 \x01(\tR\rreadinessCode\x12H\n" +
+	"!obligations_taxes_and_funding_map\x18\x03 \x01(\tR\x1dobligationsTaxesAndFundingMap\x12G\n" +
+	"!policy_claim_pack_and_source_refs\x18\x04 \x01(\tR\x1cpolicyClaimPackAndSourceRefs\x12N\n" +
+	"$shortfall_stress_and_counsel_trigger\x18\x05 \x01(\tR shortfallStressAndCounselTrigger\x12'\n" +
+	"\x0freadiness_state\x18\x06 \x01(\tR\x0ereadinessState\x12U\n" +
+	"(no_guaranteed_tax_probate_claim_enforced\x18\a \x01(\bR#noGuaranteedTaxProbateClaimEnforced\"\x91\x01\n" +
+	"-SaveLegacyLiquidityInsuranceReadinessResponse\x12`\n" +
+	"\x0ereadiness_plan\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessViewR\rreadinessPlan\"\xc9\x01\n" +
+	".StressTestLegacyLiquidityOrRouteCounselRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12%\n" +
+	"\x0ereadiness_code\x18\x02 \x01(\tR\rreadinessCode\x124\n" +
+	"\x16target_readiness_state\x18\x03 \x01(\tR\x14targetReadinessState\x12!\n" +
+	"\fstress_notes\x18\x04 \x01(\tR\vstressNotes\"\xbe\x01\n" +
+	"/StressTestLegacyLiquidityOrRouteCounselResponse\x12`\n" +
+	"\x0ereadiness_plan\x18\x01 \x01(\v29.sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessViewR\rreadinessPlan\x12)\n" +
+	"\x10readiness_status\x18\x02 \x01(\tR\x0freadinessStatus\"\x8b\x04\n" +
+	"!LegacyCounselFamilyGovernanceView\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fgovernance_code\x18\x03 \x01(\tR\x0egovernanceCode\x12T\n" +
+	"'counsel_credentials_and_scoped_dataroom\x18\x04 \x01(\tR#counselCredentialsAndScopedDataroom\x12L\n" +
+	"#family_charter_and_decision_records\x18\x05 \x01(\tR\x1ffamilyCharterAndDecisionRecords\x12K\n" +
+	"#next_gen_education_and_privacy_gate\x18\x06 \x01(\tR\x1enextGenEducationAndPrivacyGate\x12)\n" +
+	"\x10governance_state\x18\a \x01(\tR\x0fgovernanceState\x12R\n" +
+	"'no_ai_values_or_family_ranking_enforced\x18\b \x01(\bR!noAiValuesOrFamilyRankingEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"E\n" +
+	"*GetLegacyCounselGovernanceWorkbenchRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\xe3\x01\n" +
+	"+GetLegacyCounselGovernanceWorkbenchResponse\x12W\n" +
+	"\vgovernances\x18\x01 \x03(\v25.sttattus.legacy.v1.LegacyCounselFamilyGovernanceViewR\vgovernances\x12.\n" +
+	"\x13open_proposal_count\x18\x02 \x01(\x05R\x11openProposalCount\x12+\n" +
+	"\x11workbench_summary\x18\x03 \x01(\tR\x10workbenchSummary\"\xdc\x03\n" +
+	"(SaveLegacyCounselFamilyGovernanceRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0fgovernance_code\x18\x02 \x01(\tR\x0egovernanceCode\x12T\n" +
+	"'counsel_credentials_and_scoped_dataroom\x18\x03 \x01(\tR#counselCredentialsAndScopedDataroom\x12L\n" +
+	"#family_charter_and_decision_records\x18\x04 \x01(\tR\x1ffamilyCharterAndDecisionRecords\x12K\n" +
+	"#next_gen_education_and_privacy_gate\x18\x05 \x01(\tR\x1enextGenEducationAndPrivacyGate\x12)\n" +
+	"\x10governance_state\x18\x06 \x01(\tR\x0fgovernanceState\x12R\n" +
+	"'no_ai_values_or_family_ranking_enforced\x18\a \x01(\bR!noAiValuesOrFamilyRankingEnforced\"\x82\x01\n" +
+	")SaveLegacyCounselFamilyGovernanceResponse\x12U\n" +
+	"\n" +
+	"governance\x18\x01 \x01(\v25.sttattus.legacy.v1.LegacyCounselFamilyGovernanceViewR\n" +
+	"governance\"\xda\x01\n" +
+	"3UnlockLegacyStewardshipModuleOrRevokeCounselRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12'\n" +
+	"\x0fgovernance_code\x18\x02 \x01(\tR\x0egovernanceCode\x126\n" +
+	"\x17target_governance_state\x18\x03 \x01(\tR\x15targetGovernanceState\x12)\n" +
+	"\x10governance_notes\x18\x04 \x01(\tR\x0fgovernanceNotes\"\xba\x01\n" +
+	"4UnlockLegacyStewardshipModuleOrRevokeCounselResponse\x12U\n" +
+	"\n" +
+	"governance\x18\x01 \x01(\v25.sttattus.legacy.v1.LegacyCounselFamilyGovernanceViewR\n" +
+	"governance\x12+\n" +
+	"\x11governance_status\x18\x02 \x01(\tR\x10governanceStatus*\xd0\x01\n" +
 	"\rAssetCategory\x12\x1e\n" +
 	"\x1aASSET_CATEGORY_UNSPECIFIED\x10\x00\x12(\n" +
 	"$ASSET_CATEGORY_INTELLECTUAL_PROPERTY\x10\x01\x12'\n" +
@@ -7452,7 +13496,7 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x83,\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xb3\\\n" +
 	"\rLegacyService\x12d\n" +
 	"\rStoreDocument\x12(.sttattus.legacy.v1.StoreDocumentRequest\x1a).sttattus.legacy.v1.StoreDocumentResponse\x12[\n" +
 	"\n" +
@@ -7503,7 +13547,43 @@ const file_sttattus_legacy_v1_legacy_proto_rawDesc = "" +
 	"\x11CreateLegacyShare\x12,.sttattus.legacy.v1.CreateLegacyShareRequest\x1a-.sttattus.legacy.v1.CreateLegacyShareResponse\x12s\n" +
 	"\x12ListMyLegacyShares\x12-.sttattus.legacy.v1.ListMyLegacySharesRequest\x1a..sttattus.legacy.v1.ListMyLegacySharesResponse\x12p\n" +
 	"\x11RevokeLegacyShare\x12,.sttattus.legacy.v1.RevokeLegacyShareRequest\x1a-.sttattus.legacy.v1.RevokeLegacyShareResponse\x12v\n" +
-	"\x13ParseDocumentExpiry\x12..sttattus.legacy.v1.ParseDocumentExpiryRequest\x1a/.sttattus.legacy.v1.ParseDocumentExpiryResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
+	"\x13ParseDocumentExpiry\x12..sttattus.legacy.v1.ParseDocumentExpiryRequest\x1a/.sttattus.legacy.v1.ParseDocumentExpiryResponse\x12\xa0\x01\n" +
+	"!GetLegacyLivingInventoryWorkbench\x12<.sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchRequest\x1a=.sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse\x12\x9a\x01\n" +
+	"\x1fSaveLegacyLivingEstateInventory\x12:.sttattus.legacy.v1.SaveLegacyLivingEstateInventoryRequest\x1a;.sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse\x12\x9d\x01\n" +
+	" SignOffLegacyQuarterlyPlanReview\x12;.sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewRequest\x1a<.sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse\x12\xa9\x01\n" +
+	"$GetLegacyLifeEventAlignmentWorkbench\x12?.sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchRequest\x1a@.sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse\x12\x91\x01\n" +
+	"\x1cSaveLegacyLifeEventAlignment\x127.sttattus.legacy.v1.SaveLegacyLifeEventAlignmentRequest\x1a8.sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse\x12\xb5\x01\n" +
+	"(VerifyLegacyAlignmentInstitutionEvidence\x12C.sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceRequest\x1aD.sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse\x12\xac\x01\n" +
+	"%GetLegacySecureDocumentVaultWorkbench\x12@.sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchRequest\x1aA.sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse\x12\x94\x01\n" +
+	"\x1dSaveLegacySecureDocumentVault\x128.sttattus.legacy.v1.SaveLegacySecureDocumentVaultRequest\x1a9.sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse\x12\xa0\x01\n" +
+	"!LockOrExportLegacyDocumentCustody\x12<.sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyRequest\x1a=.sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse\x12\xaf\x01\n" +
+	"&GetLegacyJurisdictionDocumentWorkbench\x12A.sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchRequest\x1aB.sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse\x12\xa9\x01\n" +
+	"$SaveLegacyJurisdictionDocumentSystem\x12?.sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemRequest\x1a@.sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse\x12\xb8\x01\n" +
+	")TriggerLegacyCounselReviewOrLockExecution\x12D.sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionRequest\x1aE.sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse\x12\xa9\x01\n" +
+	"$GetLegacyContinuityPlaybookWorkbench\x12?.sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchRequest\x1a@.sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse\x12\xac\x01\n" +
+	"%SaveLegacyHouseholdBusinessContinuity\x12@.sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityRequest\x1aA.sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse\x12\xb8\x01\n" +
+	")RunLegacyContinuityDrillOrStageDelegation\x12D.sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationRequest\x1aE.sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse\x12\xa6\x01\n" +
+	"#GetLegacyIncapacityDeadmanWorkbench\x12>.sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchRequest\x1a?.sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse\x12\xa6\x01\n" +
+	"#SaveLegacyIncapacityDeadmanProtocol\x12>.sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolRequest\x1a?.sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse\x12\xa9\x01\n" +
+	"$SimulateOrCancelLegacyDeadmanRelease\x12?.sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseRequest\x1a@.sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse\x12\xa6\x01\n" +
+	"#GetLegacyExecutorWorkspaceWorkbench\x12>.sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchRequest\x1a?.sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse\x12\xa3\x01\n" +
+	"\"SaveLegacyExecutorTrusteeWorkspace\x12=.sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceRequest\x1a>.sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse\x12\xbe\x01\n" +
+	"+AdvanceLegacySettlementTaskOrResolveDispute\x12F.sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeRequest\x1aG.sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse\x12\xaf\x01\n" +
+	"&GetLegacySettlementAccountingWorkbench\x12A.sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchRequest\x1aB.sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse\x12\x97\x01\n" +
+	"\x1eSaveLegacySettlementAccounting\x129.sttattus.legacy.v1.SaveLegacySettlementAccountingRequest\x1a:.sttattus.legacy.v1.SaveLegacySettlementAccountingResponse\x12\xa6\x01\n" +
+	"#LockOrReverseLegacyAccountingPeriod\x12>.sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodRequest\x1a?.sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse\x12\xa0\x01\n" +
+	"!GetLegacyDigitalRecoveryWorkbench\x12<.sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchRequest\x1a=.sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse\x12\xa3\x01\n" +
+	"\"SaveLegacyDigitalThresholdRecovery\x12=.sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryRequest\x1a>.sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse\x12\xc4\x01\n" +
+	"-RunLegacyThresholdCeremonyDryRunOrRotateShare\x12H.sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest\x1aI.sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse\x12\xa0\x01\n" +
+	"!GetLegacyHeritageArchiveWorkbench\x12<.sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchRequest\x1a=.sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse\x12\xac\x01\n" +
+	"%SaveLegacyHeritagePreservationArchive\x12@.sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveRequest\x1aA.sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse\x12\xb8\x01\n" +
+	")VerifyLegacyArchiveFixityOrPreviewTrigger\x12D.sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerRequest\x1aE.sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse\x12\xa9\x01\n" +
+	"$GetLegacyLiquidityReadinessWorkbench\x12?.sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchRequest\x1a@.sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse\x12\xac\x01\n" +
+	"%SaveLegacyLiquidityInsuranceReadiness\x12@.sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessRequest\x1aA.sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse\x12\xb2\x01\n" +
+	"'StressTestLegacyLiquidityOrRouteCounsel\x12B.sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselRequest\x1aC.sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse\x12\xa6\x01\n" +
+	"#GetLegacyCounselGovernanceWorkbench\x12>.sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchRequest\x1a?.sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse\x12\xa0\x01\n" +
+	"!SaveLegacyCounselFamilyGovernance\x12<.sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceRequest\x1a=.sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse\x12\xc1\x01\n" +
+	",UnlockLegacyStewardshipModuleOrRevokeCounsel\x12G.sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselRequest\x1aH.sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponseB>Z<github.com/sttattus/proto/gen/go/sttattus/legacy/v1;legacyv1b\x06proto3"
 
 var (
 	file_sttattus_legacy_v1_legacy_proto_rawDescOnce sync.Once
@@ -7518,141 +13598,225 @@ func file_sttattus_legacy_v1_legacy_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_legacy_v1_legacy_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 124)
+var file_sttattus_legacy_v1_legacy_proto_msgTypes = make([]protoimpl.MessageInfo, 208)
 var file_sttattus_legacy_v1_legacy_proto_goTypes = []any{
-	(AssetCategory)(0),                       // 0: sttattus.legacy.v1.AssetCategory
-	(VerificationStatus)(0),                  // 1: sttattus.legacy.v1.VerificationStatus
-	(*LegalAsset)(nil),                       // 2: sttattus.legacy.v1.LegalAsset
-	(*HeritageStats)(nil),                    // 3: sttattus.legacy.v1.HeritageStats
-	(*StoreDocumentRequest)(nil),             // 4: sttattus.legacy.v1.StoreDocumentRequest
-	(*StoreDocumentResponse)(nil),            // 5: sttattus.legacy.v1.StoreDocumentResponse
-	(*GetHeritageStatsRequest)(nil),          // 6: sttattus.legacy.v1.GetHeritageStatsRequest
-	(*GetHeritageStatsResponse)(nil),         // 7: sttattus.legacy.v1.GetHeritageStatsResponse
-	(*ListAssetsRequest)(nil),                // 8: sttattus.legacy.v1.ListAssetsRequest
-	(*ListAssetsResponse)(nil),               // 9: sttattus.legacy.v1.ListAssetsResponse
-	(*AssetVersion)(nil),                     // 10: sttattus.legacy.v1.AssetVersion
-	(*RecordAssetVersionRequest)(nil),        // 11: sttattus.legacy.v1.RecordAssetVersionRequest
-	(*RecordAssetVersionResponse)(nil),       // 12: sttattus.legacy.v1.RecordAssetVersionResponse
-	(*ListAssetVersionsRequest)(nil),         // 13: sttattus.legacy.v1.ListAssetVersionsRequest
-	(*ListAssetVersionsResponse)(nil),        // 14: sttattus.legacy.v1.ListAssetVersionsResponse
-	(*LegacyCategory)(nil),                   // 15: sttattus.legacy.v1.LegacyCategory
-	(*ListLegacyCategoriesRequest)(nil),      // 16: sttattus.legacy.v1.ListLegacyCategoriesRequest
-	(*ListLegacyCategoriesResponse)(nil),     // 17: sttattus.legacy.v1.ListLegacyCategoriesResponse
-	(*AssignAssetCategoryRequest)(nil),       // 18: sttattus.legacy.v1.AssignAssetCategoryRequest
-	(*AssignAssetCategoryResponse)(nil),      // 19: sttattus.legacy.v1.AssignAssetCategoryResponse
-	(*UnassignAssetCategoryRequest)(nil),     // 20: sttattus.legacy.v1.UnassignAssetCategoryRequest
-	(*UnassignAssetCategoryResponse)(nil),    // 21: sttattus.legacy.v1.UnassignAssetCategoryResponse
-	(*ListAssetCategoriesRequest)(nil),       // 22: sttattus.legacy.v1.ListAssetCategoriesRequest
-	(*ListAssetCategoriesResponse)(nil),      // 23: sttattus.legacy.v1.ListAssetCategoriesResponse
-	(*EncryptedBlobMetadata)(nil),            // 24: sttattus.legacy.v1.EncryptedBlobMetadata
-	(*EncryptedBlob)(nil),                    // 25: sttattus.legacy.v1.EncryptedBlob
-	(*StoreEncryptedBlobRequest)(nil),        // 26: sttattus.legacy.v1.StoreEncryptedBlobRequest
-	(*StoreEncryptedBlobResponse)(nil),       // 27: sttattus.legacy.v1.StoreEncryptedBlobResponse
-	(*GetEncryptedBlobRequest)(nil),          // 28: sttattus.legacy.v1.GetEncryptedBlobRequest
-	(*GetEncryptedBlobResponse)(nil),         // 29: sttattus.legacy.v1.GetEncryptedBlobResponse
-	(*ListMyEncryptedBlobsRequest)(nil),      // 30: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	(*ListMyEncryptedBlobsResponse)(nil),     // 31: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	(*RecoveryShare)(nil),                    // 32: sttattus.legacy.v1.RecoveryShare
-	(*StoreRecoveryShareRequest)(nil),        // 33: sttattus.legacy.v1.StoreRecoveryShareRequest
-	(*StoreRecoveryShareResponse)(nil),       // 34: sttattus.legacy.v1.StoreRecoveryShareResponse
-	(*ListMyRecoverySharesRequest)(nil),      // 35: sttattus.legacy.v1.ListMyRecoverySharesRequest
-	(*ListMyRecoverySharesResponse)(nil),     // 36: sttattus.legacy.v1.ListMyRecoverySharesResponse
-	(*DeleteRecoveryShareRequest)(nil),       // 37: sttattus.legacy.v1.DeleteRecoveryShareRequest
-	(*DeleteRecoveryShareResponse)(nil),      // 38: sttattus.legacy.v1.DeleteRecoveryShareResponse
-	(*ReadinessComponent)(nil),               // 39: sttattus.legacy.v1.ReadinessComponent
-	(*EstateReadiness)(nil),                  // 40: sttattus.legacy.v1.EstateReadiness
-	(*GetEstateReadinessRequest)(nil),        // 41: sttattus.legacy.v1.GetEstateReadinessRequest
-	(*GetEstateReadinessResponse)(nil),       // 42: sttattus.legacy.v1.GetEstateReadinessResponse
-	(*Beneficiary)(nil),                      // 43: sttattus.legacy.v1.Beneficiary
-	(*ListMyBeneficiariesRequest)(nil),       // 44: sttattus.legacy.v1.ListMyBeneficiariesRequest
-	(*ListMyBeneficiariesResponse)(nil),      // 45: sttattus.legacy.v1.ListMyBeneficiariesResponse
-	(*AddBeneficiaryRequest)(nil),            // 46: sttattus.legacy.v1.AddBeneficiaryRequest
-	(*AddBeneficiaryResponse)(nil),           // 47: sttattus.legacy.v1.AddBeneficiaryResponse
-	(*RemoveBeneficiaryRequest)(nil),         // 48: sttattus.legacy.v1.RemoveBeneficiaryRequest
-	(*RemoveBeneficiaryResponse)(nil),        // 49: sttattus.legacy.v1.RemoveBeneficiaryResponse
-	(*DeadManSwitch)(nil),                    // 50: sttattus.legacy.v1.DeadManSwitch
-	(*GetDeadManSwitchRequest)(nil),          // 51: sttattus.legacy.v1.GetDeadManSwitchRequest
-	(*GetDeadManSwitchResponse)(nil),         // 52: sttattus.legacy.v1.GetDeadManSwitchResponse
-	(*ConfigureDeadManSwitchRequest)(nil),    // 53: sttattus.legacy.v1.ConfigureDeadManSwitchRequest
-	(*ConfigureDeadManSwitchResponse)(nil),   // 54: sttattus.legacy.v1.ConfigureDeadManSwitchResponse
-	(*CheckInDeadManSwitchRequest)(nil),      // 55: sttattus.legacy.v1.CheckInDeadManSwitchRequest
-	(*CheckInDeadManSwitchResponse)(nil),     // 56: sttattus.legacy.v1.CheckInDeadManSwitchResponse
-	(*Anchor)(nil),                           // 57: sttattus.legacy.v1.Anchor
-	(*CreateAnchorRequest)(nil),              // 58: sttattus.legacy.v1.CreateAnchorRequest
-	(*CreateAnchorResponse)(nil),             // 59: sttattus.legacy.v1.CreateAnchorResponse
-	(*ListMyAnchorsRequest)(nil),             // 60: sttattus.legacy.v1.ListMyAnchorsRequest
-	(*ListMyAnchorsResponse)(nil),            // 61: sttattus.legacy.v1.ListMyAnchorsResponse
-	(*Lawyer)(nil),                           // 62: sttattus.legacy.v1.Lawyer
-	(*ListLawyersRequest)(nil),               // 63: sttattus.legacy.v1.ListLawyersRequest
-	(*ListLawyersResponse)(nil),              // 64: sttattus.legacy.v1.ListLawyersResponse
-	(*Notary)(nil),                           // 65: sttattus.legacy.v1.Notary
-	(*ListNotariesRequest)(nil),              // 66: sttattus.legacy.v1.ListNotariesRequest
-	(*ListNotariesResponse)(nil),             // 67: sttattus.legacy.v1.ListNotariesResponse
-	(*TemplateField)(nil),                    // 68: sttattus.legacy.v1.TemplateField
-	(*DocumentTemplate)(nil),                 // 69: sttattus.legacy.v1.DocumentTemplate
-	(*ListTemplatesRequest)(nil),             // 70: sttattus.legacy.v1.ListTemplatesRequest
-	(*ListTemplatesResponse)(nil),            // 71: sttattus.legacy.v1.ListTemplatesResponse
-	(*GetTemplateRequest)(nil),               // 72: sttattus.legacy.v1.GetTemplateRequest
-	(*GetTemplateResponse)(nil),              // 73: sttattus.legacy.v1.GetTemplateResponse
-	(*GeneratedDocument)(nil),                // 74: sttattus.legacy.v1.GeneratedDocument
-	(*GenerateDocumentRequest)(nil),          // 75: sttattus.legacy.v1.GenerateDocumentRequest
-	(*GenerateDocumentResponse)(nil),         // 76: sttattus.legacy.v1.GenerateDocumentResponse
-	(*ListMyGeneratedDocumentsRequest)(nil),  // 77: sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
-	(*ListMyGeneratedDocumentsResponse)(nil), // 78: sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
-	(*Handoff)(nil),                          // 79: sttattus.legacy.v1.Handoff
-	(*ListMyHandoffsRequest)(nil),            // 80: sttattus.legacy.v1.ListMyHandoffsRequest
-	(*ListMyHandoffsResponse)(nil),           // 81: sttattus.legacy.v1.ListMyHandoffsResponse
-	(*AcceptHandoffRequest)(nil),             // 82: sttattus.legacy.v1.AcceptHandoffRequest
-	(*AcceptHandoffResponse)(nil),            // 83: sttattus.legacy.v1.AcceptHandoffResponse
-	(*DismissHandoffRequest)(nil),            // 84: sttattus.legacy.v1.DismissHandoffRequest
-	(*DismissHandoffResponse)(nil),           // 85: sttattus.legacy.v1.DismissHandoffResponse
-	(*EstateSummary)(nil),                    // 86: sttattus.legacy.v1.EstateSummary
-	(*GetEstateSummaryRequest)(nil),          // 87: sttattus.legacy.v1.GetEstateSummaryRequest
-	(*GetEstateSummaryResponse)(nil),         // 88: sttattus.legacy.v1.GetEstateSummaryResponse
-	(*ConciergeMessage)(nil),                 // 89: sttattus.legacy.v1.ConciergeMessage
-	(*ConciergeThread)(nil),                  // 90: sttattus.legacy.v1.ConciergeThread
-	(*StartConciergeThreadRequest)(nil),      // 91: sttattus.legacy.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),     // 92: sttattus.legacy.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),    // 93: sttattus.legacy.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),   // 94: sttattus.legacy.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),        // 95: sttattus.legacy.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),       // 96: sttattus.legacy.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),      // 97: sttattus.legacy.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),     // 98: sttattus.legacy.v1.PostConciergeMessageResponse
-	(*AnthologyArticle)(nil),                 // 99: sttattus.legacy.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),     // 100: sttattus.legacy.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),    // 101: sttattus.legacy.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),       // 102: sttattus.legacy.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),      // 103: sttattus.legacy.v1.GetAnthologyArticleResponse
-	(*LetterOfWishes)(nil),                   // 104: sttattus.legacy.v1.LetterOfWishes
-	(*AddLetterOfWishesRequest)(nil),         // 105: sttattus.legacy.v1.AddLetterOfWishesRequest
-	(*AddLetterOfWishesResponse)(nil),        // 106: sttattus.legacy.v1.AddLetterOfWishesResponse
-	(*ListMyLettersOfWishesRequest)(nil),     // 107: sttattus.legacy.v1.ListMyLettersOfWishesRequest
-	(*ListMyLettersOfWishesResponse)(nil),    // 108: sttattus.legacy.v1.ListMyLettersOfWishesResponse
-	(*RemoveLetterOfWishesRequest)(nil),      // 109: sttattus.legacy.v1.RemoveLetterOfWishesRequest
-	(*RemoveLetterOfWishesResponse)(nil),     // 110: sttattus.legacy.v1.RemoveLetterOfWishesResponse
-	(*GenerateLegacyAlmanacRequest)(nil),     // 111: sttattus.legacy.v1.GenerateLegacyAlmanacRequest
-	(*GenerateLegacyAlmanacResponse)(nil),    // 112: sttattus.legacy.v1.GenerateLegacyAlmanacResponse
-	(*IpAsset)(nil),                          // 113: sttattus.legacy.v1.IpAsset
-	(*ListIpPortfolioRequest)(nil),           // 114: sttattus.legacy.v1.ListIpPortfolioRequest
-	(*ListIpPortfolioResponse)(nil),          // 115: sttattus.legacy.v1.ListIpPortfolioResponse
-	(*LegacyShare)(nil),                      // 116: sttattus.legacy.v1.LegacyShare
-	(*CreateLegacyShareRequest)(nil),         // 117: sttattus.legacy.v1.CreateLegacyShareRequest
-	(*CreateLegacyShareResponse)(nil),        // 118: sttattus.legacy.v1.CreateLegacyShareResponse
-	(*ListMyLegacySharesRequest)(nil),        // 119: sttattus.legacy.v1.ListMyLegacySharesRequest
-	(*ListMyLegacySharesResponse)(nil),       // 120: sttattus.legacy.v1.ListMyLegacySharesResponse
-	(*RevokeLegacyShareRequest)(nil),         // 121: sttattus.legacy.v1.RevokeLegacyShareRequest
-	(*RevokeLegacyShareResponse)(nil),        // 122: sttattus.legacy.v1.RevokeLegacyShareResponse
-	(*ParseDocumentExpiryRequest)(nil),       // 123: sttattus.legacy.v1.ParseDocumentExpiryRequest
-	(*ParseDocumentExpiryResponse)(nil),      // 124: sttattus.legacy.v1.ParseDocumentExpiryResponse
-	nil,                                      // 125: sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
-	(*timestamppb.Timestamp)(nil),            // 126: google.protobuf.Timestamp
+	(AssetCategory)(0),                                            // 0: sttattus.legacy.v1.AssetCategory
+	(VerificationStatus)(0),                                       // 1: sttattus.legacy.v1.VerificationStatus
+	(*LegalAsset)(nil),                                            // 2: sttattus.legacy.v1.LegalAsset
+	(*HeritageStats)(nil),                                         // 3: sttattus.legacy.v1.HeritageStats
+	(*StoreDocumentRequest)(nil),                                  // 4: sttattus.legacy.v1.StoreDocumentRequest
+	(*StoreDocumentResponse)(nil),                                 // 5: sttattus.legacy.v1.StoreDocumentResponse
+	(*GetHeritageStatsRequest)(nil),                               // 6: sttattus.legacy.v1.GetHeritageStatsRequest
+	(*GetHeritageStatsResponse)(nil),                              // 7: sttattus.legacy.v1.GetHeritageStatsResponse
+	(*ListAssetsRequest)(nil),                                     // 8: sttattus.legacy.v1.ListAssetsRequest
+	(*ListAssetsResponse)(nil),                                    // 9: sttattus.legacy.v1.ListAssetsResponse
+	(*AssetVersion)(nil),                                          // 10: sttattus.legacy.v1.AssetVersion
+	(*RecordAssetVersionRequest)(nil),                             // 11: sttattus.legacy.v1.RecordAssetVersionRequest
+	(*RecordAssetVersionResponse)(nil),                            // 12: sttattus.legacy.v1.RecordAssetVersionResponse
+	(*ListAssetVersionsRequest)(nil),                              // 13: sttattus.legacy.v1.ListAssetVersionsRequest
+	(*ListAssetVersionsResponse)(nil),                             // 14: sttattus.legacy.v1.ListAssetVersionsResponse
+	(*LegacyCategory)(nil),                                        // 15: sttattus.legacy.v1.LegacyCategory
+	(*ListLegacyCategoriesRequest)(nil),                           // 16: sttattus.legacy.v1.ListLegacyCategoriesRequest
+	(*ListLegacyCategoriesResponse)(nil),                          // 17: sttattus.legacy.v1.ListLegacyCategoriesResponse
+	(*AssignAssetCategoryRequest)(nil),                            // 18: sttattus.legacy.v1.AssignAssetCategoryRequest
+	(*AssignAssetCategoryResponse)(nil),                           // 19: sttattus.legacy.v1.AssignAssetCategoryResponse
+	(*UnassignAssetCategoryRequest)(nil),                          // 20: sttattus.legacy.v1.UnassignAssetCategoryRequest
+	(*UnassignAssetCategoryResponse)(nil),                         // 21: sttattus.legacy.v1.UnassignAssetCategoryResponse
+	(*ListAssetCategoriesRequest)(nil),                            // 22: sttattus.legacy.v1.ListAssetCategoriesRequest
+	(*ListAssetCategoriesResponse)(nil),                           // 23: sttattus.legacy.v1.ListAssetCategoriesResponse
+	(*EncryptedBlobMetadata)(nil),                                 // 24: sttattus.legacy.v1.EncryptedBlobMetadata
+	(*EncryptedBlob)(nil),                                         // 25: sttattus.legacy.v1.EncryptedBlob
+	(*StoreEncryptedBlobRequest)(nil),                             // 26: sttattus.legacy.v1.StoreEncryptedBlobRequest
+	(*StoreEncryptedBlobResponse)(nil),                            // 27: sttattus.legacy.v1.StoreEncryptedBlobResponse
+	(*GetEncryptedBlobRequest)(nil),                               // 28: sttattus.legacy.v1.GetEncryptedBlobRequest
+	(*GetEncryptedBlobResponse)(nil),                              // 29: sttattus.legacy.v1.GetEncryptedBlobResponse
+	(*ListMyEncryptedBlobsRequest)(nil),                           // 30: sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	(*ListMyEncryptedBlobsResponse)(nil),                          // 31: sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	(*RecoveryShare)(nil),                                         // 32: sttattus.legacy.v1.RecoveryShare
+	(*StoreRecoveryShareRequest)(nil),                             // 33: sttattus.legacy.v1.StoreRecoveryShareRequest
+	(*StoreRecoveryShareResponse)(nil),                            // 34: sttattus.legacy.v1.StoreRecoveryShareResponse
+	(*ListMyRecoverySharesRequest)(nil),                           // 35: sttattus.legacy.v1.ListMyRecoverySharesRequest
+	(*ListMyRecoverySharesResponse)(nil),                          // 36: sttattus.legacy.v1.ListMyRecoverySharesResponse
+	(*DeleteRecoveryShareRequest)(nil),                            // 37: sttattus.legacy.v1.DeleteRecoveryShareRequest
+	(*DeleteRecoveryShareResponse)(nil),                           // 38: sttattus.legacy.v1.DeleteRecoveryShareResponse
+	(*ReadinessComponent)(nil),                                    // 39: sttattus.legacy.v1.ReadinessComponent
+	(*EstateReadiness)(nil),                                       // 40: sttattus.legacy.v1.EstateReadiness
+	(*GetEstateReadinessRequest)(nil),                             // 41: sttattus.legacy.v1.GetEstateReadinessRequest
+	(*GetEstateReadinessResponse)(nil),                            // 42: sttattus.legacy.v1.GetEstateReadinessResponse
+	(*Beneficiary)(nil),                                           // 43: sttattus.legacy.v1.Beneficiary
+	(*ListMyBeneficiariesRequest)(nil),                            // 44: sttattus.legacy.v1.ListMyBeneficiariesRequest
+	(*ListMyBeneficiariesResponse)(nil),                           // 45: sttattus.legacy.v1.ListMyBeneficiariesResponse
+	(*AddBeneficiaryRequest)(nil),                                 // 46: sttattus.legacy.v1.AddBeneficiaryRequest
+	(*AddBeneficiaryResponse)(nil),                                // 47: sttattus.legacy.v1.AddBeneficiaryResponse
+	(*RemoveBeneficiaryRequest)(nil),                              // 48: sttattus.legacy.v1.RemoveBeneficiaryRequest
+	(*RemoveBeneficiaryResponse)(nil),                             // 49: sttattus.legacy.v1.RemoveBeneficiaryResponse
+	(*DeadManSwitch)(nil),                                         // 50: sttattus.legacy.v1.DeadManSwitch
+	(*GetDeadManSwitchRequest)(nil),                               // 51: sttattus.legacy.v1.GetDeadManSwitchRequest
+	(*GetDeadManSwitchResponse)(nil),                              // 52: sttattus.legacy.v1.GetDeadManSwitchResponse
+	(*ConfigureDeadManSwitchRequest)(nil),                         // 53: sttattus.legacy.v1.ConfigureDeadManSwitchRequest
+	(*ConfigureDeadManSwitchResponse)(nil),                        // 54: sttattus.legacy.v1.ConfigureDeadManSwitchResponse
+	(*CheckInDeadManSwitchRequest)(nil),                           // 55: sttattus.legacy.v1.CheckInDeadManSwitchRequest
+	(*CheckInDeadManSwitchResponse)(nil),                          // 56: sttattus.legacy.v1.CheckInDeadManSwitchResponse
+	(*Anchor)(nil),                                                // 57: sttattus.legacy.v1.Anchor
+	(*CreateAnchorRequest)(nil),                                   // 58: sttattus.legacy.v1.CreateAnchorRequest
+	(*CreateAnchorResponse)(nil),                                  // 59: sttattus.legacy.v1.CreateAnchorResponse
+	(*ListMyAnchorsRequest)(nil),                                  // 60: sttattus.legacy.v1.ListMyAnchorsRequest
+	(*ListMyAnchorsResponse)(nil),                                 // 61: sttattus.legacy.v1.ListMyAnchorsResponse
+	(*Lawyer)(nil),                                                // 62: sttattus.legacy.v1.Lawyer
+	(*ListLawyersRequest)(nil),                                    // 63: sttattus.legacy.v1.ListLawyersRequest
+	(*ListLawyersResponse)(nil),                                   // 64: sttattus.legacy.v1.ListLawyersResponse
+	(*Notary)(nil),                                                // 65: sttattus.legacy.v1.Notary
+	(*ListNotariesRequest)(nil),                                   // 66: sttattus.legacy.v1.ListNotariesRequest
+	(*ListNotariesResponse)(nil),                                  // 67: sttattus.legacy.v1.ListNotariesResponse
+	(*TemplateField)(nil),                                         // 68: sttattus.legacy.v1.TemplateField
+	(*DocumentTemplate)(nil),                                      // 69: sttattus.legacy.v1.DocumentTemplate
+	(*ListTemplatesRequest)(nil),                                  // 70: sttattus.legacy.v1.ListTemplatesRequest
+	(*ListTemplatesResponse)(nil),                                 // 71: sttattus.legacy.v1.ListTemplatesResponse
+	(*GetTemplateRequest)(nil),                                    // 72: sttattus.legacy.v1.GetTemplateRequest
+	(*GetTemplateResponse)(nil),                                   // 73: sttattus.legacy.v1.GetTemplateResponse
+	(*GeneratedDocument)(nil),                                     // 74: sttattus.legacy.v1.GeneratedDocument
+	(*GenerateDocumentRequest)(nil),                               // 75: sttattus.legacy.v1.GenerateDocumentRequest
+	(*GenerateDocumentResponse)(nil),                              // 76: sttattus.legacy.v1.GenerateDocumentResponse
+	(*ListMyGeneratedDocumentsRequest)(nil),                       // 77: sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
+	(*ListMyGeneratedDocumentsResponse)(nil),                      // 78: sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
+	(*Handoff)(nil),                                               // 79: sttattus.legacy.v1.Handoff
+	(*ListMyHandoffsRequest)(nil),                                 // 80: sttattus.legacy.v1.ListMyHandoffsRequest
+	(*ListMyHandoffsResponse)(nil),                                // 81: sttattus.legacy.v1.ListMyHandoffsResponse
+	(*AcceptHandoffRequest)(nil),                                  // 82: sttattus.legacy.v1.AcceptHandoffRequest
+	(*AcceptHandoffResponse)(nil),                                 // 83: sttattus.legacy.v1.AcceptHandoffResponse
+	(*DismissHandoffRequest)(nil),                                 // 84: sttattus.legacy.v1.DismissHandoffRequest
+	(*DismissHandoffResponse)(nil),                                // 85: sttattus.legacy.v1.DismissHandoffResponse
+	(*EstateSummary)(nil),                                         // 86: sttattus.legacy.v1.EstateSummary
+	(*GetEstateSummaryRequest)(nil),                               // 87: sttattus.legacy.v1.GetEstateSummaryRequest
+	(*GetEstateSummaryResponse)(nil),                              // 88: sttattus.legacy.v1.GetEstateSummaryResponse
+	(*ConciergeMessage)(nil),                                      // 89: sttattus.legacy.v1.ConciergeMessage
+	(*ConciergeThread)(nil),                                       // 90: sttattus.legacy.v1.ConciergeThread
+	(*StartConciergeThreadRequest)(nil),                           // 91: sttattus.legacy.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                          // 92: sttattus.legacy.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                         // 93: sttattus.legacy.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),                        // 94: sttattus.legacy.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                             // 95: sttattus.legacy.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                            // 96: sttattus.legacy.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                           // 97: sttattus.legacy.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                          // 98: sttattus.legacy.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                                      // 99: sttattus.legacy.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                          // 100: sttattus.legacy.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                         // 101: sttattus.legacy.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                            // 102: sttattus.legacy.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                           // 103: sttattus.legacy.v1.GetAnthologyArticleResponse
+	(*LetterOfWishes)(nil),                                        // 104: sttattus.legacy.v1.LetterOfWishes
+	(*AddLetterOfWishesRequest)(nil),                              // 105: sttattus.legacy.v1.AddLetterOfWishesRequest
+	(*AddLetterOfWishesResponse)(nil),                             // 106: sttattus.legacy.v1.AddLetterOfWishesResponse
+	(*ListMyLettersOfWishesRequest)(nil),                          // 107: sttattus.legacy.v1.ListMyLettersOfWishesRequest
+	(*ListMyLettersOfWishesResponse)(nil),                         // 108: sttattus.legacy.v1.ListMyLettersOfWishesResponse
+	(*RemoveLetterOfWishesRequest)(nil),                           // 109: sttattus.legacy.v1.RemoveLetterOfWishesRequest
+	(*RemoveLetterOfWishesResponse)(nil),                          // 110: sttattus.legacy.v1.RemoveLetterOfWishesResponse
+	(*GenerateLegacyAlmanacRequest)(nil),                          // 111: sttattus.legacy.v1.GenerateLegacyAlmanacRequest
+	(*GenerateLegacyAlmanacResponse)(nil),                         // 112: sttattus.legacy.v1.GenerateLegacyAlmanacResponse
+	(*IpAsset)(nil),                                               // 113: sttattus.legacy.v1.IpAsset
+	(*ListIpPortfolioRequest)(nil),                                // 114: sttattus.legacy.v1.ListIpPortfolioRequest
+	(*ListIpPortfolioResponse)(nil),                               // 115: sttattus.legacy.v1.ListIpPortfolioResponse
+	(*LegacyShare)(nil),                                           // 116: sttattus.legacy.v1.LegacyShare
+	(*CreateLegacyShareRequest)(nil),                              // 117: sttattus.legacy.v1.CreateLegacyShareRequest
+	(*CreateLegacyShareResponse)(nil),                             // 118: sttattus.legacy.v1.CreateLegacyShareResponse
+	(*ListMyLegacySharesRequest)(nil),                             // 119: sttattus.legacy.v1.ListMyLegacySharesRequest
+	(*ListMyLegacySharesResponse)(nil),                            // 120: sttattus.legacy.v1.ListMyLegacySharesResponse
+	(*RevokeLegacyShareRequest)(nil),                              // 121: sttattus.legacy.v1.RevokeLegacyShareRequest
+	(*RevokeLegacyShareResponse)(nil),                             // 122: sttattus.legacy.v1.RevokeLegacyShareResponse
+	(*ParseDocumentExpiryRequest)(nil),                            // 123: sttattus.legacy.v1.ParseDocumentExpiryRequest
+	(*ParseDocumentExpiryResponse)(nil),                           // 124: sttattus.legacy.v1.ParseDocumentExpiryResponse
+	(*LegacyLivingEstateInventoryView)(nil),                       // 125: sttattus.legacy.v1.LegacyLivingEstateInventoryView
+	(*GetLegacyLivingInventoryWorkbenchRequest)(nil),              // 126: sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchRequest
+	(*GetLegacyLivingInventoryWorkbenchResponse)(nil),             // 127: sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse
+	(*SaveLegacyLivingEstateInventoryRequest)(nil),                // 128: sttattus.legacy.v1.SaveLegacyLivingEstateInventoryRequest
+	(*SaveLegacyLivingEstateInventoryResponse)(nil),               // 129: sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse
+	(*SignOffLegacyQuarterlyPlanReviewRequest)(nil),               // 130: sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewRequest
+	(*SignOffLegacyQuarterlyPlanReviewResponse)(nil),              // 131: sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse
+	(*LegacyLifeEventAlignmentView)(nil),                          // 132: sttattus.legacy.v1.LegacyLifeEventAlignmentView
+	(*GetLegacyLifeEventAlignmentWorkbenchRequest)(nil),           // 133: sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchRequest
+	(*GetLegacyLifeEventAlignmentWorkbenchResponse)(nil),          // 134: sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse
+	(*SaveLegacyLifeEventAlignmentRequest)(nil),                   // 135: sttattus.legacy.v1.SaveLegacyLifeEventAlignmentRequest
+	(*SaveLegacyLifeEventAlignmentResponse)(nil),                  // 136: sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse
+	(*VerifyLegacyAlignmentInstitutionEvidenceRequest)(nil),       // 137: sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceRequest
+	(*VerifyLegacyAlignmentInstitutionEvidenceResponse)(nil),      // 138: sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse
+	(*LegacySecureDocumentVaultView)(nil),                         // 139: sttattus.legacy.v1.LegacySecureDocumentVaultView
+	(*GetLegacySecureDocumentVaultWorkbenchRequest)(nil),          // 140: sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchRequest
+	(*GetLegacySecureDocumentVaultWorkbenchResponse)(nil),         // 141: sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse
+	(*SaveLegacySecureDocumentVaultRequest)(nil),                  // 142: sttattus.legacy.v1.SaveLegacySecureDocumentVaultRequest
+	(*SaveLegacySecureDocumentVaultResponse)(nil),                 // 143: sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse
+	(*LockOrExportLegacyDocumentCustodyRequest)(nil),              // 144: sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyRequest
+	(*LockOrExportLegacyDocumentCustodyResponse)(nil),             // 145: sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse
+	(*LegacyJurisdictionDocumentSystemView)(nil),                  // 146: sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView
+	(*GetLegacyJurisdictionDocumentWorkbenchRequest)(nil),         // 147: sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchRequest
+	(*GetLegacyJurisdictionDocumentWorkbenchResponse)(nil),        // 148: sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse
+	(*SaveLegacyJurisdictionDocumentSystemRequest)(nil),           // 149: sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemRequest
+	(*SaveLegacyJurisdictionDocumentSystemResponse)(nil),          // 150: sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse
+	(*TriggerLegacyCounselReviewOrLockExecutionRequest)(nil),      // 151: sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionRequest
+	(*TriggerLegacyCounselReviewOrLockExecutionResponse)(nil),     // 152: sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse
+	(*LegacyHouseholdBusinessContinuityView)(nil),                 // 153: sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView
+	(*GetLegacyContinuityPlaybookWorkbenchRequest)(nil),           // 154: sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchRequest
+	(*GetLegacyContinuityPlaybookWorkbenchResponse)(nil),          // 155: sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse
+	(*SaveLegacyHouseholdBusinessContinuityRequest)(nil),          // 156: sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityRequest
+	(*SaveLegacyHouseholdBusinessContinuityResponse)(nil),         // 157: sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse
+	(*RunLegacyContinuityDrillOrStageDelegationRequest)(nil),      // 158: sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationRequest
+	(*RunLegacyContinuityDrillOrStageDelegationResponse)(nil),     // 159: sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse
+	(*LegacyIncapacityDeadmanProtocolView)(nil),                   // 160: sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView
+	(*GetLegacyIncapacityDeadmanWorkbenchRequest)(nil),            // 161: sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchRequest
+	(*GetLegacyIncapacityDeadmanWorkbenchResponse)(nil),           // 162: sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse
+	(*SaveLegacyIncapacityDeadmanProtocolRequest)(nil),            // 163: sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolRequest
+	(*SaveLegacyIncapacityDeadmanProtocolResponse)(nil),           // 164: sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse
+	(*SimulateOrCancelLegacyDeadmanReleaseRequest)(nil),           // 165: sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseRequest
+	(*SimulateOrCancelLegacyDeadmanReleaseResponse)(nil),          // 166: sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse
+	(*LegacyExecutorTrusteeWorkspaceView)(nil),                    // 167: sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView
+	(*GetLegacyExecutorWorkspaceWorkbenchRequest)(nil),            // 168: sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchRequest
+	(*GetLegacyExecutorWorkspaceWorkbenchResponse)(nil),           // 169: sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse
+	(*SaveLegacyExecutorTrusteeWorkspaceRequest)(nil),             // 170: sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceRequest
+	(*SaveLegacyExecutorTrusteeWorkspaceResponse)(nil),            // 171: sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse
+	(*AdvanceLegacySettlementTaskOrResolveDisputeRequest)(nil),    // 172: sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeRequest
+	(*AdvanceLegacySettlementTaskOrResolveDisputeResponse)(nil),   // 173: sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse
+	(*LegacySettlementAccountingView)(nil),                        // 174: sttattus.legacy.v1.LegacySettlementAccountingView
+	(*GetLegacySettlementAccountingWorkbenchRequest)(nil),         // 175: sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchRequest
+	(*GetLegacySettlementAccountingWorkbenchResponse)(nil),        // 176: sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse
+	(*SaveLegacySettlementAccountingRequest)(nil),                 // 177: sttattus.legacy.v1.SaveLegacySettlementAccountingRequest
+	(*SaveLegacySettlementAccountingResponse)(nil),                // 178: sttattus.legacy.v1.SaveLegacySettlementAccountingResponse
+	(*LockOrReverseLegacyAccountingPeriodRequest)(nil),            // 179: sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodRequest
+	(*LockOrReverseLegacyAccountingPeriodResponse)(nil),           // 180: sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse
+	(*LegacyDigitalThresholdRecoveryView)(nil),                    // 181: sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView
+	(*GetLegacyDigitalRecoveryWorkbenchRequest)(nil),              // 182: sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchRequest
+	(*GetLegacyDigitalRecoveryWorkbenchResponse)(nil),             // 183: sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse
+	(*SaveLegacyDigitalThresholdRecoveryRequest)(nil),             // 184: sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryRequest
+	(*SaveLegacyDigitalThresholdRecoveryResponse)(nil),            // 185: sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse
+	(*RunLegacyThresholdCeremonyDryRunOrRotateShareRequest)(nil),  // 186: sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest
+	(*RunLegacyThresholdCeremonyDryRunOrRotateShareResponse)(nil), // 187: sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse
+	(*LegacyHeritagePreservationArchiveView)(nil),                 // 188: sttattus.legacy.v1.LegacyHeritagePreservationArchiveView
+	(*GetLegacyHeritageArchiveWorkbenchRequest)(nil),              // 189: sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchRequest
+	(*GetLegacyHeritageArchiveWorkbenchResponse)(nil),             // 190: sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse
+	(*SaveLegacyHeritagePreservationArchiveRequest)(nil),          // 191: sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveRequest
+	(*SaveLegacyHeritagePreservationArchiveResponse)(nil),         // 192: sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse
+	(*VerifyLegacyArchiveFixityOrPreviewTriggerRequest)(nil),      // 193: sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerRequest
+	(*VerifyLegacyArchiveFixityOrPreviewTriggerResponse)(nil),     // 194: sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse
+	(*LegacyLiquidityInsuranceReadinessView)(nil),                 // 195: sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView
+	(*GetLegacyLiquidityReadinessWorkbenchRequest)(nil),           // 196: sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchRequest
+	(*GetLegacyLiquidityReadinessWorkbenchResponse)(nil),          // 197: sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse
+	(*SaveLegacyLiquidityInsuranceReadinessRequest)(nil),          // 198: sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessRequest
+	(*SaveLegacyLiquidityInsuranceReadinessResponse)(nil),         // 199: sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse
+	(*StressTestLegacyLiquidityOrRouteCounselRequest)(nil),        // 200: sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselRequest
+	(*StressTestLegacyLiquidityOrRouteCounselResponse)(nil),       // 201: sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse
+	(*LegacyCounselFamilyGovernanceView)(nil),                     // 202: sttattus.legacy.v1.LegacyCounselFamilyGovernanceView
+	(*GetLegacyCounselGovernanceWorkbenchRequest)(nil),            // 203: sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchRequest
+	(*GetLegacyCounselGovernanceWorkbenchResponse)(nil),           // 204: sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse
+	(*SaveLegacyCounselFamilyGovernanceRequest)(nil),              // 205: sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceRequest
+	(*SaveLegacyCounselFamilyGovernanceResponse)(nil),             // 206: sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse
+	(*UnlockLegacyStewardshipModuleOrRevokeCounselRequest)(nil),   // 207: sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselRequest
+	(*UnlockLegacyStewardshipModuleOrRevokeCounselResponse)(nil),  // 208: sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponse
+	nil,                           // 209: sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
+	(*timestamppb.Timestamp)(nil), // 210: google.protobuf.Timestamp
 }
 var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
 	0,   // 0: sttattus.legacy.v1.LegalAsset.category:type_name -> sttattus.legacy.v1.AssetCategory
 	1,   // 1: sttattus.legacy.v1.LegalAsset.status:type_name -> sttattus.legacy.v1.VerificationStatus
-	126, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
-	126, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
+	210, // 2: sttattus.legacy.v1.LegalAsset.filed_at:type_name -> google.protobuf.Timestamp
+	210, // 3: sttattus.legacy.v1.LegalAsset.expires_at:type_name -> google.protobuf.Timestamp
 	0,   // 4: sttattus.legacy.v1.StoreDocumentRequest.category:type_name -> sttattus.legacy.v1.AssetCategory
 	2,   // 5: sttattus.legacy.v1.StoreDocumentResponse.asset:type_name -> sttattus.legacy.v1.LegalAsset
 	3,   // 6: sttattus.legacy.v1.StoreDocumentResponse.stats:type_name -> sttattus.legacy.v1.HeritageStats
@@ -7681,7 +13845,7 @@ var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
 	68,  // 29: sttattus.legacy.v1.DocumentTemplate.fields:type_name -> sttattus.legacy.v1.TemplateField
 	69,  // 30: sttattus.legacy.v1.ListTemplatesResponse.templates:type_name -> sttattus.legacy.v1.DocumentTemplate
 	69,  // 31: sttattus.legacy.v1.GetTemplateResponse.template:type_name -> sttattus.legacy.v1.DocumentTemplate
-	125, // 32: sttattus.legacy.v1.GenerateDocumentRequest.values:type_name -> sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
+	209, // 32: sttattus.legacy.v1.GenerateDocumentRequest.values:type_name -> sttattus.legacy.v1.GenerateDocumentRequest.ValuesEntry
 	74,  // 33: sttattus.legacy.v1.GenerateDocumentResponse.document:type_name -> sttattus.legacy.v1.GeneratedDocument
 	74,  // 34: sttattus.legacy.v1.ListMyGeneratedDocumentsResponse.documents:type_name -> sttattus.legacy.v1.GeneratedDocument
 	0,   // 35: sttattus.legacy.v1.Handoff.category:type_name -> sttattus.legacy.v1.AssetCategory
@@ -7701,109 +13865,217 @@ var file_sttattus_legacy_v1_legacy_proto_depIdxs = []int32{
 	113, // 49: sttattus.legacy.v1.ListIpPortfolioResponse.assets:type_name -> sttattus.legacy.v1.IpAsset
 	116, // 50: sttattus.legacy.v1.CreateLegacyShareResponse.share:type_name -> sttattus.legacy.v1.LegacyShare
 	116, // 51: sttattus.legacy.v1.ListMyLegacySharesResponse.shares:type_name -> sttattus.legacy.v1.LegacyShare
-	4,   // 52: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
-	8,   // 53: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
-	6,   // 54: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
-	26,  // 55: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
-	28,  // 56: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
-	30,  // 57: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
-	33,  // 58: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
-	35,  // 59: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
-	37,  // 60: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
-	16,  // 61: sttattus.legacy.v1.LegacyService.ListLegacyCategories:input_type -> sttattus.legacy.v1.ListLegacyCategoriesRequest
-	18,  // 62: sttattus.legacy.v1.LegacyService.AssignAssetCategory:input_type -> sttattus.legacy.v1.AssignAssetCategoryRequest
-	20,  // 63: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:input_type -> sttattus.legacy.v1.UnassignAssetCategoryRequest
-	22,  // 64: sttattus.legacy.v1.LegacyService.ListAssetCategories:input_type -> sttattus.legacy.v1.ListAssetCategoriesRequest
-	11,  // 65: sttattus.legacy.v1.LegacyService.RecordAssetVersion:input_type -> sttattus.legacy.v1.RecordAssetVersionRequest
-	13,  // 66: sttattus.legacy.v1.LegacyService.ListAssetVersions:input_type -> sttattus.legacy.v1.ListAssetVersionsRequest
-	41,  // 67: sttattus.legacy.v1.LegacyService.GetEstateReadiness:input_type -> sttattus.legacy.v1.GetEstateReadinessRequest
-	44,  // 68: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:input_type -> sttattus.legacy.v1.ListMyBeneficiariesRequest
-	46,  // 69: sttattus.legacy.v1.LegacyService.AddBeneficiary:input_type -> sttattus.legacy.v1.AddBeneficiaryRequest
-	48,  // 70: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:input_type -> sttattus.legacy.v1.RemoveBeneficiaryRequest
-	51,  // 71: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:input_type -> sttattus.legacy.v1.GetDeadManSwitchRequest
-	53,  // 72: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:input_type -> sttattus.legacy.v1.ConfigureDeadManSwitchRequest
-	55,  // 73: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:input_type -> sttattus.legacy.v1.CheckInDeadManSwitchRequest
-	58,  // 74: sttattus.legacy.v1.LegacyService.CreateAnchor:input_type -> sttattus.legacy.v1.CreateAnchorRequest
-	60,  // 75: sttattus.legacy.v1.LegacyService.ListMyAnchors:input_type -> sttattus.legacy.v1.ListMyAnchorsRequest
-	63,  // 76: sttattus.legacy.v1.LegacyService.ListLawyers:input_type -> sttattus.legacy.v1.ListLawyersRequest
-	66,  // 77: sttattus.legacy.v1.LegacyService.ListNotaries:input_type -> sttattus.legacy.v1.ListNotariesRequest
-	70,  // 78: sttattus.legacy.v1.LegacyService.ListTemplates:input_type -> sttattus.legacy.v1.ListTemplatesRequest
-	72,  // 79: sttattus.legacy.v1.LegacyService.GetTemplate:input_type -> sttattus.legacy.v1.GetTemplateRequest
-	75,  // 80: sttattus.legacy.v1.LegacyService.GenerateDocument:input_type -> sttattus.legacy.v1.GenerateDocumentRequest
-	77,  // 81: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:input_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
-	80,  // 82: sttattus.legacy.v1.LegacyService.ListMyHandoffs:input_type -> sttattus.legacy.v1.ListMyHandoffsRequest
-	82,  // 83: sttattus.legacy.v1.LegacyService.AcceptHandoff:input_type -> sttattus.legacy.v1.AcceptHandoffRequest
-	84,  // 84: sttattus.legacy.v1.LegacyService.DismissHandoff:input_type -> sttattus.legacy.v1.DismissHandoffRequest
-	87,  // 85: sttattus.legacy.v1.LegacyService.GetEstateSummary:input_type -> sttattus.legacy.v1.GetEstateSummaryRequest
-	91,  // 86: sttattus.legacy.v1.LegacyService.StartConciergeThread:input_type -> sttattus.legacy.v1.StartConciergeThreadRequest
-	93,  // 87: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:input_type -> sttattus.legacy.v1.ListMyConciergeThreadsRequest
-	95,  // 88: sttattus.legacy.v1.LegacyService.GetConciergeThread:input_type -> sttattus.legacy.v1.GetConciergeThreadRequest
-	97,  // 89: sttattus.legacy.v1.LegacyService.PostConciergeMessage:input_type -> sttattus.legacy.v1.PostConciergeMessageRequest
-	100, // 90: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:input_type -> sttattus.legacy.v1.ListAnthologyArticlesRequest
-	102, // 91: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:input_type -> sttattus.legacy.v1.GetAnthologyArticleRequest
-	105, // 92: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:input_type -> sttattus.legacy.v1.AddLetterOfWishesRequest
-	107, // 93: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:input_type -> sttattus.legacy.v1.ListMyLettersOfWishesRequest
-	109, // 94: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:input_type -> sttattus.legacy.v1.RemoveLetterOfWishesRequest
-	111, // 95: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:input_type -> sttattus.legacy.v1.GenerateLegacyAlmanacRequest
-	114, // 96: sttattus.legacy.v1.LegacyService.ListIpPortfolio:input_type -> sttattus.legacy.v1.ListIpPortfolioRequest
-	117, // 97: sttattus.legacy.v1.LegacyService.CreateLegacyShare:input_type -> sttattus.legacy.v1.CreateLegacyShareRequest
-	119, // 98: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:input_type -> sttattus.legacy.v1.ListMyLegacySharesRequest
-	121, // 99: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:input_type -> sttattus.legacy.v1.RevokeLegacyShareRequest
-	123, // 100: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:input_type -> sttattus.legacy.v1.ParseDocumentExpiryRequest
-	5,   // 101: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
-	9,   // 102: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
-	7,   // 103: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
-	27,  // 104: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
-	29,  // 105: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
-	31,  // 106: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
-	34,  // 107: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
-	36,  // 108: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
-	38,  // 109: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
-	17,  // 110: sttattus.legacy.v1.LegacyService.ListLegacyCategories:output_type -> sttattus.legacy.v1.ListLegacyCategoriesResponse
-	19,  // 111: sttattus.legacy.v1.LegacyService.AssignAssetCategory:output_type -> sttattus.legacy.v1.AssignAssetCategoryResponse
-	21,  // 112: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:output_type -> sttattus.legacy.v1.UnassignAssetCategoryResponse
-	23,  // 113: sttattus.legacy.v1.LegacyService.ListAssetCategories:output_type -> sttattus.legacy.v1.ListAssetCategoriesResponse
-	12,  // 114: sttattus.legacy.v1.LegacyService.RecordAssetVersion:output_type -> sttattus.legacy.v1.RecordAssetVersionResponse
-	14,  // 115: sttattus.legacy.v1.LegacyService.ListAssetVersions:output_type -> sttattus.legacy.v1.ListAssetVersionsResponse
-	42,  // 116: sttattus.legacy.v1.LegacyService.GetEstateReadiness:output_type -> sttattus.legacy.v1.GetEstateReadinessResponse
-	45,  // 117: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:output_type -> sttattus.legacy.v1.ListMyBeneficiariesResponse
-	47,  // 118: sttattus.legacy.v1.LegacyService.AddBeneficiary:output_type -> sttattus.legacy.v1.AddBeneficiaryResponse
-	49,  // 119: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:output_type -> sttattus.legacy.v1.RemoveBeneficiaryResponse
-	52,  // 120: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:output_type -> sttattus.legacy.v1.GetDeadManSwitchResponse
-	54,  // 121: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:output_type -> sttattus.legacy.v1.ConfigureDeadManSwitchResponse
-	56,  // 122: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:output_type -> sttattus.legacy.v1.CheckInDeadManSwitchResponse
-	59,  // 123: sttattus.legacy.v1.LegacyService.CreateAnchor:output_type -> sttattus.legacy.v1.CreateAnchorResponse
-	61,  // 124: sttattus.legacy.v1.LegacyService.ListMyAnchors:output_type -> sttattus.legacy.v1.ListMyAnchorsResponse
-	64,  // 125: sttattus.legacy.v1.LegacyService.ListLawyers:output_type -> sttattus.legacy.v1.ListLawyersResponse
-	67,  // 126: sttattus.legacy.v1.LegacyService.ListNotaries:output_type -> sttattus.legacy.v1.ListNotariesResponse
-	71,  // 127: sttattus.legacy.v1.LegacyService.ListTemplates:output_type -> sttattus.legacy.v1.ListTemplatesResponse
-	73,  // 128: sttattus.legacy.v1.LegacyService.GetTemplate:output_type -> sttattus.legacy.v1.GetTemplateResponse
-	76,  // 129: sttattus.legacy.v1.LegacyService.GenerateDocument:output_type -> sttattus.legacy.v1.GenerateDocumentResponse
-	78,  // 130: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:output_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
-	81,  // 131: sttattus.legacy.v1.LegacyService.ListMyHandoffs:output_type -> sttattus.legacy.v1.ListMyHandoffsResponse
-	83,  // 132: sttattus.legacy.v1.LegacyService.AcceptHandoff:output_type -> sttattus.legacy.v1.AcceptHandoffResponse
-	85,  // 133: sttattus.legacy.v1.LegacyService.DismissHandoff:output_type -> sttattus.legacy.v1.DismissHandoffResponse
-	88,  // 134: sttattus.legacy.v1.LegacyService.GetEstateSummary:output_type -> sttattus.legacy.v1.GetEstateSummaryResponse
-	92,  // 135: sttattus.legacy.v1.LegacyService.StartConciergeThread:output_type -> sttattus.legacy.v1.StartConciergeThreadResponse
-	94,  // 136: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:output_type -> sttattus.legacy.v1.ListMyConciergeThreadsResponse
-	96,  // 137: sttattus.legacy.v1.LegacyService.GetConciergeThread:output_type -> sttattus.legacy.v1.GetConciergeThreadResponse
-	98,  // 138: sttattus.legacy.v1.LegacyService.PostConciergeMessage:output_type -> sttattus.legacy.v1.PostConciergeMessageResponse
-	101, // 139: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:output_type -> sttattus.legacy.v1.ListAnthologyArticlesResponse
-	103, // 140: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:output_type -> sttattus.legacy.v1.GetAnthologyArticleResponse
-	106, // 141: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:output_type -> sttattus.legacy.v1.AddLetterOfWishesResponse
-	108, // 142: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:output_type -> sttattus.legacy.v1.ListMyLettersOfWishesResponse
-	110, // 143: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:output_type -> sttattus.legacy.v1.RemoveLetterOfWishesResponse
-	112, // 144: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:output_type -> sttattus.legacy.v1.GenerateLegacyAlmanacResponse
-	115, // 145: sttattus.legacy.v1.LegacyService.ListIpPortfolio:output_type -> sttattus.legacy.v1.ListIpPortfolioResponse
-	118, // 146: sttattus.legacy.v1.LegacyService.CreateLegacyShare:output_type -> sttattus.legacy.v1.CreateLegacyShareResponse
-	120, // 147: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:output_type -> sttattus.legacy.v1.ListMyLegacySharesResponse
-	122, // 148: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:output_type -> sttattus.legacy.v1.RevokeLegacyShareResponse
-	124, // 149: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:output_type -> sttattus.legacy.v1.ParseDocumentExpiryResponse
-	101, // [101:150] is the sub-list for method output_type
-	52,  // [52:101] is the sub-list for method input_type
-	52,  // [52:52] is the sub-list for extension type_name
-	52,  // [52:52] is the sub-list for extension extendee
-	0,   // [0:52] is the sub-list for field type_name
+	125, // 52: sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse.inventories:type_name -> sttattus.legacy.v1.LegacyLivingEstateInventoryView
+	125, // 53: sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse.inventory:type_name -> sttattus.legacy.v1.LegacyLivingEstateInventoryView
+	125, // 54: sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse.inventory:type_name -> sttattus.legacy.v1.LegacyLivingEstateInventoryView
+	132, // 55: sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse.alignments:type_name -> sttattus.legacy.v1.LegacyLifeEventAlignmentView
+	132, // 56: sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse.alignment:type_name -> sttattus.legacy.v1.LegacyLifeEventAlignmentView
+	132, // 57: sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse.alignment:type_name -> sttattus.legacy.v1.LegacyLifeEventAlignmentView
+	139, // 58: sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse.documents:type_name -> sttattus.legacy.v1.LegacySecureDocumentVaultView
+	139, // 59: sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse.document:type_name -> sttattus.legacy.v1.LegacySecureDocumentVaultView
+	139, // 60: sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse.document:type_name -> sttattus.legacy.v1.LegacySecureDocumentVaultView
+	146, // 61: sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse.systems:type_name -> sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView
+	146, // 62: sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse.system:type_name -> sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView
+	146, // 63: sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse.system:type_name -> sttattus.legacy.v1.LegacyJurisdictionDocumentSystemView
+	153, // 64: sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse.playbooks:type_name -> sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView
+	153, // 65: sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse.playbook:type_name -> sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView
+	153, // 66: sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse.playbook:type_name -> sttattus.legacy.v1.LegacyHouseholdBusinessContinuityView
+	160, // 67: sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse.protocols:type_name -> sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView
+	160, // 68: sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse.protocol:type_name -> sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView
+	160, // 69: sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse.protocol:type_name -> sttattus.legacy.v1.LegacyIncapacityDeadmanProtocolView
+	167, // 70: sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse.workspaces:type_name -> sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView
+	167, // 71: sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse.workspace:type_name -> sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView
+	167, // 72: sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse.workspace:type_name -> sttattus.legacy.v1.LegacyExecutorTrusteeWorkspaceView
+	174, // 73: sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse.accountings:type_name -> sttattus.legacy.v1.LegacySettlementAccountingView
+	174, // 74: sttattus.legacy.v1.SaveLegacySettlementAccountingResponse.accounting:type_name -> sttattus.legacy.v1.LegacySettlementAccountingView
+	174, // 75: sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse.accounting:type_name -> sttattus.legacy.v1.LegacySettlementAccountingView
+	181, // 76: sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse.recoveries:type_name -> sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView
+	181, // 77: sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse.recovery:type_name -> sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView
+	181, // 78: sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse.recovery:type_name -> sttattus.legacy.v1.LegacyDigitalThresholdRecoveryView
+	188, // 79: sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse.archives:type_name -> sttattus.legacy.v1.LegacyHeritagePreservationArchiveView
+	188, // 80: sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse.archive:type_name -> sttattus.legacy.v1.LegacyHeritagePreservationArchiveView
+	188, // 81: sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse.archive:type_name -> sttattus.legacy.v1.LegacyHeritagePreservationArchiveView
+	195, // 82: sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse.readiness_plans:type_name -> sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView
+	195, // 83: sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse.readiness_plan:type_name -> sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView
+	195, // 84: sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse.readiness_plan:type_name -> sttattus.legacy.v1.LegacyLiquidityInsuranceReadinessView
+	202, // 85: sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse.governances:type_name -> sttattus.legacy.v1.LegacyCounselFamilyGovernanceView
+	202, // 86: sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse.governance:type_name -> sttattus.legacy.v1.LegacyCounselFamilyGovernanceView
+	202, // 87: sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponse.governance:type_name -> sttattus.legacy.v1.LegacyCounselFamilyGovernanceView
+	4,   // 88: sttattus.legacy.v1.LegacyService.StoreDocument:input_type -> sttattus.legacy.v1.StoreDocumentRequest
+	8,   // 89: sttattus.legacy.v1.LegacyService.ListAssets:input_type -> sttattus.legacy.v1.ListAssetsRequest
+	6,   // 90: sttattus.legacy.v1.LegacyService.GetHeritageStats:input_type -> sttattus.legacy.v1.GetHeritageStatsRequest
+	26,  // 91: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:input_type -> sttattus.legacy.v1.StoreEncryptedBlobRequest
+	28,  // 92: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:input_type -> sttattus.legacy.v1.GetEncryptedBlobRequest
+	30,  // 93: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:input_type -> sttattus.legacy.v1.ListMyEncryptedBlobsRequest
+	33,  // 94: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:input_type -> sttattus.legacy.v1.StoreRecoveryShareRequest
+	35,  // 95: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:input_type -> sttattus.legacy.v1.ListMyRecoverySharesRequest
+	37,  // 96: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:input_type -> sttattus.legacy.v1.DeleteRecoveryShareRequest
+	16,  // 97: sttattus.legacy.v1.LegacyService.ListLegacyCategories:input_type -> sttattus.legacy.v1.ListLegacyCategoriesRequest
+	18,  // 98: sttattus.legacy.v1.LegacyService.AssignAssetCategory:input_type -> sttattus.legacy.v1.AssignAssetCategoryRequest
+	20,  // 99: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:input_type -> sttattus.legacy.v1.UnassignAssetCategoryRequest
+	22,  // 100: sttattus.legacy.v1.LegacyService.ListAssetCategories:input_type -> sttattus.legacy.v1.ListAssetCategoriesRequest
+	11,  // 101: sttattus.legacy.v1.LegacyService.RecordAssetVersion:input_type -> sttattus.legacy.v1.RecordAssetVersionRequest
+	13,  // 102: sttattus.legacy.v1.LegacyService.ListAssetVersions:input_type -> sttattus.legacy.v1.ListAssetVersionsRequest
+	41,  // 103: sttattus.legacy.v1.LegacyService.GetEstateReadiness:input_type -> sttattus.legacy.v1.GetEstateReadinessRequest
+	44,  // 104: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:input_type -> sttattus.legacy.v1.ListMyBeneficiariesRequest
+	46,  // 105: sttattus.legacy.v1.LegacyService.AddBeneficiary:input_type -> sttattus.legacy.v1.AddBeneficiaryRequest
+	48,  // 106: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:input_type -> sttattus.legacy.v1.RemoveBeneficiaryRequest
+	51,  // 107: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:input_type -> sttattus.legacy.v1.GetDeadManSwitchRequest
+	53,  // 108: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:input_type -> sttattus.legacy.v1.ConfigureDeadManSwitchRequest
+	55,  // 109: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:input_type -> sttattus.legacy.v1.CheckInDeadManSwitchRequest
+	58,  // 110: sttattus.legacy.v1.LegacyService.CreateAnchor:input_type -> sttattus.legacy.v1.CreateAnchorRequest
+	60,  // 111: sttattus.legacy.v1.LegacyService.ListMyAnchors:input_type -> sttattus.legacy.v1.ListMyAnchorsRequest
+	63,  // 112: sttattus.legacy.v1.LegacyService.ListLawyers:input_type -> sttattus.legacy.v1.ListLawyersRequest
+	66,  // 113: sttattus.legacy.v1.LegacyService.ListNotaries:input_type -> sttattus.legacy.v1.ListNotariesRequest
+	70,  // 114: sttattus.legacy.v1.LegacyService.ListTemplates:input_type -> sttattus.legacy.v1.ListTemplatesRequest
+	72,  // 115: sttattus.legacy.v1.LegacyService.GetTemplate:input_type -> sttattus.legacy.v1.GetTemplateRequest
+	75,  // 116: sttattus.legacy.v1.LegacyService.GenerateDocument:input_type -> sttattus.legacy.v1.GenerateDocumentRequest
+	77,  // 117: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:input_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsRequest
+	80,  // 118: sttattus.legacy.v1.LegacyService.ListMyHandoffs:input_type -> sttattus.legacy.v1.ListMyHandoffsRequest
+	82,  // 119: sttattus.legacy.v1.LegacyService.AcceptHandoff:input_type -> sttattus.legacy.v1.AcceptHandoffRequest
+	84,  // 120: sttattus.legacy.v1.LegacyService.DismissHandoff:input_type -> sttattus.legacy.v1.DismissHandoffRequest
+	87,  // 121: sttattus.legacy.v1.LegacyService.GetEstateSummary:input_type -> sttattus.legacy.v1.GetEstateSummaryRequest
+	91,  // 122: sttattus.legacy.v1.LegacyService.StartConciergeThread:input_type -> sttattus.legacy.v1.StartConciergeThreadRequest
+	93,  // 123: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:input_type -> sttattus.legacy.v1.ListMyConciergeThreadsRequest
+	95,  // 124: sttattus.legacy.v1.LegacyService.GetConciergeThread:input_type -> sttattus.legacy.v1.GetConciergeThreadRequest
+	97,  // 125: sttattus.legacy.v1.LegacyService.PostConciergeMessage:input_type -> sttattus.legacy.v1.PostConciergeMessageRequest
+	100, // 126: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:input_type -> sttattus.legacy.v1.ListAnthologyArticlesRequest
+	102, // 127: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:input_type -> sttattus.legacy.v1.GetAnthologyArticleRequest
+	105, // 128: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:input_type -> sttattus.legacy.v1.AddLetterOfWishesRequest
+	107, // 129: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:input_type -> sttattus.legacy.v1.ListMyLettersOfWishesRequest
+	109, // 130: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:input_type -> sttattus.legacy.v1.RemoveLetterOfWishesRequest
+	111, // 131: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:input_type -> sttattus.legacy.v1.GenerateLegacyAlmanacRequest
+	114, // 132: sttattus.legacy.v1.LegacyService.ListIpPortfolio:input_type -> sttattus.legacy.v1.ListIpPortfolioRequest
+	117, // 133: sttattus.legacy.v1.LegacyService.CreateLegacyShare:input_type -> sttattus.legacy.v1.CreateLegacyShareRequest
+	119, // 134: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:input_type -> sttattus.legacy.v1.ListMyLegacySharesRequest
+	121, // 135: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:input_type -> sttattus.legacy.v1.RevokeLegacyShareRequest
+	123, // 136: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:input_type -> sttattus.legacy.v1.ParseDocumentExpiryRequest
+	126, // 137: sttattus.legacy.v1.LegacyService.GetLegacyLivingInventoryWorkbench:input_type -> sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchRequest
+	128, // 138: sttattus.legacy.v1.LegacyService.SaveLegacyLivingEstateInventory:input_type -> sttattus.legacy.v1.SaveLegacyLivingEstateInventoryRequest
+	130, // 139: sttattus.legacy.v1.LegacyService.SignOffLegacyQuarterlyPlanReview:input_type -> sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewRequest
+	133, // 140: sttattus.legacy.v1.LegacyService.GetLegacyLifeEventAlignmentWorkbench:input_type -> sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchRequest
+	135, // 141: sttattus.legacy.v1.LegacyService.SaveLegacyLifeEventAlignment:input_type -> sttattus.legacy.v1.SaveLegacyLifeEventAlignmentRequest
+	137, // 142: sttattus.legacy.v1.LegacyService.VerifyLegacyAlignmentInstitutionEvidence:input_type -> sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceRequest
+	140, // 143: sttattus.legacy.v1.LegacyService.GetLegacySecureDocumentVaultWorkbench:input_type -> sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchRequest
+	142, // 144: sttattus.legacy.v1.LegacyService.SaveLegacySecureDocumentVault:input_type -> sttattus.legacy.v1.SaveLegacySecureDocumentVaultRequest
+	144, // 145: sttattus.legacy.v1.LegacyService.LockOrExportLegacyDocumentCustody:input_type -> sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyRequest
+	147, // 146: sttattus.legacy.v1.LegacyService.GetLegacyJurisdictionDocumentWorkbench:input_type -> sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchRequest
+	149, // 147: sttattus.legacy.v1.LegacyService.SaveLegacyJurisdictionDocumentSystem:input_type -> sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemRequest
+	151, // 148: sttattus.legacy.v1.LegacyService.TriggerLegacyCounselReviewOrLockExecution:input_type -> sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionRequest
+	154, // 149: sttattus.legacy.v1.LegacyService.GetLegacyContinuityPlaybookWorkbench:input_type -> sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchRequest
+	156, // 150: sttattus.legacy.v1.LegacyService.SaveLegacyHouseholdBusinessContinuity:input_type -> sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityRequest
+	158, // 151: sttattus.legacy.v1.LegacyService.RunLegacyContinuityDrillOrStageDelegation:input_type -> sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationRequest
+	161, // 152: sttattus.legacy.v1.LegacyService.GetLegacyIncapacityDeadmanWorkbench:input_type -> sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchRequest
+	163, // 153: sttattus.legacy.v1.LegacyService.SaveLegacyIncapacityDeadmanProtocol:input_type -> sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolRequest
+	165, // 154: sttattus.legacy.v1.LegacyService.SimulateOrCancelLegacyDeadmanRelease:input_type -> sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseRequest
+	168, // 155: sttattus.legacy.v1.LegacyService.GetLegacyExecutorWorkspaceWorkbench:input_type -> sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchRequest
+	170, // 156: sttattus.legacy.v1.LegacyService.SaveLegacyExecutorTrusteeWorkspace:input_type -> sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceRequest
+	172, // 157: sttattus.legacy.v1.LegacyService.AdvanceLegacySettlementTaskOrResolveDispute:input_type -> sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeRequest
+	175, // 158: sttattus.legacy.v1.LegacyService.GetLegacySettlementAccountingWorkbench:input_type -> sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchRequest
+	177, // 159: sttattus.legacy.v1.LegacyService.SaveLegacySettlementAccounting:input_type -> sttattus.legacy.v1.SaveLegacySettlementAccountingRequest
+	179, // 160: sttattus.legacy.v1.LegacyService.LockOrReverseLegacyAccountingPeriod:input_type -> sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodRequest
+	182, // 161: sttattus.legacy.v1.LegacyService.GetLegacyDigitalRecoveryWorkbench:input_type -> sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchRequest
+	184, // 162: sttattus.legacy.v1.LegacyService.SaveLegacyDigitalThresholdRecovery:input_type -> sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryRequest
+	186, // 163: sttattus.legacy.v1.LegacyService.RunLegacyThresholdCeremonyDryRunOrRotateShare:input_type -> sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareRequest
+	189, // 164: sttattus.legacy.v1.LegacyService.GetLegacyHeritageArchiveWorkbench:input_type -> sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchRequest
+	191, // 165: sttattus.legacy.v1.LegacyService.SaveLegacyHeritagePreservationArchive:input_type -> sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveRequest
+	193, // 166: sttattus.legacy.v1.LegacyService.VerifyLegacyArchiveFixityOrPreviewTrigger:input_type -> sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerRequest
+	196, // 167: sttattus.legacy.v1.LegacyService.GetLegacyLiquidityReadinessWorkbench:input_type -> sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchRequest
+	198, // 168: sttattus.legacy.v1.LegacyService.SaveLegacyLiquidityInsuranceReadiness:input_type -> sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessRequest
+	200, // 169: sttattus.legacy.v1.LegacyService.StressTestLegacyLiquidityOrRouteCounsel:input_type -> sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselRequest
+	203, // 170: sttattus.legacy.v1.LegacyService.GetLegacyCounselGovernanceWorkbench:input_type -> sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchRequest
+	205, // 171: sttattus.legacy.v1.LegacyService.SaveLegacyCounselFamilyGovernance:input_type -> sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceRequest
+	207, // 172: sttattus.legacy.v1.LegacyService.UnlockLegacyStewardshipModuleOrRevokeCounsel:input_type -> sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselRequest
+	5,   // 173: sttattus.legacy.v1.LegacyService.StoreDocument:output_type -> sttattus.legacy.v1.StoreDocumentResponse
+	9,   // 174: sttattus.legacy.v1.LegacyService.ListAssets:output_type -> sttattus.legacy.v1.ListAssetsResponse
+	7,   // 175: sttattus.legacy.v1.LegacyService.GetHeritageStats:output_type -> sttattus.legacy.v1.GetHeritageStatsResponse
+	27,  // 176: sttattus.legacy.v1.LegacyService.StoreEncryptedBlob:output_type -> sttattus.legacy.v1.StoreEncryptedBlobResponse
+	29,  // 177: sttattus.legacy.v1.LegacyService.GetEncryptedBlob:output_type -> sttattus.legacy.v1.GetEncryptedBlobResponse
+	31,  // 178: sttattus.legacy.v1.LegacyService.ListMyEncryptedBlobs:output_type -> sttattus.legacy.v1.ListMyEncryptedBlobsResponse
+	34,  // 179: sttattus.legacy.v1.LegacyService.StoreRecoveryShare:output_type -> sttattus.legacy.v1.StoreRecoveryShareResponse
+	36,  // 180: sttattus.legacy.v1.LegacyService.ListMyRecoveryShares:output_type -> sttattus.legacy.v1.ListMyRecoverySharesResponse
+	38,  // 181: sttattus.legacy.v1.LegacyService.DeleteRecoveryShare:output_type -> sttattus.legacy.v1.DeleteRecoveryShareResponse
+	17,  // 182: sttattus.legacy.v1.LegacyService.ListLegacyCategories:output_type -> sttattus.legacy.v1.ListLegacyCategoriesResponse
+	19,  // 183: sttattus.legacy.v1.LegacyService.AssignAssetCategory:output_type -> sttattus.legacy.v1.AssignAssetCategoryResponse
+	21,  // 184: sttattus.legacy.v1.LegacyService.UnassignAssetCategory:output_type -> sttattus.legacy.v1.UnassignAssetCategoryResponse
+	23,  // 185: sttattus.legacy.v1.LegacyService.ListAssetCategories:output_type -> sttattus.legacy.v1.ListAssetCategoriesResponse
+	12,  // 186: sttattus.legacy.v1.LegacyService.RecordAssetVersion:output_type -> sttattus.legacy.v1.RecordAssetVersionResponse
+	14,  // 187: sttattus.legacy.v1.LegacyService.ListAssetVersions:output_type -> sttattus.legacy.v1.ListAssetVersionsResponse
+	42,  // 188: sttattus.legacy.v1.LegacyService.GetEstateReadiness:output_type -> sttattus.legacy.v1.GetEstateReadinessResponse
+	45,  // 189: sttattus.legacy.v1.LegacyService.ListMyBeneficiaries:output_type -> sttattus.legacy.v1.ListMyBeneficiariesResponse
+	47,  // 190: sttattus.legacy.v1.LegacyService.AddBeneficiary:output_type -> sttattus.legacy.v1.AddBeneficiaryResponse
+	49,  // 191: sttattus.legacy.v1.LegacyService.RemoveBeneficiary:output_type -> sttattus.legacy.v1.RemoveBeneficiaryResponse
+	52,  // 192: sttattus.legacy.v1.LegacyService.GetDeadManSwitch:output_type -> sttattus.legacy.v1.GetDeadManSwitchResponse
+	54,  // 193: sttattus.legacy.v1.LegacyService.ConfigureDeadManSwitch:output_type -> sttattus.legacy.v1.ConfigureDeadManSwitchResponse
+	56,  // 194: sttattus.legacy.v1.LegacyService.CheckInDeadManSwitch:output_type -> sttattus.legacy.v1.CheckInDeadManSwitchResponse
+	59,  // 195: sttattus.legacy.v1.LegacyService.CreateAnchor:output_type -> sttattus.legacy.v1.CreateAnchorResponse
+	61,  // 196: sttattus.legacy.v1.LegacyService.ListMyAnchors:output_type -> sttattus.legacy.v1.ListMyAnchorsResponse
+	64,  // 197: sttattus.legacy.v1.LegacyService.ListLawyers:output_type -> sttattus.legacy.v1.ListLawyersResponse
+	67,  // 198: sttattus.legacy.v1.LegacyService.ListNotaries:output_type -> sttattus.legacy.v1.ListNotariesResponse
+	71,  // 199: sttattus.legacy.v1.LegacyService.ListTemplates:output_type -> sttattus.legacy.v1.ListTemplatesResponse
+	73,  // 200: sttattus.legacy.v1.LegacyService.GetTemplate:output_type -> sttattus.legacy.v1.GetTemplateResponse
+	76,  // 201: sttattus.legacy.v1.LegacyService.GenerateDocument:output_type -> sttattus.legacy.v1.GenerateDocumentResponse
+	78,  // 202: sttattus.legacy.v1.LegacyService.ListMyGeneratedDocuments:output_type -> sttattus.legacy.v1.ListMyGeneratedDocumentsResponse
+	81,  // 203: sttattus.legacy.v1.LegacyService.ListMyHandoffs:output_type -> sttattus.legacy.v1.ListMyHandoffsResponse
+	83,  // 204: sttattus.legacy.v1.LegacyService.AcceptHandoff:output_type -> sttattus.legacy.v1.AcceptHandoffResponse
+	85,  // 205: sttattus.legacy.v1.LegacyService.DismissHandoff:output_type -> sttattus.legacy.v1.DismissHandoffResponse
+	88,  // 206: sttattus.legacy.v1.LegacyService.GetEstateSummary:output_type -> sttattus.legacy.v1.GetEstateSummaryResponse
+	92,  // 207: sttattus.legacy.v1.LegacyService.StartConciergeThread:output_type -> sttattus.legacy.v1.StartConciergeThreadResponse
+	94,  // 208: sttattus.legacy.v1.LegacyService.ListMyConciergeThreads:output_type -> sttattus.legacy.v1.ListMyConciergeThreadsResponse
+	96,  // 209: sttattus.legacy.v1.LegacyService.GetConciergeThread:output_type -> sttattus.legacy.v1.GetConciergeThreadResponse
+	98,  // 210: sttattus.legacy.v1.LegacyService.PostConciergeMessage:output_type -> sttattus.legacy.v1.PostConciergeMessageResponse
+	101, // 211: sttattus.legacy.v1.LegacyService.ListAnthologyArticles:output_type -> sttattus.legacy.v1.ListAnthologyArticlesResponse
+	103, // 212: sttattus.legacy.v1.LegacyService.GetAnthologyArticle:output_type -> sttattus.legacy.v1.GetAnthologyArticleResponse
+	106, // 213: sttattus.legacy.v1.LegacyService.AddLetterOfWishes:output_type -> sttattus.legacy.v1.AddLetterOfWishesResponse
+	108, // 214: sttattus.legacy.v1.LegacyService.ListMyLettersOfWishes:output_type -> sttattus.legacy.v1.ListMyLettersOfWishesResponse
+	110, // 215: sttattus.legacy.v1.LegacyService.RemoveLetterOfWishes:output_type -> sttattus.legacy.v1.RemoveLetterOfWishesResponse
+	112, // 216: sttattus.legacy.v1.LegacyService.GenerateLegacyAlmanac:output_type -> sttattus.legacy.v1.GenerateLegacyAlmanacResponse
+	115, // 217: sttattus.legacy.v1.LegacyService.ListIpPortfolio:output_type -> sttattus.legacy.v1.ListIpPortfolioResponse
+	118, // 218: sttattus.legacy.v1.LegacyService.CreateLegacyShare:output_type -> sttattus.legacy.v1.CreateLegacyShareResponse
+	120, // 219: sttattus.legacy.v1.LegacyService.ListMyLegacyShares:output_type -> sttattus.legacy.v1.ListMyLegacySharesResponse
+	122, // 220: sttattus.legacy.v1.LegacyService.RevokeLegacyShare:output_type -> sttattus.legacy.v1.RevokeLegacyShareResponse
+	124, // 221: sttattus.legacy.v1.LegacyService.ParseDocumentExpiry:output_type -> sttattus.legacy.v1.ParseDocumentExpiryResponse
+	127, // 222: sttattus.legacy.v1.LegacyService.GetLegacyLivingInventoryWorkbench:output_type -> sttattus.legacy.v1.GetLegacyLivingInventoryWorkbenchResponse
+	129, // 223: sttattus.legacy.v1.LegacyService.SaveLegacyLivingEstateInventory:output_type -> sttattus.legacy.v1.SaveLegacyLivingEstateInventoryResponse
+	131, // 224: sttattus.legacy.v1.LegacyService.SignOffLegacyQuarterlyPlanReview:output_type -> sttattus.legacy.v1.SignOffLegacyQuarterlyPlanReviewResponse
+	134, // 225: sttattus.legacy.v1.LegacyService.GetLegacyLifeEventAlignmentWorkbench:output_type -> sttattus.legacy.v1.GetLegacyLifeEventAlignmentWorkbenchResponse
+	136, // 226: sttattus.legacy.v1.LegacyService.SaveLegacyLifeEventAlignment:output_type -> sttattus.legacy.v1.SaveLegacyLifeEventAlignmentResponse
+	138, // 227: sttattus.legacy.v1.LegacyService.VerifyLegacyAlignmentInstitutionEvidence:output_type -> sttattus.legacy.v1.VerifyLegacyAlignmentInstitutionEvidenceResponse
+	141, // 228: sttattus.legacy.v1.LegacyService.GetLegacySecureDocumentVaultWorkbench:output_type -> sttattus.legacy.v1.GetLegacySecureDocumentVaultWorkbenchResponse
+	143, // 229: sttattus.legacy.v1.LegacyService.SaveLegacySecureDocumentVault:output_type -> sttattus.legacy.v1.SaveLegacySecureDocumentVaultResponse
+	145, // 230: sttattus.legacy.v1.LegacyService.LockOrExportLegacyDocumentCustody:output_type -> sttattus.legacy.v1.LockOrExportLegacyDocumentCustodyResponse
+	148, // 231: sttattus.legacy.v1.LegacyService.GetLegacyJurisdictionDocumentWorkbench:output_type -> sttattus.legacy.v1.GetLegacyJurisdictionDocumentWorkbenchResponse
+	150, // 232: sttattus.legacy.v1.LegacyService.SaveLegacyJurisdictionDocumentSystem:output_type -> sttattus.legacy.v1.SaveLegacyJurisdictionDocumentSystemResponse
+	152, // 233: sttattus.legacy.v1.LegacyService.TriggerLegacyCounselReviewOrLockExecution:output_type -> sttattus.legacy.v1.TriggerLegacyCounselReviewOrLockExecutionResponse
+	155, // 234: sttattus.legacy.v1.LegacyService.GetLegacyContinuityPlaybookWorkbench:output_type -> sttattus.legacy.v1.GetLegacyContinuityPlaybookWorkbenchResponse
+	157, // 235: sttattus.legacy.v1.LegacyService.SaveLegacyHouseholdBusinessContinuity:output_type -> sttattus.legacy.v1.SaveLegacyHouseholdBusinessContinuityResponse
+	159, // 236: sttattus.legacy.v1.LegacyService.RunLegacyContinuityDrillOrStageDelegation:output_type -> sttattus.legacy.v1.RunLegacyContinuityDrillOrStageDelegationResponse
+	162, // 237: sttattus.legacy.v1.LegacyService.GetLegacyIncapacityDeadmanWorkbench:output_type -> sttattus.legacy.v1.GetLegacyIncapacityDeadmanWorkbenchResponse
+	164, // 238: sttattus.legacy.v1.LegacyService.SaveLegacyIncapacityDeadmanProtocol:output_type -> sttattus.legacy.v1.SaveLegacyIncapacityDeadmanProtocolResponse
+	166, // 239: sttattus.legacy.v1.LegacyService.SimulateOrCancelLegacyDeadmanRelease:output_type -> sttattus.legacy.v1.SimulateOrCancelLegacyDeadmanReleaseResponse
+	169, // 240: sttattus.legacy.v1.LegacyService.GetLegacyExecutorWorkspaceWorkbench:output_type -> sttattus.legacy.v1.GetLegacyExecutorWorkspaceWorkbenchResponse
+	171, // 241: sttattus.legacy.v1.LegacyService.SaveLegacyExecutorTrusteeWorkspace:output_type -> sttattus.legacy.v1.SaveLegacyExecutorTrusteeWorkspaceResponse
+	173, // 242: sttattus.legacy.v1.LegacyService.AdvanceLegacySettlementTaskOrResolveDispute:output_type -> sttattus.legacy.v1.AdvanceLegacySettlementTaskOrResolveDisputeResponse
+	176, // 243: sttattus.legacy.v1.LegacyService.GetLegacySettlementAccountingWorkbench:output_type -> sttattus.legacy.v1.GetLegacySettlementAccountingWorkbenchResponse
+	178, // 244: sttattus.legacy.v1.LegacyService.SaveLegacySettlementAccounting:output_type -> sttattus.legacy.v1.SaveLegacySettlementAccountingResponse
+	180, // 245: sttattus.legacy.v1.LegacyService.LockOrReverseLegacyAccountingPeriod:output_type -> sttattus.legacy.v1.LockOrReverseLegacyAccountingPeriodResponse
+	183, // 246: sttattus.legacy.v1.LegacyService.GetLegacyDigitalRecoveryWorkbench:output_type -> sttattus.legacy.v1.GetLegacyDigitalRecoveryWorkbenchResponse
+	185, // 247: sttattus.legacy.v1.LegacyService.SaveLegacyDigitalThresholdRecovery:output_type -> sttattus.legacy.v1.SaveLegacyDigitalThresholdRecoveryResponse
+	187, // 248: sttattus.legacy.v1.LegacyService.RunLegacyThresholdCeremonyDryRunOrRotateShare:output_type -> sttattus.legacy.v1.RunLegacyThresholdCeremonyDryRunOrRotateShareResponse
+	190, // 249: sttattus.legacy.v1.LegacyService.GetLegacyHeritageArchiveWorkbench:output_type -> sttattus.legacy.v1.GetLegacyHeritageArchiveWorkbenchResponse
+	192, // 250: sttattus.legacy.v1.LegacyService.SaveLegacyHeritagePreservationArchive:output_type -> sttattus.legacy.v1.SaveLegacyHeritagePreservationArchiveResponse
+	194, // 251: sttattus.legacy.v1.LegacyService.VerifyLegacyArchiveFixityOrPreviewTrigger:output_type -> sttattus.legacy.v1.VerifyLegacyArchiveFixityOrPreviewTriggerResponse
+	197, // 252: sttattus.legacy.v1.LegacyService.GetLegacyLiquidityReadinessWorkbench:output_type -> sttattus.legacy.v1.GetLegacyLiquidityReadinessWorkbenchResponse
+	199, // 253: sttattus.legacy.v1.LegacyService.SaveLegacyLiquidityInsuranceReadiness:output_type -> sttattus.legacy.v1.SaveLegacyLiquidityInsuranceReadinessResponse
+	201, // 254: sttattus.legacy.v1.LegacyService.StressTestLegacyLiquidityOrRouteCounsel:output_type -> sttattus.legacy.v1.StressTestLegacyLiquidityOrRouteCounselResponse
+	204, // 255: sttattus.legacy.v1.LegacyService.GetLegacyCounselGovernanceWorkbench:output_type -> sttattus.legacy.v1.GetLegacyCounselGovernanceWorkbenchResponse
+	206, // 256: sttattus.legacy.v1.LegacyService.SaveLegacyCounselFamilyGovernance:output_type -> sttattus.legacy.v1.SaveLegacyCounselFamilyGovernanceResponse
+	208, // 257: sttattus.legacy.v1.LegacyService.UnlockLegacyStewardshipModuleOrRevokeCounsel:output_type -> sttattus.legacy.v1.UnlockLegacyStewardshipModuleOrRevokeCounselResponse
+	173, // [173:258] is the sub-list for method output_type
+	88,  // [88:173] is the sub-list for method input_type
+	88,  // [88:88] is the sub-list for extension type_name
+	88,  // [88:88] is the sub-list for extension extendee
+	0,   // [0:88] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_legacy_v1_legacy_proto_init() }
@@ -7817,7 +14089,7 @@ func file_sttattus_legacy_v1_legacy_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_legacy_v1_legacy_proto_rawDesc), len(file_sttattus_legacy_v1_legacy_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   124,
+			NumMessages:   208,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

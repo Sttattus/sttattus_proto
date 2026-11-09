@@ -608,4 +608,1027 @@ service OracleService {
 
   // O13.7 — glass-box rank explainer.
   rpc GetRankExplainer(GetRankExplainerRequest) returns (GetRankExplainerResponse);
+
+  // =========================================================================
+  // CHOICE 1 (R1): EVIDENCE TRUTH LAYER
+  // =========================================================================
+  rpc GetEvidenceTruthWorkbench(GetEvidenceTruthWorkbenchRequest) returns (GetEvidenceTruthWorkbenchResponse);
+  rpc RegisterOrRefreshEvidenceSource(RegisterOrRefreshEvidenceSourceRequest) returns (RegisterOrRefreshEvidenceSourceResponse);
+  rpc VerifyOrInvalidateCitedClaim(VerifyOrInvalidateCitedClaimRequest) returns (VerifyOrInvalidateCitedClaimResponse);
+  rpc AdminListEvidenceTruthAudit(AdminListEvidenceTruthAuditRequest) returns (AdminListEvidenceTruthAuditResponse);
+  rpc AdminManageSourceRightsOrCorrection(AdminManageSourceRightsOrCorrectionRequest) returns (AdminManageSourceRightsOrCorrectionResponse);
+
+  // =========================================================================
+  // CHOICE 2 (R2): DECISION LEDGER AND WORKBENCH
+  // =========================================================================
+  rpc GetDecisionLedgerWorkbench(GetDecisionLedgerWorkbenchRequest) returns (GetDecisionLedgerWorkbenchResponse);
+  rpc CreateOrUpdateDecisionLedgerRecord(CreateOrUpdateDecisionLedgerRecordRequest) returns (CreateOrUpdateDecisionLedgerRecordResponse);
+  rpc RecordDecisionAssumptionOrReview(RecordDecisionAssumptionOrReviewRequest) returns (RecordDecisionAssumptionOrReviewResponse);
+  rpc AdminListDecisionLedgerAudit(AdminListDecisionLedgerAuditRequest) returns (AdminListDecisionLedgerAuditResponse);
+  rpc AdminManageDecisionTemplateOrHold(AdminManageDecisionTemplateOrHoldRequest) returns (AdminManageDecisionTemplateOrHoldResponse);
+
+  // =========================================================================
+  // CHOICE 3 (R9): COMMITMENTS AND OUTCOME LOOP
+  // =========================================================================
+  rpc GetCommitmentsOutcomeWorkbench(GetCommitmentsOutcomeWorkbenchRequest) returns (GetCommitmentsOutcomeWorkbenchResponse);
+  rpc CreateOrUpdateCommitmentItem(CreateOrUpdateCommitmentItemRequest) returns (CreateOrUpdateCommitmentItemResponse);
+  rpc PreviewOrExecuteExternalCommitmentSync(PreviewOrExecuteExternalCommitmentSyncRequest) returns (PreviewOrExecuteExternalCommitmentSyncResponse);
+  rpc AdminListCommitmentsOutcomeAudit(AdminListCommitmentsOutcomeAuditRequest) returns (AdminListCommitmentsOutcomeAuditResponse);
+  rpc AdminReconcileExternalSyncDelivery(AdminReconcileExternalSyncDeliveryRequest) returns (AdminReconcileExternalSyncDeliveryResponse);
+
+  // =========================================================================
+  // CHOICE 4 (R3): WATCHLISTS AND COMMAND BRIEF
+  // =========================================================================
+  rpc GetWatchlistsCommandBriefWorkbench(GetWatchlistsCommandBriefWorkbenchRequest) returns (GetWatchlistsCommandBriefWorkbenchResponse);
+  rpc UpsertWatchlistEntityMonitor(UpsertWatchlistEntityMonitorRequest) returns (UpsertWatchlistEntityMonitorResponse);
+  rpc ApproveOrSnoozeCommandBriefSignal(ApproveOrSnoozeCommandBriefSignalRequest) returns (ApproveOrSnoozeCommandBriefSignalResponse);
+  rpc AdminListWatchlistsCommandBriefAudit(AdminListWatchlistsCommandBriefAuditRequest) returns (AdminListWatchlistsCommandBriefAuditResponse);
+  rpc AdminTuneWatchlistAlertBudgetOrFeed(AdminManageWatchlistAlertBudgetOrFeedRequest) returns (AdminManageWatchlistAlertBudgetOrFeedResponse);
+
+  // =========================================================================
+  // CHOICE 5 (R10): ASSUMPTION DRIFT RADAR
+  // =========================================================================
+  rpc GetAssumptionDriftRadarWorkbench(GetAssumptionDriftRadarWorkbenchRequest) returns (GetAssumptionDriftRadarWorkbenchResponse);
+  rpc RespondToAssumptionDriftAlert(RespondToAssumptionDriftAlertRequest) returns (RespondToAssumptionDriftAlertResponse);
+  rpc UpdateDriftRadarPolicy(UpdateDriftRadarPolicyRequest) returns (UpdateDriftRadarPolicyResponse);
+  rpc AdminListAssumptionDriftRadarAudit(AdminListAssumptionDriftRadarAuditRequest) returns (AdminListAssumptionDriftRadarAuditResponse);
+  rpc AdminCalibrateDriftThresholdOrDomain(AdminCalibrateDriftThresholdOrDomainRequest) returns (AdminCalibrateDriftThresholdOrDomainResponse);
+
+  // =========================================================================
+  // CHOICE 6 (R4/R14): FORECASTING AND CALIBRATION
+  // =========================================================================
+  rpc GetForecastingCalibrationWorkbench(GetForecastingCalibrationWorkbenchRequest) returns (GetForecastingCalibrationWorkbenchResponse);
+  rpc CreateOrResolveForecastQuestion(CreateOrResolveForecastQuestionRequest) returns (CreateOrResolveForecastQuestionResponse);
+  rpc RecordCalibrationLabExperiment(RecordCalibrationLabExperimentRequest) returns (RecordCalibrationLabExperimentResponse);
+  rpc AdminListForecastingCalibrationAudit(AdminListForecastingCalibrationAuditRequest) returns (AdminListForecastingCalibrationAuditResponse);
+  rpc AdminVerifyForecastResolutionOrSandbox(AdminVerifyForecastResolutionOrSandboxRequest) returns (AdminVerifyForecastResolutionOrSandboxResponse);
+
+  // =========================================================================
+  // CHOICE 7 (R5/R11): MEETING AND NEGOTIATION STUDIO
+  // =========================================================================
+  rpc GetMeetingNegotiationStudioWorkbench(GetMeetingNegotiationStudioWorkbenchRequest) returns (GetMeetingNegotiationStudioWorkbenchResponse);
+  rpc SaveMeetingBriefOrRedteamRehearsal(SaveMeetingBriefOrRedteamRehearsalRequest) returns (SaveMeetingBriefOrRedteamRehearsalResponse);
+  rpc ConfirmOrRejectCapturedMeetingProposal(ConfirmOrRejectCapturedMeetingProposalRequest) returns (ConfirmOrRejectCapturedMeetingProposalResponse);
+  rpc AdminListMeetingNegotiationStudioAudit(AdminListMeetingNegotiationStudioAuditRequest) returns (AdminListMeetingNegotiationStudioAuditResponse);
+  rpc AdminManageRecordingConsentOrRedaction(AdminManageRecordingConsentOrRedactionRequest) returns (AdminManageRecordingConsentOrRedactionResponse);
+
+  // =========================================================================
+  // CHOICE 8 (R6): SECURE CONNECTORS AND TOOL PLATFORM
+  // =========================================================================
+  rpc GetSecureConnectorsToolWorkbench(GetSecureConnectorsToolWorkbenchRequest) returns (GetSecureConnectorsToolWorkbenchResponse);
+  rpc ConfigureOrRevokeConnectorGrant(ConfigureOrRevokeConnectorGrantRequest) returns (ConfigureOrRevokeConnectorGrantResponse);
+  rpc ReportOrReviewPromptInjectionQuarantine(ReportOrReviewPromptInjectionQuarantineRequest) returns (ReportOrReviewPromptInjectionQuarantineResponse);
+  rpc AdminListSecureConnectorsToolAudit(AdminListSecureConnectorsToolAuditRequest) returns (AdminListSecureConnectorsToolAuditResponse);
+  rpc AdminManageConnectorKillSwitchOrQuarantine(AdminManageConnectorKillSwitchOrQuarantineRequest) returns (AdminManageConnectorKillSwitchOrQuarantineResponse);
+
+  // =========================================================================
+  // CHOICE 9 (R7/R12): TRUSTED NETWORK AND DECISION ROOMS
+  // =========================================================================
+  rpc GetTrustedNetworkDecisionRoomsWorkbench(GetTrustedNetworkDecisionRoomsWorkbenchRequest) returns (GetTrustedNetworkDecisionRoomsWorkbenchResponse);
+  rpc CreateOrCloseTrustedDecisionRoom(CreateOrCloseTrustedDecisionRoomRequest) returns (CreateOrCloseTrustedDecisionRoomResponse);
+  rpc VerifySpecialistDisclosureOrOptIn(VerifySpecialistDisclosureOrOptInRequest) returns (VerifySpecialistDisclosureOrOptInResponse);
+  rpc AdminListTrustedDecisionRoomsAudit(AdminListTrustedDecisionRoomsAuditRequest) returns (AdminListTrustedDecisionRoomsAuditResponse);
+  rpc AdminManageDecisionRoomGrantOrBoundary(AdminManageDecisionRoomGrantOrBoundaryRequest) returns (AdminManageDecisionRoomGrantOrBoundaryResponse);
+
+  // =========================================================================
+  // CHOICE 10 (R8/R12): WAR-GAMING AND CROSS-PILLAR EXPOSURE
+  // =========================================================================
+  rpc GetWargamingExposureWorkbench(GetWargamingExposureWorkbenchRequest) returns (GetWargamingExposureWorkbenchResponse);
+  rpc RunOrExportWargameExposureSimulation(RunOrExportWargameExposureSimulationRequest) returns (RunOrExportWargameExposureSimulationResponse);
+  rpc UpdateWargameSensitivityOrContingency(UpdateWargameSensitivityOrContingencyRequest) returns (UpdateWargameSensitivityOrContingencyResponse);
+  rpc AdminListWargamingExposureAudit(AdminListWargamingExposureAuditRequest) returns (AdminListWargamingExposureAuditResponse);
+  rpc AdminCertifyMinimalPillarContractOrDisclaimer(AdminCertifyMinimalPillarContractOrDisclaimerRequest) returns (AdminCertifyMinimalPillarContractOrDisclaimerResponse);
+
+  // =========================================================================
+  // CHOICE 11 (R13): PRIVATE CASE LIBRARY
+  // =========================================================================
+  rpc GetPrivateCaseLibraryWorkbench(GetPrivateCaseLibraryWorkbenchRequest) returns (GetPrivateCaseLibraryWorkbenchResponse);
+  rpc SaveOrComparePrivateCaseEntry(SaveOrComparePrivateCaseEntryRequest) returns (SaveOrComparePrivateCaseEntryResponse);
+  rpc SubmitOrWithdrawAnonymizedPlaybook(SubmitOrWithdrawAnonymizedPlaybookRequest) returns (SubmitOrWithdrawAnonymizedPlaybookResponse);
+  rpc AdminListPrivateCaseLibraryAudit(AdminListPrivateCaseLibraryAuditRequest) returns (AdminListPrivateCaseLibraryAuditResponse);
+  rpc AdminCertifyPlaybookAnonymizationOrErasure(AdminCertifyPlaybookAnonymizationOrErasureRequest) returns (AdminCertifyPlaybookAnonymizationOrErasureResponse);
+}
+
+// ===========================================================================
+// CHOICE 1 (R1): EVIDENCE TRUTH LAYER MESSAGES
+// ===========================================================================
+
+message OracleEvidenceSourceSnapshotItem {
+  string id = 1;
+  string user_id = 2;
+  string source_code = 3;
+  string origin_class = 4;
+  string title = 5;
+  string jurisdiction_and_rights = 6;
+  string freshness_state = 7;
+  string competing_disagreement_note = 8;
+  int32 correction_generation = 9;
+  bool strict_answer_mode_enforced = 10;
+  string updated_at_iso = 11;
+}
+
+message OracleCitedClaimPassageItem {
+  string id = 1;
+  string user_id = 2;
+  string claim_code = 3;
+  string source_code = 4;
+  string claim_statement = 5;
+  string supporting_passage_excerpt = 6;
+  bool primary_source_marker = 7;
+  string epistemic_status = 8;
+  string evidence_gap_disclosure = 9;
+  bool unsupported_fluency_refused = 10;
+  string updated_at_iso = 11;
+}
+
+message GetEvidenceTruthWorkbenchRequest {}
+
+message GetEvidenceTruthWorkbenchResponse {
+  repeated OracleEvidenceSourceSnapshotItem sources = 1;
+  repeated OracleCitedClaimPassageItem claims = 2;
+  bool strict_answer_mode_active = 3;
+  string epistemic_integrity_banner = 4;
+}
+
+message RegisterOrRefreshEvidenceSourceRequest {
+  string source_code = 1;
+  string origin_class = 2;
+  string title = 3;
+  string jurisdiction_and_rights = 4;
+  string freshness_state = 5;
+  string competing_disagreement_note = 6;
+  bool strict_answer_mode_enforced = 7;
+}
+
+message RegisterOrRefreshEvidenceSourceResponse {
+  OracleEvidenceSourceSnapshotItem source = 1;
+}
+
+message VerifyOrInvalidateCitedClaimRequest {
+  string claim_code = 1;
+  string source_code = 2;
+  string claim_statement = 3;
+  string supporting_passage_excerpt = 4;
+  bool primary_source_marker = 5;
+  string epistemic_status = 6;
+  string evidence_gap_disclosure = 7;
+}
+
+message VerifyOrInvalidateCitedClaimResponse {
+  OracleCitedClaimPassageItem claim = 1;
+}
+
+message AdminListEvidenceTruthAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListEvidenceTruthAuditResponse {
+  repeated OracleEvidenceSourceSnapshotItem sources = 1;
+  repeated OracleCitedClaimPassageItem claims = 2;
+}
+
+message AdminManageSourceRightsOrCorrectionRequest {
+  string target_user_id = 1;
+  string source_code = 2;
+  string freshness_state = 3;
+  string competing_disagreement_note = 4;
+}
+
+message AdminManageSourceRightsOrCorrectionResponse {
+  OracleEvidenceSourceSnapshotItem source = 1;
+}
+
+// ===========================================================================
+// CHOICE 2 (R2): DECISION LEDGER AND WORKBENCH MESSAGES
+// ===========================================================================
+
+message OracleDecisionLedgerRecordItem {
+  string id = 1;
+  string user_id = 2;
+  string decision_code = 3;
+  string title = 4;
+  string reversibility_class = 5;
+  string options_compared_summary = 6;
+  string do_nothing_baseline = 7;
+  string premortem_and_redteam_critique = 8;
+  string dissent_record = 9;
+  int32 decision_version = 10;
+  string decision_state = 11;
+  bool immutable_member_ownership = 12;
+  string updated_at_iso = 13;
+}
+
+message OracleDecisionAssumptionReviewItem {
+  string id = 1;
+  string user_id = 2;
+  string entry_code = 3;
+  string decision_code = 4;
+  string assumption_statement = 5;
+  int32 confidence_band_bps = 6;
+  string sensitivity_impact = 7;
+  string review_horizon = 8;
+  string observed_outcome_and_lesson = 9;
+  string freshness_status = 10;
+  string updated_at_iso = 11;
+}
+
+message GetDecisionLedgerWorkbenchRequest {}
+
+message GetDecisionLedgerWorkbenchResponse {
+  repeated OracleDecisionLedgerRecordItem decisions = 1;
+  repeated OracleDecisionAssumptionReviewItem assumptions = 2;
+  bool member_ownership_immutable = 3;
+  string decision_governance_banner = 4;
+}
+
+message CreateOrUpdateDecisionLedgerRecordRequest {
+  string decision_code = 1;
+  string title = 2;
+  string reversibility_class = 3;
+  string options_compared_summary = 4;
+  string do_nothing_baseline = 5;
+  string premortem_and_redteam_critique = 6;
+  string dissent_record = 7;
+  string decision_state = 8;
+}
+
+message CreateOrUpdateDecisionLedgerRecordResponse {
+  OracleDecisionLedgerRecordItem decision = 1;
+}
+
+message RecordDecisionAssumptionOrReviewRequest {
+  string entry_code = 1;
+  string decision_code = 2;
+  string assumption_statement = 3;
+  int32 confidence_band_bps = 4;
+  string sensitivity_impact = 5;
+  string review_horizon = 6;
+  string observed_outcome_and_lesson = 7;
+  string freshness_status = 8;
+}
+
+message RecordDecisionAssumptionOrReviewResponse {
+  OracleDecisionAssumptionReviewItem assumption = 1;
+}
+
+message AdminListDecisionLedgerAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListDecisionLedgerAuditResponse {
+  repeated OracleDecisionLedgerRecordItem decisions = 1;
+  repeated OracleDecisionAssumptionReviewItem assumptions = 2;
+}
+
+message AdminManageDecisionTemplateOrHoldRequest {
+  string target_user_id = 1;
+  string decision_code = 2;
+  string decision_state = 3;
+  string dissent_record = 4;
+}
+
+message AdminManageDecisionTemplateOrHoldResponse {
+  OracleDecisionLedgerRecordItem decision = 1;
+}
+
+// ===========================================================================
+// CHOICE 3 (R9): COMMITMENTS AND OUTCOME LOOP MESSAGES
+// ===========================================================================
+
+message OracleCommitmentExecutionItem {
+  string id = 1;
+  string user_id = 2;
+  string commitment_code = 3;
+  string decision_code = 4;
+  string owner_handle = 5;
+  string title = 6;
+  string dependency_summary = 7;
+  string cancellation_criteria = 8;
+  string completion_evidence_ref = 9;
+  string execution_state = 10;
+  string non_judgmental_loop_review = 11;
+  string updated_at_iso = 12;
+}
+
+message OracleExternalSyncDeliveryReceiptItem {
+  string id = 1;
+  string user_id = 2;
+  string receipt_code = 3;
+  string commitment_code = 4;
+  string target_connector = 5;
+  string preview_payload_summary = 6;
+  string idempotency_key = 7;
+  bool member_explicit_approval = 8;
+  string delivery_state = 9;
+  string reconciliation_note = 10;
+  string updated_at_iso = 11;
+}
+
+message GetCommitmentsOutcomeWorkbenchRequest {}
+
+message GetCommitmentsOutcomeWorkbenchResponse {
+  repeated OracleCommitmentExecutionItem commitments = 1;
+  repeated OracleExternalSyncDeliveryReceiptItem sync_receipts = 2;
+  bool preview_and_approval_required = 3;
+  string loop_closure_banner = 4;
+}
+
+message CreateOrUpdateCommitmentItemRequest {
+  string commitment_code = 1;
+  string decision_code = 2;
+  string owner_handle = 3;
+  string title = 4;
+  string dependency_summary = 5;
+  string cancellation_criteria = 6;
+  string completion_evidence_ref = 7;
+  string execution_state = 8;
+}
+
+message CreateOrUpdateCommitmentItemResponse {
+  OracleCommitmentExecutionItem commitment = 1;
+}
+
+message PreviewOrExecuteExternalCommitmentSyncRequest {
+  string receipt_code = 1;
+  string commitment_code = 2;
+  string target_connector = 3;
+  string preview_payload_summary = 4;
+  string idempotency_key = 5;
+  bool member_explicit_approval = 6;
+  string delivery_state = 7;
+}
+
+message PreviewOrExecuteExternalCommitmentSyncResponse {
+  OracleExternalSyncDeliveryReceiptItem sync_receipt = 1;
+}
+
+message AdminListCommitmentsOutcomeAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListCommitmentsOutcomeAuditResponse {
+  repeated OracleCommitmentExecutionItem commitments = 1;
+  repeated OracleExternalSyncDeliveryReceiptItem sync_receipts = 2;
+}
+
+message AdminReconcileExternalSyncDeliveryRequest {
+  string target_user_id = 1;
+  string receipt_code = 2;
+  string delivery_state = 3;
+  string reconciliation_note = 4;
+}
+
+message AdminReconcileExternalSyncDeliveryResponse {
+  OracleExternalSyncDeliveryReceiptItem sync_receipt = 1;
+}
+
+// ===========================================================================
+// CHOICE 4 (R3): WATCHLISTS AND COMMAND BRIEF MESSAGES
+// ===========================================================================
+
+message OracleWatchlistEntityMonitorItem {
+  string id = 1;
+  string user_id = 2;
+  string monitor_code = 3;
+  string entity_and_region = 4;
+  string materiality_threshold = 5;
+  int32 daily_alert_budget = 6;
+  string quiet_hours_window = 7;
+  string snooze_until_condition = 8;
+  string feed_health_state = 9;
+  string updated_at_iso = 10;
+}
+
+message OracleCommandBriefSignalCardItem {
+  string id = 1;
+  string user_id = 2;
+  string signal_code = 3;
+  string monitor_code = 4;
+  string brief_kind = 5;
+  string observed_fact_statement = 6;
+  string separated_inference_statement = 7;
+  string alternative_interpretation = 8;
+  string suggested_next_check = 9;
+  string draft_disposition_state = 10;
+  bool inference_disguised_as_fact = 11;
+  string updated_at_iso = 12;
+}
+
+message GetWatchlistsCommandBriefWorkbenchRequest {}
+
+message GetWatchlistsCommandBriefWorkbenchResponse {
+  repeated OracleWatchlistEntityMonitorItem monitors = 1;
+  repeated OracleCommandBriefSignalCardItem signal_cards = 2;
+  bool fact_inference_separation_enforced = 3;
+  string command_brief_banner = 4;
+}
+
+message UpsertWatchlistEntityMonitorRequest {
+  string monitor_code = 1;
+  string entity_and_region = 2;
+  string materiality_threshold = 3;
+  int32 daily_alert_budget = 4;
+  string quiet_hours_window = 5;
+  string snooze_until_condition = 6;
+  string feed_health_state = 7;
+}
+
+message UpsertWatchlistEntityMonitorResponse {
+  OracleWatchlistEntityMonitorItem monitor = 1;
+}
+
+message ApproveOrSnoozeCommandBriefSignalRequest {
+  string signal_code = 1;
+  string monitor_code = 2;
+  string brief_kind = 3;
+  string observed_fact_statement = 4;
+  string separated_inference_statement = 5;
+  string alternative_interpretation = 6;
+  string suggested_next_check = 7;
+  string draft_disposition_state = 8;
+}
+
+message ApproveOrSnoozeCommandBriefSignalResponse {
+  OracleCommandBriefSignalCardItem signal_card = 1;
+}
+
+message AdminListWatchlistsCommandBriefAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListWatchlistsCommandBriefAuditResponse {
+  repeated OracleWatchlistEntityMonitorItem monitors = 1;
+  repeated OracleCommandBriefSignalCardItem signal_cards = 2;
+}
+
+message AdminManageWatchlistAlertBudgetOrFeedRequest {
+  string target_user_id = 1;
+  string monitor_code = 2;
+  int32 daily_alert_budget = 3;
+  string feed_health_state = 4;
+}
+
+message AdminManageWatchlistAlertBudgetOrFeedResponse {
+  OracleWatchlistEntityMonitorItem monitor = 1;
+}
+
+// ===========================================================================
+// CHOICE 5 (R10): ASSUMPTION DRIFT RADAR MESSAGES
+// ===========================================================================
+
+message OracleAssumptionDriftAlertItem {
+  string id = 1;
+  string user_id = 2;
+  string drift_code = 3;
+  string decision_code = 4;
+  string assumption_code = 5;
+  string old_assumption_statement = 6;
+  string new_evidence_passage = 7;
+  string materiality_band = 8;
+  string alternative_explanation = 9;
+  string member_disposition = 10;
+  bool immutable_predecessor_preserved = 11;
+  string updated_at_iso = 12;
+}
+
+message OracleDriftRadarPolicyItem {
+  string id = 1;
+  string user_id = 2;
+  string policy_code = 3;
+  string monitored_domain = 4;
+  int32 cooldown_hours = 5;
+  bool notify_only_if_action_possible = 6;
+  string radar_state = 7;
+  string false_positive_suppression_note = 8;
+  string updated_at_iso = 9;
+}
+
+message GetAssumptionDriftRadarWorkbenchRequest {}
+
+message GetAssumptionDriftRadarWorkbenchResponse {
+  repeated OracleAssumptionDriftAlertItem drift_alerts = 1;
+  repeated OracleDriftRadarPolicyItem policies = 2;
+  bool immutable_history_preserved = 3;
+  string drift_radar_banner = 4;
+}
+
+message RespondToAssumptionDriftAlertRequest {
+  string drift_code = 1;
+  string decision_code = 2;
+  string assumption_code = 3;
+  string old_assumption_statement = 4;
+  string new_evidence_passage = 5;
+  string materiality_band = 6;
+  string alternative_explanation = 7;
+  string member_disposition = 8;
+}
+
+message RespondToAssumptionDriftAlertResponse {
+  OracleAssumptionDriftAlertItem drift_alert = 1;
+}
+
+message UpdateDriftRadarPolicyRequest {
+  string policy_code = 1;
+  string monitored_domain = 2;
+  int32 cooldown_hours = 3;
+  bool notify_only_if_action_possible = 4;
+  string radar_state = 5;
+  string false_positive_suppression_note = 6;
+}
+
+message UpdateDriftRadarPolicyResponse {
+  OracleDriftRadarPolicyItem policy = 1;
+}
+
+message AdminListAssumptionDriftRadarAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListAssumptionDriftRadarAuditResponse {
+  repeated OracleAssumptionDriftAlertItem drift_alerts = 1;
+  repeated OracleDriftRadarPolicyItem policies = 2;
+}
+
+message AdminCalibrateDriftThresholdOrDomainRequest {
+  string target_user_id = 1;
+  string policy_code = 2;
+  int32 cooldown_hours = 3;
+  string radar_state = 4;
+}
+
+message AdminCalibrateDriftThresholdOrDomainResponse {
+  OracleDriftRadarPolicyItem policy = 1;
+}
+
+// ===========================================================================
+// CHOICE 6 (R4/R14): FORECASTING AND CALIBRATION MESSAGES
+// ===========================================================================
+
+message OracleForecastQuestionItem {
+  string id = 1;
+  string user_id = 2;
+  string forecast_code = 3;
+  string question_statement = 4;
+  string resolution_criteria_and_source = 5;
+  int32 probability_bps = 6;
+  int32 confidence_band_bps = 7;
+  string base_rate_anchor = 8;
+  string scenario_stress_branches = 9;
+  string resolution_state = 10;
+  int32 brier_score_milli = 11;
+  bool isolated_sandbox_verified = 12;
+  string updated_at_iso = 13;
+}
+
+message OracleCalibrationLabExperimentItem {
+  string id = 1;
+  string user_id = 2;
+  string experiment_code = 3;
+  string domain_and_horizon = 4;
+  int32 sample_size_count = 5;
+  string omission_pattern_tracked = 6;
+  string practice_experiment_rule = 7;
+  int32 predeclared_baseline_brier_milli = 8;
+  int32 observed_brier_milli = 9;
+  bool private_by_default = 10;
+  string lab_status = 11;
+  string updated_at_iso = 12;
+}
+
+message GetForecastingCalibrationWorkbenchRequest {}
+
+message GetForecastingCalibrationWorkbenchResponse {
+  repeated OracleForecastQuestionItem forecasts = 1;
+  repeated OracleCalibrationLabExperimentItem experiments = 2;
+  bool private_epistemic_learning_enforced = 3;
+  string calibration_banner = 4;
+}
+
+message CreateOrResolveForecastQuestionRequest {
+  string forecast_code = 1;
+  string question_statement = 2;
+  string resolution_criteria_and_source = 3;
+  int32 probability_bps = 4;
+  int32 confidence_band_bps = 5;
+  string base_rate_anchor = 6;
+  string scenario_stress_branches = 7;
+  string resolution_state = 8;
+  int32 brier_score_milli = 9;
+}
+
+message CreateOrResolveForecastQuestionResponse {
+  OracleForecastQuestionItem forecast = 1;
+}
+
+message RecordCalibrationLabExperimentRequest {
+  string experiment_code = 1;
+  string domain_and_horizon = 2;
+  int32 sample_size_count = 3;
+  string omission_pattern_tracked = 4;
+  string practice_experiment_rule = 5;
+  int32 predeclared_baseline_brier_milli = 6;
+  int32 observed_brier_milli = 7;
+  string lab_status = 8;
+}
+
+message RecordCalibrationLabExperimentResponse {
+  OracleCalibrationLabExperimentItem experiment = 1;
+}
+
+message AdminListForecastingCalibrationAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListForecastingCalibrationAuditResponse {
+  repeated OracleForecastQuestionItem forecasts = 1;
+  repeated OracleCalibrationLabExperimentItem experiments = 2;
+}
+
+message AdminVerifyForecastResolutionOrSandboxRequest {
+  string target_user_id = 1;
+  string forecast_code = 2;
+  string resolution_state = 3;
+  int32 brier_score_milli = 4;
+}
+
+message AdminVerifyForecastResolutionOrSandboxResponse {
+  OracleForecastQuestionItem forecast = 1;
+}
+
+// ===========================================================================
+// CHOICE 7 (R5/R11): MEETING AND NEGOTIATION STUDIO MESSAGES
+// ===========================================================================
+
+message OracleMeetingNegotiationBriefItem {
+  string id = 1;
+  string user_id = 2;
+  string meeting_code = 3;
+  string title_and_counterpart = 4;
+  string jurisdiction_consent_mode = 5;
+  string batna_and_red_lines = 6;
+  string counterpart_rehearsal_style = 7;
+  string missing_evidence_citations = 8;
+  string capture_state = 9;
+  bool unconsented_audio_refused = 10;
+  string updated_at_iso = 11;
+}
+
+message OracleMeetingCapturedProposalItem {
+  string id = 1;
+  string user_id = 2;
+  string proposal_code = 3;
+  string meeting_code = 4;
+  string proposal_kind = 5;
+  string exact_utterance_and_speaker = 6;
+  string proposed_ledger_entry = 7;
+  string attribution_certainty = 8;
+  string member_confirmation_state = 9;
+  string updated_at_iso = 10;
+}
+
+message GetMeetingNegotiationStudioWorkbenchRequest {}
+
+message GetMeetingNegotiationStudioWorkbenchResponse {
+  repeated OracleMeetingNegotiationBriefItem briefs = 1;
+  repeated OracleMeetingCapturedProposalItem proposals = 2;
+  bool jurisdiction_consent_enforced = 3;
+  string meeting_studio_banner = 4;
+}
+
+message SaveMeetingBriefOrRedteamRehearsalRequest {
+  string meeting_code = 1;
+  string title_and_counterpart = 2;
+  string jurisdiction_consent_mode = 3;
+  string batna_and_red_lines = 4;
+  string counterpart_rehearsal_style = 5;
+  string missing_evidence_citations = 6;
+  string capture_state = 7;
+}
+
+message SaveMeetingBriefOrRedteamRehearsalResponse {
+  OracleMeetingNegotiationBriefItem brief = 1;
+}
+
+message ConfirmOrRejectCapturedMeetingProposalRequest {
+  string proposal_code = 1;
+  string meeting_code = 2;
+  string proposal_kind = 3;
+  string exact_utterance_and_speaker = 4;
+  string proposed_ledger_entry = 5;
+  string attribution_certainty = 6;
+  string member_confirmation_state = 7;
+}
+
+message ConfirmOrRejectCapturedMeetingProposalResponse {
+  OracleMeetingCapturedProposalItem proposal = 1;
+}
+
+message AdminListMeetingNegotiationStudioAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListMeetingNegotiationStudioAuditResponse {
+  repeated OracleMeetingNegotiationBriefItem briefs = 1;
+  repeated OracleMeetingCapturedProposalItem proposals = 2;
+}
+
+message AdminManageRecordingConsentOrRedactionRequest {
+  string target_user_id = 1;
+  string meeting_code = 2;
+  string jurisdiction_consent_mode = 3;
+  string capture_state = 4;
+}
+
+message AdminManageRecordingConsentOrRedactionResponse {
+  OracleMeetingNegotiationBriefItem brief = 1;
+}
+
+// ===========================================================================
+// CHOICE 8 (R6): SECURE CONNECTORS AND TOOL PLATFORM MESSAGES
+// ===========================================================================
+
+message OracleSecureConnectorGrantItem {
+  string id = 1;
+  string user_id = 2;
+  string connector_code = 3;
+  string connector_name_and_pillar = 4;
+  string risk_classification = 5;
+  string permitted_data_and_retention = 6;
+  string dry_run_preview_summary = 7;
+  string grant_status = 8;
+  bool autonomous_write_prohibited = 9;
+  string updated_at_iso = 10;
+}
+
+message OraclePromptInjectionQuarantineItem {
+  string id = 1;
+  string user_id = 2;
+  string event_code = 3;
+  string connector_code = 4;
+  string untrusted_source_origin = 5;
+  string blocked_escalation_attempt = 6;
+  string containment_verdict = 7;
+  bool member_notified = 8;
+  string updated_at_iso = 9;
+}
+
+message GetSecureConnectorsToolWorkbenchRequest {}
+
+message GetSecureConnectorsToolWorkbenchResponse {
+  repeated OracleSecureConnectorGrantItem connectors = 1;
+  repeated OraclePromptInjectionQuarantineItem quarantines = 2;
+  bool indirect_injection_defense_active = 3;
+  string connector_platform_banner = 4;
+}
+
+message ConfigureOrRevokeConnectorGrantRequest {
+  string connector_code = 1;
+  string connector_name_and_pillar = 2;
+  string risk_classification = 3;
+  string permitted_data_and_retention = 4;
+  string dry_run_preview_summary = 5;
+  string grant_status = 6;
+}
+
+message ConfigureOrRevokeConnectorGrantResponse {
+  OracleSecureConnectorGrantItem connector = 1;
+}
+
+message ReportOrReviewPromptInjectionQuarantineRequest {
+  string event_code = 1;
+  string connector_code = 2;
+  string untrusted_source_origin = 3;
+  string blocked_escalation_attempt = 4;
+  string containment_verdict = 5;
+}
+
+message ReportOrReviewPromptInjectionQuarantineResponse {
+  OraclePromptInjectionQuarantineItem quarantine = 1;
+}
+
+message AdminListSecureConnectorsToolAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListSecureConnectorsToolAuditResponse {
+  repeated OracleSecureConnectorGrantItem connectors = 1;
+  repeated OraclePromptInjectionQuarantineItem quarantines = 2;
+}
+
+message AdminManageConnectorKillSwitchOrQuarantineRequest {
+  string target_user_id = 1;
+  string connector_code = 2;
+  string grant_status = 3;
+  string dry_run_preview_summary = 4;
+}
+
+message AdminManageConnectorKillSwitchOrQuarantineResponse {
+  OracleSecureConnectorGrantItem connector = 1;
+}
+
+// ===========================================================================
+// CHOICE 9 (R7/R12): TRUSTED NETWORK AND DECISION ROOMS MESSAGES
+// ===========================================================================
+
+message OracleTrustedDecisionRoomItem {
+  string id = 1;
+  string user_id = 2;
+  string room_code = 3;
+  string title_and_scenario = 4;
+  string specialist_credential_and_jurisdiction = 5;
+  string conflict_of_interest_disclosure = 6;
+  string scoped_grant_and_expiry = 7;
+  string after_action_closure_summary = 8;
+  string room_state = 9;
+  bool tenant_boundary_isolated = 10;
+  string updated_at_iso = 11;
+}
+
+message GetTrustedNetworkDecisionRoomsWorkbenchRequest {}
+
+message GetTrustedNetworkDecisionRoomsWorkbenchResponse {
+  repeated OracleTrustedDecisionRoomItem rooms = 1;
+  bool double_opt_in_and_coi_enforced = 2;
+  string decision_rooms_banner = 3;
+}
+
+message CreateOrCloseTrustedDecisionRoomRequest {
+  string room_code = 1;
+  string title_and_scenario = 2;
+  string specialist_credential_and_jurisdiction = 3;
+  string conflict_of_interest_disclosure = 4;
+  string scoped_grant_and_expiry = 5;
+  string after_action_closure_summary = 6;
+  string room_state = 7;
+}
+
+message CreateOrCloseTrustedDecisionRoomResponse {
+  OracleTrustedDecisionRoomItem room = 1;
+}
+
+message VerifySpecialistDisclosureOrOptInRequest {
+  string room_code = 1;
+  string conflict_of_interest_disclosure = 2;
+  string room_state = 3;
+}
+
+message VerifySpecialistDisclosureOrOptInResponse {
+  OracleTrustedDecisionRoomItem room = 1;
+}
+
+message AdminListTrustedDecisionRoomsAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListTrustedDecisionRoomsAuditResponse {
+  repeated OracleTrustedDecisionRoomItem rooms = 1;
+}
+
+message AdminManageDecisionRoomGrantOrBoundaryRequest {
+  string target_user_id = 1;
+  string room_code = 2;
+  string room_state = 3;
+  string after_action_closure_summary = 4;
+}
+
+message AdminManageDecisionRoomGrantOrBoundaryResponse {
+  OracleTrustedDecisionRoomItem room = 1;
+}
+
+// ===========================================================================
+// CHOICE 10 (R8/R12): WAR-GAMING AND CROSS-PILLAR EXPOSURE MESSAGES
+// ===========================================================================
+
+message OracleWargameExposureSimulationItem {
+  string id = 1;
+  string user_id = 2;
+  string simulation_code = 3;
+  string scenario_title = 4;
+  string minimal_pillar_contracts_used = 5;
+  string downside_base_upside_ranges = 6;
+  string tenth_person_and_failure_tree = 7;
+  string top_sensitivity_driver = 8;
+  string advisor_memo_state = 9;
+  bool silent_ledger_access_blocked = 10;
+  string updated_at_iso = 11;
+}
+
+message GetWargamingExposureWorkbenchRequest {}
+
+message GetWargamingExposureWorkbenchResponse {
+  repeated OracleWargameExposureSimulationItem simulations = 1;
+  bool minimal_contract_isolation_enforced = 2;
+  string wargaming_exposure_banner = 3;
+}
+
+message RunOrExportWargameExposureSimulationRequest {
+  string simulation_code = 1;
+  string scenario_title = 2;
+  string minimal_pillar_contracts_used = 3;
+  string downside_base_upside_ranges = 4;
+  string tenth_person_and_failure_tree = 5;
+  string top_sensitivity_driver = 6;
+  string advisor_memo_state = 7;
+}
+
+message RunOrExportWargameExposureSimulationResponse {
+  OracleWargameExposureSimulationItem simulation = 1;
+}
+
+message UpdateWargameSensitivityOrContingencyRequest {
+  string simulation_code = 1;
+  string top_sensitivity_driver = 2;
+  string advisor_memo_state = 3;
+}
+
+message UpdateWargameSensitivityOrContingencyResponse {
+  OracleWargameExposureSimulationItem simulation = 1;
+}
+
+message AdminListWargamingExposureAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListWargamingExposureAuditResponse {
+  repeated OracleWargameExposureSimulationItem simulations = 1;
+}
+
+message AdminCertifyMinimalPillarContractOrDisclaimerRequest {
+  string target_user_id = 1;
+  string simulation_code = 2;
+  string advisor_memo_state = 3;
+  string minimal_pillar_contracts_used = 4;
+}
+
+message AdminCertifyMinimalPillarContractOrDisclaimerResponse {
+  OracleWargameExposureSimulationItem simulation = 1;
+}
+
+// ===========================================================================
+// CHOICE 11 (R13): PRIVATE CASE LIBRARY MESSAGES
+// ===========================================================================
+
+message OraclePrivateCaseLibraryEntryItem {
+  string id = 1;
+  string user_id = 2;
+  string case_code = 3;
+  string source_decision_code = 4;
+  string case_title = 5;
+  string structural_match_and_differences = 6;
+  string observed_outcome_vs_counterfactual = 7;
+  string anonymized_institutional_template = 8;
+  string sharing_state = 9;
+  bool analogy_treated_as_evidence = 10;
+  string updated_at_iso = 11;
+}
+
+message GetPrivateCaseLibraryWorkbenchRequest {}
+
+message GetPrivateCaseLibraryWorkbenchResponse {
+  repeated OraclePrivateCaseLibraryEntryItem cases = 1;
+  bool analogy_vs_evidence_guard_enforced = 2;
+  string case_library_banner = 3;
+}
+
+message SaveOrComparePrivateCaseEntryRequest {
+  string case_code = 1;
+  string source_decision_code = 2;
+  string case_title = 3;
+  string structural_match_and_differences = 4;
+  string observed_outcome_vs_counterfactual = 5;
+  string anonymized_institutional_template = 6;
+  string sharing_state = 7;
+}
+
+message SaveOrComparePrivateCaseEntryResponse {
+  OraclePrivateCaseLibraryEntryItem case_entry = 1;
+}
+
+message SubmitOrWithdrawAnonymizedPlaybookRequest {
+  string case_code = 1;
+  string anonymized_institutional_template = 2;
+  string sharing_state = 3;
+}
+
+message SubmitOrWithdrawAnonymizedPlaybookResponse {
+  OraclePrivateCaseLibraryEntryItem case_entry = 1;
+}
+
+message AdminListPrivateCaseLibraryAuditRequest {
+  int32 limit = 1;
+}
+
+message AdminListPrivateCaseLibraryAuditResponse {
+  repeated OraclePrivateCaseLibraryEntryItem cases = 1;
+}
+
+message AdminCertifyPlaybookAnonymizationOrErasureRequest {
+  string target_user_id = 1;
+  string case_code = 2;
+  string sharing_state = 3;
+  string anonymized_institutional_template = 4;
+}
+
+message AdminCertifyPlaybookAnonymizationOrErasureResponse {
+  OraclePrivateCaseLibraryEntryItem case_entry = 1;
 }

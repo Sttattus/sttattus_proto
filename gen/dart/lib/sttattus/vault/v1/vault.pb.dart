@@ -8941,6 +8941,8089 @@ class ExportUsCgtCsvResponse extends $pb.GeneratedMessage {
   void clearCsv() => $_clearField(1);
 }
 
+/// Choice 1 (V1): Financial Data Reliability Center
+class VaultFinancialDataReliabilityItem extends $pb.GeneratedMessage {
+  factory VaultFinancialDataReliabilityItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? sourceCode,
+    $core.String? institutionAndCoverageWindow,
+    $core.String? syncFreshnessAndReconciliation,
+    $core.String? confidenceAndLineageLayer,
+    $core.String? reliabilityState,
+    $core.bool? idempotentReplayDedupEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (institutionAndCoverageWindow != null)
+      result.institutionAndCoverageWindow = institutionAndCoverageWindow;
+    if (syncFreshnessAndReconciliation != null)
+      result.syncFreshnessAndReconciliation = syncFreshnessAndReconciliation;
+    if (confidenceAndLineageLayer != null)
+      result.confidenceAndLineageLayer = confidenceAndLineageLayer;
+    if (reliabilityState != null) result.reliabilityState = reliabilityState;
+    if (idempotentReplayDedupEnforced != null)
+      result.idempotentReplayDedupEnforced = idempotentReplayDedupEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultFinancialDataReliabilityItem._();
+
+  factory VaultFinancialDataReliabilityItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultFinancialDataReliabilityItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultFinancialDataReliabilityItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(4, _omitFieldNames ? '' : 'institutionAndCoverageWindow')
+    ..aOS(5, _omitFieldNames ? '' : 'syncFreshnessAndReconciliation')
+    ..aOS(6, _omitFieldNames ? '' : 'confidenceAndLineageLayer')
+    ..aOS(7, _omitFieldNames ? '' : 'reliabilityState')
+    ..aOB(8, _omitFieldNames ? '' : 'idempotentReplayDedupEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialDataReliabilityItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialDataReliabilityItem copyWith(
+          void Function(VaultFinancialDataReliabilityItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as VaultFinancialDataReliabilityItem))
+          as VaultFinancialDataReliabilityItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialDataReliabilityItem create() =>
+      VaultFinancialDataReliabilityItem._();
+  @$core.override
+  VaultFinancialDataReliabilityItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialDataReliabilityItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultFinancialDataReliabilityItem>(
+          create);
+  static VaultFinancialDataReliabilityItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get institutionAndCoverageWindow => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set institutionAndCoverageWindow($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasInstitutionAndCoverageWindow() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearInstitutionAndCoverageWindow() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get syncFreshnessAndReconciliation => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set syncFreshnessAndReconciliation($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSyncFreshnessAndReconciliation() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSyncFreshnessAndReconciliation() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get confidenceAndLineageLayer => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set confidenceAndLineageLayer($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasConfidenceAndLineageLayer() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearConfidenceAndLineageLayer() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get reliabilityState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set reliabilityState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasReliabilityState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearReliabilityState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get idempotentReplayDedupEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set idempotentReplayDedupEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIdempotentReplayDedupEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIdempotentReplayDedupEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultFinancialReliabilityWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetVaultFinancialReliabilityWorkbenchRequest() => create();
+
+  GetVaultFinancialReliabilityWorkbenchRequest._();
+
+  factory GetVaultFinancialReliabilityWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialReliabilityWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialReliabilityWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialReliabilityWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialReliabilityWorkbenchRequest copyWith(
+          void Function(GetVaultFinancialReliabilityWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialReliabilityWorkbenchRequest))
+          as GetVaultFinancialReliabilityWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialReliabilityWorkbenchRequest create() =>
+      GetVaultFinancialReliabilityWorkbenchRequest._();
+  @$core.override
+  GetVaultFinancialReliabilityWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialReliabilityWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialReliabilityWorkbenchRequest>(create);
+  static GetVaultFinancialReliabilityWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultFinancialReliabilityWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetVaultFinancialReliabilityWorkbenchResponse({
+    $core.Iterable<VaultFinancialDataReliabilityItem>? sources,
+    $core.bool? idempotentReplayDedupEnforced,
+    $core.String? snapshotLineageAndFreshnessSummary,
+  }) {
+    final result = create();
+    if (sources != null) result.sources.addAll(sources);
+    if (idempotentReplayDedupEnforced != null)
+      result.idempotentReplayDedupEnforced = idempotentReplayDedupEnforced;
+    if (snapshotLineageAndFreshnessSummary != null)
+      result.snapshotLineageAndFreshnessSummary =
+          snapshotLineageAndFreshnessSummary;
+    return result;
+  }
+
+  GetVaultFinancialReliabilityWorkbenchResponse._();
+
+  factory GetVaultFinancialReliabilityWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialReliabilityWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialReliabilityWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultFinancialDataReliabilityItem>(
+        1, _omitFieldNames ? '' : 'sources',
+        subBuilder: VaultFinancialDataReliabilityItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'idempotentReplayDedupEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'snapshotLineageAndFreshnessSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialReliabilityWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialReliabilityWorkbenchResponse copyWith(
+          void Function(GetVaultFinancialReliabilityWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialReliabilityWorkbenchResponse))
+          as GetVaultFinancialReliabilityWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialReliabilityWorkbenchResponse create() =>
+      GetVaultFinancialReliabilityWorkbenchResponse._();
+  @$core.override
+  GetVaultFinancialReliabilityWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialReliabilityWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialReliabilityWorkbenchResponse>(create);
+  static GetVaultFinancialReliabilityWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultFinancialDataReliabilityItem> get sources => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get idempotentReplayDedupEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set idempotentReplayDedupEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIdempotentReplayDedupEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIdempotentReplayDedupEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get snapshotLineageAndFreshnessSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set snapshotLineageAndFreshnessSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSnapshotLineageAndFreshnessSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSnapshotLineageAndFreshnessSummary() => $_clearField(3);
+}
+
+class SaveVaultFinancialReliabilitySourceRequest extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialReliabilitySourceRequest({
+    $core.String? sourceCode,
+    $core.String? institutionAndCoverageWindow,
+    $core.String? syncFreshnessAndReconciliation,
+    $core.String? confidenceAndLineageLayer,
+    $core.String? reliabilityState,
+  }) {
+    final result = create();
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (institutionAndCoverageWindow != null)
+      result.institutionAndCoverageWindow = institutionAndCoverageWindow;
+    if (syncFreshnessAndReconciliation != null)
+      result.syncFreshnessAndReconciliation = syncFreshnessAndReconciliation;
+    if (confidenceAndLineageLayer != null)
+      result.confidenceAndLineageLayer = confidenceAndLineageLayer;
+    if (reliabilityState != null) result.reliabilityState = reliabilityState;
+    return result;
+  }
+
+  SaveVaultFinancialReliabilitySourceRequest._();
+
+  factory SaveVaultFinancialReliabilitySourceRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialReliabilitySourceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialReliabilitySourceRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'institutionAndCoverageWindow')
+    ..aOS(3, _omitFieldNames ? '' : 'syncFreshnessAndReconciliation')
+    ..aOS(4, _omitFieldNames ? '' : 'confidenceAndLineageLayer')
+    ..aOS(5, _omitFieldNames ? '' : 'reliabilityState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialReliabilitySourceRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialReliabilitySourceRequest copyWith(
+          void Function(SaveVaultFinancialReliabilitySourceRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialReliabilitySourceRequest))
+          as SaveVaultFinancialReliabilitySourceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialReliabilitySourceRequest create() =>
+      SaveVaultFinancialReliabilitySourceRequest._();
+  @$core.override
+  SaveVaultFinancialReliabilitySourceRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialReliabilitySourceRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialReliabilitySourceRequest>(create);
+  static SaveVaultFinancialReliabilitySourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get institutionAndCoverageWindow => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set institutionAndCoverageWindow($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasInstitutionAndCoverageWindow() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInstitutionAndCoverageWindow() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get syncFreshnessAndReconciliation => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set syncFreshnessAndReconciliation($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSyncFreshnessAndReconciliation() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSyncFreshnessAndReconciliation() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get confidenceAndLineageLayer => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set confidenceAndLineageLayer($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasConfidenceAndLineageLayer() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearConfidenceAndLineageLayer() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get reliabilityState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set reliabilityState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReliabilityState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReliabilityState() => $_clearField(5);
+}
+
+class SaveVaultFinancialReliabilitySourceResponse extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialReliabilitySourceResponse({
+    VaultFinancialDataReliabilityItem? source,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  SaveVaultFinancialReliabilitySourceResponse._();
+
+  factory SaveVaultFinancialReliabilitySourceResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialReliabilitySourceResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialReliabilitySourceResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialDataReliabilityItem>(1, _omitFieldNames ? '' : 'source',
+        subBuilder: VaultFinancialDataReliabilityItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialReliabilitySourceResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialReliabilitySourceResponse copyWith(
+          void Function(SaveVaultFinancialReliabilitySourceResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialReliabilitySourceResponse))
+          as SaveVaultFinancialReliabilitySourceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialReliabilitySourceResponse create() =>
+      SaveVaultFinancialReliabilitySourceResponse._();
+  @$core.override
+  SaveVaultFinancialReliabilitySourceResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialReliabilitySourceResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialReliabilitySourceResponse>(create);
+  static SaveVaultFinancialReliabilitySourceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialDataReliabilityItem get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(VaultFinancialDataReliabilityItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialDataReliabilityItem ensureSource() => $_ensure(0);
+}
+
+class ReconcileOrReplayVaultReliabilityRequest extends $pb.GeneratedMessage {
+  factory ReconcileOrReplayVaultReliabilityRequest({
+    $core.String? sourceCode,
+    $core.String? syncFreshnessAndReconciliation,
+    $core.String? reliabilityState,
+  }) {
+    final result = create();
+    if (sourceCode != null) result.sourceCode = sourceCode;
+    if (syncFreshnessAndReconciliation != null)
+      result.syncFreshnessAndReconciliation = syncFreshnessAndReconciliation;
+    if (reliabilityState != null) result.reliabilityState = reliabilityState;
+    return result;
+  }
+
+  ReconcileOrReplayVaultReliabilityRequest._();
+
+  factory ReconcileOrReplayVaultReliabilityRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReconcileOrReplayVaultReliabilityRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReconcileOrReplayVaultReliabilityRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sourceCode')
+    ..aOS(2, _omitFieldNames ? '' : 'syncFreshnessAndReconciliation')
+    ..aOS(3, _omitFieldNames ? '' : 'reliabilityState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileOrReplayVaultReliabilityRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileOrReplayVaultReliabilityRequest copyWith(
+          void Function(ReconcileOrReplayVaultReliabilityRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ReconcileOrReplayVaultReliabilityRequest))
+          as ReconcileOrReplayVaultReliabilityRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReconcileOrReplayVaultReliabilityRequest create() =>
+      ReconcileOrReplayVaultReliabilityRequest._();
+  @$core.override
+  ReconcileOrReplayVaultReliabilityRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReconcileOrReplayVaultReliabilityRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReconcileOrReplayVaultReliabilityRequest>(create);
+  static ReconcileOrReplayVaultReliabilityRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sourceCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sourceCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSourceCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSourceCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get syncFreshnessAndReconciliation => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set syncFreshnessAndReconciliation($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSyncFreshnessAndReconciliation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSyncFreshnessAndReconciliation() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reliabilityState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reliabilityState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReliabilityState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReliabilityState() => $_clearField(3);
+}
+
+class ReconcileOrReplayVaultReliabilityResponse extends $pb.GeneratedMessage {
+  factory ReconcileOrReplayVaultReliabilityResponse({
+    VaultFinancialDataReliabilityItem? source,
+  }) {
+    final result = create();
+    if (source != null) result.source = source;
+    return result;
+  }
+
+  ReconcileOrReplayVaultReliabilityResponse._();
+
+  factory ReconcileOrReplayVaultReliabilityResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ReconcileOrReplayVaultReliabilityResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ReconcileOrReplayVaultReliabilityResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialDataReliabilityItem>(1, _omitFieldNames ? '' : 'source',
+        subBuilder: VaultFinancialDataReliabilityItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileOrReplayVaultReliabilityResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ReconcileOrReplayVaultReliabilityResponse copyWith(
+          void Function(ReconcileOrReplayVaultReliabilityResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ReconcileOrReplayVaultReliabilityResponse))
+          as ReconcileOrReplayVaultReliabilityResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ReconcileOrReplayVaultReliabilityResponse create() =>
+      ReconcileOrReplayVaultReliabilityResponse._();
+  @$core.override
+  ReconcileOrReplayVaultReliabilityResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ReconcileOrReplayVaultReliabilityResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ReconcileOrReplayVaultReliabilityResponse>(create);
+  static ReconcileOrReplayVaultReliabilityResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialDataReliabilityItem get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(VaultFinancialDataReliabilityItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialDataReliabilityItem ensureSource() => $_ensure(0);
+}
+
+/// Choice 2 (V10): Financial Inbox and Monthly Close
+class VaultFinancialInboxCloseItem extends $pb.GeneratedMessage {
+  factory VaultFinancialInboxCloseItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? inboxCode,
+    $core.String? exceptionAndClassificationSummary,
+    $core.String? closeChecklistAndSnapshotRef,
+    $core.String? whatChangedStatementBridge,
+    $core.String? inboxState,
+    $core.bool? reversibleLedgerEditsEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (inboxCode != null) result.inboxCode = inboxCode;
+    if (exceptionAndClassificationSummary != null)
+      result.exceptionAndClassificationSummary =
+          exceptionAndClassificationSummary;
+    if (closeChecklistAndSnapshotRef != null)
+      result.closeChecklistAndSnapshotRef = closeChecklistAndSnapshotRef;
+    if (whatChangedStatementBridge != null)
+      result.whatChangedStatementBridge = whatChangedStatementBridge;
+    if (inboxState != null) result.inboxState = inboxState;
+    if (reversibleLedgerEditsEnforced != null)
+      result.reversibleLedgerEditsEnforced = reversibleLedgerEditsEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultFinancialInboxCloseItem._();
+
+  factory VaultFinancialInboxCloseItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultFinancialInboxCloseItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultFinancialInboxCloseItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'inboxCode')
+    ..aOS(4, _omitFieldNames ? '' : 'exceptionAndClassificationSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'closeChecklistAndSnapshotRef')
+    ..aOS(6, _omitFieldNames ? '' : 'whatChangedStatementBridge')
+    ..aOS(7, _omitFieldNames ? '' : 'inboxState')
+    ..aOB(8, _omitFieldNames ? '' : 'reversibleLedgerEditsEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialInboxCloseItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialInboxCloseItem copyWith(
+          void Function(VaultFinancialInboxCloseItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultFinancialInboxCloseItem))
+          as VaultFinancialInboxCloseItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialInboxCloseItem create() =>
+      VaultFinancialInboxCloseItem._();
+  @$core.override
+  VaultFinancialInboxCloseItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialInboxCloseItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultFinancialInboxCloseItem>(create);
+  static VaultFinancialInboxCloseItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get inboxCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set inboxCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInboxCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInboxCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get exceptionAndClassificationSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set exceptionAndClassificationSummary($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExceptionAndClassificationSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExceptionAndClassificationSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get closeChecklistAndSnapshotRef => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set closeChecklistAndSnapshotRef($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCloseChecklistAndSnapshotRef() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCloseChecklistAndSnapshotRef() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get whatChangedStatementBridge => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set whatChangedStatementBridge($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWhatChangedStatementBridge() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWhatChangedStatementBridge() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get inboxState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set inboxState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasInboxState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearInboxState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get reversibleLedgerEditsEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set reversibleLedgerEditsEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasReversibleLedgerEditsEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearReversibleLedgerEditsEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultFinancialInboxCloseWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultFinancialInboxCloseWorkbenchRequest() => create();
+
+  GetVaultFinancialInboxCloseWorkbenchRequest._();
+
+  factory GetVaultFinancialInboxCloseWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialInboxCloseWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialInboxCloseWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialInboxCloseWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialInboxCloseWorkbenchRequest copyWith(
+          void Function(GetVaultFinancialInboxCloseWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialInboxCloseWorkbenchRequest))
+          as GetVaultFinancialInboxCloseWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialInboxCloseWorkbenchRequest create() =>
+      GetVaultFinancialInboxCloseWorkbenchRequest._();
+  @$core.override
+  GetVaultFinancialInboxCloseWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialInboxCloseWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialInboxCloseWorkbenchRequest>(create);
+  static GetVaultFinancialInboxCloseWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultFinancialInboxCloseWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetVaultFinancialInboxCloseWorkbenchResponse({
+    $core.Iterable<VaultFinancialInboxCloseItem>? closes,
+    $core.bool? reversibleLedgerEditsEnforced,
+    $core.String? closeLockAndWhatChangedSummary,
+  }) {
+    final result = create();
+    if (closes != null) result.closes.addAll(closes);
+    if (reversibleLedgerEditsEnforced != null)
+      result.reversibleLedgerEditsEnforced = reversibleLedgerEditsEnforced;
+    if (closeLockAndWhatChangedSummary != null)
+      result.closeLockAndWhatChangedSummary = closeLockAndWhatChangedSummary;
+    return result;
+  }
+
+  GetVaultFinancialInboxCloseWorkbenchResponse._();
+
+  factory GetVaultFinancialInboxCloseWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialInboxCloseWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialInboxCloseWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultFinancialInboxCloseItem>(1, _omitFieldNames ? '' : 'closes',
+        subBuilder: VaultFinancialInboxCloseItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'reversibleLedgerEditsEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'closeLockAndWhatChangedSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialInboxCloseWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialInboxCloseWorkbenchResponse copyWith(
+          void Function(GetVaultFinancialInboxCloseWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialInboxCloseWorkbenchResponse))
+          as GetVaultFinancialInboxCloseWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialInboxCloseWorkbenchResponse create() =>
+      GetVaultFinancialInboxCloseWorkbenchResponse._();
+  @$core.override
+  GetVaultFinancialInboxCloseWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialInboxCloseWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialInboxCloseWorkbenchResponse>(create);
+  static GetVaultFinancialInboxCloseWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultFinancialInboxCloseItem> get closes => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get reversibleLedgerEditsEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set reversibleLedgerEditsEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReversibleLedgerEditsEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReversibleLedgerEditsEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get closeLockAndWhatChangedSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set closeLockAndWhatChangedSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCloseLockAndWhatChangedSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCloseLockAndWhatChangedSummary() => $_clearField(3);
+}
+
+class SaveVaultFinancialInboxCloseItemRequest extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialInboxCloseItemRequest({
+    $core.String? inboxCode,
+    $core.String? exceptionAndClassificationSummary,
+    $core.String? closeChecklistAndSnapshotRef,
+    $core.String? whatChangedStatementBridge,
+    $core.String? inboxState,
+  }) {
+    final result = create();
+    if (inboxCode != null) result.inboxCode = inboxCode;
+    if (exceptionAndClassificationSummary != null)
+      result.exceptionAndClassificationSummary =
+          exceptionAndClassificationSummary;
+    if (closeChecklistAndSnapshotRef != null)
+      result.closeChecklistAndSnapshotRef = closeChecklistAndSnapshotRef;
+    if (whatChangedStatementBridge != null)
+      result.whatChangedStatementBridge = whatChangedStatementBridge;
+    if (inboxState != null) result.inboxState = inboxState;
+    return result;
+  }
+
+  SaveVaultFinancialInboxCloseItemRequest._();
+
+  factory SaveVaultFinancialInboxCloseItemRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialInboxCloseItemRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialInboxCloseItemRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'inboxCode')
+    ..aOS(2, _omitFieldNames ? '' : 'exceptionAndClassificationSummary')
+    ..aOS(3, _omitFieldNames ? '' : 'closeChecklistAndSnapshotRef')
+    ..aOS(4, _omitFieldNames ? '' : 'whatChangedStatementBridge')
+    ..aOS(5, _omitFieldNames ? '' : 'inboxState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialInboxCloseItemRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialInboxCloseItemRequest copyWith(
+          void Function(SaveVaultFinancialInboxCloseItemRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialInboxCloseItemRequest))
+          as SaveVaultFinancialInboxCloseItemRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialInboxCloseItemRequest create() =>
+      SaveVaultFinancialInboxCloseItemRequest._();
+  @$core.override
+  SaveVaultFinancialInboxCloseItemRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialInboxCloseItemRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialInboxCloseItemRequest>(create);
+  static SaveVaultFinancialInboxCloseItemRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get inboxCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set inboxCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInboxCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInboxCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get exceptionAndClassificationSummary => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set exceptionAndClassificationSummary($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExceptionAndClassificationSummary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExceptionAndClassificationSummary() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get closeChecklistAndSnapshotRef => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set closeChecklistAndSnapshotRef($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCloseChecklistAndSnapshotRef() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCloseChecklistAndSnapshotRef() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get whatChangedStatementBridge => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set whatChangedStatementBridge($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWhatChangedStatementBridge() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWhatChangedStatementBridge() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get inboxState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set inboxState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasInboxState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearInboxState() => $_clearField(5);
+}
+
+class SaveVaultFinancialInboxCloseItemResponse extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialInboxCloseItemResponse({
+    VaultFinancialInboxCloseItem? close,
+  }) {
+    final result = create();
+    if (close != null) result.close = close;
+    return result;
+  }
+
+  SaveVaultFinancialInboxCloseItemResponse._();
+
+  factory SaveVaultFinancialInboxCloseItemResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialInboxCloseItemResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialInboxCloseItemResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialInboxCloseItem>(1, _omitFieldNames ? '' : 'close',
+        subBuilder: VaultFinancialInboxCloseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialInboxCloseItemResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialInboxCloseItemResponse copyWith(
+          void Function(SaveVaultFinancialInboxCloseItemResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialInboxCloseItemResponse))
+          as SaveVaultFinancialInboxCloseItemResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialInboxCloseItemResponse create() =>
+      SaveVaultFinancialInboxCloseItemResponse._();
+  @$core.override
+  SaveVaultFinancialInboxCloseItemResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialInboxCloseItemResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialInboxCloseItemResponse>(create);
+  static SaveVaultFinancialInboxCloseItemResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialInboxCloseItem get close => $_getN(0);
+  @$pb.TagNumber(1)
+  set close(VaultFinancialInboxCloseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClose() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialInboxCloseItem ensureClose() => $_ensure(0);
+}
+
+class LockOrReopenVaultMonthlyCloseRequest extends $pb.GeneratedMessage {
+  factory LockOrReopenVaultMonthlyCloseRequest({
+    $core.String? inboxCode,
+    $core.String? whatChangedStatementBridge,
+    $core.String? inboxState,
+  }) {
+    final result = create();
+    if (inboxCode != null) result.inboxCode = inboxCode;
+    if (whatChangedStatementBridge != null)
+      result.whatChangedStatementBridge = whatChangedStatementBridge;
+    if (inboxState != null) result.inboxState = inboxState;
+    return result;
+  }
+
+  LockOrReopenVaultMonthlyCloseRequest._();
+
+  factory LockOrReopenVaultMonthlyCloseRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReopenVaultMonthlyCloseRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReopenVaultMonthlyCloseRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'inboxCode')
+    ..aOS(2, _omitFieldNames ? '' : 'whatChangedStatementBridge')
+    ..aOS(3, _omitFieldNames ? '' : 'inboxState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReopenVaultMonthlyCloseRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReopenVaultMonthlyCloseRequest copyWith(
+          void Function(LockOrReopenVaultMonthlyCloseRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReopenVaultMonthlyCloseRequest))
+          as LockOrReopenVaultMonthlyCloseRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReopenVaultMonthlyCloseRequest create() =>
+      LockOrReopenVaultMonthlyCloseRequest._();
+  @$core.override
+  LockOrReopenVaultMonthlyCloseRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReopenVaultMonthlyCloseRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReopenVaultMonthlyCloseRequest>(create);
+  static LockOrReopenVaultMonthlyCloseRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get inboxCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set inboxCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInboxCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInboxCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get whatChangedStatementBridge => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set whatChangedStatementBridge($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWhatChangedStatementBridge() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWhatChangedStatementBridge() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get inboxState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set inboxState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasInboxState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearInboxState() => $_clearField(3);
+}
+
+class LockOrReopenVaultMonthlyCloseResponse extends $pb.GeneratedMessage {
+  factory LockOrReopenVaultMonthlyCloseResponse({
+    VaultFinancialInboxCloseItem? close,
+  }) {
+    final result = create();
+    if (close != null) result.close = close;
+    return result;
+  }
+
+  LockOrReopenVaultMonthlyCloseResponse._();
+
+  factory LockOrReopenVaultMonthlyCloseResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrReopenVaultMonthlyCloseResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrReopenVaultMonthlyCloseResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialInboxCloseItem>(1, _omitFieldNames ? '' : 'close',
+        subBuilder: VaultFinancialInboxCloseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReopenVaultMonthlyCloseResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrReopenVaultMonthlyCloseResponse copyWith(
+          void Function(LockOrReopenVaultMonthlyCloseResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrReopenVaultMonthlyCloseResponse))
+          as LockOrReopenVaultMonthlyCloseResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrReopenVaultMonthlyCloseResponse create() =>
+      LockOrReopenVaultMonthlyCloseResponse._();
+  @$core.override
+  LockOrReopenVaultMonthlyCloseResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrReopenVaultMonthlyCloseResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrReopenVaultMonthlyCloseResponse>(create);
+  static LockOrReopenVaultMonthlyCloseResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialInboxCloseItem get close => $_getN(0);
+  @$pb.TagNumber(1)
+  set close(VaultFinancialInboxCloseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasClose() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearClose() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialInboxCloseItem ensureClose() => $_ensure(0);
+}
+
+/// Choice 3 (V2, V11): Personal CFO and Cash Command
+class VaultPersonalCfoCashCommandItem extends $pb.GeneratedMessage {
+  factory VaultPersonalCfoCashCommandItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? commandCode,
+    $core.String? liquidityLadderAndRatios,
+    $core.String? thirteenWeekForecastAndCommitments,
+    $core.String? explainableVarianceAndPolicyAlert,
+    $core.String? commandState,
+    $core.bool? nonAutoTransferBoundaryEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (commandCode != null) result.commandCode = commandCode;
+    if (liquidityLadderAndRatios != null)
+      result.liquidityLadderAndRatios = liquidityLadderAndRatios;
+    if (thirteenWeekForecastAndCommitments != null)
+      result.thirteenWeekForecastAndCommitments =
+          thirteenWeekForecastAndCommitments;
+    if (explainableVarianceAndPolicyAlert != null)
+      result.explainableVarianceAndPolicyAlert =
+          explainableVarianceAndPolicyAlert;
+    if (commandState != null) result.commandState = commandState;
+    if (nonAutoTransferBoundaryEnforced != null)
+      result.nonAutoTransferBoundaryEnforced = nonAutoTransferBoundaryEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultPersonalCfoCashCommandItem._();
+
+  factory VaultPersonalCfoCashCommandItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultPersonalCfoCashCommandItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultPersonalCfoCashCommandItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'commandCode')
+    ..aOS(4, _omitFieldNames ? '' : 'liquidityLadderAndRatios')
+    ..aOS(5, _omitFieldNames ? '' : 'thirteenWeekForecastAndCommitments')
+    ..aOS(6, _omitFieldNames ? '' : 'explainableVarianceAndPolicyAlert')
+    ..aOS(7, _omitFieldNames ? '' : 'commandState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonAutoTransferBoundaryEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPersonalCfoCashCommandItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPersonalCfoCashCommandItem copyWith(
+          void Function(VaultPersonalCfoCashCommandItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultPersonalCfoCashCommandItem))
+          as VaultPersonalCfoCashCommandItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultPersonalCfoCashCommandItem create() =>
+      VaultPersonalCfoCashCommandItem._();
+  @$core.override
+  VaultPersonalCfoCashCommandItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultPersonalCfoCashCommandItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultPersonalCfoCashCommandItem>(
+          create);
+  static VaultPersonalCfoCashCommandItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get commandCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set commandCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCommandCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommandCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get liquidityLadderAndRatios => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set liquidityLadderAndRatios($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLiquidityLadderAndRatios() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLiquidityLadderAndRatios() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get thirteenWeekForecastAndCommitments => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set thirteenWeekForecastAndCommitments($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasThirteenWeekForecastAndCommitments() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearThirteenWeekForecastAndCommitments() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get explainableVarianceAndPolicyAlert => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set explainableVarianceAndPolicyAlert($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExplainableVarianceAndPolicyAlert() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExplainableVarianceAndPolicyAlert() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get commandState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set commandState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCommandState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCommandState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonAutoTransferBoundaryEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonAutoTransferBoundaryEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonAutoTransferBoundaryEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonAutoTransferBoundaryEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultPersonalCfoCashWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultPersonalCfoCashWorkbenchRequest() => create();
+
+  GetVaultPersonalCfoCashWorkbenchRequest._();
+
+  factory GetVaultPersonalCfoCashWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPersonalCfoCashWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPersonalCfoCashWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPersonalCfoCashWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPersonalCfoCashWorkbenchRequest copyWith(
+          void Function(GetVaultPersonalCfoCashWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPersonalCfoCashWorkbenchRequest))
+          as GetVaultPersonalCfoCashWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPersonalCfoCashWorkbenchRequest create() =>
+      GetVaultPersonalCfoCashWorkbenchRequest._();
+  @$core.override
+  GetVaultPersonalCfoCashWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPersonalCfoCashWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPersonalCfoCashWorkbenchRequest>(create);
+  static GetVaultPersonalCfoCashWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultPersonalCfoCashWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultPersonalCfoCashWorkbenchResponse({
+    $core.Iterable<VaultPersonalCfoCashCommandItem>? commands,
+    $core.bool? nonAutoTransferBoundaryEnforced,
+    $core.String? liquidityLadderAndForecastSummary,
+  }) {
+    final result = create();
+    if (commands != null) result.commands.addAll(commands);
+    if (nonAutoTransferBoundaryEnforced != null)
+      result.nonAutoTransferBoundaryEnforced = nonAutoTransferBoundaryEnforced;
+    if (liquidityLadderAndForecastSummary != null)
+      result.liquidityLadderAndForecastSummary =
+          liquidityLadderAndForecastSummary;
+    return result;
+  }
+
+  GetVaultPersonalCfoCashWorkbenchResponse._();
+
+  factory GetVaultPersonalCfoCashWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPersonalCfoCashWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPersonalCfoCashWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultPersonalCfoCashCommandItem>(1, _omitFieldNames ? '' : 'commands',
+        subBuilder: VaultPersonalCfoCashCommandItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonAutoTransferBoundaryEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'liquidityLadderAndForecastSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPersonalCfoCashWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPersonalCfoCashWorkbenchResponse copyWith(
+          void Function(GetVaultPersonalCfoCashWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPersonalCfoCashWorkbenchResponse))
+          as GetVaultPersonalCfoCashWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPersonalCfoCashWorkbenchResponse create() =>
+      GetVaultPersonalCfoCashWorkbenchResponse._();
+  @$core.override
+  GetVaultPersonalCfoCashWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPersonalCfoCashWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPersonalCfoCashWorkbenchResponse>(create);
+  static GetVaultPersonalCfoCashWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultPersonalCfoCashCommandItem> get commands => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonAutoTransferBoundaryEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonAutoTransferBoundaryEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonAutoTransferBoundaryEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonAutoTransferBoundaryEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get liquidityLadderAndForecastSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set liquidityLadderAndForecastSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLiquidityLadderAndForecastSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLiquidityLadderAndForecastSummary() => $_clearField(3);
+}
+
+class SaveVaultPersonalCfoCashForecastRequest extends $pb.GeneratedMessage {
+  factory SaveVaultPersonalCfoCashForecastRequest({
+    $core.String? commandCode,
+    $core.String? liquidityLadderAndRatios,
+    $core.String? thirteenWeekForecastAndCommitments,
+    $core.String? explainableVarianceAndPolicyAlert,
+    $core.String? commandState,
+  }) {
+    final result = create();
+    if (commandCode != null) result.commandCode = commandCode;
+    if (liquidityLadderAndRatios != null)
+      result.liquidityLadderAndRatios = liquidityLadderAndRatios;
+    if (thirteenWeekForecastAndCommitments != null)
+      result.thirteenWeekForecastAndCommitments =
+          thirteenWeekForecastAndCommitments;
+    if (explainableVarianceAndPolicyAlert != null)
+      result.explainableVarianceAndPolicyAlert =
+          explainableVarianceAndPolicyAlert;
+    if (commandState != null) result.commandState = commandState;
+    return result;
+  }
+
+  SaveVaultPersonalCfoCashForecastRequest._();
+
+  factory SaveVaultPersonalCfoCashForecastRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPersonalCfoCashForecastRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPersonalCfoCashForecastRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'commandCode')
+    ..aOS(2, _omitFieldNames ? '' : 'liquidityLadderAndRatios')
+    ..aOS(3, _omitFieldNames ? '' : 'thirteenWeekForecastAndCommitments')
+    ..aOS(4, _omitFieldNames ? '' : 'explainableVarianceAndPolicyAlert')
+    ..aOS(5, _omitFieldNames ? '' : 'commandState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPersonalCfoCashForecastRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPersonalCfoCashForecastRequest copyWith(
+          void Function(SaveVaultPersonalCfoCashForecastRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPersonalCfoCashForecastRequest))
+          as SaveVaultPersonalCfoCashForecastRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPersonalCfoCashForecastRequest create() =>
+      SaveVaultPersonalCfoCashForecastRequest._();
+  @$core.override
+  SaveVaultPersonalCfoCashForecastRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPersonalCfoCashForecastRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPersonalCfoCashForecastRequest>(create);
+  static SaveVaultPersonalCfoCashForecastRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get commandCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set commandCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommandCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommandCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get liquidityLadderAndRatios => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set liquidityLadderAndRatios($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasLiquidityLadderAndRatios() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLiquidityLadderAndRatios() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get thirteenWeekForecastAndCommitments => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set thirteenWeekForecastAndCommitments($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasThirteenWeekForecastAndCommitments() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearThirteenWeekForecastAndCommitments() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get explainableVarianceAndPolicyAlert => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set explainableVarianceAndPolicyAlert($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExplainableVarianceAndPolicyAlert() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExplainableVarianceAndPolicyAlert() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get commandState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set commandState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCommandState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCommandState() => $_clearField(5);
+}
+
+class SaveVaultPersonalCfoCashForecastResponse extends $pb.GeneratedMessage {
+  factory SaveVaultPersonalCfoCashForecastResponse({
+    VaultPersonalCfoCashCommandItem? command,
+  }) {
+    final result = create();
+    if (command != null) result.command = command;
+    return result;
+  }
+
+  SaveVaultPersonalCfoCashForecastResponse._();
+
+  factory SaveVaultPersonalCfoCashForecastResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPersonalCfoCashForecastResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPersonalCfoCashForecastResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPersonalCfoCashCommandItem>(1, _omitFieldNames ? '' : 'command',
+        subBuilder: VaultPersonalCfoCashCommandItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPersonalCfoCashForecastResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPersonalCfoCashForecastResponse copyWith(
+          void Function(SaveVaultPersonalCfoCashForecastResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPersonalCfoCashForecastResponse))
+          as SaveVaultPersonalCfoCashForecastResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPersonalCfoCashForecastResponse create() =>
+      SaveVaultPersonalCfoCashForecastResponse._();
+  @$core.override
+  SaveVaultPersonalCfoCashForecastResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPersonalCfoCashForecastResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPersonalCfoCashForecastResponse>(create);
+  static SaveVaultPersonalCfoCashForecastResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPersonalCfoCashCommandItem get command => $_getN(0);
+  @$pb.TagNumber(1)
+  set command(VaultPersonalCfoCashCommandItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommand() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommand() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPersonalCfoCashCommandItem ensureCommand() => $_ensure(0);
+}
+
+class AcknowledgeOrReviewVaultCashCommitmentRequest
+    extends $pb.GeneratedMessage {
+  factory AcknowledgeOrReviewVaultCashCommitmentRequest({
+    $core.String? commandCode,
+    $core.String? explainableVarianceAndPolicyAlert,
+    $core.String? commandState,
+  }) {
+    final result = create();
+    if (commandCode != null) result.commandCode = commandCode;
+    if (explainableVarianceAndPolicyAlert != null)
+      result.explainableVarianceAndPolicyAlert =
+          explainableVarianceAndPolicyAlert;
+    if (commandState != null) result.commandState = commandState;
+    return result;
+  }
+
+  AcknowledgeOrReviewVaultCashCommitmentRequest._();
+
+  factory AcknowledgeOrReviewVaultCashCommitmentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeOrReviewVaultCashCommitmentRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeOrReviewVaultCashCommitmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'commandCode')
+    ..aOS(2, _omitFieldNames ? '' : 'explainableVarianceAndPolicyAlert')
+    ..aOS(3, _omitFieldNames ? '' : 'commandState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrReviewVaultCashCommitmentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrReviewVaultCashCommitmentRequest copyWith(
+          void Function(AcknowledgeOrReviewVaultCashCommitmentRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as AcknowledgeOrReviewVaultCashCommitmentRequest))
+          as AcknowledgeOrReviewVaultCashCommitmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrReviewVaultCashCommitmentRequest create() =>
+      AcknowledgeOrReviewVaultCashCommitmentRequest._();
+  @$core.override
+  AcknowledgeOrReviewVaultCashCommitmentRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrReviewVaultCashCommitmentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeOrReviewVaultCashCommitmentRequest>(create);
+  static AcknowledgeOrReviewVaultCashCommitmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get commandCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set commandCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommandCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommandCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get explainableVarianceAndPolicyAlert => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set explainableVarianceAndPolicyAlert($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExplainableVarianceAndPolicyAlert() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExplainableVarianceAndPolicyAlert() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get commandState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set commandState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCommandState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommandState() => $_clearField(3);
+}
+
+class AcknowledgeOrReviewVaultCashCommitmentResponse
+    extends $pb.GeneratedMessage {
+  factory AcknowledgeOrReviewVaultCashCommitmentResponse({
+    VaultPersonalCfoCashCommandItem? command,
+  }) {
+    final result = create();
+    if (command != null) result.command = command;
+    return result;
+  }
+
+  AcknowledgeOrReviewVaultCashCommitmentResponse._();
+
+  factory AcknowledgeOrReviewVaultCashCommitmentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AcknowledgeOrReviewVaultCashCommitmentResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AcknowledgeOrReviewVaultCashCommitmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPersonalCfoCashCommandItem>(1, _omitFieldNames ? '' : 'command',
+        subBuilder: VaultPersonalCfoCashCommandItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrReviewVaultCashCommitmentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AcknowledgeOrReviewVaultCashCommitmentResponse copyWith(
+          void Function(AcknowledgeOrReviewVaultCashCommitmentResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as AcknowledgeOrReviewVaultCashCommitmentResponse))
+          as AcknowledgeOrReviewVaultCashCommitmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrReviewVaultCashCommitmentResponse create() =>
+      AcknowledgeOrReviewVaultCashCommitmentResponse._();
+  @$core.override
+  AcknowledgeOrReviewVaultCashCommitmentResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static AcknowledgeOrReviewVaultCashCommitmentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          AcknowledgeOrReviewVaultCashCommitmentResponse>(create);
+  static AcknowledgeOrReviewVaultCashCommitmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPersonalCfoCashCommandItem get command => $_getN(0);
+  @$pb.TagNumber(1)
+  set command(VaultPersonalCfoCashCommandItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCommand() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCommand() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPersonalCfoCashCommandItem ensureCommand() => $_ensure(0);
+}
+
+/// Choice 4 (V3): Performance and Allocation Laboratory
+class VaultPerformanceAllocationLabItem extends $pb.GeneratedMessage {
+  factory VaultPerformanceAllocationLabItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? allocationCode,
+    $core.String? twrMwrIrrAndBenchmarkSummary,
+    $core.String? lookthroughExposureAndConcentration,
+    $core.String? rebalanceTaxAndCostScenario,
+    $core.String? labState,
+    $core.bool? noFabricatedSmoothCurveEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (allocationCode != null) result.allocationCode = allocationCode;
+    if (twrMwrIrrAndBenchmarkSummary != null)
+      result.twrMwrIrrAndBenchmarkSummary = twrMwrIrrAndBenchmarkSummary;
+    if (lookthroughExposureAndConcentration != null)
+      result.lookthroughExposureAndConcentration =
+          lookthroughExposureAndConcentration;
+    if (rebalanceTaxAndCostScenario != null)
+      result.rebalanceTaxAndCostScenario = rebalanceTaxAndCostScenario;
+    if (labState != null) result.labState = labState;
+    if (noFabricatedSmoothCurveEnforced != null)
+      result.noFabricatedSmoothCurveEnforced = noFabricatedSmoothCurveEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultPerformanceAllocationLabItem._();
+
+  factory VaultPerformanceAllocationLabItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultPerformanceAllocationLabItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultPerformanceAllocationLabItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'allocationCode')
+    ..aOS(4, _omitFieldNames ? '' : 'twrMwrIrrAndBenchmarkSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'lookthroughExposureAndConcentration')
+    ..aOS(6, _omitFieldNames ? '' : 'rebalanceTaxAndCostScenario')
+    ..aOS(7, _omitFieldNames ? '' : 'labState')
+    ..aOB(8, _omitFieldNames ? '' : 'noFabricatedSmoothCurveEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPerformanceAllocationLabItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPerformanceAllocationLabItem copyWith(
+          void Function(VaultPerformanceAllocationLabItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as VaultPerformanceAllocationLabItem))
+          as VaultPerformanceAllocationLabItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultPerformanceAllocationLabItem create() =>
+      VaultPerformanceAllocationLabItem._();
+  @$core.override
+  VaultPerformanceAllocationLabItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultPerformanceAllocationLabItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultPerformanceAllocationLabItem>(
+          create);
+  static VaultPerformanceAllocationLabItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get allocationCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set allocationCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAllocationCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAllocationCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get twrMwrIrrAndBenchmarkSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set twrMwrIrrAndBenchmarkSummary($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTwrMwrIrrAndBenchmarkSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTwrMwrIrrAndBenchmarkSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lookthroughExposureAndConcentration => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lookthroughExposureAndConcentration($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLookthroughExposureAndConcentration() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLookthroughExposureAndConcentration() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get rebalanceTaxAndCostScenario => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set rebalanceTaxAndCostScenario($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasRebalanceTaxAndCostScenario() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRebalanceTaxAndCostScenario() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get labState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set labState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLabState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLabState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noFabricatedSmoothCurveEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noFabricatedSmoothCurveEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoFabricatedSmoothCurveEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoFabricatedSmoothCurveEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultPerformanceAllocationWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetVaultPerformanceAllocationWorkbenchRequest() => create();
+
+  GetVaultPerformanceAllocationWorkbenchRequest._();
+
+  factory GetVaultPerformanceAllocationWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPerformanceAllocationWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPerformanceAllocationWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPerformanceAllocationWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPerformanceAllocationWorkbenchRequest copyWith(
+          void Function(GetVaultPerformanceAllocationWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPerformanceAllocationWorkbenchRequest))
+          as GetVaultPerformanceAllocationWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPerformanceAllocationWorkbenchRequest create() =>
+      GetVaultPerformanceAllocationWorkbenchRequest._();
+  @$core.override
+  GetVaultPerformanceAllocationWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPerformanceAllocationWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPerformanceAllocationWorkbenchRequest>(create);
+  static GetVaultPerformanceAllocationWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultPerformanceAllocationWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetVaultPerformanceAllocationWorkbenchResponse({
+    $core.Iterable<VaultPerformanceAllocationLabItem>? models,
+    $core.bool? noFabricatedSmoothCurveEnforced,
+    $core.String? snapshotReproduciblePerformanceSummary,
+  }) {
+    final result = create();
+    if (models != null) result.models.addAll(models);
+    if (noFabricatedSmoothCurveEnforced != null)
+      result.noFabricatedSmoothCurveEnforced = noFabricatedSmoothCurveEnforced;
+    if (snapshotReproduciblePerformanceSummary != null)
+      result.snapshotReproduciblePerformanceSummary =
+          snapshotReproduciblePerformanceSummary;
+    return result;
+  }
+
+  GetVaultPerformanceAllocationWorkbenchResponse._();
+
+  factory GetVaultPerformanceAllocationWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPerformanceAllocationWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPerformanceAllocationWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultPerformanceAllocationLabItem>(1, _omitFieldNames ? '' : 'models',
+        subBuilder: VaultPerformanceAllocationLabItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'noFabricatedSmoothCurveEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'snapshotReproduciblePerformanceSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPerformanceAllocationWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPerformanceAllocationWorkbenchResponse copyWith(
+          void Function(GetVaultPerformanceAllocationWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) => updates(
+              message as GetVaultPerformanceAllocationWorkbenchResponse))
+          as GetVaultPerformanceAllocationWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPerformanceAllocationWorkbenchResponse create() =>
+      GetVaultPerformanceAllocationWorkbenchResponse._();
+  @$core.override
+  GetVaultPerformanceAllocationWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPerformanceAllocationWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPerformanceAllocationWorkbenchResponse>(create);
+  static GetVaultPerformanceAllocationWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultPerformanceAllocationLabItem> get models => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get noFabricatedSmoothCurveEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set noFabricatedSmoothCurveEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNoFabricatedSmoothCurveEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNoFabricatedSmoothCurveEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get snapshotReproduciblePerformanceSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set snapshotReproduciblePerformanceSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSnapshotReproduciblePerformanceSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSnapshotReproduciblePerformanceSummary() => $_clearField(3);
+}
+
+class SaveVaultPerformanceAllocationModelRequest extends $pb.GeneratedMessage {
+  factory SaveVaultPerformanceAllocationModelRequest({
+    $core.String? allocationCode,
+    $core.String? twrMwrIrrAndBenchmarkSummary,
+    $core.String? lookthroughExposureAndConcentration,
+    $core.String? rebalanceTaxAndCostScenario,
+    $core.String? labState,
+  }) {
+    final result = create();
+    if (allocationCode != null) result.allocationCode = allocationCode;
+    if (twrMwrIrrAndBenchmarkSummary != null)
+      result.twrMwrIrrAndBenchmarkSummary = twrMwrIrrAndBenchmarkSummary;
+    if (lookthroughExposureAndConcentration != null)
+      result.lookthroughExposureAndConcentration =
+          lookthroughExposureAndConcentration;
+    if (rebalanceTaxAndCostScenario != null)
+      result.rebalanceTaxAndCostScenario = rebalanceTaxAndCostScenario;
+    if (labState != null) result.labState = labState;
+    return result;
+  }
+
+  SaveVaultPerformanceAllocationModelRequest._();
+
+  factory SaveVaultPerformanceAllocationModelRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPerformanceAllocationModelRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPerformanceAllocationModelRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'allocationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'twrMwrIrrAndBenchmarkSummary')
+    ..aOS(3, _omitFieldNames ? '' : 'lookthroughExposureAndConcentration')
+    ..aOS(4, _omitFieldNames ? '' : 'rebalanceTaxAndCostScenario')
+    ..aOS(5, _omitFieldNames ? '' : 'labState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPerformanceAllocationModelRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPerformanceAllocationModelRequest copyWith(
+          void Function(SaveVaultPerformanceAllocationModelRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPerformanceAllocationModelRequest))
+          as SaveVaultPerformanceAllocationModelRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPerformanceAllocationModelRequest create() =>
+      SaveVaultPerformanceAllocationModelRequest._();
+  @$core.override
+  SaveVaultPerformanceAllocationModelRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPerformanceAllocationModelRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPerformanceAllocationModelRequest>(create);
+  static SaveVaultPerformanceAllocationModelRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get allocationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set allocationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAllocationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAllocationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get twrMwrIrrAndBenchmarkSummary => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set twrMwrIrrAndBenchmarkSummary($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTwrMwrIrrAndBenchmarkSummary() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTwrMwrIrrAndBenchmarkSummary() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get lookthroughExposureAndConcentration => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set lookthroughExposureAndConcentration($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLookthroughExposureAndConcentration() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLookthroughExposureAndConcentration() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get rebalanceTaxAndCostScenario => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set rebalanceTaxAndCostScenario($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRebalanceTaxAndCostScenario() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRebalanceTaxAndCostScenario() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get labState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set labState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLabState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLabState() => $_clearField(5);
+}
+
+class SaveVaultPerformanceAllocationModelResponse extends $pb.GeneratedMessage {
+  factory SaveVaultPerformanceAllocationModelResponse({
+    VaultPerformanceAllocationLabItem? model,
+  }) {
+    final result = create();
+    if (model != null) result.model = model;
+    return result;
+  }
+
+  SaveVaultPerformanceAllocationModelResponse._();
+
+  factory SaveVaultPerformanceAllocationModelResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPerformanceAllocationModelResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPerformanceAllocationModelResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPerformanceAllocationLabItem>(1, _omitFieldNames ? '' : 'model',
+        subBuilder: VaultPerformanceAllocationLabItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPerformanceAllocationModelResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPerformanceAllocationModelResponse copyWith(
+          void Function(SaveVaultPerformanceAllocationModelResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPerformanceAllocationModelResponse))
+          as SaveVaultPerformanceAllocationModelResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPerformanceAllocationModelResponse create() =>
+      SaveVaultPerformanceAllocationModelResponse._();
+  @$core.override
+  SaveVaultPerformanceAllocationModelResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPerformanceAllocationModelResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPerformanceAllocationModelResponse>(create);
+  static SaveVaultPerformanceAllocationModelResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPerformanceAllocationLabItem get model => $_getN(0);
+  @$pb.TagNumber(1)
+  set model(VaultPerformanceAllocationLabItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModel() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPerformanceAllocationLabItem ensureModel() => $_ensure(0);
+}
+
+class SimulateOrRefreshVaultAllocationRequest extends $pb.GeneratedMessage {
+  factory SimulateOrRefreshVaultAllocationRequest({
+    $core.String? allocationCode,
+    $core.String? rebalanceTaxAndCostScenario,
+    $core.String? labState,
+  }) {
+    final result = create();
+    if (allocationCode != null) result.allocationCode = allocationCode;
+    if (rebalanceTaxAndCostScenario != null)
+      result.rebalanceTaxAndCostScenario = rebalanceTaxAndCostScenario;
+    if (labState != null) result.labState = labState;
+    return result;
+  }
+
+  SimulateOrRefreshVaultAllocationRequest._();
+
+  factory SimulateOrRefreshVaultAllocationRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateOrRefreshVaultAllocationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateOrRefreshVaultAllocationRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'allocationCode')
+    ..aOS(2, _omitFieldNames ? '' : 'rebalanceTaxAndCostScenario')
+    ..aOS(3, _omitFieldNames ? '' : 'labState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrRefreshVaultAllocationRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrRefreshVaultAllocationRequest copyWith(
+          void Function(SimulateOrRefreshVaultAllocationRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SimulateOrRefreshVaultAllocationRequest))
+          as SimulateOrRefreshVaultAllocationRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrRefreshVaultAllocationRequest create() =>
+      SimulateOrRefreshVaultAllocationRequest._();
+  @$core.override
+  SimulateOrRefreshVaultAllocationRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrRefreshVaultAllocationRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SimulateOrRefreshVaultAllocationRequest>(create);
+  static SimulateOrRefreshVaultAllocationRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get allocationCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set allocationCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAllocationCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAllocationCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get rebalanceTaxAndCostScenario => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set rebalanceTaxAndCostScenario($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRebalanceTaxAndCostScenario() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRebalanceTaxAndCostScenario() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get labState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set labState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLabState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabState() => $_clearField(3);
+}
+
+class SimulateOrRefreshVaultAllocationResponse extends $pb.GeneratedMessage {
+  factory SimulateOrRefreshVaultAllocationResponse({
+    VaultPerformanceAllocationLabItem? model,
+  }) {
+    final result = create();
+    if (model != null) result.model = model;
+    return result;
+  }
+
+  SimulateOrRefreshVaultAllocationResponse._();
+
+  factory SimulateOrRefreshVaultAllocationResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimulateOrRefreshVaultAllocationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimulateOrRefreshVaultAllocationResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPerformanceAllocationLabItem>(1, _omitFieldNames ? '' : 'model',
+        subBuilder: VaultPerformanceAllocationLabItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrRefreshVaultAllocationResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SimulateOrRefreshVaultAllocationResponse copyWith(
+          void Function(SimulateOrRefreshVaultAllocationResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SimulateOrRefreshVaultAllocationResponse))
+          as SimulateOrRefreshVaultAllocationResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrRefreshVaultAllocationResponse create() =>
+      SimulateOrRefreshVaultAllocationResponse._();
+  @$core.override
+  SimulateOrRefreshVaultAllocationResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SimulateOrRefreshVaultAllocationResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SimulateOrRefreshVaultAllocationResponse>(create);
+  static SimulateOrRefreshVaultAllocationResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPerformanceAllocationLabItem get model => $_getN(0);
+  @$pb.TagNumber(1)
+  set model(VaultPerformanceAllocationLabItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasModel() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearModel() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPerformanceAllocationLabItem ensureModel() => $_ensure(0);
+}
+
+/// Choice 5 (V4, V16): Tax and Accountant Workspace
+class VaultTaxAccountantWorkspaceItem extends $pb.GeneratedMessage {
+  factory VaultTaxAccountantWorkspaceItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? taxCode,
+    $core.String? jurisdictionLotsAndWashSaleScope,
+    $core.String? harvestOrPaymentScenarioEstimate,
+    $core.String? accountantDataroomAndPeriodLock,
+    $core.String? workspaceState,
+    $core.bool? nonTaxAdviceNoOnetapTradeEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (taxCode != null) result.taxCode = taxCode;
+    if (jurisdictionLotsAndWashSaleScope != null)
+      result.jurisdictionLotsAndWashSaleScope =
+          jurisdictionLotsAndWashSaleScope;
+    if (harvestOrPaymentScenarioEstimate != null)
+      result.harvestOrPaymentScenarioEstimate =
+          harvestOrPaymentScenarioEstimate;
+    if (accountantDataroomAndPeriodLock != null)
+      result.accountantDataroomAndPeriodLock = accountantDataroomAndPeriodLock;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (nonTaxAdviceNoOnetapTradeEnforced != null)
+      result.nonTaxAdviceNoOnetapTradeEnforced =
+          nonTaxAdviceNoOnetapTradeEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultTaxAccountantWorkspaceItem._();
+
+  factory VaultTaxAccountantWorkspaceItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultTaxAccountantWorkspaceItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultTaxAccountantWorkspaceItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'taxCode')
+    ..aOS(4, _omitFieldNames ? '' : 'jurisdictionLotsAndWashSaleScope')
+    ..aOS(5, _omitFieldNames ? '' : 'harvestOrPaymentScenarioEstimate')
+    ..aOS(6, _omitFieldNames ? '' : 'accountantDataroomAndPeriodLock')
+    ..aOS(7, _omitFieldNames ? '' : 'workspaceState')
+    ..aOB(8, _omitFieldNames ? '' : 'nonTaxAdviceNoOnetapTradeEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultTaxAccountantWorkspaceItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultTaxAccountantWorkspaceItem copyWith(
+          void Function(VaultTaxAccountantWorkspaceItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultTaxAccountantWorkspaceItem))
+          as VaultTaxAccountantWorkspaceItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultTaxAccountantWorkspaceItem create() =>
+      VaultTaxAccountantWorkspaceItem._();
+  @$core.override
+  VaultTaxAccountantWorkspaceItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultTaxAccountantWorkspaceItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultTaxAccountantWorkspaceItem>(
+          create);
+  static VaultTaxAccountantWorkspaceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get taxCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set taxCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTaxCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTaxCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get jurisdictionLotsAndWashSaleScope => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set jurisdictionLotsAndWashSaleScope($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasJurisdictionLotsAndWashSaleScope() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearJurisdictionLotsAndWashSaleScope() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get harvestOrPaymentScenarioEstimate => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set harvestOrPaymentScenarioEstimate($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasHarvestOrPaymentScenarioEstimate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHarvestOrPaymentScenarioEstimate() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get accountantDataroomAndPeriodLock => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set accountantDataroomAndPeriodLock($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAccountantDataroomAndPeriodLock() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAccountantDataroomAndPeriodLock() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get workspaceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workspaceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWorkspaceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkspaceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get nonTaxAdviceNoOnetapTradeEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set nonTaxAdviceNoOnetapTradeEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNonTaxAdviceNoOnetapTradeEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNonTaxAdviceNoOnetapTradeEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultTaxAccountantWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultTaxAccountantWorkbenchRequest() => create();
+
+  GetVaultTaxAccountantWorkbenchRequest._();
+
+  factory GetVaultTaxAccountantWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultTaxAccountantWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultTaxAccountantWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTaxAccountantWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTaxAccountantWorkbenchRequest copyWith(
+          void Function(GetVaultTaxAccountantWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultTaxAccountantWorkbenchRequest))
+          as GetVaultTaxAccountantWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTaxAccountantWorkbenchRequest create() =>
+      GetVaultTaxAccountantWorkbenchRequest._();
+  @$core.override
+  GetVaultTaxAccountantWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTaxAccountantWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultTaxAccountantWorkbenchRequest>(create);
+  static GetVaultTaxAccountantWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultTaxAccountantWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultTaxAccountantWorkbenchResponse({
+    $core.Iterable<VaultTaxAccountantWorkspaceItem>? workspaces,
+    $core.bool? nonTaxAdviceNoOnetapTradeEnforced,
+    $core.String? washSaleAndAccountantScopeSummary,
+  }) {
+    final result = create();
+    if (workspaces != null) result.workspaces.addAll(workspaces);
+    if (nonTaxAdviceNoOnetapTradeEnforced != null)
+      result.nonTaxAdviceNoOnetapTradeEnforced =
+          nonTaxAdviceNoOnetapTradeEnforced;
+    if (washSaleAndAccountantScopeSummary != null)
+      result.washSaleAndAccountantScopeSummary =
+          washSaleAndAccountantScopeSummary;
+    return result;
+  }
+
+  GetVaultTaxAccountantWorkbenchResponse._();
+
+  factory GetVaultTaxAccountantWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultTaxAccountantWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultTaxAccountantWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultTaxAccountantWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspaces',
+        subBuilder: VaultTaxAccountantWorkspaceItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'nonTaxAdviceNoOnetapTradeEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'washSaleAndAccountantScopeSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTaxAccountantWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTaxAccountantWorkbenchResponse copyWith(
+          void Function(GetVaultTaxAccountantWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultTaxAccountantWorkbenchResponse))
+          as GetVaultTaxAccountantWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTaxAccountantWorkbenchResponse create() =>
+      GetVaultTaxAccountantWorkbenchResponse._();
+  @$core.override
+  GetVaultTaxAccountantWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTaxAccountantWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultTaxAccountantWorkbenchResponse>(create);
+  static GetVaultTaxAccountantWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultTaxAccountantWorkspaceItem> get workspaces => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get nonTaxAdviceNoOnetapTradeEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set nonTaxAdviceNoOnetapTradeEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNonTaxAdviceNoOnetapTradeEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNonTaxAdviceNoOnetapTradeEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get washSaleAndAccountantScopeSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set washSaleAndAccountantScopeSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWashSaleAndAccountantScopeSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWashSaleAndAccountantScopeSummary() => $_clearField(3);
+}
+
+class SaveVaultTaxAccountantScenarioRequest extends $pb.GeneratedMessage {
+  factory SaveVaultTaxAccountantScenarioRequest({
+    $core.String? taxCode,
+    $core.String? jurisdictionLotsAndWashSaleScope,
+    $core.String? harvestOrPaymentScenarioEstimate,
+    $core.String? accountantDataroomAndPeriodLock,
+    $core.String? workspaceState,
+  }) {
+    final result = create();
+    if (taxCode != null) result.taxCode = taxCode;
+    if (jurisdictionLotsAndWashSaleScope != null)
+      result.jurisdictionLotsAndWashSaleScope =
+          jurisdictionLotsAndWashSaleScope;
+    if (harvestOrPaymentScenarioEstimate != null)
+      result.harvestOrPaymentScenarioEstimate =
+          harvestOrPaymentScenarioEstimate;
+    if (accountantDataroomAndPeriodLock != null)
+      result.accountantDataroomAndPeriodLock = accountantDataroomAndPeriodLock;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    return result;
+  }
+
+  SaveVaultTaxAccountantScenarioRequest._();
+
+  factory SaveVaultTaxAccountantScenarioRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultTaxAccountantScenarioRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultTaxAccountantScenarioRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'taxCode')
+    ..aOS(2, _omitFieldNames ? '' : 'jurisdictionLotsAndWashSaleScope')
+    ..aOS(3, _omitFieldNames ? '' : 'harvestOrPaymentScenarioEstimate')
+    ..aOS(4, _omitFieldNames ? '' : 'accountantDataroomAndPeriodLock')
+    ..aOS(5, _omitFieldNames ? '' : 'workspaceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTaxAccountantScenarioRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTaxAccountantScenarioRequest copyWith(
+          void Function(SaveVaultTaxAccountantScenarioRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultTaxAccountantScenarioRequest))
+          as SaveVaultTaxAccountantScenarioRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTaxAccountantScenarioRequest create() =>
+      SaveVaultTaxAccountantScenarioRequest._();
+  @$core.override
+  SaveVaultTaxAccountantScenarioRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTaxAccountantScenarioRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultTaxAccountantScenarioRequest>(create);
+  static SaveVaultTaxAccountantScenarioRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get taxCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set taxCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTaxCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTaxCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get jurisdictionLotsAndWashSaleScope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set jurisdictionLotsAndWashSaleScope($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasJurisdictionLotsAndWashSaleScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearJurisdictionLotsAndWashSaleScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get harvestOrPaymentScenarioEstimate => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set harvestOrPaymentScenarioEstimate($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHarvestOrPaymentScenarioEstimate() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHarvestOrPaymentScenarioEstimate() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get accountantDataroomAndPeriodLock => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set accountantDataroomAndPeriodLock($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAccountantDataroomAndPeriodLock() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAccountantDataroomAndPeriodLock() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get workspaceState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set workspaceState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWorkspaceState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWorkspaceState() => $_clearField(5);
+}
+
+class SaveVaultTaxAccountantScenarioResponse extends $pb.GeneratedMessage {
+  factory SaveVaultTaxAccountantScenarioResponse({
+    VaultTaxAccountantWorkspaceItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  SaveVaultTaxAccountantScenarioResponse._();
+
+  factory SaveVaultTaxAccountantScenarioResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultTaxAccountantScenarioResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultTaxAccountantScenarioResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultTaxAccountantWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: VaultTaxAccountantWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTaxAccountantScenarioResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTaxAccountantScenarioResponse copyWith(
+          void Function(SaveVaultTaxAccountantScenarioResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultTaxAccountantScenarioResponse))
+          as SaveVaultTaxAccountantScenarioResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTaxAccountantScenarioResponse create() =>
+      SaveVaultTaxAccountantScenarioResponse._();
+  @$core.override
+  SaveVaultTaxAccountantScenarioResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTaxAccountantScenarioResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultTaxAccountantScenarioResponse>(create);
+  static SaveVaultTaxAccountantScenarioResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultTaxAccountantWorkspaceItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(VaultTaxAccountantWorkspaceItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultTaxAccountantWorkspaceItem ensureWorkspace() => $_ensure(0);
+}
+
+class LockOrExportVaultTaxPackageRequest extends $pb.GeneratedMessage {
+  factory LockOrExportVaultTaxPackageRequest({
+    $core.String? taxCode,
+    $core.String? accountantDataroomAndPeriodLock,
+    $core.String? workspaceState,
+  }) {
+    final result = create();
+    if (taxCode != null) result.taxCode = taxCode;
+    if (accountantDataroomAndPeriodLock != null)
+      result.accountantDataroomAndPeriodLock = accountantDataroomAndPeriodLock;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    return result;
+  }
+
+  LockOrExportVaultTaxPackageRequest._();
+
+  factory LockOrExportVaultTaxPackageRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrExportVaultTaxPackageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrExportVaultTaxPackageRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'taxCode')
+    ..aOS(2, _omitFieldNames ? '' : 'accountantDataroomAndPeriodLock')
+    ..aOS(3, _omitFieldNames ? '' : 'workspaceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportVaultTaxPackageRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportVaultTaxPackageRequest copyWith(
+          void Function(LockOrExportVaultTaxPackageRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrExportVaultTaxPackageRequest))
+          as LockOrExportVaultTaxPackageRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportVaultTaxPackageRequest create() =>
+      LockOrExportVaultTaxPackageRequest._();
+  @$core.override
+  LockOrExportVaultTaxPackageRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportVaultTaxPackageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LockOrExportVaultTaxPackageRequest>(
+          create);
+  static LockOrExportVaultTaxPackageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get taxCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set taxCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTaxCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTaxCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountantDataroomAndPeriodLock => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountantDataroomAndPeriodLock($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccountantDataroomAndPeriodLock() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountantDataroomAndPeriodLock() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workspaceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workspaceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkspaceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkspaceState() => $_clearField(3);
+}
+
+class LockOrExportVaultTaxPackageResponse extends $pb.GeneratedMessage {
+  factory LockOrExportVaultTaxPackageResponse({
+    VaultTaxAccountantWorkspaceItem? workspace,
+  }) {
+    final result = create();
+    if (workspace != null) result.workspace = workspace;
+    return result;
+  }
+
+  LockOrExportVaultTaxPackageResponse._();
+
+  factory LockOrExportVaultTaxPackageResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LockOrExportVaultTaxPackageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LockOrExportVaultTaxPackageResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultTaxAccountantWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'workspace',
+        subBuilder: VaultTaxAccountantWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportVaultTaxPackageResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LockOrExportVaultTaxPackageResponse copyWith(
+          void Function(LockOrExportVaultTaxPackageResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as LockOrExportVaultTaxPackageResponse))
+          as LockOrExportVaultTaxPackageResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportVaultTaxPackageResponse create() =>
+      LockOrExportVaultTaxPackageResponse._();
+  @$core.override
+  LockOrExportVaultTaxPackageResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LockOrExportVaultTaxPackageResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          LockOrExportVaultTaxPackageResponse>(create);
+  static LockOrExportVaultTaxPackageResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultTaxAccountantWorkspaceItem get workspace => $_getN(0);
+  @$pb.TagNumber(1)
+  set workspace(VaultTaxAccountantWorkspaceItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasWorkspace() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearWorkspace() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultTaxAccountantWorkspaceItem ensureWorkspace() => $_ensure(0);
+}
+
+/// Choice 6 (V5): Entity, Household, and Ownership Graph
+class VaultEntityOwnershipGraphItem extends $pb.GeneratedMessage {
+  factory VaultEntityOwnershipGraphItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? graphCode,
+    $core.String? entityAndLookthroughInterest,
+    $core.String? collaborationVisibilityAndScope,
+    $core.String? dominionAndLegacyBridgeSummary,
+    $core.String? graphState,
+    $core.bool? zeroDoubleCountingEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (graphCode != null) result.graphCode = graphCode;
+    if (entityAndLookthroughInterest != null)
+      result.entityAndLookthroughInterest = entityAndLookthroughInterest;
+    if (collaborationVisibilityAndScope != null)
+      result.collaborationVisibilityAndScope = collaborationVisibilityAndScope;
+    if (dominionAndLegacyBridgeSummary != null)
+      result.dominionAndLegacyBridgeSummary = dominionAndLegacyBridgeSummary;
+    if (graphState != null) result.graphState = graphState;
+    if (zeroDoubleCountingEnforced != null)
+      result.zeroDoubleCountingEnforced = zeroDoubleCountingEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultEntityOwnershipGraphItem._();
+
+  factory VaultEntityOwnershipGraphItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultEntityOwnershipGraphItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultEntityOwnershipGraphItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'graphCode')
+    ..aOS(4, _omitFieldNames ? '' : 'entityAndLookthroughInterest')
+    ..aOS(5, _omitFieldNames ? '' : 'collaborationVisibilityAndScope')
+    ..aOS(6, _omitFieldNames ? '' : 'dominionAndLegacyBridgeSummary')
+    ..aOS(7, _omitFieldNames ? '' : 'graphState')
+    ..aOB(8, _omitFieldNames ? '' : 'zeroDoubleCountingEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultEntityOwnershipGraphItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultEntityOwnershipGraphItem copyWith(
+          void Function(VaultEntityOwnershipGraphItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultEntityOwnershipGraphItem))
+          as VaultEntityOwnershipGraphItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultEntityOwnershipGraphItem create() =>
+      VaultEntityOwnershipGraphItem._();
+  @$core.override
+  VaultEntityOwnershipGraphItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultEntityOwnershipGraphItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultEntityOwnershipGraphItem>(create);
+  static VaultEntityOwnershipGraphItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get graphCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set graphCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGraphCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGraphCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get entityAndLookthroughInterest => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set entityAndLookthroughInterest($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEntityAndLookthroughInterest() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEntityAndLookthroughInterest() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get collaborationVisibilityAndScope => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set collaborationVisibilityAndScope($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCollaborationVisibilityAndScope() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCollaborationVisibilityAndScope() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get dominionAndLegacyBridgeSummary => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set dominionAndLegacyBridgeSummary($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDominionAndLegacyBridgeSummary() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDominionAndLegacyBridgeSummary() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get graphState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set graphState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasGraphState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGraphState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get zeroDoubleCountingEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set zeroDoubleCountingEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasZeroDoubleCountingEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearZeroDoubleCountingEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultEntityOwnershipWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultEntityOwnershipWorkbenchRequest() => create();
+
+  GetVaultEntityOwnershipWorkbenchRequest._();
+
+  factory GetVaultEntityOwnershipWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultEntityOwnershipWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultEntityOwnershipWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultEntityOwnershipWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultEntityOwnershipWorkbenchRequest copyWith(
+          void Function(GetVaultEntityOwnershipWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultEntityOwnershipWorkbenchRequest))
+          as GetVaultEntityOwnershipWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultEntityOwnershipWorkbenchRequest create() =>
+      GetVaultEntityOwnershipWorkbenchRequest._();
+  @$core.override
+  GetVaultEntityOwnershipWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultEntityOwnershipWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultEntityOwnershipWorkbenchRequest>(create);
+  static GetVaultEntityOwnershipWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultEntityOwnershipWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultEntityOwnershipWorkbenchResponse({
+    $core.Iterable<VaultEntityOwnershipGraphItem>? graphs,
+    $core.bool? zeroDoubleCountingEnforced,
+    $core.String? lookthroughAndCollaborationSummary,
+  }) {
+    final result = create();
+    if (graphs != null) result.graphs.addAll(graphs);
+    if (zeroDoubleCountingEnforced != null)
+      result.zeroDoubleCountingEnforced = zeroDoubleCountingEnforced;
+    if (lookthroughAndCollaborationSummary != null)
+      result.lookthroughAndCollaborationSummary =
+          lookthroughAndCollaborationSummary;
+    return result;
+  }
+
+  GetVaultEntityOwnershipWorkbenchResponse._();
+
+  factory GetVaultEntityOwnershipWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultEntityOwnershipWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultEntityOwnershipWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultEntityOwnershipGraphItem>(1, _omitFieldNames ? '' : 'graphs',
+        subBuilder: VaultEntityOwnershipGraphItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'zeroDoubleCountingEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'lookthroughAndCollaborationSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultEntityOwnershipWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultEntityOwnershipWorkbenchResponse copyWith(
+          void Function(GetVaultEntityOwnershipWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultEntityOwnershipWorkbenchResponse))
+          as GetVaultEntityOwnershipWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultEntityOwnershipWorkbenchResponse create() =>
+      GetVaultEntityOwnershipWorkbenchResponse._();
+  @$core.override
+  GetVaultEntityOwnershipWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultEntityOwnershipWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultEntityOwnershipWorkbenchResponse>(create);
+  static GetVaultEntityOwnershipWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultEntityOwnershipGraphItem> get graphs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get zeroDoubleCountingEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set zeroDoubleCountingEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasZeroDoubleCountingEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearZeroDoubleCountingEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get lookthroughAndCollaborationSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set lookthroughAndCollaborationSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLookthroughAndCollaborationSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLookthroughAndCollaborationSummary() => $_clearField(3);
+}
+
+class SaveVaultEntityOwnershipNodeRequest extends $pb.GeneratedMessage {
+  factory SaveVaultEntityOwnershipNodeRequest({
+    $core.String? graphCode,
+    $core.String? entityAndLookthroughInterest,
+    $core.String? collaborationVisibilityAndScope,
+    $core.String? dominionAndLegacyBridgeSummary,
+    $core.String? graphState,
+  }) {
+    final result = create();
+    if (graphCode != null) result.graphCode = graphCode;
+    if (entityAndLookthroughInterest != null)
+      result.entityAndLookthroughInterest = entityAndLookthroughInterest;
+    if (collaborationVisibilityAndScope != null)
+      result.collaborationVisibilityAndScope = collaborationVisibilityAndScope;
+    if (dominionAndLegacyBridgeSummary != null)
+      result.dominionAndLegacyBridgeSummary = dominionAndLegacyBridgeSummary;
+    if (graphState != null) result.graphState = graphState;
+    return result;
+  }
+
+  SaveVaultEntityOwnershipNodeRequest._();
+
+  factory SaveVaultEntityOwnershipNodeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultEntityOwnershipNodeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultEntityOwnershipNodeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'graphCode')
+    ..aOS(2, _omitFieldNames ? '' : 'entityAndLookthroughInterest')
+    ..aOS(3, _omitFieldNames ? '' : 'collaborationVisibilityAndScope')
+    ..aOS(4, _omitFieldNames ? '' : 'dominionAndLegacyBridgeSummary')
+    ..aOS(5, _omitFieldNames ? '' : 'graphState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultEntityOwnershipNodeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultEntityOwnershipNodeRequest copyWith(
+          void Function(SaveVaultEntityOwnershipNodeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultEntityOwnershipNodeRequest))
+          as SaveVaultEntityOwnershipNodeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultEntityOwnershipNodeRequest create() =>
+      SaveVaultEntityOwnershipNodeRequest._();
+  @$core.override
+  SaveVaultEntityOwnershipNodeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultEntityOwnershipNodeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultEntityOwnershipNodeRequest>(create);
+  static SaveVaultEntityOwnershipNodeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get graphCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set graphCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGraphCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGraphCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get entityAndLookthroughInterest => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set entityAndLookthroughInterest($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEntityAndLookthroughInterest() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEntityAndLookthroughInterest() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get collaborationVisibilityAndScope => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set collaborationVisibilityAndScope($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCollaborationVisibilityAndScope() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCollaborationVisibilityAndScope() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get dominionAndLegacyBridgeSummary => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set dominionAndLegacyBridgeSummary($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDominionAndLegacyBridgeSummary() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDominionAndLegacyBridgeSummary() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get graphState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set graphState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGraphState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGraphState() => $_clearField(5);
+}
+
+class SaveVaultEntityOwnershipNodeResponse extends $pb.GeneratedMessage {
+  factory SaveVaultEntityOwnershipNodeResponse({
+    VaultEntityOwnershipGraphItem? graph,
+  }) {
+    final result = create();
+    if (graph != null) result.graph = graph;
+    return result;
+  }
+
+  SaveVaultEntityOwnershipNodeResponse._();
+
+  factory SaveVaultEntityOwnershipNodeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultEntityOwnershipNodeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultEntityOwnershipNodeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultEntityOwnershipGraphItem>(1, _omitFieldNames ? '' : 'graph',
+        subBuilder: VaultEntityOwnershipGraphItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultEntityOwnershipNodeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultEntityOwnershipNodeResponse copyWith(
+          void Function(SaveVaultEntityOwnershipNodeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultEntityOwnershipNodeResponse))
+          as SaveVaultEntityOwnershipNodeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultEntityOwnershipNodeResponse create() =>
+      SaveVaultEntityOwnershipNodeResponse._();
+  @$core.override
+  SaveVaultEntityOwnershipNodeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultEntityOwnershipNodeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultEntityOwnershipNodeResponse>(create);
+  static SaveVaultEntityOwnershipNodeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultEntityOwnershipGraphItem get graph => $_getN(0);
+  @$pb.TagNumber(1)
+  set graph(VaultEntityOwnershipGraphItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGraph() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGraph() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultEntityOwnershipGraphItem ensureGraph() => $_ensure(0);
+}
+
+class VerifyOrRevokeVaultOwnershipAccessRequest extends $pb.GeneratedMessage {
+  factory VerifyOrRevokeVaultOwnershipAccessRequest({
+    $core.String? graphCode,
+    $core.String? collaborationVisibilityAndScope,
+    $core.String? graphState,
+  }) {
+    final result = create();
+    if (graphCode != null) result.graphCode = graphCode;
+    if (collaborationVisibilityAndScope != null)
+      result.collaborationVisibilityAndScope = collaborationVisibilityAndScope;
+    if (graphState != null) result.graphState = graphState;
+    return result;
+  }
+
+  VerifyOrRevokeVaultOwnershipAccessRequest._();
+
+  factory VerifyOrRevokeVaultOwnershipAccessRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrRevokeVaultOwnershipAccessRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrRevokeVaultOwnershipAccessRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'graphCode')
+    ..aOS(2, _omitFieldNames ? '' : 'collaborationVisibilityAndScope')
+    ..aOS(3, _omitFieldNames ? '' : 'graphState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultOwnershipAccessRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultOwnershipAccessRequest copyWith(
+          void Function(VerifyOrRevokeVaultOwnershipAccessRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrRevokeVaultOwnershipAccessRequest))
+          as VerifyOrRevokeVaultOwnershipAccessRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultOwnershipAccessRequest create() =>
+      VerifyOrRevokeVaultOwnershipAccessRequest._();
+  @$core.override
+  VerifyOrRevokeVaultOwnershipAccessRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultOwnershipAccessRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrRevokeVaultOwnershipAccessRequest>(create);
+  static VerifyOrRevokeVaultOwnershipAccessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get graphCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set graphCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGraphCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGraphCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get collaborationVisibilityAndScope => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set collaborationVisibilityAndScope($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCollaborationVisibilityAndScope() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCollaborationVisibilityAndScope() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get graphState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set graphState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGraphState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGraphState() => $_clearField(3);
+}
+
+class VerifyOrRevokeVaultOwnershipAccessResponse extends $pb.GeneratedMessage {
+  factory VerifyOrRevokeVaultOwnershipAccessResponse({
+    VaultEntityOwnershipGraphItem? graph,
+  }) {
+    final result = create();
+    if (graph != null) result.graph = graph;
+    return result;
+  }
+
+  VerifyOrRevokeVaultOwnershipAccessResponse._();
+
+  factory VerifyOrRevokeVaultOwnershipAccessResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrRevokeVaultOwnershipAccessResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrRevokeVaultOwnershipAccessResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultEntityOwnershipGraphItem>(1, _omitFieldNames ? '' : 'graph',
+        subBuilder: VaultEntityOwnershipGraphItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultOwnershipAccessResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultOwnershipAccessResponse copyWith(
+          void Function(VerifyOrRevokeVaultOwnershipAccessResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrRevokeVaultOwnershipAccessResponse))
+          as VerifyOrRevokeVaultOwnershipAccessResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultOwnershipAccessResponse create() =>
+      VerifyOrRevokeVaultOwnershipAccessResponse._();
+  @$core.override
+  VerifyOrRevokeVaultOwnershipAccessResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultOwnershipAccessResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrRevokeVaultOwnershipAccessResponse>(create);
+  static VerifyOrRevokeVaultOwnershipAccessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultEntityOwnershipGraphItem get graph => $_getN(0);
+  @$pb.TagNumber(1)
+  set graph(VaultEntityOwnershipGraphItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGraph() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGraph() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultEntityOwnershipGraphItem ensureGraph() => $_ensure(0);
+}
+
+/// Choice 7 (V6, V16): Private Markets and Document Room
+class VaultPrivateMarketDocRoomItem extends $pb.GeneratedMessage {
+  factory VaultPrivateMarketDocRoomItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? privateCode,
+    $core.String? fundOrDirectAssetAndValuation,
+    $core.String? unfundedCommitmentAndCallLadder,
+    $core.String? extractedNoticeAndCitationRegion,
+    $core.String? roomState,
+    $core.bool? unverifiedAiLedgerPostBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (privateCode != null) result.privateCode = privateCode;
+    if (fundOrDirectAssetAndValuation != null)
+      result.fundOrDirectAssetAndValuation = fundOrDirectAssetAndValuation;
+    if (unfundedCommitmentAndCallLadder != null)
+      result.unfundedCommitmentAndCallLadder = unfundedCommitmentAndCallLadder;
+    if (extractedNoticeAndCitationRegion != null)
+      result.extractedNoticeAndCitationRegion =
+          extractedNoticeAndCitationRegion;
+    if (roomState != null) result.roomState = roomState;
+    if (unverifiedAiLedgerPostBlocked != null)
+      result.unverifiedAiLedgerPostBlocked = unverifiedAiLedgerPostBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultPrivateMarketDocRoomItem._();
+
+  factory VaultPrivateMarketDocRoomItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultPrivateMarketDocRoomItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultPrivateMarketDocRoomItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'privateCode')
+    ..aOS(4, _omitFieldNames ? '' : 'fundOrDirectAssetAndValuation')
+    ..aOS(5, _omitFieldNames ? '' : 'unfundedCommitmentAndCallLadder')
+    ..aOS(6, _omitFieldNames ? '' : 'extractedNoticeAndCitationRegion')
+    ..aOS(7, _omitFieldNames ? '' : 'roomState')
+    ..aOB(8, _omitFieldNames ? '' : 'unverifiedAiLedgerPostBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPrivateMarketDocRoomItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPrivateMarketDocRoomItem copyWith(
+          void Function(VaultPrivateMarketDocRoomItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultPrivateMarketDocRoomItem))
+          as VaultPrivateMarketDocRoomItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultPrivateMarketDocRoomItem create() =>
+      VaultPrivateMarketDocRoomItem._();
+  @$core.override
+  VaultPrivateMarketDocRoomItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultPrivateMarketDocRoomItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultPrivateMarketDocRoomItem>(create);
+  static VaultPrivateMarketDocRoomItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get privateCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set privateCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPrivateCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPrivateCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get fundOrDirectAssetAndValuation => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set fundOrDirectAssetAndValuation($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFundOrDirectAssetAndValuation() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFundOrDirectAssetAndValuation() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get unfundedCommitmentAndCallLadder => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set unfundedCommitmentAndCallLadder($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasUnfundedCommitmentAndCallLadder() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUnfundedCommitmentAndCallLadder() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get extractedNoticeAndCitationRegion => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set extractedNoticeAndCitationRegion($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasExtractedNoticeAndCitationRegion() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearExtractedNoticeAndCitationRegion() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get roomState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set roomState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasRoomState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRoomState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get unverifiedAiLedgerPostBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set unverifiedAiLedgerPostBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUnverifiedAiLedgerPostBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUnverifiedAiLedgerPostBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultPrivateMarketDocWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultPrivateMarketDocWorkbenchRequest() => create();
+
+  GetVaultPrivateMarketDocWorkbenchRequest._();
+
+  factory GetVaultPrivateMarketDocWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPrivateMarketDocWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPrivateMarketDocWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivateMarketDocWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivateMarketDocWorkbenchRequest copyWith(
+          void Function(GetVaultPrivateMarketDocWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPrivateMarketDocWorkbenchRequest))
+          as GetVaultPrivateMarketDocWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivateMarketDocWorkbenchRequest create() =>
+      GetVaultPrivateMarketDocWorkbenchRequest._();
+  @$core.override
+  GetVaultPrivateMarketDocWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivateMarketDocWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPrivateMarketDocWorkbenchRequest>(create);
+  static GetVaultPrivateMarketDocWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultPrivateMarketDocWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultPrivateMarketDocWorkbenchResponse({
+    $core.Iterable<VaultPrivateMarketDocRoomItem>? rooms,
+    $core.bool? unverifiedAiLedgerPostBlocked,
+    $core.String? commitmentLadderAndCitationSummary,
+  }) {
+    final result = create();
+    if (rooms != null) result.rooms.addAll(rooms);
+    if (unverifiedAiLedgerPostBlocked != null)
+      result.unverifiedAiLedgerPostBlocked = unverifiedAiLedgerPostBlocked;
+    if (commitmentLadderAndCitationSummary != null)
+      result.commitmentLadderAndCitationSummary =
+          commitmentLadderAndCitationSummary;
+    return result;
+  }
+
+  GetVaultPrivateMarketDocWorkbenchResponse._();
+
+  factory GetVaultPrivateMarketDocWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPrivateMarketDocWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPrivateMarketDocWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultPrivateMarketDocRoomItem>(1, _omitFieldNames ? '' : 'rooms',
+        subBuilder: VaultPrivateMarketDocRoomItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'unverifiedAiLedgerPostBlocked')
+    ..aOS(3, _omitFieldNames ? '' : 'commitmentLadderAndCitationSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivateMarketDocWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivateMarketDocWorkbenchResponse copyWith(
+          void Function(GetVaultPrivateMarketDocWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPrivateMarketDocWorkbenchResponse))
+          as GetVaultPrivateMarketDocWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivateMarketDocWorkbenchResponse create() =>
+      GetVaultPrivateMarketDocWorkbenchResponse._();
+  @$core.override
+  GetVaultPrivateMarketDocWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivateMarketDocWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPrivateMarketDocWorkbenchResponse>(create);
+  static GetVaultPrivateMarketDocWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultPrivateMarketDocRoomItem> get rooms => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get unverifiedAiLedgerPostBlocked => $_getBF(1);
+  @$pb.TagNumber(2)
+  set unverifiedAiLedgerPostBlocked($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUnverifiedAiLedgerPostBlocked() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnverifiedAiLedgerPostBlocked() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get commitmentLadderAndCitationSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set commitmentLadderAndCitationSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCommitmentLadderAndCitationSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCommitmentLadderAndCitationSummary() => $_clearField(3);
+}
+
+class SaveVaultPrivateMarketCommitmentRequest extends $pb.GeneratedMessage {
+  factory SaveVaultPrivateMarketCommitmentRequest({
+    $core.String? privateCode,
+    $core.String? fundOrDirectAssetAndValuation,
+    $core.String? unfundedCommitmentAndCallLadder,
+    $core.String? extractedNoticeAndCitationRegion,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (privateCode != null) result.privateCode = privateCode;
+    if (fundOrDirectAssetAndValuation != null)
+      result.fundOrDirectAssetAndValuation = fundOrDirectAssetAndValuation;
+    if (unfundedCommitmentAndCallLadder != null)
+      result.unfundedCommitmentAndCallLadder = unfundedCommitmentAndCallLadder;
+    if (extractedNoticeAndCitationRegion != null)
+      result.extractedNoticeAndCitationRegion =
+          extractedNoticeAndCitationRegion;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  SaveVaultPrivateMarketCommitmentRequest._();
+
+  factory SaveVaultPrivateMarketCommitmentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPrivateMarketCommitmentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPrivateMarketCommitmentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'privateCode')
+    ..aOS(2, _omitFieldNames ? '' : 'fundOrDirectAssetAndValuation')
+    ..aOS(3, _omitFieldNames ? '' : 'unfundedCommitmentAndCallLadder')
+    ..aOS(4, _omitFieldNames ? '' : 'extractedNoticeAndCitationRegion')
+    ..aOS(5, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPrivateMarketCommitmentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPrivateMarketCommitmentRequest copyWith(
+          void Function(SaveVaultPrivateMarketCommitmentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPrivateMarketCommitmentRequest))
+          as SaveVaultPrivateMarketCommitmentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPrivateMarketCommitmentRequest create() =>
+      SaveVaultPrivateMarketCommitmentRequest._();
+  @$core.override
+  SaveVaultPrivateMarketCommitmentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPrivateMarketCommitmentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPrivateMarketCommitmentRequest>(create);
+  static SaveVaultPrivateMarketCommitmentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get privateCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set privateCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrivateCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrivateCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get fundOrDirectAssetAndValuation => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set fundOrDirectAssetAndValuation($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasFundOrDirectAssetAndValuation() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFundOrDirectAssetAndValuation() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get unfundedCommitmentAndCallLadder => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set unfundedCommitmentAndCallLadder($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUnfundedCommitmentAndCallLadder() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUnfundedCommitmentAndCallLadder() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get extractedNoticeAndCitationRegion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set extractedNoticeAndCitationRegion($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasExtractedNoticeAndCitationRegion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExtractedNoticeAndCitationRegion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get roomState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set roomState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasRoomState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearRoomState() => $_clearField(5);
+}
+
+class SaveVaultPrivateMarketCommitmentResponse extends $pb.GeneratedMessage {
+  factory SaveVaultPrivateMarketCommitmentResponse({
+    VaultPrivateMarketDocRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  SaveVaultPrivateMarketCommitmentResponse._();
+
+  factory SaveVaultPrivateMarketCommitmentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultPrivateMarketCommitmentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultPrivateMarketCommitmentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPrivateMarketDocRoomItem>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: VaultPrivateMarketDocRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPrivateMarketCommitmentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultPrivateMarketCommitmentResponse copyWith(
+          void Function(SaveVaultPrivateMarketCommitmentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultPrivateMarketCommitmentResponse))
+          as SaveVaultPrivateMarketCommitmentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPrivateMarketCommitmentResponse create() =>
+      SaveVaultPrivateMarketCommitmentResponse._();
+  @$core.override
+  SaveVaultPrivateMarketCommitmentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultPrivateMarketCommitmentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultPrivateMarketCommitmentResponse>(create);
+  static SaveVaultPrivateMarketCommitmentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPrivateMarketDocRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(VaultPrivateMarketDocRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPrivateMarketDocRoomItem ensureRoom() => $_ensure(0);
+}
+
+class ConfirmOrReconcileVaultCapitalNoticeRequest extends $pb.GeneratedMessage {
+  factory ConfirmOrReconcileVaultCapitalNoticeRequest({
+    $core.String? privateCode,
+    $core.String? extractedNoticeAndCitationRegion,
+    $core.String? roomState,
+  }) {
+    final result = create();
+    if (privateCode != null) result.privateCode = privateCode;
+    if (extractedNoticeAndCitationRegion != null)
+      result.extractedNoticeAndCitationRegion =
+          extractedNoticeAndCitationRegion;
+    if (roomState != null) result.roomState = roomState;
+    return result;
+  }
+
+  ConfirmOrReconcileVaultCapitalNoticeRequest._();
+
+  factory ConfirmOrReconcileVaultCapitalNoticeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmOrReconcileVaultCapitalNoticeRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmOrReconcileVaultCapitalNoticeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'privateCode')
+    ..aOS(2, _omitFieldNames ? '' : 'extractedNoticeAndCitationRegion')
+    ..aOS(3, _omitFieldNames ? '' : 'roomState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrReconcileVaultCapitalNoticeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrReconcileVaultCapitalNoticeRequest copyWith(
+          void Function(ConfirmOrReconcileVaultCapitalNoticeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfirmOrReconcileVaultCapitalNoticeRequest))
+          as ConfirmOrReconcileVaultCapitalNoticeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrReconcileVaultCapitalNoticeRequest create() =>
+      ConfirmOrReconcileVaultCapitalNoticeRequest._();
+  @$core.override
+  ConfirmOrReconcileVaultCapitalNoticeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrReconcileVaultCapitalNoticeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmOrReconcileVaultCapitalNoticeRequest>(create);
+  static ConfirmOrReconcileVaultCapitalNoticeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get privateCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set privateCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPrivateCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPrivateCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get extractedNoticeAndCitationRegion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set extractedNoticeAndCitationRegion($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasExtractedNoticeAndCitationRegion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExtractedNoticeAndCitationRegion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get roomState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set roomState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRoomState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRoomState() => $_clearField(3);
+}
+
+class ConfirmOrReconcileVaultCapitalNoticeResponse
+    extends $pb.GeneratedMessage {
+  factory ConfirmOrReconcileVaultCapitalNoticeResponse({
+    VaultPrivateMarketDocRoomItem? room,
+  }) {
+    final result = create();
+    if (room != null) result.room = room;
+    return result;
+  }
+
+  ConfirmOrReconcileVaultCapitalNoticeResponse._();
+
+  factory ConfirmOrReconcileVaultCapitalNoticeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ConfirmOrReconcileVaultCapitalNoticeResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ConfirmOrReconcileVaultCapitalNoticeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPrivateMarketDocRoomItem>(1, _omitFieldNames ? '' : 'room',
+        subBuilder: VaultPrivateMarketDocRoomItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrReconcileVaultCapitalNoticeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ConfirmOrReconcileVaultCapitalNoticeResponse copyWith(
+          void Function(ConfirmOrReconcileVaultCapitalNoticeResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as ConfirmOrReconcileVaultCapitalNoticeResponse))
+          as ConfirmOrReconcileVaultCapitalNoticeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrReconcileVaultCapitalNoticeResponse create() =>
+      ConfirmOrReconcileVaultCapitalNoticeResponse._();
+  @$core.override
+  ConfirmOrReconcileVaultCapitalNoticeResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static ConfirmOrReconcileVaultCapitalNoticeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ConfirmOrReconcileVaultCapitalNoticeResponse>(create);
+  static ConfirmOrReconcileVaultCapitalNoticeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPrivateMarketDocRoomItem get room => $_getN(0);
+  @$pb.TagNumber(1)
+  set room(VaultPrivateMarketDocRoomItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRoom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRoom() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPrivateMarketDocRoomItem ensureRoom() => $_ensure(0);
+}
+
+/// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+class VaultTreasuryDebtRiskCoverageItem extends $pb.GeneratedMessage {
+  factory VaultTreasuryDebtRiskCoverageItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? treasuryCode,
+    $core.String? cashCounterpartyAndDebtCovenants,
+    $core.String? policyCoverageAndDeductibleGraph,
+    $core.String? sweepRefinanceOrClaimScenario,
+    $core.String? coverageState,
+    $core.bool? noCoverageGuaranteeClaimEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (treasuryCode != null) result.treasuryCode = treasuryCode;
+    if (cashCounterpartyAndDebtCovenants != null)
+      result.cashCounterpartyAndDebtCovenants =
+          cashCounterpartyAndDebtCovenants;
+    if (policyCoverageAndDeductibleGraph != null)
+      result.policyCoverageAndDeductibleGraph =
+          policyCoverageAndDeductibleGraph;
+    if (sweepRefinanceOrClaimScenario != null)
+      result.sweepRefinanceOrClaimScenario = sweepRefinanceOrClaimScenario;
+    if (coverageState != null) result.coverageState = coverageState;
+    if (noCoverageGuaranteeClaimEnforced != null)
+      result.noCoverageGuaranteeClaimEnforced =
+          noCoverageGuaranteeClaimEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultTreasuryDebtRiskCoverageItem._();
+
+  factory VaultTreasuryDebtRiskCoverageItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultTreasuryDebtRiskCoverageItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultTreasuryDebtRiskCoverageItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'treasuryCode')
+    ..aOS(4, _omitFieldNames ? '' : 'cashCounterpartyAndDebtCovenants')
+    ..aOS(5, _omitFieldNames ? '' : 'policyCoverageAndDeductibleGraph')
+    ..aOS(6, _omitFieldNames ? '' : 'sweepRefinanceOrClaimScenario')
+    ..aOS(7, _omitFieldNames ? '' : 'coverageState')
+    ..aOB(8, _omitFieldNames ? '' : 'noCoverageGuaranteeClaimEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultTreasuryDebtRiskCoverageItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultTreasuryDebtRiskCoverageItem copyWith(
+          void Function(VaultTreasuryDebtRiskCoverageItem) updates) =>
+      super.copyWith((message) =>
+              updates(message as VaultTreasuryDebtRiskCoverageItem))
+          as VaultTreasuryDebtRiskCoverageItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultTreasuryDebtRiskCoverageItem create() =>
+      VaultTreasuryDebtRiskCoverageItem._();
+  @$core.override
+  VaultTreasuryDebtRiskCoverageItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultTreasuryDebtRiskCoverageItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultTreasuryDebtRiskCoverageItem>(
+          create);
+  static VaultTreasuryDebtRiskCoverageItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get treasuryCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set treasuryCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTreasuryCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTreasuryCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cashCounterpartyAndDebtCovenants => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cashCounterpartyAndDebtCovenants($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCashCounterpartyAndDebtCovenants() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCashCounterpartyAndDebtCovenants() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get policyCoverageAndDeductibleGraph => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set policyCoverageAndDeductibleGraph($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPolicyCoverageAndDeductibleGraph() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPolicyCoverageAndDeductibleGraph() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get sweepRefinanceOrClaimScenario => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set sweepRefinanceOrClaimScenario($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSweepRefinanceOrClaimScenario() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSweepRefinanceOrClaimScenario() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get coverageState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set coverageState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCoverageState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCoverageState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noCoverageGuaranteeClaimEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noCoverageGuaranteeClaimEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoCoverageGuaranteeClaimEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoCoverageGuaranteeClaimEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultTreasuryDebtRiskWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultTreasuryDebtRiskWorkbenchRequest() => create();
+
+  GetVaultTreasuryDebtRiskWorkbenchRequest._();
+
+  factory GetVaultTreasuryDebtRiskWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultTreasuryDebtRiskWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultTreasuryDebtRiskWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTreasuryDebtRiskWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTreasuryDebtRiskWorkbenchRequest copyWith(
+          void Function(GetVaultTreasuryDebtRiskWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultTreasuryDebtRiskWorkbenchRequest))
+          as GetVaultTreasuryDebtRiskWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTreasuryDebtRiskWorkbenchRequest create() =>
+      GetVaultTreasuryDebtRiskWorkbenchRequest._();
+  @$core.override
+  GetVaultTreasuryDebtRiskWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTreasuryDebtRiskWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultTreasuryDebtRiskWorkbenchRequest>(create);
+  static GetVaultTreasuryDebtRiskWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultTreasuryDebtRiskWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultTreasuryDebtRiskWorkbenchResponse({
+    $core.Iterable<VaultTreasuryDebtRiskCoverageItem>? positions,
+    $core.bool? noCoverageGuaranteeClaimEnforced,
+    $core.String? treasuryCovenantAndPolicySummary,
+  }) {
+    final result = create();
+    if (positions != null) result.positions.addAll(positions);
+    if (noCoverageGuaranteeClaimEnforced != null)
+      result.noCoverageGuaranteeClaimEnforced =
+          noCoverageGuaranteeClaimEnforced;
+    if (treasuryCovenantAndPolicySummary != null)
+      result.treasuryCovenantAndPolicySummary =
+          treasuryCovenantAndPolicySummary;
+    return result;
+  }
+
+  GetVaultTreasuryDebtRiskWorkbenchResponse._();
+
+  factory GetVaultTreasuryDebtRiskWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultTreasuryDebtRiskWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultTreasuryDebtRiskWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultTreasuryDebtRiskCoverageItem>(
+        1, _omitFieldNames ? '' : 'positions',
+        subBuilder: VaultTreasuryDebtRiskCoverageItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'noCoverageGuaranteeClaimEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'treasuryCovenantAndPolicySummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTreasuryDebtRiskWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultTreasuryDebtRiskWorkbenchResponse copyWith(
+          void Function(GetVaultTreasuryDebtRiskWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultTreasuryDebtRiskWorkbenchResponse))
+          as GetVaultTreasuryDebtRiskWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTreasuryDebtRiskWorkbenchResponse create() =>
+      GetVaultTreasuryDebtRiskWorkbenchResponse._();
+  @$core.override
+  GetVaultTreasuryDebtRiskWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultTreasuryDebtRiskWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultTreasuryDebtRiskWorkbenchResponse>(create);
+  static GetVaultTreasuryDebtRiskWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultTreasuryDebtRiskCoverageItem> get positions => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get noCoverageGuaranteeClaimEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set noCoverageGuaranteeClaimEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNoCoverageGuaranteeClaimEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNoCoverageGuaranteeClaimEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get treasuryCovenantAndPolicySummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set treasuryCovenantAndPolicySummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTreasuryCovenantAndPolicySummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTreasuryCovenantAndPolicySummary() => $_clearField(3);
+}
+
+class SaveVaultTreasuryDebtRiskPositionRequest extends $pb.GeneratedMessage {
+  factory SaveVaultTreasuryDebtRiskPositionRequest({
+    $core.String? treasuryCode,
+    $core.String? cashCounterpartyAndDebtCovenants,
+    $core.String? policyCoverageAndDeductibleGraph,
+    $core.String? sweepRefinanceOrClaimScenario,
+    $core.String? coverageState,
+  }) {
+    final result = create();
+    if (treasuryCode != null) result.treasuryCode = treasuryCode;
+    if (cashCounterpartyAndDebtCovenants != null)
+      result.cashCounterpartyAndDebtCovenants =
+          cashCounterpartyAndDebtCovenants;
+    if (policyCoverageAndDeductibleGraph != null)
+      result.policyCoverageAndDeductibleGraph =
+          policyCoverageAndDeductibleGraph;
+    if (sweepRefinanceOrClaimScenario != null)
+      result.sweepRefinanceOrClaimScenario = sweepRefinanceOrClaimScenario;
+    if (coverageState != null) result.coverageState = coverageState;
+    return result;
+  }
+
+  SaveVaultTreasuryDebtRiskPositionRequest._();
+
+  factory SaveVaultTreasuryDebtRiskPositionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultTreasuryDebtRiskPositionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultTreasuryDebtRiskPositionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'treasuryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'cashCounterpartyAndDebtCovenants')
+    ..aOS(3, _omitFieldNames ? '' : 'policyCoverageAndDeductibleGraph')
+    ..aOS(4, _omitFieldNames ? '' : 'sweepRefinanceOrClaimScenario')
+    ..aOS(5, _omitFieldNames ? '' : 'coverageState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTreasuryDebtRiskPositionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTreasuryDebtRiskPositionRequest copyWith(
+          void Function(SaveVaultTreasuryDebtRiskPositionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultTreasuryDebtRiskPositionRequest))
+          as SaveVaultTreasuryDebtRiskPositionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTreasuryDebtRiskPositionRequest create() =>
+      SaveVaultTreasuryDebtRiskPositionRequest._();
+  @$core.override
+  SaveVaultTreasuryDebtRiskPositionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTreasuryDebtRiskPositionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultTreasuryDebtRiskPositionRequest>(create);
+  static SaveVaultTreasuryDebtRiskPositionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get treasuryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set treasuryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTreasuryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTreasuryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cashCounterpartyAndDebtCovenants => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cashCounterpartyAndDebtCovenants($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCashCounterpartyAndDebtCovenants() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCashCounterpartyAndDebtCovenants() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get policyCoverageAndDeductibleGraph => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set policyCoverageAndDeductibleGraph($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPolicyCoverageAndDeductibleGraph() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPolicyCoverageAndDeductibleGraph() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sweepRefinanceOrClaimScenario => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sweepRefinanceOrClaimScenario($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSweepRefinanceOrClaimScenario() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSweepRefinanceOrClaimScenario() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get coverageState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set coverageState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCoverageState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCoverageState() => $_clearField(5);
+}
+
+class SaveVaultTreasuryDebtRiskPositionResponse extends $pb.GeneratedMessage {
+  factory SaveVaultTreasuryDebtRiskPositionResponse({
+    VaultTreasuryDebtRiskCoverageItem? position,
+  }) {
+    final result = create();
+    if (position != null) result.position = position;
+    return result;
+  }
+
+  SaveVaultTreasuryDebtRiskPositionResponse._();
+
+  factory SaveVaultTreasuryDebtRiskPositionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultTreasuryDebtRiskPositionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultTreasuryDebtRiskPositionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultTreasuryDebtRiskCoverageItem>(
+        1, _omitFieldNames ? '' : 'position',
+        subBuilder: VaultTreasuryDebtRiskCoverageItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTreasuryDebtRiskPositionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultTreasuryDebtRiskPositionResponse copyWith(
+          void Function(SaveVaultTreasuryDebtRiskPositionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultTreasuryDebtRiskPositionResponse))
+          as SaveVaultTreasuryDebtRiskPositionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTreasuryDebtRiskPositionResponse create() =>
+      SaveVaultTreasuryDebtRiskPositionResponse._();
+  @$core.override
+  SaveVaultTreasuryDebtRiskPositionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultTreasuryDebtRiskPositionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultTreasuryDebtRiskPositionResponse>(create);
+  static SaveVaultTreasuryDebtRiskPositionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultTreasuryDebtRiskCoverageItem get position => $_getN(0);
+  @$pb.TagNumber(1)
+  set position(VaultTreasuryDebtRiskCoverageItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPosition() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPosition() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultTreasuryDebtRiskCoverageItem ensurePosition() => $_ensure(0);
+}
+
+class EvaluateOrRouteVaultCoverageGapRequest extends $pb.GeneratedMessage {
+  factory EvaluateOrRouteVaultCoverageGapRequest({
+    $core.String? treasuryCode,
+    $core.String? sweepRefinanceOrClaimScenario,
+    $core.String? coverageState,
+  }) {
+    final result = create();
+    if (treasuryCode != null) result.treasuryCode = treasuryCode;
+    if (sweepRefinanceOrClaimScenario != null)
+      result.sweepRefinanceOrClaimScenario = sweepRefinanceOrClaimScenario;
+    if (coverageState != null) result.coverageState = coverageState;
+    return result;
+  }
+
+  EvaluateOrRouteVaultCoverageGapRequest._();
+
+  factory EvaluateOrRouteVaultCoverageGapRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateOrRouteVaultCoverageGapRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateOrRouteVaultCoverageGapRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'treasuryCode')
+    ..aOS(2, _omitFieldNames ? '' : 'sweepRefinanceOrClaimScenario')
+    ..aOS(3, _omitFieldNames ? '' : 'coverageState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateOrRouteVaultCoverageGapRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateOrRouteVaultCoverageGapRequest copyWith(
+          void Function(EvaluateOrRouteVaultCoverageGapRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as EvaluateOrRouteVaultCoverageGapRequest))
+          as EvaluateOrRouteVaultCoverageGapRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateOrRouteVaultCoverageGapRequest create() =>
+      EvaluateOrRouteVaultCoverageGapRequest._();
+  @$core.override
+  EvaluateOrRouteVaultCoverageGapRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateOrRouteVaultCoverageGapRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EvaluateOrRouteVaultCoverageGapRequest>(create);
+  static EvaluateOrRouteVaultCoverageGapRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get treasuryCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set treasuryCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasTreasuryCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTreasuryCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get sweepRefinanceOrClaimScenario => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sweepRefinanceOrClaimScenario($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSweepRefinanceOrClaimScenario() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSweepRefinanceOrClaimScenario() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get coverageState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set coverageState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCoverageState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCoverageState() => $_clearField(3);
+}
+
+class EvaluateOrRouteVaultCoverageGapResponse extends $pb.GeneratedMessage {
+  factory EvaluateOrRouteVaultCoverageGapResponse({
+    VaultTreasuryDebtRiskCoverageItem? position,
+  }) {
+    final result = create();
+    if (position != null) result.position = position;
+    return result;
+  }
+
+  EvaluateOrRouteVaultCoverageGapResponse._();
+
+  factory EvaluateOrRouteVaultCoverageGapResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory EvaluateOrRouteVaultCoverageGapResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'EvaluateOrRouteVaultCoverageGapResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultTreasuryDebtRiskCoverageItem>(
+        1, _omitFieldNames ? '' : 'position',
+        subBuilder: VaultTreasuryDebtRiskCoverageItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateOrRouteVaultCoverageGapResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  EvaluateOrRouteVaultCoverageGapResponse copyWith(
+          void Function(EvaluateOrRouteVaultCoverageGapResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as EvaluateOrRouteVaultCoverageGapResponse))
+          as EvaluateOrRouteVaultCoverageGapResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static EvaluateOrRouteVaultCoverageGapResponse create() =>
+      EvaluateOrRouteVaultCoverageGapResponse._();
+  @$core.override
+  EvaluateOrRouteVaultCoverageGapResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static EvaluateOrRouteVaultCoverageGapResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          EvaluateOrRouteVaultCoverageGapResponse>(create);
+  static EvaluateOrRouteVaultCoverageGapResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultTreasuryDebtRiskCoverageItem get position => $_getN(0);
+  @$pb.TagNumber(1)
+  set position(VaultTreasuryDebtRiskCoverageItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPosition() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPosition() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultTreasuryDebtRiskCoverageItem ensurePosition() => $_ensure(0);
+}
+
+/// Choice 9 (V8): Goals and Scenario Engine
+class VaultGoalsScenarioEngineItem extends $pb.GeneratedMessage {
+  factory VaultGoalsScenarioEngineItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? scenarioCode,
+    $core.String? goalTargetAndAssumptionRanges,
+    $core.String? deterministicAndMonteCarloBand,
+    $core.String? whatChangedAndOracleHandoff,
+    $core.String? engineState,
+    $core.bool? silentFullLedgerOracleAccessBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (goalTargetAndAssumptionRanges != null)
+      result.goalTargetAndAssumptionRanges = goalTargetAndAssumptionRanges;
+    if (deterministicAndMonteCarloBand != null)
+      result.deterministicAndMonteCarloBand = deterministicAndMonteCarloBand;
+    if (whatChangedAndOracleHandoff != null)
+      result.whatChangedAndOracleHandoff = whatChangedAndOracleHandoff;
+    if (engineState != null) result.engineState = engineState;
+    if (silentFullLedgerOracleAccessBlocked != null)
+      result.silentFullLedgerOracleAccessBlocked =
+          silentFullLedgerOracleAccessBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultGoalsScenarioEngineItem._();
+
+  factory VaultGoalsScenarioEngineItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultGoalsScenarioEngineItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultGoalsScenarioEngineItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(4, _omitFieldNames ? '' : 'goalTargetAndAssumptionRanges')
+    ..aOS(5, _omitFieldNames ? '' : 'deterministicAndMonteCarloBand')
+    ..aOS(6, _omitFieldNames ? '' : 'whatChangedAndOracleHandoff')
+    ..aOS(7, _omitFieldNames ? '' : 'engineState')
+    ..aOB(8, _omitFieldNames ? '' : 'silentFullLedgerOracleAccessBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultGoalsScenarioEngineItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultGoalsScenarioEngineItem copyWith(
+          void Function(VaultGoalsScenarioEngineItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultGoalsScenarioEngineItem))
+          as VaultGoalsScenarioEngineItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultGoalsScenarioEngineItem create() =>
+      VaultGoalsScenarioEngineItem._();
+  @$core.override
+  VaultGoalsScenarioEngineItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultGoalsScenarioEngineItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultGoalsScenarioEngineItem>(create);
+  static VaultGoalsScenarioEngineItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get scenarioCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set scenarioCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScenarioCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScenarioCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get goalTargetAndAssumptionRanges => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set goalTargetAndAssumptionRanges($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasGoalTargetAndAssumptionRanges() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGoalTargetAndAssumptionRanges() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get deterministicAndMonteCarloBand => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set deterministicAndMonteCarloBand($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDeterministicAndMonteCarloBand() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDeterministicAndMonteCarloBand() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get whatChangedAndOracleHandoff => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set whatChangedAndOracleHandoff($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWhatChangedAndOracleHandoff() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWhatChangedAndOracleHandoff() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get engineState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set engineState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEngineState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEngineState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get silentFullLedgerOracleAccessBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set silentFullLedgerOracleAccessBlocked($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasSilentFullLedgerOracleAccessBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearSilentFullLedgerOracleAccessBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultGoalsScenarioWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultGoalsScenarioWorkbenchRequest() => create();
+
+  GetVaultGoalsScenarioWorkbenchRequest._();
+
+  factory GetVaultGoalsScenarioWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultGoalsScenarioWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultGoalsScenarioWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGoalsScenarioWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGoalsScenarioWorkbenchRequest copyWith(
+          void Function(GetVaultGoalsScenarioWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultGoalsScenarioWorkbenchRequest))
+          as GetVaultGoalsScenarioWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGoalsScenarioWorkbenchRequest create() =>
+      GetVaultGoalsScenarioWorkbenchRequest._();
+  @$core.override
+  GetVaultGoalsScenarioWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGoalsScenarioWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultGoalsScenarioWorkbenchRequest>(create);
+  static GetVaultGoalsScenarioWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultGoalsScenarioWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultGoalsScenarioWorkbenchResponse({
+    $core.Iterable<VaultGoalsScenarioEngineItem>? scenarios,
+    $core.bool? silentFullLedgerOracleAccessBlocked,
+    $core.String? planVsPredictionAndHandoffSummary,
+  }) {
+    final result = create();
+    if (scenarios != null) result.scenarios.addAll(scenarios);
+    if (silentFullLedgerOracleAccessBlocked != null)
+      result.silentFullLedgerOracleAccessBlocked =
+          silentFullLedgerOracleAccessBlocked;
+    if (planVsPredictionAndHandoffSummary != null)
+      result.planVsPredictionAndHandoffSummary =
+          planVsPredictionAndHandoffSummary;
+    return result;
+  }
+
+  GetVaultGoalsScenarioWorkbenchResponse._();
+
+  factory GetVaultGoalsScenarioWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultGoalsScenarioWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultGoalsScenarioWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultGoalsScenarioEngineItem>(1, _omitFieldNames ? '' : 'scenarios',
+        subBuilder: VaultGoalsScenarioEngineItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'silentFullLedgerOracleAccessBlocked')
+    ..aOS(3, _omitFieldNames ? '' : 'planVsPredictionAndHandoffSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGoalsScenarioWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGoalsScenarioWorkbenchResponse copyWith(
+          void Function(GetVaultGoalsScenarioWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultGoalsScenarioWorkbenchResponse))
+          as GetVaultGoalsScenarioWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGoalsScenarioWorkbenchResponse create() =>
+      GetVaultGoalsScenarioWorkbenchResponse._();
+  @$core.override
+  GetVaultGoalsScenarioWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGoalsScenarioWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultGoalsScenarioWorkbenchResponse>(create);
+  static GetVaultGoalsScenarioWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultGoalsScenarioEngineItem> get scenarios => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get silentFullLedgerOracleAccessBlocked => $_getBF(1);
+  @$pb.TagNumber(2)
+  set silentFullLedgerOracleAccessBlocked($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSilentFullLedgerOracleAccessBlocked() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSilentFullLedgerOracleAccessBlocked() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get planVsPredictionAndHandoffSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set planVsPredictionAndHandoffSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPlanVsPredictionAndHandoffSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPlanVsPredictionAndHandoffSummary() => $_clearField(3);
+}
+
+class SaveVaultGoalScenarioSnapshotRequest extends $pb.GeneratedMessage {
+  factory SaveVaultGoalScenarioSnapshotRequest({
+    $core.String? scenarioCode,
+    $core.String? goalTargetAndAssumptionRanges,
+    $core.String? deterministicAndMonteCarloBand,
+    $core.String? whatChangedAndOracleHandoff,
+    $core.String? engineState,
+  }) {
+    final result = create();
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (goalTargetAndAssumptionRanges != null)
+      result.goalTargetAndAssumptionRanges = goalTargetAndAssumptionRanges;
+    if (deterministicAndMonteCarloBand != null)
+      result.deterministicAndMonteCarloBand = deterministicAndMonteCarloBand;
+    if (whatChangedAndOracleHandoff != null)
+      result.whatChangedAndOracleHandoff = whatChangedAndOracleHandoff;
+    if (engineState != null) result.engineState = engineState;
+    return result;
+  }
+
+  SaveVaultGoalScenarioSnapshotRequest._();
+
+  factory SaveVaultGoalScenarioSnapshotRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultGoalScenarioSnapshotRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultGoalScenarioSnapshotRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(2, _omitFieldNames ? '' : 'goalTargetAndAssumptionRanges')
+    ..aOS(3, _omitFieldNames ? '' : 'deterministicAndMonteCarloBand')
+    ..aOS(4, _omitFieldNames ? '' : 'whatChangedAndOracleHandoff')
+    ..aOS(5, _omitFieldNames ? '' : 'engineState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGoalScenarioSnapshotRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGoalScenarioSnapshotRequest copyWith(
+          void Function(SaveVaultGoalScenarioSnapshotRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultGoalScenarioSnapshotRequest))
+          as SaveVaultGoalScenarioSnapshotRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGoalScenarioSnapshotRequest create() =>
+      SaveVaultGoalScenarioSnapshotRequest._();
+  @$core.override
+  SaveVaultGoalScenarioSnapshotRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGoalScenarioSnapshotRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultGoalScenarioSnapshotRequest>(create);
+  static SaveVaultGoalScenarioSnapshotRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scenarioCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scenarioCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenarioCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenarioCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get goalTargetAndAssumptionRanges => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set goalTargetAndAssumptionRanges($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasGoalTargetAndAssumptionRanges() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGoalTargetAndAssumptionRanges() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get deterministicAndMonteCarloBand => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set deterministicAndMonteCarloBand($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDeterministicAndMonteCarloBand() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDeterministicAndMonteCarloBand() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get whatChangedAndOracleHandoff => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set whatChangedAndOracleHandoff($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasWhatChangedAndOracleHandoff() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWhatChangedAndOracleHandoff() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get engineState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set engineState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEngineState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEngineState() => $_clearField(5);
+}
+
+class SaveVaultGoalScenarioSnapshotResponse extends $pb.GeneratedMessage {
+  factory SaveVaultGoalScenarioSnapshotResponse({
+    VaultGoalsScenarioEngineItem? scenario,
+  }) {
+    final result = create();
+    if (scenario != null) result.scenario = scenario;
+    return result;
+  }
+
+  SaveVaultGoalScenarioSnapshotResponse._();
+
+  factory SaveVaultGoalScenarioSnapshotResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultGoalScenarioSnapshotResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultGoalScenarioSnapshotResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultGoalsScenarioEngineItem>(1, _omitFieldNames ? '' : 'scenario',
+        subBuilder: VaultGoalsScenarioEngineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGoalScenarioSnapshotResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGoalScenarioSnapshotResponse copyWith(
+          void Function(SaveVaultGoalScenarioSnapshotResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultGoalScenarioSnapshotResponse))
+          as SaveVaultGoalScenarioSnapshotResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGoalScenarioSnapshotResponse create() =>
+      SaveVaultGoalScenarioSnapshotResponse._();
+  @$core.override
+  SaveVaultGoalScenarioSnapshotResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGoalScenarioSnapshotResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultGoalScenarioSnapshotResponse>(create);
+  static SaveVaultGoalScenarioSnapshotResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultGoalsScenarioEngineItem get scenario => $_getN(0);
+  @$pb.TagNumber(1)
+  set scenario(VaultGoalsScenarioEngineItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenario() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenario() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultGoalsScenarioEngineItem ensureScenario() => $_ensure(0);
+}
+
+class CompareOrHandoffVaultScenarioRequest extends $pb.GeneratedMessage {
+  factory CompareOrHandoffVaultScenarioRequest({
+    $core.String? scenarioCode,
+    $core.String? whatChangedAndOracleHandoff,
+    $core.String? engineState,
+  }) {
+    final result = create();
+    if (scenarioCode != null) result.scenarioCode = scenarioCode;
+    if (whatChangedAndOracleHandoff != null)
+      result.whatChangedAndOracleHandoff = whatChangedAndOracleHandoff;
+    if (engineState != null) result.engineState = engineState;
+    return result;
+  }
+
+  CompareOrHandoffVaultScenarioRequest._();
+
+  factory CompareOrHandoffVaultScenarioRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompareOrHandoffVaultScenarioRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompareOrHandoffVaultScenarioRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'scenarioCode')
+    ..aOS(2, _omitFieldNames ? '' : 'whatChangedAndOracleHandoff')
+    ..aOS(3, _omitFieldNames ? '' : 'engineState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareOrHandoffVaultScenarioRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareOrHandoffVaultScenarioRequest copyWith(
+          void Function(CompareOrHandoffVaultScenarioRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as CompareOrHandoffVaultScenarioRequest))
+          as CompareOrHandoffVaultScenarioRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompareOrHandoffVaultScenarioRequest create() =>
+      CompareOrHandoffVaultScenarioRequest._();
+  @$core.override
+  CompareOrHandoffVaultScenarioRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompareOrHandoffVaultScenarioRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CompareOrHandoffVaultScenarioRequest>(create);
+  static CompareOrHandoffVaultScenarioRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get scenarioCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set scenarioCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenarioCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenarioCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get whatChangedAndOracleHandoff => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set whatChangedAndOracleHandoff($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasWhatChangedAndOracleHandoff() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearWhatChangedAndOracleHandoff() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get engineState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set engineState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEngineState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEngineState() => $_clearField(3);
+}
+
+class CompareOrHandoffVaultScenarioResponse extends $pb.GeneratedMessage {
+  factory CompareOrHandoffVaultScenarioResponse({
+    VaultGoalsScenarioEngineItem? scenario,
+  }) {
+    final result = create();
+    if (scenario != null) result.scenario = scenario;
+    return result;
+  }
+
+  CompareOrHandoffVaultScenarioResponse._();
+
+  factory CompareOrHandoffVaultScenarioResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompareOrHandoffVaultScenarioResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompareOrHandoffVaultScenarioResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultGoalsScenarioEngineItem>(1, _omitFieldNames ? '' : 'scenario',
+        subBuilder: VaultGoalsScenarioEngineItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareOrHandoffVaultScenarioResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CompareOrHandoffVaultScenarioResponse copyWith(
+          void Function(CompareOrHandoffVaultScenarioResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as CompareOrHandoffVaultScenarioResponse))
+          as CompareOrHandoffVaultScenarioResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CompareOrHandoffVaultScenarioResponse create() =>
+      CompareOrHandoffVaultScenarioResponse._();
+  @$core.override
+  CompareOrHandoffVaultScenarioResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CompareOrHandoffVaultScenarioResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          CompareOrHandoffVaultScenarioResponse>(create);
+  static CompareOrHandoffVaultScenarioResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultGoalsScenarioEngineItem get scenario => $_getN(0);
+  @$pb.TagNumber(1)
+  set scenario(VaultGoalsScenarioEngineItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasScenario() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScenario() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultGoalsScenarioEngineItem ensureScenario() => $_ensure(0);
+}
+
+/// Choice 10 (V7): Privacy-Preserving Standing Proofs
+class VaultPrivacyStandingProofItem extends $pb.GeneratedMessage {
+  factory VaultPrivacyStandingProofItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? proofCode,
+    $core.String? predicateClaimAndVerifierPurpose,
+    $core.String? issuerSignatureExpiryAndNonce,
+    $core.String? offlineRevocationSnapshotWindow,
+    $core.String? proofState,
+    $core.bool? rawBalanceDisclosureBlocked,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (proofCode != null) result.proofCode = proofCode;
+    if (predicateClaimAndVerifierPurpose != null)
+      result.predicateClaimAndVerifierPurpose =
+          predicateClaimAndVerifierPurpose;
+    if (issuerSignatureExpiryAndNonce != null)
+      result.issuerSignatureExpiryAndNonce = issuerSignatureExpiryAndNonce;
+    if (offlineRevocationSnapshotWindow != null)
+      result.offlineRevocationSnapshotWindow = offlineRevocationSnapshotWindow;
+    if (proofState != null) result.proofState = proofState;
+    if (rawBalanceDisclosureBlocked != null)
+      result.rawBalanceDisclosureBlocked = rawBalanceDisclosureBlocked;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultPrivacyStandingProofItem._();
+
+  factory VaultPrivacyStandingProofItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultPrivacyStandingProofItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultPrivacyStandingProofItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'proofCode')
+    ..aOS(4, _omitFieldNames ? '' : 'predicateClaimAndVerifierPurpose')
+    ..aOS(5, _omitFieldNames ? '' : 'issuerSignatureExpiryAndNonce')
+    ..aOS(6, _omitFieldNames ? '' : 'offlineRevocationSnapshotWindow')
+    ..aOS(7, _omitFieldNames ? '' : 'proofState')
+    ..aOB(8, _omitFieldNames ? '' : 'rawBalanceDisclosureBlocked')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPrivacyStandingProofItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultPrivacyStandingProofItem copyWith(
+          void Function(VaultPrivacyStandingProofItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultPrivacyStandingProofItem))
+          as VaultPrivacyStandingProofItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultPrivacyStandingProofItem create() =>
+      VaultPrivacyStandingProofItem._();
+  @$core.override
+  VaultPrivacyStandingProofItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultPrivacyStandingProofItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultPrivacyStandingProofItem>(create);
+  static VaultPrivacyStandingProofItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get proofCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set proofCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProofCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProofCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get predicateClaimAndVerifierPurpose => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set predicateClaimAndVerifierPurpose($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPredicateClaimAndVerifierPurpose() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPredicateClaimAndVerifierPurpose() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get issuerSignatureExpiryAndNonce => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set issuerSignatureExpiryAndNonce($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIssuerSignatureExpiryAndNonce() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIssuerSignatureExpiryAndNonce() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get offlineRevocationSnapshotWindow => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set offlineRevocationSnapshotWindow($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOfflineRevocationSnapshotWindow() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOfflineRevocationSnapshotWindow() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get proofState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set proofState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasProofState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProofState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get rawBalanceDisclosureBlocked => $_getBF(7);
+  @$pb.TagNumber(8)
+  set rawBalanceDisclosureBlocked($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasRawBalanceDisclosureBlocked() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearRawBalanceDisclosureBlocked() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultPrivacyStandingProofWorkbenchRequest
+    extends $pb.GeneratedMessage {
+  factory GetVaultPrivacyStandingProofWorkbenchRequest() => create();
+
+  GetVaultPrivacyStandingProofWorkbenchRequest._();
+
+  factory GetVaultPrivacyStandingProofWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPrivacyStandingProofWorkbenchRequest.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPrivacyStandingProofWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivacyStandingProofWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivacyStandingProofWorkbenchRequest copyWith(
+          void Function(GetVaultPrivacyStandingProofWorkbenchRequest)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPrivacyStandingProofWorkbenchRequest))
+          as GetVaultPrivacyStandingProofWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivacyStandingProofWorkbenchRequest create() =>
+      GetVaultPrivacyStandingProofWorkbenchRequest._();
+  @$core.override
+  GetVaultPrivacyStandingProofWorkbenchRequest createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivacyStandingProofWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPrivacyStandingProofWorkbenchRequest>(create);
+  static GetVaultPrivacyStandingProofWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultPrivacyStandingProofWorkbenchResponse
+    extends $pb.GeneratedMessage {
+  factory GetVaultPrivacyStandingProofWorkbenchResponse({
+    $core.Iterable<VaultPrivacyStandingProofItem>? proofs,
+    $core.bool? rawBalanceDisclosureBlocked,
+    $core.String? serverSignedPredicateAndOfflineWindowSummary,
+  }) {
+    final result = create();
+    if (proofs != null) result.proofs.addAll(proofs);
+    if (rawBalanceDisclosureBlocked != null)
+      result.rawBalanceDisclosureBlocked = rawBalanceDisclosureBlocked;
+    if (serverSignedPredicateAndOfflineWindowSummary != null)
+      result.serverSignedPredicateAndOfflineWindowSummary =
+          serverSignedPredicateAndOfflineWindowSummary;
+    return result;
+  }
+
+  GetVaultPrivacyStandingProofWorkbenchResponse._();
+
+  factory GetVaultPrivacyStandingProofWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultPrivacyStandingProofWorkbenchResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultPrivacyStandingProofWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultPrivacyStandingProofItem>(1, _omitFieldNames ? '' : 'proofs',
+        subBuilder: VaultPrivacyStandingProofItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'rawBalanceDisclosureBlocked')
+    ..aOS(3,
+        _omitFieldNames ? '' : 'serverSignedPredicateAndOfflineWindowSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivacyStandingProofWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultPrivacyStandingProofWorkbenchResponse copyWith(
+          void Function(GetVaultPrivacyStandingProofWorkbenchResponse)
+              updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultPrivacyStandingProofWorkbenchResponse))
+          as GetVaultPrivacyStandingProofWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivacyStandingProofWorkbenchResponse create() =>
+      GetVaultPrivacyStandingProofWorkbenchResponse._();
+  @$core.override
+  GetVaultPrivacyStandingProofWorkbenchResponse createEmptyInstance() =>
+      create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultPrivacyStandingProofWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultPrivacyStandingProofWorkbenchResponse>(create);
+  static GetVaultPrivacyStandingProofWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultPrivacyStandingProofItem> get proofs => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get rawBalanceDisclosureBlocked => $_getBF(1);
+  @$pb.TagNumber(2)
+  set rawBalanceDisclosureBlocked($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRawBalanceDisclosureBlocked() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRawBalanceDisclosureBlocked() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get serverSignedPredicateAndOfflineWindowSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set serverSignedPredicateAndOfflineWindowSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasServerSignedPredicateAndOfflineWindowSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearServerSignedPredicateAndOfflineWindowSummary() => $_clearField(3);
+}
+
+class IssueVaultPrivacyStandingProofRequest extends $pb.GeneratedMessage {
+  factory IssueVaultPrivacyStandingProofRequest({
+    $core.String? proofCode,
+    $core.String? predicateClaimAndVerifierPurpose,
+    $core.String? issuerSignatureExpiryAndNonce,
+    $core.String? offlineRevocationSnapshotWindow,
+    $core.String? proofState,
+  }) {
+    final result = create();
+    if (proofCode != null) result.proofCode = proofCode;
+    if (predicateClaimAndVerifierPurpose != null)
+      result.predicateClaimAndVerifierPurpose =
+          predicateClaimAndVerifierPurpose;
+    if (issuerSignatureExpiryAndNonce != null)
+      result.issuerSignatureExpiryAndNonce = issuerSignatureExpiryAndNonce;
+    if (offlineRevocationSnapshotWindow != null)
+      result.offlineRevocationSnapshotWindow = offlineRevocationSnapshotWindow;
+    if (proofState != null) result.proofState = proofState;
+    return result;
+  }
+
+  IssueVaultPrivacyStandingProofRequest._();
+
+  factory IssueVaultPrivacyStandingProofRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueVaultPrivacyStandingProofRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueVaultPrivacyStandingProofRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'proofCode')
+    ..aOS(2, _omitFieldNames ? '' : 'predicateClaimAndVerifierPurpose')
+    ..aOS(3, _omitFieldNames ? '' : 'issuerSignatureExpiryAndNonce')
+    ..aOS(4, _omitFieldNames ? '' : 'offlineRevocationSnapshotWindow')
+    ..aOS(5, _omitFieldNames ? '' : 'proofState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueVaultPrivacyStandingProofRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueVaultPrivacyStandingProofRequest copyWith(
+          void Function(IssueVaultPrivacyStandingProofRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as IssueVaultPrivacyStandingProofRequest))
+          as IssueVaultPrivacyStandingProofRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueVaultPrivacyStandingProofRequest create() =>
+      IssueVaultPrivacyStandingProofRequest._();
+  @$core.override
+  IssueVaultPrivacyStandingProofRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueVaultPrivacyStandingProofRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          IssueVaultPrivacyStandingProofRequest>(create);
+  static IssueVaultPrivacyStandingProofRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get proofCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set proofCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProofCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProofCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get predicateClaimAndVerifierPurpose => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set predicateClaimAndVerifierPurpose($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPredicateClaimAndVerifierPurpose() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPredicateClaimAndVerifierPurpose() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get issuerSignatureExpiryAndNonce => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set issuerSignatureExpiryAndNonce($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIssuerSignatureExpiryAndNonce() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIssuerSignatureExpiryAndNonce() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get offlineRevocationSnapshotWindow => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set offlineRevocationSnapshotWindow($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOfflineRevocationSnapshotWindow() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOfflineRevocationSnapshotWindow() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get proofState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set proofState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasProofState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearProofState() => $_clearField(5);
+}
+
+class IssueVaultPrivacyStandingProofResponse extends $pb.GeneratedMessage {
+  factory IssueVaultPrivacyStandingProofResponse({
+    VaultPrivacyStandingProofItem? proof,
+  }) {
+    final result = create();
+    if (proof != null) result.proof = proof;
+    return result;
+  }
+
+  IssueVaultPrivacyStandingProofResponse._();
+
+  factory IssueVaultPrivacyStandingProofResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory IssueVaultPrivacyStandingProofResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'IssueVaultPrivacyStandingProofResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPrivacyStandingProofItem>(1, _omitFieldNames ? '' : 'proof',
+        subBuilder: VaultPrivacyStandingProofItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueVaultPrivacyStandingProofResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  IssueVaultPrivacyStandingProofResponse copyWith(
+          void Function(IssueVaultPrivacyStandingProofResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as IssueVaultPrivacyStandingProofResponse))
+          as IssueVaultPrivacyStandingProofResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IssueVaultPrivacyStandingProofResponse create() =>
+      IssueVaultPrivacyStandingProofResponse._();
+  @$core.override
+  IssueVaultPrivacyStandingProofResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static IssueVaultPrivacyStandingProofResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          IssueVaultPrivacyStandingProofResponse>(create);
+  static IssueVaultPrivacyStandingProofResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPrivacyStandingProofItem get proof => $_getN(0);
+  @$pb.TagNumber(1)
+  set proof(VaultPrivacyStandingProofItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProof() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProof() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPrivacyStandingProofItem ensureProof() => $_ensure(0);
+}
+
+class VerifyOrRevokeVaultStandingProofRequest extends $pb.GeneratedMessage {
+  factory VerifyOrRevokeVaultStandingProofRequest({
+    $core.String? proofCode,
+    $core.String? offlineRevocationSnapshotWindow,
+    $core.String? proofState,
+  }) {
+    final result = create();
+    if (proofCode != null) result.proofCode = proofCode;
+    if (offlineRevocationSnapshotWindow != null)
+      result.offlineRevocationSnapshotWindow = offlineRevocationSnapshotWindow;
+    if (proofState != null) result.proofState = proofState;
+    return result;
+  }
+
+  VerifyOrRevokeVaultStandingProofRequest._();
+
+  factory VerifyOrRevokeVaultStandingProofRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrRevokeVaultStandingProofRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrRevokeVaultStandingProofRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'proofCode')
+    ..aOS(2, _omitFieldNames ? '' : 'offlineRevocationSnapshotWindow')
+    ..aOS(3, _omitFieldNames ? '' : 'proofState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultStandingProofRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultStandingProofRequest copyWith(
+          void Function(VerifyOrRevokeVaultStandingProofRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrRevokeVaultStandingProofRequest))
+          as VerifyOrRevokeVaultStandingProofRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultStandingProofRequest create() =>
+      VerifyOrRevokeVaultStandingProofRequest._();
+  @$core.override
+  VerifyOrRevokeVaultStandingProofRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultStandingProofRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrRevokeVaultStandingProofRequest>(create);
+  static VerifyOrRevokeVaultStandingProofRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get proofCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set proofCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProofCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProofCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get offlineRevocationSnapshotWindow => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set offlineRevocationSnapshotWindow($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOfflineRevocationSnapshotWindow() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOfflineRevocationSnapshotWindow() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get proofState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set proofState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasProofState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearProofState() => $_clearField(3);
+}
+
+class VerifyOrRevokeVaultStandingProofResponse extends $pb.GeneratedMessage {
+  factory VerifyOrRevokeVaultStandingProofResponse({
+    VaultPrivacyStandingProofItem? proof,
+  }) {
+    final result = create();
+    if (proof != null) result.proof = proof;
+    return result;
+  }
+
+  VerifyOrRevokeVaultStandingProofResponse._();
+
+  factory VerifyOrRevokeVaultStandingProofResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrRevokeVaultStandingProofResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrRevokeVaultStandingProofResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultPrivacyStandingProofItem>(1, _omitFieldNames ? '' : 'proof',
+        subBuilder: VaultPrivacyStandingProofItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultStandingProofResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrRevokeVaultStandingProofResponse copyWith(
+          void Function(VerifyOrRevokeVaultStandingProofResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrRevokeVaultStandingProofResponse))
+          as VerifyOrRevokeVaultStandingProofResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultStandingProofResponse create() =>
+      VerifyOrRevokeVaultStandingProofResponse._();
+  @$core.override
+  VerifyOrRevokeVaultStandingProofResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrRevokeVaultStandingProofResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrRevokeVaultStandingProofResponse>(create);
+  static VerifyOrRevokeVaultStandingProofResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultPrivacyStandingProofItem get proof => $_getN(0);
+  @$pb.TagNumber(1)
+  set proof(VaultPrivacyStandingProofItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasProof() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProof() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultPrivacyStandingProofItem ensureProof() => $_ensure(0);
+}
+
+/// Choice 11 (V9): Advisor and Family-Office Workspace
+class VaultAdvisorFamilyWorkspaceItem extends $pb.GeneratedMessage {
+  factory VaultAdvisorFamilyWorkspaceItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? engagementCode,
+    $core.String? advisorCredentialAndScopeGrant,
+    $core.String? watermarkedExchangeAndDecisions,
+    $core.String? disclosuresConflictAndFeeRecord,
+    $core.String? workspaceState,
+    $core.bool? householdProfessionalSeparationEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (engagementCode != null) result.engagementCode = engagementCode;
+    if (advisorCredentialAndScopeGrant != null)
+      result.advisorCredentialAndScopeGrant = advisorCredentialAndScopeGrant;
+    if (watermarkedExchangeAndDecisions != null)
+      result.watermarkedExchangeAndDecisions = watermarkedExchangeAndDecisions;
+    if (disclosuresConflictAndFeeRecord != null)
+      result.disclosuresConflictAndFeeRecord = disclosuresConflictAndFeeRecord;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    if (householdProfessionalSeparationEnforced != null)
+      result.householdProfessionalSeparationEnforced =
+          householdProfessionalSeparationEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultAdvisorFamilyWorkspaceItem._();
+
+  factory VaultAdvisorFamilyWorkspaceItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultAdvisorFamilyWorkspaceItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultAdvisorFamilyWorkspaceItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'engagementCode')
+    ..aOS(4, _omitFieldNames ? '' : 'advisorCredentialAndScopeGrant')
+    ..aOS(5, _omitFieldNames ? '' : 'watermarkedExchangeAndDecisions')
+    ..aOS(6, _omitFieldNames ? '' : 'disclosuresConflictAndFeeRecord')
+    ..aOS(7, _omitFieldNames ? '' : 'workspaceState')
+    ..aOB(8, _omitFieldNames ? '' : 'householdProfessionalSeparationEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultAdvisorFamilyWorkspaceItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultAdvisorFamilyWorkspaceItem copyWith(
+          void Function(VaultAdvisorFamilyWorkspaceItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultAdvisorFamilyWorkspaceItem))
+          as VaultAdvisorFamilyWorkspaceItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultAdvisorFamilyWorkspaceItem create() =>
+      VaultAdvisorFamilyWorkspaceItem._();
+  @$core.override
+  VaultAdvisorFamilyWorkspaceItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultAdvisorFamilyWorkspaceItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultAdvisorFamilyWorkspaceItem>(
+          create);
+  static VaultAdvisorFamilyWorkspaceItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get engagementCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set engagementCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEngagementCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEngagementCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get advisorCredentialAndScopeGrant => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set advisorCredentialAndScopeGrant($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAdvisorCredentialAndScopeGrant() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAdvisorCredentialAndScopeGrant() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get watermarkedExchangeAndDecisions => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set watermarkedExchangeAndDecisions($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWatermarkedExchangeAndDecisions() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWatermarkedExchangeAndDecisions() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get disclosuresConflictAndFeeRecord => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set disclosuresConflictAndFeeRecord($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDisclosuresConflictAndFeeRecord() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDisclosuresConflictAndFeeRecord() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get workspaceState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set workspaceState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWorkspaceState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWorkspaceState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get householdProfessionalSeparationEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set householdProfessionalSeparationEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasHouseholdProfessionalSeparationEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearHouseholdProfessionalSeparationEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultAdvisorFamilyWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultAdvisorFamilyWorkbenchRequest() => create();
+
+  GetVaultAdvisorFamilyWorkbenchRequest._();
+
+  factory GetVaultAdvisorFamilyWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultAdvisorFamilyWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultAdvisorFamilyWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultAdvisorFamilyWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultAdvisorFamilyWorkbenchRequest copyWith(
+          void Function(GetVaultAdvisorFamilyWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultAdvisorFamilyWorkbenchRequest))
+          as GetVaultAdvisorFamilyWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultAdvisorFamilyWorkbenchRequest create() =>
+      GetVaultAdvisorFamilyWorkbenchRequest._();
+  @$core.override
+  GetVaultAdvisorFamilyWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultAdvisorFamilyWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultAdvisorFamilyWorkbenchRequest>(create);
+  static GetVaultAdvisorFamilyWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultAdvisorFamilyWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultAdvisorFamilyWorkbenchResponse({
+    $core.Iterable<VaultAdvisorFamilyWorkspaceItem>? engagements,
+    $core.bool? householdProfessionalSeparationEnforced,
+    $core.String? leastPrivilegeAndWatermarkSummary,
+  }) {
+    final result = create();
+    if (engagements != null) result.engagements.addAll(engagements);
+    if (householdProfessionalSeparationEnforced != null)
+      result.householdProfessionalSeparationEnforced =
+          householdProfessionalSeparationEnforced;
+    if (leastPrivilegeAndWatermarkSummary != null)
+      result.leastPrivilegeAndWatermarkSummary =
+          leastPrivilegeAndWatermarkSummary;
+    return result;
+  }
+
+  GetVaultAdvisorFamilyWorkbenchResponse._();
+
+  factory GetVaultAdvisorFamilyWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultAdvisorFamilyWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultAdvisorFamilyWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultAdvisorFamilyWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'engagements',
+        subBuilder: VaultAdvisorFamilyWorkspaceItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'householdProfessionalSeparationEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'leastPrivilegeAndWatermarkSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultAdvisorFamilyWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultAdvisorFamilyWorkbenchResponse copyWith(
+          void Function(GetVaultAdvisorFamilyWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultAdvisorFamilyWorkbenchResponse))
+          as GetVaultAdvisorFamilyWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultAdvisorFamilyWorkbenchResponse create() =>
+      GetVaultAdvisorFamilyWorkbenchResponse._();
+  @$core.override
+  GetVaultAdvisorFamilyWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultAdvisorFamilyWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultAdvisorFamilyWorkbenchResponse>(create);
+  static GetVaultAdvisorFamilyWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultAdvisorFamilyWorkspaceItem> get engagements => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get householdProfessionalSeparationEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set householdProfessionalSeparationEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHouseholdProfessionalSeparationEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHouseholdProfessionalSeparationEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get leastPrivilegeAndWatermarkSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set leastPrivilegeAndWatermarkSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLeastPrivilegeAndWatermarkSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLeastPrivilegeAndWatermarkSummary() => $_clearField(3);
+}
+
+class SaveVaultAdvisorEngagementScopeRequest extends $pb.GeneratedMessage {
+  factory SaveVaultAdvisorEngagementScopeRequest({
+    $core.String? engagementCode,
+    $core.String? advisorCredentialAndScopeGrant,
+    $core.String? watermarkedExchangeAndDecisions,
+    $core.String? disclosuresConflictAndFeeRecord,
+    $core.String? workspaceState,
+  }) {
+    final result = create();
+    if (engagementCode != null) result.engagementCode = engagementCode;
+    if (advisorCredentialAndScopeGrant != null)
+      result.advisorCredentialAndScopeGrant = advisorCredentialAndScopeGrant;
+    if (watermarkedExchangeAndDecisions != null)
+      result.watermarkedExchangeAndDecisions = watermarkedExchangeAndDecisions;
+    if (disclosuresConflictAndFeeRecord != null)
+      result.disclosuresConflictAndFeeRecord = disclosuresConflictAndFeeRecord;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    return result;
+  }
+
+  SaveVaultAdvisorEngagementScopeRequest._();
+
+  factory SaveVaultAdvisorEngagementScopeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultAdvisorEngagementScopeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultAdvisorEngagementScopeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'engagementCode')
+    ..aOS(2, _omitFieldNames ? '' : 'advisorCredentialAndScopeGrant')
+    ..aOS(3, _omitFieldNames ? '' : 'watermarkedExchangeAndDecisions')
+    ..aOS(4, _omitFieldNames ? '' : 'disclosuresConflictAndFeeRecord')
+    ..aOS(5, _omitFieldNames ? '' : 'workspaceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultAdvisorEngagementScopeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultAdvisorEngagementScopeRequest copyWith(
+          void Function(SaveVaultAdvisorEngagementScopeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultAdvisorEngagementScopeRequest))
+          as SaveVaultAdvisorEngagementScopeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultAdvisorEngagementScopeRequest create() =>
+      SaveVaultAdvisorEngagementScopeRequest._();
+  @$core.override
+  SaveVaultAdvisorEngagementScopeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultAdvisorEngagementScopeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultAdvisorEngagementScopeRequest>(create);
+  static SaveVaultAdvisorEngagementScopeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get engagementCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set engagementCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEngagementCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEngagementCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get advisorCredentialAndScopeGrant => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set advisorCredentialAndScopeGrant($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAdvisorCredentialAndScopeGrant() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAdvisorCredentialAndScopeGrant() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get watermarkedExchangeAndDecisions => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set watermarkedExchangeAndDecisions($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWatermarkedExchangeAndDecisions() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWatermarkedExchangeAndDecisions() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get disclosuresConflictAndFeeRecord => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set disclosuresConflictAndFeeRecord($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDisclosuresConflictAndFeeRecord() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDisclosuresConflictAndFeeRecord() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get workspaceState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set workspaceState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWorkspaceState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWorkspaceState() => $_clearField(5);
+}
+
+class SaveVaultAdvisorEngagementScopeResponse extends $pb.GeneratedMessage {
+  factory SaveVaultAdvisorEngagementScopeResponse({
+    VaultAdvisorFamilyWorkspaceItem? engagement,
+  }) {
+    final result = create();
+    if (engagement != null) result.engagement = engagement;
+    return result;
+  }
+
+  SaveVaultAdvisorEngagementScopeResponse._();
+
+  factory SaveVaultAdvisorEngagementScopeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultAdvisorEngagementScopeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultAdvisorEngagementScopeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultAdvisorFamilyWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'engagement',
+        subBuilder: VaultAdvisorFamilyWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultAdvisorEngagementScopeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultAdvisorEngagementScopeResponse copyWith(
+          void Function(SaveVaultAdvisorEngagementScopeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultAdvisorEngagementScopeResponse))
+          as SaveVaultAdvisorEngagementScopeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultAdvisorEngagementScopeResponse create() =>
+      SaveVaultAdvisorEngagementScopeResponse._();
+  @$core.override
+  SaveVaultAdvisorEngagementScopeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultAdvisorEngagementScopeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultAdvisorEngagementScopeResponse>(create);
+  static SaveVaultAdvisorEngagementScopeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultAdvisorFamilyWorkspaceItem get engagement => $_getN(0);
+  @$pb.TagNumber(1)
+  set engagement(VaultAdvisorFamilyWorkspaceItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEngagement() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEngagement() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultAdvisorFamilyWorkspaceItem ensureEngagement() => $_ensure(0);
+}
+
+class ApproveOrRevokeVaultAdvisorAccessRequest extends $pb.GeneratedMessage {
+  factory ApproveOrRevokeVaultAdvisorAccessRequest({
+    $core.String? engagementCode,
+    $core.String? disclosuresConflictAndFeeRecord,
+    $core.String? workspaceState,
+  }) {
+    final result = create();
+    if (engagementCode != null) result.engagementCode = engagementCode;
+    if (disclosuresConflictAndFeeRecord != null)
+      result.disclosuresConflictAndFeeRecord = disclosuresConflictAndFeeRecord;
+    if (workspaceState != null) result.workspaceState = workspaceState;
+    return result;
+  }
+
+  ApproveOrRevokeVaultAdvisorAccessRequest._();
+
+  factory ApproveOrRevokeVaultAdvisorAccessRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrRevokeVaultAdvisorAccessRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrRevokeVaultAdvisorAccessRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'engagementCode')
+    ..aOS(2, _omitFieldNames ? '' : 'disclosuresConflictAndFeeRecord')
+    ..aOS(3, _omitFieldNames ? '' : 'workspaceState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrRevokeVaultAdvisorAccessRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrRevokeVaultAdvisorAccessRequest copyWith(
+          void Function(ApproveOrRevokeVaultAdvisorAccessRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrRevokeVaultAdvisorAccessRequest))
+          as ApproveOrRevokeVaultAdvisorAccessRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrRevokeVaultAdvisorAccessRequest create() =>
+      ApproveOrRevokeVaultAdvisorAccessRequest._();
+  @$core.override
+  ApproveOrRevokeVaultAdvisorAccessRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrRevokeVaultAdvisorAccessRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrRevokeVaultAdvisorAccessRequest>(create);
+  static ApproveOrRevokeVaultAdvisorAccessRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get engagementCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set engagementCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEngagementCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEngagementCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get disclosuresConflictAndFeeRecord => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set disclosuresConflictAndFeeRecord($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisclosuresConflictAndFeeRecord() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisclosuresConflictAndFeeRecord() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get workspaceState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set workspaceState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasWorkspaceState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearWorkspaceState() => $_clearField(3);
+}
+
+class ApproveOrRevokeVaultAdvisorAccessResponse extends $pb.GeneratedMessage {
+  factory ApproveOrRevokeVaultAdvisorAccessResponse({
+    VaultAdvisorFamilyWorkspaceItem? engagement,
+  }) {
+    final result = create();
+    if (engagement != null) result.engagement = engagement;
+    return result;
+  }
+
+  ApproveOrRevokeVaultAdvisorAccessResponse._();
+
+  factory ApproveOrRevokeVaultAdvisorAccessResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ApproveOrRevokeVaultAdvisorAccessResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ApproveOrRevokeVaultAdvisorAccessResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultAdvisorFamilyWorkspaceItem>(
+        1, _omitFieldNames ? '' : 'engagement',
+        subBuilder: VaultAdvisorFamilyWorkspaceItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrRevokeVaultAdvisorAccessResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ApproveOrRevokeVaultAdvisorAccessResponse copyWith(
+          void Function(ApproveOrRevokeVaultAdvisorAccessResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ApproveOrRevokeVaultAdvisorAccessResponse))
+          as ApproveOrRevokeVaultAdvisorAccessResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrRevokeVaultAdvisorAccessResponse create() =>
+      ApproveOrRevokeVaultAdvisorAccessResponse._();
+  @$core.override
+  ApproveOrRevokeVaultAdvisorAccessResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ApproveOrRevokeVaultAdvisorAccessResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ApproveOrRevokeVaultAdvisorAccessResponse>(create);
+  static ApproveOrRevokeVaultAdvisorAccessResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultAdvisorFamilyWorkspaceItem get engagement => $_getN(0);
+  @$pb.TagNumber(1)
+  set engagement(VaultAdvisorFamilyWorkspaceItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEngagement() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEngagement() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultAdvisorFamilyWorkspaceItem ensureEngagement() => $_ensure(0);
+}
+
+/// Choice 12 (V13): Financial Safety and Fraud Response
+class VaultFinancialSafetyResponseItem extends $pb.GeneratedMessage {
+  factory VaultFinancialSafetyResponseItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? safetyCode,
+    $core.String? signalObservationAndAltCauses,
+    $core.String? guidedInstitutionAndFreezeSteps,
+    $core.String? evidencePreservationAndAppeal,
+    $core.String? safetyState,
+    $core.bool? noSingleScoreAutoLockEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (safetyCode != null) result.safetyCode = safetyCode;
+    if (signalObservationAndAltCauses != null)
+      result.signalObservationAndAltCauses = signalObservationAndAltCauses;
+    if (guidedInstitutionAndFreezeSteps != null)
+      result.guidedInstitutionAndFreezeSteps = guidedInstitutionAndFreezeSteps;
+    if (evidencePreservationAndAppeal != null)
+      result.evidencePreservationAndAppeal = evidencePreservationAndAppeal;
+    if (safetyState != null) result.safetyState = safetyState;
+    if (noSingleScoreAutoLockEnforced != null)
+      result.noSingleScoreAutoLockEnforced = noSingleScoreAutoLockEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultFinancialSafetyResponseItem._();
+
+  factory VaultFinancialSafetyResponseItem.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultFinancialSafetyResponseItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultFinancialSafetyResponseItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'safetyCode')
+    ..aOS(4, _omitFieldNames ? '' : 'signalObservationAndAltCauses')
+    ..aOS(5, _omitFieldNames ? '' : 'guidedInstitutionAndFreezeSteps')
+    ..aOS(6, _omitFieldNames ? '' : 'evidencePreservationAndAppeal')
+    ..aOS(7, _omitFieldNames ? '' : 'safetyState')
+    ..aOB(8, _omitFieldNames ? '' : 'noSingleScoreAutoLockEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialSafetyResponseItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultFinancialSafetyResponseItem copyWith(
+          void Function(VaultFinancialSafetyResponseItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultFinancialSafetyResponseItem))
+          as VaultFinancialSafetyResponseItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialSafetyResponseItem create() =>
+      VaultFinancialSafetyResponseItem._();
+  @$core.override
+  VaultFinancialSafetyResponseItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultFinancialSafetyResponseItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultFinancialSafetyResponseItem>(
+          create);
+  static VaultFinancialSafetyResponseItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get safetyCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set safetyCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSafetyCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSafetyCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get signalObservationAndAltCauses => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set signalObservationAndAltCauses($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSignalObservationAndAltCauses() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSignalObservationAndAltCauses() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get guidedInstitutionAndFreezeSteps => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set guidedInstitutionAndFreezeSteps($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGuidedInstitutionAndFreezeSteps() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGuidedInstitutionAndFreezeSteps() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get evidencePreservationAndAppeal => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set evidencePreservationAndAppeal($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEvidencePreservationAndAppeal() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEvidencePreservationAndAppeal() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get safetyState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set safetyState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSafetyState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSafetyState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noSingleScoreAutoLockEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noSingleScoreAutoLockEnforced($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoSingleScoreAutoLockEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoSingleScoreAutoLockEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultFinancialSafetyWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultFinancialSafetyWorkbenchRequest() => create();
+
+  GetVaultFinancialSafetyWorkbenchRequest._();
+
+  factory GetVaultFinancialSafetyWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialSafetyWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialSafetyWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialSafetyWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialSafetyWorkbenchRequest copyWith(
+          void Function(GetVaultFinancialSafetyWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialSafetyWorkbenchRequest))
+          as GetVaultFinancialSafetyWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialSafetyWorkbenchRequest create() =>
+      GetVaultFinancialSafetyWorkbenchRequest._();
+  @$core.override
+  GetVaultFinancialSafetyWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialSafetyWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialSafetyWorkbenchRequest>(create);
+  static GetVaultFinancialSafetyWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultFinancialSafetyWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultFinancialSafetyWorkbenchResponse({
+    $core.Iterable<VaultFinancialSafetyResponseItem>? incidents,
+    $core.bool? noSingleScoreAutoLockEnforced,
+    $core.String? explainableSignalAndOfficialFreezeSummary,
+  }) {
+    final result = create();
+    if (incidents != null) result.incidents.addAll(incidents);
+    if (noSingleScoreAutoLockEnforced != null)
+      result.noSingleScoreAutoLockEnforced = noSingleScoreAutoLockEnforced;
+    if (explainableSignalAndOfficialFreezeSummary != null)
+      result.explainableSignalAndOfficialFreezeSummary =
+          explainableSignalAndOfficialFreezeSummary;
+    return result;
+  }
+
+  GetVaultFinancialSafetyWorkbenchResponse._();
+
+  factory GetVaultFinancialSafetyWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultFinancialSafetyWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultFinancialSafetyWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultFinancialSafetyResponseItem>(
+        1, _omitFieldNames ? '' : 'incidents',
+        subBuilder: VaultFinancialSafetyResponseItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'noSingleScoreAutoLockEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'explainableSignalAndOfficialFreezeSummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialSafetyWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultFinancialSafetyWorkbenchResponse copyWith(
+          void Function(GetVaultFinancialSafetyWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultFinancialSafetyWorkbenchResponse))
+          as GetVaultFinancialSafetyWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialSafetyWorkbenchResponse create() =>
+      GetVaultFinancialSafetyWorkbenchResponse._();
+  @$core.override
+  GetVaultFinancialSafetyWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultFinancialSafetyWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultFinancialSafetyWorkbenchResponse>(create);
+  static GetVaultFinancialSafetyWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultFinancialSafetyResponseItem> get incidents => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get noSingleScoreAutoLockEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set noSingleScoreAutoLockEnforced($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNoSingleScoreAutoLockEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNoSingleScoreAutoLockEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get explainableSignalAndOfficialFreezeSummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set explainableSignalAndOfficialFreezeSummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExplainableSignalAndOfficialFreezeSummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExplainableSignalAndOfficialFreezeSummary() => $_clearField(3);
+}
+
+class SaveVaultFinancialSafetyIncidentRequest extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialSafetyIncidentRequest({
+    $core.String? safetyCode,
+    $core.String? signalObservationAndAltCauses,
+    $core.String? guidedInstitutionAndFreezeSteps,
+    $core.String? evidencePreservationAndAppeal,
+    $core.String? safetyState,
+  }) {
+    final result = create();
+    if (safetyCode != null) result.safetyCode = safetyCode;
+    if (signalObservationAndAltCauses != null)
+      result.signalObservationAndAltCauses = signalObservationAndAltCauses;
+    if (guidedInstitutionAndFreezeSteps != null)
+      result.guidedInstitutionAndFreezeSteps = guidedInstitutionAndFreezeSteps;
+    if (evidencePreservationAndAppeal != null)
+      result.evidencePreservationAndAppeal = evidencePreservationAndAppeal;
+    if (safetyState != null) result.safetyState = safetyState;
+    return result;
+  }
+
+  SaveVaultFinancialSafetyIncidentRequest._();
+
+  factory SaveVaultFinancialSafetyIncidentRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialSafetyIncidentRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialSafetyIncidentRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'safetyCode')
+    ..aOS(2, _omitFieldNames ? '' : 'signalObservationAndAltCauses')
+    ..aOS(3, _omitFieldNames ? '' : 'guidedInstitutionAndFreezeSteps')
+    ..aOS(4, _omitFieldNames ? '' : 'evidencePreservationAndAppeal')
+    ..aOS(5, _omitFieldNames ? '' : 'safetyState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialSafetyIncidentRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialSafetyIncidentRequest copyWith(
+          void Function(SaveVaultFinancialSafetyIncidentRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialSafetyIncidentRequest))
+          as SaveVaultFinancialSafetyIncidentRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialSafetyIncidentRequest create() =>
+      SaveVaultFinancialSafetyIncidentRequest._();
+  @$core.override
+  SaveVaultFinancialSafetyIncidentRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialSafetyIncidentRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialSafetyIncidentRequest>(create);
+  static SaveVaultFinancialSafetyIncidentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get safetyCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set safetyCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSafetyCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSafetyCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get signalObservationAndAltCauses => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set signalObservationAndAltCauses($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSignalObservationAndAltCauses() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSignalObservationAndAltCauses() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get guidedInstitutionAndFreezeSteps => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set guidedInstitutionAndFreezeSteps($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGuidedInstitutionAndFreezeSteps() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGuidedInstitutionAndFreezeSteps() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get evidencePreservationAndAppeal => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set evidencePreservationAndAppeal($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEvidencePreservationAndAppeal() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEvidencePreservationAndAppeal() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get safetyState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set safetyState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasSafetyState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSafetyState() => $_clearField(5);
+}
+
+class SaveVaultFinancialSafetyIncidentResponse extends $pb.GeneratedMessage {
+  factory SaveVaultFinancialSafetyIncidentResponse({
+    VaultFinancialSafetyResponseItem? incident,
+  }) {
+    final result = create();
+    if (incident != null) result.incident = incident;
+    return result;
+  }
+
+  SaveVaultFinancialSafetyIncidentResponse._();
+
+  factory SaveVaultFinancialSafetyIncidentResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultFinancialSafetyIncidentResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultFinancialSafetyIncidentResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialSafetyResponseItem>(
+        1, _omitFieldNames ? '' : 'incident',
+        subBuilder: VaultFinancialSafetyResponseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialSafetyIncidentResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultFinancialSafetyIncidentResponse copyWith(
+          void Function(SaveVaultFinancialSafetyIncidentResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultFinancialSafetyIncidentResponse))
+          as SaveVaultFinancialSafetyIncidentResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialSafetyIncidentResponse create() =>
+      SaveVaultFinancialSafetyIncidentResponse._();
+  @$core.override
+  SaveVaultFinancialSafetyIncidentResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultFinancialSafetyIncidentResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultFinancialSafetyIncidentResponse>(create);
+  static SaveVaultFinancialSafetyIncidentResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialSafetyResponseItem get incident => $_getN(0);
+  @$pb.TagNumber(1)
+  set incident(VaultFinancialSafetyResponseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncident() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncident() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialSafetyResponseItem ensureIncident() => $_ensure(0);
+}
+
+class ExecuteOrAppealVaultSafetyActionRequest extends $pb.GeneratedMessage {
+  factory ExecuteOrAppealVaultSafetyActionRequest({
+    $core.String? safetyCode,
+    $core.String? evidencePreservationAndAppeal,
+    $core.String? safetyState,
+  }) {
+    final result = create();
+    if (safetyCode != null) result.safetyCode = safetyCode;
+    if (evidencePreservationAndAppeal != null)
+      result.evidencePreservationAndAppeal = evidencePreservationAndAppeal;
+    if (safetyState != null) result.safetyState = safetyState;
+    return result;
+  }
+
+  ExecuteOrAppealVaultSafetyActionRequest._();
+
+  factory ExecuteOrAppealVaultSafetyActionRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExecuteOrAppealVaultSafetyActionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecuteOrAppealVaultSafetyActionRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'safetyCode')
+    ..aOS(2, _omitFieldNames ? '' : 'evidencePreservationAndAppeal')
+    ..aOS(3, _omitFieldNames ? '' : 'safetyState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteOrAppealVaultSafetyActionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteOrAppealVaultSafetyActionRequest copyWith(
+          void Function(ExecuteOrAppealVaultSafetyActionRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as ExecuteOrAppealVaultSafetyActionRequest))
+          as ExecuteOrAppealVaultSafetyActionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteOrAppealVaultSafetyActionRequest create() =>
+      ExecuteOrAppealVaultSafetyActionRequest._();
+  @$core.override
+  ExecuteOrAppealVaultSafetyActionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteOrAppealVaultSafetyActionRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ExecuteOrAppealVaultSafetyActionRequest>(create);
+  static ExecuteOrAppealVaultSafetyActionRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get safetyCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set safetyCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSafetyCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSafetyCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get evidencePreservationAndAppeal => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set evidencePreservationAndAppeal($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEvidencePreservationAndAppeal() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEvidencePreservationAndAppeal() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get safetyState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set safetyState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSafetyState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSafetyState() => $_clearField(3);
+}
+
+class ExecuteOrAppealVaultSafetyActionResponse extends $pb.GeneratedMessage {
+  factory ExecuteOrAppealVaultSafetyActionResponse({
+    VaultFinancialSafetyResponseItem? incident,
+  }) {
+    final result = create();
+    if (incident != null) result.incident = incident;
+    return result;
+  }
+
+  ExecuteOrAppealVaultSafetyActionResponse._();
+
+  factory ExecuteOrAppealVaultSafetyActionResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ExecuteOrAppealVaultSafetyActionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExecuteOrAppealVaultSafetyActionResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultFinancialSafetyResponseItem>(
+        1, _omitFieldNames ? '' : 'incident',
+        subBuilder: VaultFinancialSafetyResponseItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteOrAppealVaultSafetyActionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExecuteOrAppealVaultSafetyActionResponse copyWith(
+          void Function(ExecuteOrAppealVaultSafetyActionResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as ExecuteOrAppealVaultSafetyActionResponse))
+          as ExecuteOrAppealVaultSafetyActionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ExecuteOrAppealVaultSafetyActionResponse create() =>
+      ExecuteOrAppealVaultSafetyActionResponse._();
+  @$core.override
+  ExecuteOrAppealVaultSafetyActionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ExecuteOrAppealVaultSafetyActionResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          ExecuteOrAppealVaultSafetyActionResponse>(create);
+  static ExecuteOrAppealVaultSafetyActionResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultFinancialSafetyResponseItem get incident => $_getN(0);
+  @$pb.TagNumber(1)
+  set incident(VaultFinancialSafetyResponseItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncident() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncident() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultFinancialSafetyResponseItem ensureIncident() => $_ensure(0);
+}
+
+/// Choice 13 (V15): Giving and Impact Ledger
+class VaultGivingImpactLedgerItem extends $pb.GeneratedMessage {
+  factory VaultGivingImpactLedgerItem({
+    $core.String? id,
+    $core.String? userId,
+    $core.String? givingCode,
+    $core.String? charityDiligenceAndPledgeTerms,
+    $core.String? donationLiquidityAndTaxScenario,
+    $core.String? receiptRestrictionAndOutcomeLog,
+    $core.String? ledgerState,
+    $core.bool? noPerformativeLeaderboardEnforced,
+    $core.String? updatedAtIso,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (userId != null) result.userId = userId;
+    if (givingCode != null) result.givingCode = givingCode;
+    if (charityDiligenceAndPledgeTerms != null)
+      result.charityDiligenceAndPledgeTerms = charityDiligenceAndPledgeTerms;
+    if (donationLiquidityAndTaxScenario != null)
+      result.donationLiquidityAndTaxScenario = donationLiquidityAndTaxScenario;
+    if (receiptRestrictionAndOutcomeLog != null)
+      result.receiptRestrictionAndOutcomeLog = receiptRestrictionAndOutcomeLog;
+    if (ledgerState != null) result.ledgerState = ledgerState;
+    if (noPerformativeLeaderboardEnforced != null)
+      result.noPerformativeLeaderboardEnforced =
+          noPerformativeLeaderboardEnforced;
+    if (updatedAtIso != null) result.updatedAtIso = updatedAtIso;
+    return result;
+  }
+
+  VaultGivingImpactLedgerItem._();
+
+  factory VaultGivingImpactLedgerItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VaultGivingImpactLedgerItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VaultGivingImpactLedgerItem',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'userId')
+    ..aOS(3, _omitFieldNames ? '' : 'givingCode')
+    ..aOS(4, _omitFieldNames ? '' : 'charityDiligenceAndPledgeTerms')
+    ..aOS(5, _omitFieldNames ? '' : 'donationLiquidityAndTaxScenario')
+    ..aOS(6, _omitFieldNames ? '' : 'receiptRestrictionAndOutcomeLog')
+    ..aOS(7, _omitFieldNames ? '' : 'ledgerState')
+    ..aOB(8, _omitFieldNames ? '' : 'noPerformativeLeaderboardEnforced')
+    ..aOS(9, _omitFieldNames ? '' : 'updatedAtIso')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultGivingImpactLedgerItem clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VaultGivingImpactLedgerItem copyWith(
+          void Function(VaultGivingImpactLedgerItem) updates) =>
+      super.copyWith(
+              (message) => updates(message as VaultGivingImpactLedgerItem))
+          as VaultGivingImpactLedgerItem;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VaultGivingImpactLedgerItem create() =>
+      VaultGivingImpactLedgerItem._();
+  @$core.override
+  VaultGivingImpactLedgerItem createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VaultGivingImpactLedgerItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<VaultGivingImpactLedgerItem>(create);
+  static VaultGivingImpactLedgerItem? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get givingCode => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set givingCode($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGivingCode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGivingCode() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get charityDiligenceAndPledgeTerms => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set charityDiligenceAndPledgeTerms($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCharityDiligenceAndPledgeTerms() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCharityDiligenceAndPledgeTerms() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get donationLiquidityAndTaxScenario => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set donationLiquidityAndTaxScenario($core.String value) =>
+      $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDonationLiquidityAndTaxScenario() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDonationLiquidityAndTaxScenario() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get receiptRestrictionAndOutcomeLog => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set receiptRestrictionAndOutcomeLog($core.String value) =>
+      $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasReceiptRestrictionAndOutcomeLog() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearReceiptRestrictionAndOutcomeLog() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get ledgerState => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set ledgerState($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasLedgerState() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLedgerState() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.bool get noPerformativeLeaderboardEnforced => $_getBF(7);
+  @$pb.TagNumber(8)
+  set noPerformativeLeaderboardEnforced($core.bool value) =>
+      $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasNoPerformativeLeaderboardEnforced() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearNoPerformativeLeaderboardEnforced() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get updatedAtIso => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set updatedAtIso($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasUpdatedAtIso() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearUpdatedAtIso() => $_clearField(9);
+}
+
+class GetVaultGivingImpactWorkbenchRequest extends $pb.GeneratedMessage {
+  factory GetVaultGivingImpactWorkbenchRequest() => create();
+
+  GetVaultGivingImpactWorkbenchRequest._();
+
+  factory GetVaultGivingImpactWorkbenchRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultGivingImpactWorkbenchRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultGivingImpactWorkbenchRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGivingImpactWorkbenchRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGivingImpactWorkbenchRequest copyWith(
+          void Function(GetVaultGivingImpactWorkbenchRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultGivingImpactWorkbenchRequest))
+          as GetVaultGivingImpactWorkbenchRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGivingImpactWorkbenchRequest create() =>
+      GetVaultGivingImpactWorkbenchRequest._();
+  @$core.override
+  GetVaultGivingImpactWorkbenchRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGivingImpactWorkbenchRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultGivingImpactWorkbenchRequest>(create);
+  static GetVaultGivingImpactWorkbenchRequest? _defaultInstance;
+}
+
+class GetVaultGivingImpactWorkbenchResponse extends $pb.GeneratedMessage {
+  factory GetVaultGivingImpactWorkbenchResponse({
+    $core.Iterable<VaultGivingImpactLedgerItem>? pledges,
+    $core.bool? noPerformativeLeaderboardEnforced,
+    $core.String? diligenceReceiptAndPrivacySummary,
+  }) {
+    final result = create();
+    if (pledges != null) result.pledges.addAll(pledges);
+    if (noPerformativeLeaderboardEnforced != null)
+      result.noPerformativeLeaderboardEnforced =
+          noPerformativeLeaderboardEnforced;
+    if (diligenceReceiptAndPrivacySummary != null)
+      result.diligenceReceiptAndPrivacySummary =
+          diligenceReceiptAndPrivacySummary;
+    return result;
+  }
+
+  GetVaultGivingImpactWorkbenchResponse._();
+
+  factory GetVaultGivingImpactWorkbenchResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetVaultGivingImpactWorkbenchResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetVaultGivingImpactWorkbenchResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..pPM<VaultGivingImpactLedgerItem>(1, _omitFieldNames ? '' : 'pledges',
+        subBuilder: VaultGivingImpactLedgerItem.create)
+    ..aOB(2, _omitFieldNames ? '' : 'noPerformativeLeaderboardEnforced')
+    ..aOS(3, _omitFieldNames ? '' : 'diligenceReceiptAndPrivacySummary')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGivingImpactWorkbenchResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetVaultGivingImpactWorkbenchResponse copyWith(
+          void Function(GetVaultGivingImpactWorkbenchResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as GetVaultGivingImpactWorkbenchResponse))
+          as GetVaultGivingImpactWorkbenchResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGivingImpactWorkbenchResponse create() =>
+      GetVaultGivingImpactWorkbenchResponse._();
+  @$core.override
+  GetVaultGivingImpactWorkbenchResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetVaultGivingImpactWorkbenchResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          GetVaultGivingImpactWorkbenchResponse>(create);
+  static GetVaultGivingImpactWorkbenchResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<VaultGivingImpactLedgerItem> get pledges => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get noPerformativeLeaderboardEnforced => $_getBF(1);
+  @$pb.TagNumber(2)
+  set noPerformativeLeaderboardEnforced($core.bool value) =>
+      $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNoPerformativeLeaderboardEnforced() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNoPerformativeLeaderboardEnforced() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get diligenceReceiptAndPrivacySummary => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set diligenceReceiptAndPrivacySummary($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDiligenceReceiptAndPrivacySummary() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDiligenceReceiptAndPrivacySummary() => $_clearField(3);
+}
+
+class SaveVaultGivingImpactPledgeRequest extends $pb.GeneratedMessage {
+  factory SaveVaultGivingImpactPledgeRequest({
+    $core.String? givingCode,
+    $core.String? charityDiligenceAndPledgeTerms,
+    $core.String? donationLiquidityAndTaxScenario,
+    $core.String? receiptRestrictionAndOutcomeLog,
+    $core.String? ledgerState,
+  }) {
+    final result = create();
+    if (givingCode != null) result.givingCode = givingCode;
+    if (charityDiligenceAndPledgeTerms != null)
+      result.charityDiligenceAndPledgeTerms = charityDiligenceAndPledgeTerms;
+    if (donationLiquidityAndTaxScenario != null)
+      result.donationLiquidityAndTaxScenario = donationLiquidityAndTaxScenario;
+    if (receiptRestrictionAndOutcomeLog != null)
+      result.receiptRestrictionAndOutcomeLog = receiptRestrictionAndOutcomeLog;
+    if (ledgerState != null) result.ledgerState = ledgerState;
+    return result;
+  }
+
+  SaveVaultGivingImpactPledgeRequest._();
+
+  factory SaveVaultGivingImpactPledgeRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultGivingImpactPledgeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultGivingImpactPledgeRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'givingCode')
+    ..aOS(2, _omitFieldNames ? '' : 'charityDiligenceAndPledgeTerms')
+    ..aOS(3, _omitFieldNames ? '' : 'donationLiquidityAndTaxScenario')
+    ..aOS(4, _omitFieldNames ? '' : 'receiptRestrictionAndOutcomeLog')
+    ..aOS(5, _omitFieldNames ? '' : 'ledgerState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGivingImpactPledgeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGivingImpactPledgeRequest copyWith(
+          void Function(SaveVaultGivingImpactPledgeRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultGivingImpactPledgeRequest))
+          as SaveVaultGivingImpactPledgeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGivingImpactPledgeRequest create() =>
+      SaveVaultGivingImpactPledgeRequest._();
+  @$core.override
+  SaveVaultGivingImpactPledgeRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGivingImpactPledgeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SaveVaultGivingImpactPledgeRequest>(
+          create);
+  static SaveVaultGivingImpactPledgeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get givingCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set givingCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGivingCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGivingCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get charityDiligenceAndPledgeTerms => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set charityDiligenceAndPledgeTerms($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasCharityDiligenceAndPledgeTerms() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCharityDiligenceAndPledgeTerms() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get donationLiquidityAndTaxScenario => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set donationLiquidityAndTaxScenario($core.String value) =>
+      $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDonationLiquidityAndTaxScenario() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDonationLiquidityAndTaxScenario() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get receiptRestrictionAndOutcomeLog => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set receiptRestrictionAndOutcomeLog($core.String value) =>
+      $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReceiptRestrictionAndOutcomeLog() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReceiptRestrictionAndOutcomeLog() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get ledgerState => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set ledgerState($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLedgerState() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLedgerState() => $_clearField(5);
+}
+
+class SaveVaultGivingImpactPledgeResponse extends $pb.GeneratedMessage {
+  factory SaveVaultGivingImpactPledgeResponse({
+    VaultGivingImpactLedgerItem? pledge,
+  }) {
+    final result = create();
+    if (pledge != null) result.pledge = pledge;
+    return result;
+  }
+
+  SaveVaultGivingImpactPledgeResponse._();
+
+  factory SaveVaultGivingImpactPledgeResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SaveVaultGivingImpactPledgeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SaveVaultGivingImpactPledgeResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultGivingImpactLedgerItem>(1, _omitFieldNames ? '' : 'pledge',
+        subBuilder: VaultGivingImpactLedgerItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGivingImpactPledgeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SaveVaultGivingImpactPledgeResponse copyWith(
+          void Function(SaveVaultGivingImpactPledgeResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as SaveVaultGivingImpactPledgeResponse))
+          as SaveVaultGivingImpactPledgeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGivingImpactPledgeResponse create() =>
+      SaveVaultGivingImpactPledgeResponse._();
+  @$core.override
+  SaveVaultGivingImpactPledgeResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SaveVaultGivingImpactPledgeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          SaveVaultGivingImpactPledgeResponse>(create);
+  static SaveVaultGivingImpactPledgeResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultGivingImpactLedgerItem get pledge => $_getN(0);
+  @$pb.TagNumber(1)
+  set pledge(VaultGivingImpactLedgerItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPledge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPledge() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultGivingImpactLedgerItem ensurePledge() => $_ensure(0);
+}
+
+class VerifyOrAcknowledgeVaultGiftReceiptRequest extends $pb.GeneratedMessage {
+  factory VerifyOrAcknowledgeVaultGiftReceiptRequest({
+    $core.String? givingCode,
+    $core.String? receiptRestrictionAndOutcomeLog,
+    $core.String? ledgerState,
+  }) {
+    final result = create();
+    if (givingCode != null) result.givingCode = givingCode;
+    if (receiptRestrictionAndOutcomeLog != null)
+      result.receiptRestrictionAndOutcomeLog = receiptRestrictionAndOutcomeLog;
+    if (ledgerState != null) result.ledgerState = ledgerState;
+    return result;
+  }
+
+  VerifyOrAcknowledgeVaultGiftReceiptRequest._();
+
+  factory VerifyOrAcknowledgeVaultGiftReceiptRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrAcknowledgeVaultGiftReceiptRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrAcknowledgeVaultGiftReceiptRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'givingCode')
+    ..aOS(2, _omitFieldNames ? '' : 'receiptRestrictionAndOutcomeLog')
+    ..aOS(3, _omitFieldNames ? '' : 'ledgerState')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrAcknowledgeVaultGiftReceiptRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrAcknowledgeVaultGiftReceiptRequest copyWith(
+          void Function(VerifyOrAcknowledgeVaultGiftReceiptRequest) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrAcknowledgeVaultGiftReceiptRequest))
+          as VerifyOrAcknowledgeVaultGiftReceiptRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrAcknowledgeVaultGiftReceiptRequest create() =>
+      VerifyOrAcknowledgeVaultGiftReceiptRequest._();
+  @$core.override
+  VerifyOrAcknowledgeVaultGiftReceiptRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrAcknowledgeVaultGiftReceiptRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrAcknowledgeVaultGiftReceiptRequest>(create);
+  static VerifyOrAcknowledgeVaultGiftReceiptRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get givingCode => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set givingCode($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasGivingCode() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGivingCode() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get receiptRestrictionAndOutcomeLog => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set receiptRestrictionAndOutcomeLog($core.String value) =>
+      $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReceiptRestrictionAndOutcomeLog() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReceiptRestrictionAndOutcomeLog() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ledgerState => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ledgerState($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLedgerState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLedgerState() => $_clearField(3);
+}
+
+class VerifyOrAcknowledgeVaultGiftReceiptResponse extends $pb.GeneratedMessage {
+  factory VerifyOrAcknowledgeVaultGiftReceiptResponse({
+    VaultGivingImpactLedgerItem? pledge,
+  }) {
+    final result = create();
+    if (pledge != null) result.pledge = pledge;
+    return result;
+  }
+
+  VerifyOrAcknowledgeVaultGiftReceiptResponse._();
+
+  factory VerifyOrAcknowledgeVaultGiftReceiptResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory VerifyOrAcknowledgeVaultGiftReceiptResponse.fromJson(
+          $core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'VerifyOrAcknowledgeVaultGiftReceiptResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'sttattus.vault.v1'),
+      createEmptyInstance: create)
+    ..aOM<VaultGivingImpactLedgerItem>(1, _omitFieldNames ? '' : 'pledge',
+        subBuilder: VaultGivingImpactLedgerItem.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrAcknowledgeVaultGiftReceiptResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  VerifyOrAcknowledgeVaultGiftReceiptResponse copyWith(
+          void Function(VerifyOrAcknowledgeVaultGiftReceiptResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as VerifyOrAcknowledgeVaultGiftReceiptResponse))
+          as VerifyOrAcknowledgeVaultGiftReceiptResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrAcknowledgeVaultGiftReceiptResponse create() =>
+      VerifyOrAcknowledgeVaultGiftReceiptResponse._();
+  @$core.override
+  VerifyOrAcknowledgeVaultGiftReceiptResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static VerifyOrAcknowledgeVaultGiftReceiptResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
+          VerifyOrAcknowledgeVaultGiftReceiptResponse>(create);
+  static VerifyOrAcknowledgeVaultGiftReceiptResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  VaultGivingImpactLedgerItem get pledge => $_getN(0);
+  @$pb.TagNumber(1)
+  set pledge(VaultGivingImpactLedgerItem value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPledge() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPledge() => $_clearField(1);
+  @$pb.TagNumber(1)
+  VaultGivingImpactLedgerItem ensurePledge() => $_ensure(0);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

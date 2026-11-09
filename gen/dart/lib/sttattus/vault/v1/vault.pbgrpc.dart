@@ -437,6 +437,371 @@ class VaultServiceClient extends $grpc.Client {
         options: options);
   }
 
+  /// ===== Vault Opportunity Choices 1–13 (V1..V16) =====
+  /// Choice 1 (V1): Financial Data Reliability Center
+  $grpc.ResponseFuture<$0.GetVaultFinancialReliabilityWorkbenchResponse>
+      getVaultFinancialReliabilityWorkbench(
+    $0.GetVaultFinancialReliabilityWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultFinancialReliabilityWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultFinancialReliabilitySourceResponse>
+      saveVaultFinancialReliabilitySource(
+    $0.SaveVaultFinancialReliabilitySourceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultFinancialReliabilitySource, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReconcileOrReplayVaultReliabilityResponse>
+      reconcileOrReplayVaultReliability(
+    $0.ReconcileOrReplayVaultReliabilityRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reconcileOrReplayVaultReliability, request,
+        options: options);
+  }
+
+  /// Choice 2 (V10): Financial Inbox and Monthly Close
+  $grpc.ResponseFuture<$0.GetVaultFinancialInboxCloseWorkbenchResponse>
+      getVaultFinancialInboxCloseWorkbench(
+    $0.GetVaultFinancialInboxCloseWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultFinancialInboxCloseWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultFinancialInboxCloseItemResponse>
+      saveVaultFinancialInboxCloseItem(
+    $0.SaveVaultFinancialInboxCloseItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultFinancialInboxCloseItem, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LockOrReopenVaultMonthlyCloseResponse>
+      lockOrReopenVaultMonthlyClose(
+    $0.LockOrReopenVaultMonthlyCloseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$lockOrReopenVaultMonthlyClose, request,
+        options: options);
+  }
+
+  /// Choice 3 (V2, V11): Personal CFO and Cash Command
+  $grpc.ResponseFuture<$0.GetVaultPersonalCfoCashWorkbenchResponse>
+      getVaultPersonalCfoCashWorkbench(
+    $0.GetVaultPersonalCfoCashWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultPersonalCfoCashWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultPersonalCfoCashForecastResponse>
+      saveVaultPersonalCfoCashForecast(
+    $0.SaveVaultPersonalCfoCashForecastRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultPersonalCfoCashForecast, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AcknowledgeOrReviewVaultCashCommitmentResponse>
+      acknowledgeOrReviewVaultCashCommitment(
+    $0.AcknowledgeOrReviewVaultCashCommitmentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$acknowledgeOrReviewVaultCashCommitment, request,
+        options: options);
+  }
+
+  /// Choice 4 (V3): Performance and Allocation Laboratory
+  $grpc.ResponseFuture<$0.GetVaultPerformanceAllocationWorkbenchResponse>
+      getVaultPerformanceAllocationWorkbench(
+    $0.GetVaultPerformanceAllocationWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultPerformanceAllocationWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultPerformanceAllocationModelResponse>
+      saveVaultPerformanceAllocationModel(
+    $0.SaveVaultPerformanceAllocationModelRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultPerformanceAllocationModel, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SimulateOrRefreshVaultAllocationResponse>
+      simulateOrRefreshVaultAllocation(
+    $0.SimulateOrRefreshVaultAllocationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$simulateOrRefreshVaultAllocation, request,
+        options: options);
+  }
+
+  /// Choice 5 (V4, V16): Tax and Accountant Workspace
+  $grpc.ResponseFuture<$0.GetVaultTaxAccountantWorkbenchResponse>
+      getVaultTaxAccountantWorkbench(
+    $0.GetVaultTaxAccountantWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultTaxAccountantWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultTaxAccountantScenarioResponse>
+      saveVaultTaxAccountantScenario(
+    $0.SaveVaultTaxAccountantScenarioRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultTaxAccountantScenario, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.LockOrExportVaultTaxPackageResponse>
+      lockOrExportVaultTaxPackage(
+    $0.LockOrExportVaultTaxPackageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$lockOrExportVaultTaxPackage, request,
+        options: options);
+  }
+
+  /// Choice 6 (V5): Entity, Household, and Ownership Graph
+  $grpc.ResponseFuture<$0.GetVaultEntityOwnershipWorkbenchResponse>
+      getVaultEntityOwnershipWorkbench(
+    $0.GetVaultEntityOwnershipWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultEntityOwnershipWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultEntityOwnershipNodeResponse>
+      saveVaultEntityOwnershipNode(
+    $0.SaveVaultEntityOwnershipNodeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultEntityOwnershipNode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyOrRevokeVaultOwnershipAccessResponse>
+      verifyOrRevokeVaultOwnershipAccess(
+    $0.VerifyOrRevokeVaultOwnershipAccessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyOrRevokeVaultOwnershipAccess, request,
+        options: options);
+  }
+
+  /// Choice 7 (V6, V16): Private Markets and Document Room
+  $grpc.ResponseFuture<$0.GetVaultPrivateMarketDocWorkbenchResponse>
+      getVaultPrivateMarketDocWorkbench(
+    $0.GetVaultPrivateMarketDocWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultPrivateMarketDocWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultPrivateMarketCommitmentResponse>
+      saveVaultPrivateMarketCommitment(
+    $0.SaveVaultPrivateMarketCommitmentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultPrivateMarketCommitment, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ConfirmOrReconcileVaultCapitalNoticeResponse>
+      confirmOrReconcileVaultCapitalNotice(
+    $0.ConfirmOrReconcileVaultCapitalNoticeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$confirmOrReconcileVaultCapitalNotice, request,
+        options: options);
+  }
+
+  /// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+  $grpc.ResponseFuture<$0.GetVaultTreasuryDebtRiskWorkbenchResponse>
+      getVaultTreasuryDebtRiskWorkbench(
+    $0.GetVaultTreasuryDebtRiskWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultTreasuryDebtRiskWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultTreasuryDebtRiskPositionResponse>
+      saveVaultTreasuryDebtRiskPosition(
+    $0.SaveVaultTreasuryDebtRiskPositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultTreasuryDebtRiskPosition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.EvaluateOrRouteVaultCoverageGapResponse>
+      evaluateOrRouteVaultCoverageGap(
+    $0.EvaluateOrRouteVaultCoverageGapRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$evaluateOrRouteVaultCoverageGap, request,
+        options: options);
+  }
+
+  /// Choice 9 (V8): Goals and Scenario Engine
+  $grpc.ResponseFuture<$0.GetVaultGoalsScenarioWorkbenchResponse>
+      getVaultGoalsScenarioWorkbench(
+    $0.GetVaultGoalsScenarioWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultGoalsScenarioWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultGoalScenarioSnapshotResponse>
+      saveVaultGoalScenarioSnapshot(
+    $0.SaveVaultGoalScenarioSnapshotRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultGoalScenarioSnapshot, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CompareOrHandoffVaultScenarioResponse>
+      compareOrHandoffVaultScenario(
+    $0.CompareOrHandoffVaultScenarioRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$compareOrHandoffVaultScenario, request,
+        options: options);
+  }
+
+  /// Choice 10 (V7): Privacy-Preserving Standing Proofs
+  $grpc.ResponseFuture<$0.GetVaultPrivacyStandingProofWorkbenchResponse>
+      getVaultPrivacyStandingProofWorkbench(
+    $0.GetVaultPrivacyStandingProofWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultPrivacyStandingProofWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.IssueVaultPrivacyStandingProofResponse>
+      issueVaultPrivacyStandingProof(
+    $0.IssueVaultPrivacyStandingProofRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$issueVaultPrivacyStandingProof, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyOrRevokeVaultStandingProofResponse>
+      verifyOrRevokeVaultStandingProof(
+    $0.VerifyOrRevokeVaultStandingProofRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyOrRevokeVaultStandingProof, request,
+        options: options);
+  }
+
+  /// Choice 11 (V9): Advisor and Family-Office Workspace
+  $grpc.ResponseFuture<$0.GetVaultAdvisorFamilyWorkbenchResponse>
+      getVaultAdvisorFamilyWorkbench(
+    $0.GetVaultAdvisorFamilyWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultAdvisorFamilyWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultAdvisorEngagementScopeResponse>
+      saveVaultAdvisorEngagementScope(
+    $0.SaveVaultAdvisorEngagementScopeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultAdvisorEngagementScope, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveOrRevokeVaultAdvisorAccessResponse>
+      approveOrRevokeVaultAdvisorAccess(
+    $0.ApproveOrRevokeVaultAdvisorAccessRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveOrRevokeVaultAdvisorAccess, request,
+        options: options);
+  }
+
+  /// Choice 12 (V13): Financial Safety and Fraud Response
+  $grpc.ResponseFuture<$0.GetVaultFinancialSafetyWorkbenchResponse>
+      getVaultFinancialSafetyWorkbench(
+    $0.GetVaultFinancialSafetyWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultFinancialSafetyWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultFinancialSafetyIncidentResponse>
+      saveVaultFinancialSafetyIncident(
+    $0.SaveVaultFinancialSafetyIncidentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultFinancialSafetyIncident, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ExecuteOrAppealVaultSafetyActionResponse>
+      executeOrAppealVaultSafetyAction(
+    $0.ExecuteOrAppealVaultSafetyActionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$executeOrAppealVaultSafetyAction, request,
+        options: options);
+  }
+
+  /// Choice 13 (V15): Giving and Impact Ledger
+  $grpc.ResponseFuture<$0.GetVaultGivingImpactWorkbenchResponse>
+      getVaultGivingImpactWorkbench(
+    $0.GetVaultGivingImpactWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getVaultGivingImpactWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SaveVaultGivingImpactPledgeResponse>
+      saveVaultGivingImpactPledge(
+    $0.SaveVaultGivingImpactPledgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$saveVaultGivingImpactPledge, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.VerifyOrAcknowledgeVaultGiftReceiptResponse>
+      verifyOrAcknowledgeVaultGiftReceipt(
+    $0.VerifyOrAcknowledgeVaultGiftReceiptRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$verifyOrAcknowledgeVaultGiftReceipt, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$submitAsset =
@@ -700,6 +1065,267 @@ class VaultServiceClient extends $grpc.Client {
       '/sttattus.vault.v1.VaultService/GetLiquidityStressTest',
       ($0.GetLiquidityStressTestRequest value) => value.writeToBuffer(),
       $0.GetLiquidityStressTestResponse.fromBuffer);
+  static final _$getVaultFinancialReliabilityWorkbench = $grpc.ClientMethod<
+          $0.GetVaultFinancialReliabilityWorkbenchRequest,
+          $0.GetVaultFinancialReliabilityWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultFinancialReliabilityWorkbench',
+      ($0.GetVaultFinancialReliabilityWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultFinancialReliabilityWorkbenchResponse.fromBuffer);
+  static final _$saveVaultFinancialReliabilitySource = $grpc.ClientMethod<
+          $0.SaveVaultFinancialReliabilitySourceRequest,
+          $0.SaveVaultFinancialReliabilitySourceResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultFinancialReliabilitySource',
+      ($0.SaveVaultFinancialReliabilitySourceRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultFinancialReliabilitySourceResponse.fromBuffer);
+  static final _$reconcileOrReplayVaultReliability = $grpc.ClientMethod<
+          $0.ReconcileOrReplayVaultReliabilityRequest,
+          $0.ReconcileOrReplayVaultReliabilityResponse>(
+      '/sttattus.vault.v1.VaultService/ReconcileOrReplayVaultReliability',
+      ($0.ReconcileOrReplayVaultReliabilityRequest value) =>
+          value.writeToBuffer(),
+      $0.ReconcileOrReplayVaultReliabilityResponse.fromBuffer);
+  static final _$getVaultFinancialInboxCloseWorkbench = $grpc.ClientMethod<
+          $0.GetVaultFinancialInboxCloseWorkbenchRequest,
+          $0.GetVaultFinancialInboxCloseWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultFinancialInboxCloseWorkbench',
+      ($0.GetVaultFinancialInboxCloseWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultFinancialInboxCloseWorkbenchResponse.fromBuffer);
+  static final _$saveVaultFinancialInboxCloseItem = $grpc.ClientMethod<
+          $0.SaveVaultFinancialInboxCloseItemRequest,
+          $0.SaveVaultFinancialInboxCloseItemResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultFinancialInboxCloseItem',
+      ($0.SaveVaultFinancialInboxCloseItemRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultFinancialInboxCloseItemResponse.fromBuffer);
+  static final _$lockOrReopenVaultMonthlyClose = $grpc.ClientMethod<
+          $0.LockOrReopenVaultMonthlyCloseRequest,
+          $0.LockOrReopenVaultMonthlyCloseResponse>(
+      '/sttattus.vault.v1.VaultService/LockOrReopenVaultMonthlyClose',
+      ($0.LockOrReopenVaultMonthlyCloseRequest value) => value.writeToBuffer(),
+      $0.LockOrReopenVaultMonthlyCloseResponse.fromBuffer);
+  static final _$getVaultPersonalCfoCashWorkbench = $grpc.ClientMethod<
+          $0.GetVaultPersonalCfoCashWorkbenchRequest,
+          $0.GetVaultPersonalCfoCashWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultPersonalCfoCashWorkbench',
+      ($0.GetVaultPersonalCfoCashWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultPersonalCfoCashWorkbenchResponse.fromBuffer);
+  static final _$saveVaultPersonalCfoCashForecast = $grpc.ClientMethod<
+          $0.SaveVaultPersonalCfoCashForecastRequest,
+          $0.SaveVaultPersonalCfoCashForecastResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultPersonalCfoCashForecast',
+      ($0.SaveVaultPersonalCfoCashForecastRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultPersonalCfoCashForecastResponse.fromBuffer);
+  static final _$acknowledgeOrReviewVaultCashCommitment = $grpc.ClientMethod<
+          $0.AcknowledgeOrReviewVaultCashCommitmentRequest,
+          $0.AcknowledgeOrReviewVaultCashCommitmentResponse>(
+      '/sttattus.vault.v1.VaultService/AcknowledgeOrReviewVaultCashCommitment',
+      ($0.AcknowledgeOrReviewVaultCashCommitmentRequest value) =>
+          value.writeToBuffer(),
+      $0.AcknowledgeOrReviewVaultCashCommitmentResponse.fromBuffer);
+  static final _$getVaultPerformanceAllocationWorkbench = $grpc.ClientMethod<
+          $0.GetVaultPerformanceAllocationWorkbenchRequest,
+          $0.GetVaultPerformanceAllocationWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultPerformanceAllocationWorkbench',
+      ($0.GetVaultPerformanceAllocationWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultPerformanceAllocationWorkbenchResponse.fromBuffer);
+  static final _$saveVaultPerformanceAllocationModel = $grpc.ClientMethod<
+          $0.SaveVaultPerformanceAllocationModelRequest,
+          $0.SaveVaultPerformanceAllocationModelResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultPerformanceAllocationModel',
+      ($0.SaveVaultPerformanceAllocationModelRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultPerformanceAllocationModelResponse.fromBuffer);
+  static final _$simulateOrRefreshVaultAllocation = $grpc.ClientMethod<
+          $0.SimulateOrRefreshVaultAllocationRequest,
+          $0.SimulateOrRefreshVaultAllocationResponse>(
+      '/sttattus.vault.v1.VaultService/SimulateOrRefreshVaultAllocation',
+      ($0.SimulateOrRefreshVaultAllocationRequest value) =>
+          value.writeToBuffer(),
+      $0.SimulateOrRefreshVaultAllocationResponse.fromBuffer);
+  static final _$getVaultTaxAccountantWorkbench = $grpc.ClientMethod<
+          $0.GetVaultTaxAccountantWorkbenchRequest,
+          $0.GetVaultTaxAccountantWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultTaxAccountantWorkbench',
+      ($0.GetVaultTaxAccountantWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetVaultTaxAccountantWorkbenchResponse.fromBuffer);
+  static final _$saveVaultTaxAccountantScenario = $grpc.ClientMethod<
+          $0.SaveVaultTaxAccountantScenarioRequest,
+          $0.SaveVaultTaxAccountantScenarioResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultTaxAccountantScenario',
+      ($0.SaveVaultTaxAccountantScenarioRequest value) => value.writeToBuffer(),
+      $0.SaveVaultTaxAccountantScenarioResponse.fromBuffer);
+  static final _$lockOrExportVaultTaxPackage = $grpc.ClientMethod<
+          $0.LockOrExportVaultTaxPackageRequest,
+          $0.LockOrExportVaultTaxPackageResponse>(
+      '/sttattus.vault.v1.VaultService/LockOrExportVaultTaxPackage',
+      ($0.LockOrExportVaultTaxPackageRequest value) => value.writeToBuffer(),
+      $0.LockOrExportVaultTaxPackageResponse.fromBuffer);
+  static final _$getVaultEntityOwnershipWorkbench = $grpc.ClientMethod<
+          $0.GetVaultEntityOwnershipWorkbenchRequest,
+          $0.GetVaultEntityOwnershipWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultEntityOwnershipWorkbench',
+      ($0.GetVaultEntityOwnershipWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultEntityOwnershipWorkbenchResponse.fromBuffer);
+  static final _$saveVaultEntityOwnershipNode = $grpc.ClientMethod<
+          $0.SaveVaultEntityOwnershipNodeRequest,
+          $0.SaveVaultEntityOwnershipNodeResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultEntityOwnershipNode',
+      ($0.SaveVaultEntityOwnershipNodeRequest value) => value.writeToBuffer(),
+      $0.SaveVaultEntityOwnershipNodeResponse.fromBuffer);
+  static final _$verifyOrRevokeVaultOwnershipAccess = $grpc.ClientMethod<
+          $0.VerifyOrRevokeVaultOwnershipAccessRequest,
+          $0.VerifyOrRevokeVaultOwnershipAccessResponse>(
+      '/sttattus.vault.v1.VaultService/VerifyOrRevokeVaultOwnershipAccess',
+      ($0.VerifyOrRevokeVaultOwnershipAccessRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyOrRevokeVaultOwnershipAccessResponse.fromBuffer);
+  static final _$getVaultPrivateMarketDocWorkbench = $grpc.ClientMethod<
+          $0.GetVaultPrivateMarketDocWorkbenchRequest,
+          $0.GetVaultPrivateMarketDocWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultPrivateMarketDocWorkbench',
+      ($0.GetVaultPrivateMarketDocWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultPrivateMarketDocWorkbenchResponse.fromBuffer);
+  static final _$saveVaultPrivateMarketCommitment = $grpc.ClientMethod<
+          $0.SaveVaultPrivateMarketCommitmentRequest,
+          $0.SaveVaultPrivateMarketCommitmentResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultPrivateMarketCommitment',
+      ($0.SaveVaultPrivateMarketCommitmentRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultPrivateMarketCommitmentResponse.fromBuffer);
+  static final _$confirmOrReconcileVaultCapitalNotice = $grpc.ClientMethod<
+          $0.ConfirmOrReconcileVaultCapitalNoticeRequest,
+          $0.ConfirmOrReconcileVaultCapitalNoticeResponse>(
+      '/sttattus.vault.v1.VaultService/ConfirmOrReconcileVaultCapitalNotice',
+      ($0.ConfirmOrReconcileVaultCapitalNoticeRequest value) =>
+          value.writeToBuffer(),
+      $0.ConfirmOrReconcileVaultCapitalNoticeResponse.fromBuffer);
+  static final _$getVaultTreasuryDebtRiskWorkbench = $grpc.ClientMethod<
+          $0.GetVaultTreasuryDebtRiskWorkbenchRequest,
+          $0.GetVaultTreasuryDebtRiskWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultTreasuryDebtRiskWorkbench',
+      ($0.GetVaultTreasuryDebtRiskWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultTreasuryDebtRiskWorkbenchResponse.fromBuffer);
+  static final _$saveVaultTreasuryDebtRiskPosition = $grpc.ClientMethod<
+          $0.SaveVaultTreasuryDebtRiskPositionRequest,
+          $0.SaveVaultTreasuryDebtRiskPositionResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultTreasuryDebtRiskPosition',
+      ($0.SaveVaultTreasuryDebtRiskPositionRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultTreasuryDebtRiskPositionResponse.fromBuffer);
+  static final _$evaluateOrRouteVaultCoverageGap = $grpc.ClientMethod<
+          $0.EvaluateOrRouteVaultCoverageGapRequest,
+          $0.EvaluateOrRouteVaultCoverageGapResponse>(
+      '/sttattus.vault.v1.VaultService/EvaluateOrRouteVaultCoverageGap',
+      ($0.EvaluateOrRouteVaultCoverageGapRequest value) =>
+          value.writeToBuffer(),
+      $0.EvaluateOrRouteVaultCoverageGapResponse.fromBuffer);
+  static final _$getVaultGoalsScenarioWorkbench = $grpc.ClientMethod<
+          $0.GetVaultGoalsScenarioWorkbenchRequest,
+          $0.GetVaultGoalsScenarioWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultGoalsScenarioWorkbench',
+      ($0.GetVaultGoalsScenarioWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetVaultGoalsScenarioWorkbenchResponse.fromBuffer);
+  static final _$saveVaultGoalScenarioSnapshot = $grpc.ClientMethod<
+          $0.SaveVaultGoalScenarioSnapshotRequest,
+          $0.SaveVaultGoalScenarioSnapshotResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultGoalScenarioSnapshot',
+      ($0.SaveVaultGoalScenarioSnapshotRequest value) => value.writeToBuffer(),
+      $0.SaveVaultGoalScenarioSnapshotResponse.fromBuffer);
+  static final _$compareOrHandoffVaultScenario = $grpc.ClientMethod<
+          $0.CompareOrHandoffVaultScenarioRequest,
+          $0.CompareOrHandoffVaultScenarioResponse>(
+      '/sttattus.vault.v1.VaultService/CompareOrHandoffVaultScenario',
+      ($0.CompareOrHandoffVaultScenarioRequest value) => value.writeToBuffer(),
+      $0.CompareOrHandoffVaultScenarioResponse.fromBuffer);
+  static final _$getVaultPrivacyStandingProofWorkbench = $grpc.ClientMethod<
+          $0.GetVaultPrivacyStandingProofWorkbenchRequest,
+          $0.GetVaultPrivacyStandingProofWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultPrivacyStandingProofWorkbench',
+      ($0.GetVaultPrivacyStandingProofWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultPrivacyStandingProofWorkbenchResponse.fromBuffer);
+  static final _$issueVaultPrivacyStandingProof = $grpc.ClientMethod<
+          $0.IssueVaultPrivacyStandingProofRequest,
+          $0.IssueVaultPrivacyStandingProofResponse>(
+      '/sttattus.vault.v1.VaultService/IssueVaultPrivacyStandingProof',
+      ($0.IssueVaultPrivacyStandingProofRequest value) => value.writeToBuffer(),
+      $0.IssueVaultPrivacyStandingProofResponse.fromBuffer);
+  static final _$verifyOrRevokeVaultStandingProof = $grpc.ClientMethod<
+          $0.VerifyOrRevokeVaultStandingProofRequest,
+          $0.VerifyOrRevokeVaultStandingProofResponse>(
+      '/sttattus.vault.v1.VaultService/VerifyOrRevokeVaultStandingProof',
+      ($0.VerifyOrRevokeVaultStandingProofRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyOrRevokeVaultStandingProofResponse.fromBuffer);
+  static final _$getVaultAdvisorFamilyWorkbench = $grpc.ClientMethod<
+          $0.GetVaultAdvisorFamilyWorkbenchRequest,
+          $0.GetVaultAdvisorFamilyWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultAdvisorFamilyWorkbench',
+      ($0.GetVaultAdvisorFamilyWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetVaultAdvisorFamilyWorkbenchResponse.fromBuffer);
+  static final _$saveVaultAdvisorEngagementScope = $grpc.ClientMethod<
+          $0.SaveVaultAdvisorEngagementScopeRequest,
+          $0.SaveVaultAdvisorEngagementScopeResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultAdvisorEngagementScope',
+      ($0.SaveVaultAdvisorEngagementScopeRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultAdvisorEngagementScopeResponse.fromBuffer);
+  static final _$approveOrRevokeVaultAdvisorAccess = $grpc.ClientMethod<
+          $0.ApproveOrRevokeVaultAdvisorAccessRequest,
+          $0.ApproveOrRevokeVaultAdvisorAccessResponse>(
+      '/sttattus.vault.v1.VaultService/ApproveOrRevokeVaultAdvisorAccess',
+      ($0.ApproveOrRevokeVaultAdvisorAccessRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveOrRevokeVaultAdvisorAccessResponse.fromBuffer);
+  static final _$getVaultFinancialSafetyWorkbench = $grpc.ClientMethod<
+          $0.GetVaultFinancialSafetyWorkbenchRequest,
+          $0.GetVaultFinancialSafetyWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultFinancialSafetyWorkbench',
+      ($0.GetVaultFinancialSafetyWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetVaultFinancialSafetyWorkbenchResponse.fromBuffer);
+  static final _$saveVaultFinancialSafetyIncident = $grpc.ClientMethod<
+          $0.SaveVaultFinancialSafetyIncidentRequest,
+          $0.SaveVaultFinancialSafetyIncidentResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultFinancialSafetyIncident',
+      ($0.SaveVaultFinancialSafetyIncidentRequest value) =>
+          value.writeToBuffer(),
+      $0.SaveVaultFinancialSafetyIncidentResponse.fromBuffer);
+  static final _$executeOrAppealVaultSafetyAction = $grpc.ClientMethod<
+          $0.ExecuteOrAppealVaultSafetyActionRequest,
+          $0.ExecuteOrAppealVaultSafetyActionResponse>(
+      '/sttattus.vault.v1.VaultService/ExecuteOrAppealVaultSafetyAction',
+      ($0.ExecuteOrAppealVaultSafetyActionRequest value) =>
+          value.writeToBuffer(),
+      $0.ExecuteOrAppealVaultSafetyActionResponse.fromBuffer);
+  static final _$getVaultGivingImpactWorkbench = $grpc.ClientMethod<
+          $0.GetVaultGivingImpactWorkbenchRequest,
+          $0.GetVaultGivingImpactWorkbenchResponse>(
+      '/sttattus.vault.v1.VaultService/GetVaultGivingImpactWorkbench',
+      ($0.GetVaultGivingImpactWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetVaultGivingImpactWorkbenchResponse.fromBuffer);
+  static final _$saveVaultGivingImpactPledge = $grpc.ClientMethod<
+          $0.SaveVaultGivingImpactPledgeRequest,
+          $0.SaveVaultGivingImpactPledgeResponse>(
+      '/sttattus.vault.v1.VaultService/SaveVaultGivingImpactPledge',
+      ($0.SaveVaultGivingImpactPledgeRequest value) => value.writeToBuffer(),
+      $0.SaveVaultGivingImpactPledgeResponse.fromBuffer);
+  static final _$verifyOrAcknowledgeVaultGiftReceipt = $grpc.ClientMethod<
+          $0.VerifyOrAcknowledgeVaultGiftReceiptRequest,
+          $0.VerifyOrAcknowledgeVaultGiftReceiptResponse>(
+      '/sttattus.vault.v1.VaultService/VerifyOrAcknowledgeVaultGiftReceipt',
+      ($0.VerifyOrAcknowledgeVaultGiftReceiptRequest value) =>
+          value.writeToBuffer(),
+      $0.VerifyOrAcknowledgeVaultGiftReceiptResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.vault.v1.VaultService')
@@ -1163,6 +1789,405 @@ abstract class VaultServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetLiquidityStressTestRequest.fromBuffer(value),
         ($0.GetLiquidityStressTestResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetVaultFinancialReliabilityWorkbenchRequest,
+            $0.GetVaultFinancialReliabilityWorkbenchResponse>(
+        'GetVaultFinancialReliabilityWorkbench',
+        getVaultFinancialReliabilityWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultFinancialReliabilityWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultFinancialReliabilityWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveVaultFinancialReliabilitySourceRequest,
+            $0.SaveVaultFinancialReliabilitySourceResponse>(
+        'SaveVaultFinancialReliabilitySource',
+        saveVaultFinancialReliabilitySource_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultFinancialReliabilitySourceRequest.fromBuffer(value),
+        ($0.SaveVaultFinancialReliabilitySourceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ReconcileOrReplayVaultReliabilityRequest,
+            $0.ReconcileOrReplayVaultReliabilityResponse>(
+        'ReconcileOrReplayVaultReliability',
+        reconcileOrReplayVaultReliability_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReconcileOrReplayVaultReliabilityRequest.fromBuffer(value),
+        ($0.ReconcileOrReplayVaultReliabilityResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetVaultFinancialInboxCloseWorkbenchRequest,
+            $0.GetVaultFinancialInboxCloseWorkbenchResponse>(
+        'GetVaultFinancialInboxCloseWorkbench',
+        getVaultFinancialInboxCloseWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultFinancialInboxCloseWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultFinancialInboxCloseWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultFinancialInboxCloseItemRequest,
+            $0.SaveVaultFinancialInboxCloseItemResponse>(
+        'SaveVaultFinancialInboxCloseItem',
+        saveVaultFinancialInboxCloseItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultFinancialInboxCloseItemRequest.fromBuffer(value),
+        ($0.SaveVaultFinancialInboxCloseItemResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LockOrReopenVaultMonthlyCloseRequest,
+            $0.LockOrReopenVaultMonthlyCloseResponse>(
+        'LockOrReopenVaultMonthlyClose',
+        lockOrReopenVaultMonthlyClose_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LockOrReopenVaultMonthlyCloseRequest.fromBuffer(value),
+        ($0.LockOrReopenVaultMonthlyCloseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultPersonalCfoCashWorkbenchRequest,
+            $0.GetVaultPersonalCfoCashWorkbenchResponse>(
+        'GetVaultPersonalCfoCashWorkbench',
+        getVaultPersonalCfoCashWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultPersonalCfoCashWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultPersonalCfoCashWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultPersonalCfoCashForecastRequest,
+            $0.SaveVaultPersonalCfoCashForecastResponse>(
+        'SaveVaultPersonalCfoCashForecast',
+        saveVaultPersonalCfoCashForecast_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultPersonalCfoCashForecastRequest.fromBuffer(value),
+        ($0.SaveVaultPersonalCfoCashForecastResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AcknowledgeOrReviewVaultCashCommitmentRequest,
+            $0.AcknowledgeOrReviewVaultCashCommitmentResponse>(
+        'AcknowledgeOrReviewVaultCashCommitment',
+        acknowledgeOrReviewVaultCashCommitment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AcknowledgeOrReviewVaultCashCommitmentRequest.fromBuffer(value),
+        ($0.AcknowledgeOrReviewVaultCashCommitmentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetVaultPerformanceAllocationWorkbenchRequest,
+            $0.GetVaultPerformanceAllocationWorkbenchResponse>(
+        'GetVaultPerformanceAllocationWorkbench',
+        getVaultPerformanceAllocationWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultPerformanceAllocationWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultPerformanceAllocationWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.SaveVaultPerformanceAllocationModelRequest,
+            $0.SaveVaultPerformanceAllocationModelResponse>(
+        'SaveVaultPerformanceAllocationModel',
+        saveVaultPerformanceAllocationModel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultPerformanceAllocationModelRequest.fromBuffer(value),
+        ($0.SaveVaultPerformanceAllocationModelResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SimulateOrRefreshVaultAllocationRequest,
+            $0.SimulateOrRefreshVaultAllocationResponse>(
+        'SimulateOrRefreshVaultAllocation',
+        simulateOrRefreshVaultAllocation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SimulateOrRefreshVaultAllocationRequest.fromBuffer(value),
+        ($0.SimulateOrRefreshVaultAllocationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultTaxAccountantWorkbenchRequest,
+            $0.GetVaultTaxAccountantWorkbenchResponse>(
+        'GetVaultTaxAccountantWorkbench',
+        getVaultTaxAccountantWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultTaxAccountantWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultTaxAccountantWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultTaxAccountantScenarioRequest,
+            $0.SaveVaultTaxAccountantScenarioResponse>(
+        'SaveVaultTaxAccountantScenario',
+        saveVaultTaxAccountantScenario_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultTaxAccountantScenarioRequest.fromBuffer(value),
+        ($0.SaveVaultTaxAccountantScenarioResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.LockOrExportVaultTaxPackageRequest,
+            $0.LockOrExportVaultTaxPackageResponse>(
+        'LockOrExportVaultTaxPackage',
+        lockOrExportVaultTaxPackage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.LockOrExportVaultTaxPackageRequest.fromBuffer(value),
+        ($0.LockOrExportVaultTaxPackageResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultEntityOwnershipWorkbenchRequest,
+            $0.GetVaultEntityOwnershipWorkbenchResponse>(
+        'GetVaultEntityOwnershipWorkbench',
+        getVaultEntityOwnershipWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultEntityOwnershipWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultEntityOwnershipWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultEntityOwnershipNodeRequest,
+            $0.SaveVaultEntityOwnershipNodeResponse>(
+        'SaveVaultEntityOwnershipNode',
+        saveVaultEntityOwnershipNode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultEntityOwnershipNodeRequest.fromBuffer(value),
+        ($0.SaveVaultEntityOwnershipNodeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyOrRevokeVaultOwnershipAccessRequest,
+            $0.VerifyOrRevokeVaultOwnershipAccessResponse>(
+        'VerifyOrRevokeVaultOwnershipAccess',
+        verifyOrRevokeVaultOwnershipAccess_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyOrRevokeVaultOwnershipAccessRequest.fromBuffer(value),
+        ($0.VerifyOrRevokeVaultOwnershipAccessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultPrivateMarketDocWorkbenchRequest,
+            $0.GetVaultPrivateMarketDocWorkbenchResponse>(
+        'GetVaultPrivateMarketDocWorkbench',
+        getVaultPrivateMarketDocWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultPrivateMarketDocWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultPrivateMarketDocWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultPrivateMarketCommitmentRequest,
+            $0.SaveVaultPrivateMarketCommitmentResponse>(
+        'SaveVaultPrivateMarketCommitment',
+        saveVaultPrivateMarketCommitment_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultPrivateMarketCommitmentRequest.fromBuffer(value),
+        ($0.SaveVaultPrivateMarketCommitmentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ConfirmOrReconcileVaultCapitalNoticeRequest,
+            $0.ConfirmOrReconcileVaultCapitalNoticeResponse>(
+        'ConfirmOrReconcileVaultCapitalNotice',
+        confirmOrReconcileVaultCapitalNotice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ConfirmOrReconcileVaultCapitalNoticeRequest.fromBuffer(value),
+        ($0.ConfirmOrReconcileVaultCapitalNoticeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultTreasuryDebtRiskWorkbenchRequest,
+            $0.GetVaultTreasuryDebtRiskWorkbenchResponse>(
+        'GetVaultTreasuryDebtRiskWorkbench',
+        getVaultTreasuryDebtRiskWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultTreasuryDebtRiskWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultTreasuryDebtRiskWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultTreasuryDebtRiskPositionRequest,
+            $0.SaveVaultTreasuryDebtRiskPositionResponse>(
+        'SaveVaultTreasuryDebtRiskPosition',
+        saveVaultTreasuryDebtRiskPosition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultTreasuryDebtRiskPositionRequest.fromBuffer(value),
+        ($0.SaveVaultTreasuryDebtRiskPositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.EvaluateOrRouteVaultCoverageGapRequest,
+            $0.EvaluateOrRouteVaultCoverageGapResponse>(
+        'EvaluateOrRouteVaultCoverageGap',
+        evaluateOrRouteVaultCoverageGap_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.EvaluateOrRouteVaultCoverageGapRequest.fromBuffer(value),
+        ($0.EvaluateOrRouteVaultCoverageGapResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultGoalsScenarioWorkbenchRequest,
+            $0.GetVaultGoalsScenarioWorkbenchResponse>(
+        'GetVaultGoalsScenarioWorkbench',
+        getVaultGoalsScenarioWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultGoalsScenarioWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultGoalsScenarioWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultGoalScenarioSnapshotRequest,
+            $0.SaveVaultGoalScenarioSnapshotResponse>(
+        'SaveVaultGoalScenarioSnapshot',
+        saveVaultGoalScenarioSnapshot_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultGoalScenarioSnapshotRequest.fromBuffer(value),
+        ($0.SaveVaultGoalScenarioSnapshotResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CompareOrHandoffVaultScenarioRequest,
+            $0.CompareOrHandoffVaultScenarioResponse>(
+        'CompareOrHandoffVaultScenario',
+        compareOrHandoffVaultScenario_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CompareOrHandoffVaultScenarioRequest.fromBuffer(value),
+        ($0.CompareOrHandoffVaultScenarioResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetVaultPrivacyStandingProofWorkbenchRequest,
+            $0.GetVaultPrivacyStandingProofWorkbenchResponse>(
+        'GetVaultPrivacyStandingProofWorkbench',
+        getVaultPrivacyStandingProofWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultPrivacyStandingProofWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultPrivacyStandingProofWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.IssueVaultPrivacyStandingProofRequest,
+            $0.IssueVaultPrivacyStandingProofResponse>(
+        'IssueVaultPrivacyStandingProof',
+        issueVaultPrivacyStandingProof_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.IssueVaultPrivacyStandingProofRequest.fromBuffer(value),
+        ($0.IssueVaultPrivacyStandingProofResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.VerifyOrRevokeVaultStandingProofRequest,
+            $0.VerifyOrRevokeVaultStandingProofResponse>(
+        'VerifyOrRevokeVaultStandingProof',
+        verifyOrRevokeVaultStandingProof_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyOrRevokeVaultStandingProofRequest.fromBuffer(value),
+        ($0.VerifyOrRevokeVaultStandingProofResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultAdvisorFamilyWorkbenchRequest,
+            $0.GetVaultAdvisorFamilyWorkbenchResponse>(
+        'GetVaultAdvisorFamilyWorkbench',
+        getVaultAdvisorFamilyWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultAdvisorFamilyWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultAdvisorFamilyWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultAdvisorEngagementScopeRequest,
+            $0.SaveVaultAdvisorEngagementScopeResponse>(
+        'SaveVaultAdvisorEngagementScope',
+        saveVaultAdvisorEngagementScope_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultAdvisorEngagementScopeRequest.fromBuffer(value),
+        ($0.SaveVaultAdvisorEngagementScopeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApproveOrRevokeVaultAdvisorAccessRequest,
+            $0.ApproveOrRevokeVaultAdvisorAccessResponse>(
+        'ApproveOrRevokeVaultAdvisorAccess',
+        approveOrRevokeVaultAdvisorAccess_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveOrRevokeVaultAdvisorAccessRequest.fromBuffer(value),
+        ($0.ApproveOrRevokeVaultAdvisorAccessResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultFinancialSafetyWorkbenchRequest,
+            $0.GetVaultFinancialSafetyWorkbenchResponse>(
+        'GetVaultFinancialSafetyWorkbench',
+        getVaultFinancialSafetyWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultFinancialSafetyWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultFinancialSafetyWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultFinancialSafetyIncidentRequest,
+            $0.SaveVaultFinancialSafetyIncidentResponse>(
+        'SaveVaultFinancialSafetyIncident',
+        saveVaultFinancialSafetyIncident_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultFinancialSafetyIncidentRequest.fromBuffer(value),
+        ($0.SaveVaultFinancialSafetyIncidentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ExecuteOrAppealVaultSafetyActionRequest,
+            $0.ExecuteOrAppealVaultSafetyActionResponse>(
+        'ExecuteOrAppealVaultSafetyAction',
+        executeOrAppealVaultSafetyAction_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ExecuteOrAppealVaultSafetyActionRequest.fromBuffer(value),
+        ($0.ExecuteOrAppealVaultSafetyActionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetVaultGivingImpactWorkbenchRequest,
+            $0.GetVaultGivingImpactWorkbenchResponse>(
+        'GetVaultGivingImpactWorkbench',
+        getVaultGivingImpactWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetVaultGivingImpactWorkbenchRequest.fromBuffer(value),
+        ($0.GetVaultGivingImpactWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SaveVaultGivingImpactPledgeRequest,
+            $0.SaveVaultGivingImpactPledgeResponse>(
+        'SaveVaultGivingImpactPledge',
+        saveVaultGivingImpactPledge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SaveVaultGivingImpactPledgeRequest.fromBuffer(value),
+        ($0.SaveVaultGivingImpactPledgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.VerifyOrAcknowledgeVaultGiftReceiptRequest,
+            $0.VerifyOrAcknowledgeVaultGiftReceiptResponse>(
+        'VerifyOrAcknowledgeVaultGiftReceipt',
+        verifyOrAcknowledgeVaultGiftReceipt_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.VerifyOrAcknowledgeVaultGiftReceiptRequest.fromBuffer(value),
+        ($0.VerifyOrAcknowledgeVaultGiftReceiptResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.SubmitAssetResponse> submitAsset_Pre($grpc.ServiceCall $call,
@@ -1621,4 +2646,468 @@ abstract class VaultServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetLiquidityStressTestResponse> getLiquidityStressTest(
       $grpc.ServiceCall call, $0.GetLiquidityStressTestRequest request);
+
+  $async.Future<$0.GetVaultFinancialReliabilityWorkbenchResponse>
+      getVaultFinancialReliabilityWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultFinancialReliabilityWorkbenchRequest>
+              $request) async {
+    return getVaultFinancialReliabilityWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultFinancialReliabilityWorkbenchResponse>
+      getVaultFinancialReliabilityWorkbench($grpc.ServiceCall call,
+          $0.GetVaultFinancialReliabilityWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultFinancialReliabilitySourceResponse>
+      saveVaultFinancialReliabilitySource_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultFinancialReliabilitySourceRequest>
+              $request) async {
+    return saveVaultFinancialReliabilitySource($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultFinancialReliabilitySourceResponse>
+      saveVaultFinancialReliabilitySource($grpc.ServiceCall call,
+          $0.SaveVaultFinancialReliabilitySourceRequest request);
+
+  $async.Future<$0.ReconcileOrReplayVaultReliabilityResponse>
+      reconcileOrReplayVaultReliability_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReconcileOrReplayVaultReliabilityRequest>
+              $request) async {
+    return reconcileOrReplayVaultReliability($call, await $request);
+  }
+
+  $async.Future<$0.ReconcileOrReplayVaultReliabilityResponse>
+      reconcileOrReplayVaultReliability($grpc.ServiceCall call,
+          $0.ReconcileOrReplayVaultReliabilityRequest request);
+
+  $async.Future<$0.GetVaultFinancialInboxCloseWorkbenchResponse>
+      getVaultFinancialInboxCloseWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultFinancialInboxCloseWorkbenchRequest>
+              $request) async {
+    return getVaultFinancialInboxCloseWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultFinancialInboxCloseWorkbenchResponse>
+      getVaultFinancialInboxCloseWorkbench($grpc.ServiceCall call,
+          $0.GetVaultFinancialInboxCloseWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultFinancialInboxCloseItemResponse>
+      saveVaultFinancialInboxCloseItem_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultFinancialInboxCloseItemRequest>
+              $request) async {
+    return saveVaultFinancialInboxCloseItem($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultFinancialInboxCloseItemResponse>
+      saveVaultFinancialInboxCloseItem($grpc.ServiceCall call,
+          $0.SaveVaultFinancialInboxCloseItemRequest request);
+
+  $async.Future<$0.LockOrReopenVaultMonthlyCloseResponse>
+      lockOrReopenVaultMonthlyClose_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.LockOrReopenVaultMonthlyCloseRequest>
+              $request) async {
+    return lockOrReopenVaultMonthlyClose($call, await $request);
+  }
+
+  $async.Future<$0.LockOrReopenVaultMonthlyCloseResponse>
+      lockOrReopenVaultMonthlyClose($grpc.ServiceCall call,
+          $0.LockOrReopenVaultMonthlyCloseRequest request);
+
+  $async.Future<$0.GetVaultPersonalCfoCashWorkbenchResponse>
+      getVaultPersonalCfoCashWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultPersonalCfoCashWorkbenchRequest>
+              $request) async {
+    return getVaultPersonalCfoCashWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultPersonalCfoCashWorkbenchResponse>
+      getVaultPersonalCfoCashWorkbench($grpc.ServiceCall call,
+          $0.GetVaultPersonalCfoCashWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultPersonalCfoCashForecastResponse>
+      saveVaultPersonalCfoCashForecast_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultPersonalCfoCashForecastRequest>
+              $request) async {
+    return saveVaultPersonalCfoCashForecast($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultPersonalCfoCashForecastResponse>
+      saveVaultPersonalCfoCashForecast($grpc.ServiceCall call,
+          $0.SaveVaultPersonalCfoCashForecastRequest request);
+
+  $async.Future<$0.AcknowledgeOrReviewVaultCashCommitmentResponse>
+      acknowledgeOrReviewVaultCashCommitment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AcknowledgeOrReviewVaultCashCommitmentRequest>
+              $request) async {
+    return acknowledgeOrReviewVaultCashCommitment($call, await $request);
+  }
+
+  $async.Future<$0.AcknowledgeOrReviewVaultCashCommitmentResponse>
+      acknowledgeOrReviewVaultCashCommitment($grpc.ServiceCall call,
+          $0.AcknowledgeOrReviewVaultCashCommitmentRequest request);
+
+  $async.Future<$0.GetVaultPerformanceAllocationWorkbenchResponse>
+      getVaultPerformanceAllocationWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultPerformanceAllocationWorkbenchRequest>
+              $request) async {
+    return getVaultPerformanceAllocationWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultPerformanceAllocationWorkbenchResponse>
+      getVaultPerformanceAllocationWorkbench($grpc.ServiceCall call,
+          $0.GetVaultPerformanceAllocationWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultPerformanceAllocationModelResponse>
+      saveVaultPerformanceAllocationModel_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultPerformanceAllocationModelRequest>
+              $request) async {
+    return saveVaultPerformanceAllocationModel($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultPerformanceAllocationModelResponse>
+      saveVaultPerformanceAllocationModel($grpc.ServiceCall call,
+          $0.SaveVaultPerformanceAllocationModelRequest request);
+
+  $async.Future<$0.SimulateOrRefreshVaultAllocationResponse>
+      simulateOrRefreshVaultAllocation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SimulateOrRefreshVaultAllocationRequest>
+              $request) async {
+    return simulateOrRefreshVaultAllocation($call, await $request);
+  }
+
+  $async.Future<$0.SimulateOrRefreshVaultAllocationResponse>
+      simulateOrRefreshVaultAllocation($grpc.ServiceCall call,
+          $0.SimulateOrRefreshVaultAllocationRequest request);
+
+  $async.Future<$0.GetVaultTaxAccountantWorkbenchResponse>
+      getVaultTaxAccountantWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultTaxAccountantWorkbenchRequest>
+              $request) async {
+    return getVaultTaxAccountantWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultTaxAccountantWorkbenchResponse>
+      getVaultTaxAccountantWorkbench($grpc.ServiceCall call,
+          $0.GetVaultTaxAccountantWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultTaxAccountantScenarioResponse>
+      saveVaultTaxAccountantScenario_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultTaxAccountantScenarioRequest>
+              $request) async {
+    return saveVaultTaxAccountantScenario($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultTaxAccountantScenarioResponse>
+      saveVaultTaxAccountantScenario($grpc.ServiceCall call,
+          $0.SaveVaultTaxAccountantScenarioRequest request);
+
+  $async.Future<$0.LockOrExportVaultTaxPackageResponse>
+      lockOrExportVaultTaxPackage_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.LockOrExportVaultTaxPackageRequest> $request) async {
+    return lockOrExportVaultTaxPackage($call, await $request);
+  }
+
+  $async.Future<$0.LockOrExportVaultTaxPackageResponse>
+      lockOrExportVaultTaxPackage($grpc.ServiceCall call,
+          $0.LockOrExportVaultTaxPackageRequest request);
+
+  $async.Future<$0.GetVaultEntityOwnershipWorkbenchResponse>
+      getVaultEntityOwnershipWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultEntityOwnershipWorkbenchRequest>
+              $request) async {
+    return getVaultEntityOwnershipWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultEntityOwnershipWorkbenchResponse>
+      getVaultEntityOwnershipWorkbench($grpc.ServiceCall call,
+          $0.GetVaultEntityOwnershipWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultEntityOwnershipNodeResponse>
+      saveVaultEntityOwnershipNode_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultEntityOwnershipNodeRequest>
+              $request) async {
+    return saveVaultEntityOwnershipNode($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultEntityOwnershipNodeResponse>
+      saveVaultEntityOwnershipNode($grpc.ServiceCall call,
+          $0.SaveVaultEntityOwnershipNodeRequest request);
+
+  $async.Future<$0.VerifyOrRevokeVaultOwnershipAccessResponse>
+      verifyOrRevokeVaultOwnershipAccess_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyOrRevokeVaultOwnershipAccessRequest>
+              $request) async {
+    return verifyOrRevokeVaultOwnershipAccess($call, await $request);
+  }
+
+  $async.Future<$0.VerifyOrRevokeVaultOwnershipAccessResponse>
+      verifyOrRevokeVaultOwnershipAccess($grpc.ServiceCall call,
+          $0.VerifyOrRevokeVaultOwnershipAccessRequest request);
+
+  $async.Future<$0.GetVaultPrivateMarketDocWorkbenchResponse>
+      getVaultPrivateMarketDocWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultPrivateMarketDocWorkbenchRequest>
+              $request) async {
+    return getVaultPrivateMarketDocWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultPrivateMarketDocWorkbenchResponse>
+      getVaultPrivateMarketDocWorkbench($grpc.ServiceCall call,
+          $0.GetVaultPrivateMarketDocWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultPrivateMarketCommitmentResponse>
+      saveVaultPrivateMarketCommitment_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultPrivateMarketCommitmentRequest>
+              $request) async {
+    return saveVaultPrivateMarketCommitment($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultPrivateMarketCommitmentResponse>
+      saveVaultPrivateMarketCommitment($grpc.ServiceCall call,
+          $0.SaveVaultPrivateMarketCommitmentRequest request);
+
+  $async.Future<$0.ConfirmOrReconcileVaultCapitalNoticeResponse>
+      confirmOrReconcileVaultCapitalNotice_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ConfirmOrReconcileVaultCapitalNoticeRequest>
+              $request) async {
+    return confirmOrReconcileVaultCapitalNotice($call, await $request);
+  }
+
+  $async.Future<$0.ConfirmOrReconcileVaultCapitalNoticeResponse>
+      confirmOrReconcileVaultCapitalNotice($grpc.ServiceCall call,
+          $0.ConfirmOrReconcileVaultCapitalNoticeRequest request);
+
+  $async.Future<$0.GetVaultTreasuryDebtRiskWorkbenchResponse>
+      getVaultTreasuryDebtRiskWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultTreasuryDebtRiskWorkbenchRequest>
+              $request) async {
+    return getVaultTreasuryDebtRiskWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultTreasuryDebtRiskWorkbenchResponse>
+      getVaultTreasuryDebtRiskWorkbench($grpc.ServiceCall call,
+          $0.GetVaultTreasuryDebtRiskWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultTreasuryDebtRiskPositionResponse>
+      saveVaultTreasuryDebtRiskPosition_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultTreasuryDebtRiskPositionRequest>
+              $request) async {
+    return saveVaultTreasuryDebtRiskPosition($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultTreasuryDebtRiskPositionResponse>
+      saveVaultTreasuryDebtRiskPosition($grpc.ServiceCall call,
+          $0.SaveVaultTreasuryDebtRiskPositionRequest request);
+
+  $async.Future<$0.EvaluateOrRouteVaultCoverageGapResponse>
+      evaluateOrRouteVaultCoverageGap_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.EvaluateOrRouteVaultCoverageGapRequest>
+              $request) async {
+    return evaluateOrRouteVaultCoverageGap($call, await $request);
+  }
+
+  $async.Future<$0.EvaluateOrRouteVaultCoverageGapResponse>
+      evaluateOrRouteVaultCoverageGap($grpc.ServiceCall call,
+          $0.EvaluateOrRouteVaultCoverageGapRequest request);
+
+  $async.Future<$0.GetVaultGoalsScenarioWorkbenchResponse>
+      getVaultGoalsScenarioWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultGoalsScenarioWorkbenchRequest>
+              $request) async {
+    return getVaultGoalsScenarioWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultGoalsScenarioWorkbenchResponse>
+      getVaultGoalsScenarioWorkbench($grpc.ServiceCall call,
+          $0.GetVaultGoalsScenarioWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultGoalScenarioSnapshotResponse>
+      saveVaultGoalScenarioSnapshot_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultGoalScenarioSnapshotRequest>
+              $request) async {
+    return saveVaultGoalScenarioSnapshot($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultGoalScenarioSnapshotResponse>
+      saveVaultGoalScenarioSnapshot($grpc.ServiceCall call,
+          $0.SaveVaultGoalScenarioSnapshotRequest request);
+
+  $async.Future<$0.CompareOrHandoffVaultScenarioResponse>
+      compareOrHandoffVaultScenario_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CompareOrHandoffVaultScenarioRequest>
+              $request) async {
+    return compareOrHandoffVaultScenario($call, await $request);
+  }
+
+  $async.Future<$0.CompareOrHandoffVaultScenarioResponse>
+      compareOrHandoffVaultScenario($grpc.ServiceCall call,
+          $0.CompareOrHandoffVaultScenarioRequest request);
+
+  $async.Future<$0.GetVaultPrivacyStandingProofWorkbenchResponse>
+      getVaultPrivacyStandingProofWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultPrivacyStandingProofWorkbenchRequest>
+              $request) async {
+    return getVaultPrivacyStandingProofWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultPrivacyStandingProofWorkbenchResponse>
+      getVaultPrivacyStandingProofWorkbench($grpc.ServiceCall call,
+          $0.GetVaultPrivacyStandingProofWorkbenchRequest request);
+
+  $async.Future<$0.IssueVaultPrivacyStandingProofResponse>
+      issueVaultPrivacyStandingProof_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.IssueVaultPrivacyStandingProofRequest>
+              $request) async {
+    return issueVaultPrivacyStandingProof($call, await $request);
+  }
+
+  $async.Future<$0.IssueVaultPrivacyStandingProofResponse>
+      issueVaultPrivacyStandingProof($grpc.ServiceCall call,
+          $0.IssueVaultPrivacyStandingProofRequest request);
+
+  $async.Future<$0.VerifyOrRevokeVaultStandingProofResponse>
+      verifyOrRevokeVaultStandingProof_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyOrRevokeVaultStandingProofRequest>
+              $request) async {
+    return verifyOrRevokeVaultStandingProof($call, await $request);
+  }
+
+  $async.Future<$0.VerifyOrRevokeVaultStandingProofResponse>
+      verifyOrRevokeVaultStandingProof($grpc.ServiceCall call,
+          $0.VerifyOrRevokeVaultStandingProofRequest request);
+
+  $async.Future<$0.GetVaultAdvisorFamilyWorkbenchResponse>
+      getVaultAdvisorFamilyWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultAdvisorFamilyWorkbenchRequest>
+              $request) async {
+    return getVaultAdvisorFamilyWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultAdvisorFamilyWorkbenchResponse>
+      getVaultAdvisorFamilyWorkbench($grpc.ServiceCall call,
+          $0.GetVaultAdvisorFamilyWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultAdvisorEngagementScopeResponse>
+      saveVaultAdvisorEngagementScope_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultAdvisorEngagementScopeRequest>
+              $request) async {
+    return saveVaultAdvisorEngagementScope($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultAdvisorEngagementScopeResponse>
+      saveVaultAdvisorEngagementScope($grpc.ServiceCall call,
+          $0.SaveVaultAdvisorEngagementScopeRequest request);
+
+  $async.Future<$0.ApproveOrRevokeVaultAdvisorAccessResponse>
+      approveOrRevokeVaultAdvisorAccess_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveOrRevokeVaultAdvisorAccessRequest>
+              $request) async {
+    return approveOrRevokeVaultAdvisorAccess($call, await $request);
+  }
+
+  $async.Future<$0.ApproveOrRevokeVaultAdvisorAccessResponse>
+      approveOrRevokeVaultAdvisorAccess($grpc.ServiceCall call,
+          $0.ApproveOrRevokeVaultAdvisorAccessRequest request);
+
+  $async.Future<$0.GetVaultFinancialSafetyWorkbenchResponse>
+      getVaultFinancialSafetyWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultFinancialSafetyWorkbenchRequest>
+              $request) async {
+    return getVaultFinancialSafetyWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultFinancialSafetyWorkbenchResponse>
+      getVaultFinancialSafetyWorkbench($grpc.ServiceCall call,
+          $0.GetVaultFinancialSafetyWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultFinancialSafetyIncidentResponse>
+      saveVaultFinancialSafetyIncident_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultFinancialSafetyIncidentRequest>
+              $request) async {
+    return saveVaultFinancialSafetyIncident($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultFinancialSafetyIncidentResponse>
+      saveVaultFinancialSafetyIncident($grpc.ServiceCall call,
+          $0.SaveVaultFinancialSafetyIncidentRequest request);
+
+  $async.Future<$0.ExecuteOrAppealVaultSafetyActionResponse>
+      executeOrAppealVaultSafetyAction_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ExecuteOrAppealVaultSafetyActionRequest>
+              $request) async {
+    return executeOrAppealVaultSafetyAction($call, await $request);
+  }
+
+  $async.Future<$0.ExecuteOrAppealVaultSafetyActionResponse>
+      executeOrAppealVaultSafetyAction($grpc.ServiceCall call,
+          $0.ExecuteOrAppealVaultSafetyActionRequest request);
+
+  $async.Future<$0.GetVaultGivingImpactWorkbenchResponse>
+      getVaultGivingImpactWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetVaultGivingImpactWorkbenchRequest>
+              $request) async {
+    return getVaultGivingImpactWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetVaultGivingImpactWorkbenchResponse>
+      getVaultGivingImpactWorkbench($grpc.ServiceCall call,
+          $0.GetVaultGivingImpactWorkbenchRequest request);
+
+  $async.Future<$0.SaveVaultGivingImpactPledgeResponse>
+      saveVaultGivingImpactPledge_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.SaveVaultGivingImpactPledgeRequest> $request) async {
+    return saveVaultGivingImpactPledge($call, await $request);
+  }
+
+  $async.Future<$0.SaveVaultGivingImpactPledgeResponse>
+      saveVaultGivingImpactPledge($grpc.ServiceCall call,
+          $0.SaveVaultGivingImpactPledgeRequest request);
+
+  $async.Future<$0.VerifyOrAcknowledgeVaultGiftReceiptResponse>
+      verifyOrAcknowledgeVaultGiftReceipt_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.VerifyOrAcknowledgeVaultGiftReceiptRequest>
+              $request) async {
+    return verifyOrAcknowledgeVaultGiftReceipt($call, await $request);
+  }
+
+  $async.Future<$0.VerifyOrAcknowledgeVaultGiftReceiptResponse>
+      verifyOrAcknowledgeVaultGiftReceipt($grpc.ServiceCall call,
+          $0.VerifyOrAcknowledgeVaultGiftReceiptRequest request);
 }

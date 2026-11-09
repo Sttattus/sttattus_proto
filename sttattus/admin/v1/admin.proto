@@ -118,4 +118,713 @@ service AdminService {
   rpc ListAuditLogs(ListAuditLogsRequest) returns (ListAuditLogsResponse);
   rpc ListDeviceGrants(ListDeviceGrantsRequest) returns (ListDeviceGrantsResponse);
   rpc RevokeDeviceGrant(RevokeDeviceGrantRequest) returns (RevokeDeviceGrantResponse);
+
+  // === Admin Opportunity Choices 1-15 RPCs ===
+  rpc GetUniversalWorkItemCaseOverview(GetUniversalWorkItemCaseOverviewRequest) returns (GetUniversalWorkItemCaseOverviewResponse);
+  rpc UpsertWorkItemAdapterRule(UpsertWorkItemAdapterRuleRequest) returns (UpsertWorkItemAdapterRuleResponse);
+  rpc TransitionUniversalWorkItemState(TransitionUniversalWorkItemStateRequest) returns (TransitionUniversalWorkItemStateResponse);
+  rpc GetRoutingSkillsSlaOverview(GetRoutingSkillsSlaOverviewRequest) returns (GetRoutingSkillsSlaOverviewResponse);
+  rpc UpsertStaffSkillCapacityProfile(UpsertStaffSkillCapacityProfileRequest) returns (UpsertStaffSkillCapacityProfileResponse);
+  rpc TriggerSlaBreachEscalation(TriggerSlaBreachEscalationRequest) returns (TriggerSlaBreachEscalationResponse);
+  rpc GetEvidenceSopDecisionOverview(GetEvidenceSopDecisionOverviewRequest) returns (GetEvidenceSopDecisionOverviewResponse);
+  rpc RecordEvidenceCustodyAssertion(RecordEvidenceCustodyAssertionRequest) returns (RecordEvidenceCustodyAssertionResponse);
+  rpc CommitFourEyesSopDecision(CommitFourEyesSopDecisionRequest) returns (CommitFourEyesSopDecisionResponse);
+  rpc GetCommunicationsConciergeOverview(GetCommunicationsConciergeOverviewRequest) returns (GetCommunicationsConciergeOverviewResponse);
+  rpc SaveApprovedMacroOrDraft(SaveApprovedMacroOrDraftRequest) returns (SaveApprovedMacroOrDraftResponse);
+  rpc DispatchReviewedMemberReply(DispatchReviewedMemberReplyRequest) returns (DispatchReviewedMemberReplyResponse);
+  rpc GetVerificationAutomationAppealsOverview(GetVerificationAutomationAppealsOverviewRequest) returns (GetVerificationAutomationAppealsOverviewResponse);
+  rpc EvaluateExplainableVerificationRule(EvaluateExplainableVerificationRuleRequest) returns (EvaluateExplainableVerificationRuleResponse);
+  rpc ResolveMemberVerificationAppeal(ResolveMemberVerificationAppealRequest) returns (ResolveMemberVerificationAppealResponse);
+  rpc GetCatalogContentPolicyStudioOverview(GetCatalogContentPolicyStudioOverviewRequest) returns (GetCatalogContentPolicyStudioOverviewResponse);
+  rpc StageCatalogOrPolicyRelease(StageCatalogOrPolicyReleaseRequest) returns (StageCatalogOrPolicyReleaseResponse);
+  rpc PublishOrRollbackStudioRelease(PublishOrRollbackStudioReleaseRequest) returns (PublishOrRollbackStudioReleaseResponse);
+  rpc GetPlatformReconciliationOpsOverview(GetPlatformReconciliationOpsOverviewRequest) returns (GetPlatformReconciliationOpsOverviewResponse);
+  rpc RunSyntheticJourneyOrInvariantCheck(RunSyntheticJourneyOrInvariantCheckRequest) returns (RunSyntheticJourneyOrInvariantCheckResponse);
+  rpc ReplayDeadLetterOrDryRunRepair(ReplayDeadLetterOrDryRunRepairRequest) returns (ReplayDeadLetterOrDryRunRepairResponse);
+  rpc GetAiControlQualityCalibrationOverview(GetAiControlQualityCalibrationOverviewRequest) returns (GetAiControlQualityCalibrationOverviewResponse);
+  rpc RegisterModelDeploymentManifest(RegisterModelDeploymentManifestRequest) returns (RegisterModelDeploymentManifestResponse);
+  rpc RecordBlindQaCalibrationReview(RecordBlindQaCalibrationReviewRequest) returns (RecordBlindQaCalibrationReviewResponse);
+  rpc GetSecurityPrivacyRecoveryOverview(GetSecurityPrivacyRecoveryOverviewRequest) returns (GetSecurityPrivacyRecoveryOverviewResponse);
+  rpc RequestJitPrivilegedElevation(RequestJitPrivilegedElevationRequest) returns (RequestJitPrivilegedElevationResponse);
+  rpc ExecutePrivacyOrAccountRecoveryCase(ExecutePrivacyOrAccountRecoveryCaseRequest) returns (ExecutePrivacyOrAccountRecoveryCaseResponse);
+  rpc GetFraudAbuseTrustGraphOverview(GetFraudAbuseTrustGraphOverviewRequest) returns (GetFraudAbuseTrustGraphOverviewResponse);
+  rpc LogExplainableTrustSignalCluster(LogExplainableTrustSignalClusterRequest) returns (LogExplainableTrustSignalClusterResponse);
+  rpc ApplyReversibleTrustSanction(ApplyReversibleTrustSanctionRequest) returns (ApplyReversibleTrustSanctionResponse);
+  rpc GetCommerceEntitlementPayoutOverview(GetCommerceEntitlementPayoutOverviewRequest) returns (GetCommerceEntitlementPayoutOverviewResponse);
+  rpc CreateLedgerAdjustmentPreview(CreateLedgerAdjustmentPreviewRequest) returns (CreateLedgerAdjustmentPreviewResponse);
+  rpc ReconcileEntitlementOrPartnerPayout(ReconcileEntitlementOrPartnerPayoutRequest) returns (ReconcileEntitlementOrPartnerPayoutResponse);
+  rpc GetMasterIncidentBulkRemediationOverview(GetMasterIncidentBulkRemediationOverviewRequest) returns (GetMasterIncidentBulkRemediationOverviewResponse);
+  rpc StageMasterIncidentCohortPlan(StageMasterIncidentCohortPlanRequest) returns (StageMasterIncidentCohortPlanResponse);
+  rpc FanoutIdempotentBulkRemediation(FanoutIdempotentBulkRemediationRequest) returns (FanoutIdempotentBulkRemediationResponse);
+  rpc GetWorkforceLearningCertificationOverview(GetWorkforceLearningCertificationOverviewRequest) returns (GetWorkforceLearningCertificationOverviewResponse);
+  rpc UpsertStaffCertificationPath(UpsertStaffCertificationPathRequest) returns (UpsertStaffCertificationPathResponse);
+  rpc RecordCalibratedSandboxOrCoaching(RecordCalibratedSandboxOrCoachingRequest) returns (RecordCalibratedSandboxOrCoachingResponse);
+  rpc GetSimulationReleaseCertificationOverview(GetSimulationReleaseCertificationOverviewRequest) returns (GetSimulationReleaseCertificationOverviewResponse);
+  rpc RunFailureClockSimulationScenario(RunFailureClockSimulationScenarioRequest) returns (RunFailureClockSimulationScenarioResponse);
+  rpc IssueSignedReleaseCertificate(IssueSignedReleaseCertificateRequest) returns (IssueSignedReleaseCertificateResponse);
+  rpc GetIndependentAuditObserverOverview(GetIndependentAuditObserverOverviewRequest) returns (GetIndependentAuditObserverOverviewResponse);
+  rpc CreateTimeBoundObserverEngagement(CreateTimeBoundObserverEngagementRequest) returns (CreateTimeBoundObserverEngagementResponse);
+  rpc GenerateWatermarkedControlEvidencePack(GenerateWatermarkedControlEvidencePackRequest) returns (GenerateWatermarkedControlEvidencePackResponse);
+}
+
+// === Admin Opportunity Choices 1-15 Messages ===
+
+message UniversalWorkItemCaseEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool source_table_authoritative_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetUniversalWorkItemCaseOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetUniversalWorkItemCaseOverviewResponse {
+  repeated UniversalWorkItemCaseEntry items = 1;
+  string active_policy_version = 2;
+  bool source_table_authoritative_enforced = 3;
+  string governance_summary = 4;
+}
+
+message UpsertWorkItemAdapterRuleRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertWorkItemAdapterRuleResponse {
+  UniversalWorkItemCaseEntry item = 1;
+}
+
+message TransitionUniversalWorkItemStateRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message TransitionUniversalWorkItemStateResponse {
+  UniversalWorkItemCaseEntry item = 1;
+}
+
+message RoutingSkillsSlaEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_unqualified_or_unowned_routing = 8;
+  string updated_at = 9;
+}
+
+message GetRoutingSkillsSlaOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetRoutingSkillsSlaOverviewResponse {
+  repeated RoutingSkillsSlaEntry items = 1;
+  string active_policy_version = 2;
+  bool no_unqualified_or_unowned_routing = 3;
+  string governance_summary = 4;
+}
+
+message UpsertStaffSkillCapacityProfileRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertStaffSkillCapacityProfileResponse {
+  RoutingSkillsSlaEntry item = 1;
+}
+
+message TriggerSlaBreachEscalationRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message TriggerSlaBreachEscalationResponse {
+  RoutingSkillsSlaEntry item = 1;
+}
+
+message EvidenceSopDecisionEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool two_person_four_eyes_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetEvidenceSopDecisionOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetEvidenceSopDecisionOverviewResponse {
+  repeated EvidenceSopDecisionEntry items = 1;
+  string active_policy_version = 2;
+  bool two_person_four_eyes_enforced = 3;
+  string governance_summary = 4;
+}
+
+message RecordEvidenceCustodyAssertionRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RecordEvidenceCustodyAssertionResponse {
+  EvidenceSopDecisionEntry item = 1;
+}
+
+message CommitFourEyesSopDecisionRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message CommitFourEyesSopDecisionResponse {
+  EvidenceSopDecisionEntry item = 1;
+}
+
+message CommunicationsConciergeEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool human_review_before_send_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetCommunicationsConciergeOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetCommunicationsConciergeOverviewResponse {
+  repeated CommunicationsConciergeEntry items = 1;
+  string active_policy_version = 2;
+  bool human_review_before_send_enforced = 3;
+  string governance_summary = 4;
+}
+
+message SaveApprovedMacroOrDraftRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message SaveApprovedMacroOrDraftResponse {
+  CommunicationsConciergeEntry item = 1;
+}
+
+message DispatchReviewedMemberReplyRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message DispatchReviewedMemberReplyResponse {
+  CommunicationsConciergeEntry item = 1;
+}
+
+message VerificationAutomationAppealsEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool auto_disable_on_error_threshold = 8;
+  string updated_at = 9;
+}
+
+message GetVerificationAutomationAppealsOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetVerificationAutomationAppealsOverviewResponse {
+  repeated VerificationAutomationAppealsEntry items = 1;
+  string active_policy_version = 2;
+  bool auto_disable_on_error_threshold = 3;
+  string governance_summary = 4;
+}
+
+message EvaluateExplainableVerificationRuleRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message EvaluateExplainableVerificationRuleResponse {
+  VerificationAutomationAppealsEntry item = 1;
+}
+
+message ResolveMemberVerificationAppealRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ResolveMemberVerificationAppealResponse {
+  VerificationAutomationAppealsEntry item = 1;
+}
+
+message CatalogContentPolicyStudioEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_silent_retroactive_mutation = 8;
+  string updated_at = 9;
+}
+
+message GetCatalogContentPolicyStudioOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetCatalogContentPolicyStudioOverviewResponse {
+  repeated CatalogContentPolicyStudioEntry items = 1;
+  string active_policy_version = 2;
+  bool no_silent_retroactive_mutation = 3;
+  string governance_summary = 4;
+}
+
+message StageCatalogOrPolicyReleaseRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message StageCatalogOrPolicyReleaseResponse {
+  CatalogContentPolicyStudioEntry item = 1;
+}
+
+message PublishOrRollbackStudioReleaseRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message PublishOrRollbackStudioReleaseResponse {
+  CatalogContentPolicyStudioEntry item = 1;
+}
+
+message PlatformReconciliationOpsEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool dry_run_and_blast_radius_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetPlatformReconciliationOpsOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetPlatformReconciliationOpsOverviewResponse {
+  repeated PlatformReconciliationOpsEntry items = 1;
+  string active_policy_version = 2;
+  bool dry_run_and_blast_radius_enforced = 3;
+  string governance_summary = 4;
+}
+
+message RunSyntheticJourneyOrInvariantCheckRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RunSyntheticJourneyOrInvariantCheckResponse {
+  PlatformReconciliationOpsEntry item = 1;
+}
+
+message ReplayDeadLetterOrDryRunRepairRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ReplayDeadLetterOrDryRunRepairResponse {
+  PlatformReconciliationOpsEntry item = 1;
+}
+
+message AiControlQualityCalibrationEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_auto_training_without_eval_gate = 8;
+  string updated_at = 9;
+}
+
+message GetAiControlQualityCalibrationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetAiControlQualityCalibrationOverviewResponse {
+  repeated AiControlQualityCalibrationEntry items = 1;
+  string active_policy_version = 2;
+  bool no_auto_training_without_eval_gate = 3;
+  string governance_summary = 4;
+}
+
+message RegisterModelDeploymentManifestRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RegisterModelDeploymentManifestResponse {
+  AiControlQualityCalibrationEntry item = 1;
+}
+
+message RecordBlindQaCalibrationReviewRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RecordBlindQaCalibrationReviewResponse {
+  AiControlQualityCalibrationEntry item = 1;
+}
+
+message SecurityPrivacyRecoveryEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_secret_reveal_or_hard_nuke = 8;
+  string updated_at = 9;
+}
+
+message GetSecurityPrivacyRecoveryOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetSecurityPrivacyRecoveryOverviewResponse {
+  repeated SecurityPrivacyRecoveryEntry items = 1;
+  string active_policy_version = 2;
+  bool no_secret_reveal_or_hard_nuke = 3;
+  string governance_summary = 4;
+}
+
+message RequestJitPrivilegedElevationRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RequestJitPrivilegedElevationResponse {
+  SecurityPrivacyRecoveryEntry item = 1;
+}
+
+message ExecutePrivacyOrAccountRecoveryCaseRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ExecutePrivacyOrAccountRecoveryCaseResponse {
+  SecurityPrivacyRecoveryEntry item = 1;
+}
+
+message FraudAbuseTrustGraphEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_opaque_single_score_ban = 8;
+  string updated_at = 9;
+}
+
+message GetFraudAbuseTrustGraphOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetFraudAbuseTrustGraphOverviewResponse {
+  repeated FraudAbuseTrustGraphEntry items = 1;
+  string active_policy_version = 2;
+  bool no_opaque_single_score_ban = 3;
+  string governance_summary = 4;
+}
+
+message LogExplainableTrustSignalClusterRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message LogExplainableTrustSignalClusterResponse {
+  FraudAbuseTrustGraphEntry item = 1;
+}
+
+message ApplyReversibleTrustSanctionRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ApplyReversibleTrustSanctionResponse {
+  FraudAbuseTrustGraphEntry item = 1;
+}
+
+message CommerceEntitlementPayoutEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool idempotent_webhook_and_ledger_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetCommerceEntitlementPayoutOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetCommerceEntitlementPayoutOverviewResponse {
+  repeated CommerceEntitlementPayoutEntry items = 1;
+  string active_policy_version = 2;
+  bool idempotent_webhook_and_ledger_enforced = 3;
+  string governance_summary = 4;
+}
+
+message CreateLedgerAdjustmentPreviewRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message CreateLedgerAdjustmentPreviewResponse {
+  CommerceEntitlementPayoutEntry item = 1;
+}
+
+message ReconcileEntitlementOrPartnerPayoutRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message ReconcileEntitlementOrPartnerPayoutResponse {
+  CommerceEntitlementPayoutEntry item = 1;
+}
+
+message MasterIncidentBulkRemediationEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool idempotent_cohort_fanout_enforced = 8;
+  string updated_at = 9;
+}
+
+message GetMasterIncidentBulkRemediationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetMasterIncidentBulkRemediationOverviewResponse {
+  repeated MasterIncidentBulkRemediationEntry items = 1;
+  string active_policy_version = 2;
+  bool idempotent_cohort_fanout_enforced = 3;
+  string governance_summary = 4;
+}
+
+message StageMasterIncidentCohortPlanRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message StageMasterIncidentCohortPlanResponse {
+  MasterIncidentBulkRemediationEntry item = 1;
+}
+
+message FanoutIdempotentBulkRemediationRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message FanoutIdempotentBulkRemediationResponse {
+  MasterIncidentBulkRemediationEntry item = 1;
+}
+
+message WorkforceLearningCertificationEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool no_keystroke_or_screen_surveillance = 8;
+  string updated_at = 9;
+}
+
+message GetWorkforceLearningCertificationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetWorkforceLearningCertificationOverviewResponse {
+  repeated WorkforceLearningCertificationEntry items = 1;
+  string active_policy_version = 2;
+  bool no_keystroke_or_screen_surveillance = 3;
+  string governance_summary = 4;
+}
+
+message UpsertStaffCertificationPathRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message UpsertStaffCertificationPathResponse {
+  WorkforceLearningCertificationEntry item = 1;
+}
+
+message RecordCalibratedSandboxOrCoachingRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message RecordCalibratedSandboxOrCoachingResponse {
+  WorkforceLearningCertificationEntry item = 1;
+}
+
+message SimulationReleaseCertificationEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool member_to_admin_to_member_certified = 8;
+  string updated_at = 9;
+}
+
+message GetSimulationReleaseCertificationOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetSimulationReleaseCertificationOverviewResponse {
+  repeated SimulationReleaseCertificationEntry items = 1;
+  string active_policy_version = 2;
+  bool member_to_admin_to_member_certified = 3;
+  string governance_summary = 4;
+}
+
+message RunFailureClockSimulationScenarioRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message RunFailureClockSimulationScenarioResponse {
+  SimulationReleaseCertificationEntry item = 1;
+}
+
+message IssueSignedReleaseCertificateRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message IssueSignedReleaseCertificateResponse {
+  SimulationReleaseCertificationEntry item = 1;
+}
+
+message IndependentAuditObserverEntry {
+  string id = 1;
+  string item_code = 2;
+  string title = 3;
+  string status = 4;
+  string primary_detail = 5;
+  string secondary_detail = 6;
+  string governance_notice = 7;
+  bool read_only_zero_mutation_observer = 8;
+  string updated_at = 9;
+}
+
+message GetIndependentAuditObserverOverviewRequest {
+  string filter_status = 1;
+}
+
+message GetIndependentAuditObserverOverviewResponse {
+  repeated IndependentAuditObserverEntry items = 1;
+  string active_policy_version = 2;
+  bool read_only_zero_mutation_observer = 3;
+  string governance_summary = 4;
+}
+
+message CreateTimeBoundObserverEngagementRequest {
+  string item_code = 1;
+  string title = 2;
+  string primary_detail = 3;
+  string secondary_detail = 4;
+}
+
+message CreateTimeBoundObserverEngagementResponse {
+  IndependentAuditObserverEntry item = 1;
+}
+
+message GenerateWatermarkedControlEvidencePackRequest {
+  string item_id = 1;
+  string action_kind = 2;
+  string operator_note = 3;
+}
+
+message GenerateWatermarkedControlEvidencePackResponse {
+  IndependentAuditObserverEntry item = 1;
 }

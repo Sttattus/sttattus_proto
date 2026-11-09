@@ -740,4 +740,692 @@ service LegacyService {
   rpc ListMyLegacyShares(ListMyLegacySharesRequest) returns (ListMyLegacySharesResponse);
   rpc RevokeLegacyShare(RevokeLegacyShareRequest) returns (RevokeLegacyShareResponse);
   rpc ParseDocumentExpiry(ParseDocumentExpiryRequest) returns (ParseDocumentExpiryResponse);
+
+  // =========================================================================
+  // Opportunity Choices 1-12 (Legacy 2026 Portfolio Expansion)
+  // =========================================================================
+
+  // Choice 1 (G1): Living Estate Inventory & Plan Health
+  rpc GetLegacyLivingInventoryWorkbench(GetLegacyLivingInventoryWorkbenchRequest) returns (GetLegacyLivingInventoryWorkbenchResponse);
+  rpc SaveLegacyLivingEstateInventory(SaveLegacyLivingEstateInventoryRequest) returns (SaveLegacyLivingEstateInventoryResponse);
+  rpc SignOffLegacyQuarterlyPlanReview(SignOffLegacyQuarterlyPlanReviewRequest) returns (SignOffLegacyQuarterlyPlanReviewResponse);
+
+  // Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment Engine
+  rpc GetLegacyLifeEventAlignmentWorkbench(GetLegacyLifeEventAlignmentWorkbenchRequest) returns (GetLegacyLifeEventAlignmentWorkbenchResponse);
+  rpc SaveLegacyLifeEventAlignment(SaveLegacyLifeEventAlignmentRequest) returns (SaveLegacyLifeEventAlignmentResponse);
+  rpc VerifyLegacyAlignmentInstitutionEvidence(VerifyLegacyAlignmentInstitutionEvidenceRequest) returns (VerifyLegacyAlignmentInstitutionEvidenceResponse);
+
+  // Choice 3 (G5): Secure Document & Evidence Vault
+  rpc GetLegacySecureDocumentVaultWorkbench(GetLegacySecureDocumentVaultWorkbenchRequest) returns (GetLegacySecureDocumentVaultWorkbenchResponse);
+  rpc SaveLegacySecureDocumentVault(SaveLegacySecureDocumentVaultRequest) returns (SaveLegacySecureDocumentVaultResponse);
+  rpc LockOrExportLegacyDocumentCustody(LockOrExportLegacyDocumentCustodyRequest) returns (LockOrExportLegacyDocumentCustodyResponse);
+
+  // Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+  rpc GetLegacyJurisdictionDocumentWorkbench(GetLegacyJurisdictionDocumentWorkbenchRequest) returns (GetLegacyJurisdictionDocumentWorkbenchResponse);
+  rpc SaveLegacyJurisdictionDocumentSystem(SaveLegacyJurisdictionDocumentSystemRequest) returns (SaveLegacyJurisdictionDocumentSystemResponse);
+  rpc TriggerLegacyCounselReviewOrLockExecution(TriggerLegacyCounselReviewOrLockExecutionRequest) returns (TriggerLegacyCounselReviewOrLockExecutionResponse);
+
+  // Choice 5 (G11/G13): Household & Business Continuity Playbooks
+  rpc GetLegacyContinuityPlaybookWorkbench(GetLegacyContinuityPlaybookWorkbenchRequest) returns (GetLegacyContinuityPlaybookWorkbenchResponse);
+  rpc SaveLegacyHouseholdBusinessContinuity(SaveLegacyHouseholdBusinessContinuityRequest) returns (SaveLegacyHouseholdBusinessContinuityResponse);
+  rpc RunLegacyContinuityDrillOrStageDelegation(RunLegacyContinuityDrillOrStageDelegationRequest) returns (RunLegacyContinuityDrillOrStageDelegationResponse);
+
+  // Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+  rpc GetLegacyIncapacityDeadmanWorkbench(GetLegacyIncapacityDeadmanWorkbenchRequest) returns (GetLegacyIncapacityDeadmanWorkbenchResponse);
+  rpc SaveLegacyIncapacityDeadmanProtocol(SaveLegacyIncapacityDeadmanProtocolRequest) returns (SaveLegacyIncapacityDeadmanProtocolResponse);
+  rpc SimulateOrCancelLegacyDeadmanRelease(SimulateOrCancelLegacyDeadmanReleaseRequest) returns (SimulateOrCancelLegacyDeadmanReleaseResponse);
+
+  // Choice 7 (G7): Executor & Trustee Command Center
+  rpc GetLegacyExecutorWorkspaceWorkbench(GetLegacyExecutorWorkspaceWorkbenchRequest) returns (GetLegacyExecutorWorkspaceWorkbenchResponse);
+  rpc SaveLegacyExecutorTrusteeWorkspace(SaveLegacyExecutorTrusteeWorkspaceRequest) returns (SaveLegacyExecutorTrusteeWorkspaceResponse);
+  rpc AdvanceLegacySettlementTaskOrResolveDispute(AdvanceLegacySettlementTaskOrResolveDisputeRequest) returns (AdvanceLegacySettlementTaskOrResolveDisputeResponse);
+
+  // Choice 8 (G16): Estate & Trust Settlement Accounting
+  rpc GetLegacySettlementAccountingWorkbench(GetLegacySettlementAccountingWorkbenchRequest) returns (GetLegacySettlementAccountingWorkbenchResponse);
+  rpc SaveLegacySettlementAccounting(SaveLegacySettlementAccountingRequest) returns (SaveLegacySettlementAccountingResponse);
+  rpc LockOrReverseLegacyAccountingPeriod(LockOrReverseLegacyAccountingPeriodRequest) returns (LockOrReverseLegacyAccountingPeriodResponse);
+
+  // Choice 9 (G8): Digital Asset & Threshold Recovery System
+  rpc GetLegacyDigitalRecoveryWorkbench(GetLegacyDigitalRecoveryWorkbenchRequest) returns (GetLegacyDigitalRecoveryWorkbenchResponse);
+  rpc SaveLegacyDigitalThresholdRecovery(SaveLegacyDigitalThresholdRecoveryRequest) returns (SaveLegacyDigitalThresholdRecoveryResponse);
+  rpc RunLegacyThresholdCeremonyDryRunOrRotateShare(RunLegacyThresholdCeremonyDryRunOrRotateShareRequest) returns (RunLegacyThresholdCeremonyDryRunOrRotateShareResponse);
+
+  // Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+  rpc GetLegacyHeritageArchiveWorkbench(GetLegacyHeritageArchiveWorkbenchRequest) returns (GetLegacyHeritageArchiveWorkbenchResponse);
+  rpc SaveLegacyHeritagePreservationArchive(SaveLegacyHeritagePreservationArchiveRequest) returns (SaveLegacyHeritagePreservationArchiveResponse);
+  rpc VerifyLegacyArchiveFixityOrPreviewTrigger(VerifyLegacyArchiveFixityOrPreviewTriggerRequest) returns (VerifyLegacyArchiveFixityOrPreviewTriggerResponse);
+
+  // Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+  rpc GetLegacyLiquidityReadinessWorkbench(GetLegacyLiquidityReadinessWorkbenchRequest) returns (GetLegacyLiquidityReadinessWorkbenchResponse);
+  rpc SaveLegacyLiquidityInsuranceReadiness(SaveLegacyLiquidityInsuranceReadinessRequest) returns (SaveLegacyLiquidityInsuranceReadinessResponse);
+  rpc StressTestLegacyLiquidityOrRouteCounsel(StressTestLegacyLiquidityOrRouteCounselRequest) returns (StressTestLegacyLiquidityOrRouteCounselResponse);
+
+  // Choice 12 (G10/G14): Counsel Collaboration, Family Governance & Next-Gen Stewardship
+  rpc GetLegacyCounselGovernanceWorkbench(GetLegacyCounselGovernanceWorkbenchRequest) returns (GetLegacyCounselGovernanceWorkbenchResponse);
+  rpc SaveLegacyCounselFamilyGovernance(SaveLegacyCounselFamilyGovernanceRequest) returns (SaveLegacyCounselFamilyGovernanceResponse);
+  rpc UnlockLegacyStewardshipModuleOrRevokeCounsel(UnlockLegacyStewardshipModuleOrRevokeCounselRequest) returns (UnlockLegacyStewardshipModuleOrRevokeCounselResponse);
+}
+
+// ===========================================================================
+// Opportunity Choice 1 (G1): Living Estate Inventory & Plan Health
+// ===========================================================================
+
+message LegacyLivingEstateInventoryView {
+  string id = 1;
+  string user_id = 2;
+  string inventory_code = 3;
+  string asset_fiduciary_and_owner_scope = 4;
+  string plan_health_gaps_and_evidence = 5;
+  string ten_minute_quarterly_review_log = 6;
+  string inventory_state = 7;
+  bool no_silent_signed_doc_rewrite_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyLivingInventoryWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyLivingInventoryWorkbenchResponse {
+  repeated LegacyLivingEstateInventoryView inventories = 1;
+  int32 open_gap_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyLivingEstateInventoryRequest {
+  string user_id = 1;
+  string inventory_code = 2;
+  string asset_fiduciary_and_owner_scope = 3;
+  string plan_health_gaps_and_evidence = 4;
+  string ten_minute_quarterly_review_log = 5;
+  string inventory_state = 6;
+  bool no_silent_signed_doc_rewrite_enforced = 7;
+}
+
+message SaveLegacyLivingEstateInventoryResponse {
+  LegacyLivingEstateInventoryView inventory = 1;
+}
+
+message SignOffLegacyQuarterlyPlanReviewRequest {
+  string user_id = 1;
+  string inventory_code = 2;
+  string target_inventory_state = 3;
+  string review_notes = 4;
+}
+
+message SignOffLegacyQuarterlyPlanReviewResponse {
+  LegacyLivingEstateInventoryView inventory = 1;
+  string review_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 2 (G3/G4): Life Event & Beneficiary/Titling Alignment
+// ===========================================================================
+
+message LegacyLifeEventAlignmentView {
+  string id = 1;
+  string user_id = 2;
+  string alignment_code = 3;
+  string confirmed_life_event_and_impact_map = 4;
+  string beneficiary_and_trust_funding_diff = 5;
+  string institution_checklist_and_evidence = 6;
+  string alignment_state = 7;
+  bool evidence_required_before_complete_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyLifeEventAlignmentWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyLifeEventAlignmentWorkbenchResponse {
+  repeated LegacyLifeEventAlignmentView alignments = 1;
+  int32 unaligned_designation_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyLifeEventAlignmentRequest {
+  string user_id = 1;
+  string alignment_code = 2;
+  string confirmed_life_event_and_impact_map = 3;
+  string beneficiary_and_trust_funding_diff = 4;
+  string institution_checklist_and_evidence = 5;
+  string alignment_state = 6;
+  bool evidence_required_before_complete_enforced = 7;
+}
+
+message SaveLegacyLifeEventAlignmentResponse {
+  LegacyLifeEventAlignmentView alignment = 1;
+}
+
+message VerifyLegacyAlignmentInstitutionEvidenceRequest {
+  string user_id = 1;
+  string alignment_code = 2;
+  string target_alignment_state = 3;
+  string evidence_notes = 4;
+}
+
+message VerifyLegacyAlignmentInstitutionEvidenceResponse {
+  LegacyLifeEventAlignmentView alignment = 1;
+  string verification_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 3 (G5): Secure Document & Evidence Vault
+// ===========================================================================
+
+message LegacySecureDocumentVaultView {
+  string id = 1;
+  string user_id = 2;
+  string document_code = 3;
+  string version_family_and_execution_status = 4;
+  string cited_clause_and_ocr_confidence = 5;
+  string custody_retention_and_offline_cache = 6;
+  string vault_state = 7;
+  bool public_gallery_leak_blocked = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacySecureDocumentVaultWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacySecureDocumentVaultWorkbenchResponse {
+  repeated LegacySecureDocumentVaultView documents = 1;
+  int32 provisional_review_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacySecureDocumentVaultRequest {
+  string user_id = 1;
+  string document_code = 2;
+  string version_family_and_execution_status = 3;
+  string cited_clause_and_ocr_confidence = 4;
+  string custody_retention_and_offline_cache = 5;
+  string vault_state = 6;
+  bool public_gallery_leak_blocked = 7;
+}
+
+message SaveLegacySecureDocumentVaultResponse {
+  LegacySecureDocumentVaultView document = 1;
+}
+
+message LockOrExportLegacyDocumentCustodyRequest {
+  string user_id = 1;
+  string document_code = 2;
+  string target_vault_state = 3;
+  string custody_notes = 4;
+}
+
+message LockOrExportLegacyDocumentCustodyResponse {
+  LegacySecureDocumentVaultView document = 1;
+  string custody_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 4 (G2): Jurisdiction Document System & Execution Guidance
+// ===========================================================================
+
+message LegacyJurisdictionDocumentSystemView {
+  string id = 1;
+  string user_id = 2;
+  string system_code = 3;
+  string jurisdiction_rule_pack_and_scope = 4;
+  string clause_version_and_attorney_trigger = 5;
+  string execution_witness_and_notary_checklist = 6;
+  string document_state = 7;
+  bool non_attorney_impersonation_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyJurisdictionDocumentWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyJurisdictionDocumentWorkbenchResponse {
+  repeated LegacyJurisdictionDocumentSystemView systems = 1;
+  int32 attorney_trigger_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyJurisdictionDocumentSystemRequest {
+  string user_id = 1;
+  string system_code = 2;
+  string jurisdiction_rule_pack_and_scope = 3;
+  string clause_version_and_attorney_trigger = 4;
+  string execution_witness_and_notary_checklist = 5;
+  string document_state = 6;
+  bool non_attorney_impersonation_enforced = 7;
+}
+
+message SaveLegacyJurisdictionDocumentSystemResponse {
+  LegacyJurisdictionDocumentSystemView system = 1;
+}
+
+message TriggerLegacyCounselReviewOrLockExecutionRequest {
+  string user_id = 1;
+  string system_code = 2;
+  string target_document_state = 3;
+  string execution_notes = 4;
+}
+
+message TriggerLegacyCounselReviewOrLockExecutionResponse {
+  LegacyJurisdictionDocumentSystemView system = 1;
+  string execution_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 5 (G11/G13): Household & Business Continuity Playbooks
+// ===========================================================================
+
+message LegacyHouseholdBusinessContinuityView {
+  string id = 1;
+  string user_id = 2;
+  string continuity_code = 3;
+  string role_playbook_and_first_week_guide = 4;
+  string authority_matrix_and_signatory_limits = 5;
+  string offline_emergency_card_and_drill_log = 6;
+  string continuity_state = 7;
+  bool full_vault_unscoped_leak_blocked = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyContinuityPlaybookWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyContinuityPlaybookWorkbenchResponse {
+  repeated LegacyHouseholdBusinessContinuityView playbooks = 1;
+  int32 refresh_due_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyHouseholdBusinessContinuityRequest {
+  string user_id = 1;
+  string continuity_code = 2;
+  string role_playbook_and_first_week_guide = 3;
+  string authority_matrix_and_signatory_limits = 4;
+  string offline_emergency_card_and_drill_log = 5;
+  string continuity_state = 6;
+  bool full_vault_unscoped_leak_blocked = 7;
+}
+
+message SaveLegacyHouseholdBusinessContinuityResponse {
+  LegacyHouseholdBusinessContinuityView playbook = 1;
+}
+
+message RunLegacyContinuityDrillOrStageDelegationRequest {
+  string user_id = 1;
+  string continuity_code = 2;
+  string target_continuity_state = 3;
+  string drill_notes = 4;
+}
+
+message RunLegacyContinuityDrillOrStageDelegationResponse {
+  LegacyHouseholdBusinessContinuityView playbook = 1;
+  string drill_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 6 (G6): Incapacity, Emergency & Dead-Man Protocol
+// ===========================================================================
+
+message LegacyIncapacityDeadmanProtocolView {
+  string id = 1;
+  string user_id = 2;
+  string protocol_code = 3;
+  string workflow_branch_and_waiting_clocks = 4;
+  string multi_party_threshold_and_evidence = 5;
+  string staged_watermarked_release_bundle = 6;
+  string protocol_state = 7;
+  bool single_actor_release_blocked = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyIncapacityDeadmanWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyIncapacityDeadmanWorkbenchResponse {
+  repeated LegacyIncapacityDeadmanProtocolView protocols = 1;
+  int32 active_grace_window_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyIncapacityDeadmanProtocolRequest {
+  string user_id = 1;
+  string protocol_code = 2;
+  string workflow_branch_and_waiting_clocks = 3;
+  string multi_party_threshold_and_evidence = 4;
+  string staged_watermarked_release_bundle = 5;
+  string protocol_state = 6;
+  bool single_actor_release_blocked = 7;
+}
+
+message SaveLegacyIncapacityDeadmanProtocolResponse {
+  LegacyIncapacityDeadmanProtocolView protocol = 1;
+}
+
+message SimulateOrCancelLegacyDeadmanReleaseRequest {
+  string user_id = 1;
+  string protocol_code = 2;
+  string target_protocol_state = 3;
+  string protocol_notes = 4;
+}
+
+message SimulateOrCancelLegacyDeadmanReleaseResponse {
+  LegacyIncapacityDeadmanProtocolView protocol = 1;
+  string protocol_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 7 (G7): Executor & Trustee Command Center
+// ===========================================================================
+
+message LegacyExecutorTrusteeWorkspaceView {
+  string id = 1;
+  string user_id = 2;
+  string workspace_code = 3;
+  string executor_authority_and_jurisdiction = 4;
+  string settlement_task_and_claim_timeline = 5;
+  string partitioned_beneficiary_portal_summary = 6;
+  string workspace_state = 7;
+  bool unrelated_beneficiary_isolation_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyExecutorWorkspaceWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyExecutorWorkspaceWorkbenchResponse {
+  repeated LegacyExecutorTrusteeWorkspaceView workspaces = 1;
+  int32 open_dispute_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyExecutorTrusteeWorkspaceRequest {
+  string user_id = 1;
+  string workspace_code = 2;
+  string executor_authority_and_jurisdiction = 3;
+  string settlement_task_and_claim_timeline = 4;
+  string partitioned_beneficiary_portal_summary = 5;
+  string workspace_state = 6;
+  bool unrelated_beneficiary_isolation_enforced = 7;
+}
+
+message SaveLegacyExecutorTrusteeWorkspaceResponse {
+  LegacyExecutorTrusteeWorkspaceView workspace = 1;
+}
+
+message AdvanceLegacySettlementTaskOrResolveDisputeRequest {
+  string user_id = 1;
+  string workspace_code = 2;
+  string target_workspace_state = 3;
+  string resolution_notes = 4;
+}
+
+message AdvanceLegacySettlementTaskOrResolveDisputeResponse {
+  LegacyExecutorTrusteeWorkspaceView workspace = 1;
+  string workspace_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 8 (G16): Estate & Trust Settlement Accounting
+// ===========================================================================
+
+message LegacySettlementAccountingView {
+  string id = 1;
+  string user_id = 2;
+  string accounting_code = 3;
+  string opening_inventory_and_dod_valuations = 4;
+  string reversible_ledger_and_period_lock = 5;
+  string proposed_distribution_and_receipt_pack = 6;
+  string accounting_state = 7;
+  bool non_custodial_execution_boundary_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacySettlementAccountingWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacySettlementAccountingWorkbenchResponse {
+  repeated LegacySettlementAccountingView accountings = 1;
+  int32 open_reconciling_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacySettlementAccountingRequest {
+  string user_id = 1;
+  string accounting_code = 2;
+  string opening_inventory_and_dod_valuations = 3;
+  string reversible_ledger_and_period_lock = 4;
+  string proposed_distribution_and_receipt_pack = 5;
+  string accounting_state = 6;
+  bool non_custodial_execution_boundary_enforced = 7;
+}
+
+message SaveLegacySettlementAccountingResponse {
+  LegacySettlementAccountingView accounting = 1;
+}
+
+message LockOrReverseLegacyAccountingPeriodRequest {
+  string user_id = 1;
+  string accounting_code = 2;
+  string target_accounting_state = 3;
+  string accounting_notes = 4;
+}
+
+message LockOrReverseLegacyAccountingPeriodResponse {
+  LegacySettlementAccountingView accounting = 1;
+  string accounting_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 9 (G8): Digital Asset & Threshold Recovery System
+// ===========================================================================
+
+message LegacyDigitalThresholdRecoveryView {
+  string id = 1;
+  string user_id = 2;
+  string recovery_code = 3;
+  string digital_asset_inventory_and_wishes = 4;
+  string shamir_threshold_and_custodian_domains = 5;
+  string ceremony_dry_run_and_rotation_log = 6;
+  string recovery_state = 7;
+  bool staff_subthreshold_reconstruction_blocked = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyDigitalRecoveryWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyDigitalRecoveryWorkbenchResponse {
+  repeated LegacyDigitalThresholdRecoveryView recoveries = 1;
+  int32 quarantined_share_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyDigitalThresholdRecoveryRequest {
+  string user_id = 1;
+  string recovery_code = 2;
+  string digital_asset_inventory_and_wishes = 3;
+  string shamir_threshold_and_custodian_domains = 4;
+  string ceremony_dry_run_and_rotation_log = 5;
+  string recovery_state = 6;
+  bool staff_subthreshold_reconstruction_blocked = 7;
+}
+
+message SaveLegacyDigitalThresholdRecoveryResponse {
+  LegacyDigitalThresholdRecoveryView recovery = 1;
+}
+
+message RunLegacyThresholdCeremonyDryRunOrRotateShareRequest {
+  string user_id = 1;
+  string recovery_code = 2;
+  string target_recovery_state = 3;
+  string ceremony_notes = 4;
+}
+
+message RunLegacyThresholdCeremonyDryRunOrRotateShareResponse {
+  LegacyDigitalThresholdRecoveryView recovery = 1;
+  string ceremony_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 10 (G9/G15): Heritage & Long-Horizon Preservation Archive
+// ===========================================================================
+
+message LegacyHeritagePreservationArchiveView {
+  string id = 1;
+  string user_id = 2;
+  string archive_code = 3;
+  string media_manifest_and_fixity_signature = 4;
+  string delivery_trigger_and_recipient_consent = 5;
+  string format_migration_and_restoration_test = 6;
+  string archive_state = 7;
+  bool original_artifact_mutation_blocked = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyHeritageArchiveWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyHeritageArchiveWorkbenchResponse {
+  repeated LegacyHeritagePreservationArchiveView archives = 1;
+  int32 contact_repair_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyHeritagePreservationArchiveRequest {
+  string user_id = 1;
+  string archive_code = 2;
+  string media_manifest_and_fixity_signature = 3;
+  string delivery_trigger_and_recipient_consent = 4;
+  string format_migration_and_restoration_test = 5;
+  string archive_state = 6;
+  bool original_artifact_mutation_blocked = 7;
+}
+
+message SaveLegacyHeritagePreservationArchiveResponse {
+  LegacyHeritagePreservationArchiveView archive = 1;
+}
+
+message VerifyLegacyArchiveFixityOrPreviewTriggerRequest {
+  string user_id = 1;
+  string archive_code = 2;
+  string target_archive_state = 3;
+  string archive_notes = 4;
+}
+
+message VerifyLegacyArchiveFixityOrPreviewTriggerResponse {
+  LegacyHeritagePreservationArchiveView archive = 1;
+  string archive_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 11 (G12): Liquidity, Tax & Insurance Readiness
+// ===========================================================================
+
+message LegacyLiquidityInsuranceReadinessView {
+  string id = 1;
+  string user_id = 2;
+  string readiness_code = 3;
+  string obligations_taxes_and_funding_map = 4;
+  string policy_claim_pack_and_source_refs = 5;
+  string shortfall_stress_and_counsel_trigger = 6;
+  string readiness_state = 7;
+  bool no_guaranteed_tax_probate_claim_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyLiquidityReadinessWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyLiquidityReadinessWorkbenchResponse {
+  repeated LegacyLiquidityInsuranceReadinessView readiness_plans = 1;
+  int32 shortfall_flag_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyLiquidityInsuranceReadinessRequest {
+  string user_id = 1;
+  string readiness_code = 2;
+  string obligations_taxes_and_funding_map = 3;
+  string policy_claim_pack_and_source_refs = 4;
+  string shortfall_stress_and_counsel_trigger = 5;
+  string readiness_state = 6;
+  bool no_guaranteed_tax_probate_claim_enforced = 7;
+}
+
+message SaveLegacyLiquidityInsuranceReadinessResponse {
+  LegacyLiquidityInsuranceReadinessView readiness_plan = 1;
+}
+
+message StressTestLegacyLiquidityOrRouteCounselRequest {
+  string user_id = 1;
+  string readiness_code = 2;
+  string target_readiness_state = 3;
+  string stress_notes = 4;
+}
+
+message StressTestLegacyLiquidityOrRouteCounselResponse {
+  LegacyLiquidityInsuranceReadinessView readiness_plan = 1;
+  string readiness_status = 2;
+}
+
+// ===========================================================================
+// Opportunity Choice 12 (G10/G14): Counsel Collaboration & Family Governance
+// ===========================================================================
+
+message LegacyCounselFamilyGovernanceView {
+  string id = 1;
+  string user_id = 2;
+  string governance_code = 3;
+  string counsel_credentials_and_scoped_dataroom = 4;
+  string family_charter_and_decision_records = 5;
+  string next_gen_education_and_privacy_gate = 6;
+  string governance_state = 7;
+  bool no_ai_values_or_family_ranking_enforced = 8;
+  string updated_at_iso = 9;
+}
+
+message GetLegacyCounselGovernanceWorkbenchRequest {
+  string user_id = 1;
+}
+
+message GetLegacyCounselGovernanceWorkbenchResponse {
+  repeated LegacyCounselFamilyGovernanceView governances = 1;
+  int32 open_proposal_count = 2;
+  string workbench_summary = 3;
+}
+
+message SaveLegacyCounselFamilyGovernanceRequest {
+  string user_id = 1;
+  string governance_code = 2;
+  string counsel_credentials_and_scoped_dataroom = 3;
+  string family_charter_and_decision_records = 4;
+  string next_gen_education_and_privacy_gate = 5;
+  string governance_state = 6;
+  bool no_ai_values_or_family_ranking_enforced = 7;
+}
+
+message SaveLegacyCounselFamilyGovernanceResponse {
+  LegacyCounselFamilyGovernanceView governance = 1;
+}
+
+message UnlockLegacyStewardshipModuleOrRevokeCounselRequest {
+  string user_id = 1;
+  string governance_code = 2;
+  string target_governance_state = 3;
+  string governance_notes = 4;
+}
+
+message UnlockLegacyStewardshipModuleOrRevokeCounselResponse {
+  LegacyCounselFamilyGovernanceView governance = 1;
+  string governance_status = 2;
 }

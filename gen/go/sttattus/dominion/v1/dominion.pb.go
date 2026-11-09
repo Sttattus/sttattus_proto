@@ -5723,6 +5723,4773 @@ func (x *ListMyLoungePassesResponse) GetPasses() []*LoungePass {
 	return nil
 }
 
+// Choice 1 (D1): Property Digital Twin and Registry Integrity
+type DominionPropertyDigitalTwinItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TwinCode                         string                 `protobuf:"bytes,3,opt,name=twin_code,json=twinCode,proto3" json:"twin_code,omitempty"`
+	PropertyAndParcelIdentity        string                 `protobuf:"bytes,4,opt,name=property_and_parcel_identity,json=propertyAndParcelIdentity,proto3" json:"property_and_parcel_identity,omitempty"`
+	JurisdictionAndAreaModel         string                 `protobuf:"bytes,5,opt,name=jurisdiction_and_area_model,json=jurisdictionAndAreaModel,proto3" json:"jurisdiction_and_area_model,omitempty"`
+	OwnershipAndDeedProvenance       string                 `protobuf:"bytes,6,opt,name=ownership_and_deed_provenance,json=ownershipAndDeedProvenance,proto3" json:"ownership_and_deed_provenance,omitempty"`
+	VersionAndConflictResolution     string                 `protobuf:"bytes,7,opt,name=version_and_conflict_resolution,json=versionAndConflictResolution,proto3" json:"version_and_conflict_resolution,omitempty"`
+	TwinState                        string                 `protobuf:"bytes,8,opt,name=twin_state,json=twinState,proto3" json:"twin_state,omitempty"`
+	DuplicateAssetPreventionEnforced bool                   `protobuf:"varint,9,opt,name=duplicate_asset_prevention_enforced,json=duplicateAssetPreventionEnforced,proto3" json:"duplicate_asset_prevention_enforced,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *DominionPropertyDigitalTwinItem) Reset() {
+	*x = DominionPropertyDigitalTwinItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionPropertyDigitalTwinItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionPropertyDigitalTwinItem) ProtoMessage() {}
+
+func (x *DominionPropertyDigitalTwinItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionPropertyDigitalTwinItem.ProtoReflect.Descriptor instead.
+func (*DominionPropertyDigitalTwinItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetTwinCode() string {
+	if x != nil {
+		return x.TwinCode
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetPropertyAndParcelIdentity() string {
+	if x != nil {
+		return x.PropertyAndParcelIdentity
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetJurisdictionAndAreaModel() string {
+	if x != nil {
+		return x.JurisdictionAndAreaModel
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetOwnershipAndDeedProvenance() string {
+	if x != nil {
+		return x.OwnershipAndDeedProvenance
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetVersionAndConflictResolution() string {
+	if x != nil {
+		return x.VersionAndConflictResolution
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetTwinState() string {
+	if x != nil {
+		return x.TwinState
+	}
+	return ""
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetDuplicateAssetPreventionEnforced() bool {
+	if x != nil {
+		return x.DuplicateAssetPreventionEnforced
+	}
+	return false
+}
+
+func (x *DominionPropertyDigitalTwinItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionPropertyDigitalTwinWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchRequest) Reset() {
+	*x = GetDominionPropertyDigitalTwinWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionPropertyDigitalTwinWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionPropertyDigitalTwinWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionPropertyDigitalTwinWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{98}
+}
+
+type GetDominionPropertyDigitalTwinWorkbenchResponse struct {
+	state                            protoimpl.MessageState             `protogen:"open.v1"`
+	Twins                            []*DominionPropertyDigitalTwinItem `protobuf:"bytes,1,rep,name=twins,proto3" json:"twins,omitempty"`
+	DuplicateAssetPreventionEnforced bool                               `protobuf:"varint,2,opt,name=duplicate_asset_prevention_enforced,json=duplicateAssetPreventionEnforced,proto3" json:"duplicate_asset_prevention_enforced,omitempty"`
+	CanonicalRegistryLineageSummary  string                             `protobuf:"bytes,3,opt,name=canonical_registry_lineage_summary,json=canonicalRegistryLineageSummary,proto3" json:"canonical_registry_lineage_summary,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) Reset() {
+	*x = GetDominionPropertyDigitalTwinWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[99]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionPropertyDigitalTwinWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[99]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionPropertyDigitalTwinWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionPropertyDigitalTwinWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{99}
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) GetTwins() []*DominionPropertyDigitalTwinItem {
+	if x != nil {
+		return x.Twins
+	}
+	return nil
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) GetDuplicateAssetPreventionEnforced() bool {
+	if x != nil {
+		return x.DuplicateAssetPreventionEnforced
+	}
+	return false
+}
+
+func (x *GetDominionPropertyDigitalTwinWorkbenchResponse) GetCanonicalRegistryLineageSummary() string {
+	if x != nil {
+		return x.CanonicalRegistryLineageSummary
+	}
+	return ""
+}
+
+type SaveDominionPropertyDigitalTwinRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	TwinCode                     string                 `protobuf:"bytes,1,opt,name=twin_code,json=twinCode,proto3" json:"twin_code,omitempty"`
+	PropertyAndParcelIdentity    string                 `protobuf:"bytes,2,opt,name=property_and_parcel_identity,json=propertyAndParcelIdentity,proto3" json:"property_and_parcel_identity,omitempty"`
+	JurisdictionAndAreaModel     string                 `protobuf:"bytes,3,opt,name=jurisdiction_and_area_model,json=jurisdictionAndAreaModel,proto3" json:"jurisdiction_and_area_model,omitempty"`
+	OwnershipAndDeedProvenance   string                 `protobuf:"bytes,4,opt,name=ownership_and_deed_provenance,json=ownershipAndDeedProvenance,proto3" json:"ownership_and_deed_provenance,omitempty"`
+	VersionAndConflictResolution string                 `protobuf:"bytes,5,opt,name=version_and_conflict_resolution,json=versionAndConflictResolution,proto3" json:"version_and_conflict_resolution,omitempty"`
+	TwinState                    string                 `protobuf:"bytes,6,opt,name=twin_state,json=twinState,proto3" json:"twin_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) Reset() {
+	*x = SaveDominionPropertyDigitalTwinRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[100]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionPropertyDigitalTwinRequest) ProtoMessage() {}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[100]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionPropertyDigitalTwinRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionPropertyDigitalTwinRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{100}
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetTwinCode() string {
+	if x != nil {
+		return x.TwinCode
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetPropertyAndParcelIdentity() string {
+	if x != nil {
+		return x.PropertyAndParcelIdentity
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetJurisdictionAndAreaModel() string {
+	if x != nil {
+		return x.JurisdictionAndAreaModel
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetOwnershipAndDeedProvenance() string {
+	if x != nil {
+		return x.OwnershipAndDeedProvenance
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetVersionAndConflictResolution() string {
+	if x != nil {
+		return x.VersionAndConflictResolution
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyDigitalTwinRequest) GetTwinState() string {
+	if x != nil {
+		return x.TwinState
+	}
+	return ""
+}
+
+type SaveDominionPropertyDigitalTwinResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Twin          *DominionPropertyDigitalTwinItem `protobuf:"bytes,1,opt,name=twin,proto3" json:"twin,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionPropertyDigitalTwinResponse) Reset() {
+	*x = SaveDominionPropertyDigitalTwinResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[101]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionPropertyDigitalTwinResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionPropertyDigitalTwinResponse) ProtoMessage() {}
+
+func (x *SaveDominionPropertyDigitalTwinResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[101]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionPropertyDigitalTwinResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionPropertyDigitalTwinResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{101}
+}
+
+func (x *SaveDominionPropertyDigitalTwinResponse) GetTwin() *DominionPropertyDigitalTwinItem {
+	if x != nil {
+		return x.Twin
+	}
+	return nil
+}
+
+type PropagateOrResolveDominionTwinConflictRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	TwinCode                     string                 `protobuf:"bytes,1,opt,name=twin_code,json=twinCode,proto3" json:"twin_code,omitempty"`
+	VersionAndConflictResolution string                 `protobuf:"bytes,2,opt,name=version_and_conflict_resolution,json=versionAndConflictResolution,proto3" json:"version_and_conflict_resolution,omitempty"`
+	TwinState                    string                 `protobuf:"bytes,3,opt,name=twin_state,json=twinState,proto3" json:"twin_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) Reset() {
+	*x = PropagateOrResolveDominionTwinConflictRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[102]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PropagateOrResolveDominionTwinConflictRequest) ProtoMessage() {}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[102]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PropagateOrResolveDominionTwinConflictRequest.ProtoReflect.Descriptor instead.
+func (*PropagateOrResolveDominionTwinConflictRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{102}
+}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) GetTwinCode() string {
+	if x != nil {
+		return x.TwinCode
+	}
+	return ""
+}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) GetVersionAndConflictResolution() string {
+	if x != nil {
+		return x.VersionAndConflictResolution
+	}
+	return ""
+}
+
+func (x *PropagateOrResolveDominionTwinConflictRequest) GetTwinState() string {
+	if x != nil {
+		return x.TwinState
+	}
+	return ""
+}
+
+type PropagateOrResolveDominionTwinConflictResponse struct {
+	state         protoimpl.MessageState           `protogen:"open.v1"`
+	Twin          *DominionPropertyDigitalTwinItem `protobuf:"bytes,1,opt,name=twin,proto3" json:"twin,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PropagateOrResolveDominionTwinConflictResponse) Reset() {
+	*x = PropagateOrResolveDominionTwinConflictResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[103]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PropagateOrResolveDominionTwinConflictResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PropagateOrResolveDominionTwinConflictResponse) ProtoMessage() {}
+
+func (x *PropagateOrResolveDominionTwinConflictResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[103]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PropagateOrResolveDominionTwinConflictResponse.ProtoReflect.Descriptor instead.
+func (*PropagateOrResolveDominionTwinConflictResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{103}
+}
+
+func (x *PropagateOrResolveDominionTwinConflictResponse) GetTwin() *DominionPropertyDigitalTwinItem {
+	if x != nil {
+		return x.Twin
+	}
+	return nil
+}
+
+// Choice 2 (D2): Institutional Underwriting and Scenario Laboratory
+type DominionUnderwritingScenarioItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ScenarioCode                    string                 `protobuf:"bytes,3,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	DealTitleAndStrategy            string                 `protobuf:"bytes,4,opt,name=deal_title_and_strategy,json=dealTitleAndStrategy,proto3" json:"deal_title_and_strategy,omitempty"`
+	VisibleAssumptionsAndFreshness  string                 `protobuf:"bytes,5,opt,name=visible_assumptions_and_freshness,json=visibleAssumptionsAndFreshness,proto3" json:"visible_assumptions_and_freshness,omitempty"`
+	ReturnMetricsAndSensitivityBand string                 `protobuf:"bytes,6,opt,name=return_metrics_and_sensitivity_band,json=returnMetricsAndSensitivityBand,proto3" json:"return_metrics_and_sensitivity_band,omitempty"`
+	InputVerificationDisclosure     string                 `protobuf:"bytes,7,opt,name=input_verification_disclosure,json=inputVerificationDisclosure,proto3" json:"input_verification_disclosure,omitempty"`
+	ScenarioState                   string                 `protobuf:"bytes,8,opt,name=scenario_state,json=scenarioState,proto3" json:"scenario_state,omitempty"`
+	ExportScreenParityVerified      bool                   `protobuf:"varint,9,opt,name=export_screen_parity_verified,json=exportScreenParityVerified,proto3" json:"export_screen_parity_verified,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *DominionUnderwritingScenarioItem) Reset() {
+	*x = DominionUnderwritingScenarioItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionUnderwritingScenarioItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionUnderwritingScenarioItem) ProtoMessage() {}
+
+func (x *DominionUnderwritingScenarioItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionUnderwritingScenarioItem.ProtoReflect.Descriptor instead.
+func (*DominionUnderwritingScenarioItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *DominionUnderwritingScenarioItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetDealTitleAndStrategy() string {
+	if x != nil {
+		return x.DealTitleAndStrategy
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetVisibleAssumptionsAndFreshness() string {
+	if x != nil {
+		return x.VisibleAssumptionsAndFreshness
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetReturnMetricsAndSensitivityBand() string {
+	if x != nil {
+		return x.ReturnMetricsAndSensitivityBand
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetInputVerificationDisclosure() string {
+	if x != nil {
+		return x.InputVerificationDisclosure
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetScenarioState() string {
+	if x != nil {
+		return x.ScenarioState
+	}
+	return ""
+}
+
+func (x *DominionUnderwritingScenarioItem) GetExportScreenParityVerified() bool {
+	if x != nil {
+		return x.ExportScreenParityVerified
+	}
+	return false
+}
+
+func (x *DominionUnderwritingScenarioItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionUnderwritingLabWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchRequest) Reset() {
+	*x = GetDominionUnderwritingLabWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionUnderwritingLabWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionUnderwritingLabWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionUnderwritingLabWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionUnderwritingLabWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{105}
+}
+
+type GetDominionUnderwritingLabWorkbenchResponse struct {
+	state                              protoimpl.MessageState              `protogen:"open.v1"`
+	Scenarios                          []*DominionUnderwritingScenarioItem `protobuf:"bytes,1,rep,name=scenarios,proto3" json:"scenarios,omitempty"`
+	ExportScreenParityVerifiedEnforced bool                                `protobuf:"varint,2,opt,name=export_screen_parity_verified_enforced,json=exportScreenParityVerifiedEnforced,proto3" json:"export_screen_parity_verified_enforced,omitempty"`
+	AssumptionProvenanceSummary        string                              `protobuf:"bytes,3,opt,name=assumption_provenance_summary,json=assumptionProvenanceSummary,proto3" json:"assumption_provenance_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) Reset() {
+	*x = GetDominionUnderwritingLabWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionUnderwritingLabWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionUnderwritingLabWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionUnderwritingLabWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) GetScenarios() []*DominionUnderwritingScenarioItem {
+	if x != nil {
+		return x.Scenarios
+	}
+	return nil
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) GetExportScreenParityVerifiedEnforced() bool {
+	if x != nil {
+		return x.ExportScreenParityVerifiedEnforced
+	}
+	return false
+}
+
+func (x *GetDominionUnderwritingLabWorkbenchResponse) GetAssumptionProvenanceSummary() string {
+	if x != nil {
+		return x.AssumptionProvenanceSummary
+	}
+	return ""
+}
+
+type SaveDominionUnderwritingScenarioRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ScenarioCode                    string                 `protobuf:"bytes,1,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	DealTitleAndStrategy            string                 `protobuf:"bytes,2,opt,name=deal_title_and_strategy,json=dealTitleAndStrategy,proto3" json:"deal_title_and_strategy,omitempty"`
+	VisibleAssumptionsAndFreshness  string                 `protobuf:"bytes,3,opt,name=visible_assumptions_and_freshness,json=visibleAssumptionsAndFreshness,proto3" json:"visible_assumptions_and_freshness,omitempty"`
+	ReturnMetricsAndSensitivityBand string                 `protobuf:"bytes,4,opt,name=return_metrics_and_sensitivity_band,json=returnMetricsAndSensitivityBand,proto3" json:"return_metrics_and_sensitivity_band,omitempty"`
+	InputVerificationDisclosure     string                 `protobuf:"bytes,5,opt,name=input_verification_disclosure,json=inputVerificationDisclosure,proto3" json:"input_verification_disclosure,omitempty"`
+	ScenarioState                   string                 `protobuf:"bytes,6,opt,name=scenario_state,json=scenarioState,proto3" json:"scenario_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) Reset() {
+	*x = SaveDominionUnderwritingScenarioRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[107]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionUnderwritingScenarioRequest) ProtoMessage() {}
+
+func (x *SaveDominionUnderwritingScenarioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[107]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionUnderwritingScenarioRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionUnderwritingScenarioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{107}
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetDealTitleAndStrategy() string {
+	if x != nil {
+		return x.DealTitleAndStrategy
+	}
+	return ""
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetVisibleAssumptionsAndFreshness() string {
+	if x != nil {
+		return x.VisibleAssumptionsAndFreshness
+	}
+	return ""
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetReturnMetricsAndSensitivityBand() string {
+	if x != nil {
+		return x.ReturnMetricsAndSensitivityBand
+	}
+	return ""
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetInputVerificationDisclosure() string {
+	if x != nil {
+		return x.InputVerificationDisclosure
+	}
+	return ""
+}
+
+func (x *SaveDominionUnderwritingScenarioRequest) GetScenarioState() string {
+	if x != nil {
+		return x.ScenarioState
+	}
+	return ""
+}
+
+type SaveDominionUnderwritingScenarioResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Scenario      *DominionUnderwritingScenarioItem `protobuf:"bytes,1,opt,name=scenario,proto3" json:"scenario,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionUnderwritingScenarioResponse) Reset() {
+	*x = SaveDominionUnderwritingScenarioResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[108]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionUnderwritingScenarioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionUnderwritingScenarioResponse) ProtoMessage() {}
+
+func (x *SaveDominionUnderwritingScenarioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[108]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionUnderwritingScenarioResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionUnderwritingScenarioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{108}
+}
+
+func (x *SaveDominionUnderwritingScenarioResponse) GetScenario() *DominionUnderwritingScenarioItem {
+	if x != nil {
+		return x.Scenario
+	}
+	return nil
+}
+
+type StressTestOrFreezeDominionScenarioRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ScenarioCode                    string                 `protobuf:"bytes,1,opt,name=scenario_code,json=scenarioCode,proto3" json:"scenario_code,omitempty"`
+	ReturnMetricsAndSensitivityBand string                 `protobuf:"bytes,2,opt,name=return_metrics_and_sensitivity_band,json=returnMetricsAndSensitivityBand,proto3" json:"return_metrics_and_sensitivity_band,omitempty"`
+	ScenarioState                   string                 `protobuf:"bytes,3,opt,name=scenario_state,json=scenarioState,proto3" json:"scenario_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) Reset() {
+	*x = StressTestOrFreezeDominionScenarioRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[109]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StressTestOrFreezeDominionScenarioRequest) ProtoMessage() {}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[109]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StressTestOrFreezeDominionScenarioRequest.ProtoReflect.Descriptor instead.
+func (*StressTestOrFreezeDominionScenarioRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{109}
+}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) GetScenarioCode() string {
+	if x != nil {
+		return x.ScenarioCode
+	}
+	return ""
+}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) GetReturnMetricsAndSensitivityBand() string {
+	if x != nil {
+		return x.ReturnMetricsAndSensitivityBand
+	}
+	return ""
+}
+
+func (x *StressTestOrFreezeDominionScenarioRequest) GetScenarioState() string {
+	if x != nil {
+		return x.ScenarioState
+	}
+	return ""
+}
+
+type StressTestOrFreezeDominionScenarioResponse struct {
+	state         protoimpl.MessageState            `protogen:"open.v1"`
+	Scenario      *DominionUnderwritingScenarioItem `protobuf:"bytes,1,opt,name=scenario,proto3" json:"scenario,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StressTestOrFreezeDominionScenarioResponse) Reset() {
+	*x = StressTestOrFreezeDominionScenarioResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[110]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StressTestOrFreezeDominionScenarioResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StressTestOrFreezeDominionScenarioResponse) ProtoMessage() {}
+
+func (x *StressTestOrFreezeDominionScenarioResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[110]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StressTestOrFreezeDominionScenarioResponse.ProtoReflect.Descriptor instead.
+func (*StressTestOrFreezeDominionScenarioResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{110}
+}
+
+func (x *StressTestOrFreezeDominionScenarioResponse) GetScenario() *DominionUnderwritingScenarioItem {
+	if x != nil {
+		return x.Scenario
+	}
+	return nil
+}
+
+// Choice 3 (D3): Property Accounting, Cash Flow, and Monthly Close
+type DominionPropertyAccountingCloseItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	CloseCode                        string                 `protobuf:"bytes,3,opt,name=close_code,json=closeCode,proto3" json:"close_code,omitempty"`
+	PropertyAndPeriodLabel           string                 `protobuf:"bytes,4,opt,name=property_and_period_label,json=propertyAndPeriodLabel,proto3" json:"property_and_period_label,omitempty"`
+	BankReconciliationAndDataQuality string                 `protobuf:"bytes,5,opt,name=bank_reconciliation_and_data_quality,json=bankReconciliationAndDataQuality,proto3" json:"bank_reconciliation_and_data_quality,omitempty"`
+	PnlCashflowAndReserveSummary     string                 `protobuf:"bytes,6,opt,name=pnl_cashflow_and_reserve_summary,json=pnlCashflowAndReserveSummary,proto3" json:"pnl_cashflow_and_reserve_summary,omitempty"`
+	AccountantAndTaxExportDigest     string                 `protobuf:"bytes,7,opt,name=accountant_and_tax_export_digest,json=accountantAndTaxExportDigest,proto3" json:"accountant_and_tax_export_digest,omitempty"`
+	CloseState                       string                 `protobuf:"bytes,8,opt,name=close_state,json=closeState,proto3" json:"close_state,omitempty"`
+	DoubleEntryReversibleEnforced    bool                   `protobuf:"varint,9,opt,name=double_entry_reversible_enforced,json=doubleEntryReversibleEnforced,proto3" json:"double_entry_reversible_enforced,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,10,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *DominionPropertyAccountingCloseItem) Reset() {
+	*x = DominionPropertyAccountingCloseItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[111]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionPropertyAccountingCloseItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionPropertyAccountingCloseItem) ProtoMessage() {}
+
+func (x *DominionPropertyAccountingCloseItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[111]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionPropertyAccountingCloseItem.ProtoReflect.Descriptor instead.
+func (*DominionPropertyAccountingCloseItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{111}
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetCloseCode() string {
+	if x != nil {
+		return x.CloseCode
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetPropertyAndPeriodLabel() string {
+	if x != nil {
+		return x.PropertyAndPeriodLabel
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetBankReconciliationAndDataQuality() string {
+	if x != nil {
+		return x.BankReconciliationAndDataQuality
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetPnlCashflowAndReserveSummary() string {
+	if x != nil {
+		return x.PnlCashflowAndReserveSummary
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetAccountantAndTaxExportDigest() string {
+	if x != nil {
+		return x.AccountantAndTaxExportDigest
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetCloseState() string {
+	if x != nil {
+		return x.CloseState
+	}
+	return ""
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetDoubleEntryReversibleEnforced() bool {
+	if x != nil {
+		return x.DoubleEntryReversibleEnforced
+	}
+	return false
+}
+
+func (x *DominionPropertyAccountingCloseItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionPropertyAccountingWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchRequest) Reset() {
+	*x = GetDominionPropertyAccountingWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[112]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionPropertyAccountingWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionPropertyAccountingWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[112]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionPropertyAccountingWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionPropertyAccountingWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{112}
+}
+
+type GetDominionPropertyAccountingWorkbenchResponse struct {
+	state                            protoimpl.MessageState                 `protogen:"open.v1"`
+	Closes                           []*DominionPropertyAccountingCloseItem `protobuf:"bytes,1,rep,name=closes,proto3" json:"closes,omitempty"`
+	DoubleEntryReversibleEnforced    bool                                   `protobuf:"varint,2,opt,name=double_entry_reversible_enforced,json=doubleEntryReversibleEnforced,proto3" json:"double_entry_reversible_enforced,omitempty"`
+	ImmutableCloseAndReversalSummary string                                 `protobuf:"bytes,3,opt,name=immutable_close_and_reversal_summary,json=immutableCloseAndReversalSummary,proto3" json:"immutable_close_and_reversal_summary,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) Reset() {
+	*x = GetDominionPropertyAccountingWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[113]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionPropertyAccountingWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[113]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionPropertyAccountingWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionPropertyAccountingWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{113}
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) GetCloses() []*DominionPropertyAccountingCloseItem {
+	if x != nil {
+		return x.Closes
+	}
+	return nil
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) GetDoubleEntryReversibleEnforced() bool {
+	if x != nil {
+		return x.DoubleEntryReversibleEnforced
+	}
+	return false
+}
+
+func (x *GetDominionPropertyAccountingWorkbenchResponse) GetImmutableCloseAndReversalSummary() string {
+	if x != nil {
+		return x.ImmutableCloseAndReversalSummary
+	}
+	return ""
+}
+
+type SaveDominionPropertyAccountingCloseRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	CloseCode                        string                 `protobuf:"bytes,1,opt,name=close_code,json=closeCode,proto3" json:"close_code,omitempty"`
+	PropertyAndPeriodLabel           string                 `protobuf:"bytes,2,opt,name=property_and_period_label,json=propertyAndPeriodLabel,proto3" json:"property_and_period_label,omitempty"`
+	BankReconciliationAndDataQuality string                 `protobuf:"bytes,3,opt,name=bank_reconciliation_and_data_quality,json=bankReconciliationAndDataQuality,proto3" json:"bank_reconciliation_and_data_quality,omitempty"`
+	PnlCashflowAndReserveSummary     string                 `protobuf:"bytes,4,opt,name=pnl_cashflow_and_reserve_summary,json=pnlCashflowAndReserveSummary,proto3" json:"pnl_cashflow_and_reserve_summary,omitempty"`
+	AccountantAndTaxExportDigest     string                 `protobuf:"bytes,5,opt,name=accountant_and_tax_export_digest,json=accountantAndTaxExportDigest,proto3" json:"accountant_and_tax_export_digest,omitempty"`
+	CloseState                       string                 `protobuf:"bytes,6,opt,name=close_state,json=closeState,proto3" json:"close_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) Reset() {
+	*x = SaveDominionPropertyAccountingCloseRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[114]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionPropertyAccountingCloseRequest) ProtoMessage() {}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[114]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionPropertyAccountingCloseRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionPropertyAccountingCloseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{114}
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetCloseCode() string {
+	if x != nil {
+		return x.CloseCode
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetPropertyAndPeriodLabel() string {
+	if x != nil {
+		return x.PropertyAndPeriodLabel
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetBankReconciliationAndDataQuality() string {
+	if x != nil {
+		return x.BankReconciliationAndDataQuality
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetPnlCashflowAndReserveSummary() string {
+	if x != nil {
+		return x.PnlCashflowAndReserveSummary
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetAccountantAndTaxExportDigest() string {
+	if x != nil {
+		return x.AccountantAndTaxExportDigest
+	}
+	return ""
+}
+
+func (x *SaveDominionPropertyAccountingCloseRequest) GetCloseState() string {
+	if x != nil {
+		return x.CloseState
+	}
+	return ""
+}
+
+type SaveDominionPropertyAccountingCloseResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Close         *DominionPropertyAccountingCloseItem `protobuf:"bytes,1,opt,name=close,proto3" json:"close,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionPropertyAccountingCloseResponse) Reset() {
+	*x = SaveDominionPropertyAccountingCloseResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[115]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionPropertyAccountingCloseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionPropertyAccountingCloseResponse) ProtoMessage() {}
+
+func (x *SaveDominionPropertyAccountingCloseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[115]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionPropertyAccountingCloseResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionPropertyAccountingCloseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{115}
+}
+
+func (x *SaveDominionPropertyAccountingCloseResponse) GetClose() *DominionPropertyAccountingCloseItem {
+	if x != nil {
+		return x.Close
+	}
+	return nil
+}
+
+type LockOrReverseDominionAccountingCloseRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	CloseCode                    string                 `protobuf:"bytes,1,opt,name=close_code,json=closeCode,proto3" json:"close_code,omitempty"`
+	AccountantAndTaxExportDigest string                 `protobuf:"bytes,2,opt,name=accountant_and_tax_export_digest,json=accountantAndTaxExportDigest,proto3" json:"accountant_and_tax_export_digest,omitempty"`
+	CloseState                   string                 `protobuf:"bytes,3,opt,name=close_state,json=closeState,proto3" json:"close_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) Reset() {
+	*x = LockOrReverseDominionAccountingCloseRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[116]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReverseDominionAccountingCloseRequest) ProtoMessage() {}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[116]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReverseDominionAccountingCloseRequest.ProtoReflect.Descriptor instead.
+func (*LockOrReverseDominionAccountingCloseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{116}
+}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) GetCloseCode() string {
+	if x != nil {
+		return x.CloseCode
+	}
+	return ""
+}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) GetAccountantAndTaxExportDigest() string {
+	if x != nil {
+		return x.AccountantAndTaxExportDigest
+	}
+	return ""
+}
+
+func (x *LockOrReverseDominionAccountingCloseRequest) GetCloseState() string {
+	if x != nil {
+		return x.CloseState
+	}
+	return ""
+}
+
+type LockOrReverseDominionAccountingCloseResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Close         *DominionPropertyAccountingCloseItem `protobuf:"bytes,1,opt,name=close,proto3" json:"close,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LockOrReverseDominionAccountingCloseResponse) Reset() {
+	*x = LockOrReverseDominionAccountingCloseResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[117]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LockOrReverseDominionAccountingCloseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LockOrReverseDominionAccountingCloseResponse) ProtoMessage() {}
+
+func (x *LockOrReverseDominionAccountingCloseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[117]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LockOrReverseDominionAccountingCloseResponse.ProtoReflect.Descriptor instead.
+func (*LockOrReverseDominionAccountingCloseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{117}
+}
+
+func (x *LockOrReverseDominionAccountingCloseResponse) GetClose() *DominionPropertyAccountingCloseItem {
+	if x != nil {
+		return x.Close
+	}
+	return nil
+}
+
+// Choice 4 (D5, D11): Intelligent Document, Permit, and Tax Obligation Vault
+type DominionDocumentObligationVaultItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ObligationCode                  string                 `protobuf:"bytes,3,opt,name=obligation_code,json=obligationCode,proto3" json:"obligation_code,omitempty"`
+	DocumentAndCitedPassage         string                 `protobuf:"bytes,4,opt,name=document_and_cited_passage,json=documentAndCitedPassage,proto3" json:"document_and_cited_passage,omitempty"`
+	JurisdictionTaxOrPermitDeadline string                 `protobuf:"bytes,5,opt,name=jurisdiction_tax_or_permit_deadline,json=jurisdictionTaxOrPermitDeadline,proto3" json:"jurisdiction_tax_or_permit_deadline,omitempty"`
+	CompletionReceiptOrAppealPack   string                 `protobuf:"bytes,6,opt,name=completion_receipt_or_appeal_pack,json=completionReceiptOrAppealPack,proto3" json:"completion_receipt_or_appeal_pack,omitempty"`
+	ExtractionConfidenceState       string                 `protobuf:"bytes,7,opt,name=extraction_confidence_state,json=extractionConfidenceState,proto3" json:"extraction_confidence_state,omitempty"`
+	NonLegalOpinionBoundaryEnforced bool                   `protobuf:"varint,8,opt,name=non_legal_opinion_boundary_enforced,json=nonLegalOpinionBoundaryEnforced,proto3" json:"non_legal_opinion_boundary_enforced,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *DominionDocumentObligationVaultItem) Reset() {
+	*x = DominionDocumentObligationVaultItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[118]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionDocumentObligationVaultItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionDocumentObligationVaultItem) ProtoMessage() {}
+
+func (x *DominionDocumentObligationVaultItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[118]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionDocumentObligationVaultItem.ProtoReflect.Descriptor instead.
+func (*DominionDocumentObligationVaultItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{118}
+}
+
+func (x *DominionDocumentObligationVaultItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetObligationCode() string {
+	if x != nil {
+		return x.ObligationCode
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetDocumentAndCitedPassage() string {
+	if x != nil {
+		return x.DocumentAndCitedPassage
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetJurisdictionTaxOrPermitDeadline() string {
+	if x != nil {
+		return x.JurisdictionTaxOrPermitDeadline
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetCompletionReceiptOrAppealPack() string {
+	if x != nil {
+		return x.CompletionReceiptOrAppealPack
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetExtractionConfidenceState() string {
+	if x != nil {
+		return x.ExtractionConfidenceState
+	}
+	return ""
+}
+
+func (x *DominionDocumentObligationVaultItem) GetNonLegalOpinionBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonLegalOpinionBoundaryEnforced
+	}
+	return false
+}
+
+func (x *DominionDocumentObligationVaultItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionDocumentObligationWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionDocumentObligationWorkbenchRequest) Reset() {
+	*x = GetDominionDocumentObligationWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[119]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionDocumentObligationWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionDocumentObligationWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionDocumentObligationWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[119]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionDocumentObligationWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionDocumentObligationWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{119}
+}
+
+type GetDominionDocumentObligationWorkbenchResponse struct {
+	state                           protoimpl.MessageState                 `protogen:"open.v1"`
+	Obligations                     []*DominionDocumentObligationVaultItem `protobuf:"bytes,1,rep,name=obligations,proto3" json:"obligations,omitempty"`
+	NonLegalOpinionBoundaryEnforced bool                                   `protobuf:"varint,2,opt,name=non_legal_opinion_boundary_enforced,json=nonLegalOpinionBoundaryEnforced,proto3" json:"non_legal_opinion_boundary_enforced,omitempty"`
+	ReceiptBeforeCompletionSummary  string                                 `protobuf:"bytes,3,opt,name=receipt_before_completion_summary,json=receiptBeforeCompletionSummary,proto3" json:"receipt_before_completion_summary,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) Reset() {
+	*x = GetDominionDocumentObligationWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[120]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionDocumentObligationWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[120]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionDocumentObligationWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionDocumentObligationWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{120}
+}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) GetObligations() []*DominionDocumentObligationVaultItem {
+	if x != nil {
+		return x.Obligations
+	}
+	return nil
+}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) GetNonLegalOpinionBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonLegalOpinionBoundaryEnforced
+	}
+	return false
+}
+
+func (x *GetDominionDocumentObligationWorkbenchResponse) GetReceiptBeforeCompletionSummary() string {
+	if x != nil {
+		return x.ReceiptBeforeCompletionSummary
+	}
+	return ""
+}
+
+type SaveDominionDocumentObligationRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ObligationCode                  string                 `protobuf:"bytes,1,opt,name=obligation_code,json=obligationCode,proto3" json:"obligation_code,omitempty"`
+	DocumentAndCitedPassage         string                 `protobuf:"bytes,2,opt,name=document_and_cited_passage,json=documentAndCitedPassage,proto3" json:"document_and_cited_passage,omitempty"`
+	JurisdictionTaxOrPermitDeadline string                 `protobuf:"bytes,3,opt,name=jurisdiction_tax_or_permit_deadline,json=jurisdictionTaxOrPermitDeadline,proto3" json:"jurisdiction_tax_or_permit_deadline,omitempty"`
+	CompletionReceiptOrAppealPack   string                 `protobuf:"bytes,4,opt,name=completion_receipt_or_appeal_pack,json=completionReceiptOrAppealPack,proto3" json:"completion_receipt_or_appeal_pack,omitempty"`
+	ExtractionConfidenceState       string                 `protobuf:"bytes,5,opt,name=extraction_confidence_state,json=extractionConfidenceState,proto3" json:"extraction_confidence_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveDominionDocumentObligationRequest) Reset() {
+	*x = SaveDominionDocumentObligationRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[121]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionDocumentObligationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionDocumentObligationRequest) ProtoMessage() {}
+
+func (x *SaveDominionDocumentObligationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[121]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionDocumentObligationRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionDocumentObligationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{121}
+}
+
+func (x *SaveDominionDocumentObligationRequest) GetObligationCode() string {
+	if x != nil {
+		return x.ObligationCode
+	}
+	return ""
+}
+
+func (x *SaveDominionDocumentObligationRequest) GetDocumentAndCitedPassage() string {
+	if x != nil {
+		return x.DocumentAndCitedPassage
+	}
+	return ""
+}
+
+func (x *SaveDominionDocumentObligationRequest) GetJurisdictionTaxOrPermitDeadline() string {
+	if x != nil {
+		return x.JurisdictionTaxOrPermitDeadline
+	}
+	return ""
+}
+
+func (x *SaveDominionDocumentObligationRequest) GetCompletionReceiptOrAppealPack() string {
+	if x != nil {
+		return x.CompletionReceiptOrAppealPack
+	}
+	return ""
+}
+
+func (x *SaveDominionDocumentObligationRequest) GetExtractionConfidenceState() string {
+	if x != nil {
+		return x.ExtractionConfidenceState
+	}
+	return ""
+}
+
+type SaveDominionDocumentObligationResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Obligation    *DominionDocumentObligationVaultItem `protobuf:"bytes,1,opt,name=obligation,proto3" json:"obligation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionDocumentObligationResponse) Reset() {
+	*x = SaveDominionDocumentObligationResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[122]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionDocumentObligationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionDocumentObligationResponse) ProtoMessage() {}
+
+func (x *SaveDominionDocumentObligationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[122]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionDocumentObligationResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionDocumentObligationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{122}
+}
+
+func (x *SaveDominionDocumentObligationResponse) GetObligation() *DominionDocumentObligationVaultItem {
+	if x != nil {
+		return x.Obligation
+	}
+	return nil
+}
+
+type ConfirmDominionObligationReceiptOrAppealRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	ObligationCode                string                 `protobuf:"bytes,1,opt,name=obligation_code,json=obligationCode,proto3" json:"obligation_code,omitempty"`
+	CompletionReceiptOrAppealPack string                 `protobuf:"bytes,2,opt,name=completion_receipt_or_appeal_pack,json=completionReceiptOrAppealPack,proto3" json:"completion_receipt_or_appeal_pack,omitempty"`
+	ExtractionConfidenceState     string                 `protobuf:"bytes,3,opt,name=extraction_confidence_state,json=extractionConfidenceState,proto3" json:"extraction_confidence_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) Reset() {
+	*x = ConfirmDominionObligationReceiptOrAppealRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[123]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmDominionObligationReceiptOrAppealRequest) ProtoMessage() {}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[123]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmDominionObligationReceiptOrAppealRequest.ProtoReflect.Descriptor instead.
+func (*ConfirmDominionObligationReceiptOrAppealRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{123}
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) GetObligationCode() string {
+	if x != nil {
+		return x.ObligationCode
+	}
+	return ""
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) GetCompletionReceiptOrAppealPack() string {
+	if x != nil {
+		return x.CompletionReceiptOrAppealPack
+	}
+	return ""
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealRequest) GetExtractionConfidenceState() string {
+	if x != nil {
+		return x.ExtractionConfidenceState
+	}
+	return ""
+}
+
+type ConfirmDominionObligationReceiptOrAppealResponse struct {
+	state         protoimpl.MessageState               `protogen:"open.v1"`
+	Obligation    *DominionDocumentObligationVaultItem `protobuf:"bytes,1,opt,name=obligation,proto3" json:"obligation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealResponse) Reset() {
+	*x = ConfirmDominionObligationReceiptOrAppealResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[124]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfirmDominionObligationReceiptOrAppealResponse) ProtoMessage() {}
+
+func (x *ConfirmDominionObligationReceiptOrAppealResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[124]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfirmDominionObligationReceiptOrAppealResponse.ProtoReflect.Descriptor instead.
+func (*ConfirmDominionObligationReceiptOrAppealResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{124}
+}
+
+func (x *ConfirmDominionObligationReceiptOrAppealResponse) GetObligation() *DominionDocumentObligationVaultItem {
+	if x != nil {
+		return x.Obligation
+	}
+	return nil
+}
+
+// Choice 5 (D4, D14): Leasing, Tenancy, and Resident Experience Portal
+type DominionLeasingResidentPortalItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	LeaseCode                       string                 `protobuf:"bytes,3,opt,name=lease_code,json=leaseCode,proto3" json:"lease_code,omitempty"`
+	PropertyUnitAndTenancyScope     string                 `protobuf:"bytes,4,opt,name=property_unit_and_tenancy_scope,json=propertyUnitAndTenancyScope,proto3" json:"property_unit_and_tenancy_scope,omitempty"`
+	LeaseTermsDepositAndRenewal     string                 `protobuf:"bytes,5,opt,name=lease_terms_deposit_and_renewal,json=leaseTermsDepositAndRenewal,proto3" json:"lease_terms_deposit_and_renewal,omitempty"`
+	PartitionedCommunicationSummary string                 `protobuf:"bytes,6,opt,name=partitioned_communication_summary,json=partitionedCommunicationSummary,proto3" json:"partitioned_communication_summary,omitempty"`
+	PortalState                     string                 `protobuf:"bytes,7,opt,name=portal_state,json=portalState,proto3" json:"portal_state,omitempty"`
+	CrossTenantIsolationEnforced    bool                   `protobuf:"varint,8,opt,name=cross_tenant_isolation_enforced,json=crossTenantIsolationEnforced,proto3" json:"cross_tenant_isolation_enforced,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *DominionLeasingResidentPortalItem) Reset() {
+	*x = DominionLeasingResidentPortalItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[125]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionLeasingResidentPortalItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionLeasingResidentPortalItem) ProtoMessage() {}
+
+func (x *DominionLeasingResidentPortalItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[125]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionLeasingResidentPortalItem.ProtoReflect.Descriptor instead.
+func (*DominionLeasingResidentPortalItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{125}
+}
+
+func (x *DominionLeasingResidentPortalItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetLeaseCode() string {
+	if x != nil {
+		return x.LeaseCode
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetPropertyUnitAndTenancyScope() string {
+	if x != nil {
+		return x.PropertyUnitAndTenancyScope
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetLeaseTermsDepositAndRenewal() string {
+	if x != nil {
+		return x.LeaseTermsDepositAndRenewal
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetPartitionedCommunicationSummary() string {
+	if x != nil {
+		return x.PartitionedCommunicationSummary
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetPortalState() string {
+	if x != nil {
+		return x.PortalState
+	}
+	return ""
+}
+
+func (x *DominionLeasingResidentPortalItem) GetCrossTenantIsolationEnforced() bool {
+	if x != nil {
+		return x.CrossTenantIsolationEnforced
+	}
+	return false
+}
+
+func (x *DominionLeasingResidentPortalItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionLeasingResidentWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionLeasingResidentWorkbenchRequest) Reset() {
+	*x = GetDominionLeasingResidentWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[126]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionLeasingResidentWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionLeasingResidentWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionLeasingResidentWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[126]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionLeasingResidentWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionLeasingResidentWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{126}
+}
+
+type GetDominionLeasingResidentWorkbenchResponse struct {
+	state                        protoimpl.MessageState               `protogen:"open.v1"`
+	Leases                       []*DominionLeasingResidentPortalItem `protobuf:"bytes,1,rep,name=leases,proto3" json:"leases,omitempty"`
+	CrossTenantIsolationEnforced bool                                 `protobuf:"varint,2,opt,name=cross_tenant_isolation_enforced,json=crossTenantIsolationEnforced,proto3" json:"cross_tenant_isolation_enforced,omitempty"`
+	UnitScopedPartitionSummary   string                               `protobuf:"bytes,3,opt,name=unit_scoped_partition_summary,json=unitScopedPartitionSummary,proto3" json:"unit_scoped_partition_summary,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) Reset() {
+	*x = GetDominionLeasingResidentWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[127]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionLeasingResidentWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[127]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionLeasingResidentWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionLeasingResidentWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{127}
+}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) GetLeases() []*DominionLeasingResidentPortalItem {
+	if x != nil {
+		return x.Leases
+	}
+	return nil
+}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) GetCrossTenantIsolationEnforced() bool {
+	if x != nil {
+		return x.CrossTenantIsolationEnforced
+	}
+	return false
+}
+
+func (x *GetDominionLeasingResidentWorkbenchResponse) GetUnitScopedPartitionSummary() string {
+	if x != nil {
+		return x.UnitScopedPartitionSummary
+	}
+	return ""
+}
+
+type SaveDominionLeasingResidentPortalRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	LeaseCode                       string                 `protobuf:"bytes,1,opt,name=lease_code,json=leaseCode,proto3" json:"lease_code,omitempty"`
+	PropertyUnitAndTenancyScope     string                 `protobuf:"bytes,2,opt,name=property_unit_and_tenancy_scope,json=propertyUnitAndTenancyScope,proto3" json:"property_unit_and_tenancy_scope,omitempty"`
+	LeaseTermsDepositAndRenewal     string                 `protobuf:"bytes,3,opt,name=lease_terms_deposit_and_renewal,json=leaseTermsDepositAndRenewal,proto3" json:"lease_terms_deposit_and_renewal,omitempty"`
+	PartitionedCommunicationSummary string                 `protobuf:"bytes,4,opt,name=partitioned_communication_summary,json=partitionedCommunicationSummary,proto3" json:"partitioned_communication_summary,omitempty"`
+	PortalState                     string                 `protobuf:"bytes,5,opt,name=portal_state,json=portalState,proto3" json:"portal_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) Reset() {
+	*x = SaveDominionLeasingResidentPortalRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[128]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionLeasingResidentPortalRequest) ProtoMessage() {}
+
+func (x *SaveDominionLeasingResidentPortalRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[128]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionLeasingResidentPortalRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionLeasingResidentPortalRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{128}
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) GetLeaseCode() string {
+	if x != nil {
+		return x.LeaseCode
+	}
+	return ""
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) GetPropertyUnitAndTenancyScope() string {
+	if x != nil {
+		return x.PropertyUnitAndTenancyScope
+	}
+	return ""
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) GetLeaseTermsDepositAndRenewal() string {
+	if x != nil {
+		return x.LeaseTermsDepositAndRenewal
+	}
+	return ""
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) GetPartitionedCommunicationSummary() string {
+	if x != nil {
+		return x.PartitionedCommunicationSummary
+	}
+	return ""
+}
+
+func (x *SaveDominionLeasingResidentPortalRequest) GetPortalState() string {
+	if x != nil {
+		return x.PortalState
+	}
+	return ""
+}
+
+type SaveDominionLeasingResidentPortalResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Lease         *DominionLeasingResidentPortalItem `protobuf:"bytes,1,opt,name=lease,proto3" json:"lease,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionLeasingResidentPortalResponse) Reset() {
+	*x = SaveDominionLeasingResidentPortalResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[129]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionLeasingResidentPortalResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionLeasingResidentPortalResponse) ProtoMessage() {}
+
+func (x *SaveDominionLeasingResidentPortalResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[129]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionLeasingResidentPortalResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionLeasingResidentPortalResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{129}
+}
+
+func (x *SaveDominionLeasingResidentPortalResponse) GetLease() *DominionLeasingResidentPortalItem {
+	if x != nil {
+		return x.Lease
+	}
+	return nil
+}
+
+type ScheduleDominionRenewalOrDepositCloseRequest struct {
+	state                       protoimpl.MessageState `protogen:"open.v1"`
+	LeaseCode                   string                 `protobuf:"bytes,1,opt,name=lease_code,json=leaseCode,proto3" json:"lease_code,omitempty"`
+	LeaseTermsDepositAndRenewal string                 `protobuf:"bytes,2,opt,name=lease_terms_deposit_and_renewal,json=leaseTermsDepositAndRenewal,proto3" json:"lease_terms_deposit_and_renewal,omitempty"`
+	PortalState                 string                 `protobuf:"bytes,3,opt,name=portal_state,json=portalState,proto3" json:"portal_state,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) Reset() {
+	*x = ScheduleDominionRenewalOrDepositCloseRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[130]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScheduleDominionRenewalOrDepositCloseRequest) ProtoMessage() {}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[130]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScheduleDominionRenewalOrDepositCloseRequest.ProtoReflect.Descriptor instead.
+func (*ScheduleDominionRenewalOrDepositCloseRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{130}
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) GetLeaseCode() string {
+	if x != nil {
+		return x.LeaseCode
+	}
+	return ""
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) GetLeaseTermsDepositAndRenewal() string {
+	if x != nil {
+		return x.LeaseTermsDepositAndRenewal
+	}
+	return ""
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseRequest) GetPortalState() string {
+	if x != nil {
+		return x.PortalState
+	}
+	return ""
+}
+
+type ScheduleDominionRenewalOrDepositCloseResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Lease         *DominionLeasingResidentPortalItem `protobuf:"bytes,1,opt,name=lease,proto3" json:"lease,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseResponse) Reset() {
+	*x = ScheduleDominionRenewalOrDepositCloseResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[131]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ScheduleDominionRenewalOrDepositCloseResponse) ProtoMessage() {}
+
+func (x *ScheduleDominionRenewalOrDepositCloseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[131]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ScheduleDominionRenewalOrDepositCloseResponse.ProtoReflect.Descriptor instead.
+func (*ScheduleDominionRenewalOrDepositCloseResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{131}
+}
+
+func (x *ScheduleDominionRenewalOrDepositCloseResponse) GetLease() *DominionLeasingResidentPortalItem {
+	if x != nil {
+		return x.Lease
+	}
+	return nil
+}
+
+// Choice 6 (D4, D13): Maintenance, Work Orders, and Vetted Vendor Network
+type DominionMaintenanceVendorNetworkItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	WorkOrderCode                      string                 `protobuf:"bytes,3,opt,name=work_order_code,json=workOrderCode,proto3" json:"work_order_code,omitempty"`
+	IssueTriageAndSlaWindow            string                 `protobuf:"bytes,4,opt,name=issue_triage_and_sla_window,json=issueTriageAndSlaWindow,proto3" json:"issue_triage_and_sla_window,omitempty"`
+	VendorCredentialsAndNormalizedBids string                 `protobuf:"bytes,5,opt,name=vendor_credentials_and_normalized_bids,json=vendorCredentialsAndNormalizedBids,proto3" json:"vendor_credentials_and_normalized_bids,omitempty"`
+	ThreeWayInvoiceAndWarrantyMatch    string                 `protobuf:"bytes,6,opt,name=three_way_invoice_and_warranty_match,json=threeWayInvoiceAndWarrantyMatch,proto3" json:"three_way_invoice_and_warranty_match,omitempty"`
+	WorkOrderState                     string                 `protobuf:"bytes,7,opt,name=work_order_state,json=workOrderState,proto3" json:"work_order_state,omitempty"`
+	ZeroPayToRankEnforced              bool                   `protobuf:"varint,8,opt,name=zero_pay_to_rank_enforced,json=zeroPayToRankEnforced,proto3" json:"zero_pay_to_rank_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) Reset() {
+	*x = DominionMaintenanceVendorNetworkItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[132]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionMaintenanceVendorNetworkItem) ProtoMessage() {}
+
+func (x *DominionMaintenanceVendorNetworkItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[132]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionMaintenanceVendorNetworkItem.ProtoReflect.Descriptor instead.
+func (*DominionMaintenanceVendorNetworkItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{132}
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetWorkOrderCode() string {
+	if x != nil {
+		return x.WorkOrderCode
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetIssueTriageAndSlaWindow() string {
+	if x != nil {
+		return x.IssueTriageAndSlaWindow
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetVendorCredentialsAndNormalizedBids() string {
+	if x != nil {
+		return x.VendorCredentialsAndNormalizedBids
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetThreeWayInvoiceAndWarrantyMatch() string {
+	if x != nil {
+		return x.ThreeWayInvoiceAndWarrantyMatch
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetWorkOrderState() string {
+	if x != nil {
+		return x.WorkOrderState
+	}
+	return ""
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetZeroPayToRankEnforced() bool {
+	if x != nil {
+		return x.ZeroPayToRankEnforced
+	}
+	return false
+}
+
+func (x *DominionMaintenanceVendorNetworkItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionMaintenanceVendorWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchRequest) Reset() {
+	*x = GetDominionMaintenanceVendorWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[133]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionMaintenanceVendorWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionMaintenanceVendorWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[133]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionMaintenanceVendorWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionMaintenanceVendorWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{133}
+}
+
+type GetDominionMaintenanceVendorWorkbenchResponse struct {
+	state                       protoimpl.MessageState                  `protogen:"open.v1"`
+	WorkOrders                  []*DominionMaintenanceVendorNetworkItem `protobuf:"bytes,1,rep,name=work_orders,json=workOrders,proto3" json:"work_orders,omitempty"`
+	ZeroPayToRankEnforced       bool                                    `protobuf:"varint,2,opt,name=zero_pay_to_rank_enforced,json=zeroPayToRankEnforced,proto3" json:"zero_pay_to_rank_enforced,omitempty"`
+	ThreeWayInvoiceMatchSummary string                                  `protobuf:"bytes,3,opt,name=three_way_invoice_match_summary,json=threeWayInvoiceMatchSummary,proto3" json:"three_way_invoice_match_summary,omitempty"`
+	unknownFields               protoimpl.UnknownFields
+	sizeCache                   protoimpl.SizeCache
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) Reset() {
+	*x = GetDominionMaintenanceVendorWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[134]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionMaintenanceVendorWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[134]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionMaintenanceVendorWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionMaintenanceVendorWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{134}
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) GetWorkOrders() []*DominionMaintenanceVendorNetworkItem {
+	if x != nil {
+		return x.WorkOrders
+	}
+	return nil
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) GetZeroPayToRankEnforced() bool {
+	if x != nil {
+		return x.ZeroPayToRankEnforced
+	}
+	return false
+}
+
+func (x *GetDominionMaintenanceVendorWorkbenchResponse) GetThreeWayInvoiceMatchSummary() string {
+	if x != nil {
+		return x.ThreeWayInvoiceMatchSummary
+	}
+	return ""
+}
+
+type SaveDominionMaintenanceWorkOrderRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	WorkOrderCode                      string                 `protobuf:"bytes,1,opt,name=work_order_code,json=workOrderCode,proto3" json:"work_order_code,omitempty"`
+	IssueTriageAndSlaWindow            string                 `protobuf:"bytes,2,opt,name=issue_triage_and_sla_window,json=issueTriageAndSlaWindow,proto3" json:"issue_triage_and_sla_window,omitempty"`
+	VendorCredentialsAndNormalizedBids string                 `protobuf:"bytes,3,opt,name=vendor_credentials_and_normalized_bids,json=vendorCredentialsAndNormalizedBids,proto3" json:"vendor_credentials_and_normalized_bids,omitempty"`
+	ThreeWayInvoiceAndWarrantyMatch    string                 `protobuf:"bytes,4,opt,name=three_way_invoice_and_warranty_match,json=threeWayInvoiceAndWarrantyMatch,proto3" json:"three_way_invoice_and_warranty_match,omitempty"`
+	WorkOrderState                     string                 `protobuf:"bytes,5,opt,name=work_order_state,json=workOrderState,proto3" json:"work_order_state,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) Reset() {
+	*x = SaveDominionMaintenanceWorkOrderRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[135]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionMaintenanceWorkOrderRequest) ProtoMessage() {}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[135]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionMaintenanceWorkOrderRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionMaintenanceWorkOrderRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{135}
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) GetWorkOrderCode() string {
+	if x != nil {
+		return x.WorkOrderCode
+	}
+	return ""
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) GetIssueTriageAndSlaWindow() string {
+	if x != nil {
+		return x.IssueTriageAndSlaWindow
+	}
+	return ""
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) GetVendorCredentialsAndNormalizedBids() string {
+	if x != nil {
+		return x.VendorCredentialsAndNormalizedBids
+	}
+	return ""
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) GetThreeWayInvoiceAndWarrantyMatch() string {
+	if x != nil {
+		return x.ThreeWayInvoiceAndWarrantyMatch
+	}
+	return ""
+}
+
+func (x *SaveDominionMaintenanceWorkOrderRequest) GetWorkOrderState() string {
+	if x != nil {
+		return x.WorkOrderState
+	}
+	return ""
+}
+
+type SaveDominionMaintenanceWorkOrderResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	WorkOrder     *DominionMaintenanceVendorNetworkItem `protobuf:"bytes,1,opt,name=work_order,json=workOrder,proto3" json:"work_order,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionMaintenanceWorkOrderResponse) Reset() {
+	*x = SaveDominionMaintenanceWorkOrderResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[136]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionMaintenanceWorkOrderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionMaintenanceWorkOrderResponse) ProtoMessage() {}
+
+func (x *SaveDominionMaintenanceWorkOrderResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[136]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionMaintenanceWorkOrderResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionMaintenanceWorkOrderResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{136}
+}
+
+func (x *SaveDominionMaintenanceWorkOrderResponse) GetWorkOrder() *DominionMaintenanceVendorNetworkItem {
+	if x != nil {
+		return x.WorkOrder
+	}
+	return nil
+}
+
+type VerifyDominionThreeWayMatchOrWarrantyRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	WorkOrderCode                   string                 `protobuf:"bytes,1,opt,name=work_order_code,json=workOrderCode,proto3" json:"work_order_code,omitempty"`
+	ThreeWayInvoiceAndWarrantyMatch string                 `protobuf:"bytes,2,opt,name=three_way_invoice_and_warranty_match,json=threeWayInvoiceAndWarrantyMatch,proto3" json:"three_way_invoice_and_warranty_match,omitempty"`
+	WorkOrderState                  string                 `protobuf:"bytes,3,opt,name=work_order_state,json=workOrderState,proto3" json:"work_order_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) Reset() {
+	*x = VerifyDominionThreeWayMatchOrWarrantyRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[137]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDominionThreeWayMatchOrWarrantyRequest) ProtoMessage() {}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[137]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDominionThreeWayMatchOrWarrantyRequest.ProtoReflect.Descriptor instead.
+func (*VerifyDominionThreeWayMatchOrWarrantyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{137}
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) GetWorkOrderCode() string {
+	if x != nil {
+		return x.WorkOrderCode
+	}
+	return ""
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) GetThreeWayInvoiceAndWarrantyMatch() string {
+	if x != nil {
+		return x.ThreeWayInvoiceAndWarrantyMatch
+	}
+	return ""
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyRequest) GetWorkOrderState() string {
+	if x != nil {
+		return x.WorkOrderState
+	}
+	return ""
+}
+
+type VerifyDominionThreeWayMatchOrWarrantyResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	WorkOrder     *DominionMaintenanceVendorNetworkItem `protobuf:"bytes,1,opt,name=work_order,json=workOrder,proto3" json:"work_order,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyResponse) Reset() {
+	*x = VerifyDominionThreeWayMatchOrWarrantyResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[138]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDominionThreeWayMatchOrWarrantyResponse) ProtoMessage() {}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[138]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDominionThreeWayMatchOrWarrantyResponse.ProtoReflect.Descriptor instead.
+func (*VerifyDominionThreeWayMatchOrWarrantyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{138}
+}
+
+func (x *VerifyDominionThreeWayMatchOrWarrantyResponse) GetWorkOrder() *DominionMaintenanceVendorNetworkItem {
+	if x != nil {
+		return x.WorkOrder
+	}
+	return nil
+}
+
+// Choice 7 (D9): Capital Projects, Renovations, and Development Control
+type DominionCapitalProjectControlItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ProjectCode                        string                 `protobuf:"bytes,3,opt,name=project_code,json=projectCode,proto3" json:"project_code,omitempty"`
+	ScopePermitsAndBaselineBudget      string                 `protobuf:"bytes,4,opt,name=scope_permits_and_baseline_budget,json=scopePermitsAndBaselineBudget,proto3" json:"scope_permits_and_baseline_budget,omitempty"`
+	ChangeOrderDrawAndLienWaiver       string                 `protobuf:"bytes,5,opt,name=change_order_draw_and_lien_waiver,json=changeOrderDrawAndLienWaiver,proto3" json:"change_order_draw_and_lien_waiver,omitempty"`
+	OfflineFieldInspectionAndPunchlist string                 `protobuf:"bytes,6,opt,name=offline_field_inspection_and_punchlist,json=offlineFieldInspectionAndPunchlist,proto3" json:"offline_field_inspection_and_punchlist,omitempty"`
+	ProjectState                       string                 `protobuf:"bytes,7,opt,name=project_state,json=projectState,proto3" json:"project_state,omitempty"`
+	HumanVerifiedChangeOrdersEnforced  bool                   `protobuf:"varint,8,opt,name=human_verified_change_orders_enforced,json=humanVerifiedChangeOrdersEnforced,proto3" json:"human_verified_change_orders_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *DominionCapitalProjectControlItem) Reset() {
+	*x = DominionCapitalProjectControlItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[139]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionCapitalProjectControlItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionCapitalProjectControlItem) ProtoMessage() {}
+
+func (x *DominionCapitalProjectControlItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[139]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionCapitalProjectControlItem.ProtoReflect.Descriptor instead.
+func (*DominionCapitalProjectControlItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{139}
+}
+
+func (x *DominionCapitalProjectControlItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetProjectCode() string {
+	if x != nil {
+		return x.ProjectCode
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetScopePermitsAndBaselineBudget() string {
+	if x != nil {
+		return x.ScopePermitsAndBaselineBudget
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetChangeOrderDrawAndLienWaiver() string {
+	if x != nil {
+		return x.ChangeOrderDrawAndLienWaiver
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetOfflineFieldInspectionAndPunchlist() string {
+	if x != nil {
+		return x.OfflineFieldInspectionAndPunchlist
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetProjectState() string {
+	if x != nil {
+		return x.ProjectState
+	}
+	return ""
+}
+
+func (x *DominionCapitalProjectControlItem) GetHumanVerifiedChangeOrdersEnforced() bool {
+	if x != nil {
+		return x.HumanVerifiedChangeOrdersEnforced
+	}
+	return false
+}
+
+func (x *DominionCapitalProjectControlItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionCapitalProjectWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionCapitalProjectWorkbenchRequest) Reset() {
+	*x = GetDominionCapitalProjectWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[140]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionCapitalProjectWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionCapitalProjectWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionCapitalProjectWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[140]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionCapitalProjectWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionCapitalProjectWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{140}
+}
+
+type GetDominionCapitalProjectWorkbenchResponse struct {
+	state                             protoimpl.MessageState               `protogen:"open.v1"`
+	Projects                          []*DominionCapitalProjectControlItem `protobuf:"bytes,1,rep,name=projects,proto3" json:"projects,omitempty"`
+	HumanVerifiedChangeOrdersEnforced bool                                 `protobuf:"varint,2,opt,name=human_verified_change_orders_enforced,json=humanVerifiedChangeOrdersEnforced,proto3" json:"human_verified_change_orders_enforced,omitempty"`
+	RetainageAndLienWaiverSummary     string                               `protobuf:"bytes,3,opt,name=retainage_and_lien_waiver_summary,json=retainageAndLienWaiverSummary,proto3" json:"retainage_and_lien_waiver_summary,omitempty"`
+	unknownFields                     protoimpl.UnknownFields
+	sizeCache                         protoimpl.SizeCache
+}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) Reset() {
+	*x = GetDominionCapitalProjectWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[141]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionCapitalProjectWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[141]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionCapitalProjectWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionCapitalProjectWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{141}
+}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) GetProjects() []*DominionCapitalProjectControlItem {
+	if x != nil {
+		return x.Projects
+	}
+	return nil
+}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) GetHumanVerifiedChangeOrdersEnforced() bool {
+	if x != nil {
+		return x.HumanVerifiedChangeOrdersEnforced
+	}
+	return false
+}
+
+func (x *GetDominionCapitalProjectWorkbenchResponse) GetRetainageAndLienWaiverSummary() string {
+	if x != nil {
+		return x.RetainageAndLienWaiverSummary
+	}
+	return ""
+}
+
+type SaveDominionCapitalProjectControlRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	ProjectCode                        string                 `protobuf:"bytes,1,opt,name=project_code,json=projectCode,proto3" json:"project_code,omitempty"`
+	ScopePermitsAndBaselineBudget      string                 `protobuf:"bytes,2,opt,name=scope_permits_and_baseline_budget,json=scopePermitsAndBaselineBudget,proto3" json:"scope_permits_and_baseline_budget,omitempty"`
+	ChangeOrderDrawAndLienWaiver       string                 `protobuf:"bytes,3,opt,name=change_order_draw_and_lien_waiver,json=changeOrderDrawAndLienWaiver,proto3" json:"change_order_draw_and_lien_waiver,omitempty"`
+	OfflineFieldInspectionAndPunchlist string                 `protobuf:"bytes,4,opt,name=offline_field_inspection_and_punchlist,json=offlineFieldInspectionAndPunchlist,proto3" json:"offline_field_inspection_and_punchlist,omitempty"`
+	ProjectState                       string                 `protobuf:"bytes,5,opt,name=project_state,json=projectState,proto3" json:"project_state,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) Reset() {
+	*x = SaveDominionCapitalProjectControlRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[142]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionCapitalProjectControlRequest) ProtoMessage() {}
+
+func (x *SaveDominionCapitalProjectControlRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[142]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionCapitalProjectControlRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionCapitalProjectControlRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{142}
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) GetProjectCode() string {
+	if x != nil {
+		return x.ProjectCode
+	}
+	return ""
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) GetScopePermitsAndBaselineBudget() string {
+	if x != nil {
+		return x.ScopePermitsAndBaselineBudget
+	}
+	return ""
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) GetChangeOrderDrawAndLienWaiver() string {
+	if x != nil {
+		return x.ChangeOrderDrawAndLienWaiver
+	}
+	return ""
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) GetOfflineFieldInspectionAndPunchlist() string {
+	if x != nil {
+		return x.OfflineFieldInspectionAndPunchlist
+	}
+	return ""
+}
+
+func (x *SaveDominionCapitalProjectControlRequest) GetProjectState() string {
+	if x != nil {
+		return x.ProjectState
+	}
+	return ""
+}
+
+type SaveDominionCapitalProjectControlResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Project       *DominionCapitalProjectControlItem `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionCapitalProjectControlResponse) Reset() {
+	*x = SaveDominionCapitalProjectControlResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[143]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionCapitalProjectControlResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionCapitalProjectControlResponse) ProtoMessage() {}
+
+func (x *SaveDominionCapitalProjectControlResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[143]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionCapitalProjectControlResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionCapitalProjectControlResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{143}
+}
+
+func (x *SaveDominionCapitalProjectControlResponse) GetProject() *DominionCapitalProjectControlItem {
+	if x != nil {
+		return x.Project
+	}
+	return nil
+}
+
+type ApproveDominionDrawOrPunchlistCloseoutRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	ProjectCode                  string                 `protobuf:"bytes,1,opt,name=project_code,json=projectCode,proto3" json:"project_code,omitempty"`
+	ChangeOrderDrawAndLienWaiver string                 `protobuf:"bytes,2,opt,name=change_order_draw_and_lien_waiver,json=changeOrderDrawAndLienWaiver,proto3" json:"change_order_draw_and_lien_waiver,omitempty"`
+	ProjectState                 string                 `protobuf:"bytes,3,opt,name=project_state,json=projectState,proto3" json:"project_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) Reset() {
+	*x = ApproveDominionDrawOrPunchlistCloseoutRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[144]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveDominionDrawOrPunchlistCloseoutRequest) ProtoMessage() {}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[144]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveDominionDrawOrPunchlistCloseoutRequest.ProtoReflect.Descriptor instead.
+func (*ApproveDominionDrawOrPunchlistCloseoutRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{144}
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) GetProjectCode() string {
+	if x != nil {
+		return x.ProjectCode
+	}
+	return ""
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) GetChangeOrderDrawAndLienWaiver() string {
+	if x != nil {
+		return x.ChangeOrderDrawAndLienWaiver
+	}
+	return ""
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutRequest) GetProjectState() string {
+	if x != nil {
+		return x.ProjectState
+	}
+	return ""
+}
+
+type ApproveDominionDrawOrPunchlistCloseoutResponse struct {
+	state         protoimpl.MessageState             `protogen:"open.v1"`
+	Project       *DominionCapitalProjectControlItem `protobuf:"bytes,1,opt,name=project,proto3" json:"project,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutResponse) Reset() {
+	*x = ApproveDominionDrawOrPunchlistCloseoutResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[145]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveDominionDrawOrPunchlistCloseoutResponse) ProtoMessage() {}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[145]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveDominionDrawOrPunchlistCloseoutResponse.ProtoReflect.Descriptor instead.
+func (*ApproveDominionDrawOrPunchlistCloseoutResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{145}
+}
+
+func (x *ApproveDominionDrawOrPunchlistCloseoutResponse) GetProject() *DominionCapitalProjectControlItem {
+	if x != nil {
+		return x.Project
+	}
+	return nil
+}
+
+// Choice 8 (D6): Market Intelligence, Comps, and Valuation Governance
+type DominionMarketValuationGovernanceItem struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	Id                               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                           string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ValuationCode                    string                 `protobuf:"bytes,3,opt,name=valuation_code,json=valuationCode,proto3" json:"valuation_code,omitempty"`
+	EditableCompSetAndAdjustments    string                 `protobuf:"bytes,4,opt,name=editable_comp_set_and_adjustments,json=editableCompSetAndAdjustments,proto3" json:"editable_comp_set_and_adjustments,omitempty"`
+	AvmRangeVsAppraisalEvidence      string                 `protobuf:"bytes,5,opt,name=avm_range_vs_appraisal_evidence,json=avmRangeVsAppraisalEvidence,proto3" json:"avm_range_vs_appraisal_evidence,omitempty"`
+	ProviderFreshnessAndDisagreement string                 `protobuf:"bytes,6,opt,name=provider_freshness_and_disagreement,json=providerFreshnessAndDisagreement,proto3" json:"provider_freshness_and_disagreement,omitempty"`
+	ValuationState                   string                 `protobuf:"bytes,7,opt,name=valuation_state,json=valuationState,proto3" json:"valuation_state,omitempty"`
+	AvmDistinctFromAppraisalEnforced bool                   `protobuf:"varint,8,opt,name=avm_distinct_from_appraisal_enforced,json=avmDistinctFromAppraisalEnforced,proto3" json:"avm_distinct_from_appraisal_enforced,omitempty"`
+	UpdatedAtIso                     string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *DominionMarketValuationGovernanceItem) Reset() {
+	*x = DominionMarketValuationGovernanceItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[146]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionMarketValuationGovernanceItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionMarketValuationGovernanceItem) ProtoMessage() {}
+
+func (x *DominionMarketValuationGovernanceItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[146]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionMarketValuationGovernanceItem.ProtoReflect.Descriptor instead.
+func (*DominionMarketValuationGovernanceItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{146}
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetValuationCode() string {
+	if x != nil {
+		return x.ValuationCode
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetEditableCompSetAndAdjustments() string {
+	if x != nil {
+		return x.EditableCompSetAndAdjustments
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetAvmRangeVsAppraisalEvidence() string {
+	if x != nil {
+		return x.AvmRangeVsAppraisalEvidence
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetProviderFreshnessAndDisagreement() string {
+	if x != nil {
+		return x.ProviderFreshnessAndDisagreement
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetValuationState() string {
+	if x != nil {
+		return x.ValuationState
+	}
+	return ""
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetAvmDistinctFromAppraisalEnforced() bool {
+	if x != nil {
+		return x.AvmDistinctFromAppraisalEnforced
+	}
+	return false
+}
+
+func (x *DominionMarketValuationGovernanceItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionMarketValuationWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionMarketValuationWorkbenchRequest) Reset() {
+	*x = GetDominionMarketValuationWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[147]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionMarketValuationWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionMarketValuationWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionMarketValuationWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[147]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionMarketValuationWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionMarketValuationWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{147}
+}
+
+type GetDominionMarketValuationWorkbenchResponse struct {
+	state                              protoimpl.MessageState                   `protogen:"open.v1"`
+	Valuations                         []*DominionMarketValuationGovernanceItem `protobuf:"bytes,1,rep,name=valuations,proto3" json:"valuations,omitempty"`
+	AvmDistinctFromAppraisalEnforced   bool                                     `protobuf:"varint,2,opt,name=avm_distinct_from_appraisal_enforced,json=avmDistinctFromAppraisalEnforced,proto3" json:"avm_distinct_from_appraisal_enforced,omitempty"`
+	RangeAndFreshnessGovernanceSummary string                                   `protobuf:"bytes,3,opt,name=range_and_freshness_governance_summary,json=rangeAndFreshnessGovernanceSummary,proto3" json:"range_and_freshness_governance_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) Reset() {
+	*x = GetDominionMarketValuationWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[148]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionMarketValuationWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[148]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionMarketValuationWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionMarketValuationWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{148}
+}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) GetValuations() []*DominionMarketValuationGovernanceItem {
+	if x != nil {
+		return x.Valuations
+	}
+	return nil
+}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) GetAvmDistinctFromAppraisalEnforced() bool {
+	if x != nil {
+		return x.AvmDistinctFromAppraisalEnforced
+	}
+	return false
+}
+
+func (x *GetDominionMarketValuationWorkbenchResponse) GetRangeAndFreshnessGovernanceSummary() string {
+	if x != nil {
+		return x.RangeAndFreshnessGovernanceSummary
+	}
+	return ""
+}
+
+type SaveDominionMarketValuationGovernanceRequest struct {
+	state                            protoimpl.MessageState `protogen:"open.v1"`
+	ValuationCode                    string                 `protobuf:"bytes,1,opt,name=valuation_code,json=valuationCode,proto3" json:"valuation_code,omitempty"`
+	EditableCompSetAndAdjustments    string                 `protobuf:"bytes,2,opt,name=editable_comp_set_and_adjustments,json=editableCompSetAndAdjustments,proto3" json:"editable_comp_set_and_adjustments,omitempty"`
+	AvmRangeVsAppraisalEvidence      string                 `protobuf:"bytes,3,opt,name=avm_range_vs_appraisal_evidence,json=avmRangeVsAppraisalEvidence,proto3" json:"avm_range_vs_appraisal_evidence,omitempty"`
+	ProviderFreshnessAndDisagreement string                 `protobuf:"bytes,4,opt,name=provider_freshness_and_disagreement,json=providerFreshnessAndDisagreement,proto3" json:"provider_freshness_and_disagreement,omitempty"`
+	ValuationState                   string                 `protobuf:"bytes,5,opt,name=valuation_state,json=valuationState,proto3" json:"valuation_state,omitempty"`
+	unknownFields                    protoimpl.UnknownFields
+	sizeCache                        protoimpl.SizeCache
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) Reset() {
+	*x = SaveDominionMarketValuationGovernanceRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[149]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionMarketValuationGovernanceRequest) ProtoMessage() {}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[149]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionMarketValuationGovernanceRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionMarketValuationGovernanceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{149}
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) GetValuationCode() string {
+	if x != nil {
+		return x.ValuationCode
+	}
+	return ""
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) GetEditableCompSetAndAdjustments() string {
+	if x != nil {
+		return x.EditableCompSetAndAdjustments
+	}
+	return ""
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) GetAvmRangeVsAppraisalEvidence() string {
+	if x != nil {
+		return x.AvmRangeVsAppraisalEvidence
+	}
+	return ""
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) GetProviderFreshnessAndDisagreement() string {
+	if x != nil {
+		return x.ProviderFreshnessAndDisagreement
+	}
+	return ""
+}
+
+func (x *SaveDominionMarketValuationGovernanceRequest) GetValuationState() string {
+	if x != nil {
+		return x.ValuationState
+	}
+	return ""
+}
+
+type SaveDominionMarketValuationGovernanceResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Valuation     *DominionMarketValuationGovernanceItem `protobuf:"bytes,1,opt,name=valuation,proto3" json:"valuation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionMarketValuationGovernanceResponse) Reset() {
+	*x = SaveDominionMarketValuationGovernanceResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[150]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionMarketValuationGovernanceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionMarketValuationGovernanceResponse) ProtoMessage() {}
+
+func (x *SaveDominionMarketValuationGovernanceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[150]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionMarketValuationGovernanceResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionMarketValuationGovernanceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{150}
+}
+
+func (x *SaveDominionMarketValuationGovernanceResponse) GetValuation() *DominionMarketValuationGovernanceItem {
+	if x != nil {
+		return x.Valuation
+	}
+	return nil
+}
+
+type AdjustDominionCompSetOrDisputeValuationRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	ValuationCode                 string                 `protobuf:"bytes,1,opt,name=valuation_code,json=valuationCode,proto3" json:"valuation_code,omitempty"`
+	EditableCompSetAndAdjustments string                 `protobuf:"bytes,2,opt,name=editable_comp_set_and_adjustments,json=editableCompSetAndAdjustments,proto3" json:"editable_comp_set_and_adjustments,omitempty"`
+	ValuationState                string                 `protobuf:"bytes,3,opt,name=valuation_state,json=valuationState,proto3" json:"valuation_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) Reset() {
+	*x = AdjustDominionCompSetOrDisputeValuationRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[151]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdjustDominionCompSetOrDisputeValuationRequest) ProtoMessage() {}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[151]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdjustDominionCompSetOrDisputeValuationRequest.ProtoReflect.Descriptor instead.
+func (*AdjustDominionCompSetOrDisputeValuationRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{151}
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) GetValuationCode() string {
+	if x != nil {
+		return x.ValuationCode
+	}
+	return ""
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) GetEditableCompSetAndAdjustments() string {
+	if x != nil {
+		return x.EditableCompSetAndAdjustments
+	}
+	return ""
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationRequest) GetValuationState() string {
+	if x != nil {
+		return x.ValuationState
+	}
+	return ""
+}
+
+type AdjustDominionCompSetOrDisputeValuationResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Valuation     *DominionMarketValuationGovernanceItem `protobuf:"bytes,1,opt,name=valuation,proto3" json:"valuation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationResponse) Reset() {
+	*x = AdjustDominionCompSetOrDisputeValuationResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[152]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AdjustDominionCompSetOrDisputeValuationResponse) ProtoMessage() {}
+
+func (x *AdjustDominionCompSetOrDisputeValuationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[152]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AdjustDominionCompSetOrDisputeValuationResponse.ProtoReflect.Descriptor instead.
+func (*AdjustDominionCompSetOrDisputeValuationResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{152}
+}
+
+func (x *AdjustDominionCompSetOrDisputeValuationResponse) GetValuation() *DominionMarketValuationGovernanceItem {
+	if x != nil {
+		return x.Valuation
+	}
+	return nil
+}
+
+// Choice 9 (D7, D15): Ownership Structures, Debt/Financing, and Transaction Room
+type DominionOwnershipTransactionRoomItem struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	Id                              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                          string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	TransactionCode                 string                 `protobuf:"bytes,3,opt,name=transaction_code,json=transactionCode,proto3" json:"transaction_code,omitempty"`
+	EntityCapitalStackAndCovenants  string                 `protobuf:"bytes,4,opt,name=entity_capital_stack_and_covenants,json=entityCapitalStackAndCovenants,proto3" json:"entity_capital_stack_and_covenants,omitempty"`
+	WaterfallAndNetProceedsRange    string                 `protobuf:"bytes,5,opt,name=waterfall_and_net_proceeds_range,json=waterfallAndNetProceedsRange,proto3" json:"waterfall_and_net_proceeds_range,omitempty"`
+	ScopedDataroomAndBridgeRefs     string                 `protobuf:"bytes,6,opt,name=scoped_dataroom_and_bridge_refs,json=scopedDataroomAndBridgeRefs,proto3" json:"scoped_dataroom_and_bridge_refs,omitempty"`
+	RoomState                       string                 `protobuf:"bytes,7,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	NonBrokerEscrowBoundaryEnforced bool                   `protobuf:"varint,8,opt,name=non_broker_escrow_boundary_enforced,json=nonBrokerEscrowBoundaryEnforced,proto3" json:"non_broker_escrow_boundary_enforced,omitempty"`
+	UpdatedAtIso                    string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *DominionOwnershipTransactionRoomItem) Reset() {
+	*x = DominionOwnershipTransactionRoomItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[153]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionOwnershipTransactionRoomItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionOwnershipTransactionRoomItem) ProtoMessage() {}
+
+func (x *DominionOwnershipTransactionRoomItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[153]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionOwnershipTransactionRoomItem.ProtoReflect.Descriptor instead.
+func (*DominionOwnershipTransactionRoomItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{153}
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetTransactionCode() string {
+	if x != nil {
+		return x.TransactionCode
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetEntityCapitalStackAndCovenants() string {
+	if x != nil {
+		return x.EntityCapitalStackAndCovenants
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetWaterfallAndNetProceedsRange() string {
+	if x != nil {
+		return x.WaterfallAndNetProceedsRange
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetScopedDataroomAndBridgeRefs() string {
+	if x != nil {
+		return x.ScopedDataroomAndBridgeRefs
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetNonBrokerEscrowBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonBrokerEscrowBoundaryEnforced
+	}
+	return false
+}
+
+func (x *DominionOwnershipTransactionRoomItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionOwnershipTransactionWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchRequest) Reset() {
+	*x = GetDominionOwnershipTransactionWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[154]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionOwnershipTransactionWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionOwnershipTransactionWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[154]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionOwnershipTransactionWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionOwnershipTransactionWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{154}
+}
+
+type GetDominionOwnershipTransactionWorkbenchResponse struct {
+	state                                 protoimpl.MessageState                  `protogen:"open.v1"`
+	Rooms                                 []*DominionOwnershipTransactionRoomItem `protobuf:"bytes,1,rep,name=rooms,proto3" json:"rooms,omitempty"`
+	NonBrokerEscrowBoundaryEnforced       bool                                    `protobuf:"varint,2,opt,name=non_broker_escrow_boundary_enforced,json=nonBrokerEscrowBoundaryEnforced,proto3" json:"non_broker_escrow_boundary_enforced,omitempty"`
+	CovenantAndWatermarkedDataroomSummary string                                  `protobuf:"bytes,3,opt,name=covenant_and_watermarked_dataroom_summary,json=covenantAndWatermarkedDataroomSummary,proto3" json:"covenant_and_watermarked_dataroom_summary,omitempty"`
+	unknownFields                         protoimpl.UnknownFields
+	sizeCache                             protoimpl.SizeCache
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) Reset() {
+	*x = GetDominionOwnershipTransactionWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[155]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionOwnershipTransactionWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[155]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionOwnershipTransactionWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionOwnershipTransactionWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{155}
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) GetRooms() []*DominionOwnershipTransactionRoomItem {
+	if x != nil {
+		return x.Rooms
+	}
+	return nil
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) GetNonBrokerEscrowBoundaryEnforced() bool {
+	if x != nil {
+		return x.NonBrokerEscrowBoundaryEnforced
+	}
+	return false
+}
+
+func (x *GetDominionOwnershipTransactionWorkbenchResponse) GetCovenantAndWatermarkedDataroomSummary() string {
+	if x != nil {
+		return x.CovenantAndWatermarkedDataroomSummary
+	}
+	return ""
+}
+
+type SaveDominionOwnershipTransactionRoomRequest struct {
+	state                          protoimpl.MessageState `protogen:"open.v1"`
+	TransactionCode                string                 `protobuf:"bytes,1,opt,name=transaction_code,json=transactionCode,proto3" json:"transaction_code,omitempty"`
+	EntityCapitalStackAndCovenants string                 `protobuf:"bytes,2,opt,name=entity_capital_stack_and_covenants,json=entityCapitalStackAndCovenants,proto3" json:"entity_capital_stack_and_covenants,omitempty"`
+	WaterfallAndNetProceedsRange   string                 `protobuf:"bytes,3,opt,name=waterfall_and_net_proceeds_range,json=waterfallAndNetProceedsRange,proto3" json:"waterfall_and_net_proceeds_range,omitempty"`
+	ScopedDataroomAndBridgeRefs    string                 `protobuf:"bytes,4,opt,name=scoped_dataroom_and_bridge_refs,json=scopedDataroomAndBridgeRefs,proto3" json:"scoped_dataroom_and_bridge_refs,omitempty"`
+	RoomState                      string                 `protobuf:"bytes,5,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                  protoimpl.UnknownFields
+	sizeCache                      protoimpl.SizeCache
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) Reset() {
+	*x = SaveDominionOwnershipTransactionRoomRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[156]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionOwnershipTransactionRoomRequest) ProtoMessage() {}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[156]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionOwnershipTransactionRoomRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionOwnershipTransactionRoomRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{156}
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) GetTransactionCode() string {
+	if x != nil {
+		return x.TransactionCode
+	}
+	return ""
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) GetEntityCapitalStackAndCovenants() string {
+	if x != nil {
+		return x.EntityCapitalStackAndCovenants
+	}
+	return ""
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) GetWaterfallAndNetProceedsRange() string {
+	if x != nil {
+		return x.WaterfallAndNetProceedsRange
+	}
+	return ""
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) GetScopedDataroomAndBridgeRefs() string {
+	if x != nil {
+		return x.ScopedDataroomAndBridgeRefs
+	}
+	return ""
+}
+
+func (x *SaveDominionOwnershipTransactionRoomRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type SaveDominionOwnershipTransactionRoomResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Room          *DominionOwnershipTransactionRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionOwnershipTransactionRoomResponse) Reset() {
+	*x = SaveDominionOwnershipTransactionRoomResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[157]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionOwnershipTransactionRoomResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionOwnershipTransactionRoomResponse) ProtoMessage() {}
+
+func (x *SaveDominionOwnershipTransactionRoomResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[157]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionOwnershipTransactionRoomResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionOwnershipTransactionRoomResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{157}
+}
+
+func (x *SaveDominionOwnershipTransactionRoomResponse) GetRoom() *DominionOwnershipTransactionRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+type StageDominionRefinanceOrDataroomAccessRequest struct {
+	state                        protoimpl.MessageState `protogen:"open.v1"`
+	TransactionCode              string                 `protobuf:"bytes,1,opt,name=transaction_code,json=transactionCode,proto3" json:"transaction_code,omitempty"`
+	WaterfallAndNetProceedsRange string                 `protobuf:"bytes,2,opt,name=waterfall_and_net_proceeds_range,json=waterfallAndNetProceedsRange,proto3" json:"waterfall_and_net_proceeds_range,omitempty"`
+	RoomState                    string                 `protobuf:"bytes,3,opt,name=room_state,json=roomState,proto3" json:"room_state,omitempty"`
+	unknownFields                protoimpl.UnknownFields
+	sizeCache                    protoimpl.SizeCache
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) Reset() {
+	*x = StageDominionRefinanceOrDataroomAccessRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[158]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageDominionRefinanceOrDataroomAccessRequest) ProtoMessage() {}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[158]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageDominionRefinanceOrDataroomAccessRequest.ProtoReflect.Descriptor instead.
+func (*StageDominionRefinanceOrDataroomAccessRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{158}
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) GetTransactionCode() string {
+	if x != nil {
+		return x.TransactionCode
+	}
+	return ""
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) GetWaterfallAndNetProceedsRange() string {
+	if x != nil {
+		return x.WaterfallAndNetProceedsRange
+	}
+	return ""
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessRequest) GetRoomState() string {
+	if x != nil {
+		return x.RoomState
+	}
+	return ""
+}
+
+type StageDominionRefinanceOrDataroomAccessResponse struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Room          *DominionOwnershipTransactionRoomItem `protobuf:"bytes,1,opt,name=room,proto3" json:"room,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessResponse) Reset() {
+	*x = StageDominionRefinanceOrDataroomAccessResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[159]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageDominionRefinanceOrDataroomAccessResponse) ProtoMessage() {}
+
+func (x *StageDominionRefinanceOrDataroomAccessResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[159]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageDominionRefinanceOrDataroomAccessResponse.ProtoReflect.Descriptor instead.
+func (*StageDominionRefinanceOrDataroomAccessResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{159}
+}
+
+func (x *StageDominionRefinanceOrDataroomAccessResponse) GetRoom() *DominionOwnershipTransactionRoomItem {
+	if x != nil {
+		return x.Room
+	}
+	return nil
+}
+
+// Choice 10 (D8, D10): Insurance, Risk, Resilience, and Portfolio Stress Testing
+type DominionInsuranceResilienceCenterItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	ResilienceCode                     string                 `protobuf:"bytes,3,opt,name=resilience_code,json=resilienceCode,proto3" json:"resilience_code,omitempty"`
+	PolicyLimitsDeductiblesAndGaps     string                 `protobuf:"bytes,4,opt,name=policy_limits_deductibles_and_gaps,json=policyLimitsDeductiblesAndGaps,proto3" json:"policy_limits_deductibles_and_gaps,omitempty"`
+	PerilRateAndVacancyStressBundle    string                 `protobuf:"bytes,5,opt,name=peril_rate_and_vacancy_stress_bundle,json=perilRateAndVacancyStressBundle,proto3" json:"peril_rate_and_vacancy_stress_bundle,omitempty"`
+	IncidentCustodyAndClaimRecovery    string                 `protobuf:"bytes,6,opt,name=incident_custody_and_claim_recovery,json=incidentCustodyAndClaimRecovery,proto3" json:"incident_custody_and_claim_recovery,omitempty"`
+	ResilienceState                    string                 `protobuf:"bytes,7,opt,name=resilience_state,json=resilienceState,proto3" json:"resilience_state,omitempty"`
+	NonLegalCoverageDisclaimerEnforced bool                   `protobuf:"varint,8,opt,name=non_legal_coverage_disclaimer_enforced,json=nonLegalCoverageDisclaimerEnforced,proto3" json:"non_legal_coverage_disclaimer_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *DominionInsuranceResilienceCenterItem) Reset() {
+	*x = DominionInsuranceResilienceCenterItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[160]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionInsuranceResilienceCenterItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionInsuranceResilienceCenterItem) ProtoMessage() {}
+
+func (x *DominionInsuranceResilienceCenterItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[160]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionInsuranceResilienceCenterItem.ProtoReflect.Descriptor instead.
+func (*DominionInsuranceResilienceCenterItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{160}
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetResilienceCode() string {
+	if x != nil {
+		return x.ResilienceCode
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetPolicyLimitsDeductiblesAndGaps() string {
+	if x != nil {
+		return x.PolicyLimitsDeductiblesAndGaps
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetPerilRateAndVacancyStressBundle() string {
+	if x != nil {
+		return x.PerilRateAndVacancyStressBundle
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetIncidentCustodyAndClaimRecovery() string {
+	if x != nil {
+		return x.IncidentCustodyAndClaimRecovery
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetResilienceState() string {
+	if x != nil {
+		return x.ResilienceState
+	}
+	return ""
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetNonLegalCoverageDisclaimerEnforced() bool {
+	if x != nil {
+		return x.NonLegalCoverageDisclaimerEnforced
+	}
+	return false
+}
+
+func (x *DominionInsuranceResilienceCenterItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionInsuranceResilienceWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchRequest) Reset() {
+	*x = GetDominionInsuranceResilienceWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[161]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionInsuranceResilienceWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionInsuranceResilienceWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[161]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionInsuranceResilienceWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionInsuranceResilienceWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{161}
+}
+
+type GetDominionInsuranceResilienceWorkbenchResponse struct {
+	state                              protoimpl.MessageState                   `protogen:"open.v1"`
+	Centers                            []*DominionInsuranceResilienceCenterItem `protobuf:"bytes,1,rep,name=centers,proto3" json:"centers,omitempty"`
+	NonLegalCoverageDisclaimerEnforced bool                                     `protobuf:"varint,2,opt,name=non_legal_coverage_disclaimer_enforced,json=nonLegalCoverageDisclaimerEnforced,proto3" json:"non_legal_coverage_disclaimer_enforced,omitempty"`
+	StressBundleAndCustodySummary      string                                   `protobuf:"bytes,3,opt,name=stress_bundle_and_custody_summary,json=stressBundleAndCustodySummary,proto3" json:"stress_bundle_and_custody_summary,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) Reset() {
+	*x = GetDominionInsuranceResilienceWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[162]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionInsuranceResilienceWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[162]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionInsuranceResilienceWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionInsuranceResilienceWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{162}
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) GetCenters() []*DominionInsuranceResilienceCenterItem {
+	if x != nil {
+		return x.Centers
+	}
+	return nil
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) GetNonLegalCoverageDisclaimerEnforced() bool {
+	if x != nil {
+		return x.NonLegalCoverageDisclaimerEnforced
+	}
+	return false
+}
+
+func (x *GetDominionInsuranceResilienceWorkbenchResponse) GetStressBundleAndCustodySummary() string {
+	if x != nil {
+		return x.StressBundleAndCustodySummary
+	}
+	return ""
+}
+
+type SaveDominionInsuranceResilienceCenterRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ResilienceCode                  string                 `protobuf:"bytes,1,opt,name=resilience_code,json=resilienceCode,proto3" json:"resilience_code,omitempty"`
+	PolicyLimitsDeductiblesAndGaps  string                 `protobuf:"bytes,2,opt,name=policy_limits_deductibles_and_gaps,json=policyLimitsDeductiblesAndGaps,proto3" json:"policy_limits_deductibles_and_gaps,omitempty"`
+	PerilRateAndVacancyStressBundle string                 `protobuf:"bytes,3,opt,name=peril_rate_and_vacancy_stress_bundle,json=perilRateAndVacancyStressBundle,proto3" json:"peril_rate_and_vacancy_stress_bundle,omitempty"`
+	IncidentCustodyAndClaimRecovery string                 `protobuf:"bytes,4,opt,name=incident_custody_and_claim_recovery,json=incidentCustodyAndClaimRecovery,proto3" json:"incident_custody_and_claim_recovery,omitempty"`
+	ResilienceState                 string                 `protobuf:"bytes,5,opt,name=resilience_state,json=resilienceState,proto3" json:"resilience_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) Reset() {
+	*x = SaveDominionInsuranceResilienceCenterRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[163]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionInsuranceResilienceCenterRequest) ProtoMessage() {}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[163]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionInsuranceResilienceCenterRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionInsuranceResilienceCenterRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{163}
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) GetResilienceCode() string {
+	if x != nil {
+		return x.ResilienceCode
+	}
+	return ""
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) GetPolicyLimitsDeductiblesAndGaps() string {
+	if x != nil {
+		return x.PolicyLimitsDeductiblesAndGaps
+	}
+	return ""
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) GetPerilRateAndVacancyStressBundle() string {
+	if x != nil {
+		return x.PerilRateAndVacancyStressBundle
+	}
+	return ""
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) GetIncidentCustodyAndClaimRecovery() string {
+	if x != nil {
+		return x.IncidentCustodyAndClaimRecovery
+	}
+	return ""
+}
+
+func (x *SaveDominionInsuranceResilienceCenterRequest) GetResilienceState() string {
+	if x != nil {
+		return x.ResilienceState
+	}
+	return ""
+}
+
+type SaveDominionInsuranceResilienceCenterResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Center        *DominionInsuranceResilienceCenterItem `protobuf:"bytes,1,opt,name=center,proto3" json:"center,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionInsuranceResilienceCenterResponse) Reset() {
+	*x = SaveDominionInsuranceResilienceCenterResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[164]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionInsuranceResilienceCenterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionInsuranceResilienceCenterResponse) ProtoMessage() {}
+
+func (x *SaveDominionInsuranceResilienceCenterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[164]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionInsuranceResilienceCenterResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionInsuranceResilienceCenterResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{164}
+}
+
+func (x *SaveDominionInsuranceResilienceCenterResponse) GetCenter() *DominionInsuranceResilienceCenterItem {
+	if x != nil {
+		return x.Center
+	}
+	return nil
+}
+
+type StageDominionClaimPackOrStressReviewRequest struct {
+	state                           protoimpl.MessageState `protogen:"open.v1"`
+	ResilienceCode                  string                 `protobuf:"bytes,1,opt,name=resilience_code,json=resilienceCode,proto3" json:"resilience_code,omitempty"`
+	IncidentCustodyAndClaimRecovery string                 `protobuf:"bytes,2,opt,name=incident_custody_and_claim_recovery,json=incidentCustodyAndClaimRecovery,proto3" json:"incident_custody_and_claim_recovery,omitempty"`
+	ResilienceState                 string                 `protobuf:"bytes,3,opt,name=resilience_state,json=resilienceState,proto3" json:"resilience_state,omitempty"`
+	unknownFields                   protoimpl.UnknownFields
+	sizeCache                       protoimpl.SizeCache
+}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) Reset() {
+	*x = StageDominionClaimPackOrStressReviewRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[165]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageDominionClaimPackOrStressReviewRequest) ProtoMessage() {}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[165]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageDominionClaimPackOrStressReviewRequest.ProtoReflect.Descriptor instead.
+func (*StageDominionClaimPackOrStressReviewRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{165}
+}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) GetResilienceCode() string {
+	if x != nil {
+		return x.ResilienceCode
+	}
+	return ""
+}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) GetIncidentCustodyAndClaimRecovery() string {
+	if x != nil {
+		return x.IncidentCustodyAndClaimRecovery
+	}
+	return ""
+}
+
+func (x *StageDominionClaimPackOrStressReviewRequest) GetResilienceState() string {
+	if x != nil {
+		return x.ResilienceState
+	}
+	return ""
+}
+
+type StageDominionClaimPackOrStressReviewResponse struct {
+	state         protoimpl.MessageState                 `protogen:"open.v1"`
+	Center        *DominionInsuranceResilienceCenterItem `protobuf:"bytes,1,opt,name=center,proto3" json:"center,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StageDominionClaimPackOrStressReviewResponse) Reset() {
+	*x = StageDominionClaimPackOrStressReviewResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[166]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StageDominionClaimPackOrStressReviewResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StageDominionClaimPackOrStressReviewResponse) ProtoMessage() {}
+
+func (x *StageDominionClaimPackOrStressReviewResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[166]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StageDominionClaimPackOrStressReviewResponse.ProtoReflect.Descriptor instead.
+func (*StageDominionClaimPackOrStressReviewResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{166}
+}
+
+func (x *StageDominionClaimPackOrStressReviewResponse) GetCenter() *DominionInsuranceResilienceCenterItem {
+	if x != nil {
+		return x.Center
+	}
+	return nil
+}
+
+// Choice 11 (D12): Utility, Energy, and Building Performance Intelligence
+type DominionUtilityBuildingPerformanceItem struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	Id                                 string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                             string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UtilityCode                        string                 `protobuf:"bytes,3,opt,name=utility_code,json=utilityCode,proto3" json:"utility_code,omitempty"`
+	MeterTariffAndWeatherNormalizedUse string                 `protobuf:"bytes,4,opt,name=meter_tariff_and_weather_normalized_use,json=meterTariffAndWeatherNormalizedUse,proto3" json:"meter_tariff_and_weather_normalized_use,omitempty"`
+	LeakOrBaseloadAnomalyDetection     string                 `protobuf:"bytes,5,opt,name=leak_or_baseload_anomaly_detection,json=leakOrBaseloadAnomalyDetection,proto3" json:"leak_or_baseload_anomaly_detection,omitempty"`
+	RetrofitRoiAndMeasuredSavings      string                 `protobuf:"bytes,6,opt,name=retrofit_roi_and_measured_savings,json=retrofitRoiAndMeasuredSavings,proto3" json:"retrofit_roi_and_measured_savings,omitempty"`
+	PerformanceState                   string                 `protobuf:"bytes,7,opt,name=performance_state,json=performanceState,proto3" json:"performance_state,omitempty"`
+	TenantUtilityPrivacyEnforced       bool                   `protobuf:"varint,8,opt,name=tenant_utility_privacy_enforced,json=tenantUtilityPrivacyEnforced,proto3" json:"tenant_utility_privacy_enforced,omitempty"`
+	UpdatedAtIso                       string                 `protobuf:"bytes,9,opt,name=updated_at_iso,json=updatedAtIso,proto3" json:"updated_at_iso,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) Reset() {
+	*x = DominionUtilityBuildingPerformanceItem{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[167]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DominionUtilityBuildingPerformanceItem) ProtoMessage() {}
+
+func (x *DominionUtilityBuildingPerformanceItem) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[167]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DominionUtilityBuildingPerformanceItem.ProtoReflect.Descriptor instead.
+func (*DominionUtilityBuildingPerformanceItem) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{167}
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetUtilityCode() string {
+	if x != nil {
+		return x.UtilityCode
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetMeterTariffAndWeatherNormalizedUse() string {
+	if x != nil {
+		return x.MeterTariffAndWeatherNormalizedUse
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetLeakOrBaseloadAnomalyDetection() string {
+	if x != nil {
+		return x.LeakOrBaseloadAnomalyDetection
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetRetrofitRoiAndMeasuredSavings() string {
+	if x != nil {
+		return x.RetrofitRoiAndMeasuredSavings
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetPerformanceState() string {
+	if x != nil {
+		return x.PerformanceState
+	}
+	return ""
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetTenantUtilityPrivacyEnforced() bool {
+	if x != nil {
+		return x.TenantUtilityPrivacyEnforced
+	}
+	return false
+}
+
+func (x *DominionUtilityBuildingPerformanceItem) GetUpdatedAtIso() string {
+	if x != nil {
+		return x.UpdatedAtIso
+	}
+	return ""
+}
+
+type GetDominionUtilityPerformanceWorkbenchRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchRequest) Reset() {
+	*x = GetDominionUtilityPerformanceWorkbenchRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[168]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionUtilityPerformanceWorkbenchRequest) ProtoMessage() {}
+
+func (x *GetDominionUtilityPerformanceWorkbenchRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[168]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionUtilityPerformanceWorkbenchRequest.ProtoReflect.Descriptor instead.
+func (*GetDominionUtilityPerformanceWorkbenchRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{168}
+}
+
+type GetDominionUtilityPerformanceWorkbenchResponse struct {
+	state                               protoimpl.MessageState                    `protogen:"open.v1"`
+	Utilities                           []*DominionUtilityBuildingPerformanceItem `protobuf:"bytes,1,rep,name=utilities,proto3" json:"utilities,omitempty"`
+	TenantUtilityPrivacyEnforced        bool                                      `protobuf:"varint,2,opt,name=tenant_utility_privacy_enforced,json=tenantUtilityPrivacyEnforced,proto3" json:"tenant_utility_privacy_enforced,omitempty"`
+	WeatherNormalizedAndRetrofitSummary string                                    `protobuf:"bytes,3,opt,name=weather_normalized_and_retrofit_summary,json=weatherNormalizedAndRetrofitSummary,proto3" json:"weather_normalized_and_retrofit_summary,omitempty"`
+	unknownFields                       protoimpl.UnknownFields
+	sizeCache                           protoimpl.SizeCache
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) Reset() {
+	*x = GetDominionUtilityPerformanceWorkbenchResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[169]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDominionUtilityPerformanceWorkbenchResponse) ProtoMessage() {}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[169]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDominionUtilityPerformanceWorkbenchResponse.ProtoReflect.Descriptor instead.
+func (*GetDominionUtilityPerformanceWorkbenchResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{169}
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) GetUtilities() []*DominionUtilityBuildingPerformanceItem {
+	if x != nil {
+		return x.Utilities
+	}
+	return nil
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) GetTenantUtilityPrivacyEnforced() bool {
+	if x != nil {
+		return x.TenantUtilityPrivacyEnforced
+	}
+	return false
+}
+
+func (x *GetDominionUtilityPerformanceWorkbenchResponse) GetWeatherNormalizedAndRetrofitSummary() string {
+	if x != nil {
+		return x.WeatherNormalizedAndRetrofitSummary
+	}
+	return ""
+}
+
+type SaveDominionUtilityBuildingPerformanceRequest struct {
+	state                              protoimpl.MessageState `protogen:"open.v1"`
+	UtilityCode                        string                 `protobuf:"bytes,1,opt,name=utility_code,json=utilityCode,proto3" json:"utility_code,omitempty"`
+	MeterTariffAndWeatherNormalizedUse string                 `protobuf:"bytes,2,opt,name=meter_tariff_and_weather_normalized_use,json=meterTariffAndWeatherNormalizedUse,proto3" json:"meter_tariff_and_weather_normalized_use,omitempty"`
+	LeakOrBaseloadAnomalyDetection     string                 `protobuf:"bytes,3,opt,name=leak_or_baseload_anomaly_detection,json=leakOrBaseloadAnomalyDetection,proto3" json:"leak_or_baseload_anomaly_detection,omitempty"`
+	RetrofitRoiAndMeasuredSavings      string                 `protobuf:"bytes,4,opt,name=retrofit_roi_and_measured_savings,json=retrofitRoiAndMeasuredSavings,proto3" json:"retrofit_roi_and_measured_savings,omitempty"`
+	PerformanceState                   string                 `protobuf:"bytes,5,opt,name=performance_state,json=performanceState,proto3" json:"performance_state,omitempty"`
+	unknownFields                      protoimpl.UnknownFields
+	sizeCache                          protoimpl.SizeCache
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) Reset() {
+	*x = SaveDominionUtilityBuildingPerformanceRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[170]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionUtilityBuildingPerformanceRequest) ProtoMessage() {}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[170]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionUtilityBuildingPerformanceRequest.ProtoReflect.Descriptor instead.
+func (*SaveDominionUtilityBuildingPerformanceRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{170}
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) GetUtilityCode() string {
+	if x != nil {
+		return x.UtilityCode
+	}
+	return ""
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) GetMeterTariffAndWeatherNormalizedUse() string {
+	if x != nil {
+		return x.MeterTariffAndWeatherNormalizedUse
+	}
+	return ""
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) GetLeakOrBaseloadAnomalyDetection() string {
+	if x != nil {
+		return x.LeakOrBaseloadAnomalyDetection
+	}
+	return ""
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) GetRetrofitRoiAndMeasuredSavings() string {
+	if x != nil {
+		return x.RetrofitRoiAndMeasuredSavings
+	}
+	return ""
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceRequest) GetPerformanceState() string {
+	if x != nil {
+		return x.PerformanceState
+	}
+	return ""
+}
+
+type SaveDominionUtilityBuildingPerformanceResponse struct {
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	Utility       *DominionUtilityBuildingPerformanceItem `protobuf:"bytes,1,opt,name=utility,proto3" json:"utility,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceResponse) Reset() {
+	*x = SaveDominionUtilityBuildingPerformanceResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[171]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SaveDominionUtilityBuildingPerformanceResponse) ProtoMessage() {}
+
+func (x *SaveDominionUtilityBuildingPerformanceResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[171]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SaveDominionUtilityBuildingPerformanceResponse.ProtoReflect.Descriptor instead.
+func (*SaveDominionUtilityBuildingPerformanceResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{171}
+}
+
+func (x *SaveDominionUtilityBuildingPerformanceResponse) GetUtility() *DominionUtilityBuildingPerformanceItem {
+	if x != nil {
+		return x.Utility
+	}
+	return nil
+}
+
+type VerifyDominionRetrofitSavingsOrAnomalyRequest struct {
+	state                         protoimpl.MessageState `protogen:"open.v1"`
+	UtilityCode                   string                 `protobuf:"bytes,1,opt,name=utility_code,json=utilityCode,proto3" json:"utility_code,omitempty"`
+	RetrofitRoiAndMeasuredSavings string                 `protobuf:"bytes,2,opt,name=retrofit_roi_and_measured_savings,json=retrofitRoiAndMeasuredSavings,proto3" json:"retrofit_roi_and_measured_savings,omitempty"`
+	PerformanceState              string                 `protobuf:"bytes,3,opt,name=performance_state,json=performanceState,proto3" json:"performance_state,omitempty"`
+	unknownFields                 protoimpl.UnknownFields
+	sizeCache                     protoimpl.SizeCache
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) Reset() {
+	*x = VerifyDominionRetrofitSavingsOrAnomalyRequest{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[172]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDominionRetrofitSavingsOrAnomalyRequest) ProtoMessage() {}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[172]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDominionRetrofitSavingsOrAnomalyRequest.ProtoReflect.Descriptor instead.
+func (*VerifyDominionRetrofitSavingsOrAnomalyRequest) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{172}
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) GetUtilityCode() string {
+	if x != nil {
+		return x.UtilityCode
+	}
+	return ""
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) GetRetrofitRoiAndMeasuredSavings() string {
+	if x != nil {
+		return x.RetrofitRoiAndMeasuredSavings
+	}
+	return ""
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyRequest) GetPerformanceState() string {
+	if x != nil {
+		return x.PerformanceState
+	}
+	return ""
+}
+
+type VerifyDominionRetrofitSavingsOrAnomalyResponse struct {
+	state         protoimpl.MessageState                  `protogen:"open.v1"`
+	Utility       *DominionUtilityBuildingPerformanceItem `protobuf:"bytes,1,opt,name=utility,proto3" json:"utility,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyResponse) Reset() {
+	*x = VerifyDominionRetrofitSavingsOrAnomalyResponse{}
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[173]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*VerifyDominionRetrofitSavingsOrAnomalyResponse) ProtoMessage() {}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_sttattus_dominion_v1_dominion_proto_msgTypes[173]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use VerifyDominionRetrofitSavingsOrAnomalyResponse.ProtoReflect.Descriptor instead.
+func (*VerifyDominionRetrofitSavingsOrAnomalyResponse) Descriptor() ([]byte, []int) {
+	return file_sttattus_dominion_v1_dominion_proto_rawDescGZIP(), []int{173}
+}
+
+func (x *VerifyDominionRetrofitSavingsOrAnomalyResponse) GetUtility() *DominionUtilityBuildingPerformanceItem {
+	if x != nil {
+		return x.Utility
+	}
+	return nil
+}
+
 var File_sttattus_dominion_v1_dominion_proto protoreflect.FileDescriptor
 
 const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
@@ -6144,7 +10911,359 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x04pass\x18\x01 \x01(\v2 .sttattus.dominion.v1.LoungePassR\x04pass\"\x1b\n" +
 	"\x19ListMyLoungePassesRequest\"V\n" +
 	"\x1aListMyLoungePassesResponse\x128\n" +
-	"\x06passes\x18\x01 \x03(\v2 .sttattus.dominion.v1.LoungePassR\x06passes*\xc5\x01\n" +
+	"\x06passes\x18\x01 \x03(\v2 .sttattus.dominion.v1.LoungePassR\x06passes\"\x85\x04\n" +
+	"\x1fDominionPropertyDigitalTwinItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
+	"\ttwin_code\x18\x03 \x01(\tR\btwinCode\x12?\n" +
+	"\x1cproperty_and_parcel_identity\x18\x04 \x01(\tR\x19propertyAndParcelIdentity\x12=\n" +
+	"\x1bjurisdiction_and_area_model\x18\x05 \x01(\tR\x18jurisdictionAndAreaModel\x12A\n" +
+	"\x1downership_and_deed_provenance\x18\x06 \x01(\tR\x1aownershipAndDeedProvenance\x12E\n" +
+	"\x1fversion_and_conflict_resolution\x18\a \x01(\tR\x1cversionAndConflictResolution\x12\x1d\n" +
+	"\n" +
+	"twin_state\x18\b \x01(\tR\ttwinState\x12M\n" +
+	"#duplicate_asset_prevention_enforced\x18\t \x01(\bR duplicateAssetPreventionEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"0\n" +
+	".GetDominionPropertyDigitalTwinWorkbenchRequest\"\x9a\x02\n" +
+	"/GetDominionPropertyDigitalTwinWorkbenchResponse\x12K\n" +
+	"\x05twins\x18\x01 \x03(\v25.sttattus.dominion.v1.DominionPropertyDigitalTwinItemR\x05twins\x12M\n" +
+	"#duplicate_asset_prevention_enforced\x18\x02 \x01(\bR duplicateAssetPreventionEnforced\x12K\n" +
+	"\"canonical_registry_lineage_summary\x18\x03 \x01(\tR\x1fcanonicalRegistryLineageSummary\"\xee\x02\n" +
+	"&SaveDominionPropertyDigitalTwinRequest\x12\x1b\n" +
+	"\ttwin_code\x18\x01 \x01(\tR\btwinCode\x12?\n" +
+	"\x1cproperty_and_parcel_identity\x18\x02 \x01(\tR\x19propertyAndParcelIdentity\x12=\n" +
+	"\x1bjurisdiction_and_area_model\x18\x03 \x01(\tR\x18jurisdictionAndAreaModel\x12A\n" +
+	"\x1downership_and_deed_provenance\x18\x04 \x01(\tR\x1aownershipAndDeedProvenance\x12E\n" +
+	"\x1fversion_and_conflict_resolution\x18\x05 \x01(\tR\x1cversionAndConflictResolution\x12\x1d\n" +
+	"\n" +
+	"twin_state\x18\x06 \x01(\tR\ttwinState\"t\n" +
+	"'SaveDominionPropertyDigitalTwinResponse\x12I\n" +
+	"\x04twin\x18\x01 \x01(\v25.sttattus.dominion.v1.DominionPropertyDigitalTwinItemR\x04twin\"\xb2\x01\n" +
+	"-PropagateOrResolveDominionTwinConflictRequest\x12\x1b\n" +
+	"\ttwin_code\x18\x01 \x01(\tR\btwinCode\x12E\n" +
+	"\x1fversion_and_conflict_resolution\x18\x02 \x01(\tR\x1cversionAndConflictResolution\x12\x1d\n" +
+	"\n" +
+	"twin_state\x18\x03 \x01(\tR\ttwinState\"{\n" +
+	".PropagateOrResolveDominionTwinConflictResponse\x12I\n" +
+	"\x04twin\x18\x01 \x01(\v25.sttattus.dominion.v1.DominionPropertyDigitalTwinItemR\x04twin\"\x94\x04\n" +
+	" DominionUnderwritingScenarioItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12#\n" +
+	"\rscenario_code\x18\x03 \x01(\tR\fscenarioCode\x125\n" +
+	"\x17deal_title_and_strategy\x18\x04 \x01(\tR\x14dealTitleAndStrategy\x12I\n" +
+	"!visible_assumptions_and_freshness\x18\x05 \x01(\tR\x1evisibleAssumptionsAndFreshness\x12L\n" +
+	"#return_metrics_and_sensitivity_band\x18\x06 \x01(\tR\x1freturnMetricsAndSensitivityBand\x12B\n" +
+	"\x1dinput_verification_disclosure\x18\a \x01(\tR\x1binputVerificationDisclosure\x12%\n" +
+	"\x0escenario_state\x18\b \x01(\tR\rscenarioState\x12A\n" +
+	"\x1dexport_screen_parity_verified\x18\t \x01(\bR\x1aexportScreenParityVerified\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\",\n" +
+	"*GetDominionUnderwritingLabWorkbenchRequest\"\x9b\x02\n" +
+	"+GetDominionUnderwritingLabWorkbenchResponse\x12T\n" +
+	"\tscenarios\x18\x01 \x03(\v26.sttattus.dominion.v1.DominionUnderwritingScenarioItemR\tscenarios\x12R\n" +
+	"&export_screen_parity_verified_enforced\x18\x02 \x01(\bR\"exportScreenParityVerifiedEnforced\x12B\n" +
+	"\x1dassumption_provenance_summary\x18\x03 \x01(\tR\x1bassumptionProvenanceSummary\"\x89\x03\n" +
+	"'SaveDominionUnderwritingScenarioRequest\x12#\n" +
+	"\rscenario_code\x18\x01 \x01(\tR\fscenarioCode\x125\n" +
+	"\x17deal_title_and_strategy\x18\x02 \x01(\tR\x14dealTitleAndStrategy\x12I\n" +
+	"!visible_assumptions_and_freshness\x18\x03 \x01(\tR\x1evisibleAssumptionsAndFreshness\x12L\n" +
+	"#return_metrics_and_sensitivity_band\x18\x04 \x01(\tR\x1freturnMetricsAndSensitivityBand\x12B\n" +
+	"\x1dinput_verification_disclosure\x18\x05 \x01(\tR\x1binputVerificationDisclosure\x12%\n" +
+	"\x0escenario_state\x18\x06 \x01(\tR\rscenarioState\"~\n" +
+	"(SaveDominionUnderwritingScenarioResponse\x12R\n" +
+	"\bscenario\x18\x01 \x01(\v26.sttattus.dominion.v1.DominionUnderwritingScenarioItemR\bscenario\"\xc5\x01\n" +
+	")StressTestOrFreezeDominionScenarioRequest\x12#\n" +
+	"\rscenario_code\x18\x01 \x01(\tR\fscenarioCode\x12L\n" +
+	"#return_metrics_and_sensitivity_band\x18\x02 \x01(\tR\x1freturnMetricsAndSensitivityBand\x12%\n" +
+	"\x0escenario_state\x18\x03 \x01(\tR\rscenarioState\"\x80\x01\n" +
+	"*StressTestOrFreezeDominionScenarioResponse\x12R\n" +
+	"\bscenario\x18\x01 \x01(\v26.sttattus.dominion.v1.DominionUnderwritingScenarioItemR\bscenario\"\x98\x04\n" +
+	"#DominionPropertyAccountingCloseItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"close_code\x18\x03 \x01(\tR\tcloseCode\x129\n" +
+	"\x19property_and_period_label\x18\x04 \x01(\tR\x16propertyAndPeriodLabel\x12N\n" +
+	"$bank_reconciliation_and_data_quality\x18\x05 \x01(\tR bankReconciliationAndDataQuality\x12F\n" +
+	" pnl_cashflow_and_reserve_summary\x18\x06 \x01(\tR\x1cpnlCashflowAndReserveSummary\x12F\n" +
+	" accountant_and_tax_export_digest\x18\a \x01(\tR\x1caccountantAndTaxExportDigest\x12\x1f\n" +
+	"\vclose_state\x18\b \x01(\tR\n" +
+	"closeState\x12G\n" +
+	" double_entry_reversible_enforced\x18\t \x01(\bR\x1ddoubleEntryReversibleEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\n" +
+	" \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetDominionPropertyAccountingWorkbenchRequest\"\x9c\x02\n" +
+	".GetDominionPropertyAccountingWorkbenchResponse\x12Q\n" +
+	"\x06closes\x18\x01 \x03(\v29.sttattus.dominion.v1.DominionPropertyAccountingCloseItemR\x06closes\x12G\n" +
+	" double_entry_reversible_enforced\x18\x02 \x01(\bR\x1ddoubleEntryReversibleEnforced\x12N\n" +
+	"$immutable_close_and_reversal_summary\x18\x03 \x01(\tR immutableCloseAndReversalSummary\"\x87\x03\n" +
+	"*SaveDominionPropertyAccountingCloseRequest\x12\x1d\n" +
+	"\n" +
+	"close_code\x18\x01 \x01(\tR\tcloseCode\x129\n" +
+	"\x19property_and_period_label\x18\x02 \x01(\tR\x16propertyAndPeriodLabel\x12N\n" +
+	"$bank_reconciliation_and_data_quality\x18\x03 \x01(\tR bankReconciliationAndDataQuality\x12F\n" +
+	" pnl_cashflow_and_reserve_summary\x18\x04 \x01(\tR\x1cpnlCashflowAndReserveSummary\x12F\n" +
+	" accountant_and_tax_export_digest\x18\x05 \x01(\tR\x1caccountantAndTaxExportDigest\x12\x1f\n" +
+	"\vclose_state\x18\x06 \x01(\tR\n" +
+	"closeState\"~\n" +
+	"+SaveDominionPropertyAccountingCloseResponse\x12O\n" +
+	"\x05close\x18\x01 \x01(\v29.sttattus.dominion.v1.DominionPropertyAccountingCloseItemR\x05close\"\xb5\x01\n" +
+	"+LockOrReverseDominionAccountingCloseRequest\x12\x1d\n" +
+	"\n" +
+	"close_code\x18\x01 \x01(\tR\tcloseCode\x12F\n" +
+	" accountant_and_tax_export_digest\x18\x02 \x01(\tR\x1caccountantAndTaxExportDigest\x12\x1f\n" +
+	"\vclose_state\x18\x03 \x01(\tR\n" +
+	"closeState\"\x7f\n" +
+	",LockOrReverseDominionAccountingCloseResponse\x12O\n" +
+	"\x05close\x18\x01 \x01(\v29.sttattus.dominion.v1.DominionPropertyAccountingCloseItemR\x05close\"\x80\x04\n" +
+	"#DominionDocumentObligationVaultItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fobligation_code\x18\x03 \x01(\tR\x0eobligationCode\x12;\n" +
+	"\x1adocument_and_cited_passage\x18\x04 \x01(\tR\x17documentAndCitedPassage\x12L\n" +
+	"#jurisdiction_tax_or_permit_deadline\x18\x05 \x01(\tR\x1fjurisdictionTaxOrPermitDeadline\x12H\n" +
+	"!completion_receipt_or_appeal_pack\x18\x06 \x01(\tR\x1dcompletionReceiptOrAppealPack\x12>\n" +
+	"\x1bextraction_confidence_state\x18\a \x01(\tR\x19extractionConfidenceState\x12L\n" +
+	"#non_legal_opinion_boundary_enforced\x18\b \x01(\bR\x1fnonLegalOpinionBoundaryEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetDominionDocumentObligationWorkbenchRequest\"\xa6\x02\n" +
+	".GetDominionDocumentObligationWorkbenchResponse\x12[\n" +
+	"\vobligations\x18\x01 \x03(\v29.sttattus.dominion.v1.DominionDocumentObligationVaultItemR\vobligations\x12L\n" +
+	"#non_legal_opinion_boundary_enforced\x18\x02 \x01(\bR\x1fnonLegalOpinionBoundaryEnforced\x12I\n" +
+	"!receipt_before_completion_summary\x18\x03 \x01(\tR\x1ereceiptBeforeCompletionSummary\"\xe5\x02\n" +
+	"%SaveDominionDocumentObligationRequest\x12'\n" +
+	"\x0fobligation_code\x18\x01 \x01(\tR\x0eobligationCode\x12;\n" +
+	"\x1adocument_and_cited_passage\x18\x02 \x01(\tR\x17documentAndCitedPassage\x12L\n" +
+	"#jurisdiction_tax_or_permit_deadline\x18\x03 \x01(\tR\x1fjurisdictionTaxOrPermitDeadline\x12H\n" +
+	"!completion_receipt_or_appeal_pack\x18\x04 \x01(\tR\x1dcompletionReceiptOrAppealPack\x12>\n" +
+	"\x1bextraction_confidence_state\x18\x05 \x01(\tR\x19extractionConfidenceState\"\x83\x01\n" +
+	"&SaveDominionDocumentObligationResponse\x12Y\n" +
+	"\n" +
+	"obligation\x18\x01 \x01(\v29.sttattus.dominion.v1.DominionDocumentObligationVaultItemR\n" +
+	"obligation\"\xe4\x01\n" +
+	"/ConfirmDominionObligationReceiptOrAppealRequest\x12'\n" +
+	"\x0fobligation_code\x18\x01 \x01(\tR\x0eobligationCode\x12H\n" +
+	"!completion_receipt_or_appeal_pack\x18\x02 \x01(\tR\x1dcompletionReceiptOrAppealPack\x12>\n" +
+	"\x1bextraction_confidence_state\x18\x03 \x01(\tR\x19extractionConfidenceState\"\x8d\x01\n" +
+	"0ConfirmDominionObligationReceiptOrAppealResponse\x12Y\n" +
+	"\n" +
+	"obligation\x18\x01 \x01(\v29.sttattus.dominion.v1.DominionDocumentObligationVaultItemR\n" +
+	"obligation\"\xd3\x03\n" +
+	"!DominionLeasingResidentPortalItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
+	"\n" +
+	"lease_code\x18\x03 \x01(\tR\tleaseCode\x12D\n" +
+	"\x1fproperty_unit_and_tenancy_scope\x18\x04 \x01(\tR\x1bpropertyUnitAndTenancyScope\x12D\n" +
+	"\x1flease_terms_deposit_and_renewal\x18\x05 \x01(\tR\x1bleaseTermsDepositAndRenewal\x12J\n" +
+	"!partitioned_communication_summary\x18\x06 \x01(\tR\x1fpartitionedCommunicationSummary\x12!\n" +
+	"\fportal_state\x18\a \x01(\tR\vportalState\x12E\n" +
+	"\x1fcross_tenant_isolation_enforced\x18\b \x01(\bR\x1ccrossTenantIsolationEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\",\n" +
+	"*GetDominionLeasingResidentWorkbenchRequest\"\x88\x02\n" +
+	"+GetDominionLeasingResidentWorkbenchResponse\x12O\n" +
+	"\x06leases\x18\x01 \x03(\v27.sttattus.dominion.v1.DominionLeasingResidentPortalItemR\x06leases\x12E\n" +
+	"\x1fcross_tenant_isolation_enforced\x18\x02 \x01(\bR\x1ccrossTenantIsolationEnforced\x12A\n" +
+	"\x1dunit_scoped_partition_summary\x18\x03 \x01(\tR\x1aunitScopedPartitionSummary\"\xc4\x02\n" +
+	"(SaveDominionLeasingResidentPortalRequest\x12\x1d\n" +
+	"\n" +
+	"lease_code\x18\x01 \x01(\tR\tleaseCode\x12D\n" +
+	"\x1fproperty_unit_and_tenancy_scope\x18\x02 \x01(\tR\x1bpropertyUnitAndTenancyScope\x12D\n" +
+	"\x1flease_terms_deposit_and_renewal\x18\x03 \x01(\tR\x1bleaseTermsDepositAndRenewal\x12J\n" +
+	"!partitioned_communication_summary\x18\x04 \x01(\tR\x1fpartitionedCommunicationSummary\x12!\n" +
+	"\fportal_state\x18\x05 \x01(\tR\vportalState\"z\n" +
+	")SaveDominionLeasingResidentPortalResponse\x12M\n" +
+	"\x05lease\x18\x01 \x01(\v27.sttattus.dominion.v1.DominionLeasingResidentPortalItemR\x05lease\"\xb6\x01\n" +
+	",ScheduleDominionRenewalOrDepositCloseRequest\x12\x1d\n" +
+	"\n" +
+	"lease_code\x18\x01 \x01(\tR\tleaseCode\x12D\n" +
+	"\x1flease_terms_deposit_and_renewal\x18\x02 \x01(\tR\x1bleaseTermsDepositAndRenewal\x12!\n" +
+	"\fportal_state\x18\x03 \x01(\tR\vportalState\"~\n" +
+	"-ScheduleDominionRenewalOrDepositCloseResponse\x12M\n" +
+	"\x05lease\x18\x01 \x01(\v27.sttattus.dominion.v1.DominionLeasingResidentPortalItemR\x05lease\"\xe2\x03\n" +
+	"$DominionMaintenanceVendorNetworkItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12&\n" +
+	"\x0fwork_order_code\x18\x03 \x01(\tR\rworkOrderCode\x12<\n" +
+	"\x1bissue_triage_and_sla_window\x18\x04 \x01(\tR\x17issueTriageAndSlaWindow\x12R\n" +
+	"&vendor_credentials_and_normalized_bids\x18\x05 \x01(\tR\"vendorCredentialsAndNormalizedBids\x12M\n" +
+	"$three_way_invoice_and_warranty_match\x18\x06 \x01(\tR\x1fthreeWayInvoiceAndWarrantyMatch\x12(\n" +
+	"\x10work_order_state\x18\a \x01(\tR\x0eworkOrderState\x128\n" +
+	"\x19zero_pay_to_rank_enforced\x18\b \x01(\bR\x15zeroPayToRankEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\".\n" +
+	",GetDominionMaintenanceVendorWorkbenchRequest\"\x8c\x02\n" +
+	"-GetDominionMaintenanceVendorWorkbenchResponse\x12[\n" +
+	"\vwork_orders\x18\x01 \x03(\v2:.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItemR\n" +
+	"workOrders\x128\n" +
+	"\x19zero_pay_to_rank_enforced\x18\x02 \x01(\bR\x15zeroPayToRankEnforced\x12D\n" +
+	"\x1fthree_way_invoice_match_summary\x18\x03 \x01(\tR\x1bthreeWayInvoiceMatchSummary\"\xdc\x02\n" +
+	"'SaveDominionMaintenanceWorkOrderRequest\x12&\n" +
+	"\x0fwork_order_code\x18\x01 \x01(\tR\rworkOrderCode\x12<\n" +
+	"\x1bissue_triage_and_sla_window\x18\x02 \x01(\tR\x17issueTriageAndSlaWindow\x12R\n" +
+	"&vendor_credentials_and_normalized_bids\x18\x03 \x01(\tR\"vendorCredentialsAndNormalizedBids\x12M\n" +
+	"$three_way_invoice_and_warranty_match\x18\x04 \x01(\tR\x1fthreeWayInvoiceAndWarrantyMatch\x12(\n" +
+	"\x10work_order_state\x18\x05 \x01(\tR\x0eworkOrderState\"\x85\x01\n" +
+	"(SaveDominionMaintenanceWorkOrderResponse\x12Y\n" +
+	"\n" +
+	"work_order\x18\x01 \x01(\v2:.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItemR\tworkOrder\"\xcf\x01\n" +
+	",VerifyDominionThreeWayMatchOrWarrantyRequest\x12&\n" +
+	"\x0fwork_order_code\x18\x01 \x01(\tR\rworkOrderCode\x12M\n" +
+	"$three_way_invoice_and_warranty_match\x18\x02 \x01(\tR\x1fthreeWayInvoiceAndWarrantyMatch\x12(\n" +
+	"\x10work_order_state\x18\x03 \x01(\tR\x0eworkOrderState\"\x8a\x01\n" +
+	"-VerifyDominionThreeWayMatchOrWarrantyResponse\x12Y\n" +
+	"\n" +
+	"work_order\x18\x01 \x01(\v2:.sttattus.dominion.v1.DominionMaintenanceVendorNetworkItemR\tworkOrder\"\xf3\x03\n" +
+	"!DominionCapitalProjectControlItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\fproject_code\x18\x03 \x01(\tR\vprojectCode\x12H\n" +
+	"!scope_permits_and_baseline_budget\x18\x04 \x01(\tR\x1dscopePermitsAndBaselineBudget\x12G\n" +
+	"!change_order_draw_and_lien_waiver\x18\x05 \x01(\tR\x1cchangeOrderDrawAndLienWaiver\x12R\n" +
+	"&offline_field_inspection_and_punchlist\x18\x06 \x01(\tR\"offlineFieldInspectionAndPunchlist\x12#\n" +
+	"\rproject_state\x18\a \x01(\tR\fprojectState\x12P\n" +
+	"%human_verified_change_orders_enforced\x18\b \x01(\bR!humanVerifiedChangeOrdersEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"+\n" +
+	")GetDominionCapitalProjectWorkbenchRequest\"\x9d\x02\n" +
+	"*GetDominionCapitalProjectWorkbenchResponse\x12S\n" +
+	"\bprojects\x18\x01 \x03(\v27.sttattus.dominion.v1.DominionCapitalProjectControlItemR\bprojects\x12P\n" +
+	"%human_verified_change_orders_enforced\x18\x02 \x01(\bR!humanVerifiedChangeOrdersEnforced\x12H\n" +
+	"!retainage_and_lien_waiver_summary\x18\x03 \x01(\tR\x1dretainageAndLienWaiverSummary\"\xd9\x02\n" +
+	"(SaveDominionCapitalProjectControlRequest\x12!\n" +
+	"\fproject_code\x18\x01 \x01(\tR\vprojectCode\x12H\n" +
+	"!scope_permits_and_baseline_budget\x18\x02 \x01(\tR\x1dscopePermitsAndBaselineBudget\x12G\n" +
+	"!change_order_draw_and_lien_waiver\x18\x03 \x01(\tR\x1cchangeOrderDrawAndLienWaiver\x12R\n" +
+	"&offline_field_inspection_and_punchlist\x18\x04 \x01(\tR\"offlineFieldInspectionAndPunchlist\x12#\n" +
+	"\rproject_state\x18\x05 \x01(\tR\fprojectState\"~\n" +
+	")SaveDominionCapitalProjectControlResponse\x12Q\n" +
+	"\aproject\x18\x01 \x01(\v27.sttattus.dominion.v1.DominionCapitalProjectControlItemR\aproject\"\xc0\x01\n" +
+	"-ApproveDominionDrawOrPunchlistCloseoutRequest\x12!\n" +
+	"\fproject_code\x18\x01 \x01(\tR\vprojectCode\x12G\n" +
+	"!change_order_draw_and_lien_waiver\x18\x02 \x01(\tR\x1cchangeOrderDrawAndLienWaiver\x12#\n" +
+	"\rproject_state\x18\x03 \x01(\tR\fprojectState\"\x83\x01\n" +
+	".ApproveDominionDrawOrPunchlistCloseoutResponse\x12Q\n" +
+	"\aproject\x18\x01 \x01(\v27.sttattus.dominion.v1.DominionCapitalProjectControlItemR\aproject\"\xf5\x03\n" +
+	"%DominionMarketValuationGovernanceItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12%\n" +
+	"\x0evaluation_code\x18\x03 \x01(\tR\rvaluationCode\x12H\n" +
+	"!editable_comp_set_and_adjustments\x18\x04 \x01(\tR\x1deditableCompSetAndAdjustments\x12D\n" +
+	"\x1favm_range_vs_appraisal_evidence\x18\x05 \x01(\tR\x1bavmRangeVsAppraisalEvidence\x12M\n" +
+	"#provider_freshness_and_disagreement\x18\x06 \x01(\tR providerFreshnessAndDisagreement\x12'\n" +
+	"\x0fvaluation_state\x18\a \x01(\tR\x0evaluationState\x12N\n" +
+	"$avm_distinct_from_appraisal_enforced\x18\b \x01(\bR avmDistinctFromAppraisalEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\",\n" +
+	"*GetDominionMarketValuationWorkbenchRequest\"\xae\x02\n" +
+	"+GetDominionMarketValuationWorkbenchResponse\x12[\n" +
+	"\n" +
+	"valuations\x18\x01 \x03(\v2;.sttattus.dominion.v1.DominionMarketValuationGovernanceItemR\n" +
+	"valuations\x12N\n" +
+	"$avm_distinct_from_appraisal_enforced\x18\x02 \x01(\bR avmDistinctFromAppraisalEnforced\x12R\n" +
+	"&range_and_freshness_governance_summary\x18\x03 \x01(\tR\"rangeAndFreshnessGovernanceSummary\"\xdd\x02\n" +
+	",SaveDominionMarketValuationGovernanceRequest\x12%\n" +
+	"\x0evaluation_code\x18\x01 \x01(\tR\rvaluationCode\x12H\n" +
+	"!editable_comp_set_and_adjustments\x18\x02 \x01(\tR\x1deditableCompSetAndAdjustments\x12D\n" +
+	"\x1favm_range_vs_appraisal_evidence\x18\x03 \x01(\tR\x1bavmRangeVsAppraisalEvidence\x12M\n" +
+	"#provider_freshness_and_disagreement\x18\x04 \x01(\tR providerFreshnessAndDisagreement\x12'\n" +
+	"\x0fvaluation_state\x18\x05 \x01(\tR\x0evaluationState\"\x8a\x01\n" +
+	"-SaveDominionMarketValuationGovernanceResponse\x12Y\n" +
+	"\tvaluation\x18\x01 \x01(\v2;.sttattus.dominion.v1.DominionMarketValuationGovernanceItemR\tvaluation\"\xca\x01\n" +
+	".AdjustDominionCompSetOrDisputeValuationRequest\x12%\n" +
+	"\x0evaluation_code\x18\x01 \x01(\tR\rvaluationCode\x12H\n" +
+	"!editable_comp_set_and_adjustments\x18\x02 \x01(\tR\x1deditableCompSetAndAdjustments\x12'\n" +
+	"\x0fvaluation_state\x18\x03 \x01(\tR\x0evaluationState\"\x8c\x01\n" +
+	"/AdjustDominionCompSetOrDisputeValuationResponse\x12Y\n" +
+	"\tvaluation\x18\x01 \x01(\v2;.sttattus.dominion.v1.DominionMarketValuationGovernanceItemR\tvaluation\"\xe7\x03\n" +
+	"$DominionOwnershipTransactionRoomItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12)\n" +
+	"\x10transaction_code\x18\x03 \x01(\tR\x0ftransactionCode\x12J\n" +
+	"\"entity_capital_stack_and_covenants\x18\x04 \x01(\tR\x1eentityCapitalStackAndCovenants\x12F\n" +
+	" waterfall_and_net_proceeds_range\x18\x05 \x01(\tR\x1cwaterfallAndNetProceedsRange\x12D\n" +
+	"\x1fscoped_dataroom_and_bridge_refs\x18\x06 \x01(\tR\x1bscopedDataroomAndBridgeRefs\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\a \x01(\tR\troomState\x12L\n" +
+	"#non_broker_escrow_boundary_enforced\x18\b \x01(\bR\x1fnonBrokerEscrowBoundaryEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"1\n" +
+	"/GetDominionOwnershipTransactionWorkbenchRequest\"\xac\x02\n" +
+	"0GetDominionOwnershipTransactionWorkbenchResponse\x12P\n" +
+	"\x05rooms\x18\x01 \x03(\v2:.sttattus.dominion.v1.DominionOwnershipTransactionRoomItemR\x05rooms\x12L\n" +
+	"#non_broker_escrow_boundary_enforced\x18\x02 \x01(\bR\x1fnonBrokerEscrowBoundaryEnforced\x12X\n" +
+	")covenant_and_watermarked_dataroom_summary\x18\x03 \x01(\tR%covenantAndWatermarkedDataroomSummary\"\xd1\x02\n" +
+	"+SaveDominionOwnershipTransactionRoomRequest\x12)\n" +
+	"\x10transaction_code\x18\x01 \x01(\tR\x0ftransactionCode\x12J\n" +
+	"\"entity_capital_stack_and_covenants\x18\x02 \x01(\tR\x1eentityCapitalStackAndCovenants\x12F\n" +
+	" waterfall_and_net_proceeds_range\x18\x03 \x01(\tR\x1cwaterfallAndNetProceedsRange\x12D\n" +
+	"\x1fscoped_dataroom_and_bridge_refs\x18\x04 \x01(\tR\x1bscopedDataroomAndBridgeRefs\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x05 \x01(\tR\troomState\"~\n" +
+	",SaveDominionOwnershipTransactionRoomResponse\x12N\n" +
+	"\x04room\x18\x01 \x01(\v2:.sttattus.dominion.v1.DominionOwnershipTransactionRoomItemR\x04room\"\xc1\x01\n" +
+	"-StageDominionRefinanceOrDataroomAccessRequest\x12)\n" +
+	"\x10transaction_code\x18\x01 \x01(\tR\x0ftransactionCode\x12F\n" +
+	" waterfall_and_net_proceeds_range\x18\x02 \x01(\tR\x1cwaterfallAndNetProceedsRange\x12\x1d\n" +
+	"\n" +
+	"room_state\x18\x03 \x01(\tR\troomState\"\x80\x01\n" +
+	".StageDominionRefinanceOrDataroomAccessResponse\x12N\n" +
+	"\x04room\x18\x01 \x01(\v2:.sttattus.dominion.v1.DominionOwnershipTransactionRoomItemR\x04room\"\x87\x04\n" +
+	"%DominionInsuranceResilienceCenterItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12'\n" +
+	"\x0fresilience_code\x18\x03 \x01(\tR\x0eresilienceCode\x12J\n" +
+	"\"policy_limits_deductibles_and_gaps\x18\x04 \x01(\tR\x1epolicyLimitsDeductiblesAndGaps\x12M\n" +
+	"$peril_rate_and_vacancy_stress_bundle\x18\x05 \x01(\tR\x1fperilRateAndVacancyStressBundle\x12L\n" +
+	"#incident_custody_and_claim_recovery\x18\x06 \x01(\tR\x1fincidentCustodyAndClaimRecovery\x12)\n" +
+	"\x10resilience_state\x18\a \x01(\tR\x0fresilienceState\x12R\n" +
+	"&non_legal_coverage_disclaimer_enforced\x18\b \x01(\bR\"nonLegalCoverageDisclaimerEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"0\n" +
+	".GetDominionInsuranceResilienceWorkbenchRequest\"\xa6\x02\n" +
+	"/GetDominionInsuranceResilienceWorkbenchResponse\x12U\n" +
+	"\acenters\x18\x01 \x03(\v2;.sttattus.dominion.v1.DominionInsuranceResilienceCenterItemR\acenters\x12R\n" +
+	"&non_legal_coverage_disclaimer_enforced\x18\x02 \x01(\bR\"nonLegalCoverageDisclaimerEnforced\x12H\n" +
+	"!stress_bundle_and_custody_summary\x18\x03 \x01(\tR\x1dstressBundleAndCustodySummary\"\xeb\x02\n" +
+	",SaveDominionInsuranceResilienceCenterRequest\x12'\n" +
+	"\x0fresilience_code\x18\x01 \x01(\tR\x0eresilienceCode\x12J\n" +
+	"\"policy_limits_deductibles_and_gaps\x18\x02 \x01(\tR\x1epolicyLimitsDeductiblesAndGaps\x12M\n" +
+	"$peril_rate_and_vacancy_stress_bundle\x18\x03 \x01(\tR\x1fperilRateAndVacancyStressBundle\x12L\n" +
+	"#incident_custody_and_claim_recovery\x18\x04 \x01(\tR\x1fincidentCustodyAndClaimRecovery\x12)\n" +
+	"\x10resilience_state\x18\x05 \x01(\tR\x0fresilienceState\"\x84\x01\n" +
+	"-SaveDominionInsuranceResilienceCenterResponse\x12S\n" +
+	"\x06center\x18\x01 \x01(\v2;.sttattus.dominion.v1.DominionInsuranceResilienceCenterItemR\x06center\"\xcf\x01\n" +
+	"+StageDominionClaimPackOrStressReviewRequest\x12'\n" +
+	"\x0fresilience_code\x18\x01 \x01(\tR\x0eresilienceCode\x12L\n" +
+	"#incident_custody_and_claim_recovery\x18\x02 \x01(\tR\x1fincidentCustodyAndClaimRecovery\x12)\n" +
+	"\x10resilience_state\x18\x03 \x01(\tR\x0fresilienceState\"\x83\x01\n" +
+	",StageDominionClaimPackOrStressReviewResponse\x12S\n" +
+	"\x06center\x18\x01 \x01(\v2;.sttattus.dominion.v1.DominionInsuranceResilienceCenterItemR\x06center\"\xf9\x03\n" +
+	"&DominionUtilityBuildingPerformanceItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
+	"\futility_code\x18\x03 \x01(\tR\vutilityCode\x12S\n" +
+	"'meter_tariff_and_weather_normalized_use\x18\x04 \x01(\tR\"meterTariffAndWeatherNormalizedUse\x12J\n" +
+	"\"leak_or_baseload_anomaly_detection\x18\x05 \x01(\tR\x1eleakOrBaseloadAnomalyDetection\x12H\n" +
+	"!retrofit_roi_and_measured_savings\x18\x06 \x01(\tR\x1dretrofitRoiAndMeasuredSavings\x12+\n" +
+	"\x11performance_state\x18\a \x01(\tR\x10performanceState\x12E\n" +
+	"\x1ftenant_utility_privacy_enforced\x18\b \x01(\bR\x1ctenantUtilityPrivacyEnforced\x12$\n" +
+	"\x0eupdated_at_iso\x18\t \x01(\tR\fupdatedAtIso\"/\n" +
+	"-GetDominionUtilityPerformanceWorkbenchRequest\"\xa9\x02\n" +
+	".GetDominionUtilityPerformanceWorkbenchResponse\x12Z\n" +
+	"\tutilities\x18\x01 \x03(\v2<.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItemR\tutilities\x12E\n" +
+	"\x1ftenant_utility_privacy_enforced\x18\x02 \x01(\bR\x1ctenantUtilityPrivacyEnforced\x12T\n" +
+	"'weather_normalized_and_retrofit_summary\x18\x03 \x01(\tR#weatherNormalizedAndRetrofitSummary\"\xea\x02\n" +
+	"-SaveDominionUtilityBuildingPerformanceRequest\x12!\n" +
+	"\futility_code\x18\x01 \x01(\tR\vutilityCode\x12S\n" +
+	"'meter_tariff_and_weather_normalized_use\x18\x02 \x01(\tR\"meterTariffAndWeatherNormalizedUse\x12J\n" +
+	"\"leak_or_baseload_anomaly_detection\x18\x03 \x01(\tR\x1eleakOrBaseloadAnomalyDetection\x12H\n" +
+	"!retrofit_roi_and_measured_savings\x18\x04 \x01(\tR\x1dretrofitRoiAndMeasuredSavings\x12+\n" +
+	"\x11performance_state\x18\x05 \x01(\tR\x10performanceState\"\x88\x01\n" +
+	".SaveDominionUtilityBuildingPerformanceResponse\x12V\n" +
+	"\autility\x18\x01 \x01(\v2<.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItemR\autility\"\xc9\x01\n" +
+	"-VerifyDominionRetrofitSavingsOrAnomalyRequest\x12!\n" +
+	"\futility_code\x18\x01 \x01(\tR\vutilityCode\x12H\n" +
+	"!retrofit_roi_and_measured_savings\x18\x02 \x01(\tR\x1dretrofitRoiAndMeasuredSavings\x12+\n" +
+	"\x11performance_state\x18\x03 \x01(\tR\x10performanceState\"\x88\x01\n" +
+	".VerifyDominionRetrofitSavingsOrAnomalyResponse\x12V\n" +
+	"\autility\x18\x01 \x01(\v2<.sttattus.dominion.v1.DominionUtilityBuildingPerformanceItemR\autility*\xc5\x01\n" +
 	"\x0eEstateCategory\x12\x1f\n" +
 	"\x1bESTATE_CATEGORY_UNSPECIFIED\x10\x00\x12%\n" +
 	"!ESTATE_CATEGORY_PRIMARY_RESIDENCE\x10\x01\x12#\n" +
@@ -6155,7 +11274,7 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
 	"\x1cVERIFICATION_STATUS_APPROVED\x10\x02\x12 \n" +
-	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\xcc#\n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x032\x8bQ\n" +
 	"\x0fDominionService\x12k\n" +
 	"\x0eSyncProperties\x12+.sttattus.dominion.v1.SyncPropertiesRequest\x1a,.sttattus.dominion.v1.SyncPropertiesResponse\x12n\n" +
 	"\x0fListTerritories\x12,.sttattus.dominion.v1.ListTerritoriesRequest\x1a-.sttattus.dominion.v1.ListTerritoriesResponse\x12q\n" +
@@ -6197,7 +11316,40 @@ const file_sttattus_dominion_v1_dominion_proto_rawDesc = "" +
 	"\x13RevokeDominionShare\x120.sttattus.dominion.v1.RevokeDominionShareRequest\x1a1.sttattus.dominion.v1.RevokeDominionShareResponse\x12\x86\x01\n" +
 	"\x17GenerateDominionAlmanac\x124.sttattus.dominion.v1.GenerateDominionAlmanacRequest\x1a5.sttattus.dominion.v1.GenerateDominionAlmanacResponse\x12q\n" +
 	"\x10CreateLoungePass\x12-.sttattus.dominion.v1.CreateLoungePassRequest\x1a..sttattus.dominion.v1.CreateLoungePassResponse\x12w\n" +
-	"\x12ListMyLoungePasses\x12/.sttattus.dominion.v1.ListMyLoungePassesRequest\x1a0.sttattus.dominion.v1.ListMyLoungePassesResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
+	"\x12ListMyLoungePasses\x12/.sttattus.dominion.v1.ListMyLoungePassesRequest\x1a0.sttattus.dominion.v1.ListMyLoungePassesResponse\x12\xb6\x01\n" +
+	"'GetDominionPropertyDigitalTwinWorkbench\x12D.sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchRequest\x1aE.sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchResponse\x12\x9e\x01\n" +
+	"\x1fSaveDominionPropertyDigitalTwin\x12<.sttattus.dominion.v1.SaveDominionPropertyDigitalTwinRequest\x1a=.sttattus.dominion.v1.SaveDominionPropertyDigitalTwinResponse\x12\xb3\x01\n" +
+	"&PropagateOrResolveDominionTwinConflict\x12C.sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictRequest\x1aD.sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictResponse\x12\xaa\x01\n" +
+	"#GetDominionUnderwritingLabWorkbench\x12@.sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchRequest\x1aA.sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchResponse\x12\xa1\x01\n" +
+	" SaveDominionUnderwritingScenario\x12=.sttattus.dominion.v1.SaveDominionUnderwritingScenarioRequest\x1a>.sttattus.dominion.v1.SaveDominionUnderwritingScenarioResponse\x12\xa7\x01\n" +
+	"\"StressTestOrFreezeDominionScenario\x12?.sttattus.dominion.v1.StressTestOrFreezeDominionScenarioRequest\x1a@.sttattus.dominion.v1.StressTestOrFreezeDominionScenarioResponse\x12\xb3\x01\n" +
+	"&GetDominionPropertyAccountingWorkbench\x12C.sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchRequest\x1aD.sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchResponse\x12\xaa\x01\n" +
+	"#SaveDominionPropertyAccountingClose\x12@.sttattus.dominion.v1.SaveDominionPropertyAccountingCloseRequest\x1aA.sttattus.dominion.v1.SaveDominionPropertyAccountingCloseResponse\x12\xad\x01\n" +
+	"$LockOrReverseDominionAccountingClose\x12A.sttattus.dominion.v1.LockOrReverseDominionAccountingCloseRequest\x1aB.sttattus.dominion.v1.LockOrReverseDominionAccountingCloseResponse\x12\xb3\x01\n" +
+	"&GetDominionDocumentObligationWorkbench\x12C.sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchRequest\x1aD.sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchResponse\x12\x9b\x01\n" +
+	"\x1eSaveDominionDocumentObligation\x12;.sttattus.dominion.v1.SaveDominionDocumentObligationRequest\x1a<.sttattus.dominion.v1.SaveDominionDocumentObligationResponse\x12\xb9\x01\n" +
+	"(ConfirmDominionObligationReceiptOrAppeal\x12E.sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealRequest\x1aF.sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealResponse\x12\xaa\x01\n" +
+	"#GetDominionLeasingResidentWorkbench\x12@.sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchRequest\x1aA.sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchResponse\x12\xa4\x01\n" +
+	"!SaveDominionLeasingResidentPortal\x12>.sttattus.dominion.v1.SaveDominionLeasingResidentPortalRequest\x1a?.sttattus.dominion.v1.SaveDominionLeasingResidentPortalResponse\x12\xb0\x01\n" +
+	"%ScheduleDominionRenewalOrDepositClose\x12B.sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseRequest\x1aC.sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseResponse\x12\xb0\x01\n" +
+	"%GetDominionMaintenanceVendorWorkbench\x12B.sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchRequest\x1aC.sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchResponse\x12\xa1\x01\n" +
+	" SaveDominionMaintenanceWorkOrder\x12=.sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderRequest\x1a>.sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderResponse\x12\xb0\x01\n" +
+	"%VerifyDominionThreeWayMatchOrWarranty\x12B.sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyRequest\x1aC.sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyResponse\x12\xa7\x01\n" +
+	"\"GetDominionCapitalProjectWorkbench\x12?.sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchRequest\x1a@.sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchResponse\x12\xa4\x01\n" +
+	"!SaveDominionCapitalProjectControl\x12>.sttattus.dominion.v1.SaveDominionCapitalProjectControlRequest\x1a?.sttattus.dominion.v1.SaveDominionCapitalProjectControlResponse\x12\xb3\x01\n" +
+	"&ApproveDominionDrawOrPunchlistCloseout\x12C.sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutRequest\x1aD.sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutResponse\x12\xaa\x01\n" +
+	"#GetDominionMarketValuationWorkbench\x12@.sttattus.dominion.v1.GetDominionMarketValuationWorkbenchRequest\x1aA.sttattus.dominion.v1.GetDominionMarketValuationWorkbenchResponse\x12\xb0\x01\n" +
+	"%SaveDominionMarketValuationGovernance\x12B.sttattus.dominion.v1.SaveDominionMarketValuationGovernanceRequest\x1aC.sttattus.dominion.v1.SaveDominionMarketValuationGovernanceResponse\x12\xb6\x01\n" +
+	"'AdjustDominionCompSetOrDisputeValuation\x12D.sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationRequest\x1aE.sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationResponse\x12\xb9\x01\n" +
+	"(GetDominionOwnershipTransactionWorkbench\x12E.sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchRequest\x1aF.sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchResponse\x12\xad\x01\n" +
+	"$SaveDominionOwnershipTransactionRoom\x12A.sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomRequest\x1aB.sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomResponse\x12\xb3\x01\n" +
+	"&StageDominionRefinanceOrDataroomAccess\x12C.sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessRequest\x1aD.sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessResponse\x12\xb6\x01\n" +
+	"'GetDominionInsuranceResilienceWorkbench\x12D.sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchRequest\x1aE.sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchResponse\x12\xb0\x01\n" +
+	"%SaveDominionInsuranceResilienceCenter\x12B.sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterRequest\x1aC.sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterResponse\x12\xad\x01\n" +
+	"$StageDominionClaimPackOrStressReview\x12A.sttattus.dominion.v1.StageDominionClaimPackOrStressReviewRequest\x1aB.sttattus.dominion.v1.StageDominionClaimPackOrStressReviewResponse\x12\xb3\x01\n" +
+	"&GetDominionUtilityPerformanceWorkbench\x12C.sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchRequest\x1aD.sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchResponse\x12\xb3\x01\n" +
+	"&SaveDominionUtilityBuildingPerformance\x12C.sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceRequest\x1aD.sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceResponse\x12\xb3\x01\n" +
+	"&VerifyDominionRetrofitSavingsOrAnomaly\x12C.sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyRequest\x1aD.sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyResponseBBZ@github.com/sttattus/proto/gen/go/sttattus/dominion/v1;dominionv1b\x06proto3"
 
 var (
 	file_sttattus_dominion_v1_dominion_proto_rawDescOnce sync.Once
@@ -6212,233 +11364,409 @@ func file_sttattus_dominion_v1_dominion_proto_rawDescGZIP() []byte {
 }
 
 var file_sttattus_dominion_v1_dominion_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 97)
+var file_sttattus_dominion_v1_dominion_proto_msgTypes = make([]protoimpl.MessageInfo, 174)
 var file_sttattus_dominion_v1_dominion_proto_goTypes = []any{
-	(EstateCategory)(0),                      // 0: sttattus.dominion.v1.EstateCategory
-	(VerificationStatus)(0),                  // 1: sttattus.dominion.v1.VerificationStatus
-	(*Property)(nil),                         // 2: sttattus.dominion.v1.Property
-	(*DominionStats)(nil),                    // 3: sttattus.dominion.v1.DominionStats
-	(*SyncPropertiesRequest)(nil),            // 4: sttattus.dominion.v1.SyncPropertiesRequest
-	(*SyncPropertiesResponse)(nil),           // 5: sttattus.dominion.v1.SyncPropertiesResponse
-	(*ListTerritoriesRequest)(nil),           // 6: sttattus.dominion.v1.ListTerritoriesRequest
-	(*ListTerritoriesResponse)(nil),          // 7: sttattus.dominion.v1.ListTerritoriesResponse
-	(*GetDominionStatsRequest)(nil),          // 8: sttattus.dominion.v1.GetDominionStatsRequest
-	(*GetDominionStatsResponse)(nil),         // 9: sttattus.dominion.v1.GetDominionStatsResponse
-	(*GetLoungeKeyRequest)(nil),              // 10: sttattus.dominion.v1.GetLoungeKeyRequest
-	(*GetLoungeKeyResponse)(nil),             // 11: sttattus.dominion.v1.GetLoungeKeyResponse
-	(*Lounge)(nil),                           // 12: sttattus.dominion.v1.Lounge
-	(*ListLoungesRequest)(nil),               // 13: sttattus.dominion.v1.ListLoungesRequest
-	(*ListLoungesResponse)(nil),              // 14: sttattus.dominion.v1.ListLoungesResponse
-	(*Deed)(nil),                             // 15: sttattus.dominion.v1.Deed
-	(*SubmitDeedRequest)(nil),                // 16: sttattus.dominion.v1.SubmitDeedRequest
-	(*SubmitDeedResponse)(nil),               // 17: sttattus.dominion.v1.SubmitDeedResponse
-	(*ListMyDeedsRequest)(nil),               // 18: sttattus.dominion.v1.ListMyDeedsRequest
-	(*ListMyDeedsResponse)(nil),              // 19: sttattus.dominion.v1.ListMyDeedsResponse
-	(*ListDeedsForPropertyRequest)(nil),      // 20: sttattus.dominion.v1.ListDeedsForPropertyRequest
-	(*ListDeedsForPropertyResponse)(nil),     // 21: sttattus.dominion.v1.ListDeedsForPropertyResponse
-	(*AdminReviewDeedRequest)(nil),           // 22: sttattus.dominion.v1.AdminReviewDeedRequest
-	(*AdminReviewDeedResponse)(nil),          // 23: sttattus.dominion.v1.AdminReviewDeedResponse
-	(*AVMResult)(nil),                        // 24: sttattus.dominion.v1.AVMResult
-	(*EstimatePropertyValueRequest)(nil),     // 25: sttattus.dominion.v1.EstimatePropertyValueRequest
-	(*EstimatePropertyValueResponse)(nil),    // 26: sttattus.dominion.v1.EstimatePropertyValueResponse
-	(*LoungeEvent)(nil),                      // 27: sttattus.dominion.v1.LoungeEvent
-	(*ListLoungeEventsRequest)(nil),          // 28: sttattus.dominion.v1.ListLoungeEventsRequest
-	(*ListLoungeEventsResponse)(nil),         // 29: sttattus.dominion.v1.ListLoungeEventsResponse
-	(*RsvpLoungeEventRequest)(nil),           // 30: sttattus.dominion.v1.RsvpLoungeEventRequest
-	(*RsvpLoungeEventResponse)(nil),          // 31: sttattus.dominion.v1.RsvpLoungeEventResponse
-	(*ListMyLoungeRsvpsRequest)(nil),         // 32: sttattus.dominion.v1.ListMyLoungeRsvpsRequest
-	(*ListMyLoungeRsvpsResponse)(nil),        // 33: sttattus.dominion.v1.ListMyLoungeRsvpsResponse
-	(*Salon)(nil),                            // 34: sttattus.dominion.v1.Salon
-	(*ListSalonsRequest)(nil),                // 35: sttattus.dominion.v1.ListSalonsRequest
-	(*ListSalonsResponse)(nil),               // 36: sttattus.dominion.v1.ListSalonsResponse
-	(*RsvpSalonRequest)(nil),                 // 37: sttattus.dominion.v1.RsvpSalonRequest
-	(*RsvpSalonResponse)(nil),                // 38: sttattus.dominion.v1.RsvpSalonResponse
-	(*ListMySalonRsvpsRequest)(nil),          // 39: sttattus.dominion.v1.ListMySalonRsvpsRequest
-	(*ListMySalonRsvpsResponse)(nil),         // 40: sttattus.dominion.v1.ListMySalonRsvpsResponse
-	(*PropertyFinancials)(nil),               // 41: sttattus.dominion.v1.PropertyFinancials
-	(*GetPropertyFinancialsRequest)(nil),     // 42: sttattus.dominion.v1.GetPropertyFinancialsRequest
-	(*GetPropertyFinancialsResponse)(nil),    // 43: sttattus.dominion.v1.GetPropertyFinancialsResponse
-	(*UpsertPropertyFinancialsRequest)(nil),  // 44: sttattus.dominion.v1.UpsertPropertyFinancialsRequest
-	(*UpsertPropertyFinancialsResponse)(nil), // 45: sttattus.dominion.v1.UpsertPropertyFinancialsResponse
-	(*GetPortfolioYieldRequest)(nil),         // 46: sttattus.dominion.v1.GetPortfolioYieldRequest
-	(*GetPortfolioYieldResponse)(nil),        // 47: sttattus.dominion.v1.GetPortfolioYieldResponse
-	(*RegionIntel)(nil),                      // 48: sttattus.dominion.v1.RegionIntel
-	(*ListRegionIntelRequest)(nil),           // 49: sttattus.dominion.v1.ListRegionIntelRequest
-	(*ListRegionIntelResponse)(nil),          // 50: sttattus.dominion.v1.ListRegionIntelResponse
-	(*GetRegionIntelRequest)(nil),            // 51: sttattus.dominion.v1.GetRegionIntelRequest
-	(*GetRegionIntelResponse)(nil),           // 52: sttattus.dominion.v1.GetRegionIntelResponse
-	(*RegionWeight)(nil),                     // 53: sttattus.dominion.v1.RegionWeight
-	(*TerritoryAllocation)(nil),              // 54: sttattus.dominion.v1.TerritoryAllocation
-	(*GetTerritoryAllocationRequest)(nil),    // 55: sttattus.dominion.v1.GetTerritoryAllocationRequest
-	(*GetTerritoryAllocationResponse)(nil),   // 56: sttattus.dominion.v1.GetTerritoryAllocationResponse
-	(*TodaySummary)(nil),                     // 57: sttattus.dominion.v1.TodaySummary
-	(*GetTodaySummaryRequest)(nil),           // 58: sttattus.dominion.v1.GetTodaySummaryRequest
-	(*GetTodaySummaryResponse)(nil),          // 59: sttattus.dominion.v1.GetTodaySummaryResponse
-	(*ConciergeThread)(nil),                  // 60: sttattus.dominion.v1.ConciergeThread
-	(*ConciergeMessage)(nil),                 // 61: sttattus.dominion.v1.ConciergeMessage
-	(*StartConciergeThreadRequest)(nil),      // 62: sttattus.dominion.v1.StartConciergeThreadRequest
-	(*StartConciergeThreadResponse)(nil),     // 63: sttattus.dominion.v1.StartConciergeThreadResponse
-	(*ListMyConciergeThreadsRequest)(nil),    // 64: sttattus.dominion.v1.ListMyConciergeThreadsRequest
-	(*ListMyConciergeThreadsResponse)(nil),   // 65: sttattus.dominion.v1.ListMyConciergeThreadsResponse
-	(*GetConciergeThreadRequest)(nil),        // 66: sttattus.dominion.v1.GetConciergeThreadRequest
-	(*GetConciergeThreadResponse)(nil),       // 67: sttattus.dominion.v1.GetConciergeThreadResponse
-	(*PostConciergeMessageRequest)(nil),      // 68: sttattus.dominion.v1.PostConciergeMessageRequest
-	(*PostConciergeMessageResponse)(nil),     // 69: sttattus.dominion.v1.PostConciergeMessageResponse
-	(*AnthologyArticle)(nil),                 // 70: sttattus.dominion.v1.AnthologyArticle
-	(*ListAnthologyArticlesRequest)(nil),     // 71: sttattus.dominion.v1.ListAnthologyArticlesRequest
-	(*ListAnthologyArticlesResponse)(nil),    // 72: sttattus.dominion.v1.ListAnthologyArticlesResponse
-	(*GetAnthologyArticleRequest)(nil),       // 73: sttattus.dominion.v1.GetAnthologyArticleRequest
-	(*GetAnthologyArticleResponse)(nil),      // 74: sttattus.dominion.v1.GetAnthologyArticleResponse
-	(*DirectoryPartner)(nil),                 // 75: sttattus.dominion.v1.DirectoryPartner
-	(*ListDirectoryRequest)(nil),             // 76: sttattus.dominion.v1.ListDirectoryRequest
-	(*ListDirectoryResponse)(nil),            // 77: sttattus.dominion.v1.ListDirectoryResponse
-	(*OffMarketListing)(nil),                 // 78: sttattus.dominion.v1.OffMarketListing
-	(*ListOffMarketRequest)(nil),             // 79: sttattus.dominion.v1.ListOffMarketRequest
-	(*ListOffMarketResponse)(nil),            // 80: sttattus.dominion.v1.ListOffMarketResponse
-	(*GetOffMarketRequest)(nil),              // 81: sttattus.dominion.v1.GetOffMarketRequest
-	(*GetOffMarketResponse)(nil),             // 82: sttattus.dominion.v1.GetOffMarketResponse
-	(*ParseDeedRequest)(nil),                 // 83: sttattus.dominion.v1.ParseDeedRequest
-	(*ParseDeedResponse)(nil),                // 84: sttattus.dominion.v1.ParseDeedResponse
-	(*DominionShareToken)(nil),               // 85: sttattus.dominion.v1.DominionShareToken
-	(*CreateDominionShareRequest)(nil),       // 86: sttattus.dominion.v1.CreateDominionShareRequest
-	(*CreateDominionShareResponse)(nil),      // 87: sttattus.dominion.v1.CreateDominionShareResponse
-	(*ListMyDominionSharesRequest)(nil),      // 88: sttattus.dominion.v1.ListMyDominionSharesRequest
-	(*ListMyDominionSharesResponse)(nil),     // 89: sttattus.dominion.v1.ListMyDominionSharesResponse
-	(*RevokeDominionShareRequest)(nil),       // 90: sttattus.dominion.v1.RevokeDominionShareRequest
-	(*RevokeDominionShareResponse)(nil),      // 91: sttattus.dominion.v1.RevokeDominionShareResponse
-	(*GenerateDominionAlmanacRequest)(nil),   // 92: sttattus.dominion.v1.GenerateDominionAlmanacRequest
-	(*GenerateDominionAlmanacResponse)(nil),  // 93: sttattus.dominion.v1.GenerateDominionAlmanacResponse
-	(*LoungePass)(nil),                       // 94: sttattus.dominion.v1.LoungePass
-	(*CreateLoungePassRequest)(nil),          // 95: sttattus.dominion.v1.CreateLoungePassRequest
-	(*CreateLoungePassResponse)(nil),         // 96: sttattus.dominion.v1.CreateLoungePassResponse
-	(*ListMyLoungePassesRequest)(nil),        // 97: sttattus.dominion.v1.ListMyLoungePassesRequest
-	(*ListMyLoungePassesResponse)(nil),       // 98: sttattus.dominion.v1.ListMyLoungePassesResponse
-	(*timestamppb.Timestamp)(nil),            // 99: google.protobuf.Timestamp
+	(EstateCategory)(0),                                      // 0: sttattus.dominion.v1.EstateCategory
+	(VerificationStatus)(0),                                  // 1: sttattus.dominion.v1.VerificationStatus
+	(*Property)(nil),                                         // 2: sttattus.dominion.v1.Property
+	(*DominionStats)(nil),                                    // 3: sttattus.dominion.v1.DominionStats
+	(*SyncPropertiesRequest)(nil),                            // 4: sttattus.dominion.v1.SyncPropertiesRequest
+	(*SyncPropertiesResponse)(nil),                           // 5: sttattus.dominion.v1.SyncPropertiesResponse
+	(*ListTerritoriesRequest)(nil),                           // 6: sttattus.dominion.v1.ListTerritoriesRequest
+	(*ListTerritoriesResponse)(nil),                          // 7: sttattus.dominion.v1.ListTerritoriesResponse
+	(*GetDominionStatsRequest)(nil),                          // 8: sttattus.dominion.v1.GetDominionStatsRequest
+	(*GetDominionStatsResponse)(nil),                         // 9: sttattus.dominion.v1.GetDominionStatsResponse
+	(*GetLoungeKeyRequest)(nil),                              // 10: sttattus.dominion.v1.GetLoungeKeyRequest
+	(*GetLoungeKeyResponse)(nil),                             // 11: sttattus.dominion.v1.GetLoungeKeyResponse
+	(*Lounge)(nil),                                           // 12: sttattus.dominion.v1.Lounge
+	(*ListLoungesRequest)(nil),                               // 13: sttattus.dominion.v1.ListLoungesRequest
+	(*ListLoungesResponse)(nil),                              // 14: sttattus.dominion.v1.ListLoungesResponse
+	(*Deed)(nil),                                             // 15: sttattus.dominion.v1.Deed
+	(*SubmitDeedRequest)(nil),                                // 16: sttattus.dominion.v1.SubmitDeedRequest
+	(*SubmitDeedResponse)(nil),                               // 17: sttattus.dominion.v1.SubmitDeedResponse
+	(*ListMyDeedsRequest)(nil),                               // 18: sttattus.dominion.v1.ListMyDeedsRequest
+	(*ListMyDeedsResponse)(nil),                              // 19: sttattus.dominion.v1.ListMyDeedsResponse
+	(*ListDeedsForPropertyRequest)(nil),                      // 20: sttattus.dominion.v1.ListDeedsForPropertyRequest
+	(*ListDeedsForPropertyResponse)(nil),                     // 21: sttattus.dominion.v1.ListDeedsForPropertyResponse
+	(*AdminReviewDeedRequest)(nil),                           // 22: sttattus.dominion.v1.AdminReviewDeedRequest
+	(*AdminReviewDeedResponse)(nil),                          // 23: sttattus.dominion.v1.AdminReviewDeedResponse
+	(*AVMResult)(nil),                                        // 24: sttattus.dominion.v1.AVMResult
+	(*EstimatePropertyValueRequest)(nil),                     // 25: sttattus.dominion.v1.EstimatePropertyValueRequest
+	(*EstimatePropertyValueResponse)(nil),                    // 26: sttattus.dominion.v1.EstimatePropertyValueResponse
+	(*LoungeEvent)(nil),                                      // 27: sttattus.dominion.v1.LoungeEvent
+	(*ListLoungeEventsRequest)(nil),                          // 28: sttattus.dominion.v1.ListLoungeEventsRequest
+	(*ListLoungeEventsResponse)(nil),                         // 29: sttattus.dominion.v1.ListLoungeEventsResponse
+	(*RsvpLoungeEventRequest)(nil),                           // 30: sttattus.dominion.v1.RsvpLoungeEventRequest
+	(*RsvpLoungeEventResponse)(nil),                          // 31: sttattus.dominion.v1.RsvpLoungeEventResponse
+	(*ListMyLoungeRsvpsRequest)(nil),                         // 32: sttattus.dominion.v1.ListMyLoungeRsvpsRequest
+	(*ListMyLoungeRsvpsResponse)(nil),                        // 33: sttattus.dominion.v1.ListMyLoungeRsvpsResponse
+	(*Salon)(nil),                                            // 34: sttattus.dominion.v1.Salon
+	(*ListSalonsRequest)(nil),                                // 35: sttattus.dominion.v1.ListSalonsRequest
+	(*ListSalonsResponse)(nil),                               // 36: sttattus.dominion.v1.ListSalonsResponse
+	(*RsvpSalonRequest)(nil),                                 // 37: sttattus.dominion.v1.RsvpSalonRequest
+	(*RsvpSalonResponse)(nil),                                // 38: sttattus.dominion.v1.RsvpSalonResponse
+	(*ListMySalonRsvpsRequest)(nil),                          // 39: sttattus.dominion.v1.ListMySalonRsvpsRequest
+	(*ListMySalonRsvpsResponse)(nil),                         // 40: sttattus.dominion.v1.ListMySalonRsvpsResponse
+	(*PropertyFinancials)(nil),                               // 41: sttattus.dominion.v1.PropertyFinancials
+	(*GetPropertyFinancialsRequest)(nil),                     // 42: sttattus.dominion.v1.GetPropertyFinancialsRequest
+	(*GetPropertyFinancialsResponse)(nil),                    // 43: sttattus.dominion.v1.GetPropertyFinancialsResponse
+	(*UpsertPropertyFinancialsRequest)(nil),                  // 44: sttattus.dominion.v1.UpsertPropertyFinancialsRequest
+	(*UpsertPropertyFinancialsResponse)(nil),                 // 45: sttattus.dominion.v1.UpsertPropertyFinancialsResponse
+	(*GetPortfolioYieldRequest)(nil),                         // 46: sttattus.dominion.v1.GetPortfolioYieldRequest
+	(*GetPortfolioYieldResponse)(nil),                        // 47: sttattus.dominion.v1.GetPortfolioYieldResponse
+	(*RegionIntel)(nil),                                      // 48: sttattus.dominion.v1.RegionIntel
+	(*ListRegionIntelRequest)(nil),                           // 49: sttattus.dominion.v1.ListRegionIntelRequest
+	(*ListRegionIntelResponse)(nil),                          // 50: sttattus.dominion.v1.ListRegionIntelResponse
+	(*GetRegionIntelRequest)(nil),                            // 51: sttattus.dominion.v1.GetRegionIntelRequest
+	(*GetRegionIntelResponse)(nil),                           // 52: sttattus.dominion.v1.GetRegionIntelResponse
+	(*RegionWeight)(nil),                                     // 53: sttattus.dominion.v1.RegionWeight
+	(*TerritoryAllocation)(nil),                              // 54: sttattus.dominion.v1.TerritoryAllocation
+	(*GetTerritoryAllocationRequest)(nil),                    // 55: sttattus.dominion.v1.GetTerritoryAllocationRequest
+	(*GetTerritoryAllocationResponse)(nil),                   // 56: sttattus.dominion.v1.GetTerritoryAllocationResponse
+	(*TodaySummary)(nil),                                     // 57: sttattus.dominion.v1.TodaySummary
+	(*GetTodaySummaryRequest)(nil),                           // 58: sttattus.dominion.v1.GetTodaySummaryRequest
+	(*GetTodaySummaryResponse)(nil),                          // 59: sttattus.dominion.v1.GetTodaySummaryResponse
+	(*ConciergeThread)(nil),                                  // 60: sttattus.dominion.v1.ConciergeThread
+	(*ConciergeMessage)(nil),                                 // 61: sttattus.dominion.v1.ConciergeMessage
+	(*StartConciergeThreadRequest)(nil),                      // 62: sttattus.dominion.v1.StartConciergeThreadRequest
+	(*StartConciergeThreadResponse)(nil),                     // 63: sttattus.dominion.v1.StartConciergeThreadResponse
+	(*ListMyConciergeThreadsRequest)(nil),                    // 64: sttattus.dominion.v1.ListMyConciergeThreadsRequest
+	(*ListMyConciergeThreadsResponse)(nil),                   // 65: sttattus.dominion.v1.ListMyConciergeThreadsResponse
+	(*GetConciergeThreadRequest)(nil),                        // 66: sttattus.dominion.v1.GetConciergeThreadRequest
+	(*GetConciergeThreadResponse)(nil),                       // 67: sttattus.dominion.v1.GetConciergeThreadResponse
+	(*PostConciergeMessageRequest)(nil),                      // 68: sttattus.dominion.v1.PostConciergeMessageRequest
+	(*PostConciergeMessageResponse)(nil),                     // 69: sttattus.dominion.v1.PostConciergeMessageResponse
+	(*AnthologyArticle)(nil),                                 // 70: sttattus.dominion.v1.AnthologyArticle
+	(*ListAnthologyArticlesRequest)(nil),                     // 71: sttattus.dominion.v1.ListAnthologyArticlesRequest
+	(*ListAnthologyArticlesResponse)(nil),                    // 72: sttattus.dominion.v1.ListAnthologyArticlesResponse
+	(*GetAnthologyArticleRequest)(nil),                       // 73: sttattus.dominion.v1.GetAnthologyArticleRequest
+	(*GetAnthologyArticleResponse)(nil),                      // 74: sttattus.dominion.v1.GetAnthologyArticleResponse
+	(*DirectoryPartner)(nil),                                 // 75: sttattus.dominion.v1.DirectoryPartner
+	(*ListDirectoryRequest)(nil),                             // 76: sttattus.dominion.v1.ListDirectoryRequest
+	(*ListDirectoryResponse)(nil),                            // 77: sttattus.dominion.v1.ListDirectoryResponse
+	(*OffMarketListing)(nil),                                 // 78: sttattus.dominion.v1.OffMarketListing
+	(*ListOffMarketRequest)(nil),                             // 79: sttattus.dominion.v1.ListOffMarketRequest
+	(*ListOffMarketResponse)(nil),                            // 80: sttattus.dominion.v1.ListOffMarketResponse
+	(*GetOffMarketRequest)(nil),                              // 81: sttattus.dominion.v1.GetOffMarketRequest
+	(*GetOffMarketResponse)(nil),                             // 82: sttattus.dominion.v1.GetOffMarketResponse
+	(*ParseDeedRequest)(nil),                                 // 83: sttattus.dominion.v1.ParseDeedRequest
+	(*ParseDeedResponse)(nil),                                // 84: sttattus.dominion.v1.ParseDeedResponse
+	(*DominionShareToken)(nil),                               // 85: sttattus.dominion.v1.DominionShareToken
+	(*CreateDominionShareRequest)(nil),                       // 86: sttattus.dominion.v1.CreateDominionShareRequest
+	(*CreateDominionShareResponse)(nil),                      // 87: sttattus.dominion.v1.CreateDominionShareResponse
+	(*ListMyDominionSharesRequest)(nil),                      // 88: sttattus.dominion.v1.ListMyDominionSharesRequest
+	(*ListMyDominionSharesResponse)(nil),                     // 89: sttattus.dominion.v1.ListMyDominionSharesResponse
+	(*RevokeDominionShareRequest)(nil),                       // 90: sttattus.dominion.v1.RevokeDominionShareRequest
+	(*RevokeDominionShareResponse)(nil),                      // 91: sttattus.dominion.v1.RevokeDominionShareResponse
+	(*GenerateDominionAlmanacRequest)(nil),                   // 92: sttattus.dominion.v1.GenerateDominionAlmanacRequest
+	(*GenerateDominionAlmanacResponse)(nil),                  // 93: sttattus.dominion.v1.GenerateDominionAlmanacResponse
+	(*LoungePass)(nil),                                       // 94: sttattus.dominion.v1.LoungePass
+	(*CreateLoungePassRequest)(nil),                          // 95: sttattus.dominion.v1.CreateLoungePassRequest
+	(*CreateLoungePassResponse)(nil),                         // 96: sttattus.dominion.v1.CreateLoungePassResponse
+	(*ListMyLoungePassesRequest)(nil),                        // 97: sttattus.dominion.v1.ListMyLoungePassesRequest
+	(*ListMyLoungePassesResponse)(nil),                       // 98: sttattus.dominion.v1.ListMyLoungePassesResponse
+	(*DominionPropertyDigitalTwinItem)(nil),                  // 99: sttattus.dominion.v1.DominionPropertyDigitalTwinItem
+	(*GetDominionPropertyDigitalTwinWorkbenchRequest)(nil),   // 100: sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchRequest
+	(*GetDominionPropertyDigitalTwinWorkbenchResponse)(nil),  // 101: sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchResponse
+	(*SaveDominionPropertyDigitalTwinRequest)(nil),           // 102: sttattus.dominion.v1.SaveDominionPropertyDigitalTwinRequest
+	(*SaveDominionPropertyDigitalTwinResponse)(nil),          // 103: sttattus.dominion.v1.SaveDominionPropertyDigitalTwinResponse
+	(*PropagateOrResolveDominionTwinConflictRequest)(nil),    // 104: sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictRequest
+	(*PropagateOrResolveDominionTwinConflictResponse)(nil),   // 105: sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictResponse
+	(*DominionUnderwritingScenarioItem)(nil),                 // 106: sttattus.dominion.v1.DominionUnderwritingScenarioItem
+	(*GetDominionUnderwritingLabWorkbenchRequest)(nil),       // 107: sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchRequest
+	(*GetDominionUnderwritingLabWorkbenchResponse)(nil),      // 108: sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchResponse
+	(*SaveDominionUnderwritingScenarioRequest)(nil),          // 109: sttattus.dominion.v1.SaveDominionUnderwritingScenarioRequest
+	(*SaveDominionUnderwritingScenarioResponse)(nil),         // 110: sttattus.dominion.v1.SaveDominionUnderwritingScenarioResponse
+	(*StressTestOrFreezeDominionScenarioRequest)(nil),        // 111: sttattus.dominion.v1.StressTestOrFreezeDominionScenarioRequest
+	(*StressTestOrFreezeDominionScenarioResponse)(nil),       // 112: sttattus.dominion.v1.StressTestOrFreezeDominionScenarioResponse
+	(*DominionPropertyAccountingCloseItem)(nil),              // 113: sttattus.dominion.v1.DominionPropertyAccountingCloseItem
+	(*GetDominionPropertyAccountingWorkbenchRequest)(nil),    // 114: sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchRequest
+	(*GetDominionPropertyAccountingWorkbenchResponse)(nil),   // 115: sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchResponse
+	(*SaveDominionPropertyAccountingCloseRequest)(nil),       // 116: sttattus.dominion.v1.SaveDominionPropertyAccountingCloseRequest
+	(*SaveDominionPropertyAccountingCloseResponse)(nil),      // 117: sttattus.dominion.v1.SaveDominionPropertyAccountingCloseResponse
+	(*LockOrReverseDominionAccountingCloseRequest)(nil),      // 118: sttattus.dominion.v1.LockOrReverseDominionAccountingCloseRequest
+	(*LockOrReverseDominionAccountingCloseResponse)(nil),     // 119: sttattus.dominion.v1.LockOrReverseDominionAccountingCloseResponse
+	(*DominionDocumentObligationVaultItem)(nil),              // 120: sttattus.dominion.v1.DominionDocumentObligationVaultItem
+	(*GetDominionDocumentObligationWorkbenchRequest)(nil),    // 121: sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchRequest
+	(*GetDominionDocumentObligationWorkbenchResponse)(nil),   // 122: sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchResponse
+	(*SaveDominionDocumentObligationRequest)(nil),            // 123: sttattus.dominion.v1.SaveDominionDocumentObligationRequest
+	(*SaveDominionDocumentObligationResponse)(nil),           // 124: sttattus.dominion.v1.SaveDominionDocumentObligationResponse
+	(*ConfirmDominionObligationReceiptOrAppealRequest)(nil),  // 125: sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealRequest
+	(*ConfirmDominionObligationReceiptOrAppealResponse)(nil), // 126: sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealResponse
+	(*DominionLeasingResidentPortalItem)(nil),                // 127: sttattus.dominion.v1.DominionLeasingResidentPortalItem
+	(*GetDominionLeasingResidentWorkbenchRequest)(nil),       // 128: sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchRequest
+	(*GetDominionLeasingResidentWorkbenchResponse)(nil),      // 129: sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchResponse
+	(*SaveDominionLeasingResidentPortalRequest)(nil),         // 130: sttattus.dominion.v1.SaveDominionLeasingResidentPortalRequest
+	(*SaveDominionLeasingResidentPortalResponse)(nil),        // 131: sttattus.dominion.v1.SaveDominionLeasingResidentPortalResponse
+	(*ScheduleDominionRenewalOrDepositCloseRequest)(nil),     // 132: sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseRequest
+	(*ScheduleDominionRenewalOrDepositCloseResponse)(nil),    // 133: sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseResponse
+	(*DominionMaintenanceVendorNetworkItem)(nil),             // 134: sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem
+	(*GetDominionMaintenanceVendorWorkbenchRequest)(nil),     // 135: sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchRequest
+	(*GetDominionMaintenanceVendorWorkbenchResponse)(nil),    // 136: sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchResponse
+	(*SaveDominionMaintenanceWorkOrderRequest)(nil),          // 137: sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderRequest
+	(*SaveDominionMaintenanceWorkOrderResponse)(nil),         // 138: sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderResponse
+	(*VerifyDominionThreeWayMatchOrWarrantyRequest)(nil),     // 139: sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyRequest
+	(*VerifyDominionThreeWayMatchOrWarrantyResponse)(nil),    // 140: sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyResponse
+	(*DominionCapitalProjectControlItem)(nil),                // 141: sttattus.dominion.v1.DominionCapitalProjectControlItem
+	(*GetDominionCapitalProjectWorkbenchRequest)(nil),        // 142: sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchRequest
+	(*GetDominionCapitalProjectWorkbenchResponse)(nil),       // 143: sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchResponse
+	(*SaveDominionCapitalProjectControlRequest)(nil),         // 144: sttattus.dominion.v1.SaveDominionCapitalProjectControlRequest
+	(*SaveDominionCapitalProjectControlResponse)(nil),        // 145: sttattus.dominion.v1.SaveDominionCapitalProjectControlResponse
+	(*ApproveDominionDrawOrPunchlistCloseoutRequest)(nil),    // 146: sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutRequest
+	(*ApproveDominionDrawOrPunchlistCloseoutResponse)(nil),   // 147: sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutResponse
+	(*DominionMarketValuationGovernanceItem)(nil),            // 148: sttattus.dominion.v1.DominionMarketValuationGovernanceItem
+	(*GetDominionMarketValuationWorkbenchRequest)(nil),       // 149: sttattus.dominion.v1.GetDominionMarketValuationWorkbenchRequest
+	(*GetDominionMarketValuationWorkbenchResponse)(nil),      // 150: sttattus.dominion.v1.GetDominionMarketValuationWorkbenchResponse
+	(*SaveDominionMarketValuationGovernanceRequest)(nil),     // 151: sttattus.dominion.v1.SaveDominionMarketValuationGovernanceRequest
+	(*SaveDominionMarketValuationGovernanceResponse)(nil),    // 152: sttattus.dominion.v1.SaveDominionMarketValuationGovernanceResponse
+	(*AdjustDominionCompSetOrDisputeValuationRequest)(nil),   // 153: sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationRequest
+	(*AdjustDominionCompSetOrDisputeValuationResponse)(nil),  // 154: sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationResponse
+	(*DominionOwnershipTransactionRoomItem)(nil),             // 155: sttattus.dominion.v1.DominionOwnershipTransactionRoomItem
+	(*GetDominionOwnershipTransactionWorkbenchRequest)(nil),  // 156: sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchRequest
+	(*GetDominionOwnershipTransactionWorkbenchResponse)(nil), // 157: sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchResponse
+	(*SaveDominionOwnershipTransactionRoomRequest)(nil),      // 158: sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomRequest
+	(*SaveDominionOwnershipTransactionRoomResponse)(nil),     // 159: sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomResponse
+	(*StageDominionRefinanceOrDataroomAccessRequest)(nil),    // 160: sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessRequest
+	(*StageDominionRefinanceOrDataroomAccessResponse)(nil),   // 161: sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessResponse
+	(*DominionInsuranceResilienceCenterItem)(nil),            // 162: sttattus.dominion.v1.DominionInsuranceResilienceCenterItem
+	(*GetDominionInsuranceResilienceWorkbenchRequest)(nil),   // 163: sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchRequest
+	(*GetDominionInsuranceResilienceWorkbenchResponse)(nil),  // 164: sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchResponse
+	(*SaveDominionInsuranceResilienceCenterRequest)(nil),     // 165: sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterRequest
+	(*SaveDominionInsuranceResilienceCenterResponse)(nil),    // 166: sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterResponse
+	(*StageDominionClaimPackOrStressReviewRequest)(nil),      // 167: sttattus.dominion.v1.StageDominionClaimPackOrStressReviewRequest
+	(*StageDominionClaimPackOrStressReviewResponse)(nil),     // 168: sttattus.dominion.v1.StageDominionClaimPackOrStressReviewResponse
+	(*DominionUtilityBuildingPerformanceItem)(nil),           // 169: sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem
+	(*GetDominionUtilityPerformanceWorkbenchRequest)(nil),    // 170: sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchRequest
+	(*GetDominionUtilityPerformanceWorkbenchResponse)(nil),   // 171: sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchResponse
+	(*SaveDominionUtilityBuildingPerformanceRequest)(nil),    // 172: sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceRequest
+	(*SaveDominionUtilityBuildingPerformanceResponse)(nil),   // 173: sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceResponse
+	(*VerifyDominionRetrofitSavingsOrAnomalyRequest)(nil),    // 174: sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyRequest
+	(*VerifyDominionRetrofitSavingsOrAnomalyResponse)(nil),   // 175: sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyResponse
+	(*timestamppb.Timestamp)(nil),                            // 176: google.protobuf.Timestamp
 }
 var file_sttattus_dominion_v1_dominion_proto_depIdxs = []int32{
-	0,  // 0: sttattus.dominion.v1.Property.category:type_name -> sttattus.dominion.v1.EstateCategory
-	1,  // 1: sttattus.dominion.v1.Property.status:type_name -> sttattus.dominion.v1.VerificationStatus
-	99, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
-	2,  // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
-	3,  // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	2,  // 5: sttattus.dominion.v1.SyncPropertiesResponse.properties:type_name -> sttattus.dominion.v1.Property
-	2,  // 6: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
-	3,  // 7: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
-	99, // 8: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
-	12, // 9: sttattus.dominion.v1.ListLoungesResponse.lounges:type_name -> sttattus.dominion.v1.Lounge
-	15, // 10: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
-	15, // 11: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
-	15, // 12: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
-	15, // 13: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
-	24, // 14: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
-	27, // 15: sttattus.dominion.v1.ListLoungeEventsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
-	27, // 16: sttattus.dominion.v1.ListMyLoungeRsvpsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
-	34, // 17: sttattus.dominion.v1.ListSalonsResponse.salons:type_name -> sttattus.dominion.v1.Salon
-	34, // 18: sttattus.dominion.v1.ListMySalonRsvpsResponse.salons:type_name -> sttattus.dominion.v1.Salon
-	41, // 19: sttattus.dominion.v1.GetPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
-	41, // 20: sttattus.dominion.v1.UpsertPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
-	48, // 21: sttattus.dominion.v1.ListRegionIntelResponse.regions:type_name -> sttattus.dominion.v1.RegionIntel
-	48, // 22: sttattus.dominion.v1.GetRegionIntelResponse.region:type_name -> sttattus.dominion.v1.RegionIntel
-	53, // 23: sttattus.dominion.v1.TerritoryAllocation.regions:type_name -> sttattus.dominion.v1.RegionWeight
-	54, // 24: sttattus.dominion.v1.GetTerritoryAllocationResponse.allocation:type_name -> sttattus.dominion.v1.TerritoryAllocation
-	57, // 25: sttattus.dominion.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.dominion.v1.TodaySummary
-	60, // 26: sttattus.dominion.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
-	60, // 27: sttattus.dominion.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dominion.v1.ConciergeThread
-	60, // 28: sttattus.dominion.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
-	61, // 29: sttattus.dominion.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dominion.v1.ConciergeMessage
-	61, // 30: sttattus.dominion.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dominion.v1.ConciergeMessage
-	70, // 31: sttattus.dominion.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.dominion.v1.AnthologyArticle
-	70, // 32: sttattus.dominion.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.dominion.v1.AnthologyArticle
-	75, // 33: sttattus.dominion.v1.ListDirectoryResponse.partners:type_name -> sttattus.dominion.v1.DirectoryPartner
-	78, // 34: sttattus.dominion.v1.ListOffMarketResponse.listings:type_name -> sttattus.dominion.v1.OffMarketListing
-	78, // 35: sttattus.dominion.v1.GetOffMarketResponse.listing:type_name -> sttattus.dominion.v1.OffMarketListing
-	85, // 36: sttattus.dominion.v1.CreateDominionShareResponse.token:type_name -> sttattus.dominion.v1.DominionShareToken
-	85, // 37: sttattus.dominion.v1.ListMyDominionSharesResponse.tokens:type_name -> sttattus.dominion.v1.DominionShareToken
-	94, // 38: sttattus.dominion.v1.CreateLoungePassResponse.pass:type_name -> sttattus.dominion.v1.LoungePass
-	94, // 39: sttattus.dominion.v1.ListMyLoungePassesResponse.passes:type_name -> sttattus.dominion.v1.LoungePass
-	4,  // 40: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
-	6,  // 41: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
-	8,  // 42: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
-	10, // 43: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
-	25, // 44: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
-	16, // 45: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
-	18, // 46: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
-	20, // 47: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
-	22, // 48: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
-	13, // 49: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
-	28, // 50: sttattus.dominion.v1.DominionService.ListLoungeEvents:input_type -> sttattus.dominion.v1.ListLoungeEventsRequest
-	30, // 51: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:input_type -> sttattus.dominion.v1.RsvpLoungeEventRequest
-	32, // 52: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:input_type -> sttattus.dominion.v1.ListMyLoungeRsvpsRequest
-	35, // 53: sttattus.dominion.v1.DominionService.ListSalons:input_type -> sttattus.dominion.v1.ListSalonsRequest
-	37, // 54: sttattus.dominion.v1.DominionService.RsvpSalon:input_type -> sttattus.dominion.v1.RsvpSalonRequest
-	39, // 55: sttattus.dominion.v1.DominionService.ListMySalonRsvps:input_type -> sttattus.dominion.v1.ListMySalonRsvpsRequest
-	42, // 56: sttattus.dominion.v1.DominionService.GetPropertyFinancials:input_type -> sttattus.dominion.v1.GetPropertyFinancialsRequest
-	44, // 57: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:input_type -> sttattus.dominion.v1.UpsertPropertyFinancialsRequest
-	46, // 58: sttattus.dominion.v1.DominionService.GetPortfolioYield:input_type -> sttattus.dominion.v1.GetPortfolioYieldRequest
-	49, // 59: sttattus.dominion.v1.DominionService.ListRegionIntel:input_type -> sttattus.dominion.v1.ListRegionIntelRequest
-	51, // 60: sttattus.dominion.v1.DominionService.GetRegionIntel:input_type -> sttattus.dominion.v1.GetRegionIntelRequest
-	55, // 61: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:input_type -> sttattus.dominion.v1.GetTerritoryAllocationRequest
-	58, // 62: sttattus.dominion.v1.DominionService.GetTodaySummary:input_type -> sttattus.dominion.v1.GetTodaySummaryRequest
-	62, // 63: sttattus.dominion.v1.DominionService.StartConciergeThread:input_type -> sttattus.dominion.v1.StartConciergeThreadRequest
-	64, // 64: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:input_type -> sttattus.dominion.v1.ListMyConciergeThreadsRequest
-	66, // 65: sttattus.dominion.v1.DominionService.GetConciergeThread:input_type -> sttattus.dominion.v1.GetConciergeThreadRequest
-	68, // 66: sttattus.dominion.v1.DominionService.PostConciergeMessage:input_type -> sttattus.dominion.v1.PostConciergeMessageRequest
-	71, // 67: sttattus.dominion.v1.DominionService.ListAnthologyArticles:input_type -> sttattus.dominion.v1.ListAnthologyArticlesRequest
-	73, // 68: sttattus.dominion.v1.DominionService.GetAnthologyArticle:input_type -> sttattus.dominion.v1.GetAnthologyArticleRequest
-	76, // 69: sttattus.dominion.v1.DominionService.ListDirectory:input_type -> sttattus.dominion.v1.ListDirectoryRequest
-	79, // 70: sttattus.dominion.v1.DominionService.ListOffMarket:input_type -> sttattus.dominion.v1.ListOffMarketRequest
-	81, // 71: sttattus.dominion.v1.DominionService.GetOffMarket:input_type -> sttattus.dominion.v1.GetOffMarketRequest
-	83, // 72: sttattus.dominion.v1.DominionService.ParseDeed:input_type -> sttattus.dominion.v1.ParseDeedRequest
-	86, // 73: sttattus.dominion.v1.DominionService.CreateDominionShare:input_type -> sttattus.dominion.v1.CreateDominionShareRequest
-	88, // 74: sttattus.dominion.v1.DominionService.ListMyDominionShares:input_type -> sttattus.dominion.v1.ListMyDominionSharesRequest
-	90, // 75: sttattus.dominion.v1.DominionService.RevokeDominionShare:input_type -> sttattus.dominion.v1.RevokeDominionShareRequest
-	92, // 76: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:input_type -> sttattus.dominion.v1.GenerateDominionAlmanacRequest
-	95, // 77: sttattus.dominion.v1.DominionService.CreateLoungePass:input_type -> sttattus.dominion.v1.CreateLoungePassRequest
-	97, // 78: sttattus.dominion.v1.DominionService.ListMyLoungePasses:input_type -> sttattus.dominion.v1.ListMyLoungePassesRequest
-	5,  // 79: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
-	7,  // 80: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
-	9,  // 81: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
-	11, // 82: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
-	26, // 83: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
-	17, // 84: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
-	19, // 85: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
-	21, // 86: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
-	23, // 87: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
-	14, // 88: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
-	29, // 89: sttattus.dominion.v1.DominionService.ListLoungeEvents:output_type -> sttattus.dominion.v1.ListLoungeEventsResponse
-	31, // 90: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:output_type -> sttattus.dominion.v1.RsvpLoungeEventResponse
-	33, // 91: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:output_type -> sttattus.dominion.v1.ListMyLoungeRsvpsResponse
-	36, // 92: sttattus.dominion.v1.DominionService.ListSalons:output_type -> sttattus.dominion.v1.ListSalonsResponse
-	38, // 93: sttattus.dominion.v1.DominionService.RsvpSalon:output_type -> sttattus.dominion.v1.RsvpSalonResponse
-	40, // 94: sttattus.dominion.v1.DominionService.ListMySalonRsvps:output_type -> sttattus.dominion.v1.ListMySalonRsvpsResponse
-	43, // 95: sttattus.dominion.v1.DominionService.GetPropertyFinancials:output_type -> sttattus.dominion.v1.GetPropertyFinancialsResponse
-	45, // 96: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:output_type -> sttattus.dominion.v1.UpsertPropertyFinancialsResponse
-	47, // 97: sttattus.dominion.v1.DominionService.GetPortfolioYield:output_type -> sttattus.dominion.v1.GetPortfolioYieldResponse
-	50, // 98: sttattus.dominion.v1.DominionService.ListRegionIntel:output_type -> sttattus.dominion.v1.ListRegionIntelResponse
-	52, // 99: sttattus.dominion.v1.DominionService.GetRegionIntel:output_type -> sttattus.dominion.v1.GetRegionIntelResponse
-	56, // 100: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:output_type -> sttattus.dominion.v1.GetTerritoryAllocationResponse
-	59, // 101: sttattus.dominion.v1.DominionService.GetTodaySummary:output_type -> sttattus.dominion.v1.GetTodaySummaryResponse
-	63, // 102: sttattus.dominion.v1.DominionService.StartConciergeThread:output_type -> sttattus.dominion.v1.StartConciergeThreadResponse
-	65, // 103: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:output_type -> sttattus.dominion.v1.ListMyConciergeThreadsResponse
-	67, // 104: sttattus.dominion.v1.DominionService.GetConciergeThread:output_type -> sttattus.dominion.v1.GetConciergeThreadResponse
-	69, // 105: sttattus.dominion.v1.DominionService.PostConciergeMessage:output_type -> sttattus.dominion.v1.PostConciergeMessageResponse
-	72, // 106: sttattus.dominion.v1.DominionService.ListAnthologyArticles:output_type -> sttattus.dominion.v1.ListAnthologyArticlesResponse
-	74, // 107: sttattus.dominion.v1.DominionService.GetAnthologyArticle:output_type -> sttattus.dominion.v1.GetAnthologyArticleResponse
-	77, // 108: sttattus.dominion.v1.DominionService.ListDirectory:output_type -> sttattus.dominion.v1.ListDirectoryResponse
-	80, // 109: sttattus.dominion.v1.DominionService.ListOffMarket:output_type -> sttattus.dominion.v1.ListOffMarketResponse
-	82, // 110: sttattus.dominion.v1.DominionService.GetOffMarket:output_type -> sttattus.dominion.v1.GetOffMarketResponse
-	84, // 111: sttattus.dominion.v1.DominionService.ParseDeed:output_type -> sttattus.dominion.v1.ParseDeedResponse
-	87, // 112: sttattus.dominion.v1.DominionService.CreateDominionShare:output_type -> sttattus.dominion.v1.CreateDominionShareResponse
-	89, // 113: sttattus.dominion.v1.DominionService.ListMyDominionShares:output_type -> sttattus.dominion.v1.ListMyDominionSharesResponse
-	91, // 114: sttattus.dominion.v1.DominionService.RevokeDominionShare:output_type -> sttattus.dominion.v1.RevokeDominionShareResponse
-	93, // 115: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:output_type -> sttattus.dominion.v1.GenerateDominionAlmanacResponse
-	96, // 116: sttattus.dominion.v1.DominionService.CreateLoungePass:output_type -> sttattus.dominion.v1.CreateLoungePassResponse
-	98, // 117: sttattus.dominion.v1.DominionService.ListMyLoungePasses:output_type -> sttattus.dominion.v1.ListMyLoungePassesResponse
-	79, // [79:118] is the sub-list for method output_type
-	40, // [40:79] is the sub-list for method input_type
-	40, // [40:40] is the sub-list for extension type_name
-	40, // [40:40] is the sub-list for extension extendee
-	0,  // [0:40] is the sub-list for field type_name
+	0,   // 0: sttattus.dominion.v1.Property.category:type_name -> sttattus.dominion.v1.EstateCategory
+	1,   // 1: sttattus.dominion.v1.Property.status:type_name -> sttattus.dominion.v1.VerificationStatus
+	176, // 2: sttattus.dominion.v1.Property.acquired_at:type_name -> google.protobuf.Timestamp
+	2,   // 3: sttattus.dominion.v1.SyncPropertiesRequest.properties:type_name -> sttattus.dominion.v1.Property
+	3,   // 4: sttattus.dominion.v1.SyncPropertiesResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
+	2,   // 5: sttattus.dominion.v1.SyncPropertiesResponse.properties:type_name -> sttattus.dominion.v1.Property
+	2,   // 6: sttattus.dominion.v1.ListTerritoriesResponse.properties:type_name -> sttattus.dominion.v1.Property
+	3,   // 7: sttattus.dominion.v1.GetDominionStatsResponse.stats:type_name -> sttattus.dominion.v1.DominionStats
+	176, // 8: sttattus.dominion.v1.GetLoungeKeyResponse.expires_at:type_name -> google.protobuf.Timestamp
+	12,  // 9: sttattus.dominion.v1.ListLoungesResponse.lounges:type_name -> sttattus.dominion.v1.Lounge
+	15,  // 10: sttattus.dominion.v1.SubmitDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	15,  // 11: sttattus.dominion.v1.ListMyDeedsResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	15,  // 12: sttattus.dominion.v1.ListDeedsForPropertyResponse.deeds:type_name -> sttattus.dominion.v1.Deed
+	15,  // 13: sttattus.dominion.v1.AdminReviewDeedResponse.deed:type_name -> sttattus.dominion.v1.Deed
+	24,  // 14: sttattus.dominion.v1.EstimatePropertyValueResponse.result:type_name -> sttattus.dominion.v1.AVMResult
+	27,  // 15: sttattus.dominion.v1.ListLoungeEventsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	27,  // 16: sttattus.dominion.v1.ListMyLoungeRsvpsResponse.events:type_name -> sttattus.dominion.v1.LoungeEvent
+	34,  // 17: sttattus.dominion.v1.ListSalonsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	34,  // 18: sttattus.dominion.v1.ListMySalonRsvpsResponse.salons:type_name -> sttattus.dominion.v1.Salon
+	41,  // 19: sttattus.dominion.v1.GetPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	41,  // 20: sttattus.dominion.v1.UpsertPropertyFinancialsResponse.financials:type_name -> sttattus.dominion.v1.PropertyFinancials
+	48,  // 21: sttattus.dominion.v1.ListRegionIntelResponse.regions:type_name -> sttattus.dominion.v1.RegionIntel
+	48,  // 22: sttattus.dominion.v1.GetRegionIntelResponse.region:type_name -> sttattus.dominion.v1.RegionIntel
+	53,  // 23: sttattus.dominion.v1.TerritoryAllocation.regions:type_name -> sttattus.dominion.v1.RegionWeight
+	54,  // 24: sttattus.dominion.v1.GetTerritoryAllocationResponse.allocation:type_name -> sttattus.dominion.v1.TerritoryAllocation
+	57,  // 25: sttattus.dominion.v1.GetTodaySummaryResponse.summary:type_name -> sttattus.dominion.v1.TodaySummary
+	60,  // 26: sttattus.dominion.v1.StartConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	60,  // 27: sttattus.dominion.v1.ListMyConciergeThreadsResponse.threads:type_name -> sttattus.dominion.v1.ConciergeThread
+	60,  // 28: sttattus.dominion.v1.GetConciergeThreadResponse.thread:type_name -> sttattus.dominion.v1.ConciergeThread
+	61,  // 29: sttattus.dominion.v1.GetConciergeThreadResponse.messages:type_name -> sttattus.dominion.v1.ConciergeMessage
+	61,  // 30: sttattus.dominion.v1.PostConciergeMessageResponse.message:type_name -> sttattus.dominion.v1.ConciergeMessage
+	70,  // 31: sttattus.dominion.v1.ListAnthologyArticlesResponse.articles:type_name -> sttattus.dominion.v1.AnthologyArticle
+	70,  // 32: sttattus.dominion.v1.GetAnthologyArticleResponse.article:type_name -> sttattus.dominion.v1.AnthologyArticle
+	75,  // 33: sttattus.dominion.v1.ListDirectoryResponse.partners:type_name -> sttattus.dominion.v1.DirectoryPartner
+	78,  // 34: sttattus.dominion.v1.ListOffMarketResponse.listings:type_name -> sttattus.dominion.v1.OffMarketListing
+	78,  // 35: sttattus.dominion.v1.GetOffMarketResponse.listing:type_name -> sttattus.dominion.v1.OffMarketListing
+	85,  // 36: sttattus.dominion.v1.CreateDominionShareResponse.token:type_name -> sttattus.dominion.v1.DominionShareToken
+	85,  // 37: sttattus.dominion.v1.ListMyDominionSharesResponse.tokens:type_name -> sttattus.dominion.v1.DominionShareToken
+	94,  // 38: sttattus.dominion.v1.CreateLoungePassResponse.pass:type_name -> sttattus.dominion.v1.LoungePass
+	94,  // 39: sttattus.dominion.v1.ListMyLoungePassesResponse.passes:type_name -> sttattus.dominion.v1.LoungePass
+	99,  // 40: sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchResponse.twins:type_name -> sttattus.dominion.v1.DominionPropertyDigitalTwinItem
+	99,  // 41: sttattus.dominion.v1.SaveDominionPropertyDigitalTwinResponse.twin:type_name -> sttattus.dominion.v1.DominionPropertyDigitalTwinItem
+	99,  // 42: sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictResponse.twin:type_name -> sttattus.dominion.v1.DominionPropertyDigitalTwinItem
+	106, // 43: sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchResponse.scenarios:type_name -> sttattus.dominion.v1.DominionUnderwritingScenarioItem
+	106, // 44: sttattus.dominion.v1.SaveDominionUnderwritingScenarioResponse.scenario:type_name -> sttattus.dominion.v1.DominionUnderwritingScenarioItem
+	106, // 45: sttattus.dominion.v1.StressTestOrFreezeDominionScenarioResponse.scenario:type_name -> sttattus.dominion.v1.DominionUnderwritingScenarioItem
+	113, // 46: sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchResponse.closes:type_name -> sttattus.dominion.v1.DominionPropertyAccountingCloseItem
+	113, // 47: sttattus.dominion.v1.SaveDominionPropertyAccountingCloseResponse.close:type_name -> sttattus.dominion.v1.DominionPropertyAccountingCloseItem
+	113, // 48: sttattus.dominion.v1.LockOrReverseDominionAccountingCloseResponse.close:type_name -> sttattus.dominion.v1.DominionPropertyAccountingCloseItem
+	120, // 49: sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchResponse.obligations:type_name -> sttattus.dominion.v1.DominionDocumentObligationVaultItem
+	120, // 50: sttattus.dominion.v1.SaveDominionDocumentObligationResponse.obligation:type_name -> sttattus.dominion.v1.DominionDocumentObligationVaultItem
+	120, // 51: sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealResponse.obligation:type_name -> sttattus.dominion.v1.DominionDocumentObligationVaultItem
+	127, // 52: sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchResponse.leases:type_name -> sttattus.dominion.v1.DominionLeasingResidentPortalItem
+	127, // 53: sttattus.dominion.v1.SaveDominionLeasingResidentPortalResponse.lease:type_name -> sttattus.dominion.v1.DominionLeasingResidentPortalItem
+	127, // 54: sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseResponse.lease:type_name -> sttattus.dominion.v1.DominionLeasingResidentPortalItem
+	134, // 55: sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchResponse.work_orders:type_name -> sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem
+	134, // 56: sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderResponse.work_order:type_name -> sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem
+	134, // 57: sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyResponse.work_order:type_name -> sttattus.dominion.v1.DominionMaintenanceVendorNetworkItem
+	141, // 58: sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchResponse.projects:type_name -> sttattus.dominion.v1.DominionCapitalProjectControlItem
+	141, // 59: sttattus.dominion.v1.SaveDominionCapitalProjectControlResponse.project:type_name -> sttattus.dominion.v1.DominionCapitalProjectControlItem
+	141, // 60: sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutResponse.project:type_name -> sttattus.dominion.v1.DominionCapitalProjectControlItem
+	148, // 61: sttattus.dominion.v1.GetDominionMarketValuationWorkbenchResponse.valuations:type_name -> sttattus.dominion.v1.DominionMarketValuationGovernanceItem
+	148, // 62: sttattus.dominion.v1.SaveDominionMarketValuationGovernanceResponse.valuation:type_name -> sttattus.dominion.v1.DominionMarketValuationGovernanceItem
+	148, // 63: sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationResponse.valuation:type_name -> sttattus.dominion.v1.DominionMarketValuationGovernanceItem
+	155, // 64: sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchResponse.rooms:type_name -> sttattus.dominion.v1.DominionOwnershipTransactionRoomItem
+	155, // 65: sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomResponse.room:type_name -> sttattus.dominion.v1.DominionOwnershipTransactionRoomItem
+	155, // 66: sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessResponse.room:type_name -> sttattus.dominion.v1.DominionOwnershipTransactionRoomItem
+	162, // 67: sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchResponse.centers:type_name -> sttattus.dominion.v1.DominionInsuranceResilienceCenterItem
+	162, // 68: sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterResponse.center:type_name -> sttattus.dominion.v1.DominionInsuranceResilienceCenterItem
+	162, // 69: sttattus.dominion.v1.StageDominionClaimPackOrStressReviewResponse.center:type_name -> sttattus.dominion.v1.DominionInsuranceResilienceCenterItem
+	169, // 70: sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchResponse.utilities:type_name -> sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem
+	169, // 71: sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceResponse.utility:type_name -> sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem
+	169, // 72: sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyResponse.utility:type_name -> sttattus.dominion.v1.DominionUtilityBuildingPerformanceItem
+	4,   // 73: sttattus.dominion.v1.DominionService.SyncProperties:input_type -> sttattus.dominion.v1.SyncPropertiesRequest
+	6,   // 74: sttattus.dominion.v1.DominionService.ListTerritories:input_type -> sttattus.dominion.v1.ListTerritoriesRequest
+	8,   // 75: sttattus.dominion.v1.DominionService.GetDominionStats:input_type -> sttattus.dominion.v1.GetDominionStatsRequest
+	10,  // 76: sttattus.dominion.v1.DominionService.GetLoungeKey:input_type -> sttattus.dominion.v1.GetLoungeKeyRequest
+	25,  // 77: sttattus.dominion.v1.DominionService.EstimatePropertyValue:input_type -> sttattus.dominion.v1.EstimatePropertyValueRequest
+	16,  // 78: sttattus.dominion.v1.DominionService.SubmitDeed:input_type -> sttattus.dominion.v1.SubmitDeedRequest
+	18,  // 79: sttattus.dominion.v1.DominionService.ListMyDeeds:input_type -> sttattus.dominion.v1.ListMyDeedsRequest
+	20,  // 80: sttattus.dominion.v1.DominionService.ListDeedsForProperty:input_type -> sttattus.dominion.v1.ListDeedsForPropertyRequest
+	22,  // 81: sttattus.dominion.v1.DominionService.AdminReviewDeed:input_type -> sttattus.dominion.v1.AdminReviewDeedRequest
+	13,  // 82: sttattus.dominion.v1.DominionService.ListLounges:input_type -> sttattus.dominion.v1.ListLoungesRequest
+	28,  // 83: sttattus.dominion.v1.DominionService.ListLoungeEvents:input_type -> sttattus.dominion.v1.ListLoungeEventsRequest
+	30,  // 84: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:input_type -> sttattus.dominion.v1.RsvpLoungeEventRequest
+	32,  // 85: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:input_type -> sttattus.dominion.v1.ListMyLoungeRsvpsRequest
+	35,  // 86: sttattus.dominion.v1.DominionService.ListSalons:input_type -> sttattus.dominion.v1.ListSalonsRequest
+	37,  // 87: sttattus.dominion.v1.DominionService.RsvpSalon:input_type -> sttattus.dominion.v1.RsvpSalonRequest
+	39,  // 88: sttattus.dominion.v1.DominionService.ListMySalonRsvps:input_type -> sttattus.dominion.v1.ListMySalonRsvpsRequest
+	42,  // 89: sttattus.dominion.v1.DominionService.GetPropertyFinancials:input_type -> sttattus.dominion.v1.GetPropertyFinancialsRequest
+	44,  // 90: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:input_type -> sttattus.dominion.v1.UpsertPropertyFinancialsRequest
+	46,  // 91: sttattus.dominion.v1.DominionService.GetPortfolioYield:input_type -> sttattus.dominion.v1.GetPortfolioYieldRequest
+	49,  // 92: sttattus.dominion.v1.DominionService.ListRegionIntel:input_type -> sttattus.dominion.v1.ListRegionIntelRequest
+	51,  // 93: sttattus.dominion.v1.DominionService.GetRegionIntel:input_type -> sttattus.dominion.v1.GetRegionIntelRequest
+	55,  // 94: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:input_type -> sttattus.dominion.v1.GetTerritoryAllocationRequest
+	58,  // 95: sttattus.dominion.v1.DominionService.GetTodaySummary:input_type -> sttattus.dominion.v1.GetTodaySummaryRequest
+	62,  // 96: sttattus.dominion.v1.DominionService.StartConciergeThread:input_type -> sttattus.dominion.v1.StartConciergeThreadRequest
+	64,  // 97: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:input_type -> sttattus.dominion.v1.ListMyConciergeThreadsRequest
+	66,  // 98: sttattus.dominion.v1.DominionService.GetConciergeThread:input_type -> sttattus.dominion.v1.GetConciergeThreadRequest
+	68,  // 99: sttattus.dominion.v1.DominionService.PostConciergeMessage:input_type -> sttattus.dominion.v1.PostConciergeMessageRequest
+	71,  // 100: sttattus.dominion.v1.DominionService.ListAnthologyArticles:input_type -> sttattus.dominion.v1.ListAnthologyArticlesRequest
+	73,  // 101: sttattus.dominion.v1.DominionService.GetAnthologyArticle:input_type -> sttattus.dominion.v1.GetAnthologyArticleRequest
+	76,  // 102: sttattus.dominion.v1.DominionService.ListDirectory:input_type -> sttattus.dominion.v1.ListDirectoryRequest
+	79,  // 103: sttattus.dominion.v1.DominionService.ListOffMarket:input_type -> sttattus.dominion.v1.ListOffMarketRequest
+	81,  // 104: sttattus.dominion.v1.DominionService.GetOffMarket:input_type -> sttattus.dominion.v1.GetOffMarketRequest
+	83,  // 105: sttattus.dominion.v1.DominionService.ParseDeed:input_type -> sttattus.dominion.v1.ParseDeedRequest
+	86,  // 106: sttattus.dominion.v1.DominionService.CreateDominionShare:input_type -> sttattus.dominion.v1.CreateDominionShareRequest
+	88,  // 107: sttattus.dominion.v1.DominionService.ListMyDominionShares:input_type -> sttattus.dominion.v1.ListMyDominionSharesRequest
+	90,  // 108: sttattus.dominion.v1.DominionService.RevokeDominionShare:input_type -> sttattus.dominion.v1.RevokeDominionShareRequest
+	92,  // 109: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:input_type -> sttattus.dominion.v1.GenerateDominionAlmanacRequest
+	95,  // 110: sttattus.dominion.v1.DominionService.CreateLoungePass:input_type -> sttattus.dominion.v1.CreateLoungePassRequest
+	97,  // 111: sttattus.dominion.v1.DominionService.ListMyLoungePasses:input_type -> sttattus.dominion.v1.ListMyLoungePassesRequest
+	100, // 112: sttattus.dominion.v1.DominionService.GetDominionPropertyDigitalTwinWorkbench:input_type -> sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchRequest
+	102, // 113: sttattus.dominion.v1.DominionService.SaveDominionPropertyDigitalTwin:input_type -> sttattus.dominion.v1.SaveDominionPropertyDigitalTwinRequest
+	104, // 114: sttattus.dominion.v1.DominionService.PropagateOrResolveDominionTwinConflict:input_type -> sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictRequest
+	107, // 115: sttattus.dominion.v1.DominionService.GetDominionUnderwritingLabWorkbench:input_type -> sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchRequest
+	109, // 116: sttattus.dominion.v1.DominionService.SaveDominionUnderwritingScenario:input_type -> sttattus.dominion.v1.SaveDominionUnderwritingScenarioRequest
+	111, // 117: sttattus.dominion.v1.DominionService.StressTestOrFreezeDominionScenario:input_type -> sttattus.dominion.v1.StressTestOrFreezeDominionScenarioRequest
+	114, // 118: sttattus.dominion.v1.DominionService.GetDominionPropertyAccountingWorkbench:input_type -> sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchRequest
+	116, // 119: sttattus.dominion.v1.DominionService.SaveDominionPropertyAccountingClose:input_type -> sttattus.dominion.v1.SaveDominionPropertyAccountingCloseRequest
+	118, // 120: sttattus.dominion.v1.DominionService.LockOrReverseDominionAccountingClose:input_type -> sttattus.dominion.v1.LockOrReverseDominionAccountingCloseRequest
+	121, // 121: sttattus.dominion.v1.DominionService.GetDominionDocumentObligationWorkbench:input_type -> sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchRequest
+	123, // 122: sttattus.dominion.v1.DominionService.SaveDominionDocumentObligation:input_type -> sttattus.dominion.v1.SaveDominionDocumentObligationRequest
+	125, // 123: sttattus.dominion.v1.DominionService.ConfirmDominionObligationReceiptOrAppeal:input_type -> sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealRequest
+	128, // 124: sttattus.dominion.v1.DominionService.GetDominionLeasingResidentWorkbench:input_type -> sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchRequest
+	130, // 125: sttattus.dominion.v1.DominionService.SaveDominionLeasingResidentPortal:input_type -> sttattus.dominion.v1.SaveDominionLeasingResidentPortalRequest
+	132, // 126: sttattus.dominion.v1.DominionService.ScheduleDominionRenewalOrDepositClose:input_type -> sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseRequest
+	135, // 127: sttattus.dominion.v1.DominionService.GetDominionMaintenanceVendorWorkbench:input_type -> sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchRequest
+	137, // 128: sttattus.dominion.v1.DominionService.SaveDominionMaintenanceWorkOrder:input_type -> sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderRequest
+	139, // 129: sttattus.dominion.v1.DominionService.VerifyDominionThreeWayMatchOrWarranty:input_type -> sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyRequest
+	142, // 130: sttattus.dominion.v1.DominionService.GetDominionCapitalProjectWorkbench:input_type -> sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchRequest
+	144, // 131: sttattus.dominion.v1.DominionService.SaveDominionCapitalProjectControl:input_type -> sttattus.dominion.v1.SaveDominionCapitalProjectControlRequest
+	146, // 132: sttattus.dominion.v1.DominionService.ApproveDominionDrawOrPunchlistCloseout:input_type -> sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutRequest
+	149, // 133: sttattus.dominion.v1.DominionService.GetDominionMarketValuationWorkbench:input_type -> sttattus.dominion.v1.GetDominionMarketValuationWorkbenchRequest
+	151, // 134: sttattus.dominion.v1.DominionService.SaveDominionMarketValuationGovernance:input_type -> sttattus.dominion.v1.SaveDominionMarketValuationGovernanceRequest
+	153, // 135: sttattus.dominion.v1.DominionService.AdjustDominionCompSetOrDisputeValuation:input_type -> sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationRequest
+	156, // 136: sttattus.dominion.v1.DominionService.GetDominionOwnershipTransactionWorkbench:input_type -> sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchRequest
+	158, // 137: sttattus.dominion.v1.DominionService.SaveDominionOwnershipTransactionRoom:input_type -> sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomRequest
+	160, // 138: sttattus.dominion.v1.DominionService.StageDominionRefinanceOrDataroomAccess:input_type -> sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessRequest
+	163, // 139: sttattus.dominion.v1.DominionService.GetDominionInsuranceResilienceWorkbench:input_type -> sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchRequest
+	165, // 140: sttattus.dominion.v1.DominionService.SaveDominionInsuranceResilienceCenter:input_type -> sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterRequest
+	167, // 141: sttattus.dominion.v1.DominionService.StageDominionClaimPackOrStressReview:input_type -> sttattus.dominion.v1.StageDominionClaimPackOrStressReviewRequest
+	170, // 142: sttattus.dominion.v1.DominionService.GetDominionUtilityPerformanceWorkbench:input_type -> sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchRequest
+	172, // 143: sttattus.dominion.v1.DominionService.SaveDominionUtilityBuildingPerformance:input_type -> sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceRequest
+	174, // 144: sttattus.dominion.v1.DominionService.VerifyDominionRetrofitSavingsOrAnomaly:input_type -> sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyRequest
+	5,   // 145: sttattus.dominion.v1.DominionService.SyncProperties:output_type -> sttattus.dominion.v1.SyncPropertiesResponse
+	7,   // 146: sttattus.dominion.v1.DominionService.ListTerritories:output_type -> sttattus.dominion.v1.ListTerritoriesResponse
+	9,   // 147: sttattus.dominion.v1.DominionService.GetDominionStats:output_type -> sttattus.dominion.v1.GetDominionStatsResponse
+	11,  // 148: sttattus.dominion.v1.DominionService.GetLoungeKey:output_type -> sttattus.dominion.v1.GetLoungeKeyResponse
+	26,  // 149: sttattus.dominion.v1.DominionService.EstimatePropertyValue:output_type -> sttattus.dominion.v1.EstimatePropertyValueResponse
+	17,  // 150: sttattus.dominion.v1.DominionService.SubmitDeed:output_type -> sttattus.dominion.v1.SubmitDeedResponse
+	19,  // 151: sttattus.dominion.v1.DominionService.ListMyDeeds:output_type -> sttattus.dominion.v1.ListMyDeedsResponse
+	21,  // 152: sttattus.dominion.v1.DominionService.ListDeedsForProperty:output_type -> sttattus.dominion.v1.ListDeedsForPropertyResponse
+	23,  // 153: sttattus.dominion.v1.DominionService.AdminReviewDeed:output_type -> sttattus.dominion.v1.AdminReviewDeedResponse
+	14,  // 154: sttattus.dominion.v1.DominionService.ListLounges:output_type -> sttattus.dominion.v1.ListLoungesResponse
+	29,  // 155: sttattus.dominion.v1.DominionService.ListLoungeEvents:output_type -> sttattus.dominion.v1.ListLoungeEventsResponse
+	31,  // 156: sttattus.dominion.v1.DominionService.RsvpLoungeEvent:output_type -> sttattus.dominion.v1.RsvpLoungeEventResponse
+	33,  // 157: sttattus.dominion.v1.DominionService.ListMyLoungeRsvps:output_type -> sttattus.dominion.v1.ListMyLoungeRsvpsResponse
+	36,  // 158: sttattus.dominion.v1.DominionService.ListSalons:output_type -> sttattus.dominion.v1.ListSalonsResponse
+	38,  // 159: sttattus.dominion.v1.DominionService.RsvpSalon:output_type -> sttattus.dominion.v1.RsvpSalonResponse
+	40,  // 160: sttattus.dominion.v1.DominionService.ListMySalonRsvps:output_type -> sttattus.dominion.v1.ListMySalonRsvpsResponse
+	43,  // 161: sttattus.dominion.v1.DominionService.GetPropertyFinancials:output_type -> sttattus.dominion.v1.GetPropertyFinancialsResponse
+	45,  // 162: sttattus.dominion.v1.DominionService.UpsertPropertyFinancials:output_type -> sttattus.dominion.v1.UpsertPropertyFinancialsResponse
+	47,  // 163: sttattus.dominion.v1.DominionService.GetPortfolioYield:output_type -> sttattus.dominion.v1.GetPortfolioYieldResponse
+	50,  // 164: sttattus.dominion.v1.DominionService.ListRegionIntel:output_type -> sttattus.dominion.v1.ListRegionIntelResponse
+	52,  // 165: sttattus.dominion.v1.DominionService.GetRegionIntel:output_type -> sttattus.dominion.v1.GetRegionIntelResponse
+	56,  // 166: sttattus.dominion.v1.DominionService.GetTerritoryAllocation:output_type -> sttattus.dominion.v1.GetTerritoryAllocationResponse
+	59,  // 167: sttattus.dominion.v1.DominionService.GetTodaySummary:output_type -> sttattus.dominion.v1.GetTodaySummaryResponse
+	63,  // 168: sttattus.dominion.v1.DominionService.StartConciergeThread:output_type -> sttattus.dominion.v1.StartConciergeThreadResponse
+	65,  // 169: sttattus.dominion.v1.DominionService.ListMyConciergeThreads:output_type -> sttattus.dominion.v1.ListMyConciergeThreadsResponse
+	67,  // 170: sttattus.dominion.v1.DominionService.GetConciergeThread:output_type -> sttattus.dominion.v1.GetConciergeThreadResponse
+	69,  // 171: sttattus.dominion.v1.DominionService.PostConciergeMessage:output_type -> sttattus.dominion.v1.PostConciergeMessageResponse
+	72,  // 172: sttattus.dominion.v1.DominionService.ListAnthologyArticles:output_type -> sttattus.dominion.v1.ListAnthologyArticlesResponse
+	74,  // 173: sttattus.dominion.v1.DominionService.GetAnthologyArticle:output_type -> sttattus.dominion.v1.GetAnthologyArticleResponse
+	77,  // 174: sttattus.dominion.v1.DominionService.ListDirectory:output_type -> sttattus.dominion.v1.ListDirectoryResponse
+	80,  // 175: sttattus.dominion.v1.DominionService.ListOffMarket:output_type -> sttattus.dominion.v1.ListOffMarketResponse
+	82,  // 176: sttattus.dominion.v1.DominionService.GetOffMarket:output_type -> sttattus.dominion.v1.GetOffMarketResponse
+	84,  // 177: sttattus.dominion.v1.DominionService.ParseDeed:output_type -> sttattus.dominion.v1.ParseDeedResponse
+	87,  // 178: sttattus.dominion.v1.DominionService.CreateDominionShare:output_type -> sttattus.dominion.v1.CreateDominionShareResponse
+	89,  // 179: sttattus.dominion.v1.DominionService.ListMyDominionShares:output_type -> sttattus.dominion.v1.ListMyDominionSharesResponse
+	91,  // 180: sttattus.dominion.v1.DominionService.RevokeDominionShare:output_type -> sttattus.dominion.v1.RevokeDominionShareResponse
+	93,  // 181: sttattus.dominion.v1.DominionService.GenerateDominionAlmanac:output_type -> sttattus.dominion.v1.GenerateDominionAlmanacResponse
+	96,  // 182: sttattus.dominion.v1.DominionService.CreateLoungePass:output_type -> sttattus.dominion.v1.CreateLoungePassResponse
+	98,  // 183: sttattus.dominion.v1.DominionService.ListMyLoungePasses:output_type -> sttattus.dominion.v1.ListMyLoungePassesResponse
+	101, // 184: sttattus.dominion.v1.DominionService.GetDominionPropertyDigitalTwinWorkbench:output_type -> sttattus.dominion.v1.GetDominionPropertyDigitalTwinWorkbenchResponse
+	103, // 185: sttattus.dominion.v1.DominionService.SaveDominionPropertyDigitalTwin:output_type -> sttattus.dominion.v1.SaveDominionPropertyDigitalTwinResponse
+	105, // 186: sttattus.dominion.v1.DominionService.PropagateOrResolveDominionTwinConflict:output_type -> sttattus.dominion.v1.PropagateOrResolveDominionTwinConflictResponse
+	108, // 187: sttattus.dominion.v1.DominionService.GetDominionUnderwritingLabWorkbench:output_type -> sttattus.dominion.v1.GetDominionUnderwritingLabWorkbenchResponse
+	110, // 188: sttattus.dominion.v1.DominionService.SaveDominionUnderwritingScenario:output_type -> sttattus.dominion.v1.SaveDominionUnderwritingScenarioResponse
+	112, // 189: sttattus.dominion.v1.DominionService.StressTestOrFreezeDominionScenario:output_type -> sttattus.dominion.v1.StressTestOrFreezeDominionScenarioResponse
+	115, // 190: sttattus.dominion.v1.DominionService.GetDominionPropertyAccountingWorkbench:output_type -> sttattus.dominion.v1.GetDominionPropertyAccountingWorkbenchResponse
+	117, // 191: sttattus.dominion.v1.DominionService.SaveDominionPropertyAccountingClose:output_type -> sttattus.dominion.v1.SaveDominionPropertyAccountingCloseResponse
+	119, // 192: sttattus.dominion.v1.DominionService.LockOrReverseDominionAccountingClose:output_type -> sttattus.dominion.v1.LockOrReverseDominionAccountingCloseResponse
+	122, // 193: sttattus.dominion.v1.DominionService.GetDominionDocumentObligationWorkbench:output_type -> sttattus.dominion.v1.GetDominionDocumentObligationWorkbenchResponse
+	124, // 194: sttattus.dominion.v1.DominionService.SaveDominionDocumentObligation:output_type -> sttattus.dominion.v1.SaveDominionDocumentObligationResponse
+	126, // 195: sttattus.dominion.v1.DominionService.ConfirmDominionObligationReceiptOrAppeal:output_type -> sttattus.dominion.v1.ConfirmDominionObligationReceiptOrAppealResponse
+	129, // 196: sttattus.dominion.v1.DominionService.GetDominionLeasingResidentWorkbench:output_type -> sttattus.dominion.v1.GetDominionLeasingResidentWorkbenchResponse
+	131, // 197: sttattus.dominion.v1.DominionService.SaveDominionLeasingResidentPortal:output_type -> sttattus.dominion.v1.SaveDominionLeasingResidentPortalResponse
+	133, // 198: sttattus.dominion.v1.DominionService.ScheduleDominionRenewalOrDepositClose:output_type -> sttattus.dominion.v1.ScheduleDominionRenewalOrDepositCloseResponse
+	136, // 199: sttattus.dominion.v1.DominionService.GetDominionMaintenanceVendorWorkbench:output_type -> sttattus.dominion.v1.GetDominionMaintenanceVendorWorkbenchResponse
+	138, // 200: sttattus.dominion.v1.DominionService.SaveDominionMaintenanceWorkOrder:output_type -> sttattus.dominion.v1.SaveDominionMaintenanceWorkOrderResponse
+	140, // 201: sttattus.dominion.v1.DominionService.VerifyDominionThreeWayMatchOrWarranty:output_type -> sttattus.dominion.v1.VerifyDominionThreeWayMatchOrWarrantyResponse
+	143, // 202: sttattus.dominion.v1.DominionService.GetDominionCapitalProjectWorkbench:output_type -> sttattus.dominion.v1.GetDominionCapitalProjectWorkbenchResponse
+	145, // 203: sttattus.dominion.v1.DominionService.SaveDominionCapitalProjectControl:output_type -> sttattus.dominion.v1.SaveDominionCapitalProjectControlResponse
+	147, // 204: sttattus.dominion.v1.DominionService.ApproveDominionDrawOrPunchlistCloseout:output_type -> sttattus.dominion.v1.ApproveDominionDrawOrPunchlistCloseoutResponse
+	150, // 205: sttattus.dominion.v1.DominionService.GetDominionMarketValuationWorkbench:output_type -> sttattus.dominion.v1.GetDominionMarketValuationWorkbenchResponse
+	152, // 206: sttattus.dominion.v1.DominionService.SaveDominionMarketValuationGovernance:output_type -> sttattus.dominion.v1.SaveDominionMarketValuationGovernanceResponse
+	154, // 207: sttattus.dominion.v1.DominionService.AdjustDominionCompSetOrDisputeValuation:output_type -> sttattus.dominion.v1.AdjustDominionCompSetOrDisputeValuationResponse
+	157, // 208: sttattus.dominion.v1.DominionService.GetDominionOwnershipTransactionWorkbench:output_type -> sttattus.dominion.v1.GetDominionOwnershipTransactionWorkbenchResponse
+	159, // 209: sttattus.dominion.v1.DominionService.SaveDominionOwnershipTransactionRoom:output_type -> sttattus.dominion.v1.SaveDominionOwnershipTransactionRoomResponse
+	161, // 210: sttattus.dominion.v1.DominionService.StageDominionRefinanceOrDataroomAccess:output_type -> sttattus.dominion.v1.StageDominionRefinanceOrDataroomAccessResponse
+	164, // 211: sttattus.dominion.v1.DominionService.GetDominionInsuranceResilienceWorkbench:output_type -> sttattus.dominion.v1.GetDominionInsuranceResilienceWorkbenchResponse
+	166, // 212: sttattus.dominion.v1.DominionService.SaveDominionInsuranceResilienceCenter:output_type -> sttattus.dominion.v1.SaveDominionInsuranceResilienceCenterResponse
+	168, // 213: sttattus.dominion.v1.DominionService.StageDominionClaimPackOrStressReview:output_type -> sttattus.dominion.v1.StageDominionClaimPackOrStressReviewResponse
+	171, // 214: sttattus.dominion.v1.DominionService.GetDominionUtilityPerformanceWorkbench:output_type -> sttattus.dominion.v1.GetDominionUtilityPerformanceWorkbenchResponse
+	173, // 215: sttattus.dominion.v1.DominionService.SaveDominionUtilityBuildingPerformance:output_type -> sttattus.dominion.v1.SaveDominionUtilityBuildingPerformanceResponse
+	175, // 216: sttattus.dominion.v1.DominionService.VerifyDominionRetrofitSavingsOrAnomaly:output_type -> sttattus.dominion.v1.VerifyDominionRetrofitSavingsOrAnomalyResponse
+	145, // [145:217] is the sub-list for method output_type
+	73,  // [73:145] is the sub-list for method input_type
+	73,  // [73:73] is the sub-list for extension type_name
+	73,  // [73:73] is the sub-list for extension extendee
+	0,   // [0:73] is the sub-list for field type_name
 }
 
 func init() { file_sttattus_dominion_v1_dominion_proto_init() }
@@ -6452,7 +11780,7 @@ func file_sttattus_dominion_v1_dominion_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sttattus_dominion_v1_dominion_proto_rawDesc), len(file_sttattus_dominion_v1_dominion_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   97,
+			NumMessages:   174,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

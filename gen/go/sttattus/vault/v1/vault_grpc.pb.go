@@ -19,57 +19,96 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	VaultService_SubmitAsset_FullMethodName                 = "/sttattus.vault.v1.VaultService/SubmitAsset"
-	VaultService_GetPortfolio_FullMethodName                = "/sttattus.vault.v1.VaultService/GetPortfolio"
-	VaultService_GetWalletChallenge_FullMethodName          = "/sttattus.vault.v1.VaultService/GetWalletChallenge"
-	VaultService_LinkWallet_FullMethodName                  = "/sttattus.vault.v1.VaultService/LinkWallet"
-	VaultService_CreatePlaidLinkToken_FullMethodName        = "/sttattus.vault.v1.VaultService/CreatePlaidLinkToken"
-	VaultService_ExchangePlaidPublicToken_FullMethodName    = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
-	VaultService_SyncWealth_FullMethodName                  = "/sttattus.vault.v1.VaultService/SyncWealth"
-	VaultService_AdminVerifyAsset_FullMethodName            = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
-	VaultService_ListNetWorthHistory_FullMethodName         = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
-	VaultService_ListPlaidTransactions_FullMethodName       = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
-	VaultService_ListPlaidHoldings_FullMethodName           = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
-	VaultService_GetCurrentAllocation_FullMethodName        = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
-	VaultService_ListAllocationHistory_FullMethodName       = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
-	VaultService_ListRealEstateProperties_FullMethodName    = "/sttattus.vault.v1.VaultService/ListRealEstateProperties"
-	VaultService_CreateRealEstateProperty_FullMethodName    = "/sttattus.vault.v1.VaultService/CreateRealEstateProperty"
-	VaultService_RecordManualValuation_FullMethodName       = "/sttattus.vault.v1.VaultService/RecordManualValuation"
-	VaultService_RefreshAvmValuation_FullMethodName         = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
-	VaultService_DeleteRealEstateProperty_FullMethodName    = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
-	VaultService_ListEntities_FullMethodName                = "/sttattus.vault.v1.VaultService/ListEntities"
-	VaultService_CreateEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/CreateEntity"
-	VaultService_RenameEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/RenameEntity"
-	VaultService_DeleteEntity_FullMethodName                = "/sttattus.vault.v1.VaultService/DeleteEntity"
-	VaultService_AssignAssetToEntity_FullMethodName         = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
-	VaultService_ListLatestFxRates_FullMethodName           = "/sttattus.vault.v1.VaultService/ListLatestFxRates"
-	VaultService_ListCapTableHoldings_FullMethodName        = "/sttattus.vault.v1.VaultService/ListCapTableHoldings"
-	VaultService_CreateCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/CreateCapTableHolding"
-	VaultService_UpdateCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/UpdateCapTableHolding"
-	VaultService_DeleteCapTableHolding_FullMethodName       = "/sttattus.vault.v1.VaultService/DeleteCapTableHolding"
-	VaultService_ListCapTableConnections_FullMethodName     = "/sttattus.vault.v1.VaultService/ListCapTableConnections"
-	VaultService_SetCapTableConnectionStatus_FullMethodName = "/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus"
-	VaultService_ListWalletChains_FullMethodName            = "/sttattus.vault.v1.VaultService/ListWalletChains"
-	VaultService_UpsertWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/UpsertWalletChain"
-	VaultService_DeleteWalletChain_FullMethodName           = "/sttattus.vault.v1.VaultService/DeleteWalletChain"
-	VaultService_GetTaxSnapshot_FullMethodName              = "/sttattus.vault.v1.VaultService/GetTaxSnapshot"
-	VaultService_ExportUsCgtCsv_FullMethodName              = "/sttattus.vault.v1.VaultService/ExportUsCgtCsv"
-	VaultService_ListInvestmentCircles_FullMethodName       = "/sttattus.vault.v1.VaultService/ListInvestmentCircles"
-	VaultService_GetInvestmentCircle_FullMethodName         = "/sttattus.vault.v1.VaultService/GetInvestmentCircle"
-	VaultService_ExpressCircleInterest_FullMethodName       = "/sttattus.vault.v1.VaultService/ExpressCircleInterest"
-	VaultService_StartAdvisorThread_FullMethodName          = "/sttattus.vault.v1.VaultService/StartAdvisorThread"
-	VaultService_ListAdvisorThreads_FullMethodName          = "/sttattus.vault.v1.VaultService/ListAdvisorThreads"
-	VaultService_GetAdvisorThread_FullMethodName            = "/sttattus.vault.v1.VaultService/GetAdvisorThread"
-	VaultService_PostAdvisorMessage_FullMethodName          = "/sttattus.vault.v1.VaultService/PostAdvisorMessage"
-	VaultService_ListWealthAnthology_FullMethodName         = "/sttattus.vault.v1.VaultService/ListWealthAnthology"
-	VaultService_GetWealthArticle_FullMethodName            = "/sttattus.vault.v1.VaultService/GetWealthArticle"
-	VaultService_ListPartnerBanks_FullMethodName            = "/sttattus.vault.v1.VaultService/ListPartnerBanks"
-	VaultService_CreateVaultShare_FullMethodName            = "/sttattus.vault.v1.VaultService/CreateVaultShare"
-	VaultService_ListMyVaultShares_FullMethodName           = "/sttattus.vault.v1.VaultService/ListMyVaultShares"
-	VaultService_RevokeVaultShare_FullMethodName            = "/sttattus.vault.v1.VaultService/RevokeVaultShare"
-	VaultService_GenerateWealthAlmanac_FullMethodName       = "/sttattus.vault.v1.VaultService/GenerateWealthAlmanac"
-	VaultService_GetYearInVault_FullMethodName              = "/sttattus.vault.v1.VaultService/GetYearInVault"
-	VaultService_GetLiquidityStressTest_FullMethodName      = "/sttattus.vault.v1.VaultService/GetLiquidityStressTest"
+	VaultService_SubmitAsset_FullMethodName                            = "/sttattus.vault.v1.VaultService/SubmitAsset"
+	VaultService_GetPortfolio_FullMethodName                           = "/sttattus.vault.v1.VaultService/GetPortfolio"
+	VaultService_GetWalletChallenge_FullMethodName                     = "/sttattus.vault.v1.VaultService/GetWalletChallenge"
+	VaultService_LinkWallet_FullMethodName                             = "/sttattus.vault.v1.VaultService/LinkWallet"
+	VaultService_CreatePlaidLinkToken_FullMethodName                   = "/sttattus.vault.v1.VaultService/CreatePlaidLinkToken"
+	VaultService_ExchangePlaidPublicToken_FullMethodName               = "/sttattus.vault.v1.VaultService/ExchangePlaidPublicToken"
+	VaultService_SyncWealth_FullMethodName                             = "/sttattus.vault.v1.VaultService/SyncWealth"
+	VaultService_AdminVerifyAsset_FullMethodName                       = "/sttattus.vault.v1.VaultService/AdminVerifyAsset"
+	VaultService_ListNetWorthHistory_FullMethodName                    = "/sttattus.vault.v1.VaultService/ListNetWorthHistory"
+	VaultService_ListPlaidTransactions_FullMethodName                  = "/sttattus.vault.v1.VaultService/ListPlaidTransactions"
+	VaultService_ListPlaidHoldings_FullMethodName                      = "/sttattus.vault.v1.VaultService/ListPlaidHoldings"
+	VaultService_GetCurrentAllocation_FullMethodName                   = "/sttattus.vault.v1.VaultService/GetCurrentAllocation"
+	VaultService_ListAllocationHistory_FullMethodName                  = "/sttattus.vault.v1.VaultService/ListAllocationHistory"
+	VaultService_ListRealEstateProperties_FullMethodName               = "/sttattus.vault.v1.VaultService/ListRealEstateProperties"
+	VaultService_CreateRealEstateProperty_FullMethodName               = "/sttattus.vault.v1.VaultService/CreateRealEstateProperty"
+	VaultService_RecordManualValuation_FullMethodName                  = "/sttattus.vault.v1.VaultService/RecordManualValuation"
+	VaultService_RefreshAvmValuation_FullMethodName                    = "/sttattus.vault.v1.VaultService/RefreshAvmValuation"
+	VaultService_DeleteRealEstateProperty_FullMethodName               = "/sttattus.vault.v1.VaultService/DeleteRealEstateProperty"
+	VaultService_ListEntities_FullMethodName                           = "/sttattus.vault.v1.VaultService/ListEntities"
+	VaultService_CreateEntity_FullMethodName                           = "/sttattus.vault.v1.VaultService/CreateEntity"
+	VaultService_RenameEntity_FullMethodName                           = "/sttattus.vault.v1.VaultService/RenameEntity"
+	VaultService_DeleteEntity_FullMethodName                           = "/sttattus.vault.v1.VaultService/DeleteEntity"
+	VaultService_AssignAssetToEntity_FullMethodName                    = "/sttattus.vault.v1.VaultService/AssignAssetToEntity"
+	VaultService_ListLatestFxRates_FullMethodName                      = "/sttattus.vault.v1.VaultService/ListLatestFxRates"
+	VaultService_ListCapTableHoldings_FullMethodName                   = "/sttattus.vault.v1.VaultService/ListCapTableHoldings"
+	VaultService_CreateCapTableHolding_FullMethodName                  = "/sttattus.vault.v1.VaultService/CreateCapTableHolding"
+	VaultService_UpdateCapTableHolding_FullMethodName                  = "/sttattus.vault.v1.VaultService/UpdateCapTableHolding"
+	VaultService_DeleteCapTableHolding_FullMethodName                  = "/sttattus.vault.v1.VaultService/DeleteCapTableHolding"
+	VaultService_ListCapTableConnections_FullMethodName                = "/sttattus.vault.v1.VaultService/ListCapTableConnections"
+	VaultService_SetCapTableConnectionStatus_FullMethodName            = "/sttattus.vault.v1.VaultService/SetCapTableConnectionStatus"
+	VaultService_ListWalletChains_FullMethodName                       = "/sttattus.vault.v1.VaultService/ListWalletChains"
+	VaultService_UpsertWalletChain_FullMethodName                      = "/sttattus.vault.v1.VaultService/UpsertWalletChain"
+	VaultService_DeleteWalletChain_FullMethodName                      = "/sttattus.vault.v1.VaultService/DeleteWalletChain"
+	VaultService_GetTaxSnapshot_FullMethodName                         = "/sttattus.vault.v1.VaultService/GetTaxSnapshot"
+	VaultService_ExportUsCgtCsv_FullMethodName                         = "/sttattus.vault.v1.VaultService/ExportUsCgtCsv"
+	VaultService_ListInvestmentCircles_FullMethodName                  = "/sttattus.vault.v1.VaultService/ListInvestmentCircles"
+	VaultService_GetInvestmentCircle_FullMethodName                    = "/sttattus.vault.v1.VaultService/GetInvestmentCircle"
+	VaultService_ExpressCircleInterest_FullMethodName                  = "/sttattus.vault.v1.VaultService/ExpressCircleInterest"
+	VaultService_StartAdvisorThread_FullMethodName                     = "/sttattus.vault.v1.VaultService/StartAdvisorThread"
+	VaultService_ListAdvisorThreads_FullMethodName                     = "/sttattus.vault.v1.VaultService/ListAdvisorThreads"
+	VaultService_GetAdvisorThread_FullMethodName                       = "/sttattus.vault.v1.VaultService/GetAdvisorThread"
+	VaultService_PostAdvisorMessage_FullMethodName                     = "/sttattus.vault.v1.VaultService/PostAdvisorMessage"
+	VaultService_ListWealthAnthology_FullMethodName                    = "/sttattus.vault.v1.VaultService/ListWealthAnthology"
+	VaultService_GetWealthArticle_FullMethodName                       = "/sttattus.vault.v1.VaultService/GetWealthArticle"
+	VaultService_ListPartnerBanks_FullMethodName                       = "/sttattus.vault.v1.VaultService/ListPartnerBanks"
+	VaultService_CreateVaultShare_FullMethodName                       = "/sttattus.vault.v1.VaultService/CreateVaultShare"
+	VaultService_ListMyVaultShares_FullMethodName                      = "/sttattus.vault.v1.VaultService/ListMyVaultShares"
+	VaultService_RevokeVaultShare_FullMethodName                       = "/sttattus.vault.v1.VaultService/RevokeVaultShare"
+	VaultService_GenerateWealthAlmanac_FullMethodName                  = "/sttattus.vault.v1.VaultService/GenerateWealthAlmanac"
+	VaultService_GetYearInVault_FullMethodName                         = "/sttattus.vault.v1.VaultService/GetYearInVault"
+	VaultService_GetLiquidityStressTest_FullMethodName                 = "/sttattus.vault.v1.VaultService/GetLiquidityStressTest"
+	VaultService_GetVaultFinancialReliabilityWorkbench_FullMethodName  = "/sttattus.vault.v1.VaultService/GetVaultFinancialReliabilityWorkbench"
+	VaultService_SaveVaultFinancialReliabilitySource_FullMethodName    = "/sttattus.vault.v1.VaultService/SaveVaultFinancialReliabilitySource"
+	VaultService_ReconcileOrReplayVaultReliability_FullMethodName      = "/sttattus.vault.v1.VaultService/ReconcileOrReplayVaultReliability"
+	VaultService_GetVaultFinancialInboxCloseWorkbench_FullMethodName   = "/sttattus.vault.v1.VaultService/GetVaultFinancialInboxCloseWorkbench"
+	VaultService_SaveVaultFinancialInboxCloseItem_FullMethodName       = "/sttattus.vault.v1.VaultService/SaveVaultFinancialInboxCloseItem"
+	VaultService_LockOrReopenVaultMonthlyClose_FullMethodName          = "/sttattus.vault.v1.VaultService/LockOrReopenVaultMonthlyClose"
+	VaultService_GetVaultPersonalCfoCashWorkbench_FullMethodName       = "/sttattus.vault.v1.VaultService/GetVaultPersonalCfoCashWorkbench"
+	VaultService_SaveVaultPersonalCfoCashForecast_FullMethodName       = "/sttattus.vault.v1.VaultService/SaveVaultPersonalCfoCashForecast"
+	VaultService_AcknowledgeOrReviewVaultCashCommitment_FullMethodName = "/sttattus.vault.v1.VaultService/AcknowledgeOrReviewVaultCashCommitment"
+	VaultService_GetVaultPerformanceAllocationWorkbench_FullMethodName = "/sttattus.vault.v1.VaultService/GetVaultPerformanceAllocationWorkbench"
+	VaultService_SaveVaultPerformanceAllocationModel_FullMethodName    = "/sttattus.vault.v1.VaultService/SaveVaultPerformanceAllocationModel"
+	VaultService_SimulateOrRefreshVaultAllocation_FullMethodName       = "/sttattus.vault.v1.VaultService/SimulateOrRefreshVaultAllocation"
+	VaultService_GetVaultTaxAccountantWorkbench_FullMethodName         = "/sttattus.vault.v1.VaultService/GetVaultTaxAccountantWorkbench"
+	VaultService_SaveVaultTaxAccountantScenario_FullMethodName         = "/sttattus.vault.v1.VaultService/SaveVaultTaxAccountantScenario"
+	VaultService_LockOrExportVaultTaxPackage_FullMethodName            = "/sttattus.vault.v1.VaultService/LockOrExportVaultTaxPackage"
+	VaultService_GetVaultEntityOwnershipWorkbench_FullMethodName       = "/sttattus.vault.v1.VaultService/GetVaultEntityOwnershipWorkbench"
+	VaultService_SaveVaultEntityOwnershipNode_FullMethodName           = "/sttattus.vault.v1.VaultService/SaveVaultEntityOwnershipNode"
+	VaultService_VerifyOrRevokeVaultOwnershipAccess_FullMethodName     = "/sttattus.vault.v1.VaultService/VerifyOrRevokeVaultOwnershipAccess"
+	VaultService_GetVaultPrivateMarketDocWorkbench_FullMethodName      = "/sttattus.vault.v1.VaultService/GetVaultPrivateMarketDocWorkbench"
+	VaultService_SaveVaultPrivateMarketCommitment_FullMethodName       = "/sttattus.vault.v1.VaultService/SaveVaultPrivateMarketCommitment"
+	VaultService_ConfirmOrReconcileVaultCapitalNotice_FullMethodName   = "/sttattus.vault.v1.VaultService/ConfirmOrReconcileVaultCapitalNotice"
+	VaultService_GetVaultTreasuryDebtRiskWorkbench_FullMethodName      = "/sttattus.vault.v1.VaultService/GetVaultTreasuryDebtRiskWorkbench"
+	VaultService_SaveVaultTreasuryDebtRiskPosition_FullMethodName      = "/sttattus.vault.v1.VaultService/SaveVaultTreasuryDebtRiskPosition"
+	VaultService_EvaluateOrRouteVaultCoverageGap_FullMethodName        = "/sttattus.vault.v1.VaultService/EvaluateOrRouteVaultCoverageGap"
+	VaultService_GetVaultGoalsScenarioWorkbench_FullMethodName         = "/sttattus.vault.v1.VaultService/GetVaultGoalsScenarioWorkbench"
+	VaultService_SaveVaultGoalScenarioSnapshot_FullMethodName          = "/sttattus.vault.v1.VaultService/SaveVaultGoalScenarioSnapshot"
+	VaultService_CompareOrHandoffVaultScenario_FullMethodName          = "/sttattus.vault.v1.VaultService/CompareOrHandoffVaultScenario"
+	VaultService_GetVaultPrivacyStandingProofWorkbench_FullMethodName  = "/sttattus.vault.v1.VaultService/GetVaultPrivacyStandingProofWorkbench"
+	VaultService_IssueVaultPrivacyStandingProof_FullMethodName         = "/sttattus.vault.v1.VaultService/IssueVaultPrivacyStandingProof"
+	VaultService_VerifyOrRevokeVaultStandingProof_FullMethodName       = "/sttattus.vault.v1.VaultService/VerifyOrRevokeVaultStandingProof"
+	VaultService_GetVaultAdvisorFamilyWorkbench_FullMethodName         = "/sttattus.vault.v1.VaultService/GetVaultAdvisorFamilyWorkbench"
+	VaultService_SaveVaultAdvisorEngagementScope_FullMethodName        = "/sttattus.vault.v1.VaultService/SaveVaultAdvisorEngagementScope"
+	VaultService_ApproveOrRevokeVaultAdvisorAccess_FullMethodName      = "/sttattus.vault.v1.VaultService/ApproveOrRevokeVaultAdvisorAccess"
+	VaultService_GetVaultFinancialSafetyWorkbench_FullMethodName       = "/sttattus.vault.v1.VaultService/GetVaultFinancialSafetyWorkbench"
+	VaultService_SaveVaultFinancialSafetyIncident_FullMethodName       = "/sttattus.vault.v1.VaultService/SaveVaultFinancialSafetyIncident"
+	VaultService_ExecuteOrAppealVaultSafetyAction_FullMethodName       = "/sttattus.vault.v1.VaultService/ExecuteOrAppealVaultSafetyAction"
+	VaultService_GetVaultGivingImpactWorkbench_FullMethodName          = "/sttattus.vault.v1.VaultService/GetVaultGivingImpactWorkbench"
+	VaultService_SaveVaultGivingImpactPledge_FullMethodName            = "/sttattus.vault.v1.VaultService/SaveVaultGivingImpactPledge"
+	VaultService_VerifyOrAcknowledgeVaultGiftReceipt_FullMethodName    = "/sttattus.vault.v1.VaultService/VerifyOrAcknowledgeVaultGiftReceipt"
 )
 
 // VaultServiceClient is the client API for VaultService service.
@@ -161,6 +200,59 @@ type VaultServiceClient interface {
 	// V8P4.3 — liquidity stress test: given a cash need, source it across the
 	// liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
 	GetLiquidityStressTest(ctx context.Context, in *GetLiquidityStressTestRequest, opts ...grpc.CallOption) (*GetLiquidityStressTestResponse, error)
+	// ===== Vault Opportunity Choices 1–13 (V1..V16) =====
+	// Choice 1 (V1): Financial Data Reliability Center
+	GetVaultFinancialReliabilityWorkbench(ctx context.Context, in *GetVaultFinancialReliabilityWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialReliabilityWorkbenchResponse, error)
+	SaveVaultFinancialReliabilitySource(ctx context.Context, in *SaveVaultFinancialReliabilitySourceRequest, opts ...grpc.CallOption) (*SaveVaultFinancialReliabilitySourceResponse, error)
+	ReconcileOrReplayVaultReliability(ctx context.Context, in *ReconcileOrReplayVaultReliabilityRequest, opts ...grpc.CallOption) (*ReconcileOrReplayVaultReliabilityResponse, error)
+	// Choice 2 (V10): Financial Inbox and Monthly Close
+	GetVaultFinancialInboxCloseWorkbench(ctx context.Context, in *GetVaultFinancialInboxCloseWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialInboxCloseWorkbenchResponse, error)
+	SaveVaultFinancialInboxCloseItem(ctx context.Context, in *SaveVaultFinancialInboxCloseItemRequest, opts ...grpc.CallOption) (*SaveVaultFinancialInboxCloseItemResponse, error)
+	LockOrReopenVaultMonthlyClose(ctx context.Context, in *LockOrReopenVaultMonthlyCloseRequest, opts ...grpc.CallOption) (*LockOrReopenVaultMonthlyCloseResponse, error)
+	// Choice 3 (V2, V11): Personal CFO and Cash Command
+	GetVaultPersonalCfoCashWorkbench(ctx context.Context, in *GetVaultPersonalCfoCashWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPersonalCfoCashWorkbenchResponse, error)
+	SaveVaultPersonalCfoCashForecast(ctx context.Context, in *SaveVaultPersonalCfoCashForecastRequest, opts ...grpc.CallOption) (*SaveVaultPersonalCfoCashForecastResponse, error)
+	AcknowledgeOrReviewVaultCashCommitment(ctx context.Context, in *AcknowledgeOrReviewVaultCashCommitmentRequest, opts ...grpc.CallOption) (*AcknowledgeOrReviewVaultCashCommitmentResponse, error)
+	// Choice 4 (V3): Performance and Allocation Laboratory
+	GetVaultPerformanceAllocationWorkbench(ctx context.Context, in *GetVaultPerformanceAllocationWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPerformanceAllocationWorkbenchResponse, error)
+	SaveVaultPerformanceAllocationModel(ctx context.Context, in *SaveVaultPerformanceAllocationModelRequest, opts ...grpc.CallOption) (*SaveVaultPerformanceAllocationModelResponse, error)
+	SimulateOrRefreshVaultAllocation(ctx context.Context, in *SimulateOrRefreshVaultAllocationRequest, opts ...grpc.CallOption) (*SimulateOrRefreshVaultAllocationResponse, error)
+	// Choice 5 (V4, V16): Tax and Accountant Workspace
+	GetVaultTaxAccountantWorkbench(ctx context.Context, in *GetVaultTaxAccountantWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultTaxAccountantWorkbenchResponse, error)
+	SaveVaultTaxAccountantScenario(ctx context.Context, in *SaveVaultTaxAccountantScenarioRequest, opts ...grpc.CallOption) (*SaveVaultTaxAccountantScenarioResponse, error)
+	LockOrExportVaultTaxPackage(ctx context.Context, in *LockOrExportVaultTaxPackageRequest, opts ...grpc.CallOption) (*LockOrExportVaultTaxPackageResponse, error)
+	// Choice 6 (V5): Entity, Household, and Ownership Graph
+	GetVaultEntityOwnershipWorkbench(ctx context.Context, in *GetVaultEntityOwnershipWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultEntityOwnershipWorkbenchResponse, error)
+	SaveVaultEntityOwnershipNode(ctx context.Context, in *SaveVaultEntityOwnershipNodeRequest, opts ...grpc.CallOption) (*SaveVaultEntityOwnershipNodeResponse, error)
+	VerifyOrRevokeVaultOwnershipAccess(ctx context.Context, in *VerifyOrRevokeVaultOwnershipAccessRequest, opts ...grpc.CallOption) (*VerifyOrRevokeVaultOwnershipAccessResponse, error)
+	// Choice 7 (V6, V16): Private Markets and Document Room
+	GetVaultPrivateMarketDocWorkbench(ctx context.Context, in *GetVaultPrivateMarketDocWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPrivateMarketDocWorkbenchResponse, error)
+	SaveVaultPrivateMarketCommitment(ctx context.Context, in *SaveVaultPrivateMarketCommitmentRequest, opts ...grpc.CallOption) (*SaveVaultPrivateMarketCommitmentResponse, error)
+	ConfirmOrReconcileVaultCapitalNotice(ctx context.Context, in *ConfirmOrReconcileVaultCapitalNoticeRequest, opts ...grpc.CallOption) (*ConfirmOrReconcileVaultCapitalNoticeResponse, error)
+	// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+	GetVaultTreasuryDebtRiskWorkbench(ctx context.Context, in *GetVaultTreasuryDebtRiskWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultTreasuryDebtRiskWorkbenchResponse, error)
+	SaveVaultTreasuryDebtRiskPosition(ctx context.Context, in *SaveVaultTreasuryDebtRiskPositionRequest, opts ...grpc.CallOption) (*SaveVaultTreasuryDebtRiskPositionResponse, error)
+	EvaluateOrRouteVaultCoverageGap(ctx context.Context, in *EvaluateOrRouteVaultCoverageGapRequest, opts ...grpc.CallOption) (*EvaluateOrRouteVaultCoverageGapResponse, error)
+	// Choice 9 (V8): Goals and Scenario Engine
+	GetVaultGoalsScenarioWorkbench(ctx context.Context, in *GetVaultGoalsScenarioWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultGoalsScenarioWorkbenchResponse, error)
+	SaveVaultGoalScenarioSnapshot(ctx context.Context, in *SaveVaultGoalScenarioSnapshotRequest, opts ...grpc.CallOption) (*SaveVaultGoalScenarioSnapshotResponse, error)
+	CompareOrHandoffVaultScenario(ctx context.Context, in *CompareOrHandoffVaultScenarioRequest, opts ...grpc.CallOption) (*CompareOrHandoffVaultScenarioResponse, error)
+	// Choice 10 (V7): Privacy-Preserving Standing Proofs
+	GetVaultPrivacyStandingProofWorkbench(ctx context.Context, in *GetVaultPrivacyStandingProofWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPrivacyStandingProofWorkbenchResponse, error)
+	IssueVaultPrivacyStandingProof(ctx context.Context, in *IssueVaultPrivacyStandingProofRequest, opts ...grpc.CallOption) (*IssueVaultPrivacyStandingProofResponse, error)
+	VerifyOrRevokeVaultStandingProof(ctx context.Context, in *VerifyOrRevokeVaultStandingProofRequest, opts ...grpc.CallOption) (*VerifyOrRevokeVaultStandingProofResponse, error)
+	// Choice 11 (V9): Advisor and Family-Office Workspace
+	GetVaultAdvisorFamilyWorkbench(ctx context.Context, in *GetVaultAdvisorFamilyWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultAdvisorFamilyWorkbenchResponse, error)
+	SaveVaultAdvisorEngagementScope(ctx context.Context, in *SaveVaultAdvisorEngagementScopeRequest, opts ...grpc.CallOption) (*SaveVaultAdvisorEngagementScopeResponse, error)
+	ApproveOrRevokeVaultAdvisorAccess(ctx context.Context, in *ApproveOrRevokeVaultAdvisorAccessRequest, opts ...grpc.CallOption) (*ApproveOrRevokeVaultAdvisorAccessResponse, error)
+	// Choice 12 (V13): Financial Safety and Fraud Response
+	GetVaultFinancialSafetyWorkbench(ctx context.Context, in *GetVaultFinancialSafetyWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialSafetyWorkbenchResponse, error)
+	SaveVaultFinancialSafetyIncident(ctx context.Context, in *SaveVaultFinancialSafetyIncidentRequest, opts ...grpc.CallOption) (*SaveVaultFinancialSafetyIncidentResponse, error)
+	ExecuteOrAppealVaultSafetyAction(ctx context.Context, in *ExecuteOrAppealVaultSafetyActionRequest, opts ...grpc.CallOption) (*ExecuteOrAppealVaultSafetyActionResponse, error)
+	// Choice 13 (V15): Giving and Impact Ledger
+	GetVaultGivingImpactWorkbench(ctx context.Context, in *GetVaultGivingImpactWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultGivingImpactWorkbenchResponse, error)
+	SaveVaultGivingImpactPledge(ctx context.Context, in *SaveVaultGivingImpactPledgeRequest, opts ...grpc.CallOption) (*SaveVaultGivingImpactPledgeResponse, error)
+	VerifyOrAcknowledgeVaultGiftReceipt(ctx context.Context, in *VerifyOrAcknowledgeVaultGiftReceiptRequest, opts ...grpc.CallOption) (*VerifyOrAcknowledgeVaultGiftReceiptResponse, error)
 }
 
 type vaultServiceClient struct {
@@ -681,6 +773,396 @@ func (c *vaultServiceClient) GetLiquidityStressTest(ctx context.Context, in *Get
 	return out, nil
 }
 
+func (c *vaultServiceClient) GetVaultFinancialReliabilityWorkbench(ctx context.Context, in *GetVaultFinancialReliabilityWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialReliabilityWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultFinancialReliabilityWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultFinancialReliabilityWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultFinancialReliabilitySource(ctx context.Context, in *SaveVaultFinancialReliabilitySourceRequest, opts ...grpc.CallOption) (*SaveVaultFinancialReliabilitySourceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultFinancialReliabilitySourceResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultFinancialReliabilitySource_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ReconcileOrReplayVaultReliability(ctx context.Context, in *ReconcileOrReplayVaultReliabilityRequest, opts ...grpc.CallOption) (*ReconcileOrReplayVaultReliabilityResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReconcileOrReplayVaultReliabilityResponse)
+	err := c.cc.Invoke(ctx, VaultService_ReconcileOrReplayVaultReliability_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultFinancialInboxCloseWorkbench(ctx context.Context, in *GetVaultFinancialInboxCloseWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialInboxCloseWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultFinancialInboxCloseWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultFinancialInboxCloseWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultFinancialInboxCloseItem(ctx context.Context, in *SaveVaultFinancialInboxCloseItemRequest, opts ...grpc.CallOption) (*SaveVaultFinancialInboxCloseItemResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultFinancialInboxCloseItemResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultFinancialInboxCloseItem_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) LockOrReopenVaultMonthlyClose(ctx context.Context, in *LockOrReopenVaultMonthlyCloseRequest, opts ...grpc.CallOption) (*LockOrReopenVaultMonthlyCloseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LockOrReopenVaultMonthlyCloseResponse)
+	err := c.cc.Invoke(ctx, VaultService_LockOrReopenVaultMonthlyClose_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultPersonalCfoCashWorkbench(ctx context.Context, in *GetVaultPersonalCfoCashWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPersonalCfoCashWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultPersonalCfoCashWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultPersonalCfoCashWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultPersonalCfoCashForecast(ctx context.Context, in *SaveVaultPersonalCfoCashForecastRequest, opts ...grpc.CallOption) (*SaveVaultPersonalCfoCashForecastResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultPersonalCfoCashForecastResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultPersonalCfoCashForecast_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) AcknowledgeOrReviewVaultCashCommitment(ctx context.Context, in *AcknowledgeOrReviewVaultCashCommitmentRequest, opts ...grpc.CallOption) (*AcknowledgeOrReviewVaultCashCommitmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AcknowledgeOrReviewVaultCashCommitmentResponse)
+	err := c.cc.Invoke(ctx, VaultService_AcknowledgeOrReviewVaultCashCommitment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultPerformanceAllocationWorkbench(ctx context.Context, in *GetVaultPerformanceAllocationWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPerformanceAllocationWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultPerformanceAllocationWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultPerformanceAllocationWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultPerformanceAllocationModel(ctx context.Context, in *SaveVaultPerformanceAllocationModelRequest, opts ...grpc.CallOption) (*SaveVaultPerformanceAllocationModelResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultPerformanceAllocationModelResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultPerformanceAllocationModel_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SimulateOrRefreshVaultAllocation(ctx context.Context, in *SimulateOrRefreshVaultAllocationRequest, opts ...grpc.CallOption) (*SimulateOrRefreshVaultAllocationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SimulateOrRefreshVaultAllocationResponse)
+	err := c.cc.Invoke(ctx, VaultService_SimulateOrRefreshVaultAllocation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultTaxAccountantWorkbench(ctx context.Context, in *GetVaultTaxAccountantWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultTaxAccountantWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultTaxAccountantWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultTaxAccountantWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultTaxAccountantScenario(ctx context.Context, in *SaveVaultTaxAccountantScenarioRequest, opts ...grpc.CallOption) (*SaveVaultTaxAccountantScenarioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultTaxAccountantScenarioResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultTaxAccountantScenario_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) LockOrExportVaultTaxPackage(ctx context.Context, in *LockOrExportVaultTaxPackageRequest, opts ...grpc.CallOption) (*LockOrExportVaultTaxPackageResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LockOrExportVaultTaxPackageResponse)
+	err := c.cc.Invoke(ctx, VaultService_LockOrExportVaultTaxPackage_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultEntityOwnershipWorkbench(ctx context.Context, in *GetVaultEntityOwnershipWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultEntityOwnershipWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultEntityOwnershipWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultEntityOwnershipWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultEntityOwnershipNode(ctx context.Context, in *SaveVaultEntityOwnershipNodeRequest, opts ...grpc.CallOption) (*SaveVaultEntityOwnershipNodeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultEntityOwnershipNodeResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultEntityOwnershipNode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) VerifyOrRevokeVaultOwnershipAccess(ctx context.Context, in *VerifyOrRevokeVaultOwnershipAccessRequest, opts ...grpc.CallOption) (*VerifyOrRevokeVaultOwnershipAccessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyOrRevokeVaultOwnershipAccessResponse)
+	err := c.cc.Invoke(ctx, VaultService_VerifyOrRevokeVaultOwnershipAccess_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultPrivateMarketDocWorkbench(ctx context.Context, in *GetVaultPrivateMarketDocWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPrivateMarketDocWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultPrivateMarketDocWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultPrivateMarketDocWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultPrivateMarketCommitment(ctx context.Context, in *SaveVaultPrivateMarketCommitmentRequest, opts ...grpc.CallOption) (*SaveVaultPrivateMarketCommitmentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultPrivateMarketCommitmentResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultPrivateMarketCommitment_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ConfirmOrReconcileVaultCapitalNotice(ctx context.Context, in *ConfirmOrReconcileVaultCapitalNoticeRequest, opts ...grpc.CallOption) (*ConfirmOrReconcileVaultCapitalNoticeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ConfirmOrReconcileVaultCapitalNoticeResponse)
+	err := c.cc.Invoke(ctx, VaultService_ConfirmOrReconcileVaultCapitalNotice_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultTreasuryDebtRiskWorkbench(ctx context.Context, in *GetVaultTreasuryDebtRiskWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultTreasuryDebtRiskWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultTreasuryDebtRiskWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultTreasuryDebtRiskWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultTreasuryDebtRiskPosition(ctx context.Context, in *SaveVaultTreasuryDebtRiskPositionRequest, opts ...grpc.CallOption) (*SaveVaultTreasuryDebtRiskPositionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultTreasuryDebtRiskPositionResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultTreasuryDebtRiskPosition_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) EvaluateOrRouteVaultCoverageGap(ctx context.Context, in *EvaluateOrRouteVaultCoverageGapRequest, opts ...grpc.CallOption) (*EvaluateOrRouteVaultCoverageGapResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateOrRouteVaultCoverageGapResponse)
+	err := c.cc.Invoke(ctx, VaultService_EvaluateOrRouteVaultCoverageGap_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultGoalsScenarioWorkbench(ctx context.Context, in *GetVaultGoalsScenarioWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultGoalsScenarioWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultGoalsScenarioWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultGoalsScenarioWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultGoalScenarioSnapshot(ctx context.Context, in *SaveVaultGoalScenarioSnapshotRequest, opts ...grpc.CallOption) (*SaveVaultGoalScenarioSnapshotResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultGoalScenarioSnapshotResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultGoalScenarioSnapshot_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) CompareOrHandoffVaultScenario(ctx context.Context, in *CompareOrHandoffVaultScenarioRequest, opts ...grpc.CallOption) (*CompareOrHandoffVaultScenarioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CompareOrHandoffVaultScenarioResponse)
+	err := c.cc.Invoke(ctx, VaultService_CompareOrHandoffVaultScenario_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultPrivacyStandingProofWorkbench(ctx context.Context, in *GetVaultPrivacyStandingProofWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultPrivacyStandingProofWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultPrivacyStandingProofWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultPrivacyStandingProofWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) IssueVaultPrivacyStandingProof(ctx context.Context, in *IssueVaultPrivacyStandingProofRequest, opts ...grpc.CallOption) (*IssueVaultPrivacyStandingProofResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueVaultPrivacyStandingProofResponse)
+	err := c.cc.Invoke(ctx, VaultService_IssueVaultPrivacyStandingProof_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) VerifyOrRevokeVaultStandingProof(ctx context.Context, in *VerifyOrRevokeVaultStandingProofRequest, opts ...grpc.CallOption) (*VerifyOrRevokeVaultStandingProofResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyOrRevokeVaultStandingProofResponse)
+	err := c.cc.Invoke(ctx, VaultService_VerifyOrRevokeVaultStandingProof_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultAdvisorFamilyWorkbench(ctx context.Context, in *GetVaultAdvisorFamilyWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultAdvisorFamilyWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultAdvisorFamilyWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultAdvisorFamilyWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultAdvisorEngagementScope(ctx context.Context, in *SaveVaultAdvisorEngagementScopeRequest, opts ...grpc.CallOption) (*SaveVaultAdvisorEngagementScopeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultAdvisorEngagementScopeResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultAdvisorEngagementScope_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ApproveOrRevokeVaultAdvisorAccess(ctx context.Context, in *ApproveOrRevokeVaultAdvisorAccessRequest, opts ...grpc.CallOption) (*ApproveOrRevokeVaultAdvisorAccessResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveOrRevokeVaultAdvisorAccessResponse)
+	err := c.cc.Invoke(ctx, VaultService_ApproveOrRevokeVaultAdvisorAccess_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultFinancialSafetyWorkbench(ctx context.Context, in *GetVaultFinancialSafetyWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultFinancialSafetyWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultFinancialSafetyWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultFinancialSafetyWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultFinancialSafetyIncident(ctx context.Context, in *SaveVaultFinancialSafetyIncidentRequest, opts ...grpc.CallOption) (*SaveVaultFinancialSafetyIncidentResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultFinancialSafetyIncidentResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultFinancialSafetyIncident_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) ExecuteOrAppealVaultSafetyAction(ctx context.Context, in *ExecuteOrAppealVaultSafetyActionRequest, opts ...grpc.CallOption) (*ExecuteOrAppealVaultSafetyActionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecuteOrAppealVaultSafetyActionResponse)
+	err := c.cc.Invoke(ctx, VaultService_ExecuteOrAppealVaultSafetyAction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) GetVaultGivingImpactWorkbench(ctx context.Context, in *GetVaultGivingImpactWorkbenchRequest, opts ...grpc.CallOption) (*GetVaultGivingImpactWorkbenchResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVaultGivingImpactWorkbenchResponse)
+	err := c.cc.Invoke(ctx, VaultService_GetVaultGivingImpactWorkbench_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) SaveVaultGivingImpactPledge(ctx context.Context, in *SaveVaultGivingImpactPledgeRequest, opts ...grpc.CallOption) (*SaveVaultGivingImpactPledgeResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveVaultGivingImpactPledgeResponse)
+	err := c.cc.Invoke(ctx, VaultService_SaveVaultGivingImpactPledge_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *vaultServiceClient) VerifyOrAcknowledgeVaultGiftReceipt(ctx context.Context, in *VerifyOrAcknowledgeVaultGiftReceiptRequest, opts ...grpc.CallOption) (*VerifyOrAcknowledgeVaultGiftReceiptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(VerifyOrAcknowledgeVaultGiftReceiptResponse)
+	err := c.cc.Invoke(ctx, VaultService_VerifyOrAcknowledgeVaultGiftReceipt_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VaultServiceServer is the server API for VaultService service.
 // All implementations must embed UnimplementedVaultServiceServer
 // for forward compatibility.
@@ -770,6 +1252,59 @@ type VaultServiceServer interface {
 	// V8P4.3 — liquidity stress test: given a cash need, source it across the
 	// liquidity ladder (T+0 cash → T+30 marketable → illiquid). Pure compute.
 	GetLiquidityStressTest(context.Context, *GetLiquidityStressTestRequest) (*GetLiquidityStressTestResponse, error)
+	// ===== Vault Opportunity Choices 1–13 (V1..V16) =====
+	// Choice 1 (V1): Financial Data Reliability Center
+	GetVaultFinancialReliabilityWorkbench(context.Context, *GetVaultFinancialReliabilityWorkbenchRequest) (*GetVaultFinancialReliabilityWorkbenchResponse, error)
+	SaveVaultFinancialReliabilitySource(context.Context, *SaveVaultFinancialReliabilitySourceRequest) (*SaveVaultFinancialReliabilitySourceResponse, error)
+	ReconcileOrReplayVaultReliability(context.Context, *ReconcileOrReplayVaultReliabilityRequest) (*ReconcileOrReplayVaultReliabilityResponse, error)
+	// Choice 2 (V10): Financial Inbox and Monthly Close
+	GetVaultFinancialInboxCloseWorkbench(context.Context, *GetVaultFinancialInboxCloseWorkbenchRequest) (*GetVaultFinancialInboxCloseWorkbenchResponse, error)
+	SaveVaultFinancialInboxCloseItem(context.Context, *SaveVaultFinancialInboxCloseItemRequest) (*SaveVaultFinancialInboxCloseItemResponse, error)
+	LockOrReopenVaultMonthlyClose(context.Context, *LockOrReopenVaultMonthlyCloseRequest) (*LockOrReopenVaultMonthlyCloseResponse, error)
+	// Choice 3 (V2, V11): Personal CFO and Cash Command
+	GetVaultPersonalCfoCashWorkbench(context.Context, *GetVaultPersonalCfoCashWorkbenchRequest) (*GetVaultPersonalCfoCashWorkbenchResponse, error)
+	SaveVaultPersonalCfoCashForecast(context.Context, *SaveVaultPersonalCfoCashForecastRequest) (*SaveVaultPersonalCfoCashForecastResponse, error)
+	AcknowledgeOrReviewVaultCashCommitment(context.Context, *AcknowledgeOrReviewVaultCashCommitmentRequest) (*AcknowledgeOrReviewVaultCashCommitmentResponse, error)
+	// Choice 4 (V3): Performance and Allocation Laboratory
+	GetVaultPerformanceAllocationWorkbench(context.Context, *GetVaultPerformanceAllocationWorkbenchRequest) (*GetVaultPerformanceAllocationWorkbenchResponse, error)
+	SaveVaultPerformanceAllocationModel(context.Context, *SaveVaultPerformanceAllocationModelRequest) (*SaveVaultPerformanceAllocationModelResponse, error)
+	SimulateOrRefreshVaultAllocation(context.Context, *SimulateOrRefreshVaultAllocationRequest) (*SimulateOrRefreshVaultAllocationResponse, error)
+	// Choice 5 (V4, V16): Tax and Accountant Workspace
+	GetVaultTaxAccountantWorkbench(context.Context, *GetVaultTaxAccountantWorkbenchRequest) (*GetVaultTaxAccountantWorkbenchResponse, error)
+	SaveVaultTaxAccountantScenario(context.Context, *SaveVaultTaxAccountantScenarioRequest) (*SaveVaultTaxAccountantScenarioResponse, error)
+	LockOrExportVaultTaxPackage(context.Context, *LockOrExportVaultTaxPackageRequest) (*LockOrExportVaultTaxPackageResponse, error)
+	// Choice 6 (V5): Entity, Household, and Ownership Graph
+	GetVaultEntityOwnershipWorkbench(context.Context, *GetVaultEntityOwnershipWorkbenchRequest) (*GetVaultEntityOwnershipWorkbenchResponse, error)
+	SaveVaultEntityOwnershipNode(context.Context, *SaveVaultEntityOwnershipNodeRequest) (*SaveVaultEntityOwnershipNodeResponse, error)
+	VerifyOrRevokeVaultOwnershipAccess(context.Context, *VerifyOrRevokeVaultOwnershipAccessRequest) (*VerifyOrRevokeVaultOwnershipAccessResponse, error)
+	// Choice 7 (V6, V16): Private Markets and Document Room
+	GetVaultPrivateMarketDocWorkbench(context.Context, *GetVaultPrivateMarketDocWorkbenchRequest) (*GetVaultPrivateMarketDocWorkbenchResponse, error)
+	SaveVaultPrivateMarketCommitment(context.Context, *SaveVaultPrivateMarketCommitmentRequest) (*SaveVaultPrivateMarketCommitmentResponse, error)
+	ConfirmOrReconcileVaultCapitalNotice(context.Context, *ConfirmOrReconcileVaultCapitalNoticeRequest) (*ConfirmOrReconcileVaultCapitalNoticeResponse, error)
+	// Choice 8 (V12, V14): Treasury, Debt, and Risk Coverage
+	GetVaultTreasuryDebtRiskWorkbench(context.Context, *GetVaultTreasuryDebtRiskWorkbenchRequest) (*GetVaultTreasuryDebtRiskWorkbenchResponse, error)
+	SaveVaultTreasuryDebtRiskPosition(context.Context, *SaveVaultTreasuryDebtRiskPositionRequest) (*SaveVaultTreasuryDebtRiskPositionResponse, error)
+	EvaluateOrRouteVaultCoverageGap(context.Context, *EvaluateOrRouteVaultCoverageGapRequest) (*EvaluateOrRouteVaultCoverageGapResponse, error)
+	// Choice 9 (V8): Goals and Scenario Engine
+	GetVaultGoalsScenarioWorkbench(context.Context, *GetVaultGoalsScenarioWorkbenchRequest) (*GetVaultGoalsScenarioWorkbenchResponse, error)
+	SaveVaultGoalScenarioSnapshot(context.Context, *SaveVaultGoalScenarioSnapshotRequest) (*SaveVaultGoalScenarioSnapshotResponse, error)
+	CompareOrHandoffVaultScenario(context.Context, *CompareOrHandoffVaultScenarioRequest) (*CompareOrHandoffVaultScenarioResponse, error)
+	// Choice 10 (V7): Privacy-Preserving Standing Proofs
+	GetVaultPrivacyStandingProofWorkbench(context.Context, *GetVaultPrivacyStandingProofWorkbenchRequest) (*GetVaultPrivacyStandingProofWorkbenchResponse, error)
+	IssueVaultPrivacyStandingProof(context.Context, *IssueVaultPrivacyStandingProofRequest) (*IssueVaultPrivacyStandingProofResponse, error)
+	VerifyOrRevokeVaultStandingProof(context.Context, *VerifyOrRevokeVaultStandingProofRequest) (*VerifyOrRevokeVaultStandingProofResponse, error)
+	// Choice 11 (V9): Advisor and Family-Office Workspace
+	GetVaultAdvisorFamilyWorkbench(context.Context, *GetVaultAdvisorFamilyWorkbenchRequest) (*GetVaultAdvisorFamilyWorkbenchResponse, error)
+	SaveVaultAdvisorEngagementScope(context.Context, *SaveVaultAdvisorEngagementScopeRequest) (*SaveVaultAdvisorEngagementScopeResponse, error)
+	ApproveOrRevokeVaultAdvisorAccess(context.Context, *ApproveOrRevokeVaultAdvisorAccessRequest) (*ApproveOrRevokeVaultAdvisorAccessResponse, error)
+	// Choice 12 (V13): Financial Safety and Fraud Response
+	GetVaultFinancialSafetyWorkbench(context.Context, *GetVaultFinancialSafetyWorkbenchRequest) (*GetVaultFinancialSafetyWorkbenchResponse, error)
+	SaveVaultFinancialSafetyIncident(context.Context, *SaveVaultFinancialSafetyIncidentRequest) (*SaveVaultFinancialSafetyIncidentResponse, error)
+	ExecuteOrAppealVaultSafetyAction(context.Context, *ExecuteOrAppealVaultSafetyActionRequest) (*ExecuteOrAppealVaultSafetyActionResponse, error)
+	// Choice 13 (V15): Giving and Impact Ledger
+	GetVaultGivingImpactWorkbench(context.Context, *GetVaultGivingImpactWorkbenchRequest) (*GetVaultGivingImpactWorkbenchResponse, error)
+	SaveVaultGivingImpactPledge(context.Context, *SaveVaultGivingImpactPledgeRequest) (*SaveVaultGivingImpactPledgeResponse, error)
+	VerifyOrAcknowledgeVaultGiftReceipt(context.Context, *VerifyOrAcknowledgeVaultGiftReceiptRequest) (*VerifyOrAcknowledgeVaultGiftReceiptResponse, error)
 	mustEmbedUnimplementedVaultServiceServer()
 }
 
@@ -932,6 +1467,123 @@ func (UnimplementedVaultServiceServer) GetYearInVault(context.Context, *GetYearI
 }
 func (UnimplementedVaultServiceServer) GetLiquidityStressTest(context.Context, *GetLiquidityStressTestRequest) (*GetLiquidityStressTestResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method GetLiquidityStressTest not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultFinancialReliabilityWorkbench(context.Context, *GetVaultFinancialReliabilityWorkbenchRequest) (*GetVaultFinancialReliabilityWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultFinancialReliabilityWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultFinancialReliabilitySource(context.Context, *SaveVaultFinancialReliabilitySourceRequest) (*SaveVaultFinancialReliabilitySourceResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultFinancialReliabilitySource not implemented")
+}
+func (UnimplementedVaultServiceServer) ReconcileOrReplayVaultReliability(context.Context, *ReconcileOrReplayVaultReliabilityRequest) (*ReconcileOrReplayVaultReliabilityResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReconcileOrReplayVaultReliability not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultFinancialInboxCloseWorkbench(context.Context, *GetVaultFinancialInboxCloseWorkbenchRequest) (*GetVaultFinancialInboxCloseWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultFinancialInboxCloseWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultFinancialInboxCloseItem(context.Context, *SaveVaultFinancialInboxCloseItemRequest) (*SaveVaultFinancialInboxCloseItemResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultFinancialInboxCloseItem not implemented")
+}
+func (UnimplementedVaultServiceServer) LockOrReopenVaultMonthlyClose(context.Context, *LockOrReopenVaultMonthlyCloseRequest) (*LockOrReopenVaultMonthlyCloseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LockOrReopenVaultMonthlyClose not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultPersonalCfoCashWorkbench(context.Context, *GetVaultPersonalCfoCashWorkbenchRequest) (*GetVaultPersonalCfoCashWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultPersonalCfoCashWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultPersonalCfoCashForecast(context.Context, *SaveVaultPersonalCfoCashForecastRequest) (*SaveVaultPersonalCfoCashForecastResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultPersonalCfoCashForecast not implemented")
+}
+func (UnimplementedVaultServiceServer) AcknowledgeOrReviewVaultCashCommitment(context.Context, *AcknowledgeOrReviewVaultCashCommitmentRequest) (*AcknowledgeOrReviewVaultCashCommitmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method AcknowledgeOrReviewVaultCashCommitment not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultPerformanceAllocationWorkbench(context.Context, *GetVaultPerformanceAllocationWorkbenchRequest) (*GetVaultPerformanceAllocationWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultPerformanceAllocationWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultPerformanceAllocationModel(context.Context, *SaveVaultPerformanceAllocationModelRequest) (*SaveVaultPerformanceAllocationModelResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultPerformanceAllocationModel not implemented")
+}
+func (UnimplementedVaultServiceServer) SimulateOrRefreshVaultAllocation(context.Context, *SimulateOrRefreshVaultAllocationRequest) (*SimulateOrRefreshVaultAllocationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SimulateOrRefreshVaultAllocation not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultTaxAccountantWorkbench(context.Context, *GetVaultTaxAccountantWorkbenchRequest) (*GetVaultTaxAccountantWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultTaxAccountantWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultTaxAccountantScenario(context.Context, *SaveVaultTaxAccountantScenarioRequest) (*SaveVaultTaxAccountantScenarioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultTaxAccountantScenario not implemented")
+}
+func (UnimplementedVaultServiceServer) LockOrExportVaultTaxPackage(context.Context, *LockOrExportVaultTaxPackageRequest) (*LockOrExportVaultTaxPackageResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LockOrExportVaultTaxPackage not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultEntityOwnershipWorkbench(context.Context, *GetVaultEntityOwnershipWorkbenchRequest) (*GetVaultEntityOwnershipWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultEntityOwnershipWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultEntityOwnershipNode(context.Context, *SaveVaultEntityOwnershipNodeRequest) (*SaveVaultEntityOwnershipNodeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultEntityOwnershipNode not implemented")
+}
+func (UnimplementedVaultServiceServer) VerifyOrRevokeVaultOwnershipAccess(context.Context, *VerifyOrRevokeVaultOwnershipAccessRequest) (*VerifyOrRevokeVaultOwnershipAccessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyOrRevokeVaultOwnershipAccess not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultPrivateMarketDocWorkbench(context.Context, *GetVaultPrivateMarketDocWorkbenchRequest) (*GetVaultPrivateMarketDocWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultPrivateMarketDocWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultPrivateMarketCommitment(context.Context, *SaveVaultPrivateMarketCommitmentRequest) (*SaveVaultPrivateMarketCommitmentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultPrivateMarketCommitment not implemented")
+}
+func (UnimplementedVaultServiceServer) ConfirmOrReconcileVaultCapitalNotice(context.Context, *ConfirmOrReconcileVaultCapitalNoticeRequest) (*ConfirmOrReconcileVaultCapitalNoticeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ConfirmOrReconcileVaultCapitalNotice not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultTreasuryDebtRiskWorkbench(context.Context, *GetVaultTreasuryDebtRiskWorkbenchRequest) (*GetVaultTreasuryDebtRiskWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultTreasuryDebtRiskWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultTreasuryDebtRiskPosition(context.Context, *SaveVaultTreasuryDebtRiskPositionRequest) (*SaveVaultTreasuryDebtRiskPositionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultTreasuryDebtRiskPosition not implemented")
+}
+func (UnimplementedVaultServiceServer) EvaluateOrRouteVaultCoverageGap(context.Context, *EvaluateOrRouteVaultCoverageGapRequest) (*EvaluateOrRouteVaultCoverageGapResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateOrRouteVaultCoverageGap not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultGoalsScenarioWorkbench(context.Context, *GetVaultGoalsScenarioWorkbenchRequest) (*GetVaultGoalsScenarioWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultGoalsScenarioWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultGoalScenarioSnapshot(context.Context, *SaveVaultGoalScenarioSnapshotRequest) (*SaveVaultGoalScenarioSnapshotResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultGoalScenarioSnapshot not implemented")
+}
+func (UnimplementedVaultServiceServer) CompareOrHandoffVaultScenario(context.Context, *CompareOrHandoffVaultScenarioRequest) (*CompareOrHandoffVaultScenarioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CompareOrHandoffVaultScenario not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultPrivacyStandingProofWorkbench(context.Context, *GetVaultPrivacyStandingProofWorkbenchRequest) (*GetVaultPrivacyStandingProofWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultPrivacyStandingProofWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) IssueVaultPrivacyStandingProof(context.Context, *IssueVaultPrivacyStandingProofRequest) (*IssueVaultPrivacyStandingProofResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueVaultPrivacyStandingProof not implemented")
+}
+func (UnimplementedVaultServiceServer) VerifyOrRevokeVaultStandingProof(context.Context, *VerifyOrRevokeVaultStandingProofRequest) (*VerifyOrRevokeVaultStandingProofResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyOrRevokeVaultStandingProof not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultAdvisorFamilyWorkbench(context.Context, *GetVaultAdvisorFamilyWorkbenchRequest) (*GetVaultAdvisorFamilyWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultAdvisorFamilyWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultAdvisorEngagementScope(context.Context, *SaveVaultAdvisorEngagementScopeRequest) (*SaveVaultAdvisorEngagementScopeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultAdvisorEngagementScope not implemented")
+}
+func (UnimplementedVaultServiceServer) ApproveOrRevokeVaultAdvisorAccess(context.Context, *ApproveOrRevokeVaultAdvisorAccessRequest) (*ApproveOrRevokeVaultAdvisorAccessResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApproveOrRevokeVaultAdvisorAccess not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultFinancialSafetyWorkbench(context.Context, *GetVaultFinancialSafetyWorkbenchRequest) (*GetVaultFinancialSafetyWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultFinancialSafetyWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultFinancialSafetyIncident(context.Context, *SaveVaultFinancialSafetyIncidentRequest) (*SaveVaultFinancialSafetyIncidentResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultFinancialSafetyIncident not implemented")
+}
+func (UnimplementedVaultServiceServer) ExecuteOrAppealVaultSafetyAction(context.Context, *ExecuteOrAppealVaultSafetyActionRequest) (*ExecuteOrAppealVaultSafetyActionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExecuteOrAppealVaultSafetyAction not implemented")
+}
+func (UnimplementedVaultServiceServer) GetVaultGivingImpactWorkbench(context.Context, *GetVaultGivingImpactWorkbenchRequest) (*GetVaultGivingImpactWorkbenchResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVaultGivingImpactWorkbench not implemented")
+}
+func (UnimplementedVaultServiceServer) SaveVaultGivingImpactPledge(context.Context, *SaveVaultGivingImpactPledgeRequest) (*SaveVaultGivingImpactPledgeResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveVaultGivingImpactPledge not implemented")
+}
+func (UnimplementedVaultServiceServer) VerifyOrAcknowledgeVaultGiftReceipt(context.Context, *VerifyOrAcknowledgeVaultGiftReceiptRequest) (*VerifyOrAcknowledgeVaultGiftReceiptResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method VerifyOrAcknowledgeVaultGiftReceipt not implemented")
 }
 func (UnimplementedVaultServiceServer) mustEmbedUnimplementedVaultServiceServer() {}
 func (UnimplementedVaultServiceServer) testEmbeddedByValue()                      {}
@@ -1872,6 +2524,708 @@ func _VaultService_GetLiquidityStressTest_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _VaultService_GetVaultFinancialReliabilityWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultFinancialReliabilityWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultFinancialReliabilityWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultFinancialReliabilityWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultFinancialReliabilityWorkbench(ctx, req.(*GetVaultFinancialReliabilityWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultFinancialReliabilitySource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultFinancialReliabilitySourceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultFinancialReliabilitySource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultFinancialReliabilitySource_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultFinancialReliabilitySource(ctx, req.(*SaveVaultFinancialReliabilitySourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ReconcileOrReplayVaultReliability_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileOrReplayVaultReliabilityRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ReconcileOrReplayVaultReliability(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ReconcileOrReplayVaultReliability_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ReconcileOrReplayVaultReliability(ctx, req.(*ReconcileOrReplayVaultReliabilityRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultFinancialInboxCloseWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultFinancialInboxCloseWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultFinancialInboxCloseWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultFinancialInboxCloseWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultFinancialInboxCloseWorkbench(ctx, req.(*GetVaultFinancialInboxCloseWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultFinancialInboxCloseItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultFinancialInboxCloseItemRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultFinancialInboxCloseItem(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultFinancialInboxCloseItem_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultFinancialInboxCloseItem(ctx, req.(*SaveVaultFinancialInboxCloseItemRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_LockOrReopenVaultMonthlyClose_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockOrReopenVaultMonthlyCloseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).LockOrReopenVaultMonthlyClose(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_LockOrReopenVaultMonthlyClose_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).LockOrReopenVaultMonthlyClose(ctx, req.(*LockOrReopenVaultMonthlyCloseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultPersonalCfoCashWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultPersonalCfoCashWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultPersonalCfoCashWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultPersonalCfoCashWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultPersonalCfoCashWorkbench(ctx, req.(*GetVaultPersonalCfoCashWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultPersonalCfoCashForecast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultPersonalCfoCashForecastRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultPersonalCfoCashForecast(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultPersonalCfoCashForecast_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultPersonalCfoCashForecast(ctx, req.(*SaveVaultPersonalCfoCashForecastRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_AcknowledgeOrReviewVaultCashCommitment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AcknowledgeOrReviewVaultCashCommitmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).AcknowledgeOrReviewVaultCashCommitment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_AcknowledgeOrReviewVaultCashCommitment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).AcknowledgeOrReviewVaultCashCommitment(ctx, req.(*AcknowledgeOrReviewVaultCashCommitmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultPerformanceAllocationWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultPerformanceAllocationWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultPerformanceAllocationWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultPerformanceAllocationWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultPerformanceAllocationWorkbench(ctx, req.(*GetVaultPerformanceAllocationWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultPerformanceAllocationModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultPerformanceAllocationModelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultPerformanceAllocationModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultPerformanceAllocationModel_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultPerformanceAllocationModel(ctx, req.(*SaveVaultPerformanceAllocationModelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SimulateOrRefreshVaultAllocation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SimulateOrRefreshVaultAllocationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SimulateOrRefreshVaultAllocation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SimulateOrRefreshVaultAllocation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SimulateOrRefreshVaultAllocation(ctx, req.(*SimulateOrRefreshVaultAllocationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultTaxAccountantWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultTaxAccountantWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultTaxAccountantWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultTaxAccountantWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultTaxAccountantWorkbench(ctx, req.(*GetVaultTaxAccountantWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultTaxAccountantScenario_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultTaxAccountantScenarioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultTaxAccountantScenario(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultTaxAccountantScenario_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultTaxAccountantScenario(ctx, req.(*SaveVaultTaxAccountantScenarioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_LockOrExportVaultTaxPackage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LockOrExportVaultTaxPackageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).LockOrExportVaultTaxPackage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_LockOrExportVaultTaxPackage_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).LockOrExportVaultTaxPackage(ctx, req.(*LockOrExportVaultTaxPackageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultEntityOwnershipWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultEntityOwnershipWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultEntityOwnershipWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultEntityOwnershipWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultEntityOwnershipWorkbench(ctx, req.(*GetVaultEntityOwnershipWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultEntityOwnershipNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultEntityOwnershipNodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultEntityOwnershipNode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultEntityOwnershipNode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultEntityOwnershipNode(ctx, req.(*SaveVaultEntityOwnershipNodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_VerifyOrRevokeVaultOwnershipAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyOrRevokeVaultOwnershipAccessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).VerifyOrRevokeVaultOwnershipAccess(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_VerifyOrRevokeVaultOwnershipAccess_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).VerifyOrRevokeVaultOwnershipAccess(ctx, req.(*VerifyOrRevokeVaultOwnershipAccessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultPrivateMarketDocWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultPrivateMarketDocWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultPrivateMarketDocWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultPrivateMarketDocWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultPrivateMarketDocWorkbench(ctx, req.(*GetVaultPrivateMarketDocWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultPrivateMarketCommitment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultPrivateMarketCommitmentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultPrivateMarketCommitment(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultPrivateMarketCommitment_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultPrivateMarketCommitment(ctx, req.(*SaveVaultPrivateMarketCommitmentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ConfirmOrReconcileVaultCapitalNotice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConfirmOrReconcileVaultCapitalNoticeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ConfirmOrReconcileVaultCapitalNotice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ConfirmOrReconcileVaultCapitalNotice_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ConfirmOrReconcileVaultCapitalNotice(ctx, req.(*ConfirmOrReconcileVaultCapitalNoticeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultTreasuryDebtRiskWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultTreasuryDebtRiskWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultTreasuryDebtRiskWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultTreasuryDebtRiskWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultTreasuryDebtRiskWorkbench(ctx, req.(*GetVaultTreasuryDebtRiskWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultTreasuryDebtRiskPosition_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultTreasuryDebtRiskPositionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultTreasuryDebtRiskPosition(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultTreasuryDebtRiskPosition_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultTreasuryDebtRiskPosition(ctx, req.(*SaveVaultTreasuryDebtRiskPositionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_EvaluateOrRouteVaultCoverageGap_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateOrRouteVaultCoverageGapRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).EvaluateOrRouteVaultCoverageGap(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_EvaluateOrRouteVaultCoverageGap_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).EvaluateOrRouteVaultCoverageGap(ctx, req.(*EvaluateOrRouteVaultCoverageGapRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultGoalsScenarioWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultGoalsScenarioWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultGoalsScenarioWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultGoalsScenarioWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultGoalsScenarioWorkbench(ctx, req.(*GetVaultGoalsScenarioWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultGoalScenarioSnapshot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultGoalScenarioSnapshotRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultGoalScenarioSnapshot(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultGoalScenarioSnapshot_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultGoalScenarioSnapshot(ctx, req.(*SaveVaultGoalScenarioSnapshotRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_CompareOrHandoffVaultScenario_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CompareOrHandoffVaultScenarioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).CompareOrHandoffVaultScenario(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_CompareOrHandoffVaultScenario_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).CompareOrHandoffVaultScenario(ctx, req.(*CompareOrHandoffVaultScenarioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultPrivacyStandingProofWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultPrivacyStandingProofWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultPrivacyStandingProofWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultPrivacyStandingProofWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultPrivacyStandingProofWorkbench(ctx, req.(*GetVaultPrivacyStandingProofWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_IssueVaultPrivacyStandingProof_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueVaultPrivacyStandingProofRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).IssueVaultPrivacyStandingProof(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_IssueVaultPrivacyStandingProof_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).IssueVaultPrivacyStandingProof(ctx, req.(*IssueVaultPrivacyStandingProofRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_VerifyOrRevokeVaultStandingProof_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyOrRevokeVaultStandingProofRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).VerifyOrRevokeVaultStandingProof(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_VerifyOrRevokeVaultStandingProof_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).VerifyOrRevokeVaultStandingProof(ctx, req.(*VerifyOrRevokeVaultStandingProofRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultAdvisorFamilyWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultAdvisorFamilyWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultAdvisorFamilyWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultAdvisorFamilyWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultAdvisorFamilyWorkbench(ctx, req.(*GetVaultAdvisorFamilyWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultAdvisorEngagementScope_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultAdvisorEngagementScopeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultAdvisorEngagementScope(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultAdvisorEngagementScope_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultAdvisorEngagementScope(ctx, req.(*SaveVaultAdvisorEngagementScopeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ApproveOrRevokeVaultAdvisorAccess_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveOrRevokeVaultAdvisorAccessRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ApproveOrRevokeVaultAdvisorAccess(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ApproveOrRevokeVaultAdvisorAccess_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ApproveOrRevokeVaultAdvisorAccess(ctx, req.(*ApproveOrRevokeVaultAdvisorAccessRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultFinancialSafetyWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultFinancialSafetyWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultFinancialSafetyWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultFinancialSafetyWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultFinancialSafetyWorkbench(ctx, req.(*GetVaultFinancialSafetyWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultFinancialSafetyIncident_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultFinancialSafetyIncidentRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultFinancialSafetyIncident(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultFinancialSafetyIncident_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultFinancialSafetyIncident(ctx, req.(*SaveVaultFinancialSafetyIncidentRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_ExecuteOrAppealVaultSafetyAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecuteOrAppealVaultSafetyActionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).ExecuteOrAppealVaultSafetyAction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_ExecuteOrAppealVaultSafetyAction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).ExecuteOrAppealVaultSafetyAction(ctx, req.(*ExecuteOrAppealVaultSafetyActionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_GetVaultGivingImpactWorkbench_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVaultGivingImpactWorkbenchRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).GetVaultGivingImpactWorkbench(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_GetVaultGivingImpactWorkbench_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).GetVaultGivingImpactWorkbench(ctx, req.(*GetVaultGivingImpactWorkbenchRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_SaveVaultGivingImpactPledge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveVaultGivingImpactPledgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).SaveVaultGivingImpactPledge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_SaveVaultGivingImpactPledge_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).SaveVaultGivingImpactPledge(ctx, req.(*SaveVaultGivingImpactPledgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _VaultService_VerifyOrAcknowledgeVaultGiftReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(VerifyOrAcknowledgeVaultGiftReceiptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VaultServiceServer).VerifyOrAcknowledgeVaultGiftReceipt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: VaultService_VerifyOrAcknowledgeVaultGiftReceipt_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VaultServiceServer).VerifyOrAcknowledgeVaultGiftReceipt(ctx, req.(*VerifyOrAcknowledgeVaultGiftReceiptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // VaultService_ServiceDesc is the grpc.ServiceDesc for VaultService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -2082,6 +3436,162 @@ var VaultService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetLiquidityStressTest",
 			Handler:    _VaultService_GetLiquidityStressTest_Handler,
+		},
+		{
+			MethodName: "GetVaultFinancialReliabilityWorkbench",
+			Handler:    _VaultService_GetVaultFinancialReliabilityWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultFinancialReliabilitySource",
+			Handler:    _VaultService_SaveVaultFinancialReliabilitySource_Handler,
+		},
+		{
+			MethodName: "ReconcileOrReplayVaultReliability",
+			Handler:    _VaultService_ReconcileOrReplayVaultReliability_Handler,
+		},
+		{
+			MethodName: "GetVaultFinancialInboxCloseWorkbench",
+			Handler:    _VaultService_GetVaultFinancialInboxCloseWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultFinancialInboxCloseItem",
+			Handler:    _VaultService_SaveVaultFinancialInboxCloseItem_Handler,
+		},
+		{
+			MethodName: "LockOrReopenVaultMonthlyClose",
+			Handler:    _VaultService_LockOrReopenVaultMonthlyClose_Handler,
+		},
+		{
+			MethodName: "GetVaultPersonalCfoCashWorkbench",
+			Handler:    _VaultService_GetVaultPersonalCfoCashWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultPersonalCfoCashForecast",
+			Handler:    _VaultService_SaveVaultPersonalCfoCashForecast_Handler,
+		},
+		{
+			MethodName: "AcknowledgeOrReviewVaultCashCommitment",
+			Handler:    _VaultService_AcknowledgeOrReviewVaultCashCommitment_Handler,
+		},
+		{
+			MethodName: "GetVaultPerformanceAllocationWorkbench",
+			Handler:    _VaultService_GetVaultPerformanceAllocationWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultPerformanceAllocationModel",
+			Handler:    _VaultService_SaveVaultPerformanceAllocationModel_Handler,
+		},
+		{
+			MethodName: "SimulateOrRefreshVaultAllocation",
+			Handler:    _VaultService_SimulateOrRefreshVaultAllocation_Handler,
+		},
+		{
+			MethodName: "GetVaultTaxAccountantWorkbench",
+			Handler:    _VaultService_GetVaultTaxAccountantWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultTaxAccountantScenario",
+			Handler:    _VaultService_SaveVaultTaxAccountantScenario_Handler,
+		},
+		{
+			MethodName: "LockOrExportVaultTaxPackage",
+			Handler:    _VaultService_LockOrExportVaultTaxPackage_Handler,
+		},
+		{
+			MethodName: "GetVaultEntityOwnershipWorkbench",
+			Handler:    _VaultService_GetVaultEntityOwnershipWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultEntityOwnershipNode",
+			Handler:    _VaultService_SaveVaultEntityOwnershipNode_Handler,
+		},
+		{
+			MethodName: "VerifyOrRevokeVaultOwnershipAccess",
+			Handler:    _VaultService_VerifyOrRevokeVaultOwnershipAccess_Handler,
+		},
+		{
+			MethodName: "GetVaultPrivateMarketDocWorkbench",
+			Handler:    _VaultService_GetVaultPrivateMarketDocWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultPrivateMarketCommitment",
+			Handler:    _VaultService_SaveVaultPrivateMarketCommitment_Handler,
+		},
+		{
+			MethodName: "ConfirmOrReconcileVaultCapitalNotice",
+			Handler:    _VaultService_ConfirmOrReconcileVaultCapitalNotice_Handler,
+		},
+		{
+			MethodName: "GetVaultTreasuryDebtRiskWorkbench",
+			Handler:    _VaultService_GetVaultTreasuryDebtRiskWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultTreasuryDebtRiskPosition",
+			Handler:    _VaultService_SaveVaultTreasuryDebtRiskPosition_Handler,
+		},
+		{
+			MethodName: "EvaluateOrRouteVaultCoverageGap",
+			Handler:    _VaultService_EvaluateOrRouteVaultCoverageGap_Handler,
+		},
+		{
+			MethodName: "GetVaultGoalsScenarioWorkbench",
+			Handler:    _VaultService_GetVaultGoalsScenarioWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultGoalScenarioSnapshot",
+			Handler:    _VaultService_SaveVaultGoalScenarioSnapshot_Handler,
+		},
+		{
+			MethodName: "CompareOrHandoffVaultScenario",
+			Handler:    _VaultService_CompareOrHandoffVaultScenario_Handler,
+		},
+		{
+			MethodName: "GetVaultPrivacyStandingProofWorkbench",
+			Handler:    _VaultService_GetVaultPrivacyStandingProofWorkbench_Handler,
+		},
+		{
+			MethodName: "IssueVaultPrivacyStandingProof",
+			Handler:    _VaultService_IssueVaultPrivacyStandingProof_Handler,
+		},
+		{
+			MethodName: "VerifyOrRevokeVaultStandingProof",
+			Handler:    _VaultService_VerifyOrRevokeVaultStandingProof_Handler,
+		},
+		{
+			MethodName: "GetVaultAdvisorFamilyWorkbench",
+			Handler:    _VaultService_GetVaultAdvisorFamilyWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultAdvisorEngagementScope",
+			Handler:    _VaultService_SaveVaultAdvisorEngagementScope_Handler,
+		},
+		{
+			MethodName: "ApproveOrRevokeVaultAdvisorAccess",
+			Handler:    _VaultService_ApproveOrRevokeVaultAdvisorAccess_Handler,
+		},
+		{
+			MethodName: "GetVaultFinancialSafetyWorkbench",
+			Handler:    _VaultService_GetVaultFinancialSafetyWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultFinancialSafetyIncident",
+			Handler:    _VaultService_SaveVaultFinancialSafetyIncident_Handler,
+		},
+		{
+			MethodName: "ExecuteOrAppealVaultSafetyAction",
+			Handler:    _VaultService_ExecuteOrAppealVaultSafetyAction_Handler,
+		},
+		{
+			MethodName: "GetVaultGivingImpactWorkbench",
+			Handler:    _VaultService_GetVaultGivingImpactWorkbench_Handler,
+		},
+		{
+			MethodName: "SaveVaultGivingImpactPledge",
+			Handler:    _VaultService_SaveVaultGivingImpactPledge_Handler,
+		},
+		{
+			MethodName: "VerifyOrAcknowledgeVaultGiftReceipt",
+			Handler:    _VaultService_VerifyOrAcknowledgeVaultGiftReceipt_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

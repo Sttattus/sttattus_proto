@@ -423,6 +423,710 @@ class EmpireServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getYearInEmpire, request, options: options);
   }
 
+  /// Choice 1 (EM1): Transparent Standing Constitution
+  $grpc.ResponseFuture<$0.GetStandingConstitutionWorkbenchResponse>
+      getStandingConstitutionWorkbench(
+    $0.GetStandingConstitutionWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getStandingConstitutionWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateStandingConstitutionModeResponse>
+      updateStandingConstitutionMode(
+    $0.UpdateStandingConstitutionModeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateStandingConstitutionMode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.FileStandingDisputeOrRecomputeResponse>
+      fileStandingDisputeOrRecompute(
+    $0.FileStandingDisputeOrRecomputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$fileStandingDisputeOrRecompute, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListStandingConstitutionAuditResponse>
+      adminListStandingConstitutionAudit(
+    $0.AdminListStandingConstitutionAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListStandingConstitutionAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminResolveStandingDisputeOrPolicyResponse>
+      adminResolveStandingDisputeOrPolicy(
+    $0.AdminResolveStandingDisputeOrPolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminResolveStandingDisputeOrPolicy, request,
+        options: options);
+  }
+
+  /// Choice 2 (EM2): Twelve-Pillar Today & Action Command Center
+  $grpc.ResponseFuture<$0.GetTwelvePillarTodayWorkbenchResponse>
+      getTwelvePillarTodayWorkbench(
+    $0.GetTwelvePillarTodayWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getTwelvePillarTodayWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateTodayCardDispositionResponse>
+      updateTodayCardDisposition(
+    $0.UpdateTodayCardDispositionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateTodayCardDisposition, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ResolveCrossPillarConflictResponse>
+      resolveCrossPillarConflict(
+    $0.ResolveCrossPillarConflictRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resolveCrossPillarConflict, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateTodayOperatingModeResponse>
+      updateTodayOperatingMode(
+    $0.UpdateTodayOperatingModeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateTodayOperatingMode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListTwelvePillarTodayAuditResponse>
+      adminListTwelvePillarTodayAudit(
+    $0.AdminListTwelvePillarTodayAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListTwelvePillarTodayAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminManageTodayContractOrOutageResponse>
+      adminManageTodayContractOrOutage(
+    $0.AdminManageTodayContractOrOutageRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminManageTodayContractOrOutage, request,
+        options: options);
+  }
+
+  /// Choice 3 (EM3): Goal & Life-Season Orchestrator
+  $grpc.ResponseFuture<$0.GetGoalOrchestratorWorkbenchResponse>
+      getGoalOrchestratorWorkbench(
+    $0.GetGoalOrchestratorWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getGoalOrchestratorWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateOrReplanLifeSeasonCampaignResponse>
+      createOrReplanLifeSeasonCampaign(
+    $0.CreateOrReplanLifeSeasonCampaignRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createOrReplanLifeSeasonCampaign, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveOrCompleteCampaignMilestoneResponse>
+      approveOrCompleteCampaignMilestone(
+    $0.ApproveOrCompleteCampaignMilestoneRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveOrCompleteCampaignMilestone, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListGoalOrchestratorAuditResponse>
+      adminListGoalOrchestratorAudit(
+    $0.AdminListGoalOrchestratorAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListGoalOrchestratorAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateCampaignCapabilityOrHandoffResponse>
+      adminModerateCampaignCapabilityOrHandoff(
+    $0.AdminModerateCampaignCapabilityOrHandoffRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateCampaignCapabilityOrHandoff, request,
+        options: options);
+  }
+
+  /// Choice 4 (EM4): Portable Achievement Wallet
+  $grpc.ResponseFuture<$0.GetAchievementWalletWorkbenchResponse>
+      getAchievementWalletWorkbench(
+    $0.GetAchievementWalletWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getAchievementWalletWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.MintPortableAchievementCredentialResponse>
+      mintPortableAchievementCredential(
+    $0.MintPortableAchievementCredentialRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$mintPortableAchievementCredential, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RevokeOrVerifyPortableCredentialResponse>
+      revokeOrVerifyPortableCredential(
+    $0.RevokeOrVerifyPortableCredentialRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$revokeOrVerifyPortableCredential, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListAchievementWalletAuditResponse>
+      adminListAchievementWalletAudit(
+    $0.AdminListAchievementWalletAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListAchievementWalletAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateCredentialOrVerifierAbuseResponse>
+      adminModerateCredentialOrVerifierAbuse(
+    $0.AdminModerateCredentialOrVerifierAbuseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateCredentialOrVerifierAbuse, request,
+        options: options);
+  }
+
+  /// Choice 5 (EM5): Contextual Directory & Introductions
+  $grpc.ResponseFuture<$0.GetContextualDirectoryWorkbenchResponse>
+      getContextualDirectoryWorkbench(
+    $0.GetContextualDirectoryWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getContextualDirectoryWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateContextualDirectoryProfileResponse>
+      updateContextualDirectoryProfile(
+    $0.UpdateContextualDirectoryProfileRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateContextualDirectoryProfile, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestOrRespondContextualIntroductionResponse>
+      requestOrRespondContextualIntroduction(
+    $0.RequestOrRespondContextualIntroductionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestOrRespondContextualIntroduction, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListContextualDirectoryAuditResponse>
+      adminListContextualDirectoryAudit(
+    $0.AdminListContextualDirectoryAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListContextualDirectoryAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateDirectoryIntroductionAbuseResponse>
+      adminModerateDirectoryIntroductionAbuse(
+    $0.AdminModerateDirectoryIntroductionAbuseRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateDirectoryIntroductionAbuse, request,
+        options: options);
+  }
+
+  /// Choice 6 (EM6): Circles, Councils, and Projects
+  $grpc.ResponseFuture<$0.GetCirclesCouncilsWorkbenchResponse>
+      getCirclesCouncilsWorkbench(
+    $0.GetCirclesCouncilsWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getCirclesCouncilsWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateOrUpdateCircleCouncilSpaceResponse>
+      createOrUpdateCircleCouncilSpace(
+    $0.CreateOrUpdateCircleCouncilSpaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createOrUpdateCircleCouncilSpace, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordCircleArtifactOrCloseSpaceResponse>
+      recordCircleArtifactOrCloseSpace(
+    $0.RecordCircleArtifactOrCloseSpaceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordCircleArtifactOrCloseSpace, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListCirclesCouncilsAuditResponse>
+      adminListCirclesCouncilsAudit(
+    $0.AdminListCirclesCouncilsAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListCirclesCouncilsAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateCircleSpaceOrDisputeResponse>
+      adminModerateCircleSpaceOrDispute(
+    $0.AdminModerateCircleSpaceOrDisputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminModerateCircleSpaceOrDispute, request,
+        options: options);
+  }
+
+  /// Choice 7 (EM7): Experiences & Access Passport
+  $grpc.ResponseFuture<$0.GetExperienceAccessPassportWorkbenchResponse>
+      getExperienceAccessPassportWorkbench(
+    $0.GetExperienceAccessPassportWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getExperienceAccessPassportWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ReserveOrUpdateExperiencePassportItemResponse>
+      reserveOrUpdateExperiencePassportItem(
+    $0.ReserveOrUpdateExperiencePassportItemRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$reserveOrUpdateExperiencePassportItem, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordHostExperienceOperationResponse>
+      recordHostExperienceOperation(
+    $0.RecordHostExperienceOperationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordHostExperienceOperation, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListExperienceAccessPassportAuditResponse>
+      adminListExperienceAccessPassportAudit(
+    $0.AdminListExperienceAccessPassportAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListExperienceAccessPassportAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminReconcileExperienceReservationOrAppealResponse>
+      adminReconcileExperienceReservationOrAppeal(
+    $0.AdminReconcileExperienceReservationOrAppealRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$adminReconcileExperienceReservationOrAppeal, request,
+        options: options);
+  }
+
+  /// Choice 8 (EM8): Member Feed & Editorial Intelligence
+  $grpc.ResponseFuture<$0.GetMemberFeedEditorialWorkbenchResponse>
+      getMemberFeedEditorialWorkbench(
+    $0.GetMemberFeedEditorialWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMemberFeedEditorialWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PreviewPublishOrRevokeFeedShareResponse>
+      previewPublishOrRevokeFeedShare(
+    $0.PreviewPublishOrRevokeFeedShareRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$previewPublishOrRevokeFeedShare, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordEditorialCorrectionOrResetModeResponse>
+      recordEditorialCorrectionOrResetMode(
+    $0.RecordEditorialCorrectionOrResetModeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordEditorialCorrectionOrResetMode, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListMemberFeedEditorialAuditResponse>
+      adminListMemberFeedEditorialAudit(
+    $0.AdminListMemberFeedEditorialAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListMemberFeedEditorialAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateFeedShareOrEditorialCorrectionResponse>
+      adminModerateFeedShareOrEditorialCorrection(
+    $0.AdminModerateFeedShareOrEditorialCorrectionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$adminModerateFeedShareOrEditorialCorrection, request,
+        options: options);
+  }
+
+  /// Choice 9 (EM9): Contribution & Gratitude Ledger
+  $grpc.ResponseFuture<$0.GetContributionLedgerWorkbenchResponse>
+      getContributionLedgerWorkbench(
+    $0.GetContributionLedgerWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getContributionLedgerWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RecordContributionOrGratitudeEndorsementResponse>
+      recordContributionOrGratitudeEndorsement(
+    $0.RecordContributionOrGratitudeEndorsementRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$recordContributionOrGratitudeEndorsement, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateContributionVisibilityOrCorrectionResponse>
+      updateContributionVisibilityOrCorrection(
+    $0.UpdateContributionVisibilityOrCorrectionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateContributionVisibilityOrCorrection, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListContributionLedgerAuditResponse>
+      adminListContributionLedgerAudit(
+    $0.AdminListContributionLedgerAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListContributionLedgerAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminModerateContributionCollusionOrSponsorResponse>
+      adminModerateContributionCollusionOrSponsor(
+    $0.AdminModerateContributionCollusionOrSponsorRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$adminModerateContributionCollusionOrSponsor, request,
+        options: options);
+  }
+
+  /// Choice 10 (EM10): Benefits & Redemption Marketplace
+  $grpc.ResponseFuture<$0.GetBenefitsMarketplaceWorkbenchResponse>
+      getBenefitsMarketplaceWorkbench(
+    $0.GetBenefitsMarketplaceWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getBenefitsMarketplaceWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QuoteOrRedeemBenefitOfferResponse>
+      quoteOrRedeemBenefitOffer(
+    $0.QuoteOrRedeemBenefitOfferRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$quoteOrRedeemBenefitOffer, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateRedemptionDisputeOrCancelResponse>
+      updateRedemptionDisputeOrCancel(
+    $0.UpdateRedemptionDisputeOrCancelRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateRedemptionDisputeOrCancel, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListBenefitsMarketplaceAuditResponse>
+      adminListBenefitsMarketplaceAudit(
+    $0.AdminListBenefitsMarketplaceAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListBenefitsMarketplaceAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminReconcileBenefitPointsOrRedemptionResponse>
+      adminReconcileBenefitPointsOrRedemption(
+    $0.AdminReconcileBenefitPointsOrRedemptionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminReconcileBenefitPointsOrRedemption, request,
+        options: options);
+  }
+
+  /// Choice 11 (EM11): Membership & Household Center
+  $grpc.ResponseFuture<$0.GetMembershipHouseholdWorkbenchResponse>
+      getMembershipHouseholdWorkbench(
+    $0.GetMembershipHouseholdWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMembershipHouseholdWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.PreviewOrExecuteMembershipLifecycleActionResponse>
+      previewOrExecuteMembershipLifecycleAction(
+    $0.PreviewOrExecuteMembershipLifecycleActionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$previewOrExecuteMembershipLifecycleAction, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ManageHouseholdMemberSeatResponse>
+      manageHouseholdMemberSeat(
+    $0.ManageHouseholdMemberSeatRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$manageHouseholdMemberSeat, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListMembershipHouseholdAuditResponse>
+      adminListMembershipHouseholdAudit(
+    $0.AdminListMembershipHouseholdAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListMembershipHouseholdAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminResolveHardshipOrHouseholdDisputeResponse>
+      adminResolveHardshipOrHouseholdDispute(
+    $0.AdminResolveHardshipOrHouseholdDisputeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminResolveHardshipOrHouseholdDispute, request,
+        options: options);
+  }
+
+  /// Choice 12 (EM12): Unified Inbox & Communication Control
+  $grpc.ResponseFuture<$0.GetUnifiedInboxWorkbenchResponse>
+      getUnifiedInboxWorkbench(
+    $0.GetUnifiedInboxWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getUnifiedInboxWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateCommunicationChannelControlResponse>
+      updateCommunicationChannelControl(
+    $0.UpdateCommunicationChannelControlRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateCommunicationChannelControl, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AcknowledgeOrDeleteInboxDispatchResponse>
+      acknowledgeOrDeleteInboxDispatch(
+    $0.AcknowledgeOrDeleteInboxDispatchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$acknowledgeOrDeleteInboxDispatch, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListUnifiedInboxAuditResponse>
+      adminListUnifiedInboxAudit(
+    $0.AdminListUnifiedInboxAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListUnifiedInboxAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminManageRequiredNoticeOrBurstPolicyResponse>
+      adminManageRequiredNoticeOrBurstPolicy(
+    $0.AdminManageRequiredNoticeOrBurstPolicyRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminManageRequiredNoticeOrBurstPolicy, request,
+        options: options);
+  }
+
+  /// Choice 13 (EM13): Ecosystem Concierge
+  $grpc.ResponseFuture<$0.GetEcosystemConciergeWorkbenchResponse>
+      getEcosystemConciergeWorkbench(
+    $0.GetEcosystemConciergeWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEcosystemConciergeWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CreateOrUpdateConciergeRequestResponse>
+      createOrUpdateConciergeRequest(
+    $0.CreateOrUpdateConciergeRequestRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$createOrUpdateConciergeRequest, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.ApproveOrEscalateConciergePacketResponse>
+      approveOrEscalateConciergePacket(
+    $0.ApproveOrEscalateConciergePacketRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$approveOrEscalateConciergePacket, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListEcosystemConciergeAuditResponse>
+      adminListEcosystemConciergeAudit(
+    $0.AdminListEcosystemConciergeAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListEcosystemConciergeAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminResolveConciergeCommitmentOrEscalationResponse>
+      adminResolveConciergeCommitmentOrEscalation(
+    $0.AdminResolveConciergeCommitmentOrEscalationRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(
+        _$adminResolveConciergeCommitmentOrEscalation, request,
+        options: options);
+  }
+
+  /// Choice 14 (EM14): Personal Review & Life Narrative
+  $grpc.ResponseFuture<$0.GetPersonalReviewNarrativeWorkbenchResponse>
+      getPersonalReviewNarrativeWorkbench(
+    $0.GetPersonalReviewNarrativeWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getPersonalReviewNarrativeWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GenerateOrRedactLifeNarrativeReviewResponse>
+      generateOrRedactLifeNarrativeReview(
+    $0.GenerateOrRedactLifeNarrativeReviewRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$generateOrRedactLifeNarrativeReview, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.OrderOrManagePrintedYearbookArtifactResponse>
+      orderOrManagePrintedYearbookArtifact(
+    $0.OrderOrManagePrintedYearbookArtifactRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$orderOrManagePrintedYearbookArtifact, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListPersonalReviewNarrativeAuditResponse>
+      adminListPersonalReviewNarrativeAudit(
+    $0.AdminListPersonalReviewNarrativeAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListPersonalReviewNarrativeAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminManagePrintJobOrAddressPurgeResponse>
+      adminManagePrintJobOrAddressPurge(
+    $0.AdminManagePrintJobOrAddressPurgeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminManagePrintJobOrAddressPurge, request,
+        options: options);
+  }
+
+  /// Choice 15 (EM15): Member Governance & Independent Audit
+  $grpc.ResponseFuture<$0.GetMemberGovernanceAuditWorkbenchResponse>
+      getMemberGovernanceAuditWorkbench(
+    $0.GetMemberGovernanceAuditWorkbenchRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getMemberGovernanceAuditWorkbench, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.SubmitAdvisoryPolicyProposalOrVoteResponse>
+      submitAdvisoryPolicyProposalOrVote(
+    $0.SubmitAdvisoryPolicyProposalOrVoteRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$submitAdvisoryPolicyProposalOrVote, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.RequestDecisionRemedyOrInspectPrecedentResponse>
+      requestDecisionRemedyOrInspectPrecedent(
+    $0.RequestDecisionRemedyOrInspectPrecedentRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$requestDecisionRemedyOrInspectPrecedent, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminListMemberGovernanceAuditResponse>
+      adminListMemberGovernanceAudit(
+    $0.AdminListMemberGovernanceAuditRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminListMemberGovernanceAudit, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminCertifyPolicyDiffOrObserverBoundaryResponse>
+      adminCertifyPolicyDiffOrObserverBoundary(
+    $0.AdminCertifyPolicyDiffOrObserverBoundaryRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$adminCertifyPolicyDiffOrObserverBoundary, request,
+        options: options);
+  }
+
   // method descriptors
 
   static final _$getScoreBreakdown = $grpc.ClientMethod<
@@ -639,6 +1343,518 @@ class EmpireServiceClient extends $grpc.Client {
           '/sttattus.empire.v1.EmpireService/GetYearInEmpire',
           ($0.GetYearInEmpireRequest value) => value.writeToBuffer(),
           $0.GetYearInEmpireResponse.fromBuffer);
+  static final _$getStandingConstitutionWorkbench = $grpc.ClientMethod<
+          $0.GetStandingConstitutionWorkbenchRequest,
+          $0.GetStandingConstitutionWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetStandingConstitutionWorkbench',
+      ($0.GetStandingConstitutionWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetStandingConstitutionWorkbenchResponse.fromBuffer);
+  static final _$updateStandingConstitutionMode = $grpc.ClientMethod<
+          $0.UpdateStandingConstitutionModeRequest,
+          $0.UpdateStandingConstitutionModeResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateStandingConstitutionMode',
+      ($0.UpdateStandingConstitutionModeRequest value) => value.writeToBuffer(),
+      $0.UpdateStandingConstitutionModeResponse.fromBuffer);
+  static final _$fileStandingDisputeOrRecompute = $grpc.ClientMethod<
+          $0.FileStandingDisputeOrRecomputeRequest,
+          $0.FileStandingDisputeOrRecomputeResponse>(
+      '/sttattus.empire.v1.EmpireService/FileStandingDisputeOrRecompute',
+      ($0.FileStandingDisputeOrRecomputeRequest value) => value.writeToBuffer(),
+      $0.FileStandingDisputeOrRecomputeResponse.fromBuffer);
+  static final _$adminListStandingConstitutionAudit = $grpc.ClientMethod<
+          $0.AdminListStandingConstitutionAuditRequest,
+          $0.AdminListStandingConstitutionAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListStandingConstitutionAudit',
+      ($0.AdminListStandingConstitutionAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListStandingConstitutionAuditResponse.fromBuffer);
+  static final _$adminResolveStandingDisputeOrPolicy = $grpc.ClientMethod<
+          $0.AdminResolveStandingDisputeOrPolicyRequest,
+          $0.AdminResolveStandingDisputeOrPolicyResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminResolveStandingDisputeOrPolicy',
+      ($0.AdminResolveStandingDisputeOrPolicyRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminResolveStandingDisputeOrPolicyResponse.fromBuffer);
+  static final _$getTwelvePillarTodayWorkbench = $grpc.ClientMethod<
+          $0.GetTwelvePillarTodayWorkbenchRequest,
+          $0.GetTwelvePillarTodayWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetTwelvePillarTodayWorkbench',
+      ($0.GetTwelvePillarTodayWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetTwelvePillarTodayWorkbenchResponse.fromBuffer);
+  static final _$updateTodayCardDisposition = $grpc.ClientMethod<
+          $0.UpdateTodayCardDispositionRequest,
+          $0.UpdateTodayCardDispositionResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateTodayCardDisposition',
+      ($0.UpdateTodayCardDispositionRequest value) => value.writeToBuffer(),
+      $0.UpdateTodayCardDispositionResponse.fromBuffer);
+  static final _$resolveCrossPillarConflict = $grpc.ClientMethod<
+          $0.ResolveCrossPillarConflictRequest,
+          $0.ResolveCrossPillarConflictResponse>(
+      '/sttattus.empire.v1.EmpireService/ResolveCrossPillarConflict',
+      ($0.ResolveCrossPillarConflictRequest value) => value.writeToBuffer(),
+      $0.ResolveCrossPillarConflictResponse.fromBuffer);
+  static final _$updateTodayOperatingMode = $grpc.ClientMethod<
+          $0.UpdateTodayOperatingModeRequest,
+          $0.UpdateTodayOperatingModeResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateTodayOperatingMode',
+      ($0.UpdateTodayOperatingModeRequest value) => value.writeToBuffer(),
+      $0.UpdateTodayOperatingModeResponse.fromBuffer);
+  static final _$adminListTwelvePillarTodayAudit = $grpc.ClientMethod<
+          $0.AdminListTwelvePillarTodayAuditRequest,
+          $0.AdminListTwelvePillarTodayAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListTwelvePillarTodayAudit',
+      ($0.AdminListTwelvePillarTodayAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListTwelvePillarTodayAuditResponse.fromBuffer);
+  static final _$adminManageTodayContractOrOutage = $grpc.ClientMethod<
+          $0.AdminManageTodayContractOrOutageRequest,
+          $0.AdminManageTodayContractOrOutageResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminManageTodayContractOrOutage',
+      ($0.AdminManageTodayContractOrOutageRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminManageTodayContractOrOutageResponse.fromBuffer);
+  static final _$getGoalOrchestratorWorkbench = $grpc.ClientMethod<
+          $0.GetGoalOrchestratorWorkbenchRequest,
+          $0.GetGoalOrchestratorWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetGoalOrchestratorWorkbench',
+      ($0.GetGoalOrchestratorWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetGoalOrchestratorWorkbenchResponse.fromBuffer);
+  static final _$createOrReplanLifeSeasonCampaign = $grpc.ClientMethod<
+          $0.CreateOrReplanLifeSeasonCampaignRequest,
+          $0.CreateOrReplanLifeSeasonCampaignResponse>(
+      '/sttattus.empire.v1.EmpireService/CreateOrReplanLifeSeasonCampaign',
+      ($0.CreateOrReplanLifeSeasonCampaignRequest value) =>
+          value.writeToBuffer(),
+      $0.CreateOrReplanLifeSeasonCampaignResponse.fromBuffer);
+  static final _$approveOrCompleteCampaignMilestone = $grpc.ClientMethod<
+          $0.ApproveOrCompleteCampaignMilestoneRequest,
+          $0.ApproveOrCompleteCampaignMilestoneResponse>(
+      '/sttattus.empire.v1.EmpireService/ApproveOrCompleteCampaignMilestone',
+      ($0.ApproveOrCompleteCampaignMilestoneRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveOrCompleteCampaignMilestoneResponse.fromBuffer);
+  static final _$adminListGoalOrchestratorAudit = $grpc.ClientMethod<
+          $0.AdminListGoalOrchestratorAuditRequest,
+          $0.AdminListGoalOrchestratorAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListGoalOrchestratorAudit',
+      ($0.AdminListGoalOrchestratorAuditRequest value) => value.writeToBuffer(),
+      $0.AdminListGoalOrchestratorAuditResponse.fromBuffer);
+  static final _$adminModerateCampaignCapabilityOrHandoff = $grpc.ClientMethod<
+          $0.AdminModerateCampaignCapabilityOrHandoffRequest,
+          $0.AdminModerateCampaignCapabilityOrHandoffResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateCampaignCapabilityOrHandoff',
+      ($0.AdminModerateCampaignCapabilityOrHandoffRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateCampaignCapabilityOrHandoffResponse.fromBuffer);
+  static final _$getAchievementWalletWorkbench = $grpc.ClientMethod<
+          $0.GetAchievementWalletWorkbenchRequest,
+          $0.GetAchievementWalletWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetAchievementWalletWorkbench',
+      ($0.GetAchievementWalletWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetAchievementWalletWorkbenchResponse.fromBuffer);
+  static final _$mintPortableAchievementCredential = $grpc.ClientMethod<
+          $0.MintPortableAchievementCredentialRequest,
+          $0.MintPortableAchievementCredentialResponse>(
+      '/sttattus.empire.v1.EmpireService/MintPortableAchievementCredential',
+      ($0.MintPortableAchievementCredentialRequest value) =>
+          value.writeToBuffer(),
+      $0.MintPortableAchievementCredentialResponse.fromBuffer);
+  static final _$revokeOrVerifyPortableCredential = $grpc.ClientMethod<
+          $0.RevokeOrVerifyPortableCredentialRequest,
+          $0.RevokeOrVerifyPortableCredentialResponse>(
+      '/sttattus.empire.v1.EmpireService/RevokeOrVerifyPortableCredential',
+      ($0.RevokeOrVerifyPortableCredentialRequest value) =>
+          value.writeToBuffer(),
+      $0.RevokeOrVerifyPortableCredentialResponse.fromBuffer);
+  static final _$adminListAchievementWalletAudit = $grpc.ClientMethod<
+          $0.AdminListAchievementWalletAuditRequest,
+          $0.AdminListAchievementWalletAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListAchievementWalletAudit',
+      ($0.AdminListAchievementWalletAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListAchievementWalletAuditResponse.fromBuffer);
+  static final _$adminModerateCredentialOrVerifierAbuse = $grpc.ClientMethod<
+          $0.AdminModerateCredentialOrVerifierAbuseRequest,
+          $0.AdminModerateCredentialOrVerifierAbuseResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateCredentialOrVerifierAbuse',
+      ($0.AdminModerateCredentialOrVerifierAbuseRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateCredentialOrVerifierAbuseResponse.fromBuffer);
+  static final _$getContextualDirectoryWorkbench = $grpc.ClientMethod<
+          $0.GetContextualDirectoryWorkbenchRequest,
+          $0.GetContextualDirectoryWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetContextualDirectoryWorkbench',
+      ($0.GetContextualDirectoryWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetContextualDirectoryWorkbenchResponse.fromBuffer);
+  static final _$updateContextualDirectoryProfile = $grpc.ClientMethod<
+          $0.UpdateContextualDirectoryProfileRequest,
+          $0.UpdateContextualDirectoryProfileResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateContextualDirectoryProfile',
+      ($0.UpdateContextualDirectoryProfileRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateContextualDirectoryProfileResponse.fromBuffer);
+  static final _$requestOrRespondContextualIntroduction = $grpc.ClientMethod<
+          $0.RequestOrRespondContextualIntroductionRequest,
+          $0.RequestOrRespondContextualIntroductionResponse>(
+      '/sttattus.empire.v1.EmpireService/RequestOrRespondContextualIntroduction',
+      ($0.RequestOrRespondContextualIntroductionRequest value) =>
+          value.writeToBuffer(),
+      $0.RequestOrRespondContextualIntroductionResponse.fromBuffer);
+  static final _$adminListContextualDirectoryAudit = $grpc.ClientMethod<
+          $0.AdminListContextualDirectoryAuditRequest,
+          $0.AdminListContextualDirectoryAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListContextualDirectoryAudit',
+      ($0.AdminListContextualDirectoryAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListContextualDirectoryAuditResponse.fromBuffer);
+  static final _$adminModerateDirectoryIntroductionAbuse = $grpc.ClientMethod<
+          $0.AdminModerateDirectoryIntroductionAbuseRequest,
+          $0.AdminModerateDirectoryIntroductionAbuseResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateDirectoryIntroductionAbuse',
+      ($0.AdminModerateDirectoryIntroductionAbuseRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateDirectoryIntroductionAbuseResponse.fromBuffer);
+  static final _$getCirclesCouncilsWorkbench = $grpc.ClientMethod<
+          $0.GetCirclesCouncilsWorkbenchRequest,
+          $0.GetCirclesCouncilsWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetCirclesCouncilsWorkbench',
+      ($0.GetCirclesCouncilsWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetCirclesCouncilsWorkbenchResponse.fromBuffer);
+  static final _$createOrUpdateCircleCouncilSpace = $grpc.ClientMethod<
+          $0.CreateOrUpdateCircleCouncilSpaceRequest,
+          $0.CreateOrUpdateCircleCouncilSpaceResponse>(
+      '/sttattus.empire.v1.EmpireService/CreateOrUpdateCircleCouncilSpace',
+      ($0.CreateOrUpdateCircleCouncilSpaceRequest value) =>
+          value.writeToBuffer(),
+      $0.CreateOrUpdateCircleCouncilSpaceResponse.fromBuffer);
+  static final _$recordCircleArtifactOrCloseSpace = $grpc.ClientMethod<
+          $0.RecordCircleArtifactOrCloseSpaceRequest,
+          $0.RecordCircleArtifactOrCloseSpaceResponse>(
+      '/sttattus.empire.v1.EmpireService/RecordCircleArtifactOrCloseSpace',
+      ($0.RecordCircleArtifactOrCloseSpaceRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordCircleArtifactOrCloseSpaceResponse.fromBuffer);
+  static final _$adminListCirclesCouncilsAudit = $grpc.ClientMethod<
+          $0.AdminListCirclesCouncilsAuditRequest,
+          $0.AdminListCirclesCouncilsAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListCirclesCouncilsAudit',
+      ($0.AdminListCirclesCouncilsAuditRequest value) => value.writeToBuffer(),
+      $0.AdminListCirclesCouncilsAuditResponse.fromBuffer);
+  static final _$adminModerateCircleSpaceOrDispute = $grpc.ClientMethod<
+          $0.AdminModerateCircleSpaceOrDisputeRequest,
+          $0.AdminModerateCircleSpaceOrDisputeResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateCircleSpaceOrDispute',
+      ($0.AdminModerateCircleSpaceOrDisputeRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateCircleSpaceOrDisputeResponse.fromBuffer);
+  static final _$getExperienceAccessPassportWorkbench = $grpc.ClientMethod<
+          $0.GetExperienceAccessPassportWorkbenchRequest,
+          $0.GetExperienceAccessPassportWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetExperienceAccessPassportWorkbench',
+      ($0.GetExperienceAccessPassportWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetExperienceAccessPassportWorkbenchResponse.fromBuffer);
+  static final _$reserveOrUpdateExperiencePassportItem = $grpc.ClientMethod<
+          $0.ReserveOrUpdateExperiencePassportItemRequest,
+          $0.ReserveOrUpdateExperiencePassportItemResponse>(
+      '/sttattus.empire.v1.EmpireService/ReserveOrUpdateExperiencePassportItem',
+      ($0.ReserveOrUpdateExperiencePassportItemRequest value) =>
+          value.writeToBuffer(),
+      $0.ReserveOrUpdateExperiencePassportItemResponse.fromBuffer);
+  static final _$recordHostExperienceOperation = $grpc.ClientMethod<
+          $0.RecordHostExperienceOperationRequest,
+          $0.RecordHostExperienceOperationResponse>(
+      '/sttattus.empire.v1.EmpireService/RecordHostExperienceOperation',
+      ($0.RecordHostExperienceOperationRequest value) => value.writeToBuffer(),
+      $0.RecordHostExperienceOperationResponse.fromBuffer);
+  static final _$adminListExperienceAccessPassportAudit = $grpc.ClientMethod<
+          $0.AdminListExperienceAccessPassportAuditRequest,
+          $0.AdminListExperienceAccessPassportAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListExperienceAccessPassportAudit',
+      ($0.AdminListExperienceAccessPassportAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListExperienceAccessPassportAuditResponse.fromBuffer);
+  static final _$adminReconcileExperienceReservationOrAppeal = $grpc.ClientMethod<
+          $0.AdminReconcileExperienceReservationOrAppealRequest,
+          $0.AdminReconcileExperienceReservationOrAppealResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminReconcileExperienceReservationOrAppeal',
+      ($0.AdminReconcileExperienceReservationOrAppealRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminReconcileExperienceReservationOrAppealResponse.fromBuffer);
+  static final _$getMemberFeedEditorialWorkbench = $grpc.ClientMethod<
+          $0.GetMemberFeedEditorialWorkbenchRequest,
+          $0.GetMemberFeedEditorialWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetMemberFeedEditorialWorkbench',
+      ($0.GetMemberFeedEditorialWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetMemberFeedEditorialWorkbenchResponse.fromBuffer);
+  static final _$previewPublishOrRevokeFeedShare = $grpc.ClientMethod<
+          $0.PreviewPublishOrRevokeFeedShareRequest,
+          $0.PreviewPublishOrRevokeFeedShareResponse>(
+      '/sttattus.empire.v1.EmpireService/PreviewPublishOrRevokeFeedShare',
+      ($0.PreviewPublishOrRevokeFeedShareRequest value) =>
+          value.writeToBuffer(),
+      $0.PreviewPublishOrRevokeFeedShareResponse.fromBuffer);
+  static final _$recordEditorialCorrectionOrResetMode = $grpc.ClientMethod<
+          $0.RecordEditorialCorrectionOrResetModeRequest,
+          $0.RecordEditorialCorrectionOrResetModeResponse>(
+      '/sttattus.empire.v1.EmpireService/RecordEditorialCorrectionOrResetMode',
+      ($0.RecordEditorialCorrectionOrResetModeRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordEditorialCorrectionOrResetModeResponse.fromBuffer);
+  static final _$adminListMemberFeedEditorialAudit = $grpc.ClientMethod<
+          $0.AdminListMemberFeedEditorialAuditRequest,
+          $0.AdminListMemberFeedEditorialAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListMemberFeedEditorialAudit',
+      ($0.AdminListMemberFeedEditorialAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListMemberFeedEditorialAuditResponse.fromBuffer);
+  static final _$adminModerateFeedShareOrEditorialCorrection = $grpc.ClientMethod<
+          $0.AdminModerateFeedShareOrEditorialCorrectionRequest,
+          $0.AdminModerateFeedShareOrEditorialCorrectionResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateFeedShareOrEditorialCorrection',
+      ($0.AdminModerateFeedShareOrEditorialCorrectionRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateFeedShareOrEditorialCorrectionResponse.fromBuffer);
+  static final _$getContributionLedgerWorkbench = $grpc.ClientMethod<
+          $0.GetContributionLedgerWorkbenchRequest,
+          $0.GetContributionLedgerWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetContributionLedgerWorkbench',
+      ($0.GetContributionLedgerWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetContributionLedgerWorkbenchResponse.fromBuffer);
+  static final _$recordContributionOrGratitudeEndorsement = $grpc.ClientMethod<
+          $0.RecordContributionOrGratitudeEndorsementRequest,
+          $0.RecordContributionOrGratitudeEndorsementResponse>(
+      '/sttattus.empire.v1.EmpireService/RecordContributionOrGratitudeEndorsement',
+      ($0.RecordContributionOrGratitudeEndorsementRequest value) =>
+          value.writeToBuffer(),
+      $0.RecordContributionOrGratitudeEndorsementResponse.fromBuffer);
+  static final _$updateContributionVisibilityOrCorrection = $grpc.ClientMethod<
+          $0.UpdateContributionVisibilityOrCorrectionRequest,
+          $0.UpdateContributionVisibilityOrCorrectionResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateContributionVisibilityOrCorrection',
+      ($0.UpdateContributionVisibilityOrCorrectionRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateContributionVisibilityOrCorrectionResponse.fromBuffer);
+  static final _$adminListContributionLedgerAudit = $grpc.ClientMethod<
+          $0.AdminListContributionLedgerAuditRequest,
+          $0.AdminListContributionLedgerAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListContributionLedgerAudit',
+      ($0.AdminListContributionLedgerAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListContributionLedgerAuditResponse.fromBuffer);
+  static final _$adminModerateContributionCollusionOrSponsor = $grpc.ClientMethod<
+          $0.AdminModerateContributionCollusionOrSponsorRequest,
+          $0.AdminModerateContributionCollusionOrSponsorResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminModerateContributionCollusionOrSponsor',
+      ($0.AdminModerateContributionCollusionOrSponsorRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminModerateContributionCollusionOrSponsorResponse.fromBuffer);
+  static final _$getBenefitsMarketplaceWorkbench = $grpc.ClientMethod<
+          $0.GetBenefitsMarketplaceWorkbenchRequest,
+          $0.GetBenefitsMarketplaceWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetBenefitsMarketplaceWorkbench',
+      ($0.GetBenefitsMarketplaceWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetBenefitsMarketplaceWorkbenchResponse.fromBuffer);
+  static final _$quoteOrRedeemBenefitOffer = $grpc.ClientMethod<
+          $0.QuoteOrRedeemBenefitOfferRequest,
+          $0.QuoteOrRedeemBenefitOfferResponse>(
+      '/sttattus.empire.v1.EmpireService/QuoteOrRedeemBenefitOffer',
+      ($0.QuoteOrRedeemBenefitOfferRequest value) => value.writeToBuffer(),
+      $0.QuoteOrRedeemBenefitOfferResponse.fromBuffer);
+  static final _$updateRedemptionDisputeOrCancel = $grpc.ClientMethod<
+          $0.UpdateRedemptionDisputeOrCancelRequest,
+          $0.UpdateRedemptionDisputeOrCancelResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateRedemptionDisputeOrCancel',
+      ($0.UpdateRedemptionDisputeOrCancelRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateRedemptionDisputeOrCancelResponse.fromBuffer);
+  static final _$adminListBenefitsMarketplaceAudit = $grpc.ClientMethod<
+          $0.AdminListBenefitsMarketplaceAuditRequest,
+          $0.AdminListBenefitsMarketplaceAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListBenefitsMarketplaceAudit',
+      ($0.AdminListBenefitsMarketplaceAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListBenefitsMarketplaceAuditResponse.fromBuffer);
+  static final _$adminReconcileBenefitPointsOrRedemption = $grpc.ClientMethod<
+          $0.AdminReconcileBenefitPointsOrRedemptionRequest,
+          $0.AdminReconcileBenefitPointsOrRedemptionResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminReconcileBenefitPointsOrRedemption',
+      ($0.AdminReconcileBenefitPointsOrRedemptionRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminReconcileBenefitPointsOrRedemptionResponse.fromBuffer);
+  static final _$getMembershipHouseholdWorkbench = $grpc.ClientMethod<
+          $0.GetMembershipHouseholdWorkbenchRequest,
+          $0.GetMembershipHouseholdWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetMembershipHouseholdWorkbench',
+      ($0.GetMembershipHouseholdWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetMembershipHouseholdWorkbenchResponse.fromBuffer);
+  static final _$previewOrExecuteMembershipLifecycleAction = $grpc.ClientMethod<
+          $0.PreviewOrExecuteMembershipLifecycleActionRequest,
+          $0.PreviewOrExecuteMembershipLifecycleActionResponse>(
+      '/sttattus.empire.v1.EmpireService/PreviewOrExecuteMembershipLifecycleAction',
+      ($0.PreviewOrExecuteMembershipLifecycleActionRequest value) =>
+          value.writeToBuffer(),
+      $0.PreviewOrExecuteMembershipLifecycleActionResponse.fromBuffer);
+  static final _$manageHouseholdMemberSeat = $grpc.ClientMethod<
+          $0.ManageHouseholdMemberSeatRequest,
+          $0.ManageHouseholdMemberSeatResponse>(
+      '/sttattus.empire.v1.EmpireService/ManageHouseholdMemberSeat',
+      ($0.ManageHouseholdMemberSeatRequest value) => value.writeToBuffer(),
+      $0.ManageHouseholdMemberSeatResponse.fromBuffer);
+  static final _$adminListMembershipHouseholdAudit = $grpc.ClientMethod<
+          $0.AdminListMembershipHouseholdAuditRequest,
+          $0.AdminListMembershipHouseholdAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListMembershipHouseholdAudit',
+      ($0.AdminListMembershipHouseholdAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListMembershipHouseholdAuditResponse.fromBuffer);
+  static final _$adminResolveHardshipOrHouseholdDispute = $grpc.ClientMethod<
+          $0.AdminResolveHardshipOrHouseholdDisputeRequest,
+          $0.AdminResolveHardshipOrHouseholdDisputeResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminResolveHardshipOrHouseholdDispute',
+      ($0.AdminResolveHardshipOrHouseholdDisputeRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminResolveHardshipOrHouseholdDisputeResponse.fromBuffer);
+  static final _$getUnifiedInboxWorkbench = $grpc.ClientMethod<
+          $0.GetUnifiedInboxWorkbenchRequest,
+          $0.GetUnifiedInboxWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetUnifiedInboxWorkbench',
+      ($0.GetUnifiedInboxWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetUnifiedInboxWorkbenchResponse.fromBuffer);
+  static final _$updateCommunicationChannelControl = $grpc.ClientMethod<
+          $0.UpdateCommunicationChannelControlRequest,
+          $0.UpdateCommunicationChannelControlResponse>(
+      '/sttattus.empire.v1.EmpireService/UpdateCommunicationChannelControl',
+      ($0.UpdateCommunicationChannelControlRequest value) =>
+          value.writeToBuffer(),
+      $0.UpdateCommunicationChannelControlResponse.fromBuffer);
+  static final _$acknowledgeOrDeleteInboxDispatch = $grpc.ClientMethod<
+          $0.AcknowledgeOrDeleteInboxDispatchRequest,
+          $0.AcknowledgeOrDeleteInboxDispatchResponse>(
+      '/sttattus.empire.v1.EmpireService/AcknowledgeOrDeleteInboxDispatch',
+      ($0.AcknowledgeOrDeleteInboxDispatchRequest value) =>
+          value.writeToBuffer(),
+      $0.AcknowledgeOrDeleteInboxDispatchResponse.fromBuffer);
+  static final _$adminListUnifiedInboxAudit = $grpc.ClientMethod<
+          $0.AdminListUnifiedInboxAuditRequest,
+          $0.AdminListUnifiedInboxAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListUnifiedInboxAudit',
+      ($0.AdminListUnifiedInboxAuditRequest value) => value.writeToBuffer(),
+      $0.AdminListUnifiedInboxAuditResponse.fromBuffer);
+  static final _$adminManageRequiredNoticeOrBurstPolicy = $grpc.ClientMethod<
+          $0.AdminManageRequiredNoticeOrBurstPolicyRequest,
+          $0.AdminManageRequiredNoticeOrBurstPolicyResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminManageRequiredNoticeOrBurstPolicy',
+      ($0.AdminManageRequiredNoticeOrBurstPolicyRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminManageRequiredNoticeOrBurstPolicyResponse.fromBuffer);
+  static final _$getEcosystemConciergeWorkbench = $grpc.ClientMethod<
+          $0.GetEcosystemConciergeWorkbenchRequest,
+          $0.GetEcosystemConciergeWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetEcosystemConciergeWorkbench',
+      ($0.GetEcosystemConciergeWorkbenchRequest value) => value.writeToBuffer(),
+      $0.GetEcosystemConciergeWorkbenchResponse.fromBuffer);
+  static final _$createOrUpdateConciergeRequest = $grpc.ClientMethod<
+          $0.CreateOrUpdateConciergeRequestRequest,
+          $0.CreateOrUpdateConciergeRequestResponse>(
+      '/sttattus.empire.v1.EmpireService/CreateOrUpdateConciergeRequest',
+      ($0.CreateOrUpdateConciergeRequestRequest value) => value.writeToBuffer(),
+      $0.CreateOrUpdateConciergeRequestResponse.fromBuffer);
+  static final _$approveOrEscalateConciergePacket = $grpc.ClientMethod<
+          $0.ApproveOrEscalateConciergePacketRequest,
+          $0.ApproveOrEscalateConciergePacketResponse>(
+      '/sttattus.empire.v1.EmpireService/ApproveOrEscalateConciergePacket',
+      ($0.ApproveOrEscalateConciergePacketRequest value) =>
+          value.writeToBuffer(),
+      $0.ApproveOrEscalateConciergePacketResponse.fromBuffer);
+  static final _$adminListEcosystemConciergeAudit = $grpc.ClientMethod<
+          $0.AdminListEcosystemConciergeAuditRequest,
+          $0.AdminListEcosystemConciergeAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListEcosystemConciergeAudit',
+      ($0.AdminListEcosystemConciergeAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListEcosystemConciergeAuditResponse.fromBuffer);
+  static final _$adminResolveConciergeCommitmentOrEscalation = $grpc.ClientMethod<
+          $0.AdminResolveConciergeCommitmentOrEscalationRequest,
+          $0.AdminResolveConciergeCommitmentOrEscalationResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminResolveConciergeCommitmentOrEscalation',
+      ($0.AdminResolveConciergeCommitmentOrEscalationRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminResolveConciergeCommitmentOrEscalationResponse.fromBuffer);
+  static final _$getPersonalReviewNarrativeWorkbench = $grpc.ClientMethod<
+          $0.GetPersonalReviewNarrativeWorkbenchRequest,
+          $0.GetPersonalReviewNarrativeWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetPersonalReviewNarrativeWorkbench',
+      ($0.GetPersonalReviewNarrativeWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetPersonalReviewNarrativeWorkbenchResponse.fromBuffer);
+  static final _$generateOrRedactLifeNarrativeReview = $grpc.ClientMethod<
+          $0.GenerateOrRedactLifeNarrativeReviewRequest,
+          $0.GenerateOrRedactLifeNarrativeReviewResponse>(
+      '/sttattus.empire.v1.EmpireService/GenerateOrRedactLifeNarrativeReview',
+      ($0.GenerateOrRedactLifeNarrativeReviewRequest value) =>
+          value.writeToBuffer(),
+      $0.GenerateOrRedactLifeNarrativeReviewResponse.fromBuffer);
+  static final _$orderOrManagePrintedYearbookArtifact = $grpc.ClientMethod<
+          $0.OrderOrManagePrintedYearbookArtifactRequest,
+          $0.OrderOrManagePrintedYearbookArtifactResponse>(
+      '/sttattus.empire.v1.EmpireService/OrderOrManagePrintedYearbookArtifact',
+      ($0.OrderOrManagePrintedYearbookArtifactRequest value) =>
+          value.writeToBuffer(),
+      $0.OrderOrManagePrintedYearbookArtifactResponse.fromBuffer);
+  static final _$adminListPersonalReviewNarrativeAudit = $grpc.ClientMethod<
+          $0.AdminListPersonalReviewNarrativeAuditRequest,
+          $0.AdminListPersonalReviewNarrativeAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListPersonalReviewNarrativeAudit',
+      ($0.AdminListPersonalReviewNarrativeAuditRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminListPersonalReviewNarrativeAuditResponse.fromBuffer);
+  static final _$adminManagePrintJobOrAddressPurge = $grpc.ClientMethod<
+          $0.AdminManagePrintJobOrAddressPurgeRequest,
+          $0.AdminManagePrintJobOrAddressPurgeResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminManagePrintJobOrAddressPurge',
+      ($0.AdminManagePrintJobOrAddressPurgeRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminManagePrintJobOrAddressPurgeResponse.fromBuffer);
+  static final _$getMemberGovernanceAuditWorkbench = $grpc.ClientMethod<
+          $0.GetMemberGovernanceAuditWorkbenchRequest,
+          $0.GetMemberGovernanceAuditWorkbenchResponse>(
+      '/sttattus.empire.v1.EmpireService/GetMemberGovernanceAuditWorkbench',
+      ($0.GetMemberGovernanceAuditWorkbenchRequest value) =>
+          value.writeToBuffer(),
+      $0.GetMemberGovernanceAuditWorkbenchResponse.fromBuffer);
+  static final _$submitAdvisoryPolicyProposalOrVote = $grpc.ClientMethod<
+          $0.SubmitAdvisoryPolicyProposalOrVoteRequest,
+          $0.SubmitAdvisoryPolicyProposalOrVoteResponse>(
+      '/sttattus.empire.v1.EmpireService/SubmitAdvisoryPolicyProposalOrVote',
+      ($0.SubmitAdvisoryPolicyProposalOrVoteRequest value) =>
+          value.writeToBuffer(),
+      $0.SubmitAdvisoryPolicyProposalOrVoteResponse.fromBuffer);
+  static final _$requestDecisionRemedyOrInspectPrecedent = $grpc.ClientMethod<
+          $0.RequestDecisionRemedyOrInspectPrecedentRequest,
+          $0.RequestDecisionRemedyOrInspectPrecedentResponse>(
+      '/sttattus.empire.v1.EmpireService/RequestDecisionRemedyOrInspectPrecedent',
+      ($0.RequestDecisionRemedyOrInspectPrecedentRequest value) =>
+          value.writeToBuffer(),
+      $0.RequestDecisionRemedyOrInspectPrecedentResponse.fromBuffer);
+  static final _$adminListMemberGovernanceAudit = $grpc.ClientMethod<
+          $0.AdminListMemberGovernanceAuditRequest,
+          $0.AdminListMemberGovernanceAuditResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminListMemberGovernanceAudit',
+      ($0.AdminListMemberGovernanceAuditRequest value) => value.writeToBuffer(),
+      $0.AdminListMemberGovernanceAuditResponse.fromBuffer);
+  static final _$adminCertifyPolicyDiffOrObserverBoundary = $grpc.ClientMethod<
+          $0.AdminCertifyPolicyDiffOrObserverBoundaryRequest,
+          $0.AdminCertifyPolicyDiffOrObserverBoundaryResponse>(
+      '/sttattus.empire.v1.EmpireService/AdminCertifyPolicyDiffOrObserverBoundary',
+      ($0.AdminCertifyPolicyDiffOrObserverBoundaryRequest value) =>
+          value.writeToBuffer(),
+      $0.AdminCertifyPolicyDiffOrObserverBoundaryResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('sttattus.empire.v1.EmpireService')
@@ -1020,6 +2236,796 @@ abstract class EmpireServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetYearInEmpireRequest.fromBuffer(value),
         ($0.GetYearInEmpireResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetStandingConstitutionWorkbenchRequest,
+            $0.GetStandingConstitutionWorkbenchResponse>(
+        'GetStandingConstitutionWorkbench',
+        getStandingConstitutionWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetStandingConstitutionWorkbenchRequest.fromBuffer(value),
+        ($0.GetStandingConstitutionWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateStandingConstitutionModeRequest,
+            $0.UpdateStandingConstitutionModeResponse>(
+        'UpdateStandingConstitutionMode',
+        updateStandingConstitutionMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateStandingConstitutionModeRequest.fromBuffer(value),
+        ($0.UpdateStandingConstitutionModeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FileStandingDisputeOrRecomputeRequest,
+            $0.FileStandingDisputeOrRecomputeResponse>(
+        'FileStandingDisputeOrRecompute',
+        fileStandingDisputeOrRecompute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.FileStandingDisputeOrRecomputeRequest.fromBuffer(value),
+        ($0.FileStandingDisputeOrRecomputeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListStandingConstitutionAuditRequest,
+            $0.AdminListStandingConstitutionAuditResponse>(
+        'AdminListStandingConstitutionAudit',
+        adminListStandingConstitutionAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListStandingConstitutionAuditRequest.fromBuffer(value),
+        ($0.AdminListStandingConstitutionAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminResolveStandingDisputeOrPolicyRequest,
+            $0.AdminResolveStandingDisputeOrPolicyResponse>(
+        'AdminResolveStandingDisputeOrPolicy',
+        adminResolveStandingDisputeOrPolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminResolveStandingDisputeOrPolicyRequest.fromBuffer(value),
+        ($0.AdminResolveStandingDisputeOrPolicyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetTwelvePillarTodayWorkbenchRequest,
+            $0.GetTwelvePillarTodayWorkbenchResponse>(
+        'GetTwelvePillarTodayWorkbench',
+        getTwelvePillarTodayWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetTwelvePillarTodayWorkbenchRequest.fromBuffer(value),
+        ($0.GetTwelvePillarTodayWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateTodayCardDispositionRequest,
+            $0.UpdateTodayCardDispositionResponse>(
+        'UpdateTodayCardDisposition',
+        updateTodayCardDisposition_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateTodayCardDispositionRequest.fromBuffer(value),
+        ($0.UpdateTodayCardDispositionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ResolveCrossPillarConflictRequest,
+            $0.ResolveCrossPillarConflictResponse>(
+        'ResolveCrossPillarConflict',
+        resolveCrossPillarConflict_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ResolveCrossPillarConflictRequest.fromBuffer(value),
+        ($0.ResolveCrossPillarConflictResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateTodayOperatingModeRequest,
+            $0.UpdateTodayOperatingModeResponse>(
+        'UpdateTodayOperatingMode',
+        updateTodayOperatingMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateTodayOperatingModeRequest.fromBuffer(value),
+        ($0.UpdateTodayOperatingModeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListTwelvePillarTodayAuditRequest,
+            $0.AdminListTwelvePillarTodayAuditResponse>(
+        'AdminListTwelvePillarTodayAudit',
+        adminListTwelvePillarTodayAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListTwelvePillarTodayAuditRequest.fromBuffer(value),
+        ($0.AdminListTwelvePillarTodayAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminManageTodayContractOrOutageRequest,
+            $0.AdminManageTodayContractOrOutageResponse>(
+        'AdminManageTodayContractOrOutage',
+        adminManageTodayContractOrOutage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminManageTodayContractOrOutageRequest.fromBuffer(value),
+        ($0.AdminManageTodayContractOrOutageResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetGoalOrchestratorWorkbenchRequest,
+            $0.GetGoalOrchestratorWorkbenchResponse>(
+        'GetGoalOrchestratorWorkbench',
+        getGoalOrchestratorWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetGoalOrchestratorWorkbenchRequest.fromBuffer(value),
+        ($0.GetGoalOrchestratorWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateOrReplanLifeSeasonCampaignRequest,
+            $0.CreateOrReplanLifeSeasonCampaignResponse>(
+        'CreateOrReplanLifeSeasonCampaign',
+        createOrReplanLifeSeasonCampaign_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateOrReplanLifeSeasonCampaignRequest.fromBuffer(value),
+        ($0.CreateOrReplanLifeSeasonCampaignResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApproveOrCompleteCampaignMilestoneRequest,
+            $0.ApproveOrCompleteCampaignMilestoneResponse>(
+        'ApproveOrCompleteCampaignMilestone',
+        approveOrCompleteCampaignMilestone_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveOrCompleteCampaignMilestoneRequest.fromBuffer(value),
+        ($0.ApproveOrCompleteCampaignMilestoneResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListGoalOrchestratorAuditRequest,
+            $0.AdminListGoalOrchestratorAuditResponse>(
+        'AdminListGoalOrchestratorAudit',
+        adminListGoalOrchestratorAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListGoalOrchestratorAuditRequest.fromBuffer(value),
+        ($0.AdminListGoalOrchestratorAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateCampaignCapabilityOrHandoffRequest,
+            $0.AdminModerateCampaignCapabilityOrHandoffResponse>(
+        'AdminModerateCampaignCapabilityOrHandoff',
+        adminModerateCampaignCapabilityOrHandoff_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateCampaignCapabilityOrHandoffRequest.fromBuffer(
+                value),
+        ($0.AdminModerateCampaignCapabilityOrHandoffResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetAchievementWalletWorkbenchRequest,
+            $0.GetAchievementWalletWorkbenchResponse>(
+        'GetAchievementWalletWorkbench',
+        getAchievementWalletWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetAchievementWalletWorkbenchRequest.fromBuffer(value),
+        ($0.GetAchievementWalletWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.MintPortableAchievementCredentialRequest,
+            $0.MintPortableAchievementCredentialResponse>(
+        'MintPortableAchievementCredential',
+        mintPortableAchievementCredential_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.MintPortableAchievementCredentialRequest.fromBuffer(value),
+        ($0.MintPortableAchievementCredentialResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RevokeOrVerifyPortableCredentialRequest,
+            $0.RevokeOrVerifyPortableCredentialResponse>(
+        'RevokeOrVerifyPortableCredential',
+        revokeOrVerifyPortableCredential_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RevokeOrVerifyPortableCredentialRequest.fromBuffer(value),
+        ($0.RevokeOrVerifyPortableCredentialResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListAchievementWalletAuditRequest,
+            $0.AdminListAchievementWalletAuditResponse>(
+        'AdminListAchievementWalletAudit',
+        adminListAchievementWalletAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListAchievementWalletAuditRequest.fromBuffer(value),
+        ($0.AdminListAchievementWalletAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateCredentialOrVerifierAbuseRequest,
+            $0.AdminModerateCredentialOrVerifierAbuseResponse>(
+        'AdminModerateCredentialOrVerifierAbuse',
+        adminModerateCredentialOrVerifierAbuse_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateCredentialOrVerifierAbuseRequest.fromBuffer(value),
+        ($0.AdminModerateCredentialOrVerifierAbuseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetContextualDirectoryWorkbenchRequest,
+            $0.GetContextualDirectoryWorkbenchResponse>(
+        'GetContextualDirectoryWorkbench',
+        getContextualDirectoryWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetContextualDirectoryWorkbenchRequest.fromBuffer(value),
+        ($0.GetContextualDirectoryWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateContextualDirectoryProfileRequest,
+            $0.UpdateContextualDirectoryProfileResponse>(
+        'UpdateContextualDirectoryProfile',
+        updateContextualDirectoryProfile_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateContextualDirectoryProfileRequest.fromBuffer(value),
+        ($0.UpdateContextualDirectoryProfileResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RequestOrRespondContextualIntroductionRequest,
+            $0.RequestOrRespondContextualIntroductionResponse>(
+        'RequestOrRespondContextualIntroduction',
+        requestOrRespondContextualIntroduction_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestOrRespondContextualIntroductionRequest.fromBuffer(value),
+        ($0.RequestOrRespondContextualIntroductionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListContextualDirectoryAuditRequest,
+            $0.AdminListContextualDirectoryAuditResponse>(
+        'AdminListContextualDirectoryAudit',
+        adminListContextualDirectoryAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListContextualDirectoryAuditRequest.fromBuffer(value),
+        ($0.AdminListContextualDirectoryAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateDirectoryIntroductionAbuseRequest,
+            $0.AdminModerateDirectoryIntroductionAbuseResponse>(
+        'AdminModerateDirectoryIntroductionAbuse',
+        adminModerateDirectoryIntroductionAbuse_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateDirectoryIntroductionAbuseRequest.fromBuffer(value),
+        ($0.AdminModerateDirectoryIntroductionAbuseResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetCirclesCouncilsWorkbenchRequest,
+            $0.GetCirclesCouncilsWorkbenchResponse>(
+        'GetCirclesCouncilsWorkbench',
+        getCirclesCouncilsWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetCirclesCouncilsWorkbenchRequest.fromBuffer(value),
+        ($0.GetCirclesCouncilsWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateOrUpdateCircleCouncilSpaceRequest,
+            $0.CreateOrUpdateCircleCouncilSpaceResponse>(
+        'CreateOrUpdateCircleCouncilSpace',
+        createOrUpdateCircleCouncilSpace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateOrUpdateCircleCouncilSpaceRequest.fromBuffer(value),
+        ($0.CreateOrUpdateCircleCouncilSpaceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordCircleArtifactOrCloseSpaceRequest,
+            $0.RecordCircleArtifactOrCloseSpaceResponse>(
+        'RecordCircleArtifactOrCloseSpace',
+        recordCircleArtifactOrCloseSpace_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordCircleArtifactOrCloseSpaceRequest.fromBuffer(value),
+        ($0.RecordCircleArtifactOrCloseSpaceResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListCirclesCouncilsAuditRequest,
+            $0.AdminListCirclesCouncilsAuditResponse>(
+        'AdminListCirclesCouncilsAudit',
+        adminListCirclesCouncilsAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListCirclesCouncilsAuditRequest.fromBuffer(value),
+        ($0.AdminListCirclesCouncilsAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminModerateCircleSpaceOrDisputeRequest,
+            $0.AdminModerateCircleSpaceOrDisputeResponse>(
+        'AdminModerateCircleSpaceOrDispute',
+        adminModerateCircleSpaceOrDispute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateCircleSpaceOrDisputeRequest.fromBuffer(value),
+        ($0.AdminModerateCircleSpaceOrDisputeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetExperienceAccessPassportWorkbenchRequest,
+            $0.GetExperienceAccessPassportWorkbenchResponse>(
+        'GetExperienceAccessPassportWorkbench',
+        getExperienceAccessPassportWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetExperienceAccessPassportWorkbenchRequest.fromBuffer(value),
+        ($0.GetExperienceAccessPassportWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.ReserveOrUpdateExperiencePassportItemRequest,
+            $0.ReserveOrUpdateExperiencePassportItemResponse>(
+        'ReserveOrUpdateExperiencePassportItem',
+        reserveOrUpdateExperiencePassportItem_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ReserveOrUpdateExperiencePassportItemRequest.fromBuffer(value),
+        ($0.ReserveOrUpdateExperiencePassportItemResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.RecordHostExperienceOperationRequest,
+            $0.RecordHostExperienceOperationResponse>(
+        'RecordHostExperienceOperation',
+        recordHostExperienceOperation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordHostExperienceOperationRequest.fromBuffer(value),
+        ($0.RecordHostExperienceOperationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminListExperienceAccessPassportAuditRequest,
+            $0.AdminListExperienceAccessPassportAuditResponse>(
+        'AdminListExperienceAccessPassportAudit',
+        adminListExperienceAccessPassportAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListExperienceAccessPassportAuditRequest.fromBuffer(value),
+        ($0.AdminListExperienceAccessPassportAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminReconcileExperienceReservationOrAppealRequest,
+            $0.AdminReconcileExperienceReservationOrAppealResponse>(
+        'AdminReconcileExperienceReservationOrAppeal',
+        adminReconcileExperienceReservationOrAppeal_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminReconcileExperienceReservationOrAppealRequest.fromBuffer(
+                value),
+        ($0.AdminReconcileExperienceReservationOrAppealResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMemberFeedEditorialWorkbenchRequest,
+            $0.GetMemberFeedEditorialWorkbenchResponse>(
+        'GetMemberFeedEditorialWorkbench',
+        getMemberFeedEditorialWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMemberFeedEditorialWorkbenchRequest.fromBuffer(value),
+        ($0.GetMemberFeedEditorialWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.PreviewPublishOrRevokeFeedShareRequest,
+            $0.PreviewPublishOrRevokeFeedShareResponse>(
+        'PreviewPublishOrRevokeFeedShare',
+        previewPublishOrRevokeFeedShare_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PreviewPublishOrRevokeFeedShareRequest.fromBuffer(value),
+        ($0.PreviewPublishOrRevokeFeedShareResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecordEditorialCorrectionOrResetModeRequest,
+            $0.RecordEditorialCorrectionOrResetModeResponse>(
+        'RecordEditorialCorrectionOrResetMode',
+        recordEditorialCorrectionOrResetMode_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordEditorialCorrectionOrResetModeRequest.fromBuffer(value),
+        ($0.RecordEditorialCorrectionOrResetModeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListMemberFeedEditorialAuditRequest,
+            $0.AdminListMemberFeedEditorialAuditResponse>(
+        'AdminListMemberFeedEditorialAudit',
+        adminListMemberFeedEditorialAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListMemberFeedEditorialAuditRequest.fromBuffer(value),
+        ($0.AdminListMemberFeedEditorialAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateFeedShareOrEditorialCorrectionRequest,
+            $0.AdminModerateFeedShareOrEditorialCorrectionResponse>(
+        'AdminModerateFeedShareOrEditorialCorrection',
+        adminModerateFeedShareOrEditorialCorrection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateFeedShareOrEditorialCorrectionRequest.fromBuffer(
+                value),
+        ($0.AdminModerateFeedShareOrEditorialCorrectionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetContributionLedgerWorkbenchRequest,
+            $0.GetContributionLedgerWorkbenchResponse>(
+        'GetContributionLedgerWorkbench',
+        getContributionLedgerWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetContributionLedgerWorkbenchRequest.fromBuffer(value),
+        ($0.GetContributionLedgerWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RecordContributionOrGratitudeEndorsementRequest,
+            $0.RecordContributionOrGratitudeEndorsementResponse>(
+        'RecordContributionOrGratitudeEndorsement',
+        recordContributionOrGratitudeEndorsement_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RecordContributionOrGratitudeEndorsementRequest.fromBuffer(
+                value),
+        ($0.RecordContributionOrGratitudeEndorsementResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.UpdateContributionVisibilityOrCorrectionRequest,
+            $0.UpdateContributionVisibilityOrCorrectionResponse>(
+        'UpdateContributionVisibilityOrCorrection',
+        updateContributionVisibilityOrCorrection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateContributionVisibilityOrCorrectionRequest.fromBuffer(
+                value),
+        ($0.UpdateContributionVisibilityOrCorrectionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListContributionLedgerAuditRequest,
+            $0.AdminListContributionLedgerAuditResponse>(
+        'AdminListContributionLedgerAudit',
+        adminListContributionLedgerAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListContributionLedgerAuditRequest.fromBuffer(value),
+        ($0.AdminListContributionLedgerAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminModerateContributionCollusionOrSponsorRequest,
+            $0.AdminModerateContributionCollusionOrSponsorResponse>(
+        'AdminModerateContributionCollusionOrSponsor',
+        adminModerateContributionCollusionOrSponsor_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminModerateContributionCollusionOrSponsorRequest.fromBuffer(
+                value),
+        ($0.AdminModerateContributionCollusionOrSponsorResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetBenefitsMarketplaceWorkbenchRequest,
+            $0.GetBenefitsMarketplaceWorkbenchResponse>(
+        'GetBenefitsMarketplaceWorkbench',
+        getBenefitsMarketplaceWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetBenefitsMarketplaceWorkbenchRequest.fromBuffer(value),
+        ($0.GetBenefitsMarketplaceWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QuoteOrRedeemBenefitOfferRequest,
+            $0.QuoteOrRedeemBenefitOfferResponse>(
+        'QuoteOrRedeemBenefitOffer',
+        quoteOrRedeemBenefitOffer_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QuoteOrRedeemBenefitOfferRequest.fromBuffer(value),
+        ($0.QuoteOrRedeemBenefitOfferResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateRedemptionDisputeOrCancelRequest,
+            $0.UpdateRedemptionDisputeOrCancelResponse>(
+        'UpdateRedemptionDisputeOrCancel',
+        updateRedemptionDisputeOrCancel_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateRedemptionDisputeOrCancelRequest.fromBuffer(value),
+        ($0.UpdateRedemptionDisputeOrCancelResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListBenefitsMarketplaceAuditRequest,
+            $0.AdminListBenefitsMarketplaceAuditResponse>(
+        'AdminListBenefitsMarketplaceAudit',
+        adminListBenefitsMarketplaceAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListBenefitsMarketplaceAuditRequest.fromBuffer(value),
+        ($0.AdminListBenefitsMarketplaceAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminReconcileBenefitPointsOrRedemptionRequest,
+            $0.AdminReconcileBenefitPointsOrRedemptionResponse>(
+        'AdminReconcileBenefitPointsOrRedemption',
+        adminReconcileBenefitPointsOrRedemption_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminReconcileBenefitPointsOrRedemptionRequest.fromBuffer(value),
+        ($0.AdminReconcileBenefitPointsOrRedemptionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMembershipHouseholdWorkbenchRequest,
+            $0.GetMembershipHouseholdWorkbenchResponse>(
+        'GetMembershipHouseholdWorkbench',
+        getMembershipHouseholdWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMembershipHouseholdWorkbenchRequest.fromBuffer(value),
+        ($0.GetMembershipHouseholdWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.PreviewOrExecuteMembershipLifecycleActionRequest,
+            $0.PreviewOrExecuteMembershipLifecycleActionResponse>(
+        'PreviewOrExecuteMembershipLifecycleAction',
+        previewOrExecuteMembershipLifecycleAction_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.PreviewOrExecuteMembershipLifecycleActionRequest.fromBuffer(
+                value),
+        ($0.PreviewOrExecuteMembershipLifecycleActionResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ManageHouseholdMemberSeatRequest,
+            $0.ManageHouseholdMemberSeatResponse>(
+        'ManageHouseholdMemberSeat',
+        manageHouseholdMemberSeat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ManageHouseholdMemberSeatRequest.fromBuffer(value),
+        ($0.ManageHouseholdMemberSeatResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListMembershipHouseholdAuditRequest,
+            $0.AdminListMembershipHouseholdAuditResponse>(
+        'AdminListMembershipHouseholdAudit',
+        adminListMembershipHouseholdAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListMembershipHouseholdAuditRequest.fromBuffer(value),
+        ($0.AdminListMembershipHouseholdAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminResolveHardshipOrHouseholdDisputeRequest,
+            $0.AdminResolveHardshipOrHouseholdDisputeResponse>(
+        'AdminResolveHardshipOrHouseholdDispute',
+        adminResolveHardshipOrHouseholdDispute_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminResolveHardshipOrHouseholdDisputeRequest.fromBuffer(value),
+        ($0.AdminResolveHardshipOrHouseholdDisputeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUnifiedInboxWorkbenchRequest,
+            $0.GetUnifiedInboxWorkbenchResponse>(
+        'GetUnifiedInboxWorkbench',
+        getUnifiedInboxWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetUnifiedInboxWorkbenchRequest.fromBuffer(value),
+        ($0.GetUnifiedInboxWorkbenchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UpdateCommunicationChannelControlRequest,
+            $0.UpdateCommunicationChannelControlResponse>(
+        'UpdateCommunicationChannelControl',
+        updateCommunicationChannelControl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.UpdateCommunicationChannelControlRequest.fromBuffer(value),
+        ($0.UpdateCommunicationChannelControlResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AcknowledgeOrDeleteInboxDispatchRequest,
+            $0.AcknowledgeOrDeleteInboxDispatchResponse>(
+        'AcknowledgeOrDeleteInboxDispatch',
+        acknowledgeOrDeleteInboxDispatch_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AcknowledgeOrDeleteInboxDispatchRequest.fromBuffer(value),
+        ($0.AcknowledgeOrDeleteInboxDispatchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListUnifiedInboxAuditRequest,
+            $0.AdminListUnifiedInboxAuditResponse>(
+        'AdminListUnifiedInboxAudit',
+        adminListUnifiedInboxAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListUnifiedInboxAuditRequest.fromBuffer(value),
+        ($0.AdminListUnifiedInboxAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminManageRequiredNoticeOrBurstPolicyRequest,
+            $0.AdminManageRequiredNoticeOrBurstPolicyResponse>(
+        'AdminManageRequiredNoticeOrBurstPolicy',
+        adminManageRequiredNoticeOrBurstPolicy_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminManageRequiredNoticeOrBurstPolicyRequest.fromBuffer(value),
+        ($0.AdminManageRequiredNoticeOrBurstPolicyResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetEcosystemConciergeWorkbenchRequest,
+            $0.GetEcosystemConciergeWorkbenchResponse>(
+        'GetEcosystemConciergeWorkbench',
+        getEcosystemConciergeWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetEcosystemConciergeWorkbenchRequest.fromBuffer(value),
+        ($0.GetEcosystemConciergeWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CreateOrUpdateConciergeRequestRequest,
+            $0.CreateOrUpdateConciergeRequestResponse>(
+        'CreateOrUpdateConciergeRequest',
+        createOrUpdateConciergeRequest_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CreateOrUpdateConciergeRequestRequest.fromBuffer(value),
+        ($0.CreateOrUpdateConciergeRequestResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.ApproveOrEscalateConciergePacketRequest,
+            $0.ApproveOrEscalateConciergePacketResponse>(
+        'ApproveOrEscalateConciergePacket',
+        approveOrEscalateConciergePacket_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.ApproveOrEscalateConciergePacketRequest.fromBuffer(value),
+        ($0.ApproveOrEscalateConciergePacketResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListEcosystemConciergeAuditRequest,
+            $0.AdminListEcosystemConciergeAuditResponse>(
+        'AdminListEcosystemConciergeAudit',
+        adminListEcosystemConciergeAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListEcosystemConciergeAuditRequest.fromBuffer(value),
+        ($0.AdminListEcosystemConciergeAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminResolveConciergeCommitmentOrEscalationRequest,
+            $0.AdminResolveConciergeCommitmentOrEscalationResponse>(
+        'AdminResolveConciergeCommitmentOrEscalation',
+        adminResolveConciergeCommitmentOrEscalation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminResolveConciergeCommitmentOrEscalationRequest.fromBuffer(
+                value),
+        ($0.AdminResolveConciergeCommitmentOrEscalationResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GetPersonalReviewNarrativeWorkbenchRequest,
+            $0.GetPersonalReviewNarrativeWorkbenchResponse>(
+        'GetPersonalReviewNarrativeWorkbench',
+        getPersonalReviewNarrativeWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetPersonalReviewNarrativeWorkbenchRequest.fromBuffer(value),
+        ($0.GetPersonalReviewNarrativeWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.GenerateOrRedactLifeNarrativeReviewRequest,
+            $0.GenerateOrRedactLifeNarrativeReviewResponse>(
+        'GenerateOrRedactLifeNarrativeReview',
+        generateOrRedactLifeNarrativeReview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GenerateOrRedactLifeNarrativeReviewRequest.fromBuffer(value),
+        ($0.GenerateOrRedactLifeNarrativeReviewResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.OrderOrManagePrintedYearbookArtifactRequest,
+            $0.OrderOrManagePrintedYearbookArtifactResponse>(
+        'OrderOrManagePrintedYearbookArtifact',
+        orderOrManagePrintedYearbookArtifact_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.OrderOrManagePrintedYearbookArtifactRequest.fromBuffer(value),
+        ($0.OrderOrManagePrintedYearbookArtifactResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminListPersonalReviewNarrativeAuditRequest,
+            $0.AdminListPersonalReviewNarrativeAuditResponse>(
+        'AdminListPersonalReviewNarrativeAudit',
+        adminListPersonalReviewNarrativeAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListPersonalReviewNarrativeAuditRequest.fromBuffer(value),
+        ($0.AdminListPersonalReviewNarrativeAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminManagePrintJobOrAddressPurgeRequest,
+            $0.AdminManagePrintJobOrAddressPurgeResponse>(
+        'AdminManagePrintJobOrAddressPurge',
+        adminManagePrintJobOrAddressPurge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminManagePrintJobOrAddressPurgeRequest.fromBuffer(value),
+        ($0.AdminManagePrintJobOrAddressPurgeResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMemberGovernanceAuditWorkbenchRequest,
+            $0.GetMemberGovernanceAuditWorkbenchResponse>(
+        'GetMemberGovernanceAuditWorkbench',
+        getMemberGovernanceAuditWorkbench_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMemberGovernanceAuditWorkbenchRequest.fromBuffer(value),
+        ($0.GetMemberGovernanceAuditWorkbenchResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.SubmitAdvisoryPolicyProposalOrVoteRequest,
+            $0.SubmitAdvisoryPolicyProposalOrVoteResponse>(
+        'SubmitAdvisoryPolicyProposalOrVote',
+        submitAdvisoryPolicyProposalOrVote_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.SubmitAdvisoryPolicyProposalOrVoteRequest.fromBuffer(value),
+        ($0.SubmitAdvisoryPolicyProposalOrVoteResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.RequestDecisionRemedyOrInspectPrecedentRequest,
+            $0.RequestDecisionRemedyOrInspectPrecedentResponse>(
+        'RequestDecisionRemedyOrInspectPrecedent',
+        requestDecisionRemedyOrInspectPrecedent_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.RequestDecisionRemedyOrInspectPrecedentRequest.fromBuffer(value),
+        ($0.RequestDecisionRemedyOrInspectPrecedentResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminListMemberGovernanceAuditRequest,
+            $0.AdminListMemberGovernanceAuditResponse>(
+        'AdminListMemberGovernanceAudit',
+        adminListMemberGovernanceAudit_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminListMemberGovernanceAuditRequest.fromBuffer(value),
+        ($0.AdminListMemberGovernanceAuditResponse value) =>
+            value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<
+            $0.AdminCertifyPolicyDiffOrObserverBoundaryRequest,
+            $0.AdminCertifyPolicyDiffOrObserverBoundaryResponse>(
+        'AdminCertifyPolicyDiffOrObserverBoundary',
+        adminCertifyPolicyDiffOrObserverBoundary_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminCertifyPolicyDiffOrObserverBoundaryRequest.fromBuffer(
+                value),
+        ($0.AdminCertifyPolicyDiffOrObserverBoundaryResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.GetScoreBreakdownResponse> getScoreBreakdown_Pre(
@@ -1396,4 +3402,896 @@ abstract class EmpireServiceBase extends $grpc.Service {
 
   $async.Future<$0.GetYearInEmpireResponse> getYearInEmpire(
       $grpc.ServiceCall call, $0.GetYearInEmpireRequest request);
+
+  $async.Future<$0.GetStandingConstitutionWorkbenchResponse>
+      getStandingConstitutionWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetStandingConstitutionWorkbenchRequest>
+              $request) async {
+    return getStandingConstitutionWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetStandingConstitutionWorkbenchResponse>
+      getStandingConstitutionWorkbench($grpc.ServiceCall call,
+          $0.GetStandingConstitutionWorkbenchRequest request);
+
+  $async.Future<$0.UpdateStandingConstitutionModeResponse>
+      updateStandingConstitutionMode_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateStandingConstitutionModeRequest>
+              $request) async {
+    return updateStandingConstitutionMode($call, await $request);
+  }
+
+  $async.Future<$0.UpdateStandingConstitutionModeResponse>
+      updateStandingConstitutionMode($grpc.ServiceCall call,
+          $0.UpdateStandingConstitutionModeRequest request);
+
+  $async.Future<$0.FileStandingDisputeOrRecomputeResponse>
+      fileStandingDisputeOrRecompute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.FileStandingDisputeOrRecomputeRequest>
+              $request) async {
+    return fileStandingDisputeOrRecompute($call, await $request);
+  }
+
+  $async.Future<$0.FileStandingDisputeOrRecomputeResponse>
+      fileStandingDisputeOrRecompute($grpc.ServiceCall call,
+          $0.FileStandingDisputeOrRecomputeRequest request);
+
+  $async.Future<$0.AdminListStandingConstitutionAuditResponse>
+      adminListStandingConstitutionAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListStandingConstitutionAuditRequest>
+              $request) async {
+    return adminListStandingConstitutionAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListStandingConstitutionAuditResponse>
+      adminListStandingConstitutionAudit($grpc.ServiceCall call,
+          $0.AdminListStandingConstitutionAuditRequest request);
+
+  $async.Future<$0.AdminResolveStandingDisputeOrPolicyResponse>
+      adminResolveStandingDisputeOrPolicy_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminResolveStandingDisputeOrPolicyRequest>
+              $request) async {
+    return adminResolveStandingDisputeOrPolicy($call, await $request);
+  }
+
+  $async.Future<$0.AdminResolveStandingDisputeOrPolicyResponse>
+      adminResolveStandingDisputeOrPolicy($grpc.ServiceCall call,
+          $0.AdminResolveStandingDisputeOrPolicyRequest request);
+
+  $async.Future<$0.GetTwelvePillarTodayWorkbenchResponse>
+      getTwelvePillarTodayWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetTwelvePillarTodayWorkbenchRequest>
+              $request) async {
+    return getTwelvePillarTodayWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetTwelvePillarTodayWorkbenchResponse>
+      getTwelvePillarTodayWorkbench($grpc.ServiceCall call,
+          $0.GetTwelvePillarTodayWorkbenchRequest request);
+
+  $async.Future<$0.UpdateTodayCardDispositionResponse>
+      updateTodayCardDisposition_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdateTodayCardDispositionRequest> $request) async {
+    return updateTodayCardDisposition($call, await $request);
+  }
+
+  $async.Future<$0.UpdateTodayCardDispositionResponse>
+      updateTodayCardDisposition(
+          $grpc.ServiceCall call, $0.UpdateTodayCardDispositionRequest request);
+
+  $async.Future<$0.ResolveCrossPillarConflictResponse>
+      resolveCrossPillarConflict_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ResolveCrossPillarConflictRequest> $request) async {
+    return resolveCrossPillarConflict($call, await $request);
+  }
+
+  $async.Future<$0.ResolveCrossPillarConflictResponse>
+      resolveCrossPillarConflict(
+          $grpc.ServiceCall call, $0.ResolveCrossPillarConflictRequest request);
+
+  $async.Future<$0.UpdateTodayOperatingModeResponse>
+      updateTodayOperatingMode_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.UpdateTodayOperatingModeRequest> $request) async {
+    return updateTodayOperatingMode($call, await $request);
+  }
+
+  $async.Future<$0.UpdateTodayOperatingModeResponse> updateTodayOperatingMode(
+      $grpc.ServiceCall call, $0.UpdateTodayOperatingModeRequest request);
+
+  $async.Future<$0.AdminListTwelvePillarTodayAuditResponse>
+      adminListTwelvePillarTodayAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListTwelvePillarTodayAuditRequest>
+              $request) async {
+    return adminListTwelvePillarTodayAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListTwelvePillarTodayAuditResponse>
+      adminListTwelvePillarTodayAudit($grpc.ServiceCall call,
+          $0.AdminListTwelvePillarTodayAuditRequest request);
+
+  $async.Future<$0.AdminManageTodayContractOrOutageResponse>
+      adminManageTodayContractOrOutage_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminManageTodayContractOrOutageRequest>
+              $request) async {
+    return adminManageTodayContractOrOutage($call, await $request);
+  }
+
+  $async.Future<$0.AdminManageTodayContractOrOutageResponse>
+      adminManageTodayContractOrOutage($grpc.ServiceCall call,
+          $0.AdminManageTodayContractOrOutageRequest request);
+
+  $async.Future<$0.GetGoalOrchestratorWorkbenchResponse>
+      getGoalOrchestratorWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetGoalOrchestratorWorkbenchRequest>
+              $request) async {
+    return getGoalOrchestratorWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetGoalOrchestratorWorkbenchResponse>
+      getGoalOrchestratorWorkbench($grpc.ServiceCall call,
+          $0.GetGoalOrchestratorWorkbenchRequest request);
+
+  $async.Future<$0.CreateOrReplanLifeSeasonCampaignResponse>
+      createOrReplanLifeSeasonCampaign_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateOrReplanLifeSeasonCampaignRequest>
+              $request) async {
+    return createOrReplanLifeSeasonCampaign($call, await $request);
+  }
+
+  $async.Future<$0.CreateOrReplanLifeSeasonCampaignResponse>
+      createOrReplanLifeSeasonCampaign($grpc.ServiceCall call,
+          $0.CreateOrReplanLifeSeasonCampaignRequest request);
+
+  $async.Future<$0.ApproveOrCompleteCampaignMilestoneResponse>
+      approveOrCompleteCampaignMilestone_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveOrCompleteCampaignMilestoneRequest>
+              $request) async {
+    return approveOrCompleteCampaignMilestone($call, await $request);
+  }
+
+  $async.Future<$0.ApproveOrCompleteCampaignMilestoneResponse>
+      approveOrCompleteCampaignMilestone($grpc.ServiceCall call,
+          $0.ApproveOrCompleteCampaignMilestoneRequest request);
+
+  $async.Future<$0.AdminListGoalOrchestratorAuditResponse>
+      adminListGoalOrchestratorAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListGoalOrchestratorAuditRequest>
+              $request) async {
+    return adminListGoalOrchestratorAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListGoalOrchestratorAuditResponse>
+      adminListGoalOrchestratorAudit($grpc.ServiceCall call,
+          $0.AdminListGoalOrchestratorAuditRequest request);
+
+  $async.Future<$0.AdminModerateCampaignCapabilityOrHandoffResponse>
+      adminModerateCampaignCapabilityOrHandoff_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateCampaignCapabilityOrHandoffRequest>
+              $request) async {
+    return adminModerateCampaignCapabilityOrHandoff($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateCampaignCapabilityOrHandoffResponse>
+      adminModerateCampaignCapabilityOrHandoff($grpc.ServiceCall call,
+          $0.AdminModerateCampaignCapabilityOrHandoffRequest request);
+
+  $async.Future<$0.GetAchievementWalletWorkbenchResponse>
+      getAchievementWalletWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetAchievementWalletWorkbenchRequest>
+              $request) async {
+    return getAchievementWalletWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetAchievementWalletWorkbenchResponse>
+      getAchievementWalletWorkbench($grpc.ServiceCall call,
+          $0.GetAchievementWalletWorkbenchRequest request);
+
+  $async.Future<$0.MintPortableAchievementCredentialResponse>
+      mintPortableAchievementCredential_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.MintPortableAchievementCredentialRequest>
+              $request) async {
+    return mintPortableAchievementCredential($call, await $request);
+  }
+
+  $async.Future<$0.MintPortableAchievementCredentialResponse>
+      mintPortableAchievementCredential($grpc.ServiceCall call,
+          $0.MintPortableAchievementCredentialRequest request);
+
+  $async.Future<$0.RevokeOrVerifyPortableCredentialResponse>
+      revokeOrVerifyPortableCredential_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RevokeOrVerifyPortableCredentialRequest>
+              $request) async {
+    return revokeOrVerifyPortableCredential($call, await $request);
+  }
+
+  $async.Future<$0.RevokeOrVerifyPortableCredentialResponse>
+      revokeOrVerifyPortableCredential($grpc.ServiceCall call,
+          $0.RevokeOrVerifyPortableCredentialRequest request);
+
+  $async.Future<$0.AdminListAchievementWalletAuditResponse>
+      adminListAchievementWalletAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListAchievementWalletAuditRequest>
+              $request) async {
+    return adminListAchievementWalletAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListAchievementWalletAuditResponse>
+      adminListAchievementWalletAudit($grpc.ServiceCall call,
+          $0.AdminListAchievementWalletAuditRequest request);
+
+  $async.Future<$0.AdminModerateCredentialOrVerifierAbuseResponse>
+      adminModerateCredentialOrVerifierAbuse_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateCredentialOrVerifierAbuseRequest>
+              $request) async {
+    return adminModerateCredentialOrVerifierAbuse($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateCredentialOrVerifierAbuseResponse>
+      adminModerateCredentialOrVerifierAbuse($grpc.ServiceCall call,
+          $0.AdminModerateCredentialOrVerifierAbuseRequest request);
+
+  $async.Future<$0.GetContextualDirectoryWorkbenchResponse>
+      getContextualDirectoryWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetContextualDirectoryWorkbenchRequest>
+              $request) async {
+    return getContextualDirectoryWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetContextualDirectoryWorkbenchResponse>
+      getContextualDirectoryWorkbench($grpc.ServiceCall call,
+          $0.GetContextualDirectoryWorkbenchRequest request);
+
+  $async.Future<$0.UpdateContextualDirectoryProfileResponse>
+      updateContextualDirectoryProfile_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateContextualDirectoryProfileRequest>
+              $request) async {
+    return updateContextualDirectoryProfile($call, await $request);
+  }
+
+  $async.Future<$0.UpdateContextualDirectoryProfileResponse>
+      updateContextualDirectoryProfile($grpc.ServiceCall call,
+          $0.UpdateContextualDirectoryProfileRequest request);
+
+  $async.Future<$0.RequestOrRespondContextualIntroductionResponse>
+      requestOrRespondContextualIntroduction_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RequestOrRespondContextualIntroductionRequest>
+              $request) async {
+    return requestOrRespondContextualIntroduction($call, await $request);
+  }
+
+  $async.Future<$0.RequestOrRespondContextualIntroductionResponse>
+      requestOrRespondContextualIntroduction($grpc.ServiceCall call,
+          $0.RequestOrRespondContextualIntroductionRequest request);
+
+  $async.Future<$0.AdminListContextualDirectoryAuditResponse>
+      adminListContextualDirectoryAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListContextualDirectoryAuditRequest>
+              $request) async {
+    return adminListContextualDirectoryAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListContextualDirectoryAuditResponse>
+      adminListContextualDirectoryAudit($grpc.ServiceCall call,
+          $0.AdminListContextualDirectoryAuditRequest request);
+
+  $async.Future<$0.AdminModerateDirectoryIntroductionAbuseResponse>
+      adminModerateDirectoryIntroductionAbuse_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateDirectoryIntroductionAbuseRequest>
+              $request) async {
+    return adminModerateDirectoryIntroductionAbuse($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateDirectoryIntroductionAbuseResponse>
+      adminModerateDirectoryIntroductionAbuse($grpc.ServiceCall call,
+          $0.AdminModerateDirectoryIntroductionAbuseRequest request);
+
+  $async.Future<$0.GetCirclesCouncilsWorkbenchResponse>
+      getCirclesCouncilsWorkbench_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetCirclesCouncilsWorkbenchRequest> $request) async {
+    return getCirclesCouncilsWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetCirclesCouncilsWorkbenchResponse>
+      getCirclesCouncilsWorkbench($grpc.ServiceCall call,
+          $0.GetCirclesCouncilsWorkbenchRequest request);
+
+  $async.Future<$0.CreateOrUpdateCircleCouncilSpaceResponse>
+      createOrUpdateCircleCouncilSpace_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateOrUpdateCircleCouncilSpaceRequest>
+              $request) async {
+    return createOrUpdateCircleCouncilSpace($call, await $request);
+  }
+
+  $async.Future<$0.CreateOrUpdateCircleCouncilSpaceResponse>
+      createOrUpdateCircleCouncilSpace($grpc.ServiceCall call,
+          $0.CreateOrUpdateCircleCouncilSpaceRequest request);
+
+  $async.Future<$0.RecordCircleArtifactOrCloseSpaceResponse>
+      recordCircleArtifactOrCloseSpace_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordCircleArtifactOrCloseSpaceRequest>
+              $request) async {
+    return recordCircleArtifactOrCloseSpace($call, await $request);
+  }
+
+  $async.Future<$0.RecordCircleArtifactOrCloseSpaceResponse>
+      recordCircleArtifactOrCloseSpace($grpc.ServiceCall call,
+          $0.RecordCircleArtifactOrCloseSpaceRequest request);
+
+  $async.Future<$0.AdminListCirclesCouncilsAuditResponse>
+      adminListCirclesCouncilsAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListCirclesCouncilsAuditRequest>
+              $request) async {
+    return adminListCirclesCouncilsAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListCirclesCouncilsAuditResponse>
+      adminListCirclesCouncilsAudit($grpc.ServiceCall call,
+          $0.AdminListCirclesCouncilsAuditRequest request);
+
+  $async.Future<$0.AdminModerateCircleSpaceOrDisputeResponse>
+      adminModerateCircleSpaceOrDispute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateCircleSpaceOrDisputeRequest>
+              $request) async {
+    return adminModerateCircleSpaceOrDispute($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateCircleSpaceOrDisputeResponse>
+      adminModerateCircleSpaceOrDispute($grpc.ServiceCall call,
+          $0.AdminModerateCircleSpaceOrDisputeRequest request);
+
+  $async.Future<$0.GetExperienceAccessPassportWorkbenchResponse>
+      getExperienceAccessPassportWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetExperienceAccessPassportWorkbenchRequest>
+              $request) async {
+    return getExperienceAccessPassportWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetExperienceAccessPassportWorkbenchResponse>
+      getExperienceAccessPassportWorkbench($grpc.ServiceCall call,
+          $0.GetExperienceAccessPassportWorkbenchRequest request);
+
+  $async.Future<$0.ReserveOrUpdateExperiencePassportItemResponse>
+      reserveOrUpdateExperiencePassportItem_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ReserveOrUpdateExperiencePassportItemRequest>
+              $request) async {
+    return reserveOrUpdateExperiencePassportItem($call, await $request);
+  }
+
+  $async.Future<$0.ReserveOrUpdateExperiencePassportItemResponse>
+      reserveOrUpdateExperiencePassportItem($grpc.ServiceCall call,
+          $0.ReserveOrUpdateExperiencePassportItemRequest request);
+
+  $async.Future<$0.RecordHostExperienceOperationResponse>
+      recordHostExperienceOperation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordHostExperienceOperationRequest>
+              $request) async {
+    return recordHostExperienceOperation($call, await $request);
+  }
+
+  $async.Future<$0.RecordHostExperienceOperationResponse>
+      recordHostExperienceOperation($grpc.ServiceCall call,
+          $0.RecordHostExperienceOperationRequest request);
+
+  $async.Future<$0.AdminListExperienceAccessPassportAuditResponse>
+      adminListExperienceAccessPassportAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListExperienceAccessPassportAuditRequest>
+              $request) async {
+    return adminListExperienceAccessPassportAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListExperienceAccessPassportAuditResponse>
+      adminListExperienceAccessPassportAudit($grpc.ServiceCall call,
+          $0.AdminListExperienceAccessPassportAuditRequest request);
+
+  $async.Future<$0.AdminReconcileExperienceReservationOrAppealResponse>
+      adminReconcileExperienceReservationOrAppeal_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminReconcileExperienceReservationOrAppealRequest>
+              $request) async {
+    return adminReconcileExperienceReservationOrAppeal($call, await $request);
+  }
+
+  $async.Future<$0.AdminReconcileExperienceReservationOrAppealResponse>
+      adminReconcileExperienceReservationOrAppeal($grpc.ServiceCall call,
+          $0.AdminReconcileExperienceReservationOrAppealRequest request);
+
+  $async.Future<$0.GetMemberFeedEditorialWorkbenchResponse>
+      getMemberFeedEditorialWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetMemberFeedEditorialWorkbenchRequest>
+              $request) async {
+    return getMemberFeedEditorialWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetMemberFeedEditorialWorkbenchResponse>
+      getMemberFeedEditorialWorkbench($grpc.ServiceCall call,
+          $0.GetMemberFeedEditorialWorkbenchRequest request);
+
+  $async.Future<$0.PreviewPublishOrRevokeFeedShareResponse>
+      previewPublishOrRevokeFeedShare_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PreviewPublishOrRevokeFeedShareRequest>
+              $request) async {
+    return previewPublishOrRevokeFeedShare($call, await $request);
+  }
+
+  $async.Future<$0.PreviewPublishOrRevokeFeedShareResponse>
+      previewPublishOrRevokeFeedShare($grpc.ServiceCall call,
+          $0.PreviewPublishOrRevokeFeedShareRequest request);
+
+  $async.Future<$0.RecordEditorialCorrectionOrResetModeResponse>
+      recordEditorialCorrectionOrResetMode_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordEditorialCorrectionOrResetModeRequest>
+              $request) async {
+    return recordEditorialCorrectionOrResetMode($call, await $request);
+  }
+
+  $async.Future<$0.RecordEditorialCorrectionOrResetModeResponse>
+      recordEditorialCorrectionOrResetMode($grpc.ServiceCall call,
+          $0.RecordEditorialCorrectionOrResetModeRequest request);
+
+  $async.Future<$0.AdminListMemberFeedEditorialAuditResponse>
+      adminListMemberFeedEditorialAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListMemberFeedEditorialAuditRequest>
+              $request) async {
+    return adminListMemberFeedEditorialAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListMemberFeedEditorialAuditResponse>
+      adminListMemberFeedEditorialAudit($grpc.ServiceCall call,
+          $0.AdminListMemberFeedEditorialAuditRequest request);
+
+  $async.Future<$0.AdminModerateFeedShareOrEditorialCorrectionResponse>
+      adminModerateFeedShareOrEditorialCorrection_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateFeedShareOrEditorialCorrectionRequest>
+              $request) async {
+    return adminModerateFeedShareOrEditorialCorrection($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateFeedShareOrEditorialCorrectionResponse>
+      adminModerateFeedShareOrEditorialCorrection($grpc.ServiceCall call,
+          $0.AdminModerateFeedShareOrEditorialCorrectionRequest request);
+
+  $async.Future<$0.GetContributionLedgerWorkbenchResponse>
+      getContributionLedgerWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetContributionLedgerWorkbenchRequest>
+              $request) async {
+    return getContributionLedgerWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetContributionLedgerWorkbenchResponse>
+      getContributionLedgerWorkbench($grpc.ServiceCall call,
+          $0.GetContributionLedgerWorkbenchRequest request);
+
+  $async.Future<$0.RecordContributionOrGratitudeEndorsementResponse>
+      recordContributionOrGratitudeEndorsement_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RecordContributionOrGratitudeEndorsementRequest>
+              $request) async {
+    return recordContributionOrGratitudeEndorsement($call, await $request);
+  }
+
+  $async.Future<$0.RecordContributionOrGratitudeEndorsementResponse>
+      recordContributionOrGratitudeEndorsement($grpc.ServiceCall call,
+          $0.RecordContributionOrGratitudeEndorsementRequest request);
+
+  $async.Future<$0.UpdateContributionVisibilityOrCorrectionResponse>
+      updateContributionVisibilityOrCorrection_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateContributionVisibilityOrCorrectionRequest>
+              $request) async {
+    return updateContributionVisibilityOrCorrection($call, await $request);
+  }
+
+  $async.Future<$0.UpdateContributionVisibilityOrCorrectionResponse>
+      updateContributionVisibilityOrCorrection($grpc.ServiceCall call,
+          $0.UpdateContributionVisibilityOrCorrectionRequest request);
+
+  $async.Future<$0.AdminListContributionLedgerAuditResponse>
+      adminListContributionLedgerAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListContributionLedgerAuditRequest>
+              $request) async {
+    return adminListContributionLedgerAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListContributionLedgerAuditResponse>
+      adminListContributionLedgerAudit($grpc.ServiceCall call,
+          $0.AdminListContributionLedgerAuditRequest request);
+
+  $async.Future<$0.AdminModerateContributionCollusionOrSponsorResponse>
+      adminModerateContributionCollusionOrSponsor_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminModerateContributionCollusionOrSponsorRequest>
+              $request) async {
+    return adminModerateContributionCollusionOrSponsor($call, await $request);
+  }
+
+  $async.Future<$0.AdminModerateContributionCollusionOrSponsorResponse>
+      adminModerateContributionCollusionOrSponsor($grpc.ServiceCall call,
+          $0.AdminModerateContributionCollusionOrSponsorRequest request);
+
+  $async.Future<$0.GetBenefitsMarketplaceWorkbenchResponse>
+      getBenefitsMarketplaceWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetBenefitsMarketplaceWorkbenchRequest>
+              $request) async {
+    return getBenefitsMarketplaceWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetBenefitsMarketplaceWorkbenchResponse>
+      getBenefitsMarketplaceWorkbench($grpc.ServiceCall call,
+          $0.GetBenefitsMarketplaceWorkbenchRequest request);
+
+  $async.Future<$0.QuoteOrRedeemBenefitOfferResponse>
+      quoteOrRedeemBenefitOffer_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.QuoteOrRedeemBenefitOfferRequest> $request) async {
+    return quoteOrRedeemBenefitOffer($call, await $request);
+  }
+
+  $async.Future<$0.QuoteOrRedeemBenefitOfferResponse> quoteOrRedeemBenefitOffer(
+      $grpc.ServiceCall call, $0.QuoteOrRedeemBenefitOfferRequest request);
+
+  $async.Future<$0.UpdateRedemptionDisputeOrCancelResponse>
+      updateRedemptionDisputeOrCancel_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateRedemptionDisputeOrCancelRequest>
+              $request) async {
+    return updateRedemptionDisputeOrCancel($call, await $request);
+  }
+
+  $async.Future<$0.UpdateRedemptionDisputeOrCancelResponse>
+      updateRedemptionDisputeOrCancel($grpc.ServiceCall call,
+          $0.UpdateRedemptionDisputeOrCancelRequest request);
+
+  $async.Future<$0.AdminListBenefitsMarketplaceAuditResponse>
+      adminListBenefitsMarketplaceAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListBenefitsMarketplaceAuditRequest>
+              $request) async {
+    return adminListBenefitsMarketplaceAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListBenefitsMarketplaceAuditResponse>
+      adminListBenefitsMarketplaceAudit($grpc.ServiceCall call,
+          $0.AdminListBenefitsMarketplaceAuditRequest request);
+
+  $async.Future<$0.AdminReconcileBenefitPointsOrRedemptionResponse>
+      adminReconcileBenefitPointsOrRedemption_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminReconcileBenefitPointsOrRedemptionRequest>
+              $request) async {
+    return adminReconcileBenefitPointsOrRedemption($call, await $request);
+  }
+
+  $async.Future<$0.AdminReconcileBenefitPointsOrRedemptionResponse>
+      adminReconcileBenefitPointsOrRedemption($grpc.ServiceCall call,
+          $0.AdminReconcileBenefitPointsOrRedemptionRequest request);
+
+  $async.Future<$0.GetMembershipHouseholdWorkbenchResponse>
+      getMembershipHouseholdWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetMembershipHouseholdWorkbenchRequest>
+              $request) async {
+    return getMembershipHouseholdWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetMembershipHouseholdWorkbenchResponse>
+      getMembershipHouseholdWorkbench($grpc.ServiceCall call,
+          $0.GetMembershipHouseholdWorkbenchRequest request);
+
+  $async.Future<$0.PreviewOrExecuteMembershipLifecycleActionResponse>
+      previewOrExecuteMembershipLifecycleAction_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.PreviewOrExecuteMembershipLifecycleActionRequest>
+              $request) async {
+    return previewOrExecuteMembershipLifecycleAction($call, await $request);
+  }
+
+  $async.Future<$0.PreviewOrExecuteMembershipLifecycleActionResponse>
+      previewOrExecuteMembershipLifecycleAction($grpc.ServiceCall call,
+          $0.PreviewOrExecuteMembershipLifecycleActionRequest request);
+
+  $async.Future<$0.ManageHouseholdMemberSeatResponse>
+      manageHouseholdMemberSeat_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.ManageHouseholdMemberSeatRequest> $request) async {
+    return manageHouseholdMemberSeat($call, await $request);
+  }
+
+  $async.Future<$0.ManageHouseholdMemberSeatResponse> manageHouseholdMemberSeat(
+      $grpc.ServiceCall call, $0.ManageHouseholdMemberSeatRequest request);
+
+  $async.Future<$0.AdminListMembershipHouseholdAuditResponse>
+      adminListMembershipHouseholdAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListMembershipHouseholdAuditRequest>
+              $request) async {
+    return adminListMembershipHouseholdAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListMembershipHouseholdAuditResponse>
+      adminListMembershipHouseholdAudit($grpc.ServiceCall call,
+          $0.AdminListMembershipHouseholdAuditRequest request);
+
+  $async.Future<$0.AdminResolveHardshipOrHouseholdDisputeResponse>
+      adminResolveHardshipOrHouseholdDispute_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminResolveHardshipOrHouseholdDisputeRequest>
+              $request) async {
+    return adminResolveHardshipOrHouseholdDispute($call, await $request);
+  }
+
+  $async.Future<$0.AdminResolveHardshipOrHouseholdDisputeResponse>
+      adminResolveHardshipOrHouseholdDispute($grpc.ServiceCall call,
+          $0.AdminResolveHardshipOrHouseholdDisputeRequest request);
+
+  $async.Future<$0.GetUnifiedInboxWorkbenchResponse>
+      getUnifiedInboxWorkbench_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.GetUnifiedInboxWorkbenchRequest> $request) async {
+    return getUnifiedInboxWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetUnifiedInboxWorkbenchResponse> getUnifiedInboxWorkbench(
+      $grpc.ServiceCall call, $0.GetUnifiedInboxWorkbenchRequest request);
+
+  $async.Future<$0.UpdateCommunicationChannelControlResponse>
+      updateCommunicationChannelControl_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.UpdateCommunicationChannelControlRequest>
+              $request) async {
+    return updateCommunicationChannelControl($call, await $request);
+  }
+
+  $async.Future<$0.UpdateCommunicationChannelControlResponse>
+      updateCommunicationChannelControl($grpc.ServiceCall call,
+          $0.UpdateCommunicationChannelControlRequest request);
+
+  $async.Future<$0.AcknowledgeOrDeleteInboxDispatchResponse>
+      acknowledgeOrDeleteInboxDispatch_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AcknowledgeOrDeleteInboxDispatchRequest>
+              $request) async {
+    return acknowledgeOrDeleteInboxDispatch($call, await $request);
+  }
+
+  $async.Future<$0.AcknowledgeOrDeleteInboxDispatchResponse>
+      acknowledgeOrDeleteInboxDispatch($grpc.ServiceCall call,
+          $0.AcknowledgeOrDeleteInboxDispatchRequest request);
+
+  $async.Future<$0.AdminListUnifiedInboxAuditResponse>
+      adminListUnifiedInboxAudit_Pre($grpc.ServiceCall $call,
+          $async.Future<$0.AdminListUnifiedInboxAuditRequest> $request) async {
+    return adminListUnifiedInboxAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListUnifiedInboxAuditResponse>
+      adminListUnifiedInboxAudit(
+          $grpc.ServiceCall call, $0.AdminListUnifiedInboxAuditRequest request);
+
+  $async.Future<$0.AdminManageRequiredNoticeOrBurstPolicyResponse>
+      adminManageRequiredNoticeOrBurstPolicy_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminManageRequiredNoticeOrBurstPolicyRequest>
+              $request) async {
+    return adminManageRequiredNoticeOrBurstPolicy($call, await $request);
+  }
+
+  $async.Future<$0.AdminManageRequiredNoticeOrBurstPolicyResponse>
+      adminManageRequiredNoticeOrBurstPolicy($grpc.ServiceCall call,
+          $0.AdminManageRequiredNoticeOrBurstPolicyRequest request);
+
+  $async.Future<$0.GetEcosystemConciergeWorkbenchResponse>
+      getEcosystemConciergeWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetEcosystemConciergeWorkbenchRequest>
+              $request) async {
+    return getEcosystemConciergeWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetEcosystemConciergeWorkbenchResponse>
+      getEcosystemConciergeWorkbench($grpc.ServiceCall call,
+          $0.GetEcosystemConciergeWorkbenchRequest request);
+
+  $async.Future<$0.CreateOrUpdateConciergeRequestResponse>
+      createOrUpdateConciergeRequest_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.CreateOrUpdateConciergeRequestRequest>
+              $request) async {
+    return createOrUpdateConciergeRequest($call, await $request);
+  }
+
+  $async.Future<$0.CreateOrUpdateConciergeRequestResponse>
+      createOrUpdateConciergeRequest($grpc.ServiceCall call,
+          $0.CreateOrUpdateConciergeRequestRequest request);
+
+  $async.Future<$0.ApproveOrEscalateConciergePacketResponse>
+      approveOrEscalateConciergePacket_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.ApproveOrEscalateConciergePacketRequest>
+              $request) async {
+    return approveOrEscalateConciergePacket($call, await $request);
+  }
+
+  $async.Future<$0.ApproveOrEscalateConciergePacketResponse>
+      approveOrEscalateConciergePacket($grpc.ServiceCall call,
+          $0.ApproveOrEscalateConciergePacketRequest request);
+
+  $async.Future<$0.AdminListEcosystemConciergeAuditResponse>
+      adminListEcosystemConciergeAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListEcosystemConciergeAuditRequest>
+              $request) async {
+    return adminListEcosystemConciergeAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListEcosystemConciergeAuditResponse>
+      adminListEcosystemConciergeAudit($grpc.ServiceCall call,
+          $0.AdminListEcosystemConciergeAuditRequest request);
+
+  $async.Future<$0.AdminResolveConciergeCommitmentOrEscalationResponse>
+      adminResolveConciergeCommitmentOrEscalation_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminResolveConciergeCommitmentOrEscalationRequest>
+              $request) async {
+    return adminResolveConciergeCommitmentOrEscalation($call, await $request);
+  }
+
+  $async.Future<$0.AdminResolveConciergeCommitmentOrEscalationResponse>
+      adminResolveConciergeCommitmentOrEscalation($grpc.ServiceCall call,
+          $0.AdminResolveConciergeCommitmentOrEscalationRequest request);
+
+  $async.Future<$0.GetPersonalReviewNarrativeWorkbenchResponse>
+      getPersonalReviewNarrativeWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetPersonalReviewNarrativeWorkbenchRequest>
+              $request) async {
+    return getPersonalReviewNarrativeWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetPersonalReviewNarrativeWorkbenchResponse>
+      getPersonalReviewNarrativeWorkbench($grpc.ServiceCall call,
+          $0.GetPersonalReviewNarrativeWorkbenchRequest request);
+
+  $async.Future<$0.GenerateOrRedactLifeNarrativeReviewResponse>
+      generateOrRedactLifeNarrativeReview_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GenerateOrRedactLifeNarrativeReviewRequest>
+              $request) async {
+    return generateOrRedactLifeNarrativeReview($call, await $request);
+  }
+
+  $async.Future<$0.GenerateOrRedactLifeNarrativeReviewResponse>
+      generateOrRedactLifeNarrativeReview($grpc.ServiceCall call,
+          $0.GenerateOrRedactLifeNarrativeReviewRequest request);
+
+  $async.Future<$0.OrderOrManagePrintedYearbookArtifactResponse>
+      orderOrManagePrintedYearbookArtifact_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.OrderOrManagePrintedYearbookArtifactRequest>
+              $request) async {
+    return orderOrManagePrintedYearbookArtifact($call, await $request);
+  }
+
+  $async.Future<$0.OrderOrManagePrintedYearbookArtifactResponse>
+      orderOrManagePrintedYearbookArtifact($grpc.ServiceCall call,
+          $0.OrderOrManagePrintedYearbookArtifactRequest request);
+
+  $async.Future<$0.AdminListPersonalReviewNarrativeAuditResponse>
+      adminListPersonalReviewNarrativeAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListPersonalReviewNarrativeAuditRequest>
+              $request) async {
+    return adminListPersonalReviewNarrativeAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListPersonalReviewNarrativeAuditResponse>
+      adminListPersonalReviewNarrativeAudit($grpc.ServiceCall call,
+          $0.AdminListPersonalReviewNarrativeAuditRequest request);
+
+  $async.Future<$0.AdminManagePrintJobOrAddressPurgeResponse>
+      adminManagePrintJobOrAddressPurge_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminManagePrintJobOrAddressPurgeRequest>
+              $request) async {
+    return adminManagePrintJobOrAddressPurge($call, await $request);
+  }
+
+  $async.Future<$0.AdminManagePrintJobOrAddressPurgeResponse>
+      adminManagePrintJobOrAddressPurge($grpc.ServiceCall call,
+          $0.AdminManagePrintJobOrAddressPurgeRequest request);
+
+  $async.Future<$0.GetMemberGovernanceAuditWorkbenchResponse>
+      getMemberGovernanceAuditWorkbench_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.GetMemberGovernanceAuditWorkbenchRequest>
+              $request) async {
+    return getMemberGovernanceAuditWorkbench($call, await $request);
+  }
+
+  $async.Future<$0.GetMemberGovernanceAuditWorkbenchResponse>
+      getMemberGovernanceAuditWorkbench($grpc.ServiceCall call,
+          $0.GetMemberGovernanceAuditWorkbenchRequest request);
+
+  $async.Future<$0.SubmitAdvisoryPolicyProposalOrVoteResponse>
+      submitAdvisoryPolicyProposalOrVote_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.SubmitAdvisoryPolicyProposalOrVoteRequest>
+              $request) async {
+    return submitAdvisoryPolicyProposalOrVote($call, await $request);
+  }
+
+  $async.Future<$0.SubmitAdvisoryPolicyProposalOrVoteResponse>
+      submitAdvisoryPolicyProposalOrVote($grpc.ServiceCall call,
+          $0.SubmitAdvisoryPolicyProposalOrVoteRequest request);
+
+  $async.Future<$0.RequestDecisionRemedyOrInspectPrecedentResponse>
+      requestDecisionRemedyOrInspectPrecedent_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.RequestDecisionRemedyOrInspectPrecedentRequest>
+              $request) async {
+    return requestDecisionRemedyOrInspectPrecedent($call, await $request);
+  }
+
+  $async.Future<$0.RequestDecisionRemedyOrInspectPrecedentResponse>
+      requestDecisionRemedyOrInspectPrecedent($grpc.ServiceCall call,
+          $0.RequestDecisionRemedyOrInspectPrecedentRequest request);
+
+  $async.Future<$0.AdminListMemberGovernanceAuditResponse>
+      adminListMemberGovernanceAudit_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminListMemberGovernanceAuditRequest>
+              $request) async {
+    return adminListMemberGovernanceAudit($call, await $request);
+  }
+
+  $async.Future<$0.AdminListMemberGovernanceAuditResponse>
+      adminListMemberGovernanceAudit($grpc.ServiceCall call,
+          $0.AdminListMemberGovernanceAuditRequest request);
+
+  $async.Future<$0.AdminCertifyPolicyDiffOrObserverBoundaryResponse>
+      adminCertifyPolicyDiffOrObserverBoundary_Pre(
+          $grpc.ServiceCall $call,
+          $async.Future<$0.AdminCertifyPolicyDiffOrObserverBoundaryRequest>
+              $request) async {
+    return adminCertifyPolicyDiffOrObserverBoundary($call, await $request);
+  }
+
+  $async.Future<$0.AdminCertifyPolicyDiffOrObserverBoundaryResponse>
+      adminCertifyPolicyDiffOrObserverBoundary($grpc.ServiceCall call,
+          $0.AdminCertifyPolicyDiffOrObserverBoundaryRequest request);
 }

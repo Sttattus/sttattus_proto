@@ -19,13 +19,58 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AdminService_ListUsers_FullMethodName         = "/sttattus.admin.v1.AdminService/ListUsers"
-	AdminService_GetUser_FullMethodName           = "/sttattus.admin.v1.AdminService/GetUser"
-	AdminService_BanUser_FullMethodName           = "/sttattus.admin.v1.AdminService/BanUser"
-	AdminService_BulkAction_FullMethodName        = "/sttattus.admin.v1.AdminService/BulkAction"
-	AdminService_ListAuditLogs_FullMethodName     = "/sttattus.admin.v1.AdminService/ListAuditLogs"
-	AdminService_ListDeviceGrants_FullMethodName  = "/sttattus.admin.v1.AdminService/ListDeviceGrants"
-	AdminService_RevokeDeviceGrant_FullMethodName = "/sttattus.admin.v1.AdminService/RevokeDeviceGrant"
+	AdminService_ListUsers_FullMethodName                                 = "/sttattus.admin.v1.AdminService/ListUsers"
+	AdminService_GetUser_FullMethodName                                   = "/sttattus.admin.v1.AdminService/GetUser"
+	AdminService_BanUser_FullMethodName                                   = "/sttattus.admin.v1.AdminService/BanUser"
+	AdminService_BulkAction_FullMethodName                                = "/sttattus.admin.v1.AdminService/BulkAction"
+	AdminService_ListAuditLogs_FullMethodName                             = "/sttattus.admin.v1.AdminService/ListAuditLogs"
+	AdminService_ListDeviceGrants_FullMethodName                          = "/sttattus.admin.v1.AdminService/ListDeviceGrants"
+	AdminService_RevokeDeviceGrant_FullMethodName                         = "/sttattus.admin.v1.AdminService/RevokeDeviceGrant"
+	AdminService_GetUniversalWorkItemCaseOverview_FullMethodName          = "/sttattus.admin.v1.AdminService/GetUniversalWorkItemCaseOverview"
+	AdminService_UpsertWorkItemAdapterRule_FullMethodName                 = "/sttattus.admin.v1.AdminService/UpsertWorkItemAdapterRule"
+	AdminService_TransitionUniversalWorkItemState_FullMethodName          = "/sttattus.admin.v1.AdminService/TransitionUniversalWorkItemState"
+	AdminService_GetRoutingSkillsSlaOverview_FullMethodName               = "/sttattus.admin.v1.AdminService/GetRoutingSkillsSlaOverview"
+	AdminService_UpsertStaffSkillCapacityProfile_FullMethodName           = "/sttattus.admin.v1.AdminService/UpsertStaffSkillCapacityProfile"
+	AdminService_TriggerSlaBreachEscalation_FullMethodName                = "/sttattus.admin.v1.AdminService/TriggerSlaBreachEscalation"
+	AdminService_GetEvidenceSopDecisionOverview_FullMethodName            = "/sttattus.admin.v1.AdminService/GetEvidenceSopDecisionOverview"
+	AdminService_RecordEvidenceCustodyAssertion_FullMethodName            = "/sttattus.admin.v1.AdminService/RecordEvidenceCustodyAssertion"
+	AdminService_CommitFourEyesSopDecision_FullMethodName                 = "/sttattus.admin.v1.AdminService/CommitFourEyesSopDecision"
+	AdminService_GetCommunicationsConciergeOverview_FullMethodName        = "/sttattus.admin.v1.AdminService/GetCommunicationsConciergeOverview"
+	AdminService_SaveApprovedMacroOrDraft_FullMethodName                  = "/sttattus.admin.v1.AdminService/SaveApprovedMacroOrDraft"
+	AdminService_DispatchReviewedMemberReply_FullMethodName               = "/sttattus.admin.v1.AdminService/DispatchReviewedMemberReply"
+	AdminService_GetVerificationAutomationAppealsOverview_FullMethodName  = "/sttattus.admin.v1.AdminService/GetVerificationAutomationAppealsOverview"
+	AdminService_EvaluateExplainableVerificationRule_FullMethodName       = "/sttattus.admin.v1.AdminService/EvaluateExplainableVerificationRule"
+	AdminService_ResolveMemberVerificationAppeal_FullMethodName           = "/sttattus.admin.v1.AdminService/ResolveMemberVerificationAppeal"
+	AdminService_GetCatalogContentPolicyStudioOverview_FullMethodName     = "/sttattus.admin.v1.AdminService/GetCatalogContentPolicyStudioOverview"
+	AdminService_StageCatalogOrPolicyRelease_FullMethodName               = "/sttattus.admin.v1.AdminService/StageCatalogOrPolicyRelease"
+	AdminService_PublishOrRollbackStudioRelease_FullMethodName            = "/sttattus.admin.v1.AdminService/PublishOrRollbackStudioRelease"
+	AdminService_GetPlatformReconciliationOpsOverview_FullMethodName      = "/sttattus.admin.v1.AdminService/GetPlatformReconciliationOpsOverview"
+	AdminService_RunSyntheticJourneyOrInvariantCheck_FullMethodName       = "/sttattus.admin.v1.AdminService/RunSyntheticJourneyOrInvariantCheck"
+	AdminService_ReplayDeadLetterOrDryRunRepair_FullMethodName            = "/sttattus.admin.v1.AdminService/ReplayDeadLetterOrDryRunRepair"
+	AdminService_GetAiControlQualityCalibrationOverview_FullMethodName    = "/sttattus.admin.v1.AdminService/GetAiControlQualityCalibrationOverview"
+	AdminService_RegisterModelDeploymentManifest_FullMethodName           = "/sttattus.admin.v1.AdminService/RegisterModelDeploymentManifest"
+	AdminService_RecordBlindQaCalibrationReview_FullMethodName            = "/sttattus.admin.v1.AdminService/RecordBlindQaCalibrationReview"
+	AdminService_GetSecurityPrivacyRecoveryOverview_FullMethodName        = "/sttattus.admin.v1.AdminService/GetSecurityPrivacyRecoveryOverview"
+	AdminService_RequestJitPrivilegedElevation_FullMethodName             = "/sttattus.admin.v1.AdminService/RequestJitPrivilegedElevation"
+	AdminService_ExecutePrivacyOrAccountRecoveryCase_FullMethodName       = "/sttattus.admin.v1.AdminService/ExecutePrivacyOrAccountRecoveryCase"
+	AdminService_GetFraudAbuseTrustGraphOverview_FullMethodName           = "/sttattus.admin.v1.AdminService/GetFraudAbuseTrustGraphOverview"
+	AdminService_LogExplainableTrustSignalCluster_FullMethodName          = "/sttattus.admin.v1.AdminService/LogExplainableTrustSignalCluster"
+	AdminService_ApplyReversibleTrustSanction_FullMethodName              = "/sttattus.admin.v1.AdminService/ApplyReversibleTrustSanction"
+	AdminService_GetCommerceEntitlementPayoutOverview_FullMethodName      = "/sttattus.admin.v1.AdminService/GetCommerceEntitlementPayoutOverview"
+	AdminService_CreateLedgerAdjustmentPreview_FullMethodName             = "/sttattus.admin.v1.AdminService/CreateLedgerAdjustmentPreview"
+	AdminService_ReconcileEntitlementOrPartnerPayout_FullMethodName       = "/sttattus.admin.v1.AdminService/ReconcileEntitlementOrPartnerPayout"
+	AdminService_GetMasterIncidentBulkRemediationOverview_FullMethodName  = "/sttattus.admin.v1.AdminService/GetMasterIncidentBulkRemediationOverview"
+	AdminService_StageMasterIncidentCohortPlan_FullMethodName             = "/sttattus.admin.v1.AdminService/StageMasterIncidentCohortPlan"
+	AdminService_FanoutIdempotentBulkRemediation_FullMethodName           = "/sttattus.admin.v1.AdminService/FanoutIdempotentBulkRemediation"
+	AdminService_GetWorkforceLearningCertificationOverview_FullMethodName = "/sttattus.admin.v1.AdminService/GetWorkforceLearningCertificationOverview"
+	AdminService_UpsertStaffCertificationPath_FullMethodName              = "/sttattus.admin.v1.AdminService/UpsertStaffCertificationPath"
+	AdminService_RecordCalibratedSandboxOrCoaching_FullMethodName         = "/sttattus.admin.v1.AdminService/RecordCalibratedSandboxOrCoaching"
+	AdminService_GetSimulationReleaseCertificationOverview_FullMethodName = "/sttattus.admin.v1.AdminService/GetSimulationReleaseCertificationOverview"
+	AdminService_RunFailureClockSimulationScenario_FullMethodName         = "/sttattus.admin.v1.AdminService/RunFailureClockSimulationScenario"
+	AdminService_IssueSignedReleaseCertificate_FullMethodName             = "/sttattus.admin.v1.AdminService/IssueSignedReleaseCertificate"
+	AdminService_GetIndependentAuditObserverOverview_FullMethodName       = "/sttattus.admin.v1.AdminService/GetIndependentAuditObserverOverview"
+	AdminService_CreateTimeBoundObserverEngagement_FullMethodName         = "/sttattus.admin.v1.AdminService/CreateTimeBoundObserverEngagement"
+	AdminService_GenerateWatermarkedControlEvidencePack_FullMethodName    = "/sttattus.admin.v1.AdminService/GenerateWatermarkedControlEvidencePack"
 )
 
 // AdminServiceClient is the client API for AdminService service.
@@ -39,6 +84,52 @@ type AdminServiceClient interface {
 	ListAuditLogs(ctx context.Context, in *ListAuditLogsRequest, opts ...grpc.CallOption) (*ListAuditLogsResponse, error)
 	ListDeviceGrants(ctx context.Context, in *ListDeviceGrantsRequest, opts ...grpc.CallOption) (*ListDeviceGrantsResponse, error)
 	RevokeDeviceGrant(ctx context.Context, in *RevokeDeviceGrantRequest, opts ...grpc.CallOption) (*RevokeDeviceGrantResponse, error)
+	// === Admin Opportunity Choices 1-15 RPCs ===
+	GetUniversalWorkItemCaseOverview(ctx context.Context, in *GetUniversalWorkItemCaseOverviewRequest, opts ...grpc.CallOption) (*GetUniversalWorkItemCaseOverviewResponse, error)
+	UpsertWorkItemAdapterRule(ctx context.Context, in *UpsertWorkItemAdapterRuleRequest, opts ...grpc.CallOption) (*UpsertWorkItemAdapterRuleResponse, error)
+	TransitionUniversalWorkItemState(ctx context.Context, in *TransitionUniversalWorkItemStateRequest, opts ...grpc.CallOption) (*TransitionUniversalWorkItemStateResponse, error)
+	GetRoutingSkillsSlaOverview(ctx context.Context, in *GetRoutingSkillsSlaOverviewRequest, opts ...grpc.CallOption) (*GetRoutingSkillsSlaOverviewResponse, error)
+	UpsertStaffSkillCapacityProfile(ctx context.Context, in *UpsertStaffSkillCapacityProfileRequest, opts ...grpc.CallOption) (*UpsertStaffSkillCapacityProfileResponse, error)
+	TriggerSlaBreachEscalation(ctx context.Context, in *TriggerSlaBreachEscalationRequest, opts ...grpc.CallOption) (*TriggerSlaBreachEscalationResponse, error)
+	GetEvidenceSopDecisionOverview(ctx context.Context, in *GetEvidenceSopDecisionOverviewRequest, opts ...grpc.CallOption) (*GetEvidenceSopDecisionOverviewResponse, error)
+	RecordEvidenceCustodyAssertion(ctx context.Context, in *RecordEvidenceCustodyAssertionRequest, opts ...grpc.CallOption) (*RecordEvidenceCustodyAssertionResponse, error)
+	CommitFourEyesSopDecision(ctx context.Context, in *CommitFourEyesSopDecisionRequest, opts ...grpc.CallOption) (*CommitFourEyesSopDecisionResponse, error)
+	GetCommunicationsConciergeOverview(ctx context.Context, in *GetCommunicationsConciergeOverviewRequest, opts ...grpc.CallOption) (*GetCommunicationsConciergeOverviewResponse, error)
+	SaveApprovedMacroOrDraft(ctx context.Context, in *SaveApprovedMacroOrDraftRequest, opts ...grpc.CallOption) (*SaveApprovedMacroOrDraftResponse, error)
+	DispatchReviewedMemberReply(ctx context.Context, in *DispatchReviewedMemberReplyRequest, opts ...grpc.CallOption) (*DispatchReviewedMemberReplyResponse, error)
+	GetVerificationAutomationAppealsOverview(ctx context.Context, in *GetVerificationAutomationAppealsOverviewRequest, opts ...grpc.CallOption) (*GetVerificationAutomationAppealsOverviewResponse, error)
+	EvaluateExplainableVerificationRule(ctx context.Context, in *EvaluateExplainableVerificationRuleRequest, opts ...grpc.CallOption) (*EvaluateExplainableVerificationRuleResponse, error)
+	ResolveMemberVerificationAppeal(ctx context.Context, in *ResolveMemberVerificationAppealRequest, opts ...grpc.CallOption) (*ResolveMemberVerificationAppealResponse, error)
+	GetCatalogContentPolicyStudioOverview(ctx context.Context, in *GetCatalogContentPolicyStudioOverviewRequest, opts ...grpc.CallOption) (*GetCatalogContentPolicyStudioOverviewResponse, error)
+	StageCatalogOrPolicyRelease(ctx context.Context, in *StageCatalogOrPolicyReleaseRequest, opts ...grpc.CallOption) (*StageCatalogOrPolicyReleaseResponse, error)
+	PublishOrRollbackStudioRelease(ctx context.Context, in *PublishOrRollbackStudioReleaseRequest, opts ...grpc.CallOption) (*PublishOrRollbackStudioReleaseResponse, error)
+	GetPlatformReconciliationOpsOverview(ctx context.Context, in *GetPlatformReconciliationOpsOverviewRequest, opts ...grpc.CallOption) (*GetPlatformReconciliationOpsOverviewResponse, error)
+	RunSyntheticJourneyOrInvariantCheck(ctx context.Context, in *RunSyntheticJourneyOrInvariantCheckRequest, opts ...grpc.CallOption) (*RunSyntheticJourneyOrInvariantCheckResponse, error)
+	ReplayDeadLetterOrDryRunRepair(ctx context.Context, in *ReplayDeadLetterOrDryRunRepairRequest, opts ...grpc.CallOption) (*ReplayDeadLetterOrDryRunRepairResponse, error)
+	GetAiControlQualityCalibrationOverview(ctx context.Context, in *GetAiControlQualityCalibrationOverviewRequest, opts ...grpc.CallOption) (*GetAiControlQualityCalibrationOverviewResponse, error)
+	RegisterModelDeploymentManifest(ctx context.Context, in *RegisterModelDeploymentManifestRequest, opts ...grpc.CallOption) (*RegisterModelDeploymentManifestResponse, error)
+	RecordBlindQaCalibrationReview(ctx context.Context, in *RecordBlindQaCalibrationReviewRequest, opts ...grpc.CallOption) (*RecordBlindQaCalibrationReviewResponse, error)
+	GetSecurityPrivacyRecoveryOverview(ctx context.Context, in *GetSecurityPrivacyRecoveryOverviewRequest, opts ...grpc.CallOption) (*GetSecurityPrivacyRecoveryOverviewResponse, error)
+	RequestJitPrivilegedElevation(ctx context.Context, in *RequestJitPrivilegedElevationRequest, opts ...grpc.CallOption) (*RequestJitPrivilegedElevationResponse, error)
+	ExecutePrivacyOrAccountRecoveryCase(ctx context.Context, in *ExecutePrivacyOrAccountRecoveryCaseRequest, opts ...grpc.CallOption) (*ExecutePrivacyOrAccountRecoveryCaseResponse, error)
+	GetFraudAbuseTrustGraphOverview(ctx context.Context, in *GetFraudAbuseTrustGraphOverviewRequest, opts ...grpc.CallOption) (*GetFraudAbuseTrustGraphOverviewResponse, error)
+	LogExplainableTrustSignalCluster(ctx context.Context, in *LogExplainableTrustSignalClusterRequest, opts ...grpc.CallOption) (*LogExplainableTrustSignalClusterResponse, error)
+	ApplyReversibleTrustSanction(ctx context.Context, in *ApplyReversibleTrustSanctionRequest, opts ...grpc.CallOption) (*ApplyReversibleTrustSanctionResponse, error)
+	GetCommerceEntitlementPayoutOverview(ctx context.Context, in *GetCommerceEntitlementPayoutOverviewRequest, opts ...grpc.CallOption) (*GetCommerceEntitlementPayoutOverviewResponse, error)
+	CreateLedgerAdjustmentPreview(ctx context.Context, in *CreateLedgerAdjustmentPreviewRequest, opts ...grpc.CallOption) (*CreateLedgerAdjustmentPreviewResponse, error)
+	ReconcileEntitlementOrPartnerPayout(ctx context.Context, in *ReconcileEntitlementOrPartnerPayoutRequest, opts ...grpc.CallOption) (*ReconcileEntitlementOrPartnerPayoutResponse, error)
+	GetMasterIncidentBulkRemediationOverview(ctx context.Context, in *GetMasterIncidentBulkRemediationOverviewRequest, opts ...grpc.CallOption) (*GetMasterIncidentBulkRemediationOverviewResponse, error)
+	StageMasterIncidentCohortPlan(ctx context.Context, in *StageMasterIncidentCohortPlanRequest, opts ...grpc.CallOption) (*StageMasterIncidentCohortPlanResponse, error)
+	FanoutIdempotentBulkRemediation(ctx context.Context, in *FanoutIdempotentBulkRemediationRequest, opts ...grpc.CallOption) (*FanoutIdempotentBulkRemediationResponse, error)
+	GetWorkforceLearningCertificationOverview(ctx context.Context, in *GetWorkforceLearningCertificationOverviewRequest, opts ...grpc.CallOption) (*GetWorkforceLearningCertificationOverviewResponse, error)
+	UpsertStaffCertificationPath(ctx context.Context, in *UpsertStaffCertificationPathRequest, opts ...grpc.CallOption) (*UpsertStaffCertificationPathResponse, error)
+	RecordCalibratedSandboxOrCoaching(ctx context.Context, in *RecordCalibratedSandboxOrCoachingRequest, opts ...grpc.CallOption) (*RecordCalibratedSandboxOrCoachingResponse, error)
+	GetSimulationReleaseCertificationOverview(ctx context.Context, in *GetSimulationReleaseCertificationOverviewRequest, opts ...grpc.CallOption) (*GetSimulationReleaseCertificationOverviewResponse, error)
+	RunFailureClockSimulationScenario(ctx context.Context, in *RunFailureClockSimulationScenarioRequest, opts ...grpc.CallOption) (*RunFailureClockSimulationScenarioResponse, error)
+	IssueSignedReleaseCertificate(ctx context.Context, in *IssueSignedReleaseCertificateRequest, opts ...grpc.CallOption) (*IssueSignedReleaseCertificateResponse, error)
+	GetIndependentAuditObserverOverview(ctx context.Context, in *GetIndependentAuditObserverOverviewRequest, opts ...grpc.CallOption) (*GetIndependentAuditObserverOverviewResponse, error)
+	CreateTimeBoundObserverEngagement(ctx context.Context, in *CreateTimeBoundObserverEngagementRequest, opts ...grpc.CallOption) (*CreateTimeBoundObserverEngagementResponse, error)
+	GenerateWatermarkedControlEvidencePack(ctx context.Context, in *GenerateWatermarkedControlEvidencePackRequest, opts ...grpc.CallOption) (*GenerateWatermarkedControlEvidencePackResponse, error)
 }
 
 type adminServiceClient struct {
@@ -119,6 +210,456 @@ func (c *adminServiceClient) RevokeDeviceGrant(ctx context.Context, in *RevokeDe
 	return out, nil
 }
 
+func (c *adminServiceClient) GetUniversalWorkItemCaseOverview(ctx context.Context, in *GetUniversalWorkItemCaseOverviewRequest, opts ...grpc.CallOption) (*GetUniversalWorkItemCaseOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetUniversalWorkItemCaseOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetUniversalWorkItemCaseOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) UpsertWorkItemAdapterRule(ctx context.Context, in *UpsertWorkItemAdapterRuleRequest, opts ...grpc.CallOption) (*UpsertWorkItemAdapterRuleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertWorkItemAdapterRuleResponse)
+	err := c.cc.Invoke(ctx, AdminService_UpsertWorkItemAdapterRule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) TransitionUniversalWorkItemState(ctx context.Context, in *TransitionUniversalWorkItemStateRequest, opts ...grpc.CallOption) (*TransitionUniversalWorkItemStateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TransitionUniversalWorkItemStateResponse)
+	err := c.cc.Invoke(ctx, AdminService_TransitionUniversalWorkItemState_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetRoutingSkillsSlaOverview(ctx context.Context, in *GetRoutingSkillsSlaOverviewRequest, opts ...grpc.CallOption) (*GetRoutingSkillsSlaOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetRoutingSkillsSlaOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetRoutingSkillsSlaOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) UpsertStaffSkillCapacityProfile(ctx context.Context, in *UpsertStaffSkillCapacityProfileRequest, opts ...grpc.CallOption) (*UpsertStaffSkillCapacityProfileResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertStaffSkillCapacityProfileResponse)
+	err := c.cc.Invoke(ctx, AdminService_UpsertStaffSkillCapacityProfile_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) TriggerSlaBreachEscalation(ctx context.Context, in *TriggerSlaBreachEscalationRequest, opts ...grpc.CallOption) (*TriggerSlaBreachEscalationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TriggerSlaBreachEscalationResponse)
+	err := c.cc.Invoke(ctx, AdminService_TriggerSlaBreachEscalation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetEvidenceSopDecisionOverview(ctx context.Context, in *GetEvidenceSopDecisionOverviewRequest, opts ...grpc.CallOption) (*GetEvidenceSopDecisionOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetEvidenceSopDecisionOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetEvidenceSopDecisionOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RecordEvidenceCustodyAssertion(ctx context.Context, in *RecordEvidenceCustodyAssertionRequest, opts ...grpc.CallOption) (*RecordEvidenceCustodyAssertionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordEvidenceCustodyAssertionResponse)
+	err := c.cc.Invoke(ctx, AdminService_RecordEvidenceCustodyAssertion_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) CommitFourEyesSopDecision(ctx context.Context, in *CommitFourEyesSopDecisionRequest, opts ...grpc.CallOption) (*CommitFourEyesSopDecisionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CommitFourEyesSopDecisionResponse)
+	err := c.cc.Invoke(ctx, AdminService_CommitFourEyesSopDecision_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetCommunicationsConciergeOverview(ctx context.Context, in *GetCommunicationsConciergeOverviewRequest, opts ...grpc.CallOption) (*GetCommunicationsConciergeOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCommunicationsConciergeOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetCommunicationsConciergeOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) SaveApprovedMacroOrDraft(ctx context.Context, in *SaveApprovedMacroOrDraftRequest, opts ...grpc.CallOption) (*SaveApprovedMacroOrDraftResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(SaveApprovedMacroOrDraftResponse)
+	err := c.cc.Invoke(ctx, AdminService_SaveApprovedMacroOrDraft_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) DispatchReviewedMemberReply(ctx context.Context, in *DispatchReviewedMemberReplyRequest, opts ...grpc.CallOption) (*DispatchReviewedMemberReplyResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DispatchReviewedMemberReplyResponse)
+	err := c.cc.Invoke(ctx, AdminService_DispatchReviewedMemberReply_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetVerificationAutomationAppealsOverview(ctx context.Context, in *GetVerificationAutomationAppealsOverviewRequest, opts ...grpc.CallOption) (*GetVerificationAutomationAppealsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetVerificationAutomationAppealsOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetVerificationAutomationAppealsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) EvaluateExplainableVerificationRule(ctx context.Context, in *EvaluateExplainableVerificationRuleRequest, opts ...grpc.CallOption) (*EvaluateExplainableVerificationRuleResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(EvaluateExplainableVerificationRuleResponse)
+	err := c.cc.Invoke(ctx, AdminService_EvaluateExplainableVerificationRule_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) ResolveMemberVerificationAppeal(ctx context.Context, in *ResolveMemberVerificationAppealRequest, opts ...grpc.CallOption) (*ResolveMemberVerificationAppealResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ResolveMemberVerificationAppealResponse)
+	err := c.cc.Invoke(ctx, AdminService_ResolveMemberVerificationAppeal_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetCatalogContentPolicyStudioOverview(ctx context.Context, in *GetCatalogContentPolicyStudioOverviewRequest, opts ...grpc.CallOption) (*GetCatalogContentPolicyStudioOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCatalogContentPolicyStudioOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetCatalogContentPolicyStudioOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) StageCatalogOrPolicyRelease(ctx context.Context, in *StageCatalogOrPolicyReleaseRequest, opts ...grpc.CallOption) (*StageCatalogOrPolicyReleaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StageCatalogOrPolicyReleaseResponse)
+	err := c.cc.Invoke(ctx, AdminService_StageCatalogOrPolicyRelease_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) PublishOrRollbackStudioRelease(ctx context.Context, in *PublishOrRollbackStudioReleaseRequest, opts ...grpc.CallOption) (*PublishOrRollbackStudioReleaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PublishOrRollbackStudioReleaseResponse)
+	err := c.cc.Invoke(ctx, AdminService_PublishOrRollbackStudioRelease_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetPlatformReconciliationOpsOverview(ctx context.Context, in *GetPlatformReconciliationOpsOverviewRequest, opts ...grpc.CallOption) (*GetPlatformReconciliationOpsOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPlatformReconciliationOpsOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetPlatformReconciliationOpsOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RunSyntheticJourneyOrInvariantCheck(ctx context.Context, in *RunSyntheticJourneyOrInvariantCheckRequest, opts ...grpc.CallOption) (*RunSyntheticJourneyOrInvariantCheckResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunSyntheticJourneyOrInvariantCheckResponse)
+	err := c.cc.Invoke(ctx, AdminService_RunSyntheticJourneyOrInvariantCheck_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) ReplayDeadLetterOrDryRunRepair(ctx context.Context, in *ReplayDeadLetterOrDryRunRepairRequest, opts ...grpc.CallOption) (*ReplayDeadLetterOrDryRunRepairResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReplayDeadLetterOrDryRunRepairResponse)
+	err := c.cc.Invoke(ctx, AdminService_ReplayDeadLetterOrDryRunRepair_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetAiControlQualityCalibrationOverview(ctx context.Context, in *GetAiControlQualityCalibrationOverviewRequest, opts ...grpc.CallOption) (*GetAiControlQualityCalibrationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetAiControlQualityCalibrationOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetAiControlQualityCalibrationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RegisterModelDeploymentManifest(ctx context.Context, in *RegisterModelDeploymentManifestRequest, opts ...grpc.CallOption) (*RegisterModelDeploymentManifestResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RegisterModelDeploymentManifestResponse)
+	err := c.cc.Invoke(ctx, AdminService_RegisterModelDeploymentManifest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RecordBlindQaCalibrationReview(ctx context.Context, in *RecordBlindQaCalibrationReviewRequest, opts ...grpc.CallOption) (*RecordBlindQaCalibrationReviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordBlindQaCalibrationReviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_RecordBlindQaCalibrationReview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetSecurityPrivacyRecoveryOverview(ctx context.Context, in *GetSecurityPrivacyRecoveryOverviewRequest, opts ...grpc.CallOption) (*GetSecurityPrivacyRecoveryOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSecurityPrivacyRecoveryOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetSecurityPrivacyRecoveryOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RequestJitPrivilegedElevation(ctx context.Context, in *RequestJitPrivilegedElevationRequest, opts ...grpc.CallOption) (*RequestJitPrivilegedElevationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RequestJitPrivilegedElevationResponse)
+	err := c.cc.Invoke(ctx, AdminService_RequestJitPrivilegedElevation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) ExecutePrivacyOrAccountRecoveryCase(ctx context.Context, in *ExecutePrivacyOrAccountRecoveryCaseRequest, opts ...grpc.CallOption) (*ExecutePrivacyOrAccountRecoveryCaseResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ExecutePrivacyOrAccountRecoveryCaseResponse)
+	err := c.cc.Invoke(ctx, AdminService_ExecutePrivacyOrAccountRecoveryCase_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetFraudAbuseTrustGraphOverview(ctx context.Context, in *GetFraudAbuseTrustGraphOverviewRequest, opts ...grpc.CallOption) (*GetFraudAbuseTrustGraphOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetFraudAbuseTrustGraphOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetFraudAbuseTrustGraphOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) LogExplainableTrustSignalCluster(ctx context.Context, in *LogExplainableTrustSignalClusterRequest, opts ...grpc.CallOption) (*LogExplainableTrustSignalClusterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(LogExplainableTrustSignalClusterResponse)
+	err := c.cc.Invoke(ctx, AdminService_LogExplainableTrustSignalCluster_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) ApplyReversibleTrustSanction(ctx context.Context, in *ApplyReversibleTrustSanctionRequest, opts ...grpc.CallOption) (*ApplyReversibleTrustSanctionResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApplyReversibleTrustSanctionResponse)
+	err := c.cc.Invoke(ctx, AdminService_ApplyReversibleTrustSanction_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetCommerceEntitlementPayoutOverview(ctx context.Context, in *GetCommerceEntitlementPayoutOverviewRequest, opts ...grpc.CallOption) (*GetCommerceEntitlementPayoutOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetCommerceEntitlementPayoutOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetCommerceEntitlementPayoutOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) CreateLedgerAdjustmentPreview(ctx context.Context, in *CreateLedgerAdjustmentPreviewRequest, opts ...grpc.CallOption) (*CreateLedgerAdjustmentPreviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateLedgerAdjustmentPreviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_CreateLedgerAdjustmentPreview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) ReconcileEntitlementOrPartnerPayout(ctx context.Context, in *ReconcileEntitlementOrPartnerPayoutRequest, opts ...grpc.CallOption) (*ReconcileEntitlementOrPartnerPayoutResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ReconcileEntitlementOrPartnerPayoutResponse)
+	err := c.cc.Invoke(ctx, AdminService_ReconcileEntitlementOrPartnerPayout_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetMasterIncidentBulkRemediationOverview(ctx context.Context, in *GetMasterIncidentBulkRemediationOverviewRequest, opts ...grpc.CallOption) (*GetMasterIncidentBulkRemediationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetMasterIncidentBulkRemediationOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetMasterIncidentBulkRemediationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) StageMasterIncidentCohortPlan(ctx context.Context, in *StageMasterIncidentCohortPlanRequest, opts ...grpc.CallOption) (*StageMasterIncidentCohortPlanResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(StageMasterIncidentCohortPlanResponse)
+	err := c.cc.Invoke(ctx, AdminService_StageMasterIncidentCohortPlan_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) FanoutIdempotentBulkRemediation(ctx context.Context, in *FanoutIdempotentBulkRemediationRequest, opts ...grpc.CallOption) (*FanoutIdempotentBulkRemediationResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(FanoutIdempotentBulkRemediationResponse)
+	err := c.cc.Invoke(ctx, AdminService_FanoutIdempotentBulkRemediation_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetWorkforceLearningCertificationOverview(ctx context.Context, in *GetWorkforceLearningCertificationOverviewRequest, opts ...grpc.CallOption) (*GetWorkforceLearningCertificationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetWorkforceLearningCertificationOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetWorkforceLearningCertificationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) UpsertStaffCertificationPath(ctx context.Context, in *UpsertStaffCertificationPathRequest, opts ...grpc.CallOption) (*UpsertStaffCertificationPathResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpsertStaffCertificationPathResponse)
+	err := c.cc.Invoke(ctx, AdminService_UpsertStaffCertificationPath_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RecordCalibratedSandboxOrCoaching(ctx context.Context, in *RecordCalibratedSandboxOrCoachingRequest, opts ...grpc.CallOption) (*RecordCalibratedSandboxOrCoachingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RecordCalibratedSandboxOrCoachingResponse)
+	err := c.cc.Invoke(ctx, AdminService_RecordCalibratedSandboxOrCoaching_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetSimulationReleaseCertificationOverview(ctx context.Context, in *GetSimulationReleaseCertificationOverviewRequest, opts ...grpc.CallOption) (*GetSimulationReleaseCertificationOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetSimulationReleaseCertificationOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetSimulationReleaseCertificationOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RunFailureClockSimulationScenario(ctx context.Context, in *RunFailureClockSimulationScenarioRequest, opts ...grpc.CallOption) (*RunFailureClockSimulationScenarioResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RunFailureClockSimulationScenarioResponse)
+	err := c.cc.Invoke(ctx, AdminService_RunFailureClockSimulationScenario_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) IssueSignedReleaseCertificate(ctx context.Context, in *IssueSignedReleaseCertificateRequest, opts ...grpc.CallOption) (*IssueSignedReleaseCertificateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(IssueSignedReleaseCertificateResponse)
+	err := c.cc.Invoke(ctx, AdminService_IssueSignedReleaseCertificate_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GetIndependentAuditObserverOverview(ctx context.Context, in *GetIndependentAuditObserverOverviewRequest, opts ...grpc.CallOption) (*GetIndependentAuditObserverOverviewResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetIndependentAuditObserverOverviewResponse)
+	err := c.cc.Invoke(ctx, AdminService_GetIndependentAuditObserverOverview_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) CreateTimeBoundObserverEngagement(ctx context.Context, in *CreateTimeBoundObserverEngagementRequest, opts ...grpc.CallOption) (*CreateTimeBoundObserverEngagementResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateTimeBoundObserverEngagementResponse)
+	err := c.cc.Invoke(ctx, AdminService_CreateTimeBoundObserverEngagement_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) GenerateWatermarkedControlEvidencePack(ctx context.Context, in *GenerateWatermarkedControlEvidencePackRequest, opts ...grpc.CallOption) (*GenerateWatermarkedControlEvidencePackResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GenerateWatermarkedControlEvidencePackResponse)
+	err := c.cc.Invoke(ctx, AdminService_GenerateWatermarkedControlEvidencePack_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AdminServiceServer is the server API for AdminService service.
 // All implementations must embed UnimplementedAdminServiceServer
 // for forward compatibility.
@@ -130,6 +671,52 @@ type AdminServiceServer interface {
 	ListAuditLogs(context.Context, *ListAuditLogsRequest) (*ListAuditLogsResponse, error)
 	ListDeviceGrants(context.Context, *ListDeviceGrantsRequest) (*ListDeviceGrantsResponse, error)
 	RevokeDeviceGrant(context.Context, *RevokeDeviceGrantRequest) (*RevokeDeviceGrantResponse, error)
+	// === Admin Opportunity Choices 1-15 RPCs ===
+	GetUniversalWorkItemCaseOverview(context.Context, *GetUniversalWorkItemCaseOverviewRequest) (*GetUniversalWorkItemCaseOverviewResponse, error)
+	UpsertWorkItemAdapterRule(context.Context, *UpsertWorkItemAdapterRuleRequest) (*UpsertWorkItemAdapterRuleResponse, error)
+	TransitionUniversalWorkItemState(context.Context, *TransitionUniversalWorkItemStateRequest) (*TransitionUniversalWorkItemStateResponse, error)
+	GetRoutingSkillsSlaOverview(context.Context, *GetRoutingSkillsSlaOverviewRequest) (*GetRoutingSkillsSlaOverviewResponse, error)
+	UpsertStaffSkillCapacityProfile(context.Context, *UpsertStaffSkillCapacityProfileRequest) (*UpsertStaffSkillCapacityProfileResponse, error)
+	TriggerSlaBreachEscalation(context.Context, *TriggerSlaBreachEscalationRequest) (*TriggerSlaBreachEscalationResponse, error)
+	GetEvidenceSopDecisionOverview(context.Context, *GetEvidenceSopDecisionOverviewRequest) (*GetEvidenceSopDecisionOverviewResponse, error)
+	RecordEvidenceCustodyAssertion(context.Context, *RecordEvidenceCustodyAssertionRequest) (*RecordEvidenceCustodyAssertionResponse, error)
+	CommitFourEyesSopDecision(context.Context, *CommitFourEyesSopDecisionRequest) (*CommitFourEyesSopDecisionResponse, error)
+	GetCommunicationsConciergeOverview(context.Context, *GetCommunicationsConciergeOverviewRequest) (*GetCommunicationsConciergeOverviewResponse, error)
+	SaveApprovedMacroOrDraft(context.Context, *SaveApprovedMacroOrDraftRequest) (*SaveApprovedMacroOrDraftResponse, error)
+	DispatchReviewedMemberReply(context.Context, *DispatchReviewedMemberReplyRequest) (*DispatchReviewedMemberReplyResponse, error)
+	GetVerificationAutomationAppealsOverview(context.Context, *GetVerificationAutomationAppealsOverviewRequest) (*GetVerificationAutomationAppealsOverviewResponse, error)
+	EvaluateExplainableVerificationRule(context.Context, *EvaluateExplainableVerificationRuleRequest) (*EvaluateExplainableVerificationRuleResponse, error)
+	ResolveMemberVerificationAppeal(context.Context, *ResolveMemberVerificationAppealRequest) (*ResolveMemberVerificationAppealResponse, error)
+	GetCatalogContentPolicyStudioOverview(context.Context, *GetCatalogContentPolicyStudioOverviewRequest) (*GetCatalogContentPolicyStudioOverviewResponse, error)
+	StageCatalogOrPolicyRelease(context.Context, *StageCatalogOrPolicyReleaseRequest) (*StageCatalogOrPolicyReleaseResponse, error)
+	PublishOrRollbackStudioRelease(context.Context, *PublishOrRollbackStudioReleaseRequest) (*PublishOrRollbackStudioReleaseResponse, error)
+	GetPlatformReconciliationOpsOverview(context.Context, *GetPlatformReconciliationOpsOverviewRequest) (*GetPlatformReconciliationOpsOverviewResponse, error)
+	RunSyntheticJourneyOrInvariantCheck(context.Context, *RunSyntheticJourneyOrInvariantCheckRequest) (*RunSyntheticJourneyOrInvariantCheckResponse, error)
+	ReplayDeadLetterOrDryRunRepair(context.Context, *ReplayDeadLetterOrDryRunRepairRequest) (*ReplayDeadLetterOrDryRunRepairResponse, error)
+	GetAiControlQualityCalibrationOverview(context.Context, *GetAiControlQualityCalibrationOverviewRequest) (*GetAiControlQualityCalibrationOverviewResponse, error)
+	RegisterModelDeploymentManifest(context.Context, *RegisterModelDeploymentManifestRequest) (*RegisterModelDeploymentManifestResponse, error)
+	RecordBlindQaCalibrationReview(context.Context, *RecordBlindQaCalibrationReviewRequest) (*RecordBlindQaCalibrationReviewResponse, error)
+	GetSecurityPrivacyRecoveryOverview(context.Context, *GetSecurityPrivacyRecoveryOverviewRequest) (*GetSecurityPrivacyRecoveryOverviewResponse, error)
+	RequestJitPrivilegedElevation(context.Context, *RequestJitPrivilegedElevationRequest) (*RequestJitPrivilegedElevationResponse, error)
+	ExecutePrivacyOrAccountRecoveryCase(context.Context, *ExecutePrivacyOrAccountRecoveryCaseRequest) (*ExecutePrivacyOrAccountRecoveryCaseResponse, error)
+	GetFraudAbuseTrustGraphOverview(context.Context, *GetFraudAbuseTrustGraphOverviewRequest) (*GetFraudAbuseTrustGraphOverviewResponse, error)
+	LogExplainableTrustSignalCluster(context.Context, *LogExplainableTrustSignalClusterRequest) (*LogExplainableTrustSignalClusterResponse, error)
+	ApplyReversibleTrustSanction(context.Context, *ApplyReversibleTrustSanctionRequest) (*ApplyReversibleTrustSanctionResponse, error)
+	GetCommerceEntitlementPayoutOverview(context.Context, *GetCommerceEntitlementPayoutOverviewRequest) (*GetCommerceEntitlementPayoutOverviewResponse, error)
+	CreateLedgerAdjustmentPreview(context.Context, *CreateLedgerAdjustmentPreviewRequest) (*CreateLedgerAdjustmentPreviewResponse, error)
+	ReconcileEntitlementOrPartnerPayout(context.Context, *ReconcileEntitlementOrPartnerPayoutRequest) (*ReconcileEntitlementOrPartnerPayoutResponse, error)
+	GetMasterIncidentBulkRemediationOverview(context.Context, *GetMasterIncidentBulkRemediationOverviewRequest) (*GetMasterIncidentBulkRemediationOverviewResponse, error)
+	StageMasterIncidentCohortPlan(context.Context, *StageMasterIncidentCohortPlanRequest) (*StageMasterIncidentCohortPlanResponse, error)
+	FanoutIdempotentBulkRemediation(context.Context, *FanoutIdempotentBulkRemediationRequest) (*FanoutIdempotentBulkRemediationResponse, error)
+	GetWorkforceLearningCertificationOverview(context.Context, *GetWorkforceLearningCertificationOverviewRequest) (*GetWorkforceLearningCertificationOverviewResponse, error)
+	UpsertStaffCertificationPath(context.Context, *UpsertStaffCertificationPathRequest) (*UpsertStaffCertificationPathResponse, error)
+	RecordCalibratedSandboxOrCoaching(context.Context, *RecordCalibratedSandboxOrCoachingRequest) (*RecordCalibratedSandboxOrCoachingResponse, error)
+	GetSimulationReleaseCertificationOverview(context.Context, *GetSimulationReleaseCertificationOverviewRequest) (*GetSimulationReleaseCertificationOverviewResponse, error)
+	RunFailureClockSimulationScenario(context.Context, *RunFailureClockSimulationScenarioRequest) (*RunFailureClockSimulationScenarioResponse, error)
+	IssueSignedReleaseCertificate(context.Context, *IssueSignedReleaseCertificateRequest) (*IssueSignedReleaseCertificateResponse, error)
+	GetIndependentAuditObserverOverview(context.Context, *GetIndependentAuditObserverOverviewRequest) (*GetIndependentAuditObserverOverviewResponse, error)
+	CreateTimeBoundObserverEngagement(context.Context, *CreateTimeBoundObserverEngagementRequest) (*CreateTimeBoundObserverEngagementResponse, error)
+	GenerateWatermarkedControlEvidencePack(context.Context, *GenerateWatermarkedControlEvidencePackRequest) (*GenerateWatermarkedControlEvidencePackResponse, error)
 	mustEmbedUnimplementedAdminServiceServer()
 }
 
@@ -160,6 +747,141 @@ func (UnimplementedAdminServiceServer) ListDeviceGrants(context.Context, *ListDe
 }
 func (UnimplementedAdminServiceServer) RevokeDeviceGrant(context.Context, *RevokeDeviceGrantRequest) (*RevokeDeviceGrantResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method RevokeDeviceGrant not implemented")
+}
+func (UnimplementedAdminServiceServer) GetUniversalWorkItemCaseOverview(context.Context, *GetUniversalWorkItemCaseOverviewRequest) (*GetUniversalWorkItemCaseOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetUniversalWorkItemCaseOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) UpsertWorkItemAdapterRule(context.Context, *UpsertWorkItemAdapterRuleRequest) (*UpsertWorkItemAdapterRuleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertWorkItemAdapterRule not implemented")
+}
+func (UnimplementedAdminServiceServer) TransitionUniversalWorkItemState(context.Context, *TransitionUniversalWorkItemStateRequest) (*TransitionUniversalWorkItemStateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TransitionUniversalWorkItemState not implemented")
+}
+func (UnimplementedAdminServiceServer) GetRoutingSkillsSlaOverview(context.Context, *GetRoutingSkillsSlaOverviewRequest) (*GetRoutingSkillsSlaOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetRoutingSkillsSlaOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) UpsertStaffSkillCapacityProfile(context.Context, *UpsertStaffSkillCapacityProfileRequest) (*UpsertStaffSkillCapacityProfileResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertStaffSkillCapacityProfile not implemented")
+}
+func (UnimplementedAdminServiceServer) TriggerSlaBreachEscalation(context.Context, *TriggerSlaBreachEscalationRequest) (*TriggerSlaBreachEscalationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method TriggerSlaBreachEscalation not implemented")
+}
+func (UnimplementedAdminServiceServer) GetEvidenceSopDecisionOverview(context.Context, *GetEvidenceSopDecisionOverviewRequest) (*GetEvidenceSopDecisionOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetEvidenceSopDecisionOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) RecordEvidenceCustodyAssertion(context.Context, *RecordEvidenceCustodyAssertionRequest) (*RecordEvidenceCustodyAssertionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordEvidenceCustodyAssertion not implemented")
+}
+func (UnimplementedAdminServiceServer) CommitFourEyesSopDecision(context.Context, *CommitFourEyesSopDecisionRequest) (*CommitFourEyesSopDecisionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CommitFourEyesSopDecision not implemented")
+}
+func (UnimplementedAdminServiceServer) GetCommunicationsConciergeOverview(context.Context, *GetCommunicationsConciergeOverviewRequest) (*GetCommunicationsConciergeOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCommunicationsConciergeOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) SaveApprovedMacroOrDraft(context.Context, *SaveApprovedMacroOrDraftRequest) (*SaveApprovedMacroOrDraftResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method SaveApprovedMacroOrDraft not implemented")
+}
+func (UnimplementedAdminServiceServer) DispatchReviewedMemberReply(context.Context, *DispatchReviewedMemberReplyRequest) (*DispatchReviewedMemberReplyResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method DispatchReviewedMemberReply not implemented")
+}
+func (UnimplementedAdminServiceServer) GetVerificationAutomationAppealsOverview(context.Context, *GetVerificationAutomationAppealsOverviewRequest) (*GetVerificationAutomationAppealsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetVerificationAutomationAppealsOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) EvaluateExplainableVerificationRule(context.Context, *EvaluateExplainableVerificationRuleRequest) (*EvaluateExplainableVerificationRuleResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method EvaluateExplainableVerificationRule not implemented")
+}
+func (UnimplementedAdminServiceServer) ResolveMemberVerificationAppeal(context.Context, *ResolveMemberVerificationAppealRequest) (*ResolveMemberVerificationAppealResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ResolveMemberVerificationAppeal not implemented")
+}
+func (UnimplementedAdminServiceServer) GetCatalogContentPolicyStudioOverview(context.Context, *GetCatalogContentPolicyStudioOverviewRequest) (*GetCatalogContentPolicyStudioOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCatalogContentPolicyStudioOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) StageCatalogOrPolicyRelease(context.Context, *StageCatalogOrPolicyReleaseRequest) (*StageCatalogOrPolicyReleaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StageCatalogOrPolicyRelease not implemented")
+}
+func (UnimplementedAdminServiceServer) PublishOrRollbackStudioRelease(context.Context, *PublishOrRollbackStudioReleaseRequest) (*PublishOrRollbackStudioReleaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method PublishOrRollbackStudioRelease not implemented")
+}
+func (UnimplementedAdminServiceServer) GetPlatformReconciliationOpsOverview(context.Context, *GetPlatformReconciliationOpsOverviewRequest) (*GetPlatformReconciliationOpsOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetPlatformReconciliationOpsOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) RunSyntheticJourneyOrInvariantCheck(context.Context, *RunSyntheticJourneyOrInvariantCheckRequest) (*RunSyntheticJourneyOrInvariantCheckResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunSyntheticJourneyOrInvariantCheck not implemented")
+}
+func (UnimplementedAdminServiceServer) ReplayDeadLetterOrDryRunRepair(context.Context, *ReplayDeadLetterOrDryRunRepairRequest) (*ReplayDeadLetterOrDryRunRepairResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReplayDeadLetterOrDryRunRepair not implemented")
+}
+func (UnimplementedAdminServiceServer) GetAiControlQualityCalibrationOverview(context.Context, *GetAiControlQualityCalibrationOverviewRequest) (*GetAiControlQualityCalibrationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetAiControlQualityCalibrationOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) RegisterModelDeploymentManifest(context.Context, *RegisterModelDeploymentManifestRequest) (*RegisterModelDeploymentManifestResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RegisterModelDeploymentManifest not implemented")
+}
+func (UnimplementedAdminServiceServer) RecordBlindQaCalibrationReview(context.Context, *RecordBlindQaCalibrationReviewRequest) (*RecordBlindQaCalibrationReviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordBlindQaCalibrationReview not implemented")
+}
+func (UnimplementedAdminServiceServer) GetSecurityPrivacyRecoveryOverview(context.Context, *GetSecurityPrivacyRecoveryOverviewRequest) (*GetSecurityPrivacyRecoveryOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSecurityPrivacyRecoveryOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) RequestJitPrivilegedElevation(context.Context, *RequestJitPrivilegedElevationRequest) (*RequestJitPrivilegedElevationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RequestJitPrivilegedElevation not implemented")
+}
+func (UnimplementedAdminServiceServer) ExecutePrivacyOrAccountRecoveryCase(context.Context, *ExecutePrivacyOrAccountRecoveryCaseRequest) (*ExecutePrivacyOrAccountRecoveryCaseResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ExecutePrivacyOrAccountRecoveryCase not implemented")
+}
+func (UnimplementedAdminServiceServer) GetFraudAbuseTrustGraphOverview(context.Context, *GetFraudAbuseTrustGraphOverviewRequest) (*GetFraudAbuseTrustGraphOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetFraudAbuseTrustGraphOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) LogExplainableTrustSignalCluster(context.Context, *LogExplainableTrustSignalClusterRequest) (*LogExplainableTrustSignalClusterResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method LogExplainableTrustSignalCluster not implemented")
+}
+func (UnimplementedAdminServiceServer) ApplyReversibleTrustSanction(context.Context, *ApplyReversibleTrustSanctionRequest) (*ApplyReversibleTrustSanctionResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ApplyReversibleTrustSanction not implemented")
+}
+func (UnimplementedAdminServiceServer) GetCommerceEntitlementPayoutOverview(context.Context, *GetCommerceEntitlementPayoutOverviewRequest) (*GetCommerceEntitlementPayoutOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetCommerceEntitlementPayoutOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) CreateLedgerAdjustmentPreview(context.Context, *CreateLedgerAdjustmentPreviewRequest) (*CreateLedgerAdjustmentPreviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateLedgerAdjustmentPreview not implemented")
+}
+func (UnimplementedAdminServiceServer) ReconcileEntitlementOrPartnerPayout(context.Context, *ReconcileEntitlementOrPartnerPayoutRequest) (*ReconcileEntitlementOrPartnerPayoutResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method ReconcileEntitlementOrPartnerPayout not implemented")
+}
+func (UnimplementedAdminServiceServer) GetMasterIncidentBulkRemediationOverview(context.Context, *GetMasterIncidentBulkRemediationOverviewRequest) (*GetMasterIncidentBulkRemediationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetMasterIncidentBulkRemediationOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) StageMasterIncidentCohortPlan(context.Context, *StageMasterIncidentCohortPlanRequest) (*StageMasterIncidentCohortPlanResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method StageMasterIncidentCohortPlan not implemented")
+}
+func (UnimplementedAdminServiceServer) FanoutIdempotentBulkRemediation(context.Context, *FanoutIdempotentBulkRemediationRequest) (*FanoutIdempotentBulkRemediationResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method FanoutIdempotentBulkRemediation not implemented")
+}
+func (UnimplementedAdminServiceServer) GetWorkforceLearningCertificationOverview(context.Context, *GetWorkforceLearningCertificationOverviewRequest) (*GetWorkforceLearningCertificationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetWorkforceLearningCertificationOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) UpsertStaffCertificationPath(context.Context, *UpsertStaffCertificationPathRequest) (*UpsertStaffCertificationPathResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method UpsertStaffCertificationPath not implemented")
+}
+func (UnimplementedAdminServiceServer) RecordCalibratedSandboxOrCoaching(context.Context, *RecordCalibratedSandboxOrCoachingRequest) (*RecordCalibratedSandboxOrCoachingResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RecordCalibratedSandboxOrCoaching not implemented")
+}
+func (UnimplementedAdminServiceServer) GetSimulationReleaseCertificationOverview(context.Context, *GetSimulationReleaseCertificationOverviewRequest) (*GetSimulationReleaseCertificationOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetSimulationReleaseCertificationOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) RunFailureClockSimulationScenario(context.Context, *RunFailureClockSimulationScenarioRequest) (*RunFailureClockSimulationScenarioResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method RunFailureClockSimulationScenario not implemented")
+}
+func (UnimplementedAdminServiceServer) IssueSignedReleaseCertificate(context.Context, *IssueSignedReleaseCertificateRequest) (*IssueSignedReleaseCertificateResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method IssueSignedReleaseCertificate not implemented")
+}
+func (UnimplementedAdminServiceServer) GetIndependentAuditObserverOverview(context.Context, *GetIndependentAuditObserverOverviewRequest) (*GetIndependentAuditObserverOverviewResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GetIndependentAuditObserverOverview not implemented")
+}
+func (UnimplementedAdminServiceServer) CreateTimeBoundObserverEngagement(context.Context, *CreateTimeBoundObserverEngagementRequest) (*CreateTimeBoundObserverEngagementResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method CreateTimeBoundObserverEngagement not implemented")
+}
+func (UnimplementedAdminServiceServer) GenerateWatermarkedControlEvidencePack(context.Context, *GenerateWatermarkedControlEvidencePackRequest) (*GenerateWatermarkedControlEvidencePackResponse, error) {
+	return nil, status.Error(codes.Unimplemented, "method GenerateWatermarkedControlEvidencePack not implemented")
 }
 func (UnimplementedAdminServiceServer) mustEmbedUnimplementedAdminServiceServer() {}
 func (UnimplementedAdminServiceServer) testEmbeddedByValue()                      {}
@@ -308,6 +1030,816 @@ func _AdminService_RevokeDeviceGrant_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AdminService_GetUniversalWorkItemCaseOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUniversalWorkItemCaseOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetUniversalWorkItemCaseOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetUniversalWorkItemCaseOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetUniversalWorkItemCaseOverview(ctx, req.(*GetUniversalWorkItemCaseOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_UpsertWorkItemAdapterRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertWorkItemAdapterRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).UpsertWorkItemAdapterRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_UpsertWorkItemAdapterRule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).UpsertWorkItemAdapterRule(ctx, req.(*UpsertWorkItemAdapterRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_TransitionUniversalWorkItemState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TransitionUniversalWorkItemStateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).TransitionUniversalWorkItemState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_TransitionUniversalWorkItemState_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).TransitionUniversalWorkItemState(ctx, req.(*TransitionUniversalWorkItemStateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetRoutingSkillsSlaOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRoutingSkillsSlaOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetRoutingSkillsSlaOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetRoutingSkillsSlaOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetRoutingSkillsSlaOverview(ctx, req.(*GetRoutingSkillsSlaOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_UpsertStaffSkillCapacityProfile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertStaffSkillCapacityProfileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).UpsertStaffSkillCapacityProfile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_UpsertStaffSkillCapacityProfile_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).UpsertStaffSkillCapacityProfile(ctx, req.(*UpsertStaffSkillCapacityProfileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_TriggerSlaBreachEscalation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TriggerSlaBreachEscalationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).TriggerSlaBreachEscalation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_TriggerSlaBreachEscalation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).TriggerSlaBreachEscalation(ctx, req.(*TriggerSlaBreachEscalationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetEvidenceSopDecisionOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetEvidenceSopDecisionOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetEvidenceSopDecisionOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetEvidenceSopDecisionOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetEvidenceSopDecisionOverview(ctx, req.(*GetEvidenceSopDecisionOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RecordEvidenceCustodyAssertion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordEvidenceCustodyAssertionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RecordEvidenceCustodyAssertion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RecordEvidenceCustodyAssertion_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RecordEvidenceCustodyAssertion(ctx, req.(*RecordEvidenceCustodyAssertionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_CommitFourEyesSopDecision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CommitFourEyesSopDecisionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).CommitFourEyesSopDecision(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_CommitFourEyesSopDecision_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).CommitFourEyesSopDecision(ctx, req.(*CommitFourEyesSopDecisionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetCommunicationsConciergeOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommunicationsConciergeOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetCommunicationsConciergeOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetCommunicationsConciergeOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetCommunicationsConciergeOverview(ctx, req.(*GetCommunicationsConciergeOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_SaveApprovedMacroOrDraft_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveApprovedMacroOrDraftRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).SaveApprovedMacroOrDraft(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_SaveApprovedMacroOrDraft_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).SaveApprovedMacroOrDraft(ctx, req.(*SaveApprovedMacroOrDraftRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_DispatchReviewedMemberReply_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DispatchReviewedMemberReplyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).DispatchReviewedMemberReply(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_DispatchReviewedMemberReply_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).DispatchReviewedMemberReply(ctx, req.(*DispatchReviewedMemberReplyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetVerificationAutomationAppealsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetVerificationAutomationAppealsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetVerificationAutomationAppealsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetVerificationAutomationAppealsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetVerificationAutomationAppealsOverview(ctx, req.(*GetVerificationAutomationAppealsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_EvaluateExplainableVerificationRule_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(EvaluateExplainableVerificationRuleRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).EvaluateExplainableVerificationRule(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_EvaluateExplainableVerificationRule_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).EvaluateExplainableVerificationRule(ctx, req.(*EvaluateExplainableVerificationRuleRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_ResolveMemberVerificationAppeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ResolveMemberVerificationAppealRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ResolveMemberVerificationAppeal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ResolveMemberVerificationAppeal_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ResolveMemberVerificationAppeal(ctx, req.(*ResolveMemberVerificationAppealRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetCatalogContentPolicyStudioOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCatalogContentPolicyStudioOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetCatalogContentPolicyStudioOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetCatalogContentPolicyStudioOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetCatalogContentPolicyStudioOverview(ctx, req.(*GetCatalogContentPolicyStudioOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_StageCatalogOrPolicyRelease_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StageCatalogOrPolicyReleaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).StageCatalogOrPolicyRelease(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_StageCatalogOrPolicyRelease_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).StageCatalogOrPolicyRelease(ctx, req.(*StageCatalogOrPolicyReleaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_PublishOrRollbackStudioRelease_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PublishOrRollbackStudioReleaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).PublishOrRollbackStudioRelease(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_PublishOrRollbackStudioRelease_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).PublishOrRollbackStudioRelease(ctx, req.(*PublishOrRollbackStudioReleaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetPlatformReconciliationOpsOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPlatformReconciliationOpsOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetPlatformReconciliationOpsOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetPlatformReconciliationOpsOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetPlatformReconciliationOpsOverview(ctx, req.(*GetPlatformReconciliationOpsOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RunSyntheticJourneyOrInvariantCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunSyntheticJourneyOrInvariantCheckRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RunSyntheticJourneyOrInvariantCheck(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RunSyntheticJourneyOrInvariantCheck_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RunSyntheticJourneyOrInvariantCheck(ctx, req.(*RunSyntheticJourneyOrInvariantCheckRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_ReplayDeadLetterOrDryRunRepair_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReplayDeadLetterOrDryRunRepairRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ReplayDeadLetterOrDryRunRepair(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ReplayDeadLetterOrDryRunRepair_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ReplayDeadLetterOrDryRunRepair(ctx, req.(*ReplayDeadLetterOrDryRunRepairRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetAiControlQualityCalibrationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAiControlQualityCalibrationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetAiControlQualityCalibrationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetAiControlQualityCalibrationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetAiControlQualityCalibrationOverview(ctx, req.(*GetAiControlQualityCalibrationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RegisterModelDeploymentManifest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterModelDeploymentManifestRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RegisterModelDeploymentManifest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RegisterModelDeploymentManifest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RegisterModelDeploymentManifest(ctx, req.(*RegisterModelDeploymentManifestRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RecordBlindQaCalibrationReview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordBlindQaCalibrationReviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RecordBlindQaCalibrationReview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RecordBlindQaCalibrationReview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RecordBlindQaCalibrationReview(ctx, req.(*RecordBlindQaCalibrationReviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetSecurityPrivacyRecoveryOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSecurityPrivacyRecoveryOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetSecurityPrivacyRecoveryOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetSecurityPrivacyRecoveryOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetSecurityPrivacyRecoveryOverview(ctx, req.(*GetSecurityPrivacyRecoveryOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RequestJitPrivilegedElevation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestJitPrivilegedElevationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RequestJitPrivilegedElevation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RequestJitPrivilegedElevation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RequestJitPrivilegedElevation(ctx, req.(*RequestJitPrivilegedElevationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_ExecutePrivacyOrAccountRecoveryCase_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExecutePrivacyOrAccountRecoveryCaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ExecutePrivacyOrAccountRecoveryCase(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ExecutePrivacyOrAccountRecoveryCase_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ExecutePrivacyOrAccountRecoveryCase(ctx, req.(*ExecutePrivacyOrAccountRecoveryCaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetFraudAbuseTrustGraphOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetFraudAbuseTrustGraphOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetFraudAbuseTrustGraphOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetFraudAbuseTrustGraphOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetFraudAbuseTrustGraphOverview(ctx, req.(*GetFraudAbuseTrustGraphOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_LogExplainableTrustSignalCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LogExplainableTrustSignalClusterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).LogExplainableTrustSignalCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_LogExplainableTrustSignalCluster_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).LogExplainableTrustSignalCluster(ctx, req.(*LogExplainableTrustSignalClusterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_ApplyReversibleTrustSanction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApplyReversibleTrustSanctionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ApplyReversibleTrustSanction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ApplyReversibleTrustSanction_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ApplyReversibleTrustSanction(ctx, req.(*ApplyReversibleTrustSanctionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetCommerceEntitlementPayoutOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCommerceEntitlementPayoutOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetCommerceEntitlementPayoutOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetCommerceEntitlementPayoutOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetCommerceEntitlementPayoutOverview(ctx, req.(*GetCommerceEntitlementPayoutOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_CreateLedgerAdjustmentPreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLedgerAdjustmentPreviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).CreateLedgerAdjustmentPreview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_CreateLedgerAdjustmentPreview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).CreateLedgerAdjustmentPreview(ctx, req.(*CreateLedgerAdjustmentPreviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_ReconcileEntitlementOrPartnerPayout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReconcileEntitlementOrPartnerPayoutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).ReconcileEntitlementOrPartnerPayout(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_ReconcileEntitlementOrPartnerPayout_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).ReconcileEntitlementOrPartnerPayout(ctx, req.(*ReconcileEntitlementOrPartnerPayoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetMasterIncidentBulkRemediationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMasterIncidentBulkRemediationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetMasterIncidentBulkRemediationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetMasterIncidentBulkRemediationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetMasterIncidentBulkRemediationOverview(ctx, req.(*GetMasterIncidentBulkRemediationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_StageMasterIncidentCohortPlan_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StageMasterIncidentCohortPlanRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).StageMasterIncidentCohortPlan(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_StageMasterIncidentCohortPlan_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).StageMasterIncidentCohortPlan(ctx, req.(*StageMasterIncidentCohortPlanRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_FanoutIdempotentBulkRemediation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FanoutIdempotentBulkRemediationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).FanoutIdempotentBulkRemediation(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_FanoutIdempotentBulkRemediation_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).FanoutIdempotentBulkRemediation(ctx, req.(*FanoutIdempotentBulkRemediationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetWorkforceLearningCertificationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetWorkforceLearningCertificationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetWorkforceLearningCertificationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetWorkforceLearningCertificationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetWorkforceLearningCertificationOverview(ctx, req.(*GetWorkforceLearningCertificationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_UpsertStaffCertificationPath_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpsertStaffCertificationPathRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).UpsertStaffCertificationPath(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_UpsertStaffCertificationPath_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).UpsertStaffCertificationPath(ctx, req.(*UpsertStaffCertificationPathRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RecordCalibratedSandboxOrCoaching_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RecordCalibratedSandboxOrCoachingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RecordCalibratedSandboxOrCoaching(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RecordCalibratedSandboxOrCoaching_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RecordCalibratedSandboxOrCoaching(ctx, req.(*RecordCalibratedSandboxOrCoachingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetSimulationReleaseCertificationOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetSimulationReleaseCertificationOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetSimulationReleaseCertificationOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetSimulationReleaseCertificationOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetSimulationReleaseCertificationOverview(ctx, req.(*GetSimulationReleaseCertificationOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RunFailureClockSimulationScenario_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RunFailureClockSimulationScenarioRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RunFailureClockSimulationScenario(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RunFailureClockSimulationScenario_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RunFailureClockSimulationScenario(ctx, req.(*RunFailureClockSimulationScenarioRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_IssueSignedReleaseCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IssueSignedReleaseCertificateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).IssueSignedReleaseCertificate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_IssueSignedReleaseCertificate_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).IssueSignedReleaseCertificate(ctx, req.(*IssueSignedReleaseCertificateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GetIndependentAuditObserverOverview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIndependentAuditObserverOverviewRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GetIndependentAuditObserverOverview(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GetIndependentAuditObserverOverview_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GetIndependentAuditObserverOverview(ctx, req.(*GetIndependentAuditObserverOverviewRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_CreateTimeBoundObserverEngagement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateTimeBoundObserverEngagementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).CreateTimeBoundObserverEngagement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_CreateTimeBoundObserverEngagement_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).CreateTimeBoundObserverEngagement(ctx, req.(*CreateTimeBoundObserverEngagementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_GenerateWatermarkedControlEvidencePack_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateWatermarkedControlEvidencePackRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).GenerateWatermarkedControlEvidencePack(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_GenerateWatermarkedControlEvidencePack_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).GenerateWatermarkedControlEvidencePack(ctx, req.(*GenerateWatermarkedControlEvidencePackRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AdminService_ServiceDesc is the grpc.ServiceDesc for AdminService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -342,6 +1874,186 @@ var AdminService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RevokeDeviceGrant",
 			Handler:    _AdminService_RevokeDeviceGrant_Handler,
+		},
+		{
+			MethodName: "GetUniversalWorkItemCaseOverview",
+			Handler:    _AdminService_GetUniversalWorkItemCaseOverview_Handler,
+		},
+		{
+			MethodName: "UpsertWorkItemAdapterRule",
+			Handler:    _AdminService_UpsertWorkItemAdapterRule_Handler,
+		},
+		{
+			MethodName: "TransitionUniversalWorkItemState",
+			Handler:    _AdminService_TransitionUniversalWorkItemState_Handler,
+		},
+		{
+			MethodName: "GetRoutingSkillsSlaOverview",
+			Handler:    _AdminService_GetRoutingSkillsSlaOverview_Handler,
+		},
+		{
+			MethodName: "UpsertStaffSkillCapacityProfile",
+			Handler:    _AdminService_UpsertStaffSkillCapacityProfile_Handler,
+		},
+		{
+			MethodName: "TriggerSlaBreachEscalation",
+			Handler:    _AdminService_TriggerSlaBreachEscalation_Handler,
+		},
+		{
+			MethodName: "GetEvidenceSopDecisionOverview",
+			Handler:    _AdminService_GetEvidenceSopDecisionOverview_Handler,
+		},
+		{
+			MethodName: "RecordEvidenceCustodyAssertion",
+			Handler:    _AdminService_RecordEvidenceCustodyAssertion_Handler,
+		},
+		{
+			MethodName: "CommitFourEyesSopDecision",
+			Handler:    _AdminService_CommitFourEyesSopDecision_Handler,
+		},
+		{
+			MethodName: "GetCommunicationsConciergeOverview",
+			Handler:    _AdminService_GetCommunicationsConciergeOverview_Handler,
+		},
+		{
+			MethodName: "SaveApprovedMacroOrDraft",
+			Handler:    _AdminService_SaveApprovedMacroOrDraft_Handler,
+		},
+		{
+			MethodName: "DispatchReviewedMemberReply",
+			Handler:    _AdminService_DispatchReviewedMemberReply_Handler,
+		},
+		{
+			MethodName: "GetVerificationAutomationAppealsOverview",
+			Handler:    _AdminService_GetVerificationAutomationAppealsOverview_Handler,
+		},
+		{
+			MethodName: "EvaluateExplainableVerificationRule",
+			Handler:    _AdminService_EvaluateExplainableVerificationRule_Handler,
+		},
+		{
+			MethodName: "ResolveMemberVerificationAppeal",
+			Handler:    _AdminService_ResolveMemberVerificationAppeal_Handler,
+		},
+		{
+			MethodName: "GetCatalogContentPolicyStudioOverview",
+			Handler:    _AdminService_GetCatalogContentPolicyStudioOverview_Handler,
+		},
+		{
+			MethodName: "StageCatalogOrPolicyRelease",
+			Handler:    _AdminService_StageCatalogOrPolicyRelease_Handler,
+		},
+		{
+			MethodName: "PublishOrRollbackStudioRelease",
+			Handler:    _AdminService_PublishOrRollbackStudioRelease_Handler,
+		},
+		{
+			MethodName: "GetPlatformReconciliationOpsOverview",
+			Handler:    _AdminService_GetPlatformReconciliationOpsOverview_Handler,
+		},
+		{
+			MethodName: "RunSyntheticJourneyOrInvariantCheck",
+			Handler:    _AdminService_RunSyntheticJourneyOrInvariantCheck_Handler,
+		},
+		{
+			MethodName: "ReplayDeadLetterOrDryRunRepair",
+			Handler:    _AdminService_ReplayDeadLetterOrDryRunRepair_Handler,
+		},
+		{
+			MethodName: "GetAiControlQualityCalibrationOverview",
+			Handler:    _AdminService_GetAiControlQualityCalibrationOverview_Handler,
+		},
+		{
+			MethodName: "RegisterModelDeploymentManifest",
+			Handler:    _AdminService_RegisterModelDeploymentManifest_Handler,
+		},
+		{
+			MethodName: "RecordBlindQaCalibrationReview",
+			Handler:    _AdminService_RecordBlindQaCalibrationReview_Handler,
+		},
+		{
+			MethodName: "GetSecurityPrivacyRecoveryOverview",
+			Handler:    _AdminService_GetSecurityPrivacyRecoveryOverview_Handler,
+		},
+		{
+			MethodName: "RequestJitPrivilegedElevation",
+			Handler:    _AdminService_RequestJitPrivilegedElevation_Handler,
+		},
+		{
+			MethodName: "ExecutePrivacyOrAccountRecoveryCase",
+			Handler:    _AdminService_ExecutePrivacyOrAccountRecoveryCase_Handler,
+		},
+		{
+			MethodName: "GetFraudAbuseTrustGraphOverview",
+			Handler:    _AdminService_GetFraudAbuseTrustGraphOverview_Handler,
+		},
+		{
+			MethodName: "LogExplainableTrustSignalCluster",
+			Handler:    _AdminService_LogExplainableTrustSignalCluster_Handler,
+		},
+		{
+			MethodName: "ApplyReversibleTrustSanction",
+			Handler:    _AdminService_ApplyReversibleTrustSanction_Handler,
+		},
+		{
+			MethodName: "GetCommerceEntitlementPayoutOverview",
+			Handler:    _AdminService_GetCommerceEntitlementPayoutOverview_Handler,
+		},
+		{
+			MethodName: "CreateLedgerAdjustmentPreview",
+			Handler:    _AdminService_CreateLedgerAdjustmentPreview_Handler,
+		},
+		{
+			MethodName: "ReconcileEntitlementOrPartnerPayout",
+			Handler:    _AdminService_ReconcileEntitlementOrPartnerPayout_Handler,
+		},
+		{
+			MethodName: "GetMasterIncidentBulkRemediationOverview",
+			Handler:    _AdminService_GetMasterIncidentBulkRemediationOverview_Handler,
+		},
+		{
+			MethodName: "StageMasterIncidentCohortPlan",
+			Handler:    _AdminService_StageMasterIncidentCohortPlan_Handler,
+		},
+		{
+			MethodName: "FanoutIdempotentBulkRemediation",
+			Handler:    _AdminService_FanoutIdempotentBulkRemediation_Handler,
+		},
+		{
+			MethodName: "GetWorkforceLearningCertificationOverview",
+			Handler:    _AdminService_GetWorkforceLearningCertificationOverview_Handler,
+		},
+		{
+			MethodName: "UpsertStaffCertificationPath",
+			Handler:    _AdminService_UpsertStaffCertificationPath_Handler,
+		},
+		{
+			MethodName: "RecordCalibratedSandboxOrCoaching",
+			Handler:    _AdminService_RecordCalibratedSandboxOrCoaching_Handler,
+		},
+		{
+			MethodName: "GetSimulationReleaseCertificationOverview",
+			Handler:    _AdminService_GetSimulationReleaseCertificationOverview_Handler,
+		},
+		{
+			MethodName: "RunFailureClockSimulationScenario",
+			Handler:    _AdminService_RunFailureClockSimulationScenario_Handler,
+		},
+		{
+			MethodName: "IssueSignedReleaseCertificate",
+			Handler:    _AdminService_IssueSignedReleaseCertificate_Handler,
+		},
+		{
+			MethodName: "GetIndependentAuditObserverOverview",
+			Handler:    _AdminService_GetIndependentAuditObserverOverview_Handler,
+		},
+		{
+			MethodName: "CreateTimeBoundObserverEngagement",
+			Handler:    _AdminService_CreateTimeBoundObserverEngagement_Handler,
+		},
+		{
+			MethodName: "GenerateWatermarkedControlEvidencePack",
+			Handler:    _AdminService_GenerateWatermarkedControlEvidencePack_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

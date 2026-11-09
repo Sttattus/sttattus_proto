@@ -2254,3 +2254,2550 @@ const CancelLoungeBookingResponse$json = {
 final $typed_data.Uint8List cancelLoungeBookingResponseDescriptor =
     $convert.base64Decode(
         'ChtDYW5jZWxMb3VuZ2VCb29raW5nUmVzcG9uc2USDgoCb2sYASABKAhSAm9r');
+
+@$core.Deprecated('Use zenithFocusFirewallSessionItemDescriptor instead')
+const ZenithFocusFirewallSessionItem$json = {
+  '1': 'ZenithFocusFirewallSessionItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'firewall_code', '3': 3, '4': 1, '5': 9, '10': 'firewallCode'},
+    {'1': 'session_title', '3': 4, '4': 1, '5': 9, '10': 'sessionTitle'},
+    {'1': 'enforcement_mode', '3': 5, '4': 1, '5': 9, '10': 'enforcementMode'},
+    {
+      '1': 'platform_capability_matrix',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'platformCapabilityMatrix'
+    },
+    {
+      '1': 'whitelisted_emergency_paths',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'whitelistedEmergencyPaths'
+    },
+    {
+      '1': 'override_friction_and_log',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'overrideFrictionAndLog'
+    },
+    {'1': 'firewall_state', '3': 9, '4': 1, '5': 9, '10': 'firewallState'},
+    {
+      '1': 'emergency_exit_always_permitted',
+      '3': 10,
+      '4': 1,
+      '5': 8,
+      '10': 'emergencyExitAlwaysPermitted'
+    },
+    {'1': 'updated_at_iso', '3': 11, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithFocusFirewallSessionItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithFocusFirewallSessionItemDescriptor = $convert.base64Decode(
+    'Ch5aZW5pdGhGb2N1c0ZpcmV3YWxsU2Vzc2lvbkl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3VzZX'
+    'JfaWQYAiABKAlSBnVzZXJJZBIjCg1maXJld2FsbF9jb2RlGAMgASgJUgxmaXJld2FsbENvZGUS'
+    'IwoNc2Vzc2lvbl90aXRsZRgEIAEoCVIMc2Vzc2lvblRpdGxlEikKEGVuZm9yY2VtZW50X21vZG'
+    'UYBSABKAlSD2VuZm9yY2VtZW50TW9kZRI8ChpwbGF0Zm9ybV9jYXBhYmlsaXR5X21hdHJpeBgG'
+    'IAEoCVIYcGxhdGZvcm1DYXBhYmlsaXR5TWF0cml4Ej4KG3doaXRlbGlzdGVkX2VtZXJnZW5jeV'
+    '9wYXRocxgHIAEoCVIZd2hpdGVsaXN0ZWRFbWVyZ2VuY3lQYXRocxI5ChlvdmVycmlkZV9mcmlj'
+    'dGlvbl9hbmRfbG9nGAggASgJUhZvdmVycmlkZUZyaWN0aW9uQW5kTG9nEiUKDmZpcmV3YWxsX3'
+    'N0YXRlGAkgASgJUg1maXJld2FsbFN0YXRlEkUKH2VtZXJnZW5jeV9leGl0X2Fsd2F5c19wZXJt'
+    'aXR0ZWQYCiABKAhSHGVtZXJnZW5jeUV4aXRBbHdheXNQZXJtaXR0ZWQSJAoOdXBkYXRlZF9hdF'
+    '9pc28YCyABKAlSDHVwZGF0ZWRBdElzbw==');
+
+@$core
+    .Deprecated('Use getZenithFocusFirewallWorkbenchRequestDescriptor instead')
+const GetZenithFocusFirewallWorkbenchRequest$json = {
+  '1': 'GetZenithFocusFirewallWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithFocusFirewallWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getZenithFocusFirewallWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CiZHZXRaZW5pdGhGb2N1c0ZpcmV3YWxsV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core
+    .Deprecated('Use getZenithFocusFirewallWorkbenchResponseDescriptor instead')
+const GetZenithFocusFirewallWorkbenchResponse$json = {
+  '1': 'GetZenithFocusFirewallWorkbenchResponse',
+  '2': [
+    {
+      '1': 'sessions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithFocusFirewallSessionItem',
+      '10': 'sessions'
+    },
+    {
+      '1': 'emergency_exit_always_permitted_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'emergencyExitAlwaysPermittedEnforced'
+    },
+    {
+      '1': 'honest_platform_capability_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'honestPlatformCapabilitySummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithFocusFirewallWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getZenithFocusFirewallWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CidHZXRaZW5pdGhGb2N1c0ZpcmV3YWxsV29ya2JlbmNoUmVzcG9uc2USTgoIc2Vzc2lvbnMYAS'
+        'ADKAsyMi5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoRm9jdXNGaXJld2FsbFNlc3Npb25JdGVt'
+        'UghzZXNzaW9ucxJWCihlbWVyZ2VuY3lfZXhpdF9hbHdheXNfcGVybWl0dGVkX2VuZm9yY2VkGA'
+        'IgASgIUiRlbWVyZ2VuY3lFeGl0QWx3YXlzUGVybWl0dGVkRW5mb3JjZWQSSwoiaG9uZXN0X3Bs'
+        'YXRmb3JtX2NhcGFiaWxpdHlfc3VtbWFyeRgDIAEoCVIfaG9uZXN0UGxhdGZvcm1DYXBhYmlsaX'
+        'R5U3VtbWFyeQ==');
+
+@$core.Deprecated('Use saveZenithFocusFirewallSessionRequestDescriptor instead')
+const SaveZenithFocusFirewallSessionRequest$json = {
+  '1': 'SaveZenithFocusFirewallSessionRequest',
+  '2': [
+    {'1': 'firewall_code', '3': 1, '4': 1, '5': 9, '10': 'firewallCode'},
+    {'1': 'session_title', '3': 2, '4': 1, '5': 9, '10': 'sessionTitle'},
+    {'1': 'enforcement_mode', '3': 3, '4': 1, '5': 9, '10': 'enforcementMode'},
+    {
+      '1': 'platform_capability_matrix',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'platformCapabilityMatrix'
+    },
+    {
+      '1': 'whitelisted_emergency_paths',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'whitelistedEmergencyPaths'
+    },
+    {
+      '1': 'override_friction_and_log',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'overrideFrictionAndLog'
+    },
+    {'1': 'firewall_state', '3': 7, '4': 1, '5': 9, '10': 'firewallState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithFocusFirewallSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithFocusFirewallSessionRequestDescriptor = $convert.base64Decode(
+    'CiVTYXZlWmVuaXRoRm9jdXNGaXJld2FsbFNlc3Npb25SZXF1ZXN0EiMKDWZpcmV3YWxsX2NvZG'
+    'UYASABKAlSDGZpcmV3YWxsQ29kZRIjCg1zZXNzaW9uX3RpdGxlGAIgASgJUgxzZXNzaW9uVGl0'
+    'bGUSKQoQZW5mb3JjZW1lbnRfbW9kZRgDIAEoCVIPZW5mb3JjZW1lbnRNb2RlEjwKGnBsYXRmb3'
+    'JtX2NhcGFiaWxpdHlfbWF0cml4GAQgASgJUhhwbGF0Zm9ybUNhcGFiaWxpdHlNYXRyaXgSPgob'
+    'd2hpdGVsaXN0ZWRfZW1lcmdlbmN5X3BhdGhzGAUgASgJUhl3aGl0ZWxpc3RlZEVtZXJnZW5jeV'
+    'BhdGhzEjkKGW92ZXJyaWRlX2ZyaWN0aW9uX2FuZF9sb2cYBiABKAlSFm92ZXJyaWRlRnJpY3Rp'
+    'b25BbmRMb2cSJQoOZmlyZXdhbGxfc3RhdGUYByABKAlSDWZpcmV3YWxsU3RhdGU=');
+
+@$core
+    .Deprecated('Use saveZenithFocusFirewallSessionResponseDescriptor instead')
+const SaveZenithFocusFirewallSessionResponse$json = {
+  '1': 'SaveZenithFocusFirewallSessionResponse',
+  '2': [
+    {
+      '1': 'session',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithFocusFirewallSessionItem',
+      '10': 'session'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithFocusFirewallSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithFocusFirewallSessionResponseDescriptor =
+    $convert.base64Decode(
+        'CiZTYXZlWmVuaXRoRm9jdXNGaXJld2FsbFNlc3Npb25SZXNwb25zZRJMCgdzZXNzaW9uGAEgAS'
+        'gLMjIuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aEZvY3VzRmlyZXdhbGxTZXNzaW9uSXRlbVIH'
+        'c2Vzc2lvbg==');
+
+@$core.Deprecated(
+    'Use triggerZenithFocusFirewallBypassOrCompleteRequestDescriptor instead')
+const TriggerZenithFocusFirewallBypassOrCompleteRequest$json = {
+  '1': 'TriggerZenithFocusFirewallBypassOrCompleteRequest',
+  '2': [
+    {'1': 'firewall_code', '3': 1, '4': 1, '5': 9, '10': 'firewallCode'},
+    {'1': 'target_state', '3': 2, '4': 1, '5': 9, '10': 'targetState'},
+    {
+      '1': 'override_reason_note',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'overrideReasonNote'
+    },
+  ],
+};
+
+/// Descriptor for `TriggerZenithFocusFirewallBypassOrCompleteRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    triggerZenithFocusFirewallBypassOrCompleteRequestDescriptor =
+    $convert.base64Decode(
+        'CjFUcmlnZ2VyWmVuaXRoRm9jdXNGaXJld2FsbEJ5cGFzc09yQ29tcGxldGVSZXF1ZXN0EiMKDW'
+        'ZpcmV3YWxsX2NvZGUYASABKAlSDGZpcmV3YWxsQ29kZRIhCgx0YXJnZXRfc3RhdGUYAiABKAlS'
+        'C3RhcmdldFN0YXRlEjAKFG92ZXJyaWRlX3JlYXNvbl9ub3RlGAMgASgJUhJvdmVycmlkZVJlYX'
+        'Nvbk5vdGU=');
+
+@$core.Deprecated(
+    'Use triggerZenithFocusFirewallBypassOrCompleteResponseDescriptor instead')
+const TriggerZenithFocusFirewallBypassOrCompleteResponse$json = {
+  '1': 'TriggerZenithFocusFirewallBypassOrCompleteResponse',
+  '2': [
+    {
+      '1': 'session',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithFocusFirewallSessionItem',
+      '10': 'session'
+    },
+  ],
+};
+
+/// Descriptor for `TriggerZenithFocusFirewallBypassOrCompleteResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    triggerZenithFocusFirewallBypassOrCompleteResponseDescriptor =
+    $convert.base64Decode(
+        'CjJUcmlnZ2VyWmVuaXRoRm9jdXNGaXJld2FsbEJ5cGFzc09yQ29tcGxldGVSZXNwb25zZRJMCg'
+        'dzZXNzaW9uGAEgASgLMjIuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aEZvY3VzRmlyZXdhbGxT'
+        'ZXNzaW9uSXRlbVIHc2Vzc2lvbg==');
+
+@$core.Deprecated('Use zenithAdaptiveDayArchitectPlanItemDescriptor instead')
+const ZenithAdaptiveDayArchitectPlanItem$json = {
+  '1': 'ZenithAdaptiveDayArchitectPlanItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'plan_code', '3': 3, '4': 1, '5': 9, '10': 'planCode'},
+    {'1': 'plan_date_label', '3': 4, '4': 1, '5': 9, '10': 'planDateLabel'},
+    {
+      '1': 'calendar_snapshot_lag_and_coverage',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'calendarSnapshotLagAndCoverage'
+    },
+    {
+      '1': 'proposed_focus_and_buffer_windows',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'proposedFocusAndBufferWindows'
+    },
+    {
+      '1': 'what_changed_replan_diff',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedReplanDiff'
+    },
+    {
+      '1': 'readiness_fallback_mode',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'readinessFallbackMode'
+    },
+    {'1': 'plan_state', '3': 9, '4': 1, '5': 9, '10': 'planState'},
+    {
+      '1': 'silent_calendar_move_blocked',
+      '3': 10,
+      '4': 1,
+      '5': 8,
+      '10': 'silentCalendarMoveBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 11, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithAdaptiveDayArchitectPlanItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithAdaptiveDayArchitectPlanItemDescriptor = $convert.base64Decode(
+    'CiJaZW5pdGhBZGFwdGl2ZURheUFyY2hpdGVjdFBsYW5JdGVtEg4KAmlkGAEgASgJUgJpZBIXCg'
+    'd1c2VyX2lkGAIgASgJUgZ1c2VySWQSGwoJcGxhbl9jb2RlGAMgASgJUghwbGFuQ29kZRImCg9w'
+    'bGFuX2RhdGVfbGFiZWwYBCABKAlSDXBsYW5EYXRlTGFiZWwSSgoiY2FsZW5kYXJfc25hcHNob3'
+    'RfbGFnX2FuZF9jb3ZlcmFnZRgFIAEoCVIeY2FsZW5kYXJTbmFwc2hvdExhZ0FuZENvdmVyYWdl'
+    'EkgKIXByb3Bvc2VkX2ZvY3VzX2FuZF9idWZmZXJfd2luZG93cxgGIAEoCVIdcHJvcG9zZWRGb2'
+    'N1c0FuZEJ1ZmZlcldpbmRvd3MSNwoYd2hhdF9jaGFuZ2VkX3JlcGxhbl9kaWZmGAcgASgJUhV3'
+    'aGF0Q2hhbmdlZFJlcGxhbkRpZmYSNgoXcmVhZGluZXNzX2ZhbGxiYWNrX21vZGUYCCABKAlSFX'
+    'JlYWRpbmVzc0ZhbGxiYWNrTW9kZRIdCgpwbGFuX3N0YXRlGAkgASgJUglwbGFuU3RhdGUSPwoc'
+    'c2lsZW50X2NhbGVuZGFyX21vdmVfYmxvY2tlZBgKIAEoCFIZc2lsZW50Q2FsZW5kYXJNb3ZlQm'
+    'xvY2tlZBIkCg51cGRhdGVkX2F0X2lzbxgLIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getZenithAdaptiveDayArchitectWorkbenchRequestDescriptor instead')
+const GetZenithAdaptiveDayArchitectWorkbenchRequest$json = {
+  '1': 'GetZenithAdaptiveDayArchitectWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithAdaptiveDayArchitectWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithAdaptiveDayArchitectWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRaZW5pdGhBZGFwdGl2ZURheUFyY2hpdGVjdFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getZenithAdaptiveDayArchitectWorkbenchResponseDescriptor instead')
+const GetZenithAdaptiveDayArchitectWorkbenchResponse$json = {
+  '1': 'GetZenithAdaptiveDayArchitectWorkbenchResponse',
+  '2': [
+    {
+      '1': 'plans',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem',
+      '10': 'plans'
+    },
+    {
+      '1': 'silent_calendar_move_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'silentCalendarMoveBlockedEnforced'
+    },
+    {
+      '1': 'no_sensor_fallback_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'noSensorFallbackSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithAdaptiveDayArchitectWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithAdaptiveDayArchitectWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRaZW5pdGhBZGFwdGl2ZURheUFyY2hpdGVjdFdvcmtiZW5jaFJlc3BvbnNlEkwKBXBsYW'
+        '5zGAEgAygLMjYuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aEFkYXB0aXZlRGF5QXJjaGl0ZWN0'
+        'UGxhbkl0ZW1SBXBsYW5zElAKJXNpbGVudF9jYWxlbmRhcl9tb3ZlX2Jsb2NrZWRfZW5mb3JjZW'
+        'QYAiABKAhSIXNpbGVudENhbGVuZGFyTW92ZUJsb2NrZWRFbmZvcmNlZBI7Chpub19zZW5zb3Jf'
+        'ZmFsbGJhY2tfc3VtbWFyeRgDIAEoCVIXbm9TZW5zb3JGYWxsYmFja1N1bW1hcnk=');
+
+@$core.Deprecated(
+    'Use saveZenithAdaptiveDayArchitectPlanRequestDescriptor instead')
+const SaveZenithAdaptiveDayArchitectPlanRequest$json = {
+  '1': 'SaveZenithAdaptiveDayArchitectPlanRequest',
+  '2': [
+    {'1': 'plan_code', '3': 1, '4': 1, '5': 9, '10': 'planCode'},
+    {'1': 'plan_date_label', '3': 2, '4': 1, '5': 9, '10': 'planDateLabel'},
+    {
+      '1': 'calendar_snapshot_lag_and_coverage',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'calendarSnapshotLagAndCoverage'
+    },
+    {
+      '1': 'proposed_focus_and_buffer_windows',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'proposedFocusAndBufferWindows'
+    },
+    {
+      '1': 'what_changed_replan_diff',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedReplanDiff'
+    },
+    {
+      '1': 'readiness_fallback_mode',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'readinessFallbackMode'
+    },
+    {'1': 'plan_state', '3': 7, '4': 1, '5': 9, '10': 'planState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithAdaptiveDayArchitectPlanRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithAdaptiveDayArchitectPlanRequestDescriptor = $convert.base64Decode(
+    'CilTYXZlWmVuaXRoQWRhcHRpdmVEYXlBcmNoaXRlY3RQbGFuUmVxdWVzdBIbCglwbGFuX2NvZG'
+    'UYASABKAlSCHBsYW5Db2RlEiYKD3BsYW5fZGF0ZV9sYWJlbBgCIAEoCVINcGxhbkRhdGVMYWJl'
+    'bBJKCiJjYWxlbmRhcl9zbmFwc2hvdF9sYWdfYW5kX2NvdmVyYWdlGAMgASgJUh5jYWxlbmRhcl'
+    'NuYXBzaG90TGFnQW5kQ292ZXJhZ2USSAohcHJvcG9zZWRfZm9jdXNfYW5kX2J1ZmZlcl93aW5k'
+    'b3dzGAQgASgJUh1wcm9wb3NlZEZvY3VzQW5kQnVmZmVyV2luZG93cxI3Chh3aGF0X2NoYW5nZW'
+    'RfcmVwbGFuX2RpZmYYBSABKAlSFXdoYXRDaGFuZ2VkUmVwbGFuRGlmZhI2ChdyZWFkaW5lc3Nf'
+    'ZmFsbGJhY2tfbW9kZRgGIAEoCVIVcmVhZGluZXNzRmFsbGJhY2tNb2RlEh0KCnBsYW5fc3RhdG'
+    'UYByABKAlSCXBsYW5TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use saveZenithAdaptiveDayArchitectPlanResponseDescriptor instead')
+const SaveZenithAdaptiveDayArchitectPlanResponse$json = {
+  '1': 'SaveZenithAdaptiveDayArchitectPlanResponse',
+  '2': [
+    {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem',
+      '10': 'plan'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithAdaptiveDayArchitectPlanResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithAdaptiveDayArchitectPlanResponseDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlWmVuaXRoQWRhcHRpdmVEYXlBcmNoaXRlY3RQbGFuUmVzcG9uc2USSgoEcGxhbhgBIA'
+        'EoCzI2LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhBZGFwdGl2ZURheUFyY2hpdGVjdFBsYW5J'
+        'dGVtUgRwbGFu');
+
+@$core
+    .Deprecated('Use acceptOrReplanZenithDayArchitectRequestDescriptor instead')
+const AcceptOrReplanZenithDayArchitectRequest$json = {
+  '1': 'AcceptOrReplanZenithDayArchitectRequest',
+  '2': [
+    {'1': 'plan_code', '3': 1, '4': 1, '5': 9, '10': 'planCode'},
+    {'1': 'target_state', '3': 2, '4': 1, '5': 9, '10': 'targetState'},
+    {
+      '1': 'what_changed_replan_diff',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'whatChangedReplanDiff'
+    },
+  ],
+};
+
+/// Descriptor for `AcceptOrReplanZenithDayArchitectRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acceptOrReplanZenithDayArchitectRequestDescriptor =
+    $convert.base64Decode(
+        'CidBY2NlcHRPclJlcGxhblplbml0aERheUFyY2hpdGVjdFJlcXVlc3QSGwoJcGxhbl9jb2RlGA'
+        'EgASgJUghwbGFuQ29kZRIhCgx0YXJnZXRfc3RhdGUYAiABKAlSC3RhcmdldFN0YXRlEjcKGHdo'
+        'YXRfY2hhbmdlZF9yZXBsYW5fZGlmZhgDIAEoCVIVd2hhdENoYW5nZWRSZXBsYW5EaWZm');
+
+@$core.Deprecated(
+    'Use acceptOrReplanZenithDayArchitectResponseDescriptor instead')
+const AcceptOrReplanZenithDayArchitectResponse$json = {
+  '1': 'AcceptOrReplanZenithDayArchitectResponse',
+  '2': [
+    {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAdaptiveDayArchitectPlanItem',
+      '10': 'plan'
+    },
+  ],
+};
+
+/// Descriptor for `AcceptOrReplanZenithDayArchitectResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List acceptOrReplanZenithDayArchitectResponseDescriptor =
+    $convert.base64Decode(
+        'CihBY2NlcHRPclJlcGxhblplbml0aERheUFyY2hpdGVjdFJlc3BvbnNlEkoKBHBsYW4YASABKA'
+        'syNi5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoQWRhcHRpdmVEYXlBcmNoaXRlY3RQbGFuSXRl'
+        'bVIEcGxhbg==');
+
+@$core.Deprecated('Use zenithIntentionOutcomeContractItemDescriptor instead')
+const ZenithIntentionOutcomeContractItem$json = {
+  '1': 'ZenithIntentionOutcomeContractItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'intention_code', '3': 3, '4': 1, '5': 9, '10': 'intentionCode'},
+    {
+      '1': 'project_and_deliverable',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'projectAndDeliverable'
+    },
+    {
+      '1': 'done_for_now_criteria',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'doneForNowCriteria'
+    },
+    {
+      '1': 'captured_output_and_obstacle',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'capturedOutputAndObstacle'
+    },
+    {'1': 'next_action_step', '3': 7, '4': 1, '5': 9, '10': 'nextActionStep'},
+    {'1': 'loop_state', '3': 8, '4': 1, '5': 9, '10': 'loopState'},
+    {
+      '1': 'surveillance_scoring_disabled',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'surveillanceScoringDisabled'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithIntentionOutcomeContractItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithIntentionOutcomeContractItemDescriptor = $convert.base64Decode(
+    'CiJaZW5pdGhJbnRlbnRpb25PdXRjb21lQ29udHJhY3RJdGVtEg4KAmlkGAEgASgJUgJpZBIXCg'
+    'd1c2VyX2lkGAIgASgJUgZ1c2VySWQSJQoOaW50ZW50aW9uX2NvZGUYAyABKAlSDWludGVudGlv'
+    'bkNvZGUSNgoXcHJvamVjdF9hbmRfZGVsaXZlcmFibGUYBCABKAlSFXByb2plY3RBbmREZWxpdm'
+    'VyYWJsZRIxChVkb25lX2Zvcl9ub3dfY3JpdGVyaWEYBSABKAlSEmRvbmVGb3JOb3dDcml0ZXJp'
+    'YRI/ChxjYXB0dXJlZF9vdXRwdXRfYW5kX29ic3RhY2xlGAYgASgJUhljYXB0dXJlZE91dHB1dE'
+    'FuZE9ic3RhY2xlEigKEG5leHRfYWN0aW9uX3N0ZXAYByABKAlSDm5leHRBY3Rpb25TdGVwEh0K'
+    'Cmxvb3Bfc3RhdGUYCCABKAlSCWxvb3BTdGF0ZRJCCh1zdXJ2ZWlsbGFuY2Vfc2NvcmluZ19kaX'
+    'NhYmxlZBgJIAEoCFIbc3VydmVpbGxhbmNlU2NvcmluZ0Rpc2FibGVkEiQKDnVwZGF0ZWRfYXRf'
+    'aXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithIntentionOutcomeWorkbenchRequestDescriptor instead')
+const GetZenithIntentionOutcomeWorkbenchRequest$json = {
+  '1': 'GetZenithIntentionOutcomeWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithIntentionOutcomeWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithIntentionOutcomeWorkbenchRequestDescriptor = $convert.base64Decode(
+        'CilHZXRaZW5pdGhJbnRlbnRpb25PdXRjb21lV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getZenithIntentionOutcomeWorkbenchResponseDescriptor instead')
+const GetZenithIntentionOutcomeWorkbenchResponse$json = {
+  '1': 'GetZenithIntentionOutcomeWorkbenchResponse',
+  '2': [
+    {
+      '1': 'contracts',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithIntentionOutcomeContractItem',
+      '10': 'contracts'
+    },
+    {
+      '1': 'surveillance_scoring_disabled_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'surveillanceScoringDisabledEnforced'
+    },
+    {
+      '1': 'quiet_session_shell_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'quietSessionShellSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithIntentionOutcomeWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithIntentionOutcomeWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CipHZXRaZW5pdGhJbnRlbnRpb25PdXRjb21lV29ya2JlbmNoUmVzcG9uc2USVAoJY29udHJhY3'
+        'RzGAEgAygLMjYuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aEludGVudGlvbk91dGNvbWVDb250'
+        'cmFjdEl0ZW1SCWNvbnRyYWN0cxJTCiZzdXJ2ZWlsbGFuY2Vfc2NvcmluZ19kaXNhYmxlZF9lbm'
+        'ZvcmNlZBgCIAEoCFIjc3VydmVpbGxhbmNlU2NvcmluZ0Rpc2FibGVkRW5mb3JjZWQSPQobcXVp'
+        'ZXRfc2Vzc2lvbl9zaGVsbF9zdW1tYXJ5GAMgASgJUhhxdWlldFNlc3Npb25TaGVsbFN1bW1hcn'
+        'k=');
+
+@$core.Deprecated(
+    'Use saveZenithIntentionOutcomeContractRequestDescriptor instead')
+const SaveZenithIntentionOutcomeContractRequest$json = {
+  '1': 'SaveZenithIntentionOutcomeContractRequest',
+  '2': [
+    {'1': 'intention_code', '3': 1, '4': 1, '5': 9, '10': 'intentionCode'},
+    {
+      '1': 'project_and_deliverable',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'projectAndDeliverable'
+    },
+    {
+      '1': 'done_for_now_criteria',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'doneForNowCriteria'
+    },
+    {
+      '1': 'captured_output_and_obstacle',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'capturedOutputAndObstacle'
+    },
+    {'1': 'next_action_step', '3': 5, '4': 1, '5': 9, '10': 'nextActionStep'},
+    {'1': 'loop_state', '3': 6, '4': 1, '5': 9, '10': 'loopState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithIntentionOutcomeContractRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithIntentionOutcomeContractRequestDescriptor = $convert.base64Decode(
+        'CilTYXZlWmVuaXRoSW50ZW50aW9uT3V0Y29tZUNvbnRyYWN0UmVxdWVzdBIlCg5pbnRlbnRpb2'
+        '5fY29kZRgBIAEoCVINaW50ZW50aW9uQ29kZRI2Chdwcm9qZWN0X2FuZF9kZWxpdmVyYWJsZRgC'
+        'IAEoCVIVcHJvamVjdEFuZERlbGl2ZXJhYmxlEjEKFWRvbmVfZm9yX25vd19jcml0ZXJpYRgDIA'
+        'EoCVISZG9uZUZvck5vd0NyaXRlcmlhEj8KHGNhcHR1cmVkX291dHB1dF9hbmRfb2JzdGFjbGUY'
+        'BCABKAlSGWNhcHR1cmVkT3V0cHV0QW5kT2JzdGFjbGUSKAoQbmV4dF9hY3Rpb25fc3RlcBgFIA'
+        'EoCVIObmV4dEFjdGlvblN0ZXASHQoKbG9vcF9zdGF0ZRgGIAEoCVIJbG9vcFN0YXRl');
+
+@$core.Deprecated(
+    'Use saveZenithIntentionOutcomeContractResponseDescriptor instead')
+const SaveZenithIntentionOutcomeContractResponse$json = {
+  '1': 'SaveZenithIntentionOutcomeContractResponse',
+  '2': [
+    {
+      '1': 'contract',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithIntentionOutcomeContractItem',
+      '10': 'contract'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithIntentionOutcomeContractResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithIntentionOutcomeContractResponseDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlWmVuaXRoSW50ZW50aW9uT3V0Y29tZUNvbnRyYWN0UmVzcG9uc2USUgoIY29udHJhY3'
+        'QYASABKAsyNi5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoSW50ZW50aW9uT3V0Y29tZUNvbnRy'
+        'YWN0SXRlbVIIY29udHJhY3Q=');
+
+@$core.Deprecated(
+    'Use completeZenithIntentionOutcomeLoopRequestDescriptor instead')
+const CompleteZenithIntentionOutcomeLoopRequest$json = {
+  '1': 'CompleteZenithIntentionOutcomeLoopRequest',
+  '2': [
+    {'1': 'intention_code', '3': 1, '4': 1, '5': 9, '10': 'intentionCode'},
+    {
+      '1': 'captured_output_and_obstacle',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'capturedOutputAndObstacle'
+    },
+    {'1': 'next_action_step', '3': 3, '4': 1, '5': 9, '10': 'nextActionStep'},
+    {'1': 'loop_state', '3': 4, '4': 1, '5': 9, '10': 'loopState'},
+  ],
+};
+
+/// Descriptor for `CompleteZenithIntentionOutcomeLoopRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    completeZenithIntentionOutcomeLoopRequestDescriptor = $convert.base64Decode(
+        'CilDb21wbGV0ZVplbml0aEludGVudGlvbk91dGNvbWVMb29wUmVxdWVzdBIlCg5pbnRlbnRpb2'
+        '5fY29kZRgBIAEoCVINaW50ZW50aW9uQ29kZRI/ChxjYXB0dXJlZF9vdXRwdXRfYW5kX29ic3Rh'
+        'Y2xlGAIgASgJUhljYXB0dXJlZE91dHB1dEFuZE9ic3RhY2xlEigKEG5leHRfYWN0aW9uX3N0ZX'
+        'AYAyABKAlSDm5leHRBY3Rpb25TdGVwEh0KCmxvb3Bfc3RhdGUYBCABKAlSCWxvb3BTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use completeZenithIntentionOutcomeLoopResponseDescriptor instead')
+const CompleteZenithIntentionOutcomeLoopResponse$json = {
+  '1': 'CompleteZenithIntentionOutcomeLoopResponse',
+  '2': [
+    {
+      '1': 'contract',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithIntentionOutcomeContractItem',
+      '10': 'contract'
+    },
+  ],
+};
+
+/// Descriptor for `CompleteZenithIntentionOutcomeLoopResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    completeZenithIntentionOutcomeLoopResponseDescriptor =
+    $convert.base64Decode(
+        'CipDb21wbGV0ZVplbml0aEludGVudGlvbk91dGNvbWVMb29wUmVzcG9uc2USUgoIY29udHJhY3'
+        'QYASABKAsyNi5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoSW50ZW50aW9uT3V0Y29tZUNvbnRy'
+        'YWN0SXRlbVIIY29udHJhY3Q=');
+
+@$core.Deprecated('Use zenithAttentionNOf1ExperimentItemDescriptor instead')
+const ZenithAttentionNOf1ExperimentItem$json = {
+  '1': 'ZenithAttentionNOf1ExperimentItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'experiment_code', '3': 3, '4': 1, '5': 9, '10': 'experimentCode'},
+    {
+      '1': 'hypothesis_and_protocol',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'hypothesisAndProtocol'
+    },
+    {
+      '1': 'predeclared_measure_and_min_samples',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'predeclaredMeasureAndMinSamples'
+    },
+    {
+      '1': 'interruption_recovery_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'interruptionRecoverySummary'
+    },
+    {
+      '1': 'correlation_vs_causation_note',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'correlationVsCausationNote'
+    },
+    {'1': 'experiment_state', '3': 8, '4': 1, '5': 9, '10': 'experimentState'},
+    {
+      '1': 'content_keystroke_capture_blocked',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'contentKeystrokeCaptureBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithAttentionNOf1ExperimentItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithAttentionNOf1ExperimentItemDescriptor = $convert.base64Decode(
+    'CiFaZW5pdGhBdHRlbnRpb25OT2YxRXhwZXJpbWVudEl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBInCg9leHBlcmltZW50X2NvZGUYAyABKAlSDmV4cGVyaW1l'
+    'bnRDb2RlEjYKF2h5cG90aGVzaXNfYW5kX3Byb3RvY29sGAQgASgJUhVoeXBvdGhlc2lzQW5kUH'
+    'JvdG9jb2wSTAojcHJlZGVjbGFyZWRfbWVhc3VyZV9hbmRfbWluX3NhbXBsZXMYBSABKAlSH3By'
+    'ZWRlY2xhcmVkTWVhc3VyZUFuZE1pblNhbXBsZXMSQgodaW50ZXJydXB0aW9uX3JlY292ZXJ5X3'
+    'N1bW1hcnkYBiABKAlSG2ludGVycnVwdGlvblJlY292ZXJ5U3VtbWFyeRJBCh1jb3JyZWxhdGlv'
+    'bl92c19jYXVzYXRpb25fbm90ZRgHIAEoCVIaY29ycmVsYXRpb25Wc0NhdXNhdGlvbk5vdGUSKQ'
+    'oQZXhwZXJpbWVudF9zdGF0ZRgIIAEoCVIPZXhwZXJpbWVudFN0YXRlEkkKIWNvbnRlbnRfa2V5'
+    'c3Ryb2tlX2NhcHR1cmVfYmxvY2tlZBgJIAEoCFIeY29udGVudEtleXN0cm9rZUNhcHR1cmVCbG'
+    '9ja2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithAttentionNOf1LabWorkbenchRequestDescriptor instead')
+const GetZenithAttentionNOf1LabWorkbenchRequest$json = {
+  '1': 'GetZenithAttentionNOf1LabWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithAttentionNOf1LabWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithAttentionNOf1LabWorkbenchRequestDescriptor = $convert.base64Decode(
+        'CilHZXRaZW5pdGhBdHRlbnRpb25OT2YxTGFiV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getZenithAttentionNOf1LabWorkbenchResponseDescriptor instead')
+const GetZenithAttentionNOf1LabWorkbenchResponse$json = {
+  '1': 'GetZenithAttentionNOf1LabWorkbenchResponse',
+  '2': [
+    {
+      '1': 'experiments',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem',
+      '10': 'experiments'
+    },
+    {
+      '1': 'content_keystroke_capture_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'contentKeystrokeCaptureBlockedEnforced'
+    },
+    {
+      '1': 'correlation_boundary_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'correlationBoundarySummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithAttentionNOf1LabWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithAttentionNOf1LabWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CipHZXRaZW5pdGhBdHRlbnRpb25OT2YxTGFiV29ya2JlbmNoUmVzcG9uc2USVwoLZXhwZXJpbW'
+        'VudHMYASADKAsyNS5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoQXR0ZW50aW9uTk9mMUV4cGVy'
+        'aW1lbnRJdGVtUgtleHBlcmltZW50cxJaCipjb250ZW50X2tleXN0cm9rZV9jYXB0dXJlX2Jsb2'
+        'NrZWRfZW5mb3JjZWQYAiABKAhSJmNvbnRlbnRLZXlzdHJva2VDYXB0dXJlQmxvY2tlZEVuZm9y'
+        'Y2VkEkAKHGNvcnJlbGF0aW9uX2JvdW5kYXJ5X3N1bW1hcnkYAyABKAlSGmNvcnJlbGF0aW9uQm'
+        '91bmRhcnlTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveZenithAttentionNOf1ExperimentRequestDescriptor instead')
+const SaveZenithAttentionNOf1ExperimentRequest$json = {
+  '1': 'SaveZenithAttentionNOf1ExperimentRequest',
+  '2': [
+    {'1': 'experiment_code', '3': 1, '4': 1, '5': 9, '10': 'experimentCode'},
+    {
+      '1': 'hypothesis_and_protocol',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'hypothesisAndProtocol'
+    },
+    {
+      '1': 'predeclared_measure_and_min_samples',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'predeclaredMeasureAndMinSamples'
+    },
+    {
+      '1': 'interruption_recovery_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'interruptionRecoverySummary'
+    },
+    {
+      '1': 'correlation_vs_causation_note',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'correlationVsCausationNote'
+    },
+    {'1': 'experiment_state', '3': 6, '4': 1, '5': 9, '10': 'experimentState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithAttentionNOf1ExperimentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithAttentionNOf1ExperimentRequestDescriptor = $convert.base64Decode(
+    'CihTYXZlWmVuaXRoQXR0ZW50aW9uTk9mMUV4cGVyaW1lbnRSZXF1ZXN0EicKD2V4cGVyaW1lbn'
+    'RfY29kZRgBIAEoCVIOZXhwZXJpbWVudENvZGUSNgoXaHlwb3RoZXNpc19hbmRfcHJvdG9jb2wY'
+    'AiABKAlSFWh5cG90aGVzaXNBbmRQcm90b2NvbBJMCiNwcmVkZWNsYXJlZF9tZWFzdXJlX2FuZF'
+    '9taW5fc2FtcGxlcxgDIAEoCVIfcHJlZGVjbGFyZWRNZWFzdXJlQW5kTWluU2FtcGxlcxJCCh1p'
+    'bnRlcnJ1cHRpb25fcmVjb3Zlcnlfc3VtbWFyeRgEIAEoCVIbaW50ZXJydXB0aW9uUmVjb3Zlcn'
+    'lTdW1tYXJ5EkEKHWNvcnJlbGF0aW9uX3ZzX2NhdXNhdGlvbl9ub3RlGAUgASgJUhpjb3JyZWxh'
+    'dGlvblZzQ2F1c2F0aW9uTm90ZRIpChBleHBlcmltZW50X3N0YXRlGAYgASgJUg9leHBlcmltZW'
+    '50U3RhdGU=');
+
+@$core.Deprecated(
+    'Use saveZenithAttentionNOf1ExperimentResponseDescriptor instead')
+const SaveZenithAttentionNOf1ExperimentResponse$json = {
+  '1': 'SaveZenithAttentionNOf1ExperimentResponse',
+  '2': [
+    {
+      '1': 'experiment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem',
+      '10': 'experiment'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithAttentionNOf1ExperimentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithAttentionNOf1ExperimentResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlWmVuaXRoQXR0ZW50aW9uTk9mMUV4cGVyaW1lbnRSZXNwb25zZRJVCgpleHBlcmltZW'
+        '50GAEgASgLMjUuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aEF0dGVudGlvbk5PZjFFeHBlcmlt'
+        'ZW50SXRlbVIKZXhwZXJpbWVudA==');
+
+@$core.Deprecated(
+    'Use evaluateZenithAttentionNOf1ExperimentRequestDescriptor instead')
+const EvaluateZenithAttentionNOf1ExperimentRequest$json = {
+  '1': 'EvaluateZenithAttentionNOf1ExperimentRequest',
+  '2': [
+    {'1': 'experiment_code', '3': 1, '4': 1, '5': 9, '10': 'experimentCode'},
+    {'1': 'experiment_state', '3': 2, '4': 1, '5': 9, '10': 'experimentState'},
+    {
+      '1': 'correlation_vs_causation_note',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'correlationVsCausationNote'
+    },
+  ],
+};
+
+/// Descriptor for `EvaluateZenithAttentionNOf1ExperimentRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    evaluateZenithAttentionNOf1ExperimentRequestDescriptor =
+    $convert.base64Decode(
+        'CixFdmFsdWF0ZVplbml0aEF0dGVudGlvbk5PZjFFeHBlcmltZW50UmVxdWVzdBInCg9leHBlcm'
+        'ltZW50X2NvZGUYASABKAlSDmV4cGVyaW1lbnRDb2RlEikKEGV4cGVyaW1lbnRfc3RhdGUYAiAB'
+        'KAlSD2V4cGVyaW1lbnRTdGF0ZRJBCh1jb3JyZWxhdGlvbl92c19jYXVzYXRpb25fbm90ZRgDIA'
+        'EoCVIaY29ycmVsYXRpb25Wc0NhdXNhdGlvbk5vdGU=');
+
+@$core.Deprecated(
+    'Use evaluateZenithAttentionNOf1ExperimentResponseDescriptor instead')
+const EvaluateZenithAttentionNOf1ExperimentResponse$json = {
+  '1': 'EvaluateZenithAttentionNOf1ExperimentResponse',
+  '2': [
+    {
+      '1': 'experiment',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithAttentionNOf1ExperimentItem',
+      '10': 'experiment'
+    },
+  ],
+};
+
+/// Descriptor for `EvaluateZenithAttentionNOf1ExperimentResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    evaluateZenithAttentionNOf1ExperimentResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1FdmFsdWF0ZVplbml0aEF0dGVudGlvbk5PZjFFeHBlcmltZW50UmVzcG9uc2USVQoKZXhwZX'
+        'JpbWVudBgBIAEoCzI1LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhBdHRlbnRpb25OT2YxRXhw'
+        'ZXJpbWVudEl0ZW1SCmV4cGVyaW1lbnQ=');
+
+@$core.Deprecated('Use zenithRecoveryProtocolRunItemDescriptor instead')
+const ZenithRecoveryProtocolRunItem$json = {
+  '1': 'ZenithRecoveryProtocolRunItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'protocol_code', '3': 3, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'title_and_modality',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'titleAndModality'
+    },
+    {
+      '1': 'contraindication_and_safety_note',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'contraindicationAndSafetyNote'
+    },
+    {
+      '1': 'sensor_or_nosensor_path',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'sensorOrNosensorPath'
+    },
+    {
+      '1': 'subjective_before_after_delta',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'subjectiveBeforeAfterDelta'
+    },
+    {'1': 'protocol_state', '3': 8, '4': 1, '5': 9, '10': 'protocolState'},
+    {
+      '1': 'non_medical_wellness_enforced',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'nonMedicalWellnessEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithRecoveryProtocolRunItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithRecoveryProtocolRunItemDescriptor = $convert.base64Decode(
+    'Ch1aZW5pdGhSZWNvdmVyeVByb3RvY29sUnVuSXRlbRIOCgJpZBgBIAEoCVICaWQSFwoHdXNlcl'
+    '9pZBgCIAEoCVIGdXNlcklkEiMKDXByb3RvY29sX2NvZGUYAyABKAlSDHByb3RvY29sQ29kZRIs'
+    'ChJ0aXRsZV9hbmRfbW9kYWxpdHkYBCABKAlSEHRpdGxlQW5kTW9kYWxpdHkSRwogY29udHJhaW'
+    '5kaWNhdGlvbl9hbmRfc2FmZXR5X25vdGUYBSABKAlSHWNvbnRyYWluZGljYXRpb25BbmRTYWZl'
+    'dHlOb3RlEjUKF3NlbnNvcl9vcl9ub3NlbnNvcl9wYXRoGAYgASgJUhRzZW5zb3JPck5vc2Vuc2'
+    '9yUGF0aBJBCh1zdWJqZWN0aXZlX2JlZm9yZV9hZnRlcl9kZWx0YRgHIAEoCVIac3ViamVjdGl2'
+    'ZUJlZm9yZUFmdGVyRGVsdGESJQoOcHJvdG9jb2xfc3RhdGUYCCABKAlSDXByb3RvY29sU3RhdG'
+    'USQQodbm9uX21lZGljYWxfd2VsbG5lc3NfZW5mb3JjZWQYCSABKAhSGm5vbk1lZGljYWxXZWxs'
+    'bmVzc0VuZm9yY2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithRecoveryProtocolStudioWorkbenchRequestDescriptor instead')
+const GetZenithRecoveryProtocolStudioWorkbenchRequest$json = {
+  '1': 'GetZenithRecoveryProtocolStudioWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithRecoveryProtocolStudioWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithRecoveryProtocolStudioWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci9HZXRaZW5pdGhSZWNvdmVyeVByb3RvY29sU3R1ZGlvV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getZenithRecoveryProtocolStudioWorkbenchResponseDescriptor instead')
+const GetZenithRecoveryProtocolStudioWorkbenchResponse$json = {
+  '1': 'GetZenithRecoveryProtocolStudioWorkbenchResponse',
+  '2': [
+    {
+      '1': 'runs',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithRecoveryProtocolRunItem',
+      '10': 'runs'
+    },
+    {
+      '1': 'non_medical_wellness_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonMedicalWellnessEnforced'
+    },
+    {
+      '1': 'no_sensor_offline_guarantee',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'noSensorOfflineGuarantee'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithRecoveryProtocolStudioWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithRecoveryProtocolStudioWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CjBHZXRaZW5pdGhSZWNvdmVyeVByb3RvY29sU3R1ZGlvV29ya2JlbmNoUmVzcG9uc2USRQoEcn'
+        'VucxgBIAMoCzIxLnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhSZWNvdmVyeVByb3RvY29sUnVu'
+        'SXRlbVIEcnVucxJBCh1ub25fbWVkaWNhbF93ZWxsbmVzc19lbmZvcmNlZBgCIAEoCFIabm9uTW'
+        'VkaWNhbFdlbGxuZXNzRW5mb3JjZWQSPQobbm9fc2Vuc29yX29mZmxpbmVfZ3VhcmFudGVlGAMg'
+        'ASgJUhhub1NlbnNvck9mZmxpbmVHdWFyYW50ZWU=');
+
+@$core.Deprecated('Use saveZenithRecoveryProtocolRunRequestDescriptor instead')
+const SaveZenithRecoveryProtocolRunRequest$json = {
+  '1': 'SaveZenithRecoveryProtocolRunRequest',
+  '2': [
+    {'1': 'protocol_code', '3': 1, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'title_and_modality',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'titleAndModality'
+    },
+    {
+      '1': 'contraindication_and_safety_note',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'contraindicationAndSafetyNote'
+    },
+    {
+      '1': 'sensor_or_nosensor_path',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'sensorOrNosensorPath'
+    },
+    {
+      '1': 'subjective_before_after_delta',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'subjectiveBeforeAfterDelta'
+    },
+    {'1': 'protocol_state', '3': 6, '4': 1, '5': 9, '10': 'protocolState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithRecoveryProtocolRunRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithRecoveryProtocolRunRequestDescriptor = $convert.base64Decode(
+    'CiRTYXZlWmVuaXRoUmVjb3ZlcnlQcm90b2NvbFJ1blJlcXVlc3QSIwoNcHJvdG9jb2xfY29kZR'
+    'gBIAEoCVIMcHJvdG9jb2xDb2RlEiwKEnRpdGxlX2FuZF9tb2RhbGl0eRgCIAEoCVIQdGl0bGVB'
+    'bmRNb2RhbGl0eRJHCiBjb250cmFpbmRpY2F0aW9uX2FuZF9zYWZldHlfbm90ZRgDIAEoCVIdY2'
+    '9udHJhaW5kaWNhdGlvbkFuZFNhZmV0eU5vdGUSNQoXc2Vuc29yX29yX25vc2Vuc29yX3BhdGgY'
+    'BCABKAlSFHNlbnNvck9yTm9zZW5zb3JQYXRoEkEKHXN1YmplY3RpdmVfYmVmb3JlX2FmdGVyX2'
+    'RlbHRhGAUgASgJUhpzdWJqZWN0aXZlQmVmb3JlQWZ0ZXJEZWx0YRIlCg5wcm90b2NvbF9zdGF0'
+    'ZRgGIAEoCVINcHJvdG9jb2xTdGF0ZQ==');
+
+@$core.Deprecated('Use saveZenithRecoveryProtocolRunResponseDescriptor instead')
+const SaveZenithRecoveryProtocolRunResponse$json = {
+  '1': 'SaveZenithRecoveryProtocolRunResponse',
+  '2': [
+    {
+      '1': 'run',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithRecoveryProtocolRunItem',
+      '10': 'run'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithRecoveryProtocolRunResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithRecoveryProtocolRunResponseDescriptor =
+    $convert.base64Decode(
+        'CiVTYXZlWmVuaXRoUmVjb3ZlcnlQcm90b2NvbFJ1blJlc3BvbnNlEkMKA3J1bhgBIAEoCzIxLn'
+        'N0dGF0dHVzLnplbml0aC52MS5aZW5pdGhSZWNvdmVyeVByb3RvY29sUnVuSXRlbVIDcnVu');
+
+@$core.Deprecated(
+    'Use recordZenithRecoveryCheckOrAdverseFlagRequestDescriptor instead')
+const RecordZenithRecoveryCheckOrAdverseFlagRequest$json = {
+  '1': 'RecordZenithRecoveryCheckOrAdverseFlagRequest',
+  '2': [
+    {'1': 'protocol_code', '3': 1, '4': 1, '5': 9, '10': 'protocolCode'},
+    {
+      '1': 'subjective_before_after_delta',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'subjectiveBeforeAfterDelta'
+    },
+    {'1': 'protocol_state', '3': 3, '4': 1, '5': 9, '10': 'protocolState'},
+  ],
+};
+
+/// Descriptor for `RecordZenithRecoveryCheckOrAdverseFlagRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    recordZenithRecoveryCheckOrAdverseFlagRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1SZWNvcmRaZW5pdGhSZWNvdmVyeUNoZWNrT3JBZHZlcnNlRmxhZ1JlcXVlc3QSIwoNcHJvdG'
+        '9jb2xfY29kZRgBIAEoCVIMcHJvdG9jb2xDb2RlEkEKHXN1YmplY3RpdmVfYmVmb3JlX2FmdGVy'
+        'X2RlbHRhGAIgASgJUhpzdWJqZWN0aXZlQmVmb3JlQWZ0ZXJEZWx0YRIlCg5wcm90b2NvbF9zdG'
+        'F0ZRgDIAEoCVINcHJvdG9jb2xTdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use recordZenithRecoveryCheckOrAdverseFlagResponseDescriptor instead')
+const RecordZenithRecoveryCheckOrAdverseFlagResponse$json = {
+  '1': 'RecordZenithRecoveryCheckOrAdverseFlagResponse',
+  '2': [
+    {
+      '1': 'run',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithRecoveryProtocolRunItem',
+      '10': 'run'
+    },
+  ],
+};
+
+/// Descriptor for `RecordZenithRecoveryCheckOrAdverseFlagResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    recordZenithRecoveryCheckOrAdverseFlagResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5SZWNvcmRaZW5pdGhSZWNvdmVyeUNoZWNrT3JBZHZlcnNlRmxhZ1Jlc3BvbnNlEkMKA3J1bh'
+        'gBIAEoCzIxLnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhSZWNvdmVyeVByb3RvY29sUnVuSXRl'
+        'bVIDcnVu');
+
+@$core.Deprecated('Use zenithCommunicationBoundaryRuleItemDescriptor instead')
+const ZenithCommunicationBoundaryRuleItem$json = {
+  '1': 'ZenithCommunicationBoundaryRuleItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'boundary_code', '3': 3, '4': 1, '5': 9, '10': 'boundaryCode'},
+    {
+      '1': 'template_and_window',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'templateAndWindow'
+    },
+    {
+      '1': 'vip_and_emergency_exceptions',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'vipAndEmergencyExceptions'
+    },
+    {
+      '1': 'previewed_external_status_copy',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'previewedExternalStatusCopy'
+    },
+    {
+      '1': 'post_focus_catchup_summary',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'postFocusCatchupSummary'
+    },
+    {'1': 'boundary_state', '3': 8, '4': 1, '5': 9, '10': 'boundaryState'},
+    {
+      '1': 'message_body_collection_blocked',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'messageBodyCollectionBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithCommunicationBoundaryRuleItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithCommunicationBoundaryRuleItemDescriptor = $convert.base64Decode(
+    'CiNaZW5pdGhDb21tdW5pY2F0aW9uQm91bmRhcnlSdWxlSXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiMKDWJvdW5kYXJ5X2NvZGUYAyABKAlSDGJvdW5kYXJ5'
+    'Q29kZRIuChN0ZW1wbGF0ZV9hbmRfd2luZG93GAQgASgJUhF0ZW1wbGF0ZUFuZFdpbmRvdxI/Ch'
+    'x2aXBfYW5kX2VtZXJnZW5jeV9leGNlcHRpb25zGAUgASgJUhl2aXBBbmRFbWVyZ2VuY3lFeGNl'
+    'cHRpb25zEkMKHnByZXZpZXdlZF9leHRlcm5hbF9zdGF0dXNfY29weRgGIAEoCVIbcHJldmlld2'
+    'VkRXh0ZXJuYWxTdGF0dXNDb3B5EjsKGnBvc3RfZm9jdXNfY2F0Y2h1cF9zdW1tYXJ5GAcgASgJ'
+    'Uhdwb3N0Rm9jdXNDYXRjaHVwU3VtbWFyeRIlCg5ib3VuZGFyeV9zdGF0ZRgIIAEoCVINYm91bm'
+    'RhcnlTdGF0ZRJFCh9tZXNzYWdlX2JvZHlfY29sbGVjdGlvbl9ibG9ja2VkGAkgASgIUhxtZXNz'
+    'YWdlQm9keUNvbGxlY3Rpb25CbG9ja2VkEiQKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdG'
+    'VkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithCommunicationBoundaryWorkbenchRequestDescriptor instead')
+const GetZenithCommunicationBoundaryWorkbenchRequest$json = {
+  '1': 'GetZenithCommunicationBoundaryWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithCommunicationBoundaryWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCommunicationBoundaryWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRaZW5pdGhDb21tdW5pY2F0aW9uQm91bmRhcnlXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getZenithCommunicationBoundaryWorkbenchResponseDescriptor instead')
+const GetZenithCommunicationBoundaryWorkbenchResponse$json = {
+  '1': 'GetZenithCommunicationBoundaryWorkbenchResponse',
+  '2': [
+    {
+      '1': 'rules',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem',
+      '10': 'rules'
+    },
+    {
+      '1': 'message_body_collection_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'messageBodyCollectionBlockedEnforced'
+    },
+    {
+      '1': 'preview_before_status_write_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'previewBeforeStatusWriteSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithCommunicationBoundaryWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCommunicationBoundaryWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9HZXRaZW5pdGhDb21tdW5pY2F0aW9uQm91bmRhcnlXb3JrYmVuY2hSZXNwb25zZRJNCgVydW'
+        'xlcxgBIAMoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhDb21tdW5pY2F0aW9uQm91bmRh'
+        'cnlSdWxlSXRlbVIFcnVsZXMSVgoobWVzc2FnZV9ib2R5X2NvbGxlY3Rpb25fYmxvY2tlZF9lbm'
+        'ZvcmNlZBgCIAEoCFIkbWVzc2FnZUJvZHlDb2xsZWN0aW9uQmxvY2tlZEVuZm9yY2VkEkwKI3By'
+        'ZXZpZXdfYmVmb3JlX3N0YXR1c193cml0ZV9zdW1tYXJ5GAMgASgJUh9wcmV2aWV3QmVmb3JlU3'
+        'RhdHVzV3JpdGVTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveZenithCommunicationBoundaryRuleRequestDescriptor instead')
+const SaveZenithCommunicationBoundaryRuleRequest$json = {
+  '1': 'SaveZenithCommunicationBoundaryRuleRequest',
+  '2': [
+    {'1': 'boundary_code', '3': 1, '4': 1, '5': 9, '10': 'boundaryCode'},
+    {
+      '1': 'template_and_window',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'templateAndWindow'
+    },
+    {
+      '1': 'vip_and_emergency_exceptions',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'vipAndEmergencyExceptions'
+    },
+    {
+      '1': 'previewed_external_status_copy',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'previewedExternalStatusCopy'
+    },
+    {
+      '1': 'post_focus_catchup_summary',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'postFocusCatchupSummary'
+    },
+    {'1': 'boundary_state', '3': 6, '4': 1, '5': 9, '10': 'boundaryState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithCommunicationBoundaryRuleRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithCommunicationBoundaryRuleRequestDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlWmVuaXRoQ29tbXVuaWNhdGlvbkJvdW5kYXJ5UnVsZVJlcXVlc3QSIwoNYm91bmRhcn'
+        'lfY29kZRgBIAEoCVIMYm91bmRhcnlDb2RlEi4KE3RlbXBsYXRlX2FuZF93aW5kb3cYAiABKAlS'
+        'EXRlbXBsYXRlQW5kV2luZG93Ej8KHHZpcF9hbmRfZW1lcmdlbmN5X2V4Y2VwdGlvbnMYAyABKA'
+        'lSGXZpcEFuZEVtZXJnZW5jeUV4Y2VwdGlvbnMSQwoecHJldmlld2VkX2V4dGVybmFsX3N0YXR1'
+        'c19jb3B5GAQgASgJUhtwcmV2aWV3ZWRFeHRlcm5hbFN0YXR1c0NvcHkSOwoacG9zdF9mb2N1c1'
+        '9jYXRjaHVwX3N1bW1hcnkYBSABKAlSF3Bvc3RGb2N1c0NhdGNodXBTdW1tYXJ5EiUKDmJvdW5k'
+        'YXJ5X3N0YXRlGAYgASgJUg1ib3VuZGFyeVN0YXRl');
+
+@$core.Deprecated(
+    'Use saveZenithCommunicationBoundaryRuleResponseDescriptor instead')
+const SaveZenithCommunicationBoundaryRuleResponse$json = {
+  '1': 'SaveZenithCommunicationBoundaryRuleResponse',
+  '2': [
+    {
+      '1': 'rule',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem',
+      '10': 'rule'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithCommunicationBoundaryRuleResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithCommunicationBoundaryRuleResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlWmVuaXRoQ29tbXVuaWNhdGlvbkJvdW5kYXJ5UnVsZVJlc3BvbnNlEksKBHJ1bGUYAS'
+        'ABKAsyNy5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoQ29tbXVuaWNhdGlvbkJvdW5kYXJ5UnVs'
+        'ZUl0ZW1SBHJ1bGU=');
+
+@$core.Deprecated(
+    'Use approveOrReleaseZenithBoundaryCatchupRequestDescriptor instead')
+const ApproveOrReleaseZenithBoundaryCatchupRequest$json = {
+  '1': 'ApproveOrReleaseZenithBoundaryCatchupRequest',
+  '2': [
+    {'1': 'boundary_code', '3': 1, '4': 1, '5': 9, '10': 'boundaryCode'},
+    {'1': 'boundary_state', '3': 2, '4': 1, '5': 9, '10': 'boundaryState'},
+    {
+      '1': 'post_focus_catchup_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'postFocusCatchupSummary'
+    },
+  ],
+};
+
+/// Descriptor for `ApproveOrReleaseZenithBoundaryCatchupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    approveOrReleaseZenithBoundaryCatchupRequestDescriptor =
+    $convert.base64Decode(
+        'CixBcHByb3ZlT3JSZWxlYXNlWmVuaXRoQm91bmRhcnlDYXRjaHVwUmVxdWVzdBIjCg1ib3VuZG'
+        'FyeV9jb2RlGAEgASgJUgxib3VuZGFyeUNvZGUSJQoOYm91bmRhcnlfc3RhdGUYAiABKAlSDWJv'
+        'dW5kYXJ5U3RhdGUSOwoacG9zdF9mb2N1c19jYXRjaHVwX3N1bW1hcnkYAyABKAlSF3Bvc3RGb2'
+        'N1c0NhdGNodXBTdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use approveOrReleaseZenithBoundaryCatchupResponseDescriptor instead')
+const ApproveOrReleaseZenithBoundaryCatchupResponse$json = {
+  '1': 'ApproveOrReleaseZenithBoundaryCatchupResponse',
+  '2': [
+    {
+      '1': 'rule',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCommunicationBoundaryRuleItem',
+      '10': 'rule'
+    },
+  ],
+};
+
+/// Descriptor for `ApproveOrReleaseZenithBoundaryCatchupResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    approveOrReleaseZenithBoundaryCatchupResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1BcHByb3ZlT3JSZWxlYXNlWmVuaXRoQm91bmRhcnlDYXRjaHVwUmVzcG9uc2USSwoEcnVsZR'
+        'gBIAEoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhDb21tdW5pY2F0aW9uQm91bmRhcnlS'
+        'dWxlSXRlbVIEcnVsZQ==');
+
+@$core.Deprecated('Use zenithCognitiveReadinessSessionItemDescriptor instead')
+const ZenithCognitiveReadinessSessionItem$json = {
+  '1': 'ZenithCognitiveReadinessSessionItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'battery_code', '3': 3, '4': 1, '5': 9, '10': 'batteryCode'},
+    {
+      '1': 'alternate_form_and_tasks',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'alternateFormAndTasks'
+    },
+    {
+      '1': 'practice_effect_and_device_calibration',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'practiceEffectAndDeviceCalibration'
+    },
+    {
+      '1': 'readiness_band_and_confidence',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'readinessBandAndConfidence'
+    },
+    {
+      '1': 'exclusion_flag_reason',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'exclusionFlagReason'
+    },
+    {'1': 'session_mode', '3': 8, '4': 1, '5': 9, '10': 'sessionMode'},
+    {
+      '1': 'non_diagnostic_claim_enforced',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'nonDiagnosticClaimEnforced'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithCognitiveReadinessSessionItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithCognitiveReadinessSessionItemDescriptor = $convert.base64Decode(
+    'CiNaZW5pdGhDb2duaXRpdmVSZWFkaW5lc3NTZXNzaW9uSXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiEKDGJhdHRlcnlfY29kZRgDIAEoCVILYmF0dGVyeUNv'
+    'ZGUSNwoYYWx0ZXJuYXRlX2Zvcm1fYW5kX3Rhc2tzGAQgASgJUhVhbHRlcm5hdGVGb3JtQW5kVG'
+    'Fza3MSUgomcHJhY3RpY2VfZWZmZWN0X2FuZF9kZXZpY2VfY2FsaWJyYXRpb24YBSABKAlSInBy'
+    'YWN0aWNlRWZmZWN0QW5kRGV2aWNlQ2FsaWJyYXRpb24SQQodcmVhZGluZXNzX2JhbmRfYW5kX2'
+    'NvbmZpZGVuY2UYBiABKAlSGnJlYWRpbmVzc0JhbmRBbmRDb25maWRlbmNlEjIKFWV4Y2x1c2lv'
+    'bl9mbGFnX3JlYXNvbhgHIAEoCVITZXhjbHVzaW9uRmxhZ1JlYXNvbhIhCgxzZXNzaW9uX21vZG'
+    'UYCCABKAlSC3Nlc3Npb25Nb2RlEkEKHW5vbl9kaWFnbm9zdGljX2NsYWltX2VuZm9yY2VkGAkg'
+    'ASgIUhpub25EaWFnbm9zdGljQ2xhaW1FbmZvcmNlZBIkCg51cGRhdGVkX2F0X2lzbxgKIAEoCV'
+    'IMdXBkYXRlZEF0SXNv');
+
+@$core.Deprecated(
+    'Use getZenithCognitiveReadinessWorkbenchRequestDescriptor instead')
+const GetZenithCognitiveReadinessWorkbenchRequest$json = {
+  '1': 'GetZenithCognitiveReadinessWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithCognitiveReadinessWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCognitiveReadinessWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CitHZXRaZW5pdGhDb2duaXRpdmVSZWFkaW5lc3NXb3JrYmVuY2hSZXF1ZXN0');
+
+@$core.Deprecated(
+    'Use getZenithCognitiveReadinessWorkbenchResponseDescriptor instead')
+const GetZenithCognitiveReadinessWorkbenchResponse$json = {
+  '1': 'GetZenithCognitiveReadinessWorkbenchResponse',
+  '2': [
+    {
+      '1': 'sessions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem',
+      '10': 'sessions'
+    },
+    {
+      '1': 'non_diagnostic_claim_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'nonDiagnosticClaimEnforced'
+    },
+    {
+      '1': 'training_vs_assessment_separation_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'trainingVsAssessmentSeparationSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithCognitiveReadinessWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCognitiveReadinessWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CixHZXRaZW5pdGhDb2duaXRpdmVSZWFkaW5lc3NXb3JrYmVuY2hSZXNwb25zZRJTCghzZXNzaW'
+        '9ucxgBIAMoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhDb2duaXRpdmVSZWFkaW5lc3NT'
+        'ZXNzaW9uSXRlbVIIc2Vzc2lvbnMSQQodbm9uX2RpYWdub3N0aWNfY2xhaW1fZW5mb3JjZWQYAi'
+        'ABKAhSGm5vbkRpYWdub3N0aWNDbGFpbUVuZm9yY2VkElgKKXRyYWluaW5nX3ZzX2Fzc2Vzc21l'
+        'bnRfc2VwYXJhdGlvbl9zdW1tYXJ5GAMgASgJUiV0cmFpbmluZ1ZzQXNzZXNzbWVudFNlcGFyYX'
+        'Rpb25TdW1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveZenithCognitiveReadinessSessionRequestDescriptor instead')
+const SaveZenithCognitiveReadinessSessionRequest$json = {
+  '1': 'SaveZenithCognitiveReadinessSessionRequest',
+  '2': [
+    {'1': 'battery_code', '3': 1, '4': 1, '5': 9, '10': 'batteryCode'},
+    {
+      '1': 'alternate_form_and_tasks',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'alternateFormAndTasks'
+    },
+    {
+      '1': 'practice_effect_and_device_calibration',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'practiceEffectAndDeviceCalibration'
+    },
+    {
+      '1': 'readiness_band_and_confidence',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'readinessBandAndConfidence'
+    },
+    {
+      '1': 'exclusion_flag_reason',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'exclusionFlagReason'
+    },
+    {'1': 'session_mode', '3': 6, '4': 1, '5': 9, '10': 'sessionMode'},
+  ],
+};
+
+/// Descriptor for `SaveZenithCognitiveReadinessSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithCognitiveReadinessSessionRequestDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlWmVuaXRoQ29nbml0aXZlUmVhZGluZXNzU2Vzc2lvblJlcXVlc3QSIQoMYmF0dGVyeV'
+        '9jb2RlGAEgASgJUgtiYXR0ZXJ5Q29kZRI3ChhhbHRlcm5hdGVfZm9ybV9hbmRfdGFza3MYAiAB'
+        'KAlSFWFsdGVybmF0ZUZvcm1BbmRUYXNrcxJSCiZwcmFjdGljZV9lZmZlY3RfYW5kX2RldmljZV'
+        '9jYWxpYnJhdGlvbhgDIAEoCVIicHJhY3RpY2VFZmZlY3RBbmREZXZpY2VDYWxpYnJhdGlvbhJB'
+        'Ch1yZWFkaW5lc3NfYmFuZF9hbmRfY29uZmlkZW5jZRgEIAEoCVIacmVhZGluZXNzQmFuZEFuZE'
+        'NvbmZpZGVuY2USMgoVZXhjbHVzaW9uX2ZsYWdfcmVhc29uGAUgASgJUhNleGNsdXNpb25GbGFn'
+        'UmVhc29uEiEKDHNlc3Npb25fbW9kZRgGIAEoCVILc2Vzc2lvbk1vZGU=');
+
+@$core.Deprecated(
+    'Use saveZenithCognitiveReadinessSessionResponseDescriptor instead')
+const SaveZenithCognitiveReadinessSessionResponse$json = {
+  '1': 'SaveZenithCognitiveReadinessSessionResponse',
+  '2': [
+    {
+      '1': 'session',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem',
+      '10': 'session'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithCognitiveReadinessSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithCognitiveReadinessSessionResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlWmVuaXRoQ29nbml0aXZlUmVhZGluZXNzU2Vzc2lvblJlc3BvbnNlElEKB3Nlc3Npb2'
+        '4YASABKAsyNy5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoQ29nbml0aXZlUmVhZGluZXNzU2Vz'
+        'c2lvbkl0ZW1SB3Nlc3Npb24=');
+
+@$core.Deprecated(
+    'Use flagOrValidateZenithCognitiveSessionRequestDescriptor instead')
+const FlagOrValidateZenithCognitiveSessionRequest$json = {
+  '1': 'FlagOrValidateZenithCognitiveSessionRequest',
+  '2': [
+    {'1': 'battery_code', '3': 1, '4': 1, '5': 9, '10': 'batteryCode'},
+    {
+      '1': 'exclusion_flag_reason',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'exclusionFlagReason'
+    },
+    {'1': 'session_mode', '3': 3, '4': 1, '5': 9, '10': 'sessionMode'},
+  ],
+};
+
+/// Descriptor for `FlagOrValidateZenithCognitiveSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    flagOrValidateZenithCognitiveSessionRequestDescriptor =
+    $convert.base64Decode(
+        'CitGbGFnT3JWYWxpZGF0ZVplbml0aENvZ25pdGl2ZVNlc3Npb25SZXF1ZXN0EiEKDGJhdHRlcn'
+        'lfY29kZRgBIAEoCVILYmF0dGVyeUNvZGUSMgoVZXhjbHVzaW9uX2ZsYWdfcmVhc29uGAIgASgJ'
+        'UhNleGNsdXNpb25GbGFnUmVhc29uEiEKDHNlc3Npb25fbW9kZRgDIAEoCVILc2Vzc2lvbk1vZG'
+        'U=');
+
+@$core.Deprecated(
+    'Use flagOrValidateZenithCognitiveSessionResponseDescriptor instead')
+const FlagOrValidateZenithCognitiveSessionResponse$json = {
+  '1': 'FlagOrValidateZenithCognitiveSessionResponse',
+  '2': [
+    {
+      '1': 'session',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCognitiveReadinessSessionItem',
+      '10': 'session'
+    },
+  ],
+};
+
+/// Descriptor for `FlagOrValidateZenithCognitiveSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    flagOrValidateZenithCognitiveSessionResponseDescriptor =
+    $convert.base64Decode(
+        'CixGbGFnT3JWYWxpZGF0ZVplbml0aENvZ25pdGl2ZVNlc3Npb25SZXNwb25zZRJRCgdzZXNzaW'
+        '9uGAEgASgLMjcuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aENvZ25pdGl2ZVJlYWRpbmVzc1Nl'
+        'c3Npb25JdGVtUgdzZXNzaW9u');
+
+@$core.Deprecated('Use zenithPrivatePatternMemoryItemDescriptor instead')
+const ZenithPrivatePatternMemoryItem$json = {
+  '1': 'ZenithPrivatePatternMemoryItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'pattern_code', '3': 3, '4': 1, '5': 9, '10': 'patternCode'},
+    {
+      '1': 'storage_and_encryption_mode',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'storageAndEncryptionMode'
+    },
+    {
+      '1': 'editable_derived_theme_label',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'editableDerivedThemeLabel'
+    },
+    {
+      '1': 'on_device_rescue_prompt_rule',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'onDeviceRescuePromptRule'
+    },
+    {
+      '1': 'crisis_resource_governance_note',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'crisisResourceGovernanceNote'
+    },
+    {'1': 'pattern_state', '3': 8, '4': 1, '5': 9, '10': 'patternState'},
+    {
+      '1': 'staff_raw_prose_access_blocked',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'staffRawProseAccessBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithPrivatePatternMemoryItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithPrivatePatternMemoryItemDescriptor = $convert.base64Decode(
+    'Ch5aZW5pdGhQcml2YXRlUGF0dGVybk1lbW9yeUl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3VzZX'
+    'JfaWQYAiABKAlSBnVzZXJJZBIhCgxwYXR0ZXJuX2NvZGUYAyABKAlSC3BhdHRlcm5Db2RlEj0K'
+    'G3N0b3JhZ2VfYW5kX2VuY3J5cHRpb25fbW9kZRgEIAEoCVIYc3RvcmFnZUFuZEVuY3J5cHRpb2'
+    '5Nb2RlEj8KHGVkaXRhYmxlX2Rlcml2ZWRfdGhlbWVfbGFiZWwYBSABKAlSGWVkaXRhYmxlRGVy'
+    'aXZlZFRoZW1lTGFiZWwSPgocb25fZGV2aWNlX3Jlc2N1ZV9wcm9tcHRfcnVsZRgGIAEoCVIYb2'
+    '5EZXZpY2VSZXNjdWVQcm9tcHRSdWxlEkUKH2NyaXNpc19yZXNvdXJjZV9nb3Zlcm5hbmNlX25v'
+    'dGUYByABKAlSHGNyaXNpc1Jlc291cmNlR292ZXJuYW5jZU5vdGUSIwoNcGF0dGVybl9zdGF0ZR'
+    'gIIAEoCVIMcGF0dGVyblN0YXRlEkIKHnN0YWZmX3Jhd19wcm9zZV9hY2Nlc3NfYmxvY2tlZBgJ'
+    'IAEoCFIac3RhZmZSYXdQcm9zZUFjY2Vzc0Jsb2NrZWQSJAoOdXBkYXRlZF9hdF9pc28YCiABKA'
+    'lSDHVwZGF0ZWRBdElzbw==');
+
+@$core.Deprecated(
+    'Use getZenithPrivatePatternMemoryWorkbenchRequestDescriptor instead')
+const GetZenithPrivatePatternMemoryWorkbenchRequest$json = {
+  '1': 'GetZenithPrivatePatternMemoryWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithPrivatePatternMemoryWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithPrivatePatternMemoryWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRaZW5pdGhQcml2YXRlUGF0dGVybk1lbW9yeVdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getZenithPrivatePatternMemoryWorkbenchResponseDescriptor instead')
+const GetZenithPrivatePatternMemoryWorkbenchResponse$json = {
+  '1': 'GetZenithPrivatePatternMemoryWorkbenchResponse',
+  '2': [
+    {
+      '1': 'memories',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithPrivatePatternMemoryItem',
+      '10': 'memories'
+    },
+    {
+      '1': 'staff_raw_prose_access_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'staffRawProseAccessBlockedEnforced'
+    },
+    {
+      '1': 'e2ee_and_editable_derivation_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'e2eeAndEditableDerivationSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithPrivatePatternMemoryWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithPrivatePatternMemoryWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5HZXRaZW5pdGhQcml2YXRlUGF0dGVybk1lbW9yeVdvcmtiZW5jaFJlc3BvbnNlEk4KCG1lbW'
+        '9yaWVzGAEgAygLMjIuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aFByaXZhdGVQYXR0ZXJuTWVt'
+        'b3J5SXRlbVIIbWVtb3JpZXMSUwonc3RhZmZfcmF3X3Byb3NlX2FjY2Vzc19ibG9ja2VkX2VuZm'
+        '9yY2VkGAIgASgIUiJzdGFmZlJhd1Byb3NlQWNjZXNzQmxvY2tlZEVuZm9yY2VkEk4KJGUyZWVf'
+        'YW5kX2VkaXRhYmxlX2Rlcml2YXRpb25fc3VtbWFyeRgDIAEoCVIgZTJlZUFuZEVkaXRhYmxlRG'
+        'VyaXZhdGlvblN1bW1hcnk=');
+
+@$core.Deprecated('Use saveZenithPrivatePatternMemoryRequestDescriptor instead')
+const SaveZenithPrivatePatternMemoryRequest$json = {
+  '1': 'SaveZenithPrivatePatternMemoryRequest',
+  '2': [
+    {'1': 'pattern_code', '3': 1, '4': 1, '5': 9, '10': 'patternCode'},
+    {
+      '1': 'storage_and_encryption_mode',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'storageAndEncryptionMode'
+    },
+    {
+      '1': 'editable_derived_theme_label',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'editableDerivedThemeLabel'
+    },
+    {
+      '1': 'on_device_rescue_prompt_rule',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'onDeviceRescuePromptRule'
+    },
+    {
+      '1': 'crisis_resource_governance_note',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'crisisResourceGovernanceNote'
+    },
+    {'1': 'pattern_state', '3': 6, '4': 1, '5': 9, '10': 'patternState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithPrivatePatternMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithPrivatePatternMemoryRequestDescriptor = $convert.base64Decode(
+    'CiVTYXZlWmVuaXRoUHJpdmF0ZVBhdHRlcm5NZW1vcnlSZXF1ZXN0EiEKDHBhdHRlcm5fY29kZR'
+    'gBIAEoCVILcGF0dGVybkNvZGUSPQobc3RvcmFnZV9hbmRfZW5jcnlwdGlvbl9tb2RlGAIgASgJ'
+    'UhhzdG9yYWdlQW5kRW5jcnlwdGlvbk1vZGUSPwocZWRpdGFibGVfZGVyaXZlZF90aGVtZV9sYW'
+    'JlbBgDIAEoCVIZZWRpdGFibGVEZXJpdmVkVGhlbWVMYWJlbBI+Chxvbl9kZXZpY2VfcmVzY3Vl'
+    'X3Byb21wdF9ydWxlGAQgASgJUhhvbkRldmljZVJlc2N1ZVByb21wdFJ1bGUSRQofY3Jpc2lzX3'
+    'Jlc291cmNlX2dvdmVybmFuY2Vfbm90ZRgFIAEoCVIcY3Jpc2lzUmVzb3VyY2VHb3Zlcm5hbmNl'
+    'Tm90ZRIjCg1wYXR0ZXJuX3N0YXRlGAYgASgJUgxwYXR0ZXJuU3RhdGU=');
+
+@$core
+    .Deprecated('Use saveZenithPrivatePatternMemoryResponseDescriptor instead')
+const SaveZenithPrivatePatternMemoryResponse$json = {
+  '1': 'SaveZenithPrivatePatternMemoryResponse',
+  '2': [
+    {
+      '1': 'memory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithPrivatePatternMemoryItem',
+      '10': 'memory'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithPrivatePatternMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithPrivatePatternMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'CiZTYXZlWmVuaXRoUHJpdmF0ZVBhdHRlcm5NZW1vcnlSZXNwb25zZRJKCgZtZW1vcnkYASABKA'
+        'syMi5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoUHJpdmF0ZVBhdHRlcm5NZW1vcnlJdGVtUgZt'
+        'ZW1vcnk=');
+
+@$core.Deprecated(
+    'Use editOrDeleteZenithPrivatePatternMemoryRequestDescriptor instead')
+const EditOrDeleteZenithPrivatePatternMemoryRequest$json = {
+  '1': 'EditOrDeleteZenithPrivatePatternMemoryRequest',
+  '2': [
+    {'1': 'pattern_code', '3': 1, '4': 1, '5': 9, '10': 'patternCode'},
+    {
+      '1': 'editable_derived_theme_label',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'editableDerivedThemeLabel'
+    },
+    {'1': 'pattern_state', '3': 3, '4': 1, '5': 9, '10': 'patternState'},
+  ],
+};
+
+/// Descriptor for `EditOrDeleteZenithPrivatePatternMemoryRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    editOrDeleteZenithPrivatePatternMemoryRequestDescriptor =
+    $convert.base64Decode(
+        'Ci1FZGl0T3JEZWxldGVaZW5pdGhQcml2YXRlUGF0dGVybk1lbW9yeVJlcXVlc3QSIQoMcGF0dG'
+        'Vybl9jb2RlGAEgASgJUgtwYXR0ZXJuQ29kZRI/ChxlZGl0YWJsZV9kZXJpdmVkX3RoZW1lX2xh'
+        'YmVsGAIgASgJUhllZGl0YWJsZURlcml2ZWRUaGVtZUxhYmVsEiMKDXBhdHRlcm5fc3RhdGUYAy'
+        'ABKAlSDHBhdHRlcm5TdGF0ZQ==');
+
+@$core.Deprecated(
+    'Use editOrDeleteZenithPrivatePatternMemoryResponseDescriptor instead')
+const EditOrDeleteZenithPrivatePatternMemoryResponse$json = {
+  '1': 'EditOrDeleteZenithPrivatePatternMemoryResponse',
+  '2': [
+    {
+      '1': 'memory',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithPrivatePatternMemoryItem',
+      '10': 'memory'
+    },
+  ],
+};
+
+/// Descriptor for `EditOrDeleteZenithPrivatePatternMemoryResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    editOrDeleteZenithPrivatePatternMemoryResponseDescriptor =
+    $convert.base64Decode(
+        'Ci5FZGl0T3JEZWxldGVaZW5pdGhQcml2YXRlUGF0dGVybk1lbW9yeVJlc3BvbnNlEkoKBm1lbW'
+        '9yeRgBIAEoCzIyLnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhQcml2YXRlUGF0dGVybk1lbW9y'
+        'eUl0ZW1SBm1lbW9yeQ==');
+
+@$core.Deprecated('Use zenithTravelPerformanceProtocolItemDescriptor instead')
+const ZenithTravelPerformanceProtocolItem$json = {
+  '1': 'ZenithTravelPerformanceProtocolItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'travel_code', '3': 3, '4': 1, '5': 9, '10': 'travelCode'},
+    {
+      '1': 'corridor_and_shift_hours',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'corridorAndShiftHours'
+    },
+    {
+      '1': 'light_meal_sleep_schedule',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'lightMealSleepSchedule'
+    },
+    {
+      '1': 'missed_step_replan_rule',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'missedStepReplanRule'
+    },
+    {
+      '1': 'supplement_default_mode',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'supplementDefaultMode'
+    },
+    {'1': 'adaptation_state', '3': 8, '4': 1, '5': 9, '10': 'adaptationState'},
+    {
+      '1': 'medication_advice_prohibited',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'medicationAdviceProhibited'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithTravelPerformanceProtocolItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithTravelPerformanceProtocolItemDescriptor = $convert.base64Decode(
+    'CiNaZW5pdGhUcmF2ZWxQZXJmb3JtYW5jZVByb3RvY29sSXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEh8KC3RyYXZlbF9jb2RlGAMgASgJUgp0cmF2ZWxDb2Rl'
+    'EjcKGGNvcnJpZG9yX2FuZF9zaGlmdF9ob3VycxgEIAEoCVIVY29ycmlkb3JBbmRTaGlmdEhvdX'
+    'JzEjkKGWxpZ2h0X21lYWxfc2xlZXBfc2NoZWR1bGUYBSABKAlSFmxpZ2h0TWVhbFNsZWVwU2No'
+    'ZWR1bGUSNQoXbWlzc2VkX3N0ZXBfcmVwbGFuX3J1bGUYBiABKAlSFG1pc3NlZFN0ZXBSZXBsYW'
+    '5SdWxlEjYKF3N1cHBsZW1lbnRfZGVmYXVsdF9tb2RlGAcgASgJUhVzdXBwbGVtZW50RGVmYXVs'
+    'dE1vZGUSKQoQYWRhcHRhdGlvbl9zdGF0ZRgIIAEoCVIPYWRhcHRhdGlvblN0YXRlEkAKHG1lZG'
+    'ljYXRpb25fYWR2aWNlX3Byb2hpYml0ZWQYCSABKAhSGm1lZGljYXRpb25BZHZpY2VQcm9oaWJp'
+    'dGVkEiQKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithTravelPerformanceWorkbenchRequestDescriptor instead')
+const GetZenithTravelPerformanceWorkbenchRequest$json = {
+  '1': 'GetZenithTravelPerformanceWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithTravelPerformanceWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithTravelPerformanceWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CipHZXRaZW5pdGhUcmF2ZWxQZXJmb3JtYW5jZVdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getZenithTravelPerformanceWorkbenchResponseDescriptor instead')
+const GetZenithTravelPerformanceWorkbenchResponse$json = {
+  '1': 'GetZenithTravelPerformanceWorkbenchResponse',
+  '2': [
+    {
+      '1': 'protocols',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem',
+      '10': 'protocols'
+    },
+    {
+      '1': 'medication_advice_prohibited_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'medicationAdviceProhibitedEnforced'
+    },
+    {
+      '1': 'no_supplement_default_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'noSupplementDefaultSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithTravelPerformanceWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithTravelPerformanceWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CitHZXRaZW5pdGhUcmF2ZWxQZXJmb3JtYW5jZVdvcmtiZW5jaFJlc3BvbnNlElUKCXByb3RvY2'
+        '9scxgBIAMoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhUcmF2ZWxQZXJmb3JtYW5jZVBy'
+        'b3RvY29sSXRlbVIJcHJvdG9jb2xzElEKJW1lZGljYXRpb25fYWR2aWNlX3Byb2hpYml0ZWRfZW'
+        '5mb3JjZWQYAiABKAhSIm1lZGljYXRpb25BZHZpY2VQcm9oaWJpdGVkRW5mb3JjZWQSQQodbm9f'
+        'c3VwcGxlbWVudF9kZWZhdWx0X3N1bW1hcnkYAyABKAlSGm5vU3VwcGxlbWVudERlZmF1bHRTdW'
+        '1tYXJ5');
+
+@$core.Deprecated(
+    'Use saveZenithTravelPerformanceProtocolRequestDescriptor instead')
+const SaveZenithTravelPerformanceProtocolRequest$json = {
+  '1': 'SaveZenithTravelPerformanceProtocolRequest',
+  '2': [
+    {'1': 'travel_code', '3': 1, '4': 1, '5': 9, '10': 'travelCode'},
+    {
+      '1': 'corridor_and_shift_hours',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'corridorAndShiftHours'
+    },
+    {
+      '1': 'light_meal_sleep_schedule',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'lightMealSleepSchedule'
+    },
+    {
+      '1': 'missed_step_replan_rule',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'missedStepReplanRule'
+    },
+    {
+      '1': 'supplement_default_mode',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'supplementDefaultMode'
+    },
+    {'1': 'adaptation_state', '3': 6, '4': 1, '5': 9, '10': 'adaptationState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithTravelPerformanceProtocolRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithTravelPerformanceProtocolRequestDescriptor =
+    $convert.base64Decode(
+        'CipTYXZlWmVuaXRoVHJhdmVsUGVyZm9ybWFuY2VQcm90b2NvbFJlcXVlc3QSHwoLdHJhdmVsX2'
+        'NvZGUYASABKAlSCnRyYXZlbENvZGUSNwoYY29ycmlkb3JfYW5kX3NoaWZ0X2hvdXJzGAIgASgJ'
+        'UhVjb3JyaWRvckFuZFNoaWZ0SG91cnMSOQoZbGlnaHRfbWVhbF9zbGVlcF9zY2hlZHVsZRgDIA'
+        'EoCVIWbGlnaHRNZWFsU2xlZXBTY2hlZHVsZRI1ChdtaXNzZWRfc3RlcF9yZXBsYW5fcnVsZRgE'
+        'IAEoCVIUbWlzc2VkU3RlcFJlcGxhblJ1bGUSNgoXc3VwcGxlbWVudF9kZWZhdWx0X21vZGUYBS'
+        'ABKAlSFXN1cHBsZW1lbnREZWZhdWx0TW9kZRIpChBhZGFwdGF0aW9uX3N0YXRlGAYgASgJUg9h'
+        'ZGFwdGF0aW9uU3RhdGU=');
+
+@$core.Deprecated(
+    'Use saveZenithTravelPerformanceProtocolResponseDescriptor instead')
+const SaveZenithTravelPerformanceProtocolResponse$json = {
+  '1': 'SaveZenithTravelPerformanceProtocolResponse',
+  '2': [
+    {
+      '1': 'protocol',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem',
+      '10': 'protocol'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithTravelPerformanceProtocolResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithTravelPerformanceProtocolResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlWmVuaXRoVHJhdmVsUGVyZm9ybWFuY2VQcm90b2NvbFJlc3BvbnNlElMKCHByb3RvY2'
+        '9sGAEgASgLMjcuc3R0YXR0dXMuemVuaXRoLnYxLlplbml0aFRyYXZlbFBlcmZvcm1hbmNlUHJv'
+        'dG9jb2xJdGVtUghwcm90b2NvbA==');
+
+@$core.Deprecated('Use replanZenithTravelMissedStepRequestDescriptor instead')
+const ReplanZenithTravelMissedStepRequest$json = {
+  '1': 'ReplanZenithTravelMissedStepRequest',
+  '2': [
+    {'1': 'travel_code', '3': 1, '4': 1, '5': 9, '10': 'travelCode'},
+    {
+      '1': 'missed_step_replan_rule',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'missedStepReplanRule'
+    },
+    {'1': 'adaptation_state', '3': 3, '4': 1, '5': 9, '10': 'adaptationState'},
+  ],
+};
+
+/// Descriptor for `ReplanZenithTravelMissedStepRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List replanZenithTravelMissedStepRequestDescriptor =
+    $convert.base64Decode(
+        'CiNSZXBsYW5aZW5pdGhUcmF2ZWxNaXNzZWRTdGVwUmVxdWVzdBIfCgt0cmF2ZWxfY29kZRgBIA'
+        'EoCVIKdHJhdmVsQ29kZRI1ChdtaXNzZWRfc3RlcF9yZXBsYW5fcnVsZRgCIAEoCVIUbWlzc2Vk'
+        'U3RlcFJlcGxhblJ1bGUSKQoQYWRhcHRhdGlvbl9zdGF0ZRgDIAEoCVIPYWRhcHRhdGlvblN0YX'
+        'Rl');
+
+@$core.Deprecated('Use replanZenithTravelMissedStepResponseDescriptor instead')
+const ReplanZenithTravelMissedStepResponse$json = {
+  '1': 'ReplanZenithTravelMissedStepResponse',
+  '2': [
+    {
+      '1': 'protocol',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithTravelPerformanceProtocolItem',
+      '10': 'protocol'
+    },
+  ],
+};
+
+/// Descriptor for `ReplanZenithTravelMissedStepResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List replanZenithTravelMissedStepResponseDescriptor =
+    $convert.base64Decode(
+        'CiRSZXBsYW5aZW5pdGhUcmF2ZWxNaXNzZWRTdGVwUmVzcG9uc2USUwoIcHJvdG9jb2wYASABKA'
+        'syNy5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoVHJhdmVsUGVyZm9ybWFuY2VQcm90b2NvbEl0'
+        'ZW1SCHByb3RvY29s');
+
+@$core.Deprecated('Use zenithCoachingTeamMeetingHealthItemDescriptor instead')
+const ZenithCoachingTeamMeetingHealthItem$json = {
+  '1': 'ZenithCoachingTeamMeetingHealthItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'workspace_code', '3': 3, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'coach_credential_and_scope',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'coachCredentialAndScope'
+    },
+    {
+      '1': 'meeting_load_fragmentation_insight',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'meetingLoadFragmentationInsight'
+    },
+    {
+      '1': 'team_cohort_privacy_summary',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'teamCohortPrivacySummary'
+    },
+    {
+      '1': 'async_or_meeting_free_proposal',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'asyncOrMeetingFreeProposal'
+    },
+    {'1': 'governance_state', '3': 8, '4': 1, '5': 9, '10': 'governanceState'},
+    {
+      '1': 'individual_surveillance_blocked',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'individualSurveillanceBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithCoachingTeamMeetingHealthItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithCoachingTeamMeetingHealthItemDescriptor = $convert.base64Decode(
+    'CiNaZW5pdGhDb2FjaGluZ1RlYW1NZWV0aW5nSGVhbHRoSXRlbRIOCgJpZBgBIAEoCVICaWQSFw'
+    'oHdXNlcl9pZBgCIAEoCVIGdXNlcklkEiUKDndvcmtzcGFjZV9jb2RlGAMgASgJUg13b3Jrc3Bh'
+    'Y2VDb2RlEjsKGmNvYWNoX2NyZWRlbnRpYWxfYW5kX3Njb3BlGAQgASgJUhdjb2FjaENyZWRlbn'
+    'RpYWxBbmRTY29wZRJLCiJtZWV0aW5nX2xvYWRfZnJhZ21lbnRhdGlvbl9pbnNpZ2h0GAUgASgJ'
+    'Uh9tZWV0aW5nTG9hZEZyYWdtZW50YXRpb25JbnNpZ2h0Ej0KG3RlYW1fY29ob3J0X3ByaXZhY3'
+    'lfc3VtbWFyeRgGIAEoCVIYdGVhbUNvaG9ydFByaXZhY3lTdW1tYXJ5EkIKHmFzeW5jX29yX21l'
+    'ZXRpbmdfZnJlZV9wcm9wb3NhbBgHIAEoCVIaYXN5bmNPck1lZXRpbmdGcmVlUHJvcG9zYWwSKQ'
+    'oQZ292ZXJuYW5jZV9zdGF0ZRgIIAEoCVIPZ292ZXJuYW5jZVN0YXRlEkYKH2luZGl2aWR1YWxf'
+    'c3VydmVpbGxhbmNlX2Jsb2NrZWQYCSABKAhSHWluZGl2aWR1YWxTdXJ2ZWlsbGFuY2VCbG9ja2'
+    'VkEiQKDnVwZGF0ZWRfYXRfaXNvGAogASgJUgx1cGRhdGVkQXRJc28=');
+
+@$core.Deprecated(
+    'Use getZenithCoachingTeamMeetingWorkbenchRequestDescriptor instead')
+const GetZenithCoachingTeamMeetingWorkbenchRequest$json = {
+  '1': 'GetZenithCoachingTeamMeetingWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithCoachingTeamMeetingWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCoachingTeamMeetingWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CixHZXRaZW5pdGhDb2FjaGluZ1RlYW1NZWV0aW5nV29ya2JlbmNoUmVxdWVzdA==');
+
+@$core.Deprecated(
+    'Use getZenithCoachingTeamMeetingWorkbenchResponseDescriptor instead')
+const GetZenithCoachingTeamMeetingWorkbenchResponse$json = {
+  '1': 'GetZenithCoachingTeamMeetingWorkbenchResponse',
+  '2': [
+    {
+      '1': 'workspaces',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem',
+      '10': 'workspaces'
+    },
+    {
+      '1': 'individual_surveillance_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'individualSurveillanceBlockedEnforced'
+    },
+    {
+      '1': 'minimum_cohort_and_credential_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'minimumCohortAndCredentialSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithCoachingTeamMeetingWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    getZenithCoachingTeamMeetingWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'Ci1HZXRaZW5pdGhDb2FjaGluZ1RlYW1NZWV0aW5nV29ya2JlbmNoUmVzcG9uc2USVwoKd29ya3'
+        'NwYWNlcxgBIAMoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhDb2FjaGluZ1RlYW1NZWV0'
+        'aW5nSGVhbHRoSXRlbVIKd29ya3NwYWNlcxJXCihpbmRpdmlkdWFsX3N1cnZlaWxsYW5jZV9ibG'
+        '9ja2VkX2VuZm9yY2VkGAIgASgIUiVpbmRpdmlkdWFsU3VydmVpbGxhbmNlQmxvY2tlZEVuZm9y'
+        'Y2VkElAKJW1pbmltdW1fY29ob3J0X2FuZF9jcmVkZW50aWFsX3N1bW1hcnkYAyABKAlSIW1pbm'
+        'ltdW1Db2hvcnRBbmRDcmVkZW50aWFsU3VtbWFyeQ==');
+
+@$core.Deprecated(
+    'Use saveZenithCoachingTeamMeetingHealthRequestDescriptor instead')
+const SaveZenithCoachingTeamMeetingHealthRequest$json = {
+  '1': 'SaveZenithCoachingTeamMeetingHealthRequest',
+  '2': [
+    {'1': 'workspace_code', '3': 1, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'coach_credential_and_scope',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'coachCredentialAndScope'
+    },
+    {
+      '1': 'meeting_load_fragmentation_insight',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'meetingLoadFragmentationInsight'
+    },
+    {
+      '1': 'team_cohort_privacy_summary',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'teamCohortPrivacySummary'
+    },
+    {
+      '1': 'async_or_meeting_free_proposal',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'asyncOrMeetingFreeProposal'
+    },
+    {'1': 'governance_state', '3': 6, '4': 1, '5': 9, '10': 'governanceState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithCoachingTeamMeetingHealthRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithCoachingTeamMeetingHealthRequestDescriptor = $convert.base64Decode(
+    'CipTYXZlWmVuaXRoQ29hY2hpbmdUZWFtTWVldGluZ0hlYWx0aFJlcXVlc3QSJQoOd29ya3NwYW'
+    'NlX2NvZGUYASABKAlSDXdvcmtzcGFjZUNvZGUSOwoaY29hY2hfY3JlZGVudGlhbF9hbmRfc2Nv'
+    'cGUYAiABKAlSF2NvYWNoQ3JlZGVudGlhbEFuZFNjb3BlEksKIm1lZXRpbmdfbG9hZF9mcmFnbW'
+    'VudGF0aW9uX2luc2lnaHQYAyABKAlSH21lZXRpbmdMb2FkRnJhZ21lbnRhdGlvbkluc2lnaHQS'
+    'PQobdGVhbV9jb2hvcnRfcHJpdmFjeV9zdW1tYXJ5GAQgASgJUhh0ZWFtQ29ob3J0UHJpdmFjeV'
+    'N1bW1hcnkSQgoeYXN5bmNfb3JfbWVldGluZ19mcmVlX3Byb3Bvc2FsGAUgASgJUhphc3luY09y'
+    'TWVldGluZ0ZyZWVQcm9wb3NhbBIpChBnb3Zlcm5hbmNlX3N0YXRlGAYgASgJUg9nb3Zlcm5hbm'
+    'NlU3RhdGU=');
+
+@$core.Deprecated(
+    'Use saveZenithCoachingTeamMeetingHealthResponseDescriptor instead')
+const SaveZenithCoachingTeamMeetingHealthResponse$json = {
+  '1': 'SaveZenithCoachingTeamMeetingHealthResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithCoachingTeamMeetingHealthResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithCoachingTeamMeetingHealthResponseDescriptor =
+    $convert.base64Decode(
+        'CitTYXZlWmVuaXRoQ29hY2hpbmdUZWFtTWVldGluZ0hlYWx0aFJlc3BvbnNlElUKCXdvcmtzcG'
+        'FjZRgBIAEoCzI3LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhDb2FjaGluZ1RlYW1NZWV0aW5n'
+        'SGVhbHRoSXRlbVIJd29ya3NwYWNl');
+
+@$core.Deprecated(
+    'Use proposeZenithMeetingFreeOrOracleHandoffRequestDescriptor instead')
+const ProposeZenithMeetingFreeOrOracleHandoffRequest$json = {
+  '1': 'ProposeZenithMeetingFreeOrOracleHandoffRequest',
+  '2': [
+    {'1': 'workspace_code', '3': 1, '4': 1, '5': 9, '10': 'workspaceCode'},
+    {
+      '1': 'async_or_meeting_free_proposal',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'asyncOrMeetingFreeProposal'
+    },
+    {'1': 'governance_state', '3': 3, '4': 1, '5': 9, '10': 'governanceState'},
+  ],
+};
+
+/// Descriptor for `ProposeZenithMeetingFreeOrOracleHandoffRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    proposeZenithMeetingFreeOrOracleHandoffRequestDescriptor =
+    $convert.base64Decode(
+        'Ci5Qcm9wb3NlWmVuaXRoTWVldGluZ0ZyZWVPck9yYWNsZUhhbmRvZmZSZXF1ZXN0EiUKDndvcm'
+        'tzcGFjZV9jb2RlGAEgASgJUg13b3Jrc3BhY2VDb2RlEkIKHmFzeW5jX29yX21lZXRpbmdfZnJl'
+        'ZV9wcm9wb3NhbBgCIAEoCVIaYXN5bmNPck1lZXRpbmdGcmVlUHJvcG9zYWwSKQoQZ292ZXJuYW'
+        '5jZV9zdGF0ZRgDIAEoCVIPZ292ZXJuYW5jZVN0YXRl');
+
+@$core.Deprecated(
+    'Use proposeZenithMeetingFreeOrOracleHandoffResponseDescriptor instead')
+const ProposeZenithMeetingFreeOrOracleHandoffResponse$json = {
+  '1': 'ProposeZenithMeetingFreeOrOracleHandoffResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithCoachingTeamMeetingHealthItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `ProposeZenithMeetingFreeOrOracleHandoffResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    proposeZenithMeetingFreeOrOracleHandoffResponseDescriptor =
+    $convert.base64Decode(
+        'Ci9Qcm9wb3NlWmVuaXRoTWVldGluZ0ZyZWVPck9yYWNsZUhhbmRvZmZSZXNwb25zZRJVCgl3b3'
+        'Jrc3BhY2UYASABKAsyNy5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoQ29hY2hpbmdUZWFtTWVl'
+        'dGluZ0hlYWx0aEl0ZW1SCXdvcmtzcGFjZQ==');
+
+@$core.Deprecated('Use zenithSensoryDesktopWorkspaceItemDescriptor instead')
+const ZenithSensoryDesktopWorkspaceItem$json = {
+  '1': 'ZenithSensoryDesktopWorkspaceItem',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    {'1': 'sensory_code', '3': 3, '4': 1, '5': 9, '10': 'sensoryCode'},
+    {
+      '1': 'profile_name_and_needs',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'profileNameAndNeeds'
+    },
+    {
+      '1': 'vendor_capability_and_manual_fallback',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'vendorCapabilityAndManualFallback'
+    },
+    {
+      '1': 'protected_safety_exclusions',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'protectedSafetyExclusions'
+    },
+    {
+      '1': 'desktop_companion_telemetry_mode',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'desktopCompanionTelemetryMode'
+    },
+    {'1': 'workspace_state', '3': 8, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'keystroke_screenshot_capture_blocked',
+      '3': 9,
+      '4': 1,
+      '5': 8,
+      '10': 'keystrokeScreenshotCaptureBlocked'
+    },
+    {'1': 'updated_at_iso', '3': 10, '4': 1, '5': 9, '10': 'updatedAtIso'},
+  ],
+};
+
+/// Descriptor for `ZenithSensoryDesktopWorkspaceItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List zenithSensoryDesktopWorkspaceItemDescriptor = $convert.base64Decode(
+    'CiFaZW5pdGhTZW5zb3J5RGVza3RvcFdvcmtzcGFjZUl0ZW0SDgoCaWQYASABKAlSAmlkEhcKB3'
+    'VzZXJfaWQYAiABKAlSBnVzZXJJZBIhCgxzZW5zb3J5X2NvZGUYAyABKAlSC3NlbnNvcnlDb2Rl'
+    'EjMKFnByb2ZpbGVfbmFtZV9hbmRfbmVlZHMYBCABKAlSE3Byb2ZpbGVOYW1lQW5kTmVlZHMSUA'
+    'oldmVuZG9yX2NhcGFiaWxpdHlfYW5kX21hbnVhbF9mYWxsYmFjaxgFIAEoCVIhdmVuZG9yQ2Fw'
+    'YWJpbGl0eUFuZE1hbnVhbEZhbGxiYWNrEj4KG3Byb3RlY3RlZF9zYWZldHlfZXhjbHVzaW9ucx'
+    'gGIAEoCVIZcHJvdGVjdGVkU2FmZXR5RXhjbHVzaW9ucxJHCiBkZXNrdG9wX2NvbXBhbmlvbl90'
+    'ZWxlbWV0cnlfbW9kZRgHIAEoCVIdZGVza3RvcENvbXBhbmlvblRlbGVtZXRyeU1vZGUSJwoPd2'
+    '9ya3NwYWNlX3N0YXRlGAggASgJUg53b3Jrc3BhY2VTdGF0ZRJPCiRrZXlzdHJva2Vfc2NyZWVu'
+    'c2hvdF9jYXB0dXJlX2Jsb2NrZWQYCSABKAhSIWtleXN0cm9rZVNjcmVlbnNob3RDYXB0dXJlQm'
+    'xvY2tlZBIkCg51cGRhdGVkX2F0X2lzbxgKIAEoCVIMdXBkYXRlZEF0SXNv');
+
+@$core
+    .Deprecated('Use getZenithSensoryDesktopWorkbenchRequestDescriptor instead')
+const GetZenithSensoryDesktopWorkbenchRequest$json = {
+  '1': 'GetZenithSensoryDesktopWorkbenchRequest',
+};
+
+/// Descriptor for `GetZenithSensoryDesktopWorkbenchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getZenithSensoryDesktopWorkbenchRequestDescriptor =
+    $convert.base64Decode(
+        'CidHZXRaZW5pdGhTZW5zb3J5RGVza3RvcFdvcmtiZW5jaFJlcXVlc3Q=');
+
+@$core.Deprecated(
+    'Use getZenithSensoryDesktopWorkbenchResponseDescriptor instead')
+const GetZenithSensoryDesktopWorkbenchResponse$json = {
+  '1': 'GetZenithSensoryDesktopWorkbenchResponse',
+  '2': [
+    {
+      '1': 'workspaces',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem',
+      '10': 'workspaces'
+    },
+    {
+      '1': 'keystroke_screenshot_capture_blocked_enforced',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '10': 'keystrokeScreenshotCaptureBlockedEnforced'
+    },
+    {
+      '1': 'safety_exclusion_and_manual_fallback_summary',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'safetyExclusionAndManualFallbackSummary'
+    },
+  ],
+};
+
+/// Descriptor for `GetZenithSensoryDesktopWorkbenchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getZenithSensoryDesktopWorkbenchResponseDescriptor =
+    $convert.base64Decode(
+        'CihHZXRaZW5pdGhTZW5zb3J5RGVza3RvcFdvcmtiZW5jaFJlc3BvbnNlElUKCndvcmtzcGFjZX'
+        'MYASADKAsyNS5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoU2Vuc29yeURlc2t0b3BXb3Jrc3Bh'
+        'Y2VJdGVtUgp3b3Jrc3BhY2VzEmAKLWtleXN0cm9rZV9zY3JlZW5zaG90X2NhcHR1cmVfYmxvY2'
+        'tlZF9lbmZvcmNlZBgCIAEoCFIpa2V5c3Ryb2tlU2NyZWVuc2hvdENhcHR1cmVCbG9ja2VkRW5m'
+        'b3JjZWQSXQosc2FmZXR5X2V4Y2x1c2lvbl9hbmRfbWFudWFsX2ZhbGxiYWNrX3N1bW1hcnkYAy'
+        'ABKAlSJ3NhZmV0eUV4Y2x1c2lvbkFuZE1hbnVhbEZhbGxiYWNrU3VtbWFyeQ==');
+
+@$core.Deprecated(
+    'Use saveZenithSensoryDesktopWorkspaceRequestDescriptor instead')
+const SaveZenithSensoryDesktopWorkspaceRequest$json = {
+  '1': 'SaveZenithSensoryDesktopWorkspaceRequest',
+  '2': [
+    {'1': 'sensory_code', '3': 1, '4': 1, '5': 9, '10': 'sensoryCode'},
+    {
+      '1': 'profile_name_and_needs',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'profileNameAndNeeds'
+    },
+    {
+      '1': 'vendor_capability_and_manual_fallback',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'vendorCapabilityAndManualFallback'
+    },
+    {
+      '1': 'protected_safety_exclusions',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'protectedSafetyExclusions'
+    },
+    {
+      '1': 'desktop_companion_telemetry_mode',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '10': 'desktopCompanionTelemetryMode'
+    },
+    {'1': 'workspace_state', '3': 6, '4': 1, '5': 9, '10': 'workspaceState'},
+  ],
+};
+
+/// Descriptor for `SaveZenithSensoryDesktopWorkspaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List saveZenithSensoryDesktopWorkspaceRequestDescriptor = $convert.base64Decode(
+    'CihTYXZlWmVuaXRoU2Vuc29yeURlc2t0b3BXb3Jrc3BhY2VSZXF1ZXN0EiEKDHNlbnNvcnlfY2'
+    '9kZRgBIAEoCVILc2Vuc29yeUNvZGUSMwoWcHJvZmlsZV9uYW1lX2FuZF9uZWVkcxgCIAEoCVIT'
+    'cHJvZmlsZU5hbWVBbmROZWVkcxJQCiV2ZW5kb3JfY2FwYWJpbGl0eV9hbmRfbWFudWFsX2ZhbG'
+    'xiYWNrGAMgASgJUiF2ZW5kb3JDYXBhYmlsaXR5QW5kTWFudWFsRmFsbGJhY2sSPgobcHJvdGVj'
+    'dGVkX3NhZmV0eV9leGNsdXNpb25zGAQgASgJUhlwcm90ZWN0ZWRTYWZldHlFeGNsdXNpb25zEk'
+    'cKIGRlc2t0b3BfY29tcGFuaW9uX3RlbGVtZXRyeV9tb2RlGAUgASgJUh1kZXNrdG9wQ29tcGFu'
+    'aW9uVGVsZW1ldHJ5TW9kZRInCg93b3Jrc3BhY2Vfc3RhdGUYBiABKAlSDndvcmtzcGFjZVN0YX'
+    'Rl');
+
+@$core.Deprecated(
+    'Use saveZenithSensoryDesktopWorkspaceResponseDescriptor instead')
+const SaveZenithSensoryDesktopWorkspaceResponse$json = {
+  '1': 'SaveZenithSensoryDesktopWorkspaceResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `SaveZenithSensoryDesktopWorkspaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    saveZenithSensoryDesktopWorkspaceResponseDescriptor = $convert.base64Decode(
+        'CilTYXZlWmVuaXRoU2Vuc29yeURlc2t0b3BXb3Jrc3BhY2VSZXNwb25zZRJTCgl3b3Jrc3BhY2'
+        'UYASABKAsyNS5zdHRhdHR1cy56ZW5pdGgudjEuWmVuaXRoU2Vuc29yeURlc2t0b3BXb3Jrc3Bh'
+        'Y2VJdGVtUgl3b3Jrc3BhY2U=');
+
+@$core.Deprecated(
+    'Use armOrFallbackZenithSensoryWorkspaceRequestDescriptor instead')
+const ArmOrFallbackZenithSensoryWorkspaceRequest$json = {
+  '1': 'ArmOrFallbackZenithSensoryWorkspaceRequest',
+  '2': [
+    {'1': 'sensory_code', '3': 1, '4': 1, '5': 9, '10': 'sensoryCode'},
+    {'1': 'workspace_state', '3': 2, '4': 1, '5': 9, '10': 'workspaceState'},
+    {
+      '1': 'vendor_capability_and_manual_fallback',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'vendorCapabilityAndManualFallback'
+    },
+  ],
+};
+
+/// Descriptor for `ArmOrFallbackZenithSensoryWorkspaceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    armOrFallbackZenithSensoryWorkspaceRequestDescriptor =
+    $convert.base64Decode(
+        'CipBcm1PckZhbGxiYWNrWmVuaXRoU2Vuc29yeVdvcmtzcGFjZVJlcXVlc3QSIQoMc2Vuc29yeV'
+        '9jb2RlGAEgASgJUgtzZW5zb3J5Q29kZRInCg93b3Jrc3BhY2Vfc3RhdGUYAiABKAlSDndvcmtz'
+        'cGFjZVN0YXRlElAKJXZlbmRvcl9jYXBhYmlsaXR5X2FuZF9tYW51YWxfZmFsbGJhY2sYAyABKA'
+        'lSIXZlbmRvckNhcGFiaWxpdHlBbmRNYW51YWxGYWxsYmFjaw==');
+
+@$core.Deprecated(
+    'Use armOrFallbackZenithSensoryWorkspaceResponseDescriptor instead')
+const ArmOrFallbackZenithSensoryWorkspaceResponse$json = {
+  '1': 'ArmOrFallbackZenithSensoryWorkspaceResponse',
+  '2': [
+    {
+      '1': 'workspace',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.sttattus.zenith.v1.ZenithSensoryDesktopWorkspaceItem',
+      '10': 'workspace'
+    },
+  ],
+};
+
+/// Descriptor for `ArmOrFallbackZenithSensoryWorkspaceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List
+    armOrFallbackZenithSensoryWorkspaceResponseDescriptor =
+    $convert.base64Decode(
+        'CitBcm1PckZhbGxiYWNrWmVuaXRoU2Vuc29yeVdvcmtzcGFjZVJlc3BvbnNlElMKCXdvcmtzcG'
+        'FjZRgBIAEoCzI1LnN0dGF0dHVzLnplbml0aC52MS5aZW5pdGhTZW5zb3J5RGVza3RvcFdvcmtz'
+        'cGFjZUl0ZW1SCXdvcmtzcGFjZQ==');

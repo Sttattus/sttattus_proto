@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPharmacologyRequest, AddPharmacologyResponse, AddSupplementRequest, AddSupplementResponse, AdminVerifyLabRequest, AdminVerifyLabResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CreateClinicianShareRequest, CreateClinicianShareResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, EnrolInApexProtocolRequest, EnrolInApexProtocolResponse, ExtractLabMarkersRequest, ExtractLabMarkersResponse, GenerateHealthAlmanacRequest, GenerateHealthAlmanacResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetApexAgeRequest, GetApexAgeResponse, GetApexClinicRequest, GetApexClinicResponse, GetApexProtocolRequest, GetApexProtocolResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCycleStatusRequest, GetCycleStatusResponse, GetHrvWindowRequest, GetHrvWindowResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, GetReadinessRequest, GetReadinessResponse, IngestGlucoseReadingRequest, IngestGlucoseReadingResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListApexClinicsRequest, ListApexClinicsResponse, ListApexProtocolsRequest, ListApexProtocolsResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListLabPartnersRequest, ListLabPartnersResponse, ListLabReportsRequest, ListLabReportsResponse, ListLoungesRequest, ListLoungesResponse, ListMyApexClinicIntroRequestsRequest, ListMyApexClinicIntroRequestsResponse, ListMyApexProtocolAdherenceRequest, ListMyApexProtocolAdherenceResponse, ListMyApexProtocolEnrolmentsRequest, ListMyApexProtocolEnrolmentsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyClinicianSharesRequest, ListMyClinicianSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCycleSymptomsRequest, ListMyCycleSymptomsResponse, ListMyDnaSnpsRequest, ListMyDnaSnpsResponse, ListMyDnaUploadsRequest, ListMyDnaUploadsResponse, ListMyGlucoseRequest, ListMyGlucoseResponse, ListMyImagingStudiesRequest, ListMyImagingStudiesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPharmacologyRequest, ListMyPharmacologyResponse, ListMySupplementsRequest, ListMySupplementsResponse, ListMyVitalsRequest, ListMyVitalsResponse, ListSupplementInteractionsRequest, ListSupplementInteractionsResponse, ListSupplementsRequest, ListSupplementsResponse, LogCycleSymptomRequest, LogCycleSymptomResponse, LogPeriodRequest, LogPeriodResponse, ParseLabReportTextRequest, ParseLabReportTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, RecordApexProtocolAdherenceRequest, RecordApexProtocolAdherenceResponse, RegisterDnaUploadRequest, RegisterDnaUploadResponse, RemovePharmacologyRequest, RemovePharmacologyResponse, RemoveSupplementRequest, RemoveSupplementResponse, RequestApexClinicIntroRequest, RequestApexClinicIntroResponse, RevokeClinicianShareRequest, RevokeClinicianShareResponse, SimulateApexAgeRequest, SimulateApexAgeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitImagingStudyRequest, SubmitImagingStudyResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateApexProtocolEnrolmentRequest, UpdateApexProtocolEnrolmentResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse } from "./apex_pb.js";
+import { AddPharmacologyRequest, AddPharmacologyResponse, AddSupplementRequest, AddSupplementResponse, AdminVerifyLabRequest, AdminVerifyLabResponse, AnalyzeNOf1ExperimentRequest, AnalyzeNOf1ExperimentResponse, CancelLoungeBookingRequest, CancelLoungeBookingResponse, CompareClinicalDocumentRevisionsRequest, CompareClinicalDocumentRevisionsResponse, CompareRepeatMealResponsesRequest, CompareRepeatMealResponsesResponse, ConfirmExtractedDocumentItemsRequest, ConfirmExtractedDocumentItemsResponse, ConfirmMealIngredientsAndPortionsRequest, ConfirmMealIngredientsAndPortionsResponse, ConfirmPortableDossierFreshnessRequest, ConfirmPortableDossierFreshnessResponse, ConfirmPreventiveCareEvidenceRequest, ConfirmPreventiveCareEvidenceResponse, CorrectHealthObservationRequest, CorrectHealthObservationResponse, CreateCareNavigationHandoffRequest, CreateCareNavigationHandoffResponse, CreateClinicianShareRequest, CreateClinicianShareResponse, CreateHealthCorrectionCaseRequest, CreateHealthCorrectionCaseResponse, CreateLoungeBookingRequest, CreateLoungeBookingResponse, CreateScopedCareTeamGrantRequest, CreateScopedCareTeamGrantResponse, DeleteBaselineExcludedPeriodRequest, DeleteBaselineExcludedPeriodResponse, DeleteHealthObservationRequest, DeleteHealthObservationResponse, EnrolInApexProtocolRequest, EnrolInApexProtocolResponse, EnrollOrUpdateResearchStudyConsentRequest, EnrollOrUpdateResearchStudyConsentResponse, EvaluateMultiSignalChangeEscalationRequest, EvaluateMultiSignalChangeEscalationResponse, ExportHealthObservationsRequest, ExportHealthObservationsResponse, ExportReproductiveAndLifeStageDataRequest, ExportReproductiveAndLifeStageDataResponse, ExportScopedCareTeamBundleRequest, ExportScopedCareTeamBundleResponse, ExtractLabMarkersRequest, ExtractLabMarkersResponse, GenerateAppointmentBriefRequest, GenerateAppointmentBriefResponse, GenerateCircadianTravelOrShiftPlanRequest, GenerateCircadianTravelOrShiftPlanResponse, GenerateHealthAlmanacRequest, GenerateHealthAlmanacResponse, GenerateLifeStageAppointmentBriefRequest, GenerateLifeStageAppointmentBriefResponse, GenerateMedicationReconciliationPacketRequest, GenerateMedicationReconciliationPacketResponse, GetAdaptiveDailyPlanOverviewRequest, GetAdaptiveDailyPlanOverviewResponse, GetAnthologyArticleRequest, GetAnthologyArticleResponse, GetApexAgeRequest, GetApexAgeResponse, GetApexClinicRequest, GetApexClinicResponse, GetApexProtocolRequest, GetApexProtocolResponse, GetChangeEscalationOverviewRequest, GetChangeEscalationOverviewResponse, GetClinicalDocumentIntelligenceOverviewRequest, GetClinicalDocumentIntelligenceOverviewResponse, GetClinicianCareTeamOverviewRequest, GetClinicianCareTeamOverviewResponse, GetConciergeThreadRequest, GetConciergeThreadResponse, GetCycleLifeStageOverviewRequest, GetCycleLifeStageOverviewResponse, GetCycleStatusRequest, GetCycleStatusResponse, GetExperimentLabOverviewRequest, GetExperimentLabOverviewResponse, GetGenomicsAndFamilyHistoryOverviewRequest, GetGenomicsAndFamilyHistoryOverviewResponse, GetGlobalCertificationOverviewRequest, GetGlobalCertificationOverviewResponse, GetHealthDataReliabilityOverviewRequest, GetHealthDataReliabilityOverviewResponse, GetHrvWindowRequest, GetHrvWindowResponse, GetJetLagProtocolRequest, GetJetLagProtocolResponse, GetMedicationSafetyOverviewRequest, GetMedicationSafetyOverviewResponse, GetMetabolicStudioOverviewRequest, GetMetabolicStudioOverviewResponse, GetMyApexProfileRequest, GetMyApexProfileResponse, GetPersonalBaselineAndApexAgeOverviewRequest, GetPersonalBaselineAndApexAgeOverviewResponse, GetPortableHealthDossierOverviewRequest, GetPortableHealthDossierOverviewResponse, GetPreventiveCareCalendarOverviewRequest, GetPreventiveCareCalendarOverviewResponse, GetReadinessRequest, GetReadinessResponse, GetResearchParticipationOverviewRequest, GetResearchParticipationOverviewResponse, GetSleepCircadianStudioOverviewRequest, GetSleepCircadianStudioOverviewResponse, IngestGlucoseReadingRequest, IngestGlucoseReadingResponse, InspectClinicalDocumentRequest, InspectClinicalDocumentResponse, IssueDossierAccessGrantRequest, IssueDossierAccessGrantResponse, ListAnthologyArticlesRequest, ListAnthologyArticlesResponse, ListApexClinicsRequest, ListApexClinicsResponse, ListApexProtocolsRequest, ListApexProtocolsResponse, ListBiomarkerRefsRequest, ListBiomarkerRefsResponse, ListCrossPillarHealthGrantsRequest, ListCrossPillarHealthGrantsResponse, ListHealthDataConflictsRequest, ListHealthDataConflictsResponse, ListHealthSourcesRequest, ListHealthSourcesResponse, ListLabPartnersRequest, ListLabPartnersResponse, ListLabReportsRequest, ListLabReportsResponse, ListLoungesRequest, ListLoungesResponse, ListMyApexClinicIntroRequestsRequest, ListMyApexClinicIntroRequestsResponse, ListMyApexProtocolAdherenceRequest, ListMyApexProtocolAdherenceResponse, ListMyApexProtocolEnrolmentsRequest, ListMyApexProtocolEnrolmentsResponse, ListMyApexScoreSnapshotsRequest, ListMyApexScoreSnapshotsResponse, ListMyAppointmentBriefsRequest, ListMyAppointmentBriefsResponse, ListMyBiomarkerHistoryRequest, ListMyBiomarkerHistoryResponse, ListMyClinicianSharesRequest, ListMyClinicianSharesResponse, ListMyConciergeThreadsRequest, ListMyConciergeThreadsResponse, ListMyCycleSymptomsRequest, ListMyCycleSymptomsResponse, ListMyDnaSnpsRequest, ListMyDnaSnpsResponse, ListMyDnaUploadsRequest, ListMyDnaUploadsResponse, ListMyGlucoseRequest, ListMyGlucoseResponse, ListMyHealthCorrectionCasesRequest, ListMyHealthCorrectionCasesResponse, ListMyImagingStudiesRequest, ListMyImagingStudiesResponse, ListMyLoungeBookingsRequest, ListMyLoungeBookingsResponse, ListMyPharmacologyRequest, ListMyPharmacologyResponse, ListMySupplementsRequest, ListMySupplementsResponse, ListMyVitalsRequest, ListMyVitalsResponse, ListObservationRevisionsRequest, ListObservationRevisionsResponse, ListSupplementInteractionsRequest, ListSupplementInteractionsResponse, ListSupplementsRequest, ListSupplementsResponse, LogCycleSymptomRequest, LogCycleSymptomResponse, LogPeriodRequest, LogPeriodResponse, ParseLabReportTextRequest, ParseLabReportTextResponse, PostConciergeMessageRequest, PostConciergeMessageResponse, PredeclareNOf1ExperimentRequest, PredeclareNOf1ExperimentResponse, PurgeReproductiveAndLifeStageDataRequest, PurgeReproductiveAndLifeStageDataResponse, RebuildHealthRecordRequest, RebuildHealthRecordResponse, RecomputePersonalBaselinesAndApexAgeRequest, RecomputePersonalBaselinesAndApexAgeResponse, RecordApexProtocolAdherenceRequest, RecordApexProtocolAdherenceResponse, RecordClinicianDispositionRequest, RecordClinicianDispositionResponse, RecordDailyPlanStepDispositionRequest, RecordDailyPlanStepDispositionResponse, RecordLifeStageEventRequest, RecordLifeStageEventResponse, RecordMetabolicMealEventRequest, RecordMetabolicMealEventResponse, RecordNOf1DailyLogRequest, RecordNOf1DailyLogResponse, RecordResearchContributionMilestoneRequest, RecordResearchContributionMilestoneResponse, RecordSleepAndExposureLogRequest, RecordSleepAndExposureLogResponse, RegisterDnaUploadRequest, RegisterDnaUploadResponse, RegisterEncryptedGenomicUploadRequest, RegisterEncryptedGenomicUploadResponse, RemovePharmacologyRequest, RemovePharmacologyResponse, RemoveSupplementRequest, RemoveSupplementResponse, ReplanAdaptiveDailyProtocolRequest, ReplanAdaptiveDailyProtocolResponse, ReportExperimentAdverseEventRequest, ReportExperimentAdverseEventResponse, RequestApexClinicIntroRequest, RequestApexClinicIntroResponse, ResolveHealthDataConflictRequest, ResolveHealthDataConflictResponse, RestoreHealthObservationRequest, RestoreHealthObservationResponse, RevokeClinicianShareRequest, RevokeClinicianShareResponse, RevokeDossierAccessGrantRequest, RevokeDossierAccessGrantResponse, RevokeHealthSourceGrantRequest, RevokeHealthSourceGrantResponse, RevokeScopedCareTeamGrantRequest, RevokeScopedCareTeamGrantResponse, RotateGenomicEncryptionKeyOrPurgeRequest, RotateGenomicEncryptionKeyOrPurgeResponse, RunDocumentExtractionRequest, RunDocumentExtractionResponse, RunHealthMigrationImportOrExportJobRequest, RunHealthMigrationImportOrExportJobResponse, RunLocalStudyPreScreenRequest, RunLocalStudyPreScreenResponse, RunOfflineAndManualParityAuditRequest, RunOfflineAndManualParityAuditResponse, RunSafetyInteractionCheckRequest, RunSafetyInteractionCheckResponse, SimulateApexAgeRequest, SimulateApexAgeResponse, StartConciergeThreadRequest, StartConciergeThreadResponse, SubmitApexScoreDisputeRequest, SubmitApexScoreDisputeResponse, SubmitClinicianQuestionPacketRequest, SubmitClinicianQuestionPacketResponse, SubmitGeneticCounsellorRequestRequest, SubmitGeneticCounsellorRequestResponse, SubmitImagingStudyRequest, SubmitImagingStudyResponse, SubmitLabReportRequest, SubmitLabReportResponse, SyncPreventiveCarePlanFromGuidelinesRequest, SyncPreventiveCarePlanFromGuidelinesResponse, SyncVitalsRequest, SyncVitalsResponse, UpdateApexProtocolEnrolmentRequest, UpdateApexProtocolEnrolmentResponse, UpdateAppointmentBriefRequest, UpdateAppointmentBriefResponse, UpdateCareNavigationHandoffStateRequest, UpdateCareNavigationHandoffStateResponse, UpdateChangeEscalationDispositionRequest, UpdateChangeEscalationDispositionResponse, UpdateChangeSignalDispositionRequest, UpdateChangeSignalDispositionResponse, UpdateCircadianCrossPillarGrantRequest, UpdateCircadianCrossPillarGrantResponse, UpdateCompassionateAdherencePauseRequest, UpdateCompassionateAdherencePauseResponse, UpdateCrossPillarHealthGrantRequest, UpdateCrossPillarHealthGrantResponse, UpdateCrossPillarTimingHandoffRequest, UpdateCrossPillarTimingHandoffResponse, UpdateGenomicVariantVisibilityRequest, UpdateGenomicVariantVisibilityResponse, UpdateGlobalAccessibilityProfileRequest, UpdateGlobalAccessibilityProfileResponse, UpdateInteractionAlertDispositionRequest, UpdateInteractionAlertDispositionResponse, UpdateLegacyDirectiveReferenceRequest, UpdateLegacyDirectiveReferenceResponse, UpdateLifeStageProfileAndPrivacyRequest, UpdateLifeStageProfileAndPrivacyResponse, UpdateMyApexProfileRequest, UpdateMyApexProfileResponse, UpdateNOf1ExperimentStatusRequest, UpdateNOf1ExperimentStatusResponse, UpdatePreventiveCareItemStatusRequest, UpdatePreventiveCareItemStatusResponse, UpdatePreventiveCareProfileRequest, UpdatePreventiveCareProfileResponse, UpdateScoreDisplayPreferencesRequest, UpdateScoreDisplayPreferencesResponse, UpsertAllergyOrIntoleranceRequest, UpsertAllergyOrIntoleranceResponse, UpsertBaselineExcludedPeriodRequest, UpsertBaselineExcludedPeriodResponse, UpsertCareNavigationOptionRequest, UpsertCareNavigationOptionResponse, UpsertCircadianRoutineRequest, UpsertCircadianRoutineResponse, UpsertCustomPreventiveCareCheckRequest, UpsertCustomPreventiveCareCheckResponse, UpsertDailyPlanStepRequest, UpsertDailyPlanStepResponse, UpsertFamilyHistoryEntryRequest, UpsertFamilyHistoryEntryResponse, UpsertHealthSourceGrantRequest, UpsertHealthSourceGrantResponse, UpsertHorizontalCertificationCheckRequest, UpsertHorizontalCertificationCheckResponse, UpsertMetabolicSensorProfileRequest, UpsertMetabolicSensorProfileResponse, UpsertMetabolicTargetRangeRequest, UpsertMetabolicTargetRangeResponse, UpsertPortableHealthDossierRequest, UpsertPortableHealthDossierResponse, UpsertReconciledMedicationItemRequest, UpsertReconciledMedicationItemResponse, UpsertResearchStudyRequest, UpsertResearchStudyResponse, UpsertSleepSensorCapabilityRequest, UpsertSleepSensorCapabilityResponse, VerifyUnitLocalizationLosslessnessRequest, VerifyUnitLocalizationLosslessnessResponse, WithdrawResearchStudyConsentRequest, WithdrawResearchStudyConsentResponse } from "./apex_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -620,6 +620,1028 @@ export const ApexService = {
       name: "AdminVerifyLab",
       I: AdminVerifyLabRequest,
       O: AdminVerifyLabResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 1 (AP1): Health Data Reliability Center ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetHealthDataReliabilityOverview
+     */
+    getHealthDataReliabilityOverview: {
+      name: "GetHealthDataReliabilityOverview",
+      I: GetHealthDataReliabilityOverviewRequest,
+      O: GetHealthDataReliabilityOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListHealthSources
+     */
+    listHealthSources: {
+      name: "ListHealthSources",
+      I: ListHealthSourcesRequest,
+      O: ListHealthSourcesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertHealthSourceGrant
+     */
+    upsertHealthSourceGrant: {
+      name: "UpsertHealthSourceGrant",
+      I: UpsertHealthSourceGrantRequest,
+      O: UpsertHealthSourceGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RevokeHealthSourceGrant
+     */
+    revokeHealthSourceGrant: {
+      name: "RevokeHealthSourceGrant",
+      I: RevokeHealthSourceGrantRequest,
+      O: RevokeHealthSourceGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CorrectHealthObservation
+     */
+    correctHealthObservation: {
+      name: "CorrectHealthObservation",
+      I: CorrectHealthObservationRequest,
+      O: CorrectHealthObservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.DeleteHealthObservation
+     */
+    deleteHealthObservation: {
+      name: "DeleteHealthObservation",
+      I: DeleteHealthObservationRequest,
+      O: DeleteHealthObservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RestoreHealthObservation
+     */
+    restoreHealthObservation: {
+      name: "RestoreHealthObservation",
+      I: RestoreHealthObservationRequest,
+      O: RestoreHealthObservationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListObservationRevisions
+     */
+    listObservationRevisions: {
+      name: "ListObservationRevisions",
+      I: ListObservationRevisionsRequest,
+      O: ListObservationRevisionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListHealthDataConflicts
+     */
+    listHealthDataConflicts: {
+      name: "ListHealthDataConflicts",
+      I: ListHealthDataConflictsRequest,
+      O: ListHealthDataConflictsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ResolveHealthDataConflict
+     */
+    resolveHealthDataConflict: {
+      name: "ResolveHealthDataConflict",
+      I: ResolveHealthDataConflictRequest,
+      O: ResolveHealthDataConflictResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CreateHealthCorrectionCase
+     */
+    createHealthCorrectionCase: {
+      name: "CreateHealthCorrectionCase",
+      I: CreateHealthCorrectionCaseRequest,
+      O: CreateHealthCorrectionCaseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyHealthCorrectionCases
+     */
+    listMyHealthCorrectionCases: {
+      name: "ListMyHealthCorrectionCases",
+      I: ListMyHealthCorrectionCasesRequest,
+      O: ListMyHealthCorrectionCasesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListCrossPillarHealthGrants
+     */
+    listCrossPillarHealthGrants: {
+      name: "ListCrossPillarHealthGrants",
+      I: ListCrossPillarHealthGrantsRequest,
+      O: ListCrossPillarHealthGrantsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateCrossPillarHealthGrant
+     */
+    updateCrossPillarHealthGrant: {
+      name: "UpdateCrossPillarHealthGrant",
+      I: UpdateCrossPillarHealthGrantRequest,
+      O: UpdateCrossPillarHealthGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RebuildHealthRecord
+     */
+    rebuildHealthRecord: {
+      name: "RebuildHealthRecord",
+      I: RebuildHealthRecordRequest,
+      O: RebuildHealthRecordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ExportHealthObservations
+     */
+    exportHealthObservations: {
+      name: "ExportHealthObservations",
+      I: ExportHealthObservationsRequest,
+      O: ExportHealthObservationsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 2 (AP2): Clinical Document and Imaging Intelligence ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetClinicalDocumentIntelligenceOverview
+     */
+    getClinicalDocumentIntelligenceOverview: {
+      name: "GetClinicalDocumentIntelligenceOverview",
+      I: GetClinicalDocumentIntelligenceOverviewRequest,
+      O: GetClinicalDocumentIntelligenceOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.InspectClinicalDocument
+     */
+    inspectClinicalDocument: {
+      name: "InspectClinicalDocument",
+      I: InspectClinicalDocumentRequest,
+      O: InspectClinicalDocumentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RunDocumentExtraction
+     */
+    runDocumentExtraction: {
+      name: "RunDocumentExtraction",
+      I: RunDocumentExtractionRequest,
+      O: RunDocumentExtractionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ConfirmExtractedDocumentItems
+     */
+    confirmExtractedDocumentItems: {
+      name: "ConfirmExtractedDocumentItems",
+      I: ConfirmExtractedDocumentItemsRequest,
+      O: ConfirmExtractedDocumentItemsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CompareClinicalDocumentRevisions
+     */
+    compareClinicalDocumentRevisions: {
+      name: "CompareClinicalDocumentRevisions",
+      I: CompareClinicalDocumentRevisionsRequest,
+      O: CompareClinicalDocumentRevisionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GenerateAppointmentBrief
+     */
+    generateAppointmentBrief: {
+      name: "GenerateAppointmentBrief",
+      I: GenerateAppointmentBriefRequest,
+      O: GenerateAppointmentBriefResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyAppointmentBriefs
+     */
+    listMyAppointmentBriefs: {
+      name: "ListMyAppointmentBriefs",
+      I: ListMyAppointmentBriefsRequest,
+      O: ListMyAppointmentBriefsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateAppointmentBrief
+     */
+    updateAppointmentBrief: {
+      name: "UpdateAppointmentBrief",
+      I: UpdateAppointmentBriefRequest,
+      O: UpdateAppointmentBriefResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 3 (AP3): Personal Baseline, Change Radar, and Transparent Apex Age ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetPersonalBaselineAndApexAgeOverview
+     */
+    getPersonalBaselineAndApexAgeOverview: {
+      name: "GetPersonalBaselineAndApexAgeOverview",
+      I: GetPersonalBaselineAndApexAgeOverviewRequest,
+      O: GetPersonalBaselineAndApexAgeOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecomputePersonalBaselinesAndApexAge
+     */
+    recomputePersonalBaselinesAndApexAge: {
+      name: "RecomputePersonalBaselinesAndApexAge",
+      I: RecomputePersonalBaselinesAndApexAgeRequest,
+      O: RecomputePersonalBaselinesAndApexAgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertBaselineExcludedPeriod
+     */
+    upsertBaselineExcludedPeriod: {
+      name: "UpsertBaselineExcludedPeriod",
+      I: UpsertBaselineExcludedPeriodRequest,
+      O: UpsertBaselineExcludedPeriodResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.DeleteBaselineExcludedPeriod
+     */
+    deleteBaselineExcludedPeriod: {
+      name: "DeleteBaselineExcludedPeriod",
+      I: DeleteBaselineExcludedPeriodRequest,
+      O: DeleteBaselineExcludedPeriodResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateChangeSignalDisposition
+     */
+    updateChangeSignalDisposition: {
+      name: "UpdateChangeSignalDisposition",
+      I: UpdateChangeSignalDispositionRequest,
+      O: UpdateChangeSignalDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateScoreDisplayPreferences
+     */
+    updateScoreDisplayPreferences: {
+      name: "UpdateScoreDisplayPreferences",
+      I: UpdateScoreDisplayPreferencesRequest,
+      O: UpdateScoreDisplayPreferencesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.SubmitApexScoreDispute
+     */
+    submitApexScoreDispute: {
+      name: "SubmitApexScoreDispute",
+      I: SubmitApexScoreDisputeRequest,
+      O: SubmitApexScoreDisputeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ListMyApexScoreSnapshots
+     */
+    listMyApexScoreSnapshots: {
+      name: "ListMyApexScoreSnapshots",
+      I: ListMyApexScoreSnapshotsRequest,
+      O: ListMyApexScoreSnapshotsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 4 (AP4): Preventive-Care and Screening Calendar ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetPreventiveCareCalendarOverview
+     */
+    getPreventiveCareCalendarOverview: {
+      name: "GetPreventiveCareCalendarOverview",
+      I: GetPreventiveCareCalendarOverviewRequest,
+      O: GetPreventiveCareCalendarOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdatePreventiveCareProfile
+     */
+    updatePreventiveCareProfile: {
+      name: "UpdatePreventiveCareProfile",
+      I: UpdatePreventiveCareProfileRequest,
+      O: UpdatePreventiveCareProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdatePreventiveCareItemStatus
+     */
+    updatePreventiveCareItemStatus: {
+      name: "UpdatePreventiveCareItemStatus",
+      I: UpdatePreventiveCareItemStatusRequest,
+      O: UpdatePreventiveCareItemStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ConfirmPreventiveCareEvidence
+     */
+    confirmPreventiveCareEvidence: {
+      name: "ConfirmPreventiveCareEvidence",
+      I: ConfirmPreventiveCareEvidenceRequest,
+      O: ConfirmPreventiveCareEvidenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertCustomPreventiveCareCheck
+     */
+    upsertCustomPreventiveCareCheck: {
+      name: "UpsertCustomPreventiveCareCheck",
+      I: UpsertCustomPreventiveCareCheckRequest,
+      O: UpsertCustomPreventiveCareCheckResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.SyncPreventiveCarePlanFromGuidelines
+     */
+    syncPreventiveCarePlanFromGuidelines: {
+      name: "SyncPreventiveCarePlanFromGuidelines",
+      I: SyncPreventiveCarePlanFromGuidelinesRequest,
+      O: SyncPreventiveCarePlanFromGuidelinesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 5 (AP5): Intervention and N-of-1 Experiment Laboratory ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetExperimentLabOverview
+     */
+    getExperimentLabOverview: {
+      name: "GetExperimentLabOverview",
+      I: GetExperimentLabOverviewRequest,
+      O: GetExperimentLabOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.PredeclareNOf1Experiment
+     */
+    predeclareNOf1Experiment: {
+      name: "PredeclareNOf1Experiment",
+      I: PredeclareNOf1ExperimentRequest,
+      O: PredeclareNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordNOf1DailyLog
+     */
+    recordNOf1DailyLog: {
+      name: "RecordNOf1DailyLog",
+      I: RecordNOf1DailyLogRequest,
+      O: RecordNOf1DailyLogResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.AnalyzeNOf1Experiment
+     */
+    analyzeNOf1Experiment: {
+      name: "AnalyzeNOf1Experiment",
+      I: AnalyzeNOf1ExperimentRequest,
+      O: AnalyzeNOf1ExperimentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateNOf1ExperimentStatus
+     */
+    updateNOf1ExperimentStatus: {
+      name: "UpdateNOf1ExperimentStatus",
+      I: UpdateNOf1ExperimentStatusRequest,
+      O: UpdateNOf1ExperimentStatusResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ReportExperimentAdverseEvent
+     */
+    reportExperimentAdverseEvent: {
+      name: "ReportExperimentAdverseEvent",
+      I: ReportExperimentAdverseEventRequest,
+      O: ReportExperimentAdverseEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 6 (AP6): Adaptive Protocol and Daily Health Plan ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetAdaptiveDailyPlanOverview
+     */
+    getAdaptiveDailyPlanOverview: {
+      name: "GetAdaptiveDailyPlanOverview",
+      I: GetAdaptiveDailyPlanOverviewRequest,
+      O: GetAdaptiveDailyPlanOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ReplanAdaptiveDailyProtocol
+     */
+    replanAdaptiveDailyProtocol: {
+      name: "ReplanAdaptiveDailyProtocol",
+      I: ReplanAdaptiveDailyProtocolRequest,
+      O: ReplanAdaptiveDailyProtocolResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordDailyPlanStepDisposition
+     */
+    recordDailyPlanStepDisposition: {
+      name: "RecordDailyPlanStepDisposition",
+      I: RecordDailyPlanStepDispositionRequest,
+      O: RecordDailyPlanStepDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertDailyPlanStep
+     */
+    upsertDailyPlanStep: {
+      name: "UpsertDailyPlanStep",
+      I: UpsertDailyPlanStepRequest,
+      O: UpsertDailyPlanStepResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateCompassionateAdherencePause
+     */
+    updateCompassionateAdherencePause: {
+      name: "UpdateCompassionateAdherencePause",
+      I: UpdateCompassionateAdherencePauseRequest,
+      O: UpdateCompassionateAdherencePauseResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateCrossPillarTimingHandoff
+     */
+    updateCrossPillarTimingHandoff: {
+      name: "UpdateCrossPillarTimingHandoff",
+      I: UpdateCrossPillarTimingHandoffRequest,
+      O: UpdateCrossPillarTimingHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 7 (AP7): Medication, Supplement, and Interaction Safety ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetMedicationSafetyOverview
+     */
+    getMedicationSafetyOverview: {
+      name: "GetMedicationSafetyOverview",
+      I: GetMedicationSafetyOverviewRequest,
+      O: GetMedicationSafetyOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertReconciledMedicationItem
+     */
+    upsertReconciledMedicationItem: {
+      name: "UpsertReconciledMedicationItem",
+      I: UpsertReconciledMedicationItemRequest,
+      O: UpsertReconciledMedicationItemResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertAllergyOrIntolerance
+     */
+    upsertAllergyOrIntolerance: {
+      name: "UpsertAllergyOrIntolerance",
+      I: UpsertAllergyOrIntoleranceRequest,
+      O: UpsertAllergyOrIntoleranceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RunSafetyInteractionCheck
+     */
+    runSafetyInteractionCheck: {
+      name: "RunSafetyInteractionCheck",
+      I: RunSafetyInteractionCheckRequest,
+      O: RunSafetyInteractionCheckResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateInteractionAlertDisposition
+     */
+    updateInteractionAlertDisposition: {
+      name: "UpdateInteractionAlertDisposition",
+      I: UpdateInteractionAlertDispositionRequest,
+      O: UpdateInteractionAlertDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GenerateMedicationReconciliationPacket
+     */
+    generateMedicationReconciliationPacket: {
+      name: "GenerateMedicationReconciliationPacket",
+      I: GenerateMedicationReconciliationPacketRequest,
+      O: GenerateMedicationReconciliationPacketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 8 (AP8): Metabolic Response Studio ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetMetabolicStudioOverview
+     */
+    getMetabolicStudioOverview: {
+      name: "GetMetabolicStudioOverview",
+      I: GetMetabolicStudioOverviewRequest,
+      O: GetMetabolicStudioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordMetabolicMealEvent
+     */
+    recordMetabolicMealEvent: {
+      name: "RecordMetabolicMealEvent",
+      I: RecordMetabolicMealEventRequest,
+      O: RecordMetabolicMealEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ConfirmMealIngredientsAndPortions
+     */
+    confirmMealIngredientsAndPortions: {
+      name: "ConfirmMealIngredientsAndPortions",
+      I: ConfirmMealIngredientsAndPortionsRequest,
+      O: ConfirmMealIngredientsAndPortionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CompareRepeatMealResponses
+     */
+    compareRepeatMealResponses: {
+      name: "CompareRepeatMealResponses",
+      I: CompareRepeatMealResponsesRequest,
+      O: CompareRepeatMealResponsesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertMetabolicTargetRange
+     */
+    upsertMetabolicTargetRange: {
+      name: "UpsertMetabolicTargetRange",
+      I: UpsertMetabolicTargetRangeRequest,
+      O: UpsertMetabolicTargetRangeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertMetabolicSensorProfile
+     */
+    upsertMetabolicSensorProfile: {
+      name: "UpsertMetabolicSensorProfile",
+      I: UpsertMetabolicSensorProfileRequest,
+      O: UpsertMetabolicSensorProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 9 (AP9): Cycle, Hormone, Fertility, Menopause, and Life-Stage Workspace ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetCycleLifeStageOverview
+     */
+    getCycleLifeStageOverview: {
+      name: "GetCycleLifeStageOverview",
+      I: GetCycleLifeStageOverviewRequest,
+      O: GetCycleLifeStageOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateLifeStageProfileAndPrivacy
+     */
+    updateLifeStageProfileAndPrivacy: {
+      name: "UpdateLifeStageProfileAndPrivacy",
+      I: UpdateLifeStageProfileAndPrivacyRequest,
+      O: UpdateLifeStageProfileAndPrivacyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordLifeStageEvent
+     */
+    recordLifeStageEvent: {
+      name: "RecordLifeStageEvent",
+      I: RecordLifeStageEventRequest,
+      O: RecordLifeStageEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GenerateLifeStageAppointmentBrief
+     */
+    generateLifeStageAppointmentBrief: {
+      name: "GenerateLifeStageAppointmentBrief",
+      I: GenerateLifeStageAppointmentBriefRequest,
+      O: GenerateLifeStageAppointmentBriefResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.PurgeReproductiveAndLifeStageData
+     */
+    purgeReproductiveAndLifeStageData: {
+      name: "PurgeReproductiveAndLifeStageData",
+      I: PurgeReproductiveAndLifeStageDataRequest,
+      O: PurgeReproductiveAndLifeStageDataResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ExportReproductiveAndLifeStageData
+     */
+    exportReproductiveAndLifeStageData: {
+      name: "ExportReproductiveAndLifeStageData",
+      I: ExportReproductiveAndLifeStageDataRequest,
+      O: ExportReproductiveAndLifeStageDataResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 10 (AP10): Genomics, Family History, and Inherited-Risk Interpretation ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetGenomicsAndFamilyHistoryOverview
+     */
+    getGenomicsAndFamilyHistoryOverview: {
+      name: "GetGenomicsAndFamilyHistoryOverview",
+      I: GetGenomicsAndFamilyHistoryOverviewRequest,
+      O: GetGenomicsAndFamilyHistoryOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RegisterEncryptedGenomicUpload
+     */
+    registerEncryptedGenomicUpload: {
+      name: "RegisterEncryptedGenomicUpload",
+      I: RegisterEncryptedGenomicUploadRequest,
+      O: RegisterEncryptedGenomicUploadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateGenomicVariantVisibility
+     */
+    updateGenomicVariantVisibility: {
+      name: "UpdateGenomicVariantVisibility",
+      I: UpdateGenomicVariantVisibilityRequest,
+      O: UpdateGenomicVariantVisibilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertFamilyHistoryEntry
+     */
+    upsertFamilyHistoryEntry: {
+      name: "UpsertFamilyHistoryEntry",
+      I: UpsertFamilyHistoryEntryRequest,
+      O: UpsertFamilyHistoryEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.SubmitGeneticCounsellorRequest
+     */
+    submitGeneticCounsellorRequest: {
+      name: "SubmitGeneticCounsellorRequest",
+      I: SubmitGeneticCounsellorRequestRequest,
+      O: SubmitGeneticCounsellorRequestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RotateGenomicEncryptionKeyOrPurge
+     */
+    rotateGenomicEncryptionKeyOrPurge: {
+      name: "RotateGenomicEncryptionKeyOrPurge",
+      I: RotateGenomicEncryptionKeyOrPurgeRequest,
+      O: RotateGenomicEncryptionKeyOrPurgeResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 11 (AP11): Clinician and Care-Team Collaboration Workspace ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetClinicianCareTeamOverview
+     */
+    getClinicianCareTeamOverview: {
+      name: "GetClinicianCareTeamOverview",
+      I: GetClinicianCareTeamOverviewRequest,
+      O: GetClinicianCareTeamOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CreateScopedCareTeamGrant
+     */
+    createScopedCareTeamGrant: {
+      name: "CreateScopedCareTeamGrant",
+      I: CreateScopedCareTeamGrantRequest,
+      O: CreateScopedCareTeamGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RevokeScopedCareTeamGrant
+     */
+    revokeScopedCareTeamGrant: {
+      name: "RevokeScopedCareTeamGrant",
+      I: RevokeScopedCareTeamGrantRequest,
+      O: RevokeScopedCareTeamGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordClinicianDisposition
+     */
+    recordClinicianDisposition: {
+      name: "RecordClinicianDisposition",
+      I: RecordClinicianDispositionRequest,
+      O: RecordClinicianDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ExportScopedCareTeamBundle
+     */
+    exportScopedCareTeamBundle: {
+      name: "ExportScopedCareTeamBundle",
+      I: ExportScopedCareTeamBundleRequest,
+      O: ExportScopedCareTeamBundleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.SubmitClinicianQuestionPacket
+     */
+    submitClinicianQuestionPacket: {
+      name: "SubmitClinicianQuestionPacket",
+      I: SubmitClinicianQuestionPacketRequest,
+      O: SubmitClinicianQuestionPacketResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 12 (AP12): Change Escalation and Care-Navigation Center ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetChangeEscalationOverview
+     */
+    getChangeEscalationOverview: {
+      name: "GetChangeEscalationOverview",
+      I: GetChangeEscalationOverviewRequest,
+      O: GetChangeEscalationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.EvaluateMultiSignalChangeEscalation
+     */
+    evaluateMultiSignalChangeEscalation: {
+      name: "EvaluateMultiSignalChangeEscalation",
+      I: EvaluateMultiSignalChangeEscalationRequest,
+      O: EvaluateMultiSignalChangeEscalationResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateChangeEscalationDisposition
+     */
+    updateChangeEscalationDisposition: {
+      name: "UpdateChangeEscalationDisposition",
+      I: UpdateChangeEscalationDispositionRequest,
+      O: UpdateChangeEscalationDispositionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.CreateCareNavigationHandoff
+     */
+    createCareNavigationHandoff: {
+      name: "CreateCareNavigationHandoff",
+      I: CreateCareNavigationHandoffRequest,
+      O: CreateCareNavigationHandoffResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateCareNavigationHandoffState
+     */
+    updateCareNavigationHandoffState: {
+      name: "UpdateCareNavigationHandoffState",
+      I: UpdateCareNavigationHandoffStateRequest,
+      O: UpdateCareNavigationHandoffStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertCareNavigationOption
+     */
+    upsertCareNavigationOption: {
+      name: "UpsertCareNavigationOption",
+      I: UpsertCareNavigationOptionRequest,
+      O: UpsertCareNavigationOptionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 13 (AP13): Sleep, Circadian, Environment, and Exposure Studio ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetSleepCircadianStudioOverview
+     */
+    getSleepCircadianStudioOverview: {
+      name: "GetSleepCircadianStudioOverview",
+      I: GetSleepCircadianStudioOverviewRequest,
+      O: GetSleepCircadianStudioOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordSleepAndExposureLog
+     */
+    recordSleepAndExposureLog: {
+      name: "RecordSleepAndExposureLog",
+      I: RecordSleepAndExposureLogRequest,
+      O: RecordSleepAndExposureLogResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertCircadianRoutine
+     */
+    upsertCircadianRoutine: {
+      name: "UpsertCircadianRoutine",
+      I: UpsertCircadianRoutineRequest,
+      O: UpsertCircadianRoutineResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateCircadianCrossPillarGrant
+     */
+    updateCircadianCrossPillarGrant: {
+      name: "UpdateCircadianCrossPillarGrant",
+      I: UpdateCircadianCrossPillarGrantRequest,
+      O: UpdateCircadianCrossPillarGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertSleepSensorCapability
+     */
+    upsertSleepSensorCapability: {
+      name: "UpsertSleepSensorCapability",
+      I: UpsertSleepSensorCapabilityRequest,
+      O: UpsertSleepSensorCapabilityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.GenerateCircadianTravelOrShiftPlan
+     */
+    generateCircadianTravelOrShiftPlan: {
+      name: "GenerateCircadianTravelOrShiftPlan",
+      I: GenerateCircadianTravelOrShiftPlanRequest,
+      O: GenerateCircadianTravelOrShiftPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 14 (AP14): Consented Research and Evidence Contribution Platform ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetResearchParticipationOverview
+     */
+    getResearchParticipationOverview: {
+      name: "GetResearchParticipationOverview",
+      I: GetResearchParticipationOverviewRequest,
+      O: GetResearchParticipationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RunLocalStudyPreScreen
+     */
+    runLocalStudyPreScreen: {
+      name: "RunLocalStudyPreScreen",
+      I: RunLocalStudyPreScreenRequest,
+      O: RunLocalStudyPreScreenResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.EnrollOrUpdateResearchStudyConsent
+     */
+    enrollOrUpdateResearchStudyConsent: {
+      name: "EnrollOrUpdateResearchStudyConsent",
+      I: EnrollOrUpdateResearchStudyConsentRequest,
+      O: EnrollOrUpdateResearchStudyConsentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.WithdrawResearchStudyConsent
+     */
+    withdrawResearchStudyConsent: {
+      name: "WithdrawResearchStudyConsent",
+      I: WithdrawResearchStudyConsentRequest,
+      O: WithdrawResearchStudyConsentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RecordResearchContributionMilestone
+     */
+    recordResearchContributionMilestone: {
+      name: "RecordResearchContributionMilestone",
+      I: RecordResearchContributionMilestoneRequest,
+      O: RecordResearchContributionMilestoneResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertResearchStudy
+     */
+    upsertResearchStudy: {
+      name: "UpsertResearchStudy",
+      I: UpsertResearchStudyRequest,
+      O: UpsertResearchStudyResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 15 (AP15): Portable Health Dossier and Emergency Packet ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetPortableHealthDossierOverview
+     */
+    getPortableHealthDossierOverview: {
+      name: "GetPortableHealthDossierOverview",
+      I: GetPortableHealthDossierOverviewRequest,
+      O: GetPortableHealthDossierOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertPortableHealthDossier
+     */
+    upsertPortableHealthDossier: {
+      name: "UpsertPortableHealthDossier",
+      I: UpsertPortableHealthDossierRequest,
+      O: UpsertPortableHealthDossierResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.ConfirmPortableDossierFreshness
+     */
+    confirmPortableDossierFreshness: {
+      name: "ConfirmPortableDossierFreshness",
+      I: ConfirmPortableDossierFreshnessRequest,
+      O: ConfirmPortableDossierFreshnessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.IssueDossierAccessGrant
+     */
+    issueDossierAccessGrant: {
+      name: "IssueDossierAccessGrant",
+      I: IssueDossierAccessGrantRequest,
+      O: IssueDossierAccessGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RevokeDossierAccessGrant
+     */
+    revokeDossierAccessGrant: {
+      name: "RevokeDossierAccessGrant",
+      I: RevokeDossierAccessGrantRequest,
+      O: RevokeDossierAccessGrantResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateLegacyDirectiveReference
+     */
+    updateLegacyDirectiveReference: {
+      name: "UpdateLegacyDirectiveReference",
+      I: UpdateLegacyDirectiveReferenceRequest,
+      O: UpdateLegacyDirectiveReferenceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * === Opportunity Choice 16 (AP16): Global, Accessible, and Migration-Ready Health Record Certification ===
+     *
+     * @generated from rpc sttattus.apex.v1.ApexService.GetGlobalCertificationOverview
+     */
+    getGlobalCertificationOverview: {
+      name: "GetGlobalCertificationOverview",
+      I: GetGlobalCertificationOverviewRequest,
+      O: GetGlobalCertificationOverviewResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpdateGlobalAccessibilityProfile
+     */
+    updateGlobalAccessibilityProfile: {
+      name: "UpdateGlobalAccessibilityProfile",
+      I: UpdateGlobalAccessibilityProfileRequest,
+      O: UpdateGlobalAccessibilityProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RunHealthMigrationImportOrExportJob
+     */
+    runHealthMigrationImportOrExportJob: {
+      name: "RunHealthMigrationImportOrExportJob",
+      I: RunHealthMigrationImportOrExportJobRequest,
+      O: RunHealthMigrationImportOrExportJobResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.UpsertHorizontalCertificationCheck
+     */
+    upsertHorizontalCertificationCheck: {
+      name: "UpsertHorizontalCertificationCheck",
+      I: UpsertHorizontalCertificationCheckRequest,
+      O: UpsertHorizontalCertificationCheckResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.VerifyUnitLocalizationLosslessness
+     */
+    verifyUnitLocalizationLosslessness: {
+      name: "VerifyUnitLocalizationLosslessness",
+      I: VerifyUnitLocalizationLosslessnessRequest,
+      O: VerifyUnitLocalizationLosslessnessResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc sttattus.apex.v1.ApexService.RunOfflineAndManualParityAudit
+     */
+    runOfflineAndManualParityAudit: {
+      name: "RunOfflineAndManualParityAudit",
+      I: RunOfflineAndManualParityAuditRequest,
+      O: RunOfflineAndManualParityAuditResponse,
       kind: MethodKind.Unary,
     },
   }
